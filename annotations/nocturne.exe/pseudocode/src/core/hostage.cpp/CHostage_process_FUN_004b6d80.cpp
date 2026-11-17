@@ -155,7 +155,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,f
       while (iVar13 < g_CDemonSetPtr->actor_count) {
         pCVar15 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040d890
                                      (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar23),
-                                      g_CDoorActorType_01af4e9c.name_hash);
+                                      g_CDoorClassInfo.name_hash);
         if (pCVar15 == (CDoor *)0x0) {
 LAB_004b6f82:
           iVar13 = iVar13 + 1;
@@ -243,13 +243,13 @@ LAB_004b7170:
               (this_ptr->rescue_distance <=
                SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc))) ||
              (iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                 (g_CEventList_PTR_005b7650,this_ptr->rescue_condition),
+                                 (g_CEventListPtr,this_ptr->rescue_condition),
              pCVar12 = g_CConsolePtr, iVar13 == 0)) goto LAB_004b7672;
           this_ptr->hostage_state = 1;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (pCVar12,"%s rescued, entering follow mode\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                    (g_CEventList_PTR_005b7650,this_ptr->hero_found_me_event);
+                    (g_CEventListPtr,this_ptr->hero_found_me_event);
         }
         break;
       case 1:
@@ -295,7 +295,7 @@ LAB_004b7170:
               engine_console_cpp_CConsole_printf_FUN_0043ac60
                         (pCVar12,"%s left behind!\n",this_ptr);
               core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                        (g_CEventList_PTR_005b7650,this_ptr->hero_left_me_event);
+                        (g_CEventListPtr,this_ptr->hero_left_me_event);
               (this_ptr->base).base.hero_proximity_timer = 0.0;
             }
           }
@@ -305,7 +305,7 @@ LAB_004b7170:
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (pCVar12,"%s was led close enough, going home!\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                    (g_CEventList_PTR_005b7650,this_ptr->going_to_sit_down_event);
+                    (g_CEventListPtr,this_ptr->going_to_sit_down_event);
           (this_ptr->base).base.hero_proximity_timer = 0.0;
         }
         break;
@@ -339,7 +339,7 @@ LAB_004b794d:
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsolePtr,"%s was left behind, but now can follow again!\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                    (g_CEventList_PTR_005b7650,this_ptr->hero_came_back_event);
+                    (g_CEventListPtr,this_ptr->hero_came_back_event);
         }
         break;
       case 3:
@@ -385,9 +385,9 @@ LAB_004b794d:
                       (pCVar12,"%s got confused going home.  Help me!\n",this_ptr);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                      (g_CEventList_PTR_005b7650,this_ptr->sit_down_event);
+                      (g_CEventListPtr,this_ptr->sit_down_event);
             core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0
-                      (g_CEventList_PTR_005b7650,this_ptr->rescue_event,1);
+                      (g_CEventListPtr,this_ptr->rescue_event,1);
             this_ptr->hostage_state = 4;
             this_ptr->next_way_point = (CDemonActor *)0x0;
           }
@@ -452,9 +452,9 @@ LAB_004b794d:
                         (&(this_ptr->base).base.model.base,10,1);
             }
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                      (g_CEventList_PTR_005b7650,this_ptr->sit_down_event);
+                      (g_CEventListPtr,this_ptr->sit_down_event);
             core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0
-                      (g_CEventList_PTR_005b7650,this_ptr->rescue_event,1);
+                      (g_CEventListPtr,this_ptr->rescue_event,1);
             this_ptr->sit_down_way_point = (CDemonActor *)0x0;
           }
           local_3c = delta_time * (float)3.1415926535000001;
@@ -624,7 +624,7 @@ LAB_004b72a1:
     local_54 = 0.75;
     pCVar17 = core_actor_cpp_castToClassHash_FUN_0040d890
                         ((this_ptr->base).base.carry_hands[1].carry_actor,
-                         g_CWeaponActorType_02ddf970.name_hash);
+                         g_CWeaponClassInfo.name_hash);
     local_4c = 0;
     if (((pCVar17 != (CDemonActor *)0x0) &&
         (local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
@@ -641,16 +641,16 @@ LAB_004b72a1:
       }
       pCVar2 = &(this_ptr->base).base.model;
       local_58 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                           (&pCVar2->base,g_INT_01cae1a0,
+                           (&pCVar2->base,g_HostageGunUpMotionIndex,
                             this_ptr->gun_raise_progress * (float)0.65000000000000002 +
                             (float)0.34999999999999998);
       local_18 = local_58;
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-                (pCVar2,g_INT_01cae1a0,local_58,this_ptr->gun_blend_weight,this_ptr->bone_indices[0]
-                 ,core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
+                (pCVar2,g_HostageGunUpMotionIndex,local_58,this_ptr->gun_blend_weight,
+                 this_ptr->bone_indices[0],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-                (pCVar2,g_INT_01cae1a0,local_58,this_ptr->gun_blend_weight,this_ptr->bone_indices[1]
-                 ,core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
+                (pCVar2,g_HostageGunUpMotionIndex,local_58,this_ptr->gun_blend_weight,
+                 this_ptr->bone_indices[1],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
       if (((1.0 <= this_ptr->gun_blend_weight) && (0.0 < this_ptr->gun_raise_progress)) &&
          (fVar4 = delta_time / local_54 + this_ptr->gun_raise_progress,
          this_ptr->gun_raise_progress = fVar4, 1.0 < fVar4)) {
@@ -669,7 +669,7 @@ LAB_004b72a1:
      (pCVar18 = (CCharacter *)
                 core_actor_cpp_castToClassHash_FUN_0040d890
                           ((this_ptr->base).base.carry_hands[1].carry_actor,
-                           g_CWeaponActorType_02ddf970.name_hash), pCVar18 != (CCharacter *)0x0)) {
+                           g_CWeaponClassInfo.name_hash), pCVar18 != (CCharacter *)0x0)) {
     fVar4 = (pCVar18->model).bone_origins[0x4f].z;
     (pCVar18->model).bone_origins[0x4f].z = 8.40779e-45;
     (*(((pCVar18->base).vtable._uc)->_uc).isGrabbable)(pCVar18,pCVar22);
@@ -682,10 +682,9 @@ LAB_004b72a1:
   if (((this_ptr->hostage_type == 1) &&
       (pCVar22 = core_actor_cpp_castToClassHash_FUN_0040d890
                            ((this_ptr->base).base.carry_hands[1].carry_actor,
-                            g_CWeaponActorType_02ddf970.name_hash), pCVar22 != (CDemonActor *)0x0))
-     && (iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                            (g_CEventList_PTR_005b7650,"deputeFireShotgun"), iVar13 != 0))
-  {
+                            g_CWeaponClassInfo.name_hash), pCVar22 != (CDemonActor *)0x0)) &&
+     (iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                         (g_CEventListPtr,"deputeFireShotgun"), iVar13 != 0)) {
     this_ptr->gun_raise_progress = 0.01;
     return;
   }

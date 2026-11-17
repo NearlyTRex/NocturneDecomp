@@ -114,7 +114,7 @@
     },
     {
       "addr": "007e2a54",
-      "name": "g_CDemonCamera_PTR_007e2a54",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -126,91 +126,91 @@
     },
     {
       "addr": "01c73658",
-      "name": "g_CVector3i_01c73658",
+      "name": "g_BillboardCameraRight",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c7365c",
-      "name": "g_CVector3i_01c73658.y",
+      "name": "g_BillboardCameraRight.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73660",
-      "name": "g_CVector3i_01c73658.z",
+      "name": "g_BillboardCameraRight.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73664",
-      "name": "g_CVector3i_01c73664",
+      "name": "g_BillboardCameraUp",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c73668",
-      "name": "g_CVector3i_01c73664.y",
+      "name": "g_BillboardCameraUp.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7366c",
-      "name": "g_CVector3i_01c73664.z",
+      "name": "g_BillboardCameraUp.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73674",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count",
+      "name": "g_BillboardPrimitive.base.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73678",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A",
+      "name": "g_BillboardPrimitive.base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7367c",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B",
+      "name": "g_BillboardPrimitive.base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73680",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C",
+      "name": "g_BillboardPrimitive.base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73684",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D",
+      "name": "g_BillboardPrimitive.base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73688",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0]",
+      "name": "g_BillboardPrimitive.vertices[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7368c",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1]",
+      "name": "g_BillboardPrimitive.vertices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73690",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2]",
+      "name": "g_BillboardPrimitive.vertices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c73694",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3]",
+      "name": "g_BillboardPrimitive.vertices[3]",
       "type": "undefined4",
       "value": null
     }
@@ -403,11 +403,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Pointer value `&g_CVector3i_01c73658` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_BillboardCameraRight` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "(int)&g_CVector3i_01c73658",
+      "match": "(int)&g_BillboardCameraRight",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01c73658 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -435,7 +435,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 29,
       "match": "0xf80000",
       "severity": "moderate",
@@ -443,7 +443,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 30,
       "match": "0xf80000",
       "severity": "moderate",
@@ -451,7 +451,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 31,
       "match": "0xf80000",
       "severity": "moderate",
@@ -459,7 +459,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 32,
       "match": "0xf80000",
       "severity": "moderate",
@@ -487,7 +487,7 @@
       "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01c73658 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {

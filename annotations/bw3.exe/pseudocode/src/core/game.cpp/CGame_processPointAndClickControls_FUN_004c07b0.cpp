@@ -289,13 +289,13 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
       (iVar8 = core_prye_cpp_CPrye_isPerformingAction_FUN_00527110(local_4c), iVar8 != 0)))) {
     return;
   }
-  CStack_84.x = (float)g_INT_01c5fadc;
-  pCStack_48 = (CDemonActor *)g_INT_01c5fae0;
+  CStack_84.x = (float)g_MouseX;
+  pCStack_48 = (CDemonActor *)g_MouseY;
   afStack_8c[0] = (float)g_INT_005fba18;
   local_ac[1] = (float)g_INT_005fba1c;
   if (0x1e0 < g_INT_005fba1c) {
-    CStack_84.x = (float)((g_INT_01c5fadc * 0x1e0) / g_INT_005fba1c);
-    pCStack_48 = (CDemonActor *)((g_INT_01c5fae0 * 0x1e0) / g_INT_005fba1c);
+    CStack_84.x = (float)((g_MouseX * 0x1e0) / g_INT_005fba1c);
+    pCStack_48 = (CDemonActor *)((g_MouseY * 0x1e0) / g_INT_005fba1c);
     afStack_8c[0] = 8.96831e-43;
     local_ac[1] = 6.72623e-43;
   }
@@ -318,47 +318,42 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
   CStack_84.z = 0.2;
   memset(player_control,0,0x34);
   piVar21 = &(player_control->action_state).use_item;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_use_item] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_use_item]
-     ) {
+  if (g_PrevKeyboardState[this_ptr->key_use_item] == g_KeyboardState[this_ptr->key_use_item]) {
     *piVar21 = 0;
   }
   else {
-    *piVar21 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_use_item];
+    *piVar21 = (uint)(byte)g_KeyboardState[this_ptr->key_use_item];
   }
   piVar21 = &(player_control->action_state).light;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_light] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_light]) {
+  if (g_PrevKeyboardState[this_ptr->key_light] == g_KeyboardState[this_ptr->key_light]) {
     *piVar21 = 0;
   }
   else {
-    *piVar21 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_light];
+    *piVar21 = (uint)(byte)g_KeyboardState[this_ptr->key_light];
   }
   piVar21 = &(player_control->action_state).draw;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_draw] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_draw]) {
+  if (g_PrevKeyboardState[this_ptr->key_draw] == g_KeyboardState[this_ptr->key_draw]) {
     *piVar21 = 0;
   }
   else {
-    *piVar21 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_draw];
+    *piVar21 = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_next_weapon);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_weapon);
   if (iVar8 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,5,1);
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_prev_weapon);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_weapon);
   if (iVar8 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,5,-1);
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_next_item);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_item);
   if (iVar8 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004dbc40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,1);
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_prev_item);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_item);
   if (iVar8 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004dbc40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,-1);
@@ -366,40 +361,35 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
   fVar9 = (float)(*(((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.vtable._ue)->_ue).
                    randomize)((CEnemy *)g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]);
   afStack_8c[0] = fVar9;
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_1);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_1);
   if ((iVar8 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,0,1),
      fVar9 == 0.0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_2);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_2);
   if ((iVar8 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,1,1),
      CStack_84.z == 0.0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_3);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_3);
   if ((iVar8 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,2,1),
      afStack_74[0] == 0.0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_4);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_4);
   if ((iVar8 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,3,1),
      iStack_6c == 0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar8 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_5);
+  iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_5);
   if ((iVar8 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,4,1),
@@ -411,21 +401,21 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
     g_INT_01d22c9c = 0;
     g_INT_01d1e334 = 0;
     g_INT_01d1e324 = 0;
-    g_BIT_INTEGER32_01c5fae4.dword = 0;
+    g_MouseButtonFlags.dword = 0;
     g_CDemonActor_PTR_01d1e34c = (CDemonActor *)0x0;
     sound_sndmain_cpp_killAllSfx_FUN_00556c60();
     g_FLOAT_01d22c30 = 1e+30;
     g_INT_01d1e358 = g_CDemonSetPtr->selected_camera_index;
   }
   if (g_INT_01d22b48 < 0) {
-    g_BIT_INTEGER32_01c5fae4.dword = 0;
+    g_MouseButtonFlags.dword = 0;
     g_INT_01d1e334 = 0;
     g_CDemonActor_PTR_01d1e34c = (CDemonActor *)0x0;
     g_FLOAT_01d22c30 = 1e+30;
     g_INT_01d1e324 = 0;
   }
   if (this_ptr->goggles_active != 0) {
-    if ((g_BIT_INTEGER32_01c5fae4.dword & 1) != 0) {
+    if ((g_MouseButtonFlags.dword & 1) != 0) {
       if ((float10)0 < (float10)((int)this_ptr - iStack_40 / 2) / (float10)(iStack_5c / 2)) {
         (player_control->action_state).backup = 1;
       }
@@ -433,16 +423,16 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
         (player_control->action_state).walk = 1;
       }
       if (this_ptr->always_run == 0) {
-        bVar25 = g_CHAR_ARRAY_01c6cef0[this_ptr->key_run];
+        bVar25 = g_KeyboardState[this_ptr->key_run];
       }
       else {
-        bVar25 = g_CHAR_ARRAY_01c6cef0[this_ptr->key_run] == '\0';
+        bVar25 = g_KeyboardState[this_ptr->key_run] == '\0';
       }
       (player_control->action_state).run = (uint)bVar25;
     }
     fVar9 = (float)(iStack_38 - iStack_40 / 2) / (float)(iStack_40 / 2);
     player_control->turn_speed = fVar9;
-    _Var4 = g_BIT_INTEGER32_01c5fae4;
+    _Var4 = g_MouseButtonFlags;
     player_control->turn_speed =
          fVar9 * player_control->turn_speed * player_control->turn_speed * 0.25f;
     if ((_Var4.dword & 2) == 0) {
@@ -539,8 +529,8 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
           (pCVar19 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar16,g_CDoorClassInfo.name_hash)
           , pCVar19[2].orient.vec.x == 0.0)) &&
          (iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                            (g_CEventList_PTR_005fba60,(char *)((int)&pCVar19[2].orient + 8)),
-         iVar8 == 0)) break;
+                            (g_CEventListPtr,(char *)((int)&pCVar19[2].orient + 8)), iVar8 == 0))
+      break;
       pCVar19 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar16,g_CBoxActorClassInfo.name_hash);
       if (pCVar19 != (CDemonActor *)0x0) {
         pCVar15 = core_actor_cpp_castToClassHash_FUN_0040c840
@@ -699,7 +689,7 @@ LAB_004c23a6:
   }
   pCStack_24 = (CDemonActor *)0x0;
   if ((g_INT_01d1e324 == 0) &&
-     ((g_BIT_INTEGER32_01c5fae4.dword == 1 || ((g_BIT_INTEGER32_01c5fae4.dword & 2) != 0)))) {
+     ((g_MouseButtonFlags.dword == 1 || ((g_MouseButtonFlags.dword & 2) != 0)))) {
     core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
     core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
               (&g_CDemonCameraInstance,iStack_38,(int)this_ptr,&CStack_4e0);
@@ -782,8 +772,8 @@ LAB_004c23a6:
           (pCVar16 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar19,g_CDoorClassInfo.name_hash)
           , pCVar16[2].orient.vec.x == 0.0)) &&
          (iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                            (g_CEventList_PTR_005fba60,(char *)((int)&pCVar16[2].orient + 8)),
-         iVar8 == 0)) break;
+                            (g_CEventListPtr,(char *)((int)&pCVar16[2].orient + 8)), iVar8 == 0))
+      break;
       pCVar16 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar19,g_CBoxActorClassInfo.name_hash);
       if (pCVar16 != (CDemonActor *)0x0) {
         pCVar16 = core_actor_cpp_castToClassHash_FUN_0040c840
@@ -879,7 +869,7 @@ LAB_004c23a6:
 LAB_004c122b:
     g_CDemonActor_PTR_01d1e350 = pCStack_24;
   }
-  if ((pCStack_64 == (CDemonActor *)0x0) && ((g_BIT_INTEGER32_01c5fae4.dword & 2) != 0)) {
+  if ((pCStack_64 == (CDemonActor *)0x0) && ((g_MouseButtonFlags.dword & 2) != 0)) {
     (player_control->action_state).fire = 1;
   }
   if ((((unaff_retaddr != 0) &&
@@ -891,7 +881,7 @@ LAB_004c122b:
        ))) && (g_CDemonActor_PTR_01d1e34c = (CDemonActor *)0x0, g_INT_01d22b48 == 5)) {
     g_INT_01d22b48 = 0;
   }
-  if ((pCStack_64 == (CDemonActor *)0x0) || ((g_BIT_INTEGER32_01c5fae4.dword & 2) == 0)) {
+  if ((pCStack_64 == (CDemonActor *)0x0) || ((g_MouseButtonFlags.dword & 2) == 0)) {
     if (pCStack_64 == (CDemonActor *)0x0) {
       g_CDemonActor_PTR_01d1e34c = pCStack_64;
     }
@@ -1096,16 +1086,16 @@ joined_r0x004c309a:
     (player_control->action_state).fire = 1;
   }
 LAB_004c15df:
-  if (((((g_BIT_INTEGER32_01c5fae4.dword & 2) != 0) && (unaff_retaddr != 0)) &&
+  if (((((g_MouseButtonFlags.dword & 2) != 0) && (unaff_retaddr != 0)) &&
       (*(int *)(unaff_retaddr + 0x20c24) != 0)) &&
      (*(int *)(*(int *)(unaff_retaddr + 0x20c24) + 0x2e0) == 7)) {
     (player_control->action_state).fire = 1;
   }
-  if ((g_BIT_INTEGER32_01c5fae4.dword & 1) == 0) {
+  if ((g_MouseButtonFlags.dword & 1) == 0) {
     g_INT_01d1e358 = g_CDemonSetPtr->selected_camera_index;
   }
-  if ((g_BIT_INTEGER32_01c5fae4.dword == 1) &&
-     (g_CDemonSetPtr->selected_camera_index == g_INT_01d1e358)) {
+  if ((g_MouseButtonFlags.dword == 1) && (g_CDemonSetPtr->selected_camera_index == g_INT_01d1e358))
+  {
     g_FLOAT_01d22c30 = 1e+30;
     core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
               (&g_CDemonCameraInstance,iStack_38,(int)this_ptr,&CStack_690);
@@ -1168,7 +1158,7 @@ LAB_004c15df:
           afStack_548[0] = fVar2 * 0.0;
           afStack_548[1] = afStack_548[1] * fVar2;
         }
-        if ((pCStack_64 != (CDemonActor *)0x0) && ((g_BIT_INTEGER32_01c5fae4.dword & 2) != 0)) {
+        if ((pCStack_64 != (CDemonActor *)0x0) && ((g_MouseButtonFlags.dword & 2) != 0)) {
           if (g_INT_01d1e334 != 1) {
             g_INT_01d1e334 = 0;
           }
@@ -1258,7 +1248,7 @@ LAB_004c15df:
                   (g_CDemonSetPtr,(CDemonActor *)g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]);
         core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
                   (g_CDemonSetPtr,&CStack_354,(CVector3f *)(auStack_3b8 + 4));
-        if ((pCStack_64 != (CDemonActor *)0x0) && ((g_BIT_INTEGER32_01c5fae4.dword & 2) != 0)) {
+        if ((pCStack_64 != (CDemonActor *)0x0) && ((g_MouseButtonFlags.dword & 2) != 0)) {
           if (g_INT_01d1e334 != 1) {
             g_INT_01d1e334 = 0;
           }
@@ -1266,7 +1256,7 @@ LAB_004c3ec2:
           g_FLOAT_01d22c30 = 1e+30;
           goto LAB_004c3ecc;
         }
-        if (g_BIT_INTEGER32_01c5fae4.dword != 1) goto LAB_004c3ecc;
+        if (g_MouseButtonFlags.dword != 1) goto LAB_004c3ecc;
         if (&g_CDemonSetPtr->collision_impact_position != &g_CVector3f_01d1e328) {
           g_CVector3f_01d1e328.x = (g_CDemonSetPtr->collision_impact_position).x;
           g_CVector3f_01d1e328.z = (g_CDemonSetPtr->collision_impact_position).z;
@@ -1277,10 +1267,10 @@ LAB_004c3ec2:
       }
 LAB_004c3ed9:
       if (this_ptr->always_run == 0) {
-        bVar26 = g_CHAR_ARRAY_01c6cef0[this_ptr->key_run];
+        bVar26 = g_KeyboardState[this_ptr->key_run];
       }
       else {
-        bVar26 = g_CHAR_ARRAY_01c6cef0[this_ptr->key_run] == '\0';
+        bVar26 = g_KeyboardState[this_ptr->key_run] == '\0';
       }
       (player_control->action_state).run = (uint)bVar26;
       if ((player_control->action_state).run == 0) {
@@ -1291,7 +1281,7 @@ LAB_004c3ed9:
       }
     }
     else {
-      if (((g_BIT_INTEGER32_01c5fae4.dword & 2) != 0) &&
+      if (((g_MouseButtonFlags.dword & 2) != 0) &&
          (g_CDemonActor_PTR_01d1e34c == (CDemonActor *)0x0)) {
         g_INT_01d1e320 = 1;
         if (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->action_pending == 0) {
@@ -1331,7 +1321,7 @@ LAB_004c3ed9:
               if (pCStack_34 == (CDemonActor *)0x0) {
                 if (this_ptr_02 == (CDemonActor *)0x0) {
                   if (pCStack_48 == (CDemonActor *)0x0) {
-                    if ((g_BIT_INTEGER32_01c5fae4.dword == 1) &&
+                    if ((g_MouseButtonFlags.dword == 1) &&
                        (&pCStack_24->location != (CLocation *)&g_CVector3f_01d1e328)) {
                       g_CVector3f_01d1e328.x = (pCStack_24->location).position.x;
                       g_CVector3f_01d1e328.z = (pCStack_24->location).position.z;
@@ -1760,7 +1750,7 @@ LAB_004c3ed9:
           }
         }
       }
-      if ((pCStack_64 == (CDemonActor *)0x0) || ((g_BIT_INTEGER32_01c5fae4.dword & 2) == 0)) {
+      if ((pCStack_64 == (CDemonActor *)0x0) || ((g_MouseButtonFlags.dword & 2) == 0)) {
         g_FLOAT_01d1e344 = 0.0;
         g_INT_01d1e334 = 1;
         if (g_CDemonActor_PTR_01d1e34c != (CDemonActor *)0x0) goto LAB_004c3ec2;
@@ -2045,7 +2035,7 @@ LAB_004c1e34:
       g_CDemonActor_PTR_01d1e34c = (CDemonActor *)0x0;
     }
   }
-  g_INT_01d1e324 = g_BIT_INTEGER32_01c5fae4.dword;
+  g_INT_01d1e324 = g_MouseButtonFlags.dword;
   pCVar13 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
   pCVar18 = &(pCVar13->base).base.location;
   if (pCVar18 != (CLocation *)&g_FLOAT_01d1e338) {

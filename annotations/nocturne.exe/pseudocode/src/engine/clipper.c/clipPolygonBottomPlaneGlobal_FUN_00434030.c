@@ -20,22 +20,22 @@ void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_00434030(void)
   
   bVar6 = 0;
   local_14 = 0;
-  if (0 < g_INT_00767b48) {
-    v1 = g_SRenderVertex_ARRAY_00768d4c;
+  if (0 < g_IntermediateVertexCount) {
+    v1 = g_ClipperIntermediateBuffer;
     do {
       uVar2 = local_14 + 1;
-      if (uVar2 == g_INT_00767b48) {
-        uVar2 = uVar2 ^ g_INT_00767b48;
+      if (uVar2 == g_IntermediateVertexCount) {
+        uVar2 = uVar2 ^ g_IntermediateVertexCount;
       }
       bVar1 = (v1->projected_vertex).transformed_y <= -(v1->projected_vertex).transformed_z;
-      if (g_SRenderVertex_ARRAY_00768d4c[uVar2].projected_vertex.transformed_y <=
-          -g_SRenderVertex_ARRAY_00768d4c[uVar2].projected_vertex.transformed_z) {
+      if (g_ClipperIntermediateBuffer[uVar2].projected_vertex.transformed_y <=
+          -g_ClipperIntermediateBuffer[uVar2].projected_vertex.transformed_z) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
         pSVar4 = v1;
-        pSVar5 = g_SRenderVertex_ARRAY_00766c74 + g_INT_00766c70;
+        pSVar5 = g_ClippedVertexBuffer + g_ClippedVertexCount;
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
           (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
@@ -47,17 +47,17 @@ void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_00434030(void)
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
           pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
         }
-        g_INT_00766c70 = g_INT_00766c70 + 1;
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
         break;
       case 1:
         engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433b30
-                  (g_SRenderVertex_ARRAY_00768d4c + uVar2,v1,
-                   g_SRenderVertex_ARRAY_00766c74 + g_INT_00766c70);
-        g_INT_00766c70 = g_INT_00766c70 + 1;
+                  (g_ClipperIntermediateBuffer + uVar2,v1,
+                   g_ClippedVertexBuffer + g_ClippedVertexCount);
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
         break;
       case 2:
         pSVar4 = v1;
-        pSVar5 = g_SRenderVertex_ARRAY_00766c74 + g_INT_00766c70;
+        pSVar5 = g_ClippedVertexBuffer + g_ClippedVertexCount;
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
           (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
@@ -69,15 +69,15 @@ void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_00434030(void)
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
           pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
         }
-        g_INT_00766c70 = g_INT_00766c70 + 1;
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
         engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433b30
-                  (v1,g_SRenderVertex_ARRAY_00768d4c + uVar2,
-                   g_SRenderVertex_ARRAY_00766c74 + g_INT_00766c70);
-        g_INT_00766c70 = g_INT_00766c70 + 1;
+                  (v1,g_ClipperIntermediateBuffer + uVar2,
+                   g_ClippedVertexBuffer + g_ClippedVertexCount);
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
       }
       local_14 = local_14 + 1;
       v1 = v1 + 1;
-    } while (local_14 < g_INT_00767b48);
+    } while (local_14 < g_IntermediateVertexCount);
   }
   return;
 }

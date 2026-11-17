@@ -127,7 +127,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0057fc20(CTurret *this_ptr)
         if (pCStack_20 == (CCrate *)0x0) {
           if (this_ptr_02 == (CFlameCan *)0x0) {
             core_fire_cpp_CFireEffect_createBulletImpact_FUN_0049cd50
-                      (g_CFireEffect_PTR_00614d30,&g_CDemonSetPtr->collision_impact_position,
+                      (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                        &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                        g_CDemonSetPtr->collision_actor);
             break;
@@ -208,7 +208,7 @@ LAB_00580072:
        afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
   CStack_6c.y = CStack_6c.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
-            (g_CFireEffect_PTR_00614d30,&CStack_6c,rotation_matrix);
+            (g_CFireEffectPtr,&CStack_6c,rotation_matrix);
   this_ptr->fire_sound_frames = 2;
   (this_ptr->base).fire_cooldown_timer = this_ptr->fire_delay_time;
   return 1;

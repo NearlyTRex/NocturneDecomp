@@ -18,8 +18,8 @@ void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004cee70(CGore *this_ptr,CVe
   if (999 < iVar1) {
     g_INT_01d4aec4 = 0;
   }
-  if (g_INT_01d4aec8 < 1000) {
-    g_INT_01d4aec8 = g_INT_01d4aec8 + 1;
+  if (g_FootstepCount < 1000) {
+    g_FootstepCount = g_FootstepCount + 1;
   }
   core_gore_cpp_CFootstep_init_FUN_004ce170
             (this_ptr_00,position,orientation,(uint)(surface_type == 0xb),alpha,blood_type);

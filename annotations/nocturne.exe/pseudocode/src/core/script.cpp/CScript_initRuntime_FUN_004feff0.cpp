@@ -32,12 +32,12 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_004feff0(CScript *this_ptr)
   pCVar2->allow_damage_flag = 1;
   pCVar2->allow_enemy_attack_flag = 1;
   pCVar2->letterbox_mode = 0;
-  g_FLOAT_01e56c20 = 0.0;
+  g_ScriptTimeScale = 0.0;
   this_ptr->message_duration = -1.0;
   this_ptr->saved_cmd_index = -1;
   pcVar6 = g_CDemonSetPtr->geometry_filename;
   this_ptr->call_stack_count = 0;
-  g_INT_01e56c28 = 0;
+  g_ScriptLoopWarningShown = 0;
   this_ptr->focus_actor_locked = 0;
   splitpath(pcVar6,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
   pcVar4 = ".wav";

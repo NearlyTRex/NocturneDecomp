@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 492,
-    "complexity_score": 335,
+    "complexity_score": 333,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 190,
+    "pseudocode_lines": 188,
     "suspect_count": 12,
     "suspect_types": [
       "phantom_float_to_int",
@@ -16,7 +16,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 682
+    "total_lines": 680
   },
   "cross_references": [],
   "function": {
@@ -145,7 +145,7 @@
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -169,13 +169,13 @@
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c78",
-      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "name": "g_CGlassClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -259,7 +259,7 @@
     },
     {
       "addr": "02dd10bc",
-      "name": "g_CTriggerActorType_02dd1084.name_hash",
+      "name": "g_CTriggerClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -379,7 +379,7 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 108,
+      "line": 106,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
@@ -387,7 +387,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 133,
+      "line": 131,
       "match": "&stack0xffffff14",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff14);",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 134,
+      "line": 132,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_dc._0_4_ =",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 135,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_dc._4_4_ = 0.4;",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 146,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_dc._8_4_ = fStack_44;",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 147,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_dc._12_4_ = fStack_40;",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 150,
+      "line": 148,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_dc._16_4_ = aCStack_3c[0].x;",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 153,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_dc._24_4_ = pCVar2->x;",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 160,
+      "line": 158,
       "match": "1.45735e-43",
       "severity": "mild",
       "text": "fStack_b0 = 1.45735e-43;",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 165,
+      "line": 163,
       "match": "6.230251e-39",
       "severity": "mild",
       "text": "hit_points = 6.230251e-39;",
@@ -459,7 +459,7 @@
     },
     {
       "description": "`(int)CStack_20.y` numerically converts float field `CStack_20.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 172,
+      "line": 170,
       "match": "(int)CStack_20.y",
       "severity": "moderate",
       "text": "CStack_20.y = (float)((int)CStack_20.y + 1);",
@@ -467,7 +467,7 @@
     },
     {
       "description": "`(int)CStack_20.y` numerically converts float field `CStack_20.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 173,
+      "line": 171,
       "match": "(int)CStack_20.y",
       "severity": "moderate",
       "text": "} while ((int)CStack_20.y < 4);",

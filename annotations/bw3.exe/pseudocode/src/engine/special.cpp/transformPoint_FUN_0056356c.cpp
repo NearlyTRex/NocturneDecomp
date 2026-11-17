@@ -18,10 +18,10 @@ void __cdecl engine_special_cpp_transformPoint_FUN_0056356c(SProjectedVertex *ou
   int iVar7;
   int iVar8;
   
-  if (g_INT_01c6e2a0 != 0) {
-    iVar2 = input->x - g_INT_01c6e2d8;
-    iVar7 = input->y - g_INT_01c6e2dc;
-    iVar8 = input->z - g_INT_01c6e2e0;
+  if (g_MMXSupported != 0) {
+    iVar2 = input->x - g_CameraOriginX;
+    iVar7 = input->y - g_CameraOriginY;
+    iVar8 = input->z - g_CameraOriginZ;
     lVar1 = (longlong)iVar7 * (longlong)g_INT_01c6e308 + (longlong)iVar2 * (longlong)g_INT_01c6e2fc
             + (longlong)iVar8 * (longlong)g_INT_01c6e314;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
@@ -63,9 +63,9 @@ void __cdecl engine_special_cpp_transformPoint_FUN_0056356c(SProjectedVertex *ou
     output->screen_x = uVar6;
     return;
   }
-  g_INT_00604d68 = input->x - g_INT_01c6e2d8;
-  g_INT_00604d6c = input->y - g_INT_01c6e2dc;
-  g_INT_00604d70 = input->z - g_INT_01c6e2e0;
+  g_INT_00604d68 = input->x - g_CameraOriginX;
+  g_INT_00604d6c = input->y - g_CameraOriginY;
+  g_INT_00604d70 = input->z - g_CameraOriginZ;
   lVar1 = (longlong)g_INT_00604d6c * (longlong)g_INT_01c6e308 +
           (longlong)g_INT_00604d68 * (longlong)g_INT_01c6e2fc +
           (longlong)g_INT_00604d70 * (longlong)g_INT_01c6e314;

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3f538
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -28,7 +28,7 @@ section .text
     PUSH 0x6a                           ; 004929ee
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 004929f0
     PUSH EAX                            ; 004929f6
-    MOV dword ptr [0x01c3f538],EDX      ; 004929f7 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 004929f7 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 004929fd
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00492a02

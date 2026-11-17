@@ -12,7 +12,7 @@
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e938
 ;
 ; Referenced Globals:
-;   int g_INT_0061b4ac = 0x7f
+;   int g_InputKeyMask = 0x7f
 ;
 ; *****************************************************************************
 
@@ -23,10 +23,10 @@ section .text
     JZ 0x004fd2c3                       ; 004fd2b5
         ;   XREF to: 004fd2c3 (CONDITIONAL_JUMP)  ; LAB_004fd2c3
     MOV EDX,0x1ff                       ; 004fd2b7
-    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2bc | g_INT_0061b4ac
+    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2bc | g_InputKeyMask
     RET                                 ; 004fd2c2
     MOV EDX,0x7f                        ; 004fd2c3
         ;   Label: LAB_004fd2c3
-    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2c8 | g_INT_0061b4ac
+    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2c8 | g_InputKeyMask
     RET                                 ; 004fd2ce
 

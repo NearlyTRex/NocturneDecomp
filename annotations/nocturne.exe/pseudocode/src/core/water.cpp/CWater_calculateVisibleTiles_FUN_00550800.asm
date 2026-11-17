@@ -196,7 +196,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x9c]      ; 00550973
     XOR ESI,ESI                         ; 0055097a
     MOV EBP,EAX                         ; 0055097c
-    MOV dword ptr [0x02dd1234],ESI      ; 0055097e | g_INT_02dd1234
+    MOV dword ptr [0x02dd1234],ESI      ; 0055097e | g_VisibleWaterTileCount
     NEG EBP                             ; 00550984
     MOV dword ptr [ESP + 0x98],EAX      ; 00550986
     CMP EBP,EAX                         ; 0055098d
@@ -363,12 +363,12 @@ section .text
     CMP EBP,EDX                         ; 00550bb7
     JL 0x00550995                       ; 00550bb9
         ;   XREF to: 00550995 (CONDITIONAL_JUMP)  ; LAB_00550995
-    FILD dword ptr [0x02dd1234]         ; 00550bbf | g_INT_02dd1234
+    FILD dword ptr [0x02dd1234]         ; 00550bbf | g_VisibleWaterTileCount
         ;   Label: LAB_00550bbf
     FMUL float ptr [EDI + 0x8]          ; 00550bc5
     FMUL float ptr [EDI + 0x8]          ; 00550bc8
     SUB ESP,0x8                         ; 00550bcb
-    MOV ECX,dword ptr [0x02dd1234]      ; 00550bce | g_INT_02dd1234
+    MOV ECX,dword ptr [0x02dd1234]      ; 00550bce | g_VisibleWaterTileCount
     FST float ptr [EDI + 0xc]           ; 00550bd4
     FSTP double ptr [ESP]               ; 00550bd7
     PUSH ECX                            ; 00550bda
@@ -412,7 +412,7 @@ section .text
     TEST EAX,EAX                        ; 00550c56
     JZ 0x00550ca4                       ; 00550c58
         ;   XREF to: 00550ca4 (CONDITIONAL_JUMP)  ; LAB_00550ca4
-    CMP dword ptr [0x02dd1234],0x1000   ; 00550c5a | g_INT_02dd1234
+    CMP dword ptr [0x02dd1234],0x1000   ; 00550c5a | g_VisibleWaterTileCount
     JL 0x00550c88                       ; 00550c64
         ;   XREF to: 00550c88 (CONDITIONAL_JUMP)  ; LAB_00550c88
     MOV EAX,0x59753f                    ; 00550c66 | = "..\\core\\water.cpp"
@@ -423,12 +423,12 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00550c80
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00550c85
-    MOV EAX,[0x02dd1234]                ; 00550c88 | g_INT_02dd1234
+    MOV EAX,[0x02dd1234]                ; 00550c88 | g_VisibleWaterTileCount
         ;   Label: LAB_00550c88
     LEA ECX,[EAX + 0x1]                 ; 00550c8d
-    MOV dword ptr [EAX*0x4 + 0x2dd1238],EBP ; 00550c90 | g_INT_ARRAY_02dd1238
-    MOV dword ptr [EAX*0x4 + 0x2dd5238],ESI ; 00550c97 | g_INT_ARRAY_02dd5238
-    MOV dword ptr [0x02dd1234],ECX      ; 00550c9e | g_INT_02dd1234
+    MOV dword ptr [EAX*0x4 + 0x2dd1238],EBP ; 00550c90 | g_VisibleWaterTilesX
+    MOV dword ptr [EAX*0x4 + 0x2dd5238],ESI ; 00550c97 | g_VisibleWaterTilesY
+    MOV dword ptr [0x02dd1234],ECX      ; 00550c9e | g_VisibleWaterTileCount
     MOV dword ptr [0x005ae708],EBX      ; 00550ca4 | INT_005ae708
         ;   Label: LAB_00550ca4
     JMP 0x00550b9f                      ; 00550caa

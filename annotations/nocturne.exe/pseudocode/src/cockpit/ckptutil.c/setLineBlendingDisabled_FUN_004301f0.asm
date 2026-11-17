@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   disabled
 ;
 ; Referenced Globals:
-;   int g_INT_00766c6c
+;   int g_LineBlendingDisabled
 ;
 ; *****************************************************************************
 
@@ -15,6 +15,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004301f0
         ;   Label: cockpit_ckptutil.c_setLineBlendingDisabled_FUN_004301f0
-    MOV [0x00766c6c],EAX                ; 004301f4 | g_INT_00766c6c
+    MOV [0x00766c6c],EAX                ; 004301f4 | g_LineBlendingDisabled
     RET                                 ; 004301f9
 

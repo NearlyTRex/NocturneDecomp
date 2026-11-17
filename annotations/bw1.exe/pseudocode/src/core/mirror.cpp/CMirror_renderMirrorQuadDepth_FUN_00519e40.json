@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 120,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 73,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 197
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -49,7 +49,7 @@
   "globals": [
     {
       "addr": "00603ce0",
-      "name": "g_FLOAT_00603ce0",
+      "name": "g_MirrorProjectionScale",
       "type": "float",
       "value": "256"
     },
@@ -324,7 +324,7 @@
   "suspects": [
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).inv_z +",
@@ -332,7 +332,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 40,
+      "line": 48,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
@@ -340,7 +340,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 43,
+      "line": 51,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
@@ -348,7 +348,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 46,
+      "line": 54,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
@@ -356,7 +356,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 52,
+      "line": 60,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "*(uint *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).inv_z",

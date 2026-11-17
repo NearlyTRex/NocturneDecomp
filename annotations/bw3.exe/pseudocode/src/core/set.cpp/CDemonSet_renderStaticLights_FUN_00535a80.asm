@@ -34,7 +34,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CConsole g_CConsoleInstance
-;   CDemonLight* g_CDemonLight_PTR_01549b10
+;   CDemonLight* g_CurrentShadowLight
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CGameInstance.shadow_flag
 ;   undefined4 g_CGameInstance.profile_mode
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 00535ac1 (CONDITIONAL_JUMP)  ; LAB_00535ac1
     XOR EBX,EBX                         ; 00535afb
         ;   Label: LAB_00535afb
-    MOV EDI,dword ptr [0x0203a598]      ; 00535afd | g_INT_0203a598
+    MOV EDI,dword ptr [0x0203a598]      ; 00535afd | g_SpotLightCount
     MOV dword ptr [ESP + 0x1c],EBX      ; 00535b03
     TEST EDI,EDI                        ; 00535b07
     JLE 0x00535b49                      ; 00535b09
@@ -121,7 +121,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00535b2b
         ;   Label: LAB_00535b2b
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00535b2f
-    MOV EBX,dword ptr [0x0203a598]      ; 00535b33 | g_INT_0203a598
+    MOV EBX,dword ptr [0x0203a598]      ; 00535b33 | g_SpotLightCount
     ADD EDX,0x4                         ; 00535b39
     INC ECX                             ; 00535b3c
     MOV dword ptr [ESP + 0x14],EDX      ; 00535b3d
@@ -273,7 +273,7 @@ section .text
     XOR EBP,EBP                         ; 00535cb2
     MOV EAX,dword ptr [ESP + 0x20]      ; 00535cb4
     MOV EBX,dword ptr [ESI + 0x15f6fc]  ; 00535cb8
-    MOV [0x01549b10],EAX                ; 00535cbe | g_CDemonLight_PTR_01549b10
+    MOV [0x01549b10],EAX                ; 00535cbe | g_CurrentShadowLight
     TEST EBX,EBX                        ; 00535cc3
     JLE 0x00535d05                      ; 00535cc5
         ;   XREF to: 00535d05 (CONDITIONAL_JUMP)  ; LAB_00535d05
@@ -316,7 +316,7 @@ section .text
     PUSH EDI                            ; 00535d25
     MOV EBP,dword ptr [ESP + 0x24]      ; 00535d26
     PUSH EBP                            ; 00535d2a
-    MOV dword ptr [0x01549b10],EDI      ; 00535d2b | g_CDemonLight_PTR_01549b10
+    MOV dword ptr [0x01549b10],EDI      ; 00535d2b | g_CurrentShadowLight
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_0045c7e0 ; 00535d31
         ;   XREF to: 0045c7e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_0045c7e0(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 00535d36

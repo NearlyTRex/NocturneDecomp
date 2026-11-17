@@ -51,7 +51,7 @@ section .text
     LEA ECX,[ESP + 0x8]                 ; 0057a5c9
     MOV EDX,0x6c                        ; 0057a5cd
     PUSH ECX                            ; 0057a5d2
-    MOV EAX,[0x02d0bce8]                ; 0057a5d3 | g_IDirectDrawSurface_PTR_02d0bce8
+    MOV EAX,[0x02d0bce8]                ; 0057a5d3 | g_SoftwareRenderSurface
     MOV dword ptr [ESP + 0xc],EDX       ; 0057a5d8
     PUSH 0x0                            ; 0057a5dc
     MOV EDX,dword ptr [EAX]             ; 0057a5de
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 0057a670 (CONDITIONAL_JUMP)  ; LAB_0057a670
     PUSH 0x0                            ; 0057a5ec
         ;   Label: LAB_0057a5ec
-    MOV EAX,[0x02d0bce8]                ; 0057a5ee | g_IDirectDrawSurface_PTR_02d0bce8
+    MOV EAX,[0x02d0bce8]                ; 0057a5ee | g_SoftwareRenderSurface
     PUSH EAX                            ; 0057a5f3
     MOV ECX,dword ptr [EAX]             ; 0057a5f4
     CALL dword ptr [ECX + 0x80]         ; 0057a5f6

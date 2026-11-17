@@ -13,11 +13,11 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005d5a2f = 8388608
-;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_00610c20
+;   SMRGLTextureBasic[6] g_EtherealBoltTextures
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CGame* g_CGamePtr = 01ccf390
-;   int g_INT_007c6178
-;   int g_INT_007c617c
+;   int g_EtherealUVScroll
+;   int g_EtherealBoltFrame
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   undefined4 g_CDemonRenderer_01bc120c.skip_uv_extraction
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -69,11 +69,11 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004300a5 | g_CGamePtr
     FLD float ptr [EAX + 0x294]         ; 004300aa | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d5a2f]         ; 004300b0 | g_FLOAT_005d5a2f
-    FILD dword ptr [0x007c6178]         ; 004300b6 | g_INT_007c6178
+    FILD dword ptr [0x007c6178]         ; 004300b6 | g_EtherealUVScroll
     FADDP                               ; 004300bc
     CALL crt_math.c_round_FUN_005c03a0  ; 004300be
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
-    FISTP dword ptr [0x007c6178]        ; 004300c3 | g_INT_007c6178
+    FISTP dword ptr [0x007c6178]        ; 004300c3 | g_EtherealUVScroll
     PUSH EDI                            ; 004300c9
         ;   Label: LAB_004300c9
     CALL crt_stdlib.c_rand_FUN_005c084c ; 004300ca
@@ -83,12 +83,12 @@ section .text
     SAR EDX,0x1f                        ; 004300d6
     IDIV ECX                            ; 004300d9
     MOV EAX,[0x00612560]                ; 004300db | g_CDemonRenderer_PTR_00612560
-    MOV dword ptr [0x007c617c],EDX      ; 004300e0 | g_INT_007c617c
+    MOV dword ptr [0x007c617c],EDX      ; 004300e0 | g_EtherealBoltFrame
     MOV dword ptr [EAX + 0x20],0x1      ; 004300e6 | g_CDemonRenderer_01bc120c.skip_uv_extraction
     LEA EAX,[EDX*0x4 + 0x0]             ; 004300ed
     SUB EAX,EDX                         ; 004300f4
     SHL EAX,0x3                         ; 004300f6
-    ADD EAX,0x610c20                    ; 004300f9 | g_SMRGLTextureBasic_ARRAY_00610c20
+    ADD EAX,0x610c20                    ; 004300f9 | g_EtherealBoltTextures
     PUSH EAX                            ; 004300fe
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 ; 004300ff
         ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00597a20(SMRGLTextureBasic * texture)
@@ -126,7 +126,7 @@ section .text
         ;   XREF to: 00569920 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_00569920(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 00430154
     PUSH 0x0                            ; 00430157
-    MOV EDI,dword ptr [0x007c6178]      ; 00430159 | g_INT_007c6178
+    MOV EDI,dword ptr [0x007c6178]      ; 00430159 | g_EtherealUVScroll
     PUSH EDI                            ; 0043015f
     PUSH EBX                            ; 00430160
     CALL core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0056afe0 ; 00430161

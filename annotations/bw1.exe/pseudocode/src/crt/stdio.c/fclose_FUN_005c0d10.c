@@ -13,7 +13,7 @@ int __cdecl _fclose(_FILE *file_handle)
   int iVar2;
   
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626610)();
-  pFVar1 = g_FileListNode_PTR_02c9f050;
+  pFVar1 = g_AllocatedListHead;
   while( true ) {
     if (pFVar1 == (FileListNode *)0x0) {
       (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();

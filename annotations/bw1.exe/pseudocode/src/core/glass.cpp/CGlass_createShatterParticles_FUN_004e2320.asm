@@ -230,7 +230,7 @@
 ;   float g_FLOAT_005e3fac = 0.5
 ;   float g_FLOAT_005e3fb0 = 0.25
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd00
@@ -335,7 +335,7 @@ section .text
     PUSH EAX                            ; 004e2434
     LEA EAX,[ESP + 0x10]                ; 004e2435
     PUSH EAX                            ; 004e2439
-    MOV EAX,[0x0061c010]                ; 004e243a | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 004e243a | g_CFireEffectPtr
     PUSH EAX                            ; 004e243f
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50 ; 004e2440
         ;   XREF to: 004b5d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
@@ -385,7 +385,7 @@ section .text
     PUSH EAX                            ; 004e24cd
     LEA EAX,[ESP + 0x10]                ; 004e24ce
     PUSH EAX                            ; 004e24d2
-    MOV ECX,dword ptr [0x0061c010]      ; 004e24d3 | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 004e24d3 | g_CFireEffectPtr
     PUSH ECX                            ; 004e24d9
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50 ; 004e24da
         ;   XREF to: 004b5d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)

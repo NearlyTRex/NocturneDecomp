@@ -11,15 +11,15 @@
 ;
 ; Referenced Globals:
 ;   int INT_005acaac = 0x1
-;   uint g_UINT_006b0264
-;   uint g_UINT_006b0268
+;   uint g_ProcessedVertexOffset
+;   uint g_ProcessedVertexBackupOffset
 ;   int g_TexturesDisabled
-;   int g_INT_006b0288
+;   int g_RenderResult
 ;   int[508] g_INT_ARRAY_006b415c
 ;   undefined4 g_INT_ARRAY_006b415c[1]
-;   int g_INT_01c039dc
-;   int g_INT_01c039e0
-;   int g_INT_01c039e4
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_00563db8
@@ -43,14 +43,14 @@ section .text
     TEST EAX,EAX                        ; 00405b4a
     JNZ 0x00405b53                      ; 00405b4c
         ;   XREF to: 00405b53 (CONDITIONAL_JUMP)  ; LAB_00405b53
-    MOV EAX,0x6b0288                    ; 00405b4e | g_INT_006b0288
-    MOV EDX,dword ptr [EAX]             ; 00405b53 | g_INT_006b0288
+    MOV EAX,0x6b0288                    ; 00405b4e | g_RenderResult
+    MOV EDX,dword ptr [EAX]             ; 00405b53 | g_RenderResult
         ;   Label: LAB_00405b53
     MOV EBX,EAX                         ; 00405b55
     TEST EDX,EDX                        ; 00405b57
     JZ 0x00405b84                       ; 00405b59
         ;   XREF to: 00405b84 (CONDITIONAL_JUMP)  ; LAB_00405b84
-    MOV EAX,dword ptr [EBX]             ; 00405b5b | g_INT_006b0288
+    MOV EAX,dword ptr [EBX]             ; 00405b5b | g_RenderResult
         ;   Label: LAB_00405b5b
     CMP EAX,0xd                         ; 00405b5d
     JNC 0x00405be6                      ; 00405b60
@@ -59,14 +59,14 @@ section .text
     JNZ 0x00405b6d                      ; 00405b69
         ;   XREF to: 00405b6d (CONDITIONAL_JUMP)  ; LAB_00405b6d
     MOV EDI,EBX                         ; 00405b6b
-    PUSH EBX                            ; 00405b6d | g_INT_006b0288
+    PUSH EBX                            ; 00405b6d | g_RenderResult
         ;   Label: LAB_00405b6d
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 00405b6e
         ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 00405b73
     SHL EAX,0x2                         ; 00405b76
     ADD EBX,EAX                         ; 00405b79
-    MOV ECX,dword ptr [EBX]             ; 00405b7b | g_INT_006b0288
+    MOV ECX,dword ptr [EBX]             ; 00405b7b | g_RenderResult
     ADD ESP,0x4                         ; 00405b7d
     TEST ECX,ECX                        ; 00405b80
     JNZ 0x00405b5b                      ; 00405b82
@@ -79,7 +79,7 @@ section .text
     TEST ESI,ESI                        ; 00405b93
     JZ 0x00405bf2                       ; 00405b95
         ;   XREF to: 00405bf2 (CONDITIONAL_JUMP)  ; LAB_00405bf2
-    MOV EDI,dword ptr [0x006b0268]      ; 00405b97 | g_UINT_006b0268
+    MOV EDI,dword ptr [0x006b0268]      ; 00405b97 | g_ProcessedVertexBackupOffset
     XOR ESI,ESI                         ; 00405b9d
     TEST EDI,EDI                        ; 00405b9f
     JLE 0x00405bd0                      ; 00405ba1
@@ -92,10 +92,10 @@ section .text
     MOV EDI,dword ptr [EAX + 0x10]      ; 00405bb0
     PUSH EDX                            ; 00405bb3
     INC ESI                             ; 00405bb4
-    MOV dword ptr [0x006b0264],EDI      ; 00405bb5 | g_UINT_006b0264
+    MOV dword ptr [0x006b0264],EDI      ; 00405bb5 | g_ProcessedVertexOffset
     CALL engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90 ; 00405bbb
         ;   XREF to: 00405c90 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive * primitive)
-    MOV ECX,dword ptr [0x006b0268]      ; 00405bc0 | g_UINT_006b0268
+    MOV ECX,dword ptr [0x006b0268]      ; 00405bc0 | g_ProcessedVertexBackupOffset
     ADD ESP,0x4                         ; 00405bc6
     CMP ESI,ECX                         ; 00405bc9
     JL 0x00405ba5                       ; 00405bcb
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_00405bd5
     JMP 0x00405b6d                      ; 00405bd7
         ;   XREF to: 00405b6d (UNCONDITIONAL_JUMP)  ; LAB_00405b6d
-    PUSH EDI                            ; 00405bd9 | g_INT_006b0288
+    PUSH EDI                            ; 00405bd9 | g_RenderResult
         ;   Label: LAB_00405bd9
     PUSH ESI                            ; 00405bda
     PUSH EBX                            ; 00405bdb
@@ -131,14 +131,14 @@ section .text
     PUSH 0x405a60                       ; 00405bf2
         ;   Label: LAB_00405bf2
     PUSH 0x4                            ; 00405bf7
-    MOV EBP,dword ptr [0x006b0268]      ; 00405bf9 | g_UINT_006b0268
+    MOV EBP,dword ptr [0x006b0268]      ; 00405bf9 | g_ProcessedVertexBackupOffset
     PUSH EBP                            ; 00405bff
     PUSH 0x6b415c                       ; 00405c00 | g_INT_ARRAY_006b415c
     XOR EDI,EDI                         ; 00405c05
     CALL crt_stdlib.c__qsort_FUN_00563db8 ; 00405c07
         ;   XREF to: 00563db8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_00563db8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     XOR EBP,EBP                         ; 00405c0c
-    MOV EAX,[0x006b0268]                ; 00405c0e | g_UINT_006b0268
+    MOV EAX,[0x006b0268]                ; 00405c0e | g_ProcessedVertexBackupOffset
     ADD ESP,0x10                        ; 00405c13
     TEST EAX,EAX                        ; 00405c16
     JLE 0x00405bd0                      ; 00405c18
@@ -161,20 +161,20 @@ section .text
     MOV EBX,dword ptr [ESI + 0x6b415c]  ; 00405c3d | g_INT_ARRAY_006b415c | g_INT_ARRAY_006b415c[1]
         ;   Label: LAB_00405c3d
     MOV EAX,dword ptr [EBX + 0x10]      ; 00405c43
-    MOV [0x006b0264],EAX                ; 00405c46 | g_UINT_006b0264
+    MOV [0x006b0264],EAX                ; 00405c46 | g_ProcessedVertexOffset
     MOV EAX,dword ptr [EBX + 0x14]      ; 00405c4b
-    MOV [0x01c039dc],EAX                ; 00405c4e | g_INT_01c039dc
+    MOV [0x01c039dc],EAX                ; 00405c4e | g_LightDirectionX
     MOV EAX,dword ptr [EBX + 0x18]      ; 00405c53
-    MOV [0x01c039e0],EAX                ; 00405c56 | g_INT_01c039e0
+    MOV [0x01c039e0],EAX                ; 00405c56 | g_LightDirectionY
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00405c5b
-    MOV [0x01c039e4],EAX                ; 00405c5e | g_INT_01c039e4
+    MOV [0x01c039e4],EAX                ; 00405c5e | g_LightDirectionZ
     MOV EAX,dword ptr [EBX]             ; 00405c63
     PUSH EAX                            ; 00405c65
     ADD ESI,0x4                         ; 00405c66
     INC EDI                             ; 00405c69
     CALL engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340 ; 00405c6a
         ;   XREF to: 00405340 (UNCONDITIONAL_CALL)  ; void * engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340(SMRGLHeaderPrimitive * prim)
-    MOV EDX,dword ptr [0x006b0268]      ; 00405c6f | g_UINT_006b0268
+    MOV EDX,dword ptr [0x006b0268]      ; 00405c6f | g_ProcessedVertexBackupOffset
     ADD ESP,0x4                         ; 00405c75
     CMP EDI,EDX                         ; 00405c78
     JGE 0x00405bd0                      ; 00405c7a

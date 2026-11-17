@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   int INT_005acab0 = 0x1
 ;   int g_BitsPerPixel = 0x8
-;   int g_INT_006b0260
+;   int g_CurrentPolygonColor
 ;   int g_TexturesDisabled
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004c6cc0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 0040611e
     PUSH EAX                            ; 00406121
-    MOV ECX,dword ptr [0x006b0260]      ; 00406122 | g_INT_006b0260
+    MOV ECX,dword ptr [0x006b0260]      ; 00406122 | g_CurrentPolygonColor
     PUSH ECX                            ; 00406128
     MOV [0x01c00c74],EAX                ; 00406129 | g_CurrentLightingValue
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 0040612e

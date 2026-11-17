@@ -27,8 +27,8 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005b5ef1 = 0.999990000000000
-;   float g_FLOAT_005b5ef9 = 0.00003051851
-;   float g_FLOAT_005b5efd = 5.960465E-8
+;   float g_RandIntScale = 0.00003051851
+;   float g_GenRandIntScale = 5.960465E-8
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()
     MOV dword ptr [ESP + 0x10],EAX      ; 0040ceda
     FILD dword ptr [ESP + 0x10]         ; 0040cede
-    FMUL float ptr [0x005b5ef9]         ; 0040cee2 | g_FLOAT_005b5ef9
+    FMUL float ptr [0x005b5ef9]         ; 0040cee2 | g_RandIntScale
     FSTP float ptr [ESP + 0x8]          ; 0040cee8
         ;   Label: LAB_0040cee8
     FLD float ptr [ESP + 0x8]           ; 0040ceec
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_0040cf1a
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cf1f
     FILD dword ptr [ESP + 0x10]         ; 0040cf23
-    FMUL float ptr [0x005b5efd]         ; 0040cf27 | g_FLOAT_005b5efd
+    FMUL float ptr [0x005b5efd]         ; 0040cf27 | g_GenRandIntScale
     JMP 0x0040cee8                      ; 0040cf2d
         ;   XREF to: 0040cee8 (UNCONDITIONAL_JUMP)  ; LAB_0040cee8
     MOV EAX,EBX                         ; 0040cf2f

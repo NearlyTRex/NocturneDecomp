@@ -16,22 +16,22 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004bd7d0(CGame *this_ptr)
   double dVar5;
   
   if ((g_INT_01d22c84 != 0) && (g_CFieldNotesPtr->is_displayed == 0)) {
-    if ((g_INT_01d22c84 < 4) && ((g_INT_01d22c84 != 1 && (0x3f7fffff < (int)g_FLOAT_01d22c88)))) {
+    if ((g_INT_01d22c84 < 4) && ((g_INT_01d22c84 != 1 && (0x3f7fffff < (int)g_IrisFadeRadius)))) {
       core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0();
       iVar3 = g_INT_005fba1c;
       if (g_INT_005fba20 == 0x20) {
         iVar4 = 0;
-        dVar5 = round((double)(g_FLOAT_01d22c88 * g_FLOAT_01d22c88));
+        dVar5 = round((double)(g_IrisFadeRadius * g_IrisFadeRadius));
         if (0 < iVar3) {
           iVar3 = 0;
           do {
-            puVar2 = *(uint **)((int)g_ARRAY_PTR_01c5faec + iVar3);
+            puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);
             iVar1 = 0;
             if (0 < g_INT_005fba18) {
               do {
                 if ((int)ROUND(dVar5) <
-                    (g_INT_01d22c90 - iVar4) * (g_INT_01d22c90 - iVar4) +
-                    (g_INT_01d22c8c - iVar1) * (g_INT_01d22c8c - iVar1)) {
+                    (g_IrisFadeCenterY - iVar4) * (g_IrisFadeCenterY - iVar4) +
+                    (g_IrisFadeCenterX - iVar1) * (g_IrisFadeCenterX - iVar1)) {
                   *puVar2 = 0;
                 }
                 iVar1 = iVar1 + 1;

@@ -22,9 +22,9 @@
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   char[600] g_CHAR_ARRAY_01cb7528
-;   int g_INT_01cb7780
-;   int g_INT_01cb7784
+;   char[600] g_PrevKeyboardState
+;   int g_InputResetFlag
+;   int g_StoredCameraValue
 ;   CNetGame g_CNetGameInstance
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;   int g_INT_026677e0
@@ -52,12 +52,12 @@ section .text
     ADD ESP,0xc                         ; 004b8269
     PUSH 0x258                          ; 004b826c
     PUSH 0x0                            ; 004b8271
-    PUSH 0x1cb7528                      ; 004b8273 | g_CHAR_ARRAY_01cb7528
+    PUSH 0x1cb7528                      ; 004b8273 | g_PrevKeyboardState
     CALL crt_memory.c_memset_FUN_005b77c0 ; 004b8278
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     MOV EAX,[0x0061b5a8]                ; 004b827d | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b8282 | g_CDemonSetInstance.selected_camera_index
-    MOV [0x01cb7784],EAX                ; 004b8288 | g_INT_01cb7784
+    MOV [0x01cb7784],EAX                ; 004b8288 | g_StoredCameraValue
     MOV EAX,[0x00616044]                ; 004b828d | g_CFieldNotesPtr
     MOV ECX,dword ptr [EAX + 0x40]      ; 004b8292 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0xc                         ; 004b8295
@@ -82,7 +82,7 @@ section .text
     SUB EAX,EDX                         ; 004b82bf
     SAR EAX,0x1                         ; 004b82c1
     PUSH EAX                            ; 004b82c3
-    MOV dword ptr [0x01cb7780],ECX      ; 004b82c4 | g_INT_01cb7780
+    MOV dword ptr [0x01cb7780],ECX      ; 004b82c4 | g_InputResetFlag
     CALL wincore_winrun.cpp_setCursorPosition_FUN_0058ed10 ; 004b82ca
         ;   XREF to: 0058ed10 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_0058ed10(int x, int y)
     ADD ESP,0x8                         ; 004b82cf

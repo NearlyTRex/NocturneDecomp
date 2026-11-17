@@ -82,49 +82,49 @@
     },
     {
       "addr": "02dc921c",
-      "name": "g_IDirectSoundBuffer_PTR_02dc921c",
+      "name": "g_DirectSoundSecondaryBuffer",
       "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02dc9228",
-      "name": "g_INT_02dc9228",
+      "name": "g_StreamBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc922c",
-      "name": "g_INT_02dc922c",
+      "name": "g_StreamSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9230",
-      "name": "g_INT_02dc9230",
+      "name": "g_StreamChannelCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9234",
-      "name": "g_INT_02dc9234",
+      "name": "g_StreamSamplesPerBlock",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9238",
-      "name": "g_INT_02dc9238",
+      "name": "g_StreamBlockSizeBytes",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc923c",
-      "name": "g_INT_02dc923c",
+      "name": "g_StreamBlockCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9240",
-      "name": "g_INT_02dc9240",
+      "name": "g_StreamCurrentBlock",
       "type": "int",
       "value": null
     }
@@ -251,7 +251,7 @@
       "line": 18,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_02dc9228 + (g_INT_02dc9228 >> 0x1f) * -8) -",
+      "text": "((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -259,7 +259,7 @@
       "line": 19,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_02dc9228 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02dc9234 * g_INT_02dc9230;",
+      "text": "(uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamSamplesPerBlock *",
       "type": "signed_shift_global_idiom"
     }
   ],

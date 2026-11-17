@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 380,
+    "complexity_score": 378,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 78,
     "suspect_count": 27,
     "suspect_types": [
       "bitcast_double_pair",
@@ -17,7 +17,7 @@
       "suspicious_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 229
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -119,13 +119,13 @@
     },
     {
       "addr": "02cf3280",
-      "name": "g_CSoundDevice_PTR_02cf3280",
+      "name": "g_CSoundDevicePtr",
       "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02cf3288",
-      "name": "g_INT_02cf3288",
+      "name": "g_HasHardware3DSound",
       "type": "int",
       "value": null
     },
@@ -226,7 +226,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 46,
+      "line": 45,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)",
@@ -234,7 +234,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 49,
+      "line": 48,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)",
@@ -242,7 +242,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 52,
+      "line": 51,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)",
@@ -250,7 +250,7 @@
     },
     {
       "description": "Cast-and-add on &g_DOUBLE_02cf2828 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02cf2830 (at 0x02cf2830, +8 bytes).",
-      "line": 48,
+      "line": 47,
       "match": "g_DOUBLE_02cf2828",
       "severity": "moderate",
       "text": "*(uint *)(&g_DOUBLE_02cf2828 + g_INT_02cf28b8))),",
@@ -258,7 +258,7 @@
     },
     {
       "description": "Cast-and-add on &g_DOUBLE_02cf2838 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02cf2840 (at 0x02cf2840, +8 bytes).",
-      "line": 51,
+      "line": 50,
       "match": "g_DOUBLE_02cf2838",
       "severity": "moderate",
       "text": "*(uint *)(&g_DOUBLE_02cf2838 + g_INT_02cf28b8))),",
@@ -266,7 +266,7 @@
     },
     {
       "description": "Cast-and-add on &g_DOUBLE_02cf2848 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02cf2850 (at 0x02cf2850, +8 bytes).",
-      "line": 54,
+      "line": 53,
       "match": "g_DOUBLE_02cf2848",
       "severity": "moderate",
       "text": "*(uint *)(&g_DOUBLE_02cf2848 + g_INT_02cf28b8))));",
@@ -274,7 +274,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 35,
       "match": "(int)&this_ptr->changed_flags",
       "severity": "moderate",
       "text": "pbVar1 = (byte *)((int)&this_ptr->changed_flags + 3);",
@@ -282,7 +282,7 @@
     },
     {
       "description": "Pointer value `&g_DOUBLE_02cf2828` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "(int)&g_DOUBLE_02cf2828",
       "severity": "moderate",
       "text": "((int)&g_DOUBLE_02cf2828 + g_INT_02cf28b8 * 8 + 4),",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Pointer value `&g_DOUBLE_02cf2838` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "(int)&g_DOUBLE_02cf2838",
       "severity": "moderate",
       "text": "((int)&g_DOUBLE_02cf2838 + g_INT_02cf28b8 * 8 + 4),",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Pointer value `&g_DOUBLE_02cf2848` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "(int)&g_DOUBLE_02cf2848",
       "severity": "moderate",
       "text": "((int)&g_DOUBLE_02cf2848 + g_INT_02cf28b8 * 8 + 4),",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3d_02cf2858.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "(int)&g_CVector3d_02cf2858.x",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3d_02cf2858.x + g_INT_02cf28b8 * 4),",
@@ -314,7 +314,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3d_02cf2858.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)&g_CVector3d_02cf2858.y",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3d_02cf2858.y + g_INT_02cf28b8 * 4),",
@@ -322,7 +322,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3d_02cf2858.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
+      "line": 72,
       "match": "(int)&g_CVector3d_02cf2858.z",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3d_02cf2858.z + g_INT_02cf28b8 * 4));",
@@ -330,7 +330,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
+      "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pbVar1 = (byte *)((int)&this_ptr->changed_flags + 3);",
@@ -338,7 +338,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&g_DOUBLE_02cf2828 + g_INT_02cf28b8 * 8 + 4),",
@@ -346,7 +346,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&g_DOUBLE_02cf2838 + g_INT_02cf28b8 * 8 + 4),",
@@ -354,7 +354,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&g_DOUBLE_02cf2848 + g_INT_02cf28b8 * 8 + 4),",
@@ -362,7 +362,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3d_02cf2858.x + g_INT_02cf28b8 * 4),",
@@ -370,7 +370,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3d_02cf2858.y + g_INT_02cf28b8 * 4),",
@@ -378,7 +378,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 73,
+      "line": 72,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3d_02cf2858.z + g_INT_02cf28b8 * 4));",

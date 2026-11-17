@@ -15,15 +15,15 @@ void __cdecl engine_3d_c_computeSortedPolygonKey_FUN_004059c0(SMRGLHeaderExtende
   int iVar4;
   int iVar5;
   
-  uVar3 = g_UINT_006b0268;
+  uVar3 = g_ProcessedVertexBackupOffset;
   iVar4 = 1;
-  iVar5 = g_SRenderVertex_ARRAY_005c5014[primitive[2].base.type + g_UINT_006b0264].projected_vertex.
-          transformed_z;
+  iVar5 = g_SRenderVertex_ARRAY_005c5014[primitive[2].base.type + g_ProcessedVertexOffset].
+          projected_vertex.transformed_z;
   pSVar2 = primitive;
   if (1 < (primitive->base).count) {
     do {
-      iVar1 = g_SRenderVertex_ARRAY_005c5014[pSVar2[3].base.type + g_UINT_006b0264].projected_vertex
-              .transformed_z;
+      iVar1 = g_SRenderVertex_ARRAY_005c5014[pSVar2[3].base.type + g_ProcessedVertexOffset].
+              projected_vertex.transformed_z;
       if (iVar1 < iVar5) {
         iVar5 = iVar1;
       }
@@ -31,11 +31,11 @@ void __cdecl engine_3d_c_computeSortedPolygonKey_FUN_004059c0(SMRGLHeaderExtende
       pSVar2 = pSVar2 + 1;
     } while (iVar4 < (primitive->base).count);
   }
-  g_INT_ARRAY_006b029c[g_UINT_006b0268 * 8 + 0x13] = iVar5;
-  iVar5 = g_INT_01c039dc;
-  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x14] = g_UINT_006b0264;
-  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x15] = iVar5;
-  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x16] = g_INT_01c039e0;
-  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x17] = g_INT_01c039e4;
+  g_ProcessedVertexIndices[g_ProcessedVertexBackupOffset * 8 + 0x13] = iVar5;
+  iVar5 = g_LightDirectionX;
+  g_ProcessedVertexIndices[uVar3 * 8 + 0x14] = g_ProcessedVertexOffset;
+  g_ProcessedVertexIndices[uVar3 * 8 + 0x15] = iVar5;
+  g_ProcessedVertexIndices[uVar3 * 8 + 0x16] = g_LightDirectionY;
+  g_ProcessedVertexIndices[uVar3 * 8 + 0x17] = g_LightDirectionZ;
   return;
 }

@@ -13,8 +13,8 @@
 ;   float g_FLOAT_005f914e = -16
 ;   float g_FLOAT_005f9152 = 3.141593
 ;   float g_FLOAT_005f9156 = 1.700000
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   int g_INT_01d06ab4
 ;
 ; Called Functions:
@@ -242,7 +242,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2d8]     ; 005a90d8
     ADD EAX,0x2e0                       ; 005a90de
     PUSH EAX                            ; 005a90e3
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005a90e4 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005a90e4 | g_CEventListPtr
     PUSH EDX                            ; 005a90ea
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005a90eb
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -448,7 +448,7 @@ section .text
     PUSH 0x44bb8000                     ; 005a933f
     PUSH 0x41000000                     ; 005a9344
     PUSH ESI                            ; 005a9349
-    MOV EAX,[0x0061c010]                ; 005a934a | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 005a934a | g_CFireEffectPtr
     PUSH EAX                            ; 005a934f
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60 ; 005a9350
         ;   XREF to: 004b6c60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
@@ -500,7 +500,7 @@ section .text
     LEA EAX,[EBX + 0x344]               ; 005a93f5
         ;   Label: LAB_005a93f5
     PUSH EAX                            ; 005a93fb
-    MOV ESI,dword ptr [0x0061b4d0]      ; 005a93fc | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 005a93fc | g_CEventListPtr
     PUSH ESI                            ; 005a9402
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005a9403
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

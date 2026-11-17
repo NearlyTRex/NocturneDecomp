@@ -31,11 +31,11 @@ void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(CTexture
     pSVar2 = pSVar2 + 1;
   } while (pSVar2 != (STextureCacheEntry *)&this_ptr->current_texture_count);
   memset(this_ptr->entries,0,0x18000);
-  puVar1 = g_PTR_0264bcbc;
+  puVar1 = g_APIDLL_setTransform;
   this_ptr->wrap_indicator = 0;
   if (puVar1 == (byte *)0x0) {
     return;
   }
-  (*(code *)g_PTR_0264bcbc)();
+  (*(code *)g_APIDLL_setTransform)();
   return;
 }

@@ -28,10 +28,10 @@
 ;   TerminatedCString s_saveScreenRaw32_Unable_t_005e19a5
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
-;   int g_INT_01c35818
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
+;   void*[1200] g_ScreenBufferArray
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -142,24 +142,24 @@ section .text
         ;   Label: LAB_0051493e
     MOV EBP,dword ptr [0x006141b8]      ; 00514942 | g_INT_006141b8
     XOR ESI,ESI                         ; 00514948
-    MOV EBX,dword ptr [EBX + 0x1c2a38c] ; 0051494a | g_ARRAY_PTR_01c2a38c
+    MOV EBX,dword ptr [EBX + 0x1c2a38c] ; 0051494a | g_ScreenBufferArray
     TEST EBP,EBP                        ; 00514950
     JLE 0x005149cd                      ; 00514952
         ;   XREF to: 005149cd (CONDITIONAL_JUMP)  ; LAB_005149cd
-    MOV CL,byte ptr [0x01c35814]        ; 00514954 | g_BIT_INTEGER32_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 00514954 | g_RedBitPosition
         ;   Label: LAB_00514954
     MOV EAX,dword ptr [EBX]             ; 0051495a
-    MOV EDX,dword ptr [0x01c35818]      ; 0051495c | g_INT_01c35818
+    MOV EDX,dword ptr [0x01c35818]      ; 0051495c | g_RedScaleFactor
     SHR EAX,CL                          ; 00514962
     IMUL EDX,EAX                        ; 00514964
     MOV EBP,dword ptr [EBX]             ; 00514967
-    MOV CL,byte ptr [0x01c35820]        ; 00514969 | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 00514969 | g_GreenBitPosition
     SHR EBP,CL                          ; 0051496f
-    IMUL EBP,dword ptr [0x01c35824]     ; 00514971 | g_INT_01c35824
+    IMUL EBP,dword ptr [0x01c35824]     ; 00514971 | g_GreenScaleFactor
     MOV EAX,dword ptr [EBX]             ; 00514978
-    MOV CL,byte ptr [0x01c3582c]        ; 0051497a | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0051497a | g_BlueBitPosition
     SHR EAX,CL                          ; 00514980
-    IMUL EAX,dword ptr [0x01c35830]     ; 00514982 | g_INT_01c35830
+    IMUL EAX,dword ptr [0x01c35830]     ; 00514982 | g_BlueScaleFactor
     PUSH EDI                            ; 00514989
     AND EDX,0xff                        ; 0051498a
     AND EAX,0xff                        ; 00514990

@@ -6,13 +6,13 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   void* g_PTR_0264bcb4
+;   void* g_APIDLL_setLightVector
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x0264bcb4],0x0      ; 004f3480 | g_PTR_0264bcb4
+    CMP dword ptr [0x0264bcb4],0x0      ; 004f3480 | g_APIDLL_setLightVector
         ;   Label: engine_mini3d.cpp_getTextureHandle_FUN_004f3480
     JZ 0x004f3492                       ; 004f3487
         ;   XREF to: 004f3492 (CONDITIONAL_JUMP)  ; LAB_004f3492
@@ -22,7 +22,7 @@ section .text
     XOR EAX,EAX                         ; 004f3492
         ;   Label: LAB_004f3492
     RET                                 ; 004f3494
-    CALL dword ptr [0x0264bcb4]         ; 004f3495 | g_PTR_0264bcb4
+    CALL dword ptr [0x0264bcb4]         ; 004f3495 | g_APIDLL_setLightVector
         ;   Label: LAB_004f3495
     RET                                 ; 004f349b
 

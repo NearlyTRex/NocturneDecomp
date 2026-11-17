@@ -34,7 +34,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(CPlatform *this_ptr
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
   core_actor_cpp_archiveFloat_FUN_0040c880
             (&this_ptr->travel_time_to_start,"travelTimeToStart");
-  if (INT_005be19c < 7) {
+  if (g_CPlatformClassVersion < 7) {
     this_ptr->travel_time_to_end = this_ptr->travel_time_to_start;
   }
   else {
@@ -42,31 +42,31 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(CPlatform *this_ptr
               (&this_ptr->travel_time_to_end,"travelTimeToEnd");
   }
   core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ground_type,"groundType");
-  if (1 < INT_005be19c) {
+  if (1 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->one_shot,"oneShot");
   }
-  if (2 < INT_005be19c) {
+  if (2 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->block_virtual_director_flag,"blockVirtualDirectorFlag");
   }
-  if (3 < INT_005be19c) {
+  if (3 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->render_in_background_when_not_moving_flag,
                "renderInBackgroundWhenNotMovingFlag");
   }
-  if (4 < INT_005be19c) {
+  if (4 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0
               (this_ptr->camera_while_moving,"cameraWhileMoving");
   }
-  if (5 < INT_005be19c) {
+  if (5 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->plot_as_box_in_shadow,"plotAsBoxInShadow");
   }
-  if (7 < INT_005be19c) {
+  if (7 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->goal_param,"goalParam");
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&this_ptr->current_movement_rate,"currentMovementRate");
-    if (g_INT_00763e88 == 1) {
+    if (g_ActorReadingMode == 1) {
       core_actor_cpp_archiveInteger_FUN_0040c900(&local_1c,"attachCount");
       if (10 < local_1c) {
         g_CurrentFilename = "..\\core\\platfrm.cpp";
@@ -106,13 +106,13 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(CPlatform *this_ptr
       } while (iVar2 < 10);
     }
   }
-  if (8 < INT_005be19c) {
+  if (8 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->push_flag,"pushFlag");
   }
-  if (9 < INT_005be19c) {
+  if (9 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->recompute_fog,"recomputeFog");
   }
-  if (10 < INT_005be19c) {
+  if (10 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->plot_in_shadow_flag,"plotInShadowFlag");
     return;

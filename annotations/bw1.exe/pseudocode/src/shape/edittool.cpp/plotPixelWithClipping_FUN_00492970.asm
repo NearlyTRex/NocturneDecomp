@@ -14,7 +14,7 @@
 ;   int g_INT_01c3f544
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     CMP EAX,dword ptr [0x01c4f008]      ; 00492997 | g_INT_01c4f008
     JL 0x004929ca                       ; 0049299d
         ;   XREF to: 004929ca (CONDITIONAL_JUMP)  ; LAB_004929ca
-    CMP EAX,dword ptr [0x01c4f010]      ; 0049299f | g_INT_01c4f010
+    CMP EAX,dword ptr [0x01c4f010]      ; 0049299f | g_ClipRight
     JGE 0x004929ca                      ; 004929a5
         ;   XREF to: 004929ca (CONDITIONAL_JUMP)  ; LAB_004929ca
     CMP EDX,dword ptr [0x01c4f00c]      ; 004929a7 | g_INT_01c4f00c

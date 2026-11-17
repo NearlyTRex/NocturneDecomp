@@ -14,8 +14,8 @@ int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_004129f0(CAudi
   
   iVar1 = this_ptr->buttons[button].x;
   iVar2 = this_ptr->buttons[button].y;
-  if ((((iVar1 <= g_INT_01c5fadc) && (g_INT_01c5fadc <= this_ptr->buttons[button].width + iVar1)) &&
-      (iVar2 <= g_INT_01c5fae0)) && (g_INT_01c5fae0 <= this_ptr->buttons[button].height + iVar2)) {
+  if ((((iVar1 <= g_MouseX) && (g_MouseX <= this_ptr->buttons[button].width + iVar1)) &&
+      (iVar2 <= g_MouseY)) && (g_MouseY <= this_ptr->buttons[button].height + iVar2)) {
     return 1;
   }
   return 0;

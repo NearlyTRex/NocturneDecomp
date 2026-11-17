@@ -11,19 +11,19 @@
 // =============================================================================
 
 // CPathQueueNode[5000]
-extern CPathQueueNode g_CPathQueueNode_ARRAY_01e5020c[5000];
+extern CPathQueueNode g_PathfindingQueue[5000];
 
 // char[101][100]
-extern char g_CHAR_ARRAY_ARRAY_01e5ec78[101][100];
+extern char g_PathfindingVisited[101][100];
 
 // int
-extern int g_INT_01e501fc;
-extern int g_INT_01e50200;
-extern int g_INT_01e50204;
-extern int g_INT_01e50208;
-extern int g_INT_01e5ec6c;
-extern int g_INT_01e5ec70;
+extern int g_PathfindingCurrentX;
+extern int g_PathfindingCurrentZ;
+extern int g_PathfindingDestX;
+extern int g_PathfindingDestZ;
+extern int g_PathfindingQueueHead;
+extern int g_PathfindingQueueTail;
 
 // uchar
-extern uchar g_UCHAR_01e5ec77;
+extern uchar g_PathfindingVisitedMinus1;
 

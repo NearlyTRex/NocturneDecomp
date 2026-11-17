@@ -23,23 +23,23 @@ uint FUN_005c9ae4(int param_1)
   uVar8 = 0;
   if (*PTR_s_EDT_00626994 == '\0') goto LAB_005c9dab;
   uVar1 = FUN_005c9a88
-                    (&g_dst_rule_00626844,&g_INT_00626868,*(uint *)(param_1 + 0x14));
+                    (&g_DstStartRule,&g_DstTransitionSecond,*(uint *)(param_1 + 0x14));
   if (uVar1 == 0) {
-    piVar7 = &g_dst_rule_00626844.seconds;
-    pdVar9 = (dst_rule *)&g_INT_00626868;
+    piVar7 = &g_DstStartRule.seconds;
+    pdVar9 = (dst_rule *)&g_DstTransitionSecond;
   }
   else {
-    piVar7 = &g_INT_00626868;
-    pdVar9 = &g_dst_rule_00626844;
+    piVar7 = &g_DstTransitionSecond;
+    pdVar9 = &g_DstStartRule;
   }
   iVar5 = *(int *)(param_1 + 0x10);
   iVar2 = FUN_005c9950(*(int *)(param_1 + 0x14) + 0x76c);
   if (iVar2 == 0) {
-    iVar2 = *(int *)(&g_SHORT_0060852c + iVar5);
-    iVar4 = *(int *)((int)&g_INT_00608528 + iVar5 * 2 + 2);
+    iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
+    iVar4 = *(int *)((int)&g_DefaultStreamBufferSize + iVar5 * 2 + 2);
   }
   else {
-    iVar2 = *(int *)(&g_SHORT_00608546 + iVar5);
+    iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);
     iVar4 = *(int *)(&g_SHORT_00608544 + iVar5);
   }
   iVar2 = (iVar2 >> 0x10) - (iVar4 >> 0x10);

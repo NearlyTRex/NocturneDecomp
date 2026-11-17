@@ -13,7 +13,7 @@
 ;   TerminatedCString s_demn_die_wav_005b7e61
 ;   TerminatedCString s_demn_taunt_wav_005b7e72
 ;   TerminatedCString s_demn_taunt_wav_005b7e86
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -130,7 +130,7 @@ section .text
     RET                                 ; 00428ba0
     PUSH 0x5b7e3f                       ; 00428ba1 | = "ShotInvulnerable"
         ;   Label: LAB_00428ba1
-    MOV ECX,dword ptr [0x005fba60]      ; 00428ba6 | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00428ba6 | g_CEventListPtr
     PUSH ECX                            ; 00428bac
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00428bad
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

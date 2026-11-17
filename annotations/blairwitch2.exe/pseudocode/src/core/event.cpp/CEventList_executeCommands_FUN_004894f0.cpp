@@ -11,7 +11,7 @@ int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004894f0(CEventList *t
 {
   int iVar1;
   
-  g_INT_01c3dd0c = 0;
+  g_EventDryRun = 0;
   iVar1 = core_event_cpp_CEventList_executeCommandString_FUN_00489510(this_ptr,commands);
   return iVar1;
 }

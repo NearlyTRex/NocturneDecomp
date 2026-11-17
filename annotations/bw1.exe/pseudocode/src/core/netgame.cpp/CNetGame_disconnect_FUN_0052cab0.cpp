@@ -25,7 +25,7 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(CNetGame *this_pt
                 (g_CEditorToolsPtr,"Disconnecting from server...");
       iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
       iVar1 = iVar1 / 0x12;
-      iVar2 = iVar1 - g_INT_01d51d9c;
+      iVar2 = iVar1 - g_LastPingTime;
       if (iVar2 < 0) {
         iVar2 = 0;
       }
@@ -34,7 +34,7 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(CNetGame *this_pt
       }
       uVar3 = g_UINT_01d51da0 + iVar2;
       uVar4 = uVar3 - 0x1e0000;
-      g_INT_01d51d9c = iVar1;
+      g_LastPingTime = iVar1;
       g_UINT_01d51da0 = uVar3;
       if (this_ptr->server_player_index < 0) {
 LAB_0052cc24:
@@ -44,7 +44,7 @@ LAB_0052cc24:
         do {
           iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
           iVar1 = iVar1 / 0x12;
-          iVar2 = iVar1 - g_INT_01d51d9c;
+          iVar2 = iVar1 - g_LastPingTime;
           if (iVar2 < 0) {
             iVar2 = 0;
           }
@@ -56,7 +56,7 @@ LAB_0052cc24:
           if (local_24 < 0.0) {
             local_24 = 0.0;
           }
-          g_INT_01d51d9c = iVar1;
+          g_LastPingTime = iVar1;
           if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_004942e0
                       (g_CEditorToolsPtr,"Couldn't contact server to disconnect.");
@@ -74,7 +74,7 @@ LAB_0052cc24:
             }
             if ((float)0.10000000000000001 <= local_30) break;
             iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
-            iVar2 = iVar1 / 0x12 - g_INT_01d51d9c;
+            iVar2 = iVar1 / 0x12 - g_LastPingTime;
             if (iVar2 < 0) {
               iVar2 = 0;
             }
@@ -82,7 +82,7 @@ LAB_0052cc24:
               iVar2 = 0x20000;
             }
             g_UINT_01d51da0 = g_UINT_01d51da0 + iVar2;
-            g_INT_01d51d9c = iVar1 / 0x12;
+            g_LastPingTime = iVar1 / 0x12;
           }
           core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_005306d0
                     (this_ptr,&this_ptr->players[this_ptr->server_player_index].addr,1);
@@ -97,7 +97,7 @@ LAB_0052cc24:
                 (g_CEditorToolsPtr,"Disconnecting...");
       iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
       iVar1 = iVar1 / 0x12;
-      iVar2 = iVar1 - g_INT_01d51d9c;
+      iVar2 = iVar1 - g_LastPingTime;
       if (iVar2 < 0) {
         iVar2 = 0;
       }
@@ -106,7 +106,7 @@ LAB_0052cc24:
       }
       uVar3 = g_UINT_01d51da0 + iVar2;
       uVar4 = uVar3 - 0x1e0000;
-      g_INT_01d51d9c = iVar1;
+      g_LastPingTime = iVar1;
       g_UINT_01d51da0 = uVar3;
       if (this_ptr->player_count < 2) {
 LAB_0052ce47:
@@ -116,7 +116,7 @@ LAB_0052ce47:
         do {
           iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
           iVar1 = iVar1 / 0x12;
-          iVar2 = iVar1 - g_INT_01d51d9c;
+          iVar2 = iVar1 - g_LastPingTime;
           if (iVar2 < 0) {
             iVar2 = 0;
           }
@@ -128,7 +128,7 @@ LAB_0052ce47:
           if (local_2c < 0.0) {
             local_2c = 0.0;
           }
-          g_INT_01d51d9c = iVar1;
+          g_LastPingTime = iVar1;
           if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_004942e0
                       (g_CEditorToolsPtr,"Couldn't connect to all clients to disconnect.");
@@ -146,7 +146,7 @@ LAB_0052ce47:
             }
             if ((float)0.10000000000000001 <= local_28) break;
             iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
-            iVar1 = iVar2 / 0x12 - g_INT_01d51d9c;
+            iVar1 = iVar2 / 0x12 - g_LastPingTime;
             if (iVar1 < 0) {
               iVar1 = 0;
             }
@@ -154,7 +154,7 @@ LAB_0052ce47:
               iVar1 = 0x20000;
             }
             g_UINT_01d51da0 = g_UINT_01d51da0 + iVar1;
-            g_INT_01d51d9c = iVar2 / 0x12;
+            g_LastPingTime = iVar2 / 0x12;
           }
           iVar1 = 0;
           if (0 < this_ptr->player_count) {
@@ -179,11 +179,11 @@ LAB_0052ce47:
   this_ptr->server_player_index = -1;
   this_ptr->mission_name[0] = '\0';
   this_ptr->connection_type = CONNECTION_NONE;
-  g_INT_01d51db4 = 0;
-  g_INT_01d6dfb8 = 0;
-  g_INT_01d51da8 = 0;
+  g_ChatHistoryCount = 0;
+  g_ChatOutCount = 0;
+  g_RemoteSyncStage = 0;
   this_ptr->player_count = 0;
-  g_INT_01d51dac = 0;
+  g_NetNextPlayerId = 0;
   this_ptr->has_pending_sim_frame = 0;
   return;
 }

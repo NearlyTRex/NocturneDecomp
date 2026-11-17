@@ -53,7 +53,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
             iVar4 = local_1c + this_ptr->row_height + -1;
             color = g_INT_01c5bb48;
             if (this_ptr->confirmed_flag != 0) {
-              color = g_INT_01c5bb4c;
+              color = g_ConfirmedSelectionColor;
             }
             local_38 = iVar6;
             local_30 = iVar4;
@@ -84,10 +84,10 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
           local_18 = 0;
           pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_00482440(&this_ptr->base,local_24);
           iVar5 = local_28 + this_ptr->column_padding;
-          local_20 = g_INT_01c5bb40;
+          local_20 = g_EnabledTextColor;
           iVar9 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(this_ptr,local_24);
           if (iVar9 == 0) {
-            local_20 = g_INT_01c5bb44;
+            local_20 = g_DisabledTextColor;
           }
           local_14 = this_ptr->tab_column_widths + local_18 + -4;
           do {
@@ -117,9 +117,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
       }
       iVar9 = g_INT_01c6b5c0;
       if (0 < local_34) {
-        iVar5 = g_INT_01c5bb50;
+        iVar5 = g_PickListSeparatorColor;
         if (g_INT_01c5baec != 0) {
-          iVar5 = (g_INT_01c5bb50 & 0xffU) * 3;
+          iVar5 = (g_PickListSeparatorColor & 0xffU) * 3;
           engine_mini3d_cpp_setColor_FUN_004f3520
                     ((uint)g_UCHAR_ARRAY_01c6af98[iVar5 + 2] |
                      (uint)g_UCHAR_ARRAY_01c6af98[iVar5 + 1] << 8 |

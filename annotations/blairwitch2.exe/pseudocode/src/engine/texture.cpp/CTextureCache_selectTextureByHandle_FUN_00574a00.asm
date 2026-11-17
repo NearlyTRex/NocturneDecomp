@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   void* g_PTR_0264bcb8
+;   void* g_APIDLL_setAmbientLight
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -42,7 +42,7 @@ section .text
     PUSH 0x0                            ; 00574a30
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x60] ; 00574a32
     PUSH EDX                            ; 00574a36
-    CALL dword ptr [0x0264bcb8]         ; 00574a37 | g_PTR_0264bcb8
+    CALL dword ptr [0x0264bcb8]         ; 00574a37 | g_APIDLL_setAmbientLight
     ADD ESP,0x8                         ; 00574a3d
     POP EBP                             ; 00574a40
     POP EBX                             ; 00574a41

@@ -25,7 +25,7 @@
 ;   TerminatedCString s_engine_2d_c_005b518e
 ;   TerminatedCString s_hLine_invalid_bitsPerPix_005b519d
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
+;   void*[1200] g_ScreenBufferArray
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b0
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 00403012 (CONDITIONAL_JUMP)  ; LAB_00403012
     PUSH EAX                            ; 00402f8a
     MOV EBX,dword ptr [0x01c6b5c0]      ; 00402f8b | g_INT_01c6b5c0
-    MOV EAX,dword ptr [ECX + 0x1c5faec] ; 00402f91 | g_ARRAY_PTR_01c5faec
+    MOV EAX,dword ptr [ECX + 0x1c5faec] ; 00402f91 | g_ScreenBufferArray
     PUSH EBX                            ; 00402f97
     ADD EDX,EAX                         ; 00402f98
     PUSH EDX                            ; 00402f9a
@@ -99,7 +99,7 @@ section .text
     RET                                 ; 00402fb3
     MOV EBX,dword ptr [0x01c6b5c0]      ; 00402fb4 | g_INT_01c6b5c0
         ;   Label: LAB_00402fb4
-    MOV ECX,dword ptr [ECX + 0x1c5faec] ; 00402fba | g_ARRAY_PTR_01c5faec
+    MOV ECX,dword ptr [ECX + 0x1c5faec] ; 00402fba | g_ScreenBufferArray
     ADD EDX,EDX                         ; 00402fc0
     MOV BX,word ptr [EBX*0x2 + 0x1c6a070] ; 00402fc2
     ADD EDX,ECX                         ; 00402fca
@@ -120,7 +120,7 @@ section .text
     MOV EBX,dword ptr [0x01c6b5c0]      ; 00402fe0 | g_INT_01c6b5c0
         ;   Label: LAB_00402fe0
     SHL EDX,0x2                         ; 00402fe6
-    MOV ECX,dword ptr [ECX + 0x1c5faec] ; 00402fe9 | g_ARRAY_PTR_01c5faec
+    MOV ECX,dword ptr [ECX + 0x1c5faec] ; 00402fe9 | g_ScreenBufferArray
     MOV EBX,dword ptr [EBX*0x4 + 0x1c6a270] ; 00402fef
     ADD EDX,ECX                         ; 00402ff6
     TEST EAX,EAX                        ; 00402ff8

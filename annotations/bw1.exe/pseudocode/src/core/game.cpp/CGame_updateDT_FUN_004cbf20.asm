@@ -21,11 +21,11 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005e136c = 0.900000000000000
 ;   double g_DOUBLE_005e1374 = 0.100000000000000
-;   float g_FLOAT_005e137c = 65536
-;   double g_DOUBLE_005e1384 = 0.0000152587890625
-;   float g_FLOAT_0061d968 = 30
-;   int g_INT_01c43530
-;   int g_INT_01cd0c3c
+;   float g_MovieRecordingFrameBase = 65536
+;   double g_DeltaTimeToSeconds = 0.0000152587890625
+;   float g_MovieRecordingTargetFPS = 30
+;   int g_GlobalDeltaTimeInt
+;   int g_MovieRecordingActive
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -109,7 +109,7 @@ section .text
     FILD dword ptr [EBX + 0x290]        ; 004cc00e
         ;   Label: LAB_004cc00e
     FMUL float ptr [EBX + 0x208]        ; 004cc014
-    MOV ECX,dword ptr [0x01cd0c3c]      ; 004cc01a | g_INT_01cd0c3c
+    MOV ECX,dword ptr [0x01cd0c3c]      ; 004cc01a | g_MovieRecordingActive
     CALL crt_math.c_round_FUN_005c03a0  ; 004cc020
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBX + 0x290]       ; 004cc025
@@ -119,8 +119,8 @@ section .text
     FILD dword ptr [EBX + 0x290]        ; 004cc02f
         ;   Label: LAB_004cc02f
     MOV EAX,dword ptr [EBX + 0x290]     ; 004cc035
-    FMUL double ptr [0x005e1384]        ; 004cc03b | g_DOUBLE_005e1384
-    MOV [0x01c43530],EAX                ; 004cc041 | g_INT_01c43530
+    FMUL double ptr [0x005e1384]        ; 004cc03b | g_DeltaTimeToSeconds
+    MOV [0x01c43530],EAX                ; 004cc041 | g_GlobalDeltaTimeInt
     FSTP float ptr [EBX + 0x294]        ; 004cc046
     MOV ESP,EBP                         ; 004cc04c
     POP EBP                             ; 004cc04e
@@ -149,9 +149,9 @@ section .text
         ;   Label: LAB_004cc088
     JMP 0x004cbff0                      ; 004cc092
         ;   XREF to: 004cbff0 (UNCONDITIONAL_JUMP)  ; LAB_004cbff0
-    FLD float ptr [0x005e137c]          ; 004cc097 | g_FLOAT_005e137c
+    FLD float ptr [0x005e137c]          ; 004cc097 | g_MovieRecordingFrameBase
         ;   Label: LAB_004cc097
-    FDIV float ptr [0x0061d968]         ; 004cc09d | g_FLOAT_0061d968
+    FDIV float ptr [0x0061d968]         ; 004cc09d | g_MovieRecordingTargetFPS
     FMUL float ptr [EBX + 0x208]        ; 004cc0a3
     CALL crt_math.c_round_FUN_005c03a0  ; 004cc0a9
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)

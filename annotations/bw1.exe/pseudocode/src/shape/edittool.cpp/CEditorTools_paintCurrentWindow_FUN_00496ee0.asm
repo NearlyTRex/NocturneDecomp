@@ -41,15 +41,15 @@
 ;   TerminatedCString s_CEditorTools_paintWindow_005dc18e
 ;   TerminatedCString s_j_005dc1cb
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3eb5c
-;   int g_INT_01c3f538
+;   int g_WindowStackCount
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
 ;   int g_INT_01c3f544
-;   int g_INT_01c3f548
+;   int g_WindowContentColor
 ;   int g_INT_01c3f54c
 ;   int g_INT_01c3f550
-;   int g_INT_01c3f554
-;   int g_INT_01c3f558
+;   int g_TitleBarColor
+;   int g_TitleBarFillColor
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -88,10 +88,10 @@ section .text
     PUSH 0x6a                           ; 00496ef9
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 00496efb
     PUSH EAX                            ; 00496f01
-    MOV dword ptr [0x01c3f538],EDX      ; 00496f02 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 00496f02 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 00496f08
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
-    MOV ESI,dword ptr [0x01c3eb5c]      ; 00496f0d | g_INT_01c3eb5c
+    MOV ESI,dword ptr [0x01c3eb5c]      ; 00496f0d | g_WindowStackCount
     ADD ESP,0x8                         ; 00496f13
     MOV [0x01c3f53c],EAX                ; 00496f16 | g_INT_01c3f53c
     CMP ESI,0x1                         ; 00496f1b
@@ -105,7 +105,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00496f3b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496f40
-    MOV EBX,dword ptr [0x01c3eb5c]      ; 00496f43 | g_INT_01c3eb5c
+    MOV EBX,dword ptr [0x01c3eb5c]      ; 00496f43 | g_WindowStackCount
         ;   Label: LAB_00496f43
     DEC EBX                             ; 00496f49
     MOV EAX,[0x01c4f020]                ; 00496f4a | g_INT_01c4f020
@@ -189,7 +189,7 @@ section .text
     PUSH EDX                            ; 0049702b
     CALL engine_mini3d.cpp_drawRect_FUN_00518290 ; 0049702c
         ;   XREF to: 00518290 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawRect_FUN_00518290(int x1, int y1, int x2, int y2)
-    MOV EAX,[0x01c3f548]                ; 00497031 | g_INT_01c3f548
+    MOV EAX,[0x01c3f548]                ; 00497031 | g_WindowContentColor
     MOV ECX,dword ptr [0x01c3f544]      ; 00497036 | g_INT_01c3f544
     ADD ESP,0x10                        ; 0049703c
     TEST ECX,ECX                        ; 0049703f
@@ -314,7 +314,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0049718b
     LEA EDI,[EAX + -0x1]                ; 0049718d
     INC EDX                             ; 00497190
-    MOV EAX,[0x01c3f558]                ; 00497191 | g_INT_01c3f558
+    MOV EAX,[0x01c3f558]                ; 00497191 | g_TitleBarFillColor
     MOV dword ptr [ESP + 0x18],EDX      ; 00497196
     MOV dword ptr [ESP + 0x20],EDI      ; 0049719a
     CMP dword ptr [0x01c3f544],0x0      ; 0049719e | g_INT_01c3f544
@@ -363,7 +363,7 @@ section .text
         ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_00512320(float alpha)
     ADD ESP,0x4                         ; 00497223
     PUSH -0x1                           ; 00497226
-    MOV EAX,[0x01c3f554]                ; 00497228 | g_INT_01c3f554
+    MOV EAX,[0x01c3f554]                ; 00497228 | g_TitleBarColor
     PUSH EAX                            ; 0049722d
     MOV EAX,[0x01c3f53c]                ; 0049722e | g_INT_01c3f53c
     MOV EDX,EAX                         ; 00497233
@@ -551,7 +551,7 @@ section .text
     PUSH ECX                            ; 00497414
     CALL engine_matrix.c_pushViewport_FUN_005090b0 ; 00497415
         ;   XREF to: 005090b0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_005090b0(int x, int y, int width, int height)
-    MOV ESI,dword ptr [0x01c3f548]      ; 0049741a | g_INT_01c3f548
+    MOV ESI,dword ptr [0x01c3f548]      ; 0049741a | g_WindowContentColor
     ADD ESP,0x10                        ; 00497420
     MOV EAX,dword ptr [EBX + 0xc]       ; 00497423
     MOV EDX,dword ptr [EBX + 0x8]       ; 00497426

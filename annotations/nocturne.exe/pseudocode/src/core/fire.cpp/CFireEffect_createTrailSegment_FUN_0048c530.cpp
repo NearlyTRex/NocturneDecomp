@@ -10,11 +10,11 @@ void __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_0048c530(CFireEffe
 
 {
   core_fire_cpp_CTrail_activate_FUN_004892c0
-            (g_CTrail_ARRAY_01c676cc + g_INT_01c676c8,position,size,alpha,lifetime,texture_ptr);
-  g_INT_01c676c8 = g_INT_01c676c8 + 1;
-  if (g_INT_01c676c8 < 100) {
+            (g_TrailPool + g_TrailAllocIndex,position,size,alpha,lifetime,texture_ptr);
+  g_TrailAllocIndex = g_TrailAllocIndex + 1;
+  if (g_TrailAllocIndex < 100) {
     return;
   }
-  g_INT_01c676c8 = 0;
+  g_TrailAllocIndex = 0;
   return;
 }

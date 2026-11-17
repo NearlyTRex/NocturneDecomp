@@ -12,7 +12,7 @@
 ;   TerminatedCString s_DirectSoundDevice_freeSa_005942b5
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   IDirectSoundBuffer*[25] g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
+;   IDirectSoundBuffer*[25] g_DirectSoundSampleBuffers
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -46,14 +46,14 @@ section .text
     SHL EBX,0x2                         ; 0052ad85
         ;   Label: LAB_0052ad85
     ADD EBX,0x2dc9244                   ; 0052ad88
-    MOV EDI,dword ptr [EBX]             ; 0052ad8e | g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
+    MOV EDI,dword ptr [EBX]             ; 0052ad8e | g_DirectSoundSampleBuffers
     TEST EDI,EDI                        ; 0052ad90
     JNZ 0x0052ada3                      ; 0052ad92
         ;   XREF to: 0052ada3 (CONDITIONAL_JUMP)  ; LAB_0052ada3
     POP EDI                             ; 0052ad94
     POP EBX                             ; 0052ad95
     RET                                 ; 0052ad96
-    CMP dword ptr [EBX*0x4 + 0x2dc9244],0x0 ; 0052ad97 | g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
+    CMP dword ptr [EBX*0x4 + 0x2dc9244],0x0 ; 0052ad97 | g_DirectSoundSampleBuffers
         ;   Label: LAB_0052ad97
     JZ 0x0052ad5f                       ; 0052ad9f
         ;   XREF to: 0052ad5f (CONDITIONAL_JUMP)  ; LAB_0052ad5f
@@ -63,7 +63,7 @@ section .text
         ;   Label: LAB_0052ada3
     MOV EDX,dword ptr [EDI]             ; 0052ada4
     CALL dword ptr [EDX + 0x8]          ; 0052ada6
-    MOV dword ptr [EBX],0x0             ; 0052ada9 | g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
+    MOV dword ptr [EBX],0x0             ; 0052ada9 | g_DirectSoundSampleBuffers
     POP EDI                             ; 0052adaf
     POP EBX                             ; 0052adb0
     RET                                 ; 0052adb1

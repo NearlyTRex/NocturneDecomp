@@ -28,9 +28,9 @@
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+1
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+2
-;   int g_INT_01d1ad68
-;   int g_INT_01d1ad6c
-;   int g_INT_01d1ad70
+;   int g_ShadowColorRed
+;   int g_ShadowColorGreen
+;   int g_ShadowColorBlue
 ;   float g_FLOAT_01d76c40
 ;
 ; Called Functions:
@@ -53,9 +53,9 @@ section .text
     CMP EDX,-0x2                        ; 004b33e3
     JNZ 0x004b343f                      ; 004b33e6
         ;   XREF to: 004b343f (CONDITIONAL_JUMP)  ; LAB_004b343f
-    MOV EAX,[0x01d1ad6c]                ; 004b33e8 | g_INT_01d1ad6c
-    MOV EDX,dword ptr [0x01d1ad70]      ; 004b33ed | g_INT_01d1ad70
-    MOV EBP,dword ptr [0x01d1ad68]      ; 004b33f3 | g_INT_01d1ad68
+    MOV EAX,[0x01d1ad6c]                ; 004b33e8 | g_ShadowColorGreen
+    MOV EDX,dword ptr [0x01d1ad70]      ; 004b33ed | g_ShadowColorBlue
+    MOV EBP,dword ptr [0x01d1ad68]      ; 004b33f3 | g_ShadowColorRed
     SHL EAX,0x8                         ; 004b33f9
     SHL EBP,0x10                        ; 004b33fc
     OR EAX,EDX                          ; 004b33ff

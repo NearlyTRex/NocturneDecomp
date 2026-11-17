@@ -17,18 +17,18 @@ CPickList g_ScriptPickList = {};
 CScript g_CScriptInstance = {};
 
 // char[2048]
-char g_CHAR_ARRAY_01e808a8[2048] = {};
+char g_ScriptLineBuffer[2048] = {};
 char g_CHAR_ARRAY_01e810b0[2048] = {};
 
 // float
-float g_FLOAT_01e818b0 = {};
+float g_ScriptTimeScale = {};
 
 // int
 int g_INT_01e810a8 = {};
-int g_INT_01e818b4 = {};
-int g_INT_01e818b8 = {};
+int g_ScriptInputFlag = {};
+int g_ScriptLoopWarningShown = {};
 int g_INT_01e818bc = {};
 
 // int[12]
-int g_INT_ARRAY_01e820fc[12] = {};
+int g_SentinelIndices[12] = {};
 

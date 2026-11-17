@@ -30,29 +30,27 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70(void)
       iVar3 = iVar6 + 2;
       iVar8 = iVar5 + 2;
       iVar6 = iVar6 + 3;
-      *(ushort *)((int)g_USHORT_ARRAY_01c4dad0 + iVar5) =
-           (ushort)((uint)g_UCHAR_ARRAY_01c4e9f8[iVar3] / (uint)g_INT_01c4e9f0 <<
-                   (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) |
-           (ushort)((uint)*pbVar1 / (uint)g_INT_01c4e9d8 <<
-                   (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
-           (ushort)((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] / (uint)g_INT_01c4e9e4 <<
-                   (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f));
+      *(ushort *)((int)g_ColorTable16 + iVar5) =
+           (ushort)((uint)g_UCHAR_ARRAY_01c4e9f8[iVar3] / (uint)g_BlueScaleFactor <<
+                   (g_BlueBitPosition.bytes[0] & 0x1f)) |
+           (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
+           (ushort)((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] / (uint)g_GreenScaleFactor <<
+                   (g_GreenBitPosition.bytes[0] & 0x1f));
       iVar5 = iVar8;
     } while (iVar8 != 0x200);
-    uVar4 = 0xff >> (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f);
-    g_MMX_INTEGER_00623f20.u32[0] = uVar4 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
-    uVar7 = 0xff >> (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f);
-    g_MMX_INTEGER_00623f28.u32[0] = uVar7 << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
-    uVar9 = 0xff >> (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f);
-    g_MMX_INTEGER_00623f30.u32[0] = uVar9 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
-    g_QWORD_00623f38._0_4_ = (uVar4 << (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f)) << 0x10;
-    g_QWORD_00623f58._0_4_ = (uVar7 << (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f)) << 8;
-    g_QWORD_00623fc0._0_4_ = g_BIT_INTEGER32_01c4e9f4;
-    g_QWORD_00623f80._0_4_ =
-         g_BIT_INTEGER32_01c4e9dc.dword + g_BIT_INTEGER32_01c4e9e8.dword +
-         g_BIT_INTEGER32_01c4e9f4.dword;
-    g_QWORD_00623f78._0_4_ = uVar9 << (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f);
-    g_QWORD_00623fa0._0_4_ = g_BIT_INTEGER32_01c4e9e8.dword + g_BIT_INTEGER32_01c4e9f4.dword;
+    uVar4 = 0xff >> (g_RedDitherShift.bytes[0] & 0x1f);
+    g_RedMask16.u32[0] = uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
+    uVar7 = 0xff >> (g_GreenDitherShift.bytes[0] & 0x1f);
+    g_GreenMask16.u32[0] = uVar7 << (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar9 = 0xff >> (g_BlueDitherShift.bytes[0] & 0x1f);
+    g_BlueMask16.u32[0] = uVar9 << (g_BlueBitPosition.bytes[0] & 0x1f);
+    g_RedMask32._0_4_ = (uVar4 << (g_RedDitherShift.bytes[0] & 0x1f)) << 0x10;
+    g_GreenMask32._0_4_ = (uVar7 << (g_GreenDitherShift.bytes[0] & 0x1f)) << 8;
+    g_BlueBitShift._0_4_ = g_BlueDitherShift;
+    g_TotalDitherShift._0_4_ =
+         g_RedDitherShift.dword + g_GreenDitherShift.dword + g_BlueDitherShift.dword;
+    g_BlueMask32._0_4_ = uVar9 << (g_BlueDitherShift.bytes[0] & 0x1f);
+    g_GreenBlueDitherShift._0_4_ = g_GreenDitherShift.dword + g_BlueDitherShift.dword;
   }
   if (g_INT_0061b4a0 == 0x20) {
     iVar6 = 0;
@@ -63,10 +61,10 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70(void)
       pbVar1 = g_UCHAR_ARRAY_01c4e9f8 + iVar6;
       iVar8 = iVar5 + 4;
       iVar6 = iVar6 + 3;
-      *(uint *)((int)g_UINT_ARRAY_01c4dcd0 + iVar5) =
-           (uint)g_UCHAR_ARRAY_01c4e9f8[iVar3] << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
-           (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f) |
-           (uint)*pbVar1 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
+      *(uint *)((int)g_ColorTable32 + iVar5) =
+           (uint)g_UCHAR_ARRAY_01c4e9f8[iVar3] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)*pbVar1 << (g_RedBitPosition.bytes[0] & 0x1f);
       iVar5 = iVar8;
     } while (iVar8 != 0x400);
   }

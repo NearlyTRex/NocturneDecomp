@@ -17,9 +17,9 @@
 ;   undefined4 g_InitHandlers[181].status
 ;   undefined4 g_InitHandlers[181].priority
 ;   undefined4 g_InitHandlers[181].func
-;   RuntimeHandlerEntry g_RuntimeHandlerEntry_0062716c
-;   undefined4 g_RuntimeHandlerEntry_0062716c.priority
-;   undefined4 g_RuntimeHandlerEntry_0062716c.func
+;   RuntimeHandlerEntry g_ExitHandlerTableEnd
+;   undefined4 g_ExitHandlerTableEnd.priority
+;   undefined4 g_ExitHandlerTableEnd.func
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cb620
@@ -33,7 +33,7 @@ section .text
     PUSH ESI                            ; 005cb689
     PUSH ES                             ; 005cb68a
     SUB ESP,0x8                         ; 005cb68b
-    MOV ESI,0x62716c                    ; 005cb68e | g_RuntimeHandlerEntry_0062716c
+    MOV ESI,0x62716c                    ; 005cb68e | g_ExitHandlerTableEnd
     MOV byte ptr [ESP + 0x4],AL         ; 005cb693
     MOV byte ptr [ESP],DL               ; 005cb697
     MOV EAX,0x627142                    ; 005cb69a | g_InitHandlers[180].status
@@ -55,23 +55,23 @@ section .text
     MOV DL,CL                           ; 005cb6b7
     ADD EAX,0x6                         ; 005cb6b9
         ;   Label: LAB_005cb6b9
-    CMP EAX,0x62716c                    ; 005cb6bc | g_RuntimeHandlerEntry_0062716c
+    CMP EAX,0x62716c                    ; 005cb6bc | g_ExitHandlerTableEnd
     JC 0x005cb6a9                       ; 005cb6c1
         ;   XREF to: 005cb6a9 (CONDITIONAL_JUMP)  ; LAB_005cb6a9
-    CMP EBX,0x62716c                    ; 005cb6c3 | g_RuntimeHandlerEntry_0062716c
+    CMP EBX,0x62716c                    ; 005cb6c3 | g_ExitHandlerTableEnd
         ;   Label: LAB_005cb6c3
     JZ 0x005cb6e4                       ; 005cb6c9
         ;   XREF to: 005cb6e4 (CONDITIONAL_JUMP)  ; LAB_005cb6e4
-    MOV AL,byte ptr [EBX + 0x1]         ; 005cb6cb | g_InitHandlers[181].priority | g_RuntimeHandlerEntry_0062716c.priority
+    MOV AL,byte ptr [EBX + 0x1]         ; 005cb6cb | g_InitHandlers[181].priority | g_ExitHandlerTableEnd.priority
     CMP AL,byte ptr [ESP]               ; 005cb6ce
     JA 0x005cb6df                       ; 005cb6d1
         ;   XREF to: 005cb6df (CONDITIONAL_JUMP)  ; LAB_005cb6df
     LEA EAX,[EBX + 0x2]                 ; 005cb6d3 | g_InitHandlers[181].func
-    PUSH EAX                            ; 005cb6d6 | g_InitHandlers[181].func | g_RuntimeHandlerEntry_0062716c.func
+    PUSH EAX                            ; 005cb6d6 | g_InitHandlers[181].func | g_ExitHandlerTableEnd.func
     CALL crt_unknown.c_FUN_005cb620     ; 005cb6d7
         ;   XREF to: 005cb620 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb620()
     ADD ESP,0x4                         ; 005cb6dc
-    MOV byte ptr [EBX],0x2              ; 005cb6df | g_InitHandlers[181].status | g_RuntimeHandlerEntry_0062716c
+    MOV byte ptr [EBX],0x2              ; 005cb6df | g_InitHandlers[181].status | g_ExitHandlerTableEnd
         ;   Label: LAB_005cb6df
     JMP 0x005cb69a                      ; 005cb6e2
         ;   XREF to: 005cb69a (UNCONDITIONAL_JUMP)  ; LAB_005cb69a

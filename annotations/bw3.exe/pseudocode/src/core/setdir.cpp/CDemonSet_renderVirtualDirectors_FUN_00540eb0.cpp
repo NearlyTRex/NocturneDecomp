@@ -96,7 +96,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0(CDemo
             }
             iVar5 = iVar6 + 4;
             iVar3 = iVar3 + 4;
-            *(uint *)(iVar6 + *(int *)((int)g_ARRAY_PTR_01c5faec + local_1c)) = uVar4 * 0x10101;
+            *(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_1c)) = uVar4 * 0x10101;
             iVar6 = iVar5;
           } while (iVar5 != local_2c * 4 + 0x100);
           local_1c = local_1c + 4;
@@ -118,7 +118,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0(CDemo
             if (0xff < uVar4) {
               uVar4 = 0xff;
             }
-            g_INT_01c6b5c0 = (int)g_UCHAR_ARRAY_01c62070[(uVar4 >> 3) * 0x421];
+            g_INT_01c6b5c0 = (int)g_ColorCubeLookup[(uVar4 >> 3) * 0x421];
             engine_2d_c_plotPixel_FUN_00401130(iVar3,iVar6);
             iVar5 = iVar5 + 4;
             iVar3 = iVar3 + 1;

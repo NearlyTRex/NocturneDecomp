@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_SFogImagePlane_01342220.pixels[1][0]
-;   undefined4 g_CHAR_ARRAY_01354e20+0x140
+;   undefined4 g_CameraImageDecompressBuffer+0x140
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_0048957a
@@ -88,7 +88,7 @@ section .text
     PUSH EAX                            ; 00453e72
     MOV EDX,dword ptr [ESP + 0x28]      ; 00453e73
     PUSH EDX                            ; 00453e77
-    PUSH EBX                            ; 00453e78 | g_CHAR_ARRAY_01354e20+0x140
+    PUSH EBX                            ; 00453e78 | g_CameraImageDecompressBuffer+0x140
     PUSH EBP                            ; 00453e79
     PUSH ESI                            ; 00453e7a | g_SFogImagePlane_01342220.pixels[1][0]
     CALL core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_0048957a ; 00453e7b

@@ -17,28 +17,28 @@ void __cdecl cockpit_drawsurf_cpp_setColor_FUN_0045b5f0(int color_value)
   
   bVar3 = color_value < 0;
   if (bVar3) {
-    g_INT_01b4d720 = -color_value;
-    bVar2 = (byte)g_INT_01b4d720;
-    g_INT_01b4d724 = (uint)(0xff / (ulonglong)(uint)g_RedScaleFactor) >> (bVar2 & 0x1f);
-    g_INT_01b4d728 = (uint)(0xff / (ulonglong)(uint)g_GreenScaleFactor) >> (bVar2 & 0x1f);
-    g_INT_01b4d72c = (uint)(0xff / (ulonglong)(uint)g_BlueScaleFactor) >> (bVar2 & 0x1f);
-    g_INT_01b4d730 =
-         g_INT_01b4d724 << (g_RedBitPosition.bytes[0] & 0x1f) |
-         g_INT_01b4d728 << (g_GreenBitPosition.bytes[0] & 0x1f) |
-         g_INT_01b4d72c << (g_BlueBitPosition.bytes[0] & 0x1f);
-    g_INT_01b4d734 = g_INT_01b4d730 | g_INT_01b4d730 << 0x10;
+    g_OriginalColorValue = -color_value;
+    bVar2 = (byte)g_OriginalColorValue;
+    g_ScaledRedComponent = (uint)(0xff / (ulonglong)(uint)g_RedScaleFactor) >> (bVar2 & 0x1f);
+    g_ScaledGreenComponent = (uint)(0xff / (ulonglong)(uint)g_GreenScaleFactor) >> (bVar2 & 0x1f);
+    g_ScaledBlueComponent = (uint)(0xff / (ulonglong)(uint)g_BlueScaleFactor) >> (bVar2 & 0x1f);
+    g_PackedPixelColor =
+         g_ScaledRedComponent << (g_RedBitPosition.bytes[0] & 0x1f) |
+         g_ScaledGreenComponent << (g_GreenBitPosition.bytes[0] & 0x1f) |
+         g_ScaledBlueComponent << (g_BlueBitPosition.bytes[0] & 0x1f);
+    g_DuplicatedPixelColor = g_PackedPixelColor | g_PackedPixelColor << 0x10;
     color_value = 0;
   }
-  g_INT_01b4d71c = (int)bVar3;
-  g_INT_01b4d714 = color_value & 0xff;
+  g_UseRGBConversion = (int)bVar3;
+  g_PaletteColorIndex = color_value & 0xff;
   if ((uint)g_BitsPerPixel < 0x10) {
     if (g_BitsPerPixel == 8) {
-      g_INT_01b4d710 = g_INT_01b4d714;
+      g_INT_01b4d710 = g_PaletteColorIndex;
       return;
     }
   }
   else {
-    iVar1 = g_INT_01b4d714 * 3;
+    iVar1 = g_PaletteColorIndex * 3;
     if ((uint)g_BitsPerPixel < 0x11) {
       g_INT_01b4d710 =
            ((uint)g_SourcePaletteData[iVar1] / (uint)g_RedScaleFactor <<

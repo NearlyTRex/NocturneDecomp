@@ -11,44 +11,44 @@
 // =============================================================================
 
 // SRenderBufferEntry[256]
-extern SRenderBufferEntry g_SRenderBufferEntry_ARRAY_00713b00[256];
+extern SRenderBufferEntry g_RenderBufferPool[256];
 
 // int
-extern int g_INT_00713a38;
-extern int g_INT_00713a3c;
-extern int g_INT_00713a40;
-extern int g_INT_00713a44;
-extern int g_INT_00713a48;
-extern int g_INT_00713a4c;
-extern int g_INT_00713a50;
-extern int g_INT_00713a58;
-extern int g_INT_00713a5c;
-extern int g_INT_00713a68;
-extern int g_INT_00713a6c;
+extern int g_StoredWindowWidth;
+extern int g_StoredWindowHeight;
+extern int g_StoredClipLeft;
+extern int g_StoredClipTop;
+extern int g_StoredClipRight;
+extern int g_StoredClipBottom;
+extern int g_StoredBitsPerPixel;
+extern int g_ScreenBufferStride;
+extern int g_CurrentPolygonColor;
+extern int g_PlaneTestCount;
+extern int g_BypassClipping;
 extern int g_INT_00713a70;
-extern int g_INT_00713a74;
+extern int g_TexturesDisabled;
 extern int g_INT_00713a78;
-extern int g_INT_00713a7c;
-extern int g_INT_00713a80;
-extern int g_INT_00713a84;
-extern int g_INT_00713a88;
-extern int g_INT_00713a8c;
-extern int g_INT_00713a90;
-extern int g_INT_00713af8;
-extern int g_INT_00713afc;
+extern int g_CullingMode;
+extern int g_CurrentInvertedColor;
+extern int g_RenderResult;
+extern int g_StoredX;
+extern int g_StoredY;
+extern int g_StoredZ;
+extern int g_RenderBufferEnabled;
+extern int g_RenderBufferCount;
 
 // int[24]
-extern int g_INT_ARRAY_00713a98[24];
+extern int g_ProcessedVertexIndices[24];
 
 // uint
-extern uint g_UINT_00713a60;
-extern uint g_UINT_00713a64;
+extern uint g_ProcessedVertexOffset;
+extern uint g_ProcessedVertexBackupOffset;
 
 // undefined4
 extern undefined4 DAT_00713638;
 
 // void*
-extern void* g_PTR_0071362c;
-extern void* g_PTR_00713a54;
-extern void* g_PTR_00713a94;
+extern void* g_SoftwareZBuffer;
+extern void* g_StoredMappedFrameBuffer;
+extern void* g_CurrentVertexData;
 

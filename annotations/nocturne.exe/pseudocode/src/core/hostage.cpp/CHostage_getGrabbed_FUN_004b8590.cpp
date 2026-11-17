@@ -15,7 +15,7 @@ int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004b8590(CHostage *this_ptr
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(this_ptr->base).base.model.base,4,1);
     core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-              (g_CEventList_PTR_005b7650,this_ptr->get_eaten_event);
+              (g_CEventListPtr,this_ptr->get_eaten_event);
   }
   this_ptr->grabber_flee_timer = 3.0;
   this_ptr->grabber = grabber;

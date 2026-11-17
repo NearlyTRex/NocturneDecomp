@@ -13,15 +13,15 @@
 ;   undefined1* PTR_caseD_1_00448918 = 004489da
 ;   undefined1* PTR_caseD_3_00448920 = 004489bf
 ;   int g_INT_014b8614
-;   CVector3f[16] g_CVector3f_ARRAY_014b8618
-;   undefined4 g_CVector3f_ARRAY_014b8618[0].y
-;   undefined4 g_CVector3f_ARRAY_014b8618[0].z
-;   undefined4 g_CVector3f_ARRAY_014b8618[1].x
-;   undefined4 g_CVector3f_ARRAY_014b8618[2].x
+;   CVector3f[16] g_ClipStageMinYBuffer
+;   undefined4 g_ClipStageMinYBuffer[0].y
+;   undefined4 g_ClipStageMinYBuffer[0].z
+;   undefined4 g_ClipStageMinYBuffer[1].x
+;   undefined4 g_ClipStageMinYBuffer[2].x
 ;   int g_INT_014b86d8
-;   CVector3f[16] g_CVector3f_ARRAY_014b86dc
-;   undefined4 g_CVector3f_ARRAY_014b86dc[0].y
-;   undefined4 g_CVector3f_ARRAY_014b86dc[0].z
+;   CVector3f[16] g_ClipStageMaxXBuffer
+;   undefined4 g_ClipStageMaxXBuffer[0].y
+;   undefined4 g_ClipStageMaxXBuffer[0].z
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
@@ -55,10 +55,10 @@ section .text
     IMUL ECX,ECX,0xc                    ; 00448965
         ;   Label: LAB_00448965
     MOV EAX,0x14b8618                   ; 00448968
-    FLD float ptr [EDI]                 ; 0044896d | g_CVector3f_ARRAY_014b8618 | g_CVector3f_ARRAY_014b8618[1].x
+    FLD float ptr [EDI]                 ; 0044896d | g_ClipStageMinYBuffer | g_ClipStageMinYBuffer[1].x
     ADD EAX,ECX                         ; 0044896f
     MOV EDX,EDI                         ; 00448971
-    MOV dword ptr [ESP],EAX             ; 00448973 | g_CVector3f_ARRAY_014b8618[2].x
+    MOV dword ptr [ESP],EAX             ; 00448973 | g_ClipStageMinYBuffer[2].x
     XOR ECX,ECX                         ; 00448976
     FCOMP float ptr [EBP + 0x14]        ; 00448978
     FNSTSW AX                           ; 0044897b
@@ -68,7 +68,7 @@ section .text
     MOV ECX,0x1                         ; 00448980
     MOV EAX,dword ptr [ESP]             ; 00448985
         ;   Label: LAB_00448985
-    FLD float ptr [EAX]                 ; 00448988 | g_CVector3f_ARRAY_014b8618 | g_CVector3f_ARRAY_014b8618[2].x
+    FLD float ptr [EAX]                 ; 00448988 | g_ClipStageMinYBuffer | g_ClipStageMinYBuffer[2].x
     FCOMP float ptr [EBP + 0x14]        ; 0044898a
     FNSTSW AX                           ; 0044898d
     SAHF                                ; 0044898f
@@ -87,12 +87,12 @@ section .text
     CMP ECX,EDX                         ; 004489aa
     JZ 0x004489be                       ; 004489ac
         ;   XREF to: 004489be (CONDITIONAL_JUMP)  ; LAB_004489be
-    MOV EAX,dword ptr [EDX]             ; 004489ae | g_CVector3f_ARRAY_014b8618
-    MOV dword ptr [ECX],EAX             ; 004489b0 | g_CVector3f_ARRAY_014b86dc
-    MOV EAX,dword ptr [EDX + 0x4]       ; 004489b2 | g_CVector3f_ARRAY_014b8618[0].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 004489b5 | g_CVector3f_ARRAY_014b86dc[0].y
-    MOV EAX,dword ptr [EDX + 0x8]       ; 004489b8 | g_CVector3f_ARRAY_014b8618[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 004489bb | g_CVector3f_ARRAY_014b86dc[0].z
+    MOV EAX,dword ptr [EDX]             ; 004489ae | g_ClipStageMinYBuffer
+    MOV dword ptr [ECX],EAX             ; 004489b0 | g_ClipStageMaxXBuffer
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004489b2 | g_ClipStageMinYBuffer[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 004489b5 | g_ClipStageMaxXBuffer[0].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004489b8 | g_ClipStageMinYBuffer[0].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 004489bb | g_ClipStageMaxXBuffer[0].z
     INC EBX                             ; 004489be
         ;   Label: LAB_004489be
     MOV ECX,dword ptr [0x014b8614]      ; 004489bf | g_INT_014b8614
@@ -124,7 +124,7 @@ section .text
     PUSH 0x0                            ; 004489f5
     ADD ECX,0x14b86dc                   ; 004489f7
     PUSH ECX                            ; 004489fd
-    PUSH EDX                            ; 004489fe | g_CVector3f_ARRAY_014b8618
+    PUSH EDX                            ; 004489fe | g_ClipStageMinYBuffer
     MOV EAX,dword ptr [ESP + 0x28]      ; 004489ff
     PUSH EAX                            ; 00448a03
     MOV dword ptr [0x014b86d8],EBX      ; 00448a04 | g_INT_014b86d8
@@ -140,12 +140,12 @@ section .text
     CMP ECX,EDX                         ; 00448a23
     JZ 0x00448a37                       ; 00448a25
         ;   XREF to: 00448a37 (CONDITIONAL_JUMP)  ; LAB_00448a37
-    MOV EAX,dword ptr [EDX]             ; 00448a27 | g_CVector3f_ARRAY_014b8618
-    MOV dword ptr [ECX],EAX             ; 00448a29 | g_CVector3f_ARRAY_014b86dc
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00448a2b | g_CVector3f_ARRAY_014b8618[0].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 00448a2e | g_CVector3f_ARRAY_014b86dc[0].y
-    MOV EAX,dword ptr [EDX + 0x8]       ; 00448a31 | g_CVector3f_ARRAY_014b8618[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 00448a34 | g_CVector3f_ARRAY_014b86dc[0].z
+    MOV EAX,dword ptr [EDX]             ; 00448a27 | g_ClipStageMinYBuffer
+    MOV dword ptr [ECX],EAX             ; 00448a29 | g_ClipStageMaxXBuffer
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00448a2b | g_ClipStageMinYBuffer[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 00448a2e | g_ClipStageMaxXBuffer[0].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00448a31 | g_ClipStageMinYBuffer[0].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 00448a34 | g_ClipStageMaxXBuffer[0].z
     INC EBX                             ; 00448a37
         ;   Label: LAB_00448a37
     IMUL ECX,EBX,0xc                    ; 00448a38
@@ -163,7 +163,7 @@ section .text
     PUSH ECX                            ; 00448a5b
     MOV ECX,dword ptr [ESP + 0x24]      ; 00448a5c
     PUSH ECX                            ; 00448a60
-    PUSH EDX                            ; 00448a61 | g_CVector3f_ARRAY_014b8618
+    PUSH EDX                            ; 00448a61 | g_ClipStageMinYBuffer
     MOV dword ptr [0x014b86d8],EBX      ; 00448a62 | g_INT_014b86d8
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448a68
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)

@@ -25,17 +25,16 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDef
   float local_18;
   float local_14;
   
-  if ((g_UCHAR_02684230 & 1) == 0) {
-    g_UCHAR_02684230 = g_UCHAR_02684230 | 1;
-    __arrinit(g_CVector3f_ARRAY_026757d0,5000,&g_CVectorTypeInfo_005993b0)
-    ;
+  if ((g_FloatVertexArrayInitialized & 1) == 0) {
+    g_FloatVertexArrayInitialized = g_FloatVertexArrayInitialized | 1;
+    __arrinit(g_FloatVertexArray,5000,&g_CVectorTypeInfo_005993b0);
   }
   if (5000 < this_ptr->vertex_count[lod_index]) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 1746;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::exactRayTrace - too many vertices!");
   }
-  pCVar1 = g_CVector3f_ARRAY_026757d0;
+  pCVar1 = g_FloatVertexArray;
   iVar5 = 0;
   if (0 < this_ptr->vertex_count[lod_index]) {
     do {
@@ -63,9 +62,9 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDef
         do {
           iVar2 = *(int *)(local_1c + 0x7c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
-                    (&local_6c,g_CVector3f_ARRAY_026757d0 + *(ushort *)(iVar4 + iVar2),
-                     g_CVector3f_ARRAY_026757d0 + *(ushort *)(iVar4 + 2 + iVar2),
-                     g_CVector3f_ARRAY_026757d0 + *(ushort *)(iVar4 + 4 + iVar2));
+                    (&local_6c,g_FloatVertexArray + *(ushort *)(iVar4 + iVar2),
+                     g_FloatVertexArray + *(ushort *)(iVar4 + 2 + iVar2),
+                     g_FloatVertexArray + *(ushort *)(iVar4 + 4 + iVar2));
           local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
                                (&local_6c,ray_origin,ray_direction);
           if (((local_14 < local_18) && (0.0 <= local_14)) && (local_14 <= 1.0)) {
@@ -73,13 +72,13 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDef
             local_30 = -local_6c.normal.y;
             local_2c = -local_6c.normal.z;
             if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {
-              g_CVector3f_0268cedc.x = local_34;
-              g_CVector3f_0268cedc.y = local_30;
-              g_CVector3f_0268cedc.z = local_2c;
+              g_DeformableModelRayHitNormal.x = local_34;
+              g_DeformableModelRayHitNormal.y = local_30;
+              g_DeformableModelRayHitNormal.z = local_2c;
             }
-            g_INT_0268cee8 = lod_index;
-            g_INT_0268ced8 = iVar5;
-            g_INT_0268ceec = iVar3;
+            g_DeformableModelRayHitLodIndex = lod_index;
+            g_DeformableModelRayHitPartIndex = iVar5;
+            g_DeformableModelRayHitTriangleIndex = iVar3;
             local_18 = local_14;
           }
           iVar3 = iVar3 + 1;

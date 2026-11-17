@@ -25,39 +25,39 @@ void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004d5490(CHotDemon *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  g_INT_ARRAY_01d5baec[0] =
+  g_HotDemonIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_01d5baec[3] =
+  g_HotDemonIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_01d5baec[4] =
+  g_HotDemonIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_01d5baec[5] =
+  g_HotDemonIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01d5baec[6] =
+  g_HotDemonIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01d5baec[7] =
+  g_HotDemonIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Foot",1);
-  g_INT_ARRAY_01d5baec[8] =
+  g_HotDemonIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Foot",1);
-  g_INT_ARRAY_01d5baec[1] =
+  g_HotDemonIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
-  g_INT_ARRAY_01d5baec[2] =
+  g_HotDemonIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
-  g_INT_ARRAY_01d5baec[9] =
+  g_HotDemonIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_01d5baec[10] =
+  g_HotDemonIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine1",1);
-  g_INT_ARRAY_01d5baec[0xb] =
+  g_HotDemonIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
-  g_INT_ARRAY_01d5baec[0] =
+  g_HotDemonIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_01d5baec[5] =
+  g_HotDemonIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01d5baec[6] =
+  g_HotDemonIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01d5baec[9] =
+  g_HotDemonIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_01d5baec[0xb] =
+  g_HotDemonIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   this_ptr->sfx_handles[0] = 0;

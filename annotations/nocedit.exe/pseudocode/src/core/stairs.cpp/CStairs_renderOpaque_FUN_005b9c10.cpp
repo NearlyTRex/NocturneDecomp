@@ -109,12 +109,12 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_bc);
     iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar5 != 0) {
-      input = &SMRGLTextureBasic_00684178;
+      input = &g_StairsTexture;
       iVar12 = 0;
       iVar39 = 0x5b9c8f;
       pCVar40 = g_CDemonRendererPtr2;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684178);
+                (g_CDemonRendererPtr2,&g_StairsTexture);
       if (-1 < this_ptr->stair_count) {
         local_1c = 0x60;
         local_20 = 0x90;

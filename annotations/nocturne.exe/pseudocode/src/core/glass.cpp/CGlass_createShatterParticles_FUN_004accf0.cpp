@@ -2,11 +2,11 @@
 // Address: 004accf0
 // Address Range: [[004accf0, 004ada12]]
 // Convention: __cdecl
-// Signature: void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5)
+// Signature: void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *quad_vertices,int *quad_uv_u,int *quad_uv_v,int subdivision_level)
 
 #include "nocturne.h"
 
-void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5)
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *quad_vertices,int *quad_uv_u,int *quad_uv_v,int subdivision_level)
 
 {
   int iVar1;
@@ -118,18 +118,18 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
   uint local_14;
   
   __arrinit(&local_1e4,4,&g_CVectorTypeInfo_005993b0);
-  local_14 = (uint)(param_5 < 4);
-  if (((param_5 < 3) || (iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0.5), iVar1 == 0)) &&
-     (local_14 != 0)) {
-    if (&local_1e4 != (STriangleVertices *)param_2) {
-      local_1e4.vertices[0].x = *param_2;
-      local_1e4.vertices[0].y = param_2[1];
-      local_1e4.vertices[0].z = param_2[2];
+  local_14 = (uint)(subdivision_level < 4);
+  if (((subdivision_level < 3) ||
+      (iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0.5), iVar1 == 0)) && (local_14 != 0)) {
+    if (&local_1e4 != (STriangleVertices *)quad_vertices) {
+      local_1e4.vertices[0].x = *quad_vertices;
+      local_1e4.vertices[0].y = quad_vertices[1];
+      local_1e4.vertices[0].z = quad_vertices[2];
     }
-    local_80 = *param_2 + param_2[3];
+    local_80 = *quad_vertices + quad_vertices[3];
     local_170 = local_80 / 2.0f;
-    local_7c = param_2[1] + param_2[4];
-    local_78 = param_2[2] + param_2[5];
+    local_7c = quad_vertices[1] + quad_vertices[4];
+    local_78 = quad_vertices[2] + quad_vertices[5];
     local_16c = local_7c * 0.5f;
     local_168 = local_78 * 0.5f;
     if (local_1e4.vertices + 1 != (CVector3f *)&local_170) {
@@ -137,16 +137,16 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[1].y = local_16c;
       local_1e4.vertices[1].z = local_168;
     }
-    local_128 = *param_2 + param_2[3];
-    local_124 = param_2[1] + param_2[4];
-    local_120 = param_2[2] + param_2[5];
-    local_110 = local_128 + param_2[6];
-    local_10c = local_124 + param_2[7];
-    local_108 = local_120 + param_2[8];
-    local_ec = local_110 + param_2[9];
+    local_128 = *quad_vertices + quad_vertices[3];
+    local_124 = quad_vertices[1] + quad_vertices[4];
+    local_120 = quad_vertices[2] + quad_vertices[5];
+    local_110 = local_128 + quad_vertices[6];
+    local_10c = local_124 + quad_vertices[7];
+    local_108 = local_120 + quad_vertices[8];
+    local_ec = local_110 + quad_vertices[9];
     local_98 = local_ec / 4.0f;
-    local_e8 = local_10c + param_2[10];
-    local_e4 = local_108 + param_2[0xb];
+    local_e8 = local_10c + quad_vertices[10];
+    local_e4 = local_108 + quad_vertices[0xb];
     local_94 = local_e8 * 0.25f;
     local_90 = local_e4 * 0.25f;
     if (local_1e4.vertices + 2 != (CVector3f *)&local_98) {
@@ -154,10 +154,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[2].y = local_94;
       local_1e4.vertices[2].z = local_90;
     }
-    local_50 = *param_2 + param_2[9];
+    local_50 = *quad_vertices + quad_vertices[9];
     local_5c = local_50 / 2.0f;
-    local_4c = param_2[1] + param_2[10];
-    local_48 = param_2[2] + param_2[0xb];
+    local_4c = quad_vertices[1] + quad_vertices[10];
+    local_48 = quad_vertices[2] + quad_vertices[0xb];
     local_58 = local_4c * 0.5f;
     local_54 = local_48 * 0.5f;
     if (&local_1c0 != &local_5c) {
@@ -165,24 +165,24 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1bc = local_58;
       local_1b8 = local_54;
     }
-    local_1b4.x = *param_3;
-    local_1b4.y = (local_1b4.x + param_3[1]) / 2;
-    iVar1 = param_3[3] + *param_3 + param_3[1] + param_3[2];
+    local_1b4.x = *quad_uv_u;
+    local_1b4.y = (local_1b4.x + quad_uv_u[1]) / 2;
+    iVar1 = quad_uv_u[3] + *quad_uv_u + quad_uv_u[1] + quad_uv_u[2];
     iVar2 = iVar1 >> 0x1f;
     local_1b4.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1a8 = (*param_3 + param_3[3]) / 2;
-    local_1a4.x = *param_4;
-    local_1a4.y = (local_1a4.x + param_4[1]) / 2;
-    iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
+    local_1a8 = (*quad_uv_u + quad_uv_u[3]) / 2;
+    local_1a4.x = *quad_uv_v;
+    local_1a4.y = (local_1a4.x + quad_uv_v[1]) / 2;
+    iVar1 = quad_uv_v[3] + *quad_uv_v + quad_uv_v[1] + quad_uv_v[2];
     iVar2 = iVar1 >> 0x1f;
     local_1a4.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_198 = (*param_4 + param_4[3]) / 2;
+    local_198 = (*quad_uv_v + quad_uv_v[3]) / 2;
     core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0
-              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,param_5 + 1);
-    local_44 = *param_2 + param_2[3];
+              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,subdivision_level + 1);
+    local_44 = *quad_vertices + quad_vertices[3];
     local_14c = local_44 / 2.0f;
-    local_40 = param_2[1] + param_2[4];
-    local_3c = param_2[2] + param_2[5];
+    local_40 = quad_vertices[1] + quad_vertices[4];
+    local_3c = quad_vertices[2] + quad_vertices[5];
     local_148 = local_40 * 0.5f;
     local_144 = local_3c * 0.5f;
     if (&local_1e4 != (STriangleVertices *)&local_14c) {
@@ -190,15 +190,15 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[0].y = local_148;
       local_1e4.vertices[0].z = local_144;
     }
-    if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 3)) {
-      local_1e4.vertices[1].x = param_2[3];
-      local_1e4.vertices[1].y = param_2[4];
-      local_1e4.vertices[1].z = param_2[5];
+    if (local_1e4.vertices + 1 != (CVector3f *)(quad_vertices + 3)) {
+      local_1e4.vertices[1].x = quad_vertices[3];
+      local_1e4.vertices[1].y = quad_vertices[4];
+      local_1e4.vertices[1].z = quad_vertices[5];
     }
-    local_20 = param_2[3] + param_2[6];
+    local_20 = quad_vertices[3] + quad_vertices[6];
     local_104 = local_20 / 2.0f;
-    local_1c = param_2[4] + param_2[7];
-    local_18 = param_2[5] + param_2[8];
+    local_1c = quad_vertices[4] + quad_vertices[7];
+    local_18 = quad_vertices[5] + quad_vertices[8];
     local_100 = local_1c * 0.5f;
     local_fc = local_18 * 0.5f;
     if (local_1e4.vertices + 2 != (CVector3f *)&local_104) {
@@ -206,16 +206,16 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[2].y = local_100;
       local_1e4.vertices[2].z = local_fc;
     }
-    local_c8 = *param_2 + param_2[3];
-    local_c4 = param_2[1] + param_2[4];
-    local_c0 = param_2[2] + param_2[5];
-    local_e0 = local_c8 + param_2[6];
-    local_dc = local_c4 + param_2[7];
-    local_d8 = local_c0 + param_2[8];
-    local_2c = local_e0 + param_2[9];
+    local_c8 = *quad_vertices + quad_vertices[3];
+    local_c4 = quad_vertices[1] + quad_vertices[4];
+    local_c0 = quad_vertices[2] + quad_vertices[5];
+    local_e0 = local_c8 + quad_vertices[6];
+    local_dc = local_c4 + quad_vertices[7];
+    local_d8 = local_c0 + quad_vertices[8];
+    local_2c = local_e0 + quad_vertices[9];
     local_17c = local_2c / 4.0f;
-    local_28 = local_dc + param_2[10];
-    local_24 = local_d8 + param_2[0xb];
+    local_28 = local_dc + quad_vertices[10];
+    local_24 = local_d8 + quad_vertices[0xb];
     local_178 = local_28 * 0.25f;
     local_174 = local_24 * 0.25f;
     if (&local_1c0 != &local_17c) {
@@ -223,30 +223,30 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1bc = local_178;
       local_1b8 = local_174;
     }
-    local_1b4.x = (*param_3 + param_3[1]) / 2;
-    local_1b4.y = param_3[1];
-    local_1b4.z = (local_1b4.y + param_3[2]) / 2;
-    iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
+    local_1b4.x = (*quad_uv_u + quad_uv_u[1]) / 2;
+    local_1b4.y = quad_uv_u[1];
+    local_1b4.z = (local_1b4.y + quad_uv_u[2]) / 2;
+    iVar1 = quad_uv_u[2] + *quad_uv_u + quad_uv_u[1] + quad_uv_u[3];
     iVar2 = iVar1 >> 0x1f;
     local_1a8 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1a4.x = (*param_4 + param_4[1]) / 2;
-    local_1a4.y = param_4[1];
-    local_1a4.z = (local_1a4.y + param_4[2]) / 2;
-    iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
+    local_1a4.x = (*quad_uv_v + quad_uv_v[1]) / 2;
+    local_1a4.y = quad_uv_v[1];
+    local_1a4.z = (local_1a4.y + quad_uv_v[2]) / 2;
+    iVar1 = quad_uv_v[3] + *quad_uv_v + quad_uv_v[1] + quad_uv_v[2];
     iVar2 = iVar1 >> 0x1f;
     local_198 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
     core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0
-              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,param_5 + 1);
-    local_188 = *param_2 + param_2[3];
-    local_184 = param_2[1] + param_2[4];
-    local_180 = param_2[2] + param_2[5];
-    local_a4 = local_188 + param_2[6];
-    local_a0 = local_184 + param_2[7];
-    local_9c = local_180 + param_2[8];
-    local_38 = local_a4 + param_2[9];
+              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,subdivision_level + 1);
+    local_188 = *quad_vertices + quad_vertices[3];
+    local_184 = quad_vertices[1] + quad_vertices[4];
+    local_180 = quad_vertices[2] + quad_vertices[5];
+    local_a4 = local_188 + quad_vertices[6];
+    local_a0 = local_184 + quad_vertices[7];
+    local_9c = local_180 + quad_vertices[8];
+    local_38 = local_a4 + quad_vertices[9];
     local_f8 = local_38 / 4.0f;
-    local_34 = local_a0 + param_2[10];
-    local_30 = local_9c + param_2[0xb];
+    local_34 = local_a0 + quad_vertices[10];
+    local_30 = local_9c + quad_vertices[0xb];
     local_f4 = local_34 * 0.25f;
     local_f0 = local_30 * 0.25f;
     if (&local_1e4 != (STriangleVertices *)&local_f8) {
@@ -254,10 +254,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[0].y = local_f4;
       local_1e4.vertices[0].z = local_f0;
     }
-    local_164 = param_2[3] + param_2[6];
+    local_164 = quad_vertices[3] + quad_vertices[6];
     local_74 = local_164 / 2.0f;
-    local_160 = param_2[4] + param_2[7];
-    local_15c = param_2[5] + param_2[8];
+    local_160 = quad_vertices[4] + quad_vertices[7];
+    local_15c = quad_vertices[5] + quad_vertices[8];
     local_70 = local_160 * 0.5f;
     local_6c = local_15c * 0.5f;
     if (local_1e4.vertices + 1 != (CVector3f *)&local_74) {
@@ -265,15 +265,15 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[1].y = local_70;
       local_1e4.vertices[1].z = local_6c;
     }
-    if (local_1e4.vertices + 2 != (CVector3f *)(param_2 + 6)) {
-      local_1e4.vertices[2].x = param_2[6];
-      local_1e4.vertices[2].y = param_2[7];
-      local_1e4.vertices[2].z = param_2[8];
+    if (local_1e4.vertices + 2 != (CVector3f *)(quad_vertices + 6)) {
+      local_1e4.vertices[2].x = quad_vertices[6];
+      local_1e4.vertices[2].y = quad_vertices[7];
+      local_1e4.vertices[2].z = quad_vertices[8];
     }
-    local_158 = param_2[6] + param_2[9];
+    local_158 = quad_vertices[6] + quad_vertices[9];
     local_194 = local_158 / 2.0f;
-    local_154 = param_2[7] + param_2[10];
-    local_150 = param_2[8] + param_2[0xb];
+    local_154 = quad_vertices[7] + quad_vertices[10];
+    local_150 = quad_vertices[8] + quad_vertices[0xb];
     local_190 = local_154 * 0.5f;
     local_18c = local_150 * 0.5f;
     if (&local_1c0 != &local_194) {
@@ -281,24 +281,24 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1bc = local_190;
       local_1b8 = local_18c;
     }
-    iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
+    iVar1 = quad_uv_u[2] + *quad_uv_u + quad_uv_u[1] + quad_uv_u[3];
     iVar2 = iVar1 >> 0x1f;
     local_1b4.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1b4.y = (param_3[1] + param_3[2]) / 2;
-    local_1b4.z = param_3[2];
-    local_1a8 = (local_1b4.z + param_3[3]) / 2;
-    iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
+    local_1b4.y = (quad_uv_u[1] + quad_uv_u[2]) / 2;
+    local_1b4.z = quad_uv_u[2];
+    local_1a8 = (local_1b4.z + quad_uv_u[3]) / 2;
+    iVar1 = quad_uv_v[3] + *quad_uv_v + quad_uv_v[1] + quad_uv_v[2];
     iVar2 = iVar1 >> 0x1f;
     local_1a4.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1a4.y = (param_4[1] + param_4[2]) / 2;
-    local_1a4.z = param_4[2];
-    local_198 = (local_1a4.z + param_4[3]) / 2;
+    local_1a4.y = (quad_uv_v[1] + quad_uv_v[2]) / 2;
+    local_1a4.z = quad_uv_v[2];
+    local_198 = (local_1a4.z + quad_uv_v[3]) / 2;
     core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0
-              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,param_5 + 1);
-    local_11c = *param_2 + param_2[9];
+              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,subdivision_level + 1);
+    local_11c = *quad_vertices + quad_vertices[9];
     local_134 = local_11c / 2.0f;
-    local_118 = param_2[1] + param_2[10];
-    local_114 = param_2[2] + param_2[0xb];
+    local_118 = quad_vertices[1] + quad_vertices[10];
+    local_114 = quad_vertices[2] + quad_vertices[0xb];
     local_130 = local_118 * 0.5f;
     local_12c = local_114 * 0.5f;
     if (&local_1e4 != (STriangleVertices *)&local_134) {
@@ -306,16 +306,16 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[0].y = local_130;
       local_1e4.vertices[0].z = local_12c;
     }
-    local_68 = *param_2 + param_2[3];
-    local_64 = param_2[1] + param_2[4];
-    local_60 = param_2[2] + param_2[5];
-    local_d4 = local_68 + param_2[6];
-    local_d0 = local_64 + param_2[7];
-    local_cc = local_60 + param_2[8];
-    local_bc = local_d4 + param_2[9];
+    local_68 = *quad_vertices + quad_vertices[3];
+    local_64 = quad_vertices[1] + quad_vertices[4];
+    local_60 = quad_vertices[2] + quad_vertices[5];
+    local_d4 = local_68 + quad_vertices[6];
+    local_d0 = local_64 + quad_vertices[7];
+    local_cc = local_60 + quad_vertices[8];
+    local_bc = local_d4 + quad_vertices[9];
     local_8c = local_bc / 4.0f;
-    local_b8 = local_d0 + param_2[10];
-    local_b4 = local_cc + param_2[0xb];
+    local_b8 = local_d0 + quad_vertices[10];
+    local_b4 = local_cc + quad_vertices[0xb];
     local_88 = local_b8 * 0.25f;
     local_84 = local_b4 * 0.25f;
     if (local_1e4.vertices + 1 != (CVector3f *)&local_8c) {
@@ -323,10 +323,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[1].y = local_88;
       local_1e4.vertices[1].z = local_84;
     }
-    local_b0 = param_2[6] + param_2[9];
+    local_b0 = quad_vertices[6] + quad_vertices[9];
     local_140 = local_b0 / 2.0f;
-    local_ac = param_2[7] + param_2[10];
-    local_a8 = param_2[8] + param_2[0xb];
+    local_ac = quad_vertices[7] + quad_vertices[10];
+    local_a8 = quad_vertices[8] + quad_vertices[0xb];
     local_13c = local_ac * 0.5f;
     local_138 = local_a8 * 0.5f;
     if (local_1e4.vertices + 2 != (CVector3f *)&local_140) {
@@ -334,67 +334,67 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *t
       local_1e4.vertices[2].y = local_13c;
       local_1e4.vertices[2].z = local_138;
     }
-    if (&local_1c0 != param_2 + 9) {
-      local_1c0 = param_2[9];
-      local_1bc = param_2[10];
-      local_1b8 = param_2[0xb];
+    if (&local_1c0 != quad_vertices + 9) {
+      local_1c0 = quad_vertices[9];
+      local_1bc = quad_vertices[10];
+      local_1b8 = quad_vertices[0xb];
     }
-    local_1b4.x = (*param_3 + param_3[3]) / 2;
-    iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
+    local_1b4.x = (*quad_uv_u + quad_uv_u[3]) / 2;
+    iVar1 = quad_uv_u[2] + *quad_uv_u + quad_uv_u[1] + quad_uv_u[3];
     iVar2 = iVar1 >> 0x1f;
     local_1b4.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1b4.z = (param_3[2] + param_3[3]) / 2;
-    local_1a8 = param_3[3];
-    local_1a4.x = (*param_4 + param_4[3]) / 2;
-    iVar1 = param_4[2] + *param_4 + param_4[1] + param_4[3];
+    local_1b4.z = (quad_uv_u[2] + quad_uv_u[3]) / 2;
+    local_1a8 = quad_uv_u[3];
+    local_1a4.x = (*quad_uv_v + quad_uv_v[3]) / 2;
+    iVar1 = quad_uv_v[2] + *quad_uv_v + quad_uv_v[1] + quad_uv_v[3];
     iVar2 = iVar1 >> 0x1f;
     local_1a4.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1a4.z = (param_4[2] + param_4[3]) / 2;
-    local_198 = param_4[3];
+    local_1a4.z = (quad_uv_v[2] + quad_uv_v[3]) / 2;
+    local_198 = quad_uv_v[3];
     core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0
-              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,param_5 + 1);
+              (this_ptr,(float *)&local_1e4,&local_1b4.x,&local_1a4.x,subdivision_level + 1);
     return;
   }
-  if (&local_1e4 != (STriangleVertices *)param_2) {
-    local_1e4.vertices[0].x = *param_2;
-    local_1e4.vertices[0].y = param_2[1];
-    local_1e4.vertices[0].z = param_2[2];
+  if (&local_1e4 != (STriangleVertices *)quad_vertices) {
+    local_1e4.vertices[0].x = *quad_vertices;
+    local_1e4.vertices[0].y = quad_vertices[1];
+    local_1e4.vertices[0].z = quad_vertices[2];
   }
-  if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 3)) {
-    local_1e4.vertices[1].x = param_2[3];
-    local_1e4.vertices[1].y = param_2[4];
-    local_1e4.vertices[1].z = param_2[5];
+  if (local_1e4.vertices + 1 != (CVector3f *)(quad_vertices + 3)) {
+    local_1e4.vertices[1].x = quad_vertices[3];
+    local_1e4.vertices[1].y = quad_vertices[4];
+    local_1e4.vertices[1].z = quad_vertices[5];
   }
-  if (local_1e4.vertices + 2 != (CVector3f *)(param_2 + 6)) {
-    local_1e4.vertices[2].x = param_2[6];
-    local_1e4.vertices[2].y = param_2[7];
-    local_1e4.vertices[2].z = param_2[8];
+  if (local_1e4.vertices + 2 != (CVector3f *)(quad_vertices + 6)) {
+    local_1e4.vertices[2].x = quad_vertices[6];
+    local_1e4.vertices[2].y = quad_vertices[7];
+    local_1e4.vertices[2].z = quad_vertices[8];
   }
-  local_1b4.x = *param_3;
-  local_1b4.y = param_3[1];
-  local_1b4.z = param_3[2];
-  local_1a4.x = *param_4;
-  local_1a4.y = param_4[1];
-  local_1a4.z = param_4[2];
+  local_1b4.x = *quad_uv_u;
+  local_1b4.y = quad_uv_u[1];
+  local_1b4.z = quad_uv_u[2];
+  local_1a4.x = *quad_uv_v;
+  local_1a4.y = quad_uv_v[1];
+  local_1a4.z = quad_uv_v[2];
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
-            (g_CFireEffect_PTR_005b80f0,&local_1e4,&local_1b4,&local_1a4,&this_ptr->glass_texture,
+            (g_CFireEffectPtr,&local_1e4,&local_1b4,&local_1a4,&this_ptr->glass_texture,
              this_ptr->opacity);
-  if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 6)) {
-    local_1e4.vertices[1].x = param_2[6];
-    local_1e4.vertices[1].y = param_2[7];
-    local_1e4.vertices[1].z = param_2[8];
+  if (local_1e4.vertices + 1 != (CVector3f *)(quad_vertices + 6)) {
+    local_1e4.vertices[1].x = quad_vertices[6];
+    local_1e4.vertices[1].y = quad_vertices[7];
+    local_1e4.vertices[1].z = quad_vertices[8];
   }
-  if (local_1e4.vertices + 2 != (CVector3f *)(param_2 + 9)) {
-    local_1e4.vertices[2].x = param_2[9];
-    local_1e4.vertices[2].y = param_2[10];
-    local_1e4.vertices[2].z = param_2[0xb];
+  if (local_1e4.vertices + 2 != (CVector3f *)(quad_vertices + 9)) {
+    local_1e4.vertices[2].x = quad_vertices[9];
+    local_1e4.vertices[2].y = quad_vertices[10];
+    local_1e4.vertices[2].z = quad_vertices[0xb];
   }
-  local_1b4.y = param_3[2];
-  local_1b4.z = param_3[3];
-  local_1a4.y = param_4[2];
-  local_1a4.z = param_4[3];
+  local_1b4.y = quad_uv_u[2];
+  local_1b4.z = quad_uv_u[3];
+  local_1a4.y = quad_uv_v[2];
+  local_1a4.z = quad_uv_v[3];
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
-            (g_CFireEffect_PTR_005b80f0,&local_1e4,&local_1b4,&local_1a4,&this_ptr->glass_texture,
+            (g_CFireEffectPtr,&local_1e4,&local_1b4,&local_1a4,&this_ptr->glass_texture,
              this_ptr->opacity);
   return;
 }

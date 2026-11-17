@@ -70,7 +70,7 @@ HIGH CONFIDENCE (4 clusters)
     Likely type: char[3]
     Reason: 2 consecutive bytes
     Referenced by: 1 functions
-     near: g_CHAR_ARRAY_005acc90 (char[104]) at -2
+     near: g_PropertyNamePrefix (char[104]) at -2
       0x005acc8e  DAT_005acc8e  undefined4 [byte]
       0x005acc8f  DAT_005acc8f  undefined1
 
@@ -79,7 +79,7 @@ HIGH CONFIDENCE (4 clusters)
     Likely type: char[3]
     Reason: 2 consecutive bytes
     Referenced by: 1 functions
-     near: g_INT_ARRAY_02de20b0[524] (undefined4) at +304
+     near: g_MessageFlags[524] (undefined4) at +304
       0x02de2a10  DAT_02de2a10  undefined4 [byte]
       0x02de2a11  DAT_02de2a11  undefined4
 
@@ -120,7 +120,7 @@ MEDIUM CONFIDENCE (4 clusters)
     Likely type: char[] or byte[]
     Reason: 6/7 strides are 1 byte
     Referenced by: 1 functions
-     near: g_INT_01cc64a4 (int) at -548
+     near: g_CurrentGraphicsBoard (int) at -548
       0x01cc6280  DAT_01cc6280  undefined4 [byte]
       0x01cc6281  DAT_01cc6281  undefined4 [byte]
       0x01cc6282  DAT_01cc6282  undefined4
@@ -190,7 +190,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: struct (15 bytes span, 10 fields)
     Reason: mixed strides, shared by 1 functions
     Referenced by: 1 functions
-     near: g_CChainActorType_00765c30.name_hash (undefined4) at +4
+     near: g_CChainClassInfo.name_hash (undefined4) at +4
       0x00765c6c  DAT_00765c6c  undefined2 [short]
       0x00765c6e  DAT_00765c6e  undefined2 [short]
       0x00765c70  DAT_00765c70  undefined2 [short]
@@ -253,7 +253,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=4 bytes
     Referenced by: 2 functions
-     near: INT_005be164 (int) at +28
+     near: g_CPendulumClassVersion (int) at +28
       0x005be180  DAT_005be180  undefined4
       0x005be181  DAT_005be180+1  undefined4
       0x005be184  DAT_005be184  undefined1
@@ -273,7 +273,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=180 bytes
     Referenced by: 3 functions
-     near: g_UINT_005c1f90 (uint) at +4
+     near: g_MaxHandleCount (uint) at +4
       0x005c1f94  DAT_005c1f94  undefined4
       0x005c1f95  DAT_005c1f95  undefined4 [byte]
       0x005c2048  DAT_005c2048  undefined4
@@ -283,7 +283,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=12 bytes
     Referenced by: 34 functions
-     near: g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3] (undefined4) at +4
+     near: g_MirrorTempPrimitive.vertices[3] (undefined4) at +4
       0x01cc9450  DAT_01cc9450  undefined4
       0x01cc9454  DAT_01cc9454  undefined4
       0x01cc945c  DAT_01cc945c  undefined4
@@ -293,7 +293,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=5 bytes
     Referenced by: 2 functions
-     near: g_INT_020842d0 (int) at +804
+     near: g_RaytraceStateStackDepth (int) at +804
       0x020845f4  DAT_020845f4  undefined4
       0x020845f8  DAT_020845f8  undefined4
       0x020845f9  DAT_020845f9  undefined4
@@ -341,7 +341,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 1 functions
-     near: g_FLOAT_005bea98 (float) at +8
+     near: g_MaxSoftwareLatency (float) at +8
       0x005beaa0  DAT_005beaa0  undefined4
       0x005beaa4  DAT_005beaa4  undefined4
 
@@ -350,7 +350,7 @@ LOW CONFIDENCE (23 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=27 bytes
     Referenced by: 3 functions
-     near: g_PTR_005c1b04 (void*) at +4
+     near: g_SpecialExitHandler (void*) at +4
       0x005c1b08  DAT_005c1b08  undefined4 [byte]
       0x005c1b23  DAT_005c1b23  undefined1 [byte]
 
@@ -393,7 +393,7 @@ LOW CONFIDENCE (23 clusters)
 ISOLATED DAT_ GLOBALS (8 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00767280                    addr=00767280    type=undefined4      refs=4  near: g_SRenderVertex_PTR_0076727c(+4)
-  DAT_005c18a0                    addr=005c18a0    type=undefined1      refs=2 [likely byte]  near: g_FILE_PTR_005c1894(+12)
+  DAT_005c18a0                    addr=005c18a0    type=undefined1      refs=2 [likely byte]  near: g_StaticFilePoolStart(+12)
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  near: g_CEnemyVTable(-12)
   DAT_005b9418                    addr=005b9418    type=undefined4      refs=1  near: g_ChapterMissionFiles(-56)
   DAT_01c038f0                    addr=01c038f0    type=undefined4      refs=1  near: g_INT_01c038f4(-4)
@@ -408,6 +408,6 @@ FILTERED OUT - INSIDE NAMED DATA (6)
   DAT_005c1e88                    inside s_EST_005c1e08
   DAT_005c1f09                    inside s_EDT_005c1e89
   DAT_005c410c                    inside g_FLOAT10_005c4102
-  DAT_01c78b03                    inside g_CHAR_ARRAY_01c78aef+0x13
-  DAT_02de209c                    inside g_HWND_02de2098
+  DAT_01c78b03                    inside g_InputHistory+0x13
+  DAT_02de209c                    inside g_MainWindowHandle
 

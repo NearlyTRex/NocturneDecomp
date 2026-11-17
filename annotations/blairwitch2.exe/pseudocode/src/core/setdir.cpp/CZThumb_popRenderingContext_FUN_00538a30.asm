@@ -15,8 +15,8 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_020b1518
-;   int g_INT_020b151c
+;   int g_SavedWindowWidth
+;   int g_SavedWindowHeight
 ;
 ; Called Functions:
 ;   engine_drender.cpp_popViewport_FUN_0046b740
@@ -30,9 +30,9 @@ section .text
     PUSH EDX                            ; 00538a36 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_popViewport_FUN_0046b740 ; 00538a37
         ;   XREF to: 0046b740 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046b740()
-    MOV EAX,[0x020b1518]                ; 00538a3c | g_INT_020b1518
+    MOV EAX,[0x020b1518]                ; 00538a3c | g_SavedWindowWidth
     MOV [0x006141b8],EAX                ; 00538a41 | g_INT_006141b8
-    MOV EAX,[0x020b151c]                ; 00538a46 | g_INT_020b151c
+    MOV EAX,[0x020b151c]                ; 00538a46 | g_SavedWindowHeight
     ADD ESP,0x4                         ; 00538a4b
     MOV [0x006141bc],EAX                ; 00538a4e | g_INT_006141bc
     RET                                 ; 00538a53

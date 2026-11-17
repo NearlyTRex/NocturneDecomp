@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int fade_out)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   fade_out
 ;
 ; XREF[11]:
 ;   core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70 at 0040ce90

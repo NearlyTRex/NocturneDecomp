@@ -17,7 +17,7 @@ void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00408e80(SMRGLHeaderExtended
       if (((iVar1 == 0) || (iVar1 < 0)) || (0x42 < iVar1)) break;
       chain = (SMRGLHeaderExtended *)(*(code *)g_MRGLBlockHandlerTable[iVar1])(chain);
     }
-    INT_005b7644 = 1;
+    g_VertexProcessingEnabled = 1;
   }
   return;
 }

@@ -21,14 +21,14 @@ void __cdecl engine_special_cpp_clearScreen_FUN_00560d70(void)
   }
   iVar4 = 0;
   do {
-    g_DOUBLE_00604d24 = g_DOUBLE_00604d1c;
-    pdVar5 = (double *)g_ARRAY_PTR_01c5faec[iVar4];
+    g_BufferFillFpuPopST0 = g_BufferFillZeroQword;
+    pdVar5 = (double *)g_ScreenBufferArray[iVar4];
     uVar2 = (uint)(g_INT_005fba18 * g_INT_005fba20) >> 3;
     do {
-      *pdVar5 = g_DOUBLE_00604d24;
-      pdVar5[1] = g_DOUBLE_00604d24;
-      pdVar5[2] = g_DOUBLE_00604d24;
-      pdVar5[3] = g_DOUBLE_00604d24;
+      *pdVar5 = g_BufferFillFpuPopST0;
+      pdVar5[1] = g_BufferFillFpuPopST0;
+      pdVar5[2] = g_BufferFillFpuPopST0;
+      pdVar5[3] = g_BufferFillFpuPopST0;
       pdVar5 = pdVar5 + 4;
       uVar3 = uVar2 - 0x20;
       bVar1 = 0x1f < (int)uVar2;

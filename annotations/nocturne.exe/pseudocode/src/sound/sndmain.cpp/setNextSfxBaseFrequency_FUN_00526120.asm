@@ -11,13 +11,13 @@
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d347
 ;
 ; Referenced Globals:
-;   int g_INT_02dc1b74
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02dc1b74]      ; 00526120 | g_INT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 00526120 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120
     LEA EAX,[EDX*0x4 + 0x0]             ; 00526126
     SUB EAX,EDX                         ; 0052612d

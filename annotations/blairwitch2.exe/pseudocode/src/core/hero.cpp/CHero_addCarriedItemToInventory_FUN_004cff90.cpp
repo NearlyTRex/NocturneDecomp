@@ -17,17 +17,17 @@ void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(CHero *t
     iVar1 = _strcmp(item_actor->actor_name,"63Ravinammo01");
     if (iVar1 == 0) {
       core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
-                (g_CEventList_PTR_006141f0,"searchedravine",1);
+                (g_CEventListPtr,"searchedravine",1);
     }
     iVar1 = _strcmp(item_actor->actor_name,"63Ravinammo02");
     if (iVar1 == 0) {
       core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
-                (g_CEventList_PTR_006141f0,"searchedravine",1);
+                (g_CEventListPtr,"searchedravine",1);
     }
     iVar1 = _strcmp(item_actor->actor_name,"63Ravinfood01");
     if (iVar1 == 0) {
       core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
-                (g_CEventList_PTR_006141f0,"searchedravine",1);
+                (g_CEventListPtr,"searchedravine",1);
     }
     core_inv_cpp_CInventory_addItem_FUN_004dadb0(this_ptr->inventories,item_actor,1,0);
     (this_ptr->base).carry_hands[hand_index].carry_actor = (CDemonActor *)0x0;

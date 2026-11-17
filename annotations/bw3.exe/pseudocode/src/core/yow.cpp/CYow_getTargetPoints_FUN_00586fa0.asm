@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_00586fa0(CYow *this_ptr,float *param_2)
+; int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_00586fa0(CYow *this_ptr,float *out_points_array)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   param_2
+; float *          Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00586f90 = 0058704b

@@ -19,9 +19,9 @@ CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_004e5410(CVecto
   int iVar8;
   int iVar9;
   
-  iVar9 = input_coords->x - g_INT_01c6e2cc;
-  iVar8 = input_coords->z - g_INT_01c6e2d4;
-  iVar7 = input_coords->y - g_INT_01c6e2d0;
+  iVar9 = input_coords->x - g_RelativeX;
+  iVar8 = input_coords->z - g_RelativeZ;
+  iVar7 = input_coords->y - g_RelativeY;
   lVar1 = (longlong)g_INT_01c6e300;
   lVar2 = (longlong)g_INT_01c6e30c;
   lVar3 = (longlong)g_INT_01c6e318;

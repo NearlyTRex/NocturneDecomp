@@ -27,14 +27,14 @@
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].b
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].a
-;   int g_INT_01c6e24c
-;   int g_INT_01c6e2d8
-;   int g_INT_01c6e2e0
+;   int g_PerspectiveReciprocal
+;   int g_CameraOriginX
+;   int g_CameraOriginZ
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   undefined4 g_INT_ARRAY_0203baa4[65535]
-;   int g_INT_0207fc84
+;   undefined4 g_IntensityToValueLookupTable[65535]
+;   int g_ColorCorrectionCount
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -115,7 +115,7 @@ section .text
     IMUL EDX                            ; 0053816f
     SHRD EAX,EDX,0x10                   ; 00538171
     MOV dword ptr [ESI + 0x28],EAX      ; 00538175 | g_SRenderVertex_ARRAY_0060b014[0].b
-    MOV EAX,[0x01c6e24c]                ; 00538178 | g_INT_01c6e24c
+    MOV EAX,[0x01c6e24c]                ; 00538178 | g_PerspectiveReciprocal
     MOV dword ptr [ESI + 0x2c],EAX      ; 0053817d | g_SRenderVertex_ARRAY_0060b014[0].a
     ADD ESP,0xc                         ; 00538180
     POP EBP                             ; 00538183
@@ -133,11 +133,11 @@ section .text
         ;   XREF to: 0053832c (CONDITIONAL_JUMP)  ; LAB_0053832c
     MOV ECX,0xffff                      ; 00538197
     MOV dword ptr [ESP + 0x4],EDX       ; 0053819c
-    CMP dword ptr [0x0207fc84],0x0      ; 005381a0 | g_INT_0207fc84
+    CMP dword ptr [0x0207fc84],0x0      ; 005381a0 | g_ColorCorrectionCount
         ;   Label: LAB_005381a0
     JLE 0x005383ca                      ; 005381a7
         ;   XREF to: 005383ca (CONDITIONAL_JUMP)  ; LAB_005383ca
-    MOV EDX,dword ptr [0x02080004]      ; 005381ad | g_INT_02080004
+    MOV EDX,dword ptr [0x02080004]      ; 005381ad | g_ColorCorrectionLightMultiplier
     MOV EAX,ECX                         ; 005381b3
     MOV EBP,dword ptr [ESP + 0x4]       ; 005381b5
     IMUL EDX                            ; 005381b9
@@ -146,7 +146,7 @@ section .text
     ADD EAX,EBP                         ; 005381c5
     IMUL EDX                            ; 005381c7
     SHRD EAX,EDX,0x10                   ; 005381c9
-    MOV EDX,dword ptr [0x02080008]      ; 005381cd | g_INT_02080008
+    MOV EDX,dword ptr [0x02080008]      ; 005381cd | g_ColorCorrectionColorMultiplier
     MOV dword ptr [ESP + 0x8],EAX       ; 005381d3
     MOV EAX,ECX                         ; 005381d7
     IMUL EDX                            ; 005381d9
@@ -155,7 +155,7 @@ section .text
     ADD EAX,EBP                         ; 005381e5
     IMUL EDX                            ; 005381e7
     SHRD EAX,EDX,0x10                   ; 005381e9
-    MOV EDX,dword ptr [0x0208000c]      ; 005381ed | g_INT_0208000c
+    MOV EDX,dword ptr [0x0208000c]      ; 005381ed | g_ColorCorrectionFogMultiplier
     MOV EDI,EAX                         ; 005381f3
     MOV EAX,ECX                         ; 005381f5
     IMUL EDX                            ; 005381f7
@@ -268,11 +268,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005382ff
         ;   Label: LAB_005382ff
     MOV EDX,dword ptr [ESP]             ; 00538303
-    MOV EAX,dword ptr [EAX*0x4 + 0x203baa4] ; 00538306 | g_INT_ARRAY_0203baa4[65535]
+    MOV EAX,dword ptr [EAX*0x4 + 0x203baa4] ; 00538306 | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x20],EAX      ; 0053830d | g_SRenderVertex_ARRAY_0060b014[0].r
-    MOV EAX,dword ptr [EDI*0x4 + 0x203baa4] ; 00538310 | g_INT_ARRAY_0203baa4[65535]
+    MOV EAX,dword ptr [EDI*0x4 + 0x203baa4] ; 00538310 | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x24],EAX      ; 00538317 | g_SRenderVertex_ARRAY_0060b014[0].g
-    MOV EAX,dword ptr [EBP*0x4 + 0x203baa4] ; 0053831a | g_INT_ARRAY_0203baa4[65535]
+    MOV EAX,dword ptr [EBP*0x4 + 0x203baa4] ; 0053831a | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x28],EAX      ; 00538321 | g_SRenderVertex_ARRAY_0060b014[0].b
     ADD ESP,0xc                         ; 00538324
     POP EBP                             ; 00538327
@@ -302,7 +302,7 @@ section .text
     JLE 0x00538366                      ; 0053835f
         ;   XREF to: 00538366 (CONDITIONAL_JUMP)  ; LAB_00538366
     MOV ESI,0x1000                      ; 00538361
-    CMP dword ptr [0x01c6e2d8],0x0      ; 00538366 | g_INT_01c6e2d8
+    CMP dword ptr [0x01c6e2d8],0x0      ; 00538366 | g_CameraOriginX
         ;   Label: LAB_00538366
     JL 0x005383a0                       ; 0053836d
         ;   XREF to: 005383a0 (CONDITIONAL_JUMP)  ; LAB_005383a0
@@ -311,7 +311,7 @@ section .text
     IMUL EDX                            ; 00538373
     SHRD EAX,EDX,0x10                   ; 00538375
     ADD ECX,EAX                         ; 00538379
-    CMP dword ptr [0x01c6e2e0],0x0      ; 0053837b | g_INT_01c6e2e0
+    CMP dword ptr [0x01c6e2e0],0x0      ; 0053837b | g_CameraOriginZ
         ;   Label: LAB_0053837b
     JL 0x005383ae                       ; 00538382
         ;   XREF to: 005383ae (CONDITIONAL_JUMP)  ; LAB_005383ae

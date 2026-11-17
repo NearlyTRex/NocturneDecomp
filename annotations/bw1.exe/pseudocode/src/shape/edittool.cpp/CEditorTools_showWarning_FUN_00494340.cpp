@@ -16,6 +16,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340(CEditorToo
   _vsprintf(local_408,format,(va_list_t)&local_8);
   local_8 = (byte *)0x0;
   shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40
-            ("Warning",local_408,g_INT_01c3f560);
+            ("Warning",local_408,g_WarningTextColor);
   return;
 }

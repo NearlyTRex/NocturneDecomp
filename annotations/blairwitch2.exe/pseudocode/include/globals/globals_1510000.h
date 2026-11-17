@@ -20,12 +20,12 @@
 // =============================================================================
 
 // CBitFont*
-extern CBitFont* g_CBitFont_PTR_01511cb8;
-extern CBitFont* g_CBitFont_PTR_01511cbc;
-extern CBitFont* g_CBitFont_PTR_01511cc0;
-extern CBitFont* g_CBitFont_PTR_01511cc4;
+extern CBitFont* g_MediumFont;
+extern CBitFont* g_TinyFont;
+extern CBitFont* g_ThemeFont;
+extern CBitFont* g_SmallEditorFont;
 extern CBitFont* g_CBitFont_PTR_01511cc8;
-extern CBitFont* g_CBitFont_PTR_01511ccc;
+extern CBitFont* g_MicroFont;
 extern CBitFont* g_CBitFont_PTR_01511cd0;
 
 // CDemonActorType
@@ -35,13 +35,13 @@ extern CDemonActorType g_CActorDestinationClassInfo;
 extern CDemonFilter CDemonFilter_ARRAY_01511078[4];
 
 // CDemonFilter[8]
-extern CDemonFilter CDemonFilter_ARRAY_01510e18[8];
+extern CDemonFilter g_PlayerFilterPool[8];
 
 // CDemonGlobe*
-extern CDemonGlobe* g_CDemonGlobe_PTR_01510718;
+extern CDemonGlobe* g_CurrentGlobe;
 
 // CDemonLight*
-extern CDemonLight* g_CDemonLight_PTR_01511ce4;
+extern CDemonLight* g_CurrentShadowLight;
 
 // CFilterCache
 extern CFilterCache g_CFilterCacheInstance;
@@ -51,14 +51,14 @@ extern CFilterFX g_CFilterFXInstance;
 
 // CVector3f
 extern CVector3f g_CVector3f_0151082c;
-extern CVector3f g_CVector3f_0151083c;
+extern CVector3f g_StaticColorVector;
 
 // CVector3f[16]
-extern CVector3f g_CVector3f_ARRAY_01510914[16];
-extern CVector3f g_CVector3f_ARRAY_015109d8[16];
-extern CVector3f g_CVector3f_ARRAY_01510a9c[16];
-extern CVector3f g_CVector3f_ARRAY_01510b60[16];
-extern CVector3f g_CVector3f_ARRAY_01510c24[16];
+extern CVector3f g_ClipStageMaxYBuffer[16];
+extern CVector3f g_ClipStageMinYBuffer[16];
+extern CVector3f g_ClipStageMaxXBuffer[16];
+extern CVector3f g_ClipStageMinXBuffer[16];
+extern CVector3f g_ClipStageMinZBuffer[16];
 
 // CWinFont*
 extern CWinFont* g_CWinFont_PTR_01511cd4;
@@ -67,7 +67,7 @@ extern CWinFont* g_CWinFont_PTR_01511cdc;
 extern CWinFont* g_CWinFont_PTR_01511ce0;
 
 // SCameraViewportState
-extern SCameraViewportState g_SCameraViewportState_0151072c;
+extern SCameraViewportState g_SavedCameraState;
 
 // float
 extern float g_FLOAT_01510850;
@@ -90,10 +90,10 @@ extern float g_FLOAT_01510dc0;
 extern float g_FLOAT_01510dc8;
 
 // int
-extern int g_INT_0151071c;
-extern int g_INT_01510720;
-extern int g_INT_01510724;
-extern int g_INT_01510728;
+extern int g_CoronaVisibilityEnabled;
+extern int g_CoronaTargetX;
+extern int g_CoronaTargetY;
+extern int g_CoronaTargetDepth;
 extern int g_INT_0151084c;
 extern int g_INT_01510910;
 extern int g_INT_01510b5c;
@@ -103,17 +103,17 @@ extern int g_INT_01510dc4;
 
 // uchar
 extern uchar g_UCHAR_01510838;
-extern uchar g_UCHAR_01510848;
+extern uchar g_ColorConstantsInitialized;
 
 // uchar[6291656]
-extern uchar g_UCHAR_ARRAY_01511ce8[6291656];
+extern uchar g_ShadowRestoreBuffer[6291656];
 
 // uint
-extern uint g_UINT_015109d4;
-extern uint g_UINT_01510a98;
-extern uint g_UINT_01510c20;
-extern uint g_UINT_01510ce4;
+extern uint g_CubeClipStage2Count;
+extern uint g_CubeClipStage3Count;
+extern uint g_CubeClipStage5Count;
+extern uint g_CubeClippedTriangleCount;
 
 // uint[3]
-extern uint g_UINT_ARRAY_01510dcc[3];
+extern uint g_TempTriangleIndices[3];
 

@@ -9,8 +9,8 @@
 char * __watcallStack mbtowc_next(char *str)
 
 {
-  if (((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(byte)*str] & 1U) != 0)) && (str[1] != '\0')
-     ) {
+  if (((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*str] & 1U) != 0)) &&
+     (str[1] != '\0')) {
     return str + 2;
   }
   return str + 1;

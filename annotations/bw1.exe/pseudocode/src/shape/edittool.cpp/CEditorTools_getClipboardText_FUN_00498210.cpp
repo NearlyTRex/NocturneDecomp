@@ -18,7 +18,7 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00498210(CEd
   byte bVar7;
   
   bVar7 = 0;
-  BVar2 = OpenClipboard(g_HWND_02c9be68);
+  BVar2 = OpenClipboard(g_MainWindowHandle);
   if (BVar2 != 0) {
     pcVar3 = GetClipboardData(1);
     if (pcVar3 != (char *)0x0) {
@@ -31,9 +31,9 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00498210(CEd
         pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
-      g_CHAR_PTR_01c3eb58 = realloc(g_CHAR_PTR_01c3eb58,uVar4);
-      if (g_CHAR_PTR_01c3eb58 != (char *)0x0) {
-        pcVar6 = g_CHAR_PTR_01c3eb58;
+      g_ClipboardBackupText = realloc(g_ClipboardBackupText,uVar4);
+      if (g_ClipboardBackupText != (char *)0x0) {
+        pcVar6 = g_ClipboardBackupText;
         for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
           *(uint *)pcVar6 = *(uint *)pcVar3;
           pcVar3 = pcVar3 + (uint)bVar7 * -8 + 4;
@@ -48,8 +48,8 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00498210(CEd
     }
     CloseClipboard();
   }
-  if (g_CHAR_PTR_01c3eb58 != (char *)0x0) {
-    return g_CHAR_PTR_01c3eb58;
+  if (g_ClipboardBackupText != (char *)0x0) {
+    return g_ClipboardBackupText;
   }
   return &DAT_005dc268;
 }

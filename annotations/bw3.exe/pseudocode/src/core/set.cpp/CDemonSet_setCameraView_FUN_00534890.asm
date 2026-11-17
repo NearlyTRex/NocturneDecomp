@@ -56,14 +56,14 @@
 ;   TerminatedCString s_CDemonSet_setCameraView_005d04bd
 ;   float g_FLOAT_005e3bc0 = 256
 ;   float g_FLOAT_005e3bc4 = 65536
-;   SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_005f4a58 = 01c0b558
+;   SMRGLSkyTexture* g_SkyDomeTexturePtr = 01c0b558
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CWater* g_CWaterPtr = 02cfd950
-;   CWeather* g_CWeather_PTR_006071f0 = 02d0c1a0
+;   CWeather* g_CWeatherPtr = 02d0c1a0
 ;   int g_INT_01c6cee8
-;   int g_INT_01c6e24c
+;   int g_PerspectiveReciprocal
 ;   ... and 23 more
 ;
 ; Called Functions:
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 005348eb (CONDITIONAL_JUMP)  ; LAB_005348eb
     LEA EAX,[EAX]                       ; 00534908
     MOV EDX,EDX                         ; 0053490e
-    MOV ECX,dword ptr [0x0203a598]      ; 00534910 | g_INT_0203a598
+    MOV ECX,dword ptr [0x0203a598]      ; 00534910 | g_SpotLightCount
         ;   Label: LAB_00534910
     XOR ESI,ESI                         ; 00534916
     TEST ECX,ECX                        ; 00534918
@@ -149,14 +149,14 @@ section .text
     INC ESI                             ; 00534928
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30 ; 00534929
         ;   XREF to: 0045ca30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30(CDemonLight * this_ptr)
-    MOV EBP,dword ptr [0x0203a598]      ; 0053492e | g_INT_0203a598
+    MOV EBP,dword ptr [0x0203a598]      ; 0053492e | g_SpotLightCount
     ADD ESP,0x4                         ; 00534934
     CMP ESI,EBP                         ; 00534937
     JL 0x0053491e                       ; 00534939
         ;   XREF to: 0053491e (CONDITIONAL_JUMP)  ; LAB_0053491e
     LEA EAX,[EAX]                       ; 0053493b
     MOV ECX,ECX                         ; 0053493e
-    MOV EAX,[0x0203a598]                ; 00534940 | g_INT_0203a598
+    MOV EAX,[0x0203a598]                ; 00534940 | g_SpotLightCount
         ;   Label: LAB_00534940
     XOR ESI,ESI                         ; 00534945
     TEST EAX,EAX                        ; 00534947
@@ -170,7 +170,7 @@ section .text
     INC ESI                             ; 00534957
     CALL core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0045c500 ; 00534958
         ;   XREF to: 0045c500 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0045c500(CDemonLight * this_ptr)
-    MOV ECX,dword ptr [0x0203a598]      ; 0053495d | g_INT_0203a598
+    MOV ECX,dword ptr [0x0203a598]      ; 0053495d | g_SpotLightCount
     ADD ESP,0x4                         ; 00534963
     CMP ESI,ECX                         ; 00534966
     JL 0x0053494d                       ; 00534968
@@ -186,14 +186,14 @@ section .text
     MOV dword ptr [EDX + 0x15ac90],0x1  ; 00534993
     XOR EBX,EBX                         ; 0053499d
     MOV dword ptr [EDX + 0x15f6f8],0x1  ; 0053499f
-    MOV dword ptr [0x0203a598],EBX      ; 005349a9 | g_INT_0203a598
+    MOV dword ptr [0x0203a598],EBX      ; 005349a9 | g_SpotLightCount
     MOV dword ptr [EDX + 0x15aebc],EAX  ; 005349af
     MOV EAX,dword ptr [ESP + 0x200]     ; 005349b5
     MOV dword ptr [0x0203b3e8],EBX      ; 005349bc | g_INT_0203b3e8
     MOV dword ptr [EDX + 0x15aeb8],EAX  ; 005349c2
     MOV dword ptr [0x0203ad30],EBX      ; 005349c8 | g_INT_0203ad30
     MOV EDX,dword ptr [EDX + 0x14d164]  ; 005349ce
-    MOV dword ptr [0x0203aec4],EBX      ; 005349d4 | g_INT_0203aec4
+    MOV dword ptr [0x0203aec4],EBX      ; 005349d4 | g_QueuedCoronaGlobeCount
     TEST EDX,EDX                        ; 005349da
     JLE 0x00534a10                      ; 005349dc
         ;   XREF to: 00534a10 (CONDITIONAL_JUMP)  ; LAB_00534a10
@@ -314,7 +314,7 @@ section .text
     PUSH EAX                            ; 00534bb9
     LEA EAX,[ESP + 0x1a0]               ; 00534bba
     PUSH EAX                            ; 00534bc1
-    MOV EDX,dword ptr [0x006071f0]      ; 00534bc2 | g_CWeather_PTR_006071f0
+    MOV EDX,dword ptr [0x006071f0]      ; 00534bc2 | g_CWeatherPtr
     PUSH EDX                            ; 00534bc8
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 00534bc9
         ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
@@ -559,12 +559,12 @@ section .text
     MOV EBP,0x1                         ; 00534f3d
     PUSH EBP                            ; 00534f42
     PUSH ESI                            ; 00534f43
-    MOV dword ptr [0x0207baa4],EBP      ; 00534f44 | g_INT_0207baa4
+    MOV dword ptr [0x0207baa4],EBP      ; 00534f44 | g_InMirrorRenderPass
     CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0 ; 00534f4a
         ;   XREF to: 005346b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 00534f4f
     PUSH 0x2038f4c                      ; 00534f52
-    MOV dword ptr [0x0207baa4],EBX      ; 00534f57 | g_INT_0207baa4
+    MOV dword ptr [0x0207baa4],EBX      ; 00534f57 | g_InMirrorRenderPass
     CALL core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044b070 ; 00534f5d
         ;   XREF to: 0044b070 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00534f62
@@ -720,7 +720,7 @@ section .text
     PUSH EBP                            ; 00535138
     CALL core_set.cpp_CDemonSet_process_FUN_00539c50 ; 00535139
         ;   XREF to: 00539c50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_process_FUN_00539c50(CDemonSet * this_ptr)
-    MOV EAX,[0x0203a598]                ; 0053513e | g_INT_0203a598
+    MOV EAX,[0x0203a598]                ; 0053513e | g_SpotLightCount
     ADD ESP,0x4                         ; 00535143
     XOR EBP,EBP                         ; 00535146
     TEST EAX,EAX                        ; 00535148
@@ -770,7 +770,7 @@ section .text
     CMP dword ptr [EAX + 0x144],0x0     ; 005351cb
     JZ 0x00535263                       ; 005351d2
         ;   XREF to: 00535263 (CONDITIONAL_JUMP)  ; LAB_00535263
-    MOV EDX,dword ptr [0x0203a598]      ; 005351d8 | g_INT_0203a598
+    MOV EDX,dword ptr [0x0203a598]      ; 005351d8 | g_SpotLightCount
         ;   Label: LAB_005351d8
     ADD EBX,0x4                         ; 005351de
     INC EBP                             ; 005351e1
@@ -799,7 +799,7 @@ section .text
     MOV ESI,EAX                         ; 00535220
     JMP 0x00535115                      ; 00535222
         ;   XREF to: 00535115 (UNCONDITIONAL_JUMP)  ; LAB_00535115
-    MOV EDI,dword ptr [0x0203a598]      ; 00535227 | g_INT_0203a598
+    MOV EDI,dword ptr [0x0203a598]      ; 00535227 | g_SpotLightCount
         ;   Label: LAB_00535227
     MOV ESI,dword ptr [ESI*0x4 + 0x203a418] ; 0053522d | g_CDemonLight_PTR_ARRAY_0203a418
     MOV dword ptr [EDI*0x4 + 0x203a59c],ESI ; 00535234 | g_CDemonLight_PTR_ARRAY_0203a59c
@@ -812,7 +812,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00535254
     MOVSD ES:EDI,ESI                    ; 00535255
     MOV ESI,EAX                         ; 00535256
-    INC dword ptr [0x0203a598]          ; 00535258 | g_INT_0203a598
+    INC dword ptr [0x0203a598]          ; 00535258 | g_SpotLightCount
     JMP 0x00535115                      ; 0053525e
         ;   XREF to: 00535115 (UNCONDITIONAL_JUMP)  ; LAB_00535115
     PUSH EDI                            ; 00535263
@@ -835,7 +835,7 @@ section .text
         ;   XREF to: 00449840 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00535290
     MOV EBP,dword ptr [EBX + 0x161640]  ; 00535293
-    MOV dword ptr [0x01c6e24c],ESI      ; 00535299 | g_INT_01c6e24c
+    MOV dword ptr [0x01c6e24c],ESI      ; 00535299 | g_PerspectiveReciprocal
     TEST EBP,EBP                        ; 0053529f
     JZ 0x005352c0                       ; 005352a1
         ;   XREF to: 005352c0 (CONDITIONAL_JUMP)  ; LAB_005352c0
@@ -843,7 +843,7 @@ section .text
     PUSH EDX                            ; 005352a9
     LEA EAX,[EBX + 0x161644]            ; 005352aa
     PUSH EAX                            ; 005352b0
-    MOV ECX,dword ptr [0x005f4a58]      ; 005352b1 | g_SMRGLSkyTexture_PTR_005f4a58
+    MOV ECX,dword ptr [0x005f4a58]      ; 005352b1 | g_SkyDomeTexturePtr
     PUSH ECX                            ; 005352b7
     CALL core_dskybox.cpp_renderSkyDome_FUN_0046f480 ; 005352b8
         ;   XREF to: 0046f480 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)

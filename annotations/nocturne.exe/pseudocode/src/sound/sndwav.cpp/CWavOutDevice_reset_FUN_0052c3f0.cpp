@@ -14,8 +14,8 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(CWavOutDevice *thi
   int iVar3;
   
   iVar3 = 1;
-  if (g_HWAVEOUT_02dc93a4 != (HWAVEOUT)0x0) {
-    MVar1 = waveOutReset(g_HWAVEOUT_02dc93a4);
+  if (g_WaveOutHandle != (HWAVEOUT)0x0) {
+    MVar1 = waveOutReset(g_WaveOutHandle);
     if (MVar1 != 0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980("waveOutReset failed!");
       iVar3 = 0;
@@ -25,7 +25,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(CWavOutDevice *thi
   do {
     if (*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) != (LPWAVEHDR)0x0) {
       waveOutUnprepareHeader
-                (g_HWAVEOUT_02dc93a4,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2),0x20);
+                (g_WaveOutHandle,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2),0x20);
     }
     iVar2 = iVar2 + 4;
   } while (iVar2 != 0x20);

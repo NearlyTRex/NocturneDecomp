@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Incomplete_markup_tag_be_005c0e5a
 ;   TerminatedCString s_Markup_tag_beginning_wit_005c0e84
 ;   TerminatedCString s_Unexpected_found_near_s_005c0eb7
-;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   uchar[257] g_CharacterClassificationTable
 ;   char[512] g_CHAR_ARRAY_01d0d010
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_004a8f5a
     INC AL                              ; 004a8f5c
     AND EAX,0xff                        ; 004a8f5e
-    MOV DL,byte ptr [EAX + 0x6074b8]    ; 004a8f63 | g_UCHAR_ARRAY_006074b8
+    MOV DL,byte ptr [EAX + 0x6074b8]    ; 004a8f63 | g_CharacterClassificationTable
     LEA ESI,[EBX + 0x1]                 ; 004a8f69
     TEST DL,0x2                         ; 004a8f6c
     JZ 0x004a8f75                       ; 004a8f6f
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_004a8f98
     INC DL                              ; 004a8f9a
     AND EDX,0xff                        ; 004a8f9c
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004a8fa2 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004a8fa2 | g_CharacterClassificationTable
     JZ 0x004a9116                       ; 004a8fa9
         ;   XREF to: 004a9116 (CONDITIONAL_JUMP)  ; LAB_004a9116
     XOR CH,CH                           ; 004a8faf

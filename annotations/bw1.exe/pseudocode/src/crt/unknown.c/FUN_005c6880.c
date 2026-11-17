@@ -16,14 +16,14 @@ Heap ** FUN_005c6880(Heap *param_1)
   Heap **ppHVar5;
   
   pHVar4 = (Heap *)0x0;
-  for (pHVar3 = g_Heap_PTR_00626220; (pHVar3 != (Heap *)0x0 && (pHVar3 <= param_1));
+  for (pHVar3 = g_MainHeap; (pHVar3 != (Heap *)0x0 && (pHVar3 <= param_1));
       pHVar3 = pHVar3->next_heap_block) {
     pHVar4 = pHVar3;
   }
   param_1->heap_base = pHVar4;
   param_1->next_heap_block = pHVar3;
   if (pHVar4 == (Heap *)0x0) {
-    g_Heap_PTR_00626220 = param_1;
+    g_MainHeap = param_1;
   }
   else {
     pHVar4->next_heap_block = param_1;

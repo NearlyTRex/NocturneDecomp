@@ -107,7 +107,7 @@ LAB_0041558b:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->morph_event);
+                    (g_CEventListPtr,this_ptr->morph_event);
   if (iVar6 != 0) {
     this_ptr->morph_timer = 0.0;
     this_ptr->morphing = 1;

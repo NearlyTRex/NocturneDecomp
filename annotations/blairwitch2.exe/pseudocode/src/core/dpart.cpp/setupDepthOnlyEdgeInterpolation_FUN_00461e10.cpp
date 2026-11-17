@@ -50,7 +50,7 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00461e10(SSoftwa
     lVar1 = (longlong)iVar6 *
             (longlong)(((vertex_b->base).x_current - (pSVar7->base).x_current) * 0x100);
     *(uint *)(iVar4 + 0x1ba51f8) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar6 = g_INT_01ba5714;
+    iVar6 = g_RasterizerDepthBias;
     uVar5 = (uint)(ushort)((ushort)(pSVar7->base).red_gradient ^ 0xffff);
     lVar1 = (longlong)(int)uVar5 * (longlong)*(int *)(iVar4 + 0x1ba51d8);
     *(uint *)(iVar4 + 0x1ba51d4) =

@@ -13,7 +13,7 @@ void __cdecl core_hero_cpp_staticInit_FUN_004ea5f0(void)
             (&g_CHeroClassInfo,"CHero",(CDemonActor_FactoryFunc *)0x0,&g_CHeroClassVersion,
              0xd,&g_CCharacterClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CDemonActorType_01d06b14,"CHeroPlaceholder",
+            (&g_CHeroPlaceholderClassInfo,"CHeroPlaceholder",
              core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70,&g_INT_0061ef24,2,
              &g_CDemonActorClassInfo);
   return;

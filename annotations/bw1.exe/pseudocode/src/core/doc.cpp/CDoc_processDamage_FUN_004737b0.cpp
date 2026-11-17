@@ -51,9 +51,9 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CShadowsc");
   if ((iVar2 != 0) &&
      (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (g_CEventList_PTR_0061b4d0,"ScorpTailAttack"), iVar2 != 0)) {
+                        (g_CEventListPtr,"ScorpTailAttack"), iVar2 != 0)) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"HitByShadowScorp");
+              (g_CEventListPtr,"HitByShadowScorp");
   }
   this_ptr_00 = g_CConsolePtr;
   if (((g_CGamePtr->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&

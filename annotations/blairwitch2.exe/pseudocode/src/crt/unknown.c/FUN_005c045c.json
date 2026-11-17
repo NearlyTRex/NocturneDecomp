@@ -86,25 +86,25 @@
     },
     {
       "addr": "0061f414",
-      "name": "g_PTR_0061f414",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f440",
-      "name": "g_PTR_0061f440",
+      "name": "g_SpecialDeviceWriteFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f480",
-      "name": "g_UINT_0061f480",
+      "name": "g_MaxHandleCount",
       "type": "uint",
       "value": "0x14"
     },
     {
       "addr": "0061f4d8",
-      "name": "g_SIOControlBlock_PTR_0061f4d8",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     }
@@ -251,7 +251,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_0061f480 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -259,7 +259,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_0061f480 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -275,7 +275,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvStack_18 = g_SIOControlBlock_PTR_0061f4d8->standard_handles[param_1];",
+      "text": "pvStack_18 = g_IOControlBlock->standard_handles[param_1];",
       "type": "unnamed_param"
     },
     {
@@ -355,7 +355,7 @@
       "line": 58,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -363,7 +363,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -387,7 +387,7 @@
       "line": 67,
       "match": "code *",
       "severity": "moderate",
-      "text": "DStack_24 = (*(code *)g_PTR_0061f440)(iVar3,&DStack_24,DVar2);",
+      "text": "DStack_24 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,&DStack_24,DVar2);",
       "type": "unresolved_funcptr"
     },
     {
@@ -427,7 +427,7 @@
       "line": 84,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -435,7 +435,7 @@
       "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -459,7 +459,7 @@
       "line": 93,
       "match": "code *",
       "severity": "moderate",
-      "text": "DStack_24 = (*(code *)g_PTR_0061f440)(iVar3,&DStack_24,DVar2);",
+      "text": "DStack_24 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,&DStack_24,DVar2);",
       "type": "unresolved_funcptr"
     },
     {
@@ -491,7 +491,7 @@
       "line": 107,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -499,7 +499,7 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -523,7 +523,7 @@
       "line": 116,
       "match": "code *",
       "severity": "moderate",
-      "text": "DStack_20 = (*(code *)g_PTR_0061f440)(iVar3,&DStack_24,DStack_24);",
+      "text": "DStack_20 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,&DStack_24,DStack_24);",
       "type": "unresolved_funcptr"
     },
     {
@@ -547,7 +547,7 @@
       "line": 127,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -555,7 +555,7 @@
       "line": 127,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = (*(code *)g_PTR_0061f414)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -595,7 +595,7 @@
       "line": 136,
       "match": "code *",
       "severity": "moderate",
-      "text": "DStack_1c = (*(code *)g_PTR_0061f440)(iVar3,param_2,param_3);",
+      "text": "DStack_1c = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);",
       "type": "unresolved_funcptr"
     },
     {
@@ -603,7 +603,7 @@
       "line": 136,
       "match": "param_2",
       "severity": "mild",
-      "text": "DStack_1c = (*(code *)g_PTR_0061f440)(iVar3,param_2,param_3);",
+      "text": "DStack_1c = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -611,7 +611,7 @@
       "line": 136,
       "match": "param_3",
       "severity": "mild",
-      "text": "DStack_1c = (*(code *)g_PTR_0061f440)(iVar3,param_2,param_3);",
+      "text": "DStack_1c = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {

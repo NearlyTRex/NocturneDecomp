@@ -16,18 +16,18 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
   int iVar4;
   
   index = 0;
-  g_INT_02dc9620 = 0;
-  if (g_CStrList_02dc9610.item_count < 1) {
-    g_INT_02dc9620 = 0;
+  g_SoundMatchCount = 0;
+  if (g_SoundFileList.item_count < 1) {
+    g_SoundMatchCount = 0;
     return;
   }
   do {
     iVar4 = 0;
-    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,index);
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_SoundFileList,index);
     iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(wildcard_pattern,pcVar2,iVar4);
     if (iVar4 != 0) {
-      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,index);
-      pcVar3 = g_CHAR_ARRAY_ARRAY_02dc9628[g_INT_02dc9620];
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_SoundFileList,index);
+      pcVar3 = g_SoundMatchedFilenames[g_SoundMatchCount];
       do {
         cVar1 = *pcVar2;
         *pcVar3 = cVar1;
@@ -37,13 +37,13 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      g_INT_02dc9620 = g_INT_02dc9620 + 1;
-      if (0x27 < g_INT_02dc9620) {
+      g_SoundMatchCount = g_SoundMatchCount + 1;
+      if (0x27 < g_SoundMatchCount) {
         return;
       }
     }
     index = index + 1;
-    if (g_CStrList_02dc9610.item_count <= index) {
+    if (g_SoundFileList.item_count <= index) {
       return;
     }
   } while( true );

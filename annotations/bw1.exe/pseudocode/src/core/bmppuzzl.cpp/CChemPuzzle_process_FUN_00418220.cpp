@@ -24,16 +24,16 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_process_FUN_00418220(CChemPuzzle *thi
   int *piVar11;
   
   core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-            (g_CEventList_PTR_0061b4d0,"ChemPuzzleActive");
-  iVar7 = g_INT_01c43540;
-  iVar12 = g_INT_01c4353c;
-  this_ptr_00 = g_CEventList_PTR_0061b4d0;
+            (g_CEventListPtr,"ChemPuzzleActive");
+  iVar7 = g_MouseY;
+  iVar12 = g_MouseX;
+  this_ptr_00 = g_CEventListPtr;
   if (this_ptr->result == 1) {
     this_ptr->result = -1;
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
               (this_ptr_00,"SolvedChemistryPuzzle");
     (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIM_LBUTTON);
-    g_BIT_INTEGER32_01c43544.dword = 0;
+    g_MouseButtonFlags.dword = 0;
     core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(&this_ptr->base,0);
     return;
   }
@@ -53,10 +53,10 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_process_FUN_00418220(CChemPuzzle *thi
       if (this_ptr->selected_button == 0x2b) {
         if (this_ptr->result == 2) {
           core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                    (g_CEventList_PTR_0061b4d0,"FailedChemistryPuzzle");
+                    (g_CEventListPtr,"FailedChemistryPuzzle");
         }
         (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIM_LBUTTON);
-        g_BIT_INTEGER32_01c43544.dword = 0;
+        g_MouseButtonFlags.dword = 0;
         core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(&this_ptr->base,0);
         this_ptr->result = -1;
         return;

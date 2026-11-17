@@ -13,7 +13,7 @@
 ;   float g_FLOAT_005d71fb = 0.5
 ;   double g_DOUBLE_005d7203 = 0.700000000000000
 ;   double g_DOUBLE_005d720b = 0.300000000000000
-;   undefined4 g_CDemonActorType_007bcc4c.name_hash
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -52,7 +52,7 @@ section .text
     XOR ECX,ECX                         ; 004b22ee
     MOV dword ptr [ESP + 0x1d4],EAX     ; 004b22f0
     MOV dword ptr [ESP + 0x128],ECX     ; 004b22f7
-    MOV EAX,[0x007bcc84]                ; 004b22fe | g_CDemonActorType_007bcc4c.name_hash
+    MOV EAX,[0x007bcc84]                ; 004b22fe | g_CLightActorClassInfo.name_hash
     MOV dword ptr [ESP + 0x124],ECX     ; 004b2303
     PUSH EAX                            ; 004b230a
     MOV dword ptr [ESP + 0x124],ECX     ; 004b230b

@@ -16,8 +16,8 @@
 ;   float g_FLOAT_005d2be6 = 0.5
 ;   double g_DOUBLE_005d2bee = 0.5
 ;   double g_DOUBLE_005d2bf6 = 2.5
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CEventList* g_CEventListPtr = 01c38bc0
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
@@ -69,7 +69,7 @@ section .text
     LEA EAX,[EBX + 0x32c]               ; 00486ce4
         ;   Label: LAB_00486ce4
     PUSH EAX                            ; 00486cea
-    MOV EDI,dword ptr [0x006141f0]      ; 00486ceb | g_CEventList_PTR_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 00486ceb | g_CEventListPtr
     PUSH EDI                            ; 00486cf1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00486cf2
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -142,7 +142,7 @@ section .text
     PUSH 0x0                            ; 00486dd3
     LEA ESI,[EBX + 0x20]                ; 00486dd5
     PUSH ESI                            ; 00486dd8
-    MOV EDI,dword ptr [0x00614d30]      ; 00486dd9 | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 00486dd9 | g_CFireEffectPtr
     PUSH EDI                            ; 00486ddf
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 00486de0
         ;   XREF to: 0049d090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -227,7 +227,7 @@ section .text
     RET                                 ; 00486ebd
     PUSH EDI                            ; 00486ebe
         ;   Label: LAB_00486ebe
-    MOV EDX,dword ptr [0x006141f0]      ; 00486ebf | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 00486ebf | g_CEventListPtr
     PUSH EDX                            ; 00486ec5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00486ec6
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -288,7 +288,7 @@ section .text
     PUSH EAX                            ; 00486f8f
     LEA ESI,[EBX + 0x20]                ; 00486f90
     PUSH ESI                            ; 00486f93
-    MOV EDI,dword ptr [0x00614d30]      ; 00486f94 | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 00486f94 | g_CFireEffectPtr
     PUSH EDI                            ; 00486f9a
     CALL core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0 ; 00486f9b
         ;   XREF to: 0049d6a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int fade_rate, ...)
@@ -378,7 +378,7 @@ section .text
     LEA EAX,[ESP + 0x80]                ; 004870dd
     PUSH 0x3f800000                     ; 004870e4
     PUSH EAX                            ; 004870e9
-    MOV EAX,[0x00614d30]                ; 004870ea | g_CFireEffect_PTR_00614d30
+    MOV EAX,[0x00614d30]                ; 004870ea | g_CFireEffectPtr
     PUSH EAX                            ; 004870ef
     INC EDI                             ; 004870f0
     MOV dword ptr [ESP + 0x88],EDX      ; 004870f1
@@ -440,7 +440,7 @@ section .text
     PUSH EAX                            ; 004871b9
     LEA EAX,[EBX + 0x20]                ; 004871ba
     PUSH EAX                            ; 004871bd
-    MOV ESI,dword ptr [0x00614d30]      ; 004871be | g_CFireEffect_PTR_00614d30
+    MOV ESI,dword ptr [0x00614d30]      ; 004871be | g_CFireEffectPtr
     PUSH ESI                            ; 004871c4
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0 ; 004871c5
         ;   XREF to: 0049d5b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
@@ -495,7 +495,7 @@ section .text
     PUSH EAX                            ; 0048728a
     LEA EAX,[ESP + 0x90]                ; 0048728b
     PUSH EAX                            ; 00487292
-    MOV EDI,dword ptr [0x00614d30]      ; 00487293 | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 00487293 | g_CFireEffectPtr
     PUSH EDI                            ; 00487299
     CALL core_fire.cpp_CFireEffect_createLeaf_FUN_0049d600 ; 0048729a
         ;   XREF to: 0049d600 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_0049d600(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr, ...)
@@ -520,7 +520,7 @@ section .text
     LEA EAX,[ESP + 0xfc]                ; 004872da
     LEA EDI,[ESP + 0xfc]                ; 004872e1
     PUSH EAX                            ; 004872e8
-    MOV EDX,dword ptr [0x00614d30]      ; 004872e9 | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 004872e9 | g_CFireEffectPtr
     LEA ESI,[ESP + 0x13c]               ; 004872ef
     PUSH EDX                            ; 004872f6
     MOVSD ES:EDI,ESI                    ; 004872f7
@@ -595,28 +595,28 @@ section .text
         ;   Label: caseD_6
     LEA ESI,[EBX + 0x20]                ; 004873d6
     PUSH ESI                            ; 004873d9
-    MOV EDX,dword ptr [0x00614d30]      ; 004873da | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 004873da | g_CFireEffectPtr
     PUSH EDX                            ; 004873e0
     CALL core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0 ; 004873e1
         ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 004873e6
     PUSH 0x0                            ; 004873e9
     PUSH ESI                            ; 004873eb
-    MOV ECX,dword ptr [0x00614d30]      ; 004873ec | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 004873ec | g_CFireEffectPtr
     PUSH ECX                            ; 004873f2
     CALL core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0 ; 004873f3
         ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 004873f8
     PUSH 0x0                            ; 004873fb
     PUSH ESI                            ; 004873fd
-    MOV EDI,dword ptr [0x00614d30]      ; 004873fe | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004873fe | g_CFireEffectPtr
     PUSH EDI                            ; 00487404
     CALL core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0 ; 00487405
         ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0048740a
     PUSH 0x0                            ; 0048740d
     PUSH ESI                            ; 0048740f
-    MOV EAX,[0x00614d30]                ; 00487410 | g_CFireEffect_PTR_00614d30
+    MOV EAX,[0x00614d30]                ; 00487410 | g_CFireEffectPtr
     PUSH EAX                            ; 00487415
     CALL core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0 ; 00487416
         ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createPopcorn_FUN_0049e9d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -632,7 +632,7 @@ section .text
     LEA ESI,[EBX + 0x20]                ; 00487437
     PUSH dword ptr [EBX + 0x2bc]        ; 0048743a
     PUSH ESI                            ; 00487440
-    MOV EDI,dword ptr [0x00614d30]      ; 00487441 | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 00487441 | g_CFireEffectPtr
     PUSH EDI                            ; 00487447
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_0049e6e0 ; 00487448
         ;   XREF to: 0049e6e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_0049e6e0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
@@ -691,7 +691,7 @@ section .text
     PUSH 0x0                            ; 004874fb
     LEA EAX,[EBX + 0x20]                ; 004874fd
     PUSH EAX                            ; 00487500
-    MOV ESI,dword ptr [0x00614d30]      ; 00487501 | g_CFireEffect_PTR_00614d30
+    MOV ESI,dword ptr [0x00614d30]      ; 00487501 | g_CFireEffectPtr
     PUSH ESI                            ; 00487507
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 00487508
         ;   XREF to: 0049d090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -798,7 +798,7 @@ section .text
     PUSH EAX                            ; 0048768e
     LEA EAX,[EBX + 0x20]                ; 0048768f
     PUSH EAX                            ; 00487692
-    MOV ECX,dword ptr [0x00614d30]      ; 00487693 | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 00487693 | g_CFireEffectPtr
     PUSH ECX                            ; 00487699
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760 ; 0048769a
         ;   XREF to: 0049e760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)

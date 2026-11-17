@@ -21,14 +21,14 @@
 ;   TerminatedCString s_core_dcamera_cpp_0057b6c1
 ;   TerminatedCString s_CDemonCamera_beginScene_0057b6d5
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   int g_INT_005ad444 = 0x10000
-;   int g_INT_005ad448 = 0xc80000
-;   int g_INT_005ad44c = 0x3
+;   int g_CameraShakePeakValue = 0x10000
+;   int g_CameraShakeSustainValue = 0xc80000
+;   int g_CameraShakeState = 0x3
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CConsole g_CConsoleInstance
-;   int g_INT_012ceb58
-;   int g_INT_012ceb5c
-;   int g_INT_012ceb60
+;   int g_CameraShakeSustainTimer
+;   int g_CameraShakeAttackTime
+;   int g_CameraShakeAttackAccum
 ;   ... and 13 more
 ;
 ; Called Functions:
@@ -57,33 +57,33 @@ section .text
     PUSH EBP                            ; 00440293
     MOV ESI,dword ptr [ESP + 0x14]      ; 00440294
     MOV EDI,dword ptr [ESP + 0x18]      ; 00440298
-    MOV EAX,[0x005ad44c]                ; 0044029c | g_INT_005ad44c
+    MOV EAX,[0x005ad44c]                ; 0044029c | g_CameraShakeState
     XOR EBX,EBX                         ; 004402a1
     CMP EAX,0x3                         ; 004402a3
     JA 0x00440316                       ; 004402a6
         ;   XREF to: 00440316 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x440280]  ; 004402a8 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV EBP,dword ptr [0x012ceb60]      ; 004402af | g_INT_012ceb60
+    MOV EBP,dword ptr [0x012ceb60]      ; 004402af | g_CameraShakeAttackAccum
         ;   Label: caseD_0
-    ADD EBP,dword ptr [0x01bd1d80]      ; 004402b5 | g_INT_01bd1d80
-    MOV EDX,dword ptr [0x012ceb5c]      ; 004402bb | g_INT_012ceb5c
-    MOV dword ptr [0x012ceb60],EBP      ; 004402c1 | g_INT_012ceb60
+    ADD EBP,dword ptr [0x01bd1d80]      ; 004402b5 | g_GlobalDeltaTimeInt
+    MOV EDX,dword ptr [0x012ceb5c]      ; 004402bb | g_CameraShakeAttackTime
+    MOV dword ptr [0x012ceb60],EBP      ; 004402c1 | g_CameraShakeAttackAccum
     CMP EBP,EDX                         ; 004402c7
     JLE 0x004402e6                      ; 004402c9
         ;   XREF to: 004402e6 (CONDITIONAL_JUMP)  ; LAB_004402e6
     MOV ECX,0x1                         ; 004402cb
-    MOV EAX,[0x005ad448]                ; 004402d0 | g_INT_005ad448
-    MOV dword ptr [0x012ceb60],EDX      ; 004402d5 | g_INT_012ceb60
-    MOV dword ptr [0x005ad44c],ECX      ; 004402db | g_INT_005ad44c
-    MOV [0x012ceb58],EAX                ; 004402e1 | g_INT_012ceb58
-    MOV EBP,dword ptr [0x012ceb5c]      ; 004402e6 | g_INT_012ceb5c
+    MOV EAX,[0x005ad448]                ; 004402d0 | g_CameraShakeSustainValue
+    MOV dword ptr [0x012ceb60],EDX      ; 004402d5 | g_CameraShakeAttackAccum
+    MOV dword ptr [0x005ad44c],ECX      ; 004402db | g_CameraShakeState
+    MOV [0x012ceb58],EAX                ; 004402e1 | g_CameraShakeSustainTimer
+    MOV EBP,dword ptr [0x012ceb5c]      ; 004402e6 | g_CameraShakeAttackTime
         ;   Label: LAB_004402e6
     TEST EBP,EBP                        ; 004402ec
     JZ 0x00440303                       ; 004402ee
         ;   XREF to: 00440303 (CONDITIONAL_JUMP)  ; LAB_00440303
-    MOV EDX,dword ptr [0x012ceb60]      ; 004402f0 | g_INT_012ceb60
-    MOV EAX,[0x005ad444]                ; 004402f6 | g_INT_005ad444
+    MOV EDX,dword ptr [0x012ceb60]      ; 004402f0 | g_CameraShakeAttackAccum
+    MOV EAX,[0x005ad444]                ; 004402f6 | g_CameraShakePeakValue
     MOV EBX,EBP                         ; 004402fb
     IMUL EDX                            ; 004402fd
     IDIV EBX                            ; 004402ff
@@ -96,24 +96,24 @@ section .text
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
         ;   Label: LAB_0044030e
     ADD ESP,0x8                         ; 00440313
-    MOV EDX,dword ptr [0x01bd1d80]      ; 00440316 | g_INT_01bd1d80
+    MOV EDX,dword ptr [0x01bd1d80]      ; 00440316 | g_GlobalDeltaTimeInt
         ;   Label: caseD_3
     MOV EAX,EBX                         ; 0044031c
     IMUL EDX                            ; 0044031e
     SHRD EAX,EDX,0x10                   ; 00440320
-    MOV EDX,dword ptr [0x012ceb6c]      ; 00440324 | g_INT_012ceb6c
+    MOV EDX,dword ptr [0x012ceb6c]      ; 00440324 | g_CameraShakeAccumulator
     ADD EDX,EAX                         ; 0044032a
-    MOV dword ptr [0x012ceb6c],EDX      ; 0044032c | g_INT_012ceb6c
+    MOV dword ptr [0x012ceb6c],EDX      ; 0044032c | g_CameraShakeAccumulator
     CMP EDX,0xffff                      ; 00440332
     JLE 0x00440387                      ; 00440338
         ;   XREF to: 00440387 (CONDITIONAL_JUMP)  ; LAB_00440387
-    MOV EAX,[0x01bd1d80]                ; 0044033a | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 0044033a | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [0x012ceb70]      ; 0044033f | g_INT_012ceb70
     AND EAX,0x1                         ; 00440345
     XOR EBX,EBX                         ; 00440348
     MOV [0x012ceb70],EAX                ; 0044034a | g_INT_012ceb70
-    MOV EAX,[0x01bd1d80]                ; 0044034f | g_INT_01bd1d80
-    MOV dword ptr [0x012ceb6c],EBX      ; 00440354 | g_INT_012ceb6c
+    MOV EAX,[0x01bd1d80]                ; 0044034f | g_GlobalDeltaTimeInt
+    MOV dword ptr [0x012ceb6c],EBX      ; 00440354 | g_CameraShakeAccumulator
     AND EAX,0x2                         ; 0044035a
     MOV EBX,dword ptr [0x012ceb74]      ; 0044035d | g_INT_012ceb74
     SAR EAX,0x1                         ; 00440363
@@ -246,43 +246,43 @@ section .text
     POP ESI                             ; 00440504
     POP EBX                             ; 00440505
     RET                                 ; 00440506
-    MOV EBX,dword ptr [0x012ceb58]      ; 00440507 | g_INT_012ceb58
+    MOV EBX,dword ptr [0x012ceb58]      ; 00440507 | g_CameraShakeSustainTimer
         ;   Label: caseD_1
-    MOV EAX,[0x01bd1d80]                ; 0044050d | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 0044050d | g_GlobalDeltaTimeInt
     SUB EBX,EAX                         ; 00440512
-    MOV dword ptr [0x012ceb58],EBX      ; 00440514 | g_INT_012ceb58
+    MOV dword ptr [0x012ceb58],EBX      ; 00440514 | g_CameraShakeSustainTimer
     TEST EBX,EBX                        ; 0044051a
     JGE 0x0044053a                      ; 0044051c
         ;   XREF to: 0044053a (CONDITIONAL_JUMP)  ; LAB_0044053a
     XOR EAX,EAX                         ; 0044051e
     MOV EDX,0x2                         ; 00440520
-    MOV [0x012ceb58],EAX                ; 00440525 | g_INT_012ceb58
-    MOV EAX,[0x012ceb64]                ; 0044052a | g_INT_012ceb64
-    MOV dword ptr [0x005ad44c],EDX      ; 0044052f | g_INT_005ad44c
-    MOV [0x012ceb68],EAX                ; 00440535 | g_INT_012ceb68
+    MOV [0x012ceb58],EAX                ; 00440525 | g_CameraShakeSustainTimer
+    MOV EAX,[0x012ceb64]                ; 0044052a | g_CameraShakeDecayDuration
+    MOV dword ptr [0x005ad44c],EDX      ; 0044052f | g_CameraShakeState
+    MOV [0x012ceb68],EAX                ; 00440535 | g_CameraShakeDecayTimer
     PUSH 0x57b6ad                       ; 0044053a | = "Sustain : "
         ;   Label: LAB_0044053a
     MOV ECX,dword ptr [0x005ad350]      ; 0044053f | g_CConsolePtr
     PUSH ECX                            ; 00440545 | g_CConsoleInstance
-    MOV EBX,dword ptr [0x005ad444]      ; 00440546 | g_INT_005ad444
+    MOV EBX,dword ptr [0x005ad444]      ; 00440546 | g_CameraShakePeakValue
     JMP 0x0044030e                      ; 0044054c
         ;   XREF to: 0044030e (UNCONDITIONAL_JUMP)  ; LAB_0044030e
-    MOV EDX,dword ptr [0x012ceb68]      ; 00440551 | g_INT_012ceb68
+    MOV EDX,dword ptr [0x012ceb68]      ; 00440551 | g_CameraShakeDecayTimer
         ;   Label: caseD_2
-    MOV EAX,[0x01bd1d80]                ; 00440557 | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 00440557 | g_GlobalDeltaTimeInt
     SUB EDX,EAX                         ; 0044055c
-    MOV dword ptr [0x012ceb68],EDX      ; 0044055e | g_INT_012ceb68
+    MOV dword ptr [0x012ceb68],EDX      ; 0044055e | g_CameraShakeDecayTimer
     TEST EDX,EDX                        ; 00440564
     JL 0x00440596                       ; 00440566
         ;   XREF to: 00440596 (CONDITIONAL_JUMP)  ; LAB_00440596
-    MOV EDX,dword ptr [0x012ceb64]      ; 00440568 | g_INT_012ceb64
+    MOV EDX,dword ptr [0x012ceb64]      ; 00440568 | g_CameraShakeDecayDuration
         ;   Label: LAB_00440568
     TEST EDX,EDX                        ; 0044056e
     JZ 0x00440585                       ; 00440570
         ;   XREF to: 00440585 (CONDITIONAL_JUMP)  ; LAB_00440585
-    MOV EAX,[0x005ad444]                ; 00440572 | g_INT_005ad444
+    MOV EAX,[0x005ad444]                ; 00440572 | g_CameraShakePeakValue
     MOV EBX,EDX                         ; 00440577
-    MOV EDX,dword ptr [0x012ceb68]      ; 00440579 | g_INT_012ceb68
+    MOV EDX,dword ptr [0x012ceb68]      ; 00440579 | g_CameraShakeDecayTimer
     IMUL EDX                            ; 0044057f
     IDIV EBX                            ; 00440581
     MOV EBX,EAX                         ; 00440583
@@ -294,11 +294,11 @@ section .text
         ;   XREF to: 0044030e (UNCONDITIONAL_JUMP)  ; LAB_0044030e
     MOV EAX,0x3                         ; 00440596
         ;   Label: LAB_00440596
-    MOV dword ptr [0x012ceb68],EBX      ; 0044059b | g_INT_012ceb68
-    MOV [0x005ad44c],EAX                ; 004405a1 | g_INT_005ad44c
+    MOV dword ptr [0x012ceb68],EBX      ; 0044059b | g_CameraShakeDecayTimer
+    MOV [0x005ad44c],EAX                ; 004405a1 | g_CameraShakeState
     JMP 0x00440568                      ; 004405a6
         ;   XREF to: 00440568 (UNCONDITIONAL_JUMP)  ; LAB_00440568
-    CMP dword ptr [0x005ad44c],0x3      ; 004405a8 | g_INT_005ad44c
+    CMP dword ptr [0x005ad44c],0x3      ; 004405a8 | g_CameraShakeState
         ;   Label: LAB_004405a8
     JZ 0x00440397                       ; 004405af
         ;   XREF to: 00440397 (CONDITIONAL_JUMP)  ; LAB_00440397

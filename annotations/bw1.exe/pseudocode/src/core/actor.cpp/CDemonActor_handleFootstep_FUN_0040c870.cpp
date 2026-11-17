@@ -47,8 +47,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040c870(CDemonActor 
     ground_type = GROUND_TYPE_WATER;
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c550(this_ptr,"CHero");
     if (iVar4 != 0) {
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                (g_CEventList_PTR_0061b4d0,"FeetAreWet");
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,"FeetAreWet");
     }
   }
   iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004e6590
@@ -108,7 +107,7 @@ LAB_0040c98f:
         }
         iVar4 = iVar4 + 1;
         core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00
-                  (g_CFireEffect_PTR_0061c010,position,&CStack_60,(CKeyFramedModel *)0x0,15.0);
+                  (g_CFireEffectPtr,position,&CStack_60,(CKeyFramedModel *)0x0,15.0);
       } while (iVar4 < this_ptr->footstep_particle_count);
     }
   }

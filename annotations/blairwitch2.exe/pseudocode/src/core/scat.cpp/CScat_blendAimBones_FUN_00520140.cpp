@@ -47,8 +47,8 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00520140(CScat *this_ptr,int 
   
   bVar8 = 0;
   if (hand_index == 0) {
-    local_1c = g_INT_ARRAY_01e62068[3];
-    local_18 = g_INT_ARRAY_01e62068[5];
+    local_1c = g_ScatIndices[3];
+    local_18 = g_ScatIndices[5];
     core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(1.5707964,&local_cc);
     local_fc.w = local_cc.w;
     puVar4 = (uint *)((int)&local_fc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
@@ -61,8 +61,8 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00520140(CScat *this_ptr,int 
     pCVar2 = &local_bc;
   }
   else {
-    local_1c = g_INT_ARRAY_01e62068[4];
-    local_18 = g_INT_ARRAY_01e62068[6];
+    local_1c = g_ScatIndices[4];
+    local_18 = g_ScatIndices[6];
     core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(-1.5707964,&local_ac);
     local_fc.w = local_ac.w;
     puVar4 = (uint *)((int)&local_fc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
@@ -111,7 +111,7 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00520140(CScat *this_ptr,int 
   *puVar4 = *puVar3;
   puVar4[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
   pCVar2 = &local_12c;
-  core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_CQuaternion4f_005fe2f0,&local_fc,0.95,&local_4c);
+  core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_IdentityQuaternion,&local_fc,0.95,&local_4c);
   local_ec.w = local_4c.w;
   puVar4 = (uint *)((int)&local_ec + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
   puVar3 = (uint *)((int)&local_4c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

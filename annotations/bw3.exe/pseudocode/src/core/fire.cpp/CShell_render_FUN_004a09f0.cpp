@@ -25,12 +25,12 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004a09f0(CShell *this_ptr)
       iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
                         (g_CDemonRenderer_PTR_005f2afc);
       if (iVar1 == 0) {
-        (*((g_CDemonCamera_PTR_007e2a54->base).vtable)->setupPerspectiveAndFog)
-                  (g_CDemonCamera_PTR_007e2a54,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+        (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_005375c0
                 (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&this_ptr->euler_angles,
-                 &g_CVector3f_02cfd900,&g_CVector3f_02cfd900,(CMatrix3x3f *)0x0);
+                 &g_ZeroVector,&g_ZeroVector,(CMatrix3x3f *)0x0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
                 (g_CDemonRenderer_PTR_005f2afc,(CVector3f *)this_ptr);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30

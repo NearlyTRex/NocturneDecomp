@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf603c
+;   void* g_APIDLL_add3dLine
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     PUSH EBX                            ; 00566027
     MOV ESI,dword ptr [ESP + 0x14]      ; 00566028
     PUSH ESI                            ; 0056602c
-    CALL dword ptr [0x02cf603c]         ; 0056602d | g_PTR_02cf603c
+    CALL dword ptr [0x02cf603c]         ; 0056602d | g_APIDLL_add3dLine
     ADD ESP,0xc                         ; 00566033
     POP EBX                             ; 00566036
     POP ESI                             ; 00566037

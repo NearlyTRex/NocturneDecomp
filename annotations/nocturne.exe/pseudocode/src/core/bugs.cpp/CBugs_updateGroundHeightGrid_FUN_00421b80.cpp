@@ -74,7 +74,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs *this
     local_2c = local_20 + 0xb;
     local_28 = local_24 + 0xb;
     pfVar7 = (float *)(unaff_EBX + 0x12720);
-    pafVar8 = g_FLOAT_ARRAY_ARRAY_00764b58;
+    pafVar8 = g_BugsGroundHeightGridTemp;
     for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {
       (*pafVar8)[0] = *pfVar7;
       pfVar7 = pfVar7 + (uint)bVar10 * -2 + 1;
@@ -110,7 +110,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs *this
         }
         else {
           *(uint *)(iVar4 + 0x12720) =
-               *(uint *)((int)g_FLOAT_ARRAY_ARRAY_00764b58[0] + iVar6);
+               *(uint *)((int)g_BugsGroundHeightGridTemp[0] + iVar6);
         }
         iVar4 = iVar4 + 4;
         iVar6 = iVar6 + 4;

@@ -13,14 +13,14 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(CDemonMissi
   int clear_screen;
   char *pcVar1;
   
-  if (g_INT_01d06aa0 < 1) {
+  if (g_HeroCount < 1) {
     pcVar1 = "Can't run mission - no heros";
   }
   else {
     if (g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4] != (CHero *)0x0) {
       core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(this_ptr);
       (this_ptr->pending_teleport).area_id = -1;
-      this_ptr_00 = g_CEventList_PTR_0061b4d0;
+      this_ptr_00 = g_CEventListPtr;
       (this_ptr->pending_teleport).position.z = 0.0;
       (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
       (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;

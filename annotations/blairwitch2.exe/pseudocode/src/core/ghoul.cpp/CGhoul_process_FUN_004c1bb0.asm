@@ -313,7 +313,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10b10]   ; 004c1ede
     FLD float ptr [EBP + 0x76]          ; 004c1ee4
     PUSH 0x544cc0                       ; 004c1ee7
-    MOV EAX,[0x01cb8240]                ; 004c1eec | g_INT_ARRAY_01cb821c[9]
+    MOV EAX,[0x01cb8240]                ; 004c1eec | g_GhoulIndices[9]
     FLD1                                ; 004c1ef1
     FSUBRP ST2,ST0                      ; 004c1ef3
     PUSH EAX                            ; 004c1ef5
@@ -729,12 +729,12 @@ section .text
     PUSH EDX                            ; 004c23c2
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00 ; 004c23c3
         ;   XREF to: 00544f00 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(CDeformableModelInstance * this_ptr)
-    MOV EAX,[0x01cb8220]                ; 004c23c8 | g_INT_ARRAY_01cb821c[1]
+    MOV EAX,[0x01cb8220]                ; 004c23c8 | g_GhoulIndices[1]
     ADD ESP,0x4                         ; 004c23cd
     CMP ESI,0xc                         ; 004c23d0
     JNZ 0x004c23da                      ; 004c23d3
         ;   XREF to: 004c23da (CONDITIONAL_JUMP)  ; LAB_004c23da
-    MOV EAX,[0x01cb8224]                ; 004c23d5 | g_INT_ARRAY_01cb821c[2]
+    MOV EAX,[0x01cb8224]                ; 004c23d5 | g_GhoulIndices[2]
     PUSH EAX                            ; 004c23da
         ;   Label: LAB_004c23da
     MOV ECX,dword ptr [EBP + 0x72]      ; 004c23db
@@ -795,7 +795,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00 ; 004c247a
         ;   XREF to: 00544f00 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c247f
-    MOV ECX,dword ptr [0x01cb821c]      ; 004c2482 | g_INT_ARRAY_01cb821c
+    MOV ECX,dword ptr [0x01cb821c]      ; 004c2482 | g_GhoulIndices
     PUSH ECX                            ; 004c2488
     MOV ESI,dword ptr [EBP + 0x72]      ; 004c2489
     PUSH ESI                            ; 004c248c
@@ -855,7 +855,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00 ; 004c252d
         ;   XREF to: 00544f00 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c2532
-    MOV ECX,dword ptr [0x01cb821c]      ; 004c2535 | g_INT_ARRAY_01cb821c
+    MOV ECX,dword ptr [0x01cb821c]      ; 004c2535 | g_GhoulIndices
     PUSH ECX                            ; 004c253b
     MOV ESI,dword ptr [EBP + 0x72]      ; 004c253c
     PUSH ESI                            ; 004c253f
@@ -1045,7 +1045,7 @@ section .text
     TEST ECX,ECX                        ; 004c2725
     JLE 0x004c2875                      ; 004c2727
         ;   XREF to: 004c2875 (CONDITIONAL_JUMP)  ; LAB_004c2875
-    MOV EAX,[0x01c2a370]                ; 004c272d | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 004c272d | g_GlobalDeltaTimeInt
         ;   Label: LAB_004c272d
     MOV EDI,dword ptr [EBX + 0x10b00]   ; 004c2732
     SUB EDI,EAX                         ; 004c2738
@@ -1061,7 +1061,7 @@ section .text
     TEST EDX,EDX                        ; 004c2757
     JLE 0x004c291a                      ; 004c2759
         ;   XREF to: 004c291a (CONDITIONAL_JUMP)  ; LAB_004c291a
-    MOV EAX,[0x01c2a370]                ; 004c275f | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 004c275f | g_GlobalDeltaTimeInt
     MOV ESI,EDX                         ; 004c2764
     SUB ESI,EAX                         ; 004c2766
     MOV dword ptr [EBX + 0x10b04],ESI   ; 004c2768
@@ -1200,7 +1200,7 @@ section .text
     FISTP dword ptr [EBX + 0x10b04]     ; 004c290f
     JMP 0x004c2776                      ; 004c2915
         ;   XREF to: 004c2776 (UNCONDITIONAL_JUMP)  ; caseD_10
-    MOV EAX,[0x01c2a370]                ; 004c291a | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 004c291a | g_GlobalDeltaTimeInt
         ;   Label: LAB_004c291a
     XOR ECX,ECX                         ; 004c291f
     LEA ESI,[EDX + EAX*0x1]             ; 004c2921
@@ -1352,7 +1352,7 @@ section .text
     FADDP                               ; 004c2af5
     FSTP float ptr [EBP + 0xe]          ; 004c2af7
     MOV EAX,dword ptr [EBP + 0xe]       ; 004c2afa
-    MOV EDX,dword ptr [0x01caf5b4]      ; 004c2afd | g_INT_01caf5b4
+    MOV EDX,dword ptr [0x01caf5b4]      ; 004c2afd | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004c2b03
     ADD EAX,EDX                         ; 004c2b05
     MOV dword ptr [EBP + 0x12],EAX      ; 004c2b07
@@ -1662,7 +1662,7 @@ section .text
         ;   XREF to: 004c2fa3 (CONDITIONAL_JUMP)  ; LAB_004c2fa3
     PUSH 0x0                            ; 004c2eaa
     PUSH 0x40400000                     ; 004c2eac
-    PUSH 0x265370c                      ; 004c2eb1 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004c2eb1 | g_ZeroVector
     MOV EDX,dword ptr [EAX + 0x2b0]     ; 004c2eb6
     PUSH EAX                            ; 004c2ebc
     CALL dword ptr [EDX + 0xcc]         ; 004c2ebd
@@ -2165,7 +2165,7 @@ section .text
     FSTP float ptr [EBP + 0xfffffc52]   ; 004c349c
     LEA EAX,[EBP + 0xfffffc4e]          ; 004c34a2
         ;   Label: LAB_004c34a2
-    MOV EDX,dword ptr [0x01cb8224]      ; 004c34a8 | g_INT_ARRAY_01cb821c[2]
+    MOV EDX,dword ptr [0x01cb8224]      ; 004c34a8 | g_GhoulIndices[2]
     PUSH EAX                            ; 004c34ae
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c34af
     MOV dword ptr [EBP + 0xfffffc82],EBX ; 004c34b6
@@ -2295,7 +2295,7 @@ section .text
     FSTP float ptr [EBP + 0xfffffc16]   ; 004c3632
     LEA EAX,[EBP + 0xfffffc12]          ; 004c3638
         ;   Label: LAB_004c3638
-    MOV EDX,dword ptr [0x01cb8220]      ; 004c363e | g_INT_ARRAY_01cb821c[1]
+    MOV EDX,dword ptr [0x01cb8220]      ; 004c363e | g_GhoulIndices[1]
     PUSH EAX                            ; 004c3644
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c3645
     SUB EAX,EDX                         ; 004c364c
@@ -2379,7 +2379,7 @@ section .text
     ADD ESP,0xc                         ; 004c3736
     JMP 0x004c2776                      ; 004c3739
         ;   XREF to: 004c2776 (UNCONDITIONAL_JUMP)  ; caseD_10
-    MOV EAX,[0x01c2a370]                ; 004c373e | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 004c373e | g_GlobalDeltaTimeInt
         ;   Label: caseD_d
     MOV EDI,dword ptr [EBX + 0x10afc]   ; 004c3743
     SUB EDI,EAX                         ; 004c3749
@@ -2484,7 +2484,7 @@ section .text
     CMP dword ptr [EBX + EAX*0x4 + 0x23f4],0x0 ; 004c387e
     JZ 0x004c3945                       ; 004c3886
         ;   XREF to: 004c3945 (CONDITIONAL_JUMP)  ; LAB_004c3945
-    MOV EAX,[0x01cb8230]                ; 004c388c | g_INT_ARRAY_01cb821c[5]
+    MOV EAX,[0x01cb8230]                ; 004c388c | g_GhoulIndices[5]
     PUSH 0x3e4ccccd                     ; 004c3891
     PUSH EAX                            ; 004c3896
     MOV EDX,dword ptr [EBX + 0x10b1c]   ; 004c3897
@@ -2498,7 +2498,7 @@ section .text
     TEST ECX,ECX                        ; 004c38b4
     JZ 0x004c38d4                       ; 004c38b6
         ;   XREF to: 004c38d4 (CONDITIONAL_JUMP)  ; LAB_004c38d4
-    MOV ESI,dword ptr [0x01cb8228]      ; 004c38b8 | g_INT_ARRAY_01cb821c[3]
+    MOV ESI,dword ptr [0x01cb8228]      ; 004c38b8 | g_GhoulIndices[3]
     PUSH 0x3e4ccccd                     ; 004c38be
     PUSH ESI                            ; 004c38c3
     MOV EDI,dword ptr [EBX + 0x10b20]   ; 004c38c4
@@ -2507,7 +2507,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060 ; 004c38cc
         ;   XREF to: 00427060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 004c38d1
-    MOV EAX,[0x01cb8234]                ; 004c38d4 | g_INT_ARRAY_01cb821c[6]
+    MOV EAX,[0x01cb8234]                ; 004c38d4 | g_GhoulIndices[6]
         ;   Label: LAB_004c38d4
     PUSH 0x3e4ccccd                     ; 004c38d9
     PUSH EAX                            ; 004c38de
@@ -2522,7 +2522,7 @@ section .text
     TEST ECX,ECX                        ; 004c38fc
     JZ 0x004c391c                       ; 004c38fe
         ;   XREF to: 004c391c (CONDITIONAL_JUMP)  ; LAB_004c391c
-    MOV ESI,dword ptr [0x01cb822c]      ; 004c3900 | g_INT_ARRAY_01cb821c[4]
+    MOV ESI,dword ptr [0x01cb822c]      ; 004c3900 | g_GhoulIndices[4]
     PUSH 0x3e4ccccd                     ; 004c3906
     PUSH ESI                            ; 004c390b
     MOV EDI,dword ptr [EBX + 0x10b28]   ; 004c390c
@@ -2531,7 +2531,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060 ; 004c3914
         ;   XREF to: 00427060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 004c3919
-    MOV EAX,[0x01cb821c]                ; 004c391c | g_INT_ARRAY_01cb821c
+    MOV EAX,[0x01cb821c]                ; 004c391c | g_GhoulIndices
         ;   Label: LAB_004c391c
     PUSH 0x3f333333                     ; 004c3921
     PUSH EAX                            ; 004c3926
@@ -2548,7 +2548,7 @@ section .text
     ADD ESP,0x4                         ; 004c393d
     JMP 0x004c1f89                      ; 004c3940
         ;   XREF to: 004c1f89 (UNCONDITIONAL_JUMP)  ; LAB_004c1f89
-    MOV ESI,dword ptr [0x01cb8244]      ; 004c3945 | g_INT_ARRAY_01cb821c[10]
+    MOV ESI,dword ptr [0x01cb8244]      ; 004c3945 | g_GhoulIndices[10]
         ;   Label: LAB_004c3945
     PUSH 0x3f000000                     ; 004c394b
     PUSH ESI                            ; 004c3950

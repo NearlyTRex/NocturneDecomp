@@ -37,7 +37,7 @@ CDemonActorType g_CMeleeClassInfo = {};
 CLevelLoader g_CLevelLoaderInstance = {};
 
 // CMatrix3x3i
-CMatrix3x3i g_CMatrix3x3i_01d7266c = {};
+CMatrix3x3i g_TransformMatrixCopy = {};
 
 // CMini3D
 CMini3D g_CMini3DInstance = {};
@@ -46,8 +46,8 @@ CMini3D g_CMini3DInstance = {};
 CMoon g_CMoonInstance = {};
 
 // CVector3i
-CVector3i g_CVector3i_01d70c44 = {};
-CVector3i g_CVector3i_01d70c50 = {};
+CVector3i g_CachedViewPosition = {};
+CVector3i g_NormalizedViewVector = {};
 
 // char*
 char* g_CHAR_PTR_01d71de0 = {};
@@ -59,10 +59,10 @@ char* g_CHAR_PTR_01d75450 = {};
 char* g_CHAR_PTR_01d75878 = {};
 
 // char*[4]
-char* g_CHAR_PTR_ARRAY_01d75c88[4] = {};
+char* g_MenuTextPointers[4] = {};
 
 // char[10][256]
-char g_CHAR_ARRAY_ARRAY_01d76228[10][256] = {};
+char g_StringBuffers[10][256] = {};
 
 // char[2304]
 char g_CHAR_ARRAY_01d74128[2304] = {};
@@ -78,13 +78,13 @@ char g_CHAR_ARRAY_01d75678[256] = {};
 char g_CHAR_ARRAY_01d75778[256] = {};
 
 // char[30][40]
-char g_CHAR_ARRAY_ARRAY_01d75d20[30][40] = {};
+char g_CustomKeyNames[30][40] = {};
 
 // char[4352]
 char g_CHAR_ARRAY_01d70ce0[4352] = {};
 
 // char[4][256]
-char g_CHAR_ARRAY_ARRAY_01d75888[4][256] = {};
+char g_MainMenuTextBuffers[4][256] = {};
 
 // float
 float g_FLOAT_01d76c40 = {};
@@ -182,11 +182,11 @@ float* g_FLOAT_PTR_01d7f4f4 = {};
 
 // int
 int g_INT_01d70a20 = {};
-int g_INT_01d70a34 = {};
-int g_INT_01d70a38 = {};
-int g_INT_01d70c38 = {};
-int g_INT_01d70c3c = {};
-int g_INT_01d70c40 = {};
+int g_InventoryScreenHeight = {};
+int g_InventoryLightAngle = {};
+int g_LightDirectionX2 = {};
+int g_LightDirectionY2 = {};
+int g_LightDirectionZ2 = {};
 int g_INT_01d71de4 = {};
 int g_INT_01d71de8 = {};
 int g_INT_01d72644 = {};
@@ -198,19 +198,19 @@ int g_INT_01d72658 = {};
 int g_INT_01d7265c = {};
 int g_INT_01d72660 = {};
 int g_INT_01d72664 = {};
-int g_INT_01d7269c = {};
-int g_INT_01d726a0 = {};
-int g_INT_01d728fc = {};
+int g_PixelAspectCorrection = {};
+int g_MatrixStackIndex = {};
+int g_ViewportStackIndex = {};
 int g_INT_01d737d4 = {};
 int g_INT_01d737d8 = {};
-int g_INT_01d737e0 = {};
+int g_AudioVisualizationCounter = {};
 int g_INT_01d737e4 = {};
 int g_INT_01d74020 = {};
 int g_INT_01d74024 = {};
 int g_INT_01d740a8 = {};
 int g_INT_01d740e8 = {};
-int g_INT_01d75c98 = {};
-int g_INT_01d76220 = {};
+int g_CustomKeyCount = {};
+int g_StringBufferIndex = {};
 int g_INT_01d76c34 = {};
 int g_INT_01d76c38 = {};
 int g_INT_01d76c3c = {};
@@ -243,42 +243,42 @@ int g_INT_01d7f524 = {};
 int g_INT_01d7f534 = {};
 
 // int*[31]
-int* g_INT_PTR_ARRAY_01d75c9c[31] = {};
+int* g_CustomKeyPointers[31] = {};
 
 // int[10]
-int g_INT_ARRAY_01d726a4[10] = {};
-int g_INT_ARRAY_01d726cc[10] = {};
-int g_INT_ARRAY_01d726f4[10] = {};
-int g_INT_ARRAY_01d7271c[10] = {};
-int g_INT_ARRAY_01d72744[10] = {};
-int g_INT_ARRAY_01d7276c[10] = {};
-int g_INT_ARRAY_01d72794[10] = {};
-int g_INT_ARRAY_01d727bc[10] = {};
-int g_INT_ARRAY_01d727e4[10] = {};
-int g_INT_ARRAY_01d7280c[10] = {};
-int g_INT_ARRAY_01d72834[10] = {};
-int g_INT_ARRAY_01d7285c[10] = {};
-int g_INT_ARRAY_01d72884[10] = {};
-int g_INT_ARRAY_01d728ac[10] = {};
-int g_INT_ARRAY_01d728d4[10] = {};
-int g_INT_ARRAY_01d72900[10] = {};
-int g_INT_ARRAY_01d72928[10] = {};
-int g_INT_ARRAY_01d72950[10] = {};
-int g_INT_ARRAY_01d72978[10] = {};
-int g_INT_ARRAY_01d729a0[10] = {};
-int g_INT_ARRAY_01d729c8[10] = {};
-int g_INT_ARRAY_01d729f0[10] = {};
-int g_INT_ARRAY_01d72a18[10] = {};
-int g_INT_ARRAY_01d72a40[10] = {};
-int g_INT_ARRAY_01d72a68[10] = {};
-int g_INT_ARRAY_01d72a90[10] = {};
-int g_INT_ARRAY_01d72ab8[10] = {};
-int g_INT_ARRAY_01d72ae0[10] = {};
-int g_INT_ARRAY_01d72b08[10] = {};
-int g_INT_ARRAY_01d72b30[10] = {};
-int g_INT_ARRAY_01d72b58[10] = {};
-int g_INT_ARRAY_01d72b80[10] = {};
-int g_INT_ARRAY_01d72ba8[10] = {};
+int g_MatrixStack_M00[10] = {};
+int g_MatrixStack_M01[10] = {};
+int g_MatrixStack_M02[10] = {};
+int g_MatrixStack_M10[10] = {};
+int g_MatrixStack_M11[10] = {};
+int g_MatrixStack_M12[10] = {};
+int g_MatrixStack_M20[10] = {};
+int g_MatrixStack_M21[10] = {};
+int g_MatrixStack_M22[10] = {};
+int g_MatrixStack_RelX[10] = {};
+int g_MatrixStack_RelY[10] = {};
+int g_MatrixStack_RelZ[10] = {};
+int g_MatrixStack_Unk1[10] = {};
+int g_MatrixStack_Unk2[10] = {};
+int g_MatrixStack_Unk3[10] = {};
+int g_ViewportStack_CenterX[10] = {};
+int g_ViewportStack_CenterY[10] = {};
+int g_ViewportStack_RightFixed[10] = {};
+int g_ViewportStack_BottomFixed[10] = {};
+int g_ViewportStack_ProjectionScale[10] = {};
+int g_ViewportStack_CameraX[10] = {};
+int g_ViewportStack_CameraY[10] = {};
+int g_ViewportStack_CameraZ[10] = {};
+int g_ViewportStack_RotationPitch[10] = {};
+int g_ViewportStack_RotationYaw[10] = {};
+int g_ViewportStack_RotationRoll[10] = {};
+int g_ViewportStack_ExtraState1[10] = {};
+int g_ViewportStack_ExtraState2[10] = {};
+int g_ViewportStack_ExtraState3[10] = {};
+int g_ViewportStack_ClipLeft[10] = {};
+int g_ViewportStack_ClipRight[10] = {};
+int g_ViewportStack_ClipTop[10] = {};
+int g_ViewportStack_ClipBottom[10] = {};
 
 // int[256]
 int g_INT_ARRAY_01d71e3c[256] = {};
@@ -290,9 +290,9 @@ int g_INT_ARRAY_01d72240[257] = {};
 short g_SHORT_ARRAY_01d7a6d0[2] = {};
 
 // uint
-uint g_UINT_01d72690 = {};
-uint g_UINT_01d72694 = {};
-uint g_UINT_01d72698 = {};
+uint g_SavedRotationX = {};
+uint g_SavedRotationY = {};
+uint g_SavedRotationZ = {};
 
 // void*
 void* g_PTR_01d70a78 = {};

@@ -41,15 +41,15 @@ CDemonActorType* g_ActorClassRegistrations[200] = {};
 CDemonCamera* g_CurrentSceneCamera = {};
 
 // CDemonFilter[8]
-CDemonFilter CDemonFilter_ARRAY_008229ec[8] = {};
+CDemonFilter g_LightActorFilters[8] = {};
 
 // CKeyFramedModelInstance
 CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance = {};
-CKeyFramedModelInstance CKeyFramedModelInstance_00823a98 = {};
+CKeyFramedModelInstance g_StakeModelInstance = {};
 
 // CVector3f
-CVector3f CVector3f_00822c88 = {};
-CVector3f CVector3f_00822c94 = {};
+CVector3f g_BrideOffsetMinusX = {};
+CVector3f g_BrideOffsetPlusX = {};
 
 // SEdge[512]
 SEdge g_TracedEdgeBuffer[512] = {};
@@ -97,9 +97,9 @@ int g_RenderFaceCount = {};
 int g_ActorReadingMode = {};
 int g_IncludeCommentsWhenWriting = {};
 int g_NumActorClassTypes = {};
-int INT_008229ac = {};
-int INT_00823a90 = {};
-int INT_00823a94 = {};
+int g_LightActorFiltersInitialized = {};
+int g_EtherealUVScroll = {};
+int g_EtherealBoltFrame = {};
 int g_LineBlendingDisabled = {};
 int g_ClippedVertexCount = {};
 int g_SecondaryClipVertexCount = {};

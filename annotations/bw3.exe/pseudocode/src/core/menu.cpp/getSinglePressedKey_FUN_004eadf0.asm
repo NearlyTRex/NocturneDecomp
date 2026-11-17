@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   CKeys* g_CKeysPtr = 01d70a78
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b93e0
@@ -27,7 +27,7 @@ section .text
     XOR EBX,EBX                         ; 004eae05
     PUSH EBX                            ; 004eae07
         ;   Label: LAB_004eae07
-    MOV EAX,[0x00600284]                ; 004eae08 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004eae08 | g_CKeysPtr
     PUSH EAX                            ; 004eae0d
     MOV EDX,dword ptr [EAX]             ; 004eae0e
     CALL dword ptr [EDX]                ; 004eae10

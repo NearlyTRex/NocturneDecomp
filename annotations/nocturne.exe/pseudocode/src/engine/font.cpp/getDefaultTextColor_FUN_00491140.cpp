@@ -9,5 +9,5 @@
 int __cdecl engine_font_cpp_getDefaultTextColor_FUN_00491140(void)
 
 {
-  return g_INT_01c70f70;
+  return g_DefaultTextColor;
 }

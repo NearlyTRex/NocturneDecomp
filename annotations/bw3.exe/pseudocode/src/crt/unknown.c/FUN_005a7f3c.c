@@ -9,5 +9,5 @@
 byte * FUN_005a7f3c(void)
 
 {
-  return g_PTR_02d252bc;
+  return g_CurrentThreadTlsBlock;
 }

@@ -21,7 +21,7 @@
 ;   undefined4 s_e_0057851b+3
 ;   TerminatedCString s_baronshell_kfm_00578520
 ;   CHero_full_vtable g_CBaronVTable
-;   CKeyFramedModelInstance g_CKeyFramedModelInstance_0076436c
+;   CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -97,7 +97,7 @@ section .text
     POP EDI                             ; 0041028f
         ;   Label: LAB_0041028f
     PUSH 0x578520                       ; 00410290 | = "baronshell.kfm"
-    PUSH 0x76436c                       ; 00410295 | g_CKeyFramedModelInstance_0076436c
+    PUSH 0x76436c                       ; 00410295 | g_CKeyFramedModelInstanceInstance
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041029a
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0041029f

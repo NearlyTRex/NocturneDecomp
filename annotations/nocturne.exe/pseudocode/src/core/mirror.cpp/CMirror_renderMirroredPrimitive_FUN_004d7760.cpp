@@ -11,17 +11,17 @@ void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirro
 {
   uint uVar1;
   
-  g_SMRGLPrimitiveQuadIndex_01cc9428.base.base.count = (prim->base).count;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.A = (prim->surface_normal).A;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.B = (prim->surface_normal).B;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.C = (prim->surface_normal).C;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.D = (prim->surface_normal).D;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[0] = prim[1].base.type;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[1] = prim[1].surface_normal.B.i;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[2] = prim[2].base.type;
-  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3] = prim[2].surface_normal.B.i;
+  g_MirrorTempPrimitive.base.base.count = (prim->base).count;
+  g_MirrorTempPrimitive.base.surface_normal.A = (prim->surface_normal).A;
+  g_MirrorTempPrimitive.base.surface_normal.B = (prim->surface_normal).B;
+  g_MirrorTempPrimitive.base.surface_normal.C = (prim->surface_normal).C;
+  g_MirrorTempPrimitive.base.surface_normal.D = (prim->surface_normal).D;
+  g_MirrorTempPrimitive.vertices[0] = prim[1].base.type;
+  g_MirrorTempPrimitive.vertices[1] = prim[1].surface_normal.B.i;
+  g_MirrorTempPrimitive.vertices[2] = prim[2].base.type;
+  g_MirrorTempPrimitive.vertices[3] = prim[2].surface_normal.B.i;
   uVar1 = core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0
-                    (this_ptr,&g_SMRGLPrimitiveQuadIndex_01cc9428.base);
+                    (this_ptr,&g_MirrorTempPrimitive.base);
   if (uVar1 == 0) {
     return;
   }

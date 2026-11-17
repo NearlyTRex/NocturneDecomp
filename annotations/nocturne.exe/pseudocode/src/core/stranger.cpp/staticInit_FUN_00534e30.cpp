@@ -9,15 +9,15 @@
 void __cdecl core_stranger_cpp_staticInit_FUN_00534e30(void)
 
 {
-  CVector3f_02dc9f34.x = 0.523;
-  CVector3f_02dc9f34.y = 0.056;
-  CVector3f_02dc9f34.z = 0.126;
-  CVector3f_02dc9f40.x = -0.523;
-  CVector3f_02dc9f40.y = 0.056;
-  CVector3f_02dc9f40.z = 0.126;
+  g_StrangerWeaponEulerPlusX.x = 0.523;
+  g_StrangerWeaponEulerPlusX.y = 0.056;
+  g_StrangerWeaponEulerPlusX.z = 0.126;
+  g_StrangerWeaponEulerMinusX.x = -0.523;
+  g_StrangerWeaponEulerMinusX.y = 0.056;
+  g_StrangerWeaponEulerMinusX.z = 0.126;
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CStrangerActorType_02dc9fac,"CStranger",
-             core_stranger_cpp_factoryFuncStranger_FUN_00535090,&INT_005c0ff0,9,
-             &g_CHeroActorType_01cae0ec);
+            (&g_CStrangerClassInfo,"CStranger",
+             core_stranger_cpp_factoryFuncStranger_FUN_00535090,&g_CStrangerClassVersion,9,
+             &g_CHeroClassInfo);
   return;
 }

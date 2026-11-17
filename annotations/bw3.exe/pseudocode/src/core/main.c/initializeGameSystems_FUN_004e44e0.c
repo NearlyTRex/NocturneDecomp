@@ -53,7 +53,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
   engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(engine_pod_cpp_findFileInPod_FUN_00515280);
   support_newmsg_cpp_readMessageFile_FUN_005084c0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_004f7c30();
-  if (g_INT_01c6e2a0 == 0) {
+  if (g_MMXSupported == 0) {
     g_CHAR_PTR_01d71de0 = "..\\core\\main.c";
     g_INT_01d71de4 = 0x3df;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960("This CPU does not have an MMX unit.")
@@ -72,7 +72,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
     core_main_c_displayErrorAndQuit_FUN_004e4330("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_00459f50();
-  if (g_INT_02d21b88 < 0x3c00000) {
+  if (g_TotalPhysicalMemory < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Windows is reporting ");
     pcVar5 = acStack_528;
     do {
@@ -300,7 +300,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0(g_CEditorToolsPtr,acStack_528);
   }
-  if (g_INT_02d21b8c < 0xc800000) {
+  if (g_AvailableSwapSpace < 0xc800000) {
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Windows is reporting ");
     do {
       cVar2 = *pcVar5;

@@ -20,29 +20,26 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00577a90(CDirectSoundDe
     (*((this_ptr->base).vtable)->freeSample)(&this_ptr->base,buffer_id);
     buffer_id = iVar2;
   } while (iVar2 < 0x41);
-  if (g_IDirectSound3DListener_PTR_02c81da0 != (IDirectSound3DListener *)0x0) {
-    (*g_IDirectSound3DListener_PTR_02c81da0->vtable->Release)
-              ((IUnknown *)g_IDirectSound3DListener_PTR_02c81da0);
-    g_IDirectSound3DListener_PTR_02c81da0 = (IDirectSound3DListener *)0x0;
+  if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
+    (*g_DirectSound3DListener->vtable->Release)((IUnknown *)g_DirectSound3DListener);
+    g_DirectSound3DListener = (IDirectSound3DListener *)0x0;
   }
-  if (g_IDirectSoundBuffer_PTR_02c81d9c != (IDirectSoundBuffer *)0x0) {
-    (*g_IDirectSoundBuffer_PTR_02c81d9c->vtable->Release)
-              ((IUnknown *)g_IDirectSoundBuffer_PTR_02c81d9c);
-    g_IDirectSoundBuffer_PTR_02c81d9c = (IDirectSoundBuffer *)0x0;
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer);
+    g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
   }
-  if (g_IKsPropertySet_PTR_02c81da4 != (IKsPropertySet *)0x0) {
-    (*g_IKsPropertySet_PTR_02c81da4->vtable->Release)((IUnknown *)g_IKsPropertySet_PTR_02c81da4);
-    g_IKsPropertySet_PTR_02c81da4 = (IKsPropertySet *)0x0;
+  if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
+    (*g_DirectSoundPropertySet->vtable->Release)((IUnknown *)g_DirectSoundPropertySet);
+    g_DirectSoundPropertySet = (IKsPropertySet *)0x0;
   }
-  if (g_IDirectSoundBuffer_PTR_02c81d98 != (IDirectSoundBuffer *)0x0) {
-    (*g_IDirectSoundBuffer_PTR_02c81d98->vtable->Release)
-              ((IUnknown *)g_IDirectSoundBuffer_PTR_02c81d98);
-    g_IDirectSoundBuffer_PTR_02c81d98 = (IDirectSoundBuffer *)0x0;
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundPrimaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundPrimaryBuffer);
+    g_DirectSoundPrimaryBuffer = (IDirectSoundBuffer *)0x0;
   }
-  if (g_IDirectSound_PTR_02c81d94 == (IDirectSound *)0x0) {
+  if (g_DirectSound == (IDirectSound *)0x0) {
     return (uint)(iVar1 != 0);
   }
-  (*g_IDirectSound_PTR_02c81d94->vtable->Release)((IUnknown *)g_IDirectSound_PTR_02c81d94);
-  g_IDirectSound_PTR_02c81d94 = (IDirectSound *)0x0;
+  (*g_DirectSound->vtable->Release)((IUnknown *)g_DirectSound);
+  g_DirectSound = (IDirectSound *)0x0;
   return (uint)(iVar1 != 0);
 }

@@ -300,13 +300,13 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
     {
       "addr": "01cc5b5c",
-      "name": "g_INT_01cc5b5c",
+      "name": "g_MenuLeftRightPressed",
       "type": "int",
       "value": null
     }
@@ -451,11 +451,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01cc6eb0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ControlOptionsMenuPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "(int)g_CHAR_PTR_ARRAY_01cc6eb0",
+      "match": "(int)g_ControlOptionsMenuPointers",
       "severity": "moderate",
-      "text": "*(char (**) [256])((int)g_CHAR_PTR_ARRAY_01cc6eb0 + iVar4) = pacVar7;",
+      "text": "*(char (**) [256])((int)g_ControlOptionsMenuPointers + iVar4) = pacVar7;",
       "type": "pointer_truncation"
     },
     {

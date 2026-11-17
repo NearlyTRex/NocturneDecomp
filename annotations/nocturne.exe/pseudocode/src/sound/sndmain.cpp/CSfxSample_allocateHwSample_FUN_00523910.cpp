@@ -38,14 +38,13 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(CSfxSampl
     sample_rate = (this_ptr->sample_info).sample_rate;
     sample_count = this_ptr->streaming_buffer_size;
     bits_per_sample = (this_ptr->sample_info).bit_depth;
-    if (g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0) {
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
       do {
-        iVar2 = (*g_CSoundDevice_PTR_02dc8318->vtable->allocateSample)
-                          (g_CSoundDevice_PTR_02dc8318,bits_per_sample,iVar3,sample_rate,
-                           sample_count);
+        iVar2 = (*g_CSoundDevicePtr->vtable->allocateSample)
+                          (g_CSoundDevicePtr,bits_per_sample,iVar3,sample_rate,sample_count);
         if (iVar2 != 0) goto LAB_005239c5;
         iVar5 = 0;
-        iVar2 = g_INT_02dc1ed8;
+        iVar2 = g_LastSampleAccessIndex;
         do {
           iVar2 = iVar2 + 1;
           if (0x3f < iVar2) {

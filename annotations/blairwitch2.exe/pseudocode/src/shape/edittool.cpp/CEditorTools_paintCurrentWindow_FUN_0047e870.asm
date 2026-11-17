@@ -42,16 +42,16 @@
 ;   TerminatedCString s_shape_edittool_cpp_005d23df
 ;   TerminatedCString s_CEditorTools_paintWindow_005d23f5
 ;   TerminatedCString s_j_005d2432
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c2559c
-;   int g_INT_01c25f78
+;   CBitFont* g_EditorFont
+;   int g_WindowStackCount
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c25f7c
 ;   int g_INT_01c25f84
-;   int g_INT_01c26388
+;   int g_WindowContentColor
 ;   int g_INT_01c2638c
 ;   int g_INT_01c26390
-;   int g_INT_01c26394
-;   int g_INT_01c26398
+;   int g_TitleBarColor
+;   int g_TitleBarFillColor
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -82,18 +82,18 @@ section .text
     PUSH EDI                            ; 0047e872
     PUSH EBP                            ; 0047e873
     SUB ESP,0x34                        ; 0047e874
-    CMP dword ptr [0x01c25590],0x0      ; 0047e877 | g_CBitFont_PTR_01c25590
+    CMP dword ptr [0x01c25590],0x0      ; 0047e877 | g_EditorFont
     JZ 0x0047ed4a                       ; 0047e87e
         ;   XREF to: 0047ed4a (CONDITIONAL_JUMP)  ; LAB_0047ed4a
-    MOV EAX,[0x01c25590]                ; 0047e884 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047e884 | g_EditorFont
         ;   Label: LAB_0047e884
     PUSH 0x6a                           ; 0047e889
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047e88b
     PUSH EAX                            ; 0047e891
-    MOV dword ptr [0x01c25f78],EDX      ; 0047e892 | g_INT_01c25f78
+    MOV dword ptr [0x01c25f78],EDX      ; 0047e892 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 0047e898
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
-    MOV ESI,dword ptr [0x01c2559c]      ; 0047e89d | g_INT_01c2559c
+    MOV ESI,dword ptr [0x01c2559c]      ; 0047e89d | g_WindowStackCount
     ADD ESP,0x8                         ; 0047e8a3
     MOV [0x01c25f7c],EAX                ; 0047e8a6 | g_INT_01c25f7c
     CMP ESI,0x1                         ; 0047e8ab
@@ -107,7 +107,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047e8cb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047e8d0
-    MOV EBX,dword ptr [0x01c2559c]      ; 0047e8d3 | g_INT_01c2559c
+    MOV EBX,dword ptr [0x01c2559c]      ; 0047e8d3 | g_WindowStackCount
         ;   Label: LAB_0047e8d3
     DEC EBX                             ; 0047e8d9
     MOV EAX,[0x01c35e60]                ; 0047e8da | g_INT_01c35e60
@@ -191,7 +191,7 @@ section .text
     PUSH EDX                            ; 0047e9bb
     CALL engine_mini3d.cpp_drawRect_FUN_004f9340 ; 0047e9bc
         ;   XREF to: 004f9340 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawRect_FUN_004f9340(int x1, int y1, int x2, int y2)
-    MOV EAX,[0x01c26388]                ; 0047e9c1 | g_INT_01c26388
+    MOV EAX,[0x01c26388]                ; 0047e9c1 | g_WindowContentColor
     MOV ECX,dword ptr [0x01c25f84]      ; 0047e9c6 | g_INT_01c25f84
     ADD ESP,0x10                        ; 0047e9cc
     TEST ECX,ECX                        ; 0047e9cf
@@ -316,7 +316,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0047eb1b
     LEA EDI,[EAX + -0x1]                ; 0047eb1d
     INC EDX                             ; 0047eb20
-    MOV EAX,[0x01c26398]                ; 0047eb21 | g_INT_01c26398
+    MOV EAX,[0x01c26398]                ; 0047eb21 | g_TitleBarFillColor
     MOV dword ptr [ESP + 0x18],EDX      ; 0047eb26
     MOV dword ptr [ESP + 0x20],EDI      ; 0047eb2a
     CMP dword ptr [0x01c25f84],0x0      ; 0047eb2e | g_INT_01c25f84
@@ -365,7 +365,7 @@ section .text
         ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004f3570(float alpha)
     ADD ESP,0x4                         ; 0047ebb3
     PUSH -0x1                           ; 0047ebb6
-    MOV EAX,[0x01c26394]                ; 0047ebb8 | g_INT_01c26394
+    MOV EAX,[0x01c26394]                ; 0047ebb8 | g_TitleBarColor
     PUSH EAX                            ; 0047ebbd
     MOV EAX,[0x01c25f7c]                ; 0047ebbe | g_INT_01c25f7c
     MOV EDX,EAX                         ; 0047ebc3
@@ -375,7 +375,7 @@ section .text
     ADD EAX,dword ptr [EBX + 0x4]       ; 0047ebcc
     PUSH EAX                            ; 0047ebcf
     LEA ESI,[EBX + 0x48]                ; 0047ebd0
-    MOV EBP,dword ptr [0x01c25590]      ; 0047ebd3 | g_CBitFont_PTR_01c25590
+    MOV EBP,dword ptr [0x01c25590]      ; 0047ebd3 | g_EditorFont
     PUSH ESI                            ; 0047ebd9
     MOV EDI,dword ptr [EBX]             ; 0047ebda
     MOV ECX,dword ptr [EBX + 0x8]       ; 0047ebdc
@@ -392,19 +392,19 @@ section .text
     ADD ESP,0x8                         ; 0047ebf4
     PUSH EAX                            ; 0047ebf7
     PUSH ESI                            ; 0047ebf8
-    MOV EAX,[0x01c25590]                ; 0047ebf9 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047ebf9 | g_EditorFont
     PUSH EAX                            ; 0047ebfe
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 0047ebff
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0047ec04
     PUSH ESI                            ; 0047ec07
-    MOV EDX,dword ptr [0x01c25590]      ; 0047ec08 | g_CBitFont_PTR_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 0047ec08 | g_EditorFont
     PUSH EDX                            ; 0047ec0e
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 0047ec0f
         ;   XREF to: 004aafb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0047ec14
     PUSH 0x5d2432                       ; 0047ec17 | = "j"
-    MOV ECX,dword ptr [0x01c25590]      ; 0047ec1c | g_CBitFont_PTR_01c25590
+    MOV ECX,dword ptr [0x01c25590]      ; 0047ec1c | g_EditorFont
     MOV ESI,dword ptr [0x01c25f7c]      ; 0047ec22 | g_INT_01c25f7c
     PUSH ECX                            ; 0047ec28
     ADD ESI,EAX                         ; 0047ec29
@@ -553,7 +553,7 @@ section .text
     PUSH ECX                            ; 0047eda4
     CALL engine_matrix.c_pushViewport_FUN_004ea410 ; 0047eda5
         ;   XREF to: 004ea410 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_004ea410(int x, int y, int width, int height)
-    MOV ESI,dword ptr [0x01c26388]      ; 0047edaa | g_INT_01c26388
+    MOV ESI,dword ptr [0x01c26388]      ; 0047edaa | g_WindowContentColor
     ADD ESP,0x10                        ; 0047edb0
     MOV EAX,dword ptr [EBX + 0xc]       ; 0047edb3
     MOV EDX,dword ptr [EBX + 0x8]       ; 0047edb6

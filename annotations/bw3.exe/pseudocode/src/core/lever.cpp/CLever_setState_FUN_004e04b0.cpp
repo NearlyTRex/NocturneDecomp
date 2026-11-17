@@ -16,12 +16,10 @@ void __cdecl core_lever_cpp_CLever_setState_FUN_004e04b0(CLever *this_ptr,float 
   if (this_ptr->param != new_state) {
     if (g_CDemonMission_PTR_00600530->is_in_editor == 0) {
       if ((new_state <= 0.0) && (0.0 < this_ptr->param)) {
-        core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (g_CEventList_PTR_005fba60,this_ptr->off_event);
+        core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,this_ptr->off_event);
       }
       if ((1.0 <= new_state) && (this_ptr->param < 1.0)) {
-        core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (g_CEventList_PTR_005fba60,this_ptr->on_event);
+        core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,this_ptr->on_event);
       }
     }
     if ((silent == 0) &&

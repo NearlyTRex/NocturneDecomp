@@ -544,18 +544,18 @@ section .text
         ;   Label: LAB_004f6206
     LEA EDI,[ESP + 0xc8]                ; 004f620b
     LEA EAX,[ESP + 0x64]                ; 004f6212
-    MOV ESI,0x6005a0                    ; 004f6216 | g_CHAR_ARRAY_006005a0
+    MOV ESI,0x6005a0                    ; 004f6216 | g_DefaultMissionActorClass
     PUSH EAX                            ; 004f621b
     LEA EAX,[ESP + 0xcc]                ; 004f621c
-    MOVSD.REP ES:EDI,ESI                ; 004f6223 | g_CHAR_ARRAY_006005a0 | g_CHAR_ARRAY_006005a0+4
+    MOVSD.REP ES:EDI,ESI                ; 004f6223 | g_DefaultMissionActorClass | g_DefaultMissionActorClass+4
     PUSH EAX                            ; 004f6225
     MOV EBP,dword ptr [ESP + 0x168]     ; 004f6226
     MOV ECX,0x19                        ; 004f622d
     PUSH 0x5c85b2                       ; 004f6232 | = "%s \"%[^\"]\"\n"
     LEA EDI,[ESP + 0x70]                ; 004f6237
-    MOV ESI,0x600608                    ; 004f623b | g_CHAR_ARRAY_00600608
+    MOV ESI,0x600608                    ; 004f623b | g_DefaultMissionActorName
     PUSH EBP                            ; 004f6240
-    MOVSD.REP ES:EDI,ESI                ; 004f6241 | g_CHAR_ARRAY_00600608 | g_CHAR_ARRAY_00600608+4
+    MOVSD.REP ES:EDI,ESI                ; 004f6241 | g_DefaultMissionActorName | g_DefaultMissionActorName+4
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004f6243
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004f6248

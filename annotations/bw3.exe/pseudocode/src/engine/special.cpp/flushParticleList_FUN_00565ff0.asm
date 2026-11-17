@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6038
+;   void* g_APIDLL_flushParticleList
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
         ;   XREF to: 00565ffc (CONDITIONAL_JUMP)  ; LAB_00565ffc
     XOR EAX,EAX                         ; 00565ff9
     RET                                 ; 00565ffb
-    CALL dword ptr [0x02cf6038]         ; 00565ffc | g_PTR_02cf6038
+    CALL dword ptr [0x02cf6038]         ; 00565ffc | g_APIDLL_flushParticleList
         ;   Label: LAB_00565ffc
     RET                                 ; 00566002
 

@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Global_pathmap_list_corr_005e185a
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01e4fed8
+;   int g_PathMapCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -29,7 +29,7 @@ section .text
         ;   Label: core_path.cpp_resetAllPathMaps_FUN_00513f30
     PUSH ESI                            ; 00513f31
     PUSH EDI                            ; 00513f32
-    MOV EDX,dword ptr [0x01e4fed8]      ; 00513f33 | g_INT_01e4fed8
+    MOV EDX,dword ptr [0x01e4fed8]      ; 00513f33 | g_PathMapCount
     XOR ESI,ESI                         ; 00513f39
     TEST EDX,EDX                        ; 00513f3b
     JLE 0x00513f89                      ; 00513f3d
@@ -54,7 +54,7 @@ section .text
     INC ESI                             ; 00513f76
     CALL core_path.cpp_CPathMap_reset_FUN_00513eb0 ; 00513f77
         ;   XREF to: 00513eb0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_00513eb0(CPathMap * this_ptr)
-    MOV EDI,dword ptr [0x01e4fed8]      ; 00513f7c | g_INT_01e4fed8
+    MOV EDI,dword ptr [0x01e4fed8]      ; 00513f7c | g_PathMapCount
     ADD ESP,0x4                         ; 00513f82
     CMP ESI,EDI                         ; 00513f85
     JL 0x00513f41                       ; 00513f87

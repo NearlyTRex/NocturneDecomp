@@ -21,8 +21,8 @@
 ;   CConsole g_CConsoleInstance
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   IDirectSound* g_IDirectSound_PTR_02c81d94
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02c81da0
+;   IDirectSound* g_DirectSound
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00578cfa
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00578cff
-    CMP dword ptr [0x02c81d94],0x0      ; 00578d02 | g_IDirectSound_PTR_02c81d94
+    CMP dword ptr [0x02c81d94],0x0      ; 00578d02 | g_DirectSound
         ;   Label: LAB_00578d02
     JNZ 0x00578d2d                      ; 00578d09
         ;   XREF to: 00578d2d (CONDITIONAL_JUMP)  ; LAB_00578d2d
@@ -131,7 +131,7 @@ section .text
     MOV dword ptr [EDI + 0xc],0x0       ; 00578dc5 | g_IDirectSoundBuffer_PTR_ARRAY_02c823e0[21]
     MOV dword ptr [EDI + 0x10],EAX      ; 00578dcc | g_IDirectSoundBuffer_PTR_ARRAY_02c823e0[22]
     MOV dword ptr [ESI + 0x4],EBX       ; 00578dcf
-    CMP dword ptr [0x02c81da0],0x0      ; 00578dd2 | g_IDirectSound3DListener_PTR_02c81da0
+    CMP dword ptr [0x02c81da0],0x0      ; 00578dd2 | g_DirectSound3DListener
     JNZ 0x00578ee4                      ; 00578dd9
         ;   XREF to: 00578ee4 (CONDITIONAL_JUMP)  ; LAB_00578ee4
     MOV dword ptr [EDI + 0x1c],0xffffffff ; 00578ddf | g_IDirectSoundBuffer_PTR_ARRAY_02c823e0[25]
@@ -183,7 +183,7 @@ section .text
     PUSH EDI                            ; 00578e67 | g_IDirectSoundBuffer_PTR_ARRAY_02c823e0[18]
         ;   Label: LAB_00578e67
     MOV ECX,dword ptr [ESI]             ; 00578e68
-    MOV EAX,[0x02c81d94]                ; 00578e6a | g_IDirectSound_PTR_02c81d94
+    MOV EAX,[0x02c81d94]                ; 00578e6a | g_DirectSound
     PUSH ECX                            ; 00578e6f
     MOV EDX,dword ptr [EAX]             ; 00578e70
     PUSH EAX                            ; 00578e72

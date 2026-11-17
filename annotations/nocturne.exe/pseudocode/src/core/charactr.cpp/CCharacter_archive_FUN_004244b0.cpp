@@ -17,8 +17,8 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004244b0(CCharacter *this_
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->hit_points,"hitPoints");
-  if (1 < g_INT_005ad1e8) {
-    if (g_INT_00763e88 == 1) {
+  if (1 < g_CCharacterClassVersion) {
+    if (g_ActorReadingMode == 1) {
       core_actor_cpp_archiveInteger_FUN_0040c900(&local_1c,"numCarryHands");
       local_20 = 0;
       if (0 < local_1c) {
@@ -52,18 +52,18 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004244b0(CCharacter *this_
       } while (local_20 < 2);
     }
   }
-  if (2 < g_INT_005ad1e8) {
+  if (2 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->talk_to_me_event,"talkToMeEvent");
   }
-  if (3 < g_INT_005ad1e8) {
+  if (3 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->grabbed_by,"grabbedBy");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->grabbed_type,"grabbedType");
     core_actor_cpp_archiveClothList_FUN_0040cf70(&this_ptr->cloth_list,"clothList");
   }
-  if (4 < g_INT_005ad1e8) {
+  if (4 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->size_scale,"sizeScale");
   }
-  if (5 < g_INT_005ad1e8) {
+  if (5 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               ((int *)&this_ptr->health_bar_mode,"healthBarMode");
     core_actor_cpp_archiveLocalizedString_FUN_0040c7f0

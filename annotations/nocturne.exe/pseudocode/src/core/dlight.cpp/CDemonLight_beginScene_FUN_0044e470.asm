@@ -17,7 +17,7 @@
 ;   TerminatedCString s_core_dlight_cpp_0057c616
 ;   TerminatedCString s_CDemonLight_beginScene_S_0057c629
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   int g_INT_01b4d1fc
+;   int g_RasterizerDepthBias
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
@@ -158,7 +158,7 @@ section .text
     TEST ESI,ESI                        ; 0044e5ee
     JZ 0x0044e64e                       ; 0044e5f0
         ;   XREF to: 0044e64e (CONDITIONAL_JUMP)  ; LAB_0044e64e
-    MOV dword ptr [0x01b4d1fc],0x8000   ; 0044e5f2 | g_INT_01b4d1fc
+    MOV dword ptr [0x01b4d1fc],0x8000   ; 0044e5f2 | g_RasterizerDepthBias
     POP EBP                             ; 0044e5fc
     POP EDI                             ; 0044e5fd
     POP ESI                             ; 0044e5fe
@@ -186,7 +186,7 @@ section .text
         ;   XREF to: 00481980 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00481980(void * dest, int fill_byte, uint size)
     JMP 0x0044e58b                      ; 0044e649
         ;   XREF to: 0044e58b (UNCONDITIONAL_JUMP)  ; LAB_0044e58b
-    MOV dword ptr [0x01b4d1fc],ESI      ; 0044e64e | g_INT_01b4d1fc
+    MOV dword ptr [0x01b4d1fc],ESI      ; 0044e64e | g_RasterizerDepthBias
         ;   Label: LAB_0044e64e
     POP EBP                             ; 0044e654
     POP EDI                             ; 0044e655

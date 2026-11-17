@@ -23,8 +23,7 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005567c0(uint sfx_ha
     local_28 = 0;
   }
   else {
-    if ((this_ptr->hardware_buffer_handle != 0) &&
-       (g_CSoundDevice_PTR_02cf3280 != (CSoundDevice *)0x0)) {
+    if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
       iVar1 = sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005554a0(this_ptr);
       if (iVar1 == 0) {
         sound_sndmain_cpp_unlockSound_FUN_00556fd0();

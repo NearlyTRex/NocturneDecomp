@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 143,
+    "complexity_score": 144,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 143,
+    "pseudocode_lines": 144,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 570
+    "total_lines": 571
   },
   "cross_references": [
     {
@@ -276,7 +276,7 @@
     },
     {
       "addr": "0067d390",
-      "name": "INT_0067d390",
+      "name": "g_LodPreviewLabelVertex",
       "type": "int",
       "value": "-0x1"
     },
@@ -318,19 +318,19 @@
     },
     {
       "addr": "02f31234",
-      "name": "INT_02f31234",
+      "name": "g_LodPreviewShowVertexLabels",
       "type": "int",
       "value": null
     },
     {
       "addr": "02f31238",
-      "name": "INT_02f31238",
+      "name": "g_LodPreviewShowNextLod",
       "type": "int",
       "value": null
     },
     {
       "addr": "02f3123c",
-      "name": "INT_02f3123c",
+      "name": "g_LodPreviewShowEdges",
       "type": "int",
       "value": null
     },
@@ -440,7 +440,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 83,
+      "line": 84,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -449,7 +449,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 90,
+      "line": 91,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",

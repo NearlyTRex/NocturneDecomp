@@ -20,7 +20,7 @@
 ;   core_tentacle.cpp_CTentacle_process_FUN_00543c50 at 00544063
 ;
 ; Referenced Globals:
-;   int g_INT_01c78ce8
+;   int g_BloodParticleIndex
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004ae070
@@ -36,18 +36,18 @@ section .text
     JZ 0x004b013c                       ; 004b00f8
         ;   XREF to: 004b013c (CONDITIONAL_JUMP)  ; LAB_004b013c
     PUSH EDI                            ; 004b00fa
-    MOV EAX,[0x01c78ce8]                ; 004b00fb | g_INT_01c78ce8
-    MOV ECX,dword ptr [0x01c78ce8]      ; 004b0100 | g_INT_01c78ce8
+    MOV EAX,[0x01c78ce8]                ; 004b00fb | g_BloodParticleIndex
+    MOV ECX,dword ptr [0x01c78ce8]      ; 004b0100 | g_BloodParticleIndex
     SHL EAX,0x6                         ; 004b0106
     INC ECX                             ; 004b0109
     ADD EAX,0x1c78cec                   ; 004b010a
-    MOV dword ptr [0x01c78ce8],ECX      ; 004b010f | g_INT_01c78ce8
+    MOV dword ptr [0x01c78ce8],ECX      ; 004b010f | g_BloodParticleIndex
     CMP ECX,0x100                       ; 004b0115
     JL 0x004b0127                       ; 004b011b
         ;   XREF to: 004b0127 (CONDITIONAL_JUMP)  ; LAB_004b0127
     PUSH ESI                            ; 004b011d
     XOR ESI,ESI                         ; 004b011e
-    MOV dword ptr [0x01c78ce8],ESI      ; 004b0120 | g_INT_01c78ce8
+    MOV dword ptr [0x01c78ce8],ESI      ; 004b0120 | g_BloodParticleIndex
     POP ESI                             ; 004b0126
     PUSH EDX                            ; 004b0127
         ;   Label: LAB_004b0127

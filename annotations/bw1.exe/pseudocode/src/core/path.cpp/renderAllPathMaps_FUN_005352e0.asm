@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01e6be48
+;   int g_PathMapCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -29,7 +29,7 @@ section .text
     PUSH EBP                            ; 005352e3
     MOV EBP,dword ptr [ESP + 0x14]      ; 005352e4
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005352e8
-    MOV EDX,dword ptr [0x01e6be48]      ; 005352ec | g_INT_01e6be48
+    MOV EDX,dword ptr [0x01e6be48]      ; 005352ec | g_PathMapCount
     XOR ESI,ESI                         ; 005352f2
     TEST EDX,EDX                        ; 005352f4
     JLE 0x00535323                      ; 005352f6
@@ -44,7 +44,7 @@ section .text
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 00535309
     JLE 0x0053534d                      ; 00535313
         ;   XREF to: 0053534d (CONDITIONAL_JUMP)  ; LAB_0053534d
-    MOV ECX,dword ptr [0x01e6be48]      ; 00535315 | g_INT_01e6be48
+    MOV ECX,dword ptr [0x01e6be48]      ; 00535315 | g_PathMapCount
         ;   Label: LAB_00535315
     INC ESI                             ; 0053531b
     ADD EBX,0x4                         ; 0053531c

@@ -51,7 +51,7 @@
 ;
 ; Referenced Globals:
 ;   CSound* g_CSound_PTR_0061c068 = 0264b290
-;   int[8] g_INT_ARRAY_01ba5778
+;   int[8] g_DraculaBrideIndices
 ;   undefined4 DAT_01ba5798
 ;   undefined4 DAT_01ba579c
 ;   undefined4 DAT_01ba57a0
@@ -132,7 +132,7 @@ section .text
     RET                                 ; 00465469
     PUSH EDI                            ; 0046546a
         ;   Label: LAB_0046546a
-    MOV ECX,dword ptr [0x01ba5778]      ; 0046546b | g_INT_ARRAY_01ba5778
+    MOV ECX,dword ptr [0x01ba5778]      ; 0046546b | g_DraculaBrideIndices
     MOV dword ptr [EBX + 0x1c],EAX      ; 00465471 | DAT_01ba57b4
     MOV EAX,dword ptr [ESP + 0x1b4]     ; 00465474
     PUSH ECX                            ; 0046547b

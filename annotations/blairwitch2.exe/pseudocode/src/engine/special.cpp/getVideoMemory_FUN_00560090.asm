@@ -13,13 +13,13 @@
 ;
 ; Referenced Globals:
 ;   void* g_PTR_0264bc40
-;   int g_INT_0264bcdc
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x0264bcdc],0x0      ; 00560090 | g_INT_0264bcdc
+    CMP dword ptr [0x0264bcdc],0x0      ; 00560090 | g_LoadedExternalDLLRenderer
         ;   Label: engine_special.cpp_getVideoMemory_FUN_00560090
     JNZ 0x0056009c                      ; 00560097
         ;   XREF to: 0056009c (CONDITIONAL_JUMP)  ; LAB_0056009c

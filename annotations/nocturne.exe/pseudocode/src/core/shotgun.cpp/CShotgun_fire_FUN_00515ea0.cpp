@@ -117,7 +117,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr)
         pCVar9 = g_CDemonSetPtr->collision_actor;
         this_ptr_00 = (CDemonSet *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
-                                (pCVar9,g_CCharacterActorType_00765a60.name_hash);
+                                (pCVar9,g_CCharacterClassInfo.name_hash);
         if (this_ptr_00 != (CDemonSet *)0x0) {
           pCVar9 = (CDemonActor *)0x5162aa;
           EVar5 = (**(code **)(this_ptr_00->cameras[0].camera_group + 0x104))
@@ -128,19 +128,15 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr)
         }
         pCStack_38 = (CFlameCan *)
                      core_actor_cpp_castToClassHash_FUN_0040d890
-                               (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash
-                               );
+                               (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
         this_ptr_01 = (CTrigger *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
-                                (g_CDemonSetPtr->collision_actor,
-                                 g_CTriggerActorType_02dd1084.name_hash);
+                                (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
         pCStack_4c = this_ptr_01;
         pCStack_40 = core_actor_cpp_castToClassHash_FUN_0040d890
-                               (g_CDemonSetPtr->collision_actor,g_CCrateActorType_0077bd40.name_hash
-                               );
+                               (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
         pCStack_44 = core_actor_cpp_castToClassHash_FUN_0040d890
-                               (g_CDemonSetPtr->collision_actor,
-                                g_CFlameCanActorType_01c70654.name_hash);
+                               (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
         fVar6 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
                                  ((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);
         pCStack_24 = pCStack_44;
@@ -153,7 +149,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr)
                   in_stack_fffffec4 = (CDemonSet *)g_CDemonSetPtr->ground_type;
                   in_stack_fffffec0 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;
                   core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60
-                            (g_CFireEffect_PTR_005b80f0,&g_CDemonSetPtr->collision_impact_position,
+                            (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                              (CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,
                              g_CDemonSetPtr->collision_actor);
                   break;
@@ -245,7 +241,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr)
   CStack_a0.z = CStack_7c.z;
   CStack_a0.y = CStack_7c.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
-            (g_CFireEffect_PTR_005b80f0,&CStack_a0,&(this_ptr->base).base.orient_matrix);
+            (g_CFireEffectPtr,&CStack_a0,&(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
             (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_7c);
   pCVar1 = (this_ptr->base).base.vtable._ub;

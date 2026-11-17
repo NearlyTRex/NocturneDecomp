@@ -10,14 +10,14 @@
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 0040785d
 ;
 ; Referenced Globals:
-;   uint g_UINT_0061b4c0 = 0x1
+;   uint g_VertexProcessingEnabled = 0x1
 ;   SRenderVertex[20000] g_SRenderVertex_ARRAY_00629014
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].projected_vertex.screen_x+3
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].a
-;   uint g_UINT_00713a60
-;   uint g_UINT_00713a64
-;   void* g_PTR_00713a94
-;   int g_INT_01c51cac
+;   uint g_ProcessedVertexOffset
+;   uint g_ProcessedVertexBackupOffset
+;   void* g_CurrentVertexData
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x4                         ; 00403844
     MOV ESI,dword ptr [ESP + 0x18]      ; 00403847
     MOV EDX,0x1                         ; 0040384b
-    MOV EBX,dword ptr [0x00713a60]      ; 00403850 | g_UINT_00713a60
+    MOV EBX,dword ptr [0x00713a60]      ; 00403850 | g_ProcessedVertexOffset
     MOV ESI,dword ptr [ESI + 0x4]       ; 00403856
     MOV EDI,dword ptr [ESP + 0x18]      ; 00403859
     ADD ESI,EBX                         ; 0040385d
@@ -44,13 +44,13 @@ section .text
     SUB EAX,ESI                         ; 0040386a
     MOV ESI,0x629014                    ; 0040386c | g_SRenderVertex_ARRAY_00629014
     SHL EAX,0x4                         ; 00403871
-    MOV dword ptr [0x0061b4c0],EDX      ; 00403874 | g_UINT_0061b4c0
+    MOV dword ptr [0x0061b4c0],EDX      ; 00403874 | g_VertexProcessingEnabled
     ADD ESI,EAX                         ; 0040387a
     MOV EAX,dword ptr [ESP + 0x18]      ; 0040387c
     ADD EDI,0xc                         ; 00403880
     MOV dword ptr [ESP],ECX             ; 00403883
     MOV EDX,dword ptr [EAX + 0x8]       ; 00403886
-    MOV dword ptr [0x00713a94],EDI      ; 00403889 | g_PTR_00713a94
+    MOV dword ptr [0x00713a94],EDI      ; 00403889 | g_CurrentVertexData
     TEST EDX,EDX                        ; 0040388f
     JLE 0x004038bf                      ; 00403891
         ;   XREF to: 004038bf (CONDITIONAL_JUMP)  ; LAB_004038bf
@@ -59,7 +59,7 @@ section .text
     PUSH ESI                            ; 00403894
     CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00403895
         ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x01c51cac]                ; 0040389a | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 0040389a | g_PerspectiveReciprocal
     MOV dword ptr [ESI + 0x2c],EAX      ; 0040389f | g_SRenderVertex_ARRAY_00629014[0].a
     MOV AH,byte ptr [ESI + 0x13]        ; 004038a2 | g_SRenderVertex_ARRAY_00629014[0].projected_vertex.screen_x+3
     ADD ESP,0x8                         ; 004038a5
@@ -75,12 +75,12 @@ section .text
     CMP EBP,ECX                         ; 004038bb
     JL 0x00403893                       ; 004038bd
         ;   XREF to: 00403893 (CONDITIONAL_JUMP)  ; LAB_00403893
-    MOV EBX,dword ptr [0x00713a60]      ; 004038bf | g_UINT_00713a60
+    MOV EBX,dword ptr [0x00713a60]      ; 004038bf | g_ProcessedVertexOffset
         ;   Label: LAB_004038bf
     TEST EBX,EBX                        ; 004038c5
     JNZ 0x004038cf                      ; 004038c7
         ;   XREF to: 004038cf (CONDITIONAL_JUMP)  ; LAB_004038cf
-    MOV dword ptr [0x00713a64],EBX      ; 004038c9 | g_UINT_00713a64
+    MOV dword ptr [0x00713a64],EBX      ; 004038c9 | g_ProcessedVertexBackupOffset
     MOV ESI,dword ptr [ESP + 0x18]      ; 004038cf
         ;   Label: LAB_004038cf
     MOV EAX,dword ptr [ESP]             ; 004038d3
@@ -108,7 +108,7 @@ section .text
         ;   XREF to: 004038ad (UNCONDITIONAL_JUMP)  ; LAB_004038ad
     XOR EBP,EBP                         ; 00403908
         ;   Label: LAB_00403908
-    MOV dword ptr [0x0061b4c0],EBP      ; 0040390a | g_UINT_0061b4c0
+    MOV dword ptr [0x0061b4c0],EBP      ; 0040390a | g_VertexProcessingEnabled
     JMP 0x004038db                      ; 00403910
         ;   XREF to: 004038db (UNCONDITIONAL_JUMP)  ; LAB_004038db
 

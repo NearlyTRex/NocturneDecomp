@@ -10,6 +10,6 @@ void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_005750b0(char *output_b
 
 {
   engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00574af0
-            (g_CTextureCache_PTR_02652eb0,output_buffer);
+            (g_TextureCacheInstance,output_buffer);
   return;
 }

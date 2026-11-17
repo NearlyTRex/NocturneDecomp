@@ -1420,7 +1420,7 @@ section .text
     FADDP                               ; 005bc059
     FSTP float ptr [EBP + 0x72]         ; 005bc05b
     MOV EAX,dword ptr [EBP + 0x72]      ; 005bc05e
-    MOV EDX,dword ptr [0x01cc804c]      ; 005bc061 | g_INT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 005bc061 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 005bc067
     ADD EAX,EDX                         ; 005bc069
     MOV dword ptr [EBP + -0xa],EAX      ; 005bc06b
@@ -1546,7 +1546,7 @@ section .text
     LEA EAX,[EBX + 0xc288]              ; 005bc1d5
         ;   Label: LAB_005bc1d5
     PUSH EAX                            ; 005bc1db
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005bc1dc | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005bc1dc | g_CEventListPtr
     PUSH EDX                            ; 005bc1e2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005bc1e3
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -2667,7 +2667,7 @@ section .text
         ;   XREF to: 005bbc3b (CONDITIONAL_JUMP)  ; LAB_005bbc3b
     MOV ESI,dword ptr [0x01b68928]      ; 005bcf19 | g_CDoorClassInfo.name_hash
     PUSH ESI                            ; 005bcf1f
-    MOV EDI,dword ptr [0x007c6380]      ; 005bcf20 | g_CDemonActor_PTR_007c6380
+    MOV EDI,dword ptr [0x007c6380]      ; 005bcf20 | g_LastCollisionActor
     PUSH EDI                            ; 005bcf26
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 005bcf27
         ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)

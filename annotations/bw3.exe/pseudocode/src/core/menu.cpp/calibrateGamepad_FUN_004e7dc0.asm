@@ -18,12 +18,12 @@
 ;   TerminatedCString s_Center_gamepad_press_ENT_005c7256
 ;   TerminatedCString s_Move_gamepad_in_all_dire_005c7272
 ;   CGame* g_CGamePtr = 01d2130c
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   CKeys* g_CKeysPtr = 01d70a78
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   CBitFont* g_CBitFont_PTR_01549aa0
-;   int g_INT_01c6e250
-;   int g_INT_01c6e254
-;   DWORD g_DWORD_01c6e260
+;   CBitFont* g_MediumFont
+;   int g_JoyXPos
+;   int g_JoyYPos
+;   DWORD g_JoyButtons
 ;   undefined4 g_CGameInstance.x_center
 ;   undefined4 g_CGameInstance.y_center
 ;   undefined4 g_CGameInstance.x_stick_min
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004e7df1
     PUSH EAX                            ; 004e7df4
-    MOV ECX,dword ptr [0x01549aa0]      ; 004e7df5 | g_CBitFont_PTR_01549aa0
+    MOV ECX,dword ptr [0x01549aa0]      ; 004e7df5 | g_MediumFont
     PUSH ECX                            ; 004e7dfb
     MOV EBX,EAX                         ; 004e7dfc
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004e7dfe
@@ -80,7 +80,7 @@ section .text
     MOV EDX,0x140                       ; 004e7e0f
     PUSH 0x58                           ; 004e7e14
     SUB EDX,EAX                         ; 004e7e16
-    MOV EAX,[0x01549aa0]                ; 004e7e18 | g_CBitFont_PTR_01549aa0
+    MOV EAX,[0x01549aa0]                ; 004e7e18 | g_MediumFont
     PUSH EAX                            ; 004e7e1d
     MOV dword ptr [ESP + 0x208],EDX     ; 004e7e1e
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004e7e25
@@ -98,16 +98,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20c]     ; 004e7e42
     PUSH EDX                            ; 004e7e49
     PUSH EBX                            ; 004e7e4a
-    MOV ECX,dword ptr [0x01549aa0]      ; 004e7e4b | g_CBitFont_PTR_01549aa0
+    MOV ECX,dword ptr [0x01549aa0]      ; 004e7e4b | g_MediumFont
     PUSH ECX                            ; 004e7e51
     CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004e7e52
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004e7e57
-    MOV EBX,dword ptr [0x01c6e260]      ; 004e7e5a | g_DWORD_01c6e260
+    MOV EBX,dword ptr [0x01c6e260]      ; 004e7e5a | g_JoyButtons
     PUSH EBX                            ; 004e7e60
-    MOV EAX,[0x01c6e254]                ; 004e7e61 | g_INT_01c6e254
+    MOV EAX,[0x01c6e254]                ; 004e7e61 | g_JoyYPos
     PUSH EAX                            ; 004e7e66
-    MOV EDX,dword ptr [0x01c6e250]      ; 004e7e67 | g_INT_01c6e250
+    MOV EDX,dword ptr [0x01c6e250]      ; 004e7e67 | g_JoyXPos
     PUSH EDX                            ; 004e7e6d
     PUSH 0x5c724d                       ; 004e7e6e | = "%d,%d,%x"
     LEA EAX,[ESP + 0x110]               ; 004e7e73
@@ -130,7 +130,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 004e7ea6
         ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     PUSH 0x1c                           ; 004e7eab
-    MOV EAX,[0x00600284]                ; 004e7ead | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e7ead | g_CKeysPtr
     PUSH EAX                            ; 004e7eb2 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004e7eb3 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004e7eb5
@@ -162,7 +162,7 @@ section .text
     ADD ESP,0x4                         ; 004e7f1f
     PUSH EAX                            ; 004e7f22
     MOV EBX,EAX                         ; 004e7f23
-    MOV EAX,[0x01549aa0]                ; 004e7f25 | g_CBitFont_PTR_01549aa0
+    MOV EAX,[0x01549aa0]                ; 004e7f25 | g_MediumFont
     PUSH EAX                            ; 004e7f2a
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004e7f2b
         ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
@@ -175,7 +175,7 @@ section .text
     SUB EDX,EAX                         ; 004e7f41
     PUSH 0x58                           ; 004e7f43
     MOV dword ptr [ESP + 0x208],EDX     ; 004e7f45
-    MOV EDX,dword ptr [0x01549aa0]      ; 004e7f4c | g_CBitFont_PTR_01549aa0
+    MOV EDX,dword ptr [0x01549aa0]      ; 004e7f4c | g_MediumFont
     PUSH EDX                            ; 004e7f52
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004e7f53
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
@@ -192,16 +192,16 @@ section .text
     MOV ECX,dword ptr [ESP + 0x210]     ; 004e7f70
     PUSH ECX                            ; 004e7f77
     PUSH EBX                            ; 004e7f78
-    MOV EBX,dword ptr [0x01549aa0]      ; 004e7f79 | g_CBitFont_PTR_01549aa0
+    MOV EBX,dword ptr [0x01549aa0]      ; 004e7f79 | g_MediumFont
     PUSH EBX                            ; 004e7f7f
     CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004e7f80
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004e7f85
-    MOV EAX,[0x01c6e260]                ; 004e7f88 | g_DWORD_01c6e260
+    MOV EAX,[0x01c6e260]                ; 004e7f88 | g_JoyButtons
     PUSH EAX                            ; 004e7f8d
-    MOV EDX,dword ptr [0x01c6e254]      ; 004e7f8e | g_INT_01c6e254
+    MOV EDX,dword ptr [0x01c6e254]      ; 004e7f8e | g_JoyYPos
     PUSH EDX                            ; 004e7f94
-    MOV ECX,dword ptr [0x01c6e250]      ; 004e7f95 | g_INT_01c6e250
+    MOV ECX,dword ptr [0x01c6e250]      ; 004e7f95 | g_JoyXPos
     PUSH ECX                            ; 004e7f9b
     PUSH 0x5c724d                       ; 004e7f9c | = "%d,%d,%x"
     LEA EAX,[ESP + 0x10]                ; 004e7fa1
@@ -224,7 +224,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 004e7fce
         ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     PUSH 0x1c                           ; 004e7fd3
-    MOV EAX,[0x00600284]                ; 004e7fd5 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e7fd5 | g_CKeysPtr
     PUSH EAX                            ; 004e7fda | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004e7fdb | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004e7fdd
@@ -233,7 +233,7 @@ section .text
     JNZ 0x004e809d                      ; 004e7fe5
         ;   XREF to: 004e809d (CONDITIONAL_JUMP)  ; LAB_004e809d
     PUSH 0x1                            ; 004e7feb
-    MOV EAX,[0x00600284]                ; 004e7fed | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e7fed | g_CKeysPtr
     PUSH EAX                            ; 004e7ff2 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004e7ff3 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004e7ff5
@@ -241,18 +241,18 @@ section .text
     TEST EAX,EAX                        ; 004e7ffb
     JNZ 0x004e8077                      ; 004e7ffd
         ;   XREF to: 004e8077 (CONDITIONAL_JUMP)  ; LAB_004e8077
-    MOV EAX,[0x01c6e250]                ; 004e8003 | g_INT_01c6e250
+    MOV EAX,[0x01c6e250]                ; 004e8003 | g_JoyXPos
     CMP EDI,EAX                         ; 004e8008
     JLE 0x004e800e                      ; 004e800a
         ;   XREF to: 004e800e (CONDITIONAL_JUMP)  ; LAB_004e800e
     MOV EDI,EAX                         ; 004e800c
-    MOV EDX,dword ptr [0x01c6e250]      ; 004e800e | g_INT_01c6e250
+    MOV EDX,dword ptr [0x01c6e250]      ; 004e800e | g_JoyXPos
         ;   Label: LAB_004e800e
     CMP EBP,EDX                         ; 004e8014
     JGE 0x004e801a                      ; 004e8016
         ;   XREF to: 004e801a (CONDITIONAL_JUMP)  ; LAB_004e801a
     MOV EBP,EDX                         ; 004e8018
-    MOV ECX,dword ptr [0x01c6e254]      ; 004e801a | g_INT_01c6e254
+    MOV ECX,dword ptr [0x01c6e254]      ; 004e801a | g_JoyYPos
         ;   Label: LAB_004e801a
     CMP ESI,ECX                         ; 004e8020
     JLE 0x004e8026                      ; 004e8022
@@ -260,7 +260,7 @@ section .text
     MOV ESI,ECX                         ; 004e8024
     MOV EBX,dword ptr [ESP + 0x210]     ; 004e8026
         ;   Label: LAB_004e8026
-    MOV EAX,[0x01c6e254]                ; 004e802d | g_INT_01c6e254
+    MOV EAX,[0x01c6e254]                ; 004e802d | g_JoyYPos
     CMP EAX,EBX                         ; 004e8032
     JLE 0x004e7ec3                      ; 004e8034
         ;   XREF to: 004e7ec3 (CONDITIONAL_JUMP)  ; LAB_004e7ec3
@@ -269,7 +269,7 @@ section .text
         ;   XREF to: 004e7ec3 (UNCONDITIONAL_JUMP)  ; LAB_004e7ec3
     PUSH 0x1                            ; 004e8046
         ;   Label: LAB_004e8046
-    MOV EAX,[0x00600284]                ; 004e8048 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e8048 | g_CKeysPtr
     PUSH EAX                            ; 004e804d | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004e804e | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004e8050
@@ -277,9 +277,9 @@ section .text
     TEST EAX,EAX                        ; 004e8056
     JNZ 0x004e8077                      ; 004e8058
         ;   XREF to: 004e8077 (CONDITIONAL_JUMP)  ; LAB_004e8077
-    MOV EAX,[0x01c6e250]                ; 004e805a | g_INT_01c6e250
+    MOV EAX,[0x01c6e250]                ; 004e805a | g_JoyXPos
     MOV dword ptr [ESP + 0x208],EAX     ; 004e805f
-    MOV EAX,[0x01c6e254]                ; 004e8066 | g_INT_01c6e254
+    MOV EAX,[0x01c6e254]                ; 004e8066 | g_JoyYPos
     MOV dword ptr [ESP + 0x20c],EAX     ; 004e806b
     JMP 0x004e7dda                      ; 004e8072
         ;   XREF to: 004e7dda (UNCONDITIONAL_JUMP)  ; LAB_004e7dda

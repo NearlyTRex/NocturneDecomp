@@ -14,7 +14,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004a7160(CFlameCan *this_pt
   CBoundingBox3D *unaff_ESI;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                    (g_CEventList_PTR_005fba60,this_ptr->on_fire_condition);
+                    (g_CEventListPtr,this_ptr->on_fire_condition);
   if (iVar2 == 0) {
     if (this_ptr->on_fire == 0) {
       return;

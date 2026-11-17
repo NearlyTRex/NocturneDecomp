@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   int g_INT_0061b4a8 = 0x100
+;   int g_CurrentTextureDimension = 0x100
 ;   int g_INT_01c50948
 ;   void* g_PTR_02c833bc
 ;
@@ -32,7 +32,7 @@ section .text
     PUSH EBX                            ; 00582177
     MOV EBX,dword ptr [ESP + 0x14]      ; 00582178
     PUSH EBX                            ; 0058217c
-    MOV ESI,dword ptr [0x0061b4a8]      ; 0058217d | g_INT_0061b4a8
+    MOV ESI,dword ptr [0x0061b4a8]      ; 0058217d | g_CurrentTextureDimension
     PUSH ESI                            ; 00582183
     MOV EDI,dword ptr [ESP + 0x18]      ; 00582184
     PUSH EDI                            ; 00582188

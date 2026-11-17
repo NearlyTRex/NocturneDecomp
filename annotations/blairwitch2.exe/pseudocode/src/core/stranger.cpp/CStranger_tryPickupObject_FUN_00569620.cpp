@@ -343,10 +343,10 @@ LAB_00569a2a:
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                  (pCVar1,g_INT_ARRAY_0264be30[0xe],&CStack_104);
+                  (pCVar1,g_StrangerIndices[0xe],&CStack_104);
         fStack_74 = CStack_104.x;
         afStack_90[(uint)bVar8 * -2 + 8] = *(float *)((int)&CStack_104 + (uint)bVar8 * -8 + 4);
-        iVar5 = g_INT_ARRAY_0264be30[4];
+        iVar5 = g_StrangerIndices[4];
         afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 9] =
              *(float *)((int)&CStack_104 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0

@@ -39,7 +39,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *actor_specifie
     }
     g_INT_01e818bc = 1;
     actor_ptr = (CHero *)core_event_cpp_CEventList_getActorByVarName_FUN_004aa1d0
-                                   (g_CEventList_PTR_0061b4d0,actor_specifier);
+                                   (g_CEventListPtr,actor_specifier);
     if (actor_ptr == (CHero *)0x0) {
       _sprintf(g_CHAR_ARRAY_01e810b0,"Actor variable %s not defined, or doesn't reference an existing actor");
       return (CDemonActor *)0x0;

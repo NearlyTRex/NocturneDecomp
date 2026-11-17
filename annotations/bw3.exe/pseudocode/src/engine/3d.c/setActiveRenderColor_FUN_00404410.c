@@ -9,10 +9,10 @@
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404410(void)
 
 {
-  if (-1 < g_INT_007303dc) {
-    g_INT_01c6b5c0 = g_INT_ARRAY_005f08d0[g_INT_007303dc];
+  if (-1 < g_CurrentPolygonColor) {
+    g_INT_01c6b5c0 = g_ColorLookupTable[g_CurrentPolygonColor];
     return;
   }
-  g_INT_01c6b5c0 = -g_INT_007303dc;
+  g_INT_01c6b5c0 = -g_CurrentPolygonColor;
   return;
 }

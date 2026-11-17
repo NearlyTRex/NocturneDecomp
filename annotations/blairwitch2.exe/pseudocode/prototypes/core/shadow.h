@@ -27,11 +27,11 @@ void __cdecl CShadow::setup(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_CShadow_process_FUN_0053c500
 // Address: 0053c500
-void __cdecl CShadow::process(CShadow *this_ptr,float param_2);
+void __cdecl CShadow::process(CShadow *this_ptr,float delta_time);
 
 // Original: core_shadow.cpp_CShadow_setWalkTarget_FUN_0053df10
 // Address: 0053df10
-void __cdecl CShadow::setWalkTarget(CShadow *this_ptr,CDemonActor *param_2,float param_3,float param_4);
+void __cdecl CShadow::setWalkTarget(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 
 // Original: core_shadow.cpp_CShadow_playHitAlertSound_FUN_0053df40
 // Address: 0053df40
@@ -75,7 +75,7 @@ void __cdecl CShadow::scaleDamageByHitBone(CShadow *this_ptr,SDamageInfo *damage
 
 // Original: core_shadow.cpp_CShadow_processDamage_FUN_0053ea00
 // Address: 0053ea00
-void __cdecl CShadow::processDamage(CShadow *this_ptr,SDamageInfo *param_2);
+void __cdecl CShadow::processDamage(CShadow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_shadow.cpp_CShadow_getDeathState_FUN_0053ec30
 // Address: 0053ec30

@@ -36,7 +36,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_00546900(CTrap *this_ptr,float delt
       pCVar2 = (CWerewolf *)
                core_actor_cpp_castToClassHash_FUN_0040d890
                          (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar4),
-                          g_CWerewolfActorType_02de078c.name_hash);
+                          g_CWerewolfClassInfo.name_hash);
       if ((pCVar2 != (CWerewolf *)0x0) && (pCVar2->chain_anchor == (CDemonActor *)0x0)) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_5c);
         (*((pCVar2->base).base.base.vtable._ub)->getCollisionType)((CDemonActor *)pCVar2,&SStack_5c)

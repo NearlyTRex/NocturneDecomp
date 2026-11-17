@@ -100,11 +100,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
   g_CDemonLightInstance.light_enabled_flag = 0;
   core_set_cpp_CDemonSet_initScene_FUN_0054ec60(g_CDemonSetPtr);
   if (g_INT_01cd06c0 == 0) {
-    core_fire_cpp_CFireEffect_init_FUN_004b4b30(g_CFireEffect_PTR_0061c010);
+    core_fire_cpp_CFireEffect_init_FUN_004b4b30(g_CFireEffectPtr);
   }
   else {
     g_INT_01cd06c0 = 0;
-    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00555ca0(g_CDemonSetPtr,g_INT_ARRAY_01cd06c4);
+    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00555ca0
+              (g_CDemonSetPtr,g_MasterLightStateSaveBuffer);
   }
   if (this_ptr->gamma < 0x8000) {
     this_ptr->gamma = 0x8000;
@@ -264,9 +265,9 @@ LAB_004cfb22:
                         (g_CKeys_PTR_0061f2a4,(uint)(this_ptr->is_paused == 0));
               core_set_cpp_CDemonSet_setCameraView_FUN_0054f0d0
                         (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
-              g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d248;
+              g_CBitFont_PTR_01c3eb50 = g_SmallEditorFont;
               if (0xf0 < g_INT_0061b49c) {
-                g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d244;
+                g_CBitFont_PTR_01c3eb50 = g_ThemeFont;
               }
             }
             if (iVar4 == 2) {
@@ -385,7 +386,7 @@ LAB_004cfde8:
       }
       if (this_ptr->new_set_event_pending != 0) {
         core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
-                  (g_CEventList_PTR_0061b4d0,"NewSet",1);
+                  (g_CEventListPtr,"NewSet",1);
         this_ptr->new_set_event_pending = this_ptr->new_set_event_pending + -1;
       }
       goto LAB_004cf9e0;

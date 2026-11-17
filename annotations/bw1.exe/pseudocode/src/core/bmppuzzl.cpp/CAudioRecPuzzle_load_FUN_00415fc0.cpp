@@ -109,10 +109,10 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x1a,"knobArrow5",0x27,0x27,2,0x111,0x1a3,0);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,"AudioPuzzleTelOsMah");
+                    (g_CEventListPtr,"AudioPuzzleTelOsMah");
   if (iVar1 == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (g_CEventList_PTR_0061b4d0,"AudioPuzzleMary");
+                      (g_CEventListPtr,"AudioPuzzleMary");
     if (iVar1 != 0) {
       this_ptr->solution[1] = 1;
       this_ptr->solution[2] = 4;

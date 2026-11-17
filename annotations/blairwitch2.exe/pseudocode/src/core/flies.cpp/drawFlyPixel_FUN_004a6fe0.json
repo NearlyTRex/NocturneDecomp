@@ -58,13 +58,13 @@
     },
     {
       "addr": "01caf62c",
-      "name": "g_UINT_01caf62c",
+      "name": "g_FlyBlendColor",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01caf630",
-      "name": "g_UINT_01caf630",
+      "name": "g_FlyInvBlendColor",
       "type": "uint",
       "value": null
     }
@@ -236,7 +236,7 @@
       "line": 24,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar4 = (ushort)(((uint7)(byte)(g_UINT_01caf62c >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar4 = (ushort)(((uint7)(byte)(g_FlyBlendColor >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
     },
     {
@@ -244,7 +244,7 @@
       "line": 25,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar6 = (ushort)(((uint7)(byte)(g_UINT_01caf630 >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar6 = (ushort)(((uint7)(byte)(g_FlyInvBlendColor >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
     },
     {
@@ -284,7 +284,7 @@
       "line": 32,
       "match": "CONCAT21",
       "severity": "moderate",
-      "text": "(short)CONCAT21(uVar6,(char)(g_UINT_01caf630 >> 0x10)) +",
+      "text": "(short)CONCAT21(uVar6,(char)(g_FlyInvBlendColor >> 0x10)) +",
       "type": "concat_reconstruction"
     },
     {
@@ -292,7 +292,7 @@
       "line": 33,
       "match": "CONCAT21",
       "severity": "moderate",
-      "text": "(short)(uVar11 >> 8) * (short)CONCAT21(uVar4,(char)(g_UINT_01caf62c >> 0x10));",
+      "text": "(short)(uVar11 >> 8) * (short)CONCAT21(uVar4,(char)(g_FlyBlendColor >> 0x10));",
       "type": "concat_reconstruction"
     },
     {

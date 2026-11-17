@@ -13,12 +13,12 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   char[40] g_CHAR_ARRAY_0264baa8
-;   undefined4 g_CHAR_ARRAY_0264baa8+1
-;   undefined4 g_CHAR_ARRAY_0264baa8+2
-;   undefined4 g_CHAR_ARRAY_0264baa8+3
-;   int g_INT_0264bad0
-;   int g_INT_0264bad4
+;   char[40] g_SoundAmbientSoundName
+;   undefined4 g_SoundAmbientSoundName+1
+;   undefined4 g_SoundAmbientSoundName+2
+;   undefined4 g_SoundAmbientSoundName+3
+;   int g_SoundAmbientSfxHandle
+;   int g_SoundAudioInitialized
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_killSound_FUN_0055af80
@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 0055adc0
         ;   Label: core_sound.cpp_CSound_playAmbientSound_FUN_0055adc0
     PUSH EDI                            ; 0055adc1
-    MOV EDX,dword ptr [0x0264bad0]      ; 0055adc2 | g_INT_0264bad0
+    MOV EDX,dword ptr [0x0264bad0]      ; 0055adc2 | g_SoundAmbientSfxHandle
     PUSH EDX                            ; 0055adc8
     MOV ECX,dword ptr [ESP + 0x10]      ; 0055adc9
     PUSH ECX                            ; 0055adcd
@@ -43,26 +43,26 @@ section .text
     PUSH EDI                            ; 0055addf
     MOV AL,byte ptr [ESI]               ; 0055ade0
         ;   Label: LAB_0055ade0
-    MOV byte ptr [EDI],AL               ; 0055ade2 | g_CHAR_ARRAY_0264baa8 | g_CHAR_ARRAY_0264baa8+2
+    MOV byte ptr [EDI],AL               ; 0055ade2 | g_SoundAmbientSoundName | g_SoundAmbientSoundName+2
     CMP AL,0x0                          ; 0055ade4
     JZ 0x0055adf8                       ; 0055ade6
         ;   XREF to: 0055adf8 (CONDITIONAL_JUMP)  ; LAB_0055adf8
     MOV AL,byte ptr [ESI + 0x1]         ; 0055ade8
     ADD ESI,0x2                         ; 0055adeb
-    MOV byte ptr [EDI + 0x1],AL         ; 0055adee | g_CHAR_ARRAY_0264baa8+1 | g_CHAR_ARRAY_0264baa8+3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055adee | g_SoundAmbientSoundName+1 | g_SoundAmbientSoundName+3
     ADD EDI,0x2                         ; 0055adf1
     CMP AL,0x0                          ; 0055adf4
     JNZ 0x0055ade0                      ; 0055adf6
         ;   XREF to: 0055ade0 (CONDITIONAL_JUMP)  ; LAB_0055ade0
     POP EDI                             ; 0055adf8
         ;   Label: LAB_0055adf8
-    CMP dword ptr [0x0264bad4],0x0      ; 0055adf9 | g_INT_0264bad4
+    CMP dword ptr [0x0264bad4],0x0      ; 0055adf9 | g_SoundAudioInitialized
     JNZ 0x0055ae05                      ; 0055ae00
         ;   XREF to: 0055ae05 (CONDITIONAL_JUMP)  ; LAB_0055ae05
     POP EDI                             ; 0055ae02
     POP ESI                             ; 0055ae03
     RET                                 ; 0055ae04
-    PUSH EDI                            ; 0055ae05 | g_CHAR_ARRAY_0264baa8
+    PUSH EDI                            ; 0055ae05 | g_SoundAmbientSoundName
         ;   Label: LAB_0055ae05
     MOV ESI,dword ptr [0x0061b5a8]      ; 0055ae06 | g_CDemonSetPtr
     PUSH ESI                            ; 0055ae0c
@@ -71,7 +71,7 @@ section .text
     CALL core_sound.cpp_CSound_playSound_FUN_0055ae30 ; 0055ae12
         ;   XREF to: 0055ae30 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0055ae30(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 0055ae17
-    MOV [0x0264bad0],EAX                ; 0055ae1a | g_INT_0264bad0
+    MOV [0x0264bad0],EAX                ; 0055ae1a | g_SoundAmbientSfxHandle
     POP EDI                             ; 0055ae1f
     POP ESI                             ; 0055ae20
     RET                                 ; 0055ae21

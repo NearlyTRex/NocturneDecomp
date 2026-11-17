@@ -26,23 +26,23 @@ void __cdecl core_xform_cpp_clipPolygonStage2_FUN_005877c0(void)
   
   bVar9 = 0;
   iStack_14 = 0;
-  if (0 < g_INT_02d22ffc) {
-    vertex_a = g_SRenderVertex_ARRAY_02d23008;
+  if (0 < g_ClipVertexCountStage2) {
+    vertex_a = g_ClipVertexBufferStage2;
     do {
       uVar4 = iStack_14 + 1;
-      if (uVar4 == g_INT_02d22ffc) {
-        uVar4 = uVar4 ^ g_INT_02d22ffc;
+      if (uVar4 == g_ClipVertexCountStage2) {
+        uVar4 = uVar4 ^ g_ClipVertexCountStage2;
       }
-      pSVar6 = g_SRenderVertex_ARRAY_02d23008 + uVar4;
+      pSVar6 = g_ClipVertexBufferStage2 + uVar4;
       bVar3 = (vertex_a->projected_vertex).transformed_x <=
               -(vertex_a->projected_vertex).transformed_z;
       if ((pSVar6->projected_vertex).transformed_x <=
-          -g_SRenderVertex_ARRAY_02d23008[uVar4].projected_vertex.transformed_z) {
+          -g_ClipVertexBufferStage2[uVar4].projected_vertex.transformed_z) {
         bVar3 = bVar3 | 2;
       }
       switch(bVar3) {
       case 0:
-        pSVar7 = g_SRenderVertex_ARRAY_02d23c08 + g_INT_02d23000;
+        pSVar7 = g_ClipVertexBufferStage3 + g_ClipVertexCountStage3;
         iVar5 = 0x30;
         pSVar6 = vertex_a;
         while (7 < iVar5) {
@@ -62,15 +62,15 @@ void __cdecl core_xform_cpp_clipPolygonStage2_FUN_005877c0(void)
                  *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
           }
         }
-        g_INT_02d23000 = g_INT_02d23000 + 1;
+        g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
         break;
       case 1:
         core_xform_cpp_clipInterpolateLeftPlane_FUN_00587400
-                  (pSVar6,vertex_a,g_SRenderVertex_ARRAY_02d23c08 + g_INT_02d23000);
-        g_INT_02d23000 = g_INT_02d23000 + 1;
+                  (pSVar6,vertex_a,g_ClipVertexBufferStage3 + g_ClipVertexCountStage3);
+        g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
         break;
       case 2:
-        pSVar8 = g_SRenderVertex_ARRAY_02d23c08 + g_INT_02d23000;
+        pSVar8 = g_ClipVertexBufferStage3 + g_ClipVertexCountStage3;
         iVar5 = 0x30;
         pSVar7 = vertex_a;
         while (7 < iVar5) {
@@ -90,14 +90,14 @@ void __cdecl core_xform_cpp_clipPolygonStage2_FUN_005877c0(void)
                  *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
           }
         }
-        g_INT_02d23000 = g_INT_02d23000 + 1;
+        g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
         core_xform_cpp_clipInterpolateLeftPlane_FUN_00587400
-                  (vertex_a,pSVar6,g_SRenderVertex_ARRAY_02d23c08 + g_INT_02d23000);
-        g_INT_02d23000 = g_INT_02d23000 + 1;
+                  (vertex_a,pSVar6,g_ClipVertexBufferStage3 + g_ClipVertexCountStage3);
+        g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
       }
       iStack_14 = iStack_14 + 1;
       vertex_a = vertex_a + 1;
-    } while (iStack_14 < g_INT_02d22ffc);
+    } while (iStack_14 < g_ClipVertexCountStage2);
   }
   return;
 }

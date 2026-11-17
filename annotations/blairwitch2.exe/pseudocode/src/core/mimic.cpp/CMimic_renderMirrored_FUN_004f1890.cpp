@@ -55,8 +55,8 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90
                   (g_CDemonRenderer_PTR_0060b280,(uint)(local_1c == 0));
         engine_matrix_c_matrixPush_FUN_004e9710();
-        g_INT_01c38b6c = -g_INT_01c38b6c;
-        g_INT_01c38b90 = -g_INT_01c38b90;
+        g_RelativeX = -g_RelativeX;
+        g_LightDirectionX = -g_LightDirectionX;
         g_INT_01c38b9c = -g_INT_01c38b9c;
         g_INT_01c38ba0 = -g_INT_01c38ba0;
         g_INT_01c38ba4 = -g_INT_01c38ba4;
@@ -85,7 +85,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
                     (&local_d0,
                      (CMatrix3x4f *)
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                     [g_INT_ARRAY_01d097c4[0]].m,&local_100);
+                     [g_MimicIndices[0]].m,&local_100);
           pCVar3 = &local_100;
           pfVar2 = (float *)&stack0xfffffed0;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -116,7 +116,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
           engine_drender_cpp_pop_FUN_0046b4a0();
         }
         core_charactr_cpp_CCharacter_renderAttachedModels_FUN_00425aa0((CCharacter *)this_ptr);
-        if ((g_INT_01d1cdc8 != 0) &&
+        if ((g_RenderMotionDebug != 0) &&
            (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
                               (g_CDemonRenderer_PTR_0060b280), iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;

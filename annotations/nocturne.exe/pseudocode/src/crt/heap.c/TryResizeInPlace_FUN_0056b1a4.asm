@@ -12,7 +12,7 @@
 ;   crt_unknown.c_realloc__FUN_00564a88 at 00564ac7
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_005c1680 = 00000000
+;   Heap* g_MainHeap = 00000000
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad8 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae0 = 005671e4
 ;
@@ -34,7 +34,7 @@ section .text
     PUSH EDX                            ; 0056b1b5
     MOV EBX,dword ptr [ESP + 0x14]      ; 0056b1b6
     PUSH EBX                            ; 0056b1ba
-    MOV EAX,0x5c1680                    ; 0056b1bb | g_Heap_PTR_005c1680
+    MOV EAX,0x5c1680                    ; 0056b1bb | g_MainHeap
     MOV DX,DS                           ; 0056b1c0
     XOR EAX,EAX                         ; 0056b1c2
     MOV AX,DX                           ; 0056b1c4

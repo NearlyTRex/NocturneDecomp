@@ -131,7 +131,7 @@ void __cdecl engine_mini3d_cpp_rasterizeTriangle_FUN_004f1830(float *v0,float *v
       fVar1 = v2[0xd];
     }
     local_34 = engine_mini3d_cpp_roundFloat_FUN_004f1810(fVar1 * 65535.0f);
-    engine_special_cpp_drawPolygon_FUN_00565c10(&local_c0,3,g_BIT_INTEGER32_01c6e2b4.dword);
+    engine_special_cpp_drawPolygon_FUN_00565c10(&local_c0,3,g_RenderStateFlags.dword);
     return;
   }
   g_INT_01d80d4c = g_INT_01c6cee8;
@@ -205,7 +205,7 @@ LAB_004f1a46:
             return;
           }
         }
-        if (g_INT_01c6e2a0 == 0) {
+        if (g_MMXSupported == 0) {
           if (g_INT_005fba20 == 0x20) {
             engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
                       (left_vertex,local_14,local_18);

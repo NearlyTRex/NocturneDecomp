@@ -90,7 +90,7 @@ section .text
     TEST ECX,ECX                        ; 004ed0bd
     JNZ 0x004ed0f5                      ; 004ed0bf
         ;   XREF to: 004ed0f5 (CONDITIONAL_JUMP)  ; LAB_004ed0f5
-    CMP dword ptr [0x02cf60a0],0x0      ; 004ed0c1 | g_PTR_02cf60a0
+    CMP dword ptr [0x02cf60a0],0x0      ; 004ed0c1 | g_APIDLL_setViewport
     JZ 0x004ed0f5                       ; 004ed0c8
         ;   XREF to: 004ed0f5 (CONDITIONAL_JUMP)  ; LAB_004ed0f5
     CMP dword ptr [0x01c6cee8],0x0      ; 004ed0ca | g_INT_01c6cee8
@@ -102,7 +102,7 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 004ed0e0
     PUSH dword ptr [ESP + 0x24]         ; 004ed0e4
     PUSH dword ptr [ESP + 0x24]         ; 004ed0e8
-    CALL dword ptr [0x02cf60a0]         ; 004ed0ec | g_PTR_02cf60a0
+    CALL dword ptr [0x02cf60a0]         ; 004ed0ec | g_APIDLL_setViewport
     ADD ESP,0x18                        ; 004ed0f2
     MOV EDI,0x1                         ; 004ed0f5
         ;   Label: LAB_004ed0f5

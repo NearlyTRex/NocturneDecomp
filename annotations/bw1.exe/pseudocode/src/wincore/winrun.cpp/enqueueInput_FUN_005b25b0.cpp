@@ -9,14 +9,14 @@
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005b25b0(int input_value)
 
 {
-  g_INT_02c9a61c = g_INT_02c9a61c + 1;
-  g_INT_ARRAY_02c9a5c4[g_INT_02c9a61c] = input_value;
-  if (0x13 < g_INT_02c9a61c) {
-    g_INT_02c9a61c = 0;
+  g_InputWriteIndex = g_InputWriteIndex + 1;
+  g_UseMultimediaTimer[g_InputWriteIndex] = input_value;
+  if (0x13 < g_InputWriteIndex) {
+    g_InputWriteIndex = 0;
   }
-  if ((g_INT_02c9a61c == g_INT_02c9a618) &&
-     (g_INT_02c9a618 = g_INT_02c9a618 + 1, 0x13 < g_INT_02c9a618)) {
-    g_INT_02c9a618 = 0;
+  if ((g_InputWriteIndex == g_InputReadIndex) &&
+     (g_InputReadIndex = g_InputReadIndex + 1, 0x13 < g_InputReadIndex)) {
+    g_InputReadIndex = 0;
   }
   return;
 }

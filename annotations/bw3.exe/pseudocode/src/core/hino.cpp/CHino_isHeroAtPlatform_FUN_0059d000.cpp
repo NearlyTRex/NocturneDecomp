@@ -55,7 +55,7 @@ int __cdecl core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino *this_ptr)
         local_30 = local_24;
       }
       local_20 = local_30 * local_30 + local_38 * local_38 + local_34 * local_34;
-      local_14 = (float)(((int)local_20 >> 1) + g_INT_01d1a0a4);
+      local_14 = (float)(((int)local_20 >> 1) + g_FastSqrtMagic);
       if (local_14 < local_18) {
         local_1c = pCVar3;
         local_18 = local_14;

@@ -15,16 +15,16 @@
 ;   wincore_winvideo.cpp_playMovie_FUN_005b4cd0 at 005b4fd7
 ;
 ; Referenced Globals:
-;   int g_INT_02c9a618
-;   int g_INT_02c9a61c
+;   int g_InputReadIndex
+;   int g_InputWriteIndex
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c9a61c]      ; 005b2580 | g_INT_02c9a61c
+    MOV EDX,dword ptr [0x02c9a61c]      ; 005b2580 | g_InputWriteIndex
         ;   Label: wincore_winrun.cpp_wasKeyPressed_FUN_005b2580
-    MOV EAX,[0x02c9a618]                ; 005b2586 | g_INT_02c9a618
+    MOV EAX,[0x02c9a618]                ; 005b2586 | g_InputReadIndex
     CMP EAX,EDX                         ; 005b258b
     SETNZ AL                            ; 005b258d
     AND EAX,0xff                        ; 005b2590

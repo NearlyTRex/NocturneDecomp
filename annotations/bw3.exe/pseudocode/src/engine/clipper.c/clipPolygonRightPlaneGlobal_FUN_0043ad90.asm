@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string caseD_2
-;   int g_INT_007e4d54
-;   int g_INT_007e4d58
+;   int g_InputVertexCount
+;   int g_OutputVertexCount
 ;
 ; Called Functions:
 ;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0
@@ -23,7 +23,7 @@ section .text
     PUSH EBP                            ; 0043ad93
     SUB ESP,0x4                         ; 0043ad94
     XOR EDX,EDX                         ; 0043ad97
-    MOV ECX,dword ptr [0x007e4d54]      ; 0043ad99 | g_INT_007e4d54
+    MOV ECX,dword ptr [0x007e4d54]      ; 0043ad99 | g_InputVertexCount
     MOV dword ptr [ESP],EDX             ; 0043ad9f
     TEST ECX,ECX                        ; 0043ada2
     JLE 0x0043ae2f                      ; 0043ada4
@@ -31,7 +31,7 @@ section .text
     MOV EBX,0x7e5364                    ; 0043adaa
     MOV EAX,dword ptr [ESP]             ; 0043adaf
         ;   Label: LAB_0043adaf
-    MOV EBP,dword ptr [0x007e4d54]      ; 0043adb2 | g_INT_007e4d54
+    MOV EBP,dword ptr [0x007e4d54]      ; 0043adb2 | g_InputVertexCount
     INC EAX                             ; 0043adb8
     CMP EAX,EBP                         ; 0043adb9
     JNZ 0x0043adbf                      ; 0043adbb
@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 0043ae1b (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x43ad78]  ; 0043adea | caseD_0 | caseD_1 | = "k=XM~"
         ;   Label: switchD
-    IMUL EDI,dword ptr [0x007e4d58],0x30 ; 0043adf1 | g_INT_007e4d58
+    IMUL EDI,dword ptr [0x007e4d58],0x30 ; 0043adf1 | g_OutputVertexCount
         ;   Label: caseD_0
     MOV ECX,0x30                        ; 0043adf8
     MOV ESI,EDX                         ; 0043adfd
@@ -74,10 +74,10 @@ section .text
     AND CL,0x3                          ; 0043ae0f
     MOVSB.REP ES:EDI,ESI                ; 0043ae12
     POP EDI                             ; 0043ae14
-    INC dword ptr [0x007e4d58]          ; 0043ae15 | g_INT_007e4d58
+    INC dword ptr [0x007e4d58]          ; 0043ae15 | g_OutputVertexCount
     MOV ESI,dword ptr [ESP]             ; 0043ae1b
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x007e4d54]      ; 0043ae1e | g_INT_007e4d54
+    MOV EDI,dword ptr [0x007e4d54]      ; 0043ae1e | g_InputVertexCount
     INC ESI                             ; 0043ae24
     ADD EBX,0x30                        ; 0043ae25
     MOV dword ptr [ESP],ESI             ; 0043ae28
@@ -91,7 +91,7 @@ section .text
     POP ESI                             ; 0043ae34
     POP EBX                             ; 0043ae35
     RET                                 ; 0043ae36
-    IMUL EAX,dword ptr [0x007e4d58],0x30 ; 0043ae37 | g_INT_007e4d58
+    IMUL EAX,dword ptr [0x007e4d58],0x30 ; 0043ae37 | g_OutputVertexCount
         ;   Label: caseD_1
     ADD EAX,0x7e4d64                    ; 0043ae3e
     PUSH EAX                            ; 0043ae43
@@ -99,10 +99,10 @@ section .text
     PUSH EBP                            ; 0043ae45
     CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0 ; 0043ae46
         ;   XREF to: 0043a8c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
-    MOV ESI,dword ptr [0x007e4d58]      ; 0043ae4b | g_INT_007e4d58
+    MOV ESI,dword ptr [0x007e4d58]      ; 0043ae4b | g_OutputVertexCount
     INC ESI                             ; 0043ae51
     ADD ESP,0xc                         ; 0043ae52
-    MOV dword ptr [0x007e4d58],ESI      ; 0043ae55 | g_INT_007e4d58
+    MOV dword ptr [0x007e4d58],ESI      ; 0043ae55 | g_OutputVertexCount
     JMP 0x0043ae1b                      ; 0043ae5b
         ;   XREF to: 0043ae1b (UNCONDITIONAL_JUMP)  ; caseD_3
 

@@ -548,13 +548,13 @@
     },
     {
       "addr": "01c43530",
-      "name": "g_INT_01c43530",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cc804c",
-      "name": "g_INT_01cc804c",
+      "name": "g_FastSqrtMagic",
       "type": "int",
       "value": null
     },
@@ -566,55 +566,55 @@
     },
     {
       "addr": "01cd0d98",
-      "name": "g_INT_ARRAY_01cd0d98",
+      "name": "g_GhoulIndices",
       "type": "int[11]",
       "value": null
     },
     {
       "addr": "01cd0d9c",
-      "name": "g_INT_ARRAY_01cd0d98[1]",
+      "name": "g_GhoulIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0da0",
-      "name": "g_INT_ARRAY_01cd0d98[2]",
+      "name": "g_GhoulIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0da4",
-      "name": "g_INT_ARRAY_01cd0d98[3]",
+      "name": "g_GhoulIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0da8",
-      "name": "g_INT_ARRAY_01cd0d98[4]",
+      "name": "g_GhoulIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0dac",
-      "name": "g_INT_ARRAY_01cd0d98[5]",
+      "name": "g_GhoulIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0db0",
-      "name": "g_INT_ARRAY_01cd0d98[6]",
+      "name": "g_GhoulIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0dbc",
-      "name": "g_INT_ARRAY_01cd0d98[9]",
+      "name": "g_GhoulIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0dc0",
-      "name": "g_INT_ARRAY_01cd0d98[10]",
+      "name": "g_GhoulIndices[10]",
       "type": "undefined4",
       "value": null
     },
@@ -632,7 +632,7 @@
     },
     {
       "addr": "02c8af28",
-      "name": "g_CVector3f_02c8af28",
+      "name": "g_ZeroVector",
       "type": "CVector3f",
       "value": null
     }
@@ -2604,11 +2604,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 907,
-      "match": "fStack_78 = (float)(((int)fStack_7c >> 1) + g_INT_01cc804c);",
+      "match": "fStack_78 = (float)(((int)fStack_7c >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_78 = (float)(((int)fStack_7c >> 1) + g_INT_01cc804c);",
+      "text": "fStack_78 = (float)(((int)fStack_7c >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {

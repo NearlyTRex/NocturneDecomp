@@ -12,7 +12,7 @@
 ;   crt_unknown.c_strncpy_safe_FUN_00566450 at 00566489
 ;
 ; Referenced Globals:
-;   int g_INT_02de5c30
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_locale.c_mblen_FUN_0056da50
@@ -41,7 +41,7 @@ section .text
     TEST EDI,EDI                        ; 0056dbca
     JBE 0x0056dc0a                      ; 0056dbcc
         ;   XREF to: 0056dc0a (CONDITIONAL_JUMP)  ; LAB_0056dc0a
-    CMP dword ptr [0x02de5c30],0x0      ; 0056dbce | g_INT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 0056dbce | g_MultibyteLocaleActive
     JZ 0x0056dbfb                       ; 0056dbd5
         ;   XREF to: 0056dbfb (CONDITIONAL_JUMP)  ; LAB_0056dbfb
     MOV AL,byte ptr [EBX]               ; 0056dbd7

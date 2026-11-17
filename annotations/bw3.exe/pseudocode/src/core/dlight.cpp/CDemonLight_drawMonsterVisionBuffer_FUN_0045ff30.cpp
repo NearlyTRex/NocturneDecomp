@@ -35,7 +35,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
         iVar3 = iVar3 + screen_y;
         if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
           local_24 = 0;
-          puVar6 = (uint *)(g_ARRAY_PTR_01c5faec[iVar3] + screen_x * 4);
+          puVar6 = (uint *)(g_ScreenBufferArray[iVar3] + screen_x * 4);
           puVar7 = this_ptr->shadow_depth_buffer + local_28 * this_ptr->shadow_map_width;
           iVar3 = 0;
           if (0 < this_ptr->shadow_map_width) {
@@ -92,7 +92,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
         }
         iVar3 = iVar3 + screen_y;
         if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
-          puVar7 = (ushort *)(g_ARRAY_PTR_01c5faec[iVar3] + screen_x * 2);
+          puVar7 = (ushort *)(g_ScreenBufferArray[iVar3] + screen_x * 2);
           local_18 = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_20 = 0;
           local_14 = 0;

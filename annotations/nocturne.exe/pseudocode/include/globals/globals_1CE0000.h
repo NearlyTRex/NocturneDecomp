@@ -15,19 +15,19 @@
 extern CNetGame g_CNetGameInstance;
 
 // SChatHistory[400]
-extern SChatHistory g_SChatHistory_ARRAY_01cea410[400];
+extern SChatHistory g_ChatHistory[400];
 
 // char[256]
-extern char g_CHAR_ARRAY_01cea180[256];
+extern char g_ChatMessageBuffer[256];
 
 // int
-extern int g_INT_01cea3f4;
-extern int g_INT_01cea3fc;
-extern int g_INT_01cea400;
-extern int g_INT_01cea404;
-extern int g_INT_01cea40c;
+extern int g_LastPingTime;
+extern int g_ConnectionStatus;
+extern int g_RemoteSyncStage;
+extern int g_NetNextPlayerId;
+extern int g_ChatHistoryCount;
 
 // uint
-extern uint g_UINT_01cea3f8;
-extern uint g_UINT_01cea408;
+extern uint g_CurrentGameTime;
+extern uint g_NetLastSimFrameAckTime;
 

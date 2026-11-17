@@ -9,7 +9,7 @@
 void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004e2640(int diffuse_multiplier,int specular_multiplier)
 
 {
-  g_INT_00617e48 = diffuse_multiplier;
-  g_INT_00617e4c = specular_multiplier;
+  g_DiffuseLightMultiplier = diffuse_multiplier;
+  g_SpecularLightMultiplier = specular_multiplier;
   return;
 }

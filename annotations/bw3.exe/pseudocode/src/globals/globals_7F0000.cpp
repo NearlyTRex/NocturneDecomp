@@ -19,7 +19,7 @@ CDemonActorType g_CCurtainClassInfo = {};
 CVector3f g_CVector3f_ARRAY_007f8fd0[100] = {};
 
 // SCollisionInfo[100]
-SCollisionInfo g_SCollisionInfo_ARRAY_007f9480[100] = {};
+SCollisionInfo g_CurtainCollisionInfos[100] = {};
 
 // char[221596]
 char g_CHAR_ARRAY_007fa464[221596] = {};
@@ -31,6 +31,6 @@ int g_INT_007f8e6c = {};
 int g_INT_007f8e74 = {};
 int g_INT_007f8e94 = {};
 int g_INT_007f8e9c = {};
-int g_INT_007f8fcc = {};
+int g_CurtainCollisionCount = {};
 int g_INT_007fa460 = {};
 

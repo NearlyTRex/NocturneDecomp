@@ -14,18 +14,18 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
+;   void*[1200] g_ScreenBufferArray
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   int g_INT_01c6cee8
-;   int g_INT_02cf5fdc
-;   void* g_PTR_02cf5ff4
-;   void* g_PTR_02cf6048
-;   void* g_PTR_02cf6058
+;   int g_FrameBufferTestResult
+;   void* g_APIDLL_setVideoMode2
+;   void* g_APIDLL_setFogColor
+;   void* g_APIDLL_setColorTable16
 ;   int g_INT_02cf6108
-;   int g_INT_02cf6110
-;   int g_INT_02cf6114
-;   int g_INT_02cf6118
-;   HWND g_HWND_02cf611c
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
+;   HWND g_StoredWindowHandle
 ;   int g_INT_02cf6120
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00565a93
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00565a94
     XOR EDX,EDX                         ; 00565a98
-    MOV dword ptr [0x02cf5fdc],EDX      ; 00565a9a | g_INT_02cf5fdc
+    MOV dword ptr [0x02cf5fdc],EDX      ; 00565a9a | g_FrameBufferTestResult
     CMP EBX,0x10                        ; 00565aa0
     JGE 0x00565aaa                      ; 00565aa3
         ;   XREF to: 00565aaa (CONDITIONAL_JUMP)  ; LAB_00565aaa
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00565aaa
     JNZ 0x00565aca                      ; 00565ab1
         ;   XREF to: 00565aca (CONDITIONAL_JUMP)  ; LAB_00565aca
-    MOV ESI,dword ptr [0x02cf611c]      ; 00565ab3 | g_HWND_02cf611c
+    MOV ESI,dword ptr [0x02cf611c]      ; 00565ab3 | g_StoredWindowHandle
     PUSH ESI                            ; 00565ab9
     CALL engine_special.cpp_loadExternalRenderer_FUN_00564be0 ; 00565aba
         ;   XREF to: 00564be0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00564be0(HWND window_handle)
@@ -62,32 +62,32 @@ section .text
     TEST EAX,EAX                        ; 00565ac2
     JZ 0x00565b79                       ; 00565ac4
         ;   XREF to: 00565b79 (CONDITIONAL_JUMP)  ; LAB_00565b79
-    PUSH 0x1c5faec                      ; 00565aca | g_ARRAY_PTR_01c5faec
+    PUSH 0x1c5faec                      ; 00565aca | g_ScreenBufferArray
         ;   Label: LAB_00565aca
     PUSH EBX                            ; 00565acf
     MOV EDI,dword ptr [ESP + 0x20]      ; 00565ad0
     PUSH EDI                            ; 00565ad4
     MOV EBP,dword ptr [ESP + 0x20]      ; 00565ad5
     PUSH EBP                            ; 00565ad9
-    CALL dword ptr [0x02cf5ff4]         ; 00565ada | g_PTR_02cf5ff4
+    CALL dword ptr [0x02cf5ff4]         ; 00565ada | g_APIDLL_setVideoMode2
     ADD ESP,0x10                        ; 00565ae0
     TEST EAX,EAX                        ; 00565ae3
     JZ 0x00565ba3                       ; 00565ae5
         ;   XREF to: 00565ba3 (CONDITIONAL_JUMP)  ; LAB_00565ba3
     PUSH 0x1c6a070                      ; 00565aeb
     PUSH 0x1c6af98                      ; 00565af0 | g_UCHAR_ARRAY_01c6af98
-    CALL dword ptr [0x02cf6058]         ; 00565af5 | g_PTR_02cf6058
+    CALL dword ptr [0x02cf6058]         ; 00565af5 | g_APIDLL_setColorTable16
     ADD ESP,0x8                         ; 00565afb
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0 ; 00565afe
         ;   XREF to: 004d4eb0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0()
-    MOV EDX,dword ptr [0x02cf6118]      ; 00565b03 | g_INT_02cf6118
+    MOV EDX,dword ptr [0x02cf6118]      ; 00565b03 | g_FogColorBlue
     PUSH EDX                            ; 00565b09
-    MOV ECX,dword ptr [0x02cf6114]      ; 00565b0a | g_INT_02cf6114
+    MOV ECX,dword ptr [0x02cf6114]      ; 00565b0a | g_FogColorGreen
     PUSH ECX                            ; 00565b10
-    MOV ESI,dword ptr [0x02cf6110]      ; 00565b11 | g_INT_02cf6110
+    MOV ESI,dword ptr [0x02cf6110]      ; 00565b11 | g_FogColorRed
     PUSH ESI                            ; 00565b17
     MOV EDI,0x1                         ; 00565b18
-    CALL dword ptr [0x02cf6048]         ; 00565b1d | g_PTR_02cf6048
+    CALL dword ptr [0x02cf6048]         ; 00565b1d | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00565b23
     MOV dword ptr [0x01c6cee8],EDI      ; 00565b26 | g_INT_01c6cee8
     MOV dword ptr [0x02cf6120],EBX      ; 00565b2c | g_INT_02cf6120
@@ -100,14 +100,14 @@ section .text
     CMP EBP,0x10                        ; 00565b41
     JNZ 0x00565b7e                      ; 00565b44
         ;   XREF to: 00565b7e (CONDITIONAL_JUMP)  ; LAB_00565b7e
-    MOV EAX,[0x01c5faec]                ; 00565b46 | g_ARRAY_PTR_01c5faec
+    MOV EAX,[0x01c5faec]                ; 00565b46 | g_ScreenBufferArray
     MOV DX,word ptr [EAX]               ; 00565b4b
     MOV word ptr [EAX],0xabcd           ; 00565b4e
     CMP word ptr [EAX],0xabcd           ; 00565b53
     SETNZ BL                            ; 00565b58
     AND EBX,0xff                        ; 00565b5b
     MOV word ptr [EAX],DX               ; 00565b61
-    MOV dword ptr [0x02cf5fdc],EBX      ; 00565b64 | g_INT_02cf5fdc
+    MOV dword ptr [0x02cf5fdc],EBX      ; 00565b64 | g_FrameBufferTestResult
         ;   Label: LAB_00565b64
     PUSH 0x0                            ; 00565b6a
         ;   Label: LAB_00565b6a
@@ -126,7 +126,7 @@ section .text
         ;   Label: LAB_00565b7e
     JNZ 0x00565b6a                      ; 00565b81
         ;   XREF to: 00565b6a (CONDITIONAL_JUMP)  ; LAB_00565b6a
-    MOV EAX,[0x01c5faec]                ; 00565b83 | g_ARRAY_PTR_01c5faec
+    MOV EAX,[0x01c5faec]                ; 00565b83 | g_ScreenBufferArray
     MOV EDX,dword ptr [EAX]             ; 00565b88
     MOV dword ptr [EAX],0xaabbccdd      ; 00565b8a
     CMP dword ptr [EAX],0xaabbccdd      ; 00565b90

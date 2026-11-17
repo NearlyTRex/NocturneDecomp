@@ -18,14 +18,14 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) ||
-      (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+      (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
      (g_INT_ARRAY_02dc9324[iVar1] == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 935;
     core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
-  uVar2 = (*g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1]->vtable->GetCurrentPosition)
-                    (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1],&local_14,&local_18);
+  uVar2 = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->GetCurrentPosition)
+                    (g_DirectSoundHardwareSfxBuffers[iVar1],&local_14,&local_18);
   if (uVar2 != 0) {
     pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
     _sprintf(acStack_1b0,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer",

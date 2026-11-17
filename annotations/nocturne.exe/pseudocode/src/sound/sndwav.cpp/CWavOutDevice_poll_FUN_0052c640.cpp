@@ -14,11 +14,11 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(CWavOutDevice *this
   int buffer_index;
   
   buffer_index = 0;
-  if (0 < g_INT_02dc943c) {
+  if (0 < g_WaveOutNumBuffers) {
     iVar2 = 0;
     do {
       if ((*(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) == 0) ||
-         (*(int *)((int)g_LPVOID_ARRAY_02dc93c8 + iVar2) == 0)) {
+         (*(int *)((int)g_WaveOutBuffers + iVar2) == 0)) {
         sound_sndmain_cpp_logSoundError_FUN_00529980("WavOutDevice::poll - NULL pointer??");
         return 0;
       }
@@ -29,7 +29,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(CWavOutDevice *this
       }
       buffer_index = buffer_index + 1;
       iVar2 = iVar2 + 4;
-    } while (buffer_index < g_INT_02dc943c);
+    } while (buffer_index < g_WaveOutNumBuffers);
   }
   return 1;
 }

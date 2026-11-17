@@ -15,21 +15,21 @@ int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004b98f0(CHotDemon *
   CVector3f local_1c;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_28,g_INT_ARRAY_01cae1e0[0]);
+                     (&(this_ptr->base).base.model,&local_28,g_HotDemonIndices[0]);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
     out_points_array->z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_1c,g_INT_ARRAY_01cae1e0[9]);
+                     (&(this_ptr->base).base.model,&local_1c,g_HotDemonIndices[9]);
   if (out_points_array + 1 != pCVar1) {
     out_points_array[1].x = pCVar1->x;
     out_points_array[1].y = pCVar1->y;
     out_points_array[1].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_34,g_INT_ARRAY_01cae1e0[0xb]);
+                     (&(this_ptr->base).base.model,&local_34,g_HotDemonIndices[0xb]);
   if (out_points_array + 2 == pCVar1) {
     return 3;
   }

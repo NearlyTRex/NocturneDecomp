@@ -103,14 +103,14 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
     if (((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (local_4c == WEAPON_TYPE_GUN)) {
       return;
     }
-    local_5c = g_INT_ARRAY_0264be30[0xd];
+    local_5c = g_StrangerIndices[0xd];
     local_30 = -1.3089969;
     local_34 = 0.5235988;
-    iVar7 = g_INT_ARRAY_0264be30[3];
+    iVar7 = g_StrangerIndices[3];
   }
   else {
-    local_5c = g_INT_ARRAY_0264be30[0xe];
-    iVar7 = g_INT_ARRAY_0264be30[4];
+    local_5c = g_StrangerIndices[0xe];
+    iVar7 = g_StrangerIndices[4];
     if (local_4c == WEAPON_TYPE_GUN) {
       local_34 = 1.3089969;
       local_30 = -0.5235988;

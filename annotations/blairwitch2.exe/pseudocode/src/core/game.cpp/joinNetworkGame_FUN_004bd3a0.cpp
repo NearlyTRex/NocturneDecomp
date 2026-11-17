@@ -15,7 +15,7 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004bd3a0(void)
   uint *puVar3;
   uint uStack_10;
   
-  pcVar2 = g_CHAR_ARRAY_006166c0;
+  pcVar2 = g_IpAddress;
   puVar3 = (uint *)&stack0xffffff8c;
   for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *(uint *)pcVar2;
@@ -30,7 +30,7 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004bd3a0(void)
   server_ip = support_trisock_cpp_parseIPAddress_FUN_00578bf0(&uStack_10,&stack0xffffff8c);
   iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0(g_CNetGamePtr,server_ip);
   if (iVar1 != 0) {
-    g_CHAR_ARRAY_01cb7b50[0] = '\0';
+    g_CurrentSaveFile[0] = '\0';
     while( true ) {
       iVar1 = core_netgame_cpp_CNetGame_runLobby_FUN_0050cf50(g_CNetGamePtr);
       if (iVar1 == 0) break;

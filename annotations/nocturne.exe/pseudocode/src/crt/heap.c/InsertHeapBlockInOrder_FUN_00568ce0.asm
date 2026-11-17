@@ -10,7 +10,7 @@
 ;   crt_heap.c_AllocateNewHeapBlock_FUN_00568d58 at 00568dd0
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_005c1680 = 00000000
+;   Heap* g_MainHeap = 00000000
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     PUSH EBX                            ; 00568ce0
         ;   Label: crt_heap.c_InsertHeapBlockInOrder_FUN_00568ce0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00568ce1
-    MOV EAX,[0x005c1680]                ; 00568ce5 | g_Heap_PTR_005c1680
+    MOV EAX,[0x005c1680]                ; 00568ce5 | g_MainHeap
     XOR EBX,EBX                         ; 00568cea
     TEST EAX,EAX                        ; 00568cec
     JZ 0x00568cfd                       ; 00568cee
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x8],EDX       ; 00568d07
     JMP 0x00568d12                      ; 00568d0a
         ;   XREF to: 00568d12 (UNCONDITIONAL_JUMP)  ; LAB_00568d12
-    MOV dword ptr [0x005c1680],EDX      ; 00568d0c | g_Heap_PTR_005c1680
+    MOV dword ptr [0x005c1680],EDX      ; 00568d0c | g_MainHeap
         ;   Label: LAB_00568d0c
     TEST EAX,EAX                        ; 00568d12
         ;   Label: LAB_00568d12

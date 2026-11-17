@@ -291,7 +291,7 @@ LAB_004ccc1d:
      pSVar7->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar14 = this_ptr->head_look_blend_weight;
-    iVar5 = g_INT_ARRAY_01cede20[0];
+    iVar5 = g_HaystackIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_00594380(&this_ptr->head_look_euler,&CStack_bc);
     source_quaternions = &CStack_ac;
     CStack_ac.w = CStack_bc.w;

@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_005fd60c
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
+;   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
+;   undefined4 g_FireEffectLightningBoltTextures[1].base.type
 ;   undefined4 DAT_005fd7ec
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
@@ -24,9 +24,9 @@ section .text
     PUSH EBX                            ; 0049e170
         ;   Label: core_fire.cpp_loadGunFlameAssets_FUN_0049e170
     PUSH ESI                            ; 0049e171
-    MOV EBX,0x5fd60c                    ; 0049e172 | g_SMRGLTextureBasic_ARRAY_005fd60c
+    MOV EBX,0x5fd60c                    ; 0049e172 | g_FireEffectLightningBoltTextures
     LEA ESI,[EBX + 0x1e0]               ; 0049e177 | DAT_005fd7ec
-    PUSH EBX                            ; 0049e17d | g_SMRGLTextureBasic_ARRAY_005fd60c | g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
+    PUSH EBX                            ; 0049e17d | g_FireEffectLightningBoltTextures | g_FireEffectLightningBoltTextures[1].base.type
         ;   Label: LAB_0049e17d
     MOV EDX,dword ptr [0x005f2afc]      ; 0049e17e | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 0049e184 | g_CDemonRenderer_01bdd7e4

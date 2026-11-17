@@ -12,9 +12,9 @@
 ;   void* PTR_SetConsoleMode_00575588 = 00175f74
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   int g_INT_005c1cf8 = 0x0
-;   void* g_PTR_005c1d54 = 00000000
-;   void* g_PTR_005c1d88 = 00000000
+;   int g_ConsoleInitializationFlag = 0x0
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
+;   void* g_SpecialConsoleInputHandler = 00000000
 ;
 ; Called Functions:
 ;   crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0056fa80
@@ -31,23 +31,23 @@ section .text
         ;   Label: crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98
     PUSH ESI                            ; 0056fb99
     SUB ESP,0x4                         ; 0056fb9a
-    MOV EAX,[0x005c1cf8]                ; 0056fb9d | g_INT_005c1cf8
+    MOV EAX,[0x005c1cf8]                ; 0056fb9d | g_ConsoleInitializationFlag
     TEST EAX,EAX                        ; 0056fba2
     JZ 0x0056fbb0                       ; 0056fba4
         ;   XREF to: 0056fbb0 (CONDITIONAL_JUMP)  ; LAB_0056fbb0
     XOR ESI,ESI                         ; 0056fba6
-    MOV dword ptr [0x005c1cf8],ESI      ; 0056fba8 | g_INT_005c1cf8
+    MOV dword ptr [0x005c1cf8],ESI      ; 0056fba8 | g_ConsoleInitializationFlag
     JMP 0x0056fc1b                      ; 0056fbae
         ;   XREF to: 0056fc1b (UNCONDITIONAL_JUMP)  ; LAB_0056fc1b
-    CMP dword ptr [0x005c1d88],0x0      ; 0056fbb0 | g_PTR_005c1d88
+    CMP dword ptr [0x005c1d88],0x0      ; 0056fbb0 | g_SpecialConsoleInputHandler
         ;   Label: LAB_0056fbb0
     JZ 0x0056fbd1                       ; 0056fbb7
         ;   XREF to: 0056fbd1 (CONDITIONAL_JUMP)  ; LAB_0056fbd1
     PUSH EAX                            ; 0056fbb9
-    CALL dword ptr [0x005c1d54]         ; 0056fbba | g_PTR_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 0056fbba | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 0056fbc0
     PUSH EAX                            ; 0056fbc3
-    CALL dword ptr [0x005c1d88]         ; 0056fbc4 | g_PTR_005c1d88
+    CALL dword ptr [0x005c1d88]         ; 0056fbc4 | g_SpecialConsoleInputHandler
     ADD ESP,0x4                         ; 0056fbca
     MOV ESI,EAX                         ; 0056fbcd
     JMP 0x0056fc19                      ; 0056fbcf

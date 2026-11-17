@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_00481c20(CFilmReel *this_ptr)
 
 {
-  return &g_CFilmReelActorType_01c08c8c;
+  return &g_CFilmReelClassInfo;
 }

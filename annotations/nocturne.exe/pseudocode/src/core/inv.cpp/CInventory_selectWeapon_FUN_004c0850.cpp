@@ -43,7 +43,7 @@ void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(CInventory *this_
       }
       weapon_actor = (CWeapon *)
                      core_actor_cpp_castToClassHash_FUN_0040d890
-                               (this_ptr->items[iVar2],g_CWeaponActorType_02ddf970.name_hash);
+                               (this_ptr->items[iVar2],g_CWeaponClassInfo.name_hash);
       if (((weapon_actor != (CWeapon *)0x0) &&
           (iVar1 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0
                              (this_ptr,(CDemonActor *)weapon_actor,weapon_category), iVar1 != 0)) &&

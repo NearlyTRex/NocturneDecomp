@@ -16,7 +16,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530
     wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(0x280,0x1e0,0x20);
   }
   if (g_CDemonMission_PTR_0061f650->is_in_editor == 0) {
-    g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d244;
+    g_CBitFont_PTR_01c3eb50 = g_ThemeFont;
   }
   engine_special_cpp_clearScreen_FUN_0057dc40();
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&local_18);

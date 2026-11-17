@@ -8,9 +8,9 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   int[12] g_INT_ARRAY_007c37b8
-;   undefined4 g_INT_ARRAY_007c37b8[9]
-;   undefined4 g_INT_ARRAY_007c37b8[11]
+;   int[12] g_BatmanIndices
+;   undefined4 g_BatmanIndices[9]
+;   undefined4 g_BatmanIndices[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -26,7 +26,7 @@ section .text
     PUSH EBP                            ; 004141c3
     SUB ESP,0x48                        ; 004141c4
     MOV EBP,dword ptr [ESP + 0x5c]      ; 004141c7
-    MOV EDX,dword ptr [0x007c37b8]      ; 004141cb | g_INT_ARRAY_007c37b8
+    MOV EDX,dword ptr [0x007c37b8]      ; 004141cb | g_BatmanIndices
     PUSH EDX                            ; 004141d1
     LEA EAX,[EBP + 0x158]               ; 004141d2
     MOV EBX,0x1                         ; 004141d8
@@ -50,7 +50,7 @@ section .text
     CMP dword ptr [EBP + EAX*0x4 + 0x2298],0x0 ; 0041420b
     JZ 0x00414267                       ; 00414213
         ;   XREF to: 00414267 (CONDITIONAL_JUMP)  ; LAB_00414267
-    MOV EDI,dword ptr [0x007c37dc]      ; 00414215 | g_INT_ARRAY_007c37b8[9]
+    MOV EDI,dword ptr [0x007c37dc]      ; 00414215 | g_BatmanIndices[9]
     PUSH EDI                            ; 0041421b
     LEA EAX,[EBP + 0x158]               ; 0041421c
     PUSH EAX                            ; 00414222
@@ -101,7 +101,7 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00414292
     JMP 0x00414205                      ; 00414295
         ;   XREF to: 00414205 (UNCONDITIONAL_JUMP)  ; LAB_00414205
-    MOV ECX,dword ptr [0x007c37e4]      ; 0041429a | g_INT_ARRAY_007c37b8[11]
+    MOV ECX,dword ptr [0x007c37e4]      ; 0041429a | g_BatmanIndices[11]
         ;   Label: LAB_0041429a
     PUSH ECX                            ; 004142a0
     ADD EBP,0x158                       ; 004142a1

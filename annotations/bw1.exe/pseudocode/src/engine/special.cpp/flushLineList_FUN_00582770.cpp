@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_flushLineList_FUN_00582770(void)
   if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02c833e4)();
+  iVar1 = (*(code *)g_APIDLL_flushLineList)();
   return iVar1;
 }

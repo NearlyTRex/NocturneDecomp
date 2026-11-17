@@ -11,5 +11,5 @@
 // =============================================================================
 
 // CVector3i[241][320]
-extern CVector3i g_CVector3i_ARRAY_ARRAY_00939bd8[241][320];
+extern CVector3i g_TempWorldPositions[241][320];
 

@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   int g_INT_01e61b58
+;   int g_RenderedTriangleCount
 ;   void* g_PTR_0264bbf8
 ;   void* g_PTR_0264bbfc
 ;
@@ -41,13 +41,13 @@ section .text
     CMP dword ptr [0x01c37788],0x0      ; 0055f963 | g_INT_01c37788
     JZ 0x0055fa48                       ; 0055f96a
         ;   XREF to: 0055fa48 (CONDITIONAL_JUMP)  ; LAB_0055fa48
-    MOV EAX,[0x01e61b58]                ; 0055f970 | g_INT_01e61b58
+    MOV EAX,[0x01e61b58]                ; 0055f970 | g_RenderedTriangleCount
     MOV ESI,dword ptr [0x0264bbfc]      ; 0055f975 | g_PTR_0264bbfc
     ADD EAX,EBP                         ; 0055f97b
     TEST ESI,ESI                        ; 0055f97d
     JNZ 0x0055fa64                      ; 0055f97f
         ;   XREF to: 0055fa64 (CONDITIONAL_JUMP)  ; LAB_0055fa64
-    MOV [0x01e61b58],EAX                ; 0055f985 | g_INT_01e61b58
+    MOV [0x01e61b58],EAX                ; 0055f985 | g_RenderedTriangleCount
     XOR EDI,EDI                         ; 0055f98a
     TEST EBP,EBP                        ; 0055f98c
     JLE 0x0055fa39                      ; 0055f98e
@@ -139,7 +139,7 @@ section .text
     PUSH EBP                            ; 0055fa69
     PUSH EDX                            ; 0055fa6a
     PUSH EBX                            ; 0055fa6b
-    MOV [0x01e61b58],EAX                ; 0055fa6c | g_INT_01e61b58
+    MOV [0x01e61b58],EAX                ; 0055fa6c | g_RenderedTriangleCount
     CALL dword ptr [0x0264bbfc]         ; 0055fa71 | g_PTR_0264bbfc
     ADD ESP,0x10                        ; 0055fa77
     MOV EDX,EAX                         ; 0055fa7a

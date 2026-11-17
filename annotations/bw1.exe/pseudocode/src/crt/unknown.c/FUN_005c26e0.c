@@ -14,10 +14,10 @@ uint FUN_005c26e0(uint *param_1,uint param_2)
   
   FUN_005c9428();
   uVar1 = *param_1;
-  FUN_005c97c0(0x63df,uVar1,g_INT_00626998,param_2);
+  FUN_005c97c0(0x63df,uVar1,g_TimezoneOffset,param_2);
   iVar2 = FUN_005c9ae4(param_2);
   if (iVar2 != 0) {
-    FUN_005c97c0(0x63df,uVar1,g_INT_00626998 - g_INT_006269a0,param_2);
+    FUN_005c97c0(0x63df,uVar1,g_TimezoneOffset - g_DaylightSavingOffset,param_2);
   }
   return param_2;
 }

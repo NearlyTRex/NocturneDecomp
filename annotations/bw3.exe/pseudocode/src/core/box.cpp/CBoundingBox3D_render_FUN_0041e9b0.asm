@@ -38,12 +38,12 @@
 ;   core_platfrm.cpp_CPlatform_renderOpaque_FUN_005120b0 at 0051219f
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005dc948 = 256
+;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   uchar* g_UCHAR_PTR_01c6ced0
-;   uchar* g_UCHAR_PTR_01c6ced4
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -83,13 +83,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041e9fa
     MOVSD ES:EDI,ESI                    ; 0041e9fb
     FLD float ptr [EAX]                 ; 0041e9fc
-    FMUL float ptr [0x005dc948]         ; 0041e9fe | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041e9fe | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041ea04
     FLD float ptr [EAX + 0x4]           ; 0041ea06
-    FMUL float ptr [0x005dc948]         ; 0041ea09 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ea09 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041ea0f
     FLD float ptr [EAX + 0x8]           ; 0041ea12
-    FMUL float ptr [0x005dc948]         ; 0041ea15 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ea15 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041ea1b
     LEA ECX,[EBX + 0xc]                 ; 0041ea1e
     INC EBP                             ; 0041ea21
@@ -122,24 +122,24 @@ section .text
     LEA EBX,[ESP + 0x88]                ; 0041ea6d
     MOV EAX,dword ptr [ESP + 0xd0]      ; 0041ea74
     FLD float ptr [EAX]                 ; 0041ea7b
-    FMUL float ptr [0x005dc948]         ; 0041ea7d | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ea7d | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041ea83
     FLD float ptr [EAX + 0x4]           ; 0041ea85
-    FMUL float ptr [0x005dc948]         ; 0041ea88 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ea88 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041ea8e
     FLD float ptr [EAX + 0x8]           ; 0041ea91
-    FMUL float ptr [0x005dc948]         ; 0041ea94 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ea94 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041ea9a
     LEA EBX,[ESP + 0xa0]                ; 0041ea9d
     ADD EAX,0xc                         ; 0041eaa4
     FLD float ptr [EAX]                 ; 0041eaa7
-    FMUL float ptr [0x005dc948]         ; 0041eaa9 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041eaa9 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041eaaf
     FLD float ptr [EAX + 0x4]           ; 0041eab1
-    FMUL float ptr [0x005dc948]         ; 0041eab4 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041eab4 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041eaba
     FLD float ptr [EAX + 0x8]           ; 0041eabd
-    FMUL float ptr [0x005dc948]         ; 0041eac0 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041eac0 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041eac6
     MOV EAX,[0x005f2afc]                ; 0041eac9 | g_CDemonRenderer_PTR_005f2afc
     PUSH EAX                            ; 0041eace | g_CDemonRenderer_01bdd7e4
@@ -149,8 +149,8 @@ section .text
     TEST EAX,EAX                        ; 0041ead7
     JNZ 0x0041ebce                      ; 0041ead9
         ;   XREF to: 0041ebce (CONDITIONAL_JUMP)  ; LAB_0041ebce
-    MOV [0x01c6ced4],EAX                ; 0041eadf | g_UCHAR_PTR_01c6ced4
-    MOV [0x01c6ced0],EAX                ; 0041eae4 | g_UCHAR_PTR_01c6ced0
+    MOV [0x01c6ced4],EAX                ; 0041eadf | g_CurrentTextureOpacityData
+    MOV [0x01c6ced0],EAX                ; 0041eae4 | g_CurrentTextureData
     MOV EAX,[0x005f2afc]                ; 0041eae9 | g_CDemonRenderer_PTR_005f2afc
     MOV EBX,dword ptr [EAX]             ; 0041eaee | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [EBX + 0x20],0x7fff   ; 0041eaf0

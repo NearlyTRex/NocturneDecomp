@@ -13,7 +13,7 @@
 ;   int g_INT_0061c7a8 = 0x0
 ;   int g_INT_0061c7ac = 0x0
 ;   int g_INT_0061c7b0 = 0x0
-;   void* g_PTR_01c35e6c
+;   void* g_ScanlineRenderFunc
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8]       ; 0055d6f9
     MOV ESI,dword ptr [EBP + 0xc]       ; 0055d6fc
     MOV EDI,dword ptr [EBP + 0x10]      ; 0055d6ff
-    CALL dword ptr [0x01c35e6c]         ; 0055d702 | g_PTR_01c35e6c
+    CALL dword ptr [0x01c35e6c]         ; 0055d702 | g_ScanlineRenderFunc
     MOV EAX,[0x0061c7a4]                ; 0055d708 | g_INT_0061c7a4
     MOV EBX,dword ptr [0x0061c7a8]      ; 0055d70d | g_INT_0061c7a8
     MOV ECX,dword ptr [0x0061c7ac]      ; 0055d713 | g_INT_0061c7ac

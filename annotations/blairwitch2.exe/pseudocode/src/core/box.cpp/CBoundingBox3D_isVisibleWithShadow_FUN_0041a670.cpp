@@ -17,7 +17,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670(CBoundi
   int local_c;
   int local_8;
   
-  if (g_CDemonLight_PTR_01511ce4 != (CDemonLight *)0x0) {
+  if (g_CurrentShadowLight != (CDemonLight *)0x0) {
     pSVar3 = g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr;
     local_c = g_INT_01c35e40 + g_INT_01c35e38;
     local_20.x_max = g_INT_01c35e40 - g_INT_01c35e38;
@@ -90,7 +90,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670(CBoundi
     local_c = local_20.x_min;
     local_8 = local_20.y_min;
     iVar2 = core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_0044cf90
-                      (g_CDemonLight_PTR_01511ce4,&local_20);
+                      (g_CurrentShadowLight,&local_20);
     return iVar2;
   }
   return 1;

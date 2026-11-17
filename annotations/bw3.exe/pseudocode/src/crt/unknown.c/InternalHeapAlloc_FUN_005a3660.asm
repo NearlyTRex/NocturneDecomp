@@ -14,8 +14,8 @@
 ;   crt_unknown.c_FUN_005ace10 at 005ace3d
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_006075c4 = 00000000
-;   Heap* g_Heap_PTR_006075c8 = 00000000
+;   Heap* g_MainHeap = 00000000
+;   Heap* g_SecondaryHeap = 00000000
 ;   int g_INT_006075cc = 0x0
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079bc = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079c4 = 005a7f44
@@ -70,28 +70,28 @@ section .text
     CMP EAX,dword ptr [0x006075cc]      ; 005a36ab | g_INT_006075cc
     JBE 0x005a36cb                      ; 005a36b1
         ;   XREF to: 005a36cb (CONDITIONAL_JUMP)  ; LAB_005a36cb
-    MOV ESI,dword ptr [0x006075c8]      ; 005a36b3 | g_Heap_PTR_006075c8
+    MOV ESI,dword ptr [0x006075c8]      ; 005a36b3 | g_SecondaryHeap
     TEST ESI,ESI                        ; 005a36b9
     JNZ 0x005a36d9                      ; 005a36bb
         ;   XREF to: 005a36d9 (CONDITIONAL_JUMP)  ; LAB_005a36d9
     MOV dword ptr [0x006075cc],ESI      ; 005a36bd | g_INT_006075cc
-    MOV ESI,dword ptr [0x006075c4]      ; 005a36c3 | g_Heap_PTR_006075c4
+    MOV ESI,dword ptr [0x006075c4]      ; 005a36c3 | g_MainHeap
     JMP 0x005a36d9                      ; 005a36c9
         ;   XREF to: 005a36d9 (UNCONDITIONAL_JUMP)  ; LAB_005a36d9
     XOR EDI,EDI                         ; 005a36cb
         ;   Label: LAB_005a36cb
-    MOV ESI,dword ptr [0x006075c4]      ; 005a36cd | g_Heap_PTR_006075c4
+    MOV ESI,dword ptr [0x006075c4]      ; 005a36cd | g_MainHeap
     MOV dword ptr [0x006075cc],EDI      ; 005a36d3 | g_INT_006075cc
     TEST ESI,ESI                        ; 005a36d9
         ;   Label: LAB_005a36d9
     JZ 0x005a371a                       ; 005a36db
         ;   XREF to: 005a371a (CONDITIONAL_JUMP)  ; LAB_005a371a
     MOV EDI,dword ptr [ESI + 0x14]      ; 005a36dd
-    MOV dword ptr [0x006075c8],ESI      ; 005a36e0 | g_Heap_PTR_006075c8
+    MOV dword ptr [0x006075c8],ESI      ; 005a36e0 | g_SecondaryHeap
     CMP EDI,EBP                         ; 005a36e6
     JC 0x005a3707                       ; 005a36e8
         ;   XREF to: 005a3707 (CONDITIONAL_JUMP)  ; LAB_005a3707
-    MOV EAX,0x6075c4                    ; 005a36ea | g_Heap_PTR_006075c4
+    MOV EAX,0x6075c4                    ; 005a36ea | g_MainHeap
     MOV DX,DS                           ; 005a36ef
     AND EDX,0xffff                      ; 005a36f1
     MOV EBX,ESI                         ; 005a36f7

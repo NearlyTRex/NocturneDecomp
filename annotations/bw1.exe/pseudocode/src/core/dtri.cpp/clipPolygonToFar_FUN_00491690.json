@@ -51,13 +51,13 @@
     },
     {
       "addr": "01c3d814",
-      "name": "g_INT_01c3d814",
+      "name": "g_ClipBuffer5VertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c3d8d8",
-      "name": "g_INT_01c3d8d8",
+      "name": "g_ClipOutputVertexCount",
       "type": "int",
       "value": null
     }
@@ -175,7 +175,7 @@
       "line": 26,
       "match": "DAT_01c3d8e0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d8e0 + g_INT_01c3d8d8 * 0xc) = point1_ptr->y;",
+      "text": "*(float *)(&DAT_01c3d8e0 + g_ClipOutputVertexCount * 0xc) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
@@ -183,7 +183,7 @@
       "line": 39,
       "match": "DAT_01c3d8e0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d8e0 + g_INT_01c3d8d8 * 0xc) = point1_ptr->y;",
+      "text": "*(float *)(&DAT_01c3d8e0 + g_ClipOutputVertexCount * 0xc) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
@@ -191,7 +191,7 @@
       "line": 27,
       "match": "g_FLOAT_01c3d8e4",
       "severity": "moderate",
-      "text": "(&g_FLOAT_01c3d8e4)[g_INT_01c3d8d8 * 3] = point1_ptr->z;",
+      "text": "(&g_FLOAT_01c3d8e4)[g_ClipOutputVertexCount * 3] = point1_ptr->z;",
       "type": "wrong_global"
     },
     {
@@ -199,7 +199,7 @@
       "line": 40,
       "match": "g_FLOAT_01c3d8e4",
       "severity": "moderate",
-      "text": "(&g_FLOAT_01c3d8e4)[g_INT_01c3d8d8 * 3] = point1_ptr->z;",
+      "text": "(&g_FLOAT_01c3d8e4)[g_ClipOutputVertexCount * 3] = point1_ptr->z;",
       "type": "wrong_global"
     }
   ]

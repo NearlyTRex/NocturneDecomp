@@ -9,9 +9,9 @@
 void __cdecl core_dskybox_cpp_staticInit_FUN_0046e260(void)
 
 {
-  core_dskybox_cpp_initializeSkyboxTexture_FUN_0046e290(g_SMRGLSkyTexture_ARRAY_01bd3a00);
-  g_CVector3f_01bd3c40.x = 0.0;
-  g_CVector3f_01bd3c40.y = 0.0;
-  g_CVector3f_01bd3c40.z = 0.0;
+  core_dskybox_cpp_initializeSkyboxTexture_FUN_0046e290(g_SkyDomeTextureData);
+  g_SkyDomeCenter.x = 0.0;
+  g_SkyDomeCenter.y = 0.0;
+  g_SkyDomeCenter.z = 0.0;
   return;
 }

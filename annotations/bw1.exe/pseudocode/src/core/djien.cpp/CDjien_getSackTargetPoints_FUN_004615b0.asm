@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005d8ee0 = 0.5
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_00612258
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -771,7 +771,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046216a
     MOVSD ES:EDI,ESI                    ; 0046216b
     PUSH EAX                            ; 0046216c
-    MOV EDI,dword ptr [0x0061c010]      ; 0046216d | g_CFireEffect_PTR_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0046216d | g_CFireEffectPtr
     PUSH EDI                            ; 00462173
     CALL core_fire.cpp_CFireEffect_createTrailSegment_FUN_004b70f0 ; 00462174
         ;   XREF to: 004b70f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailSegment_FUN_004b70f0(CFireEffect * this_ptr, CVector3f * position, float size, float alpha, ...)

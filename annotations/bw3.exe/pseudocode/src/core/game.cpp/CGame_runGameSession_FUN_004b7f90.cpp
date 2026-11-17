@@ -106,7 +106,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
   }
   else {
     g_INT_01d226c8 = 0;
-    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0053b660(g_CDemonSetPtr,g_INT_ARRAY_01d226cc);
+    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0053b660
+              (g_CDemonSetPtr,g_MasterLightStateSaveBuffer);
   }
   if (this_ptr->gamma < 0x8000) {
     this_ptr->gamma = 0x8000;
@@ -162,7 +163,7 @@ LAB_004b8391:
     else {
       iVar5 = 0;
     }
-    engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(g_CKeys_PTR_00600284,iVar5);
+    engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(g_CKeysPtr,iVar5);
     core_game_cpp_CGame_processHotkeys_FUN_004ba540(this_ptr);
     core_game_cpp_CGame_updateStatusDisplays_FUN_004b4d50(this_ptr);
     core_game_cpp_CGame_processFudge_FUN_004b4f00(this_ptr);
@@ -197,7 +198,7 @@ LAB_004b84e1:
     bVar2 = false;
     core_game_cpp_CGame_processFrame_FUN_004b6f30(this_ptr);
     if (g_INT_01d22200 == 0) {
-      iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+      iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar5 == 0) goto LAB_004b8719;
       if (g_CDemonMission_PTR_00600530->teleport_requested != 0) goto LAB_004b8391;
       shape_edittool_cpp_CPickList_clear_FUN_00484f10(&g_CPickList);
@@ -263,15 +264,15 @@ LAB_004b84e1:
             iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450
                               (&local_8a4,pcVar4,iVar5,uVar10);
             if (iVar5 == 1) {
-              engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(g_CKeys_PTR_00600284,0);
+              engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(g_CKeysPtr,0);
               core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(this_ptr);
               core_menu_cpp_showOptionsScreen_FUN_004ea280(1);
               core_game_cpp_CGame_setGameRes_FUN_004b7de0(this_ptr);
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0
-                        (g_CKeys_PTR_00600284,(uint)(this_ptr->is_paused == 0));
+                        (g_CKeysPtr,(uint)(this_ptr->is_paused == 0));
               core_set_cpp_CDemonSet_setCameraView_FUN_00534890
                         (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
-              g_CBitFont_PTR_01c5b0e0 = g_CBitFont_PTR_01549ab4;
+              g_CBitFont_PTR_01c5b0e0 = g_SmallEditorFont;
               if (0xf0 < g_INT_005fba1c) {
                 g_CBitFont_PTR_01c5b0e0 = g_CBitFont_PTR_01549aa8;
               }
@@ -348,8 +349,8 @@ LAB_004b8719:
         this_ptr->frame_counter = this_ptr->frame_counter + 1;
       }
     }
-    if (g_INT_02d21b84 != 0) {
-      g_INT_02d21b84 = 0;
+    if (g_FocusRegained != 0) {
+      g_FocusRegained = 0;
       core_set_cpp_CDemonSet_setCameraView_FUN_00534890
                 (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
     }
@@ -370,7 +371,7 @@ LAB_004b8719:
     EVar6 = (*(((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.vtable._uc)->_uc).
               getDeathState)(&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base);
     if ((EVar6 == DEATH_STATE_DEAD) || (ABS(this_ptr->end_timer) == 0.0)) {
-      iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_RETURN);
+      iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
       if (iVar5 != 0) goto LAB_004b8594;
       if (local_14 < 0.0) {
         uVar10 = core_game_cpp_CGame_fadeIn_FUN_004bd8d0(this_ptr);
@@ -399,7 +400,7 @@ LAB_004b8719:
       }
       if (this_ptr->new_set_event_pending != 0) {
         core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0
-                  (g_CEventList_PTR_005fba60,"NewSet",1);
+                  (g_CEventListPtr,"NewSet",1);
         this_ptr->new_set_event_pending = this_ptr->new_set_event_pending + -1;
       }
       goto LAB_004b8391;
@@ -431,14 +432,14 @@ LAB_004b8594:
   }
   iVar5 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004f7bf0
                     (g_CDemonMission_PTR_00600530);
-  this_ptr_01 = g_CKeys_PTR_00600284;
+  this_ptr_01 = g_CKeysPtr;
   this_ptr->damageable_enemy_count = iVar5;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(this_ptr_01,0);
   core_sound_cpp_CSound_shutdown_FUN_0055fee0(g_CSound_PTR_006045f8);
   core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00411a40();
   core_game_cpp_freeCursorBitmaps_FUN_004c49f0();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(this_ptr);
-  (*g_CKeys_PTR_00600284->vtable->clearKeyPresses)(g_CKeys_PTR_00600284);
+  (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_set_cpp_CDemonSet_clearLights_FUN_00537520(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_00484f10(&g_CPickList);

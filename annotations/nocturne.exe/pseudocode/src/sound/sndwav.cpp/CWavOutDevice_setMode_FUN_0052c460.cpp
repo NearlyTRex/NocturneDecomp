@@ -24,7 +24,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *t
   }
   g_INT_02dc9428 = channels;
   g_INT_02dc942c = (int)out_buffer_size;
-  g_INT_02dc943c = 4;
+  g_WaveOutNumBuffers = 4;
   g_INT_02dc9430 = sample_rate;
   WStack_24.wFormatTag = 0xc4aa;
   WStack_24.nChannels = 0x52;
@@ -32,7 +32,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *t
   WStack_24.wFormatTag = 0xc4c7;
   WStack_24.nChannels = 0x52;
   dVar7 = round
-                    ((double)(((float)g_INT_02dc942c * fVar2) / (float)g_INT_02dc943c));
+                    ((double)(((float)g_INT_02dc942c * fVar2) / (float)g_WaveOutNumBuffers));
   g_INT_02dc9434 = (int)ROUND(dVar7);
   g_INT_02dc9434 = g_INT_02dc9434 + 0xfU & 0xfffffff0;
   g_INT_02dc9438 =
@@ -40,14 +40,14 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *t
        ((int)((g_INT_02dc9428 + (g_INT_02dc9428 >> 0x1f) * -8) -
              (uint)((g_INT_02dc9428 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02dc9430;
   iVar1 = 0;
-  if (0 < g_INT_02dc943c) {
+  if (0 < g_WaveOutNumBuffers) {
     iVar6 = 0;
     do {
       pvVar3 = GlobalAlloc(0x2002,g_INT_02dc9438);
-      *(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8 + iVar6) = pvVar3;
+      *(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_0052c613;
       pvVar4 = GlobalLock(pvVar3);
-      *(LPVOID *)((int)g_LPVOID_ARRAY_02dc93c8 + iVar6) = pvVar4;
+      *(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;
       if (pvVar4 == (LPVOID)0x0) goto LAB_0052c613;
       pvVar3 = GlobalAlloc(0x2002,0x20);
       *(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc9408 + iVar6) = pvVar3;
@@ -56,7 +56,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *t
       pvVar4 = GlobalLock(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc9408 + iVar6));
       *(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar6) = pvVar4;
       iVar6 = iVar6 + 4;
-    } while (iVar1 < g_INT_02dc943c);
+    } while (iVar1 < g_WaveOutNumBuffers);
   }
   WStack_24.wBitsPerSample = (WORD)g_INT_02dc9428;
   WStack_24.nChannels = (WORD)g_INT_02dc9430;
@@ -64,7 +64,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *t
   WStack_24.nBlockAlign = (short)((int)(g_INT_02dc9428 & 0xffffU) >> 3) * (WORD)g_INT_02dc9430;
   WStack_24.nSamplesPerSec = g_INT_02dc942c;
   WStack_24.nAvgBytesPerSec = g_INT_02dc942c * (uint)WStack_24.nBlockAlign;
-  MVar5 = waveOutOpen(&g_HWAVEOUT_02dc93a4,g_UINT_005bed44,&WStack_24,0,0,0);
+  MVar5 = waveOutOpen(&g_WaveOutHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
   if (MVar5 == 0) {
     *out_buffer_size = g_INT_02dc9434;
     return 1;

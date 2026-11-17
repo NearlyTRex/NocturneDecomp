@@ -41,7 +41,7 @@
   "globals": [
     {
       "addr": "006075c4",
-      "name": "g_Heap_PTR_006075c4",
+      "name": "g_MainHeap",
       "type": "Heap*",
       "value": "00000000"
     }
@@ -141,7 +141,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (pHVar3 = g_Heap_PTR_006075c4; (pHVar3 != (Heap *)0x0 && (pHVar3 <= param_1));",
+      "text": "for (pHVar3 = g_MainHeap; (pHVar3 != (Heap *)0x0 && (pHVar3 <= param_1));",
       "type": "unnamed_param"
     },
     {
@@ -165,7 +165,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "g_Heap_PTR_006075c4 = param_1;",
+      "text": "g_MainHeap = param_1;",
       "type": "unnamed_param"
     },
     {

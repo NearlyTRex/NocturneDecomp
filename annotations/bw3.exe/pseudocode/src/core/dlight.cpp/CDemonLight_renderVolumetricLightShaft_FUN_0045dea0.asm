@@ -107,7 +107,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01c6e24c
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.halo_mode
 ;
 ; Called Functions:
@@ -303,7 +303,7 @@ section .text
     FLD float ptr [ESP + 0xa8]          ; 0045e108
     FMULP ST3                           ; 0045e10f
     MOV EAX,0xffff                      ; 0045e111
-    MOV EDI,dword ptr [0x01c6e24c]      ; 0045e116 | g_INT_01c6e24c
+    MOV EDI,dword ptr [0x01c6e24c]      ; 0045e116 | g_PerspectiveReciprocal
     MOV ECX,0x3f800000                  ; 0045e11c
     SUB EAX,EDI                         ; 0045e121
     LEA ESI,[ESP + 0x118]               ; 0045e123

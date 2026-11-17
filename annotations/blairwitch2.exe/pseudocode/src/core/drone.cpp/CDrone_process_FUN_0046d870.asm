@@ -20,7 +20,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -383,7 +383,7 @@ section .text
     PUSH 0x3ecccccd                     ; 0046dc15
     PUSH EAX                            ; 0046dc1a
     LEA ESI,[EBP + -0x2a]               ; 0046dc1b
-    PUSH 0x265370c                      ; 0046dc1e | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0046dc1e | g_ZeroVector
     LEA EDI,[EBP + 0x42]                ; 0046dc23
     MOV dword ptr [EBP + 0x6a],EDX      ; 0046dc26
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0046dc29
@@ -431,7 +431,7 @@ section .text
     ADD EAX,ESI                         ; 0046dca3
     PUSH 0x3ecccccd                     ; 0046dca5
     PUSH EAX                            ; 0046dcaa
-    PUSH 0x265370c                      ; 0046dcab | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0046dcab | g_ZeroVector
     LEA ESI,[EBP + 0x12]                ; 0046dcb0
     LEA EDI,[EBP + -0x66]               ; 0046dcb3
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0046dcb6

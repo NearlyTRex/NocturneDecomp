@@ -77,19 +77,19 @@
     },
     {
       "addr": "01468540",
-      "name": "g_CVector3i_01468540",
+      "name": "g_CameraOutOfBoundsCoord",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01468544",
-      "name": "g_CVector3i_01468540.y",
+      "name": "g_CameraOutOfBoundsCoord.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01468548",
-      "name": "g_CVector3i_01468540.z",
+      "name": "g_CameraOutOfBoundsCoord.z",
       "type": "undefined4",
       "value": null
     },
@@ -465,11 +465,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3i_01468540` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CameraOutOfBoundsCoord` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 102,
-      "match": "(int)&g_CVector3i_01468540",
+      "match": "(int)&g_CameraOutOfBoundsCoord",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01468540 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -493,7 +493,7 @@
       "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01468540 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

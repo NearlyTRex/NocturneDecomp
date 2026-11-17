@@ -11,8 +11,8 @@
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005d452f
 ;   TerminatedCString s_Create_secondary_buffer_005d46f1
 ;   TerminatedCString s_DirectSoundDevice_alloca_005d4709
-;   IDirectSound* g_IDirectSound_PTR_02cf49c4
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
+;   IDirectSound* g_DirectSound
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[6]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[12]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[14]
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 0055b883
     SUB ESP,0x1c8                       ; 0055b884
     MOV ESI,dword ptr [ESP + 0x1e0]     ; 0055b88a
-    CMP dword ptr [0x02cf49c4],0x0      ; 0055b891 | g_IDirectSound_PTR_02cf49c4
+    CMP dword ptr [0x02cf49c4],0x0      ; 0055b891 | g_DirectSound
     JZ 0x0055ba60                       ; 0055b898
         ;   XREF to: 0055ba60 (CONDITIONAL_JUMP)  ; LAB_0055ba60
     MOV EAX,0x18                        ; 0055b89e
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV EAX,0xa0                        ; 0055b8f9
     ADD ESP,0xc                         ; 0055b8fe
-    MOV EDX,dword ptr [0x02cf49d0]      ; 0055b901 | g_IDirectSound3DListener_PTR_02cf49d0
+    MOV EDX,dword ptr [0x02cf49d0]      ; 0055b901 | g_DirectSound3DListener
     MOV dword ptr [ESP + 0x190],EBP     ; 0055b907
     MOV dword ptr [ESP + 0x194],EAX     ; 0055b90e
     TEST EDX,EDX                        ; 0055b915
@@ -127,7 +127,7 @@ section .text
     ADD EAX,EDI                         ; 0055b9ed
     PUSH EAX                            ; 0055b9ef | g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[12]
     LEA EAX,[ESP + 0x198]               ; 0055b9f0
-    MOV EDX,dword ptr [0x02cf49c4]      ; 0055b9f7 | g_IDirectSound_PTR_02cf49c4
+    MOV EDX,dword ptr [0x02cf49c4]      ; 0055b9f7 | g_DirectSound
     PUSH EAX                            ; 0055b9fd
     MOV ECX,dword ptr [EDX]             ; 0055b9fe
     PUSH EDX                            ; 0055ba00

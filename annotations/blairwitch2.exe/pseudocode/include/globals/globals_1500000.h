@@ -10,12 +10,12 @@
 // =============================================================================
 
 // char*
-extern char* g_CHAR_PTR_0150f454;
+extern char* g_CoronaLightingTextureData;
 
 // int
-extern int g_INT_0150f450;
+extern int g_FlatShadingLightLevel;
 
 // int[240]
-extern int g_INT_ARRAY_0150ecd0[240];
-extern int g_INT_ARRAY_0150f090[240];
+extern int g_CoronaLeftIntensity[240];
+extern int g_CoronaRightIntensity[240];
 

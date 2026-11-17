@@ -16,7 +16,7 @@
 ;   float g_FLOAT_005e453f = -3.141593
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
-;   int[17] g_INT_ARRAY_01d069d8
+;   int[17] g_HaystackIndices
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
@@ -266,7 +266,7 @@ section .text
     JZ 0x004e9559                       ; 004e9518
         ;   XREF to: 004e9559 (CONDITIONAL_JUMP)  ; LAB_004e9559
     PUSH 0x567360                       ; 004e951a
-    MOV EDX,dword ptr [0x01d069d8]      ; 004e951f | g_INT_ARRAY_01d069d8
+    MOV EDX,dword ptr [0x01d069d8]      ; 004e951f | g_HaystackIndices
     PUSH EDX                            ; 004e9525
     LEA EAX,[EBX + 0x1ffb4]             ; 004e9526
     PUSH dword ptr [EBX + 0x1ffc0]      ; 004e952c

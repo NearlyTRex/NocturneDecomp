@@ -1080,7 +1080,7 @@ section .text
     TEST ECX,ECX                        ; 004a9cbf
     JLE 0x004a9deb                      ; 004a9cc1
         ;   XREF to: 004a9deb (CONDITIONAL_JUMP)  ; LAB_004a9deb
-    MOV EAX,[0x01bd1d80]                ; 004a9cc7 | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a9cc7 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004a9cc7
     MOV EDX,dword ptr [EBX + 0xbd2c]    ; 004a9ccc
     SUB EDX,EAX                         ; 004a9cd2
@@ -1095,7 +1095,7 @@ section .text
     CMP dword ptr [EBX + 0xbd30],0x0    ; 004a9ceb
     JLE 0x004a9e90                      ; 004a9cf2
         ;   XREF to: 004a9e90 (CONDITIONAL_JUMP)  ; LAB_004a9e90
-    MOV EAX,[0x01bd1d80]                ; 004a9cf8 | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a9cf8 | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBX + 0xbd30]    ; 004a9cfd
     SUB ECX,EAX                         ; 004a9d03
     MOV dword ptr [EBX + 0xbd30],ECX    ; 004a9d05
@@ -1224,7 +1224,7 @@ section .text
     FISTP dword ptr [EBX + 0xbd30]      ; 004a9e85
     JMP 0x004a9d13                      ; 004a9e8b
         ;   XREF to: 004a9d13 (UNCONDITIONAL_JUMP)  ; caseD_10
-    MOV EAX,[0x01bd1d80]                ; 004a9e90 | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a9e90 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004a9e90
     MOV EDX,dword ptr [EBX + 0xbd30]    ; 004a9e95
     ADD EDX,EAX                         ; 004a9e9b
@@ -2339,7 +2339,7 @@ section .text
     ADD ESP,0xc                         ; 004aabb1
     JMP 0x004a9d13                      ; 004aabb4
         ;   XREF to: 004a9d13 (UNCONDITIONAL_JUMP)  ; caseD_10
-    MOV EAX,[0x01bd1d80]                ; 004aabb9 | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004aabb9 | g_GlobalDeltaTimeInt
         ;   Label: caseD_d
     MOV EDX,dword ptr [EBX + 0xbd28]    ; 004aabbe
     SUB EDX,EAX                         ; 004aabc4

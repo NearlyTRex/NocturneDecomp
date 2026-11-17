@@ -32,11 +32,11 @@
 ;   TerminatedCString s_splash_music_44_wav_005e35d7
 ;   float g_FLOAT_005e35ec = 32
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
-;   CBitFont* g_CBitFont_PTR_0152d244
+;   CBitFont* g_ThemeFont
 ;   void* g_PTR_01d1bca0
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01d7f1b8
+;   int g_UseOSFonts
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
         ;   Label: LAB_004d8f4f
     PUSH 0x58                           ; 004d8f54
-    MOV EDI,dword ptr [0x0152d244]      ; 004d8f56 | g_CBitFont_PTR_0152d244
+    MOV EDI,dword ptr [0x0152d244]      ; 004d8f56 | g_ThemeFont
     PUSH EDI                            ; 004d8f5c
     MOV dword ptr [EDI + 0x4210],0x0    ; 004d8f5d
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 004d8f67
@@ -375,7 +375,7 @@ section .text
         ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     JMP 0x004d8f4f                      ; 004d91e6
         ;   XREF to: 004d8f4f (UNCONDITIONAL_JUMP)  ; LAB_004d8f4f
-    CMP dword ptr [0x01d7f1b8],0x0      ; 004d91eb | g_INT_01d7f1b8
+    CMP dword ptr [0x01d7f1b8],0x0      ; 004d91eb | g_UseOSFonts
         ;   Label: LAB_004d91eb
     JZ 0x004d91fe                       ; 004d91f2
         ;   XREF to: 004d91fe (CONDITIONAL_JUMP)  ; LAB_004d91fe

@@ -49,14 +49,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (g_CBitFont_PTR_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,g_INT_01bcddec,-1,
+              (g_CBitFont_PTR_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,g_WindowStatusTextColor,-1,
                "%d%% complete",(int)ROUND(dVar5),uVar8);
     iVar3 = g_ClipRight;
     iVar1 = g_INT_01bcd9bc * 2 + g_ClipTop + 1;
     y2 = g_INT_01bcd9bc * 4 + g_ClipTop + -1;
     x2_00 = g_ClipRight + -1;
     x1 = g_ClipLeft + 1;
-    engine_2d_c_fillRectWithBorder_FUN_00403ef0(x1,iVar1,x2_00,y2,g_INT_01bcddf8,g_INT_01bcde00);
+    engine_2d_c_fillRectWithBorder_FUN_00403ef0
+              (x1,iVar1,x2_00,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
     dVar5 = round
                       ((double)((float)((x2_00 - x1) + 1) * local_30 + (float)0.5));
     x2 = (int)ROUND(dVar5) + x1;
@@ -64,7 +65,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
       if (x2_00 <= x2) {
         x2 = iVar3 + -2;
       }
-      engine_2d_c_fillRectColor_FUN_00403e60(x1,iVar1,x2,(int)local_2c,g_INT_01bcddfc);
+      engine_2d_c_fillRectColor_FUN_00403e60(x1,iVar1,x2,(int)local_2c,g_ProgressBarFillColor);
     }
     if (0 < iVar4) {
       fVar2 = (float)(y2 - *(int *)((g_INT_01bcd07c + -1) * 0x1d8 + 0x1bcd24c)) *
@@ -83,9 +84,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
           engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
                     (g_CBitFont_PTR_01bcd070,g_ClipLeft,g_ClipRight,g_ClipBottom - g_INT_01bcd9bc,
-                     g_INT_01bcddec,-1,"%d:%02d elapsed, approximately %d:%02d remaining",(int)ROUND(dVar6) / 0x3c,
-                     (int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),
-                     (int)((ulonglong)dVar5 >> 0x20));
+                     g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
+                     (int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,
+                     uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20));
         }
       }
     }

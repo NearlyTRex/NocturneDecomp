@@ -14,8 +14,8 @@ _FILE * FUN_005c6a20(void)
   uint uVar2;
   
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626610)();
-  if (g_FileListNode_PTR_02c9f054 == (FileListNode *)0x0) {
-    dest = &g_FILE_PTR_006262d4;
+  if (g_FreeListHeadPointer == (FileListNode *)0x0) {
+    dest = &g_StaticFilePoolStart;
     do {
       if ((((_FILE *)dest)->_flag & 3) == 0) {
         psVar1 = (streambuf *)malloc(0x1d);
@@ -36,18 +36,18 @@ LAB_005c6ac8:
     dest = (_FILE **)((int)&psVar1->__put_end + 1);
   }
   else {
-    dest = (_FILE **)g_FileListNode_PTR_02c9f054->file_struct;
+    dest = (_FILE **)g_FreeListHeadPointer->file_struct;
     uVar2 = (uint)((ushort)((_FILE *)dest)->_flag & 0x4003 | 3);
-    psVar1 = (streambuf *)g_FileListNode_PTR_02c9f054;
-    g_FileListNode_PTR_02c9f054 = g_FileListNode_PTR_02c9f054->next;
+    psVar1 = (streambuf *)g_FreeListHeadPointer;
+    g_FreeListHeadPointer = g_FreeListHeadPointer->next;
   }
 LAB_005c6a99:
   memset(dest,0,0x1a);
   ((_FILE *)dest)->_flag = uVar2;
   psVar1->__reserve_base = (char *)dest;
   ((_FILE *)dest)->_link = psVar1;
-  psVar1->__b_lock = g_FileListNode_PTR_02c9f050;
-  g_FileListNode_PTR_02c9f050 = (FileListNode *)psVar1;
+  psVar1->__b_lock = g_AllocatedListHead;
+  g_AllocatedListHead = (FileListNode *)psVar1;
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();
   return (_FILE *)dest;
 }

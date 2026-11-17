@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_schnell_death_005f01ee
 ;   double g_DOUBLE_005f01fe = 10
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800
@@ -33,7 +33,7 @@ section .text
     PUSH 0x1                            ; 005a3bbc
     PUSH 0x5f01ee                       ; 005a3bbe | = "schnell_death"
     MOV dword ptr [EDX + 0x25a8],0x41200000 ; 005a3bc3
-    MOV EDX,dword ptr [0x006141f0]      ; 005a3bcd | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 005a3bcd | g_CEventListPtr
     PUSH EDX                            ; 005a3bd3
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 005a3bd4
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)

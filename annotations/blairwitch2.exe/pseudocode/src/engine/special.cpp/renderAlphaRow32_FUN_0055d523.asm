@@ -17,8 +17,8 @@
 ; Referenced Globals:
 ;   qword[512] g_QWORD_ARRAY_0061d180
 ;   undefined4 g_QWORD_ARRAY_0061d180[255]
-;   uint[256] g_UINT_ARRAY_01c35214
-;   int g_INT_01c38b4c
+;   uint[256] g_Hardware32BitPalette
+;   int g_BlendMode
 ;
 ; *****************************************************************************
 
@@ -37,10 +37,10 @@ section .text
     SHR EBP,0x8                         ; 0055d539
     MOVZX EAX,byte ptr [ESI]            ; 0055d53c
         ;   Label: LAB_0055d53c
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c35214] ; 0055d53f | g_UINT_ARRAY_01c35214
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c35214] ; 0055d53f | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 0055d547
     IMUL EAX,EBP                        ; 0055d54a
-    CMP dword ptr [0x01c38b4c],0x1      ; 0055d54d | g_INT_01c38b4c
+    CMP dword ptr [0x01c38b4c],0x1      ; 0055d54d | g_BlendMode
     JZ 0x0055d564                       ; 0055d554
         ;   XREF to: 0055d564 (CONDITIONAL_JUMP)  ; LAB_0055d564
     CMP EAX,0xfde8                      ; 0055d556
@@ -57,7 +57,7 @@ section .text
     PXOR MM2,qword ptr [0x0061d978]     ; 0055d575 | g_QWORD_ARRAY_0061d180[255]
     MOVD MM3,dword ptr [EDI]            ; 0055d57c
     PUNPCKLBW MM3,MM7                   ; 0055d57f
-    CMP dword ptr [0x01c38b4c],0x1      ; 0055d582 | g_INT_01c38b4c
+    CMP dword ptr [0x01c38b4c],0x1      ; 0055d582 | g_BlendMode
     JZ 0x0055d59d                       ; 0055d589
         ;   XREF to: 0055d59d (CONDITIONAL_JUMP)  ; LAB_0055d59d
     PMULLW MM0,MM1                      ; 0055d58b

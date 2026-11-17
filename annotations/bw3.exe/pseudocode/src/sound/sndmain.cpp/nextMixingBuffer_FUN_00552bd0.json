@@ -64,13 +64,13 @@
   "globals": [
     {
       "addr": "0060422c",
-      "name": "g_INT_0060422c",
+      "name": "g_AudioChannelCount",
       "type": "int",
       "value": "0x2"
     },
     {
       "addr": "00604230",
-      "name": "g_INT_00604230",
+      "name": "g_AudioSampleRate",
       "type": "int",
       "value": "0x5622"
     },
@@ -88,37 +88,37 @@
     },
     {
       "addr": "02cf3294",
-      "name": "g_INT_02cf3294",
+      "name": "g_MixBufferReadIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf3298",
-      "name": "g_INT_02cf3298",
+      "name": "g_MixBufferWriteIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf329c",
-      "name": "g_INT_02cf329c",
+      "name": "g_MixBufferSize",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf32a0",
-      "name": "g_INT_02cf32a0",
+      "name": "g_NumMixBuffers",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf3338",
-      "name": "g_INT_02cf3338",
+      "name": "g_MixBufferCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf341c",
-      "name": "g_INT_02cf341c",
+      "name": "g_SoundLockCount",
       "type": "int",
       "value": null
     }
@@ -240,25 +240,25 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(void **)((int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "(*(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2),",
+      "text": "(*(void **)((int)g_ChannelPrimaryBuffers + iVar2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(void **)((int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "(int)*(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2)),",
+      "text": "(int)*(void **)((int)g_ChannelPrimaryBuffers + iVar2)),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(int *)((int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(int *)((int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2);",
+      "text": "piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar2);",
       "type": "pointer_cast"
     },
     {
@@ -280,9 +280,9 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(uint *)((int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar5);",
+      "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar5);",
       "type": "pointer_cast"
     },
     {
@@ -414,35 +414,35 @@
       "type": "unknown_field"
     },
     {
-      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02cf32cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 42,
-      "match": "(int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "(*(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2),",
+      "text": "(*(void **)((int)g_ChannelPrimaryBuffers + iVar2),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02cf32cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 44,
-      "match": "(int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "(int)*(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2)),",
+      "text": "(int)*(void **)((int)g_ChannelPrimaryBuffers + iVar2)),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02cf32cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 46,
-      "match": "(int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2);",
+      "text": "piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar2);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02cf32cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 62,
-      "match": "(int)g_FLOAT_PTR_ARRAY_02cf32cc",
+      "match": "(int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar5);",
+      "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar5);",
       "type": "pointer_truncation"
     },
     {

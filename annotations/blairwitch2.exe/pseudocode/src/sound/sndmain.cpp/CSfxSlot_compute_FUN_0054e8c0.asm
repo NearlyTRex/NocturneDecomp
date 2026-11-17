@@ -71,7 +71,7 @@ section .text
     SUB ESP,0x3c                        ; 0054e8c6
     AND ESP,0xfffffff8                  ; 0054e8c9
     MOV EBX,dword ptr [EBP + 0x14]      ; 0054e8cc
-    CMP dword ptr [0x0264901c],0x0      ; 0054e8cf | g_INT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054e8cf | g_SoundLockCount
     JLE 0x0054eb59                      ; 0054e8d6
         ;   XREF to: 0054eb59 (CONDITIONAL_JUMP)  ; LAB_0054eb59
     MOV EDI,dword ptr [EBX + 0x68]      ; 0054e8dc
@@ -238,7 +238,7 @@ section .text
     CMP ESI,0x1                         ; 0054ea8a
     JNZ 0x0054eaf0                      ; 0054ea8d
         ;   XREF to: 0054eaf0 (CONDITIONAL_JUMP)  ; LAB_0054eaf0
-    MOV EDI,dword ptr [0x0061bc9c]      ; 0054ea8f | g_INT_0061bc9c
+    MOV EDI,dword ptr [0x0061bc9c]      ; 0054ea8f | g_AudioChannelCount
     XOR ESI,ESI                         ; 0054ea95
     TEST EDI,EDI                        ; 0054ea97
     JLE 0x0054eaf0                      ; 0054ea99
@@ -263,7 +263,7 @@ section .text
     INC ESI                             ; 0054ead2
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0054ead3
         ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
-    MOV EAX,[0x0061bc9c]                ; 0054ead8 | g_INT_0061bc9c
+    MOV EAX,[0x0061bc9c]                ; 0054ead8 | g_AudioChannelCount
     ADD ESP,0x14                        ; 0054eadd
     CMP ESI,EAX                         ; 0054eae0
     JL 0x0054ea9d                       ; 0054eae2

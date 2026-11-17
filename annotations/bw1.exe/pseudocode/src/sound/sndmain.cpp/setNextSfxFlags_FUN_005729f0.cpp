@@ -9,6 +9,6 @@
 void __cdecl sound_sndmain_cpp_setNextSfxFlags_FUN_005729f0(uint flags)
 
 {
-  g_CSfxOptions_ARRAY_02c78cf0[g_INT_02c78cec].flags = flags;
+  g_CSfxOptions_ARRAY_02c78cf0[g_SfxLastSlot].flags = flags;
   return;
 }

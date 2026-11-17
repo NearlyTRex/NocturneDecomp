@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1267,
-    "complexity_score": 611,
+    "complexity_score": 608,
     "cross_reference_count": 1,
     "function_call_count": 61,
     "global_count": 72,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 386,
+    "pseudocode_lines": 383,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "unrolled_strcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1653
+    "total_lines": 1650
   },
   "cross_references": [
     {
@@ -525,7 +525,7 @@
     },
     {
       "addr": "006141f0",
-      "name": "g_CEventList_PTR_006141f0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c38bc0"
     },
@@ -549,19 +549,19 @@
     },
     {
       "addr": "006164a4",
-      "name": "g_INT_006164a4",
+      "name": "g_MovieRecordingWidth",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "006164a8",
-      "name": "g_INT_006164a8",
+      "name": "g_MovieRecordingHeight",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "00617dd4",
-      "name": "g_CKeys_PTR_00617dd4",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d02f84"
     },
@@ -597,13 +597,13 @@
     },
     {
       "addr": "01511cb8",
-      "name": "g_CBitFont_PTR_01511cb8",
+      "name": "g_MediumFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01511cc0",
-      "name": "g_CBitFont_PTR_01511cc0",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
@@ -615,37 +615,37 @@
     },
     {
       "addr": "01c2a37c",
-      "name": "g_INT_01c2a37c",
+      "name": "g_MouseX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c2a380",
-      "name": "g_INT_01c2a380",
+      "name": "g_MouseY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c2a384",
-      "name": "g_BIT_INTEGER32_01c2a384",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c2a38c",
-      "name": "g_ARRAY_PTR_01c2a38c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c2a390",
-      "name": "g_ARRAY_PTR_01c2a38c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c34510",
-      "name": "g_UCHAR_ARRAY_01c2c910+0x7c00",
+      "name": "g_ColorCubeLookup+0x7c00",
       "type": "undefined4",
       "value": null
     },
@@ -687,7 +687,7 @@
     },
     {
       "addr": "01cb7420",
-      "name": "g_INT_01cb7420",
+      "name": "g_ScreenshotIndex",
       "type": "int",
       "value": null
     },
@@ -699,31 +699,31 @@
     },
     {
       "addr": "01cb80d0",
-      "name": "g_INT_01cb80d0",
+      "name": "g_MovieRecordingArmed",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb80d4",
-      "name": "g_INT_01cb80d4",
+      "name": "g_MovieRecordingActive",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb80d8",
-      "name": "g_INT_01cb80d8",
+      "name": "g_MovieRecordingMaxFrames",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb80dc",
-      "name": "g_INT_01cb80dc",
+      "name": "g_MovieRecordingFrameCounter",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb80e4",
-      "name": "g_INT_01cb80e4",
+      "name": "g_SoundDebugEnabled",
       "type": "int",
       "value": null
     },
@@ -753,7 +753,7 @@
     },
     {
       "addr": "01e61b58",
-      "name": "g_INT_01e61b58",
+      "name": "g_RenderedTriangleCount",
       "type": "int",
       "value": null
     },
@@ -1274,10 +1274,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 232,
-      "match": "(int *)((int)g_ARRAY_PTR_01c2a38c",
+      "line": 230,
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(int *)((int)g_ARRAY_PTR_01c2a38c + local_24));",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
       "type": "pointer_cast"
     },
     {
@@ -1297,16 +1297,16 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c2a38c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 232,
-      "match": "(int)g_ARRAY_PTR_01c2a38c",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 230,
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(int *)((int)g_ARRAY_PTR_01c2a38c + local_24));",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 344,
+      "line": 342,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

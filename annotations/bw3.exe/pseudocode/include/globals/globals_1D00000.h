@@ -61,7 +61,7 @@ extern char g_CHAR_ARRAY_01d0d010[512];
 extern int g_INT_01d00eac;
 extern int g_INT_01d01ab0;
 extern int g_INT_01d028c4;
-extern int g_INT_01d03b88;
+extern int g_RainDropAllocIndex;
 extern int g_INT_01d07b8c;
 extern int g_INT_01d0bb90;
 extern int g_INT_01d0ce7c;

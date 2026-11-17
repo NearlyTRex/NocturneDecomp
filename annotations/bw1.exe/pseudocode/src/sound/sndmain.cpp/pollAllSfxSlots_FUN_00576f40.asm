@@ -19,8 +19,8 @@
 ;   int g_INT_01d1d404
 ;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
 ;   int g_INT_02c7fc8c
-;   int g_INT_02c807ec
-;   int g_INT_02c807f0
+;   int g_SoundLockCount
+;   int g_SoundStartTime
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -40,13 +40,13 @@ section .text
     PUSH EDI                            ; 00576f42
     PUSH EBP                            ; 00576f43
     SUB ESP,0x8                         ; 00576f44
-    CMP dword ptr [0x02c807ec],0x0      ; 00576f47 | g_INT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00576f47 | g_SoundLockCount
     JLE 0x00576fc6                      ; 00576f4e
         ;   XREF to: 00576fc6 (CONDITIONAL_JUMP)  ; LAB_00576fc6
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 00576f54
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_00576f54
-    MOV EDI,dword ptr [0x02c807f0]      ; 00576f59 | g_INT_02c807f0
+    MOV EDI,dword ptr [0x02c807f0]      ; 00576f59 | g_SoundStartTime
     MOV EBX,EAX                         ; 00576f5f
     SUB EBX,EDI                         ; 00576f61
     MOV ESI,EAX                         ; 00576f63
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 00576fbe (CONDITIONAL_JUMP)  ; LAB_00576fbe
     MOV EBP,dword ptr [0x02c7fc8c]      ; 00576f71 | g_INT_02c7fc8c
         ;   Label: LAB_00576f71
-    MOV dword ptr [0x02c807f0],ESI      ; 00576f77 | g_INT_02c807f0
+    MOV dword ptr [0x02c807f0],ESI      ; 00576f77 | g_SoundStartTime
     TEST EBP,EBP                        ; 00576f7d
     JZ 0x00576fee                       ; 00576f7f
         ;   XREF to: 00576fee (CONDITIONAL_JUMP)  ; LAB_00576fee

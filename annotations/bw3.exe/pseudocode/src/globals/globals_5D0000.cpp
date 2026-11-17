@@ -942,7 +942,7 @@ CConstruct_full_vtable g_CConstructRedVTable = {
 };
 
 // CDemonActor*
-CDemonActor* g_CDemonActor_PTR_005df604 = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
+CDemonActor* g_ActorNameSentinel = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
 
 // CDemonActor_vtable
 CDemonActor_vtable g_CDemonActorVTable = {
@@ -3703,7 +3703,7 @@ WatcomDestructorCall DAT_005DBE24 = {
 WatcomDestructorCall DAT_005DC960 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_00420e20,
-    .object_instance = (void *)&CDemonFilter_ARRAY_007e17b8
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomDestructorCall g_CConsoleDestructorCall = {
     .delete_flags = 0x00000004,
@@ -3718,7 +3718,7 @@ WatcomDestructorCall DAT_005DDFB0 = {
 WatcomDestructorCall DAT_005DE300 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_00420e20,
-    .object_instance = (void *)&CDemonFilter_ARRAY_01548c00
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomDestructorCall DAT_005DE30C = {
     .delete_flags = 0x00000004,
@@ -4724,7 +4724,7 @@ WatcomTypeInfo g_CFirestaffTypeInfo = {
 };
 
 // char
-char g_CHAR_005daf55 = ' ';
+char g_SpaceCharacter = ' ';
 
 // int
 int g_INT_005da7b0 = 0xA;

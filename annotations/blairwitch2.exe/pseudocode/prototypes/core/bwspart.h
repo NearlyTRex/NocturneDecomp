@@ -27,11 +27,11 @@ void __cdecl CSimpleParticleSystem::attach(CSimpleParticleSystem *this_ptr,CDemo
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0
 // Address: 005a80d0
-void __cdecl CSimpleParticleSystem::start(CSimpleParticleSystem *this_ptr,int param_2);
+void __cdecl CSimpleParticleSystem::start(CSimpleParticleSystem *this_ptr,int fade_in);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 // Address: 005a8100
-void __cdecl CSimpleParticleSystem::stop(CSimpleParticleSystem *this_ptr,int param_2);
+void __cdecl CSimpleParticleSystem::stop(CSimpleParticleSystem *this_ptr,int fade_out);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130
 // Address: 005a8130
@@ -47,7 +47,7 @@ void __cdecl CSimpleParticleSystem::resetFade(CSimpleParticleSystem *this_ptr);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 // Address: 005a8180
-void __cdecl CSimpleParticleSystem::process(CSimpleParticleSystem *this_ptr,float param_2);
+void __cdecl CSimpleParticleSystem::process(CSimpleParticleSystem *this_ptr,float delta_time);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
 // Address: 005a8220

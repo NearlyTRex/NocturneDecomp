@@ -73,7 +73,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(CDemonSet *thi
   if ((g_INT_01fc9608 != 0) || (g_CGamePtr->goggles_active != 0)) {
     local_28 = 0xd;
   }
-  if (g_INT_01fc8e84 != 0) {
+  if (g_SpotLightCount != 0) {
     local_28 = local_28 | 0x22;
   }
   iVar7 = 0;
@@ -160,8 +160,8 @@ LAB_005334fa:
              (float)*(uint *)(auStack_78 + (uint)bVar11 * -8 + 4);
         (&stack0xffffff74)[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
              afStack_70[(uint)bVar11 * -2 + (uint)bVar11 * -2];
-        g_SDisplayListSortEntry_ARRAY_0208f778[g_INT_0208f774].actor = (CDemonActor *)this_ptr_00;
-        pSVar3 = g_SDisplayListSortEntry_ARRAY_0208f778 + g_INT_0208f774;
+        g_SetDisplayListSortBuffer[g_INT_0208f774].actor = (CDemonActor *)this_ptr_00;
+        pSVar3 = g_SetDisplayListSortBuffer + g_INT_0208f774;
         g_INT_0208f774 = g_INT_0208f774 + 1;
         pSVar3->distance_sq =
              (fStack_94 - fStack_88) * (fStack_94 - fStack_88) +
@@ -174,7 +174,7 @@ LAB_005333c8:
     } while (iVar7 < this_ptr->renderable_actor_count);
   }
   _qsort
-            (g_SDisplayListSortEntry_ARRAY_0208f778,g_INT_0208f774,8,
+            (g_SetDisplayListSortBuffer,g_INT_0208f774,8,
              core_set_cpp_qsortByDisplayListEntry_FUN_005332c0);
   iVar7 = g_INT_0208f774;
   if (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4] == (CHero *)0x0) {
@@ -184,7 +184,7 @@ LAB_005333c8:
       pCVar5 = this_ptr;
       do {
         iVar4 = g_INT_0208f774;
-        puVar9 = (uint *)((int)&g_SDisplayListSortEntry_ARRAY_0208f778[0].actor + iVar6);
+        puVar9 = (uint *)((int)&g_SetDisplayListSortBuffer[0].actor + iVar6);
         iVar6 = iVar6 + 8;
         iVar8 = iVar8 + 1;
         pCVar5->sorted_render_actors[0] = (CDemonActor *)*puVar9;
@@ -201,7 +201,7 @@ LAB_005333c8:
       pCVar5 = this_ptr;
       do {
         iVar6 = g_INT_0208f774;
-        puVar9 = (uint *)((int)&g_SDisplayListSortEntry_ARRAY_0208f778[0].actor + iVar7);
+        puVar9 = (uint *)((int)&g_SetDisplayListSortBuffer[0].actor + iVar7);
         iVar7 = iVar7 + 8;
         iVar8 = iVar8 + 1;
         pCVar5->sorted_render_actors[1] = (CDemonActor *)*puVar9;

@@ -47,7 +47,7 @@
 ;   double g_DOUBLE_005d5f1f = 32
 ;   float g_FLOAT_005d5f27 = 0.2000000
 ;   float g_FLOAT_005d5f2b = 1.5
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   float g_FLOAT_007c6340
 ;   CDemonSet g_CDemonSetInstance
@@ -332,7 +332,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00434a69
     MOVSD ES:EDI,ESI                    ; 00434a6a
     PUSH EAX                            ; 00434a6b
-    MOV ESI,dword ptr [0x0061c010]      ; 00434a6c | g_CFireEffect_PTR_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 00434a6c | g_CFireEffectPtr
     PUSH ESI                            ; 00434a72
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30 ; 00434a73
         ;   XREF to: 004b5b30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

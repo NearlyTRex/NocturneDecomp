@@ -49,7 +49,7 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
   }
   else {
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (g_CEventList_PTR_005fba60,this_ptr->transform_event);
+                      (g_CEventListPtr,this_ptr->transform_event);
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,0x91,1);
       if (this_ptr->transform_wav[0] != '\0') {

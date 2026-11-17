@@ -11,17 +11,17 @@
 // =============================================================================
 
 // UNetPacket
-extern UNetPacket g_UNetPacket_01d16408;
+extern UNetPacket g_NetworkReceivePacket;
 
 // char*[500]
-extern char* g_CHAR_PTR_ARRAY_01d1681c[500];
-extern char* g_CHAR_PTR_ARRAY_01d16fec[500];
+extern char* g_MessageKeys[500];
+extern char* g_MessageTexts[500];
 
 // char[500][128]
-extern char g_CHAR_ARRAY_ARRAY_01d177c0[500][128];
+extern char g_MessageKeyStorage[500][128];
 
 // int
-extern int g_INT_01d16810;
-extern int g_INT_01d16814;
-extern int g_INT_01d16818;
+extern int g_UseOSFonts;
+extern int g_LocalizationLoaded;
+extern int g_LocalizedStringCount;
 

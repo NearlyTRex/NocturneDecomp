@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CTrail_render_FUN_004b3d20 at 004b3d96
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005db3ec = 65535
+;   double g_RenderAlphaFixedScale = 65535
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -28,7 +28,7 @@ section .text
     SUB ESP,0x4                         ; 00483df0
         ;   Label: engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0
     FLD float ptr [ESP + 0xc]           ; 00483df3
-    FMUL double ptr [0x005db3ec]        ; 00483df7 | g_DOUBLE_005db3ec
+    FMUL double ptr [0x005db3ec]        ; 00483df7 | g_RenderAlphaFixedScale
     CALL crt_math.c_round_FUN_005c03a0  ; 00483dfd
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 00483e02

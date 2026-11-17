@@ -86,9 +86,9 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   }
   if (play_sound != 0) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
-              (g_CFireEffect_PTR_00614d30,&local_7c,local_1c,0,0.0);
+              (g_CFireEffectPtr,&local_7c,local_1c,0,0.0);
   }
-  this_ptr_00 = g_CEventList_PTR_006141f0;
+  this_ptr_00 = g_CEventListPtr;
   local_18 = (float)g_CDemonCameraInstance.corona_blend_factor;
   local_c0 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05;
   this_ptr->base_ambient = local_c0;

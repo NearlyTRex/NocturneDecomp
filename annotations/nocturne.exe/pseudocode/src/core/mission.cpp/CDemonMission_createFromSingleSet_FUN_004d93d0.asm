@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *set_name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   set_name
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020

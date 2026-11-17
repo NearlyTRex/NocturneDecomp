@@ -21,8 +21,8 @@
 ;   CConsole g_CConsoleInstance
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   IDirectSound* g_IDirectSound_PTR_02cf49c4
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
+;   IDirectSound* g_DirectSound
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055be6a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055be6f
-    CMP dword ptr [0x02cf49c4],0x0      ; 0055be72 | g_IDirectSound_PTR_02cf49c4
+    CMP dword ptr [0x02cf49c4],0x0      ; 0055be72 | g_DirectSound
         ;   Label: LAB_0055be72
     JNZ 0x0055be9d                      ; 0055be79
         ;   XREF to: 0055be9d (CONDITIONAL_JUMP)  ; LAB_0055be9d
@@ -131,7 +131,7 @@ section .text
     MOV dword ptr [EDI + 0xc],0x0       ; 0055bf35 | g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[21]
     MOV dword ptr [EDI + 0x10],EAX      ; 0055bf3c | g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[22]
     MOV dword ptr [ESI + 0x4],EBX       ; 0055bf3f
-    CMP dword ptr [0x02cf49d0],0x0      ; 0055bf42 | g_IDirectSound3DListener_PTR_02cf49d0
+    CMP dword ptr [0x02cf49d0],0x0      ; 0055bf42 | g_DirectSound3DListener
     JNZ 0x0055c054                      ; 0055bf49
         ;   XREF to: 0055c054 (CONDITIONAL_JUMP)  ; LAB_0055c054
     MOV dword ptr [EDI + 0x1c],0xffffffff ; 0055bf4f | g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[25]
@@ -183,7 +183,7 @@ section .text
     PUSH EDI                            ; 0055bfd7 | g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[18]
         ;   Label: LAB_0055bfd7
     MOV ECX,dword ptr [ESI]             ; 0055bfd8
-    MOV EAX,[0x02cf49c4]                ; 0055bfda | g_IDirectSound_PTR_02cf49c4
+    MOV EAX,[0x02cf49c4]                ; 0055bfda | g_DirectSound
     PUSH ECX                            ; 0055bfdf
     MOV EDX,dword ptr [EAX]             ; 0055bfe0
     PUSH EAX                            ; 0055bfe2

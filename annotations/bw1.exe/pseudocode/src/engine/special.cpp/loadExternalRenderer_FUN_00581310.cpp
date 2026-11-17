@@ -53,10 +53,10 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   
   pHVar1 = window_handle;
   if (window_handle == (HWND)0x0) {
-    pHVar1 = g_HWND_02c834c0;
+    pHVar1 = g_StoredWindowHandle;
   }
-  g_HWND_02c834c0 = pHVar1;
-  pHVar1 = g_HWND_02c834c0;
+  g_StoredWindowHandle = pHVar1;
+  pHVar1 = g_StoredWindowHandle;
   if (g_INT_02c83370 == 0) {
     return 0;
   }
@@ -86,14 +86,14 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   if ((FARPROC)g_PTR_02c83388 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c8338c =
+  g_APIDLL_kill =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470(g_HMODULE_02c834b0,"APIDLLkill");
-  if ((FARPROC)g_PTR_02c8338c == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_kill == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c83390 =
+  g_APIDLL_toggle =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470(g_HMODULE_02c834b0,"APIDLLtoggle");
-  if ((FARPROC)g_PTR_02c83390 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_toggle == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
   g_INT_02c83394 =
@@ -102,16 +102,16 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   if ((FARPROC)g_INT_02c83394 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c83398 =
+  g_APIDLL_setVideoMode2 =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLsetVideoMode2");
-  if ((FARPROC)g_PTR_02c83398 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_setVideoMode2 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c8339c =
+  g_APIDLL_restoreVideoMode =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLrestoreVideoMode");
-  if ((FARPROC)g_PTR_02c8339c == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_restoreVideoMode == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
   g_PTR_02c833a0 =
@@ -126,10 +126,10 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   if ((FARPROC)g_PTR_02c833a4 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833a8 =
+  g_APIDLL_lockFrame =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLlockFrame");
-  if ((FARPROC)g_PTR_02c833a8 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_lockFrame == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
   g_PTR_02c833ac =
@@ -162,25 +162,25 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   if ((FARPROC)g_PTR_02c833c0 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833c4 =
+  g_APIDLL_drawPolygon =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLdrawPolygon");
-  if ((FARPROC)g_PTR_02c833c4 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_drawPolygon == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833c8 =
+  g_APIDLL_drawPolygon2 =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLdrawPolygon2");
-  if ((FARPROC)g_PTR_02c833c8 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_drawPolygon2 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833cc =
+  g_APIDLL_drawPolyList =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLdrawPolyList");
-  g_PTR_02c833d0 =
+  g_APIDLL_drawPolyList2 =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLdrawPolyList2");
-  g_PTR_02c833d4 =
+  g_APIDLL_drawPolyList3 =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLdrawPolyList3");
   g_PTR_02c833d8 =
@@ -195,50 +195,50 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   if ((FARPROC)g_PTR_02c833dc == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833e0 =
+  g_APIDLL_add3dLine =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLadd3dLine");
-  if ((FARPROC)g_PTR_02c833e0 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_add3dLine == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833e4 =
+  g_APIDLL_flushLineList =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLflushLineList");
-  if ((FARPROC)g_PTR_02c833e4 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_flushLineList == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833e8 =
+  g_APIDLL_clear =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470(g_HMODULE_02c834b0,"APIDLLclear");
-  if ((FARPROC)g_PTR_02c833e8 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_clear == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833ec =
+  g_APIDLL_setFogColor =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLsetFogColor");
-  if ((FARPROC)g_PTR_02c833ec == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_setFogColor == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833f0 =
+  g_APIDLL_sync =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470(g_HMODULE_02c834b0,"APIDLLsync");
-  if ((FARPROC)g_PTR_02c833f0 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_sync == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833f4 =
+  g_APIDLL_clearZBuffer =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLclearZBuffer");
-  if ((FARPROC)g_PTR_02c833f4 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_clearZBuffer == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833f8 =
+  g_APIDLL_clearZBox =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLclearZBox");
-  if ((FARPROC)g_PTR_02c833f8 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_clearZBox == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c833fc =
+  g_APIDLL_setColorTable16 =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLsetColorTable16");
-  if ((FARPROC)g_PTR_02c833fc == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_setColorTable16 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
   g_INT_02c83400 =
@@ -253,34 +253,34 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
   if ((FARPROC)g_INT_02c83404 == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c83408 =
+  g_APIDLL_masterZBuffer =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLmasterZBuffer");
-  if ((FARPROC)g_PTR_02c83408 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_masterZBuffer == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c8340c =
+  g_APIDLL_restoreZBuffer =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLrestoreZBuffer");
-  if ((FARPROC)g_PTR_02c8340c == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_restoreZBuffer == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c83410 =
+  g_APIDLL_getVideoMemory =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLgetVideoMemory");
-  if ((FARPROC)g_PTR_02c83410 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_getVideoMemory == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c83414 =
+  g_APIDLL_selectCard =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLselectCard");
-  if ((FARPROC)g_PTR_02c83414 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_selectCard == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
-  g_PTR_02c83418 =
+  g_APIDLL_buildCardList =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLbuildCardList");
-  if ((FARPROC)g_PTR_02c83418 == (FARPROC)0x0) {
+  if ((FARPROC)g_APIDLL_buildCardList == (FARPROC)0x0) {
     g_INT_02c834c8 = 1;
   }
   g_PTR_02c8341c =
@@ -393,35 +393,35 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_han
        wincore_wddvmem_cpp_getProcAddress_FUN_005ad470
                  (g_HMODULE_02c834b0,"APIDLLdynamicLightHint");
   if (g_INT_02c834c8 == 0) {
-    g_INT_02c834ac = 1;
+    g_LoadedExternalDLLRenderer = 1;
     memset(&p_Stack_a0,0,0x90);
-    p_Stack_a0 = &g_BIT_INTEGER32_01c4e9d4;
-    piStack_9c = &g_INT_01c4e9d8;
-    p_Stack_98 = &g_BIT_INTEGER32_01c4e9dc;
-    p_Stack_94 = &g_BIT_INTEGER32_01c4e9e0;
-    piStack_90 = &g_INT_01c4e9e4;
-    p_Stack_8c = &g_BIT_INTEGER32_01c4e9e8;
-    p_Stack_88 = &g_BIT_INTEGER32_01c4e9ec;
-    piStack_84 = &g_INT_01c4e9f0;
-    p_Stack_80 = &g_BIT_INTEGER32_01c4e9f4;
-    piStack_7c = &g_INT_01c51d0c;
-    piStack_78 = &g_INT_01c4f024;
-    piStack_74 = &g_INT_0061b4b8;
+    p_Stack_a0 = &g_RedBitPosition;
+    piStack_9c = &g_RedScaleFactor;
+    p_Stack_98 = &g_RedDitherShift;
+    p_Stack_94 = &g_GreenBitPosition;
+    piStack_90 = &g_GreenScaleFactor;
+    p_Stack_8c = &g_GreenDitherShift;
+    p_Stack_88 = &g_BlueBitPosition;
+    piStack_84 = &g_BlueScaleFactor;
+    p_Stack_80 = &g_BlueDitherShift;
+    piStack_7c = &g_BlendMode;
+    piStack_78 = &g_CurrentLightingValue;
+    piStack_74 = &g_CurrentAlphaValue;
     piStack_70 = &g_INT_01c4f020;
     piStack_6c = &g_INT_01c4f008;
     piStack_68 = &g_INT_01c4f00c;
-    piStack_64 = &g_INT_01c4f010;
+    piStack_64 = &g_ClipRight;
     piStack_60 = &g_INT_01c4f014;
-    piStack_5c = &g_INT_0061b4a4;
-    piStack_58 = &g_INT_0061b4a8;
+    piStack_5c = &g_TextureFilteringEnabled;
+    piStack_58 = &g_CurrentTextureDimension;
     piStack_54 = &g_INT_01c50940;
-    piStack_50 = &g_INT_006258dc;
+    piStack_50 = &g_FullScreenQuadDepth;
     puStack_4c = &DAT_006258d4;
     puStack_48 = &DAT_006258d8;
     uStack_44 = 0x2c83378;
     piStack_40 = &g_INT_006258d0;
     piStack_3c = &g_INT_02c8337c;
-    piStack_38 = &g_INT_01c51d10;
+    piStack_38 = &g_ProcessorType;
     puStack_34 = &DAT_0061b4bc;
     uStack_30 = 0x30;
     uStack_2c = 0x2c;

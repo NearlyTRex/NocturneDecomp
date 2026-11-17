@@ -27,7 +27,7 @@
 ;   TerminatedCString s_s_can_t_figure_out_next_005b84be
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
-;   CVector3f g_CVector3f_02cfd900
+;   CVector3f g_ZeroVector
 ;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
@@ -151,7 +151,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00431785
     MOVSD ES:EDI,ESI                    ; 00431786
     MOVSD ES:EDI,ESI                    ; 00431787
-    PUSH 0x2cfd900                      ; 00431788 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 00431788 | g_ZeroVector
     MOV EAX,dword ptr [EBX + 0x2740]    ; 0043178d
     PUSH EAX                            ; 00431793
     MOV EDX,dword ptr [EAX + 0x154]     ; 00431794

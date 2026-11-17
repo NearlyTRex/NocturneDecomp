@@ -20,9 +20,9 @@
 ;   TerminatedCString s_CDemonRaytrace_getPVS_ou_005dbaaf
 ;   TerminatedCString s_core_dtrace_cpp_005dbad6
 ;   TerminatedCString s_CDemonRenderer_savePVS_c_005dbae9
-;   int g_INT_01bef218
-;   int g_INT_01bef21c
-;   undefined4 g_CDemonCube_PTR_ARRAY_01bef220[1]
+;   int g_PVSDrawnCubeCount
+;   int g_PVSReadyFlag
+;   undefined4 g_PVSCubePointers[1]
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -40,7 +40,7 @@ section .text
     PUSH EDI                            ; 0048e642
     PUSH EBP                            ; 0048e643
     MOV EBX,dword ptr [ESP + 0x18]      ; 0048e644
-    CMP dword ptr [0x01bef21c],0x0      ; 0048e648 | g_INT_01bef21c
+    CMP dword ptr [0x01bef21c],0x0      ; 0048e648 | g_PVSReadyFlag
     JNZ 0x0048e674                      ; 0048e64f
         ;   XREF to: 0048e674 (CONDITIONAL_JUMP)  ; LAB_0048e674
     MOV ECX,0x5dba1d                    ; 0048e651 | = "..\\core\\dtrace.cpp"
@@ -51,7 +51,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048e66c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048e671
-    MOV EAX,[0x01bef218]                ; 0048e674 | g_INT_01bef218
+    MOV EAX,[0x01bef218]                ; 0048e674 | g_PVSDrawnCubeCount
         ;   Label: LAB_0048e674
     MOV dword ptr [EBX],EAX             ; 0048e679
     SHL EAX,0x2                         ; 0048e67b
@@ -96,7 +96,7 @@ section .text
     IMUL EAX,EDI                        ; 0048e6f5
     MOV ESI,dword ptr [EDX + 0x48]      ; 0048e6f8
     IMUL ESI,EAX                        ; 0048e6fb
-    MOV EAX,[0x01bef218]                ; 0048e6fe | g_INT_01bef218
+    MOV EAX,[0x01bef218]                ; 0048e6fe | g_PVSDrawnCubeCount
     XOR EBP,EBP                         ; 0048e703
     TEST EAX,EAX                        ; 0048e705
     JLE 0x0048e760                      ; 0048e707
@@ -110,7 +110,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0048e711
     MOV EDX,EDI                         ; 0048e715
     MOV EAX,dword ptr [EAX + 0x50]      ; 0048e717
-    CMP EAX,dword ptr [EDX + 0x1bef220] ; 0048e71a | g_CDemonCube_PTR_ARRAY_01bef220[1]
+    CMP EAX,dword ptr [EDX + 0x1bef220] ; 0048e71a | g_PVSCubePointers[1]
         ;   Label: LAB_0048e71a
     JNZ 0x0048e765                      ; 0048e720
         ;   XREF to: 0048e765 (CONDITIONAL_JUMP)  ; LAB_0048e765
@@ -130,7 +130,7 @@ section .text
         ;   Label: LAB_0048e748
     ADD EDI,0x4                         ; 0048e74c
     MOV EAX,dword ptr [EAX]             ; 0048e74f
-    MOV EDX,dword ptr [0x01bef218]      ; 0048e751 | g_INT_01bef218
+    MOV EDX,dword ptr [0x01bef218]      ; 0048e751 | g_PVSDrawnCubeCount
     INC EBP                             ; 0048e757
     MOV dword ptr [EDI + EAX*0x1 + -0x4],EBX ; 0048e758
     CMP EBP,EDX                         ; 0048e75c

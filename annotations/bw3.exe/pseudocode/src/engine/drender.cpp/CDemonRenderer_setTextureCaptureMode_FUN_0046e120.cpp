@@ -13,8 +13,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e12
     this_ptr->texture_capture_enabled = 0;
     return;
   }
-  g_INT_01bdd85c = -1;
-  g_INT_01bdd858 = this_ptr->shadow_pass_active;
+  g_CaptureTextureCount = -1;
+  g_CaptureFaceCount = this_ptr->shadow_pass_active;
   this_ptr->texture_capture_enabled = (enable_advanced_mode != 0) + 1;
   return;
 }

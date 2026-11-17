@@ -23,15 +23,15 @@ void __cdecl ValidateHeapIntegrity(void *ptr)
            ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&
          ((pHVar2 = *(Heap **)(g_INT_02de4e10 + 8), pHVar2 == (Heap *)0x0 ||
           ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&
-       ((pHVar1 = g_Heap_PTR_005c1680, g_Heap_PTR_005c1684 == (Heap *)0x0 ||
-        ((((ptr < g_Heap_PTR_005c1684 ||
-           (pHVar2 = g_Heap_PTR_005c1684,
-           (void *)((int)&g_Heap_PTR_005c1684->heap_size + g_Heap_PTR_005c1684->heap_size) <= ptr))
-          && ((pHVar2 = g_Heap_PTR_005c1684->heap_base, pHVar2 == (Heap *)0x0 ||
-              ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))
-         && ((pHVar2 = g_Heap_PTR_005c1684->next_heap_block, pHVar2 == (Heap *)0x0 ||
-             ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))
-       )) {
+       ((pHVar1 = g_MainHeap, g_SecondaryHeap == (Heap *)0x0 ||
+        ((((ptr < g_SecondaryHeap ||
+           (pHVar2 = g_SecondaryHeap,
+           (void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&
+          ((pHVar2 = g_SecondaryHeap->heap_base, pHVar2 == (Heap *)0x0 ||
+           ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&
+         ((pHVar2 = g_SecondaryHeap->next_heap_block, pHVar2 == (Heap *)0x0 ||
+          ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))
+    {
       while (pHVar2 = pHVar1, pHVar2 != (Heap *)0x0) {
         if ((pHVar2 <= ptr) && (ptr < (void *)((int)&pHVar2->heap_size + pHVar2->heap_size)))
         goto LAB_0056399c;
@@ -41,7 +41,7 @@ void __cdecl ValidateHeapIntegrity(void *ptr)
     else {
 LAB_0056399c:
       CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);
-      if ((pHVar2 < g_Heap_PTR_005c1684) && ((uint)g_INT_005c1688 < pHVar2[1].next_heap_block)) {
+      if ((pHVar2 < g_SecondaryHeap) && ((uint)g_INT_005c1688 < pHVar2[1].next_heap_block)) {
         g_INT_005c1688 = (int)pHVar2[1].next_heap_block;
       }
       g_CHAR_ARRAY_02de5460[0] = '\0';

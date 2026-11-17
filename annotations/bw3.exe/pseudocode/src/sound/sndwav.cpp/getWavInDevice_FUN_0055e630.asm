@@ -10,7 +10,7 @@
 ;   sound_sndmain.cpp_initializeRecordingDevice_FUN_00558a50 at 00558a8e
 ;
 ; Referenced Globals:
-;   int g_INT_00604518 = -0x1
+;   int g_WaveInDeviceID = -0x1
 ;
 ; Called Functions:
 ;   sound_sndwav.cpp_CWavInDevice_close_FUN_0055dda0
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 0055e664
     MOV EAX,dword ptr [ESP + 0x34]      ; 0055e665
         ;   Label: LAB_0055e665
-    MOV [0x00604518],EAX                ; 0055e669 | g_INT_00604518
+    MOV [0x00604518],EAX                ; 0055e669 | g_WaveInDeviceID
     MOV EAX,0x2cf567c                   ; 0055e66e
     ADD ESP,0x30                        ; 0055e673
     RET                                 ; 0055e676

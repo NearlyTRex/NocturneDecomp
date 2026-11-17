@@ -204,9 +204,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_1c8.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_00591530
-                          (&g_CVector3f_007bcc94,
+                          (&g_BrideOffsetPlusX,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           g_INT_ARRAY_007bccdc[1],&CStack_108);
+                           g_BrideIndices[1],&CStack_108);
                 pCVar10 = &CStack_78;
                 CStack_78.x = CStack_108.x;
                 *(uint *)((int)&CStack_78 + (uint)bVar8 * -8 + 4) =
@@ -237,9 +237,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
               fVar11 = 0.4;
               fStack_14 = SStack_27c.damage_amount;
               core_xform_cpp_transformVector3x4_FUN_00591530
-                        (&g_CVector3f_007bcc94,
+                        (&g_BrideOffsetPlusX,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         g_INT_ARRAY_007bccdc[2],&CStack_144);
+                         g_BrideIndices[2],&CStack_144);
               pCVar10 = &CStack_120;
               CStack_120.x = CStack_144.x;
               *(uint *)((int)&CStack_120 + (uint)bVar8 * -8 + 4) =
@@ -295,9 +295,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_240.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_00591530
-                          (&g_CVector3f_007bcc94,
+                          (&g_BrideOffsetPlusX,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           g_INT_ARRAY_007bccdc[2],&CStack_9c);
+                           g_BrideIndices[2],&CStack_9c);
                 pCVar10 = &CStack_6c;
                 CStack_6c.x = CStack_9c.x;
                 *(uint *)((int)&CStack_6c + (uint)bVar8 * -8 + 4) =
@@ -333,9 +333,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_204.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_00591530
-                          (&g_CVector3f_007bcc94,
+                          (&g_BrideOffsetPlusX,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           g_INT_ARRAY_007bccdc[1],&CStack_114);
+                           g_BrideIndices[1],&CStack_114);
                 pCVar10 = &CStack_90;
                 CStack_90.x = CStack_114.x;
                 *(uint *)((int)&CStack_90 + (uint)bVar8 * -8 + 4) =
@@ -456,19 +456,19 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
     core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
     if ((this_ptr->base).pool_me == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00427060
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_INT_ARRAY_007bccdc[5],0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_BrideIndices[5],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00427060
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_INT_ARRAY_007bccdc[3],0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_BrideIndices[3],0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00427060
-                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_INT_ARRAY_007bccdc[6],0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_BrideIndices[6],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00427060
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_INT_ARRAY_007bccdc[4],0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_BrideIndices[4],0.2);
       }
       core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130
-                ((CCharacter *)this_ptr,this_ptr->part_indices[8],g_INT_ARRAY_007bccdc[0],0.7);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[8],g_BrideIndices[0],0.7);
       core_charactr_cpp_CCharacter_processDamageDecals_FUN_00426f30((CCharacter *)this_ptr);
     }
   }

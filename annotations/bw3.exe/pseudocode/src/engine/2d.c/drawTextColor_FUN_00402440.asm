@@ -15,8 +15,8 @@
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 00402562
 ;
 ; Referenced Globals:
-;   int g_INT_005f076c = 0x1
-;   int g_INT_005f0770 = 0xf8
+;   int g_TextWrapEnabled = 0x1
+;   int g_CurrentTextColor = 0xf8
 ;   int g_INT_01c6b5b0
 ;   int g_INT_01c6b5b4
 ;
@@ -35,11 +35,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00402443
     MOV EAX,dword ptr [ESP + 0x14]      ; 00402447
     MOV ECX,dword ptr [ESP + 0x18]      ; 0040244b
-    CMP dword ptr [0x005f076c],0x0      ; 0040244f | g_INT_005f076c
+    CMP dword ptr [0x005f076c],0x0      ; 0040244f | g_TextWrapEnabled
     JZ 0x0040247e                       ; 00402456
         ;   XREF to: 0040247e (CONDITIONAL_JUMP)  ; LAB_0040247e
     PUSH EBX                            ; 00402458
-    MOV EBX,dword ptr [0x005f0770]      ; 00402459 | g_INT_005f0770
+    MOV EBX,dword ptr [0x005f0770]      ; 00402459 | g_CurrentTextColor
     PUSH EBX                            ; 0040245f
     MOV ESI,dword ptr [0x01c6b5b4]      ; 00402460 | g_INT_01c6b5b4
     PUSH ESI                            ; 00402466
@@ -56,7 +56,7 @@ section .text
     POP EDI                             ; 0040247b
     POP ESI                             ; 0040247c
     RET                                 ; 0040247d
-    MOV ESI,dword ptr [0x005f0770]      ; 0040247e | g_INT_005f0770
+    MOV ESI,dword ptr [0x005f0770]      ; 0040247e | g_CurrentTextColor
         ;   Label: LAB_0040247e
     PUSH ESI                            ; 00402484
     MOV EDI,dword ptr [0x01c6b5b4]      ; 00402485 | g_INT_01c6b5b4

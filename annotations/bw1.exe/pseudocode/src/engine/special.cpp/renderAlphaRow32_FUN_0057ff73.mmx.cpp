@@ -19,10 +19,10 @@ __asm {
         shr EBP,0x8
     LAB_0057ff8c:
         movzx EAX,byte ptr [ESI]
-        movd MM0,dword ptr [g_UINT_ARRAY_01c4e3d4 + EAX*0x4]
+        movd MM0,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         movzx EAX,byte ptr [EBX]
         imul EAX,EBP
-        cmp dword ptr [g_INT_01c51d0c],0x1
+        cmp dword ptr [g_BlendMode],0x1
         jz LAB_0057ffb4
         cmp EAX,0xfde8
         jge LAB_0057fffe
@@ -36,7 +36,7 @@ __asm {
         pxor MM2,qword ptr [0x00624fc8]
         movd MM3,dword ptr [EDI]
         punpcklbw MM3,MM7
-        cmp dword ptr [g_INT_01c51d0c],0x1
+        cmp dword ptr [g_BlendMode],0x1
         jz LAB_0057ffed
         pmullw MM0,MM1
         pmullw MM3,MM2

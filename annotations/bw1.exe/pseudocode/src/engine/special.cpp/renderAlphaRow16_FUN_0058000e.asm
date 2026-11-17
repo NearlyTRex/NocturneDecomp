@@ -15,19 +15,19 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660 at 0040d809
 ;
 ; Referenced Globals:
-;   _MMX_INTEGER g_MMX_INTEGER_00623f20
-;   _MMX_INTEGER g_MMX_INTEGER_00623f28
-;   _MMX_INTEGER g_MMX_INTEGER_00623f30
-;   qword g_QWORD_00623f38 = 0xf80000
-;   qword g_QWORD_00623f58 = 0xfc00
-;   qword g_QWORD_00623f78 = 0xf8
-;   qword g_QWORD_00623f80 = 0x8
-;   qword g_QWORD_00623fa0 = 0x5
-;   qword g_QWORD_00623fc0 = 0x3
+;   _MMX_INTEGER g_RedMask16
+;   _MMX_INTEGER g_GreenMask16
+;   _MMX_INTEGER g_BlueMask16
+;   qword g_RedMask32 = 0xf80000
+;   qword g_GreenMask32 = 0xfc00
+;   qword g_BlueMask32 = 0xf8
+;   qword g_TotalDitherShift = 0x8
+;   qword g_GreenBlueDitherShift = 0x5
+;   qword g_BlueBitShift = 0x3
 ;   qword[512] g_QWORD_ARRAY_006247d0
 ;   undefined4 g_QWORD_ARRAY_006247d0[255]
-;   uint[256] g_UINT_ARRAY_01c4e3d4
-;   int g_INT_01c51d0c
+;   uint[256] g_Hardware32BitPalette
+;   int g_BlendMode
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
     SHR EBP,0x8                         ; 00580024
     MOVZX EAX,byte ptr [ESI]            ; 00580027
         ;   Label: LAB_00580027
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c4e3d4] ; 0058002a | g_UINT_ARRAY_01c4e3d4
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c4e3d4] ; 0058002a | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 00580032
     IMUL EAX,EBP                        ; 00580035
-    CMP dword ptr [0x01c51d0c],0x1      ; 00580038 | g_INT_01c51d0c
+    CMP dword ptr [0x01c51d0c],0x1      ; 00580038 | g_BlendMode
     JZ 0x00580057                       ; 0058003f
         ;   XREF to: 00580057 (CONDITIONAL_JUMP)  ; LAB_00580057
     CMP EAX,0xfde8                      ; 00580041
@@ -66,18 +66,18 @@ section .text
     PXOR MM2,qword ptr [0x00624fc8]     ; 00580068 | g_QWORD_ARRAY_006247d0[255]
     MOVZX EAX,word ptr [EDI]            ; 0058006f
     MOVD MM3,EAX                        ; 00580072
-    PAND MM3,qword ptr [0x00623f30]     ; 00580075 | g_MMX_INTEGER_00623f30
-    PSLLQ MM3,qword ptr [0x00623fc0]    ; 0058007c | g_QWORD_00623fc0
+    PAND MM3,qword ptr [0x00623f30]     ; 00580075 | g_BlueMask16
+    PSLLQ MM3,qword ptr [0x00623fc0]    ; 0058007c | g_BlueBitShift
     MOVD MM4,EAX                        ; 00580083
-    PAND MM4,qword ptr [0x00623f28]     ; 00580086 | g_MMX_INTEGER_00623f28
-    PSLLQ MM4,qword ptr [0x00623fa0]    ; 0058008d | g_QWORD_00623fa0
+    PAND MM4,qword ptr [0x00623f28]     ; 00580086 | g_GreenMask16
+    PSLLQ MM4,qword ptr [0x00623fa0]    ; 0058008d | g_GreenBlueDitherShift
     POR MM3,MM4                         ; 00580094
     MOVD MM5,EAX                        ; 00580097
-    PAND MM5,qword ptr [0x00623f20]     ; 0058009a | g_MMX_INTEGER_00623f20
-    PSLLQ MM5,qword ptr [0x00623f80]    ; 005800a1 | g_QWORD_00623f80
+    PAND MM5,qword ptr [0x00623f20]     ; 0058009a | g_RedMask16
+    PSLLQ MM5,qword ptr [0x00623f80]    ; 005800a1 | g_TotalDitherShift
     POR MM3,MM5                         ; 005800a8
     PUNPCKLBW MM3,MM7                   ; 005800ab
-    CMP dword ptr [0x01c51d0c],0x1      ; 005800ae | g_INT_01c51d0c
+    CMP dword ptr [0x01c51d0c],0x1      ; 005800ae | g_BlendMode
     JZ 0x005800c9                       ; 005800b5
         ;   XREF to: 005800c9 (CONDITIONAL_JUMP)  ; LAB_005800c9
     PMULLW MM0,MM1                      ; 005800b7
@@ -96,12 +96,12 @@ section .text
     MOVQ MM2,MM0                        ; 005800da
         ;   Label: LAB_005800da
     MOVQ MM4,MM0                        ; 005800dd
-    PAND MM0,qword ptr [0x00623f78]     ; 005800e0 | g_QWORD_00623f78
-    PAND MM2,qword ptr [0x00623f58]     ; 005800e7 | g_QWORD_00623f58
-    PAND MM4,qword ptr [0x00623f38]     ; 005800ee | g_QWORD_00623f38
-    PSRLQ MM0,qword ptr [0x00623fc0]    ; 005800f5 | g_QWORD_00623fc0
-    PSRLQ MM2,qword ptr [0x00623fa0]    ; 005800fc | g_QWORD_00623fa0
-    PSRLQ MM4,qword ptr [0x00623f80]    ; 00580103 | g_QWORD_00623f80
+    PAND MM0,qword ptr [0x00623f78]     ; 005800e0 | g_BlueMask32
+    PAND MM2,qword ptr [0x00623f58]     ; 005800e7 | g_GreenMask32
+    PAND MM4,qword ptr [0x00623f38]     ; 005800ee | g_RedMask32
+    PSRLQ MM0,qword ptr [0x00623fc0]    ; 005800f5 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x00623fa0]    ; 005800fc | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x00623f80]    ; 00580103 | g_TotalDitherShift
     POR MM0,MM2                         ; 0058010a
     POR MM0,MM4                         ; 0058010d
     MOVD EAX,MM0                        ; 00580110

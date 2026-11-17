@@ -54,10 +54,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00477
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00446510(this_ptr_00);
     }
     puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
-    *puVar1 = *puVar1 & (g_UCHAR_ARRAY_00613888[local_40] ^ 0xff);
+    *puVar1 = *puVar1 & (g_VoxelYBitMasks[local_40] ^ 0xff);
     puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
     *puVar1 = *puVar1 | this_ptr_00->voxel_buffer2->voxels[local_38][local_3c] &
-                        g_UCHAR_ARRAY_00613888[local_40];
+                        g_VoxelYBitMasks[local_40];
     return;
   }
   return;

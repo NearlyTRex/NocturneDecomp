@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 127,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 86,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 310
+    "total_lines": 309
   },
   "cross_references": [
     {
@@ -97,79 +97,79 @@
     },
     {
       "addr": "026757d0",
-      "name": "g_CVector3f_ARRAY_026757d0",
+      "name": "g_FloatVertexArray",
       "type": "CVector3f[5000]",
       "value": null
     },
     {
       "addr": "026757d4",
-      "name": "g_CVector3f_ARRAY_026757d0[0].y",
+      "name": "g_FloatVertexArray[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757d8",
-      "name": "g_CVector3f_ARRAY_026757d0[0].z",
+      "name": "g_FloatVertexArray[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757dc",
-      "name": "g_CVector3f_ARRAY_026757d0[1].x",
+      "name": "g_FloatVertexArray[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757e0",
-      "name": "g_CVector3f_ARRAY_026757d0[1].y",
+      "name": "g_FloatVertexArray[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757e4",
-      "name": "g_CVector3f_ARRAY_026757d0[1].z",
+      "name": "g_FloatVertexArray[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02684230",
-      "name": "g_UCHAR_02684230",
+      "name": "g_FloatVertexArrayInitialized",
       "type": "uchar",
       "value": null
     },
     {
       "addr": "0268ced8",
-      "name": "g_INT_0268ced8",
+      "name": "g_DeformableModelRayHitPartIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "0268cedc",
-      "name": "g_CVector3f_0268cedc",
+      "name": "g_DeformableModelRayHitNormal",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "0268cee0",
-      "name": "g_CVector3f_0268cedc.y",
+      "name": "g_DeformableModelRayHitNormal.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0268cee4",
-      "name": "g_CVector3f_0268cedc.z",
+      "name": "g_DeformableModelRayHitNormal.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0268cee8",
-      "name": "g_INT_0268cee8",
+      "name": "g_DeformableModelRayHitLodIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "0268ceec",
-      "name": "g_INT_0268ceec",
+      "name": "g_DeformableModelRayHitTriangleIndex",
       "type": "int",
       "value": null
     }
@@ -438,7 +438,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 67,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {",
@@ -446,7 +446,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 51,
+      "line": 50,
       "match": "(int *)(local_20 + 0xc24)",
       "severity": "moderate",
       "text": "iVar2 = *(int *)(local_20 + 0xc24) + local_28;",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 57,
+      "line": 56,
       "match": "(int *)(local_1c + 0x7c)",
       "severity": "moderate",
       "text": "iVar2 = *(int *)(local_1c + 0x7c);",

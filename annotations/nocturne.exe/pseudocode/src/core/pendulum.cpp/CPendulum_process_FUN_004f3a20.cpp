@@ -19,14 +19,14 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *this_pt
   
   if (this_ptr->moving == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (g_CEventList_PTR_005b7650,this_ptr->start_event);
+                      (g_CEventListPtr,this_ptr->start_event);
     if (iVar1 == 0) {
       return;
     }
     this_ptr->moving = 1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->stop_event);
+                    (g_CEventListPtr,this_ptr->stop_event);
   if ((iVar1 != 0) && (this_ptr->decay != 1.0)) {
     this_ptr->decay_timer = 0.0;
     this_ptr->decay = 1.0;
@@ -54,9 +54,8 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *this_pt
       }
       actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar3);
       if ((this_ptr->kill_hero == 0) ||
-         (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (actor_ptr,g_CHeroActorType_01cae0ec.name_hash),
-         pCVar2 == (CDemonActor *)0x0)) break;
+         (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,g_CHeroClassInfo.name_hash)
+         , pCVar2 == (CDemonActor *)0x0)) break;
       core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60
                 (this_ptr,actor_ptr,pCVar2,(CDemonActor *)0x0);
 LAB_004f3aee:
@@ -64,8 +63,7 @@ LAB_004f3aee:
       iVar3 = iVar3 + 4;
     }
     if ((this_ptr->kill_enemy == 0) ||
-       (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (actor_ptr,g_CEnemyActorType_01bcdebc.name_hash),
+       (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,g_CEnemyClassInfo.name_hash),
        pCVar2 == (CDemonActor *)0x0)) goto LAB_004f3aee;
     core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60
               (this_ptr,actor_ptr,(CDemonActor *)0x0,pCVar2);

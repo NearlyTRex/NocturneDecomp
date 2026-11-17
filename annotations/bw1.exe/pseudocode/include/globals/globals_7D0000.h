@@ -29,10 +29,10 @@ extern CDemonActorType g_CCurtainClassInfo;
 extern CVector3f g_CVector3f_ARRAY_007dc71c[100];
 
 // SCollisionInfo[100]
-extern SCollisionInfo g_SCollisionInfo_ARRAY_007dcbcc[100];
+extern SCollisionInfo g_CurtainCollisionInfos[100];
 
 // char[500000]
-extern char g_CHAR_ARRAY_007ddbb4[500000];
+extern char g_CameraLoadImageReadBuffer[500000];
 
 // int
 extern int g_INT_007dc5b0;
@@ -41,9 +41,9 @@ extern int g_INT_007dc5b8;
 extern int g_INT_007dc5c0;
 extern int g_INT_007dc5e0;
 extern int g_INT_007dc5e8;
-extern int g_INT_007dc718;
+extern int g_CurtainCollisionCount;
 extern int g_INT_007ddbb0;
 
 // int[17]
-extern int g_INT_ARRAY_007db570[17];
+extern int g_ColonelIndices[17];
 

@@ -20,7 +20,7 @@
 ;   TerminatedCString s_ammoType_00597bd0
 ;   TerminatedCString s_descriptiveName_00597bd9
 ;   TerminatedCString s_simTimer_00597be9
-;   int INT_005c1590 = 0x7
+;   int g_CWeaponClassVersion = 0x7
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -47,12 +47,12 @@ section .text
     PUSH EAX                            ; 00554192
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 00554193
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00(CKeyFramedModelInstance * model_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005c1590]      ; 00554198 | INT_005c1590
+    MOV EDX,dword ptr [0x005c1590]      ; 00554198 | g_CWeaponClassVersion
     ADD ESP,0x8                         ; 0055419e
     CMP EDX,0x3                         ; 005541a1
     JGE 0x00554217                      ; 005541a4
         ;   XREF to: 00554217 (CONDITIONAL_JUMP)  ; LAB_00554217
-    CMP dword ptr [0x005c1590],0x4      ; 005541a6 | INT_005c1590
+    CMP dword ptr [0x005c1590],0x4      ; 005541a6 | g_CWeaponClassVersion
         ;   Label: LAB_005541a6
     JL 0x005541eb                       ; 005541ad
         ;   XREF to: 005541eb (CONDITIONAL_JUMP)  ; LAB_005541eb
@@ -74,7 +74,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 005541e3
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 005541e8
-    CMP dword ptr [0x005c1590],0x5      ; 005541eb | INT_005c1590
+    CMP dword ptr [0x005c1590],0x5      ; 005541eb | g_CWeaponClassVersion
         ;   Label: LAB_005541eb
     JNZ 0x00554206                      ; 005541f2
         ;   XREF to: 00554206 (CONDITIONAL_JUMP)  ; LAB_00554206
@@ -84,7 +84,7 @@ section .text
     CALL core_actor.cpp_archiveLocalizedString_FUN_0040c7f0 ; 005541fe
         ;   XREF to: 0040c7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveLocalizedString_FUN_0040c7f0(char * string_buffer, char * localization_key)
     ADD ESP,0x8                         ; 00554203
-    CMP dword ptr [0x005c1590],0x7      ; 00554206 | INT_005c1590
+    CMP dword ptr [0x005c1590],0x7      ; 00554206 | g_CWeaponClassVersion
         ;   Label: LAB_00554206
     JGE 0x00554230                      ; 0055420d
         ;   XREF to: 00554230 (CONDITIONAL_JUMP)  ; LAB_00554230

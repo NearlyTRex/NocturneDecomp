@@ -43,12 +43,12 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
-;   int g_INT_0061b4ac = 0x7f
+;   int g_InputKeyMask = 0x7f
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3f538
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
-;   void* g_PTR_01c3f5d0
+;   void* g_ActiveControl
 ;   int g_INT_01c4f008
 ;   ... and 7 more
 ;
@@ -95,7 +95,7 @@ section .text
     PUSH 0x6a                           ; 004946ca
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 004946cc
     PUSH EAX                            ; 004946d2
-    MOV dword ptr [0x01c3f538],EDX      ; 004946d3 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 004946d3 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 004946d9
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004946de
@@ -298,7 +298,7 @@ section .text
     PUSH EDI                            ; 004948dd
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840 ; 004948de
         ;   XREF to: 00496840 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
-    MOV EAX,[0x01c4f010]                ; 004948e3 | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 004948e3 | g_ClipRight
     SUB EAX,dword ptr [0x01c4f008]      ; 004948e8 | g_INT_01c4f008
     LEA EDX,[EAX + 0x1]                 ; 004948ee
     SUB EDX,EBX                         ; 004948f1
@@ -387,11 +387,11 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 00494a31
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
         ;   Label: LAB_00494a31
-    MOV EAX,[0x0061b4ac]                ; 00494a36 | g_INT_0061b4ac
+    MOV EAX,[0x0061b4ac]                ; 00494a36 | g_InputKeyMask
     MOV EDI,0x7f                        ; 00494a3b
     MOV dword ptr [ESP + 0x104],EAX     ; 00494a40
     XOR EAX,EAX                         ; 00494a47
-    MOV dword ptr [0x0061b4ac],EDI      ; 00494a49 | g_INT_0061b4ac
+    MOV dword ptr [0x0061b4ac],EDI      ; 00494a49 | g_InputKeyMask
     MOV dword ptr [ESP + 0x140],EAX     ; 00494a4f
     LEA EAX,[EBP + -0x1]                ; 00494a56
     MOV EDI,0xfffffffe                  ; 00494a59
@@ -444,7 +444,7 @@ section .text
         ;   XREF to: 00494c0d (CONDITIONAL_JUMP)  ; LAB_00494c0d
     XOR EDX,EDX                         ; 00494ad4
     MOV dword ptr [ESP + 0x140],EDX     ; 00494ad6
-    CMP dword ptr [0x02c9be70],0x0      ; 00494add | g_INT_02c9be70
+    CMP dword ptr [0x02c9be70],0x0      ; 00494add | g_InputDisabled
         ;   Label: LAB_00494add
     JNZ 0x00494c28                      ; 00494ae4
         ;   XREF to: 00494c28 (CONDITIONAL_JUMP)  ; LAB_00494c28
@@ -581,7 +581,7 @@ section .text
         ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 00494c48
     MOV EAX,dword ptr [ESP + 0x104]     ; 00494c4b
-    MOV [0x0061b4ac],EAX                ; 00494c52 | g_INT_0061b4ac
+    MOV [0x0061b4ac],EAX                ; 00494c52 | g_InputKeyMask
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 00494c57
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV EBX,dword ptr [0x0061abc0]      ; 00494c5c | g_CEditorToolsPtr
@@ -611,7 +611,7 @@ section .text
     JZ 0x00494c94                       ; 00494c90
         ;   XREF to: 00494c94 (CONDITIONAL_JUMP)  ; LAB_00494c94
     MOV EDI,EBX                         ; 00494c92
-    CMP ESI,dword ptr [0x01c3f5d0]      ; 00494c94 | g_PTR_01c3f5d0
+    CMP ESI,dword ptr [0x01c3f5d0]      ; 00494c94 | g_ActiveControl
         ;   Label: LAB_00494c94
     JNZ 0x00494ca3                      ; 00494c9a
         ;   XREF to: 00494ca3 (CONDITIONAL_JUMP)  ; LAB_00494ca3

@@ -26,7 +26,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005723d0(CTerrain *this_ptr,in
   int local_18;
   
   bVar4 = 0;
-  if (g_CTerrain_02cfd8b8.initialized == 0) {
+  if (g_CTerrainInstance.initialized == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0

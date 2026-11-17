@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 157,
+    "complexity_score": 156,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 116,
     "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_strcpy"
     ],
-    "total_lines": 391
+    "total_lines": 390
   },
   "cross_references": [
     {
@@ -187,7 +187,7 @@
     },
     {
       "addr": "007e2b34",
-      "name": "g_CKeyFramedModelInstance_007e2b34",
+      "name": "g_StakeModelInstance",
       "type": "CKeyFramedModelInstance",
       "value": null
     },
@@ -362,7 +362,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 96,
+      "line": 95,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -370,7 +370,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 77,
+      "line": 76,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CCharacter *)&(pCVar4->model).bone_origins[0x14].y;",
@@ -378,7 +378,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 78,
+      "line": 77,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 0x18);",

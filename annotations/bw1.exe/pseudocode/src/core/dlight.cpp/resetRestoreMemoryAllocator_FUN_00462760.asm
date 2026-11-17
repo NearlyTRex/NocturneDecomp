@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f1b0
 ;
 ; Referenced Globals:
-;   uint g_UINT_01b2d370
+;   uint g_ShadowRestoreAllocator
 ;
 ; *****************************************************************************
 
@@ -18,6 +18,6 @@ section .text
 
     XOR EDX,EDX                         ; 00462760
         ;   Label: core_dlight.cpp_resetRestoreMemoryAllocator_FUN_00462760
-    MOV dword ptr [0x01b2d370],EDX      ; 00462762 | g_UINT_01b2d370
+    MOV dword ptr [0x01b2d370],EDX      ; 00462762 | g_ShadowRestoreAllocator
     RET                                 ; 00462768
 

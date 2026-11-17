@@ -27,7 +27,7 @@ void __cdecl CSpawner::setup(CSpawner *this_ptr);
 
 // Original: core_spawner.cpp_CSpawner_process_FUN_00563970
 // Address: 00563970
-void __cdecl CSpawner::process(CSpawner *this_ptr,float param_2);
+void __cdecl CSpawner::process(CSpawner *this_ptr,float delta_time);
 
 // Original: core_spawner.cpp_CSpawner_renderOpaque_FUN_00563e40
 // Address: 00563e40

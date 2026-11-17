@@ -77,10 +77,10 @@ section .text
     MOV EBP,ESP                         ; 00521e14
     SUB ESP,0x474                       ; 00521e16
     AND ESP,0xfffffff8                  ; 00521e1c
-    FLD double ptr [0x005bea88]         ; 00521e1f | g_DOUBLE_005bea88
+    FLD double ptr [0x005bea88]         ; 00521e1f | g_Cached3DDistanceFactorInverse
     FLD float ptr [0x005a216c]          ; 00521e25 | FLOAT_005a216c
     FMUL ST1                            ; 00521e2b
-    FLD float ptr [0x02dbd370]          ; 00521e2d | g_FLOAT_02dbd370
+    FLD float ptr [0x02dbd370]          ; 00521e2d | g_SoundReferenceVolumeDistance
     FMUL ST2                            ; 00521e33
     FLD float ptr [0x005a2170]          ; 00521e35 | FLOAT_005a2170
     MOV EAX,dword ptr [EBP + 0x14]      ; 00521e3b

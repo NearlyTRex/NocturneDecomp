@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_strangerCannotDie_00595fe2
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710
@@ -20,7 +20,7 @@ section .text
 
     PUSH 0x595fe2                       ; 00540890 | = "strangerCannotDie"
         ;   Label: core_stranger.cpp_CStranger_getDeathState_FUN_00540890
-    MOV EDX,dword ptr [0x005b7650]      ; 00540895 | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00540895 | g_CEventListPtr
     PUSH EDX                            ; 0054089b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0054089c
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

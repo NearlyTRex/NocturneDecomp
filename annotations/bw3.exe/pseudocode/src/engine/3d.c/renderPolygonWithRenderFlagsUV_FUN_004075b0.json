@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 90,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 61,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk"
     ],
-    "total_lines": 184
+    "total_lines": 185
   },
   "cross_references": [],
   "function": {
@@ -65,31 +65,31 @@
     },
     {
       "addr": "01c6b5c8",
-      "name": "g_INT_01c6b5c8",
+      "name": "g_AdvancedClippingEnabled",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "g_PTR_01c6b5cc",
+      "name": "g_ScanlineRenderFunc",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2a0",
-      "name": "g_INT_01c6e2a0",
+      "name": "g_MMXSupported",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "g_INT_01c6e2b8",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     }
@@ -193,9 +193,9 @@
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(int *)((int)g_INT_ARRAY_00730418",
+      "match": "(int *)((int)g_ProcessedVertexIndices",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_00730418 + iVar3) = iVar1;",
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar3) = iVar1;",
       "type": "pointer_cast"
     },
     {

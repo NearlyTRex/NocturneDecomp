@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 80,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
     "total_lines": 74
   },
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_00469be0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_00469be0(CDemonRenderer *this_ptr,int param_2)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_00469be0(CDemonRenderer *this_ptr,int polygon)"
   },
   "function_calls": [
     {
@@ -43,19 +42,19 @@
   "globals": [
     {
       "addr": "01c35e6c",
-      "name": "g_PTR_01c35e6c",
+      "name": "g_ScanlineRenderFunc",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "g_BIT_INTEGER32_01c38b54",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "g_INT_01c38b58",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     }
@@ -131,7 +130,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "polygon",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -140,44 +139,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_00469be0(CDemonRenderer *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(param_2 + 8)), iVar1 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 18,
       "match": "._1_3_",
       "severity": "mild",
-      "text": "g_BIT_INTEGER32_01c38b54.dword._1_3_ = 0;",
+      "text": "g_RenderStateFlags.dword._1_3_ = 0;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)(param_2 + 4),(int *)(param_2 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)(param_2 + 4),(int *)(param_2 + 0x18));",
-      "type": "unnamed_param"
     }
   ]
 }

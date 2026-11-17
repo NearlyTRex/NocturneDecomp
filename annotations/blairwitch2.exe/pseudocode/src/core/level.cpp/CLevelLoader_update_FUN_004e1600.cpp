@@ -48,7 +48,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
                  this_ptr->viewport_width,this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
-              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+              (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
     local_1c = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
       local_1c = 84.0;
@@ -56,7 +56,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
               (g_CDemonRenderer_PTR_0060b280,local_1c);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+              (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
     local_44.x = 0.0;
     local_44.y = 0.0;
     local_44.z = 36.0;
@@ -134,7 +134,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
       engine_drender_cpp_popViewport_FUN_0046b740();
     }
     g_CDemonSetPtr->rendering_mode = 0;
-    local_18 = g_CBitFont_PTR_01511cc0;
+    local_18 = g_ThemeFont;
     iVar6 = (g_INT_006141b8 * 0x240) / 0x280;
     iVar7 = (g_INT_006141bc * 0x18) / 0x1e0;
     iVar3 = (g_INT_006141b8 << 5) / 0x280;

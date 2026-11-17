@@ -23,27 +23,27 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00594bb0(void)
   
   bVar9 = 0;
   iStack_14 = 0;
-  if (0 < g_INT_02665a64) {
-    vertex_a = g_SRenderVertex_ARRAY_0266666c;
+  if (0 < g_ClipVertexCountStage3) {
+    vertex_a = g_ClipVertexBufferStage3;
     do {
       uVar4 = iStack_14 + 1;
-      if (uVar4 == g_INT_02665a64) {
-        uVar4 = uVar4 ^ g_INT_02665a64;
+      if (uVar4 == g_ClipVertexCountStage3) {
+        uVar4 = uVar4 ^ g_ClipVertexCountStage3;
       }
       bVar3 = (vertex_a->projected_vertex).transformed_z <=
               (vertex_a->projected_vertex).transformed_y;
-      if (g_SRenderVertex_ARRAY_0266666c[uVar4].projected_vertex.transformed_z <=
-          g_SRenderVertex_ARRAY_0266666c[uVar4].projected_vertex.transformed_y) {
+      if (g_ClipVertexBufferStage3[uVar4].projected_vertex.transformed_z <=
+          g_ClipVertexBufferStage3[uVar4].projected_vertex.transformed_y) {
         bVar3 = bVar3 | 2;
       }
       switch(bVar3) {
       case 0:
-        pSVar7 = g_SRenderVertex_ARRAY_02666c6c + g_INT_02665a68;
+        pSVar7 = g_ClipVertexBufferStage4 + g_ClipVertexCountStage4;
         iVar5 = 0x30;
         pSVar6 = vertex_a;
         pSVar8 = pSVar7;
         if (((uint)pSVar7 & 7) != 0) {
-          pSVar8 = (SRenderVertex *)(g_INT_02665a68 * 0x30 + 0x2666c70 + (uint)bVar9 * -8);
+          pSVar8 = (SRenderVertex *)(g_ClipVertexCountStage4 * 0x30 + 0x2666c70 + (uint)bVar9 * -8);
           pSVar6 = (SRenderVertex *)((int)vertex_a + (uint)bVar9 * -8 + 4);
           (pSVar7->projected_vertex).transformed_x = (vertex_a->projected_vertex).transformed_x;
           iVar5 = 0x2c;
@@ -65,21 +65,21 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00594bb0(void)
                  *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
           }
         }
-        g_INT_02665a68 = g_INT_02665a68 + 1;
+        g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
         break;
       case 1:
         core_xform_cpp_clipInterpolateTopPlane_FUN_00594730
-                  (g_SRenderVertex_ARRAY_0266666c + uVar4,vertex_a,
-                   g_SRenderVertex_ARRAY_02666c6c + g_INT_02665a68);
-        g_INT_02665a68 = g_INT_02665a68 + 1;
+                  (g_ClipVertexBufferStage3 + uVar4,vertex_a,
+                   g_ClipVertexBufferStage4 + g_ClipVertexCountStage4);
+        g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
         break;
       case 2:
-        pSVar7 = g_SRenderVertex_ARRAY_02666c6c + g_INT_02665a68;
+        pSVar7 = g_ClipVertexBufferStage4 + g_ClipVertexCountStage4;
         iVar5 = 0x30;
         pSVar6 = vertex_a;
         pSVar8 = pSVar7;
         if (((uint)pSVar7 & 7) != 0) {
-          pSVar8 = (SRenderVertex *)(g_INT_02665a68 * 0x30 + 0x2666c70 + (uint)bVar9 * -8);
+          pSVar8 = (SRenderVertex *)(g_ClipVertexCountStage4 * 0x30 + 0x2666c70 + (uint)bVar9 * -8);
           pSVar6 = (SRenderVertex *)((int)vertex_a + (uint)bVar9 * -8 + 4);
           (pSVar7->projected_vertex).transformed_x = (vertex_a->projected_vertex).transformed_x;
           iVar5 = 0x2c;
@@ -101,15 +101,15 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00594bb0(void)
                  *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
           }
         }
-        g_INT_02665a68 = g_INT_02665a68 + 1;
+        g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
         core_xform_cpp_clipInterpolateTopPlane_FUN_00594730
-                  (vertex_a,g_SRenderVertex_ARRAY_0266666c + uVar4,
-                   g_SRenderVertex_ARRAY_02666c6c + g_INT_02665a68);
-        g_INT_02665a68 = g_INT_02665a68 + 1;
+                  (vertex_a,g_ClipVertexBufferStage3 + uVar4,
+                   g_ClipVertexBufferStage4 + g_ClipVertexCountStage4);
+        g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
       }
       iStack_14 = iStack_14 + 1;
       vertex_a = vertex_a + 1;
-    } while (iStack_14 < g_INT_02665a64);
+    } while (iStack_14 < g_ClipVertexCountStage3);
   }
   return;
 }

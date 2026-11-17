@@ -17,7 +17,7 @@
 ;   TerminatedCString s_DjienInvulnerable_005d8ebf
 ;   double g_DOUBLE_005d8ed8 = 0.950000000000000
 ;   float g_FLOAT_005fea28 = 3.666000
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -62,7 +62,7 @@ section .text
     JZ 0x00461411                       ; 004613fb
         ;   XREF to: 00461411 (CONDITIONAL_JUMP)  ; LAB_00461411
     PUSH 0x5d8e71                       ; 004613fd | = "ShotDjienWithPistol"
-    MOV EBX,dword ptr [0x0061b4d0]      ; 00461402 | g_CEventList_PTR_0061b4d0
+    MOV EBX,dword ptr [0x0061b4d0]      ; 00461402 | g_CEventListPtr
     PUSH EBX                            ; 00461408
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00461409
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -78,7 +78,7 @@ section .text
     JZ 0x0046143a                       ; 00461424
         ;   XREF to: 0046143a (CONDITIONAL_JUMP)  ; LAB_0046143a
     PUSH 0x5d8e8c                       ; 00461426 | = "ShotDjienWithRifle"
-    MOV EBP,dword ptr [0x0061b4d0]      ; 0046142b | g_CEventList_PTR_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 0046142b | g_CEventListPtr
     PUSH EBP                            ; 00461431
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00461432
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -94,14 +94,14 @@ section .text
     JZ 0x00461463                       ; 0046144d
         ;   XREF to: 00461463 (CONDITIONAL_JUMP)  ; LAB_00461463
     PUSH 0x5d8ea9                       ; 0046144f | = "ShotDjienWithLightgun"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00461454 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00461454 | g_CEventListPtr
     PUSH EDX                            ; 0046145a
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0046145b
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00461460
     PUSH 0x5d8ebf                       ; 00461463 | = "DjienInvulnerable"
         ;   Label: LAB_00461463
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00461468 | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00461468 | g_CEventListPtr
     PUSH ECX                            ; 0046146e
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0046146f
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

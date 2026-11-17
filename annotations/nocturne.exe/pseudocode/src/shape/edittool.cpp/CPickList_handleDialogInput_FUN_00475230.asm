@@ -14,9 +14,9 @@
 ;   double DOUBLE_0057ee22 = 294912
 ;   int g_LastClickTimestamp
 ;   int g_LastClickItemIndex
-;   int g_INT_01bd1d8c
-;   int g_INT_01bd1d90
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01bd1d94
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -115,8 +115,8 @@ section .text
     MOV dword ptr [EBX + 0x118],EDX     ; 00475316
     MOV ECX,dword ptr [0x01c00c58]      ; 0047531c | g_ClipLeft
         ;   Label: LAB_0047531c
-    MOV EAX,[0x01bd1d8c]                ; 00475322 | g_INT_01bd1d8c
-    MOV EDX,dword ptr [0x01bd1d90]      ; 00475327 | g_INT_01bd1d90
+    MOV EAX,[0x01bd1d8c]                ; 00475322 | g_MouseX
+    MOV EDX,dword ptr [0x01bd1d90]      ; 00475327 | g_MouseY
     CMP EAX,ECX                         ; 0047532d
     JGE 0x00475333                      ; 0047532f
         ;   XREF to: 00475333 (CONDITIONAL_JUMP)  ; LAB_00475333
@@ -144,14 +144,14 @@ section .text
     PUSH EAX                            ; 00475358
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 00475359
         ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
-    MOV AH,byte ptr [0x01bd1d94]        ; 0047535e | g_BIT_INTEGER32_01bd1d94
+    MOV AH,byte ptr [0x01bd1d94]        ; 0047535e | g_MouseButtonFlags
     ADD ESP,0x8                         ; 00475364
     TEST AH,0x1                         ; 00475367
     JZ 0x004753ea                       ; 0047536a
         ;   XREF to: 004753ea (CONDITIONAL_JUMP)  ; LAB_004753ea
-    MOV ESI,dword ptr [0x01bd1d90]      ; 00475370 | g_INT_01bd1d90
+    MOV ESI,dword ptr [0x01bd1d90]      ; 00475370 | g_MouseY
     PUSH ESI                            ; 00475376
-    MOV EDI,dword ptr [0x01bd1d8c]      ; 00475377 | g_INT_01bd1d8c
+    MOV EDI,dword ptr [0x01bd1d8c]      ; 00475377 | g_MouseX
     PUSH EDI                            ; 0047537d
     PUSH EBX                            ; 0047537e
     CALL shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10 ; 0047537f
@@ -161,10 +161,10 @@ section .text
     TEST EAX,EAX                        ; 00475389
     JL 0x004753e4                       ; 0047538b
         ;   XREF to: 004753e4 (CONDITIONAL_JUMP)  ; LAB_004753e4
-    MOV DL,byte ptr [0x01bd1d94]        ; 0047538d | g_BIT_INTEGER32_01bd1d94
+    MOV DL,byte ptr [0x01bd1d94]        ; 0047538d | g_MouseButtonFlags
     AND DL,0xfe                         ; 00475393
     MOV dword ptr [EBX + 0x118],EAX     ; 00475396
-    MOV byte ptr [0x01bd1d94],DL        ; 0047539c | g_BIT_INTEGER32_01bd1d94
+    MOV byte ptr [0x01bd1d94],DL        ; 0047539c | g_MouseButtonFlags
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004753a2
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV ECX,dword ptr [0x01bcde1c]      ; 004753a7 | g_LastClickTimestamp

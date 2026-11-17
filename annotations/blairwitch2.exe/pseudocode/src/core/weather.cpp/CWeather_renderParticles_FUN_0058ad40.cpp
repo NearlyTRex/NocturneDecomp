@@ -66,7 +66,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   }
   if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_0061e8f8);
+              (g_CDemonRenderer_PTR_0060b280,&g_RainDropTexture);
     pCVar2 = g_CDemonRenderer_PTR_0060b280;
     g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->u = 0x80000;
     pCVar2->vertex_buffer_ptr->v = 0x80000;
@@ -79,7 +79,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   }
   else {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_0061e928);
+              (g_CDemonRenderer_PTR_0060b280,&g_SnowflakeTexture);
   }
   core_set_cpp_CDemonSet_setLightingParameters_FUN_00530980
             (g_CDemonSetPtr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
@@ -100,7 +100,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   local_dc = 2;
   local_d8 = 3;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
-  world_position = g_CVector3f_ARRAY_02661fb8;
+  world_position = g_WeatherParticlePositions;
   uVar7 = 0;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
             (g_CDemonRenderer_PTR_0060b280,0x8000);
@@ -174,7 +174,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   } while ((int)uVar7 < 200);
   if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_0061e910);
+              (g_CDemonRenderer_PTR_0060b280,&g_RainSplashTexture);
     pCVar2 = g_CDemonRenderer_PTR_0060b280;
     g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->u = 0x80000;
     pCVar2->vertex_buffer_ptr->v = 0x80000;
@@ -188,10 +188,10 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
     local_14 = 0;
     pCVar2->vertex_buffer_ptr[3].v = 0xf80000;
     do {
-      if (g_CHAR_ARRAY_02662c38[iVar3] != '\0') {
-        fVar1 = *(float *)((int)g_FLOAT_ARRAY_02662918 + local_10);
+      if (g_WeatherParticleHitGround[iVar3] != '\0') {
+        fVar1 = *(float *)((int)g_WeatherParticleGroundHeights + local_10);
         puVar6 = (uint *)(local_14 + 0x2661fbc + (uint)bVar8 * -8);
-        local_c8.x = *(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].x + local_14);
+        local_c8.x = *(float *)((int)&g_WeatherParticlePositions[0].x + local_14);
         *(uint *)((int)&local_c8 + (uint)bVar8 * -8 + 4) = *puVar6;
         *(uint *)((int)&local_c8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
              puVar6[(uint)bVar8 * -2 + 1];

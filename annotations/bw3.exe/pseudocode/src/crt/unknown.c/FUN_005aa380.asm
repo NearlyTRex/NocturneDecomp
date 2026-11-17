@@ -12,8 +12,8 @@
 ;   void* PTR_SetFilePointer_005b3640 = 001b41c4
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
-;   uint g_UINT_00607b84 = 0x14
-;   SIOControlBlock* g_SIOControlBlock_PTR_00607bdc = 00000000
+;   uint g_MaxHandleCount = 0x14
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
@@ -32,7 +32,7 @@ section .text
     TEST EBX,EBX                        ; 005aa386
     JL 0x005aa392                       ; 005aa388
         ;   XREF to: 005aa392 (CONDITIONAL_JUMP)  ; LAB_005aa392
-    CMP EBX,dword ptr [0x00607b84]      ; 005aa38a | g_UINT_00607b84
+    CMP EBX,dword ptr [0x00607b84]      ; 005aa38a | g_MaxHandleCount
     JBE 0x005aa3a4                      ; 005aa390
         ;   XREF to: 005aa3a4 (CONDITIONAL_JUMP)  ; LAB_005aa3a4
     PUSH 0x4                            ; 005aa392
@@ -44,7 +44,7 @@ section .text
     POP ESI                             ; 005aa3a1
     POP EBX                             ; 005aa3a2
     RET                                 ; 005aa3a3
-    MOV ESI,dword ptr [0x00607bdc]      ; 005aa3a4 | g_SIOControlBlock_PTR_00607bdc
+    MOV ESI,dword ptr [0x00607bdc]      ; 005aa3a4 | g_IOControlBlock
         ;   Label: LAB_005aa3a4
     PUSH EBX                            ; 005aa3aa
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005aa3ab

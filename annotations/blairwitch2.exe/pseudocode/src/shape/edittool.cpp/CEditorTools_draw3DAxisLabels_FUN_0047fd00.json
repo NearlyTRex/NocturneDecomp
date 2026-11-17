@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 1427,
+    "complexity_score": 1426,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 217,
+    "pseudocode_lines": 216,
     "suspect_count": 117,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 415
+    "total_lines": 414
   },
   "cross_references": [
     {
@@ -114,13 +114,13 @@
     },
     {
       "addr": "01c25590",
-      "name": "g_CBitFont_PTR_01c25590",
+      "name": "g_EditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25f78",
-      "name": "g_INT_01c25f78",
+      "name": "g_EditorFontMaxCharWidth",
       "type": "int",
       "value": null
     },
@@ -138,7 +138,7 @@
     },
     {
       "addr": "01c263d4",
-      "name": "g_INT_01c263d4",
+      "name": "g_AxisLabelTextColor",
       "type": "int",
       "value": null
     },
@@ -447,7 +447,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 69,
+      "line": 68,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "engine_matrix_c_transformToCache_FUN_004e8e60(0,(CVector3i *)&stack0xffffffdc);",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 69,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "pCVar12 = (CVector3i *)&stack0xffffffe4;",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 76,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffffa8;",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
+      "line": 83,
       "match": "&stack0xffffff78",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff78;",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -495,7 +495,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 89,
       "match": "in_stack_ffffff7c",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.transformed_y = in_stack_ffffff7c;",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 90,
       "match": "in_stack_ffffff78",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.transformed_x = in_stack_ffffff78;",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 91,
       "match": "in_stack_ffffff80",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.transformed_z = in_stack_ffffff80;",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 92,
       "match": "in_stack_ffffff84",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.inv_z = in_stack_ffffff84;",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 94,
+      "line": 93,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.screen_x = in_stack_ffffff88._0_4_;",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 93,
       "match": "._0_4_",
       "severity": "mild",
       "text": "vertex1.projected_vertex.screen_x = in_stack_ffffff88._0_4_;",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 94,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.screen_y = in_stack_ffffff88._4_4_;",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 94,
       "match": "._4_4_",
       "severity": "mild",
       "text": "vertex1.projected_vertex.screen_y = in_stack_ffffff88._4_4_;",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 95,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.u = in_stack_ffffff88._8_4_;",
@@ -567,7 +567,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 95,
       "match": "._8_4_",
       "severity": "mild",
       "text": "vertex1.u = in_stack_ffffff88._8_4_;",
@@ -575,7 +575,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
+      "line": 96,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.v = in_stack_ffffff88._12_4_;",
@@ -583,7 +583,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 97,
+      "line": 96,
       "match": "._12_4_",
       "severity": "mild",
       "text": "vertex1.v = in_stack_ffffff88._12_4_;",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 97,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.r = in_stack_ffffff88._16_4_;",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 97,
       "match": "._16_4_",
       "severity": "mild",
       "text": "vertex1.r = in_stack_ffffff88._16_4_;",
@@ -607,7 +607,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 98,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.g = in_stack_ffffff88._20_4_;",
@@ -615,7 +615,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 98,
       "match": "._20_4_",
       "severity": "mild",
       "text": "vertex1.g = in_stack_ffffff88._20_4_;",
@@ -623,7 +623,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 100,
+      "line": 99,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.b = in_stack_ffffff88._24_4_;",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 99,
       "match": "._24_4_",
       "severity": "mild",
       "text": "vertex1.b = in_stack_ffffff88._24_4_;",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 101,
+      "line": 100,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1.a = in_stack_ffffff88._28_4_;",
@@ -647,7 +647,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 100,
       "match": "._28_4_",
       "severity": "mild",
       "text": "vertex1.a = in_stack_ffffff88._28_4_;",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
+      "line": 101,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "vertex2.projected_vertex.transformed_z = (int)in_stack_ffffffb0;",
@@ -663,7 +663,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 102,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "vertex2.projected_vertex.inv_z = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);",
@@ -671,7 +671,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 103,
       "match": "in_stack_ffffffa8",
       "severity": "moderate",
       "text": "vertex2.projected_vertex.transformed_x = (int)in_stack_ffffffa8;",
@@ -679,7 +679,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 104,
       "match": "in_stack_ffffffa8",
       "severity": "moderate",
       "text": "vertex2.projected_vertex.transformed_y = (int)((ulonglong)in_stack_ffffffa8 >> 0x20);",
@@ -687,7 +687,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 105,
       "match": "in_stack_ffffffb8",
       "severity": "moderate",
       "text": "vertex2.projected_vertex.screen_x = in_stack_ffffffb8;",
@@ -695,7 +695,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 111,
       "match": "in_stack_ffffffd0",
       "severity": "moderate",
       "text": "vertex2.b = in_stack_ffffffd0;",
@@ -703,7 +703,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_ffffffd4",
       "severity": "moderate",
       "text": "vertex2.a = in_stack_ffffffd4;",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
+      "line": 120,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffffb0;",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 123,
       "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 127,
       "match": "&stack0xffffff80",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff80;",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 130,
       "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_ffffff84",
       "severity": "moderate",
       "text": "vertex1_00.projected_vertex.transformed_y = in_stack_ffffff84;",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 134,
       "match": "in_stack_ffffff80",
       "severity": "moderate",
       "text": "vertex1_00.projected_vertex.transformed_x = in_stack_ffffff80;",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 135,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.projected_vertex.transformed_z = in_stack_ffffff88._0_4_;",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 136,
+      "line": 135,
       "match": "._0_4_",
       "severity": "mild",
       "text": "vertex1_00.projected_vertex.transformed_z = in_stack_ffffff88._0_4_;",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 136,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.projected_vertex.inv_z = in_stack_ffffff88._4_4_;",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._4_4_",
       "severity": "mild",
       "text": "vertex1_00.projected_vertex.inv_z = in_stack_ffffff88._4_4_;",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 137,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.projected_vertex.screen_x = in_stack_ffffff88._8_4_;",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 138,
+      "line": 137,
       "match": "._8_4_",
       "severity": "mild",
       "text": "vertex1_00.projected_vertex.screen_x = in_stack_ffffff88._8_4_;",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 138,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.projected_vertex.screen_y = in_stack_ffffff88._12_4_;",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 139,
+      "line": 138,
       "match": "._12_4_",
       "severity": "mild",
       "text": "vertex1_00.projected_vertex.screen_y = in_stack_ffffff88._12_4_;",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 139,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.u = in_stack_ffffff88._16_4_;",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 140,
+      "line": 139,
       "match": "._16_4_",
       "severity": "mild",
       "text": "vertex1_00.u = in_stack_ffffff88._16_4_;",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 140,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.v = in_stack_ffffff88._20_4_;",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 141,
+      "line": 140,
       "match": "._20_4_",
       "severity": "mild",
       "text": "vertex1_00.v = in_stack_ffffff88._20_4_;",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 141,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.r = in_stack_ffffff88._24_4_;",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 142,
+      "line": 141,
       "match": "._24_4_",
       "severity": "mild",
       "text": "vertex1_00.r = in_stack_ffffff88._24_4_;",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
+      "line": 142,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_00.g = in_stack_ffffff88._28_4_;",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 143,
+      "line": 142,
       "match": "._28_4_",
       "severity": "mild",
       "text": "vertex1_00.g = in_stack_ffffff88._28_4_;",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 143,
       "match": "in_stack_ffffffa8",
       "severity": "moderate",
       "text": "vertex1_00.b = (int)in_stack_ffffffa8;",
@@ -895,7 +895,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 144,
       "match": "in_stack_ffffffa8",
       "severity": "moderate",
       "text": "vertex1_00.a = (int)((ulonglong)in_stack_ffffffa8 >> 0x20);",
@@ -903,7 +903,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 146,
+      "line": 145,
       "match": "in_stack_ffffffb8",
       "severity": "moderate",
       "text": "vertex2_00.projected_vertex.transformed_z = in_stack_ffffffb8;",
@@ -911,7 +911,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 146,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "vertex2_00.projected_vertex.transformed_x = (int)in_stack_ffffffb0;",
@@ -919,7 +919,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 148,
+      "line": 147,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "vertex2_00.projected_vertex.transformed_y = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);",
@@ -927,7 +927,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 156,
+      "line": 155,
       "match": "in_stack_ffffffd8",
       "severity": "moderate",
       "text": "vertex2_00.b = in_stack_ffffffd8;",
@@ -935,7 +935,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 159,
+      "line": 158,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "pCVar12 = (CVector3i *)&stack0xfffffff4;",
@@ -943,7 +943,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 164,
+      "line": 163,
       "match": "&stack0xffffffb8",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffffb8;",
@@ -951,7 +951,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 166,
       "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -959,7 +959,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 172,
+      "line": 171,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff88;",
@@ -967,7 +967,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 174,
       "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -975,7 +975,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 178,
+      "line": 177,
       "match": "in_stack_ffffffa8",
       "severity": "moderate",
       "text": "vertex1_01.r = (int)in_stack_ffffffa8;",
@@ -983,7 +983,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 179,
+      "line": 178,
       "match": "in_stack_ffffffa8",
       "severity": "moderate",
       "text": "vertex1_01.g = (int)((ulonglong)in_stack_ffffffa8 >> 0x20);",
@@ -991,7 +991,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 179,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "auVar7 = in_stack_ffffff88._0_24_;",
@@ -999,7 +999,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 179,
       "match": "._0_24_",
       "severity": "mild",
       "text": "auVar7 = in_stack_ffffff88._0_24_;",
@@ -1007,7 +1007,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 181,
+      "line": 180,
       "match": "._0_4_",
       "severity": "mild",
       "text": "vertex1_01.projected_vertex.transformed_x = auVar7._0_4_;",
@@ -1015,7 +1015,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 182,
+      "line": 181,
       "match": "._4_4_",
       "severity": "mild",
       "text": "vertex1_01.projected_vertex.transformed_y = auVar7._4_4_;",
@@ -1023,7 +1023,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 183,
+      "line": 182,
       "match": "._8_4_",
       "severity": "mild",
       "text": "vertex1_01.projected_vertex.transformed_z = auVar7._8_4_;",
@@ -1031,7 +1031,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 184,
+      "line": 183,
       "match": "._12_4_",
       "severity": "mild",
       "text": "vertex1_01.projected_vertex.inv_z = auVar7._12_4_;",
@@ -1039,7 +1039,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 184,
       "match": "._16_4_",
       "severity": "mild",
       "text": "vertex1_01.projected_vertex.screen_x = auVar7._16_4_;",
@@ -1047,7 +1047,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 185,
       "match": "._20_4_",
       "severity": "mild",
       "text": "vertex1_01.projected_vertex.screen_y = auVar7._20_4_;",
@@ -1055,7 +1055,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
+      "line": 186,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_01.u = in_stack_ffffff88._24_4_;",
@@ -1063,7 +1063,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 187,
+      "line": 186,
       "match": "._24_4_",
       "severity": "mild",
       "text": "vertex1_01.u = in_stack_ffffff88._24_4_;",
@@ -1071,7 +1071,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 188,
+      "line": 187,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "vertex1_01.v = in_stack_ffffff88._28_4_;",
@@ -1079,7 +1079,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 188,
+      "line": 187,
       "match": "._28_4_",
       "severity": "mild",
       "text": "vertex1_01.v = in_stack_ffffff88._28_4_;",
@@ -1087,7 +1087,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 189,
+      "line": 188,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "vertex1_01.b = (int)in_stack_ffffffb0;",
@@ -1095,7 +1095,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 190,
+      "line": 189,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "vertex1_01.a = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);",
@@ -1103,7 +1103,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 192,
+      "line": 191,
       "match": "in_stack_ffffffb8",
       "severity": "moderate",
       "text": "vertex2_01.projected_vertex.transformed_x = in_stack_ffffffb8;",
@@ -1111,7 +1111,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 202,
+      "line": 201,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "vertex2_01.a = unaff_EBP;",
@@ -1119,7 +1119,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 80,
+      "line": 79,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1127,7 +1127,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1135,7 +1135,7 @@
     },
     {
       "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "(int)pCVar12",
       "severity": "moderate",
       "text": "vertex2.g = (int)pCVar12;",
@@ -1143,7 +1143,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 124,
+      "line": 123,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1151,7 +1151,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 131,
+      "line": 130,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1159,7 +1159,7 @@
     },
     {
       "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 155,
+      "line": 154,
       "match": "(int)pCVar12",
       "severity": "moderate",
       "text": "vertex2_00.g = (int)pCVar12;",
@@ -1167,7 +1167,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 167,
+      "line": 166,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1175,7 +1175,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 175,
+      "line": 174,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1183,7 +1183,7 @@
     },
     {
       "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 200,
+      "line": 199,
       "match": "(int)pCVar12",
       "severity": "moderate",
       "text": "vertex2_01.g = (int)pCVar12;",
@@ -1191,7 +1191,7 @@
     },
     {
       "description": "Raw hex literal 0x622044 matches address of g_SRenderVertex_ARRAY_00622014 (+48 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 170,
+      "line": 169,
       "match": "0x622044",
       "severity": "moderate",
       "text": "iVar17 = 0x622044;",
@@ -1199,7 +1199,7 @@
     },
     {
       "description": "Raw hex address 0x47fdb4 assigned to bare local `uVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 68,
+      "line": 67,
       "match": "0x47fdb4",
       "severity": "moderate",
       "text": "uVar8 = 0x47fdb4;",
@@ -1207,7 +1207,7 @@
     },
     {
       "description": "Raw hex address 0x47fdd3 assigned to bare local `uVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 74,
+      "line": 73,
       "match": "0x47fdd3",
       "severity": "moderate",
       "text": "uVar10 = 0x47fdd3;",
@@ -1215,7 +1215,7 @@
     },
     {
       "description": "Raw hex address 0x47fe1c assigned to bare local `uVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 118,
+      "line": 117,
       "match": "0x47fe1c",
       "severity": "moderate",
       "text": "uVar13 = 0x47fe1c;",
@@ -1223,7 +1223,7 @@
     },
     {
       "description": "Raw hex address 0x47fe65 assigned to bare local `uVar15`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar15` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 161,
+      "line": 160,
       "match": "0x47fe65",
       "severity": "moderate",
       "text": "uVar15 = 0x47fe65;",
@@ -1231,7 +1231,7 @@
     },
     {
       "description": "Raw hex address 0x622044 assigned to bare local `iVar17`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar17` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 170,
+      "line": 169,
       "match": "0x622044",
       "severity": "moderate",
       "text": "iVar17 = 0x622044;",
@@ -1239,7 +1239,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 78,
+      "line": 77,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1247,7 +1247,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 85,
+      "line": 84,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1255,7 +1255,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 122,
+      "line": 121,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1263,7 +1263,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 129,
+      "line": 128,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1271,7 +1271,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 165,
+      "line": 164,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1279,7 +1279,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 173,
+      "line": 172,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",

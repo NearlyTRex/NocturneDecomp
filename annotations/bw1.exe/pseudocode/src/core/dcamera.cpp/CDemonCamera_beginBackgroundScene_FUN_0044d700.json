@@ -107,49 +107,49 @@
     },
     {
       "addr": "01482658",
-      "name": "g_INT_01482658",
+      "name": "g_BackgroundSceneDepth",
       "type": "int",
       "value": null
     },
     {
       "addr": "0148265c",
-      "name": "g_INT_0148265c",
+      "name": "g_BackgroundSavedBitsPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "01482660",
-      "name": "g_INT_01482660",
+      "name": "g_BackgroundSavedUseExternalRenderer",
       "type": "int",
       "value": null
     },
     {
       "addr": "01482664",
-      "name": "g_ARRAY_PTR_01482664",
+      "name": "g_BackgroundSavedScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01482668",
-      "name": "g_ARRAY_PTR_01482664[1]",
+      "name": "g_BackgroundSavedScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01483924",
-      "name": "g_INT_01483924",
+      "name": "g_BackgroundSavedRedBitPosition",
       "type": "int",
       "value": null
     },
     {
       "addr": "01483928",
-      "name": "g_INT_01483928",
+      "name": "g_BackgroundSavedGreenBitPosition",
       "type": "int",
       "value": null
     },
     {
       "addr": "0148392c",
-      "name": "g_INT_0148392c",
+      "name": "g_BackgroundSavedBlueBitPosition",
       "type": "int",
       "value": null
     },
@@ -161,31 +161,31 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "g_ARRAY_PTR_01c4354c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4e9d4",
-      "name": "g_BIT_INTEGER32_01c4e9d4",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9e0",
-      "name": "g_BIT_INTEGER32_01c4e9e0",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9ec",
-      "name": "g_BIT_INTEGER32_01c4e9ec",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -372,9 +372,9 @@
     {
       "description": "Complex pointer cast",
       "line": 47,
-      "match": "(void **)((int)g_ARRAY_PTR_01c4354c",
+      "match": "(void **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(void **)((int)g_ARRAY_PTR_01c4354c + iVar3) =",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
       "type": "pointer_cast"
     },
     {
@@ -402,11 +402,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 47,
-      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(void **)((int)g_ARRAY_PTR_01c4354c + iVar3) =",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
       "type": "pointer_truncation"
     },
     {
@@ -430,7 +430,7 @@
       "line": 29,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0044d75d: MOVSD.REP ES:EDI,ESI  ; g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01482664 | g_ARRAY_PTR_01c4354c[1]",
+      "text": "// 0044d75d: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_BackgroundSavedScreenBufferArray | g_ScreenBufferArray[1]",
       "type": "unrolled_memcpy"
     }
   ]

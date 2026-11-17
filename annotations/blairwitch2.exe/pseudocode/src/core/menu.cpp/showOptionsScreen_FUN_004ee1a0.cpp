@@ -68,7 +68,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004ee1a0(int initialize_systems
       core_game_cpp_CGame_rollCredits_FUN_004be430(g_CGamePtr);
       core_sound_cpp_CSound_configure_FUN_0055ac50(g_CSound_PTR_0061c068);
     }
-    iVar2 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
   } while (iVar2 == 0);
   if (initialize_systems != 0) {
     core_moon_cpp_CMoon_free_FUN_00502450(&g_CMoonInstance);

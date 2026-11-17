@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 54,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 41,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strcpy"
     ],
-    "total_lines": 127
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     },
     {
       "addr": "00626114",
-      "name": "g_UCHAR_ARRAY_00626114",
+      "name": "g_CharacterClassificationTable",
       "type": "uchar[257]",
       "value": null
     }
@@ -156,7 +156,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 13,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

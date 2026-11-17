@@ -56,25 +56,25 @@
     },
     {
       "addr": "02dc9d44",
-      "name": "g_CVector3f_02dc9d44",
+      "name": "g_TrainVelocityVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02dc9d48",
-      "name": "g_CVector3f_02dc9d44.y",
+      "name": "g_TrainVelocityVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d4c",
-      "name": "g_CVector3f_02dc9d44.z",
+      "name": "g_TrainVelocityVector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d54",
-      "name": "g_INT_02dc9d54",
+      "name": "g_TrainLastCameraIndex",
       "type": "int",
       "value": null
     }
@@ -175,15 +175,15 @@
       "line": 5,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 == &g_FLOAT_02dc9d50) {",
+      "text": "if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {",
       "type": "stack_ref"
     },
     {
-      "description": "Tautological address-of guard: `if (... == ...)` comparing a null literal against `&g_FLOAT_02dc9d50` is always FALSE (the address of `g_FLOAT_02dc9d50` is never null), so the guarded statement is dead and never executes. Resolve in a .keep per the asm (drop the dead branch, or restore a dropped copy if one was folded away).",
+      "description": "Tautological address-of guard: `if (... == ...)` comparing a null literal against `&g_TrainNoiseCooldown` is always FALSE (the address of `g_TrainNoiseCooldown` is never null), so the guarded statement is dead and never executes. Resolve in a .keep per the asm (drop the dead branch, or restore a dropped copy if one was folded away).",
       "line": 5,
-      "match": "if ((T *)0x0 == &g_FLOAT_02dc9d50)",
+      "match": "if ((T *)0x0 == &g_TrainNoiseCooldown)",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 == &g_FLOAT_02dc9d50) {",
+      "text": "if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {",
       "type": "tautological_addr_guard"
     }
   ]

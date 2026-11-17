@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(int device_id,SSo
     g_CurrentLineNumber = 4561;
     core_main_c_displayErrorAndQuit_FUN_004c8440("getSoundDeviceInfo - invalid index");
   }
-  pSVar2 = g_SSoundDeviceInfo_ARRAY_02dc7a58 + device_id;
+  pSVar2 = g_SoundDevices + device_id;
   for (iVar1 = 0x46; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(uint *)device_info->device_name = *(uint *)pSVar2->device_name;
     pSVar2 = (SSoundDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);

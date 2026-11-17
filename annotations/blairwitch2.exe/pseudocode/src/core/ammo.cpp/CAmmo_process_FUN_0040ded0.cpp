@@ -138,9 +138,9 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   green = 1.0;
   red = 1.0;
   fVar2 = 0.0;
-  CStack_98.x = g_CVector3f_0265370c.x;
+  CStack_98.x = g_ZeroVector.x;
   *(uint *)((int)&CStack_98 + (uint)bVar9 * -8 + 4) =
-       *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);
+       *(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);
   *(uint *)((int)&CStack_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        *(uint *)((uint)bVar9 * -8 + 0x2653714 + (uint)bVar9 * -8);
   CStack_68.x = CStack_68.x + (this_ptr->base).location.position.x;

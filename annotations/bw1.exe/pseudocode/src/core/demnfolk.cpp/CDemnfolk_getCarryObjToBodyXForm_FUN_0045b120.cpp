@@ -126,7 +126,7 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
       CStack_ac.x = 0.155;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
-              (&CStack_1a8,&g_CVector3f_02c8af28,&CStack_ac);
+              (&CStack_1a8,&g_ZeroVector,&CStack_ac);
     (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffdf8);
     pfVar3 = afStack_148;
     pfVar5 = &fStack_160;

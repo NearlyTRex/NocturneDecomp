@@ -21,8 +21,8 @@
 ;   core_sound.cpp_updateListeners_FUN_0057b780 at 0057bd7f
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005f0e1d = -1
-;   float g_FLOAT_005f0e21 = 150
+;   float g_RayOffsetForStart = -1
+;   float g_RayOffsetForEnd = 150
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -65,11 +65,11 @@ section .text
     PUSH EAX                            ; 0055715d
     LEA EAX,[ESP + 0xc]                 ; 0055715e
     FXCH                                ; 00557162
-    FADD float ptr [0x005f0e1d]         ; 00557164 | g_FLOAT_005f0e1d
+    FADD float ptr [0x005f0e1d]         ; 00557164 | g_RayOffsetForStart
     PUSH EAX                            ; 0055716a
     LEA EAX,[ESP + 0x1c]                ; 0055716b
     FXCH                                ; 0055716f
-    FADD float ptr [0x005f0e21]         ; 00557171 | g_FLOAT_005f0e21
+    FADD float ptr [0x005f0e21]         ; 00557171 | g_RayOffsetForEnd
     PUSH EAX                            ; 00557177
     FXCH                                ; 00557178
     FSTP float ptr [ESP + 0x24]         ; 0055717a

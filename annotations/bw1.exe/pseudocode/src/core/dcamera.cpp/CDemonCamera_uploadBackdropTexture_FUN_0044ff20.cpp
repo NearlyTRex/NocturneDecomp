@@ -31,8 +31,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20(CD
       iVar3 = iVar2 >> 0x1f;
       iVar1 = iVar2 + iVar3 * -0x100;
       iVar2 = iVar2 + 0x280;
-      *(char *)((int)g_UINT_ARRAY_014cea50 + iVar4) =
-           g_CHAR_ARRAY_01483a50
+      *(char *)((int)g_CameraTextureWorkBuffer + iVar4) =
+           g_CameraIndexedImageData
            [((int)(iVar1 - (uint)(iVar3 << 7 < 0)) >> 8) +
             ((int)((iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0)) >> 8) *
             0x280];
@@ -42,9 +42,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20(CD
     iVar8 = iVar8 + 0x1e0;
   } while (iVar5 != 0x10000);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061127c);
-  puVar6 = g_UINT_ARRAY_014cea50;
-  puVar9 = (uint *)g_UCHAR_PTR_01c50930;
+            (g_CDemonRenderer_PTR_00612560,&g_CameraBackdropTexture);
+  puVar6 = g_CameraTextureWorkBuffer;
+  puVar9 = (uint *)g_CurrentTextureData;
   for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar9 = *puVar6;
     puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
@@ -55,8 +55,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20(CD
     puVar6 = (uint *)((int)puVar6 + (uint)bVar11 * -2 + 1);
     puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
   }
-  pSVar7 = &g_SRGBColorPalette_00b81198;
-  pSVar10 = g_SRGBColorPalette_PTR_01c4e3d0;
+  pSVar7 = &g_CameraImagePaletteData;
+  pSVar10 = g_CurrentPalette;
   for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(uint *)pSVar10->colors = *(uint *)pSVar7->colors;
     pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -8 + 4);
@@ -68,7 +68,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20(CD
     pSVar10 = (SRGBColorPalette *)((int)pSVar10 + (uint)bVar11 * -2 + 1);
   }
   engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00484fb0
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061127c,
-             &g_SRGBColorPalette_00b81198);
+            (g_CDemonRenderer_PTR_00612560,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
   return;
 }

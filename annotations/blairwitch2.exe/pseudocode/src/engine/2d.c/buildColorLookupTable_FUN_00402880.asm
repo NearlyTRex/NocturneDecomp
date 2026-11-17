@@ -10,9 +10,9 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029e8
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005ca08c = 0.577350270000000
+;   double g_LuminanceScaleFactor = 0.577350270000000
 ;   undefined4 DAT_0070c638
-;   uchar[32768] g_UCHAR_ARRAY_01c2c910
+;   uchar[32768] g_ColorCubeLookup
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
 ;   undefined4 g_UCHAR_ARRAY_01c35838+2
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x10                        ; 00402884
     XOR EBX,EBX                         ; 00402887
     XOR ESI,ESI                         ; 00402889
-    FLD double ptr [0x005ca08c]         ; 0040288b | g_DOUBLE_005ca08c
+    FLD double ptr [0x005ca08c]         ; 0040288b | g_LuminanceScaleFactor
     XOR EAX,EAX                         ; 00402891
         ;   Label: LAB_00402891
     MOV AL,byte ptr [EBX + 0x1c35838]   ; 00402893 | g_UCHAR_ARRAY_01c35838
@@ -79,7 +79,7 @@ section .text
     CALL engine_2d.c_findBestPaletteMatch_FUN_00401450 ; 00402902
         ;   XREF to: 00401450 (UNCONDITIONAL_CALL)  ; int engine_2d.c_findBestPaletteMatch_FUN_00401450(int red, int green, int blue, int start_index, ...)
     ADD ESP,0x14                        ; 00402907
-    MOV byte ptr [ESI + -0x1],AL        ; 0040290a | g_UCHAR_ARRAY_01c2c910
+    MOV byte ptr [ESI + -0x1],AL        ; 0040290a | g_ColorCubeLookup
     CMP EBX,0x100                       ; 0040290d
     JL 0x004028f4                       ; 00402913
         ;   XREF to: 004028f4 (CONDITIONAL_JUMP)  ; LAB_004028f4
@@ -92,7 +92,7 @@ section .text
     JL 0x004028f0                       ; 00402929
         ;   XREF to: 004028f0 (CONDITIONAL_JUMP)  ; LAB_004028f0
     XOR AH,AH                           ; 0040292b
-    MOV byte ptr [0x01c2c910],AH        ; 0040292d | g_UCHAR_ARRAY_01c2c910
+    MOV byte ptr [0x01c2c910],AH        ; 0040292d | g_ColorCubeLookup
     ADD ESP,0x10                        ; 00402933
     POP EBP                             ; 00402936
     POP EDI                             ; 00402937

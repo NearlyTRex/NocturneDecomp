@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c37788
 ;   int g_INT_01d0c3a0
-;   void* g_PTR_0264bcd0
+;   void* g_APIDLL_enableClipping
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
 
     XOR EDX,EDX                         ; 004f53d0
         ;   Label: engine_mini3d.cpp_resetDynamicLight_FUN_004f53d0
-    MOV ECX,dword ptr [0x0264bcd0]      ; 004f53d2 | g_PTR_0264bcd0
+    MOV ECX,dword ptr [0x0264bcd0]      ; 004f53d2 | g_APIDLL_enableClipping
     MOV dword ptr [0x01d0c3a0],EDX      ; 004f53d8 | g_INT_01d0c3a0
     TEST ECX,ECX                        ; 004f53de
     JZ 0x004f53eb                       ; 004f53e0
@@ -28,7 +28,7 @@ section .text
         ;   XREF to: 004f53ec (CONDITIONAL_JUMP)  ; LAB_004f53ec
     RET                                 ; 004f53eb
         ;   Label: LAB_004f53eb
-    CALL dword ptr [0x0264bcd0]         ; 004f53ec | g_PTR_0264bcd0
+    CALL dword ptr [0x0264bcd0]         ; 004f53ec | g_APIDLL_enableClipping
         ;   Label: LAB_004f53ec
     RET                                 ; 004f53f2
 

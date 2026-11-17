@@ -16,14 +16,14 @@
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00534580 at 00534593
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005ce746 = 0.0000152587890625
-;   double g_DOUBLE_005ce74e = 0.00392156862745098
-;   double g_DOUBLE_005ce756 = 255
-;   int g_INT_00609fa4 = 0x40
-;   int g_INT_00609fa8 = 0x40
-;   int g_INT_00609fac = 0x40
-;   uint[256] g_UINT_ARRAY_00b6639c
-;   undefined4 g_UINT_ARRAY_00b6639c[64]
+;   double g_CameraGammaMultiplier = 0.0000152587890625
+;   double g_CameraNormalizer = 0.00392156862745098
+;   double g_CameraOutputScale = 255
+;   int g_FogColorIndexR = 0x40
+;   int g_FogColorIndexG = 0x40
+;   int g_FogColorIndexB = 0x40
+;   uint[256] g_LightmapTexturePalette
+;   undefined4 g_LightmapTexturePalette[64]
 ;
 ; Called Functions:
 ;   crt_math.c_pow_FUN_005b9484
@@ -42,13 +42,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 00443187
     MOV dword ptr [EBP + -0x4],EAX      ; 0044318a
     FILD dword ptr [EBP + -0x4]         ; 0044318d
-    FMUL double ptr [0x005ce746]        ; 00443190 | g_DOUBLE_005ce746
+    FMUL double ptr [0x005ce746]        ; 00443190 | g_CameraGammaMultiplier
     XOR EDX,EDX                         ; 00443196
     XOR ECX,ECX                         ; 00443198
     FSTP float ptr [EBP + -0x8]         ; 0044319a
-    FLD double ptr [0x005ce756]         ; 0044319d | g_DOUBLE_005ce756
+    FLD double ptr [0x005ce756]         ; 0044319d | g_CameraOutputScale
     FLD float ptr [EBP + -0x8]          ; 004431a3
-    FLD double ptr [0x005ce74e]         ; 004431a6 | g_DOUBLE_005ce74e
+    FLD double ptr [0x005ce74e]         ; 004431a6 | g_CameraNormalizer
     MOV dword ptr [EBP + -0x4],EDX      ; 004431ac
         ;   Label: LAB_004431ac
     FILD dword ptr [EBP + -0x4]         ; 004431af
@@ -72,20 +72,20 @@ section .text
     ADD ECX,0x4                         ; 004431dd
     OR EAX,EBX                          ; 004431e0
     INC EDX                             ; 004431e2
-    MOV dword ptr [ECX + 0xb66398],EAX  ; 004431e3 | g_UINT_ARRAY_00b6639c
+    MOV dword ptr [ECX + 0xb66398],EAX  ; 004431e3 | g_LightmapTexturePalette
     CMP EDX,0x100                       ; 004431e9
     JL 0x004431ac                       ; 004431ef
         ;   XREF to: 004431ac (CONDITIONAL_JUMP)  ; LAB_004431ac
-    MOV EAX,[0x00609fac]                ; 004431f1 | g_INT_00609fac
-    MOV EAX,dword ptr [EAX*0x4 + 0xb6639c] ; 004431f6 | g_UINT_ARRAY_00b6639c[64]
+    MOV EAX,[0x00609fac]                ; 004431f1 | g_FogColorIndexB
+    MOV EAX,dword ptr [EAX*0x4 + 0xb6639c] ; 004431f6 | g_LightmapTexturePalette[64]
     AND EAX,0xff                        ; 004431fd
     PUSH EAX                            ; 00443202
-    MOV EAX,[0x00609fa8]                ; 00443203 | g_INT_00609fa8
-    MOV EAX,dword ptr [EAX*0x4 + 0xb6639c] ; 00443208 | g_UINT_ARRAY_00b6639c[64]
+    MOV EAX,[0x00609fa8]                ; 00443203 | g_FogColorIndexG
+    MOV EAX,dword ptr [EAX*0x4 + 0xb6639c] ; 00443208 | g_LightmapTexturePalette[64]
     AND EAX,0xff                        ; 0044320f
     PUSH EAX                            ; 00443214
-    MOV EAX,[0x00609fa4]                ; 00443215 | g_INT_00609fa4
-    MOV EAX,dword ptr [EAX*0x4 + 0xb6639c] ; 0044321a | g_UINT_ARRAY_00b6639c[64]
+    MOV EAX,[0x00609fa4]                ; 00443215 | g_FogColorIndexR
+    MOV EAX,dword ptr [EAX*0x4 + 0xb6639c] ; 0044321a | g_LightmapTexturePalette[64]
     FSTP ST0                            ; 00443221
     AND EAX,0xff                        ; 00443223
     FSTP ST0                            ; 00443228

@@ -28,7 +28,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   int g_INT_0070ca7c
+;   int g_CullingMode
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0051c769
     MOV EAX,dword ptr [EBP + 0x18]      ; 0051c76c
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0051c76f
-    CMP dword ptr [0x0070ca7c],0x1      ; 0051c772 | g_INT_0070ca7c
+    CMP dword ptr [0x0070ca7c],0x1      ; 0051c772 | g_CullingMode
     JNZ 0x0051c7e3                      ; 0051c779
         ;   XREF to: 0051c7e3 (CONDITIONAL_JUMP)  ; LAB_0051c7e3
     MOV EDI,dword ptr [EBX + 0x10]      ; 0051c77b

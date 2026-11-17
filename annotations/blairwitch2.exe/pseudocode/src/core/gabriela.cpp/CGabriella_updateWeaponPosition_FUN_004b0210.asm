@@ -48,9 +48,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CCrossbow_005d706b
 ;   float g_FLOAT_005f7334 = 0.6400000
-;   undefined4 g_INT_ARRAY_01cb0678[10]
-;   undefined4 g_INT_ARRAY_01cb0678[17]
-;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_GabriellaIndices[10]
+;   undefined4 g_GabriellaIndices[17]
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
@@ -110,13 +110,13 @@ section .text
     MOV EDX,dword ptr [EAX + 0x2b0]     ; 004b028c
     CALL dword ptr [EDX + 0xe4]         ; 004b0292
     ADD ESP,0x8                         ; 004b0298
-    PUSH 0x265370c                      ; 004b029b | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004b029b | g_ZeroVector
     PUSH 0x1cb0644                      ; 004b02a0
     LEA EAX,[EBP + 0xffffff22]          ; 004b02a5
     PUSH EAX                            ; 004b02ab
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b02ac
         ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV EDX,dword ptr [0x01cb06bc]      ; 004b02b1 | g_INT_ARRAY_01cb0678[17]
+    MOV EDX,dword ptr [0x01cb06bc]      ; 004b02b1 | g_GabriellaIndices[17]
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b02b7
     SUB EAX,EDX                         ; 004b02be
     SHL EAX,0x4                         ; 004b02c0
@@ -326,7 +326,7 @@ section .text
         ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004b053e
     LEA EAX,[EBP + 0xfffffd12]          ; 004b0541
-    MOV EDX,dword ptr [0x01cb06a0]      ; 004b0547 | g_INT_ARRAY_01cb0678[10]
+    MOV EDX,dword ptr [0x01cb06a0]      ; 004b0547 | g_GabriellaIndices[10]
     PUSH EAX                            ; 004b054d
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b054e
     SUB EAX,EDX                         ; 004b0555

@@ -13,7 +13,7 @@
 extern char g_CHAR_005d2111;
 extern char g_CHAR_005d2760;
 extern char g_CHAR_005d286b;
-extern char g_CHAR_005d2b04;
+extern char g_DefaultButtonText;
 extern char g_CHAR_005d2ffe;
 extern char g_CHAR_005d7b05;
 extern char g_CHAR_005d7b45;

@@ -11,9 +11,9 @@
 ;   double g_DOUBLE_005df1ec = 0.700000000000000
 ;   float g_FLOAT_005fff94 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c3ec
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c404
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c41c
+;   SMRGLTextureBasic g_FireEffectSparkTexture
+;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
+;   SMRGLTextureBasic g_FireEffectGreenSparkTexture
 ;   undefined4 DAT_0061c434
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].r
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].g
@@ -84,7 +84,7 @@ section .text
     POP ESI                             ; 004ad1b6
     POP EBX                             ; 004ad1b7
     RET                                 ; 004ad1b8
-    PUSH 0x61c3ec                       ; 004ad1b9 | g_SMRGLTextureBasic_0061c3ec
+    PUSH 0x61c3ec                       ; 004ad1b9 | g_FireEffectSparkTexture
         ;   Label: caseD_0
     MOV EBX,dword ptr [0x00612560]      ; 004ad1be | g_CDemonRenderer_PTR_00612560
     PUSH EBX                            ; 004ad1c4 | g_CDemonRenderer_01bc120c
@@ -95,13 +95,13 @@ section .text
     PUSH 0x0                            ; 004ad1cd
         ;   Label: default
     MOV ESI,dword ptr [EBP + 0x14]      ; 004ad1cf
-    MOV EAX,[0x007c6120]                ; 004ad1d2 | g_CDemonCamera_PTR_007c6120
+    MOV EAX,[0x007c6120]                ; 004ad1d2 | g_CurrentSceneCamera
     PUSH ESI                            ; 004ad1d7
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004ad1d8
     PUSH EAX                            ; 004ad1db
     CALL dword ptr [EDX + 0x4]          ; 004ad1dc
     MOV EDX,0xffff                      ; 004ad1df
-    MOV EDI,dword ptr [0x01c51cac]      ; 004ad1e4 | g_INT_01c51cac
+    MOV EDI,dword ptr [0x01c51cac]      ; 004ad1e4 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004ad1ea
     MOV EAX,dword ptr [ESI + 0x40]      ; 004ad1ed
     SUB EDX,EDI                         ; 004ad1f0
@@ -250,7 +250,7 @@ section .text
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004ad3d1
     PUSH 0x0                            ; 004ad3d4
-    PUSH 0x1c57078                      ; 004ad3d6 | g_CVector3i_01c57078
+    PUSH 0x1c57078                      ; 004ad3d6 | g_BillboardCameraRight
     MOV ECX,dword ptr [0x00612560]      ; 004ad3db | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 004ad3e1 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800 ; 004ad3e2
@@ -364,14 +364,14 @@ section .text
     ADD ESP,0x8                         ; 004ad57f
     PUSH ESI                            ; 004ad582
     MOV ECX,dword ptr [EBP + 0x14]      ; 004ad583
-    MOV EAX,[0x007c6120]                ; 004ad586 | g_CDemonCamera_PTR_007c6120
+    MOV EAX,[0x007c6120]                ; 004ad586 | g_CurrentSceneCamera
     PUSH ECX                            ; 004ad58b
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004ad58c
     PUSH EAX                            ; 004ad58f
     CALL dword ptr [EDX + 0x4]          ; 004ad590
     MOV EDX,0xffff                      ; 004ad593
     ADD ESP,0xc                         ; 004ad598
-    MOV EBX,dword ptr [0x01c51cac]      ; 004ad59b | g_INT_01c51cac
+    MOV EBX,dword ptr [0x01c51cac]      ; 004ad59b | g_PerspectiveReciprocal
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ad5a1
     SUB EDX,EBX                         ; 004ad5a4
     MOV EAX,dword ptr [EAX + 0x40]      ; 004ad5a6
@@ -425,13 +425,13 @@ section .text
         ;   XREF to: 004ad1b2 (CONDITIONAL_JUMP)  ; LAB_004ad1b2
     JMP 0x004ad2cf                      ; 004ad66c
         ;   XREF to: 004ad2cf (UNCONDITIONAL_JUMP)  ; LAB_004ad2cf
-    PUSH 0x61c404                       ; 004ad671 | g_SMRGLTextureBasic_0061c404
+    PUSH 0x61c404                       ; 004ad671 | g_FireEffectBlueSparkTexture
         ;   Label: caseD_1
     MOV ECX,dword ptr [0x00612560]      ; 004ad676 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 004ad67c | g_CDemonRenderer_01bc120c
     JMP 0x004ad1c5                      ; 004ad67d
         ;   XREF to: 004ad1c5 (UNCONDITIONAL_JUMP)  ; LAB_004ad1c5
-    PUSH 0x61c41c                       ; 004ad682 | g_SMRGLTextureBasic_0061c41c
+    PUSH 0x61c41c                       ; 004ad682 | g_FireEffectGreenSparkTexture
         ;   Label: caseD_2
     MOV EDX,dword ptr [0x00612560]      ; 004ad687 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 004ad68d | g_CDemonRenderer_01bc120c
@@ -452,7 +452,7 @@ section .text
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004ad6b3
     PUSH 0x0                            ; 004ad6b6
-    PUSH 0x1c57078                      ; 004ad6b8 | g_CVector3i_01c57078
+    PUSH 0x1c57078                      ; 004ad6b8 | g_BillboardCameraRight
     MOV EDI,dword ptr [0x00612560]      ; 004ad6bd | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 004ad6c3 | g_CDemonRenderer_01bc120c
     LEA EBX,[ESP + 0x5c]                ; 004ad6c4

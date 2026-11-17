@@ -18,27 +18,27 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_00557d10(CWavOutDevice *thi
   uVar4 = (uint)(iVar1 != 0);
   iVar1 = 0;
   do {
-    if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b0b4 + iVar1) != (HGLOBAL)0x0) {
-      GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b0b4 + iVar1));
-      *(uint *)((int)g_HGLOBAL_ARRAY_0264b0b4 + iVar1) = 0;
+    if (*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1) != (HGLOBAL)0x0) {
+      GlobalFree(*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1));
+      *(uint *)((int)g_WaveOutBufferHandles + iVar1) = 0;
     }
-    *(uint *)((int)g_LPVOID_ARRAY_0264b0d4 + iVar1) = 0;
-    if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b074 + iVar1) != (HGLOBAL)0x0) {
-      GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b074 + iVar1));
-      *(uint *)((int)g_HGLOBAL_ARRAY_0264b074 + iVar1) = 0;
+    *(uint *)((int)g_WaveOutBuffers + iVar1) = 0;
+    if (*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar1) != (HGLOBAL)0x0) {
+      GlobalFree(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar1));
+      *(uint *)((int)g_WaveOutHeaderHandles + iVar1) = 0;
     }
     iVar3 = iVar1 + 4;
-    *(uint *)((int)g_LPWAVEHDR_ARRAY_0264b094 + iVar1) = 0;
+    *(uint *)((int)g_WaveOutHeaders + iVar1) = 0;
     iVar1 = iVar3;
   } while (iVar3 != 0x20);
-  if (g_INT_0264b070 == 0) {
+  if (g_WaveOutHandle == 0) {
     return uVar4;
   }
-  MVar2 = waveOutClose((HWAVEOUT)g_INT_0264b070);
+  MVar2 = waveOutClose((HWAVEOUT)g_WaveOutHandle);
   if (MVar2 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutClose failed.");
     uVar4 = 0;
   }
-  g_INT_0264b070 = 0;
+  g_WaveOutHandle = 0;
   return uVar4;
 }

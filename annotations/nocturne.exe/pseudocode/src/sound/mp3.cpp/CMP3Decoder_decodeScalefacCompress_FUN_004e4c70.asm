@@ -24,7 +24,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000 at 004e504e
 ;
 ; Referenced Globals:
-;   int[6][3][4] g_INT_ARRAY_ARRAY_ARRAY_005bc470
+;   int[6][3][4] g_Layer3ScalefactorBandCounts
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0
@@ -317,7 +317,7 @@ section .text
     SAR EAX,0x10                        ; 004e4fb1
     SHL EAX,0x2                         ; 004e4fb4
     MOVSX ECX,SI                        ; 004e4fb7
-    CMP ECX,dword ptr [EDX + EAX*0x1 + 0x5bc470] ; 004e4fba | g_INT_ARRAY_ARRAY_ARRAY_005bc470
+    CMP ECX,dword ptr [EDX + EAX*0x1 + 0x5bc470] ; 004e4fba | g_Layer3ScalefactorBandCounts
     JC 0x004e4fca                       ; 004e4fc1
         ;   XREF to: 004e4fca (CONDITIONAL_JUMP)  ; LAB_004e4fca
     INC word ptr [ESP + 0x20]           ; 004e4fc3

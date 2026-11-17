@@ -13,8 +13,8 @@
 ;   double g_DOUBLE_005d159e = 3.14159265350000
 ;   float g_FLOAT_005d15a6 = 3.141593
 ;   double g_DOUBLE_005d15ae = 2
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   CEventList* g_CEventListPtr = 01c6e360
+;   CKeys* g_CKeysPtr = 01d70a78
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041b410
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00547490 (CONDITIONAL_JUMP)  ; LAB_00547490
     LEA EAX,[EBX + 0x2dc]               ; 005473e4
     PUSH EAX                            ; 005473ea
-    MOV ESI,dword ptr [0x005fba60]      ; 005473eb | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 005473eb | g_CEventListPtr
     PUSH ESI                            ; 005473f1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005473f2
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -102,7 +102,7 @@ section .text
     JNZ 0x0054753f                      ; 00547497
         ;   XREF to: 0054753f (CONDITIONAL_JUMP)  ; LAB_0054753f
     PUSH 0x13                           ; 0054749d
-    MOV EAX,[0x00600284]                ; 0054749f | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 0054749f | g_CKeysPtr
     PUSH EAX                            ; 005474a4
     MOV ESI,dword ptr [EAX]             ; 005474a5
     CALL dword ptr [ESI]                ; 005474a7

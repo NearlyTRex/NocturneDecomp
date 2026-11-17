@@ -10,8 +10,7 @@ void __cdecl core_trash_cpp_staticInit_FUN_00546c30(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CTrashActorType_02dd1048,"CTrash",
-             core_trash_cpp_factoryFuncTrash_FUN_00546c60,&INT_005c111c,1,
-             &g_CDemonActorActorType_00763e48);
+            (&g_CTrashClassInfo,"CTrash",core_trash_cpp_factoryFuncTrash_FUN_00546c60,
+             &INT_005c111c,1,&g_CDemonActorClassInfo);
   return;
 }

@@ -23,9 +23,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CVector3i g_CVector3i_014a02f0
-;   undefined4 g_CVector3i_014a02f0.y
-;   undefined4 g_CVector3i_014a02f0.z
+;   CVector3i g_CameraOutOfBoundsCoord
+;   undefined4 g_CameraOutOfBoundsCoord.y
+;   undefined4 g_CameraOutOfBoundsCoord.z
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
@@ -85,9 +85,9 @@ section .text
     MOV EDI,ESP                         ; 0044a471
         ;   Label: LAB_0044a471
     MOV ESI,0x14a02f0                   ; 0044a473
-    MOVSD ES:EDI,ESI                    ; 0044a478 | g_CVector3i_014a02f0
-    MOVSD ES:EDI,ESI                    ; 0044a479 | g_CVector3i_014a02f0.y
-    MOVSD ES:EDI,ESI                    ; 0044a47a | g_CVector3i_014a02f0.z
+    MOVSD ES:EDI,ESI                    ; 0044a478 | g_CameraOutOfBoundsCoord
+    MOVSD ES:EDI,ESI                    ; 0044a479 | g_CameraOutOfBoundsCoord.y
+    MOVSD ES:EDI,ESI                    ; 0044a47a | g_CameraOutOfBoundsCoord.z
     MOV ESI,ESP                         ; 0044a47b
     MOV EDI,EBP                         ; 0044a47d
     MOVSD ES:EDI,ESI                    ; 0044a47f

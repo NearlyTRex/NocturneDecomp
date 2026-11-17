@@ -68,32 +68,32 @@ extern CHag_full_vtable g_CHagVTable;
 extern CHand_full_vtable g_CHandVTable;
 
 // CVector3i[62]
-extern CVector3i g_CVector3i_ARRAY_0060a0fc[62];
+extern CVector3i g_CoronaVertexPositions[62];
 
 // SFontGlyph[224]
-extern SFontGlyph g_SFontGlyph_ARRAY_00601440[224];
+extern SFontGlyph g_FontTable[224];
 
 // SLightGlowTable
-extern SLightGlowTable g_SLightGlowTable_0060afc8;
+extern SLightGlowTable g_LightGlow;
 
 // SMRGLLightPrimitive[84]
-extern SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_0060a3e4[84];
+extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
 
 // SMRGLPrimitiveQuad*[2000]
-extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_0060b288[2000];
+extern SMRGLPrimitiveQuad* g_VisibleFacePointers[2000];
 
 // SMRGLSkyTexture*
-extern SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_0060d1f0;
+extern SMRGLSkyTexture* g_SkyDomeTexturePtr;
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00609810;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00609acc;
+extern SMRGLTextureBasic g_BaronBlueGlowTexture;
+extern SMRGLTextureBasic g_BurnCharTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00609ae4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00609ff0;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0060a0e4;
+extern SMRGLTextureBasic g_CameraBackdropTexture;
+extern SMRGLTextureBasic g_CoronaHeadliteTexture;
 
 // SMRGLTextureBasic[6]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00609a10[6];
+extern SMRGLTextureBasic g_EtherealBoltTextures[6];
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_006002B0;
@@ -129,21 +129,21 @@ extern WatcomTypeInfo g_CChainTypeInfo;
 extern WatcomTypeInfo g_CMorphModelTypeInfo;
 
 // char[104]
-extern char g_CHAR_ARRAY_00609590[104];
+extern char g_PropertyNamePrefix[104];
 
 // char[300]
-extern char g_CHAR_ARRAY_006095f8[300];
+extern char g_LocalizationTemplate[300];
 
 // float
 extern float g_FLOAT_0060b274;
-extern float g_FLOAT_0060d1f4;
+extern float g_SkyDomeVertexScale;
 
 // int
 extern int g_INT_006013f6;
-extern int g_INT_0060936c;
-extern int g_INT_00609370;
+extern int g_TextWrapEnabled;
+extern int g_CurrentTextColor;
 extern int g_INT_006093bc;
-extern int g_INT_006093c0;
+extern int g_CurrentRenderColor;
 extern int g_CDemonActorClassVersion;
 extern int g_CAmmoClassVersion;
 extern int g_CAmmoBoxClassVersion;
@@ -166,20 +166,20 @@ extern int g_INT_00609960;
 extern int g_CBrideClassVersion;
 extern int g_CBugsClassVersion;
 extern int g_CCharacterClassVersion;
-extern int g_INT_00609b30;
-extern int g_INT_00609b34;
+extern int g_LineClippingDisabled;
+extern int g_FarPlaneDistance;
 extern int g_CColonelClassVersion;
 extern int g_CConstructClassVersion;
 extern int g_CConveyorClassVersion;
 extern int g_CZombieCowClassVersion;
 extern int g_CCrateClassVersion;
 extern int g_CCrossbowClassVersion;
-extern int g_INT_00609f98;
-extern int g_INT_00609f9c;
-extern int g_INT_00609fa0;
-extern int g_INT_00609fa4;
-extern int g_INT_00609fa8;
-extern int g_INT_00609fac;
+extern int g_CameraShakePeakValue;
+extern int g_CameraShakeSustainValue;
+extern int g_CameraShakeState;
+extern int g_FogColorIndexR;
+extern int g_FogColorIndexG;
+extern int g_FogColorIndexB;
 extern int g_INT_0060a008;
 extern int g_CActorDestinationClassVersion;
 extern int g_CDocClassVersion;
@@ -187,40 +187,40 @@ extern int g_CZombieDogClassVersion;
 extern int g_CDoorClassVersion;
 extern int g_CDraculaBrideClassVersion;
 extern int g_INT_0060b270;
-extern int g_INT_0060b284;
+extern int g_RenderPixelBudget;
 extern int g_CDripClassVersion;
 extern int g_CDroneClassVersion;
-extern int g_INT_0060d254;
-extern int g_INT_0060d258;
-extern int g_INT_0060d25c;
-extern int g_INT_0060d264;
+extern int g_SoftwareDeltaTextureU;
+extern int g_SoftwareDeltaTextureV;
+extern int g_SoftwareDeltaDepthZ;
+extern int g_PerspectiveScanlinePixelCount;
 
 // int[16]
-extern int g_INT_ARRAY_006094d0[16];
+extern int g_ColorLookupTable[16];
 
 // int[8]
-extern int g_INT_ARRAY_00609fb0[8];
-extern int g_INT_ARRAY_00609fd0[8];
+extern int g_CameraEdgeOffsetX[8];
+extern int g_CameraEdgeOffsetY[8];
 
 // short
-extern short g_SHORT_006013f4;
+extern short g_DaysInMonth_Normal;
 extern short g_SHORT_0060140c;
-extern short g_SHORT_0060140e;
+extern short g_DaysInMonth_Leap;
 
 // uint
-extern uint g_UINT_0060d238;
-extern uint g_UINT_0060d23c;
-extern uint g_UINT_0060d244;
+extern uint g_PerspectiveNextU;
+extern uint g_PerspectiveNextV;
+extern uint g_StartDepthZ;
 
 // uint*
-extern uint* g_UINT_PTR_0060d268;
+extern uint* g_PerspectiveScanlineZPtr;
 
 // undefined1
 extern undefined1 DAT_0060958f;
 
 // void*
 extern void* g_PTR_006002e4;
-extern void* g_PTR_0060d260;
+extern void* g_PerspectiveScanlineColorPtr;
 
 // void*[54]
 extern void* g_CChainVTable[54];

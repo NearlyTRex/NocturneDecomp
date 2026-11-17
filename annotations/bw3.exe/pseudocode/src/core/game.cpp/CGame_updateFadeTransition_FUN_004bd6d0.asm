@@ -17,7 +17,7 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_01d22c84
-;   float g_FLOAT_01d22c88
+;   float g_IrisFadeRadius
 ;   int g_INT_01d22c94
 ;
 ; *****************************************************************************
@@ -51,15 +51,15 @@ section .text
     FILD dword ptr [EAX + 0x310]        ; 004bd70e
     FMUL double ptr [0x005c3550]        ; 004bd714 | g_DOUBLE_005c3550
     FDIV float ptr [ESP]                ; 004bd71a
-    FLD float ptr [0x01d22c88]          ; 004bd71d | g_FLOAT_01d22c88
+    FLD float ptr [0x01d22c88]          ; 004bd71d | g_IrisFadeRadius
     FXCH                                ; 004bd723
     FSUBR ST0,ST1                       ; 004bd725
     FLDZ                                ; 004bd727
     FXCH                                ; 004bd729
     FSTP ST2                            ; 004bd72b
     FXCH                                ; 004bd72d
-    FSTP float ptr [0x01d22c88]         ; 004bd72f | g_FLOAT_01d22c88
-    FCOMP float ptr [0x01d22c88]        ; 004bd735 | g_FLOAT_01d22c88
+    FSTP float ptr [0x01d22c88]         ; 004bd72f | g_IrisFadeRadius
+    FCOMP float ptr [0x01d22c88]        ; 004bd735 | g_IrisFadeRadius
     FNSTSW AX                           ; 004bd73b
     SAHF                                ; 004bd73d
     JA 0x004bd7ab                       ; 004bd73e
@@ -90,15 +90,15 @@ section .text
     FILD dword ptr [EAX + 0x310]        ; 004bd76d
     FMUL double ptr [0x005c3550]        ; 004bd773 | g_DOUBLE_005c3550
     FDIV float ptr [ESP]                ; 004bd779
-    FLD float ptr [0x01d22c88]          ; 004bd77c | g_FLOAT_01d22c88
+    FLD float ptr [0x01d22c88]          ; 004bd77c | g_IrisFadeRadius
     FXCH                                ; 004bd782
     FADD ST0,ST1                        ; 004bd784
     FILD dword ptr [0x005fba18]         ; 004bd786 | g_INT_005fba18
     FXCH                                ; 004bd78c
     FSTP ST2                            ; 004bd78e
     FXCH                                ; 004bd790
-    FSTP float ptr [0x01d22c88]         ; 004bd792 | g_FLOAT_01d22c88
-    FCOMP float ptr [0x01d22c88]        ; 004bd798 | g_FLOAT_01d22c88
+    FSTP float ptr [0x01d22c88]         ; 004bd792 | g_IrisFadeRadius
+    FCOMP float ptr [0x01d22c88]        ; 004bd798 | g_IrisFadeRadius
     FNSTSW AX                           ; 004bd79e
     SAHF                                ; 004bd7a0
     JNC 0x004bd706                      ; 004bd7a1
@@ -108,7 +108,7 @@ section .text
         ;   XREF to: 004bd753 (UNCONDITIONAL_JUMP)  ; LAB_004bd753
     XOR EDX,EDX                         ; 004bd7ab
         ;   Label: LAB_004bd7ab
-    MOV dword ptr [0x01d22c88],EDX      ; 004bd7ad | g_FLOAT_01d22c88
+    MOV dword ptr [0x01d22c88],EDX      ; 004bd7ad | g_IrisFadeRadius
     MOV EDX,0x4                         ; 004bd7b3
     MOV dword ptr [0x01d22c94],ECX      ; 004bd7b8 | g_INT_01d22c94
     MOV dword ptr [0x01d22c84],EDX      ; 004bd7be | g_INT_01d22c84

@@ -59,13 +59,13 @@ extern CDemonSet* g_CDemonSetPtr;
 extern CEditorTools* g_CEditorToolsPtr;
 
 // CEventList*
-extern CEventList* g_CEventList_PTR_006141f0;
+extern CEventList* g_CEventListPtr;
 
 // CFieldNotes*
 extern CFieldNotes* g_CFieldNotesPtr;
 
 // CFireEffect*
-extern CFireEffect* g_CFireEffect_PTR_00614d30;
+extern CFireEffect* g_CFireEffectPtr;
 
 // CGame*
 extern CGame* g_CGamePtr;
@@ -80,7 +80,7 @@ extern CGore* g_CGorePtr;
 extern CGround* g_CGroundPtr;
 
 // CKeys*
-extern CKeys* g_CKeys_PTR_00617dd4;
+extern CKeys* g_CKeysPtr;
 
 // CLevelLoader*
 extern CLevelLoader* g_CLevelLoaderPtr;
@@ -104,19 +104,19 @@ extern CSimpleParticleSystem* g_CSimpleParticleSystemPtr;
 extern CSound* g_CSound_PTR_0061c068;
 
 // CTerrain*
-extern CTerrain* g_CTerrain_PTR_0061e450;
+extern CTerrain* g_CTerrainPtr;
 
 // CTextureList*
 extern CTextureList* g_CTextureListPtr;
 
 // CVector3i
-extern CVector3i g_CVector3i_0061b5ac;
+extern CVector3i g_GlobalLightDirection;
 
 // CWater*
 extern CWater* g_CWaterPtr;
 
 // CWeather*
-extern CWeather* g_CWeather_PTR_0061e8f4;
+extern CWeather* g_CWeatherPtr;
 
 // GUID
 extern GUID g_IID_IKsPropertySet;
@@ -124,87 +124,87 @@ extern GUID g_DSPROPSETID_VoiceManager;
 extern GUID g_DSPROPSETID_EAX_ReverbProperties;
 
 // Heap*
-extern Heap* g_Heap_PTR_0061eea0;
-extern Heap* g_Heap_PTR_0061eea4;
+extern Heap* g_MainHeap;
+extern Heap* g_SecondaryHeap;
 
 // RuntimeHandlerEntry
-extern RuntimeHandlerEntry g_RuntimeHandlerEntry_0061fe4c;
+extern RuntimeHandlerEntry g_ExitHandlerTableEnd;
 
 // RuntimeHandlerEntry[203]
 extern RuntimeHandlerEntry g_InitHandlers[203];
 
 // SAudioFormatDescriptor[12]
-extern SAudioFormatDescriptor g_SAudioFormatDescriptor_ARRAY_0061bf8c[12];
+extern SAudioFormatDescriptor g_WaveInFormatTable[12];
 
 // SHuffmanTableSource[34]
-extern SHuffmanTableSource g_SHuffmanTableSource_ARRAY_0061ade0[34];
+extern SHuffmanTableSource g_HuffmanTableSources[34];
 
 // SIGNAL_HANDLER_TYPE[26]
-extern SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[26];
+extern SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26];
 
 // SIOControlBlock*
-extern SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8;
+extern SIOControlBlock* g_IOControlBlock;
 
 // SMRGLPrimitiveQuad
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_0061e6ac;
+extern SMRGLPrimitiveQuad g_WaterRenderQuad;
 
 // SMRGLPrimitiveQuad[6]
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_0061b97c[6];
+extern SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6];
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006150f4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061510c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00615124;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061513c;
+extern SMRGLTextureBasic g_FireEffectBlackHoleTexture;
+extern SMRGLTextureBasic g_FireEffectSparkTexture;
+extern SMRGLTextureBasic g_FireEffectBlueSparkTexture;
+extern SMRGLTextureBasic g_FireEffectGreenSparkTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061516c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006151cc;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006151e4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006151fc;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00615214;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061522c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006157b4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061585c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00615874;
+extern SMRGLTextureBasic g_FireEffectRedSparkTexture;
+extern SMRGLTextureBasic g_FireEffectLaserTexture;
+extern SMRGLTextureBasic g_FireEffectBeamFuzzTexture;
+extern SMRGLTextureBasic g_FireEffectReticle;
+extern SMRGLTextureBasic g_FireEffectHeadliteTexture;
+extern SMRGLTextureBasic g_FireEffectBlastTexture;
+extern SMRGLTextureBasic g_FireEffectPopcornTexture;
+extern SMRGLTextureBasic g_FireEffectRainDropTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00615ae8;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00616378;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006167f0;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00617968;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00617da4;
+extern SMRGLTextureBasic g_FliesTexture;
+extern SMRGLTextureBasic g_BloodParticleTexture;
+extern SMRGLTextureBasic g_FootstepTexture;
+extern SMRGLTextureBasic g_Inventory3DTextureAtlas;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00617e14;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00617f2c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061b2d0;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061b8c4;
+extern SMRGLTextureBasic g_MarqueeSparkTexture;
+extern SMRGLTextureBasic g_PathMapTexture;
+extern SMRGLTextureBasic g_EnvMapTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061bb54;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061bb70;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061e8f8;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061e910;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061e928;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061e944;
+extern SMRGLTextureBasic g_RainDropTexture;
+extern SMRGLTextureBasic g_RainSplashTexture;
+extern SMRGLTextureBasic g_SnowflakeTexture;
+extern SMRGLTextureBasic g_WerewolfEyeGlowTexture;
 
 // SMRGLTextureBasic[116]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616e68[116];
+extern SMRGLTextureBasic g_BloodPoolAnimTextures[116];
 
 // SMRGLTextureBasic[16]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061e52c[16];
+extern SMRGLTextureBasic g_WaterTextures[16];
 
 // SMRGLTextureBasic[40]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00614d34[40];
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00615b00[40];
+extern SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40];
+extern SMRGLTextureBasic g_FlameFrameTextures[40];
 
 // SMRGLTextureBasic[4]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616808[4];
+extern SMRGLTextureBasic g_BloodSplatTextures[4];
 
 // SMRGLTextureBasic[54]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00615244[54];
+extern SMRGLTextureBasic g_FireEffectExplosionTextures[54];
 
 // SMRGLTextureBasic[64]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616868[64];
+extern SMRGLTextureBasic g_BloodSplatAnimTextures[64];
 
 // SMRGLTextureBasic[6]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_006157cc[6];
+extern SMRGLTextureBasic g_FireEffectLightningBoltTextures[6];
 
 // SMpegLayer3BandIndex[6]
-extern SMpegLayer3BandIndex g_SMpegLayer3BandIndex_ARRAY_00619338[6];
+extern SMpegLayer3BandIndex g_Layer3BandIndex[6];
 
 // SReverbPreset[27]
 extern SReverbPreset g_ReverbPresetTable[27];
@@ -214,9 +214,9 @@ extern TerminatedCString s_EST_0061f52c;
 extern TerminatedCString s_EDT_0061f5ad;
 
 // WCHAR*
-extern WCHAR* g_WCHAR_PTR_0061f250;
-extern WCHAR* g_WCHAR_PTR_0061f254;
-extern WCHAR* g_WCHAR_PTR_0061f258;
+extern WCHAR* g_CommandLineArgsW;
+extern WCHAR* g_ExeFileNameW;
+extern WCHAR* g_DllFileNameW;
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_CEditorToolsDestructorNode;
@@ -310,119 +310,119 @@ extern WatcomStaticDestructorNode DAT_0061EA4C;
 extern WatcomStaticDestructorNode DAT_0061EBEC;
 
 // WatcomStaticDestructorNode*
-extern WatcomStaticDestructorNode* g_WatcomStaticDestructorNode_PTR_0061f64c;
+extern WatcomStaticDestructorNode* g_AtexitListHead;
 
 // _FILE
-extern _FILE g_FILE_0061ef6e;
+extern _FILE g_StdoutLogFile;
 extern _FILE g_FILE_0061ef88;
 
 // _FILE*
-extern _FILE* g_FILE_PTR_0061ef54;
+extern _FILE* g_StaticFilePoolStart;
 
 // _MMX_INTEGER
-extern _MMX_INTEGER g_MMX_INTEGER_006112c8;
-extern _MMX_INTEGER g_MMX_INTEGER_00611328;
-extern _MMX_INTEGER g_MMX_INTEGER_00611330;
-extern _MMX_INTEGER g_MMX_INTEGER_00611338;
-extern _MMX_INTEGER g_MMX_INTEGER_00611340;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c808;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c810;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c828;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c830;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c8d0;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c8d8;
-extern _MMX_INTEGER g_MMX_INTEGER_0061c8e0;
+extern _MMX_INTEGER g_FilterBlendConstant;
+extern _MMX_INTEGER g_LightmapBlendBias5;
+extern _MMX_INTEGER g_LightmapBlendBias6;
+extern _MMX_INTEGER g_LightmapBlendBias3;
+extern _MMX_INTEGER g_LightmapBlendBias4;
+extern _MMX_INTEGER g_VertexGreenStart;
+extern _MMX_INTEGER g_VertexBlueStart;
+extern _MMX_INTEGER g_VertexGreenDelta;
+extern _MMX_INTEGER g_VertexBlueDelta;
+extern _MMX_INTEGER g_RedMask16;
+extern _MMX_INTEGER g_GreenMask16;
+extern _MMX_INTEGER g_BlueMask16;
 
 // byte
-extern byte g_BYTE_006182db;
+extern byte g_CPUIDSupported;
 extern byte g_BYTE_0061ee9c;
 extern byte g_BYTE_0061ee9d;
-extern byte g_BYTE_0061f287;
+extern byte g_WindowsMinorVersion;
 extern byte g_BYTE_0061f288;
-extern byte g_BYTE_0061f458;
-extern byte g_BYTE_0061f644;
-extern byte g_BYTE_0061f650;
-extern byte g_BYTE_0061f7cc;
+extern byte g_UseSoftwareMath;
+extern byte g_TimezoneInitFlags;
+extern byte g_DebuggerIsAttached;
+extern byte g_ConsoleHandlerRegistered;
 
 // char*
-extern char* g_CHAR_PTR_0061f248;
-extern char* g_CHAR_PTR_0061f24c;
-extern char* g_CHAR_PTR_0061f281;
+extern char* g_ExeFileNameA;
+extern char* g_DllFileNameA;
+extern char* g_EnvironmentStrings;
 
 // char[100]
-extern char g_CHAR_ARRAY_00616430[100];
-extern char g_CHAR_ARRAY_006166c0[100];
-extern char g_CHAR_ARRAY_00617d40[100];
+extern char g_EventCommandBuffer[100];
+extern char g_IpAddress[100];
+extern char g_DefaultInventoryValue[100];
 
 // char[104]
-extern char g_CHAR_ARRAY_00617cd8[104];
-extern char g_CHAR_ARRAY_006181e0[104];
-extern char g_CHAR_ARRAY_00618248[104];
-extern char g_CHAR_ARRAY_0061c220[104];
+extern char g_DefaultInventoryKey[104];
+extern char g_DefaultMissionActorClass[104];
+extern char g_DefaultMissionActorName[104];
+extern char g_SoundResultBufferTemplate[104];
 
 // char[108]
-extern char g_CHAR_ARRAY_0061c288[108];
+extern char g_TrainSoundFilenameTemplate[108];
 
 // char[112]
-extern char g_CHAR_ARRAY_00614350[112];
+extern char g_DefaultCommandArg[112];
 
 // char[128]
-extern char g_CHAR_ARRAY_0061b190[128];
+extern char g_OSFontName[128];
 
 // char[200]
-extern char g_CHAR_ARRAY_00614288[200];
-extern char g_CHAR_ARRAY_0061b470[200];
+extern char g_DefaultSfxHandleName[200];
+extern char g_ActorRefDefaultBuffer[200];
 
 // char[256]
-extern char g_CHAR_ARRAY_0061bce0[256];
-extern char g_CHAR_ARRAY_0061bde0[256];
-extern char g_CHAR_ARRAY_0061e180[256];
+extern char g_DefaultSoundDeviceName[256];
+extern char g_DefaultDeviceName[256];
+extern char g_RendererDllPath[256];
 
 // char[260]
-extern char g_CHAR_ARRAY_00614008[260];
-extern char g_CHAR_ARRAY_0061f30c[260];
+extern char g_FilePathBuffer[260];
+extern char g_TempDirectoryBuffer[260];
 
 // char[512]
-extern char g_CHAR_ARRAY_00613c08[512];
-extern char g_CHAR_ARRAY_00613e08[512];
+extern char g_Field1ParseBuffer[512];
+extern char g_Field2ParseBuffer[512];
 
 // char[60]
-extern char g_CHAR_ARRAY_00615890[60];
+extern char g_DefaultRicochetSound[60];
 
 // double
-extern double g_DOUBLE_0061c78c;
-extern double g_DOUBLE_0061c794;
+extern double g_BufferFillZeroQword;
+extern double g_BufferFillFpuPopST0;
 
 // dst_rule
-extern dst_rule g_dst_rule_0061f4e4;
+extern dst_rule g_DstStartRule;
 
 // float
 extern float g_FLOAT_0061bcb4;
 extern float g_FLOAT_0061bcb8;
-extern float g_FLOAT_0061bcc4;
+extern float g_MaxSoftwareLatency;
 extern float g_FLOAT_0061e524;
 
 // int
 extern int g_INT_00613880;
 extern int g_CDynamiteClassVersion;
-extern int g_INT_006138e4;
-extern int g_INT_006138e8;
+extern int g_CursorSizeHorizontal;
+extern int g_CursorSizeVertical;
 extern int g_CElephantGunClassVersion;
 extern int g_CEmitterClassVersion;
 extern int g_CEnemyClassVersion;
 extern int g_INT_006141b8;
 extern int g_INT_006141bc;
 extern int g_INT_006141c0;
-extern int g_INT_006141c4;
-extern int g_INT_006141c8;
-extern int g_INT_006141cc;
-extern int g_INT_006141d0;
-extern int g_INT_006141d8;
-extern int g_INT_006141e4;
+extern int g_TextureFilteringEnabled;
+extern int g_CurrentTextureDimension;
+extern int g_InputKeyMask;
+extern int g_JoystickNumButtons;
+extern int g_CurrentAlphaValue;
+extern int g_ProjectionScale;
 extern int g_INT_00614284;
 extern int g_INT_00614c44;
 extern int g_CFilmReelClassVersion;
-extern int g_INT_00614c4c;
+extern int g_CFilmProjectorClassVersion;
 extern int g_CFlameClassVersion;
 extern int g_CFlameCanClassVersion;
 extern int g_CFlameThrowerClassVersion;
@@ -439,8 +439,8 @@ extern int g_INT_00616040;
 extern int g_CFliesClassVersion;
 extern int g_CFrankenstienMachineClassVersion;
 extern int g_CGabriellaClassVersion;
-extern int g_INT_006164a4;
-extern int g_INT_006164a8;
+extern int g_MovieRecordingWidth;
+extern int g_MovieRecordingHeight;
 extern int g_CGargoyleClassVersion;
 extern int g_CGasMaskClassVersion;
 extern int g_CGhoulClassVersion;
@@ -457,16 +457,16 @@ extern int g_CHotDemonClassVersion;
 extern int g_CHighPriestOfGardathClassVersion;
 extern int g_CIcePickClassVersion;
 extern int g_CImpClassVersion;
-extern int g_INT_00617cd0;
-extern int g_INT_00617cd4;
+extern int g_InventoryWidth;
+extern int g_InventoryHeight;
 extern int g_CKeyActorClassVersion;
 extern int g_CLadderClassVersion;
 extern int g_CLarvaClassVersion;
 extern int g_CLeverClassVersion;
-extern int g_INT_00617e40;
-extern int g_INT_00617e44;
-extern int g_INT_00617e48;
-extern int g_INT_00617e4c;
+extern int g_AmbientLightLevel;
+extern int g_SpecularEnabled;
+extern int g_DiffuseLightMultiplier;
+extern int g_SpecularLightMultiplier;
 extern int g_CLightGunClassVersion;
 extern int g_CLightConeClassVersion;
 extern int g_CMansionPuzzleCircleClassVersion;
@@ -475,25 +475,25 @@ extern int g_CMarqueeClassVersion;
 extern int g_CMeleeClassVersion;
 extern int g_CMimicClassVersion;
 extern int g_CMineCarClassVersion;
-extern int g_INT_006182d0;
-extern int g_INT_006182d4;
+extern int g_CPUInfoBasicInfo2;
+extern int g_CPUInfoBaseInfo3;
 extern int g_CMobsterClassVersion;
 extern int g_CMolochClassVersion;
 extern int g_INT_0061846c;
 extern int g_INT_00618470;
 extern int g_INT_00618474;
-extern int g_INT_00618de0;
-extern int g_INT_00618e3c;
-extern int g_INT_00618e80;
-extern int g_INT_0061b124;
+extern int g_MpegSynthesisTableInitialized;
+extern int g_Mp3AntiAliasInitialized;
+extern int g_Mp3SynthesisTablesInitialized;
+extern int g_NetLobbyStateChanged;
 extern int g_CNPCClassVersion;
 extern int g_CPassengerClassVersion;
 extern int g_CPendulumClassVersion;
 extern int g_CPlatformClassVersion;
-extern int g_INT_0061b424;
+extern int g_MaxViewportScanline;
 extern int g_CScatClassVersion;
 extern int g_CSentinelClassVersion;
-extern int g_INT_0061b5b8;
+extern int g_RenderMirrorsFlag;
 extern int g_CShadowClassVersion;
 extern int g_CShotgunClassVersion;
 extern int g_CShovelClassVersion;
@@ -501,31 +501,31 @@ extern int g_CSimBoxClassVersion;
 extern int g_INT_0061bbd4;
 extern int g_INT_0061bbd8;
 extern int g_CSmileyClassVersion;
-extern int g_INT_0061bc80;
-extern int g_INT_0061bc94;
-extern int g_INT_0061bc98;
-extern int g_INT_0061bc9c;
-extern int g_INT_0061bca0;
-extern int g_INT_0061bca8;
-extern int g_INT_0061bcac;
+extern int g_SfxPlaybackStateCounter;
+extern int g_MaxSoundChannels;
+extern int g_AudioBitsPerSample;
+extern int g_AudioChannelCount;
+extern int g_AudioSampleRate;
+extern int g_SoundDeviceCount;
+extern int g_CurrentSoundDevice;
 extern int g_INT_0061bcb0;
-extern int g_INT_0061bcbc;
-extern int g_INT_0061bcc0;
-extern int g_INT_0061bcc8;
+extern int g_MinimumSoundMemoryBudget;
+extern int g_MaximumSoundMemoryBudget;
+extern int g_RecordingDeviceCount;
 extern int g_INT_0061bccc;
-extern int g_INT_0061bcd0;
-extern int g_INT_0061bcd4;
-extern int g_INT_0061bcd8;
-extern int g_INT_0061bf80;
-extern int g_INT_0061bf84;
-extern int g_INT_0061bf88;
-extern int g_INT_0061c314;
-extern int g_INT_0061c350;
-extern int g_INT_0061c354;
-extern int g_INT_0061c35c;
-extern int g_INT_0061c780;
-extern int g_INT_0061c784;
-extern int g_INT_0061c788;
+extern int g_RecordingBitsPerSample;
+extern int g_RecordingChannelCount;
+extern int g_RecordingSampleRate;
+extern int g_DirectSoundDeviceCount;
+extern int g_WaveOutDeviceID;
+extern int g_WaveInDeviceID;
+extern int g_ScanlinePixelCount;
+extern int g_StartTextureU;
+extern int g_StartTextureV;
+extern int g_StartDepthW;
+extern int g_HardwareDeltaTextureU;
+extern int g_HardwareDeltaTextureV;
+extern int g_HardwareDeltaDepthZ;
 extern int g_INT_0061c7a4;
 extern int g_INT_0061c7a8;
 extern int g_INT_0061c7ac;
@@ -536,13 +536,13 @@ extern int g_INT_0061c7e0;
 extern int g_INT_0061c7e8;
 extern int g_INT_0061c7ec;
 extern int g_INT_0061c7f0;
-extern int g_INT_0061c840;
-extern int g_INT_0061c848;
+extern int g_VertexAlphaStart;
+extern int g_VertexAlphaDelta;
 extern int g_INT_0061c850;
 extern int g_INT_0061c858;
-extern int g_INT_0061c978;
-extern int g_INT_0061e280;
-extern int g_INT_0061e28c;
+extern int g_SpecialColor;
+extern int g_SystemInitialized;
+extern int g_FullScreenQuadDepth;
 extern int g_CSpikeClassVersion;
 extern int g_CStairsClassVersion;
 extern int g_CTempleStoneClassVersion;
@@ -568,9 +568,9 @@ extern int g_CWaterActorClassVersion;
 extern int g_CWayPointClassVersion;
 extern int g_CWeaponClassVersion;
 extern int g_CWerewolfClassVersion;
-extern int g_INT_0061e980;
-extern int g_INT_0061e98c;
-extern int g_INT_0061e990;
+extern int g_BrightnessDirection;
+extern int g_WindowActive;
+extern int g_ForceMessagePump;
 extern int g_INT_0061e994;
 extern int g_CZombieClassVersion;
 extern int g_CGogglesClassVersion;
@@ -604,117 +604,117 @@ extern int g_CChainClassVersion;
 extern int g_INT_0061eea8;
 extern int g_INT_0061f160;
 extern int g_INT_0061f240;
-extern int g_INT_0061f244;
-extern int g_INT_0061f268;
-extern int g_INT_0061f270;
+extern int g_WinMainCmdShow;
+extern int g_StackAllocSize;
+extern int g_ConsoleInitializationFlag;
 extern int g_INT_0061f2a0;
 extern int g_INT_0061f410;
 extern int g_INT_0061f4dc;
 extern int g_INT_0061f4e0;
-extern int g_INT_0061f508;
-extern int g_INT_0061f50c;
-extern int g_INT_0061f510;
-extern int g_INT_0061f638;
-extern int g_INT_0061f63c;
-extern int g_INT_0061f640;
-extern int g_INT_0061f6e8;
+extern int g_DstTransitionSecond;
+extern int g_DstTransitionMinute;
+extern int g_DstTransitionHour;
+extern int g_TimezoneOffset;
+extern int g_DaylightSavingActive;
+extern int g_DaylightSavingOffset;
+extern int g_ConsoleInputState;
 extern int g_INT_0061f6ec;
-extern int g_INT_0061f6f0;
+extern int g_HeapFlags;
 extern int g_INT_0061f6f4;
-extern int g_INT_0061f75c;
-extern int g_INT_0061f760;
+extern int g_ConsoleInputHandle;
+extern int g_ConsoleOutputHandle;
 
 // int*
-extern int* g_INT_PTR_0061c378;
-extern int* g_INT_PTR_0061c37c;
+extern int* g_CurrentScreenPtr;
+extern int* g_CurrentZBufferPtr;
 
 // int[12]
-extern int g_INT_ARRAY_0061b2f8[12];
+extern int g_PathMapLRUCounters[12];
 
 // int[22]
-extern int g_INT_ARRAY_00618de4[22];
+extern int g_Layer3Pretab[22];
 
 // int[2][16]
-extern int g_INT_ARRAY_ARRAY_006192b8[2][16];
+extern int g_Layer3ScalefacLengths[2][16];
 
 // int[2][3][15]
-extern int g_INT_ARRAY_ARRAY_ARRAY_00618ec8[2][3][15];
+extern int g_MpegBitrateTable[2][3][15];
 
 // int[3]
-extern int g_INT_ARRAY_006192ac[3];
+extern int g_Layer3ShortBandGroupCounts[3];
 
 // int[5]
-extern int g_INT_ARRAY_00619298[5];
+extern int g_Layer3LongBandGroupCounts[5];
 
 // int[6][3][4]
-extern int g_INT_ARRAY_ARRAY_ARRAY_006196b0[6][3][4];
+extern int g_Layer3ScalefactorBandCounts[6][3][4];
 
 // int[96]
-extern int g_INT_ARRAY_0061b5bc[96];
-extern int g_INT_ARRAY_0061b73c[96];
+extern int g_LightDebugScreenX[96];
+extern int g_LightDebugScreenY[96];
 
 // int[9]
-extern int g_INT_ARRAY_0061b328[9];
-extern int g_INT_ARRAY_0061b34c[9];
+extern int g_PathfindingDeltaX[9];
+extern int g_PathfindingDeltaZ[9];
 
 // qword
-extern qword g_QWORD_00611308;
-extern qword g_QWORD_00611310;
-extern qword g_QWORD_00611318;
-extern qword g_QWORD_00611320;
-extern qword g_QWORD_0061c800;
-extern qword g_QWORD_0061c820;
+extern qword g_LightmapBlendBias1;
+extern qword g_LightmapBlendBias2;
+extern qword g_AmbientLightMMX1;
+extern qword g_AmbientLightMMX2;
+extern qword g_VertexRedStart;
+extern qword g_VertexRedDelta;
 extern qword g_QWORD_0061c860;
-extern qword g_QWORD_0061c868;
-extern qword g_QWORD_0061c888;
-extern qword g_QWORD_0061c8a8;
-extern qword g_QWORD_0061c8c8;
-extern qword g_QWORD_0061c8e8;
-extern qword g_QWORD_0061c908;
-extern qword g_QWORD_0061c928;
-extern qword g_QWORD_0061c930;
-extern qword g_QWORD_0061c950;
-extern qword g_QWORD_0061c970;
+extern qword g_TextureShift1;
+extern qword g_TextureShift2;
+extern qword g_TextureMask1;
+extern qword g_TextureMask2;
+extern qword g_RedMask32;
+extern qword g_GreenMask32;
+extern qword g_BlueMask32;
+extern qword g_TotalDitherShift;
+extern qword g_GreenBlueDitherShift;
+extern qword g_BlueBitShift;
 
 // qword[512]
 extern qword g_QWORD_ARRAY_0061d180[512];
 
 // short
-extern short g_SHORT_0061f289;
-extern short g_SHORT_0061f648;
+extern short g_WindowsPlatformVersion;
+extern short g_PureVirtualCallFlag;
 
 // uchar
-extern uchar g_UCHAR_006182d8;
-extern uchar g_UCHAR_006182d9;
-extern uchar g_UCHAR_006182da;
-extern uchar g_UCHAR_006182dc;
-extern uchar g_UCHAR_006182e1;
+extern uchar g_CPUInfoFamily;
+extern uchar g_CPUInfoModel;
+extern uchar g_CPUInfoStepping;
+extern uchar g_CPUInfoIntelCPU;
+extern uchar g_CPUInfoMMXSupported;
 
 // uint
-extern uint g_UINT_006141d4;
-extern uint g_UINT_006141e0;
-extern uint g_UINT_006182dd;
-extern uint g_UINT_0061f28b;
-extern uint g_UINT_0061f28f;
-extern uint g_UINT_0061f293;
-extern uint g_UINT_0061f297;
-extern uint g_UINT_0061f480;
-extern uint g_UINT_0061f758;
+extern uint g_CPUFamily;
+extern uint g_VertexProcessingEnabled;
+extern uint g_CPUFeatureFlags;
+extern uint g_WindowsPlatformVersionExt;
+extern uint g_WindowsVersionLow;
+extern uint g_WindowsVersionMid;
+extern uint g_WindowsVersionCombined;
+extern uint g_MaxHandleCount;
+extern uint g_CodePage;
 
 // uint*
-extern uint* g_UINT_PTR_0061f264;
+extern uint* g_HeapBound;
 
 // uint[18]
-extern uint g_UINT_ARRAY_00619250[18];
+extern uint g_MpegBitMaskTableMultiBit[18];
 
 // uint[8]
-extern uint g_UINT_ARRAY_00619230[8];
+extern uint g_MpegBitMaskTableSingleBit[8];
 
 // ulong
-extern ulong g_ULONG_0061f754;
+extern ulong g_RuntimeBufferSize;
 
 // ulonglong[256]
-extern ulonglong g_ULONGLONG_ARRAY_006143c0[256];
+extern ulonglong g_ByteFillTable[256];
 
 // undefined1
 extern undefined1 DAT_0061f30b;
@@ -736,26 +736,26 @@ extern undefined4 DAT_0061f528;
 extern ushort g_USHORT_006180f0;
 
 // ushort[2048]
-extern ushort g_USHORT_ARRAY_00612880[2048];
+extern ushort g_LightmapData[2048];
 
 // void*
 extern void* switchdataD_00614bc0;
 extern void* switchdataD_00614c04;
 extern void* g_PTR_0061e290;
-extern void* g_PTR_0061f26c;
+extern void* g_CrtStackBuffer;
 extern void* g_PTR_0061f29b;
-extern void* g_PTR_0061f2ec;
-extern void* g_PTR_0061f414;
-extern void* g_PTR_0061f418;
+extern void* g_SpecialExitHandler;
+extern void* g_IsSpecialDeviceFuncPtr;
+extern void* g_SpecialDeviceCleanupFunc;
 extern void* g_PTR_0061f41c;
-extern void* g_PTR_0061f420;
+extern void* g_SpecialDeviceCloseFunc;
 extern void* g_PTR_0061f43c;
-extern void* g_PTR_0061f440;
-extern void* g_PTR_0061f448;
-extern void* g_PTR_0061f450;
+extern void* g_SpecialDeviceWriteFuncPtr;
+extern void* g_SpecialConsoleInputHandler;
+extern void* g_SpecialConsoleOutputHandler;
 extern void* g_PTR_0061f454;
-extern void* g_PTR_0061f6cc;
-extern void* g_PTR_0061f6d0;
+extern void* g_UserExceptionFilter;
+extern void* g_ExceptionCleanup;
 extern void* g_PTR_0061f7f0;
 extern void* g_PTR_0061f7f4;
 extern void* g_PTR_0061f7f8;

@@ -11,8 +11,8 @@
 ;   crt_unknown.c_debugFree_FUN_005c09f0 at 005c09f5
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_00626220 = 00000000
-;   Heap* g_Heap_PTR_00626224 = 00000000
+;   Heap* g_MainHeap = 00000000
+;   Heap* g_SecondaryHeap = 00000000
 ;   int g_INT_00626228 = 0x0
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626618 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626620 = 005c50d4
@@ -75,7 +75,7 @@ section .text
     CMP EAX,EDI                         ; 005c0a57
     JA 0x005c0abc                       ; 005c0a59
         ;   XREF to: 005c0abc (CONDITIONAL_JUMP)  ; LAB_005c0abc
-    MOV ESI,dword ptr [0x00626224]      ; 005c0a5f | g_Heap_PTR_00626224
+    MOV ESI,dword ptr [0x00626224]      ; 005c0a5f | g_SecondaryHeap
         ;   Label: LAB_005c0a5f
     TEST ESI,ESI                        ; 005c0a65
     JZ 0x005c0a9d                       ; 005c0a67
@@ -115,7 +115,7 @@ section .text
     CMP EAX,EDI                         ; 005c0a99
     JA 0x005c0abc                       ; 005c0a9b
         ;   XREF to: 005c0abc (CONDITIONAL_JUMP)  ; LAB_005c0abc
-    MOV ESI,dword ptr [0x00626220]      ; 005c0a9d | g_Heap_PTR_00626220
+    MOV ESI,dword ptr [0x00626220]      ; 005c0a9d | g_MainHeap
         ;   Label: LAB_005c0a9d
     TEST ESI,ESI                        ; 005c0aa3
     JZ 0x005c0afc                       ; 005c0aa5
@@ -136,7 +136,7 @@ section .text
         ;   XREF to: 005c0aa7 (CONDITIONAL_JUMP)  ; LAB_005c0aa7
     JMP 0x005c0afc                      ; 005c0aba
         ;   XREF to: 005c0afc (UNCONDITIONAL_JUMP)  ; LAB_005c0afc
-    MOV EAX,0x626220                    ; 005c0abc | g_Heap_PTR_00626220
+    MOV EAX,0x626220                    ; 005c0abc | g_MainHeap
         ;   Label: LAB_005c0abc
     MOV DX,DS                           ; 005c0ac1
     AND EDX,0xffff                      ; 005c0ac3
@@ -144,7 +144,7 @@ section .text
     MOV EAX,EDI                         ; 005c0acb
     CALL crt_unknown.c_FUN_005c6750     ; 005c0acd
         ;   XREF to: 005c6750 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c6750()
-    MOV EDX,dword ptr [0x00626224]      ; 005c0ad2 | g_Heap_PTR_00626224
+    MOV EDX,dword ptr [0x00626224]      ; 005c0ad2 | g_SecondaryHeap
     MOV dword ptr [0x02c9f040],ESI      ; 005c0ad8 | g_INT_02c9f040
     CMP ESI,EDX                         ; 005c0ade
     JNC 0x005c0af4                      ; 005c0ae0

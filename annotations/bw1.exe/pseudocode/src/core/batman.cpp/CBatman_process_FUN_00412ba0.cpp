@@ -325,9 +325,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
       fVar17 = 0.4;
       fStack_14 = SStack_27c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                (&g_CVector3f_02c8af28,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                 g_INT_ARRAY_007c37b8[2],&CStack_204);
+                (&g_ZeroVector,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_BatmanIndices[2]
+                 ,&CStack_204);
       pCVar16 = &CStack_240;
       CStack_240.x = CStack_204.x;
       *(uint *)((int)&CStack_240 + (uint)bVar13 * -8 + 4) =
@@ -375,7 +375,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if (((this_ptr->base).victim != (CCharacter *)0x0) ||
          (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                            (g_CEventList_PTR_0061b4d0,this_ptr->fall_event), iVar6 != 0)) {
+                            (g_CEventListPtr,this_ptr->fall_event), iVar6 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,0xb,1);
         iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
@@ -437,7 +437,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
                  *(uint *)((int)&CStack_150 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             iVar6 = iStack_20 + 1;
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                      (g_CFireEffect_PTR_0061c010,&CStack_174,fVar17,pCVar16,iVar8);
+                      (g_CFireEffectPtr,&CStack_174,fVar17,pCVar16,iVar8);
             pCVar5 = pCStack_30;
             iStack_20 = iVar6;
           } while (iVar6 < pCStack_34->bone_count);
@@ -531,7 +531,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
             CStack_234.x = CStack_c0.x;
             *(uint *)((int)&CStack_234 + (uint)bVar13 * -8 + 4) =
                  *(uint *)((int)&CStack_c0 + (uint)bVar13 * -8 + 4);
-            this_ptr_00 = g_CFireEffect_PTR_0061c010;
+            this_ptr_00 = g_CFireEffectPtr;
             *(uint *)((int)&CStack_234 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
                  *(uint *)((int)&CStack_c0 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30

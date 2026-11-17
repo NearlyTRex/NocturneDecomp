@@ -46,7 +46,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_00494690(CStrList *str_
     g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c3eb50->max_char_width;
   g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
   ;
   if ((dialog_title == (char *)0x0) || (iVar2 = *(int *)dialog_title, iVar2 < 1)) {
@@ -134,7 +134,7 @@ LAB_0049479f:
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00496840
             (g_CEditorToolsPtr,iVar8,iVar5,(char *)str_list,0);
-  local_2c = (((g_INT_01c4f010 - g_INT_01c4f008) + 1) - iVar7) / 2;
+  local_2c = (((g_ClipRight - g_INT_01c4f008) + 1) - iVar7) / 2;
   iVar5 = 0;
   if (0 < iVar2) {
     local_34 = iVar9 + -1;
@@ -176,8 +176,8 @@ LAB_0049479f:
     } while (iVar5 < iVar2);
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  local_50 = g_INT_0061b4ac;
-  g_INT_0061b4ac = 0x7f;
+  local_50 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   local_14 = 0;
   local_3c = iVar2 + -1;
   iVar9 = -2;
@@ -206,7 +206,7 @@ LAB_0049479f:
     else {
       local_14 = 0;
     }
-    if (g_INT_02c9be70 != 0) {
+    if (g_InputDisabled != 0) {
       iVar9 = -1;
       break;
     }
@@ -234,7 +234,7 @@ LAB_0049479f:
         if (iVar7 != 0) {
           iVar9 = iVar5;
         }
-        if (pCVar10 == (CEdButton *)g_PTR_01c3f5d0) {
+        if (pCVar10 == (CEdButton *)g_ActiveControl) {
           local_14 = iVar5;
         }
         iVar5 = iVar5 + 1;
@@ -257,7 +257,7 @@ LAB_0049479f:
   } while (iVar9 == -2);
   pvVar3 = __vec_delete(local_44,&g_CEdButtonTypeInfo);
   free(pvVar3);
-  g_INT_0061b4ac = local_50;
+  g_InputKeyMask = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
   return iVar9;

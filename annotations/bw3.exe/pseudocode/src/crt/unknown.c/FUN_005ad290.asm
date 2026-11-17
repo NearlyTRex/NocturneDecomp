@@ -9,13 +9,13 @@
 ;   crt_unknown.c_FUN_005acde0 at 005acdee
 ;
 ; Referenced Globals:
-;   byte g_BYTE_00607d74 = 0x0
+;   byte g_DebuggerIsAttached = 0x0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP byte ptr [0x00607d74],0x0       ; 005ad290 | g_BYTE_00607d74
+    CMP byte ptr [0x00607d74],0x0       ; 005ad290 | g_DebuggerIsAttached
         ;   Label: crt_unknown.c_FUN_005ad290
     JZ 0x005ad2b8                       ; 005ad297
         ;   XREF to: 005ad2b8 (CONDITIONAL_JUMP)  ; LAB_005ad2b8

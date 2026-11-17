@@ -35,20 +35,20 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c389 = 0.00390625
-;   float g_FLOAT_0059bff0 = 256
-;   CVector3i[62] g_CVector3i_ARRAY_005ad594
-;   undefined4 g_CVector3i_ARRAY_005ad594[0].y
-;   undefined4 g_CVector3i_ARRAY_005ad594[0].z
-;   undefined4 g_CVector3i_ARRAY_005ad594[1].x
-;   undefined4 g_CVector3i_ARRAY_005ad594[1].y
-;   undefined4 g_CVector3i_ARRAY_005ad594[1].z
-;   SMRGLLightPrimitive[84] g_SMRGLLightPrimitive_ARRAY_005ad87c
-;   undefined4 g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.A
-;   undefined4 g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.B
-;   undefined4 g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.C
-;   undefined4 g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.D
-;   undefined4 g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices[0]
-;   undefined4 g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices[1]
+;   float g_CoronaCoordinateScaleFactor = 256
+;   CVector3i[62] g_CoronaVertexPositions
+;   undefined4 g_CoronaVertexPositions[0].y
+;   undefined4 g_CoronaVertexPositions[0].z
+;   undefined4 g_CoronaVertexPositions[1].x
+;   undefined4 g_CoronaVertexPositions[1].y
+;   undefined4 g_CoronaVertexPositions[1].z
+;   SMRGLLightPrimitive[84] g_CoronaFacePrimitives
+;   undefined4 g_CoronaFacePrimitives[0].normal.A
+;   undefined4 g_CoronaFacePrimitives[0].normal.B
+;   undefined4 g_CoronaFacePrimitives[0].normal.C
+;   undefined4 g_CoronaFacePrimitives[0].normal.D
+;   undefined4 g_CoronaFacePrimitives[0].vertices[0]
+;   undefined4 g_CoronaFacePrimitives[0].vertices[1]
 ;   ... and 13 more
 ;
 ; Called Functions:
@@ -119,12 +119,12 @@ section .text
     XOR EDI,EDI                         ; 0044cf11
     XOR ESI,ESI                         ; 0044cf13
     FSTP float ptr [ESP + 0x60]         ; 0044cf15
-    FILD dword ptr [ESI + 0x5ad594]     ; 0044cf19 | g_CVector3i_ARRAY_005ad594 | g_CVector3i_ARRAY_005ad594[1].x
+    FILD dword ptr [ESI + 0x5ad594]     ; 0044cf19 | g_CoronaVertexPositions | g_CoronaVertexPositions[1].x
         ;   Label: LAB_0044cf19
     FMUL float ptr [ESP + 0x60]         ; 0044cf1f
-    FILD dword ptr [ESI + 0x5ad598]     ; 0044cf23 | g_CVector3i_ARRAY_005ad594[0].y | g_CVector3i_ARRAY_005ad594[1].y
+    FILD dword ptr [ESI + 0x5ad598]     ; 0044cf23 | g_CoronaVertexPositions[0].y | g_CoronaVertexPositions[1].y
     FMUL float ptr [ESP + 0x60]         ; 0044cf29
-    FILD dword ptr [ESI + 0x5ad59c]     ; 0044cf2d | g_CVector3i_ARRAY_005ad594[0].z | g_CVector3i_ARRAY_005ad594[1].z
+    FILD dword ptr [ESI + 0x5ad59c]     ; 0044cf2d | g_CoronaVertexPositions[0].z | g_CoronaVertexPositions[1].z
     FMUL float ptr [ESP + 0x60]         ; 0044cf33
     LEA EBX,[ESP + 0x3c]                ; 0044cf37
     LEA EAX,[ESP + 0x30]                ; 0044cf3b
@@ -134,13 +134,13 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 0044cf4b
     FSTP float ptr [ESP + 0x38]         ; 0044cf4f
     FLD float ptr [EAX]                 ; 0044cf53
-    FMUL float ptr [0x0059bff0]         ; 0044cf55 | g_FLOAT_0059bff0
+    FMUL float ptr [0x0059bff0]         ; 0044cf55 | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0044cf5b
     FLD float ptr [EAX + 0x4]           ; 0044cf5d
-    FMUL float ptr [0x0059bff0]         ; 0044cf60 | g_FLOAT_0059bff0
+    FMUL float ptr [0x0059bff0]         ; 0044cf60 | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0044cf66
     FLD float ptr [EAX + 0x8]           ; 0044cf69
-    FMUL float ptr [0x0059bff0]         ; 0044cf6c | g_FLOAT_0059bff0
+    FMUL float ptr [0x0059bff0]         ; 0044cf6c | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0044cf72
     LEA EAX,[ESP + 0x3c]                ; 0044cf75
     PUSH EAX                            ; 0044cf79
@@ -156,25 +156,25 @@ section .text
     JNZ 0x0044cf19                      ; 0044cf93
         ;   XREF to: 0044cf19 (CONDITIONAL_JUMP)  ; LAB_0044cf19
     XOR EBX,EBX                         ; 0044cf95
-    MOV EAX,dword ptr [EBX + 0x5ad87c]  ; 0044cf97 | g_SMRGLLightPrimitive_ARRAY_005ad87c | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].base.count
+    MOV EAX,dword ptr [EBX + 0x5ad87c]  ; 0044cf97 | g_CoronaFacePrimitives | g_CoronaFacePrimitives[1].base.count
         ;   Label: LAB_0044cf97
     MOV dword ptr [ESP + 0xc],EAX       ; 0044cf9d
-    MOV EAX,dword ptr [EBX + 0x5ad880]  ; 0044cfa1 | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.A | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].normal.A
+    MOV EAX,dword ptr [EBX + 0x5ad880]  ; 0044cfa1 | g_CoronaFacePrimitives[0].normal.A | g_CoronaFacePrimitives[1].normal.A
     MOV dword ptr [ESP + 0x10],EAX      ; 0044cfa7
-    MOV EAX,dword ptr [EBX + 0x5ad884]  ; 0044cfab | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.B | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].normal.B
+    MOV EAX,dword ptr [EBX + 0x5ad884]  ; 0044cfab | g_CoronaFacePrimitives[0].normal.B | g_CoronaFacePrimitives[1].normal.B
     MOV dword ptr [ESP + 0x14],EAX      ; 0044cfb1
-    MOV EAX,dword ptr [EBX + 0x5ad888]  ; 0044cfb5 | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.C | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].normal.C
-    FILD dword ptr [EBX + 0x5ad88c]     ; 0044cfbb | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].normal.D | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].normal.D
+    MOV EAX,dword ptr [EBX + 0x5ad888]  ; 0044cfb5 | g_CoronaFacePrimitives[0].normal.C | g_CoronaFacePrimitives[1].normal.C
+    FILD dword ptr [EBX + 0x5ad88c]     ; 0044cfbb | g_CoronaFacePrimitives[0].normal.D | g_CoronaFacePrimitives[1].normal.D
     MOV dword ptr [ESP + 0x18],EAX      ; 0044cfc1
-    MOV EAX,dword ptr [EBX + 0x5ad890]  ; 0044cfc5 | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices[0] | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].vertices[0]
+    MOV EAX,dword ptr [EBX + 0x5ad890]  ; 0044cfc5 | g_CoronaFacePrimitives[0].vertices[0] | g_CoronaFacePrimitives[1].vertices[0]
     FMUL float ptr [EBP + 0x30]         ; 0044cfcb
     MOV dword ptr [ESP + 0x20],EAX      ; 0044cfce
-    MOV EAX,dword ptr [EBX + 0x5ad894]  ; 0044cfd2 | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices[1] | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].vertices[1]
+    MOV EAX,dword ptr [EBX + 0x5ad894]  ; 0044cfd2 | g_CoronaFacePrimitives[0].vertices[1] | g_CoronaFacePrimitives[1].vertices[1]
     MOV dword ptr [ESP + 0x24],EAX      ; 0044cfd8
-    MOV EAX,dword ptr [EBX + 0x5ad898]  ; 0044cfdc | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices[2] | g_SMRGLLightPrimitive_ARRAY_005ad87c[1].vertices[2]
+    MOV EAX,dword ptr [EBX + 0x5ad898]  ; 0044cfdc | g_CoronaFacePrimitives[0].vertices[2] | g_CoronaFacePrimitives[1].vertices[2]
     PUSH 0x444180                       ; 0044cfe2
     MOV dword ptr [ESP + 0x2c],EAX      ; 0044cfe7
-    MOV EAX,dword ptr [EBX + 0x5ad89c]  ; 0044cfeb | g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices[3]
+    MOV EAX,dword ptr [EBX + 0x5ad89c]  ; 0044cfeb | g_CoronaFacePrimitives[0].vertices[3]
     MOV ESI,dword ptr [0x005ae700]      ; 0044cff1 | PTR_g_CDemonRenderer_01b4d738_005ae700
     MOV dword ptr [ESP + 0x30],EAX      ; 0044cff7
     LEA EAX,[ESP + 0xc]                 ; 0044cffb

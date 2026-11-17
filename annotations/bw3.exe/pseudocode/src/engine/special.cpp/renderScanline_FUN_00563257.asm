@@ -15,12 +15,12 @@
 ;   engine_zraster.c_rasterizeTriangle_FUN_005a1ea0 at 005a233a
 ;
 ; Referenced Globals:
-;   void* g_PTR_01c6b5cc
+;   void* g_ScanlineRenderFunc
 ;
 ; *****************************************************************************
 
 section .text
 
-    JMP dword ptr [0x01c6b5cc]          ; 00563257 | g_PTR_01c6b5cc
+    JMP dword ptr [0x01c6b5cc]          ; 00563257 | g_ScanlineRenderFunc
         ;   Label: engine_special.cpp_renderScanline_FUN_00563257
 

@@ -109,7 +109,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
   
   bVar18 = 0;
   iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (g_CEventList_PTR_006141f0,this_ptr->death_event);
+                    (g_CEventListPtr,this_ptr->death_event);
   if (iVar8 != 0) {
     (this_ptr->base).base.hit_points = 0.0;
     (this_ptr->base).pool_me = 1;
@@ -341,7 +341,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
       damage_info = (SDamageInfo *)&stack0xfffffd90;
       fVar21 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (CMatrix3x4f *)
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices
                  [g_INT_ARRAY_007bc944[0]].m,&CStack_148);

@@ -10,9 +10,9 @@
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047bd50 at 0047bebd
 ;
 ; Referenced Globals:
-;   int g_INT_02d20328
-;   int g_INT_02d2032c
-;   int g_INT_02d20330
+;   int g_InputReadIndex
+;   int g_InputWriteIndex
+;   int g_InputCountOld
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     XOR EDX,EDX                         ; 00580770
         ;   Label: wincore_winrun.cpp_clearKeypresses_FUN_00580770
     XOR EAX,EAX                         ; 00580772
-    MOV dword ptr [0x02d2032c],EDX      ; 00580774 | g_INT_02d2032c
-    MOV dword ptr [0x02d20328],EDX      ; 0058077a | g_INT_02d20328
-    MOV dword ptr [0x02d20330],EDX      ; 00580780 | g_INT_02d20330
+    MOV dword ptr [0x02d2032c],EDX      ; 00580774 | g_InputWriteIndex
+    MOV dword ptr [0x02d20328],EDX      ; 0058077a | g_InputReadIndex
+    MOV dword ptr [0x02d20330],EDX      ; 00580780 | g_InputCountOld
     RET                                 ; 00580786
 

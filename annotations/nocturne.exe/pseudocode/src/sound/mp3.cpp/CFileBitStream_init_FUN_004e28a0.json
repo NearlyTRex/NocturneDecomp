@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 119,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 34,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 116
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CFileBitStream_init_FUN_004e28a0",
-    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)"
+    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *file_handle,ulong buffer_size,int stream_length)"
   },
   "function_calls": [
     {
@@ -86,7 +84,7 @@
     },
     {
       "addr": "01cd8b28",
-      "name": "g_CHAR_ARRAY_01cd8b28",
+      "name": "g_CurrentMp3Filename",
       "type": "char[256]",
       "value": null
     }
@@ -165,91 +163,26 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "file_handle",
         "offset": 8,
         "size": 4,
         "type": "_FILE *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "buffer_size",
         "offset": 12,
         "size": 4,
         "type": "ulong"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "stream_length",
         "offset": 16,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->file_handle = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = _ftell(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->stream_length = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->buffer_size = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar2 = (char *)malloc(param_3);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

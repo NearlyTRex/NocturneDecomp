@@ -143,7 +143,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
       afStack_1bc[(uint)bVar11 * -2] = *(float *)((int)&CStack_178 + (uint)bVar11 * -8 + 4);
       afStack_1bc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
            *(float *)((int)&CStack_178 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-      fStack_34 = (float)(((int)fVar13 >> 1) + g_INT_01d1a0a4);
+      fStack_34 = (float)(((int)fVar13 >> 1) + g_FastSqrtMagic);
       fStack_40 = fVar13;
       fStack_2c = fStack_34;
       fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
@@ -183,7 +183,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
                afStack_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           fStack_3c = afStack_1a4[1] * afStack_1a4[1] +
                       fStack_1a8 * fStack_1a8 + afStack_1a4[0] * afStack_1a4[0];
-          fStack_24 = (float)(((int)fStack_3c >> 1) + g_INT_01d1a0a4);
+          fStack_24 = (float)(((int)fStack_3c >> 1) + g_FastSqrtMagic);
           if (fStack_24 < 8.0f) {
             iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
             if (iVar7 < 0x21) {
@@ -327,7 +327,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
             afStack_180[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
                  *(float *)((int)&CStack_154 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
             fStack_38 = CStack_1b4.z * CStack_1b4.z + fVar13 + CStack_1b4.y * CStack_1b4.y;
-            fStack_18 = (float)(((int)fStack_38 >> 1) + g_INT_01d1a0a4);
+            fStack_18 = (float)(((int)fStack_38 >> 1) + g_FastSqrtMagic);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (afStack_180[0] - (this_ptr->base).base.base.orient.vec.y);
             if (((ABS(fStack_14) < (float)0.17453292519444399) &&
@@ -397,7 +397,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
       damage_info = &SStack_1fc;
       fVar13 = 0.7;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[1],&CStack_94);
       pCVar12 = &CStack_c4;

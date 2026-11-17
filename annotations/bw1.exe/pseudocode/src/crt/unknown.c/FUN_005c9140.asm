@@ -8,7 +8,7 @@
 ;   crt_file.c_makepath_FUN_005c232c at 005c2413
 ;
 ; Referenced Globals:
-;   int g_INT_02c9f6e0
+;   int g_MultibyteLocaleActive
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005c9140
     PUSH ESI                            ; 005c9141
     PUSH EDI                            ; 005c9142
-    MOV ESI,dword ptr [0x02c9f6e0]      ; 005c9143 | g_INT_02c9f6e0
+    MOV ESI,dword ptr [0x02c9f6e0]      ; 005c9143 | g_MultibyteLocaleActive
     MOV EBX,dword ptr [ESP + 0x10]      ; 005c9149
     MOV EDI,dword ptr [ESP + 0x14]      ; 005c914d
     CMP EBX,EDI                         ; 005c9151
@@ -41,7 +41,7 @@ section .text
         ;   XREF to: 005c9184 (CONDITIONAL_JUMP)  ; LAB_005c9184
     LEA EDX,[EAX + -0x1]                ; 005c9175
     MOV EAX,EDX                         ; 005c9178
-    MOV dword ptr [0x02c9f6e0],ESI      ; 005c917a | g_INT_02c9f6e0
+    MOV dword ptr [0x02c9f6e0],ESI      ; 005c917a | g_MultibyteLocaleActive
     POP EDI                             ; 005c9180
     POP ESI                             ; 005c9181
     POP EBX                             ; 005c9182
@@ -73,7 +73,7 @@ section .text
     MOV EDX,EDI                         ; 005c91b5
     MOV EAX,EDX                         ; 005c91b7
         ;   Label: LAB_005c91b7
-    MOV dword ptr [0x02c9f6e0],ESI      ; 005c91b9 | g_INT_02c9f6e0
+    MOV dword ptr [0x02c9f6e0],ESI      ; 005c91b9 | g_MultibyteLocaleActive
     POP EDI                             ; 005c91bf
     POP ESI                             ; 005c91c0
     POP EBX                             ; 005c91c1

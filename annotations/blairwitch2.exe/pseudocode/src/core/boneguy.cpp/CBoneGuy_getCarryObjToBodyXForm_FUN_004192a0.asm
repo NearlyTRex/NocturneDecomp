@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005cc1f2 = 0.5
 ;   double g_DOUBLE_005cc1fa = 0.400000000000000
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d340
@@ -43,7 +43,7 @@ section .text
     LEA EAX,[EBP + 0x16]                ; 004192dc
     PUSH EAX                            ; 004192df
     MOV ECX,0xbf456042                  ; 004192e0
-    PUSH 0x265370c                      ; 004192e5 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004192e5 | g_ZeroVector
     LEA EAX,[EBP + 0xffffff62]          ; 004192ea
     MOV EDI,0x40224dd3                  ; 004192f0
     PUSH EAX                            ; 004192f5

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 256,
+    "complexity_score": 257,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 77,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
-    "total_lines": 213
+    "total_lines": 214
   },
   "cross_references": [],
   "function": {
@@ -74,85 +74,85 @@
     },
     {
       "addr": "00730478",
-      "name": "g_INT_00730478",
+      "name": "g_RenderBufferEnabled",
       "type": "int",
       "value": null
     },
     {
       "addr": "0073047c",
-      "name": "g_INT_0073047c",
+      "name": "g_RenderBufferCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "00730480",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480",
+      "name": "g_RenderBufferPool",
       "type": "SRenderBufferEntry[256]",
       "value": null
     },
     {
       "addr": "00730484",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_x",
+      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00730488",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_y",
+      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0073048c",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_z",
+      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007304b4",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].vertices[1].projected_vertex.transformed_x",
+      "name": "g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00730544",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.type",
+      "name": "g_RenderBufferPool[0].texture_data.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00730548",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.count",
+      "name": "g_RenderBufferPool[0].texture_data.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0073058c",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].alpha_value",
+      "name": "g_RenderBufferPool[0].alpha_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00730590",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].blend_mode",
+      "name": "g_RenderBufferPool[0].blend_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00730594",
-      "name": "g_SRenderBufferEntry_ARRAY_00730480[0].min_z_value",
+      "name": "g_RenderBufferPool[0].min_z_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "g_PTR_01c6b5cc",
+      "name": "g_ScanlineRenderFunc",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2a0",
-      "name": "g_INT_01c6e2a0",
+      "name": "g_MMXSupported",
       "type": "int",
       "value": null
     },
@@ -164,13 +164,13 @@
     },
     {
       "addr": "01c6e2b4",
-      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "g_INT_01c6e2b8",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     }
@@ -264,7 +264,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(SRenderVertex *)((int)pSVar7",
       "severity": "moderate",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(SRenderVertex *)((int)pSVar8",
       "severity": "moderate",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(SMRGLTextureBasic *)((int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);",
@@ -288,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 72,
       "match": "(SMRGLTextureModel *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SMRGLTextureModel *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 54,
       "match": "(int)pSVar7",
       "severity": "moderate",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "(int)pSVar8",
       "severity": "moderate",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);",
@@ -320,7 +320,7 @@
     },
     {
       "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
+      "line": 72,
       "match": "(int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SMRGLTextureModel *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Pointer value `&primitive[1].base` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 79,
       "match": "(int)&primitive[1].base",
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 51,
+      "line": 52,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -344,7 +344,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 68,
+      "line": 69,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x12; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -352,7 +352,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 78,
+      "line": 79,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pSVar3->vertices[0].a`). Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 60,
+      "line": 61,
       "match": "pSVar3 = (T *)&pSVar3->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderBufferEntry *)&pSVar3->vertices[0].a;",
@@ -368,7 +368,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `vertex_indices` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `vertex_indices->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 62,
+      "line": 63,
       "match": "vertex_indices = (T *)&(vertex_indices->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "vertex_indices = (SMRGLHeaderPrimitive *)&(vertex_indices->base).count;",
@@ -379,7 +379,7 @@
       "line": 69,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 004073e5: MOVSD.REP ES:EDI,ESI  ; g_SRenderVertex_ARRAY_0060b014 | g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0]",
+      "text": "// 004073e5: MOVSD.REP ES:EDI,ESI  ; g_SRenderVertex_ARRAY_0060b014 | g_RenderBufferPool[0].vertices[0].projected_vertex",
       "type": "unrolled_memcpy"
     },
     {
@@ -387,7 +387,7 @@
       "line": 93,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0040741f: MOVSD.REP ES:EDI,ESI  ; g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.type | g_SRenderBufferEntr",
+      "text": "// 0040741f: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data.base.type | g_RenderBufferPool[0].texture_data.b",
       "type": "unrolled_memcpy"
     }
   ],

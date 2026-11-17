@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba18 = 0x140
-;   int g_INT_01ec183c
-;   int g_INT_01ec1840
-;   int g_INT_01ec1844
-;   int g_INT_01ec1848
+;   int g_PathfindingCurrentX
+;   int g_PathfindingCurrentZ
+;   int g_PathfindingDestX
+;   int g_PathfindingDestZ
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -47,20 +47,20 @@ section .text
     PUSH EAX                            ; 0050c5d1
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0050c5d2
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
-    MOV ECX,dword ptr [0x01ec183c]      ; 0050c5d7 | g_INT_01ec183c
+    MOV ECX,dword ptr [0x01ec183c]      ; 0050c5d7 | g_PathfindingCurrentX
     ADD ESP,0xc                         ; 0050c5dd
     CMP EBX,ECX                         ; 0050c5e0
     JNZ 0x0050c5f0                      ; 0050c5e2
         ;   XREF to: 0050c5f0 (CONDITIONAL_JUMP)  ; LAB_0050c5f0
-    CMP EBP,dword ptr [0x01ec1840]      ; 0050c5e4 | g_INT_01ec1840
+    CMP EBP,dword ptr [0x01ec1840]      ; 0050c5e4 | g_PathfindingCurrentZ
     JNZ 0x0050c5f0                      ; 0050c5ea
         ;   XREF to: 0050c5f0 (CONDITIONAL_JUMP)  ; LAB_0050c5f0
     MOV byte ptr [ESP],0x73             ; 0050c5ec
-    CMP EBX,dword ptr [0x01ec1844]      ; 0050c5f0 | g_INT_01ec1844
+    CMP EBX,dword ptr [0x01ec1844]      ; 0050c5f0 | g_PathfindingDestX
         ;   Label: LAB_0050c5f0
     JNZ 0x0050c604                      ; 0050c5f6
         ;   XREF to: 0050c604 (CONDITIONAL_JUMP)  ; LAB_0050c604
-    CMP EBP,dword ptr [0x01ec1848]      ; 0050c5f8 | g_INT_01ec1848
+    CMP EBP,dword ptr [0x01ec1848]      ; 0050c5f8 | g_PathfindingDestZ
     JNZ 0x0050c604                      ; 0050c5fe
         ;   XREF to: 0050c604 (CONDITIONAL_JUMP)  ; LAB_0050c604
     MOV byte ptr [ESP],0x64             ; 0050c600

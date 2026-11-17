@@ -5,13 +5,13 @@
 // =============================================================================
 
 // CVector3i
-CVector3i g_CVector3i_01410280 = {};
+CVector3i g_CameraOutOfBoundsCoord = {};
 
 // char[307200]
-char g_CHAR_ARRAY_01410290[307200] = {};
+char g_CameraIndexedImageData[307200] = {};
 
 // int
-int g_INT_01410274 = {};
-int g_INT_01410278 = {};
-int g_INT_0141027c = {};
+int g_BackgroundSavedRedBitPosition = {};
+int g_BackgroundSavedGreenBitPosition = {};
+int g_BackgroundSavedBlueBitPosition = {};
 

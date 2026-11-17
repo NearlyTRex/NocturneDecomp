@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 106,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 40,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 113
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -100,25 +100,25 @@
     },
     {
       "addr": "0072ffac",
-      "name": "g_PTR_0072ffac",
+      "name": "g_SoftwareZBuffer",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c5faec",
-      "name": "g_ARRAY_PTR_01c5faec",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c5faf0",
-      "name": "g_ARRAY_PTR_01c5faec[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c60dac",
-      "name": "g_UINT_PTR_ARRAY_01c60dac",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     },
@@ -142,13 +142,13 @@
     },
     {
       "addr": "02d0bce8",
-      "name": "g_IDirectDrawSurface_PTR_02d0bce8",
+      "name": "g_SoftwareRenderSurface",
       "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02d0bcf4",
-      "name": "g_INT_02d0bcf4",
+      "name": "g_FlipPending",
       "type": "int",
       "value": null
     },
@@ -233,33 +233,33 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(byte **)((int)g_ARRAY_PTR_01c5faec",
+      "match": "(byte **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ARRAY_PTR_01c5faec + iVar2) =",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 29,
-      "match": "(byte **)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(byte **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar2) = g_PTR_0072ffac + iVar6;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar2) = g_SoftwareZBuffer + iVar6;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c5faec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "(int)g_ARRAY_PTR_01c5faec",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ARRAY_PTR_01c5faec + iVar2) =",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar2) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 29,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar2) = g_PTR_0072ffac + iVar6;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar2) = g_SoftwareZBuffer + iVar6;",
       "type": "pointer_truncation"
     },
     {

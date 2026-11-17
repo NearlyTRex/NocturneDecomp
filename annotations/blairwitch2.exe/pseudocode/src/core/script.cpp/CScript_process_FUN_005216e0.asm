@@ -19,10 +19,10 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.cinematic_skip_in_progress
-;   int g_INT_01e650f8
+;   int g_ScriptEventsEnabled
 ;   char[2048] g_CHAR_ARRAY_01e65100
 ;   int g_INT_01e65904
-;   int g_INT_01e65908
+;   int g_ScriptLoopWarningShown
 ;
 ; Called Functions:
 ;   core_charactr.cpp_getGameDeltaTime_FUN_0042bff0
@@ -46,7 +46,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005216ec
     XOR EDX,EDX                         ; 005216ef
     MOV ECX,dword ptr [EBX + 0x2c]      ; 005216f1
-    MOV dword ptr [0x01e650f8],EDX      ; 005216f4 | g_INT_01e650f8
+    MOV dword ptr [0x01e650f8],EDX      ; 005216f4 | g_ScriptEventsEnabled
     CMP ECX,0x1                         ; 005216fa
     JL 0x0052177e                       ; 005216fd
         ;   XREF to: 0052177e (CONDITIONAL_JUMP)  ; LAB_0052177e
@@ -113,7 +113,7 @@ section .text
     PUSH EBX                            ; 0052178d
     MOV EDI,dword ptr [EBX + 0x44]      ; 0052178e
     CALL core_script.cpp_CScript_step_FUN_00522350 ; 00521791
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 00521796
     TEST EAX,EAX                        ; 00521799
     JZ 0x00521753                       ; 0052179b
@@ -130,7 +130,7 @@ section .text
     CMP ESI,0xc8                        ; 005217ad
     JLE 0x00521741                      ; 005217b3
         ;   XREF to: 00521741 (CONDITIONAL_JUMP)  ; LAB_00521741
-    CMP dword ptr [0x01e65908],0x0      ; 005217b5 | g_INT_01e65908
+    CMP dword ptr [0x01e65908],0x0      ; 005217b5 | g_ScriptLoopWarningShown
     JNZ 0x00521753                      ; 005217bc
         ;   XREF to: 00521753 (CONDITIONAL_JUMP)  ; LAB_00521753
     MOV EAX,dword ptr [EBX + 0x30]      ; 005217be
@@ -143,7 +143,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 005217d6
         ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005217db
-    MOV dword ptr [0x01e65908],EDI      ; 005217de | g_INT_01e65908
+    MOV dword ptr [0x01e65908],EDI      ; 005217de | g_ScriptLoopWarningShown
     JMP 0x00521753                      ; 005217e4
         ;   XREF to: 00521753 (UNCONDITIONAL_JUMP)  ; LAB_00521753
     MOV EAX,dword ptr [EBX + 0x30]      ; 005217e9

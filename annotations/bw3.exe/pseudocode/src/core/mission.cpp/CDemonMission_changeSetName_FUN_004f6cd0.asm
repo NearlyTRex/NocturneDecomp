@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMission *this_ptr,int param_2,char *param_3)
+; void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMission *this_ptr,int set_index,char *set_name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; char *           Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   set_index
+; char *           Stack[0xc]:4   set_name
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052bb95

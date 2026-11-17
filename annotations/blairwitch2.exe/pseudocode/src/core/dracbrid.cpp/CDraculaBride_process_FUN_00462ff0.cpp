@@ -327,9 +327,9 @@ LAB_0046350f:
     fVar20 = 0.4;
     fStack_14 = SStack_3f0.damage_amount;
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,
+              (&g_ZeroVector,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               g_INT_ARRAY_01ba5778[0],&CStack_30c);
+               g_DraculaBrideIndices[0],&CStack_30c);
     pCVar19 = &CStack_27c;
     CStack_27c.x = CStack_30c.x;
     *(uint *)((int)&CStack_27c + (uint)bVar16 * -8 + 4) =
@@ -357,9 +357,9 @@ LAB_0046350f:
     fVar20 = 0.4;
     fStack_14 = SStack_42c.damage_amount;
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,
+              (&g_ZeroVector,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               g_INT_ARRAY_01ba5778[0],&CStack_78);
+               g_DraculaBrideIndices[0],&CStack_78);
     pCVar19 = &CStack_84;
     CStack_84.x = CStack_78.x;
     *(uint *)((int)&CStack_84 + (uint)bVar16 * -8 + 4) =
@@ -380,7 +380,7 @@ LAB_0046350f:
   case 7:
     if (this_ptr->exploded == 0) {
       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-                (&(this_ptr->base).base.model,g_INT_ARRAY_01ba5778[7],&CStack_21c);
+                (&(this_ptr->base).base.model,g_DraculaBrideIndices[7],&CStack_21c);
       pCVar19 = &CStack_174;
       CStack_174.x = CStack_21c.x;
       *(uint *)((int)&CStack_174 + (uint)bVar16 * -8 + 4) =
@@ -401,7 +401,7 @@ LAB_0046350f:
       *(float *)((int)&CStack_264 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
            afStack_248[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
       core_fire_cpp_CFireEffect_createGunFlames_FUN_0049e680
-                (g_CFireEffect_PTR_00614d30,&CStack_264,pCVar19,iVar7,iVar9);
+                (g_CFireEffectPtr,&CStack_264,pCVar19,iVar7,iVar9);
       iVar9 = 0;
       iVar7 = 1;
       puVar15 = (uint *)((int)this_ptr + (uint)bVar16 * -8 + 0x34);
@@ -411,7 +411,7 @@ LAB_0046350f:
            puVar15[(uint)bVar16 * -2 + 1];
       CStack_234.x = CStack_234.x + -1.570796f;
       core_fire_cpp_CFireEffect_createGunFlames_FUN_0049e680
-                (g_CFireEffect_PTR_00614d30,&CStack_264,&CStack_234,iVar7,iVar9);
+                (g_CFireEffectPtr,&CStack_264,&CStack_234,iVar7,iVar9);
     }
     break;
   case 8:
@@ -532,7 +532,7 @@ LAB_004640b3:
                getDeathState)(&g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base);
     if ((EVar11 == DEATH_STATE_ALIVE) &&
        (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (g_CEventList_PTR_006141f0,this_ptr->rise_event), iVar7 != 0)) {
+                          (g_CEventListPtr,this_ptr->rise_event), iVar7 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,0xd,1);
     }
@@ -599,7 +599,7 @@ LAB_004640b3:
     break;
   case 0xf:
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->rise_event);
+                      (g_CEventListPtr,this_ptr->rise_event);
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,0xb,1);
@@ -635,7 +635,7 @@ LAB_004640b3:
                getDeathState)(&g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base);
     if ((EVar11 == DEATH_STATE_ALIVE) &&
        (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (g_CEventList_PTR_006141f0,this_ptr->rise_event), iVar7 != 0)) {
+                          (g_CEventListPtr,this_ptr->rise_event), iVar7 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,0xd,1);
     }
@@ -649,9 +649,9 @@ LAB_004640b3:
     fVar20 = 0.4;
     fStack_14 = SStack_468.damage_amount;
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,
+              (&g_ZeroVector,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               g_INT_ARRAY_01ba5778[0],&CStack_1b0);
+               g_DraculaBrideIndices[0],&CStack_1b0);
     pCVar19 = &CStack_fc;
     CStack_fc.x = CStack_1b0.x;
     *(uint *)((int)&CStack_fc + (uint)bVar16 * -8 + 4) =
@@ -679,9 +679,9 @@ LAB_004640b3:
     fVar20 = 0.4;
     fStack_14 = SStack_3b4.damage_amount;
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,
+              (&g_ZeroVector,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               g_INT_ARRAY_01ba5778[0],&CStack_318);
+               g_DraculaBrideIndices[0],&CStack_318);
     pCVar19 = &CStack_6c;
     CStack_6c.x = CStack_318.x;
     *(uint *)((int)&CStack_6c + (uint)bVar16 * -8 + 4) =
@@ -709,9 +709,9 @@ LAB_004640b3:
     fVar20 = 0.4;
     fStack_14 = SStack_378.damage_amount;
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,
+              (&g_ZeroVector,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               g_INT_ARRAY_01ba5778[2],&CStack_300);
+               g_DraculaBrideIndices[2],&CStack_300);
     pCVar19 = &CStack_330;
     CStack_330.x = CStack_300.x;
     *(uint *)((int)&CStack_330 + (uint)bVar16 * -8 + 4) =
@@ -779,7 +779,7 @@ LAB_004640b3:
                *(uint *)((int)&CStack_b4 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
           iVar7 = iStack_18 + 1;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-                    (g_CFireEffect_PTR_00614d30,&CStack_294,fVar20,pCVar19,iVar9);
+                    (g_CFireEffectPtr,&CStack_294,fVar20,pCVar19,iVar9);
           pCVar6 = pCStack_3c;
           iStack_18 = iVar7;
         } while (iVar7 < pCStack_38->bone_count);
@@ -871,7 +871,7 @@ LAB_004640b3:
           CStack_2e8.x = CStack_2a0.x;
           *(uint *)((int)&CStack_2e8 + (uint)bVar16 * -8 + 4) =
                *(uint *)((int)&CStack_2a0 + (uint)bVar16 * -8 + 4);
-          this_ptr_00 = g_CFireEffect_PTR_00614d30;
+          this_ptr_00 = g_CFireEffectPtr;
           *(uint *)((int)&CStack_2e8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
                *(uint *)((int)&CStack_2a0 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
@@ -892,7 +892,7 @@ LAB_004640b3:
     break;
   case 0x1a:
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->rise_event);
+                      (g_CEventListPtr,this_ptr->rise_event);
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,0,1);

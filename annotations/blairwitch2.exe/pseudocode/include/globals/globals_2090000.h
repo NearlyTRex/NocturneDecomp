@@ -18,25 +18,25 @@
 extern CVector3f g_CVector3f_02093604;
 
 // CVector3i
-extern CVector3i g_CVector3i_02093940;
+extern CVector3i g_VDTempVector;
 
 // CZThumb[1500]
 extern CZThumb g_CZThumbPool[1500];
 
 // SRaytraceState[5]
-extern SRaytraceState g_SRaytraceState_ARRAY_02093618[5];
+extern SRaytraceState g_RaytraceStateStack[5];
 
 // UVector3
 extern UVector3 g_UVector3_020935f8;
 
 // float
-extern float g_FLOAT_02093610;
+extern float g_SavedProjectionFactor;
 
 // float[250]
 extern float g_FLOAT_ARRAY_0209394c[250];
 
 // int
-extern int g_INT_02093614;
+extern int g_RaytraceStateStackDepth;
 extern int g_INT_02093938;
 extern int g_INT_0209393c;
 

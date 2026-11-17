@@ -67,7 +67,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005d0277 = 2
 ;   double g_DOUBLE_005d027f = 0.5
-;   CQuaternion4f g_CQuaternion4f_005fe2f0
+;   CQuaternion4f g_IdentityQuaternion
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   int g_INT_01b4d268
 ;   int g_INT_01b4d270
@@ -284,7 +284,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe62]          ; 00455f22
     PUSH dword ptr [EBX + 0x259b0]      ; 00455f28
     PUSH EAX                            ; 00455f2e
-    PUSH 0x5fe2f0                       ; 00455f2f | g_CQuaternion4f_005fe2f0
+    PUSH 0x5fe2f0                       ; 00455f2f | g_IdentityQuaternion
     LEA ESI,[EBP + -0x1e]               ; 00455f34
     LEA EDI,[EBP + 0xfffffe62]          ; 00455f37
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00455f3d

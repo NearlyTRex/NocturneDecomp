@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f4305
 ;   TerminatedCString s_selectRecordingDevice_de_005f431a
-;   int g_INT_0062331c = -0x1
+;   int g_CurrentRecordingDevice = -0x1
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_0057587e
     JGE 0x00575888                      ; 00575880
         ;   XREF to: 00575888 (CONDITIONAL_JUMP)  ; LAB_00575888
-    MOV EBX,dword ptr [0x0062331c]      ; 00575882 | g_INT_0062331c
+    MOV EBX,dword ptr [0x0062331c]      ; 00575882 | g_CurrentRecordingDevice
     CALL sound_sndmain.cpp_getRecordingDeviceCount_FUN_00575730 ; 00575888
         ;   XREF to: 00575730 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getRecordingDeviceCount_FUN_00575730()
         ;   Label: LAB_00575888
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 005757f0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestRecordingDevice_FUN_005757f0()
         ;   Label: LAB_00575891
     MOV EBX,EAX                         ; 00575896
-    MOV dword ptr [0x0062331c],EBX      ; 00575898 | g_INT_0062331c
+    MOV dword ptr [0x0062331c],EBX      ; 00575898 | g_CurrentRecordingDevice
     POP EBX                             ; 0057589e
     RET                                 ; 0057589f
     MOV EDX,0x5f4305                    ; 005758a0 | = "..\\sound\\sndmain.cpp"
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_005758c5
     JL 0x00575891                       ; 005758c7
         ;   XREF to: 00575891 (CONDITIONAL_JUMP)  ; LAB_00575891
-    MOV dword ptr [0x0062331c],EBX      ; 005758c9 | g_INT_0062331c
+    MOV dword ptr [0x0062331c],EBX      ; 005758c9 | g_CurrentRecordingDevice
     POP EBX                             ; 005758cf
     RET                                 ; 005758d0
 

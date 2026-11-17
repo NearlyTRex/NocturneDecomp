@@ -10,16 +10,16 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0040f938 = 0040fe44
 ;   TerminatedCString s_s_confused_while_walking_005cb535
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00609810
+;   SMRGLTextureBasic g_BaronBlueGlowTexture
 ;   CConsole* g_CConsolePtr = 007c158c
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
-;   int[17] g_INT_ARRAY_007bc498
-;   undefined4 g_INT_ARRAY_007bc498[13]
-;   undefined4 g_INT_ARRAY_007bc498[14]
+;   CEventList* g_CEventListPtr = 01c38bc0
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
+;   int[17] g_BaronIndices
+;   undefined4 g_BaronIndices[13]
+;   undefined4 g_BaronIndices[14]
 ;   float g_FLOAT_007bc4dc
 ;   CConsole g_CConsoleInstance
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 0040f9b5 (CONDITIONAL_JUMP)  ; LAB_0040f9b5
     LEA EAX,[EBX + 0x256a4]             ; 0040f971
     PUSH EAX                            ; 0040f977
-    MOV ECX,dword ptr [0x006141f0]      ; 0040f978 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0040f978 | g_CEventListPtr
     PUSH ECX                            ; 0040f97e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0040f97f
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -88,7 +88,7 @@ section .text
     LEA EAX,[EBX + 0x25640]             ; 0040f9b5
         ;   Label: LAB_0040f9b5
     PUSH EAX                            ; 0040f9bb
-    MOV EDI,dword ptr [0x006141f0]      ; 0040f9bc | g_CEventList_PTR_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 0040f9bc | g_CEventListPtr
     PUSH EDI                            ; 0040f9c2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0040f9c3
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -198,7 +198,7 @@ section .text
         ;   XREF to: 00544f00 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040faff
     PUSH 0x544cc0                       ; 0040fb02
-    MOV EAX,[0x007bc498]                ; 0040fb07 | g_INT_ARRAY_007bc498
+    MOV EAX,[0x007bc498]                ; 0040fb07 | g_BaronIndices
     PUSH EAX                            ; 0040fb0c
     LEA EAX,[EBX + 0x25708]             ; 0040fb0d
     PUSH dword ptr [EBX + 0x25714]      ; 0040fb13
@@ -243,7 +243,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0040fb8d
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xac],EAX      ; 0040fb92
-    MOV ECX,dword ptr [0x00614d30]      ; 0040fb99 | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0040fb99 | g_CFireEffectPtr
     FLD float ptr [ESP + 0xac]          ; 0040fb9f
     ADD ESP,0x8                         ; 0040fba6
     LEA EAX,[ESP + 0x50]                ; 0040fba9
@@ -320,7 +320,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 0040fc61
     JMP 0x0040fab9                      ; 0040fc67
         ;   XREF to: 0040fab9 (UNCONDITIONAL_JUMP)  ; LAB_0040fab9
-    MOV ESI,dword ptr [0x007bc4cc]      ; 0040fc6c | g_INT_ARRAY_007bc498[13]
+    MOV ESI,dword ptr [0x007bc4cc]      ; 0040fc6c | g_BaronIndices[13]
         ;   Label: caseD_4
     LEA EAX,[ESI*0x4 + 0x0]             ; 0040fc72
     SUB EAX,ESI                         ; 0040fc79
@@ -329,7 +329,7 @@ section .text
     LEA EAX,[EBX + 0x1134]              ; 0040fc80
     ADD EAX,ESI                         ; 0040fc86
     PUSH EAX                            ; 0040fc88
-    PUSH 0x265370c                      ; 0040fc89 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0040fc89 | g_ZeroVector
     LEA ESI,[ESP + 0x94]                ; 0040fc8e
     LEA EDI,[ESP + 0x88]                ; 0040fc95
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0040fc9c
@@ -362,7 +362,7 @@ section .text
     MOV dword ptr [ESP + 0x78],EAX      ; 0040fce6
     MOV EAX,dword ptr [ESP + 0x28]      ; 0040fcea
     MOV dword ptr [ESP + 0x7c],EAX      ; 0040fcee
-    MOV ESI,dword ptr [0x007bc4d0]      ; 0040fcf2 | g_INT_ARRAY_007bc498[14]
+    MOV ESI,dword ptr [0x007bc4d0]      ; 0040fcf2 | g_BaronIndices[14]
         ;   Label: LAB_0040fcf2
     LEA EAX,[ESI*0x4 + 0x0]             ; 0040fcf8
     SUB EAX,ESI                         ; 0040fcff
@@ -371,7 +371,7 @@ section .text
     LEA EAX,[EBX + 0x1134]              ; 0040fd06
     ADD EAX,ESI                         ; 0040fd0c
     PUSH EAX                            ; 0040fd0e
-    PUSH 0x265370c                      ; 0040fd0f | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0040fd0f | g_ZeroVector
     LEA ESI,[ESP + 0x40]                ; 0040fd14
     LEA EDI,[ESP + 0x70]                ; 0040fd18
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0040fd1c
@@ -408,7 +408,7 @@ section .text
         ;   Label: LAB_0040fd78
     JNZ 0x0040fde5                      ; 0040fd7f
         ;   XREF to: 0040fde5 (CONDITIONAL_JUMP)  ; LAB_0040fde5
-    PUSH 0x609810                       ; 0040fd81 | g_SMRGLTextureBasic_00609810
+    PUSH 0x609810                       ; 0040fd81 | g_BaronBlueGlowTexture
     PUSH 0x3f000000                     ; 0040fd86
     PUSH 0x3f000000                     ; 0040fd8b
     LEA EAX,[EBX + 0x25720]             ; 0040fd90
@@ -416,12 +416,12 @@ section .text
     PUSH EAX                            ; 0040fd9b
     LEA EAX,[ESP + 0x88]                ; 0040fd9c
     PUSH EAX                            ; 0040fda3
-    MOV EDI,dword ptr [0x00614d30]      ; 0040fda4 | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 0040fda4 | g_CFireEffectPtr
     PUSH EDI                            ; 0040fdaa
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850 ; 0040fdab
         ;   XREF to: 0049e850 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)
     ADD ESP,0x1c                        ; 0040fdb0
-    PUSH 0x609810                       ; 0040fdb3 | g_SMRGLTextureBasic_00609810
+    PUSH 0x609810                       ; 0040fdb3 | g_BaronBlueGlowTexture
     PUSH 0x3f000000                     ; 0040fdb8
     PUSH 0x3f000000                     ; 0040fdbd
     LEA EAX,[EBX + 0x2572c]             ; 0040fdc2
@@ -429,7 +429,7 @@ section .text
     PUSH EAX                            ; 0040fdcd
     LEA EAX,[ESP + 0xac]                ; 0040fdce
     PUSH EAX                            ; 0040fdd5
-    MOV EBP,dword ptr [0x00614d30]      ; 0040fdd6 | g_CFireEffect_PTR_00614d30
+    MOV EBP,dword ptr [0x00614d30]      ; 0040fdd6 | g_CFireEffectPtr
     PUSH EBP                            ; 0040fddc
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850 ; 0040fddd
         ;   XREF to: 0049e850 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)

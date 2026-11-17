@@ -11,7 +11,7 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width
 {
   int iVar1;
   
-  if (g_INT_0070ca38 != 0) {
+  if (g_StoredWindowWidth != 0) {
     g_CHAR_PTR_01d046a0 = "..\\engine\\2d.c";
     g_INT_01d046a4 = 0x97b;
     core_main_c_displayErrorAndQuit_FUN_004e4500("mapFrameBuffer - already mapped!");
@@ -47,27 +47,27 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width
     g_INT_01d046a4 = 0x987;
     core_main_c_displayErrorAndQuit_FUN_004e4500("mapFrameBuffer - invalid buffer!");
   }
-  g_INT_0070ca38 = g_INT_006141b8;
-  g_INT_0070ca3c = g_INT_006141bc;
-  g_INT_0070ca40 = g_INT_01c35e48;
+  g_StoredWindowWidth = g_INT_006141b8;
+  g_StoredWindowHeight = g_INT_006141bc;
+  g_StoredClipLeft = g_INT_01c35e48;
   g_INT_006141b8 = width;
-  g_INT_0070ca44 = g_INT_01c35e4c;
-  g_INT_0070ca48 = g_INT_01c35e50;
+  g_StoredClipTop = g_INT_01c35e4c;
+  g_StoredClipRight = g_ClipRight;
   g_INT_006141bc = height;
-  g_INT_0070ca4c = g_INT_01c35e54;
+  g_StoredClipBottom = g_INT_01c35e54;
   g_INT_01c35e48 = 0;
-  g_INT_0070ca50 = g_INT_006141c0;
+  g_StoredBitsPerPixel = g_INT_006141c0;
   g_INT_01c35e4c = 0;
-  g_PTR_0070ca54 = g_ARRAY_PTR_01c2a38c[0];
-  g_INT_0070ca58 = (int)g_ARRAY_PTR_01c2a38c[1] - (int)g_ARRAY_PTR_01c2a38c[0];
+  g_StoredMappedFrameBuffer = g_ScreenBufferArray[0];
+  g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   g_INT_006141c0 = bits_per_pixel;
   iVar1 = height + -1;
-  g_INT_01c35e50 = width + -1;
+  g_ClipRight = width + -1;
   g_INT_01c35e54 = iVar1;
   if (0 < height) {
     iVar1 = 0;
     do {
-      *(void **)((int)g_ARRAY_PTR_01c2a38c + iVar1) = frame_buffer;
+      *(void **)((int)g_ScreenBufferArray + iVar1) = frame_buffer;
       iVar1 = iVar1 + 4;
       frame_buffer = (void *)((int)frame_buffer + stride);
     } while (iVar1 < height * 4);

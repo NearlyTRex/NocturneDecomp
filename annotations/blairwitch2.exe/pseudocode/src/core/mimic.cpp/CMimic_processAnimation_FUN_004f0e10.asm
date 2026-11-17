@@ -271,7 +271,7 @@ section .text
     CMP dword ptr [EBX + 0x2570],0x0    ; 004f0f92
     JZ 0x004f0f67                       ; 004f0f99
         ;   XREF to: 004f0f67 (CONDITIONAL_JUMP)  ; LAB_004f0f67
-    MOV ESI,dword ptr [0x01d097e0]      ; 004f0f9b | g_INT_ARRAY_01d097c4[7]
+    MOV ESI,dword ptr [0x01d097e0]      ; 004f0f9b | g_MimicIndices[7]
     PUSH ESI                            ; 004f0fa1
     MOV EDI,dword ptr [EBP + 0x72]      ; 004f0fa2
     PUSH EDI                            ; 004f0fa5
@@ -401,7 +401,7 @@ section .text
     SAHF                                ; 004f1118
     JNC 0x004f0f3f                      ; 004f1119
         ;   XREF to: 004f0f3f (CONDITIONAL_JUMP)  ; LAB_004f0f3f
-    MOV ECX,dword ptr [0x01d097c4]      ; 004f111f | g_INT_ARRAY_01d097c4
+    MOV ECX,dword ptr [0x01d097c4]      ; 004f111f | g_MimicIndices
     PUSH ECX                            ; 004f1125
     MOV ESI,dword ptr [EBP + 0x6a]      ; 004f1126
     PUSH ESI                            ; 004f1129
@@ -672,7 +672,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x6a]      ; 004f143e
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004f1441
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
-    MOV ESI,dword ptr [0x01d097e4]      ; 004f1446 | g_INT_ARRAY_01d097c4[8]
+    MOV ESI,dword ptr [0x01d097e4]      ; 004f1446 | g_MimicIndices[8]
     MOV dword ptr [EBP + 0x76],EAX      ; 004f144c
     ADD ESP,0x8                         ; 004f144f
     FLD float ptr [EBP + 0x76]          ; 004f1452
@@ -796,7 +796,7 @@ section .text
         ;   Label: LAB_004f159f
     JZ 0x004f0f67                       ; 004f15a6
         ;   XREF to: 004f0f67 (CONDITIONAL_JUMP)  ; LAB_004f0f67
-    MOV EAX,[0x01d097e4]                ; 004f15ac | g_INT_ARRAY_01d097c4[8]
+    MOV EAX,[0x01d097e4]                ; 004f15ac | g_MimicIndices[8]
     PUSH EAX                            ; 004f15b1
     PUSH ESI                            ; 004f15b2
     LEA ESI,[EBP + 0xfffffeee]          ; 004f15b3

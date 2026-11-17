@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c68f8 at 005c691e
 ;
 ; Referenced Globals:
-;   int g_INT_00626a70 = 0x10000
+;   int g_HeapFlags = 0x10000
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
         ;   XREF to: 005c69d8 (CONDITIONAL_JUMP)  ; LAB_005c69d8
     XOR EAX,EAX                         ; 005c69d5
     RET                                 ; 005c69d7
-    MOV ECX,dword ptr [0x00626a70]      ; 005c69d8 | g_INT_00626a70
+    MOV ECX,dword ptr [0x00626a70]      ; 005c69d8 | g_HeapFlags
         ;   Label: LAB_005c69d8
     CMP EAX,ECX                         ; 005c69de
     JNC 0x005c69e6                      ; 005c69e0

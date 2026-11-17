@@ -10,7 +10,7 @@ void __cdecl core_setdir_cpp_CZThumb_popRenderingContext_FUN_00538a30(CZThumb *t
 
 {
   engine_drender_cpp_popViewport_FUN_0046b740();
-  g_INT_006141b8 = g_INT_020b1518;
-  g_INT_006141bc = g_INT_020b151c;
+  g_INT_006141b8 = g_SavedWindowWidth;
+  g_INT_006141bc = g_SavedWindowHeight;
   return;
 }

@@ -16,10 +16,10 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_ReadConsoleInputA_005d0614 = 001d10e6
-;   int g_INT_00626a68 = 0x0
-;   int g_INT_02c9ff80
-;   int g_INT_02c9ff84
-;   int g_INT_02c9ff88
+;   int g_ConsoleInputState = 0x0
+;   int g_BufferedCharacter
+;   int g_BufferedVirtualKey
+;   int g_BufferedRepeatCount
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cd020
@@ -35,10 +35,10 @@ section .text
     PUSH EDI                            ; 005cb812
     PUSH EBP                            ; 005cb813
     SUB ESP,0x18                        ; 005cb814
-    MOV ESI,dword ptr [0x02c9ff88]      ; 005cb817 | g_INT_02c9ff88
-    MOV EDI,dword ptr [0x02c9ff84]      ; 005cb81d | g_INT_02c9ff84
+    MOV ESI,dword ptr [0x02c9ff88]      ; 005cb817 | g_BufferedRepeatCount
+    MOV EDI,dword ptr [0x02c9ff84]      ; 005cb81d | g_BufferedVirtualKey
     MOV EBX,dword ptr [ESP + 0x2c]      ; 005cb823
-    MOV EAX,[0x00626a68]                ; 005cb827 | g_INT_00626a68
+    MOV EAX,[0x00626a68]                ; 005cb827 | g_ConsoleInputState
     CMP EAX,0x1                         ; 005cb82c
     JC 0x005cb875                       ; 005cb82f
         ;   XREF to: 005cb875 (CONDITIONAL_JUMP)  ; LAB_005cb875
@@ -57,10 +57,10 @@ section .text
     TEST ESI,ESI                        ; 005cb83f
     JNZ 0x005cb855                      ; 005cb841
         ;   XREF to: 005cb855 (CONDITIONAL_JUMP)  ; LAB_005cb855
-    MOV dword ptr [0x00626a68],ESI      ; 005cb843 | g_INT_00626a68
+    MOV dword ptr [0x00626a68],ESI      ; 005cb843 | g_ConsoleInputState
     JMP 0x005cb855                      ; 005cb849
         ;   XREF to: 005cb855 (UNCONDITIONAL_JUMP)  ; LAB_005cb855
-    MOV dword ptr [0x00626a68],0x2      ; 005cb84b | g_INT_00626a68
+    MOV dword ptr [0x00626a68],0x2      ; 005cb84b | g_ConsoleInputState
         ;   Label: LAB_005cb84b
     MOV EAX,EDI                         ; 005cb855
         ;   Label: LAB_005cb855
@@ -70,13 +70,13 @@ section .text
         ;   Label: LAB_005cb85c
     SETNZ AL                            ; 005cb85e
     AND EAX,0xff                        ; 005cb861
-    MOV [0x00626a68],EAX                ; 005cb866 | g_INT_00626a68
-    MOV EAX,[0x02c9ff80]                ; 005cb86b | g_INT_02c9ff80
+    MOV [0x00626a68],EAX                ; 005cb866 | g_ConsoleInputState
+    MOV EAX,[0x02c9ff80]                ; 005cb86b | g_BufferedCharacter
     JMP 0x005cb914                      ; 005cb870
         ;   XREF to: 005cb914 (UNCONDITIONAL_JUMP)  ; LAB_005cb914
-    MOV dword ptr [0x02c9ff88],ESI      ; 005cb875 | g_INT_02c9ff88
+    MOV dword ptr [0x02c9ff88],ESI      ; 005cb875 | g_BufferedRepeatCount
         ;   Label: LAB_005cb875
-    MOV dword ptr [0x02c9ff84],EDI      ; 005cb87b | g_INT_02c9ff84
+    MOV dword ptr [0x02c9ff84],EDI      ; 005cb87b | g_BufferedVirtualKey
     LEA EAX,[ESP + 0x14]                ; 005cb881
         ;   Label: LAB_005cb881
     PUSH EAX                            ; 005cb885
@@ -112,19 +112,19 @@ section .text
     XOR EAX,EAX                         ; 005cb8c9
     XOR EDI,EDI                         ; 005cb8cb
     MOV AX,word ptr [ESP + 0xc]         ; 005cb8cd
-    MOV dword ptr [0x00626a68],EBP      ; 005cb8d2 | g_INT_00626a68
-    MOV [0x02c9ff80],EAX                ; 005cb8d8 | g_INT_02c9ff80
+    MOV dword ptr [0x00626a68],EBP      ; 005cb8d2 | g_ConsoleInputState
+    MOV [0x02c9ff80],EAX                ; 005cb8d8 | g_BufferedCharacter
     JMP 0x005cb8ed                      ; 005cb8dd
         ;   XREF to: 005cb8ed (UNCONDITIONAL_JUMP)  ; LAB_005cb8ed
     TEST ESI,ESI                        ; 005cb8df
         ;   Label: LAB_005cb8df
     JZ 0x005cb8ed                       ; 005cb8e1
         ;   XREF to: 005cb8ed (CONDITIONAL_JUMP)  ; LAB_005cb8ed
-    MOV dword ptr [0x00626a68],0x1      ; 005cb8e3 | g_INT_00626a68
+    MOV dword ptr [0x00626a68],0x1      ; 005cb8e3 | g_ConsoleInputState
     MOV EAX,EDI                         ; 005cb8ed
         ;   Label: LAB_005cb8ed
-    MOV dword ptr [0x02c9ff84],EDI      ; 005cb8ef | g_INT_02c9ff84
-    MOV dword ptr [0x02c9ff88],ESI      ; 005cb8f5 | g_INT_02c9ff88
+    MOV dword ptr [0x02c9ff84],EDI      ; 005cb8ef | g_BufferedVirtualKey
+    MOV dword ptr [0x02c9ff88],ESI      ; 005cb8f5 | g_BufferedRepeatCount
     ADD ESP,0x18                        ; 005cb8fb
     POP EBP                             ; 005cb8fe
     POP EDI                             ; 005cb8ff
@@ -133,11 +133,11 @@ section .text
     RET                                 ; 005cb902
     MOV EAX,0xffffffff                  ; 005cb903
         ;   Label: LAB_005cb903
-    MOV EDI,dword ptr [0x02c9ff84]      ; 005cb908 | g_INT_02c9ff84
-    MOV ESI,dword ptr [0x02c9ff88]      ; 005cb90e | g_INT_02c9ff88
-    MOV dword ptr [0x02c9ff84],EDI      ; 005cb914 | g_INT_02c9ff84
+    MOV EDI,dword ptr [0x02c9ff84]      ; 005cb908 | g_BufferedVirtualKey
+    MOV ESI,dword ptr [0x02c9ff88]      ; 005cb90e | g_BufferedRepeatCount
+    MOV dword ptr [0x02c9ff84],EDI      ; 005cb914 | g_BufferedVirtualKey
         ;   Label: LAB_005cb914
-    MOV dword ptr [0x02c9ff88],ESI      ; 005cb91a | g_INT_02c9ff88
+    MOV dword ptr [0x02c9ff88],ESI      ; 005cb91a | g_BufferedRepeatCount
     ADD ESP,0x18                        ; 005cb920
     POP EBP                             ; 005cb923
     POP EDI                             ; 005cb924

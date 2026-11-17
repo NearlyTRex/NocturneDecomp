@@ -37,7 +37,7 @@ void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_0050aa70(CDemonSet 
     do {
       piVar1 = (int *)((int)g_INT_ARRAY_005be4fc + iVar5);
       piVar2 = (int *)((int)g_INT_ARRAY_005be37c + iVar5);
-      puVar3 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar6);
+      puVar3 = (uint *)((int)g_DynamicLights + iVar6);
       iVar6 = iVar6 + 4;
       iVar5 = iVar5 + 4;
       iVar4 = iVar4 + 1;

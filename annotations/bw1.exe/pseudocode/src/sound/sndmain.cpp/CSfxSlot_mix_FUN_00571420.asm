@@ -50,8 +50,8 @@
 ;   TerminatedCString s_SfxSlot_mix_must_be_lock_005f393d
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   undefined4 g_FLOAT_PTR_ARRAY_02c80674[1]
-;   int g_INT_02c807ec
+;   undefined4 g_ChannelTertiaryBuffers[1]
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -76,7 +76,7 @@ section .text
     SUB ESP,0xcc                        ; 00571426
     AND ESP,0xfffffff8                  ; 0057142c
     MOV EDI,dword ptr [EBP + 0x14]      ; 0057142f
-    CMP dword ptr [0x02c807ec],0x0      ; 00571432 | g_INT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00571432 | g_SoundLockCount
     JLE 0x005715c4                      ; 00571439
         ;   XREF to: 005715c4 (CONDITIONAL_JUMP)  ; LAB_005715c4
     CMP dword ptr [EDI + 0x64],0x0      ; 0057143f
@@ -133,7 +133,7 @@ section .text
         ;   XREF to: 0057160f (CONDITIONAL_JUMP)  ; LAB_0057160f
     MOV EAX,dword ptr [ECX + EBP*0x1 + 0x18] ; 005714d8
     MOV dword ptr [ESP + ECX*0x1 + 0x1c],EAX ; 005714dc
-    MOV EAX,dword ptr [ECX + 0x2c80674] ; 005714e0 | g_FLOAT_PTR_ARRAY_02c80674[1]
+    MOV EAX,dword ptr [ECX + 0x2c80674] ; 005714e0 | g_ChannelTertiaryBuffers[1]
     MOV dword ptr [ECX + EBP*0x1 + 0x18],EAX ; 005714e6
     MOV EAX,dword ptr [EBP + 0x38]      ; 005714ea
     SHL EAX,0x2                         ; 005714ed

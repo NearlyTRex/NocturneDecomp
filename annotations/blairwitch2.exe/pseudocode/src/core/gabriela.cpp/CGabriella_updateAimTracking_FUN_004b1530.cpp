@@ -141,7 +141,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabrie
                 ((CDemonActor *)this_ptr,input_world_point,&CStack_84);
       fStack_54 = CStack_84.x;
       afStack_50[(uint)bVar5 * -2] = *(float *)((int)&CStack_84 + (uint)bVar5 * -8 + 4);
-      fVar6 = (float)g_INT_ARRAY_01cb0678[6];
+      fVar6 = (float)g_GabriellaIndices[6];
       afStack_50[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            *(float *)((int)&CStack_84 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0

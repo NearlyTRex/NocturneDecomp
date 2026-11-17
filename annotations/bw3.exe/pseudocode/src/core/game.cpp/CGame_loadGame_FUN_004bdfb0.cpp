@@ -50,12 +50,12 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004bdfb0(CGame *this_ptr,char *sav
   _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath
-            (g_CHAR_ARRAY_01d225c8,(char *)0x0,(char *)0x0,(char *)0x0,local_370);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_370);
   iVar2 = _stricmp(local_370,"sav");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_370,".sav"), iVar2 == 0)) {
     pcVar8 = local_578;
-    pcVar6 = g_CHAR_ARRAY_01d225c8;
+    pcVar6 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar6;
       *pcVar8 = cVar1;
@@ -112,14 +112,14 @@ LAB_004be478:
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_CEventList_resetGameFlags_FUN_00494880(g_CEventList_PTR_005fba60);
+    core_event_cpp_CEventList_resetGameFlags_FUN_00494880(g_CEventListPtr);
     core_level_cpp_CLevelLoader_show_FUN_004dfc50(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_cpp_getFile_FUN_004659c0("save",local_578,"rt");
     local_18 = _ftell(file_handle);
     iVar5 = 1;
-    iVar2 = _stricmp(g_CHAR_ARRAY_01d225c8,local_578);
+    iVar2 = _stricmp(g_CurrentSaveFile,local_578);
     if (iVar2 != 0) {
-      pcVar6 = g_CHAR_ARRAY_01d225c8;
+      pcVar6 = g_CurrentSaveFile;
       pcVar8 = local_578;
       do {
         cVar1 = *pcVar8;
@@ -237,7 +237,7 @@ LAB_004be22a:
         _fgets(local_270,0xff,file_handle);
         _fscanf(file_handle,"%d, %d\n");
         local_14 = 0;
-        if (0 < g_INT_01d5ba00) {
+        if (0 < g_HeroCount) {
           iVar2 = 0;
           do {
             pcVar8 = "(file corrupt)";
@@ -260,12 +260,12 @@ LAB_004be22a:
             }
             local_14 = local_14 + 1;
             iVar2 = iVar2 + 4;
-          } while (local_14 < g_INT_01d5ba00);
+          } while (local_14 < g_HeroCount);
         }
         iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_004f7590
                           (g_CDemonMission_PTR_00600530);
         if (iVar2 == 0) goto LAB_004be478;
-        core_event_cpp_CEventList_loadState_FUN_00495490(g_CEventList_PTR_005fba60,file_handle);
+        core_event_cpp_CEventList_loadState_FUN_00495490(g_CEventListPtr,file_handle);
         core_script_cpp_CScript_loadState_FUN_00530ad0(g_CScriptPtr,file_handle);
         if (local_38 < 4) {
           core_gore_cpp_CGore_reset_FUN_004ce560(g_CGorePtr);
@@ -286,11 +286,11 @@ LAB_004be22a:
           _fgets(local_270,0xff,file_handle);
           iVar2 = 1;
           _fscanf(file_handle,"%d\n");
-          if (0 < g_INT_ARRAY_01d226cc[0]) {
+          if (0 < g_MasterLightStateSaveBuffer[0]) {
             do {
               iVar2 = iVar2 + 1;
               _fscanf(file_handle,"%d\n");
-            } while (iVar2 <= g_INT_ARRAY_01d226cc[0]);
+            } while (iVar2 <= g_MasterLightStateSaveBuffer[0]);
           }
           g_INT_01d226c8 = 1;
         }
@@ -306,7 +306,7 @@ LAB_004be22a:
           core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(g_CFieldNotesPtr,file_handle);
         }
         core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (g_CEventList_PTR_005fba60,"JustLoadedGame");
+                  (g_CEventListPtr,"JustLoadedGame");
         _fclose(file_handle);
         if (load_mode == 0) {
           return;

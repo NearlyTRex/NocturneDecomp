@@ -14,9 +14,9 @@
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00532190 at 005323f0
 ;
 ; Referenced Globals:
-;   int g_INT_01c38b78
-;   int g_INT_01c38b7c
-;   int g_INT_01c38b80
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;   int g_INT_01d04fb8
 ;   int g_INT_01d04fbc
 ;   int g_INT_01d04fc0
@@ -51,7 +51,7 @@ section .text
     MOV EAX,[0x01d04fd0]                ; 00531f8d | g_INT_01d04fd0
     IMUL EDX                            ; 00531f92
     SHRD EAX,EDX,0x10                   ; 00531f94
-    MOV EDX,dword ptr [0x01c38b78]      ; 00531f98 | g_INT_01c38b78
+    MOV EDX,dword ptr [0x01c38b78]      ; 00531f98 | g_CameraOriginX
     ADD EAX,ESI                         ; 00531f9e
     ADD EDX,EAX                         ; 00531fa0
     MOV EAX,[0x01d04fbc]                ; 00531fa2 | g_INT_01d04fbc
@@ -69,7 +69,7 @@ section .text
     MOV EAX,[0x01d04fd4]                ; 00531fc7 | g_INT_01d04fd4
     IMUL EDX                            ; 00531fcc
     SHRD EAX,EDX,0x10                   ; 00531fce
-    MOV EDX,dword ptr [0x01c38b7c]      ; 00531fd2 | g_INT_01c38b7c
+    MOV EDX,dword ptr [0x01c38b7c]      ; 00531fd2 | g_CameraOriginY
     ADD EAX,ESI                         ; 00531fd8
     ADD EDX,EAX                         ; 00531fda
     MOV EAX,[0x01d04fc0]                ; 00531fdc | g_INT_01d04fc0
@@ -87,7 +87,7 @@ section .text
     MOV EAX,[0x01d04fd8]                ; 00532002 | g_INT_01d04fd8
     IMUL EDX                            ; 00532007
     SHRD EAX,EDX,0x10                   ; 00532009
-    MOV EDX,dword ptr [0x01c38b80]      ; 0053200d | g_INT_01c38b80
+    MOV EDX,dword ptr [0x01c38b80]      ; 0053200d | g_CameraOriginZ
     ADD EAX,ESI                         ; 00532013
     MOV EDI,EBX                         ; 00532015
     ADD EDX,EAX                         ; 00532017

@@ -38,7 +38,7 @@
 ;   int g_INT_0061f8b4 = 0x1
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   float g_FLOAT_01d33f6c
+;   float g_MoonAnimationTimer
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.rendering_mode
 ;   undefined4 g_CDemonSetInstance.light_direction.x
@@ -208,7 +208,7 @@ section .text
         ;   Label: LAB_00522033
     CALL engine_3d.c_setBlendMode_FUN_00406c20 ; 00522035
         ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406c20(int blend_mode)
-    FLD float ptr [0x01d33f6c]          ; 0052203a | g_FLOAT_01d33f6c
+    FLD float ptr [0x01d33f6c]          ; 0052203a | g_MoonAnimationTimer
     ADD ESP,0x4                         ; 00522040
     CALL crt_math.c_round_FUN_005c03a0  ; 00522043
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)

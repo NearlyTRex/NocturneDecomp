@@ -20,35 +20,35 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_00419fc0(CBoneGuy *thi
     return 0;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_30,g_INT_ARRAY_00764794[0]);
+                     (&(this_ptr->base).base.model,&local_30,g_BoneGuyIndices[0]);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
     out_points_array->z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_24,g_INT_ARRAY_00764794[5]);
+                     (&(this_ptr->base).base.model,&local_24,g_BoneGuyIndices[5]);
   if (out_points_array + 1 != pCVar1) {
     out_points_array[1].x = pCVar1->x;
     out_points_array[1].y = pCVar1->y;
     out_points_array[1].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_18,g_INT_ARRAY_00764794[6]);
+                     (&(this_ptr->base).base.model,&local_18,g_BoneGuyIndices[6]);
   if (out_points_array + 2 != pCVar1) {
     out_points_array[2].x = pCVar1->x;
     out_points_array[2].y = pCVar1->y;
     out_points_array[2].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_3c,g_INT_ARRAY_00764794[9]);
+                     (&(this_ptr->base).base.model,&local_3c,g_BoneGuyIndices[9]);
   if (out_points_array + 3 != pCVar1) {
     out_points_array[3].x = pCVar1->x;
     out_points_array[3].y = pCVar1->y;
     out_points_array[3].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_48,g_INT_ARRAY_00764794[10]);
+                     (&(this_ptr->base).base.model,&local_48,g_BoneGuyIndices[10]);
   if (out_points_array + 4 != pCVar1) {
     out_points_array[4].x = pCVar1->x;
     out_points_array[4].y = pCVar1->y;

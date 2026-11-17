@@ -11,8 +11,8 @@ void __cdecl sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_00572810(CVec
 {
   int iVar1;
   
-  iVar1 = g_INT_02c78cec;
-  g_CSfxOptions_ARRAY_02c78cf0[g_INT_02c78cec].position_format = 2;
+  iVar1 = g_SfxLastSlot;
+  g_CSfxOptions_ARRAY_02c78cf0[g_SfxLastSlot].position_format = 2;
   g_CSfxOptions_ARRAY_02c78cf0[iVar1].position_source_ptr = position_source_ptr;
   return;
 }

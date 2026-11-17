@@ -58,7 +58,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_004e7ed0(CMP3Decoder *this
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 511;
     core_main_c_displayErrorAndQuit_FUN_004c8440
-              ("Out of memory.  File: %s",g_CHAR_ARRAY_01cd8b28);
+              ("Out of memory.  File: %s",g_CurrentMp3Filename);
   }
   _fseek(pCVar8->file_handle,(this_ptr->file_bitstream).stream_start_position,0);
   (this_ptr->file_bitstream).current_byte_index = 0;
@@ -88,11 +88,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_004e7ed0(CMP3Decoder *this
     local_2c = local_48->layer + -1;
     local_28 = local_48->bitrate_index;
     iVar6 = local_48->mpeg_version;
-    iVar5 = g_INT_ARRAY_ARRAY_ARRAY_005bbc88[iVar6 + -1][local_48->layer + 2][local_28] / local_38;
+    iVar5 = g_MpegBitrateTable[iVar6 + -1][local_48->layer + 2][local_28] / local_38;
     header_out = (SMpegFrameHeader **)0x4e80e5;
     local_20 = &local_48;
     dVar9 = round
-                      (g_DOUBLE_ARRAY_ARRAY_005bbc48[iVar6][local_48->sampling_rate_index]);
+                      (g_MpegSampleRateTable[iVar6][local_48->sampling_rate_index]);
     local_18 = (int)ROUND(dVar9);
     if (iVar6 == 1) {
       if (((local_18 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
@@ -117,7 +117,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_004e7ed0(CMP3Decoder *this
       g_CurrentFilename = "..\\sound\\mp3.cpp";
       g_CurrentLineNumber = 417;
       core_main_c_displayErrorAndQuit_FUN_004c8440
-                ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CHAR_ARRAY_01cd8b28);
+                ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename);
     }
     local_30 = local_1c;
   }
@@ -132,13 +132,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_004e7ed0(CMP3Decoder *this
       g_CurrentFilename = "..\\sound\\mp3.cpp";
       g_CurrentLineNumber = 433;
       core_main_c_displayErrorAndQuit_FUN_004c8440
-                ("js_bound bad layer/modext (%d/%d)  File: %s",iVar6,iVar5,g_CHAR_ARRAY_01cd8b28);
+                ("js_bound bad layer/modext (%d/%d)  File: %s",iVar6,iVar5,g_CurrentMp3Filename);
     }
     local_34 = *(ulong *)("$CMotionController$$" + iVar5 * 4 + iVar6 * 0x10 + 10);
   }
   iVar6 = 0x4e81c7;
   dVar9 = round
-                    (g_DOUBLE_ARRAY_ARRAY_005bbc48[(int)header_out][local_78.bitrate_index] *
+                    (g_MpegSampleRateTable[(int)header_out][local_78.bitrate_index] *
                      1000);
   unaff_retaddr->sample_rate = (int)ROUND(dVar9);
   unaff_retaddr->num_channels = iStack_40;

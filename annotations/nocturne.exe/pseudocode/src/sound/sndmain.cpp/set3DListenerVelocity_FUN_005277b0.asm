@@ -20,7 +20,7 @@
 ;   undefined4 g_DOUBLE_02dc7900+4
 ;   double g_DOUBLE_02dc7908
 ;   undefined4 g_DOUBLE_02dc7908+4
-;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 005277d5
     MOV [0x02dc7908],EAX                ; 005277d9 | g_DOUBLE_02dc7908
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005277de
-    MOV EDX,dword ptr [0x02dc8318]      ; 005277e2 | g_CSoundDevice_PTR_02dc8318
+    MOV EDX,dword ptr [0x02dc8318]      ; 005277e2 | g_CSoundDevicePtr
     MOV [0x02dc790c],EAX                ; 005277e8 | g_DOUBLE_02dc7908+4
     TEST EDX,EDX                        ; 005277ed
     JNZ 0x005277f3                      ; 005277ef

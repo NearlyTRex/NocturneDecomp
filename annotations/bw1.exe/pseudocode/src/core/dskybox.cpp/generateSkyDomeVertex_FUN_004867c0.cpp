@@ -25,15 +25,16 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(SMRGLSkyTexture
     local_48 = 0.019634955;
   }
   else {
-    local_48 = (float)v_coord * 0.25f * 3.141593f * (float)0.5;
+    local_48 = (float)v_coord * 0.25f * 3.141593f *
+               (float)0.5;
   }
   fVar3 = (float10)fsin((float10)local_48);
-  fVar4 = (float10)((float)u_coord * 0.0625f * 3.141593f * (float)2)
-          + (float10)(float)sky_texture[1].base.count;
+  fVar4 = (float10)((float)u_coord * 0.0625f * 3.141593f *
+                   (float)2) + (float10)(float)sky_texture[1].base.count;
   fVar5 = (float10)fsin(fVar4);
   fVar6 = (float10)fcos((float10)local_48);
   fVar4 = (float10)fcos(fVar4);
-  fVar7 = (float10)g_FLOAT_006144d4;
+  fVar7 = (float10)g_SkyDomeVertexScale;
   fVar8 = (float10)256;
   round((double)(fVar3 * fVar7 * fVar8));
   round((double)(fVar5 * fVar7 * (float10)(double)fVar6 * fVar8));

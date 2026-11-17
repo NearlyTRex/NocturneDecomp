@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00558900(int index,SRe
     g_INT_01d71de4 = 0x1668;
     core_main_c_displayErrorAndQuit_FUN_004e4330("getRecordingDeviceInfo - invalid index");
   }
-  pSVar2 = g_SRecordingDeviceInfo_ARRAY_02cf3428 + index;
+  pSVar2 = g_RecordingDevices + index;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(uint *)device_info->device_name = *(uint *)pSVar2->device_name;
     pSVar2 = (SRecordingDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);

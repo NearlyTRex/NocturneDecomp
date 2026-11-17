@@ -63,7 +63,7 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_00599e10(SRenderVertex *v0,S
     lVar1 = (longlong)(int)uVar8 * (longlong)*(int *)(iVar4 + 0x26672d8);
     g_INT_026672a8 = g_INT_026672a8 + 1;
     *(uint *)(iVar4 + 0x26672d4) =
-         ((pSVar7->projected_vertex).transformed_z * 0x100 - g_INT_01ba5714) +
+         ((pSVar7->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;

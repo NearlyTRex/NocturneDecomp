@@ -80,13 +80,13 @@
     },
     {
       "addr": "01bc1280",
-      "name": "g_INT_01bc1280",
+      "name": "g_CaptureFaceCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01bc1284",
-      "name": "g_INT_01bc1284",
+      "name": "g_CaptureTextureCount",
       "type": "int",
       "value": null
     },
@@ -264,11 +264,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Raw hex literal 0x1bc1298 matches address of g_SFace_ARRAY_01bc1288 (+16 bytes into) (type SFace[5000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x1bc1298 matches address of g_CapturedFaces (+16 bytes into) (type SFace[5000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 43,
       "match": "0x1bc1298",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)(g_INT_01bc1280 * 0x20 + 0x1bc1298 + (uint)bVar13 * -8);",
+      "text": "puVar11 = (uint *)(g_CaptureFaceCount * 0x20 + 0x1bc1298 + (uint)bVar13 * -8);",
       "type": "raw_address_constant"
     }
   ]

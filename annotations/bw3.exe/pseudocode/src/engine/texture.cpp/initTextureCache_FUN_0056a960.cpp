@@ -16,12 +16,12 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_0056a960(void)
   
   this_ptr = operator_new(0x1800c);
   if (this_ptr == (CTextureCache *)0x0) {
-    g_CTextureCache_PTR_02cfd0d0 = (CTextureCache *)0x0;
+    g_TextureCacheInstance = (CTextureCache *)0x0;
   }
   else {
-    g_CTextureCache_PTR_02cfd0d0 = engine_texture_cpp_CTextureCache_ctor_FUN_00569550(this_ptr);
-    if (g_CTextureCache_PTR_02cfd0d0 != (CTextureCache *)0x0) {
-      return g_CTextureCache_PTR_02cfd0d0;
+    g_TextureCacheInstance = engine_texture_cpp_CTextureCache_ctor_FUN_00569550(this_ptr);
+    if (g_TextureCacheInstance != (CTextureCache *)0x0) {
+      return g_TextureCacheInstance;
     }
   }
   g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";

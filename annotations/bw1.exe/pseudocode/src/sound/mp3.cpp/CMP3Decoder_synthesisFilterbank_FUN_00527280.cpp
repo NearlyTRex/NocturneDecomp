@@ -33,9 +33,9 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280(CMP3Deco
   int local_1c;
   int local_14;
   
-  if (g_INT_00620240 != 0) {
+  if (g_MpegSynthesisTableInitialized != 0) {
     local_1c = 0;
-    local_24 = g_FLOAT_ARRAY_ARRAY_01d39d40[0];
+    local_24 = g_MpegSynthesisDctTable[0];
     do {
       iVar7 = 1;
       pfVar8 = local_24;
@@ -65,7 +65,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280(CMP3Deco
       local_1c = local_1c + 1;
       local_24 = local_24 + 0x20;
     } while (local_1c < 0x40);
-    g_INT_00620240 = 0;
+    g_MpegSynthesisTableInitialized = 0;
   }
   uVar6 = this_ptr->synthesis_buffer_index[channel_index] - 0x40U & 0x3ff;
   this_ptr->synthesis_buffer_index[channel_index] = uVar6;
@@ -81,13 +81,13 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280(CMP3Deco
   } while (iVar7 < 0x20);
   local_20 = 0;
   do {
-    local_40 = g_FLOAT_ARRAY_ARRAY_01d39d40 + local_20;
+    local_40 = g_MpegSynthesisDctTable + local_20;
     local_3c = subband_samples;
     fVar2 = 0.0;
     iVar7 = local_4c;
     while (0 < iVar7) {
       iVar7 = iVar7 + -1;
-      fVar2 = g_FLOAT_ARRAY_ARRAY_01d39d40[local_20][aiStack_e4[iVar7]] *
+      fVar2 = g_MpegSynthesisDctTable[local_20][aiStack_e4[iVar7]] *
               subband_samples[aiStack_e4[iVar7]] + fVar2;
     }
     *local_44 = fVar2;
@@ -101,9 +101,9 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280(CMP3Deco
     iVar3 = 8;
     iVar7 = local_48;
     do {
-      pfVar8 = g_FLOAT_ARRAY_ARRAY_0061fa40[0] + iVar7;
+      pfVar8 = g_MpegSynthesisWindow[0] + iVar7;
       uVar4 = uVar6 & 0x3ff;
-      pfVar9 = g_FLOAT_ARRAY_ARRAY_0061fa40[1] + iVar7;
+      pfVar9 = g_MpegSynthesisWindow[1] + iVar7;
       uVar5 = uVar4 + 0x60 & 0x3ff;
       iVar7 = iVar7 + 0x40;
       uVar6 = uVar5 + 0x20;

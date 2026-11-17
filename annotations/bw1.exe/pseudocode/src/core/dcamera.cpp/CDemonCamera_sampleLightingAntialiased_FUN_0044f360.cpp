@@ -28,43 +28,43 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360
     lVar2 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar8;
     lVar3 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar9;
     lVar4 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar6;
-    g_CVector3i_02c9ffb0.z =
+    g_TempProjectedCoord.z =
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
          ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
          ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-    if (((g_CVector3i_02c9ffb0.z < 1) ||
+    if (((g_TempProjectedCoord.z < 1) ||
         (lVar2 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar8,
         lVar3 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar9,
         lVar4 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar6,
-        g_CVector3i_02c9ffb0.x =
+        g_TempProjectedCoord.x =
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
-        g_CVector3i_02c9ffb0.z <= g_CVector3i_02c9ffb0.x)) ||
-       ((g_CVector3i_02c9ffb0.x <= -g_CVector3i_02c9ffb0.z ||
+        g_TempProjectedCoord.z <= g_TempProjectedCoord.x)) ||
+       ((g_TempProjectedCoord.x <= -g_TempProjectedCoord.z ||
         ((lVar2 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar8,
          lVar3 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar9,
          lVar4 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar6,
-         g_CVector3i_02c9ffb0.y =
+         g_TempProjectedCoord.y =
               ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
               ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
               ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
-         g_CVector3i_02c9ffb0.z <= g_CVector3i_02c9ffb0.y ||
-         (g_CVector3i_02c9ffb0.y <= -g_CVector3i_02c9ffb0.z)))))) {
-      pCVar7 = &g_CVector3i_01483a40;
+         g_TempProjectedCoord.z <= g_TempProjectedCoord.y ||
+         (g_TempProjectedCoord.y <= -g_TempProjectedCoord.z)))))) {
+      pCVar7 = &g_CameraOutOfBoundsCoord;
     }
     else {
-      g_CVector3i_02c9ffb0.x =
-           (int)(((longlong)g_CVector3i_02c9ffb0.x *
+      g_TempProjectedCoord.x =
+           (int)(((longlong)g_TempProjectedCoord.x *
                  (longlong)(light_source->base).cached_projection.half_width_fixed) /
-                (longlong)g_CVector3i_02c9ffb0.z) +
+                (longlong)g_TempProjectedCoord.z) +
            (light_source->base).cached_projection.center_x_fixed;
-      g_CVector3i_02c9ffb0.y =
-           (int)(((longlong)g_CVector3i_02c9ffb0.y *
+      g_TempProjectedCoord.y =
+           (int)(((longlong)g_TempProjectedCoord.y *
                  (longlong)(light_source->base).cached_projection.neg_half_height_fixed) /
-                (longlong)g_CVector3i_02c9ffb0.z) +
+                (longlong)g_TempProjectedCoord.z) +
            (light_source->base).cached_projection.center_y_fixed;
-      pCVar7 = &g_CVector3i_02c9ffb0;
+      pCVar7 = &g_TempProjectedCoord;
     }
     if (((0 < pCVar7->z) &&
         (light_source->shadow_depth_buffer
@@ -83,43 +83,43 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360
   lVar2 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar8;
   lVar3 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar9;
   lVar4 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar6;
-  g_CVector3i_02c9ffb0.z =
+  g_TempProjectedCoord.z =
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
        ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-  if ((((g_CVector3i_02c9ffb0.z < 1) ||
+  if ((((g_TempProjectedCoord.z < 1) ||
        (lVar2 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar8,
        lVar3 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar9,
        lVar4 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar6,
-       g_CVector3i_02c9ffb0.x =
+       g_TempProjectedCoord.x =
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
-       g_CVector3i_02c9ffb0.z <= g_CVector3i_02c9ffb0.x)) ||
-      (g_CVector3i_02c9ffb0.x <= -g_CVector3i_02c9ffb0.z)) ||
+       g_TempProjectedCoord.z <= g_TempProjectedCoord.x)) ||
+      (g_TempProjectedCoord.x <= -g_TempProjectedCoord.z)) ||
      ((lVar2 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar8,
       lVar3 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar9,
       lVar4 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar6,
-      g_CVector3i_02c9ffb0.y =
+      g_TempProjectedCoord.y =
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
            ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
-      g_CVector3i_02c9ffb0.z <= g_CVector3i_02c9ffb0.y ||
-      (g_CVector3i_02c9ffb0.y <= -g_CVector3i_02c9ffb0.z)))) {
-    pCVar7 = &g_CVector3i_01483a40;
+      g_TempProjectedCoord.z <= g_TempProjectedCoord.y ||
+      (g_TempProjectedCoord.y <= -g_TempProjectedCoord.z)))) {
+    pCVar7 = &g_CameraOutOfBoundsCoord;
   }
   else {
-    g_CVector3i_02c9ffb0.x =
-         (int)(((longlong)g_CVector3i_02c9ffb0.x *
+    g_TempProjectedCoord.x =
+         (int)(((longlong)g_TempProjectedCoord.x *
                (longlong)(light_source->base).cached_projection.half_width_fixed) /
-              (longlong)g_CVector3i_02c9ffb0.z) +
+              (longlong)g_TempProjectedCoord.z) +
          (light_source->base).cached_projection.center_x_fixed;
-    g_CVector3i_02c9ffb0.y =
-         (int)(((longlong)g_CVector3i_02c9ffb0.y *
+    g_TempProjectedCoord.y =
+         (int)(((longlong)g_TempProjectedCoord.y *
                (longlong)(light_source->base).cached_projection.neg_half_height_fixed) /
-              (longlong)g_CVector3i_02c9ffb0.z) +
+              (longlong)g_TempProjectedCoord.z) +
          (light_source->base).cached_projection.center_y_fixed;
-    pCVar7 = &g_CVector3i_02c9ffb0;
+    pCVar7 = &g_TempProjectedCoord;
   }
   if (pCVar7->z < 1) {
     return 0;

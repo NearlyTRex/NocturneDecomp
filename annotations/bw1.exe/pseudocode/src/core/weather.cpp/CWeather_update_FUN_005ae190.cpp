@@ -35,7 +35,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_005ae190(CWeather *this_ptr)
     this_ptr->flash_timer = fVar2;
     if (0.0 <= fVar2) {
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (g_CEventList_PTR_0061b4d0,"noLightningFlash");
+                        (g_CEventListPtr,"noLightningFlash");
       if (iVar4 == 0) {
         local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
         local_20 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 -
@@ -64,29 +64,29 @@ LAB_005ae1bc:
   local_1c = 0;
   local_18 = 0;
   do {
-    g_CHAR_ARRAY_02c9a478[local_1c] = '\0';
-    fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02c997f8[0].y + iVar4) -
+    g_WeatherParticleHitGround[local_1c] = '\0';
+    fVar2 = *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) -
             this_ptr->particle_speed * fVar1;
-    *(float *)((int)&g_CVector3f_ARRAY_02c997f8[0].y + iVar4) = fVar2;
-    if ((fVar2 < *(float *)((int)g_FLOAT_ARRAY_02c9a158 + local_18)) &&
-       (*(float *)((int)&g_CVector3f_ARRAY_02c997f8[0].y + iVar4) =
-             *(float *)((int)&g_CVector3f_ARRAY_02c997f8[0].y + iVar4) + 100.0f,
+    *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) = fVar2;
+    if ((fVar2 < *(float *)((int)g_WeatherParticleGroundHeights + local_18)) &&
+       (*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =
+             *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,
        this_ptr->weather_type == WEATHER_TYPE_RAIN)) {
-      fVar2 = *(float *)((int)g_FLOAT_ARRAY_02c9a158 + local_18);
+      fVar2 = *(float *)((int)g_WeatherParticleGroundHeights + local_18);
       puVar5 = (uint *)(iVar4 + 0x2c997fc + (uint)bVar6 * -8);
-      local_30.x = *(float *)((int)&g_CVector3f_ARRAY_02c997f8[0].x + iVar4);
+      local_30.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
       *(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4) = *puVar5;
       *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            puVar5[(uint)bVar6 * -2 + 1];
       local_30.y = fVar2;
       core_fire_cpp_CFireEffect_createRainDrop_FUN_004b7320
-                (g_CFireEffect_PTR_0061c010,&local_30,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_004b7320
-                (g_CFireEffect_PTR_0061c010,&local_30,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_004b7320
-                (g_CFireEffect_PTR_0061c010,&local_30,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_004b7320
-                (g_CFireEffect_PTR_0061c010,&local_30,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
     }
     iVar4 = iVar4 + 0xc;
     local_1c = local_1c + 1;
@@ -112,7 +112,7 @@ LAB_005ae1bc:
                              (0.1,this_ptr->max_flash_interval);
         this_ptr->sub_flash_interval = local_14;
         iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                          (g_CEventList_PTR_0061b4d0,"noLightningFlash");
+                          (g_CEventListPtr,"noLightningFlash");
         if (iVar4 == 0) {
           this_ptr->lightning_active = 1;
           local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;

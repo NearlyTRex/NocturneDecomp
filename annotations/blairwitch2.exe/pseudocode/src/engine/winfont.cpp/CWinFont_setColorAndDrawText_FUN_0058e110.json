@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 201,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 146,
+    "pseudocode_lines": 144,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 453
+    "total_lines": 451
   },
   "cross_references": [
     {
@@ -86,43 +86,43 @@
     },
     {
       "addr": "01c2a38c",
-      "name": "g_ARRAY_PTR_01c2a38c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c35814",
-      "name": "g_BIT_INTEGER32_01c35814",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35818",
-      "name": "g_INT_01c35818",
+      "name": "g_RedScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "g_BIT_INTEGER32_01c35820",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35824",
-      "name": "g_INT_01c35824",
+      "name": "g_GreenScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "g_BIT_INTEGER32_01c3582c",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35830",
-      "name": "g_INT_01c35830",
+      "name": "g_BlueScaleFactor",
       "type": "int",
       "value": null
     },
@@ -299,7 +299,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 132,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (*(int *)((int)this_ptr->ppv_bits + (iStack_18 * this_ptr->right + iVar5) * 4) !=",

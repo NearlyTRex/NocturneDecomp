@@ -16,16 +16,16 @@
 // =============================================================================
 
 // CBulletTrail[10]
-extern CBulletTrail g_CBulletTrail_ARRAY_01c58c90[10];
+extern CBulletTrail g_BulletTrailPool[10];
 
 // CExplosion[10]
-extern CExplosion g_CExplosion_ARRAY_01c5d708[10];
+extern CExplosion g_ExplosionPool[10];
 
 // CFireball[64]
 extern CFireball g_FireballPool[64];
 
 // CLaserBeam[64]
-extern CLaserBeam g_CLaserBeam_ARRAY_01c5c704[64];
+extern CLaserBeam g_LaserBeamPool[64];
 
 // CRock[64]
 extern CRock g_RockPool[64];
@@ -34,10 +34,10 @@ extern CRock g_RockPool[64];
 extern CToss g_TossPool[20];
 
 // int
-extern int g_INT_01c58c8c;
-extern int g_INT_01c58df8;
-extern int g_INT_01c5b4fc;
-extern int g_INT_01c5c700;
-extern int g_INT_01c5d704;
-extern int g_INT_01c5d820;
+extern int g_BulletTrailAllocIndex;
+extern int g_FireballAllocIndex;
+extern int g_RockAllocIndex;
+extern int g_LaserBeamActiveCount;
+extern int g_ExplosionPoolIndex;
+extern int g_TossAllocIndex;
 

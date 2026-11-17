@@ -21,13 +21,13 @@
 ;   int g_INT_01c37788
 ;   void* g_PTR_0264bbdc
 ;   int g_INT_0264bcfc
-;   int g_INT_0264bd00
+;   int g_ExternalFrameLocked
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x0264bd00],0x0      ; 0055f550 | g_INT_0264bd00
+    CMP dword ptr [0x0264bd00],0x0      ; 0055f550 | g_ExternalFrameLocked
         ;   Label: engine_special.cpp_unlockFrame_FUN_0055f550
     JZ 0x0055f510                       ; 0055f557
         ;   XREF to: 0055f510 (CONDITIONAL_JUMP)  ; LAB_0055f510
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 0055f581 (CONDITIONAL_JUMP)  ; LAB_0055f581
     PUSH ESI                            ; 0055f577
     XOR ESI,ESI                         ; 0055f578
-    MOV dword ptr [0x0264bd00],ESI      ; 0055f57a | g_INT_0264bd00
+    MOV dword ptr [0x0264bd00],ESI      ; 0055f57a | g_ExternalFrameLocked
     POP ESI                             ; 0055f580
     CALL dword ptr [0x0264bbdc]         ; 0055f581 | g_PTR_0264bbdc
         ;   Label: LAB_0055f581

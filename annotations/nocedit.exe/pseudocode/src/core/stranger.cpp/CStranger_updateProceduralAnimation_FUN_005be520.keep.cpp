@@ -390,20 +390,20 @@ LAB_0060cb6a:
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&local_430,&(this_ptr->base).target_orientation.vec);
-    if ((BYTE_03f6baac & 1) == 0) {
-      BYTE_03f6baac = BYTE_03f6baac | 1;
+    if ((g_StrangerBoundsCenterInit & 1) == 0) {
+      g_StrangerBoundsCenterInit = g_StrangerBoundsCenterInit | 1;
     }
     pCVar9 = (this_ptr->base).target_actor;
     if (pCVar9 != (CDemonActor *)0x0) {
       pCVar6 = (*((pCVar9->vtable)._ub)->getBoundingBox)(pCVar9,&local_408);
       if (&local_res0 != g_TriListTextureNames[0] + 0x24) {
-        CVector3f_03f6ba9c.x = ((pCVar6->min).x + (pCVar6->max).x) * 0.5f;
-        CVector3f_03f6ba9c.y = ((pCVar6->min).y + (pCVar6->max).y) * 0.5f;
-        CVector3f_03f6ba9c.z = ((pCVar6->min).z + (pCVar6->max).z) * 0.5f;
+        g_StrangerBoundsCenter.x = ((pCVar6->min).x + (pCVar6->max).x) * 0.5f;
+        g_StrangerBoundsCenter.y = ((pCVar6->min).y + (pCVar6->max).y) * 0.5f;
+        g_StrangerBoundsCenter.z = ((pCVar6->min).z + (pCVar6->max).z) * 0.5f;
       }
     }
     pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                       (&local_430,&local_64,&CVector3f_03f6ba9c);
+                       (&local_430,&local_64,&g_StrangerBoundsCenter);
     CStack_13c.x = (this_ptr->base).target_position.x + pCVar7->x;
     CStack_13c.y = (this_ptr->base).target_position.y + pCVar7->y;
     CStack_13c.z = (this_ptr->base).target_position.z + pCVar7->z;

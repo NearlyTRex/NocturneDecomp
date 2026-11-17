@@ -21,7 +21,7 @@ int __cdecl engine_prim_c_getTriangleWindingFromIndices2_FUN_0053df10(SMRGLPrimi
   iVar1 = triangle_indices->vertices[0].vertex_index;
   iVar3 = triangle_indices->vertices[1].vertex_index;
   iVar4 = triangle_indices->vertices[2].vertex_index;
-  if (g_INT_00713a7c == 1) {
+  if (g_CullingMode == 1) {
     iStack_24 = g_SRenderVertex_ARRAY_00629014[iVar3].projected_vertex.screen_x -
                 g_SRenderVertex_ARRAY_00629014[iVar1].projected_vertex.screen_x;
     iStack_20 = g_SRenderVertex_ARRAY_00629014[iVar3].projected_vertex.screen_y -

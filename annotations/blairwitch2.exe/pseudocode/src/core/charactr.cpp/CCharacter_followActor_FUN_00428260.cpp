@@ -74,7 +74,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428260(CCharacter *t
     if (min_dist <= local_30) {
       fVar4 = 0.0;
       fVar3 = 0.0;
-      direction = &g_CVector3f_0265370c;
+      direction = &g_ZeroVector;
       path_map = (*((actor->vtable)._ub)->getPathMap)(actor);
       iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                         (this_ptr,&(actor->location).position,path_map,direction,fVar3,fVar4);

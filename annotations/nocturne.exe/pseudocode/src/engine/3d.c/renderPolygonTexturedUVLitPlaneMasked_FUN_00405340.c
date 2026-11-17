@@ -31,15 +31,16 @@ void * __cdecl engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340(SM
   g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
   g_VertexPreprocessMode = 0;
   engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
-  piVar3 = g_INT_ARRAY_006b029c;
+  piVar3 = g_ProcessedVertexIndices;
   pSVar2 = prim + 1;
-  for (iVar4 = 0; uVar1 = g_UINT_006b0264, iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3) {
-    *piVar3 = (pSVar2->base).type + g_UINT_006b0264;
+  for (iVar4 = 0; uVar1 = g_ProcessedVertexOffset, iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3
+      ) {
+    *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
     g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + uVar1].u = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
     g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + uVar1].v = (int)(pSVar2->surface_normal).A;
     pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
-  engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_INT_ARRAY_006b029c);
+  engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_ProcessedVertexIndices);
   return (void *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

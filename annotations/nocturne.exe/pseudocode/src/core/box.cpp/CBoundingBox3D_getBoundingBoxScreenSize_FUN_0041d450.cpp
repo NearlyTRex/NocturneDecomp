@@ -27,7 +27,7 @@ float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(
   if (0 < iVar1) {
     return ABS(((float)g_Projection.neg_half_height_fixed *
                (((this_ptr->max).y - (this_ptr->min).y) / ((float)iVar1 * (float)0.00390625)))
-               / (float)g_INT_005b7648);
+               / (float)g_ProjectionScale);
   }
   return 99999.0;
 }

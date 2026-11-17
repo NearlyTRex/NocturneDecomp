@@ -11,11 +11,11 @@ bool FUN_005b0004(void)
 {
   BOOL BVar1;
   
-  if (g_BYTE_00607ef0 != 0) {
+  if (g_ConsoleHandlerRegistered != 0) {
     BVar1 = SetConsoleCtrlHandler(FUN_005aff40,0);
     if (BVar1 != 0) {
-      g_BYTE_00607ef0 = 0;
+      g_ConsoleHandlerRegistered = 0;
     }
   }
-  return g_BYTE_00607ef0 == 0;
+  return g_ConsoleHandlerRegistered == 0;
 }

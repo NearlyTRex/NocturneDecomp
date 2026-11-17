@@ -15,7 +15,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004f4a30(char *section,char *ke
   
   _sprintf(acStack_10c,"%d");
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004f4370
-                    (&g_CIni_01d06d64,section,key,acStack_10c,acStack_20c,0xff,filename);
+                    (&g_CIniInstance,section,key,acStack_10c,acStack_20c,0xff,filename);
   if (iVar1 == 0) {
     g_CHAR_PTR_01d1d400 = "..\\engine\\ini.cpp";
     g_INT_01d1d404 = 0x23d;

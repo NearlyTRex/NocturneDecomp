@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   void* g_PTR_02c83480
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_0051323d
     PUSH ESI                            ; 0051323e
     PUSH EBX                            ; 0051323f
-    MOV EBX,dword ptr [0x01c51d14]      ; 00513240 | g_BIT_INTEGER32_01c51d14
+    MOV EBX,dword ptr [0x01c51d14]      ; 00513240 | g_RenderStateFlags
     PUSH EBX                            ; 00513246
     MOV ESI,dword ptr [ESP + 0x18]      ; 00513247
     PUSH ESI                            ; 0051324b

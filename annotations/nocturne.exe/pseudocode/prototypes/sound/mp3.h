@@ -27,7 +27,7 @@ void __cdecl CFileBitStream::reset(CFileBitStream *this_ptr);
 
 // Original: sound_mp3.cpp_CFileBitStream_init_FUN_004e28a0
 // Address: 004e28a0
-void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,_FILE *file_handle,ulong buffer_size,int stream_length);
 
 // Original: sound_mp3.cpp_CFileBitStream_close_FUN_004e2980
 // Address: 004e2980

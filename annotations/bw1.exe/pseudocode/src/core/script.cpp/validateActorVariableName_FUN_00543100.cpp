@@ -26,7 +26,7 @@ int __cdecl core_script_cpp_validateActorVariableName_FUN_00543100(char *variabl
     if (~uVar2 - 1 < 0x1f) {
       iVar3 = 1;
       while ((variable_name = variable_name + 1,
-             (g_UCHAR_ARRAY_00626114[(byte)(*variable_name + 1)] & 0xe0) != 0 ||
+             (g_CharacterClassificationTable[(byte)(*variable_name + 1)] & 0xe0) != 0 ||
              (*variable_name == '_'))) {
         iVar3 = iVar3 + 1;
       }

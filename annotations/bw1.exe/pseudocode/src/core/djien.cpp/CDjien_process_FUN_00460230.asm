@@ -137,13 +137,13 @@ section .text
     JG 0x004603f1                       ; 0046033e
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     PUSH 0x5d8d32                       ; 00460344 | = "DjienSacksGone"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00460349 | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00460349 | g_CEventListPtr
     PUSH ECX                            ; 0046034f
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00460350
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00460355
     PUSH 0x5d8d41                       ; 00460358 | = "DjienHeartDestroyed"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0046035d | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0046035d | g_CEventListPtr
     PUSH ESI                            ; 00460363
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460364
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -533,7 +533,7 @@ section .text
     FADDP                               ; 004607aa
     FSTP float ptr [EBP + 0x6e]         ; 004607ac
     MOV EAX,dword ptr [EBP + 0x6e]      ; 004607af
-    MOV EDX,dword ptr [0x01cc804c]      ; 004607b2 | g_INT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 004607b2 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004607b8
     ADD EAX,EDX                         ; 004607ba
     MOV dword ptr [EBP + 0x6a],EAX      ; 004607bc
@@ -569,7 +569,7 @@ section .text
     JNZ 0x00460332                      ; 0046081f
         ;   XREF to: 00460332 (CONDITIONAL_JUMP)  ; LAB_00460332
     PUSH 0x5d8ca9                       ; 00460825 | = "DjienInZone"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 0046082a | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 0046082a | g_CEventListPtr
     PUSH EDI                            ; 00460830
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460831
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

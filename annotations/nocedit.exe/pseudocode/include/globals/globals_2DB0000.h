@@ -59,7 +59,7 @@ extern char g_ErrorMessageBuffer_02db8b70[256];
 // int
 extern int g_HeroCount;
 extern int g_LocalHeroIndex;
-extern int INT_02db8888;
+extern int g_HostageGunUpMotionIndex;
 extern int g_FirstTimeFlag;
 extern int g_ItemDefinitionCount;
 

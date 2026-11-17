@@ -9,8 +9,8 @@
 void __cdecl core_flattn_cpp_staticInit_FUN_004bf740(void)
 
 {
-  g_FLOAT_01cc8048 = 1.0;
-  g_INT_01cc804c = 0x1fc00000;
-  g_INT_01cc8050 = 0x5f400000;
+  g_FastSqrtMagicSeedOne = 1.0;
+  g_FastSqrtMagic = 0x1fc00000;
+  g_FastInvSqrtMagic = 0x5f400000;
   return;
 }

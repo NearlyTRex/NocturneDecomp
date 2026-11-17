@@ -16,17 +16,17 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_joyGetPos_005b3440 = 001b38cc
-;   int g_INT_01c6e250
-;   int g_INT_01c6e254
-;   DWORD g_DWORD_01c6e258
-;   int g_INT_01c6e25c
-;   DWORD g_DWORD_01c6e260
-;   int g_INT_01c6e264
-;   int g_INT_01c6e268
-;   int g_INT_01c6e26c
-;   int g_INT_01c6e274
-;   int g_INT_01c6e278
-;   void* g_PTR_02d22c1c
+;   int g_JoyXPos
+;   int g_JoyYPos
+;   DWORD g_JoyRPos
+;   int g_JoyZPos
+;   DWORD g_JoyButtons
+;   int g_JoystickPresent
+;   int g_JoyWantUAxis
+;   int g_JoyWantRAxis
+;   int g_JoystickHasPOV
+;   int g_JoyPOVDirection
+;   void* g_joyGetPosEx
 ;
 ; Called Functions:
 ;   joyGetPos
@@ -40,27 +40,27 @@ section .text
     PUSH ESI                            ; 00581d11
     PUSH EDI                            ; 00581d12
     SUB ESP,0x44                        ; 00581d13
-    CMP dword ptr [0x01c6e264],0x0      ; 00581d16 | g_INT_01c6e264
+    CMP dword ptr [0x01c6e264],0x0      ; 00581d16 | g_JoystickPresent
     JZ 0x00581dd0                       ; 00581d1d
         ;   XREF to: 00581dd0 (CONDITIONAL_JUMP)  ; LAB_00581dd0
-    MOV ECX,dword ptr [0x02d22c1c]      ; 00581d23 | g_PTR_02d22c1c
+    MOV ECX,dword ptr [0x02d22c1c]      ; 00581d23 | g_joyGetPosEx
     TEST ECX,ECX                        ; 00581d29
     JZ 0x00581e2e                       ; 00581d2b
         ;   XREF to: 00581e2e (CONDITIONAL_JUMP)  ; LAB_00581e2e
     MOV ESI,0x83                        ; 00581d31
     MOV EBX,0x34                        ; 00581d36
-    MOV EDI,dword ptr [0x01c6e274]      ; 00581d3b | g_INT_01c6e274
+    MOV EDI,dword ptr [0x01c6e274]      ; 00581d3b | g_JoystickHasPOV
     MOV dword ptr [ESP + 0x4],ESI       ; 00581d41
     MOV dword ptr [ESP],EBX             ; 00581d45
     TEST EDI,EDI                        ; 00581d48
     JNZ 0x00581dd7                      ; 00581d4a
         ;   XREF to: 00581dd7 (CONDITIONAL_JUMP)  ; LAB_00581dd7
-    CMP dword ptr [0x01c6e26c],0x0      ; 00581d50 | g_INT_01c6e26c
+    CMP dword ptr [0x01c6e26c],0x0      ; 00581d50 | g_JoyWantRAxis
         ;   Label: LAB_00581d50
     JZ 0x00581d5e                       ; 00581d57
         ;   XREF to: 00581d5e (CONDITIONAL_JUMP)  ; LAB_00581d5e
     OR byte ptr [ESP + 0x4],0x4         ; 00581d59
-    CMP dword ptr [0x01c6e268],0x0      ; 00581d5e | g_INT_01c6e268
+    CMP dword ptr [0x01c6e268],0x0      ; 00581d5e | g_JoyWantUAxis
         ;   Label: LAB_00581d5e
     JZ 0x00581d6c                       ; 00581d65
         ;   XREF to: 00581d6c (CONDITIONAL_JUMP)  ; LAB_00581d6c
@@ -69,18 +69,18 @@ section .text
         ;   Label: LAB_00581d6c
     PUSH EAX                            ; 00581d6e
     PUSH 0x0                            ; 00581d6f
-    CALL dword ptr [0x02d22c1c]         ; 00581d71 | g_PTR_02d22c1c
+    CALL dword ptr [0x02d22c1c]         ; 00581d71 | g_joyGetPosEx
     MOV EAX,dword ptr [ESP + 0x20]      ; 00581d77
-    MOV [0x01c6e260],EAX                ; 00581d7b | g_DWORD_01c6e260
+    MOV [0x01c6e260],EAX                ; 00581d7b | g_JoyButtons
     MOV EAX,dword ptr [ESP + 0x8]       ; 00581d80
-    MOV [0x01c6e250],EAX                ; 00581d84 | g_INT_01c6e250
+    MOV [0x01c6e250],EAX                ; 00581d84 | g_JoyXPos
     MOV EAX,dword ptr [ESP + 0xc]       ; 00581d89
-    MOV [0x01c6e254],EAX                ; 00581d8d | g_INT_01c6e254
+    MOV [0x01c6e254],EAX                ; 00581d8d | g_JoyYPos
     MOV EAX,dword ptr [ESP + 0x14]      ; 00581d92
-    MOV [0x01c6e258],EAX                ; 00581d96 | g_DWORD_01c6e258
+    MOV [0x01c6e258],EAX                ; 00581d96 | g_JoyRPos
     MOV EAX,dword ptr [ESP + 0x10]      ; 00581d9b
-    MOV ECX,dword ptr [0x01c6e274]      ; 00581d9f | g_INT_01c6e274
-    MOV [0x01c6e25c],EAX                ; 00581da5 | g_INT_01c6e25c
+    MOV ECX,dword ptr [0x01c6e274]      ; 00581d9f | g_JoystickHasPOV
+    MOV [0x01c6e25c],EAX                ; 00581da5 | g_JoyZPos
     TEST ECX,ECX                        ; 00581daa
     JZ 0x00581dd0                       ; 00581dac
         ;   XREF to: 00581dd0 (CONDITIONAL_JUMP)  ; LAB_00581dd0
@@ -94,7 +94,7 @@ section .text
     CMP EBX,0x2328                      ; 00581dbe
     JNZ 0x00581e08                      ; 00581dc4
         ;   XREF to: 00581e08 (CONDITIONAL_JUMP)  ; LAB_00581e08
-    MOV dword ptr [0x01c6e278],0x4      ; 00581dc6 | g_INT_01c6e278
+    MOV dword ptr [0x01c6e278],0x4      ; 00581dc6 | g_JoyPOVDirection
     ADD ESP,0x44                        ; 00581dd0
         ;   Label: LAB_00581dd0
     POP EDI                             ; 00581dd3
@@ -105,21 +105,21 @@ section .text
         ;   Label: LAB_00581dd7
     JMP 0x00581d50                      ; 00581ddf
         ;   XREF to: 00581d50 (UNCONDITIONAL_JUMP)  ; LAB_00581d50
-    MOV dword ptr [0x01c6e278],0x1      ; 00581de4 | g_INT_01c6e278
+    MOV dword ptr [0x01c6e278],0x1      ; 00581de4 | g_JoyPOVDirection
         ;   Label: LAB_00581de4
     JMP 0x00581dd0                      ; 00581dee
         ;   XREF to: 00581dd0 (UNCONDITIONAL_JUMP)  ; LAB_00581dd0
-    MOV dword ptr [0x01c6e278],0x2      ; 00581df0 | g_INT_01c6e278
+    MOV dword ptr [0x01c6e278],0x2      ; 00581df0 | g_JoyPOVDirection
         ;   Label: LAB_00581df0
     JMP 0x00581dd0                      ; 00581dfa
         ;   XREF to: 00581dd0 (UNCONDITIONAL_JUMP)  ; LAB_00581dd0
-    MOV dword ptr [0x01c6e278],0x3      ; 00581dfc | g_INT_01c6e278
+    MOV dword ptr [0x01c6e278],0x3      ; 00581dfc | g_JoyPOVDirection
         ;   Label: LAB_00581dfc
     JMP 0x00581dd0                      ; 00581e06
         ;   XREF to: 00581dd0 (UNCONDITIONAL_JUMP)  ; LAB_00581dd0
     XOR EDX,EDX                         ; 00581e08
         ;   Label: LAB_00581e08
-    MOV dword ptr [0x01c6e278],EDX      ; 00581e0a | g_INT_01c6e278
+    MOV dword ptr [0x01c6e278],EDX      ; 00581e0a | g_JoyPOVDirection
     JMP 0x00581dd0                      ; 00581e10
         ;   XREF to: 00581dd0 (UNCONDITIONAL_JUMP)  ; LAB_00581dd0
     JBE 0x00581df0                      ; 00581e12
@@ -132,7 +132,7 @@ section .text
         ;   XREF to: 00581dfc (CONDITIONAL_JUMP)  ; LAB_00581dfc
     CMP EBX,0xffff                      ; 00581e1e
     XOR EDX,EDX                         ; 00581e24
-    MOV dword ptr [0x01c6e278],EDX      ; 00581e26 | g_INT_01c6e278
+    MOV dword ptr [0x01c6e278],EDX      ; 00581e26 | g_JoyPOVDirection
     JMP 0x00581dd0                      ; 00581e2c
         ;   XREF to: 00581dd0 (UNCONDITIONAL_JUMP)  ; LAB_00581dd0
     LEA EAX,[ESP + 0x34]                ; 00581e2e
@@ -141,13 +141,13 @@ section .text
     PUSH ECX                            ; 00581e33
     CALL dword ptr CS:[0x5b3440]        ; 00581e34 | PTR_joyGetPos_005b3440
     MOV EAX,dword ptr [ESP + 0x40]      ; 00581e3b
-    MOV [0x01c6e260],EAX                ; 00581e3f | g_DWORD_01c6e260
+    MOV [0x01c6e260],EAX                ; 00581e3f | g_JoyButtons
     MOV EAX,dword ptr [ESP + 0x34]      ; 00581e44
-    MOV [0x01c6e250],EAX                ; 00581e48 | g_INT_01c6e250
+    MOV [0x01c6e250],EAX                ; 00581e48 | g_JoyXPos
     MOV EAX,dword ptr [ESP + 0x38]      ; 00581e4d
-    MOV [0x01c6e254],EAX                ; 00581e51 | g_INT_01c6e254
+    MOV [0x01c6e254],EAX                ; 00581e51 | g_JoyYPos
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00581e56
-    MOV [0x01c6e25c],EAX                ; 00581e5a | g_INT_01c6e25c
+    MOV [0x01c6e25c],EAX                ; 00581e5a | g_JoyZPos
     ADD ESP,0x44                        ; 00581e5f
     POP EDI                             ; 00581e62
     POP ESI                             ; 00581e63

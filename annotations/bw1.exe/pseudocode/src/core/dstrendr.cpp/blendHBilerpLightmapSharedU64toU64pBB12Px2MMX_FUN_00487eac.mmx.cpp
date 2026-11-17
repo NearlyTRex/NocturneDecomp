@@ -15,7 +15,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [g_ULONG_01c51d1c]
+        movd MM5,dword ptr [g_SolidColorMode]
         punpcklbw MM5,MM7
         psllw MM5,0x6
         mov EAX,dword ptr [EBX]
@@ -118,7 +118,7 @@ __asm {
         mov EAX,dword ptr [ESI + 0x9a0]
         mov EAX,dword ptr [ESI + 0x9c0]
         mov EAX,dword ptr [ESI + 0x9e0]
-        mov EAX,[g_UINT_ARRAY_00b8189c]
+        mov EAX,[g_LightmapTexturePalette]
         mov EAX,[0x00b818bc]
         mov EAX,[0x00b818dc]
         mov EAX,[0x00b818fc]
@@ -150,7 +150,7 @@ __asm {
         mov EAX,[0x00b81c3c]
         mov EAX,[0x00b81c5c]
         mov EAX,[0x00b81c7c]
-        mov EAX,[g_USHORT_ARRAY_00619b60]
+        mov EAX,[g_LightmapData]
         mov EAX,[0x00619b80]
         mov EAX,[0x00619ba0]
         mov EAX,[0x00619bc0]
@@ -218,10 +218,10 @@ __asm {
     LAB_004882f0:
         movzx EDX,byte ptr [EBX]
         movq MM0,qword ptr [ESI]
-        movd MM2,dword ptr [g_UINT_ARRAY_00b8189c + EDX*0x4]
+        movd MM2,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movzx EDX,byte ptr [EBX + 0x1]
         movzx EAX,byte ptr [EBP]
-        movd MM6,dword ptr [g_UINT_ARRAY_00b8189c + EDX*0x4]
+        movd MM6,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movq MM1,MM0
         punpcklbw MM6,MM7
         punpcklbw MM0,MM7
@@ -233,7 +233,7 @@ __asm {
         punpcklbw MM1,MM7
         pmullw MM0,MM2
         psrlw MM6,0x1
-        movq MM3,qword ptr [g_USHORT_ARRAY_00619b60 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         pmullw MM1,MM6
         movq MM2,MM3
         movq MM4,MM5
@@ -243,8 +243,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_QWORD_006185e8]
-        paddw MM1,qword ptr [g_QWORD_006185f0]
+        paddw MM0,qword ptr [g_LightmapBlendBias1]
+        paddw MM1,qword ptr [g_LightmapBlendBias2]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1

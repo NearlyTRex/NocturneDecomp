@@ -16,11 +16,11 @@ void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00437f40(void *sprite_data,
   int iStack_18;
   int iStack_14;
   
-  iVar2 = (int)g_ARRAY_PTR_01c4354c[1] - (int)g_ARRAY_PTR_01c4354c[0];
+  iVar2 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
     pCVar1 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
     if (g_INT_0061b4a0 == 8) {
-      puVar3 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x;
+      puVar3 = g_ScreenBufferArray[dest_y] + dest_x;
       iStack_18 = 0;
       if (0 < height) {
         do {
@@ -33,7 +33,7 @@ void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00437f40(void *sprite_data,
       }
     }
     else if (g_INT_0061b4a0 == 0x10) {
-      puVar3 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x * 2;
+      puVar3 = g_ScreenBufferArray[dest_y] + dest_x * 2;
       iStack_14 = 0;
       if (0 < height) {
         do {
@@ -46,7 +46,7 @@ void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00437f40(void *sprite_data,
       }
     }
     else {
-      puVar3 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x * 4;
+      puVar3 = g_ScreenBufferArray[dest_y] + dest_x * 4;
       iStack_1c = 0;
       if (0 < height) {
         do {

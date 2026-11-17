@@ -116,7 +116,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);
           for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
-              *puVar8 = g_UCHAR_01c70f5c;
+              *puVar8 = g_ShadowColor8;
             }
             puVar8 = puVar8 + 1;
             local_d4 = local_d4 + 1;
@@ -135,7 +135,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);
           for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
-              *puVar9 = (byte)g_INT_01c70f70;
+              *puVar9 = (byte)g_DefaultTextColor;
             }
             puVar9 = puVar9 + 1;
             local_d4 = local_d4 + 1;
@@ -247,7 +247,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
               puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);
               for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
-                  *puVar13 = g_USHORT_01c70f5e;
+                  *puVar13 = g_ShadowColor16;
                 }
                 puVar13 = puVar13 + 1;
                 local_d4 = local_d4 + 1;
@@ -270,7 +270,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                 iVar10 = iVar7 >> 0x1f;
                 iVar7 = (int)((iVar7 + iVar10 * -0x100) - (uint)(iVar10 << 7 < 0)) >> 8;
                 if (iVar7 != 0) {
-                  uVar4 = (uint)g_USHORT_01c70f5e;
+                  uVar4 = (uint)g_ShadowColor16;
                   uVar11 = (uint)*puVar13;
                   iVar10 = 0xff - iVar7;
                   *puVar13 = (ushort)(((((g_GreenMask16.u32[0] & uVar4) >>
@@ -315,7 +315,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
               puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));
               for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
-                  *puVar5 = (ushort)g_INT_01c70f70;
+                  *puVar5 = (ushort)g_DefaultTextColor;
                 }
                 local_d4 = local_d4 + 1;
                 puVar5 = puVar5 + 1;
@@ -340,14 +340,14 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                 if (iVar7 != 0) {
                   uVar4 = (uint)*puVar13;
                   iVar10 = 0xff - iVar7;
-                  *puVar13 = (ushort)(((((g_INT_01c70f70 & g_RedMask16.u32[0]) >>
+                  *puVar13 = (ushort)(((((g_DefaultTextColor & g_RedMask16.u32[0]) >>
                                         (g_RedBitPosition.bytes[0] & 0x1f)) <<
                                         (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar7 +
                                        (((uVar4 & g_RedMask16.u32[0]) >>
                                         (g_RedBitPosition.bytes[0] & 0x1f)) <<
                                         (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar10 >> 8) /
                                       (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
-                             | (ushort)(((((g_GreenMask16.u32[0] & g_INT_01c70f70) >>
+                             | (ushort)(((((g_GreenMask16.u32[0] & g_DefaultTextColor) >>
                                           (g_GreenBitPosition.bytes[0] & 0x1f)) <<
                                           (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar7 +
                                          (((uVar4 & g_GreenMask16.u32[0]) >>
@@ -355,7 +355,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                                           (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar10 >> 8
                                         ) / (uint)g_GreenScaleFactor <<
                                        (g_GreenBitPosition.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_INT_01c70f70 & g_BlueMask16.u32[0]) >>
+                             (ushort)(((((g_DefaultTextColor & g_BlueMask16.u32[0]) >>
                                         (g_BlueBitPosition.bytes[0] & 0x1f)) <<
                                         (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) * iVar7 +
                                        iVar10 * (((uVar4 & g_BlueMask16.u32[0]) >>
@@ -479,7 +479,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));
             for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *piVar6 = g_INT_01c70f60;
+                *piVar6 = g_ShadowColor32;
               }
               local_d4 = local_d4 + 1;
               piVar6 = piVar6 + 1;
@@ -494,7 +494,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
                         ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,
-                         *color_table,(local_d0 - x) + 1,g_INT_01c70f60);
+                         *color_table,(local_d0 - x) + 1,g_ShadowColor32);
               iVar14 = iVar14 + 4;
               iVar7 = iVar7 + 1;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
@@ -509,7 +509,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));
             for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *piVar6 = g_INT_01c70f70;
+                *piVar6 = g_DefaultTextColor;
               }
               local_d4 = local_d4 + 1;
               piVar6 = piVar6 + 1;
@@ -524,7 +524,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
                         ((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,
-                         *color_table,(local_d0 - x) + 1,g_INT_01c70f70);
+                         *color_table,(local_d0 - x) + 1,g_DefaultTextColor);
               iVar14 = iVar14 + 4;
               iVar7 = iVar7 + 1;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;

@@ -229,7 +229,7 @@ int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004fc320(CDemonMissio
 void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004fc4c0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004fc570(CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
-void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004fc5a0(CDemonMission *this_ptr,int param_2,char *param_3);
+void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004fc5a0(CDemonMission *this_ptr,int set_index,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004fc640(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission *this_ptr,char *name);

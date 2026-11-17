@@ -71,7 +71,7 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
   bVar10 = 0;
   if (arm_side == 0) {
     local_24 = g_INT_01ed36e8;
-    local_2c = g_INT_ARRAY_01ed36ec[1];
+    local_2c = g_StrangerIndices[1];
     core_xform_cpp_quaternionFromAngleY_FUN_00585d10(1.5707964,&local_17c);
     local_22c.w = local_17c.w;
     puVar6 = (uint *)((int)&local_22c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -85,8 +85,8 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
     pCVar4 = &local_20c;
   }
   else {
-    local_24 = g_INT_ARRAY_01ed36ec[0];
-    local_2c = g_INT_ARRAY_01ed36ec[2];
+    local_24 = g_StrangerIndices[0];
+    local_2c = g_StrangerIndices[2];
     core_xform_cpp_quaternionFromAngleY_FUN_00585d10(-1.5707964,&local_15c);
     local_22c.w = local_15c.w;
     puVar6 = (uint *)((int)&local_22c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);

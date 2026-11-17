@@ -133,7 +133,7 @@ __asm {
         punpcklbw MM1,MM7
         pmullw MM0,MM2
         psrlw MM6,0x1
-        movq MM3,qword ptr [g_USHORT_ARRAY_005b5d00 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         pmullw MM1,MM6
         movq MM2,MM3
         movq MM4,MM5
@@ -143,8 +143,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_005b47b8]
-        paddw MM1,qword ptr [g_MMX_INTEGER_005b47c0]
+        paddw MM0,qword ptr [g_LightmapBlendBias3]
+        paddw MM1,qword ptr [g_LightmapBlendBias4]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM7

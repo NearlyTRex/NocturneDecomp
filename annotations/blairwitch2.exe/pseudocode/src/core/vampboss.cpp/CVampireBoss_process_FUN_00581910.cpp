@@ -341,7 +341,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_00581910(CVampireBoss *t
   if (iVar7 == 1) {
     fVar23 = delta_time / 5.0f + this_ptr->morph_t;
     this_ptr->morph_t = fVar23;
-    pCVar5 = g_CEventList_PTR_006141f0;
+    pCVar5 = g_CEventListPtr;
     if (1.0 <= fVar23) {
       this_ptr->form = 2;
       core_event_cpp_CEventList_executeCommands_FUN_004894f0(pCVar5,"morphCompleted");
@@ -408,7 +408,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_00581910(CVampireBoss *t
     fStack_5c = delta_time / 5.0f;
     fStack_60 = this_ptr->morph_t;
     this_ptr->morph_t = fStack_60 - fStack_5c;
-    pCVar5 = g_CEventList_PTR_006141f0;
+    pCVar5 = g_CEventListPtr;
     if (0.0 < fStack_60 - fStack_5c) {
       fVar23 = (fStack_5c / fStack_60) *
                ((this_ptr->base).base.closest_distance_threshold -
@@ -568,7 +568,7 @@ LAB_00582508:
   switch(pSVar8->state_index) {
   case 0:
     (this_ptr->base).base.turn_speed = 3.141593f * delta_time;
-    pCVar5 = g_CEventList_PTR_006141f0;
+    pCVar5 = g_CEventListPtr;
     if (pCVar6->letterbox_mode == 0) {
       iVar7 = this_ptr->waypoint_index;
       (this_ptr->base).base.walk_step_speed = 10.0f * delta_time;
@@ -691,7 +691,7 @@ LAB_00582605:
     break;
   case 2:
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,"flyout");
+                      (g_CEventListPtr,"flyout");
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0,1);
     }

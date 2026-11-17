@@ -79,7 +79,7 @@ void __cdecl CDemonMission::removeActor(CDemonMission *this_ptr,CDemonActor *act
 
 // Original: core_mission.cpp_CDemonMission_changeSetName_FUN_0051b500
 // Address: 0051b500
-void __cdecl CDemonMission::changeSetName(CDemonMission *this_ptr,int param_2,char *param_3);
+void __cdecl CDemonMission::changeSetName(CDemonMission *this_ptr,int set_index,char *set_name);
 
 // Original: core_mission.cpp_CDemonMission_removeAllActors_FUN_0051b5a0
 // Address: 0051b5a0

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005eeb05 = 0.00001525879
-;   int g_INT_01c2a370
+;   int g_GlobalDeltaTimeInt
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_pollController_FUN_005902a0
@@ -28,7 +28,7 @@ section .text
     CMP EBX,0x4                         ; 0059065d
     JL 0x00590653                       ; 00590660
         ;   XREF to: 00590653 (CONDITIONAL_JUMP)  ; LAB_00590653
-    FILD dword ptr [0x01c2a370]         ; 00590662 | g_INT_01c2a370
+    FILD dword ptr [0x01c2a370]         ; 00590662 | g_GlobalDeltaTimeInt
     FMUL float ptr [0x005eeb05]         ; 00590668 | g_FLOAT_005eeb05
     SUB ESP,0x4                         ; 0059066e
     FSTP float ptr [ESP]                ; 00590671

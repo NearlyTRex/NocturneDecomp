@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
 ;   void* g_PTR_01d76cfc
-;   void* g_PTR_02cf60a8
+;   void* g_APIDLL_setLightVector
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_updateTransform_FUN_004edcc0
@@ -35,7 +35,7 @@ section .text
     FADDP                               ; 004ef3ad
     FSQRT                               ; 004ef3af
     FDIVR float ptr [ESP + 0x1c]        ; 004ef3b1
-    MOV EDX,dword ptr [0x02cf60a8]      ; 004ef3b5 | g_PTR_02cf60a8
+    MOV EDX,dword ptr [0x02cf60a8]      ; 004ef3b5 | g_APIDLL_setLightVector
     FSTP float ptr [ESP + 0xc]          ; 004ef3bb
     TEST EDX,EDX                        ; 004ef3bf
     JZ 0x004ef3cc                       ; 004ef3c1
@@ -70,7 +70,7 @@ section .text
     PUSH dword ptr [ESP + 0x1c]         ; 004ef408
     PUSH EAX                            ; 004ef40c
     FSTP float ptr [ESP + 0x10]         ; 004ef40d
-    CALL dword ptr [0x02cf60a8]         ; 004ef411 | g_PTR_02cf60a8
+    CALL dword ptr [0x02cf60a8]         ; 004ef411 | g_APIDLL_setLightVector
     ADD ESP,0x8                         ; 004ef417
     JMP 0x004ef3cc                      ; 004ef41a
         ;   XREF to: 004ef3cc (UNCONDITIONAL_JUMP)  ; LAB_004ef3cc

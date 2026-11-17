@@ -8,7 +8,7 @@
 ; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   int g_INT_02c9eb34
+;   int g_RasterizerEdgeCount
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 005bf0e0
         ;   Label: core_zombie.cpp_findRasterizerEdge_FUN_005bf0e0
     PUSH ESI                            ; 005bf0e1
-    MOV EBX,dword ptr [0x02c9eb34]      ; 005bf0e2 | g_INT_02c9eb34
+    MOV EBX,dword ptr [0x02c9eb34]      ; 005bf0e2 | g_RasterizerEdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 005bf0e8
     MOV ESI,dword ptr [ESP + 0x10]      ; 005bf0ec
     MOV EAX,0x2c9eb38                   ; 005bf0f0
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 005bf0fb (CONDITIONAL_JUMP)  ; LAB_005bf0fb
     XOR EAX,EAX                         ; 005bf10b
         ;   Label: LAB_005bf10b
-    MOV dword ptr [0x02c9eb34],EBX      ; 005bf10d | g_INT_02c9eb34
+    MOV dword ptr [0x02c9eb34],EBX      ; 005bf10d | g_RasterizerEdgeCount
         ;   Label: LAB_005bf10d
     POP ESI                             ; 005bf113
     POP EBX                             ; 005bf114

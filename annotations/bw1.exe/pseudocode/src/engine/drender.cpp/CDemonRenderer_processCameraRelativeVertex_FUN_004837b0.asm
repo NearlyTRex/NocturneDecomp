@@ -25,7 +25,7 @@
 ;   ... and 54 more
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005db37c = 256
+;   double g_WorldToCameraScale = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x10                        ; 004837b0
         ;   Label: engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
     MOV EAX,dword ptr [ESP + 0x18]      ; 004837b3
-    FLD double ptr [0x005db37c]         ; 004837b7 | g_DOUBLE_005db37c
+    FLD double ptr [0x005db37c]         ; 004837b7 | g_WorldToCameraScale
     FLD float ptr [EAX]                 ; 004837bd
     FMUL ST1                            ; 004837bf
     CALL crt_math.c_round_FUN_005c03a0  ; 004837c1

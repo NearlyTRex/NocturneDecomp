@@ -10,7 +10,7 @@
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_005752a0 at 005752ab
 ;
 ; Referenced Globals:
-;   int g_INT_006232e8 = 0x10
+;   int g_AudioBitsPerSample = 0x10
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getAudioFormat_FUN_005751c0
@@ -22,10 +22,10 @@ section .text
     PUSH 0x0                            ; 00575200
         ;   Label: sound_sndmain.cpp_getAudioBitDepth_FUN_00575200
     PUSH 0x0                            ; 00575202
-    PUSH 0x6232e8                       ; 00575204 | g_INT_006232e8
+    PUSH 0x6232e8                       ; 00575204 | g_AudioBitsPerSample
     CALL sound_sndmain.cpp_getAudioFormat_FUN_005751c0 ; 00575209
         ;   XREF to: 005751c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getAudioFormat_FUN_005751c0(int * bits_per_sample, int * channels, int * sample_rate)
-    MOV EAX,[0x006232e8]                ; 0057520e | g_INT_006232e8
+    MOV EAX,[0x006232e8]                ; 0057520e | g_AudioBitsPerSample
     ADD ESP,0xc                         ; 00575213
     RET                                 ; 00575216
 

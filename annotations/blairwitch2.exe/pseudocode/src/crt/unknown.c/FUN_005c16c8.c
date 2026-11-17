@@ -18,11 +18,11 @@ int FUN_005c16c8(int param_1,int param_2)
   if (*(int *)(param_1 + 0x20) == 0) {
     iVar1 = FUN_005c1690(param_2 + 0x76c);
     if (iVar1 == 0) {
-      iVar1 = *(int *)(&g_SHORT_006013f4 + *(int *)(param_1 + 0x10));
+      iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));
       iVar2 = *(int *)((int)&g_DOUBLE_006013ec + *(int *)(param_1 + 0x10) * 2 + 6);
     }
     else {
-      iVar1 = *(int *)(&g_SHORT_0060140e + *(int *)(param_1 + 0x10));
+      iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));
       iVar2 = *(int *)(&g_SHORT_0060140c + *(int *)(param_1 + 0x10));
     }
     local_34.tm_sec = 0;

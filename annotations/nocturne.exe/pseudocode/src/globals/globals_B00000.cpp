@@ -5,18 +5,18 @@
 // =============================================================================
 
 // SRGBColorPalette
-SRGBColorPalette g_SRGBColorPalette_00b0daf8 = {};
+SRGBColorPalette g_CameraImagePaletteData = {};
 
-// char[24][307200]
-char g_CHAR_ARRAY_ARRAY_00b0e608[24][307200] = {};
+// char[24][614400]
+char g_LightBufferPool[24][614400] = {};
 
 // int
-int g_INT_00b0ddf8 = {};
-int g_INT_00b0e5fc = {};
-int g_INT_00b0e600 = {};
-int g_INT_00b0e604 = {};
+int g_CoronaBlurFillValue = {};
+int g_CoronaMaxDepth = {};
+int g_CoronaDepthShift = {};
+int g_LightBufferPoolIndex = {};
 
 // uint[256]
-uint g_UINT_ARRAY_00b0ddfc[256] = {};
+uint g_CameraConvertedPalette[256] = {};
 uint g_UINT_ARRAY_00b0e1fc[256] = {};
 

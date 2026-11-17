@@ -16,7 +16,7 @@ SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_00597d00(vo
   g_SMRGLTextureModel_02c8acc4.base.type = 0xd;
   g_SMRGLTextureModel_02c8acc4.base.count = g_INT_02c8a67c;
   pcVar3 = g_SMRGLTextureModel_02c8acc4.texture_name;
-  pcVar2 = g_CTextureCache_PTR_02c8a680->entries[g_INT_02c8a67c].texture_name;
+  pcVar2 = g_TextureCacheInstance->entries[g_INT_02c8a67c].texture_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

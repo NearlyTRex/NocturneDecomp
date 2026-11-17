@@ -19,7 +19,7 @@ int FUN_005aba00(HANDLE param_1)
   if (0 < g_INT_00607be0) {
     iVar1 = 0;
     do {
-      piVar3 = (int *)((int)g_SIOControlBlock_PTR_00607bdc->standard_handles + iVar1);
+      piVar3 = (int *)((int)g_IOControlBlock->standard_handles + iVar1);
       if (*piVar3 == 0) {
         *piVar3 = (int)param_1;
         (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d8)();
@@ -29,9 +29,8 @@ int FUN_005aba00(HANDLE param_1)
       iVar4 = iVar4 + 1;
     } while (iVar1 < g_INT_00607be0 * 4);
   }
-  g_SIOControlBlock_PTR_00607bdc =
-       realloc(g_SIOControlBlock_PTR_00607bdc,(g_INT_00607be0 + 1) * 4);
-  ppvVar2 = g_SIOControlBlock_PTR_00607bdc->standard_handles + g_INT_00607be0;
+  g_IOControlBlock = realloc(g_IOControlBlock,(g_INT_00607be0 + 1) * 4);
+  ppvVar2 = g_IOControlBlock->standard_handles + g_INT_00607be0;
   g_INT_00607be0 = g_INT_00607be0 + 1;
   *ppvVar2 = param_1;
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d8)();

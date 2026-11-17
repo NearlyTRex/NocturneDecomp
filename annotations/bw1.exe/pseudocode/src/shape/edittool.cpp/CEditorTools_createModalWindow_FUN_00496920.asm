@@ -38,11 +38,11 @@
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3eb5c
-;   int g_INT_01c3f538
+;   int g_WindowStackCount
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
 ;   int g_INT_01c3f544
-;   void*[1200] g_ARRAY_PTR_01c4354c
+;   void*[1200] g_ScreenBufferArray
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -76,10 +76,10 @@ section .text
     PUSH 0x6a                           ; 0049693d
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0049693f
     PUSH EAX                            ; 00496945
-    MOV dword ptr [0x01c3f538],EDX      ; 00496946 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 00496946 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049694c
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
-    MOV ESI,dword ptr [0x01c3eb5c]      ; 00496951 | g_INT_01c3eb5c
+    MOV ESI,dword ptr [0x01c3eb5c]      ; 00496951 | g_WindowStackCount
     ADD ESP,0x8                         ; 00496957
     MOV [0x01c3f53c],EAX                ; 0049695a | g_INT_01c3f53c
     CMP ESI,0x5                         ; 0049695f
@@ -93,7 +93,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049697e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496983
-    MOV EAX,[0x01c3eb5c]                ; 00496986 | g_INT_01c3eb5c
+    MOV EAX,[0x01c3eb5c]                ; 00496986 | g_WindowStackCount
         ;   Label: LAB_00496986
     SHL EAX,0x3                         ; 0049698b
     MOV EDX,EAX                         ; 0049698e
@@ -116,11 +116,11 @@ section .text
     MOV ECX,dword ptr [ESP + 0x34]      ; 004969c3
     MOV EBP,dword ptr [ESP + 0x3c]      ; 004969c7
     MOV ESI,dword ptr [ESP + 0x38]      ; 004969cb
-    MOV EDX,dword ptr [0x01c3eb5c]      ; 004969cf | g_INT_01c3eb5c
+    MOV EDX,dword ptr [0x01c3eb5c]      ; 004969cf | g_WindowStackCount
     MOV dword ptr [ESP],EAX             ; 004969d5
     INC EDX                             ; 004969d8
     MOV EAX,dword ptr [ESP + 0x8]       ; 004969d9
-    MOV dword ptr [0x01c3eb5c],EDX      ; 004969dd | g_INT_01c3eb5c
+    MOV dword ptr [0x01c3eb5c],EDX      ; 004969dd | g_WindowStackCount
     SUB ECX,EAX                         ; 004969e3
     MOV EAX,dword ptr [ESP]             ; 004969e5
     MOV EDX,dword ptr [ESP + 0x40]      ; 004969e8
@@ -252,7 +252,7 @@ section .text
     TEST DL,0x1                         ; 00496b4d
     JNZ 0x00496c60                      ; 00496b50
         ;   XREF to: 00496c60 (CONDITIONAL_JUMP)  ; LAB_00496c60
-    CMP dword ptr [0x01c3eb5c],0x1      ; 00496b56 | g_INT_01c3eb5c
+    CMP dword ptr [0x01c3eb5c],0x1      ; 00496b56 | g_WindowStackCount
     JNZ 0x00496b6c                      ; 00496b5d
         ;   XREF to: 00496b6c (CONDITIONAL_JUMP)  ; LAB_00496b6c
     MOV ECX,dword ptr [ESP + 0x30]      ; 00496b5f
@@ -260,7 +260,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_backupScreen_FUN_00494030 ; 00496b64
         ;   XREF to: 00494030 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_backupScreen_FUN_00494030(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00496b69
-    CMP dword ptr [0x01c4354c],0x0      ; 00496b6c | g_ARRAY_PTR_01c4354c
+    CMP dword ptr [0x01c4354c],0x0      ; 00496b6c | g_ScreenBufferArray
         ;   Label: LAB_00496b6c
     JZ 0x00496c60                       ; 00496b73
         ;   XREF to: 00496c60 (CONDITIONAL_JUMP)  ; LAB_00496c60
@@ -308,7 +308,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x1e0]     ; 00496c13
     ADD ESI,EBP                         ; 00496c19
     MOV EDI,dword ptr [ESP + 0x14]      ; 00496c1b
-    MOV ESI,dword ptr [ESI*0x4 + 0x1c4354c] ; 00496c1f | g_ARRAY_PTR_01c4354c
+    MOV ESI,dword ptr [ESI*0x4 + 0x1c4354c] ; 00496c1f | g_ScreenBufferArray
     MOV ECX,dword ptr [ESP + 0x10]      ; 00496c26
     ADD ESI,EAX                         ; 00496c2a
     PUSH EDI                            ; 00496c2c
@@ -335,7 +335,7 @@ section .text
     MOV dword ptr [EBX + 0x10],EAX      ; 00496c65
     MOV EAX,[0x01c4f00c]                ; 00496c68 | g_INT_01c4f00c
     MOV dword ptr [EBX + 0x14],EAX      ; 00496c6d
-    MOV EAX,[0x01c4f010]                ; 00496c70 | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 00496c70 | g_ClipRight
     MOV dword ptr [EBX + 0x18],EAX      ; 00496c75
     MOV EAX,[0x01c4f014]                ; 00496c78 | g_INT_01c4f014
     MOV dword ptr [EBX + 0x1c],EAX      ; 00496c7d
@@ -347,9 +347,9 @@ section .text
     MOV dword ptr [EBX + 0x38],EAX      ; 00496c95
     MOV EAX,[0x01c4f004]                ; 00496c98 | g_INT_01c4f004
     MOV dword ptr [EBX + 0x3c],EAX      ; 00496c9d
-    MOV EAX,[0x01c4f018]                ; 00496ca0 | g_INT_01c4f018
+    MOV EAX,[0x01c4f018]                ; 00496ca0 | g_ViewportWidth
     MOV dword ptr [EBX + 0x40],EAX      ; 00496ca5
-    MOV EAX,[0x01c4f01c]                ; 00496ca8 | g_INT_01c4f01c
+    MOV EAX,[0x01c4f01c]                ; 00496ca8 | g_ViewportHeight
     MOV dword ptr [EBX + 0x44],EAX      ; 00496cad
     LEA EAX,[EBX + 0x2c]                ; 00496cb0
     PUSH EAX                            ; 00496cb3

@@ -19,7 +19,7 @@
 ;   TerminatedCString s_remove_bug_timer_005b77d0
 ;   TerminatedCString s_max_life_timer_005b77e1
 ;   int g_CBugsClassVersion = 0x2
-;   int g_INT_007df9b8
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040b830
@@ -54,7 +54,7 @@ section .text
     PUSH EBX                            ; 00421990
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 00421991
         ;   XREF to: 0040b8b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b8b0(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x007df9b8]      ; 00421996 | g_INT_007df9b8
+    MOV EDX,dword ptr [0x007df9b8]      ; 00421996 | g_ActorReadingMode
     ADD ESP,0x8                         ; 0042199c
     CMP EDX,0x1                         ; 0042199f
     JZ 0x00421a53                       ; 004219a2

@@ -86,7 +86,7 @@ int __cdecl putenv_internal(char *envstr)
       return -1;
     }
     iVar2 = 0;
-    if (g_INT_02de54a8 != 0) {
+    if (g_EnvironInitialized != 0) {
       iVar2 = FUN_00574000(envstr);
       ptr = malloc((int)lpName * (iVar2 + 1));
       if (ptr == (void *)0x0) {

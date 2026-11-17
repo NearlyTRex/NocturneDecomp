@@ -13,7 +13,7 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(CEnemy *this_ptr,S
   
   if ((this_ptr->base).is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"ShotInvulnerable");
+              (g_CEventListPtr,"ShotInvulnerable");
     return;
   }
   (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);

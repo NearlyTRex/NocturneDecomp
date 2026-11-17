@@ -31,13 +31,13 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c25f78
+;   CBitFont* g_EditorFont
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c25f7c
-;   int g_INT_01c2640c
+;   int g_LastClickItemIndex
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -65,15 +65,15 @@ section .text
     PUSH EDI                            ; 00482a02
     PUSH EBP                            ; 00482a03
     SUB ESP,0x150                       ; 00482a04
-    CMP dword ptr [0x01c25590],0x0      ; 00482a0a | g_CBitFont_PTR_01c25590
+    CMP dword ptr [0x01c25590],0x0      ; 00482a0a | g_EditorFont
     JZ 0x00482b0f                       ; 00482a11
         ;   XREF to: 00482b0f (CONDITIONAL_JUMP)  ; LAB_00482b0f
-    MOV EAX,[0x01c25590]                ; 00482a17 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 00482a17 | g_EditorFont
         ;   Label: LAB_00482a17
     PUSH 0x6a                           ; 00482a1c
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 00482a1e
     PUSH EAX                            ; 00482a24
-    MOV dword ptr [0x01c25f78],EDX      ; 00482a25 | g_INT_01c25f78
+    MOV dword ptr [0x01c25f78],EDX      ; 00482a25 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 00482a2b
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00482a30
@@ -127,7 +127,7 @@ section .text
     MOV EDI,EAX                         ; 00482abb
     MOV EAX,ESP                         ; 00482abd
     PUSH EAX                            ; 00482abf
-    MOV EAX,[0x01c25590]                ; 00482ac0 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 00482ac0 | g_EditorFont
     PUSH EAX                            ; 00482ac5
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 00482ac6
         ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
@@ -453,7 +453,7 @@ section .text
     PUSH ESI                            ; 00482f05
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0 ; 00482f06
         ;   XREF to: 0047e1d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
-    MOV EAX,[0x01c35e50]                ; 00482f0b | g_INT_01c35e50
+    MOV EAX,[0x01c35e50]                ; 00482f0b | g_ClipRight
     SUB EAX,dword ptr [0x01c35e48]      ; 00482f10 | g_INT_01c35e48
     LEA EBP,[EAX + 0x1]                 ; 00482f16
     MOV EDX,dword ptr [0x01c35e4c]      ; 00482f19 | g_INT_01c35e4c
@@ -474,7 +474,7 @@ section .text
     SUB EDX,dword ptr [ESP + 0x144]     ; 00482f5d
     SUB EDX,dword ptr [ESP + 0x138]     ; 00482f64
     PUSH EDX                            ; 00482f6b
-    MOV EDX,dword ptr [0x01c35e50]      ; 00482f6c | g_INT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 00482f6c | g_ClipRight
     PUSH EDX                            ; 00482f72
     MOV ECX,dword ptr [0x01c35e4c]      ; 00482f73 | g_INT_01c35e4c
     PUSH ECX                            ; 00482f79
@@ -501,7 +501,7 @@ section .text
         ;   XREF to: 0048300a (CONDITIONAL_JUMP)  ; LAB_0048300a
     MOV ECX,dword ptr [ESP + 0x140]     ; 00482fbd
     MOV EDX,dword ptr [ESP + 0x164]     ; 00482fc4
-    MOV EAX,[0x01c35e50]                ; 00482fcb | g_INT_01c35e50
+    MOV EAX,[0x01c35e50]                ; 00482fcb | g_ClipRight
     ADD EDX,0x5c                        ; 00482fd0
     INC EAX                             ; 00482fd3
     PUSH EDX                            ; 00482fd4
@@ -531,7 +531,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x144]     ; 00483027
     PUSH EDX                            ; 0048302e
     MOV EDX,dword ptr [ESP + 0x140]     ; 0048302f
-    MOV EAX,[0x01c35e50]                ; 00483036 | g_INT_01c35e50
+    MOV EAX,[0x01c35e50]                ; 00483036 | g_ClipRight
     ADD EDX,ECX                         ; 0048303b
     INC EAX                             ; 0048303d
     DEC EDX                             ; 0048303e
@@ -604,7 +604,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x164]     ; 0048313b
     MOV EBX,0xffffffff                  ; 00483142
     MOV byte ptr [EAX + 0x124],0x0      ; 00483147
-    MOV dword ptr [0x01c2640c],EBX      ; 0048314e | g_INT_01c2640c
+    MOV dword ptr [0x01c2640c],EBX      ; 0048314e | g_LastClickItemIndex
     MOV dword ptr [EAX + 0x188],0x0     ; 00483154
     ADD ESP,0x150                       ; 0048315e
     POP EBP                             ; 00483164
@@ -631,7 +631,7 @@ section .text
     MOV EDX,dword ptr [0x01c35e54]      ; 00483198 | g_INT_01c35e54
     SUB EDX,EBX                         ; 0048319e
     PUSH EDX                            ; 004831a0
-    MOV ECX,dword ptr [0x01c35e50]      ; 004831a1 | g_INT_01c35e50
+    MOV ECX,dword ptr [0x01c35e50]      ; 004831a1 | g_ClipRight
     MOV EDX,dword ptr [0x01c35e54]      ; 004831a7 | g_INT_01c35e54
     PUSH ECX                            ; 004831ad
     SUB EDX,dword ptr [ESP + 0x13c]     ; 004831ae

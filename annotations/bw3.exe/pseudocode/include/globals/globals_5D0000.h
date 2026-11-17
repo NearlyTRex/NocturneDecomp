@@ -43,7 +43,7 @@ extern CConstruct_full_vtable g_CConstructBoneVTable;
 extern CConstruct_full_vtable g_CConstructRedVTable;
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_005df604;
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -253,7 +253,7 @@ extern WatcomTypeInfo g_CDeformableModelInstanceTypeInfo;
 extern WatcomTypeInfo g_CFirestaffTypeInfo;
 
 // char
-extern char g_CHAR_005daf55;
+extern char g_SpaceCharacter;
 
 // int
 extern int g_INT_005da7b0;

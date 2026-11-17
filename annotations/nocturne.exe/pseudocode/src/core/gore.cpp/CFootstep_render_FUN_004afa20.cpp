@@ -37,7 +37,7 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004afa20(CFootstep *this_ptr,int
   g_SMRGLHeaderPrimitive_01c78cc0.surface_normal.C.i = 0;
   g_SMRGLHeaderPrimitive_01c78cc0.surface_normal.D.i = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005ba84c);
+            (g_CDemonRenderer_PTR_005ae704,&g_FootstepTexture);
   pCVar2 = this_ptr->corners;
   do {
     local_1c.x = (int)ROUND(pCVar2->x * 256.0f);

@@ -26,8 +26,8 @@
 ;   void* PTR_MoveWindow_00575450 = 001759ee
 ;   void* PTR_SetRectEmpty_00575478 = 00175a92
 ;   TerminatedCString s_where_mov_source_0059817e
-;   HWND g_HWND_02de311c
-;   int g_INT_02de3124
+;   HWND g_MovieWindowHandle
+;   int g_MoviePlaying
 ;
 ; Called Functions:
 ;   GetClientRect
@@ -42,7 +42,7 @@ section .text
     PUSH EBP                            ; 0055a010
         ;   Label: wincore_winvideo.cpp_positionMovieWindow_FUN_0055a010
     SUB ESP,0xa0                        ; 0055a011
-    CMP dword ptr [0x02de3124],0x0      ; 0055a017 | g_INT_02de3124
+    CMP dword ptr [0x02de3124],0x0      ; 0055a017 | g_MoviePlaying
     JNZ 0x0055a028                      ; 0055a01e
         ;   XREF to: 0055a028 (CONDITIONAL_JUMP)  ; LAB_0055a028
     ADD ESP,0xa0                        ; 0055a020
@@ -189,7 +189,7 @@ section .text
     SUB ECX,EAX                         ; 0055a181
     PUSH ECX                            ; 0055a183
     PUSH EBX                            ; 0055a184
-    MOV EDI,dword ptr [0x02de311c]      ; 0055a185 | g_HWND_02de311c
+    MOV EDI,dword ptr [0x02de311c]      ; 0055a185 | g_MovieWindowHandle
     PUSH EDI                            ; 0055a18b
     CALL dword ptr CS:[0x575450]        ; 0055a18c | PTR_MoveWindow_00575450
     POP EBX                             ; 0055a193

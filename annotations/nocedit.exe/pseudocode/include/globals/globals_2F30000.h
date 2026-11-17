@@ -76,9 +76,9 @@ extern double g_SampleDistances[400];
 extern float g_MoonAnimationTimer;
 
 // int
-extern int INT_02f31234;
-extern int INT_02f31238;
-extern int INT_02f3123c;
+extern int g_LodPreviewShowVertexLabels;
+extern int g_LodPreviewShowNextLod;
+extern int g_LodPreviewShowEdges;
 extern int g_SamplePointCount;
 extern int g_LodReplayMode;
 extern int g_LodGenerationStamp;

@@ -91,39 +91,39 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
                 apCStack_60[(uint)bVar8 * -2] = (CPathMap *)*puVar7;
                 apCStack_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                      (CPathMap *)puVar7[(uint)bVar8 * -2 + 1];
-                g_CDemonActor_PTR_007df974 = pCVar5;
+                g_CurrentProcessingActor = pCVar5;
                 if (g_CGamePtr->profile_mode == 2) {
                   local_2c = wincore_winrun_cpp_getTime_FUN_005806a0();
                 }
-                (*((g_CDemonActor_PTR_007df974->vtable)._ub)->process)
-                          (g_CDemonActor_PTR_007df974,(float)delta_time);
+                (*((g_CurrentProcessingActor->vtable)._ub)->process)
+                          (g_CurrentProcessingActor,(float)delta_time);
                 if (g_CGamePtr->profile_mode == 2) {
                   iVar4 = wincore_winrun_cpp_getTime_FUN_005806a0();
                   *(int *)((int)g_INT_ARRAY_0207bad8 + iVar2) = iVar4 - local_24;
                   *(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_0207da18 + iVar2) =
-                       g_CDemonActor_PTR_007df974;
+                       g_CurrentProcessingActor;
                 }
                 if (g_CGamePtr->profile_mode != 0) {
                   local_1c = (CDemonSet *)((int)&local_1c->camera_count + 1);
                   iVar2 = iVar2 + 4;
                 }
                 delta_time = (CPathMap *)0x535608;
-                this_ptr_00 = (*((g_CDemonActor_PTR_007df974->vtable)._ub)->getPathMap)
-                                        (g_CDemonActor_PTR_007df974);
+                this_ptr_00 = (*((g_CurrentProcessingActor->vtable)._ub)->getPathMap)
+                                        (g_CurrentProcessingActor);
                 if (this_ptr_00 != (CPathMap *)0x0) {
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_0050b1d0
-                            (this_ptr_00,&(g_CDemonActor_PTR_007df974->location).position,0);
+                            (this_ptr_00,&(g_CurrentProcessingActor->location).position,0);
                   delta_time = this_ptr_00;
                 }
-                if (((fStack_54 == (g_CDemonActor_PTR_007df974->orient).vec.y) &&
-                    ((float)apCStack_60[2] == (g_CDemonActor_PTR_007df974->orient).vec.x)) &&
-                   (afStack_50[0] == (g_CDemonActor_PTR_007df974->orient).vec.z)) {
-                  g_CDemonActor_PTR_007df974 = (CDemonActor *)0x0;
+                if (((fStack_54 == (g_CurrentProcessingActor->orient).vec.y) &&
+                    ((float)apCStack_60[2] == (g_CurrentProcessingActor->orient).vec.x)) &&
+                   (afStack_50[0] == (g_CurrentProcessingActor->orient).vec.z)) {
+                  g_CurrentProcessingActor = (CDemonActor *)0x0;
                 }
                 else {
                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-                            (g_CDemonActor_PTR_007df974);
-                  g_CDemonActor_PTR_007df974 = (CDemonActor *)0x0;
+                            (g_CurrentProcessingActor);
+                  g_CurrentProcessingActor = (CDemonActor *)0x0;
                 }
               }
               else if ((local_28 < iVar4) && (iVar4 < local_20)) {

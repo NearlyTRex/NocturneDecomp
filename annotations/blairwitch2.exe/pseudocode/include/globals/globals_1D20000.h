@@ -11,23 +11,23 @@
 // =============================================================================
 
 // SHuffmanTable[34]
-extern SHuffmanTable g_SHuffmanTable_ARRAY_01d23658[34];
+extern SHuffmanTable g_HuffmanTables[34];
 
 // char[256]
-extern char g_CHAR_ARRAY_01d23558[256];
+extern char g_CurrentMp3Filename[256];
 
 // double[12][6]
-extern double g_DOUBLE_ARRAY_ARRAY_01d21ed8[12][6];
+extern double g_Mp3DctMatrix[12][6];
 
 // double[36][18]
-extern double g_DOUBLE_ARRAY_ARRAY_01d22118[36][18];
+extern double g_Mp3PolyCoefficients[36][18];
 
 // double[4][36]
-extern double g_DOUBLE_ARRAY_ARRAY_01d21a58[4][36];
+extern double g_Mp3WindowTables[4][36];
 
 // double[8]
-extern double g_DOUBLE_ARRAY_01d219d8[8];
-extern double g_DOUBLE_ARRAY_01d21a18[8];
+extern double g_Mp3AntiAliasCS[8];
+extern double g_Mp3AntiAliasCA[8];
 
 // float
 extern float g_FLOAT_01d207d8;

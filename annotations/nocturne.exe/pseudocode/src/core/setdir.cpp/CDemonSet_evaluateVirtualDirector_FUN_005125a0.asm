@@ -27,15 +27,15 @@
 ;   double DOUBLE_00590bed = 0.0625
 ;   double DOUBLE_00590bf5 = 3
 ;   double DOUBLE_00590bfd = 0.200000000000000
-;   float g_FLOAT_005a1a70 = 256
+;   float g_VDCoordinateScaleFactor = 256
 ;   float FLOAT_005a1a88 = 200
 ;   float FLOAT_005a1a8c = 100
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   SMRGLPrimitiveQuad[6] g_SMRGLPrimitiveQuad_ARRAY_005be774
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.A
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.B
+;   SMRGLPrimitiveQuad[6] g_BoundingBoxQuadTemplates
+;   undefined4 g_BoundingBoxQuadTemplates[0].base.surface_normal.A
+;   undefined4 g_BoundingBoxQuadTemplates[0].base.surface_normal.B
 ;   ... and 25 more
 ;
 ; Called Functions:
@@ -162,13 +162,13 @@ section .text
     ADD EDI,0xc                         ; 005126ad
     INC ESI                             ; 005126b0
     FLD float ptr [EAX]                 ; 005126b1
-    FMUL float ptr [0x005a1a70]         ; 005126b3 | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 005126b3 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 005126b9
     FLD float ptr [EAX + 0x4]           ; 005126bb
-    FMUL float ptr [0x005a1a70]         ; 005126be | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 005126be | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 005126c4
     FLD float ptr [EAX + 0x8]           ; 005126c7
-    FMUL float ptr [0x005a1a70]         ; 005126ca | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 005126ca | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 005126d0
     CMP ESI,0x8                         ; 005126d3
     JL 0x00512692                       ; 005126d6
@@ -197,33 +197,33 @@ section .text
     FSTP float ptr [ESP + 0x1f4]        ; 00512742
     FSTP float ptr [ESP + 0x1f8]        ; 00512749
     FLD float ptr [EAX]                 ; 00512750
-    FMUL float ptr [0x005a1a70]         ; 00512752 | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 00512752 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 00512758
     FLD float ptr [EAX + 0x4]           ; 0051275a
-    FMUL float ptr [0x005a1a70]         ; 0051275d | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 0051275d | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 00512763
     FLD float ptr [EAX + 0x8]           ; 00512766
-    FMUL float ptr [0x005a1a70]         ; 00512769 | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 00512769 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0051276f
-    MOV EAX,0x5be774                    ; 00512772 | g_SMRGLPrimitiveQuad_ARRAY_005be774
-    LEA ECX,[EAX + 0x1b0]               ; 00512777 | g_SMRGLTextureBasic_005be924
-    IMUL EDX,dword ptr [EAX + 0x18],0xc ; 0051277d | g_SMRGLPrimitiveQuad_ARRAY_005be774[0].vertices[0].vertex_index | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].vertices[0].vertex_index
+    MOV EAX,0x5be774                    ; 00512772 | g_BoundingBoxQuadTemplates
+    LEA ECX,[EAX + 0x1b0]               ; 00512777 | g_VolumetricSphereTexture
+    IMUL EDX,dword ptr [EAX + 0x18],0xc ; 0051277d | g_BoundingBoxQuadTemplates[0].vertices[0].vertex_index | g_BoundingBoxQuadTemplates[1].vertices[0].vertex_index
         ;   Label: LAB_0051277d
     LEA EBX,[ESP + 0xcc]                ; 00512781
     ADD EBX,EDX                         ; 00512788
-    MOV EDX,dword ptr [EAX + 0xc]       ; 0051278a | g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.B | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.B
+    MOV EDX,dword ptr [EAX + 0xc]       ; 0051278a | g_BoundingBoxQuadTemplates[0].base.surface_normal.B | g_BoundingBoxQuadTemplates[1].base.surface_normal.B
     MOV ESI,dword ptr [EBX + 0x4]       ; 0051278d
     IMUL ESI,EDX                        ; 00512790
     MOV EDI,dword ptr [EBX]             ; 00512793
-    MOV EDX,dword ptr [EAX + 0x8]       ; 00512795 | g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.A | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.A
+    MOV EDX,dword ptr [EAX + 0x8]       ; 00512795 | g_BoundingBoxQuadTemplates[0].base.surface_normal.A | g_BoundingBoxQuadTemplates[1].base.surface_normal.A
     IMUL EDX,EDI                        ; 00512798
     MOV EDI,dword ptr [EBX + 0x8]       ; 0051279b
     ADD ESI,EDX                         ; 0051279e
-    MOV EDX,dword ptr [EAX + 0x10]      ; 005127a0 | g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.C | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.C
+    MOV EDX,dword ptr [EAX + 0x10]      ; 005127a0 | g_BoundingBoxQuadTemplates[0].base.surface_normal.C | g_BoundingBoxQuadTemplates[1].base.surface_normal.C
     IMUL EDX,EDI                        ; 005127a3
     ADD EAX,0x48                        ; 005127a6
     ADD ESI,EDX                         ; 005127a9
-    MOV dword ptr [EAX + -0x34],ESI     ; 005127ab | g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.D | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.D
+    MOV dword ptr [EAX + -0x34],ESI     ; 005127ab | g_BoundingBoxQuadTemplates[0].base.surface_normal.D | g_BoundingBoxQuadTemplates[1].base.surface_normal.D
     CMP EAX,ECX                         ; 005127ae
     JNZ 0x0051277d                      ; 005127b0
         ;   XREF to: 0051277d (CONDITIONAL_JUMP)  ; LAB_0051277d
@@ -315,7 +315,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 005128ff
     XOR ECX,ECX                         ; 00512902
     XOR ESI,ESI                         ; 00512904
-    MOV dword ptr [0x026639ec],ECX      ; 00512906 | g_INT_026639ec
+    MOV dword ptr [0x026639ec],ECX      ; 00512906 | g_VDNearbyActorCount
     MOV dword ptr [ESP + 0x2d0],ECX     ; 0051290c
     ADD EDI,0x20                        ; 00512913
     FSTP float ptr [ESP + 0x248]        ; 00512916
@@ -581,14 +581,14 @@ section .text
     SAHF                                ; 00512c0c
     JA 0x00512c75                       ; 00512c0d
         ;   XREF to: 00512c75 (CONDITIONAL_JUMP)  ; LAB_00512c75
-    MOV EAX,[0x026639ec]                ; 00512c0f | g_INT_026639ec
-    MOV dword ptr [EAX*0x4 + 0x26639f0],EBX ; 00512c14 | g_CDemonActor_PTR_ARRAY_026639f0
+    MOV EAX,[0x026639ec]                ; 00512c0f | g_VDNearbyActorCount
+    MOV dword ptr [EAX*0x4 + 0x26639f0],EBX ; 00512c14 | g_VDNearbyActorPointers
     LEA EAX,[ESP + 0x1a8]               ; 00512c1b
     PUSH EAX                            ; 00512c22
     MOV EDX,dword ptr [EBX + 0x14c]     ; 00512c23
     PUSH EBX                            ; 00512c29
     CALL dword ptr [EDX + 0x14]         ; 00512c2a
-    IMUL EDX,dword ptr [0x026639ec],0x18 ; 00512c2d | g_INT_026639ec
+    IMUL EDX,dword ptr [0x026639ec],0x18 ; 00512c2d | g_VDNearbyActorCount
     ADD ESP,0x8                         ; 00512c34
     ADD EDX,0x2665930                   ; 00512c37
     MOV ECX,EAX                         ; 00512c3d
@@ -614,7 +614,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 00512c66
     MOV ECX,dword ptr [EAX + 0x8]       ; 00512c69
     MOV dword ptr [EDX + 0x8],ECX       ; 00512c6c
-    INC dword ptr [0x026639ec]          ; 00512c6f | g_INT_026639ec
+    INC dword ptr [0x026639ec]          ; 00512c6f | g_VDNearbyActorCount
         ;   Label: LAB_00512c6f
     MOV EAX,dword ptr [ESP + 0x2d0]     ; 00512c75
         ;   Label: LAB_00512c75
@@ -631,10 +631,10 @@ section .text
     JNZ 0x00513561                      ; 00512ca2
         ;   XREF to: 00513561 (CONDITIONAL_JUMP)  ; LAB_00513561
     MOV EAX,dword ptr [EBP + 0x18]      ; 00512ca8
-    MOV ECX,0x5be774                    ; 00512cab | g_SMRGLPrimitiveQuad_ARRAY_005be774
+    MOV ECX,0x5be774                    ; 00512cab | g_BoundingBoxQuadTemplates
     MOV EDX,dword ptr [ESP + 0x258]     ; 00512cb0
     MOV dword ptr [ESP + 0x25c],EAX     ; 00512cb7
-    MOV dword ptr [ESP + 0x260],ECX     ; 00512cbe | g_SMRGLPrimitiveQuad_ARRAY_005be774
+    MOV dword ptr [ESP + 0x260],ECX     ; 00512cbe | g_BoundingBoxQuadTemplates
     ADD EBX,EDX                         ; 00512cc5
     MOV EAX,[0x020875f4]                ; 00512cc7 | g_INT_020875f4
     MOV dword ptr [ESP + 0x268],EBX     ; 00512ccc
@@ -777,11 +777,11 @@ section .text
         ;   Label: LAB_00512e95
     XOR ESI,ESI                         ; 00512e9c
     XOR EDX,EDX                         ; 00512e9e
-    LEA EBX,[EAX + 0x1b0]               ; 00512ea0 | g_SMRGLTextureBasic_005be924
+    LEA EBX,[EAX + 0x1b0]               ; 00512ea0 | g_VolumetricSphereTexture
     MOV dword ptr [ESP + 0x278],ESI     ; 00512ea6
     MOV ECX,dword ptr [ESP + 0x278]     ; 00512ead
         ;   Label: LAB_00512ead
-    MOV dword ptr [ESP + EDX*0x1 + 0x160],EAX ; 00512eb4 | g_SMRGLPrimitiveQuad_ARRAY_005be774 | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.base.type
+    MOV dword ptr [ESP + EDX*0x1 + 0x160],EAX ; 00512eb4 | g_BoundingBoxQuadTemplates | g_BoundingBoxQuadTemplates[1].base.base.type
     ADD EDX,0x4                         ; 00512ebb
     INC ECX                             ; 00512ebe
     ADD EAX,0x48                        ; 00512ebf
@@ -853,7 +853,7 @@ section .text
     JNZ 0x00512f4f                      ; 00512f7f
         ;   XREF to: 00512f4f (CONDITIONAL_JUMP)  ; LAB_00512f4f
     XOR EDI,EDI                         ; 00512f81
-    MOV EDX,dword ptr [0x026639ec]      ; 00512f83 | g_INT_026639ec
+    MOV EDX,dword ptr [0x026639ec]      ; 00512f83 | g_VDNearbyActorCount
     MOV dword ptr [ESP + 0x2d4],EDI     ; 00512f89
     MOV dword ptr [ESP + 0x27c],EDI     ; 00512f90
     TEST EDX,EDX                        ; 00512f97
@@ -917,13 +917,13 @@ section .text
     LEA EAX,[ESP + 0x1cc]               ; 00513080
     MOV EDX,dword ptr [0x005ae704]      ; 00513087 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 0051308d
-    FMUL float ptr [0x005a1a70]         ; 0051308f | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 0051308f | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 00513095
     FLD float ptr [EAX + 0x4]           ; 00513097
-    FMUL float ptr [0x005a1a70]         ; 0051309a | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 0051309a | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 005130a0
     FLD float ptr [EAX + 0x8]           ; 005130a3
-    FMUL float ptr [0x005a1a70]         ; 005130a6 | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 005130a6 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 005130ac
     LEA EAX,[ESP + 0x208]               ; 005130af
     PUSH EAX                            ; 005130b6
@@ -962,7 +962,7 @@ section .text
         ;   Label: LAB_00513128
     MOV ECX,dword ptr [ESP + 0x2cc]     ; 0051312f
     MOV EBX,dword ptr [ESP + 0x2d4]     ; 00513136
-    MOV ESI,dword ptr [0x026639ec]      ; 0051313d | g_INT_026639ec
+    MOV ESI,dword ptr [0x026639ec]      ; 0051313d | g_VDNearbyActorCount
     ADD EDX,0x4                         ; 00513143
     ADD ECX,0x18                        ; 00513146
     INC EBX                             ; 00513149
@@ -1019,7 +1019,7 @@ section .text
     XOR EBX,EBX                         ; 005131f8
     MOV EAX,dword ptr [ESP + EBX*0x1 + 0x160] ; 005131fa
         ;   Label: LAB_005131fa
-    PUSH EAX                            ; 00513201 | g_SMRGLPrimitiveQuad_ARRAY_005be774 | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.base.type
+    PUSH EAX                            ; 00513201 | g_BoundingBoxQuadTemplates | g_BoundingBoxQuadTemplates[1].base.base.type
     MOV EDX,dword ptr [0x005ae704]      ; 00513202 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00513208 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090 ; 00513209
@@ -1065,7 +1065,7 @@ section .text
     JLE 0x005132b4                      ; 0051328d
         ;   XREF to: 005132b4 (CONDITIONAL_JUMP)  ; LAB_005132b4
     MOV EBX,dword ptr [ESP + 0x260]     ; 0051328f
-    PUSH EBX                            ; 00513296 | g_SMRGLPrimitiveQuad_ARRAY_005be774 | g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.base.type
+    PUSH EBX                            ; 00513296 | g_BoundingBoxQuadTemplates | g_BoundingBoxQuadTemplates[1].base.base.type
         ;   Label: LAB_00513296
     MOV EAX,[0x005ae704]                ; 00513297 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0051329c | g_CDemonRenderer_01b4d738

@@ -220,7 +220,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_240.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_005b5080
-                          (&g_CVector3f_007c5340,
+                          (&g_BrideOffsetPlusX,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            g_INT_ARRAY_007c5388[1],&CStack_b4);
                 pCVar10 = &CStack_f0;
@@ -253,7 +253,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
               fVar11 = 0.4;
               fStack_14 = SStack_2b8.damage_amount;
               core_xform_cpp_transformVector3x4_FUN_005b5080
-                        (&g_CVector3f_007c5340,
+                        (&g_BrideOffsetPlusX,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_INT_ARRAY_007c5388[2],&CStack_c0);
               pCVar10 = &CStack_15c;
@@ -311,7 +311,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_204.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_005b5080
-                          (&g_CVector3f_007c5340,
+                          (&g_BrideOffsetPlusX,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            g_INT_ARRAY_007c5388[2],&CStack_a8);
                 pCVar10 = &CStack_84;
@@ -349,7 +349,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_1c8.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_005b5080
-                          (&g_CVector3f_007c5340,
+                          (&g_BrideOffsetPlusX,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            g_INT_ARRAY_007c5388[1],&CStack_6c);
                 pCVar10 = &CStack_120;

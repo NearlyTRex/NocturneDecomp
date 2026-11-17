@@ -34,12 +34,12 @@
 ;   double DOUBLE_005814a4 = 0.200000000000000
 ;   double DOUBLE_005814ac = -0.200000000000000
 ;   double DOUBLE_005814b4 = 0.0578000000000000
-;   char[60] g_CHAR_ARRAY_005b8bd8
-;   undefined4 g_CHAR_ARRAY_005b8bd8+4
+;   char[60] g_DefaultRicochetSound
+;   undefined4 g_DefaultRicochetSound+4
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   int g_INT_01c0a13c
-;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c0a140
-;   int g_INT_01c20140
+;   int g_SmokeParticleAllocIndex
+;   CSmokeParticle[2048] g_SmokeParticlePool
+;   int g_BulletHoleActiveCount
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -99,21 +99,21 @@ section .text
         ;   Label: LAB_0048abc6
     JZ 0x0048ad07                       ; 0048abcb
         ;   XREF to: 0048ad07 (CONDITIONAL_JUMP)  ; LAB_0048ad07
-    MOV EAX,[0x01c20140]                ; 0048abd1 | g_INT_01c20140
+    MOV EAX,[0x01c20140]                ; 0048abd1 | g_BulletHoleActiveCount
     XOR EDX,EDX                         ; 0048abd6
     TEST EAX,EAX                        ; 0048abd8
     JLE 0x0048ad07                      ; 0048abda
         ;   XREF to: 0048ad07 (CONDITIONAL_JUMP)  ; LAB_0048ad07
     FLD float ptr [EBX]                 ; 0048abe0
         ;   Label: LAB_0048abe0
-    FSUB float ptr [ESI]                ; 0048abe2 | g_CBulletHole_ARRAY_01c20148 | g_CBulletHole_ARRAY_01c20148[1].position.x
+    FSUB float ptr [ESI]                ; 0048abe2 | g_BulletHolePool | g_BulletHolePool[1].position.x
     FSTP float ptr [ESP + 0x48]         ; 0048abe4
     FLD float ptr [EBX + 0x4]           ; 0048abe8
-    FSUB float ptr [ESI + 0x4]          ; 0048abeb | g_CBulletHole_ARRAY_01c20148[0].position.y | g_CBulletHole_ARRAY_01c20148[1].position.y
+    FSUB float ptr [ESI + 0x4]          ; 0048abeb | g_BulletHolePool[0].position.y | g_BulletHolePool[1].position.y
     LEA ECX,[ESP + 0x48]                ; 0048abee
     FSTP float ptr [ESP + 0x4c]         ; 0048abf2
     FLD float ptr [EBX + 0x8]           ; 0048abf6
-    FSUB float ptr [ESI + 0x8]          ; 0048abf9 | g_CBulletHole_ARRAY_01c20148[0].position.z | g_CBulletHole_ARRAY_01c20148[1].position.z
+    FSUB float ptr [ESI + 0x8]          ; 0048abf9 | g_BulletHolePool[0].position.z | g_BulletHolePool[1].position.z
     LEA EAX,[ESP + 0x3c]                ; 0048abfc
     FSTP float ptr [ESP + 0x50]         ; 0048ac00
     CMP EAX,ECX                         ; 0048ac04
@@ -150,23 +150,23 @@ section .text
     JZ 0x0048acc0                       ; 0048ac5a
         ;   XREF to: 0048acc0 (CONDITIONAL_JUMP)  ; caseD_9
     XOR ESI,ESI                         ; 0048ac5c
-    MOV EDX,dword ptr [0x01c0a13c]      ; 0048ac5e | g_INT_01c0a13c
+    MOV EDX,dword ptr [0x01c0a13c]      ; 0048ac5e | g_SmokeParticleAllocIndex
         ;   Label: LAB_0048ac5e
     IMUL EAX,EDX,0x2c                   ; 0048ac64
     LEA ECX,[EDX + 0x1]                 ; 0048ac67
     ADD EAX,0x1c0a140                   ; 0048ac6a
-    MOV dword ptr [0x01c0a13c],ECX      ; 0048ac6f | g_INT_01c0a13c
+    MOV dword ptr [0x01c0a13c],ECX      ; 0048ac6f | g_SmokeParticleAllocIndex
     CMP ECX,0x800                       ; 0048ac75
     JL 0x0048ac85                       ; 0048ac7b
         ;   XREF to: 0048ac85 (CONDITIONAL_JUMP)  ; LAB_0048ac85
     XOR ECX,ECX                         ; 0048ac7d
-    MOV dword ptr [0x01c0a13c],ECX      ; 0048ac7f | g_INT_01c0a13c
+    MOV dword ptr [0x01c0a13c],ECX      ; 0048ac7f | g_SmokeParticleAllocIndex
     PUSH 0xffff                         ; 0048ac85
         ;   Label: LAB_0048ac85
     PUSH 0x0                            ; 0048ac8a
     PUSH 0x3e99999a                     ; 0048ac8c
     PUSH EBX                            ; 0048ac91
-    PUSH EAX                            ; 0048ac92 | g_CSmokeParticle_ARRAY_01c0a140
+    PUSH EAX                            ; 0048ac92 | g_SmokeParticlePool
     INC ESI                             ; 0048ac93
     CALL core_fire.cpp_CSmokeParticle_init_FUN_00482780 ; 0048ac94
         ;   XREF to: 00482780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -184,9 +184,9 @@ section .text
     MOV ECX,0xc                         ; 0048acc0
         ;   Label: caseD_0
     LEA EDI,[ESP + 0x8]                 ; 0048acc5
-    MOV ESI,0x5b8bd8                    ; 0048acc9 | g_CHAR_ARRAY_005b8bd8
-    MOVSD.REP ES:EDI,ESI                ; 0048acce | g_CHAR_ARRAY_005b8bd8 | g_CHAR_ARRAY_005b8bd8+4
-    MOVSW ES:EDI,ESI                    ; 0048acd0 | g_CHAR_ARRAY_005b8bd8+4
+    MOV ESI,0x5b8bd8                    ; 0048acc9 | g_DefaultRicochetSound
+    MOVSD.REP ES:EDI,ESI                ; 0048acce | g_DefaultRicochetSound | g_DefaultRicochetSound+4
+    MOVSW ES:EDI,ESI                    ; 0048acd0 | g_DefaultRicochetSound+4
     MOV EDI,dword ptr [EBP + 0x20]      ; 0048acd2
     CMP EDI,0x9                         ; 0048acd5
     JA 0x0048ace3                       ; 0048acd8
@@ -204,7 +204,7 @@ section .text
     POP ESI                             ; 0048acf2
     POP EBX                             ; 0048acf3
     RET                                 ; 0048acf4
-    MOV ECX,dword ptr [0x01c20140]      ; 0048acf5 | g_INT_01c20140
+    MOV ECX,dword ptr [0x01c20140]      ; 0048acf5 | g_BulletHoleActiveCount
         ;   Label: LAB_0048acf5
     INC EDX                             ; 0048acfb
     ADD ESI,0x3c                        ; 0048acfc

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_00551210(CWaterActor *this_ptr)
 
 {
-  return &g_CWaterActorActorType_02ddd598;
+  return &g_CWaterActorClassInfo;
 }

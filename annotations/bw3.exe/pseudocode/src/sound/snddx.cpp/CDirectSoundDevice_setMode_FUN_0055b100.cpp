@@ -30,11 +30,11 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
   uint uStack_18;
   float fStack_14;
   
-  if (g_IKsPropertySet_PTR_02cf49d4 != (IKsPropertySet *)0x0) {
-    (*g_IKsPropertySet_PTR_02cf49d4->vtable->Release)((IUnknown *)g_IKsPropertySet_PTR_02cf49d4);
-    g_IKsPropertySet_PTR_02cf49d4 = (IKsPropertySet *)0x0;
+  if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
+    (*g_DirectSoundPropertySet->vtable->Release)((IUnknown *)g_DirectSoundPropertySet);
+    g_DirectSoundPropertySet = (IKsPropertySet *)0x0;
   }
-  if (g_IDirectSoundBuffer_PTR_02cf49c8 != (IDirectSoundBuffer *)0x0) {
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
     memset(auStack_4c + 4,0,0x12);
     auStack_4c._4_2_ = 1;
     uStack_46 = (ushort)channels;
@@ -43,20 +43,19 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
                              (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3) * uStack_46;
     iStack_40 = sample_rate * (uint)uStack_3c;
     uStack_3a = (ushort)bits_per_sample;
-    uVar1 = (*g_IDirectSoundBuffer_PTR_02cf49c8->vtable->SetFormat)
-                      (g_IDirectSoundBuffer_PTR_02cf49c8,(LPCWAVEFORMATEX)(auStack_4c + 4));
+    uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->SetFormat)
+                      (g_DirectSoundPrimaryBuffer,(LPCWAVEFORMATEX)(auStack_4c + 4));
     if (uVar1 == 0) {
-      uVar1 = (*g_IDirectSoundBuffer_PTR_02cf49c8->vtable->GetFormat)
-                        (g_IDirectSoundBuffer_PTR_02cf49c8,(LPWAVEFORMATEX)(auStack_4c + 4),0x12,
+      uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->GetFormat)
+                        (g_DirectSoundPrimaryBuffer,(LPWAVEFORMATEX)(auStack_4c + 4),0x12,
                          (LPDWORD)0x0);
       if (uVar1 == 0) {
-        g_INT_02cf49d8 = (int)uStack_3a;
-        g_INT_02cf49dc = DStack_44;
-        g_INT_02cf49e0 = (int)uStack_46;
-        if (g_IKsPropertySet_PTR_02cf49d4 != (IKsPropertySet *)0x0) {
-          (*g_IKsPropertySet_PTR_02cf49d4->vtable->Release)
-                    ((IUnknown *)g_IKsPropertySet_PTR_02cf49d4);
-          g_IKsPropertySet_PTR_02cf49d4 = (IKsPropertySet *)0x0;
+        g_StreamBitsPerSample = (int)uStack_3a;
+        g_StreamSampleRate = DStack_44;
+        g_StreamChannelCount = (int)uStack_46;
+        if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
+          (*g_DirectSoundPropertySet->vtable->Release)((IUnknown *)g_DirectSoundPropertySet);
+          g_DirectSoundPropertySet = (IKsPropertySet *)0x0;
         }
         pIStack_20 = (IDirectSoundBuffer *)0x0;
         piStack_1c = (int *)0x0;
@@ -72,8 +71,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
         DStack_6c.dwSize = 0x24;
         DStack_6c.dwFlags = 0x12;
         DStack_6c.dwBufferBytes = 0x400;
-        uVar1 = (*g_IDirectSound_PTR_02cf49c4->vtable->CreateSoundBuffer)
-                          (g_IDirectSound_PTR_02cf49c4,&DStack_6c,&pIStack_20,(LPUNKNOWN)0x0);
+        uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
+                          (g_DirectSound,&DStack_6c,&pIStack_20,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
           (*pIStack_20->vtable->QueryInterface)(pIStack_20,&g_IID_IDirectSound3DBuffer);
           if (piStack_1c == (int *)0x0) {
@@ -99,42 +98,42 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
           _sprintf(acStack_540,"DirectSux: Unable to %s.  (%s)");
           sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_540);
         }
-        if (g_IKsPropertySet_PTR_02cf49d4 != (IKsPropertySet *)0x0) {
+        if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
           uStack_18 = 1;
-          (*g_IKsPropertySet_PTR_02cf49d4->vtable->Set)
-                    (g_IKsPropertySet_PTR_02cf49d4,(LPGUID)&g_DSPROPSETID_VoiceManager,0,(LPVOID)0x0
-                     ,0,&uStack_18,4);
+          (*g_DirectSoundPropertySet->vtable->Set)
+                    (g_DirectSoundPropertySet,(LPGUID)&g_DSPROPSETID_VoiceManager,0,(LPVOID)0x0,0,
+                     &uStack_18,4);
         }
         uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
         if (0 < (int)uVar1) {
           *out_samples_per_block = 0;
           return 1;
         }
-        g_INT_02cf49ec = 8;
+        g_StreamBlockCount = 8;
         fStack_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_005591a0();
         dVar2 = round
-                          ((double)(((float)g_INT_02cf49dc * fStack_14) / (float)g_INT_02cf49ec));
-        g_INT_02cf49e4 = (int)ROUND(dVar2);
-        g_INT_02cf49e4 = g_INT_02cf49e4 + 0xfU & 0xfffffff0;
-        g_INT_02cf49e8 =
-             g_INT_02cf49e4 *
-             ((int)((g_INT_02cf49d8 + (g_INT_02cf49d8 >> 0x1f) * -8) -
-                   (uint)((g_INT_02cf49d8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02cf49e0;
+                          ((double)(((float)g_StreamSampleRate * fStack_14) /
+                                   (float)g_StreamBlockCount));
+        g_StreamSamplesPerBlock = (int)ROUND(dVar2);
+        g_StreamSamplesPerBlock = g_StreamSamplesPerBlock + 0xfU & 0xfffffff0;
+        g_StreamBlockSizeBytes =
+             g_StreamSamplesPerBlock *
+             ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+                   (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamChannelCount;
         memset(aDStack_94,0,0x24);
         aDStack_94[0].lpwfxFormat = (LPWAVEFORMATEX)auStack_4c;
-        aDStack_94[0].dwBufferBytes = g_INT_02cf49e8 * g_INT_02cf49ec;
+        aDStack_94[0].dwBufferBytes = g_StreamBlockSizeBytes * g_StreamBlockCount;
         aDStack_94[0].dwSize = 0x24;
         aDStack_94[0].dwFlags = 0;
-        if (g_IDirectSoundBuffer_PTR_02cf49cc != (IDirectSoundBuffer *)0x0) {
-          (*g_IDirectSoundBuffer_PTR_02cf49cc->vtable->Release)
-                    ((IUnknown *)g_IDirectSoundBuffer_PTR_02cf49cc);
-          g_IDirectSoundBuffer_PTR_02cf49cc = (IDirectSoundBuffer *)0x0;
+        if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+          (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer)
+          ;
+          g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
         }
-        uVar1 = (*g_IDirectSound_PTR_02cf49c4->vtable->CreateSoundBuffer)
-                          (g_IDirectSound_PTR_02cf49c4,aDStack_94,&g_IDirectSoundBuffer_PTR_02cf49cc
-                           ,(LPUNKNOWN)0x0);
+        uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
+                          (g_DirectSound,aDStack_94,&g_DirectSoundSecondaryBuffer,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          *(int *)sample_rate = g_INT_02cf49e4;
+          *(int *)sample_rate = g_StreamSamplesPerBlock;
           return 1;
         }
         sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
@@ -153,10 +152,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
       sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_3b0);
     }
   }
-  if (g_IDirectSoundBuffer_PTR_02cf49cc != (IDirectSoundBuffer *)0x0) {
-    (*g_IDirectSoundBuffer_PTR_02cf49cc->vtable->Release)
-              ((IUnknown *)g_IDirectSoundBuffer_PTR_02cf49cc);
-    g_IDirectSoundBuffer_PTR_02cf49cc = (IDirectSoundBuffer *)0x0;
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer);
+    g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
   }
   return 0;
 }

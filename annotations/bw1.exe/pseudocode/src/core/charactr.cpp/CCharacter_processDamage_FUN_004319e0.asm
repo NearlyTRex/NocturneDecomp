@@ -31,7 +31,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ShotInvulnerable_005d5a7f
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CGame g_CGameInstance
@@ -236,7 +236,7 @@ section .text
     RET                                 ; 00431b96
     PUSH 0x5d5a7f                       ; 00431b97 | = "ShotInvulnerable"
         ;   Label: LAB_00431b97
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00431b9c | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00431b9c | g_CEventListPtr
     PUSH EDX                            ; 00431ba2
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00431ba3
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

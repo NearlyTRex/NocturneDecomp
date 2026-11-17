@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 269,
+    "complexity_score": 268,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 63,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 140
+    "total_lines": 139
   },
   "cross_references": [],
   "function": {
@@ -50,13 +50,13 @@
     },
     {
       "addr": "01c35210",
-      "name": "g_SRGBColorPalette_PTR_01c35210",
+      "name": "g_CurrentPalette",
       "type": "SRGBColorPalette*",
       "value": null
     },
     {
       "addr": "01c37770",
-      "name": "g_UCHAR_PTR_01c37770",
+      "name": "g_CurrentTextureData",
       "type": "uchar*",
       "value": null
     }
@@ -153,9 +153,9 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(char *)((int)g_UINT_ARRAY_014b3550",
+      "match": "(char *)((int)g_CameraTextureWorkBuffer",
       "severity": "moderate",
-      "text": "*(char *)((int)g_UINT_ARRAY_014b3550 + iVar4) =",
+      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar4) =",
       "type": "pointer_cast"
     },
     {

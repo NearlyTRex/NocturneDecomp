@@ -23,8 +23,8 @@
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   uint g_UINT_01d51da0
-;   uint g_UINT_01d51db0
-;   int g_INT_01d715a8
+;   uint g_NetLastSimFrameAckTime
+;   int g_SimFrameCount
 ;   undefined4 g_SSimFrame_ARRAY_01d715ac[1].sequence_number
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
         ;   XREF to: 005304c8 (CONDITIONAL_JUMP)  ; LAB_005304c8
     IMUL EAX,dword ptr [ESI + 0x11c],0x7c ; 005303a5
         ;   Label: LAB_005303a5
-    MOV ECX,dword ptr [0x01d715a8]      ; 005303ac | g_INT_01d715a8
+    MOV ECX,dword ptr [0x01d715a8]      ; 005303ac | g_SimFrameCount
     MOV EBX,dword ptr [ESI + EAX*0x1 + 0x68] ; 005303b2
     XOR EDX,EDX                         ; 005303b6
     TEST ECX,ECX                        ; 005303b8
@@ -110,7 +110,7 @@ section .text
     XOR EDI,EDI                         ; 005303fe
     ADD ESP,0x4                         ; 00530400
     MOV EAX,dword ptr [ESI + EAX*0x1 + 0x68] ; 00530403
-    MOV ECX,dword ptr [0x01d715a8]      ; 00530407 | g_INT_01d715a8
+    MOV ECX,dword ptr [0x01d715a8]      ; 00530407 | g_SimFrameCount
     MOV dword ptr [ESP + 0x4],EAX       ; 0053040d
     TEST ECX,ECX                        ; 00530411
     JLE 0x00530465                      ; 00530413
@@ -124,7 +124,7 @@ section .text
     CMP ECX,dword ptr [EBX + 0x1d715ac] ; 00530427
     JLE 0x00530573                      ; 0053042d
         ;   XREF to: 00530573 (CONDITIONAL_JUMP)  ; LAB_00530573
-    MOV EDX,dword ptr [0x01d715a8]      ; 00530433 | g_INT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 00530433 | g_SimFrameCount
     DEC EDX                             ; 00530439
     MOV EAX,EDX                         ; 0053043a
     SUB EAX,EDI                         ; 0053043c
@@ -135,11 +135,11 @@ section .text
     PUSH ECX                            ; 0053044b | g_SSimFrame_ARRAY_01d715ac[1].sequence_number
     ADD EAX,EBX                         ; 0053044c
     PUSH EAX                            ; 0053044e
-    MOV dword ptr [0x01d715a8],EDX      ; 0053044f | g_INT_01d715a8
+    MOV dword ptr [0x01d715a8],EDX      ; 0053044f | g_SimFrameCount
     CALL crt_string.c_memmove_FUN_005c25d0 ; 00530455
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0053045a
-    CMP EDI,dword ptr [0x01d715a8]      ; 0053045d | g_INT_01d715a8
+    CMP EDI,dword ptr [0x01d715a8]      ; 0053045d | g_SimFrameCount
         ;   Label: LAB_0053045d
     JL 0x00530423                       ; 00530463
         ;   XREF to: 00530423 (CONDITIONAL_JUMP)  ; LAB_00530423
@@ -151,7 +151,7 @@ section .text
     MOV dword ptr [ESI + 0x170],0x0     ; 00530473
     SUB EAX,EDX                         ; 0053047d
     XOR EBX,EBX                         ; 0053047f
-    MOV EDX,dword ptr [0x01d715a8]      ; 00530481 | g_INT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 00530481 | g_SimFrameCount
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x68] ; 00530487
     TEST EDX,EDX                        ; 0053048b
     JLE 0x005304c8                      ; 0053048d
@@ -207,7 +207,7 @@ section .text
     CMP EBX,0x2                         ; 0053050d
     JNZ 0x005304c8                      ; 00530510
         ;   XREF to: 005304c8 (CONDITIONAL_JUMP)  ; LAB_005304c8
-    MOV EAX,[0x01d51db0]                ; 00530512 | g_UINT_01d51db0
+    MOV EAX,[0x01d51db0]                ; 00530512 | g_NetLastSimFrameAckTime
     MOV EDX,dword ptr [0x01d51da0]      ; 00530517 | g_UINT_01d51da0
     SUB EDX,EAX                         ; 0053051d
     MOV dword ptr [ESP + 0xc],EDX       ; 0053051f

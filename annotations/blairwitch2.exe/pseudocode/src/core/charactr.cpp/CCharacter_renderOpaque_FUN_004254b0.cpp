@@ -165,7 +165,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
         }
       }
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
-      if ((g_INT_01d1cdc8 != 0) &&
+      if ((g_RenderMotionDebug != 0) &&
          (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
                             (g_CDemonRenderer_PTR_0060b280), iVar2 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_005042e0

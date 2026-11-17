@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
-;   CWeather* g_CWeather_PTR_006071f0 = 02d0c1a0
+;   CWeather* g_CWeatherPtr = 02d0c1a0
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340
@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00568c35
     PUSH 0x5                            ; 00568c38
-    MOV ECX,dword ptr [0x006071f0]      ; 00568c3a | g_CWeather_PTR_006071f0
+    MOV ECX,dword ptr [0x006071f0]      ; 00568c3a | g_CWeatherPtr
     PUSH ECX                            ; 00568c40
     CALL core_weather.cpp_CWeather_preloadAssets_FUN_0057d420 ; 00568c41
         ;   XREF to: 0057d420 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_preloadAssets_FUN_0057d420(CWeather * this_ptr, EWeatherType type)

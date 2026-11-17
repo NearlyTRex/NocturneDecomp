@@ -26,14 +26,16 @@ void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(int 
     if ((start_x & 1U) != 0) {
       puVar3 = (uint *)((int)puVar2 + 2);
       start_x = start_x + 1;
-      *(ushort *)puVar2 = (ushort)*puVar2 >> ((byte)g_INT_01b4d720 & 0x1f) & (ushort)g_INT_01b4d730;
+      *(ushort *)puVar2 =
+           (ushort)*puVar2 >> ((byte)g_OriginalColorValue & 0x1f) & (ushort)g_PackedPixelColor;
     }
     for (; start_x < end_x; start_x = start_x + 2) {
-      *puVar3 = *puVar3 >> ((byte)g_INT_01b4d720 & 0x1f) & g_INT_01b4d734;
+      *puVar3 = *puVar3 >> ((byte)g_OriginalColorValue & 0x1f) & g_DuplicatedPixelColor;
       puVar3 = puVar3 + 1;
     }
     if (start_x == end_x) {
-      *(ushort *)puVar3 = (ushort)*puVar3 >> ((byte)g_INT_01b4d720 & 0x1f) & (ushort)g_INT_01b4d730;
+      *(ushort *)puVar3 =
+           (ushort)*puVar3 >> ((byte)g_OriginalColorValue & 0x1f) & (ushort)g_PackedPixelColor;
       return;
     }
   }
@@ -41,7 +43,7 @@ void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(int 
           (puVar3 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {
     do {
       start_x = start_x + 1;
-      *puVar3 = *puVar3 >> ((byte)g_INT_01b4d720 & 0x1f) & g_INT_01b4d730;
+      *puVar3 = *puVar3 >> ((byte)g_OriginalColorValue & 0x1f) & g_PackedPixelColor;
       puVar3 = puVar3 + 1;
     } while (start_x <= end_x);
     return;

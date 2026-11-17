@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 152,
+    "complexity_score": 154,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 39,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 125
+    "total_lines": 127
   },
   "cross_references": [],
   "function": {
@@ -69,7 +69,7 @@
   "globals": [
     {
       "addr": "00608528",
-      "name": "g_INT_00608528",
+      "name": "g_DefaultStreamBufferSize",
       "type": "int",
       "value": "0x1a4"
     }
@@ -220,15 +220,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 23,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "openFile(file_stream,acStack_114,in_stack_00000018,g_INT_00608528);",
+      "text": "(file_stream,acStack_114,in_stack_00000018,g_DefaultStreamBufferSize);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 23,
+      "line": 24,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX != 0) {",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 29,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "istream_seekg(&file_stream->_istream_core,unaff_EBX);",
@@ -244,10 +244,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 39,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "openFile(file_stream,acStack_214,in_stack_00000018,g_INT_00608528);",
+      "text": "(file_stream,acStack_214,in_stack_00000018,g_DefaultStreamBufferSize);",
       "type": "stack_param"
     }
   ]

@@ -22,8 +22,8 @@ void __cdecl engine_mini3d_cpp_setRenderSurface_FUN_00514b70(int width,int heigh
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      *(uint *)(iVar2 + 0x1d2ae04) = *(uint *)((int)g_ARRAY_PTR_01c4354c + iVar2);
-      *(void **)((int)g_ARRAY_PTR_01c4354c + iVar2) = pixels;
+      *(uint *)(iVar2 + 0x1d2ae04) = *(uint *)((int)g_ScreenBufferArray + iVar2);
+      *(void **)((int)g_ScreenBufferArray + iVar2) = pixels;
       pixels = (void *)((int)pixels + width * 4);
       iVar2 = iVar1;
     } while (iVar1 < height * 4);

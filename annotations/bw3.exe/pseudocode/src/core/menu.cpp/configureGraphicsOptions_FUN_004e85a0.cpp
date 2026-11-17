@@ -58,7 +58,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004e85a0(void)
     pcVar6 = "tridx7.dll";
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
     core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
-    pcVar7 = g_CHAR_ARRAY_00606730;
+    pcVar7 = g_RendererDllPath;
     g_CDemonSetPtr->rendering_mode = 0;
     do {
       cVar1 = *pcVar6;
@@ -447,7 +447,7 @@ LAB_004e8c41:
       uVar3 = g_INT_01d74024;
     }
     g_INT_01d74024 = uVar3;
-    iVar4 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {
       return;
     }

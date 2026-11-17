@@ -51,7 +51,7 @@
 ;   double g_DOUBLE_005d5542 = 113
 ;   float g_FLOAT_005f64e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic[54] g_SMRGLTextureBasic_ARRAY_00615244
+;   SMRGLTextureBasic[54] g_FireEffectExplosionTextures
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
@@ -94,7 +94,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 00498f12
     SUB EAX,EDX                         ; 00498f19
     SHL EAX,0x4                         ; 00498f1b
-    ADD EAX,0x615244                    ; 00498f1e | g_SMRGLTextureBasic_ARRAY_00615244
+    ADD EAX,0x615244                    ; 00498f1e | g_FireEffectExplosionTextures
     PUSH EAX                            ; 00498f23
     MOV ECX,dword ptr [0x0060b280]      ; 00498f24 | g_CDemonRenderer_PTR_0060b280
     PUSH ECX                            ; 00498f2a | g_CDemonRenderer_01ba5c50

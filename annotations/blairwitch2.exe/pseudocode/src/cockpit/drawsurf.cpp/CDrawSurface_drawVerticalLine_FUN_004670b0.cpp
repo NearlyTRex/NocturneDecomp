@@ -30,7 +30,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_004670b0(CDr
       iVar2 = iVar5 * 2;
       iVar4 = iVar4 * 4;
       iVar3 = iVar3 * 4;
-      if (g_INT_01ba5c34 != 0) {
+      if (g_UseRGBConversion != 0) {
         if ((uint)g_INT_006141c0 < 0x10) {
           if (g_INT_006141c0 == 8) {
             return;
@@ -39,19 +39,19 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_004670b0(CDr
         else {
           if ((uint)g_INT_006141c0 < 0x11) {
             do {
-              piVar1 = (int *)((int)g_ARRAY_PTR_01c2a38c + iVar3);
+              piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
               iVar3 = iVar3 + 4;
               *(ushort *)(*piVar1 + iVar2) =
-                   *(ushort *)(*piVar1 + iVar2) >> ((byte)g_INT_01ba5c38 & 0x1f) &
-                   (ushort)g_INT_01ba5c48;
+                   *(ushort *)(*piVar1 + iVar2) >> ((byte)g_OriginalColorValue & 0x1f) &
+                   (ushort)g_PackedPixelColor;
             } while (iVar3 <= iVar4);
             return;
           }
           if (g_INT_006141c0 == 0x20) {
             do {
-              puVar6 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar3) + iVar5 * 4);
+              puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);
               iVar3 = iVar3 + 4;
-              *puVar6 = *puVar6 >> ((byte)g_INT_01ba5c38 & 0x1f) & g_INT_01ba5c48;
+              *puVar6 = *puVar6 >> ((byte)g_OriginalColorValue & 0x1f) & g_PackedPixelColor;
             } while (iVar3 <= iVar4);
             return;
           }
@@ -70,24 +70,24 @@ LAB_00467193:
           return;
         }
         do {
-          piVar1 = (int *)((int)g_ARRAY_PTR_01c2a38c + iVar3);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
-          *(byte *)(iVar5 + *piVar1) = (byte)g_INT_01ba5c28;
+          *(byte *)(iVar5 + *piVar1) = (byte)g_CurrentDrawColor;
         } while (iVar3 <= iVar4);
       }
       else if ((uint)g_INT_006141c0 < 0x11) {
         do {
-          piVar1 = (int *)((int)g_ARRAY_PTR_01c2a38c + iVar3);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
-          *(ushort *)(*piVar1 + iVar2) = (ushort)g_INT_01ba5c28;
+          *(ushort *)(*piVar1 + iVar2) = (ushort)g_CurrentDrawColor;
         } while (iVar3 <= iVar4);
       }
       else {
         if (g_INT_006141c0 != 0x20) goto LAB_00467193;
         do {
-          piVar1 = (int *)((int)g_ARRAY_PTR_01c2a38c + iVar3);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
-          *(int *)(*piVar1 + iVar5 * 4) = g_INT_01ba5c28;
+          *(int *)(*piVar1 + iVar5 * 4) = g_CurrentDrawColor;
         } while (iVar3 <= iVar4);
       }
     }

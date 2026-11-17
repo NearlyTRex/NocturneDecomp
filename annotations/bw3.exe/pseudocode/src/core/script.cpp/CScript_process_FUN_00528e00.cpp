@@ -23,7 +23,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_00528e00(CScript *this_ptr)
     }
     iVar3 = 0;
     local_18 = core_charactr_cpp_getGameDeltaTime_FUN_00434b00(g_CGamePtr);
-    g_INT_01ed7014 = 0;
+    g_ScriptInputFlag = 0;
     local_14 = local_18;
     do {
       if (((local_18 <= 0.0) || (this_ptr->script_state == 2)) || (this_ptr->mission_ended != 0))
@@ -39,15 +39,15 @@ LAB_00528ec5:
       else if (this_ptr->script_state == 1) goto LAB_00528ec5;
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0x60f);
-    if (g_INT_01ed7018 == 0) {
+    if (g_ScriptLoopWarningShown == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                 (g_CEditorToolsPtr,"!WARNING!  Infinite loop detected in script at line %d");
-      g_INT_01ed7018 = 1;
+      g_ScriptLoopWarningShown = 1;
     }
 LAB_00528e73:
-    if (g_INT_01ed7014 != 0) {
+    if (g_ScriptInputFlag != 0) {
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);
-      g_INT_01ed7014 = 0;
+      g_ScriptInputFlag = 0;
     }
     this_ptr_00 = (CCharacter *)this_ptr->who_is_speaking;
     if (this_ptr_00 != (CCharacter *)0x0) {

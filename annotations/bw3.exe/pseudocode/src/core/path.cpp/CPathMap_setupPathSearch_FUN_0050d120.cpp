@@ -9,11 +9,11 @@
 void __cdecl core_path_cpp_CPathMap_setupPathSearch_FUN_0050d120(CPathMap *this_ptr)
 
 {
-  g_INT_01ec1848 = 100;
-  g_INT_01ec1844 = 99;
-  g_INT_01ec183c = 0x32;
-  g_INT_01ec1840 = 0x32;
-  g_INT_01ec1514 = 2;
+  g_PathfindingDestZ = 100;
+  g_PathfindingDestX = 99;
+  g_PathfindingCurrentX = 0x32;
+  g_PathfindingCurrentZ = 0x32;
+  g_PathfindingMaxClimbHeight = 2;
   core_path_cpp_CPathMap_searchGrid_FUN_0050d170(this_ptr,(this_ptr->voxel_coords).y);
   return;
 }

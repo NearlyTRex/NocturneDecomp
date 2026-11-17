@@ -27,9 +27,9 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   int g_INT_005fba38 = 0xff
 ;   CGame* g_CGamePtr = 01d2130c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00603e44
+;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01c6e24c
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;   CVector3f[20000] g_CVector3f_ARRAY_020d4f70
 ;   undefined4 g_CVector3f_ARRAY_020d4f70[0].y
@@ -54,7 +54,7 @@ section .text
     PUSH EBP                            ; 0053a453
     SUB ESP,0xe4                        ; 0053a454
     MOV EBP,dword ptr [ESP + 0xfc]      ; 0053a45a
-    PUSH 0x603e44                       ; 0053a461 | g_SMRGLTextureBasic_00603e44
+    PUSH 0x603e44                       ; 0053a461 | g_EnvMapTexture
     MOV EDX,dword ptr [0x005f2afc]      ; 0053a466 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 0053a46c | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0053a46d
@@ -218,7 +218,7 @@ section .text
     RET                                 ; 0053a668
     MOV EAX,0xffff                      ; 0053a669
         ;   Label: LAB_0053a669
-    MOV EBX,dword ptr [0x01c6e24c]      ; 0053a66e | g_INT_01c6e24c
+    MOV EBX,dword ptr [0x01c6e24c]      ; 0053a66e | g_PerspectiveReciprocal
     MOV EDX,dword ptr [ESP + 0x104]     ; 0053a674
     SUB EAX,EBX                         ; 0053a67b
     IMUL EDX                            ; 0053a67d

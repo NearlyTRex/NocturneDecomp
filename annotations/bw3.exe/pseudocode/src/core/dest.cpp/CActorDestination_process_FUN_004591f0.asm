@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005ba9ac = 0.25
 ;   double g_DOUBLE_005ba9b4 = 0.100000000000000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
@@ -171,7 +171,7 @@ section .text
     JNZ 0x0045938f                      ; 0045937d
         ;   XREF to: 0045938f (CONDITIONAL_JUMP)  ; LAB_0045938f
     PUSH EAX                            ; 0045937f
-    MOV EDI,dword ptr [0x005fba60]      ; 00459380 | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 00459380 | g_CEventListPtr
     PUSH EDI                            ; 00459386
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00459387
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -200,7 +200,7 @@ section .text
         ;   XREF to: 0045931a (UNCONDITIONAL_JUMP)  ; LAB_0045931a
     PUSH EAX                            ; 004593cc
         ;   Label: LAB_004593cc
-    MOV EAX,[0x005fba60]                ; 004593cd | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 004593cd | g_CEventListPtr
     PUSH EAX                            ; 004593d2
     JMP 0x00459387                      ; 004593d3
         ;   XREF to: 00459387 (UNCONDITIONAL_JUMP)  ; LAB_00459387

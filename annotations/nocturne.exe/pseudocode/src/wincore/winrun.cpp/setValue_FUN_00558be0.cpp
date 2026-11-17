@@ -9,6 +9,6 @@
 void __cdecl wincore_winrun_cpp_setValue_FUN_00558be0(int val)
 
 {
-  g_INT_02de0854 = val;
+  g_UnknownInputValue = val;
   return;
 }

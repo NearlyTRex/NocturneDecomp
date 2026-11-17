@@ -18,9 +18,9 @@ uint FUN_005c50fc(int param_1,uint param_2,HMODULE param_3)
   char *pcVar7;
   uint uVar8;
   
-  g_INT_02c9f060 = param_1;
-  g_PTR_02c9f06c = (byte *)FUN_005cac3c(param_2);
-  if (g_PTR_02c9f06c == (byte *)0x0) {
+  g_EmergencyExitFlag = param_1;
+  g_CurrentThreadTlsBlock = (byte *)FUN_005cac3c(param_2);
+  if (g_CurrentThreadTlsBlock == (byte *)0x0) {
     uVar8 = 0;
     if (param_1 == 0) {
                     /* WARNING: Subroutine does not return */
@@ -29,53 +29,53 @@ uint FUN_005c50fc(int param_1,uint param_2,HMODULE param_3)
   }
   else {
     FUN_005c8d50();
-    g_CHAR_PTR_006265d9 = GetEnvironmentStrings();
-    g_CHAR_PTR_PTR_02c9f6d4 = (char **)0x0;
+    g_EnvironmentStrings = GetEnvironmentStrings();
+    g_EnvironmentBlock = (char **)0x0;
     DVar3 = GetVersion();
-    g_BYTE_006265df = (byte)DVar3;
-    g_SHORT_006265e1 = (short)(DVar3 >> 0x10);
-    g_UINT_006265e3 = (uint)(ushort)g_SHORT_006265e1;
+    g_WindowsMinorVersion = (byte)DVar3;
+    g_WindowsPlatformVersion = (short)(DVar3 >> 0x10);
+    g_WindowsPlatformVersionExt = (uint)(ushort)g_WindowsPlatformVersion;
     g_BYTE_006265e0 = (byte)(DVar3 >> 8);
-    g_UINT_006265e7 = DVar3 & 0xff;
-    g_UINT_006265eb = (uint)g_BYTE_006265e0;
-    g_UINT_006265ef = g_UINT_006265e7 << 8 | g_UINT_006265eb;
-    GetModuleFileNameA((HMODULE)0x0,g_CHAR_ARRAY_02c9f070,0x104);
-    g_CHAR_PTR_006265a0 = g_CHAR_ARRAY_02c9f070;
-    FUN_005caf60(0,g_WCHAR_T_ARRAY_02c9f174,0x208);
-    g_WCHAR_PTR_006265ac = g_WCHAR_T_ARRAY_02c9f174;
+    g_WindowsVersionLow = DVar3 & 0xff;
+    g_WindowsVersionMid = (uint)g_BYTE_006265e0;
+    g_WindowsVersionCombined = g_WindowsVersionLow << 8 | g_WindowsVersionMid;
+    GetModuleFileNameA((HMODULE)0x0,g_ExeFileNameBuffer_A,0x104);
+    g_ExeFileNameA = g_ExeFileNameBuffer_A;
+    FUN_005caf60(0,g_ExeFileNameBuffer_W,0x208);
+    g_ExeFileNameW = g_ExeFileNameBuffer_W;
     pCVar4 = GetCommandLineA();
-    g_CHAR_PTR_02c9f064 = (char *)FUN_005cb010(pCVar4);
-    g_INT_0062659c = (int)g_CHAR_PTR_02c9f064;
-    if (*g_CHAR_PTR_02c9f064 == '\"') {
-      cVar1 = g_CHAR_PTR_02c9f064[1];
-      pcVar7 = g_CHAR_PTR_02c9f064;
-      while ((g_INT_0062659c = (int)(pcVar7 + 1), cVar1 != '\"' && (*(char *)g_INT_0062659c != '\0')
-             )) {
+    g_CommandLineA = (char *)FUN_005cb010(pCVar4);
+    g_WinMainCmdShow = (int)g_CommandLineA;
+    if (*g_CommandLineA == '\"') {
+      cVar1 = g_CommandLineA[1];
+      pcVar7 = g_CommandLineA;
+      while ((g_WinMainCmdShow = (int)(pcVar7 + 1), cVar1 != '\"' &&
+             (*(char *)g_WinMainCmdShow != '\0'))) {
         cVar1 = pcVar7[2];
-        pcVar7 = (char *)g_INT_0062659c;
+        pcVar7 = (char *)g_WinMainCmdShow;
       }
-      if (*(char *)g_INT_0062659c != '\0') {
-        g_INT_0062659c = (int)(pcVar7 + 2);
+      if (*(char *)g_WinMainCmdShow != '\0') {
+        g_WinMainCmdShow = (int)(pcVar7 + 2);
       }
     }
     else {
-      for (; ((g_UCHAR_ARRAY_00626114[(byte)(*(char *)g_INT_0062659c + 1)] & 2) == 0 &&
-             (*(char *)g_INT_0062659c != '\0')); g_INT_0062659c = g_INT_0062659c + 1) {
+      for (; ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2) == 0 &&
+             (*(char *)g_WinMainCmdShow != '\0')); g_WinMainCmdShow = g_WinMainCmdShow + 1) {
       }
     }
-    while ((g_UCHAR_ARRAY_00626114[(byte)(*(char *)g_INT_0062659c + 1)] & 2) != 0) {
-      g_INT_0062659c = g_INT_0062659c + 1;
+    while ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2) != 0) {
+      g_WinMainCmdShow = g_WinMainCmdShow + 1;
     }
     pWVar5 = GetCommandLineW();
     if (pWVar5 == (LPWSTR)0x0) {
-      pcVar7 = g_CHAR_ARRAY_005fab8c;
+      pcVar7 = g_EmptyStringBuffer;
     }
     else {
-      g_WCHAR_PTR_02c9f068 = (WCHAR *)FUN_005cb060(pWVar5);
-      pcVar7 = (char *)g_WCHAR_PTR_02c9f068;
-      if (*g_WCHAR_PTR_02c9f068 == L'\"') {
-        WVar2 = g_WCHAR_PTR_02c9f068[1];
-        pWVar6 = g_WCHAR_PTR_02c9f068;
+      g_CommandLineW = (WCHAR *)FUN_005cb060(pWVar5);
+      pcVar7 = (char *)g_CommandLineW;
+      if (*g_CommandLineW == L'\"') {
+        WVar2 = g_CommandLineW[1];
+        pWVar6 = g_CommandLineW;
         while ((pcVar7 = (char *)(pWVar6 + 1), WVar2 != L'\"' && (*(WCHAR *)pcVar7 != L'\0'))) {
           WVar2 = pWVar6[2];
           pWVar6 = (WCHAR *)pcVar7;
@@ -85,20 +85,20 @@ uint FUN_005c50fc(int param_1,uint param_2,HMODULE param_3)
         }
       }
       else {
-        for (; ((g_UCHAR_ARRAY_00626114[(byte)((char)*(WCHAR *)pcVar7 + 1)] & 2) == 0 &&
+        for (; ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar7 + 1)] & 2) == 0 &&
                (*(WCHAR *)pcVar7 != L'\0')); pcVar7 = (char *)((int)pcVar7 + 2)) {
         }
       }
-      while ((g_UCHAR_ARRAY_00626114[(byte)((char)*(WCHAR *)pcVar7 + 1)] & 2) != 0) {
+      while ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar7 + 1)] & 2) != 0) {
         pcVar7 = (char *)((int)pcVar7 + 2);
       }
     }
-    g_WCHAR_PTR_006265a8 = (WCHAR *)pcVar7;
+    g_CommandLineArgsW = (WCHAR *)pcVar7;
     if (param_1 != 0) {
-      GetModuleFileNameA(param_3,g_CHAR_ARRAY_02c9f37c,0x104);
-      g_CHAR_PTR_006265a4 = g_CHAR_ARRAY_02c9f37c;
-      FUN_005caf60(param_3,g_WCHAR_T_ARRAY_02c9f480,0x208);
-      g_WCHAR_PTR_006265b0 = g_WCHAR_T_ARRAY_02c9f480;
+      GetModuleFileNameA(param_3,g_DllFileNameBuffer_A,0x104);
+      g_DllFileNameA = g_DllFileNameBuffer_A;
+      FUN_005caf60(param_3,g_DllFileNameBuffer_W,0x208);
+      g_DllFileNameW = g_DllFileNameBuffer_W;
     }
     uVar8 = 1;
   }

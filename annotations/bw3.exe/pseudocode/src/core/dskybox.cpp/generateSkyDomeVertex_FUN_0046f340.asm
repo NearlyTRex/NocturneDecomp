@@ -22,14 +22,14 @@
 ;   core_dskybox.cpp_renderSkyDome_FUN_0046f480 at 0046f7c9
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005bc7b5 = 0.0625
+;   float g_SkyDomeUCoordToAngleScale = 0.0625
 ;   float g_FLOAT_005bc7b9 = 3.141593
-;   double g_DOUBLE_005bc7c1 = 2
-;   float g_FLOAT_005bc7c9 = 0.25
-;   double g_DOUBLE_005bc7d1 = 0.5
-;   double g_DOUBLE_005bc7d9 = 256
+;   double g_SkyDomeVScale1 = 2
+;   float g_SkyDomeVCoordToAngleScale = 0.25
+;   double g_SkyDomeVScale2 = 0.5
+;   double g_SkyDomeWorldRadius = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   float g_FLOAT_005f4a5c = 5
+;   float g_SkyDomeVertexScale = 5
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].r
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].b
@@ -56,9 +56,9 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046f352
     MOV dword ptr [ESP + 0x30],EDX      ; 0046f355
     FILD dword ptr [ESP + 0x30]         ; 0046f359
-    FMUL float ptr [0x005bc7b5]         ; 0046f35d | g_FLOAT_005bc7b5
+    FMUL float ptr [0x005bc7b5]         ; 0046f35d | g_SkyDomeUCoordToAngleScale
     FMUL float ptr [0x005bc7b9]         ; 0046f363 | g_FLOAT_005bc7b9
-    FMUL double ptr [0x005bc7c1]        ; 0046f369 | g_DOUBLE_005bc7c1
+    FMUL double ptr [0x005bc7c1]        ; 0046f369 | g_SkyDomeVScale1
     FSTP float ptr [ESP + 0x2c]         ; 0046f36f
     TEST EAX,EAX                        ; 0046f373
     JNZ 0x0046f459                      ; 0046f375
@@ -76,7 +76,7 @@ section .text
     FCOS                                ; 0046f396
     FXCH                                ; 0046f398
     FCOS                                ; 0046f39a
-    FLD float ptr [0x005f4a5c]          ; 0046f39c | g_FLOAT_005f4a5c
+    FLD float ptr [0x005f4a5c]          ; 0046f39c | g_SkyDomeVertexScale
     FXCH ST4                            ; 0046f3a2
     FMUL ST4                            ; 0046f3a4
     FXCH ST2                            ; 0046f3a6
@@ -93,7 +93,7 @@ section .text
     FLD ST2                             ; 0046f3c8
     FMUL double ptr [ESP + 0x10]        ; 0046f3ca
     FXCH ST4                            ; 0046f3ce
-    FLD double ptr [0x005bc7d9]         ; 0046f3d0 | g_DOUBLE_005bc7d9
+    FLD double ptr [0x005bc7d9]         ; 0046f3d0 | g_SkyDomeWorldRadius
     FXCH                                ; 0046f3d6
     FMUL ST1                            ; 0046f3d8
     FXCH ST2                            ; 0046f3da
@@ -146,9 +146,9 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 0046f459
         ;   Label: LAB_0046f459
     FILD dword ptr [ESP + 0x30]         ; 0046f45d
-    FMUL float ptr [0x005bc7c9]         ; 0046f461 | g_FLOAT_005bc7c9
+    FMUL float ptr [0x005bc7c9]         ; 0046f461 | g_SkyDomeVCoordToAngleScale
     FMUL float ptr [0x005bc7b9]         ; 0046f467 | g_FLOAT_005bc7b9
-    FMUL double ptr [0x005bc7d1]        ; 0046f46d | g_DOUBLE_005bc7d1
+    FMUL double ptr [0x005bc7d1]        ; 0046f46d | g_SkyDomeVScale2
     FSTP float ptr [ESP]                ; 0046f473
     JMP 0x0046f382                      ; 0046f476
         ;   XREF to: 0046f382 (UNCONDITIONAL_JUMP)  ; LAB_0046f382

@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 90,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 61,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk"
     ],
-    "total_lines": 182
+    "total_lines": 183
   },
   "cross_references": [],
   "function": {
@@ -194,9 +194,9 @@
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(int *)((int)g_INT_ARRAY_006b029c",
+      "match": "(int *)((int)g_ProcessedVertexIndices",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_006b029c + iVar4) = iVar1;",
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;",
       "type": "pointer_cast"
     },
     {

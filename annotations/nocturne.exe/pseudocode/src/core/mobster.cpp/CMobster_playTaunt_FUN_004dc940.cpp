@@ -25,17 +25,17 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(CMobster *this_ptr
     local_1c = taunt_category + 0x60;
     do {
       pCVar1 = g_CGamePtr;
-      iVar6 = g_INT_ARRAY_01ccdb94[taunt_category];
-      g_INT_ARRAY_01ccdb94[taunt_category] = iVar6 + 1;
+      iVar6 = g_MobsterTauntCounters[taunt_category];
+      g_MobsterTauntCounters[taunt_category] = iVar6 + 1;
       if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar6 + 1 != 6)) {
         _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav",
                    (uint)(this_ptr->sound_variant).bytes[0],local_1c,
-                   g_INT_ARRAY_01ccdb94[taunt_category]);
+                   g_MobsterTauntCounters[taunt_category]);
         local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_0052ebc0
                              (g_CSound_PTR_005bed68,local_80);
         this_ptr->taunt_timer = local_14;
         if (0.0 < this_ptr->taunt_timer) break;
-        g_INT_ARRAY_01ccdb94[taunt_category] = 0;
+        g_MobsterTauntCounters[taunt_category] = 0;
       }
       iVar5 = iVar5 + 1;
     } while (iVar5 < 3);
@@ -55,7 +55,7 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(CMobster *this_ptr
           }
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                              (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),
-                              g_CMobsterActorType_01ccdbd8.name_hash);
+                              g_CMobsterClassInfo.name_hash);
           if (((pCVar2 != (CDemonActor *)0x0) &&
               (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50
                                  (*(uint *)(pCVar2[0x90].create_event + 0x44)), iVar3 != 0)) &&

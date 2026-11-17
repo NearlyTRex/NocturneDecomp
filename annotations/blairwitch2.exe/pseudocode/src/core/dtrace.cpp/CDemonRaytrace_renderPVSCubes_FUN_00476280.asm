@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b27c = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01bd3c5c
-;   CVector3f[20000] g_CVector3f_ARRAY_01be74e4
+;   int g_PVSDrawnCubeCount
+;   CVector3f[20000] g_PVSCubePositions
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0
@@ -36,7 +36,7 @@ section .text
     XOR ESI,ESI                         ; 00476298
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0 ; 0047629a
         ;   XREF to: 0046b7f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
-    MOV ECX,dword ptr [0x01bd3c5c]      ; 0047629f | g_INT_01bd3c5c
+    MOV ECX,dword ptr [0x01bd3c5c]      ; 0047629f | g_PVSDrawnCubeCount
     ADD ESP,0x10                        ; 004762a5
     TEST ECX,ECX                        ; 004762a8
     JLE 0x004762ee                      ; 004762aa
@@ -45,7 +45,7 @@ section .text
     PUSH EBX                            ; 004762ad
     MOV EBX,0x1be74e4                   ; 004762ae
     XOR EDI,EDI                         ; 004762b3
-    PUSH EBX                            ; 004762b5 | g_CVector3f_ARRAY_01be74e4
+    PUSH EBX                            ; 004762b5 | g_PVSCubePositions
         ;   Label: LAB_004762b5
     MOV EBP,dword ptr [0x0060b27c]      ; 004762b6 | g_CDemonRenderer_PTR_0060b27c
     PUSH EBP                            ; 004762bc | g_CDemonRenderer_01ba5c50
@@ -62,7 +62,7 @@ section .text
     INC ESI                             ; 004762d9
     CALL engine_special.cpp_sync_FUN_0055fed0 ; 004762da
         ;   XREF to: 0055fed0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_sync_FUN_0055fed0()
-    MOV EDX,dword ptr [0x01bd3c5c]      ; 004762df | g_INT_01bd3c5c
+    MOV EDX,dword ptr [0x01bd3c5c]      ; 004762df | g_PVSDrawnCubeCount
     ADD EBX,0xc                         ; 004762e5
     CMP ESI,EDX                         ; 004762e8
     JL 0x004762b5                       ; 004762ea

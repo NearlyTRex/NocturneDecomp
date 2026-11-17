@@ -27,7 +27,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f09
     pSVar4 = poly;
     do {
       iVar1 = pSVar4->vertices[0].vertex_index;
-      *(int *)((int)g_INT_ARRAY_01b4d76c + iVar3) = iVar1;
+      *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
       iVar3 = iVar3 + 4;
       pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;
       iVar2 = iVar2 + 1;
@@ -46,7 +46,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f09
       core_main_c_displayErrorAndQuit_FUN_004c8440("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-              (this_ptr,(poly->base).base.count,g_INT_ARRAY_01b4d76c);
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
     iVar2 = g_INT_01b4d764;
   }
   else {

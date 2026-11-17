@@ -9,29 +9,29 @@
 void __cdecl engine_matrix_c_popViewport_FUN_004e6c50(void)
 
 {
-  g_INT_01d728fc = g_INT_01d728fc + -1;
-  if (g_INT_01d728fc < 0) {
+  g_ViewportStackIndex = g_ViewportStackIndex + -1;
+  if (g_ViewportStackIndex < 0) {
     g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
     g_INT_01d71de4 = 0x56c;
     core_main_c_displayErrorAndQuit_FUN_004e4330("3D Window unbalance");
   }
-  g_INT_01c6e2d8 = g_INT_ARRAY_01d729c8[g_INT_01d728fc];
-  g_INT_01c6e2dc = g_INT_ARRAY_01d729f0[g_INT_01d728fc];
-  g_INT_01c6e2e0 = g_INT_ARRAY_01d72a18[g_INT_01d728fc];
-  g_INT_01c6e2e4 = g_INT_ARRAY_01d72a40[g_INT_01d728fc];
-  g_INT_01c6e2e8 = g_INT_ARRAY_01d72a68[g_INT_01d728fc];
-  g_INT_01c6e2ec = g_INT_ARRAY_01d72a90[g_INT_01d728fc];
-  g_INT_01c6e2f0 = g_INT_ARRAY_01d72ab8[g_INT_01d728fc];
-  g_INT_01c6e2f4 = g_INT_ARRAY_01d72ae0[g_INT_01d728fc];
-  g_INT_01c6e2f8 = g_INT_ARRAY_01d72b08[g_INT_01d728fc];
-  g_INT_01c6b598 = g_INT_ARRAY_01d72900[g_INT_01d728fc];
-  g_INT_01c6b59c = g_INT_ARRAY_01d72928[g_INT_01d728fc];
-  g_INT_01c6b5a0 = g_INT_ARRAY_01d72950[g_INT_01d728fc];
-  g_INT_01c6b5a4 = g_INT_ARRAY_01d72978[g_INT_01d728fc];
-  g_INT_005fba44 = g_INT_ARRAY_01d729a0[g_INT_01d728fc];
-  g_INT_01c6b5a8 = g_INT_ARRAY_01d72b30[g_INT_01d728fc];
-  g_INT_01c6b5b0 = g_INT_ARRAY_01d72b58[g_INT_01d728fc];
-  g_INT_01c6b5ac = g_INT_ARRAY_01d72b80[g_INT_01d728fc];
-  g_INT_01c6b5b4 = g_INT_ARRAY_01d72ba8[g_INT_01d728fc];
+  g_CameraOriginX = g_ViewportStack_CameraX[g_ViewportStackIndex];
+  g_CameraOriginY = g_ViewportStack_CameraY[g_ViewportStackIndex];
+  g_CameraOriginZ = g_ViewportStack_CameraZ[g_ViewportStackIndex];
+  g_CameraRotationPitch = g_ViewportStack_RotationPitch[g_ViewportStackIndex];
+  g_CameraRotationYaw = g_ViewportStack_RotationYaw[g_ViewportStackIndex];
+  g_CameraRotationRoll = g_ViewportStack_RotationRoll[g_ViewportStackIndex];
+  g_LightDirectionX = g_ViewportStack_ExtraState1[g_ViewportStackIndex];
+  g_LightDirectionY = g_ViewportStack_ExtraState2[g_ViewportStackIndex];
+  g_LightDirectionZ = g_ViewportStack_ExtraState3[g_ViewportStackIndex];
+  g_INT_01c6b598 = g_ViewportStack_CenterX[g_ViewportStackIndex];
+  g_INT_01c6b59c = g_ViewportStack_CenterY[g_ViewportStackIndex];
+  g_INT_01c6b5a0 = g_ViewportStack_RightFixed[g_ViewportStackIndex];
+  g_INT_01c6b5a4 = g_ViewportStack_BottomFixed[g_ViewportStackIndex];
+  g_ProjectionScale = g_ViewportStack_ProjectionScale[g_ViewportStackIndex];
+  g_INT_01c6b5a8 = g_ViewportStack_ClipLeft[g_ViewportStackIndex];
+  g_INT_01c6b5b0 = g_ViewportStack_ClipRight[g_ViewportStackIndex];
+  g_INT_01c6b5ac = g_ViewportStack_ClipTop[g_ViewportStackIndex];
+  g_INT_01c6b5b4 = g_ViewportStack_ClipBottom[g_ViewportStackIndex];
   return;
 }

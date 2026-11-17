@@ -85,49 +85,49 @@
     },
     {
       "addr": "01ffeef8",
-      "name": "g_INT_01ffeef8",
+      "name": "g_SecondaryDirectionalLightCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ffeefc",
-      "name": "g_CDemonLight_PTR_ARRAY_01ffeefc",
+      "name": "g_SecondaryDirectionalLights",
       "type": "CDemonLight*[96]",
       "value": null
     },
     {
       "addr": "01fff07c",
-      "name": "g_INT_01fff07c",
+      "name": "g_PrimaryDirectionalLightCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01fff080",
-      "name": "g_CDemonLight_PTR_ARRAY_01fff080",
+      "name": "g_PrimaryDirectionalLights",
       "type": "CDemonLight*[4]",
       "value": null
     },
     {
       "addr": "01fff090",
-      "name": "g_INT_01fff090",
+      "name": "g_GlobeLightCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01fff094",
-      "name": "g_CDemonGlobe_PTR_ARRAY_01fff094",
+      "name": "g_GlobeLights",
       "type": "CDemonGlobe*[100]",
       "value": null
     },
     {
       "addr": "01fff098",
-      "name": "g_CDemonGlobe_PTR_ARRAY_01fff094[1]",
+      "name": "g_GlobeLights[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff548",
-      "name": "g_INT_01fff548",
+      "name": "g_LightingSystemDirty",
       "type": "int",
       "value": null
     },
@@ -157,7 +157,7 @@
     },
     {
       "addr": "01fff57c",
-      "name": "g_CMatrix3x3f_01fff57c",
+      "name": "g_LightingRotationMatrix",
       "type": "CMatrix3x3f",
       "value": null
     }
@@ -356,65 +356,65 @@
     {
       "description": "Complex pointer cast",
       "line": 52,
-      "match": "(uint *)((int)g_CDemonLight_PTR_ARRAY_01fff080",
+      "match": "(uint *)((int)g_PrimaryDirectionalLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fff080 + iVar5);",
+      "text": "puVar1 = (uint *)((int)g_PrimaryDirectionalLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(uint *)((int)g_CDemonLight_PTR_ARRAY_01ffeefc",
+      "match": "(uint *)((int)g_SecondaryDirectionalLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01ffeefc + iVar5);",
+      "text": "puVar1 = (uint *)((int)g_SecondaryDirectionalLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(uint *)((int)g_CDemonGlobe_PTR_ARRAY_01fff094",
+      "match": "(uint *)((int)g_GlobeLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonGlobe_PTR_ARRAY_01fff094 + iVar5);",
+      "text": "puVar1 = (uint *)((int)g_GlobeLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 112,
-      "match": "(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc",
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar5);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 117,
-      "match": "(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc",
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar5);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fff080` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PrimaryDirectionalLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 52,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01fff080",
+      "match": "(int)g_PrimaryDirectionalLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fff080 + iVar5);",
+      "text": "puVar1 = (uint *)((int)g_PrimaryDirectionalLights + iVar5);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01ffeefc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_SecondaryDirectionalLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 65,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01ffeefc",
+      "match": "(int)g_SecondaryDirectionalLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01ffeefc + iVar5);",
+      "text": "puVar1 = (uint *)((int)g_SecondaryDirectionalLights + iVar5);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fff094` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_GlobeLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 78,
-      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fff094",
+      "match": "(int)g_GlobeLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonGlobe_PTR_ARRAY_01fff094 + iVar5);",
+      "text": "puVar1 = (uint *)((int)g_GlobeLights + iVar5);",
       "type": "pointer_truncation"
     },
     {
@@ -482,19 +482,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fba2dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 112,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01fba2dc",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar5);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fba2dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 117,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01fba2dc",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar5);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);",
       "type": "pointer_truncation"
     },
     {

@@ -54,13 +54,13 @@
 ;   TerminatedCString s_headOfHorror_005d7a56
 ;   TerminatedCString s_The_horror_has_been_unle_005d7a63
 ;   TerminatedCString s_Enter_cheat_code_005d7a82
-;   char[54] g_CHAR_ARRAY_005d7a93
-;   undefined4 g_CHAR_ARRAY_005d7a93+0x34
+;   char[54] g_CheatStr_DebugMode
+;   undefined4 g_CheatStr_DebugMode+0x34
 ;   TerminatedCString s_anon_005d7b01
 ;   char g_CHAR_005d7b05 = \x01
 ;   TerminatedCString s_FPS_3_2lf_005d7b39
 ;   char g_CHAR_005d7b45 = @
-;   char[51] g_CHAR_ARRAY_005d7b7a
+;   char[51] g_CheatStr_EventDebug
 ;   ... and 102 more
 ;
 ; Called Functions:
@@ -105,7 +105,7 @@ section .text
     RET                                 ; 004b90ee
     PUSH 0x5d7a56                       ; 004b90ef | = "headOfHorror"
         ;   Label: LAB_004b90ef
-    MOV ECX,dword ptr [0x006141f0]      ; 004b90f4 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004b90f4 | g_CEventListPtr
     PUSH ECX                            ; 004b90fa
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004b90fb
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -148,7 +148,7 @@ section .text
     TEST EAX,EAX                        ; 004b9174
     JZ 0x004b90e8                       ; 004b9176
         ;   XREF to: 004b90e8 (CONDITIONAL_JUMP)  ; LAB_004b90e8
-    MOV EDX,dword ptr [0x00617dd4]      ; 004b917c | g_CKeys_PTR_00617dd4
+    MOV EDX,dword ptr [0x00617dd4]      ; 004b917c | g_CKeysPtr
     PUSH EDX                            ; 004b9182 | g_PTR_01d02f84
     MOV EBX,0x13                        ; 004b9183
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0 ; 004b9188
@@ -162,7 +162,7 @@ section .text
     TEST EBX,EBX                        ; 004b919f
     JG 0x004b9192                       ; 004b91a1
         ;   XREF to: 004b9192 (CONDITIONAL_JUMP)  ; LAB_004b9192
-    PUSH 0x5d7a93                       ; 004b91a3 | g_CHAR_ARRAY_005d7a93
+    PUSH 0x5d7a93                       ; 004b91a3 | g_CheatStr_DebugMode
     MOV byte ptr [0x01cb80f8],AH        ; 004b91a8 | g_BYTE_01cb80f8
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b91ae
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -359,7 +359,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b93c2
     JZ 0x004b9490                       ; 004b93c9
         ;   XREF to: 004b9490 (CONDITIONAL_JUMP)  ; LAB_004b9490
-    PUSH 0x5d7b7a                       ; 004b93cf | g_CHAR_ARRAY_005d7b7a
+    PUSH 0x5d7b7a                       ; 004b93cf | g_CheatStr_EventDebug
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b93d4
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b93d9
@@ -433,7 +433,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9493
     JZ 0x004b9584                       ; 004b949a
         ;   XREF to: 004b9584 (CONDITIONAL_JUMP)  ; LAB_004b9584
-    PUSH 0x5d7bcc                       ; 004b94a0 | g_CHAR_ARRAY_005d7bcc
+    PUSH 0x5d7bcc                       ; 004b94a0 | g_CheatStr_MemoryDebug
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b94a5
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b94aa
@@ -517,7 +517,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9587
     JZ 0x004b9657                       ; 004b958e
         ;   XREF to: 004b9657 (CONDITIONAL_JUMP)  ; LAB_004b9657
-    PUSH 0x5d7c21                       ; 004b9594 | g_CHAR_ARRAY_005d7c21
+    PUSH 0x5d7c21                       ; 004b9594 | g_CheatStr_ManualAim
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9599
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b959e
@@ -655,7 +655,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b970a
     MOV EAX,dword ptr [EAX + 0xd8]      ; 004b970d
     MOV dword ptr [EBX + 0x24378],EAX   ; 004b9713
-    PUSH 0x5d7cc5                       ; 004b9719 | g_CHAR_ARRAY_005d7cc5
+    PUSH 0x5d7cc5                       ; 004b9719 | g_CheatStr_MovieRecording
         ;   Label: LAB_004b9719
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b971e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -706,7 +706,7 @@ section .text
     PUSH 0x40a00000                     ; 004b978c
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9791
     XOR DH,DH                           ; 004b9794
-    PUSH 0x5d7cf7                       ; 004b9796 | g_CHAR_ARRAY_005d7cc5+0x32
+    PUSH 0x5d7cf7                       ; 004b9796 | g_CheatStr_MovieRecording+0x32
     MOV byte ptr [0x01cb80f8],DH        ; 004b979b | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0xd8],0x0      ; 004b97a1
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004b97ab
@@ -779,15 +779,15 @@ section .text
     PUSH 0x43700000                     ; 004b986a
     PUSH 0x3e800000                     ; 004b986f
     PUSH 0x1                            ; 004b9874
-    PUSH 0x6164a0                       ; 004b9876 | g_FLOAT_006164a0
+    PUSH 0x6164a0                       ; 004b9876 | g_MovieRecordingTargetFPS
     MOV EAX,[0x006138e0]                ; 004b987b | g_CEditorToolsPtr
     XOR BL,BL                           ; 004b9880
     PUSH 0x5d7217                       ; 004b9882 | = "Enter Movie FPS"
     XOR ESI,ESI                         ; 004b9887
     MOV byte ptr [0x01cb80f8],BL        ; 004b9889 | g_BYTE_01cb80f8
     PUSH EAX                            ; 004b988f
-    MOV dword ptr [0x01cb80d4],ESI      ; 004b9890 | g_INT_01cb80d4
-    MOV dword ptr [0x01cb80dc],ESI      ; 004b9896 | g_INT_01cb80dc
+    MOV dword ptr [0x01cb80d4],ESI      ; 004b9890 | g_MovieRecordingActive
+    MOV dword ptr [0x01cb80dc],ESI      ; 004b9896 | g_MovieRecordingFrameCounter
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800 ; 004b989c
         ;   XREF to: 0047d800 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004b98a1
@@ -798,7 +798,7 @@ section .text
     PUSH 0x1869f                        ; 004b98ae
     PUSH ESI                            ; 004b98b3
     PUSH 0x1                            ; 004b98b4
-    PUSH 0x1cb80d8                      ; 004b98b6 | g_INT_01cb80d8
+    PUSH 0x1cb80d8                      ; 004b98b6 | g_MovieRecordingMaxFrames
     PUSH 0x5d7227                       ; 004b98bb | = "Enter number of frames to record (or ..."
     MOV EDX,dword ptr [0x006138e0]      ; 004b98c0 | g_CEditorToolsPtr
     PUSH EDX                            ; 004b98c6
@@ -812,7 +812,7 @@ section .text
     PUSH 0x270f                         ; 004b98d5
     PUSH 0x1                            ; 004b98da
     PUSH 0x1                            ; 004b98dc
-    PUSH 0x6164a4                       ; 004b98de | g_INT_006164a4
+    PUSH 0x6164a4                       ; 004b98de | g_MovieRecordingWidth
     PUSH 0x5d7271                       ; 004b98e3 | = "Enter image width"
     MOV ECX,dword ptr [0x006138e0]      ; 004b98e8 | g_CEditorToolsPtr
     PUSH ECX                            ; 004b98ee
@@ -826,7 +826,7 @@ section .text
     PUSH 0x270f                         ; 004b98fd
     PUSH 0x1                            ; 004b9902
     PUSH 0x1                            ; 004b9904
-    PUSH 0x6164a8                       ; 004b9906 | g_INT_006164a8
+    PUSH 0x6164a8                       ; 004b9906 | g_MovieRecordingHeight
     PUSH 0x5d7283                       ; 004b990b | = "Enter image height"
     MOV EBX,dword ptr [0x006138e0]      ; 004b9910 | g_CEditorToolsPtr
     PUSH EBX                            ; 004b9916
@@ -843,13 +843,13 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0 ; 004b9934
         ;   XREF to: 0047bda0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b9939
-    MOV dword ptr [0x01cb80d0],EDI      ; 004b993c | g_INT_01cb80d0
+    MOV dword ptr [0x01cb80d0],EDI      ; 004b993c | g_MovieRecordingArmed
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9942
         ;   Label: LAB_004b9942
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9945
     JZ 0x004b99f2                       ; 004b994c
         ;   XREF to: 004b99f2 (CONDITIONAL_JUMP)  ; LAB_004b99f2
-    PUSH 0x5d7d3b                       ; 004b9952 | g_CHAR_ARRAY_005d7d3b
+    PUSH 0x5d7d3b                       ; 004b9952 | g_CheatStr_CollisionDebug
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9957
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b995c
@@ -906,7 +906,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b99e4
     AND EAX,0xff                        ; 004b99e7
     MOV dword ptr [EBX + 0x238],EAX     ; 004b99ec
-    PUSH 0x5d7d72                       ; 004b99f2 | g_CHAR_ARRAY_005d7d72
+    PUSH 0x5d7d72                       ; 004b99f2 | g_CheatStr_SkeletonKey
         ;   Label: LAB_004b99f2
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b99f7
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1016,7 +1016,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b9b15
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004b9b1a
-    PUSH 0x5d7de9                       ; 004b9b1d | g_CHAR_ARRAY_005d7de9
+    PUSH 0x5d7de9                       ; 004b9b1d | g_CheatStr_FreezeEnemies
         ;   Label: LAB_004b9b1d
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9b22
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1158,7 +1158,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b9ca4
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004b9ca9
-    PUSH 0x5d7e95                       ; 004b9cac | g_CHAR_ARRAY_005d7e95
+    PUSH 0x5d7e95                       ; 004b9cac | g_CheatStr_AllWeapons
         ;   Label: LAB_004b9cac
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9cb1
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1257,7 +1257,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9db4
     JZ 0x004ba142                       ; 004b9dbb
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
-    PUSH 0x5d7eff                       ; 004b9dc1 | g_CHAR_ARRAY_005d7eff
+    PUSH 0x5d7eff                       ; 004b9dc1 | g_CheatStr_MoreAmmo
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9dc6
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9dcb
@@ -1307,13 +1307,13 @@ section .text
         ;   XREF to: 004ba117 (CONDITIONAL_JUMP)  ; LAB_004ba117
     XOR DL,DL                           ; 004b9e41
     MOV byte ptr [0x01cb80f8],DL        ; 004b9e43 | g_BYTE_01cb80f8
-    MOV EBX,0x616430                    ; 004b9e49 | g_CHAR_ARRAY_00616430
+    MOV EBX,0x616430                    ; 004b9e49 | g_EventCommandBuffer
         ;   Label: LAB_004b9e49
     PUSH 0x1                            ; 004b9e4e
         ;   Label: LAB_004b9e4e
     PUSH 0x64                           ; 004b9e50
-    PUSH EBX                            ; 004b9e52 | g_CHAR_ARRAY_00616430
-    PUSH 0x5d7f32                       ; 004b9e53 | g_CHAR_ARRAY_005d7eff+0x33
+    PUSH EBX                            ; 004b9e52 | g_EventCommandBuffer
+    PUSH 0x5d7f32                       ; 004b9e53 | g_CheatStr_MoreAmmo+0x33
     MOV EAX,[0x006138e0]                ; 004b9e58 | g_CEditorToolsPtr
     PUSH EAX                            ; 004b9e5d
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0 ; 004b9e5e
@@ -1322,8 +1322,8 @@ section .text
     TEST EAX,EAX                        ; 004b9e66
     JZ 0x004ba142                       ; 004b9e68
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
-    PUSH EBX                            ; 004b9e6e | g_CHAR_ARRAY_00616430
-    MOV EDX,dword ptr [0x006141f0]      ; 004b9e6f | g_CEventList_PTR_006141f0
+    PUSH EBX                            ; 004b9e6e | g_EventCommandBuffer
+    MOV EDX,dword ptr [0x006141f0]      ; 004b9e6f | g_CEventListPtr
     PUSH EDX                            ; 004b9e75
     CALL core_event.cpp_CEventList_validateCommands_FUN_0048e3e0 ; 004b9e76
         ;   XREF to: 0048e3e0 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_0048e3e0(CEventList * this_ptr, char * commands)
@@ -1341,7 +1341,7 @@ section .text
         ;   XREF to: 004b9e4e (UNCONDITIONAL_JUMP)  ; LAB_004b9e4e
     PUSH 0x44                           ; 004b9e98
         ;   Label: LAB_004b9e98
-    MOV EAX,[0x00617dd4]                ; 004b9e9a | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004b9e9a | g_CKeysPtr
     PUSH EAX                            ; 004b9e9f | g_PTR_01d02f84
     MOV EBX,dword ptr [EAX]             ; 004b9ea0 | g_PTR_01d02f84
     CALL dword ptr [EBX + 0x4]          ; 004b9ea2
@@ -1385,7 +1385,7 @@ section .text
         ;   XREF to: 004b9ef0 (CONDITIONAL_JUMP)  ; LAB_004b9ef0
     JMP 0x004b9160                      ; 004b9f0e
         ;   XREF to: 004b9160 (UNCONDITIONAL_JUMP)  ; LAB_004b9160
-    PUSH 0x5d7ac7                       ; 004b9f13 | g_CHAR_ARRAY_005d7a93+0x34
+    PUSH 0x5d7ac7                       ; 004b9f13 | g_CheatStr_DebugMode+0x34
         ;   Label: LAB_004b9f13
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9f18
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1558,7 +1558,7 @@ section .text
         ;   XREF to: 004b9db1 (UNCONDITIONAL_JUMP)  ; LAB_004b9db1
     PUSH 0x1d                           ; 004ba117
         ;   Label: LAB_004ba117
-    MOV EAX,[0x00617dd4]                ; 004ba119 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ba119 | g_CKeysPtr
     PUSH EAX                            ; 004ba11e | g_PTR_01d02f84
     MOV EBX,dword ptr [EAX]             ; 004ba11f | g_PTR_01d02f84
     CALL dword ptr [EBX]                ; 004ba121
@@ -1567,7 +1567,7 @@ section .text
     JZ 0x004ba142                       ; 004ba128
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
     PUSH 0x13                           ; 004ba12a
-    MOV EAX,[0x00617dd4]                ; 004ba12c | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ba12c | g_CKeysPtr
     PUSH EAX                            ; 004ba131 | g_PTR_01d02f84
     MOV EBX,dword ptr [EAX]             ; 004ba132 | g_PTR_01d02f84
     CALL dword ptr [EBX + 0x4]          ; 004ba134
@@ -1575,7 +1575,7 @@ section .text
     TEST EAX,EAX                        ; 004ba13a
     JNZ 0x004b9e49                      ; 004ba13c
         ;   XREF to: 004b9e49 (CONDITIONAL_JUMP)  ; LAB_004b9e49
-    PUSH 0x5d7f41                       ; 004ba142 | g_CHAR_ARRAY_005d7f41
+    PUSH 0x5d7f41                       ; 004ba142 | g_CheatStr_KillNearby
         ;   Label: LAB_004ba142
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba147
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1677,9 +1677,9 @@ section .text
     MOV dword ptr [ESP + 0x304],EDI     ; 004ba28a
     JMP 0x004ba1da                      ; 004ba291
         ;   XREF to: 004ba1da (UNCONDITIONAL_JUMP)  ; LAB_004ba1da
-    PUSH 0x616430                       ; 004ba296 | g_CHAR_ARRAY_00616430
+    PUSH 0x616430                       ; 004ba296 | g_EventCommandBuffer
         ;   Label: LAB_004ba296
-    MOV EBX,dword ptr [0x006141f0]      ; 004ba29b | g_CEventList_PTR_006141f0
+    MOV EBX,dword ptr [0x006141f0]      ; 004ba29b | g_CEventListPtr
     PUSH EBX                            ; 004ba2a1
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 004ba2a2
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -1702,7 +1702,7 @@ section .text
     ADD ESP,0x8                         ; 004ba2e0
     JMP 0x004ba271                      ; 004ba2e3
         ;   XREF to: 004ba271 (UNCONDITIONAL_JUMP)  ; LAB_004ba271
-    PUSH 0x5d7f76                       ; 004ba2e5 | g_CHAR_ARRAY_005d7f76
+    PUSH 0x5d7f76                       ; 004ba2e5 | g_CheatStr_Dismemberment
         ;   Label: LAB_004ba2e5
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba2ea
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1776,7 +1776,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba3a0
     JZ 0x004ba45b                       ; 004ba3a7
         ;   XREF to: 004ba45b (CONDITIONAL_JUMP)  ; LAB_004ba45b
-    PUSH 0x5d7fef                       ; 004ba3ad | g_CHAR_ARRAY_005d7fef
+    PUSH 0x5d7fef                       ; 004ba3ad | g_CheatStr_TimeFactor
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba3b2
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004ba3b7
@@ -1838,7 +1838,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800 ; 004ba453
         ;   XREF to: 0047d800 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004ba458
-    PUSH 0x5d8033                       ; 004ba45b | g_CHAR_ARRAY_005d8033
+    PUSH 0x5d8033                       ; 004ba45b | g_CheatStr_NoD3D
         ;   Label: LAB_004ba45b
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba460
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1952,7 +1952,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ba57b
     AND EAX,0xff                        ; 004ba57e
     MOV dword ptr [EBX + 0x210],EAX     ; 004ba583
-    PUSH 0x5d8099                       ; 004ba589 | g_CHAR_ARRAY_005d8099
+    PUSH 0x5d8099                       ; 004ba589 | g_CheatStr_ToggleRenderMode
         ;   Label: LAB_004ba589
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba58e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2031,7 +2031,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba662
     JZ 0x004ba705                       ; 004ba669
         ;   XREF to: 004ba705 (CONDITIONAL_JUMP)  ; LAB_004ba705
-    PUSH 0x5d8138                       ; 004ba66f | g_CHAR_ARRAY_005d8138
+    PUSH 0x5d8138                       ; 004ba66f | g_CheatStr_ClearFramebuffer
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba674
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR EBX,EBX                         ; 004ba679
@@ -2091,7 +2091,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba708
     JZ 0x004ba7b7                       ; 004ba70f
         ;   XREF to: 004ba7b7 (CONDITIONAL_JUMP)  ; LAB_004ba7b7
-    PUSH 0x5d816b                       ; 004ba715 | g_CHAR_ARRAY_005d816b
+    PUSH 0x5d816b                       ; 004ba715 | g_CheatStr_ResetEffects
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba71a
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba71f
@@ -2153,7 +2153,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba7ba
     JZ 0x004ba889                       ; 004ba7c1
         ;   XREF to: 004ba889 (CONDITIONAL_JUMP)  ; LAB_004ba889
-    PUSH 0x5d819d                       ; 004ba7c7 | g_CHAR_ARRAY_005d819d
+    PUSH 0x5d819d                       ; 004ba7c7 | g_CheatStr_SingleStep
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba7cc
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba7d1
@@ -2223,7 +2223,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004ba881
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004ba886
-    PUSH 0x5d81f8                       ; 004ba889 | g_CHAR_ARRAY_005d81f8
+    PUSH 0x5d81f8                       ; 004ba889 | g_CheatStr_RestoreBattery
         ;   Label: LAB_004ba889
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba88e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2336,7 +2336,7 @@ section .text
     JNZ 0x004ba9c5                      ; 004ba9aa
         ;   XREF to: 004ba9c5 (CONDITIONAL_JUMP)  ; LAB_004ba9c5
     PUSH 0x1                            ; 004ba9ac
-    MOV ESI,dword ptr [0x0061e8f4]      ; 004ba9ae | g_CWeather_PTR_0061e8f4
+    MOV ESI,dword ptr [0x0061e8f4]      ; 004ba9ae | g_CWeatherPtr
     XOR BH,BH                           ; 004ba9b4
     PUSH ESI                            ; 004ba9b6
     MOV byte ptr [0x01cb80f8],BH        ; 004ba9b7 | g_BYTE_01cb80f8
@@ -2392,14 +2392,14 @@ section .text
     JNZ 0x004baa51                      ; 004baa36
         ;   XREF to: 004baa51 (CONDITIONAL_JUMP)  ; LAB_004baa51
     PUSH 0x2                            ; 004baa38
-    MOV ESI,dword ptr [0x0061e8f4]      ; 004baa3a | g_CWeather_PTR_0061e8f4
+    MOV ESI,dword ptr [0x0061e8f4]      ; 004baa3a | g_CWeatherPtr
     XOR CL,CL                           ; 004baa40
     PUSH ESI                            ; 004baa42
     MOV byte ptr [0x01cb80f8],CL        ; 004baa43 | g_BYTE_01cb80f8
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0058b470 ; 004baa49
         ;   XREF to: 0058b470 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0058b470(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004baa4e
-    PUSH 0x5d82bb                       ; 004baa51 | g_CHAR_ARRAY_005d82bb
+    PUSH 0x5d82bb                       ; 004baa51 | g_CheatStr_WeatherSnow
         ;   Label: LAB_004baa51
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004baa56
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2461,7 +2461,7 @@ section .text
     MOV dword ptr [EBX + 0x220],EAX     ; 004baafb
     JZ 0x004bac0d                       ; 004bab01
         ;   XREF to: 004bac0d (CONDITIONAL_JUMP)  ; LAB_004bac0d
-    PUSH 0x5d82f0                       ; 004bab07 | g_CHAR_ARRAY_005d82bb+0x35
+    PUSH 0x5d82f0                       ; 004bab07 | g_CheatStr_WeatherSnow+0x35
     PUSH 0x0                            ; 004bab0c
     MOV ESI,dword ptr [0x0061c068]      ; 004bab0e | g_CSound_PTR_0061c068
     MOV EBX,0x40800000                  ; 004bab14
@@ -2703,7 +2703,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004bae37
     JZ 0x004baee4                       ; 004bae3e
         ;   XREF to: 004baee4 (CONDITIONAL_JUMP)  ; LAB_004baee4
-    PUSH 0x5d8323                       ; 004bae44 | g_CHAR_ARRAY_005d8323
+    PUSH 0x5d8323                       ; 004bae44 | g_CheatStr_GeometryDebug
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004bae49
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004bae4e
@@ -2760,7 +2760,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004baed6
     AND EAX,0xff                        ; 004baed9
     MOV dword ptr [EBX + 0x234],EAX     ; 004baede
-    PUSH 0x5d8357                       ; 004baee4 | g_CHAR_ARRAY_005d8357
+    PUSH 0x5d8357                       ; 004baee4 | g_CheatStr_GasMask
         ;   Label: LAB_004baee4
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004baee9
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2812,7 +2812,7 @@ section .text
     PUSH 0x40a00000                     ; 004baf5c
     XOR BL,BL                           ; 004baf61
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004baf63
-    PUSH 0x5d838b                       ; 004baf6a | g_CHAR_ARRAY_005d8357+0x34
+    PUSH 0x5d838b                       ; 004baf6a | g_CheatStr_GasMask+0x34
     MOV byte ptr [0x01cb80f8],BL        ; 004baf6f | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0x25a8],0x42c80000 ; 004baf75
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004baf7f
@@ -2829,7 +2829,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004baf97
     JZ 0x004b916f                       ; 004baf9e
         ;   XREF to: 004b916f (CONDITIONAL_JUMP)  ; LAB_004b916f
-    PUSH 0x5d839c                       ; 004bafa4 | g_CHAR_ARRAY_005d839c
+    PUSH 0x5d839c                       ; 004bafa4 | g_CheatStr_LithiumAmmo
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004bafa9
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004bafae
@@ -2877,12 +2877,12 @@ section .text
     JNZ 0x004b916f                      ; 004bb017
         ;   XREF to: 004b916f (CONDITIONAL_JUMP)  ; LAB_004b916f
     XOR BH,BH                           ; 004bb01d
-    MOV ESI,dword ptr [0x01cb80e4]      ; 004bb01f | g_INT_01cb80e4
+    MOV ESI,dword ptr [0x01cb80e4]      ; 004bb01f | g_SoundDebugEnabled
     MOV byte ptr [0x01cb80f8],BH        ; 004bb025 | g_BYTE_01cb80f8
     TEST ESI,ESI                        ; 004bb02b
     SETZ AL                             ; 004bb02d
     AND EAX,0xff                        ; 004bb030
-    MOV [0x01cb80e4],EAX                ; 004bb035 | g_INT_01cb80e4
+    MOV [0x01cb80e4],EAX                ; 004bb035 | g_SoundDebugEnabled
     JMP 0x004b916f                      ; 004bb03a
         ;   XREF to: 004b916f (UNCONDITIONAL_JUMP)  ; LAB_004b916f
     INC dword ptr [ESP + 0x2bc]         ; 004bb03f

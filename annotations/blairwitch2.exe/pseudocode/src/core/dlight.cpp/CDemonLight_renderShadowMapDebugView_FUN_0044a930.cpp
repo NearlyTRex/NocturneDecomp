@@ -59,8 +59,8 @@ LAB_0044aa57:
                                (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) * this_ptr->shadow_map_width]
           ;
           if ((uVar2 < 0xffff) && (uVar2 != 0)) {
-            *(int *)(g_ARRAY_PTR_01c2a38c[screen_y + iVar5 / iVar1] + (screen_x + iVar3 / iVar1) * 4
-                    ) = ((int)((uVar2 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
+            *(int *)(g_ScreenBufferArray[screen_y + iVar5 / iVar1] + (screen_x + iVar3 / iVar1) * 4)
+                 = ((int)((uVar2 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
           }
         }
       }

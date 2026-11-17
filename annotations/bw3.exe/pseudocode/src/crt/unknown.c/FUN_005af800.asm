@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_005ad524 at 005ad526
 ;
 ; Referenced Globals:
-;   uint g_UINT_00607e7c = 0x1
-;   int g_INT_02d25930
+;   uint g_CodePage = 0x1
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -51,8 +51,8 @@ section .text
     ADD ESP,0xc                         ; 005af846
     XOR EDX,EDX                         ; 005af849
     XOR EAX,EAX                         ; 005af84b
-    MOV dword ptr [0x02d25930],EDX      ; 005af84d | g_INT_02d25930
-    MOV dword ptr [0x00607e7c],EDX      ; 005af853 | g_UINT_00607e7c
+    MOV dword ptr [0x02d25930],EDX      ; 005af84d | g_MultibyteLocaleActive
+    MOV dword ptr [0x00607e7c],EDX      ; 005af853 | g_CodePage
     JMP 0x005af961                      ; 005af859
         ;   XREF to: 005af961 (UNCONDITIONAL_JUMP)  ; LAB_005af961
     CMP ESI,-0x4                        ; 005af85e
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 005af893 (CONDITIONAL_JUMP)  ; LAB_005af893
     MOV EBP,0x1                         ; 005af8a1
     MOV EAX,0x3a4                       ; 005af8a6
-    MOV dword ptr [0x02d25930],EBP      ; 005af8ab | g_INT_02d25930
-    MOV [0x00607e7c],EAX                ; 005af8b1 | g_UINT_00607e7c
+    MOV dword ptr [0x02d25930],EBP      ; 005af8ab | g_MultibyteLocaleActive
+    MOV [0x00607e7c],EAX                ; 005af8b1 | g_CodePage
     JMP 0x005af95f                      ; 005af8b6
         ;   XREF to: 005af95f (UNCONDITIONAL_JUMP)  ; LAB_005af95f
     TEST ESI,ESI                        ; 005af8bb
@@ -115,11 +115,11 @@ section .text
     ADD ESP,0xc                         ; 005af8f0
     XOR ECX,ECX                         ; 005af8f3
     MOV AH,byte ptr [ESP + 0x6]         ; 005af8f5
-    MOV dword ptr [0x02d25930],ECX      ; 005af8f9 | g_INT_02d25930
+    MOV dword ptr [0x02d25930],ECX      ; 005af8f9 | g_MultibyteLocaleActive
     TEST AH,AH                          ; 005af8ff
     JZ 0x005af90d                       ; 005af901
         ;   XREF to: 005af90d (CONDITIONAL_JUMP)  ; LAB_005af90d
-    MOV dword ptr [0x02d25930],0x1      ; 005af903 | g_INT_02d25930
+    MOV dword ptr [0x02d25930],0x1      ; 005af903 | g_MultibyteLocaleActive
     XOR EBX,EBX                         ; 005af90d
         ;   Label: LAB_005af90d
     MOV CL,0x1                          ; 005af90f
@@ -153,14 +153,14 @@ section .text
     JNZ 0x005af959                      ; 005af942
         ;   XREF to: 005af959 (CONDITIONAL_JUMP)  ; LAB_005af959
     CALL dword ptr CS:[0x5b35c4]        ; 005af944
-    MOV [0x00607e7c],EAX                ; 005af94b | g_UINT_00607e7c
+    MOV [0x00607e7c],EAX                ; 005af94b | g_CodePage
     XOR EAX,EAX                         ; 005af950
     ADD ESP,0x14                        ; 005af952
     POP EBP                             ; 005af955
     POP ESI                             ; 005af956
     POP EBX                             ; 005af957
     RET                                 ; 005af958
-    MOV dword ptr [0x00607e7c],ESI      ; 005af959 | g_UINT_00607e7c
+    MOV dword ptr [0x00607e7c],ESI      ; 005af959 | g_CodePage
         ;   Label: LAB_005af959
     XOR EAX,EAX                         ; 005af95f
         ;   Label: LAB_005af95f

@@ -29,7 +29,7 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
      ((this_ptr->base).additive != 0)) {
     if (((this_ptr->base).is_spectral != 0) &&
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (g_CEventList_PTR_005fba60,"heroCanSee"), iVar3 == 0)) {
+                          (g_CEventListPtr,"heroCanSee"), iVar3 == 0)) {
       return 0;
     }
     if (this_ptr->pool_me == 0) {
@@ -81,7 +81,7 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
                   (this_ptr_00,-1,0x2e7,1,0);
         engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
                   (g_CDemonRenderer_PTR_005f2afc);
-        if (g_INT_01d8e40c != 0) {
+        if (g_RenderMotionDebug != 0) {
           core_motion_cpp_CMotionController_render_FUN_004fcdc0
                     (&this_ptr_00->base,(CDemonActor *)this_ptr);
         }

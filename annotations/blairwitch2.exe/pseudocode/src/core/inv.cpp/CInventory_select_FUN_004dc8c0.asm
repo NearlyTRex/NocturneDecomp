@@ -33,7 +33,7 @@
 ;   TerminatedCString s_CGasMask_005db9cc
 ;   TerminatedCString s_CBoxActor_005db9d5
 ;   double g_DOUBLE_005db9e2 = 98
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -449,7 +449,7 @@ section .text
     PUSH 0x1                            ; 004dcc84
     ADD EAX,0x75c                       ; 004dcc86
     PUSH EAX                            ; 004dcc8b
-    MOV ECX,dword ptr [0x006141f0]      ; 004dcc8c | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004dcc8c | g_CEventListPtr
     PUSH ECX                            ; 004dcc92
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004dcc93
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)

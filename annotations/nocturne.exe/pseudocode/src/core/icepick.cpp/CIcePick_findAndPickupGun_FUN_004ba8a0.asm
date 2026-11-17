@@ -21,7 +21,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
-;   undefined4 g_CTommyGunActorType_02dd0fd0.name_hash
+;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -87,7 +87,7 @@ section .text
     TEST EAX,EAX                        ; 004ba932
     JNZ 0x004ba9a7                      ; 004ba934
         ;   XREF to: 004ba9a7 (CONDITIONAL_JUMP)  ; LAB_004ba9a7
-    MOV EAX,[0x02dd1008]                ; 004ba936 | g_CTommyGunActorType_02dd0fd0.name_hash
+    MOV EAX,[0x02dd1008]                ; 004ba936 | g_CTommyGunClassInfo.name_hash
     PUSH EAX                            ; 004ba93b
     PUSH EBX                            ; 004ba93c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004ba93d

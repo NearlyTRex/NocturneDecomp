@@ -16,10 +16,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_005bdf82
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   uchar[257] g_CharacterClassificationTable
 ;   CConsole g_CConsoleInstance
-;   int g_INT_01c734ac
-;   char[256] g_CHAR_ARRAY_01c734b0
+;   int g_EventDryRun
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_0048c188
     INC AL                              ; 0048c18a
     AND EAX,0xff                        ; 0048c18c
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0048c191 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0048c191 | g_CharacterClassificationTable
     JZ 0x0048c19d                       ; 0048c198
         ;   XREF to: 0048c19d (CONDITIONAL_JUMP)  ; LAB_0048c19d
     INC EDX                             ; 0048c19a
@@ -74,7 +74,7 @@ section .text
     MOV DL,byte ptr [EAX + -0x1]        ; 0048c1c3
     INC DL                              ; 0048c1c6
     AND EDX,0xff                        ; 0048c1c8
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0048c1ce | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0048c1ce | g_CharacterClassificationTable
     JZ 0x0048c1e2                       ; 0048c1d5
         ;   XREF to: 0048c1e2 (CONDITIONAL_JUMP)  ; LAB_0048c1e2
     DEC EAX                             ; 0048c1d7
@@ -102,14 +102,14 @@ section .text
     TEST EAX,EAX                        ; 0048c1f5
     JNZ 0x0048c186                      ; 0048c1f7
         ;   XREF to: 0048c186 (CONDITIONAL_JUMP)  ; LAB_0048c186
-    CMP dword ptr [0x01c734ac],0x0      ; 0048c1f9 | g_INT_01c734ac
+    CMP dword ptr [0x01c734ac],0x0      ; 0048c1f9 | g_EventDryRun
     JZ 0x0048c20b                       ; 0048c200
         ;   XREF to: 0048c20b (CONDITIONAL_JUMP)  ; LAB_0048c20b
     ADD ESP,0x200                       ; 0048c202
     POP ESI                             ; 0048c208
     POP EBX                             ; 0048c209
     RET                                 ; 0048c20a
-    PUSH 0x1c734b0                      ; 0048c20b | g_CHAR_ARRAY_01c734b0
+    PUSH 0x1c734b0                      ; 0048c20b | g_EventErrorMessageBuffer
         ;   Label: LAB_0048c20b
     PUSH 0x5bdf82                       ; 0048c210 | = "%s\n"
     MOV ECX,dword ptr [0x005f1690]      ; 0048c215 | g_CConsolePtr

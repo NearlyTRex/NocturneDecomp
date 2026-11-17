@@ -48,11 +48,11 @@ LAB_005ba3da:
       if (bVar2 < 0x4d) {
         if (bVar2 < 0x42) {
           if (((bVar2 < 0x25) || (bVar2 < 0x26)) || (bVar2 != 0x41)) goto LAB_005ba784;
-          pacVar7 = (char (*) [4])g_CHAR_PTR_ARRAY_0061eed4[time_ptr->tm_wday];
+          pacVar7 = (char (*) [4])g_WeekdayNamesLong[time_ptr->tm_wday];
           goto LAB_005ba790;
         }
         if (bVar2 < 0x43) {
-          pacVar7 = (char (*) [4])g_CHAR_PTR_ARRAY_0061ef20[time_ptr->tm_mon];
+          pacVar7 = (char (*) [4])g_MonthNamesLong[time_ptr->tm_mon];
           goto LAB_005ba790;
         }
         if (0x47 < bVar2) {
@@ -126,7 +126,7 @@ LAB_005ba729:
       }
     }
     else if (bVar2 < 0x62) {
-      pacVar7 = g_CHAR_ARRAY_ARRAY_0061eeb8 + time_ptr->tm_wday;
+      pacVar7 = g_WeekdayNamesShort + time_ptr->tm_wday;
     }
     else if (bVar2 < 0x6e) {
       if (bVar2 < 100) {
@@ -136,7 +136,7 @@ LAB_005ba729:
           goto LAB_005ba3da;
         }
 LAB_005ba572:
-        pacVar7 = g_CHAR_ARRAY_ARRAY_0061eef0 + time_ptr->tm_mon;
+        pacVar7 = g_MonthNamesShort + time_ptr->tm_mon;
       }
       else if (bVar2 < 0x65) {
         FUN_005ba370(local_a0,time_ptr->tm_mday);

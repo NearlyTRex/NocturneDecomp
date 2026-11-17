@@ -13,6 +13,6 @@ void __cdecl core_netgame_cpp_resetGameTime_FUN_00503a00(void)
   
   g_UINT_01da6478 = 1;
   iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
-  g_INT_01da6474 = iVar1 / 0x12;
+  g_LastPingTime = iVar1 / 0x12;
   return;
 }

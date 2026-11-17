@@ -39,13 +39,13 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
   CPopcorn *pCVar20;
   CRainDrop *pCVar22;
   
-  this_ptr_00 = g_CSmokeParticle_ARRAY_01c74ea0;
-  g_INT_01c74e9c = 0;
+  this_ptr_00 = g_SmokeParticlePool;
+  g_SmokeParticleAllocIndex = 0;
   do {
     core_fire_cpp_CSmokeParticle_reset_FUN_00496d50(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != g_CSmokeParticle_ARRAY_01c74ea0 + sizeof(g_CSmokeParticle_ARRAY_01c74ea0) / sizeof(g_CSmokeParticle_ARRAY_01c74ea0[0]));
-  g_INT_01c8aea4 = 0;
+  } while (this_ptr_00 != g_SmokeParticlePool + sizeof(g_SmokeParticlePool) / sizeof(g_SmokeParticlePool[0]));
+  g_BulletHoleAllocIndex = 0;
   g_INT_01c8aea0 = 0;
   g_INT_01cb4eb0 = 0;
   pCVar1 = g_SparkPool;
@@ -59,12 +59,12 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
     pCVar3 = pCVar15 + 1;
     (pCVar15->base).lifetime_remaining = 0.0;
     pCVar15 = pCVar3;
-  } while (pCVar3 != (CFirefly *)&g_INT_01cbb9b8);
-  pCVar4 = g_CMuzzleFlash_ARRAY_01cbb9bc;
+  } while (pCVar3 != (CFirefly *)&g_MuzzleFlashAllocIndex);
+  pCVar4 = g_MuzzleFlashPool;
   do {
     pCVar4->frames_remaining = 0;
     pCVar4 = pCVar4 + 1;
-  } while (pCVar4 != g_CMuzzleFlash_ARRAY_01cbb9bc + sizeof(g_CMuzzleFlash_ARRAY_01cbb9bc) / sizeof(g_CMuzzleFlash_ARRAY_01cbb9bc[0]));
+  } while (pCVar4 != g_MuzzleFlashPool + sizeof(g_MuzzleFlashPool) / sizeof(g_MuzzleFlashPool[0]));
   g_INT_01c8eea8 = 0;
   g_INT_01c8eeac = 0;
   g_INT_01cbc0ec = 0;
@@ -74,20 +74,20 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
     (pCVar5->base).lifetime_remaining = 0.0;
     pCVar5 = pCVar6;
   } while (pCVar6 != (CGlassParticle *)&g_INT_01cefd10);
-  pCVar7 = g_CBulletTrail_ARRAY_01cefd14;
+  pCVar7 = g_BulletTrailPool;
   do {
     pCVar8 = pCVar7 + 1;
     pCVar7->frames_remaining = 0;
     pCVar7 = pCVar8;
-  } while (pCVar8 != g_CBulletTrail_ARRAY_01cefd14 + sizeof(g_CBulletTrail_ARRAY_01cefd14) / sizeof(g_CBulletTrail_ARRAY_01cefd14[0]));
-  g_INT_01cefe7c = 0;
+  } while (pCVar8 != g_BulletTrailPool + sizeof(g_BulletTrailPool) / sizeof(g_BulletTrailPool[0]));
+  g_FireballAllocIndex = 0;
   pCVar9 = g_FireballPool;
   do {
     pCVar10 = pCVar9 + 1;
     (pCVar9->base).lifetime_remaining = 0.0;
     pCVar9 = pCVar10;
   } while (pCVar10 != g_FireballPool + sizeof(g_FireballPool) / sizeof(g_FireballPool[0]));
-  g_INT_01cf2780 = 0;
+  g_RockAllocIndex = 0;
   pCVar11 = g_RockPool;
   do {
     pCVar12 = pCVar11 + 1;
@@ -100,14 +100,14 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
     pCVar14 = pCVar13 + 1;
     (pCVar13->base).lifetime_remaining = 0.0;
     pCVar13 = pCVar14;
-  } while (pCVar14 != (CLeaf *)&g_INT_01cf5088);
-  g_INT_01cba2b4 = 0;
+  } while (pCVar14 != (CLeaf *)&g_LaserBeamActiveCount);
+  g_TossAllocIndex = 0;
   pCVar15 = CFirefly_ARRAY_01cba2b8;
   do {
     pCVar3 = pCVar15 + 1;
     (pCVar15->base).lifetime_remaining = 0.0;
     pCVar15 = pCVar3;
-  } while (pCVar3 != (CFirefly *)&g_INT_01cbb9b8);
+  } while (pCVar3 != (CFirefly *)&g_MuzzleFlashAllocIndex);
   this_ptr_01 = g_CExplosion_ARRAY_01cf6090;
   g_INT_01cf608c = 0;
   do {
@@ -127,7 +127,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
     this_ptr_03 = this_ptr_03 + 1;
   } while (this_ptr_03 != g_CCrater_ARRAY_01cfaff8 + sizeof(g_CCrater_ARRAY_01cfaff8) / sizeof(g_CCrater_ARRAY_01cfaff8[0]));
   this_ptr_04 = g_CGunFlame_ARRAY_01cfb8bc;
-  g_INT_01cfb8b8 = 0;
+  g_LightningBoltAllocIndex = 0;
   do {
     core_fire_cpp_CExplosion_ctor_FUN_0049c670((CExplosion *)this_ptr_04);
     this_ptr_04 = this_ptr_04 + 1;
@@ -151,7 +151,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
     (pCVar17->base).lifetime_remaining = 0.0;
     pCVar17 = pCVar18;
   } while (pCVar18 != g_ShellPool + sizeof(g_ShellPool) / sizeof(g_ShellPool[0]));
-  g_INT_01d03b88 = 0;
+  g_RainDropAllocIndex = 0;
   pCVar19 = g_PopcornPool;
   do {
     pCVar20 = pCVar19 + 1;

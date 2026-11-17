@@ -42,14 +42,14 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitOp62_FUN_00408010
     pSVar3 = prim + 1;
     for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
       iVar1 = (pSVar3->base).type;
-      *(int *)((int)g_INT_ARRAY_006b029c + iVar4) = iVar1;
+      *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
       g_SRenderVertex_ARRAY_005c5014[iVar1].u = (pSVar3->base).count;
       iVar4 = iVar4 + 4;
       vertex_count = vertex_count + 1;
       g_SRenderVertex_ARRAY_005c5014[(pSVar3->base).type].v = (int)(pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_INT_ARRAY_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

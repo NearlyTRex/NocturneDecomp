@@ -59,25 +59,25 @@
     },
     {
       "addr": "00766c70",
-      "name": "g_INT_00766c70",
+      "name": "g_ClippedVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de313c",
-      "name": "g_INT_02de313c",
+      "name": "g_ClipVertexCountStage4",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de4344",
-      "name": "g_SRenderVertex_ARRAY_02de4340[0].projected_vertex.transformed_y",
+      "name": "g_ClipVertexBufferStage4[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02de4348",
-      "name": "g_SRenderVertex_ARRAY_02de4340[0].projected_vertex.transformed_z",
+      "name": "g_ClipVertexBufferStage4[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     }
@@ -317,19 +317,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x766c78 matches address of g_SRenderVertex_ARRAY_00766c74 (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x766c78 matches address of g_ClippedVertexBuffer (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 39,
       "match": "0x766c78",
       "severity": "moderate",
-      "text": "pSVar8 = (SRenderVertex *)(g_INT_00766c70 * 0x30 + 0x766c78 + (uint)bVar9 * -8);",
+      "text": "pSVar8 = (SRenderVertex *)(g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar9 * -8);",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0x766c78 matches address of g_SRenderVertex_ARRAY_00766c74 (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x766c78 matches address of g_ClippedVertexBuffer (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 75,
       "match": "0x766c78",
       "severity": "moderate",
-      "text": "pSVar8 = (SRenderVertex *)(g_INT_00766c70 * 0x30 + 0x766c78 + (uint)bVar9 * -8);",
+      "text": "pSVar8 = (SRenderVertex *)(g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar9 * -8);",
       "type": "raw_address_constant"
     },
     {

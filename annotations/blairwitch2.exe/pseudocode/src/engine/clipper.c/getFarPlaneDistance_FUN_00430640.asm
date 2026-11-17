@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_00609b34 = 0x7fffffff
+;   int g_FarPlaneDistance = 0x7fffffff
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x00609b34]                ; 00430640 | g_INT_00609b34
+    MOV EAX,[0x00609b34]                ; 00430640 | g_FarPlaneDistance
         ;   Label: engine_clipper.c_getFarPlaneDistance_FUN_00430640
     RET                                 ; 00430645
 

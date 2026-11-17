@@ -26,8 +26,8 @@
 ;   double g_DOUBLE_005cd3df = 0.5
 ;   float g_FLOAT_005cd3e7 = 0.3183099
 ;   double g_DOUBLE_005cd3ef = 0.00100000000000000
-;   undefined4 g_INT_ARRAY_01ed36ec[20]
-;   undefined4 g_INT_ARRAY_01ed36ec[21]
+;   undefined4 g_StrangerIndices[20]
+;   undefined4 g_StrangerIndices[21]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350
@@ -80,7 +80,7 @@ section .text
     SAHF                                ; 0051e3f0
     JA 0x0051e561                       ; 0051e3f1
         ;   XREF to: 0051e561 (CONDITIONAL_JUMP)  ; LAB_0051e561
-    MOV EAX,[0x01ed373c]                ; 0051e3f7 | g_INT_ARRAY_01ed36ec[20]
+    MOV EAX,[0x01ed373c]                ; 0051e3f7 | g_StrangerIndices[20]
         ;   Label: LAB_0051e3f7
     MOV EDX,dword ptr [EBX + 0x20c78]   ; 0051e3fc
     MOV dword ptr [EBX + 0x20c78],EAX   ; 0051e402
@@ -90,7 +90,7 @@ section .text
     SAHF                                ; 0051e412
     JBE 0x0051e420                      ; 0051e413
         ;   XREF to: 0051e420 (CONDITIONAL_JUMP)  ; LAB_0051e420
-    MOV EAX,[0x01ed3740]                ; 0051e415 | g_INT_ARRAY_01ed36ec[21]
+    MOV EAX,[0x01ed3740]                ; 0051e415 | g_StrangerIndices[21]
     MOV dword ptr [EBX + 0x20c78],EAX   ; 0051e41a
     MOV ECX,0x3fcccccd                  ; 0051e420
         ;   Label: LAB_0051e420

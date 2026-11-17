@@ -12,8 +12,8 @@ int __cdecl engine_special_cpp_setVideoModeX_FUN_005664e0(int width,int height,i
   int iVar1;
   
   g_INT_02cf6130 = 0;
-  if ((g_PTR_02cf608c != (byte *)0x0) &&
-     (iVar1 = (*(code *)g_PTR_02cf608c)(width,height,bits_per_pixel,flags), iVar1 != 0)) {
+  if ((g_APIDLL_setVideoModeX != (byte *)0x0) &&
+     (iVar1 = (*(code *)g_APIDLL_setVideoModeX)(width,height,bits_per_pixel,flags), iVar1 != 0)) {
     g_INT_02cf6130 = bits_per_pixel;
     return 1;
   }

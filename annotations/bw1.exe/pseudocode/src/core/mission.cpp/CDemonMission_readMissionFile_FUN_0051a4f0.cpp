@@ -126,14 +126,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
   this_ptr->actor_lookup_count = 0;
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   for (iVar2 = 0; iVar2 < local_24 + local_20; iVar2 = iVar2 + 1) {
-    pcVar7 = g_CHAR_ARRAY_0061f6c0;
+    pcVar7 = g_DefaultMissionActorClass;
     pcVar8 = acStack_8c;
     for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pcVar8 = *(uint *)pcVar7;
       pcVar7 = pcVar7 + ((uint)bVar9 * -2 + 1) * 4;
       pcVar8 = pcVar8 + ((uint)bVar9 * -2 + 1) * 4;
     }
-    pcVar7 = g_CHAR_ARRAY_0061f728;
+    pcVar7 = g_DefaultMissionActorName;
     pcVar8 = acStack_f0;
     for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pcVar8 = *(uint *)pcVar7;

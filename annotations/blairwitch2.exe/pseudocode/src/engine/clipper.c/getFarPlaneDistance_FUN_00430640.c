@@ -9,5 +9,5 @@
 int __cdecl engine_clipper_c_getFarPlaneDistance_FUN_00430640(void)
 
 {
-  return g_INT_00609b34;
+  return g_FarPlaneDistance;
 }

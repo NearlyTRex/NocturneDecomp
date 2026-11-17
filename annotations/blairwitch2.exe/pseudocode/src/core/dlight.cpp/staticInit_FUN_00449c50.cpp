@@ -9,8 +9,8 @@
 void __cdecl core_dlight_cpp_staticInit_FUN_00449c50(void)
 
 {
-  g_CVector3f_01b1387c.y = 0.0;
-  g_CVector3f_01b1387c.z = 0.0;
-  g_CVector3f_01b1387c.x = 0.0;
+  g_CoronaGeometryOrigin.y = 0.0;
+  g_CoronaGeometryOrigin.z = 0.0;
+  g_CoronaGeometryOrigin.x = 0.0;
   return;
 }

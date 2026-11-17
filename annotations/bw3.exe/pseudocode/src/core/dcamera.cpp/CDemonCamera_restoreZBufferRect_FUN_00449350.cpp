@@ -26,7 +26,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00449350(CDemo
     if (iVar4 <= rect_ptr->y_max) {
       iVar3 = iVar4 * 4;
       do {
-        piVar1 = (int *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar3);
+        piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar3);
         iVar2 = this_ptr->framebuffer_width * iVar4;
         iVar3 = iVar3 + 4;
         iVar4 = iVar4 + 1;

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Event_command_parse_erro_0057f397
-;   char[256] g_CHAR_ARRAY_01c08b60
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -27,7 +27,7 @@ section .text
         ;   Label: core_event.cpp_formatEventError_FUN_0047a210
     SUB ESP,0x4                         ; 0047a211
     PUSH 0x57f397                       ; 0047a214 | = "Event command parse error:\n"
-    PUSH 0x1c08b60                      ; 0047a219 | g_CHAR_ARRAY_01c08b60
+    PUSH 0x1c08b60                      ; 0047a219 | g_EventErrorMessageBuffer
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a21e
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x1c08b60                   ; 0047a223

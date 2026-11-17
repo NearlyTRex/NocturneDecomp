@@ -19,39 +19,39 @@ void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00411280(CBatCreature *thi
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
-  g_INT_ARRAY_007c374c[0] =
+  g_BatCreatureIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_007c374c[3] =
+  g_BatCreatureIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_007c374c[4] =
+  g_BatCreatureIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_007c374c[5] =
+  g_BatCreatureIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_007c374c[6] =
+  g_BatCreatureIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_007c374c[7] =
+  g_BatCreatureIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Foot",1);
-  g_INT_ARRAY_007c374c[8] =
+  g_BatCreatureIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Foot",1);
-  g_INT_ARRAY_007c374c[1] =
+  g_BatCreatureIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Hand",1);
-  g_INT_ARRAY_007c374c[2] =
+  g_BatCreatureIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Hand",1);
-  g_INT_ARRAY_007c374c[9] =
+  g_BatCreatureIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_007c374c[10] =
+  g_BatCreatureIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine1",1);
-  g_INT_ARRAY_007c374c[0xb] =
+  g_BatCreatureIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine2",1);
-  g_INT_ARRAY_007c374c[0] =
+  g_BatCreatureIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_007c374c[5] =
+  g_BatCreatureIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_007c374c[6] =
+  g_BatCreatureIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_007c374c[9] =
+  g_BatCreatureIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_007c374c[0xb] =
+  g_BatCreatureIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780

@@ -50,7 +50,7 @@
 ;   TerminatedCString s_Not_all_bytes_consumed_c_005d7992
 ;   TerminatedCString s_core_dcamera_cpp_005d79b8
 ;   TerminatedCString s_Error_writing_compressed_005d79cc
-;   double g_DOUBLE_005d79ef = 256
+;   double g_BackdropColorMultiplier = 256
 ;   ... and 21 more
 ;
 ; Called Functions:
@@ -85,21 +85,21 @@ section .text
     PUSH 0x1480e2c                      ; 0045361f
     MOV ESI,0x10                        ; 00453624
     XOR ECX,ECX                         ; 00453629
-    MOV dword ptr [0x013238cc],EDX      ; 0045362b | g_INT_013238cc
-    MOV dword ptr [0x01480e20],ECX      ; 00453631 | g_INT_01480e20
-    MOV dword ptr [0x01480e24],ECX      ; 00453637 | g_INT_01480e24
+    MOV dword ptr [0x013238cc],EDX      ; 0045362b | g_BackdropSaveActive
+    MOV dword ptr [0x01480e20],ECX      ; 00453631 | g_ImageProcessingState1
+    MOV dword ptr [0x01480e24],ECX      ; 00453637 | g_ImageProcessingState2
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0 ; 0045363d
         ;   XREF to: 0044c5e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0(SFogGrid * fog)
-    MOV EAX,[0x01481e38]                ; 00453642 | g_SFogGrid_01480e2c.scroll_vector.x
-    MOV EDI,dword ptr [0x01481e3c]      ; 00453647 | g_SFogGrid_01480e2c.scroll_vector.y
-    MOV EBP,dword ptr [0x01481e40]      ; 0045364d | g_SFogGrid_01480e2c.scroll_vector.z
+    MOV EAX,[0x01481e38]                ; 00453642 | g_CameraFogGrid.scroll_vector.x
+    MOV EDI,dword ptr [0x01481e3c]      ; 00453647 | g_CameraFogGrid.scroll_vector.y
+    MOV EBP,dword ptr [0x01481e40]      ; 0045364d | g_CameraFogGrid.scroll_vector.z
     ADD ESP,0x4                         ; 00453653
     OR EAX,EDI                          ; 00453656
-    MOV dword ptr [0x01480e28],ESI      ; 00453658 | g_INT_01480e28
+    MOV dword ptr [0x01480e28],ESI      ; 00453658 | g_ImageBytesPerPixel
     OR EAX,EBP                          ; 0045365e
     JNZ 0x0045366c                      ; 00453660
         ;   XREF to: 0045366c (CONDITIONAL_JUMP)  ; LAB_0045366c
-    MOV dword ptr [0x01480e28],0x1      ; 00453662 | g_INT_01480e28
+    MOV dword ptr [0x01480e28],0x1      ; 00453662 | g_ImageBytesPerPixel
     MOV EAX,dword ptr [ESP + 0x210]     ; 0045366c
         ;   Label: LAB_0045366c
     ADD EAX,0x40                        ; 00453673
@@ -161,7 +161,7 @@ section .text
     PUSH EAX                            ; 0045372d
     CALL support_trstream.cpp_COutStreamFile_write_FUN_005a18f0 ; 0045372e
         ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, void * data, int size)
-    MOV EBX,dword ptr [0x01481e48]      ; 00453733 | g_SFogGrid_01480e2c.density_multiplier
+    MOV EBX,dword ptr [0x01481e48]      ; 00453733 | g_CameraFogGrid.density_multiplier
     ADD ESP,0xc                         ; 00453739
     TEST EBX,EBX                        ; 0045373c
     JZ 0x00453c0d                       ; 0045373e
@@ -177,7 +177,7 @@ section .text
         ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, void * data, int size)
     ADD ESP,0xc                         ; 00453767
     MOV EAX,dword ptr [ESP + 0x210]     ; 0045376a
-    FLD double ptr [0x005d79ef]         ; 00453771 | g_DOUBLE_005d79ef
+    FLD double ptr [0x005d79ef]         ; 00453771 | g_BackdropColorMultiplier
     FLD float ptr [EAX + 0x4]           ; 00453777
     FMUL ST1                            ; 0045377a
     CALL crt_math.c_round_FUN_005c03a0  ; 0045377c
@@ -205,7 +205,7 @@ section .text
     CALL support_codec.cpp_CLZWCompress_init_FUN_004434e0 ; 004537c9
         ;   XREF to: 004434e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_004434e0(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 004537ce
-    MOV EDI,dword ptr [0x01480e28]      ; 004537d1 | g_INT_01480e28
+    MOV EDI,dword ptr [0x01480e28]      ; 004537d1 | g_ImageBytesPerPixel
     MOV dword ptr [ESP + 0x1f4],ESI     ; 004537d7
     TEST EDI,EDI                        ; 004537de
     JLE 0x00453ba0                      ; 004537e0
@@ -249,7 +249,7 @@ section .text
     CMP EDX,EBP                         ; 00453890
     JLE 0x004538e8                      ; 00453892
         ;   XREF to: 004538e8 (CONDITIONAL_JUMP)  ; LAB_004538e8
-    MOV EAX,dword ptr [ESI]             ; 00453894 | g_INT_ARRAY_00b36198[320] | g_INT_ARRAY_00b36198[640] | g_INT_ARRAY_00b36198[641]
+    MOV EAX,dword ptr [ESI]             ; 00453894 | g_PrecomputedDepthBuffer[320] | g_PrecomputedDepthBuffer[640] | g_PrecomputedDepthBuffer[641]
         ;   Label: LAB_00453894
     CMP EAX,0x7fffffff                  ; 00453896
     JZ 0x00453c10                       ; 0045389b
@@ -435,7 +435,7 @@ section .text
         ;   Label: LAB_00453b5c
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 00453b63
     MOV EDX,dword ptr [ESP + 0x1f4]     ; 00453b6a
-    MOV ECX,dword ptr [0x01480e28]      ; 00453b71 | g_INT_01480e28
+    MOV ECX,dword ptr [0x01480e28]      ; 00453b71 | g_ImageBytesPerPixel
     ADD EBP,0x12c00                     ; 00453b77
     ADD EAX,0x12c00                     ; 00453b7d
     INC EDX                             ; 00453b82

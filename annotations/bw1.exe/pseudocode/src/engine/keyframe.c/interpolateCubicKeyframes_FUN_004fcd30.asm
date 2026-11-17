@@ -11,15 +11,15 @@
 ;   TerminatedCString s_Bad_keyframe_1_005e6a7a
 ;   TerminatedCString s_engine_keyframe_c_005e6a89
 ;   TerminatedCString s_ZBP_not_found_005e6a9e
-;   double g_DOUBLE_005e6ab3 = 0.0000152587890625
-;   float g_FLOAT_005e6abb = -0.5
-;   float g_FLOAT_005e6abf = 0.5
-;   double g_DOUBLE_005e6ac3 = 65536
-;   float g_FLOAT_005e6acb = 1.5
-;   float g_FLOAT_005e6acf = -2.5
-;   float g_FLOAT_005e6ad3 = 2
-;   float g_FLOAT_005e6ad7 = -1.5
-;   int g_INT_01c43534
+;   double g_SplineNormalizer = 0.0000152587890625
+;   float g_SplineCoeff_T3_W0 = -0.5
+;   float g_SplineCoeff_T1_W0 = 0.5
+;   double g_SplineCoeff_Scale = 65536
+;   float g_SplineCoeff_T3_W2 = 1.5
+;   float g_SplineCoeff_T2_W2 = -2.5
+;   float g_SplineCoeff_T2_W3 = 2
+;   float g_SplineCoeff_T3_W3 = -1.5
+;   int g_AnimationTimerValue
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -71,7 +71,7 @@ section .text
     POP EDX                             ; 004fcd75
     SHRD EAX,EDX,0x10                   ; 004fcd76
     XOR EAX,ECX                         ; 004fcd7a
-    MOV EDX,dword ptr [0x01c43534]      ; 004fcd7c | g_INT_01c43534
+    MOV EDX,dword ptr [0x01c43534]      ; 004fcd7c | g_AnimationTimerValue
     MOV ECX,EAX                         ; 004fcd82
     MOV EAX,EDX                         ; 004fcd84
     SAR EDX,0x1f                        ; 004fcd86
@@ -136,40 +136,40 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 004fce34
     MOV dword ptr [ESP + 0x2c],EAX      ; 004fce37
     FILD dword ptr [ESP + 0x2c]         ; 004fce3b
-    FMUL double ptr [0x005e6ab3]        ; 004fce3f | g_DOUBLE_005e6ab3
+    FMUL double ptr [0x005e6ab3]        ; 004fce3f | g_SplineNormalizer
     FLD ST0                             ; 004fce45
     FMUL ST1                            ; 004fce47
     FLD ST0                             ; 004fce49
     FMUL ST2                            ; 004fce4b
     FLD ST1                             ; 004fce4d
-    FMUL float ptr [0x005e6ad3]         ; 004fce4f | g_FLOAT_005e6ad3
+    FMUL float ptr [0x005e6ad3]         ; 004fce4f | g_SplineCoeff_T2_W3
     FLD ST1                             ; 004fce55
-    FMUL float ptr [0x005e6abb]         ; 004fce57 | g_FLOAT_005e6abb
+    FMUL float ptr [0x005e6abb]         ; 004fce57 | g_SplineCoeff_T3_W0
     FLD ST2                             ; 004fce5d
-    FMUL float ptr [0x005e6acb]         ; 004fce5f | g_FLOAT_005e6acb
+    FMUL float ptr [0x005e6acb]         ; 004fce5f | g_SplineCoeff_T3_W2
     FLD ST3                             ; 004fce65
     FXCH ST2                            ; 004fce67
     FADD ST0,ST5                        ; 004fce69
     FXCH ST2                            ; 004fce6b
-    FMUL float ptr [0x005e6ad7]         ; 004fce6d | g_FLOAT_005e6ad7
+    FMUL float ptr [0x005e6ad7]         ; 004fce6d | g_SplineCoeff_T3_W3
     FXCH ST6                            ; 004fce73
-    FMUL float ptr [0x005e6abf]         ; 004fce75 | g_FLOAT_005e6abf
+    FMUL float ptr [0x005e6abf]         ; 004fce75 | g_SplineCoeff_T1_W0
     FXCH ST4                            ; 004fce7b
-    FMUL float ptr [0x005e6abf]         ; 004fce7d | g_FLOAT_005e6abf
+    FMUL float ptr [0x005e6abf]         ; 004fce7d | g_SplineCoeff_T1_W0
     FXCH ST4                            ; 004fce83
     FSTP float ptr [ESP + 0x2c]         ; 004fce85
     FXCH                                ; 004fce89
     FSUB float ptr [ESP + 0x2c]         ; 004fce8b
     FLD ST4                             ; 004fce8f
-    FMUL float ptr [0x005e6abf]         ; 004fce91 | g_FLOAT_005e6abf
+    FMUL float ptr [0x005e6abf]         ; 004fce91 | g_SplineCoeff_T1_W0
     FXCH                                ; 004fce97
-    FMUL double ptr [0x005e6ac3]        ; 004fce99 | g_DOUBLE_005e6ac3
+    FMUL double ptr [0x005e6ac3]        ; 004fce99 | g_SplineCoeff_Scale
     FXCH                                ; 004fce9f
     FSUBP ST4,ST0                       ; 004fcea1
     FXCH ST4                            ; 004fcea3
-    FMUL float ptr [0x005e6acf]         ; 004fcea5 | g_FLOAT_005e6acf
+    FMUL float ptr [0x005e6acf]         ; 004fcea5 | g_SplineCoeff_T2_W2
     FXCH ST3                            ; 004fceab
-    FMUL double ptr [0x005e6ac3]        ; 004fcead | g_DOUBLE_005e6ac3
+    FMUL double ptr [0x005e6ac3]        ; 004fcead | g_SplineCoeff_Scale
     FXCH ST3                            ; 004fceb3
     FADDP                               ; 004fceb5
     FXCH ST4                            ; 004fceb7
@@ -178,9 +178,9 @@ section .text
     FADDP ST4,ST0                       ; 004fcebd
     FADD float ptr [ESP + 0x2c]         ; 004fcebf
     FXCH ST3                            ; 004fcec3
-    FMUL double ptr [0x005e6ac3]        ; 004fcec5 | g_DOUBLE_005e6ac3
+    FMUL double ptr [0x005e6ac3]        ; 004fcec5 | g_SplineCoeff_Scale
     FXCH ST3                            ; 004fcecb
-    FMUL double ptr [0x005e6ac3]        ; 004fcecd | g_DOUBLE_005e6ac3
+    FMUL double ptr [0x005e6ac3]        ; 004fcecd | g_SplineCoeff_Scale
     SHL EBX,0x2                         ; 004fced3
     MOV ECX,dword ptr [EDX + 0x14]      ; 004fced6
     ADD EBX,EDX                         ; 004fced9

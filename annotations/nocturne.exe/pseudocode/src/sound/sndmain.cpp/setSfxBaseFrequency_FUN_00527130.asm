@@ -14,7 +14,7 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054ef87
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -52,7 +52,7 @@ section .text
     TEST ECX,ECX                        ; 0052715e
     JZ 0x00527178                       ; 00527160
         ;   XREF to: 00527178 (CONDITIONAL_JUMP)  ; LAB_00527178
-    MOV ESI,dword ptr [0x02dc8318]      ; 00527162 | g_CSoundDevice_PTR_02dc8318
+    MOV ESI,dword ptr [0x02dc8318]      ; 00527162 | g_CSoundDevicePtr
     TEST ESI,ESI                        ; 00527168
     JZ 0x00527178                       ; 0052716a
         ;   XREF to: 00527178 (CONDITIONAL_JUMP)  ; LAB_00527178

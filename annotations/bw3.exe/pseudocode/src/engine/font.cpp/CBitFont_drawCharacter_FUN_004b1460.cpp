@@ -85,7 +85,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
       if (y <= local_cc) {
         iVar15 = y * 4;
         do {
-          pbVar6 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar15) + x);
+          pbVar6 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar15) + x);
           for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *pbVar6 = *local_d4;
@@ -103,7 +103,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
       if (y <= local_cc) {
         iVar15 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar15) + x);
+          puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar15) + x);
           for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = DAT_01d1ad60;
@@ -121,7 +121,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
       if (y <= local_cc) {
         iVar15 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar15) + x);
+          puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar15) + x);
           for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = (byte)g_INT_01d1ad74;
@@ -138,7 +138,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
     else if (y <= local_cc) {
       iVar15 = y * 4;
       do {
-        puVar7 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar15) + x);
+        puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar15) + x);
         for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
           if ((uint)*local_d4 != this_ptr->load_flags) {
             *puVar7 = (byte)color_mode;
@@ -161,7 +161,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             iVar3 = y * 4;
             do {
-              puVar11 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar3) + x * 2);
+              puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar3) + x * 2);
               for (iVar8 = x; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar11 = (short)this_ptr->palettes_display[iVar15][*local_d4];
@@ -180,7 +180,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             local_20 = y << 2;
             do {
-              puVar14 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_20) + x * 2);
+              puVar14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_20) + x * 2);
               for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
                 uVar4 = (uint)*local_d4;
                 iVar8 = g_INT_005fba38 *
@@ -191,28 +191,28 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                   uVar10 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
                   *puVar14 = (ushort)(((((this_ptr->palettes_display[iVar15][uVar4] &
-                                         g_MMX_INTEGER_00604e60.u32[0]) >>
+                                         g_RedMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_MMX_INTEGER_00604e60.u32[0] & uVar10) >>
+                                       (((g_RedMask16.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af78 <<
                                      (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
                              (ushort)(((((this_ptr->palettes_display[iVar15][uVar4] &
-                                         g_MMX_INTEGER_00604e68.u32[0]) >>
+                                         g_GreenMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_MMX_INTEGER_00604e68.u32[0] & uVar10) >>
+                                       (((g_GreenMask16.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
                              (ushort)((iVar8 * (((this_ptr->palettes_display[iVar15][uVar4] &
-                                                 g_MMX_INTEGER_00604e70.u32[0]) >>
+                                                 g_BlueMask16.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) +
-                                       iVar9 * (((uVar10 & g_MMX_INTEGER_00604e70.u32[0]) >>
+                                       iVar9 * (((uVar10 & g_BlueMask16.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
@@ -233,7 +233,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             iVar15 = y * 4;
             do {
-              puVar14 = (ushort *)(x * 2 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar15));
+              puVar14 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar15));
               for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar14 = g_USHORT_01d1ad62;
@@ -252,7 +252,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             local_24 = y << 2;
             do {
-              puVar14 = (ushort *)(x * 2 + *(int *)((int)g_ARRAY_PTR_01c5faec + local_24));
+              puVar14 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_24));
               for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
                 iVar8 = g_INT_005fba38 *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + iVar15 * 0x300];
@@ -262,26 +262,26 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                   uVar4 = (uint)g_USHORT_01d1ad62;
                   uVar10 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((g_MMX_INTEGER_00604e68.u32[0] & uVar4) >>
+                  *puVar14 = (ushort)(((((g_GreenMask16.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_MMX_INTEGER_00604e68.u32[0] & uVar10) >>
+                                       (((g_GreenMask16.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_MMX_INTEGER_00604e60.u32[0] & uVar10) >>
+                             (ushort)(((((g_RedMask16.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9 +
-                                       (((g_MMX_INTEGER_00604e60.u32[0] & uVar4) >>
+                                       (((g_RedMask16.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8
                                       >> 8) / (uint)g_INT_01c6af78 <<
                                      (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
-                             (ushort)(((((uVar4 & g_MMX_INTEGER_00604e70.u32[0]) >>
+                             (ushort)(((((uVar4 & g_BlueMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar10 & g_MMX_INTEGER_00604e70.u32[0]) >>
+                                       iVar9 * (((uVar10 & g_BlueMask16.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
@@ -302,7 +302,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             iVar15 = y * 4;
             do {
-              puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar15));
+              puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar15));
               for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar11 = (ushort)g_INT_01d1ad74;
@@ -321,7 +321,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             local_28 = y << 2;
             do {
-              puVar14 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_28) + x * 2);
+              puVar14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);
               for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
                 iVar8 = g_INT_005fba38 *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + iVar15 * 0x300];
@@ -330,26 +330,26 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                 if (iVar8 != 0) {
                   uVar4 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((g_INT_01d1ad74 & g_MMX_INTEGER_00604e68.u32[0]) >>
+                  *puVar14 = (ushort)(((((g_INT_01d1ad74 & g_GreenMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((uVar4 & g_MMX_INTEGER_00604e68.u32[0]) >>
+                                       (((uVar4 & g_GreenMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_INT_01d1ad74 & g_MMX_INTEGER_00604e60.u32[0]) >>
+                             (ushort)(((((g_INT_01d1ad74 & g_RedMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((uVar4 & g_MMX_INTEGER_00604e60.u32[0]) >>
+                                       (((uVar4 & g_RedMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af78 <<
                                      (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_INT_01d1ad74 & g_MMX_INTEGER_00604e70.u32[0]) >>
+                             (ushort)(((((g_INT_01d1ad74 & g_BlueMask16.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar4 & g_MMX_INTEGER_00604e70.u32[0]) >>
+                                       iVar9 * (((uVar4 & g_BlueMask16.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
@@ -366,10 +366,10 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
         }
       }
       else {
-        uVar1 = g_USHORT_ARRAY_01c6a070[color_mode];
+        uVar1 = g_ColorTable16[color_mode];
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar14 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar3) + x * 2);
+            puVar14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar3) + x * 2);
             for (iVar15 = x; iVar15 <= local_d0; iVar15 = iVar15 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar14 = uVar1;
@@ -386,7 +386,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             local_2c = y << 2;
             do {
-              puVar14 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_2c) + x * 2);
+              puVar14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_2c) + x * 2);
               for (iVar3 = x; iVar3 <= local_d0; iVar3 = iVar3 + 1) {
                 iVar8 = g_INT_005fba38 *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + iVar15 * 0x300];
@@ -396,26 +396,26 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                   uVar4 = (uint)uVar1;
                   uVar10 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((g_MMX_INTEGER_00604e70.u32[0] & uVar4) >>
+                  *puVar14 = (ushort)(((((g_BlueMask16.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar10 & g_MMX_INTEGER_00604e70.u32[0]) >>
+                                       iVar9 * (((uVar10 & g_BlueMask16.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
                                      (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_MMX_INTEGER_00604e68.u32[0] & uVar4) >>
+                             (ushort)(((((g_GreenMask16.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_MMX_INTEGER_00604e68.u32[0] & uVar10) >>
+                                       (((g_GreenMask16.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_MMX_INTEGER_00604e60.u32[0] & uVar4) >>
+                             (ushort)(((((g_RedMask16.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_MMX_INTEGER_00604e60.u32[0] & uVar10) >>
+                                       (((g_RedMask16.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af78 <<
@@ -438,7 +438,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
         iVar15 = (int)this_ptr->bitmap_files + iVar15 * 0x400 + -4;
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar12 = (uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3));
+            puVar12 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3));
             for (iVar8 = x; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar12 = *(uint *)(iVar15 + 0xdb4 + (uint)*local_d4 * 4);
@@ -456,7 +456,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004b1310
-                        ((uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3)),local_d4,
+                        ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3)),local_d4,
                          *color_table,(local_d0 - x) + 1,
                          *(uint *)(iVar15 + 0xdb4 + (uint)*local_d4 * 4));
               iVar3 = iVar3 + 4;
@@ -470,10 +470,10 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
       else if (color_mode == -2) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            piVar5 = (int *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3));
+            piVar5 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3));
             for (iVar15 = x; iVar15 <= local_d0; iVar15 = iVar15 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *piVar5 = g_INT_01d1ad64;
+                *piVar5 = g_ShadowColor32;
               }
               local_d4 = local_d4 + 1;
               piVar5 = piVar5 + 1;
@@ -487,8 +487,8 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004b1310
-                        ((uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3)),local_d4,
-                         *color_table,(local_d0 - x) + 1,g_INT_01d1ad64);
+                        ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3)),local_d4,
+                         *color_table,(local_d0 - x) + 1,g_ShadowColor32);
               iVar3 = iVar3 + 4;
               iVar15 = iVar15 + 1;
               local_d4 = local_d4 + local_c8 + (local_d0 - x) + 1;
@@ -500,7 +500,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
       else if (color_mode == -3) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            piVar5 = (int *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3));
+            piVar5 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3));
             for (iVar15 = x; iVar15 <= local_d0; iVar15 = iVar15 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *piVar5 = g_INT_01d1ad74;
@@ -517,7 +517,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004b1310
-                        ((uint *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar3) + x * 4),local_d4,
+                        ((uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + x * 4),local_d4,
                          *color_table,(local_d0 - x) + 1,g_INT_01d1ad74);
               iVar3 = iVar3 + 4;
               iVar15 = iVar15 + 1;
@@ -528,10 +528,10 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
         }
       }
       else {
-        uVar4 = g_UINT_ARRAY_01c6a270[color_mode];
+        uVar4 = g_ColorTable32[color_mode];
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar13 = (uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3));
+            puVar13 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3));
             for (iVar15 = x; iVar15 <= local_d0; iVar15 = iVar15 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar13 = uVar4;
@@ -548,7 +548,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004b1310
-                        ((uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c5faec + iVar3)),local_d4,
+                        ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar3)),local_d4,
                          *color_table,(local_d0 - x) + 1,uVar4);
               iVar3 = iVar3 + 4;
               local_d4 = local_d4 + local_c8 + (local_d0 - x) + 1;

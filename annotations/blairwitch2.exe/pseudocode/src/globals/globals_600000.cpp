@@ -495,8 +495,8 @@ CDemonActor_vtable g_CNecklaceVTable = {
 };
 
 // CDemonFilter*
-CDemonFilter* g_GlobalFilters = (CDemonFilter*)&CDemonFilter_ARRAY_01510e18;
-CDemonFilter* g_PlayerFilters = (CDemonFilter*)&CDemonFilter_ARRAY_01510e18;
+CDemonFilter* g_GlobalFilters = (CDemonFilter*)&g_PlayerFilterPool;
+CDemonFilter* g_PlayerFilters = (CDemonFilter*)&g_PlayerFilterPool;
 
 // CDemonRenderer*
 CDemonRenderer* g_CDemonRenderer_PTR_0060b27c = (CDemonRenderer*)&g_CDemonRenderer_01ba5c50;
@@ -941,7 +941,7 @@ CHand_full_vtable g_CHandVTable = {
 };
 
 // CVector3i[62]
-CVector3i g_CVector3i_ARRAY_0060a0fc[62] = {
+CVector3i g_CoronaVertexPositions[62] = {
     {
         .x = 0x00000000,
         .y = 0x00000100,
@@ -1255,7 +1255,7 @@ CVector3i g_CVector3i_ARRAY_0060a0fc[62] = {
 };
 
 // SFontGlyph[224]
-SFontGlyph g_SFontGlyph_ARRAY_00601440[224] = {
+SFontGlyph g_FontTable[224] = {
     {
         .width = 0x04,
         .bitmap = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
@@ -2155,7 +2155,7 @@ SFontGlyph g_SFontGlyph_ARRAY_00601440[224] = {
 };
 
 // SLightGlowTable
-SLightGlowTable g_SLightGlowTable_0060afc8 = {
+SLightGlowTable g_LightGlow = {
     .fuzz = {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "LITEFUZZ.RAW"
@@ -2258,7 +2258,7 @@ SLightGlowTable g_SLightGlowTable_0060afc8 = {
 };
 
 // SMRGLLightPrimitive[84]
-SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_0060a3e4[84] = {
+SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.count = 0x00000003},
         .normal = {
@@ -3102,17 +3102,17 @@ SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_0060a3e4[84] = {
 };
 
 // SMRGLPrimitiveQuad*[2000]
-SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_0060b288[2000] = {};
+SMRGLPrimitiveQuad* g_VisibleFacePointers[2000] = {};
 
 // SMRGLSkyTexture*
-SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_0060d1f0 = (SMRGLSkyTexture*)&g_SMRGLSkyTexture_ARRAY_01bd3a00;
+SMRGLSkyTexture* g_SkyDomeTexturePtr = (SMRGLSkyTexture*)&g_SkyDomeTextureData;
 
 // SMRGLTextureBasic
-SMRGLTextureBasic g_SMRGLTextureBasic_00609810 = {
+SMRGLTextureBasic g_BaronBlueGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLUEGLOW.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00609acc = {
+SMRGLTextureBasic g_BurnCharTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "CHAR2.RAW"
 };
@@ -3120,17 +3120,17 @@ SMRGLTextureBasic g_SMRGLTextureBasic_00609ae4 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLUSPARK.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00609ff0 = {
+SMRGLTextureBasic g_CameraBackdropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0060a0e4 = {
+SMRGLTextureBasic g_CoronaHeadliteTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
 
 // SMRGLTextureBasic[6]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00609a10[6] = {
+SMRGLTextureBasic g_EtherealBoltTextures[6] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BOLT1.RAW"
@@ -3169,7 +3169,7 @@ WatcomStaticDestructorNode DAT_0060994C = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)0x005F39F0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CDemonFilter_ARRAY_007bc9ec
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomStaticDestructorNode g_ConsoleDestructorNode = {
     .next = nullptr,
@@ -3187,7 +3187,7 @@ WatcomStaticDestructorNode DAT_0060A044 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)0x005F4FA0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CDemonFilter_ARRAY_01510e18
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomStaticDestructorNode DAT_0060A054 = {
     .next = nullptr,
@@ -3361,21 +3361,21 @@ WatcomTypeInfo g_CMorphModelTypeInfo = {
 };
 
 // char[104]
-char g_CHAR_ARRAY_00609590[104] = "";
+char g_PropertyNamePrefix[104] = "";
 
 // char[300]
-char g_CHAR_ARRAY_006095f8[300] = "";
+char g_LocalizationTemplate[300] = "";
 
 // float
 float g_FLOAT_0060b274 = 0.1f;
-float g_FLOAT_0060d1f4 = 5.0f;
+float g_SkyDomeVertexScale = 5.0f;
 
 // int
 int g_INT_006013f6 = 0x3B001F;
-int g_INT_0060936c = 0x1;
-int g_INT_00609370 = 0xF8;
+int g_TextWrapEnabled = 0x1;
+int g_CurrentTextColor = 0xF8;
 int g_INT_006093bc = 0x1;
-int g_INT_006093c0 = 0xFFFFFF;
+int g_CurrentRenderColor = 0xFFFFFF;
 int g_CDemonActorClassVersion = 0x7;
 int g_CAmmoClassVersion = 0x1;
 int g_CAmmoBoxClassVersion = 0x4;
@@ -3398,20 +3398,20 @@ int g_INT_00609960 = 0x2;
 int g_CBrideClassVersion = 0x4;
 int g_CBugsClassVersion = 0x1;
 int g_CCharacterClassVersion = 0x9;
-int g_INT_00609b30 = 0x1;
-int g_INT_00609b34 = 0x7FFFFFFF;
+int g_LineClippingDisabled = 0x1;
+int g_FarPlaneDistance = 0x7FFFFFFF;
 int g_CColonelClassVersion = 0x1;
 int g_CConstructClassVersion = 0x3;
 int g_CConveyorClassVersion = 0x2;
 int g_CZombieCowClassVersion = 0x2;
 int g_CCrateClassVersion = 0x2;
 int g_CCrossbowClassVersion = 0x1;
-int g_INT_00609f98 = 0x10000;
-int g_INT_00609f9c = 0xC80000;
-int g_INT_00609fa0 = 0x3;
-int g_INT_00609fa4 = 0x40;
-int g_INT_00609fa8 = 0x40;
-int g_INT_00609fac = 0x40;
+int g_CameraShakePeakValue = 0x10000;
+int g_CameraShakeSustainValue = 0xC80000;
+int g_CameraShakeState = 0x3;
+int g_FogColorIndexR = 0x40;
+int g_FogColorIndexG = 0x40;
+int g_FogColorIndexB = 0x40;
 int g_INT_0060a008 = -1;
 int g_CActorDestinationClassVersion = 0x4;
 int g_CDocClassVersion = 0xB;
@@ -3419,43 +3419,43 @@ int g_CZombieDogClassVersion = 0x2;
 int g_CDoorClassVersion = 0xD;
 int g_CDraculaBrideClassVersion = 0x9;
 int g_INT_0060b270 = 0x1;
-int g_INT_0060b284 = 0x1;
+int g_RenderPixelBudget = 0x1;
 int g_CDripClassVersion = 0x6;
 int g_CDroneClassVersion = 0x2;
-int g_INT_0060d254 = 0;
-int g_INT_0060d258 = 0;
-int g_INT_0060d25c = 0;
-int g_INT_0060d264 = 0;
+int g_SoftwareDeltaTextureU = 0;
+int g_SoftwareDeltaTextureV = 0;
+int g_SoftwareDeltaDepthZ = 0;
+int g_PerspectiveScanlinePixelCount = 0;
 
 // int[16]
-int g_INT_ARRAY_006094d0[16] = {
+int g_ColorLookupTable[16] = {
     0x000000FF, 0x000000F8, 0x00000002, 0x00000004, 0x00000001, 0x00000003, 0x00000005, 0x00000006,
     0x00000007, 0x000000F9, 0x000000FA, 0x000000FB, 0x000000E6, 0x000000F5, 0x00000000, 0x000000FD
 };
 
 // int[8]
-int g_INT_ARRAY_00609fb0[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1, -1, -1};
-int g_INT_ARRAY_00609fd0[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
+int g_CameraEdgeOffsetX[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1, -1, -1};
+int g_CameraEdgeOffsetY[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
 
 // short
-short g_SHORT_006013f4 = 0;
+short g_DaysInMonth_Normal = 0;
 short g_SHORT_0060140c = 0x16D;
-short g_SHORT_0060140e = 0;
+short g_DaysInMonth_Leap = 0;
 
 // uint
-uint g_UINT_0060d238 = 0;
-uint g_UINT_0060d23c = 0;
-uint g_UINT_0060d244 = 0;
+uint g_PerspectiveNextU = 0;
+uint g_PerspectiveNextV = 0;
+uint g_StartDepthZ = 0;
 
 // uint*
-uint* g_UINT_PTR_0060d268 = nullptr;
+uint* g_PerspectiveScanlineZPtr = nullptr;
 
 // undefined1
 undefined1 DAT_0060958f = 0x00;
 
 // void*
 void* g_PTR_006002e4 = (void*)0x005A86D0; // LAB_005a86d0
-void* g_PTR_0060d260 = nullptr;
+void* g_PerspectiveScanlineColorPtr = nullptr;
 
 // void*[54]
 void* g_CChainVTable[54] = {

@@ -7,7 +7,7 @@
 ; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createToss_FUN_0049e560
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 0047a0cc
     LEA EAX,[EBX + 0x20]                ; 0047a0cd
     PUSH EAX                            ; 0047a0d0
-    MOV ECX,dword ptr [0x00614d30]      ; 0047a0d1 | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0047a0d1 | g_CFireEffectPtr
     PUSH ECX                            ; 0047a0d7
     CALL core_fire.cpp_CFireEffect_createToss_FUN_0049e560 ; 0047a0d8
         ;   XREF to: 0049e560 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createToss_FUN_0049e560(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity, ...)

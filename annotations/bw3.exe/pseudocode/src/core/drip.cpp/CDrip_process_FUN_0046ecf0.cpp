@@ -94,7 +94,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046ecf0(CDrip *this_ptr,float delt
           CStack_38.x = (float)(fVar10 * (float10)20.0f * (float10)(float)fVar11);
           CStack_38.z = (float)(fVar12 * (float10)20.0f * (float10)(float)fVar11);
           model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                                (&g_CKeyFramedModelInstance_01c0b3dc);
+                                (&g_StalactiteRockModelInstance);
           iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_004a28e0
                     (g_CFireEffect_PTR_005fc5a0,&position->position,&CStack_38,model_ptr);

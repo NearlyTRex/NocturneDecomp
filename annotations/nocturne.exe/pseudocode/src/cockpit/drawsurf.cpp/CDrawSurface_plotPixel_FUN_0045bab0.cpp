@@ -22,7 +22,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
   }
   iVar2 = iVar3 * 2;
   iVar1 = iVar3 * 4;
-  if (g_INT_01b4d71c == 0) {
+  if (g_UseRGBConversion == 0) {
     if ((uint)g_BitsPerPixel < 0x10) {
       if (g_BitsPerPixel == 8) {
         *(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = (byte)g_INT_01b4d710;
@@ -54,14 +54,14 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
   else {
     if ((uint)g_BitsPerPixel < 0x11) {
       *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) =
-           *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >> ((byte)g_INT_01b4d720 & 0x1f) &
-           (ushort)g_INT_01b4d730;
+           *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >>
+           ((byte)g_OriginalColorValue & 0x1f) & (ushort)g_PackedPixelColor;
       return;
     }
     if (g_BitsPerPixel == 0x20) {
       *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) =
-           *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_INT_01b4d720 & 0x1f) &
-           g_INT_01b4d730;
+           *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)
+           & g_PackedPixelColor;
       return;
     }
   }

@@ -63,25 +63,25 @@
   "globals": [
     {
       "addr": "005ddfc4",
-      "name": "g_FLOAT_005ddfc4",
+      "name": "g_WorldToFloat",
       "type": "float",
       "value": "0.00390625"
     },
     {
       "addr": "02cfd900",
-      "name": "g_CVector3f_02cfd900",
+      "name": "g_ZeroVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02cfd904",
-      "name": "g_CVector3f_02cfd900.y",
+      "name": "g_ZeroVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cfd908",
-      "name": "g_CVector3f_02cfd900.z",
+      "name": "g_ZeroVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -249,7 +249,7 @@
       "line": 54,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != g_INT_ARRAY_02cfd980 + 0x24) {",
+      "text": "if ((int *)&stack0x00000000 != g_VisibleWaterTilesX + 0x24) {",
       "type": "stack_ref"
     },
     {
@@ -457,7 +457,7 @@
       "line": 55,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_11c.max.x = g_CVector3f_02cfd900.x;",
+      "text": "CStack_11c.max.x = g_ZeroVector.x;",
       "type": "unrolled_memcpy"
     },
     {

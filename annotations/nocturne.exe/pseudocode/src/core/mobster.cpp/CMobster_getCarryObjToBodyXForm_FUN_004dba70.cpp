@@ -32,7 +32,7 @@ CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_
   if (hand_index == 1) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                        ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
-                        g_CElephantGunActorType_01bcde44.name_hash);
+                        g_CElephantGunClassInfo.name_hash);
     if (pCVar1 == (CDemonActor *)0x0) {
       local_78[0].x = 0.228082;
       local_78[0].y = -0.13793;

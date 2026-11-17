@@ -29,11 +29,11 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(CPathMap *th
     iVar4 = iStack_18;
     do {
       _sprintf(acStack_11c,"%s",
-                 g_CHAR_PTR_ARRAY_005be130[(byte)g_CHAR_ARRAY_ARRAY_01e40098[0][iVar4]]);
-      if ((iVar1 == g_INT_01e3161c) && (iVar2 == g_INT_01e31620)) {
+                 g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]]);
+      if ((iVar1 == g_PathfindingCurrentX) && (iVar2 == g_PathfindingCurrentZ)) {
         acStack_11c[0] = 's';
       }
-      if ((iVar1 == g_INT_01e31624) && (iVar2 == g_INT_01e31628)) {
+      if ((iVar1 == g_PathfindingDestX) && (iVar2 == g_PathfindingDestZ)) {
         acStack_11c[0] = 'd';
       }
       x = g_WindowWidth / 2 + iVar3;

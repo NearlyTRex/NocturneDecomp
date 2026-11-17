@@ -32,9 +32,9 @@
 ;   TerminatedCString s_Waiting_on_sync_code_d_f_005eb9ab
 ;   TerminatedCString s_core_netgame_cpp_005eb9d2
 ;   TerminatedCString s_CNetGame_syncPlayers_inv_005eb9e6
-;   double g_DOUBLE_005eba10 = 0.0000152587890625
-;   double g_DOUBLE_005eba18 = 30
-;   double g_DOUBLE_005eba20 = 0.100000000000000
+;   double g_TimeoutScale = 0.0000152587890625
+;   double g_MaxTimeout = 30
+;   double g_SyncTimeout = 0.100000000000000
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   void* g_PTR_01d1bca0
 ;   char* g_CHAR_PTR_01d1d400
@@ -82,10 +82,10 @@ section .text
     MOV EBX,0x12                        ; 0052cfc8
     SAR EDX,0x1f                        ; 0052cfcd
     IDIV EBX                            ; 0052cfd0
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cfd2 | g_INT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cfd2 | g_LastPingTime
     MOV EDX,EAX                         ; 0052cfd8
     SUB EAX,ECX                         ; 0052cfda
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052cfdc | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052cfdc | g_LastPingTime
     TEST EAX,EAX                        ; 0052cfe2
     JL 0x0052d237                       ; 0052cfe4
         ;   XREF to: 0052d237 (CONDITIONAL_JUMP)  ; LAB_0052d237
@@ -202,7 +202,7 @@ section .text
     SUB EAX,EDI                         ; 0052d136
     MOV dword ptr [ESP + 0x184],EAX     ; 0052d138
     FILD dword ptr [ESP + 0x184]        ; 0052d13f
-    FMUL double ptr [0x005eba10]        ; 0052d146 | g_DOUBLE_005eba10
+    FMUL double ptr [0x005eba10]        ; 0052d146 | g_TimeoutScale
     FST float ptr [ESP]                 ; 0052d14c
     FLDZ                                ; 0052d14f
     FCOMPP                              ; 0052d151
@@ -213,7 +213,7 @@ section .text
     MOV dword ptr [ESP],EBX             ; 0052d158
     FLD float ptr [ESP]                 ; 0052d15b
         ;   Label: LAB_0052d15b
-    FCOMP double ptr [0x005eba18]       ; 0052d15e | g_DOUBLE_005eba18
+    FCOMP double ptr [0x005eba18]       ; 0052d15e | g_MaxTimeout
     FNSTSW AX                           ; 0052d164
     SAHF                                ; 0052d166
     JBE 0x0052d170                      ; 0052d167
@@ -221,7 +221,7 @@ section .text
     MOV dword ptr [ESP],0x41f00000      ; 0052d169
     FLD float ptr [ESP]                 ; 0052d170
         ;   Label: LAB_0052d170
-    FCOMP double ptr [0x005eba20]       ; 0052d173 | g_DOUBLE_005eba20
+    FCOMP double ptr [0x005eba20]       ; 0052d173 | g_SyncTimeout
     FNSTSW AX                           ; 0052d179
     SAHF                                ; 0052d17b
     JBE 0x0052d1dd                      ; 0052d17c
@@ -320,7 +320,7 @@ section .text
     XOR EDI,EDI                         ; 0052d25a
     MOV EDX,dword ptr [EBP + 0x18]      ; 0052d25c
         ;   Label: LAB_0052d25c
-    CMP EDX,dword ptr [0x01d51da8]      ; 0052d25f | g_INT_01d51da8
+    CMP EDX,dword ptr [0x01d51da8]      ; 0052d25f | g_RemoteSyncStage
     JLE 0x0052d2ef                      ; 0052d265
         ;   XREF to: 0052d2ef (CONDITIONAL_JUMP)  ; LAB_0052d2ef
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 0052d26b

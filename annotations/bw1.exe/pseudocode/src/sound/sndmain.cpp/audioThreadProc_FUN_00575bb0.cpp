@@ -9,16 +9,16 @@
 DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_00575bb0(LPVOID lpThreadParam)
 
 {
-  g_INT_02c807e0 = 1;
+  g_AudioThreadRunning = 1;
   while( true ) {
-    if (g_INT_02c807e4 != 0) {
-      g_INT_02c807e0 = 0;
+    if (g_AudioThreadShutdownFlag != 0) {
+      g_AudioThreadRunning = 0;
       return 0;
     }
     sound_sndmain_cpp_processAudio_FUN_00575fb0();
-    if (g_INT_02c807e4 != 0) break;
+    if (g_AudioThreadShutdownFlag != 0) break;
     wincore_winrun_cpp_sleep_FUN_005b3860((double)g_FLOAT_02c807dc);
   }
-  g_INT_02c807e0 = 0;
+  g_AudioThreadRunning = 0;
   return 0;
 }

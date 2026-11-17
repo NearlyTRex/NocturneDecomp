@@ -110,13 +110,13 @@
     },
     {
       "addr": "0207f958",
-      "name": "g_INT_0207f958",
+      "name": "g_SecondaryDirectionalLightCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "0207fadc",
-      "name": "g_INT_0207fadc",
+      "name": "g_PrimaryDirectionalLightCount",
       "type": "int",
       "value": null
     },
@@ -128,7 +128,7 @@
     },
     {
       "addr": "0207ffa8",
-      "name": "g_INT_0207ffa8",
+      "name": "g_LightingSystemDirty",
       "type": "int",
       "value": null
     },
@@ -158,7 +158,7 @@
     },
     {
       "addr": "0207ffdc",
-      "name": "g_CMatrix3x3f_0207ffdc",
+      "name": "g_LightingRotationMatrix",
       "type": "CMatrix3x3f",
       "value": null
     }
@@ -381,9 +381,9 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(uint *)((int)g_CDemonLight_PTR_ARRAY_0207fae0",
+      "match": "(uint *)((int)g_PrimaryDirectionalLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0207fae0 + iVar8);",
+      "text": "puVar1 = (uint *)((int)g_PrimaryDirectionalLights + iVar8);",
       "type": "pointer_cast"
     },
     {
@@ -397,25 +397,25 @@
     {
       "description": "Complex pointer cast",
       "line": 126,
-      "match": "(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20",
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar8);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 131,
-      "match": "(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20",
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar8);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_0207fae0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PrimaryDirectionalLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 57,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_0207fae0",
+      "match": "(int)g_PrimaryDirectionalLights",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0207fae0 + iVar8);",
+      "text": "puVar1 = (uint *)((int)g_PrimaryDirectionalLights + iVar8);",
       "type": "pointer_truncation"
     },
     {
@@ -499,19 +499,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_0203ad20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 126,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_0203ad20",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar8);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar8);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_0203ad20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 131,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_0203ad20",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar8);",
+      "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar8);",
       "type": "pointer_truncation"
     },
     {

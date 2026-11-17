@@ -9,6 +9,6 @@
 void __cdecl core_dlight_cpp_drawGrayscalePixel_FUN_0045ce10(int x,int y,int grayscale_value)
 
 {
-  *(int *)(g_ARRAY_PTR_01c5faec[y] + x * 4) = grayscale_value * 0x10101;
+  *(int *)(g_ScreenBufferArray[y] + x * 4) = grayscale_value * 0x10101;
   return;
 }

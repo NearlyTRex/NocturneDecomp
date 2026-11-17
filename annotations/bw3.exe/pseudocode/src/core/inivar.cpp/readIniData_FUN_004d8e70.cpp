@@ -30,7 +30,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
   ;
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(&local_210,"useAGPFlag",&g_INT_02cf5fd8);
   engine_ini_cpp_CIniFile_getString_FUN_004d8b20
-            (&local_210,"rendererDLLPath",g_CHAR_ARRAY_00606730,0xfa);
+            (&local_210,"rendererDLLPath",g_RendererDllPath,0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(&local_210,"gamma",&g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
             (&local_210,"heroNumber",(int *)&g_CGamePtr->hero_number);

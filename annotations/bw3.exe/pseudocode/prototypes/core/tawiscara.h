@@ -27,7 +27,7 @@ void __cdecl CTawiscara::setup(CTawiscara *this_ptr);
 
 // Original: core_tawiscara.cpp_CTawiscara_process_FUN_00594000
 // Address: 00594000
-void __cdecl CTawiscara::process(CTawiscara *this_ptr,float param_2);
+void __cdecl CTawiscara::process(CTawiscara *this_ptr,float delta_time);
 
 // Original: core_tawiscara.cpp_CTawiscara_setWalkTarget_FUN_005956d0
 // Address: 005956d0

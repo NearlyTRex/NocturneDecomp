@@ -42,7 +42,7 @@
 ;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   int g_INT_01d5ba14
-;   int g_INT_0203a598
+;   int g_SpotLightCount
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 0053a0e1 (CONDITIONAL_JUMP)  ; LAB_0053a0e1
     OR byte ptr [ESP + 0xac],0x1        ; 00539f9f
         ;   Label: LAB_00539f9f
-    CMP dword ptr [0x0203a598],0x0      ; 00539fa7 | g_INT_0203a598
+    CMP dword ptr [0x0203a598],0x0      ; 00539fa7 | g_SpotLightCount
         ;   Label: LAB_00539fa7
     JZ 0x00539fb8                       ; 00539fae
         ;   XREF to: 00539fb8 (CONDITIONAL_JUMP)  ; LAB_00539fb8
@@ -136,7 +136,7 @@ section .text
     PUSH 0x8                            ; 0053a030
     MOV EBP,dword ptr [0x0211e350]      ; 0053a032 | g_INT_0211e350
     PUSH EBP                            ; 0053a038
-    PUSH 0x211e354                      ; 0053a039 | g_SDisplayListSortEntry_ARRAY_0211e354
+    PUSH 0x211e354                      ; 0053a039 | g_SetDisplayListSortBuffer
     CALL crt_stdlib.c__qsort_FUN_005a29e8 ; 0053a03e
         ;   XREF to: 005a29e8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005a29e8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV ESI,dword ptr [0x01d5ba14]      ; 0053a043 | g_INT_01d5ba14
@@ -290,10 +290,10 @@ section .text
     FSUB float ptr [ESP + 0x44]         ; 0053a224
     FMUL ST0                            ; 0053a228
     LEA EAX,[EDX + 0x1]                 ; 0053a22a
-    MOV dword ptr [EDX*0x8 + 0x211e354],EBX ; 0053a22d | g_SDisplayListSortEntry_ARRAY_0211e354
+    MOV dword ptr [EDX*0x8 + 0x211e354],EBX ; 0053a22d | g_SetDisplayListSortBuffer
     FADDP                               ; 0053a234
     MOV [0x0211e350],EAX                ; 0053a236 | g_INT_0211e350
-    FSTP float ptr [EDX*0x8 + 0x211e358] ; 0053a23b | g_SDisplayListSortEntry_ARRAY_0211e354[0].distance_sq
+    FSTP float ptr [EDX*0x8 + 0x211e358] ; 0053a23b | g_SetDisplayListSortBuffer[0].distance_sq
     JMP 0x0053a008                      ; 0053a242
         ;   XREF to: 0053a008 (UNCONDITIONAL_JUMP)  ; LAB_0053a008
     MOV EAX,dword ptr [ESP + 0xd8]      ; 0053a247

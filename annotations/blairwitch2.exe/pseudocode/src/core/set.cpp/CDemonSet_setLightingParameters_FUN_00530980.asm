@@ -25,7 +25,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   int g_INT_0200e88c
+;   int g_LightingSystemDirty
 ;   float g_FLOAT_0200e890
 ;   undefined4 DAT_0200e894
 ;   float g_FLOAT_0200e898
@@ -38,8 +38,8 @@
 ;   float g_FLOAT_0200e8b4
 ;   undefined4 DAT_0200e8b8
 ;   float g_FLOAT_0200e8bc
-;   CMatrix3x3f g_CMatrix3x3f_0200e8c0
-;   undefined4 g_CMatrix3x3f_0200e8c0.m[0].y
+;   CMatrix3x3f g_LightingRotationMatrix
+;   undefined4 g_LightingRotationMatrix.m[0].y
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -97,10 +97,10 @@ section .text
         ;   XREF to: 00530a52 (CONDITIONAL_JUMP)  ; LAB_00530a52
     MOV ECX,0xa                         ; 00530a11
     MOV EDI,0x200e8c0                   ; 00530a16
-    MOVSD.REP ES:EDI,ESI                ; 00530a1b | g_CMatrix3x3f_0200e8c0 | g_CMatrix3x3f_0200e8c0.m[0].y
+    MOVSD.REP ES:EDI,ESI                ; 00530a1b | g_LightingRotationMatrix | g_LightingRotationMatrix.m[0].y
     MOV EDX,0x2                         ; 00530a1d
     POP EDI                             ; 00530a22
-    MOV dword ptr [0x0200e88c],EDX      ; 00530a23 | g_INT_0200e88c
+    MOV dword ptr [0x0200e88c],EDX      ; 00530a23 | g_LightingSystemDirty
         ;   Label: LAB_00530a23
     POP ESI                             ; 00530a29
     POP EBX                             ; 00530a2a
@@ -120,18 +120,18 @@ section .text
         ;   XREF to: 005309aa (UNCONDITIONAL_JUMP)  ; LAB_005309aa
     MOV EDX,0x3f800000                  ; 00530a52
         ;   Label: LAB_00530a52
-    MOV dword ptr [0x0200e8c4],ESI      ; 00530a57 | g_CMatrix3x3f_0200e8c0.m[0].y
-    MOV dword ptr [0x0200e8c8],ESI      ; 00530a5d | g_CMatrix3x3f_0200e8c0.m[0].z
-    MOV dword ptr [0x0200e8cc],ESI      ; 00530a63 | g_CMatrix3x3f_0200e8c0.m[1].x
-    MOV dword ptr [0x0200e8d4],ESI      ; 00530a69 | g_CMatrix3x3f_0200e8c0.m[1].z
-    MOV dword ptr [0x0200e8d8],ESI      ; 00530a6f | g_CMatrix3x3f_0200e8c0.m[2].x
-    MOV dword ptr [0x0200e8dc],ESI      ; 00530a75 | g_CMatrix3x3f_0200e8c0.m[2].y
-    MOV dword ptr [0x0200e8d0],EDX      ; 00530a7b | g_CMatrix3x3f_0200e8c0.m[1].y
-    MOV dword ptr [0x0200e8e0],EDX      ; 00530a81 | g_CMatrix3x3f_0200e8c0.m[2].z
-    MOV dword ptr [0x0200e8c0],EDX      ; 00530a87 | g_CMatrix3x3f_0200e8c0
+    MOV dword ptr [0x0200e8c4],ESI      ; 00530a57 | g_LightingRotationMatrix.m[0].y
+    MOV dword ptr [0x0200e8c8],ESI      ; 00530a5d | g_LightingRotationMatrix.m[0].z
+    MOV dword ptr [0x0200e8cc],ESI      ; 00530a63 | g_LightingRotationMatrix.m[1].x
+    MOV dword ptr [0x0200e8d4],ESI      ; 00530a69 | g_LightingRotationMatrix.m[1].z
+    MOV dword ptr [0x0200e8d8],ESI      ; 00530a6f | g_LightingRotationMatrix.m[2].x
+    MOV dword ptr [0x0200e8dc],ESI      ; 00530a75 | g_LightingRotationMatrix.m[2].y
+    MOV dword ptr [0x0200e8d0],EDX      ; 00530a7b | g_LightingRotationMatrix.m[1].y
+    MOV dword ptr [0x0200e8e0],EDX      ; 00530a81 | g_LightingRotationMatrix.m[2].z
+    MOV dword ptr [0x0200e8c0],EDX      ; 00530a87 | g_LightingRotationMatrix
     MOV EDX,0x2                         ; 00530a8d
     POP EDI                             ; 00530a92
-    MOV dword ptr [0x0200e88c],EDX      ; 00530a93 | g_INT_0200e88c
+    MOV dword ptr [0x0200e88c],EDX      ; 00530a93 | g_LightingSystemDirty
     POP ESI                             ; 00530a99
     POP EBX                             ; 00530a9a
     RET                                 ; 00530a9b

@@ -15,7 +15,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db
   SMRGLPrimitivePoly *pSVar4;
   uint local_14;
   
-  g_INT_01bc1238 = 0;
+  g_RenderPixelCounter = 0;
   if ((this_ptr->plane_culling_enabled != 0) &&
      (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&(poly->base).surface_normal), iVar2 == 0)) {
     return 0;
@@ -27,7 +27,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db
     pSVar4 = poly;
     do {
       iVar1 = pSVar4->vertices[0].vertex_index;
-      *(int *)((int)g_INT_ARRAY_01bc1240 + iVar3) = iVar1;
+      *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
       iVar3 = iVar3 + 4;
       pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;
       iVar2 = iVar2 + 1;
@@ -36,9 +36,9 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (this_ptr->shadow_pass_active == 0) {
-      g_BIT_INTEGER32_01c51d14.dword = 0xc0;
-      g_INT_01c51d18 = 6;
-      g_PTR_01c4f02c = core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_00487425;
+      g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+      g_VertexPreprocessMode = 6;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_00487425;
     }
     else {
       g_CHAR_PTR_01d1d400 = "..\\engine\\drender.cpp";
@@ -46,8 +46,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
-              (this_ptr,(poly->base).base.count,g_INT_ARRAY_01bc1240);
-    iVar2 = g_INT_01bc1238;
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
+    iVar2 = g_RenderPixelCounter;
   }
   else {
     iVar2 = 0;

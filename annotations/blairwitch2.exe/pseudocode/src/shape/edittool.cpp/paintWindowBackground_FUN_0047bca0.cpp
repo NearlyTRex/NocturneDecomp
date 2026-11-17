@@ -21,12 +21,12 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0047bca0(void)
   byte bVar10;
   
   bVar10 = 0;
-  if (g_INT_01c2559c < 1) {
+  if (g_WindowStackCount < 1) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0x3b8;
     core_main_c_displayErrorAndQuit_FUN_004e4500("paintWindowBackground called but no window was opened!");
   }
-  iVar1 = (g_INT_01c2559c + -1) * 0x1f8;
+  iVar1 = (g_WindowStackCount + -1) * 0x1f8;
   puVar7 = *(uint **)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8);
   if (puVar7 != (uint *)0x0) {
     iVar4 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e4) * g_INT_006141c0;
@@ -35,13 +35,13 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0047bca0(void)
     iVar4 = 0;
     if (0 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8)) {
       do {
-        if (g_ARRAY_PTR_01c2a38c[*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] !=
+        if (g_ScreenBufferArray[*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] !=
             (byte *)0x0) {
           iVar5 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1dc) * g_INT_006141c0;
           iVar6 = iVar5 >> 0x1f;
           puVar8 = puVar7;
           puVar9 = (uint *)
-                   (g_ARRAY_PTR_01c2a38c
+                   (g_ScreenBufferArray
                     [*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] +
                    ((int)((iVar5 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3));
           for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {

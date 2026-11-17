@@ -152,7 +152,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
       pCStack_20 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       fVar13 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,pCStack_20 + this_ptr->bone_indices[0],&CStack_b4);
+                (&g_ZeroVector,pCStack_20 + this_ptr->bone_indices[0],&CStack_b4);
       pCVar10 = &CStack_48;
       CStack_48.x = CStack_b4.x;
       *(uint *)((int)&CStack_48 + (uint)bVar9 * -8 + 4) =
@@ -173,7 +173,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
       pSVar12 = (SDamageInfo *)&stack0xfffffebc;
       fVar13 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,pCStack_20 + this_ptr->bone_indices[1],&CStack_78);
+                (&g_ZeroVector,pCStack_20 + this_ptr->bone_indices[1],&CStack_78);
       pCVar10 = &CStack_f0;
       CStack_f0.x = CStack_78.x;
       *(uint *)((int)&CStack_f0 + (uint)bVar9 * -8 + 4) =

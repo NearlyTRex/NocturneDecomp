@@ -28,18 +28,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
       if (this_ptr->shadow_pass_active == 0) {
         if (g_INT_0061b4a0 == 0x20) {
-          g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
         }
         else {
-          g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
         }
-        g_INT_01c51d18 = 6;
-        g_BIT_INTEGER32_01c51d14.dword = 0x267;
+        g_VertexPreprocessMode = 6;
+        g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_COLOR_FROM_VERTEX);
       }
       else {
-        g_BIT_INTEGER32_01c51d14.dword = 0;
-        g_INT_01c51d18 = 0;
-        g_PTR_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
                 (this_ptr,(prim->base).count,(int *)(prim + 1));

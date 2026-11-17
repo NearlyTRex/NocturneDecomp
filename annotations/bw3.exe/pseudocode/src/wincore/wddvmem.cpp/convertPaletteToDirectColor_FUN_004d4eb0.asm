@@ -15,15 +15,15 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   _MMX_INTEGER g_MMX_INTEGER_00604e60
-;   _MMX_INTEGER g_MMX_INTEGER_00604e68
-;   _MMX_INTEGER g_MMX_INTEGER_00604e70
-;   qword g_QWORD_00604e78 = 0xf80000
-;   qword g_QWORD_00604e98 = 0xfc00
-;   qword g_QWORD_00604eb8 = 0xf8
-;   qword g_QWORD_00604ec0 = 0x8
-;   qword g_QWORD_00604ee0 = 0x5
-;   qword g_QWORD_00604f00 = 0x3
+;   _MMX_INTEGER g_RedMask16
+;   _MMX_INTEGER g_GreenMask16
+;   _MMX_INTEGER g_BlueMask16
+;   qword g_RedMask32 = 0xf80000
+;   qword g_GreenMask32 = 0xfc00
+;   qword g_BlueMask32 = 0xf8
+;   qword g_TotalDitherShift = 0x8
+;   qword g_GreenBlueDitherShift = 0x5
+;   qword g_BlueBitShift = 0x3
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af7c
@@ -90,39 +90,39 @@ section .text
     MOV EBX,EAX                         ; 004d4f5a
     SHL EBX,CL                          ; 004d4f5c
     MOV CL,byte ptr [0x01c6af88]        ; 004d4f5e | g_BIT_INTEGER32_01c6af88
-    MOV dword ptr [0x00604e60],EBX      ; 004d4f64 | g_MMX_INTEGER_00604e60
+    MOV dword ptr [0x00604e60],EBX      ; 004d4f64 | g_RedMask16
     MOV EBX,0xff                        ; 004d4f6a
     SHR EBX,CL                          ; 004d4f6f
     MOV ECX,dword ptr [0x01c6af80]      ; 004d4f71 | g_BIT_INTEGER32_01c6af80
     MOV ESI,EBX                         ; 004d4f77
     SHL ESI,CL                          ; 004d4f79
     MOV CL,byte ptr [0x01c6af94]        ; 004d4f7b | g_BIT_INTEGER32_01c6af94
-    MOV dword ptr [0x00604e68],ESI      ; 004d4f81 | g_MMX_INTEGER_00604e68
+    MOV dword ptr [0x00604e68],ESI      ; 004d4f81 | g_GreenMask16
     MOV ESI,0xff                        ; 004d4f87
     SHR ESI,CL                          ; 004d4f8c
     MOV ECX,dword ptr [0x01c6af8c]      ; 004d4f8e | g_BIT_INTEGER32_01c6af8c
     MOV EDI,ESI                         ; 004d4f94
     SHL EDI,CL                          ; 004d4f96
     MOV CL,byte ptr [0x01c6af7c]        ; 004d4f98 | g_BIT_INTEGER32_01c6af7c
-    MOV dword ptr [0x00604e70],EDI      ; 004d4f9e | g_MMX_INTEGER_00604e70
+    MOV dword ptr [0x00604e70],EDI      ; 004d4f9e | g_BlueMask16
     SHL EAX,CL                          ; 004d4fa4
     MOV CL,byte ptr [0x01c6af88]        ; 004d4fa6 | g_BIT_INTEGER32_01c6af88
     SHL EAX,0x10                        ; 004d4fac
     SHL EBX,CL                          ; 004d4faf
-    MOV [0x00604e78],EAX                ; 004d4fb1 | g_QWORD_00604e78
+    MOV [0x00604e78],EAX                ; 004d4fb1 | g_RedMask32
     SHL EBX,0x8                         ; 004d4fb6
     MOV EAX,[0x01c6af7c]                ; 004d4fb9 | g_BIT_INTEGER32_01c6af7c
-    MOV dword ptr [0x00604e98],EBX      ; 004d4fbe | g_QWORD_00604e98
+    MOV dword ptr [0x00604e98],EBX      ; 004d4fbe | g_GreenMask32
     MOV EBX,dword ptr [0x01c6af88]      ; 004d4fc4 | g_BIT_INTEGER32_01c6af88
     MOV ECX,dword ptr [0x01c6af94]      ; 004d4fca | g_BIT_INTEGER32_01c6af94
     ADD EAX,EBX                         ; 004d4fd0
-    MOV dword ptr [0x00604f00],ECX      ; 004d4fd2 | g_QWORD_00604f00
+    MOV dword ptr [0x00604f00],ECX      ; 004d4fd2 | g_BlueBitShift
     ADD EAX,ECX                         ; 004d4fd8
     SHL ESI,CL                          ; 004d4fda
-    MOV [0x00604ec0],EAX                ; 004d4fdc | g_QWORD_00604ec0
+    MOV [0x00604ec0],EAX                ; 004d4fdc | g_TotalDitherShift
     LEA EAX,[EBX + ECX*0x1]             ; 004d4fe1
-    MOV dword ptr [0x00604eb8],ESI      ; 004d4fe4 | g_QWORD_00604eb8
-    MOV [0x00604ee0],EAX                ; 004d4fea | g_QWORD_00604ee0
+    MOV dword ptr [0x00604eb8],ESI      ; 004d4fe4 | g_BlueMask32
+    MOV [0x00604ee0],EAX                ; 004d4fea | g_GreenBlueDitherShift
     CMP dword ptr [0x005fba20],0x20     ; 004d4fef | g_INT_005fba20
         ;   Label: LAB_004d4fef
     JNZ 0x004d504d                      ; 004d4ff6

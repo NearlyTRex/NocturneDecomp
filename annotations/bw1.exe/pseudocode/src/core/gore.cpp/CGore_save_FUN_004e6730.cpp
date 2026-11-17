@@ -17,23 +17,23 @@ int __cdecl core_gore_cpp_CGore_save_FUN_004e6730(CGore *this_ptr,_FILE *file_ha
   _fprintf(file_handle,"--- Gore ---\n");
   iVar2 = 0;
   _fprintf(file_handle,"%d\n");
-  if (0 < g_INT_01cf69f8) {
-    this_ptr_00 = g_CBloodPool_ARRAY_01cf69fc;
+  if (0 < g_BloodPoolCount) {
+    this_ptr_00 = g_BloodPools;
     do {
       iVar2 = iVar2 + 1;
       core_gore_cpp_CBloodPool_save_FUN_004e5660(this_ptr_00,file_handle);
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar2 < g_INT_01cf69f8);
+    } while (iVar2 < g_BloodPoolCount);
   }
   iVar1 = 0;
   iVar2 = _fprintf(file_handle,"%d\n");
-  if (0 < g_INT_01cd56b0) {
-    this_ptr_01 = g_CBloodSplat_ARRAY_01cd56b4;
+  if (0 < g_BloodSplatCount) {
+    this_ptr_01 = g_BloodSplats;
     do {
       iVar1 = iVar1 + 1;
       iVar2 = core_gore_cpp_CBloodSplat_save_FUN_004e5030(this_ptr_01,file_handle);
       this_ptr_01 = this_ptr_01 + 1;
-    } while (iVar1 < g_INT_01cd56b0);
+    } while (iVar1 < g_BloodSplatCount);
   }
   return iVar2;
 }

@@ -216,25 +216,25 @@ section .text
     JNZ 0x004831e4                      ; 0048313a
         ;   XREF to: 004831e4 (CONDITIONAL_JUMP)  ; LAB_004831e4
     PUSH 0x5c5014                       ; 00483140 | g_SRenderVertex_ARRAY_005c5014
-    MOV EBX,dword ptr [0x007f7370]      ; 00483145 | g_CDemonCamera_PTR_007f7370
+    MOV EBX,dword ptr [0x007f7370]      ; 00483145 | g_CurrentSceneCamera
     PUSH EBX                            ; 0048314b
     CALL core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760 ; 0048314c
         ;   XREF to: 00447760 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(CDemonCamera * this_ptr, SRenderVertex * vertex)
     ADD ESP,0x8                         ; 00483151
     PUSH 0x5c5044                       ; 00483154 | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x
-    MOV EDI,dword ptr [0x007f7370]      ; 00483159 | g_CDemonCamera_PTR_007f7370
+    MOV EDI,dword ptr [0x007f7370]      ; 00483159 | g_CurrentSceneCamera
     PUSH EDI                            ; 0048315f
     CALL core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760 ; 00483160
         ;   XREF to: 00447760 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(CDemonCamera * this_ptr, SRenderVertex * vertex)
     ADD ESP,0x8                         ; 00483165
     PUSH 0x5c5074                       ; 00483168 | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_x
-    MOV EBP,dword ptr [0x007f7370]      ; 0048316d | g_CDemonCamera_PTR_007f7370
+    MOV EBP,dword ptr [0x007f7370]      ; 0048316d | g_CurrentSceneCamera
     PUSH EBP                            ; 00483173
     CALL core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760 ; 00483174
         ;   XREF to: 00447760 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(CDemonCamera * this_ptr, SRenderVertex * vertex)
     ADD ESP,0x8                         ; 00483179
     PUSH 0x5c50a4                       ; 0048317c | g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.transformed_x
-    MOV EAX,[0x007f7370]                ; 00483181 | g_CDemonCamera_PTR_007f7370
+    MOV EAX,[0x007f7370]                ; 00483181 | g_CurrentSceneCamera
     PUSH EAX                            ; 00483186
     CALL core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760 ; 00483187
         ;   XREF to: 00447760 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(CDemonCamera * this_ptr, SRenderVertex * vertex)

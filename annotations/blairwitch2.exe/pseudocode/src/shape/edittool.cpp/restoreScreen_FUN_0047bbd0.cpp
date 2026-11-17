@@ -24,8 +24,8 @@ void __cdecl shape_edittool_cpp_restoreScreen_FUN_0047bbd0(void)
       iVar2 = 0;
       do {
         iVar1 = iVar2 + 4;
-        *(uint *)((int)local_12c8 + iVar2) =
-             *(uint *)((int)g_ARRAY_PTR_01c2a38c + iVar2);
+        *(uint *)((int)local_12c8 + iVar2) = *(uint *)((int)g_ScreenBufferArray + iVar2)
+        ;
         iVar2 = iVar1;
       } while (iVar1 < g_INT_006141bc * 4);
     }
@@ -37,10 +37,10 @@ void __cdecl shape_edittool_cpp_restoreScreen_FUN_0047bbd0(void)
       if (0 < g_INT_006141bc) {
         iVar1 = 0;
         do {
-          if ((*(uint **)((int)g_ARRAY_PTR_01c2a38c + iVar1) != (uint *)0x0) &&
+          if ((*(uint **)((int)g_ScreenBufferArray + iVar1) != (uint *)0x0) &&
              (*(uint **)((int)local_12c8 + iVar1) != (uint *)0x0)) {
             puVar5 = *(uint **)((int)local_12c8 + iVar1);
-            puVar6 = *(uint **)((int)g_ARRAY_PTR_01c2a38c + iVar1);
+            puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar1);
             for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
               *puVar6 = *puVar5;
               puVar5 = puVar5 + (uint)bVar7 * -2 + 1;

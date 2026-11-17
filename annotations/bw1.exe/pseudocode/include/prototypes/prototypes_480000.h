@@ -62,7 +62,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_00480c
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00480ca0(CDrawSurface *this_ptr,int x,int y,int height,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00480d20(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00480d90(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10(CDrawSurface *this_ptr,char *param_2,int param_3);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10(CDrawSurface *this_ptr,char *text,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00480e30(CDrawSurface *this_ptr,int y,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00480e50(CDrawSurface *this_ptr,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00480f80(CDrawSurface *this_ptr,char *text);
@@ -80,7 +80,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_00481cb0(C
 int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_00481fa0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004820f0(CDemonRenderer *this_ptr,int param_2);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004820f0(CDemonRenderer *this_ptr,int polygon);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_00482390(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
@@ -221,7 +221,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_0048aab0(CDemonR
 void __cdecl core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_0048ac70(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_0048ace0(CDemonRaytrace *this_ptr);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *param_2);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *file_handle);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0(CDemonRaytrace *this_ptr,char *filename);
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 CVector3f * __stack3_esi core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_0048b040(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *output_point);

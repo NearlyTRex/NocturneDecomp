@@ -23,7 +23,7 @@
 ;   TerminatedCString s_Hero_doesn_t_exist_005e2d57
 ;   TerminatedCString s_Actor_s_does_not_exist_005e2d6e
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_005e2d89
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
 ;   int g_INT_01cedef4
@@ -50,7 +50,7 @@ section .text
     PUSH EBP                            ; 00521293
     MOV EBX,dword ptr [ESP + 0x14]      ; 00521294
     XOR EDX,EDX                         ; 00521298
-    MOV dword ptr [0x01e6590c],EDX      ; 0052129a | g_INT_01e6590c
+    MOV dword ptr [0x01e6590c],EDX      ; 0052129a | g_ActorLookedUpByVariable
     TEST EBX,EBX                        ; 005212a0
     JZ 0x005212c5                       ; 005212a2
         ;   XREF to: 005212c5 (CONDITIONAL_JUMP)  ; LAB_005212c5
@@ -100,10 +100,10 @@ section .text
     RET                                 ; 005212ef
     PUSH EBX                            ; 005212f0
         ;   Label: LAB_005212f0
-    MOV EAX,[0x006141f0]                ; 005212f1 | g_CEventList_PTR_006141f0
+    MOV EAX,[0x006141f0]                ; 005212f1 | g_CEventListPtr
     MOV EBP,0x1                         ; 005212f6
     PUSH EAX                            ; 005212fb
-    MOV dword ptr [0x01e6590c],EBP      ; 005212fc | g_INT_01e6590c
+    MOV dword ptr [0x01e6590c],EBP      ; 005212fc | g_ActorLookedUpByVariable
     CALL core_event.cpp_CEventList_getActorByVarName_FUN_00491860 ; 00521302
         ;   XREF to: 00491860 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_CEventList_getActorByVarName_FUN_00491860(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 00521307
@@ -161,7 +161,7 @@ section .text
     PUSH 0x5e2d57                       ; 00521374 | = "Hero doesn't exist!!?!"
     MOV EDI,0x1                         ; 00521379
     PUSH 0x1e65100                      ; 0052137e
-    MOV dword ptr [0x01e6590c],EDI      ; 00521383 | g_INT_01e6590c
+    MOV dword ptr [0x01e6590c],EDI      ; 00521383 | g_ActorLookedUpByVariable
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00521389
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0052138e

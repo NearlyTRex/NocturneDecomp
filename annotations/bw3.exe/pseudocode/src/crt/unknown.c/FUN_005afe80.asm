@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f3c_006079a0 = 005a7f3c
-;   SIGNAL_HANDLER_TYPE[26] g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88
+;   SIGNAL_HANDLER_TYPE[26] g_GlobalSignalHandlers
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f3c
@@ -34,8 +34,8 @@ section .text
     LEA EAX,[EBX*0x8 + 0x0]             ; 005afe90
         ;   Label: LAB_005afe90
     MOV ESI,dword ptr [ESP + 0x10]      ; 005afe97
-    MOV EBX,dword ptr [EAX + 0x607e88]  ; 005afe9b | g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88
-    MOV dword ptr [EAX + 0x607e88],ESI  ; 005afea1 | g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88
+    MOV EBX,dword ptr [EAX + 0x607e88]  ; 005afe9b | g_GlobalSignalHandlers
+    MOV dword ptr [EAX + 0x607e88],ESI  ; 005afea1 | g_GlobalSignalHandlers
     MOV EAX,EBX                         ; 005afea7
     POP ESI                             ; 005afea9
     POP EBX                             ; 005afeaa

@@ -5,56 +5,56 @@
 // =============================================================================
 
 // CCharacter*[50]
-CCharacter* g_CCharacter_PTR_ARRAY_01c09e0c[50] = {};
+CCharacter* g_GunFlameCandidates[50] = {};
 
 // CDemonActorType
-CDemonActorType g_CFilmReelActorType_01c08c8c = {};
-CDemonActorType g_CFilmProjectorActorType_01c08cc8 = {};
+CDemonActorType g_CFilmReelClassInfo = {};
+CDemonActorType g_CFilmProjectorClassInfo = {};
 
 // CEventList
 CEventList g_CEventList_01c03a10 = {};
 
 // CFireEffect
-CFireEffect g_CFireEffect_01c08d04 = {};
+CFireEffect g_CFireEffectInstance = {};
 
 // CFlameCan*[150]
-CFlameCan* g_CFlameCan_PTR_ARRAY_01c09ed8[150] = {};
+CFlameCan* g_FlameCans[150] = {};
 
 // CKeyFramedModelInstance
-CKeyFramedModelInstance g_CKeyFramedModelInstance_01c08d48 = {};
-CKeyFramedModelInstance g_CKeyFramedModelInstance_01c08ec4 = {};
-CKeyFramedModelInstance g_CKeyFramedModelInstance_01c09040 = {};
-CKeyFramedModelInstance g_CKeyFramedModelInstance_01c091bc = {};
-CKeyFramedModelInstance g_CKeyFramedModelInstance_01c09338 = {};
+CKeyFramedModelInstance g_FireEffectFlamingStakeModel = {};
+CKeyFramedModelInstance g_FireEffectFireballModel = {};
+CKeyFramedModelInstance g_FireEffectFireballSmallModel = {};
+CKeyFramedModelInstance g_FireEffectFireballGreenModel = {};
+CKeyFramedModelInstance g_FireEffectGunFlashModel = {};
 
 // CKeyFramedModelInstance[5]
-CKeyFramedModelInstance g_CKeyFramedModelInstance_ARRAY_01c094bc[5] = {};
+CKeyFramedModelInstance g_CFireEffectDebrisModels[5] = {};
 
 // CMatrix3x3i
 CMatrix3x3i g_TransformMatrix = {};
 
 // CSmokeParticle[2048]
-CSmokeParticle g_CSmokeParticle_ARRAY_01c0a140[2048] = {};
+CSmokeParticle g_SmokeParticlePool[2048] = {};
 
 // CVector3i
-CVector3i g_CVector3i_01c08d08 = {};
-CVector3i g_CVector3i_01c08d14 = {};
+CVector3i g_BillboardCameraRight = {};
+CVector3i g_BillboardCameraUp = {};
 
 // DWORD
-DWORD g_DWORD_01c038f8 = {};
-DWORD g_DWORD_01c038fc = {};
-DWORD g_DWORD_01c03900 = {};
-DWORD g_DWORD_01c03904 = {};
-DWORD g_DWORD_01c03908 = {};
+DWORD g_JoyXPos = {};
+DWORD g_JoyYPos = {};
+DWORD g_JoyRPos = {};
+DWORD g_JoyZPos = {};
+DWORD g_JoyButtons = {};
 
 // MainScanlineFunc*
 MainScanlineFunc* g_ScanlineRenderFunc = {};
 
 // SMRGLPrimitiveQuadIndex
-SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c08d20 = {};
+SMRGLPrimitiveQuadIndex g_BillboardPrimitive = {};
 
 // SMRGLTextureBasic[20]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c09c28[20] = {};
+SMRGLTextureBasic g_GunFlameTextures[20] = {};
 
 // SProjectionParams
 SProjectionParams g_Projection = {};
@@ -72,20 +72,20 @@ _BIT_INTEGER32 g_BlueDitherShift = {};
 _BIT_INTEGER32 g_RenderStateFlags = {};
 
 // _MMX_INTEGER
-_MMX_INTEGER g_MMX_INTEGER_01c03958 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03960 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03968 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03970 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03978 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03980 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03988 = {};
-_MMX_INTEGER g_MMX_INTEGER_01c03990 = {};
+_MMX_INTEGER g_SavedMMX0 = {};
+_MMX_INTEGER g_SavedMMX1 = {};
+_MMX_INTEGER g_SavedMMX2 = {};
+_MMX_INTEGER g_SavedMMX3 = {};
+_MMX_INTEGER g_SavedMMX4 = {};
+_MMX_INTEGER g_SavedMMX5 = {};
+_MMX_INTEGER g_SavedMMX6 = {};
+_MMX_INTEGER g_SavedMMX7 = {};
 
 // char[256]
-char g_CHAR_ARRAY_01c08b60[256] = {};
+char g_EventErrorMessageBuffer[256] = {};
 
 // char[4952]
-char g_CHAR_ARRAY_01c02598[4952] = {};
+char g_KeyboardState[4952] = {};
 
 // int
 int g_RedScaleFactor = {};
@@ -103,14 +103,14 @@ int g_AdvancedClippingEnabled = {};
 int g_TextureBits = {};
 int g_UseExternalRenderer = {};
 int g_INT_01c038f4 = {};
-int g_INT_01c0390c = {};
-int g_INT_01c03910 = {};
-int g_INT_01c03914 = {};
-int g_INT_01c0391c = {};
-int g_INT_01c03920 = {};
+int g_JoystickPresent = {};
+int g_JoyWantUAxis = {};
+int g_JoyWantRAxis = {};
+int g_JoystickHasPOV = {};
+int g_JoyPOVDirection = {};
 int g_MMXSupported = {};
-int g_INT_01c0394c = {};
-int g_INT_01c03950 = {};
+int g_CPUModel = {};
+int g_CalibratedCPUSpeed = {};
 int g_BlendMode = {};
 int g_ProcessorType = {};
 int g_VertexPreprocessMode = {};
@@ -123,18 +123,18 @@ int g_RelativeZ = {};
 int g_CameraOriginX = {};
 int g_CameraOriginY = {};
 int g_CameraOriginZ = {};
-int g_INT_01c039d0 = {};
-int g_INT_01c039d4 = {};
-int g_INT_01c039d8 = {};
-int g_INT_01c039dc = {};
-int g_INT_01c039e0 = {};
-int g_INT_01c039e4 = {};
-int g_INT_01c08b5c = {};
-int g_INT_01c094b4 = {};
-int g_INT_01c094b8 = {};
-int g_INT_01c09e08 = {};
-int g_INT_01c09ed4 = {};
-int g_INT_01c0a13c = {};
+int g_CameraRotationPitch = {};
+int g_CameraRotationYaw = {};
+int g_CameraRotationRoll = {};
+int g_LightDirectionX = {};
+int g_LightDirectionY = {};
+int g_LightDirectionZ = {};
+int g_EventDryRun = {};
+int g_TextureAnimCounter2 = {};
+int g_TextureAnimCounter1 = {};
+int g_GunFlameCandidateCount = {};
+int g_FlameCanCount = {};
+int g_SmokeParticleAllocIndex = {};
 
 // uchar*
 uchar* g_CurrentTextureData = {};
@@ -148,7 +148,7 @@ uchar g_DefaultPalette[768] = {};
 uint g_Hardware32BitPalette[256] = {};
 
 // uint[3]
-uint g_UINT_ARRAY_01c0a130[3] = {};
+uint g_ShellBounceSoundHandles[3] = {};
 
 // uint[GAME_RECIPROCAL_TABLE_SIZE]
 uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE] = {};

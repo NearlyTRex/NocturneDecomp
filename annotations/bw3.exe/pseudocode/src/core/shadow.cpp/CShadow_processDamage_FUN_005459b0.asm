@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ShadowDead_005d13b3
 ;   double g_DOUBLE_005d13be = 10
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   int g_INT_01d5ba14
 ;
 ; Called Functions:
@@ -210,7 +210,7 @@ section .text
         ;   XREF to: 00545100 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_00545100(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00545b62
     PUSH 0x5d13b3                       ; 00545b65 | = "ShadowDead"
-    MOV ECX,dword ptr [0x005fba60]      ; 00545b6a | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00545b6a | g_CEventListPtr
     PUSH ECX                            ; 00545b70
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00545b71
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

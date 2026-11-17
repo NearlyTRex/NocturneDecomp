@@ -62,7 +62,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041f360(CBoxActor *this_pt
   bVar12 = 0;
   if (this_ptr->fade_event[0] != '\0') {
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (g_CEventList_PTR_005fba60,this_ptr->fade_event);
+                      (g_CEventListPtr,this_ptr->fade_event);
     if (iVar7 != 0) {
       (this_ptr->base).is_transparent = 1;
       (this_ptr->base).is_renderable = 0;

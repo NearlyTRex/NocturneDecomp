@@ -14,7 +14,7 @@ char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_0050fe80(char *key)
   char *pcVar3;
   int upper_bound;
   
-  if (g_INT_01d63254 == 0) {
+  if (g_LocalizationLoaded == 0) {
     return key;
   }
   upper_bound = g_INT_01d63258 + -1;

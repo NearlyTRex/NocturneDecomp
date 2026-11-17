@@ -13,10 +13,10 @@
 ; int              Stack[0x1c]:4   blend_mode
 ;
 ; Referenced Globals:
-;   int g_INT_007bee2c
+;   int g_LineBlendingDisabled
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     CMP ESI,EAX                         ; 0042e682
     JG 0x0042e700                       ; 0042e684
         ;   XREF to: 0042e700 (CONDITIONAL_JUMP)  ; LAB_0042e700
-    CMP dword ptr [0x007bee2c],0x0      ; 0042e68a | g_INT_007bee2c
+    CMP dword ptr [0x007bee2c],0x0      ; 0042e68a | g_LineBlendingDisabled
     JNZ 0x0042e6cf                      ; 0042e691
         ;   XREF to: 0042e6cf (CONDITIONAL_JUMP)  ; LAB_0042e6cf
     MOV ECX,dword ptr [0x01c35e48]      ; 0042e693 | g_INT_01c35e48
@@ -54,7 +54,7 @@ section .text
     CMP EBX,ECX                         ; 0042e69d
     JL 0x0042e700                       ; 0042e69f
         ;   XREF to: 0042e700 (CONDITIONAL_JUMP)  ; LAB_0042e700
-    MOV ECX,dword ptr [0x01c35e50]      ; 0042e6a5 | g_INT_01c35e50
+    MOV ECX,dword ptr [0x01c35e50]      ; 0042e6a5 | g_ClipRight
         ;   Label: LAB_0042e6a5
     CMP EDI,ECX                         ; 0042e6ab
     JLE 0x0042e6b3                      ; 0042e6ad

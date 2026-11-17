@@ -15,7 +15,7 @@
 ;   TerminatedCString s_con_005fabb8
 ;   TerminatedCString s_conin_005fabbc
 ;   TerminatedCString s_EXE_005fabc4
-;   short g_SHORT_006265e1 = 0x0
+;   short g_WindowsPlatformVersion = 0x0
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -34,7 +34,7 @@ section .text
     PUSH ESI                            ; 005c7f81
     PUSH EDI                            ; 005c7f82
     MOV ESI,dword ptr [ESP + 0x14]      ; 005c7f83
-    MOV DX,word ptr [0x006265e1]        ; 005c7f87 | g_SHORT_006265e1
+    MOV DX,word ptr [0x006265e1]        ; 005c7f87 | g_WindowsPlatformVersion
     XOR EBX,EBX                         ; 005c7f8e
     CMP DX,0x8000                       ; 005c7f90
     JNC 0x005c7f9e                      ; 005c7f95
@@ -92,7 +92,7 @@ section .text
     CALL dword ptr CS:[0x5d051c]        ; 005c8002 | PTR_CloseHandle_005d051c
     JMP 0x005c8027                      ; 005c8009
         ;   XREF to: 005c8027 (UNCONDITIONAL_JUMP)  ; LAB_005c8027
-    CMP word ptr [0x006265e1],0x8000    ; 005c800b | g_SHORT_006265e1
+    CMP word ptr [0x006265e1],0x8000    ; 005c800b | g_WindowsPlatformVersion
         ;   Label: LAB_005c800b
     JNC 0x005c8022                      ; 005c8014
         ;   XREF to: 005c8022 (CONDITIONAL_JUMP)  ; LAB_005c8022

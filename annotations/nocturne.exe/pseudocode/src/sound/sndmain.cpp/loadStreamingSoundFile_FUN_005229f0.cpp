@@ -24,13 +24,13 @@ CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005229f0(int s
   
   iVar6 = 0;
   do {
-    g_INT_02dc1ed8 = g_INT_02dc1ed8 + 1;
-    if (0x3f < g_INT_02dc1ed8) {
-      g_INT_02dc1ed8 = 0;
+    g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+    if (0x3f < g_LastSampleAccessIndex) {
+      g_LastSampleAccessIndex = 0;
     }
-    if ((g_SfxSamples[g_INT_02dc1ed8].taken == 0) && (g_SfxSamples[g_INT_02dc1ed8].ref_count == 0))
-    {
-      local_14 = g_SfxSamples + g_INT_02dc1ed8;
+    if ((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+       (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) {
+      local_14 = g_SfxSamples + g_LastSampleAccessIndex;
       goto LAB_00522a32;
     }
     iVar6 = iVar6 + 1;

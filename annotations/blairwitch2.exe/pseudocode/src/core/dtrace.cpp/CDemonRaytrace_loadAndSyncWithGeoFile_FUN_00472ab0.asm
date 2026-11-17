@@ -43,7 +43,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00472ad1
     PUSH ECX                            ; 00472ad5
     CALL core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0 ; 00472ad6
-        ;   XREF to: 004728d0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0(CDemonRaytrace * this_ptr, _FILE * param_2)
+        ;   XREF to: 004728d0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0(CDemonRaytrace * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00472adb
     PUSH EBX                            ; 00472ade
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00472adf

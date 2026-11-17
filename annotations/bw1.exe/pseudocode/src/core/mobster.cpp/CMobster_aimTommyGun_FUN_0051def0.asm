@@ -44,9 +44,9 @@
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   undefined4 g_INT_ARRAY_01d33c00[2]
-;   undefined4 g_INT_ARRAY_01d33c00[10]
-;   CVector3f g_CVector3f_02c8af28
+;   undefined4 g_MobsterIndices[2]
+;   undefined4 g_MobsterIndices[10]
+;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -131,7 +131,7 @@ section .text
     JZ 0x0051df94                       ; 0051df8a
         ;   XREF to: 0051df94 (CONDITIONAL_JUMP)  ; LAB_0051df94
     MOV dword ptr [ESP + 0x4],0x3fc90fdb ; 0051df8c
-    MOV ESI,dword ptr [0x01d33c08]      ; 0051df94 | g_INT_ARRAY_01d33c00[2]
+    MOV ESI,dword ptr [0x01d33c08]      ; 0051df94 | g_MobsterIndices[2]
         ;   Label: LAB_0051df94
     LEA EAX,[ESI*0x4 + 0x0]             ; 0051df9a
     SUB EAX,ESI                         ; 0051dfa1
@@ -140,7 +140,7 @@ section .text
     LEA EAX,[EBX + 0xfd8]               ; 0051dfa8
     ADD EAX,ESI                         ; 0051dfae
     PUSH EAX                            ; 0051dfb0
-    PUSH 0x2c8af28                      ; 0051dfb1 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0051dfb1 | g_ZeroVector
     LEA ESI,[ESP + 0x7c]                ; 0051dfb6
     LEA EDI,[ESP + 0x58]                ; 0051dfba
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0051dfbe
@@ -300,7 +300,7 @@ section .text
     JZ 0x0051e299                       ; 0051e18b
         ;   XREF to: 0051e299 (CONDITIONAL_JUMP)  ; LAB_0051e299
     PUSH 0x567360                       ; 0051e191
-    MOV ECX,dword ptr [0x01d33c28]      ; 0051e196 | g_INT_ARRAY_01d33c00[10]
+    MOV ECX,dword ptr [0x01d33c28]      ; 0051e196 | g_MobsterIndices[10]
     PUSH ECX                            ; 0051e19c
     PUSH dword ptr [EBX + 0xc338]       ; 0051e19d
     PUSH 0x40c00000                     ; 0051e1a3
@@ -322,7 +322,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051e1cd
     MOVSD ES:EDI,ESI                    ; 0051e1ce
     PUSH 0x567360                       ; 0051e1cf
-    MOV ESI,dword ptr [0x01d33c28]      ; 0051e1d4 | g_INT_ARRAY_01d33c00[10]
+    MOV ESI,dword ptr [0x01d33c28]      ; 0051e1d4 | g_MobsterIndices[10]
     PUSH ESI                            ; 0051e1da
     LEA EAX,[ESP + 0x10]                ; 0051e1db
     PUSH dword ptr [EBX + 0xc338]       ; 0051e1df
@@ -340,7 +340,7 @@ section .text
     ADD ESP,0x4                         ; 0051e209
     LEA EDI,[ESP + 0x8]                 ; 0051e20c
     PUSH 0x567360                       ; 0051e210
-    MOV EAX,[0x01d33c28]                ; 0051e215 | g_INT_ARRAY_01d33c00[10]
+    MOV EAX,[0x01d33c28]                ; 0051e215 | g_MobsterIndices[10]
     LEA ESI,[ESP + 0x2c]                ; 0051e21a
     PUSH EAX                            ; 0051e21e
     MOVSD ES:EDI,ESI                    ; 0051e21f
@@ -392,7 +392,7 @@ section .text
         ;   XREF to: 0051e103 (UNCONDITIONAL_JUMP)  ; LAB_0051e103
     PUSH 0x567360                       ; 0051e299
         ;   Label: LAB_0051e299
-    MOV EDX,dword ptr [0x01d33c28]      ; 0051e29e | g_INT_ARRAY_01d33c00[10]
+    MOV EDX,dword ptr [0x01d33c28]      ; 0051e29e | g_MobsterIndices[10]
     PUSH EDX                            ; 0051e2a4
     PUSH dword ptr [EBX + 0xc338]       ; 0051e2a5
     PUSH 0x40c00000                     ; 0051e2ab

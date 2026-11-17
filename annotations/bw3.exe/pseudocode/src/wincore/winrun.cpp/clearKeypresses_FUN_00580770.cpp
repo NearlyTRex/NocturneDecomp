@@ -9,8 +9,8 @@
 void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00580770(void)
 
 {
-  g_INT_02d2032c = 0;
-  g_INT_02d20328 = 0;
-  g_INT_02d20330 = 0;
+  g_InputWriteIndex = 0;
+  g_InputReadIndex = 0;
+  g_InputCountOld = 0;
   return;
 }

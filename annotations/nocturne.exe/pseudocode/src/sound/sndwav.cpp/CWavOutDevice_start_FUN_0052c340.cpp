@@ -14,19 +14,19 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(CWavOutDevice *thi
   int iVar3;
   
   iVar3 = 0;
-  if (0 < g_INT_02dc943c) {
+  if (0 < g_WaveOutNumBuffers) {
     iVar2 = 0;
     do {
       memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2),0,0x20);
       **(uint **)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) =
-           *(uint *)((int)g_LPVOID_ARRAY_02dc93c8 + iVar2);
+           *(uint *)((int)g_WaveOutBuffers + iVar2);
       *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) + 0xc) = iVar3;
       *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) + 4) = g_INT_02dc9438;
       iVar1 = sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(iVar3);
       if (iVar1 == 0) goto LAB_0052c3d6;
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 4;
-    } while (iVar3 < g_INT_02dc943c);
+    } while (iVar3 < g_WaveOutNumBuffers);
   }
   iVar3 = sound_sndmain_cpp_startSoundThread_FUN_005286d0
                     (((double)g_INT_02dc9434 / (double)g_INT_02dc942c) * 0.33333333333333298);

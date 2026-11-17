@@ -43,19 +43,19 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0044ac10(CCurtain *t
     vertex->has_collision = 1;
   }
   iStack_1c = 0;
-  if (0 < g_INT_007dc718) {
+  if (0 < g_CurtainCollisionCount) {
     pCVar1 = &vertex->world_position;
     pSVar11 = &this_ptr->mesh;
     pCVar2 = &vertex->velocity;
     iStack_28 = 0;
-    pfStack_34 = &g_SCollisionInfo_ARRAY_007dcbcc[0].cylinder_radius;
+    pfStack_34 = &g_CurtainCollisionInfos[0].cylinder_radius;
     do {
       if ((float)-0.5 <= (vertex->velocity).y) {
 LAB_0044b217:
         if (*(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].y + iStack_28) <=
             (vertex->world_position).y) {
           fVar10 = *(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].y + iStack_28) +
-                   g_SCollisionInfo_ARRAY_007dcbcc[iStack_1c].cylinder_top_y;
+                   g_CurtainCollisionInfos[iStack_1c].cylinder_top_y;
           if ((vertex->world_position).y <= fVar10) {
             afStack_dc[0] =
                  (vertex->world_position).x -
@@ -63,7 +63,7 @@ LAB_0044b217:
             fStack_d4 = (vertex->world_position).z -
                         *(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].z + iStack_28);
             fVar5 = SQRT(afStack_dc[0] * afStack_dc[0] + fStack_d4 * fStack_d4);
-            if (fVar5 <= g_SCollisionInfo_ARRAY_007dcbcc[iStack_1c].cylinder_radius) {
+            if (fVar5 <= g_CurtainCollisionInfos[iStack_1c].cylinder_radius) {
               if ((vertex->last_world_position).y < fVar10) {
                 if (*(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].y + iStack_28) <
                     (vertex->last_world_position).y) {
@@ -134,7 +134,7 @@ LAB_0044b217:
       }
       else {
         fVar10 = *(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].y + iStack_28) +
-                 g_SCollisionInfo_ARRAY_007dcbcc[iStack_1c].cylinder_top_y;
+                 g_CurtainCollisionInfos[iStack_1c].cylinder_top_y;
         if ((fVar10 <= (vertex->world_position).y) ||
            ((vertex->world_position).y <=
             *(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].y + iStack_28))) goto LAB_0044b217;
@@ -142,7 +142,7 @@ LAB_0044b217:
                 *(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].x + iStack_28);
         fVar3 = (vertex->world_position).z -
                 *(float *)((int)&g_CVector3f_ARRAY_007dc71c[0].z + iStack_28);
-        if (g_SCollisionInfo_ARRAY_007dcbcc[iStack_1c].cylinder_radius <=
+        if (g_CurtainCollisionInfos[iStack_1c].cylinder_radius <=
             SQRT(fVar3 * fVar3 + fVar5 * fVar5)) goto LAB_0044b217;
         (vertex->velocity).y = 0.0;
         vertex->has_collision = 1;
@@ -151,7 +151,7 @@ LAB_0044b217:
       iStack_28 = iStack_28 + 0xc;
       pfStack_34 = pfStack_34 + 10;
       iStack_1c = iStack_1c + 1;
-    } while (iStack_1c < g_INT_007dc718);
+    } while (iStack_1c < g_CurtainCollisionCount);
   }
   iStack_14 = 0;
   if (0 < vertex->neighbor_count) {

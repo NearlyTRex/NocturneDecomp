@@ -31,8 +31,8 @@
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].b
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].a
-;   int g_INT_0070ca74
-;   int g_INT_0070ca7c
+;   int g_TexturesDisabled
+;   int g_CullingMode
 ;   int g_INT_01c37788
 ;   ... and 9 more
 ;
@@ -55,7 +55,7 @@ section .text
     PUSH EDI                            ; 0051e132
     PUSH EBP                            ; 0051e133
     SUB ESP,0x58                        ; 0051e134
-    CMP dword ptr [0x0070ca7c],0x0      ; 0051e137 | g_INT_0070ca7c
+    CMP dword ptr [0x0070ca7c],0x0      ; 0051e137 | g_CullingMode
     JZ 0x0051e19d                       ; 0051e13e
         ;   XREF to: 0051e19d (CONDITIONAL_JUMP)  ; LAB_0051e19d
     MOV ECX,dword ptr [ESP + 0x70]      ; 0051e140
@@ -101,7 +101,7 @@ section .text
         ;   Label: LAB_0051e19d
     JZ 0x0051e5ff                       ; 0051e1a4
         ;   XREF to: 0051e5ff (CONDITIONAL_JUMP)  ; LAB_0051e5ff
-    CMP dword ptr [0x0070ca74],0x0      ; 0051e1aa | g_INT_0070ca74
+    CMP dword ptr [0x0070ca74],0x0      ; 0051e1aa | g_TexturesDisabled
     JNZ 0x0051e5ff                      ; 0051e1b1
         ;   XREF to: 0051e5ff (CONDITIONAL_JUMP)  ; LAB_0051e5ff
     MOV EBX,dword ptr [ESP + 0x70]      ; 0051e1b7
@@ -121,7 +121,7 @@ section .text
     JL 0x0051e1c9                       ; 0051e1dc
         ;   XREF to: 0051e1c9 (CONDITIONAL_JUMP)  ; LAB_0051e1c9
     MOV EAX,EAX                         ; 0051e1de
-    MOV EAX,[0x01c38b54]                ; 0051e1e0 | g_BIT_INTEGER32_01c38b54
+    MOV EAX,[0x01c38b54]                ; 0051e1e0 | g_RenderStateFlags
         ;   Label: LAB_0051e1e0
     PUSH EAX                            ; 0051e1e5
     MOV EDX,dword ptr [ESP + 0x74]      ; 0051e1e6
@@ -132,10 +132,10 @@ section .text
         ;   XREF to: 0055f920 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_0055f920(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 0051e1f5
     MOV EAX,dword ptr [ESP + 0x70]      ; 0051e1f8
-    MOV ECX,dword ptr [0x01e61b58]      ; 0051e1fc | g_INT_01e61b58
+    MOV ECX,dword ptr [0x01e61b58]      ; 0051e1fc | g_RenderedTriangleCount
     SUB EAX,0x2                         ; 0051e202
     ADD ECX,EAX                         ; 0051e205
-    MOV dword ptr [0x01e61b58],ECX      ; 0051e207 | g_INT_01e61b58
+    MOV dword ptr [0x01e61b58],ECX      ; 0051e207 | g_RenderedTriangleCount
     ADD ESP,0x58                        ; 0051e20d
         ;   Label: LAB_0051e20d
     POP EBP                             ; 0051e210
@@ -300,10 +300,10 @@ section .text
         ;   Label: caseD_0
     XOR EDX,EDX                         ; 0051e385
     MOV ESI,dword ptr [ESP + 0x70]      ; 0051e387
-    MOV dword ptr [0x01e62064],EDX      ; 0051e38b | g_INT_01e62064
-    MOV dword ptr [0x01e61b5c],EDX      ; 0051e391 | g_INT_01e61b5c
+    MOV dword ptr [0x01e62064],EDX      ; 0051e38b | g_MaxScanline
+    MOV dword ptr [0x01e61b5c],EDX      ; 0051e391 | g_ActiveEdgeCount
     MOV dword ptr [ESP + 0x4c],EDX      ; 0051e397
-    MOV [0x01e62060],EAX                ; 0051e39b | g_INT_01e62060
+    MOV [0x01e62060],EAX                ; 0051e39b | g_MinScanline
     TEST ESI,ESI                        ; 0051e3a0
     JLE 0x0051e40e                      ; 0051e3a2
         ;   XREF to: 0051e40e (CONDITIONAL_JUMP)  ; LAB_0051e40e
@@ -348,13 +348,13 @@ section .text
         ;   XREF to: 0051e3ac (CONDITIONAL_JUMP)  ; LAB_0051e3ac
     MOV EAX,0x1e61b60                   ; 0051e40e
         ;   Label: LAB_0051e40e
-    MOV ESI,dword ptr [0x01e61b5c]      ; 0051e413 | g_INT_01e61b5c
-    MOV EBX,dword ptr [0x01e62060]      ; 0051e419 | g_INT_01e62060
+    MOV ESI,dword ptr [0x01e61b5c]      ; 0051e413 | g_ActiveEdgeCount
+    MOV EBX,dword ptr [0x01e62060]      ; 0051e419 | g_MinScanline
     XOR ECX,ECX                         ; 0051e41f
     TEST ESI,ESI                        ; 0051e421
     JLE 0x0051e88f                      ; 0051e423
         ;   XREF to: 0051e88f (CONDITIONAL_JUMP)  ; LAB_0051e88f
-    MOV EDX,dword ptr [0x01e61b5c]      ; 0051e429 | g_INT_01e61b5c
+    MOV EDX,dword ptr [0x01e61b5c]      ; 0051e429 | g_ActiveEdgeCount
     CMP EBX,dword ptr [EAX]             ; 0051e42f | g_SSoftwareEdge_ARRAY_01e61b60 | g_SSoftwareEdge_ARRAY_01e61b60[1].base.y_min
         ;   Label: LAB_0051e42f
     JNZ 0x0051e883                      ; 0051e431
@@ -367,15 +367,15 @@ section .text
     TEST EAX,EAX                        ; 0051e443
     JZ 0x0051e20d                       ; 0051e445
         ;   XREF to: 0051e20d (CONDITIONAL_JUMP)  ; LAB_0051e20d
-    MOV EDI,dword ptr [0x01e61b5c]      ; 0051e44b | g_INT_01e61b5c
-    MOV ECX,dword ptr [0x01e62060]      ; 0051e451 | g_INT_01e62060
+    MOV EDI,dword ptr [0x01e61b5c]      ; 0051e44b | g_ActiveEdgeCount
+    MOV ECX,dword ptr [0x01e62060]      ; 0051e451 | g_MinScanline
     MOV EBX,EAX                         ; 0051e457
     XOR EDX,EDX                         ; 0051e459
     MOV EAX,0x1e61b60                   ; 0051e45b
     TEST EDI,EDI                        ; 0051e460
     JLE 0x0051e8a2                      ; 0051e462
         ;   XREF to: 0051e8a2 (CONDITIONAL_JUMP)  ; LAB_0051e8a2
-    MOV EBP,dword ptr [0x01e61b5c]      ; 0051e468 | g_INT_01e61b5c
+    MOV EBP,dword ptr [0x01e61b5c]      ; 0051e468 | g_ActiveEdgeCount
     CMP ECX,dword ptr [EAX]             ; 0051e46e | g_SSoftwareEdge_ARRAY_01e61b60 | g_SSoftwareEdge_ARRAY_01e61b60[1].base.y_min
         ;   Label: LAB_0051e46e
     JNZ 0x0051e896                      ; 0051e470
@@ -388,7 +388,7 @@ section .text
     TEST EAX,EAX                        ; 0051e480
     JZ 0x0051e20d                       ; 0051e482
         ;   XREF to: 0051e20d (CONDITIONAL_JUMP)  ; LAB_0051e20d
-    MOV EAX,[0x01e62060]                ; 0051e488 | g_INT_01e62060
+    MOV EAX,[0x01e62060]                ; 0051e488 | g_MinScanline
     MOV dword ptr [ESP + 0x50],EAX      ; 0051e48d
     MOV EDX,dword ptr [ESP + 0x54]      ; 0051e491
         ;   Label: LAB_0051e491
@@ -396,7 +396,7 @@ section .text
     CMP EAX,dword ptr [EDX + 0x4]       ; 0051e499
     JL 0x0051e4df                       ; 0051e49c
         ;   XREF to: 0051e4df (CONDITIONAL_JUMP)  ; LAB_0051e4df
-    MOV ESI,dword ptr [0x01e61b5c]      ; 0051e49e | g_INT_01e61b5c
+    MOV ESI,dword ptr [0x01e61b5c]      ; 0051e49e | g_ActiveEdgeCount
     MOV EBX,EAX                         ; 0051e4a4
     MOV ECX,EBP                         ; 0051e4a6
     MOV dword ptr [EDX],0xffffffff      ; 0051e4a8
@@ -405,7 +405,7 @@ section .text
     TEST ESI,ESI                        ; 0051e4b5
     JLE 0x0051e8b5                      ; 0051e4b7
         ;   XREF to: 0051e8b5 (CONDITIONAL_JUMP)  ; LAB_0051e8b5
-    MOV EDI,dword ptr [0x01e61b5c]      ; 0051e4bd | g_INT_01e61b5c
+    MOV EDI,dword ptr [0x01e61b5c]      ; 0051e4bd | g_ActiveEdgeCount
     CMP EBX,dword ptr [EAX]             ; 0051e4c3 | g_SSoftwareEdge_ARRAY_01e61b60 | g_SSoftwareEdge_ARRAY_01e61b60[1].base.y_min
         ;   Label: LAB_0051e4c3
     JNZ 0x0051e8a9                      ; 0051e4c5
@@ -427,12 +427,12 @@ section .text
     MOV ECX,EAX                         ; 0051e4ec
     MOV dword ptr [EBP],0xffffffff      ; 0051e4ee
     XOR EDX,EDX                         ; 0051e4f5
-    MOV EBP,dword ptr [0x01e61b5c]      ; 0051e4f7 | g_INT_01e61b5c
+    MOV EBP,dword ptr [0x01e61b5c]      ; 0051e4f7 | g_ActiveEdgeCount
     MOV EAX,0x1e61b60                   ; 0051e4fd
     TEST EBP,EBP                        ; 0051e502
     JLE 0x0051e8c8                      ; 0051e504
         ;   XREF to: 0051e8c8 (CONDITIONAL_JUMP)  ; LAB_0051e8c8
-    MOV ESI,dword ptr [0x01e61b5c]      ; 0051e50a | g_INT_01e61b5c
+    MOV ESI,dword ptr [0x01e61b5c]      ; 0051e50a | g_ActiveEdgeCount
     CMP ECX,dword ptr [EAX]             ; 0051e510 | g_SSoftwareEdge_ARRAY_01e61b60 | g_SSoftwareEdge_ARRAY_01e61b60[1].base.y_min
         ;   Label: LAB_0051e510
     JNZ 0x0051e8bc                      ; 0051e512
@@ -522,11 +522,11 @@ section .text
     MOV dword ptr [EBP + 0x30],EBX      ; 0051e5f7
     JMP 0x0051e491                      ; 0051e5fa
         ;   XREF to: 0051e491 (UNCONDITIONAL_JUMP)  ; LAB_0051e491
-    MOV ESI,dword ptr [0x01e61b58]      ; 0051e5ff | g_INT_01e61b58
+    MOV ESI,dword ptr [0x01e61b58]      ; 0051e5ff | g_RenderedTriangleCount
         ;   Label: LAB_0051e5ff
     INC ESI                             ; 0051e605
-    MOV EAX,[0x01c38b58]                ; 0051e606 | g_INT_01c38b58
-    MOV dword ptr [0x01e61b58],ESI      ; 0051e60b | g_INT_01e61b58
+    MOV EAX,[0x01c38b58]                ; 0051e606 | g_VertexPreprocessMode
+    MOV dword ptr [0x01e61b58],ESI      ; 0051e60b | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 0051e611
     JA 0x0051e380                       ; 0051e614
         ;   XREF to: 0051e380 (CONDITIONAL_JUMP)  ; caseD_4
@@ -542,21 +542,21 @@ section .text
     MOV ECX,EDX                         ; 0051e62d
     MOV EDX,EAX                         ; 0051e62f
     MOV EAX,ECX                         ; 0051e631
-    IMUL EBP,dword ptr [0x01e61b5c],0x50 ; 0051e633 | g_INT_01e61b5c
+    IMUL EBP,dword ptr [0x01e61b5c],0x50 ; 0051e633 | g_ActiveEdgeCount
         ;   Label: LAB_0051e633
     ADD EBP,0x1e61b60                   ; 0051e63a
     MOV dword ptr [EBP],EDX             ; 0051e640 | g_SSoftwareEdge_ARRAY_01e61b60
-    MOV ECX,dword ptr [0x01e62060]      ; 0051e643 | g_INT_01e62060
+    MOV ECX,dword ptr [0x01e62060]      ; 0051e643 | g_MinScanline
     MOV dword ptr [EBP + 0x4],EAX       ; 0051e649
     CMP EDX,ECX                         ; 0051e64c
     JGE 0x0051e656                      ; 0051e64e
         ;   XREF to: 0051e656 (CONDITIONAL_JUMP)  ; LAB_0051e656
-    MOV dword ptr [0x01e62060],EDX      ; 0051e650 | g_INT_01e62060
-    CMP EAX,dword ptr [0x01e62064]      ; 0051e656 | g_INT_01e62064
+    MOV dword ptr [0x01e62060],EDX      ; 0051e650 | g_MinScanline
+    CMP EAX,dword ptr [0x01e62064]      ; 0051e656 | g_MaxScanline
         ;   Label: LAB_0051e656
     JLE 0x0051e663                      ; 0051e65c
         ;   XREF to: 0051e663 (CONDITIONAL_JUMP)  ; LAB_0051e663
-    MOV [0x01e62064],EAX                ; 0051e65e | g_INT_01e62064
+    MOV [0x01e62064],EAX                ; 0051e65e | g_MaxScanline
     MOV EAX,dword ptr [EBX + 0x14]      ; 0051e663 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_y
         ;   Label: LAB_0051e663
     MOV ECX,dword ptr [EDI + 0x14]      ; 0051e666 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_y
@@ -654,10 +654,10 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 0051e769 | g_SRenderVertex_ARRAY_00622014[0].a
     ADD EAX,EDX                         ; 0051e76c
     MOV dword ptr [EBP + 0x30],EAX      ; 0051e76e
-    CMP dword ptr [0x01c38b58],0x1      ; 0051e771 | g_INT_01c38b58
+    CMP dword ptr [0x01c38b58],0x1      ; 0051e771 | g_VertexPreprocessMode
     JNZ 0x0051e84f                      ; 0051e778
         ;   XREF to: 0051e84f (CONDITIONAL_JUMP)  ; LAB_0051e84f
-    CMP dword ptr [0x01c38b50],0x0      ; 0051e77e | g_INT_01c38b50
+    CMP dword ptr [0x01c38b50],0x0      ; 0051e77e | g_ProcessorType
     JZ 0x0051e840                       ; 0051e785
         ;   XREF to: 0051e840 (CONDITIONAL_JUMP)  ; LAB_0051e840
     MOV EAX,0x7fffffff                  ; 0051e78b
@@ -716,7 +716,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x28]      ; 0051e81d | g_SRenderVertex_ARRAY_00622014[0].b
     ADD EAX,EDX                         ; 0051e820
     MOV dword ptr [EBP + 0x40],EAX      ; 0051e822
-    INC dword ptr [0x01e61b5c]          ; 0051e825 | g_INT_01e61b5c
+    INC dword ptr [0x01e61b5c]          ; 0051e825 | g_ActiveEdgeCount
     JMP 0x0051e3f2                      ; 0051e82b
         ;   XREF to: 0051e3f2 (UNCONDITIONAL_JUMP)  ; LAB_0051e3f2
     MOV EAX,0xffffffff                  ; 0051e830

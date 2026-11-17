@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 286,
+    "complexity_score": 285,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 176,
+    "pseudocode_lines": 175,
     "suspect_count": 9,
     "suspect_types": [
       "derived_field_index_pun",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 583
+    "total_lines": 582
   },
   "cross_references": [
     {
@@ -193,7 +193,7 @@
     },
     {
       "addr": "006141f0",
-      "name": "g_CEventList_PTR_006141f0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c38bc0"
     },
@@ -443,7 +443,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
+      "line": 65,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -459,7 +459,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 108,
+      "line": 107,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -467,7 +467,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 150,
+      "line": 149,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -475,7 +475,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 78,
+      "line": 77,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -483,7 +483,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 99,
+      "line": 98,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -491,7 +491,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 78,
+      "line": 77,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -499,7 +499,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 99,
+      "line": 98,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -509,7 +509,7 @@
       "description": "'(char *)&pCVar6[2].particle_systems[2].max_particles' walks 2 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[2].max_particles) (0x1f4) + 0x0 = 0x75c, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar6)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 46,
       "severity": "moderate",
-      "text": "(g_CEventList_PTR_006141f0,(char *)&pCVar6[2].particle_systems[2].max_particles,1)",
+      "text": "(g_CEventListPtr,(char *)&pCVar6[2].particle_systems[2].max_particles,1);",
       "type": "derived_field_index_pun"
     }
   ]

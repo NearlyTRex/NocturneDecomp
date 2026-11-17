@@ -15,7 +15,7 @@ void __cdecl engine_2d_c_drawVLine_FUN_00403040(int x,int y1,int y2)
   uint uVar4;
   int iVar5;
   
-  if ((g_INT_01c4f008 <= x) && (x <= g_INT_01c4f010)) {
+  if ((g_INT_01c4f008 <= x) && (x <= g_ClipRight)) {
     if (y1 < g_INT_01c4f00c) {
       y1 = g_INT_01c4f00c;
     }
@@ -34,15 +34,15 @@ LAB_0040313e:
           return;
         }
         for (; iVar5 <= iVar2; iVar5 = iVar5 + 4) {
-          *(byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar5) + x) =
+          *(byte *)(*(int *)((int)g_ScreenBufferArray + iVar5) + x) =
                (byte)g_INT_01c4f020;
         }
       }
       else if ((uint)g_INT_0061b4a0 < 0x11) {
-        uVar3 = g_USHORT_ARRAY_01c4dad0[g_INT_01c4f020];
+        uVar3 = g_ColorTable16[g_INT_01c4f020];
         if (y1 <= y2) {
           do {
-            piVar1 = (int *)((int)g_ARRAY_PTR_01c4354c + iVar5);
+            piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
             iVar5 = iVar5 + 4;
             *(ushort *)(*piVar1 + x * 2) = uVar3;
           } while (iVar5 <= iVar2);
@@ -50,10 +50,10 @@ LAB_0040313e:
       }
       else {
         if (g_INT_0061b4a0 != 0x20) goto LAB_0040313e;
-        uVar4 = g_UINT_ARRAY_01c4dcd0[g_INT_01c4f020];
+        uVar4 = g_ColorTable32[g_INT_01c4f020];
         if (y1 <= y2) {
           do {
-            piVar1 = (int *)((int)g_ARRAY_PTR_01c4354c + iVar5);
+            piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
             iVar5 = iVar5 + 4;
             *(uint *)(*piVar1 + x * 4) = uVar4;
           } while (iVar5 <= iVar2);

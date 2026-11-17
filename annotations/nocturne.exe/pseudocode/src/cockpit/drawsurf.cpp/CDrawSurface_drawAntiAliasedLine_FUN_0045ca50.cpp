@@ -24,7 +24,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(
   cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(1);
   cockpit_ckptutil_c_drawLineAA_FUN_0042f600
             (y1 + this_ptr->x,x2 + this_ptr->y,y2 + this_ptr->x,in_stack_00000018 + this_ptr->y,
-             g_INT_01b4d714);
+             g_PaletteColorIndex);
   cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(disabled);
   g_ClipLeft = iVar1;
   g_ClipTop = (int)this_ptr;

@@ -12,12 +12,12 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_0070ca7c
+;   int g_CullingMode
 ;   int g_INT_007bee30
-;   void* g_PTR_01c35e6c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   undefined4 g_BIT_INTEGER32_01c38b54+1
-;   int g_INT_01c38b58
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   undefined4 g_RenderStateFlags+1
+;   int g_VertexPreprocessMode
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -68,15 +68,15 @@ section .text
         ;   XREF to: 0046c3cb (CONDITIONAL_JUMP)  ; LAB_0046c3cb
     XOR EDX,EDX                         ; 0046c2eb
     MOV EAX,0x46e936                    ; 0046c2ed
-    MOV dword ptr [0x01c38b54],EDX      ; 0046c2f2 | g_BIT_INTEGER32_01c38b54
-    MOV dword ptr [0x01c38b58],EDX      ; 0046c2f8 | g_INT_01c38b58
-    MOV [0x01c35e6c],EAX                ; 0046c2fe | g_PTR_01c35e6c
+    MOV dword ptr [0x01c38b54],EDX      ; 0046c2f2 | g_RenderStateFlags
+    MOV dword ptr [0x01c38b58],EDX      ; 0046c2f8 | g_VertexPreprocessMode
+    MOV [0x01c35e6c],EAX                ; 0046c2fe | g_ScanlineRenderFunc
     TEST ESI,ESI                        ; 0046c303
     JLE 0x0046c37f                      ; 0046c305
         ;   XREF to: 0046c37f (CONDITIONAL_JUMP)  ; LAB_0046c37f
     LEA EAX,[EBP + EBP*0x1]             ; 0046c30b
     MOV dword ptr [ESP + 0x50],EAX      ; 0046c30f
-    CMP dword ptr [0x0070ca7c],0x0      ; 0046c313 | g_INT_0070ca7c
+    CMP dword ptr [0x0070ca7c],0x0      ; 0046c313 | g_CullingMode
         ;   Label: LAB_0046c313
     JNZ 0x0046c387                      ; 0046c31a
         ;   XREF to: 0046c387 (CONDITIONAL_JUMP)  ; LAB_0046c387
@@ -173,16 +173,16 @@ section .text
         ;   Label: LAB_0046c3cb
     JNZ 0x0046c469                      ; 0046c3d1
         ;   XREF to: 0046c469 (CONDITIONAL_JUMP)  ; LAB_0046c469
-    MOV dword ptr [0x01c35e6c],0x46e8f0 ; 0046c3d7 | g_PTR_01c35e6c
-    MOV dword ptr [0x01c38b54],EDI      ; 0046c3e1 | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c35e6c],0x46e8f0 ; 0046c3d7 | g_ScanlineRenderFunc
+    MOV dword ptr [0x01c38b54],EDI      ; 0046c3e1 | g_RenderStateFlags
         ;   Label: LAB_0046c3e1
-    MOV dword ptr [0x01c38b58],0x6      ; 0046c3e7 | g_INT_01c38b58
+    MOV dword ptr [0x01c38b58],0x6      ; 0046c3e7 | g_VertexPreprocessMode
     TEST ESI,ESI                        ; 0046c3f1
     JLE 0x0046c37f                      ; 0046c3f3
         ;   XREF to: 0046c37f (CONDITIONAL_JUMP)  ; LAB_0046c37f
     LEA EAX,[EBP + EBP*0x1]             ; 0046c3f5
     MOV dword ptr [ESP + 0x54],EAX      ; 0046c3f9
-    CMP dword ptr [0x0070ca7c],0x0      ; 0046c3fd | g_INT_0070ca7c
+    CMP dword ptr [0x0070ca7c],0x0      ; 0046c3fd | g_CullingMode
         ;   Label: LAB_0046c3fd
     JNZ 0x0046c490                      ; 0046c404
         ;   XREF to: 0046c490 (CONDITIONAL_JUMP)  ; LAB_0046c490
@@ -211,7 +211,7 @@ section .text
     CMP dword ptr [EAX + 0x10],0x0      ; 0046c433
     JZ 0x0046c4e3                       ; 0046c437
         ;   XREF to: 0046c4e3 (CONDITIONAL_JUMP)  ; LAB_0046c4e3
-    TEST byte ptr [0x01c38b55],0x2      ; 0046c43d | g_BIT_INTEGER32_01c38b54+1
+    TEST byte ptr [0x01c38b55],0x2      ; 0046c43d | g_RenderStateFlags+1
     JZ 0x0046c4d5                       ; 0046c444
         ;   XREF to: 0046c4d5 (CONDITIONAL_JUMP)  ; LAB_0046c4d5
     MOV EAX,ESP                         ; 0046c44a
@@ -239,10 +239,10 @@ section .text
         ;   Label: LAB_0046c469
     JNZ 0x0046c481                      ; 0046c470
         ;   XREF to: 0046c481 (CONDITIONAL_JUMP)  ; LAB_0046c481
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046c472 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046c472 | g_ScanlineRenderFunc
     JMP 0x0046c3e1                      ; 0046c47c
         ;   XREF to: 0046c3e1 (UNCONDITIONAL_JUMP)  ; LAB_0046c3e1
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046c481 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046c481 | g_ScanlineRenderFunc
         ;   Label: LAB_0046c481
     JMP 0x0046c3e1                      ; 0046c48b
         ;   XREF to: 0046c3e1 (UNCONDITIONAL_JUMP)  ; LAB_0046c3e1
@@ -290,14 +290,14 @@ section .text
         ;   Label: LAB_0046c4e3
     JZ 0x0046c4f2                       ; 0046c4e7
         ;   XREF to: 0046c4f2 (CONDITIONAL_JUMP)  ; LAB_0046c4f2
-    TEST byte ptr [0x01c38b54],0x1      ; 0046c4e9 | g_BIT_INTEGER32_01c38b54
+    TEST byte ptr [0x01c38b54],0x1      ; 0046c4e9 | g_RenderStateFlags
     JZ 0x0046c509                       ; 0046c4f0
         ;   XREF to: 0046c509 (CONDITIONAL_JUMP)  ; LAB_0046c509
-    TEST byte ptr [0x01c38b54],0x5      ; 0046c4f2 | g_BIT_INTEGER32_01c38b54
+    TEST byte ptr [0x01c38b54],0x5      ; 0046c4f2 | g_RenderStateFlags
         ;   Label: LAB_0046c4f2
     JZ 0x0046c509                       ; 0046c4f9
         ;   XREF to: 0046c509 (CONDITIONAL_JUMP)  ; LAB_0046c509
-    TEST byte ptr [0x01c38b55],0x2      ; 0046c4fb | g_BIT_INTEGER32_01c38b54+1
+    TEST byte ptr [0x01c38b55],0x2      ; 0046c4fb | g_RenderStateFlags+1
     JZ 0x0046c4d5                       ; 0046c502
         ;   XREF to: 0046c4d5 (CONDITIONAL_JUMP)  ; LAB_0046c4d5
     JMP 0x0046c44a                      ; 0046c504

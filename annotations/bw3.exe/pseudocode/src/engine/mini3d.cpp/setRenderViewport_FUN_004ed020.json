@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 42,
+    "complexity_score": 43,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 28,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 117
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -158,7 +158,7 @@
     },
     {
       "addr": "02cf60a0",
-      "name": "g_PTR_02cf60a0",
+      "name": "g_APIDLL_setViewport",
       "type": "void*",
       "value": null
     }
@@ -249,10 +249,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02cf60a0)(left,top,right,bottom,g_FLOAT_01d76cbc,g_INT_01d76cc0);",
+      "text": "(*(code *)g_APIDLL_setViewport)(left,top,right,bottom,g_FLOAT_01d76cbc,g_INT_01d76cc0);",
       "type": "unresolved_funcptr"
     }
   ]

@@ -36,16 +36,16 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3D
       local_48 = 0;
       local_34 = 0;
       do {
-        local_1c = *(int *)((int)g_INT_ARRAY_005bc06c + local_34);
+        local_1c = *(int *)((int)g_Layer3ShortBandGroupCounts + local_34);
         local_20 = local_1c * 4;
-        if (local_1c < *(int *)((int)g_INT_ARRAY_005bc06c + local_34 + 4)) {
+        if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {
           local_24 = puVar7 + local_1c + 0x27;
           do {
             puVar6 = (uint *)(local_20 + (int)puVar7);
             do {
               puVar4 = puVar6 + 0xd;
               uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0
-                                (this_ptr,*(uint *)((int)g_INT_ARRAY_ARRAY_005bc078[0] +
+                                (this_ptr,*(uint *)((int)g_Layer3ScalefacLengths[0] +
                                                    side_info->channels[granule_index].granules
                                                    [channel].scalefac_compress * 4 + local_48));
               puVar6[0x17] = uVar1;
@@ -54,7 +54,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3D
             local_24 = local_24 + 1;
             local_20 = local_20 + 4;
             local_1c = local_1c + 1;
-          } while (local_1c < *(int *)((int)g_INT_ARRAY_005bc06c + local_34 + 4));
+          } while (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4));
         }
         local_48 = local_48 + 0x40;
         local_34 = local_34 + 4;
@@ -71,7 +71,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3D
     do {
       puVar4 = puVar6 + 1;
       uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0
-                        (this_ptr,g_INT_ARRAY_ARRAY_005bc078[0]
+                        (this_ptr,g_Layer3ScalefacLengths[0]
                                   [side_info->channels[granule_index].granules[channel].
                                    scalefac_compress]);
       *puVar6 = uVar1;
@@ -84,7 +84,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3D
       do {
         piVar5 = piVar2 + 0xd;
         uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0
-                          (this_ptr,g_INT_ARRAY_ARRAY_005bc078[0]
+                          (this_ptr,g_Layer3ScalefacLengths[0]
                                     [side_info->channels[granule_index].granules[channel].
                                      scalefac_compress]);
         piVar2[0x17] = uVar1;
@@ -100,7 +100,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3D
       do {
         piVar5 = piVar2 + 0xd;
         uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0
-                          (this_ptr,g_INT_ARRAY_ARRAY_005bc078[1]
+                          (this_ptr,g_Layer3ScalefacLengths[1]
                                     [side_info->channels[granule_index].granules[channel].
                                      scalefac_compress]);
         piVar2[0x17] = uVar1;
@@ -122,18 +122,18 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3D
   local_44 = 0;
   do {
     if ((local_50[2] == 0) || (channel == 0)) {
-      iVar3 = *(int *)((int)g_INT_ARRAY_005bc058 + local_38);
+      iVar3 = *(int *)((int)g_Layer3LongBandGroupCounts + local_38);
       puVar7 = (uint *)(scalefactor_dest + granule_index * 0x3e + iVar3);
-      if (iVar3 < *(int *)((int)g_INT_ARRAY_005bc058 + local_38 + 4)) {
+      if (iVar3 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4)) {
         do {
           uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0
-                            (this_ptr,g_INT_ARRAY_ARRAY_005bc078[1 < local_44]
+                            (this_ptr,g_Layer3ScalefacLengths[1 < local_44]
                                       [side_info->channels[granule_index].granules[channel].
                                        scalefac_compress]);
           *puVar7 = uVar1;
           iVar3 = iVar3 + 1;
           puVar7 = puVar7 + 1;
-        } while (iVar3 < *(int *)((int)g_INT_ARRAY_005bc058 + local_38 + 4));
+        } while (iVar3 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4));
       }
     }
     local_38 = local_38 + 4;

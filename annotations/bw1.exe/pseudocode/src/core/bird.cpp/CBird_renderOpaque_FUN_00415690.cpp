@@ -20,7 +20,7 @@ int __cdecl core_bird_cpp_CBird_renderOpaque_FUN_00415690(CBird *this_ptr)
                       (g_CDemonRenderer_PTR_00612560);
     if ((iVar1 != 0) &&
        (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                          (g_CEventList_PTR_0061b4d0,"heroCanSee"), iVar1 == 0)) {
+                          (g_CEventListPtr,"heroCanSee"), iVar1 == 0)) {
       return 0;
     }
     if ((((this_ptr->base).is_spectral != 0) && (g_CGamePtr->goggles_active != 0)) &&

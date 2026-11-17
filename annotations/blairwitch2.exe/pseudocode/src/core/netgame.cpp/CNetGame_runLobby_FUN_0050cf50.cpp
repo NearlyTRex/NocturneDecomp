@@ -30,10 +30,10 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_0050cf50(CNetGame *this_ptr)
   int iStack_18;
   
   if (this_ptr->connection_type != CONNECTION_NONE) {
-    iStack_30 = g_INT_0061e990;
+    iStack_30 = g_ForceMessagePump;
     this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
     this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
-    g_INT_0061e990 = 0;
+    g_ForceMessagePump = 0;
     this_ptr->network_mode = NET_MODE_LOBBY;
     if (this_ptr->connection_type == CONNECTION_HOST) {
       uVar3 = rand();
@@ -63,8 +63,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_0050cf50(CNetGame *this_ptr)
       for (iStack_20 = 0; iStack_20 < g_CNetGamePtr->player_count; iStack_20 = iStack_20 + 1) {
         pcStack_1c = g_CNetGamePtr->players[0].name + iStack_28;
         engine_2d_c_drawText_FUN_00401fe0(pcStack_1c,0,iVar4);
-        if (g_UCHAR_ARRAY_02653630 == (uchar  [4])((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address)
-        {
+        if (g_AnyAddressIP == (uchar  [4])((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address) {
           pcVar6 = "(Local)";
           pcVar8 = acStack_130;
           do {
@@ -134,13 +133,13 @@ LAB_0050d17c:
         iStack_28 = iStack_28 + 0x80;
       }
       iVar4 = iVar4 + 0x2c;
-      iVar7 = (g_INT_01d34e4c - (g_INT_006141bc - iVar4) / 0xb) + 1;
+      iVar7 = (g_ChatHistoryCount - (g_INT_006141bc - iVar4) / 0xb) + 1;
       if (iVar7 < 0) {
         iVar7 = 0;
       }
-      pcStack_24 = g_SChatHistory_ARRAY_01d34e50[iVar7].sender_name;
-      pcVar8 = g_SChatHistory_ARRAY_01d34e50[iVar7].message;
-      for (; iVar7 < g_INT_01d34e4c; iVar7 = iVar7 + 1) {
+      pcStack_24 = g_ChatHistory[iVar7].sender_name;
+      pcVar8 = g_ChatHistory[iVar7].message;
+      for (; iVar7 < g_ChatHistoryCount; iVar7 = iVar7 + 1) {
         engine_2d_c_drawText_FUN_00401fe0(pcStack_24,0,iVar4);
         engine_2d_c_drawText_FUN_00401fe0(pcVar8,100,iVar4);
         iVar4 = iVar4 + 0xb;
@@ -160,7 +159,7 @@ LAB_0050d17c:
       }
       this_ptr->has_pending_sim_frame = 0;
       if (this_ptr->connection_type == CONNECTION_HOST) {
-        this_ptr->players[this_ptr->local_player_index].player_id = g_INT_01d34e44;
+        this_ptr->players[this_ptr->local_player_index].player_id = g_NetNextPlayerId;
         iVar4 = 0;
         bVar2 = true;
         pCVar5 = this_ptr;
@@ -169,8 +168,8 @@ LAB_0050d17c:
             if (pCVar5->players[0].ready_flag == 0) {
               bVar2 = false;
             }
-            if (g_INT_01d34e44 != pCVar5->players[0].player_id) {
-              iStack_18 = g_UINT_01d34e38 - pCVar5->players[0].last_update_time;
+            if (g_NetNextPlayerId != pCVar5->players[0].player_id) {
+              iStack_18 = g_CurrentGameTime - pCVar5->players[0].last_update_time;
               fStack_138 = (float)iStack_18 * (float)1.52587890625e-05;
               if (fStack_138 < 0.0) {
                 fStack_138 = 0.0;
@@ -227,24 +226,24 @@ LAB_0050d17c:
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(this_ptr,2);
           if (iVar4 != 0) {
             iVar4 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-            iVar7 = iVar4 / 0x12 - g_INT_01d34e34;
-            g_INT_01d34e34 = iVar4 / 0x12;
+            iVar7 = iVar4 / 0x12 - g_LastPingTime;
+            g_LastPingTime = iVar4 / 0x12;
             if (iVar7 < 0) {
               iVar7 = 0;
             }
             else if (0x20000 < iVar7) {
               iVar7 = 0x20000;
             }
-            g_UINT_01d34e38 = g_UINT_01d34e38 + iVar7;
-            g_UINT_01d34e48 = g_UINT_01d34e38 - 0x1e0000;
+            g_CurrentGameTime = g_CurrentGameTime + iVar7;
+            g_NetLastSimFrameAckTime = g_CurrentGameTime - 0x1e0000;
             return 1;
           }
         }
         this_ptr->network_mode = NET_MODE_LOBBY;
         goto LAB_0050d285;
       }
-      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_INT_0061b124 != 0)) {
-        iStack_18 = g_UINT_01d34e38 -
+      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_NetLobbyStateChanged != 0)) {
+        iStack_18 = g_CurrentGameTime -
                     this_ptr->players[this_ptr->local_player_index].state_change_time;
         fStack_134 = (float)iStack_18 * (float)1.52587890625e-05;
         if (fStack_134 < 0.0) {
@@ -257,9 +256,9 @@ LAB_0050d17c:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_0050eb80(this_ptr);
         }
       }
-      iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar4 != 0) goto LAB_0050d285;
-      iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_RETURN);
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
       if (iVar4 != 0) {
         this_ptr->players[this_ptr->local_player_index].ready_flag =
              (uint)(this_ptr->players[this_ptr->local_player_index].ready_flag == 0);
@@ -270,12 +269,12 @@ LAB_0050d17c:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_0050eb80(this_ptr);
         }
       }
-      iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_S);
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S);
       if ((iVar4 != 0) &&
          (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_0047dae0
-                            (g_CEditorToolsPtr,"Send chat",g_CHAR_ARRAY_01d34bb0,0x100,1),
+                            (g_CEditorToolsPtr,"Send chat",g_ChatMessageBuffer,0x100,1),
          iVar4 != 0)) {
-        core_netgame_cpp_CNetGame_processChatOut_FUN_0050d9f0(this_ptr,g_CHAR_ARRAY_01d34bb0,-1);
+        core_netgame_cpp_CNetGame_processChatOut_FUN_0050d9f0(this_ptr,g_ChatMessageBuffer,-1);
       }
       for (iVar4 = 0; iVar4 < g_CNetGamePtr->player_count; iVar4 = iVar4 + 1) {
         core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(this_ptr,iVar4,2.0);
@@ -287,7 +286,7 @@ LAB_0050d285:
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     core_netgame_cpp_CNetGame_disconnect_FUN_0050b8d0(this_ptr,1);
     engine_2d_c_clearInputAndWait_FUN_004032b0();
-    g_INT_0061e990 = iStack_30;
+    g_ForceMessagePump = iStack_30;
   }
   return 0;
 }

@@ -14,10 +14,10 @@ void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CWayPoint *this_pt
   CDemonActor *local_14;
   
   core_trigger_cpp_CTrigger_archive_FUN_00548170(&this_ptr->base);
-  if (INT_005c1578 < 2) {
+  if (g_CWayPointClassVersion < 2) {
     core_actor_cpp_archiveActor_FUN_0040c980(&local_14,"nextWayPoint");
   }
-  if (1 < INT_005c1578) {
+  if (1 < g_CWayPointClassVersion) {
     iVar1 = 0;
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->num_adjacent_waypoints,"adjCount");

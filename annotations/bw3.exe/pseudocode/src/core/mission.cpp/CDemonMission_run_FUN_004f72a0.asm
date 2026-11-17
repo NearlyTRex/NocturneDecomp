@@ -23,7 +23,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CFieldNotes g_CFieldNotesInstance
 ;   undefined4 g_CGameInstance.act_completion_state
-;   int g_INT_01d5ba00
+;   int g_HeroCount
 ;   int g_INT_01d5ba14
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -56,7 +56,7 @@ section .text
     PUSH EDI                            ; 004f72a2
     PUSH EBP                            ; 004f72a3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004f72a4
-    CMP dword ptr [0x01d5ba00],0x1      ; 004f72a8 | g_INT_01d5ba00
+    CMP dword ptr [0x01d5ba00],0x1      ; 004f72a8 | g_HeroCount
         ;   Label: LAB_004f72a8
     JL 0x004f7390                       ; 004f72af
         ;   XREF to: 004f7390 (CONDITIONAL_JUMP)  ; LAB_004f7390

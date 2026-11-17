@@ -74,7 +74,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005787f0(CWaterA
         iVar9 = 0;
         do {
           core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_005386d0
-                    (g_CDemonSetPtr,vertex_position,&g_CVector3f_02cfd900,iVar7);
+                    (g_CDemonSetPtr,vertex_position,&g_ZeroVector,iVar7);
           pSVar1 = g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr;
           lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)
           ;

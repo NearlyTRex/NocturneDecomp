@@ -32,7 +32,7 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80 at 00533ce5
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005e29c0 = 256
+;   float g_MirrorProjectionScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
@@ -56,13 +56,13 @@ section .text
     MOV EAX,EDI                         ; 004f5628
     MOV EDX,dword ptr [ESI]             ; 004f562a | g_CDemonRenderer_01bdd7e4
     FLD float ptr [EAX]                 ; 004f562c
-    FMUL float ptr [0x005e29c0]         ; 004f562e | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f562e | g_MirrorProjectionScale
     FISTP dword ptr [EBX]               ; 004f5634
     FLD float ptr [EAX + 0x4]           ; 004f5636
-    FMUL float ptr [0x005e29c0]         ; 004f5639 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f5639 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x4]         ; 004f563f
     FLD float ptr [EAX + 0x8]           ; 004f5642
-    FMUL float ptr [0x005e29c0]         ; 004f5645 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f5645 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 004f564b
     LEA EAX,[ESP + 0x54]                ; 004f564e
     PUSH EAX                            ; 004f5652
@@ -76,13 +76,13 @@ section .text
     LEA EBX,[ESP + 0x48]                ; 004f5667
     LEA EAX,[EDI + 0xc]                 ; 004f566b
     FLD float ptr [EAX]                 ; 004f566e
-    FMUL float ptr [0x005e29c0]         ; 004f5670 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f5670 | g_MirrorProjectionScale
     FISTP dword ptr [EBX]               ; 004f5676
     FLD float ptr [EAX + 0x4]           ; 004f5678
-    FMUL float ptr [0x005e29c0]         ; 004f567b | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f567b | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x4]         ; 004f5681
     FLD float ptr [EAX + 0x8]           ; 004f5684
-    FMUL float ptr [0x005e29c0]         ; 004f5687 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f5687 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 004f568d
     LEA EAX,[ESP + 0x48]                ; 004f5690
     PUSH EAX                            ; 004f5694
@@ -96,13 +96,13 @@ section .text
     LEA EBX,[ESP + 0x6c]                ; 004f56a9
     LEA EAX,[EDI + 0x18]                ; 004f56ad
     FLD float ptr [EAX]                 ; 004f56b0
-    FMUL float ptr [0x005e29c0]         ; 004f56b2 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f56b2 | g_MirrorProjectionScale
     FISTP dword ptr [EBX]               ; 004f56b8
     FLD float ptr [EAX + 0x4]           ; 004f56ba
-    FMUL float ptr [0x005e29c0]         ; 004f56bd | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f56bd | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x4]         ; 004f56c3
     FLD float ptr [EAX + 0x8]           ; 004f56c6
-    FMUL float ptr [0x005e29c0]         ; 004f56c9 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f56c9 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 004f56cf
     LEA EAX,[ESP + 0x6c]                ; 004f56d2
     PUSH EAX                            ; 004f56d6
@@ -116,13 +116,13 @@ section .text
     LEA EBX,[ESP + 0x60]                ; 004f56ee
     LEA EAX,[EDI + 0x24]                ; 004f56f2
     FLD float ptr [EAX]                 ; 004f56f5
-    FMUL float ptr [0x005e29c0]         ; 004f56f7 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f56f7 | g_MirrorProjectionScale
     FISTP dword ptr [EBX]               ; 004f56fd
     FLD float ptr [EAX + 0x4]           ; 004f56ff
-    FMUL float ptr [0x005e29c0]         ; 004f5702 | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f5702 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x4]         ; 004f5708
     FLD float ptr [EAX + 0x8]           ; 004f570b
-    FMUL float ptr [0x005e29c0]         ; 004f570e | g_FLOAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f570e | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 004f5714
     LEA EAX,[ESP + 0x60]                ; 004f5717
     PUSH EAX                            ; 004f571b

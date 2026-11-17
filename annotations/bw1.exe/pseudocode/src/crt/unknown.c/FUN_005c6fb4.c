@@ -11,9 +11,9 @@ void FUN_005c6fb4(void)
 {
   WatcomDestructorCall **ppWVar1;
   
-  while (g_WatcomStaticDestructorNode_PTR_0062676c != (WatcomStaticDestructorNode *)0x0) {
-    ppWVar1 = &g_WatcomStaticDestructorNode_PTR_0062676c->destructor_info;
-    g_WatcomStaticDestructorNode_PTR_0062676c = g_WatcomStaticDestructorNode_PTR_0062676c->next;
+  while (g_AtexitListHead != (WatcomStaticDestructorNode *)0x0) {
+    ppWVar1 = &g_AtexitListHead->destructor_info;
+    g_AtexitListHead = g_AtexitListHead->next;
     (*(*ppWVar1)->destructor_func)((*ppWVar1)->object_instance,0);
   }
   return;

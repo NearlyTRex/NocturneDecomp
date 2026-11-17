@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 152,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 120,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 390
+    "total_lines": 388
   },
   "cross_references": [
     {
@@ -87,7 +87,7 @@
     },
     {
       "addr": "005f2b04",
-      "name": "g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04",
+      "name": "g_VisibleFacePointers",
       "type": "SMRGLPrimitiveQuad*[2000]",
       "value": null
     },
@@ -99,13 +99,13 @@
     },
     {
       "addr": "007303fc",
-      "name": "g_INT_007303fc",
+      "name": "g_CullingMode",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "g_PTR_01c6b5cc",
+      "name": "g_ScanlineRenderFunc",
       "type": "void*",
       "value": null
     },
@@ -117,13 +117,13 @@
     },
     {
       "addr": "01c6e2b4",
-      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "g_INT_01c6e2b8",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     },
@@ -276,17 +276,17 @@
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(SInputFace **)((int)g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04",
+      "match": "(SInputFace **)((int)g_VisibleFacePointers",
       "severity": "moderate",
-      "text": "*(SInputFace **)((int)g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04 + local_18) =",
+      "text": "*(SInputFace **)((int)g_VisibleFacePointers + local_18) = face_array;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_VisibleFacePointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 55,
-      "match": "(int)g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04",
+      "match": "(int)g_VisibleFacePointers",
       "severity": "moderate",
-      "text": "*(SInputFace **)((int)g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04 + local_18) =",
+      "text": "*(SInputFace **)((int)g_VisibleFacePointers + local_18) = face_array;",
       "type": "pointer_truncation"
     }
   ]

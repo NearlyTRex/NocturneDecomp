@@ -66,7 +66,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr
     core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->goal_param,"goalParam");
     core_actor_cpp_archiveFloat_FUN_0040b830
               (&this_ptr->current_movement_rate,"currentMovementRate");
-    if (g_INT_007df9b8 == 1) {
+    if (g_ActorReadingMode == 1) {
       core_actor_cpp_archiveInteger_FUN_0040b8b0(&iStack_1c,"attachCount");
       if (10 < iStack_1c) {
         g_CHAR_PTR_01d71de0 = "..\\core\\platfrm.cpp";

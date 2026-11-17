@@ -21,12 +21,12 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int
   int local_14;
   
   bVar6 = 0;
-  iVar3 = ((uint)((longlong)world_x * (longlong)g_INT_01c6e2f0) >> 0x10 |
-          (int)((ulonglong)((longlong)world_x * (longlong)g_INT_01c6e2f0) >> 0x20) << 0x10) +
-          ((uint)((longlong)world_y * (longlong)g_INT_01c6e2f4) >> 0x10 |
-          (int)((ulonglong)((longlong)world_y * (longlong)g_INT_01c6e2f4) >> 0x20) << 0x10) +
-          ((uint)((longlong)world_z * (longlong)g_INT_01c6e2f8) >> 0x10 |
-          (int)((ulonglong)((longlong)world_z * (longlong)g_INT_01c6e2f8) >> 0x20) << 0x10);
+  iVar3 = ((uint)((longlong)world_x * (longlong)g_LightDirectionX) >> 0x10 |
+          (int)((ulonglong)((longlong)world_x * (longlong)g_LightDirectionX) >> 0x20) << 0x10) +
+          ((uint)((longlong)world_y * (longlong)g_LightDirectionY) >> 0x10 |
+          (int)((ulonglong)((longlong)world_y * (longlong)g_LightDirectionY) >> 0x20) << 0x10) +
+          ((uint)((longlong)world_z * (longlong)g_LightDirectionZ) >> 0x10 |
+          (int)((ulonglong)((longlong)world_z * (longlong)g_LightDirectionZ) >> 0x20) << 0x10);
   iVar4 = -iVar3;
   if (iVar4 < 0) {
     iVar4 = 0;
@@ -34,47 +34,48 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int
   else if (iVar3 != -0xffff && 0xfffe < iVar4) {
     iVar4 = 0xffff;
   }
-  lVar1 = (longlong)iVar4 * (longlong)(0xffff - g_INT_006002c4);
-  uVar5 = g_INT_006002c4 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+  lVar1 = (longlong)iVar4 * (longlong)(0xffff - g_AmbientLightLevel);
+  uVar5 = g_AmbientLightLevel + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   if ((int)uVar5 < 0) {
     uVar5 = 0;
   }
   else if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  if (g_INT_006002c8 == 0) {
-    uVar5 = (uint)((longlong)g_INT_006002cc * (longlong)(int)uVar5) >> 0x10 |
-            (int)((ulonglong)((longlong)g_INT_006002cc * (longlong)(int)uVar5) >> 0x20) << 0x10;
+  if (g_SpecularEnabled == 0) {
+    uVar5 = (uint)((longlong)g_DiffuseLightMultiplier * (longlong)(int)uVar5) >> 0x10 |
+            (int)((ulonglong)((longlong)g_DiffuseLightMultiplier * (longlong)(int)uVar5) >> 0x20) <<
+            0x10;
     goto LAB_004e0d78;
   }
   iVar4 = ((uint)((longlong)world_x * (longlong)iVar3) >> 0x10 |
           (int)((ulonglong)((longlong)world_x * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
-          g_INT_01c6e2f0;
+          g_LightDirectionX;
   local_18 = ((uint)((longlong)world_y * (longlong)iVar3) >> 0x10 |
              (int)((ulonglong)((longlong)world_y * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
-             g_INT_01c6e2f4;
+             g_LightDirectionY;
   local_14 = ((uint)((longlong)world_z * (longlong)iVar3) >> 0x10 |
              (int)((ulonglong)((longlong)world_z * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
-             g_INT_01c6e2f8;
-  if (((g_CVector3i_01d70c44.x != g_INT_01c6e2cc) || (g_CVector3i_01d70c44.y != g_INT_01c6e2d0)) ||
-     (g_CVector3i_01d70c44.z != g_INT_01c6e2d4)) {
-    g_CVector3i_01d70c44.x = g_INT_01c6e2cc;
-    g_CVector3i_01d70c44.y = g_INT_01c6e2d0;
-    g_CVector3i_01d70c44.z = g_INT_01c6e2d4;
-    engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(&g_CVector3i_01d70c44,&local_24);
-    g_CVector3i_01d70c50.x = local_24.x;
-    *(uint *)((int)&g_CVector3i_01d70c50 + (uint)bVar6 * -8 + 4) =
+             g_LightDirectionZ;
+  if (((g_CachedViewPosition.x != g_RelativeX) || (g_CachedViewPosition.y != g_RelativeY)) ||
+     (g_CachedViewPosition.z != g_RelativeZ)) {
+    g_CachedViewPosition.x = g_RelativeX;
+    g_CachedViewPosition.y = g_RelativeY;
+    g_CachedViewPosition.z = g_RelativeZ;
+    engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(&g_CachedViewPosition,&local_24);
+    g_NormalizedViewVector.x = local_24.x;
+    *(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =
          *(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);
     *(uint *)((uint)bVar6 * -8 + 0x1d70c58 + (uint)bVar6 * -8) =
          *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   }
-  lVar1 = (longlong)iVar4 * (longlong)g_CVector3i_01d70c50.x;
+  lVar1 = (longlong)iVar4 * (longlong)g_NormalizedViewVector.x;
   iVar3 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-          ((uint)((longlong)local_18 * (longlong)g_CVector3i_01d70c50.y) >> 0x10 |
-          (int)((ulonglong)((longlong)local_18 * (longlong)g_CVector3i_01d70c50.y) >> 0x20) << 0x10)
-          + ((uint)((longlong)local_14 * (longlong)g_CVector3i_01d70c50.z) >> 0x10 |
-            (int)((ulonglong)((longlong)local_14 * (longlong)g_CVector3i_01d70c50.z) >> 0x20) <<
-            0x10);
+          ((uint)((longlong)local_18 * (longlong)g_NormalizedViewVector.y) >> 0x10 |
+          (int)((ulonglong)((longlong)local_18 * (longlong)g_NormalizedViewVector.y) >> 0x20) <<
+          0x10) + ((uint)((longlong)local_14 * (longlong)g_NormalizedViewVector.z) >> 0x10 |
+                  (int)((ulonglong)((longlong)local_14 * (longlong)g_NormalizedViewVector.z) >> 0x20
+                       ) << 0x10);
   iVar4 = -iVar3;
   if (iVar4 < 0) goto LAB_004e0d78;
   if (iVar3 == -0xffff || iVar4 < 0xffff) {
@@ -95,10 +96,11 @@ LAB_004e0d2d:
     lVar1 = (longlong)(int)uVar2 * (longlong)(int)uVar2;
     uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   }
-  uVar5 = ((uint)((longlong)g_INT_006002cc * (longlong)(int)uVar5) >> 0x10 |
-          (int)((ulonglong)((longlong)g_INT_006002cc * (longlong)(int)uVar5) >> 0x20) << 0x10) +
-          ((uint)((longlong)g_INT_006002d0 * (longlong)(int)uVar2) >> 0x10 |
-          (int)((ulonglong)((longlong)g_INT_006002d0 * (longlong)(int)uVar2) >> 0x20) << 0x10);
+  uVar5 = ((uint)((longlong)g_DiffuseLightMultiplier * (longlong)(int)uVar5) >> 0x10 |
+          (int)((ulonglong)((longlong)g_DiffuseLightMultiplier * (longlong)(int)uVar5) >> 0x20) <<
+          0x10) + ((uint)((longlong)g_SpecularLightMultiplier * (longlong)(int)uVar2) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_SpecularLightMultiplier * (longlong)(int)uVar2) >>
+                       0x20) << 0x10);
 LAB_004e0d78:
   return ((int)((uVar5 + ((int)uVar5 >> 0x1f) * -0x10) - (uint)(((int)uVar5 >> 0x1f) << 3 < 0)) >> 4
          ) + 0x100;

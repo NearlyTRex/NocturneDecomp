@@ -51,7 +51,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0(CDemo
   
   bVar13 = 0;
   CStack_54.y_min = 0;
-  bVar12 = g_INT_01fc8d00 == 0;
+  bVar12 = g_MasterLightCount == 0;
   if (bVar12) {
     core_set_cpp_CDemonSet_initScene_FUN_0052d980(this_ptr);
   }
@@ -59,7 +59,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0(CDemo
   g_INT_01fc9608 = 0;
   g_INT_01fc9cd4 = 0;
   iStack_20 = 0;
-  g_INT_01fc8e84 = 0;
+  g_SpotLightCount = 0;
   if (0 < this_ptr->camera_count) {
     pCStack_38 = this_ptr->lights;
     iStack_44 = light_index + 1;
@@ -117,7 +117,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0(CDemo
           iVar4 = iStack_20;
           if (this_ptr->lights[iStack_14].light_type == 0) {
             iVar4 = 0;
-            if (0 < g_INT_01fc8d00) {
+            if (0 < g_MasterLightCount) {
               pCVar2 = pCStack_34 + iStack_14;
               iVar6 = 0;
               do {
@@ -127,9 +127,9 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0(CDemo
                 if (iVar3 == 0) break;
                 iVar4 = iVar4 + 1;
                 iVar6 = iVar6 + 4;
-              } while (iVar4 < g_INT_01fc8d00);
+              } while (iVar4 < g_MasterLightCount);
             }
-            if (iVar4 == g_INT_01fc8d00) {
+            if (iVar4 == g_MasterLightCount) {
               g_CHAR_PTR_01d046a0 = "..\\core\\set.cpp";
               g_INT_01d046a4 = 0x35c;
               core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");

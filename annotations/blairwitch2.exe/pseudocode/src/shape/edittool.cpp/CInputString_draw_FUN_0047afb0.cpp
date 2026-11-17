@@ -31,10 +31,10 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047afb0(CInputString *thi
       iVar2 = iVar3;
     }
     if (g_INT_01c25f84 == 0) {
-      engine_2d_c_fillRectColor_FUN_004031c0(iVar2,y_pos,x2,y2,g_INT_01c263a8);
+      engine_2d_c_fillRectColor_FUN_004031c0(iVar2,y_pos,x2,y2,g_SelectionColor);
     }
     else {
-      iVar3 = (g_INT_01c263a8 & 0xffU) * 3;
+      iVar3 = (g_SelectionColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2] |
                  (uint)g_UCHAR_ARRAY_01c35838[iVar3] << 0x10 |
@@ -44,20 +44,20 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047afb0(CInputString *thi
   }
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
-  this_ptr_00 = g_CBitFont_PTR_01c25590;
+  this_ptr_00 = g_EditorFont;
   text = this_ptr->string_data;
-  iVar2 = g_INT_01c263ac;
+  iVar2 = g_TextColor;
   if (this_ptr->mask_mode != 0) {
     if (0x3ff < (uint)this_ptr->current_length) {
       g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
       g_INT_01d046a4 = 0x223;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CInputString::draw - string too big for hidden text!");
     }
-    memset(g_CHAR_ARRAY_01c25f88,0x2a,this_ptr->current_length);
-    iVar2 = g_INT_01c263ac;
-    this_ptr_00 = g_CBitFont_PTR_01c25590;
-    text = g_CHAR_ARRAY_01c25f88;
-    g_CHAR_ARRAY_01c25f88[this_ptr->current_length] = '\0';
+    memset(g_TempStringBuffer,0x2a,this_ptr->current_length);
+    iVar2 = g_TextColor;
+    this_ptr_00 = g_EditorFont;
+    text = g_TempStringBuffer;
+    g_TempStringBuffer[this_ptr->current_length] = '\0';
   }
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr_00,text,x_pos,y_pos,iVar2,-1);
   uVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();

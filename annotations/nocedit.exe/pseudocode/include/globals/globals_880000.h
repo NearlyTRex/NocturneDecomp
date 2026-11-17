@@ -19,10 +19,10 @@ extern CDemonActorType g_CCrossbowClassInfo;
 extern CDemonActorType g_CCurtainClassInfo;
 
 // CVector3f[100]
-extern CVector3f CVector3f_ARRAY_008879c0[100];
+extern CVector3f g_CurtainCollisionPositions[100];
 
 // SCollisionInfo[100]
-extern SCollisionInfo SCollisionInfo_ARRAY_00887e70[100];
+extern SCollisionInfo g_CurtainCollisionInfos[100];
 
 // SCramRectangle**
 extern SCramRectangle** g_CramCandidateWriteCursor;
@@ -31,5 +31,5 @@ extern SCramRectangle** g_CramCandidateWriteCursor;
 extern char g_CameraLoadImageReadBuffer[500000];
 
 // int
-extern int INT_008879bc;
+extern int g_CurtainCollisionCount;
 

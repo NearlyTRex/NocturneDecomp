@@ -48,7 +48,7 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_00
       if ((local_30.y < local_30.z) && (-local_30.z < local_30.y)) goto LAB_00441951;
     }
   }
-  pCVar5 = &g_CVector3i_01410280;
+  pCVar5 = &g_CameraOutOfBoundsCoord;
 LAB_00441951:
   local_24 = pCVar5->x;
   iStack_20 = pCVar5->y;

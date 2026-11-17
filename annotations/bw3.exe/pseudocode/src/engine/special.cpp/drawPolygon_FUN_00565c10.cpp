@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_drawPolygon_FUN_00565c10(SRenderVertex *vertices,
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6020)(vertices,vertex_count,render_flags);
+  iVar1 = (*(code *)g_APIDLL_drawPolygon)(vertices,vertex_count,render_flags);
   return iVar1;
 }

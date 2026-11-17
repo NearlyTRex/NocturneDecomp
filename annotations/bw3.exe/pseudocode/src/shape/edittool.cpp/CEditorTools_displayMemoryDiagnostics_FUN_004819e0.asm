@@ -29,7 +29,7 @@
 ;   undefined4 s_Heap_is_empty_005bd374+3
 ;   TerminatedCString s_Memory_corruption_detect_005bd383
 ;   undefined4 s_Memory_corruption_detect_005bd383+1
-;   double g_DOUBLE_005bd3a5 = 0.0009765625
+;   double g_BytesToKilobytesScale = 0.0009765625
 ;
 ; Called Functions:
 ;   crt_heap.c__heapwalk_FUN_005a5bd0
@@ -115,7 +115,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 00481a63
     SUB ESP,0x8                         ; 00481a67
     MOV dword ptr [ESP + 0x18],EDI      ; 00481a6a
-    FLD double ptr [0x005bd3a5]         ; 00481a6e | g_DOUBLE_005bd3a5
+    FLD double ptr [0x005bd3a5]         ; 00481a6e | g_BytesToKilobytesScale
     FXCH                                ; 00481a74
     FMUL ST1                            ; 00481a76
     FILD dword ptr [ESP + 0x18]         ; 00481a78

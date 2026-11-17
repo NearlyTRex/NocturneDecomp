@@ -12,7 +12,7 @@
 ;   TerminatedCString s_sh_sh_c_15_005df586
 ;   TerminatedCString s_s_44_sh_c_2_005df594
 ;   double g_DOUBLE_005df5a4 = 0.25
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;
 ; Called Functions:
@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 004b4322 (CONDITIONAL_JUMP)  ; LAB_004b4322
     PUSH EDI                            ; 004b42f1
     PUSH 0x5df586                       ; 004b42f2 | = "sh-sh?c @ .15"
-    MOV EBX,dword ptr [0x0061c010]      ; 004b42f7 | g_CFireEffect_PTR_0061c010
+    MOV EBX,dword ptr [0x0061c010]      ; 004b42f7 | g_CFireEffectPtr
     PUSH EBX                            ; 004b42fd
     MOV EAX,[0x006236b8]                ; 004b42fe | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004b4303
@@ -135,7 +135,7 @@ section .text
     PUSH EDI                            ; 004b4322
         ;   Label: LAB_004b4322
     PUSH 0x5df594                       ; 004b4323 | = "44-sh?c @ .2"
-    MOV EDX,dword ptr [0x0061c010]      ; 004b4328 | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004b4328 | g_CFireEffectPtr
     PUSH EDX                            ; 004b432e
     MOV ECX,dword ptr [0x006236b8]      ; 004b432f | g_CSound_PTR_006236b8
     PUSH ECX                            ; 004b4335

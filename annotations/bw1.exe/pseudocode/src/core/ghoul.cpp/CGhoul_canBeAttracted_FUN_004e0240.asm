@@ -9,10 +9,10 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005e3d91 = 0.5
-;   undefined4 g_INT_ARRAY_01cd0d98[1]
-;   undefined4 g_INT_ARRAY_01cd0d98[2]
-;   undefined4 g_INT_ARRAY_01cd0d98[3]
-;   undefined4 g_INT_ARRAY_01cd0d98[4]
+;   undefined4 g_GhoulIndices[1]
+;   undefined4 g_GhoulIndices[2]
+;   undefined4 g_GhoulIndices[3]
+;   undefined4 g_GhoulIndices[4]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 004e0289
         ;   Label: LAB_004e0289
     PUSH ESI                            ; 004e028a
-    MOV EDX,dword ptr [0x01cd0d9c]      ; 004e028b | g_INT_ARRAY_01cd0d98[1]
+    MOV EDX,dword ptr [0x01cd0d9c]      ; 004e028b | g_GhoulIndices[1]
     PUSH EDX                            ; 004e0291
     PUSH EBX                            ; 004e0292
     LEA ESI,[ESP + 0x7c]                ; 004e0293
@@ -59,7 +59,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 004e029b
         ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004e02a0
-    MOV ECX,dword ptr [0x01cd0da4]      ; 004e02a3 | g_INT_ARRAY_01cd0d98[3]
+    MOV ECX,dword ptr [0x01cd0da4]      ; 004e02a3 | g_GhoulIndices[3]
     LEA ESI,[ESP + 0x74]                ; 004e02a9
     PUSH ECX                            ; 004e02ad
     MOVSD ES:EDI,ESI                    ; 004e02ae
@@ -109,7 +109,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e0348
     MOVSD ES:EDI,ESI                    ; 004e0349
     MOVSD ES:EDI,ESI                    ; 004e034a
-    MOV ESI,dword ptr [0x01cd0da0]      ; 004e034b | g_INT_ARRAY_01cd0d98[2]
+    MOV ESI,dword ptr [0x01cd0da0]      ; 004e034b | g_GhoulIndices[2]
     PUSH ESI                            ; 004e0351
     PUSH EBX                            ; 004e0352
     LEA ESI,[ESP + 0x94]                ; 004e0353
@@ -121,7 +121,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e036d
     MOVSD ES:EDI,ESI                    ; 004e036e
     MOVSD ES:EDI,ESI                    ; 004e036f
-    MOV EDI,dword ptr [0x01cd0da8]      ; 004e0370 | g_INT_ARRAY_01cd0d98[4]
+    MOV EDI,dword ptr [0x01cd0da8]      ; 004e0370 | g_GhoulIndices[4]
     PUSH EDI                            ; 004e0376
     PUSH EBX                            ; 004e0377
     LEA ESI,[ESP + 0xa0]                ; 004e0378

@@ -35,16 +35,16 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005e0a56 = 255
 ;   int g_INT_0061b4a0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   uchar[768] g_UCHAR_ARRAY_01c4e9f8
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+1
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+2
 ;   int g_INT_01c50948
-;   int g_INT_01cc8cd8
-;   int g_INT_01cc8cdc
-;   int g_INT_01cc8ce0
+;   int g_ShadowColorRed
+;   int g_ShadowColorGreen
+;   int g_ShadowColorBlue
 ;   float g_FLOAT_01d224c0
 ;
 ; Called Functions:
@@ -207,20 +207,20 @@ section .text
     CMP EDX,-0x2                        ; 004c1f03
     JNZ 0x004c1f84                      ; 004c1f06
         ;   XREF to: 004c1f84 (CONDITIONAL_JUMP)  ; LAB_004c1f84
-    MOV EAX,[0x01cc8cdc]                ; 004c1f0c | g_INT_01cc8cdc
+    MOV EAX,[0x01cc8cdc]                ; 004c1f0c | g_ShadowColorGreen
     MOV EDX,dword ptr [0x0061b4a0]      ; 004c1f11 | g_INT_0061b4a0
-    MOV ESI,dword ptr [0x01cc8cd8]      ; 004c1f17 | g_INT_01cc8cd8
+    MOV ESI,dword ptr [0x01cc8cd8]      ; 004c1f17 | g_ShadowColorRed
     MOV dword ptr [ESP + 0x10],EAX      ; 004c1f1d
-    MOV EAX,[0x01cc8ce0]                ; 004c1f21 | g_INT_01cc8ce0
+    MOV EAX,[0x01cc8ce0]                ; 004c1f21 | g_ShadowColorBlue
     CMP EDX,0x20                        ; 004c1f26
     JNZ 0x004c1f76                      ; 004c1f29
         ;   XREF to: 004c1f76 (CONDITIONAL_JUMP)  ; LAB_004c1f76
-    MOV CL,byte ptr [0x01c4e9d4]        ; 004c1f2b | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 004c1f2b | g_RedBitPosition
     MOV EDX,dword ptr [ESP + 0x10]      ; 004c1f31
     SHL ESI,CL                          ; 004c1f35
-    MOV CL,byte ptr [0x01c4e9e0]        ; 004c1f37 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 004c1f37 | g_GreenBitPosition
     SHL EDX,CL                          ; 004c1f3d
-    MOV CL,byte ptr [0x01c4e9ec]        ; 004c1f3f | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 004c1f3f | g_BlueBitPosition
     OR ESI,EDX                          ; 004c1f45
     SHL EAX,CL                          ; 004c1f47
     MOV ECX,ESI                         ; 004c1f49
@@ -262,16 +262,16 @@ section .text
     CMP EDX,0x20                        ; 004c1fb6
     JNZ 0x004c1fe9                      ; 004c1fb9
         ;   XREF to: 004c1fe9 (CONDITIONAL_JUMP)  ; LAB_004c1fe9
-    MOV CL,byte ptr [0x01c4e9d4]        ; 004c1fbb | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 004c1fbb | g_RedBitPosition
     SHL EAX,CL                          ; 004c1fc1
-    MOV CL,byte ptr [0x01c4e9e0]        ; 004c1fc3 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 004c1fc3 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x8],EAX       ; 004c1fc9
     MOV EAX,ESI                         ; 004c1fcd
     SHL EAX,CL                          ; 004c1fcf
     MOV ECX,dword ptr [ESP + 0x8]       ; 004c1fd1
     MOV EDX,dword ptr [ESP]             ; 004c1fd5
     OR EAX,ECX                          ; 004c1fd8
-    MOV CL,byte ptr [0x01c4e9ec]        ; 004c1fda | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 004c1fda | g_BlueBitPosition
     SHL EDX,CL                          ; 004c1fe0
     MOV ECX,EDX                         ; 004c1fe2
     JMP 0x004c1f4b                      ; 004c1fe4

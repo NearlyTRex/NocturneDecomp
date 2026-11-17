@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CharUpperBuffA_005d04a0 = 001d0a68
-;   uint g_UINT_00626ad8 = 0x1
-;   int g_INT_02c9f6e0
+;   uint g_CodePage = 0x1
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   CharUpperBuffA
@@ -42,12 +42,12 @@ section .text
         ;   XREF to: 005c9110 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c9110()
     ADD ESP,0x4                         ; 005ce9ad
     XOR DL,DL                           ; 005ce9b0
-    MOV EBX,dword ptr [0x00626ad8]      ; 005ce9b2 | g_UINT_00626ad8
+    MOV EBX,dword ptr [0x00626ad8]      ; 005ce9b2 | g_CodePage
     MOV byte ptr [ESP + EAX*0x1],DL     ; 005ce9b8
     CMP EBX,0x3a4                       ; 005ce9bb
     JNZ 0x005ce9ec                      ; 005ce9c1
         ;   XREF to: 005ce9ec (CONDITIONAL_JUMP)  ; LAB_005ce9ec
-    CMP dword ptr [0x02c9f6e0],0x0      ; 005ce9c3 | g_INT_02c9f6e0
+    CMP dword ptr [0x02c9f6e0],0x0      ; 005ce9c3 | g_MultibyteLocaleActive
     JZ 0x005ce9ec                       ; 005ce9ca
         ;   XREF to: 005ce9ec (CONDITIONAL_JUMP)  ; LAB_005ce9ec
     XOR EAX,EAX                         ; 005ce9cc

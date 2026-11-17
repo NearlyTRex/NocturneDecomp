@@ -516,7 +516,7 @@
     },
     {
       "addr": "005f39d8",
-      "name": "g_FLOAT_005f39d8",
+      "name": "g_BoundingBoxWorldToIntegerScale",
       "type": "float",
       "value": "256"
     },
@@ -534,31 +534,31 @@
     },
     {
       "addr": "0070ca88",
-      "name": "g_INT_0070ca88",
+      "name": "g_StoredX",
       "type": "int",
       "value": null
     },
     {
       "addr": "0070ca8c",
-      "name": "g_INT_0070ca8c",
+      "name": "g_StoredY",
       "type": "int",
       "value": null
     },
     {
       "addr": "0070ca90",
-      "name": "g_INT_0070ca90",
+      "name": "g_StoredZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "007bda74",
-      "name": "g_CDemonCamera_PTR_007bda74",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "01c38aec",
-      "name": "g_INT_01c38aec",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     }
@@ -932,11 +932,11 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Pointer value `g_CDemonCamera_PTR_007bda74` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_CurrentSceneCamera` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 60,
-      "match": "(int)g_CDemonCamera_PTR_007bda74",
+      "match": "(int)g_CurrentSceneCamera",
       "severity": "moderate",
-      "text": "g_INT_01c38aec = (int)g_CDemonCamera_PTR_007bda74;",
+      "text": "g_PerspectiveReciprocal = (int)g_CurrentSceneCamera;",
       "type": "pointer_truncation"
     },
     {

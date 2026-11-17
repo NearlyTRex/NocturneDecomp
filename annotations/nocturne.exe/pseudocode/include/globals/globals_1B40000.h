@@ -18,61 +18,61 @@
 // =============================================================================
 
 // CBitFont*
-extern CBitFont* g_CBitFont_PTR_01b4d718;
+extern CBitFont* g_CurrentFont;
 
 // CDemonActorType
-extern CDemonActorType g_CDraculaBrideActorType_01b4d224;
+extern CDemonActorType g_CDraculaBrideClassInfo;
 
 // CDemonRenderer
 extern CDemonRenderer g_CDemonRenderer_01b4d738;
 
 // CVector3f
-extern CVector3f CVector3f_01b4d200;
-extern CVector3f CVector3f_01b4d20c;
-extern CVector3f CVector3f_01b4d218;
+extern CVector3f g_DraculaBrideOffsetUp;
+extern CVector3f g_DraculaBrideOffsetMinusX;
+extern CVector3f g_DraculaBrideOffsetPlusX;
 
 // SEdgeTableEntry[40]
-extern SEdgeTableEntry g_SEdgeTableEntry_ARRAY_01b4d490[40];
+extern SEdgeTableEntry g_GlobalEdgeTable[40];
 
 // SFace[5000]
-extern SFace g_SFace_ARRAY_01b4d7b4[5000];
+extern SFace g_CapturedFaces[5000];
 
 // SFreaky[6]
-extern SFreaky g_SFreaky_ARRAY_01b4d280[6];
+extern SFreaky g_FreakySounds[6];
 
 // SSoftwareEdge[16]
-extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01b4cd34[16];
+extern SSoftwareEdge g_EdgeInterpolationArray[16];
 
 // float
-extern float g_FLOAT_01b4d478;
-extern float g_FLOAT_01b4d47c;
-extern float g_FLOAT_01b4d484;
-extern float g_FLOAT_01b4d488;
+extern float g_DashAnimationAccumulator;
+extern float g_DashAnimationOffset;
+extern float g_DashAnimationAccumulatorOther;
+extern float g_DashOffsetCounter;
 
 // int
-extern int g_INT_01b4cd30;
-extern int g_INT_01b4d1b4;
-extern int g_INT_01b4d1b8;
-extern int g_INT_01b4d1fc;
-extern int g_INT_01b4d480;
-extern int g_INT_01b4d48c;
+extern int g_RenderTriangleEdgeCount;
+extern int g_RenderTriangleMinScanlineY;
+extern int g_RenderTriangleMaxScanlineY;
+extern int g_RasterizerDepthBias;
+extern int g_DashAnimationLastFrame;
+extern int g_LastAnimationTimerValue;
 extern int g_INT_01b4d710;
-extern int g_INT_01b4d714;
-extern int g_INT_01b4d71c;
-extern int g_INT_01b4d720;
-extern int g_INT_01b4d724;
-extern int g_INT_01b4d728;
-extern int g_INT_01b4d72c;
-extern int g_INT_01b4d730;
-extern int g_INT_01b4d734;
+extern int g_PaletteColorIndex;
+extern int g_UseRGBConversion;
+extern int g_OriginalColorValue;
+extern int g_ScaledRedComponent;
+extern int g_ScaledGreenComponent;
+extern int g_ScaledBlueComponent;
+extern int g_PackedPixelColor;
+extern int g_DuplicatedPixelColor;
 extern int g_INT_01b4d764;
-extern int g_INT_01b4d768;
-extern int g_INT_01b4d7ac;
-extern int g_INT_01b4d7b0;
+extern int g_RenderAbortFlag;
+extern int g_CaptureFaceCount;
+extern int g_CaptureTextureCount;
 
 // int[16]
-extern int g_INT_ARRAY_01b4d76c[16];
+extern int g_VertexIndexBuffer[16];
 
 // int[8]
-extern int g_INT_ARRAY_01b4d260[8];
+extern int g_DraculaBrideIndices[8];
 

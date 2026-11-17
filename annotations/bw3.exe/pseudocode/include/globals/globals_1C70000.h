@@ -18,7 +18,7 @@
 // =============================================================================
 
 // CCharacter*[50]
-extern CCharacter* g_CCharacter_PTR_ARRAY_01c74b6c[50];
+extern CCharacter* g_GunFlameCandidates[50];
 
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
@@ -28,40 +28,40 @@ extern CDemonActorType g_CDemonActorType_01c73618;
 extern CFireEffect g_CFireEffect_01c73654;
 
 // CFlameCan*[150]
-extern CFlameCan* g_CFlameCan_PTR_ARRAY_01c74c38[150];
+extern CFlameCan* g_FlameCans[150];
 
 // CKeyFramedModelInstance
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73698;
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73814;
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73990;
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73b0c;
+extern CKeyFramedModelInstance g_FireEffectFlamingStakeModel;
+extern CKeyFramedModelInstance g_FireEffectFireballModel;
+extern CKeyFramedModelInstance g_FireEffectFireballSmallModel;
+extern CKeyFramedModelInstance g_FireEffectFireballGreenModel;
 extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73c88;
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c74278;
+extern CKeyFramedModelInstance g_FireEffectGunFlashModel;
 
 // CKeyFramedModelInstance[5]
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_ARRAY_01c743fc[5];
+extern CKeyFramedModelInstance g_CFireEffectDebrisModels[5];
 
 // CSmokeParticle[2048]
-extern CSmokeParticle g_CSmokeParticle_ARRAY_01c74ea0[2048];
+extern CSmokeParticle g_SmokeParticlePool[2048];
 
 // CVector3i
-extern CVector3i g_CVector3i_01c73658;
-extern CVector3i g_CVector3i_01c73664;
+extern CVector3i g_BillboardCameraRight;
+extern CVector3i g_BillboardCameraUp;
 
 // SMRGLPrimitiveQuadIndex
-extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c73670;
+extern SMRGLPrimitiveQuadIndex g_BillboardPrimitive;
 
 // char[256]
-extern char g_CHAR_ARRAY_01c734b0[256];
+extern char g_EventErrorMessageBuffer[256];
 
 // int
-extern int g_INT_01c734ac;
-extern int g_INT_01c743f4;
-extern int g_INT_01c743f8;
-extern int g_INT_01c74b68;
-extern int g_INT_01c74c34;
-extern int g_INT_01c74e9c;
+extern int g_EventDryRun;
+extern int g_TextureAnimCounter2;
+extern int g_TextureAnimCounter1;
+extern int g_GunFlameCandidateCount;
+extern int g_FlameCanCount;
+extern int g_SmokeParticleAllocIndex;
 
 // uint[3]
-extern uint g_UINT_ARRAY_01c74e90[3];
+extern uint g_ShellBounceSoundHandles[3];
 

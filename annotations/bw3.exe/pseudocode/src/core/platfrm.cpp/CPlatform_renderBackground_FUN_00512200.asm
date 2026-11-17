@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005e32e0 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   CDemonCamera* g_CDemonCamera_PTR_007e2a54
-;   int g_INT_01547200
+;   CDemonCamera* g_CurrentSceneCamera
+;   int g_FlatShadingLightLevel
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CDemonSetInstance.per_pixel_lighting_enabled
 ;
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBP + 0x3b8]               ; 00512254
         ;   Label: LAB_00512254
     PUSH EAX                            ; 0051225a
-    MOV ECX,dword ptr [0x005fba60]      ; 0051225b | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 0051225b | g_CEventListPtr
     PUSH ECX                            ; 00512261
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00512262
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 0051224e (CONDITIONAL_JUMP)  ; LAB_0051224e
     LEA EAX,[EBP + 0x354]               ; 0051226e
     PUSH EAX                            ; 00512274
-    MOV EBX,dword ptr [0x005fba60]      ; 00512275 | g_CEventList_PTR_005fba60
+    MOV EBX,dword ptr [0x005fba60]      ; 00512275 | g_CEventListPtr
     PUSH EBX                            ; 0051227b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0051227c
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -152,14 +152,14 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 0051234d
     PUSH 0x0                            ; 00512350
     LEA EBX,[ESP + 0x3c]                ; 00512352
-    MOV EAX,[0x007e2a54]                ; 00512356 | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 00512356 | g_CurrentSceneCamera
     PUSH EBX                            ; 0051235b
     MOV ESI,dword ptr [EAX + 0x3c]      ; 0051235c
     PUSH EAX                            ; 0051235f
     CALL dword ptr [ESI + 0x8]          ; 00512360
     ADD ESP,0xc                         ; 00512363
     PUSH -0x1                           ; 00512366
-    MOV [0x01547200],EAX                ; 00512368 | g_INT_01547200
+    MOV [0x01547200],EAX                ; 00512368 | g_FlatShadingLightLevel
     LEA EAX,[EBP + 0x158]               ; 0051236d
     PUSH 0x0                            ; 00512373
     PUSH EAX                            ; 00512375

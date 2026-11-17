@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00454520(CDemonCamera *this_ptr,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00454520(CDemonCamera *this_ptr,int vertex)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   vertex
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -40,15 +40,15 @@ section .text
     ADD EDX,ECX                         ; 00454557
     MOV ECX,dword ptr [EBX + 0x158]     ; 00454559
     MOV EDX,dword ptr [ECX + EDX*0x4]   ; 0045455f
-    MOV CL,byte ptr [0x01c4e9d4]        ; 00454562 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 00454562 | g_RedBitPosition
     MOV EBX,EDX                         ; 00454568
     SHR EBX,CL                          ; 0045456a
     MOV ESI,EDX                         ; 0045456c
     AND EBX,0xff                        ; 0045456e
-    MOV CL,byte ptr [0x01c4e9e0]        ; 00454574 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 00454574 | g_GreenBitPosition
     SHL EBX,0x8                         ; 0045457a
     SHR ESI,CL                          ; 0045457d
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0045457f | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0045457f | g_BlueBitPosition
     AND ESI,0xff                        ; 00454585
     MOV dword ptr [EAX + 0x20],EBX      ; 0045458b
     SHR EDX,CL                          ; 0045458e

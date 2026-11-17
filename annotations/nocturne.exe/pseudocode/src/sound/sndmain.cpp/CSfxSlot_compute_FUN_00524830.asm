@@ -76,7 +76,7 @@ section .text
     SUB ESP,0x68                        ; 00524836
     AND ESP,0xfffffff8                  ; 00524839
     MOV ESI,dword ptr [EBP + 0x14]      ; 0052483c
-    CMP dword ptr [0x02dc84bc],0x0      ; 0052483f | g_INT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 0052483f | g_SoundLockCount
     JLE 0x00524aba                      ; 00524846
         ;   XREF to: 00524aba (CONDITIONAL_JUMP)  ; LAB_00524aba
     MOV EDI,dword ptr [ESI + 0x74]      ; 0052484c
@@ -226,7 +226,7 @@ section .text
     CMP EAX,0x1                         ; 005249d1
     JNZ 0x00524a30                      ; 005249d4
         ;   XREF to: 00524a30 (CONDITIONAL_JUMP)  ; LAB_00524a30
-    MOV EDX,dword ptr [0x005bea68]      ; 005249d6 | g_INT_005bea68
+    MOV EDX,dword ptr [0x005bea68]      ; 005249d6 | g_AudioChannelCount
     XOR EBX,EBX                         ; 005249dc
     TEST EDX,EDX                        ; 005249de
     JLE 0x00524a30                      ; 005249e0
@@ -251,7 +251,7 @@ section .text
     INC EBX                             ; 00524a18
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00524a19
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
-    MOV EDX,dword ptr [0x005bea68]      ; 00524a1e | g_INT_005bea68
+    MOV EDX,dword ptr [0x005bea68]      ; 00524a1e | g_AudioChannelCount
     ADD ESP,0x14                        ; 00524a24
     CMP EBX,EDX                         ; 00524a27
     JL 0x005249e4                       ; 00524a29
@@ -297,7 +297,7 @@ section .text
     TEST EDI,EDI                        ; 00524a90
     JZ 0x00524aae                       ; 00524a92
         ;   XREF to: 00524aae (CONDITIONAL_JUMP)  ; LAB_00524aae
-    MOV EAX,[0x02dc8318]                ; 00524a94 | g_CSoundDevice_PTR_02dc8318
+    MOV EAX,[0x02dc8318]                ; 00524a94 | g_CSoundDevicePtr
     TEST EAX,EAX                        ; 00524a99
     JZ 0x00524aae                       ; 00524a9b
         ;   XREF to: 00524aae (CONDITIONAL_JUMP)  ; LAB_00524aae
@@ -451,7 +451,7 @@ section .text
     FSTP double ptr [ESP + 0x10]        ; 00524c26
         ;   Label: LAB_00524c26
     FLD double ptr [ESP + 0x10]         ; 00524c2a
-    FMUL double ptr [0x005bea80]        ; 00524c2e | g_DOUBLE_005bea80
+    FMUL double ptr [0x005bea80]        ; 00524c2e | g_Cached3DDistanceFactor
     FLD double ptr [0x005a2150]         ; 00524c34 | g_DOUBLE_005a2150
     FXCH                                ; 00524c3a
     FADD ST0,ST1                        ; 00524c3c

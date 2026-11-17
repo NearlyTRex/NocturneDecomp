@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 68,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 36,
     "suspect_count": 2,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast"
     ],
-    "total_lines": 187
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -56,7 +56,7 @@
   "globals": [
     {
       "addr": "006141f0",
-      "name": "g_CEventList_PTR_006141f0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c38bc0"
     },
@@ -230,7 +230,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 21,
+      "line": 19,
       "match": "(int)new_state < 0x3f800000",
       "severity": "moderate",
       "text": "(((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param)))) {",

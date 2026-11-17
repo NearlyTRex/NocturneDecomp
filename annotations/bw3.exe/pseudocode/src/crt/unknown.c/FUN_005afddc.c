@@ -10,13 +10,13 @@ void FUN_005afddc(void)
 
 {
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(0);
-  if (g_INT_00607e80 == -1) {
-    g_INT_00607e80 =
+  if (g_ConsoleInputHandle == -1) {
+    g_ConsoleInputHandle =
          (int)CreateFileA("conin$",0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
                           (HANDLE)0x0);
   }
-  if (g_INT_00607e84 == -1) {
-    g_INT_00607e84 =
+  if (g_ConsoleOutputHandle == -1) {
+    g_ConsoleOutputHandle =
          (int)CreateFileA("conout$",0x40000000,2,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
                           (HANDLE)0x0);
   }

@@ -22,8 +22,8 @@
 ;   TerminatedCString s_unlockSound_sound_was_no_005d3d3a
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   HANDLE g_HANDLE_02cf3418
-;   int g_INT_02cf341c
+;   HANDLE g_SoundMutex
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -37,19 +37,19 @@ section .text
     PUSH EDI                            ; 00556fd0
         ;   Label: sound_sndmain.cpp_unlockSound_FUN_00556fd0
     PUSH EBP                            ; 00556fd1
-    CMP dword ptr [0x02cf341c],0x1      ; 00556fd2 | g_INT_02cf341c
+    CMP dword ptr [0x02cf341c],0x1      ; 00556fd2 | g_SoundLockCount
     JL 0x005590e1                       ; 00556fd9
         ;   XREF to: 005590e1 (CONDITIONAL_JUMP)  ; LAB_005590e1
-    CMP dword ptr [0x02cf341c],0x1      ; 00556fdf | g_INT_02cf341c
+    CMP dword ptr [0x02cf341c],0x1      ; 00556fdf | g_SoundLockCount
         ;   Label: LAB_00556fdf
     JZ 0x0055910b                       ; 00556fe6
         ;   XREF to: 0055910b (CONDITIONAL_JUMP)  ; LAB_0055910b
-    MOV EBP,dword ptr [0x02cf341c]      ; 00556fec | g_INT_02cf341c
+    MOV EBP,dword ptr [0x02cf341c]      ; 00556fec | g_SoundLockCount
         ;   Label: LAB_00556fec
-    MOV EDI,dword ptr [0x02cf3418]      ; 00556ff2 | g_HANDLE_02cf3418
+    MOV EDI,dword ptr [0x02cf3418]      ; 00556ff2 | g_SoundMutex
     DEC EBP                             ; 00556ff8
     PUSH EDI                            ; 00556ff9
-    MOV dword ptr [0x02cf341c],EBP      ; 00556ffa | g_INT_02cf341c
+    MOV dword ptr [0x02cf341c],EBP      ; 00556ffa | g_SoundLockCount
     CALL wincore_winrun.cpp_releaseMutex_FUN_00581990 ; 00557000
         ;   XREF to: 00581990 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_releaseMutex_FUN_00581990(HANDLE mutex_handle)
     ADD ESP,0x4                         ; 00557005

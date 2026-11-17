@@ -11,7 +11,7 @@
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b5ea
 ;
 ; Referenced Globals:
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
+;   CKeys* g_CKeysPtr = 01d02f84
 ;   void* g_PTR_01d02f84
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 0047acc3
     MOV EBX,dword ptr [ESP + 0x14]      ; 0047acc4
     PUSH 0x4b                           ; 0047acc8
-    MOV EAX,[0x00617dd4]                ; 0047acca | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047acca | g_CKeysPtr
     PUSH EAX                            ; 0047accf | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047acd0 | g_PTR_01d02f84
     XOR ESI,ESI                         ; 0047acd2
@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [EBX + 0x134],ECX     ; 0047acf1
     PUSH 0x4d                           ; 0047acf7
         ;   Label: LAB_0047acf7
-    MOV EAX,[0x00617dd4]                ; 0047acf9 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047acf9 | g_CKeysPtr
     PUSH EAX                            ; 0047acfe | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047acff | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0047ad01
@@ -70,7 +70,7 @@ section .text
     MOV dword ptr [EBX + 0x134],EBP     ; 0047ad23
     PUSH 0x47                           ; 0047ad29
         ;   Label: LAB_0047ad29
-    MOV EAX,[0x00617dd4]                ; 0047ad2b | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047ad2b | g_CKeysPtr
     PUSH EAX                            ; 0047ad30 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047ad31 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0047ad33
@@ -82,7 +82,7 @@ section .text
     MOV dword ptr [EBX + 0x134],0x0     ; 0047ad42
     PUSH 0x4f                           ; 0047ad4c
         ;   Label: LAB_0047ad4c
-    MOV EAX,[0x00617dd4]                ; 0047ad4e | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047ad4e | g_CKeysPtr
     PUSH EAX                            ; 0047ad53 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047ad54 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0047ad56
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [EBX + 0x134],EAX     ; 0047ad6b
     PUSH 0x1d                           ; 0047ad71
         ;   Label: LAB_0047ad71
-    MOV EAX,[0x00617dd4]                ; 0047ad73 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047ad73 | g_CKeysPtr
     PUSH EAX                            ; 0047ad78 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047ad79 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 0047ad7b
@@ -104,7 +104,7 @@ section .text
     JZ 0x0047ae37                       ; 0047ad82
         ;   XREF to: 0047ae37 (CONDITIONAL_JUMP)  ; LAB_0047ae37
     PUSH 0x2d                           ; 0047ad88
-    MOV ESI,dword ptr [0x00617dd4]      ; 0047ad8a | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 0047ad8a | g_CKeysPtr
     PUSH ESI                            ; 0047ad90 | g_PTR_01d02f84
     MOV EAX,dword ptr [ESI]             ; 0047ad91 | g_PTR_01d02f84
     CALL dword ptr [EAX + 0x4]          ; 0047ad93
@@ -122,7 +122,7 @@ section .text
     ADD ESP,0x4                         ; 0047adac
     PUSH 0x52                           ; 0047adaf
         ;   Label: LAB_0047adaf
-    MOV EAX,[0x00617dd4]                ; 0047adb1 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047adb1 | g_CKeysPtr
     PUSH EAX                            ; 0047adb6 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047adb7 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0047adb9
@@ -136,7 +136,7 @@ section .text
     ADD ESP,0x4                         ; 0047adc9
     PUSH 0x2e                           ; 0047adcc
         ;   Label: LAB_0047adcc
-    MOV EAX,[0x00617dd4]                ; 0047adce | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047adce | g_CKeysPtr
     PUSH EAX                            ; 0047add3 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047add4 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0047add6
@@ -150,7 +150,7 @@ section .text
     ADD ESP,0x4                         ; 0047ade6
     PUSH 0x2f                           ; 0047ade9
         ;   Label: LAB_0047ade9
-    MOV EAX,[0x00617dd4]                ; 0047adeb | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047adeb | g_CKeysPtr
     PUSH EAX                            ; 0047adf0 | g_PTR_01d02f84
     MOV ESI,dword ptr [EAX]             ; 0047adf1 | g_PTR_01d02f84
     CALL dword ptr [ESI + 0x4]          ; 0047adf3
@@ -168,7 +168,7 @@ section .text
     ADD ESP,0x4                         ; 0047ae0c
     PUSH 0x53                           ; 0047ae0f
         ;   Label: LAB_0047ae0f
-    MOV ESI,dword ptr [0x00617dd4]      ; 0047ae11 | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 0047ae11 | g_CKeysPtr
     PUSH ESI                            ; 0047ae17 | g_PTR_01d02f84
     MOV EAX,dword ptr [ESI]             ; 0047ae18 | g_PTR_01d02f84
     CALL dword ptr [EAX + 0x4]          ; 0047ae1a
@@ -191,7 +191,7 @@ section .text
     RET                                 ; 0047ae36
     PUSH 0x2a                           ; 0047ae37
         ;   Label: LAB_0047ae37
-    MOV EAX,[0x00617dd4]                ; 0047ae39 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047ae39 | g_CKeysPtr
     PUSH EAX                            ; 0047ae3e | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047ae3f | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 0047ae41
@@ -200,7 +200,7 @@ section .text
     JZ 0x0047ae9b                       ; 0047ae48
         ;   XREF to: 0047ae9b (CONDITIONAL_JUMP)  ; LAB_0047ae9b
     PUSH 0x52                           ; 0047ae4a
-    MOV EAX,[0x00617dd4]                ; 0047ae4c | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047ae4c | g_CKeysPtr
     PUSH EAX                            ; 0047ae51 | g_PTR_01d02f84
     MOV ESI,dword ptr [EAX]             ; 0047ae52 | g_PTR_01d02f84
     CALL dword ptr [ESI + 0x4]          ; 0047ae54
@@ -218,7 +218,7 @@ section .text
     ADD ESP,0x4                         ; 0047ae6d
     PUSH 0x53                           ; 0047ae70
         ;   Label: LAB_0047ae70
-    MOV EAX,[0x00617dd4]                ; 0047ae72 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0047ae72 | g_CKeysPtr
     PUSH EAX                            ; 0047ae77 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0047ae78 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0047ae7a
@@ -249,7 +249,7 @@ section .text
     ADD ESP,0x4                         ; 0047aea5
     PUSH 0x53                           ; 0047aea8
         ;   Label: LAB_0047aea8
-    MOV ESI,dword ptr [0x00617dd4]      ; 0047aeaa | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 0047aeaa | g_CKeysPtr
     PUSH ESI                            ; 0047aeb0 | g_PTR_01d02f84
     MOV EAX,dword ptr [ESI]             ; 0047aeb1 | g_PTR_01d02f84
     CALL dword ptr [EAX + 0x4]          ; 0047aeb3

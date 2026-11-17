@@ -17,8 +17,8 @@
 ;   TerminatedCString s_engine_drender_cpp_0057dbbe
 ;   TerminatedCString s_Can_t_use_demonZFacetCou_0057dbd4
 ;   int g_INT_01b4d764
-;   int[16] g_INT_ARRAY_01b4d76c
-;   undefined4 g_INT_ARRAY_01b4d76c[1]
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -60,7 +60,7 @@ section .text
     XOR ECX,ECX                         ; 0045f0c5
     MOV EBX,dword ptr [EDX + 0x18]      ; 0045f0c7
         ;   Label: LAB_0045f0c7
-    MOV dword ptr [ECX + 0x1b4d76c],EBX ; 0045f0ca | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
+    MOV dword ptr [ECX + 0x1b4d76c],EBX ; 0045f0ca | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     IMUL ESI,EBX,0x30                   ; 0045f0d0
     MOV EBX,dword ptr [EBP]             ; 0045f0d3
     ADD ECX,0x4                         ; 0045f0d6
@@ -93,7 +93,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045f11e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045f123
-    PUSH 0x1b4d76c                      ; 0045f126 | g_INT_ARRAY_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045f126 | g_VertexIndexBuffer
         ;   Label: LAB_0045f126
     MOV EAX,dword ptr [EDI + 0x4]       ; 0045f12b
     PUSH EAX                            ; 0045f12e

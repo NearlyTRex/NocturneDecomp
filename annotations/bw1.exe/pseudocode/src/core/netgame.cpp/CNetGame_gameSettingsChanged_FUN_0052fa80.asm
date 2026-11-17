@@ -15,9 +15,9 @@
 ;   TerminatedCString s_CNetGame_gameSettingsCha_005ec01a
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01d51d9c
+;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
-;   int g_INT_01d51dac
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -33,26 +33,26 @@ section .text
     PUSH EDI                            ; 0052fa82
     PUSH EBP                            ; 0052fa83
     MOV ESI,dword ptr [0x01d51da0]      ; 0052fa84 | g_UINT_01d51da0
-    MOV EDI,dword ptr [0x01d51dac]      ; 0052fa8a | g_INT_01d51dac
+    MOV EDI,dword ptr [0x01d51dac]      ; 0052fa8a | g_NetNextPlayerId
     MOV EBX,dword ptr [ESP + 0x14]      ; 0052fa90
     CMP dword ptr [EBX],0x1             ; 0052fa94
     JNZ 0x0052fb25                      ; 0052fa97
         ;   XREF to: 0052fb25 (CONDITIONAL_JUMP)  ; LAB_0052fb25
-    MOV EDI,dword ptr [0x01d51dac]      ; 0052fa9d | g_INT_01d51dac
+    MOV EDI,dword ptr [0x01d51dac]      ; 0052fa9d | g_NetNextPlayerId
         ;   Label: LAB_0052fa9d
     INC EDI                             ; 0052faa3
-    MOV dword ptr [0x01d51dac],EDI      ; 0052faa4 | g_INT_01d51dac
+    MOV dword ptr [0x01d51dac],EDI      ; 0052faa4 | g_NetNextPlayerId
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052faaa
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052faaf
     MOV ECX,0x12                        ; 0052fab1
     SAR EDX,0x1f                        ; 0052fab6
     IDIV ECX                            ; 0052fab9
-    MOV EDI,dword ptr [0x01d51dac]      ; 0052fabb | g_INT_01d51dac
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052fac1 | g_INT_01d51d9c
+    MOV EDI,dword ptr [0x01d51dac]      ; 0052fabb | g_NetNextPlayerId
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052fac1 | g_LastPingTime
     MOV EDX,EAX                         ; 0052fac7
     SUB EAX,ECX                         ; 0052fac9
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052facb | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052facb | g_LastPingTime
     TEST EAX,EAX                        ; 0052fad1
     JL 0x0052fb4d                       ; 0052fad3
         ;   XREF to: 0052fb4d (CONDITIONAL_JUMP)  ; LAB_0052fb4d
@@ -82,7 +82,7 @@ section .text
     CMP EAX,ECX                         ; 0052fb10
     JL 0x0052faf8                       ; 0052fb12
         ;   XREF to: 0052faf8 (CONDITIONAL_JUMP)  ; LAB_0052faf8
-    MOV dword ptr [0x01d51dac],EDI      ; 0052fb14 | g_INT_01d51dac
+    MOV dword ptr [0x01d51dac],EDI      ; 0052fb14 | g_NetNextPlayerId
         ;   Label: LAB_0052fb14
     MOV dword ptr [0x01d51da0],ESI      ; 0052fb1a | g_UINT_01d51da0
     POP EBP                             ; 0052fb20

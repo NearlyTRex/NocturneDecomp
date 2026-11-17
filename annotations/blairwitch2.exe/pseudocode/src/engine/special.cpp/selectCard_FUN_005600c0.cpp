@@ -11,7 +11,7 @@ int __cdecl engine_special_cpp_selectCard_FUN_005600c0(int card_index)
 {
   int iVar1;
   
-  if (g_INT_0264bcdc == 0) {
+  if (g_LoadedExternalDLLRenderer == 0) {
     return 0;
   }
   g_INT_0264bba4 = card_index;

@@ -16,6 +16,6 @@ int __cdecl core_event_cpp_parseIntOrCounter_FUN_0048b910(char *str)
   if (iVar1 == 1) {
     return iStack_4;
   }
-  iVar1 = core_event_cpp_CEventList_getCounterValue_FUN_00494d00(g_CEventList_PTR_005fba60,str);
+  iVar1 = core_event_cpp_CEventList_getCounterValue_FUN_00494d00(g_CEventListPtr,str);
   return iVar1;
 }

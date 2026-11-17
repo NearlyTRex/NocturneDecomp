@@ -8,7 +8,7 @@
 ;   core_sound.cpp_shutdownSoundSystem_FUN_0057cb90 at 0057cb90
 ;
 ; Referenced Globals:
-;   int g_INT_02c745bc
+;   int g_ShutdownInProgress
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00575670
@@ -21,7 +21,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02c745bc]      ; 00574ea0 | g_INT_02c745bc
+    MOV EDX,dword ptr [0x02c745bc]      ; 00574ea0 | g_ShutdownInProgress
         ;   Label: sound_sndmain.cpp_shutdownSoundSystem_FUN_00574ea0
     TEST EDX,EDX                        ; 00574ea6
     JLE 0x00574eab                      ; 00574ea8
@@ -29,7 +29,7 @@ section .text
     RET                                 ; 00574eaa
     LEA ECX,[EDX + 0x1]                 ; 00574eab
         ;   Label: LAB_00574eab
-    MOV dword ptr [0x02c745bc],ECX      ; 00574eae | g_INT_02c745bc
+    MOV dword ptr [0x02c745bc],ECX      ; 00574eae | g_ShutdownInProgress
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_005750e0 ; 00574eb4
         ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_005750e0()
     CALL sound_sndmain.cpp_closeSoundDevice_FUN_00575670 ; 00574eb9
@@ -40,6 +40,6 @@ section .text
         ;   XREF to: 00575940 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_releaseRecordingDevice_FUN_00575940()
     CALL sound_sndmain.cpp_freeAllSamples_FUN_005746a0 ; 00574ec8
         ;   XREF to: 005746a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_freeAllSamples_FUN_005746a0()
-    DEC dword ptr [0x02c745bc]          ; 00574ecd | g_INT_02c745bc
+    DEC dword ptr [0x02c745bc]          ; 00574ecd | g_ShutdownInProgress
     RET                                 ; 00574ed3
 

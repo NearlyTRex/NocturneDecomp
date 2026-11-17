@@ -9,8 +9,8 @@
 ; SProjectedVertex * Stack[0xc]:4   projected_vertex
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005ba06e = 256
-;   float g_FLOAT_005ddfc4 = 0.00390625
+;   double g_CameraFogIntensityFixedPointScale8 = 256
+;   float g_WorldToFloat = 0.00390625
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_00448980
@@ -43,13 +43,13 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004504ea
     MOV EAX,ESP                         ; 004504ee
     FILD dword ptr [EAX]                ; 004504f0
-    FMUL float ptr [0x005ddfc4]         ; 004504f2 | g_FLOAT_005ddfc4
+    FMUL float ptr [0x005ddfc4]         ; 004504f2 | g_WorldToFloat
     FSTP float ptr [EBX]                ; 004504f8
     FILD dword ptr [EAX + 0x4]          ; 004504fa
-    FMUL float ptr [0x005ddfc4]         ; 004504fd | g_FLOAT_005ddfc4
+    FMUL float ptr [0x005ddfc4]         ; 004504fd | g_WorldToFloat
     FSTP float ptr [EBX + 0x4]          ; 00450503
     FILD dword ptr [EAX + 0x8]          ; 00450506
-    FMUL float ptr [0x005ddfc4]         ; 00450509 | g_FLOAT_005ddfc4
+    FMUL float ptr [0x005ddfc4]         ; 00450509 | g_WorldToFloat
     FSTP float ptr [EBX + 0x8]          ; 0045050f
     FLD float ptr [ESP + 0x10]          ; 00450512
     FMUL ST0                            ; 00450516
@@ -60,7 +60,7 @@ section .text
     FMUL ST0                            ; 00450524
     FADDP                               ; 00450526
     FSQRT                               ; 00450528
-    FMUL double ptr [0x005ba06e]        ; 0045052a | g_DOUBLE_005ba06e
+    FMUL double ptr [0x005ba06e]        ; 0045052a | g_CameraFogIntensityFixedPointScale8
     CALL crt_math.c_round_FUN_005a3120  ; 00450530
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x18]        ; 00450535

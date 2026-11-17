@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_dosio_c_005daa24
 ;   TerminatedCString s_addGetFileInfoHook_too_m_005daa36
-;   int g_INT_01b6892c
+;   int g_NumSearchHandlers
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -25,15 +25,15 @@ section .text
 
     PUSH ESI                            ; 00478e40
         ;   Label: engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
-    CMP dword ptr [0x01b6892c],0x5      ; 00478e41 | g_INT_01b6892c
+    CMP dword ptr [0x01b6892c],0x5      ; 00478e41 | g_NumSearchHandlers
     JGE 0x00478e65                      ; 00478e48
         ;   XREF to: 00478e65 (CONDITIONAL_JUMP)  ; LAB_00478e65
-    MOV EAX,[0x01b6892c]                ; 00478e4a | g_INT_01b6892c
+    MOV EAX,[0x01b6892c]                ; 00478e4a | g_NumSearchHandlers
         ;   Label: LAB_00478e4a
     MOV EDX,dword ptr [ESP + 0x8]       ; 00478e4f
     LEA ESI,[EAX + 0x1]                 ; 00478e53
     MOV dword ptr [EAX*0x4 + 0x1b68930],EDX ; 00478e56
-    MOV dword ptr [0x01b6892c],ESI      ; 00478e5d | g_INT_01b6892c
+    MOV dword ptr [0x01b6892c],ESI      ; 00478e5d | g_NumSearchHandlers
     POP ESI                             ; 00478e63
     RET                                 ; 00478e64
     PUSH EBX                            ; 00478e65

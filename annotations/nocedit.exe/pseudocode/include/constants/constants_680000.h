@@ -242,6 +242,12 @@ static char g_MonthNamesShort[12][4] = {
 // char[17] constants
 static char g_HexLookupTable[17] = "0123456789abcdef";
 
+// char[20] constants
+static char g_DosErrorToErrno[20] = {
+    (char)0x00, (char)0x09, (char)0x01, (char)0x01, (char)0x0B, (char)0x06, (char)0x04, (char)0x05, (char)0x05, (char)0x05, (char)0x02, (char)0x03,
+    (char)0xFF, (char)0xFF, (char)0x07, (char)0x09, (char)0x06, (char)0x08, (char)0x01, (char)0xFF
+};
+
 // char[256] constants
 static char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,

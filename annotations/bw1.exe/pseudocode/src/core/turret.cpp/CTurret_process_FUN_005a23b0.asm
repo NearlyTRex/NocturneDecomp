@@ -13,7 +13,7 @@
 ;   TerminatedCString s_turret_loop_wav_f_005f8a3c
 ;   TerminatedCString s_turret_tail_wav_005f8a51
 ;   double g_DOUBLE_005f8a68 = 2
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -67,7 +67,7 @@ section .text
     LEA EAX,[EBX + 0x704]               ; 005a23ff
         ;   Label: LAB_005a23ff
     PUSH EAX                            ; 005a2405
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005a2406 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005a2406 | g_CEventListPtr
     PUSH EDX                            ; 005a240c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005a240d
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -171,7 +171,7 @@ section .text
         ;   Label: caseD_2
     MOV dword ptr [EBX + 0x2f4],0xff    ; 005a2556
     PUSH EAX                            ; 005a2560
-    MOV EAX,[0x0061b4d0]                ; 005a2561 | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 005a2561 | g_CEventListPtr
     MOV dword ptr [EBX + 0x2f8],0x0     ; 005a2566
     PUSH EAX                            ; 005a2570
     MOV dword ptr [EBX + 0x2fc],0x0     ; 005a2571
@@ -199,7 +199,7 @@ section .text
         ;   Label: caseD_3
     MOV dword ptr [EBX + 0x2f4],0x0     ; 005a25c3
     PUSH EAX                            ; 005a25cd
-    MOV ESI,dword ptr [0x0061b4d0]      ; 005a25ce | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 005a25ce | g_CEventListPtr
     MOV dword ptr [EBX + 0x2f8],0xff    ; 005a25d4
     PUSH ESI                            ; 005a25de
     MOV dword ptr [EBX + 0x2fc],0x0     ; 005a25df

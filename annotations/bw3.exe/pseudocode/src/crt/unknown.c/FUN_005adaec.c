@@ -11,7 +11,7 @@ bool FUN_005adaec(void)
 {
   if (g_INT_0060799c == -1) {
     g_INT_0060799c = TlsAlloc();
-    if ((0x7fff < (ushort)g_SHORT_00607985) && (g_BYTE_00607983 < 4)) {
+    if ((0x7fff < (ushort)g_WindowsPlatformVersion) && (g_WindowsMinorVersion < 4)) {
       while ((g_INT_0060799c != 0xffffffff && ((uint)g_INT_0060799c < 3))) {
         g_INT_0060799c = TlsAlloc();
       }

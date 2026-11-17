@@ -102,7 +102,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
   if (-1 < local_14) {
     pCVar4 = (CWeapon *)
              core_actor_cpp_castToClassHash_FUN_0040d890
-                       (this_ptr->items[local_14],g_CWeaponActorType_02ddf970.name_hash);
+                       (this_ptr->items[local_14],g_CWeaponClassInfo.name_hash);
     this_ptr->selected_weapon = pCVar4;
     if (this_ptr->selected_weapon == (CWeapon *)0x0) {
       g_CurrentFilename = "..\\core\\inv.cpp";

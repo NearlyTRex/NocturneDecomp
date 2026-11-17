@@ -476,7 +476,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       if (this_ptr->platform_check_done == 0) {
         iVar5 = core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(this_ptr);
         this_ptr->near_platform = iVar5;
-        if (g_CWeather_PTR_006071f0->weather_type == WEATHER_TYPE_NONE) {
+        if (g_CWeatherPtr->weather_type == WEATHER_TYPE_NONE) {
           iVar5 = g_CDemonSetPtr->selected_camera_index;
           pCVar14 = &g_CDemonSetPtr->cameras[iVar5].position;
           if (&CStack_278 != pCVar14) {
@@ -490,12 +490,12 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
             CStack_284.y = g_CDemonSetPtr->cameras[iVar5].orientation.y;
             CStack_284.z = g_CDemonSetPtr->cameras[iVar5].orientation.z;
           }
-          core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeather_PTR_006071f0,5);
+          core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeatherPtr,5);
           core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0
-                    (g_CWeather_PTR_006071f0,&CStack_278,&CStack_284);
+                    (g_CWeatherPtr,&CStack_278,&CStack_284);
         }
         else {
-          core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeather_PTR_006071f0,5);
+          core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeatherPtr,5);
         }
         this_ptr->platform_check_done = 1;
       }
@@ -619,7 +619,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
                      afStack_244[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
                 fStack_8c = afStack_154[1] * afStack_154[1] +
                             fStack_158 * fStack_158 + afStack_154[0] * afStack_154[0];
-                fStack_88 = (float)(((int)fStack_8c >> 1) + g_INT_01d1a0a4);
+                fStack_88 = (float)(((int)fStack_8c >> 1) + g_FastSqrtMagic);
                 if (fStack_88 <= (float)8) {
                   core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_32c);
                   SStack_32c.damage_amount = 25.0;
@@ -679,7 +679,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
                    afStack_244[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
               fStack_1c = afStack_1f0[1] * afStack_1f0[1] +
                           fStack_1f4 * fStack_1f4 + afStack_1f0[0] * afStack_1f0[0];
-              fStack_18 = (float)(((int)fStack_1c >> 1) + g_INT_01d1a0a4);
+              fStack_18 = (float)(((int)fStack_1c >> 1) + g_FastSqrtMagic);
               if (fStack_18 <= (float)6) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_2f0);
                 SStack_2f0.damage_amount = 25.0;
@@ -694,7 +694,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                             (&(this_ptr->base).base.model.base);
-      this_ptr_00 = g_CWeather_PTR_006071f0;
+      this_ptr_00 = g_CWeatherPtr;
       if ((float)0.75 < fStack_14) {
         this_ptr->platform_check_done = 0;
         core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(this_ptr_00,WEATHER_TYPE_NONE);

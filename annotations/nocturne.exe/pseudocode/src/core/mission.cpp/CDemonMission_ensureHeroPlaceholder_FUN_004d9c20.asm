@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Hell_froze_finding_hero_0058a0e6
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_0058a0ff
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
-;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
+;   undefined4 g_CHeroPlaceholderClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -74,7 +74,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004d9c5d
         ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 004d9c62
-    MOV EBP,dword ptr [0x01cae160]      ; 004d9c65 | g_CHeroPlaceholderActorType_01cae128.name_hash
+    MOV EBP,dword ptr [0x01cae160]      ; 004d9c65 | g_CHeroPlaceholderClassInfo.name_hash
         ;   Label: LAB_004d9c65
     PUSH EBP                            ; 004d9c6b
     PUSH EBX                            ; 004d9c6c

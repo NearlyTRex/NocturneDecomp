@@ -76,7 +76,7 @@
     },
     {
       "addr": "0060796c",
-      "name": "g_INT_0060796c",
+      "name": "g_ConsoleInitializationFlag",
       "type": "int",
       "value": "0x0"
     },
@@ -94,13 +94,13 @@
     },
     {
       "addr": "00607b18",
-      "name": "g_PTR_00607b18",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "00607b4c",
-      "name": "g_PTR_00607b4c",
+      "name": "g_SpecialConsoleInputHandler",
       "type": "void*",
       "value": "00000000"
     }
@@ -208,7 +208,7 @@
       "line": 22,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar1 = (*(code *)g_PTR_00607b18)(0);",
+      "text": "uVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(0);",
       "type": "unresolved_funcptr"
     },
     {
@@ -216,7 +216,7 @@
       "line": 23,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (*(code *)g_PTR_00607b4c)(uVar1);",
+      "text": "iVar2 = (*(code *)g_SpecialConsoleInputHandler)(uVar1);",
       "type": "unresolved_funcptr"
     }
   ]

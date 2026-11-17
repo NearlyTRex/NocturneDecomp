@@ -9,6 +9,6 @@
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005750a0(int enabled)
 
 {
-  g_INT_006141c4 = enabled;
+  g_TextureFilteringEnabled = enabled;
   return;
 }

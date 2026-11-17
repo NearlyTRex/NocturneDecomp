@@ -16,14 +16,14 @@
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
 ;   CFieldNotes* g_CFieldNotesPtr = 01d1a05c
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   CFieldNotes g_CFieldNotesInstance
 ;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   int g_INT_01d22c84
-;   float g_FLOAT_01d22c88
-;   int g_INT_01d22c8c
-;   int g_INT_01d22c90
+;   float g_IrisFadeRadius
+;   int g_IrisFadeCenterX
+;   int g_IrisFadeCenterY
 ;
 ; Called Functions:
 ;   core_game.cpp_calculateIrisFadeCenter_FUN_004bd6a0
@@ -55,7 +55,7 @@ section .text
     CMP EDX,0x1                         ; 004bd803
     JZ 0x004bd8a1                       ; 004bd806
         ;   XREF to: 004bd8a1 (CONDITIONAL_JUMP)  ; LAB_004bd8a1
-    CMP dword ptr [0x01d22c88],0x3f800000 ; 004bd80c | g_FLOAT_01d22c88
+    CMP dword ptr [0x01d22c88],0x3f800000 ; 004bd80c | g_IrisFadeRadius
     JL 0x004bd8a1                       ; 004bd816
         ;   XREF to: 004bd8a1 (CONDITIONAL_JUMP)  ; LAB_004bd8a1
     CALL core_game.cpp_calculateIrisFadeCenter_FUN_004bd6a0 ; 004bd81c
@@ -63,7 +63,7 @@ section .text
     CMP dword ptr [0x005fba20],0x20     ; 004bd821 | g_INT_005fba20
     JNZ 0x004bd893                      ; 004bd828
         ;   XREF to: 004bd893 (CONDITIONAL_JUMP)  ; LAB_004bd893
-    FLD float ptr [0x01d22c88]          ; 004bd82a | g_FLOAT_01d22c88
+    FLD float ptr [0x01d22c88]          ; 004bd82a | g_IrisFadeRadius
     FMUL ST0                            ; 004bd830
     MOV EDX,dword ptr [0x005fba1c]      ; 004bd832 | g_INT_005fba1c
     XOR ESI,ESI                         ; 004bd838
@@ -76,16 +76,16 @@ section .text
     XOR EBP,EBP                         ; 004bd846
     MOV EDI,dword ptr [0x005fba18]      ; 004bd848 | g_INT_005fba18
         ;   Label: LAB_004bd848
-    MOV EDX,dword ptr [EBP + 0x1c5faec] ; 004bd84e | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EDX,dword ptr [EBP + 0x1c5faec] ; 004bd84e | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR EAX,EAX                         ; 004bd854
     TEST EDI,EDI                        ; 004bd856
     JLE 0x004bd87f                      ; 004bd858
         ;   XREF to: 004bd87f (CONDITIONAL_JUMP)  ; LAB_004bd87f
-    MOV EBX,dword ptr [0x01d22c8c]      ; 004bd85a | g_INT_01d22c8c
+    MOV EBX,dword ptr [0x01d22c8c]      ; 004bd85a | g_IrisFadeCenterX
         ;   Label: LAB_004bd85a
     SUB EBX,EAX                         ; 004bd860
     IMUL EBX,EBX                        ; 004bd862
-    MOV ECX,dword ptr [0x01d22c90]      ; 004bd865 | g_INT_01d22c90
+    MOV ECX,dword ptr [0x01d22c90]      ; 004bd865 | g_IrisFadeCenterY
     SUB ECX,ESI                         ; 004bd86b
     IMUL ECX,ECX                        ; 004bd86d
     ADD ECX,EBX                         ; 004bd870

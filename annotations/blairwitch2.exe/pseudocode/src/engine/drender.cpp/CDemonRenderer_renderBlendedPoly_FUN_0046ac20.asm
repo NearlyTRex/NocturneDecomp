@@ -17,11 +17,11 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   int[16] g_INT_ARRAY_01ba5c84
-;   undefined4 g_INT_ARRAY_01ba5c84[1]
-;   void* g_PTR_01c35e6c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -53,7 +53,7 @@ section .text
     XOR ECX,ECX                         ; 0046ac4a
     MOV ESI,dword ptr [EAX + 0x18]      ; 0046ac4c
         ;   Label: LAB_0046ac4c
-    MOV dword ptr [ECX + 0x1ba5c84],ESI ; 0046ac4f | g_INT_ARRAY_01ba5c84 | g_INT_ARRAY_01ba5c84[1]
+    MOV dword ptr [ECX + 0x1ba5c84],ESI ; 0046ac4f | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     IMUL ESI,ESI,0x30                   ; 0046ac55
     MOV EDI,dword ptr [EBX]             ; 0046ac58
     MOV ESI,dword ptr [EDI + ESI*0x1 + 0x10] ; 0046ac5a
@@ -83,13 +83,13 @@ section .text
         ;   XREF to: 0046ace7 (CONDITIONAL_JUMP)  ; LAB_0046ace7
     XOR ESI,ESI                         ; 0046ac93
     MOV ECX,0x46e936                    ; 0046ac95
-    MOV dword ptr [0x01c38b54],ESI      ; 0046ac9a | g_BIT_INTEGER32_01c38b54
-    MOV dword ptr [0x01c38b58],ESI      ; 0046aca0 | g_INT_01c38b58
-    MOV dword ptr [0x01c35e6c],ECX      ; 0046aca6 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c38b54],ESI      ; 0046ac9a | g_RenderStateFlags
+    MOV dword ptr [0x01c38b58],ESI      ; 0046aca0 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c35e6c],ECX      ; 0046aca6 | g_ScanlineRenderFunc
     LEA EAX,[EAX]                       ; 0046acac
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0046acb0
         ;   Label: LAB_0046acb0
-    PUSH 0x1ba5c84                      ; 0046acb4 | g_INT_ARRAY_01ba5c84
+    PUSH 0x1ba5c84                      ; 0046acb4 | g_VertexIndexBuffer
     MOV EDX,dword ptr [EAX + 0x4]       ; 0046acb9
     PUSH EDX                            ; 0046acbc
     PUSH EBX                            ; 0046acbd
@@ -119,13 +119,13 @@ section .text
         ;   Label: LAB_0046ace7
     JNZ 0x0046ad59                      ; 0046acee
         ;   XREF to: 0046ad59 (CONDITIONAL_JUMP)  ; LAB_0046ad59
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046acf0 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046acf0 | g_ScanlineRenderFunc
     MOV EBP,0x6                         ; 0046acfa
         ;   Label: LAB_0046acfa
     MOV EDI,0x267                       ; 0046acff
     MOV EAX,dword ptr [EBX + 0x20]      ; 0046ad04
-    MOV dword ptr [0x01c38b58],EBP      ; 0046ad07 | g_INT_01c38b58
-    MOV dword ptr [0x01c38b54],EDI      ; 0046ad0d | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c38b58],EBP      ; 0046ad07 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c38b54],EDI      ; 0046ad0d | g_RenderStateFlags
     TEST EAX,EAX                        ; 0046ad13
     JNZ 0x0046acb0                      ; 0046ad15
         ;   XREF to: 0046acb0 (CONDITIONAL_JUMP)  ; LAB_0046acb0
@@ -136,7 +136,7 @@ section .text
     JLE 0x0046acb0                      ; 0046ad22
         ;   XREF to: 0046acb0 (CONDITIONAL_JUMP)  ; LAB_0046acb0
     XOR EDX,EDX                         ; 0046ad24
-    MOV ESI,dword ptr [EDX + 0x1ba5c84] ; 0046ad26 | g_INT_ARRAY_01ba5c84 | g_INT_ARRAY_01ba5c84[1]
+    MOV ESI,dword ptr [EDX + 0x1ba5c84] ; 0046ad26 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
         ;   Label: LAB_0046ad26
     IMUL ESI,ESI,0x30                   ; 0046ad2c
     MOV EDI,dword ptr [EBX]             ; 0046ad2f
@@ -156,7 +156,7 @@ section .text
         ;   XREF to: 0046ad26 (CONDITIONAL_JUMP)  ; LAB_0046ad26
     JMP 0x0046acb0                      ; 0046ad54
         ;   XREF to: 0046acb0 (UNCONDITIONAL_JUMP)  ; LAB_0046acb0
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046ad59 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046ad59 | g_ScanlineRenderFunc
         ;   Label: LAB_0046ad59
     JMP 0x0046acfa                      ; 0046ad63
         ;   XREF to: 0046acfa (UNCONDITIONAL_JUMP)  ; LAB_0046acfa

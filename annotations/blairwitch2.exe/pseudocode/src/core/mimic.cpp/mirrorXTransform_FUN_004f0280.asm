@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b90
+;   int g_RelativeX
+;   int g_LightDirectionX
 ;   int g_INT_01c38b9c
 ;   int g_INT_01c38ba0
 ;   int g_INT_01c38ba4
@@ -24,8 +24,8 @@ section .text
     PUSH EDI                            ; 004f0282
     CALL engine_matrix.c_matrixPush_FUN_004e9710 ; 004f0283
         ;   XREF to: 004e9710 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004e9710()
-    MOV EDX,dword ptr [0x01c38b6c]      ; 004f0288 | g_INT_01c38b6c
-    MOV ECX,dword ptr [0x01c38b90]      ; 004f028e | g_INT_01c38b90
+    MOV EDX,dword ptr [0x01c38b6c]      ; 004f0288 | g_RelativeX
+    MOV ECX,dword ptr [0x01c38b90]      ; 004f028e | g_LightDirectionX
     MOV EBX,dword ptr [0x01c38b9c]      ; 004f0294 | g_INT_01c38b9c
     MOV ESI,dword ptr [0x01c38ba0]      ; 004f029a | g_INT_01c38ba0
     MOV EDI,dword ptr [0x01c38ba4]      ; 004f02a0 | g_INT_01c38ba4
@@ -34,8 +34,8 @@ section .text
     NEG EBX                             ; 004f02aa
     NEG ESI                             ; 004f02ac
     NEG EDI                             ; 004f02ae
-    MOV dword ptr [0x01c38b6c],EDX      ; 004f02b0 | g_INT_01c38b6c
-    MOV dword ptr [0x01c38b90],ECX      ; 004f02b6 | g_INT_01c38b90
+    MOV dword ptr [0x01c38b6c],EDX      ; 004f02b0 | g_RelativeX
+    MOV dword ptr [0x01c38b90],ECX      ; 004f02b6 | g_LightDirectionX
     MOV dword ptr [0x01c38b9c],EBX      ; 004f02bc | g_INT_01c38b9c
     MOV dword ptr [0x01c38ba0],ESI      ; 004f02c2 | g_INT_01c38ba0
     MOV dword ptr [0x01c38ba4],EDI      ; 004f02c8 | g_INT_01c38ba4

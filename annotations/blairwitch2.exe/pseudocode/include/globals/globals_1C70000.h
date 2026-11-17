@@ -14,5 +14,5 @@
 extern CSpark g_SparkPool[256];
 
 // int
-extern int g_INT_01c7f4f0;
+extern int g_SparkAllocIndex;
 

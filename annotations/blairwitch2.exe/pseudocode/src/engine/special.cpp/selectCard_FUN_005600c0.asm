@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   int g_INT_0264bba4
 ;   void* g_PTR_0264bc44
-;   int g_INT_0264bcdc
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005600c0
         ;   Label: engine_special.cpp_selectCard_FUN_005600c0
-    CMP dword ptr [0x0264bcdc],0x0      ; 005600c4 | g_INT_0264bcdc
+    CMP dword ptr [0x0264bcdc],0x0      ; 005600c4 | g_LoadedExternalDLLRenderer
     JNZ 0x005600d0                      ; 005600cb
         ;   XREF to: 005600d0 (CONDITIONAL_JUMP)  ; LAB_005600d0
     XOR EAX,EAX                         ; 005600cd

@@ -10,16 +10,16 @@ void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4
 
 {
   core_fire_cpp_CLightningBolt_activateDirectional_FUN_00488b50
-            (g_CLightningBolt_ARRAY_01c67510 + g_INT_01c6750c,start_position,end_position,end_width,
+            (g_LightningBoltPool + g_LightningBoltAllocIndex,start_position,end_position,end_width,
              end_spread);
-  g_INT_01c6750c = g_INT_01c6750c + 1;
-  if (g_INT_01c6750c < 10) {
+  g_LightningBoltAllocIndex = g_LightningBoltAllocIndex + 1;
+  if (g_LightningBoltAllocIndex < 10) {
     if (enable_camera_shake == 0) {
       return;
     }
   }
   else {
-    g_INT_01c6750c = 0;
+    g_LightningBoltAllocIndex = 0;
     if (enable_camera_shake == 0) {
       return;
     }

@@ -213,7 +213,7 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
     *(uint *)((int)&CStack_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          *(uint *)((int)&CStack_104 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-              (g_CFireEffect_PTR_00614d30,&CStack_80,fVar8,pCVar9,iVar4);
+              (g_CFireEffectPtr,&CStack_80,fVar8,pCVar9,iVar4);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   }
   if (this_ptr->blood_frame_counter == 0) {

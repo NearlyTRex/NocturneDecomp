@@ -14,7 +14,7 @@
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 at 005a100e
 ;
 ; Referenced Globals:
-;   int g_INT_01b6892c
+;   int g_NumSearchHandlers
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_findFileNormally_FUN_00478ef0
@@ -29,7 +29,7 @@ section .text
     PUSH EDI                            ; 00478e92
     PUSH EBP                            ; 00478e93
     MOV EDI,dword ptr [ESP + 0x14]      ; 00478e94
-    MOV EDX,dword ptr [0x01b6892c]      ; 00478e98 | g_INT_01b6892c
+    MOV EDX,dword ptr [0x01b6892c]      ; 00478e98 | g_NumSearchHandlers
     CMP EDX,0x1                         ; 00478e9e
     JL 0x00478ed0                       ; 00478ea1
         ;   XREF to: 00478ed0 (CONDITIONAL_JUMP)  ; LAB_00478ed0
@@ -46,7 +46,7 @@ section .text
     TEST EAX,EAX                        ; 00478eb7
     JNZ 0x00478ede                      ; 00478eb9
         ;   XREF to: 00478ede (CONDITIONAL_JUMP)  ; LAB_00478ede
-    MOV EBP,dword ptr [0x01b6892c]      ; 00478ebb | g_INT_01b6892c
+    MOV EBP,dword ptr [0x01b6892c]      ; 00478ebb | g_NumSearchHandlers
     INC ESI                             ; 00478ec1
     ADD EBX,0x4                         ; 00478ec2
     CMP ESI,EBP                         ; 00478ec5

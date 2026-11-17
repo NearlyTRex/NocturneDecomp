@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorT
   
   if (((((-1 < start_x) && (-1 < start_y)) && (start_x < g_INT_006141b8)) &&
       ((start_y < g_INT_006141bc && (g_INT_01c35e48 <= start_x)))) &&
-     ((start_x < g_INT_01c35e50 && ((g_INT_01c35e4c <= start_y && (start_y < g_INT_01c35e54)))))) {
+     ((start_x < g_ClipRight && ((g_INT_01c35e4c <= start_y && (start_y < g_INT_01c35e54)))))) {
     if (g_INT_01c25f84 == 0) {
       engine_2d_c_plotPixel_FUN_00401130(start_x,start_y);
     }
@@ -31,7 +31,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorT
   while (start_y < y) {
     if ((((-1 < x_00) && (-1 < y_00)) && (x_00 < g_INT_006141b8)) &&
        (((y_00 < g_INT_006141bc && (g_INT_01c35e48 <= x_00)) &&
-        ((x_00 < g_INT_01c35e50 && ((g_INT_01c35e4c <= y_00 && (y_00 < g_INT_01c35e54)))))))) {
+        ((x_00 < g_ClipRight && ((g_INT_01c35e4c <= y_00 && (y_00 < g_INT_01c35e54)))))))) {
       if (g_INT_01c25f84 == 0) {
         engine_2d_c_plotPixel_FUN_00401130(x_00,y_00);
       }
@@ -41,7 +41,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorT
     }
     if (((((-1 < x) && (-1 < y_00)) && (x < g_INT_006141b8)) &&
         ((y_00 < g_INT_006141bc && (g_INT_01c35e48 <= x)))) &&
-       ((x < g_INT_01c35e50 && ((g_INT_01c35e4c <= y_00 && (y_00 < g_INT_01c35e54)))))) {
+       ((x < g_ClipRight && ((g_INT_01c35e4c <= y_00 && (y_00 < g_INT_01c35e54)))))) {
       if (g_INT_01c25f84 == 0) {
         engine_2d_c_plotPixel_FUN_00401130(x,y_00);
       }
@@ -50,7 +50,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorT
       }
     }
     if ((((((-1 < x_00) && (-1 < y)) && (x_00 < g_INT_006141b8)) &&
-         ((y < g_INT_006141bc && (g_INT_01c35e48 <= x_00)))) && (x_00 < g_INT_01c35e50)) &&
+         ((y < g_INT_006141bc && (g_INT_01c35e48 <= x_00)))) && (x_00 < g_ClipRight)) &&
        ((g_INT_01c35e4c <= y && (y < g_INT_01c35e54)))) {
       if (g_INT_01c25f84 == 0) {
         engine_2d_c_plotPixel_FUN_00401130(x_00,y);
@@ -61,7 +61,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorT
     }
     if ((((x < 0) || (y < 0)) || (g_INT_006141b8 <= x)) ||
        (((g_INT_006141bc <= y || (x < g_INT_01c35e48)) ||
-        ((g_INT_01c35e50 <= x || ((y < g_INT_01c35e4c || (g_INT_01c35e54 <= y)))))))) {
+        ((g_ClipRight <= x || ((y < g_INT_01c35e4c || (g_INT_01c35e54 <= y)))))))) {
       x_00 = x_00 + 1;
       x = x + -1;
       y = y + -1;

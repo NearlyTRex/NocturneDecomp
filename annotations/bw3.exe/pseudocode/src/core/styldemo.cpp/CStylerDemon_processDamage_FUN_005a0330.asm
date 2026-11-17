@@ -11,7 +11,7 @@
 ;   TerminatedCString s_exorcism_death_005da517
 ;   TerminatedCString s_exorcism_death_005da526
 ;   double g_DOUBLE_005da536 = 0.100000000000000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
@@ -52,7 +52,7 @@ section .text
     JNZ 0x005a039b                      ; 005a0381
         ;   XREF to: 005a039b (CONDITIONAL_JUMP)  ; LAB_005a039b
     PUSH 0x5da517                       ; 005a0383 | = "exorcism_death"
-    MOV ESI,dword ptr [0x005fba60]      ; 005a0388 | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 005a0388 | g_CEventListPtr
     PUSH ESI                            ; 005a038e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005a038f
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -104,7 +104,7 @@ section .text
     PUSH 0x1                            ; 005a03e2
         ;   Label: LAB_005a03e2
     PUSH 0x5da526                       ; 005a03e4 | = "exorcism_death"
-    MOV EDI,dword ptr [0x005fba60]      ; 005a03e9 | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 005a03e9 | g_CEventListPtr
     PUSH EDI                            ; 005a03ef
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0 ; 005a03f0
         ;   XREF to: 004946f0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0(CEventList * this_ptr, char * name, int add_flag)

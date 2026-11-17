@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 005d77ca
     POP EBX                             ; 005d77cb
     RET                                 ; 005d77cc
-    MOV EBX,dword ptr [0x03f6bbe4]      ; 005d77cd | INT_03f6bbe4
+    MOV EBX,dword ptr [0x03f6bbe4]      ; 005d77cd | g_CubeReduceFileIndex
         ;   Label: LAB_005d77cd
     PUSH EBX                            ; 005d77d3
     PUSH 0x6547c0                       ; 005d77d4 | = "reduce\\cube%04d.txt"
@@ -566,10 +566,10 @@ section .text
     PUSH 0x3f800000                     ; 005d7ddd
     CALL shape_design.c_optimizePolygonMesh_FUN_004658e0 ; 005d7de2
         ;   XREF to: 004658e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_optimizePolygonMesh_FUN_004658e0(float angle_tolerance, int strict_mode, int display_progress)
-    MOV EBX,dword ptr [0x03f6bbe4]      ; 005d7de7 | INT_03f6bbe4
+    MOV EBX,dword ptr [0x03f6bbe4]      ; 005d7de7 | g_CubeReduceFileIndex
     INC EBX                             ; 005d7ded
     ADD ESP,0xc                         ; 005d7dee
-    MOV dword ptr [0x03f6bbe4],EBX      ; 005d7df1 | INT_03f6bbe4
+    MOV dword ptr [0x03f6bbe4],EBX      ; 005d7df1 | g_CubeReduceFileIndex
     JMP 0x005d7d1c                      ; 005d7df7
         ;   XREF to: 005d7d1c (UNCONDITIONAL_JUMP)  ; LAB_005d7d1c
     LEA EDI,[EDI + 0x4]                 ; 0060cb4a

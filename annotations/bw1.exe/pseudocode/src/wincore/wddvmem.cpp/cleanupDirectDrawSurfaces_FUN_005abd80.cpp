@@ -9,20 +9,18 @@
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005abd80(void)
 
 {
-  if (g_IUnknown_PTR_02c9930c != (IUnknown *)0x0) {
-    (*g_IUnknown_PTR_02c9930c->vtable->Release)(g_IUnknown_PTR_02c9930c);
-    g_IUnknown_PTR_02c9930c = (IUnknown *)0x0;
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02c99308 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02c99308->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99308);
-    g_IDirectDrawSurface_PTR_02c99308 = (IDirectDrawSurface *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02c99304 == (IDirectDrawSurface *)0x0) {
+  if (g_DirectDrawSurface == (IDirectDrawSurface *)0x0) {
     return;
   }
-  (*g_IDirectDrawSurface_PTR_02c99304->vtable->Release)
-            ((IUnknown *)g_IDirectDrawSurface_PTR_02c99304);
-  g_IDirectDrawSurface_PTR_02c99304 = (IDirectDrawSurface *)0x0;
+  (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+  g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   return;
 }

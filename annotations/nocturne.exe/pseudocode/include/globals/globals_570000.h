@@ -15,7 +15,7 @@ extern char CHAR_00h_0057e72c;
 extern char CHAR_00h_0057ea91;
 extern char CHAR_00h_0057ea92;
 extern char g_CHAR_0057ed1b;
-extern char g_CHAR_0057f0fa;
+extern char g_DefaultButtonText;
 extern char CHAR_00h_0057f586;
 
 // dword

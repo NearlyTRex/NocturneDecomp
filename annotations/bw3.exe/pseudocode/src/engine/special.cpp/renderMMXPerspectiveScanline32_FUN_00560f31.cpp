@@ -74,18 +74,18 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
   uVar7 = uVar7 >> 0x10;
   iVar8 = (uVar9 >> 0x10) - uVar7;
   if (iVar8 != 0 && uVar7 <= uVar9 >> 0x10) {
-    g_INT_PTR_00604908 = (int *)(g_ARRAY_PTR_01c5faec[scanline_y] + uVar7 * 4);
-    g_INT_006048a4 = iVar8 * 4;
-    puVar16 = g_UINT_PTR_ARRAY_01c60dac[scanline_y] + uVar7;
-    g_INT_PTR_0060490c = (int *)puVar16;
-    if (g_BIT_INTEGER32_01c6e2b4.dword == 0x80) {
+    g_CurrentScreenPtr = (int *)(g_ScreenBufferArray[scanline_y] + uVar7 * 4);
+    g_ScanlinePixelCount = iVar8 * 4;
+    puVar16 = g_ZBufferScanlineArray[scanline_y] + uVar7;
+    g_CurrentZBufferPtr = (int *)puVar16;
+    if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
       uVar17 = (pSVar14->base).depth_current;
       iVar15 = (int)((ulonglong)
                      ((longlong)(int)((left_vertex->base).depth_current - uVar17) *
-                     (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-      iVar8 = g_INT_006048a4;
-      g_INT_006048ec = uVar17;
-      g_INT_00604d18 = iVar15;
+                     (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+      iVar8 = g_ScanlinePixelCount;
+      g_StartDepthW = uVar17;
+      g_HardwareDeltaDepthZ = iVar15;
       do {
         *puVar16 = uVar17;
         uVar17 = uVar17 + iVar15;
@@ -96,55 +96,55 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
       } while (iVar10 != 0 && bVar1);
       return;
     }
-    if (g_INT_01c6e2b8 == 5) {
+    if (g_VertexPreprocessMode == 5) {
       uVar17 = (pSVar14->base).u_current;
-      g_INT_006048e0 =
+      g_StartTextureU =
            (int)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
                 (longlong)(pSVar14->base).depth_current);
       uVar17 = (left_vertex->base).u_current;
-      g_INT_00604d10 =
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
-                        (longlong)(left_vertex->base).depth_current) - g_INT_006048e0) *
-                 (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureU) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
       uVar17 = (pSVar14->base).v_current;
-      g_INT_006048e4 =
+      g_StartTextureV =
            (int)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
                 (longlong)(pSVar14->base).depth_current);
       uVar17 = (left_vertex->base).v_current;
-      g_INT_00604d14 =
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
-                        (longlong)(left_vertex->base).depth_current) - g_INT_006048e4) *
-                 (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureV) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
     }
     else {
-      g_INT_006048e0 = (pSVar14->base).u_current;
-      g_INT_00604d10 =
+      g_StartTextureU = (pSVar14->base).u_current;
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
-                 ((longlong)((left_vertex->base).u_current - g_INT_006048e0) *
-                 (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-      g_INT_006048e4 = (pSVar14->base).v_current;
-      g_INT_00604d14 =
+                 ((longlong)((left_vertex->base).u_current - g_StartTextureU) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+      g_StartTextureV = (pSVar14->base).v_current;
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
-                 ((longlong)((left_vertex->base).v_current - g_INT_006048e4) *
-                 (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
+                 ((longlong)((left_vertex->base).v_current - g_StartTextureV) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
     }
     iVar15 = (pSVar14->base).depth_current;
-    g_INT_00604d18 =
+    g_HardwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)((left_vertex->base).depth_current - iVar15) *
-               (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-    g_INT_00604dd0 = (pSVar14->base).alpha_current;
-    g_INT_00604dd8 =
+               (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+    g_VertexAlphaStart = (pSVar14->base).alpha_current;
+    g_VertexAlphaDelta =
          (int)((ulonglong)
-               ((longlong)((left_vertex->base).alpha_current - g_INT_00604dd0) *
-               (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-    if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x200) == 0) {
-      if ((g_BIT_INTEGER32_01c6e2b4.dword & 4) == 0) {
-        if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x10) == 0) {
+               ((longlong)((left_vertex->base).alpha_current - g_VertexAlphaStart) *
+               (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+    if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
+      if ((g_RenderStateFlags.dword & RENDER_FOG_COLOR) == 0) {
+        if ((g_RenderStateFlags.dword & RENDER_LIGHTING_COLOR) == 0) {
           uVar38 = psllw(g_QWORD_ARRAY_00605710[0xff],7);
           uVar43 = 0;
         }
@@ -169,78 +169,78 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
         uVar7 = uVar9 * 8;
         uVar17 = (uint)((ulonglong)
                         ((longlong)(int)(uVar17 * 8 + uVar9 * -8) *
-                        (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-        g_QWORD_00604d90._0_4_ = uVar7 & 0xffff;
-        g_QWORD_00604db0._0_4_ = uVar17 & 0xffff;
-        uVar38 = ((CONCAT44(g_QWORD_00604d90._4_4_,uVar7) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(g_QWORD_00604d90._4_4_,uVar7) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(g_QWORD_00604d90._4_4_,uVar7) & 0xffffffff0000ffff;
-        uVar43 = ((CONCAT44(g_QWORD_00604db0._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(g_QWORD_00604db0._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(g_QWORD_00604db0._4_4_,uVar17) & 0xffffffff0000ffff;
+                        (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+        g_VertexRedStart._0_4_ = uVar7 & 0xffff;
+        g_VertexRedDelta._0_4_ = uVar17 & 0xffff;
+        uVar38 = ((CONCAT44(g_VertexRedStart._4_4_,uVar7) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedStart._4_4_,uVar7) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedStart._4_4_,uVar7) & 0xffffffff0000ffff;
+        uVar43 = ((CONCAT44(g_VertexRedDelta._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedDelta._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedDelta._4_4_,uVar17) & 0xffffffff0000ffff;
       }
     }
     else {
       uVar11 = (uint)(pSVar14->base).red_current >> 1;
       uVar17 = (uint)((ulonglong)
                       ((longlong)(int)(((uint)(left_vertex->base).red_current >> 1) - uVar11) *
-                      (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-      g_QWORD_00604d90._0_4_ = uVar11 & 0xffff;
-      g_QWORD_00604db0._0_4_ = uVar17 & 0xffff;
+                      (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+      g_VertexRedStart._0_4_ = uVar11 & 0xffff;
+      g_VertexRedDelta._0_4_ = uVar17 & 0xffff;
       uVar12 = (uint)pSVar14->green_current >> 1;
       uVar9 = (uint)((ulonglong)
                      ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar12) *
-                     (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-      g_MMX_INTEGER_00604d98.u32[0] = uVar12 & 0xffff;
-      g_MMX_INTEGER_00604db8.u32[0] = uVar9 & 0xffff;
+                     (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+      g_VertexGreenStart.u32[0] = uVar12 & 0xffff;
+      g_VertexGreenDelta.u32[0] = uVar9 & 0xffff;
       uVar13 = (uint)pSVar14->blue_current >> 1;
       uVar7 = (uint)((ulonglong)
                      ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar13) *
-                     (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar8 + 1]) >> 0x20);
-      g_MMX_INTEGER_00604da0.u32[0] = uVar13 & 0xffff;
-      g_MMX_INTEGER_00604dc0.u32[0] = uVar7 & 0xffff;
-      uVar38 = ((CONCAT44(g_QWORD_00604d90._4_4_,uVar11) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(g_MMX_INTEGER_00604d98.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(g_MMX_INTEGER_00604da0.u32[1],uVar13) & 0xffffffff0000ffff;
-      uVar43 = ((CONCAT44(g_QWORD_00604db0._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(g_MMX_INTEGER_00604db8.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(g_MMX_INTEGER_00604dc0.u32[1],uVar7) & 0xffffffff0000ffff;
+                     (longlong)(int)g_ReciprocalLookupTable[iVar8 + 1]) >> 0x20);
+      g_VertexBlueStart.u32[0] = uVar13 & 0xffff;
+      g_VertexBlueDelta.u32[0] = uVar7 & 0xffff;
+      uVar38 = ((CONCAT44(g_VertexRedStart._4_4_,uVar11) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexGreenStart.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexBlueStart.u32[1],uVar13) & 0xffffffff0000ffff;
+      uVar43 = ((CONCAT44(g_VertexRedDelta._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexGreenDelta.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexBlueDelta.u32[1],uVar7) & 0xffffffff0000ffff;
     }
     uVar17 = 0;
     sVar42 = (short)uVar43;
     sVar44 = (short)(uVar43 >> 0x10);
     sVar45 = (short)(uVar43 >> 0x20);
     sVar46 = (short)(uVar43 >> 0x30);
-    g_INT_006048ec = iVar15;
-    if ((g_UCHAR_PTR_01c6ced4 == (uchar *)0x0) && ((g_BIT_INTEGER32_01c6e2b4.dword & 2) == 0)) {
-      uVar36 = (ulonglong)_g_ULONG_01c6e2bc >> 0x10;
-      uVar47 = (ushort)(((uint7)(byte)((ulonglong)_g_ULONG_01c6e2bc >> 0x18) << 0x30) >> 0x28);
-      uVar43 = (ulonglong)_g_ULONG_01c6e2bc >> 8;
-      bVar31 = (byte)_g_ULONG_01c6e2bc;
-      uVar9 = g_INT_006048e0;
-      uVar7 = g_INT_006048e4;
-      iVar8 = g_INT_00604dd0;
-      if ((g_BIT_INTEGER32_01c6e2b4.dword & 8) == 0) {
+    g_StartDepthW = iVar15;
+    if ((g_CurrentTextureOpacityData == (uchar *)0x0) && ((g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {
+      uVar36 = (ulonglong)_g_SolidColorMode >> 0x10;
+      uVar47 = (ushort)(((uint7)(byte)((ulonglong)_g_SolidColorMode >> 0x18) << 0x30) >> 0x28);
+      uVar43 = (ulonglong)_g_SolidColorMode >> 8;
+      bVar31 = (byte)_g_SolidColorMode;
+      uVar9 = g_StartTextureU;
+      uVar7 = g_StartTextureV;
+      iVar8 = g_VertexAlphaStart;
+      if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) == 0) {
         iVar8 = 0;
-        g_INT_00604dd8 = 0;
+        g_VertexAlphaDelta = 0;
       }
       while( true ) {
         uVar48 = (ushort)(uVar38 >> 0x10);
         uVar49 = (ushort)(uVar38 >> 0x20);
         uVar18 = (ushort)(uVar38 >> 0x30);
-        if (((g_BIT_INTEGER32_01c6e2b4.dword & 0x40) == 0) ||
-           (*(int *)(uVar17 + (int)g_INT_PTR_0060490c) <= iVar15)) {
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 1) == 0) {
-            uVar11 = g_INT_00604f08;
-            if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x200) == 0) {
+        if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
+           (*(int *)(uVar17 + (int)g_CurrentZBufferPtr) <= iVar15)) {
+          if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0) {
+            uVar11 = g_SpecialColor;
+            if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
               uVar11 = g_INT_01c6b5c0;
             }
           }
           else {
-            uVar11 = g_UINT_ARRAY_01c6a974
-                     [g_UCHAR_PTR_01c6ced0
-                      [(uVar9 >> g_QWORD_00604df8 & (uint)g_QWORD_00604e38) +
-                       (uVar7 >> g_QWORD_00604e18 & (uint)g_QWORD_00604e58)]];
+            uVar11 = g_Hardware32BitPalette
+                     [g_CurrentTextureData
+                      [(uVar9 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                       (uVar7 >> g_TextureShift2 & (uint)g_TextureMask2)]];
           }
           uVar21 = psllw((ulonglong)
                          CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(
@@ -264,7 +264,7 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
           bVar5 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x30) -
                   (0xff < sVar37);
           uVar20 = CONCAT13(bVar5,CONCAT12(cVar4,uVar19));
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 8) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
             uVar35 = g_QWORD_ARRAY_00605710[iVar8 >> 8];
             uVar32 = uVar35 ^ g_QWORD_ARRAY_00605710[0xff];
             uVar11 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar5 << 0x30) >> 0x28),
@@ -291,54 +291,55 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
                                                 (uVar25 != 0) * (uVar25 < 0x100) *
                                                 (char)(uVar22 >> 8) - (0xff < uVar25))));
           }
-          *(uint *)((int)g_INT_PTR_00604908 + uVar17) = uVar20;
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x80) != 0) {
-            *(int *)((int)g_INT_PTR_0060490c + uVar17) = iVar15;
+          *(uint *)((int)g_CurrentScreenPtr + uVar17) = uVar20;
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
+            *(int *)((int)g_CurrentZBufferPtr + uVar17) = iVar15;
           }
         }
         uVar17 = uVar17 + 4;
-        if ((uint)g_INT_006048a4 <= uVar17) break;
-        uVar9 = uVar9 + g_INT_00604d10;
+        if ((uint)g_ScanlinePixelCount <= uVar17) break;
+        uVar9 = uVar9 + g_HardwareDeltaTextureU;
         sVar37 = (ushort)uVar38 + sVar42;
         sVar39 = uVar48 + sVar44;
         sVar40 = uVar49 + sVar45;
         sVar41 = uVar18 + sVar46;
-        uVar7 = uVar7 + g_INT_00604d14;
-        iVar15 = iVar15 + g_INT_00604d18;
-        iVar8 = iVar8 + g_INT_00604dd8;
-        uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x30) < sVar41),
-                          CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x20) < sVar40)
-                                   ,CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x10)
-                                                      < sVar39),
-                                             -(ushort)(SUB82(g_DOUBLE_00604d1c,0) < sVar37)))) &
+        uVar7 = uVar7 + g_HardwareDeltaTextureV;
+        iVar15 = iVar15 + g_HardwareDeltaDepthZ;
+        iVar8 = iVar8 + g_VertexAlphaDelta;
+        uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar41),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+                                            sVar40),
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                             0x10) < sVar39),
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar37)))) &
                  CONCAT26(sVar41,CONCAT24(sVar40,CONCAT22(sVar39,sVar37)));
       }
     }
     else {
-      iVar8 = g_INT_00604dd0;
-      if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x100) == 0) {
+      iVar8 = g_VertexAlphaStart;
+      if ((g_RenderStateFlags.dword & RENDER_ALPHA_FROM_VERTEX) == 0) {
         iVar8 = g_INT_005fba38 << 8;
-        g_INT_00604dd8 = 0;
+        g_VertexAlphaDelta = 0;
       }
-      uVar9 = g_INT_006048e0;
-      uVar7 = g_INT_006048e4;
-      if (g_UCHAR_PTR_01c6ced4 != (uchar *)0x0) {
+      uVar9 = g_StartTextureU;
+      uVar7 = g_StartTextureV;
+      if (g_CurrentTextureOpacityData != (uchar *)0x0) {
         while( true ) {
           uVar47 = (ushort)(uVar38 >> 0x10);
           uVar48 = (ushort)(uVar38 >> 0x20);
           uVar49 = (ushort)(uVar38 >> 0x30);
-          if (((g_BIT_INTEGER32_01c6e2b4.dword & 0x40) == 0) ||
-             (*(int *)(uVar17 + (int)g_INT_PTR_0060490c) <= iVar15)) {
-            uVar11 = g_UINT_ARRAY_01c6a974
-                     [g_UCHAR_PTR_01c6ced0
-                      [(uVar9 >> g_QWORD_00604df8 & (uint)g_QWORD_00604e38) +
-                       (uVar7 >> g_QWORD_00604e18 & (uint)g_QWORD_00604e58)]];
-            if (g_UCHAR_PTR_01c6ced4
-                [(int)(g_UCHAR_PTR_01c6ced0 +
-                      (uVar9 >> g_QWORD_00604df8 & (uint)g_QWORD_00604e38) +
-                      (uVar7 >> g_QWORD_00604e18 & (uint)g_QWORD_00604e58)) -
-                 (int)g_UCHAR_PTR_01c6ced0] != 0) {
-              uVar20 = *(uint *)(uVar17 + (int)g_INT_PTR_00604908);
+          if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
+             (*(int *)(uVar17 + (int)g_CurrentZBufferPtr) <= iVar15)) {
+            uVar11 = g_Hardware32BitPalette
+                     [g_CurrentTextureData
+                      [(uVar9 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                       (uVar7 >> g_TextureShift2 & (uint)g_TextureMask2)]];
+            if (g_CurrentTextureOpacityData
+                [(int)(g_CurrentTextureData +
+                      (uVar9 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                      (uVar7 >> g_TextureShift2 & (uint)g_TextureMask2)) - (int)g_CurrentTextureData
+                ] != 0) {
+              uVar20 = *(uint *)(uVar17 + (int)g_CurrentScreenPtr);
               uVar18 = (ushort)(((uint7)(byte)((uint)uVar20 >> 0x18) << 0x30) >> 0x28);
               uVar35 = (ulonglong)
                        CONCAT34((int3)(CONCAT25(uVar18,CONCAT14((char)((uint)uVar20 >> 0x10),uVar20)
@@ -354,11 +355,11 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
                                               CONCAT24(uVar48 >> 3,
                                                        CONCAT22(uVar47 >> 3,(ushort)uVar38 >> 3))));
               uVar43 = g_QWORD_ARRAY_00605710
-                       [(uint)g_UCHAR_PTR_01c6ced4
-                              [(int)(g_UCHAR_PTR_01c6ced0 +
-                                    (uVar9 >> g_QWORD_00604df8 & (uint)g_QWORD_00604e38) +
-                                    (uVar7 >> g_QWORD_00604e18 & (uint)g_QWORD_00604e58)) -
-                               (int)g_UCHAR_PTR_01c6ced0] * iVar8 >> 0x10];
+                       [(uint)g_CurrentTextureOpacityData
+                              [(int)(g_CurrentTextureData +
+                                    (uVar9 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                                    (uVar7 >> g_TextureShift2 & (uint)g_TextureMask2)) -
+                               (int)g_CurrentTextureData] * iVar8 >> 0x10];
               sVar37 = (short)uVar21;
               sVar39 = (short)((ulonglong)uVar21 >> 0x10);
               sVar40 = (short)((ulonglong)uVar21 >> 0x20);
@@ -423,29 +424,29 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
                                                     (char)((ulonglong)uVar21 >> 8) - (0xff < uVar18)
                                                    )));
               }
-              *(uint *)(uVar17 + (int)g_INT_PTR_00604908) = uVar20;
-              if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x80) != 0) {
-                *(int *)(uVar17 + (int)g_INT_PTR_0060490c) = iVar15;
+              *(uint *)(uVar17 + (int)g_CurrentScreenPtr) = uVar20;
+              if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
+                *(int *)(uVar17 + (int)g_CurrentZBufferPtr) = iVar15;
               }
             }
           }
           uVar17 = uVar17 + 4;
-          if ((uint)g_INT_006048a4 <= uVar17) break;
-          uVar9 = uVar9 + g_INT_00604d10;
+          if ((uint)g_ScanlinePixelCount <= uVar17) break;
+          uVar9 = uVar9 + g_HardwareDeltaTextureU;
           sVar37 = (ushort)uVar38 + sVar42;
           sVar39 = uVar47 + sVar44;
           sVar40 = uVar48 + sVar45;
           sVar41 = uVar49 + sVar46;
-          uVar7 = uVar7 + g_INT_00604d14;
-          iVar15 = iVar15 + g_INT_00604d18;
-          iVar8 = iVar8 + g_INT_00604dd8;
-          uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x30) < sVar41),
-                            CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x20) <
+          uVar7 = uVar7 + g_HardwareDeltaTextureV;
+          iVar15 = iVar15 + g_HardwareDeltaDepthZ;
+          iVar8 = iVar8 + g_VertexAlphaDelta;
+          uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar41),
+                            CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
                                               sVar40),
-                                     CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x10
-                                                               ) < sVar39),
-                                              -(ushort)(SUB82(g_DOUBLE_00604d1c,0) < sVar37)))) &
-                   CONCAT26(sVar41,CONCAT24(sVar40,CONCAT22(sVar39,sVar37)));
+                                     CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                               0x10) < sVar39),
+                                              -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar37))))
+                   & CONCAT26(sVar41,CONCAT24(sVar40,CONCAT22(sVar39,sVar37)));
         }
         return;
       }
@@ -453,15 +454,15 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
         uVar47 = (ushort)(uVar38 >> 0x10);
         uVar48 = (ushort)(uVar38 >> 0x20);
         uVar49 = (ushort)(uVar38 >> 0x30);
-        if ((((g_BIT_INTEGER32_01c6e2b4.dword & 0x40) == 0) ||
-            (*(int *)(uVar17 + (int)g_INT_PTR_0060490c) <= iVar15)) &&
-           (uVar11 = g_UINT_ARRAY_01c6a974
-                     [g_UCHAR_PTR_01c6ced0
-                      [(uVar9 >> g_QWORD_00604df8 & (uint)g_QWORD_00604e38) +
-                       (uVar7 >> g_QWORD_00604e18 & (uint)g_QWORD_00604e58)]], uVar11 != 0)) {
+        if ((((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
+            (*(int *)(uVar17 + (int)g_CurrentZBufferPtr) <= iVar15)) &&
+           (uVar11 = g_Hardware32BitPalette
+                     [g_CurrentTextureData
+                      [(uVar9 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                       (uVar7 >> g_TextureShift2 & (uint)g_TextureMask2)]], uVar11 != 0)) {
           uVar43 = 0;
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x20) != 0) {
-            uVar20 = *(uint *)(uVar17 + (int)g_INT_PTR_00604908);
+          if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) != 0) {
+            uVar20 = *(uint *)(uVar17 + (int)g_CurrentScreenPtr);
             uVar43 = (ulonglong)
                      CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
                                                   uVar20 >> 0x18) << 0x30) >> 0x28),
@@ -537,26 +538,27 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f3
                                                 (uVar18 != 0) * (uVar18 < 0x100) *
                                                 (char)((ulonglong)uVar21 >> 8) - (0xff < uVar18))));
           }
-          *(uint *)(uVar17 + (int)g_INT_PTR_00604908) = uVar20;
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x80) != 0) {
-            *(int *)(uVar17 + (int)g_INT_PTR_0060490c) = iVar15;
+          *(uint *)(uVar17 + (int)g_CurrentScreenPtr) = uVar20;
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
+            *(int *)(uVar17 + (int)g_CurrentZBufferPtr) = iVar15;
           }
         }
         uVar17 = uVar17 + 4;
-        if ((uint)g_INT_006048a4 <= uVar17) break;
-        uVar9 = uVar9 + g_INT_00604d10;
+        if ((uint)g_ScanlinePixelCount <= uVar17) break;
+        uVar9 = uVar9 + g_HardwareDeltaTextureU;
         sVar37 = (ushort)uVar38 + sVar42;
         sVar39 = uVar47 + sVar44;
         sVar40 = uVar48 + sVar45;
         sVar41 = uVar49 + sVar46;
-        uVar7 = uVar7 + g_INT_00604d14;
-        iVar15 = iVar15 + g_INT_00604d18;
-        iVar8 = iVar8 + g_INT_00604dd8;
-        uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x30) < sVar41),
-                          CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x20) < sVar40)
-                                   ,CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x10)
-                                                      < sVar39),
-                                             -(ushort)(SUB82(g_DOUBLE_00604d1c,0) < sVar37)))) &
+        uVar7 = uVar7 + g_HardwareDeltaTextureV;
+        iVar15 = iVar15 + g_HardwareDeltaDepthZ;
+        iVar8 = iVar8 + g_VertexAlphaDelta;
+        uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar41),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+                                            sVar40),
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                             0x10) < sVar39),
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar37)))) &
                  CONCAT26(sVar41,CONCAT24(sVar40,CONCAT22(sVar39,sVar37)));
       }
     }

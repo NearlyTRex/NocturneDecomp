@@ -37,7 +37,7 @@
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
 ;   int g_RemoteSyncStage
-;   int INT_02f7c8c4
+;   int g_NetNextPlayerId
 ;   int g_ChatHistoryCount
 ;   ... and 1 more
 ;
@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [0x02f98ad0],EDX      ; 0053fd53 | g_ChatOutCount
     MOV dword ptr [0x02f7c8c0],EDX      ; 0053fd59 | g_RemoteSyncStage
     MOV dword ptr [ESI + 0x1c],EDX      ; 0053fd5f
-    MOV dword ptr [0x02f7c8c4],EDX      ; 0053fd62 | INT_02f7c8c4
+    MOV dword ptr [0x02f7c8c4],EDX      ; 0053fd62 | g_NetNextPlayerId
     MOV dword ptr [ESI + 0x168],EDX     ; 0053fd68
     MOV ESP,EBP                         ; 0053fd6e
     POP EBP                             ; 0053fd70

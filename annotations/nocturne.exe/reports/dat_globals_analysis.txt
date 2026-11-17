@@ -20,13 +20,13 @@ HIGH CONFIDENCE INFERENCES (7)
   DAT_005b8ec0                    addr=005b8ec0    current=undefined4      likely=SMRGLTextureBasic *  refs=1
     nearby: g_SMRGLTextureBasic_005b8de8 (SMRGLTextureBasic) at offset +216
   DAT_005be180                    addr=005be180    current=undefined4      likely=byte *          refs=2
-    nearby: INT_005be164 (int) at offset +28
+    nearby: g_CPendulumClassVersion (int) at offset +28
   DAT_005c1c28                    addr=005c1c28    current=undefined4      likely=float10 *       refs=1
     nearby: g_ARRAY_PTR_005c1cb4 (void*[4]) at offset -140
   DAT_00765c6c                    addr=00765c6c    current=undefined2      likely=uint *          refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +4
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +4
   DAT_00765c72                    addr=00765c72    current=undefined2      likely=int             refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +10
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +10
   DAT_01fff550                    addr=01fff550    current=undefined4      likely=float           refs=2
     nearby: g_FLOAT_01fff54c (float) at offset +4
   DAT_020845f4                    addr=020845f4    current=undefined4      likely=uint *          refs=2
@@ -35,35 +35,35 @@ HIGH CONFIDENCE INFERENCES (7)
 MEDIUM CONFIDENCE INFERENCES (35)
 --------------------------------------------------------------------------------
   DAT_005acc8e                    addr=005acc8e    current=undefined4      likely=byte            refs=1
-    nearby: g_CHAR_ARRAY_005acc90 (char[104]) at offset -2
+    nearby: g_PropertyNamePrefix (char[104]) at offset -2
   DAT_005c18a0                    addr=005c18a0    current=undefined1      likely=byte            refs=2
-    nearby: g_FILE_PTR_005c1894 (_FILE*) at offset +12
+    nearby: g_StaticFilePoolStart (_FILE*) at offset +12
   DAT_005c1b08                    addr=005c1b08    current=undefined4      likely=byte            refs=2
-    nearby: g_PTR_005c1b04 (void*) at offset +4
+    nearby: g_SpecialExitHandler (void*) at offset +4
   DAT_005c1b23                    addr=005c1b23    current=undefined1      likely=byte            refs=1
-    nearby: g_CHAR_ARRAY_005c1b24 (char[260]) at offset -1
+    nearby: g_TempDirectoryBuffer (char[260]) at offset -1
   DAT_005c1c30                    addr=005c1c30    current=undefined2      likely=short           refs=1
     nearby: g_ARRAY_PTR_005c1cb4 (void*[4]) at offset -132
   DAT_005c1d04                    addr=005c1d04    current=undefined4      likely=byte            refs=1
-    nearby: g_CHAR_PTR_005c1d09 (char*) at offset -5
+    nearby: g_EnvironmentStrings (char*) at offset -5
   DAT_005c1f95                    addr=005c1f95    current=undefined4      likely=byte            refs=1
-    nearby: g_UINT_005c1f90 (uint) at offset +5
+    nearby: g_MaxHandleCount (uint) at offset +5
   DAT_00765c6e                    addr=00765c6e    current=undefined2      likely=short           refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +6
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +6
   DAT_00765c70                    addr=00765c70    current=undefined2      likely=short           refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +8
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +8
   DAT_00765c72+1                  addr=00765c73    current=undefined4      likely=byte            refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +11
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +11
   DAT_00765c74                    addr=00765c74    current=undefined2      likely=short           refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +12
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +12
   DAT_00765c76                    addr=00765c76    current=undefined2      likely=short           refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +14
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +14
   DAT_00765c78                    addr=00765c78    current=undefined2      likely=short           refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +16
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +16
   DAT_00765c7a                    addr=00765c7a    current=undefined2      likely=short           refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +18
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +18
   DAT_00765c7a+1                  addr=00765c7b    current=undefined4      likely=byte            refs=1
-    nearby: g_CChainActorType_00765c30.name_hash (undefined4) at offset +19
+    nearby: g_CChainClassInfo.name_hash (undefined4) at offset +19
   DAT_01cc6080                    addr=01cc6080    current=undefined4      likely=byte            refs=1
     nearby: g_CHAR_ARRAY_01cc5f80+3 (undefined4) at offset +253
   DAT_01cc6081                    addr=01cc6081    current=undefined4      likely=byte            refs=1
@@ -101,7 +101,7 @@ NO TYPE HINTS (124)
 --------------------------------------------------------------------------------
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  nearby: g_CEnemyVTable at -12
   DAT_005a1548                    addr=005a1548    type=undefined4      refs=1  nearby: g_CScatVTable at -12
-  DAT_005acc8f                    addr=005acc8f    type=undefined1      refs=1  nearby: g_CHAR_ARRAY_005acc90 at -1
+  DAT_005acc8f                    addr=005acc8f    type=undefined1      refs=1  nearby: g_PropertyNamePrefix at -1
   DAT_005ad520                    addr=005ad520    type=undefined4      refs=1  nearby: g_GlobalFilters at +4
   DAT_005ad540                    addr=005ad540    type=undefined4      refs=1  nearby: g_PlayerFilters at +4
   DAT_005b6f70                    addr=005b6f70    type=undefined4      refs=1
@@ -109,23 +109,23 @@ NO TYPE HINTS (124)
   DAT_005b8e00                    addr=005b8e00    type=undefined4      refs=2  nearby: g_SMRGLTextureBasic_005b8de8 at +24
   DAT_005b8e18                    addr=005b8e18    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_005b8de8 at +48
   DAT_005b9418                    addr=005b9418    type=undefined4      refs=1  nearby: g_ChapterMissionFiles at -56
-  DAT_005be180+1                  addr=005be181    type=undefined4      refs=1  nearby: INT_005be19c at -27
-  DAT_005be184                    addr=005be184    type=undefined1      refs=1  nearby: INT_005be19c at -24
-  DAT_005beaa0                    addr=005beaa0    type=undefined4      refs=1  nearby: g_FLOAT_005bea98 at +8
-  DAT_005beaa4                    addr=005beaa4    type=undefined4      refs=1  nearby: g_FLOAT_005bea98 at +12
+  DAT_005be180+1                  addr=005be181    type=undefined4      refs=1  nearby: g_CPlatformClassVersion at -27
+  DAT_005be184                    addr=005be184    type=undefined1      refs=1  nearby: g_CPlatformClassVersion at -24
+  DAT_005beaa0                    addr=005beaa0    type=undefined4      refs=1  nearby: g_MaxSoftwareLatency at +8
+  DAT_005beaa4                    addr=005beaa4    type=undefined4      refs=1  nearby: g_MaxSoftwareLatency at +12
   DAT_005bed70                    addr=005bed70    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +4
   DAT_005bed74                    addr=005bed74    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +8
   DAT_005bed78                    addr=005bed78    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +12
   DAT_005c1c2c                    addr=005c1c2c    type=undefined4      refs=1  nearby: g_ARRAY_PTR_005c1cb4 at -136
-  DAT_005c1dbc                    addr=005c1dbc    type=undefined4      refs=1  nearby: g_dst_rule_005c1dc0 at -4
-  DAT_005c1de0                    addr=005c1de0    type=undefined4      refs=1  nearby: g_dst_rule_005c1dc0.rule_type at +4
-  DAT_005c1df0                    addr=005c1df0    type=undefined4      refs=1  nearby: g_INT_005c1dec at +4
-  DAT_005c1df4                    addr=005c1df4    type=undefined4      refs=1  nearby: g_INT_005c1dec at +8
+  DAT_005c1dbc                    addr=005c1dbc    type=undefined4      refs=1  nearby: g_DstStartRule at -4
+  DAT_005c1de0                    addr=005c1de0    type=undefined4      refs=1  nearby: g_DstStartRule.rule_type at +4
+  DAT_005c1df0                    addr=005c1df0    type=undefined4      refs=1  nearby: g_DstTransitionHour at +4
+  DAT_005c1df4                    addr=005c1df4    type=undefined4      refs=1  nearby: g_DstTransitionHour at +8
   DAT_005c1dfc                    addr=005c1dfc    type=undefined4      refs=1  nearby: s_EST_005c1e08 at -12
   DAT_005c1e00                    addr=005c1e00    type=undefined4      refs=1  nearby: s_EST_005c1e08 at -8
   DAT_005c1e04                    addr=005c1e04    type=undefined4      refs=1  nearby: s_EST_005c1e08 at -4
-  DAT_005c1f94                    addr=005c1f94    type=undefined4      refs=2  nearby: g_UINT_005c1f90 at +4
-  DAT_005c2048                    addr=005c2048    type=undefined4      refs=1  nearby: g_INT_005c204c at -4
+  DAT_005c1f94                    addr=005c1f94    type=undefined4      refs=2  nearby: g_MaxHandleCount at +4
+  DAT_005c2048                    addr=005c2048    type=undefined4      refs=1  nearby: g_ConsoleInputState at -4
   DAT_006b0298                    addr=006b0298    type=undefined4      refs=1  nearby: g_StoredZ at +4
   DAT_006e6f63                    addr=006e6f63    type=undefined4      refs=1
   DAT_006e6f69                    addr=006e6f69    type=undefined4      refs=1
@@ -169,8 +169,8 @@ NO TYPE HINTS (124)
   DAT_01c78c34                    addr=01c78c34    type=undefined4      refs=1  nearby: g_INT_01c78c38 at -4
   DAT_01c78cd8                    addr=01c78cd8    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01c78cc0.surface_normal.D at +4
   DAT_01c78cdc                    addr=01c78cdc    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01c78cc0.surface_normal.D at +8
-  DAT_01c78ce0                    addr=01c78ce0    type=undefined4      refs=1  nearby: g_INT_01c78ce8 at -8
-  DAT_01c78ce4                    addr=01c78ce4    type=undefined4      refs=1  nearby: g_INT_01c78ce8 at -4
+  DAT_01c78ce0                    addr=01c78ce0    type=undefined4      refs=1  nearby: g_BloodParticleIndex at -8
+  DAT_01c78ce4                    addr=01c78ce4    type=undefined4      refs=1  nearby: g_BloodParticleIndex at -4
   DAT_01cc6082                    addr=01cc6082    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01cc5f80+3 at +255
   DAT_01cc6083                    addr=01cc6083    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01cc5f80+3 at +256
   DAT_01cc6282                    addr=01cc6282    type=undefined4      refs=1
@@ -185,9 +185,9 @@ NO TYPE HINTS (124)
   DAT_01cc7f13                    addr=01cc7f13    type=undefined4      refs=1
   DAT_01cc8012                    addr=01cc8012    type=undefined4      refs=1
   DAT_01cc8013                    addr=01cc8013    type=undefined4      refs=1
-  DAT_01cc9450                    addr=01cc9450    type=undefined4      refs=17  nearby: g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3] at +4
-  DAT_01cc9454                    addr=01cc9454    type=undefined4      refs=18  nearby: g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3] at +8
-  DAT_01cc945c                    addr=01cc945c    type=undefined4      refs=1  nearby: g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3] at +16
+  DAT_01cc9450                    addr=01cc9450    type=undefined4      refs=17  nearby: g_MirrorTempPrimitive.vertices[3] at +4
+  DAT_01cc9454                    addr=01cc9454    type=undefined4      refs=18  nearby: g_MirrorTempPrimitive.vertices[3] at +8
+  DAT_01cc945c                    addr=01cc945c    type=undefined4      refs=1  nearby: g_MirrorTempPrimitive.vertices[3] at +16
   DAT_01e57224                    addr=01e57224    type=undefined4      refs=1  nearby: g_INT_01e57220 at +4
   DAT_01e57228                    addr=01e57228    type=undefined4      refs=1  nearby: g_INT_01e5722c at -4
   DAT_01e57234                    addr=01e57234    type=undefined4      refs=1  nearby: g_INT_01e57230 at +4
@@ -219,41 +219,41 @@ NO TYPE HINTS (124)
   DAT_02dda6cc                    addr=02dda6cc    type=undefined4      refs=1  nearby: g_CVector3i_02dda6b8.z at +12
   DAT_02de2a11                    addr=02de2a11    type=undefined4      refs=1
   DAT_02de2c14                    addr=02de2c14    type=undefined4      refs=1  nearby: g_INT_02de2d10 at -252
-  DAT_02de5488                    addr=02de5488    type=undefined4      refs=1  nearby: g_CHAR_PTR_PTR_02de54a0 at -24
-  DAT_02de548c                    addr=02de548c    type=undefined4      refs=1  nearby: g_CHAR_PTR_PTR_02de54a0 at -20
+  DAT_02de5488                    addr=02de5488    type=undefined4      refs=1  nearby: g_EnvironStringArea at -24
+  DAT_02de548c                    addr=02de548c    type=undefined4      refs=1  nearby: g_EnvironStringArea at -20
   DAT_02de5be0                    addr=02de5be0    type=undefined4      refs=2  nearby: g_INT_02de5c10 at -48
   DAT_02de5be4                    addr=02de5be4    type=undefined4      refs=1  nearby: g_INT_02de5c10 at -44
 
 --------------------------------------------------------------------------------
 MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
-  DAT_01cc9454                    addr=01cc9454    refs=18    type=undefined4      nearby: g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3](+8)
-  DAT_01cc9450                    addr=01cc9450    refs=17    type=undefined4      nearby: g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3](+4)
+  DAT_01cc9454                    addr=01cc9454    refs=18    type=undefined4      nearby: g_MirrorTempPrimitive.vertices[3](+8)
+  DAT_01cc9450                    addr=01cc9450    refs=17    type=undefined4      nearby: g_MirrorTempPrimitive.vertices[3](+4)
   DAT_00767280                    addr=00767280    refs=4     type=undefined4      nearby: g_SRenderVertex_PTR_0076727c(+4)
-  DAT_005be180                    addr=005be180    refs=2     type=undefined4      likely=byte *  nearby: INT_005be164(+28)
+  DAT_005be180                    addr=005be180    refs=2     type=undefined4      likely=byte *  nearby: g_CPendulumClassVersion(+28)
   DAT_005b8e00                    addr=005b8e00    refs=2     type=undefined4      nearby: g_SMRGLTextureBasic_005b8de8(+24)
   DAT_01fff550                    addr=01fff550    refs=2     type=undefined4      likely=float  nearby: g_FLOAT_01fff54c(+4)
   DAT_020845f4                    addr=020845f4    refs=2     type=undefined4      likely=uint *
   DAT_020845f8                    addr=020845f8    refs=2     type=undefined4    
   DAT_020845f9                    addr=020845f9    refs=2     type=undefined4    
-  DAT_005c18a0                    addr=005c18a0    refs=2     type=undefined1      likely=byte  nearby: g_FILE_PTR_005c1894(+12)
-  DAT_005c1b08                    addr=005c1b08    refs=2     type=undefined4      likely=byte  nearby: g_PTR_005c1b04(+4)
+  DAT_005c18a0                    addr=005c18a0    refs=2     type=undefined1      likely=byte  nearby: g_StaticFilePoolStart(+12)
+  DAT_005c1b08                    addr=005c1b08    refs=2     type=undefined4      likely=byte  nearby: g_SpecialExitHandler(+4)
   DAT_02de5be0                    addr=02de5be0    refs=2     type=undefined4      nearby: g_INT_02de5c10(-48)
-  DAT_005c1f94                    addr=005c1f94    refs=2     type=undefined4      nearby: g_UINT_005c1f90(+4)
-  DAT_00765c6c                    addr=00765c6c    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+4)
-  DAT_00765c6e                    addr=00765c6e    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+6)
-  DAT_00765c70                    addr=00765c70    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+8)
-  DAT_00765c72                    addr=00765c72    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+10)
-  DAT_00765c72+1                  addr=00765c73    refs=1     type=undefined4      likely=byte  nearby: g_CChainActorType_00765c30.name_hash(+11)
-  DAT_00765c74                    addr=00765c74    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+12)
-  DAT_00765c76                    addr=00765c76    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+14)
-  DAT_00765c78                    addr=00765c78    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+16)
-  DAT_00765c7a                    addr=00765c7a    refs=1     type=undefined2      likely=short  nearby: g_CChainActorType_00765c30.name_hash(+18)
-  DAT_00765c7a+1                  addr=00765c7b    refs=1     type=undefined4      likely=byte  nearby: g_CChainActorType_00765c30.name_hash(+19)
-  DAT_005be180+1                  addr=005be181    refs=1     type=undefined4      nearby: INT_005be19c(-27)
-  DAT_005be184                    addr=005be184    refs=1     type=undefined1      nearby: INT_005be19c(-24)
-  DAT_005acc8e                    addr=005acc8e    refs=1     type=undefined4      likely=byte  nearby: g_CHAR_ARRAY_005acc90(-2)
-  DAT_005acc8f                    addr=005acc8f    refs=1     type=undefined1      nearby: g_CHAR_ARRAY_005acc90(-1)
+  DAT_005c1f94                    addr=005c1f94    refs=2     type=undefined4      nearby: g_MaxHandleCount(+4)
+  DAT_00765c6c                    addr=00765c6c    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+4)
+  DAT_00765c6e                    addr=00765c6e    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+6)
+  DAT_00765c70                    addr=00765c70    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+8)
+  DAT_00765c72                    addr=00765c72    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+10)
+  DAT_00765c72+1                  addr=00765c73    refs=1     type=undefined4      likely=byte  nearby: g_CChainClassInfo.name_hash(+11)
+  DAT_00765c74                    addr=00765c74    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+12)
+  DAT_00765c76                    addr=00765c76    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+14)
+  DAT_00765c78                    addr=00765c78    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+16)
+  DAT_00765c7a                    addr=00765c7a    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+18)
+  DAT_00765c7a+1                  addr=00765c7b    refs=1     type=undefined4      likely=byte  nearby: g_CChainClassInfo.name_hash(+19)
+  DAT_005be180+1                  addr=005be181    refs=1     type=undefined4      nearby: g_CPlatformClassVersion(-27)
+  DAT_005be184                    addr=005be184    refs=1     type=undefined1      nearby: g_CPlatformClassVersion(-24)
+  DAT_005acc8e                    addr=005acc8e    refs=1     type=undefined4      likely=byte  nearby: g_PropertyNamePrefix(-2)
+  DAT_005acc8f                    addr=005acc8f    refs=1     type=undefined1      nearby: g_PropertyNamePrefix(-1)
   DAT_007642ec                    addr=007642ec    refs=1     type=undefined4      nearby: g_INT_007642e8(+4)
   DAT_007642f0                    addr=007642f0    refs=1     type=undefined4      nearby: g_INT_007642e8(+8)
   DAT_007642f4                    addr=007642f4    refs=1     type=undefined4      nearby: g_INT_007642e8(+12)
@@ -298,6 +298,6 @@ string, array, or struct and are not standalone globals.
   DAT_005c1e88                    inside s_EST_005c1e08
   DAT_005c1f09                    inside s_EDT_005c1e89
   DAT_005c410c                    inside g_FLOAT10_005c4102
-  DAT_01c78b03                    inside g_CHAR_ARRAY_01c78aef+0x13
-  DAT_02de209c                    inside g_HWND_02de2098
+  DAT_01c78b03                    inside g_InputHistory+0x13
+  DAT_02de209c                    inside g_MainWindowHandle
 

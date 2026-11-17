@@ -154,7 +154,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
           if (pCStack_14 == (CCharacter *)0x0) {
             if (pCStack_18 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0
-                        (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
+                        (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor);
               break;
@@ -256,8 +256,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
        *(float *)((int)&CStack_90 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   afStack_a4[0] = afStack_a4[0] + -0.25f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
-            (g_CFireEffect_PTR_0061c010,(CVector3f *)(auStack_b0 + 8),
-             &(this_ptr->base).base.orient_matrix);
+            (g_CFireEffectPtr,(CVector3f *)(auStack_b0 + 8),&(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
             (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"rifle-silencer.wav",&CStack_90)
   ;

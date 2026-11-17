@@ -12,19 +12,19 @@
 // =============================================================================
 
 // CVector3f
-extern CVector3f g_CVector3f_020842b4;
-extern CVector3f g_CVector3f_020842c0;
+extern CVector3f g_SavedCameraOrigin;
+extern CVector3f g_SavedCameraRotation;
 
 // SRaytraceState[5]
-extern SRaytraceState g_SRaytraceState_ARRAY_020842d4[5];
+extern SRaytraceState g_RaytraceStateStack[5];
 
 // float
-extern float g_FLOAT_020842cc;
+extern float g_SavedProjectionFactor;
 
 // int
 extern int g_INT_02080430;
 extern int g_INT_02080438;
-extern int g_INT_020842d0;
+extern int g_RaytraceStateStackDepth;
 extern int g_INT_020875f4;
 
 // uint[250][48][64]

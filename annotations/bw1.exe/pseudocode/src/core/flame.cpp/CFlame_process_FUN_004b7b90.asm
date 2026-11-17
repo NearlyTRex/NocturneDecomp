@@ -25,8 +25,8 @@
 ;   float g_FLOAT_005df6af = -8
 ;   double g_DOUBLE_005df6b7 = -0.5
 ;   double g_DOUBLE_005df6bf = 0.25
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   int g_INT_01d06ab4
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 004b7c37 (CONDITIONAL_JUMP)  ; LAB_004b7c37
     ADD EAX,0x1b8                       ; 004b7bbc
     PUSH EAX                            ; 004b7bc1
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004b7bc2 | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004b7bc2 | g_CEventListPtr
     PUSH ECX                            ; 004b7bc8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004b7bc9
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -95,7 +95,7 @@ section .text
     PUSH 0x4000                         ; 004b7bf9
     PUSH 0x0                            ; 004b7bfe
     PUSH ESI                            ; 004b7c00
-    MOV EDI,dword ptr [0x0061c010]      ; 004b7c01 | g_CFireEffect_PTR_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 004b7c01 | g_CFireEffectPtr
     PUSH EDI                            ; 004b7c07
     INC EBX                             ; 004b7c08
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004b7c09
@@ -120,7 +120,7 @@ section .text
         ;   XREF to: 004b7ca9 (CONDITIONAL_JUMP)  ; LAB_004b7ca9
     ADD EAX,0x21c                       ; 004b7c4c
     PUSH EAX                            ; 004b7c51
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004b7c52 | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004b7c52 | g_CEventListPtr
     PUSH ECX                            ; 004b7c58
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004b7c59
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -142,7 +142,7 @@ section .text
     ADD EAX,0x20                        ; 004b7c93
     FSTP float ptr [ESP]                ; 004b7c96
     PUSH EAX                            ; 004b7c99
-    MOV ESI,dword ptr [0x0061c010]      ; 004b7c9a | g_CFireEffect_PTR_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 004b7c9a | g_CFireEffectPtr
     PUSH ESI                            ; 004b7ca0
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30 ; 004b7ca1
         ;   XREF to: 004b5b30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

@@ -14,7 +14,7 @@
 ;   double g_DOUBLE_005efb87 = 0.200000000000000
 ;   CGore* g_CGorePtr = 01cb8284
 ;   int g_INT_01cedef4
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 005a0716 (CONDITIONAL_JUMP)  ; LAB_005a0716
     MOV ECX,dword ptr [ESP + 0xf4]      ; 005a04d6
     PUSH ECX                            ; 005a04dd
-    PUSH 0x265370c                      ; 005a04de | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a04de | g_ZeroVector
     LEA ESI,[ESP + 0xbc]                ; 005a04e3
     LEA EDI,[ESP + 0xa4]                ; 005a04ea
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a04f1
@@ -201,7 +201,7 @@ section .text
     PUSH 0x2                            ; 005a05be
     MOV dword ptr [ESP + 0xac],EAX      ; 005a05c0
     MOV EAX,dword ptr [ESP + 0x60]      ; 005a05c7
-    PUSH 0x265370c                      ; 005a05cb | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a05cb | g_ZeroVector
     MOV dword ptr [ESP + 0xb8],EAX      ; 005a05d0
     LEA EAX,[ESP + 0x74]                ; 005a05d7
     PUSH EAX                            ; 005a05db

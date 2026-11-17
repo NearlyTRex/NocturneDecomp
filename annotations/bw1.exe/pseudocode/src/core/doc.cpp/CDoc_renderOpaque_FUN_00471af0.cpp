@@ -115,8 +115,8 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr)
         fStack_1c = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_004b6140
-                (g_CFireEffect_PTR_0061c010,pCStack_18,&CStack_11c,1.0,1.0,
-                 &g_CDemonSetPtr->collision_normal,fStack_1c,0xff,0,0);
+                (g_CFireEffectPtr,pCStack_18,&CStack_11c,1.0,1.0,&g_CDemonSetPtr->collision_normal,
+                 fStack_1c,0xff,0,0);
       core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     }
   }

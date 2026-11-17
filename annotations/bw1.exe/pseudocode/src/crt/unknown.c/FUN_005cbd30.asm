@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   byte g_BYTE_0062621d = 0x0
-;   byte g_BYTE_006267b8 = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cd4be
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 005cda1e (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cda1e()
     JLE 0x005cbda5                      ; 005cbd9c
         ;   XREF to: 005cbda5 (CONDITIONAL_JUMP)  ; LAB_005cbda5
-    OR byte ptr [0x006267b8],0x1        ; 005cbd9e | g_BYTE_006267b8
+    OR byte ptr [0x006267b8],0x1        ; 005cbd9e | g_UseSoftwareMath
     ADD ESP,0x10                        ; 005cbda5
         ;   Label: LAB_005cbda5
     POP EBX                             ; 005cbda8

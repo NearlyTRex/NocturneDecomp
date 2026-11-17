@@ -18,10 +18,10 @@
 ;   TerminatedCString s_Out_of_memory_loading_sc_005cdeda
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   char[2048] g_CHAR_ARRAY_01ed6008
-;   undefined4 g_CHAR_ARRAY_01ed6008+1
-;   undefined4 g_CHAR_ARRAY_01ed6008+2
-;   undefined4 g_CHAR_ARRAY_01ed6008+3
+;   char[2048] g_ScriptLineBuffer
+;   undefined4 g_ScriptLineBuffer+1
+;   undefined4 g_ScriptLineBuffer+2
+;   undefined4 g_ScriptLineBuffer+3
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -65,7 +65,7 @@ section .text
     POP ESI                             ; 00529611
     POP EBX                             ; 00529612
     RET                                 ; 00529613
-    PUSH 0x1ed6008                      ; 00529614 | g_CHAR_ARRAY_01ed6008
+    PUSH 0x1ed6008                      ; 00529614 | g_ScriptLineBuffer
         ;   Label: LAB_00529614
     PUSH EBP                            ; 00529619
     MOV ECX,dword ptr [ESP + 0x8]       ; 0052961a
@@ -76,7 +76,7 @@ section .text
     PUSH EAX                            ; 00529627
     CALL core_script.cpp_trimLine_FUN_00528790 ; 00529628
         ;   XREF to: 00528790 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimLine_FUN_00528790(char * input_line, char * output_buffer)
-    MOV AH,byte ptr [0x01ed6008]        ; 0052962d | g_CHAR_ARRAY_01ed6008
+    MOV AH,byte ptr [0x01ed6008]        ; 0052962d | g_ScriptLineBuffer
     ADD ESP,0x8                         ; 00529633
     TEST AH,AH                          ; 00529636
     JZ 0x00529704                       ; 00529638
@@ -112,7 +112,7 @@ section .text
     SUB ECX,ECX                         ; 00529690
     DEC ECX                             ; 00529692
     XOR EAX,EAX                         ; 00529693
-    SCASB.REPNE ES:EDI                  ; 00529695 | g_CHAR_ARRAY_01ed6008 | g_CHAR_ARRAY_01ed6008+1
+    SCASB.REPNE ES:EDI                  ; 00529695 | g_ScriptLineBuffer | g_ScriptLineBuffer+1
     NOT ECX                             ; 00529697
     DEC ECX                             ; 00529699
     INC ECX                             ; 0052969a
@@ -142,13 +142,13 @@ section .text
     MOV ESI,0x1ed6008                   ; 005296de
     MOV EDI,dword ptr [EAX + EDI*0x8 + 0x4] ; 005296e3
     PUSH EDI                            ; 005296e7
-    MOV AL,byte ptr [ESI]               ; 005296e8 | g_CHAR_ARRAY_01ed6008 | g_CHAR_ARRAY_01ed6008+2
+    MOV AL,byte ptr [ESI]               ; 005296e8 | g_ScriptLineBuffer | g_ScriptLineBuffer+2
         ;   Label: LAB_005296e8
     MOV byte ptr [EDI],AL               ; 005296ea
     CMP AL,0x0                          ; 005296ec
     JZ 0x00529700                       ; 005296ee
         ;   XREF to: 00529700 (CONDITIONAL_JUMP)  ; LAB_00529700
-    MOV AL,byte ptr [ESI + 0x1]         ; 005296f0 | g_CHAR_ARRAY_01ed6008+1 | g_CHAR_ARRAY_01ed6008+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 005296f0 | g_ScriptLineBuffer+1 | g_ScriptLineBuffer+3
     ADD ESI,0x2                         ; 005296f3
     MOV byte ptr [EDI + 0x1],AL         ; 005296f6
     ADD EDI,0x2                         ; 005296f9

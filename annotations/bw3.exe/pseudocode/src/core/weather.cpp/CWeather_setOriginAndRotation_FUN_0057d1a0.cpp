@@ -83,10 +83,10 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeathe
           pfVar3[1] = local_58.y;
           pfVar3[2] = local_58.z;
         }
-        if (pCVar4 != &g_CVector3f_02cfd900) {
-          pCVar4->x = g_CVector3f_02cfd900.x;
-          pCVar4->y = g_CVector3f_02cfd900.y;
-          pCVar4->z = g_CVector3f_02cfd900.z;
+        if (pCVar4 != &g_ZeroVector) {
+          pCVar4->x = g_ZeroVector.x;
+          pCVar4->y = g_ZeroVector.y;
+          pCVar4->z = g_ZeroVector.z;
         }
         local_1c = local_1c + 4;
         local_20 = local_20 + 1;

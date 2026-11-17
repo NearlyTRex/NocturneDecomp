@@ -18,10 +18,10 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_00580173(SProjected
   int iVar7;
   int iVar8;
   
-  if (g_INT_01c51d00 != 0) {
-    iVar2 = input->x - g_INT_01c51d2c;
-    iVar7 = input->y - g_INT_01c51d30;
-    iVar8 = input->z - g_INT_01c51d34;
+  if (g_MMXSupported != 0) {
+    iVar2 = input->x - g_RelativeX;
+    iVar7 = input->y - g_RelativeY;
+    iVar8 = input->z - g_RelativeZ;
     lVar1 = (longlong)iVar7 * (longlong)g_INT_01c51d68 + (longlong)iVar2 * (longlong)g_INT_01c51d5c
             + (longlong)iVar8 * (longlong)g_INT_01c51d74;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
@@ -63,9 +63,9 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_00580173(SProjected
     output->screen_x = uVar6;
     return;
   }
-  g_INT_00623e28 = input->x - g_INT_01c51d2c;
-  g_INT_00623e2c = input->y - g_INT_01c51d30;
-  g_INT_00623e30 = input->z - g_INT_01c51d34;
+  g_INT_00623e28 = input->x - g_RelativeX;
+  g_INT_00623e2c = input->y - g_RelativeY;
+  g_INT_00623e30 = input->z - g_RelativeZ;
   lVar1 = (longlong)g_INT_00623e2c * (longlong)g_INT_01c51d68 +
           (longlong)g_INT_00623e28 * (longlong)g_INT_01c51d5c +
           (longlong)g_INT_00623e30 * (longlong)g_INT_01c51d74;

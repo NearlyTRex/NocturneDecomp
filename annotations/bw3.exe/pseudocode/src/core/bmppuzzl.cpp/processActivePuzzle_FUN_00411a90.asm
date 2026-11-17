@@ -13,9 +13,9 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CPuzzle* g_CPuzzle_PTR_007dffb4
 ;   int g_INT_007dffbc
-;   int g_INT_01c5fadc
-;   int g_INT_01c5fae0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; *****************************************************************************
@@ -39,7 +39,7 @@ section .text
     MOV CL,BL                           ; 00411aa8
     MOV EDX,dword ptr [0x007dffbc]      ; 00411aaa | g_INT_007dffbc
     SHL EAX,CL                          ; 00411ab0
-    MOV ECX,dword ptr [0x01c5fae4]      ; 00411ab2 | g_BIT_INTEGER32_01c5fae4
+    MOV ECX,dword ptr [0x01c5fae4]      ; 00411ab2 | g_MouseButtonFlags
     AND EDX,EAX                         ; 00411ab8
     AND ECX,EAX                         ; 00411aba
     CMP ECX,EDX                         ; 00411abc
@@ -59,7 +59,7 @@ section .text
     POP ESI                             ; 00411ad1
     POP EBX                             ; 00411ad2
     RET                                 ; 00411ad3
-    MOV EDX,dword ptr [0x01c5fae4]      ; 00411ad4 | g_BIT_INTEGER32_01c5fae4
+    MOV EDX,dword ptr [0x01c5fae4]      ; 00411ad4 | g_MouseButtonFlags
         ;   Label: LAB_00411ad4
     MOV ECX,dword ptr [ESI]             ; 00411ada
     MOV dword ptr [0x007dffbc],EDX      ; 00411adc | g_INT_007dffbc
@@ -68,9 +68,9 @@ section .text
     AND EAX,0xff                        ; 00411ae7
     PUSH EAX                            ; 00411aec
     PUSH EBX                            ; 00411aed
-    MOV EBP,dword ptr [0x01c5fae0]      ; 00411aee | g_INT_01c5fae0
+    MOV EBP,dword ptr [0x01c5fae0]      ; 00411aee | g_MouseY
     PUSH EBP                            ; 00411af4
-    MOV EAX,[0x01c5fadc]                ; 00411af5 | g_INT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 00411af5 | g_MouseX
     PUSH EAX                            ; 00411afa
     PUSH ESI                            ; 00411afb
     MOV dword ptr [0x007dffb4],ESI      ; 00411afc | g_CPuzzle_PTR_007dffb4

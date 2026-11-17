@@ -21,9 +21,9 @@ void FUN_005c37ec(int param_1)
     pHVar3 = pHVar2;
     if (pvVar1 != (void *)0x0) {
       *(Heap **)((int)pvVar1 + 8) = pHVar2;
-      pHVar3 = g_Heap_PTR_0061eea0;
+      pHVar3 = g_MainHeap;
     }
-    g_Heap_PTR_0061eea0 = pHVar3;
+    g_MainHeap = pHVar3;
     if (pHVar2 != (Heap *)0x0) {
       pHVar2->heap_base = pvVar1;
     }

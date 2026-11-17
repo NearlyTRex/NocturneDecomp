@@ -73,19 +73,19 @@
     },
     {
       "addr": "00603634",
-      "name": "g_INT_ARRAY_00603634",
+      "name": "g_PathMapLRUCounters",
       "type": "int[12]",
       "value": null
     },
     {
       "addr": "00603638",
-      "name": "g_INT_ARRAY_00603634[1]",
+      "name": "g_PathMapLRUCounters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1510",
-      "name": "g_UCHAR_01ec1510",
+      "name": "g_PathMapCacheInitFlag",
       "type": "uchar",
       "value": null
     },
@@ -239,41 +239,41 @@
     {
       "description": "Complex pointer cast",
       "line": 30,
-      "match": "(int *)((int)g_INT_ARRAY_00603634",
+      "match": "(int *)((int)g_PathMapLRUCounters",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_00603634 + iVar2) = iVar1;",
+      "text": "*(int *)((int)g_PathMapLRUCounters + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(int *)((int)g_INT_ARRAY_00603634",
+      "match": "(int *)((int)g_PathMapLRUCounters",
       "severity": "moderate",
-      "text": "if (g_INT_ARRAY_00603634[iVar1] < *(int *)((int)g_INT_ARRAY_00603634 + iVar4)) {",
+      "text": "if (g_PathMapLRUCounters[iVar1] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(int *)((int)g_INT_ARRAY_00603634",
+      "match": "(int *)((int)g_PathMapLRUCounters",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_INT_ARRAY_00603634 + iVar1) < g_INT_ARRAY_00603634[iVar5]) {",
+      "text": "if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(int *)((int)g_INT_ARRAY_00603634",
+      "match": "(int *)((int)g_PathMapLRUCounters",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_00603634 + iVar1) = *(int *)((int)g_INT_ARRAY_00603634 + iVar1) + 1;",
+      "text": "*(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(int *)((int)g_INT_ARRAY_00603634",
+      "match": "(int *)((int)g_PathMapLRUCounters",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_00603634 + iVar1) = *(int *)((int)g_INT_ARRAY_00603634 + iVar1) + 1;",
+      "text": "*(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {

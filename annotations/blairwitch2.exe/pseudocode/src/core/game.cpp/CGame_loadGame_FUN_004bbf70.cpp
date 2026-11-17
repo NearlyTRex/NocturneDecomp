@@ -48,12 +48,12 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004bbf70(CGame *this_ptr,char *sav
   _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath
-            (g_CHAR_ARRAY_01cb7b50,(char *)0x0,(char *)0x0,(char *)0x0,local_364);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_364);
   iVar2 = _stricmp(local_364,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_364,".noc"), iVar2 == 0)) {
     pcVar8 = local_56c;
-    pcVar6 = g_CHAR_ARRAY_01cb7b50;
+    pcVar6 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar6;
       *pcVar8 = cVar1;
@@ -68,9 +68,9 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004bbf70(CGame *this_ptr,char *sav
     local_56c[0] = '\0';
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(g_CFieldNotesPtr);
-  local_30 = g_CBitFont_PTR_01c25590;
+  local_30 = g_EditorFont;
   if (load_mode != 0) {
-    g_CBitFont_PTR_01c25590 = g_CBitFont_PTR_01511cc0;
+    g_EditorFont = g_ThemeFont;
   }
   local_28 = this_ptr->chapter_reload_filename;
   local_24 = &this_ptr->total_kill_count;
@@ -90,7 +90,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004bbf70(CGame *this_ptr,char *sav
                         (g_CEditorToolsPtr,pcVar6,search_directory,file_pattern,pcVar8,uVar13);
       if (iVar2 == 0) {
 LAB_004bc415:
-        g_CBitFont_PTR_01c25590 = local_30;
+        g_EditorFont = local_30;
         core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(g_CFieldNotesPtr);
         this_ptr->is_loading = 0;
         _remove("save\\$$SAVE$$.TMP");
@@ -108,15 +108,15 @@ LAB_004bc415:
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_CEventList_resetGameFlags_FUN_004910b0(g_CEventList_PTR_006141f0);
+    core_event_cpp_CEventList_resetGameFlags_FUN_004910b0(g_CEventListPtr);
     engine_special_cpp_clearScreen_FUN_0055b1f0();
     core_level_cpp_CLevelLoader_show_FUN_004e1480(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_cpp_getFile_FUN_00460c70("save",local_56c,"rt");
     local_18 = _ftell(file_handle);
     iVar5 = 1;
-    iVar2 = _stricmp(g_CHAR_ARRAY_01cb7b50,local_56c);
+    iVar2 = _stricmp(g_CurrentSaveFile,local_56c);
     if (iVar2 != 0) {
-      pcVar6 = g_CHAR_ARRAY_01cb7b50;
+      pcVar6 = g_CurrentSaveFile;
       pcVar8 = local_56c;
       do {
         cVar1 = *pcVar8;
@@ -234,7 +234,7 @@ LAB_004bc1c9:
         _fgets(local_264,0xff,file_handle);
         _fscanf(file_handle,"%d, %d\n");
         local_14 = 0;
-        if (0 < g_INT_01cedee0) {
+        if (0 < g_HeroCount) {
           iVar2 = 0;
           do {
             pcVar8 = "(file corrupt)";
@@ -257,12 +257,12 @@ LAB_004bc1c9:
             }
             local_14 = local_14 + 1;
             iVar2 = iVar2 + 4;
-          } while (local_14 < g_INT_01cedee0);
+          } while (local_14 < g_HeroCount);
         }
         iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_004fce00
                           (g_CDemonMission_PTR_00618170);
         if (iVar2 == 0) goto LAB_004bc415;
-        core_event_cpp_CEventList_loadState_FUN_00491ca0(g_CEventList_PTR_006141f0,file_handle);
+        core_event_cpp_CEventList_loadState_FUN_00491ca0(g_CEventListPtr,file_handle);
         core_script_cpp_CScript_loadState_FUN_0052a0d0(g_CScriptPtr,file_handle);
         if (local_34 < 4) {
           core_gore_cpp_CGore_reset_FUN_004c93f0(g_CGorePtr);
@@ -271,25 +271,25 @@ LAB_004bc1c9:
           core_gore_cpp_CGore_load_FUN_004c9e70(g_CGorePtr,file_handle);
         }
         if (local_34 < 7) {
-          core_fire_cpp_CFireEffect_init_FUN_0049c190(g_CFireEffect_PTR_00614d30);
+          core_fire_cpp_CFireEffect_init_FUN_0049c190(g_CFireEffectPtr);
         }
         else {
-          core_fire_cpp_CFireEffect_load_FUN_0049ea80(g_CFireEffect_PTR_00614d30,file_handle);
+          core_fire_cpp_CFireEffect_load_FUN_0049ea80(g_CFireEffectPtr,file_handle);
         }
         if (local_34 < 6) {
-          g_INT_01cb7c50 = 0;
+          g_HasSavedLightState = 0;
         }
         else {
           _fgets(local_264,0xff,file_handle);
           iVar2 = 1;
           _fscanf(file_handle,"%d\n");
-          if (0 < g_INT_ARRAY_01cb7c54[0]) {
+          if (0 < g_MasterLightStateSaveBuffer[0]) {
             do {
               iVar2 = iVar2 + 1;
               _fscanf(file_handle,"%d\n");
-            } while (iVar2 <= g_INT_ARRAY_01cb7c54[0]);
+            } while (iVar2 <= g_MasterLightStateSaveBuffer[0]);
           }
-          g_INT_01cb7c50 = 1;
+          g_HasSavedLightState = 1;
         }
         if (7 < local_34) {
           _fgets(local_264,0xff,file_handle);

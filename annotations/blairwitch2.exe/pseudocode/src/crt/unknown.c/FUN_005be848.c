@@ -11,10 +11,10 @@ void FUN_005be848(void)
 {
   FileListNode *pFVar1;
   
-  while (g_FileListNode_PTR_02680164 != (FileListNode *)0x0) {
-    pFVar1 = g_FileListNode_PTR_02680164->next;
-    debugFree(g_FileListNode_PTR_02680164);
-    g_FileListNode_PTR_02680164 = pFVar1;
+  while (g_FreeListHeadPointer != (FileListNode *)0x0) {
+    pFVar1 = g_FreeListHeadPointer->next;
+    debugFree(g_FreeListHeadPointer);
+    g_FreeListHeadPointer = pFVar1;
   }
   return;
 }

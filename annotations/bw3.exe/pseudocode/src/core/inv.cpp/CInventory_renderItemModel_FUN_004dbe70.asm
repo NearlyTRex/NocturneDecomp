@@ -144,20 +144,20 @@ section .text
     MOV dword ptr [EAX + 0x15ae8c],0xffffb7d5 ; 004dbf16 | g_CDemonSetInstance.light_direction.y
     MOV dword ptr [EAX + 0x15ae90],0x482b ; 004dbf20 | g_CDemonSetInstance.light_direction.z
     MOV dword ptr [EAX + 0x15ae94],0x7d00 ; 004dbf2a | g_CDemonSetInstance.ambient_base_quick
-    MOV EAX,[0x01c5fad0]                ; 004dbf34 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004dbf34 | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 004dbf39
     SAR EDX,0x1f                        ; 004dbf3b
     SHL EDX,0x2                         ; 004dbf3e
     SBB EAX,EDX                         ; 004dbf41
     SAR EAX,0x2                         ; 004dbf43
-    MOV EDX,dword ptr [0x01d70a38]      ; 004dbf46 | g_INT_01d70a38
+    MOV EDX,dword ptr [0x01d70a38]      ; 004dbf46 | g_InventoryLightAngle
     ADD EDX,EAX                         ; 004dbf4c
     PUSH EDX                            ; 004dbf4e
-    MOV dword ptr [0x01d70a38],EDX      ; 004dbf4f | g_INT_01d70a38
+    MOV dword ptr [0x01d70a38],EDX      ; 004dbf4f | g_InventoryLightAngle
     CALL engine_matrix.c_interpolatedSin_FUN_004e4d90 ; 004dbf55
         ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004e4d90(int angle)
     ADD ESP,0x4                         ; 004dbf5a
-    MOV ESI,dword ptr [0x01d70a38]      ; 004dbf5d | g_INT_01d70a38
+    MOV ESI,dword ptr [0x01d70a38]      ; 004dbf5d | g_InventoryLightAngle
     PUSH ESI                            ; 004dbf63
     MOV EDI,EAX                         ; 004dbf64
     CALL engine_matrix.c_interpolatedCos_FUN_004e4dd0 ; 004dbf66
@@ -303,13 +303,13 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090 ; 004dc0ee
         ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004dc0f3
-    PUSH 0x2cfd900                      ; 004dc0f6 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004dc0f6 | g_ZeroVector
     MOV ESI,dword ptr [0x005f2afc]      ; 004dc0fb | g_CDemonRenderer_PTR_005f2afc
     PUSH ESI                            ; 004dc101 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10 ; 004dc102
         ;   XREF to: 0046cc10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004dc107
-    PUSH 0x2cfd900                      ; 004dc10a | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004dc10a | g_ZeroVector
     MOV EDI,dword ptr [0x005f2afc]      ; 004dc10f | g_CDemonRenderer_PTR_005f2afc
     PUSH EDI                            ; 004dc115 | g_CDemonRenderer_01bdd7e4
     LEA ESI,[EBP + -0x2]                ; 004dc116
@@ -343,7 +343,7 @@ section .text
     ADD ESP,0x8                         ; 004dc15e
     XOR EAX,EAX                         ; 004dc161
     PUSH 0x5c630a                       ; 004dc163 | = "CLightstaff"
-    MOV [0x01c6e24c],EAX                ; 004dc168 | g_INT_01c6e24c
+    MOV [0x01c6e24c],EAX                ; 004dc168 | g_PerspectiveReciprocal
     PUSH EBX                            ; 004dc16d
     LEA EDI,[EBP + 0x16]                ; 004dc16e
     LEA ESI,[EBP + 0xa]                 ; 004dc171
@@ -406,7 +406,7 @@ section .text
     FLD float ptr [EBP + 0x4a]          ; 004dc205
     FLD float ptr [EBP + 0x4e]          ; 004dc208
     FXCH ST2                            ; 004dc20b
-    FADD float ptr [0x005c63c3]         ; 004dc20d | g_FLOAT_005c63c3
+    FADD float ptr [0x005c63c3]         ; 004dc20d | g_InventoryPiOver2
     FXCH                                ; 004dc213
     FLD float ptr [0x005c63c7]          ; 004dc215 | g_FLOAT_005c63c7
     FXCH                                ; 004dc21b
@@ -454,7 +454,7 @@ section .text
     JZ 0x004dc292                       ; 004dc284
         ;   XREF to: 004dc292 (CONDITIONAL_JUMP)  ; LAB_004dc292
     FLD float ptr [EBP + 0x46]          ; 004dc286
-    FADD float ptr [0x005c63c3]         ; 004dc289 | g_FLOAT_005c63c3
+    FADD float ptr [0x005c63c3]         ; 004dc289 | g_InventoryPiOver2
     FSTP float ptr [EBP + 0x46]         ; 004dc28f
     MOV EDX,dword ptr [0x01d72c08]      ; 004dc292 | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_004dc292
@@ -477,7 +477,7 @@ section .text
     JNZ 0x004dc2d9                      ; 004dc2bd
         ;   XREF to: 004dc2d9 (CONDITIONAL_JUMP)  ; LAB_004dc2d9
     FLD float ptr [EBP + 0x4e]          ; 004dc2bf
-    FLD float ptr [0x005c63cf]          ; 004dc2c2 | g_FLOAT_005c63cf
+    FLD float ptr [0x005c63cf]          ; 004dc2c2 | g_InventoryNegativePiOver2
     FLD float ptr [EBP + 0x46]          ; 004dc2c8
     FADD ST0,ST1                        ; 004dc2cb
     FXCH ST2                            ; 004dc2cd
@@ -496,7 +496,7 @@ section .text
     JNZ 0x004dc30b                      ; 004dc2ef
         ;   XREF to: 004dc30b (CONDITIONAL_JUMP)  ; LAB_004dc30b
     FLD float ptr [EBP + 0x4e]          ; 004dc2f1
-    FLD float ptr [0x005c63cf]          ; 004dc2f4 | g_FLOAT_005c63cf
+    FLD float ptr [0x005c63cf]          ; 004dc2f4 | g_InventoryNegativePiOver2
     FLD float ptr [EBP + 0x46]          ; 004dc2fa
     FADD ST0,ST1                        ; 004dc2fd
     FXCH ST2                            ; 004dc2ff
@@ -515,7 +515,7 @@ section .text
     ADD ESP,0xc                         ; 004dc31d
     LEA EAX,[EBP + 0x16]                ; 004dc320
     PUSH EAX                            ; 004dc323
-    PUSH 0x2cfd900                      ; 004dc324 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004dc324 | g_ZeroVector
     MOV EBX,dword ptr [0x005f2afc]      ; 004dc329 | g_CDemonRenderer_PTR_005f2afc
     PUSH EBX                            ; 004dc32f | g_CDemonRenderer_01bdd7e4
     MOV ESI,dword ptr [EBP + 0x92]      ; 004dc330

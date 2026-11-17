@@ -14,7 +14,7 @@
 // =============================================================================
 
 // CBitFont*
-extern CBitFont* g_CBitFont_PTR_01bc11ec;
+extern CBitFont* g_CurrentFont;
 
 // CDemonActorType
 extern CDemonActorType g_CDraculaBrideClassInfo;
@@ -23,7 +23,7 @@ extern CDemonActorType g_CDraculaBrideClassInfo;
 extern CDemonRenderer g_CDemonRenderer_01bc120c;
 
 // SFace[5000]
-extern SFace g_SFace_ARRAY_01bc1288[5000];
+extern SFace g_CapturedFaces[5000];
 
 // float
 extern float g_FLOAT_01bc0f4c;
@@ -35,26 +35,26 @@ extern float g_FLOAT_01bc0f5c;
 extern int g_INT_01bc0784;
 extern int g_INT_01bc0c88;
 extern int g_INT_01bc0c8c;
-extern int g_INT_01bc0cd0;
+extern int g_RasterizerDepthBias;
 extern int g_INT_01bc0f54;
 extern int g_INT_01bc0f60;
-extern int g_INT_01bc11e4;
-extern int g_INT_01bc11e8;
-extern int g_INT_01bc11f0;
-extern int g_INT_01bc11f4;
-extern int g_INT_01bc11f8;
-extern int g_INT_01bc11fc;
-extern int g_INT_01bc1200;
-extern int g_INT_01bc1204;
-extern int g_INT_01bc1208;
-extern int g_INT_01bc1238;
-extern int g_INT_01bc123c;
-extern int g_INT_01bc1280;
-extern int g_INT_01bc1284;
+extern int g_CurrentDrawColor;
+extern int g_PaletteColorIndex;
+extern int g_UseRGBConversion;
+extern int g_OriginalColorValue;
+extern int g_ScaledRedComponent;
+extern int g_ScaledGreenComponent;
+extern int g_ScaledBlueComponent;
+extern int g_PackedPixelColor;
+extern int g_DuplicatedPixelColor;
+extern int g_RenderPixelCounter;
+extern int g_RenderAbortFlag;
+extern int g_CaptureFaceCount;
+extern int g_CaptureTextureCount;
 
 // int[16]
-extern int g_INT_ARRAY_01bc1240[16];
+extern int g_VertexIndexBuffer[16];
 
 // int[8]
-extern int g_INT_ARRAY_01bc0d34[8];
+extern int g_DraculaBrideIndices[8];
 

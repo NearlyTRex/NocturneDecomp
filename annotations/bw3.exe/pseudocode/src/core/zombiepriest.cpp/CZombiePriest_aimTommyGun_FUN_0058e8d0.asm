@@ -45,7 +45,7 @@
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   CVector3f g_CVector3f_02cfd900
+;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;   int g_INT_02d24978
 ;   int g_INT_02d24998
@@ -135,7 +135,7 @@ section .text
     MOV EDI,0x3f490fdb                  ; 0058e975
     PUSH EAX                            ; 0058e97a
     MOV dword ptr [ESP + 0x8],EDI       ; 0058e97b
-    PUSH 0x2cfd900                      ; 0058e97f | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0058e97f | g_ZeroVector
     LEA ESI,[ESP + 0x58]                ; 0058e984
     LEA EDI,[ESP + 0x64]                ; 0058e988
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058e98c

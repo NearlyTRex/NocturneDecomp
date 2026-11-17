@@ -561,7 +561,7 @@ section .text
     POP EDI                             ; 004db22e
         ;   Label: LAB_004db22e
     PUSH EBP                            ; 004db22f
-    MOV EAX,[0x01511cc4]                ; 004db230 | g_CBitFont_PTR_01511cc4
+    MOV EAX,[0x01511cc4]                ; 004db230 | g_SmallEditorFont
     PUSH EAX                            ; 004db235
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004db236
         ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)

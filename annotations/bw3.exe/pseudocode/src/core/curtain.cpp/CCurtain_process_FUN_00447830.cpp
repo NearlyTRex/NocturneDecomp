@@ -95,7 +95,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_00447830(CCurtain *this_ptr,f
   if (((this_ptr->is_visible != 0) || (this_ptr->falling != 0)) &&
      (this_ptr->is_visible = 0, this_ptr->simulate_me != 0)) {
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (g_CEventList_PTR_005fba60,this_ptr->let_go_event);
+                      (g_CEventListPtr,this_ptr->let_go_event);
     if (iVar6 != 0) {
       this_ptr->falling = 1;
     }
@@ -140,30 +140,29 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_00447830(CCurtain *this_ptr,f
         } while (iVar6 < this_ptr->vertex_count);
       }
       iVar6 = 0;
-      g_INT_007f8fcc = 0;
-      for (iStack_1c = 0; iVar11 = g_INT_007f8fcc, iStack_1c < g_CDemonSetPtr->character_count;
-          iStack_1c = iStack_1c + 1) {
+      g_CurtainCollisionCount = 0;
+      for (iStack_1c = 0; iVar11 = g_CurtainCollisionCount,
+          iStack_1c < g_CDemonSetPtr->character_count; iStack_1c = iStack_1c + 1) {
         iVar4 = *(int *)((int)g_CDemonSetPtr->characters + iVar6);
-        pSVar10 = g_SCollisionInfo_ARRAY_007f9480 + g_INT_007f8fcc;
-        if (g_CVector3f_ARRAY_007f8fd0 + g_INT_007f8fcc != (CVector3f *)(iVar4 + 0x20)) {
-          g_CVector3f_ARRAY_007f8fd0[g_INT_007f8fcc].x = ((CVector3f *)(iVar4 + 0x20))->x;
+        pSVar10 = g_CurtainCollisionInfos + g_CurtainCollisionCount;
+        if (g_CVector3f_ARRAY_007f8fd0 + g_CurtainCollisionCount != (CVector3f *)(iVar4 + 0x20)) {
+          g_CVector3f_ARRAY_007f8fd0[g_CurtainCollisionCount].x = ((CVector3f *)(iVar4 + 0x20))->x;
           g_CVector3f_ARRAY_007f8fd0[iVar11].y = *(float *)(iVar4 + 0x24);
           g_CVector3f_ARRAY_007f8fd0[iVar11].z = *(float *)(iVar4 + 0x28);
         }
         (pSVar10->ray_query).ray_type = 0;
         iVar7 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x3c))(iVar4,pSVar10);
         if (((iVar7 == 2) && (*(float *)(iVar4 + 0x24) <= fStack_44)) &&
-           ((fStack_104 <=
-             *(float *)(iVar4 + 0x24) + g_SCollisionInfo_ARRAY_007f9480[iVar11].cylinder_top_y &&
-            ((((fStack_108 <=
-                *(float *)(iVar4 + 0x20) + g_SCollisionInfo_ARRAY_007f9480[iVar11].cylinder_radius
-               && (*(float *)(iVar4 + 0x20) -
-                   g_SCollisionInfo_ARRAY_007f9480[iVar11].cylinder_radius <= fStack_48)) &&
-              (fStack_100 <=
-               *(float *)(iVar4 + 0x28) + g_SCollisionInfo_ARRAY_007f9480[iVar11].cylinder_radius))
-             && (*(float *)(iVar4 + 0x28) - g_SCollisionInfo_ARRAY_007f9480[iVar11].cylinder_radius
-                 <= fStack_40)))))) {
-          g_INT_007f8fcc = g_INT_007f8fcc + 1;
+           ((fStack_104 <= *(float *)(iVar4 + 0x24) + g_CurtainCollisionInfos[iVar11].cylinder_top_y
+            && ((((fStack_108 <=
+                   *(float *)(iVar4 + 0x20) + g_CurtainCollisionInfos[iVar11].cylinder_radius &&
+                  (*(float *)(iVar4 + 0x20) - g_CurtainCollisionInfos[iVar11].cylinder_radius <=
+                   fStack_48)) &&
+                 (fStack_100 <=
+                  *(float *)(iVar4 + 0x28) + g_CurtainCollisionInfos[iVar11].cylinder_radius)) &&
+                (*(float *)(iVar4 + 0x28) - g_CurtainCollisionInfos[iVar11].cylinder_radius <=
+                 fStack_40)))))) {
+          g_CurtainCollisionCount = g_CurtainCollisionCount + 1;
         }
         iVar6 = iVar6 + 4;
       }

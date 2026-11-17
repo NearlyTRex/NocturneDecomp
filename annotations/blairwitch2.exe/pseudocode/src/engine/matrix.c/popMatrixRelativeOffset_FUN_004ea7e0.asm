@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b70
-;   int g_INT_01c38b74
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01d05014
+;   int g_MatrixStackIndex
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -19,21 +19,21 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01d05014]      ; 004ea7e0 | g_INT_01d05014
+    MOV EDX,dword ptr [0x01d05014]      ; 004ea7e0 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_popMatrixRelativeOffset_FUN_004ea7e0
     DEC EDX                             ; 004ea7e6
-    MOV dword ptr [0x01d05014],EDX      ; 004ea7e7 | g_INT_01d05014
+    MOV dword ptr [0x01d05014],EDX      ; 004ea7e7 | g_MatrixStackIndex
     TEST EDX,EDX                        ; 004ea7ed
     JL 0x004ea81d                       ; 004ea7ef
         ;   XREF to: 004ea81d (CONDITIONAL_JUMP)  ; LAB_004ea81d
-    MOV EAX,[0x01d05014]                ; 004ea7f1 | g_INT_01d05014
+    MOV EAX,[0x01d05014]                ; 004ea7f1 | g_MatrixStackIndex
         ;   Label: LAB_004ea7f1
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05180] ; 004ea7f6
-    MOV dword ptr [0x01c38b6c],EDX      ; 004ea7fd | g_INT_01c38b6c
+    MOV dword ptr [0x01c38b6c],EDX      ; 004ea7fd | g_RelativeX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d051a8] ; 004ea803
     MOV EAX,dword ptr [EAX*0x4 + 0x1d051d0] ; 004ea80a
-    MOV dword ptr [0x01c38b70],EDX      ; 004ea811 | g_INT_01c38b70
-    MOV [0x01c38b74],EAX                ; 004ea817 | g_INT_01c38b74
+    MOV dword ptr [0x01c38b70],EDX      ; 004ea811 | g_RelativeY
+    MOV [0x01c38b74],EAX                ; 004ea817 | g_RelativeZ
     RET                                 ; 004ea81c
     PUSH ESI                            ; 004ea81d
         ;   Label: LAB_004ea81d

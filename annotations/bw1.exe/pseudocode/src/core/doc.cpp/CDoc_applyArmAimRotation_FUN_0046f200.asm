@@ -51,7 +51,7 @@
 ;   double g_DOUBLE_005da09c = 10
 ;   double g_DOUBLE_005da0a4 = -0.110000000000000
 ;   double g_DOUBLE_005da0ac = 0.000100000000000000
-;   CQuaternion4f g_CQuaternion4f_006081e0
+;   CQuaternion4f g_IdentityQuaternion
 ;   int g_INT_01b68820
 ;   int g_INT_01b68824
 ;   int g_INT_01b68848
@@ -227,7 +227,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046f3e0
     MOVSD ES:EDI,ESI                    ; 0046f3e1
     MOVSD ES:EDI,ESI                    ; 0046f3e2
-    PUSH 0x6081e0                       ; 0046f3e3 | g_CQuaternion4f_006081e0
+    PUSH 0x6081e0                       ; 0046f3e3 | g_IdentityQuaternion
     LEA ESI,[ESP + 0xf0]                ; 0046f3e8
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0046f3ef
         ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)

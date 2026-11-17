@@ -16,8 +16,8 @@ _istrstream * __cdecl crt_strstream_cpp_istrstream_ctor_FUN_00564f32(void *this_
   ios *piVar5;
   
   if ((ctor_flags & 1U) == 0) {
-    *(WatcomVirtualBaseDescriptor **)this_ptr = &g_WatcomVirtualBaseDescriptor_005a4730;
-    *(int **)((int)this_ptr + 0x48) = &g_INT_005a4738;
+    *(WatcomVirtualBaseDescriptor **)this_ptr = &g_IstrstreamLayoutInfo;
+    *(int **)((int)this_ptr + 0x48) = &g_Istrstream_IstreamLastReadLength;
     piVar5 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x58));
     this_ptr = piVar5 + -2;
   }

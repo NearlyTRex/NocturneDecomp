@@ -11,7 +11,8 @@ int __cdecl engine_special_cpp_lockFrameX_FUN_00566560(void)
 {
   int iVar1;
   
-  if ((g_PTR_02cf6094 != (byte *)0x0) && (iVar1 = (*(code *)g_PTR_02cf6094)(), iVar1 != 0)) {
+  if ((g_APIDLL_lockFrameX != (byte *)0x0) &&
+     (iVar1 = (*(code *)g_APIDLL_lockFrameX)(), iVar1 != 0)) {
     g_INT_02cf6128 = g_INT_005fba20;
     g_INT_005fba20 = g_INT_02cf6130;
     return 1;

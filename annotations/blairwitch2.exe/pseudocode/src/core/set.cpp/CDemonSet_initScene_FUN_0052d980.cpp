@@ -53,16 +53,16 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0052d980(CDemonSet *this_ptr)
     iVar6 = iVar6 + 4;
   } while (iVar6 != 0x180);
   iVar6 = 0;
-  g_INT_01fc8d00 = 0;
+  g_MasterLightCount = 0;
   pCVar5 = this_ptr;
   if (0 < this_ptr->light_count) {
     do {
       if (pCVar5->lights[0].light_type == 0) {
         pCVar1 = core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(this_ptr->lights + iVar6);
-        g_CDemonLight_PTR_ARRAY_01fc8d04[g_INT_01fc8d00] = pCVar1;
+        g_CDemonLight_PTR_ARRAY_01fc8d04[g_MasterLightCount] = pCVar1;
         core_setutil_cpp_C3DSLight_apply_FUN_0053b810(this_ptr->lights + iVar6,pCVar1);
-        g_INT_01fc8d00 = g_INT_01fc8d00 + 1;
-        if (0x60 < g_INT_01fc8d00) {
+        g_MasterLightCount = g_MasterLightCount + 1;
+        if (0x60 < g_MasterLightCount) {
           g_CHAR_PTR_01d046a0 = "..\\core\\set.cpp";
           g_INT_01d046a4 = 0x3fb;
           core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonSet::initScene - Too many spotlights!");
@@ -73,7 +73,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0052d980(CDemonSet *this_ptr)
     } while (iVar6 < this_ptr->light_count);
   }
   iVar6 = 0;
-  if (0 < g_INT_01fc8d00) {
+  if (0 < g_MasterLightCount) {
     iVar3 = 0;
     do {
       pCVar1 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc8d04 + iVar3);
@@ -83,15 +83,15 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0052d980(CDemonSet *this_ptr)
       iVar3 = iVar3 + 4;
       iVar6 = iVar6 + 1;
       core_dlight_cpp_CDemonLight_endScene_FUN_0044a2d0(pCVar1,0);
-    } while (iVar6 < g_INT_01fc8d00);
+    } while (iVar6 < g_MasterLightCount);
   }
   this_ptr->selected_camera_index = -1;
   this_ptr->previous_best_camera_index = -1;
   iVar6 = 0;
-  g_INT_01fc8e84 = 0;
+  g_SpotLightCount = 0;
   g_INT_01fc9cd4 = 0;
   g_INT_01fc961c = 0;
-  g_INT_01fc97b0 = 0;
+  g_QueuedCoronaGlobeCount = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610(this_ptr);
   if (0 < this_ptr->camera_count) {
@@ -105,7 +105,6 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0052d980(CDemonSet *this_ptr)
       pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
     } while (iVar6 < this_ptr->camera_count);
   }
-  core_weather_cpp_CWeather_setWeatherType_FUN_0058b470
-            (g_CWeather_PTR_0061e8f4,this_ptr->weather_type);
+  core_weather_cpp_CWeather_setWeatherType_FUN_0058b470(g_CWeatherPtr,this_ptr->weather_type);
   return;
 }

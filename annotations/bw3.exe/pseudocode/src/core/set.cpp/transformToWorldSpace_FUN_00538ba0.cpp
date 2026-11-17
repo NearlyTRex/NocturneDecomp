@@ -24,18 +24,18 @@ CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_00538ba0(CVector3
   lVar4 = (longlong)g_INT_01d72648 * (longlong)input->x;
   lVar5 = (longlong)g_INT_01d72654 * (longlong)input->y;
   lVar6 = (longlong)g_INT_01d72660 * (longlong)input->z;
-  iVar7 = g_INT_01c6e2dc +
+  iVar7 = g_CameraOriginY +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
   lVar4 = (longlong)g_INT_01d7264c * (longlong)input->x;
   lVar5 = (longlong)g_INT_01d72658 * (longlong)input->y;
   lVar6 = (longlong)g_INT_01d72664 * (longlong)input->z;
-  iVar8 = g_INT_01c6e2e0 +
+  iVar8 = g_CameraOriginZ +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-  output->x = g_INT_01c6e2d8 +
+  output->x = g_CameraOriginX +
               ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
               ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
               ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);

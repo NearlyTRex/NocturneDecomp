@@ -28,7 +28,7 @@ float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float depth,floa
             (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&local_34);
   fVar2 = (float)1.52587890625e-05;
   fVar1 = (((float)(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).
-                   transformed_z * (float)0.00390625) / ((float)g_INT_005fba44 * fVar2)) *
+                   transformed_z * (float)0.00390625) / ((float)g_ProjectionScale * fVar2)) *
           0.2f;
   local_8 = min_size;
   fVar3 = ABS(fVar1 / ((float)g_INT_01c6b598 * fVar2));

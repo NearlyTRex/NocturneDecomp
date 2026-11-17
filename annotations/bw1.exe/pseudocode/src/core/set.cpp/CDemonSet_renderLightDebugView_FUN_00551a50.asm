@@ -14,13 +14,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_omni_lights_005f0977
 ;   TerminatedCString s_d_spot_lights_005f0986
-;   int[96] g_INT_ARRAY_00622c2c
-;   undefined4 g_INT_ARRAY_00622c2c[1]
-;   undefined4 g_INT_ARRAY_00622c2c[2]
-;   int[96] g_INT_ARRAY_00622dac
-;   undefined4 g_INT_ARRAY_00622dac[1]
-;   undefined4 g_INT_ARRAY_00622dac[2]
-;   int g_INT_01fe4e38
+;   int[96] g_LightDebugScreenX
+;   undefined4 g_LightDebugScreenX[1]
+;   undefined4 g_LightDebugScreenX[2]
+;   int[96] g_LightDebugScreenY
+;   undefined4 g_LightDebugScreenY[1]
+;   undefined4 g_LightDebugScreenY[2]
+;   int g_SpotLightCount
 ;   int g_INT_01fe55bc
 ;   int g_INT_01fe5c88
 ;
@@ -39,7 +39,7 @@ section .text
     PUSH EDI                            ; 00551a52
     PUSH EBP                            ; 00551a53
     SUB ESP,0x100                       ; 00551a54
-    MOV EDX,dword ptr [0x01fe4e38]      ; 00551a5a | g_INT_01fe4e38
+    MOV EDX,dword ptr [0x01fe4e38]      ; 00551a5a | g_SpotLightCount
     XOR ESI,ESI                         ; 00551a60
     TEST EDX,EDX                        ; 00551a62
     JLE 0x00551aa0                      ; 00551a64
@@ -47,9 +47,9 @@ section .text
     XOR EBX,EBX                         ; 00551a66
     PUSH 0x80                           ; 00551a68
         ;   Label: LAB_00551a68
-    MOV ECX,dword ptr [EBX + 0x622dac]  ; 00551a6d | g_INT_ARRAY_00622dac | g_INT_ARRAY_00622dac[1]
+    MOV ECX,dword ptr [EBX + 0x622dac]  ; 00551a6d | g_LightDebugScreenY | g_LightDebugScreenY[1]
     PUSH ECX                            ; 00551a73
-    MOV EDI,dword ptr [EBX + 0x622c2c]  ; 00551a74 | g_INT_ARRAY_00622c2c | g_INT_ARRAY_00622c2c[1]
+    MOV EDI,dword ptr [EBX + 0x622c2c]  ; 00551a74 | g_LightDebugScreenX | g_LightDebugScreenX[1]
     PUSH EDI                            ; 00551a7a
     MOV EBP,dword ptr [EBX + 0x1fe4e3c] ; 00551a7b
     PUSH EBP                            ; 00551a81
@@ -57,7 +57,7 @@ section .text
     INC ESI                             ; 00551a85
     CALL core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00463130 ; 00551a86
         ;   XREF to: 00463130 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00463130(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
-    MOV EAX,[0x01fe4e38]                ; 00551a8b | g_INT_01fe4e38
+    MOV EAX,[0x01fe4e38]                ; 00551a8b | g_SpotLightCount
     ADD ESP,0x10                        ; 00551a90
     CMP ESI,EAX                         ; 00551a93
     JL 0x00551a68                       ; 00551a95
@@ -74,9 +74,9 @@ section .text
     XOR EDI,EDI                         ; 00551ab3
     PUSH 0x80                           ; 00551ab5
         ;   Label: LAB_00551ab5
-    MOV ECX,dword ptr [EBX + 0x622dac]  ; 00551aba | g_INT_ARRAY_00622dac[1] | g_INT_ARRAY_00622dac[2]
+    MOV ECX,dword ptr [EBX + 0x622dac]  ; 00551aba | g_LightDebugScreenY[1] | g_LightDebugScreenY[2]
     PUSH ECX                            ; 00551ac0
-    MOV ESI,dword ptr [EBX + 0x622c2c]  ; 00551ac1 | g_INT_ARRAY_00622c2c[1] | g_INT_ARRAY_00622c2c[2]
+    MOV ESI,dword ptr [EBX + 0x622c2c]  ; 00551ac1 | g_LightDebugScreenX[1] | g_LightDebugScreenX[2]
     PUSH ESI                            ; 00551ac7
     MOV EAX,dword ptr [EDI + 0x1fe55c0] ; 00551ac8
     ADD EDI,0x4                         ; 00551ace
@@ -95,7 +95,7 @@ section .text
     MOV ESI,dword ptr [0x01fe5c88]      ; 00551af0 | g_INT_01fe5c88
         ;   Label: LAB_00551af0
     PUSH ESI                            ; 00551af6
-    MOV EBX,dword ptr [0x01fe4e38]      ; 00551af7 | g_INT_01fe4e38
+    MOV EBX,dword ptr [0x01fe4e38]      ; 00551af7 | g_SpotLightCount
     PUSH 0x5f0977                       ; 00551afd | = "%d omni lights"
     LEA ESI,[ESP + 0x8]                 ; 00551b02
     MOV ECX,dword ptr [0x01fe55bc]      ; 00551b06 | g_INT_01fe55bc
@@ -104,27 +104,27 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00551b0f
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00551b14
-    MOV EDI,dword ptr [EBX*0x4 + 0x622dac] ; 00551b17 | g_INT_ARRAY_00622dac
+    MOV EDI,dword ptr [EBX*0x4 + 0x622dac] ; 00551b17 | g_LightDebugScreenY
     PUSH EDI                            ; 00551b1e
-    MOV EBP,dword ptr [EBX*0x4 + 0x622c2c] ; 00551b1f | g_INT_ARRAY_00622c2c
+    MOV EBP,dword ptr [EBX*0x4 + 0x622c2c] ; 00551b1f | g_LightDebugScreenX
     PUSH EBP                            ; 00551b26
     LEA ESI,[ESP + 0x8]                 ; 00551b27
     PUSH ESI                            ; 00551b2b
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 00551b2c
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00551b31
-    MOV EAX,[0x01fe4e38]                ; 00551b34 | g_INT_01fe4e38
+    MOV EAX,[0x01fe4e38]                ; 00551b34 | g_SpotLightCount
     PUSH EAX                            ; 00551b39
     PUSH 0x5f0986                       ; 00551b3a | = "%d spot lights"
     LEA ESI,[ESP + 0x8]                 ; 00551b3f
     PUSH ESI                            ; 00551b43
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00551b44
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
-    MOV ESI,dword ptr [EBX*0x4 + 0x622dac] ; 00551b49 | g_INT_ARRAY_00622dac
+    MOV ESI,dword ptr [EBX*0x4 + 0x622dac] ; 00551b49 | g_LightDebugScreenY
     ADD ESP,0xc                         ; 00551b50
     ADD ESI,0xb                         ; 00551b53
     PUSH ESI                            ; 00551b56
-    MOV EDX,dword ptr [EBX*0x4 + 0x622c2c] ; 00551b57 | g_INT_ARRAY_00622c2c
+    MOV EDX,dword ptr [EBX*0x4 + 0x622c2c] ; 00551b57 | g_LightDebugScreenX
     PUSH EDX                            ; 00551b5e
     LEA EBX,[ESP + 0x8]                 ; 00551b5f
     PUSH EBX                            ; 00551b63

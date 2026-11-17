@@ -32,9 +32,9 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_
   current_crc = 0xffffffff;
   for (size = this_ptr->directory_entries[file_index].size; 0xffff < (int)size;
       size = size - 0x10000) {
-    pcVar3 = g_CHAR_ARRAY_01e428d0;
+    pcVar3 = g_FileIOBuffer;
     uVar2 = 0;
-    _fread(g_CHAR_ARRAY_01e428d0,0x10000,1,file);
+    _fread(g_FileIOBuffer,0x10000,1,file);
     do {
       uVar1 = *pcVar3;
       pcVar3 = pcVar3 + 1;
@@ -42,8 +42,8 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(current_crc,uVar1);
     } while (uVar2 < 0x10000);
   }
-  pcVar3 = g_CHAR_ARRAY_01e428d0;
-  _fread(g_CHAR_ARRAY_01e428d0,size,1,file);
+  pcVar3 = g_FileIOBuffer;
+  _fread(g_FileIOBuffer,size,1,file);
   uVar2 = 0;
   if (size != 0) {
     do {

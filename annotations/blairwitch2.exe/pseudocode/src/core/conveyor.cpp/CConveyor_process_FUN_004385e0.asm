@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -32,7 +32,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 004385e7
     LEA EAX,[EBP + 0x89c]               ; 004385eb
     PUSH EAX                            ; 004385f1
-    MOV EDX,dword ptr [0x006141f0]      ; 004385f2 | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004385f2 | g_CEventListPtr
     PUSH EDX                            ; 004385f8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004385f9
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -44,7 +44,7 @@ section .text
     LEA EAX,[EBP + 0x900]               ; 0043860f
         ;   Label: LAB_0043860f
     PUSH EAX                            ; 00438615
-    MOV ECX,dword ptr [0x006141f0]      ; 00438616 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 00438616 | g_CEventListPtr
     PUSH ECX                            ; 0043861c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0043861d
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

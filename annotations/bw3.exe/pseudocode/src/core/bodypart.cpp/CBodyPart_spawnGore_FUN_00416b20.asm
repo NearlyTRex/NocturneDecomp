@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   CGore* g_CGorePtr = 01d22e44
-;   CVector3f g_CVector3f_02cfd900
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cf40
@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_00416b32
     MOV EDX,dword ptr [EAX + 0xcb8]     ; 00416b36
     PUSH EDX                            ; 00416b3c
-    PUSH 0x2cfd900                      ; 00416b3d | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 00416b3d | g_ZeroVector
     ADD EAX,0x20                        ; 00416b42
     PUSH EAX                            ; 00416b45
     MOV ECX,dword ptr [0x005fed24]      ; 00416b46 | g_CGorePtr

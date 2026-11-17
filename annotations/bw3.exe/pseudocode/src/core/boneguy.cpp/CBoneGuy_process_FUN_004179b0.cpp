@@ -108,7 +108,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004179b0(CBoneGuy *this_ptr,f
   bVar17 = 0;
   engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"My HP: %f\n");
   iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                    (g_CEventList_PTR_005fba60,this_ptr->death_event);
+                    (g_CEventListPtr,this_ptr->death_event);
   if (iVar9 != 0) {
     (this_ptr->base).base.hit_points = 0.0;
     (this_ptr->base).pool_me = 1;
@@ -283,12 +283,12 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004179b0(CBoneGuy *this_ptr,f
       if (0.0 < (this_ptr->base).attack_cooldown) {
         fStack_5c = fStack_15c * fStack_15c +
                     afStack_16c[2] * afStack_16c[2] + afStack_16c[3] * afStack_16c[3];
-        fStack_3c = (float)(((int)fStack_5c >> 1) + g_INT_01d1a0a4);
+        fStack_3c = (float)(((int)fStack_5c >> 1) + g_FastSqrtMagic);
         if (fStack_3c <= 3.0f + (float)0.20000000000000001) break;
       }
       fStack_58 = fStack_15c * fStack_15c +
                   afStack_16c[2] * afStack_16c[2] + afStack_16c[3] * afStack_16c[3];
-      fStack_44 = (float)(((int)fStack_58 >> 1) + g_INT_01d1a0a4);
+      fStack_44 = (float)(((int)fStack_58 >> 1) + g_FastSqrtMagic);
       pCVar2 = &(this_ptr->base).base.model;
       if (3.0f + (float)0.20000000000000001 < fStack_44) {
         iVar9 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
@@ -324,7 +324,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004179b0(CBoneGuy *this_ptr,f
            afStack_100[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 0x10];
       fStack_40 = afStack_100[1] * afStack_100[1] +
                   fStack_104 * fStack_104 + afStack_100[0] * afStack_100[0];
-      fStack_50 = (float)(((int)fStack_40 >> 1) + g_INT_01d1a0a4);
+      fStack_50 = (float)(((int)fStack_40 >> 1) + g_FastSqrtMagic);
       if (((fStack_50 <= 3.0f + (float)0.20000000000000001) &&
           (0.0 < (this_ptr->base).attack_cooldown)) && (this_ptr->guard_idle == 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_2c,0,1);
@@ -381,7 +381,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004179b0(CBoneGuy *this_ptr,f
       pSVar19 = (SDamageInfo *)&stack0xfffffdbc;
       fVar21 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,
+                (&g_ZeroVector,
                  (CMatrix3x4f *)
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_INT_007e1620].m,
                  &CStack_14c);
@@ -421,7 +421,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004179b0(CBoneGuy *this_ptr,f
           SStack_208.wielder = (CDemonActor *)this_ptr;
           fVar21 = 2.0;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,
+                    (&g_ZeroVector,
                      (CMatrix3x4f *)
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_INT_007e1628].
                      m,&CStack_128);

@@ -15,23 +15,22 @@ int __cdecl sound_sndmain_cpp_initializeSoundDevice_FUN_00558730(void)
   if (iVar1 == 0) {
     return 0;
   }
-  sound_sndmain_cpp_selectSoundDevice_FUN_00558640(g_INT_0060423c);
-  if (-1 < g_INT_0060423c) {
-    if (g_SSoundDeviceInfo_ARRAY_02cf29c0[g_INT_0060423c].api_type == 0) {
-      g_CSoundDevice_PTR_02cf3280 =
+  sound_sndmain_cpp_selectSoundDevice_FUN_00558640(g_CurrentSoundDevice);
+  if (-1 < g_CurrentSoundDevice) {
+    if (g_SoundDevices[g_CurrentSoundDevice].api_type == 0) {
+      g_CSoundDevicePtr =
            &sound_sndwav_cpp_getWavOutDevice_FUN_0055e540
-                      (g_SSoundDeviceInfo_ARRAY_02cf29c0[g_INT_0060423c].device_id)->base;
+                      (g_SoundDevices[g_CurrentSoundDevice].device_id)->base;
     }
-    if (g_SSoundDeviceInfo_ARRAY_02cf29c0[g_INT_0060423c].api_type == 1) {
-      g_CSoundDevice_PTR_02cf3280 =
+    if (g_SoundDevices[g_CurrentSoundDevice].api_type == 1) {
+      g_CSoundDevicePtr =
            &sound_snddx_cpp_getDirectSoundDevice_FUN_0055d470
-                      (g_SSoundDeviceInfo_ARRAY_02cf29c0[g_INT_0060423c].device_id)->base;
+                      (g_SoundDevices[g_CurrentSoundDevice].device_id)->base;
     }
-    if (g_CSoundDevice_PTR_02cf3280 == (CSoundDevice *)0x0) {
+    if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return 0;
     }
-    g_INT_02cf3288 =
-         (*g_CSoundDevice_PTR_02cf3280->vtable->hasHardware3D)(g_CSoundDevice_PTR_02cf3280);
+    g_HasHardware3DSound = (*g_CSoundDevicePtr->vtable->hasHardware3D)(g_CSoundDevicePtr);
     return 1;
   }
   return 0;

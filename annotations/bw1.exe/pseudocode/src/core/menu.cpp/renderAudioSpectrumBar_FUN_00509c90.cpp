@@ -52,9 +52,11 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_00509c90(int x_center,int 
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
               (g_CDemonRenderer_PTR_00612560,
-               g_SMRGLTextureBasic_ARRAY_0061f4b0 +
-               (((int)((g_INT_01d1ee98 + (g_INT_01d1ee98 >> 0x1f) * -0x10000) -
-                      (uint)((g_INT_01d1ee98 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7));
+               g_AudioSpectrumTextures +
+               (((int)((g_AudioVisualizationCounter +
+                       (g_AudioVisualizationCounter >> 0x1f) * -0x10000) -
+                      (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
+               & 7));
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
               (g_CDemonRenderer_PTR_00612560,&local_2c,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);

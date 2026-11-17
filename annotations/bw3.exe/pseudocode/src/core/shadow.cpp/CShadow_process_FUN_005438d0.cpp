@@ -482,7 +482,7 @@ LAB_00544b88:
     pSVar21 = (SDamageInfo *)&stack0xfffffd14;
     fVar24 = 1.0;
     core_xform_cpp_transformVector3x4_FUN_00583260
-              (&g_CVector3f_02cfd900,
+              (&g_ZeroVector,
                (CMatrix3x4f *)
                (this_ptr->base).base.model.bone_transform.bone_model_matrices
                [this_ptr->bone_indices[2]].m,&CStack_154);
@@ -502,7 +502,7 @@ LAB_00544b88:
     pSVar21 = (SDamageInfo *)&stack0xfffffd14;
     fVar24 = 1.0;
     core_xform_cpp_transformVector3x4_FUN_00583260
-              (&g_CVector3f_02cfd900,
+              (&g_ZeroVector,
                (CMatrix3x4f *)
                (this_ptr->base).base.model.bone_transform.bone_model_matrices
                [this_ptr->bone_indices[1]].m,&CStack_70);
@@ -525,7 +525,7 @@ LAB_00544b88:
     pSVar21 = (SDamageInfo *)&stack0xfffffd14;
     fVar24 = 1.0;
     core_xform_cpp_transformVector3x4_FUN_00583260
-              (&g_CVector3f_02cfd900,
+              (&g_ZeroVector,
                (CMatrix3x4f *)
                (this_ptr->base).base.model.bone_transform.bone_model_matrices
                [this_ptr->bone_indices[3]].m,&CStack_f4);

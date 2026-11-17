@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6008
+;   void* g_APIDLL_unlockFrame
 ;   int g_INT_02cf6128
 ;   int g_INT_02cf612c
 ;
@@ -45,7 +45,7 @@ section .text
     XOR ESI,ESI                         ; 00565898
     MOV dword ptr [0x02cf612c],ESI      ; 0056589a | g_INT_02cf612c
     POP ESI                             ; 005658a0
-    CALL dword ptr [0x02cf6008]         ; 005658a1 | g_PTR_02cf6008
+    CALL dword ptr [0x02cf6008]         ; 005658a1 | g_APIDLL_unlockFrame
         ;   Label: LAB_005658a1
     POP EBX                             ; 005658a7
     RET                                 ; 005658a8

@@ -12,5 +12,5 @@ int FUN_005b0eb0(uint param_1)
   if (3 < param_1) {
     return 0;
   }
-  return (int)&g_FILE_PTR_00607678 + param_1 * 0x1a;
+  return (int)&g_StaticFilePoolStart + param_1 * 0x1a;
 }

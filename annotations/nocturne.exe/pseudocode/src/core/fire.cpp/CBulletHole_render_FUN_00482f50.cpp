@@ -78,13 +78,13 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_28);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (g_CDemonCamera_PTR_007f7370,g_SRenderVertex_ARRAY_005c5014);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014);
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (g_CDemonCamera_PTR_007f7370,g_SRenderVertex_ARRAY_005c5014 + 1);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014 + 1);
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (g_CDemonCamera_PTR_007f7370,g_SRenderVertex_ARRAY_005c5014 + 2);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014 + 2);
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (g_CDemonCamera_PTR_007f7370,g_SRenderVertex_ARRAY_005c5014 + 3);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014 + 3);
   }
   else {
     core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
@@ -98,7 +98,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
     core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(g_CDemonSetPtr,&local_64,&local_4c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLPrimitiveQuadIndex_01c08d20.base);
+            (g_CDemonRenderer_PTR_005ae704,&g_BillboardPrimitive.base);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     return;

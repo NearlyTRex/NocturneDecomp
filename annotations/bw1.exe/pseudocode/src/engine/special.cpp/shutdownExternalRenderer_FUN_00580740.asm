@@ -11,19 +11,19 @@
 ; Referenced Globals:
 ;   int g_INT_01c50948
 ;   void* g_PTR_02c83388
-;   void* g_PTR_02c8338c
-;   void* g_PTR_02c83390
+;   void* g_APIDLL_kill
+;   void* g_APIDLL_toggle
 ;   int g_INT_02c83394
-;   void* g_PTR_02c83398
-;   void* g_PTR_02c8339c
+;   void* g_APIDLL_setVideoMode2
+;   void* g_APIDLL_restoreVideoMode
 ;   void* g_PTR_02c833a0
 ;   void* g_PTR_02c833a4
-;   void* g_PTR_02c833a8
+;   void* g_APIDLL_lockFrame
 ;   void* g_PTR_02c833ac
 ;   void* g_PTR_02c833b0
 ;   void* g_PTR_02c833b4
 ;   void* g_PTR_02c833c0
-;   void* g_PTR_02c833c4
+;   void* g_APIDLL_drawPolygon
 ;   ... and 59 more
 ;
 ; Called Functions:
@@ -39,46 +39,46 @@ section .text
     XOR EDX,EDX                         ; 00580742
     MOV EBX,dword ptr [0x02c834b0]      ; 00580744 | g_HMODULE_02c834b0
     MOV dword ptr [0x01c50948],EDX      ; 0058074a | g_INT_01c50948
-    MOV dword ptr [0x02c834ac],EDX      ; 00580750 | g_INT_02c834ac
+    MOV dword ptr [0x02c834ac],EDX      ; 00580750 | g_LoadedExternalDLLRenderer
     TEST EBX,EBX                        ; 00580756
     JNZ 0x0058090d                      ; 00580758
         ;   XREF to: 0058090d (CONDITIONAL_JUMP)  ; LAB_0058090d
     XOR EBP,EBP                         ; 0058075e
         ;   Label: LAB_0058075e
-    MOV dword ptr [0x02c8338c],EBP      ; 00580760 | g_PTR_02c8338c
-    MOV dword ptr [0x02c83390],EBP      ; 00580766 | g_PTR_02c83390
+    MOV dword ptr [0x02c8338c],EBP      ; 00580760 | g_APIDLL_kill
+    MOV dword ptr [0x02c83390],EBP      ; 00580766 | g_APIDLL_toggle
     MOV dword ptr [0x02c83394],EBP      ; 0058076c | g_INT_02c83394
-    MOV dword ptr [0x02c83398],EBP      ; 00580772 | g_PTR_02c83398
-    MOV dword ptr [0x02c8339c],EBP      ; 00580778 | g_PTR_02c8339c
+    MOV dword ptr [0x02c83398],EBP      ; 00580772 | g_APIDLL_setVideoMode2
+    MOV dword ptr [0x02c8339c],EBP      ; 00580778 | g_APIDLL_restoreVideoMode
     MOV dword ptr [0x02c833a0],EBP      ; 0058077e | g_PTR_02c833a0
     MOV dword ptr [0x02c833a4],EBP      ; 00580784 | g_PTR_02c833a4
-    MOV dword ptr [0x02c833a8],EBP      ; 0058078a | g_PTR_02c833a8
+    MOV dword ptr [0x02c833a8],EBP      ; 0058078a | g_APIDLL_lockFrame
     MOV dword ptr [0x02c833ac],EBP      ; 00580790 | g_PTR_02c833ac
     MOV dword ptr [0x02c833b0],EBP      ; 00580796 | g_PTR_02c833b0
     MOV dword ptr [0x02c833b4],EBP      ; 0058079c | g_PTR_02c833b4
     MOV dword ptr [0x02c833c0],EBP      ; 005807a2 | g_PTR_02c833c0
-    MOV dword ptr [0x02c833c4],EBP      ; 005807a8 | g_PTR_02c833c4
-    MOV dword ptr [0x02c833c8],EBP      ; 005807ae | g_PTR_02c833c8
-    MOV dword ptr [0x02c833cc],EBP      ; 005807b4 | g_PTR_02c833cc
-    MOV dword ptr [0x02c833d0],EBP      ; 005807ba | g_PTR_02c833d0
-    MOV dword ptr [0x02c833d4],EBP      ; 005807c0 | g_PTR_02c833d4
+    MOV dword ptr [0x02c833c4],EBP      ; 005807a8 | g_APIDLL_drawPolygon
+    MOV dword ptr [0x02c833c8],EBP      ; 005807ae | g_APIDLL_drawPolygon2
+    MOV dword ptr [0x02c833cc],EBP      ; 005807b4 | g_APIDLL_drawPolyList
+    MOV dword ptr [0x02c833d0],EBP      ; 005807ba | g_APIDLL_drawPolyList2
+    MOV dword ptr [0x02c833d4],EBP      ; 005807c0 | g_APIDLL_drawPolyList3
     MOV dword ptr [0x02c833d8],EBP      ; 005807c6 | g_PTR_02c833d8
     MOV dword ptr [0x02c833dc],EBP      ; 005807cc | g_PTR_02c833dc
-    MOV dword ptr [0x02c833e0],EBP      ; 005807d2 | g_PTR_02c833e0
-    MOV dword ptr [0x02c833e4],EBP      ; 005807d8 | g_PTR_02c833e4
-    MOV dword ptr [0x02c833e8],EBP      ; 005807de | g_PTR_02c833e8
-    MOV dword ptr [0x02c833ec],EBP      ; 005807e4 | g_PTR_02c833ec
-    MOV dword ptr [0x02c833f0],EBP      ; 005807ea | g_PTR_02c833f0
-    MOV dword ptr [0x02c833f4],EBP      ; 005807f0 | g_PTR_02c833f4
-    MOV dword ptr [0x02c833f8],EBP      ; 005807f6 | g_PTR_02c833f8
-    MOV dword ptr [0x02c833fc],EBP      ; 005807fc | g_PTR_02c833fc
+    MOV dword ptr [0x02c833e0],EBP      ; 005807d2 | g_APIDLL_add3dLine
+    MOV dword ptr [0x02c833e4],EBP      ; 005807d8 | g_APIDLL_flushLineList
+    MOV dword ptr [0x02c833e8],EBP      ; 005807de | g_APIDLL_clear
+    MOV dword ptr [0x02c833ec],EBP      ; 005807e4 | g_APIDLL_setFogColor
+    MOV dword ptr [0x02c833f0],EBP      ; 005807ea | g_APIDLL_sync
+    MOV dword ptr [0x02c833f4],EBP      ; 005807f0 | g_APIDLL_clearZBuffer
+    MOV dword ptr [0x02c833f8],EBP      ; 005807f6 | g_APIDLL_clearZBox
+    MOV dword ptr [0x02c833fc],EBP      ; 005807fc | g_APIDLL_setColorTable16
     MOV dword ptr [0x02c83400],EBP      ; 00580802 | g_INT_02c83400
     MOV dword ptr [0x02c83404],EBP      ; 00580808 | g_INT_02c83404
-    MOV dword ptr [0x02c83408],EBP      ; 0058080e | g_PTR_02c83408
-    MOV dword ptr [0x02c8340c],EBP      ; 00580814 | g_PTR_02c8340c
-    MOV dword ptr [0x02c83410],EBP      ; 0058081a | g_PTR_02c83410
-    MOV dword ptr [0x02c83414],EBP      ; 00580820 | g_PTR_02c83414
-    MOV dword ptr [0x02c83418],EBP      ; 00580826 | g_PTR_02c83418
+    MOV dword ptr [0x02c83408],EBP      ; 0058080e | g_APIDLL_masterZBuffer
+    MOV dword ptr [0x02c8340c],EBP      ; 00580814 | g_APIDLL_restoreZBuffer
+    MOV dword ptr [0x02c83410],EBP      ; 0058081a | g_APIDLL_getVideoMemory
+    MOV dword ptr [0x02c83414],EBP      ; 00580820 | g_APIDLL_selectCard
+    MOV dword ptr [0x02c83418],EBP      ; 00580826 | g_APIDLL_buildCardList
     MOV dword ptr [0x02c8341c],EBP      ; 0058082c | g_PTR_02c8341c
     MOV dword ptr [0x02c83420],EBP      ; 00580832 | g_PTR_02c83420
     MOV dword ptr [0x02c83424],EBP      ; 00580838 | g_PTR_02c83424

@@ -20,8 +20,8 @@ int __cdecl CalculateHeapBlockSize(uint *pSize)
   if (uVar1 < *pSize) {
     return 0;
   }
-  if (uVar1 < (uint)g_INT_005c1fec) {
-    uVar1 = g_INT_005c1fec & 0xfffffffe;
+  if (uVar1 < (uint)g_HeapFlags) {
+    uVar1 = g_HeapFlags & 0xfffffffe;
   }
   *pSize = uVar1;
   if (uVar1 + 0xfff < *pSize) {

@@ -22,7 +22,7 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   int g_INT_005f076c = 0x1
+;   int g_TextWrapEnabled = 0x1
 ;   int g_INT_01c6b5b0
 ;   int g_INT_01c6b5b4
 ;
@@ -41,7 +41,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00401fe3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401fe7
     MOV EDX,dword ptr [ESP + 0x18]      ; 00401feb
-    CMP dword ptr [0x005f076c],0x0      ; 00401fef | g_INT_005f076c
+    CMP dword ptr [0x005f076c],0x0      ; 00401fef | g_TextWrapEnabled
     JZ 0x00402017                       ; 00401ff6
         ;   XREF to: 00402017 (CONDITIONAL_JUMP)  ; LAB_00402017
     PUSH EBX                            ; 00401ff8

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 105,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 24,
     "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -61,13 +61,13 @@
   "globals": [
     {
       "addr": "005a4810",
-      "name": "g_WatcomVirtualBaseDescriptor_005a4810",
+      "name": "g_OFStream_VirtualBaseLayout",
       "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
       "addr": "005a4818",
-      "name": "g_WatcomVirtualBaseDescriptor_005a4818",
+      "name": "g_OFStream_OStreamSubobjectLayout",
       "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
@@ -184,12 +184,12 @@
       "line": 13,
       "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) =",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_OFStream_OStreamSubobjectLayout;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 14,
       "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar5 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x50));",
@@ -197,7 +197,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 15,
       "match": "piVar5[-2].",
       "severity": "mild",
       "text": "this_ptr = &piVar5[-2].__format_flags;",
@@ -205,7 +205,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 19,
       "match": "p_Var3[-2].",
       "severity": "mild",
       "text": "pcVar4 = &p_Var3[-2]._ios.__fill_character;",
@@ -213,7 +213,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 21,
       "match": "p_Var3[-1].",
       "severity": "mild",
       "text": "p_Var3[-1]._ios.cleanup_vtable = &PTR_crt_fstream_cpp_ofstream_dtor_FUN_005651ca_005a4824;",
@@ -224,12 +224,12 @@
       "line": 13,
       "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44)",
       "severity": "moderate",
-      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) =",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_OFStream_OStreamSubobjectLayout;",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 15,
+      "line": 14,
       "match": "(ios *)((int)this_ptr + 0x50)",
       "severity": "moderate",
       "text": "piVar5 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x50));",

@@ -779,16 +779,16 @@ section .text
     POP EDI                             ; 0050c133
         ;   Label: LAB_0050c133
     INC dword ptr [ESP + 0xa3c]         ; 0050c134
-    IMUL EAX,dword ptr [0x01c43530],0x18 ; 0050c13b | g_INT_01c43530
+    IMUL EAX,dword ptr [0x01c43530],0x18 ; 0050c13b | g_GlobalDeltaTimeInt
         ;   Label: LAB_0050c13b
-    MOV ECX,dword ptr [0x01d1ee98]      ; 0050c142 | g_INT_01d1ee98
+    MOV ECX,dword ptr [0x01d1ee98]      ; 0050c142 | g_AudioVisualizationCounter
     ADD ECX,EAX                         ; 0050c148
-    MOV dword ptr [0x01d1ee98],ECX      ; 0050c14a | g_INT_01d1ee98
+    MOV dword ptr [0x01d1ee98],ECX      ; 0050c14a | g_AudioVisualizationCounter
     CMP ECX,0x80000                     ; 0050c150
     JL 0x0050c164                       ; 0050c156
         ;   XREF to: 0050c164 (CONDITIONAL_JUMP)  ; LAB_0050c164
     LEA ESI,[ECX + 0xfff80000]          ; 0050c158
-    MOV dword ptr [0x01d1ee98],ESI      ; 0050c15e | g_INT_01d1ee98
+    MOV dword ptr [0x01d1ee98],ESI      ; 0050c15e | g_AudioVisualizationCounter
     CALL sound_sndmain.cpp_isSoundBusy_FUN_00575550 ; 0050c164
         ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00575550()
         ;   Label: LAB_0050c164
@@ -1042,7 +1042,7 @@ section .text
     FLD float ptr [ESP + 0xa50]         ; 0050c432
     FDIV float ptr [0x00603974]         ; 0050c439 | g_FLOAT_00603974
     ADD ESP,0x4                         ; 0050c43f
-    MOV EDX,dword ptr [0x01d1ee8c]      ; 0050c442 | g_INT_01d1ee8c
+    MOV EDX,dword ptr [0x01d1ee8c]      ; 0050c442 | g_MenuLeftRightPressed
     FSTP float ptr [ESP + 0x18]         ; 0050c448
     CMP EDX,0x1                         ; 0050c44c
     JNZ 0x0050c4e3                      ; 0050c44f
@@ -1152,7 +1152,7 @@ section .text
     FLD float ptr [ESP + 0xa50]         ; 0050c55a
     FDIV float ptr [0x00603978]         ; 0050c561 | g_FLOAT_00603978
     ADD ESP,0x4                         ; 0050c567
-    MOV ECX,dword ptr [0x01d1ee8c]      ; 0050c56a | g_INT_01d1ee8c
+    MOV ECX,dword ptr [0x01d1ee8c]      ; 0050c56a | g_MenuLeftRightPressed
     FSTP float ptr [ESP + 0x20]         ; 0050c570
     CMP ECX,0x1                         ; 0050c574
     JNZ 0x0050c5e8                      ; 0050c577
@@ -1250,7 +1250,7 @@ section .text
     FLD float ptr [ESP + 0xa50]         ; 0050c65a
     FDIV float ptr [0x00603970]         ; 0050c661 | g_FLOAT_00603970
     ADD ESP,0x4                         ; 0050c667
-    MOV EAX,[0x01d1ee8c]                ; 0050c66a | g_INT_01d1ee8c
+    MOV EAX,[0x01d1ee8c]                ; 0050c66a | g_MenuLeftRightPressed
     FSTP float ptr [ESP + 0x1c]         ; 0050c66f
     CMP EAX,0x1                         ; 0050c673
     JNZ 0x0050c6f9                      ; 0050c676
@@ -1354,7 +1354,7 @@ section .text
     CALL sound_sndmain.cpp_getAudioSampleRate_FUN_00575220 ; 0050c772
         ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioSampleRate_FUN_00575220()
         ;   Label: caseD_4
-    MOV ESI,dword ptr [0x01d1ee8c]      ; 0050c777 | g_INT_01d1ee8c
+    MOV ESI,dword ptr [0x01d1ee8c]      ; 0050c777 | g_MenuLeftRightPressed
     MOV EBX,EAX                         ; 0050c77d
     CMP ESI,0x1                         ; 0050c77f
     JNZ 0x0050c7da                      ; 0050c782

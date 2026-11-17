@@ -103,7 +103,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00463820(CDemo
     local_9c = local_9c * fVar2;
     local_98 = local_98 * fVar2;
   }
-  iVar3 = g_INT_01c51cac / 2;
+  iVar3 = g_PerspectiveReciprocal / 2;
   local_28 = -(local_98 * local_44 + local_a0 * local_4c + local_9c * local_48);
   dVar6 = round
                     ((double)(local_28 * local_28 * local_28 * local_28 * (float)65536))
@@ -170,7 +170,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00463820(CDemo
     this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
     this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (this_ptr_00,&g_SLightGlowTable_006122a8.headlight);
+              (this_ptr_00,&g_LightGlow.headlight);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
     iStack_f8 = 4;
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30

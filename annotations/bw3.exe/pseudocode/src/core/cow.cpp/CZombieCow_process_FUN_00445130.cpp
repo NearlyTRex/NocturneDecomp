@@ -146,7 +146,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00445130(CZombieCow *this_ptr,f
       fVar11 = 0.7;
       fStack_14 = SStack_10c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_head,&CStack_d0);
       pCVar10 = &CStack_58;

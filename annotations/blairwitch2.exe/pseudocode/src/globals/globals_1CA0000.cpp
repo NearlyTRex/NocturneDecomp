@@ -61,7 +61,7 @@ char g_CHAR_01cafe40 = {};
 char g_CHAR_ARRAY_01cab7f0[512] = {};
 
 // float
-float g_FLOAT_01caf5b0 = {};
+float g_FastSqrtMagicSeedOne = {};
 float g_FLOAT_01caf5bc = {};
 float g_FLOAT_01caf5c0 = {};
 float g_FLOAT_01caf5c4 = {};
@@ -76,14 +76,14 @@ float g_FLOAT_01caf5e4 = {};
 float g_FLOAT_01caf5e8 = {};
 
 // float[64][8]
-float g_FLOAT_ARRAY_ARRAY_01caf634[64][8] = {};
+float g_SplineBasisTable[64][8] = {};
 
 // int
 int g_INT_01ca13e8 = {};
 int g_INT_01ca15a4 = {};
 int g_INT_01ca23b8 = {};
-int g_INT_01ca367c = {};
-int g_INT_01ca7680 = {};
+int g_PopcornAllocIndex = {};
+int g_RainDropAllocIndex = {};
 int g_INT_01cab780 = {};
 int g_INT_01cab7e8 = {};
 int g_INT_01cab9f0 = {};
@@ -96,11 +96,11 @@ int g_INT_01caf494 = {};
 int g_INT_01caf498 = {};
 int g_INT_01caf49c = {};
 int g_INT_01caf568 = {};
-int g_INT_01caf5b4 = {};
-int g_INT_01caf5b8 = {};
-int g_INT_01caf5ec = {};
+int g_FastSqrtMagic = {};
+int g_FastInvSqrtMagic = {};
+int g_FliesInitialized = {};
 
 // uint
-uint g_UINT_01caf62c = {};
-uint g_UINT_01caf630 = {};
+uint g_FlyBlendColor = {};
+uint g_FlyInvBlendColor = {};
 

@@ -13,17 +13,17 @@ void __cdecl cockpit_ckptutil_c_putPixel_FUN_00437b80(int x,int y,int color)
      (y <= g_INT_01c6b5b4)) {
     if (0xf < (uint)g_INT_005fba20) {
       if ((uint)g_INT_005fba20 < 0x11) {
-        *(ushort *)(g_ARRAY_PTR_01c5faec[y] + x * 2) = g_USHORT_ARRAY_01c6ad74[color];
+        *(ushort *)(g_ScreenBufferArray[y] + x * 2) = g_Hardware16BitPalette[color];
         return;
       }
       if (g_INT_005fba20 != 0x20) {
         return;
       }
-      *(uint *)(g_ARRAY_PTR_01c5faec[y] + x * 4) = g_UINT_ARRAY_01c6a974[color];
+      *(uint *)(g_ScreenBufferArray[y] + x * 4) = g_Hardware32BitPalette[color];
       return;
     }
     if (g_INT_005fba20 == 8) {
-      g_ARRAY_PTR_01c5faec[y][x] = (char)color;
+      g_ScreenBufferArray[y][x] = (char)color;
       return;
     }
   }

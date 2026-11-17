@@ -22,14 +22,14 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040d9a0(CAl
     iVar2 = 0;
     local_18 = 0;
     do {
-      uVar1 = *(uint *)((int)g_UINT_ARRAY_01c4e3d4 + local_18);
-      *(ushort *)((int)g_USHORT_ARRAY_01c4e7d4 + iVar2) =
-           (ushort)(((int)uVar1 >> 8 & 0xffU) / (uint)g_INT_01c4e9e4 <<
-                   (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
-           (ushort)(((int)uVar1 >> 0x10 & 0xffU) / (uint)g_INT_01c4e9d8 <<
-                   (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
-           (ushort)((uVar1 & 0xff) / (uint)g_INT_01c4e9f0 <<
-                   (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f));
+      uVar1 = *(uint *)((int)g_Hardware32BitPalette + local_18);
+      *(ushort *)((int)g_Hardware16BitPalette + iVar2) =
+           (ushort)(((int)uVar1 >> 8 & 0xffU) / (uint)g_GreenScaleFactor <<
+                   (g_GreenBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(((int)uVar1 >> 0x10 & 0xffU) / (uint)g_RedScaleFactor <<
+                   (g_RedBitPosition.bytes[0] & 0x1f)) |
+           (ushort)((uVar1 & 0xff) / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f))
+      ;
       local_18 = local_18 + 4;
       iVar2 = iVar2 + 2;
     } while (iVar2 != 0x200);
@@ -44,15 +44,15 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040d9a0(CAl
         iVar3 = 0;
         do {
           if (g_INT_0061b4a0 == 0x20) {
-            *(uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_1c) + iVar3) =
-                 g_UINT_ARRAY_01c4e3d4
+            *(uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar3) =
+                 g_Hardware32BitPalette
                  [(byte)this_ptr->raw
                         [(this_ptr->width * iVar2) / g_INT_0061b498 +
                          ((local_14 * this_ptr->height) / g_INT_0061b49c) * this_ptr->width]];
           }
           else {
-            *(ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_1c) + iVar4) =
-                 g_USHORT_ARRAY_01c4e7d4
+            *(ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar4) =
+                 g_Hardware16BitPalette
                  [(byte)this_ptr->raw
                         [(this_ptr->width * iVar2) / g_INT_0061b498 +
                          ((local_14 * this_ptr->height) / g_INT_0061b49c) * this_ptr->width]];

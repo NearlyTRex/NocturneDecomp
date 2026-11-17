@@ -62,7 +62,7 @@ LAB_004106e9:
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
               (g_CDemonRenderer_PTR_0060b280,&CStack_2c,(CVector3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-              (&g_CKeyFramedModelInstance_007bc51c,0.0,0x23);
+              (&g_CKeyFramedModelInstanceInstance,0.0,0x23);
     engine_drender_cpp_pop_FUN_0046b4a0();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
@@ -87,7 +87,7 @@ LAB_004106e9:
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170(pCVar1,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900
               (g_CDemonRenderer_PTR_0060b280);
-    if (g_INT_01d1cdc8 != 0) {
+    if (g_RenderMotionDebug != 0) {
       core_motion_cpp_CMotionController_render_FUN_005042e0(&pCVar1->base,(CDemonActor *)this_ptr);
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);

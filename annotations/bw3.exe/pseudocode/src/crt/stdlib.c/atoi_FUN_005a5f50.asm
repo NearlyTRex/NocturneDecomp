@@ -13,7 +13,7 @@
 ;   wincore_winvideo.cpp_playMovie_FUN_00582eb0 at 00582f90
 ;
 ; Referenced Globals:
-;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
         ;   Label: LAB_005a5f55
     INC DL                              ; 005a5f57
     AND EDX,0xff                        ; 005a5f59
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 005a5f5f | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 005a5f5f | g_CharacterClassificationTable
     JZ 0x005a5f6b                       ; 005a5f66
         ;   XREF to: 005a5f6b (CONDITIONAL_JUMP)  ; LAB_005a5f6b
     INC EAX                             ; 005a5f68
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_005a5f7a
     INC BL                              ; 005a5f7c
     AND EBX,0xff                        ; 005a5f7e
-    TEST byte ptr [EBX + 0x6074b8],0x20 ; 005a5f84 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EBX + 0x6074b8],0x20 ; 005a5f84 | g_CharacterClassificationTable
     JZ 0x005a5f9c                       ; 005a5f8b
         ;   XREF to: 005a5f9c (CONDITIONAL_JUMP)  ; LAB_005a5f9c
     IMUL EDX,EDX,0xa                    ; 005a5f8d

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 64,
+    "complexity_score": 63,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 33,
     "suspect_count": 2,
     "suspect_types": [
       "bitcast_double_pair",
       "sub84_truncation"
     ],
-    "total_lines": 119
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -73,7 +73,7 @@
   "globals": [
     {
       "addr": "02c80650",
-      "name": "g_CSoundDevice_PTR_02c80650",
+      "name": "g_CSoundDevicePtr",
       "type": "CSoundDevice*",
       "value": null
     }
@@ -244,7 +244,7 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 31,
+      "line": 30,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_20 = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -252,7 +252,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 36,
+      "line": 35,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "return __BITCAST_DOUBLE(CONCAT44(local_24,local_28));",

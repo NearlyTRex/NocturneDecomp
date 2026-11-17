@@ -79,7 +79,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_005184c0(CPlatform *this_ptr
   switch(this_ptr->state) {
   case PLATFORM_STATE_TYPE_AT_START:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->to_end_event);
+                      (g_CEventListPtr,this_ptr->to_end_event);
     bVar15 = iVar3 != 0;
     if (bVar15) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_00518ff0
@@ -89,7 +89,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_005184c0(CPlatform *this_ptr
     break;
   case PLATFORM_STATE_TYPE_AT_END:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->to_start_event);
+                      (g_CEventListPtr,this_ptr->to_start_event);
     bVar15 = iVar3 != 0;
     if (bVar15) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_00518ff0
@@ -99,10 +99,10 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_005184c0(CPlatform *this_ptr
     break;
   case PLATFORM_STATE_TYPE_STOPPED:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->to_end_event);
+                      (g_CEventListPtr,this_ptr->to_end_event);
     if (iVar3 == 0) {
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,this_ptr->to_start_event);
+                        (g_CEventListPtr,this_ptr->to_start_event);
       if (iVar3 != 0) {
         core_platfrm_cpp_CPlatform_startMovement_FUN_00518ff0
                   (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
@@ -115,7 +115,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_005184c0(CPlatform *this_ptr
     break;
   case PLATFORM_STATE_TYPE_MOVING_TO_END:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->stop_event);
+                      (g_CEventListPtr,this_ptr->stop_event);
     if (iVar3 != 0) {
       this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
       if (this_ptr->stop_sound[0] != '\0') {
@@ -142,7 +142,7 @@ LAB_00518952:
     goto LAB_00518940;
   case PLATFORM_STATE_TYPE_MOVING_TO_START:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->stop_event);
+                      (g_CEventListPtr,this_ptr->stop_event);
     if (iVar3 != 0) {
       this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
       if (this_ptr->stop_sound[0] != '\0') {

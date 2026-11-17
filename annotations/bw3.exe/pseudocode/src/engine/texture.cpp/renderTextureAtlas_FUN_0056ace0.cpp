@@ -9,6 +9,6 @@
 void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_0056ace0(void)
 
 {
-  engine_texture_cpp_CTextureCache_renderAllTextures_FUN_0056a8f0(g_CTextureCache_PTR_02cfd0d0);
+  engine_texture_cpp_CTextureCache_renderAllTextures_FUN_0056a8f0(g_TextureCacheInstance);
   return;
 }

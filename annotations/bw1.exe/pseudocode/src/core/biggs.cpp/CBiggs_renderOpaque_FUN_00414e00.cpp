@@ -56,7 +56,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00414e00(CBiggs *this_ptr)
       core_morph_cpp_CMorph_render_FUN_005237e0
                 (this_ptr_00,this_ptr->morph_timer / 4.0f);
     }
-    if (g_INT_01d39d34 != 0) {
+    if (g_RenderMotionDebug != 0) {
       iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
                         (g_CDemonRenderer_PTR_00612560);
       if (iVar5 == 0) {

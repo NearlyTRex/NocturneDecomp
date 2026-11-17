@@ -73,7 +73,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter
   float local_18;
   
   bVar15 = 0;
-  g_CDemonActor_PTR_007c6380 = (CDemonActor *)0x0;
+  g_LastCollisionActor = (CDemonActor *)0x0;
   if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
@@ -212,8 +212,8 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter
                           (this_ptr->base).location.position.y + local_3c);
     pCVar1 = local_28;
     local_18 = local_f8;
-    if (g_CDemonActor_PTR_007c6380 == (CDemonActor *)0x0) {
-      g_CDemonActor_PTR_007c6380 = g_CDemonSetPtr->collision_actor;
+    if (g_LastCollisionActor == (CDemonActor *)0x0) {
+      g_LastCollisionActor = g_CDemonSetPtr->collision_actor;
     }
     pCVar10 = local_44 + local_1c * 3;
     if (pCVar10 != (CVector3f *)&g_FLOAT_0152c2a8) {

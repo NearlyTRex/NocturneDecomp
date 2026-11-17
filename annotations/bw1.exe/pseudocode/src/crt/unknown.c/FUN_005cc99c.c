@@ -10,16 +10,16 @@ void FUN_005cc99c(void)
 
 {
   FUN_005cde20();
-  if (g_CHAR_PTR_PTR_02c9f6d4 != (char **)0x0) {
-    debugFree(g_CHAR_PTR_PTR_02c9f6d4);
-    g_CHAR_PTR_PTR_02c9f6d4 = (char **)0x0;
+  if (g_EnvironmentBlock != (char **)0x0) {
+    debugFree(g_EnvironmentBlock);
+    g_EnvironmentBlock = (char **)0x0;
   }
   if (g_PTR_02c9ff90 != (byte *)0x0) {
     debugFree(g_PTR_02c9ff90);
     g_PTR_02c9ff90 = (byte *)0x0;
   }
-  if (g_CHAR_PTR_006265d9 != (char *)0x0) {
-    FreeEnvironmentStringsA(g_CHAR_PTR_006265d9);
+  if (g_EnvironmentStrings != (char *)0x0) {
+    FreeEnvironmentStringsA(g_EnvironmentStrings);
   }
   return;
 }

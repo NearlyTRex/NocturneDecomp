@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040fec0(CBackgroundActor *this_ptr)
 
 {
-  return &g_CBackgroundActorActorType_007642ac;
+  return &g_CBackgroundActorClassInfo;
 }

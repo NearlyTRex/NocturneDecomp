@@ -11,8 +11,8 @@
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005e9a3b
 ;   TerminatedCString s_Create_secondary_buffer_005e9bfd
 ;   TerminatedCString s_DirectSoundDevice_alloca_005e9c15
-;   IDirectSound* g_IDirectSound_PTR_0264a5c4
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_0264a5d0
+;   IDirectSound* g_DirectSound
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[6]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[12]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[14]
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 00555ce3
     SUB ESP,0x1b8                       ; 00555ce4
     MOV ESI,dword ptr [ESP + 0x1d0]     ; 00555cea
-    CMP dword ptr [0x0264a5c4],0x0      ; 00555cf1 | g_IDirectSound_PTR_0264a5c4
+    CMP dword ptr [0x0264a5c4],0x0      ; 00555cf1 | g_DirectSound
     JZ 0x00555ecd                       ; 00555cf8
         ;   XREF to: 00555ecd (CONDITIONAL_JUMP)  ; LAB_00555ecd
     MOV EAX,0x18                        ; 00555cfe
@@ -83,7 +83,7 @@ section .text
     JZ 0x00555d84                       ; 00555d77
         ;   XREF to: 00555d84 (CONDITIONAL_JUMP)  ; LAB_00555d84
     MOV dword ptr [ESP + 0x194],0xa8    ; 00555d79
-    CMP dword ptr [0x0264a5d0],0x0      ; 00555d84 | g_IDirectSound3DListener_PTR_0264a5d0
+    CMP dword ptr [0x0264a5d0],0x0      ; 00555d84 | g_DirectSound3DListener
         ;   Label: LAB_00555d84
     JNZ 0x00555eda                      ; 00555d8b
         ;   XREF to: 00555eda (CONDITIONAL_JUMP)  ; LAB_00555eda
@@ -133,7 +133,7 @@ section .text
     ADD EAX,EDI                         ; 00555e5a
     PUSH EAX                            ; 00555e5c | g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[12]
     LEA EAX,[ESP + 0x198]               ; 00555e5d
-    MOV ECX,dword ptr [0x0264a5c4]      ; 00555e64 | g_IDirectSound_PTR_0264a5c4
+    MOV ECX,dword ptr [0x0264a5c4]      ; 00555e64 | g_DirectSound
     PUSH EAX                            ; 00555e6a
     MOV EBP,dword ptr [ECX]             ; 00555e6b
     PUSH ECX                            ; 00555e6d

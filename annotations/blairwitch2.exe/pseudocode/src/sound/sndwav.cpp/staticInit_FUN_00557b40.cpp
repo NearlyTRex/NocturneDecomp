@@ -9,7 +9,7 @@
 void __cdecl sound_sndwav_cpp_staticInit_FUN_00557b40(void)
 
 {
-  g_CWavInDevice_0264b280.base.vtable = (CSoundDevice)&g_CWavInDeviceVTable;
-  g_CWavOutDevice_0264b27c.base.vtable = (CSoundDevice)&g_CWavOutDeviceVTable;
+  g_CWavInDeviceInstance.base.vtable = (CSoundDevice)&g_CWavInDeviceVTable;
+  g_CWavOutDeviceInstance.base.vtable = (CSoundDevice)&g_CWavOutDeviceVTable;
   return;
 }

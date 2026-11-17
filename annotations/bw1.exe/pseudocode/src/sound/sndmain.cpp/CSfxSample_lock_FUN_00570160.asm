@@ -22,7 +22,7 @@
 ;   TerminatedCString s_SfxSample_lock_nothing_a_005f339a
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   CSoundDevice* g_CSoundDevice_PTR_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -107,7 +107,7 @@ section .text
     ADD ESP,0x4                         ; 00570230
     JMP 0x0057017d                      ; 00570233
         ;   XREF to: 0057017d (UNCONDITIONAL_JUMP)  ; LAB_0057017d
-    MOV EDX,dword ptr [0x02c80650]      ; 00570238 | g_CSoundDevice_PTR_02c80650
+    MOV EDX,dword ptr [0x02c80650]      ; 00570238 | g_CSoundDevicePtr
         ;   Label: LAB_00570238
     TEST EDX,EDX                        ; 0057023e
     JNZ 0x00570249                      ; 00570240

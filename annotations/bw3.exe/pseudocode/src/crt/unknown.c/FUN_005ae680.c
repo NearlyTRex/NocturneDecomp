@@ -14,22 +14,22 @@ uint FUN_005ae680(HANDLE param_1)
   _INPUT_RECORD local_28;
   DWORD local_14;
   
-  if (g_INT_00607e0c != 0) {
-    if ((uint)g_INT_00607e0c < 2) {
-      g_INT_02d261d8 = g_INT_02d261d8 + -1;
-      if (g_INT_02d261d4 == 0) {
-        g_INT_00607e0c = 2;
+  if (g_ConsoleInputState != 0) {
+    if ((uint)g_ConsoleInputState < 2) {
+      g_BufferedRepeatCount = g_BufferedRepeatCount + -1;
+      if (g_BufferedVirtualKey == 0) {
+        g_ConsoleInputState = 2;
         return 0;
       }
-      if (g_INT_02d261d8 != 0) {
-        return g_INT_02d261d4;
+      if (g_BufferedRepeatCount != 0) {
+        return g_BufferedVirtualKey;
       }
-      g_INT_00607e0c = 0;
-      return g_INT_02d261d4;
+      g_ConsoleInputState = 0;
+      return g_BufferedVirtualKey;
     }
-    if (g_INT_00607e0c == 2) {
-      g_INT_00607e0c = (uint)(g_INT_02d261d8 != 0);
-      return g_INT_02d261d0;
+    if (g_ConsoleInputState == 2) {
+      g_ConsoleInputState = (uint)(g_BufferedRepeatCount != 0);
+      return g_BufferedCharacter;
     }
   }
   do {
@@ -39,17 +39,17 @@ uint FUN_005ae680(HANDLE param_1)
     }
     iVar2 = FUN_005afdb0(&local_28);
   } while (iVar2 == 0);
-  g_INT_02d261d4 = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;
-  if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_INT_02d261d4 != 0)) {
+  g_BufferedVirtualKey = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;
+  if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_BufferedVirtualKey != 0)) {
     if (local_28.Event.KeyEvent.wRepeatCount - 1 != 0) {
-      g_INT_00607e0c = 1;
+      g_ConsoleInputState = 1;
     }
   }
   else {
-    g_INT_02d261d4 = 0;
-    g_INT_02d261d0 = (int)local_28.Event.KeyEvent.wVirtualScanCode;
-    g_INT_00607e0c = 2;
+    g_BufferedVirtualKey = 0;
+    g_BufferedCharacter = (int)local_28.Event.KeyEvent.wVirtualScanCode;
+    g_ConsoleInputState = 2;
   }
-  g_INT_02d261d8 = local_28.Event.KeyEvent.wRepeatCount - 1;
-  return g_INT_02d261d4;
+  g_BufferedRepeatCount = local_28.Event.KeyEvent.wRepeatCount - 1;
+  return g_BufferedVirtualKey;
 }

@@ -18,7 +18,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0055b880(CDire
   DSBUFFERDESC DStack_48;
   tWAVEFORMATEX tStack_24;
   
-  if (g_IDirectSound_PTR_02cf49c4 != (IDirectSound *)0x0) {
+  if (g_DirectSound != (IDirectSound *)0x0) {
     iVar5 = 1;
     iVar3 = 0x18;
     pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[6];
@@ -33,7 +33,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0055b880(CDire
       memset(&tStack_24,0,0x12);
       memset(&DStack_48,0,0x24);
       DStack_48.dwSize = 0x24;
-      if (g_IDirectSound3DListener_PTR_02cf49d0 == (IDirectSound3DListener *)0x0) {
+      if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
         DStack_48.dwFlags = 0xe0;
       }
       else {
@@ -65,8 +65,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0055b880(CDire
         DStack_48.dwBufferBytes = sample_info->sample_count * uVar2;
       }
       DStack_48.lpwfxFormat = &tStack_24;
-      uVar2 = (*g_IDirectSound_PTR_02cf49c4->vtable->CreateSoundBuffer)
-                        (g_IDirectSound_PTR_02cf49c4,&DStack_48,
+      uVar2 = (*g_DirectSound->vtable->CreateSoundBuffer)
+                        (g_DirectSound,&DStack_48,
                          g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4 + iVar5 * 6,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
         if (g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[iVar5 * 6] != (IDirectSoundBuffer *)0x0) {

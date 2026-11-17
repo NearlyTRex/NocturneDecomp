@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_VirtualFree_005755d8 = 001760e4
-;   Heap* g_Heap_PTR_005c1680 = 00000000
-;   Heap* g_Heap_PTR_005c1684 = 00000000
+;   Heap* g_MainHeap = 00000000
+;   Heap* g_SecondaryHeap = 00000000
 ;   int g_INT_005c1688 = 0x0
 ;   int g_INT_02de4e10
 ;
@@ -37,20 +37,20 @@ section .text
     POP ESI                             ; 0056f32d
     POP EBX                             ; 0056f32e
     RET                                 ; 0056f32f
-    CMP ESI,dword ptr [0x005c1684]      ; 0056f330 | g_Heap_PTR_005c1684
+    CMP ESI,dword ptr [0x005c1684]      ; 0056f330 | g_SecondaryHeap
         ;   Label: LAB_0056f330
     JNZ 0x0056f354                      ; 0056f336
         ;   XREF to: 0056f354 (CONDITIONAL_JUMP)  ; LAB_0056f354
     TEST EBX,EBX                        ; 0056f338
     JZ 0x0056f344                       ; 0056f33a
         ;   XREF to: 0056f344 (CONDITIONAL_JUMP)  ; LAB_0056f344
-    MOV dword ptr [0x005c1684],EBX      ; 0056f33c | g_Heap_PTR_005c1684
+    MOV dword ptr [0x005c1684],EBX      ; 0056f33c | g_SecondaryHeap
     JMP 0x0056f354                      ; 0056f342
         ;   XREF to: 0056f354 (UNCONDITIONAL_JUMP)  ; LAB_0056f354
-    MOV EAX,[0x005c1680]                ; 0056f344 | g_Heap_PTR_005c1680
+    MOV EAX,[0x005c1680]                ; 0056f344 | g_MainHeap
         ;   Label: LAB_0056f344
     MOV dword ptr [0x005c1688],EBX      ; 0056f349 | g_INT_005c1688
-    MOV [0x005c1684],EAX                ; 0056f34f | g_Heap_PTR_005c1684
+    MOV [0x005c1684],EAX                ; 0056f34f | g_SecondaryHeap
     MOV ECX,dword ptr [0x02de4e10]      ; 0056f354 | g_INT_02de4e10
         ;   Label: LAB_0056f354
     CMP ESI,ECX                         ; 0056f35a

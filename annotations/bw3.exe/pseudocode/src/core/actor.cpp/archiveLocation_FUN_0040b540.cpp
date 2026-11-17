@@ -11,15 +11,15 @@ void __cdecl core_actor_cpp_archiveLocation_FUN_0040b540(CLocation *location_ptr
 {
   int iVar1;
   
-  if (g_INT_007df9b8 == 1) {
-    iVar1 = _fscanf(g_FILE_PTR_007df9b4,"%d,%f,%f,%f");
+  if (g_ActorReadingMode == 1) {
+    iVar1 = _fscanf(g_ActorDataFile,"%d,%f,%f,%f");
     if (iVar1 != 4) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                 ("4D location",property_name);
     }
   }
   else {
-    _fprintf(g_FILE_PTR_007df9b4,"%s%d,%g,%g,%g");
+    _fprintf(g_ActorDataFile,"%s%d,%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b350("4D location",property_name);
   return;

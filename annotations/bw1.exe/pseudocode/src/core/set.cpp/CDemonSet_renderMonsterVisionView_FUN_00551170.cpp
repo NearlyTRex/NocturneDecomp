@@ -91,10 +91,10 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(CDemonS
       g_CDemonCameraInstance.base.position.f.z = local_48[1];
     }
     core_dlight_cpp_CDemonLight_beginScene_FUN_00462820(local_14,0);
-    g_INT_00622c28 = 0;
+    g_RenderMirrorsFlag = 0;
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0
               (this_ptr,(local_14->base).max_distance,0);
-    g_INT_00622c28 = 1;
+    g_RenderMirrorsFlag = 1;
     core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(this_ptr,0xffffffff);
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(this_ptr,1);
     core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(this_ptr,1);
@@ -111,7 +111,7 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(CDemonS
       } while (iVar3 < this_ptr->sorted_render_actor_count);
     }
     core_gore_cpp_CGore_renderParticles_FUN_004e5c50(g_CGorePtr);
-    core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffect_PTR_0061c010);
+    core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffectPtr);
     core_dlight_cpp_CDemonLight_endScene_FUN_00462ad0(local_14,1);
     local_40 = (int)ROUND((float)local_4c * 256.0f);
     local_3c = (int)ROUND(local_48[0] * 256.0f);

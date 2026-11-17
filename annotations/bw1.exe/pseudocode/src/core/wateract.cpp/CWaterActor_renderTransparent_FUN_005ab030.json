@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 288,
+    "complexity_score": 287,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
+    "pseudocode_lines": 102,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 310
+    "total_lines": 309
   },
   "cross_references": [],
   "function": {
@@ -223,7 +223,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 65,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)",
@@ -231,7 +231,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->r + iVar9) =",
@@ -239,7 +239,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar9)",
@@ -247,7 +247,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->g + iVar9) =",
@@ -255,7 +255,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar9)",
@@ -263,7 +263,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->b + iVar9) =",
@@ -279,7 +279,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 66,
+      "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)",
@@ -287,7 +287,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->r + iVar9) =",
@@ -295,7 +295,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar9)",
@@ -303,7 +303,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->g + iVar9) =",
@@ -311,7 +311,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar9)",
@@ -319,7 +319,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->b + iVar9) =",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `vertex_position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*vertex_position) + offsetof(subfield)` equals the real array stride. Replace `vertex_position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 79,
+      "line": 78,
       "match": "vertex_position = (T *)&vertex_position[N].SUBFIELD",
       "severity": "moderate",
       "text": "vertex_position = (CVector3f *)&vertex_position[2].z;",

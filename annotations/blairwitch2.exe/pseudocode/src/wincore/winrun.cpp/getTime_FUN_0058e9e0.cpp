@@ -13,20 +13,20 @@ int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void)
   DWORD DVar2;
   double dVar3;
   
-  if (g_INT_ARRAY_02662d84[0] == 0) {
-    g_DWORD_02662d60 = g_struct_19_02662d68.LowPart;
-    g_INT_02662d64 = g_struct_19_02662d68.HighPart;
-    QueryPerformanceCounter((LARGE_INTEGER *)&g_struct_19_02662d68);
-    iVar1 = g_INT_02662d80;
-    dVar3 = ((((double)g_struct_19_02662d68.LowPart +
-              (double)g_struct_19_02662d68.HighPart * 4294967296) -
-             ((double)g_DWORD_02662d60 + (double)g_INT_02662d64 * 4294967296)) /
-            g_DOUBLE_02662d78) * 65536 * 18;
+  if (g_UseMultimediaTimer[0] == 0) {
+    g_PreviousCounterLow = g_PerformanceCounter.LowPart;
+    g_PreviousCounterHigh = g_PerformanceCounter.HighPart;
+    QueryPerformanceCounter((LARGE_INTEGER *)&g_PerformanceCounter);
+    iVar1 = g_AccumulatedGameTime;
+    dVar3 = ((((double)g_PerformanceCounter.LowPart +
+              (double)g_PerformanceCounter.HighPart * 4294967296) -
+             ((double)g_PreviousCounterLow + (double)g_PreviousCounterHigh * 4294967296))
+            / g_TimerCalibration) * 65536 * 18;
     if (0.0 < dVar3) {
       dVar3 = round(dVar3);
-      g_INT_02662d80 = iVar1 + (int)ROUND(dVar3);
+      g_AccumulatedGameTime = iVar1 + (int)ROUND(dVar3);
     }
-    return g_INT_02662d80;
+    return g_AccumulatedGameTime;
   }
   DVar2 = timeGetTime();
   return DVar2 * 0x49c;

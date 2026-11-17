@@ -200,7 +200,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_00477540(CDoor *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDoor::reposition - Unknown type");
   }
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,this_ptr->shake_me_event);
+                    (g_CEventListPtr,this_ptr->shake_me_event);
   if (iVar4 != 0) {
     this_ptr->swing_range = this_ptr->shake_me_strength;
   }

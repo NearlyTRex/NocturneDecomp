@@ -19,14 +19,14 @@ int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_0050c680(CPathMap *this
       (this_ptr->cached_world_position).y = dest_position->y;
       (this_ptr->cached_world_position).z = dest_position->z;
     }
-    g_INT_01ec1514 = 1;
+    g_PathfindingMaxClimbHeight = 1;
     do {
       iVar1 = core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0
                         (this_ptr,dest_position,&this_ptr->path_heading,direction_hint);
       this_ptr->last_pathfinding_result = iVar1;
       if (iVar1 == 1) break;
-      g_INT_01ec1514 = g_INT_01ec1514 + 1;
-    } while (g_INT_01ec1514 < 4);
+      g_PathfindingMaxClimbHeight = g_PathfindingMaxClimbHeight + 1;
+    } while (g_PathfindingMaxClimbHeight < 4);
   }
   if (&this_ptr->path_heading != out_euler_angles) {
     out_euler_angles->x = (this_ptr->path_heading).x;

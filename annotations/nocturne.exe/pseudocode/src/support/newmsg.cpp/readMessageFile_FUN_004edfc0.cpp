@@ -42,59 +42,60 @@ int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
       _fgets(local_31c,0xff,file_handle);
       _fscanf(file_handle,"%d\n",&local_1c);
       _fgets(local_31c,0xff,file_handle);
-      _fscanf(file_handle,"%d\n",&g_INT_01d16810);
+      _fscanf(file_handle,"%d\n",&g_UseOSFonts);
       if (local_1c != 0) {
         g_CurrentFilename = "..\\support\\newmsg.cpp";
         g_CurrentLineNumber = 82;
         core_main_c_displayErrorAndQuit_FUN_004c8440("Unknown message file version");
       }
       _fgets(local_31c,0xff,file_handle);
-      _fscanf(file_handle,"\"%[^\"]\"\n",g_CHAR_ARRAY_005bdf50);
+      _fscanf(file_handle,"\"%[^\"]\"\n",g_OSFontName);
       do {
         _fscanf(file_handle," ");
         lVar4 = _ftell(file_handle);
         if (local_18 <= lVar4) {
           _fclose(file_handle);
-          if (0 < g_INT_01d16818) {
-            pacVar9 = g_CHAR_ARRAY_ARRAY_01d177c0;
-            pacVar7 = g_CHAR_ARRAY_ARRAY_01d271c0;
-            iVar3 = g_INT_01d16818 * 4;
+          if (0 < g_LocalizedStringCount) {
+            pacVar9 = g_MessageKeyStorage;
+            pacVar7 = g_MessageTextStorage;
+            iVar3 = g_LocalizedStringCount * 4;
             iVar5 = 0;
             do {
-              *(char (**) [128])((int)g_CHAR_PTR_ARRAY_01d1681c + iVar5) = pacVar9;
-              *(char (**) [256])((int)g_CHAR_PTR_ARRAY_01d16fec + iVar5) = pacVar7;
+              *(char (**) [128])((int)g_MessageKeys + iVar5) = pacVar9;
+              *(char (**) [256])((int)g_MessageTexts + iVar5) = pacVar7;
               iVar5 = iVar5 + 4;
               pacVar7 = pacVar7 + 1;
               pacVar9 = pacVar9 + 1;
             } while (iVar5 < iVar3);
           }
           local_14 = 0;
-          for (iVar5 = 0; iVar3 = local_14, iVar5 < g_INT_01d16818 + -1; iVar5 = iVar5 + 1) {
+          for (iVar5 = 0; iVar3 = local_14, iVar5 < g_LocalizedStringCount + -1; iVar5 = iVar5 + 1)
+          {
             iVar11 = iVar5 + 1;
-            if (iVar11 < g_INT_01d16818) {
+            if (iVar11 < g_LocalizedStringCount) {
               iVar8 = iVar11 * 4;
               do {
                 iVar6 = _strcmp
-                                  (*(char **)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3),
-                                   *(char **)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8));
+                                  (*(char **)((int)g_MessageKeys + iVar3),
+                                   *(char **)((int)g_MessageKeys + iVar8));
                 if (0 < iVar6) {
-                  uVar2 = *(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3);
-                  *(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3) =
-                       *(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8);
-                  *(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8) = uVar2;
-                  uVar2 = *(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar3);
-                  *(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar3) =
-                       *(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar8);
-                  *(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar8) = uVar2;
+                  uVar2 = *(uint *)((int)g_MessageKeys + iVar3);
+                  *(uint *)((int)g_MessageKeys + iVar3) =
+                       *(uint *)((int)g_MessageKeys + iVar8);
+                  *(uint *)((int)g_MessageKeys + iVar8) = uVar2;
+                  uVar2 = *(uint *)((int)g_MessageTexts + iVar3);
+                  *(uint *)((int)g_MessageTexts + iVar3) =
+                       *(uint *)((int)g_MessageTexts + iVar8);
+                  *(uint *)((int)g_MessageTexts + iVar8) = uVar2;
                 }
                 iVar11 = iVar11 + 1;
                 iVar8 = iVar8 + 4;
-              } while (iVar11 < g_INT_01d16818);
+              } while (iVar11 < g_LocalizedStringCount);
             }
             local_14 = local_14 + 4;
           }
-          g_INT_01d16814 = 1;
-          return g_INT_01d16818 + -1;
+          g_LocalizationLoaded = 1;
+          return g_LocalizedStringCount + -1;
         }
         iVar5 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
         if (iVar5 != 2) {
@@ -102,14 +103,14 @@ int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
           g_CurrentLineNumber = 99;
           core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s",message_file);
         }
-        if (499 < g_INT_01d16818) {
+        if (499 < g_LocalizedStringCount) {
           g_CurrentFilename = "..\\support\\newmsg.cpp";
           g_CurrentLineNumber = 104;
           core_main_c_displayErrorAndQuit_FUN_004c8440
                     ("Too many messages in %s",message_file);
         }
         pcVar10 = local_21c;
-        pcVar12 = g_CHAR_ARRAY_ARRAY_01d177c0[g_INT_01d16818];
+        pcVar12 = g_MessageKeyStorage[g_LocalizedStringCount];
         do {
           cVar1 = *pcVar10;
           *pcVar12 = cVar1;
@@ -120,7 +121,7 @@ int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
           pcVar12 = pcVar12 + 2;
         } while (cVar1 != '\0');
         pcVar10 = local_11c;
-        pcVar12 = g_CHAR_ARRAY_ARRAY_01d271c0[g_INT_01d16818];
+        pcVar12 = g_MessageTextStorage[g_LocalizedStringCount];
         do {
           cVar1 = *pcVar10;
           *pcVar12 = cVar1;
@@ -130,7 +131,7 @@ int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
           pcVar12[1] = cVar1;
           pcVar12 = pcVar12 + 2;
         } while (cVar1 != '\0');
-        g_INT_01d16818 = g_INT_01d16818 + 1;
+        g_LocalizedStringCount = g_LocalizedStringCount + 1;
       } while( true );
     }
   }

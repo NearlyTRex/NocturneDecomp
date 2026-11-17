@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   int g_INT_01d09854
@@ -19,8 +19,8 @@
 ;   float* g_FLOAT_PTR_01d09b7c
 ;   int g_INT_01d0d2b4
 ;   int g_INT_01d0d2b8
-;   int g_INT_01e61b58
-;   void* g_PTR_0264bc90
+;   int g_RenderedTriangleCount
+;   void* g_APIDLL_unlockTexture
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -45,13 +45,13 @@ section .text
     PUSH EBP                            ; 004f3ef3
     MOV ESI,dword ptr [ESP + 0x14]      ; 004f3ef4
     MOV EAX,dword ptr [ESP + 0x20]      ; 004f3ef8
-    MOV EDX,dword ptr [0x01e61b58]      ; 004f3efc | g_INT_01e61b58
+    MOV EDX,dword ptr [0x01e61b58]      ; 004f3efc | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d09854]      ; 004f3f02 | g_INT_01d09854
     ADD EDX,EAX                         ; 004f3f08
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f3f0a
     MOV EBX,dword ptr [0x01d0d2b4]      ; 004f3f0e | g_INT_01d0d2b4
     ADD ECX,EAX                         ; 004f3f14
-    MOV dword ptr [0x01e61b58],EDX      ; 004f3f16 | g_INT_01e61b58
+    MOV dword ptr [0x01e61b58],EDX      ; 004f3f16 | g_RenderedTriangleCount
     MOV dword ptr [0x01d09854],ECX      ; 004f3f1c | g_INT_01d09854
     TEST EBX,EBX                        ; 004f3f22
     JNZ 0x004f401c                      ; 004f3f24
@@ -59,7 +59,7 @@ section .text
     CMP dword ptr [0x01d09914],0x0      ; 004f3f2a | g_INT_01d09914
     JNZ 0x004f4033                      ; 004f3f31
         ;   XREF to: 004f4033 (CONDITIONAL_JUMP)  ; LAB_004f4033
-    CMP dword ptr [0x0264bc90],0x0      ; 004f3f37 | g_PTR_0264bc90
+    CMP dword ptr [0x0264bc90],0x0      ; 004f3f37 | g_APIDLL_unlockTexture
         ;   Label: LAB_004f3f37
     JZ 0x004f3f4d                       ; 004f3f3e
         ;   XREF to: 004f3f4d (CONDITIONAL_JUMP)  ; LAB_004f3f4d
@@ -171,7 +171,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004f4045
     JMP 0x004f3f37                      ; 004f4049
         ;   XREF to: 004f3f37 (UNCONDITIONAL_JUMP)  ; LAB_004f3f37
-    MOV ECX,dword ptr [0x01c38b54]      ; 004f404e | g_BIT_INTEGER32_01c38b54
+    MOV ECX,dword ptr [0x01c38b54]      ; 004f404e | g_RenderStateFlags
         ;   Label: LAB_004f404e
     PUSH ECX                            ; 004f4054
     MOV EBX,dword ptr [ESP + 0x24]      ; 004f4055
@@ -181,7 +181,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 004f405f
     PUSH EBP                            ; 004f4063
     PUSH ESI                            ; 004f4064
-    CALL dword ptr [0x0264bc90]         ; 004f4065 | g_PTR_0264bc90
+    CALL dword ptr [0x0264bc90]         ; 004f4065 | g_APIDLL_unlockTexture
     ADD ESP,0x14                        ; 004f406b
     POP EBP                             ; 004f406e
     POP EDI                             ; 004f406f

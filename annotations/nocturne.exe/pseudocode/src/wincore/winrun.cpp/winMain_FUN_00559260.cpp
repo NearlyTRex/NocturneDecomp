@@ -115,21 +115,21 @@ LAB_005593b7:
   local_58.lpszClassName = PTR_s_Nocturne_005c1658;
   local_58.lpszMenuName = (LPCSTR)0x0;
   RegisterClassA(&local_58);
-  g_HWND_02de2098 =
+  g_MainWindowHandle =
        CreateWindowExA(0x40000,PTR_s_Nocturne_005c1658,PTR_s_Nocturne_005c165c,0x80000000,0,0,0,0,0,
                        (HMENU)0x0,hInstance,(LPVOID)0x0);
-  if (g_HWND_02de2098 == 0) {
+  if (g_MainWindowHandle == 0) {
     return 0;
   }
-  ShowWindow(g_HWND_02de2098,nCmdShow);
-  UpdateWindow(g_HWND_02de2098);
+  ShowWindow(g_MainWindowHandle,nCmdShow);
+  UpdateWindow(g_MainWindowHandle);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,1);
   memset(&local_30,0,0x20);
   local_30.dwLength = 0x20;
   GlobalMemoryStatus(&local_30);
-  g_INT_02de20a8 = local_30.dwTotalPhys;
-  g_INT_02de20ac = local_30.dwAvailPageFile;
+  g_TotalPhysicalMemory = local_30.dwTotalPhys;
+  g_AvailableSwapSpace = local_30.dwAvailPageFile;
   core_main_c_initializeGameSystems_FUN_004c85f0(g_INT_02de2d10,&g_CHAR_PTR_02de2d14);
   core_main_c_enterMainGameMenu_FUN_004c85e0();
   core_main_c_finalizeGameSystems_FUN_004c90e0();

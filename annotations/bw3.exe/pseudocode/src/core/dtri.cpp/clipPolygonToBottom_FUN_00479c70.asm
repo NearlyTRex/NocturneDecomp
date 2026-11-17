@@ -10,7 +10,7 @@
 ;   undefined1* PTR_caseD_1_00479c64 = 00479d24
 ;   undefined1* PTR_caseD_3_00479c6c = 00479d09
 ;   int g_INT_01c59aa0
-;   int g_INT_01c59b64
+;   int g_ClipBuffer2VertexCount
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00479970
@@ -27,7 +27,7 @@ section .text
     MOV EBP,ESP                         ; 00479c74
     SUB ESP,0x8                         ; 00479c76
     AND ESP,0xfffffff8                  ; 00479c79
-    MOV EBX,dword ptr [0x01c59b64]      ; 00479c7c | g_INT_01c59b64
+    MOV EBX,dword ptr [0x01c59b64]      ; 00479c7c | g_ClipBuffer2VertexCount
     MOV EDX,dword ptr [EBP + 0x14]      ; 00479c82
     MOV dword ptr [ESP],EDX             ; 00479c85
     MOV EDX,dword ptr [0x01c59aa0]      ; 00479c88 | g_INT_01c59aa0
@@ -93,7 +93,7 @@ section .text
     CMP EDI,ECX                         ; 00479d13
     JL 0x00479c9d                       ; 00479d15
         ;   XREF to: 00479c9d (CONDITIONAL_JUMP)  ; LAB_00479c9d
-    MOV dword ptr [0x01c59b64],EBX      ; 00479d17 | g_INT_01c59b64
+    MOV dword ptr [0x01c59b64],EBX      ; 00479d17 | g_ClipBuffer2VertexCount
         ;   Label: LAB_00479d17
     MOV ESP,EBP                         ; 00479d1d
     POP EBP                             ; 00479d1f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00479d46
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00479d47
     PUSH EAX                            ; 00479d4b
-    MOV dword ptr [0x01c59b64],EBX      ; 00479d4c | g_INT_01c59b64
+    MOV dword ptr [0x01c59b64],EBX      ; 00479d4c | g_ClipBuffer2VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 00479d52
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59b64]      ; 00479d57 | g_INT_01c59b64
+    MOV EBX,dword ptr [0x01c59b64]      ; 00479d57 | g_ClipBuffer2VertexCount
     ADD ESP,0x2c                        ; 00479d5d
     JMP 0x00479d08                      ; 00479d60
         ;   XREF to: 00479d08 (UNCONDITIONAL_JUMP)  ; LAB_00479d08
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00479da2
     PUSH ECX                            ; 00479da6
     PUSH EDX                            ; 00479da7
-    MOV dword ptr [0x01c59b64],EBX      ; 00479da8 | g_INT_01c59b64
+    MOV dword ptr [0x01c59b64],EBX      ; 00479da8 | g_ClipBuffer2VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 00479dae
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59b64]      ; 00479db3 | g_INT_01c59b64
+    MOV EBX,dword ptr [0x01c59b64]      ; 00479db3 | g_ClipBuffer2VertexCount
     ADD ESP,0x2c                        ; 00479db9
     JMP 0x00479d08                      ; 00479dbc
         ;   XREF to: 00479d08 (UNCONDITIONAL_JUMP)  ; LAB_00479d08

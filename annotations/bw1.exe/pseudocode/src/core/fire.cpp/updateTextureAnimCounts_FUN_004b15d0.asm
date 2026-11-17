@@ -8,9 +8,9 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_004b4dd0 at 004b4de6
 ;
 ; Referenced Globals:
-;   int g_INT_01c43530
-;   int g_INT_01c57e14
-;   int g_INT_01c57e18
+;   int g_GlobalDeltaTimeInt
+;   int g_TextureAnimCounter2
+;   int g_TextureAnimCounter1
 ;
 ; *****************************************************************************
 
@@ -19,9 +19,9 @@ section .text
     PUSH EBX                            ; 004b15d0
         ;   Label: core_fire.cpp_updateTextureAnimCounts_FUN_004b15d0
     PUSH ESI                            ; 004b15d1
-    MOV ECX,dword ptr [0x01c43530]      ; 004b15d2 | g_INT_01c43530
-    MOV EBX,dword ptr [0x01c57e18]      ; 004b15d8 | g_INT_01c57e18
-    MOV ESI,dword ptr [0x01c57e14]      ; 004b15de | g_INT_01c57e14
+    MOV ECX,dword ptr [0x01c43530]      ; 004b15d2 | g_GlobalDeltaTimeInt
+    MOV EBX,dword ptr [0x01c57e18]      ; 004b15d8 | g_TextureAnimCounter1
+    MOV ESI,dword ptr [0x01c57e14]      ; 004b15de | g_TextureAnimCounter2
     MOV EDX,ECX                         ; 004b15e4
     MOV EAX,ECX                         ; 004b15e6
     SAR EDX,0x1f                        ; 004b15e8
@@ -38,8 +38,8 @@ section .text
     ADD ESI,EAX                         ; 004b1604
     AND EBX,0xff                        ; 004b1606
     AND ESI,0x7f                        ; 004b160c
-    MOV dword ptr [0x01c57e18],EBX      ; 004b160f | g_INT_01c57e18
-    MOV dword ptr [0x01c57e14],ESI      ; 004b1615 | g_INT_01c57e14
+    MOV dword ptr [0x01c57e18],EBX      ; 004b160f | g_TextureAnimCounter1
+    MOV dword ptr [0x01c57e14],ESI      ; 004b1615 | g_TextureAnimCounter2
     POP ESI                             ; 004b161b
     POP EBX                             ; 004b161c
     RET                                 ; 004b161d

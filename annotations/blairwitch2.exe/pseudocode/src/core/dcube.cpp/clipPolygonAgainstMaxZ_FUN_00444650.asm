@@ -9,13 +9,13 @@
 ; Referenced Globals:
 ;   void* PTR_caseD_1_00444638 = 00444704
 ;   void* PTR_caseD_3_00444640 = 004446e9
-;   uint g_UINT_01510c20
-;   CVector3f[16] g_CVector3f_ARRAY_01510c24
-;   undefined4 g_CVector3f_ARRAY_01510c24[0].y
-;   undefined4 g_CVector3f_ARRAY_01510c24[0].z
-;   undefined4 g_CVector3f_ARRAY_01510c24[1].z
-;   undefined4 g_CVector3f_ARRAY_01510c24[2].z
-;   uint g_UINT_01510ce4
+;   uint g_CubeClipStage5Count
+;   CVector3f[16] g_ClipStageMinZBuffer
+;   undefined4 g_ClipStageMinZBuffer[0].y
+;   undefined4 g_ClipStageMinZBuffer[0].z
+;   undefined4 g_ClipStageMinZBuffer[1].z
+;   undefined4 g_ClipStageMinZBuffer[2].z
+;   uint g_CubeClippedTriangleCount
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_00443db0
@@ -32,16 +32,16 @@ section .text
     MOV EBP,ESP                         ; 00444654
     SUB ESP,0x8                         ; 00444656
     AND ESP,0xfffffff8                  ; 00444659
-    MOV EBX,dword ptr [0x01510ce4]      ; 0044465c | g_UINT_01510ce4
+    MOV EBX,dword ptr [0x01510ce4]      ; 0044465c | g_CubeClippedTriangleCount
     MOV EDX,dword ptr [EBP + 0x14]      ; 00444662
     MOV dword ptr [ESP],EDX             ; 00444665
-    MOV EDX,dword ptr [0x01510c20]      ; 00444668 | g_UINT_01510c20
+    MOV EDX,dword ptr [0x01510c20]      ; 00444668 | g_CubeClipStage5Count
     XOR EDI,EDI                         ; 0044466e
     TEST EDX,EDX                        ; 00444670
     JLE 0x004446f7                      ; 00444672
         ;   XREF to: 004446f7 (CONDITIONAL_JUMP)  ; LAB_004446f7
     MOV ESI,0x1510c24                   ; 00444678
-    MOV EAX,[0x01510c20]                ; 0044467d | g_UINT_01510c20
+    MOV EAX,[0x01510c20]                ; 0044467d | g_CubeClipStage5Count
         ;   Label: LAB_0044467d
     LEA ECX,[EDI + 0x1]                 ; 00444682
     CMP ECX,EAX                         ; 00444685
@@ -51,7 +51,7 @@ section .text
     IMUL ECX,ECX,0xc                    ; 0044468b
         ;   Label: LAB_0044468b
     MOV EAX,0x1510c24                   ; 0044468e
-    FLD float ptr [ESI + 0x8]           ; 00444693 | g_CVector3f_ARRAY_01510c24[0].z | g_CVector3f_ARRAY_01510c24[1].z
+    FLD float ptr [ESI + 0x8]           ; 00444693 | g_ClipStageMinZBuffer[0].z | g_ClipStageMinZBuffer[1].z
     ADD EAX,ECX                         ; 00444696
     MOV EDX,ESI                         ; 00444698
     MOV dword ptr [ESP + 0x4],EAX       ; 0044469a
@@ -64,7 +64,7 @@ section .text
     MOV ECX,0x1                         ; 004446a8
     MOV EAX,dword ptr [ESP + 0x4]       ; 004446ad
         ;   Label: LAB_004446ad
-    FLD float ptr [EAX + 0x8]           ; 004446b1 | g_CVector3f_ARRAY_01510c24[0].z | g_CVector3f_ARRAY_01510c24[2].z
+    FLD float ptr [EAX + 0x8]           ; 004446b1 | g_ClipStageMinZBuffer[0].z | g_ClipStageMinZBuffer[2].z
     FCOMP float ptr [ESP]               ; 004446b4
     FNSTSW AX                           ; 004446b7
     SAHF                                ; 004446b9
@@ -83,22 +83,22 @@ section .text
     CMP ECX,EDX                         ; 004446d4
     JZ 0x004446e8                       ; 004446d6
         ;   XREF to: 004446e8 (CONDITIONAL_JUMP)  ; LAB_004446e8
-    MOV EAX,dword ptr [EDX]             ; 004446d8 | g_CVector3f_ARRAY_01510c24
+    MOV EAX,dword ptr [EDX]             ; 004446d8 | g_ClipStageMinZBuffer
     MOV dword ptr [ECX],EAX             ; 004446da
-    MOV EAX,dword ptr [EDX + 0x4]       ; 004446dc | g_CVector3f_ARRAY_01510c24[0].y
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004446dc | g_ClipStageMinZBuffer[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 004446df
-    MOV EAX,dword ptr [EDX + 0x8]       ; 004446e2 | g_CVector3f_ARRAY_01510c24[0].z
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004446e2 | g_ClipStageMinZBuffer[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 004446e5
     INC EBX                             ; 004446e8
         ;   Label: LAB_004446e8
-    MOV ECX,dword ptr [0x01510c20]      ; 004446e9 | g_UINT_01510c20
+    MOV ECX,dword ptr [0x01510c20]      ; 004446e9 | g_CubeClipStage5Count
         ;   Label: caseD_3
     INC EDI                             ; 004446ef
     ADD ESI,0xc                         ; 004446f0
     CMP EDI,ECX                         ; 004446f3
     JL 0x0044467d                       ; 004446f5
         ;   XREF to: 0044467d (CONDITIONAL_JUMP)  ; LAB_0044467d
-    MOV dword ptr [0x01510ce4],EBX      ; 004446f7 | g_UINT_01510ce4
+    MOV dword ptr [0x01510ce4],EBX      ; 004446f7 | g_CubeClippedTriangleCount
         ;   Label: LAB_004446f7
     MOV ESP,EBP                         ; 004446fd
     POP EBP                             ; 004446ff
@@ -119,13 +119,13 @@ section .text
     PUSH 0x0                            ; 0044471d
     ADD ECX,0x1510ce8                   ; 0044471f
     PUSH ECX                            ; 00444725
-    PUSH EDX                            ; 00444726 | g_CVector3f_ARRAY_01510c24
+    PUSH EDX                            ; 00444726 | g_ClipStageMinZBuffer
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00444727
     PUSH EAX                            ; 0044472b
-    MOV dword ptr [0x01510ce4],EBX      ; 0044472c | g_UINT_01510ce4
+    MOV dword ptr [0x01510ce4],EBX      ; 0044472c | g_CubeClippedTriangleCount
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00443db0 ; 00444732
         ;   XREF to: 00443db0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00443db0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01510ce4]      ; 00444737 | g_UINT_01510ce4
+    MOV EBX,dword ptr [0x01510ce4]      ; 00444737 | g_CubeClippedTriangleCount
     ADD ESP,0x2c                        ; 0044473d
     JMP 0x004446e8                      ; 00444740
         ;   XREF to: 004446e8 (UNCONDITIONAL_JUMP)  ; LAB_004446e8
@@ -135,11 +135,11 @@ section .text
     CMP ECX,EDX                         ; 0044474b
     JZ 0x0044475f                       ; 0044474d
         ;   XREF to: 0044475f (CONDITIONAL_JUMP)  ; LAB_0044475f
-    MOV EAX,dword ptr [EDX]             ; 0044474f | g_CVector3f_ARRAY_01510c24
+    MOV EAX,dword ptr [EDX]             ; 0044474f | g_ClipStageMinZBuffer
     MOV dword ptr [ECX],EAX             ; 00444751
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00444753 | g_CVector3f_ARRAY_01510c24[0].y
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00444753 | g_ClipStageMinZBuffer[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 00444756
-    MOV EAX,dword ptr [EDX + 0x8]       ; 00444759 | g_CVector3f_ARRAY_01510c24[0].z
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00444759 | g_ClipStageMinZBuffer[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044475c
     INC EBX                             ; 0044475f
         ;   Label: LAB_0044475f
@@ -157,11 +157,11 @@ section .text
     PUSH ECX                            ; 00444781
     MOV ECX,dword ptr [ESP + 0x28]      ; 00444782
     PUSH ECX                            ; 00444786
-    PUSH EDX                            ; 00444787 | g_CVector3f_ARRAY_01510c24
-    MOV dword ptr [0x01510ce4],EBX      ; 00444788 | g_UINT_01510ce4
+    PUSH EDX                            ; 00444787 | g_ClipStageMinZBuffer
+    MOV dword ptr [0x01510ce4],EBX      ; 00444788 | g_CubeClippedTriangleCount
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00443db0 ; 0044478e
         ;   XREF to: 00443db0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00443db0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01510ce4]      ; 00444793 | g_UINT_01510ce4
+    MOV EBX,dword ptr [0x01510ce4]      ; 00444793 | g_CubeClippedTriangleCount
     ADD ESP,0x2c                        ; 00444799
     JMP 0x004446e8                      ; 0044479c
         ;   XREF to: 004446e8 (UNCONDITIONAL_JUMP)  ; LAB_004446e8

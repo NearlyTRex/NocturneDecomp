@@ -21,10 +21,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c25f84
-;   int g_INT_01c263ec
-;   int g_INT_01c263f0
-;   void* g_PTR_01c26410
-;   int g_INT_01c26414
+;   int g_ShadowColor
+;   int g_ScrollBarHighlightColor
+;   void* g_ActiveControl
+;   int g_ScrollAction
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
 ;   undefined4 g_UCHAR_ARRAY_01c35838+2
@@ -54,7 +54,7 @@ section .text
     PUSH EBX                            ; 0048444c
     CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004847e0 ; 0048444d
         ;   XREF to: 004847e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004847e0(CEdScrollBar * this_ptr)
-    MOV EDI,dword ptr [0x01c263ec]      ; 00484452 | g_INT_01c263ec
+    MOV EDI,dword ptr [0x01c263ec]      ; 00484452 | g_ShadowColor
     ADD ESP,0x4                         ; 00484458
     MOV ESI,dword ptr [EBX + 0x20]      ; 0048445b
     MOV ECX,dword ptr [EBX + 0x1c]      ; 0048445e
@@ -69,7 +69,7 @@ section .text
     MOV dword ptr [EBP + -0x24],EDX     ; 00484475
     MOV dword ptr [EBP + -0x20],ECX     ; 00484478
     MOV dword ptr [EBP + -0x1c],ESI     ; 0048447b
-    MOV EAX,[0x01c263f0]                ; 0048447e | g_INT_01c263f0
+    MOV EAX,[0x01c263f0]                ; 0048447e | g_ScrollBarHighlightColor
     CMP dword ptr [0x01c25f84],0x0      ; 00484483 | g_INT_01c25f84
     JZ 0x004846ad                       ; 0048448a
         ;   XREF to: 004846ad (CONDITIONAL_JUMP)  ; LAB_004846ad
@@ -166,10 +166,10 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00484581
     MOV dword ptr [EBP + -0x14],EDX     ; 00484584
         ;   Label: LAB_00484584
-    CMP EBX,dword ptr [0x01c26410]      ; 00484587 | g_PTR_01c26410
+    CMP EBX,dword ptr [0x01c26410]      ; 00484587 | g_ActiveControl
     JNZ 0x004846d6                      ; 0048458d
         ;   XREF to: 004846d6 (CONDITIONAL_JUMP)  ; LAB_004846d6
-    CMP dword ptr [0x01c26414],0x0      ; 00484593 | g_INT_01c26414
+    CMP dword ptr [0x01c26414],0x0      ; 00484593 | g_ScrollAction
     JNZ 0x004846d6                      ; 0048459a
         ;   XREF to: 004846d6 (CONDITIONAL_JUMP)  ; LAB_004846d6
     MOV EDX,0x1                         ; 004845a0
@@ -188,10 +188,10 @@ section .text
     TEST ECX,ECX                        ; 004845bb
     JZ 0x004846f6                       ; 004845bd
         ;   XREF to: 004846f6 (CONDITIONAL_JUMP)  ; LAB_004846f6
-    CMP EBX,dword ptr [0x01c26410]      ; 004845c3 | g_PTR_01c26410
+    CMP EBX,dword ptr [0x01c26410]      ; 004845c3 | g_ActiveControl
     JNZ 0x004846dd                      ; 004845c9
         ;   XREF to: 004846dd (CONDITIONAL_JUMP)  ; LAB_004846dd
-    MOV EDX,dword ptr [0x01c26414]      ; 004845cf | g_INT_01c26414
+    MOV EDX,dword ptr [0x01c26414]      ; 004845cf | g_ScrollAction
     CMP EDX,0x1                         ; 004845d5
     JNZ 0x004846dd                      ; 004845d8
         ;   XREF to: 004846dd (CONDITIONAL_JUMP)  ; LAB_004846dd
@@ -207,12 +207,12 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_00483ea0 ; 004845eb
         ;   XREF to: 00483ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00483ea0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 004845f0
-    MOV EDX,dword ptr [0x01c26410]      ; 004845f3 | g_PTR_01c26410
+    MOV EDX,dword ptr [0x01c26410]      ; 004845f3 | g_ActiveControl
     PUSH 0x2                            ; 004845f9
     CMP EBX,EDX                         ; 004845fb
     JNZ 0x004846e4                      ; 004845fd
         ;   XREF to: 004846e4 (CONDITIONAL_JUMP)  ; LAB_004846e4
-    MOV ECX,dword ptr [0x01c26414]      ; 00484603 | g_INT_01c26414
+    MOV ECX,dword ptr [0x01c26414]      ; 00484603 | g_ScrollAction
     CMP ECX,0x1                         ; 00484609
     JNZ 0x004846e4                      ; 0048460c
         ;   XREF to: 004846e4 (CONDITIONAL_JUMP)  ; LAB_004846e4
@@ -227,12 +227,12 @@ section .text
     PUSH ESI                            ; 0048461e
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004840f0 ; 0048461f
         ;   XREF to: 004840f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004840f0(int left, int top, int right, int bottom, ...)
-    MOV ECX,dword ptr [0x01c26410]      ; 00484624 | g_PTR_01c26410
+    MOV ECX,dword ptr [0x01c26410]      ; 00484624 | g_ActiveControl
     ADD ESP,0x18                        ; 0048462a
     CMP EBX,ECX                         ; 0048462d
     JNZ 0x004846eb                      ; 0048462f
         ;   XREF to: 004846eb (CONDITIONAL_JUMP)  ; LAB_004846eb
-    CMP dword ptr [0x01c26414],0x2      ; 00484635 | g_INT_01c26414
+    CMP dword ptr [0x01c26414],0x2      ; 00484635 | g_ScrollAction
     JNZ 0x004846eb                      ; 0048463c
         ;   XREF to: 004846eb (CONDITIONAL_JUMP)  ; LAB_004846eb
     MOV EAX,0x1                         ; 00484642
@@ -248,12 +248,12 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_00483ea0 ; 00484655
         ;   XREF to: 00483ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00483ea0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 0048465a
-    MOV ESI,dword ptr [0x01c26410]      ; 0048465d | g_PTR_01c26410
+    MOV ESI,dword ptr [0x01c26410]      ; 0048465d | g_ActiveControl
     PUSH 0x3                            ; 00484663
     CMP EBX,ESI                         ; 00484665
     JNZ 0x004846f2                      ; 00484667
         ;   XREF to: 004846f2 (CONDITIONAL_JUMP)  ; LAB_004846f2
-    CMP dword ptr [0x01c26414],0x2      ; 0048466d | g_INT_01c26414
+    CMP dword ptr [0x01c26414],0x2      ; 0048466d | g_ScrollAction
     JNZ 0x004846f2                      ; 00484674
         ;   XREF to: 004846f2 (CONDITIONAL_JUMP)  ; LAB_004846f2
     MOV EAX,0x1                         ; 00484676
@@ -324,11 +324,11 @@ section .text
         ;   Label: LAB_004846f2
     JMP 0x0048467b                      ; 004846f4
         ;   XREF to: 0048467b (UNCONDITIONAL_JUMP)  ; LAB_0048467b
-    CMP EBX,dword ptr [0x01c26410]      ; 004846f6 | g_PTR_01c26410
+    CMP EBX,dword ptr [0x01c26410]      ; 004846f6 | g_ActiveControl
         ;   Label: LAB_004846f6
     JNZ 0x004847bf                      ; 004846fc
         ;   XREF to: 004847bf (CONDITIONAL_JUMP)  ; LAB_004847bf
-    MOV EDX,dword ptr [0x01c26414]      ; 00484702 | g_INT_01c26414
+    MOV EDX,dword ptr [0x01c26414]      ; 00484702 | g_ScrollAction
     CMP EDX,0x1                         ; 00484708
     JNZ 0x004847bf                      ; 0048470b
         ;   XREF to: 004847bf (CONDITIONAL_JUMP)  ; LAB_004847bf
@@ -344,12 +344,12 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_00483ea0 ; 0048471e
         ;   XREF to: 00483ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00483ea0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 00484723
-    MOV EDX,dword ptr [0x01c26410]      ; 00484726 | g_PTR_01c26410
+    MOV EDX,dword ptr [0x01c26410]      ; 00484726 | g_ActiveControl
     PUSH 0x0                            ; 0048472c
     CMP EBX,EDX                         ; 0048472e
     JNZ 0x004847c6                      ; 00484730
         ;   XREF to: 004847c6 (CONDITIONAL_JUMP)  ; LAB_004847c6
-    MOV ECX,dword ptr [0x01c26414]      ; 00484736 | g_INT_01c26414
+    MOV ECX,dword ptr [0x01c26414]      ; 00484736 | g_ScrollAction
     CMP ECX,0x1                         ; 0048473c
     JNZ 0x004847c6                      ; 0048473f
         ;   XREF to: 004847c6 (CONDITIONAL_JUMP)  ; LAB_004847c6
@@ -364,12 +364,12 @@ section .text
     PUSH ESI                            ; 00484751
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004840f0 ; 00484752
         ;   XREF to: 004840f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004840f0(int left, int top, int right, int bottom, ...)
-    MOV ECX,dword ptr [0x01c26410]      ; 00484757 | g_PTR_01c26410
+    MOV ECX,dword ptr [0x01c26410]      ; 00484757 | g_ActiveControl
     ADD ESP,0x18                        ; 0048475d
     CMP EBX,ECX                         ; 00484760
     JNZ 0x004847cd                      ; 00484762
         ;   XREF to: 004847cd (CONDITIONAL_JUMP)  ; LAB_004847cd
-    CMP dword ptr [0x01c26414],0x2      ; 00484764 | g_INT_01c26414
+    CMP dword ptr [0x01c26414],0x2      ; 00484764 | g_ScrollAction
     JNZ 0x004847cd                      ; 0048476b
         ;   XREF to: 004847cd (CONDITIONAL_JUMP)  ; LAB_004847cd
     MOV EAX,0x1                         ; 0048476d
@@ -385,12 +385,12 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_00483ea0 ; 00484780
         ;   XREF to: 00483ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00483ea0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 00484785
-    MOV EDI,dword ptr [0x01c26410]      ; 00484788 | g_PTR_01c26410
+    MOV EDI,dword ptr [0x01c26410]      ; 00484788 | g_ActiveControl
     PUSH 0x1                            ; 0048478e
     CMP EBX,EDI                         ; 00484790
     JNZ 0x004847d1                      ; 00484792
         ;   XREF to: 004847d1 (CONDITIONAL_JUMP)  ; LAB_004847d1
-    CMP dword ptr [0x01c26414],0x2      ; 00484794 | g_INT_01c26414
+    CMP dword ptr [0x01c26414],0x2      ; 00484794 | g_ScrollAction
     JNZ 0x004847d1                      ; 0048479b
         ;   XREF to: 004847d1 (CONDITIONAL_JUMP)  ; LAB_004847d1
     MOV EAX,0x1                         ; 0048479d

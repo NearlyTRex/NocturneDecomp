@@ -29,7 +29,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
   CLaserBeam *this_ptr_15;
   
   iVar2 = 0;
-  if (0 < g_INT_01c23d48) {
+  if (0 < g_StakeActiveCount) {
     iVar1 = 0;
     do {
       if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {
@@ -38,7 +38,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x260;
-    } while (iVar2 < g_INT_01c23d48);
+    } while (iVar2 < g_StakeActiveCount);
   }
   this_ptr_00 = g_RockPool;
   do {
@@ -67,41 +67,41 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
               (g_CDemonSetPtr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     iVar2 = 0;
-    core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(g_CBulletHole_ARRAY_01c20148);
-    if (0 < g_INT_01c20140) {
+    core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(g_BulletHolePool);
+    if (0 < g_BulletHoleActiveCount) {
       iVar1 = 0;
       do {
-        if (*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) != 0) {
+        if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {
           core_fire_cpp_CBulletHole_render_FUN_00482f50
-                    ((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));
+                    ((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < g_INT_01c20140);
+      } while (iVar2 < g_BulletHoleActiveCount);
     }
-    this_ptr_03 = g_CSmokeParticle_ARRAY_01c0a140;
-    core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00482680(g_CSmokeParticle_ARRAY_01c0a140);
+    this_ptr_03 = g_SmokeParticlePool;
+    core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00482680(g_SmokeParticlePool);
     do {
       if (this_ptr_03->active != 0) {
         core_fire_cpp_CSmokeParticle_render_FUN_00482950(this_ptr_03);
       }
       this_ptr_03 = this_ptr_03 + 1;
-    } while (this_ptr_03 != g_CSmokeParticle_ARRAY_01c0a140 + sizeof(g_CSmokeParticle_ARRAY_01c0a140) / sizeof(g_CSmokeParticle_ARRAY_01c0a140[0]));
-    this_ptr_04 = g_CMuzzleFlash_ARRAY_01c4e958;
+    } while (this_ptr_03 != g_SmokeParticlePool + sizeof(g_SmokeParticlePool) / sizeof(g_SmokeParticlePool[0]));
+    this_ptr_04 = g_MuzzleFlashPool;
     do {
       if (this_ptr_04->frames_remaining != 0) {
         core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(this_ptr_04);
       }
       this_ptr_04 = this_ptr_04 + 1;
-    } while (this_ptr_04 != g_CMuzzleFlash_ARRAY_01c4e958 + sizeof(g_CMuzzleFlash_ARRAY_01c4e958) / sizeof(g_CMuzzleFlash_ARRAY_01c4e958[0]));
+    } while (this_ptr_04 != g_MuzzleFlashPool + sizeof(g_MuzzleFlashPool) / sizeof(g_MuzzleFlashPool[0]));
     iVar2 = 0;
-    if (0 < g_INT_01c5c700) {
-      this_ptr_15 = g_CLaserBeam_ARRAY_01c5c704;
+    if (0 < g_LaserBeamActiveCount) {
+      this_ptr_15 = g_LaserBeamPool;
       do {
         core_fire_cpp_CLaserBeam_render_FUN_00485a90(this_ptr_15);
         iVar2 = iVar2 + 1;
         this_ptr_15 = this_ptr_15 + 1;
-      } while (iVar2 < g_INT_01c5c700);
+      } while (iVar2 < g_LaserBeamActiveCount);
     }
     this_ptr_05 = g_SparkPool;
     core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(g_SparkPool);
@@ -118,38 +118,38 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       }
       this_ptr_06 = this_ptr_06 + 1;
     } while (this_ptr_06 != g_GlassParticlePool + sizeof(g_GlassParticlePool) / sizeof(g_GlassParticlePool[0]));
-    this_ptr_07 = g_CBulletTrail_ARRAY_01c58c90;
+    this_ptr_07 = g_BulletTrailPool;
     do {
       if (this_ptr_07->frames_remaining != 0) {
         core_fire_cpp_CBulletTrail_render_FUN_004856c0(this_ptr_07);
       }
       this_ptr_07 = this_ptr_07 + 1;
-    } while (this_ptr_07 != g_CBulletTrail_ARRAY_01c58c90 + sizeof(g_CBulletTrail_ARRAY_01c58c90) / sizeof(g_CBulletTrail_ARRAY_01c58c90[0]));
-    this_ptr_08 = g_CExplosion_ARRAY_01c5d708;
+    } while (this_ptr_07 != g_BulletTrailPool + sizeof(g_BulletTrailPool) / sizeof(g_BulletTrailPool[0]));
+    this_ptr_08 = g_ExplosionPool;
     do {
       core_fire_cpp_CExplosion_render_FUN_00486fe0(this_ptr_08);
       this_ptr_08 = this_ptr_08 + 1;
-    } while (this_ptr_08 != g_CExplosion_ARRAY_01c5d708 + sizeof(g_CExplosion_ARRAY_01c5d708) / sizeof(g_CExplosion_ARRAY_01c5d708[0]));
+    } while (this_ptr_08 != g_ExplosionPool + sizeof(g_ExplosionPool) / sizeof(g_ExplosionPool[0]));
     this_ptr_09 = g_TossPool;
     do {
       core_fire_cpp_CToss_render_FUN_00487630(this_ptr_09);
       this_ptr_09 = this_ptr_09 + 1;
     } while (this_ptr_09 != g_TossPool + sizeof(g_TossPool) / sizeof(g_TossPool[0]));
-    this_ptr_10 = g_CGunFlame_ARRAY_01c62ebc;
+    this_ptr_10 = g_GunFlamePool;
     do {
       core_fire_cpp_CGunFlame_render_FUN_00488580(this_ptr_10);
       this_ptr_10 = this_ptr_10 + 1;
-    } while (this_ptr_10 != g_CGunFlame_ARRAY_01c62ebc + sizeof(g_CGunFlame_ARRAY_01c62ebc) / sizeof(g_CGunFlame_ARRAY_01c62ebc[0]));
-    this_ptr_11 = g_CLightningBolt_ARRAY_01c67510;
+    } while (this_ptr_10 != g_GunFlamePool + sizeof(g_GunFlamePool) / sizeof(g_GunFlamePool[0]));
+    this_ptr_11 = g_LightningBoltPool;
     do {
       core_fire_cpp_CLightningBolt_render_FUN_00488bf0(this_ptr_11);
       this_ptr_11 = this_ptr_11 + 1;
-    } while (this_ptr_11 != g_CLightningBolt_ARRAY_01c67510 + sizeof(g_CLightningBolt_ARRAY_01c67510) / sizeof(g_CLightningBolt_ARRAY_01c67510[0]));
-    this_ptr_12 = g_CTrail_ARRAY_01c676cc;
+    } while (this_ptr_11 != g_LightningBoltPool + sizeof(g_LightningBoltPool) / sizeof(g_LightningBoltPool[0]));
+    this_ptr_12 = g_TrailPool;
     do {
       core_fire_cpp_CTrail_render_FUN_00489360(this_ptr_12);
       this_ptr_12 = this_ptr_12 + 1;
-    } while (this_ptr_12 != g_CTrail_ARRAY_01c676cc + sizeof(g_CTrail_ARRAY_01c676cc) / sizeof(g_CTrail_ARRAY_01c676cc[0]));
+    } while (this_ptr_12 != g_TrailPool + sizeof(g_TrailPool) / sizeof(g_TrailPool[0]));
     this_ptr_13 = g_PopcornPool;
     do {
       if (0.0 < (this_ptr_13->base).lifetime_remaining) {

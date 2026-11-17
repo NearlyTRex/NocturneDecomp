@@ -8,7 +8,7 @@
 ;   TerminatedCString s_CCharacter_00616ec2
 ;   int g_CCharacterClassVersion = 0x6
 ;   CDemonActorType g_CDemonActorClassInfo
-;   CKeyFramedModelInstance CKeyFramedModelInstance_00823a98
+;   CKeyFramedModelInstance g_StakeModelInstance
 ;   CDemonActorType g_CCharacterClassInfo
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@
 
 section .text
 
-    PUSH 0x823a98                       ; 00427d80 | CKeyFramedModelInstance_00823a98
+    PUSH 0x823a98                       ; 00427d80 | g_StakeModelInstance
         ;   Label: core_charactr.cpp_staticInit_FUN_00427d80
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 00427d85
         ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)

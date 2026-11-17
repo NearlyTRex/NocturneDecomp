@@ -56,7 +56,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_00425fb0(CCharacter *t
       if (0 < pCVar4->bone_count) {
         iVar6 = 0;
         do {
-          *(uint *)((int)g_FLOAT_ARRAY_007bdc9c + iVar6) = 0;
+          *(uint *)((int)g_BoneBurnIntensity + iVar6) = 0;
           iVar8 = iVar8 + 1;
           iVar6 = iVar6 + 4;
         } while (iVar8 < local_40->bone_count);
@@ -69,8 +69,8 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_00425fb0(CCharacter *t
         do {
           iVar6 = pCVar9->fires[0].bone_index;
           iVar8 = iVar8 + 1;
-          g_FLOAT_ARRAY_007bdc9c[iVar6] =
-               g_FLOAT_ARRAY_007bdc9c[iVar6] + (pCVar9->fires[0].size * fVar2) / fVar1;
+          g_BoneBurnIntensity[iVar6] =
+               g_BoneBurnIntensity[iVar6] + (pCVar9->fires[0].size * fVar2) / fVar1;
           pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
         } while (iVar8 < this_ptr->fire_count);
       }
@@ -81,7 +81,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_00425fb0(CCharacter *t
         iVar6 = 0;
         local_3c = pCVar5;
         do {
-          if ((float)65535 <= *(float *)((int)g_FLOAT_ARRAY_007bdc9c + iVar6)) {
+          if ((float)65535 <= *(float *)((int)g_BoneBurnIntensity + iVar6)) {
             iVar8 = iVar8 + 1;
           }
           if (local_3c->farthest_child_bone[0] == -1) {

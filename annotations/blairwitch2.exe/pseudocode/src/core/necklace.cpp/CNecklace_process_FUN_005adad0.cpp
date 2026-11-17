@@ -127,9 +127,9 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   *(float *)((int)&CStack_48 + (uint)bVar9 * -8 + 4) = afStack_5c[(uint)bVar9 * -2 + 3];
   *(float *)((int)&CStack_48 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-  CStack_6c.x = g_CVector3f_0265370c.x;
+  CStack_6c.x = g_ZeroVector.x;
   *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + 4) =
-       *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);
+       *(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);
   *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        *(uint *)((uint)bVar9 * -8 + 0x2653714 + (uint)bVar9 * -8);
   CStack_b4.x = 0.0;

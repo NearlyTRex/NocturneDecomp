@@ -601,7 +601,7 @@ LAB_004ae5e4:
   }
   pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                       ((this_ptr->base).base.carry_hands[0].carry_actor,
-                       g_CDemonActorType_007bcc4c.name_hash);
+                       g_CLightActorClassInfo.name_hash);
   if (pCVar10 != (CDemonActor *)0x0) {
     if ((((this_ptr->base).player_input.action_state.light != 0) && (uStack_18 == 0)) &&
        (fVar3 = pCVar10[2].particle_systems[4].position.z,

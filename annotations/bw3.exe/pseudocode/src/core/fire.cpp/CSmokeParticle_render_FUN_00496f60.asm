@@ -39,7 +39,7 @@
 ;   TerminatedCString s_CSmokeParticle_render_Fr_005c04d5
 ;   float g_FLOAT_005df8e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic[40] g_SMRGLTextureBasic_ARRAY_005fc5a4
+;   SMRGLTextureBasic[40] g_FireEffectSmokeParticleTextures
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].v
@@ -49,7 +49,7 @@
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[2].v
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[3].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[3].v
-;   CDemonCamera* g_CDemonCamera_PTR_007e2a54
+;   CDemonCamera* g_CurrentSceneCamera
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -130,7 +130,7 @@ section .text
     LEA EAX,[EBX*0x4 + 0x0]             ; 00497002
     SUB EAX,EBX                         ; 00497009
     SHL EAX,0x3                         ; 0049700b
-    ADD EAX,0x5fc5a4                    ; 0049700e | g_SMRGLTextureBasic_ARRAY_005fc5a4
+    ADD EAX,0x5fc5a4                    ; 0049700e | g_FireEffectSmokeParticleTextures
     PUSH EAX                            ; 00497013
     MOV EAX,[0x005f2afc]                ; 00497014 | g_CDemonRenderer_PTR_005f2afc
     PUSH EAX                            ; 00497019 | g_CDemonRenderer_01bdd7e4
@@ -145,7 +145,7 @@ section .text
         ;   XREF to: 0046ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00497032
     PUSH 0x0                            ; 00497035
-    PUSH 0x1c73658                      ; 00497037 | g_CVector3i_01c73658
+    PUSH 0x1c73658                      ; 00497037 | g_BillboardCameraRight
     MOV ECX,dword ptr [0x005f2afc]      ; 0049703c | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 00497042 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0 ; 00497043
@@ -278,7 +278,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 0049720e
     PUSH 0x4                            ; 00497211
     PUSH EBP                            ; 00497213
-    PUSH 0x1c73664                      ; 00497214 | g_CVector3i_01c73664
+    PUSH 0x1c73664                      ; 00497214 | g_BillboardCameraUp
     LEA EAX,[ESP + 0x3c]                ; 00497219
     PUSH EAX                            ; 0049721d
     MOV EAX,[0x00603b28]                ; 0049721e | g_CDemonSetPtr
@@ -287,13 +287,13 @@ section .text
         ;   XREF to: 00538400 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_00538400(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00497229
     PUSH EBP                            ; 0049722c
-    MOV EAX,[0x007e2a54]                ; 0049722d | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 0049722d | g_CurrentSceneCamera
     PUSH ESI                            ; 00497232
     MOV EDX,dword ptr [EAX + 0x3c]      ; 00497233
     PUSH EAX                            ; 00497236
     CALL dword ptr [EDX + 0x4]          ; 00497237
     MOV EAX,0xffff                      ; 0049723a
-    MOV EDX,dword ptr [0x01c6e24c]      ; 0049723f | g_INT_01c6e24c
+    MOV EDX,dword ptr [0x01c6e24c]      ; 0049723f | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 00497245
     SUB EAX,EDX                         ; 00497248
     MOV EDX,dword ptr [EDI + 0x28]      ; 0049724a

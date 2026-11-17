@@ -34,7 +34,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
   SIZE_T local_20;
   
   bVar11 = 0;
-  if (g_INT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 1982;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
@@ -47,7 +47,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
       g_CurrentLineNumber = 1995;
       core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSample::pollStream - my sfx isn't active with me!");
     }
-    if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
+    if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980("SfxSample::pollStream - no sound device?\n");
       goto LAB_005240fa;
     }
@@ -129,7 +129,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
             }
           }
         }
-        pcVar9 = g_CHAR_ARRAY_02db1118;
+        pcVar9 = g_SfxStreamReadBuffer;
         bVar1 = true;
         bVar2 = false;
         if (this_ptr->buffer_id == 0) break;
@@ -180,7 +180,7 @@ LAB_00524219:
             goto LAB_005240f2;
           }
           iVar14 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);
-          pcVar10 = g_CHAR_ARRAY_02db1118;
+          pcVar10 = g_SfxStreamReadBuffer;
           for (uVar8 = local_20 * iVar14 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
             *(uint *)pcVar9 = *(uint *)pcVar10;
             pcVar10 = pcVar10 + ((uint)bVar11 * -2 + 1) * 4;

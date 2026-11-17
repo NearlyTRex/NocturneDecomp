@@ -8,11 +8,11 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0 at 00481ee1
 ;
 ; Referenced Globals:
-;   int g_INT_00612564 = 0x1
-;   int g_INT_01bc1238
-;   int g_INT_01bc123c
-;   void*[1200] g_ARRAY_PTR_01c4354c
-;   uint[1600] g_UINT_ARRAY_01c4f030
+;   int g_RenderPixelBudget = 0x1
+;   int g_RenderPixelCounter
+;   int g_RenderAbortFlag
+;   void*[1200] g_ScreenBufferArray
+;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     SHR EAX,0x10                        ; 004873c0
         ;   Label: LAB_004873c0
     SHR ECX,0x10                        ; 004873c3
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c4354c] ; 004873c6 | g_ARRAY_PTR_01c4354c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c4354c] ; 004873c6 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 004873cd
     JLE 0x00487400                      ; 004873cf
         ;   XREF to: 00487400 (CONDITIONAL_JUMP)  ; LAB_00487400
@@ -48,7 +48,7 @@ section .text
     INC ECX                             ; 004873d5
     MOV EAX,dword ptr [EDI + 0x28]      ; 004873d6
     SUB EAX,dword ptr [ESI + 0x28]      ; 004873d9
-    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 004873dc | g_UINT_ARRAY_01c4f030
+    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 004873dc | g_ReciprocalLookupTable
     MOV EBX,EBP                         ; 004873e3
     DEC ECX                             ; 004873e5
     MOV ESI,dword ptr [ESI + 0x28]      ; 004873e6
@@ -70,14 +70,14 @@ section .text
     POP EDI                             ; 00487401
     POP ESI                             ; 00487402
     RET                                 ; 00487403
-    MOV EAX,[0x01bc1238]                ; 00487404 | g_INT_01bc1238
+    MOV EAX,[0x01bc1238]                ; 00487404 | g_RenderPixelCounter
         ;   Label: LAB_00487404
     INC EAX                             ; 00487409
-    MOV [0x01bc1238],EAX                ; 0048740a | g_INT_01bc1238
-    CMP EAX,dword ptr [0x00612564]      ; 0048740f | g_INT_00612564
+    MOV [0x01bc1238],EAX                ; 0048740a | g_RenderPixelCounter
+    CMP EAX,dword ptr [0x00612564]      ; 0048740f | g_RenderPixelBudget
     JC 0x004873f5                       ; 00487415
         ;   XREF to: 004873f5 (CONDITIONAL_JUMP)  ; LAB_004873f5
-    MOV dword ptr [0x01bc123c],0x1      ; 00487417 | g_INT_01bc123c
+    MOV dword ptr [0x01bc123c],0x1      ; 00487417 | g_RenderAbortFlag
     POP EBP                             ; 00487421
     POP EDI                             ; 00487422
     POP ESI                             ; 00487423

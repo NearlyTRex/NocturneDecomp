@@ -20,11 +20,11 @@
 ;   float FLOAT_0059f7f0 = 30
 ;   float FLOAT_0059f7f4 = 120
 ;   CGame* g_CGamePtr = 01c775ec
-;   undefined4 g_CBatteryActorType_00764674.name_hash
+;   undefined4 g_CBatteryClassInfo.name_hash
 ;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.flashlight_active
 ;   undefined4 g_CGameInstance.delta_time_float
-;   undefined4 g_CLightGunActorType_01cc3688.name_hash
+;   undefined4 g_CLightGunClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -52,7 +52,7 @@ section .text
     CMP ECX,dword ptr [EDX + 0x560]     ; 004c1871
     JZ 0x004c1897                       ; 004c1877
         ;   XREF to: 004c1897 (CONDITIONAL_JUMP)  ; LAB_004c1897
-    MOV ESI,dword ptr [0x01cc36c0]      ; 004c1879 | g_CLightGunActorType_01cc3688.name_hash
+    MOV ESI,dword ptr [0x01cc36c0]      ; 004c1879 | g_CLightGunClassInfo.name_hash
     PUSH ESI                            ; 004c187f
     PUSH EAX                            ; 004c1880
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1881
@@ -84,7 +84,7 @@ section .text
     JLE 0x004c18f5                      ; 004c18cb
         ;   XREF to: 004c18f5 (CONDITIONAL_JUMP)  ; LAB_004c18f5
     MOV EDI,EBX                         ; 004c18cd
-    MOV EDX,dword ptr [0x007646ac]      ; 004c18cf | g_CBatteryActorType_00764674.name_hash
+    MOV EDX,dword ptr [0x007646ac]      ; 004c18cf | g_CBatteryClassInfo.name_hash
         ;   Label: LAB_004c18cf
     PUSH EDX                            ; 004c18d5
     MOV ECX,dword ptr [EDI + 0xc]       ; 004c18d6
@@ -123,7 +123,7 @@ section .text
     JLE 0x004c194e                      ; 004c1924
         ;   XREF to: 004c194e (CONDITIONAL_JUMP)  ; LAB_004c194e
     MOV EDI,EBX                         ; 004c1926
-    MOV EDX,dword ptr [0x01cc36c0]      ; 004c1928 | g_CLightGunActorType_01cc3688.name_hash
+    MOV EDX,dword ptr [0x01cc36c0]      ; 004c1928 | g_CLightGunClassInfo.name_hash
         ;   Label: LAB_004c1928
     PUSH EDX                            ; 004c192e
     MOV ECX,dword ptr [EDI + 0xc]       ; 004c192f
@@ -231,7 +231,7 @@ section .text
     JLE 0x004c1a88                      ; 004c1a62
         ;   XREF to: 004c1a88 (CONDITIONAL_JUMP)  ; LAB_004c1a88
     MOV EDI,EBX                         ; 004c1a64
-    MOV EDX,dword ptr [0x007646ac]      ; 004c1a66 | g_CBatteryActorType_00764674.name_hash
+    MOV EDX,dword ptr [0x007646ac]      ; 004c1a66 | g_CBatteryClassInfo.name_hash
         ;   Label: LAB_004c1a66
     PUSH EDX                            ; 004c1a6c
     MOV ECX,dword ptr [EDI + 0xc]       ; 004c1a6d

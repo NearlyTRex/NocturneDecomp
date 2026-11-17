@@ -99,25 +99,25 @@
     },
     {
       "addr": "005c1d54",
-      "name": "g_PTR_005c1d54",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1d7c",
-      "name": "g_PTR_005c1d7c",
+      "name": "g_SpecialDeviceReadFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1f54",
-      "name": "g_SIOControlBlock_PTR_005c1f54",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     },
     {
       "addr": "005c1f90",
-      "name": "g_UINT_005c1f90",
+      "name": "g_MaxHandleCount",
       "type": "uint",
       "value": "0x14"
     }
@@ -266,7 +266,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_005c1f90 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +274,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_005c1f90 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +282,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = g_SIOControlBlock_PTR_005c1f54->standard_handles[param_1];",
+      "text": "local_14 = g_IOControlBlock->standard_handles[param_1];",
       "type": "unnamed_param"
     },
     {
@@ -338,7 +338,7 @@
       "line": 40,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar3 = (*(code *)g_PTR_005c1d54)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -346,7 +346,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = (*(code *)g_PTR_005c1d54)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -378,7 +378,7 @@
       "line": 52,
       "match": "code *",
       "severity": "moderate",
-      "text": "uStack_20 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,DStack_1c);",
+      "text": "uStack_20 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,DStack_1c);",
       "type": "unresolved_funcptr"
     },
     {
@@ -386,7 +386,7 @@
       "line": 52,
       "match": "param_2",
       "severity": "mild",
-      "text": "uStack_20 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,DStack_1c);",
+      "text": "uStack_20 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,DStack_1c);",
       "type": "unnamed_param"
     },
     {
@@ -434,7 +434,7 @@
       "line": 80,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar3 = (*(code *)g_PTR_005c1d54)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -442,7 +442,7 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = (*(code *)g_PTR_005c1d54)(param_1), iVar3 == 0)) {",
+      "text": "(iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -482,7 +482,7 @@
       "line": 95,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,param_3);",
+      "text": "uVar2 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,param_3);",
       "type": "unresolved_funcptr"
     },
     {
@@ -490,7 +490,7 @@
       "line": 95,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar2 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,param_3);",
+      "text": "uVar2 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -498,7 +498,7 @@
       "line": 95,
       "match": "param_3",
       "severity": "mild",
-      "text": "uVar2 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,param_3);",
+      "text": "uVar2 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {

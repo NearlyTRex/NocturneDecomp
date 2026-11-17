@@ -20,9 +20,9 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   uint[256] g_UINT_ARRAY_01c6a974
-;   undefined4 g_UINT_ARRAY_01c6a974[1]
+;   void*[1200] g_ScreenBufferArray
+;   uint[256] g_Hardware32BitPalette
+;   undefined4 g_Hardware32BitPalette[1]
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
@@ -95,7 +95,7 @@ section .text
     JZ 0x0040dd7e                       ; 0040dc80
         ;   XREF to: 0040dd7e (CONDITIONAL_JUMP)  ; LAB_0040dd7e
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040dc86
-    MOV EDX,dword ptr [EDX + 0x1c5faec] ; 0040dc8a | g_ARRAY_PTR_01c5faec
+    MOV EDX,dword ptr [EDX + 0x1c5faec] ; 0040dc8a | g_ScreenBufferArray
     AND EAX,0xff                        ; 0040dc90
     MOV AX,word ptr [EAX*0x2 + 0x1c6ad74] ; 0040dc95
     MOV word ptr [EDX + EDI*0x1],AX     ; 0040dc9d
@@ -130,7 +130,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ESI      ; 0040dcde
     MOV EAX,dword ptr [ESP + 0x10]      ; 0040dce2
         ;   Label: LAB_0040dce2
-    MOV EAX,dword ptr [EAX + 0x1c6a974] ; 0040dce6 | g_UINT_ARRAY_01c6a974 | g_UINT_ARRAY_01c6a974[1]
+    MOV EAX,dword ptr [EAX + 0x1c6a974] ; 0040dce6 | g_Hardware32BitPalette | g_Hardware32BitPalette[1]
     MOV EDI,dword ptr [0x01c6af78]      ; 0040dcec | g_INT_01c6af78
     MOV EBP,EAX                         ; 0040dcf2
     MOV ECX,EAX                         ; 0040dcf4
@@ -174,9 +174,9 @@ section .text
         ;   XREF to: 0040dc10 (UNCONDITIONAL_JUMP)  ; LAB_0040dc10
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040dd7e
         ;   Label: LAB_0040dd7e
-    MOV EDX,dword ptr [EDX + 0x1c5faec] ; 0040dd82 | g_ARRAY_PTR_01c5faec
+    MOV EDX,dword ptr [EDX + 0x1c5faec] ; 0040dd82 | g_ScreenBufferArray
     AND EAX,0xff                        ; 0040dd88
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c6a974] ; 0040dd8d | g_UINT_ARRAY_01c6a974
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c6a974] ; 0040dd8d | g_Hardware32BitPalette
     MOV dword ptr [EDX + ESI*0x1],EAX   ; 0040dd94
     JMP 0x0040dca1                      ; 0040dd97
         ;   XREF to: 0040dca1 (UNCONDITIONAL_JUMP)  ; LAB_0040dca1

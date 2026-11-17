@@ -17,7 +17,7 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *name,
   
   if ((name == (char *)0x0) || (*name == '\0')) {
     pcVar3 = "Must specify actor name";
-    pcVar4 = g_CHAR_ARRAY_01c734b0;
+    pcVar4 = g_EventErrorMessageBuffer;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -33,7 +33,7 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *name,
   }
   if (*name == '@') {
     actor_ptr = (CHero *)core_event_cpp_CEventList_getActorByVarName_FUN_00495050
-                                   (g_CEventList_PTR_005fba60,name);
+                                   (g_CEventListPtr,name);
   }
   else {
     iVar2 = _stricmp(name,"$");
@@ -41,19 +41,19 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *name,
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
                                      (g_CDemonMission_PTR_00600530,name);
       if (actor_ptr == (CHero *)0x0) {
-        _sprintf(g_CHAR_ARRAY_01c734b0,"Actor \"%s\" does not exist.");
+        _sprintf(g_EventErrorMessageBuffer,"Actor \"%s\" does not exist.");
         return (CDemonActor *)0x0;
       }
       goto LAB_0048b9df;
     }
     if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-      _sprintf(g_CHAR_ARRAY_01c734b0,"Can't use '$' actor specifier in multi-player");
+      _sprintf(g_EventErrorMessageBuffer,"Can't use '$' actor specifier in multi-player");
       return (CDemonActor *)0x0;
     }
     actor_ptr = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
   }
   if (actor_ptr == (CHero *)0x0) {
-    return g_CDemonActor_PTR_005df604;
+    return g_ActorNameSentinel;
   }
 LAB_0048b9df:
   iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c810((CDemonActor *)actor_ptr,class_hash);
@@ -61,9 +61,9 @@ LAB_0048b9df:
     return (CDemonActor *)actor_ptr;
   }
   if (*name == '@') {
-    return g_CDemonActor_PTR_005df604;
+    return g_ActorNameSentinel;
   }
   core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870((CDemonActor *)actor_ptr);
-  _sprintf(g_CHAR_ARRAY_01c734b0,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
+  _sprintf(g_EventErrorMessageBuffer,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
   return (CDemonActor *)0x0;
 }

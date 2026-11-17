@@ -18,11 +18,11 @@ void FUN_005af560(void)
   int iVar7;
   ulong count;
   
-  pcVar5 = g_CHAR_PTR_0060797d;
-  if (g_CHAR_PTR_PTR_02d25924 == (char **)0x0) {
+  pcVar5 = g_EnvironmentStrings;
+  if (g_EnvironmentBlock == (char **)0x0) {
     iVar7 = 0;
-    cVar1 = *g_CHAR_PTR_0060797d;
-    pcVar3 = g_CHAR_PTR_0060797d;
+    cVar1 = *g_EnvironmentStrings;
+    pcVar3 = g_EnvironmentStrings;
     while (cVar1 != '\0') {
       do {
         cVar1 = *pcVar3;
@@ -31,7 +31,7 @@ void FUN_005af560(void)
       iVar7 = iVar7 + 1;
       cVar1 = *pcVar3;
     }
-    iVar2 = (int)pcVar3 - (int)g_CHAR_PTR_0060797d;
+    iVar2 = (int)pcVar3 - (int)g_EnvironmentStrings;
     if (iVar2 == 0) {
       iVar2 = 1;
     }
@@ -61,9 +61,9 @@ void FUN_005af560(void)
           cVar1 = *pcVar5;
         }
         *(uint *)(iVar7 + (int)ppcVar4) = 0;
-        g_CHAR_PTR_PTR_02d25920 = (char **)((int)ppcVar4 + iVar7 + 4);
-        g_CHAR_PTR_PTR_02d25924 = ppcVar4;
-        memset(g_CHAR_PTR_PTR_02d25920,0,count);
+        g_EnvironStringArea = (char **)((int)ppcVar4 + iVar7 + 4);
+        g_EnvironmentBlock = ppcVar4;
+        memset(g_EnvironStringArea,0,count);
       }
     }
     FUN_005b0a70();

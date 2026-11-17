@@ -63,7 +63,7 @@
 ;   float g_FLOAT_005fdc5c = 256
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   int g_INT_0060b284 = 0x1
+;   int g_RenderPixelBudget = 0x1
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[1].projected_vertex.screen_x
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[2].projected_vertex.screen_x
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_00585e26
     LEA ESI,[EDX + EBX*0x1]             ; 00585e27
     ADD EBX,0x20                        ; 00585e2a
-    MOV CL,byte ptr [ESI + EAX*0x1 + 0x1c2c90f] ; 00585e2d | g_UCHAR_ARRAY_01c2c910
+    MOV CL,byte ptr [ESI + EAX*0x1 + 0x1c2c90f] ; 00585e2d | g_ColorCubeLookup
     ADD EDX,0x400                       ; 00585e34
     MOV byte ptr [EAX + 0x265b7bf],CL   ; 00585e3a
     CMP EAX,0x20                        ; 00585e40
@@ -203,7 +203,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb8]      ; 00585f94
     XOR ESI,ESI                         ; 00585f9b
     MOV EDI,EAX                         ; 00585f9d
-    MOV dword ptr [0x026537bc],ESI      ; 00585f9f | g_INT_026537bc
+    MOV dword ptr [0x026537bc],ESI      ; 00585f9f | g_VisibleWaterTileCount
     NEG EDI                             ; 00585fa5
     MOV dword ptr [ESP + 0xb4],EAX      ; 00585fa7
     CMP EDI,EAX                         ; 00585fae
@@ -370,12 +370,12 @@ section .text
     CMP EDI,EDX                         ; 005861db
     JL 0x00585fb6                       ; 005861dd
         ;   XREF to: 00585fb6 (CONDITIONAL_JUMP)  ; LAB_00585fb6
-    FILD dword ptr [0x026537bc]         ; 005861e3 | g_INT_026537bc
+    FILD dword ptr [0x026537bc]         ; 005861e3 | g_VisibleWaterTileCount
         ;   Label: LAB_005861e3
     FMUL float ptr [EBP + 0x8]          ; 005861e9
     FMUL float ptr [EBP + 0x8]          ; 005861ec
     SUB ESP,0x8                         ; 005861ef
-    MOV ECX,dword ptr [0x026537bc]      ; 005861f2 | g_INT_026537bc
+    MOV ECX,dword ptr [0x026537bc]      ; 005861f2 | g_VisibleWaterTileCount
     FST float ptr [EBP + 0xc]           ; 005861f8
     FSTP double ptr [ESP]               ; 005861fb
     PUSH ECX                            ; 005861fe
@@ -404,8 +404,8 @@ section .text
     MOV EBX,0x3                         ; 00586242
     MOV EAX,0x10                        ; 00586247
     MOV dword ptr [ESP + 0x28],EBX      ; 0058624c
-    MOV EBX,dword ptr [0x0060b284]      ; 00586250 | g_INT_0060b284
-    MOV [0x0060b284],EAX                ; 00586256 | g_INT_0060b284
+    MOV EBX,dword ptr [0x0060b284]      ; 00586250 | g_RenderPixelBudget
+    MOV [0x0060b284],EAX                ; 00586256 | g_RenderPixelBudget
     LEA EAX,[ESP + 0x4]                 ; 0058625b
     MOV dword ptr [ESP + 0x20],EDX      ; 0058625f
     PUSH EAX                            ; 00586263
@@ -419,7 +419,7 @@ section .text
     TEST EAX,EAX                        ; 0058627c
     JZ 0x005862ca                       ; 0058627e
         ;   XREF to: 005862ca (CONDITIONAL_JUMP)  ; LAB_005862ca
-    CMP dword ptr [0x026537bc],0x1000   ; 00586280 | g_INT_026537bc
+    CMP dword ptr [0x026537bc],0x1000   ; 00586280 | g_VisibleWaterTileCount
     JL 0x005862ae                       ; 0058628a
         ;   XREF to: 005862ae (CONDITIONAL_JUMP)  ; LAB_005862ae
     MOV EAX,0x5ede96                    ; 0058628c | = "..\\core\\water.cpp"
@@ -430,13 +430,13 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005862a6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005862ab
-    MOV EAX,[0x026537bc]                ; 005862ae | g_INT_026537bc
+    MOV EAX,[0x026537bc]                ; 005862ae | g_VisibleWaterTileCount
         ;   Label: LAB_005862ae
     LEA ECX,[EAX + 0x1]                 ; 005862b3
-    MOV dword ptr [EAX*0x4 + 0x26537c0],EDI ; 005862b6 | g_INT_ARRAY_026537c0
-    MOV dword ptr [EAX*0x4 + 0x26577c0],ESI ; 005862bd | g_INT_ARRAY_026577c0
-    MOV dword ptr [0x026537bc],ECX      ; 005862c4 | g_INT_026537bc
-    MOV dword ptr [0x0060b284],EBX      ; 005862ca | g_INT_0060b284
+    MOV dword ptr [EAX*0x4 + 0x26537c0],EDI ; 005862b6 | g_VisibleWaterTilesX
+    MOV dword ptr [EAX*0x4 + 0x26577c0],ESI ; 005862bd | g_VisibleWaterTilesY
+    MOV dword ptr [0x026537bc],ECX      ; 005862c4 | g_VisibleWaterTileCount
+    MOV dword ptr [0x0060b284],EBX      ; 005862ca | g_RenderPixelBudget
         ;   Label: LAB_005862ca
     JMP 0x005861c3                      ; 005862d0
         ;   XREF to: 005861c3 (UNCONDITIONAL_JUMP)  ; LAB_005861c3

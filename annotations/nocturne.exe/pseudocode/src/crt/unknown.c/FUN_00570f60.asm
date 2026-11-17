@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_005c1d09 = 00000000
-;   char** g_CHAR_PTR_PTR_02de54a0
-;   char** g_CHAR_PTR_PTR_02de54a4
+;   char* g_EnvironmentStrings = 00000000
+;   char** g_EnvironStringArea
+;   char** g_EnvironmentBlock
 ;   void* g_PTR_02de5d60
 ;
 ; Called Functions:
@@ -25,11 +25,11 @@ section .text
     PUSH ESI                            ; 00570f61
     PUSH EDI                            ; 00570f62
     PUSH EBP                            ; 00570f63
-    MOV EDI,dword ptr [0x02de54a4]      ; 00570f64 | g_CHAR_PTR_PTR_02de54a4
+    MOV EDI,dword ptr [0x02de54a4]      ; 00570f64 | g_EnvironmentBlock
     TEST EDI,EDI                        ; 00570f6a
     JNZ 0x0057103e                      ; 00570f6c
         ;   XREF to: 0057103e (CONDITIONAL_JUMP)  ; LAB_0057103e
-    MOV EBP,dword ptr [0x005c1d09]      ; 00570f72 | g_CHAR_PTR_005c1d09
+    MOV EBP,dword ptr [0x005c1d09]      ; 00570f72 | g_EnvironmentStrings
     XOR ESI,ESI                         ; 00570f78
     MOV DL,byte ptr [EBP]               ; 00570f7a
     MOV EAX,EBP                         ; 00570f7d
@@ -52,7 +52,7 @@ section .text
     TEST DH,DH                          ; 00570f95
     JNZ 0x00570f83                      ; 00570f97
         ;   XREF to: 00570f83 (CONDITIONAL_JUMP)  ; LAB_00570f83
-    MOV dword ptr [0x02de54a4],EDI      ; 00570f99 | g_CHAR_PTR_PTR_02de54a4
+    MOV dword ptr [0x02de54a4],EDI      ; 00570f99 | g_EnvironmentBlock
         ;   Label: LAB_00570f99
     SUB EAX,EBP                         ; 00570f9f
     JNZ 0x00570fa8                      ; 00570fa1
@@ -111,11 +111,11 @@ section .text
     PUSH 0x0                            ; 0057100f
     LEA EAX,[EDI + ECX*0x1]             ; 00571011
     PUSH EAX                            ; 00571014
-    MOV [0x02de54a0],EAX                ; 00571015 | g_CHAR_PTR_PTR_02de54a0
-    MOV dword ptr [0x02de54a4],EDI      ; 0057101a | g_CHAR_PTR_PTR_02de54a4
+    MOV [0x02de54a0],EAX                ; 00571015 | g_EnvironStringArea
+    MOV dword ptr [0x02de54a4],EDI      ; 0057101a | g_EnvironmentBlock
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00571020
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
-    MOV EDI,dword ptr [0x02de54a4]      ; 00571025 | g_CHAR_PTR_PTR_02de54a4
+    MOV EDI,dword ptr [0x02de54a4]      ; 00571025 | g_EnvironmentBlock
     ADD ESP,0xc                         ; 0057102b
     JMP 0x00571039                      ; 0057102e
         ;   XREF to: 00571039 (UNCONDITIONAL_JUMP)  ; LAB_00571039
@@ -127,7 +127,7 @@ section .text
     CALL crt_unknown.c_FUN_00572b70     ; 00571039
         ;   XREF to: 00572b70 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00572b70()
         ;   Label: LAB_00571039
-    MOV EDI,dword ptr [0x02de54a4]      ; 0057103e | g_CHAR_PTR_PTR_02de54a4
+    MOV EDI,dword ptr [0x02de54a4]      ; 0057103e | g_EnvironmentBlock
         ;   Label: LAB_0057103e
     POP EBP                             ; 00571044
     POP EDI                             ; 00571045

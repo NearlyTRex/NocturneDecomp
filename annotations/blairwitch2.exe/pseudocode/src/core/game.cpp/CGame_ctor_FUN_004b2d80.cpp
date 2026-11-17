@@ -69,7 +69,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b2d80(CGame *this_ptr)
   this_ptr->act_completion_state = 0;
   this_ptr->puzzle_difficulty_mode = 0;
   this_ptr->combat_difficulty_mode = 0;
-  g_CHAR_ARRAY_01cb7b50[0] = '\0';
+  g_CurrentSaveFile[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
   core_game_cpp_CGame_setAlphaFade_FUN_004bb500(this_ptr,0.0,1.0,5.0,0.0,0.0,0.0,0);
   this_ptr->alpha_fade_active = 0;

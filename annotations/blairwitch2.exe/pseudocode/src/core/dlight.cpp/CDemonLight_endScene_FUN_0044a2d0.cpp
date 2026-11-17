@@ -39,7 +39,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044a2d0(CDemonLight *this
   pCVar4 = this_ptr;
   if (0 < this_ptr->shadow_map_height) {
     do {
-      g_ARRAY_PTR_01c2a38c[iVar3] = pCVar4->saved_screen_buffer_rows[0];
+      g_ScreenBufferArray[iVar3] = pCVar4->saved_screen_buffer_rows[0];
       iVar3 = iVar3 + 1;
       pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;
     } while (iVar3 < this_ptr->shadow_map_height);

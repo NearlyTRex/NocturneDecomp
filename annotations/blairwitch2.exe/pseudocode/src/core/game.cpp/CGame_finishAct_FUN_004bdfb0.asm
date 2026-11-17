@@ -77,11 +77,11 @@ section .text
     JNZ 0x004be089                      ; 004bdfc9
         ;   XREF to: 004be089 (CONDITIONAL_JUMP)  ; LAB_004be089
     MOV EAX,[0x01fc797c]                ; 004bdfcf | g_CDemonCameraInstance.framebuffer_width
-    MOV EDI,dword ptr [0x01511cc0]      ; 004bdfd4 | g_CBitFont_PTR_01511cc0
+    MOV EDI,dword ptr [0x01511cc0]      ; 004bdfd4 | g_ThemeFont
     CMP EAX,0x1e0                       ; 004bdfda
     JGE 0x004bdfe7                      ; 004bdfdf
         ;   XREF to: 004bdfe7 (CONDITIONAL_JUMP)  ; LAB_004bdfe7
-    MOV EDI,dword ptr [0x01511cc4]      ; 004bdfe1 | g_CBitFont_PTR_01511cc4
+    MOV EDI,dword ptr [0x01511cc4]      ; 004bdfe1 | g_SmallEditorFont
     PUSH 0x58                           ; 004bdfe7
         ;   Label: LAB_004bdfe7
     PUSH EDI                            ; 004bdfe9
@@ -415,7 +415,7 @@ section .text
         ;   XREF to: 004be33a (CONDITIONAL_JUMP)  ; LAB_004be33a
     POP EDI                             ; 004be352
         ;   Label: LAB_004be352
-    MOV EAX,[0x01511cc0]                ; 004be353 | g_CBitFont_PTR_01511cc0
+    MOV EAX,[0x01511cc0]                ; 004be353 | g_ThemeFont
     PUSH 0xffff                         ; 004be358
     MOV dword ptr [ESP + 0x538],EAX     ; 004be35d
     CALL engine_3d.c_setRenderAlpha_FUN_00406da0 ; 004be364

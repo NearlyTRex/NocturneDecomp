@@ -67,13 +67,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
     pCVar1 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     (*(((pCVar1->base).vtable._uc)->_uc).kill)(pCVar1,1,in_stack_fffffc20,in_stack_fffffc24);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
-              (&local_200,&g_UVector3_01cc90e0.f,&g_UVector3_01cc90ec.f);
+              (&local_200,&g_GabriellaWeaponAttachEuler.f,&g_GabriellaWeaponAttachOffset.f);
     pCVar8 = &local_380;
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&local_200,
                (CMatrix3x4f *)
                (this_ptr->base).base.model.bone_transform.bone_model_matrices
-               [g_INT_ARRAY_01cc9108[10]].m,&local_110);
+               [g_GabriellaIndices[10]].m,&local_110);
     pCVar9 = &local_110;
     pCVar6 = &local_1d0;
     for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -88,9 +88,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
     pCVar1 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     (*(((pCVar1->base).vtable._uc)->_uc).kill)(pCVar1,2,in_stack_fffffc20,in_stack_fffffc24);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
-              (&local_320,&g_UVector3_01cc90d4.f,&g_CVector3f_02c8af28);
+              (&local_320,&g_GabriellaWeaponEuler.f,&g_ZeroVector);
     matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices
-               [g_INT_ARRAY_01cc9108[0x11]].m;
+               [g_GabriellaIndices[0x11]].m;
     pCVar8 = &local_320;
     core_xform_cpp_buildRotationX_FUN_005b6d90(1.5707964,&local_170);
     pCVar9 = &local_290;

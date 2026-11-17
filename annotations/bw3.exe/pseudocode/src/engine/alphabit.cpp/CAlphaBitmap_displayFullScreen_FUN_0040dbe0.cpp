@@ -22,8 +22,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0(CAl
     iVar2 = 0;
     local_18 = 0;
     do {
-      uVar1 = *(uint *)((int)g_UINT_ARRAY_01c6a974 + local_18);
-      *(ushort *)((int)g_USHORT_ARRAY_01c6ad74 + iVar2) =
+      uVar1 = *(uint *)((int)g_Hardware32BitPalette + local_18);
+      *(ushort *)((int)g_Hardware16BitPalette + iVar2) =
            (ushort)(((int)uVar1 >> 8 & 0xffU) / (uint)g_INT_01c6af84 <<
                    (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
            (ushort)(((int)uVar1 >> 0x10 & 0xffU) / (uint)g_INT_01c6af78 <<
@@ -44,15 +44,15 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0(CAl
         iVar3 = 0;
         do {
           if (g_INT_005fba20 == 0x20) {
-            *(uint *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_1c) + iVar3) =
-                 g_UINT_ARRAY_01c6a974
+            *(uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar3) =
+                 g_Hardware32BitPalette
                  [(byte)this_ptr->raw
                         [(this_ptr->width * iVar2) / g_INT_005fba18 +
                          ((local_14 * this_ptr->height) / g_INT_005fba1c) * this_ptr->width]];
           }
           else {
-            *(ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_1c) + iVar4) =
-                 g_USHORT_ARRAY_01c6ad74
+            *(ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar4) =
+                 g_Hardware16BitPalette
                  [(byte)this_ptr->raw
                         [(this_ptr->width * iVar2) / g_INT_005fba18 +
                          ((local_14 * this_ptr->height) / g_INT_005fba1c) * this_ptr->width]];

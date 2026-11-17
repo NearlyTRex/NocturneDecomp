@@ -9,8 +9,8 @@
 void __cdecl engine_matrix_c_setCameraOrigin_FUN_004ea360(int x,int y,int z)
 
 {
-  g_INT_01c38b78 = x;
-  g_INT_01c38b7c = y;
-  g_INT_01c38b80 = z;
+  g_CameraOriginX = x;
+  g_CameraOriginY = y;
+  g_CameraOriginZ = z;
   return;
 }

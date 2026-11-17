@@ -146,7 +146,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0050fba0(CMimic *this_pt
             (1.0 - ABS(local_14) * (float)0.63661977238577705) * (float)25 +
             (float)30) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00568e30
-                    ((CDeformableModelInstance *)local_20,g_INT_ARRAY_01d22424[0],&local_250);
+                    ((CDeformableModelInstance *)local_20,g_MimicIndices[0],&local_250);
           local_100.z = 0.3;
           pCVar8 = &local_250;
           pCVar10 = &local_280;
@@ -267,7 +267,7 @@ LAB_0050fc98:
               local_34 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
               local_14 = local_34;
               core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-                        ((CDeformableModelInstance *)pCVar14,g_INT_ARRAY_01d22424[8],&local_7c);
+                        ((CDeformableModelInstance *)pCVar14,g_MimicIndices[8],&local_7c);
               local_64.x = local_7c.x;
               *(uint *)((int)&local_64 + (uint)bVar13 * -8 + 4) =
                    *(uint *)((int)&local_7c + (uint)bVar13 * -8 + 4);
@@ -360,7 +360,7 @@ LAB_0050fccf:
       if (uVar6 < 2) {
         if ((this_ptr->base).base.is_on_ground != 0) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                    (local_18,g_INT_ARRAY_01d22424[7],&local_1cc);
+                    (local_18,g_MimicIndices[7],&local_1cc);
           local_124.x = local_1cc.x;
           *(uint *)((int)&local_124 + (uint)bVar13 * -8 + 4) =
                *(uint *)((int)&local_1cc + (uint)bVar13 * -8 + 4);
@@ -373,7 +373,7 @@ LAB_0050fccf:
       }
       else if ((uVar6 == 7) && ((this_ptr->base).base.is_on_ground != 0)) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                  (pCVar1,g_INT_ARRAY_01d22424[8],&local_19c);
+                  (pCVar1,g_MimicIndices[8],&local_19c);
         local_1b4.x = local_19c.x;
         *(uint *)((int)&local_1b4 + (uint)bVar13 * -8 + 4) =
              *(uint *)((int)&local_19c + (uint)bVar13 * -8 + 4);

@@ -57,7 +57,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_00572d20(char *filename)
     pcVar13[1] = cVar2;
     pcVar13 = pcVar13 + 2;
   } while (cVar2 != '\0');
-  pCVar11 = g_CSfxOptions_ARRAY_02c78cf0 + g_INT_02c78cec;
+  pCVar11 = g_CSfxOptions_ARRAY_02c78cf0 + g_SfxLastSlot;
   pCVar14 = &local_88;
   for (iVar3 = 0x18; iVar3 != 0; iVar3 = iVar3 + -1) {
     pCVar14->channel_index = pCVar11->channel_index;
@@ -69,7 +69,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_00572d20(char *filename)
     return 0;
   }
   sound_sndmain_cpp_lockSound_FUN_00575d20();
-  if (g_INT_02c807ec < 1) {
+  if (g_SoundLockCount < 1) {
     g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
     g_INT_01d1d404 = 0x249;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::kill - must be locked!");
@@ -128,15 +128,15 @@ LAB_00573017:
     pcVar13 = local_188;
     iVar3 = 0;
     do {
-      g_INT_02c78ff0 = g_INT_02c78ff0 + 1;
-      if (0x3f < g_INT_02c78ff0) {
-        g_INT_02c78ff0 = 0;
+      g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+      if (0x3f < g_LastSampleAccessIndex) {
+        g_LastSampleAccessIndex = 0;
       }
-      if (((g_SfxSamples[g_INT_02c78ff0].taken == 0) &&
-          (g_SfxSamples[g_INT_02c78ff0].ref_count == 0)) &&
-         ((g_SfxSamples[g_INT_02c78ff0].is_user_sample == 0 &&
-          (g_SfxSamples[g_INT_02c78ff0].locked_length == 0)))) {
-        local_18 = g_SfxSamples + g_INT_02c78ff0;
+      if (((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+          (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) &&
+         ((g_SfxSamples[g_LastSampleAccessIndex].is_user_sample == 0 &&
+          (g_SfxSamples[g_LastSampleAccessIndex].locked_length == 0)))) {
+        local_18 = g_SfxSamples + g_LastSampleAccessIndex;
         goto LAB_0057305f;
       }
       iVar3 = iVar3 + 1;
@@ -298,9 +298,8 @@ LAB_0057346a:
         sound_sndmain_cpp_unlockSound_FUN_00573e70();
         return iVar3 << 6 | local_28;
       }
-      iVar4 = (*g_CSoundDevice_PTR_02c80650->vtable->allocateSfx)
-                        (g_CSoundDevice_PTR_02c80650,
-                         (g_CSfxSlot_ARRAY_02c745ec[uVar10].sample)->buffer_id);
+      iVar4 = (*g_CSoundDevicePtr->vtable->allocateSfx)
+                        (g_CSoundDevicePtr,(g_CSfxSlot_ARRAY_02c745ec[uVar10].sample)->buffer_id);
       g_CSfxSlot_ARRAY_02c745ec[uVar10].hardware_buffer_handle = iVar4;
       if (iVar4 != 0) goto LAB_0057346a;
     }

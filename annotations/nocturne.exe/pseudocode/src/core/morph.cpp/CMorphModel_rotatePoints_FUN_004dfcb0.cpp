@@ -34,7 +34,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   local_18 = 0;
   fVar8 = 1.0 - blend_factor;
   if (0 < this_ptr->num_points) {
-    input = g_CVector3i_ARRAY_01cce554;
+    input = g_MorphVertexBuffer;
     iVar9 = 0;
     iVar10 = 0;
     do {
@@ -73,7 +73,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(g_CDemonSetPtr,this_ptr->num_points);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
             (g_CDemonSetPtr,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
-             g_CVector3i_ARRAY_01cce554,3,(CVector3i *)0x0);
+             g_MorphVertexBuffer,3,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
             (g_CDemonRenderer_PTR_005ae704,local_20);
   return;

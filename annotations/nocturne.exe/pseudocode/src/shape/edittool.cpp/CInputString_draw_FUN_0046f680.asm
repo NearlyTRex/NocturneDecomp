@@ -19,9 +19,9 @@
 ;   TerminatedCString s_CInputString_draw_string_0057e59a
 ;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   int g_INT_01bcd9bc
-;   int g_INT_01bcdddc
-;   int g_INT_01bcdde0
-;   int g_INT_01bcdde4
+;   int g_SelectionColor
+;   int g_TextColor
+;   int g_CursorColor
 ;   int g_ActiveRenderColor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046f70d
     PUSH -0x1                           ; 0046f710
-    MOV ECX,dword ptr [0x01bcdde0]      ; 0046f712 | g_INT_01bcdde0
+    MOV ECX,dword ptr [0x01bcdde0]      ; 0046f712 | g_TextColor
     PUSH ECX                            ; 0046f718
     PUSH EBP                            ; 0046f719
     PUSH EDI                            ; 0046f71a
@@ -131,7 +131,7 @@ section .text
     MOV EDX,ESI                         ; 0046f774
     MOV ESI,EAX                         ; 0046f776
     MOV EAX,EDX                         ; 0046f778
-    MOV EDX,dword ptr [0x01bcdddc]      ; 0046f77a | g_INT_01bcdddc
+    MOV EDX,dword ptr [0x01bcdddc]      ; 0046f77a | g_SelectionColor
         ;   Label: LAB_0046f77a
     PUSH EDX                            ; 0046f780
     MOV ECX,dword ptr [ESP + 0x4]       ; 0046f781
@@ -146,7 +146,7 @@ section .text
         ;   XREF to: 0046f6b1 (UNCONDITIONAL_JUMP)  ; LAB_0046f6b1
     PUSH -0x1                           ; 0046f796
         ;   Label: LAB_0046f796
-    MOV EAX,[0x01bcdde0]                ; 0046f798 | g_INT_01bcdde0
+    MOV EAX,[0x01bcdde0]                ; 0046f798 | g_TextColor
     PUSH EAX                            ; 0046f79d
     PUSH EBP                            ; 0046f79e
     PUSH EDI                            ; 0046f79f
@@ -155,7 +155,7 @@ section .text
     PUSH EDX                            ; 0046f7a7
     JMP 0x0046f735                      ; 0046f7a8
         ;   XREF to: 0046f735 (UNCONDITIONAL_JUMP)  ; LAB_0046f735
-    MOV EAX,[0x01bcdde4]                ; 0046f7aa | g_INT_01bcdde4
+    MOV EAX,[0x01bcdde4]                ; 0046f7aa | g_CursorColor
         ;   Label: LAB_0046f7aa
     MOV [0x01c00c70],EAX                ; 0046f7af | g_ActiveRenderColor
     MOV EAX,dword ptr [EBX + 0x134]     ; 0046f7b4

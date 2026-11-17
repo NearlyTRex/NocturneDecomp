@@ -391,7 +391,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else if (hand_index == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-                (&local_ae0,&g_CVector3f_0264be20,&g_CVector3f_0265370c);
+                (&local_ae0,&g_StrangerWeaponEulerMinusX,&g_ZeroVector);
       pCVar3 = &local_ae0;
       pCVar9 = local_14;
       core_xform_cpp_buildRotationX_FUN_00593240(1.5707964,&local_6f0);
@@ -432,7 +432,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-                (&local_4e0,&g_CVector3f_0264be14,&g_CVector3f_0265370c);
+                (&local_4e0,&g_StrangerWeaponEulerPlusX,&g_ZeroVector);
       pCVar3 = &local_4e0;
       pCVar8 = local_14;
       core_xform_cpp_buildRotationX_FUN_00593240(1.5707964,&local_e10);
@@ -482,13 +482,13 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   local_54.z = local_270.x;
   if ((this_ptr->base).base.layer_action_index == 0xe) {
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,local_20 + g_INT_ARRAY_0264be30[0xe],&local_24c);
+              (&g_ZeroVector,local_20 + g_StrangerIndices[0xe],&local_24c);
     local_18c = local_24c.x;
     local_188[(uint)bVar12 * -2] = *(float *)((int)&local_24c + (uint)bVar12 * -8 + 4);
     local_188[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
          *(float *)((int)&local_24c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,local_20 + g_INT_ARRAY_0264be30[0xd],&local_228);
+              (&g_ZeroVector,local_20 + g_StrangerIndices[0xd],&local_228);
     local_74[2] = local_228.x;
     local_74[(uint)bVar12 * -2 + 3] = *(float *)((int)&local_228 + (uint)bVar12 * -8 + 4);
     local_74[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
@@ -548,7 +548,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     goto LAB_005686a7;
   }
   local_18 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                       (carried_actor,g_CDemonActorType_007bcc4c.name_hash);
+                       (carried_actor,g_CLightActorClassInfo.name_hash);
   if (local_18 != (CDemonActor *)0x0) {
     (*((carried_actor->vtable)._ub)->getBoundingBox)(carried_actor,in_stack_fffff160);
     pfVar6 = local_318;

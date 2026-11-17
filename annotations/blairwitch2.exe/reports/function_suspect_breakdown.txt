@@ -4,32 +4,32 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 3313 functions
-  1 suspects: 515 functions
-  2 suspects: 325 functions
-  3 suspects: 193 functions
-  4 suspects: 147 functions
-  5 suspects: 111 functions
-  6 suspects: 103 functions
+  0 suspects: 3329 functions
+  1 suspects: 519 functions
+  2 suspects: 323 functions
+  3 suspects: 192 functions
+  4 suspects: 149 functions
+  5 suspects: 109 functions
+  6 suspects: 97 functions
   7 suspects: 77 functions
-  8 suspects: 62 functions
-  9 suspects: 64 functions
-  10 suspects: 55 functions
-  11 suspects: 36 functions
+  8 suspects: 61 functions
+  9 suspects: 63 functions
+  10 suspects: 53 functions
+  11 suspects: 35 functions
   12 suspects: 39 functions
-  13 suspects: 34 functions
-  14 suspects: 31 functions
-  15 suspects: 21 functions
+  13 suspects: 32 functions
+  14 suspects: 28 functions
+  15 suspects: 22 functions
   16 suspects: 33 functions
   17 suspects: 33 functions
   18 suspects: 33 functions
   19 suspects: 19 functions
   20 suspects: 10 functions
-  21 suspects: 17 functions
+  21 suspects: 18 functions
   22 suspects: 22 functions
-  23 suspects: 12 functions
-  24 suspects: 18 functions
-  25 suspects: 15 functions
+  23 suspects: 11 functions
+  24 suspects: 17 functions
+  25 suspects: 14 functions
   26 suspects: 20 functions
   27 suspects: 14 functions
   28 suspects: 15 functions
@@ -75,12 +75,12 @@ SUSPECT COUNT DISTRIBUTION
   69 suspects: 3 functions
   70 suspects: 3 functions
   71 suspects: 1 functions
-  72 suspects: 1 functions
+  72 suspects: 2 functions
   73 suspects: 3 functions
   74 suspects: 3 functions
   75 suspects: 1 functions
   76 suspects: 1 functions
-  78 suspects: 3 functions
+  78 suspects: 2 functions
   79 suspects: 1 functions
   80 suspects: 2 functions
   83 suspects: 1 functions
@@ -106,6 +106,7 @@ SUSPECT COUNT DISTRIBUTION
   124 suspects: 1 functions
   127 suspects: 1 functions
   128 suspects: 1 functions
+  129 suspects: 1 functions
   131 suspects: 1 functions
   140 suspects: 1 functions
   141 suspects: 1 functions
@@ -113,7 +114,6 @@ SUSPECT COUNT DISTRIBUTION
   145 suspects: 1 functions
   146 suspects: 1 functions
   148 suspects: 1 functions
-  149 suspects: 1 functions
   152 suspects: 2 functions
   181 suspects: 1 functions
   183 suspects: 1 functions
@@ -133,7 +133,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_strcpy] (83 functions)
+  [unrolled_strcpy] (84 functions)
   ------------------------------------------------------------
     core_skeleton.cpp_CDeformableModel_setModelName_FU ( 17 lines)
       do {...
@@ -161,13 +161,13 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     engine_ini.cpp_CIniFile_readIniHeader_FUN_004d89d0 ( 22 lines)
       do {...
-    core_sound.cpp_CSound_playAmbientSound_FUN_0055adc ( 22 lines)
-      do {...
     engine_texture.cpp_getCurrentTexture_FUN_005750e0  ( 22 lines)
       do {...
     core_dfilter.cpp_CDemonFilter_ctor_FUN_004477f0    ( 23 lines)
       do {...
     core_mission.cpp_CDemonMission_createFromSingleSet ( 23 lines)
+      do {...
+    core_sound.cpp_CSound_playAmbientSound_FUN_0055adc ( 23 lines)
       do {...
     engine_texture.cpp_CTextureCache_addTrueColorTextu ( 23 lines)
       do {...
@@ -205,6 +205,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_game.cpp_CGame_displayMessage_FUN_004b31a0    ( 27 lines)
       do {...
+    core_mission.cpp_CDemonMission_changeSetName_FUN_0 ( 27 lines)
+      do {...
     engine_pod.cpp_CPodFile_populateFileInfo_FUN_0051a ( 27 lines)
       do {...
     core_event.cpp_CEventList_evaluateExpression_FUN_0 ( 28 lines)
@@ -239,7 +241,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_morph.cpp_CMorphModel_findOrAddTexture_FUN_00 ( 38 lines)
       do {...
-    core_script.cpp_trimLine_FUN_00521070              ( 39 lines)
+    shape_edittool.cpp_CEdCheck_setupWithText_FUN_0048 ( 39 lines)
       do {...
     core_game.cpp_CGame_setStatusDisplay_FUN_004bb8d0  ( 40 lines)
       do {...
@@ -247,7 +249,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00510 ( 41 lines)
       do {...
-    shape_edittool.cpp_CEdCheck_setupWithText_FUN_0048 ( 42 lines)
+    core_script.cpp_trimLine_FUN_00521070              ( 41 lines)
       do {...
     core_actor.cpp_registerActorClass_FUN_0040c450     ( 43 lines)
       do {...
@@ -299,7 +301,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b6 ( 94 lines)
       do {...
-    core_game.cpp_CGame_runGameSession_FUN_004b6170    (379 lines)
+    core_game.cpp_CGame_runGameSession_FUN_004b6170    (380 lines)
       do {...
 
   [unresolved_funcptr] (76 functions)
@@ -307,19 +309,19 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_dosio.cpp_callRelativeFilePathHook_FUN_0046 (  6 lines)
       (*(code *)PTR_engine_dosio_cpp_getRelativeFilePath_FUN_00460...
     engine_mini3d.cpp_setTextureClamp_FUN_004f3440     (  8 lines)
-      (*(code *)g_PTR_0264bcc8)(clamp_u,clamp_v);...
+      (*(code *)g_APIDLL_selectTextureByHandle)(clamp_u,clamp_v);...
     engine_mini3d.cpp_resetTextureCache_FUN_004f3420   (  9 lines)
-      (*(code *)g_PTR_0264bcbc)();...
+      (*(code *)g_APIDLL_setTransform)();...
     engine_mini3d.cpp_getTextureHandle_FUN_004f3480    (  9 lines)
-      iVar1 = (*(code *)g_PTR_0264bcb4)();...
+      iVar1 = (*(code *)g_APIDLL_setLightVector)();...
     engine_mini3d.cpp_setAmbientLight_FUN_004f4e40     (  9 lines)
       (*(code *)g_PTR_0264bc80)(ambient);...
     engine_mini3d.cpp_resetDynamicLight_FUN_004f53d0   (  9 lines)
-      (*(code *)g_PTR_0264bcd0)();...
+      (*(code *)g_APIDLL_enableClipping)();...
     engine_mini3d.cpp_disableClipping_FUN_004f5d90     (  9 lines)
-      (*(code *)g_PTR_0264bcc4)(0);...
+      (*(code *)g_APIDLL_getTextureHandle)(0);...
     engine_mini3d.cpp_enableClipping_FUN_004f5dc0      (  9 lines)
-      (*(code *)g_PTR_0264bcc4)(1);...
+      (*(code *)g_APIDLL_getTextureHandle)(1);...
     engine_special.cpp_kill_FUN_0055f4d0               (  9 lines)
       (*(code *)g_PTR_0264bbbc)();...
     engine_special.cpp_beginScene_FUN_0055f590         (  9 lines)
@@ -327,7 +329,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_special.cpp_endScene_FUN_0055f5b0           (  9 lines)
       iVar1 = (*(code *)g_PTR_0264bbd4)();...
     engine_special.cpp_updateTextureBGRA_FUN_0055f710  (  9 lines)
-      iVar1 = (*(code *)g_PTR_0264bbec)(texture_info,g_INT_006141c...
+      iVar1 = (*(code *)g_PTR_0264bbec)(texture_info,g_CurrentText...
     engine_special.cpp_setMipMapLevel_FUN_0055f750     (  9 lines)
       iVar1 = (*(code *)g_PTR_0264bbf0)(mipmap_level);...
     engine_special.cpp_restoreVideoMode_FUN_0055f8c0   (  9 lines)
@@ -375,17 +377,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     support_codec.cpp_CAsciiArmor_encode_FUN_00434bb0  ( 10 lines)
       (**(code **)(*(int *)ostream + 4))(ostream,"!()*+0123456789A...
     engine_mini3d.cpp_lineListD3DTL_FUN_004f44d0       ( 10 lines)
-      (*(code *)g_PTR_0264bcb0)(vertices,vertex_count,g_BIT_INTEGE...
-    engine_special.cpp_selectTextureFromPalette_FUN_00 ( 10 lines)
-      iVar1 = (*(code *)g_PTR_0264bbe0)...
-    engine_special.cpp_updateTextureFromPalette_FUN_00 ( 10 lines)
-      iVar1 = (*(code *)g_PTR_0264bbe4)...
+      (*(code *)g_APIDLL_setLightConstants)(vertices,vertex_count,...
     engine_special.cpp_selectCard_FUN_005600c0         ( 10 lines)
       iVar1 = (*(code *)g_PTR_0264bc44)(card_index);...
     engine_special.cpp_buildCardList_FUN_005600e0      ( 10 lines)
       iVar1 = (*(code *)g_PTR_0264bc48)...
-    engine_special.cpp_lockFrameX_FUN_00560240         ( 10 lines)
-      if ((g_PTR_0264bc68 != (byte *)0x0) && (iVar1 = (*(code *)g_...
     support_codec.cpp_CAsciiArmor_flush_FUN_00434c00   ( 11 lines)
       (**(code **)(*(int *)ostream + 4))(ostream,"!()*+0123456789A...
     support_codec.cpp_CInStreamPipe_isOpen_FUN_0043518 ( 11 lines)
@@ -396,14 +392,20 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar1 = (*(code *)g_PTR_0264bbe0)...
     engine_special.cpp_updateTexture_FUN_0055f610      ( 11 lines)
       iVar1 = (*(code *)g_PTR_0264bbe4)...
+    engine_special.cpp_selectTextureFromPalette_FUN_00 ( 11 lines)
+      iVar1 = (*(code *)g_PTR_0264bbe0)...
+    engine_special.cpp_updateTextureFromPalette_FUN_00 ( 11 lines)
+      iVar1 = (*(code *)g_PTR_0264bbe4)...
     engine_special.cpp_setVideoModeX_FUN_005601c0      ( 11 lines)
       (iVar1 = (*(code *)g_PTR_0264bc60)(width,height,bits_per_pix...
+    engine_special.cpp_lockFrameX_FUN_00560240         ( 11 lines)
+      (iVar1 = (*(code *)g_APIDLL_getDisplayContext)(), iVar1 != 0...
     engine_special.cpp_setColorTable16_FUN_0055f890    ( 12 lines)
-      iVar1 = (*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_U...
+      iVar1 = (*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_C...
     engine_special.cpp_setFogColor_FUN_0055fe90        ( 12 lines)
       iVar1 = (*(code *)g_PTR_0264bc1c)(red,green,blue);...
     engine_texture.cpp_CTextureCache_selectTextureByHa ( 12 lines)
-      (*(code *)g_PTR_0264bcb8)(this_ptr->entries[(texture->base)....
+      (*(code *)g_APIDLL_setAmbientLight)(this_ptr->entries[(textu...
     engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0    ( 13 lines)
       chain = (SMRGLHeaderExtended *)(*(code *)g_ARRAY_PTR_006093c...
     support_codec.cpp_CAsciiUnarmor_decode_FUN_00434c9 ( 14 lines)
@@ -413,9 +415,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     support_codec.cpp_writeWholeBytesToStream_FUN_0043 ( 16 lines)
       iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,(char)bit...
     engine_mini3d.cpp_polyList2_FUN_004f3bb0           ( 16 lines)
-      (*(code *)g_PTR_0264bc8c)...
+      (*(code *)g_APIDLL_lockTexture)...
     engine_mini3d.cpp_polyListD3DL2_FUN_004f3e60       ( 16 lines)
-      (*(code *)g_PTR_0264bc98)...
+      (*(code *)g_APIDLL_setVideoModeX)...
     core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0     ( 17 lines)
       (**(code **)(*(int *)*puVar1 + 8))((int *)*puVar1);...
     core_bmppuzzl.cpp_restorePuzzleGraphics_FUN_0059ab ( 17 lines)
@@ -433,7 +435,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0   ( 21 lines)
       (*(code *)g_PTR_0264bc74)(left,top,right,bottom,g_FLOAT_01d0...
     engine_mini3d.cpp_setFog_FUN_004f3600              ( 22 lines)
-      (*(code *)g_PTR_0264bccc)(g_FLOAT_01d09900,g_FLOAT_01d09904,...
+      (*(code *)g_APIDLL_enableCulling)...
     support_codec.cpp_CLZWDictionary_writeCodeSequence ( 23 lines)
       iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,(char)thi...
     engine_mini3d.cpp_setLightVector_FUN_004f4e70      ( 26 lines)
@@ -443,16 +445,16 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     support_codec.cpp_CLZWDictionary_resumeCodeSequenc ( 31 lines)
       iVar2 = (**(code **)(*(int *)ostream + 4))(ostream,(char)thi...
     engine_texture.cpp_CTextureCache_freeTextures_FUN_ ( 31 lines)
-      (*(code *)g_PTR_0264bcbc)();...
-    engine_mini3d.cpp_drawTransformedList_FUN_004f6d00 ( 47 lines)
-      (*(code *)g_PTR_0264bca0)...
-    wincore_wddvmem.cpp_setupColorPalette_FUN_00589430 ( 49 lines)
-      (*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_USHORT_AR...
+      (*(code *)g_APIDLL_setTransform)();...
+    engine_mini3d.cpp_drawTransformedList_FUN_004f6d00 ( 46 lines)
+      (*(code *)g_APIDLL_lockFrameX)...
+    wincore_wddvmem.cpp_setupColorPalette_FUN_00589430 ( 48 lines)
+      (*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_ColorTabl...
     engine_mini3d.cpp_addDynamicLight_FUN_004f5400     ( 56 lines)
-      (*(code *)g_PTR_0264bcd4)...
+      (*(code *)g_APIDLL_setTextureClamp)...
     wincore_winrun.cpp_getJoystickState_FUN_00590060   ( 65 lines)
-      (*(code *)g_PTR_026656bc)(0,&local_50);...
-    engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004 ( 74 lines)
+      (*(code *)g_joyGetPosEx)(0,&local_50);...
+    engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004 ( 75 lines)
       code *pcVar2;...
     core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0 (133 lines)
       (**(code **)(((SPageResourceBitmap *)&resource_00->base)->ba...
@@ -675,7 +677,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_mobster.cpp_CMobster_processDismemberment_FUN (131 lines)
       /* WARNING: Type propagation algorithm not settling */...
 
-  [pointer_cast] (34 functions)
+  [pointer_cast] (36 functions)
   ------------------------------------------------------------
     core_dcamera.cpp_CDemonCamera_blendLightmapPixel32 ( 14 lines)
       (uint *)((int)this_ptr->framebuffer_aligned +...
@@ -689,6 +691,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),...
     core_vampboss.cpp_CVampireBoss_summonFireEmitters_ ( 20 lines)
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),...
+    core_dcamera.cpp_CDemonCamera_sampleFramebufferPix ( 21 lines)
+      uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
     core_flies.cpp_findFliesByFollowActor_FUN_004a79a0 ( 21 lines)
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),...
     engine_drender.cpp_CDemonRenderer_getCameraOriginW ( 23 lines)
@@ -707,26 +711,28 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pfVar3 = (float *)((int)output + (uint)bVar4 * -8 + 4);...
     shape_edittool.cpp_CStrList_clear_FUN_00480e10     ( 25 lines)
       ptr = *(void **)((int)this_ptr->data_array + iVar2);...
-    wincore_wddvmem.cpp_populateColorTable_FUN_004d0c9 ( 27 lines)
-      *(uint *)((int)g_UINT_ARRAY_01c34b10 + iVar3) = uVar2;...
+    wincore_wddvmem.cpp_populateColorTable_FUN_004d0c9 ( 26 lines)
+      *(uint *)((int)g_ColorTable32 + iVar3) = uVar2;...
     core_dcamera.cpp_CDemonCamera_convertPaletteToDisp ( 29 lines)
-      *(uint *)((int)g_UINT_ARRAY_00b65f9c + iVar3) = uVar2;...
+      *(uint *)((int)g_CameraConvertedPalette + iVar3) = uVar2;...
     core_fldnotes.cpp_STextView_newLine_FUN_004a2bf0   ( 29 lines)
       piVar1 = *(int **)((int)this_ptr->pages[this_ptr->page_index...
     core_bwspart.cpp_CSimpleParticleSystem_render_FUN_ ( 29 lines)
       while (particle = (int *)((int)this_ptr->particles + iVar2),...
     core_fldnotes.cpp_SNotesMap_applyReveal_FUN_004a3f ( 30 lines)
       (uint)*(byte *)(iVar3 + (int)this_ptr->saved_alpha)) / 0xff)...
+    core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL ( 32 lines)
+      *(int *)((int)this_ptr->poly_vert_list->vertices + iVar3 + -...
     core_bwspart.cpp_CSimpleParticleSystem_ctorCapacit ( 32 lines)
       core_bwspart_cpp_initSimpleParticle_FUN_005a84c0((void *)((i...
     engine_2d.c_initGraphicsSystem_FUN_00401010        ( 33 lines)
-      *(int *)((int)g_UINT_ARRAY_01c35e70 + iVar2) = (int)(0xfffff...
-    core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL ( 33 lines)
-      *(int *)((int)this_ptr->poly_vert_list->vertices + iVar3 + -...
+      *(int *)((int)g_ReciprocalLookupTable + iVar2) = (int)(0xfff...
     core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_ ( 34 lines)
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),...
     core_dcamera.cpp_CDemonCamera_generateGammaPalette ( 34 lines)
-      *(uint *)((int)g_UINT_ARRAY_00b6639c + iVar3) =...
+      *(uint *)((int)g_LightmapTexturePalette + iVar3) =...
+    core_bwspart.cpp_CSimpleParticleSystem_process_FUN ( 34 lines)
+      while (particle = (int *)((int)this_ptr->particles + iVar2),...
     sound_sndmain.cpp_CSfxSample_lock_FUN_0054daf0     ( 36 lines)
       pvVar2 = (void *)(iVar1 + (int)this_ptr->sample_data);...
     core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004c ( 42 lines)
@@ -734,12 +740,12 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_dcube.cpp_CDemonCube_testCylinderCollision_FU ( 45 lines)
       ((STriangleRef *)...
     core_fire.cpp_CShell_onCollision_FUN_0049b890      ( 49 lines)
-      (*(uint *)((int)g_UINT_ARRAY_01c3f8d0 + iVar4));...
+      (*(uint *)((int)g_ShellBounceSoundHandles + iVar4));...
     wincore_winrun.cpp_saveControllerSettings_FUN_0059 ( 54 lines)
       (ini,acStack_120,*(int *)((int)g_INT_ARRAY_02665974 + iStack...
     sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0 ( 55 lines)
       *(uint *)((int)&(this_ptr->options).playback_position + 4) =...
-    core_lever.cpp_CLever_process_FUN_004e1d70         ( 67 lines)
+    core_lever.cpp_CLever_process_FUN_004e1d70         ( 65 lines)
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),...
     core_bodypart.cpp_CBodyPart_archive_FUN_00415f50   ( 83 lines)
       *(uint *)((int)pSVar1->vertices + iVar2 + -0x14) = 3;...
@@ -829,16 +835,16 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (this_ptr->position).x = position->x;...
     core_charactr.cpp_CCharacter_setPhantomEyes_FUN_00 ( 17 lines)
       (this_ptr->eye_glow_color).x = color.x;...
+    core_drip.cpp_CDrip_setup_FUN_0046cf50             ( 17 lines)
+      (this_ptr->base).location.position.x = (this_ptr->home_pos)....
     core_dglobe.cpp_CDemonGlobe_setPosition_FUN_004488 ( 18 lines)
       (this_ptr->position).x = position->x;...
-    core_drip.cpp_CDrip_setup_FUN_0046cf50             ( 18 lines)
-      (this_ptr->base).location.position.x = (this_ptr->home_pos)....
     core_fire.cpp_CShell_setup_FUN_0049b660            ( 18 lines)
       (this_ptr->euler_angles).x = euler_angles->x;...
     core_manpuz.cpp_CMirrorHack_updateInteraction_FUN_ ( 20 lines)
       (pUVar1->vec).x = (user_orientation->vec).x;...
     core_mirror.cpp_CMirror_renderMirroredPrimitive_FU ( 21 lines)
-      g_SMRGLPrimitiveQuadIndex_01d182c8.base.base.count = (prim->...
+      g_MirrorTempPrimitive.base.base.count = (prim->base).count;...
     core_charactr.cpp_CCharacter_kill_FUN_00423900     ( 24 lines)
       SStack_44.impact_point.x = damage_direction->x;...
     core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0 ( 25 lines)
@@ -859,7 +865,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (this_ptr->burn_direction).x = direction->x;...
     core_box.cpp_CBox_setupCorners_FUN_005b1c80        ( 94 lines)
       (this_ptr->extents).x = extents->x;...
-    core_actor.cpp_CDemonActor_handleFootstep_FUN_0040 (109 lines)
+    core_actor.cpp_CDemonActor_handleFootstep_FUN_0040 (108 lines)
       CStack_6c.x = position->x;...
 
   [unrolled_memset] (20 functions)
@@ -878,7 +884,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       this_ptr->bpp = 0;...
     core_bugs.cpp_normalizeVector_FUN_00421fe0         ( 16 lines)
       dest->z = 0.0;...
-    core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0      ( 18 lines)
+    core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0      ( 17 lines)
       (this_ptr->toss_velocity).z = 0.0;...
     core_icepick.cpp_CIcePick_ctor_FUN_004d4990        ( 18 lines)
       (pCVar1->head_look_euler).z = 0.0;...
@@ -929,18 +935,18 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_8 = &stack0x0000000c;...
     shape_edittool.cpp_CEditorTools_showError_FUN_0047 ( 10 lines)
       local_8 = &stack0x0000000c;...
+    shape_edittool.cpp_CEditorTools_showDestructiveAct ( 16 lines)
+      local_8 = &stack0x0000000c;...
     shape_edittool.cpp_CEditorTools_showYesNoDialog_FU ( 16 lines)
       puStack_8 = &stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_showDestructiveAct ( 17 lines)
-      local_8 = &stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_displayCenteredSta ( 23 lines)
+    shape_edittool.cpp_CEditorTools_displayCenteredSta ( 22 lines)
       local_14 = &stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_drawWindowStatusMe ( 23 lines)
+    shape_edittool.cpp_CEditorTools_drawWindowStatusMe ( 22 lines)
       puStack_14 = &stack0x0000000c;...
     shape_edittool.cpp_CEditorTools_showYesAllNoCancel ( 31 lines)
       puStack_8 = &stack0x0000000c;...
     sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0    ( 32 lines)
-      (g_CSoundDevice_PTR_02648e80,(CSampleInfo *)&stack0x00000004...
+      (g_CSoundDevicePtr,(CSampleInfo *)&stack0x00000004);...
 
   [unrolled_strlen] (17 functions)
   ------------------------------------------------------------
@@ -976,7 +982,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     shape_edittool.cpp_CStrList_copyToClipboard_FUN_00 ( 49 lines)
       do {...
-    shape_edittool.cpp_CPickList_handleInput_FUN_00482 (179 lines)
+    shape_edittool.cpp_CPickList_handleInput_FUN_00482 (169 lines)
       do {...
 
   [warning_unreachable] (14 functions)
@@ -1042,13 +1048,13 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_melee.cpp_CMelee_playAttackHitEffects_FUN_004 ( 23 lines)
       (this_ptr,0x14,(int)pCVar1[0xe].particle_systems[3].owner);...
     engine_special.cpp_fillDepthRegion_FUN_0055b342    ( 25 lines)
-      pdVar4 = (double *)((uint)(g_UINT_PTR_ARRAY_01c2b64c[top] + ...
+      pdVar4 = (double *)((uint)(g_ZBufferScanlineArray[top] + lef...
     sound_snddx.cpp_CDirectSoundDevice_unlockSample_FU ( 26 lines)
       ((int)g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[buffer_id * 6 ...
-    shape_edittool.cpp_CEdButton_wasClicked_FUN_004852 ( 33 lines)
-      (g_PTR_01c26410 = (byte *)((uint)g_PTR_01c26410 ^ (uint)this...
+    shape_edittool.cpp_CEdButton_wasClicked_FUN_004852 ( 32 lines)
+      (g_ActiveControl = (byte *)((uint)g_ActiveControl ^ (uint)th...
     shape_edittool.cpp_CEdCheck_handleInput_FUN_004857 ( 41 lines)
-      (g_PTR_01c26410 = (byte *)((uint)g_PTR_01c26410 ^ (uint)this...
+      (g_ActiveControl = (byte *)((uint)g_ActiveControl ^ (uint)th...
     core_charactr.cpp_CCharacter_setWalkTarget_FUN_004 ( 64 lines)
       (this_ptr_00,state_name,(int)pCVar6);...
     core_dcamera.cpp_CDemonCamera_testVisibility_FUN_0 ( 80 lines)
@@ -1095,15 +1101,17 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(int *)(&DAT_026672ac + iVar4) = iVar3;...
     engine_mini3d.cpp_drawSurfaceTriangle_FUN_004f8330 ( 62 lines)
       v1_00 = (float *)&DAT_01d0bbd8;...
-    core_dcamera.cpp_processCoronaScanline_FUN_00440a5 ( 87 lines)
+    core_dcamera.cpp_processCoronaScanline_FUN_00440a5 ( 85 lines)
       piVar6 = (int *)(&DAT_0083c7d4 + x_start * 0xc + row * 0xf00...
 
-  [unknown_field] (6 functions)
+  [unknown_field] (7 functions)
   ------------------------------------------------------------
     sound_sndmain.cpp_setNextSfxDelay_FUN_00550360     (  5 lines)
-      g_CSfxOptions_ARRAY_02641620[g_INT_0264161c].delay_remaining...
+      g_CSfxOptions_ARRAY_02641620[g_SfxLastSlot].delay_remaining ...
     support_trisock.cpp_CSocket_bindSocket_FUN_005790a ( 13 lines)
       local_10.sa_data._0_2_ = htons(port);...
+    engine_drender.cpp_CDemonRenderer_renderPerspectiv ( 20 lines)
+      g_RenderStateFlags.dword._1_3_ = 0;...
     engine_2d.c_getInputWithPrompt_FUN_00403310        ( 39 lines)
       uStack_14._0_1_ = (char)uVar2;...
     core_skeleton.cpp_loadSkeleton_FUN_00548fc0        ( 44 lines)
@@ -1111,7 +1119,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_skeleton.cpp_getDeformableModel_FUN_00548e80  ( 49 lines)
       iVar3 = g_CHAR_ARRAY_02177ff4._0_4_;...
     core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos ( 80 lines)
-      g_CVector3f_ARRAY_ARRAY_00a005d4[0x92][0xac].x._0_1_) != 0))...
+      g_PrecomputedSurfaceNormals[0x92][0xac].x._0_1_) != 0)) {...
 
   [warning_overlapping_globals] (6 functions)
   ------------------------------------------------------------
@@ -1138,7 +1146,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 0 params but call sites push 1 (1 missing)...
     core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0    (  6 lines)
       Function declares 1 params but call sites push 2 (1 missing)...
-    core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c ( 47 lines)
+    core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c ( 46 lines)
       Function declares 1 params but call sites push 2 (1 missing)...
 
   [alloc_magic_size] (5 functions)
@@ -1164,19 +1172,19 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     engine_model.c_loadModelFile_FUN_00500720          ( 66 lines)
       do {...
-    core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0  ( 97 lines)
+    core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0  ( 96 lines)
       do {...
 
   [fast_inv_sqrt_inline] (4 functions)
   ------------------------------------------------------------
     core_cloth.cpp_fastInvSqrt_FUN_00534c80            (  4 lines)
-      return (float)(g_INT_01caf5b8 - ((int)dist_sq >> 1));...
+      return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));...
     core_cloth.cpp_applyLightAttenuation_FUN_005b1b40  (  9 lines)
-      fVar1 = (float)(g_INT_01caf5b8 - ((int)(v->z * v->z + v->x *...
-    core_dcamera.cpp_CDemonCamera_calculateAttenuatedD ( 33 lines)
-      fVar8 = (float)(g_INT_01caf5b8 - ((int)(fVar6 * fVar6 + fVar...
+      fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v-...
+    core_dcamera.cpp_CDemonCamera_calculateAttenuatedD ( 34 lines)
+      fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + ...
     core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex ( 34 lines)
-      fVar1 = (float)(g_INT_01caf5b8 - ((int)fVar1 >> 1));...
+      fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar1 >> 1));...
 
   [preinc_loop_idiom] (4 functions)
   ------------------------------------------------------------
@@ -1184,7 +1192,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_skeleton.cpp_CDeformableModelInstance_clearAl ( 12 lines)
       do {...
-    core_inv.cpp_CInventory_initialize_FUN_004da900    ( 24 lines)
+    core_inv.cpp_CInventory_initialize_FUN_004da900    ( 25 lines)
       do {...
     core_inv.cpp_CInventory_clear_FUN_004da860         ( 29 lines)
       do {...
@@ -1201,16 +1209,16 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   [fast_sqrt_inline] (2 functions)
   ------------------------------------------------------------
     core_chain.cpp_fastSqrt_FUN_00534c70               (  4 lines)
-      return (float)(((int)value >> 1) + g_INT_01caf5b4);...
+      return (float)(((int)value >> 1) + g_FastSqrtMagic);...
     core_cloth.cpp_vectorLengthFast_FUN_005b1b10       (  4 lines)
       return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->...
 
   [signed_shift_global_idiom] (2 functions)
   ------------------------------------------------------------
     core_fire.cpp_updateTextureAnimCounts_FUN_00498c30 ( 12 lines)
-      iVar1 = g_INT_01c2a370 >> 0x1f;...
+      iVar1 = g_GlobalDeltaTimeInt >> 0x1f;...
     core_fire.cpp_CRock_process_FUN_00496620           ( 29 lines)
-      iVar8 = g_INT_01c2a370 >> 0x1f;...
+      iVar8 = g_GlobalDeltaTimeInt >> 0x1f;...
 
   [pointer_stride_bytecount] (2 functions)
   ------------------------------------------------------------
@@ -1232,12 +1240,12 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   [raw_address_pointer_store] (1 functions)
   ------------------------------------------------------------
     sound_sndmain.cpp_setNextSfxUserData_FUN_005502b0  ( 10 lines)
-      *(void **)(g_INT_0264161c * 0x60 + 0x2641664 + index * 4) = ...
+      *(void **)(g_SfxLastSlot * 0x60 + 0x2641664 + index * 4) = u...
 
   [displaced_global_access] (1 functions)
   ------------------------------------------------------------
     wincore_winrun.cpp_enqueueInput_FUN_0058eb70       ( 13 lines)
-      // 0058eb82: MOV dword ptr [EDX*0x4 + 0x2662d84],EBX  ; g_IN...
+      // 0058eb82: MOV dword ptr [EDX*0x4 + 0x2662d84],EBX  ; g_Us...
 
   [builtin_function] (1 functions)
   ------------------------------------------------------------
@@ -1262,11 +1270,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   [flattened_array_index] (1 functions)
   ------------------------------------------------------------
     core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndC ( 37 lines)
-      g_CHAR_ARRAY_ARRAY_00b07f58[0][iVar1] = '\0';...
+      g_CoronaBlurWorkBuffer[0][iVar1] = '\0';...
 
   [derived_field_index_pun] (1 functions)
   ------------------------------------------------------------
-    core_filmreel.cpp_CFilmProjector_process_FUN_00492 ( 52 lines)
+    core_filmreel.cpp_CFilmProjector_process_FUN_00492 ( 51 lines)
       (g_CFilterFXPtr,(char *)&pCVar3[1].particle_systems[0].fade_...
 
   [bitcast_double_pair] (1 functions)
@@ -1277,10 +1285,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
 ========================================================================================================================
-  sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_00557b60
-    File: sound/sndwav.cpp, Lines: 5, Types: ['signed_shift_global_idiom']
-  sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_00558160
-    File: sound/sndwav.cpp, Lines: 5, Types: ['signed_shift_global_idiom']
   core_bodypart.cpp_SBodyPartFire_dtor_FUN_00417cd0
     File: core/bodypart.cpp, Lines: 6, Types: ['negative_offset', 'unnamed_field']
   core_dracbrid.cpp_SFreaky_ctor_FUN_00465c30
@@ -1295,10 +1299,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mirror.cpp, Lines: 6, Types: ['pointer_cast', 'pointer_truncation']
   core_skeleton.cpp_SVert_ctor_FUN_00549310
     File: core/skeleton.cpp, Lines: 6, Types: ['pointer_cast', 'pointer_truncation']
+  sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_00557b60
+    File: sound/sndwav.cpp, Lines: 6, Types: ['signed_shift_global_idiom']
+  sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_00558160
+    File: sound/sndwav.cpp, Lines: 6, Types: ['signed_shift_global_idiom']
   core_cloth.cpp_SClothVertex_ctor_FUN_005b1ba0
     File: core/cloth.cpp, Lines: 6, Types: ['pointer_cast', 'pointer_truncation']
-  support_codec.cpp_CCheesyCipher_setKey_FUN_00434d30
-    File: support/codec.cpp, Lines: 7, Types: ['unnamed_param']
   engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80
     File: engine/ini.cpp, Lines: 7, Types: ['pointer_cast', 'unresolved_funcptr']
   engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30
@@ -1331,14 +1337,16 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/set.cpp, Lines: 9, Types: ['displaced_global_access', 'wrong_global']
   support_trstream.cpp_CInStreamFile_getChar_FUN_0057cf20
     File: support/trstream.cpp, Lines: 9, Types: ['pointer_cast', 'unresolved_funcptr']
+  support_trstream.cpp_CInStreamMemory_open_FUN_0057d800
+    File: support/trstream.cpp, Lines: 9, Types: ['pointer_cast', 'unresolved_funcptr']
+  support_trstream.cpp_CInStreamMemory_openOwned_FUN_0057d830
+    File: support/trstream.cpp, Lines: 9, Types: ['pointer_cast', 'unresolved_funcptr']
   core_basicene.cpp_CBasicEnemy_resetInitialPos_FUN_005a0240
     File: core/basicene.cpp, Lines: 9, Types: ['unrolled_memcpy', 'warning_type_propagation']
   core_mine.cpp_CSpiritMine_renderTransparent_FUN_005ad910
     File: core/mine.cpp, Lines: 9, Types: ['stack_param']
   support_codec.cpp_CCheesyCipher_ctor_FUN_00434ce0
     File: support/codec.cpp, Lines: 10, Types: ['stack_param']
-  core_construc.cpp_CConstruct_getCollisionType_FUN_00438370
-    File: core/construc.cpp, Lines: 10, Types: ['unnamed_param']
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf
     File: cockpit/drawsurf.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN
@@ -1351,10 +1359,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/font.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
   engine_mini3d.cpp_free32_FUN_004f5f70
     File: engine/mini3d.cpp, Lines: 10, Types: ['pointer_cast']
-  core_moon.cpp_CMoon_update_FUN_005024a0
-    File: core/moon.cpp, Lines: 10, Types: ['unnamed_param']
-  core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e88
-    File: core/basicene.cpp, Lines: 10, Types: ['unnamed_param']
+  support_trstream.cpp_COutStreamMemory_open_FUN_0057e110
+    File: support/trstream.cpp, Lines: 10, Types: ['pointer_cast', 'unresolved_funcptr']
   core_actor.cpp_initTransformCache_FUN_00408750
     File: core/actor.cpp, Lines: 11, Types: ['unrolled_memset']
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVarian
@@ -1383,8 +1389,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/sound.cpp, Lines: 12, Types: ['stack_ref', 'tautological_addr_guard']
   core_trash.cpp_CTrash_ctor_FUN_00576930
     File: core/trash.cpp, Lines: 12, Types: ['negative_offset']
-  core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0
-    File: core/bwspart.cpp, Lines: 12, Types: ['unnamed_param']
   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_004
     File: core/actor.cpp, Lines: 13, Types: ['unrolled_memcpy']
   support_codec.cpp_CCodec_processBuffer_FUN_00434070
@@ -1401,12 +1405,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/manpuz.cpp, Lines: 13, Types: ['negative_offset']
   core_trap.cpp_CTrap_ctor_FUN_00576450
     File: core/trap.cpp, Lines: 13, Types: ['negative_offset']
-  support_trstream.cpp_COutStreamFile_putChar_FUN_0057dc70
-    File: support/trstream.cpp, Lines: 13, Types: ['unnamed_param']
   core_goggles.cpp_CGoggles_ctor_FUN_0059c060
     File: core/goggles.cpp, Lines: 13, Types: ['negative_offset']
-  core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
-    File: core/bwspart.cpp, Lines: 13, Types: ['unnamed_param']
   core_battery.cpp_CBattery_ctor_FUN_00414720
     File: core/battery.cpp, Lines: 14, Types: ['negative_offset']
   core_crate.cpp_CCrate_ctor_FUN_00439d60
@@ -1419,8 +1419,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/gabriela.cpp, Lines: 14, Types: ['suspect_float']
   core_keyactor.cpp_CKeyActor_ctor_FUN_004df140
     File: core/keyactor.cpp, Lines: 14, Types: ['negative_offset']
-  core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0054
-    File: core/skeleton.cpp, Lines: 15, Types: ['pointer_cast', 'pointer_truncation']
   engine_texture.cpp_CTextureCache_uploadTexture_FUN_00574a80
     File: engine/texture.cpp, Lines: 15, Types: ['unresolved_funcptr']
   support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_0057de80
@@ -1431,6 +1429,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 16, Types: ['pointer_cast']
   core_path.cpp_CPathMap_reset_FUN_00513eb0
     File: core/path.cpp, Lines: 16, Types: ['unrolled_memset']
+  core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0054
+    File: core/skeleton.cpp, Lines: 16, Types: ['pointer_cast', 'pointer_truncation']
   core_sound.cpp_CSound_shutdown_FUN_0055a360
     File: core/sound.cpp, Lines: 16, Types: ['pointer_cast', 'pointer_truncation']
   core_actor.cpp_syncActorTypeIDs_FUN_0040c920
@@ -1483,10 +1483,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/3d.c, Lines: 22, Types: ['sign_compare_idiom']
   sound_sndmain.cpp_killSfxByName_FUN_005518e0
     File: sound/sndmain.cpp, Lines: 22, Types: ['pointer_cast']
+  sound_sndwav.cpp_writeWavInBuffer_FUN_00558190
+    File: sound/sndwav.cpp, Lines: 22, Types: ['signed_shift_global_idiom']
   core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110
     File: core/sound.cpp, Lines: 22, Types: ['pointer_cast', 'pointer_truncation']
   support_trisock.cpp_CSocket_getSocketName_FUN_00579430
     File: support/trisock.cpp, Lines: 22, Types: ['pointer_cast', 'pointer_truncation']
+  support_trstream.cpp_CInStreamMemory_seek_FUN_0057d710
+    File: support/trstream.cpp, Lines: 22, Types: ['concat_reconstruction']
   core_bmppuzzl.cpp_processActivePuzzle_FUN_0059ac60
     File: core/bmppuzzl.cpp, Lines: 22, Types: ['unresolved_funcptr']
   core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0
@@ -1501,6 +1505,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/manpuz.cpp, Lines: 23, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0
     File: core/mission.cpp, Lines: 23, Types: ['pointer_cast', 'unresolved_funcptr']
+  sound_sndwav.cpp_CWavInDevice_reset_FUN_005583e0
+    File: sound/sndwav.cpp, Lines: 23, Types: ['pointer_cast']
   core_stairs.cpp_CStairs_getBoundingBox_FUN_00561fa0
     File: core/stairs.cpp, Lines: 23, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   support_trisock.cpp_buildSockaddrIn_FUN_00578ef0
@@ -1521,10 +1527,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/hero.cpp, Lines: 24, Types: ['pointer_cast', 'pointer_truncation']
   core_script.cpp_CScript_freeParsedLines_FUN_00521680
     File: core/script.cpp, Lines: 24, Types: ['pointer_cast', 'pointer_truncation']
-  sound_sndwav.cpp_writeWavInBuffer_FUN_00558190
-    File: sound/sndwav.cpp, Lines: 24, Types: ['signed_shift_global_idiom']
-  sound_sndwav.cpp_CWavInDevice_reset_FUN_005583e0
-    File: sound/sndwav.cpp, Lines: 24, Types: ['pointer_cast']
   core_barrier.cpp_CBarrier_getBoundingBox_FUN_00410d40
     File: core/barrier.cpp, Lines: 25, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_bodypart.cpp_CBodyPart_dtor_FUN_00415800
@@ -1559,16 +1561,22 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 27, Types: ['pointer_cast']
   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004724c0
     File: core/dtrace.cpp, Lines: 27, Types: ['pointer_cast', 'pointer_truncation']
+  shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_F
+    File: shape/edittool.cpp, Lines: 27, Types: ['pointer_cast']
   core_flies.cpp_CFlies_getBoundingBox_FUN_004a74e0
     File: core/flies.cpp, Lines: 27, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_00505f60
     File: sound/mp3.cpp, Lines: 27, Types: ['pointer_cast']
   core_set.cpp_CDemonSet_setGamma_FUN_00534580
     File: core/set.cpp, Lines: 27, Types: ['pointer_cast', 'suspect_float']
+  sound_sndwav.cpp_CWavOutDevice_reset_FUN_00557e90
+    File: sound/sndwav.cpp, Lines: 27, Types: ['pointer_cast']
   engine_special.cpp_drawPolyList3_FUN_0055fbd0
     File: engine/special.cpp, Lines: 27, Types: ['unresolved_funcptr']
   core_xform.cpp_buildZFlipMatrix_FUN_005935a0
     File: core/xform.cpp, Lines: 27, Types: ['unrolled_memcpy']
+  engine_3d.c_flushRenderQueue_FUN_00407980
+    File: engine/3d.c, Lines: 28, Types: ['pointer_cast', 'pointer_truncation']
   core_fire.cpp_CSmokeParticle_init_FUN_00493510
     File: core/fire.cpp, Lines: 28, Types: ['unrolled_memcpy']
   core_marquee.cpp_initializeTrigTables_FUN_004e8620
@@ -1577,12 +1585,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/path.cpp, Lines: 28, Types: ['unrolled_memcpy']
   core_script.cpp_readActorReference_FUN_0052a010
     File: core/script.cpp, Lines: 28, Types: ['pointer_cast', 'pointer_truncation']
-  sound_sndwav.cpp_CWavOutDevice_reset_FUN_00557e90
-    File: sound/sndwav.cpp, Lines: 28, Types: ['pointer_cast']
   core_weaver.cpp_CRobin_ctor_FUN_005a5e70
     File: core/weaver.cpp, Lines: 28, Types: ['unnamed_field', 'warning_type_propagation']
-  engine_3d.c_flushRenderQueue_FUN_00407980
-    File: engine/3d.c, Lines: 29, Types: ['pointer_cast', 'pointer_truncation']
   support_codec.cpp_CInStreamPipe_close_FUN_004351e0
     File: support/codec.cpp, Lines: 29, Types: ['unresolved_funcptr']
   engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760
@@ -1595,8 +1599,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/2d.c, Lines: 30, Types: ['pointer_cast', 'pointer_truncation']
   core_doc.cpp_CDoc_setCharacterModel_FUN_00450a60
     File: core/doc.cpp, Lines: 30, Types: ['unrolled_strcpy']
-  shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_F
-    File: shape/edittool.cpp, Lines: 30, Types: ['pointer_cast']
   core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_00488a
     File: core/enemy.cpp, Lines: 30, Types: ['derived_field_index_pun', 'pointer_cast']
   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005340b0
@@ -1629,14 +1631,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/mp3.cpp, Lines: 33, Types: ['pointer_cast']
   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0
     File: core/setcolid.cpp, Lines: 33, Types: ['unrolled_memcpy']
+  sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30
+    File: sound/sndmain.cpp, Lines: 33, Types: ['bitcast_double_pair', 'sub84_truncation']
   core_xform.cpp_quaternionToAxisAngle_FUN_00593d50
     File: core/xform.cpp, Lines: 33, Types: ['bit_int_float_compare', 'unrolled_memset']
   core_fldnotes.cpp_STextView_reset_FUN_004a27e0
     File: core/fldnotes.cpp, Lines: 34, Types: ['pointer_cast', 'unknown_param']
   core_hero.cpp_closestHeroToPoint_FUN_004ce050
     File: core/hero.cpp, Lines: 34, Types: ['pointer_cast', 'pointer_truncation']
-  sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30
-    File: sound/sndmain.cpp, Lines: 34, Types: ['bitcast_double_pair', 'sub84_truncation']
   support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240
     File: support/trisock.cpp, Lines: 34, Types: ['pointer_cast', 'pointer_truncation']
   core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers
@@ -1661,6 +1663,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/edittool.cpp, Lines: 36, Types: ['unrolled_strcpy', 'unrolled_strlen']
   core_inv.cpp_CInventory_ctor_FUN_004da760
     File: core/inv.cpp, Lines: 36, Types: ['preinc_loop_idiom']
+  core_lever.cpp_CLever_setState_FUN_004e1f70
+    File: core/lever.cpp, Lines: 36, Types: ['bit_int_float_compare', 'pointer_cast']
   engine_pod.cpp_CPod_remount_FUN_0051b1e0
     File: engine/pod.cpp, Lines: 36, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
   engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN
@@ -1681,8 +1685,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/game.cpp, Lines: 38, Types: ['pointer_cast', 'pointer_truncation']
   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760
     File: core/inv.cpp, Lines: 38, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
-  core_lever.cpp_CLever_setState_FUN_004e1f70
-    File: core/lever.cpp, Lines: 38, Types: ['bit_int_float_compare', 'pointer_cast']
   core_litecone.cpp_CLightCone_ctor_FUN_004e4190
     File: core/litecone.cpp, Lines: 38, Types: ['unrolled_strcpy']
   core_setutil.cpp_C3DSLight_apply_FUN_0053b810
@@ -1771,6 +1773,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: wincore/winrun.cpp, Lines: 47, Types: ['unrolled_strcpy']
   core_event.cpp_CEventList_setSfxHandle_FUN_00491960
     File: core/event.cpp, Lines: 48, Types: ['unrolled_strcpy', 'unrolled_strlen']
+  core_fldnotes.cpp_SPageResource_setLink_FUN_004a1ec0
+    File: core/fldnotes.cpp, Lines: 48, Types: ['unrolled_strcpy', 'unrolled_strlen']
   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610
     File: core/setdir.cpp, Lines: 50, Types: ['pointer_cast', 'shadow_pointer_walk']
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_0054e6e
@@ -1825,8 +1829,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/mini3d.cpp, Lines: 57, Types: ['unrolled_memcpy']
   core_mobster.cpp_CMobster_playTaunt_FUN_00500370
     File: core/mobster.cpp, Lines: 58, Types: ['pointer_cast', 'unnamed_field']
-  engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407740
-    File: engine/3d.c, Lines: 60, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_dstrendr.cpp_renderTexturedDecalMMXScanline_FUN_0046f89
     File: core/dstrendr.cpp, Lines: 60, Types: ['pointer_cast', 'pointer_truncation']
   core_game.cpp_CGame_promptLoadGame_FUN_004bdb10
@@ -1835,6 +1837,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mirror.cpp, Lines: 60, Types: ['unrolled_memcpy']
   engine_2d.c_loadOrBuildColorMap_FUN_00402940
     File: engine/2d.c, Lines: 61, Types: ['unrolled_strchr', 'unrolled_strcpy']
+  engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407740
+    File: engine/3d.c, Lines: 61, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_union.cpp_CUnion_processSupportStandState_FUN_005a5130
     File: core/union.cpp, Lines: 62, Types: ['unrolled_memset', 'warning_type_propagation']
   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481
@@ -1888,15 +1892,15 @@ FUNCTIONS WITH 2-3 SUSPECTS
   engine_mini3d.cpp_dynamicLightHint_FUN_004f5570
     File: engine/mini3d.cpp, Lines: 99, Types: ['unresolved_funcptr']
   core_game.cpp_captureDebugMovieFrame_FUN_004b2a50
-    File: core/game.cpp, Lines: 102, Types: ['pointer_cast', 'pointer_truncation']
+    File: core/game.cpp, Lines: 103, Types: ['pointer_cast', 'pointer_truncation']
   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
-    File: core/set.cpp, Lines: 105, Types: ['shadow_pointer_walk']
+    File: core/set.cpp, Lines: 104, Types: ['shadow_pointer_walk']
   engine_font.cpp_CBitFont_wrapLine_FUN_004ab090
     File: engine/font.cpp, Lines: 111, Types: ['undefined_data', 'unrolled_strlen']
   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
     File: core/manpuz.cpp, Lines: 111, Types: ['stack_ref', 'suspect_float']
   core_path.cpp_CPathMap_searchGrid_FUN_00514140
-    File: core/path.cpp, Lines: 112, Types: ['wrong_global']
+    File: core/path.cpp, Lines: 113, Types: ['wrong_global']
   core_stranger.cpp_CStranger_processDamage_FUN_0056d060
     File: core/stranger.cpp, Lines: 113, Types: ['suspect_float']
   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
@@ -1904,7 +1908,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_actor.cpp_rayCylinderIntersect_FUN_00408290
     File: core/actor.cpp, Lines: 114, Types: ['unrolled_memset']
   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046bff
-    File: engine/drender.cpp, Lines: 122, Types: ['pointer_cast', 'pointer_truncation']
+    File: engine/drender.cpp, Lines: 120, Types: ['pointer_cast', 'pointer_truncation']
   core_doc.cpp_CDoc_processDamage_FUN_0045b190
     File: core/doc.cpp, Lines: 123, Types: ['suspect_float']
   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4
@@ -1955,8 +1959,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/mini3d.cpp, Lines: 14, Types: ['extra_output', 'unresolved_funcptr']
   sound_sndmain.cpp_convertDoubleToFixed_FUN_0054d4c0
     File: sound/sndmain.cpp, Lines: 14, Types: ['bitcast_double_pair', 'unknown_field']
-  core_course.cpp_CCourse_allocMemory_FUN_00438a90
-    File: core/course.cpp, Lines: 15, Types: ['unnamed_param']
   core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00538970
     File: core/setdir.cpp, Lines: 16, Types: ['pointer_cast', 'pointer_truncation']
   core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780
@@ -1965,10 +1967,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 18, Types: ['pointer_cast', 'pointer_truncation']
   engine_boss.c_modelStructNotSupported4_FUN_0041a510
     File: engine/boss.c, Lines: 19, Types: ['pointer_cast', 'unrolled_memcpy']
+  core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00443
+    File: core/dcamera.cpp, Lines: 19, Types: ['pointer_cast', 'pointer_truncation']
   core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50
     File: core/fire.cpp, Lines: 19, Types: ['pointer_cast', 'pointer_truncation', 'undefined_data']
-  core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00443
-    File: core/dcamera.cpp, Lines: 20, Types: ['pointer_cast', 'pointer_truncation']
   core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00
     File: core/dcamera.cpp, Lines: 20, Types: ['pointer_cast', 'pointer_truncation']
   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_004779e0
@@ -2145,14 +2147,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/stranger.cpp, Lines: 34, Types: ['unaffected_reg', 'unrolled_memset']
   core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0
     File: core/confedrt.cpp, Lines: 34, Types: ['negative_offset']
-  engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_004040
-    File: engine/3d.c, Lines: 35, Types: ['pointer_cast', 'pointer_truncation', 'shadow_pointer_walk']
   core_crate.cpp_CCrate_explode_FUN_0043a350
     File: core/crate.cpp, Lines: 35, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_dpart.cpp_CDemonPart_alloc_FUN_004614d0
     File: core/dpart.cpp, Lines: 35, Types: ['alloc_magic_size']
   core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80
     File: core/mimic.cpp, Lines: 35, Types: ['unaffected_reg', 'unrolled_memcpy']
+  engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_004040
+    File: engine/3d.c, Lines: 36, Types: ['pointer_cast', 'pointer_truncation', 'shadow_pointer_walk']
   core_grave.cpp_CGrave_renderBackground_FUN_004ca340
     File: core/grave.cpp, Lines: 36, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_litecone.cpp_CLightCone_renderTransparent_FUN_004e42a0
@@ -2181,22 +2183,22 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/bugs.cpp, Lines: 44, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00442
     File: core/dcamera.cpp, Lines: 44, Types: ['flattened_array_index', 'pointer_cast', 'pointer_truncation']
+  core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20
+    File: core/netgame.cpp, Lines: 44, Types: ['pointer_stride_bytecount', 'unrolled_strcpy']
   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0
     File: core/netgame.cpp, Lines: 44, Types: ['pointer_cast', 'pointer_truncation', 'unrolled_memcpy']
+  wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790
+    File: wincore/wddvmem.cpp, Lines: 44, Types: ['pointer_truncation', 'signed_shift_global_idiom']
   core_baron.cpp_CBaron_ctor_FUN_0040f690
     File: core/baron.cpp, Lines: 45, Types: ['unrolled_memset', 'unrolled_strcpy']
-  engine_special.cpp_setResolutionAndColorTable_FUN_0055f770
-    File: engine/special.cpp, Lines: 45, Types: ['unresolved_funcptr']
   core_tvbat.cpp_CTVBat_ctor_FUN_005802f0
     File: core/tvbat.cpp, Lines: 45, Types: ['derived_field_index_pun', 'negative_offset', 'pointer_cast']
   core_event.cpp_CEventList_setCounter_FUN_00491400
     File: core/event.cpp, Lines: 46, Types: ['pointer_stride_bytecount', 'unrolled_strcpy']
-  core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20
-    File: core/netgame.cpp, Lines: 46, Types: ['pointer_stride_bytecount', 'unrolled_strcpy']
+  engine_special.cpp_setResolutionAndColorTable_FUN_0055f770
+    File: engine/special.cpp, Lines: 46, Types: ['unresolved_funcptr']
   core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70
     File: core/netgame.cpp, Lines: 47, Types: ['pointer_cast', 'pointer_truncation', 'unrolled_strcpy']
-  wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790
-    File: wincore/wddvmem.cpp, Lines: 47, Types: ['pointer_truncation', 'signed_shift_global_idiom']
   engine_2d.c_buildColorLookupTable_FUN_00402880
     File: engine/2d.c, Lines: 48, Types: ['pointer_cast', 'pointer_truncation', 'undefined_data']
   support_codec.cpp_readBitsFromStream_FUN_00433780
@@ -2205,16 +2207,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/turret.cpp, Lines: 49, Types: ['stack_param', 'unrolled_memcpy']
   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_005b6090
     File: core/morph.cpp, Lines: 49, Types: ['alloc_magic_size', 'pointer_cast']
-  engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404
-    File: engine/3d.c, Lines: 50, Types: ['pointer_cast', 'pointer_truncation', 'shadow_pointer_walk']
   core_game.cpp_CGame_playerControls_FUN_004b7050
     File: core/game.cpp, Lines: 50, Types: ['unrolled_memcpy']
+  engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404
+    File: engine/3d.c, Lines: 51, Types: ['pointer_cast', 'pointer_truncation', 'shadow_pointer_walk']
   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0
     File: core/bodypart.cpp, Lines: 51, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_event.cpp_CEventList_setTimerEvent_FUN_00491280
     File: core/event.cpp, Lines: 51, Types: ['pointer_stride_bytecount', 'unrolled_strcpy']
-  sound_sndwav.cpp_CWavInDevice_poll_FUN_005587b0
-    File: sound/sndwav.cpp, Lines: 51, Types: ['pointer_cast', 'signed_shift_global_idiom']
   engine_dosio.cpp_ensureTrailingSlash_FUN_004610d0
     File: engine/dosio.cpp, Lines: 52, Types: ['unrolled_strcpy', 'unrolled_strlen']
   core_event.cpp_CEventList_process_FUN_004893d0
@@ -2231,6 +2231,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dmodel.cpp, Lines: 54, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
   sound_snddx.cpp_fillStreamBuffer_FUN_00554c80
     File: sound/snddx.cpp, Lines: 55, Types: ['pointer_cast', 'signed_shift_global_idiom']
+  sound_sndwav.cpp_CWavInDevice_poll_FUN_005587b0
+    File: sound/sndwav.cpp, Lines: 55, Types: ['pointer_cast', 'signed_shift_global_idiom']
   engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60
     File: engine/texture.cpp, Lines: 55, Types: ['mem_magic_size', 'shadow_pointer_walk']
   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_0040
@@ -2252,7 +2254,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120
     File: core/biggs.cpp, Lines: 61, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60
-    File: core/fldnotes.cpp, Lines: 62, Types: ['pointer_cast', 'pointer_truncation', 'unresolved_funcptr']
+    File: core/fldnotes.cpp, Lines: 61, Types: ['pointer_cast', 'pointer_truncation', 'unresolved_funcptr']
   core_script.cpp_CScript_buildParsedLines_FUN_00521ec0
     File: core/script.cpp, Lines: 62, Types: ['alloc_magic_size', 'unrolled_strcpy', 'unrolled_strlen']
   core_texlist.cpp_CTextureList_save_FUN_00573770
@@ -2292,24 +2294,24 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_baron.cpp_CBaron_renderTransparent_FUN_00410670
     File: core/baron.cpp, Lines: 87, Types: ['pointer_cast', 'pointer_truncation', 'unrolled_memcpy']
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_00557540
-    File: sound/snddx.cpp, Lines: 92, Types: ['pointer_cast', 'raw_address_constant', 'unresolved_funcptr']
+    File: sound/snddx.cpp, Lines: 91, Types: ['pointer_cast', 'raw_address_constant', 'unresolved_funcptr']
   engine_ini.cpp_CIni_writeProfileString_FUN_004d8530
     File: engine/ini.cpp, Lines: 93, Types: ['preinc_loop_idiom', 'unrolled_strcpy', 'unrolled_strlen']
-  engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_0040645
-    File: engine/3d.c, Lines: 102, Types: ['pointer_cast', 'pointer_truncation', 'shadow_pointer_walk']
   core_charactr.cpp_CCharacter_setup_FUN_00422930
-    File: core/charactr.cpp, Lines: 106, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
+    File: core/charactr.cpp, Lines: 105, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
+  engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_0040645
+    File: engine/3d.c, Lines: 109, Types: ['pointer_cast', 'pointer_truncation', 'shadow_pointer_walk']
   core_game.cpp_CGame_showChapterSelect_FUN_004bc840
     File: core/game.cpp, Lines: 110, Types: ['unrolled_strcpy']
   shape_edittool.cpp_CEdButton_paint_FUN_00484f20
-    File: shape/edittool.cpp, Lines: 128, Types: ['unrolled_strcpy', 'unrolled_strlen']
+    File: shape/edittool.cpp, Lines: 127, Types: ['unrolled_strcpy', 'unrolled_strlen']
   engine_mini3d.cpp_fillPolygon_FUN_004f7a50
     File: engine/mini3d.cpp, Lines: 137, Types: ['unnamed_field']
   core_game.cpp_CGame_saveGame_FUN_004bb9b0
-    File: core/game.cpp, Lines: 164, Types: ['unrolled_strcpy']
+    File: core/game.cpp, Lines: 165, Types: ['unrolled_strcpy']
   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
     File: core/netgame.cpp, Lines: 179, Types: ['bit_int_float_compare', 'shadow_pointer_walk']
   sound_sndmain.cpp_getSfxSample_FUN_0054c1c0
-    File: sound/sndmain.cpp, Lines: 201, Types: ['shadow_pointer_walk', 'unrolled_strcpy', 'unrolled_strlen']
+    File: sound/sndmain.cpp, Lines: 202, Types: ['shadow_pointer_walk', 'unrolled_strcpy', 'unrolled_strlen']
   engine_mini3d.cpp_rasterizeTriangle_FUN_004f7280
     File: engine/mini3d.cpp, Lines: 235, Types: ['unnamed_field']

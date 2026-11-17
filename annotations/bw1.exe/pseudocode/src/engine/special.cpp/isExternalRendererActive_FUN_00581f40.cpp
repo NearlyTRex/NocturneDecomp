@@ -9,5 +9,5 @@
 int __cdecl engine_special_cpp_isExternalRendererActive_FUN_00581f40(void)
 
 {
-  return g_INT_02c834ac;
+  return g_LoadedExternalDLLRenderer;
 }

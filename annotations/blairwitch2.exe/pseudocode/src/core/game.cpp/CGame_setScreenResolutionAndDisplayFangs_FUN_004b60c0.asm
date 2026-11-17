@@ -15,8 +15,8 @@
 ;   TerminatedCString s_test_logo_005d76c1
 ;   int g_INT_006141bc = 0xc8
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
-;   CBitFont* g_CBitFont_PTR_01511cc0
-;   CBitFont* g_CBitFont_PTR_01c25590
+;   CBitFont* g_ThemeFont
+;   CBitFont* g_EditorFont
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
@@ -92,9 +92,9 @@ section .text
     ADD ESP,0x14                        ; 004b6157
     POP EBX                             ; 004b615a
     RET                                 ; 004b615b
-    MOV EAX,[0x01511cc0]                ; 004b615c | g_CBitFont_PTR_01511cc0
+    MOV EAX,[0x01511cc0]                ; 004b615c | g_ThemeFont
         ;   Label: LAB_004b615c
-    MOV [0x01c25590],EAX                ; 004b6161 | g_CBitFont_PTR_01c25590
+    MOV [0x01c25590],EAX                ; 004b6161 | g_EditorFont
     JMP 0x004b6101                      ; 004b6166
         ;   XREF to: 004b6101 (UNCONDITIONAL_JUMP)  ; LAB_004b6101
 

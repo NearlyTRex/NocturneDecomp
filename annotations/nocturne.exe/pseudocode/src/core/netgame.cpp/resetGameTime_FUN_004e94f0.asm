@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01cea3f4
-;   uint g_UINT_01cea3f8
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
@@ -15,7 +15,7 @@
 
 section .text
 
-    MOV dword ptr [0x01cea3f8],0x1      ; 004e94f0 | g_UINT_01cea3f8
+    MOV dword ptr [0x01cea3f8],0x1      ; 004e94f0 | g_CurrentGameTime
         ;   Label: core_netgame.cpp_resetGameTime_FUN_004e94f0
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e94fa
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
@@ -23,6 +23,6 @@ section .text
     MOV ECX,0x12                        ; 004e9501
     SAR EDX,0x1f                        ; 004e9506
     IDIV ECX                            ; 004e9509
-    MOV [0x01cea3f4],EAX                ; 004e950b | g_INT_01cea3f4
+    MOV [0x01cea3f4],EAX                ; 004e950b | g_LastPingTime
     RET                                 ; 004e9510
 

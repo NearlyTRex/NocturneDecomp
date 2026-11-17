@@ -16,7 +16,7 @@ time_t __cdecl _mktime(_tm *timeptr)
   int iVar5;
   
   iVar3 = timeptr->tm_mon % 0xc;
-  psVar4 = &g_SHORT_005a4a78;
+  psVar4 = &g_DaysInMonth_Normal;
   if (timeptr->tm_year < -0xb04815f) {
     tVar1 = -1;
   }
@@ -30,7 +30,7 @@ time_t __cdecl _mktime(_tm *timeptr)
     }
     iVar2 = is_leap_year(iVar5 + 0x76c);
     if (iVar2 != 0) {
-      psVar4 = &g_SHORT_005a4a92;
+      psVar4 = &g_DaysInMonth_Leap;
     }
     iVar2 = iVar5 + 3 >> 0x1f;
     iVar3 = (int)psVar4[iVar3] +
@@ -41,12 +41,12 @@ time_t __cdecl _mktime(_tm *timeptr)
     }
     gmtime_r(iVar3,iVar5,0,timeptr);
     tzset();
-    iVar5 = iVar5 + g_INT_005c1f14;
+    iVar5 = iVar5 + g_TimezoneOffset;
     if (timeptr->tm_isdst < 0) {
       determine_dst_status(timeptr);
     }
     if (0 < timeptr->tm_isdst) {
-      iVar5 = iVar5 - g_INT_005c1f1c;
+      iVar5 = iVar5 - g_DaylightSavingOffset;
     }
     for (; iVar5 < 0; iVar5 = iVar5 + 0x15180) {
       iVar3 = iVar3 + -1;
@@ -56,7 +56,7 @@ time_t __cdecl _mktime(_tm *timeptr)
     }
     if (iVar3 == 0x63de) {
       tVar1 = iVar5 + -0x15180;
-      if ((g_INT_005c1f14 < 1) || (tVar1 < 0)) {
+      if ((g_TimezoneOffset < 1) || (tVar1 < 0)) {
         return -1;
       }
     }

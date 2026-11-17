@@ -25,14 +25,14 @@ void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_0044e250(int row,int x_s
   int *piVar14;
   char cStack_14;
   
-  pCVar6 = g_CVector3i_ARRAY_00874588 + row * 0x140 + x_start;
-  piVar14 = g_INT_ARRAY_ARRAY_014fba80[row] + x_start;
-  puVar13 = g_UINT_PTR_ARRAY_01c60dac[row << (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f)] +
-            (x_start << (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f));
+  pCVar6 = g_PrecomputedWorldPositions + row * 0x140 + x_start;
+  piVar14 = g_CoronaDepthBuffer[row] + x_start;
+  puVar13 = g_ZBufferScanlineArray[row << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
+            (x_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   pcVar7 = corona->lightmap[row] + x_start;
-  uVar1 = g_BIT_INTEGER32_013405b0.bytes[0];
+  uVar1 = g_CameraDownscaleIterations.bytes[0];
   do {
-    g_BIT_INTEGER32_013405b0.bytes[0] = uVar1;
+    g_CameraDownscaleIterations.bytes[0] = uVar1;
     if (x_end <= x_start) {
       iVar3 = corona->left_extents[row];
       iVar4 = corona->right_extents[row];
@@ -50,40 +50,38 @@ void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_0044e250(int row,int x_s
     }
     cStack_14 = '\0';
     if ((((*puVar13 < (uint)*piVar14) &&
-         (uVar2 = pCVar6->x - (g_CDemonGlobe_PTR_015484c8->position_scaled).x,
-         uVar8 = (int)uVar2 >> 0x1f, iVar3 = (uVar2 ^ uVar8) - uVar8,
-         iVar3 < g_CDemonGlobe_PTR_015484c8->linear_radius_scaled)) &&
-        (uVar2 = pCVar6->y - (g_CDemonGlobe_PTR_015484c8->position_scaled).y,
-        uVar8 = (int)uVar2 >> 0x1f, iVar4 = (uVar2 ^ uVar8) - uVar8,
-        iVar4 < g_CDemonGlobe_PTR_015484c8->linear_radius_scaled)) &&
-       ((uVar2 = pCVar6->z - (g_CDemonGlobe_PTR_015484c8->position_scaled).z,
-        uVar8 = (int)uVar2 >> 0x1f, iVar5 = (uVar2 ^ uVar8) - uVar8,
-        iVar5 < g_CDemonGlobe_PTR_015484c8->linear_radius_scaled &&
+         (uVar2 = pCVar6->x - (g_CurrentGlobe->position_scaled).x, uVar8 = (int)uVar2 >> 0x1f,
+         iVar3 = (uVar2 ^ uVar8) - uVar8, iVar3 < g_CurrentGlobe->linear_radius_scaled)) &&
+        (uVar2 = pCVar6->y - (g_CurrentGlobe->position_scaled).y, uVar8 = (int)uVar2 >> 0x1f,
+        iVar4 = (uVar2 ^ uVar8) - uVar8, iVar4 < g_CurrentGlobe->linear_radius_scaled)) &&
+       ((uVar2 = pCVar6->z - (g_CurrentGlobe->position_scaled).z, uVar8 = (int)uVar2 >> 0x1f,
+        iVar5 = (uVar2 ^ uVar8) - uVar8, iVar5 < g_CurrentGlobe->linear_radius_scaled &&
         (iVar3 = iVar3 * iVar3 + iVar4 * iVar4 + iVar5 * iVar5,
-        iVar3 < g_CDemonGlobe_PTR_015484c8->quadratic_radius_scaled)))) {
-      if (g_INT_015484cc != 0) {
+        iVar3 < g_CurrentGlobe->quadratic_radius_scaled)))) {
+      if (g_CoronaVisibilityEnabled != 0) {
         if (*puVar13 == 0) {
           iVar4 = 0x7fffffff;
         }
         else {
           iVar4 = (int)(0x7fffffff / (longlong)(int)*puVar13);
         }
-        iVar9 = g_INT_015484d8 - iVar4;
+        iVar9 = g_CoronaTargetDepth - iVar4;
         iVar10 = iVar9 >> 0x1f;
         iVar12 = x_start << 8;
         iVar5 = 0x10;
         iVar11 = row << 8;
         do {
-          if (g_INT_ARRAY_00b52a48[(iVar11 >> 8) * 0x140 + (iVar12 >> 8)] < iVar4 + -0x80) break;
+          if (g_PrecomputedDepthBuffer[(iVar11 >> 8) * 0x140 + (iVar12 >> 8)] < iVar4 + -0x80)
+          break;
           iVar5 = iVar5 + -1;
           iVar4 = iVar4 + ((int)((iVar9 + iVar10 * -0x10) - (uint)(iVar10 << 3 < 0)) >> 4);
-          iVar12 = iVar12 + (g_INT_015484d0 - x_start) * 0x10;
-          iVar11 = iVar11 + (g_INT_015484d4 - row) * 0x10;
+          iVar12 = iVar12 + (g_CoronaTargetX - x_start) * 0x10;
+          iVar11 = iVar11 + (g_CoronaTargetY - row) * 0x10;
         } while (0 < iVar5);
         if (iVar5 != 0) goto LAB_0044e3ce;
       }
-      cStack_14 = (char)(((g_CDemonGlobe_PTR_015484c8->quadratic_radius_scaled - iVar3 >> 0x10) *
-                         0x3f) / (g_CDemonGlobe_PTR_015484c8->quadratic_radius_scaled >> 0x10));
+      cStack_14 = (char)(((g_CurrentGlobe->quadratic_radius_scaled - iVar3 >> 0x10) * 0x3f) /
+                        (g_CurrentGlobe->quadratic_radius_scaled >> 0x10));
     }
 LAB_0044e3ce:
     piVar14 = piVar14 + 1;
@@ -92,6 +90,6 @@ LAB_0044e3ce:
     puVar13 = puVar13 + (1 << (uVar1 & 0x1f));
     x_start = x_start + 1;
     pcVar7 = pcVar7 + 1;
-    uVar1 = g_BIT_INTEGER32_013405b0.bytes[0];
+    uVar1 = g_CameraDownscaleIterations.bytes[0];
   } while( true );
 }

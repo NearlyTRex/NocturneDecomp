@@ -61,7 +61,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00571420(CSfxSlot *this_ptr,SMix
   int local_20;
   int local_18;
   
-  if (g_INT_02c807ec < 1) {
+  if (g_SoundLockCount < 1) {
     g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
     g_INT_01d1d404 = 0xb9d;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::mix - must be locked!");
@@ -97,7 +97,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00571420(CSfxSlot *this_ptr,SMix
         }
         else {
           aiStack_c4[iVar10] = (int)mix_buffer.channel_buffers[iVar10];
-          mix_buffer.channel_buffers[iVar10] = g_FLOAT_PTR_ARRAY_02c80674[iVar10];
+          mix_buffer.channel_buffers[iVar10] = g_ChannelTertiaryBuffers[iVar10];
           memset
                     (mix_buffer.channel_buffers[iVar10],0,mix_buffer.num_output_samples << 2);
         }
@@ -376,7 +376,7 @@ LAB_0057156d:
               pfVar1 = (float *)(*(int *)((int)aiStack_c4 + local_50) + iVar8);
               iVar8 = iVar8 + 4;
               *(float *)(*(int *)((int)aiStack_c4 + local_50) + -4 + iVar8) =
-                   *(float *)(*(int *)((int)g_FLOAT_PTR_ARRAY_02c80674 + local_50) + local_18) +
+                   *(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_50) + local_18) +
                    *pfVar1;
               iVar10 = iVar10 + local_64;
             } while (iVar8 < local_30);

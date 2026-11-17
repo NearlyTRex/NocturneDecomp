@@ -13,24 +13,24 @@
 // =============================================================================
 
 // CVector3i
-extern CVector3i g_CVector3i_026810c0;
+extern CVector3i g_TempProjectedCoord;
 
 // FileListNode*
-extern FileListNode* g_FileListNode_PTR_02680160;
-extern FileListNode* g_FileListNode_PTR_02680164;
+extern FileListNode* g_AllocatedListHead;
+extern FileListNode* g_FreeListHeadPointer;
 
 // WCHAR*
-extern WCHAR* g_WCHAR_PTR_02680178;
+extern WCHAR* g_CommandLineW;
 
 // byte
-extern byte g_BYTE_02681084;
+extern byte g_SignalHandlingActive;
 
 // char*
-extern char* g_CHAR_PTR_02680174;
+extern char* g_CommandLineA;
 
 // char**
-extern char** g_CHAR_PTR_PTR_026807e0;
-extern char** g_CHAR_PTR_PTR_026807e4;
+extern char** g_EnvironStringArea;
+extern char** g_EnvironmentBlock;
 
 // char[16]
 extern char g_CHAR_ARRAY_026807a0[16];
@@ -39,33 +39,33 @@ extern char g_CHAR_ARRAY_026807a0[16];
 extern char g_CHAR_ARRAY_02680800[1];
 
 // char[256]
-extern char g_CHAR_ARRAY_02680801[256];
+extern char g_LeadByteTable[256];
 
 // char[260]
-extern char g_CHAR_ARRAY_02680180[260];
-extern char g_CHAR_ARRAY_0268048c[260];
+extern char g_ExeFileNameBuffer_A[260];
+extern char g_DllFileNameBuffer_A[260];
 
 // int
-extern int g_INT_0268014c;
+extern int g_MorphReverseWinding;
 extern int g_INT_02680150;
-extern int g_INT_02680170;
-extern int g_INT_026807e8;
-extern int g_INT_026807f0;
+extern int g_EmergencyExitFlag;
+extern int g_EnvironInitialized;
+extern int g_MultibyteLocaleActive;
 extern int g_INT_02681070;
 extern int g_INT_02681074;
-extern int g_INT_02681090;
-extern int g_INT_02681094;
-extern int g_INT_02681098;
+extern int g_BufferedCharacter;
+extern int g_BufferedVirtualKey;
+extern int g_BufferedRepeatCount;
 
 // void*
-extern void* g_PTR_0268017c;
+extern void* g_CurrentThreadTlsBlock;
 extern void* g_PTR_02681078;
 extern void* g_PTR_026810a0;
 extern void* g_PTR_026810b0;
 
 // wchar_t[260]
-extern wchar_t g_WCHAR_T_ARRAY_02680284[260];
-extern wchar_t g_WCHAR_T_ARRAY_02680590[260];
+extern wchar_t g_ExeFileNameBuffer_W[260];
+extern wchar_t g_DllFileNameBuffer_W[260];
 
 // word
 extern word DAT_026820D6;

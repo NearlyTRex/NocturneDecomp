@@ -19,7 +19,7 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_0051d7a0(SRenderVertex *
   uint uVar8;
   int iStack_14;
   
-  iVar2 = g_INT_01e61b5c;
+  iVar2 = g_ActiveEdgeCount;
   iVar7 = (vertex1->projected_vertex).screen_y >> 0x10;
   iVar3 = (vertex0->projected_vertex).screen_y >> 0x10;
   if (iVar3 != iVar7) {
@@ -31,14 +31,14 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_0051d7a0(SRenderVertex *
       vertex0 = vertex1;
       iVar7 = iVar3;
     }
-    g_SSoftwareEdge_ARRAY_01e61b60[g_INT_01e61b5c].base.y_min = iVar4;
-    iVar3 = g_INT_01e62060;
+    g_SSoftwareEdge_ARRAY_01e61b60[g_ActiveEdgeCount].base.y_min = iVar4;
+    iVar3 = g_MinScanline;
     g_SSoftwareEdge_ARRAY_01e61b60[iVar2].base.y_max = iVar7;
     if (iVar4 < iVar3) {
-      g_INT_01e62060 = iVar4;
+      g_MinScanline = iVar4;
     }
-    if (g_INT_01e62064 < iVar7) {
-      g_INT_01e62064 = iVar7;
+    if (g_MaxScanline < iVar7) {
+      g_MaxScanline = iVar7;
     }
     uVar5 = (pSVar6->projected_vertex).screen_y - (vertex0->projected_vertex).screen_y;
     if (uVar5 < 0x10000) {
@@ -80,8 +80,8 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_0051d7a0(SRenderVertex *
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
     g_SSoftwareEdge_ARRAY_01e61b60[iVar2].base.alpha_current =
          vertex0->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    if (g_INT_01c38b58 == 1) {
-      if (g_INT_01c38b50 == 0) {
+    if (g_VertexPreprocessMode == 1) {
+      if (g_ProcessorType == 0) {
         iStack_14 = (vertex0->projected_vertex).inv_z;
         iVar3 = (pSVar6->projected_vertex).inv_z;
       }
@@ -118,7 +118,7 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_0051d7a0(SRenderVertex *
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_SSoftwareEdge_ARRAY_01e61b60[iVar2].blue_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    g_INT_01e61b5c = g_INT_01e61b5c + 1;
+    g_ActiveEdgeCount = g_ActiveEdgeCount + 1;
     g_SSoftwareEdge_ARRAY_01e61b60[iVar2].blue_current =
          vertex0->b + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }

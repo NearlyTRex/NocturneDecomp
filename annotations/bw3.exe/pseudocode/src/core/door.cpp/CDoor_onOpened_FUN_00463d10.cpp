@@ -9,7 +9,6 @@
 void __cdecl core_door_cpp_CDoor_onOpened_FUN_00463d10(CDoor *this_ptr)
 
 {
-  core_event_cpp_CEventList_executeCommands_FUN_0048c150
-            (g_CEventList_PTR_005fba60,this_ptr->open_condition);
+  core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,this_ptr->open_condition);
   return;
 }

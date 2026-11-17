@@ -64,7 +64,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00585b0c
     MOV EBX,dword ptr [EBP + 0x14]      ; 00585b0f
     PUSH 0x5f6719                       ; 00585b12 | = "DebugActionPending"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00585b17 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00585b17 | g_CEventListPtr
     PUSH EDX                            ; 00585b1d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00585b1e
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -2549,7 +2549,7 @@ section .text
     FADDP                               ; 00587c3d
     MOV EAX,dword ptr [EBX + 0x154]     ; 00587c3f
     FSTP float ptr [ESP]                ; 00587c45
-    PUSH 0x2c8af28                      ; 00587c48 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 00587c48 | g_ZeroVector
     PUSH EBX                            ; 00587c4d
     CALL dword ptr [EAX + 0x24]         ; 00587c4e
     ADD ESP,0xc                         ; 00587c51

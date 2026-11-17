@@ -13,7 +13,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc9ac
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc9c4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc9dc
+;   SMRGLTextureBasic g_FireEffectGreenSparkTexture
 ;   undefined4 DAT_005fc9f4
 ;   undefined4 DAT_005fca0c
 ;   undefined4 DAT_005fca24
@@ -102,14 +102,14 @@ section .text
     PUSH 0x0                            ; 00498158
         ;   Label: default
     MOV ECX,dword ptr [EBP + 0x14]      ; 0049815a
-    MOV EAX,[0x007e2a54]                ; 0049815d | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 0049815d | g_CurrentSceneCamera
     PUSH ECX                            ; 00498162
     MOV EDX,dword ptr [EAX + 0x3c]      ; 00498163
     PUSH EAX                            ; 00498166
     CALL dword ptr [EDX + 0x4]          ; 00498167
     MOV EDX,0xffff                      ; 0049816a
     ADD ESP,0xc                         ; 0049816f
-    MOV EBX,dword ptr [0x01c6e24c]      ; 00498172 | g_INT_01c6e24c
+    MOV EBX,dword ptr [0x01c6e24c]      ; 00498172 | g_PerspectiveReciprocal
     MOV EAX,dword ptr [EBP + 0x14]      ; 00498178
     SUB EDX,EBX                         ; 0049817b
     MOV EAX,dword ptr [EAX + 0x40]      ; 0049817d
@@ -259,7 +259,7 @@ section .text
         ;   XREF to: 0046ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00498390
     PUSH 0x0                            ; 00498393
-    PUSH 0x1c73658                      ; 00498395 | g_CVector3i_01c73658
+    PUSH 0x1c73658                      ; 00498395 | g_BillboardCameraRight
     MOV EAX,[0x005f2afc]                ; 0049839a | g_CDemonRenderer_PTR_005f2afc
     PUSH EAX                            ; 0049839f | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0 ; 004983a0
@@ -375,13 +375,13 @@ section .text
     ADD ESP,0x8                         ; 00498566
     PUSH ESI                            ; 00498569
     MOV EDI,dword ptr [EBP + 0x14]      ; 0049856a
-    MOV EAX,[0x007e2a54]                ; 0049856d | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 0049856d | g_CurrentSceneCamera
     PUSH EDI                            ; 00498572
     MOV EDX,dword ptr [EAX + 0x3c]      ; 00498573
     PUSH EAX                            ; 00498576
     CALL dword ptr [EDX + 0x4]          ; 00498577
     MOV EDX,0xffff                      ; 0049857a
-    MOV ECX,dword ptr [0x01c6e24c]      ; 0049857f | g_INT_01c6e24c
+    MOV ECX,dword ptr [0x01c6e24c]      ; 0049857f | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 00498585
     MOV EAX,dword ptr [EDI + 0x40]      ; 00498588
     SUB EDX,ECX                         ; 0049858b
@@ -441,7 +441,7 @@ section .text
     PUSH EDI                            ; 00498660 | g_CDemonRenderer_01bdd7e4
     JMP 0x00498150                      ; 00498661
         ;   XREF to: 00498150 (UNCONDITIONAL_JUMP)  ; LAB_00498150
-    PUSH 0x5fc9dc                       ; 00498666 | g_SMRGLTextureBasic_005fc9dc
+    PUSH 0x5fc9dc                       ; 00498666 | g_FireEffectGreenSparkTexture
         ;   Label: caseD_2
     MOV ESI,dword ptr [0x005f2afc]      ; 0049866b | g_CDemonRenderer_PTR_005f2afc
     PUSH ESI                            ; 00498671 | g_CDemonRenderer_01bdd7e4
@@ -474,7 +474,7 @@ section .text
         ;   XREF to: 0046ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004986b9
     PUSH 0x0                            ; 004986bc
-    PUSH 0x1c73658                      ; 004986be | g_CVector3i_01c73658
+    PUSH 0x1c73658                      ; 004986be | g_BillboardCameraRight
     MOV EDX,dword ptr [0x005f2afc]      ; 004986c3 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004986c9 | g_CDemonRenderer_01bdd7e4
     LEA EBX,[ESP + 0x5c]                ; 004986ca

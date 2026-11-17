@@ -146,7 +146,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
     switch(iVar6) {
     case 1:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (g_CEventList_PTR_005b7650,"Capture");
+                        (g_CEventListPtr,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -178,7 +178,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
       break;
     case 2:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (g_CEventList_PTR_005b7650,"Capture");
+                        (g_CEventListPtr,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;

@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CKeyFramedModelInstance g_CKeyFramedModelInstance_007e2b34
+;   CKeyFramedModelInstance g_StakeModelInstance
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
@@ -118,7 +118,7 @@ section .text
     ADD ESP,0xc                         ; 0042e482
     PUSH -0x1                           ; 0042e485
     PUSH 0x0                            ; 0042e487
-    PUSH 0x7e2b34                       ; 0042e489 | g_CKeyFramedModelInstance_007e2b34
+    PUSH 0x7e2b34                       ; 0042e489 | g_StakeModelInstance
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540 ; 0042e48e
         ;   XREF to: 00462540 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0042e493

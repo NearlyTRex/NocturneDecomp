@@ -35,9 +35,9 @@ int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
   float fStack_10;
   
   bVar4 = 0;
-  afStack_40[0] = g_CVector3f_02cfd900.x;
-  afStack_40[1] = g_CVector3f_02cfd900.y;
-  CStack_38.x = g_CVector3f_02cfd900.z;
+  afStack_40[0] = g_ZeroVector.x;
+  afStack_40[1] = g_ZeroVector.y;
+  CStack_38.x = g_ZeroVector.z;
   this_ptr->is_firing = 1;
   if (this_ptr->was_firing_prev_frame != 0) {
     return 0;

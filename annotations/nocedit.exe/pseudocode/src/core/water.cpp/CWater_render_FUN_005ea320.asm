@@ -31,7 +31,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   int INT_006844f4 = 0x2000
+;   int g_WaterFrameDuration = 0x2000
 ;   SMRGLTextureBasic[16] g_WaterTextures
 ;   SMRGLPrimitiveQuad g_WaterRenderQuad
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 005ea791 (CONDITIONAL_JUMP)  ; LAB_005ea791
     MOV ECX,dword ptr [0x03f875fc]      ; 005ea33c | g_WaterAnimationTimer
     ADD ECX,dword ptr [0x02cf6a80]      ; 005ea342 | g_GlobalDeltaTimeInt
-    MOV EBX,dword ptr [0x006844f4]      ; 005ea348 | INT_006844f4
+    MOV EBX,dword ptr [0x006844f4]      ; 005ea348 | g_WaterFrameDuration
     MOV dword ptr [0x03f875fc],ECX      ; 005ea34e | g_WaterAnimationTimer
     CMP ECX,EBX                         ; 005ea354
     JLE 0x005ea37a                      ; 005ea356
@@ -88,15 +88,15 @@ section .text
     MOV dword ptr [0x03f87600],ECX      ; 005ea374 | g_WaterCurrentFrame
     MOV EDX,0xffff                      ; 005ea37a
         ;   Label: LAB_005ea37a
-    MOV EBX,dword ptr [0x006844f4]      ; 005ea37f | INT_006844f4
+    MOV EBX,dword ptr [0x006844f4]      ; 005ea37f | g_WaterFrameDuration
     MOV EAX,[0x03f875fc]                ; 005ea385 | g_WaterAnimationTimer
     IMUL EDX                            ; 005ea38a
     IDIV EBX                            ; 005ea38c
-    MOV [0x03f8f62c],EAX                ; 005ea38e | INT_03f8f62c
+    MOV [0x03f8f62c],EAX                ; 005ea38e | g_WaterAnimationBlend
     CMP EAX,0xffff                      ; 005ea393
     JLE 0x005ea798                      ; 005ea398
         ;   XREF to: 005ea798 (CONDITIONAL_JUMP)  ; LAB_005ea798
-    MOV dword ptr [0x03f8f62c],0xffff   ; 005ea39e | INT_03f8f62c
+    MOV dword ptr [0x03f8f62c],0xffff   ; 005ea39e | g_WaterAnimationBlend
     MOV EDX,dword ptr [0x03f87600]      ; 005ea3a8 | g_WaterCurrentFrame
         ;   Label: LAB_005ea3a8
     LEA EAX,[EDX*0x4 + 0x0]             ; 005ea3ae
@@ -411,7 +411,7 @@ section .text
     JGE 0x005ea3a8                      ; 005ea79a
         ;   XREF to: 005ea3a8 (CONDITIONAL_JUMP)  ; LAB_005ea3a8
     XOR EBX,EBX                         ; 005ea7a0
-    MOV dword ptr [0x03f8f62c],EBX      ; 005ea7a2 | INT_03f8f62c
+    MOV dword ptr [0x03f8f62c],EBX      ; 005ea7a2 | g_WaterAnimationBlend
     JMP 0x005ea3a8                      ; 005ea7a8
         ;   XREF to: 005ea3a8 (UNCONDITIONAL_JUMP)  ; LAB_005ea3a8
     CMP dword ptr [0x02d03e94],0x0      ; 005ea7ad | g_UseExternalRenderer

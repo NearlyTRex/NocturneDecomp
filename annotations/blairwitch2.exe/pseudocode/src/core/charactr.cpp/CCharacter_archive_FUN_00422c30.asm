@@ -68,7 +68,7 @@ section .text
     CMP EDX,0x2                         ; 00422c5e
     JL 0x00422ce0                       ; 00422c61
         ;   XREF to: 00422ce0 (CONDITIONAL_JUMP)  ; LAB_00422ce0
-    CMP dword ptr [0x007bc038],0x1      ; 00422c67 | g_INT_007bc038
+    CMP dword ptr [0x007bc038],0x1      ; 00422c67 | g_ActorReadingMode
     JZ 0x00422df7                       ; 00422c6e
         ;   XREF to: 00422df7 (CONDITIONAL_JUMP)  ; LAB_00422df7
     XOR ESI,ESI                         ; 00422c74

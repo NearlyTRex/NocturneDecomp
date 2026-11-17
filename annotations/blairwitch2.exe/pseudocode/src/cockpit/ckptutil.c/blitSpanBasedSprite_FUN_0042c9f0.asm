@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141c0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 0042c9f3
     SUB ESP,0x34                        ; 0042c9f4
     MOV EDI,dword ptr [ESP + 0x54]      ; 0042c9f7
-    MOV EDX,dword ptr [0x01c2a38c]      ; 0042c9fb | g_ARRAY_PTR_01c2a38c
-    MOV EAX,[0x01c2a390]                ; 0042ca01 | g_ARRAY_PTR_01c2a38c[1]
+    MOV EDX,dword ptr [0x01c2a38c]      ; 0042c9fb | g_ScreenBufferArray
+    MOV EAX,[0x01c2a390]                ; 0042ca01 | g_ScreenBufferArray[1]
     SUB EAX,EDX                         ; 0042ca06
     MOV dword ptr [ESP + 0x10],EAX      ; 0042ca08
     MOV EAX,[0x006141b8]                ; 0042ca0c | g_INT_006141b8

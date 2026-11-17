@@ -14,8 +14,8 @@ int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80(CGore *this
   int iVar3;
   
   iVar3 = 0;
-  if (0 < g_INT_01cdde40) {
-    pCVar1 = g_CBloodPool_ARRAY_01cdde44;
+  if (0 < g_BloodPoolCount) {
+    pCVar1 = g_BloodPools;
     do {
       if (((ABS(position->y - (pCVar1->position).y) <= (float)0.5) &&
           (ABS(position->x - (pCVar1->position).x) <= (float)1.333)) &&
@@ -25,11 +25,11 @@ int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80(CGore *this
       }
       iVar3 = iVar3 + 1;
       pCVar1 = pCVar1 + 1;
-    } while (iVar3 < g_INT_01cdde40);
+    } while (iVar3 < g_BloodPoolCount);
   }
   iVar3 = 0;
-  if (0 < g_INT_01cbcaf8) {
-    pCVar2 = g_CBloodSplat_ARRAY_01cbcafc;
+  if (0 < g_BloodSplatCount) {
+    pCVar2 = g_BloodSplats;
     do {
       if (((pCVar2->is_wall_splat == 0) &&
           (ABS(position->y - (pCVar2->position).y) <= (float)0.5)) &&
@@ -40,7 +40,7 @@ int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80(CGore *this
       }
       iVar3 = iVar3 + 1;
       pCVar2 = pCVar2 + 1;
-    } while (iVar3 < g_INT_01cbcaf8);
+    } while (iVar3 < g_BloodSplatCount);
   }
   return 0;
 }

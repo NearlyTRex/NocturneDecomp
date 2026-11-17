@@ -8,19 +8,19 @@
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60 at 0044dfa1
 ;
 ; Referenced Globals:
-;   void* g_PTR_02cf6078
+;   void* g_APIDLL_lockHoldBuffer
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02cf6078],0x0      ; 00566440 | g_PTR_02cf6078
+    CMP dword ptr [0x02cf6078],0x0      ; 00566440 | g_APIDLL_lockHoldBuffer
         ;   Label: engine_special.cpp_lockHoldBuffer_FUN_00566440
     JNZ 0x0056644c                      ; 00566447
         ;   XREF to: 0056644c (CONDITIONAL_JUMP)  ; LAB_0056644c
     XOR EAX,EAX                         ; 00566449
     RET                                 ; 0056644b
-    CALL dword ptr [0x02cf6078]         ; 0056644c | g_PTR_02cf6078
+    CALL dword ptr [0x02cf6078]         ; 0056644c | g_APIDLL_lockHoldBuffer
         ;   Label: LAB_0056644c
     RET                                 ; 00566452
 

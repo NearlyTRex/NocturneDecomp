@@ -10,17 +10,17 @@ void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_00575a50(int *out_bits_per
 
 {
   if (out_bits_per_sample != (int *)0x0) {
-    *out_bits_per_sample = g_INT_00623320;
+    *out_bits_per_sample = g_RecordingBitsPerSample;
   }
   if (out_channels != (int *)0x0) {
-    *out_channels = g_INT_00623324;
+    *out_channels = g_RecordingChannelCount;
   }
   if (out_sample_rate != (int *)0x0) {
-    *out_sample_rate = g_INT_00623328;
+    *out_sample_rate = g_RecordingSampleRate;
   }
   if (out_signed == (int *)0x0) {
     return;
   }
-  *out_signed = g_INT_02c81040;
+  *out_signed = g_RecordingSamplesSigned;
   return;
 }

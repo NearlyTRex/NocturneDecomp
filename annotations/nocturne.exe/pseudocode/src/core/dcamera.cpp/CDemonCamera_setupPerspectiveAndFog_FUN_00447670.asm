@@ -31,7 +31,7 @@
 ;   int g_INT_005ad458 = 0x40
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 g_UINT_ARRAY_00b0e1fc[64]
-;   int g_INT_0140efa8
+;   int g_BackgroundSceneDepth
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition
 ;   _BIT_INTEGER32 g_BlueBitPosition
@@ -52,7 +52,7 @@ section .text
     TEST EAX,EAX                        ; 00447678
     JZ 0x00447692                       ; 0044767a
         ;   XREF to: 00447692 (CONDITIONAL_JUMP)  ; LAB_00447692
-    CMP dword ptr [0x0140efa8],0x0      ; 0044767c | g_INT_0140efa8
+    CMP dword ptr [0x0140efa8],0x0      ; 0044767c | g_BackgroundSceneDepth
     JZ 0x0044769c                       ; 00447683
         ;   XREF to: 0044769c (CONDITIONAL_JUMP)  ; LAB_0044769c
     XOR EBP,EBP                         ; 00447685

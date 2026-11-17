@@ -26,11 +26,11 @@
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[2].v
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[3].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[3].v
-;   CDemonCamera* g_CDemonCamera_PTR_007e2a54
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   CVector3i g_CVector3i_01c73658
-;   undefined4 g_CVector3i_01c73658.y
-;   undefined4 g_CVector3i_01c73658.z
+;   CVector3i g_BillboardCameraRight
+;   undefined4 g_BillboardCameraRight.y
+;   undefined4 g_BillboardCameraRight.z
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -52,13 +52,13 @@ section .text
     MOV ESI,0xf80000                    ; 00498a25
     MOV EDI,0x1c73658                   ; 00498a2a
     XOR ECX,ECX                         ; 00498a2f
-    MOV dword ptr [0x01c73674],EDX      ; 00498a31 | g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count
-    MOV dword ptr [0x01c73678],ECX      ; 00498a37 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A
-    MOV dword ptr [0x01c7367c],ECX      ; 00498a3d | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B
-    MOV dword ptr [0x01c73680],ECX      ; 00498a43 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C
-    MOV dword ptr [0x01c73684],ECX      ; 00498a49 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D
-    MOV dword ptr [0x01c73688],ECX      ; 00498a4f | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0]
-    MOV [0x01c7368c],EAX                ; 00498a55 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1]
+    MOV dword ptr [0x01c73674],EDX      ; 00498a31 | g_BillboardPrimitive.base.base.count
+    MOV dword ptr [0x01c73678],ECX      ; 00498a37 | g_BillboardPrimitive.base.surface_normal.A
+    MOV dword ptr [0x01c7367c],ECX      ; 00498a3d | g_BillboardPrimitive.base.surface_normal.B
+    MOV dword ptr [0x01c73680],ECX      ; 00498a43 | g_BillboardPrimitive.base.surface_normal.C
+    MOV dword ptr [0x01c73684],ECX      ; 00498a49 | g_BillboardPrimitive.base.surface_normal.D
+    MOV dword ptr [0x01c73688],ECX      ; 00498a4f | g_BillboardPrimitive.vertices[0]
+    MOV [0x01c7368c],EAX                ; 00498a55 | g_BillboardPrimitive.vertices[1]
     MOV dword ptr [0x0060b02c],EBX      ; 00498a5a | g_SRenderVertex_ARRAY_0060b014[0].u
     MOV dword ptr [0x0060b030],ESI      ; 00498a60 | g_SRenderVertex_ARRAY_0060b014[0].v
     MOV dword ptr [0x0060b05c],ESI      ; 00498a66 | g_SRenderVertex_ARRAY_0060b014[1].u
@@ -70,22 +70,22 @@ section .text
     MOV EDX,0x2                         ; 00498a8a
     MOV ECX,0x3                         ; 00498a8f
     MOV ESI,dword ptr [0x005f2afc]      ; 00498a94 | g_CDemonRenderer_PTR_005f2afc
-    MOV dword ptr [0x01c73690],EDX      ; 00498a9a | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2]
+    MOV dword ptr [0x01c73690],EDX      ; 00498a9a | g_BillboardPrimitive.vertices[2]
     PUSH ESI                            ; 00498aa0 | g_CDemonRenderer_01bdd7e4
     LEA ESI,[ESP + 0x54]                ; 00498aa1
-    MOV dword ptr [0x01c73694],ECX      ; 00498aa5 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3]
+    MOV dword ptr [0x01c73694],ECX      ; 00498aa5 | g_BillboardPrimitive.vertices[3]
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230 ; 00498aab
         ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 00498ab0
     ADD ESP,0x4                         ; 00498ab4
-    MOVSD ES:EDI,ESI                    ; 00498ab7 | g_CVector3i_01c73658
-    MOVSD ES:EDI,ESI                    ; 00498ab8 | g_CVector3i_01c73658.y
-    MOVSD ES:EDI,ESI                    ; 00498ab9 | g_CVector3i_01c73658.z
-    MOV ESI,dword ptr [0x007e2a54]      ; 00498aba | g_CDemonCamera_PTR_007e2a54
+    MOVSD ES:EDI,ESI                    ; 00498ab7 | g_BillboardCameraRight
+    MOVSD ES:EDI,ESI                    ; 00498ab8 | g_BillboardCameraRight.y
+    MOVSD ES:EDI,ESI                    ; 00498ab9 | g_BillboardCameraRight.z
+    MOV ESI,dword ptr [0x007e2a54]      ; 00498aba | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 00498ac0
     XOR EDI,EDI                         ; 00498ac5
     LEA ESI,[ESI + 0x10]                ; 00498ac7
-    MOV dword ptr [0x01c7365c],EDI      ; 00498aca | g_CVector3i_01c73658.y
+    MOV dword ptr [0x01c7365c],EDI      ; 00498aca | g_BillboardCameraRight.y
     LEA EDI,[ESP + 0x28]                ; 00498ad0
     MOVSD.REP ES:EDI,ESI                ; 00498ad4
     MOV ECX,0xa                         ; 00498ad6
@@ -109,10 +109,10 @@ section .text
     CALL crt_math.c_round_FUN_005a3120  ; 00498b0b
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00498b10
-    FISTP dword ptr [0x01c73664]        ; 00498b12 | g_CVector3i_01c73664
+    FISTP dword ptr [0x01c73664]        ; 00498b12 | g_BillboardCameraUp
     FXCH                                ; 00498b18
-    FISTP dword ptr [0x01c73668]        ; 00498b1a | g_CVector3i_01c73664.y
-    FISTP dword ptr [0x01c7366c]        ; 00498b20 | g_CVector3i_01c73664.z
+    FISTP dword ptr [0x01c73668]        ; 00498b1a | g_BillboardCameraUp.y
+    FISTP dword ptr [0x01c7366c]        ; 00498b20 | g_BillboardCameraUp.z
     ADD ESP,0x5c                        ; 00498b26
     POP EDI                             ; 00498b29
     POP ESI                             ; 00498b2a

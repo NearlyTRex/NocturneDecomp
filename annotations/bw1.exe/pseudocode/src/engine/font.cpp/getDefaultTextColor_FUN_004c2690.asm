@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
 ;   ushort g_USHORT_01cc8cd2
-;   int g_INT_01cc8cd4
+;   int g_ShadowColor32
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
     XOR EAX,EAX                         ; 004c2699
     MOV AX,[0x01cc8cd2]                 ; 004c269b | g_USHORT_01cc8cd2
     RET                                 ; 004c26a1
-    MOV EAX,[0x01cc8cd4]                ; 004c26a2 | g_INT_01cc8cd4
+    MOV EAX,[0x01cc8cd4]                ; 004c26a2 | g_ShadowColor32
         ;   Label: LAB_004c26a2
     RET                                 ; 004c26a7
 

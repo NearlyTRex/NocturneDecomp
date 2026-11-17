@@ -9,7 +9,7 @@
 int __watcallStack mblen(char *mb_string)
 
 {
-  if ((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(byte)*mb_string] & 1U) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*mb_string] & 1U) != 0)) {
     return 2;
   }
   return 1;

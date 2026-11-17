@@ -53,7 +53,7 @@ section .text
     TEST EBX,EBX                        ; 00564bf1
     JNZ 0x00564c11                      ; 00564bf3
         ;   XREF to: 00564c11 (CONDITIONAL_JUMP)  ; LAB_00564c11
-    MOV EBX,dword ptr [0x02cf611c]      ; 00564bf5 | g_HWND_02cf611c
+    MOV EBX,dword ptr [0x02cf611c]      ; 00564bf5 | g_StoredWindowHandle
     CMP dword ptr [0x02cf5fcc],0x0      ; 00564bfb | g_INT_02cf5fcc
         ;   Label: LAB_00564bfb
     JNZ 0x00564c19                      ; 00564c02
@@ -65,11 +65,11 @@ section .text
     POP ESI                             ; 00564c0e
     POP EBX                             ; 00564c0f
     RET                                 ; 00564c10
-    MOV dword ptr [0x02cf611c],EBX      ; 00564c11 | g_HWND_02cf611c
+    MOV dword ptr [0x02cf611c],EBX      ; 00564c11 | g_StoredWindowHandle
         ;   Label: LAB_00564c11
     JMP 0x00564bfb                      ; 00564c17
         ;   XREF to: 00564bfb (UNCONDITIONAL_JUMP)  ; LAB_00564bfb
-    PUSH 0x606730                       ; 00564c19 | g_CHAR_ARRAY_00606730
+    PUSH 0x606730                       ; 00564c19 | g_RendererDllPath
         ;   Label: LAB_00564c19
     CALL wincore_wddvmem.cpp_loadLibrary_FUN_0057ad10 ; 00564c1e
         ;   XREF to: 0057ad10 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_0057ad10(LPCSTR lpLibFileName)
@@ -125,7 +125,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564ca9
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564cae
-    MOV [0x02cf5fe4],EAX                ; 00564cb1 | g_PTR_02cf5fe4
+    MOV [0x02cf5fe4],EAX                ; 00564cb1 | g_APIDLL_init
     TEST EAX,EAX                        ; 00564cb6
     JNZ 0x00564cc4                      ; 00564cb8
         ;   XREF to: 00564cc4 (CONDITIONAL_JUMP)  ; LAB_00564cc4
@@ -137,7 +137,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564ccf
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564cd4
-    MOV [0x02cf5fe8],EAX                ; 00564cd7 | g_PTR_02cf5fe8
+    MOV [0x02cf5fe8],EAX                ; 00564cd7 | g_APIDLL_kill
     TEST EAX,EAX                        ; 00564cdc
     JNZ 0x00564cea                      ; 00564cde
         ;   XREF to: 00564cea (CONDITIONAL_JUMP)  ; LAB_00564cea
@@ -149,7 +149,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564cf6
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564cfb
-    MOV [0x02cf5fec],EAX                ; 00564cfe | g_PTR_02cf5fec
+    MOV [0x02cf5fec],EAX                ; 00564cfe | g_APIDLL_toggle
     TEST EAX,EAX                        ; 00564d03
     JNZ 0x00564d11                      ; 00564d05
         ;   XREF to: 00564d11 (CONDITIONAL_JUMP)  ; LAB_00564d11
@@ -173,7 +173,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564d43
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564d48
-    MOV [0x02cf5ff4],EAX                ; 00564d4b | g_PTR_02cf5ff4
+    MOV [0x02cf5ff4],EAX                ; 00564d4b | g_APIDLL_setVideoMode2
     TEST EAX,EAX                        ; 00564d50
     JNZ 0x00564d5e                      ; 00564d52
         ;   XREF to: 00564d5e (CONDITIONAL_JUMP)  ; LAB_00564d5e
@@ -185,7 +185,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564d6a
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564d6f
-    MOV [0x02cf5ff8],EAX                ; 00564d72 | g_PTR_02cf5ff8
+    MOV [0x02cf5ff8],EAX                ; 00564d72 | g_APIDLL_restoreVideoMode
     TEST EAX,EAX                        ; 00564d77
     JNZ 0x00564d85                      ; 00564d79
         ;   XREF to: 00564d85 (CONDITIONAL_JUMP)  ; LAB_00564d85
@@ -197,7 +197,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564d91
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564d96
-    MOV [0x02cf5ffc],EAX                ; 00564d99 | g_PTR_02cf5ffc
+    MOV [0x02cf5ffc],EAX                ; 00564d99 | g_APIDLL_beginScene
     TEST EAX,EAX                        ; 00564d9e
     JNZ 0x00564dac                      ; 00564da0
         ;   XREF to: 00564dac (CONDITIONAL_JUMP)  ; LAB_00564dac
@@ -209,7 +209,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564db7
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564dbc
-    MOV [0x02cf6000],EAX                ; 00564dbf | g_PTR_02cf6000
+    MOV [0x02cf6000],EAX                ; 00564dbf | g_APIDLL_endScene
     TEST EAX,EAX                        ; 00564dc4
     JNZ 0x00564dd2                      ; 00564dc6
         ;   XREF to: 00564dd2 (CONDITIONAL_JUMP)  ; LAB_00564dd2
@@ -221,7 +221,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564dde
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564de3
-    MOV [0x02cf6004],EAX                ; 00564de6 | g_PTR_02cf6004
+    MOV [0x02cf6004],EAX                ; 00564de6 | g_APIDLL_lockFrame
     TEST EAX,EAX                        ; 00564deb
     JNZ 0x00564df9                      ; 00564ded
         ;   XREF to: 00564df9 (CONDITIONAL_JUMP)  ; LAB_00564df9
@@ -233,7 +233,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564e05
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564e0a
-    MOV [0x02cf6008],EAX                ; 00564e0d | g_PTR_02cf6008
+    MOV [0x02cf6008],EAX                ; 00564e0d | g_APIDLL_unlockFrame
     TEST EAX,EAX                        ; 00564e12
     JNZ 0x00564e20                      ; 00564e14
         ;   XREF to: 00564e20 (CONDITIONAL_JUMP)  ; LAB_00564e20
@@ -245,7 +245,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564e2b
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564e30
-    MOV [0x02cf600c],EAX                ; 00564e33 | g_PTR_02cf600c
+    MOV [0x02cf600c],EAX                ; 00564e33 | g_APIDLL_selectTexture
     TEST EAX,EAX                        ; 00564e38
     JNZ 0x00564e46                      ; 00564e3a
         ;   XREF to: 00564e46 (CONDITIONAL_JUMP)  ; LAB_00564e46
@@ -257,7 +257,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564e52
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564e57
-    MOV [0x02cf6010],EAX                ; 00564e5a | g_PTR_02cf6010
+    MOV [0x02cf6010],EAX                ; 00564e5a | g_APIDLL_updateTexture
     TEST EAX,EAX                        ; 00564e5f
     JNZ 0x00564e6d                      ; 00564e61
         ;   XREF to: 00564e6d (CONDITIONAL_JUMP)  ; LAB_00564e6d
@@ -272,18 +272,18 @@ section .text
     PUSH 0x5d565e                       ; 00564e81 | = "APIDLLupdateTextureBGRA"
     MOV EBP,dword ptr [0x02cf610c]      ; 00564e86 | g_HMODULE_02cf610c
     PUSH EBP                            ; 00564e8c
-    MOV [0x02cf6014],EAX                ; 00564e8d | g_PTR_02cf6014
+    MOV [0x02cf6014],EAX                ; 00564e8d | g_APIDLL_selectTextureBGRA
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564e92
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564e97
     PUSH 0x5d5676                       ; 00564e9a | = "APIDLLsetMipMapLevel"
-    MOV [0x02cf6018],EAX                ; 00564e9f | g_PTR_02cf6018
+    MOV [0x02cf6018],EAX                ; 00564e9f | g_APIDLL_updateTextureBGRA
     MOV EAX,[0x02cf610c]                ; 00564ea4 | g_HMODULE_02cf610c
     PUSH EAX                            ; 00564ea9
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564eaa
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564eaf
-    MOV [0x02cf601c],EAX                ; 00564eb2 | g_PTR_02cf601c
+    MOV [0x02cf601c],EAX                ; 00564eb2 | g_APIDLL_setMipMapLevel
     TEST EAX,EAX                        ; 00564eb7
     JNZ 0x00564ec5                      ; 00564eb9
         ;   XREF to: 00564ec5 (CONDITIONAL_JUMP)  ; LAB_00564ec5
@@ -295,7 +295,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564ed1
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564ed6
-    MOV [0x02cf6020],EAX                ; 00564ed9 | g_PTR_02cf6020
+    MOV [0x02cf6020],EAX                ; 00564ed9 | g_APIDLL_drawPolygon
     TEST EAX,EAX                        ; 00564ede
     JNZ 0x00564eec                      ; 00564ee0
         ;   XREF to: 00564eec (CONDITIONAL_JUMP)  ; LAB_00564eec
@@ -307,7 +307,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564ef8
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564efd
-    MOV [0x02cf6024],EAX                ; 00564f00 | g_PTR_02cf6024
+    MOV [0x02cf6024],EAX                ; 00564f00 | g_APIDLL_drawPolygon2
     TEST EAX,EAX                        ; 00564f05
     JNZ 0x00564f13                      ; 00564f07
         ;   XREF to: 00564f13 (CONDITIONAL_JUMP)  ; LAB_00564f13
@@ -322,25 +322,25 @@ section .text
     PUSH 0x5d56c3                       ; 00564f26 | = "APIDLLdrawPolyList2"
     MOV EDX,dword ptr [0x02cf610c]      ; 00564f2b | g_HMODULE_02cf610c
     PUSH EDX                            ; 00564f31
-    MOV [0x02cf6028],EAX                ; 00564f32 | g_PTR_02cf6028
+    MOV [0x02cf6028],EAX                ; 00564f32 | g_APIDLL_drawPolyList
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564f37
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564f3c
     PUSH 0x5d56d7                       ; 00564f3f | = "APIDLLdrawPolyList3"
     MOV ECX,dword ptr [0x02cf610c]      ; 00564f44 | g_HMODULE_02cf610c
     PUSH ECX                            ; 00564f4a
-    MOV [0x02cf602c],EAX                ; 00564f4b | g_PTR_02cf602c
+    MOV [0x02cf602c],EAX                ; 00564f4b | g_APIDLL_drawPolyList2
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564f50
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564f55
     PUSH 0x5d56eb                       ; 00564f58 | = "APIDLLaddParticle"
     MOV ESI,dword ptr [0x02cf610c]      ; 00564f5d | g_HMODULE_02cf610c
     PUSH ESI                            ; 00564f63
-    MOV [0x02cf6030],EAX                ; 00564f64 | g_PTR_02cf6030
+    MOV [0x02cf6030],EAX                ; 00564f64 | g_APIDLL_drawPolyList3
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564f69
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564f6e
-    MOV [0x02cf6034],EAX                ; 00564f71 | g_PTR_02cf6034
+    MOV [0x02cf6034],EAX                ; 00564f71 | g_APIDLL_addParticle
     TEST EAX,EAX                        ; 00564f76
     JNZ 0x00564f84                      ; 00564f78
         ;   XREF to: 00564f84 (CONDITIONAL_JUMP)  ; LAB_00564f84
@@ -352,7 +352,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564f90
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564f95
-    MOV [0x02cf6038],EAX                ; 00564f98 | g_PTR_02cf6038
+    MOV [0x02cf6038],EAX                ; 00564f98 | g_APIDLL_flushParticleList
     TEST EAX,EAX                        ; 00564f9d
     JNZ 0x00564fab                      ; 00564f9f
         ;   XREF to: 00564fab (CONDITIONAL_JUMP)  ; LAB_00564fab
@@ -364,7 +364,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564fb7
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564fbc
-    MOV [0x02cf603c],EAX                ; 00564fbf | g_PTR_02cf603c
+    MOV [0x02cf603c],EAX                ; 00564fbf | g_APIDLL_add3dLine
     TEST EAX,EAX                        ; 00564fc4
     JNZ 0x00564fd2                      ; 00564fc6
         ;   XREF to: 00564fd2 (CONDITIONAL_JUMP)  ; LAB_00564fd2
@@ -376,7 +376,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00564fde
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00564fe3
-    MOV [0x02cf6040],EAX                ; 00564fe6 | g_PTR_02cf6040
+    MOV [0x02cf6040],EAX                ; 00564fe6 | g_APIDLL_flushLineList
     TEST EAX,EAX                        ; 00564feb
     JNZ 0x00564ff9                      ; 00564fed
         ;   XREF to: 00564ff9 (CONDITIONAL_JUMP)  ; LAB_00564ff9
@@ -388,7 +388,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565005
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 0056500a
-    MOV [0x02cf6044],EAX                ; 0056500d | g_PTR_02cf6044
+    MOV [0x02cf6044],EAX                ; 0056500d | g_APIDLL_clear
     TEST EAX,EAX                        ; 00565012
     JNZ 0x00565020                      ; 00565014
         ;   XREF to: 00565020 (CONDITIONAL_JUMP)  ; LAB_00565020
@@ -400,7 +400,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056502c
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565031
-    MOV [0x02cf6048],EAX                ; 00565034 | g_PTR_02cf6048
+    MOV [0x02cf6048],EAX                ; 00565034 | g_APIDLL_setFogColor
     TEST EAX,EAX                        ; 00565039
     JNZ 0x00565047                      ; 0056503b
         ;   XREF to: 00565047 (CONDITIONAL_JUMP)  ; LAB_00565047
@@ -412,7 +412,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565053
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565058
-    MOV [0x02cf604c],EAX                ; 0056505b | g_PTR_02cf604c
+    MOV [0x02cf604c],EAX                ; 0056505b | g_APIDLL_sync
     TEST EAX,EAX                        ; 00565060
     JNZ 0x0056506e                      ; 00565062
         ;   XREF to: 0056506e (CONDITIONAL_JUMP)  ; LAB_0056506e
@@ -424,7 +424,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056507a
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 0056507f
-    MOV [0x02cf6050],EAX                ; 00565082 | g_PTR_02cf6050
+    MOV [0x02cf6050],EAX                ; 00565082 | g_APIDLL_clearZBuffer
     TEST EAX,EAX                        ; 00565087
     JNZ 0x00565095                      ; 00565089
         ;   XREF to: 00565095 (CONDITIONAL_JUMP)  ; LAB_00565095
@@ -436,7 +436,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005650a1
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005650a6
-    MOV [0x02cf6054],EAX                ; 005650a9 | g_PTR_02cf6054
+    MOV [0x02cf6054],EAX                ; 005650a9 | g_APIDLL_clearZBox
     TEST EAX,EAX                        ; 005650ae
     JNZ 0x005650bc                      ; 005650b0
         ;   XREF to: 005650bc (CONDITIONAL_JUMP)  ; LAB_005650bc
@@ -448,7 +448,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005650c8
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005650cd
-    MOV [0x02cf6058],EAX                ; 005650d0 | g_PTR_02cf6058
+    MOV [0x02cf6058],EAX                ; 005650d0 | g_APIDLL_setColorTable16
     TEST EAX,EAX                        ; 005650d5
     JNZ 0x005650e3                      ; 005650d7
         ;   XREF to: 005650e3 (CONDITIONAL_JUMP)  ; LAB_005650e3
@@ -484,7 +484,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056513d
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565142
-    MOV [0x02cf6064],EAX                ; 00565145 | g_PTR_02cf6064
+    MOV [0x02cf6064],EAX                ; 00565145 | g_APIDLL_masterZBuffer
     TEST EAX,EAX                        ; 0056514a
     JNZ 0x00565158                      ; 0056514c
         ;   XREF to: 00565158 (CONDITIONAL_JUMP)  ; LAB_00565158
@@ -496,7 +496,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565164
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565169
-    MOV [0x02cf6068],EAX                ; 0056516c | g_PTR_02cf6068
+    MOV [0x02cf6068],EAX                ; 0056516c | g_APIDLL_restoreZBuffer
     TEST EAX,EAX                        ; 00565171
     JNZ 0x0056517f                      ; 00565173
         ;   XREF to: 0056517f (CONDITIONAL_JUMP)  ; LAB_0056517f
@@ -508,7 +508,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056518b
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565190
-    MOV [0x02cf606c],EAX                ; 00565193 | g_PTR_02cf606c
+    MOV [0x02cf606c],EAX                ; 00565193 | g_APIDLL_getVideoMemory
     TEST EAX,EAX                        ; 00565198
     JNZ 0x005651a6                      ; 0056519a
         ;   XREF to: 005651a6 (CONDITIONAL_JUMP)  ; LAB_005651a6
@@ -520,7 +520,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005651b2
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005651b7
-    MOV [0x02cf6070],EAX                ; 005651ba | g_PTR_02cf6070
+    MOV [0x02cf6070],EAX                ; 005651ba | g_APIDLL_selectCard
     TEST EAX,EAX                        ; 005651bf
     JNZ 0x005651cd                      ; 005651c1
         ;   XREF to: 005651cd (CONDITIONAL_JUMP)  ; LAB_005651cd
@@ -532,7 +532,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005651d9
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005651de
-    MOV [0x02cf6074],EAX                ; 005651e1 | g_PTR_02cf6074
+    MOV [0x02cf6074],EAX                ; 005651e1 | g_APIDLL_buildCardList
     TEST EAX,EAX                        ; 005651e6
     JNZ 0x005651f4                      ; 005651e8
         ;   XREF to: 005651f4 (CONDITIONAL_JUMP)  ; LAB_005651f4
@@ -547,32 +547,32 @@ section .text
     PUSH 0x5d5847                       ; 00565208 | = "APIDLLunlockHoldBuffer"
     MOV ECX,dword ptr [0x02cf610c]      ; 0056520d | g_HMODULE_02cf610c
     PUSH ECX                            ; 00565213
-    MOV [0x02cf6078],EAX                ; 00565214 | g_PTR_02cf6078
+    MOV [0x02cf6078],EAX                ; 00565214 | g_APIDLL_lockHoldBuffer
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565219
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 0056521e
     PUSH 0x5d585e                       ; 00565221 | = "APIDLLlockTexture"
     MOV ESI,dword ptr [0x02cf610c]      ; 00565226 | g_HMODULE_02cf610c
     PUSH ESI                            ; 0056522c
-    MOV [0x02cf607c],EAX                ; 0056522d | g_PTR_02cf607c
+    MOV [0x02cf607c],EAX                ; 0056522d | g_APIDLL_unlockHoldBuffer
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565232
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565237
     PUSH 0x5d5870                       ; 0056523a | = "APIDLLunlockTexture"
     MOV EDI,dword ptr [0x02cf610c]      ; 0056523f | g_HMODULE_02cf610c
     PUSH EDI                            ; 00565245
-    MOV [0x02cf6080],EAX                ; 00565246 | g_PTR_02cf6080
+    MOV [0x02cf6080],EAX                ; 00565246 | g_APIDLL_lockTexture
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056524b
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565250
     PUSH 0x5d5884                       ; 00565253 | = "APIDLLgetTextureInfo"
     MOV EBP,dword ptr [0x02cf610c]      ; 00565258 | g_HMODULE_02cf610c
     PUSH EBP                            ; 0056525e
-    MOV [0x02cf6084],EAX                ; 0056525f | g_PTR_02cf6084
+    MOV [0x02cf6084],EAX                ; 0056525f | g_APIDLL_unlockTexture
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565264
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565269
-    MOV [0x02cf6088],EAX                ; 0056526c | g_PTR_02cf6088
+    MOV [0x02cf6088],EAX                ; 0056526c | g_APIDLL_getTextureInfo
     TEST EAX,EAX                        ; 00565271
     JNZ 0x0056527f                      ; 00565273
         ;   XREF to: 0056527f (CONDITIONAL_JUMP)  ; LAB_0056527f
@@ -587,7 +587,7 @@ section .text
     PUSH 0x5d58ad                       ; 00565293 | = "APIDLLrestoreVideoModeX"
     MOV ECX,dword ptr [0x02cf610c]      ; 00565298 | g_HMODULE_02cf610c
     PUSH ECX                            ; 0056529e
-    MOV [0x02cf608c],EAX                ; 0056529f | g_PTR_02cf608c
+    MOV [0x02cf608c],EAX                ; 0056529f | g_APIDLL_setVideoModeX
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005652a4
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005652a9
@@ -601,7 +601,7 @@ section .text
     PUSH 0x5d58d6                       ; 005652c5 | = "APIDLLunlockFrameX"
     MOV EDI,dword ptr [0x02cf610c]      ; 005652ca | g_HMODULE_02cf610c
     PUSH EDI                            ; 005652d0
-    MOV [0x02cf6094],EAX                ; 005652d1 | g_PTR_02cf6094
+    MOV [0x02cf6094],EAX                ; 005652d1 | g_APIDLL_lockFrameX
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005652d6
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005652db
@@ -613,7 +613,7 @@ section .text
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005652f4
     PUSH 0x5d58f7                       ; 005652f7 | = "APIDLLsetViewport"
-    MOV [0x02cf609c],EAX                ; 005652fc | g_PTR_02cf609c
+    MOV [0x02cf609c],EAX                ; 005652fc | g_APIDLL_toggleX
     MOV EAX,[0x02cf610c]                ; 00565301 | g_HMODULE_02cf610c
     PUSH EAX                            ; 00565306
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565307
@@ -622,40 +622,40 @@ section .text
     PUSH 0x5d5909                       ; 0056530f | = "APIDLLsetLightConstants"
     MOV EDX,dword ptr [0x02cf610c]      ; 00565314 | g_HMODULE_02cf610c
     PUSH EDX                            ; 0056531a
-    MOV [0x02cf60a0],EAX                ; 0056531b | g_PTR_02cf60a0
+    MOV [0x02cf60a0],EAX                ; 0056531b | g_APIDLL_setViewport
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565320
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565325
     PUSH 0x5d5921                       ; 00565328 | = "APIDLLsetLightVector"
     MOV ECX,dword ptr [0x02cf610c]      ; 0056532d | g_HMODULE_02cf610c
     PUSH ECX                            ; 00565333
-    MOV [0x02cf60a4],EAX                ; 00565334 | g_PTR_02cf60a4
+    MOV [0x02cf60a4],EAX                ; 00565334 | g_APIDLL_setLightConstants
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565339
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 0056533e
     PUSH 0x5d5936                       ; 00565341 | = "APIDLLsetAmbientLight"
     MOV ESI,dword ptr [0x02cf610c]      ; 00565346 | g_HMODULE_02cf610c
     PUSH ESI                            ; 0056534c
-    MOV [0x02cf60a8],EAX                ; 0056534d | g_PTR_02cf60a8
+    MOV [0x02cf60a8],EAX                ; 0056534d | g_APIDLL_setLightVector
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565352
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565357
     PUSH 0x5d594c                       ; 0056535a | = "APIDLLsetTransform"
     MOV EDI,dword ptr [0x02cf610c]      ; 0056535f | g_HMODULE_02cf610c
     PUSH EDI                            ; 00565365
-    MOV [0x02cf60ac],EAX                ; 00565366 | g_PTR_02cf60ac
+    MOV [0x02cf60ac],EAX                ; 00565366 | g_APIDLL_setAmbientLight
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056536b
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565370
     PUSH 0x5d595f                       ; 00565373 | = "APIDLLpolyList"
     MOV EBP,dword ptr [0x02cf610c]      ; 00565378 | g_HMODULE_02cf610c
     PUSH EBP                            ; 0056537e
-    MOV [0x02cf60b0],EAX                ; 0056537f | g_PTR_02cf60b0
+    MOV [0x02cf60b0],EAX                ; 0056537f | g_APIDLL_setTransform
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565384
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00565389
     PUSH 0x5d596e                       ; 0056538c | = "APIDLLpolyList2"
-    MOV [0x02cf60b4],EAX                ; 00565391 | g_PTR_02cf60b4
+    MOV [0x02cf60b4],EAX                ; 00565391 | g_APIDLL_polyList
     MOV EAX,[0x02cf610c]                ; 00565396 | g_HMODULE_02cf610c
     PUSH EAX                            ; 0056539b
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 0056539c
@@ -664,7 +664,7 @@ section .text
     PUSH 0x5d597e                       ; 005653a4 | = "APIDLLpolyListL"
     MOV EDX,dword ptr [0x02cf610c]      ; 005653a9 | g_HMODULE_02cf610c
     PUSH EDX                            ; 005653af
-    MOV [0x02cf60b8],EAX                ; 005653b0 | g_PTR_02cf60b8
+    MOV [0x02cf60b8],EAX                ; 005653b0 | g_APIDLL_getTextureHandle
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005653b5
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005653ba
@@ -727,7 +727,7 @@ section .text
     PUSH 0x5d5a26                       ; 00565484 | = "APIDLLgetTextureHandle"
     MOV EDI,dword ptr [0x02cf610c]      ; 00565489 | g_HMODULE_02cf610c
     PUSH EDI                            ; 0056548f
-    MOV [0x02cf60dc],EAX                ; 00565490 | g_PTR_02cf60dc
+    MOV [0x02cf60dc],EAX                ; 00565490 | g_APIDLL_setTextureClamp
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 00565495
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 0056549a
@@ -739,7 +739,7 @@ section .text
         ;   XREF to: 0057ad20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005654b3
     PUSH 0x5d5a59                       ; 005654b6 | = "APIDLLresetTextureCache"
-    MOV [0x02cf60e4],EAX                ; 005654bb | g_PTR_02cf60e4
+    MOV [0x02cf60e4],EAX                ; 005654bb | g_APIDLL_setFog
     MOV EAX,[0x02cf610c]                ; 005654c0 | g_HMODULE_02cf610c
     PUSH EAX                            ; 005654c5
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20 ; 005654c6
@@ -883,13 +883,13 @@ section .text
     MOV EDI,0x5fba28                    ; 005656d2 | g_INT_005fba28
     MOV EBP,0x1c6cee0                   ; 005656d7
     MOV EAX,0x60683c                    ; 005656dc | g_INT_0060683c
-    MOV EDX,0x606834                    ; 005656e1 | g_INT_00606834
+    MOV EDX,0x606834                    ; 005656e1 | g_TextureBits
     MOV ECX,0x606838                    ; 005656e6 | g_INT_00606838
     MOV ESI,0x2cf5fd4                   ; 005656eb
     MOV dword ptr [ESP + 0x3bd8],EDI    ; 005656f0 | g_INT_005fba28
     MOV dword ptr [ESP + 0x3bdc],EBP    ; 005656f7 | g_INT_01c6cee0
     MOV dword ptr [ESP + 0x3be0],EAX    ; 005656fe | g_INT_0060683c
-    MOV dword ptr [ESP + 0x3be4],EDX    ; 00565705 | g_INT_00606834
+    MOV dword ptr [ESP + 0x3be4],EDX    ; 00565705 | g_TextureBits
     MOV dword ptr [ESP + 0x3be8],ECX    ; 0056570c | g_INT_00606838
     MOV dword ptr [ESP + 0x3bec],ESI    ; 00565713
     MOV EDI,0x606830                    ; 0056571a | g_INT_00606830
@@ -918,7 +918,7 @@ section .text
     PUSH EBX                            ; 0056579f
     MOV dword ptr [ESP + 0x3c14],EBP    ; 005657a0
     MOV dword ptr [ESP + 0x3c18],EDX    ; 005657a7
-    CALL dword ptr [0x02cf5fe4]         ; 005657ae | g_PTR_02cf5fe4
+    CALL dword ptr [0x02cf5fe4]         ; 005657ae | g_APIDLL_init
     ADD ESP,0x8                         ; 005657b4
     TEST EAX,EAX                        ; 005657b7
     JNZ 0x005657cb                      ; 005657b9
@@ -930,7 +930,7 @@ section .text
     POP ESI                             ; 005657c8
     POP EBX                             ; 005657c9
     RET                                 ; 005657ca
-    MOV EBX,dword ptr [0x02cf5fd0]      ; 005657cb | g_INT_02cf5fd0
+    MOV EBX,dword ptr [0x02cf5fd0]      ; 005657cb | g_RendererCardIndex
         ;   Label: LAB_005657cb
     PUSH EBX                            ; 005657d1
     CALL engine_special.cpp_selectCard_FUN_005663e0 ; 005657d2

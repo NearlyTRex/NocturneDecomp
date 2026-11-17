@@ -103,7 +103,7 @@ section .text
     CMP EAX,ECX                         ; 0042e60e
     JNZ 0x0042e5d8                      ; 0042e610
         ;   XREF to: 0042e5d8 (CONDITIONAL_JUMP)  ; LAB_0042e5d8
-    FILD dword ptr [0x01c43530]         ; 0042e612 | g_INT_01c43530
+    FILD dword ptr [0x01c43530]         ; 0042e612 | g_GlobalDeltaTimeInt
     FMUL float ptr [0x005d598f]         ; 0042e618 | g_FLOAT_005d598f
     FLD float ptr [EBX + 0xc194]        ; 0042e61e
     FXCH                                ; 0042e624

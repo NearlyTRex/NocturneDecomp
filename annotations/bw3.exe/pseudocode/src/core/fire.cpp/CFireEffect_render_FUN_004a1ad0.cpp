@@ -55,14 +55,14 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004a1ad0(CFireEffect *this_ptr
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CLeaf *)&g_INT_01cf5088);
+  } while (this_ptr_01 != (CLeaf *)&g_LaserBeamActiveCount);
   pCVar2 = CFirefly_ARRAY_01cba2b8;
   do {
     if (0.0 < (pCVar2->base).lifetime_remaining) {
       (*((pCVar2->base).vtable)->render)(&pCVar2->base);
     }
     pCVar2 = pCVar2 + 1;
-  } while (pCVar2 != (CFirefly *)&g_INT_01cbb9b8);
+  } while (pCVar2 != (CFirefly *)&g_MuzzleFlashAllocIndex);
   this_ptr_02 = g_FireballPool;
   core_fire_cpp_CFireball_setupRenderState_FUN_004995a0(g_FireballPool);
   do {
@@ -95,29 +95,29 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004a1ad0(CFireEffect *this_ptr
         iVar1 = iVar1 + 0x40;
       } while (iVar4 < g_INT_01c8aea0);
     }
-    this_ptr_04 = g_CSmokeParticle_ARRAY_01c74ea0;
-    core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00496c60(g_CSmokeParticle_ARRAY_01c74ea0);
+    this_ptr_04 = g_SmokeParticlePool;
+    core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00496c60(g_SmokeParticlePool);
     do {
       if (this_ptr_04->active != 0) {
         core_fire_cpp_CSmokeParticle_render_FUN_00496f60(this_ptr_04);
       }
       this_ptr_04 = this_ptr_04 + 1;
-    } while (this_ptr_04 != g_CSmokeParticle_ARRAY_01c74ea0 + sizeof(g_CSmokeParticle_ARRAY_01c74ea0) / sizeof(g_CSmokeParticle_ARRAY_01c74ea0[0]));
-    this_ptr_05 = g_CMuzzleFlash_ARRAY_01cbb9bc;
+    } while (this_ptr_04 != g_SmokeParticlePool + sizeof(g_SmokeParticlePool) / sizeof(g_SmokeParticlePool[0]));
+    this_ptr_05 = g_MuzzleFlashPool;
     do {
       if (this_ptr_05->frames_remaining != 0) {
         core_fire_cpp_CMuzzleFlash_render_FUN_0049a480(this_ptr_05);
       }
       this_ptr_05 = this_ptr_05 + 1;
-    } while (this_ptr_05 != g_CMuzzleFlash_ARRAY_01cbb9bc + sizeof(g_CMuzzleFlash_ARRAY_01cbb9bc) / sizeof(g_CMuzzleFlash_ARRAY_01cbb9bc[0]));
+    } while (this_ptr_05 != g_MuzzleFlashPool + sizeof(g_MuzzleFlashPool) / sizeof(g_MuzzleFlashPool[0]));
     iVar4 = 0;
-    if (0 < g_INT_01cf5088) {
-      this_ptr_06 = g_CLaserBeam_ARRAY_01cf508c;
+    if (0 < g_LaserBeamActiveCount) {
+      this_ptr_06 = g_LaserBeamPool;
       do {
         core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(this_ptr_06);
         iVar4 = iVar4 + 1;
         this_ptr_06 = this_ptr_06 + 1;
-      } while (iVar4 < g_INT_01cf5088);
+      } while (iVar4 < g_LaserBeamActiveCount);
     }
     this_ptr_07 = g_SparkPool;
     core_fire_cpp_CSpark_setupRenderState_FUN_00497f70(g_SparkPool);
@@ -134,7 +134,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004a1ad0(CFireEffect *this_ptr
         (*((pCVar2->base).vtable)->render)(&pCVar2->base);
       }
       pCVar2 = pCVar2 + 1;
-    } while (pCVar2 != (CFirefly *)&g_INT_01cbb9b8);
+    } while (pCVar2 != (CFirefly *)&g_MuzzleFlashAllocIndex);
     this_ptr_08 = CGlassParticle_ARRAY_01cbc0f0;
     do {
       if (0.0 < (this_ptr_08->base).lifetime_remaining) {
@@ -142,13 +142,13 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004a1ad0(CFireEffect *this_ptr
       }
       this_ptr_08 = this_ptr_08 + 1;
     } while (this_ptr_08 != (CGlassParticle *)&g_INT_01cefd10);
-    this_ptr_09 = g_CBulletTrail_ARRAY_01cefd14;
+    this_ptr_09 = g_BulletTrailPool;
     do {
       if (this_ptr_09->frames_remaining != 0) {
         core_fire_cpp_CBulletTrail_render_FUN_0049ad20(this_ptr_09);
       }
       this_ptr_09 = this_ptr_09 + 1;
-    } while (this_ptr_09 != g_CBulletTrail_ARRAY_01cefd14 + sizeof(g_CBulletTrail_ARRAY_01cefd14) / sizeof(g_CBulletTrail_ARRAY_01cefd14[0]));
+    } while (this_ptr_09 != g_BulletTrailPool + sizeof(g_BulletTrailPool) / sizeof(g_BulletTrailPool[0]));
     this_ptr_10 = g_CExplosion_ARRAY_01cf6090;
     do {
       core_fire_cpp_CExplosion_render_FUN_0049c8e0(this_ptr_10);

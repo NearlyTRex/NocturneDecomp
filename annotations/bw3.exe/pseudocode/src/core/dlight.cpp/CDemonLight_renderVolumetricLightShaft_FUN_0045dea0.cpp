@@ -133,7 +133,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0
         local_74.z = 1.0;
         local_74.x = 0.0;
         local_74.y = 0.0;
-        local_14 = (float)(0xffff - g_INT_01c6e24c);
+        local_14 = (float)(0xffff - g_PerspectiveReciprocal);
         core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
                   (&(this_ptr->base).base.rotation_matrix,&local_74,&local_80);
         local_50 = local_80.x;

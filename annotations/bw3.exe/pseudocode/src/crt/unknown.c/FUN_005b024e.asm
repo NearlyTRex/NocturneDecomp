@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   byte g_BYTE_006075c1 = 0x0
-;   byte g_BYTE_00607b5c = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005aab44
@@ -49,7 +49,7 @@ section .text
     FLD double ptr [ESP]                ; 005b0273
     PUSH ECX                            ; 005b0276
     PUSH EBX                            ; 005b0277
-    TEST byte ptr [0x00607b5c],0x1      ; 005b0278 | g_BYTE_00607b5c
+    TEST byte ptr [0x00607b5c],0x1      ; 005b0278 | g_UseSoftwareMath
     JZ 0x005b0288                       ; 005b027f
         ;   XREF to: 005b0288 (CONDITIONAL_JUMP)  ; LAB_005b0288
     CALL crt_unknown.c_FUN_005aab44     ; 005b0281

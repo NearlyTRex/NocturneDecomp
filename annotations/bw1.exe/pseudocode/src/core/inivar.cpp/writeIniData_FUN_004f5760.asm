@@ -171,7 +171,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004f58e2
         ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f58e7
-    MOV EAX,[0x01d1f5d4]                ; 004f58ea | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 004f58ea | g_GraphicsMenuTextPointers[7]
     PUSH EAX                            ; 004f58ef
     PUSH 0x5e5cc7                       ; 004f58f0 | = "currentBoard"
     LEA EAX,[ESP + 0x8]                 ; 004f58f5

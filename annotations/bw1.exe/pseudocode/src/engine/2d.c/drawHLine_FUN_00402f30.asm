@@ -25,10 +25,10 @@
 ;   TerminatedCString s_engine_2d_c_005d2156
 ;   TerminatedCString s_hLine_invalid_bitsPerPix_005d2165
 ;   int g_INT_0061b4a0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c4354c
+;   void*[1200] g_ScreenBufferArray
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;   int g_INT_01c4f020
 ;   char* g_CHAR_PTR_01d1d400
@@ -60,7 +60,7 @@ section .text
     JGE 0x00402f5b                      ; 00402f57
         ;   XREF to: 00402f5b (CONDITIONAL_JUMP)  ; LAB_00402f5b
     MOV EDX,EDI                         ; 00402f59
-    MOV EBP,dword ptr [0x01c4f010]      ; 00402f5b | g_INT_01c4f010
+    MOV EBP,dword ptr [0x01c4f010]      ; 00402f5b | g_ClipRight
         ;   Label: LAB_00402f5b
     CMP EAX,EBP                         ; 00402f61
     JLE 0x00402f67                      ; 00402f63
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 00403012 (CONDITIONAL_JUMP)  ; LAB_00403012
     PUSH EAX                            ; 00402f8a
     MOV EBX,dword ptr [0x01c4f020]      ; 00402f8b | g_INT_01c4f020
-    MOV EAX,dword ptr [ECX + 0x1c4354c] ; 00402f91 | g_ARRAY_PTR_01c4354c
+    MOV EAX,dword ptr [ECX + 0x1c4354c] ; 00402f91 | g_ScreenBufferArray
     PUSH EBX                            ; 00402f97
     ADD EDX,EAX                         ; 00402f98
     PUSH EDX                            ; 00402f9a
@@ -99,7 +99,7 @@ section .text
     RET                                 ; 00402fb3
     MOV EBX,dword ptr [0x01c4f020]      ; 00402fb4 | g_INT_01c4f020
         ;   Label: LAB_00402fb4
-    MOV ECX,dword ptr [ECX + 0x1c4354c] ; 00402fba | g_ARRAY_PTR_01c4354c
+    MOV ECX,dword ptr [ECX + 0x1c4354c] ; 00402fba | g_ScreenBufferArray
     ADD EDX,EDX                         ; 00402fc0
     MOV BX,word ptr [EBX*0x2 + 0x1c4dad0] ; 00402fc2
     ADD EDX,ECX                         ; 00402fca
@@ -120,7 +120,7 @@ section .text
     MOV EBX,dword ptr [0x01c4f020]      ; 00402fe0 | g_INT_01c4f020
         ;   Label: LAB_00402fe0
     SHL EDX,0x2                         ; 00402fe6
-    MOV ECX,dword ptr [ECX + 0x1c4354c] ; 00402fe9 | g_ARRAY_PTR_01c4354c
+    MOV ECX,dword ptr [ECX + 0x1c4354c] ; 00402fe9 | g_ScreenBufferArray
     MOV EBX,dword ptr [EBX*0x4 + 0x1c4dcd0] ; 00402fef
     ADD EDX,ECX                         ; 00402ff6
     TEST EAX,EAX                        ; 00402ff8

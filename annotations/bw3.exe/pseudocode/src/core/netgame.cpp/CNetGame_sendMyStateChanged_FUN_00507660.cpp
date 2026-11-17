@@ -28,7 +28,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00507660(CNetGame 
     core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::sendMyStateChanged - should only call this in client lobby mode");
   }
   iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
-  iVar3 = iVar2 / 0x12 - g_INT_01da6474;
+  iVar3 = iVar2 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
@@ -52,10 +52,10 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00507660(CNetGame 
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  g_INT_01da6474 = iVar2 / 0x12;
+  g_LastPingTime = iVar2 / 0x12;
   local_37 = g_UINT_01da6478;
   core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,this_ptr->server_player_index,&local_3c);
-  g_INT_00603454 = 1;
+  g_NetLobbyStateChanged = 1;
   this_ptr->players[this_ptr->local_player_index].state_change_time = g_UINT_01da6478;
   return;
 }

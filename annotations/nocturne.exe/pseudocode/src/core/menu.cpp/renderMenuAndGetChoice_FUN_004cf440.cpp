@@ -21,10 +21,9 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
   int local_20;
   char **local_1c;
   
-  this_ptr = g_CBitFont_PTR_014b9900;
+  this_ptr = g_ThemeFont;
   if (title != (char *)0x0) {
-    engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (g_CBitFont_PTR_014b9900,title,0xa0,y_position,7,0);
+    engine_font_cpp_CBitFont_drawText_FUN_00490980(g_ThemeFont,title,0xa0,y_position,7,0);
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0x58);
     y_position = y_position + iVar1 * 2;
   }
@@ -68,25 +67,24 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
     } while (local_20 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
-  if (g_INT_01d16810 == 0) {
+  if (g_UseOSFonts == 0) {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (g_CBitFont_PTR_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
-                      (g_CBitFont_PTR_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
   }
   else {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (g_CBitFont_PTR_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
-                      (g_CBitFont_PTR_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (g_CBitFont_PTR_014b9904,pcVar7,0x27f - iVar1,0x1df - iVar2,0xf8,0);
+            (g_SmallEditorFont,pcVar7,0x27f - iVar1,0x1df - iVar2,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00408370(0x8000);
-  engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (g_CBitFont_PTR_014b9904,"",0x206,99,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_00490980(g_SmallEditorFont,"",0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {
@@ -99,10 +97,10 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_004cf677:
-  g_INT_01cc5b68 = 0;
+  g_MenuInputHappened = 0;
   iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD8);
   if (iVar1 != 0) {
-    g_INT_01cc5b68 = 1;
+    g_MenuInputHappened = 1;
     iVar1 = *selected_index_ptr;
     *selected_index_ptr = iVar1 + -1;
     if (iVar1 + -1 < 0) {
@@ -112,17 +110,17 @@ LAB_004cf677:
   iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD2);
   if (iVar1 != 0) {
     iVar1 = *selected_index_ptr;
-    g_INT_01cc5b68 = 1;
+    g_MenuInputHappened = 1;
     *selected_index_ptr = iVar1 + 1;
     if (menu_count <= iVar1 + 1) {
       *selected_index_ptr = 0;
     }
   }
   if (pcVar6 != (char *)0x0) {
-    g_INT_01cc5b5c = 0;
+    g_MenuLeftRightPressed = 0;
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);
     if (iVar1 != 0) {
-      g_INT_01cc5b5c = 1;
+      g_MenuLeftRightPressed = 1;
       return *selected_index_ptr;
     }
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD6);

@@ -12,10 +12,10 @@ CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0046fa20(CEditor
   while (0 < g_INT_01bcd07c) {
     shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(this_ptr);
   }
-  if (g_CHAR_PTR_01bcd078 == (char *)0x0) {
+  if (g_ClipboardBackupText == (char *)0x0) {
     return this_ptr;
   }
-  free(g_CHAR_PTR_01bcd078);
-  g_CHAR_PTR_01bcd078 = (char *)0x0;
+  free(g_ClipboardBackupText);
+  g_ClipboardBackupText = (char *)0x0;
   return this_ptr;
 }

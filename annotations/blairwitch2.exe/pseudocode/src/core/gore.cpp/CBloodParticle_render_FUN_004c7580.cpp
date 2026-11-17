@@ -63,7 +63,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004c7580(CBloodParticle *th
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (g_CDemonRenderer_PTR_0060b280,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3i_01cb82b0,(CVector3i *)0x0);
+            (g_CDemonRenderer_PTR_0060b280,&g_ParticleCameraRotation,(CVector3i *)0x0);
   afStack_e8[2] = -0.1;
   afStack_e8[4] = 0.0;
   afStack_e8[3] = -0.1;
@@ -97,7 +97,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004c7580(CBloodParticle *th
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_f8);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_006167f0);
+            (g_CDemonRenderer_PTR_0060b280,&g_BloodParticleTexture);
   iVar3 = (this_ptr->texture_index & 3U) * 0x400000;
   iVar4 = (this_ptr->texture_index >> 2 & 3U) * 0x400000;
   g_SRenderVertex_ARRAY_00622014[0].u = iVar3 + 0x80000;
@@ -112,7 +112,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004c7580(CBloodParticle *th
   g_SRenderVertex_ARRAY_00622014[3].u = g_SRenderVertex_ARRAY_00622014[0].u;
   g_SRenderVertex_ARRAY_00622014[3].v = g_SRenderVertex_ARRAY_00622014[2].v;
   core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-            (g_CDemonSetPtr,&CStack_b0,&g_CVector3i_01cb82bc,0,4);
+            (g_CDemonSetPtr,&CStack_b0,&g_BloodParticleViewDirection,0,4);
   piStack_24 = &iStack_30;
   EVar1 = this_ptr->blood_type;
   core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
@@ -151,12 +151,12 @@ LAB_004c787c:
          (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
     iVar3 = iVar4;
   } while (iVar4 != 0xc0);
-  (*((g_CDemonCamera_PTR_007bda74->base).vtable)->setupPerspectiveAndFog)
-            (g_CDemonCamera_PTR_007bda74,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
-            (g_CDemonRenderer_PTR_0060b280,0xffff - g_INT_01c38aec);
+            (g_CDemonRenderer_PTR_0060b280,0xffff - g_PerspectiveReciprocal);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
+            (g_CDemonRenderer_PTR_0060b280,&g_GoreQuadPrimitive.base);
   engine_drender_cpp_pop_FUN_0046b4a0();
   fStack_114 = 1.0;
   puVar5 = (uint *)((int)this_ptr + (uint)bVar7 * -8 + 4);
@@ -198,7 +198,7 @@ LAB_004c787c:
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
               (g_CDemonRenderer_PTR_0060b280,world_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
-              (g_CDemonRenderer_PTR_0060b280,&g_CVector3i_01cb82b0,(CVector3i *)0x0);
+              (g_CDemonRenderer_PTR_0060b280,&g_ParticleCameraRotation,(CVector3i *)0x0);
     afStack_e8[2] = fStack_114 * (float)-0.10000000000000001;
     afStack_e8[4] = 0.0;
     aCStack_50[0].x = (int)ROUND(afStack_e8[2] * 256.0f);
@@ -237,7 +237,7 @@ LAB_004c787c:
     CStack_b0.y = (int)ROUND(CStack_d4.y * 256.0f);
     CStack_b0.z = (int)ROUND(CStack_d4.z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-              (g_CDemonSetPtr,&CStack_b0,&g_CVector3i_01cb82bc,0,4);
+              (g_CDemonSetPtr,&CStack_b0,&g_BloodParticleViewDirection,0,4);
     iVar3 = 0;
     do {
       lVar2 = (longlong)iStack_2c *
@@ -255,12 +255,12 @@ LAB_004c787c:
            (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
       iVar3 = iVar4;
     } while (iVar4 != 0xc0);
-    (*((g_CDemonCamera_PTR_007bda74->base).vtable)->setupPerspectiveAndFog)
-              (g_CDemonCamera_PTR_007bda74,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+              (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
-              (g_CDemonRenderer_PTR_0060b280,0xffff - g_INT_01c38aec);
+              (g_CDemonRenderer_PTR_0060b280,0xffff - g_PerspectiveReciprocal);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
+              (g_CDemonRenderer_PTR_0060b280,&g_GoreQuadPrimitive.base);
     engine_drender_cpp_pop_FUN_0046b4a0();
     iStack_18 = iStack_18 + 1;
   } while (iStack_18 < 3);

@@ -24,8 +24,8 @@
 ;   TerminatedCString s_lockSound_lock_imbalance_005f440f
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   HANDLE g_HANDLE_02c807e8
-;   int g_INT_02c807ec
+;   HANDLE g_SoundMutex
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -39,12 +39,12 @@ section .text
     PUSH ESI                            ; 00575d20
         ;   Label: sound_sndmain.cpp_lockSound_FUN_00575d20
     PUSH EDI                            ; 00575d21
-    CMP dword ptr [0x02c807e8],0x0      ; 00575d22 | g_HANDLE_02c807e8
+    CMP dword ptr [0x02c807e8],0x0      ; 00575d22 | g_SoundMutex
     JNZ 0x00575d5e                      ; 00575d29
         ;   XREF to: 00575d5e (CONDITIONAL_JUMP)  ; LAB_00575d5e
     CALL wincore_winrun.cpp_createMutex_FUN_005b3740 ; 00575d2b
         ;   XREF to: 005b3740 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_005b3740()
-    MOV [0x02c807e8],EAX                ; 00575d30 | g_HANDLE_02c807e8
+    MOV [0x02c807e8],EAX                ; 00575d30 | g_SoundMutex
     TEST EAX,EAX                        ; 00575d35
     JNZ 0x00575d5e                      ; 00575d37
         ;   XREF to: 00575d5e (CONDITIONAL_JUMP)  ; LAB_00575d5e
@@ -58,15 +58,15 @@ section .text
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575d5a
     POP EBX                             ; 00575d5d
-    MOV ESI,dword ptr [0x02c807e8]      ; 00575d5e | g_HANDLE_02c807e8
+    MOV ESI,dword ptr [0x02c807e8]      ; 00575d5e | g_SoundMutex
         ;   Label: LAB_00575d5e
     PUSH ESI                            ; 00575d64
     CALL wincore_winrun.cpp_waitForMutex_FUN_005b3750 ; 00575d65
         ;   XREF to: 005b3750 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_waitForMutex_FUN_005b3750(HANDLE mutex_handle)
-    MOV EDI,dword ptr [0x02c807ec]      ; 00575d6a | g_INT_02c807ec
+    MOV EDI,dword ptr [0x02c807ec]      ; 00575d6a | g_SoundLockCount
     INC EDI                             ; 00575d70
     ADD ESP,0x4                         ; 00575d71
-    MOV dword ptr [0x02c807ec],EDI      ; 00575d74 | g_INT_02c807ec
+    MOV dword ptr [0x02c807ec],EDI      ; 00575d74 | g_SoundLockCount
     CMP EDI,0x63                        ; 00575d7a
     JG 0x00575d82                       ; 00575d7d
         ;   XREF to: 00575d82 (CONDITIONAL_JUMP)  ; LAB_00575d82

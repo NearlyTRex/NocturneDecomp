@@ -20,15 +20,15 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c4354c
-;   uint[256] g_UINT_ARRAY_01c4e3d4
-;   undefined4 g_UINT_ARRAY_01c4e3d4[1]
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   int g_INT_01c4e9d8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   int g_INT_01c4e9e4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
-;   int g_INT_01c4e9f0
+;   void*[1200] g_ScreenBufferArray
+;   uint[256] g_Hardware32BitPalette
+;   undefined4 g_Hardware32BitPalette[1]
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040d910
@@ -95,7 +95,7 @@ section .text
     JZ 0x0040db3e                       ; 0040da40
         ;   XREF to: 0040db3e (CONDITIONAL_JUMP)  ; LAB_0040db3e
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040da46
-    MOV EDX,dword ptr [EDX + 0x1c4354c] ; 0040da4a | g_ARRAY_PTR_01c4354c
+    MOV EDX,dword ptr [EDX + 0x1c4354c] ; 0040da4a | g_ScreenBufferArray
     AND EAX,0xff                        ; 0040da50
     MOV AX,word ptr [EAX*0x2 + 0x1c4e7d4] ; 0040da55
     MOV word ptr [EDX + EDI*0x1],AX     ; 0040da5d
@@ -130,8 +130,8 @@ section .text
     MOV dword ptr [ESP + 0x10],ESI      ; 0040da9e
     MOV EAX,dword ptr [ESP + 0x10]      ; 0040daa2
         ;   Label: LAB_0040daa2
-    MOV EAX,dword ptr [EAX + 0x1c4e3d4] ; 0040daa6 | g_UINT_ARRAY_01c4e3d4 | g_UINT_ARRAY_01c4e3d4[1]
-    MOV EDI,dword ptr [0x01c4e9d8]      ; 0040daac | g_INT_01c4e9d8
+    MOV EAX,dword ptr [EAX + 0x1c4e3d4] ; 0040daa6 | g_Hardware32BitPalette | g_Hardware32BitPalette[1]
+    MOV EDI,dword ptr [0x01c4e9d8]      ; 0040daac | g_RedScaleFactor
     MOV EBP,EAX                         ; 0040dab2
     MOV ECX,EAX                         ; 0040dab4
     SAR EAX,0x10                        ; 0040dab6
@@ -144,21 +144,21 @@ section .text
     MOV EDI,EAX                         ; 0040dace
     XOR EDX,EDX                         ; 0040dad0
     MOV EAX,ECX                         ; 0040dad2
-    DIV dword ptr [0x01c4e9e4]          ; 0040dad4 | g_INT_01c4e9e4
+    DIV dword ptr [0x01c4e9e4]          ; 0040dad4 | g_GreenScaleFactor
     AND EBP,0xff                        ; 0040dada
     MOV dword ptr [ESP + 0x4],EBP       ; 0040dae0
     MOV dword ptr [ESP],EAX             ; 0040dae4
     XOR EDX,EDX                         ; 0040dae7
     MOV EAX,EBP                         ; 0040dae9
-    DIV dword ptr [0x01c4e9f0]          ; 0040daeb | g_INT_01c4e9f0
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0040daf1 | g_BIT_INTEGER32_01c4e9d4
+    DIV dword ptr [0x01c4e9f0]          ; 0040daeb | g_BlueScaleFactor
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0040daf1 | g_RedBitPosition
     SHL EDI,CL                          ; 0040daf7
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0040daf9 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0040daf9 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x4],EAX       ; 0040daff
     MOV EAX,dword ptr [ESP]             ; 0040db03
     MOV EDX,dword ptr [ESP + 0x4]       ; 0040db06
     SHL EAX,CL                          ; 0040db0a
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0040db0c | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0040db0c | g_BlueBitPosition
     OR EAX,EDI                          ; 0040db12
     SHL EDX,CL                          ; 0040db14
     OR EAX,EDX                          ; 0040db16
@@ -174,9 +174,9 @@ section .text
         ;   XREF to: 0040d9d0 (UNCONDITIONAL_JUMP)  ; LAB_0040d9d0
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040db3e
         ;   Label: LAB_0040db3e
-    MOV EDX,dword ptr [EDX + 0x1c4354c] ; 0040db42 | g_ARRAY_PTR_01c4354c
+    MOV EDX,dword ptr [EDX + 0x1c4354c] ; 0040db42 | g_ScreenBufferArray
     AND EAX,0xff                        ; 0040db48
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c4e3d4] ; 0040db4d | g_UINT_ARRAY_01c4e3d4
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c4e3d4] ; 0040db4d | g_Hardware32BitPalette
     MOV dword ptr [EDX + ESI*0x1],EAX   ; 0040db54
     JMP 0x0040da61                      ; 0040db57
         ;   XREF to: 0040da61 (UNCONDITIONAL_JUMP)  ; LAB_0040da61

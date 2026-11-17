@@ -9,5 +9,6 @@
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_00483bf0(CDemonRenderer *this_ptr)
 
 {
-  return ((float)18 / (float)g_INT_0061b4c4) * (float)65536;
+  return ((float)18 / (float)g_ProjectionScale) *
+         (float)65536;
 }

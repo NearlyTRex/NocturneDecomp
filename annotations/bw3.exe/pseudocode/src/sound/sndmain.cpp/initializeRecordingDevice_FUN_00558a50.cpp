@@ -15,14 +15,14 @@ int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_00558a50(void)
   if (iVar1 == 0) {
     return 0;
   }
-  sound_sndmain_cpp_selectRecordingDevice_FUN_005589e0(g_INT_00604258);
-  if (-1 < g_INT_00604258) {
-    if (g_SRecordingDeviceInfo_ARRAY_02cf3428[g_INT_00604258].api_type == 0) {
-      g_CSoundDevice_PTR_02cf3c68 =
+  sound_sndmain_cpp_selectRecordingDevice_FUN_005589e0(g_CurrentRecordingDevice);
+  if (-1 < g_CurrentRecordingDevice) {
+    if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {
+      g_RecordingDeviceInterface =
            &sound_sndwav_cpp_getWavInDevice_FUN_0055e630
-                      (g_SRecordingDeviceInfo_ARRAY_02cf3428[g_INT_00604258].device_id)->base;
+                      (g_RecordingDevices[g_CurrentRecordingDevice].device_id)->base;
     }
-    if (g_CSoundDevice_PTR_02cf3c68 != (CSoundDevice *)0x0) {
+    if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
       return 1;
     }
   }

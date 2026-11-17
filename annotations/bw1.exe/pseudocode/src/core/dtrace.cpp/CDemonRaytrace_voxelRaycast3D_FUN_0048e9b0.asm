@@ -42,9 +42,9 @@
 ;   core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_005572e0 at 005572ef
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005dbb20 = 0.125
-;   float g_FLOAT_005dbb24 = 2.684355E+8
-;   uchar[8] g_UCHAR_ARRAY_0061ab68
+;   float g_VoxelSizeReciprocal2 = 0.125
+;   float g_RaycastStepScale = 2.684355E+8
+;   uchar[8] g_VoxelYBitMasks
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0048e9c5
     FLD float ptr [EDX]                 ; 0048e9c8
     FSUB float ptr [ECX + 0x10]         ; 0048e9ca
-    FLD float ptr [0x005dbb20]          ; 0048e9cd | g_FLOAT_005dbb20
+    FLD float ptr [0x005dbb20]          ; 0048e9cd | g_VoxelSizeReciprocal2
     FLD float ptr [ECX + 0x28]          ; 0048e9d3
     FMUL ST1                            ; 0048e9d6
     FLD1                                ; 0048e9d8
@@ -189,7 +189,7 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 0048eb09
     FLD ST0                             ; 0048eb0d
     FABS                                ; 0048eb0f
-    FLD float ptr [0x005dbb24]          ; 0048eb11 | g_FLOAT_005dbb24
+    FLD float ptr [0x005dbb24]          ; 0048eb11 | g_RaycastStepScale
     FDIV float ptr [ESP]                ; 0048eb17
     FXCH                                ; 0048eb1a
     FMUL ST1                            ; 0048eb1c
@@ -364,7 +364,7 @@ section .text
     XOR EDX,EDX                         ; 0048ed1a
     MOV DL,byte ptr [EAX]               ; 0048ed1c
     XOR EAX,EAX                         ; 0048ed1e
-    MOV AL,byte ptr [EDI + 0x61ab68]    ; 0048ed20 | g_UCHAR_ARRAY_0061ab68
+    MOV AL,byte ptr [EDI + 0x61ab68]    ; 0048ed20 | g_VoxelYBitMasks
     TEST EDX,EAX                        ; 0048ed26
     JNZ 0x0048ee3e                      ; 0048ed28
         ;   XREF to: 0048ee3e (CONDITIONAL_JUMP)  ; LAB_0048ee3e

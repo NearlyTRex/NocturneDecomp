@@ -16,13 +16,13 @@
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90 at 00584d9f
 ;
 ; Referenced Globals:
-;   int g_INT_0264161c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 00550170 | g_INT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 00550170 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170
     LEA EAX,[EDX*0x4 + 0x0]             ; 00550176
     SUB EAX,EDX                         ; 0055017d

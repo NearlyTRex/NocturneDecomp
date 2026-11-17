@@ -525,7 +525,7 @@ section .text
     MOV dword ptr [ESI + 0x8],EAX       ; 00588f26
     MOV EAX,dword ptr [EBX + 0x1ff80]   ; 00588f29
         ;   Label: LAB_00588f29
-    MOV [0x02c835dc],EAX                ; 00588f2f | g_CLever_PTR_02c835dc
+    MOV [0x02c835dc],EAX                ; 00588f2f | g_StrangerLeverHandle
     LEA EDI,[ESP + 0x1f40]              ; 00588f34
         ;   Label: LAB_00588f34
     LEA ESI,[EBX + 0x2006c]             ; 00588f3b
@@ -848,7 +848,7 @@ section .text
     PUSH EAX                            ; 005893e6
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 005893e7
         ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-    MOV AH,byte ptr [0x02c835e0]        ; 005893ec | g_BYTE_02c835e0
+    MOV AH,byte ptr [0x02c835e0]        ; 005893ec | g_StrangerBoundsCenterInit
     ADD ESP,0x8                         ; 005893f2
     TEST AH,0x1                         ; 005893f5
     JZ 0x00589734                       ; 005893f8
@@ -908,12 +908,12 @@ section .text
     JZ 0x00589505                       ; 005894df
         ;   XREF to: 00589505 (CONDITIONAL_JUMP)  ; LAB_00589505
     MOV EAX,dword ptr [ESP + 0x1e80]    ; 005894e1
-    MOV [0x02c835d0],EAX                ; 005894e8 | g_CVector3f_02c835d0
+    MOV [0x02c835d0],EAX                ; 005894e8 | g_StrangerBoundsCenter
     MOV EAX,dword ptr [ESP + 0x1e84]    ; 005894ed
-    MOV [0x02c835d4],EAX                ; 005894f4 | g_CVector3f_02c835d0.y
+    MOV [0x02c835d4],EAX                ; 005894f4 | g_StrangerBoundsCenter.y
     MOV EAX,dword ptr [ESP + 0x1e88]    ; 005894f9
-    MOV [0x02c835d8],EAX                ; 00589500 | g_CVector3f_02c835d0.z
-    PUSH 0x2c835d0                      ; 00589505 | g_CVector3f_02c835d0
+    MOV [0x02c835d8],EAX                ; 00589500 | g_StrangerBoundsCenter.z
+    PUSH 0x2c835d0                      ; 00589505 | g_StrangerBoundsCenter
         ;   Label: LAB_00589505
     LEA EAX,[ESP + 0x1b24]              ; 0058950a
     PUSH EAX                            ; 00589511
@@ -1061,7 +1061,7 @@ section .text
     MOV DL,AH                           ; 00589734
         ;   Label: LAB_00589734
     OR DL,0x1                           ; 00589736
-    MOV byte ptr [0x02c835e0],DL        ; 00589739 | g_BYTE_02c835e0
+    MOV byte ptr [0x02c835e0],DL        ; 00589739 | g_StrangerBoundsCenterInit
     JMP 0x005893fe                      ; 0058973f
         ;   XREF to: 005893fe (UNCONDITIONAL_JUMP)  ; LAB_005893fe
     FLD double ptr [ESP]                ; 00589744
@@ -1081,7 +1081,7 @@ section .text
     MOV dword ptr [ESP + 0x60],EDI      ; 0058976a
     JMP 0x00589692                      ; 0058976e
         ;   XREF to: 00589692 (UNCONDITIONAL_JUMP)  ; LAB_00589692
-    MOV EAX,[0x02c835dc]                ; 00589773 | g_CLever_PTR_02c835dc
+    MOV EAX,[0x02c835dc]                ; 00589773 | g_StrangerLeverHandle
         ;   Label: LAB_00589773
     PUSH EAX                            ; 00589778
     LEA ESI,[ESP + 0x1f2c]              ; 00589779

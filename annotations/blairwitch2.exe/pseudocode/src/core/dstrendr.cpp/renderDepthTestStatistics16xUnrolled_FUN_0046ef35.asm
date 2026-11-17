@@ -8,10 +8,10 @@
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_004698a0 at 00469979
 ;
 ; Referenced Globals:
-;   int g_INT_01ba5c7c
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   uint*[1200] g_UINT_PTR_ARRAY_01c2b64c
-;   uint[1600] g_UINT_ARRAY_01c35e70
+;   int g_RenderPixelCounter
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
+;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     SHR EAX,0x10                        ; 0046ef45
         ;   Label: LAB_0046ef45
     SHR ECX,0x10                        ; 0046ef48
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0046ef4b | g_UINT_PTR_ARRAY_01c2b64c
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046ef52 | g_ARRAY_PTR_01c2a38c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0046ef4b | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046ef52 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 0046ef59
     JLE 0x0046f0bc                      ; 0046ef5b
         ;   XREF to: 0046f0bc (CONDITIONAL_JUMP)  ; LAB_0046f0bc
@@ -42,12 +42,12 @@ section .text
     INC ECX                             ; 0046ef68
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046ef69
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046ef6c
-    IMUL dword ptr [ECX*0x4 + 0x1c35e70] ; 0046ef6f | g_UINT_ARRAY_01c35e70
+    IMUL dword ptr [ECX*0x4 + 0x1c35e70] ; 0046ef6f | g_ReciprocalLookupTable
     MOV EDI,EBX                         ; 0046ef76
     MOV EBX,EBP                         ; 0046ef78
     DEC ECX                             ; 0046ef7a
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046ef7b
-    MOV EAX,[0x01ba5c7c]                ; 0046ef7e | g_INT_01ba5c7c
+    MOV EAX,[0x01ba5c7c]                ; 0046ef7e | g_RenderPixelCounter
     SUB ECX,0x4                         ; 0046ef83
         ;   Label: LAB_0046ef83
     JL 0x0046f088                       ; 0046ef86
@@ -175,7 +175,7 @@ section .text
     SHR EBP,0x8                         ; 0046f0ae
     CMP EBP,dword ptr [EBX + 0x8]       ; 0046f0b1
     SBB EAX,-0x1                        ; 0046f0b4
-    MOV [0x01ba5c7c],EAX                ; 0046f0b7 | g_INT_01ba5c7c
+    MOV [0x01ba5c7c],EAX                ; 0046f0b7 | g_RenderPixelCounter
         ;   Label: LAB_0046f0b7
     POP EBP                             ; 0046f0bc
         ;   Label: LAB_0046f0bc

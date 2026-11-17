@@ -46,7 +46,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047d230(CStrList *str_
     g_INT_01d71de4 = 0xa7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
-  g_INT_01c5bae0 = g_CBitFont_PTR_01c5b0e0->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
   if ((dialog_title == (char *)0x0) || (iVar2 = *(int *)dialog_title, iVar2 < 1)) {
@@ -176,26 +176,24 @@ LAB_0047d33f:
     } while (iVar5 < iVar2);
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  local_50 = g_INT_005fba2c;
-  g_INT_005fba2c = 0x7f;
+  local_50 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   local_14 = 0;
   local_3c = iVar2 + -1;
   iVar9 = -2;
   do {
-    iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_RETURN);
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
     if (iVar5 != 0) {
       iVar9 = local_14;
     }
-    iVar5 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_LSHIFT);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar5 == 0) &&
-       (iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_TAB),
-       iVar5 != 0)) {
+       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + 1;
     }
-    iVar5 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_LSHIFT);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar5 != 0) &&
-       (iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_TAB),
-       iVar5 != 0)) {
+       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + -1;
     }
     if (local_14 < iVar2) {
@@ -206,12 +204,12 @@ LAB_0047d33f:
     else {
       local_14 = 0;
     }
-    if (g_INT_02d21b80 != 0) {
+    if (g_InputDisabled != 0) {
       iVar9 = -1;
       break;
     }
     while (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800(), iVar5 != 0) {
-      iStack_10 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004df590(g_CKeys_PTR_00600284);
+      iStack_10 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004df590(g_CKeysPtr);
       cVar1 = (char)local_44->shortcut_key;
       pCVar10 = local_44;
       for (iVar5 = 0; (cVar1 != '\0' && (iVar5 < iVar2)); iVar5 = iVar5 + 1) {
@@ -234,7 +232,7 @@ LAB_0047d33f:
         if (iVar7 != 0) {
           iVar9 = iVar5;
         }
-        if (pCVar10 == (CEdButton *)g_PTR_01c5bb78) {
+        if (pCVar10 == (CEdButton *)g_ActiveControl) {
           local_14 = iVar5;
         }
         iVar5 = iVar5 + 1;
@@ -257,7 +255,7 @@ LAB_0047d33f:
   } while (iVar9 == -2);
   pvVar3 = __vec_delete(local_44,&g_CEdButtonTypeInfo);
   free(pvVar3);
-  g_INT_005fba2c = local_50;
+  g_InputKeyMask = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(g_CEditorToolsPtr);
   return iVar9;

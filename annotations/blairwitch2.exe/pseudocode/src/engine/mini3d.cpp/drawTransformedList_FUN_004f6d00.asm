@@ -19,9 +19,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   float* g_FLOAT_PTR_01d09b7c
-;   void* g_PTR_0264bca0
+;   void* g_APIDLL_lockFrameX
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_beginTriangleBatch_FUN_004f6850
@@ -43,7 +43,7 @@ section .text
     CMP dword ptr [ESP + 0x20],0x0      ; 004f6d0f
     JNZ 0x004f6d91                      ; 004f6d14
         ;   XREF to: 004f6d91 (CONDITIONAL_JUMP)  ; LAB_004f6d91
-    CMP dword ptr [0x0264bca0],0x0      ; 004f6d1a | g_PTR_0264bca0
+    CMP dword ptr [0x0264bca0],0x0      ; 004f6d1a | g_APIDLL_lockFrameX
     JZ 0x004f6d2c                       ; 004f6d21
         ;   XREF to: 004f6d2c (CONDITIONAL_JUMP)  ; LAB_004f6d2c
     CMP dword ptr [0x01c37788],0x0      ; 004f6d23 | g_INT_01c37788
@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 004f6d71
     POP EBX                             ; 004f6d72
     RET                                 ; 004f6d73
-    MOV EAX,[0x01c38b54]                ; 004f6d74 | g_BIT_INTEGER32_01c38b54
+    MOV EAX,[0x01c38b54]                ; 004f6d74 | g_RenderStateFlags
         ;   Label: LAB_004f6d74
     PUSH EAX                            ; 004f6d79
     PUSH EDI                            ; 004f6d7a
@@ -94,7 +94,7 @@ section .text
     PUSH ESI                            ; 004f6d7c
     MOV EDX,dword ptr [0x01d09b7c]      ; 004f6d7d | g_FLOAT_PTR_01d09b7c
     PUSH EDX                            ; 004f6d83
-    CALL dword ptr [0x0264bca0]         ; 004f6d84 | g_PTR_0264bca0
+    CALL dword ptr [0x0264bca0]         ; 004f6d84 | g_APIDLL_lockFrameX
     ADD ESP,0x14                        ; 004f6d8a
     POP EDI                             ; 004f6d8d
     POP ESI                             ; 004f6d8e

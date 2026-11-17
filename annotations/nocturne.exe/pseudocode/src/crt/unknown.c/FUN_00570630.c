@@ -22,7 +22,7 @@ void FUN_00570630(void)
     crt_fstream_cpp_FUN_0057264c();
     crt_fstream_cpp_FUN_005729a6();
     if (!(bool)uVar1 && cVar3 == cVar2) {
-      g_BYTE_005c1d98 = g_BYTE_005c1d98 | 1;
+      g_UseSoftwareMath = g_UseSoftwareMath | 1;
     }
   }
   return;

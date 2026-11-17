@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   void* g_PTR_01c6b5cc
-;   int g_INT_01c6e2a0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
-;   int g_INT_01c6e2b8
+;   void* g_ScanlineRenderFunc
+;   int g_MMXSupported
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -35,13 +35,13 @@ section .text
     TEST EAX,EAX                        ; 00404c06
     JZ 0x00404c4b                       ; 00404c08
         ;   XREF to: 00404c4b (CONDITIONAL_JUMP)  ; LAB_00404c4b
-    CMP dword ptr [0x01c6e2a0],0x0      ; 00404c0a | g_INT_01c6e2a0
+    CMP dword ptr [0x01c6e2a0],0x0      ; 00404c0a | g_MMXSupported
     JNZ 0x00404c66                      ; 00404c11
         ;   XREF to: 00404c66 (CONDITIONAL_JUMP)  ; LAB_00404c66
     CMP dword ptr [0x005fba20],0x20     ; 00404c13 | g_INT_005fba20
     JNZ 0x00404c5a                      ; 00404c1a
         ;   XREF to: 00404c5a (CONDITIONAL_JUMP)  ; LAB_00404c5a
-    MOV dword ptr [0x01c6b5cc],0x562c33 ; 00404c1c | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x562c33 ; 00404c1c | g_ScanlineRenderFunc
     PUSH EDI                            ; 00404c26
         ;   Label: LAB_00404c26
     MOV EDI,0xc4                        ; 00404c27
@@ -49,8 +49,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x4]       ; 00404c2d
     MOV EBP,0x1                         ; 00404c30
     PUSH EAX                            ; 00404c35
-    MOV dword ptr [0x01c6e2b4],EDI      ; 00404c36 | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],EBP      ; 00404c3c | g_INT_01c6e2b8
+    MOV dword ptr [0x01c6e2b4],EDI      ; 00404c36 | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],EBP      ; 00404c3c | g_VertexPreprocessMode
     CALL engine_clipper.c_clipAndRasterize_FUN_0043a840 ; 00404c42
         ;   XREF to: 0043a840 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_0043a840(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00404c47
@@ -64,7 +64,7 @@ section .text
     POP ESI                             ; 00404c57
     POP EBX                             ; 00404c58
     RET                                 ; 00404c59
-    MOV dword ptr [0x01c6b5cc],0x562e69 ; 00404c5a | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x562e69 ; 00404c5a | g_ScanlineRenderFunc
         ;   Label: LAB_00404c5a
     JMP 0x00404c26                      ; 00404c64
         ;   XREF to: 00404c26 (UNCONDITIONAL_JUMP)  ; LAB_00404c26
@@ -72,10 +72,10 @@ section .text
         ;   Label: LAB_00404c66
     JNZ 0x00404c7b                      ; 00404c6d
         ;   XREF to: 00404c7b (CONDITIONAL_JUMP)  ; LAB_00404c7b
-    MOV dword ptr [0x01c6b5cc],0x560f31 ; 00404c6f | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x560f31 ; 00404c6f | g_ScanlineRenderFunc
     JMP 0x00404c26                      ; 00404c79
         ;   XREF to: 00404c26 (UNCONDITIONAL_JUMP)  ; LAB_00404c26
-    MOV dword ptr [0x01c6b5cc],0x561713 ; 00404c7b | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x561713 ; 00404c7b | g_ScanlineRenderFunc
         ;   Label: LAB_00404c7b
     JMP 0x00404c26                      ; 00404c85
         ;   XREF to: 00404c26 (UNCONDITIONAL_JUMP)  ; LAB_00404c26

@@ -12,7 +12,7 @@
 ;   double g_DOUBLE_005e402d = 0.100000000000000
 ;   float g_FLOAT_006016a8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061dcb4
+;   SMRGLTextureBasic g_BloodParticleTexture
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].v
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004e3fad
     PUSH 0x0                            ; 004e3fb0
-    PUSH 0x1cd0e68                      ; 004e3fb2 | g_CVector3i_01cd0e68
+    PUSH 0x1cd0e68                      ; 004e3fb2 | g_ParticleCameraRotation
     MOV EBX,dword ptr [0x00612560]      ; 004e3fb7 | g_CDemonRenderer_PTR_00612560
     PUSH EBX                            ; 004e3fbd | g_CDemonRenderer_01bc120c
     MOV ESI,0xbdcccccd                  ; 004e3fbe
@@ -191,7 +191,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 004e4127
         ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004e412c
-    PUSH 0x61dcb4                       ; 004e412f | g_SMRGLTextureBasic_0061dcb4
+    PUSH 0x61dcb4                       ; 004e412f | g_BloodParticleTexture
     MOV ESI,dword ptr [0x00612560]      ; 004e4134 | g_CDemonRenderer_PTR_00612560
     PUSH ESI                            ; 004e413a | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004e413b
@@ -231,7 +231,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004e41c9
     PUSH 0x4                            ; 004e41cc
     PUSH 0x0                            ; 004e41ce
-    PUSH 0x1cd0e74                      ; 004e41d0 | g_CVector3i_01cd0e74
+    PUSH 0x1cd0e74                      ; 004e41d0 | g_BloodParticleViewDirection
     LEA EAX,[ESP + 0x7c]                ; 004e41d5
     PUSH EAX                            ; 004e41d9
     MOV EDI,dword ptr [0x00622c18]      ; 004e41da | g_CDemonSetPtr
@@ -275,13 +275,13 @@ section .text
         ;   XREF to: 004e4221 (CONDITIONAL_JUMP)  ; LAB_004e4221
     PUSH 0x0                            ; 004e4277
     MOV ECX,dword ptr [EBP + 0x14]      ; 004e4279
-    MOV EAX,[0x007c6120]                ; 004e427c | g_CDemonCamera_PTR_007c6120
+    MOV EAX,[0x007c6120]                ; 004e427c | g_CurrentSceneCamera
     PUSH ECX                            ; 004e4281
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004e4282
     PUSH EAX                            ; 004e4285
     CALL dword ptr [EDX + 0x4]          ; 004e4286
     MOV EAX,0xffff                      ; 004e4289
-    MOV EBX,dword ptr [0x01c51cac]      ; 004e428e | g_INT_01c51cac
+    MOV EBX,dword ptr [0x01c51cac]      ; 004e428e | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004e4294
     SUB EAX,EBX                         ; 004e4297
     PUSH EAX                            ; 004e4299
@@ -405,7 +405,7 @@ section .text
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004e4420
     PUSH 0x0                            ; 004e4423
-    PUSH 0x1cd0e68                      ; 004e4425 | g_CVector3i_01cd0e68
+    PUSH 0x1cd0e68                      ; 004e4425 | g_ParticleCameraRotation
     MOV EDI,dword ptr [0x00612560]      ; 004e442a | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 004e4430 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800 ; 004e4431
@@ -532,7 +532,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004e45fa
     PUSH 0x4                            ; 004e45fd
     PUSH 0x0                            ; 004e45ff
-    PUSH 0x1cd0e74                      ; 004e4601 | g_CVector3i_01cd0e74
+    PUSH 0x1cd0e74                      ; 004e4601 | g_BloodParticleViewDirection
     LEA EAX,[ESP + 0x7c]                ; 004e4606
     PUSH EAX                            ; 004e460a
     MOV ESI,dword ptr [0x00622c18]      ; 004e460b | g_CDemonSetPtr
@@ -563,13 +563,13 @@ section .text
         ;   XREF to: 004e461c (CONDITIONAL_JUMP)  ; LAB_004e461c
     PUSH 0x0                            ; 004e4672
     MOV EDI,dword ptr [EBP + 0x14]      ; 004e4674
-    MOV EAX,[0x007c6120]                ; 004e4677 | g_CDemonCamera_PTR_007c6120
+    MOV EAX,[0x007c6120]                ; 004e4677 | g_CurrentSceneCamera
     PUSH EDI                            ; 004e467c
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004e467d
     PUSH EAX                            ; 004e4680
     CALL dword ptr [EDX + 0x4]          ; 004e4681
     MOV EAX,0xffff                      ; 004e4684
-    MOV EDX,dword ptr [0x01c51cac]      ; 004e4689 | g_INT_01c51cac
+    MOV EDX,dword ptr [0x01c51cac]      ; 004e4689 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004e468f
     SUB EAX,EDX                         ; 004e4692
     PUSH EAX                            ; 004e4694

@@ -5,5 +5,5 @@
 // =============================================================================
 
 // CVector3i[20000]
-CVector3i g_CVector3i_ARRAY_0200b130[20000] = {};
+CVector3i g_TransformedVertexArray[20000] = {};
 

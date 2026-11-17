@@ -9,12 +9,12 @@
 void __cdecl engine_2d_c_setSolidColor_FUN_004033f0(int red_component,int green_component,int blue_component)
 
 {
-  g_INT_01c6e2c4 = green_component;
-  g_INT_01c6e2c8 = blue_component;
-  g_INT_01c6e2c0 = red_component;
-  g_ULONG_01c6e2bc = red_component << 0x10 | green_component << 8 | blue_component;
+  g_SolidGreenComponent = green_component;
+  g_SolidBlueComponent = blue_component;
+  g_SolidRedComponent = red_component;
+  g_SolidColorMode = red_component << 0x10 | green_component << 8 | blue_component;
   if ((g_INT_005fba20 != 0x10) && (g_INT_005fba20 == 0x20)) {
-    g_ULONG_01c6e2bc =
+    g_SolidColorMode =
          blue_component << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
          red_component << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
          green_component << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);

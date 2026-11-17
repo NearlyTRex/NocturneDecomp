@@ -18,18 +18,18 @@
 ;   float g_FLOAT_005cb8fc = 256
 ;   double g_DOUBLE_005cb904 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.base.base.count
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.A
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.B
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.C
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.D
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[0].vertex_index
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[0].texture_u
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[0].texture_v
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[1].vertex_index
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[1].texture_u
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[1].texture_v
-;   undefined4 g_SMRGLPrimitiveQuad_01ed2a30.vertices[2].vertex_index
+;   undefined4 g_PathMapQuad.base.base.count
+;   undefined4 g_PathMapQuad.base.surface_normal.A
+;   undefined4 g_PathMapQuad.base.surface_normal.B
+;   undefined4 g_PathMapQuad.base.surface_normal.C
+;   undefined4 g_PathMapQuad.base.surface_normal.D
+;   undefined4 g_PathMapQuad.vertices[0].vertex_index
+;   undefined4 g_PathMapQuad.vertices[0].texture_u
+;   undefined4 g_PathMapQuad.vertices[0].texture_v
+;   undefined4 g_PathMapQuad.vertices[1].vertex_index
+;   undefined4 g_PathMapQuad.vertices[1].texture_u
+;   undefined4 g_PathMapQuad.vertices[1].texture_v
+;   undefined4 g_PathMapQuad.vertices[2].vertex_index
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -95,29 +95,29 @@ section .text
     MOV EDX,0x1                         ; 0050c9fc
     MOV ESI,0x2                         ; 0050ca01
     ADD ESP,0x8                         ; 0050ca06
-    MOV dword ptr [0x01ed2a34],EDI      ; 0050ca09 | g_SMRGLPrimitiveQuad_01ed2a30.base.base.count
+    MOV dword ptr [0x01ed2a34],EDI      ; 0050ca09 | g_PathMapQuad.base.base.count
     XOR EAX,EAX                         ; 0050ca0f
     MOV EDI,0x800000                    ; 0050ca11
-    MOV [0x01ed2a38],EAX                ; 0050ca16 | g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.A
-    MOV [0x01ed2a3c],EAX                ; 0050ca1b | g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.B
-    MOV [0x01ed2a40],EAX                ; 0050ca20 | g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.C
-    MOV [0x01ed2a44],EAX                ; 0050ca25 | g_SMRGLPrimitiveQuad_01ed2a30.base.surface_normal.D
-    MOV [0x01ed2a48],EAX                ; 0050ca2a | g_SMRGLPrimitiveQuad_01ed2a30.vertices[0].vertex_index
-    MOV dword ptr [0x01ed2a54],EDX      ; 0050ca2f | g_SMRGLPrimitiveQuad_01ed2a30.vertices[1].vertex_index
-    MOV dword ptr [0x01ed2a60],ESI      ; 0050ca35 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[2].vertex_index
+    MOV [0x01ed2a38],EAX                ; 0050ca16 | g_PathMapQuad.base.surface_normal.A
+    MOV [0x01ed2a3c],EAX                ; 0050ca1b | g_PathMapQuad.base.surface_normal.B
+    MOV [0x01ed2a40],EAX                ; 0050ca20 | g_PathMapQuad.base.surface_normal.C
+    MOV [0x01ed2a44],EAX                ; 0050ca25 | g_PathMapQuad.base.surface_normal.D
+    MOV [0x01ed2a48],EAX                ; 0050ca2a | g_PathMapQuad.vertices[0].vertex_index
+    MOV dword ptr [0x01ed2a54],EDX      ; 0050ca2f | g_PathMapQuad.vertices[1].vertex_index
+    MOV dword ptr [0x01ed2a60],ESI      ; 0050ca35 | g_PathMapQuad.vertices[2].vertex_index
     PUSH EAX                            ; 0050ca3b
     MOV EDX,0x3                         ; 0050ca3c
     MOV ESI,dword ptr [0x005f2afc]      ; 0050ca41 | g_CDemonRenderer_PTR_005f2afc
-    MOV dword ptr [0x01ed2a4c],EDI      ; 0050ca47 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[0].texture_u
-    MOV dword ptr [0x01ed2a50],EDI      ; 0050ca4d | g_SMRGLPrimitiveQuad_01ed2a30.vertices[0].texture_v
-    MOV dword ptr [0x01ed2a58],EDI      ; 0050ca53 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[1].texture_u
-    MOV dword ptr [0x01ed2a5c],EDI      ; 0050ca59 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[1].texture_v
-    MOV dword ptr [0x01ed2a64],EDI      ; 0050ca5f | g_SMRGLPrimitiveQuad_01ed2a30.vertices[2].texture_u
-    MOV dword ptr [0x01ed2a68],EDI      ; 0050ca65 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[2].texture_v
-    MOV dword ptr [0x01ed2a70],EDI      ; 0050ca6b | g_SMRGLPrimitiveQuad_01ed2a30.vertices[3].texture_u
+    MOV dword ptr [0x01ed2a4c],EDI      ; 0050ca47 | g_PathMapQuad.vertices[0].texture_u
+    MOV dword ptr [0x01ed2a50],EDI      ; 0050ca4d | g_PathMapQuad.vertices[0].texture_v
+    MOV dword ptr [0x01ed2a58],EDI      ; 0050ca53 | g_PathMapQuad.vertices[1].texture_u
+    MOV dword ptr [0x01ed2a5c],EDI      ; 0050ca59 | g_PathMapQuad.vertices[1].texture_v
+    MOV dword ptr [0x01ed2a64],EDI      ; 0050ca5f | g_PathMapQuad.vertices[2].texture_u
+    MOV dword ptr [0x01ed2a68],EDI      ; 0050ca65 | g_PathMapQuad.vertices[2].texture_v
+    MOV dword ptr [0x01ed2a70],EDI      ; 0050ca6b | g_PathMapQuad.vertices[3].texture_u
     PUSH ESI                            ; 0050ca71
-    MOV dword ptr [0x01ed2a74],EDI      ; 0050ca72 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[3].texture_v
-    MOV dword ptr [0x01ed2a6c],EDX      ; 0050ca78 | g_SMRGLPrimitiveQuad_01ed2a30.vertices[3].vertex_index
+    MOV dword ptr [0x01ed2a74],EDI      ; 0050ca72 | g_PathMapQuad.vertices[3].texture_v
+    MOV dword ptr [0x01ed2a6c],EDX      ; 0050ca78 | g_PathMapQuad.vertices[3].vertex_index
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450 ; 0050ca7e
         ;   XREF to: 0046d450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050ca83

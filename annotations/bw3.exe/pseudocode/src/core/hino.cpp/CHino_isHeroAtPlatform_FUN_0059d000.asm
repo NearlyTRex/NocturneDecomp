@@ -26,7 +26,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Platform_005d9e64
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int g_INT_01d1a0a4
+;   int g_FastSqrtMagic
 ;   int g_INT_01d5ba14
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -123,7 +123,7 @@ section .text
     FADDP                               ; 0059d0d7
     FSTP float ptr [ESP + 0x24]         ; 0059d0d9
     MOV EAX,dword ptr [ESP + 0x24]      ; 0059d0dd
-    MOV EDX,dword ptr [0x01d1a0a4]      ; 0059d0e1 | g_INT_01d1a0a4
+    MOV EDX,dword ptr [0x01d1a0a4]      ; 0059d0e1 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0059d0e7
     ADD EAX,EDX                         ; 0059d0e9
     MOV dword ptr [ESP + 0x30],EAX      ; 0059d0eb

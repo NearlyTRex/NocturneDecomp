@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_emitter_cpp_CEmitter_getActorType_FUN_004783b0(CEmitter *this_ptr)
 
 {
-  return &g_CEmitterActorType_01bcde80;
+  return &g_CEmitterClassInfo;
 }

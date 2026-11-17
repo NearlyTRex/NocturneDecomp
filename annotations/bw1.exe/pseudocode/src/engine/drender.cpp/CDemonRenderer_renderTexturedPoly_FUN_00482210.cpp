@@ -32,7 +32,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(C
               this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
               this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
             }
-            *(int *)((int)g_INT_ARRAY_01bc1240 + iVar4) = iVar1;
+            *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
             pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
             iVar3 = iVar3 + 1;
             iVar4 = iVar4 + 4;
@@ -45,7 +45,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(C
           iVar4 = 0;
           pSVar2 = poly;
           do {
-            *(int *)((int)g_INT_ARRAY_01bc1240 + iVar4) = pSVar2->vertices[0].vertex_index;
+            *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar2->vertices[0].vertex_index;
             iVar4 = iVar4 + 4;
             iVar3 = iVar3 + 1;
             pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
@@ -54,21 +54,21 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(C
       }
       if (this_ptr->shadow_pass_active == 0) {
         if (g_INT_0061b4a0 == 0x20) {
-          g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
         }
         else {
-          g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
         }
-        g_BIT_INTEGER32_01c51d14.dword = render_flags;
-        g_INT_01c51d18 = 6;
+        g_RenderStateFlags.dword = render_flags;
+        g_VertexPreprocessMode = 6;
       }
       else {
-        g_BIT_INTEGER32_01c51d14.dword = 0;
-        g_INT_01c51d18 = 0;
-        g_PTR_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
-                (this_ptr,(poly->base).base.count,g_INT_ARRAY_01bc1240);
+                (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
     }
     return;
   }

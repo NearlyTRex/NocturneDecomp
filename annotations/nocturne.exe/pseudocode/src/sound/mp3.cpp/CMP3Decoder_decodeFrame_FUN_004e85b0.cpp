@@ -132,12 +132,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         local_98 = 1;
         local_94 = *(uint *)(SStack_e4.layer + 0xc);
         local_14 = local_8c * 0xb4 + 0x3c;
-        iVar4 = g_INT_ARRAY_ARRAY_ARRAY_005bbc88[local_8c][1][local_94] / SStack_e4.padding;
+        iVar4 = g_MpegBitrateTable[local_8c][1][local_94] / SStack_e4.padding;
         header_out = (int *)0x4e87a3;
         local_a0 = &SStack_e4.layer;
         dVar16 = round
-                           (g_DOUBLE_ARRAY_ARRAY_005bbc48[local_8c]
-                            [*(uint *)(SStack_e4.layer + 0x10)]);
+                           (g_MpegSampleRateTable[local_8c][*(uint *)(SStack_e4.layer + 0x10)]);
         local_94 = (uint)ROUND(dVar16);
         if (local_90 == 1) {
           if (((local_94 == 0x30) && (0x37 < iVar4)) || ((0x37 < iVar4 && (iVar4 < 0x51)))) {
@@ -211,7 +210,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
                   iVar4 = *piVar10;
                   piVar10 = piVar10 + 0x60;
                   iVar7 = iVar7 + 1;
-                  *pfVar5 = *pfVar5 * (float)g_DOUBLE_ARRAY_005bbdf0[iVar4];
+                  *pfVar5 = *pfVar5 * (float)g_MpegScalefactorTable[iVar4];
                   pfVar5 = pfVar5 + 0x60;
                 } while (iVar7 < SStack_e4.sampling_rate_index);
               }
@@ -509,10 +508,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         iVar7 = 0x4e8afb;
         SStack_e4.channel_mode = (int)header_out;
         dVar16 = round
-                           ((((double)local_60d0 /
-                             g_DOUBLE_ARRAY_ARRAY_005bbc48[iStack_114][local_104]) *
-                            (double)g_INT_ARRAY_ARRAY_ARRAY_005bbc88[iStack_114 + -1]
-                                    [local_110[0] + 2][iStack_108]) / (double)header_out);
+                           ((((double)local_60d0 / g_MpegSampleRateTable[iStack_114][local_104]) *
+                            (double)g_MpegBitrateTable[iStack_114 + -1][local_110[0] + 2]
+                                    [iStack_108]) / (double)header_out);
         local_68 = (SMpegLayer3GranuleInfo *)(int)ROUND(dVar16);
         if (local_100 != 0) {
           local_68 = (SMpegLayer3GranuleInfo *)((int)local_68 + 1);

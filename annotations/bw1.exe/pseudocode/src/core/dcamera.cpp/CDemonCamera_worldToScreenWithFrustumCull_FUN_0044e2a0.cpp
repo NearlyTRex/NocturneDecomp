@@ -104,9 +104,9 @@ LAB_0044e502:
       }
     }
   }
-  iStack_30 = g_CVector3i_01483a40.x;
+  iStack_30 = g_CameraOutOfBoundsCoord.x;
   *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
-       *(uint *)((int)&g_CVector3i_01483a40 + (uint)bVar6 * -8 + 4);
+       *(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);
   *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        *(uint *)((uint)bVar6 * -8 + 0x1483a48 + (uint)bVar6 * -8);
   puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);

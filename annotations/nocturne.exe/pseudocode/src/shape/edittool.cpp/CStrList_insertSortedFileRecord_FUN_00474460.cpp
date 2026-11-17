@@ -39,7 +39,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
   if (-1 < iVar5) {
     do {
       index = (local_14 + iVar5) / 2;
-      pcVar7 = g_CHAR_ARRAY_005b7078;
+      pcVar7 = g_Field1ParseBuffer;
       pcVar6 = local_904;
       for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
         *(uint *)pcVar6 = *(uint *)pcVar7;
@@ -48,7 +48,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
       }
       pcVar7 = local_904;
       format = "%[^\t]\t%[^\t]";
-      pcVar6 = g_CHAR_ARRAY_005b7278;
+      pcVar6 = g_Field2ParseBuffer;
       pcVar2 = local_b04;
       for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
         *(uint *)pcVar2 = *(uint *)pcVar6;
@@ -73,7 +73,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
   }
   time_ptr = _localtime(&file_timestamp);
   _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
-  pcVar7 = g_CHAR_ARRAY_005b7478;
+  pcVar7 = g_FilePathBuffer;
   pcVar6 = local_704;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(uint *)pcVar6 = *(uint *)pcVar7;

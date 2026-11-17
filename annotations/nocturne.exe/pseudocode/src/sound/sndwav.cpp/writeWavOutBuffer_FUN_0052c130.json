@@ -107,7 +107,7 @@
     },
     {
       "addr": "02dc93a4",
-      "name": "g_HWAVEOUT_02dc93a4",
+      "name": "g_WaveOutHandle",
       "type": "HWAVEOUT",
       "value": null
     },
@@ -288,15 +288,15 @@
       "line": 44,
       "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
       "severity": "moderate",
-      "text": "(g_HWAVEOUT_02dc93a4,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14),",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14),0x20",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
       "severity": "moderate",
-      "text": "*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14),0x20);",
+      "text": "MVar3 = waveOutWrite(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14),",
       "type": "pointer_cast"
     },
     {

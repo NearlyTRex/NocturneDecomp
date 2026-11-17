@@ -11,7 +11,7 @@
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056bda4
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10
@@ -41,7 +41,7 @@ section .text
     TEST ECX,ECX                        ; 00556b0d
     JZ 0x00556b27                       ; 00556b0f
         ;   XREF to: 00556b27 (CONDITIONAL_JUMP)  ; LAB_00556b27
-    MOV EBX,dword ptr [0x02cf3280]      ; 00556b11 | g_CSoundDevice_PTR_02cf3280
+    MOV EBX,dword ptr [0x02cf3280]      ; 00556b11 | g_CSoundDevicePtr
     TEST EBX,EBX                        ; 00556b17
     JZ 0x00556b27                       ; 00556b19
         ;   XREF to: 00556b27 (CONDITIONAL_JUMP)  ; LAB_00556b27

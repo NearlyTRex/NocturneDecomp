@@ -33,13 +33,13 @@
 ;   float FLOAT_0058a3a5 = 3
 ;   double DOUBLE_0058a3a9 = 5.34643470770547E-315
 ;   double DOUBLE_0058a3b1 = 2
-;   undefined4 g_CHeroActorType_01cae0ec.name_hash
+;   undefined4 g_CHeroClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_INT_ARRAY_01ccdba8[2]
-;   undefined4 g_INT_ARRAY_01ccdba8[10]
+;   undefined4 g_MobsterIndices[2]
+;   undefined4 g_MobsterIndices[10]
 ;   UVector3 g_ZeroVector
-;   undefined4 g_CWeaponActorType_02ddf970.name_hash
+;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -96,7 +96,7 @@ section .text
     TEST EAX,EAX                        ; 004db732
     JZ 0x004db9dc                       ; 004db734
         ;   XREF to: 004db9dc (CONDITIONAL_JUMP)  ; LAB_004db9dc
-    MOV EAX,[0x02ddf9a8]                ; 004db73a | g_CWeaponActorType_02ddf970.name_hash
+    MOV EAX,[0x02ddf9a8]                ; 004db73a | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004db73a
     PUSH EAX                            ; 004db73f
     MOV EDX,dword ptr [EBX + 0x24f0]    ; 004db740
@@ -123,7 +123,7 @@ section .text
     JZ 0x004db78f                       ; 004db786
         ;   XREF to: 004db78f (CONDITIONAL_JUMP)  ; LAB_004db78f
     MOV dword ptr [ESP],0x3fc90fdb      ; 004db788
-    MOV EDX,dword ptr [0x01ccdbb0]      ; 004db78f | g_INT_ARRAY_01ccdba8[2]
+    MOV EDX,dword ptr [0x01ccdbb0]      ; 004db78f | g_MobsterIndices[2]
         ;   Label: LAB_004db78f
     LEA EAX,[EDX*0x4 + 0x0]             ; 004db795
     SUB EAX,EDX                         ; 004db79c
@@ -151,7 +151,7 @@ section .text
     FSTP float ptr [ESP + 0x50]         ; 004db7d8
     FLD float ptr [EDX + 0x24]          ; 004db7dc
     FSUB float ptr [EAX + 0x4]          ; 004db7df
-    MOV ECX,dword ptr [0x01cae124]      ; 004db7e2 | g_CHeroActorType_01cae0ec.name_hash
+    MOV ECX,dword ptr [0x01cae124]      ; 004db7e2 | g_CHeroClassInfo.name_hash
     FSTP float ptr [ESP + 0x54]         ; 004db7e8
     FLD float ptr [EDX + 0x28]          ; 004db7ec
     FSUB float ptr [EAX + 0x8]          ; 004db7ef
@@ -269,7 +269,7 @@ section .text
     JZ 0x004dba30                       ; 004db922
         ;   XREF to: 004dba30 (CONDITIONAL_JUMP)  ; LAB_004dba30
     PUSH 0x51b650                       ; 004db928
-    MOV ECX,dword ptr [0x01ccdbd0]      ; 004db92d | g_INT_ARRAY_01ccdba8[10]
+    MOV ECX,dword ptr [0x01ccdbd0]      ; 004db92d | g_MobsterIndices[10]
     PUSH ECX                            ; 004db933
     PUSH dword ptr [EBX + 0xbdf4]       ; 004db934
     PUSH 0x40c00000                     ; 004db93a
@@ -291,7 +291,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004db964
     MOVSD ES:EDI,ESI                    ; 004db965
     PUSH 0x51b650                       ; 004db966
-    MOV ESI,dword ptr [0x01ccdbd0]      ; 004db96b | g_INT_ARRAY_01ccdba8[10]
+    MOV ESI,dword ptr [0x01ccdbd0]      ; 004db96b | g_MobsterIndices[10]
     PUSH ESI                            ; 004db971
     LEA EAX,[ESP + 0x10]                ; 004db972
     PUSH dword ptr [EBX + 0xbdf4]       ; 004db976
@@ -309,7 +309,7 @@ section .text
     ADD ESP,0x4                         ; 004db9a0
     LEA EDI,[ESP + 0x8]                 ; 004db9a3
     PUSH 0x51b650                       ; 004db9a7
-    MOV EAX,[0x01ccdbd0]                ; 004db9ac | g_INT_ARRAY_01ccdba8[10]
+    MOV EAX,[0x01ccdbd0]                ; 004db9ac | g_MobsterIndices[10]
     LEA ESI,[ESP + 0x1c]                ; 004db9b1
     PUSH EAX                            ; 004db9b5
     MOVSD ES:EDI,ESI                    ; 004db9b6
@@ -361,7 +361,7 @@ section .text
         ;   XREF to: 004db8b2 (UNCONDITIONAL_JUMP)  ; LAB_004db8b2
     PUSH 0x51b650                       ; 004dba30
         ;   Label: LAB_004dba30
-    MOV EDX,dword ptr [0x01ccdbd0]      ; 004dba35 | g_INT_ARRAY_01ccdba8[10]
+    MOV EDX,dword ptr [0x01ccdbd0]      ; 004dba35 | g_MobsterIndices[10]
     PUSH EDX                            ; 004dba3b
     PUSH dword ptr [EBX + 0xbdf4]       ; 004dba3c
     PUSH 0x40c00000                     ; 004dba42

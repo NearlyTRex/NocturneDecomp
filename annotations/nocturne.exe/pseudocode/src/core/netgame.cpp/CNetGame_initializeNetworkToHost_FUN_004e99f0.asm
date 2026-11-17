@@ -14,7 +14,7 @@
 ;   CGame* g_CGamePtr = 01c775ec
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 g_CGameInstance.aim_mode
-;   uchar[4] g_UCHAR_ARRAY_02dd10c4
+;   uchar[4] g_AnyAddressIP
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440
@@ -52,7 +52,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 004e9a32
     PUSH EAX                            ; 004e9a35
     PUSH 0x1ddf                         ; 004e9a36
-    PUSH 0x2dd10c4                      ; 004e9a3b | g_UCHAR_ARRAY_02dd10c4
+    PUSH 0x2dd10c4                      ; 004e9a3b | g_AnyAddressIP
     LEA EAX,[ESP + 0x14]                ; 004e9a40
     PUSH EAX                            ; 004e9a44
     CALL support_trisock.cpp_createNetworkAddr_FUN_00548d30 ; 004e9a45

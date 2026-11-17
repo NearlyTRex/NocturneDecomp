@@ -186,7 +186,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
           CStack_174.z = CStack_48.z;
         }
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (g_CFireEffect_PTR_005fc5a0,&CStack_174,&g_CVector3f_02cfd900,1,0,4);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_174,&g_ZeroVector,1,0,4);
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
                   (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_e4);
         pCVar12 = &CStack_60;
@@ -208,7 +208,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
           CStack_174.z = aCStack_120[0].z;
         }
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (g_CFireEffect_PTR_005fc5a0,&CStack_174,&g_CVector3f_02cfd900,1,0,4);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_174,&g_ZeroVector,1,0,4);
       }
       grabber = (CDemonActor *)((ulonglong)dVar14 >> 0x20);
       if ((1.0 < (double)fStack_188) && ((double)fStack_188 < 2)) {

@@ -15,9 +15,9 @@
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
-;   int g_INT_01c039dc
-;   int g_INT_01c039e0
-;   int g_INT_01c039e4
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
@@ -34,7 +34,7 @@
 
 section .text
 
-    MOV EAX,[0x01cc5174]                ; 004cdac0 | g_INT_01cc5174
+    MOV EAX,[0x01cc5174]                ; 004cdac0 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_matrixPush_FUN_004cdac0
     MOV EDX,dword ptr [0x01c039b8]      ; 004cdac5 | g_RelativeX
     MOV dword ptr [EAX*0x4 + 0x1cc52e0],EDX ; 004cdacb
@@ -42,11 +42,11 @@ section .text
     MOV dword ptr [EAX*0x4 + 0x1cc5308],EDX ; 004cdad8
     MOV EDX,dword ptr [0x01c039c0]      ; 004cdadf | g_RelativeZ
     MOV dword ptr [EAX*0x4 + 0x1cc5330],EDX ; 004cdae5
-    MOV EDX,dword ptr [0x01c039dc]      ; 004cdaec | g_INT_01c039dc
+    MOV EDX,dword ptr [0x01c039dc]      ; 004cdaec | g_LightDirectionX
     MOV dword ptr [EAX*0x4 + 0x1cc5358],EDX ; 004cdaf2
-    MOV EDX,dword ptr [0x01c039e0]      ; 004cdaf9 | g_INT_01c039e0
+    MOV EDX,dword ptr [0x01c039e0]      ; 004cdaf9 | g_LightDirectionY
     MOV dword ptr [EAX*0x4 + 0x1cc5380],EDX ; 004cdaff
-    MOV EDX,dword ptr [0x01c039e4]      ; 004cdb06 | g_INT_01c039e4
+    MOV EDX,dword ptr [0x01c039e4]      ; 004cdb06 | g_LightDirectionZ
     MOV dword ptr [EAX*0x4 + 0x1cc53a8],EDX ; 004cdb0c
     MOV EDX,dword ptr [0x01c039e8]      ; 004cdb13 | g_TransformMatrix
     MOV dword ptr [EAX*0x4 + 0x1cc5178],EDX ; 004cdb19
@@ -67,7 +67,7 @@ section .text
     MOV EDX,dword ptr [0x01c03a08]      ; 004cdb7b | g_TransformMatrix.m[2].z
     MOV dword ptr [EAX*0x4 + 0x1cc52b8],EDX ; 004cdb81
     LEA EDX,[EAX + 0x1]                 ; 004cdb88
-    MOV dword ptr [0x01cc5174],EDX      ; 004cdb8b | g_INT_01cc5174
+    MOV dword ptr [0x01cc5174],EDX      ; 004cdb8b | g_MatrixStackIndex
     CMP EDX,0x9                         ; 004cdb91
     JG 0x004cdb97                       ; 004cdb94
         ;   XREF to: 004cdb97 (CONDITIONAL_JUMP)  ; LAB_004cdb97

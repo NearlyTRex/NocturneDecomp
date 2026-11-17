@@ -25,7 +25,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00499350(CFireball *this_ptr)
     this_ptr->spawn_timer = 0;
   }
   else {
-    lVar2 = (longlong)this_ptr->fade_rate * (longlong)g_INT_01c5fad0;
+    lVar2 = (longlong)this_ptr->fade_rate * (longlong)g_GlobalDeltaTimeInt;
     iVar3 = this_ptr->timer - ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     this_ptr->timer = iVar3;
     if (iVar3 < 0) {
@@ -34,11 +34,11 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00499350(CFireball *this_ptr)
     }
   }
   core_particle_cpp_CParticle_process_FUN_00509f30(&this_ptr->base);
-  iVar3 = g_INT_01c5fad0 / 2;
+  iVar3 = g_GlobalDeltaTimeInt / 2;
   this_ptr->rotation_angle1 =
        this_ptr->rotation_angle1 +
-       ((int)((g_INT_01c5fad0 + (g_INT_01c5fad0 >> 0x1f) * -4) -
-             (uint)((g_INT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);
+       ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+             (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
   this_ptr->rotation_angle2 = this_ptr->rotation_angle2 + iVar3;
   if (this_ptr->lighting_active == 0) {
     this_ptr_00 = &this_ptr->light_globe;
@@ -53,7 +53,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00499350(CFireball *this_ptr)
     this_ptr_02 = g_CDemonSetPtr;
     (this_ptr->light_globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(this_ptr_02,this_ptr_00);
-    iVar3 = this_ptr->spawn_timer + g_INT_01c5fad0;
+    iVar3 = this_ptr->spawn_timer + g_GlobalDeltaTimeInt;
     this_ptr->spawn_timer = iVar3;
     this_ptr_01 = g_CFireEffect_PTR_005fc5a0;
     if (0x1000 < iVar3) {

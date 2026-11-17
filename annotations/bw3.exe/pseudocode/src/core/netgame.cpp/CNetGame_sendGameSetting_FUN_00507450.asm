@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   int g_INT_01da6474
+;   int g_LastPingTime
 ;   uint g_UINT_01da6478
-;   int g_INT_01da6484
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -83,7 +83,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xcc]      ; 005074ec
     MOV EAX,dword ptr [EAX + 0x17c]     ; 005074f3
     MOV dword ptr [ESP + 0x9],EAX       ; 005074f9
-    MOV EAX,[0x01da6484]                ; 005074fd | g_INT_01da6484
+    MOV EAX,[0x01da6484]                ; 005074fd | g_NetNextPlayerId
     MOV dword ptr [ESP + 0x5],EAX       ; 00507502
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00507506
     LEA EDI,[ESP + 0xd]                 ; 0050750d
@@ -176,10 +176,10 @@ section .text
     MOV ECX,0x12                        ; 00507602
     SAR EDX,0x1f                        ; 00507607
     IDIV ECX                            ; 0050760a
-    MOV EDI,dword ptr [0x01da6474]      ; 0050760c | g_INT_01da6474
+    MOV EDI,dword ptr [0x01da6474]      ; 0050760c | g_LastPingTime
     MOV EDX,EAX                         ; 00507612
     SUB EDX,EDI                         ; 00507614
-    MOV [0x01da6474],EAX                ; 00507616 | g_INT_01da6474
+    MOV [0x01da6474],EAX                ; 00507616 | g_LastPingTime
     TEST EDX,EDX                        ; 0050761b
     JL 0x0050765b                       ; 0050761d
         ;   XREF to: 0050765b (CONDITIONAL_JUMP)  ; LAB_0050765b

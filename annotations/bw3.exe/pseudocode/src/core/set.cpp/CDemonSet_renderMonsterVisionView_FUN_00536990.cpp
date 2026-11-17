@@ -84,10 +84,10 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00536990(CDemonS
       g_CDemonCameraInstance.base.position.f.x = (float)pCVar5;
     }
     core_dlight_cpp_CDemonLight_beginScene_FUN_0045c530(local_14,0);
-    g_INT_00603b38 = 0;
+    g_RenderMirrorsFlag = 0;
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
               (this_ptr,(local_14->base).max_distance,0);
-    g_INT_00603b38 = 1;
+    g_RenderMirrorsFlag = 1;
     core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(this_ptr,0xffffffff);
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(this_ptr,1);
     core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(this_ptr,1);

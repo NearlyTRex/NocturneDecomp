@@ -26,11 +26,11 @@ extern CDemonActorType g_CMobsterClassInfo;
 extern CDemonActorType g_CMolochClassInfo;
 
 // CVector3f[32]
-extern CVector3f g_CVector3f_ARRAY_01d17fc4[32];
-extern CVector3f g_CVector3f_ARRAY_01d18148[32];
+extern CVector3f g_MirrorInputVertices[32];
+extern CVector3f g_MirrorOutputVertices[32];
 
 // SMRGLPrimitiveQuadIndex
-extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d182c8;
+extern SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive;
 
 // SSoftwareEdge
 extern SSoftwareEdge g_SSoftwareEdge_01d17ab8;
@@ -39,7 +39,7 @@ extern SSoftwareEdge g_SSoftwareEdge_01d17ab8;
 extern char g_CHAR_01d1c630;
 
 // double[200]
-extern double g_DOUBLE_ARRAY_01d1edd8[200];
+extern double g_MpegRequantPowerTable[200];
 extern double g_DOUBLE_ARRAY_01d1f418[200];
 
 // float
@@ -74,7 +74,7 @@ extern float g_FLOAT_01d1cdc4;
 extern float* g_FLOAT_PTR_01d12114;
 
 // float[64][32]
-extern float g_FLOAT_ARRAY_ARRAY_01d1cdd0[64][32];
+extern float g_MpegSynthesisDctTable[64][32];
 
 // int
 extern int g_INT_01d12124;
@@ -84,17 +84,17 @@ extern int g_INT_01d12154;
 extern int g_INT_01d17ab4;
 extern int g_INT_01d17fb8;
 extern int g_INT_01d17fbc;
-extern int g_INT_01d17fc0;
-extern int g_INT_01d18144;
+extern int g_MirrorInputVertexCount;
+extern int g_MirrorOutputVertexCount;
 extern int g_INT_01d1cdbc;
 extern int g_INT_01d1cdc0;
-extern int g_INT_01d1cdc8;
-extern int g_INT_01d1edd0;
-extern int g_INT_01d1edd4;
+extern int g_RenderMotionDebug;
+extern int g_HuffmanTablesInitialized;
+extern int g_MpegRequantTablesInitialized;
 
 // int[12]
-extern int g_INT_ARRAY_01d1c710[12];
+extern int g_MobsterIndices[12];
 
 // int[5]
-extern int g_INT_ARRAY_01d1c6fc[5];
+extern int g_MobsterTauntCounters[5];
 

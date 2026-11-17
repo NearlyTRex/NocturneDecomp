@@ -9,9 +9,9 @@
 ; uchar *          Stack[0xc]:4   true_color_data
 ;
 ; Referenced Globals:
-;   int g_INT_007303f4
+;   int g_TexturesDisabled
 ;   int g_INT_02cfd0cc
-;   CTextureCache* g_CTextureCache_PTR_02cfd0d0
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00569ec0
@@ -27,7 +27,7 @@ section .text
         ;   Label: engine_texture.cpp_storeTrueColorTexture_FUN_0056ab70
     PUSH EBP                            ; 0056ab71
     MOV EBX,dword ptr [ESP + 0xc]       ; 0056ab72
-    CMP dword ptr [0x007303f4],0x0      ; 0056ab76 | g_INT_007303f4
+    CMP dword ptr [0x007303f4],0x0      ; 0056ab76 | g_TexturesDisabled
     JNZ 0x0056ab85                      ; 0056ab7d
         ;   XREF to: 0056ab85 (CONDITIONAL_JUMP)  ; LAB_0056ab85
     CMP byte ptr [EBX + 0x8],0x0        ; 0056ab7f
@@ -45,7 +45,7 @@ section .text
     PUSH EDI                            ; 0056ab90
     AND ESI,0xffff                      ; 0056ab91
     PUSH ESI                            ; 0056ab97
-    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056ab98 | g_CTextureCache_PTR_02cfd0d0
+    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056ab98 | g_TextureCacheInstance
     PUSH ECX                            ; 0056ab9e
     CALL engine_texture.cpp_CTextureCache_findTexture_FUN_0056a0a0 ; 0056ab9f
         ;   XREF to: 0056a0a0 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findTexture_FUN_0056a0a0(CTextureCache * this_ptr, int hint_index, char * texture_name)
@@ -59,7 +59,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0056abb3
     PUSH ECX                            ; 0056abb7
     PUSH EDI                            ; 0056abb8
-    MOV ESI,dword ptr [0x02cfd0d0]      ; 0056abb9 | g_CTextureCache_PTR_02cfd0d0
+    MOV ESI,dword ptr [0x02cfd0d0]      ; 0056abb9 | g_TextureCacheInstance
     PUSH ESI                            ; 0056abbf
     CALL engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00569ec0 ; 0056abc0
         ;   XREF to: 00569ec0 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00569ec0(CTextureCache * this_ptr, char * texture_name, int dimension, uchar * true_color_data)
@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 0056abd2
         ;   Label: LAB_0056abd2
     PUSH EBX                            ; 0056abd3
-    MOV EDI,dword ptr [0x02cfd0d0]      ; 0056abd4 | g_CTextureCache_PTR_02cfd0d0
+    MOV EDI,dword ptr [0x02cfd0d0]      ; 0056abd4 | g_TextureCacheInstance
     PUSH EDI                            ; 0056abda
     MOV dword ptr [0x02cfd0cc],ESI      ; 0056abdb | g_INT_02cfd0cc
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130 ; 0056abe1
@@ -88,7 +88,7 @@ section .text
     PUSH EBP                            ; 0056abf7
     PUSH EBX                            ; 0056abf8
     MOV dword ptr [EBX + 0x4],EAX       ; 0056abf9
-    MOV EAX,[0x02cfd0d0]                ; 0056abfc | g_CTextureCache_PTR_02cfd0d0
+    MOV EAX,[0x02cfd0d0]                ; 0056abfc | g_TextureCacheInstance
     PUSH EAX                            ; 0056ac01
     CALL engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN_00569ff0 ; 0056ac02
         ;   XREF to: 00569ff0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN_00569ff0(CTextureCache * this_ptr, SMRGLTextureBasic * texture, int dimension, uchar * true_color_data)

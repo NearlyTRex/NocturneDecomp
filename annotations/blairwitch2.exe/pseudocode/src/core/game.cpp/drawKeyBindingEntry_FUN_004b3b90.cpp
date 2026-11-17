@@ -14,12 +14,12 @@ void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b3b90(EInputCodeType key_c
   core_menu_cpp_getKeyDisplayName_FUN_004ee960(key_code);
   _sprintf(acStack_110,"%s = %s");
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-            (g_CBitFont_PTR_01511cc0,acStack_110,g_INT_01cb80e8,g_INT_01cb80ec,7,-1);
-  g_INT_01cb80ec = g_INT_01cb80ec + g_INT_01cb80f0;
-  if (g_INT_01cb80ec <= g_INT_006141bc + g_INT_01cb80f0 * -4) {
+            (g_ThemeFont,acStack_110,g_HelpCursorX,g_HelpCursorY,7,-1);
+  g_HelpCursorY = g_HelpCursorY + g_HelpLineHeight;
+  if (g_HelpCursorY <= g_INT_006141bc + g_HelpLineHeight * -4) {
     return;
   }
-  g_INT_01cb80ec = g_INT_01cb80f0 * 6;
-  g_INT_01cb80e8 = g_INT_01cb80e8 + g_INT_006141b8 / 3;
+  g_HelpCursorY = g_HelpLineHeight * 6;
+  g_HelpCursorX = g_HelpCursorX + g_INT_006141b8 / 3;
   return;
 }

@@ -43,8 +43,8 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
   engine_special_cpp_buildCardList_FUN_00532d20
             (&g_INT_01cc64a8,&g_CHAR_PTR_01cc64ac,&g_CHAR_PTR_01cc64ec,&g_INT_01cc652c,
              &g_INT_01cc656c);
-  if (g_INT_01cc64a8 <= g_INT_01cc64a4) {
-    g_INT_01cc64a4 = 0;
+  if (g_INT_01cc64a8 <= g_CurrentGraphicsBoard) {
+    g_CurrentGraphicsBoard = 0;
   }
   local_1c[0] = 0;
   local_1c[1] = 0;
@@ -63,8 +63,8 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
     core_moon_cpp_CMoon_render_FUN_004dec50(&g_CMoonInstance);
     pCVar3 = g_CGamePtr;
     if ((0 < g_INT_01cc64a8) && (g_UseDirect3D != 0)) {
-      if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x121a) && ((&g_INT_01cc656c)[g_INT_01cc64a4] < 6))
-      {
+      if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x121a) &&
+         ((&g_INT_01cc656c)[g_CurrentGraphicsBoard] < 6)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar3->game_pixx = 0x280;
         pCVar3->game_pixy = 0x1e0;
@@ -119,22 +119,22 @@ LAB_004d0249:
       }
       g_INT_01cc64a8 = iVar5;
       pCVar3 = g_CGamePtr;
-      if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x8086) &&
-         ((&g_INT_01cc656c)[g_INT_01cc64a4] == 0x7800)) {
+      if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x8086) &&
+         ((&g_INT_01cc656c)[g_CurrentGraphicsBoard] == 0x7800)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar3->game_pixx = 0x280;
         pCVar3->game_pixy = 0x1e0;
       }
       pCVar3 = g_CGamePtr;
-      if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x12d2) &&
-         ((&g_INT_01cc656c)[g_INT_01cc64a4] == 0x18)) {
+      if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x12d2) &&
+         ((&g_INT_01cc656c)[g_CurrentGraphicsBoard] == 0x18)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar3->game_pixx = 0x280;
         pCVar3->game_pixy = 0x1e0;
       }
       pCVar3 = g_CGamePtr;
-      if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x12d2) &&
-         ((&g_INT_01cc656c)[g_INT_01cc64a4] == 0x19)) {
+      if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x12d2) &&
+         ((&g_INT_01cc656c)[g_CurrentGraphicsBoard] == 0x19)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar3->game_pixx = 0x280;
         pCVar3->game_pixy = 0x1e0;
@@ -246,7 +246,7 @@ LAB_004d039c:
         pcVar10[1] = cVar1;
         pcVar10 = pcVar10 + 2;
       } while (cVar1 != '\0');
-      pcVar9 = (&g_CHAR_PTR_01cc64ec)[g_INT_01cc64a4];
+      pcVar9 = (&g_CHAR_PTR_01cc64ec)[g_CurrentGraphicsBoard];
       iVar5 = -1;
       pcVar10 = g_CHAR_ARRAY_01cc5f80;
       do {
@@ -363,22 +363,22 @@ LAB_004d039c:
       pCVar3->game_pixx = 0x280;
     }
     pCVar3 = g_CGamePtr;
-    iVar6 = g_INT_01cc64a4;
+    iVar6 = g_CurrentGraphicsBoard;
     iVar4 = g_INT_01cc64a8;
     switch(iVar5) {
     case 0:
-      if (g_INT_01cc5b5c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         if (((g_CGamePtr->game_pixy == 0xf0) && (24000000 < local_1c[0])) && (bVar12)) {
           g_CGamePtr->game_pixx = 0x500;
           pCVar3->game_pixy = 0x400;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else if (((g_CGamePtr->game_pixy == 0xf0) && (12000000 < local_1c[0])) && (bVar12)) {
 LAB_004d08e7:
           g_CGamePtr->game_pixy = 0x300;
           pCVar3->game_pixx = 0x400;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else {
@@ -387,26 +387,26 @@ LAB_004d08e7:
 LAB_004d061e:
             g_CGamePtr->game_pixy = 0x1e0;
             pCVar3->game_pixx = 0x280;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
           else if (iVar5 == 300) {
             g_CGamePtr->game_pixy = 0xf0;
             pCVar3->game_pixx = 0x140;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
           else if (iVar5 == 0x180) {
 LAB_004d091b:
             g_CGamePtr->game_pixy = 0xf0;
             pCVar3->game_pixx = 0x140;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
           else if (iVar5 == 0x1e0) {
             g_CGamePtr->game_pixy = 0x180;
             pCVar3->game_pixx = 0x200;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
           else {
@@ -414,7 +414,7 @@ LAB_004d091b:
             if (iVar5 != 0x300) goto LAB_004d091b;
             g_CGamePtr->game_pixy = 600;
             pCVar3->game_pixx = 800;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
         }
@@ -424,19 +424,19 @@ LAB_004d091b:
         if (iVar5 == 0xf0) {
           g_CGamePtr->game_pixx = 0x200;
           pCVar3->game_pixy = 0x180;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else if (iVar5 == 300) {
           g_CGamePtr->game_pixx = 0x200;
           pCVar3->game_pixy = 0x180;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else if (iVar5 == 0x180) {
           g_CGamePtr->game_pixx = 0x280;
           pCVar3->game_pixy = 0x1e0;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else if (((local_1c[0] < 0xb71b01) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar12)) {
@@ -445,52 +445,52 @@ LAB_004d091b:
           if (((local_1c[0] < 0x16e3601) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar12)) {
             g_CGamePtr->game_pixx = 0x140;
             pCVar3->game_pixy = 0xf0;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
           else {
             g_CGamePtr->game_pixy = 0x400;
             pCVar3->game_pixx = 0x500;
-            iVar6 = g_INT_01cc64a4;
+            iVar6 = g_CurrentGraphicsBoard;
             iVar4 = g_INT_01cc64a8;
           }
         }
         else {
           g_CGamePtr->game_pixx = 800;
           pCVar3->game_pixy = 600;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
       }
       break;
     case 1:
-      if (g_INT_01cc5b5c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         if (g_CGamePtr->halo_mode == 0) {
           g_CGamePtr->halo_mode = 2;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else if (g_CGamePtr->halo_mode == 1) {
 LAB_004d0a84:
           g_CGamePtr->halo_mode = 0;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else {
           g_CGamePtr->halo_mode = 1;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
       }
       else if (g_CGamePtr->halo_mode == 0) {
         g_CGamePtr->halo_mode = 1;
-        iVar6 = g_INT_01cc64a4;
+        iVar6 = g_CurrentGraphicsBoard;
         iVar4 = g_INT_01cc64a8;
       }
       else {
         if (g_CGamePtr->halo_mode != 1) goto LAB_004d0a84;
         g_CGamePtr->halo_mode = 2;
-        iVar6 = g_INT_01cc64a4;
+        iVar6 = g_CurrentGraphicsBoard;
         iVar4 = g_INT_01cc64a8;
       }
       break;
@@ -502,7 +502,7 @@ LAB_004d0a84:
         engine_special_cpp_loadExternalRenderer_FUN_00531780(0);
         if (g_UseDirect3D == 0) {
           g_INT_01cc64a8 = g_UseDirect3D;
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
         else {
@@ -511,13 +511,13 @@ LAB_004d0af9:
                     (&g_INT_01cc64a8,&g_CHAR_PTR_01cc64ac,&g_CHAR_PTR_01cc64ec,&g_INT_01cc652c,
                      &g_INT_01cc656c);
           engine_special_cpp_getVideoMemory_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
-          iVar6 = g_INT_01cc64a4;
+          iVar6 = g_CurrentGraphicsBoard;
           iVar4 = g_INT_01cc64a8;
         }
       }
       break;
     case 3:
-      if ((&g_INT_01cc652c)[g_INT_01cc64a4] != 0x121a) {
+      if ((&g_INT_01cc652c)[g_CurrentGraphicsBoard] != 0x121a) {
         iVar5 = _stricmp(g_RendererDllPath,"trid3d.dll");
         if (iVar5 == 0) {
           pcVar7 = "tridx6.dll";
@@ -552,7 +552,7 @@ LAB_004d0b7a:
         }
         engine_special_cpp_kill_FUN_005322b0();
         engine_special_cpp_loadExternalRenderer_FUN_00531780(0);
-        iVar6 = g_INT_01cc64a4;
+        iVar6 = g_CurrentGraphicsBoard;
         iVar4 = g_UseDirect3D;
         if (g_UseDirect3D != 0) goto LAB_004d0af9;
       }
@@ -560,35 +560,35 @@ LAB_004d0b7a:
     case 4:
       iVar6 = g_INT_01cc64a8;
       if (g_INT_01cc64a8 != 0) {
-        g_INT_01cc64a4 = g_INT_01cc64a4 + 1;
-        if (g_INT_01cc64a8 <= g_INT_01cc64a4) {
-          g_INT_01cc64a4 = 0;
+        g_CurrentGraphicsBoard = g_CurrentGraphicsBoard + 1;
+        if (g_INT_01cc64a8 <= g_CurrentGraphicsBoard) {
+          g_CurrentGraphicsBoard = 0;
         }
-        engine_special_cpp_selectCard_FUN_00532d00(g_INT_01cc64a4);
-        iVar6 = g_INT_01cc64a4;
+        engine_special_cpp_selectCard_FUN_00532d00(g_CurrentGraphicsBoard);
+        iVar6 = g_CurrentGraphicsBoard;
         iVar4 = g_INT_01cc64a8;
       }
       break;
     case 5:
       if (g_CGamePtr->game_bpp == 0x10) {
         g_CGamePtr->game_bpp = 0x20;
-        iVar6 = g_INT_01cc64a4;
+        iVar6 = g_CurrentGraphicsBoard;
         iVar4 = g_INT_01cc64a8;
       }
       else {
         g_CGamePtr->game_bpp = 0x10;
-        iVar6 = g_INT_01cc64a4;
+        iVar6 = g_CurrentGraphicsBoard;
         iVar4 = g_INT_01cc64a8;
       }
       break;
     case 6:
       core_menu_cpp_showCalibrationTest_FUN_004cffa0();
-      iVar6 = g_INT_01cc64a4;
+      iVar6 = g_CurrentGraphicsBoard;
       iVar4 = g_INT_01cc64a8;
       break;
     case 7:
       g_CGamePtr->subtitle_mode = (uint)(g_CGamePtr->subtitle_mode == 0);
-      iVar6 = g_INT_01cc64a4;
+      iVar6 = g_CurrentGraphicsBoard;
       iVar4 = g_INT_01cc64a8;
       break;
     case 8:
@@ -596,11 +596,11 @@ LAB_004d0b7a:
       g_CGamePtr->nudity_flag = uVar8;
       pCVar3->blood_flag = uVar8;
       pCVar3->foul_language_flag = uVar8;
-      iVar6 = g_INT_01cc64a4;
+      iVar6 = g_CurrentGraphicsBoard;
       iVar4 = g_INT_01cc64a8;
     }
     g_INT_01cc64a8 = iVar4;
-    g_INT_01cc64a4 = iVar6;
+    g_CurrentGraphicsBoard = iVar6;
     iVar5 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar5 != 0) {
       return;

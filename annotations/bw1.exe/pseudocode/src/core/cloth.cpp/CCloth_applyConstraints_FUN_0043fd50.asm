@@ -121,8 +121,8 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005d68b0 = 1.05000000000000
-;   int g_INT_01cc804c
-;   int g_INT_01cc8050
+;   int g_FastSqrtMagic
+;   int g_FastInvSqrtMagic
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
@@ -210,7 +210,7 @@ section .text
     FADDP                               ; 0043fe48
     FSTP float ptr [ESP + 0x198]        ; 0043fe4a
     MOV EAX,dword ptr [ESP + 0x198]     ; 0043fe51
-    MOV ESI,dword ptr [0x01cc804c]      ; 0043fe58 | g_INT_01cc804c
+    MOV ESI,dword ptr [0x01cc804c]      ; 0043fe58 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0043fe5e
     ADD EAX,ESI                         ; 0043fe60
     MOV dword ptr [ESP + 0x1b0],EAX     ; 0043fe62
@@ -523,7 +523,7 @@ section .text
     FADDP                               ; 0044031e
     FSTP float ptr [ESP + 0x170]        ; 00440320
     MOV EAX,dword ptr [ESP + 0x170]     ; 00440327
-    MOV EDI,dword ptr [0x01cc804c]      ; 0044032e | g_INT_01cc804c
+    MOV EDI,dword ptr [0x01cc804c]      ; 0044032e | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00440334
     ADD EAX,EDI                         ; 00440336
     MOV dword ptr [ESP + 0x1c8],EAX     ; 00440338
@@ -547,7 +547,7 @@ section .text
     MOV dword ptr [ESP + 0x38],EAX      ; 00440374
     FSTP float ptr [ESP + 0x178]        ; 00440378
     MOV EAX,dword ptr [ESP + 0x178]     ; 0044037f
-    MOV EDX,dword ptr [0x01cc8050]      ; 00440386 | g_INT_01cc8050
+    MOV EDX,dword ptr [0x01cc8050]      ; 00440386 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0044038c
     SUB EDX,EAX                         ; 0044038e
     MOV dword ptr [ESP + 0x17c],EDX     ; 00440390

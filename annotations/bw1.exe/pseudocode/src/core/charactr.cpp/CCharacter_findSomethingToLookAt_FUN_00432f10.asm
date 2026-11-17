@@ -203,7 +203,7 @@ section .text
         ;   XREF to: 00433126 (CONDITIONAL_JUMP)  ; LAB_00433126
     PUSH 0x5d5d15                       ; 004330b0 | = "heroCanSee"
         ;   Label: LAB_004330b0
-    MOV ESI,dword ptr [0x0061b4d0]      ; 004330b5 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 004330b5 | g_CEventListPtr
     PUSH ESI                            ; 004330bb
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004330bc
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

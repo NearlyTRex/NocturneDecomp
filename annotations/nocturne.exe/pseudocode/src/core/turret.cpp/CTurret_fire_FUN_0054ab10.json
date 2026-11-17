@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 280,
+    "complexity_score": 277,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 165,
+    "pseudocode_lines": 162,
     "suspect_count": 9,
     "suspect_types": [
       "stack_ref",
@@ -16,7 +16,7 @@
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 562
+    "total_lines": 559
   },
   "cross_references": [],
   "function": {
@@ -134,7 +134,7 @@
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -146,25 +146,25 @@
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077bd78",
-      "name": "g_CCrateActorType_0077bd40.name_hash",
+      "name": "g_CCrateClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7068c",
-      "name": "g_CFlameCanActorType_01c70654.name_hash",
+      "name": "g_CFlameCanClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c78",
-      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "name": "g_CGlassClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -242,7 +242,7 @@
     },
     {
       "addr": "02dd10bc",
-      "name": "g_CTriggerActorType_02dd1084.name_hash",
+      "name": "g_CTriggerClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -361,7 +361,7 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 91,
+      "line": 88,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),",
@@ -369,7 +369,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 117,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff24);",
@@ -377,7 +377,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 118,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_cc._0_4_ =",
@@ -385,7 +385,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 123,
+      "line": 120,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20));",
@@ -393,7 +393,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 121,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_cc._4_4_ = 0.4;",
@@ -401,7 +401,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 134,
+      "line": 131,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_cc._8_4_ = CStack_40.x;",
@@ -409,7 +409,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 149,
+      "line": 146,
       "match": "1.41531e-43",
       "severity": "mild",
       "text": "CStack_a0.x = 1.41531e-43;",
@@ -425,7 +425,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 142,
+      "line": 139,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_b4.x = pCVar1->x;",

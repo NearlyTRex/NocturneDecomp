@@ -7,7 +7,7 @@
 ; CSfxSample *     Stack[0x4]:4   sample
 ;
 ; Referenced Globals:
-;   int g_INT_02c78ff0
+;   int g_LastSampleAccessIndex
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
@@ -26,7 +26,7 @@ section .text
     PUSH ESI                            ; 00574101
     PUSH EDI                            ; 00574102
     PUSH EBP                            ; 00574103
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00574104 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00574104 | g_LastSampleAccessIndex
     MOV ESI,dword ptr [ESP + 0x14]      ; 0057410a
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 0057410e
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
@@ -37,7 +37,7 @@ section .text
     ADD ESP,0x8                         ; 0057411b
     XOR ECX,ECX                         ; 0057411e
     XOR EBP,EBP                         ; 00574120
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00574122 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00574122 | g_LastSampleAccessIndex
         ;   Label: LAB_00574122
     INC EBX                             ; 00574128
     CMP EBX,0x40                        ; 00574129
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 0057415e (CONDITIONAL_JUMP)  ; LAB_0057415e
     INC ECX                             ; 00574140
         ;   Label: LAB_00574140
-    MOV dword ptr [0x02c78ff0],EBX      ; 00574141 | g_INT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 00574141 | g_LastSampleAccessIndex
     CMP ECX,0x40                        ; 00574147
     JL 0x00574122                       ; 0057414a
         ;   XREF to: 00574122 (CONDITIONAL_JUMP)  ; LAB_00574122
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_0057414c
     XOR EAX,EAX                         ; 00574151
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00574153 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00574153 | g_LastSampleAccessIndex
     POP EBP                             ; 00574159
     POP EDI                             ; 0057415a
     POP ESI                             ; 0057415b
@@ -79,7 +79,7 @@ section .text
     JNZ 0x00574140                      ; 00574178
         ;   XREF to: 00574140 (CONDITIONAL_JUMP)  ; LAB_00574140
     MOV EBP,0x2c78ff4                   ; 0057417a
-    MOV dword ptr [0x02c78ff0],EBX      ; 0057417f | g_INT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 0057417f | g_LastSampleAccessIndex
     ADD EBP,EAX                         ; 00574185
     JZ 0x0057414c                       ; 00574187
         ;   XREF to: 0057414c (CONDITIONAL_JUMP)  ; LAB_0057414c
@@ -111,7 +111,7 @@ section .text
     CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005741f9
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,0x1                         ; 005741fe
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00574203 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00574203 | g_LastSampleAccessIndex
     POP EBP                             ; 00574209
     POP EDI                             ; 0057420a
     POP ESI                             ; 0057420b
@@ -123,7 +123,7 @@ section .text
         ;   XREF to: 00570020 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00574214
     XOR EAX,EAX                         ; 00574217
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00574219 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00574219 | g_LastSampleAccessIndex
     POP EBP                             ; 0057421f
     POP EDI                             ; 00574220
     POP ESI                             ; 00574221

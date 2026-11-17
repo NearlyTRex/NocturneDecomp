@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ShotShadowWithLead_005d1519
 ;   double g_DOUBLE_005d152e = 10
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -101,7 +101,7 @@ section .text
     RET                                 ; 00546e65
     PUSH 0x5d1519                       ; 00546e66 | = "ShotShadowWithLead"
         ;   Label: LAB_00546e66
-    MOV EAX,[0x005fba60]                ; 00546e6b | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 00546e6b | g_CEventListPtr
     PUSH EAX                            ; 00546e70
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00546e71
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

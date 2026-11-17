@@ -36,10 +36,10 @@ void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0058000e(ushort *destPixels
   ulonglong uVar25;
   
   do {
-    uVar1 = g_UINT_ARRAY_01c4e3d4[*srcIndices];
+    uVar1 = g_Hardware32BitPalette[*srcIndices];
     uVar10 = (ulonglong)uVar1;
     uVar6 = (uint)*srcAlpha * ((uint)globalAlpha >> 8);
-    if (g_INT_01c51d0c == 1) {
+    if (g_BlendMode == 1) {
 LAB_00580057:
       uVar3 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28
                                                      ),CONCAT14((char)(uVar1 >> 0x10),uVar1)) >>
@@ -49,9 +49,9 @@ LAB_00580057:
       uVar10 = g_QWORD_ARRAY_006247d0[uVar6 >> 8];
       uVar23 = uVar10 ^ g_QWORD_ARRAY_006247d0[0xff];
       uVar6 = (uint)*destPixels;
-      uVar24 = (uint7)((uVar6 & g_MMX_INTEGER_00623f30.mm) << g_QWORD_00623fc0) |
-               (uint7)((uVar6 & g_MMX_INTEGER_00623f28.mm) << g_QWORD_00623fa0) |
-               (uint7)((uVar6 & g_MMX_INTEGER_00623f20.mm) << g_QWORD_00623f80);
+      uVar24 = (uint7)((uVar6 & g_BlueMask16.mm) << g_BlueBitShift) |
+               (uint7)((uVar6 & g_GreenMask16.mm) << g_GreenBlueDitherShift) |
+               (uint7)((uVar6 & g_RedMask16.mm) << g_TotalDitherShift);
       uVar9 = (ushort)(((uVar24 >> 0x18) << 0x30) >> 0x28);
       uVar5 = CONCAT21(uVar9,(char)(uVar24 >> 0x10));
       uVar8 = (ushort)uVar24;
@@ -61,7 +61,7 @@ LAB_00580057:
       sVar22 = (short)(uVar10 >> 0x30);
       sVar14 = (short)(uVar13 >> 8);
       sVar17 = (short)(uVar13 >> 0x18);
-      if (g_INT_01c51d0c == 1) {
+      if (g_BlendMode == 1) {
         uVar25 = psllw((ulonglong)CONCAT52((int5)((uint7)uVar4 >> 0x10),uVar8) & 0xffffffffffff00ff,
                        8);
         uVar25 = paddusw(CONCAT26(sVar17 * sVar22,
@@ -101,9 +101,9 @@ LAB_00580057:
                                             (0xff < uVar9))));
       }
 LAB_005800da:
-      *destPixels = (ushort)((uVar10 & g_QWORD_00623f78) >> g_QWORD_00623fc0) |
-                    (ushort)((uVar10 & g_QWORD_00623f58) >> g_QWORD_00623fa0) |
-                    (ushort)((uVar10 & g_QWORD_00623f38) >> g_QWORD_00623f80);
+      *destPixels = (ushort)((uVar10 & g_BlueMask32) >> g_BlueBitShift) |
+                    (ushort)((uVar10 & g_GreenMask32) >> g_GreenBlueDitherShift) |
+                    (ushort)((uVar10 & g_RedMask32) >> g_TotalDitherShift);
     }
     else {
       if (64999 < (int)uVar6) goto LAB_005800da;

@@ -150,10 +150,10 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                     (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,
                      &CStack_70);
-          (*((g_CDemonCamera_PTR_007e2a54->base).vtable)->setupPerspectiveAndFog)
-                    (g_CDemonCamera_PTR_007e2a54,&(this_ptr->base).location.position,
+          (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,
                      (SProjectedVertex *)0x0);
-          g_SRenderVertex_ARRAY_0060b014[0].a = 0xffff - g_INT_01c6e24c;
+          g_SRenderVertex_ARRAY_0060b014[0].a = 0xffff - g_PerspectiveReciprocal;
           if (unaff_EDI == 3) {
             g_SRenderVertex_ARRAY_0060b014[0].a = g_SRenderVertex_ARRAY_0060b014[0].a / 2;
           }

@@ -33,7 +33,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005d768f = 0.0000152587890625
-;   double g_DOUBLE_005d7697 = 65536
+;   double g_FloatToFixedPoint = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -166,7 +166,7 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 0044db98
     FSTP float ptr [ESP]                ; 0044db9c
     FLD float ptr [ESP]                 ; 0044db9f
-    FDIVR double ptr [0x005d7697]       ; 0044dba2 | g_DOUBLE_005d7697
+    FDIVR double ptr [0x005d7697]       ; 0044dba2 | g_FloatToFixedPoint
     FLD float ptr [ESP + 0x50]          ; 0044dba8
     FMUL float ptr [ESP + 0x44]         ; 0044dbac
     FLD float ptr [ESP + 0x4c]          ; 0044dbb0

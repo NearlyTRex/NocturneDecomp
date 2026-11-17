@@ -62,7 +62,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34
                   ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
                    (primitive->surface_normal).C.i);
         g_ActiveRenderColor =
-             engine_3d_c_lookupLitColor_FUN_00404680(g_INT_006b0260,g_CurrentLightingValue);
+             engine_3d_c_lookupLitColor_FUN_00404680(g_CurrentPolygonColor,g_CurrentLightingValue);
       }
     }
     else {
@@ -88,14 +88,14 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34
     pSVar3 = primitive + 1;
     for (iVar4 = 0; iVar4 < (primitive->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
-      *(int *)((int)g_INT_ARRAY_006b029c + iVar2) = iVar1;
+      *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
       g_SRenderVertex_ARRAY_005c5014[iVar1].u = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
       vertex_count = vertex_count + 1;
       g_SRenderVertex_ARRAY_005c5014[(pSVar3->base).type].v = (int)(pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_INT_ARRAY_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 }

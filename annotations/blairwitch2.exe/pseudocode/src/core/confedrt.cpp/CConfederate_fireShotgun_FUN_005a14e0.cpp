@@ -55,7 +55,7 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
   }
   local_14 = (this_ptr->base).base.base.model.bone_transform.bone_model_matrices;
   core_xform_cpp_transformVector3x4_FUN_00591530
-            (&g_CVector3f_0265370c,local_14 + this_ptr->gun2_bone,&local_58);
+            (&g_ZeroVector,local_14 + this_ptr->gun2_bone,&local_58);
   pCVar4 = &local_dc;
   local_dc.x = local_58.x;
   *(uint *)((int)&local_dc + (uint)bVar3 * -8 + 4) =
@@ -70,7 +70,7 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
   *(uint *)((int)&local_118 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        *(uint *)((int)&local_b8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   core_xform_cpp_transformVector3x4_FUN_00591530
-            (&g_CVector3f_0265370c,local_14 + this_ptr->gun_bone,&local_f4);
+            (&g_ZeroVector,local_14 + this_ptr->gun_bone,&local_f4);
   pCVar4 = &local_34;
   local_34.x = local_f4.x;
   *(uint *)((int)&local_34 + (uint)bVar3 * -8 + 4) =
@@ -108,9 +108,9 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
     local_64.z = local_a0.z;
   }
   core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170
-            (g_CFireEffect_PTR_00614d30,&local_64,&(this_ptr->base).base.base.base.orient_matrix);
+            (g_CFireEffectPtr,&local_64,&(this_ptr->base).base.base.base.orient_matrix);
   core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-            (g_CFireEffect_PTR_00614d30,&local_ac,1.5,(CVector3f *)0x0,0xffff);
+            (g_CFireEffectPtr,&local_ac,1.5,(CVector3f *)0x0,0xffff);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
             (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"shotgun.wav",&local_118);
   this_ptr_00 = (this_ptr->base).base.victim;

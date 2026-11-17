@@ -17,8 +17,8 @@ void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
   int iVar6;
   
   iVar5 = 0;
-  if (0 < g_INT_00766c70) {
-    pSVar4 = g_SRenderVertex_ARRAY_00766c74;
+  if (0 < g_ClippedVertexCount) {
+    pSVar4 = g_ClippedVertexBuffer;
     do {
       if ((pSVar4->projected_vertex).transformed_z == 0) {
         (pSVar4->projected_vertex).transformed_z = 1;
@@ -50,7 +50,7 @@ void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
       }
       iVar5 = iVar5 + 1;
       pSVar4 = pSVar4 + 1;
-    } while (iVar5 < g_INT_00766c70);
+    } while (iVar5 < g_ClippedVertexCount);
   }
   return;
 }

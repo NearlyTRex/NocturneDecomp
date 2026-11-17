@@ -20,34 +20,31 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(U
   SSoundDeviceInfo local_138;
   DSBUFFERDESC DStack_20;
   
-  iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(&g_CDirectSoundDevice_02dc93a0);
+  iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(&g_CDirectSoundDeviceInstance);
   if (iVar1 != 0) {
     iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0052be40(device_id,&local_138);
     if (iVar1 != 0) {
       lp_guid = (LPGUID)0x0;
-      if (g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[device_id].is_primary_device == 0) {
-        lp_guid = &g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[device_id].device_guid;
+      if (g_DirectSoundDevices[device_id].is_primary_device == 0) {
+        lp_guid = &g_DirectSoundDevices[device_id].device_guid;
       }
-      uVar2 = DirectSoundCreate(lp_guid,&g_IDirectSound_PTR_02dc9214,(LPUNKNOWN)0x0);
+      uVar2 = DirectSoundCreate(lp_guid,&g_DirectSound,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
-        uVar2 = (*g_IDirectSound_PTR_02dc9214->vtable->SetCooperativeLevel)
-                          (g_IDirectSound_PTR_02dc9214,g_HWND_02de2098,3);
+        uVar2 = (*g_DirectSound->vtable->SetCooperativeLevel)(g_DirectSound,g_MainWindowHandle,3);
         if (uVar2 == 0) {
           memset(&DStack_20,0,0x14);
           DStack_20.dwSize = 0x14;
           DStack_20.dwFlags = 0x11;
-          uVar2 = (*g_IDirectSound_PTR_02dc9214->vtable->CreateSoundBuffer)
-                            (g_IDirectSound_PTR_02dc9214,&DStack_20,
-                             &g_IDirectSoundBuffer_PTR_02dc9218,(LPUNKNOWN)0x0);
+          uVar2 = (*g_DirectSound->vtable->CreateSoundBuffer)
+                            (g_DirectSound,&DStack_20,&g_DirectSoundPrimaryBuffer,(LPUNKNOWN)0x0);
           if (uVar2 != 0) {
             pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
             _sprintf(acStack_778,"DirectSux: Unable to %s.  (%s)",
                        "Create the primary buffer",pcVar3);
             sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_778);
             DStack_20.dwFlags = DStack_20.dwFlags & 0xffffffef;
-            uVar2 = (*g_IDirectSound_PTR_02dc9214->vtable->CreateSoundBuffer)
-                              (g_IDirectSound_PTR_02dc9214,&DStack_20,
-                               &g_IDirectSoundBuffer_PTR_02dc9218,(LPUNKNOWN)0x0);
+            uVar2 = (*g_DirectSound->vtable->CreateSoundBuffer)
+                              (g_DirectSound,&DStack_20,&g_DirectSoundPrimaryBuffer,(LPUNKNOWN)0x0);
             if (uVar2 != 0) {
               pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
               _sprintf(acStack_458,"DirectSux: Unable to %s.  (%s)",
@@ -57,13 +54,12 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(U
             }
           }
           iVar1 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005284e0();
-          if ((iVar1 != 0) &&
-             (g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[device_id].has_hardware_mixing != 0)) {
-            (*g_IDirectSoundBuffer_PTR_02dc9218->vtable->QueryInterface)
-                      ((IUnknown *)g_IDirectSoundBuffer_PTR_02dc9218,&g_IID_IDirectSound3DListener,
-                       &g_IDirectSound3DListener_PTR_02dc9220);
+          if ((iVar1 != 0) && (g_DirectSoundDevices[device_id].has_hardware_mixing != 0)) {
+            (*g_DirectSoundPrimaryBuffer->vtable->QueryInterface)
+                      ((IUnknown *)g_DirectSoundPrimaryBuffer,&g_IID_IDirectSound3DListener,
+                       &g_DirectSound3DListener);
           }
-          return &g_CDirectSoundDevice_02dc93a0;
+          return &g_CDirectSoundDeviceInstance;
         }
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
         _sprintf(acStack_2c8,"DirectSux: Unable to %s.  (%s)","Set cooperative level",
@@ -78,7 +74,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(U
       }
 LAB_0052bf91:
       sound_sndmain_cpp_logSoundError_FUN_00529980(pcVar3);
-      sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(&g_CDirectSoundDevice_02dc93a0);
+      sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(&g_CDirectSoundDeviceInstance);
       return (CDirectSoundDevice *)0x0;
     }
   }

@@ -21,7 +21,7 @@
 ;   TerminatedCString s_wp_storm_wav_005c093c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
-;   CWeather* g_CWeather_PTR_006071f0 = 02d0c1a0
+;   CWeather* g_CWeatherPtr = 02d0c1a0
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;   CWeather g_CWeather_02d0c1a0
 ;
@@ -39,7 +39,7 @@ section .text
     PUSH EDI                            ; 004a0481
     SUB ESP,0x18                        ; 004a0482
     MOV EBX,dword ptr [ESP + 0x24]      ; 004a0485
-    MOV EAX,[0x006071f0]                ; 004a0489 | g_CWeather_PTR_006071f0
+    MOV EAX,[0x006071f0]                ; 004a0489 | g_CWeatherPtr
     MOV EDX,dword ptr [EAX]             ; 004a048e | g_CWeather_02d0c1a0
     MOV dword ptr [EBX + 0x4],EDX       ; 004a0490
     TEST EDX,EDX                        ; 004a0493
@@ -75,7 +75,7 @@ section .text
     PUSH ESI                            ; 004a04f4
         ;   Label: LAB_004a04f4
     PUSH 0x5                            ; 004a04f5
-    MOV ECX,dword ptr [0x006071f0]      ; 004a04f7 | g_CWeather_PTR_006071f0
+    MOV ECX,dword ptr [0x006071f0]      ; 004a04f7 | g_CWeatherPtr
     PUSH ECX                            ; 004a04fd | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004a04fe
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
@@ -84,7 +84,7 @@ section .text
     PUSH EAX                            ; 004a050a
     LEA EAX,[ESP + 0x14]                ; 004a050b
     PUSH EAX                            ; 004a050f
-    MOV ESI,dword ptr [0x006071f0]      ; 004a0510 | g_CWeather_PTR_006071f0
+    MOV ESI,dword ptr [0x006071f0]      ; 004a0510 | g_CWeatherPtr
     PUSH ESI                            ; 004a0516 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 004a0517
         ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)

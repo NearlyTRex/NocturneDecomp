@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_0060425c = 0x8
-;   int g_INT_00604260 = 0x1
-;   int g_INT_00604264 = 0x2b11
-;   CSoundDevice* g_CSoundDevice_PTR_02cf3c68
-;   int g_INT_02cf3c6c
-;   int g_INT_02cf3c70
+;   int g_RecordingBitsPerSample = 0x8
+;   int g_RecordingChannelCount = 0x1
+;   int g_RecordingSampleRate = 0x2b11
+;   CSoundDevice* g_RecordingDeviceInterface
+;   int isRecordingStarted
+;   int g_RecordingSamplesSigned
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00558b00
@@ -47,13 +47,13 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00558c2f
         ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
         ;   Label: LAB_00558c2f
-    MOV EDX,dword ptr [0x02cf3c70]      ; 00558c34 | g_INT_02cf3c70
+    MOV EDX,dword ptr [0x02cf3c70]      ; 00558c34 | g_RecordingSamplesSigned
     PUSH EDX                            ; 00558c3a
-    MOV ECX,dword ptr [0x00604264]      ; 00558c3b | g_INT_00604264
+    MOV ECX,dword ptr [0x00604264]      ; 00558c3b | g_RecordingSampleRate
     PUSH ECX                            ; 00558c41
-    MOV EBX,dword ptr [0x00604260]      ; 00558c42 | g_INT_00604260
+    MOV EBX,dword ptr [0x00604260]      ; 00558c42 | g_RecordingChannelCount
     PUSH EBX                            ; 00558c48
-    MOV ESI,dword ptr [0x0060425c]      ; 00558c49 | g_INT_0060425c
+    MOV ESI,dword ptr [0x0060425c]      ; 00558c49 | g_RecordingBitsPerSample
     PUSH ESI                            ; 00558c4f
     CALL sound_sndmain.cpp_setRecordingFormat_FUN_00558b20 ; 00558c50
         ;   XREF to: 00558b20 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setRecordingFormat_FUN_00558b20(int bits_per_sample, int channels, int sample_rate, int signed_samples)
@@ -61,7 +61,7 @@ section .text
     TEST EAX,EAX                        ; 00558c58
     JZ 0x00558c85                       ; 00558c5a
         ;   XREF to: 00558c85 (CONDITIONAL_JUMP)  ; LAB_00558c85
-    MOV EAX,[0x02cf3c68]                ; 00558c5c | g_CSoundDevice_PTR_02cf3c68
+    MOV EAX,[0x02cf3c68]                ; 00558c5c | g_RecordingDeviceInterface
     PUSH EAX                            ; 00558c61
     MOV EDX,dword ptr [EAX]             ; 00558c62
     CALL dword ptr [EDX + 0x4]          ; 00558c64
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 00558c85 (CONDITIONAL_JUMP)  ; LAB_00558c85
     PUSH EDI                            ; 00558c6e
     MOV EDI,0x1                         ; 00558c6f
-    MOV dword ptr [0x02cf3c6c],EDI      ; 00558c74 | g_INT_02cf3c6c
+    MOV dword ptr [0x02cf3c6c],EDI      ; 00558c74 | isRecordingStarted
     CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00558c7a
         ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     MOV EAX,EDI                         ; 00558c7f

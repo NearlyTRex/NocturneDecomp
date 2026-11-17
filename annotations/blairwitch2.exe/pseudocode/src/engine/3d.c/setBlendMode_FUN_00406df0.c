@@ -9,6 +9,6 @@
 void __cdecl engine_3d_c_setBlendMode_FUN_00406df0(int blend_mode)
 
 {
-  g_INT_01c38b4c = blend_mode;
+  g_BlendMode = blend_mode;
   return;
 }

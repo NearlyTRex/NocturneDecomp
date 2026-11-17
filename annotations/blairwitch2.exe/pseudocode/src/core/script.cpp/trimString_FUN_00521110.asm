@@ -12,7 +12,7 @@
 ;   core_script.cpp_parseArgument_FUN_005211a0 at 00521225
 ;
 ; Referenced Globals:
-;   uchar[257] g_UCHAR_ARRAY_0061ed94
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005ba1f0
@@ -42,7 +42,7 @@ section .text
         ;   Label: LAB_0052112c
     INC DL                              ; 0052112f
     AND EDX,0xff                        ; 00521131
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 00521137 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 00521137 | g_CharacterClassificationTable
     JNZ 0x0052115f                      ; 0052113e
         ;   XREF to: 0052115f (CONDITIONAL_JUMP)  ; LAB_0052115f
     LEA EAX,[ESI + EBX*0x1]             ; 00521140
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00521149
     INC AL                              ; 0052114b
     AND EAX,0xff                        ; 0052114d
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00521152 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00521152 | g_CharacterClassificationTable
     JNZ 0x00521167                      ; 00521159
         ;   XREF to: 00521167 (CONDITIONAL_JUMP)  ; LAB_00521167
     POP EDI                             ; 0052115b

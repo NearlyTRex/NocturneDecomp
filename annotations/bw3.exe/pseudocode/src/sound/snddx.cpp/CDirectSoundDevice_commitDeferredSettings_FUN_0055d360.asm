@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005d452f
 ;   TerminatedCString s_Commit_hardware_sfx_3d_b_005d4ec5
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -22,7 +22,7 @@ section .text
 
     SUB ESP,0x190                       ; 0055d360
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0055d360
-    MOV EDX,dword ptr [0x02cf49d0]      ; 0055d366 | g_IDirectSound3DListener_PTR_02cf49d0
+    MOV EDX,dword ptr [0x02cf49d0]      ; 0055d366 | g_DirectSound3DListener
     TEST EDX,EDX                        ; 0055d36c
     JNZ 0x0055d377                      ; 0055d36e
         ;   XREF to: 0055d377 (CONDITIONAL_JUMP)  ; LAB_0055d377

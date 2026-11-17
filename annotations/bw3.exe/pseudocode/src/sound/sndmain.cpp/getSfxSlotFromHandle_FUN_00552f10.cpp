@@ -27,7 +27,7 @@ CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_00552f10(uint sfx_
           return (CSfxSlot *)0x0;
         }
         if (g_CSfxSlot_ARRAY_02ce721c[uVar2].hardware_buffer_handle != 0) {
-          if (g_CSoundDevice_PTR_02cf3280 == (CSoundDevice *)0x0) {
+          if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
             sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(this_ptr);
             sound_sndmain_cpp_unlockSound_FUN_00556fd0();
             return (CSfxSlot *)0x0;
@@ -35,8 +35,7 @@ CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_00552f10(uint sfx_
           if ((g_CSfxSlot_ARRAY_02ce721c[uVar2].changed_flags & 0x40000000) != 0) {
             return this_ptr;
           }
-          iVar1 = (*g_CSoundDevice_PTR_02cf3280->vtable->isSfxPlaying)
-                            (g_CSoundDevice_PTR_02cf3280,this_ptr);
+          iVar1 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,this_ptr);
           if (iVar1 == 0) {
             sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(this_ptr);
             sound_sndmain_cpp_unlockSound_FUN_00556fd0();

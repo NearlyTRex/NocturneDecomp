@@ -15,16 +15,16 @@ byte g_BYTE_02630cb0 = {};
 byte g_BYTE_0263cee8 = {};
 
 // char[15360]
-char g_CHAR_ARRAY_02630cb8[15360] = {};
+char g_SfxStreamReadBuffer[15360] = {};
 
 // float
-float g_FLOAT_0263cf10 = {};
+float g_SoundReferenceVolumeDistance = {};
 
 // int
-int g_INT_0263ceec = {};
+int g_ShutdownInProgress = {};
 int g_INT_0263cf14 = {};
 int g_INT_0263cf18 = {};
 
 // int[8]
-int g_INT_ARRAY_0263cef0[8] = {};
+int g_ChannelFFTTimestamps[8] = {};
 

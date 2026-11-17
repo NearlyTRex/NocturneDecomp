@@ -590,7 +590,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00463670
     MOVSD ES:EDI,ESI                    ; 00463671
     PUSH EAX                            ; 00463672
-    MOV ECX,dword ptr [0x00614d30]      ; 00463673 | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 00463673 | g_CFireEffectPtr
     MOV ESI,dword ptr [EBP + 0x72]      ; 00463679
     PUSH ECX                            ; 0046367c
     INC ESI                             ; 0046367d
@@ -795,7 +795,7 @@ section .text
     LEA EAX,[EBP + 0xfffffda2]          ; 004638e0
     LEA EDI,[EBP + 0xfffffda2]          ; 004638e6
     PUSH EAX                            ; 004638ec
-    MOV EAX,[0x00614d30]                ; 004638ed | g_CFireEffect_PTR_00614d30
+    MOV EAX,[0x00614d30]                ; 004638ed | g_CFireEffectPtr
     LEA ESI,[EBP + 0xfffffdea]          ; 004638f2
     PUSH EAX                            ; 004638f8
     MOVSD ES:EDI,ESI                    ; 004638f9
@@ -847,7 +847,7 @@ section .text
         ;   Label: caseD_7
     JNZ 0x004632d0                      ; 0046398d
         ;   XREF to: 004632d0 (CONDITIONAL_JUMP)  ; caseD_19
-    MOV ESI,dword ptr [0x01ba5794]      ; 00463993 | g_INT_ARRAY_01ba5778[7]
+    MOV ESI,dword ptr [0x01ba5794]      ; 00463993 | g_DraculaBrideIndices[7]
     PUSH ESI                            ; 00463999
     LEA EAX,[EBX + 0x2b4]               ; 0046399a
     PUSH EAX                            ; 004639a0
@@ -883,7 +883,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004639fe
     MOVSD ES:EDI,ESI                    ; 004639ff
     PUSH EAX                            ; 00463a00
-    MOV EDI,dword ptr [0x00614d30]      ; 00463a01 | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 00463a01 | g_CFireEffectPtr
     PUSH EDI                            ; 00463a07
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_0049e680 ; 00463a08
         ;   XREF to: 0049e680 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_0049e680(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
@@ -900,7 +900,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe26]          ; 00463a27
     FLD float ptr [EBP + 0xfffffe56]    ; 00463a2d
     PUSH EAX                            ; 00463a33
-    MOV EAX,[0x00614d30]                ; 00463a34 | g_CFireEffect_PTR_00614d30
+    MOV EAX,[0x00614d30]                ; 00463a34 | g_CFireEffectPtr
     FADD float ptr [0x005d10a4]         ; 00463a39 | g_FLOAT_005d10a4
     PUSH EAX                            ; 00463a3f
     FSTP float ptr [EBP + 0xfffffe56]   ; 00463a40
@@ -922,7 +922,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00463a71
     ADD ESP,0x8                         ; 00463a74
     LEA EAX,[EBP + 0xfffffc9a]          ; 00463a77
-    MOV EDX,dword ptr [0x01ba5778]      ; 00463a7d | g_INT_ARRAY_01ba5778
+    MOV EDX,dword ptr [0x01ba5778]      ; 00463a7d | g_DraculaBrideIndices
     PUSH EAX                            ; 00463a83
     LEA EAX,[EDX*0x4 + 0x0]             ; 00463a84
     LEA ESI,[EBP + 0xfffffd7e]          ; 00463a8b
@@ -938,7 +938,7 @@ section .text
     PUSH EAX                            ; 00463ab7
     MOV EAX,0x265370c                   ; 00463ab8
     FLD float ptr [EBP + 0x76]          ; 00463abd
-    PUSH EAX                            ; 00463ac0 | g_CVector3f_0265370c
+    PUSH EAX                            ; 00463ac0 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffc9e]   ; 00463ac1
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00463ac7
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -982,7 +982,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00463b3a
     ADD ESP,0x8                         ; 00463b3d
     LEA EAX,[EBP + 0xfffffc22]          ; 00463b40
-    MOV EDX,dword ptr [0x01ba5778]      ; 00463b46 | g_INT_ARRAY_01ba5778
+    MOV EDX,dword ptr [0x01ba5778]      ; 00463b46 | g_DraculaBrideIndices
     PUSH EAX                            ; 00463b4c
     LEA EAX,[EDX*0x4 + 0x0]             ; 00463b4d
     MOV dword ptr [EBP + 0xfffffc56],EBX ; 00463b54
@@ -995,7 +995,7 @@ section .text
     LEA EDI,[EBP + -0x72]               ; 00463b72
     PUSH EAX                            ; 00463b75
     FLD float ptr [EBP + 0x76]          ; 00463b76
-    PUSH 0x265370c                      ; 00463b79 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00463b79 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffc26]   ; 00463b7e
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00463b84
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -1039,7 +1039,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00463bf4
     ADD ESP,0x8                         ; 00463bf7
     LEA EAX,[EBP + 0xfffffcd6]          ; 00463bfa
-    MOV EDX,dword ptr [0x01ba5778]      ; 00463c00 | g_INT_ARRAY_01ba5778
+    MOV EDX,dword ptr [0x01ba5778]      ; 00463c00 | g_DraculaBrideIndices
     PUSH EAX                            ; 00463c06
     LEA EAX,[EDX*0x4 + 0x0]             ; 00463c07
     MOV dword ptr [EBP + 0xfffffd0a],EBX ; 00463c0e
@@ -1052,7 +1052,7 @@ section .text
     LEA EDI,[EBP + 0x1e]                ; 00463c2c
     PUSH EAX                            ; 00463c2f
     FLD float ptr [EBP + 0x76]          ; 00463c30
-    PUSH 0x265370c                      ; 00463c33 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00463c33 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffcda]   ; 00463c38
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00463c3e
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -1096,7 +1096,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00463cae
     ADD ESP,0x8                         ; 00463cb1
     LEA EAX,[EBP + 0xfffffd12]          ; 00463cb4
-    MOV EDX,dword ptr [0x01ba5780]      ; 00463cba | g_INT_ARRAY_01ba5778[2]
+    MOV EDX,dword ptr [0x01ba5780]      ; 00463cba | g_DraculaBrideIndices[2]
     PUSH EAX                            ; 00463cc0
     LEA EAX,[EDX*0x4 + 0x0]             ; 00463cc1
     MOV dword ptr [EBP + 0xfffffd46],EBX ; 00463cc8
@@ -1109,7 +1109,7 @@ section .text
     LEA EDI,[EBP + 0xfffffd5a]          ; 00463ce6
     PUSH EAX                            ; 00463cec
     FLD float ptr [EBP + 0x76]          ; 00463ced
-    PUSH 0x265370c                      ; 00463cf0 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00463cf0 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffd16]   ; 00463cf5
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00463cfb
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -1193,7 +1193,7 @@ section .text
         ;   XREF to: 004632d0 (CONDITIONAL_JUMP)  ; caseD_19
     LEA EAX,[EBX + 0x10b1c]             ; 00463df4
     PUSH EAX                            ; 00463dfa
-    MOV ESI,dword ptr [0x006141f0]      ; 00463dfb | g_CEventList_PTR_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 00463dfb | g_CEventListPtr
     PUSH ESI                            ; 00463e01
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00463e02
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -1222,7 +1222,7 @@ section .text
         ;   XREF to: 004632d0 (CONDITIONAL_JUMP)  ; caseD_19
     LEA EAX,[EBX + 0x10b1c]             ; 00463e4e
     PUSH EAX                            ; 00463e54
-    MOV ECX,dword ptr [0x006141f0]      ; 00463e55 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 00463e55 | g_CEventListPtr
     PUSH ECX                            ; 00463e5b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00463e5c
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -1242,7 +1242,7 @@ section .text
     LEA EAX,[EBX + 0x10b1c]             ; 00463e84
         ;   Label: caseD_1a
     PUSH EAX                            ; 00463e8a
-    MOV EDI,dword ptr [0x006141f0]      ; 00463e8b | g_CEventList_PTR_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 00463e8b | g_CEventListPtr
     PUSH EDI                            ; 00463e91
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00463e92
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -1262,7 +1262,7 @@ section .text
     LEA EAX,[EBX + 0x10b1c]             ; 00463eba
         ;   Label: caseD_f
     PUSH EAX                            ; 00463ec0
-    MOV EDX,dword ptr [0x006141f0]      ; 00463ec1 | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 00463ec1 | g_CEventListPtr
     PUSH EDX                            ; 00463ec7
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00463ec8
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -1617,7 +1617,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004642ba
     ADD ESP,0x8                         ; 004642bd
     LEA EAX,[EBP + 0xfffffc5e]          ; 004642c0
-    MOV EDX,dword ptr [0x01ba5778]      ; 004642c6 | g_INT_ARRAY_01ba5778
+    MOV EDX,dword ptr [0x01ba5778]      ; 004642c6 | g_DraculaBrideIndices
     PUSH EAX                            ; 004642cc
     LEA EAX,[EDX*0x4 + 0x0]             ; 004642cd
     LEA ESI,[EBP + 0x12]                ; 004642d4
@@ -1633,7 +1633,7 @@ section .text
     PUSH EAX                            ; 004642fa
     MOV EAX,0x265370c                   ; 004642fb
     FLD float ptr [EBP + 0x76]          ; 00464300
-    PUSH EAX                            ; 00464303 | g_CVector3f_0265370c
+    PUSH EAX                            ; 00464303 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffc62]   ; 00464304
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0046430a
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

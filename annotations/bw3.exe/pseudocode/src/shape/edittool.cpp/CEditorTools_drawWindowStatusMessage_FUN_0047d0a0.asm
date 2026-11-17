@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5bae0
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
-;   int g_INT_01c5bb20
+;   int g_WindowStatusTextColor
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;   char* g_CHAR_PTR_01d71de0
@@ -45,7 +45,7 @@ section .text
     PUSH 0x6a                           ; 0047d0bc
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047d0be
     PUSH EAX                            ; 0047d0c4
-    MOV dword ptr [0x01c5bae0],EDX      ; 0047d0c5 | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EDX      ; 0047d0c5 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047d0cb
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047d0d0
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047d133
     PUSH -0x1                           ; 0047d136
-    MOV EAX,[0x01c5bb20]                ; 0047d138 | g_INT_01c5bb20
+    MOV EAX,[0x01c5bb20]                ; 0047d138 | g_WindowStatusTextColor
     PUSH EAX                            ; 0047d13d
     MOV EDX,dword ptr [0x01c6b5ac]      ; 0047d13e | g_INT_01c6b5ac
     PUSH EDX                            ; 0047d144

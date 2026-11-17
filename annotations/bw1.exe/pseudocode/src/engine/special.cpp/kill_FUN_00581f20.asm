@@ -10,8 +10,8 @@
 ;   wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ac1b0 at 005ac1dc
 ;
 ; Referenced Globals:
-;   void* g_PTR_02c8338c
-;   int g_INT_02c834ac
+;   void* g_APIDLL_kill
+;   int g_LoadedExternalDLLRenderer
 ;
 ; Called Functions:
 ;   engine_special.cpp_shutdownExternalRenderer_FUN_00580740
@@ -20,13 +20,13 @@
 
 section .text
 
-    CMP dword ptr [0x02c834ac],0x0      ; 00581f20 | g_INT_02c834ac
+    CMP dword ptr [0x02c834ac],0x0      ; 00581f20 | g_LoadedExternalDLLRenderer
         ;   Label: engine_special.cpp_kill_FUN_00581f20
     JNZ 0x00581f2f                      ; 00581f27
         ;   XREF to: 00581f2f (CONDITIONAL_JUMP)  ; LAB_00581f2f
     MOV EAX,0x1                         ; 00581f29
     RET                                 ; 00581f2e
-    CALL dword ptr [0x02c8338c]         ; 00581f2f | g_PTR_02c8338c
+    CALL dword ptr [0x02c8338c]         ; 00581f2f | g_APIDLL_kill
         ;   Label: LAB_00581f2f
     CALL engine_special.cpp_shutdownExternalRenderer_FUN_00580740 ; 00581f35
         ;   XREF to: 00580740 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_shutdownExternalRenderer_FUN_00580740()

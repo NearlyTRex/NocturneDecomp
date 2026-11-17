@@ -13,7 +13,7 @@ void __cdecl core_glass_cpp_CGlass_process_FUN_004ac3f0(CGlass *this_ptr,float d
   
   if (this_ptr->shattered == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (g_CEventList_PTR_005b7650,this_ptr->break_event);
+                      (g_CEventListPtr,this_ptr->break_event);
     if (iVar1 != 0) {
       core_glass_cpp_CGlass_shatter_FUN_004ada20(this_ptr,&(this_ptr->base).location.position);
       return;

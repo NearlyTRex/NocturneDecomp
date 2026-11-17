@@ -16,7 +16,7 @@
 ;   TerminatedCString s_CWaterActor_process_Bad_0059762c
 ;   double DOUBLE_0059764f = 65536
 ;   double DOUBLE_00597657 = 8
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -63,7 +63,7 @@ section .text
     FDIVRP                              ; 00551ae9
     LEA EAX,[EBX + 0x1ac]               ; 00551aeb
     PUSH EAX                            ; 00551af1
-    MOV EAX,[0x005b7650]                ; 00551af2 | g_CEventList_PTR_005b7650
+    MOV EAX,[0x005b7650]                ; 00551af2 | g_CEventListPtr
     PUSH EAX                            ; 00551af7
     FSTP float ptr [EBX + 0x7f94]       ; 00551af8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00551afe
@@ -76,7 +76,7 @@ section .text
     LEA EAX,[EBX + 0x210]               ; 00551b14
         ;   Label: LAB_00551b14
     PUSH EAX                            ; 00551b1a
-    MOV EDX,dword ptr [0x005b7650]      ; 00551b1b | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00551b1b | g_CEventListPtr
     PUSH EDX                            ; 00551b21
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00551b22
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

@@ -13,7 +13,7 @@
 ;   int g_INT_02dc942c
 ;   int g_INT_02dc9434
 ;   int g_INT_02dc9438
-;   int g_INT_02dc943c
+;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 0052c341
     PUSH EDI                            ; 0052c342
     PUSH EBP                            ; 0052c343
-    MOV EDX,dword ptr [0x02dc943c]      ; 0052c344 | g_INT_02dc943c
+    MOV EDX,dword ptr [0x02dc943c]      ; 0052c344 | g_WaveOutNumBuffers
     XOR ESI,ESI                         ; 0052c34a
     TEST EDX,EDX                        ; 0052c34c
     JLE 0x0052c3a6                      ; 0052c34e
@@ -58,7 +58,7 @@ section .text
     TEST EAX,EAX                        ; 0052c394
     JZ 0x0052c3d6                       ; 0052c396
         ;   XREF to: 0052c3d6 (CONDITIONAL_JUMP)  ; LAB_0052c3d6
-    MOV ECX,dword ptr [0x02dc943c]      ; 0052c398 | g_INT_02dc943c
+    MOV ECX,dword ptr [0x02dc943c]      ; 0052c398 | g_WaveOutNumBuffers
     INC ESI                             ; 0052c39e
     ADD EBX,0x4                         ; 0052c39f
     CMP ESI,ECX                         ; 0052c3a2

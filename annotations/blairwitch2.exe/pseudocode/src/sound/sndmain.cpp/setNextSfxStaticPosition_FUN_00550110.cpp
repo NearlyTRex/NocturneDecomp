@@ -11,8 +11,8 @@ void __cdecl sound_sndmain_cpp_setNextSfxStaticPosition_FUN_00550110(double pos_
 {
   int iVar1;
   
-  iVar1 = g_INT_0264161c;
-  g_CSfxOptions_ARRAY_02641620[g_INT_0264161c].position.x = pos_x;
+  iVar1 = g_SfxLastSlot;
+  g_CSfxOptions_ARRAY_02641620[g_SfxLastSlot].position.x = pos_x;
   g_CSfxOptions_ARRAY_02641620[iVar1].position.y = pos_y;
   g_CSfxOptions_ARRAY_02641620[iVar1].position.z = pos_z;
   g_CSfxOptions_ARRAY_02641620[iVar1].position_source_ptr = (void *)0x0;

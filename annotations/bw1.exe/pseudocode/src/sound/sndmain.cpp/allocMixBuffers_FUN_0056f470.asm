@@ -18,16 +18,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f314c
 ;   TerminatedCString s_allocMixBuffers_out_of_m_005f3161
-;   int g_INT_006232ec = 0x2
+;   int g_AudioChannelCount = 0x2
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_02c80660
-;   int g_INT_02c80664
-;   int g_INT_02c80668
-;   int g_INT_02c8066c
-;   float* g_FLOAT_PTR_02c80670
-;   float* g_FLOAT_PTR_02c80694
-;   float* g_FLOAT_PTR_02c806b8
+;   int g_MixBufferReadIndex
+;   int g_MixBufferWriteIndex
+;   int g_MixBufferSize
+;   int g_NumMixBuffers
+;   float* g_TertiaryMixBuffer
+;   float* g_PrimaryMixBuffer
+;   float* g_SecondaryMixBuffer
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -45,7 +45,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 0056f476
     MOV EDX,dword ptr [ESP + 0x24]      ; 0056f47a
     MOV EBX,0x1                         ; 0056f47e
-    MOV dword ptr [0x02c8066c],EDX      ; 0056f483 | g_INT_02c8066c
+    MOV dword ptr [0x02c8066c],EDX      ; 0056f483 | g_NumMixBuffers
     CMP EAX,EBX                         ; 0056f489
     JLE 0x0056f4a0                      ; 0056f48b
         ;   XREF to: 0056f4a0 (CONDITIONAL_JUMP)  ; LAB_0056f4a0
@@ -57,42 +57,42 @@ section .text
     LEA EAX,[EAX]                       ; 0056f493
     LEA EDX,[EDX]                       ; 0056f499
     NOP                                 ; 0056f49f
-    MOV EAX,[0x02c8066c]                ; 0056f4a0 | g_INT_02c8066c
+    MOV EAX,[0x02c8066c]                ; 0056f4a0 | g_NumMixBuffers
         ;   Label: LAB_0056f4a0
     LEA ESI,[EBX*0x4 + 0x0]             ; 0056f4a5
     IMUL EAX,ESI                        ; 0056f4ac
-    IMUL EAX,dword ptr [0x006232ec]     ; 0056f4af | g_INT_006232ec
+    IMUL EAX,dword ptr [0x006232ec]     ; 0056f4af | g_AudioChannelCount
     XOR EDX,EDX                         ; 0056f4b6
     PUSH EAX                            ; 0056f4b8
-    MOV EBP,dword ptr [0x02c80694]      ; 0056f4b9 | g_FLOAT_PTR_02c80694
-    MOV dword ptr [0x02c80660],EDX      ; 0056f4bf | g_INT_02c80660
+    MOV EBP,dword ptr [0x02c80694]      ; 0056f4b9 | g_PrimaryMixBuffer
+    MOV dword ptr [0x02c80660],EDX      ; 0056f4bf | g_MixBufferReadIndex
     PUSH EBP                            ; 0056f4c5
-    MOV dword ptr [0x02c80664],EDX      ; 0056f4c6 | g_INT_02c80664
-    MOV dword ptr [0x02c80668],EBX      ; 0056f4cc | g_INT_02c80668
+    MOV dword ptr [0x02c80664],EDX      ; 0056f4c6 | g_MixBufferWriteIndex
+    MOV dword ptr [0x02c80668],EBX      ; 0056f4cc | g_MixBufferSize
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 0056f4d2
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
-    MOV [0x02c80694],EAX                ; 0056f4d7 | g_FLOAT_PTR_02c80694
-    MOV EAX,[0x006232ec]                ; 0056f4dc | g_INT_006232ec
+    MOV [0x02c80694],EAX                ; 0056f4d7 | g_PrimaryMixBuffer
+    MOV EAX,[0x006232ec]                ; 0056f4dc | g_AudioChannelCount
     IMUL EAX,ESI                        ; 0056f4e1
     ADD ESP,0x8                         ; 0056f4e4
     ADD EAX,EAX                         ; 0056f4e7
     PUSH EAX                            ; 0056f4e9
-    MOV EAX,[0x02c806b8]                ; 0056f4ea | g_FLOAT_PTR_02c806b8
+    MOV EAX,[0x02c806b8]                ; 0056f4ea | g_SecondaryMixBuffer
     PUSH EAX                            ; 0056f4ef
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 0056f4f0
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
-    IMUL ESI,dword ptr [0x006232ec]     ; 0056f4f5 | g_INT_006232ec
+    IMUL ESI,dword ptr [0x006232ec]     ; 0056f4f5 | g_AudioChannelCount
     ADD ESP,0x8                         ; 0056f4fc
     PUSH ESI                            ; 0056f4ff
-    MOV ECX,dword ptr [0x02c80670]      ; 0056f500 | g_FLOAT_PTR_02c80670
+    MOV ECX,dword ptr [0x02c80670]      ; 0056f500 | g_TertiaryMixBuffer
     PUSH ECX                            ; 0056f506
-    MOV [0x02c806b8],EAX                ; 0056f507 | g_FLOAT_PTR_02c806b8
+    MOV [0x02c806b8],EAX                ; 0056f507 | g_SecondaryMixBuffer
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 0056f50c
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
-    MOV EBX,dword ptr [0x02c80668]      ; 0056f511 | g_INT_02c80668
-    MOV ESI,dword ptr [0x02c80694]      ; 0056f517 | g_FLOAT_PTR_02c80694
+    MOV EBX,dword ptr [0x02c80668]      ; 0056f511 | g_MixBufferSize
+    MOV ESI,dword ptr [0x02c80694]      ; 0056f517 | g_PrimaryMixBuffer
     ADD ESP,0x8                         ; 0056f51d
-    MOV [0x02c80670],EAX                ; 0056f520 | g_FLOAT_PTR_02c80670
+    MOV [0x02c80670],EAX                ; 0056f520 | g_TertiaryMixBuffer
     TEST ESI,ESI                        ; 0056f525
     JNZ 0x0056f607                      ; 0056f527
         ;   XREF to: 0056f607 (CONDITIONAL_JUMP)  ; LAB_0056f607
@@ -105,9 +105,9 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056f547
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056f54c
-    MOV ECX,dword ptr [0x006232ec]      ; 0056f54f | g_INT_006232ec
+    MOV ECX,dword ptr [0x006232ec]      ; 0056f54f | g_AudioChannelCount
         ;   Label: LAB_0056f54f
-    MOV EBX,dword ptr [0x02c80668]      ; 0056f555 | g_INT_02c80668
+    MOV EBX,dword ptr [0x02c80668]      ; 0056f555 | g_MixBufferSize
     XOR EDX,EDX                         ; 0056f55b
     TEST ECX,ECX                        ; 0056f55d
     JLE 0x0056f5fa                      ; 0056f55f
@@ -126,16 +126,16 @@ section .text
     MOV EBP,EBX                         ; 0056f58e
         ;   Label: LAB_0056f58e
     IMUL EBP,EDX                        ; 0056f590
-    IMUL EBP,dword ptr [0x02c8066c]     ; 0056f593 | g_INT_02c8066c
+    IMUL EBP,dword ptr [0x02c8066c]     ; 0056f593 | g_NumMixBuffers
     SHL EBP,0x2                         ; 0056f59a
     MOV dword ptr [ESP + 0x4],EBP       ; 0056f59d
-    MOV EBP,dword ptr [0x02c80694]      ; 0056f5a1 | g_FLOAT_PTR_02c80694
+    MOV EBP,dword ptr [0x02c80694]      ; 0056f5a1 | g_PrimaryMixBuffer
     ADD EBP,dword ptr [ESP + 0x4]       ; 0056f5a7
     MOV dword ptr [EAX + 0x2c80698],EBP ; 0056f5ab
-    MOV EBP,dword ptr [0x02c80670]      ; 0056f5b1 | g_FLOAT_PTR_02c80670
+    MOV EBP,dword ptr [0x02c80670]      ; 0056f5b1 | g_TertiaryMixBuffer
     ADD EBP,ECX                         ; 0056f5b7
     MOV dword ptr [EAX + 0x2c80674],EBP ; 0056f5b9
-    MOV EBP,dword ptr [0x02c806b8]      ; 0056f5bf | g_FLOAT_PTR_02c806b8
+    MOV EBP,dword ptr [0x02c806b8]      ; 0056f5bf | g_SecondaryMixBuffer
     MOV dword ptr [ESP + 0x4],EBP       ; 0056f5c5
     ADD EBP,EDI                         ; 0056f5c9
     MOV dword ptr [EAX + 0x2c806bc],EBP ; 0056f5cb
@@ -147,20 +147,20 @@ section .text
     MOV EBP,dword ptr [ESP + 0x8]       ; 0056f5e5
     INC EDX                             ; 0056f5e9
     ADD ECX,EBP                         ; 0056f5ea
-    MOV EBP,dword ptr [0x006232ec]      ; 0056f5ec | g_INT_006232ec
+    MOV EBP,dword ptr [0x006232ec]      ; 0056f5ec | g_AudioChannelCount
     ADD EAX,0x4                         ; 0056f5f2
     CMP EDX,EBP                         ; 0056f5f5
     JL 0x0056f58e                       ; 0056f5f7
         ;   XREF to: 0056f58e (CONDITIONAL_JUMP)  ; LAB_0056f58e
     POP EDI                             ; 0056f5f9
-    MOV dword ptr [0x02c80668],EBX      ; 0056f5fa | g_INT_02c80668
+    MOV dword ptr [0x02c80668],EBX      ; 0056f5fa | g_MixBufferSize
         ;   Label: LAB_0056f5fa
     ADD ESP,0x10                        ; 0056f600
     POP EBP                             ; 0056f603
     POP ESI                             ; 0056f604
     POP EBX                             ; 0056f605
     RET                                 ; 0056f606
-    CMP dword ptr [0x02c806b8],0x0      ; 0056f607 | g_FLOAT_PTR_02c806b8
+    CMP dword ptr [0x02c806b8],0x0      ; 0056f607 | g_SecondaryMixBuffer
         ;   Label: LAB_0056f607
     JZ 0x0056f52d                       ; 0056f60e
         ;   XREF to: 0056f52d (CONDITIONAL_JUMP)  ; LAB_0056f52d

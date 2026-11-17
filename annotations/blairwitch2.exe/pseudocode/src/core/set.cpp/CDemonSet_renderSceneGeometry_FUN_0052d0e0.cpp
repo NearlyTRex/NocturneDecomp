@@ -16,7 +16,7 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(CDemonSet *
   CVector3f local_1c;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0046b520
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3i_0061b5ac);
+            (g_CDemonRenderer_PTR_0060b280,&g_GlobalLightDirection);
   engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0
             (g_CDemonRenderer_PTR_0060b280,0.25);
   if ((render_mode == 0) || (iVar1 = this_ptr->selected_camera_index, iVar1 < 0)) {
@@ -65,8 +65,7 @@ LAB_0052d14b:
       }
       if ((this_ptr->disable_sky_rendering == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_0046e410
-                  (g_SMRGLSkyTexture_PTR_0060d1f0,this_ptr->sky_texture_name,
-                   this_ptr->sky_brightness);
+                  (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,this_ptr->sky_brightness);
       }
       if ((this_ptr->disable_water_rendering == 0) &&
          (core_water_cpp_CWater_calculateVisibleTiles_FUN_00585e10(g_CWaterPtr),
@@ -74,7 +73,7 @@ LAB_0052d14b:
         core_water_cpp_CWater_render_FUN_005862e0(g_CWaterPtr,1);
       }
       if (this_ptr->player_on_train != 0) {
-        core_terrain_cpp_CTerrain_render_FUN_0057b860(g_CTerrain_PTR_0061e450,1);
+        core_terrain_cpp_CTerrain_render_FUN_0057b860(g_CTerrainPtr,1);
       }
     }
     iVar1 = 0;
@@ -95,7 +94,7 @@ LAB_0052d14b:
       } while (iVar1 < this_ptr->mirror_glass_actor_count);
     }
   }
-  else if ((g_INT_0061b5b8 != 0) &&
+  else if ((g_RenderMirrorsFlag != 0) &&
           (iVar1 = 0, pCVar2 = this_ptr, 0 < this_ptr->mirror_glass_actor_count)) {
     do {
       core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0

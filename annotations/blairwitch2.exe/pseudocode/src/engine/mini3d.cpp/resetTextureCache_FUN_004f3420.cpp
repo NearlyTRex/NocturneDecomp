@@ -10,8 +10,8 @@ void __cdecl engine_mini3d_cpp_resetTextureCache_FUN_004f3420(void)
 
 {
   engine_texture_cpp_clearTextureCache_FUN_00575010();
-  if ((g_PTR_0264bcbc != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-    (*(code *)g_PTR_0264bcbc)();
+  if ((g_APIDLL_setTransform != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_APIDLL_setTransform)();
     return;
   }
   return;

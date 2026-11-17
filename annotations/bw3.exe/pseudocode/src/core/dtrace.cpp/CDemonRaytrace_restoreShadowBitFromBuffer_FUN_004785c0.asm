@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005bcc2d
 ;   TerminatedCString s_Parity_Check_999_005bcc40
-;   uchar[8] g_UCHAR_ARRAY_005fb0e8
+;   uchar[8] g_VoxelYBitMasks
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -149,7 +149,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 004786bb
     MOV ESI,dword ptr [EBX]             ; 004786be
     SHL EAX,0x3                         ; 004786c0
-    MOV DL,byte ptr [EDX + 0x5fb0e8]    ; 004786c3 | g_UCHAR_ARRAY_005fb0e8
+    MOV DL,byte ptr [EDX + 0x5fb0e8]    ; 004786c3 | g_VoxelYBitMasks
     ADD EAX,EDI                         ; 004786c9
     XOR DL,0xff                         ; 004786cb
     AND byte ptr [ESI + EAX*0x1],DL     ; 004786ce
@@ -158,7 +158,7 @@ section .text
     ADD ESI,EAX                         ; 004786d6
     MOV AL,byte ptr [EDX + EAX*0x1]     ; 004786d8
     MOV EDX,dword ptr [ESP]             ; 004786db
-    AND AL,byte ptr [EDX + 0x5fb0e8]    ; 004786de | g_UCHAR_ARRAY_005fb0e8
+    AND AL,byte ptr [EDX + 0x5fb0e8]    ; 004786de | g_VoxelYBitMasks
     OR byte ptr [ESI],AL                ; 004786e4
     ADD ESP,0x30                        ; 004786e6
     POP EBP                             ; 004786e9

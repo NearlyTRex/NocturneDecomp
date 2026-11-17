@@ -10,7 +10,7 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0049c430 at 0049c4c9
 ;
 ; Referenced Globals:
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0
@@ -38,7 +38,7 @@ section .text
         ;   Label: LAB_00496a7a
     ADD EAX,0x4                         ; 00496a7b
     PUSH EAX                            ; 00496a7e
-    MOV ESI,dword ptr [0x00614d30]      ; 00496a7f | g_CFireEffect_PTR_00614d30
+    MOV ESI,dword ptr [0x00614d30]      ; 00496a7f | g_CFireEffectPtr
     PUSH ESI                            ; 00496a85
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0 ; 00496a86
         ;   XREF to: 0049ccd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0(CFireEffect * this_ptr, CVector3f * position)

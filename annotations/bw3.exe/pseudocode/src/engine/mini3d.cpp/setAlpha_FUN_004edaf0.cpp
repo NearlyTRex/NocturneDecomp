@@ -15,8 +15,8 @@ void __cdecl engine_mini3d_cpp_setAlpha_FUN_004edaf0(float alpha)
   double dVar4;
   
   g_FLOAT_01d76c40 = alpha;
-  if ((g_PTR_02cf60a4 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
-    (*(code *)g_PTR_02cf60a4)(g_FLOAT_01d76cc8,g_INT_01d76ccc,g_INT_01d76cd0,alpha);
+  if ((g_APIDLL_setLightConstants != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_APIDLL_setLightConstants)(g_FLOAT_01d76cc8,g_INT_01d76ccc,g_INT_01d76cd0,alpha);
   }
   iVar2 = g_INT_01d7a6c4;
   fVar1 = alpha * 255.0f;

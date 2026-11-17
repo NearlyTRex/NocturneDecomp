@@ -13,9 +13,9 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412d0f
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_00604d1c = 0.0
-;   double g_DOUBLE_00604d24 = 0.0
-;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c6cee8
 ;
 ; Called Functions:
@@ -59,10 +59,10 @@ section .text
     INC ECX                             ; 00560efb
     MOV EDX,dword ptr [EBP + 0x8]       ; 00560efc
     SHL EDX,0x2                         ; 00560eff
-    FLD double ptr [0x00604d1c]         ; 00560f02 | g_DOUBLE_00604d1c
+    FLD double ptr [0x00604d1c]         ; 00560f02 | g_BufferFillZeroQword
     PUSH ECX                            ; 00560f08
         ;   Label: LAB_00560f08
-    MOV EDI,dword ptr [EBX*0x4 + 0x1c60dac] ; 00560f09 | g_UINT_PTR_ARRAY_01c60dac
+    MOV EDI,dword ptr [EBX*0x4 + 0x1c60dac] ; 00560f09 | g_ZBufferScanlineArray
     ADD EDI,EDX                         ; 00560f10
     AND EDI,0xfffffff8                  ; 00560f12
     SHR ECX,0x1                         ; 00560f15
@@ -77,7 +77,7 @@ section .text
     CMP EBX,dword ptr [EBP + 0x14]      ; 00560f21
     JBE 0x00560f08                      ; 00560f24
         ;   XREF to: 00560f08 (CONDITIONAL_JUMP)  ; LAB_00560f08
-    FSTP double ptr [0x00604d24]        ; 00560f26 | g_DOUBLE_00604d24
+    FSTP double ptr [0x00604d24]        ; 00560f26 | g_BufferFillFpuPopST0
     POPAD                               ; 00560f2c
     POP EDI                             ; 00560f2d
     POP ESI                             ; 00560f2e

@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [EBP + 0x56],EAX      ; 00445cd7
     LEA EAX,[EBX + 0xc328]              ; 00445cda
     PUSH EAX                            ; 00445ce0
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00445ce1 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00445ce1 | g_CEventListPtr
     PUSH EDX                            ; 00445ce7
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00445ce8
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -179,7 +179,7 @@ section .text
     PUSH dword ptr [EBP + 0x4a]         ; 00445e48
     LEA EAX,[EBP + 0xfffffe42]          ; 00445e4b
     PUSH dword ptr [EBP + 0x4e]         ; 00445e51
-    MOV ECX,dword ptr [0x0061c010]      ; 00445e54 | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 00445e54 | g_CFireEffectPtr
     PUSH EAX                            ; 00445e5a
     FLD float ptr [EBP + 0xfffffefe]    ; 00445e5b
     FMULP ST3                           ; 00445e61
@@ -447,7 +447,7 @@ section .text
         ;   XREF to: 004472a0 (UNCONDITIONAL_CALL)  ; void core_construc.cpp_CConstruct_explode_FUN_004472a0(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 004461b0
     PUSH 0x5d6e46                       ; 004461b3 | = "ConstructDead"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 004461b8 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 004461b8 | g_CEventListPtr
     PUSH ESI                            ; 004461be
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004461bf
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -514,7 +514,7 @@ section .text
     LEA EAX,[EBP + 0xa]                 ; 0044626f
     PUSH dword ptr [EBP + 0x4e]         ; 00446272
     PUSH EAX                            ; 00446275
-    MOV ESI,dword ptr [0x0061c010]      ; 00446276 | g_CFireEffect_PTR_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 00446276 | g_CFireEffectPtr
     PUSH ESI                            ; 0044627c
     JMP 0x00445e87                      ; 0044627d
         ;   XREF to: 00445e87 (UNCONDITIONAL_JUMP)  ; LAB_00445e87
@@ -563,13 +563,13 @@ section .text
         ;   XREF to: 0044617a (CONDITIONAL_JUMP)  ; LAB_0044617a
     LEA EAX,[EBX + 0xc328]              ; 00446307
     PUSH EAX                            ; 0044630d
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0044630e | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0044630e | g_CEventListPtr
     PUSH ESI                            ; 00446314
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00446315
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0044631a
     PUSH 0x5d6e86                       ; 0044631d | = "ConstructKilled"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00446322 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00446322 | g_CEventListPtr
     PUSH EDI                            ; 00446328
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00446329
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -599,7 +599,7 @@ section .text
     PUSH 0x3f000000                     ; 00446375
     XOR ESI,ESI                         ; 0044637a
     PUSH EDI                            ; 0044637c
-    MOV EAX,[0x0061c010]                ; 0044637d | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 0044637d | g_CFireEffectPtr
     MOV dword ptr [EBP + 0xfffffe12],EDX ; 00446382
     PUSH EAX                            ; 00446388
     MOV dword ptr [EBP + 0xfffffe16],ECX ; 00446389
@@ -620,7 +620,7 @@ section .text
     LEA EAX,[EBP + -0x1a]               ; 004463c0
     PUSH EAX                            ; 004463c3
     PUSH EDI                            ; 004463c4
-    MOV EAX,[0x0061c010]                ; 004463c5 | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 004463c5 | g_CFireEffectPtr
     MOV EDX,0x3f800000                  ; 004463ca
     PUSH EAX                            ; 004463cf
     INC ESI                             ; 004463d0
@@ -1036,7 +1036,7 @@ section .text
     PUSH EAX                            ; 00446877
     LEA ESI,[EBP + 0xfffffe06]          ; 00446878
     LEA EDI,[EBP + 0x16]                ; 0044687e
-    PUSH 0x2c8af28                      ; 00446881 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 00446881 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffdae]   ; 00446886
     MOV dword ptr [EBP + 0x76],EDX      ; 0044688c
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0044688f
@@ -1074,7 +1074,7 @@ section .text
     ADD EAX,ECX                         ; 004468e8
     PUSH 0x3f800000                     ; 004468ea
     PUSH EAX                            ; 004468ef
-    PUSH 0x2c8af28                      ; 004468f0 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004468f0 | g_ZeroVector
     LEA ESI,[EBP + 0xfffffe36]          ; 004468f5
     LEA EDI,[EBP + 0xffffff26]          ; 004468fb
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00446901
@@ -1449,7 +1449,7 @@ section .text
     LEA EAX,[EBX + 0xc268]              ; 00446d53
         ;   Label: LAB_00446d53
     PUSH EAX                            ; 00446d59
-    MOV EAX,[0x0061b4d0]                ; 00446d5a | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 00446d5a | g_CEventListPtr
     PUSH EAX                            ; 00446d5f
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00446d60
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

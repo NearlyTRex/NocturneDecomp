@@ -16,7 +16,7 @@
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af0b
 ;
 ; Referenced Globals:
-;   int g_INT_01c4e954
+;   int g_MuzzleFlashAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_00484e10
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 0048af20
         ;   Label: core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
     PUSH EDI                            ; 0048af21
-    MOV EDX,dword ptr [0x01c4e954]      ; 0048af22 | g_INT_01c4e954
+    MOV EDX,dword ptr [0x01c4e954]      ; 0048af22 | g_MuzzleFlashAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048af28
     SUB EAX,EDX                         ; 0048af2f
     SHL EAX,0x3                         ; 0048af31
@@ -36,13 +36,13 @@ section .text
     SHL EAX,0x2                         ; 0048af36
     INC EDX                             ; 0048af39
     ADD EAX,0x1c4e958                   ; 0048af3a
-    MOV dword ptr [0x01c4e954],EDX      ; 0048af3f | g_INT_01c4e954
+    MOV dword ptr [0x01c4e954],EDX      ; 0048af3f | g_MuzzleFlashAllocIndex
     CMP EDX,0x14                        ; 0048af45
     JL 0x0048af54                       ; 0048af48
         ;   XREF to: 0048af54 (CONDITIONAL_JUMP)  ; LAB_0048af54
     PUSH EBX                            ; 0048af4a
     XOR EBX,EBX                         ; 0048af4b
-    MOV dword ptr [0x01c4e954],EBX      ; 0048af4d | g_INT_01c4e954
+    MOV dword ptr [0x01c4e954],EBX      ; 0048af4d | g_MuzzleFlashAllocIndex
     POP EBX                             ; 0048af53
     MOV ESI,dword ptr [ESP + 0x14]      ; 0048af54
         ;   Label: LAB_0048af54

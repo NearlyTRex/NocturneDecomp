@@ -9,9 +9,9 @@
 void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005897b0(void)
 
 {
-  if ((g_INT_0264bba0 != 0) && (g_INT_02661af8 != 0)) {
+  if ((g_INT_0264bba0 != 0) && (g_GraphicsResetFlag != 0)) {
     engine_special_cpp_restoreVideoMode_FUN_0055f8c0();
-    ShowWindow(g_HWND_02664628,6);
+    ShowWindow(g_MainWindowHandle,6);
     return;
   }
   return;

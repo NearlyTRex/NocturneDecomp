@@ -313,9 +313,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
       fVar11 = 0.4;
       fStack_14 = SStack_17c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                 g_INT_ARRAY_01cb8120[2],&CStack_f8);
+                 g_GargoyleIndices[2],&CStack_f8);
       pCVar10 = &CStack_134;
       CStack_134.x = CStack_f8.x;
       *(uint *)((int)&CStack_134 + (uint)bVar9 * -8 + 4) =
@@ -433,7 +433,7 @@ switchD_004c0a6d_caseD_4:
   iVar4 = (this_ptr->target_scale).x;
   iVar6 = (this_ptr->base).base.base.scale.x;
   if (iVar6 < iVar4) {
-    iVar6 = (this_ptr->base).base.base.scale.x + g_INT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.x + g_GlobalDeltaTimeInt;
     iVar4 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar6;
     if (iVar4 < iVar6) {
@@ -441,7 +441,7 @@ switchD_004c0a6d_caseD_4:
     }
   }
   else if (iVar4 < iVar6) {
-    iVar6 = (this_ptr->base).base.base.scale.x - g_INT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.x - g_GlobalDeltaTimeInt;
     iVar4 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar6;
     if (iVar6 < iVar4) {
@@ -451,7 +451,7 @@ switchD_004c0a6d_caseD_4:
   iVar4 = (this_ptr->target_scale).y;
   iVar6 = (this_ptr->base).base.base.scale.y;
   if (iVar6 < iVar4) {
-    iVar6 = (this_ptr->base).base.base.scale.y + g_INT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.y + g_GlobalDeltaTimeInt;
     iVar4 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar6;
     if (iVar4 < iVar6) {
@@ -459,7 +459,7 @@ switchD_004c0a6d_caseD_4:
     }
   }
   else if (iVar4 < iVar6) {
-    iVar6 = (this_ptr->base).base.base.scale.y - g_INT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.y - g_GlobalDeltaTimeInt;
     iVar4 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar6;
     if (iVar6 < iVar4) {
@@ -469,7 +469,7 @@ switchD_004c0a6d_caseD_4:
   iVar4 = (this_ptr->target_scale).z;
   iVar6 = (this_ptr->base).base.base.scale.z;
   if (iVar6 < iVar4) {
-    iVar6 = (this_ptr->base).base.base.scale.z + g_INT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.z + g_GlobalDeltaTimeInt;
     iVar4 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar6;
     if (iVar4 < iVar6) {
@@ -478,7 +478,7 @@ switchD_004c0a6d_caseD_4:
     }
   }
   else if (iVar4 < iVar6) {
-    iVar6 = (this_ptr->base).base.base.scale.z - g_INT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.z - g_GlobalDeltaTimeInt;
     iVar4 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar6;
     if (iVar6 < iVar4) {

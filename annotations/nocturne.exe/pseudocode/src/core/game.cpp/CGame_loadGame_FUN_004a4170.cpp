@@ -51,11 +51,11 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004a4170(CGame *this_ptr,char *sav
   _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath
-            (g_CHAR_ARRAY_01c78598,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
   iVar2 = _stricmp(local_430,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_430,".noc"), iVar2 == 0)) {
-    pcVar6 = g_CHAR_ARRAY_01c78598;
+    pcVar6 = g_CurrentSaveFile;
     pcVar8 = local_534;
     do {
       cVar1 = *pcVar6;
@@ -72,7 +72,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004a4170(CGame *this_ptr,char *sav
   }
   local_30 = g_CBitFont_PTR_01bcd070;
   if (load_mode != 0) {
-    g_CBitFont_PTR_01bcd070 = g_CBitFont_PTR_014b9900;
+    g_CBitFont_PTR_01bcd070 = g_ThemeFont;
   }
   local_2c = this_ptr->chapter_reload_filename;
   local_28 = &this_ptr->total_kill_count;
@@ -109,15 +109,15 @@ LAB_004a4674:
         pcVar8 = pcVar8 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_CEventList_resetGameFlags_FUN_00480410(g_CEventList_PTR_005b7650);
-    core_level_cpp_CLevelLoader_show_FUN_004c5640(g_CLevelLoader_PTR_005baca0,9,0,-1);
+    core_event_cpp_CEventList_resetGameFlags_FUN_00480410(g_CEventListPtr);
+    core_level_cpp_CLevelLoader_show_FUN_004c5640(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_cpp_getFile_FUN_00456a60("save",local_534,"rt");
     local_18 = _ftell(file_handle);
     iVar5 = 1;
-    iVar2 = _stricmp(g_CHAR_ARRAY_01c78598,local_534);
+    iVar2 = _stricmp(g_CurrentSaveFile,local_534);
     if (iVar2 != 0) {
       pcVar8 = local_534;
-      pcVar6 = g_CHAR_ARRAY_01c78598;
+      pcVar6 = g_CurrentSaveFile;
       do {
         cVar1 = *pcVar8;
         *pcVar6 = cVar1;
@@ -159,8 +159,8 @@ LAB_004a43cc:
       crt_fstream_cpp_ifstream_ctor_FUN_005652fe(local_168,0);
       crt_fstream_cpp_ofstream_ctor_FUN_0056536a(local_e8,0);
       _sprintf(local_638,"%s\\%s","save",local_534);
-      iVar2 = g_INT_005a47a0;
-      crt_fstream_cpp_openFile_FUN_00565eb5(local_168,local_638,0x121,g_INT_005a47a0);
+      iVar2 = g_DefaultStreamBufferSize;
+      crt_fstream_cpp_openFile_FUN_00565eb5(local_168,local_638,0x121,g_DefaultStreamBufferSize);
       crt_fstream_cpp_istream_seekg_FUN_00565f14(&local_124,4);
       if (local_124._ios.__enabled_exceptions != 0) {
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
@@ -247,9 +247,9 @@ LAB_004a43cc:
                   (g_CDemonMission_PTR_005baf90,file_handle,iVar5);
         _fgets(local_330,0xff,file_handle);
         iVar2 = 0;
-        _fscanf(file_handle,"%d, %d\n",&g_INT_01cae0d4,&g_LocalHeroIndex);
+        _fscanf(file_handle,"%d, %d\n",&g_HeroCount,&g_LocalHeroIndex);
         local_14 = 0;
-        if (0 < g_INT_01cae0d4) {
+        if (0 < g_HeroCount) {
           do {
             pcVar8 = "(file corrupt)";
             pcVar6 = local_230;
@@ -259,7 +259,7 @@ LAB_004a43cc:
               pcVar6 = pcVar6 + ((uint)bVar12 * -2 + 1) * 4;
             }
             _fscanf(file_handle,"%[^\n]\n",local_230);
-            uVar13 = g_CHeroActorType_01cae0ec.name_hash;
+            uVar13 = g_CHeroClassInfo.name_hash;
             pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
                                (g_CDemonMission_PTR_005baf90,local_230);
             pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar3,uVar13);
@@ -271,12 +271,12 @@ LAB_004a43cc:
             }
             local_14 = local_14 + 1;
             iVar2 = iVar2 + 4;
-          } while (local_14 < g_INT_01cae0d4);
+          } while (local_14 < g_HeroCount);
         }
         iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_004d9780
                           (g_CDemonMission_PTR_005baf90);
         if (iVar2 == 0) goto LAB_004a4674;
-        core_event_cpp_CEventList_loadState_FUN_00480f70(g_CEventList_PTR_005b7650,file_handle);
+        core_event_cpp_CEventList_loadState_FUN_00480f70(g_CEventListPtr,file_handle);
         core_script_cpp_CScript_loadState_FUN_005052c0(g_CScriptPtr,file_handle);
         if (local_38 < 4) {
           core_gore_cpp_CGore_reset_FUN_004afdb0(g_CGorePtr);
@@ -285,27 +285,27 @@ LAB_004a43cc:
           core_gore_cpp_CGore_load_FUN_004b0820(g_CGorePtr,file_handle);
         }
         if (local_38 < 7) {
-          core_fire_cpp_CFireEffect_init_FUN_0048a150(g_CFireEffect_PTR_005b80f0);
+          core_fire_cpp_CFireEffect_init_FUN_0048a150(g_CFireEffectPtr);
         }
         else {
-          core_fire_cpp_CFireEffect_load_FUN_0048c7d0(g_CFireEffect_PTR_005b80f0,file_handle);
+          core_fire_cpp_CFireEffect_load_FUN_0048c7d0(g_CFireEffectPtr,file_handle);
         }
         if (local_38 < 6) {
-          g_INT_01c78698 = 0;
+          g_HasSavedLightState = 0;
         }
         else {
           _fgets(local_330,0xff,file_handle);
           iVar2 = 1;
-          _fscanf(file_handle,"%d\n",g_INT_ARRAY_01c7869c);
-          if (0 < g_INT_ARRAY_01c7869c[0]) {
+          _fscanf(file_handle,"%d\n",g_MasterLightStateSaveBuffer);
+          if (0 < g_MasterLightStateSaveBuffer[0]) {
             iVar5 = 0x1c786a0;
             do {
               iVar2 = iVar2 + 1;
               _fscanf(file_handle,"%d\n",iVar5);
               iVar5 = iVar5 + 4;
-            } while (iVar2 <= g_INT_ARRAY_01c7869c[0]);
+            } while (iVar2 <= g_MasterLightStateSaveBuffer[0]);
           }
-          g_INT_01c78698 = 1;
+          g_HasSavedLightState = 1;
         }
         if (7 < local_38) {
           _fgets(local_330,0xff,file_handle);

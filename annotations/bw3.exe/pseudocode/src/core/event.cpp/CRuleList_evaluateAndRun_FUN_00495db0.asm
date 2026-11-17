@@ -11,7 +11,7 @@
 ;   core_prye.cpp_CPrye_doHeroAction_FUN_00525a20 at 00525aad
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
@@ -43,7 +43,7 @@ section .text
     ADD EDX,0x1f8                       ; 00495dd7
     ADD EAX,EDX                         ; 00495ddd
     PUSH EAX                            ; 00495ddf
-    MOV ECX,dword ptr [0x005fba60]      ; 00495de0 | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00495de0 | g_CEventListPtr
     PUSH ECX                            ; 00495de6
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00495de7
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

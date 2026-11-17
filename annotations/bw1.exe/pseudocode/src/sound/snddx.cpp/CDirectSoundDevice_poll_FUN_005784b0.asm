@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005f4c35
 ;   TerminatedCString s_Get_position_of_secondar_005f4db0
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d9c
-;   int g_INT_02c81db8
-;   int g_INT_02c81dbc
-;   int g_INT_02c81dc0
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+;   int g_StreamBlockSizeBytes
+;   int g_StreamBlockCount
+;   int g_StreamCurrentBlock
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -34,7 +34,7 @@ section .text
     CMP EAX,0x1                         ; 005784bc
     JGE 0x005784d5                      ; 005784bf
         ;   XREF to: 005784d5 (CONDITIONAL_JUMP)  ; LAB_005784d5
-    MOV EDX,dword ptr [0x02c81d9c]      ; 005784c1 | g_IDirectSoundBuffer_PTR_02c81d9c
+    MOV EDX,dword ptr [0x02c81d9c]      ; 005784c1 | g_DirectSoundSecondaryBuffer
     TEST EDX,EDX                        ; 005784c7
     JNZ 0x005784e1                      ; 005784c9
         ;   XREF to: 005784e1 (CONDITIONAL_JUMP)  ; LAB_005784e1
@@ -63,10 +63,10 @@ section .text
         ;   XREF to: 00578538 (CONDITIONAL_JUMP)  ; LAB_00578538
     PUSH ESI                            ; 005784fd
     MOV EAX,dword ptr [ESP + 0x198]     ; 005784fe
-    MOV ECX,dword ptr [0x02c81db8]      ; 00578505 | g_INT_02c81db8
+    MOV ECX,dword ptr [0x02c81db8]      ; 00578505 | g_StreamBlockSizeBytes
     XOR EDX,EDX                         ; 0057850b
     DIV ECX                             ; 0057850d
-    MOV ESI,dword ptr [0x02c81dbc]      ; 0057850f | g_INT_02c81dbc
+    MOV ESI,dword ptr [0x02c81dbc]      ; 0057850f | g_StreamBlockCount
     MOV EBX,EAX                         ; 00578515
     CMP EAX,ESI                         ; 00578517
     JL 0x0057851e                       ; 00578519
@@ -78,7 +78,7 @@ section .text
         ;   XREF to: 0057856e (CONDITIONAL_JUMP)  ; LAB_0057856e
     POP ESI                             ; 00578522
         ;   Label: LAB_00578522
-    CMP EBX,dword ptr [0x02c81dc0]      ; 00578523 | g_INT_02c81dc0
+    CMP EBX,dword ptr [0x02c81dc0]      ; 00578523 | g_StreamCurrentBlock
         ;   Label: LAB_00578523
     JNZ 0x00578572                      ; 00578529
         ;   XREF to: 00578572 (CONDITIONAL_JUMP)  ; LAB_00578572

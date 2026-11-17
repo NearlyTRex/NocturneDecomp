@@ -64,7 +64,7 @@ void __cdecl core_fire_cpp_CFirefly_render_FUN_004adaf0(CFirefly *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
             (g_CDemonRenderer_PTR_00612560,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
-            (g_CDemonRenderer_PTR_00612560,&g_CVector3i_01c57078,(CVector3i *)0x0);
+            (g_CDemonRenderer_PTR_00612560,&g_BillboardCameraRight,(CVector3i *)0x0);
   fStack_78 = -fStack_20;
   uStack_70 = 0;
   CStack_a8.x = (int)ROUND(fStack_78 * 256.0f);
@@ -117,9 +117,9 @@ void __cdecl core_fire_cpp_CFirefly_render_FUN_004adaf0(CFirefly *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (g_CDemonRenderer_PTR_00612560,texture);
 switchD_004ae298_default:
-  (*((g_CDemonCamera_PTR_007c6120->base).vtable)->setupPerspectiveAndFog)
-            (g_CDemonCamera_PTR_007c6120,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
-  lVar1 = (longlong)this_ptr->intensity * (longlong)(0xffff - g_INT_01c51cac);
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  lVar1 = (longlong)this_ptr->intensity * (longlong)(0xffff - g_PerspectiveReciprocal);
   g_SRenderVertex_ARRAY_00629014[0].a =
        (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   g_SRenderVertex_ARRAY_00629014[0].r = 0xffff;
@@ -139,7 +139,7 @@ switchD_004ae298_default:
   g_SRenderVertex_ARRAY_00629014[3].a = g_SRenderVertex_ARRAY_00629014[0].a;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLPrimitiveQuadIndex_01c57090.base);
+            (g_CDemonRenderer_PTR_00612560,&g_BillboardPrimitive.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
   engine_drender_cpp_pop_FUN_004839a0();
   puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 4);
@@ -182,7 +182,7 @@ switchD_004ae298_default:
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
               (g_CDemonRenderer_PTR_00612560,world_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
-              (g_CDemonRenderer_PTR_00612560,&g_CVector3i_01c57078,(CVector3i *)0x0);
+              (g_CDemonRenderer_PTR_00612560,&g_BillboardCameraRight,(CVector3i *)0x0);
     fStack_78 = -fStack_20 * fStack_f8;
     uStack_70 = 0;
     CStack_c0.x = (int)ROUND(fStack_78 * 256.0f);
@@ -217,9 +217,9 @@ switchD_004ae298_default:
     CStack_84.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
               (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_84);
-    (*((g_CDemonCamera_PTR_007c6120->base).vtable)->setupPerspectiveAndFog)
-              (g_CDemonCamera_PTR_007c6120,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
-    lVar1 = (longlong)this_ptr->intensity * (longlong)(0xffff - g_INT_01c51cac);
+    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+              (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+    lVar1 = (longlong)this_ptr->intensity * (longlong)(0xffff - g_PerspectiveReciprocal);
     g_SRenderVertex_ARRAY_00629014[0].a =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_SRenderVertex_ARRAY_00629014[0].r = 0xffff;
@@ -239,7 +239,7 @@ switchD_004ae298_default:
     g_SRenderVertex_ARRAY_00629014[3].a = g_SRenderVertex_ARRAY_00629014[0].a;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
-              (g_CDemonRenderer_PTR_00612560,&g_SMRGLPrimitiveQuadIndex_01c57090.base);
+              (g_CDemonRenderer_PTR_00612560,&g_BillboardPrimitive.base);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
     engine_drender_cpp_pop_FUN_004839a0();
     iStack_18 = iStack_18 + 1;

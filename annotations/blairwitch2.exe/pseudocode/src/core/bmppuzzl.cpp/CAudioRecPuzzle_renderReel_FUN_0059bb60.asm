@@ -17,14 +17,14 @@
 ;   int g_INT_006141bc = 0xc8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.rendering_mode
 ;   undefined4 g_CDemonSetInstance.light_direction.x
 ;   undefined4 g_CDemonSetInstance.light_direction.y
 ;   undefined4 g_CDemonSetInstance.light_direction.z
 ;   undefined4 g_CDemonSetInstance.ambient_base_quick
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
@@ -139,13 +139,13 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 0059bc9d
         ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0059bca2
-    PUSH 0x265370c                      ; 0059bca5 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0059bca5 | g_ZeroVector
     MOV ESI,dword ptr [0x0060b280]      ; 0059bcaa | g_CDemonRenderer_PTR_0060b280
     PUSH ESI                            ; 0059bcb0 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030 ; 0059bcb1
         ;   XREF to: 0046b030 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0059bcb6
-    PUSH 0x265370c                      ; 0059bcb9 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0059bcb9 | g_ZeroVector
     MOV EDI,dword ptr [0x0060b280]      ; 0059bcbe | g_CDemonRenderer_PTR_0060b280
     PUSH EDI                            ; 0059bcc4 | g_CDemonRenderer_01ba5c50
     LEA ESI,[ESP + 0x44]                ; 0059bcc5
@@ -182,7 +182,7 @@ section .text
     PUSH EBP                            ; 0059bd26
     MOV dword ptr [ESP + 0x60],EAX      ; 0059bd27
     LEA EAX,[ESP + 0x58]                ; 0059bd2b
-    MOV dword ptr [0x01c38aec],EBP      ; 0059bd2f | g_INT_01c38aec
+    MOV dword ptr [0x01c38aec],EBP      ; 0059bd2f | g_PerspectiveReciprocal
     PUSH EAX                            ; 0059bd35
     LEA EDI,[ESP + 0x20]                ; 0059bd36
     LEA ESI,[ESP + 0x38]                ; 0059bd3a
@@ -200,7 +200,7 @@ section .text
     ADD ESP,0xc                         ; 0059bd5a
     LEA EAX,[ESP + 0x18]                ; 0059bd5d
     PUSH EAX                            ; 0059bd61
-    PUSH 0x265370c                      ; 0059bd62 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0059bd62 | g_ZeroVector
     MOV EDX,dword ptr [0x0060b280]      ; 0059bd67 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 0059bd6d | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 0059bd6e

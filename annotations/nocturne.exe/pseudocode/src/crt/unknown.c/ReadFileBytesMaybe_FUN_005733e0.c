@@ -21,12 +21,12 @@ uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
   uint local_18;
   HANDLE local_14;
   
-  if (((int)param_1 < 0) || (g_UINT_005c1f90 < param_1)) {
+  if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {
     setErrno(4);
     uVar2 = 0xffffffff;
   }
   else {
-    local_14 = g_SIOControlBlock_PTR_005c1f54->standard_handles[param_1];
+    local_14 = g_IOControlBlock->standard_handles[param_1];
     uVar2 = FUN_0056f220(param_1);
     local_18 = uVar2;
     if (uVar2 == 0) {
@@ -43,8 +43,8 @@ uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
       DStack_1c = param_3;
       uVar2 = 0;
       while( true ) {
-        if ((g_PTR_005c1d7c == (byte *)0x0) ||
-           (iVar3 = (*(code *)g_PTR_005c1d54)(param_1), iVar3 == 0)) {
+        if ((g_SpecialDeviceReadFuncPtr == (byte *)0x0) ||
+           (iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {
           BVar4 = ReadFile(local_14,param_2,DStack_1c,&uStack_20,(LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
             (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1);
@@ -56,7 +56,7 @@ uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
           }
         }
         else {
-          uStack_20 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,DStack_1c);
+          uStack_20 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,DStack_1c);
         }
         if (uStack_20 == 0) break;
         uVar7 = 0;
@@ -83,8 +83,8 @@ uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
         if (((local_18 & 0x2000) != 0) || (DStack_1c == 0)) break;
       }
     }
-    else if ((g_PTR_005c1d7c == (byte *)0x0) ||
-            (iVar3 = (*(code *)g_PTR_005c1d54)(param_1), iVar3 == 0)) {
+    else if ((g_SpecialDeviceReadFuncPtr == (byte *)0x0) ||
+            (iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar3 == 0)) {
       BVar4 = ReadFile(local_14,param_2,param_3,&uStack_20,(LPOVERLAPPED)0x0);
       uVar2 = uStack_20;
       if (BVar4 == 0) {
@@ -99,7 +99,7 @@ LAB_005734ea:
       }
     }
     else {
-      uVar2 = (*(code *)g_PTR_005c1d7c)(iVar3,param_2,param_3);
+      uVar2 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar3,param_2,param_3);
     }
 LAB_005735d6:
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1);

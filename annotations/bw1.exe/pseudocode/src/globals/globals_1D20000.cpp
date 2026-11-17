@@ -12,11 +12,11 @@ CDemonActorType g_CMineCarClassInfo = {};
 CMini3D g_CMini3DInstance = {};
 
 // CVector3f[32]
-CVector3f g_CVector3f_ARRAY_01d2c5d4[32] = {};
-CVector3f g_CVector3f_ARRAY_01d2c758[32] = {};
+CVector3f g_MirrorInputVertices[32] = {};
+CVector3f g_MirrorOutputVertices[32] = {};
 
 // SMRGLPrimitiveQuadIndex
-SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d2c8d8 = {};
+SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive = {};
 
 // SSoftwareEdge
 SSoftwareEdge g_SSoftwareEdge_01d2c0c8 = {};
@@ -26,10 +26,10 @@ char* g_CHAR_PTR_01d20a08 = {};
 char* g_CHAR_PTR_01d21030 = {};
 
 // char*[4]
-char* g_CHAR_PTR_ARRAY_01d21448[4] = {};
+char* g_MenuTextPointers[4] = {};
 
 // char[10][256]
-char g_CHAR_ARRAY_ARRAY_01d219e8[10][256] = {};
+char g_StringBuffers[10][256] = {};
 
 // char[256]
 char g_CHAR_ARRAY_01d20a30[256] = {};
@@ -40,10 +40,10 @@ char g_CHAR_ARRAY_01d20e30[256] = {};
 char g_CHAR_ARRAY_01d20f30[256] = {};
 
 // char[30][40]
-char g_CHAR_ARRAY_ARRAY_01d214e0[30][40] = {};
+char g_CustomKeyNames[30][40] = {};
 
 // char[4][256]
-char g_CHAR_ARRAY_ARRAY_01d21048[4][256] = {};
+char g_MainMenuTextBuffers[4][256] = {};
 
 // float
 float g_FLOAT_01d224c0 = {};
@@ -140,8 +140,8 @@ float* g_FLOAT_PTR_01d227e4 = {};
 float* g_FLOAT_PTR_01d2ad74 = {};
 
 // int
-int g_INT_01d21458 = {};
-int g_INT_01d219e0 = {};
+int g_CustomKeyCount = {};
+int g_StringBufferIndex = {};
 int g_INT_01d224b4 = {};
 int g_INT_01d224b8 = {};
 int g_INT_01d224bc = {};
@@ -175,14 +175,14 @@ int g_INT_01d2adb4 = {};
 int g_INT_01d2c0c4 = {};
 int g_INT_01d2c5c8 = {};
 int g_INT_01d2c5cc = {};
-int g_INT_01d2c5d0 = {};
-int g_INT_01d2c754 = {};
+int g_MirrorInputVertexCount = {};
+int g_MirrorOutputVertexCount = {};
 
 // int*[31]
-int* g_INT_PTR_ARRAY_01d2145c[31] = {};
+int* g_CustomKeyPointers[31] = {};
 
 // int[20]
-int g_INT_ARRAY_01d22424[20] = {};
+int g_MimicIndices[20] = {};
 
 // short[2]
 short g_SHORT_ARRAY_01d25f50[2] = {};

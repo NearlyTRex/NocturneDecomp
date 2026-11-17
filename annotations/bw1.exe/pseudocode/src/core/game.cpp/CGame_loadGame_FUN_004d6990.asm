@@ -116,13 +116,13 @@ section .text
         ;   Label: LAB_004d6a09
     MOV EDI,ESP                         ; 004d6a0e
     PUSH EDI                            ; 004d6a10
-    MOV AL,byte ptr [ESI]               ; 004d6a11 | g_CHAR_ARRAY_01cd05c0 | g_CHAR_ARRAY_01cd05c0+2
+    MOV AL,byte ptr [ESI]               ; 004d6a11 | g_CurrentSaveFile | g_CurrentSaveFile+2
         ;   Label: LAB_004d6a11
     MOV byte ptr [EDI],AL               ; 004d6a13
     CMP AL,0x0                          ; 004d6a15
     JZ 0x004d6a29                       ; 004d6a17
         ;   XREF to: 004d6a29 (CONDITIONAL_JUMP)  ; LAB_004d6a29
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d6a19 | g_CHAR_ARRAY_01cd05c0+1 | g_CHAR_ARRAY_01cd05c0+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d6a19 | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD ESI,0x2                         ; 004d6a1c
     MOV byte ptr [EDI + 0x1],AL         ; 004d6a1f
     ADD EDI,0x2                         ; 004d6a22
@@ -182,7 +182,7 @@ section .text
         ;   XREF to: 004d6ac7 (CONDITIONAL_JUMP)  ; LAB_004d6ac7
     POP EDI                             ; 004d6adf
         ;   Label: LAB_004d6adf
-    MOV EDI,dword ptr [0x0061b4d0]      ; 004d6ae0 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 004d6ae0 | g_CEventListPtr
         ;   Label: LAB_004d6ae0
     PUSH EDI                            ; 004d6ae6
     CALL core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00 ; 004d6ae7
@@ -211,7 +211,7 @@ section .text
     MOV dword ptr [ESP + 0x558],EAX     ; 004d6b26
     MOV EAX,ESP                         ; 004d6b2d
     PUSH EAX                            ; 004d6b2f
-    PUSH 0x1cd05c0                      ; 004d6b30 | g_CHAR_ARRAY_01cd05c0
+    PUSH 0x1cd05c0                      ; 004d6b30 | g_CurrentSaveFile
     MOV EBP,0x1                         ; 004d6b35
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 004d6b3a
         ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
@@ -221,16 +221,16 @@ section .text
         ;   XREF to: 004d6b69 (CONDITIONAL_JUMP)  ; LAB_004d6b69
     MOV ESI,ESP                         ; 004d6b46
     MOV EDI,0x1cd05c0                   ; 004d6b48
-    PUSH EDI                            ; 004d6b4d | g_CHAR_ARRAY_01cd05c0
+    PUSH EDI                            ; 004d6b4d | g_CurrentSaveFile
     MOV AL,byte ptr [ESI]               ; 004d6b4e
         ;   Label: LAB_004d6b4e
-    MOV byte ptr [EDI],AL               ; 004d6b50 | g_CHAR_ARRAY_01cd05c0 | g_CHAR_ARRAY_01cd05c0+2
+    MOV byte ptr [EDI],AL               ; 004d6b50 | g_CurrentSaveFile | g_CurrentSaveFile+2
     CMP AL,0x0                          ; 004d6b52
     JZ 0x004d6b66                       ; 004d6b54
         ;   XREF to: 004d6b66 (CONDITIONAL_JUMP)  ; LAB_004d6b66
     MOV AL,byte ptr [ESI + 0x1]         ; 004d6b56
     ADD ESI,0x2                         ; 004d6b59
-    MOV byte ptr [EDI + 0x1],AL         ; 004d6b5c | g_CHAR_ARRAY_01cd05c0+1 | g_CHAR_ARRAY_01cd05c0+3
+    MOV byte ptr [EDI + 0x1],AL         ; 004d6b5c | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD EDI,0x2                         ; 004d6b5f
     CMP AL,0x0                          ; 004d6b62
     JNZ 0x004d6b4e                      ; 004d6b64
@@ -455,7 +455,7 @@ section .text
     MOV byte ptr [ESP],AH               ; 004d6de5
     JMP 0x004d6a2a                      ; 004d6de8
         ;   XREF to: 004d6a2a (UNCONDITIONAL_JUMP)  ; LAB_004d6a2a
-    MOV EAX,[0x0152d244]                ; 004d6ded | g_CBitFont_PTR_0152d244
+    MOV EAX,[0x0152d244]                ; 004d6ded | g_ThemeFont
         ;   Label: LAB_004d6ded
     MOV [0x01c3eb50],EAX                ; 004d6df2 | g_CBitFont_PTR_01c3eb50
     JMP 0x004d6a54                      ; 004d6df7
@@ -584,14 +584,14 @@ section .text
         ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004d6f56
     PUSH 0x1d06ab4                      ; 004d6f59 | g_INT_01d06ab4
-    PUSH 0x1d06aa0                      ; 004d6f5e | g_INT_01d06aa0
+    PUSH 0x1d06aa0                      ; 004d6f5e | g_HeroCount
     PUSH 0x5e30c4                       ; 004d6f63 | = "%d, %d\n"
     PUSH EBX                            ; 004d6f68
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004d6f69
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004d6f6e
     XOR ECX,ECX                         ; 004d6f71
-    MOV ESI,dword ptr [0x01d06aa0]      ; 004d6f73 | g_INT_01d06aa0
+    MOV ESI,dword ptr [0x01d06aa0]      ; 004d6f73 | g_HeroCount
     MOV dword ptr [ESP + 0x55c],ECX     ; 004d6f79
     TEST ESI,ESI                        ; 004d6f80
     JLE 0x004d7029                      ; 004d6f82
@@ -640,7 +640,7 @@ section .text
     ADD ESP,0xc                         ; 004d7006
     MOV EAX,dword ptr [ESP + 0x55c]     ; 004d7009
         ;   Label: LAB_004d7009
-    MOV EDX,dword ptr [0x01d06aa0]      ; 004d7010 | g_INT_01d06aa0
+    MOV EDX,dword ptr [0x01d06aa0]      ; 004d7010 | g_HeroCount
     INC EAX                             ; 004d7016
     ADD EBP,0x4                         ; 004d7017
     MOV dword ptr [ESP + 0x55c],EAX     ; 004d701a
@@ -657,7 +657,7 @@ section .text
     JZ 0x004d6e32                       ; 004d703a
         ;   XREF to: 004d6e32 (CONDITIONAL_JUMP)  ; LAB_004d6e32
     PUSH EBX                            ; 004d7040
-    MOV ESI,dword ptr [0x0061b4d0]      ; 004d7041 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 004d7041 | g_CEventListPtr
     PUSH ESI                            ; 004d7047
     CALL core_event.cpp_CEventList_loadState_FUN_004aa610 ; 004d7048
         ;   XREF to: 004aa610 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_loadState_FUN_004aa610(CEventList * this_ptr, _FILE * file_handle)
@@ -684,7 +684,7 @@ section .text
         ;   Label: LAB_004d7082
     JGE 0x004d722c                      ; 004d708a
         ;   XREF to: 004d722c (CONDITIONAL_JUMP)  ; LAB_004d722c
-    MOV EBP,dword ptr [0x0061c010]      ; 004d7090 | g_CFireEffect_PTR_0061c010
+    MOV EBP,dword ptr [0x0061c010]      ; 004d7090 | g_CFireEffectPtr
     PUSH EBP                            ; 004d7096
     CALL core_fire.cpp_CFireEffect_init_FUN_004b4b30 ; 004d7097
         ;   XREF to: 004b4b30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_004b4b30(CFireEffect * this_ptr)
@@ -700,13 +700,13 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 004d70bb
         ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004d70c0
-    PUSH 0x1cd06c4                      ; 004d70c3 | g_INT_ARRAY_01cd06c4
+    PUSH 0x1cd06c4                      ; 004d70c3 | g_MasterLightStateSaveBuffer
     PUSH 0x5e30ef                       ; 004d70c8 | = "%d\n"
     PUSH EBX                            ; 004d70cd
     MOV EBP,0x1                         ; 004d70ce
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004d70d3
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
-    MOV ECX,dword ptr [0x01cd06c4]      ; 004d70d8 | g_INT_ARRAY_01cd06c4
+    MOV ECX,dword ptr [0x01cd06c4]      ; 004d70d8 | g_MasterLightStateSaveBuffer
     ADD ESP,0xc                         ; 004d70de
     CMP ECX,EBP                         ; 004d70e1
     JL 0x004d710a                       ; 004d70e3
@@ -721,7 +721,7 @@ section .text
     ADD ESI,0x4                         ; 004d70f5
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004d70f8
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
-    MOV ECX,dword ptr [0x01cd06c4]      ; 004d70fd | g_INT_ARRAY_01cd06c4
+    MOV ECX,dword ptr [0x01cd06c4]      ; 004d70fd | g_MasterLightStateSaveBuffer
     ADD ESP,0xc                         ; 004d7103
     CMP EBP,ECX                         ; 004d7106
     JLE 0x004d70ed                      ; 004d7108
@@ -820,7 +820,7 @@ section .text
         ;   XREF to: 004d7082 (UNCONDITIONAL_JUMP)  ; LAB_004d7082
     PUSH EBX                            ; 004d722c
         ;   Label: LAB_004d722c
-    MOV EDI,dword ptr [0x0061c010]      ; 004d722d | g_CFireEffect_PTR_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 004d722d | g_CFireEffectPtr
     PUSH EDI                            ; 004d7233
     CALL core_fire.cpp_CFireEffect_load_FUN_004b7370 ; 004d7234
         ;   XREF to: 004b7370 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_load_FUN_004b7370(CFireEffect * this_ptr, _FILE * file_handle)

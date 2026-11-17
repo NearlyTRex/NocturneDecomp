@@ -251,7 +251,7 @@ section .text
     PUSH ECX                            ; 00559440 | = "Nocturne"
     PUSH 0x40000                        ; 00559441
     CALL dword ptr CS:[0x57541c]        ; 00559446 | PTR_CreateWindowExA_0057541c
-    MOV [0x02de2098],EAX                ; 0055944d | g_HWND_02de2098
+    MOV [0x02de2098],EAX                ; 0055944d | g_MainWindowHandle
     TEST EAX,EAX                        ; 00559452
     JNZ 0x0055946e                      ; 00559454
         ;   XREF to: 0055946e (CONDITIONAL_JUMP)  ; LAB_0055946e
@@ -273,7 +273,7 @@ section .text
     PUSH EBX                            ; 00559472
     PUSH EAX                            ; 00559473
     CALL dword ptr CS:[0x57547c]        ; 00559474 | PTR_ShowWindow_0057547c
-    MOV ESI,dword ptr [0x02de2098]      ; 0055947b | g_HWND_02de2098
+    MOV ESI,dword ptr [0x02de2098]      ; 0055947b | g_MainWindowHandle
     PUSH ESI                            ; 00559481
     CALL dword ptr CS:[0x575484]        ; 00559482 | PTR_UpdateWindow_00575484
     CALL dword ptr CS:[0x5754f8]        ; 00559489 | PTR_GetCurrentProcess_005754f8
@@ -295,10 +295,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x30]      ; 005594c0
     PUSH 0x2de2d14                      ; 005594c4
     MOV EBP,dword ptr [0x02de2d10]      ; 005594c9 | g_INT_02de2d10
-    MOV [0x02de20a8],EAX                ; 005594cf | g_INT_02de20a8
+    MOV [0x02de20a8],EAX                ; 005594cf | g_TotalPhysicalMemory
     MOV EAX,dword ptr [ESP + 0x40]      ; 005594d4
     PUSH EBP                            ; 005594d8
-    MOV [0x02de20ac],EAX                ; 005594d9 | g_INT_02de20ac
+    MOV [0x02de20ac],EAX                ; 005594d9 | g_AvailableSwapSpace
     CALL core_main.c_initializeGameSystems_FUN_004c85f0 ; 005594de
         ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_004c85f0(int argc, char * * argv)
     ADD ESP,0x8                         ; 005594e3

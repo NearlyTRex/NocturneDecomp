@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 494,
+    "complexity_score": 490,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
+    "pseudocode_lines": 200,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "raw_address_constant",
       "unrolled_memcpy"
     ],
-    "total_lines": 774
+    "total_lines": 770
   },
   "cross_references": [
     {
@@ -149,49 +149,49 @@
     },
     {
       "addr": "0060166c",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00601668[0].l[1]",
+      "name": "g_Layer3BandIndex[0].l[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00601670",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00601668[0].l[2]",
+      "name": "g_Layer3BandIndex[0].l[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00603110",
-      "name": "g_SHuffmanTableSource_ARRAY_00603110",
+      "name": "g_HuffmanTableSources",
       "type": "SHuffmanTableSource[34]",
       "value": null
     },
     {
       "addr": "00603114",
-      "name": "g_SHuffmanTableSource_ARRAY_00603110[0].xlen",
+      "name": "g_HuffmanTableSources[0].xlen",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00603118",
-      "name": "g_SHuffmanTableSource_ARRAY_00603110[0].ylen",
+      "name": "g_HuffmanTableSources[0].ylen",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060311c",
-      "name": "g_SHuffmanTableSource_ARRAY_00603110[0].bits",
+      "name": "g_HuffmanTableSources[0].bits",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00603120",
-      "name": "g_SHuffmanTableSource_ARRAY_00603110[0].reference_index",
+      "name": "g_HuffmanTableSources[0].reference_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00603124",
-      "name": "g_SHuffmanTableSource_ARRAY_00603110[0].huffman_data_ptr",
+      "name": "g_HuffmanTableSources[0].huffman_data_ptr",
       "type": "undefined4",
       "value": null
     },
@@ -209,19 +209,19 @@
     },
     {
       "addr": "01d90410",
-      "name": "g_INT_01d90410",
+      "name": "g_HuffmanTablesInitialized",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d94b98",
-      "name": "g_CHAR_ARRAY_01d94b98",
+      "name": "g_CurrentMp3Filename",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "01d954bc",
-      "name": "g_SHuffmanTable_ARRAY_01d94c98[0].table_size",
+      "name": "g_HuffmanTables[0].table_size",
       "type": "undefined4",
       "value": null
     }
@@ -470,7 +470,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 143,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
       "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
@@ -478,87 +478,87 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 145,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
-      "text": "pSVar4 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)local_24 + local_30 + 0x34);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 148,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
-      "text": "pSVar4 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)local_24 + local_30 + 0x38);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 151,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
-      "text": "pSVar4 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)local_24 + local_30 + 0x3c);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 162,
       "match": "(int *)((int)piVar1",
       "severity": "moderate",
-      "text": "local_28 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;",
+      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `&g_SHuffmanTableSource_ARRAY_00603110[0].table_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HuffmanTableSources[0].table_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 43,
-      "match": "(int)&g_SHuffmanTableSource_ARRAY_00603110[0].table_size",
+      "match": "(int)&g_HuffmanTableSources[0].table_size",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].table_size + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SHuffmanTableSource_ARRAY_00603110[0].xlen` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HuffmanTableSources[0].xlen` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 45,
-      "match": "(int)&g_SHuffmanTableSource_ARRAY_00603110[0].xlen",
+      "match": "(int)&g_HuffmanTableSources[0].xlen",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].xlen + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].xlen + local_18);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SHuffmanTableSource_ARRAY_00603110[0].ylen` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HuffmanTableSources[0].ylen` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 47,
-      "match": "(int)&g_SHuffmanTableSource_ARRAY_00603110[0].ylen",
+      "match": "(int)&g_HuffmanTableSources[0].ylen",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].ylen + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].ylen + local_18);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SHuffmanTableSource_ARRAY_00603110[0].bits` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HuffmanTableSources[0].bits` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 49,
-      "match": "(int)&g_SHuffmanTableSource_ARRAY_00603110[0].bits",
+      "match": "(int)&g_HuffmanTableSources[0].bits",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].bits + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SHuffmanTableSource_ARRAY_00603110[0].reference_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HuffmanTableSources[0].reference_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 58,
-      "match": "(int)&g_SHuffmanTableSource_ARRAY_00603110[0].reference_index",
+      "match": "(int)&g_HuffmanTableSources[0].reference_index",
       "severity": "moderate",
-      "text": "iVar7 = *(int *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].reference_index + local_18);",
+      "text": "iVar7 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SHuffmanTableSource_ARRAY_00603110[0].huffman_data_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HuffmanTableSources[0].huffman_data_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 78,
-      "match": "(int)&g_SHuffmanTableSource_ARRAY_00603110[0].huffman_data_ptr",
+      "match": "(int)&g_HuffmanTableSources[0].huffman_data_ptr",
       "severity": "moderate",
-      "text": "pcVar12 = *(char **)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].huffman_data_ptr +",
+      "text": "pcVar12 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + local_18);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 147,
+      "line": 143,
       "match": "(int)local_24",
       "severity": "moderate",
       "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
@@ -566,47 +566,47 @@
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 149,
+      "line": 145,
       "match": "(int)local_24",
       "severity": "moderate",
-      "text": "pSVar4 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)local_24 + local_30 + 0x34);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 148,
       "match": "(int)local_24",
       "severity": "moderate",
-      "text": "pSVar4 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)local_24 + local_30 + 0x38);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 155,
+      "line": 151,
       "match": "(int)local_24",
       "severity": "moderate",
-      "text": "pSVar4 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)local_24 + local_30 + 0x3c);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 166,
+      "line": 162,
       "match": "(int)piVar1",
       "severity": "moderate",
-      "text": "local_28 = g_SHuffmanTable_ARRAY_01d94c98 + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;",
+      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x60166c matches address of g_SMpegLayer3BandIndex_ARRAY_00601668 (+4 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 134,
+      "description": "Raw hex literal 0x60166c matches address of g_Layer3BandIndex (+4 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 130,
       "match": "0x60166c",
       "severity": "moderate",
       "text": "local_20 = *(int *)(local_34 * 0x94 + 0x60166c + iVar8 * 4);",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0x601670 matches address of g_SMpegLayer3BandIndex_ARRAY_00601668 (+8 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 135,
+      "description": "Raw hex literal 0x601670 matches address of g_Layer3BandIndex (+8 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 131,
       "match": "0x601670",
       "severity": "moderate",
       "text": "iVar8 = *(int *)(local_34 * 0x94 + 0x601670 +",
@@ -614,7 +614,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 96,
+      "line": 94,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x200; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -622,7 +622,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 101,
+      "line": 99,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 2; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -633,7 +633,7 @@
       "line": 43,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].table_size + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -641,7 +641,7 @@
       "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].xlen + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].xlen + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -649,7 +649,7 @@
       "line": 47,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].ylen + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].ylen + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -657,7 +657,7 @@
       "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].bits + local_18);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -665,7 +665,7 @@
       "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar7 = *(int *)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].reference_index + local_18);",
+      "text": "iVar7 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -673,7 +673,7 @@
       "line": 78,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pcVar12 = *(char **)((int)&g_SHuffmanTableSource_ARRAY_00603110[0].huffman_data_ptr +",
+      "text": "pcVar12 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + local_18);",
       "type": "pointer_cast"
     },
     {

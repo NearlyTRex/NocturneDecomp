@@ -243,7 +243,7 @@ LAB_00560d8f:
       fVar12 = 4.0;
       fStack_14 = SStack_190.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                (&g_CVector3f_02c8af28,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[4],&CStack_7c);
       pCVar10 = &CStack_b8;
@@ -264,7 +264,7 @@ LAB_00560d8f:
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(&pCVar11->base,pCVar10,fVar12,damage_info)
       ;
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                (g_CEventList_PTR_0061b4d0,"ScorpTailAttack");
+                (g_CEventListPtr,"ScorpTailAttack");
       iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
                         (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
       if (iVar5 == 0) {
@@ -272,8 +272,7 @@ LAB_00560d8f:
       }
       break;
     case 6:
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                (g_CEventList_PTR_0061b4d0,"ScorpDying");
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,"ScorpDying");
       fVar12 = (1.0 - fStack_18 / fStack_34) * 65000.0f;
       this_ptr->render_mode = 3;
       dVar8 = round((double)fVar12);

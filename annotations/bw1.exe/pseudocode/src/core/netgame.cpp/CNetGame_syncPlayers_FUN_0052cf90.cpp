@@ -35,7 +35,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
   }
   this_ptr->network_mode = NET_MODE_SYNCING;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
-  iVar3 = iVar2 / 0x12 - g_INT_01d51d9c;
+  iVar3 = iVar2 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
@@ -43,7 +43,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
     iVar3 = 0x20000;
   }
   g_UINT_01d51da0 = g_UINT_01d51da0 + iVar3;
-  g_INT_01d51d9c = iVar2 / 0x12;
+  g_LastPingTime = iVar2 / 0x12;
   this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
   if (this_ptr->connection_type == CONNECTION_HOST) {
     local_24 = g_UINT_01d51da0 - 0x1e0000;
@@ -113,7 +113,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
     if (3 < sync_stage) {
       return 1;
     }
-    while (g_INT_01d51da8 < sync_stage) {
+    while (g_RemoteSyncStage < sync_stage) {
       engine_special_cpp_clearScreen_FUN_0057dc40();
       _sprintf(local_94,"Waiting on sync code %d from server...");
       engine_2d_c_drawText_FUN_00401fe0(local_94,0,0xb);

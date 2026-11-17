@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CNPCActorType_01d46820 = {};
-CDemonActorType g_CPassengerActorType_01d4685c = {};
+CDemonActorType g_CNPCClassInfo = {};
+CDemonActorType g_CPassengerClassInfo = {};
 
 // CMouse
 CMouse g_CMouseInstance = {};

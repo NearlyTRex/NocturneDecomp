@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005df8e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fdbc4
+;   SMRGLTextureBasic g_FireEffectPopcornTexture
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].v
@@ -206,14 +206,14 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004a0ed9
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004a0ede
-    PUSH 0x5fdbc4                       ; 004a0ee1 | g_SMRGLTextureBasic_005fdbc4
+    PUSH 0x5fdbc4                       ; 004a0ee1 | g_FireEffectPopcornTexture
     MOV EDI,dword ptr [0x005f2afc]      ; 004a0ee6 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDI                            ; 004a0eec | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a0eed
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004a0ef2
     PUSH 0x0                            ; 004a0ef5
-    MOV EAX,[0x007e2a54]                ; 004a0ef7 | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 004a0ef7 | g_CurrentSceneCamera
     PUSH EBP                            ; 004a0efc
     MOV EBX,dword ptr [EAX + 0x3c]      ; 004a0efd
     PUSH EAX                            ; 004a0f00
@@ -221,7 +221,7 @@ section .text
     MOV EAX,0xffff                      ; 004a0f04
     MOV ECX,0x80000                     ; 004a0f09
     MOV EBX,0xf80000                    ; 004a0f0e
-    MOV EDX,dword ptr [0x01c6e24c]      ; 004a0f13 | g_INT_01c6e24c
+    MOV EDX,dword ptr [0x01c6e24c]      ; 004a0f13 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004a0f19
     MOV dword ptr [0x0060b02c],ECX      ; 004a0f1c | g_SRenderVertex_ARRAY_0060b014[0].u
     MOV dword ptr [0x0060b030],EBX      ; 004a0f22 | g_SRenderVertex_ARRAY_0060b014[0].v
@@ -249,7 +249,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004a0f8a
     PUSH 0x4                            ; 004a0f8d
     PUSH 0x0                            ; 004a0f8f
-    PUSH 0x1c73664                      ; 004a0f91 | g_CVector3i_01c73664
+    PUSH 0x1c73664                      ; 004a0f91 | g_BillboardCameraUp
     LEA EAX,[ESP + 0x8c]                ; 004a0f96
     PUSH EAX                            ; 004a0f9d
     MOV ESI,dword ptr [0x00603b28]      ; 004a0f9e | g_CDemonSetPtr

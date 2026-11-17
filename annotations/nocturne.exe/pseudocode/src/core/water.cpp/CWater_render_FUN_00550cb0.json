@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 191,
+    "complexity_score": 188,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
+    "pseudocode_lines": 148,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
     ],
-    "total_lines": 545
+    "total_lines": 542
   },
   "cross_references": [
     {
@@ -151,19 +151,19 @@
     },
     {
       "addr": "005c11f0",
-      "name": "g_INT_005c11f0",
+      "name": "g_WaterFrameDuration",
       "type": "int",
       "value": "0x2000"
     },
     {
       "addr": "005c11f4",
-      "name": "g_SMRGLTextureBasic_ARRAY_005c11f4",
+      "name": "g_WaterTextures",
       "type": "SMRGLTextureBasic[16]",
       "value": null
     },
     {
       "addr": "005c1374",
-      "name": "g_SMRGLPrimitiveQuad_005c1374",
+      "name": "g_WaterRenderQuad",
       "type": "SMRGLPrimitiveQuad",
       "value": null
     },
@@ -175,7 +175,7 @@
     },
     {
       "addr": "01bd1d80",
-      "name": "g_INT_01bd1d80",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -223,43 +223,43 @@
     },
     {
       "addr": "02dd122c",
-      "name": "g_INT_02dd122c",
+      "name": "g_WaterAnimationTimer",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dd1230",
-      "name": "g_INT_02dd1230",
+      "name": "g_WaterCurrentFrame",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dd1234",
-      "name": "g_INT_02dd1234",
+      "name": "g_VisibleWaterTileCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dd1238",
-      "name": "g_INT_ARRAY_02dd1238",
+      "name": "g_VisibleWaterTilesX",
       "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02dd5238",
-      "name": "g_INT_ARRAY_02dd5238",
+      "name": "g_VisibleWaterTilesY",
       "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02dd925c",
-      "name": "g_INT_02dd925c",
+      "name": "g_WaterAnimationBlend",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dd9260",
-      "name": "g_FLOAT_02dd9260",
+      "name": "g_WaterAnimationPhase",
       "type": "float",
       "value": null
     }
@@ -595,23 +595,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(int *)((int)g_INT_ARRAY_02dd1238",
+      "line": 47,
+      "match": "(int *)((int)g_VisibleWaterTilesX",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_INT_ARRAY_02dd1238 + local_18);",
+      "text": "iVar1 = *(int *)((int)g_VisibleWaterTilesX + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)g_INT_ARRAY_02dd5238",
+      "line": 48,
+      "match": "(int *)((int)g_VisibleWaterTilesY",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_INT_ARRAY_02dd5238 + local_18);",
+      "text": "iVar2 = *(int *)((int)g_VisibleWaterTilesY + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 54,
+      "line": 55,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_30.x = local_6c.x;",

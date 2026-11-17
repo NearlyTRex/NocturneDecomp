@@ -17,8 +17,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040453
   int local_14;
   
   iVar1 = 0;
-  INT_005b7644 = 1;
-  output = g_SRenderVertex_ARRAY_005c5014 + (mrgl->base).count + g_UINT_006b0264;
+  g_VertexProcessingEnabled = 1;
+  output = g_SRenderVertex_ARRAY_005c5014 + (mrgl->base).count + g_ProcessedVertexOffset;
   input = (CVector3i *)(mrgl + 1);
   local_14 = 0;
   _DAT_006b0298 = input;
@@ -34,11 +34,11 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040453
       input = input + 1;
     } while (iVar1 < mrgl->child_count);
   }
-  if (g_UINT_006b0264 == 0) {
-    g_UINT_006b0268 = g_UINT_006b0264;
+  if (g_ProcessedVertexOffset == 0) {
+    g_ProcessedVertexBackupOffset = g_ProcessedVertexOffset;
   }
   if (local_14 == mrgl->child_count) {
-    INT_005b7644 = 0;
+    g_VertexProcessingEnabled = 0;
   }
   return mrgl + mrgl->child_count + 1;
 }

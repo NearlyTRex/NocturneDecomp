@@ -38,19 +38,19 @@
   "globals": [
     {
       "addr": "01308800",
-      "name": "g_BIT_INTEGER32_01308800",
+      "name": "g_CameraDownscaleIterations",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01465928",
-      "name": "g_INT_01465928",
+      "name": "g_ImageBytesPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "0150f450",
-      "name": "g_INT_0150f450",
+      "name": "g_FlatShadingLightLevel",
       "type": "int",
       "value": null
     },
@@ -175,7 +175,7 @@
       "line": 38,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "cVar2 = (char)((g_INT_0150f450 + (g_INT_0150f450 >> 0x1f) * -0x100) -",
+      "text": "cVar2 = (char)((g_FlatShadingLightLevel + (g_FlatShadingLightLevel >> 0x1f) * -0x100) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -183,7 +183,7 @@
       "line": 39,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_0150f450 >> 0x1f) << 7 < 0) >> 8);",
+      "text": "(uint)((g_FlatShadingLightLevel >> 0x1f) << 7 < 0) >> 8);",
       "type": "signed_shift_global_idiom"
     }
   ]

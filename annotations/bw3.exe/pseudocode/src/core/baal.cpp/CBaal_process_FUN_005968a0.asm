@@ -110,7 +110,7 @@ section .text
     FADDP                               ; 00596970
     FSTP float ptr [EBP + 0x62]         ; 00596972
     MOV EAX,dword ptr [EBP + 0x62]      ; 00596975
-    MOV ESI,dword ptr [0x01d1a0a4]      ; 00596978 | g_INT_01d1a0a4
+    MOV ESI,dword ptr [0x01d1a0a4]      ; 00596978 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0059697e
     PUSH dword ptr [EBP + 0x92]         ; 00596980
     ADD EAX,ESI                         ; 00596986
@@ -788,7 +788,7 @@ section .text
     FADDP                               ; 00597139
     FSTP float ptr [EBP + 0x4e]         ; 0059713b
     MOV EAX,dword ptr [EBP + 0x4e]      ; 0059713e
-    MOV ECX,dword ptr [0x01d1a0a4]      ; 00597141 | g_INT_01d1a0a4
+    MOV ECX,dword ptr [0x01d1a0a4]      ; 00597141 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00597147
     ADD EAX,ECX                         ; 00597149
     MOV dword ptr [EBP + 0x52],EAX      ; 0059714b
@@ -1201,7 +1201,7 @@ section .text
     ADD EAX,dword ptr [EBP + 0x56]      ; 005975d3
     PUSH 0x40200000                     ; 005975d6
     PUSH EAX                            ; 005975db
-    PUSH 0x2cfd900                      ; 005975dc | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 005975dc | g_ZeroVector
     LEA ESI,[EBP + 0xffffff76]          ; 005975e1
     LEA EDI,[EBP + -0x12]               ; 005975e7
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 005975ea

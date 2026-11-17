@@ -113,7 +113,7 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_pt
   laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;
   laser_info.transparency = (float)actor_ptr;
   core_fire_cpp_CFireEffect_traceLaser_FUN_004b6420
-            (g_CFireEffect_PTR_0061c010,&CStack_58,&CStack_40,laser_info,recursion_depth);
+            (g_CFireEffectPtr,&CStack_58,&CStack_40,laser_info,recursion_depth);
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   return;
 }

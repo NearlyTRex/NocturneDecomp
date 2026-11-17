@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_glass_cpp_CGlass_getActorType_FUN_004abb40(CGlass *this_ptr)
 
 {
-  return &g_CGlassActorType_01c78c40;
+  return &g_CGlassClassInfo;
 }

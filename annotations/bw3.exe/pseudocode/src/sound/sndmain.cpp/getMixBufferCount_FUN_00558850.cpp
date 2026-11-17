@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_00558850(void)
 
 {
-  return g_INT_02cf3338;
+  return g_MixBufferCount;
 }

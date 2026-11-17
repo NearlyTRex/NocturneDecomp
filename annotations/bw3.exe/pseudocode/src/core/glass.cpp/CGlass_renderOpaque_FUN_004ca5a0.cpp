@@ -59,7 +59,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
     }
     core_set_cpp_CDemonSet_rotateVerticies_FUN_00538ad0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,input_vertices);
-    lVar1 = (longlong)(0xffff - g_INT_01c6e24c) * (longlong)this_ptr->opacity;
+    lVar1 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
               (g_CDemonRenderer_PTR_005f2afc,
                (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

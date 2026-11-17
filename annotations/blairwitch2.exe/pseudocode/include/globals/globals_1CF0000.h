@@ -12,14 +12,14 @@
 // =============================================================================
 
 // CAlphaBitmap
-extern CAlphaBitmap CAlphaBitmap_01cf01b0;
+extern CAlphaBitmap g_InvBackgroundBitmap;
 extern CAlphaBitmap CAlphaBitmap_01cf01c4;
-extern CAlphaBitmap CAlphaBitmap_01cf01d8;
+extern CAlphaBitmap g_WeapBackgroundBitmap;
 extern CAlphaBitmap CAlphaBitmap_01cf01ec;
 
 // SInventoryItemInfo[100]
-extern SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01cf0208[100];
+extern SInventoryItemInfo g_ItemDefinitionArray[100];
 
 // int
-extern int g_INT_01cf0200;
+extern int g_ItemDefinitionCount;
 

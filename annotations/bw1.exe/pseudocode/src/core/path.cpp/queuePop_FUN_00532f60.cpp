@@ -11,18 +11,18 @@ void __cdecl core_path_cpp_queuePop_FUN_00532f60(int *out_x,int *out_cost,int *o
 {
   int iVar1;
   
-  if (g_INT_01e7abdc == g_INT_01e7abe0) {
+  if (g_PathfindingQueueHead == g_PathfindingQueueTail) {
     g_CHAR_PTR_01d1d400 = "..\\core\\path.cpp";
     g_INT_01d1d404 = 0xdf;
     core_main_c_displayErrorAndQuit_FUN_005030e0("queuePop - empty queue?!");
   }
-  *out_x = g_CPathQueueNode_ARRAY_01e6c17c[g_INT_01e7abdc].x;
-  *out_cost = g_CPathQueueNode_ARRAY_01e6c17c[g_INT_01e7abdc].cost;
-  iVar1 = g_INT_01e7abdc + 1;
-  *out_z = g_CPathQueueNode_ARRAY_01e6c17c[g_INT_01e7abdc].z;
+  *out_x = g_PathfindingQueue[g_PathfindingQueueHead].x;
+  *out_cost = g_PathfindingQueue[g_PathfindingQueueHead].cost;
+  iVar1 = g_PathfindingQueueHead + 1;
+  *out_z = g_PathfindingQueue[g_PathfindingQueueHead].z;
   if (4999 < iVar1) {
     iVar1 = 0;
   }
-  g_INT_01e7abdc = iVar1;
+  g_PathfindingQueueHead = iVar1;
   return;
 }

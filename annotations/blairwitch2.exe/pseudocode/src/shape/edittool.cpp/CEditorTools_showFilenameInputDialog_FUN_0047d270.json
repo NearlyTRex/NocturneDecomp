@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 446,
-    "complexity_score": 456,
+    "complexity_score": 455,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 206,
+    "pseudocode_lines": 205,
     "suspect_count": 22,
     "suspect_types": [
       "negative_offset",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 652
+    "total_lines": 651
   },
   "cross_references": [
     {
@@ -214,31 +214,31 @@
     },
     {
       "addr": "006141cc",
-      "name": "g_INT_006141cc",
+      "name": "g_InputKeyMask",
       "type": "int",
       "value": "0x7f"
     },
     {
       "addr": "00617dd4",
-      "name": "g_CKeys_PTR_00617dd4",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d02f84"
     },
     {
       "addr": "0061ed94",
-      "name": "g_UCHAR_ARRAY_0061ed94",
+      "name": "g_CharacterClassificationTable",
       "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "01c25590",
-      "name": "g_CBitFont_PTR_01c25590",
+      "name": "g_EditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25f78",
-      "name": "g_INT_01c25f78",
+      "name": "g_EditorFontMaxCharWidth",
       "type": "int",
       "value": null
     },
@@ -250,13 +250,13 @@
     },
     {
       "addr": "01c263bc",
-      "name": "g_INT_01c263bc",
+      "name": "g_DialogTextColor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c263c0",
-      "name": "g_INT_01c263c0",
+      "name": "g_ActiveItemTextColor",
       "type": "int",
       "value": null
     },
@@ -504,7 +504,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 131,
       "match": "(CInputString *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -512,7 +512,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 137,
+      "line": 135,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
@@ -520,7 +520,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 152,
       "match": "(CInputString *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -528,7 +528,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 158,
+      "line": 156,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
@@ -536,7 +536,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 173,
       "match": "(CInputString *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -544,7 +544,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 133,
+      "line": 131,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -552,7 +552,7 @@
     },
     {
       "description": "Pointer value `&pCVar7[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 135,
       "match": "(int)&pCVar7[-1].mask_mode",
       "severity": "moderate",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
@@ -560,7 +560,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 154,
+      "line": 152,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -568,7 +568,7 @@
     },
     {
       "description": "Pointer value `&pCVar7[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 158,
+      "line": 156,
       "match": "(int)&pCVar7[-1].mask_mode",
       "severity": "moderate",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
@@ -576,7 +576,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 175,
+      "line": 173,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -584,7 +584,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -592,7 +592,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 138,
+      "line": 136,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -608,31 +608,31 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 160,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 197,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 137,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 158,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 196,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 135,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 156,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
@@ -640,7 +640,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 60,
+      "line": 59,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -648,7 +648,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 129,
+      "line": 127,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -656,7 +656,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 150,
+      "line": 148,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -664,7 +664,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 171,
+      "line": 169,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -672,7 +672,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

@@ -104,7 +104,7 @@
     },
     {
       "addr": "007f7370",
-      "name": "g_CDemonCamera_PTR_007f7370",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -116,43 +116,43 @@
     },
     {
       "addr": "020842b4",
-      "name": "g_CVector3f_020842b4",
+      "name": "g_SavedCameraOrigin",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "020842b8",
-      "name": "g_CVector3f_020842b4.y",
+      "name": "g_SavedCameraOrigin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842bc",
-      "name": "g_CVector3f_020842b4.z",
+      "name": "g_SavedCameraOrigin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842c0",
-      "name": "g_CVector3f_020842c0",
+      "name": "g_SavedCameraRotation",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "020842c4",
-      "name": "g_CVector3f_020842c0.y",
+      "name": "g_SavedCameraRotation.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842c8",
-      "name": "g_CVector3f_020842c0.z",
+      "name": "g_SavedCameraRotation.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842cc",
-      "name": "g_FLOAT_020842cc",
+      "name": "g_SavedProjectionFactor",
       "type": "float",
       "value": null
     }
@@ -378,7 +378,7 @@
       "line": 13,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_020842b4.x = pCVar1->x;",
+      "text": "g_SavedCameraOrigin.x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -386,7 +386,7 @@
       "line": 20,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_020842c0.x = pCVar1->x;",
+      "text": "g_SavedCameraRotation.x = pCVar1->x;",
       "type": "unrolled_memcpy"
     }
   ]

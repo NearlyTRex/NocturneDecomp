@@ -71,9 +71,9 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005656f0(CStran
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_00565763:
-            iVar2 = g_INT_ARRAY_0264be30[7];
+            iVar2 = g_StrangerIndices[7];
             if (bone_index == 7) {
-              iVar2 = g_INT_ARRAY_0264be30[8];
+              iVar2 = g_StrangerIndices[8];
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                       (local_1c,iVar2,(CVector3f *)(auStack_ac + 8));
@@ -223,7 +223,7 @@ LAB_00565858:
         local_20 = local_24;
         if (local_24 != (CCharacter *)0x0) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                    (local_1c,g_INT_ARRAY_0264be30[0xc],&local_d4);
+                    (local_1c,g_StrangerIndices[0xc],&local_d4);
           pCVar10 = &local_50;
           local_50.x = local_d4.x;
           *(uint *)(local_44 + (uint)bVar8 * -8 + -8) =

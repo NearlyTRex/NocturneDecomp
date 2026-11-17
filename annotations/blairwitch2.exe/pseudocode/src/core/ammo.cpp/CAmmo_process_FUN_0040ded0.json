@@ -303,11 +303,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_0265370c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ZeroVector` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 136,
-      "match": "(int)&g_CVector3f_0265370c",
+      "match": "(int)&g_ZeroVector",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);",
+      "text": "*(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -411,7 +411,7 @@
       "line": 136,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);",
+      "text": "*(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

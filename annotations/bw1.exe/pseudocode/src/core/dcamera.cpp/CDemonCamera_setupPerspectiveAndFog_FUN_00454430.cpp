@@ -14,30 +14,30 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430(C
   CVector3i local_10;
   
   if (position == (CVector3f *)0x0) {
-    g_INT_01c51cac = (int)position;
+    g_PerspectiveReciprocal = (int)position;
     return;
   }
-  if (g_INT_01482658 != 0) {
-    g_INT_01c51cac = 0;
+  if (g_BackgroundSceneDepth != 0) {
+    g_PerspectiveReciprocal = 0;
     return;
   }
   local_10.x = (int)ROUND(position->x * 256.0f);
   local_10.y = (int)ROUND(position->y * 256.0f);
   local_10.z = (int)ROUND(position->z * 256.0f);
-  g_INT_01c51cac =
+  g_PerspectiveReciprocal =
        (*((this_ptr->base).vtable)->getFogValueAtPosition)(this_ptr,&local_10,projected_vertex);
-  uVar1 = g_UINT_ARRAY_00b8189c[g_INT_00611238] & 0xff;
+  uVar1 = g_LightmapTexturePalette[g_FogColorIndexB] & 0xff;
   if (g_INT_0061b4a0 == 0x20) {
-    uVar2 = (g_UINT_ARRAY_00b8189c[g_INT_00611230] & 0xff) <<
-            (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
-            (g_UINT_ARRAY_00b8189c[g_INT_00611234] & 0xff) <<
-            (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
-    uVar1 = uVar1 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
+    uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) <<
+            (g_RedBitPosition.bytes[0] & 0x1f) |
+            (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) <<
+            (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar1 = uVar1 << (g_BlueBitPosition.bytes[0] & 0x1f);
   }
   else {
-    uVar2 = (g_UINT_ARRAY_00b8189c[g_INT_00611230] & 0xff) << 0x10 |
-            (g_UINT_ARRAY_00b8189c[g_INT_00611234] & 0xff) << 8;
+    uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << 0x10 |
+            (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) << 8;
   }
-  g_ULONG_01c51d1c = uVar2 | uVar1;
+  g_SolidColorMode = uVar2 | uVar1;
   return;
 }

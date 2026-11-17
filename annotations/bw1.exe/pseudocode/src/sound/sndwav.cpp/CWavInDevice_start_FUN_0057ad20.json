@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 116,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 37,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 128
+    "total_lines": 129
   },
   "cross_references": [],
   "function": {
@@ -65,43 +65,43 @@
     },
     {
       "addr": "02c828d8",
-      "name": "g_INT_02c828d8",
+      "name": "g_WaveInHandle",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a1c",
-      "name": "g_INT_02c82a1c",
+      "name": "g_WaveInBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a20",
-      "name": "g_INT_02c82a20",
+      "name": "g_WaveInChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a2c",
-      "name": "g_INT_02c82a2c",
+      "name": "g_WaveInBufferSizeSamples",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a30",
-      "name": "g_INT_02c82a30",
+      "name": "g_WaveInNumBuffers",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a44",
-      "name": "g_INT_02c82a44",
+      "name": "g_WaveInCurrentBufferIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a48",
-      "name": "g_INT_02c82a48",
+      "name": "g_WaveInCurrentSampleOffset",
       "type": "int",
       "value": null
     }
@@ -191,41 +191,41 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(void **)((int)g_LPWAVEHDR_ARRAY_02c8292c",
+      "match": "(void **)((int)g_WaveInHeaders",
       "severity": "moderate",
-      "text": "memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3),0,0x20);",
+      "text": "memset(*(void **)((int)g_WaveInHeaders + iVar3),0,0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(uint **)((int)g_LPWAVEHDR_ARRAY_02c8292c",
+      "match": "(uint **)((int)g_WaveInHeaders",
       "severity": "moderate",
-      "text": "**(uint **)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3) =",
+      "text": "**(uint **)((int)g_WaveInHeaders + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(uint *)((int)g_INT_ARRAY_02c829cc",
+      "match": "(uint *)((int)g_WaveInBuffers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_INT_ARRAY_02c829cc + iVar3);",
+      "text": "*(uint *)((int)g_WaveInBuffers + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02c8292c",
+      "match": "(int *)((int)g_WaveInHeaders",
       "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3) + 0xc) = buffer_index;",
+      "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 0xc) = buffer_index;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02c8292c",
+      "match": "(int *)((int)g_WaveInHeaders",
       "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3) + 4) =",
+      "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -233,7 +233,7 @@
       "line": 19,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_02c82a1c + (g_INT_02c82a1c >> 0x1f) * -8) -",
+      "text": "((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -241,7 +241,7 @@
       "line": 20,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c82a2c * g_INT_02c82a20;",
+      "text": "(uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples",
       "type": "signed_shift_global_idiom"
     }
   ],

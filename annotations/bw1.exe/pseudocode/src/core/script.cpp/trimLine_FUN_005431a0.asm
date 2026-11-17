@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005edf8a
-;   uchar[257] g_UCHAR_ARRAY_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_strstr_FUN_005c2dc0
@@ -32,7 +32,7 @@ section .text
         ;   Label: LAB_005431ae
     INC AL                              ; 005431b0
     AND EAX,0xff                        ; 005431b2
-    TEST byte ptr [EAX + 0x626114],0x2  ; 005431b7 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 005431b7 | g_CharacterClassificationTable
     JZ 0x005431c3                       ; 005431be
         ;   XREF to: 005431c3 (CONDITIONAL_JUMP)  ; LAB_005431c3
     INC ESI                             ; 005431c0
@@ -96,7 +96,7 @@ section .text
         ;   Label: LAB_00543216
     INC DL                              ; 00543219
     MOVZX ESI,DL                        ; 0054321b
-    TEST byte ptr [ESI + 0x626114],0x2  ; 0054321e | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [ESI + 0x626114],0x2  ; 0054321e | g_CharacterClassificationTable
     JZ 0x0054322f                       ; 00543225
         ;   XREF to: 0054322f (CONDITIONAL_JUMP)  ; LAB_0054322f
     DEC EAX                             ; 00543227

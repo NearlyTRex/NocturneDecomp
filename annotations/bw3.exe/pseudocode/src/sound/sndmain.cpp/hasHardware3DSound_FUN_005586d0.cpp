@@ -9,5 +9,5 @@
 uint __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0(void)
 
 {
-  return g_INT_02cf3288;
+  return g_HasHardware3DSound;
 }

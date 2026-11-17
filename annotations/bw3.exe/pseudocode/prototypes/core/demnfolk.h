@@ -43,7 +43,7 @@ void __cdecl CDemnfolk::setup(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_process_FUN_00455080
 // Address: 00455080
-void __cdecl CDemnfolk::process(CDemnfolk *this_ptr,float param_2);
+void __cdecl CDemnfolk::process(CDemnfolk *this_ptr,float delta_time);
 
 // Original: core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_00457300
 // Address: 00457300

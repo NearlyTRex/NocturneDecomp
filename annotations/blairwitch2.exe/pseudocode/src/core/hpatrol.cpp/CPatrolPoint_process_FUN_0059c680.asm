@@ -37,7 +37,7 @@ section .text
     PUSH EAX                            ; 0059c6a1
     MOV dword ptr [EBP + 0x6e],EAX      ; 0059c6a2
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 0059c6a5
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x2a8]         ; 0059c6aa
     FSUB float ptr [EBP + 0x96]         ; 0059c6b0
     ADD ESP,0x8                         ; 0059c6b6

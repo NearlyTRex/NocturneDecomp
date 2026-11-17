@@ -127,7 +127,7 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004b5ac0(CFireEffect *this
 void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004b5bc0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type);
 void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
-void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004b5db0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
+void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004b5db0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004b5eb0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
@@ -270,7 +270,7 @@ int __cdecl core_flashlit_cpp_layoutSections_FUN_004ba630(void);
 void __cdecl core_flashlit_cpp_relayoutSectionsIfDirty_FUN_004ba6b0(void);
 void __cdecl core_fldnotes_cpp_SPageResource_ctor_FUN_004ba730(SPageResource *this_ptr);
 int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004ba760(SPageResource *this_ptr);
-void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004ba790(SPageResource *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004ba790(SPageResource *this_ptr,char *link);
 bool __cdecl core_fldnotes_cpp_SPageResource_onMouse_FUN_004ba830(SPageResource *this_ptr);
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004ba850(SPageResourceText *this_ptr,char *text,CBitFont *font);
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_dtor_FUN_004ba8d0(SPageResourceText *this_ptr,uint flags);

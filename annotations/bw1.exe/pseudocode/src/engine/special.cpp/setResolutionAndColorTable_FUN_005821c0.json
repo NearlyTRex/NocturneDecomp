@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 83,
+    "complexity_score": 84,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 49,
     "suspect_count": 3,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 152
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -71,7 +71,7 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
@@ -89,55 +89,55 @@
     },
     {
       "addr": "02c83380",
-      "name": "g_INT_02c83380",
+      "name": "g_FrameBufferTestResult",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c83398",
-      "name": "g_PTR_02c83398",
+      "name": "g_APIDLL_setVideoMode2",
       "type": "void*",
       "value": null
     },
     {
       "addr": "02c833ec",
-      "name": "g_PTR_02c833ec",
+      "name": "g_APIDLL_setFogColor",
       "type": "void*",
       "value": null
     },
     {
       "addr": "02c833fc",
-      "name": "g_PTR_02c833fc",
+      "name": "g_APIDLL_setColorTable16",
       "type": "void*",
       "value": null
     },
     {
       "addr": "02c834ac",
-      "name": "g_INT_02c834ac",
+      "name": "g_LoadedExternalDLLRenderer",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c834b4",
-      "name": "g_INT_02c834b4",
+      "name": "g_FogColorRed",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c834b8",
-      "name": "g_INT_02c834b8",
+      "name": "g_FogColorGreen",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c834bc",
-      "name": "g_INT_02c834bc",
+      "name": "g_FogColorBlue",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c834c0",
-      "name": "g_HWND_02c834c0",
+      "name": "g_StoredWindowHandle",
       "type": "HWND",
       "value": null
     },
@@ -266,26 +266,26 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (*(code *)g_PTR_02c83398)(width,height,bits_per_pixel,g_ARRAY_PTR_01c4354c);",
+      "text": "iVar4 = (*(code *)g_APIDLL_setVideoMode2)(width,height,bits_per_pixel,g_ScreenBufferArray);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02c833fc)(g_UCHAR_ARRAY_01c4e9f8,g_USHORT_ARRAY_01c4dad0);",
+      "text": "(*(code *)g_APIDLL_setColorTable16)(g_UCHAR_ARRAY_01c4e9f8,g_ColorTable16);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02c833ec)(g_INT_02c834b4,g_INT_02c834b8,g_INT_02c834bc);",
+      "text": "(*(code *)g_APIDLL_setFogColor)(g_FogColorRed,g_FogColorGreen,g_FogColorBlue);",
       "type": "unresolved_funcptr"
     }
   ]

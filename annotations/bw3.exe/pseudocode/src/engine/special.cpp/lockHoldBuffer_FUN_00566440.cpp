@@ -11,9 +11,9 @@ int __cdecl engine_special_cpp_lockHoldBuffer_FUN_00566440(void)
 {
   int iVar1;
   
-  if (g_PTR_02cf6078 == (byte *)0x0) {
+  if (g_APIDLL_lockHoldBuffer == (byte *)0x0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6078)();
+  iVar1 = (*(code *)g_APIDLL_lockHoldBuffer)();
   return iVar1;
 }

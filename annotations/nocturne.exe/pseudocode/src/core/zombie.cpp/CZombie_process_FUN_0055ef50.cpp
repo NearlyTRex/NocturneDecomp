@@ -724,7 +724,7 @@ LAB_00560776:
         if (0xd < uVar9) {
           if (uVar9 < 0xf) {
             iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                              (g_CEventList_PTR_005b7650,this_ptr->rise_from_grave_condition);
+                              (g_CEventListPtr,this_ptr->rise_from_grave_condition);
             if ((iVar7 != 0) &&
                (fVar27 = this_ptr->rise_delay - delta_time, this_ptr->rise_delay = fVar27,
                fVar27 < 0.0)) {
@@ -944,8 +944,7 @@ LAB_0055fc2f:
         core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050((CCharacter *)this_ptr,&local_284);
         if ((iVar7 == 1) &&
            (this_ptr_00 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040d890
-                                             (g_CDemonActor_PTR_00765a9c,
-                                              g_CDoorActorType_01af4e9c.name_hash),
+                                             (g_LastCollisionActor,g_CDoorClassInfo.name_hash),
            local_58 = this_ptr_00, this_ptr_00 != (CDoor *)0x0)) {
           pCVar14 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                               ((CDemonActor *)this_ptr_00,&local_2b4);

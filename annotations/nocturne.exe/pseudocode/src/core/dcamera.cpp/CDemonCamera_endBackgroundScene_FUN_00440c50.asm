@@ -14,14 +14,14 @@
 ; Referenced Globals:
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   int g_INT_0140efa8
-;   int g_INT_0140efac
-;   int g_INT_0140efb0
+;   int g_BackgroundSceneDepth
+;   int g_BackgroundSavedBitsPerPixel
+;   int g_BackgroundSavedUseExternalRenderer
 ;   void*[1200] g_ARRAY_PTR_0140efb4
 ;   undefined4 g_ARRAY_PTR_0140efb4[1]
-;   int g_INT_01410274
-;   int g_INT_01410278
-;   int g_INT_0141027c
+;   int g_BackgroundSavedRedBitPosition
+;   int g_BackgroundSavedGreenBitPosition
+;   int g_BackgroundSavedBlueBitPosition
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   uint*[1200] g_ZBufferScanlineArray
@@ -43,9 +43,9 @@ section .text
     PUSH EDI                            ; 00440c52
     PUSH EBP                            ; 00440c53
     MOV EBP,dword ptr [ESP + 0x14]      ; 00440c54
-    MOV EDX,dword ptr [0x0140efa8]      ; 00440c58 | g_INT_0140efa8
+    MOV EDX,dword ptr [0x0140efa8]      ; 00440c58 | g_BackgroundSceneDepth
     DEC EDX                             ; 00440c5e
-    MOV dword ptr [0x0140efa8],EDX      ; 00440c5f | g_INT_0140efa8
+    MOV dword ptr [0x0140efa8],EDX      ; 00440c5f | g_BackgroundSceneDepth
     JZ 0x00440c6c                       ; 00440c65
         ;   XREF to: 00440c6c (CONDITIONAL_JUMP)  ; LAB_00440c6c
     POP EBP                             ; 00440c67
@@ -57,10 +57,10 @@ section .text
     MOV ESI,0x140efb4                   ; 00440c6c
         ;   Label: LAB_00440c6c
     MOV EDI,0x1bd2fa0                   ; 00440c71
-    MOV EAX,[0x0140efac]                ; 00440c76 | g_INT_0140efac
+    MOV EAX,[0x0140efac]                ; 00440c76 | g_BackgroundSavedBitsPerPixel
     MOV ECX,dword ptr [0x005b7620]      ; 00440c7b | g_WindowHeight
     MOV [0x005b7624],EAX                ; 00440c81 | g_BitsPerPixel
-    MOV EAX,[0x0140efb0]                ; 00440c86 | g_INT_0140efb0
+    MOV EAX,[0x0140efb0]                ; 00440c86 | g_BackgroundSavedUseExternalRenderer
     SHL ECX,0x2                         ; 00440c8b
     MOV [0x01c02594],EAX                ; 00440c8e | g_UseExternalRenderer
     PUSH EDI                            ; 00440c93 | g_ScreenBufferArray
@@ -71,11 +71,11 @@ section .text
     AND CL,0x3                          ; 00440c9d
     MOVSB.REP ES:EDI,ESI                ; 00440ca0 | g_ARRAY_PTR_0140efb4[1] | g_ScreenBufferArray[1]
     POP EDI                             ; 00440ca2
-    MOV EAX,[0x01410274]                ; 00440ca3 | g_INT_01410274
+    MOV EAX,[0x01410274]                ; 00440ca3 | g_BackgroundSavedRedBitPosition
     MOV [0x01c00624],EAX                ; 00440ca8 | g_RedBitPosition
-    MOV EAX,[0x01410278]                ; 00440cad | g_INT_01410278
+    MOV EAX,[0x01410278]                ; 00440cad | g_BackgroundSavedGreenBitPosition
     MOV [0x01c00630],EAX                ; 00440cb2 | g_GreenBitPosition
-    MOV EAX,[0x0141027c]                ; 00440cb7 | g_INT_0141027c
+    MOV EAX,[0x0141027c]                ; 00440cb7 | g_BackgroundSavedBlueBitPosition
     MOV EBX,dword ptr [ESP + 0x18]      ; 00440cbc
     MOV [0x01c0063c],EAX                ; 00440cc0 | g_BlueBitPosition
     TEST EBX,EBX                        ; 00440cc5

@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   void* g_PTR_0264bc48
-;   int g_INT_0264bcdc
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
 
     PUSH EBP                            ; 005600e0
         ;   Label: engine_special.cpp_buildCardList_FUN_005600e0
-    CMP dword ptr [0x0264bcdc],0x0      ; 005600e1 | g_INT_0264bcdc
+    CMP dword ptr [0x0264bcdc],0x0      ; 005600e1 | g_LoadedExternalDLLRenderer
     JNZ 0x005600ee                      ; 005600e8
         ;   XREF to: 005600ee (CONDITIONAL_JUMP)  ; LAB_005600ee
     XOR EAX,EAX                         ; 005600ea

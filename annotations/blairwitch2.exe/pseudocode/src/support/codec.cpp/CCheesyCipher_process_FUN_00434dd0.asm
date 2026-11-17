@@ -56,7 +56,7 @@ section .text
     PUSH EDX                            ; 00434e0a
     XOR EBX,EBX                         ; 00434e0b
     CALL support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60 ; 00434e0d
-        ;   XREF to: 00434d60 (UNCONDITIONAL_CALL)  ; uint support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60(CCheesyCipher * this_ptr, byte param_2)
+        ;   XREF to: 00434d60 (UNCONDITIONAL_CALL)  ; uint support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60(CCheesyCipher * this_ptr, byte value)
     MOV BL,AL                           ; 00434e12
     XOR EAX,EAX                         ; 00434e14
     ADD ESP,0x8                         ; 00434e16

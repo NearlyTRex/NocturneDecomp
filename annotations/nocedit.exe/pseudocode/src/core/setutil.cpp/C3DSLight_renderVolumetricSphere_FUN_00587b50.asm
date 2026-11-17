@@ -27,7 +27,7 @@
 ;   float FLOAT_00649adb = 255
 ;   float FLOAT_00662a40 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic SMRGLTextureBasic_006817fc
+;   SMRGLTextureBasic g_VolumetricSphereTexture
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
@@ -174,7 +174,7 @@ section .text
     CMP EAX,0x10                        ; 00587cf2
     JLE 0x00587b8c                      ; 00587cf5
         ;   XREF to: 00587b8c (CONDITIONAL_JUMP)  ; LAB_00587b8c
-    PUSH 0x6817fc                       ; 00587cfb | SMRGLTextureBasic_006817fc
+    PUSH 0x6817fc                       ; 00587cfb | g_VolumetricSphereTexture
     PUSH EDX                            ; 00587d00 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 00587d01
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

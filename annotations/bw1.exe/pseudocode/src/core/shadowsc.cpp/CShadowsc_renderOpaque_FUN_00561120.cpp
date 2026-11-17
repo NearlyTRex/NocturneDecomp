@@ -12,7 +12,7 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderOpaque_FUN_00561120(CShadowsc *thi
   int iVar1;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,"heroCanSee");
+                    (g_CEventListPtr,"heroCanSee");
   if (iVar1 != 0) {
     if ((this_ptr->is_opaque == 0) &&
        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60

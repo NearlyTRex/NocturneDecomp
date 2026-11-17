@@ -17,15 +17,15 @@
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
 ;   void* g_PTR_00629010
-;   void* g_PTR_0071362c
-;   void*[1200] g_ARRAY_PTR_01c4354c
-;   undefined4 g_ARRAY_PTR_01c4354c[1]
-;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
+;   void* g_SoftwareZBuffer
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c50948
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02c99308
-;   int g_INT_02c99314
+;   IDirectDrawSurface* g_SoftwareRenderSurface
+;   int g_FlipPending
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -67,12 +67,12 @@ section .text
     IMUL ESI,EDI                        ; 005acc57
     MOV EBX,dword ptr [0x00629010]      ; 005acc5a | g_PTR_00629010
     ADD EBX,ESI                         ; 005acc60
-    MOV dword ptr [EAX + 0x1c4354c],EBX ; 005acc62 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
-    MOV EBX,dword ptr [0x0071362c]      ; 005acc68 | g_PTR_0071362c
+    MOV dword ptr [EAX + 0x1c4354c],EBX ; 005acc62 | g_ScreenBufferArray | g_ScreenBufferArray[1]
+    MOV EBX,dword ptr [0x0071362c]      ; 005acc68 | g_SoftwareZBuffer
     ADD EAX,0x4                         ; 005acc6e
     ADD EBX,EDX                         ; 005acc71
     INC ECX                             ; 005acc73
-    MOV dword ptr [EAX + 0x1c44808],EBX ; 005acc74 | g_UINT_PTR_ARRAY_01c4480c
+    MOV dword ptr [EAX + 0x1c44808],EBX ; 005acc74 | g_ZBufferScanlineArray
     MOV EBX,dword ptr [0x0061b49c]      ; 005acc7a | g_INT_0061b49c
     ADD EDX,EBP                         ; 005acc80
     CMP ECX,EBX                         ; 005acc82
@@ -81,7 +81,7 @@ section .text
     POP EBX                             ; 005acc86
     PUSH 0x0                            ; 005acc87
         ;   Label: LAB_005acc87
-    MOV EAX,[0x02c99308]                ; 005acc89 | g_IDirectDrawSurface_PTR_02c99308
+    MOV EAX,[0x02c99308]                ; 005acc89 | g_SoftwareRenderSurface
     PUSH EAX                            ; 005acc8e
     MOV EDX,dword ptr [EAX]             ; 005acc8f
     CALL dword ptr [EDX + 0x80]         ; 005acc91
@@ -96,14 +96,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005accb6
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005accbb
-    MOV dword ptr [0x02c99314],0x1      ; 005accbe | g_INT_02c99314
+    MOV dword ptr [0x02c99314],0x1      ; 005accbe | g_FlipPending
         ;   Label: LAB_005accbe
     POP ESI                             ; 005accc8
     POP EDI                             ; 005accc9
     POP EBP                             ; 005accca
         ;   Label: LAB_005accca
     RET                                 ; 005acccb
-    MOV dword ptr [0x02c99314],0x1      ; 005acccc | g_INT_02c99314
+    MOV dword ptr [0x02c99314],0x1      ; 005acccc | g_FlipPending
         ;   Label: LAB_005acccc
     POP EBP                             ; 005accd6
     RET                                 ; 005accd7

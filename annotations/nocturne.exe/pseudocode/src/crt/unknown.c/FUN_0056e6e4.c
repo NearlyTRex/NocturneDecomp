@@ -31,8 +31,9 @@ void FUN_0056e6e4(void)
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4 = FUN_0056e51c;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af8 = FUN_0056e6b8;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0 = FUN_0056e50c;
-  FUN_00571280(*(uint *)(g_PTR_02de4e3c + 0xda),g_PTR_02de4e3c);
-  TlsSetValue(g_INT_005c1ab8,g_PTR_02de4e3c);
+  FUN_00571280
+            (*(uint *)(g_CurrentThreadTlsBlock + 0xda),g_CurrentThreadTlsBlock);
+  TlsSetValue(g_INT_005c1ab8,g_CurrentThreadTlsBlock);
   PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc = FUN_0056e52c;
   return;
 }

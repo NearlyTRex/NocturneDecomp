@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01fc8d00
-;   int g_INT_01fc8e84
+;   int g_MasterLightCount
+;   int g_SpotLightCount
 ;   int g_INT_01fc9608
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   int g_INT_01fc9cd4
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 0052d3c3
     SUB ESP,0x17c                       ; 0052d3c4
     XOR EDX,EDX                         ; 0052d3ca
-    MOV ECX,dword ptr [0x01fc8d00]      ; 0052d3cc | g_INT_01fc8d00
+    MOV ECX,dword ptr [0x01fc8d00]      ; 0052d3cc | g_MasterLightCount
     MOV dword ptr [ESP + 0x140],EDX     ; 0052d3d2
     TEST ECX,ECX                        ; 0052d3d9
     JZ 0x0052d67f                       ; 0052d3db
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [0x01fc9cd4],EDI      ; 0052d3f0 | g_INT_01fc9cd4
     MOV dword ptr [ESP + 0x16c],EDI     ; 0052d3f6
     MOV ECX,dword ptr [EAX]             ; 0052d3fd
-    MOV dword ptr [0x01fc8e84],EDI      ; 0052d3ff | g_INT_01fc8e84
+    MOV dword ptr [0x01fc8e84],EDI      ; 0052d3ff | g_SpotLightCount
     TEST ECX,ECX                        ; 0052d405
     JLE 0x0052d65e                      ; 0052d407
         ;   XREF to: 0052d65e (CONDITIONAL_JUMP)  ; LAB_0052d65e
@@ -121,7 +121,7 @@ section .text
     CMP dword ptr [EBX + 0x19a30],0x0   ; 0052d530
     JNZ 0x0052d8c2                      ; 0052d537
         ;   XREF to: 0052d8c2 (CONDITIONAL_JUMP)  ; LAB_0052d8c2
-    MOV EDX,dword ptr [0x01fc8d00]      ; 0052d53d | g_INT_01fc8d00
+    MOV EDX,dword ptr [0x01fc8d00]      ; 0052d53d | g_MasterLightCount
     XOR EBX,EBX                         ; 0052d543
     TEST EDX,EDX                        ; 0052d545
     JLE 0x0052d570                      ; 0052d547
@@ -140,7 +140,7 @@ section .text
     TEST EAX,EAX                        ; 0052d568
     JNZ 0x0052d7eb                      ; 0052d56a
         ;   XREF to: 0052d7eb (CONDITIONAL_JUMP)  ; LAB_0052d7eb
-    CMP EBX,dword ptr [0x01fc8d00]      ; 0052d570 | g_INT_01fc8d00
+    CMP EBX,dword ptr [0x01fc8d00]      ; 0052d570 | g_MasterLightCount
         ;   Label: LAB_0052d570
     JNZ 0x0052d59b                      ; 0052d576
         ;   XREF to: 0052d59b (CONDITIONAL_JUMP)  ; LAB_0052d59b
@@ -323,7 +323,7 @@ section .text
     ADD ESP,0xc                         ; 0052d7e3
     JMP 0x0052d475                      ; 0052d7e6
         ;   XREF to: 0052d475 (UNCONDITIONAL_JUMP)  ; LAB_0052d475
-    MOV ECX,dword ptr [0x01fc8d00]      ; 0052d7eb | g_INT_01fc8d00
+    MOV ECX,dword ptr [0x01fc8d00]      ; 0052d7eb | g_MasterLightCount
         ;   Label: LAB_0052d7eb
     INC EBX                             ; 0052d7f1
     ADD ESI,0x4                         ; 0052d7f2

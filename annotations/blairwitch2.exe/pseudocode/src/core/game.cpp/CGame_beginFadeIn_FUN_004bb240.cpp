@@ -9,10 +9,10 @@
 void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004bb240(CGame *this_ptr)
 
 {
-  g_INT_01cb80e0 = 1;
-  g_INT_01cb8110 = g_INT_006141b8 / 2;
-  g_INT_01cb8114 = g_INT_006141bc / 2;
-  g_FLOAT_01cb810c = 0.0;
+  g_IrisFadeType = 1;
+  g_IrisFadeCenterX = g_INT_006141b8 / 2;
+  g_IrisFadeCenterY = g_INT_006141bc / 2;
+  g_IrisFadeRadius = 0.0;
   core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0();
   return;
 }

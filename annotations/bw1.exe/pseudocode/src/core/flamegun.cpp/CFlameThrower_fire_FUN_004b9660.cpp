@@ -43,7 +43,7 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004b9660(CFlameThrower *thi
   CStack_28.x = CStack_34.x;
   *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
        *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + 4);
-  this_ptr_00 = g_CFireEffect_PTR_0061c010;
+  this_ptr_00 = g_CFireEffectPtr;
   *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   core_fire_cpp_CFireEffect_createGunFlames_FUN_004b6f80

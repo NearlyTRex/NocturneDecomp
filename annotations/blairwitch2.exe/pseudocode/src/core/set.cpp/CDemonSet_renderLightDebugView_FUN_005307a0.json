@@ -67,43 +67,43 @@
     },
     {
       "addr": "0061b5bc",
-      "name": "g_INT_ARRAY_0061b5bc",
+      "name": "g_LightDebugScreenX",
       "type": "int[96]",
       "value": null
     },
     {
       "addr": "0061b5c0",
-      "name": "g_INT_ARRAY_0061b5bc[1]",
+      "name": "g_LightDebugScreenX[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b5c4",
-      "name": "g_INT_ARRAY_0061b5bc[2]",
+      "name": "g_LightDebugScreenX[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b73c",
-      "name": "g_INT_ARRAY_0061b73c",
+      "name": "g_LightDebugScreenY",
       "type": "int[96]",
       "value": null
     },
     {
       "addr": "0061b740",
-      "name": "g_INT_ARRAY_0061b73c[1]",
+      "name": "g_LightDebugScreenY[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b744",
-      "name": "g_INT_ARRAY_0061b73c[2]",
+      "name": "g_LightDebugScreenY[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc8e84",
-      "name": "g_INT_01fc8e84",
+      "name": "g_SpotLightCount",
       "type": "int",
       "value": null
     },
@@ -227,17 +227,17 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)g_INT_ARRAY_0061b73c",
+      "match": "(int *)((int)g_LightDebugScreenY",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_INT_ARRAY_0061b73c + iVar4);",
+      "text": "piVar1 = (int *)((int)g_LightDebugScreenY + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)g_INT_ARRAY_0061b5bc",
+      "match": "(int *)((int)g_LightDebugScreenX",
       "severity": "moderate",
-      "text": "piVar2 = (int *)((int)g_INT_ARRAY_0061b5bc + iVar4);",
+      "text": "piVar2 = (int *)((int)g_LightDebugScreenX + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -251,25 +251,25 @@
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(int *)((int)g_INT_ARRAY_0061b73c",
+      "match": "(int *)((int)g_LightDebugScreenY",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_INT_ARRAY_0061b73c + iVar5);",
+      "text": "piVar1 = (int *)((int)g_LightDebugScreenY + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(int *)((int)g_INT_ARRAY_0061b5bc",
+      "match": "(int *)((int)g_LightDebugScreenX",
       "severity": "moderate",
-      "text": "piVar2 = (int *)((int)g_INT_ARRAY_0061b5bc + iVar5);",
+      "text": "piVar2 = (int *)((int)g_LightDebugScreenX + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(uint *)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "match": "(uint *)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6);",
+      "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -281,11 +281,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 33,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6);",
+      "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);",
       "type": "pointer_truncation"
     }
   ]

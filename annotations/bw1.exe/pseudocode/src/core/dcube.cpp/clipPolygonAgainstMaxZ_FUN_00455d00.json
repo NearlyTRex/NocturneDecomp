@@ -51,13 +51,13 @@
     },
     {
       "addr": "0152c120",
-      "name": "g_UINT_0152c120",
+      "name": "g_CubeClipStage5Count",
       "type": "uint",
       "value": null
     },
     {
       "addr": "0152c1e4",
-      "name": "g_UINT_0152c1e4",
+      "name": "g_CubeClippedTriangleCount",
       "type": "uint",
       "value": null
     }
@@ -175,7 +175,7 @@
       "line": 26,
       "match": "DAT_0152c1ec",
       "severity": "mild",
-      "text": "*(float *)(&DAT_0152c1ec + g_UINT_0152c1e4 * 0xc) = vertex1->y;",
+      "text": "*(float *)(&DAT_0152c1ec + g_CubeClippedTriangleCount * 0xc) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -183,7 +183,7 @@
       "line": 39,
       "match": "DAT_0152c1ec",
       "severity": "mild",
-      "text": "*(float *)(&DAT_0152c1ec + g_UINT_0152c1e4 * 0xc) = vertex1->y;",
+      "text": "*(float *)(&DAT_0152c1ec + g_CubeClippedTriangleCount * 0xc) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -191,7 +191,7 @@
       "line": 27,
       "match": "g_FLOAT_0152c1f0",
       "severity": "moderate",
-      "text": "(&g_FLOAT_0152c1f0)[g_UINT_0152c1e4 * 3] = vertex1->z;",
+      "text": "(&g_FLOAT_0152c1f0)[g_CubeClippedTriangleCount * 3] = vertex1->z;",
       "type": "wrong_global"
     },
     {
@@ -199,7 +199,7 @@
       "line": 40,
       "match": "g_FLOAT_0152c1f0",
       "severity": "moderate",
-      "text": "(&g_FLOAT_0152c1f0)[g_UINT_0152c1e4 * 3] = vertex1->z;",
+      "text": "(&g_FLOAT_0152c1f0)[g_CubeClippedTriangleCount * 3] = vertex1->z;",
       "type": "wrong_global"
     }
   ]

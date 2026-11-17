@@ -11,12 +11,12 @@
 // =============================================================================
 
 // CPathMap*[200]
-extern CPathMap* g_CPathMap_PTR_ARRAY_01e4fedc[200];
+extern CPathMap* g_PathMapList[200];
 
 // int
-extern int g_INT_01e4fed4;
-extern int g_INT_01e4fed8;
+extern int g_PathfindingMaxClimbHeight;
+extern int g_PathMapCount;
 
 // uchar
-extern uchar g_UCHAR_01e4fed0;
+extern uchar g_PathMapCacheInitFlag;
 

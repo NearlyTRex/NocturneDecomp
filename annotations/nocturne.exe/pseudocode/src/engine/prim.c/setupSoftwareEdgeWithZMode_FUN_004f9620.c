@@ -18,7 +18,7 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
   int iVar7;
   uint uVar8;
   
-  iVar2 = g_INT_01e52a68;
+  iVar2 = g_SoftwareEdgeCount;
   iVar3 = (end_vertex->projected_vertex).screen_y >> 0x10;
   iVar7 = (start_vertex->projected_vertex).screen_y >> 0x10;
   if (iVar7 != iVar3) {
@@ -30,14 +30,14 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
       start_vertex = end_vertex;
       iVar7 = iVar3;
     }
-    g_SSoftwareEdge_ARRAY_01e52a6c[g_INT_01e52a68].base.y_min = iVar7;
-    iVar3 = g_INT_01e52eec;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.y_max = iVar6;
+    g_SoftwareEdgeBuffer[g_SoftwareEdgeCount].base.y_min = iVar7;
+    iVar3 = g_SoftwareMinScanline;
+    g_SoftwareEdgeBuffer[iVar2].base.y_max = iVar6;
     if (iVar7 < iVar3) {
-      g_INT_01e52eec = iVar7;
+      g_SoftwareMinScanline = iVar7;
     }
-    if (g_INT_01e52ef0 < iVar6) {
-      g_INT_01e52ef0 = iVar6;
+    if (g_SoftwareMaxScanline < iVar6) {
+      g_SoftwareMaxScanline = iVar6;
     }
     uVar4 = (pSVar5->projected_vertex).screen_y - (start_vertex->projected_vertex).screen_y;
     if (uVar4 < 0x10000) {
@@ -51,34 +51,34 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
             (longlong)
             ((pSVar5->projected_vertex).screen_x - (start_vertex->projected_vertex).screen_x);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.x_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.x_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.x_current =
+    g_SoftwareEdgeBuffer[iVar2].base.x_current =
          (start_vertex->projected_vertex).screen_x +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->u - start_vertex->u);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.u_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.u_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.u_current =
+    g_SoftwareEdgeBuffer[iVar2].base.u_current =
          start_vertex->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->v - start_vertex->v);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.v_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.v_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.v_current =
+    g_SoftwareEdgeBuffer[iVar2].base.v_current =
          start_vertex->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->r - start_vertex->r);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.red_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.red_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.red_current =
+    g_SoftwareEdgeBuffer[iVar2].base.red_current =
          start_vertex->r + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->a - start_vertex->a);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.alpha_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.alpha_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.alpha_current =
+    g_SoftwareEdgeBuffer[iVar2].base.alpha_current =
          start_vertex->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     if (g_VertexPreprocessMode != 1) {
       lVar1 = (longlong)iVar7 *
@@ -86,12 +86,12 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
               ((pSVar5->projected_vertex).transformed_z -
               (start_vertex->projected_vertex).transformed_z);
       uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.depth_gradient = uVar4;
+      g_SoftwareEdgeBuffer[iVar2].base.depth_gradient = uVar4;
       lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-      g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.depth_current =
+      g_SoftwareEdgeBuffer[iVar2].base.depth_current =
            (start_vertex->projected_vertex).transformed_z +
            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-      g_INT_01e52a68 = g_INT_01e52a68 + 1;
+      g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
       return;
     }
     if (g_ProcessorType == 0) {
@@ -104,11 +104,11 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
     }
     lVar1 = (longlong)iVar7 * (longlong)(iVar3 - iVar6);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.depth_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.depth_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.depth_current =
+    g_SoftwareEdgeBuffer[iVar2].base.depth_current =
          iVar6 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    g_INT_01e52a68 = g_INT_01e52a68 + 1;
+    g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
   }
   return;
 }

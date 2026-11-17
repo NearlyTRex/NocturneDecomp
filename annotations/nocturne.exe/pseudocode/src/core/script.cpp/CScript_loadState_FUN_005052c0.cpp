@@ -34,7 +34,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
     _fscanf(file_handle,"%d\n",&g_CGamePtr->allow_enemy_attack_flag);
   }
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,"%g\n",&g_FLOAT_01e56c20);
+  _fscanf(file_handle,"%g\n",&g_ScriptTimeScale);
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,"%d\n",&this_ptr->next_cmd);
   _fgets(local_118,0xff,file_handle);

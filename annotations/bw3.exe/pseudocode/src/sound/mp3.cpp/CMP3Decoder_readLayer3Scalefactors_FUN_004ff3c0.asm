@@ -38,14 +38,14 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 00503520
 ;
 ; Referenced Globals:
-;   int[5] g_INT_ARRAY_006015c8
-;   undefined4 g_INT_ARRAY_006015c8[1]
-;   undefined4 g_INT_ARRAY_006015c8[2]
-;   int[3] g_INT_ARRAY_006015dc
-;   undefined4 g_INT_ARRAY_006015dc[1]
-;   undefined4 g_INT_ARRAY_006015dc[2]
-;   int[2][16] g_INT_ARRAY_ARRAY_006015e8
-;   undefined4 g_INT_ARRAY_ARRAY_006015e8[1][0]
+;   int[5] g_Layer3LongBandGroupCounts
+;   undefined4 g_Layer3LongBandGroupCounts[1]
+;   undefined4 g_Layer3LongBandGroupCounts[2]
+;   int[3] g_Layer3ShortBandGroupCounts
+;   undefined4 g_Layer3ShortBandGroupCounts[1]
+;   undefined4 g_Layer3ShortBandGroupCounts[2]
+;   int[2][16] g_Layer3ScalefacLengths
+;   undefined4 g_Layer3ScalefacLengths[1][0]
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_004fd810
@@ -109,11 +109,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 004ff458
     MOV ECX,dword ptr [ESP + 0x4]       ; 004ff45c
     MOV dword ptr [ESP + 0x38],EAX      ; 004ff460
-    MOV EBX,dword ptr [EBX + 0x6015c8]  ; 004ff464 | g_INT_ARRAY_006015c8 | g_INT_ARRAY_006015c8[1]
+    MOV EBX,dword ptr [EBX + 0x6015c8]  ; 004ff464 | g_Layer3LongBandGroupCounts | g_Layer3LongBandGroupCounts[1]
     CMP EDX,0x2                         ; 004ff46a
     SETGE byte ptr [ESP + 0x54]         ; 004ff46d
     LEA EBP,[EBX*0x4 + 0x0]             ; 004ff472
-    MOV EDX,dword ptr [EAX + 0x6015cc]  ; 004ff479 | g_INT_ARRAY_006015c8[1] | g_INT_ARRAY_006015c8[2]
+    MOV EDX,dword ptr [EAX + 0x6015cc]  ; 004ff479 | g_Layer3LongBandGroupCounts[1] | g_Layer3LongBandGroupCounts[2]
     ADD EBP,ECX                         ; 004ff47f
     CMP EBX,EDX                         ; 004ff481
     JGE 0x004ff4b9                      ; 004ff483
@@ -124,7 +124,7 @@ section .text
     MOV EDX,EAX                         ; 004ff48b
     SHL EDX,0x6                         ; 004ff48d
     MOV EAX,dword ptr [ESI + 0xc]       ; 004ff490
-    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x6015e8] ; 004ff493 | g_INT_ARRAY_ARRAY_006015e8
+    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x6015e8] ; 004ff493 | g_Layer3ScalefacLengths
     PUSH ECX                            ; 004ff49a
     PUSH EDI                            ; 004ff49b
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004fd810 ; 004ff49c
@@ -133,7 +133,7 @@ section .text
     MOV dword ptr [EBP],EAX             ; 004ff4a4
     MOV EAX,dword ptr [ESP + 0x38]      ; 004ff4a7
     INC EBX                             ; 004ff4ab
-    MOV EDX,dword ptr [EAX + 0x6015cc]  ; 004ff4ac | g_INT_ARRAY_006015c8[1]
+    MOV EDX,dword ptr [EAX + 0x6015cc]  ; 004ff4ac | g_Layer3LongBandGroupCounts[1]
     ADD EBP,0x4                         ; 004ff4b2
     CMP EBX,EDX                         ; 004ff4b5
     JL 0x004ff485                       ; 004ff4b7
@@ -180,7 +180,7 @@ section .text
     ADD EBP,0x20                        ; 004ff523
     MOV EAX,dword ptr [ESI + 0xc]       ; 004ff526
         ;   Label: LAB_004ff526
-    MOV EDX,dword ptr [EAX*0x4 + 0x6015e8] ; 004ff529 | g_INT_ARRAY_ARRAY_006015e8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6015e8] ; 004ff529 | g_Layer3ScalefacLengths
     PUSH EDX                            ; 004ff530
     PUSH EDI                            ; 004ff531
     ADD EBX,0x4                         ; 004ff532
@@ -214,7 +214,7 @@ section .text
     ADD EBX,EAX                         ; 004ff587
     MOV EAX,dword ptr [ESI + 0xc]       ; 004ff589
         ;   Label: LAB_004ff589
-    MOV EDX,dword ptr [EAX*0x4 + 0x6015e8] ; 004ff58c | g_INT_ARRAY_ARRAY_006015e8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6015e8] ; 004ff58c | g_Layer3ScalefacLengths
     PUSH EDX                            ; 004ff593
     PUSH EDI                            ; 004ff594
     ADD EBX,0x34                        ; 004ff595
@@ -257,7 +257,7 @@ section .text
     ADD EBX,ECX                         ; 004ff604
     MOV EAX,dword ptr [ESI + 0xc]       ; 004ff606
         ;   Label: LAB_004ff606
-    MOV EDX,dword ptr [EAX*0x4 + 0x601628] ; 004ff609 | g_INT_ARRAY_ARRAY_006015e8[1][0]
+    MOV EDX,dword ptr [EAX*0x4 + 0x601628] ; 004ff609 | g_Layer3ScalefacLengths[1][0]
     PUSH EDX                            ; 004ff610
     PUSH EDI                            ; 004ff611
     ADD EBX,0x34                        ; 004ff612
@@ -305,8 +305,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 004ff67c
         ;   Label: LAB_004ff67c
     MOV EBP,dword ptr [ESP + 0x34]      ; 004ff680
-    MOV EAX,dword ptr [EAX + 0x6015dc]  ; 004ff684 | g_INT_ARRAY_006015dc | g_INT_ARRAY_006015dc[1]
-    MOV ECX,dword ptr [EBP + 0x6015e0]  ; 004ff68a | g_INT_ARRAY_006015dc[1] | g_INT_ARRAY_006015dc[2]
+    MOV EAX,dword ptr [EAX + 0x6015dc]  ; 004ff684 | g_Layer3ShortBandGroupCounts | g_Layer3ShortBandGroupCounts[1]
+    MOV ECX,dword ptr [EBP + 0x6015e0]  ; 004ff68a | g_Layer3ShortBandGroupCounts[1] | g_Layer3ShortBandGroupCounts[2]
     MOV dword ptr [ESP + 0x4c],EAX      ; 004ff690
     MOV EAX,dword ptr [ESP + 0x20]      ; 004ff694
     MOV EBX,dword ptr [ESP + 0x4c]      ; 004ff698
@@ -332,7 +332,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x50]      ; 004ff6d6
     SHL EAX,0x2                         ; 004ff6da
     ADD EAX,EDX                         ; 004ff6dd
-    MOV ECX,dword ptr [EAX + 0x6015e8]  ; 004ff6df | g_INT_ARRAY_ARRAY_006015e8
+    MOV ECX,dword ptr [EAX + 0x6015e8]  ; 004ff6df | g_Layer3ScalefacLengths
     PUSH ECX                            ; 004ff6e5
     PUSH EDI                            ; 004ff6e6
     ADD EBX,0x34                        ; 004ff6e7
@@ -350,7 +350,7 @@ section .text
     ADD EBX,0x4                         ; 004ff709
     ADD EBP,0x4                         ; 004ff70c
     INC EAX                             ; 004ff70f
-    MOV ECX,dword ptr [EDX + 0x6015e0]  ; 004ff710 | g_INT_ARRAY_006015dc[1]
+    MOV ECX,dword ptr [EDX + 0x6015e0]  ; 004ff710 | g_Layer3ShortBandGroupCounts[1]
     MOV dword ptr [ESP + 0x44],EBX      ; 004ff716
     MOV dword ptr [ESP + 0x48],EBP      ; 004ff71a
     MOV dword ptr [ESP + 0x4c],EAX      ; 004ff71e

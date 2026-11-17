@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Credits_005c7914
 ;   TerminatedCString s_Option_Menu_005c791c
 ;   CGame* g_CGamePtr = 01d2130c
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   CKeys* g_CKeysPtr = 01d70a78
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CGameInstance.game_control
@@ -167,7 +167,7 @@ section .text
         ;   Label: caseD_0
     PUSH 0x1                            ; 004ea3de
         ;   Label: default
-    MOV EAX,[0x00600284]                ; 004ea3e0 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004ea3e0 | g_CKeysPtr
     PUSH EAX                            ; 004ea3e5 | g_PTR_01d70a78
     MOV EBX,dword ptr [EAX]             ; 004ea3e6 | g_PTR_01d70a78
     CALL dword ptr [EBX + 0x4]          ; 004ea3e8

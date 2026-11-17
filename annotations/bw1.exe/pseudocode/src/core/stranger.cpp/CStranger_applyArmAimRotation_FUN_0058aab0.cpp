@@ -140,7 +140,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStran
          *(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4);
     *puVar3 = *puVar2;
     puVar3[(uint)bVar6 * -2 + 1] = puVar2[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_slerpQuaternion_FUN_005b7940(&g_CQuaternion4f_006081e0,pCVar1,fVar8,&local_9c);
+    core_xform_cpp_slerpQuaternion_FUN_005b7940(&g_IdentityQuaternion,pCVar1,fVar8,&local_9c);
     pCVar1 = &local_18c;
     local_15c.w = local_9c.w;
     puVar3 = (uint *)((int)&local_15c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

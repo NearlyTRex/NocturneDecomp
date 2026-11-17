@@ -63,12 +63,12 @@ section .text
     PUSH EAX                            ; 004244cf
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004244d0
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005ad1e8]      ; 004244d5 | g_INT_005ad1e8
+    MOV EDX,dword ptr [0x005ad1e8]      ; 004244d5 | g_CCharacterClassVersion
     ADD ESP,0x8                         ; 004244db
     CMP EDX,0x2                         ; 004244de
     JL 0x00424560                       ; 004244e1
         ;   XREF to: 00424560 (CONDITIONAL_JUMP)  ; LAB_00424560
-    CMP dword ptr [0x00763e88],0x1      ; 004244e7 | g_INT_00763e88
+    CMP dword ptr [0x00763e88],0x1      ; 004244e7 | g_ActorReadingMode
     JZ 0x00424600                       ; 004244ee
         ;   XREF to: 00424600 (CONDITIONAL_JUMP)  ; LAB_00424600
     XOR ESI,ESI                         ; 004244f4
@@ -110,7 +110,7 @@ section .text
     JL 0x0042453f                       ; 0042455b
         ;   XREF to: 0042453f (CONDITIONAL_JUMP)  ; LAB_0042453f
     LEA EAX,[EAX]                       ; 0042455d
-    CMP dword ptr [0x005ad1e8],0x3      ; 00424560 | g_INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x3      ; 00424560 | g_CCharacterClassVersion
         ;   Label: LAB_00424560
     JL 0x0042457d                       ; 00424567
         ;   XREF to: 0042457d (CONDITIONAL_JUMP)  ; LAB_0042457d
@@ -120,7 +120,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 00424575
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0042457a
-    CMP dword ptr [0x005ad1e8],0x4      ; 0042457d | g_INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x4      ; 0042457d | g_CCharacterClassVersion
         ;   Label: LAB_0042457d
     JL 0x004245c2                       ; 00424584
         ;   XREF to: 004245c2 (CONDITIONAL_JUMP)  ; LAB_004245c2
@@ -142,7 +142,7 @@ section .text
     CALL core_actor.cpp_archiveClothList_FUN_0040cf70 ; 004245ba
         ;   XREF to: 0040cf70 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveClothList_FUN_0040cf70(CClothList * cloth_list, char * property_name)
     ADD ESP,0x8                         ; 004245bf
-    CMP dword ptr [0x005ad1e8],0x5      ; 004245c2 | g_INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x5      ; 004245c2 | g_CCharacterClassVersion
         ;   Label: LAB_004245c2
     JL 0x004245df                       ; 004245c9
         ;   XREF to: 004245df (CONDITIONAL_JUMP)  ; LAB_004245df
@@ -152,7 +152,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004245d7
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004245dc
-    CMP dword ptr [0x005ad1e8],0x6      ; 004245df | g_INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x6      ; 004245df | g_CCharacterClassVersion
         ;   Label: LAB_004245df
     JGE 0x00424695                      ; 004245e6
         ;   XREF to: 00424695 (CONDITIONAL_JUMP)  ; LAB_00424695

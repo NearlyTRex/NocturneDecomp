@@ -26,7 +26,7 @@
 ;   float g_FLOAT_005d5482 = 0.2000000
 ;   float g_FLOAT_005f64e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   int g_INT_006141e4 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
@@ -69,7 +69,7 @@ section .text
     FILD dword ptr [EAX + 0x8]          ; 00497766
     FMUL double ptr [0x005d5472]        ; 00497769 | g_DOUBLE_005d5472
     FLD double ptr [0x005d547a]         ; 0049776f | g_DOUBLE_005d547a
-    FILD dword ptr [0x006141e4]         ; 00497775 | g_INT_006141e4
+    FILD dword ptr [0x006141e4]         ; 00497775 | g_ProjectionScale
     FMUL ST1                            ; 0049777b
     FDIVP ST2,ST0                       ; 0049777d
     FILD dword ptr [0x01c35e38]         ; 0049777f | g_INT_01c35e38

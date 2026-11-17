@@ -200,13 +200,13 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bfee0(CGame *this_ptr)
   } while (cVar2 != '\0');
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
   iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
-                    (this_ptr_00,&stack0xfffffab4,g_CHAR_ARRAY_01d1cf20,0x14,0x100,0xc0);
+                    (this_ptr_00,&stack0xfffffab4,g_ActStatsTextBuffer2,0x14,0x100,0xc0);
   iVar6 = 0;
   local_1c = iVar4;
   local_20 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(this_ptr_00,0x58);
   y = 0xf0;
   if (0 < iVar4) {
-    pcVar11 = g_CHAR_ARRAY_01d1cf20;
+    pcVar11 = g_ActStatsTextBuffer2;
     do {
       iVar6 = iVar6 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0

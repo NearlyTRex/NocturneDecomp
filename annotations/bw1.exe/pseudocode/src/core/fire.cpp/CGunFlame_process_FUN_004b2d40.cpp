@@ -39,7 +39,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004b2d40(CGunFlame *this_ptr)
     iVar6 = core_actor_cpp_randomChance_FUN_0040cd00(fVar4 * fVar2);
     if (iVar6 != 0) {
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                (g_CFireEffect_PTR_0061c010,position,0.5,(CVector3f *)0x0,0xffff);
+                (g_CFireEffectPtr,position,0.5,(CVector3f *)0x0,0xffff);
     }
     if ((this_ptr->flame_type != 0) &&
        (iVar6 = core_actor_cpp_randomChance_FUN_0040cd00(fVar4), iVar6 != 0)) {

@@ -76,7 +76,7 @@ LAB_005a6ba2:
     core_morph_cpp_CMorph_render_FUN_005237e0(this_ptr_01,this_ptr->morph_t);
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042f3c0((CCharacter *)this_ptr);
-  if (g_INT_01d39d34 != 0) {
+  if (g_RenderMotionDebug != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
                       (g_CDemonRenderer_PTR_00612560);
     if (iVar1 == 0) {

@@ -5,10 +5,10 @@
 // =============================================================================
 
 // BYTE
-BYTE g_BYTE_005c1d0f = 0;
+BYTE g_WindowsMinorVersion = 0;
 
 // CTerrain*
-CTerrain* g_CTerrain_PTR_005c1144 = (CTerrain*)&g_CTerrain_02dd10c8;
+CTerrain* g_CTerrainPtr = (CTerrain*)&g_CTerrainInstance;
 
 // CTextureList*
 CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
@@ -17,24 +17,24 @@ CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
 CWater* g_CWaterPtr = (CWater*)&g_CWaterInstance;
 
 // CWeather*
-CWeather* g_CWeather_PTR_005c15b8 = (CWeather*)&g_CWeather_02ddf9f0;
+CWeather* g_CWeatherPtr = (CWeather*)&g_CWeatherInstance;
 
 // DWORD
-DWORD g_DWORD_005c1ccc = 0;
-DWORD g_DWORD_005c1cf0 = 0;
-DWORD g_DWORD_005c20cc = 0xF4;
+DWORD g_WinMainCmdShow = 0;
+DWORD g_StackAllocSize = 0;
+DWORD g_RuntimeBufferSize = 0xF4;
 
 // GUID
 GUID g_IID_IDirectSound3DListener = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
 GUID g_IID_IDirectSound3DBuffer = {0x279AFA86, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
 
 // HANDLE
-HANDLE g_HANDLE_005c20d0 = (HANDLE)0xFFFFFFFF;
-HANDLE g_HANDLE_005c20d4 = (HANDLE)0xFFFFFFFF;
+HANDLE g_ConsoleInputHandle = (HANDLE)0xFFFFFFFF;
+HANDLE g_ConsoleOutputHandle = (HANDLE)0xFFFFFFFF;
 
 // Heap*
-Heap* g_Heap_PTR_005c1680 = nullptr;
-Heap* g_Heap_PTR_005c1684 = nullptr;
+Heap* g_MainHeap = nullptr;
+Heap* g_SecondaryHeap = nullptr;
 
 // RuntimeHandlerEntry
 RuntimeHandlerEntry g_FirstInitHandler = {
@@ -47,7 +47,7 @@ RuntimeHandlerEntry RuntimeHandlerEntry_005c26ce = {
     .priority = 0x01,
     .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_00563d13
 };
-RuntimeHandlerEntry RuntimeHandlerEntry_005c26f8 = {
+RuntimeHandlerEntry g_ExitHandlerTableEnd = {
     .status = 0xE0,
     .priority = 0x0E,
     .func = (RUNTIME_HANDLER_FUNC *)0x4340D7B7
@@ -892,7 +892,7 @@ RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6] = {
 };
 
 // SIGNAL_HANDLER_TYPE[26]
-SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[26] = {
+SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26] = {
     0x00000001, -1, 0x00000002, -1, 0x00000001, -1, 0x00000002, -1073741795,
     0x00000002, -1073741510, 0x00000002, -1073741819, 0x00000002, -1073741510, 0x00000002, -1073741510,
     0x00000001, -1, 0x00000001, -1, 0x00000001, -1, 0x00000002, -1073741676,
@@ -900,10 +900,10 @@ SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[26] = {
 };
 
 // SIOControlBlock*
-SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = nullptr;
+SIOControlBlock* g_IOControlBlock = nullptr;
 
 // SMRGLPrimitiveQuad
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_005c1374 = {
+SMRGLPrimitiveQuad g_WaterRenderQuad = {
     .base = {
         .base = {.type = 0x00000000, .count = 0x00000004},
         .surface_normal = {
@@ -933,25 +933,25 @@ SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_005c1374 = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic g_SMRGLTextureBasic_005c15bc = {
+SMRGLTextureBasic g_RainDropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINDRP1.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_005c15d4 = {
+SMRGLTextureBasic g_RainSplashTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINSPLT.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_005c15ec = {
+SMRGLTextureBasic g_SnowflakeTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_005c1618 = {
+SMRGLTextureBasic g_WerewolfEyeGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
 
 // SMRGLTextureBasic[16]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_005c11f4[16] = {
+SMRGLTextureBasic g_WaterTextures[16] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "WATER0.RAW"
@@ -1026,12 +1026,12 @@ TerminatedCString s_EST_005c1e08 = "EST";
 TerminatedCString s_EDT_005c1e89 = "EDT";
 
 // WCHAR*
-WCHAR* g_WCHAR_PTR_005c1cd8 = nullptr;
-WCHAR* g_WCHAR_PTR_005c1cdc = nullptr;
-WCHAR* g_WCHAR_PTR_005c1ce0 = nullptr;
+WCHAR* g_CommandLineArgsW = nullptr;
+WCHAR* g_ExeFileNameW = nullptr;
+WCHAR* g_DllFileNameW = nullptr;
 
 // WORD
-WORD g_WORD_005c1d11 = 0;
+WORD g_WindowsPlatformVersion = 0;
 
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_CTextureListDestructorNode = {
@@ -1048,10 +1048,10 @@ WatcomStaticDestructorNode g_CWaterDestructorNode = {
 };
 
 // WatcomStaticDestructorNode*
-WatcomStaticDestructorNode* g_WatcomStaticDestructorNode_PTR_005c1f50 = nullptr;
+WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
 // _FILE
-_FILE g_FILE_005c18ae = {
+_FILE g_StdoutLogFile = {
     ._ptr = nullptr,
     ._cnt = 0x00000000,
     ._link = nullptr,
@@ -1071,24 +1071,24 @@ _FILE g_FILE_005c18c8 = {
 };
 
 // _FILE*
-_FILE* g_FILE_PTR_005c1894 = nullptr;
+_FILE* g_StaticFilePoolStart = nullptr;
 
 // byte
 byte g_BYTE_005c1794 = 0;
 byte g_BYTE_005c1795 = 0;
-byte g_BYTE_005c1d10 = 0;
-byte g_BYTE_005c1d98 = 0;
-byte g_BYTE_005c1f20 = 0x1;
-byte g_BYTE_005c2050 = 0;
-byte g_BYTE_005c2140 = 0;
+byte g_WindowsMajorVersion = 0;
+byte g_UseSoftwareMath = 0;
+byte g_TimezoneInitFlags = 0x1;
+byte g_DebuggerIsAttached = 0;
+byte g_ConsoleHandlerRegistered = 0;
 
 // byte[16]
-byte g_BYTE_ARRAY_005c3f68[16] = {0x00, 0x01, 0x00, 0x00, 0x04, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x0D, 0x00, 0x00};
+byte g_IEEE754ExponentClassTable[16] = {0x00, 0x01, 0x00, 0x00, 0x04, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x0D, 0x00, 0x00};
 
 // char*
-char* g_CHAR_PTR_005c1cd0 = nullptr;
-char* g_CHAR_PTR_005c1cd4 = nullptr;
-char* g_CHAR_PTR_005c1d09 = nullptr;
+char* g_ExeFileNameA = nullptr;
+char* g_DllFileNameA = nullptr;
+char* g_EnvironmentStrings = nullptr;
 
 // char[145]
 char g_CHAR_ARRAY_005c2170[145] = "`.W";
@@ -1097,13 +1097,13 @@ char g_CHAR_ARRAY_005c2170[145] = "`.W";
 char g_RendererDllPath[256] = "trid3d.dll";
 
 // char[260]
-char g_CHAR_ARRAY_005c1b24[260] = "";
+char g_TempDirectoryBuffer[260] = "";
 
 // char[4]
 char g_CHAR_ARRAY_005c1a9c[4] = {(char)0x61, (char)0x00, (char)0x00, (char)0x00};
 
 // dst_rule
-dst_rule g_dst_rule_005c1dc0 = {
+dst_rule g_DstStartRule = {
     .seconds = 0x00000000,
     .minutes = 0x00000000,
     .hours = 0x00000002,
@@ -1119,57 +1119,57 @@ int g_SystemInitialized = 0x1;
 int g_VideoMemorySize = 0x1;
 int g_MaxTextureSize = 0x40;
 int g_FullScreenQuadDepth = 0x3C000;
-int g_INT_005c0f90 = 0x1;
-int INT_005c0ff0 = 0x9;
-int INT_005c10b0 = 0x2;
-int INT_005c1130 = 0xB;
-int INT_005c1160 = 0x2;
-int INT_005c1174 = 0x5;
-int INT_005c1188 = 0x4;
-int INT_005c11a0 = 0x3;
-int g_INT_005c11c4 = 0x4;
-int g_INT_005c11f0 = 0x2000;
-int g_INT_005c154c = 0x6;
-int INT_005c1578 = 0x2;
-int INT_005c1590 = 0x7;
-int INT_005c1614 = 0x6;
+int g_CSpikeClassVersion = 0x1;
+int g_CStrangerClassVersion = 0x9;
+int g_CTentacleClassVersion = 0x2;
+int g_CTriggerClassVersion = 0xB;
+int g_CTurretClassVersion = 0x2;
+int g_CTVBatClassVersion = 0x5;
+int g_CVampireBossVersion = 0x4;
+int g_CVehicleClassVersion = 0x3;
+int g_CCryptVesselClassVersion = 0x4;
+int g_WaterFrameDuration = 0x2000;
+int g_CWaterActorVersion = 0x6;
+int g_CWayPointClassVersion = 0x2;
+int g_CWeaponClassVersion = 0x7;
+int g_CWerewolfClassVersion = 0x6;
 int INT_005c1654 = 0x8;
-int g_INT_005c1660 = -1;
-int g_INT_005c1664 = 0x1;
+int g_WindowActive = -1;
+int g_ForceMessagePump = 0x1;
 int INT_005c1668 = -1;
-int INT_005c166c = 0xB;
+int g_CZombieClassVersion = 0xB;
 int g_INT_005c1688 = 0;
 int g_INT_005c1aa0 = 0x100;
 int g_INT_005c1ab8 = -1;
 int g_INT_005c1cc8 = 0;
-int g_INT_005c1cf8 = 0;
+int g_ConsoleInitializationFlag = 0;
 int g_INT_005c1d50 = 0;
-int g_INT_005c1de4 = 0;
-int g_INT_005c1de8 = 0;
-int g_INT_005c1dec = 0x1;
-int g_INT_005c1f14 = 0x4650;
-int g_INT_005c1f18 = 0x1;
-int g_INT_005c1f1c = 0xE10;
+int g_DstTransitionSecond = 0;
+int g_DstTransitionMinute = 0;
+int g_DstTransitionHour = 0x1;
+int g_TimezoneOffset = 0x4650;
+int g_DaylightSavingActive = 0x1;
+int g_DaylightSavingOffset = 0xE10;
 int g_INT_005c1f58 = 0;
 int g_INT_005c1f5c = -2147483648;
 int g_INT_005c1fe8 = 0x1;
-int g_INT_005c1fec = 0x10000;
-int g_INT_005c204c = 0;
+int g_HeapFlags = 0x10000;
+int g_ConsoleInputState = 0;
 int g_INT_005c206c = 0;
 
 // short
-short g_SHORT_005c1f4c = 0;
+short g_PureVirtualCallFlag = 0;
 
 // uint
-uint g_UINT_005c1d13 = 0;
-uint g_UINT_005c1d17 = 0;
-uint g_UINT_005c1d1b = 0;
-uint g_UINT_005c1d1f = 0;
-uint g_UINT_005c1f90 = 0x14;
-uint g_UINT_005c2144 = 0x1;
+uint g_WindowsPlatformVersionExt = 0;
+uint g_WindowsVersionLow = 0;
+uint g_WindowsVersionMid = 0;
+uint g_WindowsVersionCombined = 0;
+uint g_MaxHandleCount = 0x14;
+uint g_CodePage = 0x1;
 
 // uint*
-uint* g_UINT_PTR_005c1cec = nullptr;
+uint* g_HeapBound = nullptr;
 
 // undefined1
 undefined1 DAT_005c1b23 = 0x00;
@@ -1182,20 +1182,20 @@ undefined4 DAT_005c1e00 = 0x00000000;
 undefined4 DAT_005c1e04 = 0x00000000;
 
 // void*
-void* g_PTR_005c1b04 = nullptr;
-void* g_PTR_005c1cf4 = nullptr;
+void* g_SpecialExitHandler = nullptr;
+void* g_CrtStackBuffer = nullptr;
 void* g_PTR_005c1d23 = (void*)crt_unknown_c_FUN_0056ade4;
-void* g_PTR_005c1d54 = nullptr;
-void* g_PTR_005c1d58 = nullptr;
+void* g_IsSpecialDeviceFuncPtr = nullptr;
+void* g_SpecialDeviceCleanupFunc = nullptr;
 void* g_PTR_005c1d5c = nullptr;
-void* g_PTR_005c1d60 = nullptr;
-void* g_PTR_005c1d7c = nullptr;
-void* g_PTR_005c1d80 = nullptr;
-void* g_PTR_005c1d88 = nullptr;
-void* g_PTR_005c1d90 = nullptr;
+void* g_SpecialDeviceCloseFunc = nullptr;
+void* g_SpecialDeviceReadFuncPtr = nullptr;
+void* g_SpecialDeviceWriteFuncPtr = nullptr;
+void* g_SpecialConsoleInputHandler = nullptr;
+void* g_SpecialConsoleOutputHandler = nullptr;
 void* g_PTR_005c1d94 = nullptr;
-void* g_PTR_005c1f6c = nullptr;
-void* g_PTR_005c1f70 = nullptr;
+void* g_UserExceptionFilter = nullptr;
+void* g_ExceptionCleanup = nullptr;
 void* g_PTR_005c2168 = (void*)crt_unknown_c_FUN_00573ed0;
 void* g_PTR_005c216c = (void*)crt_unknown_c_FUN_00573fc8;
 void* g_PTR_005c3f84 = (void*)crt_unknown_c_FUN_0056bf71;

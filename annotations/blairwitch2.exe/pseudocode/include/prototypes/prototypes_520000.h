@@ -52,7 +52,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this
 char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_00521ff0(CScript *this_ptr,int *error_line_out,int min_error_line);
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00522200(CScript *this_ptr);
-int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *param_2);
+int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *time_remaining);
 float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00529750(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 int __cdecl core_script_cpp_CScript_processTimer_FUN_00529910(CScript *this_ptr,float delta_time,float *timer_value);
 void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00529990(CScript *this_ptr,CDemonActor *actor);

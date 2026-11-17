@@ -16,35 +16,35 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00407570(SMRGLHeader
   
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar2 != 0) {
-    if (g_INT_01c51d00 == 0) {
+    if (g_MMXSupported == 0) {
       if (g_INT_0061b4a0 == 0x20) {
-        g_PTR_01c4f02c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03;
       }
       else {
-        g_PTR_01c4f02c = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39;
       }
     }
     else if (g_INT_0061b4a0 == 0x20) {
-      g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
     }
     else {
-      g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
     }
-    g_BIT_INTEGER32_01c51d14.dword = render_flags;
+    g_RenderStateFlags.dword = render_flags;
     if ((render_flags & 0x10U) != 0) {
-      g_INT_01c4f024 =
+      g_CurrentLightingValue =
            engine_light_cpp_calculateLighting_FUN_004ffd40
                      ((prim->surface_normal).A.i,(prim->surface_normal).B.i,
                       (prim->surface_normal).C.i);
     }
-    g_INT_01c51d18 = render_state_flags;
+    g_VertexPreprocessMode = render_state_flags;
     if (render_state_flags == 0) {
       if ((render_flags & 0xc0U) != 0) {
-        g_INT_01c51d18 = 1;
+        g_VertexPreprocessMode = 1;
       }
     }
     else {
-      g_INT_01c51d18 = 5;
+      g_VertexPreprocessMode = 5;
     }
     iVar2 = 0;
     if (0 < (prim->base).count) {
@@ -52,7 +52,7 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00407570(SMRGLHeader
       pSVar3 = prim;
       do {
         iVar1 = pSVar3[1].base.type;
-        *(int *)((int)g_INT_ARRAY_00713a98 + iVar4) = iVar1;
+        *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
         g_SRenderVertex_ARRAY_00629014[iVar1].u = pSVar3[1].base.count;
         iVar4 = iVar4 + 4;
         g_SRenderVertex_ARRAY_00629014[iVar1].v = (int)pSVar3[1].surface_normal.A;
@@ -60,11 +60,12 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00407570(SMRGLHeader
         pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
       } while (iVar2 < (prim->base).count);
     }
-    if (g_INT_01c4f028 == 0) {
-      engine_clipper_c_clipPolygonToViewport_FUN_0043de60((prim->base).count,g_INT_ARRAY_00713a98);
+    if (g_AdvancedClippingEnabled == 0) {
+      engine_clipper_c_clipPolygonToViewport_FUN_0043de60
+                ((prim->base).count,g_ProcessedVertexIndices);
       return;
     }
-    engine_clipper_c_clipAndRasterize_FUN_0043cbf0((prim->base).count,g_INT_ARRAY_00713a98);
+    engine_clipper_c_clipAndRasterize_FUN_0043cbf0((prim->base).count,g_ProcessedVertexIndices);
   }
   return;
 }

@@ -11,5 +11,5 @@
 // =============================================================================
 
 // SCoronaLightCache
-extern SCoronaLightCache g_SCoronaLightCache_0126e7a8;
+extern SCoronaLightCache g_CoronaLightCache;
 

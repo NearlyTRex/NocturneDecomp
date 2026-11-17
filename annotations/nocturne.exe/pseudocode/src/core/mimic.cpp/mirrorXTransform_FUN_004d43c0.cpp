@@ -11,7 +11,7 @@ void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
 {
   engine_matrix_c_matrixPush_FUN_004cdac0();
   g_RelativeX = -g_RelativeX;
-  g_INT_01c039dc = -g_INT_01c039dc;
+  g_LightDirectionX = -g_LightDirectionX;
   g_TransformMatrix.m[0].x = -g_TransformMatrix.m[0].x;
   g_TransformMatrix.m[0].y = -g_TransformMatrix.m[0].y;
   g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;

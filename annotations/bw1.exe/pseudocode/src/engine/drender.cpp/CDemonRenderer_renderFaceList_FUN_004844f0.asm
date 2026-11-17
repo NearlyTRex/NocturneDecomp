@@ -21,13 +21,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db451
 ;   TerminatedCString s_CDemonRenderer_demonGZFa_005db467
-;   SMRGLPrimitiveQuad*[2000] g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568
+;   SMRGLPrimitiveQuad*[2000] g_VisibleFacePointers
 ;   int g_INT_0061b4a0 = 0x8
-;   int g_INT_00713a7c
-;   void* g_PTR_01c4f02c
+;   int g_CullingMode
+;   void* g_ScanlineRenderFunc
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
-;   int g_INT_01c51d18
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -122,7 +122,7 @@ section .text
         ;   Label: LAB_0048456e
     JNZ 0x00484549                      ; 00484572
         ;   XREF to: 00484549 (CONDITIONAL_JUMP)  ; LAB_00484549
-    CMP dword ptr [0x00713a7c],0x0      ; 00484574 | g_INT_00713a7c
+    CMP dword ptr [0x00713a7c],0x0      ; 00484574 | g_CullingMode
     JZ 0x00484549                       ; 0048457b
         ;   XREF to: 00484549 (CONDITIONAL_JUMP)  ; LAB_00484549
     CMP dword ptr [ESI + 0x4],0x0       ; 0048457d
@@ -131,13 +131,13 @@ section .text
     CMP dword ptr [0x0061b4a0],0x20     ; 00484587 | g_INT_0061b4a0
     JNZ 0x004846e6                      ; 0048458e
         ;   XREF to: 004846e6 (CONDITIONAL_JUMP)  ; LAB_004846e6
-    MOV dword ptr [0x01c4f02c],0x57de01 ; 00484594 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57de01 ; 00484594 | g_ScanlineRenderFunc
     MOV EAX,dword ptr [ESP + 0x34]      ; 0048459e
         ;   Label: LAB_0048459e
     MOV EBP,0x6                         ; 004845a2
-    MOV [0x01c51d14],EAX                ; 004845a7 | g_BIT_INTEGER32_01c51d14
+    MOV [0x01c51d14],EAX                ; 004845a7 | g_RenderStateFlags
     MOV EAX,[0x01c50948]                ; 004845ac | g_INT_01c50948
-    MOV dword ptr [0x01c51d18],EBP      ; 004845b1 | g_INT_01c51d18
+    MOV dword ptr [0x01c51d18],EBP      ; 004845b1 | g_VertexPreprocessMode
     TEST EAX,EAX                        ; 004845b7
     JNZ 0x004846f5                      ; 004845b9
         ;   XREF to: 004846f5 (CONDITIONAL_JUMP)  ; LAB_004846f5
@@ -216,9 +216,9 @@ section .text
         ;   XREF to: 004845bf (UNCONDITIONAL_JUMP)  ; LAB_004845bf
     MOV ECX,0x486e26                    ; 0048468e
         ;   Label: LAB_0048468e
-    MOV [0x01c51d14],EAX                ; 00484693 | g_BIT_INTEGER32_01c51d14
-    MOV [0x01c51d18],EAX                ; 00484698 | g_INT_01c51d18
-    MOV dword ptr [0x01c4f02c],ECX      ; 0048469d | g_PTR_01c4f02c
+    MOV [0x01c51d14],EAX                ; 00484693 | g_RenderStateFlags
+    MOV [0x01c51d18],EAX                ; 00484698 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],ECX      ; 0048469d | g_ScanlineRenderFunc
     TEST EDI,EDI                        ; 004846a3
     JLE 0x00484530                      ; 004846a5
         ;   XREF to: 00484530 (CONDITIONAL_JUMP)  ; LAB_00484530
@@ -249,7 +249,7 @@ section .text
     POP ESI                             ; 004846e3
     POP EBX                             ; 004846e4
     RET                                 ; 004846e5
-    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 004846e6 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 004846e6 | g_ScanlineRenderFunc
         ;   Label: LAB_004846e6
     JMP 0x0048459e                      ; 004846f0
         ;   XREF to: 0048459e (UNCONDITIONAL_JUMP)  ; LAB_0048459e
@@ -271,7 +271,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 00484710
     INC EBP                             ; 00484714
     LEA EDX,[EAX + 0x4]                 ; 00484715
-    MOV dword ptr [EAX + 0x612568],EBX  ; 00484718 | g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568
+    MOV dword ptr [EAX + 0x612568],EBX  ; 00484718 | g_VisibleFacePointers
     MOV dword ptr [ESP + 0xc],EDX       ; 0048471e
     CMP EBP,0x7d0                       ; 00484722
     JL 0x0048474d                       ; 00484728
@@ -297,10 +297,10 @@ section .text
         ;   Label: LAB_0048475d
     JLE 0x00484530                      ; 0048475f
         ;   XREF to: 00484530 (CONDITIONAL_JUMP)  ; LAB_00484530
-    MOV EDX,dword ptr [0x01c51d14]      ; 00484765 | g_BIT_INTEGER32_01c51d14
+    MOV EDX,dword ptr [0x01c51d14]      ; 00484765 | g_RenderStateFlags
     PUSH EDX                            ; 0048476b
     PUSH EBP                            ; 0048476c
-    PUSH 0x612568                       ; 0048476d | g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568
+    PUSH 0x612568                       ; 0048476d | g_VisibleFacePointers
     MOV ECX,dword ptr [ESI]             ; 00484772
     PUSH ECX                            ; 00484774
     CALL engine_special.cpp_drawPolyList2_FUN_005824e0 ; 00484775

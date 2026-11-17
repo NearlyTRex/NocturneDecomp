@@ -9,7 +9,7 @@
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
 ;   void* g_PTR_00622010
-;   void* g_PTR_0070c62c
+;   void* g_SoftwareZBuffer
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     MOV ESI,dword ptr [0x00622010]      ; 00588a0a | g_PTR_00622010
     ADD EBX,ESI                         ; 00588a10
     MOV dword ptr [EAX + 0x1c2a38c],EBX ; 00588a12
-    MOV EBX,dword ptr [0x0070c62c]      ; 00588a18 | g_PTR_0070c62c
+    MOV EBX,dword ptr [0x0070c62c]      ; 00588a18 | g_SoftwareZBuffer
     ADD EAX,0x4                         ; 00588a1e
     ADD EBX,EDX                         ; 00588a21
     INC ECX                             ; 00588a23

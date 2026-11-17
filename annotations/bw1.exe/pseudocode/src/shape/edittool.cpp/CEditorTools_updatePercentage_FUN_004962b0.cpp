@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEdit
   int local_30;
   int local_24;
   
-  if (g_INT_01c3eb5c < 1) {
+  if (g_WindowStackCount < 1) {
     g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
     g_INT_01d1d404 = 0x7ed;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::updatePercentageWindow - no window open!");
@@ -48,30 +48,30 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEdit
   dVar8 = round
                     ((double)(local_54 * (float)100 + (float)0.5));
   iVar5 = wincore_winrun_cpp_getTime_FUN_005b2420();
-  iVar1 = (g_INT_01c3eb5c + -1) * 0x1f8;
+  iVar1 = (g_WindowStackCount + -1) * 0x1f8;
   if (((int)ROUND(dVar8) != *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1f0)) ||
      (0x47ffff < iVar5 - *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 500))) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0
-              (g_CBitFont_PTR_01c3eb50,g_INT_01c4f008,g_INT_01c4f010,g_INT_01c4f00c,g_INT_01c3f578,
-               -1,"%d%% complete");
-    iVar3 = g_INT_01c4f010;
+              (g_CBitFont_PTR_01c3eb50,g_INT_01c4f008,g_ClipRight,g_INT_01c4f00c,
+               g_WindowStatusTextColor,-1,"%d%% complete");
+    iVar3 = g_ClipRight;
     iVar7 = g_INT_01c4f008;
-    iVar5 = g_INT_01c3f584;
+    iVar5 = g_ProgressBarBackgroundColor;
     y1 = g_INT_01c3f53c * 2 + g_INT_01c4f00c;
     iVar1 = y1 + 1;
     x1 = g_INT_01c4f008 + 1;
-    local_30 = g_INT_01c4f010 + -1;
+    local_30 = g_ClipRight + -1;
     iVar6 = g_INT_01c3f53c * 4 + g_INT_01c4f00c;
     y2 = iVar6 + -1;
     if (g_INT_01c3f544 == 0) {
       engine_2d_c_fillRectWithBorder_FUN_00403250
-                (x1,iVar1,local_30,y2,g_INT_01c3f584,g_INT_01c3f58c);
+                (x1,iVar1,local_30,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
     }
     else {
-      iVar2 = (g_INT_01c3f58c & 0xffU) * 3;
+      iVar2 = (g_ProgressBarBorderColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_00517d50
                 ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] << 8 |
                  (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << 0x10 |
@@ -120,10 +120,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEdit
         iVar7 = iVar3 + -2;
       }
       if (g_INT_01c3f544 == 0) {
-        engine_2d_c_fillRectColor_FUN_004031c0(x1,iVar1,iVar7,local_24,g_INT_01c3f588);
+        engine_2d_c_fillRectColor_FUN_004031c0(x1,iVar1,iVar7,local_24,g_ProgressBarFillColor);
       }
       else {
-        iVar3 = (g_INT_01c3f588 & 0xffU) * 3;
+        iVar3 = (g_ProgressBarFillColor & 0xffU) * 3;
         engine_mini3d_cpp_setColor_FUN_00517d50
                   ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar3 + 2] |
                    (uint)g_UCHAR_ARRAY_01c4e9f8[iVar3] << 0x10 |
@@ -133,7 +133,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEdit
     }
     if (0 < iVar5) {
       fVar4 = (float)(x1 - *(int *)((int)g_SWindow_ARRAY_01c3eb60 +
-                                   (g_INT_01c3eb5c + -1) * 0x1f8 + 0x1ec)) *
+                                   (g_WindowStackCount + -1) * 0x1f8 + 0x1ec)) *
               (float)8.4771050347222196e-07;
       dVar8 = (double)fVar4;
       if ((float)5 < fVar4) {
@@ -148,14 +148,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEdit
           engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
           engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0
-                    (g_CBitFont_PTR_01c3eb50,g_INT_01c4f008,g_INT_01c4f010,
-                     g_INT_01c4f014 - g_INT_01c3f53c,g_INT_01c3f578,-1,
+                    (g_CBitFont_PTR_01c3eb50,g_INT_01c4f008,g_ClipRight,
+                     g_INT_01c4f014 - g_INT_01c3f53c,g_WindowStatusTextColor,-1,
                      "%d:%02d elapsed, approximately %d:%02d remaining");
         }
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
-    iVar5 = (g_INT_01c3eb5c + -1) * 0x1f8;
+    iVar5 = (g_WindowStackCount + -1) * 0x1f8;
     *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 0x1f0) = local_30;
     *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 500) = iVar1;
   }

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01d6dfb8
+;   int g_ChatOutCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -26,10 +26,10 @@ section .text
     TEST EBX,EBX                        ; 0052c246
     JL 0x0052c2ab                       ; 0052c248
         ;   XREF to: 0052c2ab (CONDITIONAL_JUMP)  ; LAB_0052c2ab
-    CMP EBX,dword ptr [0x01d6dfb8]      ; 0052c24a | g_INT_01d6dfb8
+    CMP EBX,dword ptr [0x01d6dfb8]      ; 0052c24a | g_ChatOutCount
     JGE 0x0052c2ab                      ; 0052c250
         ;   XREF to: 0052c2ab (CONDITIONAL_JUMP)  ; LAB_0052c2ab
-    MOV EDI,dword ptr [0x01d6dfb8]      ; 0052c252 | g_INT_01d6dfb8
+    MOV EDI,dword ptr [0x01d6dfb8]      ; 0052c252 | g_ChatOutCount
         ;   Label: LAB_0052c252
     DEC EDI                             ; 0052c258
     MOV EDX,EDI                         ; 0052c259
@@ -58,7 +58,7 @@ section .text
     SHL EAX,0x2                         ; 0052c291
     ADD EAX,0x1d6dfbc                   ; 0052c294
     PUSH EAX                            ; 0052c299
-    MOV dword ptr [0x01d6dfb8],EDI      ; 0052c29a | g_INT_01d6dfb8
+    MOV dword ptr [0x01d6dfb8],EDI      ; 0052c29a | g_ChatOutCount
     CALL crt_string.c_memmove_FUN_005c25d0 ; 0052c2a0
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0052c2a5

@@ -21,8 +21,8 @@
 ;   engine_mini3d.cpp_polyListSurface_FUN_00516cc0 at 00516d7b
 ;
 ; Referenced Globals:
-;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
-;   undefined4 g_UINT_PTR_ARRAY_01c4480c[1]
+;   uint*[1200] g_ZBufferScanlineArray
+;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_INT_01d22578
 ;   int g_INT_01d2c0c4
 ;   SSoftwareEdge g_SSoftwareEdge_01d2c0c8
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_00517183
     SAR EAX,0x10                        ; 0051718a
     LEA ESI,[EAX*0x4 + 0x0]             ; 0051718d
-    MOV EDX,dword ptr [EDX + 0x1c4354c] ; 00517194 | g_UINT_PTR_ARRAY_01c4480c | g_UINT_PTR_ARRAY_01c4480c[1]
+    MOV EDX,dword ptr [EDX + 0x1c4354c] ; 00517194 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     SAR ECX,0x10                        ; 0051719a
     ADD EDX,ESI                         ; 0051719d
     CMP EAX,ECX                         ; 0051719f

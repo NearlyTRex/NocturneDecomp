@@ -592,7 +592,7 @@
     },
     {
       "addr": "005fba60",
-      "name": "g_CEventList_PTR_005fba60",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c6e360"
     },
@@ -622,7 +622,7 @@
     },
     {
       "addr": "01d1a0a4",
-      "name": "g_INT_01d1a0a4",
+      "name": "g_FastSqrtMagic",
       "type": "int",
       "value": null
     },
@@ -2557,27 +2557,27 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 697,
-      "match": "fStack_74 = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_74 = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_74 = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_74 = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 1145,
-      "match": "fStack_1c = (float)(((int)fStack_20 >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_1c = (float)(((int)fStack_20 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_1c = (float)(((int)fStack_20 >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_1c = (float)(((int)fStack_20 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 1200,
-      "match": "fStack_88 = (float)(((int)fStack_8c >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_88 = (float)(((int)fStack_8c >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_88 = (float)(((int)fStack_8c >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_88 = (float)(((int)fStack_8c >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 286,
+    "complexity_score": 282,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 151,
+    "pseudocode_lines": 147,
     "suspect_count": 11,
     "suspect_types": [
       "signed_shift_global_idiom",
@@ -16,7 +16,7 @@
       "unresolved_funcptr",
       "warning_max_restarts"
     ],
-    "total_lines": 542
+    "total_lines": 538
   },
   "cross_references": [],
   "function": {
@@ -114,67 +114,67 @@
     },
     {
       "addr": "02dc9214",
-      "name": "g_IDirectSound_PTR_02dc9214",
+      "name": "g_DirectSound",
       "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "02dc9218",
-      "name": "g_IDirectSoundBuffer_PTR_02dc9218",
+      "name": "g_DirectSoundPrimaryBuffer",
       "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02dc921c",
-      "name": "g_IDirectSoundBuffer_PTR_02dc921c",
+      "name": "g_DirectSoundSecondaryBuffer",
       "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02dc9220",
-      "name": "g_IDirectSound3DListener_PTR_02dc9220",
+      "name": "g_DirectSound3DListener",
       "type": "IDirectSound3DListener*",
       "value": null
     },
     {
       "addr": "02dc9224",
-      "name": "g_IKsPropertySet_PTR_02dc9224",
+      "name": "g_DirectSoundPropertySet",
       "type": "IKsPropertySet*",
       "value": null
     },
     {
       "addr": "02dc9228",
-      "name": "g_INT_02dc9228",
+      "name": "g_StreamBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc922c",
-      "name": "g_INT_02dc922c",
+      "name": "g_StreamSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9230",
-      "name": "g_INT_02dc9230",
+      "name": "g_StreamChannelCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9234",
-      "name": "g_INT_02dc9234",
+      "name": "g_StreamSamplesPerBlock",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9238",
-      "name": "g_INT_02dc9238",
+      "name": "g_StreamBlockSizeBytes",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc923c",
-      "name": "g_INT_02dc923c",
+      "name": "g_StreamBlockCount",
       "type": "int",
       "value": null
     }
@@ -354,7 +354,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 58,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_5c._16_4_ = &tStack_34;",
@@ -362,7 +362,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 59,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_5c._0_4_ = 0x14;",
@@ -370,7 +370,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 60,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_5c._4_4_ = 0x12;",
@@ -378,7 +378,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 61,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_5c._8_4_ = 0x400;",
@@ -386,7 +386,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
+      "line": 73,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 82,
+      "line": 79,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_1c + 8))();",
@@ -402,7 +402,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 128,
       "match": "&stack0xfffff94c",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffff94c,\"DirectSux: Unable to %s.  (%s)\",",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 133,
+      "line": 130,
       "match": "&stack0xfffff94c",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_logSoundError_FUN_00529980(&stack0xfffff94c);",
@@ -418,18 +418,18 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 111,
+      "line": 109,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_02dc9228 + (g_INT_02dc9228 >> 0x1f) * -8) -",
+      "text": "((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 112,
+      "line": 110,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_02dc9228 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02dc9230;",
+      "text": "(uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamChannelCount;",
       "type": "signed_shift_global_idiom"
     }
   ],

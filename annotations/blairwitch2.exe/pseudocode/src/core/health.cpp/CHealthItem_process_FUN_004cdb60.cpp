@@ -124,9 +124,9 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + 4) = afStack_40[(uint)bVar9 * -2 + 3];
   *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        afStack_40[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-  CStack_5c.x = g_CVector3f_0265370c.x;
+  CStack_5c.x = g_ZeroVector.x;
   *(uint *)((int)&CStack_5c + (uint)bVar9 * -8 + 4) =
-       *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);
+       *(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);
   *(uint *)((int)&CStack_5c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        *(uint *)((uint)bVar9 * -8 + 0x2653714 + (uint)bVar9 * -8);
   CStack_b0.y = 1.0;

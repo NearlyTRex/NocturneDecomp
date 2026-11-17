@@ -329,9 +329,9 @@ section .text
         ;   Label: LAB_00427f54
     MOV ESI,0x2cfd900                   ; 00427f5b
     MOV EAX,dword ptr [ESP + 0x200]     ; 00427f60
-    MOVSD ES:EDI,ESI                    ; 00427f67 | g_CVector3f_02cfd900
-    MOVSD ES:EDI,ESI                    ; 00427f68 | g_CVector3f_02cfd900.y
-    MOVSD ES:EDI,ESI                    ; 00427f69 | g_CVector3f_02cfd900.z
+    MOVSD ES:EDI,ESI                    ; 00427f67 | g_ZeroVector
+    MOVSD ES:EDI,ESI                    ; 00427f68 | g_ZeroVector.y
+    MOVSD ES:EDI,ESI                    ; 00427f69 | g_ZeroVector.z
     TEST EAX,EAX                        ; 00427f6a
     JNZ 0x00427fb1                      ; 00427f6c
         ;   XREF to: 00427fb1 (CONDITIONAL_JUMP)  ; LAB_00427fb1

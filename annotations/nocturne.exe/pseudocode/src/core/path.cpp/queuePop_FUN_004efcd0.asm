@@ -13,11 +13,11 @@
 ;   TerminatedCString s_queuePop_empty_queue_0058cc80
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CPathQueueNode[5000] g_CPathQueueNode_ARRAY_01e3162c
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[0].cost
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[0].z
-;   int g_INT_01e4008c
-;   int g_INT_01e40090
+;   CPathQueueNode[5000] g_PathfindingQueue
+;   undefined4 g_PathfindingQueue[0].cost
+;   undefined4 g_PathfindingQueue[0].z
+;   int g_PathfindingQueueHead
+;   int g_PathfindingQueueTail
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -28,29 +28,29 @@ section .text
 
     PUSH EBX                            ; 004efcd0
         ;   Label: core_path.cpp_queuePop_FUN_004efcd0
-    MOV EBX,dword ptr [0x01e4008c]      ; 004efcd1 | g_INT_01e4008c
-    CMP EBX,dword ptr [0x01e40090]      ; 004efcd7 | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e4008c]      ; 004efcd1 | g_PathfindingQueueHead
+    CMP EBX,dword ptr [0x01e40090]      ; 004efcd7 | g_PathfindingQueueTail
     JZ 0x004efd28                       ; 004efcdd
         ;   XREF to: 004efd28 (CONDITIONAL_JUMP)  ; LAB_004efd28
-    MOV EBX,dword ptr [0x01e4008c]      ; 004efcdf | g_INT_01e4008c
+    MOV EBX,dword ptr [0x01e4008c]      ; 004efcdf | g_PathfindingQueueHead
         ;   Label: LAB_004efcdf
     LEA EAX,[EBX*0x4 + 0x0]             ; 004efce5
     SUB EAX,EBX                         ; 004efcec
     MOV ECX,dword ptr [ESP + 0x8]       ; 004efcee
-    MOV EDX,dword ptr [EAX*0x4 + 0x1e3162c] ; 004efcf2 | g_CPathQueueNode_ARRAY_01e3162c
+    MOV EDX,dword ptr [EAX*0x4 + 0x1e3162c] ; 004efcf2 | g_PathfindingQueue
     MOV dword ptr [ECX],EDX             ; 004efcf9
     MOV ECX,dword ptr [ESP + 0xc]       ; 004efcfb
-    MOV EDX,dword ptr [EAX*0x4 + 0x1e31630] ; 004efcff | g_CPathQueueNode_ARRAY_01e3162c[0].cost
+    MOV EDX,dword ptr [EAX*0x4 + 0x1e31630] ; 004efcff | g_PathfindingQueue[0].cost
     MOV dword ptr [ECX],EDX             ; 004efd06
     MOV EDX,dword ptr [ESP + 0x10]      ; 004efd08
-    MOV EAX,dword ptr [EAX*0x4 + 0x1e31634] ; 004efd0c | g_CPathQueueNode_ARRAY_01e3162c[0].z
+    MOV EAX,dword ptr [EAX*0x4 + 0x1e31634] ; 004efd0c | g_PathfindingQueue[0].z
     INC EBX                             ; 004efd13
     MOV dword ptr [EDX],EAX             ; 004efd14
     CMP EBX,0x1388                      ; 004efd16
     JL 0x004efd20                       ; 004efd1c
         ;   XREF to: 004efd20 (CONDITIONAL_JUMP)  ; LAB_004efd20
     XOR EBX,EBX                         ; 004efd1e
-    MOV dword ptr [0x01e4008c],EBX      ; 004efd20 | g_INT_01e4008c
+    MOV dword ptr [0x01e4008c],EBX      ; 004efd20 | g_PathfindingQueueHead
         ;   Label: LAB_004efd20
     POP EBX                             ; 004efd26
     RET                                 ; 004efd27

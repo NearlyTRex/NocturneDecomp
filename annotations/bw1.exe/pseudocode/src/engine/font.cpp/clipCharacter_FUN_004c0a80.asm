@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; *****************************************************************************
@@ -51,11 +51,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 004c0abc
         ;   Label: LAB_004c0abc
     MOV EAX,dword ptr [EAX]             ; 004c0ac0
-    CMP EAX,dword ptr [0x01c4f010]      ; 004c0ac2 | g_INT_01c4f010
+    CMP EAX,dword ptr [0x01c4f010]      ; 004c0ac2 | g_ClipRight
     JLE 0x004c0ade                      ; 004c0ac8
         ;   XREF to: 004c0ade (CONDITIONAL_JUMP)  ; LAB_004c0ade
     MOV EAX,dword ptr [ECX]             ; 004c0aca
-    MOV ECX,dword ptr [0x01c4f010]      ; 004c0acc | g_INT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 004c0acc | g_ClipRight
     CMP EAX,ECX                         ; 004c0ad2
     JG 0x004c0b1d                       ; 004c0ad4
         ;   XREF to: 004c0b1d (CONDITIONAL_JUMP)  ; LAB_004c0b1d

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 123,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 123
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640",
-    "signature": "void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int param_2)"
+    "signature": "void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int weapon)"
   },
   "function_calls": [
     {
@@ -187,7 +186,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "weapon",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -195,46 +194,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x564) == -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr_00->ammo_count = *(int *)(param_2 + 0x560);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr_00->ammo_type = *(EAmmoType *)(param_2 + 0x564);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0((CDemonActor *)param_2);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 30,

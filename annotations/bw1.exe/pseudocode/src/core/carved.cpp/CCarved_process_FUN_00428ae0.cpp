@@ -954,7 +954,7 @@ LAB_0042a30b:
       *(uint *)((int)&CStack_258 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
            *(uint *)((int)&CStack_138 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);
       core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(this_ptr_02,pCVar22,EVar23);
-      this_ptr_01 = g_CEventList_PTR_0061b4d0;
+      this_ptr_01 = g_CEventListPtr;
       (this_ptr->base).pool_me = 1;
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(this_ptr_01,"CarvedDead");
     }

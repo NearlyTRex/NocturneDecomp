@@ -14,7 +14,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,
   float fVar3;
   int iVar4;
   
-  if (0 < g_INT_01d06aa0) {
+  if (0 < g_HeroCount) {
     iVar4 = 0;
     do {
       iVar1 = *(int *)((int)g_CHero_PTR_ARRAY_01d06aa4 + iVar4);
@@ -28,7 +28,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,
         }
       }
       iVar4 = iVar4 + 4;
-    } while (iVar4 < g_INT_01d06aa0 * 4);
+    } while (iVar4 < g_HeroCount * 4);
   }
   return 0;
 }

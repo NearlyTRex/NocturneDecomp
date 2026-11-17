@@ -16,7 +16,7 @@ int __cdecl engine_3d_c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
   else if (0xff < g_INT_005fba38) {
     g_INT_005fba38 = 0xff;
   }
-  g_INT_005f07c0 = g_INT_005fba38 | g_INT_005fba38 << 8 | g_INT_005fba38 << 0x10;
-  g_INT_00730400 = g_INT_005f07c0 ^ 0xffffff;
-  return g_INT_00730400;
+  g_CurrentRenderColor = g_INT_005fba38 | g_INT_005fba38 << 8 | g_INT_005fba38 << 0x10;
+  g_CurrentInvertedColor = g_CurrentRenderColor ^ 0xffffff;
+  return g_CurrentInvertedColor;
 }

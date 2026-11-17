@@ -9,7 +9,7 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00440270(CDemonCamera *this_ptr)
 
 {
-  g_CDemonCamera_PTR_007f7374 = (CDemonCamera *)0x0;
-  g_CDemonCamera_PTR_007f7370 = (CDemonCamera *)0x0;
+  g_SkipClearBuffersSceneCamera = (CDemonCamera *)0x0;
+  g_CurrentSceneCamera = (CDemonCamera *)0x0;
   return;
 }

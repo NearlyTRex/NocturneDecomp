@@ -39,9 +39,9 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   CVector3f g_CVector3f_0265370c
-;   undefined4 g_CVector3f_0265370c.y
-;   undefined4 g_CVector3f_0265370c.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; *****************************************************************************
 
@@ -183,12 +183,12 @@ section .text
     POP ESI                             ; 005a844a
     POP EBX                             ; 005a844b
     RET                                 ; 005a844c
-    MOV EAX,[0x0265370c]                ; 005a844d | g_CVector3f_0265370c
+    MOV EAX,[0x0265370c]                ; 005a844d | g_ZeroVector
         ;   Label: LAB_005a844d
     MOV dword ptr [EDX],EAX             ; 005a8452
-    MOV EAX,[0x02653710]                ; 005a8454 | g_CVector3f_0265370c.y
+    MOV EAX,[0x02653710]                ; 005a8454 | g_ZeroVector.y
     MOV dword ptr [EDX + 0x4],EAX       ; 005a8459
-    MOV EAX,[0x02653714]                ; 005a845c | g_CVector3f_0265370c.z
+    MOV EAX,[0x02653714]                ; 005a845c | g_ZeroVector.z
     MOV dword ptr [EDX + 0x8],EAX       ; 005a8461
     JMP 0x005a8329                      ; 005a8464
         ;   XREF to: 005a8329 (UNCONDITIONAL_JUMP)  ; LAB_005a8329

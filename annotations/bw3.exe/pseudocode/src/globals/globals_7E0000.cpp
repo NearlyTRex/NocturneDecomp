@@ -32,36 +32,36 @@ CDemonActorType g_CChainClassInfo = {};
 CDemonActorType g_CCharacterClassInfo = {};
 
 // CDemonCamera*
-CDemonCamera* g_CDemonCamera_PTR_007e2a54 = {};
+CDemonCamera* g_CurrentSceneCamera = {};
 
 // CDemonFilter[8]
-CDemonFilter CDemonFilter_ARRAY_007e17b8[8] = {};
+CDemonFilter g_LightActorFilters[8] = {};
 
 // CDemonGlobe
 CDemonGlobe g_CDemonGlobe_007e2af0 = {};
 
 // CKeyFramedModelInstance
-CKeyFramedModelInstance g_CKeyFramedModelInstance_007e2b34 = {};
+CKeyFramedModelInstance g_StakeModelInstance = {};
 
 // SMRGLPrimitiveQuad[1000]
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_007e6564[1000] = {};
+SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000] = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_SMRGLTextureBasic_007e2ad0 = {};
 
 // SRenderVertex*[16]
-SRenderVertex* g_SRenderVertex_PTR_ARRAY_007e448c[16] = {};
+SRenderVertex* g_ClipperCullingPointers[16] = {};
 
 // SRenderVertex[12]
-SRenderVertex g_SRenderVertex_ARRAY_007e4b10[12] = {};
+SRenderVertex g_ClipperTempBuffer[12] = {};
 
 // SRenderVertex[16]
 SRenderVertex g_SRenderVertex_ARRAY_007e3e8c[16] = {};
 SRenderVertex g_SRenderVertex_ARRAY_007e4510[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007e4d64[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007e5364[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007e5964[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007e5f64[16] = {};
+SRenderVertex g_ClipperOutputBuffer[16] = {};
+SRenderVertex g_ClipperInputBuffer[16] = {};
+SRenderVertex g_ClipperWorkingBuffer[16] = {};
+SRenderVertex g_ClipperIntermediateBuffer[16] = {};
 
 // byte
 byte g_BYTE_007e2b30 = {};
@@ -73,7 +73,7 @@ float g_FLOAT_007e2cb0 = {};
 float g_FLOAT_ARRAY_007e2cf4[100] = {};
 
 // float[12][12]
-float g_FLOAT_ARRAY_ARRAY_007e1a54[12][12] = {};
+float g_BugsGroundHeightGridTemp[12][12] = {};
 
 // int
 int g_INT_007e1620 = {};
@@ -86,17 +86,17 @@ int g_INT_007e1648 = {};
 int g_INT_007e1778 = {};
 int g_INT_007e2ae8 = {};
 int g_INT_007e3e84 = {};
-int g_INT_007e3e88 = {};
+int g_ClippedVertexCount = {};
 int g_INT_007e450c = {};
-int g_INT_007e4d50 = {};
-int g_INT_007e4d54 = {};
-int g_INT_007e4d58 = {};
-int g_INT_007e4d5c = {};
-int g_INT_007e4d60 = {};
+int g_ClipperTempCount = {};
+int g_InputVertexCount = {};
+int g_OutputVertexCount = {};
+int g_TempVertexCount = {};
+int g_IntermediateVertexCount = {};
 
 // int[1]
 int g_INT_ARRAY_007e4488[1] = {};
 
 // int[700]
-int g_INT_ARRAY_007e1c94[700] = {};
+int g_BugsSortedVertexIndices[700] = {};
 

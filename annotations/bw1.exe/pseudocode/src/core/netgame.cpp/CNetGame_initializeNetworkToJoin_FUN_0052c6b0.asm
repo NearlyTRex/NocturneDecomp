@@ -17,10 +17,10 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
-;   int g_INT_006260e8 = 0x1
+;   int g_ForceMessagePump = 0x1
 ;   uint g_UINT_01d51da0
-;   int g_INT_01d51da4
-;   uchar[4] g_UCHAR_ARRAY_02c8ae4c
+;   int g_ConnectionStatus
+;   uchar[4] g_AnyAddressIP
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040
@@ -60,7 +60,7 @@ section .text
     LEA ESI,[EBX + 0x8]                 ; 0052c6e4
     PUSH ESI                            ; 0052c6e7
     PUSH 0x1ddf                         ; 0052c6e8
-    MOV EDI,dword ptr [0x02c8ae4c]      ; 0052c6ed | g_UCHAR_ARRAY_02c8ae4c
+    MOV EDI,dword ptr [0x02c8ae4c]      ; 0052c6ed | g_AnyAddressIP
     PUSH EDI                            ; 0052c6f3
     LEA EAX,[ESP + 0x44]                ; 0052c6f4
     PUSH EAX                            ; 0052c6f8
@@ -113,16 +113,16 @@ section .text
     MOV EAX,[0x0061abc0]                ; 0052c772 | g_CEditorToolsPtr
     XOR ECX,ECX                         ; 0052c777
     PUSH EAX                            ; 0052c779
-    MOV dword ptr [0x01d51da4],ECX      ; 0052c77a | g_INT_01d51da4
+    MOV dword ptr [0x01d51da4],ECX      ; 0052c77a | g_ConnectionStatus
     SUB EDI,0x50000                     ; 0052c780
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400 ; 0052c786
         ;   XREF to: 00494400 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400(CEditorTools * this_ptr, char * format)
-    MOV EAX,[0x006260e8]                ; 0052c78b | g_INT_006260e8
+    MOV EAX,[0x006260e8]                ; 0052c78b | g_ForceMessagePump
     ADD ESP,0x8                         ; 0052c790
     MOV ECX,dword ptr [EBX + 0x118]     ; 0052c793
     XOR EDX,EDX                         ; 0052c799
     MOV dword ptr [ESP + 0x44],EAX      ; 0052c79b
-    MOV dword ptr [0x006260e8],EDX      ; 0052c79f | g_INT_006260e8
+    MOV dword ptr [0x006260e8],EDX      ; 0052c79f | g_ForceMessagePump
     TEST ECX,ECX                        ; 0052c7a5
     JL 0x0052c8c0                       ; 0052c7a7
         ;   XREF to: 0052c8c0 (CONDITIONAL_JUMP)  ; LAB_0052c8c0
@@ -204,7 +204,7 @@ section .text
     PUSH EBX                            ; 0052c873
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360 ; 0052c874
         ;   XREF to: 0052d360 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360(CNetGame * this_ptr)
-    MOV EDX,dword ptr [0x01d51da4]      ; 0052c879 | g_INT_01d51da4
+    MOV EDX,dword ptr [0x01d51da4]      ; 0052c879 | g_ConnectionStatus
     ADD ESP,0x4                         ; 0052c87f
     CMP EDX,0x1                         ; 0052c882
     JZ 0x0052c958                       ; 0052c885
@@ -310,7 +310,7 @@ section .text
         ;   XREF to: 0052c89b (UNCONDITIONAL_JUMP)  ; LAB_0052c89b
     MOV EAX,dword ptr [ESP + 0x44]      ; 0052c958
         ;   Label: LAB_0052c958
-    MOV [0x006260e8],EAX                ; 0052c95c | g_INT_006260e8
+    MOV [0x006260e8],EAX                ; 0052c95c | g_ForceMessagePump
     MOV EAX,EDX                         ; 0052c961
     MOV ESP,EBP                         ; 0052c963
     POP EBP                             ; 0052c965

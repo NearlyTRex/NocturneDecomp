@@ -98,7 +98,7 @@ CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(CIn
 int __cdecl support_trstream_cpp_CInStreamFile_getChar_FUN_00573aa0(CInStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_00573af0(CInStreamFile *this_ptr,int ch);
 int __cdecl support_trstream_cpp_CInStreamFile_peekChar_FUN_00573b60(CInStreamFile *this_ptr);
-uint __cdecl support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(CInStreamFile *this_ptr,int param_2);
+uint __cdecl support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(CInStreamFile *this_ptr,int position);
 int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile *this_ptr,void *buffer,int count);
 int __cdecl support_trstream_cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(CInStreamFile *this_ptr);
@@ -119,14 +119,14 @@ uint __cdecl support_trstream_cpp_CInStreamMemory_getChar_FUN_00574230(CInStream
 int __cdecl support_trstream_cpp_CInStreamMemory_ungetChar_FUN_00574280(CInStreamMemory *this_ptr,int ch);
 uint __cdecl support_trstream_cpp_CInStreamMemory_peekChar_FUN_005742c0(CInStreamMemory *this_ptr);
 int __cdecl support_trstream_cpp_CInStreamMemory_read_FUN_005742f0(CInStreamMemory *this_ptr,void *buffer,int count);
-longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_00574350(CInStreamMemory *this_ptr,int param_2,uint param_3);
+longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_00574350(CInStreamMemory *this_ptr,int offset,uint origin);
 int __cdecl support_trstream_cpp_COutStream_seek_FUN_00574380(COutStream *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_CInStreamMemory_tell_FUN_005743a0(CInStreamMemory *this_ptr);
 int __cdecl support_trstream_cpp_COutStream_tell_FUN_005743b0(COutStream *this_ptr);
 int __cdecl support_trstream_cpp_CInStreamMemory_isEof_FUN_005743c0(CInStreamMemory *this_ptr);
 void __cdecl support_trstream_cpp_CInStreamMemory_close_FUN_005743f0(CInStreamMemory *this_ptr);
-void __cdecl support_trstream_cpp_CInStreamMemory_open_FUN_00574440(CInStreamMemory *this_ptr,int param_2,int param_3);
-void __cdecl support_trstream_cpp_CInStreamMemory_openOwned_FUN_00574470(CInStreamMemory *this_ptr,int param_2,int param_3);
+void __cdecl support_trstream_cpp_CInStreamMemory_open_FUN_00574440(CInStreamMemory *this_ptr,int data,int size);
+void __cdecl support_trstream_cpp_CInStreamMemory_openOwned_FUN_00574470(CInStreamMemory *this_ptr,int data,int size);
 COutStream * __cdecl support_trstream_cpp_COutStream_dtor_FUN_005744a0(COutStream *this_ptr,uint flags);
 int __cdecl support_trstream_cpp_COutStream_printf_FUN_005744b0(COutStream *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 int __cdecl support_trstream_cpp_COutStream_vprintf_FUN_005744e0(COutStream *this_ptr,char *format,va_list_t args);
@@ -134,7 +134,7 @@ COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(C
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747e0(COutStreamFile *this_ptr,char *path,char *mode);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_copy_FUN_00574820(COutStreamFile *this_ptr,COutStreamFile *other);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(COutStreamFile *this_ptr,uint flags);
-uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005748b0(COutStreamFile *this_ptr,byte param_2);
+uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005748b0(COutStreamFile *this_ptr,byte character);
 int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *data,int size);
 int __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_00574930(COutStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_00574960(COutStreamFile *this_ptr);
@@ -142,7 +142,7 @@ bool __cdecl support_trstream_cpp_COutStreamFile_isOpen_FUN_00574980(COutStreamF
 int __cdecl support_trstream_cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *path,char *mode);
 int __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_00574a10(COutStreamFile *this_ptr,char *directory,char *filename,char *mode);
-void __cdecl support_trstream_cpp_COutStreamFile_attach_FUN_00574a60(COutStreamFile *this_ptr,int param_2);
+void __cdecl support_trstream_cpp_COutStreamFile_attach_FUN_00574a60(COutStreamFile *this_ptr,int file);
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctor_FUN_00574a80(COutStreamMemory *this_ptr);
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_00574ac0(COutStreamMemory *this_ptr,char *buffer,int capacity);
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_copy_FUN_00574b20(COutStreamMemory *this_ptr,COutStreamMemory *other);
@@ -152,8 +152,8 @@ int __cdecl support_trstream_cpp_COutStreamMemory_write_FUN_00574c20(COutStreamM
 int __cdecl support_trstream_cpp_COutStreamMemory_seek_FUN_00574cb0(COutStreamMemory *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory *this_ptr);
 void __cdecl support_trstream_cpp_COutStreamMemory_close_FUN_00574d10(COutStreamMemory *this_ptr);
-void __cdecl support_trstream_cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory *this_ptr,int param_2,int param_3);
-int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_00574d90(COutStreamMemory *this_ptr,int *param_2);
+void __cdecl support_trstream_cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory *this_ptr,int buffer,int capacity);
+int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_00574d90(COutStreamMemory *this_ptr,int *out_length);
 COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_ctor_FUN_00574e00(COutStreamDebug *this_ptr);
 COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_dtor_FUN_00574e20(COutStreamDebug *this_ptr,uint flags);
 int __cdecl support_trstream_cpp_COutStreamDebug_putChar_FUN_00574e80(COutStreamDebug *this_ptr,char ch);

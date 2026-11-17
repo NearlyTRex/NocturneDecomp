@@ -183,37 +183,37 @@
     },
     {
       "addr": "01d34e34",
-      "name": "g_INT_01d34e34",
+      "name": "g_LastPingTime",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d34e38",
-      "name": "g_UINT_01d34e38",
+      "name": "g_CurrentGameTime",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01d545d0",
-      "name": "g_SChatOutMessage_ARRAY_01d51054[49].message[148]",
+      "name": "g_ChatOutMessages[49].message[148]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d545d4",
-      "name": "g_SChatOutMessage_ARRAY_01d51054[49].message[152]",
+      "name": "g_ChatOutMessages[49].message[152]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d545d8",
-      "name": "g_SChatOutMessage_ARRAY_01d51054[49].message[156]",
+      "name": "g_ChatOutMessages[49].message[156]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d54640",
-      "name": "g_INT_01d54640",
+      "name": "g_SimFrameCount",
       "type": "int",
       "value": null
     },
@@ -573,7 +573,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((g_INT_01d54640 - iVar2) * 0x74) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((g_SimFrameCount - iVar2) * 0x74) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 86,
       "match": "memmove",
       "severity": "moderate",

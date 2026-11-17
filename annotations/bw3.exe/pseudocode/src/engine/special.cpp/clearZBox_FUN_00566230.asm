@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6054
+;   void* g_APIDLL_clearZBox
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     PUSH ESI                            ; 0056624d
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0056624e
     PUSH EDI                            ; 00566252
-    CALL dword ptr [0x02cf6054]         ; 00566253 | g_PTR_02cf6054
+    CALL dword ptr [0x02cf6054]         ; 00566253 | g_APIDLL_clearZBox
     ADD ESP,0x10                        ; 00566259
     POP EBX                             ; 0056625c
     POP ESI                             ; 0056625d

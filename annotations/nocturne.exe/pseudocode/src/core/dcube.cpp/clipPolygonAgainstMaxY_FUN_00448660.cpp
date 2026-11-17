@@ -16,39 +16,39 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00448660(float max_y_plan
   
   iVar3 = 0;
   if (0 < g_INT_014b848c) {
-    vertex1 = g_CVector3f_ARRAY_014b8490;
+    vertex1 = g_CubeInputTriangleBuffer;
     do {
       uVar2 = iVar3 + 1;
       if (uVar2 == g_INT_014b848c) {
         uVar2 = uVar2 ^ g_INT_014b848c;
       }
       bVar1 = max_y_plane < vertex1->y;
-      if (max_y_plane < g_CVector3f_ARRAY_014b8490[uVar2].y) {
+      if (max_y_plane < g_CubeInputTriangleBuffer[uVar2].y) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
-        if (g_CVector3f_ARRAY_014b8554 + g_INT_014b8550 != vertex1) {
-          g_CVector3f_ARRAY_014b8554[g_INT_014b8550].x = vertex1->x;
-          g_CVector3f_ARRAY_014b8554[g_INT_014b8550].y = vertex1->y;
-          g_CVector3f_ARRAY_014b8554[g_INT_014b8550].z = vertex1->z;
+        if (g_ClipStageMaxYBuffer + g_INT_014b8550 != vertex1) {
+          g_ClipStageMaxYBuffer[g_INT_014b8550].x = vertex1->x;
+          g_ClipStageMaxYBuffer[g_INT_014b8550].y = vertex1->y;
+          g_ClipStageMaxYBuffer[g_INT_014b8550].z = vertex1->z;
         }
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
-                  (g_CVector3f_ARRAY_014b8490 + uVar2,vertex1,
-                   g_CVector3f_ARRAY_014b8554 + g_INT_014b8550,0.0,1.0,0.0,(double)-max_y_plane);
+                  (g_CubeInputTriangleBuffer + uVar2,vertex1,g_ClipStageMaxYBuffer + g_INT_014b8550,
+                   0.0,1.0,0.0,(double)-max_y_plane);
         break;
       case 2:
-        if (g_CVector3f_ARRAY_014b8554 + g_INT_014b8550 != vertex1) {
-          g_CVector3f_ARRAY_014b8554[g_INT_014b8550].x = vertex1->x;
-          g_CVector3f_ARRAY_014b8554[g_INT_014b8550].y = vertex1->y;
-          g_CVector3f_ARRAY_014b8554[g_INT_014b8550].z = vertex1->z;
+        if (g_ClipStageMaxYBuffer + g_INT_014b8550 != vertex1) {
+          g_ClipStageMaxYBuffer[g_INT_014b8550].x = vertex1->x;
+          g_ClipStageMaxYBuffer[g_INT_014b8550].y = vertex1->y;
+          g_ClipStageMaxYBuffer[g_INT_014b8550].z = vertex1->z;
         }
         g_INT_014b8550 = g_INT_014b8550 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
-                  (vertex1,g_CVector3f_ARRAY_014b8490 + uVar2,
-                   g_CVector3f_ARRAY_014b8554 + g_INT_014b8550,0.0,1.0,0.0,(double)-max_y_plane);
+                  (vertex1,g_CubeInputTriangleBuffer + uVar2,g_ClipStageMaxYBuffer + g_INT_014b8550,
+                   0.0,1.0,0.0,(double)-max_y_plane);
         break;
       default:
         goto switchD_004486cc_caseD_3;

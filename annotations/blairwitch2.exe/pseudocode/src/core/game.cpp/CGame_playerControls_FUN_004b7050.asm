@@ -16,14 +16,14 @@
 ;   CFieldNotes* g_CFieldNotesPtr = 01caf56c
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384
-;   char[4952] g_CHAR_ARRAY_01c37790
-;   undefined4 g_CHAR_ARRAY_01c37790+4
+;   _BIT_INTEGER32 g_MouseButtonFlags
+;   char[4952] g_KeyboardState
+;   undefined4 g_KeyboardState+4
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   char[600] g_CHAR_ARRAY_01cb7528
-;   undefined4 g_CHAR_ARRAY_01cb7528+4
-;   int g_INT_01cb7780
-;   int g_INT_01cb7784
+;   char[600] g_PrevKeyboardState
+;   undefined4 g_PrevKeyboardState+4
+;   int g_InputResetFlag
+;   int g_StoredCameraValue
 ;   int g_INT_01cb7788
 ;   ... and 5 more
 ;
@@ -81,19 +81,19 @@ section .text
     MOV ECX,0x258                       ; 004b70a0
     MOV ESI,0x1c37790                   ; 004b70a5
     MOV EDI,0x1cb7528                   ; 004b70aa
-    PUSH EDI                            ; 004b70af | g_CHAR_ARRAY_01cb7528
+    PUSH EDI                            ; 004b70af | g_PrevKeyboardState
     MOV EAX,ECX                         ; 004b70b0
     SHR ECX,0x2                         ; 004b70b2
-    MOVSD.REP ES:EDI,ESI                ; 004b70b5 | g_CHAR_ARRAY_01c37790 | g_CHAR_ARRAY_01cb7528 | g_CHAR_ARRAY_01c37790+4
+    MOVSD.REP ES:EDI,ESI                ; 004b70b5 | g_KeyboardState | g_PrevKeyboardState | g_KeyboardState+4
     MOV CL,AL                           ; 004b70b7
     AND CL,0x3                          ; 004b70b9
-    MOVSB.REP ES:EDI,ESI                ; 004b70bc | g_CHAR_ARRAY_01c37790+4 | g_CHAR_ARRAY_01cb7528+4
+    MOVSB.REP ES:EDI,ESI                ; 004b70bc | g_KeyboardState+4 | g_PrevKeyboardState+4
     POP EDI                             ; 004b70be
-    MOV EAX,[0x01c2a384]                ; 004b70bf | g_BIT_INTEGER32_01c2a384
-    MOV [0x01cb7780],EAX                ; 004b70c4 | g_INT_01cb7780
+    MOV EAX,[0x01c2a384]                ; 004b70bf | g_MouseButtonFlags
+    MOV [0x01cb7780],EAX                ; 004b70c4 | g_InputResetFlag
     MOV EAX,[0x0061b5a8]                ; 004b70c9 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b70ce | g_CDemonSetInstance.selected_camera_index
-    MOV [0x01cb7784],EAX                ; 004b70d4 | g_INT_01cb7784
+    MOV [0x01cb7784],EAX                ; 004b70d4 | g_StoredCameraValue
     POP EDI                             ; 004b70d9
     POP ESI                             ; 004b70da
     RET                                 ; 004b70db

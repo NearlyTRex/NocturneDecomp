@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005e4350 = 50
 ;   float g_FLOAT_005e4354 = 100
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -44,7 +44,7 @@ section .text
     MOV dword ptr [EBX + 0x326c],0x3f400000 ; 005462f6
     ADD ESP,0x8                         ; 00546300
     MOV dword ptr [EBX + 0x3270],0x3fc00000 ; 00546303
-    MOV EDX,dword ptr [0x005fba60]      ; 0054630d | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 0054630d | g_CEventListPtr
     MOV dword ptr [EBX + 0xd064],0x0    ; 00546313
     PUSH 0x5d1430                       ; 0054631d
     FXCH                                ; 00546322

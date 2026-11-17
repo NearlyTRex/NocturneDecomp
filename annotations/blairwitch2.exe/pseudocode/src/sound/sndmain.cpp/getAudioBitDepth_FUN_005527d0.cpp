@@ -9,6 +9,6 @@
 int __cdecl sound_sndmain_cpp_getAudioBitDepth_FUN_005527d0(void)
 
 {
-  sound_sndmain_cpp_getAudioFormat_FUN_00552790(&g_INT_0061bc98,(int *)0x0,(int *)0x0);
-  return g_INT_0061bc98;
+  sound_sndmain_cpp_getAudioFormat_FUN_00552790(&g_AudioBitsPerSample,(int *)0x0,(int *)0x0);
+  return g_AudioBitsPerSample;
 }

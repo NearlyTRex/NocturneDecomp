@@ -100,13 +100,13 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
   else {
     local_3c = this_ptr->weapon->weapon_type;
   }
-  iVar6 = g_INT_ARRAY_01ed36ec[10];
+  iVar6 = g_StrangerIndices[10];
   if (hand_index == 0) {
     local_34->target_pitch = 0.0;
     local_34->aim_pitch = 0.0;
     return;
   }
-  local_1c = (float)g_INT_ARRAY_01ed36ec[0];
+  local_1c = (float)g_StrangerIndices[0];
   if ((local_3c == WEAPON_TYPE_GUN) || (local_3c == WEAPON_TYPE_FLASHLIGHT)) {
     local_44 = 1.3089969;
   }

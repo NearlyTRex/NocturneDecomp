@@ -24,7 +24,7 @@
 ;   TerminatedCString s_CMini3D_polyList_Too_man_005dde05
 ;   float g_FLOAT_005dde34 = 0.003921569
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   int g_INT_01d09854
@@ -59,13 +59,13 @@ section .text
     SUB ESP,0x114                       ; 004f40a4
     MOV EBX,dword ptr [ESP + 0x128]     ; 004f40aa
     MOV EAX,dword ptr [ESP + 0x134]     ; 004f40b1
-    MOV EDX,dword ptr [0x01e61b58]      ; 004f40b8 | g_INT_01e61b58
+    MOV EDX,dword ptr [0x01e61b58]      ; 004f40b8 | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d09854]      ; 004f40be | g_INT_01d09854
     ADD EDX,EAX                         ; 004f40c4
     MOV EAX,dword ptr [ESP + 0x12c]     ; 004f40c6
     MOV ESI,dword ptr [0x01d0d2b4]      ; 004f40cd | g_INT_01d0d2b4
     ADD ECX,EAX                         ; 004f40d3
-    MOV dword ptr [0x01e61b58],EDX      ; 004f40d5 | g_INT_01e61b58
+    MOV dword ptr [0x01e61b58],EDX      ; 004f40d5 | g_RenderedTriangleCount
     MOV dword ptr [0x01d09854],ECX      ; 004f40db | g_INT_01d09854
     TEST ESI,ESI                        ; 004f40e1
     JNZ 0x004f437a                      ; 004f40e3
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 004f3740 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateTransform_FUN_004f3740()
     CALL engine_mini3d.cpp_updateRenderState_FUN_004f7da0 ; 004f40ee
         ;   XREF to: 004f7da0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateRenderState_FUN_004f7da0()
-    CMP dword ptr [0x0264bc9c],0x0      ; 004f40f3 | g_PTR_0264bc9c
+    CMP dword ptr [0x0264bc9c],0x0      ; 004f40f3 | g_APIDLL_restoreVideoModeX
     JZ 0x004f4109                       ; 004f40fa
         ;   XREF to: 004f4109 (CONDITIONAL_JUMP)  ; LAB_004f4109
     CMP dword ptr [0x01c37788],0x0      ; 004f40fc | g_INT_01c37788
@@ -297,7 +297,7 @@ section .text
     ADD ESP,0x10                        ; 004f4391
     JMP 0x004f436f                      ; 004f4394
         ;   XREF to: 004f436f (UNCONDITIONAL_JUMP)  ; LAB_004f436f
-    MOV EBP,dword ptr [0x01c38b54]      ; 004f4396 | g_BIT_INTEGER32_01c38b54
+    MOV EBP,dword ptr [0x01c38b54]      ; 004f4396 | g_RenderStateFlags
         ;   Label: LAB_004f4396
     PUSH EBP                            ; 004f439c
     MOV EAX,dword ptr [ESP + 0x138]     ; 004f439d
@@ -307,7 +307,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x138]     ; 004f43ad
     PUSH ECX                            ; 004f43b4
     PUSH EBX                            ; 004f43b5
-    CALL dword ptr [0x0264bc9c]         ; 004f43b6 | g_PTR_0264bc9c
+    CALL dword ptr [0x0264bc9c]         ; 004f43b6 | g_APIDLL_restoreVideoModeX
     ADD ESP,0x14                        ; 004f43bc
     JMP 0x004f436f                      ; 004f43bf
         ;   XREF to: 004f436f (UNCONDITIONAL_JUMP)  ; LAB_004f436f

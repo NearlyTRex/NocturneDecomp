@@ -9,6 +9,6 @@
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_00491150(int text_color)
 
 {
-  g_INT_01c70f70 = text_color;
+  g_DefaultTextColor = text_color;
   return;
 }

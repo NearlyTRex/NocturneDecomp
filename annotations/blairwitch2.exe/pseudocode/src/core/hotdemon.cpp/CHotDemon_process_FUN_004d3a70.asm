@@ -18,8 +18,8 @@
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_INT_ARRAY_01cee00c[2]
-;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_HotDemonIndices[2]
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -340,7 +340,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004d3da2
     ADD ESP,0x8                         ; 004d3da5
     LEA EAX,[EBP + 0xfffffeea]          ; 004d3da8
-    MOV EDX,dword ptr [0x01cee014]      ; 004d3dae | g_INT_ARRAY_01cee00c[2]
+    MOV EDX,dword ptr [0x01cee014]      ; 004d3dae | g_HotDemonIndices[2]
     PUSH EAX                            ; 004d3db4
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d3db5
     MOV dword ptr [EBP + 0xffffff1e],EBX ; 004d3dbc
@@ -353,7 +353,7 @@ section .text
     LEA EDI,[EBP + -0x7a]               ; 004d3dda
     PUSH EAX                            ; 004d3ddd
     FLD float ptr [EBP + 0x76]          ; 004d3dde
-    PUSH 0x265370c                      ; 004d3de1 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004d3de1 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffeee]   ; 004d3de6
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004d3dec
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

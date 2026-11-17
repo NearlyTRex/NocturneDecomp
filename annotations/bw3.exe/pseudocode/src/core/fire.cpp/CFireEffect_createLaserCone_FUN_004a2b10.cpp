@@ -9,12 +9,12 @@
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle)
 
 {
-  if (0x3f < g_INT_01cf5088) {
+  if (0x3f < g_LaserBeamActiveCount) {
     return;
   }
   core_fire_cpp_CLaserBeam_init_FUN_0049b030
-            (g_CLaserBeam_ARRAY_01cf508c + g_INT_01cf5088,origin,hit_position,beam_width,0.0,
+            (g_LaserBeamPool + g_LaserBeamActiveCount,origin,hit_position,beam_width,0.0,
              (CVector3f *)0x0,red,green,blue,0.02f,cone_angle);
-  g_INT_01cf5088 = g_INT_01cf5088 + 1;
+  g_LaserBeamActiveCount = g_LaserBeamActiveCount + 1;
   return;
 }

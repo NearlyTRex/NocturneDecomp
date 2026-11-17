@@ -27,8 +27,8 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005d1e85
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c25f78
+;   CBitFont* g_EditorFont
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c25f7c
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
@@ -50,7 +50,7 @@ section .text
     PUSH EBP                            ; 0047e1d3
     MOV EDI,dword ptr [ESP + 0x18]      ; 0047e1d4
     MOV ESI,dword ptr [ESP + 0x20]      ; 0047e1d8
-    CMP dword ptr [0x01c25590],0x0      ; 0047e1dc | g_CBitFont_PTR_01c25590
+    CMP dword ptr [0x01c25590],0x0      ; 0047e1dc | g_EditorFont
     JNZ 0x0047e208                      ; 0047e1e3
         ;   XREF to: 0047e208 (CONDITIONAL_JUMP)  ; LAB_0047e208
     MOV ECX,0x5d1e6f                    ; 0047e1e5 | = "..\\shape\\edittool.cpp"
@@ -61,12 +61,12 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047e200
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047e205
-    MOV EAX,[0x01c25590]                ; 0047e208 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047e208 | g_EditorFont
         ;   Label: LAB_0047e208
     PUSH 0x6a                           ; 0047e20d
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047e20f
     PUSH EAX                            ; 0047e215
-    MOV dword ptr [0x01c25f78],EDX      ; 0047e216 | g_INT_01c25f78
+    MOV dword ptr [0x01c25f78],EDX      ; 0047e216 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 0047e21c
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047e221
@@ -110,7 +110,7 @@ section .text
     POP ESI                             ; 0047e27e
     POP EBX                             ; 0047e27f
     RET                                 ; 0047e280
-    MOV EAX,[0x01c25590]                ; 0047e281 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047e281 | g_EditorFont
         ;   Label: LAB_0047e281
     PUSH ESI                            ; 0047e286
     MOV EDX,dword ptr [EAX + 0x3668]    ; 0047e287

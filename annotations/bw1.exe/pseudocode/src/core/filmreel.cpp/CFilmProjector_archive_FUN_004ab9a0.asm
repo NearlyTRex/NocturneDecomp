@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_keyReel_005df163
 ;   TerminatedCString s_keyEvent_005df16b
-;   int g_INT_0061bf2c = 0x2
+;   int g_CFilmProjectorClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b6f0
@@ -26,7 +26,7 @@ section .text
     PUSH EBX                            ; 004ab9a5
     CALL core_dest.cpp_CActorDestination_archive_FUN_0045d5b0 ; 004ab9a6
         ;   XREF to: 0045d5b0 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_archive_FUN_0045d5b0(CActorDestination * this_ptr)
-    MOV EDX,dword ptr [0x0061bf2c]      ; 004ab9ab | g_INT_0061bf2c
+    MOV EDX,dword ptr [0x0061bf2c]      ; 004ab9ab | g_CFilmProjectorClassVersion
     ADD ESP,0x4                         ; 004ab9b1
     CMP EDX,0x2                         ; 004ab9b4
     JGE 0x004ab9bb                      ; 004ab9b7

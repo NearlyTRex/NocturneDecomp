@@ -12,5 +12,5 @@ _FILE * __cdecl get_standard_file_handle(int fd)
   if (3 < (uint)fd) {
     return (_FILE *)0x0;
   }
-  return (_FILE *)((int)&g_FILE_PTR_005c1894 + fd * 0x1a);
+  return (_FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);
 }

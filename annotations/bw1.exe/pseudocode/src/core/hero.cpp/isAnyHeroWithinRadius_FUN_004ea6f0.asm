@@ -15,7 +15,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6634
 ;
 ; Referenced Globals:
-;   int g_INT_01d06aa0
+;   int g_HeroCount
 ;
 ; *****************************************************************************
 
@@ -28,12 +28,12 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 004ea6f5
     FLD float ptr [ESP + 0x1c]          ; 004ea6f9
     FMUL ST0                            ; 004ea6fd
-    MOV EDX,dword ptr [0x01d06aa0]      ; 004ea6ff | g_INT_01d06aa0
+    MOV EDX,dword ptr [0x01d06aa0]      ; 004ea6ff | g_HeroCount
     FSTP float ptr [ESP + 0x1c]         ; 004ea705
     TEST EDX,EDX                        ; 004ea709
     JLE 0x004ea729                      ; 004ea70b
         ;   XREF to: 004ea729 (CONDITIONAL_JUMP)  ; LAB_004ea729
-    MOV EBX,dword ptr [0x01d06aa0]      ; 004ea70d | g_INT_01d06aa0
+    MOV EBX,dword ptr [0x01d06aa0]      ; 004ea70d | g_HeroCount
     XOR EDX,EDX                         ; 004ea713
     SHL EBX,0x2                         ; 004ea715
     MOV ESI,dword ptr [EDX + 0x1d06aa4] ; 004ea718

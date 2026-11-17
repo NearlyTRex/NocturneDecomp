@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005edfa6 = 65536
 ;   double g_DOUBLE_005edfae = 8
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -57,7 +57,7 @@ section .text
     FDIVRP                              ; 005872e9
     LEA EAX,[EBX + 0x310]               ; 005872eb
     PUSH EAX                            ; 005872f1
-    MOV EAX,[0x006141f0]                ; 005872f2 | g_CEventList_PTR_006141f0
+    MOV EAX,[0x006141f0]                ; 005872f2 | g_CEventListPtr
     PUSH EAX                            ; 005872f7
     FSTP float ptr [EBX + 0x80f8]       ; 005872f8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 005872fe
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBX + 0x374]               ; 00587314
         ;   Label: LAB_00587314
     PUSH EAX                            ; 0058731a
-    MOV EDX,dword ptr [0x006141f0]      ; 0058731b | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0058731b | g_CEventListPtr
     PUSH EDX                            ; 00587321
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00587322
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

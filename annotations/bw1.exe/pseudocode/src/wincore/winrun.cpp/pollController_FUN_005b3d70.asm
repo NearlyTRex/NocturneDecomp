@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005f9ecf = 0.100000000000000
-;   void* g_PTR_02c9cf0c
+;   void* g_joyGetPosEx
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -64,7 +64,7 @@ section .text
     AND CL,0x3                          ; 005b3dc5
     MOVSB.REP ES:EDI,ESI                ; 005b3dc8
     POP EDI                             ; 005b3dca
-    MOV EDI,dword ptr [0x02c9cf0c]      ; 005b3dcb | g_PTR_02c9cf0c
+    MOV EDI,dword ptr [0x02c9cf0c]      ; 005b3dcb | g_joyGetPosEx
     TEST EDI,EDI                        ; 005b3dd1
     JZ 0x005b4053                       ; 005b3dd3
         ;   XREF to: 005b4053 (CONDITIONAL_JUMP)  ; LAB_005b4053
@@ -99,7 +99,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005b3e22
     MOV ESI,dword ptr [EAX*0x4 + 0x2c9d1c4] ; 005b3e25
     PUSH ESI                            ; 005b3e2c
-    CALL dword ptr [0x02c9cf0c]         ; 005b3e2d | g_PTR_02c9cf0c
+    CALL dword ptr [0x02c9cf0c]         ; 005b3e2d | g_joyGetPosEx
     TEST EAX,EAX                        ; 005b3e33
     JNZ 0x005b4047                      ; 005b3e35
         ;   XREF to: 005b4047 (CONDITIONAL_JUMP)  ; LAB_005b4047

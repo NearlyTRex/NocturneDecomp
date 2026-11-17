@@ -11,15 +11,15 @@ void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040c630(CQuaternion4f *quat_p
 {
   int iVar1;
   
-  if (g_INT_00763e88 == 1) {
-    iVar1 = _fscanf(g_FILE_PTR_00763e84,"%f,%f,%f,%f",quat_ptr,&quat_ptr->x,&quat_ptr->y);
+  if (g_ActorReadingMode == 1) {
+    iVar1 = _fscanf(g_ActorDataFile,"%f,%f,%f,%f",quat_ptr,&quat_ptr->x,&quat_ptr->y);
     if (iVar1 != 4) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("Quaternion",property_type)
       ;
     }
   }
   else {
-    _fprintf(g_FILE_PTR_00763e84,"%s%g,%g,%g,%g",g_CHAR_ARRAY_005acc90,(double)quat_ptr->w,
+    _fprintf(g_ActorDataFile,"%s%g,%g,%g,%g",g_PropertyNamePrefix,(double)quat_ptr->w,
                (double)quat_ptr->x,(double)quat_ptr->y,(double)quat_ptr->z);
   }
   core_actor_cpp_archiveDescription_FUN_0040c3a0("Quaternion",property_type);

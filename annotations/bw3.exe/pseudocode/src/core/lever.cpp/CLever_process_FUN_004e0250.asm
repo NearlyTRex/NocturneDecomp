@@ -11,7 +11,7 @@
 ;   double g_DOUBLE_005c6902 = 6
 ;   double g_DOUBLE_005c690a = 0.100000000000000
 ;   double g_DOUBLE_005c6912 = 0.900000000000000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 004e02a1 (CONDITIONAL_JUMP)  ; LAB_004e02a1
     LEA EAX,[EBX + 0x344]               ; 004e028b
     PUSH EAX                            ; 004e0291
-    MOV EDI,dword ptr [0x005fba60]      ; 004e0292 | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 004e0292 | g_CEventListPtr
     PUSH EDI                            ; 004e0298
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004e0299
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -106,7 +106,7 @@ section .text
         ;   XREF to: 004e0344 (CONDITIONAL_JUMP)  ; LAB_004e0344
     LEA EAX,[EBX + 0x2e0]               ; 004e032f
     PUSH EAX                            ; 004e0335
-    MOV EAX,[0x005fba60]                ; 004e0336 | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 004e0336 | g_CEventListPtr
     PUSH EAX                            ; 004e033b
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004e033c
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -186,7 +186,7 @@ section .text
         ;   XREF to: 004e0344 (CONDITIONAL_JUMP)  ; LAB_004e0344
     LEA EAX,[EBX + 0x344]               ; 004e041b
     PUSH EAX                            ; 004e0421
-    MOV ESI,dword ptr [0x005fba60]      ; 004e0422 | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004e0422 | g_CEventListPtr
     PUSH ESI                            ; 004e0428
     JMP 0x004e033c                      ; 004e0429
         ;   XREF to: 004e033c (UNCONDITIONAL_JUMP)  ; LAB_004e033c
@@ -230,7 +230,7 @@ section .text
     ADD EBX,0x2e0                       ; 004e0491
         ;   Label: LAB_004e0491
     PUSH EBX                            ; 004e0497
-    MOV EAX,[0x005fba60]                ; 004e0498 | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 004e0498 | g_CEventListPtr
     PUSH EAX                            ; 004e049d
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004e049e
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

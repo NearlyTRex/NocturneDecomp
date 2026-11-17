@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5b0
 ;
@@ -34,8 +34,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x48]      ; 00435917
     MOV EBP,dword ptr [ESP + 0x40]      ; 0043591b
     MOV EBX,dword ptr [0x01c6b5b0]      ; 0043591f | g_INT_01c6b5b0
-    MOV EAX,[0x01c5faf0]                ; 00435925 | g_ARRAY_PTR_01c5faec[1]
-    MOV EDI,dword ptr [0x01c5faec]      ; 0043592a | g_ARRAY_PTR_01c5faec
+    MOV EAX,[0x01c5faf0]                ; 00435925 | g_ScreenBufferArray[1]
+    MOV EDI,dword ptr [0x01c5faec]      ; 0043592a | g_ScreenBufferArray
     MOV ESI,dword ptr [0x01c6b5a8]      ; 00435930 | g_INT_01c6b5a8
     SUB EBX,EDX                         ; 00435936
     SUB EAX,EDI                         ; 00435938

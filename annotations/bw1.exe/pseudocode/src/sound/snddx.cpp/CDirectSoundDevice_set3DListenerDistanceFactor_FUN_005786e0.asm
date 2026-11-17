@@ -9,13 +9,13 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005f4df3 = 0.3048000
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02c81da0
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c81da0]      ; 005786e0 | g_IDirectSound3DListener_PTR_02c81da0
+    MOV EDX,dword ptr [0x02c81da0]      ; 005786e0 | g_DirectSound3DListener
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005786e0
     TEST EDX,EDX                        ; 005786e6
     JNZ 0x005786eb                      ; 005786e8

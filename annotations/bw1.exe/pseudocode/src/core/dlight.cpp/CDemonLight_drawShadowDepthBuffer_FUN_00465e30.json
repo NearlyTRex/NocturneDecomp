@@ -69,7 +69,7 @@
     },
     {
       "addr": "01b2ee48",
-      "name": "g_INT_01b2ee48",
+      "name": "g_NoiseTableIndex",
       "type": "int",
       "value": null
     },
@@ -87,49 +87,49 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "g_ARRAY_PTR_01c4354c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4e9d4",
-      "name": "g_BIT_INTEGER32_01c4e9d4",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9d8",
-      "name": "g_INT_01c4e9d8",
+      "name": "g_RedScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9e0",
-      "name": "g_BIT_INTEGER32_01c4e9e0",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9e4",
-      "name": "g_INT_01c4e9e4",
+      "name": "g_GreenScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9ec",
-      "name": "g_BIT_INTEGER32_01c4e9ec",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9f0",
-      "name": "g_INT_01c4e9f0",
+      "name": "g_BlueScaleFactor",
       "type": "int",
       "value": null
     }
@@ -360,17 +360,17 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(uint *)((int)g_ARRAY_PTR_01c4354c",
+      "match": "(uint *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_ARRAY_PTR_01c4354c + iVar6);",
+      "text": "puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 36,
-      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_ARRAY_PTR_01c4354c + iVar6);",
+      "text": "puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_truncation"
     },
     {

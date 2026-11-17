@@ -67,7 +67,7 @@
 ;   TerminatedCString s_Too_many_drawn_cubes_Nee_005db97f
 ;   double g_DOUBLE_005db9ac = -256
 ;   double g_DOUBLE_005db9b4 = 256
-;   float g_FLOAT_005ff620 = 256
+;   float g_RaytraceWorldToScreenScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0061255c = 01bc120c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].projected_vertex.screen_x
@@ -102,10 +102,10 @@ section .text
     MOV ESI,dword ptr [ESP + 0xd8]      ; 0048cbaa
     MOV EDI,dword ptr [ESP + 0xdc]      ; 0048cbb1
     MOV EBP,dword ptr [ESP + 0xe4]      ; 0048cbb8
-    MOV EDX,dword ptr [0x01bef208]      ; 0048cbbf | g_INT_01bef208
+    MOV EDX,dword ptr [0x01bef208]      ; 0048cbbf | g_CubesTestedCount
     INC EDX                             ; 0048cbc5
     MOV ECX,dword ptr [ESI + 0x54]      ; 0048cbc6
-    MOV dword ptr [0x01bef208],EDX      ; 0048cbc9 | g_INT_01bef208
+    MOV dword ptr [0x01bef208],EDX      ; 0048cbc9 | g_CubesTestedCount
     CMP EDI,ECX                         ; 0048cbcf
     JL 0x0048cbfa                       ; 0048cbd1
         ;   XREF to: 0048cbfa (CONDITIONAL_JUMP)  ; LAB_0048cbfa
@@ -170,21 +170,21 @@ section .text
     FSTP float ptr [ESP + 0x2c]         ; 0048cc89
     FMUL float ptr [ESI + 0x30]         ; 0048cc8d
     LEA EBX,[ESP + 0x70]                ; 0048cc90
-    MOV ECX,dword ptr [0x01bef20c]      ; 0048cc94 | g_INT_01bef20c
+    MOV ECX,dword ptr [0x01bef20c]      ; 0048cc94 | g_CubesWithVoxelsCount
     MOV EDX,dword ptr [0x0061255c]      ; 0048cc9a | g_CDemonRenderer_PTR_0061255c
     INC ECX                             ; 0048cca0
     LEA EAX,[ESP + 0x28]                ; 0048cca1
     FADD float ptr [ESI + 0x18]         ; 0048cca5
-    MOV dword ptr [0x01bef20c],ECX      ; 0048cca8 | g_INT_01bef20c
+    MOV dword ptr [0x01bef20c],ECX      ; 0048cca8 | g_CubesWithVoxelsCount
     FSTP float ptr [ESP + 0x30]         ; 0048ccae
     FLD float ptr [EAX]                 ; 0048ccb2
-    FMUL float ptr [0x005ff620]         ; 0048ccb4 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048ccb4 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048ccba
     FLD float ptr [EAX + 0x4]           ; 0048ccbc
-    FMUL float ptr [0x005ff620]         ; 0048ccbf | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048ccbf | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048ccc5
     FLD float ptr [EAX + 0x8]           ; 0048ccc8
-    FMUL float ptr [0x005ff620]         ; 0048cccb | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cccb | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048ccd1
     LEA EAX,[ESP + 0x70]                ; 0048ccd4
     PUSH EAX                            ; 0048ccd8
@@ -214,13 +214,13 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0048cd32
     FSTP float ptr [ESP + 0x30]         ; 0048cd36
     FLD float ptr [EAX]                 ; 0048cd3a
-    FMUL float ptr [0x005ff620]         ; 0048cd3c | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cd3c | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048cd42
     FLD float ptr [EAX + 0x4]           ; 0048cd44
-    FMUL float ptr [0x005ff620]         ; 0048cd47 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cd47 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048cd4d
     FLD float ptr [EAX + 0x8]           ; 0048cd50
-    FMUL float ptr [0x005ff620]         ; 0048cd53 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cd53 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048cd59
     LEA EAX,[ESP + 0x58]                ; 0048cd5c
     PUSH EAX                            ; 0048cd60
@@ -252,13 +252,13 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0048cdc5
     MOV EDX,dword ptr [0x0061255c]      ; 0048cdc9 | g_CDemonRenderer_PTR_0061255c
     FLD float ptr [EAX]                 ; 0048cdcf
-    FMUL float ptr [0x005ff620]         ; 0048cdd1 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cdd1 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048cdd7
     FLD float ptr [EAX + 0x4]           ; 0048cdd9
-    FMUL float ptr [0x005ff620]         ; 0048cddc | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cddc | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048cde2
     FLD float ptr [EAX + 0x8]           ; 0048cde5
-    FMUL float ptr [0x005ff620]         ; 0048cde8 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cde8 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048cdee
     LEA EAX,[ESP + 0x94]                ; 0048cdf1
     PUSH EAX                            ; 0048cdf8
@@ -286,13 +286,13 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 0048ce42 | g_CDemonRenderer_PTR_0061255c
     FSTP float ptr [ESP + 0x30]         ; 0048ce48
     FLD float ptr [EAX]                 ; 0048ce4c
-    FMUL float ptr [0x005ff620]         ; 0048ce4e | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048ce4e | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048ce54
     FLD float ptr [EAX + 0x4]           ; 0048ce56
-    FMUL float ptr [0x005ff620]         ; 0048ce59 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048ce59 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048ce5f
     FLD float ptr [EAX + 0x8]           ; 0048ce62
-    FMUL float ptr [0x005ff620]         ; 0048ce65 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048ce65 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048ce6b
     LEA EAX,[ESP + 0x7c]                ; 0048ce6e
     PUSH EAX                            ; 0048ce72
@@ -324,13 +324,13 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0048ced6
     FSTP float ptr [ESP + 0x30]         ; 0048ceda
     FLD float ptr [EAX]                 ; 0048cede
-    FMUL float ptr [0x005ff620]         ; 0048cee0 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cee0 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048cee6
     FLD float ptr [EAX + 0x4]           ; 0048cee8
-    FMUL float ptr [0x005ff620]         ; 0048ceeb | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048ceeb | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048cef1
     FLD float ptr [EAX + 0x8]           ; 0048cef4
-    FMUL float ptr [0x005ff620]         ; 0048cef7 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cef7 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048cefd
     LEA EAX,[ESP + 0x34]                ; 0048cf00
     PUSH EAX                            ; 0048cf04
@@ -358,13 +358,13 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 0048cf50 | g_CDemonRenderer_PTR_0061255c
     FSTP float ptr [ESP + 0x30]         ; 0048cf56
     FLD float ptr [EAX]                 ; 0048cf5a
-    FMUL float ptr [0x005ff620]         ; 0048cf5c | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cf5c | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048cf62
     FLD float ptr [EAX + 0x4]           ; 0048cf64
-    FMUL float ptr [0x005ff620]         ; 0048cf67 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cf67 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048cf6d
     FLD float ptr [EAX + 0x8]           ; 0048cf70
-    FMUL float ptr [0x005ff620]         ; 0048cf73 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cf73 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048cf79
     LEA EAX,[ESP + 0x40]                ; 0048cf7c
     PUSH EAX                            ; 0048cf80
@@ -392,13 +392,13 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 0048cfcc | g_CDemonRenderer_PTR_0061255c
     FSTP float ptr [ESP + 0x30]         ; 0048cfd2
     FLD float ptr [EAX]                 ; 0048cfd6
-    FMUL float ptr [0x005ff620]         ; 0048cfd8 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cfd8 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048cfde
     FLD float ptr [EAX + 0x4]           ; 0048cfe0
-    FMUL float ptr [0x005ff620]         ; 0048cfe3 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cfe3 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048cfe9
     FLD float ptr [EAX + 0x8]           ; 0048cfec
-    FMUL float ptr [0x005ff620]         ; 0048cfef | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048cfef | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048cff5
     LEA EAX,[ESP + 0x64]                ; 0048cff8
     PUSH EAX                            ; 0048cffc
@@ -426,13 +426,13 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 0048d048 | g_CDemonRenderer_PTR_0061255c
     FSTP float ptr [ESP + 0x30]         ; 0048d04e
     FLD float ptr [EAX]                 ; 0048d052
-    FMUL float ptr [0x005ff620]         ; 0048d054 | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048d054 | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0048d05a
     FLD float ptr [EAX + 0x4]           ; 0048d05c
-    FMUL float ptr [0x005ff620]         ; 0048d05f | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048d05f | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0048d065
     FLD float ptr [EAX + 0x8]           ; 0048d068
-    FMUL float ptr [0x005ff620]         ; 0048d06b | g_FLOAT_005ff620
+    FMUL float ptr [0x005ff620]         ; 0048d06b | g_RaytraceWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0048d071
     LEA EAX,[ESP + 0x4c]                ; 0048d074
     PUSH EAX                            ; 0048d078
@@ -463,11 +463,11 @@ section .text
     TEST AL,0xff                        ; 0048d0cd
     JNZ 0x0048cbfa                      ; 0048d0cf
         ;   XREF to: 0048cbfa (CONDITIONAL_JUMP)  ; LAB_0048cbfa
-    MOV EAX,[0x01bef210]                ; 0048d0d5 | g_INT_01bef210
+    MOV EAX,[0x01bef210]                ; 0048d0d5 | g_CubesVisibleCount
         ;   Label: LAB_0048d0d5
     INC EAX                             ; 0048d0da
     MOV EDX,dword ptr [ESP + 0xe8]      ; 0048d0db
-    MOV [0x01bef210],EAX                ; 0048d0e2 | g_INT_01bef210
+    MOV [0x01bef210],EAX                ; 0048d0e2 | g_CubesVisibleCount
     CMP EDX,0x1                         ; 0048d0e7
     JG 0x0048d22a                       ; 0048d0ea
         ;   XREF to: 0048d22a (CONDITIONAL_JUMP)  ; LAB_0048d22a
@@ -488,11 +488,11 @@ section .text
     FXCH                                ; 0048d136
     FSTP float ptr [ESP + 0x8c]         ; 0048d138
     FMUL float ptr [ESI + 0x30]         ; 0048d13f
-    MOV EBX,dword ptr [0x01bef214]      ; 0048d142 | g_INT_01bef214
+    MOV EBX,dword ptr [0x01bef214]      ; 0048d142 | g_CubesRenderedCount
     MOV EDI,dword ptr [0x00612560]      ; 0048d148 | g_CDemonRenderer_PTR_00612560
     INC EBX                             ; 0048d14e
     LEA EAX,[ESP + 0x88]                ; 0048d14f
-    MOV dword ptr [0x01bef214],EBX      ; 0048d156 | g_INT_01bef214
+    MOV dword ptr [0x01bef214],EBX      ; 0048d156 | g_CubesRenderedCount
     PUSH EAX                            ; 0048d15c
     FADD float ptr [ESI + 0x18]         ; 0048d15d
     PUSH EDI                            ; 0048d160 | g_CDemonRenderer_01bc120c
@@ -507,13 +507,13 @@ section .text
     CALL core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457f70 ; 0048d17b
         ;   XREF to: 00457f70 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457f70(CDemonCube * this_ptr, uint rendering_mode)
     ADD ESP,0x8                         ; 0048d180
-    PUSH 0x2c8af28                      ; 0048d183 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0048d183 | g_ZeroVector
     MOV EDX,dword ptr [0x00612560]      ; 0048d188 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 0048d18e | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0 ; 0048d18f
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0048d194
-    MOV EAX,[0x01bef218]                ; 0048d197 | g_INT_01bef218
+    MOV EAX,[0x01bef218]                ; 0048d197 | g_PVSDrawnCubeCount
     MOV EDX,dword ptr [ESP + 0xa0]      ; 0048d19c
     MOV EBX,EAX                         ; 0048d1a3
     MOV dword ptr [EAX*0x4 + 0x1bef220],EDX ; 0048d1a5
@@ -532,10 +532,10 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 0048d1d6
     MOV EAX,dword ptr [ESP + 0x90]      ; 0048d1d9
     MOV dword ptr [ESI + 0x8],EAX       ; 0048d1e0
-    MOV ECX,dword ptr [0x01bef218]      ; 0048d1e3 | g_INT_01bef218
+    MOV ECX,dword ptr [0x01bef218]      ; 0048d1e3 | g_PVSDrawnCubeCount
         ;   Label: LAB_0048d1e3
     INC ECX                             ; 0048d1e9
-    MOV dword ptr [0x01bef218],ECX      ; 0048d1ea | g_INT_01bef218
+    MOV dword ptr [0x01bef218],ECX      ; 0048d1ea | g_PVSDrawnCubeCount
     CMP ECX,0x4e20                      ; 0048d1f0
     JL 0x0048cbfa                       ; 0048d1f6
         ;   XREF to: 0048cbfa (CONDITIONAL_JUMP)  ; LAB_0048cbfa

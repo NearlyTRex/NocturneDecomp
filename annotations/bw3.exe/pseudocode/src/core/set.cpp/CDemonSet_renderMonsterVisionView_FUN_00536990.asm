@@ -40,7 +40,7 @@
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CScript* g_CScriptPtr = 01ed73e0
-;   int g_INT_00603b38 = 0x1
+;   int g_RenderMirrorsFlag = 0x1
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
@@ -213,14 +213,14 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00536af8
     PUSH dword ptr [EAX + 0x140]        ; 00536afb | g_CDemonLightInstance.base.max_distance
     PUSH EBX                            ; 00536b01
-    MOV dword ptr [0x00603b38],ECX      ; 00536b02 | g_INT_00603b38
+    MOV dword ptr [0x00603b38],ECX      ; 00536b02 | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80 ; 00536b08
         ;   XREF to: 00533b80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00536b0d
     PUSH -0x1                           ; 00536b10
     MOV ESI,0x1                         ; 00536b12
     PUSH EBX                            ; 00536b17
-    MOV dword ptr [0x00603b38],ESI      ; 00536b18 | g_INT_00603b38
+    MOV dword ptr [0x00603b38],ESI      ; 00536b18 | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30 ; 00536b1e
         ;   XREF to: 00539f30 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 00536b23

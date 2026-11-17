@@ -13,19 +13,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_004
   output_state->viewport_center_y = g_INT_01c4effc;
   output_state->viewport_right = g_INT_01c4f000;
   output_state->viewport_bottom = g_INT_01c4f004;
-  output_state->camera_origin_x = g_INT_01c51d38;
-  output_state->camera_origin_y = g_INT_01c51d3c;
-  output_state->camera_origin_z = g_INT_01c51d40;
-  output_state->camera_pitch = g_INT_01c51d44;
-  output_state->camera_yaw = g_INT_01c51d48;
-  output_state->camera_roll = g_INT_01c51d4c;
+  output_state->camera_origin_x = g_CameraOriginX;
+  output_state->camera_origin_y = g_CameraOriginY;
+  output_state->camera_origin_z = g_CameraOriginZ;
+  output_state->camera_pitch = g_CameraRotationPitch;
+  output_state->camera_yaw = g_CameraRotationYaw;
+  output_state->camera_roll = g_CameraRotationRoll;
   output_state->clip_left = g_INT_01c4f008;
-  output_state->clip_right = g_INT_01c4f010;
+  output_state->clip_right = g_ClipRight;
   output_state->clip_top = g_INT_01c4f00c;
   output_state->clip_bottom = g_INT_01c4f014;
-  output_state->relative_x = g_INT_01c51d2c;
-  output_state->relative_y = g_INT_01c51d30;
-  output_state->relative_z = g_INT_01c51d34;
+  output_state->relative_x = g_RelativeX;
+  output_state->relative_y = g_RelativeY;
+  output_state->relative_z = g_RelativeZ;
   (output_state->transform_matrix).m[0].x = g_INT_01c51d5c;
   (output_state->transform_matrix).m[0].y = g_INT_01c51d60;
   (output_state->transform_matrix).m[0].z = g_INT_01c51d64;
@@ -44,6 +44,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_004
   (output_state->inverse_matrix).m[2].x = g_INT_01d1dd30;
   (output_state->inverse_matrix).m[2].y = g_INT_01d1dd34;
   (output_state->inverse_matrix).m[2].z = g_INT_01d1dd38;
-  output_state->projection_scale = g_INT_0061b4c4;
+  output_state->projection_scale = g_ProjectionScale;
   return;
 }

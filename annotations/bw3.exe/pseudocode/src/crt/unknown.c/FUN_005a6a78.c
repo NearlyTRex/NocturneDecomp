@@ -284,9 +284,9 @@ LAB_005a6e05:
             puVar4 = (ushort *)*param_2;
             *param_2 = (uint)(puVar4 + 2);
             iVar7 = FUN_005ad320(&local_1c,*puVar4);
-            iVar6 = g_INT_02d25930;
+            iVar6 = g_MultibyteLocaleActive;
             if (((iVar7 != -1) && (*param_1 = local_1c, iVar6 != 0)) &&
-               ((g_CHAR_ARRAY_02d25941[local_1c] & 1U) != 0)) {
+               ((g_LeadByteTable[local_1c] & 1U) != 0)) {
               param_1[1] = local_1b;
               *(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;
               return CONCAT44(local_18,param_1);

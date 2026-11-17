@@ -256,10 +256,10 @@ LAB_0057981a:
                              (local_6a8,(char *)0x0,"a+t","..\\core\\setedit.cpp",1249
                              );
             if (file == (_FILE *)0x0) {
-              if (INT_03365cb8 == 0) {
+              if (g_S3DAppendWarningShown == 0) {
                 shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                           (g_CEditorToolsPtr,"Warning: Can't create/append %s",local_6a8);
-                INT_03365cb8 = 1;
+                g_S3DAppendWarningShown = 1;
               }
             }
             else {

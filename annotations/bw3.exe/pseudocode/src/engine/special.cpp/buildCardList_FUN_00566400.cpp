@@ -14,7 +14,7 @@ int __cdecl engine_special_cpp_buildCardList_FUN_00566400(int *out_card_count,ch
   if (g_INT_02cf6108 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6074)
+  iVar1 = (*(code *)g_APIDLL_buildCardList)
                     (out_card_count,out_driver_names,out_card_names,out_vendor_ids,out_device_ids);
   return iVar1;
 }

@@ -31,7 +31,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0(CMans
   }
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_28,in_stack_ffffffbc);
   if (iVar1 != 0) {
-    iStack_10 = (int)ROUND(g_CVector3f_02c8af28.x * 256.0f);
+    iStack_10 = (int)ROUND(g_ZeroVector.x * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
               (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[1000].projected_vertex,
                (CVector3i *)&iStack_10);

@@ -31,7 +31,7 @@
   "globals": [
     {
       "addr": "01cc804c",
-      "name": "g_INT_01cc804c",
+      "name": "g_FastSqrtMagic",
       "type": "int",
       "value": null
     }
@@ -115,11 +115,11 @@
   },
   "suspects": [
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 5,
-      "match": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_INT_01c",
+      "match": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqr",
       "severity": "moderate",
-      "text": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_INT_01cc804c);",
+      "text": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     }
   ]

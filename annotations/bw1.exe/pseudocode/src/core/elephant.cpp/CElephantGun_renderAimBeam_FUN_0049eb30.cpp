@@ -98,7 +98,7 @@ void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_0049eb30(CElephant
     afStack_80[4] = afStack_80[4] * fVar1;
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0
-            (g_CFireEffect_PTR_0061c010,&CStack_c0,&CStack_60,1.0,0,0xff,0,
+            (g_CFireEffectPtr,&CStack_c0,&CStack_60,1.0,0,0xff,0,
              this_ptr->spread_angle * 3.141593f * 0.005555556f);
   this_ptr->muzzle_flash_active = 1;
   fStack_54 = CStack_60.x - CStack_c0.x;

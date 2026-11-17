@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005d7402 = -0.5
 ;   double g_DOUBLE_005d740a = 0.0100000000000000
-;   int g_INT_007dc718
+;   int g_CurtainCollisionCount
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
     MOV dword ptr [ECX + 0x6c],0x1      ; 0044ac5d
     XOR EBX,EBX                         ; 0044ac64
         ;   Label: LAB_0044ac64
-    MOV ESI,dword ptr [0x007dc718]      ; 0044ac66 | g_INT_007dc718
+    MOV ESI,dword ptr [0x007dc718]      ; 0044ac66 | g_CurtainCollisionCount
     MOV dword ptr [ESP + 0x1e4],EBX     ; 0044ac6c
     TEST ESI,ESI                        ; 0044ac73
     JLE 0x0044adee                      ; 0044ac75
@@ -146,7 +146,7 @@ section .text
     INC ESI                             ; 0044adca
     MOV dword ptr [ESP + 0x1d8],EDI     ; 0044adcb
     MOV dword ptr [ESP + 0x1cc],EAX     ; 0044add2
-    MOV EDI,dword ptr [0x007dc718]      ; 0044add9 | g_INT_007dc718
+    MOV EDI,dword ptr [0x007dc718]      ; 0044add9 | g_CurtainCollisionCount
     MOV dword ptr [ESP + 0x1e4],ESI     ; 0044addf
     CMP ESI,EDI                         ; 0044ade6
     JL 0x0044aca8                       ; 0044ade8

@@ -113,25 +113,25 @@
     },
     {
       "addr": "01cea3f8",
-      "name": "g_UINT_01cea3f8",
+      "name": "g_CurrentGameTime",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01cea408",
-      "name": "g_UINT_01cea408",
+      "name": "g_NetLastSimFrameAckTime",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01d09c00",
-      "name": "g_INT_01d09c00",
+      "name": "g_SimFrameCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d09c68",
-      "name": "g_SSimFrame_ARRAY_01d09c04[1].sequence_number",
+      "name": "g_SimFrameHistory[1].sequence_number",
       "type": "undefined4",
       "value": null
     }
@@ -299,33 +299,33 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(int *)((int)g_SSimFrame_ARRAY_01d09c04",
+      "match": "(int *)((int)g_SimFrameHistory",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input + iVar1 + -0xc)) {",
+      "text": "*(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
-      "match": "(int *)((int)g_SSimFrame_ARRAY_01d09c04",
+      "match": "(int *)((int)g_SimFrameHistory",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input + iVar3 + -0xc) <",
+      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_input + iVar3 + -0xc) < iVar2) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(void *)((int)g_SSimFrame_ARRAY_01d09c04",
+      "line": 42,
+      "match": "(void *)((int)g_SimFrameHistory",
       "severity": "moderate",
-      "text": "((void *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input +",
+      "text": "((void *)((int)g_SimFrameHistory[0].player_input + iVar3 + -0xc),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)g_SSimFrame_ARRAY_01d09c04",
+      "line": 59,
+      "match": "(int *)((int)g_SimFrameHistory",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input + iVar1 + -0xc)) {",
+      "text": "*(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {",
       "type": "pointer_cast"
     },
     {
@@ -337,8 +337,8 @@
       "type": "pointer_cast"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((g_INT_01d09c00 - iVar1) * 100) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 42,
+      "description": "mem* byte count hardcodes an element stride ((g_SimFrameCount - iVar1) * 100) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 41,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

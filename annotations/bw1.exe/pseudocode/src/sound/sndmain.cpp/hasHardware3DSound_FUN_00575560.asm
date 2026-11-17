@@ -17,13 +17,13 @@
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 00572f67
 ;
 ; Referenced Globals:
-;   int g_INT_02c80658
+;   int g_HasHardware3DSound
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c80658]                ; 00575560 | g_INT_02c80658
+    MOV EAX,[0x02c80658]                ; 00575560 | g_HasHardware3DSound
         ;   Label: sound_sndmain.cpp_hasHardware3DSound_FUN_00575560
     RET                                 ; 00575565
 

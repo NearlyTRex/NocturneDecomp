@@ -10,9 +10,9 @@
 ;   double g_DOUBLE_005d1366 = 65535
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01d1a0a4
+;   int g_FastSqrtMagic
 ;   int g_INT_01d5ba14
-;   int g_INT_01d8e40c
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -80,7 +80,7 @@ section .text
     FLD float ptr [ESP + 0x44]          ; 00545785
     FMUL ST0                            ; 00545789
     FADDP                               ; 0054578b
-    MOV ECX,dword ptr [0x01d1a0a4]      ; 0054578d | g_INT_01d1a0a4
+    MOV ECX,dword ptr [0x01d1a0a4]      ; 0054578d | g_FastSqrtMagic
     FSTP float ptr [ESP + 0x50]         ; 00545793
     MOV EDX,dword ptr [ESP + 0x50]      ; 00545797
     MOV dword ptr [EBX + 0x27bc],0x0    ; 0054579b
@@ -164,7 +164,7 @@ section .text
     PUSH ECX                            ; 00545899 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 ; 0054589a
         ;   XREF to: 0046e4e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer * this_ptr)
-    MOV EDI,dword ptr [0x01d8e40c]      ; 0054589f | g_INT_01d8e40c
+    MOV EDI,dword ptr [0x01d8e40c]      ; 0054589f | g_RenderMotionDebug
     ADD ESP,0x4                         ; 005458a5
     TEST EDI,EDI                        ; 005458a8
     JZ 0x005458b6                       ; 005458aa

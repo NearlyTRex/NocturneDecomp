@@ -12,7 +12,7 @@
 ;   double g_DOUBLE_005d8873 = 1000
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGame* g_CGamePtr = 01cb6900
-;   int g_INT_01cb8118
+;   int g_ProfileStartTime
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 004bd506
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004bd507
         ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
-    MOV ECX,dword ptr [0x01cb8118]      ; 004bd50c | g_INT_01cb8118
+    MOV ECX,dword ptr [0x01cb8118]      ; 004bd50c | g_ProfileStartTime
     SUB EAX,ECX                         ; 004bd512
     MOV dword ptr [ESP + 0x10],EAX      ; 004bd514
     FILD dword ptr [ESP + 0x10]         ; 004bd518

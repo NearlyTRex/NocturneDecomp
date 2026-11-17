@@ -22,7 +22,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
   int local_28;
   
   shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004859e0(this_ptr);
-  iVar8 = g_INT_01c5bb54;
+  iVar8 = g_ShadowColor;
   iVar3 = this_ptr->bounds_bottom;
   iVar4 = this_ptr->bounds_right;
   iVar7 = this_ptr->bounds_top;
@@ -32,12 +32,13 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
   iVar2 = iVar9 + 1;
   iVar6 = iVar7 + 1;
   if (g_INT_01c5baec == 0) {
-    engine_2d_c_fillRectWithBorder_FUN_00403250(iVar2,iVar6,iVar5,y2,g_INT_01c5bb54,g_INT_01c5bb58);
+    engine_2d_c_fillRectWithBorder_FUN_00403250
+              (iVar2,iVar6,iVar5,y2,g_ShadowColor,g_ScrollBarHighlightColor);
   }
   else {
-    iVar1 = g_INT_01c5bb58;
+    iVar1 = g_ScrollBarHighlightColor;
     if (g_INT_01c5baec != 0) {
-      iVar1 = (g_INT_01c5bb58 & 0xffU) * 3;
+      iVar1 = (g_ScrollBarHighlightColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f3520
                 ((uint)g_UCHAR_ARRAY_01c6af98[iVar1] << 0x10 |
                  (uint)g_UCHAR_ARRAY_01c6af98[iVar1 + 1] << 8 |
@@ -73,7 +74,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
     iVar8 = iVar4;
     local_28 = this_ptr->thumb_end;
   }
-  if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 0)) {
+  if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 0)) {
     iVar6 = 1;
   }
   else {
@@ -81,14 +82,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
   }
   shape_edittool_cpp_draw3DBorder_FUN_004850a0(iVar5,iVar2,local_28,iVar8,iVar6);
   if (this_ptr->orientation == 0) {
-    if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 1)) {
+    if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 1)) {
       iVar8 = 1;
     }
     else {
       iVar8 = 0;
     }
     shape_edittool_cpp_draw3DBorder_FUN_004850a0(iVar7,iVar9,iVar3,this_ptr->track_start,iVar8);
-    if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 1)) {
+    if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 1)) {
       iVar8 = 1;
     }
     else {
@@ -96,14 +97,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
     }
     shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0
               (iVar7,iVar9,iVar3,this_ptr->track_start,iVar8,0);
-    if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 2)) {
+    if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 2)) {
       iVar9 = 1;
     }
     else {
       iVar9 = 0;
     }
     shape_edittool_cpp_draw3DBorder_FUN_004850a0(iVar7,this_ptr->track_end,iVar3,iVar4,iVar9);
-    if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 2)) {
+    if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 2)) {
       iVar9 = 1;
     }
     else {
@@ -113,14 +114,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
     ;
     return;
   }
-  if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 1)) {
+  if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 1)) {
     iVar8 = 1;
   }
   else {
     iVar8 = 0;
   }
   shape_edittool_cpp_draw3DBorder_FUN_004850a0(iVar7,iVar9,this_ptr->track_start,iVar4,iVar8);
-  if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 1)) {
+  if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 1)) {
     iVar8 = 1;
   }
   else {
@@ -128,14 +129,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *t
   }
   shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(iVar7,iVar9,this_ptr->track_start,iVar4,iVar8,2)
   ;
-  if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 2)) {
+  if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 2)) {
     iVar7 = 1;
   }
   else {
     iVar7 = 0;
   }
   shape_edittool_cpp_draw3DBorder_FUN_004850a0(this_ptr->track_end,iVar9,iVar3,iVar4,iVar7);
-  if ((this_ptr == (CEdScrollBar *)g_PTR_01c5bb78) && (g_INT_01c5bb7c == 2)) {
+  if ((this_ptr == (CEdScrollBar *)g_ActiveControl) && (g_ScrollAction == 2)) {
     iVar7 = 1;
   }
   else {

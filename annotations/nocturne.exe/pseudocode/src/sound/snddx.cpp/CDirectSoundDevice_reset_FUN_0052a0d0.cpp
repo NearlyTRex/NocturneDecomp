@@ -21,8 +21,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDe
   int local_14;
   
   local_14 = 1;
-  if (g_IDirectSoundBuffer_PTR_02dc921c != (IDirectSoundBuffer *)0x0) {
-    uVar2 = (*g_IDirectSoundBuffer_PTR_02dc921c->vtable->Stop)(g_IDirectSoundBuffer_PTR_02dc921c);
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_DirectSoundSecondaryBuffer->vtable->Stop)(g_DirectSoundSecondaryBuffer);
     if (uVar2 != 0) {
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
       _sprintf(acStack_1a4,"DirectSux: Unable to %s.  (%s)","Stop secondary sound buffer",
@@ -31,8 +31,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDe
       local_14 = 0;
     }
   }
-  if (g_IDirectSoundBuffer_PTR_02dc9218 != (IDirectSoundBuffer *)0x0) {
-    uVar2 = (*g_IDirectSoundBuffer_PTR_02dc9218->vtable->Stop)(g_IDirectSoundBuffer_PTR_02dc9218);
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_DirectSoundPrimaryBuffer->vtable->Stop)(g_DirectSoundPrimaryBuffer);
     if (uVar2 != 0) {
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
       _sprintf(acStack_334,"DirectSux: Unable to %s.  (%s)","Stop primary sound buffer",
@@ -44,7 +44,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDe
   iVar5 = 0;
   iVar4 = 0;
   do {
-    piVar1 = *(int **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8 + iVar5);
+    piVar1 = *(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar5);
     if (piVar1 == (int *)0x0) {
 LAB_0052a120:
       piVar1 = (int *)g_INT_ARRAY_02dc9324[iVar4];
@@ -52,10 +52,10 @@ LAB_0052a120:
         (**(code **)(*piVar1 + 8))(piVar1);
         g_INT_ARRAY_02dc9324[iVar4] = 0;
       }
-      this_ptr_00 = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar4];
+      this_ptr_00 = g_DirectSoundHardwareSfxBuffers[iVar4];
       if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
         (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
-        g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar4] = (IDirectSoundBuffer *)0x0;
+        g_DirectSoundHardwareSfxBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
       }
     }
     else {

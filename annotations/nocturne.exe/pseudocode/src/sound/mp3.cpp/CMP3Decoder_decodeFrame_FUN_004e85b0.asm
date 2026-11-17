@@ -97,12 +97,12 @@
 ;   TerminatedCString s_sound_mp3_cpp_0058b9c0
 ;   TerminatedCString s_Not_enough_main_data_to_0058b9d1
 ;   undefined4 s_CMotionController_005bb246+0xa
-;   double[2][4] g_DOUBLE_ARRAY_ARRAY_005bbc48
-;   int[2][3][15] g_INT_ARRAY_ARRAY_ARRAY_005bbc88
-;   double[64] g_DOUBLE_ARRAY_005bbdf0
+;   double[2][4] g_MpegSampleRateTable
+;   int[2][3][15] g_MpegBitrateTable
+;   double[64] g_MpegScalefactorTable
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   char[256] g_CHAR_ARRAY_01cd8b28
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -265,7 +265,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x60bc]    ; 004e8766
     SHL EDX,0x2                         ; 004e876d
     ADD EDX,EAX                         ; 004e8770
-    MOV EAX,dword ptr [EDX + 0x5bbc88]  ; 004e8772 | g_INT_ARRAY_ARRAY_ARRAY_005bbc88
+    MOV EAX,dword ptr [EDX + 0x5bbc88]  ; 004e8772 | g_MpegBitrateTable
     MOV EDX,EAX                         ; 004e8778
     SAR EDX,0x1f                        ; 004e877a
     IDIV ECX                            ; 004e877d
@@ -275,7 +275,7 @@ section .text
     SHL EDX,0x3                         ; 004e878c
     ADD EDX,ECX                         ; 004e878f
     MOV dword ptr [ESP + 0x6030],ESI    ; 004e8791
-    FLD double ptr [EDX + 0x5bbc48]     ; 004e8798 | g_DOUBLE_ARRAY_ARRAY_005bbc48
+    FLD double ptr [EDX + 0x5bbc48]     ; 004e8798 | g_MpegSampleRateTable
     CALL crt_math.c_round_FUN_00563a30  ; 004e879e
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EDX,dword ptr [ESP + 0x6044]    ; 004e87a3
@@ -296,7 +296,7 @@ section .text
     CMP EAX,dword ptr [EDX + 0xc]       ; 004e87da
     JZ 0x004e8806                       ; 004e87dd
         ;   XREF to: 004e8806 (CONDITIONAL_JUMP)  ; LAB_004e8806
-    PUSH 0x1cd8b28                      ; 004e87df | g_CHAR_ARRAY_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e87df | g_CurrentMp3Filename
     MOV EAX,0x58b4e0                    ; 004e87e4 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1a1                       ; 004e87e9
     PUSH 0x58b4f1                       ; 004e87ee | = "MPEG Layer 2 - pick_table - can't loa..."
@@ -319,7 +319,7 @@ section .text
     CMP EAX,ECX                         ; 004e8829
     JGE 0x004e8bf0                      ; 004e882b
         ;   XREF to: 004e8bf0 (CONDITIONAL_JUMP)  ; LAB_004e8bf0
-    PUSH 0x1cd8b28                      ; 004e8831 | g_CHAR_ARRAY_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e8831 | g_CurrentMp3Filename
         ;   Label: LAB_004e8831
     PUSH EDI                            ; 004e8836
     MOV EDX,dword ptr [ESP + 0x6050]    ; 004e8837
@@ -424,7 +424,7 @@ section .text
         ;   Label: LAB_004e89bb
     MOV EBX,dword ptr [EDX]             ; 004e89bd
     FLD ST0                             ; 004e89bf
-    FMUL double ptr [EBX*0x8 + 0x5bbdf0] ; 004e89c1 | g_DOUBLE_ARRAY_005bbdf0
+    FMUL double ptr [EBX*0x8 + 0x5bbdf0] ; 004e89c1 | g_MpegScalefactorTable
     ADD EDX,0x180                       ; 004e89c8
     ADD EAX,0x180                       ; 004e89ce
     INC ECX                             ; 004e89d3
@@ -490,7 +490,7 @@ section .text
     ADD ECX,EAX                         ; 004e8a8c
     MOV EAX,dword ptr [ESP + 0x5fcc]    ; 004e8a8e
     MOV EDX,dword ptr [ESP + 0x5fc0]    ; 004e8a95
-    FILD dword ptr [ECX + EAX*0x4 + 0x5bbc88] ; 004e8a9c | g_INT_ARRAY_ARRAY_ARRAY_005bbc88
+    FILD dword ptr [ECX + EAX*0x4 + 0x5bbc88] ; 004e8a9c | g_MpegBitrateTable
     MOV EAX,dword ptr [ESP + 0x5fd0]    ; 004e8aa3
     SHL EDX,0x5                         ; 004e8aaa
     SHL EAX,0x3                         ; 004e8aad
@@ -500,7 +500,7 @@ section .text
     MOV dword ptr [ESP + 0x6010],ECX    ; 004e8ab8
     MOV dword ptr [ESP + 0x600c],EDX    ; 004e8abf
     FILD qword ptr [ESP + 0x600c]       ; 004e8ac6
-    FDIV double ptr [EAX + 0x5bbc48]    ; 004e8acd | g_DOUBLE_ARRAY_ARRAY_005bbc48
+    FDIV double ptr [EAX + 0x5bbc48]    ; 004e8acd | g_MpegSampleRateTable
     FMULP                               ; 004e8ad3
     MOV EAX,dword ptr [ESP]             ; 004e8ad5
     MOV dword ptr [ESP + 0x6010],ECX    ; 004e8ad8

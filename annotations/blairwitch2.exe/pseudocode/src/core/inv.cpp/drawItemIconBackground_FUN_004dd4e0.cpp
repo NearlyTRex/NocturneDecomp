@@ -21,7 +21,7 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004dd4e0(int x1,int y1,int 
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00617da4);
+            (g_CDemonRenderer_PTR_0060b280,&g_Inventory3DTextureAtlas);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(g_CDemonRenderer_PTR_0060b280,alpha)
   ;
   this_ptr = g_CDemonRenderer_PTR_0060b280;

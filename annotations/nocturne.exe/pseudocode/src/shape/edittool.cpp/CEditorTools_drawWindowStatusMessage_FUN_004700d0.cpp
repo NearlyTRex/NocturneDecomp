@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_004700d
     g_CurrentLineNumber = 139;
     core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
-  g_INT_01bcd9b8 = g_CBitFont_PTR_01bcd070->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01bcd070->max_char_width;
   g_INT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_01bcd070,0x6a)
   ;
   local_14 = &stack0x0000000c;
@@ -25,7 +25,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_004700d
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (g_CBitFont_PTR_01bcd070,g_CHAR_ARRAY_01bcb0d0,g_ClipLeft,g_ClipTop,g_INT_01bcddec,-1);
+            (g_CBitFont_PTR_01bcd070,g_CHAR_ARRAY_01bcb0d0,g_ClipLeft,g_ClipTop,
+             g_WindowStatusTextColor,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   return;
 }

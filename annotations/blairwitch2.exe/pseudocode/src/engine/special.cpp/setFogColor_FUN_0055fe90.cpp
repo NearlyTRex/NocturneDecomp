@@ -11,9 +11,9 @@ int __cdecl engine_special_cpp_setFogColor_FUN_0055fe90(int red,int green,int bl
 {
   int iVar1;
   
-  g_INT_0264bce8 = green;
-  g_INT_0264bcec = blue;
-  g_INT_0264bce4 = red;
+  g_FogColorGreen = green;
+  g_FogColorBlue = blue;
+  g_FogColorRed = red;
   if (g_INT_01c37788 == 0) {
     return 0;
   }

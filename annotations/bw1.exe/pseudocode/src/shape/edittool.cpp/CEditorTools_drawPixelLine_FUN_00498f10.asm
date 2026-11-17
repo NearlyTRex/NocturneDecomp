@@ -18,7 +18,7 @@
 ;   int g_INT_01c3f544
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; Called Functions:
@@ -118,7 +118,7 @@ section .text
     CMP EBX,dword ptr [0x01c4f008]      ; 00498fc8 | g_INT_01c4f008
     JL 0x00498f33                       ; 00498fce
         ;   XREF to: 00498f33 (CONDITIONAL_JUMP)  ; LAB_00498f33
-    CMP EBX,dword ptr [0x01c4f010]      ; 00498fd4 | g_INT_01c4f010
+    CMP EBX,dword ptr [0x01c4f010]      ; 00498fd4 | g_ClipRight
     JGE 0x00498f33                      ; 00498fda
         ;   XREF to: 00498f33 (CONDITIONAL_JUMP)  ; LAB_00498f33
     MOV EAX,EDX                         ; 00498fe0
@@ -155,7 +155,7 @@ section .text
     CMP ESI,dword ptr [0x01c4f008]      ; 00499031 | g_INT_01c4f008
     JL 0x00498f71                       ; 00499037
         ;   XREF to: 00498f71 (CONDITIONAL_JUMP)  ; LAB_00498f71
-    CMP ESI,dword ptr [0x01c4f010]      ; 0049903d | g_INT_01c4f010
+    CMP ESI,dword ptr [0x01c4f010]      ; 0049903d | g_ClipRight
     JGE 0x00498f71                      ; 00499043
         ;   XREF to: 00498f71 (CONDITIONAL_JUMP)  ; LAB_00498f71
     CMP EDI,dword ptr [0x01c4f00c]      ; 00499049 | g_INT_01c4f00c
@@ -189,7 +189,7 @@ section .text
     CMP EBP,dword ptr [0x01c4f008]      ; 00499094 | g_INT_01c4f008
     JL 0x00498f85                       ; 0049909a
         ;   XREF to: 00498f85 (CONDITIONAL_JUMP)  ; LAB_00498f85
-    CMP EBP,dword ptr [0x01c4f010]      ; 004990a0 | g_INT_01c4f010
+    CMP EBP,dword ptr [0x01c4f010]      ; 004990a0 | g_ClipRight
     JGE 0x00498f85                      ; 004990a6
         ;   XREF to: 00498f85 (CONDITIONAL_JUMP)  ; LAB_00498f85
     CMP EDI,dword ptr [0x01c4f00c]      ; 004990ac | g_INT_01c4f00c
@@ -223,7 +223,7 @@ section .text
     CMP ESI,dword ptr [0x01c4f008]      ; 004990f7 | g_INT_01c4f008
     JL 0x00498f99                       ; 004990fd
         ;   XREF to: 00498f99 (CONDITIONAL_JUMP)  ; LAB_00498f99
-    CMP ESI,dword ptr [0x01c4f010]      ; 00499103 | g_INT_01c4f010
+    CMP ESI,dword ptr [0x01c4f010]      ; 00499103 | g_ClipRight
     JGE 0x00498f99                      ; 00499109
         ;   XREF to: 00498f99 (CONDITIONAL_JUMP)  ; LAB_00498f99
     CMP EBX,dword ptr [0x01c4f00c]      ; 0049910f | g_INT_01c4f00c
@@ -257,7 +257,7 @@ section .text
     CMP EBP,dword ptr [0x01c4f008]      ; 0049915a | g_INT_01c4f008
     JL 0x00498fad                       ; 00499160
         ;   XREF to: 00498fad (CONDITIONAL_JUMP)  ; LAB_00498fad
-    CMP EBP,dword ptr [0x01c4f010]      ; 00499166 | g_INT_01c4f010
+    CMP EBP,dword ptr [0x01c4f010]      ; 00499166 | g_ClipRight
     JGE 0x00498fad                      ; 0049916c
         ;   XREF to: 00498fad (CONDITIONAL_JUMP)  ; LAB_00498fad
     CMP EBX,dword ptr [0x01c4f00c]      ; 00499172 | g_INT_01c4f00c

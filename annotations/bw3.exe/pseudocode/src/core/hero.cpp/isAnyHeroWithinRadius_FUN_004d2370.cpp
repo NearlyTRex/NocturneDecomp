@@ -15,7 +15,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004d2370(CVector3f *point,fl
   float fVar4;
   int iVar5;
   
-  if (0 < g_INT_01d5ba00) {
+  if (0 < g_HeroCount) {
     iVar5 = 0;
     do {
       iVar1 = *(int *)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar5);
@@ -28,7 +28,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004d2370(CVector3f *point,fl
         }
       }
       iVar5 = iVar5 + 4;
-    } while (iVar5 < g_INT_01d5ba00 * 4);
+    } while (iVar5 < g_HeroCount * 4);
   }
   return 0;
 }

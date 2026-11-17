@@ -35,10 +35,10 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0046f5c0(CInputString *thi
       g_CurrentLineNumber = 391;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CInputString::calcX - string too big for hidden text!");
     }
-    memset(g_CHAR_ARRAY_01bcd9c8,0x2a,char_index);
-    g_CHAR_ARRAY_01bcd9c8[char_index] = '\0';
+    memset(g_TempStringBuffer,0x2a,char_index);
+    g_TempStringBuffer[char_index] = '\0';
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (g_CBitFont_PTR_01bcd070,g_CHAR_ARRAY_01bcd9c8);
+                      (g_CBitFont_PTR_01bcd070,g_TempStringBuffer);
   }
   return iVar2;
 }

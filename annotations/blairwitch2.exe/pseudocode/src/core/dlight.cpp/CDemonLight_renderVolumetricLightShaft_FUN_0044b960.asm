@@ -103,11 +103,11 @@
 ;   double g_DOUBLE_005cf4cf = 8192
 ;   float g_FLOAT_005f5050 = 256
 ;   float g_FLOAT_005f5058 = 0.00390625
-;   undefined4 g_SLightGlowTable_0060afc8.headlight.base.type
+;   undefined4 g_LightGlow.headlight.base.type
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.halo_mode
 ;
 ; Called Functions:
@@ -303,7 +303,7 @@ section .text
     FLD float ptr [ESP + 0xa8]          ; 0044bbc8
     FMULP ST3                           ; 0044bbcf
     MOV EAX,0xffff                      ; 0044bbd1
-    MOV EDI,dword ptr [0x01c38aec]      ; 0044bbd6 | g_INT_01c38aec
+    MOV EDI,dword ptr [0x01c38aec]      ; 0044bbd6 | g_PerspectiveReciprocal
     MOV ECX,0x3f800000                  ; 0044bbdc
     SUB EAX,EDI                         ; 0044bbe1
     LEA ESI,[ESP + 0x118]               ; 0044bbe3
@@ -543,7 +543,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0044bf88
         ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0044bf8d
-    PUSH 0x60afe0                       ; 0044bf90 | g_SLightGlowTable_0060afc8.headlight.base.type
+    PUSH 0x60afe0                       ; 0044bf90 | g_LightGlow.headlight.base.type
     MOV ESI,dword ptr [0x0060b280]      ; 0044bf95 | g_CDemonRenderer_PTR_0060b280
     PUSH ESI                            ; 0044bf9b | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0044bf9c

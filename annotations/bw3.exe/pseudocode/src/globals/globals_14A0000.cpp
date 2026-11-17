@@ -5,16 +5,16 @@
 // =============================================================================
 
 // CVector3i
-CVector3i g_CVector3i_014a02f0 = {};
+CVector3i g_CameraOutOfBoundsCoord = {};
 
 // SCameraViewportState
-SCameraViewportState g_SCameraViewportState_014a01f0 = {};
+SCameraViewportState g_BackgroundSavedCameraState = {};
 
 // char[307200]
-char g_CHAR_ARRAY_014a0300[307200] = {};
+char g_CameraIndexedImageData[307200] = {};
 
 // int
-int g_INT_014a01d4 = {};
-int g_INT_014a01d8 = {};
-int g_INT_014a01dc = {};
+int g_BackgroundSavedRedBitPosition = {};
+int g_BackgroundSavedGreenBitPosition = {};
+int g_BackgroundSavedBlueBitPosition = {};
 

@@ -13,9 +13,9 @@
 ;   float g_FLOAT_005f06a6 = 0.5
 ;   double g_DOUBLE_005f06ae = 10
 ;   double g_DOUBLE_005f06b6 = 0.5
-;   CVector3f g_CVector3f_0265370c
-;   undefined4 g_CVector3f_0265370c.y
-;   undefined4 g_CVector3f_0265370c.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -68,14 +68,14 @@ section .text
     PUSH EAX                            ; 005a6244
     MOV dword ptr [EBP + 0x6e],EAX      ; 005a6245
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a6248
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005a624d
     ADD ESP,0x8                         ; 005a6253
     ADD EAX,0x198                       ; 005a6256
     PUSH dword ptr [EBP + 0x92]         ; 005a625b
     PUSH EAX                            ; 005a6261
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a6262
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005a6267
     FLD float ptr [EAX + 0x2a8]         ; 005a626d
     FSUB float ptr [EBP + 0x92]         ; 005a6273
@@ -437,11 +437,11 @@ section .text
     CMP EAX,0x265370c                   ; 005a667a
     JZ 0x005a6699                       ; 005a667f
         ;   XREF to: 005a6699 (CONDITIONAL_JUMP)  ; LAB_005a6699
-    MOV EAX,[0x0265370c]                ; 005a6681 | g_CVector3f_0265370c
+    MOV EAX,[0x0265370c]                ; 005a6681 | g_ZeroVector
     MOV dword ptr [EBP + 0x42],EAX      ; 005a6686
-    MOV EAX,[0x02653710]                ; 005a6689 | g_CVector3f_0265370c.y
+    MOV EAX,[0x02653710]                ; 005a6689 | g_ZeroVector.y
     MOV dword ptr [EBP + 0x46],EAX      ; 005a668e
-    MOV EAX,[0x02653714]                ; 005a6691 | g_CVector3f_0265370c.z
+    MOV EAX,[0x02653714]                ; 005a6691 | g_ZeroVector.z
     MOV dword ptr [EBP + 0x4a],EAX      ; 005a6696
     MOV EAX,0x3fc00000                  ; 005a6699
         ;   Label: LAB_005a6699

@@ -49,8 +49,8 @@
 ;   undefined4 g_CDemonActorType_007e1a18.name_hash
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   undefined4 g_INT_ARRAY_01ed36ec[1]
-;   undefined4 g_INT_ARRAY_01ed36ec[2]
+;   undefined4 g_StrangerIndices[1]
+;   undefined4 g_StrangerIndices[2]
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -305,7 +305,7 @@ section .text
     FSTP float ptr [ESP + 0xd4]         ; 0051e9ba
     PUSH 0x54bef0                       ; 0051e9c1
         ;   Label: LAB_0051e9c1
-    MOV ECX,dword ptr [0x01ed3720]      ; 0051e9c6 | g_INT_ARRAY_01ed36ec[13]
+    MOV ECX,dword ptr [0x01ed3720]      ; 0051e9c6 | g_StrangerIndices[13]
     PUSH ECX                            ; 0051e9cc
     PUSH dword ptr [ESP + 0x18]         ; 0051e9cd
     MOV ESI,dword ptr [ESP + 0xe4]      ; 0051e9d1
@@ -320,13 +320,13 @@ section .text
     TEST EDI,EDI                        ; 0051e9f5
     JNZ 0x0051ea9b                      ; 0051e9f7
         ;   XREF to: 0051ea9b (CONDITIONAL_JUMP)  ; LAB_0051ea9b
-    MOV EAX,[0x01ed36f4]                ; 0051e9fd | g_INT_ARRAY_01ed36ec[2]
+    MOV EAX,[0x01ed36f4]                ; 0051e9fd | g_StrangerIndices[2]
     LEA ESI,[EBX + 0x808]               ; 0051ea02
     SHL EAX,0x4                         ; 0051ea08
     ADD EAX,ESI                         ; 0051ea0b
     PUSH dword ptr [EBX + 0x2f04]       ; 0051ea0d
     PUSH EAX                            ; 0051ea13
-    MOV EAX,[0x01ed3714]                ; 0051ea14 | g_INT_ARRAY_01ed36ec[10]
+    MOV EAX,[0x01ed3714]                ; 0051ea14 | g_StrangerIndices[10]
     SHL EAX,0x4                         ; 0051ea19
     ADD EAX,ESI                         ; 0051ea1c
     PUSH EAX                            ; 0051ea1e
@@ -334,7 +334,7 @@ section .text
     LEA ESI,[ESP + 0xa4]                ; 0051ea26
     CALL core_xform.cpp_slerpQuaternion_FUN_00585b20 ; 0051ea2d
         ;   XREF to: 00585b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00585b20(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
-    MOV EAX,[0x01ed3714]                ; 0051ea32 | g_INT_ARRAY_01ed36ec[10]
+    MOV EAX,[0x01ed3714]                ; 0051ea32 | g_StrangerIndices[10]
     SHL EAX,0x4                         ; 0051ea37
     LEA ESI,[ESP + 0xa4]                ; 0051ea3a
     LEA EDI,[EBX + EAX*0x1 + 0x808]     ; 0051ea41
@@ -343,20 +343,20 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051ea4c
     MOVSD ES:EDI,ESI                    ; 0051ea4d
     MOVSD ES:EDI,ESI                    ; 0051ea4e
-    MOV EAX,[0x01ed36f0]                ; 0051ea4f | g_INT_ARRAY_01ed36ec[1]
+    MOV EAX,[0x01ed36f0]                ; 0051ea4f | g_StrangerIndices[1]
     MOV ESI,dword ptr [ESP + 0xc4]      ; 0051ea54
     SHL EAX,0x4                         ; 0051ea5b
     ADD EAX,ESI                         ; 0051ea5e
     PUSH dword ptr [EBX + 0x2f04]       ; 0051ea60
     PUSH EAX                            ; 0051ea66
-    MOV EAX,[0x01ed3710]                ; 0051ea67 | g_INT_ARRAY_01ed36ec[9]
+    MOV EAX,[0x01ed3710]                ; 0051ea67 | g_StrangerIndices[9]
     SHL EAX,0x4                         ; 0051ea6c
     ADD EAX,ESI                         ; 0051ea6f
     PUSH EAX                            ; 0051ea71
     LEA ESI,[ESP + 0xb4]                ; 0051ea72
     CALL core_xform.cpp_slerpQuaternion_FUN_00585b20 ; 0051ea79
         ;   XREF to: 00585b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00585b20(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
-    MOV EAX,[0x01ed3710]                ; 0051ea7e | g_INT_ARRAY_01ed36ec[9]
+    MOV EAX,[0x01ed3710]                ; 0051ea7e | g_StrangerIndices[9]
     SHL EAX,0x4                         ; 0051ea83
     LEA ESI,[ESP + 0xb4]                ; 0051ea86
     LEA EDI,[EBX + EAX*0x1 + 0x808]     ; 0051ea8d
@@ -430,7 +430,7 @@ section .text
     JNC 0x0051eba0                      ; 0051eb5e
         ;   XREF to: 0051eba0 (CONDITIONAL_JUMP)  ; LAB_0051eba0
     PUSH 0x517ce0                       ; 0051eb60
-    MOV ECX,dword ptr [0x01ed3720]      ; 0051eb65 | g_INT_ARRAY_01ed36ec[13]
+    MOV ECX,dword ptr [0x01ed3720]      ; 0051eb65 | g_StrangerIndices[13]
     PUSH ECX                            ; 0051eb6b
     PUSH dword ptr [ESP + 0x10]         ; 0051eb6c
     LEA ESI,[ESP + 0x64]                ; 0051eb70
@@ -475,7 +475,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051ebea
     MOVSD ES:EDI,ESI                    ; 0051ebeb
     PUSH 0x517ce0                       ; 0051ebec
-    MOV ESI,dword ptr [0x01ed3720]      ; 0051ebf1 | g_INT_ARRAY_01ed36ec[13]
+    MOV ESI,dword ptr [0x01ed3720]      ; 0051ebf1 | g_StrangerIndices[13]
     PUSH ESI                            ; 0051ebf7
     LEA EAX,[ESP + 0x80]                ; 0051ebf8
     PUSH dword ptr [ESP + 0xc8]         ; 0051ebff
@@ -508,20 +508,20 @@ section .text
     PUSH EBX                            ; 0051ec46
     CALL core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 ; 0051ec47
         ;   XREF to: 0051ee10 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye * this_ptr, int arm_side)
-    MOV ESI,dword ptr [0x01ed3714]      ; 0051ec4c | g_INT_ARRAY_01ed36ec[10]
-    MOV EAX,[0x01ed36f4]                ; 0051ec52 | g_INT_ARRAY_01ed36ec[2]
+    MOV ESI,dword ptr [0x01ed3714]      ; 0051ec4c | g_StrangerIndices[10]
+    MOV EAX,[0x01ed36f4]                ; 0051ec52 | g_StrangerIndices[2]
     SHL ESI,0x4                         ; 0051ec57
     SHL EAX,0x4                         ; 0051ec5a
     LEA EDI,[ESI + EBX*0x1 + 0x808]     ; 0051ec5d
     LEA ESI,[EBX + EAX*0x1 + 0x808]     ; 0051ec64
-    MOV EAX,[0x01ed36f0]                ; 0051ec6b | g_INT_ARRAY_01ed36ec[1]
+    MOV EAX,[0x01ed36f0]                ; 0051ec6b | g_StrangerIndices[1]
     MOVSD ES:EDI,ESI                    ; 0051ec70
     MOVSD ES:EDI,ESI                    ; 0051ec71
     MOVSD ES:EDI,ESI                    ; 0051ec72
     MOVSD ES:EDI,ESI                    ; 0051ec73
     SHL EAX,0x4                         ; 0051ec74
     LEA ESI,[EBX + EAX*0x1]             ; 0051ec77
-    MOV EAX,[0x01ed3710]                ; 0051ec7a | g_INT_ARRAY_01ed36ec[9]
+    MOV EAX,[0x01ed3710]                ; 0051ec7a | g_StrangerIndices[9]
     SHL EAX,0x4                         ; 0051ec7f
     LEA ESI,[ESI + 0x808]               ; 0051ec82
     LEA EDI,[EBX + EAX*0x1 + 0x808]     ; 0051ec88
@@ -622,7 +622,7 @@ section .text
         ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00585cd0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 0051ed85
     PUSH 0x517ce0                       ; 0051ed88
-    MOV EAX,[0x01ed3720]                ; 0051ed8d | g_INT_ARRAY_01ed36ec[13]
+    MOV EAX,[0x01ed3720]                ; 0051ed8d | g_StrangerIndices[13]
     PUSH EAX                            ; 0051ed92
     PUSH dword ptr [ESP + 0xd0]         ; 0051ed93
     LEA EAX,[ESP + 0x44]                ; 0051ed9a
@@ -645,7 +645,7 @@ section .text
         ;   XREF to: 00585d10 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00585d10(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 0051edd0
     PUSH 0x517ce0                       ; 0051edd3
-    MOV ECX,dword ptr [0x01ed3720]      ; 0051edd8 | g_INT_ARRAY_01ed36ec[13]
+    MOV ECX,dword ptr [0x01ed3720]      ; 0051edd8 | g_StrangerIndices[13]
     PUSH ECX                            ; 0051edde
     LEA EAX,[ESP + 0x30]                ; 0051eddf
     PUSH dword ptr [ESP + 0xd0]         ; 0051ede3

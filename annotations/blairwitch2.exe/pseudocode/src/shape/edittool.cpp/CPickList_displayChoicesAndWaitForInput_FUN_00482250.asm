@@ -24,9 +24,9 @@
 ;   TerminatedCString s_shape_edittool_cpp_005d1e6f
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005d1e85
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   int g_INT_006141cc = 0x7f
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c25f78
+;   int g_InputKeyMask = 0x7f
+;   CBitFont* g_EditorFont
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c25f7c
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 00482252
     PUSH EBP                            ; 00482253
     MOV ESI,dword ptr [ESP + 0x14]      ; 00482254
-    CMP dword ptr [0x01c25590],0x0      ; 00482258 | g_CBitFont_PTR_01c25590
+    CMP dword ptr [0x01c25590],0x0      ; 00482258 | g_EditorFont
     JNZ 0x00482284                      ; 0048225f
         ;   XREF to: 00482284 (CONDITIONAL_JUMP)  ; LAB_00482284
     MOV ECX,0x5d1e6f                    ; 00482261 | = "..\\shape\\edittool.cpp"
@@ -62,12 +62,12 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0048227c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00482281
-    MOV EAX,[0x01c25590]                ; 00482284 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 00482284 | g_EditorFont
         ;   Label: LAB_00482284
     PUSH 0x6a                           ; 00482289
     MOV EBX,dword ptr [EAX + 0x41e8]    ; 0048228b
     PUSH EAX                            ; 00482291
-    MOV dword ptr [0x01c25f78],EBX      ; 00482292 | g_INT_01c25f78
+    MOV dword ptr [0x01c25f78],EBX      ; 00482292 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 00482298
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0048229d
@@ -84,8 +84,8 @@ section .text
     PUSH ECX                            ; 004822ba
     MOV EBP,0x7f                        ; 004822bb
     PUSH ESI                            ; 004822c0
-    MOV EDI,dword ptr [0x006141cc]      ; 004822c1 | g_INT_006141cc
-    MOV dword ptr [0x006141cc],EBP      ; 004822c7 | g_INT_006141cc
+    MOV EDI,dword ptr [0x006141cc]      ; 004822c1 | g_InputKeyMask
+    MOV dword ptr [0x006141cc],EBP      ; 004822c7 | g_InputKeyMask
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_00482320 ; 004822cd
         ;   XREF to: 00482320 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_00482320(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004822d2
@@ -111,7 +111,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 ; 004822ff
         ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00482304
-    MOV dword ptr [0x006141cc],EDI      ; 00482307 | g_INT_006141cc
+    MOV dword ptr [0x006141cc],EDI      ; 00482307 | g_InputKeyMask
     MOV EAX,EBX                         ; 0048230d
     POP EBP                             ; 0048230f
     POP EDI                             ; 00482310

@@ -34,19 +34,19 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470
     g_INT_01d71de4 = 0xa7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
-  g_INT_01c5bae0 = g_CBitFont_PTR_01c5b0e0->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
-            (this_ptr,g_INT_01c5bae0 * 0x1e,g_INT_01c5bae4 * 2,dialog_title,0);
+            (this_ptr,g_EditorFontMaxCharWidth * 0x1e,g_INT_01c5bae4 * 2,dialog_title,0);
   pcVar8 = output_buffer;
   if ((flags & 1) == 0) {
     pcVar8 = (char *)0x0;
   }
   shape_edittool_cpp_CInputString_init_FUN_0047ba60(&local_158,pcVar8,0x14,0);
   local_14 = 0;
-  local_18 = g_INT_005fba2c;
-  g_INT_005fba2c = 0x7f;
+  local_18 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(this_ptr);
     strupr(local_158.string_data);
@@ -86,11 +86,12 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470
       engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
       engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
       engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-                (g_CBitFont_PTR_01c5b0e0,local_360,g_INT_01c6b5a8,g_INT_01c6b5ac,g_INT_01c5bb24,-1);
+                (g_CBitFont_PTR_01c5b0e0,local_360,g_INT_01c6b5a8,g_INT_01c6b5ac,g_DialogTextColor,
+                 -1);
     }
-    iVar3 = g_INT_01c5bb24;
+    iVar3 = g_DialogTextColor;
     if (local_14 != 0) {
-      iVar3 = g_INT_01c5bb28;
+      iVar3 = g_ActiveItemTextColor;
     }
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
@@ -107,13 +108,13 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     if (local_14 != 0) break;
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800(), iVar3 != 0) {
-      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004df580(g_CKeys_PTR_00600284);
-      if ((iVar3 == 0x1b) || (g_INT_02d21b80 != 0)) {
+      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004df580(g_CKeysPtr);
+      if ((iVar3 == 0x1b) || (g_InputDisabled != 0)) {
         *output_buffer = '\0';
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_004032b0();
         wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-        g_INT_005fba2c = local_18;
+        g_InputKeyMask = local_18;
         return 0;
       }
       if ((iVar3 == 0xd) && (local_158.string_data[0] != '\0')) {
@@ -191,8 +192,9 @@ LAB_0047e7ce:
       if (iVar3 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_0047bc60(&local_158);
       }
-      else if (((((g_UCHAR_ARRAY_006074b8[(byte)((char)iVar3 + 1)] & 8) != 0) && (iVar3 != 0x5c)) &&
-               (iVar3 != 0x3a)) && ((g_UCHAR_ARRAY_006074b8[(byte)((char)iVar3 + 1)] & 2) == 0)) {
+      else if (((((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) &&
+                (iVar3 != 0x5c)) && (iVar3 != 0x3a)) &&
+              ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 2) == 0)) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(&local_158);
         shape_edittool_cpp_CInputString_insertChar_FUN_0047bb10(&local_158,(char)iVar3,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0047baf0(&local_158);
@@ -211,6 +213,6 @@ LAB_0047e7ce:
     output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(this_ptr);
-  g_INT_005fba2c = local_18;
+  g_InputKeyMask = local_18;
   return 1;
 }

@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00553980 at 005539ae
 ;
 ; Referenced Globals:
-;   int g_INT_0061bca8 = -0x1
+;   int g_SoundDeviceCount = -0x1
 ;
 ; Called Functions:
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860
@@ -27,12 +27,12 @@ section .text
 
     PUSH EBX                            ; 00552890
         ;   Label: sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890
-    MOV EBX,dword ptr [0x0061bca8]      ; 00552891 | g_INT_0061bca8
+    MOV EBX,dword ptr [0x0061bca8]      ; 00552891 | g_SoundDeviceCount
     TEST EBX,EBX                        ; 00552897
     JL 0x005528a5                       ; 00552899
         ;   XREF to: 005528a5 (CONDITIONAL_JUMP)  ; LAB_005528a5
     MOV EAX,EBX                         ; 0055289b
-    MOV dword ptr [0x0061bca8],EBX      ; 0055289d | g_INT_0061bca8
+    MOV dword ptr [0x0061bca8],EBX      ; 0055289d | g_SoundDeviceCount
     POP EBX                             ; 005528a3
     RET                                 ; 005528a4
     PUSH ESI                            ; 005528a5
@@ -48,10 +48,10 @@ section .text
     ADD EAX,0x26485c0                   ; 005528ba
     PUSH EAX                            ; 005528bf
     PUSH ESI                            ; 005528c0
-    MOV dword ptr [0x0061bca8],EBX      ; 005528c1 | g_INT_0061bca8
+    MOV dword ptr [0x0061bca8],EBX      ; 005528c1 | g_SoundDeviceCount
     CALL sound_sndwav.cpp_enumerateWavOutDevice_FUN_00558940 ; 005528c7
         ;   XREF to: 00558940 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_enumerateWavOutDevice_FUN_00558940(UINT device_id, SSoundDeviceInfo * device_info)
-    MOV EBX,dword ptr [0x0061bca8]      ; 005528cc | g_INT_0061bca8
+    MOV EBX,dword ptr [0x0061bca8]      ; 005528cc | g_SoundDeviceCount
     ADD ESP,0x8                         ; 005528d2
     TEST EAX,EAX                        ; 005528d5
     JZ 0x005528e0                       ; 005528d7
@@ -71,10 +71,10 @@ section .text
     ADD EAX,0x26485c0                   ; 005528ed
     PUSH EAX                            ; 005528f2
     PUSH ESI                            ; 005528f3
-    MOV dword ptr [0x0061bca8],EBX      ; 005528f4 | g_INT_0061bca8
+    MOV dword ptr [0x0061bca8],EBX      ; 005528f4 | g_SoundDeviceCount
     CALL sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860 ; 005528fa
         ;   XREF to: 00557860 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860(UINT device_id, SSoundDeviceInfo * device_info)
-    MOV EBX,dword ptr [0x0061bca8]      ; 005528ff | g_INT_0061bca8
+    MOV EBX,dword ptr [0x0061bca8]      ; 005528ff | g_SoundDeviceCount
     ADD ESP,0x8                         ; 00552905
     TEST EAX,EAX                        ; 00552908
     JZ 0x00552913                       ; 0055290a
@@ -87,7 +87,7 @@ section .text
     MOV EAX,EBX                         ; 00552913
         ;   Label: LAB_00552913
     POP ESI                             ; 00552915
-    MOV dword ptr [0x0061bca8],EBX      ; 00552916 | g_INT_0061bca8
+    MOV dword ptr [0x0061bca8],EBX      ; 00552916 | g_SoundDeviceCount
     POP EBX                             ; 0055291c
     RET                                 ; 0055291d
 

@@ -20,7 +20,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor *this_pt
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->loop_wav_name,"loopWavName");
   core_actor_cpp_archiveString_FUN_0040c6d0
             (this_ptr->collision_wav_name,"collisionWavName");
-  if (g_INT_005ad09c < 7) {
+  if (g_CBoxActorClassVersion < 7) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&local_c,"canBeCarried");
     if (local_c == 0) {
       this_ptr->pickup_type = BOX_PICKUP_CANT;
@@ -33,56 +33,56 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor *this_pt
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->pickup_type,"pickupType");
   }
   core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->carrier_actor,"carriedByActor");
-  if (1 < g_INT_005ad09c) {
+  if (1 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->can_be_pushed,"canBePushed");
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->pushed_by_actor,"pushedByActor");
   }
-  if (2 < g_INT_005ad09c) {
+  if (2 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ground_type,"groundType");
   }
-  if (g_INT_005ad09c < 4) {
+  if (g_CBoxActorClassVersion < 4) {
     (this_ptr->physics_box).is_valid = -1;
   }
   else {
     core_actor_cpp_archiveBox_FUN_0040ce80(&this_ptr->physics_box,"simBox");
   }
-  if (g_INT_005ad09c < 5) {
+  if (g_CBoxActorClassVersion < 5) {
     this_ptr->plot_in_shadow_flag = 1;
   }
   else {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->plot_in_shadow_flag,"plotInShadowFlag");
   }
-  if (g_INT_005ad09c < 6) {
+  if (g_CBoxActorClassVersion < 6) {
     this_ptr->collision_flag = 1;
   }
   else {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->collision_flag,"collisionFlag");
   }
-  if (7 < g_INT_005ad09c) {
+  if (7 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&(this_ptr->base).is_transparent,"isTransparent");
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->dont_use_normals,"dontUseNormals");
   }
-  if (g_INT_005ad09c == 9) {
+  if (g_CBoxActorClassVersion == 9) {
     core_actor_cpp_archiveString_FUN_0040c6d0(local_10c,"descriptiveName");
   }
-  if (10 < g_INT_005ad09c) {
+  if (10 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980
               (&this_ptr->constrain_extents_actor,"constrainExtentsActor");
   }
-  if (0xb < g_INT_005ad09c) {
+  if (0xb < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->use_event,"useEvent");
   }
-  if (0xc < g_INT_005ad09c) {
+  if (0xc < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->allowed_melee_attack_types,"allowedMeleeAttackTypes");
   }
-  if (0xd < g_INT_005ad09c) {
+  if (0xd < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->push_sound,"pushSound");
   }
-  if (g_INT_005ad09c < 0xf) {
+  if (g_CBoxActorClassVersion < 0xf) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900

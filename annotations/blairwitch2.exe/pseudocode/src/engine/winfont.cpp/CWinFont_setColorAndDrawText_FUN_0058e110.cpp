@@ -78,12 +78,12 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
       uVar2 = (ushort)iVar4;
     }
     else {
-      uVar2 = (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2] / (uint)g_INT_01c35830 <<
-                      (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) |
-              (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] / (uint)g_INT_01c35824 <<
-                      (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) |
-              (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4] / (uint)g_INT_01c35818 <<
-                      (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f));
+      uVar2 = (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2] / (uint)g_BlueScaleFactor <<
+                      (g_BlueBitPosition.bytes[0] & 0x1f)) |
+              (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] / (uint)g_GreenScaleFactor <<
+                      (g_GreenBitPosition.bytes[0] & 0x1f)) |
+              (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4] / (uint)g_RedScaleFactor <<
+                      (g_RedBitPosition.bytes[0] & 0x1f));
     }
     iStack_28 = 0;
     if (0 < iStack_20) {
@@ -93,7 +93,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
         if ((-1 < iVar4) && (iVar4 < g_INT_006141bc)) {
           iVar5 = 0;
           if (0 < iVar3) {
-            puVar7 = (ushort *)(g_ARRAY_PTR_01c2a38c[iVar4] + x * 2);
+            puVar7 = (ushort *)(g_ScreenBufferArray[iVar4] + x * 2);
             do {
               if (*(short *)((int)this_ptr->ppv_bits + (iStack_28 * this_ptr->right + iVar5) * 2) !=
                   0x7c1f) {
@@ -116,11 +116,9 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
     else {
       uVar6 = (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2];
       if (g_INT_006141c0 == 0x20) {
-        uStack_30 = (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] <<
-                    (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f) |
-                    (uint)g_UCHAR_ARRAY_01c35838[iVar4] <<
-                    (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
-        uVar6 = uVar6 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
+        uStack_30 = (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f)
+                    | (uint)g_UCHAR_ARRAY_01c35838[iVar4] << (g_RedBitPosition.bytes[0] & 0x1f);
+        uVar6 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
         uStack_30 = (uint)g_UCHAR_ARRAY_01c35838[iVar4] << 0x10 |
@@ -136,7 +134,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
         if ((-1 < iVar4) && (iVar4 < g_INT_006141bc)) {
           iVar5 = 0;
           if (0 < iVar3) {
-            puVar8 = (uint *)(g_ARRAY_PTR_01c2a38c[iVar4] + x * 4);
+            puVar8 = (uint *)(g_ScreenBufferArray[iVar4] + x * 4);
             do {
               if (*(int *)((int)this_ptr->ppv_bits + (iStack_18 * this_ptr->right + iVar5) * 4) !=
                   0xff00ff) {

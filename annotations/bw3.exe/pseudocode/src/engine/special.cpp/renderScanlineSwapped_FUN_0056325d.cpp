@@ -18,6 +18,6 @@ void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0056325d(int scanline_
   g_INT_00604d38 = unaff_EBX;
   g_INT_00604d3c = in_ECX;
   g_INT_00604d40 = in_EDX;
-  (*(code *)g_PTR_01c6b5cc)();
+  (*(code *)g_ScanlineRenderFunc)();
   return;
 }

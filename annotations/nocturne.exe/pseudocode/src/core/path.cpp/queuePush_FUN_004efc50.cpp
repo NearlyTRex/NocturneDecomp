@@ -11,15 +11,15 @@ void __cdecl core_path_cpp_queuePush_FUN_004efc50(int grid_x,int cost,int grid_z
 {
   int iVar1;
   
-  g_CHAR_ARRAY_ARRAY_01e40098[grid_z][grid_x] = direction;
-  g_INT_01e4280c = g_INT_01e4280c + 1;
-  g_CPathQueueNode_ARRAY_01e3162c[g_INT_01e40090].x = grid_x;
-  g_CPathQueueNode_ARRAY_01e3162c[g_INT_01e40090].cost = cost;
-  iVar1 = g_INT_01e40090 + 1;
-  g_CPathQueueNode_ARRAY_01e3162c[g_INT_01e40090].z = grid_z;
+  g_PathfindingVisited[grid_z][grid_x] = direction;
+  g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
+  g_PathfindingQueue[g_PathfindingQueueTail].x = grid_x;
+  g_PathfindingQueue[g_PathfindingQueueTail].cost = cost;
+  iVar1 = g_PathfindingQueueTail + 1;
+  g_PathfindingQueue[g_PathfindingQueueTail].z = grid_z;
   if (4999 < iVar1) {
     iVar1 = 0;
   }
-  g_INT_01e40090 = iVar1;
+  g_PathfindingQueueTail = iVar1;
   return;
 }

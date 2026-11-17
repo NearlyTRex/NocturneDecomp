@@ -83,7 +83,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *th
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-            (g_CDemonSetPtr,&local_88,&CVector3i_02d8339c,0,4);
+            (g_CDemonSetPtr,&local_88,&g_BloodParticleViewDirection,0,4);
   uVar1 = this_ptr->blood_type;
   if (uVar1 != 0) {
     if (uVar1 < 2) {
@@ -171,7 +171,7 @@ LAB_004ebdb7:
       pt_input.y = (int)ROUND(CStack_e8.z * 256.0f);
       pt_input.z = (int)ROUND((float)CStack_dc.x * 256.0f);
       core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-                (g_CDemonSetPtr,&pt_input,&CVector3i_02d8339c,0,4);
+                (g_CDemonSetPtr,&pt_input,&g_BloodParticleViewDirection,0,4);
     }
     iVar6 = 0;
     do {

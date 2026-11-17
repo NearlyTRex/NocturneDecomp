@@ -16,9 +16,9 @@
 ;   sound_sndmain.cpp_writeIni_FUN_005763b0 at 0057644e
 ;
 ; Referenced Globals:
-;   int g_INT_006232e8 = 0x10
-;   int g_INT_006232ec = 0x2
-;   int g_INT_006232f0 = 0x5622
+;   int g_AudioBitsPerSample = 0x10
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
         ;   Label: LAB_005751d1
     JZ 0x005751dc                       ; 005751d3
         ;   XREF to: 005751dc (CONDITIONAL_JUMP)  ; LAB_005751dc
-    MOV EAX,[0x006232ec]                ; 005751d5 | g_INT_006232ec
+    MOV EAX,[0x006232ec]                ; 005751d5 | g_AudioChannelCount
     MOV dword ptr [ECX],EAX             ; 005751da
     TEST EDX,EDX                        ; 005751dc
         ;   Label: LAB_005751dc
@@ -44,12 +44,12 @@ section .text
         ;   XREF to: 005751eb (CONDITIONAL_JUMP)  ; LAB_005751eb
     POP EBX                             ; 005751e0
     RET                                 ; 005751e1
-    MOV EAX,[0x006232e8]                ; 005751e2 | g_INT_006232e8
+    MOV EAX,[0x006232e8]                ; 005751e2 | g_AudioBitsPerSample
         ;   Label: LAB_005751e2
     MOV dword ptr [EBX],EAX             ; 005751e7
     JMP 0x005751d1                      ; 005751e9
         ;   XREF to: 005751d1 (UNCONDITIONAL_JUMP)  ; LAB_005751d1
-    MOV EAX,[0x006232f0]                ; 005751eb | g_INT_006232f0
+    MOV EAX,[0x006232f0]                ; 005751eb | g_AudioSampleRate
         ;   Label: LAB_005751eb
     MOV dword ptr [EDX],EAX             ; 005751f0
     POP EBX                             ; 005751f2

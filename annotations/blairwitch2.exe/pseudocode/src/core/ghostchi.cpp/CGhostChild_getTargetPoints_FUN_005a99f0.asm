@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005f098f = 0.5
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
@@ -45,7 +45,7 @@ section .text
     LEA EAX,[ESI + 0x1134]              ; 005a9a2b
     ADD EAX,EDX                         ; 005a9a31
     PUSH EAX                            ; 005a9a33
-    PUSH 0x265370c                      ; 005a9a34 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a9a34 | g_ZeroVector
     LEA ESI,[ESP + 0xc]                 ; 005a9a39
     LEA EDI,[ESP + 0x18]                ; 005a9a3d
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a9a41

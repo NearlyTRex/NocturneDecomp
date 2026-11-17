@@ -25,8 +25,8 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004f5570(float *arg1,float *
   
   iVar3 = g_INT_01d0c3a0;
   if ((g_INT_01d0c3a0 != 0) &&
-     (((g_PTR_0264bcd4 == (byte *)0x0 || (g_INT_01c37788 == 0)) ||
-      (g_PTR_0264bcd8 != (byte *)0x0)))) {
+     (((g_APIDLL_setTextureClamp == (byte *)0x0 || (g_INT_01c37788 == 0)) ||
+      (g_APIDLL_setFog != (byte *)0x0)))) {
     if (arg1 == (float *)0x0) {
       iVar9 = 0;
       if (0 < g_INT_01d0c3a0) {
@@ -36,8 +36,8 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004f5570(float *arg1,float *
           iVar9 = iVar10;
         } while (iVar10 < iVar3);
       }
-      if ((g_PTR_0264bcd8 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-        (*(code *)g_PTR_0264bcd8)(0x1d0d280);
+      if ((g_APIDLL_setFog != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+        (*(code *)g_APIDLL_setFog)(0x1d0d280);
       }
     }
     else {
@@ -99,8 +99,8 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004f5570(float *arg1,float *
           pfStack_20 = pfStack_20 + 0x13;
         } while (iStack_1c < iVar3);
       }
-      if ((g_PTR_0264bcd8 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-        (*(code *)g_PTR_0264bcd8)(0x1d0d280);
+      if ((g_APIDLL_setFog != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+        (*(code *)g_APIDLL_setFog)(0x1d0d280);
         return;
       }
     }

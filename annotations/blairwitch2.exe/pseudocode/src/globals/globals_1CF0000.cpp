@@ -5,14 +5,14 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap CAlphaBitmap_01cf01b0 = {};
+CAlphaBitmap g_InvBackgroundBitmap = {};
 CAlphaBitmap CAlphaBitmap_01cf01c4 = {};
-CAlphaBitmap CAlphaBitmap_01cf01d8 = {};
+CAlphaBitmap g_WeapBackgroundBitmap = {};
 CAlphaBitmap CAlphaBitmap_01cf01ec = {};
 
 // SInventoryItemInfo[100]
-SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01cf0208[100] = {};
+SInventoryItemInfo g_ItemDefinitionArray[100] = {};
 
 // int
-int g_INT_01cf0200 = {};
+int g_ItemDefinitionCount = {};
 

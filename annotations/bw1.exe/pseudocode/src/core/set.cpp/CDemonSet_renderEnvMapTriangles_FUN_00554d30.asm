@@ -44,11 +44,11 @@
 ; Referenced Globals:
 ;   float g_FLOAT_00605000 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   int g_INT_0061b4b8 = 0xff
+;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 01ccf390
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00622f34
+;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01c51cac
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;   float g_FLOAT_0202a844
 ;   undefined4 DAT_0202a848
@@ -79,7 +79,7 @@ section .text
     MOV EBP,ESP                         ; 00554d34
     SUB ESP,0x108                       ; 00554d36
     AND ESP,0xfffffff8                  ; 00554d3c
-    PUSH 0x622f34                       ; 00554d3f | g_SMRGLTextureBasic_00622f34
+    PUSH 0x622f34                       ; 00554d3f | g_EnvMapTexture
     MOV EDX,dword ptr [0x00612560]      ; 00554d44 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00554d4a | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00554d4b
@@ -90,7 +90,7 @@ section .text
     CMP ECX,0x2                         ; 00554d5e
     JNZ 0x005550f2                      ; 00554d61
         ;   XREF to: 005550f2 (CONDITIONAL_JUMP)  ; LAB_005550f2
-    MOV EAX,[0x0061b4b8]                ; 00554d67 | g_INT_0061b4b8
+    MOV EAX,[0x0061b4b8]                ; 00554d67 | g_CurrentAlphaValue
     SHL EAX,0x8                         ; 00554d6c
     MOV dword ptr [EBP + 0x20],EAX      ; 00554d6f
     MOV EAX,[0x00612560]                ; 00554d72 | g_CDemonRenderer_PTR_00612560
@@ -363,7 +363,7 @@ section .text
     RET                                 ; 005550f1
     MOV EAX,0xffff                      ; 005550f2
         ;   Label: LAB_005550f2
-    MOV EBX,dword ptr [0x01c51cac]      ; 005550f7 | g_INT_01c51cac
+    MOV EBX,dword ptr [0x01c51cac]      ; 005550f7 | g_PerspectiveReciprocal
     MOV EDX,dword ptr [EBP + 0x20]      ; 005550fd
     SUB EAX,EBX                         ; 00555100
     IMUL EDX                            ; 00555102

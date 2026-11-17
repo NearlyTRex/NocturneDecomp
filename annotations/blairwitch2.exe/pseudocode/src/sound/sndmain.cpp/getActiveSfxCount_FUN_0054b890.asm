@@ -8,7 +8,7 @@
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
-;   int g_INT_0264901c
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -19,7 +19,7 @@ section .text
 
     PUSH ESI                            ; 0054b890
         ;   Label: sound_sndmain.cpp_getActiveSfxCount_FUN_0054b890
-    CMP dword ptr [0x0264901c],0x0      ; 0054b891 | g_INT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054b891 | g_SoundLockCount
     JLE 0x0054b8c2                      ; 0054b898
         ;   XREF to: 0054b8c2 (CONDITIONAL_JUMP)  ; LAB_0054b8c2
     MOV ESI,dword ptr [0x0263cf80]      ; 0054b89a | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state

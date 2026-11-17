@@ -14,10 +14,10 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00467290 at 00467314
 ;
 ; Referenced Globals:
-;   int g_INT_00609b30 = 0x1
+;   int g_LineClippingDisabled = 0x1
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     CMP EBX,ECX                         ; 0042e94d
     JG 0x0042e9f7                       ; 0042e94f
         ;   XREF to: 0042e9f7 (CONDITIONAL_JUMP)  ; LAB_0042e9f7
-    CMP dword ptr [0x00609b30],0x0      ; 0042e955 | g_INT_00609b30
+    CMP dword ptr [0x00609b30],0x0      ; 0042e955 | g_LineClippingDisabled
         ;   Label: LAB_0042e955
     JNZ 0x0042e9aa                      ; 0042e95c
         ;   XREF to: 0042e9aa (CONDITIONAL_JUMP)  ; LAB_0042e9aa
@@ -55,7 +55,7 @@ section .text
     CMP EAX,dword ptr [0x01c35e48]      ; 0042e969 | g_INT_01c35e48
     JL 0x0042e9f0                       ; 0042e96f
         ;   XREF to: 0042e9f0 (CONDITIONAL_JUMP)  ; LAB_0042e9f0
-    MOV ECX,dword ptr [0x01c35e50]      ; 0042e975 | g_INT_01c35e50
+    MOV ECX,dword ptr [0x01c35e50]      ; 0042e975 | g_ClipRight
         ;   Label: LAB_0042e975
     CMP ESI,ECX                         ; 0042e97b
     JLE 0x0042e988                      ; 0042e97d

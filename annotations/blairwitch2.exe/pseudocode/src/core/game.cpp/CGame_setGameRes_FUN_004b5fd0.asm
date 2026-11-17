@@ -14,8 +14,8 @@
 ;   TerminatedCString s_CGame_setGameRes_Unable_005d7684
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
-;   CBitFont* g_CBitFont_PTR_01511cc4
-;   CBitFont* g_CBitFont_PTR_01c25590
+;   CBitFont* g_SmallEditorFont
+;   CBitFont* g_EditorFont
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   int g_INT_01d06a74
@@ -119,9 +119,9 @@ section .text
         ;   XREF to: 004b5ff4 (CONDITIONAL_JUMP)  ; LAB_004b5ff4
     JMP 0x004b605c                      ; 004b60a5
         ;   XREF to: 004b605c (UNCONDITIONAL_JUMP)  ; LAB_004b605c
-    MOV EAX,[0x01511cc4]                ; 004b60a7 | g_CBitFont_PTR_01511cc4
+    MOV EAX,[0x01511cc4]                ; 004b60a7 | g_SmallEditorFont
         ;   Label: LAB_004b60a7
-    MOV [0x01c25590],EAX                ; 004b60ac | g_CBitFont_PTR_01c25590
+    MOV [0x01c25590],EAX                ; 004b60ac | g_EditorFont
     POP EBP                             ; 004b60b1
     POP EDI                             ; 004b60b2
     POP ESI                             ; 004b60b3

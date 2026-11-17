@@ -7,8 +7,8 @@
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; Referenced Globals:
-;   uint g_UINT_0061b4c0 = 0x1
-;   int g_INT_007c1070
+;   uint g_VertexProcessingEnabled = 0x1
+;   int g_RenderFaceCount
 ;   int g_INT_01c50948
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -40,7 +40,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x114]     ; 0040782a
     XOR EDX,EDX                         ; 00407831
     MOV AH,byte ptr [EDI]               ; 00407833
-    MOV dword ptr [0x007c1070],EDX      ; 00407835 | g_INT_007c1070
+    MOV dword ptr [0x007c1070],EDX      ; 00407835 | g_RenderFaceCount
     TEST AH,AH                          ; 0040783b
     JZ 0x00407880                       ; 0040783d
         ;   XREF to: 00407880 (CONDITIONAL_JUMP)  ; LAB_00407880
@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 0040785c
     CALL engine_3d.c_transformAndBufferVertices_FUN_00403840 ; 0040785d
         ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended * mrgl)
-    MOV ESI,dword ptr [0x0061b4c0]      ; 00407862 | g_UINT_0061b4c0
+    MOV ESI,dword ptr [0x0061b4c0]      ; 00407862 | g_VertexProcessingEnabled
     ADD ESP,0x4                         ; 00407868
     TEST ESI,ESI                        ; 0040786b
     JNZ 0x004078cd                      ; 0040786d
@@ -73,7 +73,7 @@ section .text
     TEST DL,DL                          ; 0040787c
     JNZ 0x0040783f                      ; 0040787e
         ;   XREF to: 0040783f (CONDITIONAL_JUMP)  ; LAB_0040783f
-    MOV ECX,dword ptr [0x007c1070]      ; 00407880 | g_INT_007c1070
+    MOV ECX,dword ptr [0x007c1070]      ; 00407880 | g_RenderFaceCount
         ;   Label: LAB_00407880
     TEST ECX,ECX                        ; 00407886
     JZ 0x004078b8                       ; 00407888
@@ -91,8 +91,8 @@ section .text
     ADD ESP,0x10                        ; 004078ad
     XOR EDX,EDX                         ; 004078b0
         ;   Label: LAB_004078b0
-    MOV dword ptr [0x007c1070],EDX      ; 004078b2 | g_INT_007c1070
-    MOV dword ptr [0x0061b4c0],0x1      ; 004078b8 | g_UINT_0061b4c0
+    MOV dword ptr [0x007c1070],EDX      ; 004078b2 | g_RenderFaceCount
+    MOV dword ptr [0x0061b4c0],0x1      ; 004078b8 | g_VertexProcessingEnabled
         ;   Label: LAB_004078b8
     ADD ESP,0x100                       ; 004078c2
     POP EBP                             ; 004078c8
@@ -118,7 +118,7 @@ section .text
     ADD ESP,0x4                         ; 004078e7
     JMP 0x0040786f                      ; 004078ea
         ;   XREF to: 0040786f (UNCONDITIONAL_JUMP)  ; LAB_0040786f
-    MOV EBX,dword ptr [0x007c1070]      ; 004078ec | g_INT_007c1070
+    MOV EBX,dword ptr [0x007c1070]      ; 004078ec | g_RenderFaceCount
         ;   Label: LAB_004078ec
     TEST EBX,EBX                        ; 004078f2
     JZ 0x00407921                       ; 004078f4
@@ -137,7 +137,7 @@ section .text
     ADD ESP,0x10                        ; 00407916
     XOR EDX,EDX                         ; 00407919
         ;   Label: LAB_00407919
-    MOV dword ptr [0x007c1070],EDX      ; 0040791b | g_INT_007c1070
+    MOV dword ptr [0x007c1070],EDX      ; 0040791b | g_RenderFaceCount
     PUSH EDI                            ; 00407921
         ;   Label: LAB_00407921
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 ; 00407922
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x4                         ; 00407927
     JMP 0x0040786f                      ; 0040792a
         ;   XREF to: 0040786f (UNCONDITIONAL_JUMP)  ; LAB_0040786f
-    MOV EAX,[0x007c1070]                ; 0040792f | g_INT_007c1070
+    MOV EAX,[0x007c1070]                ; 0040792f | g_RenderFaceCount
         ;   Label: LAB_0040792f
     XOR EBX,EBX                         ; 00407934
     TEST EAX,EAX                        ; 00407936
@@ -159,7 +159,7 @@ section .text
     INC EBX                             ; 00407946
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 00407947
         ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
-    MOV EAX,[0x007c1070]                ; 0040794c | g_INT_007c1070
+    MOV EAX,[0x007c1070]                ; 0040794c | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407951
     CMP EBX,EAX                         ; 00407954
     JL 0x0040793c                       ; 00407956
@@ -176,7 +176,7 @@ section .text
     TEST EAX,EAX                        ; 00407968
     JZ 0x0040786f                       ; 0040796a
         ;   XREF to: 0040786f (CONDITIONAL_JUMP)  ; LAB_0040786f
-    CMP dword ptr [0x007c1070],0x7d0    ; 00407970 | g_INT_007c1070
+    CMP dword ptr [0x007c1070],0x7d0    ; 00407970 | g_RenderFaceCount
     JL 0x0040799e                       ; 0040797a
         ;   XREF to: 0040799e (CONDITIONAL_JUMP)  ; LAB_0040799e
     MOV EAX,0x5d2334                    ; 0040797c
@@ -187,11 +187,11 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00407996
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040799b
-    MOV EAX,[0x007c1070]                ; 0040799e | g_INT_007c1070
+    MOV EAX,[0x007c1070]                ; 0040799e | g_RenderFaceCount
         ;   Label: LAB_0040799e
     LEA ECX,[EAX + 0x1]                 ; 004079a3
     MOV dword ptr [EAX*0x4 + 0x7c1074],EBX ; 004079a6
-    MOV dword ptr [0x007c1070],ECX      ; 004079ad | g_INT_007c1070
+    MOV dword ptr [0x007c1070],ECX      ; 004079ad | g_RenderFaceCount
     JMP 0x0040786f                      ; 004079b3
         ;   XREF to: 0040786f (UNCONDITIONAL_JUMP)  ; LAB_0040786f
     PUSH EDI                            ; 004079b8
@@ -266,7 +266,7 @@ section .text
     INC EDI                             ; 00407a53
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 00407a54
         ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
-    MOV EAX,[0x007c1070]                ; 00407a59 | g_INT_007c1070
+    MOV EAX,[0x007c1070]                ; 00407a59 | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407a5e
     CMP EDI,EAX                         ; 00407a61
     JL 0x00407a49                       ; 00407a63

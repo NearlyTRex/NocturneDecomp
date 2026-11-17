@@ -23,12 +23,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(CDe
     g_INT_01d71de4 = 0x436;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCamera::beginBackgroundScene - Scene not open");
   }
-  g_INT_0149ef08 = g_INT_0149ef08 + 1;
-  if (g_INT_0149ef08 == 1) {
-    g_INT_0149ef0c = g_INT_005fba20;
-    g_INT_0149ef10 = g_INT_01c6cee8;
-    ppuVar4 = g_ARRAY_PTR_01c5faec;
-    ppuVar5 = g_ARRAY_PTR_0149ef14;
+  g_BackgroundSceneDepth = g_BackgroundSceneDepth + 1;
+  if (g_BackgroundSceneDepth == 1) {
+    g_BackgroundSavedBitsPerPixel = g_INT_005fba20;
+    g_BackgroundSavedUseExternalRenderer = g_INT_01c6cee8;
+    ppuVar4 = g_ScreenBufferArray;
+    ppuVar5 = g_BackgroundSavedScreenBufferArray;
     for (uVar1 = g_INT_005fba1c & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
       *ppuVar5 = *ppuVar4;
       ppuVar4 = ppuVar4 + (uint)bVar6 * -2 + 1;
@@ -39,19 +39,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(CDe
       ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar6 * -2 + 1);
       ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);
     }
-    g_INT_014a01d4 = g_BIT_INTEGER32_01c6af74.dword;
+    g_BackgroundSavedRedBitPosition = g_BIT_INTEGER32_01c6af74.dword;
     g_INT_005fba20 = 0x20;
     g_INT_01c6cee8 = 0;
-    g_INT_014a01d8 = g_BIT_INTEGER32_01c6af80.dword;
+    g_BackgroundSavedGreenBitPosition = g_BIT_INTEGER32_01c6af80.dword;
     g_BIT_INTEGER32_01c6af80.dword = 8;
-    g_INT_014a01dc = g_BIT_INTEGER32_01c6af8c.dword;
+    g_BackgroundSavedBlueBitPosition = g_BIT_INTEGER32_01c6af8c.dword;
     g_BIT_INTEGER32_01c6af8c.dword = 0;
     g_BIT_INTEGER32_01c6af74.dword = 0x10;
     iVar2 = 0;
     if (0 < this_ptr->framebuffer_height) {
       iVar3 = 0;
       do {
-        *(void **)((int)g_ARRAY_PTR_01c5faec + iVar3) =
+        *(void **)((int)g_ScreenBufferArray + iVar3) =
              (void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
@@ -66,7 +66,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(CDe
     (this_ptr->cached_projection).center_x_fixed = g_INT_01c6b5a0;
     (this_ptr->cached_projection).center_y_fixed = g_INT_01c6b5a4;
     engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880
-              (this_ptr_00,&g_SCameraViewportState_014a01f0);
+              (this_ptr_00,&g_BackgroundSavedCameraState);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
               (g_CDemonRenderer_PTR_005f2afc,&(this_ptr->base).position.f);
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090

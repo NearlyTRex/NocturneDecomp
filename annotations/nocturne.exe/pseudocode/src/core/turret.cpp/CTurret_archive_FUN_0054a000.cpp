@@ -25,7 +25,7 @@ void __cdecl core_turret_cpp_CTurret_archive_FUN_0054a000(CTurret *this_ptr)
             (this_ptr->allowed_victim_types,"allowedVictimTypes");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->rotate_deg_per_sec,"rotateDegPerSec")
   ;
-  if (INT_005c1160 < 2) {
+  if (g_CTurretClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->can_manual_aim,"canManualAim");

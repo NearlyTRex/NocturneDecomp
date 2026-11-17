@@ -11,8 +11,8 @@ void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005503e0(double trigger
 {
   int iVar1;
   
-  iVar1 = g_INT_0264161c;
-  g_CSfxOptions_ARRAY_02641620[g_INT_0264161c].playback_position = trigger_time;
+  iVar1 = g_SfxLastSlot;
+  g_CSfxOptions_ARRAY_02641620[g_SfxLastSlot].playback_position = trigger_time;
   g_CSfxOptions_ARRAY_02641620[iVar1].playback_position_type = trigger_id;
   return;
 }

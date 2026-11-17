@@ -22,7 +22,7 @@ int __cdecl shape_edittool_cpp_CPickList_handleDialogInput_FUN_00483970(CPickLis
     }
     this_ptr->confirmed_flag = 0;
   }
-  if (g_INT_02d21b80 != 0) {
+  if (g_InputDisabled != 0) {
     return -1;
   }
   iVar1 = (*(((this_ptr->base).vtable._up)->_up).handleInput)(this_ptr);
@@ -63,7 +63,7 @@ LAB_00483a37:
     if (iVar1 != 0) {
       this_ptr->confirmed_flag = 1;
     }
-    if (&this_ptr->ok_button == (CEdButton *)g_PTR_01c5bb78) {
+    if (&this_ptr->ok_button == (CEdButton *)g_ActiveControl) {
       this_ptr->selection_state = 0;
     }
   }
@@ -72,25 +72,25 @@ LAB_00483a37:
     if (iVar1 != 0) {
       return -1;
     }
-    if (&this_ptr->cancel_button == (CEdButton *)g_PTR_01c5bb78) {
+    if (&this_ptr->cancel_button == (CEdButton *)g_ActiveControl) {
       this_ptr->selection_state = 1;
     }
   }
-  iVar1 = g_INT_01c5bb74;
-  if ((((g_BIT_INTEGER32_01c5fae4.bytes[0] & 1) != 0) && (g_PTR_01c5bb78 == (byte *)0x0)) &&
+  iVar1 = g_LastClickItemIndex;
+  if ((((g_MouseButtonFlags.bytes[0] & 1) != 0) && (g_ActiveControl == (byte *)0x0)) &&
      (iVar1 = shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_00484b50
-                        (this_ptr,g_INT_01c5fadc,g_INT_01c5fae0), -1 < iVar1)) {
+                        (this_ptr,g_MouseX,g_MouseY), -1 < iVar1)) {
     this_ptr->selection_state = -1;
-    g_BIT_INTEGER32_01c5fae4.bytes[0] = g_BIT_INTEGER32_01c5fae4.bytes[0] & 0xfe;
+    g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
     this_ptr->current_index = iVar1;
     iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
-    iVar3 = iVar2 - g_INT_01c5bb70;
-    g_INT_01c5bb70 = iVar2;
+    iVar3 = iVar2 - g_LastClickTimestamp;
+    g_LastClickTimestamp = iVar2;
     if (((0 < iVar3) && ((double)iVar3 < 294912)) &&
-       (g_INT_01c5bb74 == this_ptr->current_index)) {
+       (g_LastClickItemIndex == this_ptr->current_index)) {
       this_ptr->confirmed_flag = 1;
     }
   }
-  g_INT_01c5bb74 = iVar1;
+  g_LastClickItemIndex = iVar1;
   return -2;
 }

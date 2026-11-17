@@ -29,42 +29,43 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void)
   int iStack_18;
   int iStack_14;
   
-  if (g_INT_01cd0c38 != 0) {
+  if (g_MovieRecordingArmed != 0) {
     iVar2 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
     if (iVar2 != 0) {
       iVar2 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_V);
       if (iVar2 != 0) {
-        iVar2 = g_INT_01cd0c3c;
-        if (g_INT_01cd0c3c == 0) {
-          g_INT_01cd0c3c = 1;
-          g_INT_01cd0c44 = iVar2;
+        iVar2 = g_MovieRecordingActive;
+        if (g_MovieRecordingActive == 0) {
+          g_MovieRecordingActive = 1;
+          g_MovieRecordingFrameCounter = iVar2;
         }
         else {
-          g_INT_01cd0c3c = 0;
+          g_MovieRecordingActive = 0;
         }
       }
     }
-    if ((0 < g_INT_01cd0c40) && (g_INT_01cd0c40 <= g_INT_01cd0c44)) {
-      g_INT_01cd0c3c = 0;
+    if ((0 < g_MovieRecordingMaxFrames) &&
+       (g_MovieRecordingMaxFrames <= g_MovieRecordingFrameCounter)) {
+      g_MovieRecordingActive = 0;
       return;
     }
-    if (g_INT_01cd0c3c != 0) {
+    if (g_MovieRecordingActive != 0) {
       _sprintf(acStack_98,"noc%05d.raw");
       _sprintf(acStack_160,"Movie recording active: movie\\%s");
       p_Stack_2c = engine_dosio_cpp_getFile_FUN_00479180("movie",acStack_98,"wb");
       if (p_Stack_2c != (_FILE *)0x0) {
         iStack_30 = 0;
-        if (0 < g_INT_0061d970) {
+        if (0 < g_MovieRecordingHeight) {
           do {
             iStack_28 = 0;
-            if (0 < g_INT_0061d96c) {
+            if (0 < g_MovieRecordingWidth) {
               iStack_34 = iStack_30 + 1;
               do {
                 file = p_Stack_2c;
-                iStack_20 = (iStack_28 * g_INT_0061b498) / g_INT_0061d96c;
-                iStack_18 = ((iStack_28 + 1) * g_INT_0061b498) / g_INT_0061d96c;
-                iVar2 = (iStack_30 * g_INT_0061b49c) / g_INT_0061d970;
-                iVar3 = (iStack_34 * g_INT_0061b49c) / g_INT_0061d970;
+                iStack_20 = (iStack_28 * g_INT_0061b498) / g_MovieRecordingWidth;
+                iStack_18 = ((iStack_28 + 1) * g_INT_0061b498) / g_MovieRecordingWidth;
+                iVar2 = (iStack_30 * g_INT_0061b49c) / g_MovieRecordingHeight;
+                iVar3 = (iStack_34 * g_INT_0061b49c) / g_MovieRecordingHeight;
                 iVar7 = 0;
                 iVar5 = 0;
                 iVar6 = 0;
@@ -75,7 +76,7 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void)
                   do {
                     if (iStack_20 < iStack_18) {
                       puVar4 = (uint *)(iStack_20 * 4 +
-                                       *(int *)((int)g_ARRAY_PTR_01c4354c + iStack_1c));
+                                       *(int *)((int)g_ScreenBufferArray + iStack_1c));
                       iVar2 = iStack_20;
                       do {
                         uVar1 = *puVar4;
@@ -96,14 +97,14 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void)
                 _fputc(iVar6,file);
                 _fputc(iVar7,file);
                 iStack_28 = iStack_28 + 1;
-              } while (iStack_28 < g_INT_0061d96c);
+              } while (iStack_28 < g_MovieRecordingWidth);
             }
             iStack_30 = iStack_30 + 1;
-          } while (iStack_30 < g_INT_0061d970);
+          } while (iStack_30 < g_MovieRecordingHeight);
         }
         _fclose(p_Stack_2c);
         engine_2d_c_drawText_FUN_00401fe0(acStack_160,0,0);
-        g_INT_01cd0c44 = g_INT_01cd0c44 + 1;
+        g_MovieRecordingFrameCounter = g_MovieRecordingFrameCounter + 1;
         return;
       }
     }

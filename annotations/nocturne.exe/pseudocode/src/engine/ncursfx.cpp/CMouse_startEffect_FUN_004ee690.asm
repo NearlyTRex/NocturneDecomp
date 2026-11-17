@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   button_mask
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01bd1d94
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004ee690
         ;   Label: engine_ncursfx.cpp_CMouse_startEffect_FUN_004ee690
     MOV ECX,dword ptr [ESP + 0x8]       ; 004ee694
-    TEST dword ptr [0x01bd1d94],ECX     ; 004ee698 | g_BIT_INTEGER32_01bd1d94
+    TEST dword ptr [0x01bd1d94],ECX     ; 004ee698 | g_MouseButtonFlags
     JZ 0x004ee6a9                       ; 004ee69e
         ;   XREF to: 004ee6a9 (CONDITIONAL_JUMP)  ; LAB_004ee6a9
     CMP dword ptr [EAX + 0x25c],0x0     ; 004ee6a0

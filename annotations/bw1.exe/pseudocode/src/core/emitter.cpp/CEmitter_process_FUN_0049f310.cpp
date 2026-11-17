@@ -76,7 +76,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_0049f310(CEmitter *this_ptr,f
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (g_CEventList_PTR_0061b4d0,this_ptr->event_on), iVar4 != 0)) {
+                        (g_CEventListPtr,this_ptr->event_on), iVar4 != 0)) {
     iVar7 = 1;
     this_ptr->is_active = 1;
     pCVar3 = g_CDemonSetPtr;
@@ -85,7 +85,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_0049f310(CEmitter *this_ptr,f
     core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(pCVar3,&this_ptr->base);
   }
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,this_ptr->event_off);
+                    (g_CEventListPtr,this_ptr->event_off);
   if (iVar4 != 0) {
     this_ptr->emitter_state = 0;
     this_ptr->is_active = 0;
@@ -119,8 +119,8 @@ LAB_0049f3c7:
   switch(this_ptr->emitter_type) {
   case EMITTER_TYPE_SPARK:
     core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-              (g_CFireEffect_PTR_0061c010,&(this_ptr->base).location.position,(CVector3f *)0x0,
-               0x4000,0x10000,0,0xffff);
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,(CVector3f *)0x0,0x4000,0x10000,
+               0,0xffff);
     goto LAB_0049f448;
   case EMITTER_TYPE_SMOKE:
     pCVar1 = &(this_ptr->base).location;
@@ -140,7 +140,7 @@ LAB_0049f3c7:
       iVar7 = iVar7 + 1;
       CStack_134.z = 0.0;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                (g_CFireEffect_PTR_0061c010,&CStack_128,1.0,&CStack_134,0xffff);
+                (g_CFireEffectPtr,&CStack_128,1.0,&CStack_134,0xffff);
     } while (iVar7 < 4);
     break;
   case EMITTER_TYPE_ROCK:
@@ -157,7 +157,7 @@ LAB_0049f3c7:
     CStack_14c.z = (float)(fVar14 * (float10)fStack_38 * fVar11);
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
     core_fire_cpp_CFireEffect_createRock_FUN_004b5eb0
-              (g_CFireEffect_PTR_0061c010,&(this_ptr->base).location.position,&CStack_14c,pCVar5);
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,&CStack_14c,pCVar5);
     break;
   case EMITTER_TYPE_FLAME:
     core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a02e0(this_ptr,&CStack_74);
@@ -168,7 +168,7 @@ LAB_0049f3c7:
     CStack_b0.x = CStack_74.x;
     *(uint *)((int)&CStack_b0 + (uint)bVar10 * -8 + 4) =
          *(uint *)((int)&CStack_74 + (uint)bVar10 * -8 + 4);
-    this_ptr_00 = g_CFireEffect_PTR_0061c010;
+    this_ptr_00 = g_CFireEffectPtr;
     *(uint *)((int)&CStack_b0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
          *(uint *)((int)&CStack_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004b6f80
@@ -203,18 +203,18 @@ LAB_0049f3c7:
   case EMITTER_TYPE_POPCORN:
     pCVar1 = &(this_ptr->base).location;
     core_fire_cpp_CFireEffect_createPopcorn_FUN_004b72d0
-              (g_CFireEffect_PTR_0061c010,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffectPtr,&pCVar1->position,(CVector3f *)0x0);
     core_fire_cpp_CFireEffect_createPopcorn_FUN_004b72d0
-              (g_CFireEffect_PTR_0061c010,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffectPtr,&pCVar1->position,(CVector3f *)0x0);
     core_fire_cpp_CFireEffect_createPopcorn_FUN_004b72d0
-              (g_CFireEffect_PTR_0061c010,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffectPtr,&pCVar1->position,(CVector3f *)0x0);
     core_fire_cpp_CFireEffect_createPopcorn_FUN_004b72d0
-              (g_CFireEffect_PTR_0061c010,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffectPtr,&pCVar1->position,(CVector3f *)0x0);
     break;
   case EMITTER_TYPE_LIGHTNING:
     pCVar1 = &(this_ptr->base).location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_004b6fe0
-              (g_CFireEffect_PTR_0061c010,&pCVar1->position,(this_ptr->emitter_size).y,0,
+              (g_CFireEffectPtr,&pCVar1->position,(this_ptr->emitter_size).y,0,
                (this_ptr->emitter_size).x * (float)0.5);
     if ((CLocation *)&CStack_104 != pCVar1) {
       CStack_104.x = (pCVar1->position).x;
@@ -233,8 +233,8 @@ LAB_0049f3c7:
     goto LAB_0049f48d;
   case EMITTER_TYPE_BLUE_SPARK:
     core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-              (g_CFireEffect_PTR_0061c010,&(this_ptr->base).location.position,(CVector3f *)0x0,
-               0x4000,0x10000,1,0xffff);
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,(CVector3f *)0x0,0x4000,0x10000,
+               1,0xffff);
     break;
   case EMITTER_TYPE_POINT_TO_POINT_LIGHTNING:
     pCVar2 = this_ptr->dest_actor;
@@ -282,8 +282,7 @@ LAB_0049f3c7:
         CStack_d8.z = CStack_90.z;
       }
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004b7060
-                (g_CFireEffect_PTR_0061c010,&(this_ptr->base).location.position,&CStack_d8,0,0.0,4.0
-                );
+                (g_CFireEffectPtr,&(this_ptr->base).location.position,&CStack_d8,0,0.0,4.0);
     }
     break;
   case EMITTER_TYPE_LEAF:
@@ -301,7 +300,7 @@ LAB_0049f3c7:
     fVar18 = this_ptr->wind_resist;
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
     core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00
-              (g_CFireEffect_PTR_0061c010,&CStack_11c,(CVector3f *)(auStack_168 + 4),pCVar5,fVar18);
+              (g_CFireEffectPtr,&CStack_11c,(CVector3f *)(auStack_168 + 4),pCVar5,fVar18);
     CStack_11c.x = (this_ptr->base).location.position.x;
     CStack_11c.y = (this_ptr->base).location.position.z;
     CStack_11c.z = CStack_11c.y;
@@ -311,9 +310,9 @@ LAB_0049f3c7:
     CStack_110.x = 0.0;
     CStack_110.y = 32.0;
     core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0
-              (g_CFireEffect_PTR_0061c010,&(this_ptr->base).location.position,&CStack_110,
-               this_ptr->fizzle,this_ptr->bright,this_ptr->firefly_type,this_ptr->delta_mult,
-               this_ptr->max_speed,this_ptr->ff_size);
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,&CStack_110,this_ptr->fizzle,
+               this_ptr->bright,this_ptr->firefly_type,this_ptr->delta_mult,this_ptr->max_speed,
+               this_ptr->ff_size);
 LAB_0049f448:
     core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970
               (&this_ptr->globe,&(this_ptr->base).location.position);

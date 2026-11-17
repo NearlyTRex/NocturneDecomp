@@ -114,15 +114,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0(CDem
   int local_20;
   
   bVar12 = 0;
-  if ((g_INT_01bef21c != 0) && (render_mode != 0)) {
+  if ((g_PVSReadyFlag != 0) && (render_mode != 0)) {
     core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0048e770(this_ptr);
     return;
   }
-  g_INT_01bef208 = 0;
-  g_INT_01bef20c = 0;
-  g_INT_01bef210 = 0;
-  g_INT_01bef214 = 0;
-  g_INT_01bef218 = 0;
+  g_CubesTestedCount = 0;
+  g_CubesWithVoxelsCount = 0;
+  g_CubesVisibleCount = 0;
+  g_CubesRenderedCount = 0;
+  g_PVSDrawnCubeCount = 0;
   engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0
             (g_CDemonRenderer_PTR_0061255c,&local_15c);
   local_138 = local_15c.x;
@@ -320,9 +320,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0(CDem
   if (iVar9 <= (this_ptr->grid_bounds_max).z) {
     (this_ptr->grid_bounds_max).z = iVar9 + -1;
   }
-  g_INT_01e7dac8 = 0;
+  g_RenderedTriangleCount = 0;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780
-            (g_CDemonRenderer_PTR_0061255c,&g_CVector3i_01c3d424);
+            (g_CDemonRenderer_PTR_0061255c,&g_DebugCubeBasePoint);
   engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00483cf0
             (g_CDemonRenderer_PTR_0061255c,0xff,0xff,0xff);
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
@@ -719,6 +719,6 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0(CDem
       } while ((this_ptr->grid_bounds_min).x <= iVar9);
     }
   }
-  g_INT_01bef21c = 1;
+  g_PVSReadyFlag = 1;
   return;
 }

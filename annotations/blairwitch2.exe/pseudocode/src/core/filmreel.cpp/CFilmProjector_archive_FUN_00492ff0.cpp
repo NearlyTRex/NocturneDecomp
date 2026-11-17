@@ -10,7 +10,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_00492ff0(CFilmProjecto
 
 {
   core_dest_cpp_CActorDestination_archive_FUN_00447450(&this_ptr->base);
-  if (g_INT_00614c4c < 2) {
+  if (g_CFilmProjectorClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->key_reel,"keyReel");

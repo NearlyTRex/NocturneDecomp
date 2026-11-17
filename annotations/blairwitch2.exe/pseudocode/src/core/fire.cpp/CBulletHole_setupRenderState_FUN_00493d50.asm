@@ -12,17 +12,17 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic g_SMRGLTextureBasic_006150f4
+;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.base.base.count
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.A
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.B
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.C
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.D
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[0]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[1]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[2]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[3]
+;   undefined4 g_BillboardPrimitive.base.base.count
+;   undefined4 g_BillboardPrimitive.base.surface_normal.A
+;   undefined4 g_BillboardPrimitive.base.surface_normal.B
+;   undefined4 g_BillboardPrimitive.base.surface_normal.C
+;   undefined4 g_BillboardPrimitive.base.surface_normal.D
+;   undefined4 g_BillboardPrimitive.vertices[0]
+;   undefined4 g_BillboardPrimitive.vertices[1]
+;   undefined4 g_BillboardPrimitive.vertices[2]
+;   undefined4 g_BillboardPrimitive.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
@@ -40,20 +40,20 @@ section .text
     MOV EBX,0x1                         ; 00493d58
     MOV ESI,0x2                         ; 00493d5d
     MOV EDI,0x3                         ; 00493d62
-    PUSH 0x6150f4                       ; 00493d67 | g_SMRGLTextureBasic_006150f4
+    PUSH 0x6150f4                       ; 00493d67 | g_FireEffectBlackHoleTexture
     XOR ECX,ECX                         ; 00493d6c
-    MOV dword ptr [0x01c3ded4],EDX      ; 00493d6e | g_SMRGLPrimitiveQuadIndex_01c3ded0.base.base.count
-    MOV dword ptr [0x01c3dee8],ECX      ; 00493d74 | g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[0]
-    MOV dword ptr [0x01c3deec],EBX      ; 00493d7a | g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[1]
-    MOV dword ptr [0x01c3def0],ESI      ; 00493d80 | g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[2]
-    MOV dword ptr [0x01c3def4],EDI      ; 00493d86 | g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[3]
-    MOV dword ptr [0x01c3ded8],ECX      ; 00493d8c | g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.A
-    MOV dword ptr [0x01c3dedc],ECX      ; 00493d92 | g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.B
+    MOV dword ptr [0x01c3ded4],EDX      ; 00493d6e | g_BillboardPrimitive.base.base.count
+    MOV dword ptr [0x01c3dee8],ECX      ; 00493d74 | g_BillboardPrimitive.vertices[0]
+    MOV dword ptr [0x01c3deec],EBX      ; 00493d7a | g_BillboardPrimitive.vertices[1]
+    MOV dword ptr [0x01c3def0],ESI      ; 00493d80 | g_BillboardPrimitive.vertices[2]
+    MOV dword ptr [0x01c3def4],EDI      ; 00493d86 | g_BillboardPrimitive.vertices[3]
+    MOV dword ptr [0x01c3ded8],ECX      ; 00493d8c | g_BillboardPrimitive.base.surface_normal.A
+    MOV dword ptr [0x01c3dedc],ECX      ; 00493d92 | g_BillboardPrimitive.base.surface_normal.B
     MOV EBX,dword ptr [0x0060b280]      ; 00493d98 | g_CDemonRenderer_PTR_0060b280
     MOV EDX,0xffff                      ; 00493d9e
     PUSH EBX                            ; 00493da3 | g_CDemonRenderer_01ba5c50
-    MOV dword ptr [0x01c3dee4],ECX      ; 00493da4 | g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.D
-    MOV dword ptr [0x01c3dee0],EDX      ; 00493daa | g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.C
+    MOV dword ptr [0x01c3dee4],ECX      ; 00493da4 | g_BillboardPrimitive.base.surface_normal.D
+    MOV dword ptr [0x01c3dee0],EDX      ; 00493daa | g_BillboardPrimitive.base.surface_normal.C
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 00493db0
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00493db5

@@ -63,7 +63,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
     local_48 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
   this_ptr_00 = g_CNetGamePtr;
-  g_INT_01e7dac8 = 0;
+  g_RenderedTriangleCount = 0;
   if ((this_ptr->cinematic_skip_in_progress == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {
     if (g_INT_01c50948 != 0) {
       wincore_wddvmem_cpp_openScreenDevice_FUN_005acb10();
@@ -105,9 +105,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         setPositionAndOrientation)
                 ((CDemonActor *)g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4],&CStack_a8.position,
                  (CVector3f *)&CStack_a8.orientation);
-      if ((g_BIT_INTEGER32_01c43544.bytes[0] & 1) != 0) {
+      if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70
-                  (&g_CDemonCameraInstance,g_INT_01c4353c,g_INT_01c43540,&CStack_68);
+                  (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&CStack_68);
         input_ptr = &CStack_8c;
         CStack_8c.x = CStack_68.x;
         *(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + 4) =
@@ -127,7 +127,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         pCVar2 = g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4];
         (*((pCVar2->base).base.vtable._ub)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar2,&CStack_74,(CVector3f *)&(pCVar2->base).base.orient);
-        g_BIT_INTEGER32_01c43544.bytes[0] = g_BIT_INTEGER32_01c43544.bytes[0] & 0xfe;
+        g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
       }
     }
     core_game_cpp_CGame_updateDT_FUN_004cbf20(this_ptr);
@@ -168,9 +168,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
           (pcVar13 = getenv("SPOOKHOUSE"), pcVar13 != (char *)0x0))
          && (iVar3 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)
                                (g_CKeys_PTR_0061f2a4,DIK_F4), iVar3 != 0)) {
-        g_INT_01ccfe94 = g_INT_01ccfe94 + 1;
-        _sprintf(g_CHAR_ARRAY_01ccfe98,"demon%d.pcx");
-        engine_pcx_c_saveScreenshotGeneral_FUN_00535d80(g_CHAR_ARRAY_01ccfe98);
+        g_ScreenshotIndex = g_ScreenshotIndex + 1;
+        _sprintf(g_ScreenshotFilename,"demon%d.pcx");
+        engine_pcx_c_saveScreenshotGeneral_FUN_00535d80(g_ScreenshotFilename);
       }
       core_inv_cpp_CInventory_renderAllItems_FUN_004fae10
                 (&g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->inventory);
@@ -178,38 +178,39 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_00551a50(g_CDemonSetPtr);
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004cc0c0(this_ptr);
-      if (g_INT_01cd0c38 != 0) {
+      if (g_MovieRecordingArmed != 0) {
         iVar3 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
         if ((iVar3 != 0) &&
            (iVar3 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_V)
            , iVar3 != 0)) {
-          iVar3 = g_INT_01cd0c3c;
-          if (g_INT_01cd0c3c == 0) {
-            g_INT_01cd0c3c = 1;
-            g_INT_01cd0c44 = iVar3;
+          iVar3 = g_MovieRecordingActive;
+          if (g_MovieRecordingActive == 0) {
+            g_MovieRecordingActive = 1;
+            g_MovieRecordingFrameCounter = iVar3;
           }
           else {
-            g_INT_01cd0c3c = 0;
+            g_MovieRecordingActive = 0;
           }
         }
-        if ((g_INT_01cd0c40 < 1) || (g_INT_01cd0c44 < g_INT_01cd0c40)) {
-          if (g_INT_01cd0c3c != 0) {
+        if ((g_MovieRecordingMaxFrames < 1) ||
+           (g_MovieRecordingFrameCounter < g_MovieRecordingMaxFrames)) {
+          if (g_MovieRecordingActive != 0) {
             _sprintf(acStack_10c,"noc%05d.raw");
             _sprintf(acStack_1d4,"Movie recording active: movie\\%s");
             p_Stack_38 = engine_dosio_cpp_getFile_FUN_00479180
                                    ("movie",acStack_10c,"wb");
             if (p_Stack_38 != (_FILE *)0x0) {
               iStack_3c = 0;
-              if (0 < g_INT_0061d970) {
+              if (0 < g_MovieRecordingHeight) {
                 do {
                   iStack_34 = 0;
-                  if (0 < g_INT_0061d96c) {
+                  if (0 < g_MovieRecordingWidth) {
                     iStack_40 = iStack_3c + 1;
                     do {
-                      iStack_2c = (iStack_34 * g_INT_0061b498) / g_INT_0061d96c;
-                      iStack_24 = ((iStack_34 + 1) * g_INT_0061b498) / g_INT_0061d96c;
-                      iVar3 = (iStack_3c * g_INT_0061b49c) / g_INT_0061d970;
-                      iVar5 = (iStack_40 * g_INT_0061b49c) / g_INT_0061d970;
+                      iStack_2c = (iStack_34 * g_INT_0061b498) / g_MovieRecordingWidth;
+                      iStack_24 = ((iStack_34 + 1) * g_INT_0061b498) / g_MovieRecordingWidth;
+                      iVar3 = (iStack_3c * g_INT_0061b49c) / g_MovieRecordingHeight;
+                      iVar5 = (iStack_40 * g_INT_0061b49c) / g_MovieRecordingHeight;
                       iStack_1c = 0;
                       iStack_20 = 0;
                       iVar11 = 0;
@@ -220,7 +221,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
                         do {
                           if (iStack_2c < iStack_24) {
                             puVar10 = (uint *)(iStack_2c * 4 +
-                                              *(int *)((int)g_ARRAY_PTR_01c4354c + iStack_28));
+                                              *(int *)((int)g_ScreenBufferArray + iStack_28));
                             iVar3 = iStack_2c;
                             do {
                               uVar4 = *puVar10;
@@ -242,19 +243,19 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
                       _fputc(iVar12,p_Stack_38);
                       _fputc(iVar11,p_Stack_38);
                       iStack_34 = iStack_34 + 1;
-                    } while (iStack_34 < g_INT_0061d96c);
+                    } while (iStack_34 < g_MovieRecordingWidth);
                   }
                   iStack_3c = iStack_3c + 1;
-                } while (iStack_3c < g_INT_0061d970);
+                } while (iStack_3c < g_MovieRecordingHeight);
               }
               _fclose(p_Stack_38);
               engine_2d_c_drawText_FUN_00401fe0(acStack_1d4,0,0);
-              g_INT_01cd0c44 = g_INT_01cd0c44 + 1;
+              g_MovieRecordingFrameCounter = g_MovieRecordingFrameCounter + 1;
             }
           }
         }
         else {
-          g_INT_01cd0c3c = 0;
+          g_MovieRecordingActive = 0;
         }
       }
       core_script_cpp_CScript_renderSubtitles_FUN_005439b0(g_CScriptPtr);
@@ -318,7 +319,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         }
       }
       if (this_ptr->event_processing_enabled != 0) {
-        core_event_cpp_CEventList_render_FUN_004a6d80(g_CEventList_PTR_0061b4d0);
+        core_event_cpp_CEventList_render_FUN_004a6d80(g_CEventListPtr);
       }
       if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
         core_script_cpp_CScript_renderEditor_FUN_00543c00
@@ -359,7 +360,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
       }
       if ((this_ptr->game_control == CONTROL_MODE_POINT_AND_CLICK) &&
          (core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                    (g_CEventList_PTR_0061b4d0,"MouseControlMode"), -1 < g_INT_01cd0b40)) {
+                    (g_CEventListPtr,"MouseControlMode"), -1 < g_INT_01cd0b40)) {
         core_game_cpp_drawCursor_FUN_004dc1a0();
       }
       uVar4 = this_ptr->goggles_active | this_ptr->special_view_active;

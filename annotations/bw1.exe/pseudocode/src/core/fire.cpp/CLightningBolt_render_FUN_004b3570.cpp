@@ -51,7 +51,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004b3570(CLightningBolt *th
   }
   iVar7 = rand();
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,g_SMRGLTextureBasic_ARRAY_0061caac + iVar7 % 6);
+            (g_CDemonRenderer_PTR_00612560,g_FireEffectLightningBoltTextures + iVar7 % 6);
   local_e8.base.count = 4;
   local_e8.surface_normal.D.i = 0;
   local_e8.surface_normal.C.i = 0;

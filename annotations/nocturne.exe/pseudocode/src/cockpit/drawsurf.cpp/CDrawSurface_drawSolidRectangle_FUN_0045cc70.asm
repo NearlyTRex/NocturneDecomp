@@ -19,8 +19,8 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_0045cd80 at 0045cdcc
 ;
 ; Referenced Globals:
-;   int g_INT_005ae6f4 = 0x1
-;   float g_FLOAT_005ae6f8 = 0.1000000
+;   int g_DashLength = 0x1
+;   float g_DashAnimationThreshold = 0.1000000
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0
@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 0045cc72
     PUSH EBP                            ; 0045cc73
     SUB ESP,0x8                         ; 0045cc74
-    FILD dword ptr [0x005ae6f4]         ; 0045cc77 | g_INT_005ae6f4
+    FILD dword ptr [0x005ae6f4]         ; 0045cc77 | g_DashLength
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0045cc7d
     MOV EDX,0x1                         ; 0045cc81
     PUSH EBX                            ; 0045cc86
@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 0045cc8b
     PUSH ESI                            ; 0045cc8f
     MOV EBP,dword ptr [ESP + 0x28]      ; 0045cc90
-    MOV EAX,[0x005ae6f8]                ; 0045cc94 | g_FLOAT_005ae6f8
+    MOV EAX,[0x005ae6f8]                ; 0045cc94 | g_DashAnimationThreshold
     PUSH EDI                            ; 0045cc99
     FSTP float ptr [ESP + 0xc]          ; 0045cc9a
     MOV dword ptr [ESP + 0x10],EAX      ; 0045cc9e
@@ -52,8 +52,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0045cca3
     XOR ECX,ECX                         ; 0045cca7
     PUSH EAX                            ; 0045cca9
-    MOV dword ptr [0x005ae6f4],EDX      ; 0045ccaa | g_INT_005ae6f4
-    MOV dword ptr [0x005ae6f8],ECX      ; 0045ccb0 | g_FLOAT_005ae6f8
+    MOV dword ptr [0x005ae6f4],EDX      ; 0045ccaa | g_DashLength
+    MOV dword ptr [0x005ae6f8],ECX      ; 0045ccb0 | g_DashAnimationThreshold
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 ; 0045ccb6
         ;   XREF to: 0045cde0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0045ccbb
@@ -61,8 +61,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0045ccc1
     CALL crt_math.c_round_FUN_00563a30  ; 0045ccc5
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x005ae6f4]        ; 0045ccca | g_INT_005ae6f4
-    MOV [0x005ae6f8],EAX                ; 0045ccd0 | g_FLOAT_005ae6f8
+    FISTP dword ptr [0x005ae6f4]        ; 0045ccca | g_DashLength
+    MOV [0x005ae6f8],EAX                ; 0045ccd0 | g_DashAnimationThreshold
     ADD ESP,0x8                         ; 0045ccd5
     POP EBP                             ; 0045ccd8
     POP EDI                             ; 0045ccd9

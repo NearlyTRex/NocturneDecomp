@@ -17,8 +17,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0055ae40(CDirectSoundDe
   char acStack_198 [400];
   
   iVar4 = 1;
-  if (g_IDirectSoundBuffer_PTR_02cf49cc != (IDirectSoundBuffer *)0x0) {
-    uVar2 = (*g_IDirectSoundBuffer_PTR_02cf49cc->vtable->Stop)(g_IDirectSoundBuffer_PTR_02cf49cc);
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_DirectSoundSecondaryBuffer->vtable->Stop)(g_DirectSoundSecondaryBuffer);
     if (uVar2 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar2);
       _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)");
@@ -26,8 +26,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0055ae40(CDirectSoundDe
       sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_198);
     }
   }
-  if (g_IDirectSoundBuffer_PTR_02cf49c8 != (IDirectSoundBuffer *)0x0) {
-    uVar2 = (*g_IDirectSoundBuffer_PTR_02cf49c8->vtable->Stop)(g_IDirectSoundBuffer_PTR_02cf49c8);
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_DirectSoundPrimaryBuffer->vtable->Stop)(g_DirectSoundPrimaryBuffer);
     if (uVar2 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar2);
       _sprintf(acStack_328,"DirectSux: Unable to %s.  (%s)");

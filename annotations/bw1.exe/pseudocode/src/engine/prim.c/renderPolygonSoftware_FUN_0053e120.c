@@ -25,7 +25,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
   int local_1c;
   SSoftwareEdge *local_14;
   
-  if ((g_UINT_0061b4c0 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {
+  if ((g_VertexProcessingEnabled != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {
     do {
       if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) != 0) {
         (pSVar4->projected_vertex).inv_z =
@@ -41,7 +41,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
       pSVar4 = pSVar4 + 1;
     } while (iVar9 < vertex_count);
   }
-  if (g_INT_00713a7c != 0) {
+  if (g_CullingMode != 0) {
     pSVar11 = vertices + 1;
     pSVar4 = vertices + 2;
     if (vertex_count < 4) {
@@ -70,14 +70,13 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
       }
     }
   }
-  if ((g_INT_01c50948 != 0) && (g_INT_00713a74 == 0)) {
-    g_INT_01e7dac8 = g_INT_01e7dac8 + vertex_count + -2;
-    engine_special_cpp_drawPolygon_FUN_00582340
-              (vertices,vertex_count,g_BIT_INTEGER32_01c51d14.dword);
+  if ((g_INT_01c50948 != 0) && (g_TexturesDisabled == 0)) {
+    g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
+    engine_special_cpp_drawPolygon_FUN_00582340(vertices,vertex_count,g_RenderStateFlags.dword);
     return;
   }
-  g_INT_01e7dac8 = g_INT_01e7dac8 + 1;
-  switch(g_INT_01c51d18) {
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
+  switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(vertices,vertex_count);
     break;
@@ -93,13 +92,13 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
   case 6:
     engine_prim_c_replaceWWithDepth_FUN_0053dd20(vertices,vertex_count);
   }
-  g_INT_01e7dac0 = 0;
-  g_INT_01e7d5b8 = 0;
+  g_SoftwareMaxScanline = 0;
+  g_SoftwareEdgeCount = 0;
   local_1c = 0;
-  g_INT_01e7dabc = 0x4b0;
+  g_SoftwareMinScanline = 0x4b0;
   if (0 < vertex_count) {
     do {
-      iVar9 = g_INT_01e7d5b8;
+      iVar9 = g_SoftwareEdgeCount;
       iVar6 = local_1c + 1;
       if (vertex_count <= iVar6) {
         iVar6 = 0;
@@ -117,14 +116,14 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
           iVar6 = iVar8;
           pSVar4 = pSVar11;
         }
-        g_SSoftwareEdge_ARRAY_01e7d5bc[g_INT_01e7d5b8].base.y_min = iVar3;
-        iVar8 = g_INT_01e7dabc;
+        g_SSoftwareEdge_ARRAY_01e7d5bc[g_SoftwareEdgeCount].base.y_min = iVar3;
+        iVar8 = g_SoftwareMinScanline;
         g_SSoftwareEdge_ARRAY_01e7d5bc[iVar9].base.y_max = iVar6;
         if (iVar3 < iVar8) {
-          g_INT_01e7dabc = iVar3;
+          g_SoftwareMinScanline = iVar3;
         }
-        if (g_INT_01e7dac0 < iVar6) {
-          g_INT_01e7dac0 = iVar6;
+        if (g_SoftwareMaxScanline < iVar6) {
+          g_SoftwareMaxScanline = iVar6;
         }
         uVar5 = (pSVar4->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
         if (uVar5 < 0x10000) {
@@ -177,17 +176,18 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
         g_SSoftwareEdge_ARRAY_01e7d5bc[iVar9].base.depth_current =
              (pSVar7->projected_vertex).transformed_z +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        g_INT_01e7d5b8 = g_INT_01e7d5b8 + 1;
+        g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
       }
       local_1c = local_1c + 1;
     } while (local_1c < vertex_count);
   }
-  edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_0053db80(g_INT_01e7dabc,(SSoftwareEdge *)0x0);
+  edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_0053db80(g_SoftwareMinScanline,(SSoftwareEdge *)0x0)
+  ;
   if ((edge_ptr != (SSoftwareEdge *)0x0) &&
-     (local_14 = engine_prim_c_findEdgeInBuffer_FUN_0053db80(g_INT_01e7dabc,edge_ptr),
-     iVar9 = g_INT_01e7dabc, local_14 != (SSoftwareEdge *)0x0)) {
-    iVar6 = g_INT_01e7dabc - g_INT_00622a84;
-    bVar12 = SBORROW4(g_INT_01e7dabc,g_INT_00622a84);
+     (local_14 = engine_prim_c_findEdgeInBuffer_FUN_0053db80(g_SoftwareMinScanline,edge_ptr),
+     iVar9 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {
+    iVar6 = g_SoftwareMinScanline - g_MaxViewportScanline;
+    bVar12 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);
     while (bVar12 != iVar6 < 0) {
       if ((edge_ptr->base).y_max <= iVar9) {
         (edge_ptr->base).y_min = -1;
@@ -218,7 +218,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0053e120(SRenderVertex *ver
       *(int *)(iVar9 + 0x20) = *(int *)(iVar9 + 0x20) + *(int *)(iVar9 + 0x24);
       local_1c = local_1c + 1;
       *(int *)(iVar9 + 0x10) = *(int *)(iVar9 + 0x10) + *(int *)(iVar9 + 0x14);
-      iVar8 = g_INT_00622a84;
+      iVar8 = g_MaxViewportScanline;
       *(int *)(iVar9 + 0x28) = *(int *)(iVar9 + 0x28) + *(int *)(iVar9 + 0x2c);
       *(int *)(iVar9 + 0x30) = *(int *)(iVar9 + 0x30) + *(int *)(iVar9 + 0x34);
       iVar6 = local_1c - iVar8;

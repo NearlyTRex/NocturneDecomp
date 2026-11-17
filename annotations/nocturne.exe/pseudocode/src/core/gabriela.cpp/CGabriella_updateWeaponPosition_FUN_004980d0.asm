@@ -39,8 +39,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CCrossbow_0058212a
 ;   float FLOAT_0059dca4 = 0.6400000
-;   undefined4 g_INT_ARRAY_01c71398[10]
-;   undefined4 g_INT_ARRAY_01c71398[17]
+;   undefined4 g_GabriellaIndices[10]
+;   undefined4 g_GabriellaIndices[17]
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -103,7 +103,7 @@ section .text
     PUSH EAX                            ; 0049815a
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0049815b
         ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV EDX,dword ptr [0x01c713dc]      ; 00498160 | g_INT_ARRAY_01c71398[17]
+    MOV EDX,dword ptr [0x01c713dc]      ; 00498160 | g_GabriellaIndices[17]
     LEA EAX,[EDX*0x4 + 0x0]             ; 00498166
     SUB EAX,EDX                         ; 0049816d
     SHL EAX,0x4                         ; 0049816f
@@ -279,7 +279,7 @@ section .text
         ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00498383
     LEA EAX,[EBP + 0xfffffd42]          ; 00498386
-    MOV EDX,dword ptr [0x01c713c0]      ; 0049838c | g_INT_ARRAY_01c71398[10]
+    MOV EDX,dword ptr [0x01c713c0]      ; 0049838c | g_GabriellaIndices[10]
     PUSH EAX                            ; 00498392
     LEA EAX,[EDX*0x4 + 0x0]             ; 00498393
     SUB EAX,EDX                         ; 0049839a

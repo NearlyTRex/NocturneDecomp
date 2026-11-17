@@ -104,7 +104,7 @@ section .text
     CMP dword ptr [0x01c37788],0x0      ; 00431386 | g_INT_01c37788
     JZ 0x004314a8                       ; 0043138d
         ;   XREF to: 004314a8 (CONDITIONAL_JUMP)  ; LAB_004314a8
-    CMP dword ptr [0x0070ca74],0x0      ; 00431393 | g_INT_0070ca74
+    CMP dword ptr [0x0070ca74],0x0      ; 00431393 | g_TexturesDisabled
     JNZ 0x004314a8                      ; 0043139a
         ;   XREF to: 004314a8 (CONDITIONAL_JUMP)  ; LAB_004314a8
     XOR EAX,EAX                         ; 004313a0
@@ -117,14 +117,14 @@ section .text
     INC EAX                             ; 004313b0
     ADD EDX,0x622014                    ; 004313b1 | g_SRenderVertex_ARRAY_00622014
     ADD EBX,0x4                         ; 004313b7
-    MOV dword ptr [EAX*0x4 + 0x7bf430],EDX ; 004313ba | g_SRenderVertex_PTR_ARRAY_007bf434 | g_SRenderVertex_PTR_ARRAY_007bf434[1]
+    MOV dword ptr [EAX*0x4 + 0x7bf430],EDX ; 004313ba | g_ClipperCullingPointers | g_ClipperCullingPointers[1]
     CMP EAX,EBP                         ; 004313c1
     JL 0x004313ad                       ; 004313c3
         ;   XREF to: 004313ad (CONDITIONAL_JUMP)  ; LAB_004313ad
     LEA EAX,[EAX]                       ; 004313c5
     LEA EDX,[EDX]                       ; 004313cb
     MOV EBX,EBX                         ; 004313ce
-    CMP dword ptr [0x0070ca7c],0x0      ; 004313d0 | g_INT_0070ca7c
+    CMP dword ptr [0x0070ca7c],0x0      ; 004313d0 | g_CullingMode
         ;   Label: LAB_004313d0
     JZ 0x00431472                       ; 004313d7
         ;   XREF to: 00431472 (CONDITIONAL_JUMP)  ; LAB_00431472
@@ -139,12 +139,12 @@ section .text
     TEST EDI,EDI                        ; 004313fb
     JLE 0x00431427                      ; 004313fd
         ;   XREF to: 00431427 (CONDITIONAL_JUMP)  ; LAB_00431427
-    MOV EAX,dword ptr [EBX + 0x7bf43c]  ; 004313ff | g_SRenderVertex_PTR_ARRAY_007bf434[2] | g_SRenderVertex_PTR_ARRAY_007bf434[3]
+    MOV EAX,dword ptr [EBX + 0x7bf43c]  ; 004313ff | g_ClipperCullingPointers[2] | g_ClipperCullingPointers[3]
         ;   Label: LAB_004313ff
     PUSH EAX                            ; 00431405
-    MOV EDX,dword ptr [EBX + 0x7bf438]  ; 00431406 | g_SRenderVertex_PTR_ARRAY_007bf434[1] | g_SRenderVertex_PTR_ARRAY_007bf434[2]
+    MOV EDX,dword ptr [EBX + 0x7bf438]  ; 00431406 | g_ClipperCullingPointers[1] | g_ClipperCullingPointers[2]
     PUSH EDX                            ; 0043140c
-    MOV ECX,dword ptr [0x007bf434]      ; 0043140d | g_SRenderVertex_PTR_ARRAY_007bf434
+    MOV ECX,dword ptr [0x007bf434]      ; 0043140d | g_ClipperCullingPointers
     PUSH ECX                            ; 00431413
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760 ; 00431414
         ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
@@ -181,12 +181,12 @@ section .text
         ;   Label: LAB_0043144f
     JMP 0x00431420                      ; 00431450
         ;   XREF to: 00431420 (UNCONDITIONAL_JUMP)  ; LAB_00431420
-    MOV EAX,[0x007bf43c]                ; 00431452 | g_SRenderVertex_PTR_ARRAY_007bf434[2]
+    MOV EAX,[0x007bf43c]                ; 00431452 | g_ClipperCullingPointers[2]
         ;   Label: LAB_00431452
     PUSH EAX                            ; 00431457
-    MOV EDX,dword ptr [0x007bf438]      ; 00431458 | g_SRenderVertex_PTR_ARRAY_007bf434[1]
+    MOV EDX,dword ptr [0x007bf438]      ; 00431458 | g_ClipperCullingPointers[1]
     PUSH EDX                            ; 0043145e
-    MOV ECX,dword ptr [0x007bf434]      ; 0043145f | g_SRenderVertex_PTR_ARRAY_007bf434
+    MOV ECX,dword ptr [0x007bf434]      ; 0043145f | g_ClipperCullingPointers
     PUSH ECX                            ; 00431465
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760 ; 00431466
         ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
@@ -194,15 +194,15 @@ section .text
     TEST EAX,EAX                        ; 0043146e
     JMP 0x0043142e                      ; 00431470
         ;   XREF to: 0043142e (UNCONDITIONAL_JUMP)  ; LAB_0043142e
-    MOV ESI,dword ptr [0x01c38b54]      ; 00431472 | g_BIT_INTEGER32_01c38b54
+    MOV ESI,dword ptr [0x01c38b54]      ; 00431472 | g_RenderStateFlags
         ;   Label: LAB_00431472
     PUSH ESI                            ; 00431478
     LEA EAX,[EBP + -0x2]                ; 00431479
-    MOV EBX,dword ptr [0x01e61b58]      ; 0043147c | g_INT_01e61b58
+    MOV EBX,dword ptr [0x01e61b58]      ; 0043147c | g_RenderedTriangleCount
     PUSH EBP                            ; 00431482
     ADD EBX,EAX                         ; 00431483
-    PUSH 0x7bf434                       ; 00431485 | g_SRenderVertex_PTR_ARRAY_007bf434
-    MOV dword ptr [0x01e61b58],EBX      ; 0043148a | g_INT_01e61b58
+    PUSH 0x7bf434                       ; 00431485 | g_ClipperCullingPointers
+    MOV dword ptr [0x01e61b58],EBX      ; 0043148a | g_RenderedTriangleCount
     CALL engine_special.cpp_drawPolygon2_FUN_0055f920 ; 00431490
         ;   XREF to: 0055f920 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_0055f920(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     MOV EAX,0x1                         ; 00431495
@@ -296,7 +296,7 @@ section .text
     XOR EBX,EBX                         ; 00431566
     XOR ESI,ESI                         ; 00431568
     XOR EDI,EDI                         ; 0043156a
-    MOV dword ptr [0x007bfcf8],EBX      ; 0043156c | g_INT_007bfcf8
+    MOV dword ptr [0x007bfcf8],EBX      ; 0043156c | g_ClipperTempCount
     MOV dword ptr [ESP + 0x134],EAX     ; 00431572
     MOV dword ptr [ESP + 0x12c],EDI     ; 00431579
     MOV EBX,dword ptr [EDX + EBP*0x4 + -0x4] ; 00431580
@@ -553,7 +553,7 @@ section .text
     JL 0x004317d9                       ; 0043181d
         ;   XREF to: 004317d9 (CONDITIONAL_JUMP)  ; LAB_004317d9
     NOP                                 ; 0043181f
-    MOV ESI,dword ptr [0x00609b34]      ; 00431820 | g_INT_00609b34
+    MOV ESI,dword ptr [0x00609b34]      ; 00431820 | g_FarPlaneDistance
         ;   Label: LAB_00431820
     XOR EBX,EBX                         ; 00431826
     TEST ESI,ESI                        ; 00431828
@@ -593,7 +593,7 @@ section .text
     POP ESI                             ; 00431879
     POP EBX                             ; 0043187a
     RET                                 ; 0043187b
-    CMP dword ptr [0x007bfcf8],0xc      ; 0043187c | g_INT_007bfcf8
+    CMP dword ptr [0x007bfcf8],0xc      ; 0043187c | g_ClipperTempCount
         ;   Label: caseD_1
     JL 0x004318a7                       ; 00431883
         ;   XREF to: 004318a7 (CONDITIONAL_JUMP)  ; LAB_004318a7
@@ -605,20 +605,20 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043189f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004318a4
-    MOV EAX,[0x007bfcf8]                ; 004318a7 | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 004318a7 | g_ClipperTempCount
         ;   Label: LAB_004318a7
     IMUL EDX,EAX,0x30                   ; 004318ac
     MOV ECX,dword ptr [ESP + 0x134]     ; 004318af
-    ADD EDX,0x7bfab8                    ; 004318b6 | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 004318b6 | g_ClipperTempBuffer
     INC EAX                             ; 004318bc
-    PUSH EDX                            ; 004318bd | g_SRenderVertex_ARRAY_007bfab8
-    MOV [0x007bfcf8],EAX                ; 004318be | g_INT_007bfcf8
+    PUSH EDX                            ; 004318bd | g_ClipperTempBuffer
+    MOV [0x007bfcf8],EAX                ; 004318be | g_ClipperTempCount
     LEA EAX,[ESI*0x4 + 0x0]             ; 004318c3
     PUSH EBX                            ; 004318ca
     ADD EAX,ECX                         ; 004318cb
     PUSH EDI                            ; 004318cd
     INC ESI                             ; 004318ce
-    MOV dword ptr [EAX],EDX             ; 004318cf | g_SRenderVertex_ARRAY_007bfab8
+    MOV dword ptr [EAX],EDX             ; 004318cf | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_00430650 ; 004318d1
         ;   XREF to: 00430650 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00430650(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004318d6
@@ -628,7 +628,7 @@ section .text
         ;   Label: caseD_2
     LEA EAX,[ESI*0x4 + 0x0]             ; 004318e5
     ADD EAX,EDX                         ; 004318ec
-    MOV ECX,dword ptr [0x007bfcf8]      ; 004318ee | g_INT_007bfcf8
+    MOV ECX,dword ptr [0x007bfcf8]      ; 004318ee | g_ClipperTempCount
     INC ESI                             ; 004318f4
     MOV dword ptr [EAX],EBX             ; 004318f5
     CMP ECX,0xc                         ; 004318f7
@@ -642,26 +642,26 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431916
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043191b
-    MOV EAX,[0x007bfcf8]                ; 0043191e | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 0043191e | g_ClipperTempCount
         ;   Label: LAB_0043191e
     IMUL EDX,EAX,0x30                   ; 00431923
     MOV ECX,dword ptr [ESP + 0x134]     ; 00431926
-    ADD EDX,0x7bfab8                    ; 0043192d | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 0043192d | g_ClipperTempBuffer
     INC EAX                             ; 00431933
-    PUSH EDX                            ; 00431934 | g_SRenderVertex_ARRAY_007bfab8
-    MOV [0x007bfcf8],EAX                ; 00431935 | g_INT_007bfcf8
+    PUSH EDX                            ; 00431934 | g_ClipperTempBuffer
+    MOV [0x007bfcf8],EAX                ; 00431935 | g_ClipperTempCount
     LEA EAX,[ESI*0x4 + 0x0]             ; 0043193a
     PUSH EDI                            ; 00431941
     ADD EAX,ECX                         ; 00431942
     PUSH EBX                            ; 00431944
     INC ESI                             ; 00431945
-    MOV dword ptr [EAX],EDX             ; 00431946 | g_SRenderVertex_ARRAY_007bfab8
+    MOV dword ptr [EAX],EDX             ; 00431946 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_00430650 ; 00431948
         ;   XREF to: 00430650 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00430650(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 0043194d
     JMP 0x004315c5                      ; 00431950
         ;   XREF to: 004315c5 (UNCONDITIONAL_JUMP)  ; caseD_3
-    CMP dword ptr [0x007bfcf8],0xc      ; 00431955 | g_INT_007bfcf8
+    CMP dword ptr [0x007bfcf8],0xc      ; 00431955 | g_ClipperTempCount
         ;   Label: caseD_1
     JL 0x00431980                       ; 0043195c
         ;   XREF to: 00431980 (CONDITIONAL_JUMP)  ; LAB_00431980
@@ -673,17 +673,17 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431978
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043197d
-    MOV EAX,[0x007bfcf8]                ; 00431980 | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431980 | g_ClipperTempCount
         ;   Label: LAB_00431980
     IMUL EDX,EAX,0x30                   ; 00431985
-    ADD EDX,0x7bfab8                    ; 00431988 | g_SRenderVertex_ARRAY_007bfab8
-    PUSH EDX                            ; 0043198e | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 00431988 | g_ClipperTempBuffer
+    PUSH EDX                            ; 0043198e | g_ClipperTempBuffer
     PUSH EDI                            ; 0043198f
     INC EBX                             ; 00431990
     INC EAX                             ; 00431991
     PUSH ESI                            ; 00431992
-    MOV [0x007bfcf8],EAX                ; 00431993 | g_INT_007bfcf8
-    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431998 | g_SRenderVertex_ARRAY_007bfab8
+    MOV [0x007bfcf8],EAX                ; 00431993 | g_ClipperTempCount
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431998 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00430750 ; 0043199c
         ;   XREF to: 00430750 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00430750(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004319a1
@@ -691,7 +691,7 @@ section .text
         ;   XREF to: 00431654 (UNCONDITIONAL_JUMP)  ; caseD_3
     INC EBX                             ; 004319a9
         ;   Label: caseD_2
-    MOV EAX,[0x007bfcf8]                ; 004319aa | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 004319aa | g_ClipperTempCount
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDI ; 004319af
     CMP EAX,0xc                         ; 004319b3
     JL 0x004319db                       ; 004319b6
@@ -704,23 +704,23 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004319d3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004319d8
-    MOV EAX,[0x007bfcf8]                ; 004319db | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 004319db | g_ClipperTempCount
         ;   Label: LAB_004319db
     IMUL EDX,EAX,0x30                   ; 004319e0
-    ADD EDX,0x7bfab8                    ; 004319e3 | g_SRenderVertex_ARRAY_007bfab8
-    PUSH EDX                            ; 004319e9 | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 004319e3 | g_ClipperTempBuffer
+    PUSH EDX                            ; 004319e9 | g_ClipperTempBuffer
     PUSH ESI                            ; 004319ea
     INC EBX                             ; 004319eb
     INC EAX                             ; 004319ec
     PUSH EDI                            ; 004319ed
-    MOV [0x007bfcf8],EAX                ; 004319ee | g_INT_007bfcf8
-    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004319f3 | g_SRenderVertex_ARRAY_007bfab8
+    MOV [0x007bfcf8],EAX                ; 004319ee | g_ClipperTempCount
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004319f3 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00430750 ; 004319f7
         ;   XREF to: 00430750 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00430750(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004319fc
     JMP 0x00431654                      ; 004319ff
         ;   XREF to: 00431654 (UNCONDITIONAL_JUMP)  ; caseD_3
-    CMP dword ptr [0x007bfcf8],0xc      ; 00431a04 | g_INT_007bfcf8
+    CMP dword ptr [0x007bfcf8],0xc      ; 00431a04 | g_ClipperTempCount
         ;   Label: caseD_1
     JL 0x00431a2f                       ; 00431a0b
         ;   XREF to: 00431a2f (CONDITIONAL_JUMP)  ; LAB_00431a2f
@@ -732,17 +732,17 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431a27
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431a2c
-    MOV EAX,[0x007bfcf8]                ; 00431a2f | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431a2f | g_ClipperTempCount
         ;   Label: LAB_00431a2f
     IMUL EDX,EAX,0x30                   ; 00431a34
-    ADD EDX,0x7bfab8                    ; 00431a37 | g_SRenderVertex_ARRAY_007bfab8
-    PUSH EDX                            ; 00431a3d | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 00431a37 | g_ClipperTempBuffer
+    PUSH EDX                            ; 00431a3d | g_ClipperTempBuffer
     PUSH EDI                            ; 00431a3e
     INC ESI                             ; 00431a3f
     INC EAX                             ; 00431a40
     PUSH EBX                            ; 00431a41
-    MOV [0x007bfcf8],EAX                ; 00431a42 | g_INT_007bfcf8
-    MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 00431a47 | g_SRenderVertex_ARRAY_007bfab8
+    MOV [0x007bfcf8],EAX                ; 00431a42 | g_ClipperTempCount
+    MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 00431a47 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_00430850 ; 00431a4b
         ;   XREF to: 00430850 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00430850(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431a50
@@ -750,7 +750,7 @@ section .text
         ;   XREF to: 004316ed (UNCONDITIONAL_JUMP)  ; caseD_3
     INC ESI                             ; 00431a58
         ;   Label: caseD_2
-    MOV EAX,[0x007bfcf8]                ; 00431a59 | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431a59 | g_ClipperTempCount
     MOV dword ptr [EBP + ESI*0x4 + -0x4],EDI ; 00431a5e
     CMP EAX,0xc                         ; 00431a62
     JL 0x00431a8a                       ; 00431a65
@@ -763,23 +763,23 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431a82
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431a87
-    MOV EAX,[0x007bfcf8]                ; 00431a8a | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431a8a | g_ClipperTempCount
         ;   Label: LAB_00431a8a
     IMUL EDX,EAX,0x30                   ; 00431a8f
-    ADD EDX,0x7bfab8                    ; 00431a92 | g_SRenderVertex_ARRAY_007bfab8
-    PUSH EDX                            ; 00431a98 | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 00431a92 | g_ClipperTempBuffer
+    PUSH EDX                            ; 00431a98 | g_ClipperTempBuffer
     PUSH EBX                            ; 00431a99
     INC ESI                             ; 00431a9a
     INC EAX                             ; 00431a9b
     PUSH EDI                            ; 00431a9c
-    MOV [0x007bfcf8],EAX                ; 00431a9d | g_INT_007bfcf8
-    MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 00431aa2 | g_SRenderVertex_ARRAY_007bfab8
+    MOV [0x007bfcf8],EAX                ; 00431a9d | g_ClipperTempCount
+    MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 00431aa2 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_00430850 ; 00431aa6
         ;   XREF to: 00430850 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00430850(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431aab
     JMP 0x004316ed                      ; 00431aae
         ;   XREF to: 004316ed (UNCONDITIONAL_JUMP)  ; caseD_3
-    CMP dword ptr [0x007bfcf8],0xc      ; 00431ab3 | g_INT_007bfcf8
+    CMP dword ptr [0x007bfcf8],0xc      ; 00431ab3 | g_ClipperTempCount
         ;   Label: caseD_1
     JL 0x00431ade                       ; 00431aba
         ;   XREF to: 00431ade (CONDITIONAL_JUMP)  ; LAB_00431ade
@@ -791,17 +791,17 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431ad6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431adb
-    MOV EAX,[0x007bfcf8]                ; 00431ade | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431ade | g_ClipperTempCount
         ;   Label: LAB_00431ade
     IMUL EDX,EAX,0x30                   ; 00431ae3
-    ADD EDX,0x7bfab8                    ; 00431ae6 | g_SRenderVertex_ARRAY_007bfab8
-    PUSH EDX                            ; 00431aec | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 00431ae6 | g_ClipperTempBuffer
+    PUSH EDX                            ; 00431aec | g_ClipperTempBuffer
     PUSH EDI                            ; 00431aed
     INC EBX                             ; 00431aee
     INC EAX                             ; 00431aef
     PUSH ESI                            ; 00431af0
-    MOV [0x007bfcf8],EAX                ; 00431af1 | g_INT_007bfcf8
-    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431af6 | g_SRenderVertex_ARRAY_007bfab8
+    MOV [0x007bfcf8],EAX                ; 00431af1 | g_ClipperTempCount
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431af6 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00430950 ; 00431afa
         ;   XREF to: 00430950 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00430950(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431aff
@@ -809,7 +809,7 @@ section .text
         ;   XREF to: 00431790 (UNCONDITIONAL_JUMP)  ; caseD_3
     INC EBX                             ; 00431b07
         ;   Label: caseD_2
-    MOV EAX,[0x007bfcf8]                ; 00431b08 | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431b08 | g_ClipperTempCount
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDI ; 00431b0d
     CMP EAX,0xc                         ; 00431b11
     JL 0x00431b39                       ; 00431b14
@@ -822,17 +822,17 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431b31
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431b36
-    MOV EAX,[0x007bfcf8]                ; 00431b39 | g_INT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00431b39 | g_ClipperTempCount
         ;   Label: LAB_00431b39
     IMUL EDX,EAX,0x30                   ; 00431b3e
-    ADD EDX,0x7bfab8                    ; 00431b41 | g_SRenderVertex_ARRAY_007bfab8
-    PUSH EDX                            ; 00431b47 | g_SRenderVertex_ARRAY_007bfab8
+    ADD EDX,0x7bfab8                    ; 00431b41 | g_ClipperTempBuffer
+    PUSH EDX                            ; 00431b47 | g_ClipperTempBuffer
     PUSH ESI                            ; 00431b48
     INC EBX                             ; 00431b49
     INC EAX                             ; 00431b4a
     PUSH EDI                            ; 00431b4b
-    MOV [0x007bfcf8],EAX                ; 00431b4c | g_INT_007bfcf8
-    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431b51 | g_SRenderVertex_ARRAY_007bfab8
+    MOV [0x007bfcf8],EAX                ; 00431b4c | g_ClipperTempCount
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431b51 | g_ClipperTempBuffer
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00430950 ; 00431b55
         ;   XREF to: 00430950 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00430950(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431b5a
@@ -858,7 +858,7 @@ section .text
     CMP EAX,ECX                         ; 00431b89
     JL 0x00431b7a                       ; 00431b8b
         ;   XREF to: 00431b7a (CONDITIONAL_JUMP)  ; LAB_00431b7a
-    CMP EBX,dword ptr [0x00609b34]      ; 00431b8d | g_INT_00609b34
+    CMP EBX,dword ptr [0x00609b34]      ; 00431b8d | g_FarPlaneDistance
         ;   Label: LAB_00431b8d
     JL 0x00431830                       ; 00431b93
         ;   XREF to: 00431830 (CONDITIONAL_JUMP)  ; LAB_00431830
@@ -915,7 +915,7 @@ section .text
     IMUL EAX,EAX,0x30                   ; 00431c19
         ;   Label: LAB_00431c19
     MOV EDX,0x7bf4b8                    ; 00431c1c | g_SRenderVertex_ARRAY_007bf4b8
-    MOV ESI,dword ptr [0x00609b34]      ; 00431c21 | g_INT_00609b34
+    MOV ESI,dword ptr [0x00609b34]      ; 00431c21 | g_FarPlaneDistance
     MOV EBX,EBP                         ; 00431c27
     MOV ECX,dword ptr [EBP + 0x8]       ; 00431c29 | g_SRenderVertex_ARRAY_007bf4b8[0].projected_vertex.transformed_z | g_SRenderVertex_ARRAY_007bf4b8[1].projected_vertex.transformed_z
     ADD EDX,EAX                         ; 00431c2c
@@ -924,7 +924,7 @@ section .text
     JL 0x00431c39                       ; 00431c32
         ;   XREF to: 00431c39 (CONDITIONAL_JUMP)  ; LAB_00431c39
     MOV EAX,0x1                         ; 00431c34
-    MOV EDI,dword ptr [0x00609b34]      ; 00431c39 | g_INT_00609b34
+    MOV EDI,dword ptr [0x00609b34]      ; 00431c39 | g_FarPlaneDistance
         ;   Label: LAB_00431c39
     CMP EDI,dword ptr [EDX + 0x8]       ; 00431c3f | g_SRenderVertex_ARRAY_007bf4b8[0].projected_vertex.transformed_z
     JG 0x00431c46                       ; 00431c42

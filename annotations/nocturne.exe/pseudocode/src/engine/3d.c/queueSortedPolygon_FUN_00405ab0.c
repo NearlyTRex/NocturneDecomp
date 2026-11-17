@@ -12,16 +12,17 @@ void __cdecl engine_3d_c_queueSortedPolygon_FUN_00405ab0(SMRGLHeaderExtended *pr
   uint uVar1;
   int iVar2;
   
-  if ((int)g_UINT_006b0268 < 500) {
+  if ((int)g_ProcessedVertexBackupOffset < 500) {
     iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)&primitive->child_count);
-    uVar1 = g_UINT_006b0268;
+    uVar1 = g_ProcessedVertexBackupOffset;
     if (iVar2 != 0) {
-      g_INT_ARRAY_006b029c[g_UINT_006b0268 * 8 + 0x10] = (int)primitive;
-      g_INT_ARRAY_006b029c[uVar1 * 8 + 0x11] = (int)owner_block;
-      g_INT_ARRAY_006b029c[uVar1 * 8 + 0x12] = (int)chain_root;
+      g_ProcessedVertexIndices[g_ProcessedVertexBackupOffset * 8 + 0x10] = (int)primitive;
+      g_ProcessedVertexIndices[uVar1 * 8 + 0x11] = (int)owner_block;
+      g_ProcessedVertexIndices[uVar1 * 8 + 0x12] = (int)chain_root;
       engine_3d_c_computeSortedPolygonKey_FUN_004059c0(primitive);
-      g_INT_ARRAY_006b415c[g_UINT_006b0268] = g_UINT_006b0268 * 0x20 + 0x6b02dc;
-      g_UINT_006b0268 = g_UINT_006b0268 + 1;
+      g_INT_ARRAY_006b415c[g_ProcessedVertexBackupOffset] =
+           g_ProcessedVertexBackupOffset * 0x20 + 0x6b02dc;
+      g_ProcessedVertexBackupOffset = g_ProcessedVertexBackupOffset + 1;
       return;
     }
   }

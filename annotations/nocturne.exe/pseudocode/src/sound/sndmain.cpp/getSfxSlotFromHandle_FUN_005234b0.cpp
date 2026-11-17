@@ -27,9 +27,9 @@ CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_
           return (CSfxSlot *)0x0;
         }
         if (g_CSfxSlot_ARRAY_02dbd374[uVar1].hardware_buffer_handle != 0) {
-          if ((g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0) &&
-             (iVar2 = (*g_CSoundDevice_PTR_02dc8318->vtable->isSfxPlaying)
-                                (g_CSoundDevice_PTR_02dc8318,slot), iVar2 != 0)) {
+          if ((g_CSoundDevicePtr != (CSoundDevice *)0x0) &&
+             (iVar2 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,slot), iVar2 != 0
+             )) {
             return slot;
           }
           sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(slot);

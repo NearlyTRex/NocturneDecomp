@@ -23,8 +23,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   char*[10] g_CHAR_PTR_ARRAY_0061ef2c
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
-;   int g_INT_01d06aa0
-;   undefined4 g_CDemonActorType_01d06b14.name_hash
+;   int g_HeroCount
+;   undefined4 g_CHeroPlaceholderClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   undefined4 DAT_01d2c900
@@ -50,7 +50,7 @@ section .text
     SUB ESP,0x4                         ; 0051bf34
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0051bf37
     MOV EBP,dword ptr [ESP + 0x24]      ; 0051bf3b
-    CMP EDI,dword ptr [0x01d06aa0]      ; 0051bf3f | g_INT_01d06aa0
+    CMP EDI,dword ptr [0x01d06aa0]      ; 0051bf3f | g_HeroCount
     JGE 0x0051bfc9                      ; 0051bf45
         ;   XREF to: 0051bfc9 (CONDITIONAL_JUMP)  ; LAB_0051bfc9
     CMP dword ptr [EDI*0x4 + 0x1d06aa4],0x0 ; 0051bf4b
@@ -73,7 +73,7 @@ section .text
     TEST ESI,ESI                        ; 0051bf86
     JZ 0x0051bfaa                       ; 0051bf88
         ;   XREF to: 0051bfaa (CONDITIONAL_JUMP)  ; LAB_0051bfaa
-    MOV EBX,dword ptr [0x01d06b4c]      ; 0051bf8a | g_CDemonActorType_01d06b14.name_hash
+    MOV EBX,dword ptr [0x01d06b4c]      ; 0051bf8a | g_CHeroPlaceholderClassInfo.name_hash
         ;   Label: LAB_0051bf8a
     PUSH EBX                            ; 0051bf90
     PUSH ESI                            ; 0051bf91

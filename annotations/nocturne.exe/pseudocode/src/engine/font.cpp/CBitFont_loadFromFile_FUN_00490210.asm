@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)
+; void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *font_path)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   font_path
 ; Local Variables:
 ; undefined        Stack[-0x22c]:1  local_22c
 ; undefined        Stack[-0x12c]:1  local_12c

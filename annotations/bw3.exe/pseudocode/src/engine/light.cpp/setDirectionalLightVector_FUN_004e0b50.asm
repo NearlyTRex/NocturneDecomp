@@ -13,12 +13,12 @@
 ;   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100 at 0046d110
 ;
 ; Referenced Globals:
-;   int g_INT_01c6e2f0
-;   int g_INT_01c6e2f4
-;   int g_INT_01c6e2f8
-;   int g_INT_01d70c38
-;   int g_INT_01d70c3c
-;   int g_INT_01d70c40
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
+;   int g_LightDirectionX2
+;   int g_LightDirectionY2
+;   int g_LightDirectionZ2
 ;
 ; *****************************************************************************
 
@@ -28,11 +28,11 @@ section .text
         ;   Label: engine_light.cpp_setDirectionalLightVector_FUN_004e0b50
     MOV EAX,dword ptr [ESP + 0x8]       ; 004e0b54
     MOV ECX,dword ptr [ESP + 0xc]       ; 004e0b58
-    MOV dword ptr [0x01c6e2f0],EDX      ; 004e0b5c | g_INT_01c6e2f0
-    MOV [0x01d70c3c],EAX                ; 004e0b62 | g_INT_01d70c3c
-    MOV [0x01c6e2f4],EAX                ; 004e0b67 | g_INT_01c6e2f4
-    MOV dword ptr [0x01d70c40],ECX      ; 004e0b6c | g_INT_01d70c40
-    MOV dword ptr [0x01c6e2f8],ECX      ; 004e0b72 | g_INT_01c6e2f8
-    MOV dword ptr [0x01d70c38],EDX      ; 004e0b78 | g_INT_01d70c38
+    MOV dword ptr [0x01c6e2f0],EDX      ; 004e0b5c | g_LightDirectionX
+    MOV [0x01d70c3c],EAX                ; 004e0b62 | g_LightDirectionY2
+    MOV [0x01c6e2f4],EAX                ; 004e0b67 | g_LightDirectionY
+    MOV dword ptr [0x01d70c40],ECX      ; 004e0b6c | g_LightDirectionZ2
+    MOV dword ptr [0x01c6e2f8],ECX      ; 004e0b72 | g_LightDirectionZ
+    MOV dword ptr [0x01d70c38],EDX      ; 004e0b78 | g_LightDirectionX2
     RET                                 ; 004e0b7e
 

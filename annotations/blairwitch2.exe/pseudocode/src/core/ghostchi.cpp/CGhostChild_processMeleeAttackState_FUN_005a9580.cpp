@@ -58,7 +58,7 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
     else {
       this_ptr->hit_count = this_ptr->hit_count + 1;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
                  this_ptr->hand_bone,&CStack_48);
       input_local_point = &CStack_30;

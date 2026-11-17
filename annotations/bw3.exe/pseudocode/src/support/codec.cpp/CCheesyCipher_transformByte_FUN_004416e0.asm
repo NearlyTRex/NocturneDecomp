@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2)
+; uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte value)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
-; byte             Stack[0x8]:1   param_2
+; byte             Stack[0x8]:1   value
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CCheesyCipher_process_FUN_00441750 at 0044178d

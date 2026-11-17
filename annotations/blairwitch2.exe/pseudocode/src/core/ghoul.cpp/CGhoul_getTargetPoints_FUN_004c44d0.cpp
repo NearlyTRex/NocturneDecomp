@@ -33,7 +33,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c44d0(CGhoul *this_ptr,
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-            (&(this_ptr->base).base.model,g_INT_ARRAY_01cb821c[9],&CStack_88);
+            (&(this_ptr->base).base.model,g_GhoulIndices[9],&CStack_88);
   CStack_7c.x = CStack_88.x;
   *(uint *)((int)&CStack_7c + (uint)bVar4 * -8 + 4) =
        *(uint *)((int)&CStack_88 + (uint)bVar4 * -8 + 4);
@@ -52,7 +52,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c44d0(CGhoul *this_ptr,
     case 0:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-                  (pCStack_18,g_INT_ARRAY_01cb821c[5],&CStack_64);
+                  (pCStack_18,g_GhoulIndices[5],&CStack_64);
         CStack_40.x = CStack_64.x;
         *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
              *(uint *)((int)&CStack_64 + (uint)bVar4 * -8 + 4);
@@ -81,7 +81,7 @@ LAB_004c461d:
     case 1:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-                  (pCStack_18,g_INT_ARRAY_01cb821c[6],&CStack_34);
+                  (pCStack_18,g_GhoulIndices[6],&CStack_34);
         CStack_94.x = CStack_34.x;
         *(uint *)((int)&CStack_94 + (uint)bVar4 * -8 + 4) =
              *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
@@ -98,7 +98,7 @@ LAB_004c461d:
     case 2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-                  (pCStack_18,g_INT_ARRAY_01cb821c[0],&CStack_a0);
+                  (pCStack_18,g_GhoulIndices[0],&CStack_a0);
         pCVar2 = out_points_array + iVar3;
         CStack_28.x = CStack_a0.x;
         *(uint *)((int)&CStack_28 + (uint)bVar4 * -8 + 4) =
@@ -117,7 +117,7 @@ LAB_004c461a:
     case 3:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-                  (pCStack_18,g_INT_ARRAY_01cb821c[10],&CStack_58);
+                  (pCStack_18,g_GhoulIndices[10],&CStack_58);
         pCVar2 = out_points_array + iVar3;
         CStack_4c.x = CStack_58.x;
         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) =

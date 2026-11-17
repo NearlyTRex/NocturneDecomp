@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 137,
+    "complexity_score": 138,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 112,
+    "pseudocode_lines": 113,
     "suspect_count": 2,
     "suspect_types": [
       "wrong_global"
     ],
-    "total_lines": 470
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -84,139 +84,139 @@
     },
     {
       "addr": "01e312f4",
-      "name": "g_INT_01e312f4",
+      "name": "g_PathfindingMaxClimbHeight",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e3161c",
-      "name": "g_INT_01e3161c",
+      "name": "g_PathfindingCurrentX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e31620",
-      "name": "g_INT_01e31620",
+      "name": "g_PathfindingCurrentZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e31624",
-      "name": "g_INT_01e31624",
+      "name": "g_PathfindingDestX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e31628",
-      "name": "g_INT_01e31628",
+      "name": "g_PathfindingDestZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e3162c",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c",
+      "name": "g_PathfindingQueue",
       "type": "CPathQueueNode[5000]",
       "value": null
     },
     {
       "addr": "01e31630",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[0].cost",
+      "name": "g_PathfindingQueue[0].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31634",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[0].z",
+      "name": "g_PathfindingQueue[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31638",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[1].x",
+      "name": "g_PathfindingQueue[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e3163c",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[1].cost",
+      "name": "g_PathfindingQueue[1].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31640",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[1].z",
+      "name": "g_PathfindingQueue[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31644",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[2].x",
+      "name": "g_PathfindingQueue[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31648",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[2].cost",
+      "name": "g_PathfindingQueue[2].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e3164c",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[2].z",
+      "name": "g_PathfindingQueue[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31650",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[3].x",
+      "name": "g_PathfindingQueue[3].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31654",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[3].cost",
+      "name": "g_PathfindingQueue[3].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31658",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[3].z",
+      "name": "g_PathfindingQueue[3].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e3165c",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[4].x",
+      "name": "g_PathfindingQueue[4].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31660",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[4].cost",
+      "name": "g_PathfindingQueue[4].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e31664",
-      "name": "g_CPathQueueNode_ARRAY_01e3162c[4].z",
+      "name": "g_PathfindingQueue[4].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e4008c",
-      "name": "g_INT_01e4008c",
+      "name": "g_PathfindingQueueHead",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e40090",
-      "name": "g_INT_01e40090",
+      "name": "g_PathfindingQueueTail",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e4280c",
-      "name": "g_INT_01e4280c",
+      "name": "g_PathfindingNodesExpanded",
       "type": "int",
       "value": null
     }
@@ -379,19 +379,19 @@
   },
   "suspects": [
     {
-      "description": "Scalar global g_UCHAR_01e40097 accessed via (&g_UCHAR_01e40097)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_ARRAY_01e40098 (at 0x01e40098, +1 bytes).",
-      "line": 97,
-      "match": "g_UCHAR_01e40097",
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x01e40098, +1 bytes).",
+      "line": 98,
+      "match": "g_PathfindingVisitedMinus1",
       "severity": "moderate",
-      "text": "if (((0 < iVar8) && ((&g_UCHAR_01e40097)[grid_z * 100 + iVar8] == '\\0')) &&",
+      "text": "if (((0 < iVar8) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + iVar8] == '\\0')) &&",
       "type": "wrong_global"
     },
     {
-      "description": "Scalar global g_UCHAR_01e40097 accessed via (&g_UCHAR_01e40097)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_ARRAY_01e40098 (at 0x01e40098, +1 bytes).",
-      "line": 100,
-      "match": "g_UCHAR_01e40097",
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x01e40098, +1 bytes).",
+      "line": 101,
+      "match": "g_PathfindingVisitedMinus1",
       "severity": "moderate",
-      "text": "(&g_UCHAR_01e40097)[iVar8 + grid_z * 100] = '\\x04';",
+      "text": "(&g_PathfindingVisitedMinus1)[iVar8 + grid_z * 100] = '\\x04';",
       "type": "wrong_global"
     }
   ]

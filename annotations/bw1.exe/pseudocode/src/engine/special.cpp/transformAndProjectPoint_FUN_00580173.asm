@@ -31,10 +31,10 @@
 ;   int g_INT_01c4effc
 ;   int g_INT_01c4f000
 ;   int g_INT_01c4f004
-;   int g_INT_01c51d00
-;   int g_INT_01c51d2c
-;   int g_INT_01c51d30
-;   int g_INT_01c51d34
+;   int g_MMXSupported
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   int g_INT_01c51d5c
 ;   ... and 8 more
 ;
@@ -42,7 +42,7 @@
 
 section .text
 
-    TEST dword ptr [0x01c51d00],0xffffffff ; 00580173 | g_INT_01c51d00
+    TEST dword ptr [0x01c51d00],0xffffffff ; 00580173 | g_MMXSupported
         ;   Label: engine_special.cpp_transformAndProjectPoint_FUN_00580173
     JZ 0x005802c1                       ; 0058017d
         ;   XREF to: 005802c1 (CONDITIONAL_JUMP)  ; LAB_005802c1
@@ -50,9 +50,9 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 00580187
     MOV ECX,dword ptr [EBX + 0x4]       ; 00580189
     MOV EDX,dword ptr [EBX + 0x8]       ; 0058018c
-    SUB EAX,dword ptr [0x01c51d2c]      ; 0058018f | g_INT_01c51d2c
-    SUB ECX,dword ptr [0x01c51d30]      ; 00580195 | g_INT_01c51d30
-    SUB EDX,dword ptr [0x01c51d34]      ; 0058019b | g_INT_01c51d34
+    SUB EAX,dword ptr [0x01c51d2c]      ; 0058018f | g_RelativeX
+    SUB ECX,dword ptr [0x01c51d30]      ; 00580195 | g_RelativeY
+    SUB EDX,dword ptr [0x01c51d34]      ; 0058019b | g_RelativeZ
     MOVD MM0,EAX                        ; 005801a1
     MOVD MM1,ECX                        ; 005801a4
     MOVD MM2,EDX                        ; 005801a7
@@ -163,9 +163,9 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 005802cb
     MOV EBX,dword ptr [ESI + 0x4]       ; 005802cd
     MOV ECX,dword ptr [ESI + 0x8]       ; 005802d0
-    SUB EAX,dword ptr [0x01c51d2c]      ; 005802d3 | g_INT_01c51d2c
-    SUB EBX,dword ptr [0x01c51d30]      ; 005802d9 | g_INT_01c51d30
-    SUB ECX,dword ptr [0x01c51d34]      ; 005802df | g_INT_01c51d34
+    SUB EAX,dword ptr [0x01c51d2c]      ; 005802d3 | g_RelativeX
+    SUB EBX,dword ptr [0x01c51d30]      ; 005802d9 | g_RelativeY
+    SUB ECX,dword ptr [0x01c51d34]      ; 005802df | g_RelativeZ
     MOV [0x00623e28],EAX                ; 005802e5 | g_INT_00623e28
     MOV dword ptr [0x00623e2c],EBX      ; 005802ea | g_INT_00623e2c
     MOV dword ptr [0x00623e30],ECX      ; 005802f0 | g_INT_00623e30

@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_0061caac
-;   undefined4 g_SMRGLTextureBasic_ARRAY_0061caac[1].base.type
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061cb3c
+;   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
+;   undefined4 g_FireEffectLightningBoltTextures[1].base.type
+;   SMRGLTextureBasic g_FireEffectPopcornTexture
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
@@ -24,9 +24,9 @@ section .text
     PUSH EBX                            ; 004b3450
         ;   Label: core_fire.cpp_loadLightningBoltAssets_FUN_004b3450
     PUSH ESI                            ; 004b3451
-    MOV EBX,0x61caac                    ; 004b3452 | g_SMRGLTextureBasic_ARRAY_0061caac
-    LEA ESI,[EBX + 0x90]                ; 004b3457 | g_SMRGLTextureBasic_0061cb3c
-    PUSH EBX                            ; 004b345d | g_SMRGLTextureBasic_ARRAY_0061caac | g_SMRGLTextureBasic_ARRAY_0061caac[1].base.type
+    MOV EBX,0x61caac                    ; 004b3452 | g_FireEffectLightningBoltTextures
+    LEA ESI,[EBX + 0x90]                ; 004b3457 | g_FireEffectPopcornTexture
+    PUSH EBX                            ; 004b345d | g_FireEffectLightningBoltTextures | g_FireEffectLightningBoltTextures[1].base.type
         ;   Label: LAB_004b345d
     MOV EDX,dword ptr [0x00612560]      ; 004b345e | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 004b3464 | g_CDemonRenderer_01bc120c

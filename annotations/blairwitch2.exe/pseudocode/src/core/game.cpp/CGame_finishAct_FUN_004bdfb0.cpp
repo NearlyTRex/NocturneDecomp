@@ -37,9 +37,9 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
   
   bVar11 = 0;
   if (this_ptr->act_completion_state == 2) {
-    pCVar8 = g_CBitFont_PTR_01511cc0;
+    pCVar8 = g_ThemeFont;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
-      pCVar8 = g_CBitFont_PTR_01511cc4;
+      pCVar8 = g_SmallEditorFont;
     }
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(pCVar8,0x58);
     core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
@@ -216,17 +216,17 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  local_2c = g_CBitFont_PTR_01511cc0;
+  local_2c = g_ThemeFont;
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   pCVar8 = local_2c;
   iVar3 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
-                    (local_2c,&stack0xfffffaa4,g_CHAR_ARRAY_01cb2520,0x14,0x100,0xc0);
+                    (local_2c,&stack0xfffffaa4,g_ActStatsTextBuffer2,0x14,0x100,0xc0);
   iVar10 = 0;
   iStack_34 = iVar3;
   local_30 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(pCVar8,0x58);
   y = 0xf0;
   if (0 < iVar3) {
-    pcVar4 = g_CHAR_ARRAY_01cb2520;
+    pcVar4 = g_ActStatsTextBuffer2;
     do {
       iVar10 = iVar10 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0

@@ -18,14 +18,14 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(CDire
   DSBUFFERDESC local_38;
   tWAVEFORMATEX local_24;
   
-  if (g_IDirectSound_PTR_02dc9214 != (IDirectSound *)0x0) {
+  if (g_DirectSound != (IDirectSound *)0x0) {
     iVar4 = 1;
     iVar2 = 4;
-    pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[1];
+    pIVar1 = g_DirectSoundSampleBuffers[1];
     while (pIVar1 != (IDirectSoundBuffer *)0x0) {
       iVar4 = iVar4 + 1;
       if (99 < iVar2 + 4) break;
-      pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc9244 + iVar2 + 4);
+      pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundSampleBuffers + iVar2 + 4);
       iVar2 = iVar2 + 4;
     }
     if (iVar4 < 0x19) {
@@ -43,11 +43,11 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(CDire
       local_38.dwBufferBytes = channel_count * iVar2 * sample_count;
       local_38.dwSize = 0x14;
       local_38.dwFlags = 0xb0;
-      error_code = (*g_IDirectSound_PTR_02dc9214->vtable->CreateSoundBuffer)
-                             (g_IDirectSound_PTR_02dc9214,&local_38,
-                              g_IDirectSoundBuffer_PTR_ARRAY_02dc9244 + iVar4,(LPUNKNOWN)0x0);
+      error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
+                             (g_DirectSound,&local_38,g_DirectSoundSampleBuffers + iVar4,
+                              (LPUNKNOWN)0x0);
       if (error_code == 0) {
-        if (g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[iVar4] != (IDirectSoundBuffer *)0x0) {
+        if (g_DirectSoundSampleBuffers[iVar4] != (IDirectSoundBuffer *)0x0) {
           return iVar4;
         }
       }
@@ -58,10 +58,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(CDire
         sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_1c8);
       }
       sound_sndmain_cpp_logSoundError_FUN_00529980("DirectSoundDevice::allocateSample - access failed\n");
-      pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[iVar4];
+      pIVar1 = g_DirectSoundSampleBuffers[iVar4];
       if (pIVar1 != (IDirectSoundBuffer *)0x0) {
         (*pIVar1->vtable->Release)((IUnknown *)pIVar1);
-        g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[iVar4] = (IDirectSoundBuffer *)0x0;
+        g_DirectSoundSampleBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
         return 0;
       }
     }

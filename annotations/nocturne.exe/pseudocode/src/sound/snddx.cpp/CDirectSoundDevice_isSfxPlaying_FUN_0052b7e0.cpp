@@ -17,10 +17,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(CDirect
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((0 < iVar1) && (iVar1 < 0x1f)) &&
-      (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] != (IDirectSoundBuffer *)0x0)) &&
+      (g_DirectSoundHardwareSfxBuffers[iVar1] != (IDirectSoundBuffer *)0x0)) &&
      (g_INT_ARRAY_02dc9324[iVar1] != 0)) {
-    error_code = (*g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1]->vtable->GetStatus)
-                           (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1],(LPDWORD)local_4);
+    error_code = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->GetStatus)
+                           (g_DirectSoundHardwareSfxBuffers[iVar1],(LPDWORD)local_4);
     if (error_code != 0) {
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
       _sprintf(acStack_194,"DirectSux: Unable to %s.  (%s)","Get active sfx secondary buffer status",

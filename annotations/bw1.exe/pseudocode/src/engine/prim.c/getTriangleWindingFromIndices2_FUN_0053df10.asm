@@ -7,7 +7,7 @@
 ; SMRGLPrimitiveTriangle * Stack[0x4]:4   triangle_indices
 ;
 ; Referenced Globals:
-;   int g_INT_00713a7c
+;   int g_CullingMode
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     SUB EDX,EBX                         ; 0053df4b
     ADD EAX,0x629014                    ; 0053df4d
     SHL EDX,0x4                         ; 0053df52
-    MOV EBX,dword ptr [0x00713a7c]      ; 0053df55 | g_INT_00713a7c
+    MOV EBX,dword ptr [0x00713a7c]      ; 0053df55 | g_CullingMode
     ADD EDX,0x629014                    ; 0053df5b
     CMP EBX,0x1                         ; 0053df61
     JNZ 0x0053dfce                      ; 0053df64

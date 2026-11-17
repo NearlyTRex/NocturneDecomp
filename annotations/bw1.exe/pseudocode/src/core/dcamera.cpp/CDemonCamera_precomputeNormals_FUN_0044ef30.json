@@ -70,37 +70,37 @@
   "globals": [
     {
       "addr": "005d7717",
-      "name": "g_DOUBLE_005d7717",
+      "name": "g_PrecomputePackedNormalToFloat",
       "type": "double",
       "value": "0.00390625"
     },
     {
       "addr": "005d771f",
-      "name": "g_DOUBLE_005d771f",
+      "name": "g_PrecomputeFixedPointToFloat",
       "type": "double",
       "value": "0.00787401574803150"
     },
     {
       "addr": "0061123c",
-      "name": "g_INT_ARRAY_0061123c",
+      "name": "g_CameraEdgeOffsetX",
       "type": "int[8]",
       "value": null
     },
     {
       "addr": "00611240",
-      "name": "g_INT_ARRAY_0061123c[1]",
+      "name": "g_CameraEdgeOffsetX[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061125c",
-      "name": "g_INT_ARRAY_0061125c",
+      "name": "g_CameraEdgeOffsetY",
       "type": "int[8]",
       "value": null
     },
     {
       "addr": "00611260",
-      "name": "g_INT_ARRAY_0061125c[1]",
+      "name": "g_CameraEdgeOffsetY[1]",
       "type": "undefined4",
       "value": null
     },
@@ -124,79 +124,79 @@
     },
     {
       "addr": "0093aae4",
-      "name": "g_CVector3i_ARRAY_ARRAY_00939bd8[1][1].x",
+      "name": "g_TempWorldPositions[1][1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0093aae8",
-      "name": "g_CVector3i_ARRAY_ARRAY_00939bd8[1][1].y",
+      "name": "g_TempWorldPositions[1][1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0093aaec",
-      "name": "g_CVector3i_ARRAY_ARRAY_00939bd8[1][1].z",
+      "name": "g_TempWorldPositions[1][1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00a1c9e4",
-      "name": "g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].x",
+      "name": "g_PrecomputedSurfaceNormals[1][1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00a1c9e8",
-      "name": "g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].y",
+      "name": "g_PrecomputedSurfaceNormals[1][1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00a1c9ec",
-      "name": "g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].z",
+      "name": "g_PrecomputedSurfaceNormals[1][1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b3669c",
-      "name": "g_INT_ARRAY_00b36198[321]",
+      "name": "g_PrecomputedDepthBuffer[321]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b81ca4",
-      "name": "g_INT_00b81ca4",
+      "name": "g_LightBufferPoolIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "01289ca8",
-      "name": "g_SCoronaLightCache_01289ca8",
+      "name": "g_CoronaLightCache",
       "type": "SCoronaLightCache",
       "value": null
     },
     {
       "addr": "01323d00",
-      "name": "g_BIT_INTEGER32_01323d00",
+      "name": "g_CameraDownscaleIterations",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01323d04",
-      "name": "g_INT_01323d04",
+      "name": "g_CameraEdgeCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c4480c",
-      "name": "g_UINT_PTR_ARRAY_01c4480c",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     }
@@ -515,65 +515,65 @@
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(int *)((int)g_INT_ARRAY_00b36198",
+      "match": "(int *)((int)g_PrecomputedDepthBuffer",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_00b36198 + local_2c) = local_60.z;",
+      "text": "*(int *)((int)g_PrecomputedDepthBuffer + local_2c) = local_60.z;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 122,
-      "match": "(int *)((int)g_UINT_PTR_ARRAY_01c4480c",
+      "match": "(int *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "iVar4 = *(int *)(*(int *)((int)g_UINT_PTR_ARRAY_01c4480c + local_48) + local_34);",
+      "text": "iVar4 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 142,
-      "match": "(int *)((int)g_INT_ARRAY_0061125c",
+      "match": "(int *)((int)g_CameraEdgeOffsetY",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0061125c + iVar5)) * 0x140 +",
+      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar5)) * 0x140 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 144,
-      "match": "(int *)((int)g_INT_ARRAY_0061123c",
+      "match": "(int *)((int)g_CameraEdgeOffsetX",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0061123c + iVar5)] >> 0x1f;",
+      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar5)] >> 0x1f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 147,
-      "match": "(int *)((int)g_INT_ARRAY_0061125c",
+      "match": "(int *)((int)g_CameraEdgeOffsetY",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0061125c + iVar5)) * 0x140 +",
+      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar5)) * 0x140 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 149,
-      "match": "(int *)((int)g_INT_ARRAY_0061123c",
+      "match": "(int *)((int)g_CameraEdgeOffsetX",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0061123c + iVar5)] ^ uVar3) - uVar3;",
+      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar5)] ^ uVar3) - uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 152,
-      "match": "(int *)((int)g_INT_ARRAY_0061123c",
+      "match": "(int *)((int)g_CameraEdgeOffsetX",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0061123c + iVar5) +",
+      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar5) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 153,
-      "match": "(int *)((int)g_INT_ARRAY_0061125c",
+      "match": "(int *)((int)g_CameraEdgeOffsetY",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0061125c + iVar5) * 0x140;",
+      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar5) * 0x140;",
       "type": "pointer_cast"
     },
     {
@@ -625,11 +625,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3i_ARRAY_ARRAY_00939bd8[0][0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_TempWorldPositions[0][0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 68,
-      "match": "(int)&g_CVector3i_ARRAY_ARRAY_00939bd8[0][0].x",
+      "match": "(int)&g_TempWorldPositions[0][0].x",
       "severity": "moderate",
-      "text": "*(int *)((int)&g_CVector3i_ARRAY_ARRAY_00939bd8[0][0].x + local_30) = local_54.x;",
+      "text": "*(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;",
       "type": "pointer_truncation"
     },
     {
@@ -673,39 +673,39 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_PrecomputedSurfaceNormals[0][0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 92,
-      "match": "(int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].x",
+      "match": "(int)&g_PrecomputedSurfaceNormals[0][0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].x + iVar4) =",
+      "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].x + iVar4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_PrecomputedSurfaceNormals[0][0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 94,
-      "match": "(int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].y",
+      "match": "(int)&g_PrecomputedSurfaceNormals[0][0].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].y + iVar4) =",
+      "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].y + iVar4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_PrecomputedSurfaceNormals[0][0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 96,
-      "match": "(int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].z",
+      "match": "(int)&g_PrecomputedSurfaceNormals[0][0].z",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].z + iVar4) =",
+      "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].z + iVar4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c4480c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 122,
-      "match": "(int)g_UINT_PTR_ARRAY_01c4480c",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "iVar4 = *(int *)(*(int *)((int)g_UINT_PTR_ARRAY_01c4480c + local_48) + local_34);",
+      "text": "iVar4 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x939bdc matches address of g_CVector3i_ARRAY_ARRAY_00939bd8 (+4 bytes into) (type CVector3i[241][320]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x939bdc matches address of g_TempWorldPositions (+4 bytes into) (type CVector3i[241][320]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 67,
       "match": "0x939bdc",
       "severity": "moderate",
@@ -765,7 +765,7 @@
       "line": 68,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&g_CVector3i_ARRAY_ARRAY_00939bd8[0][0].x + local_30) = local_54.x;",
+      "text": "*(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;",
       "type": "pointer_cast"
     },
     {
@@ -805,7 +805,7 @@
       "line": 92,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].x + iVar4) =",
+      "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].x + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -813,7 +813,7 @@
       "line": 94,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].y + iVar4) =",
+      "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].y + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -821,7 +821,7 @@
       "line": 96,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a1bad8[0][0].z + iVar4) =",
+      "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].z + iVar4) =",
       "type": "pointer_cast"
     }
   ]

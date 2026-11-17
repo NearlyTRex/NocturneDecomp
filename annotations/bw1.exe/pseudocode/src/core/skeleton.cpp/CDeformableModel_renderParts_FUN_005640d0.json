@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 314,
+    "complexity_score": 315,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 244,
+    "pseudocode_lines": 245,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant"
     ],
-    "total_lines": 901
+    "total_lines": 902
   },
   "cross_references": [
     {
@@ -81,13 +81,13 @@
   "globals": [
     {
       "addr": "005f2005",
-      "name": "g_FLOAT_005f2005",
+      "name": "g_NormalVisualizationBias",
       "type": "float",
       "value": "127"
     },
     {
       "addr": "005f2009",
-      "name": "g_DOUBLE_005f2009",
+      "name": "g_NormalVisualizationScale",
       "type": "double",
       "value": "127"
     },
@@ -712,7 +712,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 185,
       "match": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2",
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));",
@@ -720,7 +720,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 224,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "(fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),",
@@ -728,7 +728,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 228,
       "match": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2",
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));",
@@ -736,7 +736,7 @@
     },
     {
       "description": "Raw hex address 0x564810 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 138,
+      "line": 139,
       "match": "0x564810",
       "severity": "moderate",
       "text": "iVar7 = 0x564810;",
@@ -744,7 +744,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 217,
+      "line": 218,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -752,7 +752,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 172,
+      "line": 173,
       "match": "(int *)(local_ac + 0x90)",
       "severity": "moderate",
       "text": "fVar2 = *(float *)(*(int *)(local_ac + 0x90) + local_40 * 4);",

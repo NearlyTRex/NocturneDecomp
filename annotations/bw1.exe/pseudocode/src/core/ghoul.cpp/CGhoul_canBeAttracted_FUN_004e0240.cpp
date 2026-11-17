@@ -70,10 +70,10 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e0240(CGhoul *this_ptr,C
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (this_ptr_00,g_INT_ARRAY_01cd0d98[1],&CStack_a8);
+            (this_ptr_00,g_GhoulIndices[1],&CStack_a8);
   afStack_d4[2] = CStack_a8.x;
   afStack_d4[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_a8 + (uint)bVar2 * -8 + 4);
-  bone_index = g_INT_ARRAY_01cd0d98[3];
+  bone_index = g_GhoulIndices[3];
   afStack_d4[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
        *(float *)((int)&CStack_a8 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -97,13 +97,13 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e0240(CGhoul *this_ptr,C
   *(float *)((int)&stack0xffffff00 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (this_ptr_00,g_INT_ARRAY_01cd0d98[2],&CStack_90);
+            (this_ptr_00,g_GhoulIndices[2],&CStack_90);
   fStack_b4 = CStack_90.x;
   afStack_d4[(uint)bVar2 * -2 + 9] = *(float *)((int)&CStack_90 + (uint)bVar2 * -8 + 4);
   afStack_d4[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 10] =
        *(float *)((int)&CStack_90 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (this_ptr_00,g_INT_ARRAY_01cd0d98[4],&CStack_84);
+            (this_ptr_00,g_GhoulIndices[4],&CStack_84);
   fStack_114 = CStack_84.x;
   *(uint *)((int)&stack0xfffffef0 + (uint)bVar2 * -8) =
        *(uint *)((int)&CStack_84 + (uint)bVar2 * -8 + 4);

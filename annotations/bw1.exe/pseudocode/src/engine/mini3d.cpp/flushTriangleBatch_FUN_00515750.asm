@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   float* g_FLOAT_PTR_01d227e0
 ;   int g_INT_01d25f48
 ;   int g_INT_01d25f4c
@@ -44,7 +44,7 @@ section .text
     CMP dword ptr [0x01c50948],0x0      ; 0051577d | g_INT_01c50948
     JZ 0x005157d9                       ; 00515784
         ;   XREF to: 005157d9 (CONDITIONAL_JUMP)  ; LAB_005157d9
-    MOV EAX,[0x01c51d14]                ; 00515786 | g_BIT_INTEGER32_01c51d14
+    MOV EAX,[0x01c51d14]                ; 00515786 | g_RenderStateFlags
     MOV EBX,0x3                         ; 0051578b
     PUSH EAX                            ; 00515790
     MOV EAX,EDX                         ; 00515791

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trstream_cpp_COutStreamFile_attach_FUN_005a1a70(COutStreamFile *this_ptr,int param_2)
+; void __cdecl support_trstream_cpp_COutStreamFile_attach_FUN_005a1a70(COutStreamFile *this_ptr,int file)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   file
 ;
 ; *****************************************************************************
 

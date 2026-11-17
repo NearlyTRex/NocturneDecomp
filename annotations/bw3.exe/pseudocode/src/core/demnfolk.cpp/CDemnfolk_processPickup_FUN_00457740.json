@@ -225,19 +225,19 @@
     },
     {
       "addr": "02cfd900",
-      "name": "g_CVector3f_02cfd900",
+      "name": "g_ZeroVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02cfd904",
-      "name": "g_CVector3f_02cfd900.y",
+      "name": "g_ZeroVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cfd908",
-      "name": "g_CVector3f_02cfd900.z",
+      "name": "g_ZeroVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -812,11 +812,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_02cfd900` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ZeroVector` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 304,
-      "match": "(int)&g_CVector3f_02cfd900",
+      "match": "(int)&g_ZeroVector",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3f_02cfd900 + (uint)bVar9 * -8 + 4);",
+      "text": "*(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -1072,7 +1072,7 @@
       "line": 304,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3f_02cfd900 + (uint)bVar9 * -8 + 4);",
+      "text": "*(uint *)((int)&g_ZeroVector + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

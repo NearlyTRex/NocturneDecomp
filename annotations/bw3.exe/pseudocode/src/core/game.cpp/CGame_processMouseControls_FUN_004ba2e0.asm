@@ -25,9 +25,9 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int g_INT_01c5fadc
-;   int g_INT_01c5fae0
-;   char[4952] g_CHAR_ARRAY_01c6cef0
+;   int g_MouseX
+;   int g_MouseY
+;   char[4952] g_KeyboardState
 ;   int g_INT_01d221fc
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
@@ -79,10 +79,10 @@ section .text
     SAR EAX,0x1                         ; 004ba32b
     MOV ECX,dword ptr [ESP + 0x20]      ; 004ba32d
     MOV ESI,EAX                         ; 004ba331
-    MOV EAX,[0x01c5fadc]                ; 004ba333 | g_INT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 004ba333 | g_MouseX
     SUB EAX,ECX                         ; 004ba338
     MOV dword ptr [ESP + 0x18],EAX      ; 004ba33a
-    MOV EAX,[0x01c5fae0]                ; 004ba33e | g_INT_01c5fae0
+    MOV EAX,[0x01c5fae0]                ; 004ba33e | g_MouseY
     PUSH ESI                            ; 004ba343
     SUB EAX,ESI                         ; 004ba344
     PUSH ECX                            ; 004ba346
@@ -166,7 +166,7 @@ section .text
     XOR byte ptr [ESP + 0x3],0x80       ; 004ba428
     MOV EAX,dword ptr [EDI + 0x34]      ; 004ba42d
         ;   Label: LAB_004ba42d
-    CMP byte ptr [EAX + 0x1c6cef0],0x0  ; 004ba430 | g_CHAR_ARRAY_01c6cef0
+    CMP byte ptr [EAX + 0x1c6cef0],0x0  ; 004ba430 | g_KeyboardState
     JZ 0x004ba474                       ; 004ba437
         ;   XREF to: 004ba474 (CONDITIONAL_JUMP)  ; LAB_004ba474
     FLD float ptr [EBX + 0x28]          ; 004ba439

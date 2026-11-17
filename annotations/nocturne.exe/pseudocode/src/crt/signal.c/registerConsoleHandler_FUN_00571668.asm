@@ -8,13 +8,13 @@
 ;   crt_unknown.c_FUN_00571718 at 00571793
 ;
 ; Referenced Globals:
-;   byte g_BYTE_005c2140 = 0x0
+;   byte g_ConsoleHandlerRegistered = 0x0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP byte ptr [0x005c2140],0x0       ; 00571668 | g_BYTE_005c2140
+    CMP byte ptr [0x005c2140],0x0       ; 00571668 | g_ConsoleHandlerRegistered
         ;   Label: crt_signal.c_registerConsoleHandler_FUN_00571668
     JNZ 0x0057168a                      ; 0057166f
         ;   XREF to: 0057168a (CONDITIONAL_JUMP)  ; LAB_0057168a
@@ -24,9 +24,9 @@ section .text
     TEST EAX,EAX                        ; 0057167f
     JZ 0x0057168a                       ; 00571681
         ;   XREF to: 0057168a (CONDITIONAL_JUMP)  ; LAB_0057168a
-    MOV byte ptr [0x005c2140],0x1       ; 00571683 | g_BYTE_005c2140
+    MOV byte ptr [0x005c2140],0x1       ; 00571683 | g_ConsoleHandlerRegistered
     XOR EAX,EAX                         ; 0057168a
         ;   Label: LAB_0057168a
-    MOV AL,[0x005c2140]                 ; 0057168c | g_BYTE_005c2140
+    MOV AL,[0x005c2140]                 ; 0057168c | g_ConsoleHandlerRegistered
     RET                                 ; 00571691
 

@@ -23,12 +23,12 @@ int __cdecl engine_special_cpp_drawFullScreenQuad_FUN_0055fd60(int color)
   memset(&SStack_c0,0,0xc0);
   SStack_c0.projected_vertex.screen_x = g_INT_01c35e48 << 0x10;
   SStack_c0.projected_vertex.screen_y = g_INT_01c35e4c << 0x10;
-  iStack_80 = g_INT_01c35e50 << 0x10;
+  iStack_80 = g_ClipRight << 0x10;
   iStack_4c = g_INT_01c35e54 << 0x10;
-  SStack_c0.projected_vertex.transformed_z = g_INT_0061e28c;
-  iStack_88 = g_INT_0061e28c;
-  iStack_58 = g_INT_0061e28c;
-  iStack_28 = g_INT_0061e28c;
+  SStack_c0.projected_vertex.transformed_z = g_FullScreenQuadDepth;
+  iStack_88 = g_FullScreenQuadDepth;
+  iStack_58 = g_FullScreenQuadDepth;
+  iStack_28 = g_FullScreenQuadDepth;
   g_INT_01c35e60 = color;
   iStack_7c = SStack_c0.projected_vertex.screen_y;
   iStack_50 = iStack_80;

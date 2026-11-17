@@ -9,13 +9,13 @@
 void __mmx_save core_dstrendr_cpp_saveMMXRegisters_FUN_00463a40(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)
 {
 __asm {
-        movq qword ptr [g_MMX_INTEGER_01c03958],MM0
-        movq qword ptr [g_MMX_INTEGER_01c03960],MM1
-        movq qword ptr [g_MMX_INTEGER_01c03968],MM2
-        movq qword ptr [g_MMX_INTEGER_01c03970],MM3
-        movq qword ptr [g_MMX_INTEGER_01c03978],MM4
-        movq qword ptr [g_MMX_INTEGER_01c03980],MM5
-        movq qword ptr [g_MMX_INTEGER_01c03988],MM6
-        movq qword ptr [g_MMX_INTEGER_01c03990],MM7
+        movq qword ptr [g_SavedMMX0],MM0
+        movq qword ptr [g_SavedMMX1],MM1
+        movq qword ptr [g_SavedMMX2],MM2
+        movq qword ptr [g_SavedMMX3],MM3
+        movq qword ptr [g_SavedMMX4],MM4
+        movq qword ptr [g_SavedMMX5],MM5
+        movq qword ptr [g_SavedMMX6],MM6
+        movq qword ptr [g_SavedMMX7],MM7
 }
 }

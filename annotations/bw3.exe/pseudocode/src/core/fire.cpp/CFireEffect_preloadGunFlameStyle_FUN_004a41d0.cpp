@@ -49,7 +49,7 @@ LAB_004a41fa:
       }
       else {
         texture = (SMRGLTextureBasic *)
-                  (g_SMRGLTextureBasic_ARRAY_005fd60c[0].texture_name + iVar3 + -8);
+                  (g_FireEffectLightningBoltTextures[0].texture_name + iVar3 + -8);
       }
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0

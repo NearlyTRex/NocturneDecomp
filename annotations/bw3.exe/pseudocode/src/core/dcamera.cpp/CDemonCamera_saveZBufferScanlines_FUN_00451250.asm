@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f35
 ;
 ; Referenced Globals:
-;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; Called Functions:
 ;   crt_watcom.c__memcpy_FUN_00495f68
@@ -38,7 +38,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x15c]     ; 00451277
     PUSH EDX                            ; 0045127d
     SHL ECX,0x2                         ; 0045127e
-    MOV EDX,dword ptr [EDI + 0x1c60dac] ; 00451281 | g_UINT_PTR_ARRAY_01c60dac
+    MOV EDX,dword ptr [EDI + 0x1c60dac] ; 00451281 | g_ZBufferScanlineArray
     ADD ECX,EAX                         ; 00451287
     INC EBX                             ; 00451289
     CALL crt_watcom.c__memcpy_FUN_00495f68 ; 0045128a

@@ -15,7 +15,7 @@ int __watcallStack mbstrnbytes(char *str,int char_count)
   iVar2 = 0;
   for (; (iVar1 = mbstring_termination_check(str), iVar1 == 0 &&
          (char_count != 0)); char_count = char_count + -1) {
-    if ((g_INT_02de5c30 == 0) || ((g_CHAR_ARRAY_02de5c41[(byte)*str] & 1U) == 0)) {
+    if ((g_MultibyteLocaleActive == 0) || ((g_LeadByteTable[(byte)*str] & 1U) == 0)) {
       iVar2 = iVar2 + 1;
     }
     else {

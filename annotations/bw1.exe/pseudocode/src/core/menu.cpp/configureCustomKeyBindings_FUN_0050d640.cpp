@@ -61,17 +61,17 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_0050d640(void)
      (iVar32 = core_menu_cpp_calibrateGamepad_FUN_0050a2b0(), iVar32 != 0)) {
     local_c = 0;
 LAB_0050d66e:
-    g_INT_01d21458 = 0;
+    g_CustomKeyCount = 0;
     if (g_CGamePtr->game_control != CONTROL_MODE_POINT_AND_CLICK) {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Fire / Action");
       piVar29 = &g_CGamePtr->key_fire;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -81,16 +81,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Forward");
       piVar29 = &g_CGamePtr->key_walk;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -100,16 +100,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Back");
       piVar29 = &g_CGamePtr->key_backup;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -119,16 +119,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Strafe on");
       piVar29 = &g_CGamePtr->key_strafe;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -138,16 +138,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Strafe left");
       piVar29 = &g_CGamePtr->key_strafe_left;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -157,16 +157,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Strafe right");
       piVar29 = &g_CGamePtr->key_strafe_right;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -176,16 +176,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Turn left");
       piVar29 = &g_CGamePtr->key_left;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -195,16 +195,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Turn right");
       piVar29 = &g_CGamePtr->key_right;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -214,16 +214,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Point up");
       piVar29 = &g_CGamePtr->key_point_up;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -233,16 +233,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Point down");
       piVar29 = &g_CGamePtr->key_point_down;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -252,16 +252,16 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Quick turn");
       piVar29 = &g_CGamePtr->key_quick_turn;
-      if (0x1f < g_INT_01d21458) {
+      if (0x1f < g_CustomKeyCount) {
         g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-      g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+      pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+      g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
       do {
         cVar1 = *pcVar2;
         *pcVar34 = cVar1;
@@ -271,7 +271,7 @@ LAB_0050d66e:
         pcVar34[1] = cVar1;
         pcVar34 = pcVar34 + 2;
       } while (cVar1 != '\0');
-      g_INT_01d21458 = g_INT_01d21458 + 1;
+      g_CustomKeyCount = g_CustomKeyCount + 1;
     }
     if (g_CGamePtr->always_run == 0) {
       pcVar2 = "Run";
@@ -281,13 +281,13 @@ LAB_0050d66e:
     }
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090(pcVar2);
     piVar29 = &g_CGamePtr->key_run;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -297,16 +297,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Use item");
     piVar29 = &g_CGamePtr->key_use_item;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -316,16 +316,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Flashlight");
     piVar29 = &g_CGamePtr->key_light;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -335,16 +335,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Night Vision");
     piVar29 = &g_CGamePtr->key_infrared;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -354,16 +354,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Journal");
     piVar29 = &g_CGamePtr->key_field_notes;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -373,16 +373,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Map");
     piVar29 = &g_CGamePtr->key_map;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -392,16 +392,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Compass");
     piVar29 = &g_CGamePtr->key_compass;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -411,16 +411,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("SPS");
     piVar29 = &g_CGamePtr->key_sps;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -430,16 +430,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Draw");
     piVar29 = &g_CGamePtr->key_draw;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -449,16 +449,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Select pistol weapons");
     piVar29 = &g_CGamePtr->key_weapon_1;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -468,16 +468,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Select assault weapons");
     piVar29 = &g_CGamePtr->key_weapon_2;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -487,16 +487,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Select energy weapons");
     piVar29 = &g_CGamePtr->key_weapon_3;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -506,16 +506,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Select melee weapons");
     piVar29 = &g_CGamePtr->key_weapon_5;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -525,16 +525,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Next weapon");
     piVar29 = &g_CGamePtr->key_next_weapon;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -544,16 +544,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Previous weapon");
     piVar29 = &g_CGamePtr->key_prev_weapon;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -563,16 +563,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Next item");
     piVar29 = &g_CGamePtr->key_next_item;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -582,16 +582,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Previous item");
     piVar29 = &g_CGamePtr->key_prev_item;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -601,16 +601,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Item description");
     piVar29 = &g_CGamePtr->key_item_desc;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -620,16 +620,16 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Next ammo");
     piVar29 = &g_CGamePtr->key_next_ammo;
-    if (0x1f < g_INT_01d21458) {
+    if (0x1f < g_CustomKeyCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
-    g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
+    pcVar34 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar29;
     do {
       cVar1 = *pcVar2;
       *pcVar34 = cVar1;
@@ -639,23 +639,23 @@ LAB_0050d66e:
       pcVar34[1] = cVar1;
       pcVar34 = pcVar34 + 2;
     } while (cVar1 != '\0');
-    g_INT_01d21458 = g_INT_01d21458 + 1;
+    g_CustomKeyCount = g_CustomKeyCount + 1;
     engine_special_cpp_clearScreen_FUN_0057dc40();
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     shape_edittool_cpp_CPickList_ctor_FUN_0049a620(&local_c94);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Restore defaults");
     iVar32 = 0;
     shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_c94.base,pcVar2);
-    if (0 < g_INT_01d21458) {
+    if (0 < g_CustomKeyCount) {
       iVar35 = 0;
       do {
         core_menu_cpp_getKeyDisplayName_FUN_0050d220
-                  (**(EInputCodeType **)((int)g_INT_PTR_ARRAY_01d2145c + iVar35));
+                  (**(EInputCodeType **)((int)g_CustomKeyPointers + iVar35));
         _sprintf(local_d4,"%s\t%s");
         iVar35 = iVar35 + 4;
         iVar32 = iVar32 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_c94.base,local_d4);
-      } while (iVar32 < g_INT_01d21458);
+      } while (iVar32 < g_CustomKeyCount);
     }
     shape_edittool_cpp_CPickList_setOkButtonText_FUN_0049a7b0(&local_c94,"Select");
     shape_edittool_cpp_CPickList_setCancelButtonText_FUN_0049a820(&local_c94,"Close");
@@ -669,13 +669,13 @@ LAB_0050d66e:
       if (iVar32 != 0) {
         iVar35 = iVar32 + -1;
         local_c = iVar32;
-        switch(*g_INT_PTR_ARRAY_01d2145c[iVar35]) {
+        switch(*g_CustomKeyPointers[iVar35]) {
         case 0x251:
         case 0x252:
         case 0x253:
         case 0x254:
           pcVar2 = local_8d4;
-          pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
+          pcVar34 = g_CustomKeyNames[iVar35];
           do {
             cVar1 = *pcVar34;
             *pcVar2 = cVar1;
@@ -713,7 +713,7 @@ LAB_0050d66e:
         case 0x255:
         case 0x256:
           pcVar2 = local_2d4;
-          pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
+          pcVar34 = g_CustomKeyNames[iVar35];
           do {
             cVar1 = *pcVar34;
             *pcVar2 = cVar1;
@@ -786,7 +786,7 @@ LAB_0050e832:
             pcVar2[1] = cVar1;
             pcVar2 = pcVar2 + 2;
           } while (cVar1 != '\0');
-          pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
+          pcVar34 = g_CustomKeyNames[iVar35];
           iVar32 = -1;
           pcVar2 = acStack_4d4;
           do {
@@ -832,7 +832,7 @@ LAB_0050e940:
               goto LAB_0050e9b4;
             }
           } while ((int)EVar33 < 0);
-          *g_INT_PTR_ARRAY_01d2145c[iVar35] = EVar33;
+          *g_CustomKeyPointers[iVar35] = EVar33;
           goto LAB_0050ea16;
         }
         goto LAB_0050e771;
@@ -970,7 +970,7 @@ LAB_0050e9b4:
     *pcVar2 = cVar1;
     if (cVar1 == '\0') break;
   }
-  pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
+  pcVar34 = g_CustomKeyNames[iVar35];
   iVar32 = -1;
   pcVar2 = acStack_6d4;
   do {
@@ -1014,17 +1014,16 @@ LAB_0050ea66:
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   }
   iVar32 = 0;
-  if (0 < g_INT_01d21458) {
+  if (0 < g_CustomKeyCount) {
     iVar31 = 0;
     do {
       if ((iVar32 != iVar35) &&
-         (**(int **)((int)g_INT_PTR_ARRAY_01d2145c + iVar31) == *g_INT_PTR_ARRAY_01d2145c[iVar35]))
-      {
-        **(int **)((int)g_INT_PTR_ARRAY_01d2145c + iVar31) = 599;
+         (**(int **)((int)g_CustomKeyPointers + iVar31) == *g_CustomKeyPointers[iVar35])) {
+        **(int **)((int)g_CustomKeyPointers + iVar31) = 599;
       }
       iVar32 = iVar32 + 1;
       iVar31 = iVar31 + 4;
-    } while (iVar32 < g_INT_01d21458);
+    } while (iVar32 < g_CustomKeyCount);
   }
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(g_CKeys_PTR_0061f2a4,0);
 LAB_0050e771:

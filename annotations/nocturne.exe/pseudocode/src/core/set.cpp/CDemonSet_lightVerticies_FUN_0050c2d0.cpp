@@ -139,7 +139,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                   core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
                             (&g_CDemonCameraInstance,&local_134,&local_140);
                   puVar14 = (uint *)(local_58 + 0x200b134 + (uint)bVar18 * -8);
-                  *(int *)((int)&g_CVector3i_ARRAY_0200b130[0].x + local_58) = local_140.x;
+                  *(int *)((int)&g_TransformedVertexArray[0].x + local_58) = local_140.x;
                   *puVar14 = *(uint *)((int)&local_140 + (uint)bVar18 * -8 + 4);
                   puVar14[(uint)bVar18 * -2 + 1] =
                        *(uint *)((int)&local_140 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
@@ -158,26 +158,26 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                 }
                 iVar9 = 0;
                 if (0 < tri_count) {
-                  pCVar15 = g_CVector3f_ARRAY_01fff5b0;
+                  pCVar15 = g_FaceNormalArray;
                   puVar13 = face_data;
                   do {
                     uVar2 = puVar13[1];
                     uVar3 = *puVar13;
                     local_94 = (uint)puVar13[2];
-                    local_24 = g_CVector3i_ARRAY_0200b130[uVar2].x -
-                               g_CVector3i_ARRAY_0200b130[uVar3].x;
-                    local_18 = g_CVector3i_ARRAY_0200b130[uVar2].y -
-                               g_CVector3i_ARRAY_0200b130[uVar3].y;
-                    iVar12 = g_CVector3i_ARRAY_0200b130[local_94].x -
-                             g_CVector3i_ARRAY_0200b130[uVar2].x;
-                    local_a8 = (float)(g_CVector3i_ARRAY_0200b130[uVar2].z -
-                                      g_CVector3i_ARRAY_0200b130[uVar3].z);
+                    local_24 = g_TransformedVertexArray[uVar2].x - g_TransformedVertexArray[uVar3].x
+                    ;
+                    local_18 = g_TransformedVertexArray[uVar2].y - g_TransformedVertexArray[uVar3].y
+                    ;
+                    iVar12 = g_TransformedVertexArray[local_94].x -
+                             g_TransformedVertexArray[uVar2].x;
+                    local_a8 = (float)(g_TransformedVertexArray[uVar2].z -
+                                      g_TransformedVertexArray[uVar3].z);
                     local_a4 = (float)iVar12;
-                    local_1c = g_CVector3i_ARRAY_0200b130[local_94].y -
-                               g_CVector3i_ARRAY_0200b130[uVar2].y;
+                    local_1c = g_TransformedVertexArray[local_94].y -
+                               g_TransformedVertexArray[uVar2].y;
                     local_88 = (float)local_18;
-                    local_20 = g_CVector3i_ARRAY_0200b130[local_94].z -
-                               g_CVector3i_ARRAY_0200b130[uVar2].z;
+                    local_20 = g_TransformedVertexArray[local_94].z -
+                               g_TransformedVertexArray[uVar2].z;
                     local_9c = (float)local_20;
                     local_40 = local_88 * local_9c - (float)local_1c * local_a8;
                     local_44 = (float)iVar12 * local_a8 - (float)local_24 * local_9c;
@@ -196,7 +196,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                 memset(g_CVector3f_ARRAY_02045ab0,0,vertex_count * 0xc);
                 iVar9 = 0;
                 if (0 < tri_count) {
-                  pCVar15 = g_CVector3f_ARRAY_01fff5b0;
+                  pCVar15 = g_FaceNormalArray;
                   do {
                     uVar2 = *(ushort *)face_data;
                     g_CVector3f_ARRAY_02045ab0[uVar2].x =
@@ -232,20 +232,19 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                   do {
                     iVar12 = *(int *)((int)pvVar11 + 0x24);
                     iVar10 = *(int *)((int)pvVar11 + 0x18);
-                    local_20 = g_CVector3i_ARRAY_0200b130[iVar12].x -
-                               g_CVector3i_ARRAY_0200b130[iVar10].x;
-                    local_1c = g_CVector3i_ARRAY_0200b130[iVar12].y -
-                               g_CVector3i_ARRAY_0200b130[iVar10].y;
+                    local_20 = g_TransformedVertexArray[iVar12].x -
+                               g_TransformedVertexArray[iVar10].x;
+                    local_1c = g_TransformedVertexArray[iVar12].y -
+                               g_TransformedVertexArray[iVar10].y;
                     iVar4 = *(int *)((int)pvVar11 + 0x30);
-                    iVar17 = g_CVector3i_ARRAY_0200b130[iVar4].x -
-                             g_CVector3i_ARRAY_0200b130[iVar12].x;
-                    fVar6 = (float)(g_CVector3i_ARRAY_0200b130[iVar12].z -
-                                   g_CVector3i_ARRAY_0200b130[iVar10].z);
+                    iVar17 = g_TransformedVertexArray[iVar4].x - g_TransformedVertexArray[iVar12].x;
+                    fVar6 = (float)(g_TransformedVertexArray[iVar12].z -
+                                   g_TransformedVertexArray[iVar10].z);
                     local_c4 = (float)iVar17;
-                    local_18 = g_CVector3i_ARRAY_0200b130[iVar4].y -
-                               g_CVector3i_ARRAY_0200b130[iVar12].y;
-                    local_bc = (float)(g_CVector3i_ARRAY_0200b130[iVar4].z -
-                                      g_CVector3i_ARRAY_0200b130[iVar12].z);
+                    local_18 = g_TransformedVertexArray[iVar4].y -
+                               g_TransformedVertexArray[iVar12].y;
+                    local_bc = (float)(g_TransformedVertexArray[iVar4].z -
+                                      g_TransformedVertexArray[iVar12].z);
                     local_c0 = (float)local_18;
                     fVar5 = (float)local_1c * local_bc - local_c0 * fVar6;
                     fVar8 = (float)iVar17 * fVar6 - (float)local_20 * local_bc;
@@ -313,7 +312,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
               if (this_ptr->skip_normal_normalization == 0) {
                 if (0 < vertex_count) {
                   pCVar15 = g_CVector3f_ARRAY_02045ab0;
-                  local_54 = g_CVector3i_ARRAY_0200b130;
+                  local_54 = g_TransformedVertexArray;
                   iVar9 = 0;
                   local_4c = 0;
                   do {
@@ -345,7 +344,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                 if (0 < vertex_count) {
                   pCVar15 = g_CVector3f_ARRAY_02045ab0;
                   local_60 = 0;
-                  local_50 = g_CVector3i_ARRAY_0200b130;
+                  local_50 = g_TransformedVertexArray;
                   do {
                     if (((1.0 <= ABS(pCVar15->x)) || (1.0 <= ABS(pCVar15->y))) ||
                        (1.0 <= ABS(pCVar15->z))) {
@@ -364,7 +363,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                     }
                     else {
                       pCVar19 = (CVector3i *)0x0;
-                      world_position = g_CVector3i_ARRAY_0200b130 + local_30;
+                      world_position = g_TransformedVertexArray + local_30;
                     }
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
                               (this_ptr,world_position,pCVar19,local_30,0);
@@ -395,7 +394,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                             (&g_CDemonCameraInstance,&local_110,&local_f8);
                   iVar9 = iVar9 + 0x30;
                   puVar14 = (uint *)(local_5c + 0x200b134 + (uint)bVar18 * -8);
-                  *(int *)((int)&g_CVector3i_ARRAY_0200b130[0].x + local_5c) = local_f8.x;
+                  *(int *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_f8.x;
                   *puVar14 = *(uint *)((int)&local_f8 + (uint)bVar18 * -8 + 4);
                   puVar14[(uint)bVar18 * -2 + 1] =
                        *(uint *)((int)&local_f8 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
@@ -434,7 +433,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
             }
             if (0 < vertex_count) {
               pCVar15 = g_CVector3f_ARRAY_02045ab0;
-              local_64 = g_CVector3i_ARRAY_0200b130;
+              local_64 = g_TransformedVertexArray;
               iVar9 = 0;
               iVar12 = 0;
               do {
@@ -494,7 +493,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
       }
     }
     else {
-      if (g_INT_01ffb060 == 0) {
+      if (g_InMirrorRenderPass == 0) {
         if (iVar9 == 2) {
           iVar9 = 0;
           if (0 < vertex_count) {

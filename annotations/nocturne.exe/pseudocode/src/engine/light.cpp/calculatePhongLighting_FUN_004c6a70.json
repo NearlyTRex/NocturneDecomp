@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 180,
+    "complexity_score": 182,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
+    "pseudocode_lines": 97,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array"
     ],
-    "total_lines": 295
+    "total_lines": 297
   },
   "cross_references": [
     {
@@ -52,25 +52,25 @@
   "globals": [
     {
       "addr": "005bacd0",
-      "name": "g_INT_005bacd0",
+      "name": "g_AmbientLightLevel",
       "type": "int",
       "value": "0x8000"
     },
     {
       "addr": "005bacd4",
-      "name": "g_INT_005bacd4",
+      "name": "g_SpecularEnabled",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "005bacd8",
-      "name": "g_INT_005bacd8",
+      "name": "g_DiffuseLightMultiplier",
       "type": "int",
       "value": "0x10000"
     },
     {
       "addr": "005bacdc",
-      "name": "g_INT_005bacdc",
+      "name": "g_SpecularLightMultiplier",
       "type": "int",
       "value": "0x10000"
     },
@@ -94,55 +94,55 @@
     },
     {
       "addr": "01c039dc",
-      "name": "g_INT_01c039dc",
+      "name": "g_LightDirectionX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c039e0",
-      "name": "g_INT_01c039e0",
+      "name": "g_LightDirectionY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c039e4",
-      "name": "g_INT_01c039e4",
+      "name": "g_LightDirectionZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cc3670",
-      "name": "g_CVector3i_01cc3670",
+      "name": "g_CachedViewPosition",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01cc3674",
-      "name": "g_CVector3i_01cc3670.y",
+      "name": "g_CachedViewPosition.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc3678",
-      "name": "g_CVector3i_01cc3670.z",
+      "name": "g_CachedViewPosition.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc367c",
-      "name": "g_CVector3i_01cc367c",
+      "name": "g_NormalizedViewVector",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01cc3680",
-      "name": "g_CVector3i_01cc367c.y",
+      "name": "g_NormalizedViewVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc3684",
-      "name": "g_CVector3i_01cc367c.z",
+      "name": "g_NormalizedViewVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -305,16 +305,16 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Pointer value `&g_CVector3i_01cc367c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
-      "match": "(int)&g_CVector3i_01cc367c",
+      "description": "Pointer value `&g_NormalizedViewVector` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)&g_NormalizedViewVector",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01cc367c + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "(int)&local_24",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);",
@@ -322,7 +322,7 @@
     },
     {
       "description": "Pointer value `&local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 63,
       "match": "(int)&local_24",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -330,15 +330,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01cc367c + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);",
@@ -346,7 +346,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",

@@ -58,20 +58,20 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0049d2c0(CFireEffect *thi
        local_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_004941c0
-              (g_StakePool + g_INT_01c594ec,&local_1c,orientation_angles,surface_normal);
+              (g_StakePool + g_StakeAllocIndex,&local_1c,orientation_angles,surface_normal);
   }
   else {
     core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0
               (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"a-wood?.wav",&local_1c,0.23);
     core_fire_cpp_CStake_init_FUN_00494150
-              (g_StakePool + g_INT_01c594ec,&local_1c,orientation_angles);
+              (g_StakePool + g_StakeAllocIndex,&local_1c,orientation_angles);
   }
-  g_INT_01c594ec = g_INT_01c594ec + 1;
-  if (0xff < g_INT_01c594ec) {
-    g_INT_01c594ec = 0;
+  g_StakeAllocIndex = g_StakeAllocIndex + 1;
+  if (0xff < g_StakeAllocIndex) {
+    g_StakeAllocIndex = 0;
   }
-  if (g_INT_01c594e8 < 0x100) {
-    g_INT_01c594e8 = g_INT_01c594e8 + 1;
+  if (g_StakeActiveCount < 0x100) {
+    g_StakeActiveCount = g_StakeActiveCount + 1;
     return;
   }
 switchD_0049d2d9_caseD_6:

@@ -22,7 +22,7 @@ CVector3f * __stack_esi core_bride_cpp_CBride_getTargetPoint_FUN_0041ede0(CBride
   
   bVar5 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
-            (&(this_ptr->base).base.model,g_INT_ARRAY_007bccdc[0],&CStack_54);
+            (&(this_ptr->base).base.model,g_BrideIndices[0],&CStack_54);
   pCVar2 = &CStack_54;
   pCVar3 = &CStack_84;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

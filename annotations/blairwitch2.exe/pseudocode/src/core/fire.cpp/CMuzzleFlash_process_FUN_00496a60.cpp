@@ -20,7 +20,6 @@ void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_00496a60(CMuzzleFlash *this_
   if (iVar1 != 1) {
     return;
   }
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0
-            (g_CFireEffect_PTR_00614d30,&this_ptr->position);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0(g_CFireEffectPtr,&this_ptr->position);
   return;
 }

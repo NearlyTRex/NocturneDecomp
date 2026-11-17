@@ -60,7 +60,7 @@ extern CFieldNotes g_CFieldNotesInstance;
 extern CGame g_CGameInstance;
 
 // CQuaternion4f
-extern CQuaternion4f g_CQuaternion4f_01cc90b4;
+extern CQuaternion4f g_GabriellaWeaponAimRotation;
 
 // CRainDrop[256]
 extern CRainDrop g_RainDropPool[256];
@@ -69,7 +69,7 @@ extern CRainDrop g_RainDropPool[256];
 extern CVector3f g_CVector3f_01ccc3b8;
 
 // SHardwareEdge[16]
-extern SHardwareEdge g_SHardwareEdge_ARRAY_01cc8cec[16];
+extern SHardwareEdge g_HardwareEdgeTable[16];
 
 // SNotesMap[4]
 extern SNotesMap SNotesMap_ARRAY_01cc55d0[4];
@@ -81,9 +81,9 @@ extern SNotesSection SNotesSection_ARRAY_01cc4474[6];
 extern STextView g_STextViewInstance;
 
 // UVector3
-extern UVector3 g_UVector3_01cc90d4;
-extern UVector3 g_UVector3_01cc90e0;
-extern UVector3 g_UVector3_01cc90ec;
+extern UVector3 g_GabriellaWeaponEuler;
+extern UVector3 g_GabriellaWeaponAttachEuler;
+extern UVector3 g_GabriellaWeaponAttachOffset;
 
 // byte
 extern byte g_BYTE_01ccc3e0;
@@ -94,26 +94,26 @@ extern char g_CHAR_01cc7f38;
 extern char g_CHAR_01cc88d0;
 
 // char[10][256]
-extern char g_CHAR_ARRAY_ARRAY_01cc91a0[10][256];
+extern char g_WrappedTextBuffer[10][256];
 
 // char[256]
-extern char g_CHAR_ARRAY_01ccfe98[256];
+extern char g_ScreenshotFilename[256];
 
 // char[5120]
-extern char g_CHAR_ARRAY_01cc9bb0[5120];
-extern char g_CHAR_ARRAY_01ccafb0[5120];
+extern char g_ActStatsTextBuffer1[5120];
+extern char g_ActStatsTextBuffer2[5120];
 
 // char[512]
 extern char g_CHAR_ARRAY_01cc4270[512];
 
 // char[600]
-extern char g_CHAR_ARRAY_01ccff98[600];
+extern char g_PrevKeyboardState[600];
 
 // double
 extern double g_DOUBLE_01cc9ba0;
 
 // float
-extern float g_FLOAT_01cc8048;
+extern float g_FastSqrtMagicSeedOne;
 extern float g_FLOAT_01cc8054;
 extern float g_FLOAT_01cc8058;
 extern float g_FLOAT_01cc805c;
@@ -140,10 +140,10 @@ extern float g_FLOAT_01ccc3d0;
 extern float g_FLOAT_01ccc3d4;
 
 // float[64][8]
-extern float g_FLOAT_ARRAY_ARRAY_01cc80cc[64][8];
+extern float g_SplineBasisTable[64][8];
 
 // int
-extern int g_INT_01cc010c;
+extern int g_RainDropAllocIndex;
 extern int g_INT_01cc4200;
 extern int g_INT_01cc4268;
 extern int g_INT_01cc4470;
@@ -156,33 +156,33 @@ extern int g_INT_01cc7f28;
 extern int g_INT_01cc7f2c;
 extern int g_INT_01cc7f30;
 extern int g_INT_01cc8000;
-extern int g_INT_01cc804c;
-extern int g_INT_01cc8050;
-extern int g_INT_01cc8084;
-extern int g_INT_01cc8cd4;
-extern int g_INT_01cc8cd8;
-extern int g_INT_01cc8cdc;
-extern int g_INT_01cc8ce0;
+extern int g_FastSqrtMagic;
+extern int g_FastInvSqrtMagic;
+extern int g_FliesInitialized;
+extern int g_ShadowColor32;
+extern int g_ShadowColorRed;
+extern int g_ShadowColorGreen;
+extern int g_ShadowColorBlue;
 extern int g_INT_01cc8ce4;
-extern int g_INT_01cc8ce8;
-extern int g_INT_01cc906c;
-extern int g_INT_01cc9070;
+extern int g_EdgeCount;
+extern int g_EdgeListMinY;
+extern int g_EdgeListMaxY;
 extern int g_INT_01cc9ba8;
 extern int g_INT_01ccc3b0;
 extern int g_INT_01ccc3b4;
 extern int g_INT_01ccc3c4;
 extern int g_INT_01ccc3d8;
-extern int g_INT_01ccfe94;
+extern int g_ScreenshotIndex;
 
 // int[20]
-extern int g_INT_ARRAY_01cc9108[20];
+extern int g_GabriellaIndices[20];
 
 // uchar
-extern uchar g_UCHAR_01cc90c4;
+extern uchar g_GabriellaWeaponAimRotationInitFlag;
 
 // uint
-extern uint g_UINT_01cc80c4;
-extern uint g_UINT_01cc80c8;
+extern uint g_FlyBlendColor;
+extern uint g_FlyInvBlendColor;
 
 // ushort
 extern ushort g_USHORT_01cc8cd2;

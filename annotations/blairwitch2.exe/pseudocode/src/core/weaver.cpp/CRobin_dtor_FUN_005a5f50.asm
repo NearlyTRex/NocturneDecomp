@@ -39,7 +39,7 @@ section .text
     PUSH ESI                            ; 005a5f69
     MOV dword ptr [EBX + 0x2b0],0x5ffca4 ; 005a5f6a | g_CRobinVTable
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005a5f74
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005a5f79
     PUSH ESI                            ; 005a5f7c
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005a5f7d
@@ -49,7 +49,7 @@ section .text
     LEA ESI,[EBX + 0x154]               ; 005a5f87
     PUSH ESI                            ; 005a5f8d
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005a5f8e
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005a5f93
     PUSH ESI                            ; 005a5f96
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005a5f97

@@ -335,7 +335,7 @@ section .text
     POP EDI                             ; 004d8d75
         ;   Label: LAB_004d8d75
     PUSH 0xffff                         ; 004d8d76
-    MOV EBP,dword ptr [0x0152d244]      ; 004d8d7b | g_CBitFont_PTR_0152d244
+    MOV EBP,dword ptr [0x0152d244]      ; 004d8d7b | g_ThemeFont
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 004d8d81
         ;   XREF to: 00406bd0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bd0(int alpha_color_value)
     ADD ESP,0x4                         ; 004d8d86

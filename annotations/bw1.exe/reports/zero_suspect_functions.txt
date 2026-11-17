@@ -32,6 +32,7 @@ annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawSurface
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredBoth_FUN_00480a90.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredFullSurface_FUN_00480f80.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00480e30.cpp
+annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00480d20.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredInArea_FUN_00480c40.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00480b90.cpp
@@ -503,6 +504,7 @@ annotations/bw1.exe/pseudocode/src/core/colonel.cpp/CColonel_setup_FUN_004443a0.
 annotations/bw1.exe/pseudocode/src/core/colonel.cpp/factoryFuncColonel_FUN_00444300.cpp
 annotations/bw1.exe/pseudocode/src/core/colonel.cpp/staticInit_FUN_004442d0.cpp
 annotations/bw1.exe/pseudocode/src/core/construc.cpp/CConstruct_getActorType_FUN_00445810.cpp
+annotations/bw1.exe/pseudocode/src/core/construc.cpp/CConstruct_getCollisionType_FUN_00447630.cpp
 annotations/bw1.exe/pseudocode/src/core/construc.cpp/CConstruct_processDamage_FUN_00447090.cpp
 annotations/bw1.exe/pseudocode/src/core/construc.cpp/CConstruct_renderOpaque_FUN_00446e20.cpp
 annotations/bw1.exe/pseudocode/src/core/construc.cpp/factoryFuncConstruct_FUN_004457f0.cpp
@@ -516,6 +518,7 @@ annotations/bw1.exe/pseudocode/src/core/conveyor.cpp/CConveyor_renderOpaque_FUN_
 annotations/bw1.exe/pseudocode/src/core/conveyor.cpp/CPlatform_dtor_FUN_00447be0.cpp
 annotations/bw1.exe/pseudocode/src/core/conveyor.cpp/factoryFuncConveyor_FUN_00447720.cpp
 annotations/bw1.exe/pseudocode/src/core/conveyor.cpp/staticInit_FUN_004476f0.cpp
+annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_allocMemory_FUN_00447d50.cpp
 annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_ctor_FUN_00447d10.cpp
 annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_dtor_FUN_00447d30.cpp
 annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_free_FUN_00447ee0.cpp
@@ -914,6 +917,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CExplosion_ctor_FUN_004b1620.cp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CExplosion_dtor_FUN_004b7640.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CExplosion_process_FUN_004b1820.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_allocateToss_FUN_004b6ed0.cpp
+annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createBulletTrail_FUN_004b5db0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createCrater_FUN_004b6f30.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createDefaultSmoke_FUN_004b5620.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createExplosion_FUN_004b6c60.cpp
@@ -1618,6 +1622,7 @@ annotations/bw1.exe/pseudocode/src/core/moon.cpp/CAlphaBitmap_arrdtor30_FUN_0052
 annotations/bw1.exe/pseudocode/src/core/moon.cpp/CMoon_free_FUN_00521d50.cpp
 annotations/bw1.exe/pseudocode/src/core/moon.cpp/CMoon_isAnimationFirstHalf_FUN_005220b0.cpp
 annotations/bw1.exe/pseudocode/src/core/moon.cpp/CMoon_render_FUN_00521e40.cpp
+annotations/bw1.exe/pseudocode/src/core/moon.cpp/CMoon_update_FUN_00521dd0.cpp
 annotations/bw1.exe/pseudocode/src/core/moon.cpp/staticInit_FUN_00521b60.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromDeformableModel_FUN_00522490.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromKeyFramedModel_FUN_005224f0.cpp
@@ -1630,6 +1635,8 @@ annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_findNearestPoint_F
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_free_FUN_00522170.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_render_FUN_00522b50.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_addPartFromKeyframedModel_FUN_00523210.cpp
+annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_addQuadPartToModel_FUN_00523190.cpp
+annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_addTriPartToModel_FUN_00523140.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_ctor_FUN_00522fa0.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_dtor_FUN_00522fc0.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_free_FUN_00522fe0.cpp
@@ -2283,6 +2290,7 @@ annotations/bw1.exe/pseudocode/src/core/xform.cpp/transformVector3x4_FUN_005b508
 annotations/bw1.exe/pseudocode/src/core/yow.cpp/CYow_archive_FUN_005b9110.cpp
 annotations/bw1.exe/pseudocode/src/core/yow.cpp/CYow_ctor_FUN_005b8160.cpp
 annotations/bw1.exe/pseudocode/src/core/yow.cpp/CYow_getActorType_FUN_005b8150.cpp
+annotations/bw1.exe/pseudocode/src/core/yow.cpp/CYow_processDamage_FUN_005b9170.cpp
 annotations/bw1.exe/pseudocode/src/core/yow.cpp/factoryFuncYow_FUN_005b8130.cpp
 annotations/bw1.exe/pseudocode/src/core/yow.cpp/staticInit_FUN_005b8100.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_archive_FUN_005be1e0.cpp
@@ -2387,6 +2395,7 @@ annotations/bw1.exe/pseudocode/src/engine/3d.c/setRenderAlphaFromBlock_FUN_00406
 annotations/bw1.exe/pseudocode/src/engine/3d.c/setRenderAlpha_FUN_00406bd0.c
 annotations/bw1.exe/pseudocode/src/engine/3d.c/skipOldFuncOp_FUN_00403dd0.c
 annotations/bw1.exe/pseudocode/src/engine/3d.c/transformAndBufferVertices_FUN_00403840.c
+annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_allocate_FUN_0040d0e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_arrdtor4_FUN_004188f0.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_arrdtor5_FUN_004188d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_ctor_FUN_0040d0a0.cpp
@@ -2410,6 +2419,7 @@ annotations/bw1.exe/pseudocode/src/engine/console.cpp/CConsole_dtor_FUN_00445420
 annotations/bw1.exe/pseudocode/src/engine/console.cpp/CConsole_reset_FUN_004455d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/console.cpp/CConsole_writeChar_FUN_00445500.cpp
 annotations/bw1.exe/pseudocode/src/engine/dosio.cpp/CFileFinder_closeSearch_FUN_00479460.cpp
+annotations/bw1.exe/pseudocode/src/engine/dosio.cpp/CFileFinder_convertStruct_FUN_004794b0.cpp
 annotations/bw1.exe/pseudocode/src/engine/dosio.cpp/CFileFinder_ctor_FUN_00479320.cpp
 annotations/bw1.exe/pseudocode/src/engine/dosio.cpp/CFileFinder_dtor_FUN_00479340.cpp
 annotations/bw1.exe/pseudocode/src/engine/dosio.cpp/CFileFinder_findNext_FUN_004793e0.cpp
@@ -2753,6 +2763,7 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_findString_FUN_00
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getFieldAt_FUN_004998b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getItemCount_FUN_0049df50.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getStringAt_FUN_004998a0.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_insertRange_FUN_004996b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateRecursiveFromRoot_FUN_0049a460.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateWithFullPaths_FUN_0049a480.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_sortAll_FUN_004997f0.cpp
@@ -2963,6 +2974,7 @@ annotations/bw1.exe/pseudocode/src/support/codec.cpp/CAsciiUnarmor_ctor_FUN_0044
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CAsciiUnarmor_dtor_FUN_00444170.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCheesyCipher_advanceKey_FUN_00443b70.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCheesyCipher_dtor_FUN_00444120.cpp
+annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCheesyCipher_setKey_FUN_00443a50.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCheesyCipher_setMode_FUN_00443a40.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCodec_ctor_FUN_00442ba0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCodec_dtor_FUN_00442bb0.cpp
@@ -3032,6 +3044,7 @@ annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_getChar_FU
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_isEof_FUN_005a0d90.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_isOpen_FUN_005a0d70.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_peekChar_FUN_005a0b70.cpp
+annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_readByteAt_FUN_005a0ba0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_seek_FUN_005a0d00.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_tell_FUN_005a0d50.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_ungetChar_FUN_005a0b00.cpp
@@ -3060,6 +3073,7 @@ annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_copy_FUN_
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_ctor_FUN_005a17d0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_dtor_FUN_005a1860.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_isOpen_FUN_005a1990.cpp
+annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_putChar_FUN_005a18c0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_seek_FUN_005a1940.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_tell_FUN_005a1970.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_write_FUN_005a18f0.cpp

@@ -11,7 +11,7 @@
 ;   float g_FLOAT_005dc72d = 6.283185
 ;   float g_FLOAT_005dc731 = 30
 ;   double g_DOUBLE_005dc735 = 0.200000000000000
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
+;   CKeys* g_CKeysPtr = 01d02f84
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
@@ -31,7 +31,7 @@ section .text
     FMUL float ptr [0x005dc72d]         ; 004e7880 | g_FLOAT_005dc72d
     FDIV float ptr [0x005dc731]         ; 004e7886 | g_FLOAT_005dc731
     PUSH 0x38                           ; 004e788c
-    MOV EAX,[0x00617dd4]                ; 004e788e | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004e788e | g_CKeysPtr
     PUSH EAX                            ; 004e7893
     MOV EDX,dword ptr [EAX]             ; 004e7894
     FSTP float ptr [ESP + 0x8]          ; 004e7896
@@ -45,7 +45,7 @@ section .text
     FSTP float ptr [ESP]                ; 004e78ac
     PUSH 0x33                           ; 004e78af
         ;   Label: LAB_004e78af
-    MOV EAX,[0x00617dd4]                ; 004e78b1 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004e78b1 | g_CKeysPtr
     PUSH EAX                            ; 004e78b6
     MOV EDX,dword ptr [EAX]             ; 004e78b7
     CALL dword ptr [EDX]                ; 004e78b9
@@ -58,7 +58,7 @@ section .text
     FSTP float ptr [EBX + 0x34]         ; 004e78c8
     PUSH 0x34                           ; 004e78cb
         ;   Label: LAB_004e78cb
-    MOV EAX,[0x00617dd4]                ; 004e78cd | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004e78cd | g_CKeysPtr
     PUSH EAX                            ; 004e78d2
     MOV EDX,dword ptr [EAX]             ; 004e78d3
     CALL dword ptr [EDX]                ; 004e78d5

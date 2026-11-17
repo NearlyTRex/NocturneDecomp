@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 487,
-    "complexity_score": 281,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
+    "pseudocode_lines": 182,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 673
+    "total_lines": 669
   },
   "cross_references": [
     {
@@ -228,7 +228,7 @@
     },
     {
       "addr": "00617dd4",
-      "name": "g_CKeys_PTR_00617dd4",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d02f84"
     },
@@ -282,97 +282,97 @@
     },
     {
       "addr": "01d082e0",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0",
+      "name": "g_MainMenuTextBuffers",
       "type": "char[4][256]",
       "value": null
     },
     {
       "addr": "01d082e1",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[0][1]",
+      "name": "g_MainMenuTextBuffers[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d082e2",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[0][2]",
+      "name": "g_MainMenuTextBuffers[0][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d082e3",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[0][3]",
+      "name": "g_MainMenuTextBuffers[0][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e0",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[1][0]",
+      "name": "g_MainMenuTextBuffers[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e1",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[1][1]",
+      "name": "g_MainMenuTextBuffers[1][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e2",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[1][2]",
+      "name": "g_MainMenuTextBuffers[1][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e3",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[1][3]",
+      "name": "g_MainMenuTextBuffers[1][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e0",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[2][0]",
+      "name": "g_MainMenuTextBuffers[2][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e1",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[2][1]",
+      "name": "g_MainMenuTextBuffers[2][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e2",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[2][2]",
+      "name": "g_MainMenuTextBuffers[2][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e3",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[2][3]",
+      "name": "g_MainMenuTextBuffers[2][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e0",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[3][0]",
+      "name": "g_MainMenuTextBuffers[3][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e1",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[3][1]",
+      "name": "g_MainMenuTextBuffers[3][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e2",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[3][2]",
+      "name": "g_MainMenuTextBuffers[3][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e3",
-      "name": "g_CHAR_ARRAY_ARRAY_01d082e0[3][3]",
+      "name": "g_MainMenuTextBuffers[3][3]",
       "type": "undefined4",
       "value": null
     },
@@ -527,11 +527,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d086e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MenuTextPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 102,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d086e0",
+      "match": "(int)g_MenuTextPointers",
       "severity": "moderate",
-      "text": "*(char (**) [256])((int)g_CHAR_PTR_ARRAY_01d086e0 + iVar4) = pacVar6;",
+      "text": "*(char (**) [256])((int)g_MenuTextPointers + iVar4) = pacVar6;",
       "type": "pointer_truncation"
     },
     {

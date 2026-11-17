@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
 ;   int g_INT_01c5baec
-;   int g_INT_01c5bb60
+;   int g_UITextColor
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+1
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+2
@@ -108,7 +108,7 @@ section .text
     SAR EAX,0x1                         ; 004861bb
     ADD ESP,0x8                         ; 004861bd
     PUSH -0x1                           ; 004861c0
-    MOV EDI,dword ptr [0x01c5bb60]      ; 004861c2 | g_INT_01c5bb60
+    MOV EDI,dword ptr [0x01c5bb60]      ; 004861c2 | g_UITextColor
     MOV EDX,dword ptr [EBX + 0x18]      ; 004861c8
     PUSH EDI                            ; 004861cb
     ADD EDX,EAX                         ; 004861cc
@@ -120,7 +120,7 @@ section .text
     PUSH EDX                            ; 004861de
     CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004861df
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c5bb60]                ; 004861e4 | g_INT_01c5bb60
+    MOV EAX,[0x01c5bb60]                ; 004861e4 | g_UITextColor
     MOV ECX,dword ptr [0x01c5baec]      ; 004861e9 | g_INT_01c5baec
     ADD ESP,0x18                        ; 004861ef
     TEST ECX,ECX                        ; 004861f2
@@ -304,7 +304,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc8]      ; 0048636a
     MOV ECX,dword ptr [0x01c5baec]      ; 00486371 | g_INT_01c5baec
     ADD EDX,EAX                         ; 00486377
-    MOV EAX,[0x01c5bb60]                ; 00486379 | g_INT_01c5bb60
+    MOV EAX,[0x01c5bb60]                ; 00486379 | g_UITextColor
     MOV dword ptr [ESP + 0xc8],EDX      ; 0048637e
     TEST ECX,ECX                        ; 00486385
     JZ 0x0048640d                       ; 00486387

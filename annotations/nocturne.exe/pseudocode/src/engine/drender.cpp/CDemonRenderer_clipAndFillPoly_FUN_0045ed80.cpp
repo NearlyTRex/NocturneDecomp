@@ -35,9 +35,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDem
       return;
     }
     core_xform_cpp_transformAndClipGeometry_FUN_0055e040(vertex_count,vertex_indices);
-    if (2 < g_INT_00766c70) {
-      engine_zraster_c_rasterizeTriangle_FUN_005628c0(g_SRenderVertex_ARRAY_00766c74,g_INT_00766c70)
-      ;
+    if (2 < g_ClippedVertexCount) {
+      engine_zraster_c_rasterizeTriangle_FUN_005628c0(g_ClippedVertexBuffer,g_ClippedVertexCount);
       return;
     }
   }

@@ -88,13 +88,13 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_00540c20(CSuccubus *this_ptr)
   this_ptr_01 = &this_ptr->morph;
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(this_ptr_01,0,pCVar1);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(this_ptr_01,1,this_ptr_00);
-  g_INT_01cd4314 = 0;
+  g_MorphReverseWinding = 0;
   core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0
             (this_ptr_01,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0);
-  g_INT_01cd4314 = 1;
+  g_MorphReverseWinding = 1;
   core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0
             (this_ptr_01,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0);
-  g_INT_01cd4314 = 0;
+  g_MorphReverseWinding = 0;
   (this_ptr->morph).rescale_enabled = 0;
   core_morph_cpp_CMorph_getReady_FUN_004e03c0(this_ptr_01);
   this_ptr->morph_started = 0;

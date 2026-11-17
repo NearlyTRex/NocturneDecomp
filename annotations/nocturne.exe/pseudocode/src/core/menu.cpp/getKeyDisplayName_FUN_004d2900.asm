@@ -222,18 +222,18 @@ section .text
         ;   Label: LAB_004d2aca
     JZ 0x004d2b2c                       ; 004d2acc
         ;   XREF to: 004d2b2c (CONDITIONAL_JUMP)  ; LAB_004d2b2c
-    MOV EDX,dword ptr [0x01cc8650]      ; 004d2ace | g_INT_01cc8650
+    MOV EDX,dword ptr [0x01cc8650]      ; 004d2ace | g_StringBufferIndex
         ;   Label: LAB_004d2ace
     INC EDX                             ; 004d2ad4
     MOV ECX,0xa                         ; 004d2ad5
     MOV EAX,EDX                         ; 004d2ada
     SAR EDX,0x1f                        ; 004d2adc
     IDIV ECX                            ; 004d2adf
-    MOV EBX,dword ptr [0x01cc8650]      ; 004d2ae1 | g_INT_01cc8650
+    MOV EBX,dword ptr [0x01cc8650]      ; 004d2ae1 | g_StringBufferIndex
     SHL EBX,0x8                         ; 004d2ae7
     ADD EBX,0x1cc8658                   ; 004d2aea
     MOV EDI,EBX                         ; 004d2af0
-    MOV dword ptr [0x01cc8650],EDX      ; 004d2af2 | g_INT_01cc8650
+    MOV dword ptr [0x01cc8650],EDX      ; 004d2af2 | g_StringBufferIndex
     PUSH EDI                            ; 004d2af8
     MOV AL,byte ptr [ESI]               ; 004d2af9
         ;   Label: LAB_004d2af9

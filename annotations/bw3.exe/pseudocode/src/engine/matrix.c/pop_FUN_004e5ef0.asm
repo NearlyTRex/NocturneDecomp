@@ -11,12 +11,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005c6f22
 ;   TerminatedCString s_Matrix_unbalance2_005c6f35
-;   int g_INT_01c6e2cc
-;   int g_INT_01c6e2d0
-;   int g_INT_01c6e2d4
-;   int g_INT_01c6e2f0
-;   int g_INT_01c6e2f4
-;   int g_INT_01c6e2f8
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;   int g_INT_01c6e2fc
 ;   int g_INT_01c6e300
 ;   int g_INT_01c6e304
@@ -33,14 +33,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01d726a0]      ; 004e5ef0 | g_INT_01d726a0
+    MOV EDX,dword ptr [0x01d726a0]      ; 004e5ef0 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_pop_FUN_004e5ef0
     DEC EDX                             ; 004e5ef6
-    MOV dword ptr [0x01d726a0],EDX      ; 004e5ef7 | g_INT_01d726a0
+    MOV dword ptr [0x01d726a0],EDX      ; 004e5ef7 | g_MatrixStackIndex
     TEST EDX,EDX                        ; 004e5efd
     JL 0x004e5fcd                       ; 004e5eff
         ;   XREF to: 004e5fcd (CONDITIONAL_JUMP)  ; LAB_004e5fcd
-    MOV EAX,[0x01d726a0]                ; 004e5f05 | g_INT_01d726a0
+    MOV EAX,[0x01d726a0]                ; 004e5f05 | g_MatrixStackIndex
         ;   Label: LAB_004e5f05
     MOV EDX,dword ptr [EAX*0x4 + 0x1d726a4] ; 004e5f0a
     MOV dword ptr [0x01c6e2fc],EDX      ; 004e5f11 | g_INT_01c6e2fc
@@ -61,17 +61,17 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1d727e4] ; 004e5f72
     MOV dword ptr [0x01c6e31c],EDX      ; 004e5f79 | g_INT_01c6e31c
     MOV EDX,dword ptr [EAX*0x4 + 0x1d7280c] ; 004e5f7f
-    MOV dword ptr [0x01c6e2cc],EDX      ; 004e5f86 | g_INT_01c6e2cc
+    MOV dword ptr [0x01c6e2cc],EDX      ; 004e5f86 | g_RelativeX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d72834] ; 004e5f8c
-    MOV dword ptr [0x01c6e2d0],EDX      ; 004e5f93 | g_INT_01c6e2d0
+    MOV dword ptr [0x01c6e2d0],EDX      ; 004e5f93 | g_RelativeY
     MOV EDX,dword ptr [EAX*0x4 + 0x1d7285c] ; 004e5f99
-    MOV dword ptr [0x01c6e2d4],EDX      ; 004e5fa0 | g_INT_01c6e2d4
+    MOV dword ptr [0x01c6e2d4],EDX      ; 004e5fa0 | g_RelativeZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1d72884] ; 004e5fa6
-    MOV dword ptr [0x01c6e2f0],EDX      ; 004e5fad | g_INT_01c6e2f0
+    MOV dword ptr [0x01c6e2f0],EDX      ; 004e5fad | g_LightDirectionX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d728ac] ; 004e5fb3
     MOV EAX,dword ptr [EAX*0x4 + 0x1d728d4] ; 004e5fba
-    MOV dword ptr [0x01c6e2f4],EDX      ; 004e5fc1 | g_INT_01c6e2f4
-    MOV [0x01c6e2f8],EAX                ; 004e5fc7 | g_INT_01c6e2f8
+    MOV dword ptr [0x01c6e2f4],EDX      ; 004e5fc1 | g_LightDirectionY
+    MOV [0x01c6e2f8],EAX                ; 004e5fc7 | g_LightDirectionZ
     RET                                 ; 004e5fcc
     PUSH ESI                            ; 004e5fcd
         ;   Label: LAB_004e5fcd

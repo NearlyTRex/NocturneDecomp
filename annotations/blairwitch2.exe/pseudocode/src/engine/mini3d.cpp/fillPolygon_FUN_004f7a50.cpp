@@ -97,7 +97,7 @@ LAB_004f7bce:
               return;
             }
           }
-          if (g_INT_01c38b40 == 0) {
+          if (g_MMXSupported == 0) {
             if (g_INT_006141c0 == 0x20) {
               engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3
                         (local_14,local_18,iVar4);

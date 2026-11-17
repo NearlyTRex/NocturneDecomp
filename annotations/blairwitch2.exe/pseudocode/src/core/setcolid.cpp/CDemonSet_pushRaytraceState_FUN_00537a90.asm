@@ -16,7 +16,7 @@
 ;   TerminatedCString s_CDemonSet_pushRaytraceSt_005e5e72
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_02093614
+;   int g_RaytraceStateStackDepth
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -31,10 +31,10 @@ section .text
     PUSH EDI                            ; 00537a92
     PUSH EBP                            ; 00537a93
     MOV EBX,dword ptr [ESP + 0x14]      ; 00537a94
-    CMP dword ptr [0x02093614],0x5      ; 00537a98 | g_INT_02093614
+    CMP dword ptr [0x02093614],0x5      ; 00537a98 | g_RaytraceStateStackDepth
     JG 0x00537c06                       ; 00537a9f
         ;   XREF to: 00537c06 (CONDITIONAL_JUMP)  ; LAB_00537c06
-    MOV EDX,dword ptr [0x02093614]      ; 00537aa5 | g_INT_02093614
+    MOV EDX,dword ptr [0x02093614]      ; 00537aa5 | g_RaytraceStateStackDepth
         ;   Label: LAB_00537aa5
     LEA EAX,[EDX*0x4 + 0x0]             ; 00537aab
     ADD EAX,EDX                         ; 00537ab2
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [EDI + 0x10],EAX      ; 00537ae9
     LEA EBP,[EDX + 0x1]                 ; 00537aec
     MOV EAX,dword ptr [EBX + 0x15f6a8]  ; 00537aef
-    MOV dword ptr [0x02093614],EBP      ; 00537af5 | g_INT_02093614
+    MOV dword ptr [0x02093614],EBP      ; 00537af5 | g_RaytraceStateStackDepth
     MOV dword ptr [EDI + 0x14],EAX      ; 00537afb
     TEST EAX,EAX                        ; 00537afe
     JLE 0x00537b20                      ; 00537b00

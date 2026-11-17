@@ -39,7 +39,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
   hero_number = pCVar2->hero_number;
   pcVar6 = this_ptr->player_name;
   support_trisock_cpp_createNetworkAddr_FUN_0056f730
-            ((SNetworkAddr *)(auStack_2c + 4),(uint32_t *)g_UCHAR_ARRAY_02cfd89c,0x1ddf);
+            ((SNetworkAddr *)(auStack_2c + 4),(uint32_t *)g_AnyAddressIP,0x1ddf);
   iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950
                     (this_ptr,addr,pcVar6,hero_number,aim_mode);
   this_ptr->local_player_index = iVar3;
@@ -55,12 +55,12 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
   this_ptr->network_mode = NET_MODE_LOBBY;
   uVar5 = g_UINT_01da6478;
   this_ptr->server_player_index = iVar3;
-  g_INT_01da647c = 0;
+  g_ConnectionStatus = 0;
   uVar5 = uVar5 - 0x50000;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
             (g_CEditorToolsPtr,"Contacting server.  Press ESC to give up...");
-  iStack_1c = g_INT_0060728c;
-  g_INT_0060728c = 0;
+  iStack_1c = g_ForceMessagePump;
+  g_ForceMessagePump = 0;
   if (-1 < this_ptr->server_player_index) {
     pcStack_18 = this_ptr->player_name;
     do {
@@ -96,12 +96,12 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
       }
       wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
       core_netgame_cpp_CNetGame_receivePackets_FUN_00504c70(this_ptr);
-      if (g_INT_01da647c == 1) {
-        g_INT_0060728c = iStack_1c;
+      if (g_ConnectionStatus == 1) {
+        g_ForceMessagePump = iStack_1c;
         return 1;
       }
-      if ((uint)g_INT_01da647c < 3) {
-        if (g_INT_01da647c == 2) {
+      if ((uint)g_ConnectionStatus < 3) {
+        if (g_ConnectionStatus == 2) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                     (g_CEditorToolsPtr,"Connection refused - computer is not a server");
           core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,0);
@@ -109,19 +109,19 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
         }
       }
       else {
-        if ((uint)g_INT_01da647c < 4) {
+        if ((uint)g_ConnectionStatus < 4) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                     (g_CEditorToolsPtr,"Connection refused - game is full");
           core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,0);
           return 0;
         }
-        if (g_INT_01da647c == 4) {
+        if (g_ConnectionStatus == 4) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                     (g_CEditorToolsPtr,"Connection refused - already in the game");
           goto LAB_00504239;
         }
       }
-      iVar3 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+      iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar3 != 0) {
 LAB_00504239:
         core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,0);

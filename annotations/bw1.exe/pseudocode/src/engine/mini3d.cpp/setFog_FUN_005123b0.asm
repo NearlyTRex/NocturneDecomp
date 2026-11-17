@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005e8c8f = 0.003921569
 ;   int g_INT_0061b4a0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_INT_01c50948
-;   ulong g_ULONG_01c51d1c
+;   ulong g_SolidColorMode
 ;   float g_FLOAT_01d22564
 ;   float g_FLOAT_01d22568
 ;   float g_FLOAT_01d2256c
@@ -58,20 +58,20 @@ section .text
     CMP ECX,0x20                        ; 00512410
     JNZ 0x0051246b                      ; 00512413
         ;   XREF to: 0051246b (CONDITIONAL_JUMP)  ; LAB_0051246b
-    MOV CL,byte ptr [0x01c4e9d4]        ; 00512415 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 00512415 | g_RedBitPosition
     SHL EDX,CL                          ; 0051241b
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0051241d | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0051241d | g_GreenBitPosition
     SHL EAX,CL                          ; 00512423
     MOV ECX,EAX                         ; 00512425
     MOV EAX,EDX                         ; 00512427
     OR EAX,ECX                          ; 00512429
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0051242b | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0051242b | g_BlueBitPosition
     SHL EBX,CL                          ; 00512431
     MOV ECX,EBX                         ; 00512433
     OR ECX,EAX                          ; 00512435
     MOV EBX,dword ptr [0x02c8349c]      ; 00512437 | g_PTR_02c8349c
         ;   Label: LAB_00512437
-    MOV dword ptr [0x01c51d1c],ECX      ; 0051243d | g_ULONG_01c51d1c
+    MOV dword ptr [0x01c51d1c],ECX      ; 0051243d | g_SolidColorMode
     TEST EBX,EBX                        ; 00512443
     JZ 0x00512450                       ; 00512445
         ;   XREF to: 00512450 (CONDITIONAL_JUMP)  ; LAB_00512450

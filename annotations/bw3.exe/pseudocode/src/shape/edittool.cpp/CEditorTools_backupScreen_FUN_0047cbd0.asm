@@ -15,8 +15,8 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6cee8
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     CMP dword ptr [0x01c6cee8],0x0      ; 0047cbd8 | g_INT_01c6cee8
     JZ 0x0047cc9d                       ; 0047cbdf
         ;   XREF to: 0047cc9d (CONDITIONAL_JUMP)  ; LAB_0047cc9d
-    CMP dword ptr [0x01c5faec],0x0      ; 0047cbe5 | g_ARRAY_PTR_01c5faec
+    CMP dword ptr [0x01c5faec],0x0      ; 0047cbe5 | g_ScreenBufferArray
     JZ 0x0047cc9d                       ; 0047cbec
         ;   XREF to: 0047cc9d (CONDITIONAL_JUMP)  ; LAB_0047cc9d
     MOV EBX,dword ptr [0x005fba1c]      ; 0047cbf2 | g_INT_005fba1c
@@ -45,7 +45,7 @@ section .text
     XOR EAX,EAX                         ; 0047cbff
     ADD EAX,0x4                         ; 0047cc01
         ;   Label: LAB_0047cc01
-    MOV EDX,dword ptr [EAX + 0x1c5fae8] ; 0047cc04 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EDX,dword ptr [EAX + 0x1c5fae8] ; 0047cc04 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV dword ptr [ESP + EAX*0x1 + -0x4],EDX ; 0047cc0a
     CMP EAX,EBX                         ; 0047cc0e
     JL 0x0047cc01                       ; 0047cc10
@@ -76,7 +76,7 @@ section .text
     JLE 0x0047cc91                      ; 0047cc57
         ;   XREF to: 0047cc91 (CONDITIONAL_JUMP)  ; LAB_0047cc91
     XOR EDX,EDX                         ; 0047cc59
-    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 0047cc5b | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 0047cc5b | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0047cc5b
     TEST ECX,ECX                        ; 0047cc61
     JZ 0x0047cc84                       ; 0047cc63

@@ -25,8 +25,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50
       return;
     }
   }
-  g_BIT_INTEGER32_01c51d14.dword = 0xc4;
-  g_INT_01c51d18 = 6;
+  g_RenderStateFlags.dword = (RENDER_FOG_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+  g_VertexPreprocessMode = 6;
   core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0((prim->base).count,(int *)(prim + 1));
   if (g_INT_007c7554 < 3) {
     return;

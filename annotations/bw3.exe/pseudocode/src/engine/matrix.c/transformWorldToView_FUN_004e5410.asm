@@ -10,9 +10,9 @@
 ;   engine_matrix.c_projectToScreen_FUN_004e6d80 at 004e6da6
 ;
 ; Referenced Globals:
-;   int g_INT_01c6e2cc
-;   int g_INT_01c6e2d0
-;   int g_INT_01c6e2d4
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   int g_INT_01c6e2fc
 ;   int g_INT_01c6e300
 ;   int g_INT_01c6e304
@@ -34,9 +34,9 @@ section .text
     SUB ESP,0xc                         ; 004e5413
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004e5416
     MOV EBP,ESI                         ; 004e541a
-    MOV EDX,dword ptr [0x01c6e2cc]      ; 004e541c | g_INT_01c6e2cc
-    MOV EDI,dword ptr [0x01c6e2d0]      ; 004e5422 | g_INT_01c6e2d0
-    MOV EAX,[0x01c6e2d4]                ; 004e5428 | g_INT_01c6e2d4
+    MOV EDX,dword ptr [0x01c6e2cc]      ; 004e541c | g_RelativeX
+    MOV EDI,dword ptr [0x01c6e2d0]      ; 004e5422 | g_RelativeY
+    MOV EAX,[0x01c6e2d4]                ; 004e5428 | g_RelativeZ
     MOV ESI,dword ptr [EBX]             ; 004e542d
     MOV ECX,dword ptr [EBX + 0x4]       ; 004e542f
     SUB ESI,EDX                         ; 004e5432

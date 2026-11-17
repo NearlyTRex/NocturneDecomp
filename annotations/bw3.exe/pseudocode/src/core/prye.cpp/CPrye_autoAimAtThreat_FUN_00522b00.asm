@@ -31,8 +31,8 @@
 ;   float g_FLOAT_005e3524 = -0.7853982
 ;   float g_FLOAT_005e3528 = 0.7853982
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int[23] g_INT_ARRAY_01ed36ec
-;   undefined4 g_INT_ARRAY_01ed36ec[10]
+;   int[23] g_StrangerIndices
+;   undefined4 g_StrangerIndices[10]
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -102,10 +102,10 @@ section .text
         ;   Label: LAB_00522b88
     JZ 0x00522fa2                       ; 00522b8a
         ;   XREF to: 00522fa2 (CONDITIONAL_JUMP)  ; LAB_00522fa2
-    MOV EAX,[0x01ed36ec]                ; 00522b90 | g_INT_ARRAY_01ed36ec
+    MOV EAX,[0x01ed36ec]                ; 00522b90 | g_StrangerIndices
     MOV dword ptr [ESP + 0x24c],EAX     ; 00522b95
     MOV EAX,dword ptr [ESP + 0x22c]     ; 00522b9c
-    MOV EBX,dword ptr [0x01ed3714]      ; 00522ba3 | g_INT_ARRAY_01ed36ec[10]
+    MOV EBX,dword ptr [0x01ed3714]      ; 00522ba3 | g_StrangerIndices[10]
     TEST EAX,EAX                        ; 00522ba9
     JNZ 0x00522fb5                      ; 00522bab
         ;   XREF to: 00522fb5 (CONDITIONAL_JUMP)  ; LAB_00522fb5

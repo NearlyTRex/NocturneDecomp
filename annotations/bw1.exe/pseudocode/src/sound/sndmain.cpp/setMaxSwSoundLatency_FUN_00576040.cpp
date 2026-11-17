@@ -21,9 +21,9 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00576040(float latency)
     latency = 0.05;
   }
   if (latency <= (float)2) {
-    g_FLOAT_00623314 = latency;
+    g_MaxSoftwareLatency = latency;
     return;
   }
-  g_FLOAT_00623314 = 2.0;
+  g_MaxSoftwareLatency = 2.0;
   return;
 }

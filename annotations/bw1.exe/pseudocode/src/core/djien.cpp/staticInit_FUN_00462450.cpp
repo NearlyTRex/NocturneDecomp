@@ -9,8 +9,8 @@
 void __cdecl core_djien_cpp_staticInit_FUN_00462450(void)
 
 {
-  g_CVector3f_01b2ee3c.y = 0.0;
-  g_CVector3f_01b2ee3c.z = 0.0;
-  g_CVector3f_01b2ee3c.x = 0.0;
+  g_CoronaGeometryOrigin.y = 0.0;
+  g_CoronaGeometryOrigin.z = 0.0;
+  g_CoronaGeometryOrigin.x = 0.0;
   return;
 }

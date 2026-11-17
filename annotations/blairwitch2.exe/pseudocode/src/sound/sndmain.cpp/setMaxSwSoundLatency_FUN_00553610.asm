@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e926e
 ;   TerminatedCString s_setMaxSwSoundLatency_can_005e9283
-;   double g_DOUBLE_005e92be = 0.0500000000000000
-;   double g_DOUBLE_005e92c6 = 2
-;   float g_FLOAT_0061bcc4 = 0.5
+;   double g_MinLatencyThreshold = 0.0500000000000000
+;   double g_MaxLatencyThreshold = 2
+;   float g_MaxSoftwareLatency = 0.5
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -34,7 +34,7 @@ section .text
         ;   XREF to: 00553649 (CONDITIONAL_JUMP)  ; LAB_00553649
     FLD float ptr [ESP + 0x4]           ; 00553619
         ;   Label: LAB_00553619
-    FCOMP double ptr [0x005e92be]       ; 0055361d | g_DOUBLE_005e92be
+    FCOMP double ptr [0x005e92be]       ; 0055361d | g_MinLatencyThreshold
     FNSTSW AX                           ; 00553623
     SAHF                                ; 00553625
     JNC 0x00553630                      ; 00553626
@@ -42,13 +42,13 @@ section .text
     MOV dword ptr [ESP + 0x4],0x3d4ccccd ; 00553628
     FLD float ptr [ESP + 0x4]           ; 00553630
         ;   Label: LAB_00553630
-    FCOMP double ptr [0x005e92c6]       ; 00553634 | g_DOUBLE_005e92c6
+    FCOMP double ptr [0x005e92c6]       ; 00553634 | g_MaxLatencyThreshold
     FNSTSW AX                           ; 0055363a
     SAHF                                ; 0055363c
     JA 0x0055366e                       ; 0055363d
         ;   XREF to: 0055366e (CONDITIONAL_JUMP)  ; LAB_0055366e
     MOV EAX,dword ptr [ESP + 0x4]       ; 0055363f
-    MOV [0x0061bcc4],EAX                ; 00553643 | g_FLOAT_0061bcc4
+    MOV [0x0061bcc4],EAX                ; 00553643 | g_MaxSoftwareLatency
     RET                                 ; 00553648
     MOV EDX,0x5e926e                    ; 00553649 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00553649
@@ -64,6 +64,6 @@ section .text
     MOV dword ptr [ESP + 0x4],0x40000000 ; 0055366e
         ;   Label: LAB_0055366e
     MOV EAX,dword ptr [ESP + 0x4]       ; 00553676
-    MOV [0x0061bcc4],EAX                ; 0055367a | g_FLOAT_0061bcc4
+    MOV [0x0061bcc4],EAX                ; 0055367a | g_MaxSoftwareLatency
     RET                                 ; 0055367f
 

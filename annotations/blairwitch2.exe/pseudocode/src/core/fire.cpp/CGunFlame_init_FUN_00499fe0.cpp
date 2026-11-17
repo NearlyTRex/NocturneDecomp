@@ -26,11 +26,11 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_00499fe0(CGunFlame *this_ptr)
   
   bVar5 = 0;
   local_1c = 0;
-  if (0 < g_INT_01c3f5a8) {
+  if (0 < g_GunFlameCandidateCount) {
     local_18 = &this_ptr->position;
     local_20 = 0;
     do {
-      this_ptr_00 = *(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c3f5ac + local_20);
+      this_ptr_00 = *(CCharacter **)((int)g_GunFlameCandidates + local_20);
       if (((this_ptr->flame_type == 2) || (this_ptr_00->gun_flame_ignitable != 0)) &&
          (fVar1 = (this_ptr_00->base).location.position.x - local_18->x,
          fVar3 = (this_ptr_00->base).location.position.y - local_18->y,
@@ -49,13 +49,13 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_00499fe0(CGunFlame *this_ptr)
       }
       local_20 = local_20 + 4;
       local_1c = local_1c + 1;
-    } while (local_1c < g_INT_01c3f5a8);
+    } while (local_1c < g_GunFlameCandidateCount);
   }
   iVar4 = 0;
-  if (0 < g_INT_01c3f674) {
+  if (0 < g_FlameCanCount) {
     local_24 = 0;
     do {
-      this_ptr_01 = *(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c3f678 + local_24);
+      this_ptr_01 = *(CFlameCan **)((int)g_FlameCans + local_24);
       fVar1 = (this_ptr_01->base).location.position.x - (this_ptr->position).x;
       fVar3 = (this_ptr_01->base).location.position.y - (this_ptr->position).y;
       fVar2 = (this_ptr_01->base).location.position.z - (this_ptr->position).z;
@@ -64,7 +64,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_00499fe0(CGunFlame *this_ptr)
       }
       local_24 = local_24 + 4;
       iVar4 = iVar4 + 1;
-    } while (iVar4 < g_INT_01c3f674);
+    } while (iVar4 < g_FlameCanCount);
   }
   return;
 }

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 444,
+    "complexity_score": 446,
     "cross_reference_count": 45,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 46,
     "suspect_count": 38,
     "suspect_types": [
       "carry_arith_idiom",
@@ -15,7 +15,7 @@
       "stack_param",
       "unknown_type"
     ],
-    "total_lines": 152
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -305,25 +305,25 @@
   "globals": [
     {
       "addr": "005c3f68",
-      "name": "g_BYTE_ARRAY_005c3f68",
+      "name": "g_IEEE754ExponentClassTable",
       "type": "byte[16]",
       "value": null
     },
     {
       "addr": "005c3f78",
-      "name": "g_FLOAT_005c3f78",
+      "name": "g_IEEE754NormalScaleFactor",
       "type": "float",
       "value": "0.9375"
     },
     {
       "addr": "005c3f7c",
-      "name": "g_FLOAT_005c3f7c",
+      "name": "g_IEEE754SubnormalScaleFactor",
       "type": "float",
       "value": "1.0625"
     },
     {
       "addr": "005c3f80",
-      "name": "g_FLOAT_005c3f80",
+      "name": "g_IEEE754RenormScaleFactor",
       "type": "float",
       "value": "9.223372E+18"
     }
@@ -663,7 +663,7 @@
       "line": 36,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "if (g_BYTE_ARRAY_005c3f68[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {",
+      "text": "if (g_IEEE754ExponentClassTable[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {",
       "type": "stack_param"
     },
     {

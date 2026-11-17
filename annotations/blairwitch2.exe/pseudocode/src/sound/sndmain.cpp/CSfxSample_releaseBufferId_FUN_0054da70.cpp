@@ -10,9 +10,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_0054da70(CSfxSampl
 
 {
   if (this_ptr->buffer_id != 0) {
-    if (g_CSoundDevice_PTR_02648e80 != (CSoundDevice *)0x0) {
-      (*g_CSoundDevice_PTR_02648e80->vtable->freeSample)
-                (g_CSoundDevice_PTR_02648e80,this_ptr->buffer_id);
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+      (*g_CSoundDevicePtr->vtable->freeSample)(g_CSoundDevicePtr,this_ptr->buffer_id);
       this_ptr->buffer_id = 0;
       return;
     }

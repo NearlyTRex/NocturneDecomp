@@ -93,8 +93,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0056b770(CStranger *thi
         fStack_1c = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840
-                (g_CFireEffect_PTR_00614d30,pCStack_18,&CStack_6c,1.0,1.0,
-                 &g_CDemonSetPtr->collision_normal,fStack_1c,0xff,0,0);
+                (g_CFireEffectPtr,pCStack_18,&CStack_6c,1.0,1.0,&g_CDemonSetPtr->collision_normal,
+                 fStack_1c,0xff,0,0);
       core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     }
   }
@@ -102,7 +102,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0056b770(CStranger *thi
   if ((((this_ptr_00 == (CWeapon *)0x0) ||
        (this_ptr_00 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (this_ptr_00 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_0264be30[0x16]] == 0))
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0))
   goto LAB_0056ba07;
   (*((this_ptr_00->base).vtable._ub)->renderOpaque)(&this_ptr_00->base);
   if (this_ptr->weapon == (CWeapon *)0x0) {
@@ -152,7 +152,7 @@ LAB_0056b99f:
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005683d0(this_ptr,0);
 LAB_0056ba07:
   if ((((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
-      ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_0264be30[0x16]] != 0)) &&
+      ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0)) &&
      (apCStack_38[5] = (this_ptr->base).inventories[0].light_gun_ptr,
      apCStack_38[5] != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
@@ -173,7 +173,7 @@ LAB_0056ba07:
            apCStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar4,pCVar7,pCVar8);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                (&CStack_18c,pCStack_20 + g_INT_ARRAY_0264be30[0],(CMatrix3x4f *)&stack0xfffffe44);
+                (&CStack_18c,pCStack_20 + g_StrangerIndices[0],(CMatrix3x4f *)&stack0xfffffe44);
       pCVar4 = (CMatrix3x4f *)&stack0xfffffe44;
     }
     else {
@@ -191,7 +191,7 @@ LAB_0056ba07:
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
                 (&CStack_fc,&CStack_9c,pCVar8);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                (&CStack_fc,pCStack_20 + g_INT_ARRAY_0264be30[0xe],&CStack_12c);
+                (&CStack_fc,pCStack_20 + g_StrangerIndices[0xe],&CStack_12c);
       pCVar4 = &CStack_12c;
     }
     pCVar5 = &CStack_15c;
@@ -219,7 +219,7 @@ LAB_0056ba07:
     engine_drender_cpp_pop_FUN_0046b4a0();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   }
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_0264be30[0x16]] == 0) &&
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0) &&
       (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
                          (g_CDemonRenderer_PTR_0060b280), iVar3 == 0)) &&
      (0 < (this_ptr->base).base.cloth_list.count)) {

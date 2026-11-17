@@ -60,12 +60,12 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     (pCVar1->light_direction).y = -0x482b;
     (pCVar1->light_direction).z = 0x482b;
     pCVar1->ambient_base_quick = 32000;
-    g_INT_01d70a38 =
-         g_INT_01d70a38 +
-         ((int)((g_INT_01c5fad0 + (g_INT_01c5fad0 >> 0x1f) * -4) -
-               (uint)((g_INT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);
-    iVar2 = engine_matrix_c_interpolatedSin_FUN_004e4d90(g_INT_01d70a38);
-    iVar3 = engine_matrix_c_interpolatedCos_FUN_004e4dd0(g_INT_01d70a38);
+    g_InventoryLightAngle =
+         g_InventoryLightAngle +
+         ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+               (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
+    iVar2 = engine_matrix_c_interpolatedSin_FUN_004e4d90(g_InventoryLightAngle);
+    iVar3 = engine_matrix_c_interpolatedCos_FUN_004e4dd0(g_InventoryLightAngle);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar2 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar2 * 0x482b) >> 0x20) << 0x10;
@@ -124,9 +124,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
               (g_CDemonRenderer_PTR_005f2afc,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
-              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900);
+              (g_CDemonRenderer_PTR_005f2afc,&g_ZeroVector);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900);
+              (g_CDemonRenderer_PTR_005f2afc,&g_ZeroVector);
     local_78 = local_b4 + local_a8;
     local_74 = local_b0 + local_a4;
     local_70 = local_ac + local_a0;
@@ -135,7 +135,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
          local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
     class_name = "CLightstaff";
-    g_INT_01c6e24c = 0;
+    g_PerspectiveReciprocal = 0;
     local_6c = local_54 * -0.5f;
     local_68 = local_50[0] * -0.5f;
     local_64 = local_50[1] * -0.5f;
@@ -208,7 +208,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
               (g_CDemonRenderer_PTR_005f2afc,&local_30,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900,&local_60);
+              (g_CDemonRenderer_PTR_005f2afc,&g_ZeroVector,&local_60);
     if (alpha < 65000) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
                 (g_CDemonRenderer_PTR_005f2afc,alpha);

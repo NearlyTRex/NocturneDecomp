@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 372,
-    "complexity_score": 127,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 24,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 128,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 499
+    "total_lines": 500
   },
   "cross_references": [
     {
@@ -228,7 +228,7 @@
     },
     {
       "addr": "02dcd794",
-      "name": "INT_02dcd794",
+      "name": "g_InventoryLightAngle",
       "type": "int",
       "value": null
     },
@@ -361,7 +361,7 @@
   "resolved_suspects": [
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 40,
+      "line": 41,
       "match": "g_Global >> 0x1f",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -370,7 +370,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 41,
+      "line": 42,
       "match": "g_Global >> 0x1f",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -379,7 +379,7 @@
     },
     {
       "description": "Vector type-pun \u2014 `local_44` is declared `CVector3i` but its address is cast to `(CVector3f *)` and read as the other element kind, so integer bits are reinterpreted as floats (or vice-versa). Stack-slot reuse Ghidra mistyped (\u00a713): retype the local to the element kind the .asm stores/reads (FSTP/FLD = float, MOV = int), drop the `(int)`/`(float)` truncation on its components, and drop the cast.",
-      "line": 76,
+      "line": 77,
       "match": "(CVector3f *)&local_44",
       "resolution_source": "keep",
       "severity": "moderate",

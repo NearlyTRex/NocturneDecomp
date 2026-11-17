@@ -94,7 +94,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
         }
         local_14 = local_14 + 4;
       }
-      g_INT_01dd4894 = 1;
+      g_LocalizationLoaded = 1;
       return;
     }
     iVar3 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n");

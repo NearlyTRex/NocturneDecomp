@@ -34,7 +34,7 @@
 ;   CConsole g_CConsoleInstance
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   CSoundDevice* g_CSoundDevice_PTR_02648e80
+;   CSoundDevice* g_CSoundDevicePtr
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
     PUSH ESI                            ; 0054f701
     PUSH EBP                            ; 0054f702
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054f703
-    CMP dword ptr [0x0264901c],0x0      ; 0054f707 | g_INT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054f707 | g_SoundLockCount
     JLE 0x0054f842                      ; 0054f70e
         ;   XREF to: 0054f842 (CONDITIONAL_JUMP)  ; LAB_0054f842
     CMP dword ptr [EBX + 0x108],0x0     ; 0054f714
@@ -77,7 +77,7 @@ section .text
         ;   Label: LAB_0054f73f
     JZ 0x0054f760                       ; 0054f743
         ;   XREF to: 0054f760 (CONDITIONAL_JUMP)  ; LAB_0054f760
-    MOV ECX,dword ptr [0x02648e80]      ; 0054f745 | g_CSoundDevice_PTR_02648e80
+    MOV ECX,dword ptr [0x02648e80]      ; 0054f745 | g_CSoundDevicePtr
     TEST ECX,ECX                        ; 0054f74b
     JZ 0x0054f759                       ; 0054f74d
         ;   XREF to: 0054f759 (CONDITIONAL_JUMP)  ; LAB_0054f759

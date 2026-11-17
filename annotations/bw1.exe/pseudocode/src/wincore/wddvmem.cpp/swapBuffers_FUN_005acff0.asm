@@ -31,16 +31,16 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
-;   int g_INT_006260e4 = -0x1
+;   int g_WindowActive = -0x1
 ;   void* g_PTR_00629010
-;   void*[1200] g_ARRAY_PTR_01c4354c
-;   undefined4 g_ARRAY_PTR_01c4354c[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c50948
-;   int g_INT_01c51d00
+;   int g_MMXSupported
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02c99304
-;   int g_INT_02c99314
+;   IDirectDrawSurface* g_DirectDrawSurface
+;   int g_FlipPending
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -63,14 +63,14 @@ section .text
     PUSH EBP                            ; 005acff3
     MOV EBP,ESP                         ; 005acff4
     SUB ESP,0x7c                        ; 005acff6
-    CMP dword ptr [0x006260e4],0x0      ; 005acff9 | g_INT_006260e4
+    CMP dword ptr [0x006260e4],0x0      ; 005acff9 | g_WindowActive
     JZ 0x005ad0c1                       ; 005ad000
         ;   XREF to: 005ad0c1 (CONDITIONAL_JUMP)  ; LAB_005ad0c1
     MOV ECX,dword ptr [0x01c50948]      ; 005ad006 | g_INT_01c50948
     TEST ECX,ECX                        ; 005ad00c
     JNZ 0x005ad0d5                      ; 005ad00e
         ;   XREF to: 005ad0d5 (CONDITIONAL_JUMP)  ; LAB_005ad0d5
-    MOV EBX,dword ptr [0x02c99314]      ; 005ad014 | g_INT_02c99314
+    MOV EBX,dword ptr [0x02c99314]      ; 005ad014 | g_FlipPending
     TEST EBX,EBX                        ; 005ad01a
     JNZ 0x005ad09d                      ; 005ad01c
         ;   XREF to: 005ad09d (CONDITIONAL_JUMP)  ; LAB_005ad09d
@@ -89,7 +89,7 @@ section .text
     XOR EDI,EDI                         ; 005ad04c
     MOV EBX,dword ptr [0x0061b498]      ; 005ad04e | g_INT_0061b498
         ;   Label: LAB_005ad04e
-    MOV EAX,dword ptr [EDI + 0x1c4354c] ; 005ad054 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV EAX,dword ptr [EDI + 0x1c4354c] ; 005ad054 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR EDX,EDX                         ; 005ad05a
     TEST EBX,EBX                        ; 005ad05c
     JLE 0x005ad081                      ; 005ad05e
@@ -119,7 +119,7 @@ section .text
         ;   XREF to: 005acc00 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00()
         ;   Label: LAB_005ad08e
     MOV dword ptr [0x02c9931c],0x1      ; 005ad093 | g_INT_02c9931c
-    MOV ESI,dword ptr [0x02c99304]      ; 005ad09d | g_IDirectDrawSurface_PTR_02c99304
+    MOV ESI,dword ptr [0x02c99304]      ; 005ad09d | g_DirectDrawSurface
         ;   Label: LAB_005ad09d
     TEST ESI,ESI                        ; 005ad0a3
     JZ 0x005ad0c1                       ; 005ad0a5
@@ -139,7 +139,7 @@ section .text
         ;   XREF to: 005ad2c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_005ad2c0()
     XOR EDI,EDI                         ; 005ad0c1
         ;   Label: LAB_005ad0c1
-    MOV dword ptr [0x02c99314],EDI      ; 005ad0c3 | g_INT_02c99314
+    MOV dword ptr [0x02c99314],EDI      ; 005ad0c3 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 005ad0c9
         ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
     MOV ESP,EBP                         ; 005ad0ce
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 00582990 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_00582990(int skip_buffer_copy)
     ADD ESP,0x4                         ; 005ad0dc
     XOR EDI,EDI                         ; 005ad0df
-    MOV dword ptr [0x02c99314],EDI      ; 005ad0e1 | g_INT_02c99314
+    MOV dword ptr [0x02c99314],EDI      ; 005ad0e1 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 005ad0e7
         ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
     MOV ESP,EBP                         ; 005ad0ec
@@ -187,7 +187,7 @@ section .text
     LEA EDX,[EBP + -0x7c]               ; 005ad12b
     MOV EDI,0x6c                        ; 005ad12e
     PUSH EDX                            ; 005ad133
-    MOV EAX,[0x02c99304]                ; 005ad134 | g_IDirectDrawSurface_PTR_02c99304
+    MOV EAX,[0x02c99304]                ; 005ad134 | g_DirectDrawSurface
     MOV dword ptr [EBP + -0x7c],EDI     ; 005ad139
     PUSH EBX                            ; 005ad13c
     MOV ECX,dword ptr [EAX]             ; 005ad13d
@@ -220,7 +220,7 @@ section .text
     TEST EDX,EDX                        ; 005ad193
     JLE 0x005ad1fe                      ; 005ad195
         ;   XREF to: 005ad1fe (CONDITIONAL_JUMP)  ; LAB_005ad1fe
-    CMP dword ptr [0x01c51d00],0x0      ; 005ad197 | g_INT_01c51d00
+    CMP dword ptr [0x01c51d00],0x0      ; 005ad197 | g_MMXSupported
         ;   Label: LAB_005ad197
     JZ 0x005ad24d                       ; 005ad19e
         ;   XREF to: 005ad24d (CONDITIONAL_JUMP)  ; LAB_005ad24d
@@ -256,7 +256,7 @@ section .text
         ;   XREF to: 005ad197 (CONDITIONAL_JUMP)  ; LAB_005ad197
     PUSH 0x0                            ; 005ad1fe
         ;   Label: LAB_005ad1fe
-    MOV EAX,[0x02c99304]                ; 005ad200 | g_IDirectDrawSurface_PTR_02c99304
+    MOV EAX,[0x02c99304]                ; 005ad200 | g_DirectDrawSurface
     PUSH EAX                            ; 005ad205
     MOV EDX,dword ptr [EAX]             ; 005ad206
     CALL dword ptr [EDX + 0x80]         ; 005ad208
@@ -272,7 +272,7 @@ section .text
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ad236
     XOR EDI,EDI                         ; 005ad239
-    MOV dword ptr [0x02c99314],EDI      ; 005ad23b | g_INT_02c99314
+    MOV dword ptr [0x02c99314],EDI      ; 005ad23b | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 005ad241
         ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
     MOV ESP,EBP                         ; 005ad246

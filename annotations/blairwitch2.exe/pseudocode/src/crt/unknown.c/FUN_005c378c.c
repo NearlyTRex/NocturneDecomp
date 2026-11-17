@@ -15,8 +15,8 @@ uint FUN_005c378c(Heap *param_1)
   pHVar1 = param_1->next_heap_block;
   BVar2 = VirtualFree(param_1,0,0x8000);
   if (BVar2 != 0) {
-    if ((param_1 == g_Heap_PTR_0061eea4) && (g_Heap_PTR_0061eea4 = pHVar1, pHVar1 == (Heap *)0x0)) {
-      g_Heap_PTR_0061eea4 = g_Heap_PTR_0061eea0;
+    if ((param_1 == g_SecondaryHeap) && (g_SecondaryHeap = pHVar1, pHVar1 == (Heap *)0x0)) {
+      g_SecondaryHeap = g_MainHeap;
       g_INT_0061eea8 = 0;
     }
     if (param_1 == (Heap *)g_INT_02680150) {

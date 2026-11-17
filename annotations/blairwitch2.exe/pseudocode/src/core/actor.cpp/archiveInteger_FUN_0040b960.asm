@@ -24,9 +24,9 @@
 ;   TerminatedCString s_d_005cab46
 ;   TerminatedCString s_s_d_005cab49
 ;   TerminatedCString s_Integer_value_00609578
-;   char[104] g_CHAR_ARRAY_00609590
-;   _FILE* g_FILE_PTR_007bc034
-;   int g_INT_007bc038
+;   char[104] g_PropertyNamePrefix
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040b400
@@ -43,12 +43,12 @@ section .text
     PUSH EDI                            ; 0040b961
     PUSH EBP                            ; 0040b962
     MOV EAX,dword ptr [ESP + 0x10]      ; 0040b963
-    CMP dword ptr [0x007bc038],0x1      ; 0040b967 | g_INT_007bc038
+    CMP dword ptr [0x007bc038],0x1      ; 0040b967 | g_ActorReadingMode
     JNZ 0x0040b9b4                      ; 0040b96e
         ;   XREF to: 0040b9b4 (CONDITIONAL_JUMP)  ; LAB_0040b9b4
     PUSH EAX                            ; 0040b970
     PUSH 0x5cab46                       ; 0040b971 | = "%d"
-    MOV ESI,dword ptr [0x007bc034]      ; 0040b976 | g_FILE_PTR_007bc034
+    MOV ESI,dword ptr [0x007bc034]      ; 0040b976 | g_ActorDataFile
     PUSH ESI                            ; 0040b97c
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b97d
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -80,9 +80,9 @@ section .text
         ;   Label: LAB_0040b9b4
     MOV ECX,dword ptr [EAX]             ; 0040b9b5
     PUSH ECX                            ; 0040b9b7
-    PUSH 0x609590                       ; 0040b9b8 | g_CHAR_ARRAY_00609590
+    PUSH 0x609590                       ; 0040b9b8 | g_PropertyNamePrefix
     PUSH 0x5cab49                       ; 0040b9bd | = "%s%d"
-    MOV EBX,dword ptr [0x007bc034]      ; 0040b9c2 | g_FILE_PTR_007bc034
+    MOV EBX,dword ptr [0x007bc034]      ; 0040b9c2 | g_ActorDataFile
     PUSH EBX                            ; 0040b9c8
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0040b9c9
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)

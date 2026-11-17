@@ -18,7 +18,7 @@
 ;   TerminatedCString s_You_need_the_right_key_00587518
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CGame g_CGameInstance
-;   undefined4 g_CKeyActorActorType_01cc30a8.name_hash
+;   undefined4 g_CKeyActorClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -45,7 +45,7 @@ section .text
     JLE 0x004c3248                      ; 004c31cb
         ;   XREF to: 004c3248 (CONDITIONAL_JUMP)  ; LAB_004c3248
     MOV EBX,EDI                         ; 004c31d1
-    MOV EAX,[0x01cc30e0]                ; 004c31d3 | g_CKeyActorActorType_01cc30a8.name_hash
+    MOV EAX,[0x01cc30e0]                ; 004c31d3 | g_CKeyActorClassInfo.name_hash
         ;   Label: LAB_004c31d3
     PUSH EAX                            ; 004c31d8
     MOV EDX,dword ptr [EBX + 0xc]       ; 004c31d9

@@ -44,8 +44,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
     filter_index = 0;
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,7);
     core_dlight_cpp_CDemonLight_applyFilter_FUN_0044b600
-              (&this_ptr->light,CDemonFilter_ARRAY_007bc9ec + iVar4,filter_index,filter_pos_x,
-               filter_pos_y);
+              (&this_ptr->light,g_LightActorFilters + iVar4,filter_index,filter_pos_x,filter_pos_y);
     fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.15);
     this_ptr->flicker_timer = fVar2;
   }
@@ -66,9 +65,9 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
       (this_ptr->light).base.base.position.f.z = afStack_18[1];
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&CStack_94,&g_CVector3f_0265370c,&(this_ptr->light_orient).vec);
+              (&CStack_94,&g_ZeroVector,&(this_ptr->light_orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&CStack_64,&g_CVector3f_0265370c,&(this_ptr->base).base.orient.vec);
+              (&CStack_64,&g_ZeroVector,&(this_ptr->base).base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&CStack_94,&CStack_64,&CStack_f4);
     pCVar5 = &CStack_f4;
     pCVar6 = &CStack_c4;

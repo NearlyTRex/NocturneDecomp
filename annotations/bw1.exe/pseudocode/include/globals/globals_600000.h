@@ -36,7 +36,7 @@ extern CCharacter_full_vtable g_CBassPlayerVTable;
 extern CCharacter_full_vtable g_CDrummerVTable;
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_00604e00;
+extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CFlameVTable;
@@ -120,7 +120,7 @@ extern CParticle_vtable g_CParticle_vtable_006045e0;
 extern CPod_vtable g_CPod_vtable_00604a34;
 
 // CQuaternion4f
-extern CQuaternion4f g_CQuaternion4f_006081e0;
+extern CQuaternion4f g_IdentityQuaternion;
 
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
@@ -147,7 +147,7 @@ extern CWeapon_full_vtable g_CTurretVTable;
 extern CWeapon_full_vtable g_CWeaponVTable;
 
 // SFontGlyph[224]
-extern SFontGlyph g_SFontGlyph_ARRAY_00608570[224];
+extern SFontGlyph g_FontTable[224];
 
 // TerminatedCString
 extern TerminatedCString g_CLeafVTable;
@@ -395,13 +395,13 @@ extern WatcomTypeInfo g_CYowTypeInfo;
 extern WatcomTypeInfo g_CZombieTypeInfo;
 
 // int
-extern int g_INT_00608528;
+extern int g_DefaultStreamBufferSize;
 extern int g_INT_0060852e;
 
 // short
-extern short g_SHORT_0060852c;
+extern short g_DaysInMonth_Normal;
 extern short g_SHORT_00608544;
-extern short g_SHORT_00608546;
+extern short g_DaysInMonth_Leap;
 
 // void*
 extern void* g_SPageResourceVTable;

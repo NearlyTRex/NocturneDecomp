@@ -37,8 +37,8 @@ void __cdecl engine_mini3d_cpp_updateTransform_FUN_004f3740(void)
     g_FLOAT_01d167e4 =
          (fVar1 * g_FLOAT_01d167b4 - *(float *)(g_PTR_01d09918 + 0x28) * g_FLOAT_01d167c4) -
          *(float *)(g_PTR_01d09918 + 0x2c) * g_FLOAT_01d167d4;
-    if ((g_PTR_0264bc84 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-      (*(code *)g_PTR_0264bc84)(&g_FLOAT_01d167ac,g_FLOAT_01d098cc,g_FLOAT_01d098d0);
+    if ((g_APIDLL_lockHoldBuffer != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+      (*(code *)g_APIDLL_lockHoldBuffer)(&g_FLOAT_01d167ac,g_FLOAT_01d098cc,g_FLOAT_01d098d0);
       g_INT_01d0c398 = 0;
       return;
     }

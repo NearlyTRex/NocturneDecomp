@@ -42,7 +42,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDracula
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (g_CFireEffect_PTR_0061c010,&CStack_4c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_4c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
     iStack_14 = 1;
   }

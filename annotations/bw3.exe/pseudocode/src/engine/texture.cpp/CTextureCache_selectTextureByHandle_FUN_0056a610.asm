@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   void* g_PTR_02cf60e4
+;   void* g_APIDLL_setFog
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -42,7 +42,7 @@ section .text
     PUSH 0x0                            ; 0056a640
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x60] ; 0056a642
     PUSH EDX                            ; 0056a646
-    CALL dword ptr [0x02cf60e4]         ; 0056a647 | g_PTR_02cf60e4
+    CALL dword ptr [0x02cf60e4]         ; 0056a647 | g_APIDLL_setFog
     ADD ESP,0x8                         ; 0056a64d
     POP EBP                             ; 0056a650
     POP EBX                             ; 0056a651

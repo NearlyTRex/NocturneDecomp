@@ -15,7 +15,7 @@
 ;   TerminatedCString s_setNextSfxUserData_inval_00593406
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_INT_02dc1b74
+;   int g_SfxLastSlot
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -33,7 +33,7 @@ section .text
     CMP EBX,0x2                         ; 00526159
     JGE 0x00526184                      ; 0052615c
         ;   XREF to: 00526184 (CONDITIONAL_JUMP)  ; LAB_00526184
-    MOV EDX,dword ptr [0x02dc1b74]      ; 0052615e | g_INT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 0052615e | g_SfxLastSlot
         ;   Label: LAB_0052615e
     LEA EAX,[EDX*0x4 + 0x0]             ; 00526164
     SUB EAX,EDX                         ; 0052616b

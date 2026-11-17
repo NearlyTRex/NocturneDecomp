@@ -98,8 +98,8 @@ CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_ctor_FUN_004415f0(CAscii
 int __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00441610(CAsciiUnarmor *this_ptr,void *istream,void *ostream);
 CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00441660(CCheesyCipher *this_ptr,int mode,uint key);
 void __cdecl support_codec_cpp_CCheesyCipher_setMode_FUN_004416a0(CCheesyCipher *this_ptr,int mode);
-void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_004416b0(CCheesyCipher *this_ptr,uint param_2);
-uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2);
+void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_004416b0(CCheesyCipher *this_ptr,uint key);
+uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte value);
 int __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,void *istream,void *ostream);
 void __cdecl support_codec_cpp_CCheesyCipher_advanceKey_FUN_004417d0(CCheesyCipher *this_ptr);
 CInStreamPipe * __cdecl support_codec_cpp_CInStreamPipe_ctor_FUN_004417f0(CInStreamPipe *this_ptr);
@@ -141,7 +141,7 @@ int __cdecl core_construc_cpp_CConstruct_getTargetPoints_FUN_00444010(CConstruct
 void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_ptr);
 CVector3f * __stack_esi core_construc_cpp_CConstruct_getEffectivePosition_FUN_00444340(CConstruct *this_ptr,CVector3f *out_position);
 void __cdecl core_construc_cpp_CConstruct_startRecombine_FUN_004443d0(CConstruct *this_ptr);
-ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_004444c0(CConstruct *this_ptr,SCollisionInfo *param_2);
+ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_004444c0(CConstruct *this_ptr,SCollisionInfo *collision_info);
 EDeathState __cdecl core_construc_cpp_CConstruct_getDeathState_FUN_004444f0(CConstruct *this_ptr);
 CConstructBone * __cdecl core_construc_cpp_factoryFuncConstructBone_FUN_00444520(void);
 CDemonActorType * __cdecl core_construc_cpp_CConstructBone_getActorType_FUN_00444540(CConstructBone *this_ptr);
@@ -154,7 +154,7 @@ CConstructBone * __cdecl core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CCon
 CConstruct * __cdecl core_construc_cpp_CConstruct_dtor_FUN_00444780(CConstruct *this_ptr,uint flags);
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004448d0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004448f0(CCourse *this_ptr,uint flags);
-void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00444910(CCourse *this_ptr,int param_2);
+void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00444910(CCourse *this_ptr,int count);
 void __cdecl core_course_cpp_CCourse_load_FUN_00444970(CCourse *this_ptr,char *filename);
 void __cdecl core_course_cpp_CCourse_free_FUN_00444aa0(CCourse *this_ptr);
 void __cdecl core_course_cpp_CCourse_evaluate_FUN_00444ac0(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);

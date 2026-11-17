@@ -11,16 +11,16 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
-;   uint g_UINT_006b0264
-;   uint g_UINT_006b0268
-;   undefined4 g_INT_ARRAY_006b029c[19]
-;   undefined4 g_INT_ARRAY_006b029c[20]
-;   undefined4 g_INT_ARRAY_006b029c[21]
-;   undefined4 g_INT_ARRAY_006b029c[22]
-;   undefined4 g_INT_ARRAY_006b029c[23]
-;   int g_INT_01c039dc
-;   int g_INT_01c039e0
-;   int g_INT_01c039e4
+;   uint g_ProcessedVertexOffset
+;   uint g_ProcessedVertexBackupOffset
+;   undefined4 g_ProcessedVertexIndices[19]
+;   undefined4 g_ProcessedVertexIndices[20]
+;   undefined4 g_ProcessedVertexIndices[21]
+;   undefined4 g_ProcessedVertexIndices[22]
+;   undefined4 g_ProcessedVertexIndices[23]
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 004059c1
     PUSH EDI                            ; 004059c2
     PUSH EBP                            ; 004059c3
-    MOV EDI,dword ptr [0x006b0264]      ; 004059c4 | g_UINT_006b0264
+    MOV EDI,dword ptr [0x006b0264]      ; 004059c4 | g_ProcessedVertexOffset
     MOV ESI,dword ptr [ESP + 0x14]      ; 004059ca
     MOV EDX,dword ptr [ESI + 0x18]      ; 004059ce
     ADD EDX,EDI                         ; 004059d1
@@ -61,18 +61,18 @@ section .text
     CMP EDX,EBP                         ; 00405a0f
     JL 0x004059f4                       ; 00405a11
         ;   XREF to: 004059f4 (CONDITIONAL_JUMP)  ; LAB_004059f4
-    MOV EAX,[0x006b0268]                ; 00405a13 | g_UINT_006b0268
+    MOV EAX,[0x006b0268]                ; 00405a13 | g_ProcessedVertexBackupOffset
         ;   Label: LAB_00405a13
     SHL EAX,0x5                         ; 00405a18
-    MOV dword ptr [EAX + 0x6b02e8],EBX  ; 00405a1b | g_INT_ARRAY_006b029c[19]
-    MOV EDX,dword ptr [0x01c039dc]      ; 00405a21 | g_INT_01c039dc
-    MOV dword ptr [EAX + 0x6b02ec],EDI  ; 00405a27 | g_INT_ARRAY_006b029c[20]
-    MOV dword ptr [EAX + 0x6b02f0],EDX  ; 00405a2d | g_INT_ARRAY_006b029c[21]
-    MOV EDX,dword ptr [0x01c039e0]      ; 00405a33 | g_INT_01c039e0
-    MOV dword ptr [EAX + 0x6b02f4],EDX  ; 00405a39 | g_INT_ARRAY_006b029c[22]
-    MOV EDX,dword ptr [0x01c039e4]      ; 00405a3f | g_INT_01c039e4
-    MOV dword ptr [EAX + 0x6b02f8],EDX  ; 00405a45 | g_INT_ARRAY_006b029c[23]
-    MOV dword ptr [0x006b0264],EDI      ; 00405a4b | g_UINT_006b0264
+    MOV dword ptr [EAX + 0x6b02e8],EBX  ; 00405a1b | g_ProcessedVertexIndices[19]
+    MOV EDX,dword ptr [0x01c039dc]      ; 00405a21 | g_LightDirectionX
+    MOV dword ptr [EAX + 0x6b02ec],EDI  ; 00405a27 | g_ProcessedVertexIndices[20]
+    MOV dword ptr [EAX + 0x6b02f0],EDX  ; 00405a2d | g_ProcessedVertexIndices[21]
+    MOV EDX,dword ptr [0x01c039e0]      ; 00405a33 | g_LightDirectionY
+    MOV dword ptr [EAX + 0x6b02f4],EDX  ; 00405a39 | g_ProcessedVertexIndices[22]
+    MOV EDX,dword ptr [0x01c039e4]      ; 00405a3f | g_LightDirectionZ
+    MOV dword ptr [EAX + 0x6b02f8],EDX  ; 00405a45 | g_ProcessedVertexIndices[23]
+    MOV dword ptr [0x006b0264],EDI      ; 00405a4b | g_ProcessedVertexOffset
     POP EBP                             ; 00405a51
     POP EDI                             ; 00405a52
     POP ESI                             ; 00405a53

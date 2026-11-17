@@ -27,11 +27,11 @@
 ;   int g_INT_005fba1c = 0xc8
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
 ;   int g_INT_01c5baec
-;   int g_INT_01c5bb40
-;   int g_INT_01c5bb44
+;   int g_EnabledTextColor
+;   int g_DisabledTextColor
 ;   int g_INT_01c5bb48
-;   int g_INT_01c5bb4c
-;   int g_INT_01c5bb50
+;   int g_ConfirmedSelectionColor
+;   int g_PickListSeparatorColor
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+1
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+2
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_00484474
     JLE 0x00484554                      ; 0048447c
         ;   XREF to: 00484554 (CONDITIONAL_JUMP)  ; LAB_00484554
-    MOV EAX,[0x01c5bb50]                ; 00484482 | g_INT_01c5bb50
+    MOV EAX,[0x01c5bb50]                ; 00484482 | g_PickListSeparatorColor
     MOV EBP,dword ptr [0x01c5baec]      ; 00484487 | g_INT_01c5baec
     MOV EDI,dword ptr [0x01c6b5c0]      ; 0048448d | g_INT_01c6b5c0
     TEST EBP,EBP                        ; 00484493
@@ -287,7 +287,7 @@ section .text
     TEST EBX,EBX                        ; 004846f5
     JZ 0x00484900                       ; 004846f7
         ;   XREF to: 00484900 (CONDITIONAL_JUMP)  ; LAB_00484900
-    MOV EAX,[0x01c5bb4c]                ; 004846fd | g_INT_01c5bb4c
+    MOV EAX,[0x01c5bb4c]                ; 004846fd | g_ConfirmedSelectionColor
     MOV EBX,dword ptr [ESP + 0x148]     ; 00484702
         ;   Label: LAB_00484702
     MOV EBP,dword ptr [ESP + 0x13c]     ; 00484709
@@ -377,7 +377,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x168]     ; 0048481f
     PUSH EBX                            ; 00484826
     MOV ECX,dword ptr [EAX + 0x190]     ; 00484827
-    MOV EAX,[0x01c5bb40]                ; 0048482d | g_INT_01c5bb40
+    MOV EAX,[0x01c5bb40]                ; 0048482d | g_EnabledTextColor
     PUSH ESI                            ; 00484832
     ADD EDI,ECX                         ; 00484833
     MOV dword ptr [ESP + 0x14c],EAX     ; 00484835
@@ -469,7 +469,7 @@ section .text
         ;   Label: LAB_00484926
     JMP 0x004847cb                      ; 0048492c
         ;   XREF to: 004847cb (UNCONDITIONAL_JUMP)  ; LAB_004847cb
-    MOV EAX,[0x01c5bb44]                ; 00484931 | g_INT_01c5bb44
+    MOV EAX,[0x01c5bb44]                ; 00484931 | g_DisabledTextColor
         ;   Label: LAB_00484931
     MOV dword ptr [ESP + 0x144],EAX     ; 00484936
     JMP 0x0048484c                      ; 0048493d

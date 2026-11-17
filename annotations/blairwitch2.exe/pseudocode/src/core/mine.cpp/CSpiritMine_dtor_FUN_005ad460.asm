@@ -36,7 +36,7 @@ section .text
     PUSH ESI                            ; 005ad475
     MOV dword ptr [EBX + 0x2b0],0x600f64 ; 005ad476 | g_CSpiritMineVTable
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005ad480
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005ad485
     PUSH ESI                            ; 005ad488
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005ad489

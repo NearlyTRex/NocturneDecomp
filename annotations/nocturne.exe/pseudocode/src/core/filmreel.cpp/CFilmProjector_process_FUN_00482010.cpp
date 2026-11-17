@@ -30,7 +30,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjecto
     this_ptr->reel_rotation = this_ptr->reel_rotation - delta_time * fVar1;
     if (this_ptr->prev_dest_state == 0) {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         ((this_ptr->base).dest_actor,g_CFilmReelActorType_01c08c8c.name_hash);
+                         ((this_ptr->base).dest_actor,g_CFilmReelClassInfo.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
         g_CurrentFilename = "..\\core\\filmreel.cpp";
         g_CurrentLineNumber = 286;
@@ -51,8 +51,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjecto
       }
     }
     if (this_ptr->key_reel == (this_ptr->base).dest_actor) {
-      core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                (g_CEventList_PTR_005b7650,this_ptr->key_event);
+      core_event_cpp_CEventList_executeCommands_FUN_0047ab70(g_CEventListPtr,this_ptr->key_event);
     }
   }
   this_ptr->prev_dest_state = (this_ptr->base).triggered;

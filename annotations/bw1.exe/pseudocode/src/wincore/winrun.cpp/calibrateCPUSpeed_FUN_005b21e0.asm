@@ -17,16 +17,16 @@
 ;   void* PTR_QueryPerformanceCounter_005d060c = 001d10b0
 ;   void* PTR_QueryPerformanceFrequency_005d0610 = 001d10ca
 ;   TerminatedCString s_Unable_to_set_timer_005f9c0a
-;   double g_DOUBLE_005f9c22 = 4294967296
+;   double g_RelatedToQPC3 = 4294967296
 ;   TerminatedCString s_Nocturne_005f9ea6
 ;   void* PTR_s_Nocturne_006260e0 = 005f9ea6
-;   int g_INT_01c51d08
-;   _struct_19 g_struct_19_02c9a5a8
-;   _struct_19 g_struct_19_02c9a5b0
-;   undefined4 g_struct_19_02c9a5b0.HighPart
-;   double g_DOUBLE_02c9a5b8
-;   int[1] g_INT_ARRAY_02c9a5c4
-;   HWND g_HWND_02c9be68
+;   int g_CalibratedCPUSpeed
+;   _struct_19 g_PerformanceCounter
+;   _struct_19 g_PerformanceFrequency
+;   undefined4 g_PerformanceFrequency.HighPart
+;   double g_TimerCalibration
+;   int[1] g_UseMultimediaTimer
+;   HWND g_MainWindowHandle
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -47,21 +47,21 @@ section .text
     PUSH EBP                            ; 005b21e3
     MOV EBP,ESP                         ; 005b21e4
     SUB ESP,0x10                        ; 005b21e6
-    PUSH 0x2c9a5b0                      ; 005b21e9 | g_struct_19_02c9a5b0
+    PUSH 0x2c9a5b0                      ; 005b21e9 | g_PerformanceFrequency
     CALL dword ptr CS:[0x5d0610]        ; 005b21ee | PTR_QueryPerformanceFrequency_005d0610
     CMP EAX,0x1                         ; 005b21f5
     JNZ 0x005b23ba                      ; 005b21f8
         ;   XREF to: 005b23ba (CONDITIONAL_JUMP)  ; LAB_005b23ba
-    FILD dword ptr [0x02c9a5b4]         ; 005b21fe | g_struct_19_02c9a5b0.HighPart
-    FMUL double ptr [0x005f9c22]        ; 005b2204 | g_DOUBLE_005f9c22
+    FILD dword ptr [0x02c9a5b4]         ; 005b21fe | g_PerformanceFrequency.HighPart
+    FMUL double ptr [0x005f9c22]        ; 005b2204 | g_RelatedToQPC3
     XOR EDX,EDX                         ; 005b220a
-    MOV EAX,[0x02c9a5b0]                ; 005b220c | g_struct_19_02c9a5b0
+    MOV EAX,[0x02c9a5b0]                ; 005b220c | g_PerformanceFrequency
     MOV dword ptr [EBP + -0xc],EDX      ; 005b2211
     MOV dword ptr [EBP + -0x10],EAX     ; 005b2214
     FILD qword ptr [EBP + -0x10]        ; 005b2217
     FADDP                               ; 005b221a
-    PUSH 0x2c9a5a8                      ; 005b221c | g_struct_19_02c9a5a8
-    FSTP double ptr [0x02c9a5b8]        ; 005b2221 | g_DOUBLE_02c9a5b8
+    PUSH 0x2c9a5a8                      ; 005b221c | g_PerformanceCounter
+    FSTP double ptr [0x02c9a5b8]        ; 005b2221 | g_TimerCalibration
     CALL dword ptr CS:[0x5d060c]        ; 005b2227 | PTR_QueryPerformanceCounter_005d060c
     XOR EAX,EAX                         ; 005b222e
         ;   Label: LAB_005b222e
@@ -195,7 +195,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0x8]      ; 005b23a6
     SAR EDX,0x1f                        ; 005b23a9
     IDIV ECX                            ; 005b23ac
-    MOV [0x01c51d08],EAX                ; 005b23ae | g_INT_01c51d08
+    MOV [0x01c51d08],EAX                ; 005b23ae | g_CalibratedCPUSpeed
     MOV ESP,EBP                         ; 005b23b3
     POP EBP                             ; 005b23b5
     POP EDI                             ; 005b23b6
@@ -205,7 +205,7 @@ section .text
     MOV ECX,0x1                         ; 005b23ba
         ;   Label: LAB_005b23ba
     PUSH ECX                            ; 005b23bf
-    MOV dword ptr [0x02c9a5c4],ECX      ; 005b23c0 | g_INT_ARRAY_02c9a5c4
+    MOV dword ptr [0x02c9a5c4],ECX      ; 005b23c0 | g_UseMultimediaTimer
     CALL dword ptr CS:[0x5d0450]        ; 005b23c6 | PTR_timeBeginPeriod_005d0450
     TEST EAX,EAX                        ; 005b23cd
     JZ 0x005b222e                       ; 005b23cf
@@ -214,13 +214,13 @@ section .text
     MOV EBX,dword ptr [0x006260e0]      ; 005b23d7 | PTR_s_Nocturne_006260e0
     PUSH EBX                            ; 005b23dd | = "Nocturne"
     PUSH 0x5f9c0a                       ; 005b23de | = "Unable to set timer"
-    MOV ESI,dword ptr [0x02c9be68]      ; 005b23e3 | g_HWND_02c9be68
+    MOV ESI,dword ptr [0x02c9be68]      ; 005b23e3 | g_MainWindowHandle
     PUSH ESI                            ; 005b23e9
     CALL dword ptr CS:[0x5d04dc]        ; 005b23ea | PTR_MessageBoxA_005d04dc
     CMP EAX,0x2                         ; 005b23f1
     JNZ 0x005b222e                      ; 005b23f4
         ;   XREF to: 005b222e (CONDITIONAL_JUMP)  ; LAB_005b222e
-    MOV dword ptr [0x02c9be70],0x1      ; 005b23fa | g_INT_02c9be70
+    MOV dword ptr [0x02c9be70],0x1      ; 005b23fa | g_InputDisabled
     JMP 0x005b222e                      ; 005b2404
         ;   XREF to: 005b222e (UNCONDITIONAL_JUMP)  ; LAB_005b222e
 

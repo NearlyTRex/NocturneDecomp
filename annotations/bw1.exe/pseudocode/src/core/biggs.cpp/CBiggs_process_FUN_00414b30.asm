@@ -11,7 +11,7 @@
 ;   TerminatedCString s_s_confused_while_walking_005d3c27
 ;   float g_FLOAT_005fc5c0 = 4
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
@@ -225,7 +225,7 @@ section .text
     ADD ESP,0x8                         ; 00414d35
     LEA EAX,[EBX + 0xd018]              ; 00414d38
     PUSH EAX                            ; 00414d3e
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00414d3f | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00414d3f | g_CEventListPtr
     PUSH ECX                            ; 00414d45
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00414d46
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

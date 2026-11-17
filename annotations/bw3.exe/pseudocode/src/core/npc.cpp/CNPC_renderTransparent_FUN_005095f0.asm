@@ -19,9 +19,9 @@
 ;   double g_DOUBLE_005cb5e0 = 0.0000158730158730159
 ;   double g_DOUBLE_005cb5e8 = -2535
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01d8e40c
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -166,7 +166,7 @@ section .text
     PUSH EDX                            ; 0050975d | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 ; 0050975e
         ;   XREF to: 0046e4e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer * this_ptr)
-    MOV ECX,dword ptr [0x01d8e40c]      ; 00509763 | g_INT_01d8e40c
+    MOV ECX,dword ptr [0x01d8e40c]      ; 00509763 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 00509769
     TEST ECX,ECX                        ; 0050976c
     JZ 0x0050977a                       ; 0050976e
@@ -208,7 +208,7 @@ section .text
     RET                                 ; 005097b6
     PUSH 0x5cb5c3                       ; 005097b7 | = "heroCanSee"
         ;   Label: LAB_005097b7
-    MOV EAX,[0x005fba60]                ; 005097bc | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 005097bc | g_CEventListPtr
     PUSH EAX                            ; 005097c1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005097c2
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005c2238 = 0.100000000000000
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   CKeys* g_CKeysPtr = 01d70a78
 ;   void* g_PTR_01d70a78
 ;
 ; *****************************************************************************
@@ -26,7 +26,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004b4f07
     MOV EBX,dword ptr [EBP + 0xc]       ; 004b4f0a
     PUSH 0x1d                           ; 004b4f0d
-    MOV EAX,[0x00600284]                ; 004b4f0f | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4f0f | g_CKeysPtr
     PUSH EAX                            ; 004b4f14 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4f15 | g_PTR_01d70a78
     CALL dword ptr [EDX]                ; 004b4f17
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_004b4f2e
     PUSH 0x38                           ; 004b4f34
     MOV dword ptr [ESP + 0x4],EAX       ; 004b4f36
-    MOV EAX,[0x00600284]                ; 004b4f3a | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4f3a | g_CKeysPtr
     PUSH EAX                            ; 004b4f3f | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4f40 | g_PTR_01d70a78
     CALL dword ptr [EDX]                ; 004b4f42
@@ -61,7 +61,7 @@ section .text
     FSTP float ptr [ESP]                ; 004b4f58
     PUSH 0x4b                           ; 004b4f5b
         ;   Label: LAB_004b4f5b
-    MOV EAX,[0x00600284]                ; 004b4f5d | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4f5d | g_CKeysPtr
     PUSH EAX                            ; 004b4f62 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4f63 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004b4f65
@@ -75,7 +75,7 @@ section .text
     FSTP float ptr [EAX]                ; 004b4f7a
     PUSH 0x4d                           ; 004b4f7c
         ;   Label: LAB_004b4f7c
-    MOV EAX,[0x00600284]                ; 004b4f7e | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4f7e | g_CKeysPtr
     PUSH EAX                            ; 004b4f83 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4f84 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004b4f86
@@ -89,7 +89,7 @@ section .text
     FSTP float ptr [EAX]                ; 004b4f9b
     PUSH 0x48                           ; 004b4f9d
         ;   Label: LAB_004b4f9d
-    MOV EAX,[0x00600284]                ; 004b4f9f | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4f9f | g_CKeysPtr
     PUSH EAX                            ; 004b4fa4 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4fa5 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004b4fa7
@@ -103,7 +103,7 @@ section .text
     FSTP float ptr [EAX + 0x8]          ; 004b4fbd
     PUSH 0x50                           ; 004b4fc0
         ;   Label: LAB_004b4fc0
-    MOV EAX,[0x00600284]                ; 004b4fc2 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4fc2 | g_CKeysPtr
     PUSH EAX                            ; 004b4fc7 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4fc8 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004b4fca
@@ -117,7 +117,7 @@ section .text
     FSTP float ptr [EAX + 0x8]          ; 004b4fe0
     PUSH 0x1e                           ; 004b4fe3
         ;   Label: LAB_004b4fe3
-    MOV EAX,[0x00600284]                ; 004b4fe5 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b4fe5 | g_CKeysPtr
     PUSH EAX                            ; 004b4fea | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b4feb | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004b4fed
@@ -131,7 +131,7 @@ section .text
     FSTP float ptr [EAX + 0x4]          ; 004b5003
     PUSH 0x10                           ; 004b5006
         ;   Label: LAB_004b5006
-    MOV EAX,[0x00600284]                ; 004b5008 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004b5008 | g_CKeysPtr
     PUSH EAX                            ; 004b500d | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004b500e | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004b5010

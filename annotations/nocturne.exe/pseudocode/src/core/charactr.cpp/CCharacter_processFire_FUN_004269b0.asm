@@ -37,8 +37,8 @@
 ;   double DOUBLE_00579ffa = 0.5
 ;   float FLOAT_0059b08c = 2
 ;   float FLOAT_0059b090 = 3
-;   float[100] g_FLOAT_ARRAY_00765aa0
-;   undefined4 g_FLOAT_ARRAY_00765aa0[1]
+;   float[100] g_BoneBurnIntensity
+;   undefined4 g_BoneBurnIntensity[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -99,7 +99,7 @@ section .text
     XOR EAX,EAX                         ; 00426a17
     XOR ECX,ECX                         ; 00426a19
         ;   Label: LAB_00426a19
-    MOV dword ptr [EAX + 0x765aa0],ECX  ; 00426a1b | g_FLOAT_ARRAY_00765aa0 | g_FLOAT_ARRAY_00765aa0[1]
+    MOV dword ptr [EAX + 0x765aa0],ECX  ; 00426a1b | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
     INC EDX                             ; 00426a21
     MOV ECX,dword ptr [ESI + 0x28558]   ; 00426a22
     ADD EAX,0x4                         ; 00426a28
@@ -120,12 +120,12 @@ section .text
         ;   Label: LAB_00426a4a
     MOV EDX,dword ptr [ESI + 0x2f18]    ; 00426a50
     FMUL ST1                            ; 00426a56
-    FLD float ptr [EDX*0x4 + 0x765aa0]  ; 00426a58 | g_FLOAT_ARRAY_00765aa0
+    FLD float ptr [EDX*0x4 + 0x765aa0]  ; 00426a58 | g_BoneBurnIntensity
     FLD ST3                             ; 00426a5f
     FDIVP ST2,ST0                       ; 00426a61
     FADDP                               ; 00426a63
     INC EAX                             ; 00426a65
-    FSTP float ptr [EDX*0x4 + 0x765aa0] ; 00426a66 | g_FLOAT_ARRAY_00765aa0
+    FSTP float ptr [EDX*0x4 + 0x765aa0] ; 00426a66 | g_BoneBurnIntensity
     MOV EDX,dword ptr [EBX + 0x2f08]    ; 00426a6d
     ADD ESI,0x18                        ; 00426a73
     CMP EAX,EDX                         ; 00426a76
@@ -145,7 +145,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDI      ; 00426a9c
     MOV dword ptr [ESP + 0x24],EAX      ; 00426aa0
     XOR EDI,EDI                         ; 00426aa4
-    FLD float ptr [EDI + 0x765aa0]      ; 00426aa6 | g_FLOAT_ARRAY_00765aa0 | g_FLOAT_ARRAY_00765aa0[1]
+    FLD float ptr [EDI + 0x765aa0]      ; 00426aa6 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
         ;   Label: LAB_00426aa6
     FCOMP double ptr [0x00579fda]       ; 00426aac | DOUBLE_00579fda
     FNSTSW AX                           ; 00426ab2

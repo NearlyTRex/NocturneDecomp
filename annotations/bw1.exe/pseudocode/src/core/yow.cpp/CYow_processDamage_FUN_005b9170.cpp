@@ -2,11 +2,11 @@
 // Address: 005b9170
 // Address Range: [[005b9170, 005b927e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *param_2)
+// Signature: void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *param_2)
+void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -16,8 +16,8 @@ void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamage
   uint uVar4;
   int iVar5;
   
-  core_yow_cpp_CYow_processDismemberment_FUN_005b8eb0(this_ptr,param_2);
-  fVar1 = (this_ptr->base).base.hit_points - param_2->damage_amount;
+  core_yow_cpp_CYow_processDismemberment_FUN_005b8eb0(this_ptr,damage_info);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
@@ -46,6 +46,6 @@ void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamage
   uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"dog-damage?.wav");
   this_ptr->sfx_handle = uVar4;
-  core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,param_2);
+  core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   return;
 }

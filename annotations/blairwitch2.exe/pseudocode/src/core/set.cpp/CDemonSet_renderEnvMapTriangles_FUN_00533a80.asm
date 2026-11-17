@@ -44,11 +44,11 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005fb210 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   int g_INT_006141d8 = 0xff
+;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 01cb6900
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061b8c4
+;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;   float g_FLOAT_0200e890
 ;   undefined4 DAT_0200e894
@@ -79,7 +79,7 @@ section .text
     MOV EBP,ESP                         ; 00533a84
     SUB ESP,0x108                       ; 00533a86
     AND ESP,0xfffffff8                  ; 00533a8c
-    PUSH 0x61b8c4                       ; 00533a8f | g_SMRGLTextureBasic_0061b8c4
+    PUSH 0x61b8c4                       ; 00533a8f | g_EnvMapTexture
     MOV EDX,dword ptr [0x0060b280]      ; 00533a94 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 00533a9a | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 00533a9b
@@ -90,7 +90,7 @@ section .text
     CMP ECX,0x2                         ; 00533aae
     JNZ 0x00533e42                      ; 00533ab1
         ;   XREF to: 00533e42 (CONDITIONAL_JUMP)  ; LAB_00533e42
-    MOV EAX,[0x006141d8]                ; 00533ab7 | g_INT_006141d8
+    MOV EAX,[0x006141d8]                ; 00533ab7 | g_CurrentAlphaValue
     SHL EAX,0x8                         ; 00533abc
     MOV dword ptr [EBP + 0x20],EAX      ; 00533abf
     MOV EAX,[0x0060b280]                ; 00533ac2 | g_CDemonRenderer_PTR_0060b280
@@ -363,7 +363,7 @@ section .text
     RET                                 ; 00533e41
     MOV EAX,0xffff                      ; 00533e42
         ;   Label: LAB_00533e42
-    MOV EBX,dword ptr [0x01c38aec]      ; 00533e47 | g_INT_01c38aec
+    MOV EBX,dword ptr [0x01c38aec]      ; 00533e47 | g_PerspectiveReciprocal
     MOV EDX,dword ptr [EBP + 0x20]      ; 00533e4d
     SUB EAX,EBX                         ; 00533e50
     IMUL EDX                            ; 00533e52

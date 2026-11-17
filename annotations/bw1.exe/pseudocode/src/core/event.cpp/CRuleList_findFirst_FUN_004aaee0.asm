@@ -10,7 +10,7 @@
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004aaf30 at 004aaf35
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
@@ -33,7 +33,7 @@ section .text
     LEA ESI,[EDI + 0x4]                 ; 004aaef0
     PUSH ESI                            ; 004aaef3
         ;   Label: LAB_004aaef3
-    MOV EBP,dword ptr [0x0061b4d0]      ; 004aaef4 | g_CEventList_PTR_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 004aaef4 | g_CEventListPtr
     PUSH EBP                            ; 004aaefa
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004aaefb
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

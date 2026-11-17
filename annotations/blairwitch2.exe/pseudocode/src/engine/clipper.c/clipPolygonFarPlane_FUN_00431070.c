@@ -27,7 +27,7 @@ void __cdecl engine_clipper_c_clipPolygonFarPlane_FUN_00431070(void)
   
   bVar13 = 0;
   iVar8 = 0;
-  if (g_INT_00609b34 != 0) {
+  if (g_FarPlaneDistance != 0) {
     if (0 < g_INT_007bee30) {
       iVar6 = 0;
       do {
@@ -39,7 +39,7 @@ void __cdecl engine_clipper_c_clipPolygonFarPlane_FUN_00431070(void)
         iVar6 = iVar6 + 0x30;
       } while (iVar6 < g_INT_007bee30 * 0x30);
     }
-    if (g_INT_00609b34 <= iVar8) {
+    if (g_FarPlaneDistance <= iVar8) {
       g_INT_007bf4b4 = g_INT_007bee30;
       pSVar9 = g_SRenderVertex_ARRAY_007bee34;
       pSVar10 = g_SRenderVertex_ARRAY_007bf4b8;
@@ -69,9 +69,9 @@ void __cdecl engine_clipper_c_clipPolygonFarPlane_FUN_00431070(void)
           if (uVar7 == g_INT_007bf4b4) {
             uVar7 = uVar7 ^ g_INT_007bf4b4;
           }
-          bVar5 = g_INT_00609b34 <= (pSVar9->projected_vertex).transformed_z;
-          if (g_INT_00609b34 <= g_SRenderVertex_ARRAY_007bf4b8[uVar7].projected_vertex.transformed_z
-             ) {
+          bVar5 = g_FarPlaneDistance <= (pSVar9->projected_vertex).transformed_z;
+          if (g_FarPlaneDistance <=
+              g_SRenderVertex_ARRAY_007bf4b8[uVar7].projected_vertex.transformed_z) {
             bVar5 = bVar5 | 2;
           }
           switch(bVar5) {

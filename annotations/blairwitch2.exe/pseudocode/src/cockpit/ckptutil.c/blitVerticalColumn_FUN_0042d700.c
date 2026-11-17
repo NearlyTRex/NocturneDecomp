@@ -23,7 +23,7 @@ void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042d700(void *sprite_dat
       if (start_y < end_y) {
         do {
           iVar3 = g_INT_006141b8 * start_y;
-          piVar1 = (int *)((int)g_ARRAY_PTR_01c2a38c + iVar4);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
           iVar4 = iVar4 + 4;
           start_y = start_y + 1;
           (*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);
@@ -34,7 +34,7 @@ void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042d700(void *sprite_dat
     else if (start_y < end_y) {
       do {
         iVar3 = g_INT_006141b8 * start_y;
-        piVar1 = (int *)((int)g_ARRAY_PTR_01c2a38c + iVar4);
+        piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
         iVar4 = iVar4 + 4;
         start_y = start_y + 1;
         (*pCVar2)((void *)(*piVar1 + start_x * 2),(void *)(iVar3 + start_x + (int)sprite_data),count

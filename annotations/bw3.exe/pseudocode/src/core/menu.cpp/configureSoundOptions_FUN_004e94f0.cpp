@@ -477,9 +477,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004e94f0(void)
       } while (cVar1 != '\0');
       iVar7 = iVar3 + 5;
     }
-    g_INT_01d737e0 = g_INT_01d737e0 + g_INT_01c5fad0 * 0x18;
-    if (0x7ffff < g_INT_01d737e0) {
-      g_INT_01d737e0 = g_INT_01d737e0 + -0x80000;
+    g_AudioVisualizationCounter = g_AudioVisualizationCounter + g_GlobalDeltaTimeInt * 0x18;
+    if (0x7ffff < g_AudioVisualizationCounter) {
+      g_AudioVisualizationCounter = g_AudioVisualizationCounter + -0x80000;
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Sound Options");
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860
@@ -704,7 +704,7 @@ LAB_004ea121:
       sound_sndmain_cpp_initializeSoundDevice_FUN_00558730();
       core_sound_cpp_CSound_configure_FUN_005607d0(g_CSound_PTR_006045f8);
     }
-    iVar3 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) {
       return;
     }

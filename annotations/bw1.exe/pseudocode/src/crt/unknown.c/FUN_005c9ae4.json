@@ -64,13 +64,13 @@
   "globals": [
     {
       "addr": "0060852a",
-      "name": "g_INT_00608528+2",
+      "name": "g_DefaultStreamBufferSize+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060852c",
-      "name": "g_SHORT_0060852c",
+      "name": "g_DaysInMonth_Normal",
       "type": "short",
       "value": "0x0"
     },
@@ -88,37 +88,37 @@
     },
     {
       "addr": "00608546",
-      "name": "g_SHORT_00608546",
+      "name": "g_DaysInMonth_Leap",
       "type": "short",
       "value": "0x0"
     },
     {
       "addr": "00626844",
-      "name": "g_dst_rule_00626844",
+      "name": "g_DstStartRule",
       "type": "dst_rule",
       "value": null
     },
     {
       "addr": "00626850",
-      "name": "g_dst_rule_00626844.day",
+      "name": "g_DstStartRule.day",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00626854",
-      "name": "g_dst_rule_00626844.month",
+      "name": "g_DstStartRule.month",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0062685c",
-      "name": "g_dst_rule_00626844.day_of_year",
+      "name": "g_DstStartRule.day_of_year",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00626860",
-      "name": "g_dst_rule_00626844.rule_type",
+      "name": "g_DstStartRule.rule_type",
       "type": "undefined4",
       "value": null
     },
@@ -130,7 +130,7 @@
     },
     {
       "addr": "00626868",
-      "name": "g_INT_00626868",
+      "name": "g_DstTransitionSecond",
       "type": "int",
       "value": "0x0"
     },
@@ -348,7 +348,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&g_dst_rule_00626844,&g_INT_00626868,*(uint *)(param_1 + 0x14));",
+      "text": "(&g_DstStartRule,&g_DstTransitionSecond,*(uint *)(param_1 + 0x14));",
       "type": "unnamed_param"
     },
     {
@@ -520,23 +520,23 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_0060852c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_0060852e (at 0x0060852e, +2 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_0060852e (at 0x0060852e, +2 bytes).",
       "line": 31,
-      "match": "g_SHORT_0060852c",
+      "match": "g_DaysInMonth_Normal",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_SHORT_0060852c + iVar5);",
+      "text": "iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_00608546 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SFontGlyph_ARRAY_00608570 (at 0x00608570, +42 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FontTable (at 0x00608570, +42 bytes).",
       "line": 35,
-      "match": "g_SHORT_00608546",
+      "match": "g_DaysInMonth_Leap",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_SHORT_00608546 + iVar5);",
+      "text": "iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_00608544 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SHORT_00608546 (at 0x00608546, +2 bytes).",
+      "description": "Cast-and-add on &g_SHORT_00608544 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x00608546, +2 bytes).",
       "line": 36,
       "match": "g_SHORT_00608544",
       "severity": "moderate",
@@ -544,11 +544,11 @@
       "type": "suspicious_cast"
     },
     {
-      "description": "Pointer value `&g_INT_00608528` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_DefaultStreamBufferSize` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 32,
-      "match": "(int)&g_INT_00608528",
+      "match": "(int)&g_DefaultStreamBufferSize",
       "severity": "moderate",
-      "text": "iVar4 = *(int *)((int)&g_INT_00608528 + iVar5 * 2 + 2);",
+      "text": "iVar4 = *(int *)((int)&g_DefaultStreamBufferSize + iVar5 * 2 + 2);",
       "type": "pointer_truncation"
     },
     {
@@ -572,7 +572,7 @@
       "line": 32,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar4 = *(int *)((int)&g_INT_00608528 + iVar5 * 2 + 2);",
+      "text": "iVar4 = *(int *)((int)&g_DefaultStreamBufferSize + iVar5 * 2 + 2);",
       "type": "pointer_cast"
     },
     {

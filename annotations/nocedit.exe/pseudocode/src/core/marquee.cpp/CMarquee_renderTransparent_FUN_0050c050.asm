@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic SMRGLTextureBasic_0067d150
+;   SMRGLTextureBasic g_MarqueeSparkTexture
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CDemonMissionInstance.is_in_editor
@@ -72,7 +72,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0050c092
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050c097
-    PUSH 0x67d150                       ; 0050c09a | SMRGLTextureBasic_0067d150
+    PUSH 0x67d150                       ; 0050c09a | g_MarqueeSparkTexture
     MOV EDI,dword ptr [0x006703ec]      ; 0050c09f | g_CDemonRendererPtr2
     PUSH EDI                            ; 0050c0a5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0050c0a6

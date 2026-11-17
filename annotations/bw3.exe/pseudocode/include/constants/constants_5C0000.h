@@ -3150,28 +3150,28 @@ static TerminatedCString s_Bip01_Spine2_005cfffb = "Bip01 Spine2";
 static char g_CHAR_ARRAY_005ce65f[2048] = ".set";
 
 // char[50] constants
-static char g_CHAR_ARRAY_005c2bf1[50] = {
+static char g_CheatStr_AutoAim[50] = {
     (char)0x1C, (char)0x60, (char)0x22, (char)0x93, (char)0x84, (char)0x16, (char)0x06, (char)0x6A, (char)0x14, (char)0xF6, (char)0x64, (char)0x31,
     (char)0xD7, (char)0x8F, (char)0xBF, (char)0x2C, (char)0xDB, (char)0xF4, (char)0x1F, (char)0x5C, (char)0x2D, (char)0x06, (char)0x23, (char)0xD8,
     (char)0xA3, (char)0xCB, (char)0x2B, (char)0xD5, (char)0x1F, (char)0xFE, (char)0x5E, (char)0x92, (char)0x1C, (char)0xCE, (char)0x2C, (char)0xD9,
     (char)0x5F, (char)0x77, (char)0xF7, (char)0x44, (char)0xE3, (char)0xDC, (char)0xC7, (char)0x04, (char)0xB5, (char)0xEE, (char)0x7C, (char)0x7D,
     (char)0xC2, (char)0x00
 };
-static char g_CHAR_ARRAY_005c30f7[50] = {
+static char g_CheatStr_TimeFactor[50] = {
     (char)0xFA, (char)0x11, (char)0xC4, (char)0xAD, (char)0xB6, (char)0x2C, (char)0xC8, (char)0xAC, (char)0x26, (char)0xFC, (char)0x82, (char)0x5F,
     (char)0x65, (char)0xE5, (char)0x81, (char)0xAA, (char)0xC9, (char)0x0E, (char)0xF9, (char)0xC2, (char)0xFF, (char)0x9C, (char)0x6D, (char)0x8B,
     (char)0xED, (char)0x58, (char)0xC7, (char)0xFB, (char)0x0D, (char)0x54, (char)0xC0, (char)0x94, (char)0xEE, (char)0x94, (char)0x0A, (char)0x27,
     (char)0xAD, (char)0x0D, (char)0xB9, (char)0x82, (char)0x91, (char)0xD6, (char)0x61, (char)0xAA, (char)0xC7, (char)0xC4, (char)0x02, (char)0xFB,
     (char)0xD0, (char)0x00
 };
-static char g_CHAR_ARRAY_005c32af[50] = {
+static char g_CheatStr_ResetEffects[50] = {
     (char)0x92, (char)0xB1, (char)0xAC, (char)0xF5, (char)0xDE, (char)0x24, (char)0xD0, (char)0xE4, (char)0x1E, (char)0x44, (char)0x3A, (char)0x17,
     (char)0x3D, (char)0xDD, (char)0xA9, (char)0xD2, (char)0x21, (char)0x86, (char)0x11, (char)0xFA, (char)0x57, (char)0x94, (char)0x15, (char)0xD3,
     (char)0x3D, (char)0xDF, (char)0x51, (char)0x33, (char)0xF5, (char)0x4C, (char)0xE8, (char)0xCC, (char)0xC6, (char)0x1C, (char)0xA2, (char)0xFF,
     (char)0x05, (char)0x05, (char)0xA1, (char)0xCA, (char)0xE9, (char)0xAE, (char)0x99, (char)0x62, (char)0x9F, (char)0x3C, (char)0x6A, (char)0x43,
     (char)0xF8, (char)0x00
 };
-static char g_CHAR_ARRAY_005c32e1[50] = {
+static char g_CheatStr_SingleStep[50] = {
     (char)0xCC, (char)0x20, (char)0xF2, (char)0xA3, (char)0xD4, (char)0x86, (char)0xB6, (char)0x5A, (char)0x24, (char)0x46, (char)0xB4, (char)0x01,
     (char)0x87, (char)0x7F, (char)0xCF, (char)0x1C, (char)0x8B, (char)0x44, (char)0xAF, (char)0x4C, (char)0xDD, (char)0xF6, (char)0x73, (char)0xDA,
     (char)0x72, (char)0x4A, (char)0x44, (char)0xC5, (char)0x2F, (char)0x6E, (char)0x8E, (char)0x82, (char)0x2C, (char)0x5E, (char)0x7C, (char)0x29,
@@ -3180,42 +3180,42 @@ static char g_CHAR_ARRAY_005c32e1[50] = {
 };
 
 // char[51] constants
-static char g_CHAR_ARRAY_005c2a76[51] = {
+static char g_CheatStr_EventDebug[51] = {
     (char)0x55, (char)0xCD, (char)0x6B, (char)0xFC, (char)0x05, (char)0xD5, (char)0x1F, (char)0x8D, (char)0x45, (char)0xA5, (char)0x5D, (char)0xCE,
     (char)0xF6, (char)0x6C, (char)0xD6, (char)0x6B, (char)0x4A, (char)0x47, (char)0x96, (char)0x33, (char)0x6C, (char)0x85, (char)0x9A, (char)0x3B,
     (char)0x51, (char)0x69, (char)0x33, (char)0x1E, (char)0xA3, (char)0x05, (char)0xBC, (char)0x98, (char)0xBC, (char)0x16, (char)0x6C, (char)0x72,
     (char)0x4F, (char)0xB5, (char)0x75, (char)0x71, (char)0xBA, (char)0x19, (char)0xBE, (char)0xA9, (char)0xD2, (char)0xCF, (char)0x2C, (char)0xBA,
     (char)0xD3, (char)0x48, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2c40[51] = {
+static char g_CheatStr_MovieRecording[51] = {
     (char)0x87, (char)0x57, (char)0xB9, (char)0x92, (char)0xC3, (char)0x8F, (char)0x6D, (char)0x9B, (char)0x2B, (char)0x0F, (char)0x2F, (char)0x90,
     (char)0xF0, (char)0xE6, (char)0xC4, (char)0x3D, (char)0xF4, (char)0xFD, (char)0x24, (char)0x9D, (char)0x2A, (char)0x3F, (char)0x48, (char)0x45,
     (char)0xA6, (char)0x50, (char)0x26, (char)0xB1, (char)0x25, (char)0x0F, (char)0xCE, (char)0xEE, (char)0x62, (char)0x0C, (char)0x3E, (char)0x5C,
     (char)0x89, (char)0x6F, (char)0x47, (char)0x67, (char)0x14, (char)0xF3, (char)0x0C, (char)0x77, (char)0xD4, (char)0x45, (char)0x3E, (char)0xEC,
     (char)0xAD, (char)0x32, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2fe3[51] = {
+static char g_CheatStr_RaiseEvent[51] = {
     (char)0x16, (char)0x5A, (char)0x28, (char)0x01, (char)0xBA, (char)0x30, (char)0x2C, (char)0x18, (char)0x62, (char)0x28, (char)0x3E, (char)0x63,
     (char)0xD9, (char)0x69, (char)0x65, (char)0x9E, (char)0x8D, (char)0xFA, (char)0x95, (char)0x6E, (char)0xF3, (char)0xA0, (char)0x49, (char)0x19,
     (char)0x21, (char)0xA8, (char)0x4D, (char)0x62, (char)0xCC, (char)0xC0, (char)0xAF, (char)0x8D, (char)0xBB, (char)0x4B, (char)0x2F, (char)0x4F,
     (char)0xB0, (char)0x10, (char)0x86, (char)0x64, (char)0xDD, (char)0x14, (char)0x9D, (char)0x44, (char)0xBD, (char)0x4A, (char)0xDF, (char)0x8F,
     (char)0x14, (char)0xB5, (char)0x00
 };
-static char g_CHAR_ARRAY_005c3147[51] = {
+static char g_CheatStr_NoD3D[51] = {
     (char)0x8A, (char)0x5D, (char)0xB4, (char)0xDD, (char)0xA6, (char)0x7C, (char)0x58, (char)0x7C, (char)0xD6, (char)0x2C, (char)0x32, (char)0x0F,
     (char)0x75, (char)0x35, (char)0x31, (char)0x7A, (char)0xD9, (char)0x7E, (char)0x69, (char)0x92, (char)0x8F, (char)0xEC, (char)0x9D, (char)0x61,
     (char)0xFB, (char)0xA1, (char)0x21, (char)0x0F, (char)0x60, (char)0xBC, (char)0x5B, (char)0x69, (char)0x8F, (char)0xCF, (char)0xB3, (char)0x93,
     (char)0xAC, (char)0x5C, (char)0x32, (char)0x40, (char)0xA9, (char)0x10, (char)0x91, (char)0x68, (char)0xD1, (char)0x16, (char)0x8B, (char)0x2B,
     (char)0xC0, (char)0x31, (char)0x00
 };
-static char g_CHAR_ARRAY_005c3186[51] = {
+static char g_CheatStr_ToggleRenderMode[51] = {
     (char)0xA5, (char)0x12, (char)0x9B, (char)0xEC, (char)0x35, (char)0x65, (char)0xEF, (char)0x9D, (char)0xB5, (char)0xD5, (char)0x0D, (char)0xFE,
     (char)0xC6, (char)0xFC, (char)0x86, (char)0x7B, (char)0x9A, (char)0xF7, (char)0x46, (char)0xC3, (char)0xBC, (char)0x15, (char)0x4A, (char)0xDA,
     (char)0xE5, (char)0x8C, (char)0xFD, (char)0x6A, (char)0x73, (char)0xB5, (char)0x0C, (char)0xA8, (char)0x8C, (char)0x86, (char)0xDC, (char)0x62,
     (char)0xBF, (char)0xC5, (char)0xC5, (char)0x61, (char)0x8A, (char)0xA9, (char)0x6E, (char)0x59, (char)0x22, (char)0x5F, (char)0xFC, (char)0xAA,
     (char)0x83, (char)0x38, (char)0x00
 };
-static char g_CHAR_ARRAY_005c3270[51] = {
+static char g_CheatStr_ClearFramebuffer[51] = {
     (char)0x77, (char)0xFC, (char)0x49, (char)0xE2, (char)0x53, (char)0x3F, (char)0x5D, (char)0x4B, (char)0xBB, (char)0x5F, (char)0x3F, (char)0xA0,
     (char)0x60, (char)0x16, (char)0xD4, (char)0xED, (char)0x64, (char)0x0D, (char)0x34, (char)0x4D, (char)0x9A, (char)0x6F, (char)0x58, (char)0x7A,
     (char)0x15, (char)0xF7, (char)0x11, (char)0x6F, (char)0x95, (char)0x5F, (char)0x3E, (char)0x9E, (char)0xD2, (char)0x5C, (char)0x0E, (char)0x6C,
@@ -3224,42 +3224,42 @@ static char g_CHAR_ARRAY_005c3270[51] = {
 };
 
 // char[52] constants
-static char g_CHAR_ARRAY_005c2a01[52] = {
+static char g_CheatStr_ShowFPS[52] = {
     (char)0x6C, (char)0x58, (char)0x52, (char)0x83, (char)0xB4, (char)0xA6, (char)0xD6, (char)0x7A, (char)0x44, (char)0x66, (char)0xD4, (char)0x21,
     (char)0x27, (char)0x1F, (char)0x6F, (char)0x3C, (char)0x2B, (char)0x64, (char)0xCF, (char)0x6C, (char)0x7D, (char)0x96, (char)0x93, (char)0xE7,
     (char)0x89, (char)0x63, (char)0xFB, (char)0xA6, (char)0x59, (char)0x4B, (char)0x3D, (char)0xA4, (char)0x50, (char)0x64, (char)0x9E, (char)0xC4,
     (char)0xBA, (char)0x97, (char)0xBD, (char)0x5D, (char)0x29, (char)0x52, (char)0xA1, (char)0x06, (char)0x91, (char)0x7A, (char)0xD7, (char)0x14,
     (char)0xF2, (char)0x2B, (char)0xC0, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2ad4[52] = {
+static char g_CheatStr_ScriptDebug[52] = {
     (char)0xEB, (char)0xB2, (char)0xD5, (char)0xBE, (char)0xBF, (char)0x7B, (char)0x89, (char)0xAF, (char)0x6F, (char)0x53, (char)0x33, (char)0x4C,
     (char)0xFC, (char)0xD2, (char)0xE0, (char)0x49, (char)0xB0, (char)0xB1, (char)0x88, (char)0xF1, (char)0xB6, (char)0xAB, (char)0xEC, (char)0x4F,
     (char)0xEE, (char)0xE8, (char)0x1A, (char)0x18, (char)0x7D, (char)0x46, (char)0xF2, (char)0x71, (char)0x2B, (char)0xD1, (char)0x99, (char)0xB9,
     (char)0x31, (char)0xCA, (char)0xE2, (char)0x08, (char)0x42, (char)0x27, (char)0x06, (char)0x2B, (char)0xCA, (char)0xB7, (char)0xD8, (char)0x21,
     (char)0xE9, (char)0x7E, (char)0x87, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2b35[52] = {
+static char g_CheatStr_MemoryDebug[52] = {
     (char)0xF0, (char)0x94, (char)0xCE, (char)0x0F, (char)0x10, (char)0xB2, (char)0x12, (char)0xAE, (char)0xA8, (char)0xCA, (char)0xD8, (char)0x3D,
     (char)0xC3, (char)0xAB, (char)0x2B, (char)0xE8, (char)0x97, (char)0x58, (char)0x73, (char)0xE0, (char)0x99, (char)0xA2, (char)0xD7, (char)0x10,
     (char)0xEF, (char)0xCE, (char)0xF7, (char)0x8B, (char)0x6F, (char)0xDF, (char)0xF9, (char)0x50, (char)0xCC, (char)0xB8, (char)0x02, (char)0x48,
     (char)0xDE, (char)0x83, (char)0xF9, (char)0x89, (char)0x05, (char)0x3E, (char)0xAD, (char)0x1A, (char)0xB5, (char)0x8E, (char)0x93, (char)0xC0,
     (char)0x0E, (char)0xD7, (char)0xBC, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2b9e[52] = {
+static char g_CheatStr_ManualAim[52] = {
     (char)0x1D, (char)0x18, (char)0x23, (char)0x54, (char)0x7D, (char)0x3D, (char)0xD7, (char)0xB5, (char)0xCD, (char)0x3D, (char)0x85, (char)0x16,
     (char)0xFE, (char)0x54, (char)0x8E, (char)0x03, (char)0xD2, (char)0x2F, (char)0xDE, (char)0x5B, (char)0x74, (char)0xED, (char)0x52, (char)0xEB,
     (char)0xCE, (char)0xDA, (char)0x10, (char)0xB3, (char)0xE7, (char)0x40, (char)0x1C, (char)0xBB, (char)0xC9, (char)0xEF, (char)0xAF, (char)0x93,
     (char)0x73, (char)0x8C, (char)0x3C, (char)0x12, (char)0x20, (char)0x89, (char)0xF0, (char)0xF1, (char)0xC8, (char)0x31, (char)0xF6, (char)0xEB,
     (char)0x4B, (char)0xE0, (char)0x51, (char)0x00
 };
-static char g_CHAR_ARRAY_005c3473[52] = {
+static char g_CheatStr_GeometryDebug[52] = {
     (char)0xE6, (char)0x42, (char)0xD8, (char)0xF1, (char)0xEA, (char)0xC0, (char)0x7C, (char)0xA8, (char)0xD2, (char)0xD8, (char)0x6E, (char)0x93,
     (char)0xA9, (char)0x79, (char)0x55, (char)0x2E, (char)0x5D, (char)0xEA, (char)0xC5, (char)0xFE, (char)0x43, (char)0xB0, (char)0xB9, (char)0x8B,
     (char)0xFF, (char)0xA3, (char)0xBA, (char)0xF2, (char)0x4E, (char)0xAD, (char)0xE7, (char)0x16, (char)0x06, (char)0x6A, (char)0x14, (char)0xF6,
     (char)0x64, (char)0x31, (char)0xD7, (char)0x8F, (char)0xBF, (char)0x2C, (char)0xDB, (char)0xF4, (char)0x1F, (char)0x5C, (char)0x2D, (char)0x06,
     (char)0x44, (char)0xA5, (char)0xCA, (char)0x00
 };
-static char g_CHAR_ARRAY_005c34a7[52] = {
+static char g_CheatStr_RestoreHealth[52] = {
     (char)0x6A, (char)0x5A, (char)0x54, (char)0x7D, (char)0x46, (char)0xDC, (char)0xB8, (char)0xDC, (char)0x36, (char)0x8C, (char)0x12, (char)0xEF,
     (char)0x55, (char)0x95, (char)0x11, (char)0xDA, (char)0x39, (char)0xDE, (char)0x49, (char)0x72, (char)0xEF, (char)0x4C, (char)0xFD, (char)0xC7,
     (char)0xD1, (char)0x04, (char)0xBE, (char)0xE6, (char)0x05, (char)0x41, (char)0xA3, (char)0xC2, (char)0xE2, (char)0xBE, (char)0x98, (char)0x7A,
@@ -3268,21 +3268,21 @@ static char g_CHAR_ARRAY_005c34a7[52] = {
 };
 
 // char[53] constants
-static char g_CHAR_ARRAY_005c2a41[53] = {
+static char g_CheatStr_ProfileMode[53] = {
     (char)0xAC, (char)0x61, (char)0x92, (char)0xC3, (char)0xF4, (char)0x66, (char)0x96, (char)0x3A, (char)0x04, (char)0x26, (char)0x94, (char)0xE1,
     (char)0xE7, (char)0xDF, (char)0x2F, (char)0xFC, (char)0xEB, (char)0x24, (char)0x8F, (char)0x2C, (char)0x3D, (char)0x56, (char)0x53, (char)0xB9,
     (char)0x54, (char)0x20, (char)0xB2, (char)0x6C, (char)0x1E, (char)0xCE, (char)0xA0, (char)0x7C, (char)0x1B, (char)0x29, (char)0x4F, (char)0x8F,
     (char)0x73, (char)0x53, (char)0x6C, (char)0x1C, (char)0xF2, (char)0x00, (char)0x69, (char)0xD0, (char)0x51, (char)0x28, (char)0x91, (char)0xD6,
     (char)0x4B, (char)0x6B, (char)0x00, (char)0x71, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2dc3[53] = {
+static char g_CheatStr_FreezeEnemies[53] = {
     (char)0x76, (char)0x8B, (char)0x48, (char)0x21, (char)0xDA, (char)0x10, (char)0x8C, (char)0x78, (char)0xC2, (char)0x08, (char)0x9E, (char)0x43,
     (char)0xB9, (char)0x49, (char)0xC5, (char)0xFE, (char)0x6D, (char)0xDA, (char)0x75, (char)0x4E, (char)0x53, (char)0x80, (char)0x29, (char)0x6D,
     (char)0x92, (char)0x84, (char)0x3B, (char)0x5D, (char)0x69, (char)0x2F, (char)0x4A, (char)0xFE, (char)0x1D, (char)0xB7, (char)0x95, (char)0xAD,
     (char)0x1D, (char)0x65, (char)0x76, (char)0x5E, (char)0xB4, (char)0x6E, (char)0x63, (char)0xB2, (char)0x0F, (char)0xBE, (char)0xBB, (char)0xD4,
     (char)0xCD, (char)0x55, (char)0xBA, (char)0xD3, (char)0x00
 };
-static char g_CHAR_ARRAY_005c3031[53] = {
+static char g_CheatStr_KillNearby[53] = {
     (char)0x5C, (char)0xFD, (char)0x62, (char)0xD3, (char)0xC4, (char)0xD6, (char)0xC6, (char)0x2A, (char)0xD4, (char)0xB6, (char)0x24, (char)0xF1,
     (char)0x97, (char)0x4F, (char)0x7F, (char)0xEC, (char)0x9B, (char)0xB4, (char)0xDF, (char)0x1C, (char)0xED, (char)0xC6, (char)0xE3, (char)0x9B,
     (char)0x7F, (char)0x98, (char)0xE6, (char)0x5A, (char)0xCD, (char)0xB6, (char)0x50, (char)0x4C, (char)0xCB, (char)0x99, (char)0xFF, (char)0x9F,
@@ -3291,35 +3291,35 @@ static char g_CHAR_ARRAY_005c3031[53] = {
 };
 
 // char[54] constants
-static char g_CHAR_ARRAY_005c29a8[54] = {
+static char g_CheatStr_DebugMode[54] = {
     (char)0x8F, (char)0x17, (char)0xB1, (char)0xAA, (char)0x7B, (char)0xB7, (char)0xE5, (char)0x03, (char)0x13, (char)0xA7, (char)0xD7, (char)0xF8,
     (char)0xB8, (char)0x8E, (char)0x7C, (char)0x95, (char)0x3C, (char)0x05, (char)0x2C, (char)0x85, (char)0xF2, (char)0xE7, (char)0xC0, (char)0x37,
     (char)0xFE, (char)0xE2, (char)0x33, (char)0x91, (char)0x22, (char)0x3E, (char)0x56, (char)0x08, (char)0xB4, (char)0x43, (char)0x21, (char)0xB7,
     (char)0x77, (char)0x0B, (char)0xDB, (char)0xF4, (char)0x64, (char)0x1A, (char)0x38, (char)0x41, (char)0x98, (char)0x79, (char)0x50, (char)0x79,
     (char)0x1E, (char)0xF3, (char)0x63, (char)0x18, (char)0xA9, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2d2d[54] = {
+static char g_CheatStr_GodMode[54] = {
     (char)0xC8, (char)0x3D, (char)0xF6, (char)0x97, (char)0xF8, (char)0x6A, (char)0xFA, (char)0xA6, (char)0x40, (char)0x12, (char)0x30, (char)0xB5,
     (char)0x5B, (char)0x63, (char)0x93, (char)0xD0, (char)0xAF, (char)0x90, (char)0xAB, (char)0x58, (char)0x31, (char)0x5A, (char)0xBF, (char)0x12,
     (char)0x8D, (char)0x7F, (char)0xD7, (char)0x10, (char)0x83, (char)0x52, (char)0xAF, (char)0x0D, (char)0xC7, (char)0xF6, (char)0x66, (char)0xCA,
     (char)0x74, (char)0x56, (char)0x44, (char)0x91, (char)0x37, (char)0x6F, (char)0x9F, (char)0x8C, (char)0x3B, (char)0x54, (char)0x7F, (char)0x3C,
     (char)0x0D, (char)0xE6, (char)0x64, (char)0xC5, (char)0xEA, (char)0x00
 };
-static char g_CHAR_ARRAY_005c2f27[54] = {
+static char g_CheatStr_AllWeapons[54] = {
     (char)0xEA, (char)0x8E, (char)0xD4, (char)0xFD, (char)0xC6, (char)0x5C, (char)0x38, (char)0x5C, (char)0xB6, (char)0x0C, (char)0x92, (char)0x6F,
     (char)0xD5, (char)0x15, (char)0x91, (char)0x5A, (char)0xB9, (char)0x5E, (char)0xC9, (char)0xF2, (char)0x6F, (char)0xCC, (char)0x7D, (char)0x49,
     (char)0x5D, (char)0x89, (char)0x3E, (char)0x7E, (char)0x90, (char)0xC1, (char)0x23, (char)0x42, (char)0x62, (char)0x3E, (char)0x18, (char)0xFA,
     (char)0x08, (char)0xAD, (char)0x93, (char)0xBB, (char)0x1B, (char)0x78, (char)0x67, (char)0x48, (char)0xA3, (char)0x70, (char)0x69, (char)0xB2,
     (char)0x60, (char)0xD1, (char)0xC6, (char)0x00, (char)0x59, (char)0x6F
 };
-static char g_CHAR_ARRAY_005c3072[54] = {
+static char g_CheatStr_Dismemberment[54] = {
     (char)0xC1, (char)0x5A, (char)0xFF, (char)0x40, (char)0x39, (char)0x69, (char)0x33, (char)0x09, (char)0xF1, (char)0x01, (char)0xA9, (char)0x82,
     (char)0xBA, (char)0x00, (char)0x6A, (char)0x6F, (char)0x5E, (char)0xA3, (char)0x62, (char)0x6F, (char)0xB0, (char)0x19, (char)0xB6, (char)0xBD,
     (char)0xDC, (char)0xDA, (char)0x2C, (char)0xCB, (char)0xA0, (char)0x30, (char)0xE0, (char)0xD2, (char)0x56, (char)0x65, (char)0xEF, (char)0x9D,
     (char)0xB5, (char)0xD5, (char)0x0D, (char)0xFE, (char)0xC6, (char)0xFC, (char)0x86, (char)0x7B, (char)0x9A, (char)0xF7, (char)0x46, (char)0xC3,
     (char)0xBC, (char)0x15, (char)0x2D, (char)0xB2, (char)0xEB, (char)0x00
 };
-static char g_CHAR_ARRAY_005c333c[54] = {
+static char g_CheatStr_RestoreBattery[54] = {
     (char)0xF3, (char)0x09, (char)0xCD, (char)0x56, (char)0xF7, (char)0x23, (char)0x01, (char)0x17, (char)0x57, (char)0xEB, (char)0x3B, (char)0x54,
     (char)0x44, (char)0xFA, (char)0x18, (char)0x21, (char)0xF8, (char)0xD9, (char)0xB0, (char)0xD9, (char)0x7E, (char)0x53, (char)0x64, (char)0xD6,
     (char)0x30, (char)0x21, (char)0x13, (char)0x71, (char)0x23, (char)0x29, (char)0x72, (char)0x9C, (char)0x70, (char)0x7F, (char)0x9D, (char)0x8B,
@@ -3328,14 +3328,14 @@ static char g_CHAR_ARRAY_005c333c[54] = {
 };
 
 // char[55] constants
-static char g_CHAR_ARRAY_005c2c73[55] = {
+static char g_CheatStr_CollisionDebug[55] = {
     (char)0xE6, (char)0x1A, (char)0xD8, (char)0xF1, (char)0xEA, (char)0xC0, (char)0x7C, (char)0xA8, (char)0xD2, (char)0xD8, (char)0x6E, (char)0x93,
     (char)0xA9, (char)0x79, (char)0x55, (char)0x2E, (char)0x5D, (char)0xEA, (char)0xC5, (char)0xFE, (char)0x43, (char)0xB0, (char)0xB9, (char)0x98,
     (char)0xFF, (char)0xBD, (char)0xA2, (char)0xFE, (char)0x4F, (char)0xE4, (char)0xF5, (char)0x1D, (char)0x48, (char)0x74, (char)0x03, (char)0xE1,
     (char)0x77, (char)0x37, (char)0xCB, (char)0x9B, (char)0xB4, (char)0x24, (char)0xDA, (char)0xF8, (char)0x01, (char)0x58, (char)0x39, (char)0x10,
     (char)0x39, (char)0xDE, (char)0xB3, (char)0xA3, (char)0x58, (char)0xE9, (char)0x00
 };
-static char g_CHAR_ARRAY_005c340b[55] = {
+static char g_CheatStr_WeatherSnow[55] = {
     (char)0xDE, (char)0x13, (char)0xE0, (char)0xD9, (char)0xB2, (char)0x18, (char)0xE4, (char)0xC0, (char)0xEA, (char)0x80, (char)0x66, (char)0x8B,
     (char)0xE1, (char)0x51, (char)0xDD, (char)0xB6, (char)0x15, (char)0x42, (char)0xDD, (char)0x96, (char)0xFB, (char)0x88, (char)0x01, (char)0x31,
     (char)0xA1, (char)0x0E, (char)0xAE, (char)0x8A, (char)0x95, (char)0xC1, (char)0x32, (char)0xB6, (char)0xC5, (char)0xCF, (char)0x7D, (char)0x95,
@@ -3344,7 +3344,7 @@ static char g_CHAR_ARRAY_005c340b[55] = {
 };
 
 // char[57] constants
-static char g_CHAR_ARRAY_005c2caa[57] = {
+static char g_CheatStr_SkeletonKey[57] = {
     (char)0xD9, (char)0x2E, (char)0xE7, (char)0x08, (char)0xE1, (char)0xE1, (char)0x5B, (char)0xC1, (char)0xA9, (char)0x09, (char)0x41, (char)0xDA,
     (char)0x92, (char)0xF8, (char)0x92, (char)0x17, (char)0x36, (char)0xBB, (char)0x1A, (char)0xA7, (char)0x88, (char)0x91, (char)0xDE, (char)0x61,
     (char)0xA0, (char)0xC5, (char)0xCD, (char)0x7B, (char)0x93, (char)0xA3, (char)0x73, (char)0x41, (char)0x26, (char)0x41, (char)0xB9, (char)0xCB,
@@ -3353,14 +3353,14 @@ static char g_CHAR_ARRAY_005c2caa[57] = {
 };
 
 // char[58] constants
-static char g_CHAR_ARRAY_005c31c5[58] = {
+static char g_CheatStr_FlamingAmmo[58] = {
     (char)0xC0, (char)0xC7, (char)0xFE, (char)0xFF, (char)0x40, (char)0x42, (char)0x62, (char)0x3E, (char)0x18, (char)0xFA, (char)0x08, (char)0xAD,
     (char)0x93, (char)0xBB, (char)0x1B, (char)0x78, (char)0x67, (char)0x48, (char)0xA3, (char)0x70, (char)0x69, (char)0xB2, (char)0x07, (char)0xAF,
     (char)0xAF, (char)0xC1, (char)0xC6, (char)0x20, (char)0xC8, (char)0xA8, (char)0x27, (char)0xF1, (char)0x93, (char)0x40, (char)0x65, (char)0xA1,
     (char)0x83, (char)0xA2, (char)0xC2, (char)0x1E, (char)0xF8, (char)0xDA, (char)0xE8, (char)0x8D, (char)0x73, (char)0x9B, (char)0xFB, (char)0x58,
     (char)0xC7, (char)0xA8, (char)0x03, (char)0x50, (char)0xC9, (char)0x92, (char)0x80, (char)0xF1, (char)0x66, (char)0x00
 };
-static char g_CHAR_ARRAY_005c339a[58] = {
+static char g_CheatStr_WeatherRain[58] = {
     (char)0x89, (char)0xEF, (char)0xB7, (char)0x18, (char)0x31, (char)0x51, (char)0x8B, (char)0x31, (char)0x79, (char)0x99, (char)0x91, (char)0x2A,
     (char)0x42, (char)0x68, (char)0x22, (char)0x07, (char)0xE6, (char)0x0B, (char)0xAA, (char)0x97, (char)0xB8, (char)0x01, (char)0x6E, (char)0x76,
     (char)0x53, (char)0xA5, (char)0x7F, (char)0x6A, (char)0xB2, (char)0x0E, (char)0xBE, (char)0xAE, (char)0xDC, (char)0xDA, (char)0x24, (char)0x86,
@@ -3369,7 +3369,7 @@ static char g_CHAR_ARRAY_005c339a[58] = {
 };
 
 // char[59] constants
-static char g_CHAR_ARRAY_005c34ec[59] = {
+static char g_CheatStr_SoundDebug[59] = {
     (char)0x63, (char)0x08, (char)0x5D, (char)0x26, (char)0x87, (char)0xD3, (char)0xF1, (char)0x47, (char)0xA7, (char)0xBB, (char)0x8B, (char)0xE4,
     (char)0xB4, (char)0xAA, (char)0xE8, (char)0x51, (char)0xE8, (char)0xE9, (char)0x00, (char)0x09, (char)0x6E, (char)0x03, (char)0xF4, (char)0x67,
     (char)0x23, (char)0xCA, (char)0x8F, (char)0xA5, (char)0x23, (char)0xCB, (char)0xE0, (char)0x4C, (char)0x40, (char)0x2F, (char)0x0D, (char)0x3B,
@@ -3476,8 +3476,8 @@ static double g_DOUBLE_005c2200 = 1.52587890625e-05;
 static double g_DOUBLE_005c2208 = 0.59999999999999998;
 static double g_DOUBLE_005c2210 = 0.34999999999999998;
 static double g_DOUBLE_005c2220 = 65535;
-static double g_DOUBLE_005c2228 = 0.59999999999999998;
-static double g_DOUBLE_005c2230 = 0.34999999999999998;
+static double g_StatusThresholdHigh = 0.59999999999999998;
+static double g_StatusThresholdLow = 0.34999999999999998;
 static double g_DOUBLE_005c2238 = 0.10000000000000001;
 static double g_DOUBLE_005c2578 = 0.055555555555555601;
 static double g_DOUBLE_005c2580 = 1.52587890625e-05;
@@ -3608,7 +3608,7 @@ static double g_DOUBLE_005c5ee7 = 1600;
 static double g_DOUBLE_005c5eef = 900;
 static double g_DOUBLE_005c5ef7 = 400;
 static double g_DOUBLE_005c5eff = 100;
-static double g_DOUBLE_005c5f37 = 2;
+static double g_InventoryRandTwoFactor = 2;
 static double g_DOUBLE_005c627f = 0.025000000000000001;
 static double g_DOUBLE_005c63af = 0.5;
 static double g_DOUBLE_005c63b7 = 2;
@@ -3621,10 +3621,10 @@ static double g_DOUBLE_005c664f = 0.01;
 static double g_DOUBLE_005c6657 = 65535;
 static double g_DOUBLE_005c66ad = 8192;
 static double g_DOUBLE_005c66b5 = 16384;
-static double g_DOUBLE_005c66e5 = 65535;
-static double g_DOUBLE_005c66ed = 65535;
-static double g_DOUBLE_005c6795 = 1.52587890625e-05;
-static double g_DOUBLE_005c67a5 = 65536;
+static double g_NormalTo16BitScale1 = 65535;
+static double g_NormalTo16BitScale2 = 65535;
+static double g_SplineNormalizer = 1.52587890625e-05;
+static double g_SplineCoeff_Scale = 65536;
 static double g_DOUBLE_005c6855 = 0.5;
 static double g_DOUBLE_005c685d = 0.10000000000000001;
 static double g_DOUBLE_005c6902 = 6;
@@ -3636,11 +3636,11 @@ static double g_DOUBLE_005c6b1f = 18;
 static double g_DOUBLE_005c6eaa = 0.125;
 static double g_DOUBLE_005c6eb2 = 0.25;
 static double g_DOUBLE_005c6ec2 = 65536;
-static double g_DOUBLE_005c6eca = 1.52587890625e-05;
-static double g_DOUBLE_005c6ed2 = 65536;
-static double g_DOUBLE_005c6f72 = 65535;
+static double g_FixedToFloat = 1.52587890625e-05;
+static double g_Fixed16Scale = 65536;
+static double g_NormalizationScale = 65535;
 static double g_DOUBLE_005c7162 = 1.1499999999999999;
-static double g_DOUBLE_005c72a6 = 1.52587890625e-05;
+static double g_MouseSensitivityScale = 1.52587890625e-05;
 static double g_DOUBLE_005c774e = 1.52587890625e-05;
 static double g_DOUBLE_005c78b6 = 0.001;
 static double g_DOUBLE_005c78c6 = 1.01;
@@ -3708,19 +3708,19 @@ static double g_DOUBLE_005ca5b1 = 0.20000000000000001;
 static double g_DOUBLE_005ca6f1 = 1.52587890625e-05;
 static double g_DOUBLE_005ca701 = 30;
 static double g_DOUBLE_005ca709 = 0.10000000000000001;
-static double g_DOUBLE_005ca821 = 1.52587890625e-05;
-static double g_DOUBLE_005ca829 = 30;
-static double g_DOUBLE_005ca831 = 0.10000000000000001;
+static double g_TimeoutScale = 1.52587890625e-05;
+static double g_MaxTimeout = 30;
+static double g_SyncTimeout = 0.10000000000000001;
 static double g_DOUBLE_005caab9 = 1.52587890625e-05;
 static double g_DOUBLE_005caac1 = -30;
 static double g_DOUBLE_005caac9 = 30;
 static double g_DOUBLE_005cac11 = 1.52587890625e-05;
 static double g_DOUBLE_005cac19 = 30;
 static double g_DOUBLE_005cac21 = 0.20000000000000001;
-static double g_DOUBLE_005cac69 = 1.52587890625e-05;
-static double g_DOUBLE_005cac71 = 30;
-static double g_DOUBLE_005cac79 = 0.40000000000000002;
-static double g_DOUBLE_005cac81 = 5;
+static double g_TimeToSeconds = 1.52587890625e-05;
+static double g_MaxPingTime = 30;
+static double g_PingCheckThreshold = 0.40000000000000002;
+static double g_BadConnectionTime = 5;
 static double g_DOUBLE_005cace1 = 1.52587890625e-05;
 static double g_DOUBLE_005cace9 = 4;
 static double g_DOUBLE_005cacf1 = 30;
@@ -3735,13 +3735,13 @@ static double g_DOUBLE_005cb560 = 65536;
 static double g_DOUBLE_005cb5d8 = 65535;
 static double g_DOUBLE_005cb5e0 = 1.5873015873015899e-05;
 static double g_DOUBLE_005cb5e8 = -2535;
-static double g_DOUBLE_005cb824 = -2.356194490125;
-static double g_DOUBLE_005cb82c = 2.356194490125;
-static double g_DOUBLE_005cb834 = -0.78539816337500001;
-static double g_DOUBLE_005cb83c = 0.78539816337500001;
-static double g_DOUBLE_005cb844 = -1.57079632675;
-static double g_DOUBLE_005cb84c = 1.57079632675;
-static double g_DOUBLE_005cb85c = 4;
+static double g_PathAngleNeg3PiOver4 = -2.356194490125;
+static double g_PathAngle3PiOver4 = 2.356194490125;
+static double g_PathAngleNegPiOver4 = -0.78539816337500001;
+static double g_PathAnglePiOver4 = 0.78539816337500001;
+static double g_PathAngleNegPiOver2 = -1.57079632675;
+static double g_PathAnglePiOver2 = 1.57079632675;
+static double g_PathUpdateDistanceThreshold = 4;
 static double g_DOUBLE_005cb8f4 = 256;
 static double g_DOUBLE_005cb904 = 256;
 static double g_DOUBLE_005cbad5 = 0.03125;
@@ -3864,7 +3864,7 @@ static double g_DOUBLE_005cfa60 = 0.40000000000000002;
 // float constants
 static float g_FLOAT_005c049b = 3.141593f;
 static float g_FLOAT_005c04c0 = 30.0f;
-static float g_FLOAT_005c0504 = 0.1f;
+static float g_BulletHoleNormalOffset = 0.1f;
 static float g_FLOAT_005c0514 = 2.0f;
 static float g_FLOAT_005c0538 = 2.0f;
 static float g_FLOAT_005c05d0 = 0.3333333f;
@@ -3920,7 +3920,7 @@ static float g_FLOAT_005c280c = 0.05f;
 static float g_FLOAT_005c2820 = -0.25f;
 static float g_FLOAT_005c2824 = 0.1f;
 static float g_FLOAT_005c3540 = 0.5f;
-static float g_FLOAT_005c39ac = 65536.0f;
+static float g_DeltaTimeScale = 65536.0f;
 static float g_FLOAT_005c3bdc = 32.0f;
 static float g_FLOAT_005c3c08 = 1000.0f;
 static float g_FLOAT_005c3c0c = 0.25f;
@@ -3949,23 +3949,23 @@ static float g_FLOAT_005c4d1d = 1.047198f;
 static float g_FLOAT_005c4d99 = 0.5f;
 static float g_FLOAT_005c51db = 3.0f;
 static float g_FLOAT_005c5610 = 4.0f;
-static float g_FLOAT_005c5f2b = 3.051851e-05f;
+static float g_InventoryRandNormalizationFactor = 3.051851e-05f;
 static float g_FLOAT_005c5f2f = 3.141593f;
 static float g_FLOAT_005c63a7 = 0.5f;
 static float g_FLOAT_005c63bf = -0.5f;
-static float g_FLOAT_005c63c3 = 4.712389f;
+static float g_InventoryPiOver2 = 4.712389f;
 static float g_FLOAT_005c63c7 = 1.570796f;
 static float g_FLOAT_005c63cb = 5.497787f;
-static float g_FLOAT_005c63cf = -1.570796f;
+static float g_InventoryNegativePiOver2 = -1.570796f;
 static float g_FLOAT_005c65ff = 65535.0f;
 static float g_FLOAT_005c664b = 65535.0f;
 static float g_FLOAT_005c66a9 = 3.141593f;
-static float g_FLOAT_005c679d = -0.5f;
-static float g_FLOAT_005c67a1 = 0.5f;
-static float g_FLOAT_005c67ad = 1.5f;
-static float g_FLOAT_005c67b1 = -2.5f;
-static float g_FLOAT_005c67b5 = 2.0f;
-static float g_FLOAT_005c67b9 = -1.5f;
+static float g_SplineCoeff_T3_W0 = -0.5f;
+static float g_SplineCoeff_T1_W0 = 0.5f;
+static float g_SplineCoeff_T3_W2 = 1.5f;
+static float g_SplineCoeff_T2_W2 = -2.5f;
+static float g_SplineCoeff_T2_W3 = 2.0f;
+static float g_SplineCoeff_T3_W3 = -1.5f;
 static float g_FLOAT_005c6a02 = 0.5f;
 static float g_FLOAT_005c6a06 = 30.0f;
 static float g_FLOAT_005c6a0a = 0.73f;
@@ -4022,8 +4022,8 @@ static float g_FLOAT_005c8345 = 0.5f;
 static float g_FLOAT_005c8349 = -0.01f;
 static float g_FLOAT_005c9275 = -30.0f;
 static float g_FLOAT_005c96f3 = 2.0f;
-static float g_FLOAT_005c9d00 = -1.0f;
-static float g_FLOAT_005c9d68 = -1.0f;
+static float g_MotionControllerAutoDetermineFrame = -1.0f;
+static float g_MotionControllerTargetFrameEnd2 = -1.0f;
 static float g_FLOAT_005c9d74 = -1.0f;
 static float g_FLOAT_005ca6f9 = 1000.0f;
 static float g_FLOAT_005cac09 = 1000.0f;
@@ -4032,8 +4032,8 @@ static float g_FLOAT_005cb659 = 10.0f;
 static float g_FLOAT_005cb65d = 0.8f;
 static float g_FLOAT_005cb661 = 2.0f;
 static float g_FLOAT_005cb665 = -0.7f;
-static float g_FLOAT_005cb81c = 0.01f;
-static float g_FLOAT_005cb820 = -1.0f;
+static float g_PathRotationScaleFactor = 0.01f;
+static float g_PathNegativeOne = -1.0f;
 static float g_FLOAT_005cb854 = 3.141593f;
 static float g_FLOAT_005cb8ec = 256.0f;
 static float g_FLOAT_005cb8fc = 256.0f;

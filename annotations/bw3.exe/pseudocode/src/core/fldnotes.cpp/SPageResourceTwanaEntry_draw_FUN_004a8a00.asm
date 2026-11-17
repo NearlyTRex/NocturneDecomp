@@ -7,7 +7,7 @@
 ; SPageResourceTwanaEntry * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
@@ -136,7 +136,7 @@ section .text
     JNZ 0x004a8a71                      ; 004a8b51
         ;   XREF to: 004a8a71 (CONDITIONAL_JUMP)  ; LAB_004a8a71
     PUSH 0x5c0de9                       ; 004a8b57
-    MOV ESI,dword ptr [0x005fba60]      ; 004a8b5c | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004a8b5c | g_CEventListPtr
     PUSH ESI                            ; 004a8b62
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004a8b63
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

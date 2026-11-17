@@ -22,11 +22,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e0ea0
 ;   TerminatedCString s_CNetGame_sendMyStateChan_005e0eb4
-;   int g_INT_0061b124 = 0x1
+;   int g_NetLobbyStateChanged = 0x1
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01d34e34
-;   uint g_UINT_01d34e38
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -66,10 +66,10 @@ section .text
     MOV ESI,0x12                        ; 0050ebc0
     SAR EDX,0x1f                        ; 0050ebc5
     IDIV ESI                            ; 0050ebc8
-    MOV EBP,dword ptr [0x01d34e34]      ; 0050ebca | g_INT_01d34e34
+    MOV EBP,dword ptr [0x01d34e34]      ; 0050ebca | g_LastPingTime
     MOV EDX,EAX                         ; 0050ebd0
     SUB EAX,EBP                         ; 0050ebd2
-    MOV dword ptr [0x01d34e34],EDX      ; 0050ebd4 | g_INT_01d34e34
+    MOV dword ptr [0x01d34e34],EDX      ; 0050ebd4 | g_LastPingTime
     TEST EAX,EAX                        ; 0050ebda
     JL 0x0050eca6                       ; 0050ebdc
         ;   XREF to: 0050eca6 (CONDITIONAL_JUMP)  ; LAB_0050eca6
@@ -77,7 +77,7 @@ section .text
     JLE 0x0050ebee                      ; 0050ebe7
         ;   XREF to: 0050ebee (CONDITIONAL_JUMP)  ; LAB_0050ebee
     MOV EAX,0x20000                     ; 0050ebe9
-    MOV EDX,dword ptr [0x01d34e38]      ; 0050ebee | g_UINT_01d34e38
+    MOV EDX,dword ptr [0x01d34e38]      ; 0050ebee | g_CurrentGameTime
         ;   Label: LAB_0050ebee
     MOV ECX,0x29                        ; 0050ebf4
     ADD EDX,EAX                         ; 0050ebf9
@@ -102,7 +102,7 @@ section .text
     SHL ESI,0x7                         ; 0050ec44
     LEA EDI,[ESP + 0x9]                 ; 0050ec47
     ADD ESI,EAX                         ; 0050ec4b
-    MOV dword ptr [0x01d34e38],EDX      ; 0050ec4d | g_UINT_01d34e38
+    MOV dword ptr [0x01d34e38],EDX      ; 0050ec4d | g_CurrentGameTime
     PUSH EDI                            ; 0050ec53
     MOV AL,byte ptr [ESI]               ; 0050ec54
         ;   Label: LAB_0050ec54
@@ -131,8 +131,8 @@ section .text
     SHL EAX,0x7                         ; 0050ec88
     ADD ESP,0xc                         ; 0050ec8b
     ADD EBX,EAX                         ; 0050ec8e
-    MOV EAX,[0x01d34e38]                ; 0050ec90 | g_UINT_01d34e38
-    MOV dword ptr [0x0061b124],EDI      ; 0050ec95 | g_INT_0061b124
+    MOV EAX,[0x01d34e38]                ; 0050ec90 | g_CurrentGameTime
+    MOV dword ptr [0x0061b124],EDI      ; 0050ec95 | g_NetLobbyStateChanged
     MOV dword ptr [EBX + 0x60],EAX      ; 0050ec9b
     ADD ESP,0x2c                        ; 0050ec9e
     POP EBP                             ; 0050eca1

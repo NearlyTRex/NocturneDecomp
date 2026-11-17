@@ -9,11 +9,11 @@
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004e0b50(int dir_x,int dir_y,int dir_z)
 
 {
-  g_INT_01c6e2f0 = dir_x;
-  g_INT_01d70c3c = dir_y;
-  g_INT_01c6e2f4 = dir_y;
-  g_INT_01d70c40 = dir_z;
-  g_INT_01c6e2f8 = dir_z;
-  g_INT_01d70c38 = dir_x;
+  g_LightDirectionX = dir_x;
+  g_LightDirectionY2 = dir_y;
+  g_LightDirectionY = dir_y;
+  g_LightDirectionZ2 = dir_z;
+  g_LightDirectionZ = dir_z;
+  g_LightDirectionX2 = dir_x;
   return;
 }

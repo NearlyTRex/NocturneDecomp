@@ -17,13 +17,13 @@ CDemonSet* g_CDemonSetPtr = (CDemonSet*)&g_CDemonSetInstance;
 CEditorTools* g_CEditorToolsPtr = (CEditorTools*)&g_CEditorToolsInstance;
 
 // CEventList*
-CEventList* g_CEventList_PTR_006141f0 = (CEventList*)&g_CEventList_01c38bc0;
+CEventList* g_CEventListPtr = (CEventList*)&g_CEventList_01c38bc0;
 
 // CFieldNotes*
 CFieldNotes* g_CFieldNotesPtr = (CFieldNotes*)&g_CFieldNotesInstance;
 
 // CFireEffect*
-CFireEffect* g_CFireEffect_PTR_00614d30 = (CFireEffect*)&g_CFireEffect_01c3deb4;
+CFireEffect* g_CFireEffectPtr = (CFireEffect*)&g_CFireEffect_01c3deb4;
 
 // CGame*
 CGame* g_CGamePtr = (CGame*)&g_CGameInstance;
@@ -38,7 +38,7 @@ CGore* g_CGorePtr = (CGore*)&g_CGoreInstance;
 CGround* g_CGroundPtr = (CGround*)&g_CGroundInstance;
 
 // CKeys*
-CKeys* g_CKeys_PTR_00617dd4 = (CKeys*)&g_PTR_01d02f84;
+CKeys* g_CKeysPtr = (CKeys*)&g_PTR_01d02f84;
 
 // CLevelLoader*
 CLevelLoader* g_CLevelLoaderPtr = (CLevelLoader*)&g_CLevelLoaderInstance;
@@ -59,16 +59,16 @@ CScript* g_CScriptPtr = (CScript*)&g_CScriptInstance;
 CSimpleParticleSystem* g_CSimpleParticleSystemPtr = (CSimpleParticleSystem*)&g_CSimpleParticleSystemInstance;
 
 // CSound*
-CSound* g_CSound_PTR_0061c068 = (CSound*)&g_CSound_0264b290;
+CSound* g_CSound_PTR_0061c068 = (CSound*)&g_CSoundInstance;
 
 // CTerrain*
-CTerrain* g_CTerrain_PTR_0061e450 = (CTerrain*)&g_CTerrain_0265364c;
+CTerrain* g_CTerrainPtr = (CTerrain*)&g_CTerrainInstance;
 
 // CTextureList*
 CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
 
 // CVector3i
-CVector3i g_CVector3i_0061b5ac = {
+CVector3i g_GlobalLightDirection = {
     .x = 0x00000000,
     .y = -46333,
     .z = 0x0000B4FD
@@ -78,7 +78,7 @@ CVector3i g_CVector3i_0061b5ac = {
 CWater* g_CWaterPtr = (CWater*)&g_CWaterInstance;
 
 // CWeather*
-CWeather* g_CWeather_PTR_0061e8f4 = (CWeather*)&g_CWeather_02661f80;
+CWeather* g_CWeatherPtr = (CWeather*)&g_CWeatherInstance;
 
 // GUID
 GUID g_IID_IKsPropertySet = {0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
@@ -86,11 +86,11 @@ GUID g_DSPROPSETID_VoiceManager = {0x62A69BAE, 0xDF9D, 0x11D1, {0x99, 0xA6, 0x00
 GUID g_DSPROPSETID_EAX_ReverbProperties = {0x4A4E6FC1, 0xC341, 0x11D1, {0xB7, 0x3A, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00}};
 
 // Heap*
-Heap* g_Heap_PTR_0061eea0 = nullptr;
-Heap* g_Heap_PTR_0061eea4 = nullptr;
+Heap* g_MainHeap = nullptr;
+Heap* g_SecondaryHeap = nullptr;
 
 // RuntimeHandlerEntry
-RuntimeHandlerEntry g_RuntimeHandlerEntry_0061fe4c = {
+RuntimeHandlerEntry g_ExitHandlerTableEnd = {
     .status = 0x00,
     .priority = 0x00,
     .func = (RUNTIME_HANDLER_FUNC *)0x0EE00000
@@ -1116,7 +1116,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
 };
 
 // SAudioFormatDescriptor[12]
-SAudioFormatDescriptor g_SAudioFormatDescriptor_ARRAY_0061bf8c[12] = {
+SAudioFormatDescriptor g_WaveInFormatTable[12] = {
     {
         .format_flags = 0x00000001,
         .bits_per_sample = 0x00000008,
@@ -1192,7 +1192,7 @@ SAudioFormatDescriptor g_SAudioFormatDescriptor_ARRAY_0061bf8c[12] = {
 };
 
 // SHuffmanTableSource[34]
-SHuffmanTableSource g_SHuffmanTableSource_ARRAY_0061ade0[34] = {
+SHuffmanTableSource g_HuffmanTableSources[34] = {
     {
         .table_size = 0x00000000,
         .xlen = 0x00000000,
@@ -1468,7 +1468,7 @@ SHuffmanTableSource g_SHuffmanTableSource_ARRAY_0061ade0[34] = {
 };
 
 // SIGNAL_HANDLER_TYPE[26]
-SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[26] = {
+SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26] = {
     0x00000001, -1, 0x00000002, -1, 0x00000001, -1, 0x00000002, -1073741795,
     0x00000002, -1073741510, 0x00000002, -1073741819, 0x00000002, -1073741510, 0x00000002, -1073741510,
     0x00000001, -1, 0x00000001, -1, 0x00000001, -1, 0x00000002, -1073741676,
@@ -1476,10 +1476,10 @@ SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[26] = {
 };
 
 // SIOControlBlock*
-SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = nullptr;
+SIOControlBlock* g_IOControlBlock = nullptr;
 
 // SMRGLPrimitiveQuad
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_0061e6ac = {
+SMRGLPrimitiveQuad g_WaterRenderQuad = {
     .base = {
         .base = {.type = 0x00000000, .count = 0x00000004},
         .surface_normal = {
@@ -1509,7 +1509,7 @@ SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_0061e6ac = {
 };
 
 // SMRGLPrimitiveQuad[6]
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_0061b97c[6] = {
+SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
     {
         .base = {
             .base = {.type = 0x00000000, .count = 0x00000004},
@@ -1681,19 +1681,19 @@ SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_0061b97c[6] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic g_SMRGLTextureBasic_006150f4 = {
+SMRGLTextureBasic g_FireEffectBlackHoleTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BHOLE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061510c = {
+SMRGLTextureBasic g_FireEffectSparkTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SPARK.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00615124 = {
+SMRGLTextureBasic g_FireEffectBlueSparkTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLUSPARK.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061513c = {
+SMRGLTextureBasic g_FireEffectGreenSparkTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "GRNSPARK.RAW"
 };
@@ -1701,35 +1701,35 @@ SMRGLTextureBasic g_SMRGLTextureBasic_0061516c = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "FIREFLY.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_006151cc = {
+SMRGLTextureBasic g_FireEffectRedSparkTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_006151e4 = {
+SMRGLTextureBasic g_FireEffectLaserTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "LASER.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_006151fc = {
+SMRGLTextureBasic g_FireEffectBeamFuzzTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BEAMFUZZ.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00615214 = {
+SMRGLTextureBasic g_FireEffectReticle = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RETICLE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061522c = {
+SMRGLTextureBasic g_FireEffectHeadliteTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_006157b4 = {
+SMRGLTextureBasic g_FireEffectBlastTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLAST1.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061585c = {
+SMRGLTextureBasic g_FireEffectPopcornTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "POPCORN.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00615874 = {
+SMRGLTextureBasic g_FireEffectRainDropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINDRP1.RAW"
 };
@@ -1737,19 +1737,19 @@ SMRGLTextureBasic g_SMRGLTextureBasic_00615ae8 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "GLOW1.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00616378 = {
+SMRGLTextureBasic g_FliesTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BBWHITE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_006167f0 = {
+SMRGLTextureBasic g_BloodParticleTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BGLOB.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00617968 = {
+SMRGLTextureBasic g_FootstepTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "FOOTSTEP.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00617da4 = {
+SMRGLTextureBasic g_Inventory3DTextureAtlas = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "INV3D.RAW"
 };
@@ -1757,15 +1757,15 @@ SMRGLTextureBasic g_SMRGLTextureBasic_00617e14 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "MOONGLOW.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_00617f2c = {
+SMRGLTextureBasic g_MarqueeSparkTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SPARK.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061b2d0 = {
+SMRGLTextureBasic g_PathMapTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061b8c4 = {
+SMRGLTextureBasic g_EnvMapTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
@@ -1777,25 +1777,25 @@ SMRGLTextureBasic g_SMRGLTextureBasic_0061bb70 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061e8f8 = {
+SMRGLTextureBasic g_RainDropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINDRP1.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061e910 = {
+SMRGLTextureBasic g_RainSplashTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINSPLT.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061e928 = {
+SMRGLTextureBasic g_SnowflakeTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_0061e944 = {
+SMRGLTextureBasic g_WerewolfEyeGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
 
 // SMRGLTextureBasic[116]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616e68[116] = {
+SMRGLTextureBasic g_BloodPoolAnimTextures[116] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BPOL1-01.RAW"
@@ -2263,7 +2263,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616e68[116] = {
 };
 
 // SMRGLTextureBasic[16]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061e52c[16] = {
+SMRGLTextureBasic g_WaterTextures[16] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "WATER0.RAW"
@@ -2331,7 +2331,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061e52c[16] = {
 };
 
 // SMRGLTextureBasic[40]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00614d34[40] = {
+SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "SPFB0050.RAW"
@@ -2493,7 +2493,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00614d34[40] = {
         .texture_name = "SPFB0089.RAW"
     }
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00615b00[40] = {
+SMRGLTextureBasic g_FlameFrameTextures[40] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "F0100.RAW"
@@ -2657,7 +2657,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00615b00[40] = {
 };
 
 // SMRGLTextureBasic[4]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616808[4] = {
+SMRGLTextureBasic g_BloodSplatTextures[4] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BHSP1.RAW"
@@ -2677,7 +2677,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616808[4] = {
 };
 
 // SMRGLTextureBasic[54]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00615244[54] = {
+SMRGLTextureBasic g_FireEffectExplosionTextures[54] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "ZG01100.RAW"
@@ -2897,7 +2897,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00615244[54] = {
 };
 
 // SMRGLTextureBasic[64]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616868[64] = {
+SMRGLTextureBasic g_BloodSplatAnimTextures[64] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BVSP1-01.RAW"
@@ -3157,7 +3157,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616868[64] = {
 };
 
 // SMRGLTextureBasic[6]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_006157cc[6] = {
+SMRGLTextureBasic g_FireEffectLightningBoltTextures[6] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BOLT1.RAW"
@@ -3185,7 +3185,7 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_006157cc[6] = {
 };
 
 // SMpegLayer3BandIndex[6]
-SMpegLayer3BandIndex g_SMpegLayer3BandIndex_ARRAY_00619338[6] = {
+SMpegLayer3BandIndex g_Layer3BandIndex[6] = {
     {
         .l = {0x00000000, 0x00000006, 0x0000000C, 0x00000012, 0x00000018, 0x0000001E, 0x00000024, 0x0000002C, 0x00000036, 0x00000042, 0x00000050, 0x00000060, 0x00000074, 0x0000008C, 0x000000A8, 0x000000C8, 0x000000EE, 0x0000011C, 0x00000150, 0x0000018C, 0x000001D0, 0x0000020A, 0x00000240},
         .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000012, 0x00000018, 0x00000020, 0x0000002A, 0x00000038, 0x0000004A, 0x00000064, 0x00000084, 0x000000AE, 0x000000C0}
@@ -3437,9 +3437,9 @@ TerminatedCString s_EST_0061f52c = "EST";
 TerminatedCString s_EDT_0061f5ad = "EDT";
 
 // WCHAR*
-WCHAR* g_WCHAR_PTR_0061f250 = nullptr;
-WCHAR* g_WCHAR_PTR_0061f254 = nullptr;
-WCHAR* g_WCHAR_PTR_0061f258 = nullptr;
+WCHAR* g_CommandLineArgsW = nullptr;
+WCHAR* g_ExeFileNameW = nullptr;
+WCHAR* g_DllFileNameW = nullptr;
 
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_CEditorToolsDestructorNode = {
@@ -3644,7 +3644,7 @@ WatcomStaticDestructorNode DAT_00617BD0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)0x005F8F40,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CAlphaBitmap_01cf01b0
+    .object_instance = (void *)&g_InvBackgroundBitmap
 };
 WatcomStaticDestructorNode DAT_00617BE0 = {
     .next = nullptr,
@@ -3656,7 +3656,7 @@ WatcomStaticDestructorNode DAT_00617BF0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)0x005F8F58,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CAlphaBitmap_01cf01d8
+    .object_instance = (void *)&g_WeapBackgroundBitmap
 };
 WatcomStaticDestructorNode DAT_00617C00 = {
     .next = nullptr,
@@ -3668,7 +3668,7 @@ WatcomStaticDestructorNode DAT_00617C10 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)0x005F8F70,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CAlphaBitmap_01d02e08
+    .object_instance = (void *)&g_BatteryIconBitmap
 };
 WatcomStaticDestructorNode DAT_00617C20 = {
     .next = nullptr,
@@ -3978,10 +3978,10 @@ WatcomStaticDestructorNode DAT_0061EBEC = {
 };
 
 // WatcomStaticDestructorNode*
-WatcomStaticDestructorNode* g_WatcomStaticDestructorNode_PTR_0061f64c = nullptr;
+WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
 // _FILE
-_FILE g_FILE_0061ef6e = {
+_FILE g_StdoutLogFile = {
     ._ptr = nullptr,
     ._cnt = 0x00000000,
     ._link = nullptr,
@@ -4001,57 +4001,57 @@ _FILE g_FILE_0061ef88 = {
 };
 
 // _FILE*
-_FILE* g_FILE_PTR_0061ef54 = nullptr;
+_FILE* g_StaticFilePoolStart = nullptr;
 
 // _MMX_INTEGER
-_MMX_INTEGER g_MMX_INTEGER_006112c8 = {};
-_MMX_INTEGER g_MMX_INTEGER_00611328 = {};
-_MMX_INTEGER g_MMX_INTEGER_00611330 = {0x0040004000400040ULL};
-_MMX_INTEGER g_MMX_INTEGER_00611338 = {0x0020002000200020ULL};
-_MMX_INTEGER g_MMX_INTEGER_00611340 = {0x0060006000600060ULL};
-_MMX_INTEGER g_MMX_INTEGER_0061c808 = {};
-_MMX_INTEGER g_MMX_INTEGER_0061c810 = {};
-_MMX_INTEGER g_MMX_INTEGER_0061c828 = {};
-_MMX_INTEGER g_MMX_INTEGER_0061c830 = {};
-_MMX_INTEGER g_MMX_INTEGER_0061c8d0 = {0x000000000000F800ULL};
-_MMX_INTEGER g_MMX_INTEGER_0061c8d8 = {0x00000000000007E0ULL};
-_MMX_INTEGER g_MMX_INTEGER_0061c8e0 = {0x000000000000001FULL};
+_MMX_INTEGER g_FilterBlendConstant = {};
+_MMX_INTEGER g_LightmapBlendBias5 = {};
+_MMX_INTEGER g_LightmapBlendBias6 = {0x0040004000400040ULL};
+_MMX_INTEGER g_LightmapBlendBias3 = {0x0020002000200020ULL};
+_MMX_INTEGER g_LightmapBlendBias4 = {0x0060006000600060ULL};
+_MMX_INTEGER g_VertexGreenStart = {};
+_MMX_INTEGER g_VertexBlueStart = {};
+_MMX_INTEGER g_VertexGreenDelta = {};
+_MMX_INTEGER g_VertexBlueDelta = {};
+_MMX_INTEGER g_RedMask16 = {0x000000000000F800ULL};
+_MMX_INTEGER g_GreenMask16 = {0x00000000000007E0ULL};
+_MMX_INTEGER g_BlueMask16 = {0x000000000000001FULL};
 
 // byte
-byte g_BYTE_006182db = 0;
+byte g_CPUIDSupported = 0;
 byte g_BYTE_0061ee9c = 0;
 byte g_BYTE_0061ee9d = 0;
-byte g_BYTE_0061f287 = 0;
+byte g_WindowsMinorVersion = 0;
 byte g_BYTE_0061f288 = 0;
-byte g_BYTE_0061f458 = 0;
-byte g_BYTE_0061f644 = 0x1;
-byte g_BYTE_0061f650 = 0;
-byte g_BYTE_0061f7cc = 0;
+byte g_UseSoftwareMath = 0;
+byte g_TimezoneInitFlags = 0x1;
+byte g_DebuggerIsAttached = 0;
+byte g_ConsoleHandlerRegistered = 0;
 
 // char*
-char* g_CHAR_PTR_0061f248 = nullptr;
-char* g_CHAR_PTR_0061f24c = nullptr;
-char* g_CHAR_PTR_0061f281 = nullptr;
+char* g_ExeFileNameA = nullptr;
+char* g_DllFileNameA = nullptr;
+char* g_EnvironmentStrings = nullptr;
 
 // char[100]
-char g_CHAR_ARRAY_00616430[100] = "";
-char g_CHAR_ARRAY_006166c0[100] = "10.0.0.105";
-char g_CHAR_ARRAY_00617d40[100] = "";
+char g_EventCommandBuffer[100] = "";
+char g_IpAddress[100] = "10.0.0.105";
+char g_DefaultInventoryValue[100] = "";
 
 // char[104]
-char g_CHAR_ARRAY_00617cd8[104] = "";
-char g_CHAR_ARRAY_006181e0[104] = "";
-char g_CHAR_ARRAY_00618248[104] = "";
-char g_CHAR_ARRAY_0061c220[104] = "";
+char g_DefaultInventoryKey[104] = "";
+char g_DefaultMissionActorClass[104] = "";
+char g_DefaultMissionActorName[104] = "";
+char g_SoundResultBufferTemplate[104] = "";
 
 // char[108]
-char g_CHAR_ARRAY_0061c288[108] = "";
+char g_TrainSoundFilenameTemplate[108] = "";
 
 // char[112]
-char g_CHAR_ARRAY_00614350[112] = "";
+char g_DefaultCommandArg[112] = "";
 
 // char[128]
-char g_CHAR_ARRAY_0061b190[128] = {
+char g_OSFontName[128] = {
     (char)0x82, (char)0x6C, (char)0x82, (char)0x72, (char)0x20, (char)0x82, (char)0x6F, (char)0x83, (char)0x53, (char)0x83, (char)0x56, (char)0x83,
     (char)0x62, (char)0x83, (char)0x4E, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -4066,31 +4066,31 @@ char g_CHAR_ARRAY_0061b190[128] = {
 };
 
 // char[200]
-char g_CHAR_ARRAY_00614288[200] = "";
-char g_CHAR_ARRAY_0061b470[200] = "";
+char g_DefaultSfxHandleName[200] = "";
+char g_ActorRefDefaultBuffer[200] = "";
 
 // char[256]
-char g_CHAR_ARRAY_0061bce0[256] = "";
-char g_CHAR_ARRAY_0061bde0[256] = "";
-char g_CHAR_ARRAY_0061e180[256] = "trid3d.dll";
+char g_DefaultSoundDeviceName[256] = "";
+char g_DefaultDeviceName[256] = "";
+char g_RendererDllPath[256] = "trid3d.dll";
 
 // char[260]
-char g_CHAR_ARRAY_00614008[260] = "";
-char g_CHAR_ARRAY_0061f30c[260] = "";
+char g_FilePathBuffer[260] = "";
+char g_TempDirectoryBuffer[260] = "";
 
 // char[512]
-char g_CHAR_ARRAY_00613c08[512] = "";
-char g_CHAR_ARRAY_00613e08[512] = "";
+char g_Field1ParseBuffer[512] = "";
+char g_Field2ParseBuffer[512] = "";
 
 // char[60]
-char g_CHAR_ARRAY_00615890[60] = "";
+char g_DefaultRicochetSound[60] = "";
 
 // double
-double g_DOUBLE_0061c78c = 0;
-double g_DOUBLE_0061c794 = 0;
+double g_BufferFillZeroQword = 0;
+double g_BufferFillFpuPopST0 = 0;
 
 // dst_rule
-dst_rule g_dst_rule_0061f4e4 = {
+dst_rule g_DstStartRule = {
     .seconds = 0x00000000,
     .minutes = 0x00000000,
     .hours = 0x00000002,
@@ -4104,30 +4104,30 @@ dst_rule g_dst_rule_0061f4e4 = {
 // float
 float g_FLOAT_0061bcb4 = 1.0f;
 float g_FLOAT_0061bcb8 = 1.0f;
-float g_FLOAT_0061bcc4 = 0.5f;
+float g_MaxSoftwareLatency = 0.5f;
 float g_FLOAT_0061e524 = 0.25f;
 
 // int
 int g_INT_00613880 = 0x4;
 int g_CDynamiteClassVersion = 0x1;
-int g_INT_006138e4 = 0x9;
-int g_INT_006138e8 = 0x9;
+int g_CursorSizeHorizontal = 0x9;
+int g_CursorSizeVertical = 0x9;
 int g_CElephantGunClassVersion = 0x1;
 int g_CEmitterClassVersion = 0xE;
 int g_CEnemyClassVersion = 0xA;
 int g_INT_006141b8 = 0x140;
 int g_INT_006141bc = 0xC8;
 int g_INT_006141c0 = 0x8;
-int g_INT_006141c4 = 0x1;
-int g_INT_006141c8 = 0x100;
-int g_INT_006141cc = 0x7F;
-int g_INT_006141d0 = 0x4;
-int g_INT_006141d8 = 0xFF;
-int g_INT_006141e4 = 0x10000;
+int g_TextureFilteringEnabled = 0x1;
+int g_CurrentTextureDimension = 0x100;
+int g_InputKeyMask = 0x7F;
+int g_JoystickNumButtons = 0x4;
+int g_CurrentAlphaValue = 0xFF;
+int g_ProjectionScale = 0x10000;
 int g_INT_00614284 = 0x2;
 int g_INT_00614c44 = 0x4927B4;
 int g_CFilmReelClassVersion = 0x2;
-int g_INT_00614c4c = 0x2;
+int g_CFilmProjectorClassVersion = 0x2;
 int g_CFlameClassVersion = 0x7;
 int g_CFlameCanClassVersion = 0x1;
 int g_CFlameThrowerClassVersion = 0x1;
@@ -4144,8 +4144,8 @@ int g_INT_00616040 = -1;
 int g_CFliesClassVersion = 0x3;
 int g_CFrankenstienMachineClassVersion = 0x1;
 int g_CGabriellaClassVersion = 0x3;
-int g_INT_006164a4 = 0x40;
-int g_INT_006164a8 = 0x40;
+int g_MovieRecordingWidth = 0x40;
+int g_MovieRecordingHeight = 0x40;
 int g_CGargoyleClassVersion = 0x2;
 int g_CGasMaskClassVersion = 0x1;
 int g_CGhoulClassVersion = 0x7;
@@ -4162,16 +4162,16 @@ int g_CHotDemonClassVersion = 0x1;
 int g_CHighPriestOfGardathClassVersion = 0x1;
 int g_CIcePickClassVersion = 0x1;
 int g_CImpClassVersion = 0x1;
-int g_INT_00617cd0 = 0xD0;
-int g_INT_00617cd4 = 0x60;
+int g_InventoryWidth = 0xD0;
+int g_InventoryHeight = 0x60;
 int g_CKeyActorClassVersion = 0x3;
 int g_CLadderClassVersion = 0x2;
 int g_CLarvaClassVersion = 0x2;
 int g_CLeverClassVersion = 0x8;
-int g_INT_00617e40 = 0x8000;
-int g_INT_00617e44 = 0x1;
-int g_INT_00617e48 = 0x10000;
-int g_INT_00617e4c = 0x10000;
+int g_AmbientLightLevel = 0x8000;
+int g_SpecularEnabled = 0x1;
+int g_DiffuseLightMultiplier = 0x10000;
+int g_SpecularLightMultiplier = 0x10000;
 int g_CLightGunClassVersion = 0x1;
 int g_CLightConeClassVersion = 0x2;
 int g_CMansionPuzzleCircleClassVersion = 0x3;
@@ -4180,25 +4180,25 @@ int g_CMarqueeClassVersion = 0x1;
 int g_CMeleeClassVersion = 0x7;
 int g_CMimicClassVersion = 0x3;
 int g_CMineCarClassVersion = 0x1;
-int g_INT_006182d0 = 0;
-int g_INT_006182d4 = 0;
+int g_CPUInfoBasicInfo2 = 0;
+int g_CPUInfoBaseInfo3 = 0;
 int g_CMobsterClassVersion = 0x7;
 int g_CMolochClassVersion = 0x1;
 int g_INT_0061846c = 0x1;
 int g_INT_00618470 = 0x1;
 int g_INT_00618474 = 0x1;
-int g_INT_00618de0 = 0x1;
-int g_INT_00618e3c = 0x1;
-int g_INT_00618e80 = 0x1;
-int g_INT_0061b124 = 0x1;
+int g_MpegSynthesisTableInitialized = 0x1;
+int g_Mp3AntiAliasInitialized = 0x1;
+int g_Mp3SynthesisTablesInitialized = 0x1;
+int g_NetLobbyStateChanged = 0x1;
 int g_CNPCClassVersion = 0x6;
 int g_CPassengerClassVersion = 0x6;
 int g_CPendulumClassVersion = 0x8;
 int g_CPlatformClassVersion = 0xB;
-int g_INT_0061b424 = 0x4B0;
+int g_MaxViewportScanline = 0x4B0;
 int g_CScatClassVersion = 0x1;
 int g_CSentinelClassVersion = 0x2;
-int g_INT_0061b5b8 = 0x1;
+int g_RenderMirrorsFlag = 0x1;
 int g_CShadowClassVersion = 0x1;
 int g_CShotgunClassVersion = 0x1;
 int g_CShovelClassVersion = 0x1;
@@ -4206,31 +4206,31 @@ int g_CSimBoxClassVersion = 0x3;
 int g_INT_0061bbd4 = 0x3;
 int g_INT_0061bbd8 = 0x7;
 int g_CSmileyClassVersion = 0x1;
-int g_INT_0061bc80 = 0x1;
-int g_INT_0061bc94 = 0x20;
-int g_INT_0061bc98 = 0x10;
-int g_INT_0061bc9c = 0x2;
-int g_INT_0061bca0 = 0x5622;
-int g_INT_0061bca8 = -1;
-int g_INT_0061bcac = -1;
+int g_SfxPlaybackStateCounter = 0x1;
+int g_MaxSoundChannels = 0x20;
+int g_AudioBitsPerSample = 0x10;
+int g_AudioChannelCount = 0x2;
+int g_AudioSampleRate = 0x5622;
+int g_SoundDeviceCount = -1;
+int g_CurrentSoundDevice = -1;
 int g_INT_0061bcb0 = 0x2;
-int g_INT_0061bcbc = 0x200000;
-int g_INT_0061bcc0 = 0x400000;
-int g_INT_0061bcc8 = -1;
+int g_MinimumSoundMemoryBudget = 0x200000;
+int g_MaximumSoundMemoryBudget = 0x400000;
+int g_RecordingDeviceCount = -1;
 int g_INT_0061bccc = -1;
-int g_INT_0061bcd0 = 0x8;
-int g_INT_0061bcd4 = 0x1;
-int g_INT_0061bcd8 = 0x2B11;
-int g_INT_0061bf80 = -1;
-int g_INT_0061bf84 = -1;
-int g_INT_0061bf88 = -1;
-int g_INT_0061c314 = 0;
-int g_INT_0061c350 = 0;
-int g_INT_0061c354 = 0;
-int g_INT_0061c35c = 0;
-int g_INT_0061c780 = 0;
-int g_INT_0061c784 = 0;
-int g_INT_0061c788 = 0;
+int g_RecordingBitsPerSample = 0x8;
+int g_RecordingChannelCount = 0x1;
+int g_RecordingSampleRate = 0x2B11;
+int g_DirectSoundDeviceCount = -1;
+int g_WaveOutDeviceID = -1;
+int g_WaveInDeviceID = -1;
+int g_ScanlinePixelCount = 0;
+int g_StartTextureU = 0;
+int g_StartTextureV = 0;
+int g_StartDepthW = 0;
+int g_HardwareDeltaTextureU = 0;
+int g_HardwareDeltaTextureV = 0;
+int g_HardwareDeltaDepthZ = 0;
 int g_INT_0061c7a4 = 0;
 int g_INT_0061c7a8 = 0;
 int g_INT_0061c7ac = 0;
@@ -4241,13 +4241,13 @@ int g_INT_0061c7e0 = 0;
 int g_INT_0061c7e8 = 0;
 int g_INT_0061c7ec = 0;
 int g_INT_0061c7f0 = 0;
-int g_INT_0061c840 = 0;
-int g_INT_0061c848 = 0;
+int g_VertexAlphaStart = 0;
+int g_VertexAlphaDelta = 0;
 int g_INT_0061c850 = 0;
 int g_INT_0061c858 = 0;
-int g_INT_0061c978 = 0xFFFFFF;
-int g_INT_0061e280 = 0x1;
-int g_INT_0061e28c = 0x3C000;
+int g_SpecialColor = 0xFFFFFF;
+int g_SystemInitialized = 0x1;
+int g_FullScreenQuadDepth = 0x3C000;
 int g_CSpikeClassVersion = 0x1;
 int g_CStairsClassVersion = 0x2;
 int g_CTempleStoneClassVersion = 0x1;
@@ -4273,9 +4273,9 @@ int g_CWaterActorClassVersion = 0x6;
 int g_CWayPointClassVersion = 0x2;
 int g_CWeaponClassVersion = 0x7;
 int g_CWerewolfClassVersion = 0x6;
-int g_INT_0061e980 = 0x8;
-int g_INT_0061e98c = -1;
-int g_INT_0061e990 = 0x1;
+int g_BrightnessDirection = 0x8;
+int g_WindowActive = -1;
+int g_ForceMessagePump = 0x1;
 int g_INT_0061e994 = -1;
 int g_CZombieClassVersion = 0xB;
 int g_CGogglesClassVersion = 0x1;
@@ -4309,63 +4309,63 @@ int g_CChainClassVersion = 0x4;
 int g_INT_0061eea8 = 0;
 int g_INT_0061f160 = 0x100;
 int g_INT_0061f240 = 0;
-int g_INT_0061f244 = 0;
-int g_INT_0061f268 = 0;
-int g_INT_0061f270 = 0;
+int g_WinMainCmdShow = 0;
+int g_StackAllocSize = 0;
+int g_ConsoleInitializationFlag = 0;
 int g_INT_0061f2a0 = -1;
 int g_INT_0061f410 = 0;
 int g_INT_0061f4dc = 0;
 int g_INT_0061f4e0 = -2147483648;
-int g_INT_0061f508 = 0;
-int g_INT_0061f50c = 0;
-int g_INT_0061f510 = 0x1;
-int g_INT_0061f638 = 0x4650;
-int g_INT_0061f63c = 0x1;
-int g_INT_0061f640 = 0xE10;
-int g_INT_0061f6e8 = 0;
+int g_DstTransitionSecond = 0;
+int g_DstTransitionMinute = 0;
+int g_DstTransitionHour = 0x1;
+int g_TimezoneOffset = 0x4650;
+int g_DaylightSavingActive = 0x1;
+int g_DaylightSavingOffset = 0xE10;
+int g_ConsoleInputState = 0;
 int g_INT_0061f6ec = 0x1;
-int g_INT_0061f6f0 = 0x10000;
+int g_HeapFlags = 0x10000;
 int g_INT_0061f6f4 = 0;
-int g_INT_0061f75c = -1;
-int g_INT_0061f760 = -1;
+int g_ConsoleInputHandle = -1;
+int g_ConsoleOutputHandle = -1;
 
 // int*
-int* g_INT_PTR_0061c378 = nullptr;
-int* g_INT_PTR_0061c37c = nullptr;
+int* g_CurrentScreenPtr = nullptr;
+int* g_CurrentZBufferPtr = nullptr;
 
 // int[12]
-int g_INT_ARRAY_0061b2f8[12] = {
+int g_PathMapLRUCounters[12] = {
     -1, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000
 };
 
 // int[22]
-int g_INT_ARRAY_00618de4[22] = {
+int g_Layer3Pretab[22] = {
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000001, 0x00000002,
     0x00000002, 0x00000003, 0x00000003, 0x00000003, 0x00000002, 0x00000000
 };
 
 // int[2][16]
-int g_INT_ARRAY_ARRAY_006192b8[2][16] = {
+int g_Layer3ScalefacLengths[2][16] = {
     {0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000003, 0x00000001, 0x00000001, 0x00000001, 0x00000002, 0x00000002, 0x00000002, 0x00000003, 0x00000003, 0x00000003, 0x00000004, 0x00000004},
     {0x00000000, 0x00000001, 0x00000002, 0x00000003, 0x00000000, 0x00000001, 0x00000002, 0x00000003, 0x00000001, 0x00000002, 0x00000003, 0x00000001, 0x00000002, 0x00000003, 0x00000002, 0x00000003}
 };
 
 // int[2][3][15]
-int g_INT_ARRAY_ARRAY_ARRAY_00618ec8[2][3][15] = {
+int g_MpegBitrateTable[2][3][15] = {
     {{0x00000000, 0x00000020, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x00000090, 0x000000A0, 0x000000B0, 0x000000C0, 0x000000E0, 0x00000100}, {0x00000000, 0x00000008, 0x00000010, 0x00000018, 0x00000020, 0x00000028, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x00000090, 0x000000A0}, {0x00000000, 0x00000008, 0x00000010, 0x00000018, 0x00000020, 0x00000028, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x00000090, 0x000000A0}},
     {{0x00000000, 0x00000020, 0x00000040, 0x00000060, 0x00000080, 0x000000A0, 0x000000C0, 0x000000E0, 0x00000100, 0x00000120, 0x00000140, 0x00000160, 0x00000180, 0x000001A0, 0x000001C0}, {0x00000000, 0x00000020, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x000000A0, 0x000000C0, 0x000000E0, 0x00000100, 0x00000140, 0x00000180}, {0x00000000, 0x00000020, 0x00000028, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x000000A0, 0x000000C0, 0x000000E0, 0x00000100, 0x00000140}}
 };
 
 // int[3]
-int g_INT_ARRAY_006192ac[3] = {0x00000000, 0x00000006, 0x0000000C};
+int g_Layer3ShortBandGroupCounts[3] = {0x00000000, 0x00000006, 0x0000000C};
 
 // int[5]
-int g_INT_ARRAY_00619298[5] = {0x00000000, 0x00000006, 0x0000000B, 0x00000010, 0x00000015};
+int g_Layer3LongBandGroupCounts[5] = {0x00000000, 0x00000006, 0x0000000B, 0x00000010, 0x00000015};
 
 // int[6][3][4]
-int g_INT_ARRAY_ARRAY_ARRAY_006196b0[6][3][4] = {
+int g_Layer3ScalefactorBandCounts[6][3][4] = {
     {{0x00000006, 0x00000005, 0x00000005, 0x00000005}, {0x00000009, 0x00000009, 0x00000009, 0x00000009}, {0x00000006, 0x00000009, 0x00000009, 0x00000009}},
     {{0x00000006, 0x00000005, 0x00000007, 0x00000003}, {0x00000009, 0x00000009, 0x0000000C, 0x00000006}, {0x00000006, 0x00000009, 0x0000000C, 0x00000006}},
     {{0x0000000B, 0x0000000A, 0x00000000, 0x00000000}, {0x00000012, 0x00000012, 0x00000000, 0x00000000}, {0x0000000F, 0x00000012, 0x00000000, 0x00000000}},
@@ -4375,7 +4375,7 @@ int g_INT_ARRAY_ARRAY_ARRAY_006196b0[6][3][4] = {
 };
 
 // int[96]
-int g_INT_ARRAY_0061b5bc[96] = {
+int g_LightDebugScreenX[96] = {
     0x00000180, 0x00000200, 0x00000180, 0x00000200, 0x00000000, 0x00000080, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -4389,7 +4389,7 @@ int g_INT_ARRAY_0061b5bc[96] = {
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000
 };
-int g_INT_ARRAY_0061b73c[96] = {
+int g_LightDebugScreenY[96] = {
     0x00000000, 0x00000000, 0x00000080, 0x00000080, 0x00000160, 0x00000160, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -4405,33 +4405,33 @@ int g_INT_ARRAY_0061b73c[96] = {
 };
 
 // int[9]
-int g_INT_ARRAY_0061b328[9] = {
+int g_PathfindingDeltaX[9] = {
     0x00000000, 0x00000000, 0x00000000, 0x00000001, -1, 0x00000001, -1, 0x00000001,
     -1
 };
-int g_INT_ARRAY_0061b34c[9] = {
+int g_PathfindingDeltaZ[9] = {
     0x00000000, 0x00000001, -1, 0x00000000, 0x00000000, 0x00000001, 0x00000001, -1,
     -1
 };
 
 // qword
-qword g_QWORD_00611308 = 0;
-qword g_QWORD_00611310 = 0x8000800080008;
-qword g_QWORD_00611318 = 0x4000400040004;
-qword g_QWORD_00611320 = 0xC000C000C000C;
-qword g_QWORD_0061c800 = 0;
-qword g_QWORD_0061c820 = 0;
+qword g_LightmapBlendBias1 = 0;
+qword g_LightmapBlendBias2 = 0x8000800080008;
+qword g_AmbientLightMMX1 = 0x4000400040004;
+qword g_AmbientLightMMX2 = 0xC000C000C000C;
+qword g_VertexRedStart = 0;
+qword g_VertexRedDelta = 0;
 qword g_QWORD_0061c860 = 0;
-qword g_QWORD_0061c868 = 0x10;
-qword g_QWORD_0061c888 = 0x8;
-qword g_QWORD_0061c8a8 = 0xFF;
-qword g_QWORD_0061c8c8 = 0xFF00;
-qword g_QWORD_0061c8e8 = 0xF80000;
-qword g_QWORD_0061c908 = 0xFC00;
-qword g_QWORD_0061c928 = 0xF8;
-qword g_QWORD_0061c930 = 0x8;
-qword g_QWORD_0061c950 = 0x5;
-qword g_QWORD_0061c970 = 0x3;
+qword g_TextureShift1 = 0x10;
+qword g_TextureShift2 = 0x8;
+qword g_TextureMask1 = 0xFF;
+qword g_TextureMask2 = 0xFF00;
+qword g_RedMask32 = 0xF80000;
+qword g_GreenMask32 = 0xFC00;
+qword g_BlueMask32 = 0xF8;
+qword g_TotalDitherShift = 0x8;
+qword g_GreenBlueDitherShift = 0x5;
+qword g_BlueBitShift = 0x3;
 
 // qword[512]
 qword g_QWORD_ARRAY_0061d180[512] = {
@@ -4502,45 +4502,45 @@ qword g_QWORD_ARRAY_0061d180[512] = {
 };
 
 // short
-short g_SHORT_0061f289 = 0;
-short g_SHORT_0061f648 = 0;
+short g_WindowsPlatformVersion = 0;
+short g_PureVirtualCallFlag = 0;
 
 // uchar
-uchar g_UCHAR_006182d8 = '\0';
-uchar g_UCHAR_006182d9 = '\0';
-uchar g_UCHAR_006182da = '\0';
-uchar g_UCHAR_006182dc = '\0';
-uchar g_UCHAR_006182e1 = '\0';
+uchar g_CPUInfoFamily = '\0';
+uchar g_CPUInfoModel = '\0';
+uchar g_CPUInfoStepping = '\0';
+uchar g_CPUInfoIntelCPU = '\0';
+uchar g_CPUInfoMMXSupported = '\0';
 
 // uint
-uint g_UINT_006141d4 = 0x5;
-uint g_UINT_006141e0 = 0x1;
-uint g_UINT_006182dd = 0;
-uint g_UINT_0061f28b = 0;
-uint g_UINT_0061f28f = 0;
-uint g_UINT_0061f293 = 0;
-uint g_UINT_0061f297 = 0;
-uint g_UINT_0061f480 = 0x14;
-uint g_UINT_0061f758 = 0x1;
+uint g_CPUFamily = 0x5;
+uint g_VertexProcessingEnabled = 0x1;
+uint g_CPUFeatureFlags = 0;
+uint g_WindowsPlatformVersionExt = 0;
+uint g_WindowsVersionLow = 0;
+uint g_WindowsVersionMid = 0;
+uint g_WindowsVersionCombined = 0;
+uint g_MaxHandleCount = 0x14;
+uint g_CodePage = 0x1;
 
 // uint*
-uint* g_UINT_PTR_0061f264 = nullptr;
+uint* g_HeapBound = nullptr;
 
 // uint[18]
-uint g_UINT_ARRAY_00619250[18] = {
+uint g_MpegBitMaskTableMultiBit[18] = {
     0x00000000, 0x00000001, 0x00000003, 0x00000007, 0x0000000F, 0x0000001F, 0x0000003F, 0x0000007F,
     0x000000FF, 0x000000FF, 0x000000FE, 0x000000FC, 0x000000F8, 0x000000F0, 0x000000E0, 0x000000C0,
     0x00000080, 0x00000000
 };
 
 // uint[8]
-uint g_UINT_ARRAY_00619230[8] = {0x00000001, 0x00000002, 0x00000004, 0x00000008, 0x00000010, 0x00000020, 0x00000040, 0x00000080};
+uint g_MpegBitMaskTableSingleBit[8] = {0x00000001, 0x00000002, 0x00000004, 0x00000008, 0x00000010, 0x00000020, 0x00000040, 0x00000080};
 
 // ulong
-ulong g_ULONG_0061f754 = 0xF4;
+ulong g_RuntimeBufferSize = 0xF4;
 
 // ulonglong[256]
-ulonglong g_ULONGLONG_ARRAY_006143c0[256] = {
+ulonglong g_ByteFillTable[256] = {
     0x0000000000000000, 0x0101010101010101, 0x0202020202020202, 0x0303030303030303, 0x0404040404040404, 0x0505050505050505, 0x0606060606060606, 0x0707070707070707,
     0x0808080808080808, 0x0909090909090909, 0x0A0A0A0A0A0A0A0A, 0x0B0B0B0B0B0B0B0B, 0x0C0C0C0C0C0C0C0C, 0x0D0D0D0D0D0D0D0D, 0x0E0E0E0E0E0E0E0E, 0x0F0F0F0F0F0F0F0F,
     0x1010101010101010, 0x1111111111111111, 0x1212121212121212, 0x1313131313131313, 0x1414141414141414, 0x1515151515151515, 0x1616161616161616, 0x1717171717171717,
@@ -4595,7 +4595,7 @@ undefined4 DAT_0061f528 = 0x00000000;
 ushort g_USHORT_006180f0 = 0;
 
 // ushort[2048]
-ushort g_USHORT_ARRAY_00612880[2048] = {
+ushort g_LightmapData[2048] = {
     0x0000, 0x0000, 0x0000, 0x0000, 0x0040, 0x0040, 0x0040, 0x0040,
     0x0080, 0x0080, 0x0080, 0x0080, 0x00C0, 0x00C0, 0x00C0, 0x00C0,
     0x0100, 0x0100, 0x0100, 0x0100, 0x0140, 0x0140, 0x0140, 0x0140,
@@ -4858,20 +4858,20 @@ ushort g_USHORT_ARRAY_00612880[2048] = {
 void* switchdataD_00614bc0 = (void*)0x004926AC; // caseD_0
 void* switchdataD_00614c04 = (void*)0x0049273B; // caseD_0
 void* g_PTR_0061e290 = (void*)0x0264BBB4; // DAT_0264bbb4
-void* g_PTR_0061f26c = nullptr;
+void* g_CrtStackBuffer = nullptr;
 void* g_PTR_0061f29b = (void*)crt_unknown_c_FUN_005bcce4;
-void* g_PTR_0061f2ec = nullptr;
-void* g_PTR_0061f414 = nullptr;
-void* g_PTR_0061f418 = nullptr;
+void* g_SpecialExitHandler = nullptr;
+void* g_IsSpecialDeviceFuncPtr = nullptr;
+void* g_SpecialDeviceCleanupFunc = nullptr;
 void* g_PTR_0061f41c = nullptr;
-void* g_PTR_0061f420 = nullptr;
+void* g_SpecialDeviceCloseFunc = nullptr;
 void* g_PTR_0061f43c = nullptr;
-void* g_PTR_0061f440 = nullptr;
-void* g_PTR_0061f448 = nullptr;
-void* g_PTR_0061f450 = nullptr;
+void* g_SpecialDeviceWriteFuncPtr = nullptr;
+void* g_SpecialConsoleInputHandler = nullptr;
+void* g_SpecialConsoleOutputHandler = nullptr;
 void* g_PTR_0061f454 = nullptr;
-void* g_PTR_0061f6cc = nullptr;
-void* g_PTR_0061f6d0 = nullptr;
+void* g_UserExceptionFilter = nullptr;
+void* g_ExceptionCleanup = nullptr;
 void* g_PTR_0061f7f0 = (void*)crt_unknown_c_FUN_005c67b0;
 void* g_PTR_0061f7f4 = (void*)crt_unknown_c_FUN_005c68a8;
 void* g_PTR_0061f7f8 = (void*)crt_unknown_c_FUN_005c5cd0;

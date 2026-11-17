@@ -26,8 +26,8 @@
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_005db2df
 ;   int g_INT_007c7554
 ;   SRenderVertex[16] g_SRenderVertex_ARRAY_007c7558
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
-;   undefined4 g_BIT_INTEGER32_01c51d14+1
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   undefined4 g_RenderStateFlags+1
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -62,10 +62,10 @@ section .text
     CMP dword ptr [EDI + 0x4],0x0       ; 00481abc
     JZ 0x00481acb                       ; 00481ac0
         ;   XREF to: 00481acb (CONDITIONAL_JUMP)  ; LAB_00481acb
-    TEST byte ptr [0x01c51d14],0x1      ; 00481ac2 | g_BIT_INTEGER32_01c51d14
+    TEST byte ptr [0x01c51d14],0x1      ; 00481ac2 | g_RenderStateFlags
     JZ 0x00481ad4                       ; 00481ac9
         ;   XREF to: 00481ad4 (CONDITIONAL_JUMP)  ; LAB_00481ad4
-    TEST byte ptr [0x01c51d14],0x5      ; 00481acb | g_BIT_INTEGER32_01c51d14
+    TEST byte ptr [0x01c51d14],0x5      ; 00481acb | g_RenderStateFlags
         ;   Label: LAB_00481acb
     JNZ 0x00481b08                      ; 00481ad2
         ;   XREF to: 00481b08 (CONDITIONAL_JUMP)  ; LAB_00481b08
@@ -104,14 +104,14 @@ section .text
         ;   Label: LAB_00481b11
     JZ 0x00481b20                       ; 00481b15
         ;   XREF to: 00481b20 (CONDITIONAL_JUMP)  ; LAB_00481b20
-    TEST byte ptr [0x01c51d14],0x1      ; 00481b17 | g_BIT_INTEGER32_01c51d14
+    TEST byte ptr [0x01c51d14],0x1      ; 00481b17 | g_RenderStateFlags
     JZ 0x00481b41                       ; 00481b1e
         ;   XREF to: 00481b41 (CONDITIONAL_JUMP)  ; LAB_00481b41
-    TEST byte ptr [0x01c51d14],0x5      ; 00481b20 | g_BIT_INTEGER32_01c51d14
+    TEST byte ptr [0x01c51d14],0x5      ; 00481b20 | g_RenderStateFlags
         ;   Label: LAB_00481b20
     JZ 0x00481b41                       ; 00481b27
         ;   XREF to: 00481b41 (CONDITIONAL_JUMP)  ; LAB_00481b41
-    TEST byte ptr [0x01c51d15],0x2      ; 00481b29 | g_BIT_INTEGER32_01c51d14+1
+    TEST byte ptr [0x01c51d15],0x2      ; 00481b29 | g_RenderStateFlags+1
     JZ 0x00481b69                       ; 00481b30
         ;   XREF to: 00481b69 (CONDITIONAL_JUMP)  ; LAB_00481b69
     PUSH ESI                            ; 00481b32

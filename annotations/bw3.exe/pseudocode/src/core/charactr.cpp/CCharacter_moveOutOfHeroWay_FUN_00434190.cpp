@@ -111,7 +111,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacte
         }
         uStack_4c = 0;
         afStack_48[1] = 0.0;
-        afStack_48[0] = fStack_28 + g_FLOAT_ARRAY_005f0f30[uVar4];
+        afStack_48[0] = fStack_28 + g_MoveAwayAngleOffsets[uVar4];
         pCVar8 = &CStack_a0;
         pCVar7 = &CStack_164;
         CStack_a0.x = 0.0;
@@ -144,7 +144,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacte
             (this_ptr->move_away_target).z = CStack_130.z;
           }
           iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0
-                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_CVector3f_02cfd900,0.0,0.0);
+                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar3) {
             this_ptr->walk_stuck_timer = 0.0;
             this_ptr->hero_proximity_timer = -4.0;
@@ -205,7 +205,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacte
             (this_ptr->move_away_target).z = CStack_c4.z;
           }
           iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0
-                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_CVector3f_02cfd900,0.0,0.0);
+                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar3) {
             this_ptr->walk_stuck_timer = 0.0;
             this_ptr->hero_proximity_timer = -5.0;
@@ -227,8 +227,8 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacte
     this_ptr->hero_proximity_timer = fVar1;
     if ((fVar1 < 0.0) && (this_ptr->walk_stuck_timer <= (float)1.5)) {
       iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0
-                        (this_ptr,&this_ptr->move_away_target,(CPathMap *)0x0,&g_CVector3f_02cfd900,
-                         0.0,0.0);
+                        (this_ptr,&this_ptr->move_away_target,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0)
+      ;
       if (iVar3 == 0) {
         return 1;
       }

@@ -16,7 +16,7 @@
 ;   int g_INT_0061b4a0 = 0x8
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; *****************************************************************************
@@ -31,7 +31,7 @@ section .text
     CMP ECX,dword ptr [0x01c4f008]      ; 00439f7d | g_INT_01c4f008
     JL 0x00439faf                       ; 00439f83
         ;   XREF to: 00439faf (CONDITIONAL_JUMP)  ; LAB_00439faf
-    CMP ECX,dword ptr [0x01c4f010]      ; 00439f85 | g_INT_01c4f010
+    CMP ECX,dword ptr [0x01c4f010]      ; 00439f85 | g_ClipRight
     JG 0x00439faf                       ; 00439f8b
         ;   XREF to: 00439faf (CONDITIONAL_JUMP)  ; LAB_00439faf
     CMP EDX,dword ptr [0x01c4f00c]      ; 00439f8d | g_INT_01c4f00c

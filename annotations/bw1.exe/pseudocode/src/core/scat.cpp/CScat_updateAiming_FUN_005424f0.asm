@@ -35,7 +35,7 @@
 ;   double g_DOUBLE_005edee7 = 0.0200000000000000
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 g_INT_ARRAY_01e7e014[6]
+;   undefined4 g_ScatIndices[6]
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -366,7 +366,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00542920
     MOVSD ES:EDI,ESI                    ; 00542921
     MOVSD ES:EDI,ESI                    ; 00542922
-    MOV EDI,dword ptr [0x01e7e02c]      ; 00542923 | g_INT_ARRAY_01e7e014[6]
+    MOV EDI,dword ptr [0x01e7e02c]      ; 00542923 | g_ScatIndices[6]
     MOV EAX,dword ptr [EBP + 0x14]      ; 00542929
     PUSH EDI                            ; 0054292c
     ADD EAX,0x158                       ; 0054292d

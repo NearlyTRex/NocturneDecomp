@@ -11,38 +11,38 @@ void __cdecl core_dfont_cpp_freeFonts_FUN_0044cc00(void)
 {
   CBitFont *pCVar1;
   
-  if (g_CBitFont_PTR_014b98f8 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b98f8,0);
+  if (g_MediumFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_MediumFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b98f8 = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b98fc != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b98fc,0);
+  g_MediumFont = (CBitFont *)0x0;
+  if (g_TinyFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_TinyFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b98fc = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b9900 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b9900,0);
+  g_TinyFont = (CBitFont *)0x0;
+  if (g_ThemeFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_ThemeFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b9900 = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b9904 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b9904,0);
+  g_ThemeFont = (CBitFont *)0x0;
+  if (g_SmallEditorFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_SmallEditorFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b9904 = (CBitFont *)0x0;
+  g_SmallEditorFont = (CBitFont *)0x0;
   if (g_CBitFont_PTR_014b9908 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b9908,0);
     operator_delete(pCVar1);
   }
   g_CBitFont_PTR_01bcd070 = (CBitFont *)0x0;
   g_CBitFont_PTR_014b9908 = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b990c != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b990c,0);
+  if (g_MicroFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_MicroFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b990c = (CBitFont *)0x0;
-  if (g_INT_01d16810 != 0) {
+  g_MicroFont = (CBitFont *)0x0;
+  if (g_UseOSFonts != 0) {
     if (g_CWinFont_PTR_014b9910 != (CWinFont *)0x0) {
       (*((g_CWinFont_PTR_014b9910->base).vtable)->ctor)(&g_CWinFont_PTR_014b9910->base);
     }

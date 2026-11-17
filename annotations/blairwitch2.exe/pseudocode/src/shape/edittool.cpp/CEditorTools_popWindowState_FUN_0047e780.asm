@@ -13,17 +13,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d238e
 ;   TerminatedCString s_CEditorTools_popWindow_c_005d23a4
-;   int g_INT_01c2559c
+;   int g_WindowStackCount
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e40
 ;   int g_INT_01c35e44
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
-;   int g_INT_01c35e58
-;   int g_INT_01c35e5c
+;   int g_ViewportWidth
+;   int g_ViewportHeight
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -40,13 +40,13 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047e780
     PUSH ESI                            ; 0047e781
     PUSH EDI                            ; 0047e782
-    CMP dword ptr [0x01c2559c],0x1      ; 0047e783 | g_INT_01c2559c
+    CMP dword ptr [0x01c2559c],0x1      ; 0047e783 | g_WindowStackCount
     JL 0x0047e827                       ; 0047e78a
         ;   XREF to: 0047e827 (CONDITIONAL_JUMP)  ; LAB_0047e827
-    MOV ESI,dword ptr [0x01c2559c]      ; 0047e790 | g_INT_01c2559c
+    MOV ESI,dword ptr [0x01c2559c]      ; 0047e790 | g_WindowStackCount
         ;   Label: LAB_0047e790
     DEC ESI                             ; 0047e796
-    MOV dword ptr [0x01c2559c],ESI      ; 0047e797 | g_INT_01c2559c
+    MOV dword ptr [0x01c2559c],ESI      ; 0047e797 | g_WindowStackCount
     LEA EBX,[ESI*0x8 + 0x0]             ; 0047e79d
     MOV EAX,EBX                         ; 0047e7a4
     SHL EBX,0x6                         ; 0047e7a6
@@ -68,7 +68,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 0047e7d8
     MOV [0x01c35e4c],EAX                ; 0047e7db | g_INT_01c35e4c
     MOV EAX,dword ptr [EBX + 0x18]      ; 0047e7e0
-    MOV [0x01c35e50],EAX                ; 0047e7e3 | g_INT_01c35e50
+    MOV [0x01c35e50],EAX                ; 0047e7e3 | g_ClipRight
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0047e7e8
     MOV [0x01c35e54],EAX                ; 0047e7eb | g_INT_01c35e54
     MOV EAX,dword ptr [EBX + 0x30]      ; 0047e7f0
@@ -80,10 +80,10 @@ section .text
     MOV EAX,dword ptr [EBX + 0x3c]      ; 0047e808
     MOV [0x01c35e44],EAX                ; 0047e80b | g_INT_01c35e44
     MOV EAX,dword ptr [EBX + 0x40]      ; 0047e810
-    MOV [0x01c35e58],EAX                ; 0047e813 | g_INT_01c35e58
+    MOV [0x01c35e58],EAX                ; 0047e813 | g_ViewportWidth
     MOV EAX,dword ptr [EBX + 0x44]      ; 0047e818
     ADD ESP,0x10                        ; 0047e81b
-    MOV [0x01c35e5c],EAX                ; 0047e81e | g_INT_01c35e5c
+    MOV [0x01c35e5c],EAX                ; 0047e81e | g_ViewportHeight
     POP EDI                             ; 0047e823
     POP ESI                             ; 0047e824
     POP EBX                             ; 0047e825

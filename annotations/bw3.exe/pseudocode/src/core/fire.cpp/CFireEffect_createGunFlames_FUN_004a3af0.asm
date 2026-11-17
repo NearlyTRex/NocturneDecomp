@@ -22,7 +22,7 @@
 ;   core_styldemo.cpp_CStylerDemon_process_FUN_0059e600 at 0059fa2a
 ;
 ; Referenced Globals:
-;   int g_INT_01cfb8b8
+;   int g_LightningBoltAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CGunFlame_activate_FUN_0049e1a0
@@ -36,7 +36,7 @@ section .text
     PUSH ESI                            ; 004a3af1
     PUSH EDI                            ; 004a3af2
     PUSH EBP                            ; 004a3af3
-    MOV ESI,dword ptr [0x01cfb8b8]      ; 004a3af4 | g_INT_01cfb8b8
+    MOV ESI,dword ptr [0x01cfb8b8]      ; 004a3af4 | g_LightningBoltAllocIndex
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a3afa
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004a3afe
     MOV EBX,dword ptr [ESP + 0x20]      ; 004a3b02
@@ -54,10 +54,10 @@ section .text
     PUSH EDI                            ; 004a3b1a
     ADD EAX,0x1cfb8bc                   ; 004a3b1b
     PUSH EAX                            ; 004a3b20
-    MOV dword ptr [0x01cfb8b8],ESI      ; 004a3b21 | g_INT_01cfb8b8
+    MOV dword ptr [0x01cfb8b8],ESI      ; 004a3b21 | g_LightningBoltAllocIndex
     CALL core_fire.cpp_CGunFlame_activate_FUN_0049e1a0 ; 004a3b27
         ;   XREF to: 0049e1a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_activate_FUN_0049e1a0(CGunFlame * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_type, ...)
-    MOV EAX,[0x01cfb8b8]                ; 004a3b2c | g_INT_01cfb8b8
+    MOV EAX,[0x01cfb8b8]                ; 004a3b2c | g_LightningBoltAllocIndex
     LEA ESI,[EAX + 0x1]                 ; 004a3b31
     ADD ESP,0x14                        ; 004a3b34
     CMP ESI,0x1f4                       ; 004a3b37
@@ -69,7 +69,7 @@ section .text
     TEST EBX,EBX                        ; 004a3b42
     JG 0x004a3b0c                       ; 004a3b44
         ;   XREF to: 004a3b0c (CONDITIONAL_JUMP)  ; LAB_004a3b0c
-    MOV dword ptr [0x01cfb8b8],ESI      ; 004a3b46 | g_INT_01cfb8b8
+    MOV dword ptr [0x01cfb8b8],ESI      ; 004a3b46 | g_LightningBoltAllocIndex
         ;   Label: LAB_004a3b46
     POP EBP                             ; 004a3b4c
     POP EDI                             ; 004a3b4d

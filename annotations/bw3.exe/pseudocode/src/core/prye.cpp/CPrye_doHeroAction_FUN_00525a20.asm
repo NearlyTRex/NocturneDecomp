@@ -470,14 +470,14 @@ section .text
     SAHF                                ; 00525ecb
     JBE 0x00526033                      ; 00525ecc
         ;   XREF to: 00526033 (CONDITIONAL_JUMP)  ; LAB_00526033
-    MOV ESI,dword ptr [0x01ed3714]      ; 00525ed2 | g_INT_ARRAY_01ed36ec[10]
+    MOV ESI,dword ptr [0x01ed3714]      ; 00525ed2 | g_StrangerIndices[10]
     PUSH ESI                            ; 00525ed8
     PUSH EDI                            ; 00525ed9
     LEA ESI,[ESP + 0x44]                ; 00525eda
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00525ede
         ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00525ee3
-    MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | g_INT_ARRAY_01ed36ec
+    MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | g_StrangerIndices
     PUSH EBP                            ; 00525eec
     PUSH EDI                            ; 00525eed
     LEA ESI,[ESP + 0xb0]                ; 00525eee

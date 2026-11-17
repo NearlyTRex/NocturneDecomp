@@ -10,13 +10,13 @@
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f216
 ;
 ; Referenced Globals:
-;   int g_INT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555cf0 | g_INT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555cf0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00555cf0
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555cf6
     SUB EAX,EDX                         ; 00555cfd

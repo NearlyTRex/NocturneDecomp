@@ -112,8 +112,8 @@ section .text
     MOV ESI,0xbfa78d36                  ; 0056bfaa
         ;   Label: LAB_0056bfaa
     MOV EDI,0x3f060a92                  ; 0056bfaf
-    MOV EAX,[0x0264be64]                ; 0056bfb4 | g_INT_ARRAY_0264be30[13]
-    MOV EBX,dword ptr [0x0264be3c]      ; 0056bfb9 | g_INT_ARRAY_0264be30[3]
+    MOV EAX,[0x0264be64]                ; 0056bfb4 | g_StrangerIndices[13]
+    MOV EBX,dword ptr [0x0264be3c]      ; 0056bfb9 | g_StrangerIndices[3]
     MOV dword ptr [ESP + 0x1d4],EAX     ; 0056bfbf
     MOV dword ptr [ESP + 0x200],ESI     ; 0056bfc6
     MOV dword ptr [ESP + 0x1fc],EDI     ; 0056bfcd
@@ -369,11 +369,11 @@ section .text
     MOV dword ptr [ESP + 0x1e4],EAX     ; 0056c37c
     JMP 0x0056bf88                      ; 0056c383
         ;   XREF to: 0056bf88 (UNCONDITIONAL_JUMP)  ; LAB_0056bf88
-    MOV EAX,[0x0264be68]                ; 0056c388 | g_INT_ARRAY_0264be30[14]
+    MOV EAX,[0x0264be68]                ; 0056c388 | g_StrangerIndices[14]
         ;   Label: LAB_0056c388
     MOV dword ptr [ESP + 0x1d4],EAX     ; 0056c38d
     MOV EAX,dword ptr [ESP + 0x1e4]     ; 0056c394
-    MOV EBX,dword ptr [0x0264be40]      ; 0056c39b | g_INT_ARRAY_0264be30[4]
+    MOV EBX,dword ptr [0x0264be40]      ; 0056c39b | g_StrangerIndices[4]
     TEST EAX,EAX                        ; 0056c3a1
     JNZ 0x0056c3c2                      ; 0056c3a3
         ;   XREF to: 0056c3c2 (CONDITIONAL_JUMP)  ; LAB_0056c3c2

@@ -33,7 +33,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00571700(CSvetlana *thi
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
   iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
   ;
-  if ((iVar3 == 0) && (g_INT_01c38aec < 0x4000)) {
+  if ((iVar3 == 0) && (g_PerspectiveReciprocal < 0x4000)) {
     pCVar5 = this_ptr;
     do {
       pCVar6 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);

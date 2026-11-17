@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 491,
-    "complexity_score": 246,
+    "complexity_score": 247,
     "cross_reference_count": 3,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
+    "pseudocode_lines": 202,
     "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 692
+    "total_lines": 693
   },
   "cross_references": [
     {
@@ -309,7 +309,7 @@
     },
     {
       "addr": "02cebc20",
-      "name": "g_INT_02cebc20",
+      "name": "g_LastSampleAccessIndex",
       "type": "int",
       "value": null
     },
@@ -498,7 +498,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 63,
+      "line": 64,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 70,
+      "line": 71,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CSfxSample *)((pCVar6->sample_info).name + 2);",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 77,
+      "line": 78,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

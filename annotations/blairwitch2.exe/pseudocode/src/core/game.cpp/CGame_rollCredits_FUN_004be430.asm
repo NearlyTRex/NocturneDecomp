@@ -40,8 +40,8 @@
 ;   float g_FLOAT_005d8ab3 = 32
 ;   double g_DOUBLE_005d8abb = -240
 ;   float g_FLOAT_005d8ac3 = -2500
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
-;   CBitFont* g_CBitFont_PTR_01511cc0
+;   CKeys* g_CKeysPtr = 01d02f84
+;   CBitFont* g_ThemeFont
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
         ;   Label: LAB_004be546
     PUSH 0x58                           ; 004be54b
-    MOV EAX,[0x01511cc0]                ; 004be54d | g_CBitFont_PTR_01511cc0
+    MOV EAX,[0x01511cc0]                ; 004be54d | g_ThemeFont
     PUSH EAX                            ; 004be552
     MOV dword ptr [ESP + 0x1140],EAX    ; 004be553
     MOV dword ptr [EAX + 0x4210],0x0    ; 004be55a
@@ -294,7 +294,7 @@ section .text
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
         ;   Label: LAB_004be702
     PUSH 0x1                            ; 004be707
-    MOV EAX,[0x00617dd4]                ; 004be709 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004be709 | g_CKeysPtr
     PUSH EAX                            ; 004be70e | g_PTR_01d02f84
     MOV ECX,dword ptr [EAX]             ; 004be70f | g_PTR_01d02f84
     CALL dword ptr [ECX]                ; 004be711
@@ -302,7 +302,7 @@ section .text
     TEST EAX,EAX                        ; 004be716
     JZ 0x004be846                       ; 004be718
         ;   XREF to: 004be846 (CONDITIONAL_JUMP)  ; LAB_004be846
-    CMP dword ptr [0x01d63250],0x0      ; 004be71e | g_INT_01d63250
+    CMP dword ptr [0x01d63250],0x0      ; 004be71e | g_UseOSFonts
         ;   Label: LAB_004be71e
     JZ 0x004be738                       ; 004be725
         ;   XREF to: 004be738 (CONDITIONAL_JUMP)  ; LAB_004be738

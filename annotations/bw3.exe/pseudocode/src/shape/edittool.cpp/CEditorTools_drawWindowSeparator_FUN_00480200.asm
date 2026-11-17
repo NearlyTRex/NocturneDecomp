@@ -18,10 +18,10 @@
 ;   TerminatedCString s_shape_edittool_cpp_005bd28a
 ;   TerminatedCString s_CEditorTools_paintWindow_005bd2a0
 ;   int g_INT_005fba1c = 0xc8
-;   int g_INT_01c5b104
+;   int g_WindowStackCount
 ;   int g_INT_01c5baec
-;   int g_INT_01c5baf4
-;   int g_INT_01c5baf8
+;   int g_WindowBorderHighlightColor
+;   int g_WindowBorderShadowColor
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+1
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+2
@@ -47,10 +47,10 @@ section .text
     PUSH EDI                            ; 00480202
     PUSH EBP                            ; 00480203
     SUB ESP,0x4                         ; 00480204
-    CMP dword ptr [0x01c5b104],0x1      ; 00480207 | g_INT_01c5b104
+    CMP dword ptr [0x01c5b104],0x1      ; 00480207 | g_WindowStackCount
     JL 0x00480342                       ; 0048020e
         ;   XREF to: 00480342 (CONDITIONAL_JUMP)  ; LAB_00480342
-    MOV EAX,[0x01c5b104]                ; 00480214 | g_INT_01c5b104
+    MOV EAX,[0x01c5b104]                ; 00480214 | g_WindowStackCount
         ;   Label: LAB_00480214
     DEC EAX                             ; 00480219
     SHL EAX,0x3                         ; 0048021a
@@ -83,7 +83,7 @@ section .text
     ADD EAX,EDX                         ; 00480270
     MOV EBP,dword ptr [0x01c5baec]      ; 00480272 | g_INT_01c5baec
     SUB ESI,EAX                         ; 00480278
-    MOV EAX,[0x01c5baf4]                ; 0048027a | g_INT_01c5baf4
+    MOV EAX,[0x01c5baf4]                ; 0048027a | g_WindowBorderHighlightColor
     TEST EBP,EBP                        ; 0048027f
     JZ 0x0048036a                       ; 00480281
         ;   XREF to: 0048036a (CONDITIONAL_JUMP)  ; LAB_0048036a
@@ -122,8 +122,8 @@ section .text
         ;   XREF to: 004f3ab0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawHLine_FUN_004f3ab0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 004802e2
         ;   Label: LAB_004802e2
-    MOV EBP,dword ptr [0x01c5baf8]      ; 004802e5 | g_INT_01c5baf8
-    CMP EBP,dword ptr [0x01c5baf4]      ; 004802eb | g_INT_01c5baf4
+    MOV EBP,dword ptr [0x01c5baf8]      ; 004802e5 | g_WindowBorderShadowColor
+    CMP EBP,dword ptr [0x01c5baf4]      ; 004802eb | g_WindowBorderHighlightColor
     JZ 0x0048032c                       ; 004802f1
         ;   XREF to: 0048032c (CONDITIONAL_JUMP)  ; LAB_0048032c
     MOV EDX,dword ptr [0x01c5baec]      ; 004802f3 | g_INT_01c5baec

@@ -19,7 +19,7 @@
 ;   float g_FLOAT_005ea28e = -3.141593
 ;   float g_FLOAT_00603ef8 = 2
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
@@ -305,7 +305,7 @@ section .text
         ;   XREF to: 00520bd8 (CONDITIONAL_JUMP)  ; LAB_00520bd8
     LEA EAX,[EBX + 0x2235c]             ; 005207f3
     PUSH EAX                            ; 005207f9
-    MOV EDI,dword ptr [0x0061b4d0]      ; 005207fa | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 005207fa | g_CEventListPtr
     PUSH EDI                            ; 00520800
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00520801
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -638,7 +638,7 @@ section .text
     LEA EAX,[EBX + 0x223c0]             ; 00520bd8
         ;   Label: LAB_00520bd8
     PUSH EAX                            ; 00520bde
-    MOV ESI,dword ptr [0x0061b4d0]      ; 00520bdf | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 00520bdf | g_CEventListPtr
     PUSH ESI                            ; 00520be5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00520be6
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

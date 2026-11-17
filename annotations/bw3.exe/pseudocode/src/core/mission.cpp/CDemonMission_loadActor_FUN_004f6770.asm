@@ -25,7 +25,7 @@
 ;   TerminatedCString s_x_005c8999
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   TerminatedCString s_none_00600670
-;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   uchar[257] g_CharacterClassificationTable
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x4                         ; 004f67a9
     INC DL                              ; 004f67ac
     AND EDX,0xff                        ; 004f67ae
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004f67b4 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004f67b4 | g_CharacterClassificationTable
     JNZ 0x004f67a1                      ; 004f67bb
         ;   XREF to: 004f67a1 (CONDITIONAL_JUMP)  ; LAB_004f67a1
     CMP EAX,0x22                        ; 004f67bd

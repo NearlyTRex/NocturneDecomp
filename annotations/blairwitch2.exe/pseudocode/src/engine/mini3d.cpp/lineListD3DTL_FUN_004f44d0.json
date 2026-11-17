@@ -55,13 +55,13 @@
     },
     {
       "addr": "01c38b54",
-      "name": "g_BIT_INTEGER32_01c38b54",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "0264bcb0",
-      "name": "g_PTR_0264bcb0",
+      "name": "g_APIDLL_setLightConstants",
       "type": "void*",
       "value": null
     }
@@ -155,7 +155,7 @@
       "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_0264bcb0)(vertices,vertex_count,g_BIT_INTEGER32_01c38b54.dword);",
+      "text": "(*(code *)g_APIDLL_setLightConstants)(vertices,vertex_count,g_RenderStateFlags.dword);",
       "type": "unresolved_funcptr"
     }
   ]

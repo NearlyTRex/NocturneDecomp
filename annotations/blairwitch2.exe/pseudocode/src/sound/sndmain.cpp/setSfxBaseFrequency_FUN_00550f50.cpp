@@ -17,10 +17,8 @@ int __cdecl sound_sndmain_cpp_setSfxBaseFrequency_FUN_00550f50(uint sfx_handle,f
   if (slot != (CSfxSlot *)0x0) {
     (slot->options).base_frequency = base_frequency;
     *(byte *)&slot->changed_flags = (byte)slot->changed_flags | 0x10;
-    if ((slot->hardware_buffer_handle != 0) && (g_CSoundDevice_PTR_02648e80 != (CSoundDevice *)0x0))
-    {
-      (*g_CSoundDevice_PTR_02648e80->vtable->applySfxChanges)(g_CSoundDevice_PTR_02648e80,slot,0x10)
-      ;
+    if ((slot->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+      (*g_CSoundDevicePtr->vtable->applySfxChanges)(g_CSoundDevicePtr,slot,0x10);
     }
     sound_sndmain_cpp_unlockSound_FUN_00551440();
     iVar1 = 1;

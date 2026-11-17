@@ -62,8 +62,8 @@ void __cdecl core_hpatrol_cpp_CPatrolPoint_process_FUN_0059c680(CPatrolPoint *th
   if ((fVar8 <= 0.0) &&
      (iVar1 = core_bwspart_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(pCStack_20),
      pCStack_1c = pCStack_20, iVar1 != 0)) {
-    fStack_8c = g_CVector3f_0265370c.x;
-    afStack_88[(uint)bVar7 * -2] = *(float *)((int)&g_CVector3f_0265370c + (uint)bVar7 * -8 + 4);
+    fStack_8c = g_ZeroVector.x;
+    afStack_88[(uint)bVar7 * -2] = *(float *)((int)&g_ZeroVector + (uint)bVar7 * -8 + 4);
     afStack_88[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
          *(float *)((uint)bVar7 * -8 + 0x2653714 + (uint)bVar7 * -8);
     *(uint *)&(this_ptr->base).base.base.field_0x2a8 = 0x3dcccccd;

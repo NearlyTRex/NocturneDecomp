@@ -63,7 +63,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_00465400(CDrac
     iVar1 = 0;
     do {
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(*puVar4);
-      bone_index = g_INT_ARRAY_01ba5778[0];
+      bone_index = g_DraculaBrideIndices[0];
       if (iVar2 == 0) {
         puVar4[7] = 0;
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90

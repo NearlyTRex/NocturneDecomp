@@ -10,5 +10,5 @@
 // =============================================================================
 
 // int[76800]
-extern int g_INT_ARRAY_00b1ac98[76800];
+extern int g_PrecomputedDepthBuffer[76800];
 

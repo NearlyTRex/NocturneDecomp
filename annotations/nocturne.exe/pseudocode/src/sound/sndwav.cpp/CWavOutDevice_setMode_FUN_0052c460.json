@@ -87,13 +87,13 @@
     },
     {
       "addr": "005bed44",
-      "name": "g_UINT_005bed44",
+      "name": "g_WaveOutDeviceID",
       "type": "UINT",
       "value": "0xffffffff"
     },
     {
       "addr": "02dc93a4",
-      "name": "g_HWAVEOUT_02dc93a4",
+      "name": "g_WaveOutHandle",
       "type": "HWAVEOUT",
       "value": null
     },
@@ -129,7 +129,7 @@
     },
     {
       "addr": "02dc943c",
-      "name": "g_INT_02dc943c",
+      "name": "g_WaveOutNumBuffers",
       "type": "int",
       "value": null
     }
@@ -259,17 +259,17 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8",
+      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
       "severity": "moderate",
-      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8 + iVar6) = pvVar3;",
+      "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(LPVOID *)((int)g_LPVOID_ARRAY_02dc93c8",
+      "match": "(LPVOID *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "*(LPVOID *)((int)g_LPVOID_ARRAY_02dc93c8 + iVar6) = pvVar4;",
+      "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
     {

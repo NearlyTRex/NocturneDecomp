@@ -17,7 +17,7 @@
 ;   float g_FLOAT_005da84a = -3.141593
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
-;   int[18] g_INT_ARRAY_01cee0b4
+;   int[18] g_IcePickIndices
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -295,7 +295,7 @@ section .text
     JNZ 0x004d4fce                      ; 004d4f8d
         ;   XREF to: 004d4fce (CONDITIONAL_JUMP)  ; LAB_004d4fce
     PUSH 0x544cc0                       ; 004d4f8f
-    MOV ESI,dword ptr [0x01cee0b4]      ; 004d4f94 | g_INT_ARRAY_01cee0b4
+    MOV ESI,dword ptr [0x01cee0b4]      ; 004d4f94 | g_IcePickIndices
     PUSH ESI                            ; 004d4f9a
     LEA EAX,[EBX + 0x25650]             ; 004d4f9b
     PUSH dword ptr [EBX + 0x2565c]      ; 004d4fa1

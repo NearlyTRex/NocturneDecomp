@@ -701,7 +701,7 @@ LAB_00588fbb:
              (&UStack_1b0)[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 10];
         fStack_70 = fStack_320 * fStack_320 +
                     fStack_328 * fStack_328 + (float)UStack_324 * (float)UStack_324;
-        fStack_74 = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);
+        fStack_74 = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);
         fStack_6c = fStack_74;
         if (fStack_74 <= this_ptr->start_guard_dist) {
           fVar29 = (float)0.125;
@@ -1055,7 +1055,7 @@ LAB_0058a628:
       break;
     case 0xf:
       iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                        (g_CEventList_PTR_005fba60,this_ptr->rise_from_grave_condition);
+                        (g_CEventListPtr,this_ptr->rise_from_grave_condition);
       if ((iVar8 != 0) &&
          (fVar29 = this_ptr->rise_delay - delta_time, this_ptr->rise_delay = fVar29, fVar29 < 0.0))
       {
@@ -1149,7 +1149,7 @@ LAB_00589ecd:
           }
           fStack_20 = fStack_248 * fStack_248 +
                       fStack_250 * fStack_250 + (float)UStack_24c * (float)UStack_24c;
-          fStack_1c = (float)(((int)fStack_20 >> 1) + g_INT_01d1a0a4);
+          fStack_1c = (float)(((int)fStack_20 >> 1) + g_FastSqrtMagic);
           if (fStack_1c <= (float)8) {
             fStack_24 = (this_ptr->base).base.collision_cylinder_top;
             if (fStack_24 < (this_ptr->base).base.collision_cylinder_bottom) {
@@ -1204,7 +1204,7 @@ LAB_00589ecd:
       (&UStack_108)[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 4] =
            (&UStack_150)[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1];
       fStack_8c = fStack_f8 * fStack_f8 + fStack_100 * fStack_100 + fStack_fc * fStack_fc;
-      fStack_88 = (float)(((int)fStack_8c >> 1) + g_INT_01d1a0a4);
+      fStack_88 = (float)(((int)fStack_8c >> 1) + g_FastSqrtMagic);
       if (fStack_88 < this_ptr->start_guard_dist) {
         this_ptr->start_guard_dist = (this_ptr->base).guard_distance;
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCStack_2c->base,0x17,1);

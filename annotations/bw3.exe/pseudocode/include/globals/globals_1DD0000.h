@@ -24,7 +24,7 @@ extern CMouse g_CMouseInstance;
 extern CPathMap g_PathMapCache[12];
 
 // UNetPacket
-extern UNetPacket g_UNetPacket_01dd4488;
+extern UNetPacket g_NetworkReceivePacket;
 
 // char*[500]
 extern char* g_CHAR_PTR_ARRAY_01dd489c[500];
@@ -32,8 +32,8 @@ extern char* g_CHAR_PTR_ARRAY_01dd506c[500];
 extern char* g_CHAR_PTR_ARRAY_01dd6008[500];
 
 // int
-extern int g_INT_01dd4890;
-extern int g_INT_01dd4894;
+extern int g_UseOSFonts;
+extern int g_LocalizationLoaded;
 extern int g_INT_01dd4898;
 extern int g_INT_01dd6a3c;
 

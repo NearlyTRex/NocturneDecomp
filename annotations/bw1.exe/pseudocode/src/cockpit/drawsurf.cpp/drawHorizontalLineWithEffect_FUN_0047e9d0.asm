@@ -14,10 +14,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   int g_INT_01bc11f4
-;   int g_INT_01bc1204
-;   int g_INT_01bc1208
-;   void*[1200] g_ARRAY_PTR_01c4354c
+;   int g_OriginalColorValue
+;   int g_PackedPixelColor
+;   int g_DuplicatedPixelColor
+;   void*[1200] g_ScreenBufferArray
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
         ;   Label: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0
     PUSH ESI                            ; 0047e9d1
     PUSH EDI                            ; 0047e9d2
-    MOV EDI,dword ptr [0x01bc1204]      ; 0047e9d3 | g_INT_01bc1204
+    MOV EDI,dword ptr [0x01bc1204]      ; 0047e9d3 | g_PackedPixelColor
     MOV EDX,dword ptr [ESP + 0x10]      ; 0047e9d9
     MOV ESI,dword ptr [ESP + 0x14]      ; 0047e9dd
     MOV ECX,dword ptr [0x0061b4a0]      ; 0047e9e1 | g_INT_0061b4a0
@@ -40,14 +40,14 @@ section .text
     JNZ 0x0047ea86                      ; 0047e9fa
         ;   XREF to: 0047ea86 (CONDITIONAL_JUMP)  ; LAB_0047ea86
     LEA ECX,[EDX + EDX*0x1]             ; 0047ea00
-    MOV EAX,dword ptr [EBX + 0x1c4354c] ; 0047ea03 | g_ARRAY_PTR_01c4354c
+    MOV EAX,dword ptr [EBX + 0x1c4354c] ; 0047ea03 | g_ScreenBufferArray
     MOV EBX,EDX                         ; 0047ea09
     ADD EAX,ECX                         ; 0047ea0b
     TEST DL,0x1                         ; 0047ea0d
     JZ 0x0047ea2d                       ; 0047ea10
         ;   XREF to: 0047ea2d (CONDITIONAL_JUMP)  ; LAB_0047ea2d
     XOR EBX,EDX                         ; 0047ea12
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047ea14 | g_INT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047ea14 | g_OriginalColorValue
     MOV BX,word ptr [EAX]               ; 0047ea1a
     SHR EBX,CL                          ; 0047ea1d
     MOV ECX,EBX                         ; 0047ea1f
@@ -59,11 +59,11 @@ section .text
         ;   Label: LAB_0047ea2d
     JGE 0x0047ea50                      ; 0047ea2f
         ;   XREF to: 0047ea50 (CONDITIONAL_JUMP)  ; LAB_0047ea50
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047ea31 | g_INT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047ea31 | g_OriginalColorValue
         ;   Label: LAB_0047ea31
     MOV EDX,dword ptr [EAX]             ; 0047ea37
     SHR EDX,CL                          ; 0047ea39
-    MOV ECX,dword ptr [0x01bc1208]      ; 0047ea3b | g_INT_01bc1208
+    MOV ECX,dword ptr [0x01bc1208]      ; 0047ea3b | g_DuplicatedPixelColor
     ADD EAX,0x4                         ; 0047ea41
     AND EDX,ECX                         ; 0047ea44
     ADD EBX,0x2                         ; 0047ea46
@@ -77,7 +77,7 @@ section .text
     LEA EAX,[EAX]                       ; 0047ea52
     LEA EDX,[EDX]                       ; 0047ea58
     MOV EAX,EAX                         ; 0047ea5e
-    MOV dword ptr [0x01bc1204],EDI      ; 0047ea60 | g_INT_01bc1204
+    MOV dword ptr [0x01bc1204],EDI      ; 0047ea60 | g_PackedPixelColor
         ;   Label: LAB_0047ea60
     POP EDI                             ; 0047ea66
     POP ESI                             ; 0047ea67
@@ -85,12 +85,12 @@ section .text
     RET                                 ; 0047ea69
     XOR EDX,EDX                         ; 0047ea6a
         ;   Label: LAB_0047ea6a
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047ea6c | g_INT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047ea6c | g_OriginalColorValue
     MOV DX,word ptr [EAX]               ; 0047ea72
     SHR EDX,CL                          ; 0047ea75
     AND EDX,EDI                         ; 0047ea77
     MOV word ptr [EAX],DX               ; 0047ea79
-    MOV dword ptr [0x01bc1204],EDI      ; 0047ea7c | g_INT_01bc1204
+    MOV dword ptr [0x01bc1204],EDI      ; 0047ea7c | g_PackedPixelColor
     POP EDI                             ; 0047ea82
     POP ESI                             ; 0047ea83
     POP EBX                             ; 0047ea84
@@ -100,13 +100,13 @@ section .text
     JNZ 0x0047ea60                      ; 0047ea89
         ;   XREF to: 0047ea60 (CONDITIONAL_JUMP)  ; LAB_0047ea60
     LEA EAX,[EDX*0x4 + 0x0]             ; 0047ea8b
-    MOV ECX,dword ptr [EBX + 0x1c4354c] ; 0047ea92 | g_ARRAY_PTR_01c4354c
+    MOV ECX,dword ptr [EBX + 0x1c4354c] ; 0047ea92 | g_ScreenBufferArray
     MOV EBX,EDX                         ; 0047ea98
     ADD EAX,ECX                         ; 0047ea9a
     CMP EDX,ESI                         ; 0047ea9c
     JG 0x0047ea60                       ; 0047ea9e
         ;   XREF to: 0047ea60 (CONDITIONAL_JUMP)  ; LAB_0047ea60
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047eaa0 | g_INT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047eaa0 | g_OriginalColorValue
         ;   Label: LAB_0047eaa0
     MOV EDX,dword ptr [EAX]             ; 0047eaa6
     SHR EDX,CL                          ; 0047eaa8
@@ -117,7 +117,7 @@ section .text
     CMP EBX,ESI                         ; 0047eab3
     JLE 0x0047eaa0                      ; 0047eab5
         ;   XREF to: 0047eaa0 (CONDITIONAL_JUMP)  ; LAB_0047eaa0
-    MOV dword ptr [0x01bc1204],EDI      ; 0047eab7 | g_INT_01bc1204
+    MOV dword ptr [0x01bc1204],EDI      ; 0047eab7 | g_PackedPixelColor
     POP EDI                             ; 0047eabd
     POP ESI                             ; 0047eabe
     POP EBX                             ; 0047eabf

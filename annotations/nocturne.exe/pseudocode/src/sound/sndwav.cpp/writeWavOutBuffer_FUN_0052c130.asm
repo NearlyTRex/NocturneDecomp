@@ -20,7 +20,7 @@
 ;   TerminatedCString s_waveOutUnprepareHeader_f_005948bd
 ;   TerminatedCString s_waveOutPrepareHeader_fai_005948dc
 ;   TerminatedCString s_waveOutWrite_failed_005948f9
-;   HWAVEOUT g_HWAVEOUT_02dc93a4
+;   HWAVEOUT g_WaveOutHandle
 ;   int g_INT_02dc9428
 ;   int g_INT_02dc942c
 ;   int g_INT_02dc9430
@@ -64,7 +64,7 @@ section .text
     PUSH 0x20                           ; 0052c15b
         ;   Label: LAB_0052c15b
     PUSH ECX                            ; 0052c15d
-    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c15e | g_HWAVEOUT_02dc93a4
+    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c15e | g_WaveOutHandle
     PUSH ESI                            ; 0052c164
     CALL dword ptr CS:[0x575404]        ; 0052c165 | PTR_waveOutUnprepareHeader_00575404
     TEST EAX,EAX                        ; 0052c16c
@@ -121,7 +121,7 @@ section .text
     PUSH 0x20                           ; 0052c202
     MOV EBX,dword ptr [EAX + 0x2dc93a8] ; 0052c204
     PUSH EBX                            ; 0052c20a
-    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c20b | g_HWAVEOUT_02dc93a4
+    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c20b | g_WaveOutHandle
     PUSH ESI                            ; 0052c211
     CALL dword ptr CS:[0x5753fc]        ; 0052c212 | PTR_waveOutPrepareHeader_005753fc
     TEST EAX,EAX                        ; 0052c219
@@ -131,7 +131,7 @@ section .text
     PUSH 0x20                           ; 0052c221
     MOV EDI,dword ptr [EAX + 0x2dc93a8] ; 0052c223
     PUSH EDI                            ; 0052c229
-    MOV EBP,dword ptr [0x02dc93a4]      ; 0052c22a | g_HWAVEOUT_02dc93a4
+    MOV EBP,dword ptr [0x02dc93a4]      ; 0052c22a | g_WaveOutHandle
     PUSH EBP                            ; 0052c230
     CALL dword ptr CS:[0x575408]        ; 0052c231 | PTR_waveOutWrite_00575408
     TEST EAX,EAX                        ; 0052c238

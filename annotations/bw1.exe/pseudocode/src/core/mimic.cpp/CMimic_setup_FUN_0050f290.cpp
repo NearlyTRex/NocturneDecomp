@@ -42,39 +42,39 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0050f290(CMimic *this_ptr)
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(pCVar1);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(pCVar1);
-  g_INT_ARRAY_01d22424[0] =
+  g_MimicIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 head",1);
-  g_INT_ARRAY_01d22424[1] =
+  g_MimicIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L Clavicle",1);
-  g_INT_ARRAY_01d22424[2] =
+  g_MimicIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Clavicle",1);
-  g_INT_ARRAY_01d22424[3] =
+  g_MimicIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01d22424[4] =
+  g_MimicIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01d22424[5] =
+  g_MimicIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_01d22424[6] =
+  g_MimicIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_01d22424[7] =
+  g_MimicIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L Foot",1);
-  g_INT_ARRAY_01d22424[8] =
+  g_MimicIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Foot",1);
-  g_INT_ARRAY_01d22424[9] =
+  g_MimicIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L Thigh",1);
-  g_INT_ARRAY_01d22424[10] =
+  g_MimicIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Thigh",1);
-  g_INT_ARRAY_01d22424[0xb] =
+  g_MimicIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L Calf",1);
-  g_INT_ARRAY_01d22424[0xc] =
+  g_MimicIndices[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Calf",1);
-  g_INT_ARRAY_01d22424[0x10] =
+  g_MimicIndices[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L Hand",1);
-  g_INT_ARRAY_01d22424[0x11] =
+  g_MimicIndices[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Hand",1);
-  g_INT_ARRAY_01d22424[0x12] =
+  g_MimicIndices[0x12] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine2",1);
-  g_INT_ARRAY_01d22424[0x13] =
+  g_MimicIndices[0x13] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine",1);
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   core_cloth_cpp_CCloth_load_FUN_0043e6d0(&this_ptr->cloth,"strcoat.cth");

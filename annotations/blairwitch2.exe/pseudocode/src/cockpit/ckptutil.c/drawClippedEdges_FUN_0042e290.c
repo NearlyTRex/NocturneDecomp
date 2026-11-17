@@ -23,8 +23,8 @@ void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042e290(SEdge *edges,int c
       if (x1 < g_INT_01c35e48) {
         x1 = g_INT_01c35e48;
       }
-      if (g_INT_01c35e50 <= x1) {
-        x1 = g_INT_01c35e50;
+      if (g_ClipRight <= x1) {
+        x1 = g_ClipRight;
       }
       y1 = edges->y0 + y_offset;
       if (y1 < g_INT_01c35e4c) {
@@ -37,8 +37,8 @@ void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042e290(SEdge *edges,int c
       if (x2 < g_INT_01c35e48) {
         x2 = g_INT_01c35e48;
       }
-      if (g_INT_01c35e50 <= x2) {
-        x2 = g_INT_01c35e50;
+      if (g_ClipRight <= x2) {
+        x2 = g_ClipRight;
       }
       y2 = ((short)(edges->y1 * 2) >> 1) + y_offset;
       if (y2 < g_INT_01c35e4c) {

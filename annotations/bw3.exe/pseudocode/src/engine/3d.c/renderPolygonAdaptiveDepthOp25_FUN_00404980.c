@@ -14,9 +14,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
-    if (g_INT_007303f4 == 0) {
+    if (g_TexturesDisabled == 0) {
       if (g_INT_005f07bc == 0) {
-        if (g_INT_01c6e2a0 == 0) {
+        if (g_MMXSupported == 0) {
           if (g_INT_005fba20 == 0x20) {
             pcVar2 = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
           }
@@ -30,12 +30,12 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
         else {
           pcVar2 = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
         }
-        g_BIT_INTEGER32_01c6e2b4.dword = 0x10;
-        g_INT_01c6e2b8 = 0;
-        g_PTR_01c6b5cc = pcVar2;
+        g_RenderStateFlags.dword = RENDER_LIGHTING_COLOR;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = pcVar2;
       }
       else {
-        if (g_INT_01c6e2a0 == 0) {
+        if (g_MMXSupported == 0) {
           if (g_INT_005fba20 == 0x20) {
             pcVar2 = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
           }
@@ -49,13 +49,13 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
         else {
           pcVar2 = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
         }
-        g_BIT_INTEGER32_01c6e2b4.dword = 0xd0;
-        g_INT_01c6e2b8 = 1;
-        g_PTR_01c6b5cc = pcVar2;
+        g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = 1;
+        g_ScanlineRenderFunc = pcVar2;
       }
     }
     else {
-      if (g_INT_01c6e2a0 == 0) {
+      if (g_MMXSupported == 0) {
         if (g_INT_005fba20 == 0x20) {
           pcVar2 = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
         }
@@ -69,15 +69,15 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
       else {
         pcVar2 = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
       }
-      g_BIT_INTEGER32_01c6e2b4.dword = 0;
-      g_INT_01c6e2b8 = 0;
-      g_PTR_01c6b5cc = pcVar2;
+      g_RenderStateFlags.dword = 0;
+      g_VertexPreprocessMode = 0;
+      g_ScanlineRenderFunc = pcVar2;
     }
     g_INT_01c6b5c4 =
          engine_light_cpp_calculateLighting_FUN_004e0e00
                    ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i
                    );
-    g_INT_01c6b5c0 = engine_3d_c_lookupLitColor_FUN_00403990(g_INT_007303dc,g_INT_01c6b5c4);
+    g_INT_01c6b5c0 = engine_3d_c_lookupLitColor_FUN_00403990(g_CurrentPolygonColor,g_INT_01c6b5c4);
     engine_clipper_c_clipAndRasterize_FUN_0043a840((prim->base).count,(int *)(prim + 1));
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

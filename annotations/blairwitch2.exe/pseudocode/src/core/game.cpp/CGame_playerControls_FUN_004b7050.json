@@ -110,19 +110,19 @@
     },
     {
       "addr": "01c2a384",
-      "name": "g_BIT_INTEGER32_01c2a384",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c37790",
-      "name": "g_CHAR_ARRAY_01c37790",
+      "name": "g_KeyboardState",
       "type": "char[4952]",
       "value": null
     },
     {
       "addr": "01c37794",
-      "name": "g_CHAR_ARRAY_01c37790+4",
+      "name": "g_KeyboardState+4",
       "type": "undefined4",
       "value": null
     },
@@ -134,25 +134,25 @@
     },
     {
       "addr": "01cb7528",
-      "name": "g_CHAR_ARRAY_01cb7528",
+      "name": "g_PrevKeyboardState",
       "type": "char[600]",
       "value": null
     },
     {
       "addr": "01cb752c",
-      "name": "g_CHAR_ARRAY_01cb7528+4",
+      "name": "g_PrevKeyboardState+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb7780",
-      "name": "g_INT_01cb7780",
+      "name": "g_InputResetFlag",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb7784",
-      "name": "g_INT_01cb7784",
+      "name": "g_StoredCameraValue",
       "type": "int",
       "value": null
     },
@@ -310,7 +310,7 @@
       "line": 45,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 004b70b5: MOVSD.REP ES:EDI,ESI  ; g_CHAR_ARRAY_01c37790 | g_CHAR_ARRAY_01cb7528 | g_CHAR_ARRAY_01c37790+4",
+      "text": "// 004b70b5: MOVSD.REP ES:EDI,ESI  ; g_KeyboardState | g_PrevKeyboardState | g_KeyboardState+4",
       "type": "unrolled_memcpy"
     }
   ]

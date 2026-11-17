@@ -87,7 +87,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_005af530(CCloth *this_pt
       local_48 = local_1b0.velocity.z * local_1b0.velocity.z +
                  local_1b0.velocity.x * local_1b0.velocity.x +
                  local_1b0.velocity.y * local_1b0.velocity.y;
-      local_30 = (float)(((int)local_48 >> 1) + g_INT_01caf5b4);
+      local_30 = (float)(((int)local_48 >> 1) + g_FastSqrtMagic);
       local_4c = local_30;
       local_2c = local_34->rest_lengths[0];
       if (local_2c < local_30) {
@@ -194,10 +194,10 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_005af530(CCloth *this_pt
                     local_1b0.bone_positions[1].z * (local_20->local_matrix).m[1].y;
         fVar3 = local_1dc * local_20->inv_radius2;
         local_70 = fVar3 * fVar3 + fVar2 * fVar2;
-        local_18 = (float)(((int)local_70 >> 1) + g_INT_01caf5b4);
+        local_18 = (float)(((int)local_70 >> 1) + g_FastSqrtMagic);
         if (local_18 < 1.0) {
           local_68 = local_1e0 * local_1e0 + local_1dc * local_1dc;
-          local_64 = (float)(g_INT_01caf5b8 - ((int)local_68 >> 1));
+          local_64 = (float)(g_FastInvSqrtMagic - ((int)local_68 >> 1));
           local_1b0.position.x = local_20->radius1 * (float)1.05 * local_1e0 * local_64
           ;
           local_1b0.position.y = (float)1.05 * local_20->radius2 * local_1dc * local_64

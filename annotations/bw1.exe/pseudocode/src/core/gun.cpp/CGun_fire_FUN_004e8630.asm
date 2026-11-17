@@ -13,7 +13,7 @@
 ;   double g_DOUBLE_005e43d3 = 1.5
 ;   float g_FLOAT_005e43db = -0.125
 ;   double g_DOUBLE_005e43e3 = 10
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -218,7 +218,7 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 004e889d
     FLD float ptr [ESP + 0x11c]         ; 004e88a4
     PUSH EAX                            ; 004e88ab
-    MOV EAX,[0x0061c010]                ; 004e88ac | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 004e88ac | g_CFireEffectPtr
     FADD float ptr [0x005e43db]         ; 004e88b1 | g_FLOAT_005e43db
     PUSH EAX                            ; 004e88b7
     FSTP float ptr [ESP + 0x124]        ; 004e88b8
@@ -313,7 +313,7 @@ section .text
     PUSH EAX                            ; 004e8a24
     ADD EBX,0x20                        ; 004e8a25
     PUSH EBX                            ; 004e8a28
-    MOV EDX,dword ptr [0x0061c010]      ; 004e8a29 | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004e8a29 | g_CFireEffectPtr
     PUSH EDX                            ; 004e8a2f
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004b7270 ; 004e8a30
         ;   XREF to: 004b7270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004b7270(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
@@ -678,7 +678,7 @@ section .text
     PUSH ESI                            ; 004e8ec6 | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 004e8ec7
     PUSH EAX                            ; 004e8ecc | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x0061c010]      ; 004e8ecd | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 004e8ecd | g_CFireEffectPtr
     PUSH ECX                            ; 004e8ed3
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 ; 004e8ed4
         ;   XREF to: 004b56a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)

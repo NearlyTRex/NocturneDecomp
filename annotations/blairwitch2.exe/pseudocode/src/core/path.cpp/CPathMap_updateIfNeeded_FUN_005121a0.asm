@@ -22,8 +22,8 @@
 ;   core_set.cpp_CDemonSet_processActors_FUN_0052e940 at 0052eb7c
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005e1799 = 4
-;   int g_INT_01c2a370
+;   double g_PathUpdateDistanceThreshold = 4
+;   int g_GlobalDeltaTimeInt
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     CMP dword ptr [EBP + 0x1c],0x0      ; 005121af
     JNZ 0x00512295                      ; 005121b3
         ;   XREF to: 00512295 (CONDITIONAL_JUMP)  ; LAB_00512295
-    MOV EAX,[0x01c2a370]                ; 005121b9 | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 005121b9 | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBX + 0x138d8]   ; 005121be
     SUB ECX,EAX                         ; 005121c4
     MOV dword ptr [EBX + 0x138d8],ECX   ; 005121c6
@@ -75,21 +75,21 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00512206
     FLD float ptr [ESP + 0xc]           ; 00512207
     FABS                                ; 0051220b
-    FCOMP double ptr [0x005e1799]       ; 0051220d | g_DOUBLE_005e1799
+    FCOMP double ptr [0x005e1799]       ; 0051220d | g_PathUpdateDistanceThreshold
     FNSTSW AX                           ; 00512213
     SAHF                                ; 00512215
     JNC 0x0051223a                      ; 00512216
         ;   XREF to: 0051223a (CONDITIONAL_JUMP)  ; LAB_0051223a
     FLD float ptr [ESP + 0x10]          ; 00512218
     FABS                                ; 0051221c
-    FCOMP double ptr [0x005e1799]       ; 0051221e | g_DOUBLE_005e1799
+    FCOMP double ptr [0x005e1799]       ; 0051221e | g_PathUpdateDistanceThreshold
     FNSTSW AX                           ; 00512224
     SAHF                                ; 00512226
     JNC 0x0051223a                      ; 00512227
         ;   XREF to: 0051223a (CONDITIONAL_JUMP)  ; LAB_0051223a
     FLD float ptr [ESP + 0x14]          ; 00512229
     FABS                                ; 0051222d
-    FCOMP double ptr [0x005e1799]       ; 0051222f | g_DOUBLE_005e1799
+    FCOMP double ptr [0x005e1799]       ; 0051222f | g_PathUpdateDistanceThreshold
     FNSTSW AX                           ; 00512235
     SAHF                                ; 00512237
     JC 0x0051228e                       ; 00512238

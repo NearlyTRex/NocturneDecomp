@@ -105,7 +105,7 @@ section .text
         ;   Label: LAB_00537d35
     JNZ 0x00537fb1                      ; 00537d38
         ;   XREF to: 00537fb1 (CONDITIONAL_JUMP)  ; LAB_00537fb1
-    MOV EAX,[0x02dc9f70]                ; 00537d3e | g_INT_ARRAY_02dc9f50[8]
+    MOV EAX,[0x02dc9f70]                ; 00537d3e | g_StrangerIndices[8]
     PUSH EAX                            ; 00537d43
         ;   Label: LAB_00537d43
     LEA EAX,[ESP + 0x60]                ; 00537d44
@@ -327,7 +327,7 @@ section .text
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     JMP 0x00537d9f                      ; 00537fac
         ;   XREF to: 00537d9f (UNCONDITIONAL_JUMP)  ; LAB_00537d9f
-    MOV EAX,[0x02dc9f6c]                ; 00537fb1 | g_INT_ARRAY_02dc9f50[7]
+    MOV EAX,[0x02dc9f6c]                ; 00537fb1 | g_StrangerIndices[7]
         ;   Label: LAB_00537fb1
     JMP 0x00537d43                      ; 00537fb6
         ;   XREF to: 00537d43 (UNCONDITIONAL_JUMP)  ; LAB_00537d43
@@ -425,7 +425,7 @@ section .text
     ADD ESP,0xc                         ; 005380d0
     JMP 0x00537da2                      ; 005380d3
         ;   XREF to: 00537da2 (UNCONDITIONAL_JUMP)  ; LAB_00537da2
-    MOV EDI,dword ptr [0x01bcdef4]      ; 005380d8 | g_CEnemyActorType_01bcdebc.name_hash
+    MOV EDI,dword ptr [0x01bcdef4]      ; 005380d8 | g_CEnemyClassInfo.name_hash
         ;   Label: LAB_005380d8
     PUSH EDI                            ; 005380de
     MOV EAX,dword ptr [EBX + 0x2590]    ; 005380df
@@ -438,7 +438,7 @@ section .text
     TEST EAX,EAX                        ; 005380f7
     JZ 0x00538212                       ; 005380f9
         ;   XREF to: 00538212 (CONDITIONAL_JUMP)  ; LAB_00538212
-    MOV EDX,dword ptr [0x02dc9f80]      ; 005380ff | g_INT_ARRAY_02dc9f50[12]
+    MOV EDX,dword ptr [0x02dc9f80]      ; 005380ff | g_StrangerIndices[12]
     PUSH EDX                            ; 00538105
     LEA EAX,[ESP + 0x78]                ; 00538106
     PUSH EAX                            ; 0053810a

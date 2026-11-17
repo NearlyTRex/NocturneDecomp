@@ -7,13 +7,13 @@
 ; CZombieCow *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CZombieCowActorType_0077bd04
+;   CDemonActorType g_CZombieCowClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x77bd04                    ; 0043bbd0 | g_CZombieCowActorType_0077bd04
+    MOV EAX,0x77bd04                    ; 0043bbd0 | g_CZombieCowClassInfo
         ;   Label: core_cow.cpp_CZombieCow_getActorType_FUN_0043bbd0
     RET                                 ; 0043bbd5
 

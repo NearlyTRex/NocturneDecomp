@@ -20,7 +20,7 @@ int __cdecl core_npc_cpp_CNPC_renderOpaque_FUN_00510900(CNPC *this_ptr)
                       (g_CDemonRenderer_PTR_0060b280);
     if (iVar1 != 0) {
       iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,"heroCanSee");
+                        (g_CEventListPtr,"heroCanSee");
       if (iVar1 == 0) {
         return 0;
       }

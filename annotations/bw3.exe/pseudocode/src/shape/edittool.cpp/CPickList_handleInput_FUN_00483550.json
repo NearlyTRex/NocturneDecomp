@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 411,
-    "complexity_score": 194,
+    "complexity_score": 184,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 179,
+    "pseudocode_lines": 169,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strlen"
     ],
-    "total_lines": 590
+    "total_lines": 580
   },
   "cross_references": [],
   "function": {
@@ -62,13 +62,13 @@
   "globals": [
     {
       "addr": "00600284",
-      "name": "g_CKeys_PTR_00600284",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d70a78"
     },
     {
       "addr": "006074b8",
-      "name": "g_UCHAR_ARRAY_006074b8",
+      "name": "g_CharacterClassificationTable",
       "type": "uchar[257]",
       "value": null
     },
@@ -165,7 +165,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 153,
+      "line": 143,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

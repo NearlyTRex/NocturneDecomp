@@ -11,10 +11,10 @@
 ; int              Stack[0x14]:4   pixel_count
 ;
 ; Referenced Globals:
-;   qword g_QWORD_00611308 = 0x0
-;   qword g_QWORD_00611310 = 0x8000800080008
-;   undefined4 g_USHORT_ARRAY_00612880[1020]
-;   ulong g_ULONG_01c38b5c
+;   qword g_LightmapBlendBias1 = 0x0
+;   qword g_LightmapBlendBias2 = 0x8000800080008
+;   undefined4 g_LightmapData[1020]
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004706b8
     MOV EBP,dword ptr [EBP + 0x14]      ; 004706bb
     PXOR MM7,MM7                        ; 004706be
-    MOVD MM5,dword ptr [0x01c38b5c]     ; 004706c1 | g_ULONG_01c38b5c
+    MOVD MM5,dword ptr [0x01c38b5c]     ; 004706c1 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 004706c8
     PSLLW MM5,0x6                       ; 004706cb
     MOVZX EDX,byte ptr [EBX]            ; 004706cf
@@ -52,14 +52,14 @@ section .text
     PMULLW MM1,MM2                      ; 00470700
     MOVQ MM2,MM3                        ; 00470703
     MOVQ MM4,MM5                        ; 00470706
-    PXOR MM2,qword ptr [0x00613078]     ; 00470709 | g_USHORT_ARRAY_00612880[1020]
+    PXOR MM2,qword ptr [0x00613078]     ; 00470709 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 00470710
     PMULHW MM1,MM2                      ; 00470713
     PMULHW MM4,MM3                      ; 00470716
     PADDW MM0,MM4                       ; 00470719
     PADDW MM1,MM4                       ; 0047071c
-    PADDW MM0,qword ptr [0x00611308]    ; 0047071f | g_QWORD_00611308
-    PADDW MM1,qword ptr [0x00611310]    ; 00470726 | g_QWORD_00611310
+    PADDW MM0,qword ptr [0x00611308]    ; 0047071f | g_LightmapBlendBias1
+    PADDW MM1,qword ptr [0x00611310]    ; 00470726 | g_LightmapBlendBias2
     PSRLW MM0,0x4                       ; 0047072d
     PSRLW MM1,0x4                       ; 00470731
     PACKUSWB MM0,MM1                    ; 00470735
@@ -82,14 +82,14 @@ section .text
     PMULLW MM1,MM2                      ; 00470772
     MOVQ MM2,MM3                        ; 00470775
     MOVQ MM4,MM5                        ; 00470778
-    PXOR MM2,qword ptr [0x00613078]     ; 0047077b | g_USHORT_ARRAY_00612880[1020]
+    PXOR MM2,qword ptr [0x00613078]     ; 0047077b | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 00470782
     PMULHW MM1,MM2                      ; 00470785
     PMULHW MM4,MM3                      ; 00470788
     PADDW MM0,MM4                       ; 0047078b
     PADDW MM1,MM4                       ; 0047078e
-    PADDW MM0,qword ptr [0x00611308]    ; 00470791 | g_QWORD_00611308
-    PADDW MM1,qword ptr [0x00611310]    ; 00470798 | g_QWORD_00611310
+    PADDW MM0,qword ptr [0x00611308]    ; 00470791 | g_LightmapBlendBias1
+    PADDW MM1,qword ptr [0x00611310]    ; 00470798 | g_LightmapBlendBias2
     PSRLW MM0,0x4                       ; 0047079f
     PSRLW MM1,0x4                       ; 004707a3
     PACKUSWB MM0,MM1                    ; 004707a7

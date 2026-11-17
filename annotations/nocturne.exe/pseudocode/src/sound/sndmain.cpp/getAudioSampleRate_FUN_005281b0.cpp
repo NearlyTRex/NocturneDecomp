@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getAudioSampleRate_FUN_005281b0(void)
 
 {
-  return g_INT_005bea6c;
+  return g_AudioSampleRate;
 }

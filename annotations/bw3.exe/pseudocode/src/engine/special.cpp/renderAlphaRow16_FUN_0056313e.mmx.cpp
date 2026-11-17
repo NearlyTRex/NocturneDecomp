@@ -19,7 +19,7 @@ __asm {
         shr EBP,0x8
     LAB_00563157:
         movzx EAX,byte ptr [ESI]
-        movd MM0,dword ptr [g_UINT_ARRAY_01c6a974 + EAX*0x4]
+        movd MM0,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         movzx EAX,byte ptr [EBX]
         imul EAX,EBP
         cmp dword ptr [g_INT_01c6e2ac],0x1
@@ -36,15 +36,15 @@ __asm {
         pxor MM2,qword ptr [0x00605f08]
         movzx EAX,word ptr [EDI]
         movd MM3,EAX
-        pand MM3,qword ptr [g_MMX_INTEGER_00604e70]
-        psllq MM3,qword ptr [g_QWORD_00604f00]
+        pand MM3,qword ptr [g_BlueMask16]
+        psllq MM3,qword ptr [g_BlueBitShift]
         movd MM4,EAX
-        pand MM4,qword ptr [g_MMX_INTEGER_00604e68]
-        psllq MM4,qword ptr [g_QWORD_00604ee0]
+        pand MM4,qword ptr [g_GreenMask16]
+        psllq MM4,qword ptr [g_GreenBlueDitherShift]
         por MM3,MM4
         movd MM5,EAX
-        pand MM5,qword ptr [g_MMX_INTEGER_00604e60]
-        psllq MM5,qword ptr [g_QWORD_00604ec0]
+        pand MM5,qword ptr [g_RedMask16]
+        psllq MM5,qword ptr [g_TotalDitherShift]
         por MM3,MM5
         punpcklbw MM3,MM7
         cmp dword ptr [g_INT_01c6e2ac],0x1
@@ -64,12 +64,12 @@ __asm {
     LAB_0056320a:
         movq MM2,MM0
         movq MM4,MM0
-        pand MM0,qword ptr [g_QWORD_00604eb8]
-        pand MM2,qword ptr [g_QWORD_00604e98]
-        pand MM4,qword ptr [g_QWORD_00604e78]
-        psrlq MM0,qword ptr [g_QWORD_00604f00]
-        psrlq MM2,qword ptr [g_QWORD_00604ee0]
-        psrlq MM4,qword ptr [g_QWORD_00604ec0]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM4,qword ptr [g_RedMask32]
+        psrlq MM0,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0

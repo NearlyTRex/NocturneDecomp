@@ -21,10 +21,10 @@
 ;   TerminatedCString s_s_s_s_005ca8fe
 ;   TerminatedCString s_core_actor_cpp_005ca90b
 ;   TerminatedCString s_IO_Error_after_writing_a_005ca91d
-;   char[104] g_CHAR_ARRAY_00609590
-;   _FILE* g_FILE_PTR_007bc034
-;   int g_INT_007bc038
-;   CDemonActor* g_CDemonActor_PTR_007bc03c
+;   char[104] g_PropertyNamePrefix
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
+;   CDemonActor* g_CurrentActorBeingProcessed
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -70,22 +70,22 @@ section .text
     PUSH EBX                            ; 0040b0e9
         ;   Label: LAB_0040b0e9
     PUSH ESI                            ; 0040b0ea
-    PUSH 0x609590                       ; 0040b0eb | g_CHAR_ARRAY_00609590
+    PUSH 0x609590                       ; 0040b0eb | g_PropertyNamePrefix
     PUSH 0x5ca8f1                       ; 0040b0f0 | = "%s{ %s \"%s\"\n"
     PUSH EDI                            ; 0040b0f5
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0040b0f6
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040b0fb
-    MOV EAX,[0x007bc034]                ; 0040b0fe | g_FILE_PTR_007bc034
-    MOV EBP,dword ptr [0x007bc03c]      ; 0040b103 | g_CDemonActor_PTR_007bc03c
+    MOV EAX,[0x007bc034]                ; 0040b0fe | g_ActorDataFile
+    MOV EBP,dword ptr [0x007bc03c]      ; 0040b103 | g_CurrentActorBeingProcessed
     PUSH 0x1                            ; 0040b109
     MOV dword ptr [ESP + 0x8],EAX       ; 0040b10b
-    MOV EAX,[0x007bc038]                ; 0040b10f | g_INT_007bc038
-    MOV dword ptr [0x007bc034],EDI      ; 0040b114 | g_FILE_PTR_007bc034
+    MOV EAX,[0x007bc038]                ; 0040b10f | g_ActorReadingMode
+    MOV dword ptr [0x007bc034],EDI      ; 0040b114 | g_ActorDataFile
     MOV dword ptr [ESP + 0x4],EAX       ; 0040b11a
     MOV EAX,0x2                         ; 0040b11e
-    MOV dword ptr [0x007bc03c],EBX      ; 0040b123 | g_CDemonActor_PTR_007bc03c
-    MOV [0x007bc038],EAX                ; 0040b129 | g_INT_007bc038
+    MOV dword ptr [0x007bc03c],EBX      ; 0040b123 | g_CurrentActorBeingProcessed
+    MOV [0x007bc038],EAX                ; 0040b129 | g_ActorReadingMode
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040b050 ; 0040b12e
         ;   XREF to: 0040b050 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040b050(int indent_delta)
     ADD ESP,0x4                         ; 0040b133
@@ -99,7 +99,7 @@ section .text
     ADD ESP,0x4                         ; 0040b14d
     PUSH EBX                            ; 0040b150
     PUSH ESI                            ; 0040b151
-    PUSH 0x609590                       ; 0040b152 | g_CHAR_ARRAY_00609590
+    PUSH 0x609590                       ; 0040b152 | g_PropertyNamePrefix
     PUSH 0x5ca8fe                       ; 0040b157 | = "%s} %s \"%s\"\n"
     PUSH EDI                            ; 0040b15c
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0040b15d
@@ -111,10 +111,10 @@ section .text
         ;   XREF to: 0040b18c (CONDITIONAL_JUMP)  ; LAB_0040b18c
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040b16d
         ;   Label: LAB_0040b16d
-    MOV [0x007bc034],EAX                ; 0040b171 | g_FILE_PTR_007bc034
+    MOV [0x007bc034],EAX                ; 0040b171 | g_ActorDataFile
     MOV EAX,dword ptr [ESP]             ; 0040b176
-    MOV dword ptr [0x007bc03c],EBP      ; 0040b179 | g_CDemonActor_PTR_007bc03c
-    MOV [0x007bc038],EAX                ; 0040b17f | g_INT_007bc038
+    MOV dword ptr [0x007bc03c],EBP      ; 0040b179 | g_CurrentActorBeingProcessed
+    MOV [0x007bc038],EAX                ; 0040b17f | g_ActorReadingMode
     ADD ESP,0x8                         ; 0040b184
     POP EBP                             ; 0040b187
     POP EDI                             ; 0040b188

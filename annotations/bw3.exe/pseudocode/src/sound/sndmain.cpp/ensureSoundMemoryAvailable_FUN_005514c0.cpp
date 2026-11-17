@@ -23,11 +23,11 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005514c0(int reques
   } while (iVar1 != 0x6c00);
 LAB_005514e0:
   do {
-    if (iVar3 + requested_bytes <= g_INT_0060424c) {
+    if (iVar3 + requested_bytes <= g_MaximumSoundMemoryBudget) {
       return 1;
     }
     iVar2 = 0;
-    iVar1 = g_INT_02cebc20;
+    iVar1 = g_LastSampleAccessIndex;
     do {
       iVar1 = iVar1 + 1;
       if (0x3f < iVar1) {
@@ -36,7 +36,7 @@ LAB_005514e0:
       if ((((g_SfxSamples[iVar1].sample_data != (short *)0x0) &&
            (0 < g_SfxSamples[iVar1].streaming_buffer_size)) && (g_SfxSamples[iVar1].ref_count == 0))
          && (((g_SfxSamples[iVar1].taken == 0 && (g_SfxSamples[iVar1].is_user_sample == 0)) &&
-             (g_SfxSamples[g_INT_02cebc20].locked_length == 0)))) {
+             (g_SfxSamples[g_LastSampleAccessIndex].locked_length == 0)))) {
         iVar3 = iVar3 - g_SfxSamples[iVar1].data_size_bytes;
         sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(g_SfxSamples + iVar1);
         if (0x3f < iVar2) {

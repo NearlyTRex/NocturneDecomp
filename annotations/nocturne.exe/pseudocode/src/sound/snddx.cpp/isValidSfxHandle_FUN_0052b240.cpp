@@ -10,7 +10,7 @@ int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_0052b240(int sfx_handle)
 
 {
   if ((((0 < sfx_handle) && (sfx_handle < 0x1f)) &&
-      (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[sfx_handle] != (IDirectSoundBuffer *)0x0)) &&
+      (g_DirectSoundHardwareSfxBuffers[sfx_handle] != (IDirectSoundBuffer *)0x0)) &&
      (g_INT_ARRAY_02dc9324[sfx_handle] != 0)) {
     return 1;
   }

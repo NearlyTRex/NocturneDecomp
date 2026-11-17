@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_SFogImagePlane_01342220.pixels[1][0]
-;   undefined4 g_CHAR_ARRAY_01354e20+0x140
+;   undefined4 g_CameraImageDecompressBuffer+0x140
 ;
 ; *****************************************************************************
 
@@ -60,7 +60,7 @@ section .text
     IMUL EAX,ECX,0x140                  ; 00454945
     INC EAX                             ; 0045494b
         ;   Label: LAB_0045494b
-    MOV byte ptr [EAX + 0x1354e1f],BL   ; 0045494c | g_CHAR_ARRAY_01354e20+0x140
+    MOV byte ptr [EAX + 0x1354e1f],BL   ; 0045494c | g_CameraImageDecompressBuffer+0x140
     MOV byte ptr [EAX + 0x134221f],BL   ; 00454952 | g_SFogImagePlane_01342220.pixels[1][0]
     CMP EAX,EDX                         ; 00454958
     JNZ 0x0045494b                      ; 0045495a

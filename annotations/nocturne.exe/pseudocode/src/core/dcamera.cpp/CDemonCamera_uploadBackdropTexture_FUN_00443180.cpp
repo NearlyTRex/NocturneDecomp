@@ -31,8 +31,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CD
       iVar3 = iVar2 >> 0x1f;
       iVar1 = iVar2 + iVar3 * -0x100;
       iVar2 = iVar2 + 0x280;
-      *(char *)((int)g_UINT_ARRAY_0145b290 + iVar4) =
-           g_CHAR_ARRAY_01410290
+      *(char *)((int)g_CameraTextureWorkBuffer + iVar4) =
+           g_CameraIndexedImageData
            [((int)(iVar1 - (uint)(iVar3 << 7 < 0)) >> 8) +
             ((int)((iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0)) >> 8) *
             0x280];
@@ -42,8 +42,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CD
     iVar8 = iVar8 + 0x1e0;
   } while (iVar5 != 0x10000);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005ad49c);
-  puVar6 = g_UINT_ARRAY_0145b290;
+            (g_CDemonRenderer_PTR_005ae704,&g_CameraBackdropTexture);
+  puVar6 = g_CameraTextureWorkBuffer;
   puVar9 = (uint *)g_CurrentTextureData;
   for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar9 = *puVar6;
@@ -55,7 +55,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CD
     puVar6 = (uint *)((int)puVar6 + (uint)bVar11 * -2 + 1);
     puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
   }
-  pSVar7 = &g_SRGBColorPalette_00b0daf8;
+  pSVar7 = &g_CameraImagePaletteData;
   pSVar10 = g_CurrentPalette;
   for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(uint *)pSVar10->colors = *(uint *)pSVar7->colors;
@@ -68,7 +68,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CD
     pSVar10 = (SRGBColorPalette *)((int)pSVar10 + (uint)bVar11 * -2 + 1);
   }
   engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005ad49c,
-             &g_SRGBColorPalette_00b0daf8);
+            (g_CDemonRenderer_PTR_005ae704,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
   return;
 }

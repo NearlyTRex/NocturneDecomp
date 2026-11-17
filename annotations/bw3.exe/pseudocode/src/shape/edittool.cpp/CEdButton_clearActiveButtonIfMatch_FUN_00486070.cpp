@@ -9,9 +9,9 @@
 void __cdecl shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_00486070(CEdButton *this_ptr)
 
 {
-  if (this_ptr != (CEdButton *)g_PTR_01c5bb78) {
+  if (this_ptr != (CEdButton *)g_ActiveControl) {
     return;
   }
-  g_PTR_01c5bb78 = (byte *)0x0;
+  g_ActiveControl = (byte *)0x0;
   return;
 }

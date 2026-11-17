@@ -17,58 +17,58 @@ void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00559eb0(void)
   uint uStack_30;
   joyinfo_tag local_1c;
   
-  if (g_INT_01c0390c != 0) {
-    if (g_PTR_02de3114 == (byte *)0x0) {
+  if (g_JoystickPresent != 0) {
+    if (g_joyGetPosEx == (byte *)0x0) {
       joyGetPos(0,&local_1c);
-      g_DWORD_01c03908 = local_1c.wButtons;
-      g_DWORD_01c038f8 = local_1c.wXpos;
-      g_DWORD_01c038fc = local_1c.wYpos;
-      g_DWORD_01c03904 = local_1c.wZpos;
+      g_JoyButtons = local_1c.wButtons;
+      g_JoyXPos = local_1c.wXpos;
+      g_JoyYPos = local_1c.wYpos;
+      g_JoyZPos = local_1c.wZpos;
       return;
     }
     local_4c = 0x83;
     local_50 = 0x34;
-    if (g_INT_01c0391c != 0) {
+    if (g_JoystickHasPOV != 0) {
       local_4c = 0xc3;
     }
-    if (g_INT_01c03914 != 0) {
+    if (g_JoyWantRAxis != 0) {
       local_4c = local_4c | 4;
     }
-    if (g_INT_01c03910 != 0) {
+    if (g_JoyWantUAxis != 0) {
       local_4c = local_4c | 8;
     }
-    (*(code *)g_PTR_02de3114)(0,&local_50);
-    g_DWORD_01c03908 = DStack_38;
-    g_DWORD_01c038f8 = local_50;
-    g_DWORD_01c038fc = local_4c;
-    g_DWORD_01c03900 = DStack_44;
-    g_DWORD_01c03904 = DStack_48;
-    if (g_INT_01c0391c != 0) {
+    (*(code *)g_joyGetPosEx)(0,&local_50);
+    g_JoyButtons = DStack_38;
+    g_JoyXPos = local_50;
+    g_JoyYPos = local_4c;
+    g_JoyRPos = DStack_44;
+    g_JoyZPos = DStack_48;
+    if (g_JoystickHasPOV != 0) {
       if (uStack_30 < 18000) {
         if (uStack_30 == 0) {
-          g_INT_01c03920 = 1;
+          g_JoyPOVDirection = 1;
           return;
         }
         if (uStack_30 == 9000) {
-          g_INT_01c03920 = 4;
+          g_JoyPOVDirection = 4;
           return;
         }
       }
       else {
         if (uStack_30 < 0x4651) {
-          g_INT_01c03920 = 2;
+          g_JoyPOVDirection = 2;
           return;
         }
         if (26999 < uStack_30) {
           if (27000 < uStack_30) {
-            g_INT_01c03920 = 0;
+            g_JoyPOVDirection = 0;
             return;
           }
-          g_INT_01c03920 = 3;
+          g_JoyPOVDirection = 3;
           return;
         }
       }
-      g_INT_01c03920 = 0;
+      g_JoyPOVDirection = 0;
     }
   }
   return;

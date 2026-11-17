@@ -80,28 +80,28 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044d2f0(
     do {
       iVar8 = local_20;
       local_18 = 0;
-      g_INT_01481e54 = 0;
+      g_ScanlineSpanCount = 0;
       if (0 < this_ptr->rect_array_count) {
         iVar9 = 0;
         pCVar6 = local_24;
         do {
           if ((pCVar6->y_min <= local_14) && (local_14 <= pCVar6->y_max)) {
             bVar5 = false;
-            if (0 < g_INT_01481e54) {
-              iVar10 = g_INT_01481e54 * 4;
+            if (0 < g_ScanlineSpanCount) {
+              iVar10 = g_ScanlineSpanCount * 4;
               iVar7 = 0;
               do {
-                if ((*(int *)((int)g_INT_ARRAY_01481e58 + iVar7) <= pCVar6->x_max) &&
-                   (pCVar6->x_min <= *(int *)((int)g_INT_ARRAY_01482258 + iVar7))) {
-                  if ((*(int *)((int)g_INT_ARRAY_01481e58 + iVar7) <= pCVar6->x_min) &&
-                     (pCVar6->x_max <= *(int *)((int)g_INT_ARRAY_01482258 + iVar7)))
+                if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar6->x_max) &&
+                   (pCVar6->x_min <= *(int *)((int)g_ScanlineSpanRight + iVar7))) {
+                  if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar6->x_min) &&
+                     (pCVar6->x_max <= *(int *)((int)g_ScanlineSpanRight + iVar7)))
                   goto LAB_0044d476;
-                  if (pCVar6->x_min < *(int *)((int)g_INT_ARRAY_01481e58 + iVar7)) {
+                  if (pCVar6->x_min < *(int *)((int)g_ScanlineSpanLeft + iVar7)) {
                     bVar5 = true;
-                    *(int *)((int)g_INT_ARRAY_01481e58 + iVar7) = pCVar6->x_min;
+                    *(int *)((int)g_ScanlineSpanLeft + iVar7) = pCVar6->x_min;
                   }
-                  if (*(int *)((int)g_INT_ARRAY_01482258 + iVar7) < pCVar6->x_max) {
-                    *(int *)((int)g_INT_ARRAY_01482258 + iVar7) = pCVar6->x_max;
+                  if (*(int *)((int)g_ScanlineSpanRight + iVar7) < pCVar6->x_max) {
+                    *(int *)((int)g_ScanlineSpanRight + iVar7) = pCVar6->x_max;
                     goto LAB_0044d476;
                   }
                   if (bVar5) break;
@@ -110,9 +110,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044d2f0(
               } while (iVar7 < iVar10);
             }
             if (!bVar5) {
-              *(int *)((int)g_INT_ARRAY_01481e58 + iVar9) = pCVar6->x_min;
-              g_INT_01481e54 = g_INT_01481e54 + 1;
-              *(int *)((int)g_INT_ARRAY_01482258 + iVar9) = pCVar6->x_max;
+              *(int *)((int)g_ScanlineSpanLeft + iVar9) = pCVar6->x_min;
+              g_ScanlineSpanCount = g_ScanlineSpanCount + 1;
+              *(int *)((int)g_ScanlineSpanRight + iVar9) = pCVar6->x_max;
               iVar9 = iVar9 + 4;
             }
           }
@@ -122,20 +122,20 @@ LAB_0044d476:
         } while (local_18 < this_ptr->rect_array_count);
       }
       iVar9 = 0;
-      if (0 < g_INT_01481e54) {
+      if (0 < g_ScanlineSpanCount) {
         iVar10 = 0;
         do {
-          piVar1 = (int *)((int)g_INT_ARRAY_01481e58 + iVar10);
-          piVar2 = (int *)((int)g_INT_ARRAY_01481e58 + iVar10);
-          piVar3 = (int *)((int)g_INT_ARRAY_01481e58 + iVar10);
-          piVar4 = (int *)((int)g_INT_ARRAY_01482258 + iVar10);
+          piVar1 = (int *)((int)g_ScanlineSpanLeft + iVar10);
+          piVar2 = (int *)((int)g_ScanlineSpanLeft + iVar10);
+          piVar3 = (int *)((int)g_ScanlineSpanLeft + iVar10);
+          piVar4 = (int *)((int)g_ScanlineSpanRight + iVar10);
           iVar10 = iVar10 + 4;
           iVar9 = iVar9 + 1;
           core_dstrendr_cpp_memcpyMMX_FUN_004886f1
-                    ((void *)(*(int *)((int)g_UINT_PTR_ARRAY_01c4480c + iVar8) + *piVar1 * 4),
+                    ((void *)(*(int *)((int)g_ZBufferScanlineArray + iVar8) + *piVar1 * 4),
                      (void *)((local_14 * this_ptr->framebuffer_width + *piVar2) * 4 +
                              (int)this_ptr->zbuffer_aligned),(*piVar4 - *piVar3) * 4 + 4);
-        } while (iVar9 < g_INT_01481e54);
+        } while (iVar9 < g_ScanlineSpanCount);
       }
       local_20 = local_20 + 4;
       local_14 = local_14 + 1;

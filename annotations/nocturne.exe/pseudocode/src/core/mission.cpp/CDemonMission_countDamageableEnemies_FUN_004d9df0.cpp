@@ -22,7 +22,7 @@ int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(C
     }
     while ((this_ptr_00 = (CCharacter *)
                           core_actor_cpp_castToClassHash_FUN_0040d890
-                                    (actor_ptr,g_CEnemyActorType_01bcdebc.name_hash),
+                                    (actor_ptr,g_CEnemyClassInfo.name_hash),
            this_ptr_00 != (CCharacter *)0x0 &&
            (EVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
            EVar1 != DEATH_STATE_ALIVE))) {

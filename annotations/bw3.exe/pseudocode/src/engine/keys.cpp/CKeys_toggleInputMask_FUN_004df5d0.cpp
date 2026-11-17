@@ -10,9 +10,9 @@ void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(CKeys *this_ptr,
 
 {
   if (enable_extended != 0) {
-    g_INT_005fba2c = 0x1ff;
+    g_InputKeyMask = 0x1ff;
     return;
   }
-  g_INT_005fba2c = 0x7f;
+  g_InputKeyMask = 0x7f;
   return;
 }

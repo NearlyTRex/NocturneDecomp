@@ -43,7 +43,7 @@ int __cdecl engine_font_cpp_CBitFont_wrapLine_FUN_004ab090(CBitFont *this_ptr,ch
   }
   pcVar8 = source_text;
   if ((flags & 1) != 0) {
-    for (; ((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar8 + 1)] & 2) != 0 &&
+    for (; ((g_CharacterClassificationTable[(byte)(*pcVar8 + 1)] & 2) != 0 &&
            (((flags & 8) == 0 || (*pcVar8 != '\n')))); pcVar8 = pcVar8 + 1) {
       iVar5 = iVar5 + 1;
     }
@@ -71,7 +71,7 @@ LAB_004ab101:
 LAB_004ab113:
       if ((flags & 2) != 0) {
         pcVar8 = dest_line + iVar9;
-        while ((0 < iVar9 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {
+        while ((0 < iVar9 && ((g_CharacterClassificationTable[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {
           iVar9 = iVar9 + -1;
           pcVar8 = pcVar8 + -1;
         }
@@ -79,7 +79,7 @@ LAB_004ab113:
       dest_line[iVar9] = '\0';
       if ((flags & 4) != 0) {
         for (pcVar8 = source_text + iVar6;
-            ((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar8 + 1)] & 2) != 0 &&
+            ((g_CharacterClassificationTable[(byte)(*pcVar8 + 1)] & 2) != 0 &&
             (((flags & 8) == 0 || (*pcVar8 != '\n')))); pcVar8 = pcVar8 + 1) {
           iVar6 = iVar6 + 1;
         }
@@ -101,7 +101,7 @@ LAB_004ab113:
       pcVar8 = pcVar7;
       iVar3 = local_20;
       iVar2 = local_1c;
-      if ((g_UCHAR_ARRAY_0061ed94[(byte)(cVar1 + 1)] & 2) != 0) {
+      if ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0) {
         iVar3 = iVar5;
         iVar2 = iVar9;
       }
@@ -112,7 +112,7 @@ LAB_004ab113:
   else {
     local_18 = 1;
   }
-  if ((((g_UCHAR_ARRAY_0061ed94[(byte)(cVar1 + 1)] & 2) == 0) && ((flags & 0x10) == 0)) &&
+  if ((((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) == 0) && ((flags & 0x10) == 0)) &&
      (((flags & 0x20) == 0 || (local_1c != 0)))) {
     iVar6 = local_20;
     iVar9 = local_1c;

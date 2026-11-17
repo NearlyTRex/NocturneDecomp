@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 314,
-    "complexity_score": 112,
+    "complexity_score": 111,
     "cross_reference_count": 5,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 96,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strchr"
     ],
-    "total_lines": 411
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -94,19 +94,19 @@
     },
     {
       "addr": "00617dd4",
-      "name": "g_CKeys_PTR_00617dd4",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d02f84"
     },
     {
       "addr": "01511cc0",
-      "name": "g_CBitFont_PTR_01511cc0",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01511cc4",
-      "name": "g_CBitFont_PTR_01511cc4",
+      "name": "g_SmallEditorFont",
       "type": "CBitFont*",
       "value": null
     },
@@ -327,7 +327,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

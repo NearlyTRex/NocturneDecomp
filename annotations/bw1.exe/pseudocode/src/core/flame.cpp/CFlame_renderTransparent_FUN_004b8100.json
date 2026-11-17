@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 679,
-    "complexity_score": 802,
+    "complexity_score": 801,
     "cross_reference_count": 4,
     "function_call_count": 18,
     "global_count": 38,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 307,
+    "pseudocode_lines": 306,
     "suspect_count": 45,
     "suspect_types": [
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 986
+    "total_lines": 985
   },
   "cross_references": [
     {
@@ -192,7 +192,7 @@
     },
     {
       "addr": "0061cdc0",
-      "name": "g_SMRGLTextureBasic_ARRAY_0061cdc0",
+      "name": "g_FlameFrameTextures",
       "type": "SMRGLTextureBasic[40]",
       "value": null
     },
@@ -354,7 +354,7 @@
     },
     {
       "addr": "007c6120",
-      "name": "g_CDemonCamera_PTR_007c6120",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -366,7 +366,7 @@
     },
     {
       "addr": "01c51cac",
-      "name": "g_INT_01c51cac",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     },
@@ -617,7 +617,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 214,
+      "line": 213,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "} while (iVar4 < unaff_EBP);",
@@ -625,7 +625,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 303,
+      "line": 302,
       "match": "&stack0xfffffe98",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_00612560,(SMRGLHeaderPrimitive *)&stack0xfffffe98,0x163);",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Pointer value `&CStack_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 225,
+      "line": 224,
       "match": "(int)&CStack_28",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_28 + (uint)bVar8 * -8 + 4) =",
@@ -705,7 +705,7 @@
     },
     {
       "description": "Pointer value `&CStack_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 226,
+      "line": 225,
       "match": "(int)&CStack_64",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + 4);",
@@ -713,7 +713,7 @@
     },
     {
       "description": "Pointer value `&CStack_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 227,
+      "line": 226,
       "match": "(int)&CStack_28",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
@@ -721,14 +721,14 @@
     },
     {
       "description": "Pointer value `&CStack_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 228,
+      "line": 227,
       "match": "(int)&CStack_64",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 174,
       "match": "0xf80000",
       "severity": "moderate",
@@ -736,7 +736,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 175,
       "match": "0xf80000",
       "severity": "moderate",
@@ -744,7 +744,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 178,
       "match": "0xf80000",
       "severity": "moderate",
@@ -752,7 +752,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 179,
       "match": "0xf80000",
       "severity": "moderate",
@@ -760,7 +760,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 183,
       "match": "0xf80000",
       "severity": "moderate",
@@ -768,7 +768,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 186,
       "match": "0xf80000",
       "severity": "moderate",
@@ -776,32 +776,32 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 284,
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 283,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 285,
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 284,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 286,
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 285,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 287,
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 286,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;",
@@ -881,7 +881,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 225,
+      "line": 224,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_28 + (uint)bVar8 * -8 + 4) =",
@@ -889,7 +889,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 226,
+      "line": 225,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + 4);",
@@ -897,7 +897,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 227,
+      "line": 226,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
@@ -905,7 +905,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 228,
+      "line": 227,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
@@ -913,7 +913,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 264,
+      "line": 263,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",

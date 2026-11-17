@@ -13,15 +13,15 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0 at 0051a9d4
 ;
 ; Referenced Globals:
-;   int g_INT_01cd0ea8
+;   int g_BloodParticleIndex
 ;   undefined4 g_BloodParticles[0].base.lifetime_remaining
 ;   undefined4 g_BloodParticles[1].base.lifetime_remaining
-;   int g_INT_01cd56ac
-;   int g_INT_01cd56b0
-;   int g_INT_01cf69f4
-;   int g_INT_01cf69f8
-;   int g_INT_01cf6efc
-;   int g_INT_01cf6f00
+;   int g_BloodSplatIndex
+;   int g_BloodSplatCount
+;   int g_BloodPoolIndex
+;   int g_BloodPoolCount
+;   int g_FootstepIndex
+;   int g_FootstepCount
 ;
 ; *****************************************************************************
 
@@ -31,11 +31,11 @@ section .text
         ;   Label: core_gore.cpp_CGore_reset_FUN_004e5c00
     XOR EDX,EDX                         ; 004e5c01
     MOV EAX,0x1cd0eac                   ; 004e5c03
-    MOV dword ptr [0x01cd0ea8],EDX      ; 004e5c08 | g_INT_01cd0ea8
-    MOV dword ptr [0x01cd56ac],EDX      ; 004e5c0e | g_INT_01cd56ac
-    MOV dword ptr [0x01cd56b0],EDX      ; 004e5c14 | g_INT_01cd56b0
-    MOV dword ptr [0x01cf69f4],EDX      ; 004e5c1a | g_INT_01cf69f4
-    MOV dword ptr [0x01cf69f8],EDX      ; 004e5c20 | g_INT_01cf69f8
+    MOV dword ptr [0x01cd0ea8],EDX      ; 004e5c08 | g_BloodParticleIndex
+    MOV dword ptr [0x01cd56ac],EDX      ; 004e5c0e | g_BloodSplatIndex
+    MOV dword ptr [0x01cd56b0],EDX      ; 004e5c14 | g_BloodSplatCount
+    MOV dword ptr [0x01cf69f4],EDX      ; 004e5c1a | g_BloodPoolIndex
+    MOV dword ptr [0x01cf69f8],EDX      ; 004e5c20 | g_BloodPoolCount
     LEA EDX,[EAX + 0x4800]              ; 004e5c26
     ADD EAX,0x48                        ; 004e5c2c
         ;   Label: LAB_004e5c2c
@@ -45,8 +45,8 @@ section .text
         ;   XREF to: 004e5c2c (CONDITIONAL_JUMP)  ; LAB_004e5c2c
     XOR EAX,EDX                         ; 004e5c3a
     XOR EBP,EBP                         ; 004e5c3c
-    MOV [0x01cf6f00],EAX                ; 004e5c3e | g_INT_01cf6f00
-    MOV dword ptr [0x01cf6efc],EBP      ; 004e5c43 | g_INT_01cf6efc
+    MOV [0x01cf6f00],EAX                ; 004e5c3e | g_FootstepCount
+    MOV dword ptr [0x01cf6efc],EBP      ; 004e5c43 | g_FootstepIndex
     POP EBP                             ; 004e5c49
     RET                                 ; 004e5c4a
 

@@ -46,7 +46,7 @@ void __cdecl engine_mini3d_cpp_addDynamicLight_FUN_004ef920(CVector3f *position,
     *(float *)(iVar3 + 0x1d797b0) = *(float *)(iVar3 + 0x1d797b0) * cone_scale;
     *(float *)(iVar3 + 0x1d797c0) = 1.0 / range;
     if ((puVar2 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
-      engine_mini3d_cpp_setFrameTranslation_FUN_004eceb0(&g_CVector3f_02cfd900);
+      engine_mini3d_cpp_setFrameTranslation_FUN_004eceb0(&g_ZeroVector);
       engine_mini3d_cpp_updateTransform_FUN_004edcc0();
       uStack_24 = *(uint *)(iVar3 + 0x1d7979c);
       uStack_20 = *(uint *)(iVar3 + 0x1d797a8);

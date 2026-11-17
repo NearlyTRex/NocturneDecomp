@@ -49,7 +49,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_00590bc5 = 0.5
 ;   double g_DOUBLE_00590bcd = 0.0625
-;   float g_FLOAT_005a1a70 = 256
+;   float g_VDCoordinateScaleFactor = 256
 ;   float FLOAT_005a1a88 = 200
 ;   float FLOAT_005a1a8c = 100
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
@@ -314,7 +314,7 @@ section .text
     JNZ 0x00511fce                      ; 00511ffc
         ;   XREF to: 00511fce (CONDITIONAL_JUMP)  ; LAB_00511fce
     XOR EDI,EDI                         ; 00511ffe
-    MOV EDX,dword ptr [0x026639ec]      ; 00512000 | g_INT_026639ec
+    MOV EDX,dword ptr [0x026639ec]      ; 00512000 | g_VDNearbyActorCount
     MOV dword ptr [ESP + 0xb0],EDI      ; 00512006
     MOV dword ptr [ESP + 0x9c],EDI      ; 0051200d
     TEST EDX,EDX                        ; 00512014
@@ -338,7 +338,7 @@ section .text
     MOV dword ptr [ESP + 0xa4],EAX      ; 00512063
     MOV EAX,dword ptr [ESP + 0xa8]      ; 0051206a
         ;   Label: LAB_0051206a
-    MOV EAX,dword ptr [EAX + 0x26639f0] ; 00512071 | g_CDemonActor_PTR_ARRAY_026639f0
+    MOV EAX,dword ptr [EAX + 0x26639f0] ; 00512071 | g_VDNearbyActorPointers
     MOV EDX,dword ptr [ESP + 0xa4]      ; 00512077
     FLD float ptr [EAX + 0x20]          ; 0051207e
     FSUB float ptr [EDX]                ; 00512081
@@ -384,13 +384,13 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 00512106
     MOV EDX,dword ptr [0x005ae704]      ; 0051210a | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 00512110
-    FMUL float ptr [0x005a1a70]         ; 00512112 | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 00512112 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 00512118
     FLD float ptr [EAX + 0x4]           ; 0051211a
-    FMUL float ptr [0x005a1a70]         ; 0051211d | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 0051211d | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 00512123
     FLD float ptr [EAX + 0x8]           ; 00512126
-    FMUL float ptr [0x005a1a70]         ; 00512129 | g_FLOAT_005a1a70
+    FMUL float ptr [0x005a1a70]         ; 00512129 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0051212f
     LEA EAX,[ESP + 0x5c]                ; 00512132
     PUSH EAX                            ; 00512136
@@ -429,7 +429,7 @@ section .text
         ;   Label: LAB_005121a8
     MOV EBX,dword ptr [ESP + 0xac]      ; 005121af
     MOV ESI,dword ptr [ESP + 0xb0]      ; 005121b6
-    MOV EDI,dword ptr [0x026639ec]      ; 005121bd | g_INT_026639ec
+    MOV EDI,dword ptr [0x026639ec]      ; 005121bd | g_VDNearbyActorCount
     ADD ECX,0x4                         ; 005121c3
     ADD EBX,0x18                        ; 005121c6
     INC ESI                             ; 005121c9

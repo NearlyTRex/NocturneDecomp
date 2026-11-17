@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dff0c
 ;   TerminatedCString s_Cannot_read_or_write_mor_005dff1d
-;   uint[18] g_UINT_ARRAY_00619250
-;   undefined4 g_UINT_ARRAY_00619250[8]
+;   uint[18] g_MpegBitMaskTableMultiBit
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -73,7 +73,7 @@ section .text
     MOV BL,byte ptr [EDX]               ; 00504b41
     MOV EDX,dword ptr [EDI + 0x14]      ; 00504b43
     SUB EBP,EAX                         ; 00504b46
-    MOV ESI,dword ptr [EDX*0x4 + 0x619250] ; 00504b48 | g_UINT_ARRAY_00619250 | g_UINT_ARRAY_00619250[8]
+    MOV ESI,dword ptr [EDX*0x4 + 0x619250] ; 00504b48 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB EDX,EAX                         ; 00504b4f
     AND EBX,ESI                         ; 00504b51
     MOV CL,DL                           ; 00504b53

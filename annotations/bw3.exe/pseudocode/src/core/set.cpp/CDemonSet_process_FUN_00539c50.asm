@@ -18,9 +18,9 @@
 ;   TerminatedCString s_son_005d0803
 ;   TerminatedCString s_soff_005d0808
 ;   TerminatedCString s_moon_005d080e
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a418
-;   int g_INT_0203a598
+;   int g_SpotLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a59c
 ;
 ; Called Functions:
@@ -74,7 +74,7 @@ section .text
     TEST EBX,EBX                        ; 00539cb2
     JZ 0x00539c9a                       ; 00539cb4
         ;   XREF to: 00539c9a (CONDITIONAL_JUMP)  ; LAB_00539c9a
-    MOV ECX,dword ptr [0x0203a598]      ; 00539cb6 | g_INT_0203a598
+    MOV ECX,dword ptr [0x0203a598]      ; 00539cb6 | g_SpotLightCount
     MOV dword ptr [ESP + 0x100],EAX     ; 00539cbc
     TEST ECX,ECX                        ; 00539cc3
     JLE 0x00539ce5                      ; 00539cc5
@@ -103,7 +103,7 @@ section .text
     ADD ESP,0xc                         ; 00539d0a
     MOV EAX,ESP                         ; 00539d0d
     PUSH EAX                            ; 00539d0f
-    MOV ECX,dword ptr [0x005fba60]      ; 00539d10 | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00539d10 | g_CEventListPtr
     PUSH ECX                            ; 00539d16
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00539d17
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -123,7 +123,7 @@ section .text
     ADD ESP,0xc                         ; 00539d40
     MOV EAX,ESP                         ; 00539d43
     PUSH EAX                            ; 00539d45
-    MOV EAX,[0x005fba60]                ; 00539d46 | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 00539d46 | g_CEventListPtr
     PUSH EAX                            ; 00539d4b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00539d4c
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

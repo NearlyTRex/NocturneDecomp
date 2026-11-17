@@ -9,6 +9,6 @@
 void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_00467f20(CBitFont *font_ptr)
 
 {
-  g_CBitFont_PTR_01bdd7c4 = font_ptr;
+  g_CurrentFont = font_ptr;
   return;
 }

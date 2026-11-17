@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6034
+;   void* g_APIDLL_addParticle
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     PUSH ECX                            ; 00565fd1
     MOV EBX,dword ptr [ESP + 0xc]       ; 00565fd2
     PUSH EBX                            ; 00565fd6
-    CALL dword ptr [0x02cf6034]         ; 00565fd7 | g_PTR_02cf6034
+    CALL dword ptr [0x02cf6034]         ; 00565fd7 | g_APIDLL_addParticle
     ADD ESP,0x8                         ; 00565fdd
     POP EBX                             ; 00565fe0
     RET                                 ; 00565fe1

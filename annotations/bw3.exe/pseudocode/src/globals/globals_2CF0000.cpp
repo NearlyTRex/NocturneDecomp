@@ -22,17 +22,17 @@ CDemonActorType g_CTVBatClassInfo = {};
 CDemonActorType g_CCryptVesselClassInfo = {};
 
 // CDirectSoundDevice
-CDirectSoundDevice g_CDirectSoundDevice_02cf5468 = {};
+CDirectSoundDevice g_CDirectSoundDeviceInstance = {};
 
 // COutStreamDebug
 COutStreamDebug g_COutStreamDebugInstance = {};
 
 // CSound
-CSound g_CSound_02cf5680 = {};
+CSound g_CSoundInstance = {};
 
 // CSoundDevice*
-CSoundDevice* g_CSoundDevice_PTR_02cf3280 = {};
-CSoundDevice* g_CSoundDevice_PTR_02cf3c68 = {};
+CSoundDevice* g_CSoundDevicePtr = {};
+CSoundDevice* g_RecordingDeviceInterface = {};
 
 // CSpotView
 CSpotView g_CSpotView_02cf6170 = {};
@@ -41,10 +41,10 @@ CSpotView g_CSpotView_02cf6170 = {};
 CStrList g_CStrListInstance = {};
 
 // CTerrain
-CTerrain g_CTerrain_02cfd8b8 = {};
+CTerrain g_CTerrainInstance = {};
 
 // CTextureCache*
-CTextureCache* g_CTextureCache_PTR_02cfd0d0 = {};
+CTextureCache* g_TextureCacheInstance = {};
 
 // CTextureList
 CTextureList g_CTextureListInstance = {};
@@ -54,44 +54,44 @@ CVector3d g_CVector3d_02cf2858 = {};
 
 // CVector3f
 CVector3f g_CVector3f_02cf5f74 = {};
-CVector3f g_CVector3f_02cfd900 = {};
+CVector3f g_ZeroVector = {};
 
 // CWater
 CWater g_CWaterInstance = {};
 
 // CWavInDevice
-CWavInDevice g_CWavInDevice_02cf567c = {};
+CWavInDevice g_CWavInDeviceInstance = {};
 
 // CWavOutDevice
-CWavOutDevice g_CWavOutDevice_02cf5678 = {};
+CWavOutDevice g_CWavOutDeviceInstance = {};
 
 // HANDLE
-HANDLE g_HANDLE_02cf3418 = {};
+HANDLE g_SoundMutex = {};
 HANDLE g_HANDLE_02cfd8a8 = {};
 
 // HGLOBAL[20]
-HGLOBAL g_HGLOBAL_ARRAY_02cf5508[20] = {};
-HGLOBAL g_HGLOBAL_ARRAY_02cf55a8[20] = {};
+HGLOBAL g_WaveInHeaderHandles[20] = {};
+HGLOBAL g_WaveInBufferHandles[20] = {};
 
 // HGLOBAL[8]
-HGLOBAL g_HGLOBAL_ARRAY_02cf5470[8] = {};
-HGLOBAL g_HGLOBAL_ARRAY_02cf54b0[8] = {};
+HGLOBAL g_WaveOutHeaderHandles[8] = {};
+HGLOBAL g_WaveOutBufferHandles[8] = {};
 
 // HMODULE
 HMODULE g_HMODULE_02cf610c = {};
 
 // HWND
-HWND g_HWND_02cf611c = {};
+HWND g_StoredWindowHandle = {};
 
 // IDirectSound*
-IDirectSound* g_IDirectSound_PTR_02cf49c4 = {};
+IDirectSound* g_DirectSound = {};
 
 // IDirectSound3DListener*
-IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0 = {};
+IDirectSound3DListener* g_DirectSound3DListener = {};
 
 // IDirectSoundBuffer*
-IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49c8 = {};
-IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49cc = {};
+IDirectSoundBuffer* g_DirectSoundPrimaryBuffer = {};
+IDirectSoundBuffer* g_DirectSoundSecondaryBuffer = {};
 
 // IDirectSoundBuffer*[25]
 IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[25] = {};
@@ -100,19 +100,19 @@ IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[25] = {};
 IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[31] = {};
 
 // IKsPropertySet*
-IKsPropertySet* g_IKsPropertySet_PTR_02cf49d4 = {};
+IKsPropertySet* g_DirectSoundPropertySet = {};
 
 // LPVOID[8]
-LPVOID g_LPVOID_ARRAY_02cf54d0[8] = {};
+LPVOID g_WaveOutBuffers[8] = {};
 
 // LPWAVEHDR[20]
-LPWAVEHDR g_LPWAVEHDR_ARRAY_02cf5558[20] = {};
+LPWAVEHDR g_WaveInHeaders[20] = {};
 
 // LPWAVEHDR[8]
-LPWAVEHDR g_LPWAVEHDR_ARRAY_02cf5490[8] = {};
+LPWAVEHDR g_WaveOutHeaders[8] = {};
 
 // SDirectSoundDeviceInfo[8]
-SDirectSoundDeviceInfo g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[8] = {};
+SDirectSoundDeviceInfo g_DirectSoundDevices[8] = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_SMRGLTextureBasic_02cfd080 = {};
@@ -121,27 +121,27 @@ SMRGLTextureBasic g_SMRGLTextureBasic_02cfd080 = {};
 SMRGLTextureModel g_SMRGLTextureModel_02cfd714 = {};
 
 // SRecordingDeviceInfo[8]
-SRecordingDeviceInfo g_SRecordingDeviceInfo_ARRAY_02cf3428[8] = {};
+SRecordingDeviceInfo g_RecordingDevices[8] = {};
 
 // SReverbSettings
 SReverbSettings g_CachedReverb = {};
 SReverbSettings g_SoundReverb = {};
 
 // SSoundDeviceInfo[8]
-SSoundDeviceInfo g_SSoundDeviceInfo_ARRAY_02cf29c0[8] = {};
+SSoundDeviceInfo g_SoundDevices[8] = {};
 
 // STrainNoise[10]
-STrainNoise g_STrainNoise_ARRAY_02cf5ed4[10] = {};
+STrainNoise g_TrainNoiseArray[10] = {};
 
 // byte
 byte g_BYTE_02cf3424 = {};
 byte g_BYTE_02cf3427 = {};
 
 // char[40]
-char g_CHAR_ARRAY_02cf5e98[40] = {};
+char g_SoundAmbientSoundName[40] = {};
 
 // char[40][40]
-char g_CHAR_ARRAY_ARRAY_02cf5858[40][40] = {};
+char g_SoundMatchedFilenames[40][40] = {};
 
 // char[516]
 char g_CHAR_ARRAY_02cfd0d8[516] = {};
@@ -159,9 +159,9 @@ double g_DOUBLE_02cf2848 = {};
 double g_DOUBLE_02cf2850 = {};
 
 // double[8]
-double g_DOUBLE_ARRAY_02cf3340[8] = {};
-double g_DOUBLE_ARRAY_02cf3380[8] = {};
-double g_DOUBLE_ARRAY_02cf33c0[8] = {};
+double g_VirtualSpeakerXPositions[8] = {};
+double g_VirtualSpeakerYPositions[8] = {};
+double g_VirtualSpeakerZPositions[8] = {};
 
 // float
 float g_FLOAT_02cf340c = {};
@@ -172,8 +172,8 @@ float g_FLOAT_02cf5698 = {};
 float g_FLOAT_02cf569c = {};
 float g_FLOAT_02cf56a0 = {};
 float g_FLOAT_02cf5ec8 = {};
-float g_FLOAT_02cf5ecc = {};
-float g_FLOAT_02cf5ed0 = {};
+float g_TargetVolumeMultiplier = {};
+float g_VolumeFadeTimeRemaining = {};
 float g_FLOAT_02cf5f80 = {};
 float g_FLOAT_02cf61ac = {};
 float g_FLOAT_02cf61b0 = {};
@@ -184,76 +184,76 @@ float g_FLOAT_02cfd96c = {};
 float g_FLOAT_02cfd970 = {};
 
 // float*
-float* g_FLOAT_PTR_02cf32a4 = {};
-float* g_FLOAT_PTR_02cf32c8 = {};
-float* g_FLOAT_PTR_02cf32ec = {};
+float* g_TertiaryMixBuffer = {};
+float* g_PrimaryMixBuffer = {};
+float* g_SecondaryMixBuffer = {};
 
 // float*[8]
-float* g_FLOAT_PTR_ARRAY_02cf32a8[8] = {};
-float* g_FLOAT_PTR_ARRAY_02cf32cc[8] = {};
-float* g_FLOAT_PTR_ARRAY_02cf32f0[8] = {};
-float* g_FLOAT_PTR_ARRAY_02cf3310[8] = {};
+float* g_ChannelTertiaryBuffers[8] = {};
+float* g_ChannelPrimaryBuffers[8] = {};
+float* g_ChannelSecondaryBuffersA[8] = {};
+float* g_ChannelSecondaryBuffersB[8] = {};
 
 // float[32]
-float g_FLOAT_ARRAY_02cf28c0[32] = {};
+float g_SfxChannelVolumes[32] = {};
 
 // int
 int g_INT_02cf28b8 = {};
 int g_INT_02cf28bc = {};
-int g_INT_02cf3284 = {};
-int g_INT_02cf3288 = {};
-int g_INT_02cf328c = {};
-int g_INT_02cf3290 = {};
-int g_INT_02cf3294 = {};
-int g_INT_02cf3298 = {};
-int g_INT_02cf329c = {};
-int g_INT_02cf32a0 = {};
-int g_INT_02cf3338 = {};
-int g_INT_02cf3410 = {};
-int g_INT_02cf3414 = {};
-int g_INT_02cf341c = {};
-int g_INT_02cf3420 = {};
-int g_INT_02cf3c6c = {};
-int g_INT_02cf3c70 = {};
-int g_INT_02cf49d8 = {};
-int g_INT_02cf49dc = {};
-int g_INT_02cf49e0 = {};
-int g_INT_02cf49e4 = {};
-int g_INT_02cf49e8 = {};
-int g_INT_02cf49ec = {};
-int g_INT_02cf49f0 = {};
-int g_INT_02cf546c = {};
-int g_INT_02cf54f0 = {};
-int g_INT_02cf54f4 = {};
-int g_INT_02cf54f8 = {};
-int g_INT_02cf54fc = {};
-int g_INT_02cf5500 = {};
-int g_INT_02cf5504 = {};
-int g_INT_02cf5648 = {};
-int g_INT_02cf564c = {};
-int g_INT_02cf5650 = {};
-int g_INT_02cf5654 = {};
-int g_INT_02cf5658 = {};
-int g_INT_02cf565c = {};
-int g_INT_02cf5660 = {};
-int g_INT_02cf5664 = {};
-int g_INT_02cf5668 = {};
-int g_INT_02cf566c = {};
-int g_INT_02cf5670 = {};
-int g_INT_02cf5674 = {};
-int g_INT_02cf5850 = {};
-int g_INT_02cf5ec0 = {};
-int g_INT_02cf5ec4 = {};
-int g_INT_02cf5f84 = {};
+int g_SoundBusyFlag = {};
+int g_HasHardware3DSound = {};
+int g_HardwareMixingEnabled = {};
+int g_SoundMuted = {};
+int g_MixBufferReadIndex = {};
+int g_MixBufferWriteIndex = {};
+int g_MixBufferSize = {};
+int g_NumMixBuffers = {};
+int g_MixBufferCount = {};
+int g_AudioThreadRunning = {};
+int g_AudioThreadShutdownFlag = {};
+int g_SoundLockCount = {};
+int g_SoundStartTime = {};
+int isRecordingStarted = {};
+int g_RecordingSamplesSigned = {};
+int g_StreamBitsPerSample = {};
+int g_StreamSampleRate = {};
+int g_StreamChannelCount = {};
+int g_StreamSamplesPerBlock = {};
+int g_StreamBlockSizeBytes = {};
+int g_StreamBlockCount = {};
+int g_StreamCurrentBlock = {};
+int g_WaveOutHandle = {};
+int g_WaveOutBitsPerSample = {};
+int g_WaveOutChannels = {};
+int g_WaveOutSampleRate = {};
+int g_WaveOutBufferSize = {};
+int g_WaveOutNumBuffers = {};
+int g_WaveInHandle = {};
+int g_WaveInBitsPerSample = {};
+int g_WaveInChannels = {};
+int g_WaveInSampleRate = {};
+int g_WaveInIs8Bit = {};
+int g_WaveInBufferSizeSamples = {};
+int g_WaveInNumBuffers = {};
+int g_WaveInRequestedBitsPerSample = {};
+int g_WaveInRequestedChannels = {};
+int g_WaveInRequestedSampleRate = {};
+int g_WaveInStereoRequested = {};
+int g_WaveInCurrentBufferIndex = {};
+int g_WaveInCurrentSampleOffset = {};
+int g_SoundMatchCount = {};
+int g_SoundAmbientSfxHandle = {};
+int g_SoundAudioInitialized = {};
+int g_TrainLastCameraIndex = {};
 int g_INT_02cf5fcc = {};
-int g_INT_02cf5fd0 = {};
-int g_INT_02cf5fd4 = {};
+int g_RendererCardIndex = {};
+int g_VideoMemorySize = {};
 int g_INT_02cf5fd8 = {};
-int g_INT_02cf5fdc = {};
+int g_FrameBufferTestResult = {};
 int g_INT_02cf6108 = {};
-int g_INT_02cf6110 = {};
-int g_INT_02cf6114 = {};
-int g_INT_02cf6118 = {};
+int g_FogColorRed = {};
+int g_FogColorGreen = {};
+int g_FogColorBlue = {};
 int g_INT_02cf6120 = {};
 int g_INT_02cf6124 = {};
 int g_INT_02cf6128 = {};
@@ -266,90 +266,90 @@ int g_INT_02cfd79c = {};
 int g_INT_02cfd7a0 = {};
 int g_INT_02cfd7a4 = {};
 int g_INT_02cfd8b4 = {};
-int g_INT_02cfd974 = {};
+int g_WaterAnimationTimer = {};
 int g_INT_02cfd978 = {};
-int g_INT_02cfd97c = {};
+int g_VisibleWaterTileCount = {};
 
 // int[20]
-int g_INT_ARRAY_02cf55f8[20] = {};
+int g_WaveInBuffers[20] = {};
 
 // int[32]
-int g_INT_ARRAY_02cf2940[32] = {};
+int g_SfxChannelEnabled[32] = {};
 
 // int[4096]
-int g_INT_ARRAY_02cfd980[4096] = {};
+int g_VisibleWaterTilesX[4096] = {};
 
 // uchar[4]
-uchar g_UCHAR_ARRAY_02cfd898[4] = {};
-uchar g_UCHAR_ARRAY_02cfd89c[4] = {};
+uchar g_BroadcastIP[4] = {};
+uchar g_AnyAddressIP[4] = {};
 
 // uint
-uint g_UINT_02cf5684 = {};
-uint g_UINT_02cf5688 = {};
-uint g_UINT_02cf5f88 = {};
-uint g_UINT_02cf5f8c = {};
+uint g_WindSoundHandle = {};
+uint g_WaterSoundHandle = {};
+uint g_TrainRailNoiseHandle = {};
+uint g_TrainExteriorAmbientHandle = {};
 
 // ulong
 ulong g_ULONG_02cfd2dc = {};
 
 // void*
-void* g_PTR_02cf5fe4 = {};
-void* g_PTR_02cf5fe8 = {};
-void* g_PTR_02cf5fec = {};
-void* g_PTR_02cf5ff4 = {};
-void* g_PTR_02cf5ff8 = {};
-void* g_PTR_02cf5ffc = {};
-void* g_PTR_02cf6000 = {};
-void* g_PTR_02cf6004 = {};
-void* g_PTR_02cf6008 = {};
-void* g_PTR_02cf600c = {};
-void* g_PTR_02cf6010 = {};
-void* g_PTR_02cf6014 = {};
-void* g_PTR_02cf6018 = {};
-void* g_PTR_02cf601c = {};
-void* g_PTR_02cf6020 = {};
-void* g_PTR_02cf6024 = {};
-void* g_PTR_02cf6028 = {};
-void* g_PTR_02cf602c = {};
-void* g_PTR_02cf6030 = {};
-void* g_PTR_02cf6034 = {};
-void* g_PTR_02cf6038 = {};
-void* g_PTR_02cf603c = {};
-void* g_PTR_02cf6040 = {};
-void* g_PTR_02cf6044 = {};
-void* g_PTR_02cf6048 = {};
-void* g_PTR_02cf604c = {};
-void* g_PTR_02cf6050 = {};
-void* g_PTR_02cf6054 = {};
-void* g_PTR_02cf6058 = {};
-void* g_PTR_02cf6064 = {};
-void* g_PTR_02cf6068 = {};
-void* g_PTR_02cf606c = {};
-void* g_PTR_02cf6070 = {};
-void* g_PTR_02cf6074 = {};
-void* g_PTR_02cf6078 = {};
-void* g_PTR_02cf607c = {};
-void* g_PTR_02cf6080 = {};
-void* g_PTR_02cf6084 = {};
-void* g_PTR_02cf6088 = {};
-void* g_PTR_02cf608c = {};
-void* g_PTR_02cf6094 = {};
-void* g_PTR_02cf609c = {};
-void* g_PTR_02cf60a0 = {};
-void* g_PTR_02cf60a4 = {};
-void* g_PTR_02cf60a8 = {};
-void* g_PTR_02cf60ac = {};
-void* g_PTR_02cf60b0 = {};
-void* g_PTR_02cf60b4 = {};
-void* g_PTR_02cf60b8 = {};
+void* g_APIDLL_init = {};
+void* g_APIDLL_kill = {};
+void* g_APIDLL_toggle = {};
+void* g_APIDLL_setVideoMode2 = {};
+void* g_APIDLL_restoreVideoMode = {};
+void* g_APIDLL_beginScene = {};
+void* g_APIDLL_endScene = {};
+void* g_APIDLL_lockFrame = {};
+void* g_APIDLL_unlockFrame = {};
+void* g_APIDLL_selectTexture = {};
+void* g_APIDLL_updateTexture = {};
+void* g_APIDLL_selectTextureBGRA = {};
+void* g_APIDLL_updateTextureBGRA = {};
+void* g_APIDLL_setMipMapLevel = {};
+void* g_APIDLL_drawPolygon = {};
+void* g_APIDLL_drawPolygon2 = {};
+void* g_APIDLL_drawPolyList = {};
+void* g_APIDLL_drawPolyList2 = {};
+void* g_APIDLL_drawPolyList3 = {};
+void* g_APIDLL_addParticle = {};
+void* g_APIDLL_flushParticleList = {};
+void* g_APIDLL_add3dLine = {};
+void* g_APIDLL_flushLineList = {};
+void* g_APIDLL_clear = {};
+void* g_APIDLL_setFogColor = {};
+void* g_APIDLL_sync = {};
+void* g_APIDLL_clearZBuffer = {};
+void* g_APIDLL_clearZBox = {};
+void* g_APIDLL_setColorTable16 = {};
+void* g_APIDLL_masterZBuffer = {};
+void* g_APIDLL_restoreZBuffer = {};
+void* g_APIDLL_getVideoMemory = {};
+void* g_APIDLL_selectCard = {};
+void* g_APIDLL_buildCardList = {};
+void* g_APIDLL_lockHoldBuffer = {};
+void* g_APIDLL_unlockHoldBuffer = {};
+void* g_APIDLL_lockTexture = {};
+void* g_APIDLL_unlockTexture = {};
+void* g_APIDLL_getTextureInfo = {};
+void* g_APIDLL_setVideoModeX = {};
+void* g_APIDLL_lockFrameX = {};
+void* g_APIDLL_toggleX = {};
+void* g_APIDLL_setViewport = {};
+void* g_APIDLL_setLightConstants = {};
+void* g_APIDLL_setLightVector = {};
+void* g_APIDLL_setAmbientLight = {};
+void* g_APIDLL_setTransform = {};
+void* g_APIDLL_polyList = {};
+void* g_APIDLL_getTextureHandle = {};
 void* g_PTR_02cf60bc = {};
 void* g_PTR_02cf60c0 = {};
 void* g_PTR_02cf60c4 = {};
 void* g_PTR_02cf60c8 = {};
 void* g_PTR_02cf60cc = {};
-void* g_PTR_02cf60dc = {};
+void* g_APIDLL_setTextureClamp = {};
 void* g_PTR_02cf60e0 = {};
-void* g_PTR_02cf60e4 = {};
+void* g_APIDLL_setFog = {};
 void* g_PTR_02cf60e8 = {};
 void* g_PTR_02cf60ec = {};
 void* g_PTR_02cf60f0 = {};

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetModuleHandleA_005b35c0 = 001b3f52
-;   uint* g_UINT_PTR_00607960 = 00000000
+;   uint* g_HeapBound = 00000000
 ;   void* PTR_crt_unknown.c_FUN_005a7f3c_006079a0 = 005a7f3c
 ;   void* PTR_crt_unknown.c_FUN_005a7f68_006079e0 = 005a7f68
 ;
@@ -37,7 +37,7 @@ section .text
     CALL crt_unknown.c_FUN_005a7f6c     ; 005a81ca
         ;   XREF to: 005a7f6c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a7f6c()
     ADD ESP,0xc                         ; 005a81cf
-    PUSH 0x607960                       ; 005a81d2 | g_UINT_PTR_00607960
+    PUSH 0x607960                       ; 005a81d2 | g_HeapBound
     CALL dword ptr [0x006079a0]         ; 005a81d7 | PTR_crt_unknown.c_FUN_005a7f3c_006079a0
     PUSH EAX                            ; 005a81dd
     CALL crt_unknown.c_FUN_005adf10     ; 005a81de

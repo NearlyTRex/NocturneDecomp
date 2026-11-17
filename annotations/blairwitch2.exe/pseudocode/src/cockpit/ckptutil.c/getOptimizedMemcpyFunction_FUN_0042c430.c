@@ -9,7 +9,7 @@
 OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void)
 
 {
-  if (g_INT_01c38b40 != 0) {
+  if (g_MMXSupported != 0) {
     return cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042c2d2;
   }
   return cockpit_ckptutil_c_optimizedMemcpy_FUN_0042c1d8;

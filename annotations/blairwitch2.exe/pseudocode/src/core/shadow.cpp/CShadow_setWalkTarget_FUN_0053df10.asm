@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_shadow_cpp_CShadow_setWalkTarget_FUN_0053df10(CShadow *this_ptr,CDemonActor *param_2,float param_3,float param_4)
+; void __cdecl core_shadow_cpp_CShadow_setWalkTarget_FUN_0053df10(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 ;
 ; Parameters:
 ; CShadow *        Stack[0x4]:4   this_ptr
-; CDemonActor *    Stack[0x8]:4   param_2
-; float            Stack[0xc]:4   param_3
-; float            Stack[0x10]:4   param_4
+; CDemonActor *    Stack[0x8]:4   target
+; float            Stack[0xc]:4   min_distance
+; float            Stack[0x10]:4   max_distance
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0

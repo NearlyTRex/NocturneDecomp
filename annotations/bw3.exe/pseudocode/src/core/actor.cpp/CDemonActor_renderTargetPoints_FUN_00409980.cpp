@@ -27,7 +27,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409980(CDemonAc
   iVar5 = 0;
   if (0 < iStack_18) {
     do {
-      uStack_14 = (uint)g_UCHAR_ARRAY_01c62070[0x7c00];
+      uStack_14 = (uint)g_ColorCubeLookup[0x7c00];
       CStack_24.x = (int)ROUND(pCVar7->x * 256.0f);
       CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);
       CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_vampboss_cpp_CVampireBoss_getActorType_FUN_0054c2a0(CVampireBoss *this_ptr)
 
 {
-  return &g_CVampireBossActorType_02dd1148;
+  return &g_CVampireBossClassInfo;
 }

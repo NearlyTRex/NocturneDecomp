@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 00402ca3
     MOV EDX,dword ptr [0x01c4f014]      ; 00402ca4 | g_INT_01c4f014
     PUSH EDX                            ; 00402caa
-    MOV ECX,dword ptr [0x01c4f010]      ; 00402cab | g_INT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 00402cab | g_ClipRight
     PUSH ECX                            ; 00402cb1
     MOV EBX,dword ptr [0x01c4f00c]      ; 00402cb2 | g_INT_01c4f00c
     PUSH EBX                            ; 00402cb8

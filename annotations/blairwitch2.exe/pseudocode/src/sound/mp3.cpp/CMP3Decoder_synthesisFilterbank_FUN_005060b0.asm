@@ -39,12 +39,12 @@
 ;   double g_DOUBLE_005e004b = -0.5
 ;   double g_DOUBLE_005e0053 = 0.5
 ;   double g_DOUBLE_005e005b = 0.000350000000000000
-;   float[16][32] g_FLOAT_ARRAY_ARRAY_006185e0
-;   undefined4 g_FLOAT_ARRAY_ARRAY_006185e0[1][0]
-;   int g_INT_00618de0 = 0x1
-;   float[64][32] g_FLOAT_ARRAY_ARRAY_01d1cdd0
-;   undefined4 g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1]
-;   undefined4 g_FLOAT_ARRAY_ARRAY_01d1cdd0[1][0]
+;   float[16][32] g_MpegSynthesisWindow
+;   undefined4 g_MpegSynthesisWindow[1][0]
+;   int g_MpegSynthesisTableInitialized = 0x1
+;   float[64][32] g_MpegSynthesisDctTable
+;   undefined4 g_MpegSynthesisDctTable[0][1]
+;   undefined4 g_MpegSynthesisDctTable[1][0]
 ;
 ; Called Functions:
 ;   crt_math.c_modf_FUN_005bada6
@@ -60,7 +60,7 @@ section .text
     PUSH EBP                            ; 005060b3
     MOV EBP,ESP                         ; 005060b4
     SUB ESP,0xd4                        ; 005060b6
-    CMP dword ptr [0x00618de0],0x0      ; 005060bc | g_INT_00618de0
+    CMP dword ptr [0x00618de0],0x0      ; 005060bc | g_MpegSynthesisTableInitialized
     JNZ 0x0050627e                      ; 005060c3
         ;   XREF to: 0050627e (CONDITIONAL_JUMP)  ; LAB_0050627e
     MOV EAX,dword ptr [EBP + 0x1c]      ; 005060c9
@@ -165,12 +165,12 @@ section .text
     MOV EDX,dword ptr [EBP + 0xfffffff8] ; 005061ed
     MOV ECX,0x8                         ; 005061f3
     MOV ESI,dword ptr [EBP + 0xffffffd8] ; 005061f8
-    FLD float ptr [EBX*0x4 + 0x6185e0]  ; 005061fe | g_FLOAT_ARRAY_ARRAY_006185e0
+    FLD float ptr [EBX*0x4 + 0x6185e0]  ; 005061fe | g_MpegSynthesisWindow
         ;   Label: LAB_005061fe
     AND EDX,0x3ff                       ; 00506205
     FMUL float ptr [ESI + EDX*0x4]      ; 0050620b
     ADD EDX,0x60                        ; 0050620e
-    FLD float ptr [EBX*0x4 + 0x618660]  ; 00506211 | g_FLOAT_ARRAY_ARRAY_006185e0[1][0]
+    FLD float ptr [EBX*0x4 + 0x618660]  ; 00506211 | g_MpegSynthesisWindow[1][0]
     AND EDX,0x3ff                       ; 00506218
     FMUL float ptr [ESI + EDX*0x4]      ; 0050621e
     ADD EBX,0x40                        ; 00506221
@@ -230,16 +230,16 @@ section .text
     FMUL double ptr [0x005e0033]        ; 005062b4 | g_DOUBLE_005e0033
     FLDZ                                ; 005062ba
     FXCH                                ; 005062bc
-    FSTP float ptr [EBX]                ; 005062be | g_FLOAT_ARRAY_ARRAY_01d1cdd0 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1] | g_FLOAT_ARRAY_ARRAY_01d1cdd0[1][0]
-    FCOMP float ptr [EBX]               ; 005062c0 | g_FLOAT_ARRAY_ARRAY_01d1cdd0 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1] | g_FLOAT_ARRAY_ARRAY_01d1cdd0[1][0]
+    FSTP float ptr [EBX]                ; 005062be | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1] | g_MpegSynthesisDctTable[1][0]
+    FCOMP float ptr [EBX]               ; 005062c0 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1] | g_MpegSynthesisDctTable[1][0]
     FNSTSW AX                           ; 005062c2
     SAHF                                ; 005062c4
     JA 0x00506331                       ; 005062c5
         ;   XREF to: 00506331 (CONDITIONAL_JUMP)  ; LAB_00506331
-    FLD float ptr [EBX]                 ; 005062c7 | g_FLOAT_ARRAY_ARRAY_01d1cdd0
+    FLD float ptr [EBX]                 ; 005062c7 | g_MpegSynthesisDctTable
     LEA EAX,[EBP + -0x54]               ; 005062c9
     FSTP double ptr [EBP + -0x54]       ; 005062cc
-    FLD float ptr [EBX]                 ; 005062cf | g_FLOAT_ARRAY_ARRAY_01d1cdd0
+    FLD float ptr [EBX]                 ; 005062cf | g_MpegSynthesisDctTable
     PUSH EAX                            ; 005062d1
     FADD double ptr [0x005e0053]        ; 005062d2 | g_DOUBLE_005e0053
     SUB ESP,0x8                         ; 005062d8
@@ -249,15 +249,15 @@ section .text
     FLD double ptr [EBP + -0x54]        ; 005062e3
     ADD ESP,0xc                         ; 005062e6
         ;   Label: LAB_005062e6
-    FSTP float ptr [EBX]                ; 005062e9 | g_FLOAT_ARRAY_ARRAY_01d1cdd0 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1]
-    FLD float ptr [ESI]                 ; 005062eb | g_FLOAT_ARRAY_ARRAY_01d1cdd0 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1]
+    FSTP float ptr [EBX]                ; 005062e9 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
+    FLD float ptr [ESI]                 ; 005062eb | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
     FLD ST0                             ; 005062ed
     FMUL double ptr [0x005e003b]        ; 005062ef | g_DOUBLE_005e003b
     ADD EBX,0x4                         ; 005062f5
     ADD EDI,0x2                         ; 005062f8
     ADD ESI,0x4                         ; 005062fb
     FSTP ST1                            ; 005062fe
-    FSTP float ptr [ESI + -0x4]         ; 00506300 | g_FLOAT_ARRAY_ARRAY_01d1cdd0 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1]
+    FSTP float ptr [ESI + -0x4]         ; 00506300 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
     CMP EDI,0x41                        ; 00506303
     JNZ 0x00506295                      ; 00506306
         ;   XREF to: 00506295 (CONDITIONAL_JUMP)  ; LAB_00506295
@@ -271,14 +271,14 @@ section .text
     JL 0x0050628b                       ; 0050631e
         ;   XREF to: 0050628b (CONDITIONAL_JUMP)  ; LAB_0050628b
     XOR EDX,EDX                         ; 00506324
-    MOV dword ptr [0x00618de0],EDX      ; 00506326 | g_INT_00618de0
+    MOV dword ptr [0x00618de0],EDX      ; 00506326 | g_MpegSynthesisTableInitialized
     JMP 0x005060c9                      ; 0050632c
         ;   XREF to: 005060c9 (UNCONDITIONAL_JUMP)  ; LAB_005060c9
-    FLD float ptr [EBX]                 ; 00506331 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1]
+    FLD float ptr [EBX]                 ; 00506331 | g_MpegSynthesisDctTable[0][1]
         ;   Label: LAB_00506331
     LEA EAX,[EBP + -0x4c]               ; 00506333
     FSTP double ptr [EBP + -0x4c]       ; 00506336
-    FLD float ptr [EBX]                 ; 00506339 | g_FLOAT_ARRAY_ARRAY_01d1cdd0[0][1]
+    FLD float ptr [EBX]                 ; 00506339 | g_MpegSynthesisDctTable[0][1]
     PUSH EAX                            ; 0050633b
     FADD double ptr [0x005e004b]        ; 0050633c | g_DOUBLE_005e004b
     SUB ESP,0x8                         ; 00506342

@@ -13,7 +13,7 @@
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860 at 00557887
 ;
 ; Referenced Globals:
-;   int g_INT_0061bf80 = -0x1
+;   int g_DirectSoundDeviceCount = -0x1
 ;   int g_INT_0264ac0c
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     PUSH EBP                            ; 00557543
     SUB ESP,0x384                       ; 00557544
     MOV ESI,dword ptr [ESP + 0x398]     ; 0055754a
-    CMP dword ptr [0x0061bf80],0xc      ; 00557551 | g_INT_0061bf80
+    CMP dword ptr [0x0061bf80],0xc      ; 00557551 | g_DirectSoundDeviceCount
     JL 0x00557569                       ; 00557558
         ;   XREF to: 00557569 (CONDITIONAL_JUMP)  ; LAB_00557569
     XOR EAX,EAX                         ; 0055755a
@@ -158,7 +158,7 @@ section .text
     XOR EAX,EAX                         ; 00557690
     JMP 0x00557623                      ; 00557692
         ;   XREF to: 00557623 (UNCONDITIONAL_JUMP)  ; LAB_00557623
-    MOV EBX,dword ptr [0x0061bf80]      ; 00557694 | g_INT_0061bf80
+    MOV EBX,dword ptr [0x0061bf80]      ; 00557694 | g_DirectSoundDeviceCount
         ;   Label: LAB_00557694
     LEA EAX,[EBX*0x8 + 0x0]             ; 0055769a
     ADD EAX,EBX                         ; 005576a1
@@ -192,10 +192,10 @@ section .text
     CALL crt_string.c__strncpy_FUN_005b9cf0 ; 005576fb
         ;   XREF to: 005b9cf0 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_005b9cf0(char * dest, char * src, SIZE_T count)
     MOV EAX,0x1                         ; 00557700
-    MOV EBX,dword ptr [0x0061bf80]      ; 00557705 | g_INT_0061bf80
+    MOV EBX,dword ptr [0x0061bf80]      ; 00557705 | g_DirectSoundDeviceCount
     ADD EBX,EAX                         ; 0055770b
     ADD ESP,0xc                         ; 0055770d
-    MOV dword ptr [0x0061bf80],EBX      ; 00557710 | g_INT_0061bf80
+    MOV dword ptr [0x0061bf80],EBX      ; 00557710 | g_DirectSoundDeviceCount
     ADD ESP,0x384                       ; 00557716
     POP EBP                             ; 0055771c
     POP EDI                             ; 0055771d

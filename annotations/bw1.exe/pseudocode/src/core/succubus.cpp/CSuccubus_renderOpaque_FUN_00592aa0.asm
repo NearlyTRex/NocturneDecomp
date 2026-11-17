@@ -10,7 +10,7 @@
 ;   float g_FLOAT_00606278 = 4
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01d39d34
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_00441ff0(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 00592b4f
         ;   Label: LAB_00592b4f
-    CMP dword ptr [0x01d39d34],0x0      ; 00592b52 | g_INT_01d39d34
+    CMP dword ptr [0x01d39d34],0x0      ; 00592b52 | g_RenderMotionDebug
         ;   Label: LAB_00592b52
     JZ 0x00592b8b                       ; 00592b59
         ;   XREF to: 00592b8b (CONDITIONAL_JUMP)  ; LAB_00592b8b

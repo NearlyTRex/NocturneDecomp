@@ -21,7 +21,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00412a60(
     } while (iVar1 != this_ptr->selected_button);
   }
   this_ptr->buttons[iVar1].visible = 0;
-  if (g_INT_007dffb8 < g_INT_01c5fadc) {
+  if (g_INT_007dffb8 < g_MouseX) {
     iVar1 = this_ptr->transport_state + 1;
     this_ptr->transport_state = iVar1;
     if (2 < iVar1) {
@@ -35,7 +35,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00412a60(
       this_ptr->transport_state = 0;
     }
   }
-  g_INT_007dffb8 = g_INT_01c5fadc;
+  g_INT_007dffb8 = g_MouseX;
   if ((this_ptr->transport_state < 2) && (0 < this_ptr->transport_state)) {
     this_ptr->cursor_index = 1;
     return;

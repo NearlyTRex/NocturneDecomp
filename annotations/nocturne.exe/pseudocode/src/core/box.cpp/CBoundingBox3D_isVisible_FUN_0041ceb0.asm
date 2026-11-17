@@ -38,13 +38,13 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_005797c5 = 0.5
-;   float g_FLOAT_0059aa80 = 256
+;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   float g_FLOAT_0059aa88 = 0.00390625
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_StoredX
 ;   int g_StoredY
 ;   int g_StoredZ
-;   CDemonCamera* g_CDemonCamera_PTR_007f7370
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   int g_INT_01c038f4
 ;
@@ -142,13 +142,13 @@ section .text
     LEA EBX,[ESP + 0x48]                ; 0041cf80
     LEA EAX,[ESP + 0x54]                ; 0041cf84
     FLD float ptr [EAX]                 ; 0041cf88
-    FMUL float ptr [0x0059aa80]         ; 0041cf8a | g_FLOAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041cf8a | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041cf90
     FLD float ptr [EAX + 0x4]           ; 0041cf92
-    FMUL float ptr [0x0059aa80]         ; 0041cf95 | g_FLOAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041cf95 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041cf9b
     FLD float ptr [EAX + 0x8]           ; 0041cf9e
-    FMUL float ptr [0x0059aa80]         ; 0041cfa1 | g_FLOAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041cfa1 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041cfa7
     LEA EAX,[ESP + 0x48]                ; 0041cfaa
     PUSH EAX                            ; 0041cfae
@@ -157,7 +157,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0041cfb4
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0041cfb9
-    MOV EBX,dword ptr [0x007f7370]      ; 0041cfbc | g_CDemonCamera_PTR_007f7370
+    MOV EBX,dword ptr [0x007f7370]      ; 0041cfbc | g_CurrentSceneCamera
     FLD float ptr [ESP + 0x60]          ; 0041cfc2
     FLD float ptr [ESP + 0x64]          ; 0041cfc6
     FLD float ptr [ESP + 0x68]          ; 0041cfca

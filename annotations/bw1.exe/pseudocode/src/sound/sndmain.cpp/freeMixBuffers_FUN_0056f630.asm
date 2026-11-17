@@ -8,13 +8,13 @@
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_005750e0 at 00575107
 ;
 ; Referenced Globals:
-;   int g_INT_02c80660
-;   int g_INT_02c80664
-;   int g_INT_02c80668
-;   int g_INT_02c8066c
-;   float* g_FLOAT_PTR_02c80670
-;   float* g_FLOAT_PTR_02c80694
-;   float* g_FLOAT_PTR_02c806b8
+;   int g_MixBufferReadIndex
+;   int g_MixBufferWriteIndex
+;   int g_MixBufferSize
+;   int g_NumMixBuffers
+;   float* g_TertiaryMixBuffer
+;   float* g_PrimaryMixBuffer
+;   float* g_SecondaryMixBuffer
 ;
 ; Called Functions:
 ;   crt_unknown.c_debugFree_FUN_005c09f0
@@ -26,13 +26,13 @@ section .text
     PUSH EBX                            ; 0056f630
         ;   Label: sound_sndmain.cpp_freeMixBuffers_FUN_0056f630
     PUSH EBP                            ; 0056f631
-    MOV EDX,dword ptr [0x02c80694]      ; 0056f632 | g_FLOAT_PTR_02c80694
+    MOV EDX,dword ptr [0x02c80694]      ; 0056f632 | g_PrimaryMixBuffer
     TEST EDX,EDX                        ; 0056f638
     JNZ 0x0056f6a3                      ; 0056f63a
         ;   XREF to: 0056f6a3 (CONDITIONAL_JUMP)  ; LAB_0056f6a3
     PUSH ESI                            ; 0056f63c
         ;   Label: LAB_0056f63c
-    MOV ESI,dword ptr [0x02c806b8]      ; 0056f63d | g_FLOAT_PTR_02c806b8
+    MOV ESI,dword ptr [0x02c806b8]      ; 0056f63d | g_SecondaryMixBuffer
     TEST ESI,ESI                        ; 0056f643
     JZ 0x0056f658                       ; 0056f645
         ;   XREF to: 0056f658 (CONDITIONAL_JUMP)  ; LAB_0056f658
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBP,EBP                         ; 0056f64d
     ADD ESP,0x4                         ; 0056f64f
-    MOV dword ptr [0x02c806b8],EBP      ; 0056f652 | g_FLOAT_PTR_02c806b8
-    MOV EAX,[0x02c80670]                ; 0056f658 | g_FLOAT_PTR_02c80670
+    MOV dword ptr [0x02c806b8],EBP      ; 0056f652 | g_SecondaryMixBuffer
+    MOV EAX,[0x02c80670]                ; 0056f658 | g_TertiaryMixBuffer
         ;   Label: LAB_0056f658
     TEST EAX,EAX                        ; 0056f65d
     JNZ 0x0056f6b6                      ; 0056f65f
@@ -61,10 +61,10 @@ section .text
     JNZ 0x0056f666                      ; 0056f684
         ;   XREF to: 0056f666 (CONDITIONAL_JUMP)  ; LAB_0056f666
     XOR EBX,EBX                         ; 0056f686
-    MOV dword ptr [0x02c8066c],EBX      ; 0056f688 | g_INT_02c8066c
-    MOV dword ptr [0x02c80660],EBX      ; 0056f68e | g_INT_02c80660
-    MOV dword ptr [0x02c80664],EBX      ; 0056f694 | g_INT_02c80664
-    MOV dword ptr [0x02c80668],EBX      ; 0056f69a | g_INT_02c80668
+    MOV dword ptr [0x02c8066c],EBX      ; 0056f688 | g_NumMixBuffers
+    MOV dword ptr [0x02c80660],EBX      ; 0056f68e | g_MixBufferReadIndex
+    MOV dword ptr [0x02c80664],EBX      ; 0056f694 | g_MixBufferWriteIndex
+    MOV dword ptr [0x02c80668],EBX      ; 0056f69a | g_MixBufferSize
     POP EBP                             ; 0056f6a0
     POP EBX                             ; 0056f6a1
     RET                                 ; 0056f6a2
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBX,EBX                         ; 0056f6a9
     ADD ESP,0x4                         ; 0056f6ab
-    MOV dword ptr [0x02c80694],EBX      ; 0056f6ae | g_FLOAT_PTR_02c80694
+    MOV dword ptr [0x02c80694],EBX      ; 0056f6ae | g_PrimaryMixBuffer
     JMP 0x0056f63c                      ; 0056f6b4
         ;   XREF to: 0056f63c (UNCONDITIONAL_JUMP)  ; LAB_0056f63c
     PUSH EAX                            ; 0056f6b6
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR ECX,ECX                         ; 0056f6bc
     ADD ESP,0x4                         ; 0056f6be
-    MOV dword ptr [0x02c80670],ECX      ; 0056f6c1 | g_FLOAT_PTR_02c80670
+    MOV dword ptr [0x02c80670],ECX      ; 0056f6c1 | g_TertiaryMixBuffer
     JMP 0x0056f661                      ; 0056f6c7
         ;   XREF to: 0056f661 (UNCONDITIONAL_JUMP)  ; LAB_0056f661
 

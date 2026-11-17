@@ -48,7 +48,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005f6b89 = 0.000100000000000000
-;   CQuaternion4f g_CQuaternion4f_006081e0
+;   CQuaternion4f g_IdentityQuaternion
 ;   undefined4 g_INT_ARRAY_02c83600[3]
 ;   undefined4 g_INT_ARRAY_02c83600[4]
 ;   undefined4 g_INT_ARRAY_02c83600[5]
@@ -212,7 +212,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058ac6b
     MOVSD ES:EDI,ESI                    ; 0058ac6c
     MOVSD ES:EDI,ESI                    ; 0058ac6d
-    PUSH 0x6081e0                       ; 0058ac6e | g_CQuaternion4f_006081e0
+    PUSH 0x6081e0                       ; 0058ac6e | g_IdentityQuaternion
     LEA ESI,[ESP + 0x150]               ; 0058ac73
     LEA EDI,[ESP + 0x90]                ; 0058ac7a
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0058ac81

@@ -214,10 +214,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416700(CBodyPart
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00415890(this_ptr,0,0);
   pCVar5 = &(this_ptr->bounding_box).max;
-  if (pCVar5 != &g_CVector3f_0265370c) {
-    pCVar5->x = g_CVector3f_0265370c.x;
-    (this_ptr->bounding_box).max.y = g_CVector3f_0265370c.y;
-    (this_ptr->bounding_box).max.z = g_CVector3f_0265370c.z;
+  if (pCVar5 != &g_ZeroVector) {
+    pCVar5->x = g_ZeroVector.x;
+    (this_ptr->bounding_box).max.y = g_ZeroVector.y;
+    (this_ptr->bounding_box).max.z = g_ZeroVector.z;
   }
   if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar5) {
     (this_ptr->bounding_box).min.x = pCVar5->x;

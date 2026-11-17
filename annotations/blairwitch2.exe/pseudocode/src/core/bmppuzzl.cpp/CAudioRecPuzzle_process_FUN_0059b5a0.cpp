@@ -18,12 +18,12 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_0059b5a0(CAudioRecPuz
   
   if (this_ptr->power_on == 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004894f0
-              (g_CEventList_PTR_006141f0,"ExitFromPuzzle");
+              (g_CEventListPtr,"ExitFromPuzzle");
     core_bmppuzzl_cpp_activatePuzzle_FUN_0059ab70(&this_ptr->base,0);
-    (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIM_LBUTTON);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
   }
-  iVar4 = g_INT_01c2a380;
-  iVar2 = g_INT_01c2a37c;
+  iVar4 = g_MouseY;
+  iVar2 = g_MouseX;
   if (this_ptr->mouse_button == 0) {
     if (this_ptr->previous_mouse_button != 0) {
       this_ptr->selected_button = -1;
@@ -105,9 +105,9 @@ LAB_0059b86d:
     iVar2 = this_ptr->buttons[this_ptr->selected_button].enabled;
     if (iVar2 == 2) {
       if (g_INT_026677e4 == -1) {
-        g_INT_026677e4 = g_INT_01c2a37c;
+        g_INT_026677e4 = g_MouseX;
       }
-      if (10 < ABS((double)(g_INT_01c2a37c - g_INT_026677e4))) {
+      if (10 < ABS((double)(g_MouseX - g_INT_026677e4))) {
         (**(code **)((int)(this_ptr->base).vtable + 0x34))(this_ptr);
         iVar2 = 0;
         do {

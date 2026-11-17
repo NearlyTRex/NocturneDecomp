@@ -40,19 +40,19 @@ LAB_004ab7db:
         }
         else if ((uint)g_INT_006141c0 < 0x11) {
           local_14->palettes_display[0][0] =
-               ((uint)(byte)pCVar1->palette_data[2] / (uint)g_INT_01c35830 <<
-                (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) |
-               (uint)(byte)pCVar1->palette_data[1] / (uint)g_INT_01c35824 <<
-               (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f) |
-               (uint)(byte)pCVar1->palette_data[0] / (uint)g_INT_01c35818 <<
-               (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)) & 0xffff;
+               ((uint)(byte)pCVar1->palette_data[2] / (uint)g_BlueScaleFactor <<
+                (g_BlueBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[1] / (uint)g_GreenScaleFactor <<
+               (g_GreenBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[0] / (uint)g_RedScaleFactor <<
+               (g_RedBitPosition.bytes[0] & 0x1f)) & 0xffff;
         }
         else {
           if (g_INT_006141c0 != 0x20) goto LAB_004ab7db;
           local_18->palettes_display[0][0] =
-               (uint)(byte)pCVar1->palette_data[2] << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) |
-               (uint)(byte)pCVar1->palette_data[0] << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f) |
-               (uint)(byte)pCVar1->palette_data[1] << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
+               (uint)(byte)pCVar1->palette_data[2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[0] << (g_RedBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[1] << (g_GreenBitPosition.bytes[0] & 0x1f);
         }
         pCVar1 = (CBitFont *)((int)&pCVar1->bitmap_count + 3);
         local_18 = (CBitFont *)local_18->bitmap_files;

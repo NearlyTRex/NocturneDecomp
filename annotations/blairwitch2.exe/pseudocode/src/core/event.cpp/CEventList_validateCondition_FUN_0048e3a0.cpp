@@ -12,11 +12,11 @@ char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0048e3a0(CEventLi
   int iVar1;
   
   if (*expression != '\0') {
-    g_INT_01c3dd0c = 1;
+    g_EventDryRun = 1;
     iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_0048e420(this_ptr,expression);
-    g_INT_01c3dd0c = 0;
+    g_EventDryRun = 0;
     if (iVar1 < 0) {
-      return g_CHAR_ARRAY_01c3dd10;
+      return g_EventErrorMessageBuffer;
     }
   }
   return (char *)0x0;

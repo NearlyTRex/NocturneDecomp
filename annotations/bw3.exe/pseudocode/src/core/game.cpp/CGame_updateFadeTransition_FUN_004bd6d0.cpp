@@ -18,19 +18,19 @@ void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004bd6d0(CGame *this_p
       return;
     }
     if ((g_INT_01d22c84 == 2) &&
-       (g_FLOAT_01d22c88 =
+       (g_IrisFadeRadius =
              ((float)this_ptr->delta_time_int * (float)256) /
-             ((float)31457280 / (float)g_INT_005fba1c) + g_FLOAT_01d22c88,
-       (float)g_INT_005fba18 < g_FLOAT_01d22c88)) {
+             ((float)31457280 / (float)g_INT_005fba1c) + g_IrisFadeRadius,
+       (float)g_INT_005fba18 < g_IrisFadeRadius)) {
       g_INT_01d22c84 = 0;
       return;
     }
     if ((g_INT_01d22c84 == 3) &&
-       (g_FLOAT_01d22c88 =
-             g_FLOAT_01d22c88 -
+       (g_IrisFadeRadius =
+             g_IrisFadeRadius -
              ((float)this_ptr->delta_time_int * (float)256) /
-             ((float)31457280 / (float)g_INT_005fba1c), g_FLOAT_01d22c88 < 0.0)) {
-      g_FLOAT_01d22c88 = 0.0;
+             ((float)31457280 / (float)g_INT_005fba1c), g_IrisFadeRadius < 0.0)) {
+      g_IrisFadeRadius = 0.0;
       g_INT_01d22c84 = 4;
       return;
     }

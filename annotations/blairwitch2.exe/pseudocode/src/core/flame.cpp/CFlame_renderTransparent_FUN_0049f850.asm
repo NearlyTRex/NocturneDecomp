@@ -22,7 +22,7 @@
 ;   float g_FLOAT_005f68f0 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_00615ae8
-;   SMRGLTextureBasic[40] g_SMRGLTextureBasic_ARRAY_00615b00
+;   SMRGLTextureBasic[40] g_FlameFrameTextures
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].u
@@ -309,14 +309,14 @@ section .text
         ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0049fbb5
     PUSH 0x0                            ; 0049fbb8
-    MOV EAX,[0x007bda74]                ; 0049fbba | g_CDemonCamera_PTR_007bda74
+    MOV EAX,[0x007bda74]                ; 0049fbba | g_CurrentSceneCamera
     PUSH EDI                            ; 0049fbbf
     MOV EDX,dword ptr [EAX + 0x3c]      ; 0049fbc0
     PUSH EAX                            ; 0049fbc3
     CALL dword ptr [EDX + 0x4]          ; 0049fbc4
     MOV EDX,0xffff                      ; 0049fbc7
     ADD ESP,0xc                         ; 0049fbcc
-    MOV EAX,[0x01c38aec]                ; 0049fbcf | g_INT_01c38aec
+    MOV EAX,[0x01c38aec]                ; 0049fbcf | g_PerspectiveReciprocal
     MOV ECX,dword ptr [ESP + 0x150]     ; 0049fbd4
     SUB EDX,EAX                         ; 0049fbdb
     CMP ECX,0x3                         ; 0049fbdd
@@ -393,7 +393,7 @@ section .text
     IDIV ECX                            ; 0049fced
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049fcef
     IMUL EAX,dword ptr [EAX + 0x304],0xc0 ; 0049fcf2
-    MOV ECX,0x615b00                    ; 0049fcfc | g_SMRGLTextureBasic_ARRAY_00615b00
+    MOV ECX,0x615b00                    ; 0049fcfc | g_FlameFrameTextures
     ADD ECX,EAX                         ; 0049fd01
     IMUL EAX,EDX,0x18                   ; 0049fd03
     ADD EAX,ECX                         ; 0049fd06

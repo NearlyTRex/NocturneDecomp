@@ -102,7 +102,7 @@ CVector3f * __stack3_esi core_skeleton_cpp_CDeformableModelInstance_getRootMotio
   }
   else {
     pfVar5 = (float *)&stack0xffffff98;
-    pCVar3 = &g_CVector3f_0265370c;
+    pCVar3 = &g_ZeroVector;
   }
   pfVar4 = (float *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);
   *pfVar5 = pCVar3->x;

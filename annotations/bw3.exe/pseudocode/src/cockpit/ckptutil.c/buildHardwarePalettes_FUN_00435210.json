@@ -38,7 +38,7 @@
     },
     {
       "addr": "01c6a970",
-      "name": "g_SRGBColorPalette_PTR_01c6a970",
+      "name": "g_CurrentPalette",
       "type": "SRGBColorPalette*",
       "value": null
     },
@@ -182,9 +182,9 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(ushort *)((int)g_USHORT_ARRAY_01c6ad74",
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
       "severity": "moderate",
-      "text": "*(ushort *)((int)g_USHORT_ARRAY_01c6ad74 + iVar4) =",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -198,9 +198,9 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(uint *)((int)g_UINT_ARRAY_01c6a974",
+      "match": "(uint *)((int)g_Hardware32BitPalette",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_ARRAY_01c6a974 + iVar4) =",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
       "type": "pointer_cast"
     }
   ]

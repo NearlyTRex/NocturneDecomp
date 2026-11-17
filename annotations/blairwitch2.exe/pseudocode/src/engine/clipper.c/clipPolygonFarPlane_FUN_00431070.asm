@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_3_0043106c = 004311b5
-;   int g_INT_00609b34 = 0x7fffffff
+;   int g_FarPlaneDistance = 0x7fffffff
 ;   int g_INT_007bee30
 ;   SRenderVertex[16] g_SRenderVertex_ARRAY_007bee34
 ;   undefined4 g_SRenderVertex_ARRAY_007bee34[0].projected_vertex.transformed_y
@@ -29,7 +29,7 @@ section .text
     PUSH EDI                            ; 00431072
     PUSH EBP                            ; 00431073
     SUB ESP,0x4                         ; 00431074
-    MOV EDX,dword ptr [0x00609b34]      ; 00431077 | g_INT_00609b34
+    MOV EDX,dword ptr [0x00609b34]      ; 00431077 | g_FarPlaneDistance
     XOR EBX,EBX                         ; 0043107d
     TEST EDX,EDX                        ; 0043107f
     JZ 0x004310b6                       ; 00431081
@@ -53,7 +53,7 @@ section .text
     CMP EAX,EDI                         ; 004310aa
     JL 0x0043109b                       ; 004310ac
         ;   XREF to: 0043109b (CONDITIONAL_JUMP)  ; LAB_0043109b
-    CMP EBX,dword ptr [0x00609b34]      ; 004310ae | g_INT_00609b34
+    CMP EBX,dword ptr [0x00609b34]      ; 004310ae | g_FarPlaneDistance
         ;   Label: LAB_004310ae
     JGE 0x004310be                      ; 004310b4
         ;   XREF to: 004310be (CONDITIONAL_JUMP)  ; LAB_004310be
@@ -117,7 +117,7 @@ section .text
     IMUL EAX,EAX,0x30                   ; 00431131
         ;   Label: LAB_00431131
     MOV EDI,0x7bf4b8                    ; 00431134 | g_SRenderVertex_ARRAY_007bf4b8
-    MOV ECX,dword ptr [0x00609b34]      ; 00431139 | g_INT_00609b34
+    MOV ECX,dword ptr [0x00609b34]      ; 00431139 | g_FarPlaneDistance
     ADD EDI,EAX                         ; 0043113f
     MOV EDX,EBP                         ; 00431141
     MOV dword ptr [ESP],EDI             ; 00431143
@@ -129,7 +129,7 @@ section .text
     MOV EAX,0x1                         ; 0043114f
     MOV EDI,dword ptr [ESP]             ; 00431154
         ;   Label: LAB_00431154
-    MOV ESI,dword ptr [0x00609b34]      ; 00431157 | g_INT_00609b34
+    MOV ESI,dword ptr [0x00609b34]      ; 00431157 | g_FarPlaneDistance
     CMP ESI,dword ptr [EDI + 0x8]       ; 0043115d | g_SRenderVertex_ARRAY_007bf4b8[0].projected_vertex.transformed_z
     JG 0x00431164                       ; 00431160
         ;   XREF to: 00431164 (CONDITIONAL_JUMP)  ; LAB_00431164

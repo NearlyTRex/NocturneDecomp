@@ -31,10 +31,10 @@
 ;   int g_INT_01c4effc
 ;   int g_INT_01c4f000
 ;   int g_INT_01c4f004
-;   int g_INT_01c51d00
-;   int g_INT_01c51d38
-;   int g_INT_01c51d3c
-;   int g_INT_01c51d40
+;   int g_MMXSupported
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;   int g_INT_01c51d5c
 ;   ... and 8 more
 ;
@@ -42,7 +42,7 @@
 
 section .text
 
-    TEST dword ptr [0x01c51d00],0xffffffff ; 0058043c | g_INT_01c51d00
+    TEST dword ptr [0x01c51d00],0xffffffff ; 0058043c | g_MMXSupported
         ;   Label: engine_special.cpp_transformPoint_FUN_0058043c
     JZ 0x0058058a                       ; 00580446
         ;   XREF to: 0058058a (CONDITIONAL_JUMP)  ; LAB_0058058a
@@ -50,9 +50,9 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 00580450
     MOV ECX,dword ptr [EBX + 0x4]       ; 00580452
     MOV EDX,dword ptr [EBX + 0x8]       ; 00580455
-    SUB EAX,dword ptr [0x01c51d38]      ; 00580458 | g_INT_01c51d38
-    SUB ECX,dword ptr [0x01c51d3c]      ; 0058045e | g_INT_01c51d3c
-    SUB EDX,dword ptr [0x01c51d40]      ; 00580464 | g_INT_01c51d40
+    SUB EAX,dword ptr [0x01c51d38]      ; 00580458 | g_CameraOriginX
+    SUB ECX,dword ptr [0x01c51d3c]      ; 0058045e | g_CameraOriginY
+    SUB EDX,dword ptr [0x01c51d40]      ; 00580464 | g_CameraOriginZ
     MOVD MM0,EAX                        ; 0058046a
     MOVD MM1,ECX                        ; 0058046d
     MOVD MM2,EDX                        ; 00580470
@@ -163,9 +163,9 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 00580594
     MOV EBX,dword ptr [ESI + 0x4]       ; 00580596
     MOV ECX,dword ptr [ESI + 0x8]       ; 00580599
-    SUB EAX,dword ptr [0x01c51d38]      ; 0058059c | g_INT_01c51d38
-    SUB EBX,dword ptr [0x01c51d3c]      ; 005805a2 | g_INT_01c51d3c
-    SUB ECX,dword ptr [0x01c51d40]      ; 005805a8 | g_INT_01c51d40
+    SUB EAX,dword ptr [0x01c51d38]      ; 0058059c | g_CameraOriginX
+    SUB EBX,dword ptr [0x01c51d3c]      ; 005805a2 | g_CameraOriginY
+    SUB ECX,dword ptr [0x01c51d40]      ; 005805a8 | g_CameraOriginZ
     MOV [0x00623e28],EAX                ; 005805ae | g_INT_00623e28
     MOV dword ptr [0x00623e2c],EBX      ; 005805b3 | g_INT_00623e2c
     MOV dword ptr [0x00623e30],ECX      ; 005805b9 | g_INT_00623e30

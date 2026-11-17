@@ -22,7 +22,7 @@
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;   uint g_UINT_01da6478
-;   int g_INT_01da6484
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -91,7 +91,7 @@ section .text
     MOV dword ptr [EBX + 0x2c],EAX      ; 005059e5
     MOV EDX,EAX                         ; 005059e8
     MOV dword ptr [EBX + 0x30],EAX      ; 005059ea
-    MOV EAX,[0x01da6484]                ; 005059ed | g_INT_01da6484
+    MOV EAX,[0x01da6484]                ; 005059ed | g_NetNextPlayerId
     MOV dword ptr [EBX + 0x38],EDX      ; 005059f2
     DEC EAX                             ; 005059f5
     MOV dword ptr [EBX + 0x34],EAX      ; 005059f6

@@ -29,16 +29,16 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_005660c0(CDef
   float local_18;
   
   bVar5 = 0;
-  if ((g_UCHAR_026af5fc & 1) == 0) {
-    g_UCHAR_026af5fc = g_UCHAR_026af5fc | 1;
-    __arrinit(g_CVector3f_ARRAY_026a0b9c,5000,&g_CVectorTypeInfo);
+  if ((g_FloatVertexArrayInitialized & 1) == 0) {
+    g_FloatVertexArrayInitialized = g_FloatVertexArrayInitialized | 1;
+    __arrinit(g_FloatVertexArray,5000,&g_CVectorTypeInfo);
   }
   if (5000 < this_ptr->vertex_count[lod_index]) {
     g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
     g_INT_01d1d404 = 0x6eb;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDeformableModel::exactRayTrace - too many vertices!");
   }
-  pCVar2 = g_CVector3f_ARRAY_026a0b9c;
+  pCVar2 = g_FloatVertexArray;
   iVar4 = 0;
   if (0 < this_ptr->vertex_count[lod_index]) {
     do {
@@ -66,8 +66,8 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_005660c0(CDef
         do {
           puVar1 = (ushort *)(*(int *)(local_2c + 0x7c) + local_1c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0048fed0
-                    (&local_84,g_CVector3f_ARRAY_026a0b9c + *puVar1,
-                     g_CVector3f_ARRAY_026a0b9c + puVar1[1],g_CVector3f_ARRAY_026a0b9c + puVar1[2]);
+                    (&local_84,g_FloatVertexArray + *puVar1,g_FloatVertexArray + puVar1[1],
+                     g_FloatVertexArray + puVar1[2]);
           local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40
                                (&local_84,ray_origin,ray_direction);
           if (((local_18 < local_20) && (0.0 <= local_18)) && (local_18 <= 1.0)) {
@@ -80,9 +80,9 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_005660c0(CDef
             local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                  local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
             if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count) {
-              g_CVector3f_026b82a8.x = local_48[2];
-              g_CVector3f_026b82a8.y = local_48[3];
-              g_CVector3f_026b82a8.z = local_38;
+              g_DeformableModelRayHitNormal.x = local_48[2];
+              g_DeformableModelRayHitNormal.y = local_48[3];
+              g_DeformableModelRayHitNormal.z = local_38;
             }
             g_INT_026b82a4 = local_24;
             g_INT_026b82b4 = lod_index;

@@ -69,7 +69,7 @@ LAB_0050d8f3:
     local_18 = 0;
     do {
       iVar5 = 0;
-      puVar2 = *(uint **)((int)g_ARRAY_PTR_01c5faec + local_18);
+      puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);
       if (0 < g_INT_005fba18) {
         do {
           uVar3 = (*puVar2 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) * g_INT_01c6af84;

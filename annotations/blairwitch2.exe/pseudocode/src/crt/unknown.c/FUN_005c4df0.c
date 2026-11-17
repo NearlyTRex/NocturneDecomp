@@ -19,7 +19,7 @@ SIGNAL_HANDLER_TYPE FUN_005c4df0(int param_1,SIGNAL_HANDLER_TYPE param_2)
     *(SIGNAL_HANDLER_TYPE *)(iVar2 + param_1 * 8 + 0x58) = param_2;
     return SVar1;
   }
-  SVar1 = g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[param_1 * 2];
-  g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[param_1 * 2] = param_2;
+  SVar1 = g_GlobalSignalHandlers[param_1 * 2];
+  g_GlobalSignalHandlers[param_1 * 2] = param_2;
   return SVar1;
 }

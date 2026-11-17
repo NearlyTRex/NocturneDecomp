@@ -15,10 +15,10 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061d310 = -0x1
-;   CBitFont* g_CBitFont_PTR_0152d240
-;   int g_INT_01c43530
-;   int g_INT_01c4353c
-;   int g_INT_01c43540
+;   CBitFont* g_TinyFont
+;   int g_GlobalDeltaTimeInt
+;   int g_MouseX
+;   int g_MouseY
 ;   int g_INT_01cc7f1c
 ;   int g_INT_01cc7f20
 ;   int g_INT_01cc7f24
@@ -89,28 +89,28 @@ section .text
     MOV dword ptr [0x0061d310],0xffffffff ; 004b9e92 | g_INT_0061d310
     MOV EDI,dword ptr [0x01cc7f1c]      ; 004b9e9c | g_INT_01cc7f1c
         ;   Label: LAB_004b9e9c
-    MOV EAX,[0x01c43530]                ; 004b9ea2 | g_INT_01c43530
+    MOV EAX,[0x01c43530]                ; 004b9ea2 | g_GlobalDeltaTimeInt
     ADD EDI,EAX                         ; 004b9ea7
     MOV dword ptr [0x01cc7f1c],EDI      ; 004b9ea9 | g_INT_01cc7f1c
     CMP EDI,0x10000                     ; 004b9eaf
     JL 0x004b9e61                       ; 004b9eb5
         ;   XREF to: 004b9e61 (CONDITIONAL_JUMP)  ; LAB_004b9e61
     PUSH EBP                            ; 004b9eb7
-    MOV EDX,dword ptr [0x0152d240]      ; 004b9eb8 | g_CBitFont_PTR_0152d240
+    MOV EDX,dword ptr [0x0152d240]      ; 004b9eb8 | g_TinyFont
     PUSH EDX                            ; 004b9ebe
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 004b9ebf
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004b9ec4
     PUSH EBP                            ; 004b9ec7
-    MOV ECX,dword ptr [0x0152d240]      ; 004b9ec8 | g_CBitFont_PTR_0152d240
+    MOV ECX,dword ptr [0x0152d240]      ; 004b9ec8 | g_TinyFont
     MOV EBX,EAX                         ; 004b9ece
     PUSH ECX                            ; 004b9ed0
     MOV dword ptr [ESP + 0x8],EAX       ; 004b9ed1
     LEA ESI,[EBX + 0x8]                 ; 004b9ed5
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50 ; 004b9ed8
         ;   XREF to: 004c3f50 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50(CBitFont * this_ptr, char * text_string)
-    MOV EDX,dword ptr [0x01c4353c]      ; 004b9edd | g_INT_01c4353c
-    MOV EBX,dword ptr [0x01c43540]      ; 004b9ee3 | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c4353c]      ; 004b9edd | g_MouseX
+    MOV EBX,dword ptr [0x01c43540]      ; 004b9ee3 | g_MouseY
     ADD ESP,0x8                         ; 004b9ee9
     MOV EDI,EAX                         ; 004b9eec
     LEA EBP,[EAX + 0x6]                 ; 004b9eee
@@ -127,7 +127,7 @@ section .text
         ;   Label: LAB_004b9f0b
     JLE 0x004b9f20                      ; 004b9f11
         ;   XREF to: 004b9f20 (CONDITIONAL_JUMP)  ; LAB_004b9f20
-    MOV ECX,dword ptr [0x01c43540]      ; 004b9f13 | g_INT_01c43540
+    MOV ECX,dword ptr [0x01c43540]      ; 004b9f13 | g_MouseY
     SUB ECX,0x14                        ; 004b9f19
     MOV EBX,ECX                         ; 004b9f1c
     SUB EBX,EBP                         ; 004b9f1e

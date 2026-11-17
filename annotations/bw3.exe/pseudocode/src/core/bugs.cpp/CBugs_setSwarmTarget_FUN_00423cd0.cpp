@@ -61,7 +61,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
         if (0 < this_ptr->swarm_vertex_count) {
           iVar8 = 0;
           do {
-            *(int *)((int)g_INT_ARRAY_007e1c94 + iVar8) = iVar5;
+            *(int *)((int)g_BugsSortedVertexIndices + iVar8) = iVar5;
             iVar5 = iVar5 + 1;
             iVar8 = iVar8 + 4;
           } while (iVar5 < this_ptr->swarm_vertex_count);
@@ -70,18 +70,18 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
           if (-1 < iVar5) {
             iVar8 = 0;
             do {
-              if (pCVar1[*(int *)((int)g_INT_ARRAY_007e1c94 + iVar8 + 4)].y <
-                  pCVar1[*(int *)((int)g_INT_ARRAY_007e1c94 + iVar8)].y) {
-                puVar7 = (uint *)((int)g_INT_ARRAY_007e1c94 + iVar8 + 4);
-                uVar2 = *(uint *)((int)g_INT_ARRAY_007e1c94 + iVar8);
-                *(uint *)((int)g_INT_ARRAY_007e1c94 + iVar8) = *puVar7;
+              if (pCVar1[*(int *)((int)g_BugsSortedVertexIndices + iVar8 + 4)].y <
+                  pCVar1[*(int *)((int)g_BugsSortedVertexIndices + iVar8)].y) {
+                puVar7 = (uint *)((int)g_BugsSortedVertexIndices + iVar8 + 4);
+                uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar8);
+                *(uint *)((int)g_BugsSortedVertexIndices + iVar8) = *puVar7;
                 *puVar7 = uVar2;
               }
               iVar8 = iVar8 + 4;
             } while (iVar8 <= iVar5 * 4);
           }
         }
-        iVar5 = pCVar1[g_INT_ARRAY_007e1c94[0]].y;
+        iVar5 = pCVar1[g_BugsSortedVertexIndices[0]].y;
         iVar9 = 0;
         iVar8 = 0;
         pCVar10 = this_ptr;
@@ -90,14 +90,14 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
         }
         do {
           pCVar10->bugs[0].current_vertex = -1;
-          pCVar10->bugs[0].dest_vertex = g_INT_ARRAY_007e1c94[iVar9];
+          pCVar10->bugs[0].dest_vertex = g_BugsSortedVertexIndices[iVar9];
           iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0
                             (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,
                                               this_ptr->swarm_vertex_count) / 0xf));
           pCVar10->bugs[0].downward_bias = iVar6;
           iVar9 = iVar9 + 1;
           if ((this_ptr->swarm_vertex_count <= iVar9) ||
-             (iVar5 + 0x2a < pCVar1[g_INT_ARRAY_007e1c94[iVar9]].y)) {
+             (iVar5 + 0x2a < pCVar1[g_BugsSortedVertexIndices[iVar9]].y)) {
             iVar9 = 0;
           }
           iVar8 = iVar8 + 1;

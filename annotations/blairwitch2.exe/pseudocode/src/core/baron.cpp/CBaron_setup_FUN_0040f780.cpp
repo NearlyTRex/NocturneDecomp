@@ -15,44 +15,43 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_0040f780(CBaron *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
                           (&(this_ptr->base).base.model);
-  g_INT_ARRAY_007bc498[0] =
+  g_BaronIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 head",1);
-  g_INT_ARRAY_007bc498[1] =
+  g_BaronIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Clavicle",1);
-  g_INT_ARRAY_007bc498[2] =
+  g_BaronIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Clavicle",1);
-  g_INT_ARRAY_007bc498[3] =
+  g_BaronIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_007bc498[4] =
+  g_BaronIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_007bc498[5] =
+  g_BaronIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_007bc498[6] =
+  g_BaronIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_007bc498[7] =
+  g_BaronIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Foot",1);
-  g_INT_ARRAY_007bc498[8] =
+  g_BaronIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Foot",1);
-  g_INT_ARRAY_007bc498[9] =
+  g_BaronIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Thigh",1);
-  g_INT_ARRAY_007bc498[10] =
+  g_BaronIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Thigh",1);
-  g_INT_ARRAY_007bc498[0xb] =
+  g_BaronIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Calf",1);
-  g_INT_ARRAY_007bc498[0xc] =
+  g_BaronIndices[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Calf",1);
-  g_INT_ARRAY_007bc498[0xd] =
+  g_BaronIndices[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Hand",1);
-  g_INT_ARRAY_007bc498[0xe] =
+  g_BaronIndices[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Hand",1);
-  g_INT_ARRAY_007bc498[0xf] =
+  g_BaronIndices[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine2",1);
-  g_INT_ARRAY_007bc498[0x10] =
+  g_BaronIndices[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine1",1);
   this_ptr->target_actor = (CDemonActor *)0x0;
   (this_ptr->base).base.gesture_branch_root = iVar1;
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_CKeyFramedModelInstance_007bc51c)
-  ;
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_CKeyFramedModelInstanceInstance);
   return;
 }

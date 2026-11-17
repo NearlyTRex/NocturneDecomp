@@ -16,20 +16,20 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride 
   int local_14;
   
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(&this_ptr->base);
-  if (g_INT_005ae6c8 < 2) {
+  if (g_CDraculaBrideClassVersion < 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   }
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if ((1 < g_INT_005ae6c8) && (g_INT_005ae6c8 < 6)) {
+  if ((1 < g_CDraculaBrideClassVersion) && (g_CDraculaBrideClassVersion < 6)) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
-  if (((2 < g_INT_005ae6c8) &&
+  if (((2 < g_CDraculaBrideClassVersion) &&
       (core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->rise_event,"riseEvent"),
-      g_INT_005ae6c8 < 4)) &&
+      g_CDraculaBrideClassVersion < 4)) &&
      (core_actor_cpp_archiveInteger_FUN_0040c900(&local_14,"initialState"),
-     g_INT_00763e88 == 1)) {
+     g_ActorReadingMode == 1)) {
     if (local_14 == 1) {
       motion_name = "vincoffin";
     }
@@ -39,11 +39,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride 
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
               (&(this_ptr->base).base.model.base,motion_name,0.0);
   }
-  if (3 < g_INT_005ae6c8) {
+  if (3 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040cb00
               (&(this_ptr->base).base.model.base,"motionState");
   }
-  if (g_INT_005ae6c8 == 4) {
+  if (g_CDraculaBrideClassVersion == 4) {
     iVar1 = 0;
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&(this_ptr->base).base.cloth_list.count,"clothCount");
@@ -56,11 +56,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride 
       } while (iVar1 < (this_ptr->base).base.cloth_list.count);
     }
   }
-  if (6 < g_INT_005ae6c8) {
+  if (6 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->freaky_voice_number,"freakyVoiceNumber");
   }
-  if (7 < g_INT_005ae6c8) {
+  if (7 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->exploded,"exploded");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->part_count,"partCount");
     iVar1 = 0;
@@ -74,7 +74,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride 
       } while (iVar1 < this_ptr->part_count);
     }
   }
-  if (8 < g_INT_005ae6c8) {
+  if (8 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->mist_state,"mistState");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->vanish_timer,"vanishTimer");
     core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->new_pos,"newPos");

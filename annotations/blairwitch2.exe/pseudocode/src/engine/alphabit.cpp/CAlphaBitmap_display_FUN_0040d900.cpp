@@ -31,7 +31,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap 
         local_18 = y;
         do {
           if ((-1 < local_18) && (local_18 < g_INT_006141bc)) {
-            destPixels = (uint *)g_ARRAY_PTR_01c2a38c[local_18];
+            destPixels = (uint *)g_ScreenBufferArray[local_18];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {
@@ -61,7 +61,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap 
         local_1c = y;
         do {
           if ((-1 < local_1c) && (local_1c < g_INT_006141bc)) {
-            destPixels_00 = (ushort *)g_ARRAY_PTR_01c2a38c[local_1c];
+            destPixels_00 = (ushort *)g_ScreenBufferArray[local_1c];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {

@@ -33,7 +33,7 @@
 ;   double DOUBLE_0057a48a = 32
 ;   float FLOAT_0057a492 = 0.2000000
 ;   float FLOAT_0057a496 = 1.5
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.active_fog.temperature
@@ -237,7 +237,7 @@ section .text
     LEA EAX,[EBP + -0x24]               ; 0042adb4
     PUSH 0x3f000000                     ; 0042adb7
     PUSH EAX                            ; 0042adbc
-    MOV EAX,[0x005b80f0]                ; 0042adbd | g_CFireEffect_PTR_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0042adbd | g_CFireEffectPtr
     PUSH EAX                            ; 0042adc2
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 0042adc3
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

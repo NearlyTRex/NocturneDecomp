@@ -36,13 +36,13 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodPa
   g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
             (g_CDemonRenderer_PTR_005f2afc,&local_18);
-  g_CVector3i_01d22e70.x = local_18.x;
-  *(uint *)((int)&g_CVector3i_01d22e70 + (uint)bVar6 * -8 + 4) =
+  g_ParticleCameraRotation.x = local_18.x;
+  *(uint *)((int)&g_ParticleCameraRotation + (uint)bVar6 * -8 + 4) =
        *(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);
   *(uint *)((uint)bVar6 * -8 + 0x1d22e78 + (uint)bVar6 * -8) =
        *(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  g_CVector3i_01d22e70.y = 0;
-  pCVar2 = &(g_CDemonCamera_PTR_007e2a54->base).rotation_matrix;
+  g_ParticleCameraRotation.y = 0;
+  pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   pfVar4 = (float *)&stack0xffffffc0;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pfVar4 = pCVar2->m[0].x;
@@ -61,8 +61,8 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodPa
   dVar7 = round((double)local_60 * -65536);
   dVar8 = round(dVar8);
   dVar9 = round(dVar9);
-  g_CVector3i_01d22e7c.x = (int)ROUND(dVar7);
-  g_CVector3i_01d22e7c.y = (int)ROUND(dVar8);
-  g_CVector3i_01d22e7c.z = (int)ROUND(dVar9);
+  g_BloodParticleViewDirection.x = (int)ROUND(dVar7);
+  g_BloodParticleViewDirection.y = (int)ROUND(dVar8);
+  g_BloodParticleViewDirection.z = (int)ROUND(dVar9);
   return;
 }

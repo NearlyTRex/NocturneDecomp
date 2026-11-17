@@ -15,10 +15,10 @@
 extern CDeformableModel g_DeformableModelPool[64];
 
 // CVector3f
-extern CVector3f g_CVector3f_020ccfe0;
+extern CVector3f g_DeformableModelRayHitNormal;
 
 // CVector3f[3000]
-extern CVector3f g_CVector3f_ARRAY_020c4338[3000];
+extern CVector3f g_ShatterVertexArray[3000];
 
 // int
 extern int g_INT_020ccfdc;
@@ -26,6 +26,6 @@ extern int g_INT_020ccfec;
 extern int g_INT_020ccff0;
 
 // uchar
-extern uchar g_UCHAR_020c4334;
-extern uchar g_UCHAR_020ccfd8;
+extern uchar g_FloatVertexArrayInitialized;
+extern uchar g_ShatterVertexArrayInitialized;
 

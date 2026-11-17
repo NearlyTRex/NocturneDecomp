@@ -53,7 +53,7 @@
 ;   double g_DOUBLE_005d796b = 0.5
 ;   float g_FLOAT_005d7973 = 0.6500000
 ;   float g_FLOAT_005d7977 = 50
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
@@ -299,7 +299,7 @@ section .text
         ;   Label: LAB_0057c5a8
     PUSH 0x5d7959                       ; 0057c5ad | = "noLightningFlash"
     MOV dword ptr [ESP + 0x144],EAX     ; 0057c5b2
-    MOV EDI,dword ptr [0x005fba60]      ; 0057c5b9 | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 0057c5b9 | g_CEventListPtr
     MOV EAX,dword ptr [ESP + 0x144]     ; 0057c5bf
     MOV dword ptr [EBX + 0x30],EAX      ; 0057c5c6
     MOV EAX,dword ptr [EBX + 0x30]      ; 0057c5c9

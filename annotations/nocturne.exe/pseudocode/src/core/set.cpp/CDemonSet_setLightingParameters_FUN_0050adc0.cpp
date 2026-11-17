@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet
   float *pfVar2;
   
   if (position == (CVector3f *)0x0) {
-    g_INT_01fff548 = 1;
+    g_LightingSystemDirty = 1;
   }
   else {
     if (position != (CVector3f *)&g_FLOAT_01fff54c) {
@@ -39,25 +39,25 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet
       _DAT_01fff574 = aabb_max->y;
     }
     if (rotation_matrix == (CMatrix3x3f *)0x0) {
-      g_CMatrix3x3f_01fff57c.m[0].y = (float)rotation_matrix;
-      g_CMatrix3x3f_01fff57c.m[0].z = (float)rotation_matrix;
-      g_CMatrix3x3f_01fff57c.m[1].x = (float)rotation_matrix;
-      g_CMatrix3x3f_01fff57c.m[1].z = (float)rotation_matrix;
-      g_CMatrix3x3f_01fff57c.m[2].x = (float)rotation_matrix;
-      g_CMatrix3x3f_01fff57c.m[2].y = (float)rotation_matrix;
-      g_CMatrix3x3f_01fff57c.m[1].y = 1.0;
-      g_CMatrix3x3f_01fff57c.m[2].z = 1.0;
-      g_CMatrix3x3f_01fff57c.m[0].x = 1.0;
-      g_INT_01fff548 = 2;
+      g_LightingRotationMatrix.m[0].y = (float)rotation_matrix;
+      g_LightingRotationMatrix.m[0].z = (float)rotation_matrix;
+      g_LightingRotationMatrix.m[1].x = (float)rotation_matrix;
+      g_LightingRotationMatrix.m[1].z = (float)rotation_matrix;
+      g_LightingRotationMatrix.m[2].x = (float)rotation_matrix;
+      g_LightingRotationMatrix.m[2].y = (float)rotation_matrix;
+      g_LightingRotationMatrix.m[1].y = 1.0;
+      g_LightingRotationMatrix.m[2].z = 1.0;
+      g_LightingRotationMatrix.m[0].x = 1.0;
+      g_LightingSystemDirty = 2;
       return;
     }
-    pfVar2 = (float *)&g_CMatrix3x3f_01fff57c;
+    pfVar2 = (float *)&g_LightingRotationMatrix;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
       *pfVar2 = *(float *)rotation_matrix;
       rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
       pfVar2 = pfVar2 + 1;
     }
-    g_INT_01fff548 = 2;
+    g_LightingSystemDirty = 2;
   }
   return;
 }

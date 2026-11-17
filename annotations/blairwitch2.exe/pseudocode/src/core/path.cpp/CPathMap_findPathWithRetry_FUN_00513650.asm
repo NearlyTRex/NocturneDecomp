@@ -23,7 +23,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   int g_INT_01e4fed4
+;   int g_PathfindingMaxClimbHeight
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00512a70
@@ -55,7 +55,7 @@ section .text
     MOV EDX,0x1                         ; 00513679
         ;   Label: LAB_00513679
     LEA EDI,[EBX + 0x138cc]             ; 0051367e
-    MOV dword ptr [0x01e4fed4],EDX      ; 00513684 | g_INT_01e4fed4
+    MOV dword ptr [0x01e4fed4],EDX      ; 00513684 | g_PathfindingMaxClimbHeight
     PUSH EBP                            ; 0051368a
         ;   Label: LAB_0051368a
     PUSH EDI                            ; 0051368b
@@ -104,10 +104,10 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 005136df
     JMP 0x00513679                      ; 005136e2
         ;   XREF to: 00513679 (UNCONDITIONAL_JUMP)  ; LAB_00513679
-    MOV EAX,[0x01e4fed4]                ; 005136e4 | g_INT_01e4fed4
+    MOV EAX,[0x01e4fed4]                ; 005136e4 | g_PathfindingMaxClimbHeight
         ;   Label: LAB_005136e4
     INC EAX                             ; 005136e9
-    MOV [0x01e4fed4],EAX                ; 005136ea | g_INT_01e4fed4
+    MOV [0x01e4fed4],EAX                ; 005136ea | g_PathfindingMaxClimbHeight
     CMP EAX,0x3                         ; 005136ef
     JLE 0x0051368a                      ; 005136f2
         ;   XREF to: 0051368a (CONDITIONAL_JUMP)  ; LAB_0051368a

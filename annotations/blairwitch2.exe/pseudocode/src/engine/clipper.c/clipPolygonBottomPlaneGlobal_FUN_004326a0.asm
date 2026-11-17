@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_007bee30
-;   int g_INT_007bfd08
+;   int g_IntermediateVertexCount
 ;
 ; Called Functions:
 ;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004321a0
@@ -22,7 +22,7 @@ section .text
     PUSH EBP                            ; 004326a3
     SUB ESP,0x4                         ; 004326a4
     XOR EDX,EDX                         ; 004326a7
-    MOV ECX,dword ptr [0x007bfd08]      ; 004326a9 | g_INT_007bfd08
+    MOV ECX,dword ptr [0x007bfd08]      ; 004326a9 | g_IntermediateVertexCount
     MOV dword ptr [ESP],EDX             ; 004326af
     TEST ECX,ECX                        ; 004326b2
     JLE 0x0043274a                      ; 004326b4
@@ -30,7 +30,7 @@ section .text
     MOV EBX,0x7c0f0c                    ; 004326ba
     MOV EAX,dword ptr [ESP]             ; 004326bf
         ;   Label: LAB_004326bf
-    MOV EBP,dword ptr [0x007bfd08]      ; 004326c2 | g_INT_007bfd08
+    MOV EBP,dword ptr [0x007bfd08]      ; 004326c2 | g_IntermediateVertexCount
     INC EAX                             ; 004326c8
     CMP EAX,EBP                         ; 004326c9
     JNZ 0x004326cf                      ; 004326cb
@@ -79,7 +79,7 @@ section .text
     INC dword ptr [0x007bee30]          ; 0043272c | g_INT_007bee30
     MOV ESI,dword ptr [ESP]             ; 00432732
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x007bfd08]      ; 00432735 | g_INT_007bfd08
+    MOV EDI,dword ptr [0x007bfd08]      ; 00432735 | g_IntermediateVertexCount
     INC ESI                             ; 0043273b
     ADD EBX,0x30                        ; 0043273c
     MOV dword ptr [ESP],ESI             ; 0043273f

@@ -20,7 +20,7 @@
 ;   TerminatedCString s_CNetGame_removePlayer_tr_005e0d7a
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01d51050
+;   int g_ChatOutCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -103,7 +103,7 @@ section .text
     XOR EDI,EDI                         ; 0050e790
     CALL crt_string.c_memmove_FUN_005ba1f0 ; 0050e792
         ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005ba1f0(void * dest, void * src, SIZE_T n)
-    MOV EBP,dword ptr [0x01d51050]      ; 0050e797 | g_INT_01d51050
+    MOV EBP,dword ptr [0x01d51050]      ; 0050e797 | g_ChatOutCount
     ADD ESP,0xc                         ; 0050e79d
     TEST EBP,EBP                        ; 0050e7a0
     JLE 0x0050e840                      ; 0050e7a2
@@ -150,7 +150,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 0050e821
     ADD EBP,0x114                       ; 0050e824
     ADD EDX,0x114                       ; 0050e82a
-    MOV ECX,dword ptr [0x01d51050]      ; 0050e830 | g_INT_01d51050
+    MOV ECX,dword ptr [0x01d51050]      ; 0050e830 | g_ChatOutCount
     MOV dword ptr [ESP],EDX             ; 0050e836
     CMP EDI,ECX                         ; 0050e839
     JL 0x0050e7dd                       ; 0050e83b

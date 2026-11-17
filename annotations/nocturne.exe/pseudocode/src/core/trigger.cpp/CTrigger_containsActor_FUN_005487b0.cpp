@@ -35,8 +35,7 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(CTrigger *this_
     CStack_4c.z = fStack_2c * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(actor,&CStack_40,&CStack_4c);
     if (this_ptr->pressure_plate != 0) {
-      pCVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (actor,g_CCharacterActorType_00765a60.name_hash);
+      pCVar6 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040d890(actor,g_CCharacterClassInfo.name_hash);
       if ((pCVar6 != (CDemonActor *)0x0) && (*(int *)(pCVar6[0x1b].create_event + 0x20) == 0)) {
         return 0;
       }

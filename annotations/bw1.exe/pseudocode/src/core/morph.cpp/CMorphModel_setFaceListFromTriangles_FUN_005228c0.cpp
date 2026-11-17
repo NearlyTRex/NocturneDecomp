@@ -44,7 +44,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CM
       pSVar3 = local_24;
       do {
         iVar4 = iVar5;
-        if (g_INT_01d39d30 != 0) {
+        if (g_MorphReverseWinding != 0) {
           iVar4 = 2 - iVar5;
         }
         *(uint *)((int)&this_ptr->faces->vertices[iVar4].vertex_index + local_14) =

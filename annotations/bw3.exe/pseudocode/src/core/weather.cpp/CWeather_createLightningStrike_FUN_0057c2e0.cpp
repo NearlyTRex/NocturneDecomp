@@ -197,7 +197,7 @@ LAB_0057c3b7:
   }
 LAB_0057c5a8:
   local_18 = (float)core_weather_cpp_getCurrentCameraAmbientValue_FUN_0057c2c0();
-  this_ptr_00 = g_CEventList_PTR_005fba60;
+  this_ptr_00 = g_CEventListPtr;
   this_ptr->base_ambient = local_18;
   fVar8 = this_ptr->base_ambient;
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0

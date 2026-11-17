@@ -42,13 +42,13 @@ void __cdecl core_zombie_cpp_rasterizePolygonCustom_FUN_0059a5d0(SRenderVertex *
       pSVar5 = pSVar5 + 1;
     } while (iVar10 < vertex_count);
   }
-  if ((g_INT_0070ca7c != 0) &&
+  if ((g_CullingMode != 0) &&
      (iVar10 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
                          (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar10 == 0)) {
     return;
   }
-  g_INT_01e61b58 = g_INT_01e61b58 + 1;
-  switch(g_INT_01c38b58) {
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
+  switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(vertex_buffer,vertex_count);
     break;

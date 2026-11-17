@@ -72,13 +72,13 @@
     },
     {
       "addr": "005c1d54",
-      "name": "g_PTR_005c1d54",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1d90",
-      "name": "g_PTR_005c1d90",
+      "name": "g_SpecialConsoleOutputHandler",
       "type": "void*",
       "value": "00000000"
     }
@@ -179,7 +179,7 @@
       "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar1 = (*(code *)g_PTR_005c1d54)(1);",
+      "text": "uVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(1);",
       "type": "unresolved_funcptr"
     },
     {
@@ -187,7 +187,7 @@
       "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_005c1d90)(uVar1,character);",
+      "text": "(*(code *)g_SpecialConsoleOutputHandler)(uVar1,character);",
       "type": "unresolved_funcptr"
     }
   ]

@@ -36,7 +36,7 @@ void __cdecl engine_mini3d_cpp_flushTriangleBatch_FUN_00515750(void)
     else {
       (*(code *)g_PTR_02c83470)
                 (g_FLOAT_PTR_01d227e0 + g_INT_01d25f48 * 0x10,g_INT_01d25f4c,0x1d25f54,
-                 (int)g_SHORT_ARRAY_01d25f50 / 3,g_BIT_INTEGER32_01c51d14.dword);
+                 (int)g_SHORT_ARRAY_01d25f50 / 3,g_RenderStateFlags.dword);
     }
     g_SHORT_ARRAY_01d25f50[0] = 0;
     g_SHORT_ARRAY_01d25f50[1] = 0;

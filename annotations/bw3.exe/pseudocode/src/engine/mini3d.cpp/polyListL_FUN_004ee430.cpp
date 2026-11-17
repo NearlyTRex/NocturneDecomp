@@ -14,12 +14,12 @@ void __cdecl engine_mini3d_cpp_polyListL_FUN_004ee430(float *vertices,int vertex
   int iVar1;
   int in_stack_00000014;
   
-  g_INT_01ed3198 = g_INT_01ed3198 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   g_INT_01d76c34 = g_INT_01d76c34 + vertex_count;
   if (g_INT_01d7a694 == 0) {
     if ((g_PTR_02cf60bc != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
       (*(code *)g_PTR_02cf60bc)
-                (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c6e2b4.dword);
+                (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
       return;
     }
     engine_mini3d_cpp_updateTransform_FUN_004edcc0();

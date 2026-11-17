@@ -83,7 +83,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00585e10(CWater *th
     }
     dVar9 = round((double)(local_1c / this_ptr->tile_size + 1.0));
     local_1c = (float)(int)ROUND(dVar9);
-    g_INT_026537bc = 0;
+    g_VisibleWaterTileCount = 0;
     iVar7 = -(int)local_1c;
     local_18 = (int)local_1c;
     if (SBORROW4(iVar7,(int)local_1c) != (int)local_1c * -2 < 0) {
@@ -130,35 +130,36 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00585e10(CWater *th
             engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                       (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,
                        &local_8c);
-            iVar6 = g_INT_0060b284;
+            iVar6 = g_RenderPixelBudget;
             uVar3 = g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x &
                     g_SRenderVertex_ARRAY_00622014[1].projected_vertex.screen_x &
                     g_SRenderVertex_ARRAY_00622014[2].projected_vertex.screen_x &
                     g_SRenderVertex_ARRAY_00622014[3].projected_vertex.screen_x;
             if (((uVar3 & 0x80000000) == 0) || ((char)uVar3 == '\0')) {
-              g_INT_0060b284 = 0x10;
+              g_RenderPixelBudget = 0x10;
               iVar4 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0
                                 (g_CDemonRenderer_PTR_0060b280,
                                  (SMRGLHeaderPrimitive *)&stack0xffffff34);
               if (iVar4 != 0) {
-                if (0xfff < g_INT_026537bc) {
+                if (0xfff < g_VisibleWaterTileCount) {
                   g_CHAR_PTR_01d046a0 = "..\\core\\water.cpp";
                   g_INT_01d046a4 = 0x103;
                   core_main_c_displayErrorAndQuit_FUN_004e4500("Too many visible water tiles!");
                 }
-                g_INT_ARRAY_026537c0[g_INT_026537bc] = iVar7;
-                g_INT_ARRAY_026577c0[g_INT_026537bc] = iVar5;
-                g_INT_026537bc = g_INT_026537bc + 1;
+                g_VisibleWaterTilesX[g_VisibleWaterTileCount] = iVar7;
+                g_VisibleWaterTilesY[g_VisibleWaterTileCount] = iVar5;
+                g_VisibleWaterTileCount = g_VisibleWaterTileCount + 1;
               }
             }
             iVar5 = iVar5 + 1;
-            g_INT_0060b284 = iVar6;
+            g_RenderPixelBudget = iVar6;
           } while (iVar5 < local_18);
         }
         iVar7 = iVar7 + 1;
       } while (iVar7 < (int)local_1c);
     }
-    this_ptr->visible_area_sqft = (float)g_INT_026537bc * this_ptr->tile_size * this_ptr->tile_size;
+    this_ptr->visible_area_sqft =
+         (float)g_VisibleWaterTileCount * this_ptr->tile_size * this_ptr->tile_size;
     engine_console_cpp_CConsole_printf_FUN_00436710
               (g_CConsolePtr,"Vis water tiles : %d, SqFt : %f");
     return;

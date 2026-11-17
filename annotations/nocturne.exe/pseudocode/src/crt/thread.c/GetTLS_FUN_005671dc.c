@@ -9,5 +9,5 @@
 ThreadData * __cdecl GetTLS(void)
 
 {
-  return (ThreadData *)g_PTR_02de4e3c;
+  return (ThreadData *)g_CurrentThreadTlsBlock;
 }

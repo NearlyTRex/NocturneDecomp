@@ -28,7 +28,7 @@ extern CDemonActorType g_CCurtainClassInfo;
 extern CVector3f g_CVector3f_ARRAY_007f8fd0[100];
 
 // SCollisionInfo[100]
-extern SCollisionInfo g_SCollisionInfo_ARRAY_007f9480[100];
+extern SCollisionInfo g_CurtainCollisionInfos[100];
 
 // char[221596]
 extern char g_CHAR_ARRAY_007fa464[221596];
@@ -40,6 +40,6 @@ extern int g_INT_007f8e6c;
 extern int g_INT_007f8e74;
 extern int g_INT_007f8e94;
 extern int g_INT_007f8e9c;
-extern int g_INT_007f8fcc;
+extern int g_CurtainCollisionCount;
 extern int g_INT_007fa460;
 

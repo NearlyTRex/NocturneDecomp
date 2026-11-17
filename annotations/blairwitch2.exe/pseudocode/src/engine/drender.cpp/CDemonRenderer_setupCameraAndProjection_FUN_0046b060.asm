@@ -22,16 +22,16 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005d156b = 0.3183099
-;   double g_DOUBLE_005d1573 = 32768
+;   double g_CameraRotationFixedPoint = 32768
 ;   double g_DOUBLE_005d157b = 65536
-;   int g_INT_006141e4 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
-;   int g_INT_01c38b84
-;   int g_INT_01c38b88
-;   int g_INT_01c38b8c
+;   int g_CameraRotationPitch
+;   int g_CameraRotationYaw
+;   int g_CameraRotationRoll
 ;   int g_INT_01c38b9c
 ;   int g_INT_01c38ba0
 ;   int g_INT_01c38ba4
@@ -81,11 +81,11 @@ section .text
     FLD float ptr [EBX + 0xc]           ; 0046b0b9
     FMUL double ptr [0x005d157b]        ; 0046b0bc | g_DOUBLE_005d157b
     FXCH ST5                            ; 0046b0c2
-    FMUL double ptr [0x005d1573]        ; 0046b0c4 | g_DOUBLE_005d1573
+    FMUL double ptr [0x005d1573]        ; 0046b0c4 | g_CameraRotationFixedPoint
     FXCH ST4                            ; 0046b0ca
-    FMUL double ptr [0x005d1573]        ; 0046b0cc | g_DOUBLE_005d1573
+    FMUL double ptr [0x005d1573]        ; 0046b0cc | g_CameraRotationFixedPoint
     FXCH ST6                            ; 0046b0d2
-    FMUL double ptr [0x005d1573]        ; 0046b0d4 | g_DOUBLE_005d1573
+    FMUL double ptr [0x005d1573]        ; 0046b0d4 | g_CameraRotationFixedPoint
     FXCH ST3                            ; 0046b0da
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b0dc
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -118,7 +118,7 @@ section .text
     FLD float ptr [EBX + 0x20]          ; 0046b144
     FMUL double ptr [0x005d157b]        ; 0046b147 | g_DOUBLE_005d157b
     MOV EAX,EDX                         ; 0046b14d
-    MOV EBX,dword ptr [0x006141e4]      ; 0046b14f | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 0046b14f | g_ProjectionScale
     FXCH                                ; 0046b155
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b157
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -147,12 +147,12 @@ section .text
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b19d
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 0046b1a2
-    FISTP dword ptr [0x01c38b84]        ; 0046b1a4 | g_INT_01c38b84
-    FISTP dword ptr [0x01c38b88]        ; 0046b1aa | g_INT_01c38b88
-    FISTP dword ptr [0x01c38b8c]        ; 0046b1b0 | g_INT_01c38b8c
+    FISTP dword ptr [0x01c38b84]        ; 0046b1a4 | g_CameraRotationPitch
+    FISTP dword ptr [0x01c38b88]        ; 0046b1aa | g_CameraRotationYaw
+    FISTP dword ptr [0x01c38b8c]        ; 0046b1b0 | g_CameraRotationRoll
     IMUL EDX                            ; 0046b1b6
     IDIV EBX                            ; 0046b1b8
-    MOV EDX,dword ptr [0x01c35e50]      ; 0046b1ba | g_INT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 0046b1ba | g_ClipRight
     MOV ECX,dword ptr [0x01c35e48]      ; 0046b1c0 | g_INT_01c35e48
     MOV EBX,dword ptr [0x01c35e54]      ; 0046b1c6 | g_INT_01c35e54
     MOV ESI,dword ptr [0x01c35e4c]      ; 0046b1cc | g_INT_01c35e4c
@@ -166,7 +166,7 @@ section .text
     SAR EDX,0x1f                        ; 0046b1e0
     IDIV EBX                            ; 0046b1e3
     MOV EDX,0x10000                     ; 0046b1e5
-    MOV EBX,dword ptr [0x006141e4]      ; 0046b1ea | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 0046b1ea | g_ProjectionScale
     MOV dword ptr [EBP + 0x28],EAX      ; 0046b1f0
     IMUL EDX                            ; 0046b1f3
     IDIV EBX                            ; 0046b1f5

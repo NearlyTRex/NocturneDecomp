@@ -15,7 +15,7 @@
 ;   int g_INT_006265f8 = -0x1
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626628 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_0062662c = 005c50d4
-;   ulong g_ULONG_00626ad4 = 0xf4
+;   ulong g_RuntimeBufferSize = 0xf4
 ;   void* g_PTR_02c9ffa0
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_005ccdae
     JZ 0x005ccdde                       ; 005ccdb2
         ;   XREF to: 005ccdde (CONDITIONAL_JUMP)  ; LAB_005ccdde
-    MOV EDI,dword ptr [0x00626ad4]      ; 005ccdb4 | g_ULONG_00626ad4
+    MOV EDI,dword ptr [0x00626ad4]      ; 005ccdb4 | g_RuntimeBufferSize
     PUSH EDI                            ; 005ccdba
     MOV EBP,dword ptr [EBX + 0x8]       ; 005ccdbb
     PUSH EBP                            ; 005ccdbe
@@ -71,7 +71,7 @@ section .text
     ADD ESP,0x8                         ; 005ccdd9
     JMP 0x005cce2c                      ; 005ccddc
         ;   XREF to: 005cce2c (UNCONDITIONAL_JUMP)  ; LAB_005cce2c
-    MOV ESI,dword ptr [0x00626ad4]      ; 005ccdde | g_ULONG_00626ad4
+    MOV ESI,dword ptr [0x00626ad4]      ; 005ccdde | g_RuntimeBufferSize
         ;   Label: LAB_005ccdde
     PUSH ESI                            ; 005ccde4
     PUSH 0x1                            ; 005ccde5
@@ -106,7 +106,7 @@ section .text
     MOV dword ptr [EBX + 0xc],0x1       ; 005cce25
     MOV dword ptr [EBX + 0x8],EBP       ; 005cce2c
         ;   Label: LAB_005cce2c
-    MOV EAX,[0x00626ad4]                ; 005cce2f | g_ULONG_00626ad4
+    MOV EAX,[0x00626ad4]                ; 005cce2f | g_RuntimeBufferSize
     PUSH EBP                            ; 005cce34
     MOV dword ptr [EBP + 0xf0],EAX      ; 005cce35
     MOV EAX,[0x006265f8]                ; 005cce3b | g_INT_006265f8

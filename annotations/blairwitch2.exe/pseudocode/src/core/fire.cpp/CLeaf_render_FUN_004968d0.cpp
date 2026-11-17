@@ -30,7 +30,7 @@ void __cdecl core_fire_cpp_CLeaf_render_FUN_004968d0(CLeaf *this_ptr)
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_28,0);
   if (iVar1 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_00530980
-              (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&g_CVector3f_0265370c,
+              (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&g_ZeroVector,
                &CStack_28.min,&CStack_28.max,(CMatrix3x3f *)0x0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
               (g_CDemonRenderer_PTR_0060b280,0xffff);

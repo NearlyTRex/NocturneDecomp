@@ -14,8 +14,8 @@
 ;   void* PTR_GetClipboardData_005b34c0 = 001b3af2
 ;   void* PTR_OpenClipboard_005b34e0 = 001b3b70
 ;   undefined4 DAT_005bd325
-;   char* g_CHAR_PTR_01c5b0e8
-;   HWND g_HWND_02d21b78
+;   char* g_ClipboardBackupText
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   CloseClipboard
@@ -29,13 +29,13 @@ section .text
 
     PUSH EBX                            ; 00480db0
         ;   Label: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00480db0
-    MOV EDX,dword ptr [0x02d21b78]      ; 00480db1 | g_HWND_02d21b78
+    MOV EDX,dword ptr [0x02d21b78]      ; 00480db1 | g_MainWindowHandle
     PUSH EDX                            ; 00480db7
     CALL dword ptr CS:[0x5b34e0]        ; 00480db8 | PTR_OpenClipboard_005b34e0
     TEST EAX,EAX                        ; 00480dbf
     JNZ 0x00480dd4                      ; 00480dc1
         ;   XREF to: 00480dd4 (CONDITIONAL_JUMP)  ; LAB_00480dd4
-    MOV EBX,dword ptr [0x01c5b0e8]      ; 00480dc3 | g_CHAR_PTR_01c5b0e8
+    MOV EBX,dword ptr [0x01c5b0e8]      ; 00480dc3 | g_ClipboardBackupText
         ;   Label: LAB_00480dc3
     TEST EBX,EBX                        ; 00480dc9
     JNZ 0x00480e2c                      ; 00480dcb
@@ -61,12 +61,12 @@ section .text
     DEC ECX                             ; 00480df0
     LEA EBX,[ECX + 0x1]                 ; 00480df1
     PUSH EBX                            ; 00480df4
-    MOV ECX,dword ptr [0x01c5b0e8]      ; 00480df5 | g_CHAR_PTR_01c5b0e8
+    MOV ECX,dword ptr [0x01c5b0e8]      ; 00480df5 | g_ClipboardBackupText
     PUSH ECX                            ; 00480dfb
     CALL crt_memory.c_realloc_FUN_005a3e50 ; 00480dfc
         ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00480e01
-    MOV [0x01c5b0e8],EAX                ; 00480e04 | g_CHAR_PTR_01c5b0e8
+    MOV [0x01c5b0e8],EAX                ; 00480e04 | g_ClipboardBackupText
     TEST EAX,EAX                        ; 00480e09
     JZ 0x00480e21                       ; 00480e0b
         ;   XREF to: 00480e21 (CONDITIONAL_JUMP)  ; LAB_00480e21

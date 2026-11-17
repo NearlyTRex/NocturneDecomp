@@ -57,7 +57,7 @@ CTawiscara * __cdecl core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void);
 CDemonActorType * __cdecl core_tawiscara_cpp_CTawiscara_getActorType_FUN_00593dc0(CTawiscara *this_ptr);
 CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr);
 void __cdecl core_tawiscara_cpp_CTawiscara_setup_FUN_00593e80(CTawiscara *this_ptr);
-void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float param_2);
+void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float delta_time);
 void __cdecl core_tawiscara_cpp_CTawiscara_setWalkTarget_FUN_005956d0(CTawiscara *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 void __cdecl core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara *this_ptr);
 void __cdecl core_tawiscara_cpp_CTawiscara_renderEyeGlow_FUN_00595760(CTawiscara *this_ptr,CVector3f *eye_position);

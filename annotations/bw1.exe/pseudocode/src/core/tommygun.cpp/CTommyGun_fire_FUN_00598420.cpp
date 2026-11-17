@@ -170,7 +170,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0
-                        (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
+                        (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor);
               goto LAB_005986af;
@@ -279,7 +279,7 @@ LAB_005986af:
              afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
         CStack_130.y = CStack_130.y + -0.125f;
         core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
-                  (g_CFireEffect_PTR_0061c010,&CStack_130,&(this_ptr->base).base.orient_matrix);
+                  (g_CFireEffectPtr,&CStack_130,&(this_ptr->base).base.orient_matrix);
         CStack_f4.x = 5.0;
         CStack_f4.y = 6.0;
         CStack_f4.z = -6.0;
@@ -308,7 +308,7 @@ LAB_005986af:
         }
         model_ptr = core_dmodel_cpp_loadModel_FUN_00468780("bullet.kfm");
         core_fire_cpp_CFireEffect_createShell_FUN_004b7270
-                  (g_CFireEffect_PTR_0061c010,&(this_ptr->base).base.location.position,
+                  (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
                    &(this_ptr->base).base.orient.vec,&CStack_f4,model_ptr);
       }
       return 1;

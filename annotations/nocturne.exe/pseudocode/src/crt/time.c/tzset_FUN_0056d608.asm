@@ -22,10 +22,10 @@
 ;   undefined4 DAT_005c1e88
 ;   TerminatedCString s_EDT_005c1e89
 ;   undefined4 DAT_005c1f09
-;   int g_INT_005c1f14 = 0x4650
-;   int g_INT_005c1f18 = 0x1
-;   int g_INT_005c1f1c = 0xe10
-;   byte g_BYTE_005c1f20 = 0x1
+;   int g_TimezoneOffset = 0x4650
+;   int g_DaylightSavingActive = 0x1
+;   int g_DaylightSavingOffset = 0xe10
+;   byte g_TimezoneInitFlags = 0x1
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_00566e10
@@ -41,19 +41,19 @@ section .text
         ;   Label: LAB_0056d50c
     PUSH ESI                            ; 0056d50d
     SUB ESP,0xac                        ; 0056d50e
-    MOV AH,byte ptr [0x005c1f20]        ; 0056d514 | g_BYTE_005c1f20
+    MOV AH,byte ptr [0x005c1f20]        ; 0056d514 | g_TimezoneInitFlags
     TEST AH,0x1                         ; 0056d51a
     JZ 0x0056d528                       ; 0056d51d
         ;   XREF to: 0056d528 (CONDITIONAL_JUMP)  ; LAB_0056d528
     TEST AH,0x2                         ; 0056d51f
     JNZ 0x0056d5fd                      ; 0056d522
         ;   XREF to: 0056d5fd (CONDITIONAL_JUMP)  ; LAB_0056d5fd
-    MOV DH,byte ptr [0x005c1f20]        ; 0056d528 | g_BYTE_005c1f20
+    MOV DH,byte ptr [0x005c1f20]        ; 0056d528 | g_TimezoneInitFlags
         ;   Label: LAB_0056d528
     MOV EAX,ESP                         ; 0056d52e
     OR DH,0x2                           ; 0056d530
     PUSH EAX                            ; 0056d533
-    MOV byte ptr [0x005c1f20],DH        ; 0056d534 | g_BYTE_005c1f20
+    MOV byte ptr [0x005c1f20],DH        ; 0056d534 | g_TimezoneInitFlags
     CALL dword ptr CS:[0x57553c]        ; 0056d53a | PTR_GetTimeZoneInformation_0057553c
     CMP EAX,0x1                         ; 0056d541
     JC 0x0056d5fd                       ; 0056d544
@@ -63,21 +63,21 @@ section .text
     CMP EAX,0x2                         ; 0056d54c
     JNZ 0x0056d5fd                      ; 0056d54f
         ;   XREF to: 0056d5fd (CONDITIONAL_JUMP)  ; LAB_0056d5fd
-    MOV dword ptr [0x005c1f18],0x1      ; 0056d555 | g_INT_005c1f18
+    MOV dword ptr [0x005c1f18],0x1      ; 0056d555 | g_DaylightSavingActive
     MOV EDX,dword ptr [ESP + 0xa8]      ; 0056d55f
     MOV EAX,EDX                         ; 0056d566
     SHL EAX,0x4                         ; 0056d568
     SUB EAX,EDX                         ; 0056d56b
     SHL EAX,0x2                         ; 0056d56d
     MOV EBX,EAX                         ; 0056d570
-    MOV [0x005c1f1c],EAX                ; 0056d572 | g_INT_005c1f1c
+    MOV [0x005c1f1c],EAX                ; 0056d572 | g_DaylightSavingOffset
     NEG EBX                             ; 0056d577
-    MOV dword ptr [0x005c1f1c],EBX      ; 0056d579 | g_INT_005c1f1c
+    MOV dword ptr [0x005c1f1c],EBX      ; 0056d579 | g_DaylightSavingOffset
     JMP 0x0056d589                      ; 0056d57f
         ;   XREF to: 0056d589 (UNCONDITIONAL_JUMP)  ; LAB_0056d589
     XOR ECX,ECX                         ; 0056d581
         ;   Label: LAB_0056d581
-    MOV dword ptr [0x005c1f18],ECX      ; 0056d583 | g_INT_005c1f18
+    MOV dword ptr [0x005c1f18],ECX      ; 0056d583 | g_DaylightSavingActive
     MOV EDX,dword ptr [ESP + 0x54]      ; 0056d589
         ;   Label: LAB_0056d589
     MOV ESI,dword ptr [ESP]             ; 0056d58d
@@ -87,7 +87,7 @@ section .text
     SUB EAX,EDX                         ; 0056d597
     SHL EAX,0x2                         ; 0056d599
     PUSH 0x80                           ; 0056d59c
-    MOV [0x005c1f14],EAX                ; 0056d5a1 | g_INT_005c1f14
+    MOV [0x005c1f14],EAX                ; 0056d5a1 | g_TimezoneOffset
     LEA EAX,[ESP + 0x8]                 ; 0056d5a6
     PUSH EAX                            ; 0056d5aa
     PUSH 0x5c1e08                       ; 0056d5ab | = "EST"

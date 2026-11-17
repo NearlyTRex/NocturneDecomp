@@ -39,7 +39,7 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
         this_ptr_01 = (CBoxActor *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
                                 (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),
-                                 g_CBoxActorActorType_00764800.name_hash);
+                                 g_CBoxActorClassInfo.name_hash);
         if (((this_ptr_01 != (CBoxActor *)0x0) && (this_ptr_01->can_be_pushed != 0)) &&
            (this_ptr_01->pushed_by_actor == (CDemonActor *)0x0)) {
           (*((this_ptr_01->base).vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr_01,&local_80);
@@ -75,8 +75,7 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
       }
       if (this_ptr->pushed_object == (CBoxActor *)0x0) goto LAB_004b5550;
       this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
-                              (&this_ptr->pushed_object->base,
-                               g_CBoxActorActorType_00764800.name_hash);
+                              (&this_ptr->pushed_object->base,g_CBoxActorClassInfo.name_hash);
       if (this_ptr_00 != (CDemonActor *)0x0) {
         *(CHero **)this_ptr_00[2].create_event = this_ptr;
         uVar2 = (*((this_ptr_00->vtable)._ub)->playAmbientSound)

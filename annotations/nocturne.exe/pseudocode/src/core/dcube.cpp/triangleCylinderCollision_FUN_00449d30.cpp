@@ -106,11 +106,11 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
         fVar1 = (triangle->triangle).normal.z;
         uVar8 = uVar6 | uVar7 | uVar8;
         fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
-        if ((g_UCHAR_014b8478 & 1) == 0) {
-          g_UCHAR_014b8478 = g_UCHAR_014b8478 | 1;
-          g_CVector3f_014b846c.y = -100.0;
-          g_CVector3f_014b846c.x = 0.0;
-          g_CVector3f_014b846c.z = 0.0;
+        if ((g_DownwardRayInitialized & 1) == 0) {
+          g_DownwardRayInitialized = g_DownwardRayInitialized | 1;
+          g_DownwardRayDirection.y = -100.0;
+          g_DownwardRayDirection.x = 0.0;
+          g_DownwardRayDirection.z = 0.0;
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
@@ -118,9 +118,9 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
           local_34[0].z = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
           local_34[0].y = cylinder_center->y;
           fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
-                            (triangle,local_34,&g_CVector3f_014b846c);
+                            (triangle,local_34,&g_DownwardRayDirection);
           if ((0.0 <= fVar9) &&
-             (local_34[0].y = fVar9 * g_CVector3f_014b846c.y + local_34[0].y,
+             (local_34[0].y = fVar9 * g_DownwardRayDirection.y + local_34[0].y,
              *out_height < local_34[0].y)) {
             *out_height = local_34[0].y;
             return 1;
@@ -128,7 +128,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
         }
         else if (uVar8 == 0) {
           fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
-                            (triangle,cylinder_center,&g_CVector3f_014b846c);
+                            (triangle,cylinder_center,&g_DownwardRayDirection);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_58.y;

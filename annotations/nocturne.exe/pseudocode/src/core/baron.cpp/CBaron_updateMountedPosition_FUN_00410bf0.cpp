@@ -34,7 +34,7 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410bf0(CBaron *th
     (*pCVar1->setPositionAndOrientation)((CDemonActor *)this_ptr,&local_34,new_orientation);
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (this_ptr->target_actor,g_CCharacterActorType_00765a60.name_hash);
+                            (this_ptr->target_actor,g_CCharacterClassInfo.name_hash);
     if (this_ptr_00 != (CCharacter *)0x0) {
       EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (EVar4 == DEATH_STATE_DEAD) {

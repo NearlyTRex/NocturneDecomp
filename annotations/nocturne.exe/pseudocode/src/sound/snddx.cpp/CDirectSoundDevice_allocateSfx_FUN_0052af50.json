@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 164,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
+    "pseudocode_lines": 108,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unresolved_funcptr"
     ],
-    "total_lines": 387
+    "total_lines": 386
   },
   "cross_references": [],
   "function": {
@@ -143,31 +143,31 @@
     },
     {
       "addr": "02dc9214",
-      "name": "g_IDirectSound_PTR_02dc9214",
+      "name": "g_DirectSound",
       "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "02dc9244",
-      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02dc9244",
+      "name": "g_DirectSoundSampleBuffers",
       "type": "IDirectSoundBuffer*[25]",
       "value": null
     },
     {
       "addr": "02dc92ac",
-      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[1]",
+      "name": "g_DirectSoundHardwareSfxBuffers[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc92b0",
-      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[2]",
+      "name": "g_DirectSoundHardwareSfxBuffers[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc92b4",
-      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[3]",
+      "name": "g_DirectSoundHardwareSfxBuffers[3]",
       "type": "undefined4",
       "value": null
     },
@@ -272,9 +272,9 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8",
+      "match": "(IDirectSoundBuffer **)((int)g_DirectSoundHardwareSfxBuffers",
       "severity": "moderate",
-      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8 + iVar4 + 4);",
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundHardwareSfxBuffers + iVar4 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -287,18 +287,18 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 103,
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar3 + 8))(piVar3);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DirectSoundHardwareSfxBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 35,
-      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8",
+      "match": "(int)g_DirectSoundHardwareSfxBuffers",
       "severity": "moderate",
-      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8 + iVar4 + 4);",
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundHardwareSfxBuffers + iVar4 + 4);",
       "type": "pointer_truncation"
     }
   ],

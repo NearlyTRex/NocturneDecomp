@@ -7,7 +7,7 @@
 ; SMRGLAnimatedTexture * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
-;   int g_INT_01c2a370
+;   int g_GlobalDeltaTimeInt
 ;
 ; Called Functions:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
@@ -23,7 +23,7 @@ section .text
     PUSH EBP                            ; 004050e3
     SUB ESP,0x18                        ; 004050e4
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004050e7
-    MOV EAX,[0x01c2a370]                ; 004050eb | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 004050eb | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [EBX + 0x14]      ; 004050f0
     ADD EDX,EAX                         ; 004050f3
     MOV ECX,dword ptr [EBX + 0x10]      ; 004050f5

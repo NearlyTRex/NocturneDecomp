@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 249,
+    "complexity_score": 248,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 43,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unknown_field"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -107,31 +107,31 @@
     },
     {
       "addr": "005bb210",
-      "name": "g_INT_005bb210",
+      "name": "g_MoonBatsEnabled",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "01bd1d80",
-      "name": "g_INT_01bd1d80",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ccdebc",
-      "name": "g_INT_01ccdebc",
+      "name": "g_MoonCloudScrollX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ccdec0",
-      "name": "g_INT_01ccdec0",
+      "name": "g_MoonCloudScrollY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ccdec4",
-      "name": "g_FLOAT_01ccdec4",
+      "name": "g_MoonAnimationTimer",
       "type": "float",
       "value": null
     },
@@ -348,79 +348,79 @@
       "line": 18,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_FLOAT_01ccdec4 = g_FLOAT_01ccdec4 + 1.6117013929914458e-314._0_4_;",
+      "text": "g_MoonAnimationTimer = g_MoonAnimationTimer + 1.6117013929914458e-314._0_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 25,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
+      "match": "(int)&g_MoonBats[0].course_position",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) =",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
+      "match": "(int)&g_MoonBats[0].course_position",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 28,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_index",
+      "match": "(int)&g_MoonBats[0].course_index",
       "severity": "moderate",
-      "text": "if ((float)g_MoonBatCourses[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len",
+      "text": "if ((float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len <=",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 29,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
+      "match": "(int)&g_MoonBats[0].course_position",
       "severity": "moderate",
-      "text": "<= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar4)) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 30,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
+      "match": "(int)&g_MoonBats[0].course_position",
       "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);",
+      "text": "pfVar1 = (float *)((int)&g_MoonBats[0].course_position + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 32,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_index",
+      "match": "(int)&g_MoonBats[0].course_index",
       "severity": "moderate",
-      "text": "[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].",
+      "text": "[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MoonBats[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&g_MoonBats[0].animation_frame",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 37,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].animation_frame",
+      "match": "(int)&g_MoonBats[0].animation_frame",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);",
+      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar4) = fVar3;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].animation_frame",
+      "description": "Pointer value `&g_MoonBats[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)&g_MoonBats[0].animation_frame",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4) = fVar3;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
-      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].animation_frame",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);",
+      "text": "pfVar1 = (float *)((int)&g_MoonBats[0].animation_frame + iVar4);",
       "type": "pointer_truncation"
     },
     {
@@ -428,7 +428,7 @@
       "line": 25,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) =",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -436,7 +436,7 @@
       "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -444,7 +444,7 @@
       "line": 28,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if ((float)g_MoonBatCourses[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len",
+      "text": "if ((float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len <=",
       "type": "pointer_cast"
     },
     {
@@ -452,7 +452,7 @@
       "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "<= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar4)) {",
       "type": "pointer_cast"
     },
     {
@@ -460,7 +460,7 @@
       "line": 30,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);",
+      "text": "pfVar1 = (float *)((int)&g_MoonBats[0].course_position + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -468,7 +468,15 @@
       "line": 32,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].",
+      "text": "[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -476,23 +484,15 @@
       "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);",
+      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar4) = fVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 38,
+      "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4) = fVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);",
+      "text": "pfVar1 = (float *)((int)&g_MoonBats[0].animation_frame + iVar4);",
       "type": "pointer_cast"
     }
   ]

@@ -24,14 +24,14 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_0059a0b0(SRenderVertex *vert
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
   
-  if ((g_UINT_006141e0 != 0) && (iVar9 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
+  if ((g_VertexProcessingEnabled != 0) && (iVar9 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
     do {
       if ((int)((pSVar6->projected_vertex).screen_x & -0x80000000) != 0) {
-        if ((g_INT_01c38b58 & 6U) != 0) {
+        if ((g_VertexPreprocessMode & 6U) != 0) {
           (pSVar6->projected_vertex).inv_z =
                (int)(0x7fffffff / (longlong)(pSVar6->projected_vertex).transformed_z);
         }
-        if ((g_INT_01c38b58 & 1U) != 0) {
+        if ((g_VertexPreprocessMode & 1U) != 0) {
           (pSVar6->projected_vertex).inv_z =
                (int)(0x7fffffff / (longlong)(pSVar6->projected_vertex).transformed_z);
         }
@@ -46,22 +46,22 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_0059a0b0(SRenderVertex *vert
       pSVar6 = pSVar6 + 1;
     } while (iVar9 < vertex_count);
   }
-  if ((g_INT_0070ca7c != 0) &&
+  if ((g_CullingMode != 0) &&
      (iVar9 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
                         (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar9 == 0)) {
     return;
   }
-  g_INT_01e61b58 = g_INT_01e61b58 + 1;
-  if ((g_INT_01c37788 != 0) && (g_INT_0070ca74 == 0)) {
-    engine_special_cpp_drawPolygon_FUN_0055f8f0
-              (vertex_buffer,vertex_count,g_BIT_INTEGER32_01c38b54.dword);
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
+  if ((g_INT_01c37788 != 0) && (g_TexturesDisabled == 0)) {
+    engine_special_cpp_drawPolygon_FUN_0055f8f0(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
+    ;
     return;
   }
-  if (g_INT_01c38b58 != 0) {
-    if ((uint)g_INT_01c38b58 < 2) {
+  if (g_VertexPreprocessMode != 0) {
+    if ((uint)g_VertexPreprocessMode < 2) {
       engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(vertex_buffer,vertex_count);
     }
-    else if (g_INT_01c38b58 == 6) {
+    else if (g_VertexPreprocessMode == 6) {
       engine_prim_c_replaceWWithDepth_FUN_0051c720(vertex_buffer,vertex_count);
     }
   }
@@ -124,7 +124,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_0059a0b0(SRenderVertex *vert
         lVar1 = (longlong)(int)uVar7 * (longlong)(int)uVar5;
         g_INT_026672a8 = g_INT_026672a8 + 1;
         *(uint *)(iVar8 + 0x26672d4) =
-             ((pSVar10->projected_vertex).transformed_z * 0x100 - g_INT_01ba5714) +
+             ((pSVar10->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
       iVar9 = iVar9 + 1;
@@ -132,7 +132,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_0059a0b0(SRenderVertex *vert
   }
   local_14 = (SSoftwareEdge *)&DAT_026672ac;
   iVar9 = 0;
-  g_INT_01ba5c80 = 0;
+  g_RenderAbortFlag = 0;
   if (0 < g_INT_026672a8) {
     do {
       if ((g_INT_026677ac == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
@@ -195,7 +195,7 @@ LAB_0059a33c:
           }
         }
         engine_special_cpp_renderScanline_FUN_0055d6d7(local_18,local_14,(int)scanline_y);
-        if (g_INT_01ba5c80 != 0) {
+        if (g_RenderAbortFlag != 0) {
           return;
         }
         (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;

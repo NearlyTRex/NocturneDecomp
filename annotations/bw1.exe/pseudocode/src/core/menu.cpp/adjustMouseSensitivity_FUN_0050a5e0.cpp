@@ -40,13 +40,12 @@ LAB_0050a643:
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_setCursorPosition_FUN_005b2750
             ((int)(((longlong)(g_INT_0061b498 + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
-             g_INT_01c43540);
+             g_MouseY);
   pCVar6 = (CKeys *)0x0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(g_CEditorToolsPtr);
-    if ((CKeys *)g_INT_01c4353c != pCVar6) {
-      iVar3 = (int)(((longlong)g_INT_01c4353c * 0x3c000) / (longlong)(g_INT_0061b498 + -1)) + 0x4000
-      ;
+    if ((CKeys *)g_MouseX != pCVar6) {
+      iVar3 = (int)(((longlong)g_MouseX * 0x3c000) / (longlong)(g_INT_0061b498 + -1)) + 0x4000;
     }
     iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD4);
     if (iVar1 != 0) {
@@ -64,7 +63,7 @@ LAB_0050a643:
     }
     iVar1 = g_INT_01c4f00c + 1;
     iVar2 = g_INT_01c4f014 + -1;
-    iVar4 = g_INT_01c4f010 + -1;
+    iVar4 = g_ClipRight + -1;
     iVar5 = g_INT_01c4f008 + 1;
     engine_2d_c_fillRectWithBorder_FUN_00403250(iVar5,iVar1,iVar4,iVar2,0,0xff);
     engine_2d_c_fillRectColor_FUN_004031c0
@@ -77,8 +76,8 @@ LAB_0050a643:
     iVar2 = g_INT_01c4f014 + g_INT_01c4f00c;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0
-              (g_CBitFont_PTR_01c3eb50,g_INT_01c4f008,g_INT_01c4f010,(iVar2 - iVar1) / 2,iVar4,iVar5
-               ,format_string);
+              (g_CBitFont_PTR_01c3eb50,g_INT_01c4f008,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,
+               format_string);
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     pCVar6 = g_CKeys_PTR_0061f2a4;
     iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_ESCAPE);

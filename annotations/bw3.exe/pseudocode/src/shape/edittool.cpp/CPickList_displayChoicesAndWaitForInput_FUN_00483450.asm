@@ -23,9 +23,9 @@
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005bcd3b
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   int g_INT_005fba2c = 0x7f
+;   int g_InputKeyMask = 0x7f
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5bae0
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -66,7 +66,7 @@ section .text
     PUSH 0x6a                           ; 00483489
     MOV EBX,dword ptr [EAX + 0x41e8]    ; 0048348b
     PUSH EAX                            ; 00483491
-    MOV dword ptr [0x01c5bae0],EBX      ; 00483492 | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EBX      ; 00483492 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 00483498
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0048349d
@@ -83,8 +83,8 @@ section .text
     PUSH ECX                            ; 004834ba
     MOV EBP,0x7f                        ; 004834bb
     PUSH ESI                            ; 004834c0
-    MOV EDI,dword ptr [0x005fba2c]      ; 004834c1 | g_INT_005fba2c
-    MOV dword ptr [0x005fba2c],EBP      ; 004834c7 | g_INT_005fba2c
+    MOV EDI,dword ptr [0x005fba2c]      ; 004834c1 | g_InputKeyMask
+    MOV dword ptr [0x005fba2c],EBP      ; 004834c7 | g_InputKeyMask
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_00483520 ; 004834cd
         ;   XREF to: 00483520 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_00483520(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004834d2
@@ -110,7 +110,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970 ; 004834ff
         ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00483504
-    MOV dword ptr [0x005fba2c],EDI      ; 00483507 | g_INT_005fba2c
+    MOV dword ptr [0x005fba2c],EDI      ; 00483507 | g_InputKeyMask
     MOV EAX,EBX                         ; 0048350d
     POP EBP                             ; 0048350f
     POP EDI                             ; 00483510

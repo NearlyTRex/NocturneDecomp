@@ -38,24 +38,24 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuan
   iVar7 = 0;
   iVar8 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
   if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
-    local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[1];
+    local_1c = (float *)g_Layer3BandIndex[iVar8].l[1];
   }
   else if (granule->mixed_block_flag == 0) {
-    local_1c = (float *)(g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[1] * 3);
-    local_28 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[1];
+    local_1c = (float *)(g_Layer3BandIndex[iVar8].s[1] * 3);
+    local_28 = g_Layer3BandIndex[iVar8].s[1];
     local_2c = 0;
   }
   else {
-    local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[1];
+    local_1c = (float *)g_Layer3BandIndex[iVar8].l[1];
   }
-  if (g_INT_01cd6324 == 0) {
+  if (g_MpegRequantTablesInitialized == 0) {
     fVar12 = (float10)1.3333333333333299;
     iVar6 = 0;
     iVar9 = 0;
     do {
       fVar10 = pow((float10)iVar6,fVar12);
       iVar6 = iVar6 + 1;
-      *(double *)((int)g_DOUBLE_ARRAY_01cd6328 + iVar9) = (double)fVar10;
+      *(double *)((int)g_MpegRequantPowerTable + iVar9) = (double)fVar10;
       iVar9 = iVar9 + 8;
     } while (iVar6 < 200);
     iVar9 = 0;
@@ -68,10 +68,10 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuan
       fVar10 = fVar12;
       fVar12 = fVar2;
       iVar9 = iVar9 + 1;
-      *(double *)((int)g_DOUBLE_ARRAY_01cd6968 + iVar6) = (double)fVar11;
+      *(double *)((int)g_MpegRequantGainTable + iVar6) = (double)fVar11;
       iVar6 = iVar6 + 8;
     } while (iVar9 < 200);
-    g_INT_01cd6324 = 1;
+    g_MpegRequantTablesInitialized = 1;
   }
   local_44 = 0;
   local_64 = (float *)output_samples;
@@ -91,27 +91,27 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuan
       if (local_20 == local_1c) {
         if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
           iVar7 = iVar6 + 1;
-          local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[iVar6 + 2];
+          local_1c = (float *)g_Layer3BandIndex[iVar8].l[iVar6 + 2];
         }
         else {
           iVar7 = iVar6 + 1;
           if (granule->mixed_block_flag == 0) {
 LAB_004e5bd0:
-            iVar3 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[iVar6 + 2];
-            iVar1 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[iVar6 + 1];
-            local_28 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[iVar6 + 2] - iVar1;
+            iVar3 = g_Layer3BandIndex[iVar8].s[iVar6 + 2];
+            iVar1 = g_Layer3BandIndex[iVar8].s[iVar6 + 1];
+            local_28 = g_Layer3BandIndex[iVar8].s[iVar6 + 2] - iVar1;
           }
           else {
-            if (local_20 != (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[8]) {
-              if ((int)local_20 < g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[8]) {
-                local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[iVar6 + 2];
+            if (local_20 != (float *)g_Layer3BandIndex[iVar8].l[8]) {
+              if ((int)local_20 < g_Layer3BandIndex[iVar8].l[8]) {
+                local_1c = (float *)g_Layer3BandIndex[iVar8].l[iVar6 + 2];
                 goto LAB_004e5a60;
               }
               goto LAB_004e5bd0;
             }
-            iVar3 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[4];
-            iVar1 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[3];
-            local_28 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[4] - iVar1;
+            iVar3 = g_Layer3BandIndex[iVar8].s[4];
+            iVar1 = g_Layer3BandIndex[iVar8].s[3];
+            local_28 = g_Layer3BandIndex[iVar8].s[4] - iVar1;
             iVar7 = 3;
           }
           local_1c = (float *)(iVar3 * 3);
@@ -130,7 +130,7 @@ LAB_004e5a60:
         {
           iVar3 = (granule->scalefac_scale + 1) * -2 *
                   (scalefactor_data[channel_index * 0x3e + iVar7] +
-                  granule->preflag * g_INT_ARRAY_005bbba4[iVar7]);
+                  granule->preflag * g_Layer3Pretab[iVar7]);
         }
         else {
           iVar3 = ((int)local_38 - local_2c) / local_28;
@@ -140,7 +140,7 @@ LAB_004e5a60:
         }
         iVar6 = iVar6 + iVar3;
         if ((iVar6 < 1) && (-200 < iVar6)) {
-          fVar12 = (float10)g_DOUBLE_ARRAY_01cd6968[-iVar6];
+          fVar12 = (float10)g_MpegRequantGainTable[-iVar6];
           pfVar4 = local_3c;
         }
         else {
@@ -152,7 +152,7 @@ LAB_004e5a60:
         uVar5 = *local_30 >> 0x1f;
         iVar6 = (*local_30 ^ uVar5) - uVar5;
         if (iVar6 < 200) {
-          *local_18 = *local_18 * (float)g_DOUBLE_ARRAY_01cd6328[iVar6];
+          *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar6];
         }
         else {
           fVar12 = pow((float10)iVar6,(float10)1.3333333333333299);

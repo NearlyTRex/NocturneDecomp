@@ -28,7 +28,7 @@ extern CVector3d g_CVector3d_02c7fc28;
 extern CVector3d g_CVector3d_02c7fc40;
 
 // SSoundDeviceInfo[8]
-extern SSoundDeviceInfo g_SSoundDeviceInfo_ARRAY_02c7fd90[8];
+extern SSoundDeviceInfo g_SoundDevices[8];
 
 // byte
 extern byte g_BYTE_02c745b8;
@@ -42,23 +42,23 @@ extern double g_DOUBLE_02c7fc18;
 extern double g_DOUBLE_02c7fc20;
 
 // float
-extern float g_FLOAT_02c745e0;
+extern float g_SoundReferenceVolumeDistance;
 
 // float[32]
-extern float g_FLOAT_ARRAY_02c7fc90[32];
+extern float g_SfxChannelVolumes[32];
 
 // int
-extern int g_INT_02c745bc;
+extern int g_ShutdownInProgress;
 extern int g_INT_02c745e4;
 extern int g_INT_02c745e8;
-extern int g_INT_02c78cec;
-extern int g_INT_02c78ff0;
+extern int g_SfxLastSlot;
+extern int g_LastSampleAccessIndex;
 extern int g_INT_02c7fc88;
 extern int g_INT_02c7fc8c;
 
 // int[32]
-extern int g_INT_ARRAY_02c7fd10[32];
+extern int g_SfxChannelEnabled[32];
 
 // int[8]
-extern int g_INT_ARRAY_02c745c0[8];
+extern int g_ChannelFFTTimestamps[8];
 

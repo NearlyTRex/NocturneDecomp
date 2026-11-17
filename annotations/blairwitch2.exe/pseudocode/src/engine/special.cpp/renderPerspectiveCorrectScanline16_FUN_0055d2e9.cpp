@@ -33,18 +33,18 @@ void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005
   uVar3 = uVar3 >> 0x10;
   iVar4 = (uVar6 >> 0x10) - uVar3;
   if (iVar4 != 0 && uVar3 <= uVar6 >> 0x10) {
-    g_INT_PTR_0061c378 = (int *)(g_ARRAY_PTR_01c2a38c[scanline_y] + uVar3 * 2);
-    g_INT_0061c314 = iVar4 * 4;
-    puVar9 = g_UINT_PTR_ARRAY_01c2b64c[scanline_y] + uVar3;
-    g_INT_PTR_0061c37c = (int *)puVar9;
-    if (g_BIT_INTEGER32_01c38b54.dword == 0x80) {
+    g_CurrentScreenPtr = (int *)(g_ScreenBufferArray[scanline_y] + uVar3 * 2);
+    g_ScanlinePixelCount = iVar4 * 4;
+    puVar9 = g_ZBufferScanlineArray[scanline_y] + uVar3;
+    g_CurrentZBufferPtr = (int *)puVar9;
+    if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
       uVar10 = (pSVar7->base).depth_current;
       iVar8 = (int)((ulonglong)
                     ((longlong)(int)((left_vertex->base).depth_current - uVar10) *
-                    (longlong)(int)g_UINT_ARRAY_01c35e70[iVar4 + 1]) >> 0x20);
-      iVar4 = g_INT_0061c314;
-      g_INT_0061c35c = uVar10;
-      g_INT_0061c788 = iVar8;
+                    (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
+      iVar4 = g_ScanlinePixelCount;
+      g_StartDepthW = uVar10;
+      g_HardwareDeltaDepthZ = iVar8;
       do {
         *puVar9 = uVar10;
         uVar10 = uVar10 + iVar8;
@@ -55,74 +55,73 @@ void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005
       } while (iVar5 != 0 && bVar1);
       return;
     }
-    if (g_INT_01c38b58 == 5) {
+    if (g_VertexPreprocessMode == 5) {
       uVar10 = (pSVar7->base).u_current;
-      g_INT_0061c350 =
+      g_StartTextureU =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                 (longlong)(pSVar7->base).depth_current);
       uVar10 = (left_vertex->base).u_current;
-      g_INT_0061c780 =
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                        (longlong)(left_vertex->base).depth_current) - g_INT_0061c350) *
-                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar4 + 1]) >> 0x20);
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureU) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       uVar10 = (pSVar7->base).v_current;
-      g_INT_0061c354 =
+      g_StartTextureV =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                 (longlong)(pSVar7->base).depth_current);
       uVar10 = (left_vertex->base).v_current;
-      g_INT_0061c784 =
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                        (longlong)(left_vertex->base).depth_current) - g_INT_0061c354) *
-                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar4 + 1]) >> 0x20);
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureV) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
     else {
-      g_INT_0061c350 = (pSVar7->base).u_current;
-      g_INT_0061c780 =
+      g_StartTextureU = (pSVar7->base).u_current;
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
-                 ((longlong)((left_vertex->base).u_current - g_INT_0061c350) *
-                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar4 + 1]) >> 0x20);
-      g_INT_0061c354 = (pSVar7->base).v_current;
-      g_INT_0061c784 =
+                 ((longlong)((left_vertex->base).u_current - g_StartTextureU) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
+      g_StartTextureV = (pSVar7->base).v_current;
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
-                 ((longlong)((left_vertex->base).v_current - g_INT_0061c354) *
-                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar4 + 1]) >> 0x20);
+                 ((longlong)((left_vertex->base).v_current - g_StartTextureV) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
     iVar8 = (pSVar7->base).depth_current;
-    g_INT_0061c788 =
+    g_HardwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)((left_vertex->base).depth_current - iVar8) *
-               (longlong)(int)g_UINT_ARRAY_01c35e70[iVar4 + 1]) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     uVar10 = 0;
-    g_INT_0061c35c = iVar8;
-    if ((g_UCHAR_PTR_01c37774 == (uchar *)0x0) &&
-       (uVar6 = g_INT_0061c354, uVar3 = g_INT_0061c350, (g_BIT_INTEGER32_01c38b54.dword & 2) == 0))
-    {
+    g_StartDepthW = iVar8;
+    if ((g_CurrentTextureOpacityData == (uchar *)0x0) &&
+       (uVar6 = g_StartTextureV, uVar3 = g_StartTextureU, (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {
       while( true ) {
-        if (((g_BIT_INTEGER32_01c38b54.dword & 0x40) == 0) ||
-           (*(int *)(uVar10 + (int)g_INT_PTR_0061c37c) <= iVar8)) {
-          if ((g_BIT_INTEGER32_01c38b54.dword & 1) == 0) {
+        if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
+           (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {
+          if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0) {
             uVar2 = (ushort)g_INT_01c35e60;
           }
           else {
-            uVar2 = g_USHORT_ARRAY_01c35614
-                    [g_UCHAR_PTR_01c37770
-                     [(uVar6 >> ((byte)g_QWORD_0061c888 & 0x1f) & (uint)g_QWORD_0061c8c8) +
-                      (uVar3 >> ((byte)g_QWORD_0061c868 & 0x1f) & (uint)g_QWORD_0061c8a8)]];
+            uVar2 = g_Hardware16BitPalette
+                    [g_CurrentTextureData
+                     [(uVar6 >> ((byte)g_TextureShift2 & 0x1f) & (uint)g_TextureMask2) +
+                      (uVar3 >> ((byte)g_TextureShift1 & 0x1f) & (uint)g_TextureMask1)]];
           }
-          *(ushort *)((uVar10 >> 1) + (int)g_INT_PTR_0061c378) = uVar2;
-          if ((g_BIT_INTEGER32_01c38b54.dword & 0x80) != 0) {
-            *(int *)((int)g_INT_PTR_0061c37c + uVar10) = iVar8;
+          *(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) = uVar2;
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
+            *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;
           }
         }
         uVar10 = uVar10 + 4;
-        if ((uint)g_INT_0061c314 <= uVar10) break;
-        uVar3 = uVar3 + g_INT_0061c780;
-        uVar6 = uVar6 + g_INT_0061c784;
-        iVar8 = iVar8 + g_INT_0061c788;
+        if ((uint)g_ScanlinePixelCount <= uVar10) break;
+        uVar3 = uVar3 + g_HardwareDeltaTextureU;
+        uVar6 = uVar6 + g_HardwareDeltaTextureV;
+        iVar8 = iVar8 + g_HardwareDeltaDepthZ;
       }
     }
   }

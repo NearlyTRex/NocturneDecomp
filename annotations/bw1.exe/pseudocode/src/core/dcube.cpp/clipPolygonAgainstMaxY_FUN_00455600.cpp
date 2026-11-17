@@ -28,27 +28,27 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00455600(float max_y_plan
       }
       switch(bVar1) {
       case 0:
-        if (g_CVector3f_ARRAY_0152be14 + g_INT_0152be10 != (CVector3f *)vertex1) {
-          g_CVector3f_ARRAY_0152be14[g_INT_0152be10].x = ((CVector3f *)vertex1)->x;
-          g_CVector3f_ARRAY_0152be14[g_INT_0152be10].y = ((CVector3f *)vertex1)->y;
-          g_CVector3f_ARRAY_0152be14[g_INT_0152be10].z = ((CVector3f *)vertex1)->z;
+        if (g_ClipStageMaxYBuffer + g_INT_0152be10 != (CVector3f *)vertex1) {
+          g_ClipStageMaxYBuffer[g_INT_0152be10].x = ((CVector3f *)vertex1)->x;
+          g_ClipStageMaxYBuffer[g_INT_0152be10].y = ((CVector3f *)vertex1)->y;
+          g_ClipStageMaxYBuffer[g_INT_0152be10].z = ((CVector3f *)vertex1)->z;
         }
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_00455460
                   ((CVector3f *)(&g_FLOAT_0152bd50 + uVar2 * 3),(CVector3f *)vertex1,
-                   g_CVector3f_ARRAY_0152be14 + g_INT_0152be10,0.0,1.0,0.0,(double)-max_y_plane);
+                   g_ClipStageMaxYBuffer + g_INT_0152be10,0.0,1.0,0.0,(double)-max_y_plane);
         break;
       case 2:
-        if (g_CVector3f_ARRAY_0152be14 + g_INT_0152be10 != (CVector3f *)vertex1) {
-          g_CVector3f_ARRAY_0152be14[g_INT_0152be10].x = ((CVector3f *)vertex1)->x;
-          g_CVector3f_ARRAY_0152be14[g_INT_0152be10].y = ((CVector3f *)vertex1)->y;
-          g_CVector3f_ARRAY_0152be14[g_INT_0152be10].z = ((CVector3f *)vertex1)->z;
+        if (g_ClipStageMaxYBuffer + g_INT_0152be10 != (CVector3f *)vertex1) {
+          g_ClipStageMaxYBuffer[g_INT_0152be10].x = ((CVector3f *)vertex1)->x;
+          g_ClipStageMaxYBuffer[g_INT_0152be10].y = ((CVector3f *)vertex1)->y;
+          g_ClipStageMaxYBuffer[g_INT_0152be10].z = ((CVector3f *)vertex1)->z;
         }
         g_INT_0152be10 = g_INT_0152be10 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_00455460
                   ((CVector3f *)vertex1,(CVector3f *)(&g_FLOAT_0152bd50 + uVar2 * 3),
-                   g_CVector3f_ARRAY_0152be14 + g_INT_0152be10,0.0,1.0,0.0,(double)-max_y_plane);
+                   g_ClipStageMaxYBuffer + g_INT_0152be10,0.0,1.0,0.0,(double)-max_y_plane);
         break;
       default:
         goto switchD_0045566c_caseD_3;

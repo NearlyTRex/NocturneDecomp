@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 66,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "builtin_function",
-      "unnamed_param"
+      "builtin_function"
     ],
     "total_lines": 69
   },
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30(CPackedBitmap *this_ptr,char *param_2)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30(CPackedBitmap *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -162,7 +161,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "filename",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -170,30 +169,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30(CPackedBitmap *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "file_handle = _fopen(param_2,\"wb\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_sprintf(acStack_6c,\"Unable to create PBM file %s\",param_2);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Ghidra builtin function",
       "line": 16,

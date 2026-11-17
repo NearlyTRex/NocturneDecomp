@@ -17,7 +17,7 @@ void FUN_005c3388(void)
   
   while( true ) {
     pRVar1 = g_InitHandlers + 0xc4;
-    pRVar3 = &g_RuntimeHandlerEntry_0061fe4c;
+    pRVar3 = &g_ExitHandlerTableEnd;
     bVar2 = in_AL;
     do {
       if ((pRVar1->status != '\x02') && (bVar2 <= pRVar1->priority)) {
@@ -26,7 +26,7 @@ void FUN_005c3388(void)
       }
       pRVar1 = pRVar1 + 1;
     } while (pRVar1 != g_InitHandlers + sizeof(g_InitHandlers) / sizeof(g_InitHandlers[0]));
-    if (pRVar3 == &g_RuntimeHandlerEntry_0061fe4c) break;
+    if (pRVar3 == &g_ExitHandlerTableEnd) break;
     if (pRVar3->priority <= in_DL) {
       FUN_005c3320(&pRVar3->func);
     }

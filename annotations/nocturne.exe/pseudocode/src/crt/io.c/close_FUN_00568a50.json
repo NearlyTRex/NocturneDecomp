@@ -66,31 +66,31 @@
     },
     {
       "addr": "005c1d54",
-      "name": "g_PTR_005c1d54",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1d58",
-      "name": "g_PTR_005c1d58",
+      "name": "g_SpecialDeviceCleanupFunc",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1d60",
-      "name": "g_PTR_005c1d60",
+      "name": "g_SpecialDeviceCloseFunc",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1f54",
-      "name": "g_SIOControlBlock_PTR_005c1f54",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     },
     {
       "addr": "005c1f90",
-      "name": "g_UINT_005c1f90",
+      "name": "g_MaxHandleCount",
       "type": "uint",
       "value": "0x14"
     }
@@ -209,10 +209,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((g_PTR_005c1d60 == (byte *)0x0) || (iVar2 = (*(code *)g_PTR_005c1d54)(fd), iVar2 == 0))",
+      "text": "(iVar2 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar2 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -220,7 +220,7 @@
       "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_005c1d58)(fd);",
+      "text": "(*(code *)g_SpecialDeviceCleanupFunc)(fd);",
       "type": "unresolved_funcptr"
     },
     {
@@ -228,7 +228,7 @@
       "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_005c1d60)(iVar2);",
+      "text": "(*(code *)g_SpecialDeviceCloseFunc)(iVar2);",
       "type": "unresolved_funcptr"
     }
   ]

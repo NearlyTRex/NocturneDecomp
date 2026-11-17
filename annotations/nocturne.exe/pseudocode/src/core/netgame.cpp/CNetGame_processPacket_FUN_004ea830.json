@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 709,
+    "complexity_score": 706,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 419,
+    "pseudocode_lines": 416,
     "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_unreachable"
     ],
-    "total_lines": 1504
+    "total_lines": 1501
   },
   "cross_references": [
     {
@@ -205,49 +205,49 @@
     },
     {
       "addr": "01cea3f8",
-      "name": "g_UINT_01cea3f8",
+      "name": "g_CurrentGameTime",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01cea3fc",
-      "name": "g_INT_01cea3fc",
+      "name": "g_ConnectionStatus",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea400",
-      "name": "g_INT_01cea400",
+      "name": "g_RemoteSyncStage",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea404",
-      "name": "g_INT_01cea404",
+      "name": "g_NetNextPlayerId",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea40c",
-      "name": "g_INT_01cea40c",
+      "name": "g_ChatHistoryCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea538",
-      "name": "g_SChatHistory_ARRAY_01cea410[1].message_id",
+      "name": "g_ChatHistory[1].message_id",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d06610",
-      "name": "g_INT_01d06610",
+      "name": "g_ChatOutCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d09c00",
-      "name": "g_INT_01d09c00",
+      "name": "g_SimFrameCount",
       "type": "int",
       "value": null
     }
@@ -654,31 +654,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
-      "match": "(uint *)((int)g_SChatOutMessage_ARRAY_01d06614",
+      "line": 223,
+      "match": "(uint *)((int)g_ChatOutMessages",
       "severity": "moderate",
-      "text": "while (*(uint *)((int)g_SChatOutMessage_ARRAY_01d06614[0].player_timestamps + iVar4 + -8) ==",
+      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + -8) ==",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 359,
-      "match": "(uint *)((int)g_SSimFrame_ARRAY_01d09c04",
+      "line": 225,
+      "match": "(byte *)((int)g_ChatOutMessages",
       "severity": "moderate",
-      "text": "if (local_2c == *(uint *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input + iVar4 + -0xc)) {",
+      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + uVar2 + -4) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 361,
-      "match": "(SSimFrame *)((int)g_SSimFrame_ARRAY_01d09c04",
+      "line": 356,
+      "match": "(uint *)((int)g_SimFrameHistory",
       "severity": "moderate",
-      "text": "dest = (SSimFrame *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input + iVar4 + -0xc);",
+      "text": "if (local_2c == *(uint *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 396,
+      "line": 358,
+      "match": "(SSimFrame *)((int)g_SimFrameHistory",
+      "severity": "moderate",
+      "text": "dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 393,
       "match": "(SPlayerInput *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -686,7 +694,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 397,
+      "line": 394,
       "match": "(SPlayerInput *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -694,7 +702,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 417,
+      "line": 414,
       "match": "(SPlayerInput *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -710,7 +718,7 @@
     },
     {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 396,
+      "line": 393,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -718,7 +726,7 @@
     },
     {
       "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 397,
+      "line": 394,
       "match": "(int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -726,7 +734,7 @@
     },
     {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 417,
+      "line": 414,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -766,7 +774,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 288,
+      "line": 286,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -774,7 +782,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 394,
+      "line": 391,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -782,23 +790,15 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 414,
+      "line": 411,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 226,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "*(byte *)",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 400,
+      "line": 397,
       "match": "local_18 = (T *)((local_18->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);",

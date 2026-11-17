@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6bdd
 ;
 ; Referenced Globals:
-;   int g_INT_01cb80e0
+;   int g_IrisFadeType
 ;
 ; *****************************************************************************
 
@@ -18,6 +18,6 @@ section .text
 
     XOR EDX,EDX                         ; 004bb090
         ;   Label: core_game.cpp_CGame_resetIrisFade_FUN_004bb090
-    MOV dword ptr [0x01cb80e0],EDX      ; 004bb092 | g_INT_01cb80e0
+    MOV dword ptr [0x01cb80e0],EDX      ; 004bb092 | g_IrisFadeType
     RET                                 ; 004bb098
 

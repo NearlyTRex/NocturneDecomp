@@ -25,21 +25,20 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CVampireB
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (g_CFireEffect_PTR_005b80f0,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar2 < 5);
   }
   if (this_ptr->form == 0) {
     if ((damage_info->ammo_type == AMMO_TYPE_HOLY) &&
        (this_ptr_01 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                (damage_info->attacker,g_CMeleeActorType_01cc56a4.name_hash),
+                                (damage_info->attacker,g_CMeleeClassInfo.name_hash),
        this_ptr_01 != (CDemonActor *)0x0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,10,1);
       pCVar4 = (*((this_ptr_01->vtable)._ub)->getCarrier)(this_ptr_01);
       if (pCVar4 != (CDemonActor *)0x0) {
         (*((pCVar4->vtable)._ub)->drop)(pCVar4,this_ptr_01,(CVector3f *)0x0);
-        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar4,g_CHeroActorType_01cae0ec.name_hash);
+        pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(pCVar4,g_CHeroClassInfo.name_hash);
         if (pCVar4 != (CDemonActor *)0x0) {
           this_ptr_00 = &pCVar4[0x17e].orient_matrix.m[0].y;
           pCVar4 = core_inv_cpp_CInventory_findItemByName_FUN_004c0710
@@ -55,7 +54,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CVampireB
       core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40
                 ((CCharacter *)this_ptr,0,this_ptr_01,0.2);
       core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                (g_CEventList_PTR_005b7650,"VampireBossBitesIt");
+                (g_CEventListPtr,"VampireBossBitesIt");
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
       core_sound_cpp_CSound_playSound_FUN_0052ea40
                 (g_CSound_PTR_005bed68,this_ptr,"voicudeath.wav @ 2.5");

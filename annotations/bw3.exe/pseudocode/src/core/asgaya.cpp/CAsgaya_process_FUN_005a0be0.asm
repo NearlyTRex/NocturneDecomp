@@ -567,7 +567,7 @@ section .text
         ;   Label: LAB_005a1219
     PUSH 0x0                            ; 005a121b
     PUSH 0x1                            ; 005a121d
-    PUSH 0x2cfd900                      ; 005a121f | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 005a121f | g_ZeroVector
     LEA EAX,[ESP + 0x3c]                ; 005a1224
     PUSH EAX                            ; 005a1228
     MOV ESI,dword ptr [0x005fc5a0]      ; 005a1229 | g_CFireEffect_PTR_005fc5a0
@@ -617,7 +617,7 @@ section .text
         ;   Label: LAB_005a12c4
     PUSH 0x0                            ; 005a12c6
     PUSH 0x1                            ; 005a12c8
-    PUSH 0x2cfd900                      ; 005a12ca | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 005a12ca | g_ZeroVector
     LEA EAX,[ESP + 0x3c]                ; 005a12cf
     PUSH EAX                            ; 005a12d3
     MOV EDX,dword ptr [0x005fc5a0]      ; 005a12d4 | g_CFireEffect_PTR_005fc5a0

@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SRGBColorPalette* g_SRGBColorPalette_PTR_01c6a970
-;   uchar* g_UCHAR_PTR_01c6ced0
+;   SRGBColorPalette* g_CurrentPalette
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -62,7 +62,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0044c0d1
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0044c0d6
-    MOV EDI,dword ptr [0x01c6ced0]      ; 0044c0d9 | g_UCHAR_PTR_01c6ced0
+    MOV EDI,dword ptr [0x01c6ced0]      ; 0044c0d9 | g_CurrentTextureData
     MOV ECX,EBP                         ; 0044c0df
     PUSH EDI                            ; 0044c0e1
     MOV EAX,ECX                         ; 0044c0e2
@@ -74,7 +74,7 @@ section .text
     POP EDI                             ; 0044c0f0
     MOV ECX,0x300                       ; 0044c0f1
     MOV ESI,0xb9da48                    ; 0044c0f6
-    MOV EDI,dword ptr [0x01c6a970]      ; 0044c0fb | g_SRGBColorPalette_PTR_01c6a970
+    MOV EDI,dword ptr [0x01c6a970]      ; 0044c0fb | g_CurrentPalette
     PUSH EDI                            ; 0044c101
     MOV EAX,ECX                         ; 0044c102
     SHR ECX,0x2                         ; 0044c104

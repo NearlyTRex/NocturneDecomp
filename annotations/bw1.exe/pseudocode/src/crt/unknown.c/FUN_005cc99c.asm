@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_006265d9 = 00000000
-;   char** g_CHAR_PTR_PTR_02c9f6d4
+;   char* g_EnvironmentStrings = 00000000
+;   char** g_EnvironmentBlock
 ;   void* g_PTR_02c9ff90
 ;
 ; Called Functions:
@@ -22,7 +22,7 @@ section .text
     PUSH EBP                            ; 005cc99d
     CALL crt_unknown.c_FUN_005cde20     ; 005cc99e
         ;   XREF to: 005cde20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cde20()
-    MOV EDX,dword ptr [0x02c9f6d4]      ; 005cc9a3 | g_CHAR_PTR_PTR_02c9f6d4
+    MOV EDX,dword ptr [0x02c9f6d4]      ; 005cc9a3 | g_EnvironmentBlock
     TEST EDX,EDX                        ; 005cc9a9
     JZ 0x005cc9be                       ; 005cc9ab
         ;   XREF to: 005cc9be (CONDITIONAL_JUMP)  ; LAB_005cc9be
@@ -31,7 +31,7 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR ECX,ECX                         ; 005cc9b3
     ADD ESP,0x4                         ; 005cc9b5
-    MOV dword ptr [0x02c9f6d4],ECX      ; 005cc9b8 | g_CHAR_PTR_PTR_02c9f6d4
+    MOV dword ptr [0x02c9f6d4],ECX      ; 005cc9b8 | g_EnvironmentBlock
     MOV ESI,dword ptr [0x02c9ff90]      ; 005cc9be | g_PTR_02c9ff90
         ;   Label: LAB_005cc9be
     TEST ESI,ESI                        ; 005cc9c4
@@ -43,7 +43,7 @@ section .text
     XOR EBP,EBP                         ; 005cc9ce
     ADD ESP,0x4                         ; 005cc9d0
     MOV dword ptr [0x02c9ff90],EBP      ; 005cc9d3 | g_PTR_02c9ff90
-    MOV EAX,[0x006265d9]                ; 005cc9d9 | g_CHAR_PTR_006265d9
+    MOV EAX,[0x006265d9]                ; 005cc9d9 | g_EnvironmentStrings
         ;   Label: LAB_005cc9d9
     TEST EAX,EAX                        ; 005cc9de
     JZ 0x005cc9ea                       ; 005cc9e0

@@ -43,8 +43,8 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0057bef0(void *user_data,char *s
     cVar4 = *sound_name;
     local_14 = sound_name;
     pcVar6 = local_170;
-    while ((((cVar4 != '\0' && ((g_UCHAR_ARRAY_00626114[(byte)(*local_14 + 1)] & 2) == 0)) &&
-            (cVar4 = *local_14, cVar4 != '@')) && (cVar4 != '*'))) {
+    while ((((cVar4 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0))
+            && (cVar4 = *local_14, cVar4 != '@')) && (cVar4 != '*'))) {
       if (cVar4 == '[') {
         local_34 = -1;
         sscanf(local_14,"[%d,%d]%n");
@@ -104,7 +104,7 @@ LAB_0057bf72:
         pcVar8 = pcVar8 + 2;
       } while (cVar4 != '\0');
     }
-    pcVar6 = g_CHAR_ARRAY_00623870;
+    pcVar6 = g_SoundResultBufferTemplate;
     pcVar5 = local_a8;
     for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
       *(uint *)pcVar5 = *(uint *)pcVar6;
@@ -181,7 +181,7 @@ LAB_0057bfd2:
     }
     cVar4 = *local_14;
     while (cVar4 != '\0') {
-      if ((g_UCHAR_ARRAY_00626114[(byte)(*local_14 + 1)] & 2) == 0) {
+      if ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0) {
         if (*local_14 == '@') {
           local_24 = -1;
           sscanf(local_14,"@%f%n");

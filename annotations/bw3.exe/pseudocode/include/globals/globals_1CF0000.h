@@ -26,7 +26,7 @@ extern CExplosion g_CExplosion_ARRAY_01cf6090[10];
 extern CGunFlame g_CGunFlame_ARRAY_01cfb8bc[500];
 
 // CLaserBeam[64]
-extern CLaserBeam g_CLaserBeam_ARRAY_01cf508c[64];
+extern CLaserBeam g_LaserBeamPool[64];
 
 // CLeaf[64]
 extern CLeaf CLeaf_ARRAY_01cf3b88[64];
@@ -38,11 +38,11 @@ extern CRock g_RockPool[64];
 extern CToss g_TossPool[20];
 
 // int
-extern int g_INT_01cf2780;
+extern int g_RockAllocIndex;
 extern int g_INT_01cf3b84;
-extern int g_INT_01cf5088;
+extern int g_LaserBeamActiveCount;
 extern int g_INT_01cf608c;
 extern int g_INT_01cf61d0;
 extern int g_INT_01cfaff4;
-extern int g_INT_01cfb8b8;
+extern int g_LightningBoltAllocIndex;
 

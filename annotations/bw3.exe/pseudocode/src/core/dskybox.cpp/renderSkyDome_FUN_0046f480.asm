@@ -61,11 +61,11 @@
 ;   double g_DOUBLE_005bc7f1 = 0.589048622531250
 ;   double g_DOUBLE_005bc7f9 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   float g_FLOAT_005f4a5c = 5
+;   float g_SkyDomeVertexScale = 5
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   CVector3f g_CVector3f_01c0b798
-;   undefined4 g_CVector3f_01c0b798.y
-;   undefined4 g_CVector3f_01c0b798.z
+;   CVector3f g_SkyDomeCenter
+;   undefined4 g_SkyDomeCenter.y
+;   undefined4 g_SkyDomeCenter.z
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -147,12 +147,12 @@ section .text
     FLDZ                                ; 0046f52c
     XOR EDX,EDX                         ; 0046f52e
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0046f530
-    MOV dword ptr [0x005f4a5c],EDX      ; 0046f534 | g_FLOAT_005f4a5c
-    MOV [0x01c0b79c],EAX                ; 0046f53a | g_CVector3f_01c0b798.y
+    MOV dword ptr [0x005f4a5c],EDX      ; 0046f534 | g_SkyDomeVertexScale
+    MOV [0x01c0b79c],EAX                ; 0046f53a | g_SkyDomeCenter.y
     FXCH ST2                            ; 0046f53f
-    FSTP float ptr [0x01c0b798]         ; 0046f541 | g_CVector3f_01c0b798
+    FSTP float ptr [0x01c0b798]         ; 0046f541 | g_SkyDomeCenter
     FXCH ST2                            ; 0046f547
-    FSTP float ptr [0x01c0b7a0]         ; 0046f549 | g_CVector3f_01c0b798.z
+    FSTP float ptr [0x01c0b7a0]         ; 0046f549 | g_SkyDomeCenter.z
     FXCH                                ; 0046f54f
     FSTP float ptr [ESP + 0xa0]         ; 0046f551
     FCOMP float ptr [ESP + 0xa0]        ; 0046f558
@@ -165,27 +165,27 @@ section .text
     FSUB float ptr [ESP + 0x7c]         ; 0046f56c
     FMUL double ptr [0x005bc7e9]        ; 0046f570 | g_DOUBLE_005bc7e9
     FST float ptr [ESP + 0x9c]          ; 0046f576
-    FCOMP float ptr [0x005f4a5c]        ; 0046f57d | g_FLOAT_005f4a5c
+    FCOMP float ptr [0x005f4a5c]        ; 0046f57d | g_SkyDomeVertexScale
     FNSTSW AX                           ; 0046f583
     SAHF                                ; 0046f585
     JBE 0x0046f594                      ; 0046f586
         ;   XREF to: 0046f594 (CONDITIONAL_JUMP)  ; LAB_0046f594
     MOV EAX,dword ptr [ESP + 0x9c]      ; 0046f588
-    MOV [0x005f4a5c],EAX                ; 0046f58f | g_FLOAT_005f4a5c
+    MOV [0x005f4a5c],EAX                ; 0046f58f | g_SkyDomeVertexScale
     FLD float ptr [ESP + 0x68]          ; 0046f594
         ;   Label: LAB_0046f594
     FSUB float ptr [ESP + 0x80]         ; 0046f598
     FMUL double ptr [0x005bc7e1]        ; 0046f59f | g_DOUBLE_005bc7e1
     FMUL double ptr [0x005bc7e9]        ; 0046f5a5 | g_DOUBLE_005bc7e9
     FST float ptr [ESP + 0x98]          ; 0046f5ab
-    FCOMP float ptr [0x005f4a5c]        ; 0046f5b2 | g_FLOAT_005f4a5c
+    FCOMP float ptr [0x005f4a5c]        ; 0046f5b2 | g_SkyDomeVertexScale
     FNSTSW AX                           ; 0046f5b8
     SAHF                                ; 0046f5ba
     JBE 0x0046f5c9                      ; 0046f5bb
         ;   XREF to: 0046f5c9 (CONDITIONAL_JUMP)  ; LAB_0046f5c9
     MOV EAX,dword ptr [ESP + 0x98]      ; 0046f5bd
-    MOV [0x005f4a5c],EAX                ; 0046f5c4 | g_FLOAT_005f4a5c
-    PUSH 0x1c0b798                      ; 0046f5c9 | g_CVector3f_01c0b798
+    MOV [0x005f4a5c],EAX                ; 0046f5c4 | g_SkyDomeVertexScale
+    PUSH 0x1c0b798                      ; 0046f5c9 | g_SkyDomeCenter
         ;   Label: LAB_0046f5c9
     MOV ECX,dword ptr [0x005f2afc]      ; 0046f5ce | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 0046f5d4 | g_CDemonRenderer_01bdd7e4
@@ -208,7 +208,7 @@ section .text
     FLD double ptr [0x005bc7f1]         ; 0046f608 | g_DOUBLE_005bc7f1
     FSIN                                ; 0046f60e
     ADD ESP,0x8                         ; 0046f610
-    FLD float ptr [0x005f4a5c]          ; 0046f613 | g_FLOAT_005f4a5c
+    FLD float ptr [0x005f4a5c]          ; 0046f613 | g_SkyDomeVertexScale
     FXCH                                ; 0046f619
     FMUL ST1                            ; 0046f61b
     FLD double ptr [0x005bc7f9]         ; 0046f61d | g_DOUBLE_005bc7f9
@@ -450,7 +450,7 @@ section .text
     RET                                 ; 0046f94e
     MOV EAX,dword ptr [ESP + 0xa0]      ; 0046f94f
         ;   Label: LAB_0046f94f
-    MOV [0x005f4a5c],EAX                ; 0046f956 | g_FLOAT_005f4a5c
+    MOV [0x005f4a5c],EAX                ; 0046f956 | g_SkyDomeVertexScale
     JMP 0x0046f568                      ; 0046f95b
         ;   XREF to: 0046f568 (UNCONDITIONAL_JUMP)  ; LAB_0046f568
 

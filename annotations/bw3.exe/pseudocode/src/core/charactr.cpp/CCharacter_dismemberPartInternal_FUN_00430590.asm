@@ -42,7 +42,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CKeyFramedModelInstance_007e2b34.model_name[0]
+;   undefined4 g_StakeModelInstance.model_name[0]
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_004166d0
@@ -213,7 +213,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00430741
     PUSH EAX                            ; 00430742
     LEA EDI,[EBP + 0x3e]                ; 00430743
-    PUSH 0x7e2bac                       ; 00430746 | g_CKeyFramedModelInstance_007e2b34.model_name[0]
+    PUSH 0x7e2bac                       ; 00430746 | g_StakeModelInstance.model_name[0]
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0043074b
     LEA ESI,[EBP + 0x32]                ; 00430751
     PUSH EAX                            ; 00430754

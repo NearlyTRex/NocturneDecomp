@@ -23,34 +23,34 @@ extern CDemonActorType g_CScatClassInfo;
 extern CDemonPod g_CDemonPodInstance;
 
 // SMRGLPrimitiveQuad
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e7d360;
+extern SMRGLPrimitiveQuad g_PathMapQuad;
 
 // SSoftwareEdge[16]
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7d5bc[16];
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7dad0[16];
 
 // char[101][100]
-extern char g_CHAR_ARRAY_ARRAY_01e7abe8[101][100];
+extern char g_PathfindingVisited[101][100];
 
 // char[10][1024]
-extern char g_CHAR_ARRAY_ARRAY_01e7e0a8[10][1024];
+extern char g_ScriptSubtitleLines[10][1024];
 
 // int
-extern int g_INT_01e7abdc;
-extern int g_INT_01e7abe0;
-extern int g_INT_01e7d35c;
-extern int g_INT_01e7d5b8;
-extern int g_INT_01e7dabc;
-extern int g_INT_01e7dac0;
-extern int g_INT_01e7dac8;
-extern int g_INT_01e7dacc;
-extern int g_INT_01e7dfd0;
-extern int g_INT_01e7dfd4;
-extern int g_INT_01e7e0a0;
+extern int g_PathfindingQueueHead;
+extern int g_PathfindingQueueTail;
+extern int g_PathfindingNodesExpanded;
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
+extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+extern int g_PreviousLetterboxMode;
 
 // int[18]
-extern int g_INT_ARRAY_01e7e014[18];
+extern int g_ScatIndices[18];
 
 // uchar
-extern uchar g_UCHAR_01e7abe7;
+extern uchar g_PathfindingVisitedMinus1;
 

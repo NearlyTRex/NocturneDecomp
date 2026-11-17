@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c25f84
-;   int g_INT_01c263fc
+;   int g_InsetColor
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
 ;   undefined4 g_UCHAR_ARRAY_01c35838+2
@@ -41,7 +41,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 004840f4
     MOV EDI,dword ptr [ESP + 0x28]      ; 004840f8
     MOV EDX,dword ptr [0x01c25f84]      ; 004840fc | g_INT_01c25f84
-    MOV EBX,dword ptr [0x01c263fc]      ; 00484102 | g_INT_01c263fc
+    MOV EBX,dword ptr [0x01c263fc]      ; 00484102 | g_InsetColor
     TEST EDX,EDX                        ; 00484108
     JNZ 0x00484180                      ; 0048410a
         ;   XREF to: 00484180 (CONDITIONAL_JUMP)  ; LAB_00484180

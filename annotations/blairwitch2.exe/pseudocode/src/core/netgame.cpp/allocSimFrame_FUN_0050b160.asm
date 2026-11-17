@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01d54640
+;   int g_SimFrameCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -23,7 +23,7 @@ section .text
         ;   Label: core_netgame.cpp_allocSimFrame_FUN_0050b160
     PUSH EBP                            ; 0050b161
     MOV EBX,dword ptr [ESP + 0xc]       ; 0050b162
-    MOV ECX,dword ptr [0x01d54640]      ; 0050b166 | g_INT_01d54640
+    MOV ECX,dword ptr [0x01d54640]      ; 0050b166 | g_SimFrameCount
     XOR EDX,EDX                         ; 0050b16c
     TEST ECX,ECX                        ; 0050b16e
     JLE 0x0050b1a1                      ; 0050b170
@@ -54,7 +54,7 @@ section .text
     CMP EAX,ECX                         ; 0050b19d
     JL 0x0050b185                       ; 0050b19f
         ;   XREF to: 0050b185 (CONDITIONAL_JUMP)  ; LAB_0050b185
-    CMP dword ptr [0x01d54640],0x200    ; 0050b1a1 | g_INT_01d54640
+    CMP dword ptr [0x01d54640],0x200    ; 0050b1a1 | g_SimFrameCount
         ;   Label: LAB_0050b1a1
     JL 0x0050b1cf                       ; 0050b1ab
         ;   XREF to: 0050b1cf (CONDITIONAL_JUMP)  ; LAB_0050b1cf
@@ -66,7 +66,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050b1c7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050b1cc
-    MOV EDX,dword ptr [0x01d54640]      ; 0050b1cf | g_INT_01d54640
+    MOV EDX,dword ptr [0x01d54640]      ; 0050b1cf | g_SimFrameCount
         ;   Label: LAB_0050b1cf
     LEA EAX,[EDX*0x8 + 0x0]             ; 0050b1d5
     SUB EAX,EDX                         ; 0050b1dc
@@ -79,7 +79,7 @@ section .text
     ADD EBX,EAX                         ; 0050b1ef
     INC EDX                             ; 0050b1f1
     PUSH EBX                            ; 0050b1f2
-    MOV dword ptr [0x01d54640],EDX      ; 0050b1f3 | g_INT_01d54640
+    MOV dword ptr [0x01d54640],EDX      ; 0050b1f3 | g_SimFrameCount
     CALL crt_memory.c_memset_FUN_005b77c0 ; 0050b1f9
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0050b1fe

@@ -23,8 +23,8 @@
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b0
 ;   int g_INT_01c6b5b4
-;   int g_INT_01c6b5b8
-;   int g_INT_01c6b5bc
+;   int g_ViewportWidth
+;   int g_ViewportHeight
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     SUB EAX,EDX                         ; 00401854
     SAR EAX,0x1                         ; 00401856
     MOV dword ptr [0x01c6b5a8],EDI      ; 00401858 | g_INT_01c6b5a8
-    MOV dword ptr [0x01c6b5b8],EBX      ; 0040185e | g_INT_01c6b5b8
-    MOV dword ptr [0x01c6b5bc],ECX      ; 00401864 | g_INT_01c6b5bc
+    MOV dword ptr [0x01c6b5b8],EBX      ; 0040185e | g_ViewportWidth
+    MOV dword ptr [0x01c6b5bc],ECX      ; 00401864 | g_ViewportHeight
     AND EAX,0xffff                      ; 0040186a
     MOV EDX,ESI                         ; 0040186f
     ADD ESI,EDI                         ; 00401871

@@ -12,11 +12,11 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffec
   CMuzzleFlash *this_ptr_00;
   int iVar1;
   
-  iVar1 = g_INT_01cbb9b8 + 1;
-  this_ptr_00 = g_CMuzzleFlash_ARRAY_01cbb9bc + g_INT_01cbb9b8;
-  g_INT_01cbb9b8 = iVar1;
+  iVar1 = g_MuzzleFlashAllocIndex + 1;
+  this_ptr_00 = g_MuzzleFlashPool + g_MuzzleFlashAllocIndex;
+  g_MuzzleFlashAllocIndex = iVar1;
   if (0x13 < iVar1) {
-    g_INT_01cbb9b8 = 0;
+    g_MuzzleFlashAllocIndex = 0;
   }
   core_fire_cpp_CMuzzleFlash_init_FUN_0049a390(this_ptr_00,position,rotation_matrix);
   return;

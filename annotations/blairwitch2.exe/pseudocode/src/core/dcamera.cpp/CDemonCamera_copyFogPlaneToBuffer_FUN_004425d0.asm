@@ -11,14 +11,14 @@
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442298
 ;
 ; Referenced Globals:
-;   SFogImagePlane g_SFogImagePlane_01326d20
-;   undefined4 g_SFogImagePlane_01326d20.pixels[0][1]
-;   undefined4 g_SFogImagePlane_01326d20.pixels[0][2]
-;   undefined4 g_SFogImagePlane_01326d20.pixels[1][0]
-;   undefined4 g_SFogImagePlane_01326d20.pixels[1][1]
-;   undefined4 g_SFogImagePlane_01326d20.pixels[1][2]
-;   undefined4 g_SFogImagePlane_01326d20.pixels[2][1]
-;   undefined4 g_CHAR_ARRAY_01339920+0x140
+;   SFogImagePlane g_CameraPlaneWorkBuffer
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[0][1]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[0][2]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][0]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][1]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][2]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[2][1]
+;   undefined4 g_CameraImageDecompressBuffer+0x140
 ;
 ; *****************************************************************************
 
@@ -56,7 +56,7 @@ section .text
     JGE 0x00442631                      ; 0044261e
         ;   XREF to: 00442631 (CONDITIONAL_JUMP)  ; LAB_00442631
     INC EAX                             ; 00442620
-    MOV BL,byte ptr [ECX + 0x1326d20]   ; 00442621 | g_SFogImagePlane_01326d20.pixels[1][1] | g_SFogImagePlane_01326d20.pixels[1][2] | g_SFogImagePlane_01326d20.pixels[2][1]
+    MOV BL,byte ptr [ECX + 0x1326d20]   ; 00442621 | g_CameraPlaneWorkBuffer.pixels[1][1] | g_CameraPlaneWorkBuffer.pixels[1][2] | g_CameraPlaneWorkBuffer.pixels[2][1]
     INC ECX                             ; 00442627
     INC EDX                             ; 00442628
     MOV byte ptr [EAX + 0x133991f],BL   ; 00442629
@@ -82,8 +82,8 @@ section .text
     SUB EDX,ECX                         ; 0044265b
     IMUL EBX,EAX,0x140                  ; 0044265d
         ;   Label: LAB_0044265d
-    MOV CL,byte ptr [EBX + 0x1326d20]   ; 00442663 | g_SFogImagePlane_01326d20 | g_SFogImagePlane_01326d20.pixels[1][0]
-    MOV byte ptr [EDX + 0x1339920],CL   ; 00442669 | g_CHAR_ARRAY_01339920+0x140
+    MOV CL,byte ptr [EBX + 0x1326d20]   ; 00442663 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[1][0]
+    MOV byte ptr [EDX + 0x1339920],CL   ; 00442669 | g_CameraImageDecompressBuffer+0x140
     MOV ECX,dword ptr [ESI + 0x150]     ; 0044266f
     MOV BL,byte ptr [ECX + EBX*0x1 + 0x1326d1f] ; 00442675
     MOV byte ptr [ECX + EDX*0x1 + 0x133991f],BL ; 0044267c
@@ -112,7 +112,7 @@ section .text
     CMP EAX,ECX                         ; 004426cc
     JGE 0x00442534                      ; 004426ce
         ;   XREF to: 00442534 (CONDITIONAL_JUMP)  ; LAB_00442534
-    MOV BL,byte ptr [EAX + 0x1326d20]   ; 004426d4 | g_SFogImagePlane_01326d20.pixels[0][1] | g_SFogImagePlane_01326d20.pixels[0][2]
+    MOV BL,byte ptr [EAX + 0x1326d20]   ; 004426d4 | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[0][2]
     MOV byte ptr [EDX + 0x1339920],BL   ; 004426da
     MOV ECX,dword ptr [ESI + 0x154]     ; 004426e0
     DEC ECX                             ; 004426e6
@@ -120,7 +120,7 @@ section .text
     LEA EBX,[ECX + EAX*0x1]             ; 004426ed
     INC EAX                             ; 004426f0
     ADD ECX,EDI                         ; 004426f1
-    MOV BL,byte ptr [EBX + 0x1326d20]   ; 004426f3 | g_SFogImagePlane_01326d20.pixels[0][1] | g_SFogImagePlane_01326d20.pixels[0][2]
+    MOV BL,byte ptr [EBX + 0x1326d20]   ; 004426f3 | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[0][2]
     INC EDX                             ; 004426f9
     MOV byte ptr [ECX + EAX*0x1 + 0x133991f],BL ; 004426fa
     JMP 0x004426c4                      ; 00442701

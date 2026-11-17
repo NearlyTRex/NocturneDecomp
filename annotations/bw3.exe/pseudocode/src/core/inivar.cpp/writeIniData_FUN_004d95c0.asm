@@ -102,7 +102,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 004d966a
         ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d966f
-    PUSH 0x606730                       ; 004d9672 | g_CHAR_ARRAY_00606730
+    PUSH 0x606730                       ; 004d9672 | g_RendererDllPath
     PUSH 0x5c5bde                       ; 004d9677 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x8]                 ; 004d967c
     PUSH EAX                            ; 004d9680

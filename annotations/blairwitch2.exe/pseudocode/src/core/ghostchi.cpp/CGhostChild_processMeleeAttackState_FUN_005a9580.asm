@@ -16,7 +16,7 @@
 ;   float g_FLOAT_006006b0 = 0.4000000
 ;   float g_FLOAT_006006b4 = 0.5
 ;   undefined4 DAT_006006b8
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -142,7 +142,7 @@ section .text
     PUSH EAX                            ; 005a96a6
     LEA ESI,[ESP + 0x44]                ; 005a96a7
     INC ECX                             ; 005a96ab
-    PUSH 0x265370c                      ; 005a96ac | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a96ac | g_ZeroVector
     MOV dword ptr [EBX + 0x1185c],ECX   ; 005a96b1
     LEA EDI,[ESP + 0x60]                ; 005a96b7
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a96bb

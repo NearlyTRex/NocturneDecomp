@@ -24,9 +24,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_1_2_005dcacd
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
-;   CBitFont* g_CBitFont_PTR_01511cc0
-;   CBitFont* g_CBitFont_PTR_01511cc4
+;   CKeys* g_CKeysPtr = 01d02f84
+;   CBitFont* g_ThemeFont
+;   CBitFont* g_SmallEditorFont
 ;   void* g_PTR_01d02f84
 ;   int g_INT_01d0612c
 ;   int g_INT_01d06138
@@ -50,7 +50,7 @@ section .text
     SUB ESP,0x10                        ; 004eb0e4
     MOV ESI,dword ptr [ESP + 0x30]      ; 004eb0e7
     MOV EDX,dword ptr [ESP + 0x34]      ; 004eb0eb
-    MOV EDI,dword ptr [0x01511cc0]      ; 004eb0ef | g_CBitFont_PTR_01511cc0
+    MOV EDI,dword ptr [0x01511cc0]      ; 004eb0ef | g_ThemeFont
     TEST EDX,EDX                        ; 004eb0f5
     JNZ 0x004eb336                      ; 004eb0f7
         ;   XREF to: 004eb336 (CONDITIONAL_JUMP)  ; LAB_004eb336
@@ -139,13 +139,13 @@ section .text
         ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406da0(int alpha_color_value)
     ADD ESP,0x4                         ; 004eb1c7
     PUSH 0x5dcacd                       ; 004eb1ca | = "1.2"
-    MOV EBX,dword ptr [0x01511cc4]      ; 004eb1cf | g_CBitFont_PTR_01511cc4
+    MOV EBX,dword ptr [0x01511cc4]      ; 004eb1cf | g_SmallEditorFont
     PUSH EBX                            ; 004eb1d5
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004eb1d6
         ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004eb1db
     PUSH 0x5dcacd                       ; 004eb1de | = "1.2"
-    MOV ESI,dword ptr [0x01511cc4]      ; 004eb1e3 | g_CBitFont_PTR_01511cc4
+    MOV ESI,dword ptr [0x01511cc4]      ; 004eb1e3 | g_SmallEditorFont
     PUSH ESI                            ; 004eb1e9
     MOV EBX,EAX                         ; 004eb1ea
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 004eb1ec
@@ -158,7 +158,7 @@ section .text
     SUB EAX,EBX                         ; 004eb202
     PUSH EAX                            ; 004eb204
     PUSH 0x5dcacd                       ; 004eb205 | = "1.2"
-    MOV EDI,dword ptr [0x01511cc4]      ; 004eb20a | g_CBitFont_PTR_01511cc4
+    MOV EDI,dword ptr [0x01511cc4]      ; 004eb20a | g_SmallEditorFont
     PUSH EDI                            ; 004eb210
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004eb211
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_004eb269
     PUSH 0x48                           ; 004eb26b
     MOV [0x01d06138],EAX                ; 004eb26d | g_INT_01d06138
-    MOV EAX,[0x00617dd4]                ; 004eb272 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eb272 | g_CKeysPtr
     PUSH EAX                            ; 004eb277 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eb278 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004eb27a
@@ -226,7 +226,7 @@ section .text
         ;   XREF to: 004eb391 (CONDITIONAL_JUMP)  ; LAB_004eb391
     PUSH 0x50                           ; 004eb2a1
         ;   Label: LAB_004eb2a1
-    MOV EAX,[0x00617dd4]                ; 004eb2a3 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eb2a3 | g_CKeysPtr
     PUSH EAX                            ; 004eb2a8 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eb2a9 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004eb2ab
@@ -250,7 +250,7 @@ section .text
     JZ 0x004eb310                       ; 004eb2da
         ;   XREF to: 004eb310 (CONDITIONAL_JUMP)  ; LAB_004eb310
     PUSH 0x4b                           ; 004eb2dc
-    MOV EAX,[0x00617dd4]                ; 004eb2de | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eb2de | g_CKeysPtr
     XOR ECX,ECX                         ; 004eb2e3
     PUSH EAX                            ; 004eb2e5 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eb2e6 | g_PTR_01d02f84
@@ -261,7 +261,7 @@ section .text
     JNZ 0x004eb3a2                      ; 004eb2f6
         ;   XREF to: 004eb3a2 (CONDITIONAL_JUMP)  ; LAB_004eb3a2
     PUSH 0x4d                           ; 004eb2fc
-    MOV EAX,[0x00617dd4]                ; 004eb2fe | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eb2fe | g_CKeysPtr
     PUSH EAX                            ; 004eb303 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eb304 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004eb306
@@ -271,7 +271,7 @@ section .text
         ;   XREF to: 004eb328 (CONDITIONAL_JUMP)  ; LAB_004eb328
     PUSH 0x1c                           ; 004eb310
         ;   Label: LAB_004eb310
-    MOV EAX,[0x00617dd4]                ; 004eb312 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eb312 | g_CKeysPtr
     PUSH EAX                            ; 004eb317 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eb318 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004eb31a

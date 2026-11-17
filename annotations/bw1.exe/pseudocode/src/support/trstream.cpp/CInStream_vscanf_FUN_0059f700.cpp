@@ -57,7 +57,7 @@ int __cdecl support_trstream_cpp_CInStream_vscanf_FUN_0059f700(CInStream *this_p
   if (*format != '\0') {
     while (uVar4 = uStack_18, uStack_18 == 0) {
       pbVar8 = (byte *)(format + 1);
-      if ((g_UCHAR_ARRAY_00626114[(byte)(*format + 1)] & 2) != 0) {
+      if ((g_CharacterClassificationTable[(byte)(*format + 1)] & 2) != 0) {
         uVar4 = support_trstream_cpp_CInStream_skipWhitespace_FUN_005a0840(this_ptr);
         if (-1 < (int)uVar4) {
           iStack_14 = iStack_14 + uVar4;
@@ -95,7 +95,7 @@ int __cdecl support_trstream_cpp_CInStream_vscanf_FUN_0059f700(CInStream *this_p
         if (uVar14 < 0x4c) {
           if (uVar14 < 0x2a) {
 LAB_0059f878:
-            if ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar8 + 1)] & 0x20) == 0) break;
+            if ((g_CharacterClassificationTable[(byte)(*pbVar8 + 1)] & 0x20) == 0) break;
             uVar4 = uVar14 - 0x30;
             uVar14 = uStack_50;
             if (uVar12 != 0x7fffffff) {
@@ -169,7 +169,7 @@ LAB_005a02e7:
               if (((int)uVar12 < 1) ||
                  (uStack_44 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr), uVar4 = uStack_44,
                  (int)uStack_44 < 0)) goto LAB_005a038f;
-              if ((g_UCHAR_ARRAY_00626114[(byte)((byte)uStack_44 + 1)] & 0x20) == 0) break;
+              if ((g_CharacterClassificationTable[(byte)((byte)uStack_44 + 1)] & 0x20) == 0) break;
               iStack_48 = 1;
               *pcVar10 = (byte)uStack_44;
               iVar5 = iStack_14 + 1;
@@ -199,7 +199,8 @@ LAB_005a038f:
                       if (((int)uVar12 < 1) ||
                          (uStack_44 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr),
                          uVar4 = uStack_44, (int)uStack_44 < 0)) goto LAB_005a0452;
-                      if ((g_UCHAR_ARRAY_00626114[(byte)((byte)uStack_44 + 1)] & 0x20) == 0) break;
+                      if ((g_CharacterClassificationTable[(byte)((byte)uStack_44 + 1)] & 0x20) == 0)
+                      break;
                       *pcVar10 = (byte)uStack_44;
                       iStack_48 = 1;
                     }
@@ -265,8 +266,8 @@ LAB_005a0452:
                         if ((iVar5 < 1) ||
                            (uStack_44 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr),
                            uVar4 = uStack_44, (int)uStack_44 < 0)) goto LAB_005a0601;
-                        if ((g_UCHAR_ARRAY_00626114[(byte)((byte)uStack_44 + 1)] & 0x20) == 0)
-                        break;
+                        if ((g_CharacterClassificationTable[(byte)((byte)uStack_44 + 1)] & 0x20) ==
+                            0) break;
                         *pcVar11 = (byte)uStack_44;
                         iVar5 = iVar5 + -1;
                         pcVar11 = pcVar11 + 1;

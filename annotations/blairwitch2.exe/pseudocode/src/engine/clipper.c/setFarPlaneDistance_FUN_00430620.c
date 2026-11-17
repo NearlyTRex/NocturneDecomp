@@ -12,6 +12,6 @@ void __cdecl engine_clipper_c_setFarPlaneDistance_FUN_00430620(int distance)
   if (distance == 0) {
     distance = 0x7fffffff;
   }
-  g_INT_00609b34 = distance;
+  g_FarPlaneDistance = distance;
   return;
 }

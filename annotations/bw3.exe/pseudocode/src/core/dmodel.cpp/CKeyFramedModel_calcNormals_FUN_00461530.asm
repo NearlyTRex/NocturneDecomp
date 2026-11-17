@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005bb8fc
 ;   TerminatedCString s_CKeyFramedModel_calcNorm_005bb90f
-;   double g_DOUBLE_005bb954 = 65535
+;   double g_NormalizeScale = 65535
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 00461559 (UNCONDITIONAL_JUMP)  ; LAB_00461559
     FLD double ptr [ESP + 0x8]          ; 00461697
         ;   Label: LAB_00461697
-    FLD double ptr [0x005bb954]         ; 0046169b | g_DOUBLE_005bb954
+    FLD double ptr [0x005bb954]         ; 0046169b | g_NormalizeScale
     FDIV double ptr [ESP]               ; 004616a1
     FXCH                                ; 004616a4
     FMUL ST1                            ; 004616a6

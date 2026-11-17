@@ -22,7 +22,7 @@
 ;   TerminatedCString s_pushSfxOptions_stack_ful_005e8c37
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_0264161c
+;   int g_SfxLastSlot
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -34,13 +34,13 @@ section .text
     PUSH ESI                            ; 00550450
         ;   Label: sound_sndmain.cpp_pushSfxOptions_FUN_00550450
     PUSH EDI                            ; 00550451
-    MOV EDX,dword ptr [0x0264161c]      ; 00550452 | g_INT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 00550452 | g_SfxLastSlot
     INC EDX                             ; 00550458
-    MOV dword ptr [0x0264161c],EDX      ; 00550459 | g_INT_0264161c
+    MOV dword ptr [0x0264161c],EDX      ; 00550459 | g_SfxLastSlot
     CMP EDX,0x8                         ; 0055045f
     JGE 0x0055049b                      ; 00550462
         ;   XREF to: 0055049b (CONDITIONAL_JUMP)  ; LAB_0055049b
-    MOV ECX,dword ptr [0x0264161c]      ; 00550464 | g_INT_0264161c
+    MOV ECX,dword ptr [0x0264161c]      ; 00550464 | g_SfxLastSlot
         ;   Label: LAB_00550464
     LEA EDX,[ECX + -0x1]                ; 0055046a
     LEA ESI,[EDX*0x4 + 0x0]             ; 0055046d

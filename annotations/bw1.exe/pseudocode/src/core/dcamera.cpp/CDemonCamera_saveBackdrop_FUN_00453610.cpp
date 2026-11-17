@@ -48,14 +48,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
   int local_24;
   int local_20;
   
-  g_INT_013238cc = 1;
-  g_INT_01480e20 = 0;
-  g_INT_01480e24 = 0;
-  core_dcamera_cpp_resetFogSamplingOffset_FUN_0044c5e0(&g_SFogGrid_01480e2c);
-  g_INT_01480e28 = 0x10;
-  if ((g_SFogGrid_01480e2c.scroll_vector.x == 0 && g_SFogGrid_01480e2c.scroll_vector.y == 0) &&
-      g_SFogGrid_01480e2c.scroll_vector.z == 0) {
-    g_INT_01480e28 = 1;
+  g_BackdropSaveActive = 1;
+  g_ImageProcessingState1 = 0;
+  g_ImageProcessingState2 = 0;
+  core_dcamera_cpp_resetFogSamplingOffset_FUN_0044c5e0(&g_CameraFogGrid);
+  g_ImageBytesPerPixel = 0x10;
+  if ((g_CameraFogGrid.scroll_vector.x == 0 && g_CameraFogGrid.scroll_vector.y == 0) &&
+      g_CameraFogGrid.scroll_vector.z == 0) {
+    g_ImageBytesPerPixel = 1;
   }
   _sprintf(local_20c,"%s.fog");
   file_handle = engine_dosio_cpp_getFile_FUN_00479180("backdrop",local_20c,"rb");
@@ -68,8 +68,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
       g_INT_01d1d404 = 0x1329;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create %s");
     }
-    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_5c,&g_SFogGrid_01480e2c,0x1000);
-    if (g_SFogGrid_01480e2c.density_multiplier == 0) {
+    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_5c,&g_CameraFogGrid,0x1000);
+    if (g_CameraFogGrid.density_multiplier == 0) {
       flags = 0;
     }
     else {
@@ -93,14 +93,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
                 ((CLZWCompress *)(auStack_b4 + 4),iVar11,iVar12);
       support_codec_cpp_CLZWCompress_init_FUN_004434e0((CLZWCompress *)auStack_b4);
       local_24 = 0;
-      if (0 < g_INT_01480e28) {
+      if (0 < g_ImageBytesPerPixel) {
         local_54[0] = '\0';
         local_54[1] = '\0';
         local_54[2] = '\0';
         local_54[3] = '\0';
         local_5c.file = (_FILE *)0xfffed400;
         do {
-          core_dcamera_cpp_updateFogScrollOffset_FUN_0044ca20(&g_SFogGrid_01480e2c,local_24,0);
+          core_dcamera_cpp_updateFogScrollOffset_FUN_0044ca20(&g_CameraFogGrid,local_24,0);
           local_3c = 1;
           if (1 < unaff_ESI->display_height) {
             local_4c = 0x140;
@@ -110,7 +110,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
               end_pos = (CVector3i *)(&DAT_00857cd8 + local_48);
               iVar11 = 1;
               pcVar6 = g_SFogImagePlane_01342220.pixels[0] + local_4c;
-              piVar7 = (int *)((int)g_INT_ARRAY_00b36198 + local_50);
+              piVar7 = (int *)((int)g_PrecomputedDepthBuffer + local_50);
               if (1 < unaff_ESI->display_width) {
                 do {
                   if (*piVar7 == 0x7fffffff) {
@@ -118,7 +118,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
                   }
                   else {
                     uVar2 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044c840
-                                      (&g_SFogGrid_01480e2c,&CStack_74,end_pos,*piVar7);
+                                      (&g_CameraFogGrid,&CStack_74,end_pos,*piVar7);
                     uVar2 = uVar2 * 0xff >> 0xe;
                     if (0xff < uVar2) {
                       uVar2 = 0xff;
@@ -160,9 +160,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
                 acVar4 = local_44;
                 iVar8 = local_38;
                 do {
-                  uVar2 = (uint)(byte)g_CHAR_ARRAY_01354e20[(int)local_54 + local_38 + iVar12];
+                  uVar2 = (uint)(byte)g_CameraImageDecompressBuffer
+                                      [(int)local_54 + local_38 + iVar12];
                   if (0 < local_24) {
-                    uVar2 = uVar2 - (byte)g_CHAR_ARRAY_01354e20
+                    uVar2 = uVar2 - (byte)g_CameraImageDecompressBuffer
                                           [(int)&(local_5c.file)->_ptr + local_38 + iVar12];
                   }
                   iVar3 = ((int)uVar2 >> 2) - iVar11;
@@ -176,10 +177,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
                   iVar11 = iVar3 + iVar11;
                   cVar5 = (char)iVar11 * '\x04';
                   if (0 < local_24) {
-                    cVar5 = cVar5 + g_CHAR_ARRAY_01354e20
+                    cVar5 = cVar5 + g_CameraImageDecompressBuffer
                                     [(int)&(local_5c.file)->_ptr + local_38 + iVar12];
                   }
-                  g_CHAR_ARRAY_01354e20[(int)acVar4] = cVar5;
+                  g_CameraImageDecompressBuffer[(int)acVar4] = cVar5;
                   iVar8 = iVar8 + 1;
                   iVar12 = iVar12 + 1;
                   acVar4 = (char  [4])((int)acVar4 + 1);
@@ -213,7 +214,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
           local_54 = (char  [4])((int)local_54 + 0x12c00);
           local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);
           local_24 = local_24 + 1;
-        } while (local_24 < g_INT_01480e28);
+        } while (local_24 < g_ImageBytesPerPixel);
       }
       support_codec_cpp_CLZWCompress_finalize_FUN_00443630
                 ((CLZWCompress *)auStack_b4,&local_68.base);

@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005c4781 = 0.5
 ;   double g_DOUBLE_005c4789 = 1.33300000000000
-;   int g_INT_01d276b8
+;   int g_BloodSplatCount
 ;   undefined4 g_CBloodSplat_ARRAY_01d276bc[0].is_wall_splat
 ;   undefined4 g_CBloodSplat_ARRAY_01d276bc[1].position.x
 ;   undefined4 g_CBloodSplat_ARRAY_01d276bc[1].position.y
@@ -22,7 +22,7 @@
 ;   undefined4 g_CBloodSplat_ARRAY_01d276bc[1].area_id
 ;   undefined4 g_CBloodSplat_ARRAY_01d276bc[1].is_wall_splat
 ;   undefined4 g_CBloodSplat_ARRAY_01d276bc[1].blood_type
-;   int g_INT_01d4a940
+;   int g_BloodPoolCount
 ;   undefined4 g_CBloodPool_ARRAY_01d4a944[0].area_id
 ;   undefined4 g_CBloodPool_ARRAY_01d4a944[1].position.x
 ;   undefined4 g_CBloodPool_ARRAY_01d4a944[1].position.y
@@ -41,7 +41,7 @@ section .text
     MOV EBP,ESP                         ; 004ceef4
     AND ESP,0xfffffff8                  ; 004ceef6
     MOV ECX,dword ptr [EBP + 0x18]      ; 004ceef9
-    MOV EDX,dword ptr [0x01d4a940]      ; 004ceefc | g_INT_01d4a940
+    MOV EDX,dword ptr [0x01d4a940]      ; 004ceefc | g_BloodPoolCount
     XOR EBX,EBX                         ; 004cef02
     TEST EDX,EDX                        ; 004cef04
     JLE 0x004cef30                      ; 004cef06
@@ -54,14 +54,14 @@ section .text
     CMP EDI,dword ptr [EDX + 0x14]      ; 004cef1d | g_CBloodPool_ARRAY_01d4a944[0].area_id | g_CBloodPool_ARRAY_01d4a944[1].area_id
     JZ 0x004cef65                       ; 004cef20
         ;   XREF to: 004cef65 (CONDITIONAL_JUMP)  ; LAB_004cef65
-    MOV EDI,dword ptr [0x01d4a940]      ; 004cef22 | g_INT_01d4a940
+    MOV EDI,dword ptr [0x01d4a940]      ; 004cef22 | g_BloodPoolCount
         ;   Label: LAB_004cef22
     INC EBX                             ; 004cef28
     ADD EDX,0x2c                        ; 004cef29
     CMP EBX,EDI                         ; 004cef2c
     JL 0x004cef1a                       ; 004cef2e
         ;   XREF to: 004cef1a (CONDITIONAL_JUMP)  ; LAB_004cef1a
-    MOV EAX,[0x01d276b8]                ; 004cef30 | g_INT_01d276b8
+    MOV EAX,[0x01d276b8]                ; 004cef30 | g_BloodSplatCount
         ;   Label: LAB_004cef30
     XOR EBX,EBX                         ; 004cef35
     TEST EAX,EAX                        ; 004cef37
@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_004cef49
     JZ 0x004cefac                       ; 004cef4d
         ;   XREF to: 004cefac (CONDITIONAL_JUMP)  ; LAB_004cefac
-    MOV EAX,[0x01d276b8]                ; 004cef4f | g_INT_01d276b8
+    MOV EAX,[0x01d276b8]                ; 004cef4f | g_BloodSplatCount
         ;   Label: LAB_004cef4f
     INC EBX                             ; 004cef54
     ADD EDX,0x48                        ; 004cef55

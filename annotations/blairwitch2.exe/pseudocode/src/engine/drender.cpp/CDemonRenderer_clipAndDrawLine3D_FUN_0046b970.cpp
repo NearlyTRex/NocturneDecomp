@@ -19,7 +19,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970(CD
   SRenderVertex SStack_40;
   
   bVar5 = 0;
-  g_INT_01c35e60 = g_INT_0070ca5c;
+  g_INT_01c35e60 = g_CurrentPolygonColor;
   pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index1;
   pSVar4 = &SStack_40;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

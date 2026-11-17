@@ -11,5 +11,5 @@
 // =============================================================================
 
 // SRenderBufferEntry*[2500]
-extern SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007be960[2500];
+extern SRenderBufferEntry* g_RenderBufferSortArray[2500];
 

@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ExitFromPuzzle_005ef58c
 ;   double g_DOUBLE_005ef59c = 10
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
-;   int g_INT_01c2a37c
-;   int g_INT_01c2a380
+;   CEventList* g_CEventListPtr = 01c38bc0
+;   CKeys* g_CKeysPtr = 01d02f84
+;   int g_MouseX
+;   int g_MouseY
 ;   void* g_PTR_01d02f84
 ;   int g_INT_026677e4
 ;
@@ -57,9 +57,9 @@ section .text
     CMP dword ptr [0x026677e4],-0x1     ; 0059b5ec | g_INT_026677e4
     JNZ 0x0059b5ff                      ; 0059b5f3
         ;   XREF to: 0059b5ff (CONDITIONAL_JUMP)  ; LAB_0059b5ff
-    MOV EAX,[0x01c2a37c]                ; 0059b5f5 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 0059b5f5 | g_MouseX
     MOV [0x026677e4],EAX                ; 0059b5fa | g_INT_026677e4
-    MOV EAX,[0x01c2a37c]                ; 0059b5ff | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 0059b5ff | g_MouseX
         ;   Label: LAB_0059b5ff
     MOV EDI,dword ptr [0x026677e4]      ; 0059b604 | g_INT_026677e4
     SUB EAX,EDI                         ; 0059b60a
@@ -160,7 +160,7 @@ section .text
     RET                                 ; 0059b700
     PUSH 0x5ef58c                       ; 0059b701 | = "ExitFromPuzzle"
         ;   Label: LAB_0059b701
-    MOV ECX,dword ptr [0x006141f0]      ; 0059b706 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0059b706 | g_CEventListPtr
     PUSH ECX                            ; 0059b70c
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0059b70d
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -170,7 +170,7 @@ section .text
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70 ; 0059b718
         ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 0059b71d
-    MOV EAX,[0x00617dd4]                ; 0059b720 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0059b720 | g_CKeysPtr
     PUSH 0x200                          ; 0059b725
     MOV EDX,dword ptr [EAX]             ; 0059b72a | g_PTR_01d02f84
     PUSH EAX                            ; 0059b72c | g_PTR_01d02f84
@@ -178,10 +178,10 @@ section .text
     ADD ESP,0x8                         ; 0059b730
     JMP 0x0059b5b5                      ; 0059b733
         ;   XREF to: 0059b5b5 (UNCONDITIONAL_JUMP)  ; LAB_0059b5b5
-    MOV ECX,dword ptr [0x01c2a380]      ; 0059b738 | g_INT_01c2a380
+    MOV ECX,dword ptr [0x01c2a380]      ; 0059b738 | g_MouseY
         ;   Label: LAB_0059b738
     PUSH ECX                            ; 0059b73e
-    MOV ESI,dword ptr [0x01c2a37c]      ; 0059b73f | g_INT_01c2a37c
+    MOV ESI,dword ptr [0x01c2a37c]      ; 0059b73f | g_MouseX
     PUSH ESI                            ; 0059b745
     MOV EAX,dword ptr [EBX]             ; 0059b746
     PUSH EBX                            ; 0059b748

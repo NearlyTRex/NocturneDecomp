@@ -1782,12 +1782,12 @@ CDemonActor_vtable g_CWayPointVTable = {
 };
 
 // CDemonFilter*[4]
-CDemonFilter* g_PlayerFilters[4] = {(CDemonFilter*)&CDemonFilter_ARRAY_020a4878, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[1].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[2].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[3].size};
+CDemonFilter* g_PlayerFilters[4] = {(CDemonFilter*)&g_PlayerFilterPool, (CDemonFilter*)&g_PlayerFilterPool[1].size, (CDemonFilter*)&g_PlayerFilterPool[2].size, (CDemonFilter*)&g_PlayerFilterPool[3].size};
 
 // CDemonFilter*[8]
 CDemonFilter* g_GlobalFilters[8] = {
-    (CDemonFilter*)&CDemonFilter_ARRAY_020a4878, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[1].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[2].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[3].size,
-    (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[4].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[5].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[6].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[7].size
+    (CDemonFilter*)&g_PlayerFilterPool, (CDemonFilter*)&g_PlayerFilterPool[1].size, (CDemonFilter*)&g_PlayerFilterPool[2].size, (CDemonFilter*)&g_PlayerFilterPool[3].size,
+    (CDemonFilter*)&g_PlayerFilterPool[4].size, (CDemonFilter*)&g_PlayerFilterPool[5].size, (CDemonFilter*)&g_PlayerFilterPool[6].size, (CDemonFilter*)&g_PlayerFilterPool[7].size
 };
 
 // CDemonPod_vtable
@@ -3282,7 +3282,7 @@ CKeys_vtable g_CKeysVTable = {
 };
 
 // CMatrix3x4f
-CMatrix3x4f CMatrix3x4f_00665968 = {
+CMatrix3x4f g_IdentityMatrix3x4 = {
     .m = {{
         .w = 1.0f,
         .x = 0.0f,
@@ -3548,7 +3548,7 @@ CPoly_vtable g_CPolyVTable = {
 };
 
 // CQuaternion4f
-CQuaternion4f CQuaternion4f_00665998 = {
+CQuaternion4f g_IdentityQuaternion = {
     .w = 1.0f,
     .x = 0.0f,
     .y = 0.0f,
@@ -6423,15 +6423,15 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic SMRGLTextureBasic_0066e158 = {
+SMRGLTextureBasic g_BoundingBoxTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0066e460 = {
+SMRGLTextureBasic g_BaronBlueGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLUEGLOW.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0066e784 = {
+SMRGLTextureBasic g_BurnCharTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "CHAR2.RAW"
 };
@@ -6445,7 +6445,7 @@ SMRGLTextureBasic g_CoronaHeadliteTexture = {
 };
 
 // SMRGLTextureBasic[6]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6] = {
+SMRGLTextureBasic g_EtherealBoltTextures[6] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BOLT1.RAW"
@@ -6797,7 +6797,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0066e5cc = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065b180,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CDemonFilter_ARRAY_008229ec
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomStaticDestructorNode g_CDeformableModelInstanceDestructorNode = {
     .next = nullptr,
@@ -6821,7 +6821,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef5c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065c830,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CDemonFilter_ARRAY_020a4878
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef6c = {
     .next = nullptr,

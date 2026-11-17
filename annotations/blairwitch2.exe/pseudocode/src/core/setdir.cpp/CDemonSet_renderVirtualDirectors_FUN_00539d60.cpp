@@ -29,7 +29,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60(CDemo
   if (0 < this_ptr->camera_count) {
     iVar5 = 0;
     do {
-      *(int *)((int)g_INT_ARRAY_020b1524 + iVar5) = iVar3;
+      *(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + 4;
     } while (iVar3 < this_ptr->camera_count);
@@ -40,12 +40,12 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60(CDemo
     if (iVar5 < this_ptr->camera_count) {
       iVar4 = iVar5 * 4;
       do {
-        if (g_FLOAT_ARRAY_0209394c[*(int *)((int)g_INT_ARRAY_020b1524 + local_28)] <
-            g_FLOAT_ARRAY_0209394c[*(int *)((int)g_INT_ARRAY_020b1524 + iVar4)]) {
-          uVar1 = *(uint *)((int)g_INT_ARRAY_020b1524 + local_28);
-          *(uint *)((int)g_INT_ARRAY_020b1524 + local_28) =
-               *(uint *)((int)g_INT_ARRAY_020b1524 + iVar4);
-          *(uint *)((int)g_INT_ARRAY_020b1524 + iVar4) = uVar1;
+        if (g_FLOAT_ARRAY_0209394c[*(int *)((int)g_VDCameraSortIndices + local_28)] <
+            g_FLOAT_ARRAY_0209394c[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {
+          uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);
+          *(uint *)((int)g_VDCameraSortIndices + local_28) =
+               *(uint *)((int)g_VDCameraSortIndices + iVar4);
+          *(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;
         }
         iVar5 = iVar5 + 1;
         iVar4 = iVar4 + 4;
@@ -66,7 +66,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60(CDemo
     local_1c = 0;
     local_24 = g_INT_006141bc + -0x18;
     do {
-      iVar4 = *(int *)((int)g_INT_ARRAY_020b1524 + local_1c);
+      iVar4 = *(int *)((int)g_VDCameraSortIndices + local_1c);
       local_18 = g_CZThumbPool + iVar4 * 6;
       local_2c = iVar3;
       local_14 = iVar4;

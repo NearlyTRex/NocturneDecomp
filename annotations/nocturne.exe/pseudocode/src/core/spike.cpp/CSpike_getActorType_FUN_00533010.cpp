@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_spike_cpp_CSpike_getActorType_FUN_00533010(CSpike *this_ptr)
 
 {
-  return &g_CSpikeActorType_02dc9e28;
+  return &g_CSpikeClassInfo;
 }

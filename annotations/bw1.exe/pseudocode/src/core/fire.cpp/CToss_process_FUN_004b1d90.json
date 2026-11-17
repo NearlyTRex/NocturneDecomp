@@ -73,7 +73,7 @@
   "globals": [
     {
       "addr": "0061c010",
-      "name": "g_CFireEffect_PTR_0061c010",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c57074"
     },
@@ -91,19 +91,19 @@
     },
     {
       "addr": "02c8af28",
-      "name": "g_CVector3f_02c8af28",
+      "name": "g_ZeroVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02c8af2c",
-      "name": "g_CVector3f_02c8af28.y",
+      "name": "g_ZeroVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c8af30",
-      "name": "g_CVector3f_02c8af28.z",
+      "name": "g_ZeroVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -340,11 +340,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_02c8af28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ZeroVector` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 34,
-      "match": "(int)&g_CVector3f_02c8af28",
+      "match": "(int)&g_ZeroVector",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3f_02c8af28 + (uint)bVar3 * -8 + 4);",
+      "text": "*(uint *)((int)&g_ZeroVector + (uint)bVar3 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -424,7 +424,7 @@
       "line": 34,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3f_02c8af28 + (uint)bVar3 * -8 + 4);",
+      "text": "*(uint *)((int)&g_ZeroVector + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

@@ -19,7 +19,7 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList 
     iVar2 = _stricmp(condition_expression,"none");
     iVar1 = 0;
     if (iVar2 != 0) {
-      g_INT_01c3dd0c = 0;
+      g_EventDryRun = 0;
       iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_0048e420
                         (this_ptr,condition_expression);
       if (iVar1 < 0) {

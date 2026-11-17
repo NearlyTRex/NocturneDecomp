@@ -18,8 +18,8 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(int channel_index,f
     g_INT_01d71de4 = 0x1116;
     core_main_c_displayErrorAndQuit_FUN_004e4330("setSfxChannelVol - invalid channel index: %d");
   }
-  pCVar1 = g_CSoundDevice_PTR_02cf3280;
-  g_FLOAT_ARRAY_02cf28c0[channel_index] = volume;
+  pCVar1 = g_CSoundDevicePtr;
+  g_SfxChannelVolumes[channel_index] = volume;
   if (pCVar1 != (CSoundDevice *)0x0) {
     uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
     if (0 < (int)uVar2) {

@@ -31,18 +31,18 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00484f20(CEdButton *this_ptr
             (this_ptr->left,g_INT_01c35e4c,this_ptr->right,this_ptr->bottom,this_ptr->button_state);
   pcVar7 = this_ptr->button_text;
   g_INT_01c35e4c = iVar2;
-  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_CBitFont_PTR_01c25590,pcVar7);
-  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(g_CBitFont_PTR_01c25590,pcVar7);
-  iVar4 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004ab590(g_CBitFont_PTR_01c25590,0x41);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_EditorFont,pcVar7);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(g_EditorFont,pcVar7);
+  iVar4 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004ab590(g_EditorFont,0x41);
   iVar2 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar2) / 2;
   local_14 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2;
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-            (g_CBitFont_PTR_01c25590,pcVar7,iVar2,local_14,g_INT_01c263f8,-1);
+            (g_EditorFont,pcVar7,iVar2,local_14,g_UITextColor,-1);
   if (g_INT_01c25f84 == 0) {
-    g_INT_01c35e60 = g_INT_01c263f8;
+    g_INT_01c35e60 = g_UITextColor;
   }
   else {
-    iVar3 = (g_INT_01c263f8 & 0xffU) * 3;
+    iVar3 = (g_UITextColor & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f8e20
               ((uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2] |
                (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << 8 |
@@ -105,20 +105,19 @@ LAB_004850e7:
     pbVar11 = pbVar11 + 2;
   } while (cVar1 != '\0');
   *pcVar7 = '\0';
-  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00
-                    (g_CBitFont_PTR_01c25590,(char *)local_dc);
-  uVar5 = iVar3 + g_CBitFont_PTR_01c25590->char_spacing;
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_EditorFont,(char *)local_dc);
+  uVar5 = iVar3 + g_EditorFont->char_spacing;
   bVar12 = this_ptr->button_text[0];
   uVar6 = toupper((uint)(byte)this_ptr->shortcut_key);
   if (uVar6 == bVar12) {
     uVar5 = uVar6 ^ bVar12;
   }
   iVar2 = iVar2 + uVar5;
-  iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x41);
+  iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x41);
   local_14 = local_14 + iVar3 + 1;
-  iVar3 = g_INT_01c263f8;
+  iVar3 = g_UITextColor;
   if (g_INT_01c25f84 != 0) {
-    iVar3 = (g_INT_01c263f8 & 0xffU) * 3;
+    iVar3 = (g_UITextColor & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f8e20
               ((uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2] |
                (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << 8 |
@@ -127,7 +126,7 @@ LAB_004850e7:
   }
   g_INT_01c35e60 = iVar3;
   iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004ab530
-                    (g_CBitFont_PTR_01c25590,(uint)(byte)this_ptr->shortcut_key);
+                    (g_EditorFont,(uint)(byte)this_ptr->shortcut_key);
   iVar3 = iVar3 + iVar2 + -1;
   if (g_INT_01c25f84 == 0) {
     engine_2d_c_drawHLine_FUN_00402f30(iVar2,local_14,iVar3);

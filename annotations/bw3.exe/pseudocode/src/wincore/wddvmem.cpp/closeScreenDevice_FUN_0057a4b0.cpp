@@ -19,7 +19,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0(void)
   
   if (g_INT_02d0bcfc == 0) {
     if (g_INT_01c6cee8 != 0) {
-      g_INT_02d0bcf4 = 1;
+      g_FlipPending = 1;
       return;
     }
     if (0 < g_INT_005fba1c) {
@@ -30,22 +30,21 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0(void)
       iVar4 = 0;
       iVar2 = 0;
       do {
-        *(byte **)((int)g_ARRAY_PTR_01c5faec + iVar2) =
+        *(byte **)((int)g_ScreenBufferArray + iVar2) =
              g_PTR_0060b010 + g_INT_005fba18 * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3);
         iVar4 = iVar4 + 1;
-        *(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar2) = g_PTR_0072ffac + iVar6;
+        *(byte **)((int)g_ZBufferScanlineArray + iVar2) = g_SoftwareZBuffer + iVar6;
         iVar6 = iVar6 + iVar7;
         iVar2 = iVar2 + 4;
       } while (iVar4 < g_INT_005fba1c);
     }
-    HVar3 = (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Unlock)
-                      (g_IDirectDrawSurface_PTR_02d0bce8,(void *)0x0);
+    HVar3 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
     if (HVar3 != 0) {
       g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
       g_INT_01d71de4 = 0x28f;
       core_main_c_displayErrorAndQuit_FUN_004e4330("closeScreenDevice - Unable to unlock");
     }
-    g_INT_02d0bcf4 = 1;
+    g_FlipPending = 1;
   }
   return;
 }

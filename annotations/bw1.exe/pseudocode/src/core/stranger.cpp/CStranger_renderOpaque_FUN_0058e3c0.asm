@@ -11,7 +11,7 @@
 ;   double g_DOUBLE_005f6eb9 = 0.990000000000000
 ;   double g_DOUBLE_005f6ec1 = 0.950000000000000
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CDemonSet g_CDemonSetInstance
@@ -182,7 +182,7 @@ section .text
     PUSH EAX                            ; 0058e517
     MOV EAX,dword ptr [EBP + 0x76]      ; 0058e518
     PUSH EAX                            ; 0058e51b
-    MOV EDX,dword ptr [0x0061c010]      ; 0058e51c | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 0058e51c | g_CFireEffectPtr
     PUSH EDX                            ; 0058e522
     CALL core_fire.cpp_CFireEffect_createLaserPath_FUN_004b6140 ; 0058e523
         ;   XREF to: 004b6140 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserPath_FUN_004b6140(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * velocity, float beam_width, ...)

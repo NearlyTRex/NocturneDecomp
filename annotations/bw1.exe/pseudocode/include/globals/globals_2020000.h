@@ -15,22 +15,22 @@
 // =============================================================================
 
 // C3DSLight*[200]
-extern C3DSLight* g_C3DSLight_PTR_ARRAY_0202a520[200];
+extern C3DSLight* g_VisibleOmniLights[200];
 
 // CDemonActor*[2000]
-extern CDemonActor* g_CDemonActor_PTR_ARRAY_020282b0[2000];
+extern CDemonActor* g_ActorProfileActors[2000];
 
 // CDemonLight*[4]
-extern CDemonLight* g_CDemonLight_PTR_ARRAY_0202a378[4];
+extern CDemonLight* g_PrimaryDirectionalLights[4];
 
 // CDemonLight*[96]
 extern CDemonLight* g_CDemonLight_PTR_ARRAY_0202a1f4[96];
 
 // CMatrix3x3f
-extern CMatrix3x3f g_CMatrix3x3f_0202a874;
+extern CMatrix3x3f g_LightingRotationMatrix;
 
 // CVector3f[4000]
-extern CVector3f g_CVector3f_ARRAY_0202a8a8[4000];
+extern CVector3f g_FaceNormalArray[4000];
 
 // float
 extern float g_FLOAT_0202a844;
@@ -43,20 +43,20 @@ extern float g_FLOAT_0202a868;
 extern float g_FLOAT_0202a870;
 
 // int
-extern int g_INT_02026344;
+extern int g_InMirrorRenderPass;
 extern int g_INT_02026348;
 extern int g_INT_02026358;
 extern int g_INT_0202636c;
-extern int g_INT_0202a1f0;
-extern int g_INT_0202a374;
+extern int g_SecondaryDirectionalLightCount;
+extern int g_PrimaryDirectionalLightCount;
 extern int g_INT_0202a388;
 extern int g_INT_0202a38c;
-extern int g_INT_0202a51c;
-extern int g_INT_0202a840;
-extern int g_INT_0202a89c;
-extern int g_INT_0202a8a0;
-extern int g_INT_0202a8a4;
+extern int g_ColorCorrectionCount;
+extern int g_LightingSystemDirty;
+extern int g_ColorCorrectionLightMultiplier;
+extern int g_ColorCorrectionColorMultiplier;
+extern int g_ColorCorrectionFogMultiplier;
 
 // int[2000]
-extern int g_INT_ARRAY_02026370[2000];
+extern int g_ActorProfileTimes[2000];
 

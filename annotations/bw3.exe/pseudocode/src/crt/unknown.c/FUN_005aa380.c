@@ -12,8 +12,8 @@ DWORD FUN_005aa380(uint param_1)
   HANDLE hFile;
   DWORD DVar1;
   
-  if ((-1 < (int)param_1) && (param_1 <= g_UINT_00607b84)) {
-    hFile = g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1];
+  if ((-1 < (int)param_1) && (param_1 <= g_MaxHandleCount)) {
+    hFile = g_IOControlBlock->standard_handles[param_1];
     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(param_1);
     DVar1 = SetFilePointer(hFile,0,(PLONG)0x0,1);
     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);

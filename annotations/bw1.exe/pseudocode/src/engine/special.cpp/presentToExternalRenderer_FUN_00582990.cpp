@@ -24,7 +24,7 @@ void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_00582990(int skip_
     return;
   }
   if ((skip_buffer_copy == 0) && (g_INT_02c834d0 == 0)) {
-    ppuVar5 = g_ARRAY_PTR_01c4354c;
+    ppuVar5 = g_ScreenBufferArray;
     puVar6 = local_12c4;
     for (iVar2 = 0x4b0; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar6 = *ppuVar5;
@@ -45,7 +45,7 @@ void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_00582990(int skip_
       iVar2 = 0;
       do {
         puVar6 = *(uint **)((int)local_12c4 + iVar4);
-        puVar7 = *(uint **)((int)g_ARRAY_PTR_01c4354c + iVar4);
+        puVar7 = *(uint **)((int)g_ScreenBufferArray + iVar4);
         for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *puVar7 = *puVar6;
           puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
@@ -64,6 +64,6 @@ void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_00582990(int skip_
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005acc00();
   }
   g_INT_02c834d0 = 0;
-  (*(code *)g_PTR_02c83390)();
+  (*(code *)g_APIDLL_toggle)();
   return;
 }

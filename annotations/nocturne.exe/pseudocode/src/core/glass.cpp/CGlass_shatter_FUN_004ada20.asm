@@ -274,7 +274,7 @@ section .text
     PUSH EAX                            ; 004adcc0
     PUSH EBX                            ; 004adcc1
     CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 ; 004adcc2
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * quad_vertices, int * quad_uv_u, int * quad_uv_v, ...)
     ADD ESP,0x14                        ; 004adcc7
     PUSH 0x585053                       ; 004adcca | = "glass-1.wav@2.0"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004adccf

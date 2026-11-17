@@ -38,9 +38,9 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(CNetGame *t
                     (this_ptr_00,&this_ptr->players[this_ptr->local_player_index].addr);
   if (iVar1 != 0) {
     core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(this_ptr);
-    g_UINT_01cea3f8 = 1;
+    g_CurrentGameTime = 1;
     iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
-    g_INT_01cea3f4 = iVar1 / 0x12;
+    g_LastPingTime = iVar1 / 0x12;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
               (g_CEditorToolsPtr,"Initializing network...OK");
     return 1;

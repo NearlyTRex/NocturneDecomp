@@ -38,13 +38,13 @@
   "globals": [
     {
       "addr": "006267e0",
-      "name": "g_UINT_006267e0",
+      "name": "g_MaxHandleCount",
       "type": "uint",
       "value": "0x14"
     },
     {
       "addr": "00626838",
-      "name": "g_SIOControlBlock_PTR_00626838",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     },
@@ -140,9 +140,9 @@
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(int *)((int)g_SIOControlBlock_PTR_00626838",
+      "match": "(int *)((int)g_IOControlBlock",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_SIOControlBlock_PTR_00626838->standard_handles + iVar2) == 0) {",
+      "text": "if (*(int *)((int)g_IOControlBlock->standard_handles + iVar2) == 0) {",
       "type": "pointer_cast"
     }
   ]

@@ -30,7 +30,7 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0056ccc0(CSmiley *thi
     return 1;
   }
   core_xform_cpp_transformVector3x4_FUN_005b5080
-            (&g_CVector3f_02c8af28,
+            (&g_ZeroVector,
              (this_ptr->base).base.model.bone_transform.bone_model_matrices +
              g_INT_ARRAY_02c5fcd8[2],&CStack_14);
   pCVar3 = &CStack_2c;

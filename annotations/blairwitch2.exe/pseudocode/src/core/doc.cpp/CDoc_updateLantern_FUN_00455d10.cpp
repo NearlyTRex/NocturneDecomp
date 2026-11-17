@@ -194,7 +194,7 @@ LAB_00455d67:
   puVar4[(uint)bVar9 * -2 + 1] = puVar3[(uint)bVar9 * -2 + 1];
   core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(quat1_inout,pCVar2);
   core_xform_cpp_slerpQuaternion_FUN_00593df0
-            (&g_CQuaternion4f_005fe2f0,&local_230,this_ptr->lantern_tween_pct,&local_b0);
+            (&g_IdentityQuaternion,&local_230,this_ptr->lantern_tween_pct,&local_b0);
   local_230.w = local_b0.w;
   puVar4 = (uint *)((int)&local_230 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
   puVar3 = (uint *)((int)&local_b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);

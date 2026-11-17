@@ -39,19 +39,19 @@
   "globals": [
     {
       "addr": "0061f758",
-      "name": "g_UINT_0061f758",
+      "name": "g_CodePage",
       "type": "uint",
       "value": "0x1"
     },
     {
       "addr": "0061f889",
-      "name": "g_CHAR_ARRAY_0061f889",
+      "name": "g_ShiftJIS_TrailByteTable",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "026807f0",
-      "name": "g_INT_026807f0",
+      "name": "g_MultibyteLocaleActive",
       "type": "int",
       "value": null
     }
@@ -148,7 +148,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "return g_CHAR_ARRAY_0061f889[param_1 & 0xff] & 8;",
+      "text": "return g_ShiftJIS_TrailByteTable[param_1 & 0xff] & 8;",
       "type": "unnamed_param"
     },
     {

@@ -5,15 +5,15 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_0061e980 = 0x8
-;   int g_INT_01c2a37c
-;   int g_INT_01c2a380
+;   int g_BrightnessDirection = 0x8
+;   int g_MouseX
+;   int g_MouseY
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;   int g_INT_01c35e60
-;   int g_INT_02662de8
+;   int g_CrosshairBrightness
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -27,11 +27,11 @@ section .text
     PUSH ESI                            ; 0058ec11
     PUSH EDI                            ; 0058ec12
     PUSH EBP                            ; 0058ec13
-    MOV EAX,[0x0061e980]                ; 0058ec14 | g_INT_0061e980
-    MOV EDX,dword ptr [0x02662de8]      ; 0058ec19 | g_INT_02662de8
+    MOV EAX,[0x0061e980]                ; 0058ec14 | g_BrightnessDirection
+    MOV EDX,dword ptr [0x02662de8]      ; 0058ec19 | g_CrosshairBrightness
     ADD EDX,EAX                         ; 0058ec1f
-    MOV ESI,dword ptr [0x01c2a37c]      ; 0058ec21 | g_INT_01c2a37c
-    MOV dword ptr [0x02662de8],EDX      ; 0058ec27 | g_INT_02662de8
+    MOV ESI,dword ptr [0x01c2a37c]      ; 0058ec21 | g_MouseX
+    MOV dword ptr [0x02662de8],EDX      ; 0058ec27 | g_CrosshairBrightness
     CMP EDX,0xff                        ; 0058ec2d
     JG 0x0058ec7f                       ; 0058ec33
         ;   XREF to: 0058ec7f (CONDITIONAL_JUMP)  ; LAB_0058ec7f
@@ -42,7 +42,7 @@ section .text
         ;   Label: LAB_0058ec39
     MOV EBX,0xfffffffb                  ; 0058ec3e
     MOV dword ptr [0x01c35e60],ECX      ; 0058ec43 | g_INT_01c35e60
-    MOV EAX,[0x01c2a380]                ; 0058ec49 | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 0058ec49 | g_MouseY
         ;   Label: LAB_0058ec49
     MOV EDI,dword ptr [0x01c35e48]      ; 0058ec4e | g_INT_01c35e48
     ADD EAX,EBX                         ; 0058ec54
@@ -58,7 +58,7 @@ section .text
     ADD ESI,0x6                         ; 0058ec63
     MOV EDI,dword ptr [0x01c35e48]      ; 0058ec66 | g_INT_01c35e48
         ;   Label: LAB_0058ec66
-    MOV EAX,[0x01c2a380]                ; 0058ec6c | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 0058ec6c | g_MouseY
     CMP EBX,EDI                         ; 0058ec71
     JG 0x0058eccf                       ; 0058ec73
         ;   XREF to: 0058eccf (CONDITIONAL_JUMP)  ; LAB_0058eccf
@@ -75,22 +75,22 @@ section .text
     MOV EDX,0xfffffff8                  ; 0058ec7f
         ;   Label: LAB_0058ec7f
     MOV EAX,0xff                        ; 0058ec84
-    MOV dword ptr [0x0061e980],EDX      ; 0058ec89 | g_INT_0061e980
-    MOV [0x02662de8],EAX                ; 0058ec8f | g_INT_02662de8
+    MOV dword ptr [0x0061e980],EDX      ; 0058ec89 | g_BrightnessDirection
+    MOV [0x02662de8],EAX                ; 0058ec8f | g_CrosshairBrightness
     JMP 0x0058ec39                      ; 0058ec94
         ;   XREF to: 0058ec39 (UNCONDITIONAL_JUMP)  ; LAB_0058ec39
     MOV EBP,0x8                         ; 0058ec96
         ;   Label: LAB_0058ec96
     XOR EDI,EDI                         ; 0058ec9b
-    MOV dword ptr [0x0061e980],EBP      ; 0058ec9d | g_INT_0061e980
-    MOV dword ptr [0x02662de8],EDI      ; 0058eca3 | g_INT_02662de8
+    MOV dword ptr [0x0061e980],EBP      ; 0058ec9d | g_BrightnessDirection
+    MOV dword ptr [0x02662de8],EDI      ; 0058eca3 | g_CrosshairBrightness
     JMP 0x0058ec39                      ; 0058eca9
         ;   XREF to: 0058ec39 (UNCONDITIONAL_JUMP)  ; LAB_0058ec39
     CMP EAX,dword ptr [0x01c35e4c]      ; 0058ecab | g_INT_01c35e4c
         ;   Label: LAB_0058ecab
     JLE 0x0058ec5a                      ; 0058ecb1
         ;   XREF to: 0058ec5a (CONDITIONAL_JUMP)  ; LAB_0058ec5a
-    CMP ESI,dword ptr [0x01c35e50]      ; 0058ecb3 | g_INT_01c35e50
+    CMP ESI,dword ptr [0x01c35e50]      ; 0058ecb3 | g_ClipRight
     JGE 0x0058ec5a                      ; 0058ecb9
         ;   XREF to: 0058ec5a (CONDITIONAL_JUMP)  ; LAB_0058ec5a
     CMP EAX,dword ptr [0x01c35e54]      ; 0058ecbb | g_INT_01c35e54
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_0058eccf
     JLE 0x0058ec75                      ; 0058ecd5
         ;   XREF to: 0058ec75 (CONDITIONAL_JUMP)  ; LAB_0058ec75
-    CMP EBX,dword ptr [0x01c35e50]      ; 0058ecd7 | g_INT_01c35e50
+    CMP EBX,dword ptr [0x01c35e50]      ; 0058ecd7 | g_ClipRight
     JGE 0x0058ec75                      ; 0058ecdd
         ;   XREF to: 0058ec75 (CONDITIONAL_JUMP)  ; LAB_0058ec75
     CMP EAX,dword ptr [0x01c35e54]      ; 0058ecdf | g_INT_01c35e54

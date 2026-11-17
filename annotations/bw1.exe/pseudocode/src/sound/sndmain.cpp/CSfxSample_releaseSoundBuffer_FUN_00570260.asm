@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_unlockSample_FUN_005742c0 at 005742fd
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     TEST ECX,ECX                        ; 00570276
     JZ 0x00570284                       ; 00570278
         ;   XREF to: 00570284 (CONDITIONAL_JUMP)  ; LAB_00570284
-    MOV ESI,dword ptr [0x02c80650]      ; 0057027a | g_CSoundDevice_PTR_02c80650
+    MOV ESI,dword ptr [0x02c80650]      ; 0057027a | g_CSoundDevicePtr
     TEST ESI,ESI                        ; 00570280
     JNZ 0x0057029c                      ; 00570282
         ;   XREF to: 0057029c (CONDITIONAL_JUMP)  ; LAB_0057029c

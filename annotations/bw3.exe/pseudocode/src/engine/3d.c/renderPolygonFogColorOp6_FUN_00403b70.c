@@ -13,42 +13,42 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogColorOp6_FUN_00403b70(
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
-    if (g_INT_01c6b5c8 == 0) {
-      if (g_INT_01c6e2a0 == 0) {
+    if (g_AdvancedClippingEnabled == 0) {
+      if (g_MMXSupported == 0) {
         if (g_INT_005fba20 == 0x20) {
-          g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
         }
         else {
-          g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
         }
       }
       else if (g_INT_005fba20 == 0x20) {
-        g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
       }
       else {
-        g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
       }
-      g_BIT_INTEGER32_01c6e2b4.dword = 0x204;
-      g_INT_01c6e2b8 = 0;
+      g_RenderStateFlags.dword = (RENDER_FOG_COLOR | RENDER_COLOR_FROM_VERTEX);
+      g_VertexPreprocessMode = 0;
       engine_clipper_c_clipPolygonToViewport_FUN_0043bac0((prim->base).count,(int *)(prim + 1));
       return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
     }
-    if (g_INT_01c6e2a0 == 0) {
+    if (g_MMXSupported == 0) {
       if (g_INT_005fba20 == 0x20) {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
       }
       else {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
       }
     }
     else if (g_INT_005fba20 == 0x20) {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
     }
-    g_BIT_INTEGER32_01c6e2b4.dword = 4;
-    g_INT_01c6e2b8 = 0;
+    g_RenderStateFlags.dword = RENDER_FOG_COLOR;
+    g_VertexPreprocessMode = 0;
     engine_clipper_c_clipAndRasterize_FUN_0043a840((prim->base).count,(int *)(prim + 1));
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

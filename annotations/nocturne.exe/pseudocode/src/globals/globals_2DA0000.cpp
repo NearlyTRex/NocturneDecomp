@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CSmileyActorType_02da8aa4 = {};
+CDemonActorType g_CSmileyClassInfo = {};
 
 // CMP3Decoder
 CMP3Decoder g_CMP3DecoderInstance = {};

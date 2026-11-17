@@ -766,16 +766,16 @@ section .text
     POP EDI                             ; 004e9b85
         ;   Label: LAB_004e9b85
     INC EBX                             ; 004e9b86
-    IMUL EAX,dword ptr [0x01c5fad0],0x18 ; 004e9b87 | g_INT_01c5fad0
+    IMUL EAX,dword ptr [0x01c5fad0],0x18 ; 004e9b87 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004e9b87
-    MOV ECX,dword ptr [0x01d737e0]      ; 004e9b8e | g_INT_01d737e0
+    MOV ECX,dword ptr [0x01d737e0]      ; 004e9b8e | g_AudioVisualizationCounter
     ADD ECX,EAX                         ; 004e9b94
-    MOV dword ptr [0x01d737e0],ECX      ; 004e9b96 | g_INT_01d737e0
+    MOV dword ptr [0x01d737e0],ECX      ; 004e9b96 | g_AudioVisualizationCounter
     CMP ECX,0x80000                     ; 004e9b9c
     JL 0x004e9bb0                       ; 004e9ba2
         ;   XREF to: 004e9bb0 (CONDITIONAL_JUMP)  ; LAB_004e9bb0
     LEA EDI,[ECX + 0xfff80000]          ; 004e9ba4
-    MOV dword ptr [0x01d737e0],EDI      ; 004e9baa | g_INT_01d737e0
+    MOV dword ptr [0x01d737e0],EDI      ; 004e9baa | g_AudioVisualizationCounter
     PUSH 0x5c7883                       ; 004e9bb0 | = "Sound Options"
         ;   Label: LAB_004e9bb0
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004e9bb5
@@ -951,7 +951,7 @@ section .text
         ;   Label: LAB_004e9d5d
     PUSH 0x1                            ; 004e9d60
         ;   Label: default
-    MOV EAX,[0x00600284]                ; 004e9d62 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e9d62 | g_CKeysPtr
     PUSH EAX                            ; 004e9d67 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004e9d68 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004e9d6a

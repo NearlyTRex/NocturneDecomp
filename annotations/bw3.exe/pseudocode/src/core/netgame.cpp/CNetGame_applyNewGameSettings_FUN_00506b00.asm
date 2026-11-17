@@ -64,7 +64,7 @@
 ;   TerminatedCString s_CNetGame_applyNewGameSet_005cad25
 ;   TerminatedCString s_core_netgame_cpp_005cad71
 ;   TerminatedCString s_Hell_froze_005cad85
-;   int g_INT_00603454 = 0x1
+;   int g_NetLobbyStateChanged = 0x1
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -449,14 +449,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x154]     ; 00507025
     XOR EAX,EBP                         ; 0050702c
     PUSH EDX                            ; 0050702e
-    MOV [0x00603454],EAX                ; 0050702f | g_INT_00603454
+    MOV [0x00603454],EAX                ; 0050702f | g_NetLobbyStateChanged
     CALL crt_string.c__strcmp_FUN_005a3d00 ; 00507034
         ;   XREF to: 005a3d00 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005a3d00(char * str1, char * str2)
     ADD ESP,0x8                         ; 00507039
     TEST EAX,EAX                        ; 0050703c
     JZ 0x0050704a                       ; 0050703e
         ;   XREF to: 0050704a (CONDITIONAL_JUMP)  ; LAB_0050704a
-    MOV dword ptr [0x00603454],0x1      ; 00507040 | g_INT_00603454
+    MOV dword ptr [0x00603454],0x1      ; 00507040 | g_NetLobbyStateChanged
     IMUL EDX,EBX,0x28                   ; 0050704a
         ;   Label: LAB_0050704a
     MOV EAX,dword ptr [ESP + 0x14c]     ; 0050704d
@@ -464,7 +464,7 @@ section .text
     CMP EAX,dword ptr [ESP + EDX*0x1 + 0x85] ; 00507057
     JZ 0x005070e8                       ; 0050705e
         ;   XREF to: 005070e8 (CONDITIONAL_JUMP)  ; LAB_005070e8
-    MOV dword ptr [0x00603454],0x1      ; 00507064 | g_INT_00603454
+    MOV dword ptr [0x00603454],0x1      ; 00507064 | g_NetLobbyStateChanged
     MOV EAX,dword ptr [ESP + 0x17c]     ; 0050706e
         ;   Label: LAB_0050706e
     PUSH EAX                            ; 00507075
@@ -492,7 +492,7 @@ section .text
     MOV dword ptr [ESP + 0x148],EBX     ; 005070dc
     JMP 0x00506cfb                      ; 005070e3
         ;   XREF to: 00506cfb (UNCONDITIONAL_JUMP)  ; LAB_00506cfb
-    CMP dword ptr [0x00603454],0x0      ; 005070e8 | g_INT_00603454
+    CMP dword ptr [0x00603454],0x0      ; 005070e8 | g_NetLobbyStateChanged
         ;   Label: LAB_005070e8
     JNZ 0x0050706e                      ; 005070ef
         ;   XREF to: 0050706e (CONDITIONAL_JUMP)  ; LAB_0050706e

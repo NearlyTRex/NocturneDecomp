@@ -36,5 +36,5 @@ int g_INT_01cb5820 = {};
 int g_INT_01cb9e74 = {};
 int g_INT_01cba030 = {};
 int g_INT_01cbae44 = {};
-int g_INT_01cbc108 = {};
+int g_PopcornAllocIndex = {};
 

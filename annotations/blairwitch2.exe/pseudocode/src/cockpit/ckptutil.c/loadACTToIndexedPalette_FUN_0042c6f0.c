@@ -25,7 +25,7 @@ void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042c6f0(char *filen
     pbVar2 = pbVar4 + 2;
     pbVar4 = pbVar4 + 3;
     *in_stack_00000010 =
-         g_UCHAR_ARRAY_01c2c910
+         g_ColorCubeLookup
          [((int)(uint)*pbVar2 >> 3) +
           ((int)(uint)bVar3 >> 3) * 0x400 + ((int)(uint)*pbVar1 >> 3) * 0x20];
     in_stack_00000010 = in_stack_00000010 + 1;

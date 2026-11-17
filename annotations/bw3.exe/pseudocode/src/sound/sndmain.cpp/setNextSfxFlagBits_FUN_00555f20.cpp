@@ -9,7 +9,7 @@
 void __cdecl sound_sndmain_cpp_setNextSfxFlagBits_FUN_00555f20(uint flag_mask)
 
 {
-  g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].flags =
-       g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].flags | flag_mask;
+  g_CSfxOptions_ARRAY_02ceb920[g_SfxLastSlot].flags =
+       g_CSfxOptions_ARRAY_02ceb920[g_SfxLastSlot].flags | flag_mask;
   return;
 }

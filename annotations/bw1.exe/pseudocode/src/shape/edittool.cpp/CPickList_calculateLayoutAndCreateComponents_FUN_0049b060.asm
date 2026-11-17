@@ -32,12 +32,12 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3f538
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
-;   int g_INT_01c3f5cc
+;   int g_LastClickItemIndex
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -73,7 +73,7 @@ section .text
     PUSH 0x6a                           ; 0049b07c
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0049b07e
     PUSH EAX                            ; 0049b084
-    MOV dword ptr [0x01c3f538],EDX      ; 0049b085 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 0049b085 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049b08b
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049b090
@@ -453,7 +453,7 @@ section .text
     PUSH ESI                            ; 0049b565
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840 ; 0049b566
         ;   XREF to: 00496840 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
-    MOV EAX,[0x01c4f010]                ; 0049b56b | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 0049b56b | g_ClipRight
     SUB EAX,dword ptr [0x01c4f008]      ; 0049b570 | g_INT_01c4f008
     LEA EBP,[EAX + 0x1]                 ; 0049b576
     MOV EDX,dword ptr [0x01c4f00c]      ; 0049b579 | g_INT_01c4f00c
@@ -474,7 +474,7 @@ section .text
     SUB EDX,dword ptr [ESP + 0x144]     ; 0049b5bd
     SUB EDX,dword ptr [ESP + 0x138]     ; 0049b5c4
     PUSH EDX                            ; 0049b5cb
-    MOV EDX,dword ptr [0x01c4f010]      ; 0049b5cc | g_INT_01c4f010
+    MOV EDX,dword ptr [0x01c4f010]      ; 0049b5cc | g_ClipRight
     PUSH EDX                            ; 0049b5d2
     MOV ECX,dword ptr [0x01c4f00c]      ; 0049b5d3 | g_INT_01c4f00c
     PUSH ECX                            ; 0049b5d9
@@ -501,7 +501,7 @@ section .text
         ;   XREF to: 0049b66a (CONDITIONAL_JUMP)  ; LAB_0049b66a
     MOV ECX,dword ptr [ESP + 0x140]     ; 0049b61d
     MOV EDX,dword ptr [ESP + 0x164]     ; 0049b624
-    MOV EAX,[0x01c4f010]                ; 0049b62b | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 0049b62b | g_ClipRight
     ADD EDX,0x5c                        ; 0049b630
     INC EAX                             ; 0049b633
     PUSH EDX                            ; 0049b634
@@ -531,7 +531,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x144]     ; 0049b687
     PUSH EDX                            ; 0049b68e
     MOV EDX,dword ptr [ESP + 0x140]     ; 0049b68f
-    MOV EAX,[0x01c4f010]                ; 0049b696 | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 0049b696 | g_ClipRight
     ADD EDX,ECX                         ; 0049b69b
     INC EAX                             ; 0049b69d
     DEC EDX                             ; 0049b69e
@@ -604,7 +604,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x164]     ; 0049b79b
     MOV EBX,0xffffffff                  ; 0049b7a2
     MOV byte ptr [EAX + 0x124],0x0      ; 0049b7a7
-    MOV dword ptr [0x01c3f5cc],EBX      ; 0049b7ae | g_INT_01c3f5cc
+    MOV dword ptr [0x01c3f5cc],EBX      ; 0049b7ae | g_LastClickItemIndex
     MOV dword ptr [EAX + 0x188],0x0     ; 0049b7b4
     ADD ESP,0x150                       ; 0049b7be
     POP EBP                             ; 0049b7c4
@@ -631,7 +631,7 @@ section .text
     MOV EDX,dword ptr [0x01c4f014]      ; 0049b7f8 | g_INT_01c4f014
     SUB EDX,EBX                         ; 0049b7fe
     PUSH EDX                            ; 0049b800
-    MOV ECX,dword ptr [0x01c4f010]      ; 0049b801 | g_INT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 0049b801 | g_ClipRight
     MOV EDX,dword ptr [0x01c4f014]      ; 0049b807 | g_INT_01c4f014
     PUSH ECX                            ; 0049b80d
     SUB EDX,dword ptr [ESP + 0x13c]     ; 0049b80e

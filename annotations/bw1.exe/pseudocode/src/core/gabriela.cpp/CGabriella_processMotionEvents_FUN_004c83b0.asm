@@ -43,11 +43,11 @@
 ;   double g_DOUBLE_005e109c = 0.200000000000000
 ;   double g_DOUBLE_005e10a4 = 0.400000000000000
 ;   CGore* g_CGorePtr = 01cd0e3c
-;   undefined4 g_CDemonActorType_007c52f8.name_hash
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 g_INT_ARRAY_01cc9108[7]
-;   undefined4 g_INT_ARRAY_01cc9108[8]
-;   undefined4 g_INT_ARRAY_01cc9108[12]
+;   undefined4 g_GabriellaIndices[7]
+;   undefined4 g_GabriellaIndices[8]
+;   undefined4 g_GabriellaIndices[12]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -101,7 +101,7 @@ section .text
         ;   Label: caseD_1
     JNZ 0x004c853b                      ; 004c83f9
         ;   XREF to: 004c853b (CONDITIONAL_JUMP)  ; LAB_004c853b
-    MOV EAX,[0x01cc9128]                ; 004c83ff | g_INT_ARRAY_01cc9108[8]
+    MOV EAX,[0x01cc9128]                ; 004c83ff | g_GabriellaIndices[8]
     PUSH EAX                            ; 004c8404
         ;   Label: LAB_004c8404
     MOV ECX,dword ptr [ESP + 0xe0]      ; 004c8405
@@ -160,7 +160,7 @@ section .text
     POP ESI                             ; 004c84aa
     POP EBX                             ; 004c84ab
     RET                                 ; 004c84ac
-    MOV ESI,dword ptr [0x007c5330]      ; 004c84ad | g_CDemonActorType_007c52f8.name_hash
+    MOV ESI,dword ptr [0x007c5330]      ; 004c84ad | g_CLightActorClassInfo.name_hash
         ;   Label: caseD_2
     PUSH ESI                            ; 004c84b3
     MOV EDI,dword ptr [EBX + 0x1ff78]   ; 004c84b4
@@ -216,7 +216,7 @@ section .text
     ADD ESP,0x8                         ; 004c8533
     JMP 0x004c8496                      ; 004c8536
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV EAX,[0x01cc9124]                ; 004c853b | g_INT_ARRAY_01cc9108[7]
+    MOV EAX,[0x01cc9124]                ; 004c853b | g_GabriellaIndices[7]
         ;   Label: LAB_004c853b
     JMP 0x004c8404                      ; 004c8540
         ;   XREF to: 004c8404 (UNCONDITIONAL_JUMP)  ; LAB_004c8404
@@ -309,7 +309,7 @@ section .text
         ;   Label: LAB_004c865c
     JMP 0x004c8496                      ; 004c8666
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV ECX,dword ptr [0x01cc9138]      ; 004c866b | g_INT_ARRAY_01cc9108[12]
+    MOV ECX,dword ptr [0x01cc9138]      ; 004c866b | g_GabriellaIndices[12]
         ;   Label: LAB_004c866b
     PUSH ECX                            ; 004c8671
     MOV ESI,dword ptr [ESP + 0xe0]      ; 004c8672

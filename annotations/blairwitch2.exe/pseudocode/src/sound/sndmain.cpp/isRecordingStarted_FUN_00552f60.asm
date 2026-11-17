@@ -10,7 +10,7 @@
 ;   sound_sndmain.cpp_startRecording_FUN_00553070 at 0055307e
 ;
 ; Referenced Globals:
-;   int g_INT_0264986c
+;   int isRecordingStarted
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isRecordingSystemActive_FUN_00552f50
@@ -25,7 +25,7 @@ section .text
     TEST EAX,EAX                        ; 00552f65
     JZ 0x00552f6e                       ; 00552f67
         ;   XREF to: 00552f6e (CONDITIONAL_JUMP)  ; LAB_00552f6e
-    MOV EAX,[0x0264986c]                ; 00552f69 | g_INT_0264986c
+    MOV EAX,[0x0264986c]                ; 00552f69 | isRecordingStarted
     RET                                 ; 00552f6e
         ;   Label: LAB_00552f6e
 

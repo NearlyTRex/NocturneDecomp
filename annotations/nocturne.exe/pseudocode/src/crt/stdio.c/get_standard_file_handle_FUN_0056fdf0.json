@@ -45,7 +45,7 @@
   "globals": [
     {
       "addr": "005c1894",
-      "name": "g_FILE_PTR_005c1894",
+      "name": "g_StaticFilePoolStart",
       "type": "_FILE*",
       "value": "00000000"
     }
@@ -165,11 +165,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `&g_FILE_PTR_005c1894` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_StaticFilePoolStart` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 8,
-      "match": "(int)&g_FILE_PTR_005c1894",
+      "match": "(int)&g_StaticFilePoolStart",
       "severity": "moderate",
-      "text": "return (_FILE *)((int)&g_FILE_PTR_005c1894 + fd * 0x1a);",
+      "text": "return (_FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);",
       "type": "pointer_truncation"
     },
     {
@@ -177,7 +177,7 @@
       "line": 8,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "return (_FILE *)((int)&g_FILE_PTR_005c1894 + fd * 0x1a);",
+      "text": "return (_FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);",
       "type": "pointer_cast"
     }
   ]

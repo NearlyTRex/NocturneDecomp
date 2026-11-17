@@ -35,7 +35,7 @@ void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005630a3(uint *destPixels,u
   uint5 uVar24;
   
   do {
-    uVar8 = g_UINT_ARRAY_01c6a974[*srcIndices];
+    uVar8 = g_Hardware32BitPalette[*srcIndices];
     uVar4 = (uint)*srcAlpha * ((uint)globalAlpha >> 8);
     if (g_INT_01c6e2ac == 1) {
 LAB_005630e4:

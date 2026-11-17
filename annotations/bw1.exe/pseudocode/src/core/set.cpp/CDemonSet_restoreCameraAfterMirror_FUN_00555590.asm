@@ -18,7 +18,7 @@
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   UVector3 g_UVector3_020af5ac
 ;   CVector3f g_CVector3f_020af5b8
-;   float g_FLOAT_020af5c4
+;   float g_SavedProjectionFactor
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005555a4
     MOV ECX,dword ptr [0x00612560]      ; 005555a7 | g_CDemonRenderer_PTR_00612560
-    PUSH dword ptr [0x020af5c4]         ; 005555ad | g_FLOAT_020af5c4
+    PUSH dword ptr [0x020af5c4]         ; 005555ad | g_SavedProjectionFactor
     PUSH ECX                            ; 005555b3 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 005555b4
         ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)

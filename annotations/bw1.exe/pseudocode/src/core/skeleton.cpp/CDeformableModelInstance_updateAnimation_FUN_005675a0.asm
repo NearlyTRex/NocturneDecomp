@@ -20,7 +20,7 @@
 ;   ... and 40 more
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005f24c9 = 0.00100000000000000
+;   double g_DeformableModelTweenThreshold = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     FLD float ptr [EBX + 0x14]          ; 005675b4
     ADD ESP,0x10                        ; 005675b7
-    FCOMP double ptr [0x005f24c9]       ; 005675ba | g_DOUBLE_005f24c9
+    FCOMP double ptr [0x005f24c9]       ; 005675ba | g_DeformableModelTweenThreshold
     FNSTSW AX                           ; 005675c0
     SAHF                                ; 005675c2
     JA 0x005675c7                       ; 005675c3

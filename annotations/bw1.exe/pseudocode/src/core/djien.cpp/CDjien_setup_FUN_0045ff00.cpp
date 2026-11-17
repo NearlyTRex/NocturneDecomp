@@ -21,7 +21,7 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,"COMBATMODEHARD");
+                    (g_CEventListPtr,"COMBATMODEHARD");
   if (iVar1 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }
@@ -95,7 +95,7 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
   this_ptr->sack_part_indices[5] = iVar1;
   if (g_CDemonMission_PTR_0061f650->is_in_editor == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (g_CEventList_PTR_0061b4d0,"PuzzleModeHard");
+                      (g_CEventListPtr,"PuzzleModeHard");
     if (iVar1 == 0) {
       (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->sack_part_indices[3]] = 0;
       (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->sack_part_indices[4]] = 0;

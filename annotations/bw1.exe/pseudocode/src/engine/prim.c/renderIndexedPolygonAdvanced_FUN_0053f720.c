@@ -30,7 +30,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
   int local_18;
   SSoftwareEdge *local_14;
   
-  if (g_INT_00713a7c != 0) {
+  if (g_CullingMode != 0) {
     if (vertex_count < 4) {
       iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60
                         (g_SRenderVertex_ARRAY_00629014 + *vertex_indices,
@@ -63,9 +63,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
       }
     }
   }
-  if ((g_INT_01c50948 == 0) || (g_INT_00713a74 != 0)) {
-    g_INT_01e7dac8 = g_INT_01e7dac8 + 1;
-    switch(g_INT_01c51d18) {
+  if ((g_INT_01c50948 == 0) || (g_TexturesDisabled != 0)) {
+    g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
+    switch(g_VertexPreprocessMode) {
     case 1:
       iVar3 = 0;
       piVar7 = vertex_indices;
@@ -124,14 +124,14 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
         } while (iVar3 < vertex_count);
       }
     }
-    g_INT_01e7dfd4 = 0;
-    g_INT_01e7dacc = 0;
+    g_MaxScanline = 0;
+    g_ActiveEdgeCount = 0;
     local_1c = 0;
-    g_INT_01e7dfd0 = 0x4b0;
+    g_MinScanline = 0x4b0;
     if (0 < vertex_count) {
       local_24 = vertex_indices;
       do {
-        iVar3 = g_INT_01e7dacc;
+        iVar3 = g_ActiveEdgeCount;
         iVar9 = local_1c + 1;
         if (vertex_count <= iVar9) {
           iVar9 = 0;
@@ -151,14 +151,14 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
             pSVar8 = g_SRenderVertex_ARRAY_00629014 + iVar9;
             pSVar12 = g_SRenderVertex_ARRAY_00629014 + iVar11;
           }
-          g_SSoftwareEdge_ARRAY_01e7dad0[g_INT_01e7dacc].base.y_min = iVar2;
-          iVar9 = g_INT_01e7dfd0;
+          g_SSoftwareEdge_ARRAY_01e7dad0[g_ActiveEdgeCount].base.y_min = iVar2;
+          iVar9 = g_MinScanline;
           g_SSoftwareEdge_ARRAY_01e7dad0[iVar3].base.y_max = iVar5;
           if (iVar2 < iVar9) {
-            g_INT_01e7dfd0 = iVar2;
+            g_MinScanline = iVar2;
           }
-          if (g_INT_01e7dfd4 < iVar5) {
-            g_INT_01e7dfd4 = iVar5;
+          if (g_MaxScanline < iVar5) {
+            g_MaxScanline = iVar5;
           }
           uVar6 = (pSVar12->projected_vertex).screen_y - (pSVar8->projected_vertex).screen_y;
           if (uVar6 < 0x10000) {
@@ -201,8 +201,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
           g_SSoftwareEdge_ARRAY_01e7dad0[iVar3].base.alpha_current =
                pSVar8->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          if (g_INT_01c51d18 == 1) {
-            if (g_INT_01c51d10 == 0) {
+          if (g_VertexPreprocessMode == 1) {
+            if (g_ProcessorType == 0) {
               local_20 = (pSVar8->projected_vertex).inv_z;
               iVar11 = (pSVar12->projected_vertex).inv_z;
             }
@@ -241,7 +241,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
           g_SSoftwareEdge_ARRAY_01e7dad0[iVar3].blue_current =
                pSVar8->b + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          g_INT_01e7dacc = g_INT_01e7dacc + 1;
+          g_ActiveEdgeCount = g_ActiveEdgeCount + 1;
         }
         local_24 = local_24 + 1;
         local_1c = local_1c + 1;
@@ -249,32 +249,32 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(int *vertex
     }
     local_14 = g_SSoftwareEdge_ARRAY_01e7dad0;
     iVar3 = 0;
-    if (0 < g_INT_01e7dacc) {
+    if (0 < g_ActiveEdgeCount) {
       do {
-        if ((g_INT_01e7dfd0 == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
+        if ((g_MinScanline == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
         goto LAB_0053fa2f;
         iVar3 = iVar3 + 1;
         local_14 = local_14 + 1;
-      } while (iVar3 < g_INT_01e7dacc);
+      } while (iVar3 < g_ActiveEdgeCount);
     }
     local_14 = (SSoftwareEdge *)0x0;
 LAB_0053fa2f:
     if (local_14 != (SSoftwareEdge *)0x0) {
       iVar3 = 0;
       left = g_SSoftwareEdge_ARRAY_01e7dad0;
-      if (0 < g_INT_01e7dacc) {
+      if (0 < g_ActiveEdgeCount) {
         do {
-          if ((g_INT_01e7dfd0 == (left->base).y_min) && (left != local_14)) goto LAB_0053fa6e;
+          if ((g_MinScanline == (left->base).y_min) && (left != local_14)) goto LAB_0053fa6e;
           iVar3 = iVar3 + 1;
           left = left + 1;
-        } while (iVar3 < g_INT_01e7dacc);
+        } while (iVar3 < g_ActiveEdgeCount);
       }
       left = (SSoftwareEdge *)0x0;
 LAB_0053fa6e:
       if (left != (SSoftwareEdge *)0x0) {
-        local_18 = g_INT_01e7dfd0;
+        local_18 = g_MinScanline;
         do {
-          iVar3 = g_INT_01e7dacc;
+          iVar3 = g_ActiveEdgeCount;
           if ((local_14->base).y_max <= local_18) {
             (local_14->base).y_min = -1;
             local_14 = g_SSoftwareEdge_ARRAY_01e7dad0;
@@ -284,7 +284,7 @@ LAB_0053fa6e:
                 if ((local_18 == (local_14->base).y_min) && (local_14 != left)) goto LAB_0053fac3;
                 iVar9 = iVar9 + 1;
                 local_14 = local_14 + 1;
-              } while (iVar9 < g_INT_01e7dacc);
+              } while (iVar9 < g_ActiveEdgeCount);
             }
             local_14 = (SSoftwareEdge *)0x0;
 LAB_0053fac3:
@@ -296,12 +296,12 @@ LAB_0053fac3:
             (left->base).y_min = -1;
             iVar3 = 0;
             left = g_SSoftwareEdge_ARRAY_01e7dad0;
-            if (0 < g_INT_01e7dacc) {
+            if (0 < g_ActiveEdgeCount) {
               do {
                 if ((local_18 == (left->base).y_min) && (left != local_14)) goto LAB_0053fb10;
                 iVar3 = iVar3 + 1;
                 left = left + 1;
-              } while (iVar3 < g_INT_01e7dacc);
+              } while (iVar3 < g_ActiveEdgeCount);
             }
             left = (SSoftwareEdge *)0x0;
 LAB_0053fb10:
@@ -348,9 +348,8 @@ LAB_0053fb10:
         iVar3 = iVar11;
       } while (iVar11 < vertex_count);
     }
-    engine_special_cpp_drawPolygon2_FUN_00582370
-              (local_68,vertex_count,g_BIT_INTEGER32_01c51d14.dword);
-    g_INT_01e7dac8 = g_INT_01e7dac8 + vertex_count + -2;
+    engine_special_cpp_drawPolygon2_FUN_00582370(local_68,vertex_count,g_RenderStateFlags.dword);
+    g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
   }
   return;
 }

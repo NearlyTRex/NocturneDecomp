@@ -15,10 +15,10 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   CScript* g_CScriptPtr = 01e65cd0
-;   int g_INT_01cb80e0
-;   float g_FLOAT_01cb810c
-;   int g_INT_01cb8110
-;   int g_INT_01cb8114
+;   int g_IrisFadeType
+;   float g_IrisFadeRadius
+;   int g_IrisFadeCenterX
+;   int g_IrisFadeCenterY
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -121,7 +121,7 @@ section .text
     SHL EDX,0x10                        ; 004bb1bd
     SBB EAX,EDX                         ; 004bb1c0
     SAR EAX,0x10                        ; 004bb1c2
-    MOV [0x01cb8110],EAX                ; 004bb1c5 | g_INT_01cb8110
+    MOV [0x01cb8110],EAX                ; 004bb1c5 | g_IrisFadeCenterX
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004bb1ca
     MOV EDX,EAX                         ; 004bb1ce
     SAR EDX,0x1f                        ; 004bb1d0
@@ -129,32 +129,32 @@ section .text
     SBB EAX,EDX                         ; 004bb1d6
     SAR EAX,0x10                        ; 004bb1d8
     MOV EDI,dword ptr [0x006141bc]      ; 004bb1db | g_INT_006141bc
-    MOV [0x01cb8114],EAX                ; 004bb1e1 | g_INT_01cb8114
+    MOV [0x01cb8114],EAX                ; 004bb1e1 | g_IrisFadeCenterY
     CMP EDI,0x1e0                       ; 004bb1e6
     JLE 0x004bb2db                      ; 004bb1ec
         ;   XREF to: 004bb2db (CONDITIONAL_JUMP)  ; LAB_004bb2db
     MOV EBP,dword ptr [0x006141b8]      ; 004bb1f2 | g_INT_006141b8
-    MOV EDX,dword ptr [0x01cb8110]      ; 004bb1f8 | g_INT_01cb8110
+    MOV EDX,dword ptr [0x01cb8110]      ; 004bb1f8 | g_IrisFadeCenterX
     IMUL EDX,EBP                        ; 004bb1fe
     MOV EBX,0x280                       ; 004bb201
     MOV EAX,EDX                         ; 004bb206
     SAR EDX,0x1f                        ; 004bb208
     IDIV EBX                            ; 004bb20b
-    MOV EDX,dword ptr [0x01cb8114]      ; 004bb20d | g_INT_01cb8114
+    MOV EDX,dword ptr [0x01cb8114]      ; 004bb20d | g_IrisFadeCenterY
     IMUL EDX,EDI                        ; 004bb213
     MOV EBX,0x1e0                       ; 004bb216
-    MOV [0x01cb8110],EAX                ; 004bb21b | g_INT_01cb8110
+    MOV [0x01cb8110],EAX                ; 004bb21b | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004bb220
     SAR EDX,0x1f                        ; 004bb222
     IDIV EBX                            ; 004bb225
-    MOV [0x01cb8114],EAX                ; 004bb227 | g_INT_01cb8114
+    MOV [0x01cb8114],EAX                ; 004bb227 | g_IrisFadeCenterY
     ADD ESP,0x9c                        ; 004bb22c
     POP EBP                             ; 004bb232
     POP EDI                             ; 004bb233
     POP ESI                             ; 004bb234
     POP EBX                             ; 004bb235
     RET                                 ; 004bb236
-    MOV dword ptr [0x01cb80e0],0x1      ; 004bb240 | g_INT_01cb80e0
+    MOV dword ptr [0x01cb80e0],0x1      ; 004bb240 | g_IrisFadeType
         ;   Label: core_game.cpp_CGame_beginFadeIn_FUN_004bb240
     MOV EDX,dword ptr [0x006141b8]      ; 004bb24a | g_INT_006141b8
     MOV EAX,EDX                         ; 004bb250
@@ -162,14 +162,14 @@ section .text
     SUB EAX,EDX                         ; 004bb255
     SAR EAX,0x1                         ; 004bb257
     MOV EDX,dword ptr [0x006141bc]      ; 004bb259 | g_INT_006141bc
-    MOV [0x01cb8110],EAX                ; 004bb25f | g_INT_01cb8110
+    MOV [0x01cb8110],EAX                ; 004bb25f | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004bb264
     SAR EDX,0x1f                        ; 004bb266
     SUB EAX,EDX                         ; 004bb269
     SAR EAX,0x1                         ; 004bb26b
     XOR ECX,ECX                         ; 004bb26d
-    MOV dword ptr [0x01cb810c],ECX      ; 004bb26f | g_FLOAT_01cb810c
-    MOV [0x01cb8114],EAX                ; 004bb275 | g_INT_01cb8114
+    MOV dword ptr [0x01cb810c],ECX      ; 004bb26f | g_IrisFadeRadius
+    MOV [0x01cb8114],EAX                ; 004bb275 | g_IrisFadeCenterY
     JMP 0x004bb2c0                      ; 004bb27a
         ;   XREF to: 004bb2c0 (UNCONDITIONAL_CALL)
 

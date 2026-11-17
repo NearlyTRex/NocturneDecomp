@@ -105,19 +105,19 @@
     },
     {
       "addr": "01b4d71c",
-      "name": "g_INT_01b4d71c",
+      "name": "g_UseRGBConversion",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d720",
-      "name": "g_INT_01b4d720",
+      "name": "g_OriginalColorValue",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d730",
-      "name": "g_INT_01b4d730",
+      "name": "g_PackedPixelColor",
       "type": "int",
       "value": null
     },
@@ -396,7 +396,7 @@
       "line": 50,
       "match": "(ushort *)(iVar2 + (int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >> ((byte)g_INT_01b4d720 & 0x1f) &",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >>",
       "type": "pointer_cast"
     },
     {
@@ -412,7 +412,7 @@
       "line": 56,
       "match": "(uint *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_INT_01b4d720 & 0x1f) &",
+      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)",
       "type": "pointer_cast"
     },
     {
@@ -468,7 +468,7 @@
       "line": 50,
       "match": "(int)g_ScreenBufferArray[iVar4]",
       "severity": "moderate",
-      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >> ((byte)g_INT_01b4d720 & 0x1f) &",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >>",
       "type": "pointer_truncation"
     },
     {
@@ -484,7 +484,7 @@
       "line": 56,
       "match": "(int)g_ScreenBufferArray[iVar4]",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_INT_01b4d720 & 0x1f) &",
+      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)",
       "type": "pointer_truncation"
     }
   ]

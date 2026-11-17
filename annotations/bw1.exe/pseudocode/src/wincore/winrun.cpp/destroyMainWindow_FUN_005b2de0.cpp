@@ -9,7 +9,7 @@
 void __cdecl wincore_winrun_cpp_destroyMainWindow_FUN_005b2de0(void)
 
 {
-  DestroyWindow(g_HWND_02c9be68);
-  g_HWND_02c9be68 = (HWND)0x0;
+  DestroyWindow(g_MainWindowHandle);
+  g_MainWindowHandle = (HWND)0x0;
   return;
 }

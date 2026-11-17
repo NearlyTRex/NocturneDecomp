@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   wildcard_pattern
 ;
 ; Referenced Globals:
-;   CStrList g_CStrList_02dc9610
-;   int g_INT_02dc9620
+;   CStrList g_SoundFileList
+;   int g_SoundMatchCount
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
@@ -26,8 +26,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0052c934
     XOR EDX,EDX                         ; 0052c938
     XOR EBX,EBX                         ; 0052c93a
-    MOV dword ptr [0x02dc9620],EDX      ; 0052c93c | g_INT_02dc9620
-    MOV EAX,[0x02dc9610]                ; 0052c942 | g_CStrList_02dc9610
+    MOV dword ptr [0x02dc9620],EDX      ; 0052c93c | g_SoundMatchCount
+    MOV EAX,[0x02dc9610]                ; 0052c942 | g_SoundFileList
     CMP EBX,EAX                         ; 0052c947
     JL 0x0052c950                       ; 0052c949
         ;   XREF to: 0052c950 (CONDITIONAL_JUMP)  ; LAB_0052c950
@@ -56,7 +56,7 @@ section .text
     PUSH 0x2dc9610                      ; 0052c96f
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052c974
         ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
-    IMUL EDI,dword ptr [0x02dc9620],0x28 ; 0052c979 | g_INT_02dc9620
+    IMUL EDI,dword ptr [0x02dc9620],0x28 ; 0052c979 | g_SoundMatchCount
     ADD ESP,0x8                         ; 0052c980
     MOV ESI,EAX                         ; 0052c983
     ADD EDI,0x2dc9628                   ; 0052c985
@@ -76,15 +76,15 @@ section .text
         ;   XREF to: 0052c98c (CONDITIONAL_JUMP)  ; LAB_0052c98c
     POP EDI                             ; 0052c9a4
         ;   Label: LAB_0052c9a4
-    MOV ESI,dword ptr [0x02dc9620]      ; 0052c9a5 | g_INT_02dc9620
+    MOV ESI,dword ptr [0x02dc9620]      ; 0052c9a5 | g_SoundMatchCount
     INC ESI                             ; 0052c9ab
-    MOV dword ptr [0x02dc9620],ESI      ; 0052c9ac | g_INT_02dc9620
+    MOV dword ptr [0x02dc9620],ESI      ; 0052c9ac | g_SoundMatchCount
     CMP ESI,0x28                        ; 0052c9b2
     JGE 0x0052c94b                      ; 0052c9b5
         ;   XREF to: 0052c94b (CONDITIONAL_JUMP)  ; LAB_0052c94b
     INC EBX                             ; 0052c9b7
         ;   Label: LAB_0052c9b7
-    MOV EAX,[0x02dc9610]                ; 0052c9b8 | g_CStrList_02dc9610
+    MOV EAX,[0x02dc9610]                ; 0052c9b8 | g_SoundFileList
     CMP EBX,EAX                         ; 0052c9bd
     JL 0x0052c950                       ; 0052c9bf
         ;   XREF to: 0052c950 (CONDITIONAL_JUMP)  ; LAB_0052c950

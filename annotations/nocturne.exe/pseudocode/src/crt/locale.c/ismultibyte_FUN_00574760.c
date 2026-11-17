@@ -11,7 +11,7 @@ int __watcallStack ismultibyte(wchar_t character)
 {
   int iVar1;
   
-  if ((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(ushort)character >> 8] & 1U) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(ushort)character >> 8] & 1U) != 0)) {
     iVar1 = istrailbyte((uchar)character);
     if (iVar1 != 0) {
       return 1;

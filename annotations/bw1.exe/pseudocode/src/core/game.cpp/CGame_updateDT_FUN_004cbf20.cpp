@@ -47,17 +47,17 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_004cbf20(CGame *this_ptr)
   if (0x4000 < this_ptr->delta_time_int) {
     this_ptr->delta_time_int = 0x4000;
   }
-  iVar2 = g_INT_01cd0c3c;
+  iVar2 = g_MovieRecordingActive;
   dVar4 = round
                     ((double)((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));
   this_ptr->delta_time_int = (int)ROUND(dVar4);
   if (iVar2 != 0) {
     dVar4 = round
-                      ((double)((65536.0f / 30.0f) * this_ptr->time_scale_factor)
-                      );
+                      ((double)((65536.0f / 30.0f) *
+                               this_ptr->time_scale_factor));
     this_ptr->delta_time_int = (int)ROUND(dVar4);
   }
-  g_INT_01c43530 = this_ptr->delta_time_int;
+  g_GlobalDeltaTimeInt = this_ptr->delta_time_int;
   this_ptr->delta_time_float = (float)this_ptr->delta_time_int * (float)1.52587890625e-05;
   return;
 }

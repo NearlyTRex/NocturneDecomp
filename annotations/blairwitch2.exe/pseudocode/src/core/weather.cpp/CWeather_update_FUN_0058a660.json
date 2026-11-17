@@ -143,13 +143,13 @@
     },
     {
       "addr": "006141f0",
-      "name": "g_CEventList_PTR_006141f0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c38bc0"
     },
     {
       "addr": "00614d30",
-      "name": "g_CFireEffect_PTR_00614d30",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c3deb4"
     },
@@ -179,31 +179,31 @@
     },
     {
       "addr": "02661fb8",
-      "name": "g_CVector3f_ARRAY_02661fb8",
+      "name": "g_WeatherParticlePositions",
       "type": "CVector3f[200]",
       "value": null
     },
     {
       "addr": "02661fbc",
-      "name": "g_CVector3f_ARRAY_02661fb8[0].y",
+      "name": "g_WeatherParticlePositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02661fc0",
-      "name": "g_CVector3f_ARRAY_02661fb8[0].z",
+      "name": "g_WeatherParticlePositions[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02661fc8",
-      "name": "g_CVector3f_ARRAY_02661fb8[1].y",
+      "name": "g_WeatherParticlePositions[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02662d00",
-      "name": "g_UINT_02662d00",
+      "name": "g_RainSoundHandle",
       "type": "uint",
       "value": null
     }
@@ -419,57 +419,57 @@
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(float *)((int)g_FLOAT_ARRAY_02662918",
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
       "severity": "moderate",
-      "text": "if ((fVar2 < *(float *)((int)g_FLOAT_ARRAY_02662918 + local_18)) &&",
+      "text": "if ((fVar2 < *(float *)((int)g_WeatherParticleGroundHeights + local_18)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(float *)((int)g_FLOAT_ARRAY_02662918",
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
       "severity": "moderate",
-      "text": "fVar2 = *(float *)((int)g_FLOAT_ARRAY_02662918 + local_18);",
+      "text": "fVar2 = *(float *)((int)g_WeatherParticleGroundHeights + local_18);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_02661fb8[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_WeatherParticlePositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 61,
-      "match": "(int)&g_CVector3f_ARRAY_02661fb8[0].y",
+      "match": "(int)&g_WeatherParticlePositions[0].y",
       "severity": "moderate",
-      "text": "fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) -",
+      "text": "fVar2 = *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) -",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_02661fb8[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_WeatherParticlePositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 63,
-      "match": "(int)&g_CVector3f_ARRAY_02661fb8[0].y",
+      "match": "(int)&g_WeatherParticlePositions[0].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) = fVar2;",
+      "text": "*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) = fVar2;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_02661fb8[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_WeatherParticlePositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 65,
-      "match": "(int)&g_CVector3f_ARRAY_02661fb8[0].y",
+      "match": "(int)&g_WeatherParticlePositions[0].y",
       "severity": "moderate",
-      "text": "(*(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) =",
+      "text": "(*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_02661fb8[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_WeatherParticlePositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 66,
-      "match": "(int)&g_CVector3f_ARRAY_02661fb8[0].y",
+      "match": "(int)&g_WeatherParticlePositions[0].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) + 100.0f,",
+      "text": "*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_02661fb8[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_WeatherParticlePositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 70,
-      "match": "(int)&g_CVector3f_ARRAY_02661fb8[0].x",
+      "match": "(int)&g_WeatherParticlePositions[0].x",
       "severity": "moderate",
-      "text": "local_30.x = *(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].x + iVar4);",
+      "text": "local_30.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);",
       "type": "pointer_truncation"
     },
     {
@@ -489,7 +489,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x2661fbc matches address of g_CVector3f_ARRAY_02661fb8 (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x2661fbc matches address of g_WeatherParticlePositions (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 69,
       "match": "0x2661fbc",
       "severity": "moderate",
@@ -501,7 +501,7 @@
       "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) -",
+      "text": "fVar2 = *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) -",
       "type": "pointer_cast"
     },
     {
@@ -509,7 +509,7 @@
       "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) = fVar2;",
+      "text": "*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) = fVar2;",
       "type": "pointer_cast"
     },
     {
@@ -517,7 +517,7 @@
       "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(*(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) =",
+      "text": "(*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -525,7 +525,7 @@
       "line": 66,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].y + iVar4) + 100.0f,",
+      "text": "*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,",
       "type": "pointer_cast"
     },
     {
@@ -533,7 +533,7 @@
       "line": 70,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "local_30.x = *(float *)((int)&g_CVector3f_ARRAY_02661fb8[0].x + iVar4);",
+      "text": "local_30.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);",
       "type": "pointer_cast"
     },
     {

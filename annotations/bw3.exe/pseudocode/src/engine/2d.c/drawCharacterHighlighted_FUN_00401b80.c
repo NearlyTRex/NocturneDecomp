@@ -17,19 +17,19 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int 
   uint uVar6;
   int iVar7;
   
-  uVar6 = (uint)g_SFontGlyph_ARRAY_005e8840[char_code + -0x20].width;
+  uVar6 = (uint)g_FontTable[char_code + -0x20].width;
   if ((((x_pos < g_INT_01c6b5a8) || (y_pos < g_INT_01c6b5ac)) ||
       ((int)((g_INT_01c6b5b0 + 1) - uVar6) < x_pos)) || (g_INT_01c6b5b4 + -10 < y_pos)) {
     iVar5 = 0;
   }
   else {
     iVar7 = y_pos * 4;
-    puVar1 = g_SFontGlyph_ARRAY_005e8840[char_code + -0x20].bitmap;
+    puVar1 = g_FontTable[char_code + -0x20].bitmap;
     iVar5 = iVar7 + 0x2c;
     if (g_INT_005fba20 == 8) {
       do {
         iVar2 = 0;
-        puVar3 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar7) + x_pos);
+        puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos);
         if (uVar6 != 0) {
           do {
             if (*puVar1 != '\0') {
@@ -46,11 +46,11 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int 
     else {
       do {
         iVar2 = 0;
-        puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar7) + x_pos * 2);
+        puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos * 2);
         if (uVar6 != 0) {
           do {
             if (*puVar1 != '\0') {
-              *puVar4 = g_USHORT_ARRAY_01c6a070[0xff];
+              *puVar4 = g_ColorTable16[0xff];
             }
             puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;

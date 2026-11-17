@@ -13,15 +13,15 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3]
+;   undefined4 g_BillboardPrimitive.base.base.count
+;   undefined4 g_BillboardPrimitive.base.surface_normal.A
+;   undefined4 g_BillboardPrimitive.base.surface_normal.B
+;   undefined4 g_BillboardPrimitive.base.surface_normal.C
+;   undefined4 g_BillboardPrimitive.base.surface_normal.D
+;   undefined4 g_BillboardPrimitive.vertices[0]
+;   undefined4 g_BillboardPrimitive.vertices[1]
+;   undefined4 g_BillboardPrimitive.vertices[2]
+;   undefined4 g_BillboardPrimitive.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
@@ -40,18 +40,18 @@ section .text
     MOV EDI,0x3                         ; 004975b2
     PUSH 0x8000                         ; 004975b7
     XOR ECX,ECX                         ; 004975bc
-    MOV dword ptr [0x01c73674],EDX      ; 004975be | g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count
-    MOV dword ptr [0x01c73688],ECX      ; 004975c4 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0]
-    MOV dword ptr [0x01c7368c],EBX      ; 004975ca | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1]
-    MOV dword ptr [0x01c73690],ESI      ; 004975d0 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2]
-    MOV dword ptr [0x01c73694],EDI      ; 004975d6 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3]
-    MOV dword ptr [0x01c73678],ECX      ; 004975dc | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A
-    MOV dword ptr [0x01c7367c],ECX      ; 004975e2 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B
+    MOV dword ptr [0x01c73674],EDX      ; 004975be | g_BillboardPrimitive.base.base.count
+    MOV dword ptr [0x01c73688],ECX      ; 004975c4 | g_BillboardPrimitive.vertices[0]
+    MOV dword ptr [0x01c7368c],EBX      ; 004975ca | g_BillboardPrimitive.vertices[1]
+    MOV dword ptr [0x01c73690],ESI      ; 004975d0 | g_BillboardPrimitive.vertices[2]
+    MOV dword ptr [0x01c73694],EDI      ; 004975d6 | g_BillboardPrimitive.vertices[3]
+    MOV dword ptr [0x01c73678],ECX      ; 004975dc | g_BillboardPrimitive.base.surface_normal.A
+    MOV dword ptr [0x01c7367c],ECX      ; 004975e2 | g_BillboardPrimitive.base.surface_normal.B
     MOV EBX,dword ptr [0x005f2afc]      ; 004975e8 | g_CDemonRenderer_PTR_005f2afc
     MOV EDX,0xffff                      ; 004975ee
     PUSH EBX                            ; 004975f3 | g_CDemonRenderer_01bdd7e4
-    MOV dword ptr [0x01c73684],ECX      ; 004975f4 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D
-    MOV dword ptr [0x01c73680],EDX      ; 004975fa | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C
+    MOV dword ptr [0x01c73684],ECX      ; 004975f4 | g_BillboardPrimitive.base.surface_normal.D
+    MOV dword ptr [0x01c73680],EDX      ; 004975fa | g_BillboardPrimitive.base.surface_normal.C
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0 ; 00497600
         ;   XREF to: 0046d4c0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00497605

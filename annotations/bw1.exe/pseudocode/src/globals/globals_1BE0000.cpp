@@ -9,28 +9,28 @@ CDemonActorType g_CDripClassInfo = {};
 CDemonActorType g_CDroneClassInfo = {};
 
 // CDemonCube*[20000]
-CDemonCube* g_CDemonCube_PTR_ARRAY_01bef220[20000] = {};
+CDemonCube* g_PVSCubePointers[20000] = {};
 
 // CKeyFramedModelInstance
-CKeyFramedModelInstance g_CKeyFramedModelInstance_01beee04 = {};
+CKeyFramedModelInstance g_StalactiteRockModelInstance = {};
 
 // CVector3f
-CVector3f g_CVector3f_01bef1fc = {};
+CVector3f g_SkyDomeCenter = {};
 
 // SFace*[5000]
-SFace* g_SFace_PTR_ARRAY_01be8388[5000] = {};
+SFace* g_CapturedFacePointers[5000] = {};
 
 // SMRGLSkyTexture[24]
-SMRGLSkyTexture g_SMRGLSkyTexture_ARRAY_01beefbc[24] = {};
+SMRGLSkyTexture g_SkyDomeTextureData[24] = {};
 
 // SMRGLTextureBasic[300]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01bed1a8[300] = {};
+SMRGLTextureBasic g_CapturedTextureArray[300] = {};
 
 // int
-int g_INT_01bef208 = {};
-int g_INT_01bef20c = {};
-int g_INT_01bef210 = {};
-int g_INT_01bef214 = {};
-int g_INT_01bef218 = {};
-int g_INT_01bef21c = {};
+int g_CubesTestedCount = {};
+int g_CubesWithVoxelsCount = {};
+int g_CubesVisibleCount = {};
+int g_CubesRenderedCount = {};
+int g_PVSDrawnCubeCount = {};
+int g_PVSReadyFlag = {};
 

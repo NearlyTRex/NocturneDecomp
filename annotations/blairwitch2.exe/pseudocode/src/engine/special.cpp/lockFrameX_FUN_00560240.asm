@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   void* g_PTR_0264bc68
+;   void* g_APIDLL_getDisplayContext
 ;   int g_INT_0264bcfc
 ;   int g_INT_0264bd04
 ;
@@ -14,14 +14,14 @@
 
 section .text
 
-    CMP dword ptr [0x0264bc68],0x0      ; 00560240 | g_PTR_0264bc68
+    CMP dword ptr [0x0264bc68],0x0      ; 00560240 | g_APIDLL_getDisplayContext
         ;   Label: engine_special.cpp_lockFrameX_FUN_00560240
     JNZ 0x0056024c                      ; 00560247
         ;   XREF to: 0056024c (CONDITIONAL_JUMP)  ; LAB_0056024c
     XOR EAX,EAX                         ; 00560249
     RET                                 ; 0056024b
         ;   Label: LAB_0056024b
-    CALL dword ptr [0x0264bc68]         ; 0056024c | g_PTR_0264bc68
+    CALL dword ptr [0x0264bc68]         ; 0056024c | g_APIDLL_getDisplayContext
         ;   Label: LAB_0056024c
     TEST EAX,EAX                        ; 00560252
     JZ 0x0056024b                       ; 00560254

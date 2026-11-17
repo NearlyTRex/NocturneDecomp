@@ -124,12 +124,12 @@ LAB_004f0ce0:
     out_euler_angles->z = pCVar1->z;
     return 2;
   }
-  g_INT_01e3161c = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
-  g_INT_01e31628 = 0x32;
-  g_INT_01e31624 = 0x32;
-  g_INT_01e31620 = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
-  if ((((g_INT_01e3161c < 0) || (99 < g_INT_01e3161c)) || (g_INT_01e31620 < 0)) ||
-     (99 < g_INT_01e31620)) {
+  g_PathfindingCurrentX = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
+  g_PathfindingDestZ = 0x32;
+  g_PathfindingDestX = 0x32;
+  g_PathfindingCurrentZ = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
+  if ((((g_PathfindingCurrentX < 0) || (99 < g_PathfindingCurrentX)) || (g_PathfindingCurrentZ < 0))
+     || (99 < g_PathfindingCurrentZ)) {
     local_dc.x = (this_ptr->current_position).x - dest_position->x;
     local_dc.y = (this_ptr->current_position).y - dest_position->y;
     local_dc.z = (this_ptr->current_position).z - dest_position->z;
@@ -144,7 +144,7 @@ LAB_004f0ce0:
     out_euler_angles->z = pCVar1->z;
     return 2;
   }
-  if ((g_INT_01e3161c == 0x32) && (g_INT_01e31620 == 0x32)) {
+  if ((g_PathfindingCurrentX == 0x32) && (g_PathfindingCurrentZ == 0x32)) {
     local_40._0_4_ = (this_ptr->current_position).x - dest_position->x;
     local_40._4_4_ = (this_ptr->current_position).y - dest_position->y;
     local_40._8_4_ = (this_ptr->current_position).z - dest_position->z;
@@ -169,12 +169,13 @@ LAB_004f0ce0:
   dVar9 = round((double)*(float *)(unaff_retaddr + 8));
   iStack_24 = (int)ROUND(dVar9);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0
-                    (this_ptr,g_INT_01e31620,g_INT_01e3161c,(this_ptr->dest_voxel_coords).y);
+                    (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,
+                     (this_ptr->dest_voxel_coords).y);
   iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0
-                    (this_ptr,g_INT_01e31628,g_INT_01e31624,(this_ptr->voxel_coords).y);
+                    (this_ptr,g_PathfindingDestZ,g_PathfindingDestX,(this_ptr->voxel_coords).y);
   iVar2 = core_path_cpp_CPathMap_isLineWalkable_FUN_004f0540
-                    (this_ptr,g_INT_01e3161c,g_INT_01e31620,iVar2,g_INT_01e31624,g_INT_01e31628,
-                     iVar3);
+                    (this_ptr,g_PathfindingCurrentX,g_PathfindingCurrentZ,iVar2,g_PathfindingDestX,
+                     g_PathfindingDestZ,iVar3);
   if (iVar2 != 0) {
     local_44 = g_CDemonRaytraceInstance.adjusted_size.x;
     local_40._0_4_ = g_CDemonRaytraceInstance.adjusted_size.y;
@@ -200,12 +201,14 @@ LAB_004f0ce0:
     return 1;
   }
   iVar2 = core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790
-                    (this_ptr,g_INT_01e31624,g_INT_01e31628,g_INT_01e3161c,g_INT_01e31620);
+                    (this_ptr,g_PathfindingDestX,g_PathfindingDestZ,g_PathfindingCurrentX,
+                     g_PathfindingCurrentZ);
   if (iVar2 == 0) {
     uVar5 = core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(this_ptr,(this_ptr->dest_voxel_coords).y)
     ;
     if (uVar5 != 0) {
-      uVar5 = this_ptr->height_cache[g_INT_01e31628][g_INT_01e31624] - (this_ptr->voxel_coords).y;
+      uVar5 = this_ptr->height_cache[g_PathfindingDestZ][g_PathfindingDestX] -
+              (this_ptr->voxel_coords).y;
       uVar6 = (int)uVar5 >> 0x1f;
       if (3 < (int)((uVar5 ^ uVar6) - uVar6)) {
         local_a4.x = (this_ptr->current_position).x - unaff_ESI->x;
@@ -222,11 +225,11 @@ LAB_004f0ce0:
         return 2;
       }
       local_28 = 0xffffffff;
-      iVar2 = g_INT_01e31624;
-      iVar3 = g_INT_01e31628;
+      iVar2 = g_PathfindingDestX;
+      iVar3 = g_PathfindingDestZ;
       uVar5 = 0xffffffff;
       do {
-        uVar6 = (uint)(byte)g_CHAR_ARRAY_ARRAY_01e40098[iVar3][iVar2];
+        uVar6 = (uint)(byte)g_PathfindingVisited[iVar3][iVar2];
         local_2c = local_28;
         local_28 = uVar5;
         if (uVar6 == 0) {
@@ -242,8 +245,8 @@ LAB_004f0ce0:
           unaff_EBX->z = pCVar1->z;
           return 2;
         }
-        iVar2 = iVar2 - g_INT_ARRAY_005be0e8[uVar6];
-        iVar3 = iVar3 - g_INT_ARRAY_005be10c[uVar6];
+        iVar2 = iVar2 - g_PathfindingDeltaX[uVar6];
+        iVar3 = iVar3 - g_PathfindingDeltaZ[uVar6];
         if (iVar2 < 0) {
           g_CurrentFilename = "..\\core\\path.cpp";
           g_CurrentLineNumber = 1351;
@@ -265,7 +268,7 @@ LAB_004f0ce0:
           core_main_c_displayErrorAndQuit_FUN_004c8440("Out of bounds4!");
         }
         uVar5 = uVar6;
-      } while ((iVar2 != g_INT_01e3161c) || (iVar3 != g_INT_01e31620));
+      } while ((iVar2 != g_PathfindingCurrentX) || (iVar3 != g_PathfindingCurrentZ));
       unaff_EBX->x = 0.0;
       unaff_EBX->z = 0.0;
       fVar4 = core_path_cpp_CPathMap_getDirection_FUN_004efeb0
@@ -281,11 +284,11 @@ LAB_004f0ce0:
     goto LAB_004f0ce0;
   }
   if (iVar2 == 1) {
-    if (g_INT_01e31624 <= g_INT_01e3161c) {
-      if (g_INT_01e31624 < g_INT_01e3161c) {
+    if (g_PathfindingDestX <= g_PathfindingCurrentX) {
+      if (g_PathfindingDestX < g_PathfindingCurrentX) {
         iVar2 = 4;
       }
-      else if (g_INT_01e31620 < g_INT_01e31628) {
+      else if (g_PathfindingCurrentZ < g_PathfindingDestZ) {
         iVar2 = 1;
       }
       else {
@@ -295,15 +298,15 @@ LAB_004f0ce0:
     }
   }
   else {
-    if (g_INT_01e31620 < g_INT_01e31628) {
+    if (g_PathfindingCurrentZ < g_PathfindingDestZ) {
       iVar2 = 1;
       goto LAB_004f1185;
     }
-    if (g_INT_01e31628 < g_INT_01e31620) {
+    if (g_PathfindingDestZ < g_PathfindingCurrentZ) {
       iVar2 = 2;
       goto LAB_004f1185;
     }
-    if (g_INT_01e31624 <= g_INT_01e3161c) {
+    if (g_PathfindingDestX <= g_PathfindingCurrentX) {
       iVar2 = 4;
       goto LAB_004f1185;
     }

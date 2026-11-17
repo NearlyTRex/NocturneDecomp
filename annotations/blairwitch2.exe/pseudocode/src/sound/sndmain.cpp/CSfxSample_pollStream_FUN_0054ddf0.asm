@@ -70,7 +70,7 @@ section .text
     PUSH EBP                            ; 0054ddf3
     SUB ESP,0x28                        ; 0054ddf4
     MOV EBP,dword ptr [ESP + 0x3c]      ; 0054ddf7
-    CMP dword ptr [0x0264901c],0x0      ; 0054ddfb | g_INT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054ddfb | g_SoundLockCount
     JLE 0x0054e0c3                      ; 0054de02
         ;   XREF to: 0054e0c3 (CONDITIONAL_JUMP)  ; LAB_0054e0c3
     MOV ESI,dword ptr [EBP + 0x160]     ; 0054de08
@@ -99,7 +99,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054de58
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054de5d
-    CMP dword ptr [0x02648e80],0x0      ; 0054de60 | g_CSoundDevice_PTR_02648e80
+    CMP dword ptr [0x02648e80],0x0      ; 0054de60 | g_CSoundDevicePtr
         ;   Label: LAB_0054de60
     JZ 0x0054e106                       ; 0054de67
         ;   XREF to: 0054e106 (CONDITIONAL_JUMP)  ; LAB_0054e106
@@ -435,10 +435,10 @@ section .text
     PUSH EDI                            ; 0054e20d
     MOV EAX,ECX                         ; 0054e20e
     SHR ECX,0x2                         ; 0054e210
-    MOVSD.REP ES:EDI,ESI                ; 0054e213 | g_CHAR_ARRAY_02630cb8 | g_CHAR_ARRAY_02630cb8+4
+    MOVSD.REP ES:EDI,ESI                ; 0054e213 | g_SfxStreamReadBuffer | g_SfxStreamReadBuffer+4
     MOV CL,AL                           ; 0054e215
     AND CL,0x3                          ; 0054e217
-    MOVSB.REP ES:EDI,ESI                ; 0054e21a | g_CHAR_ARRAY_02630cb8+4 | g_CHAR_ARRAY_02630cb8+5
+    MOVSB.REP ES:EDI,ESI                ; 0054e21a | g_SfxStreamReadBuffer+4 | g_SfxStreamReadBuffer+5
     POP EDI                             ; 0054e21c
     PUSH EBP                            ; 0054e21d
         ;   Label: LAB_0054e21d
@@ -499,7 +499,7 @@ section .text
     PUSH EDX                            ; 0054e2bf
         ;   Label: LAB_0054e2bf
     PUSH 0x80                           ; 0054e2c0
-    PUSH ESI                            ; 0054e2c5 | g_CHAR_ARRAY_02630cb8
+    PUSH ESI                            ; 0054e2c5 | g_SfxStreamReadBuffer
     CALL crt_memory.c_memset_FUN_005b77c0 ; 0054e2c6
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0054e2cb
@@ -509,7 +509,7 @@ section .text
         ;   Label: LAB_0054e2d3
     PUSH EDX                            ; 0054e2d5
     PUSH 0x0                            ; 0054e2d6
-    PUSH ESI                            ; 0054e2d8 | g_CHAR_ARRAY_02630cb8
+    PUSH ESI                            ; 0054e2d8 | g_SfxStreamReadBuffer
     CALL crt_memory.c_memset_FUN_005b77c0 ; 0054e2d9
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0054e2de

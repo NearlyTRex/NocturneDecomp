@@ -18,8 +18,8 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   void*[1200] g_ARRAY_PTR_01c4354c
-;   undefined4 g_UINT_ARRAY_01c4f030[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     SHR EAX,0x10                        ; 00486e35
         ;   Label: LAB_00486e35
     SHR ECX,0x10                        ; 00486e38
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c4354c] ; 00486e3b | g_ARRAY_PTR_01c4354c
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c4354c] ; 00486e3b | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00486e42
     JLE 0x00486e71                      ; 00486e44
         ;   XREF to: 00486e71 (CONDITIONAL_JUMP)  ; LAB_00486e71
@@ -46,7 +46,7 @@ section .text
     ADD EBX,EAX                         ; 00486e48
     MOV EAX,dword ptr [EDI + 0x28]      ; 00486e4a
     SUB EAX,dword ptr [ESI + 0x28]      ; 00486e4d
-    IMUL dword ptr [ECX*0x4 + 0x1c4f034] ; 00486e50 | g_UINT_ARRAY_01c4f030[1]
+    IMUL dword ptr [ECX*0x4 + 0x1c4f034] ; 00486e50 | g_ReciprocalLookupTable[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 00486e57
     MOV EAX,ESI                         ; 00486e5a
         ;   Label: LAB_00486e5a

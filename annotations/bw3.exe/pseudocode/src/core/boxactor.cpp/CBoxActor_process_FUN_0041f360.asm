@@ -15,7 +15,7 @@
 ;   float g_FLOAT_005b74f5 = 0.5
 ;   double g_DOUBLE_005b74f9 = 3
 ;   float g_FLOAT_005b7501 = 0.2000000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
@@ -391,7 +391,7 @@ section .text
     LEA EAX,[EBX + 0x664]               ; 0041f81d
         ;   Label: LAB_0041f81d
     PUSH EAX                            ; 0041f823
-    MOV EDX,dword ptr [0x005fba60]      ; 0041f824 | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 0041f824 | g_CEventListPtr
     PUSH EDX                            ; 0041f82a
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0041f82b
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

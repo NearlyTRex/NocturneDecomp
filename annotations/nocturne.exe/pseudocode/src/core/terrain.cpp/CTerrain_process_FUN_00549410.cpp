@@ -12,8 +12,8 @@ void __cdecl core_terrain_cpp_CTerrain_process_FUN_00549410(CTerrain *this_ptr)
   int iVar1;
   
   iVar1 = this_ptr->animation_counter +
-          ((uint)((longlong)g_INT_01bd1d80 * 0x6270) >> 0x10 |
-          (int)((ulonglong)((longlong)g_INT_01bd1d80 * 0x6270) >> 0x20) << 0x10);
+          ((uint)((longlong)g_GlobalDeltaTimeInt * 0x6270) >> 0x10 |
+          (int)((ulonglong)((longlong)g_GlobalDeltaTimeInt * 0x6270) >> 0x20) << 0x10);
   this_ptr->animation_counter = iVar1;
   if (iVar1 < 0x8000001) {
     return;

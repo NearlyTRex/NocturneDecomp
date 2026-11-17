@@ -106,7 +106,7 @@ LAB_0052d1a2:
         pcVar8 = pcVar8 + 2;
       } while (cVar4 != '\0');
     }
-    pcVar6 = g_CHAR_ARRAY_005bef20;
+    pcVar6 = g_SoundResultBufferTemplate;
     pcVar5 = local_a8;
     for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
       *(uint *)pcVar5 = *(uint *)pcVar6;

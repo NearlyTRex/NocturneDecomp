@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   int INT_005c1654 = 0x8
-;   int g_INT_01bd1d8c
-;   int g_INT_01bd1d90
+;   int g_MouseX
+;   int g_MouseY
 ;   uchar[32768] g_ColorCubeLookup
 ;   int g_ClipLeft
 ;   int g_ClipTop
@@ -31,7 +31,7 @@ section .text
     MOV EAX,[0x005c1654]                ; 00558c44 | INT_005c1654
     MOV EDX,dword ptr [0x02de0858]      ; 00558c49 | g_INT_02de0858
     ADD EDX,EAX                         ; 00558c4f
-    MOV ESI,dword ptr [0x01bd1d8c]      ; 00558c51 | g_INT_01bd1d8c
+    MOV ESI,dword ptr [0x01bd1d8c]      ; 00558c51 | g_MouseX
     MOV dword ptr [0x02de0858],EDX      ; 00558c57 | g_INT_02de0858
     CMP EDX,0xff                        ; 00558c5d
     JG 0x00558ccd                       ; 00558c63
@@ -51,7 +51,7 @@ section .text
     AND EAX,0xff                        ; 00558c88
     MOV EBX,0xfffffffb                  ; 00558c8d
     MOV [0x01c00c70],EAX                ; 00558c92 | g_ActiveRenderColor
-    MOV EAX,[0x01bd1d90]                ; 00558c97 | g_INT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00558c97 | g_MouseY
         ;   Label: LAB_00558c97
     MOV ECX,dword ptr [0x01c00c58]      ; 00558c9c | g_ClipLeft
     ADD EAX,EBX                         ; 00558ca2
@@ -67,7 +67,7 @@ section .text
     ADD ESI,0x6                         ; 00558cb1
     MOV ECX,dword ptr [0x01c00c58]      ; 00558cb4 | g_ClipLeft
         ;   Label: LAB_00558cb4
-    MOV EAX,[0x01bd1d90]                ; 00558cba | g_INT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00558cba | g_MouseY
     CMP EBX,ECX                         ; 00558cbf
     JG 0x00558d20                       ; 00558cc1
         ;   XREF to: 00558d20 (CONDITIONAL_JUMP)  ; LAB_00558d20

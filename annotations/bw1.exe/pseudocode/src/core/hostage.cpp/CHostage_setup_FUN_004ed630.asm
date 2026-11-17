@@ -21,7 +21,7 @@
 ;   TerminatedCString s_Bip01_L_Hand_005e4d04
 ;   TerminatedCString s_Bip01_Spine1_005e4d11
 ;   TerminatedCString s_gunup_005e4d1e
-;   int g_INT_01d06b8c
+;   int g_HostageGunUpMotionIndex
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
@@ -198,7 +198,7 @@ section .text
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0 ; 004ed7ea
         ;   XREF to: 005240c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004ed7ef
-    MOV [0x01d06b8c],EAX                ; 004ed7f2 | g_INT_01d06b8c
+    MOV [0x01d06b8c],EAX                ; 004ed7f2 | g_HostageGunUpMotionIndex
     JMP 0x004ed7cb                      ; 004ed7f7
         ;   XREF to: 004ed7cb (UNCONDITIONAL_JUMP)  ; LAB_004ed7cb
 

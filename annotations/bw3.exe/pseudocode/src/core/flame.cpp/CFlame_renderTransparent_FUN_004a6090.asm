@@ -308,14 +308,14 @@ section .text
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004a63f5
     PUSH 0x0                            ; 004a63f8
-    MOV EAX,[0x007e2a54]                ; 004a63fa | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 004a63fa | g_CurrentSceneCamera
     PUSH EDI                            ; 004a63ff
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004a6400
     PUSH EAX                            ; 004a6403
     CALL dword ptr [EDX + 0x4]          ; 004a6404
     MOV EDX,0xffff                      ; 004a6407
     ADD ESP,0xc                         ; 004a640c
-    MOV EAX,[0x01c6e24c]                ; 004a640f | g_INT_01c6e24c
+    MOV EAX,[0x01c6e24c]                ; 004a640f | g_PerspectiveReciprocal
     MOV ECX,dword ptr [ESP + 0x150]     ; 004a6414
     SUB EDX,EAX                         ; 004a641b
     CMP ECX,0x3                         ; 004a641d

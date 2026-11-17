@@ -229,7 +229,7 @@
     },
     {
       "addr": "005a1a70",
-      "name": "g_FLOAT_005a1a70",
+      "name": "g_VDCoordinateScaleFactor",
       "type": "float",
       "value": "256"
     },
@@ -265,79 +265,79 @@
     },
     {
       "addr": "005be774",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774",
+      "name": "g_BoundingBoxQuadTemplates",
       "type": "SMRGLPrimitiveQuad[6]",
       "value": null
     },
     {
       "addr": "005be77c",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.A",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be780",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.B",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be784",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.C",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be788",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[0].base.surface_normal.D",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be78c",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[0].vertices[0].vertex_index",
+      "name": "g_BoundingBoxQuadTemplates[0].vertices[0].vertex_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be7bc",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.base.type",
+      "name": "g_BoundingBoxQuadTemplates[1].base.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be7c4",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.A",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be7c8",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.B",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be7cc",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.C",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be7d0",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[1].base.surface_normal.D",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be7d4",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_005be774[1].vertices[0].vertex_index",
+      "name": "g_BoundingBoxQuadTemplates[1].vertices[0].vertex_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005be924",
-      "name": "g_SMRGLTextureBasic_005be924",
+      "name": "g_VolumetricSphereTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -415,13 +415,13 @@
     },
     {
       "addr": "026639ec",
-      "name": "g_INT_026639ec",
+      "name": "g_VDNearbyActorCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "026639f0",
-      "name": "g_CDemonActor_PTR_ARRAY_026639f0",
+      "name": "g_VDNearbyActorPointers",
       "type": "CDemonActor*[2000]",
       "value": null
     },
@@ -822,9 +822,9 @@
     {
       "description": "Complex pointer cast",
       "line": 377,
-      "match": "(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_026639f0",
+      "match": "(CDemonActor **)((int)g_VDNearbyActorPointers",
       "severity": "moderate",
-      "text": "pCStack_60 = *(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_026639f0 + iStack_2c);",
+      "text": "pCStack_60 = *(CDemonActor **)((int)g_VDNearbyActorPointers + iStack_2c);",
       "type": "pointer_cast"
     },
     {
@@ -916,11 +916,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonActor_PTR_ARRAY_026639f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_VDNearbyActorPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 377,
-      "match": "(int)g_CDemonActor_PTR_ARRAY_026639f0",
+      "match": "(int)g_VDNearbyActorPointers",
       "severity": "moderate",
-      "text": "pCStack_60 = *(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_026639f0 + iStack_2c);",
+      "text": "pCStack_60 = *(CDemonActor **)((int)g_VDNearbyActorPointers + iStack_2c);",
       "type": "pointer_truncation"
     },
     {
@@ -1016,7 +1016,7 @@
       "line": 219,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CBoundingBox3D_ARRAY_02665930[g_INT_026639ec].min.x = (pCVar8->min).x;",
+      "text": "g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1024,7 +1024,7 @@
       "line": 224,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CBoundingBox3D_ARRAY_02665930[iVar7].max.x = (pCVar8->max).x;",
+      "text": "g_VDNearbyActorBoundingBoxes[iVar7].max.x = (pCVar8->max).x;",
       "type": "unrolled_memcpy"
     },
     {

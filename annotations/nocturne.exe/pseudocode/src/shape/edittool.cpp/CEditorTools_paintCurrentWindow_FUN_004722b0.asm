@@ -26,7 +26,7 @@
 ;   TerminatedCString s_CEditorTools_paintWindow_0057ea0c
 ;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   int g_INT_01bcd07c
-;   int g_INT_01bcd9b8
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01bcd9bc
 ;   int g_INT_01bcddc8
 ;   int g_INT_01bcddcc
@@ -66,7 +66,7 @@ section .text
     PUSH 0x6a                           ; 004722c9
     MOV EDX,dword ptr [EAX + 0x3168]    ; 004722cb
     PUSH EAX                            ; 004722d1
-    MOV dword ptr [0x01bcd9b8],EDX      ; 004722d2 | g_INT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EDX      ; 004722d2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004722d8
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV ESI,dword ptr [0x01bcd07c]      ; 004722dd | g_INT_01bcd07c

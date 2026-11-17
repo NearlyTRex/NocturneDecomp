@@ -13,7 +13,7 @@
 ;   float FLOAT_0059c408 = 1
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   int g_INT_01cd4318
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -113,7 +113,7 @@ section .text
     CMP dword ptr [EBX + 0xbe4c],0x0    ; 0045a306
     JZ 0x0045a35a                       ; 0045a30d
         ;   XREF to: 0045a35a (CONDITIONAL_JUMP)  ; LAB_0045a35a
-    CMP dword ptr [0x01cd4318],0x0      ; 0045a30f | g_INT_01cd4318
+    CMP dword ptr [0x01cd4318],0x0      ; 0045a30f | g_RenderMotionDebug
         ;   Label: LAB_0045a30f
     JZ 0x0045a348                       ; 0045a316
         ;   XREF to: 0045a348 (CONDITIONAL_JUMP)  ; LAB_0045a348

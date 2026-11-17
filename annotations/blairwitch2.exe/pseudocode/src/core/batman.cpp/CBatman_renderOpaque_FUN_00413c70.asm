@@ -11,7 +11,7 @@
 ;   float g_FLOAT_005f3098 = 1
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01d1cdc8
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 00424bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00413d2e
         ;   Label: LAB_00413d2e
-    CMP dword ptr [0x01d1cdc8],0x0      ; 00413d31 | g_INT_01d1cdc8
+    CMP dword ptr [0x01d1cdc8],0x0      ; 00413d31 | g_RenderMotionDebug
         ;   Label: LAB_00413d31
     JZ 0x00413d6a                       ; 00413d38
         ;   XREF to: 00413d6a (CONDITIONAL_JUMP)  ; LAB_00413d6a

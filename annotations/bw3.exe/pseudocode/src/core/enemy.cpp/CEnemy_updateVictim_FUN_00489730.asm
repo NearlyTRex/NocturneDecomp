@@ -13,7 +13,7 @@
 ;   float g_FLOAT_005bdc9b = 3
 ;   undefined4 DAT_005df358
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CConsole g_CConsoleInstance
@@ -93,7 +93,7 @@ section .text
     RET                                 ; 004897d0
     PUSH 0x5bdc7f                       ; 004897d1 | = "Capture"
         ;   Label: LAB_004897d1
-    MOV ESI,dword ptr [0x005fba60]      ; 004897d6 | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004897d6 | g_CEventListPtr
     PUSH ESI                            ; 004897dc
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004897dd
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

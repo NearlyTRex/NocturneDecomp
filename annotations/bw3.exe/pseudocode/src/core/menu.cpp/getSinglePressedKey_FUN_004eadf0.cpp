@@ -20,7 +20,7 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
   EVar2 = 0xffffffff;
   key_code = 0;
   do {
-    iVar1 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,key_code);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,key_code);
     if ((iVar1 != 0) && (bVar3 = -1 < (int)EVar2, EVar2 = key_code, bVar3)) {
       return -2;
     }

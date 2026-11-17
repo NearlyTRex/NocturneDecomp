@@ -5,12 +5,12 @@
 // =============================================================================
 
 // char*
-char* g_CHAR_PTR_0150f454 = {};
+char* g_CoronaLightingTextureData = {};
 
 // int
-int g_INT_0150f450 = {};
+int g_FlatShadingLightLevel = {};
 
 // int[240]
-int g_INT_ARRAY_0150ecd0[240] = {};
-int g_INT_ARRAY_0150f090[240] = {};
+int g_CoronaLeftIntensity[240] = {};
+int g_CoronaRightIntensity[240] = {};
 

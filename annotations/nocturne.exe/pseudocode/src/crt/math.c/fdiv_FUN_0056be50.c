@@ -40,14 +40,16 @@ LAB_0056bf60:
   if (((in_stack_00000008 * 2 ^ 0xe000000) & 0xe000000) != 0) {
     return fVar2 / fVar1;
   }
-  if (g_BYTE_ARRAY_005c3f68[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {
+  if (g_IEEE754ExponentClassTable[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {
     return fVar2 / fVar1;
   }
   if (((in_stack_0000000c & 0x7fff) != 0) && ((in_stack_0000000c & 0x7fff) != 0x7fff)) {
     if ((in_stack_00000018 & 0x7fff) == 1) {
-      return (fVar2 * (float10)1.0625f) / (fVar1 * (float10)1.0625f);
+      return (fVar2 * (float10)1.0625f) /
+             (fVar1 * (float10)1.0625f);
     }
-    return (fVar2 * (float10)0.9375f) / (fVar1 * (float10)0.9375f);
+    return (fVar2 * (float10)0.9375f) /
+           (fVar1 * (float10)0.9375f);
   }
 LAB_0056bef4:
   return fVar2 / fVar1;

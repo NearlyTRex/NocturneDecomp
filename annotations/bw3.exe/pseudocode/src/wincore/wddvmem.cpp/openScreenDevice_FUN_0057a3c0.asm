@@ -16,12 +16,12 @@
 ;   TerminatedCString s_wincore_wddvmem_cpp_005d75ed
 ;   TerminatedCString s_openScreenDevice_Unable_005d7604
 ;   int g_INT_005fba1c = 0xc8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6cee8
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02d0bce8
+;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   int g_INT_02d0bcfc
 ;   int g_INT_02d0bd08
 ;   int g_INT_02d0bd0c
@@ -69,7 +69,7 @@ section .text
     LEA EDX,[ESP + 0x8]                 ; 0057a3fc
     MOV EBX,0x6c                        ; 0057a400
     PUSH EDX                            ; 0057a405
-    MOV EAX,[0x02d0bce8]                ; 0057a406 | g_IDirectDrawSurface_PTR_02d0bce8
+    MOV EAX,[0x02d0bce8]                ; 0057a406 | g_SoftwareRenderSurface
     MOV dword ptr [ESP + 0xc],EBX       ; 0057a40b
     PUSH 0x0                            ; 0057a40f
     MOV ECX,dword ptr [EAX]             ; 0057a411
@@ -100,7 +100,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 0057a456
     LEA ECX,[ESI*0x4 + 0x0]             ; 0057a45a
     XOR EAX,EAX                         ; 0057a461
-    MOV dword ptr [EAX + 0x1c5faec],EDX ; 0057a463 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV dword ptr [EAX + 0x1c5faec],EDX ; 0057a463 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0057a463
     ADD EAX,0x4                         ; 0057a469
     ADD EDX,EDI                         ; 0057a46c

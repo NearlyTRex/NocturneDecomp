@@ -44,7 +44,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
   if (pCVar1 == (CCharacter *)0x0) {
     if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (g_CEventList_PTR_005fba60,"Capture"), iVar3 != 0)) {
+                          (g_CEventListPtr,"Capture"), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
       this_ptr->victim_search_timer = 0.0;
       this_ptr->victim = (CCharacter *)0x0;

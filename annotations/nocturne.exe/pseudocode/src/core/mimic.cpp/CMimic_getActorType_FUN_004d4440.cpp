@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_004d4440(CMimic *this_ptr)
 
 {
-  return &g_CMimicActorType_01cc9058;
+  return &g_CMimicClassInfo;
 }

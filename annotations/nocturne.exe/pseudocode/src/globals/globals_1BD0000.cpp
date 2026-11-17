@@ -5,13 +5,13 @@
 // =============================================================================
 
 // _BIT_INTEGER32
-_BIT_INTEGER32 g_BIT_INTEGER32_01bd1d94 = {};
+_BIT_INTEGER32 g_MouseButtonFlags = {};
 
 // int
-int g_INT_01bd1d80 = {};
-int g_INT_01bd1d84 = {};
-int g_INT_01bd1d8c = {};
-int g_INT_01bd1d90 = {};
+int g_GlobalDeltaTimeInt = {};
+int g_AnimationTimerValue = {};
+int g_MouseX = {};
+int g_MouseY = {};
 
 // uchar[18][256]
 uchar g_FogTable[18][256] = {};

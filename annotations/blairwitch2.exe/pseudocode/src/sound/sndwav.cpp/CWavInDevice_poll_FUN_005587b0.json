@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 91,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 55,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 198
+    "total_lines": 202
   },
   "cross_references": [],
   "function": {
@@ -54,73 +54,73 @@
     },
     {
       "addr": "0264b1fc",
-      "name": "g_INT_ARRAY_0264b1fc",
+      "name": "g_WaveInBuffers",
       "type": "int[20]",
       "value": null
     },
     {
       "addr": "0264b24c",
-      "name": "g_INT_0264b24c",
+      "name": "g_WaveInBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b250",
-      "name": "g_INT_0264b250",
+      "name": "g_WaveInChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b254",
-      "name": "g_INT_0264b254",
+      "name": "g_WaveInSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b25c",
-      "name": "g_INT_0264b25c",
+      "name": "g_WaveInBufferSizeSamples",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b260",
-      "name": "g_INT_0264b260",
+      "name": "g_WaveInNumBuffers",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b264",
-      "name": "g_INT_0264b264",
+      "name": "g_WaveInRequestedBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b268",
-      "name": "g_INT_0264b268",
+      "name": "g_WaveInRequestedChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b26c",
-      "name": "g_INT_0264b26c",
+      "name": "g_WaveInRequestedSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b270",
-      "name": "g_INT_0264b270",
+      "name": "g_WaveInStereoRequested",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b274",
-      "name": "g_INT_0264b274",
+      "name": "g_WaveInCurrentBufferIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264b278",
-      "name": "g_INT_0264b278",
+      "name": "g_WaveInCurrentSampleOffset",
       "type": "int",
       "value": null
     }
@@ -225,7 +225,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 32,
       "match": "(short *)((int)output_buffer",
       "severity": "moderate",
       "text": "output_buffer = (short *)((int)output_buffer + iVar3 * iVar1);",
@@ -236,7 +236,7 @@
       "line": 12,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_0264b24c + (g_INT_0264b24c >> 0x1f) * -8) -",
+      "text": "((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -244,7 +244,7 @@
       "line": 13,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_0264b24c >> 0x1f) << 2 < 0)) >> 3);",
+      "text": "(uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3);",
       "type": "signed_shift_global_idiom"
     }
   ],

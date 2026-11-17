@@ -45,7 +45,7 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   CBitFont* g_CBitFont_PTR_01511cc0
+;   CBitFont* g_ThemeFont
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.rendering_mode
@@ -53,7 +53,7 @@
 ;   undefined4 g_CDemonSetInstance.light_direction.y
 ;   undefined4 g_CDemonSetInstance.light_direction.z
 ;   undefined4 g_CDemonSetInstance.ambient_base_quick
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
@@ -147,7 +147,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710 ; 004e16b8
         ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004e16bd
-    PUSH 0x265370c                      ; 004e16c0 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004e16c0 | g_ZeroVector
         ;   Label: LAB_004e16c0
     MOV EBP,dword ptr [0x0060b280]      ; 004e16c5 | g_CDemonRenderer_PTR_0060b280
     PUSH EBP                            ; 004e16cb | g_CDemonRenderer_01ba5c50
@@ -168,7 +168,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 004e16fa
         ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004e16ff
-    PUSH 0x265370c                      ; 004e1702 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004e1702 | g_ZeroVector
     MOV EDI,dword ptr [0x0060b280]      ; 004e1707 | g_CDemonRenderer_PTR_0060b280
     PUSH EDI                            ; 004e170d | g_CDemonRenderer_01ba5c50
     XOR EBP,EBP                         ; 004e170e
@@ -395,7 +395,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004e1a05 | g_CDemonSetPtr
         ;   Label: LAB_004e1a05
     MOV dword ptr [EAX + 0x15ae84],0x0  ; 004e1a0a | g_CDemonSetInstance.rendering_mode
-    MOV EAX,[0x01511cc0]                ; 004e1a14 | g_CBitFont_PTR_01511cc0
+    MOV EAX,[0x01511cc0]                ; 004e1a14 | g_ThemeFont
     MOV EDX,dword ptr [0x006141b8]      ; 004e1a19 | g_INT_006141b8
     MOV dword ptr [ESP + 0x58],EAX      ; 004e1a1f
     LEA EAX,[EDX*0x8 + 0x0]             ; 004e1a23

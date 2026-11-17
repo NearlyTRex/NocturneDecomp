@@ -12,9 +12,9 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a
   uint error_code;
   char acStack_190 [400];
   
-  if (g_IDirectSound3DListener_PTR_02c81da0 != (IDirectSound3DListener *)0x0) {
-    error_code = (*g_IDirectSound3DListener_PTR_02c81da0->vtable->CommitDeferredSettings)
-                           (g_IDirectSound3DListener_PTR_02c81da0);
+  if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
+    error_code = (*g_DirectSound3DListener->vtable->CommitDeferredSettings)(g_DirectSound3DListener)
+    ;
     if (error_code != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00577500(error_code);
       _sprintf(acStack_190,"DirectSux: Unable to %s.  (%s)");

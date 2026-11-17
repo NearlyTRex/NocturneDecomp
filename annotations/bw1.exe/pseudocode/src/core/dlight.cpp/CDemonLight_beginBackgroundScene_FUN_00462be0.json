@@ -81,25 +81,25 @@
     },
     {
       "addr": "01b2d374",
-      "name": "g_INT_01b2d374",
+      "name": "g_BackgroundSceneNestingCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b2d378",
-      "name": "g_ARRAY_PTR_01b2d378",
+      "name": "g_SavedScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01b2d37c",
-      "name": "g_ARRAY_PTR_01b2d378[1]",
+      "name": "g_SavedScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b2d37d",
-      "name": "g_ARRAY_PTR_01b2d378[1]+1",
+      "name": "g_SavedScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -111,19 +111,19 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "g_ARRAY_PTR_01c4354c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c43551",
-      "name": "g_ARRAY_PTR_01c4354c[1]+1",
+      "name": "g_ScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -258,9 +258,9 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(void **)((int)g_ARRAY_PTR_01c4354c",
+      "match": "(void **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(void **)((int)g_ARRAY_PTR_01c4354c + iVar3) =",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
       "type": "pointer_cast"
     },
     {
@@ -288,11 +288,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(void **)((int)g_ARRAY_PTR_01c4354c + iVar3) =",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
       "type": "pointer_truncation"
     },
     {
@@ -316,7 +316,7 @@
       "line": 24,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00462c24: MOVSD.REP ES:EDI,ESI  ; g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01b2d378 | g_ARRAY_PTR_01c4354c[1]",
+      "text": "// 00462c24: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_SavedScreenBufferArray | g_ScreenBufferArray[1]",
       "type": "unrolled_memcpy"
     }
   ]

@@ -15,14 +15,14 @@ int __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect *
   iVar1 = 0;
   for (; 0 < flame_count; flame_count = flame_count + -1) {
     core_fire_cpp_CGunFlame_activate_FUN_0049e1a0
-              (g_CGunFlame_ARRAY_01cfb8bc + g_INT_01cfb8b8,position,euler_angles,flame_type,
-               flame_style);
-    iVar2 = g_INT_01cfb8b8 + 1;
+              (g_CGunFlame_ARRAY_01cfb8bc + g_LightningBoltAllocIndex,position,euler_angles,
+               flame_type,flame_style);
+    iVar2 = g_LightningBoltAllocIndex + 1;
     if (499 < iVar2) {
       iVar2 = 0;
     }
-    iVar1 = g_INT_01cfb8b8;
-    g_INT_01cfb8b8 = iVar2;
+    iVar1 = g_LightningBoltAllocIndex;
+    g_LightningBoltAllocIndex = iVar2;
   }
   return iVar1;
 }

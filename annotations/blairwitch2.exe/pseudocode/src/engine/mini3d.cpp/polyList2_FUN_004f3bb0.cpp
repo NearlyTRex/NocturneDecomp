@@ -9,13 +9,13 @@
 void __cdecl engine_mini3d_cpp_polyList2_FUN_004f3bb0(float *vertices,int vertex_count,ushort *indices,int triangle_count)
 
 {
-  g_INT_01e61b58 = g_INT_01e61b58 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   g_INT_01d09854 = g_INT_01d09854 + vertex_count;
   engine_mini3d_cpp_updateTransform_FUN_004f3740();
   engine_mini3d_cpp_updateRenderState_FUN_004f7da0();
-  if ((g_PTR_0264bc8c != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-    (*(code *)g_PTR_0264bc8c)
-              (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c38b54.dword);
+  if ((g_APIDLL_lockTexture != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_APIDLL_lockTexture)
+              (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";

@@ -48,12 +48,12 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
   _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath
-            (g_CHAR_ARRAY_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_368);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_368);
   iVar2 = _stricmp(local_368,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_368,".noc"), iVar2 == 0)) {
     pcVar8 = local_570;
-    pcVar6 = g_CHAR_ARRAY_01cd05c0;
+    pcVar6 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar6;
       *pcVar8 = cVar1;
@@ -70,7 +70,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
   local_30 = g_CBitFont_PTR_01c3eb50;
   if (load_mode != 0) {
-    g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d244;
+    g_CBitFont_PTR_01c3eb50 = g_ThemeFont;
   }
   local_28 = this_ptr->chapter_reload_filename;
   local_24 = &this_ptr->total_kill_count;
@@ -108,14 +108,14 @@ LAB_004d6e32:
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(g_CEventList_PTR_0061b4d0);
+    core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(g_CEventListPtr);
     core_level_cpp_CLevelLoader_show_FUN_004fe840(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_cpp_getFile_FUN_00479180("save",local_570,"rt");
     local_18 = _ftell(file_handle);
     iVar5 = 1;
-    iVar2 = _stricmp(g_CHAR_ARRAY_01cd05c0,local_570);
+    iVar2 = _stricmp(g_CurrentSaveFile,local_570);
     if (iVar2 != 0) {
-      pcVar6 = g_CHAR_ARRAY_01cd05c0;
+      pcVar6 = g_CurrentSaveFile;
       pcVar8 = local_570;
       do {
         cVar1 = *pcVar8;
@@ -233,7 +233,7 @@ LAB_004d6be4:
         _fgets(local_268,0xff,file_handle);
         _fscanf(file_handle,"%d, %d\n");
         local_14 = 0;
-        if (0 < g_INT_01d06aa0) {
+        if (0 < g_HeroCount) {
           iVar2 = 0;
           do {
             pcVar8 = "(file corrupt)";
@@ -256,12 +256,12 @@ LAB_004d6be4:
             }
             local_14 = local_14 + 1;
             iVar2 = iVar2 + 4;
-          } while (local_14 < g_INT_01d06aa0);
+          } while (local_14 < g_HeroCount);
         }
         iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0
                           (g_CDemonMission_PTR_0061f650);
         if (iVar2 == 0) goto LAB_004d6e32;
-        core_event_cpp_CEventList_loadState_FUN_004aa610(g_CEventList_PTR_0061b4d0,file_handle);
+        core_event_cpp_CEventList_loadState_FUN_004aa610(g_CEventListPtr,file_handle);
         core_script_cpp_CScript_loadState_FUN_0054b3e0(g_CScriptPtr,file_handle);
         if (local_34 < 4) {
           core_gore_cpp_CGore_reset_FUN_004e5c00(g_CGorePtr);
@@ -270,10 +270,10 @@ LAB_004d6be4:
           core_gore_cpp_CGore_load_FUN_004e6680(g_CGorePtr,file_handle);
         }
         if (local_34 < 7) {
-          core_fire_cpp_CFireEffect_init_FUN_004b4b30(g_CFireEffect_PTR_0061c010);
+          core_fire_cpp_CFireEffect_init_FUN_004b4b30(g_CFireEffectPtr);
         }
         else {
-          core_fire_cpp_CFireEffect_load_FUN_004b7370(g_CFireEffect_PTR_0061c010,file_handle);
+          core_fire_cpp_CFireEffect_load_FUN_004b7370(g_CFireEffectPtr,file_handle);
         }
         if (local_34 < 6) {
           g_INT_01cd06c0 = 0;
@@ -282,11 +282,11 @@ LAB_004d6be4:
           _fgets(local_268,0xff,file_handle);
           iVar2 = 1;
           _fscanf(file_handle,"%d\n");
-          if (0 < g_INT_ARRAY_01cd06c4[0]) {
+          if (0 < g_MasterLightStateSaveBuffer[0]) {
             do {
               iVar2 = iVar2 + 1;
               _fscanf(file_handle,"%d\n");
-            } while (iVar2 <= g_INT_ARRAY_01cd06c4[0]);
+            } while (iVar2 <= g_MasterLightStateSaveBuffer[0]);
           }
           g_INT_01cd06c0 = 1;
         }

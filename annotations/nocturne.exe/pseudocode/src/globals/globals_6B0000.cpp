@@ -5,42 +5,42 @@
 // =============================================================================
 
 // SRenderBufferEntry[256]
-SRenderBufferEntry g_SRenderBufferEntry_ARRAY_006b4954[256] = {};
+SRenderBufferEntry g_RenderBufferPool[256] = {};
 
 // int
-int g_INT_006b023c = {};
-int g_INT_006b0240 = {};
-int g_INT_006b0244 = {};
-int g_INT_006b0248 = {};
-int g_INT_006b024c = {};
-int g_INT_006b0250 = {};
-int g_INT_006b0254 = {};
-int g_INT_006b025c = {};
-int g_INT_006b0260 = {};
-int g_INT_006b026c = {};
-int g_INT_006b0270 = {};
+int g_StoredWindowWidth = {};
+int g_StoredWindowHeight = {};
+int g_StoredClipLeft = {};
+int g_StoredClipTop = {};
+int g_StoredClipRight = {};
+int g_StoredClipBottom = {};
+int g_StoredBitsPerPixel = {};
+int g_ScreenBufferStride = {};
+int g_CurrentPolygonColor = {};
+int g_PlaneTestCount = {};
+int g_BypassClipping = {};
 int g_INT_006b0274 = {};
 int g_TexturesDisabled = {};
 int g_INT_006b027c = {};
-int g_INT_006b0280 = {};
-int g_INT_006b0284 = {};
-int g_INT_006b0288 = {};
+int g_CullingMode = {};
+int g_CurrentInvertedColor = {};
+int g_RenderResult = {};
 int g_StoredX = {};
 int g_StoredY = {};
 int g_StoredZ = {};
-int g_INT_006b494c = {};
-int g_INT_006b4950 = {};
+int g_RenderBufferEnabled = {};
+int g_RenderBufferCount = {};
 
 // int[24]
-int g_INT_ARRAY_006b029c[24] = {};
+int g_ProcessedVertexIndices[24] = {};
 
 // int[508]
 int g_INT_ARRAY_006b415c[508] = {};
 
 // uint
-uint g_UINT_006b0264 = {};
-uint g_UINT_006b0268 = {};
+uint g_ProcessedVertexOffset = {};
+uint g_ProcessedVertexBackupOffset = {};
 
 // void*
-void* g_PTR_006b0258 = {};
+void* g_StoredMappedFrameBuffer = {};
 

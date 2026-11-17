@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
 ;   float g_FLOAT_01d76cd4
-;   void* g_PTR_02cf60ac
+;   void* g_APIDLL_setAmbientLight
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004ef360
         ;   Label: engine_mini3d.cpp_setAmbientLight_FUN_004ef360
-    MOV EDX,dword ptr [0x02cf60ac]      ; 004ef364 | g_PTR_02cf60ac
+    MOV EDX,dword ptr [0x02cf60ac]      ; 004ef364 | g_APIDLL_setAmbientLight
     MOV [0x01d76cd4],EAX                ; 004ef36a | g_FLOAT_01d76cd4
     TEST EDX,EDX                        ; 004ef36f
     JZ 0x004ef37c                       ; 004ef371
@@ -29,7 +29,7 @@ section .text
         ;   Label: LAB_004ef37c
     PUSH EAX                            ; 004ef37d
         ;   Label: LAB_004ef37d
-    CALL dword ptr [0x02cf60ac]         ; 004ef37e | g_PTR_02cf60ac
+    CALL dword ptr [0x02cf60ac]         ; 004ef37e | g_APIDLL_setAmbientLight
     ADD ESP,0x4                         ; 004ef384
     RET                                 ; 004ef387
 

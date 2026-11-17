@@ -15,7 +15,7 @@
 ;   float g_FLOAT_005f95e4 = 2.5
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   CWeather* g_CWeather_PTR_0061e8f4 = 02661f80
+;   CWeather* g_CWeatherPtr = 02661f80
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
 ;   int g_INT_01cedef4
 ;
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 0044b600 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b600(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 004e3a0f
     PUSH 0x0                            ; 004e3a12
-    MOV ECX,dword ptr [0x0061e8f4]      ; 004e3a14 | g_CWeather_PTR_0061e8f4
+    MOV ECX,dword ptr [0x0061e8f4]      ; 004e3a14 | g_CWeatherPtr
     PUSH 0x3dcccccd                     ; 004e3a1a
     PUSH ECX                            ; 004e3a1f
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30 ; 004e3a20

@@ -14,19 +14,19 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   void*[1200] g_ScreenBufferArray
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   int g_INT_01c37788
-;   int g_INT_0264bbb0
+;   int g_FrameBufferTestResult
 ;   void* g_PTR_0264bbc8
 ;   void* g_PTR_0264bc1c
 ;   void* g_PTR_0264bc2c
-;   int g_INT_0264bcdc
-;   int g_INT_0264bce4
-;   int g_INT_0264bce8
-;   int g_INT_0264bcec
-;   HWND g_HWND_0264bcf0
-;   int g_INT_0264bcf4
+;   int g_LoadedExternalDLLRenderer
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
+;   HWND g_StoredWindowHandle
+;   int g_ExternalBitsPerPixel
 ;
 ; Called Functions:
 ;   engine_special.cpp_loadExternalRenderer_FUN_0055e8c0
@@ -45,16 +45,16 @@ section .text
     PUSH EBP                            ; 0055f773
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0055f774
     XOR EDX,EDX                         ; 0055f778
-    MOV dword ptr [0x0264bbb0],EDX      ; 0055f77a | g_INT_0264bbb0
+    MOV dword ptr [0x0264bbb0],EDX      ; 0055f77a | g_FrameBufferTestResult
     CMP EBX,0x10                        ; 0055f780
     JGE 0x0055f78a                      ; 0055f783
         ;   XREF to: 0055f78a (CONDITIONAL_JUMP)  ; LAB_0055f78a
     MOV EBX,0x10                        ; 0055f785
-    CMP dword ptr [0x0264bcdc],0x0      ; 0055f78a | g_INT_0264bcdc
+    CMP dword ptr [0x0264bcdc],0x0      ; 0055f78a | g_LoadedExternalDLLRenderer
         ;   Label: LAB_0055f78a
     JNZ 0x0055f7aa                      ; 0055f791
         ;   XREF to: 0055f7aa (CONDITIONAL_JUMP)  ; LAB_0055f7aa
-    MOV ESI,dword ptr [0x0264bcf0]      ; 0055f793 | g_HWND_0264bcf0
+    MOV ESI,dword ptr [0x0264bcf0]      ; 0055f793 | g_StoredWindowHandle
     PUSH ESI                            ; 0055f799
     CALL engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 ; 0055f79a
         ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle)
@@ -62,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 0055f7a2
     JZ 0x0055f855                       ; 0055f7a4
         ;   XREF to: 0055f855 (CONDITIONAL_JUMP)  ; LAB_0055f855
-    PUSH 0x1c2a38c                      ; 0055f7aa | g_ARRAY_PTR_01c2a38c
+    PUSH 0x1c2a38c                      ; 0055f7aa | g_ScreenBufferArray
         ;   Label: LAB_0055f7aa
     PUSH EBX                            ; 0055f7af
     MOV EDI,dword ptr [ESP + 0x20]      ; 0055f7b0
@@ -80,31 +80,31 @@ section .text
     ADD ESP,0x8                         ; 0055f7db
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10 ; 0055f7de
         ;   XREF to: 004d0d10 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10()
-    MOV EDX,dword ptr [0x0264bcec]      ; 0055f7e3 | g_INT_0264bcec
+    MOV EDX,dword ptr [0x0264bcec]      ; 0055f7e3 | g_FogColorBlue
     PUSH EDX                            ; 0055f7e9
-    MOV ECX,dword ptr [0x0264bce8]      ; 0055f7ea | g_INT_0264bce8
+    MOV ECX,dword ptr [0x0264bce8]      ; 0055f7ea | g_FogColorGreen
     PUSH ECX                            ; 0055f7f0
-    MOV ESI,dword ptr [0x0264bce4]      ; 0055f7f1 | g_INT_0264bce4
+    MOV ESI,dword ptr [0x0264bce4]      ; 0055f7f1 | g_FogColorRed
     PUSH ESI                            ; 0055f7f7
     MOV EDI,0x1                         ; 0055f7f8
     CALL dword ptr [0x0264bc1c]         ; 0055f7fd | g_PTR_0264bc1c
     ADD ESP,0xc                         ; 0055f803
     MOV dword ptr [0x01c37788],EDI      ; 0055f806 | g_INT_01c37788
-    MOV dword ptr [0x0264bcf4],EBX      ; 0055f80c | g_INT_0264bcf4
+    MOV dword ptr [0x0264bcf4],EBX      ; 0055f80c | g_ExternalBitsPerPixel
     CALL engine_special.cpp_lockFrame_FUN_0055f500 ; 0055f812
         ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_0055f500()
     MOV EBP,dword ptr [0x006141c0]      ; 0055f817 | g_INT_006141c0
     CMP EBP,0x10                        ; 0055f81d
     JNZ 0x0055f85a                      ; 0055f820
         ;   XREF to: 0055f85a (CONDITIONAL_JUMP)  ; LAB_0055f85a
-    MOV EAX,[0x01c2a38c]                ; 0055f822 | g_ARRAY_PTR_01c2a38c
+    MOV EAX,[0x01c2a38c]                ; 0055f822 | g_ScreenBufferArray
     MOV DX,word ptr [EAX]               ; 0055f827
     MOV word ptr [EAX],0xabcd           ; 0055f82a
     CMP word ptr [EAX],0xabcd           ; 0055f82f
     SETNZ BL                            ; 0055f834
     AND EBX,0xff                        ; 0055f837
     MOV word ptr [EAX],DX               ; 0055f83d
-    MOV dword ptr [0x0264bbb0],EBX      ; 0055f840 | g_INT_0264bbb0
+    MOV dword ptr [0x0264bbb0],EBX      ; 0055f840 | g_FrameBufferTestResult
         ;   Label: LAB_0055f840
     PUSH 0x0                            ; 0055f846
         ;   Label: LAB_0055f846
@@ -122,7 +122,7 @@ section .text
         ;   Label: LAB_0055f85a
     JNZ 0x0055f846                      ; 0055f85d
         ;   XREF to: 0055f846 (CONDITIONAL_JUMP)  ; LAB_0055f846
-    MOV EAX,[0x01c2a38c]                ; 0055f85f | g_ARRAY_PTR_01c2a38c
+    MOV EAX,[0x01c2a38c]                ; 0055f85f | g_ScreenBufferArray
     MOV EDX,dword ptr [EAX]             ; 0055f864
     MOV dword ptr [EAX],0xaabbccdd      ; 0055f866
     CMP dword ptr [EAX],0xaabbccdd      ; 0055f86c

@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_getTextureInfo_FUN_005664c0(int texture_size)
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6088)(texture_size);
+  iVar1 = (*(code *)g_APIDLL_getTextureInfo)(texture_size);
   return iVar1;
 }

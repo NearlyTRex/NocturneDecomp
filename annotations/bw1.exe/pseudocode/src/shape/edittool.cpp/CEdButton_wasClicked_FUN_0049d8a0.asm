@@ -13,10 +13,10 @@
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 00493b3d
 ;
 ; Referenced Globals:
-;   void* g_PTR_01c3f5d0
-;   int g_INT_01c4353c
-;   int g_INT_01c43540
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
+;   void* g_ActiveControl
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
 
     PUSH EBX                            ; 0049d8a0
         ;   Label: shape_edittool.cpp_CEdButton_wasClicked_FUN_0049d8a0
-    MOV ECX,dword ptr [0x01c3f5d0]      ; 0049d8a1 | g_PTR_01c3f5d0
+    MOV ECX,dword ptr [0x01c3f5d0]      ; 0049d8a1 | g_ActiveControl
     MOV EAX,dword ptr [ESP + 0x8]       ; 0049d8a7
     CMP dword ptr [EAX],0x0             ; 0049d8ab
     JZ 0x0049d8de                       ; 0049d8ae
@@ -35,7 +35,7 @@ section .text
         ;   Label: LAB_0049d8b2
     JNZ 0x0049d915                      ; 0049d8b4
         ;   XREF to: 0049d915 (CONDITIONAL_JUMP)  ; LAB_0049d915
-    MOV BH,byte ptr [0x01c43544]        ; 0049d8b6 | g_BIT_INTEGER32_01c43544
+    MOV BH,byte ptr [0x01c43544]        ; 0049d8b6 | g_MouseButtonFlags
     MOV dword ptr [EAX + 0x18],EDX      ; 0049d8bc
     TEST BH,0x1                         ; 0049d8bf
     JNZ 0x0049d911                      ; 0049d8c2
@@ -46,24 +46,24 @@ section .text
         ;   XREF to: 0049d911 (CONDITIONAL_JUMP)  ; LAB_0049d911
     MOV dword ptr [EAX + 0x18],0x0      ; 0049d8ca
     MOV EAX,0x1                         ; 0049d8d1
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049d8d6 | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049d8d6 | g_ActiveControl
         ;   Label: LAB_0049d8d6
     POP EBX                             ; 0049d8dc
     RET                                 ; 0049d8dd
-    MOV EDX,dword ptr [0x01c4353c]      ; 0049d8de | g_INT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 0049d8de | g_MouseX
         ;   Label: LAB_0049d8de
     CMP EDX,dword ptr [EAX + 0x8]       ; 0049d8e4
     JL 0x0049d8b0                       ; 0049d8e7
         ;   XREF to: 0049d8b0 (CONDITIONAL_JUMP)  ; LAB_0049d8b0
-    MOV EDX,dword ptr [0x01c43540]      ; 0049d8e9 | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 0049d8e9 | g_MouseY
     CMP EDX,dword ptr [EAX + 0xc]       ; 0049d8ef
     JL 0x0049d8b0                       ; 0049d8f2
         ;   XREF to: 0049d8b0 (CONDITIONAL_JUMP)  ; LAB_0049d8b0
-    MOV EDX,dword ptr [0x01c4353c]      ; 0049d8f4 | g_INT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 0049d8f4 | g_MouseX
     CMP EDX,dword ptr [EAX + 0x10]      ; 0049d8fa
     JGE 0x0049d8b0                      ; 0049d8fd
         ;   XREF to: 0049d8b0 (CONDITIONAL_JUMP)  ; LAB_0049d8b0
-    MOV EDX,dword ptr [0x01c43540]      ; 0049d8ff | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 0049d8ff | g_MouseY
     CMP EDX,dword ptr [EAX + 0x14]      ; 0049d905
     JGE 0x0049d8b0                      ; 0049d908
         ;   XREF to: 0049d8b0 (CONDITIONAL_JUMP)  ; LAB_0049d8b0
@@ -78,7 +78,7 @@ section .text
         ;   Label: LAB_0049d915
     JNZ 0x0049d926                      ; 0049d917
         ;   XREF to: 0049d926 (CONDITIONAL_JUMP)  ; LAB_0049d926
-    TEST byte ptr [0x01c43544],0x1      ; 0049d919 | g_BIT_INTEGER32_01c43544
+    TEST byte ptr [0x01c43544],0x1      ; 0049d919 | g_MouseButtonFlags
     JZ 0x0049d926                       ; 0049d920
         ;   XREF to: 0049d926 (CONDITIONAL_JUMP)  ; LAB_0049d926
     TEST EDX,EDX                        ; 0049d922
@@ -86,14 +86,14 @@ section .text
         ;   XREF to: 0049d930 (CONDITIONAL_JUMP)  ; LAB_0049d930
     XOR EAX,EAX                         ; 0049d926
         ;   Label: LAB_0049d926
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049d928 | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049d928 | g_ActiveControl
     POP EBX                             ; 0049d92e
     RET                                 ; 0049d92f
     MOV ECX,EAX                         ; 0049d930
         ;   Label: LAB_0049d930
     MOV dword ptr [EAX + 0x18],0x1      ; 0049d932
     XOR EAX,EAX                         ; 0049d939
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049d93b | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049d93b | g_ActiveControl
     POP EBX                             ; 0049d941
     RET                                 ; 0049d942
 

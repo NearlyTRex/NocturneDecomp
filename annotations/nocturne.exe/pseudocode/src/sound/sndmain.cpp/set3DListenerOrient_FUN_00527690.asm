@@ -26,15 +26,15 @@
 ;   undefined4 g_DOUBLE_02dc7918+4
 ;   double g_DOUBLE_02dc7920
 ;   undefined4 g_DOUBLE_02dc7920+4
-;   CVector3d g_CVector3d_02dc7928
-;   undefined4 g_CVector3d_02dc7928.x+4
-;   undefined4 g_CVector3d_02dc7928.y
-;   undefined4 g_CVector3d_02dc7928.y+4
-;   undefined4 g_CVector3d_02dc7928.z
-;   undefined4 g_CVector3d_02dc7928.z+4
-;   CVector3d g_CVector3d_02dc7940
-;   undefined4 g_CVector3d_02dc7940.x+4
-;   undefined4 g_CVector3d_02dc7940.y
+;   CVector3d g_Cached3DListenerOrientUp
+;   undefined4 g_Cached3DListenerOrientUp.x+4
+;   undefined4 g_Cached3DListenerOrientUp.y
+;   undefined4 g_Cached3DListenerOrientUp.y+4
+;   undefined4 g_Cached3DListenerOrientUp.z
+;   undefined4 g_Cached3DListenerOrientUp.z+4
+;   CVector3d g_Cached3DListenerOrientRight
+;   undefined4 g_Cached3DListenerOrientRight.x+4
+;   undefined4 g_Cached3DListenerOrientRight.y
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -56,30 +56,30 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005276be
     MOV [0x02dc7924],EAX                ; 005276c2 | g_DOUBLE_02dc7920+4
     MOV EAX,dword ptr [ESP + 0x20]      ; 005276c7
-    MOV [0x02dc7928],EAX                ; 005276cb | g_CVector3d_02dc7928
+    MOV [0x02dc7928],EAX                ; 005276cb | g_Cached3DListenerOrientUp
     MOV EAX,dword ptr [ESP + 0x24]      ; 005276d0
-    MOV [0x02dc792c],EAX                ; 005276d4 | g_CVector3d_02dc7928.x+4
+    MOV [0x02dc792c],EAX                ; 005276d4 | g_Cached3DListenerOrientUp.x+4
     MOV EAX,dword ptr [ESP + 0x28]      ; 005276d9
-    MOV [0x02dc7930],EAX                ; 005276dd | g_CVector3d_02dc7928.y
+    MOV [0x02dc7930],EAX                ; 005276dd | g_Cached3DListenerOrientUp.y
     MOV EAX,dword ptr [ESP + 0x2c]      ; 005276e2
-    MOV [0x02dc7934],EAX                ; 005276e6 | g_CVector3d_02dc7928.y+4
+    MOV [0x02dc7934],EAX                ; 005276e6 | g_Cached3DListenerOrientUp.y+4
     MOV EAX,dword ptr [ESP + 0x30]      ; 005276eb
-    MOV [0x02dc7938],EAX                ; 005276ef | g_CVector3d_02dc7928.z
+    MOV [0x02dc7938],EAX                ; 005276ef | g_Cached3DListenerOrientUp.z
     MOV EAX,dword ptr [ESP + 0x34]      ; 005276f4
-    MOV [0x02dc793c],EAX                ; 005276f8 | g_CVector3d_02dc7928.z+4
+    MOV [0x02dc793c],EAX                ; 005276f8 | g_Cached3DListenerOrientUp.z+4
     MOV EAX,dword ptr [ESP + 0x38]      ; 005276fd
-    MOV [0x02dc7940],EAX                ; 00527701 | g_CVector3d_02dc7940
+    MOV [0x02dc7940],EAX                ; 00527701 | g_Cached3DListenerOrientRight
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00527706
-    MOV [0x02dc7944],EAX                ; 0052770a | g_CVector3d_02dc7940.x+4
+    MOV [0x02dc7944],EAX                ; 0052770a | g_Cached3DListenerOrientRight.x+4
     MOV EAX,dword ptr [ESP + 0x40]      ; 0052770f
-    MOV [0x02dc7948],EAX                ; 00527713 | g_CVector3d_02dc7940.y
+    MOV [0x02dc7948],EAX                ; 00527713 | g_Cached3DListenerOrientRight.y
     MOV EAX,dword ptr [ESP + 0x44]      ; 00527718
-    MOV [0x02dc794c],EAX                ; 0052771c | g_CVector3d_02dc7940.y+4
+    MOV [0x02dc794c],EAX                ; 0052771c | g_Cached3DListenerOrientRight.y+4
     MOV EAX,dword ptr [ESP + 0x48]      ; 00527721
-    MOV [0x02dc7950],EAX                ; 00527725 | g_CVector3d_02dc7940.z
+    MOV [0x02dc7950],EAX                ; 00527725 | g_Cached3DListenerOrientRight.z
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0052772a
-    MOV EDX,dword ptr [0x02dc8318]      ; 0052772e | g_CSoundDevice_PTR_02dc8318
-    MOV [0x02dc7954],EAX                ; 00527734 | g_CVector3d_02dc7940.z+4
+    MOV EDX,dword ptr [0x02dc8318]      ; 0052772e | g_CSoundDevicePtr
+    MOV [0x02dc7954],EAX                ; 00527734 | g_Cached3DListenerOrientRight.z+4
     TEST EDX,EDX                        ; 00527739
     JNZ 0x0052773f                      ; 0052773b
         ;   XREF to: 0052773f (CONDITIONAL_JUMP)  ; LAB_0052773f

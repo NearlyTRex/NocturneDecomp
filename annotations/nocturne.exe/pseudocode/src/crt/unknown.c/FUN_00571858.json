@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 77,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "register_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -45,37 +45,37 @@
     },
     {
       "addr": "005c1f6c",
-      "name": "g_PTR_005c1f6c",
+      "name": "g_UserExceptionFilter",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1f70",
-      "name": "g_PTR_005c1f70",
+      "name": "g_ExceptionCleanup",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c20e0",
-      "name": "g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[2]",
+      "name": "g_GlobalSignalHandlers[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c20e4",
-      "name": "g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[3]",
+      "name": "g_GlobalSignalHandlers[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c20e8",
-      "name": "g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[4]",
+      "name": "g_GlobalSignalHandlers[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c20ec",
-      "name": "g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[5]",
+      "name": "g_GlobalSignalHandlers[5]",
       "type": "undefined4",
       "value": null
     }
@@ -162,15 +162,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(uint *)((int)g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8",
+      "line": 16,
+      "match": "(uint *)((int)g_GlobalSignalHandlers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8 + iVar2);",
+      "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)((int)g_GlobalSignalHandlers + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_DS",
       "severity": "mild",
       "text": "return in_DS;",

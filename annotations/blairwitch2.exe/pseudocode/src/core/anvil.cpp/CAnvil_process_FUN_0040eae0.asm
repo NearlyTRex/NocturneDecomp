@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005cb314 = 32
 ;   double g_DOUBLE_005cb31c = 6
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   int g_INT_01cedef4
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0040eae4
     LEA EAX,[EBX + 0x430]               ; 0040eae8
     PUSH EAX                            ; 0040eaee
-    MOV EDX,dword ptr [0x006141f0]      ; 0040eaef | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0040eaef | g_CEventListPtr
     PUSH EDX                            ; 0040eaf5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0040eaf6
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

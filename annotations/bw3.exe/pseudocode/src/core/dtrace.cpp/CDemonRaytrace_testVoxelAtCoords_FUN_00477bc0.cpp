@@ -30,7 +30,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00477bc0(CDemon
                .voxel_buffer1;
       if (pSVar1 != (SVoxelGrid *)0x0) {
         return (uint)((pSVar1->voxels[voxel_coords->z & 7][voxel_coords->y & 7] &
-                      g_UCHAR_ARRAY_005fb0e8[voxel_coords->x & 7]) != 0);
+                      g_VoxelYBitMasks[voxel_coords->x & 7]) != 0);
       }
     }
   }

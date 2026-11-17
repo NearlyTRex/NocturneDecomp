@@ -12,7 +12,7 @@
 ;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110 at 004b523a
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
@@ -25,7 +25,7 @@ section .text
         ;   Label: core_door.cpp_CDoor_onOpened_FUN_00455270
     ADD EAX,0x2e0                       ; 00455274
     PUSH EAX                            ; 00455279
-    MOV EDX,dword ptr [0x005b7650]      ; 0045527a | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 0045527a | g_CEventListPtr
     PUSH EDX                            ; 00455280
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 00455281
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

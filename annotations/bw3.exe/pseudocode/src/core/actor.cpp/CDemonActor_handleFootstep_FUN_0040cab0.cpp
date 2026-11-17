@@ -47,8 +47,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cab0(CDemonActor 
     ground_type = GROUND_TYPE_WATER;
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(this_ptr,"CHero");
     if (iVar4 != 0) {
-      core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                (g_CEventList_PTR_005fba60,"FeetAreWet");
+      core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,"FeetAreWet");
     }
   }
   iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ceef0

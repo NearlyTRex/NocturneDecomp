@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Credits_005dd25b
 ;   TerminatedCString s_Option_Menu_005dd263
 ;   CGame* g_CGamePtr = 01cb6900
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
+;   CKeys* g_CKeysPtr = 01d02f84
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   CGame g_CGameInstance
@@ -102,7 +102,7 @@ section .text
     PUSH EAX                            ; 004ee233
     PUSH 0x1d05620                      ; 004ee234
     CALL core_moon.cpp_CMoon_update_FUN_005024a0 ; 004ee239
-        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
+        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ee23e
     PUSH 0x1d05620                      ; 004ee241
     CALL core_moon.cpp_CMoon_render_FUN_00502510 ; 004ee246
@@ -174,7 +174,7 @@ section .text
         ;   Label: caseD_0
     PUSH 0x1                            ; 004ee317
         ;   Label: default
-    MOV EAX,[0x00617dd4]                ; 004ee319 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ee319 | g_CKeysPtr
     PUSH EAX                            ; 004ee31e | g_PTR_01d02f84
     MOV EBX,dword ptr [EAX]             ; 004ee31f | g_PTR_01d02f84
     CALL dword ptr [EBX + 0x4]          ; 004ee321

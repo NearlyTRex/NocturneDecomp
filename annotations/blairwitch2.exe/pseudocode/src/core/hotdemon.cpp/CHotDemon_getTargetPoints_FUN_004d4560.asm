@@ -8,9 +8,9 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   int[12] g_INT_ARRAY_01cee00c
-;   undefined4 g_INT_ARRAY_01cee00c[9]
-;   undefined4 g_INT_ARRAY_01cee00c[11]
+;   int[12] g_HotDemonIndices
+;   undefined4 g_HotDemonIndices[9]
+;   undefined4 g_HotDemonIndices[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -26,7 +26,7 @@ section .text
     PUSH EBP                            ; 004d4563
     SUB ESP,0x48                        ; 004d4564
     MOV EBX,dword ptr [ESP + 0x60]      ; 004d4567
-    MOV EDX,dword ptr [0x01cee00c]      ; 004d456b | g_INT_ARRAY_01cee00c
+    MOV EDX,dword ptr [0x01cee00c]      ; 004d456b | g_HotDemonIndices
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004d4571
     PUSH EDX                            ; 004d4575
     ADD EAX,0x2b4                       ; 004d4576
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [EBX + 0x4],EAX       ; 004d45aa
     MOV EAX,dword ptr [ESP + 0x38]      ; 004d45ad
     MOV dword ptr [EBX + 0x8],EAX       ; 004d45b1
-    MOV ECX,dword ptr [0x01cee030]      ; 004d45b4 | g_INT_ARRAY_01cee00c[9]
+    MOV ECX,dword ptr [0x01cee030]      ; 004d45b4 | g_HotDemonIndices[9]
         ;   Label: LAB_004d45b4
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004d45ba
     PUSH ECX                            ; 004d45be
@@ -77,7 +77,7 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 004d45f1
     MOV EAX,dword ptr [ESP + 0x20]      ; 004d45f4
     MOV dword ptr [EDX + 0x8],EAX       ; 004d45f8
-    MOV ESI,dword ptr [0x01cee038]      ; 004d45fb | g_INT_ARRAY_01cee00c[11]
+    MOV ESI,dword ptr [0x01cee038]      ; 004d45fb | g_HotDemonIndices[11]
         ;   Label: LAB_004d45fb
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004d4601
     PUSH ESI                            ; 004d4605

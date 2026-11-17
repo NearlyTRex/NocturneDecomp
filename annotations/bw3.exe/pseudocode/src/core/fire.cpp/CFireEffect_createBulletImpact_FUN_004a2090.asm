@@ -42,11 +42,11 @@
 ;   TerminatedCString s_ric_s_wav_005c099a
 ;   TerminatedCString s_ric_s_wav_005c09a7
 ;   double g_DOUBLE_005c09b8 = 0.0578000000000000
-;   char[60] g_CHAR_ARRAY_005fdbf8
-;   undefined4 g_CHAR_ARRAY_005fdbf8+4
+;   char[60] g_DefaultRicochetSound
+;   undefined4 g_DefaultRicochetSound+4
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
-;   int g_INT_01c74e9c
-;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c74ea0
+;   int g_SmokeParticleAllocIndex
+;   CSmokeParticle[2048] g_SmokeParticlePool
 ;   int g_INT_01c8aea0
 ;   CBulletHole[256] g_CBulletHole_ARRAY_01c8aea8
 ;   undefined4 g_CBulletHole_ARRAY_01c8aea8[0].position.y
@@ -152,23 +152,23 @@ section .text
     JZ 0x004a21d0                       ; 004a2172
         ;   XREF to: 004a21d0 (CONDITIONAL_JUMP)  ; caseD_9
     XOR ESI,ESI                         ; 004a2174
-    MOV EDI,dword ptr [0x01c74e9c]      ; 004a2176 | g_INT_01c74e9c
+    MOV EDI,dword ptr [0x01c74e9c]      ; 004a2176 | g_SmokeParticleAllocIndex
         ;   Label: LAB_004a2176
     IMUL EAX,EDI,0x2c                   ; 004a217c
     LEA EDX,[EDI + 0x1]                 ; 004a217f
     ADD EAX,0x1c74ea0                   ; 004a2182
-    MOV dword ptr [0x01c74e9c],EDX      ; 004a2187 | g_INT_01c74e9c
+    MOV dword ptr [0x01c74e9c],EDX      ; 004a2187 | g_SmokeParticleAllocIndex
     CMP EDX,0x800                       ; 004a218d
     JL 0x004a219d                       ; 004a2193
         ;   XREF to: 004a219d (CONDITIONAL_JUMP)  ; LAB_004a219d
     XOR EDI,EDI                         ; 004a2195
-    MOV dword ptr [0x01c74e9c],EDI      ; 004a2197 | g_INT_01c74e9c
+    MOV dword ptr [0x01c74e9c],EDI      ; 004a2197 | g_SmokeParticleAllocIndex
     PUSH 0xffff                         ; 004a219d
         ;   Label: LAB_004a219d
     PUSH 0x0                            ; 004a21a2
     PUSH 0x3e99999a                     ; 004a21a4
     PUSH EBX                            ; 004a21a9
-    PUSH EAX                            ; 004a21aa | g_CSmokeParticle_ARRAY_01c74ea0
+    PUSH EAX                            ; 004a21aa | g_SmokeParticlePool
     INC ESI                             ; 004a21ab
     CALL core_fire.cpp_CSmokeParticle_init_FUN_00496d60 ; 004a21ac
         ;   XREF to: 00496d60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_00496d60(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -185,9 +185,9 @@ section .text
     MOV ECX,0xc                         ; 004a21d0
         ;   Label: caseD_0
     MOV EDI,ESP                         ; 004a21d5
-    MOV ESI,0x5fdbf8                    ; 004a21d7 | g_CHAR_ARRAY_005fdbf8
-    MOVSD.REP ES:EDI,ESI                ; 004a21dc | g_CHAR_ARRAY_005fdbf8 | g_CHAR_ARRAY_005fdbf8+4
-    MOVSW ES:EDI,ESI                    ; 004a21de | g_CHAR_ARRAY_005fdbf8+4
+    MOV ESI,0x5fdbf8                    ; 004a21d7 | g_DefaultRicochetSound
+    MOVSD.REP ES:EDI,ESI                ; 004a21dc | g_DefaultRicochetSound | g_DefaultRicochetSound+4
+    MOVSW ES:EDI,ESI                    ; 004a21de | g_DefaultRicochetSound+4
     MOV ECX,dword ptr [EBP + 0x20]      ; 004a21e0
     CMP ECX,0x9                         ; 004a21e3
     JA 0x004a21f1                       ; 004a21e6

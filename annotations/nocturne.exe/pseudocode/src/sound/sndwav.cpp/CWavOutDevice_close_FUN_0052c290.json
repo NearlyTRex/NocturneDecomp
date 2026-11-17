@@ -72,7 +72,7 @@
     },
     {
       "addr": "02dc93a4",
-      "name": "g_HWAVEOUT_02dc93a4",
+      "name": "g_WaveOutHandle",
       "type": "HWAVEOUT",
       "value": null
     }
@@ -171,33 +171,33 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8",
+      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
       "severity": "moderate",
-      "text": "if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8 + iVar1) != (HGLOBAL)0x0) {",
+      "text": "if (*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1) != (HGLOBAL)0x0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8",
+      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
       "severity": "moderate",
-      "text": "GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02dc93e8 + iVar1));",
+      "text": "GlobalFree(*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(uint *)((int)g_HGLOBAL_ARRAY_02dc93e8",
+      "match": "(uint *)((int)g_WaveOutBufferHandles",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_HGLOBAL_ARRAY_02dc93e8 + iVar1) = 0;",
+      "text": "*(uint *)((int)g_WaveOutBufferHandles + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(uint *)((int)g_LPVOID_ARRAY_02dc93c8",
+      "match": "(uint *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_LPVOID_ARRAY_02dc93c8 + iVar1) = 0;",
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {

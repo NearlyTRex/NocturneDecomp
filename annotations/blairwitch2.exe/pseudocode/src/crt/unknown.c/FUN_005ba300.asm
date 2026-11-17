@@ -8,8 +8,8 @@
 ;   crt_time.c__localtime_FUN_005ba358 at 005ba367
 ;
 ; Referenced Globals:
-;   int g_INT_0061f638 = 0x4650
-;   int g_INT_0061f640 = 0xe10
+;   int g_TimezoneOffset = 0x4650
+;   int g_DaylightSavingOffset = 0xe10
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c1168
@@ -27,7 +27,7 @@ section .text
     CALL crt_unknown.c_FUN_005c1168     ; 005ba306
         ;   XREF to: 005c1168 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1168()
     PUSH EBX                            ; 005ba30b
-    MOV EDX,dword ptr [0x0061f638]      ; 005ba30c | g_INT_0061f638
+    MOV EDX,dword ptr [0x0061f638]      ; 005ba30c | g_TimezoneOffset
     MOV ESI,dword ptr [ESP + 0x10]      ; 005ba312
     PUSH EDX                            ; 005ba316
     MOV ESI,dword ptr [ESI]             ; 005ba317
@@ -43,8 +43,8 @@ section .text
     TEST EAX,EAX                        ; 005ba330
     JZ 0x005ba351                       ; 005ba332
         ;   XREF to: 005ba351 (CONDITIONAL_JUMP)  ; LAB_005ba351
-    MOV EAX,[0x0061f638]                ; 005ba334 | g_INT_0061f638
-    MOV ECX,dword ptr [0x0061f640]      ; 005ba339 | g_INT_0061f640
+    MOV EAX,[0x0061f638]                ; 005ba334 | g_TimezoneOffset
+    MOV ECX,dword ptr [0x0061f640]      ; 005ba339 | g_DaylightSavingOffset
     PUSH EBX                            ; 005ba33f
     SUB EAX,ECX                         ; 005ba340
     PUSH EAX                            ; 005ba342

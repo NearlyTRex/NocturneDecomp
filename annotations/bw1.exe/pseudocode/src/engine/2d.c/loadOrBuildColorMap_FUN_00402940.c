@@ -58,12 +58,12 @@ LAB_00402994:
       g_INT_01d1d404 = 0x770;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Unable to write quick map!");
     }
-    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_10,g_UCHAR_ARRAY_01c45ad0,0x8000);
+    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_10,g_ColorCubeLookup,0x8000);
     support_trstream_cpp_COutStreamFile_close_FUN_005a19b0(&local_10);
     support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&local_10,0);
   }
   else {
-    support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_3c,g_UCHAR_ARRAY_01c45ad0,0x8000);
+    support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_3c,g_ColorCubeLookup,0x8000);
     support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_3c);
   }
   support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);

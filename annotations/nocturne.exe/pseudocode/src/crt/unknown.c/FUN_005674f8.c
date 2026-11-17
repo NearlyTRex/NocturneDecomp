@@ -9,13 +9,13 @@
 void FUN_005674f8(void)
 
 {
-  if (g_CHAR_PTR_02de4e34 != (char *)0x0) {
-    free(g_CHAR_PTR_02de4e34);
-    g_CHAR_PTR_02de4e34 = (char *)0x0;
+  if (g_CommandLineA != (char *)0x0) {
+    free(g_CommandLineA);
+    g_CommandLineA = (char *)0x0;
   }
-  if (g_WCHAR_PTR_02de4e38 != (WCHAR *)0x0) {
-    free(g_WCHAR_PTR_02de4e38);
-    g_WCHAR_PTR_02de4e38 = (WCHAR *)0x0;
+  if (g_CommandLineW != (WCHAR *)0x0) {
+    free(g_CommandLineW);
+    g_CommandLineW = (WCHAR *)0x0;
   }
   return;
 }

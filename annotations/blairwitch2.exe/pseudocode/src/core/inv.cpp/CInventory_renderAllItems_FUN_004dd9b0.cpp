@@ -111,25 +111,25 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *thi
   if ((CHero *)this_ptr->owner != g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]) {
     return;
   }
-  if (g_INT_006141bc != g_INT_01d02f40) {
+  if (g_INT_006141bc != g_InventoryScreenHeight) {
     core_inv_cpp_loadAssets_FUN_004da990();
   }
   local_94 = g_INT_01c37788;
-  local_30 = g_CBitFont_PTR_01511cc4;
+  local_30 = g_SmallEditorFont;
   g_INT_01c37788 = 0;
   if ((g_INT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {
-    local_30 = g_CBitFont_PTR_01511ccc;
+    local_30 = g_MicroFont;
   }
   if ((this_ptr->selected_weapons[this_ptr->current_group] == (CWeapon *)0x0) ||
      (this_ptr->weapon_highlight_timer <= 0.0)) goto LAB_004ddd00;
-  local_68 = g_INT_00617cd0;
+  local_68 = g_InventoryWidth;
   local_5c = 0x10;
   local_88 = 0x70;
-  local_78 = (float)g_INT_00617cd4;
+  local_78 = (float)g_InventoryHeight;
   iVar8 = 0x24;
   if ((g_INT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {
-    local_68 = g_INT_00617cd0 / 2;
-    local_78 = (float)(g_INT_00617cd4 / 2);
+    local_68 = g_InventoryWidth / 2;
+    local_78 = (float)(g_InventoryHeight / 2);
     iVar8 = 0x12;
     local_88 = 0x28;
     local_5c = 8;
@@ -305,11 +305,11 @@ LAB_004ddd00:
      (0.0 < this_ptr->item_highlight_timer)) {
     iVar12 = 0x10;
     local_88 = 0x70;
-    local_68 = g_INT_00617cd0;
-    iVar8 = g_INT_00617cd4;
+    local_68 = g_InventoryWidth;
+    iVar8 = g_InventoryHeight;
     if ((g_INT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {
-      local_68 = g_INT_00617cd0 / 2;
-      iVar8 = g_INT_00617cd4 / 2;
+      local_68 = g_InventoryWidth / 2;
+      iVar8 = g_InventoryHeight / 2;
       iVar12 = 8;
       local_88 = 0x28;
     }
@@ -386,7 +386,7 @@ LAB_004ddd00:
     local_b0.z = (float)(int)ROUND(dVar11);
     engine_2d_c_fillRectColor_FUN_004031c0(6,(int)local_b0.z,iVar4,iVar13,iVar12);
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-              (&CAlphaBitmap_01d02e08,4,iVar8 + -0x24,0xffff);
+              (&g_BatteryIconBitmap,4,iVar8 + -0x24,0xffff);
   }
   if ((0.0 < this_ptr->item_highlight_timer) || (0.0 < this_ptr->inventory_display_timer)) {
     fStack_90c = this_ptr->inventory_display_timer;
@@ -430,11 +430,11 @@ LAB_004ddd00:
       local_84 = (int)ROUND(dVar11);
     }
     engine_3d_c_setRenderAlpha_FUN_00406da0(local_80);
-    local_30 = g_CBitFont_PTR_01511cc4;
-    iVar8 = g_INT_00617cd4;
+    local_30 = g_SmallEditorFont;
+    iVar8 = g_InventoryHeight;
     if (g_INT_006141bc < 0x180) {
-      iVar8 = g_INT_00617cd4 / 2;
-      local_30 = g_CBitFont_PTR_01511ccc;
+      iVar8 = g_InventoryHeight / 2;
+      local_30 = g_MicroFont;
     }
     pCVar5 = (CBitFont *)
              engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
@@ -443,8 +443,7 @@ LAB_004ddd00:
     local_38 = pCVar5;
     local_40 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_30,0x58);
     iVar8 = (g_INT_006141bc + -4) - local_40 * (int)pCVar5;
-    if (((g_CBitFont_PTR_01511ccc != local_30) || (g_INT_01d63250 == 0)) &&
-       (iVar12 = 0, 0 < (int)local_38)) {
+    if (((g_MicroFont != local_30) || (g_UseOSFonts == 0)) && (iVar12 = 0, 0 < (int)local_38)) {
       local_2c = &g_CHAR_01cef7b0;
       do {
         engine_font_cpp_CBitFont_drawText_FUN_004a8df0(local_30,local_2c,4,iVar8,0xf8,0);

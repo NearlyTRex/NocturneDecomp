@@ -15,7 +15,7 @@ float __cdecl core_rifle_cpp_CRifle_getDamage_FUN_00540930(CRifle *this_ptr)
     return 0.0;
   }
   core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-            (g_CEventList_PTR_0061b4d0,"COMBATMODEHARD");
+            (g_CEventListPtr,"COMBATMODEHARD");
   fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(25.0,55.0);
   if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
     fStack_c = fStack_c * 2.0f;

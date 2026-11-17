@@ -14,10 +14,11 @@ _tm * __cdecl localtime_r(time_t *timer,_tm *result)
   
   tzset();
   seconds = *timer;
-  gmtime_r(0x63df,seconds,g_INT_005c1f14,result);
+  gmtime_r(0x63df,seconds,g_TimezoneOffset,result);
   iVar1 = determine_dst_status(result);
   if (iVar1 != 0) {
-    gmtime_r(0x63df,seconds,g_INT_005c1f14 - g_INT_005c1f1c,result);
+    gmtime_r
+              (0x63df,seconds,g_TimezoneOffset - g_DaylightSavingOffset,result);
   }
   return result;
 }

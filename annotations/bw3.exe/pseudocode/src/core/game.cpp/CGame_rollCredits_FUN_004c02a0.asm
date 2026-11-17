@@ -38,12 +38,12 @@
 ;   TerminatedCString s_core_game_cpp_005c3ba7
 ;   TerminatedCString s_CGame_rollCredits_Out_of_005c3bb8
 ;   float g_FLOAT_005c3bdc = 32
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   CKeys* g_CKeysPtr = 01d70a78
 ;   CBitFont* g_CBitFont_PTR_01549aa8
 ;   void* g_PTR_01d70a78
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   int g_INT_01dd4890
+;   int g_UseOSFonts
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
@@ -295,7 +295,7 @@ section .text
         ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
         ;   Label: LAB_004c058b
     PUSH 0x1                            ; 004c0590
-    MOV EAX,[0x00600284]                ; 004c0592 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0592 | g_CKeysPtr
     PUSH EAX                            ; 004c0597 | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004c0598 | g_PTR_01d70a78
     CALL dword ptr [EDX]                ; 004c059a
@@ -303,7 +303,7 @@ section .text
     TEST EAX,EAX                        ; 004c059f
     JZ 0x004c0732                       ; 004c05a1
         ;   XREF to: 004c0732 (CONDITIONAL_JUMP)  ; LAB_004c0732
-    CMP dword ptr [0x01dd4890],0x0      ; 004c05a7 | g_INT_01dd4890
+    CMP dword ptr [0x01dd4890],0x0      ; 004c05a7 | g_UseOSFonts
     JZ 0x004c05c1                       ; 004c05ae
         ;   XREF to: 004c05c1 (CONDITIONAL_JUMP)  ; LAB_004c05c1
     MOV EAX,dword ptr [ESP + 0x1544]    ; 004c05b0

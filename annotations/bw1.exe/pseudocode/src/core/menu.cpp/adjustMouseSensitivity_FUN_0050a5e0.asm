@@ -14,16 +14,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_4_2f_005e7aff
-;   double g_DOUBLE_005e7b0a = 0.0000152587890625
+;   double g_MouseSensitivityScale = 0.0000152587890625
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   int g_INT_0061b498 = 0x140
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c4353c
-;   int g_INT_01c43540
+;   int g_MouseX
+;   int g_MouseY
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;   void* g_PTR_01d1bca0
 ;
@@ -85,7 +85,7 @@ section .text
     MOV ESI,dword ptr [ESI]             ; 0050a64b
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050a64d
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    MOV ECX,dword ptr [0x01c43540]      ; 0050a652 | g_INT_01c43540
+    MOV ECX,dword ptr [0x01c43540]      ; 0050a652 | g_MouseY
     MOV EAX,[0x0061b498]                ; 0050a658 | g_INT_0061b498
     PUSH ECX                            ; 0050a65d
     LEA EDX,[ESI + 0xffffc000]          ; 0050a65e
@@ -104,7 +104,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 ; 0050a67f
         ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0050a684
-    MOV EDX,dword ptr [0x01c4353c]      ; 0050a687 | g_INT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 0050a687 | g_MouseX
     CMP EDX,dword ptr [ESP + 0x8]       ; 0050a68d
     JZ 0x0050a6b4                       ; 0050a691
         ;   XREF to: 0050a6b4 (CONDITIONAL_JUMP)  ; LAB_0050a6b4
@@ -115,7 +115,7 @@ section .text
     IMUL EDX                            ; 0050a6a1
     IDIV EBX                            ; 0050a6a3
     LEA ESI,[EAX + 0x4000]              ; 0050a6a5
-    MOV EAX,[0x01c4353c]                ; 0050a6ab | g_INT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 0050a6ab | g_MouseX
     MOV dword ptr [ESP + 0x8],EAX       ; 0050a6b0
     PUSH 0x4b                           ; 0050a6b4
         ;   Label: LAB_0050a6b4
@@ -152,7 +152,7 @@ section .text
     MOV EAX,[0x01c4f014]                ; 0050a708 | g_INT_01c4f014
     PUSH 0x0                            ; 0050a70d
     DEC EAX                             ; 0050a70f
-    MOV EBX,dword ptr [0x01c4f010]      ; 0050a710 | g_INT_01c4f010
+    MOV EBX,dword ptr [0x01c4f010]      ; 0050a710 | g_ClipRight
     PUSH EAX                            ; 0050a716
     DEC EBX                             ; 0050a717
     MOV dword ptr [ESP + 0x10],EAX      ; 0050a718
@@ -184,7 +184,7 @@ section .text
     ADD ESP,0x14                        ; 0050a75a
     MOV dword ptr [ESP + 0xc],ESI       ; 0050a75d
     FILD dword ptr [ESP + 0xc]          ; 0050a761
-    FMUL double ptr [0x005e7b0a]        ; 0050a765 | g_DOUBLE_005e7b0a
+    FMUL double ptr [0x005e7b0a]        ; 0050a765 | g_MouseSensitivityScale
     SUB ESP,0x8                         ; 0050a76b
     FSTP double ptr [ESP]               ; 0050a76e
     PUSH 0x5e7aff                       ; 0050a771 | = "%4.2f"
@@ -206,7 +206,7 @@ section .text
     SAR EAX,0x1                         ; 0050a7a4
     ADD ESP,0x8                         ; 0050a7a6
     PUSH EAX                            ; 0050a7a9
-    MOV EAX,[0x01c4f010]                ; 0050a7aa | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 0050a7aa | g_ClipRight
     PUSH EAX                            ; 0050a7af
     MOV EDX,dword ptr [0x01c4f008]      ; 0050a7b0 | g_INT_01c4f008
     PUSH EDX                            ; 0050a7b6

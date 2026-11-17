@@ -10,10 +10,10 @@ void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect 
 
 {
   core_fire_cpp_CExplosion_activate_FUN_00486e40
-            (g_CExplosion_ARRAY_01c5d708 + g_INT_01c5d704,position,scale,gore_multiplier);
-  g_INT_01c5d704 = g_INT_01c5d704 + 1;
-  if (9 < g_INT_01c5d704) {
-    g_INT_01c5d704 = 0;
+            (g_ExplosionPool + g_ExplosionPoolIndex,position,scale,gore_multiplier);
+  g_ExplosionPoolIndex = g_ExplosionPoolIndex + 1;
+  if (9 < g_ExplosionPoolIndex) {
+    g_ExplosionPoolIndex = 0;
   }
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
             (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"xplode?.wav @ 6.0",position);

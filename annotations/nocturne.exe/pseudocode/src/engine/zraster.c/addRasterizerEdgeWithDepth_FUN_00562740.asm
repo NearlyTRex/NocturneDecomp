@@ -8,10 +8,10 @@
 ; SRenderVertex *  Stack[0x8]:4   v1
 ;
 ; Referenced Globals:
-;   int g_INT_02de497c
-;   SSoftwareEdge[16] g_SSoftwareEdge_ARRAY_02de4980
-;   int g_INT_02de4e00
-;   int g_INT_02de4e04
+;   int g_RasterizerEdgeCount
+;   SSoftwareEdge[16] g_RasterizerEdgeArray
+;   int g_RasterizerMinY
+;   int g_RasterizerMaxY
 ;
 ; *****************************************************************************
 
@@ -41,24 +41,24 @@ section .text
     MOV EDX,EAX                         ; 0056276e
     MOV EAX,EBX                         ; 00562770
     MOV EBX,EDX                         ; 00562772
-    MOV EDX,dword ptr [0x02de497c]      ; 00562774 | g_INT_02de497c
+    MOV EDX,dword ptr [0x02de497c]      ; 00562774 | g_RasterizerEdgeCount
         ;   Label: LAB_00562774
     LEA ECX,[EDX*0x8 + 0x0]             ; 0056277a
     ADD ECX,EDX                         ; 00562781
     SHL ECX,0x3                         ; 00562783
     ADD ECX,0x2de4980                   ; 00562786
-    MOV dword ptr [ECX],EAX             ; 0056278c | g_SSoftwareEdge_ARRAY_02de4980
-    MOV EBP,dword ptr [0x02de4e00]      ; 0056278e | g_INT_02de4e00
+    MOV dword ptr [ECX],EAX             ; 0056278c | g_RasterizerEdgeArray
+    MOV EBP,dword ptr [0x02de4e00]      ; 0056278e | g_RasterizerMinY
     MOV dword ptr [ECX + 0x4],EBX       ; 00562794
     CMP EAX,EBP                         ; 00562797
     JGE 0x005627a0                      ; 00562799
         ;   XREF to: 005627a0 (CONDITIONAL_JUMP)  ; LAB_005627a0
-    MOV [0x02de4e00],EAX                ; 0056279b | g_INT_02de4e00
-    CMP EBX,dword ptr [0x02de4e04]      ; 005627a0 | g_INT_02de4e04
+    MOV [0x02de4e00],EAX                ; 0056279b | g_RasterizerMinY
+    CMP EBX,dword ptr [0x02de4e04]      ; 005627a0 | g_RasterizerMaxY
         ;   Label: LAB_005627a0
     JLE 0x005627ae                      ; 005627a6
         ;   XREF to: 005627ae (CONDITIONAL_JUMP)  ; LAB_005627ae
-    MOV dword ptr [0x02de4e04],EBX      ; 005627a8 | g_INT_02de4e04
+    MOV dword ptr [0x02de4e04],EBX      ; 005627a8 | g_RasterizerMaxY
     MOV EAX,dword ptr [ESI + 0x10]      ; 005627ae
         ;   Label: LAB_005627ae
     MOV dword ptr [ECX + 0x8],EAX       ; 005627b1
@@ -116,11 +116,11 @@ section .text
     MOV EDX,dword ptr [ECX + 0x14]      ; 00562845
     IMUL EDX                            ; 00562848
     SHRD EAX,EDX,0x10                   ; 0056284a
-    MOV ESI,dword ptr [0x02de497c]      ; 0056284e | g_INT_02de497c
+    MOV ESI,dword ptr [0x02de497c]      ; 0056284e | g_RasterizerEdgeCount
     MOV EBX,dword ptr [ECX + 0x10]      ; 00562854
     INC ESI                             ; 00562857
     ADD EBX,EAX                         ; 00562858
-    MOV dword ptr [0x02de497c],ESI      ; 0056285a | g_INT_02de497c
+    MOV dword ptr [0x02de497c],ESI      ; 0056285a | g_RasterizerEdgeCount
     MOV dword ptr [ECX + 0x10],EBX      ; 00562860
     POP EBP                             ; 00562863
         ;   Label: LAB_00562863

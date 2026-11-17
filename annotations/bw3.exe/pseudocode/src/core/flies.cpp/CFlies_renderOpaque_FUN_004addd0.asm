@@ -15,10 +15,10 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_01c6cee8
-;   int g_INT_01c6e24c
-;   int g_INT_01d1a0dc
-;   uint g_UINT_01d1a11c
-;   uint g_UINT_01d1a120
+;   int g_PerspectiveReciprocal
+;   int g_FliesInitialized
+;   uint g_FlyBlendColor
+;   uint g_FlyInvBlendColor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -90,7 +90,7 @@ section .text
     TEST EAX,EAX                        ; 004ade4d
     JZ 0x004ae0c0                       ; 004ade4f
         ;   XREF to: 004ae0c0 (CONDITIONAL_JUMP)  ; LAB_004ae0c0
-    MOV ESI,dword ptr [0x01d1a0dc]      ; 004ade55 | g_INT_01d1a0dc
+    MOV ESI,dword ptr [0x01d1a0dc]      ; 004ade55 | g_FliesInitialized
     MOV dword ptr [EBX + 0x2a1c],0x1    ; 004ade5b
     TEST ESI,ESI                        ; 004ade65
     JNZ 0x004adeae                      ; 004ade67
@@ -114,7 +114,7 @@ section .text
     CMP EBX,0x40                        ; 004ade9f
     JL 0x004ade70                       ; 004adea2
         ;   XREF to: 004ade70 (CONDITIONAL_JUMP)  ; LAB_004ade70
-    MOV dword ptr [0x01d1a0dc],0x1      ; 004adea4 | g_INT_01d1a0dc
+    MOV dword ptr [0x01d1a0dc],0x1      ; 004adea4 | g_FliesInitialized
     MOV EAX,[0x01c6cee8]                ; 004adeae | g_INT_01c6cee8
         ;   Label: LAB_004adeae
     TEST EAX,EAX                        ; 004adeb3
@@ -157,7 +157,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 004adf50
     MOV dword ptr [EDX + 0x84],0x0      ; 004adf52
     MOV EDX,dword ptr [EAX]             ; 004adf5c
-    MOV ESI,dword ptr [0x01c6e24c]      ; 004adf5e | g_INT_01c6e24c
+    MOV ESI,dword ptr [0x01c6e24c]      ; 004adf5e | g_PerspectiveReciprocal
     MOV dword ptr [EDX + 0x88],0x0      ; 004adf64
     MOV EDX,0xffff                      ; 004adf6e
     MOV EBX,dword ptr [EAX]             ; 004adf73
@@ -277,20 +277,20 @@ section .text
     PUSH EDX                            ; 004ae0e3
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0 ; 004ae0e4
         ;   XREF to: 0046d3d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
-    MOV EAX,[0x01c6e24c]                ; 004ae0e9 | g_INT_01c6e24c
+    MOV EAX,[0x01c6e24c]                ; 004ae0e9 | g_PerspectiveReciprocal
     SAR EAX,0x8                         ; 004ae0ee
-    MOV [0x01d1a11c],EAX                ; 004ae0f1 | g_UINT_01d1a11c
-    MOV EDX,dword ptr [0x01d1a11c]      ; 004ae0f6 | g_UINT_01d1a11c
+    MOV [0x01d1a11c],EAX                ; 004ae0f1 | g_FlyBlendColor
+    MOV EDX,dword ptr [0x01d1a11c]      ; 004ae0f6 | g_FlyBlendColor
     SHL EAX,0x8                         ; 004ae0fc
     OR EDX,EAX                          ; 004ae0ff
-    MOV EAX,[0x01d1a11c]                ; 004ae101 | g_UINT_01d1a11c
+    MOV EAX,[0x01d1a11c]                ; 004ae101 | g_FlyBlendColor
     SHL EAX,0x10                        ; 004ae106
     OR EDX,EAX                          ; 004ae109
     MOV EAX,EDX                         ; 004ae10b
     ADD ESP,0x10                        ; 004ae10d
     XOR EAX,0xffffff                    ; 004ae110
-    MOV dword ptr [0x01d1a11c],EDX      ; 004ae115 | g_UINT_01d1a11c
-    MOV [0x01d1a120],EAX                ; 004ae11b | g_UINT_01d1a120
+    MOV dword ptr [0x01d1a11c],EDX      ; 004ae115 | g_FlyBlendColor
+    MOV [0x01d1a120],EAX                ; 004ae11b | g_FlyInvBlendColor
     JMP 0x004adf94                      ; 004ae120
         ;   XREF to: 004adf94 (UNCONDITIONAL_JUMP)  ; LAB_004adf94
     XOR EBX,EBX                         ; 004ae125

@@ -27,14 +27,14 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].base.base.count
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[0].vertex_index
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[0].texture_u
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[0].texture_v
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[1].vertex_index
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[1].texture_u
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[1].texture_v
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_02668a10[1].base.base.count
+;   undefined4 g_ClothBackfaceBuffer[0].base.base.count
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].vertex_index
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_u
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_v
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].vertex_index
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_u
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_v
+;   undefined4 g_ClothBackfaceBuffer[1].base.base.count
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00532190
@@ -370,7 +370,7 @@ section .text
     ADD EDX,EAX                         ; 005b136a
     MOV ECX,dword ptr [ESP + 0x10]      ; 005b136c
     MOV EAX,dword ptr [EDX + 0x4]       ; 005b1370
-    MOV dword ptr [ECX + 0x4],EAX       ; 005b1373 | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].base.base.count | g_SMRGLPrimitiveQuad_ARRAY_02668a10[1].base.base.count
+    MOV dword ptr [ECX + 0x4],EAX       ; 005b1373 | g_ClothBackfaceBuffer[0].base.base.count | g_ClothBackfaceBuffer[1].base.base.count
     MOV ECX,dword ptr [EDX + 0x4]       ; 005b1376
     XOR EAX,EAX                         ; 005b1379
     TEST ECX,ECX                        ; 005b137b
@@ -385,9 +385,9 @@ section .text
     LEA ESI,[EDX + EBX*0x1]             ; 005b138c
     LEA EDI,[ECX + 0x18]                ; 005b138f
     LEA ESI,[ESI + 0x18]                ; 005b1392
-    MOVSD ES:EDI,ESI                    ; 005b1395 | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[0].vertex_index | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[1].vertex_index
-    MOVSD ES:EDI,ESI                    ; 005b1396 | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[0].texture_u | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[1].texture_u
-    MOVSD ES:EDI,ESI                    ; 005b1397 | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[0].texture_v | g_SMRGLPrimitiveQuad_ARRAY_02668a10[0].vertices[1].texture_v
+    MOVSD ES:EDI,ESI                    ; 005b1395 | g_ClothBackfaceBuffer[0].vertices[0].vertex_index | g_ClothBackfaceBuffer[0].vertices[1].vertex_index
+    MOVSD ES:EDI,ESI                    ; 005b1396 | g_ClothBackfaceBuffer[0].vertices[0].texture_u | g_ClothBackfaceBuffer[0].vertices[1].texture_u
+    MOVSD ES:EDI,ESI                    ; 005b1397 | g_ClothBackfaceBuffer[0].vertices[0].texture_v | g_ClothBackfaceBuffer[0].vertices[1].texture_v
     INC EAX                             ; 005b1398
     MOV EBX,dword ptr [EDX + 0x4]       ; 005b1399
     ADD ECX,0xc                         ; 005b139c

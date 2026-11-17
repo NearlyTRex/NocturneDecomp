@@ -21,12 +21,12 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CConveyor *this_pt
   char *local_14;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->start_event);
+                    (g_CEventListPtr,this_ptr->start_event);
   if (iVar1 != 0) {
     this_ptr->state = 1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->stop_event);
+                    (g_CEventListPtr,this_ptr->stop_event);
   if (iVar1 == 0) {
     if (this_ptr->state != 0) {
       local_18 = &this_ptr->direction;

@@ -132,7 +132,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_0050a280(CMP3Decoder *this
               iVar4 = *piVar7;
               piVar7 = piVar7 + 0x60;
               iVar2 = iVar2 + 1;
-              *pfVar6 = *pfVar6 * (float)g_DOUBLE_ARRAY_00619030[iVar4];
+              *pfVar6 = *pfVar6 * (float)g_MpegScalefactorTable[iVar4];
               pfVar6 = pfVar6 + 0x60;
             } while (iVar2 < local_c0.sampling_rate_index);
           }
@@ -429,10 +429,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_0050a280(CMP3Decoder *this
     local_c0.channel_mode = local_60ac;
     dVar15 = round
                        ((((double)local_60b0 /
-                         g_DOUBLE_ARRAY_ARRAY_00618e88[local_f0.mpeg_version]
-                         [local_f0.sampling_rate_index]) *
-                        (double)g_INT_ARRAY_ARRAY_ARRAY_00618ec8[local_f0.mpeg_version + -1]
-                                [local_f0.layer + 2][local_f0.bitrate_index]) / (double)local_60ac);
+                         g_MpegSampleRateTable[local_f0.mpeg_version][local_f0.sampling_rate_index])
+                        * (double)g_MpegBitrateTable[local_f0.mpeg_version + -1][local_f0.layer + 2]
+                                  [local_f0.bitrate_index]) / (double)local_60ac);
     local_6c = (SMpegLayer3GranuleInfo *)(int)ROUND(dVar15);
     if (local_f0.padding != 0) {
       local_6c = (SMpegLayer3GranuleInfo *)((int)local_6c + 1);

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 73,
+    "complexity_score": 75,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 25,
     "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
       "wrong_global"
     ],
-    "total_lines": 68
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -80,13 +80,13 @@
   "globals": [
     {
       "addr": "005bb5b4",
-      "name": "g_DOUBLE_005bb5b4",
+      "name": "g_VolumetricFilterScaleLowRes",
       "type": "double",
       "value": "7"
     },
     {
       "addr": "005bb5bc",
-      "name": "g_DOUBLE_005bb5bc",
+      "name": "g_VolumetricFilterScaleHighRes",
       "type": "double",
       "value": "3"
     },
@@ -268,7 +268,7 @@
   "suspects": [
     {
       "description": "Scalar global g_PlayerFilters accessed via (&g_PlayerFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilterCachePtr (at 0x005f190c, +16 bytes).",
-      "line": 16,
+      "line": 17,
       "match": "g_PlayerFilters",
       "severity": "moderate",
       "text": "(this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
@@ -276,7 +276,7 @@
     },
     {
       "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x005f18fc, +32 bytes).",
-      "line": 24,
+      "line": 26,
       "match": "g_GlobalFilters",
       "severity": "moderate",
       "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
@@ -292,7 +292,7 @@
     },
     {
       "description": "Raw hex address 0x45fb18 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 21,
       "match": "0x45fb18",
       "severity": "moderate",
       "text": "iVar2 = 0x45fb18;",

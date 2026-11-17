@@ -14,13 +14,13 @@
 // =============================================================================
 
 // CBitFont*
-extern CBitFont* g_CBitFont_PTR_01bdd7c4;
+extern CBitFont* g_CurrentFont;
 
 // CDemonRenderer
 extern CDemonRenderer g_CDemonRenderer_01bdd7e4;
 
 // SFace[5000]
-extern SFace g_SFace_ARRAY_01bdd860[5000];
+extern SFace g_CapturedFaces[5000];
 
 // SSoftwareEdge[16]
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01bdcfd8[16];
@@ -32,26 +32,26 @@ extern float g_FLOAT_01bdd530;
 extern float g_FLOAT_01bdd534;
 
 // int
-extern int g_INT_01bdcfd4;
-extern int g_INT_01bdd4d8;
-extern int g_INT_01bdd4dc;
-extern int g_INT_01bdd520;
+extern int g_RenderTriangleEdgeCount;
+extern int g_RenderTriangleMinScanlineY;
+extern int g_RenderTriangleMaxScanlineY;
+extern int g_RasterizerDepthBias;
 extern int g_INT_01bdd52c;
 extern int g_INT_01bdd538;
-extern int g_INT_01bdd7bc;
-extern int g_INT_01bdd7c0;
-extern int g_INT_01bdd7c8;
-extern int g_INT_01bdd7cc;
-extern int g_INT_01bdd7d0;
-extern int g_INT_01bdd7d4;
-extern int g_INT_01bdd7d8;
-extern int g_INT_01bdd7dc;
-extern int g_INT_01bdd7e0;
-extern int g_INT_01bdd810;
-extern int g_INT_01bdd814;
-extern int g_INT_01bdd858;
-extern int g_INT_01bdd85c;
+extern int g_CurrentDrawColor;
+extern int g_PaletteColorIndex;
+extern int g_UseRGBConversion;
+extern int g_OriginalColorValue;
+extern int g_ScaledRedComponent;
+extern int g_ScaledGreenComponent;
+extern int g_ScaledBlueComponent;
+extern int g_PackedPixelColor;
+extern int g_DuplicatedPixelColor;
+extern int g_RenderPixelCounter;
+extern int g_RenderAbortFlag;
+extern int g_CaptureFaceCount;
+extern int g_CaptureTextureCount;
 
 // int[16]
-extern int g_INT_ARRAY_01bdd818[16];
+extern int g_VertexIndexBuffer[16];
 

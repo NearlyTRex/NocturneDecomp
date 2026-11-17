@@ -17,13 +17,13 @@
 ;   CNetGame* g_CNetGamePtr = 01d51c20
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CPuzzle* g_CPuzzle_PTR_007c3978
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
-;   char[4952] g_CHAR_ARRAY_01c50950
-;   undefined4 g_CHAR_ARRAY_01c50950+4
+;   _BIT_INTEGER32 g_MouseButtonFlags
+;   char[4952] g_KeyboardState
+;   undefined4 g_KeyboardState+4
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   char[600] g_CHAR_ARRAY_01ccff98
-;   undefined4 g_CHAR_ARRAY_01ccff98+4
-;   int g_INT_01cd01f0
+;   char[600] g_PrevKeyboardState
+;   undefined4 g_PrevKeyboardState+4
+;   int g_InputResetFlag
 ;   int g_INT_01cd01f4
 ;   ... and 5 more
 ;
@@ -82,16 +82,16 @@ section .text
     MOV ECX,0x258                       ; 004d08ba
     MOV ESI,0x1c50950                   ; 004d08bf
     MOV EDI,0x1ccff98                   ; 004d08c4
-    PUSH EDI                            ; 004d08c9 | g_CHAR_ARRAY_01ccff98
+    PUSH EDI                            ; 004d08c9 | g_PrevKeyboardState
     MOV EAX,ECX                         ; 004d08ca
     SHR ECX,0x2                         ; 004d08cc
-    MOVSD.REP ES:EDI,ESI                ; 004d08cf | g_CHAR_ARRAY_01c50950 | g_CHAR_ARRAY_01ccff98 | g_CHAR_ARRAY_01c50950+4
+    MOVSD.REP ES:EDI,ESI                ; 004d08cf | g_KeyboardState | g_PrevKeyboardState | g_KeyboardState+4
     MOV CL,AL                           ; 004d08d1
     AND CL,0x3                          ; 004d08d3
-    MOVSB.REP ES:EDI,ESI                ; 004d08d6 | g_CHAR_ARRAY_01c50950+4 | g_CHAR_ARRAY_01ccff98+4
+    MOVSB.REP ES:EDI,ESI                ; 004d08d6 | g_KeyboardState+4 | g_PrevKeyboardState+4
     POP EDI                             ; 004d08d8
-    MOV EAX,[0x01c43544]                ; 004d08d9 | g_BIT_INTEGER32_01c43544
-    MOV [0x01cd01f0],EAX                ; 004d08de | g_INT_01cd01f0
+    MOV EAX,[0x01c43544]                ; 004d08d9 | g_MouseButtonFlags
+    MOV [0x01cd01f0],EAX                ; 004d08de | g_InputResetFlag
     MOV EAX,[0x00622c18]                ; 004d08e3 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004d08e8 | g_CDemonSetInstance.selected_camera_index
     MOV [0x01cd01f4],EAX                ; 004d08ee | g_INT_01cd01f4

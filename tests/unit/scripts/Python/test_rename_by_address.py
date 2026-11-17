@@ -174,6 +174,18 @@ def test_a_dynamic_dat_name_counts_as_no_label():
     assert dynamic.getName() == "DAT_00402030"
 
 
+def test_a_dynamic_name_the_export_listed_is_covered_by_a_label():
+    # Ghidra's name for defined data (BYTE_ARRAY_<addr>) is dynamic, and the export lists it
+    program = program_for()
+    symbols = program.getSymbolTable()
+    dynamic = gp.Symbol("BYTE_ARRAY_00402030", Address(0x402030), source = "DEFAULT", dynamic = True)
+    dynamic.table = symbols
+    symbols.symbols.append(dynamic)
+    kinds = rows_for(labels = [{"addr": "00402030", "name": "g_CheatStr", "current": "BYTE_ARRAY_00402030"}])
+    assert rba.apply_to_program(program, kinds) == {"labels": 1, "thunks": 0}
+    assert symbols.getPrimarySymbol(Address(0x402030)).getName() == "g_CheatStr"
+
+
 def test_a_failed_apply_rolls_back():
     program = program_for()
     with pytest.raises(ValueError):

@@ -67,7 +67,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
     return;
   }
   pcVar4 = "headlite.raw";
-  pcVar6 = g_SMRGLTextureBasic_007c6160.texture_name;
+  pcVar6 = g_CollisionTexture.texture_name;
   do {
     cVar1 = *pcVar4;
     *pcVar6 = cVar1;
@@ -81,7 +81,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
   local_118.surface_normal.C.i = local_118.surface_normal.A.i;
   local_118.surface_normal.D.i = local_118.surface_normal.A.i;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_007c6160);
+            (g_CDemonRenderer_PTR_00612560,&g_CollisionTexture);
   iVar5 = 0;
   do {
     pCVar2 = g_CDemonRenderer_PTR_00612560;
@@ -234,9 +234,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
     local_30 = local_30 + 1;
     iVar3 = iVar3 + 0x60;
   } while (local_30 < 0x19);
-  local_90.x = (int)ROUND(g_CVector3f_02c8af28.x * 256.0f);
-  local_90.y = (int)ROUND(g_CVector3f_02c8af28.y * 256.0f);
-  local_90.z = (int)ROUND(g_CVector3f_02c8af28.z * 256.0f);
+  local_90.x = (int)ROUND(g_ZeroVector.x * 256.0f);
+  local_90.y = (int)ROUND(g_ZeroVector.y * 256.0f);
+  local_90.z = (int)ROUND(g_ZeroVector.z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
             (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&local_90);
   pCVar2 = g_CDemonRenderer_PTR_00612560;

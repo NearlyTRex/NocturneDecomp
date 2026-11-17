@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 447,
-    "complexity_score": 279,
+    "complexity_score": 272,
     "cross_reference_count": 7,
     "function_call_count": 7,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 174,
+    "pseudocode_lines": 167,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 621
+    "total_lines": 614
   },
   "cross_references": [
     {
@@ -196,25 +196,25 @@
     },
     {
       "addr": "0072ffac",
-      "name": "g_PTR_0072ffac",
+      "name": "g_SoftwareZBuffer",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c5faec",
-      "name": "g_ARRAY_PTR_01c5faec",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c5faf0",
-      "name": "g_ARRAY_PTR_01c5faec[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c60dac",
-      "name": "g_UINT_PTR_ARRAY_01c60dac",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     },
@@ -232,25 +232,25 @@
     },
     {
       "addr": "02d0bce0",
-      "name": "g_IDirectDraw_PTR_02d0bce0",
+      "name": "g_DirectDrawObject",
       "type": "IDirectDraw*",
       "value": null
     },
     {
       "addr": "02d0bce4",
-      "name": "g_IDirectDrawSurface_PTR_02d0bce4",
+      "name": "g_DirectDrawSurface",
       "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02d0bce8",
-      "name": "g_IDirectDrawSurface_PTR_02d0bce8",
+      "name": "g_SoftwareRenderSurface",
       "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02d0bcec",
-      "name": "g_IUnknown_PTR_02d0bcec",
+      "name": "g_DirectDrawUnknown",
       "type": "IUnknown*",
       "value": null
     },
@@ -262,7 +262,7 @@
     },
     {
       "addr": "02d0bcf4",
-      "name": "g_INT_02d0bcf4",
+      "name": "g_FlipPending",
       "type": "int",
       "value": null
     },
@@ -399,47 +399,47 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(byte **)((int)g_ARRAY_PTR_01c5faec",
+      "line": 121,
+      "match": "(byte **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ARRAY_PTR_01c5faec + iVar4) =",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(byte **)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "line": 124,
+      "match": "(byte **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar4) = g_PTR_0072ffac + iVar3;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar4) = g_SoftwareZBuffer + iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer value `(g_PTR_02d0bcf0 + 0x10)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 67,
+      "line": 65,
       "match": "(uint)(g_PTR_02d0bcf0 + 0x10)",
       "severity": "moderate",
-      "text": "g_PTR_0072ffac = (byte *)((uint)(g_PTR_02d0bcf0 + 0x10) & 0xfffffff0);",
+      "text": "g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02d0bcf0 + 0x10) & 0xfffffff0);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c5faec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 127,
-      "match": "(int)g_ARRAY_PTR_01c5faec",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 121,
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ARRAY_PTR_01c5faec + iVar4) =",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 124,
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar4) = g_PTR_0072ffac + iVar3;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar4) = g_SoftwareZBuffer + iVar3;",
       "type": "pointer_truncation"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 53,
+      "line": 51,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(((int)((g_INT_005fba20 + (g_INT_005fba20 >> 0x1f) * -8) -",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 54,
+      "line": 52,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_005fba20 >> 0x1f) << 2 < 0)) >> 3) *",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 121,
+      "line": 115,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar2 = g_INT_005fba20 >> 0x1f;",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 152,
+      "line": 146,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar4 = g_INT_02d0bd00 * g_INT_02d0bd08 >> 0x1f;",

@@ -26,7 +26,7 @@
 ;   double DOUBLE_0057a30a = 20
 ;   float FLOAT_0057a312 = -1
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -253,7 +253,7 @@ section .text
     SAHF                                ; 004299a0
     JA 0x00429851                       ; 004299a1
         ;   XREF to: 00429851 (CONDITIONAL_JUMP)  ; LAB_00429851
-    MOV EAX,[0x01bcdef4]                ; 004299a7 | g_CEnemyActorType_01bcdebc.name_hash
+    MOV EAX,[0x01bcdef4]                ; 004299a7 | g_CEnemyClassInfo.name_hash
     PUSH EAX                            ; 004299ac
     MOV ECX,0x41200000                  ; 004299ad
     PUSH EBX                            ; 004299b2
@@ -440,7 +440,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00429bcc
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00429bd1
-    MOV EBX,dword ptr [0x00765a98]      ; 00429bd4 | g_CCharacterActorType_00765a60.name_hash
+    MOV EBX,dword ptr [0x00765a98]      ; 00429bd4 | g_CCharacterClassInfo.name_hash
     PUSH EBX                            ; 00429bda
     MOV EDI,dword ptr [ESI + 0x25c8]    ; 00429bdb
     PUSH EDI                            ; 00429be1

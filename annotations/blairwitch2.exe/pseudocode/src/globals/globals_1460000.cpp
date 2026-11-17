@@ -5,35 +5,35 @@
 // =============================================================================
 
 // CVector3i
-CVector3i g_CVector3i_01468540 = {};
+CVector3i g_CameraOutOfBoundsCoord = {};
 
 // SCameraViewportState
-SCameraViewportState g_SCameraViewportState_01468440 = {};
+SCameraViewportState g_BackgroundSavedCameraState = {};
 
 // SFogGrid
-SFogGrid g_SFogGrid_0146592c = {};
+SFogGrid g_CameraFogGrid = {};
 
 // char[307200]
-char g_CHAR_ARRAY_01468550[307200] = {};
+char g_CameraIndexedImageData[307200] = {};
 
 // int
-int g_INT_01465920 = {};
-int g_INT_01465924 = {};
-int g_INT_01465928 = {};
-int g_INT_0146694c = {};
-int g_INT_01466950 = {};
-int g_INT_01466954 = {};
-int g_INT_01467158 = {};
-int g_INT_0146715c = {};
-int g_INT_01467160 = {};
-int g_INT_01468424 = {};
-int g_INT_01468428 = {};
-int g_INT_0146842c = {};
+int g_ImageProcessingState1 = {};
+int g_ImageProcessingState2 = {};
+int g_ImageBytesPerPixel = {};
+int g_CameraScreenWidth = {};
+int g_CameraScreenHeight = {};
+int g_ScanlineSpanCount = {};
+int g_BackgroundSceneDepth = {};
+int g_BackgroundSavedBitsPerPixel = {};
+int g_BackgroundSavedUseExternalRenderer = {};
+int g_BackgroundSavedRedBitPosition = {};
+int g_BackgroundSavedGreenBitPosition = {};
+int g_BackgroundSavedBlueBitPosition = {};
 
 // int[256]
-int g_INT_ARRAY_01466958[256] = {};
-int g_INT_ARRAY_01466d58[256] = {};
+int g_ScanlineSpanLeft[256] = {};
+int g_ScanlineSpanRight[256] = {};
 
-// void*[1200]
-void* g_ARRAY_PTR_01467164[1200] = {};
+// void*[GAME_SCREEN_MAX_HEIGHT]
+void* g_BackgroundSavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 

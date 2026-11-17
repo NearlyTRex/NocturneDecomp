@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   dist_sq
 ;
 ; Referenced Globals:
-;   int g_INT_01d1a0a8
+;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -15,7 +15,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0043ff90
         ;   Label: core_cloth.cpp_fastInvSqrt_FUN_0043ff90
-    MOV EDX,dword ptr [0x01d1a0a8]      ; 0043ff94 | g_INT_01d1a0a8
+    MOV EDX,dword ptr [0x01d1a0a8]      ; 0043ff94 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0043ff9a
     SUB EDX,EAX                         ; 0043ff9c
     MOV EAX,EDX                         ; 0043ff9e

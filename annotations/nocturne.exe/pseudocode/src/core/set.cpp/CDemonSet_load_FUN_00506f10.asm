@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 00506f34
     PUSH EAX                            ; 00506f37
-    MOV EDX,dword ptr [0x005baca0]      ; 00506f38 | g_CLevelLoader_PTR_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 00506f38 | g_CLevelLoaderPtr
     PUSH EDX                            ; 00506f3e
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 00506f3f
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -362,7 +362,7 @@ section .text
     TEST EAX,EAX                        ; 00507246
     JNZ 0x00507a49                      ; 00507248
         ;   XREF to: 00507a49 (CONDITIONAL_JUMP)  ; LAB_00507a49
-    MOV EAX,[0x005c1144]                ; 0050724e | g_CTerrain_PTR_005c1144
+    MOV EAX,[0x005c1144]                ; 0050724e | g_CTerrainPtr
     PUSH EAX                            ; 00507253
     MOV dword ptr [EBP + 0x15a8c0],0x1  ; 00507254
     CALL core_terrain.cpp_CTerrain_init_FUN_005492b0 ; 0050725e
@@ -781,7 +781,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 005077a5
     PUSH EAX                            ; 005077a8
-    MOV ECX,dword ptr [0x005baca0]      ; 005077a9 | g_CLevelLoader_PTR_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 005077a9 | g_CLevelLoaderPtr
     PUSH ECX                            ; 005077af
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 005077b0
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -842,7 +842,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0050783d
     PUSH EAX                            ; 00507840
-    MOV EBX,dword ptr [0x005baca0]      ; 00507841 | g_CLevelLoader_PTR_005baca0
+    MOV EBX,dword ptr [0x005baca0]      ; 00507841 | g_CLevelLoaderPtr
     PUSH EBX                            ; 00507847
     LEA EDI,[ESP + 0x170]               ; 00507848
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 0050784f
@@ -1066,7 +1066,7 @@ section .text
         ;   Label: LAB_00507a3a
     JMP 0x0050722f                      ; 00507a44
         ;   XREF to: 0050722f (UNCONDITIONAL_JUMP)  ; LAB_0050722f
-    MOV EDI,dword ptr [0x005c1144]      ; 00507a49 | g_CTerrain_PTR_005c1144
+    MOV EDI,dword ptr [0x005c1144]      ; 00507a49 | g_CTerrainPtr
         ;   Label: LAB_00507a49
     PUSH EDI                            ; 00507a4f
     CALL core_terrain.cpp_CTerrain_free_FUN_005492f0 ; 00507a50

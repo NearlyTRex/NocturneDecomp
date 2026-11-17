@@ -119,7 +119,7 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
                afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           fStack_34 = afStack_12c[1] * afStack_12c[1] +
                       fStack_130 * fStack_130 + afStack_12c[0] * afStack_12c[0];
-          fStack_30 = (float)(((int)fStack_34 >> 1) + g_INT_01d1a0a4);
+          fStack_30 = (float)(((int)fStack_34 >> 1) + g_FastSqrtMagic);
           if (fStack_30 < 9.0f) {
             iVar12 = 1;
             iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
@@ -258,7 +258,7 @@ LAB_00546b5f:
       pCStack_14 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       fVar11 = 1.7;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_14 + this_ptr->bone_indices[2],&CStack_e8);
+                (&g_ZeroVector,pCStack_14 + this_ptr->bone_indices[2],&CStack_e8);
       pCVar10 = &CStack_13c;
       CStack_13c.x = CStack_e8.x;
       *(uint *)((int)&CStack_13c + (uint)bVar8 * -8 + 4) =
@@ -278,7 +278,7 @@ LAB_00546b5f:
       pSVar13 = &SStack_184;
       fVar11 = 1.7;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_14 + this_ptr->bone_indices[3],&CStack_ac);
+                (&g_ZeroVector,pCStack_14 + this_ptr->bone_indices[3],&CStack_ac);
       pCVar10 = &CStack_124;
       CStack_124.x = CStack_ac.x;
       *(uint *)((int)&CStack_124 + (uint)bVar8 * -8 + 4) =

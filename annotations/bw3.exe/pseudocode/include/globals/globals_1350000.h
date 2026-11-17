@@ -15,18 +15,18 @@
 extern CLZWDecompress g_CLZWDecompressInstance;
 
 // SFogImagePlane
-extern SFogImagePlane g_SFogImagePlane_0135ead0;
+extern SFogImagePlane g_CameraPlaneWorkBuffer;
 
 // char[4096]
-extern char g_CHAR_ARRAY_0135dab0[4096];
+extern char g_CameraLookupTable[4096];
 
 // int
-extern int g_INT_0135eab0;
-extern int g_INT_0135eab4;
-extern int g_INT_0135eab8;
-extern int g_INT_0135eabc;
-extern int g_INT_0135eac0;
-extern int g_INT_0135eac4;
-extern int g_INT_0135eac8;
-extern int g_INT_0135eacc;
+extern int g_CameraShakeSustainTimer;
+extern int g_CameraShakeAttackTime;
+extern int g_CameraShakeAttackAccum;
+extern int g_CameraShakeDecayDuration;
+extern int g_CameraShakeDecayTimer;
+extern int g_CameraShakeAccumulator;
+extern int g_CameraShakeOffsetX;
+extern int g_CameraShakeOffsetY;
 

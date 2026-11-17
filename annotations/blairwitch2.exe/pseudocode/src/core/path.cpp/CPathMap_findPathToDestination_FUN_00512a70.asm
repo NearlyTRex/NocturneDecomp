@@ -102,12 +102,12 @@
 ;   TerminatedCString s_Out_of_bounds3_005e17f4
 ;   TerminatedCString s_core_path_cpp_005e1804
 ;   TerminatedCString s_Out_of_bounds4_005e1815
-;   int[9] g_INT_ARRAY_0061b328
-;   int[9] g_INT_ARRAY_0061b34c
+;   int[9] g_PathfindingDeltaX
+;   int[9] g_PathfindingDeltaZ
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01e501fc
-;   int g_INT_01e50200
+;   int g_PathfindingCurrentX
+;   int g_PathfindingCurrentZ
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -328,13 +328,13 @@ section .text
     MOV EDI,dword ptr [EBP + 0x24]      ; 00512cf1
     MOV EDX,dword ptr [EBP + 0x2c]      ; 00512cf4
     SUB EAX,EDI                         ; 00512cf7
-    MOV dword ptr [0x01e50208],EBX      ; 00512cf9 | g_INT_01e50208
-    MOV [0x01e501fc],EAX                ; 00512cff | g_INT_01e501fc
+    MOV dword ptr [0x01e50208],EBX      ; 00512cf9 | g_PathfindingDestZ
+    MOV [0x01e501fc],EAX                ; 00512cff | g_PathfindingCurrentX
     MOV EAX,dword ptr [EBP + 0x20]      ; 00512d04
-    MOV dword ptr [0x01e50204],EBX      ; 00512d07 | g_INT_01e50204
+    MOV dword ptr [0x01e50204],EBX      ; 00512d07 | g_PathfindingDestX
     SUB EAX,EDX                         ; 00512d0d
-    MOV ECX,dword ptr [0x01e501fc]      ; 00512d0f | g_INT_01e501fc
-    MOV [0x01e50200],EAX                ; 00512d15 | g_INT_01e50200
+    MOV ECX,dword ptr [0x01e501fc]      ; 00512d0f | g_PathfindingCurrentX
+    MOV [0x01e50200],EAX                ; 00512d15 | g_PathfindingCurrentZ
     TEST ECX,ECX                        ; 00512d1a
     JL 0x00512d27                       ; 00512d1c
         ;   XREF to: 00512d27 (CONDITIONAL_JUMP)  ; LAB_00512d27
@@ -435,9 +435,9 @@ section .text
     SUB EAX,EDX                         ; 00512e5c
     MOV ESI,dword ptr [EBP + 0x1c]      ; 00512e5e
     PUSH ESI                            ; 00512e61
-    MOV EDI,dword ptr [0x01e501fc]      ; 00512e62 | g_INT_01e501fc
+    MOV EDI,dword ptr [0x01e501fc]      ; 00512e62 | g_PathfindingCurrentX
     PUSH EDI                            ; 00512e68
-    MOV EAX,[0x01e50200]                ; 00512e69 | g_INT_01e50200
+    MOV EAX,[0x01e50200]                ; 00512e69 | g_PathfindingCurrentZ
     PUSH EAX                            ; 00512e6e
     PUSH EBP                            ; 00512e6f
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0 ; 00512e70
@@ -445,9 +445,9 @@ section .text
     ADD ESP,0x10                        ; 00512e75
     MOV EDX,dword ptr [EBP + 0x10]      ; 00512e78
     PUSH EDX                            ; 00512e7b
-    MOV ECX,dword ptr [0x01e50204]      ; 00512e7c | g_INT_01e50204
+    MOV ECX,dword ptr [0x01e50204]      ; 00512e7c | g_PathfindingDestX
     PUSH ECX                            ; 00512e82
-    MOV ESI,dword ptr [0x01e50208]      ; 00512e83 | g_INT_01e50208
+    MOV ESI,dword ptr [0x01e50208]      ; 00512e83 | g_PathfindingDestZ
     PUSH ESI                            ; 00512e89
     PUSH EBP                            ; 00512e8a
     MOV EBX,EAX                         ; 00512e8b
@@ -455,14 +455,14 @@ section .text
         ;   XREF to: 005122f0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 00512e92
     PUSH EAX                            ; 00512e95
-    MOV EDI,dword ptr [0x01e50208]      ; 00512e96 | g_INT_01e50208
+    MOV EDI,dword ptr [0x01e50208]      ; 00512e96 | g_PathfindingDestZ
     PUSH EDI                            ; 00512e9c
-    MOV EAX,[0x01e50204]                ; 00512e9d | g_INT_01e50204
+    MOV EAX,[0x01e50204]                ; 00512e9d | g_PathfindingDestX
     PUSH EAX                            ; 00512ea2
     PUSH EBX                            ; 00512ea3
-    MOV EDX,dword ptr [0x01e50200]      ; 00512ea4 | g_INT_01e50200
+    MOV EDX,dword ptr [0x01e50200]      ; 00512ea4 | g_PathfindingCurrentZ
     PUSH EDX                            ; 00512eaa
-    MOV ECX,dword ptr [0x01e501fc]      ; 00512eab | g_INT_01e501fc
+    MOV ECX,dword ptr [0x01e501fc]      ; 00512eab | g_PathfindingCurrentX
     PUSH ECX                            ; 00512eb1
     PUSH EBP                            ; 00512eb2
     CALL core_path.cpp_CPathMap_isLineWalkable_FUN_00512390 ; 00512eb3
@@ -608,14 +608,14 @@ section .text
     POP ESI                             ; 005130a3
     POP EBX                             ; 005130a4
     RET                                 ; 005130a5
-    MOV EBX,dword ptr [0x01e50200]      ; 005130a6 | g_INT_01e50200
+    MOV EBX,dword ptr [0x01e50200]      ; 005130a6 | g_PathfindingCurrentZ
         ;   Label: LAB_005130a6
     PUSH EBX                            ; 005130ac
-    MOV ESI,dword ptr [0x01e501fc]      ; 005130ad | g_INT_01e501fc
+    MOV ESI,dword ptr [0x01e501fc]      ; 005130ad | g_PathfindingCurrentX
     PUSH ESI                            ; 005130b3
-    MOV EDI,dword ptr [0x01e50208]      ; 005130b4 | g_INT_01e50208
+    MOV EDI,dword ptr [0x01e50208]      ; 005130b4 | g_PathfindingDestZ
     PUSH EDI                            ; 005130ba
-    MOV EAX,[0x01e50204]                ; 005130bb | g_INT_01e50204
+    MOV EAX,[0x01e50204]                ; 005130bb | g_PathfindingDestX
     PUSH EAX                            ; 005130c0
     PUSH EBP                            ; 005130c1
     CALL core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0 ; 005130c2
@@ -627,8 +627,8 @@ section .text
     CMP EAX,0x1                         ; 005130d2
     JNZ 0x00513166                      ; 005130d5
         ;   XREF to: 00513166 (CONDITIONAL_JUMP)  ; LAB_00513166
-    MOV EDI,dword ptr [0x01e501fc]      ; 005130db | g_INT_01e501fc
-    MOV EAX,[0x01e50204]                ; 005130e1 | g_INT_01e50204
+    MOV EDI,dword ptr [0x01e501fc]      ; 005130db | g_PathfindingCurrentX
+    MOV EAX,[0x01e50204]                ; 005130e1 | g_PathfindingDestX
     CMP EAX,EDI                         ; 005130e6
     JLE 0x00513141                      ; 005130e8
         ;   XREF to: 00513141 (CONDITIONAL_JUMP)  ; LAB_00513141
@@ -664,9 +664,9 @@ section .text
     MOV EAX,0x4                         ; 00513143
     JMP 0x005130ef                      ; 00513148
         ;   XREF to: 005130ef (UNCONDITIONAL_JUMP)  ; LAB_005130ef
-    MOV ECX,dword ptr [0x01e50200]      ; 0051314a | g_INT_01e50200
+    MOV ECX,dword ptr [0x01e50200]      ; 0051314a | g_PathfindingCurrentZ
         ;   Label: LAB_0051314a
-    CMP ECX,dword ptr [0x01e50208]      ; 00513150 | g_INT_01e50208
+    CMP ECX,dword ptr [0x01e50208]      ; 00513150 | g_PathfindingDestZ
     JGE 0x0051315f                      ; 00513156
         ;   XREF to: 0051315f (CONDITIONAL_JUMP)  ; LAB_0051315f
     MOV EAX,0x1                         ; 00513158
@@ -676,9 +676,9 @@ section .text
         ;   Label: LAB_0051315f
     JMP 0x005130ef                      ; 00513164
         ;   XREF to: 005130ef (UNCONDITIONAL_JUMP)  ; LAB_005130ef
-    MOV ECX,dword ptr [0x01e50200]      ; 00513166 | g_INT_01e50200
+    MOV ECX,dword ptr [0x01e50200]      ; 00513166 | g_PathfindingCurrentZ
         ;   Label: LAB_00513166
-    MOV EAX,[0x01e50208]                ; 0051316c | g_INT_01e50208
+    MOV EAX,[0x01e50208]                ; 0051316c | g_PathfindingDestZ
     CMP EAX,ECX                         ; 00513171
     JLE 0x0051317f                      ; 00513173
         ;   XREF to: 0051317f (CONDITIONAL_JUMP)  ; LAB_0051317f
@@ -691,9 +691,9 @@ section .text
     MOV EAX,0x2                         ; 00513181
     JMP 0x005130ef                      ; 00513186
         ;   XREF to: 005130ef (UNCONDITIONAL_JUMP)  ; LAB_005130ef
-    MOV ESI,dword ptr [0x01e501fc]      ; 0051318b | g_INT_01e501fc
+    MOV ESI,dword ptr [0x01e501fc]      ; 0051318b | g_PathfindingCurrentX
         ;   Label: LAB_0051318b
-    CMP ESI,dword ptr [0x01e50204]      ; 00513191 | g_INT_01e50204
+    CMP ESI,dword ptr [0x01e50204]      ; 00513191 | g_PathfindingDestX
     JL 0x005130ea                       ; 00513197
         ;   XREF to: 005130ea (CONDITIONAL_JUMP)  ; LAB_005130ea
     MOV EAX,0x4                         ; 0051319d
@@ -758,7 +758,7 @@ section .text
     POP ESI                             ; 00513260
     POP EBX                             ; 00513261
     RET                                 ; 00513262
-    MOV EBX,dword ptr [0x01e50208]      ; 00513263 | g_INT_01e50208
+    MOV EBX,dword ptr [0x01e50208]      ; 00513263 | g_PathfindingDestZ
         ;   Label: LAB_00513263
     LEA EAX,[EBX*0x4 + 0x0]             ; 00513269
     SUB EAX,EBX                         ; 00513270
@@ -766,7 +766,7 @@ section .text
     ADD EAX,EBX                         ; 00513275
     SHL EAX,0x4                         ; 00513277
     LEA EDX,[EAX + EBP*0x1]             ; 0051327a
-    MOV EAX,[0x01e50204]                ; 0051327d | g_INT_01e50204
+    MOV EAX,[0x01e50204]                ; 0051327d | g_PathfindingDestX
     MOV EBX,dword ptr [EBP + 0x10]      ; 00513282
     MOV EAX,dword ptr [EDX + EAX*0x4 + 0x30] ; 00513285
     SUB EAX,EBX                         ; 00513289
@@ -777,8 +777,8 @@ section .text
     JG 0x005133c0                       ; 00513293
         ;   XREF to: 005133c0 (CONDITIONAL_JUMP)  ; LAB_005133c0
     MOV EBX,0xffffffff                  ; 00513299
-    MOV ESI,dword ptr [0x01e50208]      ; 0051329e | g_INT_01e50208
-    MOV EDI,dword ptr [0x01e50204]      ; 005132a4 | g_INT_01e50204
+    MOV ESI,dword ptr [0x01e50208]      ; 0051329e | g_PathfindingDestZ
+    MOV EDI,dword ptr [0x01e50204]      ; 005132a4 | g_PathfindingDestX
     MOV dword ptr [ESP + 0x1cc],EBX     ; 005132aa
     MOV EAX,dword ptr [ESP + 0x1cc]     ; 005132b1
         ;   Label: LAB_005132b1
@@ -786,12 +786,12 @@ section .text
     IMUL EAX,ESI,0x64                   ; 005132bf
     MOV dword ptr [ESP + 0x1cc],EBX     ; 005132c2
     XOR EBX,EBX                         ; 005132c9
-    MOV BL,byte ptr [EDI + EAX*0x1 + 0x1e5ec78] ; 005132cb | g_CHAR_ARRAY_ARRAY_01e5ec78[50][50]
+    MOV BL,byte ptr [EDI + EAX*0x1 + 0x1e5ec78] ; 005132cb | g_PathfindingVisited[50][50]
     TEST EBX,EBX                        ; 005132d2
     JZ 0x00513458                       ; 005132d4
         ;   XREF to: 00513458 (CONDITIONAL_JUMP)  ; LAB_00513458
-    MOV EAX,dword ptr [EBX*0x4 + 0x61b328] ; 005132da | g_INT_ARRAY_0061b328
-    MOV EDX,dword ptr [EBX*0x4 + 0x61b34c] ; 005132e1 | g_INT_ARRAY_0061b34c
+    MOV EAX,dword ptr [EBX*0x4 + 0x61b328] ; 005132da | g_PathfindingDeltaX
+    MOV EDX,dword ptr [EBX*0x4 + 0x61b34c] ; 005132e1 | g_PathfindingDeltaZ
     SUB EDI,EAX                         ; 005132e8
     SUB ESI,EDX                         ; 005132ea
     TEST EDI,EDI                        ; 005132ec
@@ -825,11 +825,11 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00513342
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00513347
-    CMP EDI,dword ptr [0x01e501fc]      ; 0051334a | g_INT_01e501fc
+    CMP EDI,dword ptr [0x01e501fc]      ; 0051334a | g_PathfindingCurrentX
         ;   Label: LAB_0051334a
     JNZ 0x005132b1                      ; 00513350
         ;   XREF to: 005132b1 (CONDITIONAL_JUMP)  ; LAB_005132b1
-    CMP ESI,dword ptr [0x01e50200]      ; 00513356 | g_INT_01e50200
+    CMP ESI,dword ptr [0x01e50200]      ; 00513356 | g_PathfindingCurrentZ
     JNZ 0x005132b1                      ; 0051335c
         ;   XREF to: 005132b1 (CONDITIONAL_JUMP)  ; LAB_005132b1
     MOV ESI,dword ptr [ESP + 0x1ec]     ; 00513362

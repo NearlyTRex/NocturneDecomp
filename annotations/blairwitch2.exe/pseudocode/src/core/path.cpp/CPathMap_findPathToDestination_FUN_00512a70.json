@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 854,
-    "complexity_score": 1375,
+    "complexity_score": 1378,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 395,
+    "pseudocode_lines": 398,
     "suspect_count": 94,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 1249
+    "total_lines": 1252
   },
   "cross_references": [
     {
@@ -145,13 +145,13 @@
     },
     {
       "addr": "0061b328",
-      "name": "g_INT_ARRAY_0061b328",
+      "name": "g_PathfindingDeltaX",
       "type": "int[9]",
       "value": null
     },
     {
       "addr": "0061b34c",
-      "name": "g_INT_ARRAY_0061b34c",
+      "name": "g_PathfindingDeltaZ",
       "type": "int[9]",
       "value": null
     },
@@ -169,31 +169,31 @@
     },
     {
       "addr": "01e501fc",
-      "name": "g_INT_01e501fc",
+      "name": "g_PathfindingCurrentX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e50200",
-      "name": "g_INT_01e50200",
+      "name": "g_PathfindingCurrentZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e50204",
-      "name": "g_INT_01e50204",
+      "name": "g_PathfindingDestX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e50208",
-      "name": "g_INT_01e50208",
+      "name": "g_PathfindingDestZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e60032",
-      "name": "g_CHAR_ARRAY_ARRAY_01e5ec78[50][50]",
+      "name": "g_PathfindingVisited[50][50]",
       "type": "undefined4",
       "value": null
     },
@@ -1044,7 +1044,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 233,
+      "line": 234,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_11c = (this_ptr->current_position).x - unaff_ESI->x;",
@@ -1052,7 +1052,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 234,
+      "line": 235,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_118[0] = (this_ptr->current_position).y - unaff_ESI->y;",
@@ -1060,7 +1060,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 235,
+      "line": 236,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_118[1] = (this_ptr->current_position).z - unaff_ESI->z;",
@@ -1068,7 +1068,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 242,
+      "line": 243,
       "match": "(float *)((int)local_bc",
       "severity": "moderate",
       "text": "afStack_fc[(uint)bVar7 * -2 + 2] = *(float *)((int)local_bc + (uint)bVar7 * -8 + 4);",
@@ -1076,7 +1076,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 244,
+      "line": 245,
       "match": "(float *)((int)local_bc",
       "severity": "moderate",
       "text": "*(float *)((int)local_bc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
@@ -1084,7 +1084,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 245,
+      "line": 246,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (afStack_fc + 1 != unaff_EBX) {",
@@ -1092,7 +1092,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 246,
+      "line": 247,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = afStack_fc[1];",
@@ -1100,7 +1100,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 247,
+      "line": 248,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = afStack_fc[2];",
@@ -1108,7 +1108,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 248,
+      "line": 249,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = afStack_fc[3];",
@@ -1116,7 +1116,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 261,
+      "line": 264,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "fStack_188 = (this_ptr->current_position).x - unaff_ESI->x;",
@@ -1124,7 +1124,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 262,
+      "line": 265,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_184 = (this_ptr->current_position).y - unaff_ESI->y;",
@@ -1132,7 +1132,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 263,
+      "line": 266,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_180 = (this_ptr->current_position).z - unaff_ESI->z;",
@@ -1140,7 +1140,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 264,
+      "line": 267,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_104._0_4_ = fStack_188;",
@@ -1148,7 +1148,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 270,
+      "line": 273,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1e4.z = (float)local_c8._0_4_;",
@@ -1156,7 +1156,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 274,
+      "line": 277,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (&local_1e4.z == unaff_EBX) {",
@@ -1164,7 +1164,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 277,
+      "line": 280,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = local_1e4.z;",
@@ -1172,7 +1172,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 278,
+      "line": 281,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = local_1d8[0];",
@@ -1180,7 +1180,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 279,
+      "line": 282,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = local_1d8[1];",
@@ -1188,7 +1188,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 291,
+      "line": 294,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_19c[2] = (this_ptr->current_position).x - unaff_ESI->x;",
@@ -1196,7 +1196,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 292,
+      "line": 295,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_19c[3] = (this_ptr->current_position).y - unaff_ESI->y;",
@@ -1204,7 +1204,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 293,
+      "line": 296,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "fStack_18c = (this_ptr->current_position).z - unaff_ESI->z;",
@@ -1212,7 +1212,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 294,
+      "line": 297,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_1a8._8_4_ = local_19c[2];",
@@ -1220,7 +1220,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 301,
+      "line": 304,
       "match": "(float *)((int)local_164",
       "severity": "moderate",
       "text": "local_16c[(uint)bVar7 * -2] = *(float *)((int)local_164 + (uint)bVar7 * -8 + 4);",
@@ -1228,7 +1228,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 303,
+      "line": 306,
       "match": "(float *)((int)local_164",
       "severity": "moderate",
       "text": "*(float *)((int)local_164 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
@@ -1236,7 +1236,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 304,
+      "line": 307,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (&local_170 == unaff_EBX) {",
@@ -1244,7 +1244,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 307,
+      "line": 310,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = local_170;",
@@ -1252,7 +1252,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 308,
+      "line": 311,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = local_16c[0];",
@@ -1260,7 +1260,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 309,
+      "line": 312,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = local_16c[1];",
@@ -1268,26 +1268,10 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 335,
+      "line": 338,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 336,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX[2] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 338,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(this_ptr,uVar4,local_28,(int)local_34[2],unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
@@ -1295,12 +1279,28 @@
       "line": 339,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX[1] = fVar3;",
+      "text": "unaff_EBX[2] = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 341,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(this_ptr,uVar4,local_28,(int)local_34[2],unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 342,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1] = fVar3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 345,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_1ac = (this_ptr->current_position).x - unaff_ESI->x;",
@@ -1308,7 +1308,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 343,
+      "line": 346,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_1a8._0_4_ = (this_ptr->current_position).y - unaff_ESI->y;",
@@ -1316,7 +1316,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 343,
+      "line": 346,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1a8._0_4_ = (this_ptr->current_position).y - unaff_ESI->y;",
@@ -1324,7 +1324,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 344,
+      "line": 347,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "local_1a8._4_4_ = (this_ptr->current_position).z - unaff_ESI->z;",
@@ -1332,7 +1332,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 344,
+      "line": 347,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_1a8._4_4_ = (this_ptr->current_position).z - unaff_ESI->z;",
@@ -1340,7 +1340,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 345,
+      "line": 348,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_94._8_4_ = local_1ac;",
@@ -1348,7 +1348,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 351,
+      "line": 354,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_7c[2] = (float)local_40._8_4_;",
@@ -1356,7 +1356,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 355,
+      "line": 358,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (local_7c + 2 == unaff_EBX) {",
@@ -1364,7 +1364,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 358,
+      "line": 361,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = local_7c[2];",
@@ -1372,7 +1372,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 359,
+      "line": 362,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = local_7c[3];",
@@ -1380,7 +1380,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 360,
+      "line": 363,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = fStack_6c;",
@@ -1388,7 +1388,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 393,
+      "line": 396,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = 0.0;",
@@ -1396,7 +1396,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 394,
+      "line": 397,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = 0.0;",
@@ -1404,7 +1404,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 395,
+      "line": 398,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "fVar3 = core_path_cpp_CPathMap_getDirection_FUN_00511df0(this_ptr,iVar1,-1,-1,unaff_ESI);",
@@ -1412,7 +1412,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 396,
+      "line": 399,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = fVar3;",
@@ -1476,7 +1476,7 @@
     },
     {
       "description": "Pointer value `&g_CDemonRaytraceInstance` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 218,
+      "line": 219,
       "match": "(int)&g_CDemonRaytraceInstance",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CDemonRaytraceInstance + (uint)bVar7 * -8 + 0x38);",
@@ -1484,7 +1484,7 @@
     },
     {
       "description": "Pointer value `&local_dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 222,
+      "line": 223,
       "match": "(int)&local_dc",
       "severity": "moderate",
       "text": "*(float *)((int)&local_dc + (uint)bVar7 * -8) = local_7c[(uint)bVar7 * -2];",
@@ -1492,7 +1492,7 @@
     },
     {
       "description": "Pointer value `&local_dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 223,
+      "line": 224,
       "match": "(int)&local_dc",
       "severity": "moderate",
       "text": "*(float *)((int)&local_dc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4) =",
@@ -1500,7 +1500,7 @@
     },
     {
       "description": "Pointer value `&local_128` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 237,
+      "line": 238,
       "match": "(int)&local_128",
       "severity": "moderate",
       "text": "*(float *)((int)&local_128 + (uint)bVar7 * -8 + 4) = local_118[(uint)bVar7 * -2];",
@@ -1508,7 +1508,7 @@
     },
     {
       "description": "Pointer value `&local_128` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 238,
+      "line": 239,
       "match": "(int)&local_128",
       "severity": "moderate",
       "text": "*(float *)((int)&local_128 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
@@ -1620,7 +1620,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 218,
+      "line": 219,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CDemonRaytraceInstance + (uint)bVar7 * -8 + 0x38);",
@@ -1628,7 +1628,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 222,
+      "line": 223,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_dc + (uint)bVar7 * -8) = local_7c[(uint)bVar7 * -2];",
@@ -1636,7 +1636,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 223,
+      "line": 224,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_dc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4) =",
@@ -1644,7 +1644,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 237,
+      "line": 238,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_128 + (uint)bVar7 * -8 + 4) = local_118[(uint)bVar7 * -2];",
@@ -1652,7 +1652,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 238,
+      "line": 239,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_128 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",

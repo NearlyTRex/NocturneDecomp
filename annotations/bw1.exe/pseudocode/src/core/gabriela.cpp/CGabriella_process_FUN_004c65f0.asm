@@ -405,7 +405,7 @@ section .text
     TEST ESI,ESI                        ; 004c6a1c
     JZ 0x004c7699                       ; 004c6a1e
         ;   XREF to: 004c7699 (CONDITIONAL_JUMP)  ; LAB_004c7699
-    MOV EAX,[0x007c5330]                ; 004c6a24 | g_CDemonActorType_007c52f8.name_hash
+    MOV EAX,[0x007c5330]                ; 004c6a24 | g_CLightActorClassInfo.name_hash
         ;   Label: LAB_004c6a24
     PUSH EAX                            ; 004c6a29
     MOV EDX,dword ptr [EBX + 0x25b0]    ; 004c6a2a

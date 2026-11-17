@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626610 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626614 = 005c50d4
-;   FileListNode* g_FileListNode_PTR_02c9f050
-;   FileListNode* g_FileListNode_PTR_02c9f054
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005c1594
     MOV EBX,dword ptr [ESP + 0x8]       ; 005c1595
     CALL dword ptr [0x00626610]         ; 005c1599 | PTR_crt_unknown.c_FUN_005c50d4_00626610
-    MOV EAX,[0x02c9f050]                ; 005c159f | g_FileListNode_PTR_02c9f050
+    MOV EAX,[0x02c9f050]                ; 005c159f | g_AllocatedListHead
     TEST EAX,EAX                        ; 005c15a4
     JZ 0x005c15d0                       ; 005c15a6
         ;   XREF to: 005c15d0 (CONDITIONAL_JUMP)  ; LAB_005c15d0
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005c15a8 (CONDITIONAL_JUMP)  ; LAB_005c15a8
     MOV EDX,0x2c9f054                   ; 005c15d0
         ;   Label: LAB_005c15d0
-    MOV EAX,dword ptr [EDX]             ; 005c15d5 | g_FileListNode_PTR_02c9f054
+    MOV EAX,dword ptr [EDX]             ; 005c15d5 | g_FreeListHeadPointer
         ;   Label: LAB_005c15d5
     TEST EAX,EAX                        ; 005c15d7
     JZ 0x005c15ff                       ; 005c15d9
@@ -64,9 +64,9 @@ section .text
     JNZ 0x005c15fb                      ; 005c15de
         ;   XREF to: 005c15fb (CONDITIONAL_JUMP)  ; LAB_005c15fb
     MOV ECX,dword ptr [EAX]             ; 005c15e0
-    MOV dword ptr [EDX],ECX             ; 005c15e2 | g_FileListNode_PTR_02c9f054
-    MOV EDX,dword ptr [0x02c9f050]      ; 005c15e4 | g_FileListNode_PTR_02c9f050
-    MOV [0x02c9f050],EAX                ; 005c15ea | g_FileListNode_PTR_02c9f050
+    MOV dword ptr [EDX],ECX             ; 005c15e2 | g_FreeListHeadPointer
+    MOV EDX,dword ptr [0x02c9f050]      ; 005c15e4 | g_AllocatedListHead
+    MOV [0x02c9f050],EAX                ; 005c15ea | g_AllocatedListHead
     MOV dword ptr [EAX],EDX             ; 005c15ef
     CALL dword ptr [0x00626614]         ; 005c15f1 | PTR_crt_unknown.c_FUN_005c50d4_00626614
     MOV EAX,EBX                         ; 005c15f7

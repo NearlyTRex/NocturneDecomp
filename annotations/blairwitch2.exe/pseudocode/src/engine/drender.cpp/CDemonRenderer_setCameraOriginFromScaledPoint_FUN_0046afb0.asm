@@ -24,7 +24,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005d1563 = 256
+;   double g_CameraScaleFactor = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
     SUB ESP,0x8                         ; 0046afb1
     MOV EAX,dword ptr [ESP + 0x14]      ; 0046afb4
-    FLD double ptr [0x005d1563]         ; 0046afb8 | g_DOUBLE_005d1563
+    FLD double ptr [0x005d1563]         ; 0046afb8 | g_CameraScaleFactor
     FLD float ptr [EAX + 0x8]           ; 0046afbe
     FMUL ST1                            ; 0046afc1
     FLD float ptr [EAX + 0x4]           ; 0046afc3

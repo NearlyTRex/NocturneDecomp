@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_02c8a67c
-;   CTextureCache* g_CTextureCache_PTR_02c8a680
+;   CTextureCache* g_TextureCacheInstance
 ;   SMRGLTextureModel g_SMRGLTextureModel_02c8acc4
 ;   undefined4 g_SMRGLTextureModel_02c8acc4.base.count
 ;   undefined4 g_SMRGLTextureModel_02c8acc4.texture_name[0]
@@ -31,7 +31,7 @@ section .text
     MOV [0x02c8acc8],EAX                ; 00597d12 | g_SMRGLTextureModel_02c8acc4.base.count
     MOV EDX,EAX                         ; 00597d17
     SHL EAX,0x2                         ; 00597d19
-    MOV ESI,dword ptr [0x02c8a680]      ; 00597d1c | g_CTextureCache_PTR_02c8a680
+    MOV ESI,dword ptr [0x02c8a680]      ; 00597d1c | g_TextureCacheInstance
     SUB EAX,EDX                         ; 00597d22
     ADD ESI,0x4                         ; 00597d24
     SHL EAX,0x5                         ; 00597d27

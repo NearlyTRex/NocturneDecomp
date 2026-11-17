@@ -18,10 +18,10 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00519960(CMirro
   int iVar7;
   CVector3f *local_14;
   
-  g_INT_01d2c5d0 = (primitive->base).count;
+  g_MirrorInputVertexCount = (primitive->base).count;
   iVar5 = 0;
-  if (0 < g_INT_01d2c5d0) {
-    pCVar3 = g_CVector3f_ARRAY_01d2c5d4;
+  if (0 < g_MirrorInputVertexCount) {
+    pCVar3 = g_MirrorInputVertices;
     pSVar6 = primitive;
     do {
       pSVar1 = pSVar6 + 1;
@@ -35,29 +35,31 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00519960(CMirro
     } while (iVar5 < (primitive->base).count);
   }
   core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-            (this_ptr->clip_planes,g_CVector3f_ARRAY_01d2c5d4,g_INT_01d2c5d0,
-             g_CVector3f_ARRAY_01d2c758,&g_INT_01d2c754);
-  if ((((2 < g_INT_01d2c754) &&
+            (this_ptr->clip_planes,g_MirrorInputVertices,g_MirrorInputVertexCount,
+             g_MirrorOutputVertices,&g_MirrorOutputVertexCount);
+  if ((((2 < g_MirrorOutputVertexCount) &&
        (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                  (this_ptr->clip_planes + 1,g_CVector3f_ARRAY_01d2c758,g_INT_01d2c754,
-                   g_CVector3f_ARRAY_01d2c5d4,&g_INT_01d2c5d0), 2 < g_INT_01d2c5d0)) &&
-      (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                 (this_ptr->clip_planes + 2,g_CVector3f_ARRAY_01d2c5d4,g_INT_01d2c5d0,
-                  g_CVector3f_ARRAY_01d2c758,&g_INT_01d2c754), 2 < g_INT_01d2c754)) &&
+                  (this_ptr->clip_planes + 1,g_MirrorOutputVertices,g_MirrorOutputVertexCount,
+                   g_MirrorInputVertices,&g_MirrorInputVertexCount), 2 < g_MirrorInputVertexCount))
+      && (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
+                    (this_ptr->clip_planes + 2,g_MirrorInputVertices,g_MirrorInputVertexCount,
+                     g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
+         2 < g_MirrorOutputVertexCount)) &&
      ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                 (this_ptr->clip_planes + 3,g_CVector3f_ARRAY_01d2c758,g_INT_01d2c754,
-                  g_CVector3f_ARRAY_01d2c5d4,&g_INT_01d2c5d0), 2 < g_INT_01d2c5d0 &&
+                 (this_ptr->clip_planes + 3,g_MirrorOutputVertices,g_MirrorOutputVertexCount,
+                  g_MirrorInputVertices,&g_MirrorInputVertexCount), 2 < g_MirrorInputVertexCount &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                 (this_ptr->clip_planes + 4,g_CVector3f_ARRAY_01d2c5d4,g_INT_01d2c5d0,
-                  g_CVector3f_ARRAY_01d2c758,&g_INT_01d2c754), 2 < g_INT_01d2c754)))) {
-    (this_ptr->clip_primitive).base.base.count = g_INT_01d2c754;
+                 (this_ptr->clip_planes + 4,g_MirrorInputVertices,g_MirrorInputVertexCount,
+                  g_MirrorOutputVertices,&g_MirrorOutputVertexCount), 2 < g_MirrorOutputVertexCount)
+      ))) {
+    (this_ptr->clip_primitive).base.base.count = g_MirrorOutputVertexCount;
     (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
     (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;
     (this_ptr->clip_primitive).base.surface_normal.C = (primitive->surface_normal).C;
     (this_ptr->clip_primitive).base.surface_normal.D = (primitive->surface_normal).D;
     iVar5 = 0;
-    if (0 < g_INT_01d2c754) {
-      local_14 = g_CVector3f_ARRAY_01d2c758;
+    if (0 < g_MirrorOutputVertexCount) {
+      local_14 = g_MirrorOutputVertices;
       iVar7 = 0xea000;
       do {
         piVar4 = (int *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
@@ -74,7 +76,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00519960(CMirro
         iVar7 = iVar7 + 0x30;
         local_14 = local_14 + 1;
         this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
-      } while (iVar5 < g_INT_01d2c754);
+      } while (iVar5 < g_MirrorOutputVertexCount);
     }
     return 1;
   }

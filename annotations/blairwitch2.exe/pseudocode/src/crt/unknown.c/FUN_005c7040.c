@@ -11,7 +11,7 @@ uint FUN_005c7040(uint param_1)
 {
   int iVar1;
   
-  if ((g_INT_026807f0 != 0) && ((g_CHAR_ARRAY_02680801[param_1 >> 8 & 0xff] & 1U) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[param_1 >> 8 & 0xff] & 1U) != 0)) {
     iVar1 = FUN_005c7090(param_1 & 0xff);
     if (iVar1 != 0) {
       return 1;

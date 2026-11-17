@@ -13,18 +13,18 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005ddc48 = 0.003921569
 ;   int g_INT_006141c0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_INT_01c37788
-;   ulong g_ULONG_01c38b5c
+;   ulong g_SolidColorMode
 ;   float g_FLOAT_01d09900
 ;   float g_FLOAT_01d09904
 ;   float g_FLOAT_01d09908
 ;   float g_FLOAT_01d0990c
 ;   float g_FLOAT_01d09910
 ;   float g_FLOAT_01d12158
-;   void* g_PTR_0264bccc
+;   void* g_APIDLL_enableCulling
 ;
 ; *****************************************************************************
 
@@ -58,20 +58,20 @@ section .text
     CMP ECX,0x20                        ; 004f3660
     JNZ 0x004f36bb                      ; 004f3663
         ;   XREF to: 004f36bb (CONDITIONAL_JUMP)  ; LAB_004f36bb
-    MOV CL,byte ptr [0x01c35814]        ; 004f3665 | g_BIT_INTEGER32_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 004f3665 | g_RedBitPosition
     SHL EDX,CL                          ; 004f366b
-    MOV CL,byte ptr [0x01c35820]        ; 004f366d | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 004f366d | g_GreenBitPosition
     SHL EAX,CL                          ; 004f3673
     MOV ECX,EAX                         ; 004f3675
     MOV EAX,EDX                         ; 004f3677
     OR EAX,ECX                          ; 004f3679
-    MOV CL,byte ptr [0x01c3582c]        ; 004f367b | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 004f367b | g_BlueBitPosition
     SHL EBX,CL                          ; 004f3681
     MOV ECX,EBX                         ; 004f3683
     OR ECX,EAX                          ; 004f3685
-    MOV EBX,dword ptr [0x0264bccc]      ; 004f3687 | g_PTR_0264bccc
+    MOV EBX,dword ptr [0x0264bccc]      ; 004f3687 | g_APIDLL_enableCulling
         ;   Label: LAB_004f3687
-    MOV dword ptr [0x01c38b5c],ECX      ; 004f368d | g_ULONG_01c38b5c
+    MOV dword ptr [0x01c38b5c],ECX      ; 004f368d | g_SolidColorMode
     TEST EBX,EBX                        ; 004f3693
     JZ 0x004f36a0                       ; 004f3695
         ;   XREF to: 004f36a0 (CONDITIONAL_JUMP)  ; LAB_004f36a0
@@ -101,7 +101,7 @@ section .text
     PUSH dword ptr [0x01d09908]         ; 004f36d1 | g_FLOAT_01d09908
     PUSH dword ptr [0x01d09904]         ; 004f36d7 | g_FLOAT_01d09904
     PUSH dword ptr [0x01d09900]         ; 004f36dd | g_FLOAT_01d09900
-    CALL dword ptr [0x0264bccc]         ; 004f36e3 | g_PTR_0264bccc
+    CALL dword ptr [0x0264bccc]         ; 004f36e3 | g_APIDLL_enableCulling
     ADD ESP,0x14                        ; 004f36e9
     JMP 0x004f36a0                      ; 004f36ec
         ;   XREF to: 004f36a0 (UNCONDITIONAL_JUMP)  ; LAB_004f36a0

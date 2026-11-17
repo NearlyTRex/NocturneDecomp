@@ -55,13 +55,13 @@
     },
     {
       "addr": "01c6e2b4",
-      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02cf60dc",
-      "name": "g_PTR_02cf60dc",
+      "name": "g_APIDLL_setTextureClamp",
       "type": "void*",
       "value": null
     }
@@ -155,7 +155,7 @@
       "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02cf60dc)(vertices,vertex_count,g_BIT_INTEGER32_01c6e2b4.dword);",
+      "text": "(*(code *)g_APIDLL_setTextureClamp)(vertices,vertex_count,g_RenderStateFlags.dword);",
       "type": "unresolved_funcptr"
     }
   ]

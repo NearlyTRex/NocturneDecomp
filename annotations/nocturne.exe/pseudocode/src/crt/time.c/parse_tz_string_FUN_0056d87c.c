@@ -12,28 +12,28 @@ void __cdecl parse_tz_string(char *tz_string)
   char *pcVar1;
   int local_14;
   
-  g_INT_005c1f18 = 0;
-  pcVar1 = parse_timezone_spec(tz_string,"EST",&g_INT_005c1f14);
+  g_DaylightSavingActive = 0;
+  pcVar1 = parse_timezone_spec(tz_string,"EST",&g_TimezoneOffset);
   if (*pcVar1 == '\0') {
     "EDT"[0] = '\0';
   }
   else {
-    local_14 = g_INT_005c1f14 + -0xe10;
-    g_INT_005c1f18 = 1;
+    local_14 = g_TimezoneOffset + -0xe10;
+    g_DaylightSavingActive = 1;
     pcVar1 = parse_timezone_spec(pcVar1,"EDT",&local_14);
-    g_INT_005c1f1c = g_INT_005c1f14 - local_14;
+    g_DaylightSavingOffset = g_TimezoneOffset - local_14;
     if (*pcVar1 == ',') {
-      pcVar1 = parse_dst_rule(pcVar1 + 1,&g_dst_rule_005c1dc0);
+      pcVar1 = parse_dst_rule(pcVar1 + 1,&g_DstStartRule);
     }
     if (*pcVar1 == ',') {
-      parse_dst_rule(pcVar1 + 1,(dst_rule *)&g_INT_005c1de4);
-      g_INT_005c1dec = g_INT_005c1dec - g_INT_005c1f1c / 0xe10;
-      g_INT_005c1de8 =
-           g_INT_005c1de8 -
+      parse_dst_rule(pcVar1 + 1,(dst_rule *)&g_DstTransitionSecond);
+      g_DstTransitionHour = g_DstTransitionHour - g_DaylightSavingOffset / 0xe10;
+      g_DstTransitionMinute =
+           g_DstTransitionMinute -
            (int)((longlong)
-                 ((ulonglong)(uint)((int)((longlong)g_INT_005c1f1c / 0x3c) >> 0x1f) << 0x20 |
-                 (longlong)g_INT_005c1f1c / 0x3c & 0xffffffffU) % 0x3c);
-      g_INT_005c1de4 = g_INT_005c1de4 - g_INT_005c1f1c % 0x3c;
+                 ((ulonglong)(uint)((int)((longlong)g_DaylightSavingOffset / 0x3c) >> 0x1f) << 0x20
+                 | (longlong)g_DaylightSavingOffset / 0x3c & 0xffffffffU) % 0x3c);
+      g_DstTransitionSecond = g_DstTransitionSecond - g_DaylightSavingOffset % 0x3c;
     }
   }
   return;

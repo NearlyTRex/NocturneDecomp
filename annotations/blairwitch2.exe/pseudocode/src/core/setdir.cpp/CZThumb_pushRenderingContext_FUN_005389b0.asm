@@ -15,8 +15,8 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_020b1518
-;   int g_INT_020b151c
+;   int g_SavedWindowWidth
+;   int g_SavedWindowHeight
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
@@ -34,9 +34,9 @@ section .text
     PUSH EDI                            ; 005389b2
     MOV EBX,dword ptr [ESP + 0x10]      ; 005389b3
     MOV EAX,[0x006141b8]                ; 005389b7 | g_INT_006141b8
-    MOV [0x020b1518],EAX                ; 005389bc | g_INT_020b1518
+    MOV [0x020b1518],EAX                ; 005389bc | g_SavedWindowWidth
     MOV EAX,[0x006141bc]                ; 005389c1 | g_INT_006141bc
-    MOV [0x020b151c],EAX                ; 005389c6 | g_INT_020b151c
+    MOV [0x020b151c],EAX                ; 005389c6 | g_SavedWindowHeight
     MOV EAX,dword ptr [EBX]             ; 005389cb
     MOV [0x006141b8],EAX                ; 005389cd | g_INT_006141b8
     MOV EAX,dword ptr [EBX + 0x4]       ; 005389d2

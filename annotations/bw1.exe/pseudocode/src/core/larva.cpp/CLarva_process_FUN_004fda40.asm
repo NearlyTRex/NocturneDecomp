@@ -21,7 +21,7 @@
 ;   double g_DOUBLE_005e6c5b = 0.523598775583333
 ;   float g_FLOAT_00602d1c = 20
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   ... and 4 more
 ;
@@ -451,7 +451,7 @@ section .text
     LEA EAX,[EBP + 0xffffff6a]          ; 004fdee2
     LEA EDI,[EBP + 0xffffff6a]          ; 004fdee8
     PUSH EAX                            ; 004fdeee
-    MOV EAX,[0x0061c010]                ; 004fdeef | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 004fdeef | g_CFireEffectPtr
     LEA ESI,[EBP + 0xffffff46]          ; 004fdef4
     PUSH EAX                            ; 004fdefa
     MOVSD ES:EDI,ESI                    ; 004fdefb
@@ -608,7 +608,7 @@ section .text
     FADDP                               ; 004fe092
     FSTP float ptr [EBP + 0x6e]         ; 004fe094
     MOV EAX,dword ptr [EBP + 0x6e]      ; 004fe097
-    MOV EDI,dword ptr [0x01cc804c]      ; 004fe09a | g_INT_01cc804c
+    MOV EDI,dword ptr [0x01cc804c]      ; 004fe09a | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004fe0a0
     ADD EAX,EDI                         ; 004fe0a2
     MOV dword ptr [EBP + 0x52],EAX      ; 004fe0a4
@@ -778,7 +778,7 @@ section .text
     FADDP                               ; 004fe283
     FSTP float ptr [EBP + 0x3e]         ; 004fe285
     MOV EAX,dword ptr [EBP + 0x3e]      ; 004fe288
-    MOV EDX,dword ptr [0x01cc804c]      ; 004fe28b | g_INT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 004fe28b | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004fe291
     ADD EAX,EDX                         ; 004fe293
     MOV dword ptr [EBP + 0x42],EAX      ; 004fe295

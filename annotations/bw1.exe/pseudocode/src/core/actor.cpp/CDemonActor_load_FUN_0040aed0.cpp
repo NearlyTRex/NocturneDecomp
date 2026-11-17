@@ -40,12 +40,12 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040aed0(CDemonActor *this_ptr,
     pCVar5->actor_name[1] = cVar1;
     pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   } while (cVar1 != '\0');
-  pCVar5 = g_CDemonActor_PTR_007c303c;
-  iVar2 = g_INT_007c3038;
-  local_14 = g_FILE_PTR_007c3034;
-  g_FILE_PTR_007c3034 = file_handle;
-  g_INT_007c3038 = 1;
-  g_CDemonActor_PTR_007c303c = this_ptr;
+  pCVar5 = g_CurrentActorBeingProcessed;
+  iVar2 = g_ActorReadingMode;
+  local_14 = g_ActorDataFile;
+  g_ActorDataFile = file_handle;
+  g_ActorReadingMode = 1;
+  g_CurrentActorBeingProcessed = this_ptr;
   (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   local_dc[0] = '\0';
   local_78[0] = '\0';
@@ -62,8 +62,8 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040aed0(CDemonActor *this_ptr,
     g_INT_01d1d404 = 0x830;
     core_main_c_displayErrorAndQuit_FUN_005030e0("IO Error after reading %s \"%s\"");
   }
-  g_CDemonActor_PTR_007c303c = pCVar5;
-  g_INT_007c3038 = iVar2;
-  g_FILE_PTR_007c3034 = local_14;
+  g_CurrentActorBeingProcessed = pCVar5;
+  g_ActorReadingMode = iVar2;
+  g_ActorDataFile = local_14;
   return;
 }

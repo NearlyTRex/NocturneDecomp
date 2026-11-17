@@ -16,13 +16,12 @@ void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(CDirec
   char acStack_198 [400];
   
   if (((0 < buffer_id) && (buffer_id < 0x19)) &&
-     (g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id] != (IDirectSoundBuffer *)0x0)) {
+     (g_DirectSoundSampleBuffers[buffer_id] != (IDirectSoundBuffer *)0x0)) {
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000014);
-    error_code = (*g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id]->vtable->Lock)
-                           (g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id],iVar1 * offset,
-                            size * iVar1,&in_stack_00000014->locked_ptr1,
-                            &in_stack_00000014->locked_bytes1,&in_stack_00000014->locked_ptr2,
-                            &in_stack_00000014->locked_bytes2,0);
+    error_code = (*g_DirectSoundSampleBuffers[buffer_id]->vtable->Lock)
+                           (g_DirectSoundSampleBuffers[buffer_id],iVar1 * offset,size * iVar1,
+                            &in_stack_00000014->locked_ptr1,&in_stack_00000014->locked_bytes1,
+                            &in_stack_00000014->locked_ptr2,&in_stack_00000014->locked_bytes2,0);
     if (error_code == 0) {
       return in_stack_00000014->locked_ptr1;
     }

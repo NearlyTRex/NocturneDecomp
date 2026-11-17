@@ -19,9 +19,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_DOUBLE_005e87fc+6
-;   short g_SHORT_005e8804 = 0x0
+;   short g_DaysInMonth_Normal = 0x0
 ;   short g_SHORT_005e881c = 0x16d
-;   short g_SHORT_005e881e = 0x0
+;   short g_DaysInMonth_Leap = 0x0
 ;
 ; Called Functions:
 ;   crt_time.c__mktime_FUN_005a4f20
@@ -52,13 +52,13 @@ section .text
     JZ 0x005abe68                       ; 005abe53
         ;   XREF to: 005abe68 (CONDITIONAL_JUMP)  ; LAB_005abe68
     MOV EAX,dword ptr [EBX + 0x10]      ; 005abe55
-    MOV ESI,dword ptr [EAX*0x2 + 0x5e881e] ; 005abe58 | g_SHORT_005e881e
+    MOV ESI,dword ptr [EAX*0x2 + 0x5e881e] ; 005abe58 | g_DaysInMonth_Leap
     MOV EAX,dword ptr [EAX*0x2 + 0x5e881c] ; 005abe5f | g_SHORT_005e881c
     JMP 0x005abe79                      ; 005abe66
         ;   XREF to: 005abe79 (UNCONDITIONAL_JUMP)  ; LAB_005abe79
     MOV EAX,dword ptr [EBX + 0x10]      ; 005abe68
         ;   Label: LAB_005abe68
-    MOV ESI,dword ptr [EAX*0x2 + 0x5e8804] ; 005abe6b | g_SHORT_005e8804
+    MOV ESI,dword ptr [EAX*0x2 + 0x5e8804] ; 005abe6b | g_DaysInMonth_Normal
     MOV EAX,dword ptr [EAX*0x2 + 0x5e8802] ; 005abe72 | g_DOUBLE_005e87fc+6
     SAR ESI,0x10                        ; 005abe79
         ;   Label: LAB_005abe79

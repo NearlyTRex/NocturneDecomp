@@ -13,14 +13,14 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004ee8e0(int *key_code_ptr,ch
   int iVar2;
   char *pcVar3;
   
-  if (0x25 < g_INT_01d086f0) {
+  if (0x25 < g_CustomKeyCount) {
     g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
     g_INT_01d046a4 = 0x907;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
   }
-  iVar2 = g_INT_01d086f0;
-  g_INT_PTR_ARRAY_01d086f4[g_INT_01d086f0] = key_code_ptr;
-  pcVar3 = g_CHAR_ARRAY_ARRAY_01d08790[iVar2];
+  iVar2 = g_CustomKeyCount;
+  g_CustomKeyPointers[g_CustomKeyCount] = key_code_ptr;
+  pcVar3 = g_CustomKeyNames[iVar2];
   do {
     cVar1 = *key_name;
     *pcVar3 = cVar1;
@@ -30,6 +30,6 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004ee8e0(int *key_code_ptr,ch
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  g_INT_01d086f0 = g_INT_01d086f0 + 1;
+  g_CustomKeyCount = g_CustomKeyCount + 1;
   return;
 }

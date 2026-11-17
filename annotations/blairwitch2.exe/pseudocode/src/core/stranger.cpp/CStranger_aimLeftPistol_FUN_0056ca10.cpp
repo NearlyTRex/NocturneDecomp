@@ -70,7 +70,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)
             ((CCharacter *)this_ptr->weapon);
   pSStack_20 = &this_ptr->left_arm_aim;
-  fStack_2c = (float)g_INT_ARRAY_0264be30[3];
+  fStack_2c = (float)g_StrangerIndices[3];
   CStack_120.x = local_6c;
   *(float *)((int)&CStack_120 + (uint)bVar4 * -8 + 4) = afStack_90[(uint)bVar4 * -2 + 10];
   *(float *)((int)&CStack_120 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =

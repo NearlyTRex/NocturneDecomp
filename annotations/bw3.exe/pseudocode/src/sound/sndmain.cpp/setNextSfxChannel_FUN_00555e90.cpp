@@ -14,6 +14,6 @@ void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_00555e90(int channel_index)
     g_INT_01d71de4 = 0xe73;
     core_main_c_displayErrorAndQuit_FUN_004e4330("setNextSfxChannel - invalid channel index: %d");
   }
-  g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].channel_index = channel_index;
+  g_CSfxOptions_ARRAY_02ceb920[g_SfxLastSlot].channel_index = channel_index;
   return;
 }

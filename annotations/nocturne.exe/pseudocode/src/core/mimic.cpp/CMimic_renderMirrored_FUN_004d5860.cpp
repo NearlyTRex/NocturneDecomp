@@ -41,7 +41,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
                   (g_CDemonRenderer_PTR_005ae704,(uint)(local_18 == 0));
         engine_matrix_c_matrixPush_FUN_004cdac0();
         g_RelativeX = -g_RelativeX;
-        g_INT_01c039dc = -g_INT_01c039dc;
+        g_LightDirectionX = -g_LightDirectionX;
         g_TransformMatrix.m[0].x = -g_TransformMatrix.m[0].x;
         g_TransformMatrix.m[0].y = -g_TransformMatrix.m[0].y;
         g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
@@ -50,7 +50,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
         core_cloth_cpp_CCloth_render_FUN_00437db0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);
         local_14 = core_actor_cpp_castToClassHash_FUN_0040d890
                              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
-                              g_CStrangerActorType_02dc9fac.name_hash);
+                              g_CStrangerClassInfo.name_hash);
         if (local_14 != (CDemonActor *)0x0) {
           local_28.x = 0.0;
           local_28.z = 0.0;
@@ -63,7 +63,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
           core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                     (&local_c4,
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                     g_INT_ARRAY_01cc9094[0],(CMatrix3x4f *)&stack0xffffff0c);
+                     g_MimicIndices[0],(CMatrix3x4f *)&stack0xffffff0c);
           pfVar2 = (float *)&stack0xffffff0c;
           pCVar3 = &local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -80,7 +80,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
         }
         core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0((CCharacter *)this_ptr);
-        if ((g_INT_01cd4318 != 0) &&
+        if ((g_RenderMotionDebug != 0) &&
            (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                               (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;

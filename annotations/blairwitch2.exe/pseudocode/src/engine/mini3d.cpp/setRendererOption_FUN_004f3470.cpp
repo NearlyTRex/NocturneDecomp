@@ -9,6 +9,6 @@
 void __cdecl engine_mini3d_cpp_setRendererOption_FUN_004f3470(int value)
 
 {
-  g_INT_0061e280 = value;
+  g_SystemInitialized = value;
   return;
 }

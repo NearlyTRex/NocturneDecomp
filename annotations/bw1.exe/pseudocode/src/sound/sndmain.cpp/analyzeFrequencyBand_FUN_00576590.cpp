@@ -46,21 +46,21 @@ float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_00576590(int channel,fl
   int local_34;
   int local_24;
   
-  if ((((g_FLOAT_PTR_ARRAY_02c80698[channel] == (float *)0x0) ||
-       (g_FLOAT_PTR_ARRAY_02c806bc[channel] == (float *)0x0)) ||
-      (g_FLOAT_PTR_ARRAY_02c806dc[channel] == (float *)0x0)) || (g_INT_02c80668 < 1)) {
+  if ((((g_ChannelPrimaryBuffers[channel] == (float *)0x0) ||
+       (g_ChannelSecondaryBuffersA[channel] == (float *)0x0)) ||
+      (g_ChannelSecondaryBuffersB[channel] == (float *)0x0)) || (g_MixBufferSize < 1)) {
     return 0.0;
   }
   iVar10 = sound_sndmain_cpp_getMixBufferCount_FUN_005756e0();
-  iVar13 = g_INT_02c80668;
-  if (iVar10 != g_INT_ARRAY_02c745c0[channel]) {
-    pfVar15 = g_FLOAT_PTR_ARRAY_02c806bc[channel];
-    pfVar18 = g_FLOAT_PTR_ARRAY_02c806dc[channel];
-    pfVar12 = g_FLOAT_PTR_ARRAY_02c80698[channel];
-    for (local_34 = 1; 1 << ((byte)local_34 & 0x1f) < g_INT_02c80668; local_34 = local_34 + 1) {
+  iVar13 = g_MixBufferSize;
+  if (iVar10 != g_ChannelFFTTimestamps[channel]) {
+    pfVar15 = g_ChannelSecondaryBuffersA[channel];
+    pfVar18 = g_ChannelSecondaryBuffersB[channel];
+    pfVar12 = g_ChannelPrimaryBuffers[channel];
+    for (local_34 = 1; 1 << ((byte)local_34 & 0x1f) < g_MixBufferSize; local_34 = local_34 + 1) {
     }
     uVar20 = 0;
-    if (0 < g_INT_02c80668) {
+    if (0 < g_MixBufferSize) {
       do {
         iVar10 = 0;
         uVar11 = 0;
@@ -132,13 +132,13 @@ float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_00576590(int channel,fl
       } while (local_38 <= iVar13);
     }
     iVar13 = sound_sndmain_cpp_getMixBufferCount_FUN_005756e0();
-    g_INT_ARRAY_02c745c0[channel] = iVar13;
+    g_ChannelFFTTimestamps[channel] = iVar13;
   }
-  iVar10 = g_INT_02c80668 / 2;
+  iVar10 = g_MixBufferSize / 2;
   iVar13 = iVar10 + 1;
   dVar29 = floor
-                     ((double)((freq_start_hz * (float)iVar13) / (float)g_INT_006232f0));
-  fVar5 = (float)g_INT_006232f0;
+                     ((double)((freq_start_hz * (float)iVar13) / (float)g_AudioSampleRate));
+  fVar5 = (float)g_AudioSampleRate;
   round(dVar29);
   dVar29 = floor((double)((freq_end_hz * (float)iVar13) / fVar5));
   dVar29 = round(dVar29);
@@ -157,8 +157,8 @@ float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_00576590(int channel,fl
     iVar10 = 0;
     fVar5 = 0.0;
     if (0 < iVar21) {
-      pfVar18 = g_FLOAT_PTR_ARRAY_02c806dc[channel] + local_48;
-      pfVar15 = g_FLOAT_PTR_ARRAY_02c806bc[channel] + local_48;
+      pfVar18 = g_ChannelSecondaryBuffersB[channel] + local_48;
+      pfVar15 = g_ChannelSecondaryBuffersA[channel] + local_48;
       do {
         fVar1 = *pfVar15;
         fVar2 = *pfVar18;

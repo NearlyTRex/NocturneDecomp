@@ -19,7 +19,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0(CDe
                      screen_x * 4 + this_ptr->framebuffer_width * 4),
              (uint *)((int)this_ptr->framebuffer_aligned +
                      screen_x * 4 + this_ptr->screen_width * screen_y * 4),
-             (byte *)(g_CHAR_ARRAY_ARRAY_00aafdb8[iVar1] + offset + iVar2),
+             (byte *)(g_CoronaBlurWorkBuffer[iVar1] + offset + iVar2),
              (byte *)(g_SFogImagePlane_012ceb78.pixels[iVar1] + offset + iVar2));
   return;
 }

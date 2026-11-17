@@ -14,19 +14,19 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005e415d = 0.5
 ;   double g_DOUBLE_005e4165 = 1.33300000000000
-;   int g_INT_01cd56b0
-;   undefined4 g_CBloodSplat_ARRAY_01cd56b4[0].is_wall_splat
-;   undefined4 g_CBloodSplat_ARRAY_01cd56b4[1].position.x
-;   undefined4 g_CBloodSplat_ARRAY_01cd56b4[1].position.y
-;   undefined4 g_CBloodSplat_ARRAY_01cd56b4[1].position.z
-;   undefined4 g_CBloodSplat_ARRAY_01cd56b4[1].is_wall_splat
-;   undefined4 g_CBloodSplat_ARRAY_01cd56b4[1].blood_type
-;   int g_INT_01cf69f8
-;   undefined4 g_CBloodPool_ARRAY_01cf69fc[0].position.y
-;   undefined4 g_CBloodPool_ARRAY_01cf69fc[1].position.x
-;   undefined4 g_CBloodPool_ARRAY_01cf69fc[1].position.y
-;   undefined4 g_CBloodPool_ARRAY_01cf69fc[1].position.z
-;   undefined4 g_CBloodPool_ARRAY_01cf69fc[1].blood_type
+;   int g_BloodSplatCount
+;   undefined4 g_BloodSplats[0].is_wall_splat
+;   undefined4 g_BloodSplats[1].position.x
+;   undefined4 g_BloodSplats[1].position.y
+;   undefined4 g_BloodSplats[1].position.z
+;   undefined4 g_BloodSplats[1].is_wall_splat
+;   undefined4 g_BloodSplats[1].blood_type
+;   int g_BloodPoolCount
+;   undefined4 g_BloodPools[0].position.y
+;   undefined4 g_BloodPools[1].position.x
+;   undefined4 g_BloodPools[1].position.y
+;   undefined4 g_BloodPools[1].position.z
+;   undefined4 g_BloodPools[1].blood_type
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 004e6593
     MOV EBP,ESP                         ; 004e6594
     AND ESP,0xfffffff8                  ; 004e6596
-    MOV ESI,dword ptr [0x01cd56b0]      ; 004e6599 | g_INT_01cd56b0
-    MOV EDI,dword ptr [0x01cf69f8]      ; 004e659f | g_INT_01cf69f8
+    MOV ESI,dword ptr [0x01cd56b0]      ; 004e6599 | g_BloodSplatCount
+    MOV EDI,dword ptr [0x01cf69f8]      ; 004e659f | g_BloodPoolCount
     MOV ECX,dword ptr [EBP + 0x18]      ; 004e65a5
     XOR EBX,EBX                         ; 004e65a8
     TEST EDI,EDI                        ; 004e65aa
@@ -49,7 +49,7 @@ section .text
     MOV EDX,0x1cf69fc                   ; 004e65ae
     FLD float ptr [ECX + 0x4]           ; 004e65b3
         ;   Label: LAB_004e65b3
-    FSUB float ptr [EDX + 0x8]          ; 004e65b6 | g_CBloodPool_ARRAY_01cf69fc[0].position.y | g_CBloodPool_ARRAY_01cf69fc[1].position.y
+    FSUB float ptr [EDX + 0x8]          ; 004e65b6 | g_BloodPools[0].position.y | g_BloodPools[1].position.y
     FABS                                ; 004e65b9
     FCOMP double ptr [0x005e415d]       ; 004e65bb | g_DOUBLE_005e415d
     FNSTSW AX                           ; 004e65c1
@@ -68,7 +68,7 @@ section .text
     JLE 0x004e65e7                      ; 004e65d2
         ;   XREF to: 004e65e7 (CONDITIONAL_JUMP)  ; LAB_004e65e7
     MOV EDX,0x1cd56b4                   ; 004e65d4
-    CMP dword ptr [EDX + 0x10],0x0      ; 004e65d9 | g_CBloodSplat_ARRAY_01cd56b4[0].is_wall_splat | g_CBloodSplat_ARRAY_01cd56b4[1].is_wall_splat
+    CMP dword ptr [EDX + 0x10],0x0      ; 004e65d9 | g_BloodSplats[0].is_wall_splat | g_BloodSplats[1].is_wall_splat
         ;   Label: LAB_004e65d9
     JZ 0x004e6632                       ; 004e65dd
         ;   XREF to: 004e6632 (CONDITIONAL_JUMP)  ; LAB_004e6632
@@ -82,8 +82,8 @@ section .text
         ;   Label: LAB_004e65e7
     MOV EAX,EDX                         ; 004e65e9
         ;   Label: LAB_004e65e9
-    MOV dword ptr [0x01cf69f8],EDI      ; 004e65eb | g_INT_01cf69f8
-    MOV dword ptr [0x01cd56b0],ESI      ; 004e65f1 | g_INT_01cd56b0
+    MOV dword ptr [0x01cf69f8],EDI      ; 004e65eb | g_BloodPoolCount
+    MOV dword ptr [0x01cd56b0],ESI      ; 004e65f1 | g_BloodSplatCount
     MOV ESP,EBP                         ; 004e65f7
     POP EBP                             ; 004e65f9
     POP EDI                             ; 004e65fa
@@ -92,7 +92,7 @@ section .text
     RET                                 ; 004e65fd
     FLD float ptr [ECX]                 ; 004e65fe
         ;   Label: LAB_004e65fe
-    FSUB float ptr [EDX + 0x4]          ; 004e6600 | g_CBloodPool_ARRAY_01cf69fc[1].position.x
+    FSUB float ptr [EDX + 0x4]          ; 004e6600 | g_BloodPools[1].position.x
     FABS                                ; 004e6603
     FCOMP double ptr [0x005e4165]       ; 004e6605 | g_DOUBLE_005e4165
     FNSTSW AX                           ; 004e660b
@@ -100,7 +100,7 @@ section .text
     JA 0x004e65c6                       ; 004e660e
         ;   XREF to: 004e65c6 (CONDITIONAL_JUMP)  ; LAB_004e65c6
     FLD float ptr [ECX + 0x8]           ; 004e6610
-    FSUB float ptr [EDX + 0xc]          ; 004e6613 | g_CBloodPool_ARRAY_01cf69fc[1].position.z
+    FSUB float ptr [EDX + 0xc]          ; 004e6613 | g_BloodPools[1].position.z
     FABS                                ; 004e6616
     FCOMP double ptr [0x005e4165]       ; 004e6618 | g_DOUBLE_005e4165
     FNSTSW AX                           ; 004e661e
@@ -108,14 +108,14 @@ section .text
     JA 0x004e65c6                       ; 004e6621
         ;   XREF to: 004e65c6 (CONDITIONAL_JUMP)  ; LAB_004e65c6
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004e6623
-    MOV EDX,dword ptr [EDX + 0x10]      ; 004e6626 | g_CBloodPool_ARRAY_01cf69fc[1].blood_type
+    MOV EDX,dword ptr [EDX + 0x10]      ; 004e6626 | g_BloodPools[1].blood_type
     MOV dword ptr [ECX],EDX             ; 004e6629
     MOV EDX,0x1                         ; 004e662b
     JMP 0x004e65e9                      ; 004e6630
         ;   XREF to: 004e65e9 (UNCONDITIONAL_JUMP)  ; LAB_004e65e9
     FLD float ptr [ECX + 0x4]           ; 004e6632
         ;   Label: LAB_004e6632
-    FSUB float ptr [EDX + 0x8]          ; 004e6635 | g_CBloodSplat_ARRAY_01cd56b4[1].position.y
+    FSUB float ptr [EDX + 0x8]          ; 004e6635 | g_BloodSplats[1].position.y
     FABS                                ; 004e6638
     FCOMP double ptr [0x005e415d]       ; 004e663a | g_DOUBLE_005e415d
     FNSTSW AX                           ; 004e6640
@@ -123,7 +123,7 @@ section .text
     JA 0x004e65df                       ; 004e6643
         ;   XREF to: 004e65df (CONDITIONAL_JUMP)  ; LAB_004e65df
     FLD float ptr [ECX]                 ; 004e6645
-    FSUB float ptr [EDX + 0x4]          ; 004e6647 | g_CBloodSplat_ARRAY_01cd56b4[1].position.x
+    FSUB float ptr [EDX + 0x4]          ; 004e6647 | g_BloodSplats[1].position.x
     FABS                                ; 004e664a
     FCOMP double ptr [0x005e415d]       ; 004e664c | g_DOUBLE_005e415d
     FNSTSW AX                           ; 004e6652
@@ -131,7 +131,7 @@ section .text
     JA 0x004e65df                       ; 004e6655
         ;   XREF to: 004e65df (CONDITIONAL_JUMP)  ; LAB_004e65df
     FLD float ptr [ECX + 0x8]           ; 004e6657
-    FSUB float ptr [EDX + 0xc]          ; 004e665a | g_CBloodSplat_ARRAY_01cd56b4[1].position.z
+    FSUB float ptr [EDX + 0xc]          ; 004e665a | g_BloodSplats[1].position.z
     FABS                                ; 004e665d
     FCOMP double ptr [0x005e415d]       ; 004e665f | g_DOUBLE_005e415d
     FNSTSW AX                           ; 004e6665
@@ -139,7 +139,7 @@ section .text
     JA 0x004e65df                       ; 004e6668
         ;   XREF to: 004e65df (CONDITIONAL_JUMP)  ; LAB_004e65df
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004e666e
-    MOV EDX,dword ptr [EDX + 0x14]      ; 004e6671 | g_CBloodSplat_ARRAY_01cd56b4[1].blood_type
+    MOV EDX,dword ptr [EDX + 0x14]      ; 004e6671 | g_BloodSplats[1].blood_type
     MOV dword ptr [ECX],EDX             ; 004e6674
     MOV EDX,0x1                         ; 004e6676
     JMP 0x004e65e9                      ; 004e667b

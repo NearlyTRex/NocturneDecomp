@@ -29,7 +29,7 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_005f16fb
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_0268014c
+;   int g_MorphReverseWinding
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -120,7 +120,7 @@ section .text
     MOV ESI,EDI                         ; 005b685f
     MOV dword ptr [EAX + 0x4],0x3       ; 005b6861
     MOV EAX,dword ptr [ESP + 0x4]       ; 005b6868
-    CMP dword ptr [0x0268014c],0x0      ; 005b686c | g_INT_0268014c
+    CMP dword ptr [0x0268014c],0x0      ; 005b686c | g_MorphReverseWinding
         ;   Label: LAB_005b686c
     JZ 0x005b6938                       ; 005b6873
         ;   XREF to: 005b6938 (CONDITIONAL_JUMP)  ; LAB_005b6938

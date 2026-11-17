@@ -25,7 +25,7 @@
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].hardware_buffer_handle
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].playback_state
-;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -59,7 +59,7 @@ section .text
     ADD ESP,0x8                         ; 00527310
     MOV EDX,dword ptr [ESP + 0x10]      ; 00527313
         ;   Label: LAB_00527313
-    MOV EBX,dword ptr [0x02dc8318]      ; 00527317 | g_CSoundDevice_PTR_02dc8318
+    MOV EBX,dword ptr [0x02dc8318]      ; 00527317 | g_CSoundDevicePtr
     MOV dword ptr [ESI*0x4 + 0x2dc7958],EDX ; 0052731d
     TEST EBX,EBX                        ; 00527324
     JNZ 0x0052732b                      ; 00527326
@@ -102,7 +102,7 @@ section .text
     JNZ 0x0052734b                      ; 00527366
         ;   XREF to: 0052734b (CONDITIONAL_JUMP)  ; LAB_0052734b
     PUSH 0x8                            ; 00527368
-    MOV EAX,[0x02dc8318]                ; 0052736a | g_CSoundDevice_PTR_02dc8318
+    MOV EAX,[0x02dc8318]                ; 0052736a | g_CSoundDevicePtr
     PUSH EBX                            ; 0052736f | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
     MOV EDX,dword ptr [EAX]             ; 00527370
     PUSH EAX                            ; 00527372

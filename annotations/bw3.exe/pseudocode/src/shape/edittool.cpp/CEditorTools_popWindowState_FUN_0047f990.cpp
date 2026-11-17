@@ -12,13 +12,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(CEditor
   void *ptr;
   int iVar1;
   
-  if (g_INT_01c5b104 < 1) {
+  if (g_WindowStackCount < 1) {
     g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
     g_INT_01d71de4 = 0x916;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CEditorTools::popWindow() called but no window was opened!");
   }
-  g_INT_01c5b104 = g_INT_01c5b104 + -1;
-  iVar1 = g_INT_01c5b104 * 0x1f8;
+  g_WindowStackCount = g_WindowStackCount + -1;
+  iVar1 = g_WindowStackCount * 0x1f8;
   ptr = *(void **)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1d8);
   if (ptr != (void *)0x0) {
     debugFree(ptr);
@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(CEditor
   g_INT_01c6b59c = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x34);
   g_INT_01c6b5a0 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x38);
   g_INT_01c6b5a4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x3c);
-  g_INT_01c6b5b8 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x40);
-  g_INT_01c6b5bc = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x44);
+  g_ViewportWidth = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x40);
+  g_ViewportHeight = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x44);
   return;
 }

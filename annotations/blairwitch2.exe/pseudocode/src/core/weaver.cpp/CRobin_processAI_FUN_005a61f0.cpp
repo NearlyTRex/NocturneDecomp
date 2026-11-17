@@ -255,9 +255,9 @@ void __cdecl core_weaver_cpp_CRobin_processAI_FUN_005a61f0(CRobin *this_ptr,floa
           }
         }
         else if ((CDemonActorType *)&stack0x00000000 != &g_CCryptVesselClassInfo) {
-          CStack_48.x = g_CVector3f_0265370c.x;
-          CStack_48.y = g_CVector3f_0265370c.y;
-          CStack_48.z = g_CVector3f_0265370c.z;
+          CStack_48.x = g_ZeroVector.x;
+          CStack_48.y = g_ZeroVector.y;
+          CStack_48.z = g_ZeroVector.z;
         }
         CStack_6c.y = 1.5;
         iVar1 = iVar1 + 1;

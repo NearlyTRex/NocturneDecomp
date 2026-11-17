@@ -33,7 +33,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061f274
+;   SMRGLTextureBasic g_Inventory3DTextureAtlas
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
@@ -70,7 +70,7 @@ section .text
     SAR EDX,0x1f                        ; 004fa96d
     IDIV ESI                            ; 004fa970
     MOV ESI,EAX                         ; 004fa972
-    PUSH 0x61f274                       ; 004fa974 | g_SMRGLTextureBasic_0061f274
+    PUSH 0x61f274                       ; 004fa974 | g_Inventory3DTextureAtlas
         ;   Label: LAB_004fa974
     MOV EDI,dword ptr [0x00612560]      ; 004fa979 | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 004fa97f | g_CDemonRenderer_01bc120c

@@ -21,8 +21,8 @@
 ;   float g_FLOAT_01bc0f58
 ;   float g_FLOAT_01bc0f5c
 ;   int g_INT_01bc0f60
-;   int g_INT_01c43530
-;   int g_INT_01c43534
+;   int g_GlobalDeltaTimeInt
+;   int g_AnimationTimerValue
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0047e870
@@ -41,7 +41,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0047fb27
     MOV EBP,dword ptr [ESP + 0x20]      ; 0047fb2b
     MOV EDI,dword ptr [ESP + 0x28]      ; 0047fb2f
-    MOV ECX,dword ptr [0x01c43534]      ; 0047fb33 | g_INT_01c43534
+    MOV ECX,dword ptr [0x01c43534]      ; 0047fb33 | g_AnimationTimerValue
     CMP ECX,dword ptr [0x01bc0f60]      ; 0047fb39 | g_INT_01bc0f60
     JNZ 0x0047fc6a                      ; 0047fb3f
         ;   XREF to: 0047fc6a (CONDITIONAL_JUMP)  ; LAB_0047fc6a
@@ -187,7 +187,7 @@ section .text
     POP ESI                             ; 0047fc67
     POP EBX                             ; 0047fc68
     RET                                 ; 0047fc69
-    FILD dword ptr [0x01c43530]         ; 0047fc6a | g_INT_01c43530
+    FILD dword ptr [0x01c43530]         ; 0047fc6a | g_GlobalDeltaTimeInt
         ;   Label: LAB_0047fc6a
     FMUL float ptr [0x005db1a9]         ; 0047fc70 | g_FLOAT_005db1a9
     FADD float ptr [0x01bc0f58]         ; 0047fc76 | g_FLOAT_01bc0f58

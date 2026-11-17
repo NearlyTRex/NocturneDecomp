@@ -61,49 +61,49 @@
   "globals": [
     {
       "addr": "005ba076",
-      "name": "g_DOUBLE_005ba076",
+      "name": "g_CameraGammaMultiplier",
       "type": "double",
       "value": "0.0000152587890625"
     },
     {
       "addr": "005ba07e",
-      "name": "g_DOUBLE_005ba07e",
+      "name": "g_CameraNormalizer",
       "type": "double",
       "value": "0.00392156862745098"
     },
     {
       "addr": "005ba086",
-      "name": "g_DOUBLE_005ba086",
+      "name": "g_CameraOutputScale",
       "type": "double",
       "value": "255"
     },
     {
       "addr": "005f17e4",
-      "name": "g_INT_005f17e4",
+      "name": "g_FogColorIndexR",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "005f17e8",
-      "name": "g_INT_005f17e8",
+      "name": "g_FogColorIndexG",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "005f17ec",
-      "name": "g_INT_005f17ec",
+      "name": "g_FogColorIndexB",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "00b9e14c",
-      "name": "g_UINT_ARRAY_00b9e14c",
+      "name": "g_LightmapTexturePalette",
       "type": "uint[256]",
       "value": null
     },
     {
       "addr": "00b9e24c",
-      "name": "g_UINT_ARRAY_00b9e14c[64]",
+      "name": "g_LightmapTexturePalette[64]",
       "type": "undefined4",
       "value": null
     }
@@ -248,9 +248,9 @@
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(uint *)((int)g_UINT_ARRAY_00b9e14c",
+      "match": "(uint *)((int)g_LightmapTexturePalette",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_ARRAY_00b9e14c + iVar3) =",
+      "text": "*(uint *)((int)g_LightmapTexturePalette + iVar3) =",
       "type": "pointer_cast"
     }
   ]

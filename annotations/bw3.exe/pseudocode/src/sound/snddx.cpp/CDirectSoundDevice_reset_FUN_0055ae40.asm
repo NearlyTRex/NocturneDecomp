@@ -10,8 +10,8 @@
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005d452f
 ;   TerminatedCString s_Stop_secondary_sound_buf_005d45ed
 ;   TerminatedCString s_Stop_primary_sound_buffe_005d4609
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49c8
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49cc
+;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -28,12 +28,12 @@ section .text
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0055ae40
     PUSH ESI                            ; 0055ae41
     SUB ESP,0x320                       ; 0055ae42
-    MOV EDX,dword ptr [0x02cf49cc]      ; 0055ae48 | g_IDirectSoundBuffer_PTR_02cf49cc
+    MOV EDX,dword ptr [0x02cf49cc]      ; 0055ae48 | g_DirectSoundSecondaryBuffer
     MOV ESI,0x1                         ; 0055ae4e
     TEST EDX,EDX                        ; 0055ae53
     JNZ 0x0055ae96                      ; 0055ae55
         ;   XREF to: 0055ae96 (CONDITIONAL_JUMP)  ; LAB_0055ae96
-    MOV ECX,dword ptr [0x02cf49c8]      ; 0055ae57 | g_IDirectSoundBuffer_PTR_02cf49c8
+    MOV ECX,dword ptr [0x02cf49c8]      ; 0055ae57 | g_DirectSoundPrimaryBuffer
         ;   Label: LAB_0055ae57
     TEST ECX,ECX                        ; 0055ae5d
     JNZ 0x0055aedb                      ; 0055ae5f

@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -152,7 +152,7 @@ section .text
     LEA EAX,[ESP + 0xb8]                ; 0058a5b4
     MOVSD.REP ES:EDI,ESI                ; 0058a5bb
     PUSH EAX                            ; 0058a5bd
-    MOV ECX,dword ptr [0x00614d30]      ; 0058a5be | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0058a5be | g_CFireEffectPtr
     PUSH ECX                            ; 0058a5c4
     CALL core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 ; 0058a5c5
         ;   XREF to: 0049db20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo laser_info, ...)

@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   float g_FLOAT_0059ca4c = 256
+;   float g_WorldToScreenScale2 = 256
 ;   float g_FLOAT_0059ca5c = 10430.38
 ;
 ; Called Functions:
@@ -39,13 +39,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 00472fd6
     LEA EBX,[ESP + 0x4]                 ; 00472fda
     FLD float ptr [EAX]                 ; 00472fde
-    FMUL float ptr [0x0059ca4c]         ; 00472fe0 | g_FLOAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00472fe0 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 00472fe6
     FLD float ptr [EAX + 0x4]           ; 00472fe8
-    FMUL float ptr [0x0059ca4c]         ; 00472feb | g_FLOAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00472feb | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 00472ff1
     FLD float ptr [EAX + 0x8]           ; 00472ff4
-    FMUL float ptr [0x0059ca4c]         ; 00472ff7 | g_FLOAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00472ff7 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 00472ffd
     MOV EBX,ESP                         ; 00473000
     PUSH EBX                            ; 00473002

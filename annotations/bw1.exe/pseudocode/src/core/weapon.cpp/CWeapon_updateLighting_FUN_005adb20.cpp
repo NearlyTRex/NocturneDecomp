@@ -85,11 +85,11 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_p
   if (g_CGamePtr->flashlight_active == 0) {
     return;
   }
-  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970(&g_CDemonGlobe_02c99774,&CStack_64);
-  g_CDemonGlobe_02c99774.intensity_multiplier = 0x8000;
-  g_CDemonGlobe_02c99774.intensity.bytes[0] = ' ';
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(&g_CDemonGlobe_02c99774,5.0);
-  g_CDemonGlobe_02c99774.corona_mode = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(g_CDemonSetPtr,&g_CDemonGlobe_02c99774);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970(&g_WeaponCoronaGlobe,&CStack_64);
+  g_WeaponCoronaGlobe.intensity_multiplier = 0x8000;
+  g_WeaponCoronaGlobe.intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(&g_WeaponCoronaGlobe,5.0);
+  g_WeaponCoronaGlobe.corona_mode = 0;
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(g_CDemonSetPtr,&g_WeaponCoronaGlobe);
   return;
 }

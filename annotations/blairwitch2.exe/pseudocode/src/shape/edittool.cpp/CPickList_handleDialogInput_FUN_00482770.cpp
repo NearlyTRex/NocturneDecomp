@@ -60,7 +60,7 @@ LAB_00482820:
     if (iVar1 != 0) {
       this_ptr->confirmed_flag = 1;
     }
-    if (&this_ptr->ok_button == (CEdButton *)g_PTR_01c26410) {
+    if (&this_ptr->ok_button == (CEdButton *)g_ActiveControl) {
       this_ptr->selection_state = 0;
     }
   }
@@ -69,25 +69,25 @@ LAB_00482820:
     if (iVar1 != 0) {
       return -1;
     }
-    if (&this_ptr->cancel_button == (CEdButton *)g_PTR_01c26410) {
+    if (&this_ptr->cancel_button == (CEdButton *)g_ActiveControl) {
       this_ptr->selection_state = 1;
     }
   }
-  iVar1 = g_INT_01c2640c;
-  if ((((g_BIT_INTEGER32_01c2a384.bytes[0] & 1) != 0) && (g_PTR_01c26410 == (byte *)0x0)) &&
+  iVar1 = g_LastClickItemIndex;
+  if ((((g_MouseButtonFlags.bytes[0] & 1) != 0) && (g_ActiveControl == (byte *)0x0)) &&
      (iVar1 = shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_00483950
-                        (this_ptr,g_INT_01c2a37c,g_INT_01c2a380), -1 < iVar1)) {
+                        (this_ptr,g_MouseX,g_MouseY), -1 < iVar1)) {
     this_ptr->selection_state = -1;
-    g_BIT_INTEGER32_01c2a384.bytes[0] = g_BIT_INTEGER32_01c2a384.bytes[0] & 0xfe;
+    g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
     this_ptr->current_index = iVar1;
     iVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-    iVar3 = iVar2 - g_INT_01c26408;
-    g_INT_01c26408 = iVar2;
+    iVar3 = iVar2 - g_LastClickTimestamp;
+    g_LastClickTimestamp = iVar2;
     if (((0 < iVar3) && ((double)iVar3 < 294912)) &&
-       (g_INT_01c2640c == this_ptr->current_index)) {
+       (g_LastClickItemIndex == this_ptr->current_index)) {
       this_ptr->confirmed_flag = 1;
     }
   }
-  g_INT_01c2640c = iVar1;
+  g_LastClickItemIndex = iVar1;
   return -2;
 }

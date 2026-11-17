@@ -15,7 +15,7 @@
 ;   int g_INT_005c1ab8 = -0x1
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec = 005671e4
-;   DWORD g_DWORD_005c20cc = 0xf4
+;   DWORD g_RuntimeBufferSize = 0xf4
 ;   void* g_PTR_02de5d70
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_005711ce
     JZ 0x005711fe                       ; 005711d2
         ;   XREF to: 005711fe (CONDITIONAL_JUMP)  ; LAB_005711fe
-    MOV EDI,dword ptr [0x005c20cc]      ; 005711d4 | g_DWORD_005c20cc
+    MOV EDI,dword ptr [0x005c20cc]      ; 005711d4 | g_RuntimeBufferSize
     PUSH EDI                            ; 005711da
     MOV EBP,dword ptr [EBX + 0x8]       ; 005711db
     PUSH EBP                            ; 005711de
@@ -71,7 +71,7 @@ section .text
     ADD ESP,0x8                         ; 005711f9
     JMP 0x0057124c                      ; 005711fc
         ;   XREF to: 0057124c (UNCONDITIONAL_JUMP)  ; LAB_0057124c
-    MOV ESI,dword ptr [0x005c20cc]      ; 005711fe | g_DWORD_005c20cc
+    MOV ESI,dword ptr [0x005c20cc]      ; 005711fe | g_RuntimeBufferSize
         ;   Label: LAB_005711fe
     PUSH ESI                            ; 00571204
     PUSH 0x1                            ; 00571205
@@ -106,7 +106,7 @@ section .text
     MOV dword ptr [EBX + 0xc],0x1       ; 00571245
     MOV dword ptr [EBX + 0x8],EBP       ; 0057124c
         ;   Label: LAB_0057124c
-    MOV EAX,[0x005c20cc]                ; 0057124f | g_DWORD_005c20cc
+    MOV EAX,[0x005c20cc]                ; 0057124f | g_RuntimeBufferSize
     PUSH EBP                            ; 00571254
     MOV dword ptr [EBP + 0xf0],EAX      ; 00571255
     MOV EAX,[0x005c1ab8]                ; 0057125b | g_INT_005c1ab8

@@ -46,18 +46,18 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap *th
     uVar2 = _fgetc(local_14);
     uVar3 = _fgetc(local_14);
     if (g_INT_006141c0 == 0x10) {
-      local_24 = uVar1 / (uint)g_INT_01c35818;
-      local_20 = uVar2 / (uint)g_INT_01c35824;
-      local_1c = uVar3 / (uint)g_INT_01c35830;
-      uVar3 = (uint)(ushort)((ushort)(local_1c << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) |
-                            (ushort)(local_20 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) |
-                            (ushort)(local_24 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)));
+      local_24 = uVar1 / (uint)g_RedScaleFactor;
+      local_20 = uVar2 / (uint)g_GreenScaleFactor;
+      local_1c = uVar3 / (uint)g_BlueScaleFactor;
+      uVar3 = (uint)(ushort)((ushort)(local_1c << (g_BlueBitPosition.bytes[0] & 0x1f)) |
+                            (ushort)(local_20 << (g_GreenBitPosition.bytes[0] & 0x1f)) |
+                            (ushort)(local_24 << (g_RedBitPosition.bytes[0] & 0x1f)));
       puVar4 = (uint *)((int)this_ptr->act + local_18);
     }
     else if (g_INT_006141c0 == 0x20) {
-      uVar3 = uVar3 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) |
-              uVar1 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f) |
-              uVar2 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
+      uVar3 = uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+              uVar1 << (g_RedBitPosition.bytes[0] & 0x1f) |
+              uVar2 << (g_GreenBitPosition.bytes[0] & 0x1f);
       puVar4 = (uint *)((int)this_ptr->act + local_18);
     }
     else {

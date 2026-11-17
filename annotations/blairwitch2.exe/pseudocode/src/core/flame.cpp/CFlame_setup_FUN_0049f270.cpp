@@ -16,10 +16,10 @@ void __cdecl core_flame_cpp_CFlame_setup_FUN_0049f270(CFlame *this_ptr)
   
   iVar3 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
-  pSVar2 = g_SMRGLTextureBasic_ARRAY_00615b00;
+  pSVar2 = g_FlameFrameTextures;
   do {
     pSVar2 = pSVar2 + 8;
-    texture = g_SMRGLTextureBasic_ARRAY_00615b00 + iVar3 * 8;
+    texture = g_FlameFrameTextures + iVar3 * 8;
     do {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
                 (g_CDemonRenderer_PTR_0060b280,texture);

@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 103,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 42,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [],
   "function": {
@@ -38,43 +38,43 @@
     },
     {
       "addr": "01c4e3d0",
-      "name": "g_SRGBColorPalette_PTR_01c4e3d0",
+      "name": "g_CurrentPalette",
       "type": "SRGBColorPalette*",
       "value": null
     },
     {
       "addr": "01c4e9d4",
-      "name": "g_BIT_INTEGER32_01c4e9d4",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9d8",
-      "name": "g_INT_01c4e9d8",
+      "name": "g_RedScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9e0",
-      "name": "g_BIT_INTEGER32_01c4e9e0",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9e4",
-      "name": "g_INT_01c4e9e4",
+      "name": "g_GreenScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9ec",
-      "name": "g_BIT_INTEGER32_01c4e9ec",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9f0",
-      "name": "g_INT_01c4e9f0",
+      "name": "g_BlueScaleFactor",
       "type": "int",
       "value": null
     }
@@ -182,14 +182,14 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(ushort *)((int)g_USHORT_ARRAY_01c4e7d4",
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
       "severity": "moderate",
-      "text": "*(ushort *)((int)g_USHORT_ARRAY_01c4e7d4 + iVar4) =",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(SRGBColorPalette *)((int)rgb_palette_data",
       "severity": "moderate",
       "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
@@ -197,10 +197,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)g_UINT_ARRAY_01c4e3d4",
+      "line": 39,
+      "match": "(uint *)((int)g_Hardware32BitPalette",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_ARRAY_01c4e3d4 + iVar4) =",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
       "type": "pointer_cast"
     }
   ]

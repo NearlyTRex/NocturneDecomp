@@ -85,7 +85,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DS
     local_24 = local_24 + 0x1e0;
   } while (local_18 < 0x11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (this_ptr_00,&g_SMRGLTextureBasic_005be924);
+            (this_ptr_00,&g_VolumetricSphereTexture);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0x4000);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);

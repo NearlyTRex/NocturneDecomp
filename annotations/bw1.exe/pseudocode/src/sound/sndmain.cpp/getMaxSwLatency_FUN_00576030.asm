@@ -11,13 +11,13 @@
 ;   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0057a930 at 0057a975
 ;
 ; Referenced Globals:
-;   float g_FLOAT_00623314 = 0.5
+;   float g_MaxSoftwareLatency = 0.5
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x00623314]                ; 00576030 | g_FLOAT_00623314
+    MOV EAX,[0x00623314]                ; 00576030 | g_MaxSoftwareLatency
         ;   Label: sound_sndmain.cpp_getMaxSwLatency_FUN_00576030
     RET                                 ; 00576035
 

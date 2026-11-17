@@ -37,12 +37,12 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00486120(CEdButton *this_ptr
   iVar2 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar2) / 2;
   local_14 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2;
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-            (g_CBitFont_PTR_01c5b0e0,pcVar7,iVar2,local_14,g_INT_01c5bb60,-1);
+            (g_CBitFont_PTR_01c5b0e0,pcVar7,iVar2,local_14,g_UITextColor,-1);
   if (g_INT_01c5baec == 0) {
-    g_INT_01c6b5c0 = g_INT_01c5bb60;
+    g_INT_01c6b5c0 = g_UITextColor;
   }
   else {
-    iVar3 = (g_INT_01c5bb60 & 0xffU) * 3;
+    iVar3 = (g_UITextColor & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f3520
               ((uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 2] |
                (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 1] << 8 |
@@ -116,9 +116,9 @@ LAB_004862e7:
   iVar2 = iVar2 + uVar5;
   iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x41);
   local_14 = local_14 + iVar3 + 1;
-  iVar3 = g_INT_01c5bb60;
+  iVar3 = g_UITextColor;
   if (g_INT_01c5baec != 0) {
-    iVar3 = (g_INT_01c5bb60 & 0xffU) * 3;
+    iVar3 = (g_UITextColor & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f3520
               ((uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 2] |
                (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 1] << 8 |

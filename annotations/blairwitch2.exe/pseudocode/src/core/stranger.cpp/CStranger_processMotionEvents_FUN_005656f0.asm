@@ -117,7 +117,7 @@ section .text
         ;   Label: LAB_00565763
     JNZ 0x00565a1d                      ; 00565766
         ;   XREF to: 00565a1d (CONDITIONAL_JUMP)  ; LAB_00565a1d
-    MOV EAX,[0x0264be50]                ; 0056576c | g_INT_ARRAY_0264be30[8]
+    MOV EAX,[0x0264be50]                ; 0056576c | g_StrangerIndices[8]
     PUSH EAX                            ; 00565771
         ;   Label: LAB_00565771
     MOV EDI,dword ptr [ESP + 0x100]     ; 00565772
@@ -350,7 +350,7 @@ section .text
         ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     JMP 0x00565803                      ; 00565a18
         ;   XREF to: 00565803 (UNCONDITIONAL_JUMP)  ; LAB_00565803
-    MOV EAX,[0x0264be4c]                ; 00565a1d | g_INT_ARRAY_0264be30[7]
+    MOV EAX,[0x0264be4c]                ; 00565a1d | g_StrangerIndices[7]
         ;   Label: LAB_00565a1d
     JMP 0x00565771                      ; 00565a22
         ;   XREF to: 00565771 (UNCONDITIONAL_JUMP)  ; LAB_00565771
@@ -463,7 +463,7 @@ section .text
     TEST EAX,EAX                        ; 00565b8f
     JZ 0x00565ce7                       ; 00565b91
         ;   XREF to: 00565ce7 (CONDITIONAL_JUMP)  ; LAB_00565ce7
-    MOV EDX,dword ptr [0x0264be60]      ; 00565b97 | g_INT_ARRAY_0264be30[12]
+    MOV EDX,dword ptr [0x0264be60]      ; 00565b97 | g_StrangerIndices[12]
     PUSH EDX                            ; 00565b9d
     MOV ECX,dword ptr [ESP + 0x100]     ; 00565b9e
     PUSH ECX                            ; 00565ba5

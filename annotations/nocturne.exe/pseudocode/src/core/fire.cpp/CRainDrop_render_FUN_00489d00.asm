@@ -46,7 +46,7 @@
 ;   double DOUBLE_00581464 = 4
 ;   float FLOAT_0059d1f8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005b8bbc
+;   SMRGLTextureBasic g_FireEffectRainDropTexture
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
@@ -244,7 +244,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00489f06
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00489f0b
-    PUSH 0x5b8bbc                       ; 00489f0e | g_SMRGLTextureBasic_005b8bbc
+    PUSH 0x5b8bbc                       ; 00489f0e | g_FireEffectRainDropTexture
     MOV EDI,dword ptr [0x005ae704]      ; 00489f13 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 00489f19 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00489f1a
@@ -252,7 +252,7 @@ section .text
     ADD ESP,0x8                         ; 00489f1f
     PUSH 0x0                            ; 00489f22
     PUSH EBP                            ; 00489f24
-    MOV EAX,[0x007f7370]                ; 00489f25 | g_CDemonCamera_PTR_007f7370
+    MOV EAX,[0x007f7370]                ; 00489f25 | g_CurrentSceneCamera
     PUSH EAX                            ; 00489f2a
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00489f2b
         ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
@@ -299,7 +299,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 00489ff3
     PUSH 0x4                            ; 00489ff6
     PUSH 0x0                            ; 00489ff8
-    PUSH 0x1c08d14                      ; 00489ffa | g_CVector3i_01c08d14
+    PUSH 0x1c08d14                      ; 00489ffa | g_BillboardCameraUp
     LEA EAX,[ESP + 0x8c]                ; 00489fff
     PUSH EAX                            ; 0048a006
     MOV ESI,dword ptr [0x005be368]      ; 0048a007 | g_CDemonSetPtr

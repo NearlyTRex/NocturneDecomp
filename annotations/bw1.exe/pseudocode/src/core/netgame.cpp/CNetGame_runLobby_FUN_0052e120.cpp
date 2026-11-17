@@ -30,10 +30,10 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_0052e120(CNetGame *this_ptr)
   int iStack_18;
   
   if (this_ptr->connection_type != CONNECTION_NONE) {
-    iStack_30 = g_INT_006260e8;
+    iStack_30 = g_ForceMessagePump;
     this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
     this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
-    g_INT_006260e8 = 0;
+    g_ForceMessagePump = 0;
     this_ptr->network_mode = NET_MODE_LOBBY;
     if (this_ptr->connection_type == CONNECTION_HOST) {
       uVar3 = rand();
@@ -63,8 +63,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_0052e120(CNetGame *this_ptr)
       for (iStack_20 = 0; iStack_20 < g_CNetGamePtr->player_count; iStack_20 = iStack_20 + 1) {
         pcStack_1c = g_CNetGamePtr->players[0].name + iStack_24;
         engine_2d_c_drawText_FUN_00401fe0(pcStack_1c,0,iVar4);
-        if (g_UCHAR_ARRAY_02c8ae4c == (uchar  [4])((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address)
-        {
+        if (g_AnyAddressIP == (uchar  [4])((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address) {
           pcVar6 = "(Local)";
           pcVar8 = acStack_130;
           do {
@@ -134,13 +133,13 @@ LAB_0052e35a:
         iStack_24 = iStack_24 + 0x7c;
       }
       iVar4 = iVar4 + 0x2c;
-      iVar7 = (g_INT_01d51db4 - (g_INT_0061b49c - iVar4) / 0xb) + 1;
+      iVar7 = (g_ChatHistoryCount - (g_INT_0061b49c - iVar4) / 0xb) + 1;
       if (iVar7 < 0) {
         iVar7 = 0;
       }
-      pcStack_28 = g_SChatHistory_ARRAY_01d51db8[iVar7].message;
-      pcVar8 = g_SChatHistory_ARRAY_01d51db8[iVar7].sender_name;
-      for (; iVar7 < g_INT_01d51db4; iVar7 = iVar7 + 1) {
+      pcStack_28 = g_ChatHistory[iVar7].message;
+      pcVar8 = g_ChatHistory[iVar7].sender_name;
+      for (; iVar7 < g_ChatHistoryCount; iVar7 = iVar7 + 1) {
         engine_2d_c_drawText_FUN_00401fe0(pcVar8,0,iVar4);
         engine_2d_c_drawText_FUN_00401fe0(pcStack_28,100,iVar4);
         pcVar8 = pcVar8 + 0x120;
@@ -160,7 +159,7 @@ LAB_0052e35a:
       }
       this_ptr->has_pending_sim_frame = 0;
       if (this_ptr->connection_type == CONNECTION_HOST) {
-        this_ptr->players[this_ptr->local_player_index].player_id = g_INT_01d51dac;
+        this_ptr->players[this_ptr->local_player_index].player_id = g_NetNextPlayerId;
         iVar4 = 0;
         bVar2 = true;
         pCVar5 = this_ptr;
@@ -169,7 +168,7 @@ LAB_0052e35a:
             if (pCVar5->players[0].ready_flag == 0) {
               bVar2 = false;
             }
-            if (g_INT_01d51dac != pCVar5->players[0].player_id) {
+            if (g_NetNextPlayerId != pCVar5->players[0].player_id) {
               iStack_18 = g_UINT_01d51da0 - pCVar5->players[0].last_update_time;
               fStack_134 = (float)iStack_18 * (float)1.52587890625e-05;
               if (fStack_134 < 0.0) {
@@ -227,8 +226,8 @@ LAB_0052e35a:
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(this_ptr,2);
           if (iVar4 != 0) {
             iVar4 = wincore_winrun_cpp_getTime_FUN_005b2420();
-            iVar7 = iVar4 / 0x12 - g_INT_01d51d9c;
-            g_INT_01d51d9c = iVar4 / 0x12;
+            iVar7 = iVar4 / 0x12 - g_LastPingTime;
+            g_LastPingTime = iVar4 / 0x12;
             if (iVar7 < 0) {
               iVar7 = 0;
             }
@@ -236,14 +235,14 @@ LAB_0052e35a:
               iVar7 = 0x20000;
             }
             g_UINT_01d51da0 = g_UINT_01d51da0 + iVar7;
-            g_UINT_01d51db0 = g_UINT_01d51da0 - 0x1e0000;
+            g_NetLastSimFrameAckTime = g_UINT_01d51da0 - 0x1e0000;
             return 1;
           }
         }
         this_ptr->network_mode = NET_MODE_LOBBY;
         goto LAB_0052e460;
       }
-      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_INT_00622584 != 0)) {
+      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_NetLobbyStateChanged != 0)) {
         iStack_18 = g_UINT_01d51da0 -
                     this_ptr->players[this_ptr->local_player_index].state_change_time;
         fStack_138 = (float)iStack_18 * (float)1.52587890625e-05;
@@ -273,9 +272,9 @@ LAB_0052e35a:
       iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_S);
       if ((iVar4 != 0) &&
          (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00496150
-                            (g_CEditorToolsPtr,"Send chat",g_CHAR_ARRAY_01d51b20,0x100,1),
+                            (g_CEditorToolsPtr,"Send chat",g_ChatMessageBuffer,0x100,1),
          iVar4 != 0)) {
-        core_netgame_cpp_CNetGame_processChatOut_FUN_0052ebd0(this_ptr,g_CHAR_ARRAY_01d51b20,-1);
+        core_netgame_cpp_CNetGame_processChatOut_FUN_0052ebd0(this_ptr,g_ChatMessageBuffer,-1);
       }
       for (iVar4 = 0; iVar4 < g_CNetGamePtr->player_count; iVar4 = iVar4 + 1) {
         core_netgame_cpp_CNetGame_updatePing_FUN_0052ea10(this_ptr,iVar4,2.0);
@@ -287,7 +286,7 @@ LAB_0052e460:
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(this_ptr,1);
     engine_2d_c_clearInputAndWait_FUN_004032b0();
-    g_INT_006260e8 = iStack_30;
+    g_ForceMessagePump = iStack_30;
   }
   return 0;
 }

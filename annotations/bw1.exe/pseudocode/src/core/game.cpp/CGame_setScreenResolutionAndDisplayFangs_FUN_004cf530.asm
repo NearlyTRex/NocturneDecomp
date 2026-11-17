@@ -15,7 +15,7 @@
 ;   TerminatedCString s_fangs_005e179a
 ;   int g_INT_0061b49c = 0xc8
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
-;   CBitFont* g_CBitFont_PTR_0152d244
+;   CBitFont* g_ThemeFont
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
 ;   undefined4 DAT_01d2d908
 ;
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x14                        ; 004cf5c7
     POP EBX                             ; 004cf5ca
     RET                                 ; 004cf5cb
-    MOV EAX,[0x0152d244]                ; 004cf5cc | g_CBitFont_PTR_0152d244
+    MOV EAX,[0x0152d244]                ; 004cf5cc | g_ThemeFont
         ;   Label: LAB_004cf5cc
     MOV [0x01c3eb50],EAX                ; 004cf5d1 | g_CBitFont_PTR_01c3eb50
     JMP 0x004cf571                      ; 004cf5d6

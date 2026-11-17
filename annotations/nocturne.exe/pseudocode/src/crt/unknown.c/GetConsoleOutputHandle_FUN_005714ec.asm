@@ -9,7 +9,7 @@
 ;   crt_stdio.c_WriteConsoleChar_FUN_0056fc30 at 0056fc69
 ;
 ; Referenced Globals:
-;   HANDLE g_HANDLE_005c20d4 = ffffffff
+;   HANDLE g_ConsoleOutputHandle = ffffffff
 ;
 ; Called Functions:
 ;   crt_stdio.c_InitializeConsoleHandles_FUN_0057146c
@@ -21,6 +21,6 @@ section .text
     CALL crt_stdio.c_InitializeConsoleHandles_FUN_0057146c ; 005714ec
         ;   XREF to: 0057146c (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeConsoleHandles_FUN_0057146c()
         ;   Label: crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec
-    MOV EAX,[0x005c20d4]                ; 005714f1 | g_HANDLE_005c20d4
+    MOV EAX,[0x005c20d4]                ; 005714f1 | g_ConsoleOutputHandle
     RET                                 ; 005714f6
 

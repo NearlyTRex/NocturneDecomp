@@ -46,7 +46,7 @@ section .text
     PUSH EBX                            ; 004e0840
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 004e0841
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
-    MOV EDX,dword ptr [0x007df9b8]      ; 004e0846 | g_INT_007df9b8
+    MOV EDX,dword ptr [0x007df9b8]      ; 004e0846 | g_ActorReadingMode
     ADD ESP,0x4                         ; 004e084c
     LEA EDI,[EBX + 0x158]               ; 004e084f
     CMP EDX,0x1                         ; 004e0855

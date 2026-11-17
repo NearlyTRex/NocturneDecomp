@@ -41,7 +41,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (g_CFireEffect_PTR_0061c010,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;

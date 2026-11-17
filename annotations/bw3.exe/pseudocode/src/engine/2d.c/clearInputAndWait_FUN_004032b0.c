@@ -17,7 +17,7 @@ void __cdecl engine_2d_c_clearInputAndWait_FUN_004032b0(void)
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 1;
-    g_CHAR_ARRAY_01c6cef0[iVar2] = '\0';
+    g_KeyboardState[iVar2] = '\0';
     iVar2 = iVar1;
   } while (iVar1 < 600);
   iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
@@ -31,7 +31,7 @@ void __cdecl engine_2d_c_clearInputAndWait_FUN_004032b0(void)
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 1;
-    g_CHAR_ARRAY_01c6cef0[iVar2] = '\0';
+    g_KeyboardState[iVar2] = '\0';
     iVar2 = iVar1;
   } while (iVar1 < 600);
   return;

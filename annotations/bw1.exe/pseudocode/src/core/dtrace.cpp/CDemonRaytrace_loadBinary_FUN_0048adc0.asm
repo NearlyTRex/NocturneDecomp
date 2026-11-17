@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *param_2)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
-; _FILE *          Stack[0x8]:4   param_2
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

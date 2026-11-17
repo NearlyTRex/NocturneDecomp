@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005dcf50 = 50
 ;   float g_FLOAT_005dcf54 = 100
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0x8                         ; 00425a3a
     MOV dword ptr [EBX + 0xd050],0x0    ; 00425a3d
     PUSH 0x5b79d6                       ; 00425a47
-    MOV EDX,dword ptr [0x005fba60]      ; 00425a4c | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00425a4c | g_CEventListPtr
     MOV dword ptr [EBX + 0x252c],0x3fc90fdb ; 00425a52
     PUSH EDX                            ; 00425a5c
     MOV dword ptr [EBX + 0xd058],EAX    ; 00425a5d

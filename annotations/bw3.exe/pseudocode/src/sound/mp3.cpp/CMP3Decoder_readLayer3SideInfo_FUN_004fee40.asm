@@ -39,7 +39,7 @@
 ;   TerminatedCString s_Side_info_bad_block_type_005ca12a
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   char[256] g_CHAR_ARRAY_01d94b98
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -225,7 +225,7 @@ section .text
     TEST ECX,ECX                        ; 004feffb
     JNZ 0x004ff0e3                      ; 004feffd
         ;   XREF to: 004ff0e3 (CONDITIONAL_JUMP)  ; LAB_004ff0e3
-    PUSH 0x1d94b98                      ; 004ff003 | g_CHAR_ARRAY_01d94b98
+    PUSH 0x1d94b98                      ; 004ff003 | g_CurrentMp3Filename
     MOV EBP,0x5ca0cf                    ; 004ff008 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x6d5                       ; 004ff00d
     PUSH 0x5ca0e0                       ; 004ff012 | = "Side info bad: block_type == 0 in spl..."
@@ -536,7 +536,7 @@ section .text
     TEST ECX,ECX                        ; 004ff352
     JNZ 0x004ff399                      ; 004ff354
         ;   XREF to: 004ff399 (CONDITIONAL_JUMP)  ; LAB_004ff399
-    PUSH 0x1d94b98                      ; 004ff356 | g_CHAR_ARRAY_01d94b98
+    PUSH 0x1d94b98                      ; 004ff356 | g_CurrentMp3Filename
     MOV EBP,0x5ca119                    ; 004ff35b | = "..\\sound\\mp3.cpp"
     MOV EAX,0x704                       ; 004ff360
     PUSH 0x5ca12a                       ; 004ff365 | = "Side info bad: block_type == 0 in spl..."

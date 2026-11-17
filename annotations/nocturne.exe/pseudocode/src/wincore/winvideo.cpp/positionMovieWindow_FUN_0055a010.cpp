@@ -17,7 +17,7 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND parent_w
   tagRECT local_24;
   tagRECT local_14;
   
-  if (g_INT_02de3124 == 0) {
+  if (g_MoviePlaying == 0) {
     return;
   }
   GetClientRect(parent_window,&local_24);
@@ -49,7 +49,7 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND parent_w
     local_14.right = local_14.right * 2;
     local_14.bottom = local_14.bottom * 2;
   }
-  MoveWindow(g_HWND_02de311c,local_24.right / 2 - local_14.right / 2,
+  MoveWindow(g_MovieWindowHandle,local_24.right / 2 - local_14.right / 2,
              local_24.bottom / 2 - local_14.bottom / 2,local_14.right,local_14.bottom,1);
   return;
 }

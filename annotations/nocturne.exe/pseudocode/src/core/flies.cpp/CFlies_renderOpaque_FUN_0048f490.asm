@@ -16,13 +16,13 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005b9214
+;   SMRGLTextureBasic g_FliesTexture
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   int g_UseExternalRenderer
 ;   int g_INT_01c038f4
-;   int g_INT_01c70714
-;   uint g_UINT_01c70754
-;   uint g_UINT_01c70758
+;   int g_FliesInitialized
+;   uint g_FlyBlendColor
+;   uint g_FlyInvBlendColor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -90,7 +90,7 @@ section .text
     TEST EAX,EAX                        ; 0048f4f8
     JZ 0x0048f74a                       ; 0048f4fa
         ;   XREF to: 0048f74a (CONDITIONAL_JUMP)  ; LAB_0048f74a
-    MOV ESI,dword ptr [0x01c70714]      ; 0048f500 | g_INT_01c70714
+    MOV ESI,dword ptr [0x01c70714]      ; 0048f500 | g_FliesInitialized
     MOV dword ptr [EBX + 0x2a14],0x1    ; 0048f506
     TEST ESI,ESI                        ; 0048f510
     JNZ 0x0048f559                      ; 0048f512
@@ -114,7 +114,7 @@ section .text
     CMP EBX,0x40                        ; 0048f54a
     JL 0x0048f51b                       ; 0048f54d
         ;   XREF to: 0048f51b (CONDITIONAL_JUMP)  ; LAB_0048f51b
-    MOV dword ptr [0x01c70714],0x1      ; 0048f54f | g_INT_01c70714
+    MOV dword ptr [0x01c70714],0x1      ; 0048f54f | g_FliesInitialized
     MOV EAX,[0x01c02594]                ; 0048f559 | g_UseExternalRenderer
         ;   Label: LAB_0048f559
     TEST EAX,EAX                        ; 0048f55e
@@ -166,7 +166,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 0048f625 | g_CDemonRenderer_01b4d738
     MOV dword ptr [EBX + 0x5c],EDX      ; 0048f627
     MOV EAX,dword ptr [EAX]             ; 0048f62a | g_CDemonRenderer_01b4d738
-    PUSH 0x5b9214                       ; 0048f62c | g_SMRGLTextureBasic_005b9214
+    PUSH 0x5b9214                       ; 0048f62c | g_FliesTexture
     MOV dword ptr [EAX + 0x8c],EDX      ; 0048f631
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 0048f637
         ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
@@ -274,18 +274,18 @@ section .text
         ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     MOV EAX,[0x01c038f4]                ; 0048f770 | g_INT_01c038f4
     SAR EAX,0x8                         ; 0048f775
-    MOV [0x01c70754],EAX                ; 0048f778 | g_UINT_01c70754
-    MOV EDX,dword ptr [0x01c70754]      ; 0048f77d | g_UINT_01c70754
+    MOV [0x01c70754],EAX                ; 0048f778 | g_FlyBlendColor
+    MOV EDX,dword ptr [0x01c70754]      ; 0048f77d | g_FlyBlendColor
     SHL EAX,0x8                         ; 0048f783
     OR EDX,EAX                          ; 0048f786
-    MOV EAX,[0x01c70754]                ; 0048f788 | g_UINT_01c70754
+    MOV EAX,[0x01c70754]                ; 0048f788 | g_FlyBlendColor
     SHL EAX,0x10                        ; 0048f78d
     OR EDX,EAX                          ; 0048f790
     MOV EAX,EDX                         ; 0048f792
     ADD ESP,0x10                        ; 0048f794
     XOR EAX,0xffffff                    ; 0048f797
-    MOV dword ptr [0x01c70754],EDX      ; 0048f79c | g_UINT_01c70754
-    MOV [0x01c70758],EAX                ; 0048f7a2 | g_UINT_01c70758
+    MOV dword ptr [0x01c70754],EDX      ; 0048f79c | g_FlyBlendColor
+    MOV [0x01c70758],EAX                ; 0048f7a2 | g_FlyInvBlendColor
     JMP 0x0048f63f                      ; 0048f7a7
         ;   XREF to: 0048f63f (UNCONDITIONAL_JUMP)  ; LAB_0048f63f
     XOR EBX,EBX                         ; 0048f7ac

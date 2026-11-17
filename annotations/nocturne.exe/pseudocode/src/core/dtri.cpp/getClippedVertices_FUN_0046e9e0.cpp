@@ -9,5 +9,5 @@
 CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0046e9e0(void)
 
 {
-  return g_CVector3f_ARRAY_01bc9e08;
+  return g_ClipOutputVertices;
 }

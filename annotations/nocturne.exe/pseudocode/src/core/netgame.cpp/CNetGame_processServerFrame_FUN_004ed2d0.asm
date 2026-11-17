@@ -37,7 +37,7 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_INT_01cea3f4
+;   int g_LastPingTime
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -69,10 +69,10 @@ section .text
     MOV ECX,0x12                        ; 004ed2e8
     SAR EDX,0x1f                        ; 004ed2ed
     IDIV ECX                            ; 004ed2f0
-    MOV ECX,dword ptr [0x01cea3f4]      ; 004ed2f2 | g_INT_01cea3f4
+    MOV ECX,dword ptr [0x01cea3f4]      ; 004ed2f2 | g_LastPingTime
     MOV EDX,EAX                         ; 004ed2f8
     SUB EAX,ECX                         ; 004ed2fa
-    MOV dword ptr [0x01cea3f4],EDX      ; 004ed2fc | g_INT_01cea3f4
+    MOV dword ptr [0x01cea3f4],EDX      ; 004ed2fc | g_LastPingTime
     TEST EAX,EAX                        ; 004ed302
     JL 0x004ed51a                       ; 004ed304
         ;   XREF to: 004ed51a (CONDITIONAL_JUMP)  ; LAB_004ed51a
@@ -80,11 +80,11 @@ section .text
     JLE 0x004ed316                      ; 004ed30f
         ;   XREF to: 004ed316 (CONDITIONAL_JUMP)  ; LAB_004ed316
     MOV EAX,0x20000                     ; 004ed311
-    MOV ESI,dword ptr [0x01cea3f8]      ; 004ed316 | g_UINT_01cea3f8
+    MOV ESI,dword ptr [0x01cea3f8]      ; 004ed316 | g_CurrentGameTime
         ;   Label: LAB_004ed316
     ADD ESI,EAX                         ; 004ed31c
     MOV EDI,dword ptr [EBX]             ; 004ed31e
-    MOV dword ptr [0x01cea3f8],ESI      ; 004ed320 | g_UINT_01cea3f8
+    MOV dword ptr [0x01cea3f8],ESI      ; 004ed320 | g_CurrentGameTime
     TEST EDI,EDI                        ; 004ed326
     JZ 0x004ed521                       ; 004ed328
         ;   XREF to: 004ed521 (CONDITIONAL_JUMP)  ; LAB_004ed521
@@ -154,7 +154,7 @@ section .text
     CMP EAX,ECX                         ; 004ed3c9
     JL 0x004ed3b9                       ; 004ed3cb
         ;   XREF to: 004ed3b9 (CONDITIONAL_JUMP)  ; LAB_004ed3b9
-    MOV EDI,dword ptr [0x01d09c00]      ; 004ed3cd | g_INT_01d09c00
+    MOV EDI,dword ptr [0x01d09c00]      ; 004ed3cd | g_SimFrameCount
         ;   Label: LAB_004ed3cd
     MOV dword ptr [ESP + 0x78],EDX      ; 004ed3d3
     XOR ESI,ESI                         ; 004ed3d7
@@ -169,20 +169,20 @@ section .text
     CMP ECX,dword ptr [EBP + 0x1d09c04] ; 004ed3eb
     JLE 0x004ed568                      ; 004ed3f1
         ;   XREF to: 004ed568 (CONDITIONAL_JUMP)  ; LAB_004ed568
-    MOV EAX,[0x01d09c00]                ; 004ed3f7 | g_INT_01d09c00
+    MOV EAX,[0x01d09c00]                ; 004ed3f7 | g_SimFrameCount
     DEC EAX                             ; 004ed3fc
-    MOV [0x01d09c00],EAX                ; 004ed3fd | g_INT_01d09c00
+    MOV [0x01d09c00],EAX                ; 004ed3fd | g_SimFrameCount
     SUB EAX,ESI                         ; 004ed402
     IMUL EAX,EAX,0x64                   ; 004ed404
     PUSH EAX                            ; 004ed407
     MOV EAX,0x1d09c04                   ; 004ed408
-    PUSH EDI                            ; 004ed40d | g_SSimFrame_ARRAY_01d09c04[1].sequence_number
+    PUSH EDI                            ; 004ed40d | g_SimFrameHistory[1].sequence_number
     ADD EAX,EBP                         ; 004ed40e
     PUSH EAX                            ; 004ed410
     CALL crt_string.c_memmove_FUN_00566170 ; 004ed411
         ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004ed416
-    CMP ESI,dword ptr [0x01d09c00]      ; 004ed419 | g_INT_01d09c00
+    CMP ESI,dword ptr [0x01d09c00]      ; 004ed419 | g_SimFrameCount
         ;   Label: LAB_004ed419
     JL 0x004ed3e7                       ; 004ed41f
         ;   XREF to: 004ed3e7 (CONDITIONAL_JUMP)  ; LAB_004ed3e7
@@ -195,7 +195,7 @@ section .text
     LEA ESI,[EBX + EAX*0x1]             ; 004ed431
     XOR EDI,EDI                         ; 004ed434
     MOV ESI,dword ptr [ESI + 0x68]      ; 004ed436
-    MOV EDX,dword ptr [0x01d09c00]      ; 004ed439 | g_INT_01d09c00
+    MOV EDX,dword ptr [0x01d09c00]      ; 004ed439 | g_SimFrameCount
     MOV EBP,ESI                         ; 004ed43f
     TEST EDX,EDX                        ; 004ed441
     JLE 0x004ed580                      ; 004ed443
@@ -207,7 +207,7 @@ section .text
     ADD EDX,ECX                         ; 004ed453
     XOR EAX,EAX                         ; 004ed455
     SHL EDX,0x2                         ; 004ed457
-    CMP EBP,dword ptr [EAX + 0x1d09c04] ; 004ed45a | g_SSimFrame_ARRAY_01d09c04[1].sequence_number
+    CMP EBP,dword ptr [EAX + 0x1d09c04] ; 004ed45a | g_SimFrameHistory[1].sequence_number
         ;   Label: LAB_004ed45a
     JNZ 0x004ed574                      ; 004ed460
         ;   XREF to: 004ed574 (CONDITIONAL_JUMP)  ; LAB_004ed574
@@ -325,7 +325,7 @@ section .text
     CMP EAX,EDX                         ; 004ed578
     JL 0x004ed45a                       ; 004ed57a
         ;   XREF to: 004ed45a (CONDITIONAL_JUMP)  ; LAB_004ed45a
-    CMP dword ptr [0x01d09c00],0x200    ; 004ed580 | g_INT_01d09c00
+    CMP dword ptr [0x01d09c00],0x200    ; 004ed580 | g_SimFrameCount
         ;   Label: LAB_004ed580
     JL 0x004ed5ae                       ; 004ed58a
         ;   XREF to: 004ed5ae (CONDITIONAL_JUMP)  ; LAB_004ed5ae
@@ -337,7 +337,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ed5a6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ed5ab
-    MOV EDX,dword ptr [0x01d09c00]      ; 004ed5ae | g_INT_01d09c00
+    MOV EDX,dword ptr [0x01d09c00]      ; 004ed5ae | g_SimFrameCount
         ;   Label: LAB_004ed5ae
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ed5b4
     SUB EAX,EDX                         ; 004ed5bb
@@ -350,7 +350,7 @@ section .text
     ADD EBP,EAX                         ; 004ed5ce
     INC EDX                             ; 004ed5d0
     PUSH EBP                            ; 004ed5d1
-    MOV dword ptr [0x01d09c00],EDX      ; 004ed5d2 | g_INT_01d09c00
+    MOV dword ptr [0x01d09c00],EDX      ; 004ed5d2 | g_SimFrameCount
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004ed5d8
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004ed5dd
@@ -387,7 +387,7 @@ section .text
     JLE 0x004ed4f4                      ; 004ed633
         ;   XREF to: 004ed4f4 (CONDITIONAL_JUMP)  ; LAB_004ed4f4
     MOV ECX,dword ptr [ESP + 0x70]      ; 004ed639
-    MOV ESI,dword ptr [0x01d09c00]      ; 004ed63d | g_INT_01d09c00
+    MOV ESI,dword ptr [0x01d09c00]      ; 004ed63d | g_SimFrameCount
     XOR EDX,EDX                         ; 004ed643
     TEST ESI,ESI                        ; 004ed645
     JLE 0x004ed6e4                      ; 004ed647
@@ -410,11 +410,11 @@ section .text
     ADD EDX,0x1d09c04                   ; 004ed672
     MOV dword ptr [ESP],ECX             ; 004ed678
     MOV byte ptr [ESP + 0x4],AH         ; 004ed67b
-    MOV EAX,dword ptr [EDX]             ; 004ed67f | g_SChatOutMessage_ARRAY_01d06614[49].message[164] | g_SSimFrame_ARRAY_01d09c04[1].sequence_number
+    MOV EAX,dword ptr [EDX]             ; 004ed67f | g_ChatOutMessages[49].message[164] | g_SimFrameHistory[1].sequence_number
     MOV dword ptr [ESP + 0x5],EAX       ; 004ed681
-    MOV EAX,dword ptr [EDX + 0x4]       ; 004ed685 | g_SChatOutMessage_ARRAY_01d06614[49].message[168] | g_SSimFrame_ARRAY_01d09c04[1].random_seed
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004ed685 | g_ChatOutMessages[49].message[168] | g_SimFrameHistory[1].random_seed
     MOV dword ptr [ESP + 0x9],EAX       ; 004ed688
-    MOV EAX,dword ptr [EDX + 0x8]       ; 004ed68c | g_SChatOutMessage_ARRAY_01d06614[49].message[172] | g_SSimFrame_ARRAY_01d09c04[1].delta_time
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004ed68c | g_ChatOutMessages[49].message[172] | g_SimFrameHistory[1].delta_time
     MOV dword ptr [ESP + 0xd],EAX       ; 004ed68f
     MOV ESI,dword ptr [EBX + 0x1c]      ; 004ed693
     XOR EAX,EAX                         ; 004ed696

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005ef584 = 0.300000000000000
 ;   CGame* g_CGamePtr = 01cb6900
-;   int g_INT_01c2a37c
-;   int g_INT_01c2a380
+;   int g_MouseX
+;   int g_MouseY
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
@@ -128,13 +128,13 @@ section .text
     CALL dword ptr [EAX + 0x3c]         ; 0059b533
     MOV EDX,dword ptr [EDI + 0x18]      ; 0059b536
     ADD ESP,0x14                        ; 0059b539
-    MOV EAX,[0x01c2a380]                ; 0059b53c | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 0059b53c | g_MouseY
     MOV ECX,dword ptr [EDI + EDX*0x4 + 0x87c] ; 0059b541
     PUSH 0xffff                         ; 0059b548
     SUB EAX,ECX                         ; 0059b54d
     MOV EBX,dword ptr [EDI + EDX*0x4 + 0x86c] ; 0059b54f
     PUSH EAX                            ; 0059b556
-    MOV EAX,[0x01c2a37c]                ; 0059b557 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 0059b557 | g_MouseX
     SUB EAX,EBX                         ; 0059b55c
     PUSH EAX                            ; 0059b55e
     LEA EAX,[EDX*0x4 + 0x0]             ; 0059b55f

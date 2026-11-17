@@ -11,27 +11,27 @@ void __cdecl core_actor_cpp_archiveDescription_FUN_0040b110(char *property_descr
 {
   int iVar1;
   
-  if (g_INT_007c3038 == 1) {
+  if (g_ActorReadingMode == 1) {
     do {
-      iVar1 = _fgetc(g_FILE_PTR_007c3034);
+      iVar1 = _fgetc(g_ActorDataFile);
       if (iVar1 < 0) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b090
                   (property_description,property_name);
       }
     } while (iVar1 != 10);
-    if ((g_FILE_PTR_007c3034->_flag & 0x20) == 0) {
+    if ((g_ActorDataFile->_flag & 0x20) == 0) {
       return;
     }
   }
-  else if ((g_INT_007c3040 == 0) && (property_name != (char *)0x0)) {
-    _fprintf(g_FILE_PTR_007c3034,"    // %s\n");
-    if ((g_FILE_PTR_007c3034->_flag & 0x20) == 0) {
+  else if ((g_IncludeCommentsWhenWriting == 0) && (property_name != (char *)0x0)) {
+    _fprintf(g_ActorDataFile,"    // %s\n");
+    if ((g_ActorDataFile->_flag & 0x20) == 0) {
       return;
     }
   }
   else {
-    _fprintf(g_FILE_PTR_007c3034,"\n");
-    if ((g_FILE_PTR_007c3034->_flag & 0x20) == 0) {
+    _fprintf(g_ActorDataFile,"\n");
+    if ((g_ActorDataFile->_flag & 0x20) == 0) {
       return;
     }
   }

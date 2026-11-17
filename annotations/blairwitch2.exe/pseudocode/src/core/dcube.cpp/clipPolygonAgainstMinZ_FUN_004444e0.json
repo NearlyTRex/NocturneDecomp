@@ -56,25 +56,25 @@
     },
     {
       "addr": "01510c20",
-      "name": "g_UINT_01510c20",
+      "name": "g_CubeClipStage5Count",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01510c24",
-      "name": "g_CVector3f_ARRAY_01510c24",
+      "name": "g_ClipStageMinZBuffer",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01510c28",
-      "name": "g_CVector3f_ARRAY_01510c24[0].y",
+      "name": "g_ClipStageMinZBuffer[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510c2c",
-      "name": "g_CVector3f_ARRAY_01510c24[0].z",
+      "name": "g_ClipStageMinZBuffer[0].z",
       "type": "undefined4",
       "value": null
     }
@@ -192,7 +192,7 @@
       "line": 25,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01510c24[g_UINT_01510c20].x = vertex1->x;",
+      "text": "g_ClipStageMinZBuffer[g_CubeClipStage5Count].x = vertex1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -200,7 +200,7 @@
       "line": 37,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01510c24[g_UINT_01510c20].x = vertex1->x;",
+      "text": "g_ClipStageMinZBuffer[g_CubeClipStage5Count].x = vertex1->x;",
       "type": "unrolled_memcpy"
     }
   ]

@@ -13,7 +13,7 @@
 ;   engine_ncursfx.cpp_CMouse_render_FUN_00510250 at 00510343
 ;
 ; Referenced Globals:
-;   int g_INT_01c38b4c
+;   int g_BlendMode
 ;
 ; *****************************************************************************
 
@@ -21,6 +21,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00406df0
         ;   Label: engine_3d.c_setBlendMode_FUN_00406df0
-    MOV [0x01c38b4c],EAX                ; 00406df4 | g_INT_01c38b4c
+    MOV [0x01c38b4c],EAX                ; 00406df4 | g_BlendMode
     RET                                 ; 00406df9
 

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_manpuz_cpp_CMirrorHack_getActorType_FUN_004cbaf0(CMirrorHack *this_ptr)
 
 {
-  return &g_CMirrorHackActorType_01cc4898;
+  return &g_CMirrorHackClassInfo;
 }

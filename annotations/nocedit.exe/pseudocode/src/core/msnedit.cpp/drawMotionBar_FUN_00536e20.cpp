@@ -26,7 +26,7 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
   int local_14;
   CDeformableModelInstance *this_ptr;
   
-  INT_02f7c538 = 0;
+  g_MsnEditMouseOverPanel = 0;
   if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) &&
        (-1 < g_SelectedMotionPropertyIndex)) &&
       (g_SelectedMotionPropertyIndex < g_MsnEditPropertyList.count)) &&
@@ -37,7 +37,7 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
     iVar4 = (g_CDemonMissionPtr->viewport).bottom;
     iVar1 = (g_CDemonMissionPtr->viewport).bottom + -1;
     if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (iVar2 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
-      INT_02f7c538 = 1;
+      g_MsnEditMouseOverPanel = 1;
     }
     engine_2d_c_fillRectWithBorder_FUN_00403200(1,iVar2,0x9b,iVar1,0,0xff);
     motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0

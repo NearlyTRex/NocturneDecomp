@@ -31,8 +31,8 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_005386d0(CDemo
         fVar4 = *(float *)(iVar1 + 0x104) - (vertex_position->x + position_offset->x);
         fVar2 = *(float *)(iVar1 + 0x108) - (vertex_position->y + position_offset->y);
         fVar3 = *(float *)(iVar1 + 0x10c) - (vertex_position->z + position_offset->z);
-        fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + g_INT_01d1a0a4
-                       );
+        fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) +
+                       g_FastSqrtMagic);
         if (fVar4 <= *(float *)(iVar1 + 0x11d4)) {
           fVar4 = 1.0 - fVar4 / *(float *)(iVar1 + 0x11d4);
           fStack_5c = *(float *)(iVar1 + 0x11c4) * fVar4 + fStack_5c;

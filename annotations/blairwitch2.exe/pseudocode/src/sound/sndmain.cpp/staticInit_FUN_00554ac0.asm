@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   CDirectSoundDevice g_CDirectSoundDevice_0264b06c
+;   CDirectSoundDevice g_CDirectSoundDeviceInstance
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV dword ptr [0x0264b06c],0x5fbcbc ; 00554ac0 | g_CDirectSoundDevice_0264b06c
+    MOV dword ptr [0x0264b06c],0x5fbcbc ; 00554ac0 | g_CDirectSoundDeviceInstance
         ;   Label: sound_sndmain.cpp_staticInit_FUN_00554ac0
     RET                                 ; 00554aca
 

@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dd48
 ;   TerminatedCString s_CNetGame_sendMyStateChan_0063dd5c
-;   int INT_00680a04 = 0x1
+;   int g_NetLobbyStateChanged = 0x1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_LastPingTime
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0xc                         ; 00543123
     ADD EBX,EAX                         ; 00543126
     MOV EAX,[0x02f7c8b8]                ; 00543128 | g_CurrentGameTime
-    MOV dword ptr [0x00680a04],EDI      ; 0054312d | INT_00680a04
+    MOV dword ptr [0x00680a04],EDI      ; 0054312d | g_NetLobbyStateChanged
     MOV dword ptr [EBX + 0x60],EAX      ; 00543133
     ADD ESP,0x2c                        ; 00543136
     POP EBP                             ; 00543139

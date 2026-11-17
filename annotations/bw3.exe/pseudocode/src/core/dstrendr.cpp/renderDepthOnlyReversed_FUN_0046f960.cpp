@@ -33,10 +33,10 @@ void __edi_esi_ebx core_dstrendr_cpp_renderDepthOnlyReversed_FUN_0046f960(SSoftw
   uVar5 = uVar5 >> 0x10;
   iVar6 = (uVar10 >> 0x10) - uVar5;
   if (iVar6 != 0 && uVar5 <= uVar10 >> 0x10) {
-    puVar8 = g_UINT_PTR_ARRAY_01c60dac[scanline_y] + uVar5;
+    puVar8 = g_ZBufferScanlineArray[scanline_y] + uVar5;
     iVar2 = (left_edge->base).depth_current;
     iVar3 = (pSVar9->base).depth_current;
-    uVar1 = g_UINT_ARRAY_01c6b5d0[iVar6 + 1];
+    uVar1 = g_ReciprocalLookupTable[iVar6 + 1];
     uVar10 = (pSVar9->base).depth_current;
     do {
       if ((int)*puVar8 <= (int)uVar10) {

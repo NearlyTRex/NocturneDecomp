@@ -11,9 +11,9 @@ void __cdecl core_dlight_cpp_captureLightTextures_FUN_0044b920(void)
 {
   SMRGLTextureBasic *texture;
   
-  texture = &g_SLightGlowTable_0060afc8.sprites[0].texture;
+  texture = &g_LightGlow.sprites[0].texture;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (g_CDemonRenderer_PTR_0060b280,&g_SLightGlowTable_0060afc8.headlight);
+            (g_CDemonRenderer_PTR_0060b280,&g_LightGlow.headlight);
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (g_CDemonRenderer_PTR_0060b280,texture);

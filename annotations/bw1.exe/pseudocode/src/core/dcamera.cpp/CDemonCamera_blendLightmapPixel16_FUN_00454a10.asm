@@ -15,7 +15,7 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0 at 00454117
 ;
 ; Referenced Globals:
-;   void*[1200] g_ARRAY_PTR_01c4354c
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00489ea6
@@ -34,7 +34,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00454a1b
     MOV EDX,dword ptr [ESP + 0x20]      ; 00454a1f
     LEA EAX,[ECX + ECX*0x1]             ; 00454a23
-    MOV ESI,dword ptr [EDX*0x4 + 0x1c4354c] ; 00454a26 | g_ARRAY_PTR_01c4354c
+    MOV ESI,dword ptr [EDX*0x4 + 0x1c4354c] ; 00454a26 | g_ScreenBufferArray
     LEA EBP,[ESI + EAX*0x1]             ; 00454a2d
     MOV EAX,dword ptr [EBX + 0x144]     ; 00454a30
     IMUL EAX,EDX                        ; 00454a36

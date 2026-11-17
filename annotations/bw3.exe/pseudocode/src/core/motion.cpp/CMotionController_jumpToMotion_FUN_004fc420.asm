@@ -22,7 +22,7 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005c9d68 = -1
+;   float g_MotionControllerTargetFrameEnd2 = -1
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_004fc480
@@ -36,7 +36,7 @@ section .text
     SUB ESP,0x4                         ; 004fc421
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fc424
     FLD float ptr [ESP + 0x14]          ; 004fc428
-    FCOMP float ptr [0x005c9d68]        ; 004fc42c | g_FLOAT_005c9d68
+    FCOMP float ptr [0x005c9d68]        ; 004fc42c | g_MotionControllerTargetFrameEnd2
     FNSTSW AX                           ; 004fc432
     SAHF                                ; 004fc434
     JZ 0x004fc45a                       ; 004fc435

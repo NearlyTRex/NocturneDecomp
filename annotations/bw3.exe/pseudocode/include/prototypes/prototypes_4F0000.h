@@ -147,7 +147,7 @@ int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004f6a50(CDemonMissio
 void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004f6ca0(CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
-void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMission *this_ptr,int param_2,char *param_3);
+void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMission *this_ptr,int set_index,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004f6de0(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission *this_ptr,char *name);
@@ -193,7 +193,7 @@ CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_004f9410(CMoon *this_ptr);
 CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_004f9450(CMoon *this_ptr,uint flags);
 void __cdecl core_moon_cpp_CMoon_init_FUN_004f94a0(CMoon *this_ptr);
 void __cdecl core_moon_cpp_CMoon_free_FUN_004f9580(CMoon *this_ptr);
-void __cdecl core_moon_cpp_CMoon_update_FUN_004f9600(CMoon *this_ptr,float param_2);
+void __cdecl core_moon_cpp_CMoon_update_FUN_004f9600(CMoon *this_ptr,float delta_time);
 void __cdecl core_moon_cpp_CMoon_render_FUN_004f9670(CMoon *this_ptr);
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004f99b0(CMoon *this_ptr);
 CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_004f99d0(CAlphaBitmap *this_ptr,uint flags);

@@ -60,7 +60,7 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005d44e1 = 65536
-;   CVector3f g_CVector3f_02c8af28
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -221,7 +221,7 @@ section .text
         ;   Label: LAB_0041a420
     ADD EBX,0x30                        ; 0041a427
     PUSH EBX                            ; 0041a42a
-    PUSH 0x2c8af28                      ; 0041a42b | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0041a42b | g_ZeroVector
     LEA EAX,[ESP + 0xc8]                ; 0041a430
     PUSH EAX                            ; 0041a437
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 0041a438
@@ -229,7 +229,7 @@ section .text
     ADD ESP,0xc                         ; 0041a43d
     MOV ESI,dword ptr [ESP + 0x208]     ; 0041a440
     PUSH ESI                            ; 0041a447
-    PUSH 0x2c8af28                      ; 0041a448 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0041a448 | g_ZeroVector
     LEA EAX,[ESP + 0x98]                ; 0041a44d
     PUSH EAX                            ; 0041a454
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 0041a455
@@ -368,7 +368,7 @@ section .text
     ADD EBP,0xc                         ; 0041a641
         ;   Label: LAB_0041a641
     PUSH EBP                            ; 0041a644
-    PUSH 0x2c8af28                      ; 0041a645 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0041a645 | g_ZeroVector
     LEA EAX,[ESP + 0x68]                ; 0041a64a
     PUSH EAX                            ; 0041a64e
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0041a64f

@@ -41,14 +41,13 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList *str_
   int local_14;
   int iStack_10;
   
-  if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
+  if (g_EditorFont == (CBitFont *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0xa0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
-  g_INT_01c25f78 = g_CBitFont_PTR_01c25590->max_char_width;
-  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x6a)
-  ;
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x6a);
   if ((dialog_title == (char *)0x0) || (iVar2 = *(int *)dialog_title, iVar2 < 1)) {
     return -1;
   }
@@ -127,14 +126,13 @@ LAB_0047c1ff:
     iVar5 = iVar9 * (iVar2 + -1) + iVar5 * iVar2;
     iVar9 = local_18;
   }
-  iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00
-                    (g_CBitFont_PTR_01c25590,(char *)str_list);
+  iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_EditorFont,(char *)str_list);
   if (iVar6 < iVar9) {
     iVar6 = iVar9;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
             (g_CEditorToolsPtr,iVar6,iVar5,(char *)str_list,0);
-  local_2c = (((g_INT_01c35e50 - g_INT_01c35e48) + 1) - iVar9) / 2;
+  local_2c = (((g_ClipRight - g_INT_01c35e48) + 1) - iVar9) / 2;
   iVar5 = 0;
   if (0 < iVar2) {
     local_34 = local_40 + -1;
@@ -176,26 +174,24 @@ LAB_0047c1ff:
     } while (iVar5 < iVar2);
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  local_50 = g_INT_006141cc;
-  g_INT_006141cc = 0x7f;
+  local_50 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   local_14 = 0;
   local_3c = iVar2 + -1;
   iVar8 = -2;
   do {
-    iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_RETURN);
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
     if (iVar5 != 0) {
       iVar8 = local_14;
     }
-    iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LSHIFT);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar5 == 0) &&
-       (iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_TAB),
-       iVar5 != 0)) {
+       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + 1;
     }
-    iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LSHIFT);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar5 != 0) &&
-       (iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_TAB),
-       iVar5 != 0)) {
+       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + -1;
     }
     if (local_14 < iVar2) {
@@ -207,7 +203,7 @@ LAB_0047c1ff:
       local_14 = 0;
     }
     while (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_0058eb40(), iVar5 != 0) {
-      iStack_10 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004dfea0(g_CKeys_PTR_00617dd4);
+      iStack_10 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004dfea0(g_CKeysPtr);
       cVar1 = (char)local_44->shortcut_key;
       pCVar10 = local_44;
       for (iVar5 = 0; (cVar1 != '\0' && (iVar5 < iVar2)); iVar5 = iVar5 + 1) {
@@ -230,7 +226,7 @@ LAB_0047c1ff:
         if (iVar9 != 0) {
           iVar8 = iVar5;
         }
-        if (pCVar10 == (CEdButton *)g_PTR_01c26410) {
+        if (pCVar10 == (CEdButton *)g_ActiveControl) {
           local_14 = iVar5;
         }
         iVar5 = iVar5 + 1;
@@ -253,7 +249,7 @@ LAB_0047c1ff:
   } while (iVar8 == -2);
   pvVar3 = __vec_delete(local_44,&g_CEdButtonTypeInfo);
   free(pvVar3);
-  g_INT_006141cc = local_50;
+  g_InputKeyMask = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
   return iVar8;

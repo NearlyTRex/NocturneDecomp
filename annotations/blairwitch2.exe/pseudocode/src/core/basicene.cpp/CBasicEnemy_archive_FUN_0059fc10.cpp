@@ -28,15 +28,15 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
   core_actor_cpp_archiveVector_FUN_0040b4b0
             (&(this_ptr->initial_location).position,"initialPosition");
   if (1 < g_CBasicEnemyClassVersion) {
-    if (g_INT_007bc038 != 0) {
+    if (g_ActorReadingMode != 0) {
       pSVar3 = &this_ptr->state_machine;
-      if ((uint)g_INT_007bc038 < 2) {
+      if ((uint)g_ActorReadingMode < 2) {
         core_actor_cpp_archiveString_FUN_0040b730(local_214,"AIState");
         core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(pSVar3,local_214);
         core_actor_cpp_archiveString_FUN_0040b730(local_214,"InitialAIState");
         core_muzzle_cpp_SStateMachine_setInitialState_FUN_0059d990(pSVar3,local_214);
       }
-      else if (g_INT_007bc038 == 2) {
+      else if (g_ActorReadingMode == 2) {
         pcVar2 = core_muzzle_cpp_SStateMachine_getStateName_FUN_0059db70(pSVar3);
         pcVar4 = local_214;
         do {
@@ -79,11 +79,11 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->animation_state,"AnimationState")
     ;
   }
-  if ((5 < g_CBasicEnemyClassVersion) && (g_INT_007bc038 != 0)) {
-    if ((uint)g_INT_007bc038 < 2) {
+  if ((5 < g_CBasicEnemyClassVersion) && (g_ActorReadingMode != 0)) {
+    if ((uint)g_ActorReadingMode < 2) {
       core_actor_cpp_archiveString_FUN_0040b730(local_214,"Dummy");
     }
-    else if (g_INT_007bc038 == 2) {
+    else if (g_ActorReadingMode == 2) {
       pcVar2 = "Dummy";
       pcVar4 = local_214;
       do {
@@ -98,11 +98,11 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
       core_actor_cpp_archiveString_FUN_0040b730(local_214,"Dummy");
     }
   }
-  if ((6 < g_CBasicEnemyClassVersion) && (g_INT_007bc038 != 0)) {
-    if ((uint)g_INT_007bc038 < 2) {
+  if ((6 < g_CBasicEnemyClassVersion) && (g_ActorReadingMode != 0)) {
+    if ((uint)g_ActorReadingMode < 2) {
       core_actor_cpp_archiveString_FUN_0040b730(local_214,"Dummy1");
     }
-    else if (g_INT_007bc038 == 2) {
+    else if (g_ActorReadingMode == 2) {
       pcVar2 = "DummyVal";
       pcVar4 = local_214;
       do {
@@ -133,13 +133,13 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
     index = 0;
     if (0 < local_14) {
       do {
-        if (g_INT_007bc038 != 0) {
-          if ((uint)g_INT_007bc038 < 2) {
+        if (g_ActorReadingMode != 0) {
+          if ((uint)g_ActorReadingMode < 2) {
             core_actor_cpp_archiveString_FUN_0040b730(local_114,"RefStateIdentifier");
             core_actor_cpp_archiveString_FUN_0040b730(local_314,"RefState");
             core_muzzle_cpp_SStateMachine_addRefState_FUN_0059d6f0(pSVar3,local_114,local_314);
           }
-          else if (g_INT_007bc038 == 2) {
+          else if (g_ActorReadingMode == 2) {
             pcVar2 = core_muzzle_cpp_SStateMachine_getRefStateIdentifier_FUN_0059dc00(pSVar3,index);
             pcVar4 = local_114;
             do {

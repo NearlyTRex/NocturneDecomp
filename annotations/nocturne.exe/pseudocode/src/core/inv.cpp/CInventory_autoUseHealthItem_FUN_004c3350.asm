@@ -15,7 +15,7 @@
 ;   TerminatedCString s_no_more_auto_health_left_0058755a
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CHealthItemActorType_01cae098.name_hash
+;   undefined4 g_CHealthItemClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -43,7 +43,7 @@ section .text
     JLE 0x004c338f                      ; 004c3369
         ;   XREF to: 004c338f (CONDITIONAL_JUMP)  ; LAB_004c338f
     MOV ESI,EDI                         ; 004c336b
-    MOV ECX,dword ptr [0x01cae0d0]      ; 004c336d | g_CHealthItemActorType_01cae098.name_hash
+    MOV ECX,dword ptr [0x01cae0d0]      ; 004c336d | g_CHealthItemClassInfo.name_hash
         ;   Label: LAB_004c336d
     PUSH ECX                            ; 004c3373
     MOV EBP,dword ptr [ESI + 0xc]       ; 004c3374
@@ -73,7 +73,7 @@ section .text
     POP ESI                             ; 004c33a5
     POP EBX                             ; 004c33a6
     RET                                 ; 004c33a7
-    MOV ECX,dword ptr [0x01cae0d0]      ; 004c33a8 | g_CHealthItemActorType_01cae098.name_hash
+    MOV ECX,dword ptr [0x01cae0d0]      ; 004c33a8 | g_CHealthItemClassInfo.name_hash
         ;   Label: LAB_004c33a8
     PUSH ECX                            ; 004c33ae
     PUSH EDX                            ; 004c33af

@@ -11,7 +11,7 @@ void FUN_00573fc8(void)
 {
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00567208_005c1b00)();
   RemoveExceptionHandler();
-  if (g_INT_02de4e30 == 0) {
+  if (g_EmergencyExitFlag == 0) {
     FUN_0056e664(1);
   }
                     /* WARNING: Subroutine does not return */

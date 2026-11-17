@@ -18,17 +18,17 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_DOUBLE_006013ec+6
-;   short g_SHORT_006013f4 = 0x0
+;   short g_DaysInMonth_Normal = 0x0
 ;   int g_INT_006013f6 = 0x3b001f
 ;   short g_SHORT_0060140c = 0x16d
-;   short g_SHORT_0060140e = 0x0
-;   dst_rule g_dst_rule_0061f4e4
-;   undefined4 g_dst_rule_0061f4e4.day
-;   undefined4 g_dst_rule_0061f4e4.month
-;   undefined4 g_dst_rule_0061f4e4.day_of_year
-;   undefined4 g_dst_rule_0061f4e4.rule_type
+;   short g_DaysInMonth_Leap = 0x0
+;   dst_rule g_DstStartRule
+;   undefined4 g_DstStartRule.day
+;   undefined4 g_DstStartRule.month
+;   undefined4 g_DstStartRule.day_of_year
+;   undefined4 g_DstStartRule.rule_type
 ;   undefined4 DAT_0061f504
-;   int g_INT_0061f508 = 0x0
+;   int g_DstTransitionSecond = 0x0
 ;   undefined4 DAT_0061f514
 ;   undefined4 DAT_0061f518
 ;   undefined4 DAT_0061f520
@@ -58,8 +58,8 @@ section .text
         ;   XREF to: 005c1aeb (CONDITIONAL_JUMP)  ; LAB_005c1aeb
     MOV EDX,dword ptr [EBX + 0x14]      ; 005c1840
     PUSH EDX                            ; 005c1843
-    PUSH 0x61f508                       ; 005c1844 | g_INT_0061f508
-    PUSH 0x61f4e4                       ; 005c1849 | g_dst_rule_0061f4e4
+    PUSH 0x61f508                       ; 005c1844 | g_DstTransitionSecond
+    PUSH 0x61f4e4                       ; 005c1849 | g_DstStartRule
     CALL crt_unknown.c_FUN_005c17c8     ; 005c184e
         ;   XREF to: 005c17c8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c17c8()
     ADD ESP,0xc                         ; 005c1853
@@ -67,13 +67,13 @@ section .text
     TEST EAX,EAX                        ; 005c185a
     JZ 0x005c186a                       ; 005c185c
         ;   XREF to: 005c186a (CONDITIONAL_JUMP)  ; LAB_005c186a
-    MOV EBP,0x61f508                    ; 005c185e | g_INT_0061f508
-    MOV EDI,0x61f4e4                    ; 005c1863 | g_dst_rule_0061f4e4
+    MOV EBP,0x61f508                    ; 005c185e | g_DstTransitionSecond
+    MOV EDI,0x61f4e4                    ; 005c1863 | g_DstStartRule
     JMP 0x005c1874                      ; 005c1868
         ;   XREF to: 005c1874 (UNCONDITIONAL_JUMP)  ; LAB_005c1874
-    MOV EBP,0x61f4e4                    ; 005c186a | g_dst_rule_0061f4e4
+    MOV EBP,0x61f4e4                    ; 005c186a | g_DstStartRule
         ;   Label: LAB_005c186a
-    MOV EDI,0x61f508                    ; 005c186f | g_INT_0061f508
+    MOV EDI,0x61f508                    ; 005c186f | g_DstTransitionSecond
     MOV EAX,dword ptr [EBX + 0x10]      ; 005c1874
         ;   Label: LAB_005c1874
     MOV dword ptr [ESP + 0x14],EAX      ; 005c1877
@@ -89,11 +89,11 @@ section .text
     TEST EDX,EDX                        ; 005c1894
     JZ 0x005c18a6                       ; 005c1896
         ;   XREF to: 005c18a6 (CONDITIONAL_JUMP)  ; LAB_005c18a6
-    MOV EDX,dword ptr [EAX + 0x60140e]  ; 005c1898 | g_SHORT_0060140e
+    MOV EDX,dword ptr [EAX + 0x60140e]  ; 005c1898 | g_DaysInMonth_Leap
     MOV EAX,dword ptr [EAX + 0x60140c]  ; 005c189e | g_SHORT_0060140c
     JMP 0x005c18b2                      ; 005c18a4
         ;   XREF to: 005c18b2 (UNCONDITIONAL_JUMP)  ; LAB_005c18b2
-    MOV EDX,dword ptr [EAX + 0x6013f4]  ; 005c18a6 | g_SHORT_006013f4
+    MOV EDX,dword ptr [EAX + 0x6013f4]  ; 005c18a6 | g_DaysInMonth_Normal
         ;   Label: LAB_005c18a6
     MOV EAX,dword ptr [EAX + 0x6013f2]  ; 005c18ac | g_DOUBLE_006013ec+6
     SAR EDX,0x10                        ; 005c18b2
@@ -209,7 +209,7 @@ section .text
         ;   Label: LAB_005c19be
     JZ 0x005c19dc                       ; 005c19c3
         ;   XREF to: 005c19dc (CONDITIONAL_JUMP)  ; LAB_005c19dc
-    PUSH EBP                            ; 005c19c5 | g_INT_0061f508
+    PUSH EBP                            ; 005c19c5 | g_DstTransitionSecond
         ;   Label: LAB_005c19c5
     PUSH EBX                            ; 005c19c6
     CALL crt_unknown.c_FUN_005c1af8     ; 005c19c7
@@ -238,7 +238,7 @@ section .text
     JNZ 0x005c1a95                      ; 005c19fd
         ;   XREF to: 005c1a95 (CONDITIONAL_JUMP)  ; LAB_005c1a95
     MOV EAX,dword ptr [ESP + 0x14]      ; 005c1a03
-    MOV EDX,dword ptr [EDI + 0x10]      ; 005c1a07 | g_dst_rule_0061f4e4.month
+    MOV EDX,dword ptr [EDI + 0x10]      ; 005c1a07 | g_DstStartRule.month
     CMP EAX,EDX                         ; 005c1a0a
     JLE 0x005c1a15                      ; 005c1a0c
         ;   XREF to: 005c1a15 (CONDITIONAL_JUMP)  ; LAB_005c1a15
@@ -249,7 +249,7 @@ section .text
         ;   XREF to: 005c1acd (CONDITIONAL_JUMP)  ; LAB_005c1acd
         ;   Label: LAB_005c1a15
     MOV EDX,dword ptr [EBX + 0x18]      ; 005c1a1b
-    MOV EBP,dword ptr [EDI + 0x18]      ; 005c1a1e | g_dst_rule_0061f4e4.day_of_year
+    MOV EBP,dword ptr [EDI + 0x18]      ; 005c1a1e | g_DstStartRule.day_of_year
     ADD EDX,0x7                         ; 005c1a21
     SUB EDX,EBP                         ; 005c1a24
     MOV ECX,0x7                         ; 005c1a26
@@ -259,7 +259,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0xc]       ; 005c1a32
     SUB EBP,EDX                         ; 005c1a35
     MOV EDX,dword ptr [EBX + 0x18]      ; 005c1a37
-    MOV EAX,dword ptr [EDI + 0x18]      ; 005c1a3a | g_dst_rule_0061f4e4.day_of_year
+    MOV EAX,dword ptr [EDI + 0x18]      ; 005c1a3a | g_DstStartRule.day_of_year
     ADD EDX,0x6                         ; 005c1a3d
     SUB EDX,EAX                         ; 005c1a40
     MOV EAX,EDX                         ; 005c1a42
@@ -269,7 +269,7 @@ section .text
     DEC EAX                             ; 005c1a4c
     XOR ESI,ESI                         ; 005c1a4d
     SUB EAX,EDX                         ; 005c1a4f
-    MOV ECX,dword ptr [EDI + 0xc]       ; 005c1a51 | g_dst_rule_0061f4e4.day
+    MOV ECX,dword ptr [EDI + 0xc]       ; 005c1a51 | g_DstStartRule.day
     MOV EDX,EAX                         ; 005c1a54
     CMP ECX,0x5                         ; 005c1a56
     JNZ 0x005c1a79                      ; 005c1a59
@@ -305,7 +305,7 @@ section .text
         ;   XREF to: 005c1acd (CONDITIONAL_JUMP)  ; LAB_005c1acd
     JMP 0x005c1ad3                      ; 005c1a93
         ;   XREF to: 005c1ad3 (UNCONDITIONAL_JUMP)  ; LAB_005c1ad3
-    MOV EBP,dword ptr [EDI + 0x1c]      ; 005c1a95 | g_dst_rule_0061f4e4.rule_type
+    MOV EBP,dword ptr [EDI + 0x1c]      ; 005c1a95 | g_DstStartRule.rule_type
         ;   Label: LAB_005c1a95
     CMP EAX,0x1                         ; 005c1a98
     JNZ 0x005c1ac0                      ; 005c1a9b
@@ -340,7 +340,7 @@ section .text
         ;   Label: LAB_005c1acd
     JZ 0x005c1adf                       ; 005c1ad1
         ;   XREF to: 005c1adf (CONDITIONAL_JUMP)  ; LAB_005c1adf
-    PUSH EDI                            ; 005c1ad3 | g_dst_rule_0061f4e4
+    PUSH EDI                            ; 005c1ad3 | g_DstStartRule
         ;   Label: LAB_005c1ad3
     PUSH EBX                            ; 005c1ad4
     CALL crt_unknown.c_FUN_005c1af8     ; 005c1ad5

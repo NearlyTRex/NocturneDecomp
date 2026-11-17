@@ -99,10 +99,10 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
           fStack_3c = CStack_e0.z;
           fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
           if (fVar7 <= (float)0.5) {
-            if ((int *)&stack0x00000000 != g_INT_ARRAY_026537c0 + 0x2c) {
-              CStack_164.x = g_CVector3f_0265370c.x;
-              CStack_164.y = g_CVector3f_0265370c.y;
-              CStack_164.z = g_CVector3f_0265370c.z;
+            if ((int *)&stack0x00000000 != g_VisibleWaterTilesX + 0x2c) {
+              CStack_164.x = g_ZeroVector.x;
+              CStack_164.y = g_ZeroVector.y;
+              CStack_164.z = g_ZeroVector.z;
             }
           }
           else {
@@ -148,10 +148,10 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
                *(uint *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
           fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar7,fVar8);
           if (fVar7 <= (float)0.5) {
-            if ((int *)&stack0x00000000 != g_INT_ARRAY_026537c0 + 8) {
-              CStack_d4.x = g_CVector3f_0265370c.x;
-              CStack_d4.y = g_CVector3f_0265370c.y;
-              CStack_d4.z = g_CVector3f_0265370c.z;
+            if ((int *)&stack0x00000000 != g_VisibleWaterTilesX + 8) {
+              CStack_d4.x = g_ZeroVector.x;
+              CStack_d4.y = g_ZeroVector.y;
+              CStack_d4.z = g_ZeroVector.z;
             }
           }
           else {

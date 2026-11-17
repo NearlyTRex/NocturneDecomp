@@ -95,25 +95,25 @@
     },
     {
       "addr": "005c1ccc",
-      "name": "g_DWORD_005c1ccc",
+      "name": "g_WinMainCmdShow",
       "type": "DWORD",
       "value": "0x0"
     },
     {
       "addr": "005c1cf0",
-      "name": "g_DWORD_005c1cf0",
+      "name": "g_StackAllocSize",
       "type": "DWORD",
       "value": "0x0"
     },
     {
       "addr": "005c1cf4",
-      "name": "g_PTR_005c1cf4",
+      "name": "g_CrtStackBuffer",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c20cc",
-      "name": "g_DWORD_005c20cc",
+      "name": "g_RuntimeBufferSize",
       "type": "DWORD",
       "value": "0xf4"
     }
@@ -266,7 +266,7 @@
       "line": 30,
       "match": "&stack0x000000e0",
       "severity": "moderate",
-      "text": "*(DWORD *)(&stack0x000000e0 + iVar5) = g_DWORD_005c20cc;",
+      "text": "*(DWORD *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
     {

@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GlassHiram_005859df
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 g_CGlassActorType_01c78c40.name_hash
+;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[EBX + 0x1f570]             ; 004b680c
         ;   Label: LAB_004b680c
     PUSH EAX                            ; 004b6812
-    MOV EDX,dword ptr [0x005b7650]      ; 004b6813 | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 004b6813 | g_CEventListPtr
     PUSH EDX                            ; 004b6819
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004b681a
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -121,7 +121,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b682b
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004b6830
-    MOV ECX,dword ptr [0x01c78c78]      ; 004b6833 | g_CGlassActorType_01c78c40.name_hash
+    MOV ECX,dword ptr [0x01c78c78]      ; 004b6833 | g_CGlassClassInfo.name_hash
     PUSH ECX                            ; 004b6839
     PUSH 0x5859df                       ; 004b683a | = "GlassHiram"
     MOV ESI,dword ptr [0x005baf90]      ; 004b683f | g_CDemonMission_PTR_005baf90

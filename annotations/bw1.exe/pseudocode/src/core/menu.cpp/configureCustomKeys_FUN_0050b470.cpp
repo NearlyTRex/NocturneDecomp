@@ -185,7 +185,7 @@ LAB_0050b755:
     pCVar3 = g_CGamePtr;
     switch(iVar4) {
     case 0:
-      if (g_INT_01d1ee8c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         EVar8 = g_CGamePtr->game_control - CONTROL_MODE_MOUSE;
         g_CGamePtr->game_control = EVar8;
         if ((int)EVar8 < 0) {

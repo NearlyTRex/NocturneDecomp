@@ -26,10 +26,10 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this
     if (iVar2 <= index) {
       return;
     }
-    pcVar7 = g_CHAR_ARRAY_01e648f8;
+    pcVar7 = g_ScriptLineBuffer;
     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(&this_ptr->script_text,index);
     core_script_cpp_trimLine_FUN_00521070(pcVar3,pcVar7);
-    if (g_CHAR_ARRAY_01e648f8[0] != '\0') {
+    if (g_ScriptLineBuffer[0] != '\0') {
       pSVar4 = (SScriptLine *)realloc
                          (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * 8);
       this_ptr->parsed_lines = pSVar4;
@@ -40,7 +40,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this
       }
       this_ptr->parsed_lines[this_ptr->parsed_line_count].line_number = index + 1;
       uVar5 = 0xffffffff;
-      pcVar3 = g_CHAR_ARRAY_01e648f8;
+      pcVar3 = g_ScriptLineBuffer;
       do {
         if (uVar5 == 0) break;
         uVar5 = uVar5 - 1;
@@ -54,7 +54,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this
         g_INT_01d046a4 = 0x3a9;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory loading script at line %d");
       }
-      pcVar7 = g_CHAR_ARRAY_01e648f8;
+      pcVar7 = g_ScriptLineBuffer;
       pcVar3 = this_ptr->parsed_lines[this_ptr->parsed_line_count].text;
       do {
         cVar1 = *pcVar7;

@@ -79,19 +79,19 @@
     },
     {
       "addr": "005c1f6c",
-      "name": "g_PTR_005c1f6c",
+      "name": "g_UserExceptionFilter",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1f70",
-      "name": "g_PTR_005c1f70",
+      "name": "g_ExceptionCleanup",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "02de5c24",
-      "name": "g_BYTE_02de5c24",
+      "name": "g_SignalHandlingActive",
       "type": "BYTE",
       "value": null
     }
@@ -230,7 +230,7 @@
       "line": 66,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (*(code *)g_PTR_005c1f6c)(iVar4,ExceptionRecord->ExceptionCode);",
+      "text": "iVar2 = (*(code *)g_UserExceptionFilter)(iVar4,ExceptionRecord->ExceptionCode);",
       "type": "unresolved_funcptr"
     },
     {
@@ -238,7 +238,7 @@
       "line": 70,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_005c1f70)(iVar4);",
+      "text": "(*(code *)g_ExceptionCleanup)(iVar4);",
       "type": "unresolved_funcptr"
     },
     {

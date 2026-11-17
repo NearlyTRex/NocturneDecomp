@@ -9,7 +9,7 @@
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_005220b0(CMoon *this_ptr)
 
 {
-  if ((float)30 <= g_FLOAT_01d33f6c) {
+  if ((float)30 <= g_MoonAnimationTimer) {
     return 0;
   }
   return 1;

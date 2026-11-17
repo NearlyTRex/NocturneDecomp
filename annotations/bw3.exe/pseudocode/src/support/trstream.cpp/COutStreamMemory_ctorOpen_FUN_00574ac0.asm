@@ -45,7 +45,7 @@ section .text
     MOV EBX,EAX                         ; 00574afc
     MOV dword ptr [EAX + 0x14],0x1      ; 00574afe
     CALL support_trstream.cpp_COutStreamMemory_open_FUN_00574d50 ; 00574b05
-        ;   XREF to: 00574d50 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory * this_ptr, int param_2, int param_3)
+        ;   XREF to: 00574d50 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory * this_ptr, int buffer, int capacity)
     ADD ESP,0xc                         ; 00574b0a
     MOV EAX,EBX                         ; 00574b0d
     POP ESI                             ; 00574b0f

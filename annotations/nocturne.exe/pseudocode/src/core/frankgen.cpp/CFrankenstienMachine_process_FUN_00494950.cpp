@@ -84,7 +84,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
           fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.5,1.5);
           iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (g_CFireEffect_PTR_005b80f0,&CStack_2c,fStack_c,pCVar4,alpha_value);
+                    (g_CFireEffectPtr,&CStack_2c,fStack_c,pCVar4,alpha_value);
         } while (iVar5 < iVar3);
       }
     }
@@ -105,7 +105,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
         CStack_38.z = pCVar4->z;
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (g_CFireEffect_PTR_005b80f0,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     }
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30
               (this_ptr,1.0,"frankx-bed1.wav");

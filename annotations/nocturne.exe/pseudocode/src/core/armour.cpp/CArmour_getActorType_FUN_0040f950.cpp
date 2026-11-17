@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_armour_cpp_CArmour_getActorType_FUN_0040f950(CArmour *this_ptr)
 
 {
-  return &g_CArmourActorType_00764270;
+  return &g_CArmourClassInfo;
 }

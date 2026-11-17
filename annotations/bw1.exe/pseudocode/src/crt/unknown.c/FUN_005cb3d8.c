@@ -67,15 +67,15 @@ switchD_005cb400_caseD_c000008e:
     break;
   default:
 switchD_005cb400_default:
-    if (g_PTR_00626a50 != (byte *)0x0) {
+    if (g_ExceptionCleanup != (byte *)0x0) {
       iVar4 = 1;
       do {
-        iVar2 = (*(code *)g_PTR_00626a4c)(iVar4,param_1->ExceptionCode);
+        iVar2 = (*(code *)g_UserExceptionFilter)(iVar4,param_1->ExceptionCode);
         if (iVar2 != 0) {
           if (((iVar2 == 1) || (iVar2 == 2)) || (iVar2 == 3)) break;
-          g_BYTE_02c9ff74 = 1;
-          (*(code *)g_PTR_00626a50)(iVar4);
-          if (g_BYTE_02c9ff74 != 0) {
+          g_SignalHandlingActive = 1;
+          (*(code *)g_ExceptionCleanup)(iVar4);
+          if (g_SignalHandlingActive != 0) {
             return 0;
           }
         }
@@ -84,10 +84,10 @@ switchD_005cb400_default:
     }
     goto LAB_005cb57b;
   }
-  g_BYTE_02c9ff74 = 1;
+  g_SignalHandlingActive = 1;
   FUN_005cd0e0();
   iVar4 = FUN_005cd2b8(iVar4);
-  if ((iVar4 != -1) && (g_BYTE_02c9ff74 != 0)) {
+  if ((iVar4 != -1) && (g_SignalHandlingActive != 0)) {
     *(ushort *)&(param_3->FloatSave).StatusWord =
          ((ushort)(param_3->FloatSave).StatusWord >> 8 & 0x7f) << 8;
     return 0;

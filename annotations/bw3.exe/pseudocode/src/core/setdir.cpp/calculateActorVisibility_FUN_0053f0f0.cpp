@@ -203,7 +203,7 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
                 iStack_40 = 1;
                 iVar6 = 0;
                 do {
-                  *(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6) = puVar11;
+                  *(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;
                   iVar6 = iVar6 + 4;
                   puVar11 = puVar11 + 0x100;
                 } while (iVar6 != 0xc0);
@@ -262,7 +262,7 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
         pcVar9 = g_CHAR_ARRAY_0212551c + thumb_index * 0x3000;
         iVar6 = 0;
         do {
-          *(char **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6) = pcVar9;
+          *(char **)((int)g_ZBufferScanlineArray + iVar6) = pcVar9;
           iVar6 = iVar6 + 4;
           pcVar9 = pcVar9 + 0x100;
         } while (iVar6 != 0xc0);
@@ -288,7 +288,7 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
         iVar6 = 0;
         do {
           iVar8 = iVar6 + 4;
-          puVar13 = *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6);
+          puVar13 = *(uint **)((int)g_ZBufferScanlineArray + iVar6);
           puVar14 = puVar10;
           for (iVar12 = 0x40; iVar12 != 0; iVar12 = iVar12 + -1) {
             *puVar14 = *puVar13;
@@ -300,7 +300,7 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
             puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);
             puVar14 = (uint *)((int)puVar14 + (uint)bVar16 * -2 + 1);
           }
-          *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6) = puVar10;
+          *(uint **)((int)g_ZBufferScanlineArray + iVar6) = puVar10;
           puVar10 = puVar10 + 0x40;
           iVar6 = iVar8;
         } while (iVar8 != 0xc0);

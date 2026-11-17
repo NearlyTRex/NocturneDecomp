@@ -16,7 +16,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_00541a00(CD
   iVar2 = 0;
   if (0 < this_ptr->vertex_count[lod_index]) {
     do {
-      *(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a + iVar1) = g_INT_01c38aec;
+      *(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a + iVar1) =
+           g_PerspectiveReciprocal;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x30;
     } while (iVar2 < this_ptr->vertex_count[lod_index]);

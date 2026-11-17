@@ -91,7 +91,7 @@
     },
     {
       "addr": "0061c010",
-      "name": "g_CFireEffect_PTR_0061c010",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c57074"
     },
@@ -109,43 +109,43 @@
     },
     {
       "addr": "026af600",
-      "name": "g_CVector3f_ARRAY_026af600",
+      "name": "g_ShatterVertexArray",
       "type": "CVector3f[3000]",
       "value": null
     },
     {
       "addr": "026af604",
-      "name": "g_CVector3f_ARRAY_026af600[0].y",
+      "name": "g_ShatterVertexArray[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026af608",
-      "name": "g_CVector3f_ARRAY_026af600[0].z",
+      "name": "g_ShatterVertexArray[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026af60c",
-      "name": "g_CVector3f_ARRAY_026af600[1].x",
+      "name": "g_ShatterVertexArray[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026af610",
-      "name": "g_CVector3f_ARRAY_026af600[1].y",
+      "name": "g_ShatterVertexArray[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026af614",
-      "name": "g_CVector3f_ARRAY_026af600[1].z",
+      "name": "g_ShatterVertexArray[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026b82a0",
-      "name": "g_UCHAR_026b82a0",
+      "name": "g_ShatterVertexArrayInitialized",
       "type": "uchar",
       "value": null
     }
@@ -652,7 +652,7 @@
       "line": 116,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar5->x = g_CVector3f_ARRAY_026af600[uVar2].x;",
+      "text": "pCVar5->x = g_ShatterVertexArray[uVar2].x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -660,7 +660,7 @@
       "line": 168,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar5->x = g_CVector3f_ARRAY_026af600[uVar2].x;",
+      "text": "pCVar5->x = g_ShatterVertexArray[uVar2].x;",
       "type": "unrolled_memcpy"
     },
     {

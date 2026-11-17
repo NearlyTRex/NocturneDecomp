@@ -12,9 +12,9 @@
 ;   core_dcube.cpp_CDemonCube_load_FUN_0044aed0 at 0044af51
 ;
 ; Referenced Globals:
-;   uint[3] g_UINT_ARRAY_014b8a0c
-;   undefined4 g_UINT_ARRAY_014b8a0c[1]
-;   undefined4 g_UINT_ARRAY_014b8a0c[2]
+;   uint[3] g_TempTriangleIndices
+;   undefined4 g_TempTriangleIndices[1]
+;   undefined4 g_TempTriangleIndices[2]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -32,16 +32,16 @@ section .text
     PUSH EDX                            ; 00448ece
     PUSH 0x4                            ; 00448ecf
     PUSH 0x3                            ; 00448ed1
-    PUSH 0x14b8a0c                      ; 00448ed3 | g_UINT_ARRAY_014b8a0c
+    PUSH 0x14b8a0c                      ; 00448ed3 | g_TempTriangleIndices
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00448ed8
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
-    MOV EDX,dword ptr [0x014b8a0c]      ; 00448edd | g_UINT_ARRAY_014b8a0c
+    MOV EDX,dword ptr [0x014b8a0c]      ; 00448edd | g_TempTriangleIndices
     LEA EAX,[EDX*0x4 + 0x0]             ; 00448ee3
     SUB EAX,EDX                         ; 00448eea
     SHL EAX,0x2                         ; 00448eec
     LEA EDX,[ESI + EAX*0x1]             ; 00448eef
     MOV dword ptr [EBX],EDX             ; 00448ef2
-    MOV EDX,dword ptr [0x014b8a10]      ; 00448ef4 | g_UINT_ARRAY_014b8a0c[1]
+    MOV EDX,dword ptr [0x014b8a10]      ; 00448ef4 | g_TempTriangleIndices[1]
     LEA EAX,[EDX*0x4 + 0x0]             ; 00448efa
     SUB EAX,EDX                         ; 00448f01
     SHL EAX,0x2                         ; 00448f03
@@ -49,7 +49,7 @@ section .text
     ADD ESP,0x10                        ; 00448f09
     MOV dword ptr [EBX + 0x4],EDX       ; 00448f0c
     MOV ECX,dword ptr [ESP + 0x10]      ; 00448f0f
-    MOV EDX,dword ptr [0x014b8a14]      ; 00448f13 | g_UINT_ARRAY_014b8a0c[2]
+    MOV EDX,dword ptr [0x014b8a14]      ; 00448f13 | g_TempTriangleIndices[2]
     PUSH ECX                            ; 00448f19
     LEA EAX,[EDX*0x4 + 0x0]             ; 00448f1a
     PUSH 0x1                            ; 00448f21

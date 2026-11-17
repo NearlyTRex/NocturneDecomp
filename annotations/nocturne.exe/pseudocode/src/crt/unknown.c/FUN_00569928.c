@@ -287,9 +287,9 @@ LAB_00569cb5:
             *param_2 = (int)(puVar5 + 2);
             iVar8 = WideCharToSingleByte
                               ((wchar_t)&local_1c,(char *)(uint)*puVar5);
-            iVar10 = g_INT_02de5c30;
+            iVar10 = g_MultibyteLocaleActive;
             if (((iVar8 != -1) && (*param_1 = local_1c, iVar10 != 0)) &&
-               ((g_CHAR_ARRAY_02de5c41[local_1c] & 1U) != 0)) {
+               ((g_LeadByteTable[local_1c] & 1U) != 0)) {
               param_1[1] = local_1b;
               *(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;
               return CONCAT44(local_18,param_1);

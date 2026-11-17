@@ -17,9 +17,9 @@
 ;   void* PTR_PeekMessageA_005d04e8 = 001d0b92
 ;   void* PTR_TranslateMessage_005d0510 = 001d0c36
 ;   void* PTR_Sleep_005d0658 = 001d1230
-;   int g_INT_006260e4 = -0x1
-;   int g_INT_006260e8 = 0x1
-;   int g_INT_02c9be70
+;   int g_WindowActive = -0x1
+;   int g_ForceMessagePump = 0x1
+;   int g_InputDisabled
 ;
 ; Called Functions:
 ;   DispatchMessageA
@@ -74,19 +74,19 @@ section .text
         ;   Label: LAB_005b2d43
     JMP 0x005b2d05                      ; 005b2d49
         ;   XREF to: 005b2d05 (UNCONDITIONAL_JUMP)  ; LAB_005b2d05
-    MOV ESI,dword ptr [0x006260e4]      ; 005b2d4b | g_INT_006260e4
+    MOV ESI,dword ptr [0x006260e4]      ; 005b2d4b | g_WindowActive
         ;   Label: LAB_005b2d4b
     CMP EBX,ESI                         ; 005b2d51
     JNZ 0x005b2d6f                      ; 005b2d53
         ;   XREF to: 005b2d6f (CONDITIONAL_JUMP)  ; LAB_005b2d6f
-    MOV EDI,dword ptr [0x02c9be70]      ; 005b2d55 | g_INT_02c9be70
+    MOV EDI,dword ptr [0x02c9be70]      ; 005b2d55 | g_InputDisabled
     CMP ESI,EDI                         ; 005b2d5b
     JNZ 0x005b2d6f                      ; 005b2d5d
         ;   XREF to: 005b2d6f (CONDITIONAL_JUMP)  ; LAB_005b2d6f
-    CMP EDI,dword ptr [0x006260e4]      ; 005b2d5f | g_INT_006260e4
+    CMP EDI,dword ptr [0x006260e4]      ; 005b2d5f | g_WindowActive
     JZ 0x005b2d76                       ; 005b2d65
         ;   XREF to: 005b2d76 (CONDITIONAL_JUMP)  ; LAB_005b2d76
-    CMP EBX,dword ptr [0x006260e8]      ; 005b2d67 | g_INT_006260e8
+    CMP EBX,dword ptr [0x006260e8]      ; 005b2d67 | g_ForceMessagePump
     JNZ 0x005b2d18                      ; 005b2d6d
         ;   XREF to: 005b2d18 (CONDITIONAL_JUMP)  ; LAB_005b2d18
     ADD ESP,0x1c                        ; 005b2d6f
@@ -98,7 +98,7 @@ section .text
     PUSH 0x14                           ; 005b2d76
         ;   Label: LAB_005b2d76
     CALL dword ptr CS:[0x5d0658]        ; 005b2d78 | PTR_Sleep_005d0658
-    CMP EBX,dword ptr [0x006260e8]      ; 005b2d7f | g_INT_006260e8
+    CMP EBX,dword ptr [0x006260e8]      ; 005b2d7f | g_ForceMessagePump
     JNZ 0x005b2d18                      ; 005b2d85
         ;   XREF to: 005b2d18 (CONDITIONAL_JUMP)  ; LAB_005b2d18
     ADD ESP,0x1c                        ; 005b2d87

@@ -15,8 +15,8 @@
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c96d
 ;
 ; Referenced Globals:
-;   int g_INT_01cf6efc
-;   int g_INT_01cf6f00
+;   int g_FootstepIndex
+;   int g_FootstepCount
 ;
 ; Called Functions:
 ;   core_gore.cpp_CFootstep_init_FUN_004e56e0
@@ -32,22 +32,22 @@ section .text
     PUSH EBP                            ; 004e6513
     MOV EBP,ESP                         ; 004e6514
     MOV EDX,0x1cf6f04                   ; 004e6516
-    MOV ECX,dword ptr [0x01cf6efc]      ; 004e651b | g_INT_01cf6efc
-    MOV EAX,[0x01cf6efc]                ; 004e6521 | g_INT_01cf6efc
+    MOV ECX,dword ptr [0x01cf6efc]      ; 004e651b | g_FootstepIndex
+    MOV EAX,[0x01cf6efc]                ; 004e6521 | g_FootstepIndex
     INC ECX                             ; 004e6526
     SHL EAX,0x6                         ; 004e6527
-    MOV dword ptr [0x01cf6efc],ECX      ; 004e652a | g_INT_01cf6efc
+    MOV dword ptr [0x01cf6efc],ECX      ; 004e652a | g_FootstepIndex
     ADD EDX,EAX                         ; 004e6530
     CMP ECX,0x3e8                       ; 004e6532
     JGE 0x004e657d                      ; 004e6538
         ;   XREF to: 004e657d (CONDITIONAL_JUMP)  ; LAB_004e657d
-    MOV EDI,dword ptr [0x01cf6f00]      ; 004e653a | g_INT_01cf6f00
+    MOV EDI,dword ptr [0x01cf6f00]      ; 004e653a | g_FootstepCount
         ;   Label: LAB_004e653a
     CMP EDI,0x3e8                       ; 004e6540
     JGE 0x004e6550                      ; 004e6546
         ;   XREF to: 004e6550 (CONDITIONAL_JUMP)  ; LAB_004e6550
     LEA EAX,[EDI + 0x1]                 ; 004e6548
-    MOV [0x01cf6f00],EAX                ; 004e654b | g_INT_01cf6f00
+    MOV [0x01cf6f00],EAX                ; 004e654b | g_FootstepCount
     MOV ECX,dword ptr [EBP + 0x28]      ; 004e6550
         ;   Label: LAB_004e6550
     PUSH ECX                            ; 004e6553
@@ -73,7 +73,7 @@ section .text
     RET                                 ; 004e657c
     XOR ESI,ESI                         ; 004e657d
         ;   Label: LAB_004e657d
-    MOV dword ptr [0x01cf6efc],ESI      ; 004e657f | g_INT_01cf6efc
+    MOV dword ptr [0x01cf6efc],ESI      ; 004e657f | g_FootstepIndex
     JMP 0x004e653a                      ; 004e6585
         ;   XREF to: 004e653a (UNCONDITIONAL_JUMP)  ; LAB_004e653a
 

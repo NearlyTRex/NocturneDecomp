@@ -95,19 +95,19 @@
     },
     {
       "addr": "005c1660",
-      "name": "g_INT_005c1660",
+      "name": "g_WindowActive",
       "type": "int",
       "value": "-0x1"
     },
     {
       "addr": "005c1664",
-      "name": "g_INT_005c1664",
+      "name": "g_ForceMessagePump",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "02de20a0",
-      "name": "g_INT_02de20a0",
+      "name": "g_InputDisabled",
       "type": "int",
       "value": null
     }
@@ -185,17 +185,17 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(int *)((int)g_INT_ARRAY_02de20b0",
+      "match": "(int *)((int)g_MessageFlags",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_INT_ARRAY_02de20b0 + iVar3) == 1) {",
+      "text": "if (*(int *)((int)g_MessageFlags + iVar3) == 1) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(uint *)((int)g_INT_ARRAY_02de20b0",
+      "match": "(uint *)((int)g_MessageFlags",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_INT_ARRAY_02de20b0 + iVar3) = 0;",
+      "text": "*(uint *)((int)g_MessageFlags + iVar3) = 0;",
       "type": "pointer_cast"
     }
   ]

@@ -25,7 +25,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0055be30(CDirectS
     g_INT_01d71de4 = 0x472;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::allocateSfx - Invalid sample handle: %d");
   }
-  if (g_IDirectSound_PTR_02cf49c4 == (IDirectSound *)0x0) {
+  if (g_DirectSound == (IDirectSound *)0x0) {
     g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
     g_INT_01d71de4 = 0x473;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::allocateSfx - dSound not allocated?");
@@ -62,8 +62,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0055be30(CDirectS
     }
   }
   else {
-    uVar3 = (*g_IDirectSound_PTR_02cf49c4->vtable->DuplicateSoundBuffer)
-                      (g_IDirectSound_PTR_02cf49c4,*ppIVar4,ppDSBufferDuplicate);
+    uVar3 = (*g_DirectSound->vtable->DuplicateSoundBuffer)
+                      (g_DirectSound,*ppIVar4,ppDSBufferDuplicate);
     if (uVar3 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar3);
       _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)");
@@ -82,7 +82,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0055be30(CDirectS
   g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 3] = (IDirectSoundBuffer *)0x0;
   g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 4] = pIVar1;
   g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1] = sfx_handle;
-  if (g_IDirectSound3DListener_PTR_02cf49d0 != (IDirectSound3DListener *)0x0) {
+  if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
     uVar3 = (*(*ppDSBufferDuplicate)->vtable->QueryInterface)
                       ((IUnknown *)*ppDSBufferDuplicate,&g_IID_IDirectSound3DBuffer,
                        g_IDirectSoundBuffer_PTR_ARRAY_02cf500c + (int)sfx_handle * 9 + 1);

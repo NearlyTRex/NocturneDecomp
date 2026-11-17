@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   CVector3f g_CVector3f_02c835e4
-;   undefined4 g_CVector3f_02c835e4.y
-;   undefined4 g_CVector3f_02c835e4.z
-;   CVector3f g_CVector3f_02c835f0
-;   undefined4 g_CVector3f_02c835f0.y
-;   undefined4 g_CVector3f_02c835f0.z
+;   CVector3f g_StrangerWeaponEulerPlusX
+;   undefined4 g_StrangerWeaponEulerPlusX.y
+;   undefined4 g_StrangerWeaponEulerPlusX.z
+;   CVector3f g_StrangerWeaponEulerMinusX
+;   undefined4 g_StrangerWeaponEulerMinusX.y
+;   undefined4 g_StrangerWeaponEulerMinusX.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c160
@@ -30,14 +30,14 @@ section .text
     MOV EBX,0x3e010625                  ; 00584ff8
     MOV ESI,0xbf05e354                  ; 00584ffd
     PUSH 0x585240                       ; 00585002
-    MOV dword ptr [0x02c835e4],EDX      ; 00585007 | g_CVector3f_02c835e4
-    MOV dword ptr [0x02c835e8],ECX      ; 0058500d | g_CVector3f_02c835e4.y
+    MOV dword ptr [0x02c835e4],EDX      ; 00585007 | g_StrangerWeaponEulerPlusX
+    MOV dword ptr [0x02c835e8],ECX      ; 0058500d | g_StrangerWeaponEulerPlusX.y
     PUSH 0x5f6399                       ; 00585013
-    MOV dword ptr [0x02c835ec],EBX      ; 00585018 | g_CVector3f_02c835e4.z
-    MOV dword ptr [0x02c835f0],ESI      ; 0058501e | g_CVector3f_02c835f0
+    MOV dword ptr [0x02c835ec],EBX      ; 00585018 | g_StrangerWeaponEulerPlusX.z
+    MOV dword ptr [0x02c835f0],ESI      ; 0058501e | g_StrangerWeaponEulerMinusX
     PUSH 0x2c8365c                      ; 00585024
-    MOV dword ptr [0x02c835f4],ECX      ; 00585029 | g_CVector3f_02c835f0.y
-    MOV dword ptr [0x02c835f8],EBX      ; 0058502f | g_CVector3f_02c835f0.z
+    MOV dword ptr [0x02c835f4],ECX      ; 00585029 | g_StrangerWeaponEulerMinusX.y
+    MOV dword ptr [0x02c835f8],EBX      ; 0058502f | g_StrangerWeaponEulerMinusX.z
     CALL core_actor.cpp_registerActorClass_FUN_0040c160 ; 00585035
         ;   XREF to: 0040c160 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c160(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factory_func, int * max_version, ...)
     ADD ESP,0x18                        ; 0058503a

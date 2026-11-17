@@ -77,8 +77,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
         if (pcVar2 != (char *)0x0) {
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
           if ((float)0.20000000000000001 < fStack_14) {
-            core_xform_cpp_transformVector3x4_FUN_00591530
-                      (&g_CVector3f_0265370c,pCStack_1c,&CStack_5c);
+            core_xform_cpp_transformVector3x4_FUN_00591530(&g_ZeroVector,pCStack_1c,&CStack_5c);
             CStack_74.x = CStack_5c.x;
             *(uint *)((int)&CStack_74 + (uint)bVar4 * -8 + 4) =
                  *(uint *)((int)&CStack_5c + (uint)bVar4 * -8 + 4);
@@ -109,7 +108,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
                  afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
             iVar1 = 2;
             fStack_68 = afStack_c4[2];
-            acceleration = &g_CVector3f_0265370c;
+            acceleration = &g_ZeroVector;
             afStack_64[1] = (float)uStack_b4;
             pCVar7 = &CStack_a4;
             position_offset = &CStack_80;

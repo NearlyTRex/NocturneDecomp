@@ -12,17 +12,17 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_00490ff0(uint red,uint green,uin
 
 {
   if (g_BitsPerPixel == 8) {
-    g_UCHAR_01c70f5c =
+    g_ShadowColor8 =
          g_ColorCubeLookup[((int)green >> 3) * 0x20 + ((int)red >> 3) * 0x400 + ((int)blue >> 3)];
   }
   else if (g_BitsPerPixel == 0x10) {
-    g_USHORT_01c70f5e =
+    g_ShadowColor16 =
          (ushort)(red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
          (ushort)(green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f)) |
          (ushort)(blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f));
   }
   else if (g_BitsPerPixel == 0x20) {
-    g_INT_01c70f60 =
+    g_ShadowColor32 =
          blue << (g_BlueBitPosition.bytes[0] & 0x1f) |
          green << (g_GreenBitPosition.bytes[0] & 0x1f) | red << (g_RedBitPosition.bytes[0] & 0x1f);
   }
@@ -31,8 +31,8 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_00490ff0(uint red,uint green,uin
     g_CurrentLineNumber = 921;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel in CBitFont::setTrueColor");
   }
-  g_INT_01c70f68 = green;
-  g_INT_01c70f6c = blue;
-  g_INT_01c70f64 = red;
+  g_ShadowColorGreen = green;
+  g_ShadowColorBlue = blue;
+  g_ShadowColorRed = red;
   return;
 }

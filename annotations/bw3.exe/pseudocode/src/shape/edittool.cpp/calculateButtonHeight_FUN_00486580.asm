@@ -19,7 +19,7 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005bcd3b
 ;   int g_INT_005fba1c = 0xc8
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5bae0
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -55,7 +55,7 @@ section .text
     PUSH 0x6a                           ; 004865b9
     MOV ECX,dword ptr [EAX + 0x41e8]    ; 004865bb
     PUSH EAX                            ; 004865c1
-    MOV dword ptr [0x01c5bae0],ECX      ; 004865c2 | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],ECX      ; 004865c2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004865c8
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004865cd

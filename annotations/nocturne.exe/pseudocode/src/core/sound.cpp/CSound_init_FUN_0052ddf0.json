@@ -122,7 +122,7 @@
   "globals": [
     {
       "addr": "005b7650",
-      "name": "g_CEventList_PTR_005b7650",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c03a10"
     },
@@ -200,79 +200,79 @@
     },
     {
       "addr": "02dc9474",
-      "name": "g_SReverbSettings_02dc9474",
+      "name": "g_SoundReverb",
       "type": "SReverbSettings",
       "value": null
     },
     {
       "addr": "02dc9478",
-      "name": "g_SReverbSettings_02dc9474.decay_time",
+      "name": "g_SoundReverb.decay_time",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc947c",
-      "name": "g_SReverbSettings_02dc9474.damping",
+      "name": "g_SoundReverb.damping",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9c68",
-      "name": "g_CHAR_ARRAY_02dc9c68",
+      "name": "g_SoundAmbientSoundName",
       "type": "char[40]",
       "value": null
     },
     {
       "addr": "02dc9c90",
-      "name": "g_INT_02dc9c90",
+      "name": "g_SoundAmbientSfxHandle",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9c94",
-      "name": "g_INT_02dc9c94",
+      "name": "g_SoundAudioInitialized",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9c98",
-      "name": "g_FLOAT_02dc9c98",
+      "name": "g_CurrentVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9c9c",
-      "name": "g_FLOAT_02dc9c9c",
+      "name": "g_TargetVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9ca0",
-      "name": "g_FLOAT_02dc9ca0",
+      "name": "g_VolumeFadeTimeRemaining",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9d44",
-      "name": "g_CVector3f_02dc9d44",
+      "name": "g_TrainVelocityVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02dc9d48",
-      "name": "g_CVector3f_02dc9d44.y",
+      "name": "g_TrainVelocityVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d4c",
-      "name": "g_CVector3f_02dc9d44.z",
+      "name": "g_TrainVelocityVector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d54",
-      "name": "g_INT_02dc9d54",
+      "name": "g_TrainLastCameraIndex",
       "type": "int",
       "value": null
     }
@@ -454,15 +454,15 @@
       "line": 43,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((uint *)&stack0x00000000 != &g_UINT_02dc9d58) {",
+      "text": "if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {",
       "type": "stack_ref"
     },
     {
-      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_UINT_02dc9d58` is always TRUE (the address of `g_UINT_02dc9d58` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_TrainRailNoiseHandle` is always TRUE (the address of `g_TrainRailNoiseHandle` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
       "line": 43,
-      "match": "if ((T *)0x0 != &g_UINT_02dc9d58)",
+      "match": "if ((T *)0x0 != &g_TrainRailNoiseHandle)",
       "severity": "moderate",
-      "text": "if ((uint *)&stack0x00000000 != &g_UINT_02dc9d58) {",
+      "text": "if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {",
       "type": "tautological_addr_guard"
     }
   ]

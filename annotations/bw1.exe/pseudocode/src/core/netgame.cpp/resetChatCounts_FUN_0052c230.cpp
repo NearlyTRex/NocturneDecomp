@@ -9,7 +9,7 @@
 void __cdecl core_netgame_cpp_resetChatCounts_FUN_0052c230(void)
 
 {
-  g_INT_01d6dfb8 = 0;
-  g_INT_01d51db4 = 0;
+  g_ChatOutCount = 0;
+  g_ChatHistoryCount = 0;
   return;
 }

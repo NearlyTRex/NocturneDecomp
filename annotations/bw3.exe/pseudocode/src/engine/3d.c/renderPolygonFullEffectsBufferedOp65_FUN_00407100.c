@@ -27,48 +27,50 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
   bVar13 = 0;
   iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar3 != 0) {
-    if (g_INT_01c6e2a0 == 0) {
+    if (g_MMXSupported == 0) {
       if (g_INT_005fba20 == 0x20) {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
       }
       else {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
       }
     }
     else if (g_INT_005fba20 == 0x20) {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
     }
-    piVar6 = g_INT_ARRAY_00730418;
-    g_BIT_INTEGER32_01c6e2b4.dword = 0x1e7;
-    g_INT_01c6e2b8 = 1;
+    piVar6 = g_ProcessedVertexIndices;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_ALPHA_FROM_VERTEX);
+    g_VertexPreprocessMode = 1;
     pSVar8 = prim + 1;
-    for (iVar3 = 0; iVar2 = g_INT_0073047c, iVar3 < (prim->base).count * 3; iVar3 = iVar3 + 3) {
-      *piVar6 = (pSVar8->base).type + g_UINT_007303e0;
-      uVar1 = g_UINT_007303e0;
-      g_SRenderVertex_ARRAY_0060b014[(pSVar8->base).type + g_UINT_007303e0].u = (pSVar8->base).count
-      ;
+    for (iVar3 = 0; iVar2 = g_RenderBufferCount, iVar3 < (prim->base).count * 3; iVar3 = iVar3 + 3)
+    {
+      *piVar6 = (pSVar8->base).type + g_ProcessedVertexOffset;
+      uVar1 = g_ProcessedVertexOffset;
+      g_SRenderVertex_ARRAY_0060b014[(pSVar8->base).type + g_ProcessedVertexOffset].u =
+           (pSVar8->base).count;
       piVar6 = piVar6 + 1;
       g_SRenderVertex_ARRAY_0060b014[uVar1 + (pSVar8->base).type].v =
            (int)(pSVar8->surface_normal).A;
       pSVar8 = (SMRGLHeaderPrimitive *)&(pSVar8->surface_normal).B;
     }
-    if (((g_INT_00730478 == 0) || (0x9c3 < g_INT_0073047c)) ||
+    if (((g_RenderBufferEnabled == 0) || (0x9c3 < g_RenderBufferCount)) ||
        (iVar3 = (prim->base).count, 4 < iVar3)) {
-      engine_clipper_c_clipAndRasterize_FUN_0043a840((prim->base).count,g_INT_ARRAY_00730418);
+      engine_clipper_c_clipAndRasterize_FUN_0043a840((prim->base).count,g_ProcessedVertexIndices);
     }
     else {
       iVar9 = 0;
       iStack_14 = 0x7fffffff;
-      pSVar4 = g_SRenderBufferEntry_ARRAY_00730480 + g_INT_0073047c;
-      g_INT_0073047c = g_INT_0073047c + 1;
+      pSVar4 = g_RenderBufferPool + g_RenderBufferCount;
+      g_RenderBufferCount = g_RenderBufferCount + 1;
       pSVar4->vertex_count = iVar3;
       if (0 < iVar3) {
         iVar3 = 0;
         do {
-          pSVar10 = g_SRenderVertex_ARRAY_0060b014 + *(int *)((int)g_INT_ARRAY_00730418 + iVar3);
+          pSVar10 = g_SRenderVertex_ARRAY_0060b014 + *(int *)((int)g_ProcessedVertexIndices + iVar3)
+          ;
           pSVar11 = pSVar4->vertices;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             (pSVar11->projected_vertex).transformed_x = (pSVar10->projected_vertex).transformed_x;
@@ -86,15 +88,15 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
       }
       pSVar5 = engine_texture_cpp_getCurrentTexture_FUN_0056acf0();
       iVar3 = g_INT_005fba38;
-      pSVar12 = &g_SRenderBufferEntry_ARRAY_00730480[iVar2].texture_data;
+      pSVar12 = &g_RenderBufferPool[iVar2].texture_data;
       for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
         (pSVar12->base).type = (pSVar5->base).type;
         pSVar5 = (SMRGLTextureBasic *)((int)pSVar5 + (uint)bVar13 * -8 + 4);
         pSVar12 = (SMRGLTextureModel *)((int)pSVar12 + ((uint)bVar13 * -2 + 1) * 4);
       }
-      g_SRenderBufferEntry_ARRAY_00730480[iVar2].alpha_value = iVar3;
-      g_SRenderBufferEntry_ARRAY_00730480[iVar2].blend_mode = g_INT_01c6e2ac;
-      g_SRenderBufferEntry_ARRAY_00730480[iVar2].min_z_value = iStack_14;
+      g_RenderBufferPool[iVar2].alpha_value = iVar3;
+      g_RenderBufferPool[iVar2].blend_mode = g_INT_01c6e2ac;
+      g_RenderBufferPool[iVar2].min_z_value = iStack_14;
     }
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);

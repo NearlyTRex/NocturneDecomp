@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CTextureCache* g_CTextureCache_PTR_02652eb0
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00574ce0
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02652eb0]      ; 005750d0 | g_CTextureCache_PTR_02652eb0
+    MOV EDX,dword ptr [0x02652eb0]      ; 005750d0 | g_TextureCacheInstance
         ;   Label: engine_texture.cpp_renderTextureAtlas_FUN_005750d0
     PUSH EDX                            ; 005750d6
     CALL engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00574ce0 ; 005750d7

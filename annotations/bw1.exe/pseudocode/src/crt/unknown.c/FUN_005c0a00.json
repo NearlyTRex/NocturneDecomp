@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 399,
+    "complexity_score": 398,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 43,
     "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 182
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -71,13 +71,13 @@
   "globals": [
     {
       "addr": "00626220",
-      "name": "g_Heap_PTR_00626220",
+      "name": "g_MainHeap",
       "type": "Heap*",
       "value": "00000000"
     },
     {
       "addr": "00626224",
-      "name": "g_Heap_PTR_00626224",
+      "name": "g_SecondaryHeap",
       "type": "Heap*",
       "value": "00000000"
     },
@@ -330,28 +330,20 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "((((param_1 < g_Heap_PTR_00626224 ||",
+      "text": "((((param_1 < g_SecondaryHeap ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1)) &&",
+      "text": "(Heap *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= param_1)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))",
@@ -359,7 +351,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1 < pHVar2 ||",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))))) {",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pHVar2 <= param_1) && (param_1 < (Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size))",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pHVar2 <= param_1) && (param_1 < (Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size))",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
+      "line": 43,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626620)();",
@@ -414,16 +414,16 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_Heap_PTR_00626224->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_SecondaryHeap->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 22,
-      "match": "(int)&g_Heap_PTR_00626224->heap_size",
+      "match": "(int)&g_SecondaryHeap->heap_size",
       "severity": "moderate",
-      "text": "(Heap *)((int)&g_Heap_PTR_00626224->heap_size + g_Heap_PTR_00626224->heap_size) <=",
+      "text": "(Heap *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= param_1)) &&",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
       "text": "((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
       "text": "((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))))) {",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 29,
       "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
       "text": "if ((pHVar2 <= param_1) && (param_1 < (Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size))",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Pointer value `pHVar2[1].next_heap_block` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 38,
       "match": "(int)pHVar2[1].next_heap_block",
       "severity": "moderate",
       "text": "g_INT_00626228 = (int)pHVar2[1].next_heap_block;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Pointer value `pHVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 41,
       "match": "(int)pHVar2",
       "severity": "moderate",
       "text": "g_INT_02c9f040 = (int)pHVar2;",
@@ -482,12 +482,12 @@
       "line": 22,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(Heap *)((int)&g_Heap_PTR_00626224->heap_size + g_Heap_PTR_00626224->heap_size) <=",
+      "text": "(Heap *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= param_1)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))",
@@ -495,7 +495,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))))) {",
@@ -503,7 +503,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
+      "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if ((pHVar2 <= param_1) && (param_1 < (Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size))",

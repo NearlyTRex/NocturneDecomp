@@ -20,7 +20,7 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0(void)
   iVar3 = 0;
   do {
     if (*(int *)((int)g_INT_ARRAY_02c9be80 + iVar3) == 1) {
-      g_CHAR_ARRAY_01c50950[iVar1] = '\0';
+      g_KeyboardState[iVar1] = '\0';
     }
     iVar1 = iVar1 + 1;
     *(uint *)((int)g_INT_ARRAY_02c9be80 + iVar3) = 0;
@@ -31,9 +31,9 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0(void)
       TranslateMessage(&local_28);
       DispatchMessageA(&local_28);
     }
-    if ((g_INT_006260e4 != 0) || (g_INT_02c9be70 != 0)) break;
+    if ((g_WindowActive != 0) || (g_InputDisabled != 0)) break;
     Sleep(0x14);
-    if (g_INT_006260e8 == 0) {
+    if (g_ForceMessagePump == 0) {
       return;
     }
   }

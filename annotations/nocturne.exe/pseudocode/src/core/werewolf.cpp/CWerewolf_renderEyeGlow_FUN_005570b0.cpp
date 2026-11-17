@@ -189,7 +189,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *t
   local_100 = 1;
   local_fc = 2;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (this_ptr_00,&g_SMRGLTextureBasic_005c1618);
+            (this_ptr_00,&g_WerewolfEyeGlowTexture);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
             (g_CDemonRenderer_PTR_005ae704,&SStack_11c);

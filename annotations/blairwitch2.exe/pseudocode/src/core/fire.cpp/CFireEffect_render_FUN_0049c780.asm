@@ -17,10 +17,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CSimpleParticleSystem* g_CSimpleParticleSystemPtr = 026687b0
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c3f8e0
-;   undefined4 g_CSmokeParticle_ARRAY_01c3f8e0[1].active
-;   int g_INT_01c558e0
-;   int g_INT_01c594e8
+;   CSmokeParticle[2048] g_SmokeParticlePool
+;   undefined4 g_SmokeParticlePool[1].active
+;   int g_BulletHoleActiveCount
+;   int g_StakeActiveCount
 ;   undefined4 g_SparkPool[0].base.lifetime_remaining
 ;   undefined4 g_SparkPool[0].base.vtable
 ;   undefined4 g_SparkPool[1].base.lifetime_remaining
@@ -59,7 +59,7 @@ section .text
     PUSH EBP                            ; 0049c783
     MOV EBP,ESP                         ; 0049c784
     AND ESP,0xfffffff8                  ; 0049c786
-    MOV EDX,dword ptr [0x01c594e8]      ; 0049c789 | g_INT_01c594e8
+    MOV EDX,dword ptr [0x01c594e8]      ; 0049c789 | g_StakeActiveCount
     XOR ESI,ESI                         ; 0049c78f
     TEST EDX,EDX                        ; 0049c791
     JLE 0x0049c7b5                      ; 0049c793
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_0049c797
     JZ 0x0049cb38                       ; 0049c79e
         ;   XREF to: 0049cb38 (CONDITIONAL_JUMP)  ; LAB_0049cb38
-    MOV ECX,dword ptr [0x01c594e8]      ; 0049c7a4 | g_INT_01c594e8
+    MOV ECX,dword ptr [0x01c594e8]      ; 0049c7a4 | g_StakeActiveCount
         ;   Label: LAB_0049c7a4
     INC ESI                             ; 0049c7aa
     ADD EBX,0x260                       ; 0049c7ab
@@ -190,7 +190,7 @@ section .text
     XOR ESI,ESI                         ; 0049c8b0
     CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50 ; 0049c8b2
         ;   XREF to: 00493d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50(CBulletHole * this_ptr)
-    MOV ECX,dword ptr [0x01c558e0]      ; 0049c8b7 | g_INT_01c558e0
+    MOV ECX,dword ptr [0x01c558e0]      ; 0049c8b7 | g_BulletHoleActiveCount
     ADD ESP,0x4                         ; 0049c8bd
     TEST ECX,ECX                        ; 0049c8c0
     JLE 0x0049c8ed                      ; 0049c8c2
@@ -206,26 +206,26 @@ section .text
     CALL core_fire.cpp_CBulletHole_render_FUN_00493dd0 ; 0049c8d7
         ;   XREF to: 00493dd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00493dd0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0049c8dc
-    MOV EDI,dword ptr [0x01c558e0]      ; 0049c8df | g_INT_01c558e0
+    MOV EDI,dword ptr [0x01c558e0]      ; 0049c8df | g_BulletHoleActiveCount
         ;   Label: LAB_0049c8df
     INC ESI                             ; 0049c8e5
     ADD EBX,0x3c                        ; 0049c8e6
     CMP ESI,EDI                         ; 0049c8e9
     JL 0x0049c8c6                       ; 0049c8eb
         ;   XREF to: 0049c8c6 (CONDITIONAL_JUMP)  ; LAB_0049c8c6
-    PUSH 0x1c3f8e0                      ; 0049c8ed | g_CSmokeParticle_ARRAY_01c3f8e0
+    PUSH 0x1c3f8e0                      ; 0049c8ed | g_SmokeParticlePool
         ;   Label: LAB_0049c8ed
     MOV EBX,0x1c3f8e0                   ; 0049c8f2
     CALL core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410 ; 0049c8f7
         ;   XREF to: 00493410 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0049c8fc
     LEA ESI,[EBX + 0x16000]             ; 0049c8ff
-    MOV EAX,dword ptr [EBX]             ; 0049c905 | g_CSmokeParticle_ARRAY_01c3f8e0 | g_CSmokeParticle_ARRAY_01c3f8e0[1].active
+    MOV EAX,dword ptr [EBX]             ; 0049c905 | g_SmokeParticlePool | g_SmokeParticlePool[1].active
         ;   Label: LAB_0049c905
     TEST EAX,EAX                        ; 0049c907
     JZ 0x0049c914                       ; 0049c909
         ;   XREF to: 0049c914 (CONDITIONAL_JUMP)  ; LAB_0049c914
-    PUSH EBX                            ; 0049c90b | g_CSmokeParticle_ARRAY_01c3f8e0 | g_CSmokeParticle_ARRAY_01c3f8e0[1].active
+    PUSH EBX                            ; 0049c90b | g_SmokeParticlePool | g_SmokeParticlePool[1].active
     CALL core_fire.cpp_CSmokeParticle_render_FUN_00493710 ; 0049c90c
         ;   XREF to: 00493710 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_render_FUN_00493710(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0049c911
@@ -261,7 +261,7 @@ section .text
     CMP EBX,EDI                         ; 0049c94f
     JNZ 0x0049c92b                      ; 0049c951
         ;   XREF to: 0049c92b (CONDITIONAL_JUMP)  ; LAB_0049c92b
-    MOV EDX,dword ptr [0x01c965dc]      ; 0049c953 | g_INT_01c965dc
+    MOV EDX,dword ptr [0x01c965dc]      ; 0049c953 | g_LaserBeamActiveCount
     XOR ESI,ESI                         ; 0049c959
     TEST EDX,EDX                        ; 0049c95b
     JLE 0x0049c980                      ; 0049c95d
@@ -272,7 +272,7 @@ section .text
     CALL core_fire.cpp_CLaserBeam_render_FUN_00497800 ; 0049c965
         ;   XREF to: 00497800 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_render_FUN_00497800(CLaserBeam * this_ptr)
     INC ESI                             ; 0049c96a
-    MOV ECX,dword ptr [0x01c965dc]      ; 0049c96b | g_INT_01c965dc
+    MOV ECX,dword ptr [0x01c965dc]      ; 0049c96b | g_LaserBeamActiveCount
     ADD ESP,0x4                         ; 0049c971
     ADD EBX,0x40                        ; 0049c974
     CMP ESI,ECX                         ; 0049c977
@@ -348,7 +348,7 @@ section .text
         ;   XREF to: 0049c9f5 (CONDITIONAL_JUMP)  ; LAB_0049c9f5
     MOV EBX,0x1c91268                   ; 0049ca15
     LEA ESI,[EBX + 0x168]               ; 0049ca1a
-    MOV EAX,dword ptr [EBX + 0x20]      ; 0049ca20 | g_CBulletTrail_ARRAY_01c91268[0].frames_remaining | g_CBulletTrail_ARRAY_01c91268[1].frames_remaining
+    MOV EAX,dword ptr [EBX + 0x20]      ; 0049ca20 | g_BulletTrailPool[0].frames_remaining | g_BulletTrailPool[1].frames_remaining
         ;   Label: LAB_0049ca20
     TEST EAX,EAX                        ; 0049ca23
     JZ 0x0049ca30                       ; 0049ca25

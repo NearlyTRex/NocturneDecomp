@@ -16,10 +16,10 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,
   int iVar5;
   
   if (g_INT_01c5baec == 0) {
-    g_INT_01c6b5c0 = g_INT_01c5bb64;
+    g_INT_01c6b5c0 = g_InsetColor;
   }
   else {
-    iVar3 = (g_INT_01c5bb64 & 0xffU) * 3;
+    iVar3 = (g_InsetColor & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f3520
               ((uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 2] |
                (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 1] << 8 |

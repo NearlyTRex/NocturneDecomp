@@ -27,7 +27,7 @@
 ;   core_weather.cpp_CWeather_renderParticles_FUN_005ae890 at 005ae8c1
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005db3cc = 0.000030517578125
+;   double g_AngleToRadianScale = 0.000030517578125
 ;   double g_DOUBLE_005db3d4 = 3.14159265350000
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 00509080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_00509080(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 00483b84
     MOV dword ptr [ESP + 0x18],EAX      ; 00483b87
-    FLD double ptr [0x005db3cc]         ; 00483b8b | g_DOUBLE_005db3cc
+    FLD double ptr [0x005db3cc]         ; 00483b8b | g_AngleToRadianScale
     FILD dword ptr [ESP + 0x18]         ; 00483b91
     FMUL ST1                            ; 00483b95
     MOV EAX,dword ptr [ESP + 0x4]       ; 00483b97

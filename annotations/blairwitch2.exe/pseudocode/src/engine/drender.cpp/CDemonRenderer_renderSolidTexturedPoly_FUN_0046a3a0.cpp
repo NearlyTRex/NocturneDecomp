@@ -26,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046a
           this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
           this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
         }
-        *(int *)((int)g_INT_ARRAY_01ba5c84 + iVar4) = iVar1;
+        *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
         pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
         iVar3 = iVar3 + 1;
         iVar4 = iVar4 + 4;
@@ -34,21 +34,21 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046a
     }
     if (this_ptr->shadow_pass_active == 0) {
       if (g_INT_006141c0 == 0x20) {
-        g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
       }
       else {
-        g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
       }
-      g_INT_01c38b58 = 6;
-      g_BIT_INTEGER32_01c38b54.dword = 0xc3;
+      g_VertexPreprocessMode = 6;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     }
     else {
-      g_BIT_INTEGER32_01c38b54.dword = 1;
-      g_INT_01c38b58 = 0;
-      g_PTR_01c35e6c = core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046e9e7;
+      g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+      g_VertexPreprocessMode = 0;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046e9e7;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-              (this_ptr,(poly->base).base.count,g_INT_ARRAY_01ba5c84);
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
   }
   return;
 }

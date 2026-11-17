@@ -17,9 +17,9 @@
 ;   int g_INT_0061b49c = 0xc8
 ;   CScript* g_CScriptPtr = 01e81c80
 ;   int g_INT_01cd0c7c
-;   float g_FLOAT_01cd0c80
-;   int g_INT_01cd0c84
-;   int g_INT_01cd0c88
+;   float g_IrisFadeRadius
+;   int g_IrisFadeCenterX
+;   int g_IrisFadeCenterY
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -122,7 +122,7 @@ section .text
     SHL EDX,0x10                        ; 004d5fad
     SBB EAX,EDX                         ; 004d5fb0
     SAR EAX,0x10                        ; 004d5fb2
-    MOV [0x01cd0c84],EAX                ; 004d5fb5 | g_INT_01cd0c84
+    MOV [0x01cd0c84],EAX                ; 004d5fb5 | g_IrisFadeCenterX
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004d5fba
     MOV EDX,EAX                         ; 004d5fbe
     SAR EDX,0x1f                        ; 004d5fc0
@@ -130,25 +130,25 @@ section .text
     SBB EAX,EDX                         ; 004d5fc6
     SAR EAX,0x10                        ; 004d5fc8
     MOV EDI,dword ptr [0x0061b49c]      ; 004d5fcb | g_INT_0061b49c
-    MOV [0x01cd0c88],EAX                ; 004d5fd1 | g_INT_01cd0c88
+    MOV [0x01cd0c88],EAX                ; 004d5fd1 | g_IrisFadeCenterY
     CMP EDI,0x1e0                       ; 004d5fd6
     JLE 0x004d60cb                      ; 004d5fdc
         ;   XREF to: 004d60cb (CONDITIONAL_JUMP)  ; LAB_004d60cb
     MOV EBP,dword ptr [0x0061b498]      ; 004d5fe2 | g_INT_0061b498
-    MOV EDX,dword ptr [0x01cd0c84]      ; 004d5fe8 | g_INT_01cd0c84
+    MOV EDX,dword ptr [0x01cd0c84]      ; 004d5fe8 | g_IrisFadeCenterX
     IMUL EDX,EBP                        ; 004d5fee
     MOV EBX,0x280                       ; 004d5ff1
     MOV EAX,EDX                         ; 004d5ff6
     SAR EDX,0x1f                        ; 004d5ff8
     IDIV EBX                            ; 004d5ffb
-    MOV EDX,dword ptr [0x01cd0c88]      ; 004d5ffd | g_INT_01cd0c88
+    MOV EDX,dword ptr [0x01cd0c88]      ; 004d5ffd | g_IrisFadeCenterY
     IMUL EDX,EDI                        ; 004d6003
     MOV EBX,0x1e0                       ; 004d6006
-    MOV [0x01cd0c84],EAX                ; 004d600b | g_INT_01cd0c84
+    MOV [0x01cd0c84],EAX                ; 004d600b | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004d6010
     SAR EDX,0x1f                        ; 004d6012
     IDIV EBX                            ; 004d6015
-    MOV [0x01cd0c88],EAX                ; 004d6017 | g_INT_01cd0c88
+    MOV [0x01cd0c88],EAX                ; 004d6017 | g_IrisFadeCenterY
     ADD ESP,0x9c                        ; 004d601c
     POP EBP                             ; 004d6022
     POP EDI                             ; 004d6023
@@ -163,14 +163,14 @@ section .text
     SUB EAX,EDX                         ; 004d6045
     SAR EAX,0x1                         ; 004d6047
     MOV EDX,dword ptr [0x0061b49c]      ; 004d6049 | g_INT_0061b49c
-    MOV [0x01cd0c84],EAX                ; 004d604f | g_INT_01cd0c84
+    MOV [0x01cd0c84],EAX                ; 004d604f | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004d6054
     SAR EDX,0x1f                        ; 004d6056
     SUB EAX,EDX                         ; 004d6059
     SAR EAX,0x1                         ; 004d605b
     XOR ECX,ECX                         ; 004d605d
-    MOV dword ptr [0x01cd0c80],ECX      ; 004d605f | g_FLOAT_01cd0c80
-    MOV [0x01cd0c88],EAX                ; 004d6065 | g_INT_01cd0c88
+    MOV dword ptr [0x01cd0c80],ECX      ; 004d605f | g_IrisFadeRadius
+    MOV [0x01cd0c88],EAX                ; 004d6065 | g_IrisFadeCenterY
     JMP 0x004d60b0                      ; 004d606a
         ;   XREF to: 004d60b0 (UNCONDITIONAL_CALL)
 

@@ -54,7 +54,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
   } while (cVar1 != '\0');
   if (iVar6 != -2) {
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
-              (g_CBitFont_PTR_01549aa0,0,0x27f,10,0xf8,0,this_ptr->end_timer_text);
+              (g_MediumFont,0,0x27f,10,0xf8,0,this_ptr->end_timer_text);
   }
   if (ABS(this_ptr->message_timer) != 0.0) {
     if (1.0 <= (double)this_ptr->message_timer) {
@@ -68,7 +68,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
     engine_3d_c_setRenderAlpha_FUN_00406bf0(iVar6);
     local_38 = g_CBitFont_PTR_01549aa8;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
-      local_38 = g_CBitFont_PTR_01549ab4;
+      local_38 = g_SmallEditorFont;
     }
     pCVar8 = local_38;
     iVar6 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
@@ -80,7 +80,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
     local_54 = iVar4;
     iVar5 = core_script_cpp_CScript_getLetterboxHeight_FUN_00528f60(g_CScriptPtr);
     iVar4 = (iVar6 - iVar5) - iVar4;
-    if (pCVar8 == g_CBitFont_PTR_01549ab4) {
+    if (pCVar8 == g_SmallEditorFont) {
       iVar4 = iVar4 + -7;
     }
     iVar6 = 0;
@@ -97,10 +97,10 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
       } while (iVar6 < local_48);
     }
   }
-  if (0.0 < g_FLOAT_01d22af4) {
-    pCVar8 = g_CBitFont_PTR_01549aa0;
-    if ((g_INT_005fba1c < 0x1e0) && (pCVar8 = g_CBitFont_PTR_01549aa4, g_INT_005fba1c < 0x180)) {
-      pCVar8 = g_CBitFont_PTR_01549ab4;
+  if (0.0 < g_OverlayDisplayTimer) {
+    pCVar8 = g_MediumFont;
+    if ((g_INT_005fba1c < 0x1e0) && (pCVar8 = g_TinyFont, g_INT_005fba1c < 0x180)) {
+      pCVar8 = g_SmallEditorFont;
     }
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar8,0x58);
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004b30c0(pCVar8,0x58);
@@ -116,12 +116,12 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
     iVar5 = local_60 >> 0x1f;
     iVar6 = local_60 + iVar5 * -4;
     local_44 = (CBitFont *)(local_5c / 0x28);
-    local_40 = g_CBitFont_PTR_01549ab4;
+    local_40 = g_SmallEditorFont;
     if (0x280 < g_INT_005fba18) {
-      local_40 = g_CBitFont_PTR_01549aa4;
+      local_40 = g_TinyFont;
     }
     if (800 < g_INT_005fba18) {
-      local_40 = g_CBitFont_PTR_01549aa0;
+      local_40 = g_MediumFont;
     }
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_40,0x58);
     if ((int)local_44 < iVar4) {

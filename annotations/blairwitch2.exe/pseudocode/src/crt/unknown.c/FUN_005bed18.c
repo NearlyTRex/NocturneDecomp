@@ -39,8 +39,8 @@ uint FUN_005bed18(short param_1,Heap *param_2,uint param_3,uint *param_4)
       uVar7 = puVar8[2];
       uVar2 = puVar8[1];
       if (in_DS == param_1) {
-        pHVar3 = g_Heap_PTR_0061eea0->next_heap_block;
-        unaff_EBX = g_Heap_PTR_0061eea0;
+        pHVar3 = g_MainHeap->next_heap_block;
+        unaff_EBX = g_MainHeap;
         while ((pHVar3 != (Heap *)0x0 &&
                ((param_2 < unaff_EBX ||
                 ((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {
@@ -80,8 +80,8 @@ uint FUN_005bed18(short param_1,Heap *param_2,uint param_3,uint *param_4)
       *ppHVar1 = (Heap *)(uVar4 | 1);
       *(uint *)(uVar4 + (int)ppHVar1) = uVar7 - uVar4 | 1;
       if (in_DS == param_1) {
-        pHVar3 = g_Heap_PTR_0061eea0->next_heap_block;
-        unaff_EBX = g_Heap_PTR_0061eea0;
+        pHVar3 = g_MainHeap->next_heap_block;
+        unaff_EBX = g_MainHeap;
         while ((pHVar3 != (Heap *)0x0 &&
                ((param_2 < unaff_EBX ||
                 ((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {

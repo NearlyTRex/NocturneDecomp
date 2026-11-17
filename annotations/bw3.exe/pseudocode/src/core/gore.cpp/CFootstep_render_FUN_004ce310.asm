@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005e0e18 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005ffeac
+;   SMRGLTextureBasic g_FootstepTexture
 ;   SRenderVertex[20000] g_SRenderVertex_ARRAY_0060b014
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].v
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0x8                         ; 004ce3b8
     XOR EBX,EBX                         ; 004ce3bb
     MOV EAX,[0x005f2afc]                ; 004ce3bd | g_CDemonRenderer_PTR_005f2afc
-    PUSH 0x5ffeac                       ; 004ce3c2 | g_SMRGLTextureBasic_005ffeac
+    PUSH 0x5ffeac                       ; 004ce3c2 | g_FootstepTexture
     MOV dword ptr [0x01d22e90],EBX      ; 004ce3c7 | g_SMRGLHeaderPrimitive_01d22e88.surface_normal.A
     MOV dword ptr [0x01d22e94],EBX      ; 004ce3cd | g_SMRGLHeaderPrimitive_01d22e88.surface_normal.B
     PUSH EAX                            ; 004ce3d3 | g_CDemonRenderer_01bdd7e4

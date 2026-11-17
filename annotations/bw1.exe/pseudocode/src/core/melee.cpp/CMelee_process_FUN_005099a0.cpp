@@ -43,7 +43,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_005099a0(CMelee *this_ptr,float d
     *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          *(uint *)((int)&CStack_10 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004e5f40
-              (g_CGorePtr,&CStack_28,&g_CVector3f_02c8af28,this_ptr->blood_gore_type);
+              (g_CGorePtr,&CStack_28,&g_ZeroVector,this_ptr->blood_gore_type);
     return;
   }
   return;

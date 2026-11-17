@@ -14,7 +14,7 @@
 ;   TerminatedCString s_lightFov_005d4d97
 ;   TerminatedCString s_light_status_005d4da0
 ;   TerminatedCString s_light_falloff_005d4dad
-;   int g_INT_007c3038
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0
@@ -58,7 +58,7 @@ section .text
     LEA ESI,[EBX + 0x67c]               ; 00423230
     CALL core_actor.cpp_archiveOrientation_FUN_0040b260 ; 00423236
         ;   XREF to: 0040b260 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040b260(COrientation * orient_ptr, char * property_name)
-    MOV ECX,dword ptr [0x007c3038]      ; 0042323b | g_INT_007c3038
+    MOV ECX,dword ptr [0x007c3038]      ; 0042323b | g_ActorReadingMode
     ADD ESP,0x8                         ; 00423241
     CMP ECX,0x1                         ; 00423244
     JNZ 0x00423285                      ; 00423247

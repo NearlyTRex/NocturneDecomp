@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c1cf0 at 005c1cfa
 ;
 ; Referenced Globals:
-;   FileListNode* g_FileListNode_PTR_02680164
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_unknown.c_debugFree_FUN_005b86a0
@@ -19,17 +19,17 @@ section .text
 
     PUSH EBX                            ; 005be848
         ;   Label: crt_unknown.c_FUN_005be848
-    CMP dword ptr [0x02680164],0x0      ; 005be849 | g_FileListNode_PTR_02680164
+    CMP dword ptr [0x02680164],0x0      ; 005be849 | g_FreeListHeadPointer
     JZ 0x005be86c                       ; 005be850
         ;   XREF to: 005be86c (CONDITIONAL_JUMP)  ; LAB_005be86c
-    MOV EAX,[0x02680164]                ; 005be852 | g_FileListNode_PTR_02680164
+    MOV EAX,[0x02680164]                ; 005be852 | g_FreeListHeadPointer
         ;   Label: LAB_005be852
     PUSH EAX                            ; 005be857
     MOV EBX,dword ptr [EAX]             ; 005be858
     CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005be85a
         ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005be85f
-    MOV dword ptr [0x02680164],EBX      ; 005be862 | g_FileListNode_PTR_02680164
+    MOV dword ptr [0x02680164],EBX      ; 005be862 | g_FreeListHeadPointer
     TEST EBX,EBX                        ; 005be868
     JNZ 0x005be852                      ; 005be86a
         ;   XREF to: 005be852 (CONDITIONAL_JUMP)  ; LAB_005be852

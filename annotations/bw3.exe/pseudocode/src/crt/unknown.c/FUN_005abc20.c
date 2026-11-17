@@ -9,9 +9,9 @@
 void FUN_005abc20(void)
 
 {
-  if (g_SIOControlBlock_PTR_00607bdc != (SIOControlBlock *)0x0) {
-    debugFree(g_SIOControlBlock_PTR_00607bdc);
-    g_SIOControlBlock_PTR_00607bdc = (SIOControlBlock *)0x0;
+  if (g_IOControlBlock != (SIOControlBlock *)0x0) {
+    debugFree(g_IOControlBlock);
+    g_IOControlBlock = (SIOControlBlock *)0x0;
   }
   return;
 }

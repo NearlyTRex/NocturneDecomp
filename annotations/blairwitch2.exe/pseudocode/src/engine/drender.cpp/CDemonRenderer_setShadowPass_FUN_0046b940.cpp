@@ -9,7 +9,7 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer *this_ptr,int value)
 
 {
-  g_INT_0070ca74 = value;
+  g_TexturesDisabled = value;
   this_ptr->shadow_pass_active = value;
   return;
 }

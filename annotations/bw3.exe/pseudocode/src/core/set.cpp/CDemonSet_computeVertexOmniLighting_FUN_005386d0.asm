@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005d06af = 255
-;   int g_INT_01d1a0a4
+;   int g_FastSqrtMagic
 ;   int g_INT_0203b3e8
 ;
 ; Called Functions:
@@ -169,7 +169,7 @@ section .text
     FADDP                               ; 00538858
     FSTP float ptr [ESP + 0x48]         ; 0053885a
     MOV EAX,dword ptr [ESP + 0x48]      ; 0053885e
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 00538862 | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 00538862 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00538868
     ADD EAX,EDI                         ; 0053886a
     MOV dword ptr [ESP + 0x44],EAX      ; 0053886c

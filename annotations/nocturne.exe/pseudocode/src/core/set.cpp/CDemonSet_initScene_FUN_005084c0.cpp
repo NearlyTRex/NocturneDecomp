@@ -19,7 +19,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
   
   iVar6 = 0;
   text = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Initializing scene");
-  core_level_cpp_CLevelLoader_update_FUN_004c59e0(g_CLevelLoader_PTR_005baca0,text,iVar6);
+  core_level_cpp_CLevelLoader_update_FUN_004c59e0(g_CLevelLoaderPtr,text,iVar6);
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
   core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(g_CFilterCachePtr);
   g_INT_01fba2d8 = 0;
@@ -52,16 +52,16 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
     iVar6 = iVar6 + 4;
   } while (iVar6 != 0x180);
   iVar6 = 0;
-  g_INT_01fb99d0 = 0;
+  g_MasterLightCount = 0;
   pCVar5 = this_ptr;
   if (0 < this_ptr->light_count) {
     do {
       if (pCVar5->lights[0].light_type == 0) {
         pCVar1 = core_setutil_cpp_C3DSLight_create_FUN_005151f0(this_ptr->lights + iVar6);
-        g_CDemonLight_PTR_ARRAY_01fb99d4[g_INT_01fb99d0] = pCVar1;
+        g_CDemonLight_PTR_ARRAY_01fb99d4[g_MasterLightCount] = pCVar1;
         core_setutil_cpp_C3DSLight_apply_FUN_00515350(this_ptr->lights + iVar6,pCVar1);
-        g_INT_01fb99d0 = g_INT_01fb99d0 + 1;
-        if (0x60 < g_INT_01fb99d0) {
+        g_MasterLightCount = g_MasterLightCount + 1;
+        if (0x60 < g_MasterLightCount) {
           g_CurrentFilename = "..\\core\\set.cpp";
           g_CurrentLineNumber = 882;
           core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::initScene - Too many spotlights!");
@@ -72,7 +72,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
     } while (iVar6 < this_ptr->light_count);
   }
   iVar6 = 0;
-  if (0 < g_INT_01fb99d0) {
+  if (0 < g_MasterLightCount) {
     iVar2 = 0;
     do {
       pCVar1 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fb99d4 + iVar2);
@@ -82,7 +82,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
       iVar2 = iVar2 + 4;
       iVar6 = iVar6 + 1;
       core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(pCVar1,0);
-    } while (iVar6 < g_INT_01fb99d0);
+    } while (iVar6 < g_MasterLightCount);
   }
   this_ptr->selected_camera_index = -1;
   this_ptr->previous_best_camera_index = -1;
@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
   g_INT_01fb9b54 = 0;
   g_INT_01fba9a4 = 0;
   g_INT_01fba2ec = 0;
-  g_INT_01fba480 = 0;
+  g_QueuedCoronaGlobeCount = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0(this_ptr);
   if (0 < this_ptr->camera_count) {
@@ -104,7 +104,6 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
       pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
     } while (iVar6 < this_ptr->camera_count);
   }
-  core_weather_cpp_CWeather_setWeatherType_FUN_00555750
-            (g_CWeather_PTR_005c15b8,this_ptr->weather_type);
+  core_weather_cpp_CWeather_setWeatherType_FUN_00555750(g_CWeatherPtr,this_ptr->weather_type);
   return;
 }

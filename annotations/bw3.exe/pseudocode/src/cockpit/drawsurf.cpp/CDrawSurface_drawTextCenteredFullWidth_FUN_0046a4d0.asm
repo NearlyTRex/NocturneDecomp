@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0(CDrawSurface *this_ptr,char *param_2,int param_3)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0(CDrawSurface *this_ptr,char *text,int y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0046a510 at 0046a561

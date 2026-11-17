@@ -11,18 +11,18 @@
 // =============================================================================
 
 // SRGBColorPalette
-extern SRGBColorPalette g_SRGBColorPalette_00b65c98;
+extern SRGBColorPalette g_CameraImagePaletteData;
 
-// char[24][307200]
-extern char g_CHAR_ARRAY_ARRAY_00b667a8[24][307200];
+// char[24][614400]
+extern char g_LightBufferPool[24][614400];
 
 // int
-extern int g_INT_00b65f98;
-extern int g_INT_00b6679c;
-extern int g_INT_00b667a0;
-extern int g_INT_00b667a4;
+extern int g_CoronaBlurFillValue;
+extern int g_CoronaMaxDepth;
+extern int g_CoronaDepthShift;
+extern int g_LightBufferPoolIndex;
 
 // uint[256]
-extern uint g_UINT_ARRAY_00b65f9c[256];
-extern uint g_UINT_ARRAY_00b6639c[256];
+extern uint g_CameraConvertedPalette[256];
+extern uint g_LightmapTexturePalette[256];
 

@@ -23,8 +23,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CPuzzle* g_CPuzzle_PTR_007c3978
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   char[600] g_CHAR_ARRAY_01ccff98
-;   int g_INT_01cd01f0
+;   char[600] g_PrevKeyboardState
+;   int g_InputResetFlag
 ;   int g_INT_01cd01f4
 ;   int g_INT_01cd0b40
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0xc                         ; 004d19e9
     PUSH 0x258                          ; 004d19ec
     PUSH 0x0                            ; 004d19f1
-    PUSH 0x1ccff98                      ; 004d19f3 | g_CHAR_ARRAY_01ccff98
+    PUSH 0x1ccff98                      ; 004d19f3 | g_PrevKeyboardState
     CALL crt_memory.c_memset_FUN_005bfb70 ; 004d19f8
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     MOV EAX,[0x00622c18]                ; 004d19fd | g_CDemonSetPtr
@@ -91,7 +91,7 @@ section .text
     SUB EAX,EDX                         ; 004d1a5d
     SAR EAX,0x1                         ; 004d1a5f
     PUSH EAX                            ; 004d1a61
-    MOV dword ptr [0x01cd01f0],ECX      ; 004d1a62 | g_INT_01cd01f0
+    MOV dword ptr [0x01cd01f0],ECX      ; 004d1a62 | g_InputResetFlag
     CALL wincore_winrun.cpp_setCursorPosition_FUN_005b2750 ; 004d1a68
         ;   XREF to: 005b2750 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_005b2750(int x, int y)
     ADD ESP,0x8                         ; 004d1a6d

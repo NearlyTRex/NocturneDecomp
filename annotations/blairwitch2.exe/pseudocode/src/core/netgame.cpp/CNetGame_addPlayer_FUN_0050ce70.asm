@@ -21,8 +21,8 @@
 ;   TerminatedCString s_CNetGame_addPlayer_too_m_005e0ab3
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   uint g_UINT_01d34e38
-;   int g_INT_01d34e44
+;   uint g_CurrentGameTime
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -85,13 +85,13 @@ section .text
     MOV dword ptr [EBX + 0x14],EAX      ; 0050ceee
     MOV EAX,dword ptr [ESP + 0x24]      ; 0050cef1
     MOV dword ptr [EBX + 0x18],EAX      ; 0050cef5
-    MOV EAX,[0x01d34e38]                ; 0050cef8 | g_UINT_01d34e38
+    MOV EAX,[0x01d34e38]                ; 0050cef8 | g_CurrentGameTime
     MOV dword ptr [EBX + 0x24],EAX      ; 0050cefd
     SUB EAX,0x1e0000                    ; 0050cf00
     MOV dword ptr [EBX + 0x2c],EAX      ; 0050cf05
     MOV EDX,EAX                         ; 0050cf08
     MOV dword ptr [EBX + 0x30],EAX      ; 0050cf0a
-    MOV EAX,[0x01d34e44]                ; 0050cf0d | g_INT_01d34e44
+    MOV EAX,[0x01d34e44]                ; 0050cf0d | g_NetNextPlayerId
     MOV dword ptr [EBX + 0x38],EDX      ; 0050cf12
     DEC EAX                             ; 0050cf15
     MOV dword ptr [EBX + 0x34],EAX      ; 0050cf16

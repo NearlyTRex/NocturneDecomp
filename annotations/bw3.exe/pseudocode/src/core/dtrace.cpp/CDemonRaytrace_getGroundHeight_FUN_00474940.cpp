@@ -93,14 +93,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00474940(CDemon
     normal_out->z = 0.0;
     normal_out->x = 0.0;
   }
-  g_INT_01548b74 = (int)g_CVector3f_02cfd900.y;
-  g_FLOAT_01548b78 = g_CVector3f_02cfd900.z;
-  g_FLOAT_01548b70 = g_CVector3f_02cfd900.x;
-  g_INT_01548b68 = (int)g_CVector3f_02cfd900.y;
-  g_FLOAT_01548b6c = g_CVector3f_02cfd900.z;
-  g_FLOAT_01548b64 = g_CVector3f_02cfd900.x;
-  g_INT_01548b5c = (int)g_CVector3f_02cfd900.y;
-  g_FLOAT_01548b60 = g_CVector3f_02cfd900.z;
-  g_FLOAT_01548b58 = g_CVector3f_02cfd900.x;
+  g_INT_01548b74 = (int)g_ZeroVector.y;
+  g_FLOAT_01548b78 = g_ZeroVector.z;
+  g_FLOAT_01548b70 = g_ZeroVector.x;
+  g_INT_01548b68 = (int)g_ZeroVector.y;
+  g_FLOAT_01548b6c = g_ZeroVector.z;
+  g_FLOAT_01548b64 = g_ZeroVector.x;
+  g_INT_01548b5c = (int)g_ZeroVector.y;
+  g_FLOAT_01548b60 = g_ZeroVector.z;
+  g_FLOAT_01548b58 = g_ZeroVector.x;
   return local_64;
 }

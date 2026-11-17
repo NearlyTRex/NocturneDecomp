@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_004da140(CMobster *this_ptr)
 
 {
-  return &g_CMobsterActorType_01ccdbd8;
+  return &g_CMobsterClassInfo;
 }

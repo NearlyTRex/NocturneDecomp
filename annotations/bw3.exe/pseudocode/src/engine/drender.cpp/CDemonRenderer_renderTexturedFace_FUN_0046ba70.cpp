@@ -31,24 +31,24 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70(C
       this_ptr->vertex_buffer_ptr[uVar2].v = (uint)*puVar1 << 8;
     } while (pSVar3 != (SInputFace *)&face->u_coord_0);
   }
-  g_INT_ARRAY_01bdd818[0] = (int)(face->vertex_indices).vertex_index_0;
-  g_INT_ARRAY_01bdd818[1] = (int)(face->vertex_indices).vertex_index_1;
-  g_INT_ARRAY_01bdd818[2] = (int)(face->vertex_indices).vertex_index_2;
+  g_VertexIndexBuffer[0] = (int)(face->vertex_indices).vertex_index_0;
+  g_VertexIndexBuffer[1] = (int)(face->vertex_indices).vertex_index_1;
+  g_VertexIndexBuffer[2] = (int)(face->vertex_indices).vertex_index_2;
   if (this_ptr->shadow_pass_active == 0) {
     if (g_INT_005fba20 == 0x20) {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
     }
-    g_BIT_INTEGER32_01c6e2b4.dword = render_flags;
-    g_INT_01c6e2b8 = 6;
-    engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(this_ptr,3,g_INT_ARRAY_01bdd818);
+    g_RenderStateFlags.dword = render_flags;
+    g_VertexPreprocessMode = 6;
+    engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(this_ptr,3,g_VertexIndexBuffer);
     return;
   }
-  g_BIT_INTEGER32_01c6e2b4.dword = 0;
-  g_INT_01c6e2b8 = 0;
-  g_PTR_01c6b5cc = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6;
-  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(this_ptr,3,g_INT_ARRAY_01bdd818);
+  g_RenderStateFlags.dword = 0;
+  g_VertexPreprocessMode = 0;
+  g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6;
+  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(this_ptr,3,g_VertexIndexBuffer);
   return;
 }

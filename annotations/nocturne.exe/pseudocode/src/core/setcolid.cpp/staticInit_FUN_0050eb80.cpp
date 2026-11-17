@@ -9,7 +9,6 @@
 void __cdecl core_setcolid_cpp_staticInit_FUN_0050eb80(void)
 
 {
-  __arrinit
-            (g_SRaytraceState_ARRAY_020842d4,5,&g_SRaytraceStateTypeInfo_005a1a10);
+  __arrinit(g_RaytraceStateStack,5,&g_SRaytraceStateTypeInfo_005a1a10);
   return;
 }

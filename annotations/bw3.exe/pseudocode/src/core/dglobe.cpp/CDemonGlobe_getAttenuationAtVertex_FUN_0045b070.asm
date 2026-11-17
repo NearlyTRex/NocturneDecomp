@@ -32,7 +32,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005de388 = 0.00390625
 ;   float g_FLOAT_005de38c = 0.00001525879
-;   int g_INT_01d1a0a8
+;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -108,7 +108,7 @@ section .text
     JZ 0x0045b1a1                       ; 0045b11a
         ;   XREF to: 0045b1a1 (CONDITIONAL_JUMP)  ; LAB_0045b1a1
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045b120
-    MOV EDX,dword ptr [0x01d1a0a8]      ; 0045b123 | g_INT_01d1a0a8
+    MOV EDX,dword ptr [0x01d1a0a8]      ; 0045b123 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0045b129
     SUB EDX,EAX                         ; 0045b12b
     MOV dword ptr [EBP + -0xc],EDX      ; 0045b12d

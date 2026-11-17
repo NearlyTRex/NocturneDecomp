@@ -11,8 +11,8 @@ int __cdecl engine_special_cpp_updateTextureBGRA_FUN_00565a30(SMRGLTextureBasic 
 {
   int iVar1;
   
-  if ((g_INT_01c6cee8 != 0) && (g_PTR_02cf6018 != (byte *)0x0)) {
-    iVar1 = (*(code *)g_PTR_02cf6018)(texture_info,g_INT_005fba28,flags);
+  if ((g_INT_01c6cee8 != 0) && (g_APIDLL_updateTextureBGRA != (byte *)0x0)) {
+    iVar1 = (*(code *)g_APIDLL_updateTextureBGRA)(texture_info,g_INT_005fba28,flags);
     return iVar1;
   }
   return 0;

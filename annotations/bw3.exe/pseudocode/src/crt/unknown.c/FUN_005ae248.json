@@ -80,19 +80,19 @@
     },
     {
       "addr": "00607df0",
-      "name": "g_PTR_00607df0",
+      "name": "g_UserExceptionFilter",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "00607df4",
-      "name": "g_PTR_00607df4",
+      "name": "g_ExceptionCleanup",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "02d261c4",
-      "name": "g_BYTE_02d261c4",
+      "name": "g_SignalHandlingActive",
       "type": "byte",
       "value": null
     }
@@ -260,7 +260,7 @@
       "line": 66,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (*(code *)g_PTR_00607df0)(iVar4,param_1->ExceptionCode);",
+      "text": "iVar2 = (*(code *)g_UserExceptionFilter)(iVar4,param_1->ExceptionCode);",
       "type": "unresolved_funcptr"
     },
     {
@@ -268,7 +268,7 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(code *)g_PTR_00607df0)(iVar4,param_1->ExceptionCode);",
+      "text": "iVar2 = (*(code *)g_UserExceptionFilter)(iVar4,param_1->ExceptionCode);",
       "type": "unnamed_param"
     },
     {
@@ -276,7 +276,7 @@
       "line": 70,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_00607df4)(iVar4);",
+      "text": "(*(code *)g_ExceptionCleanup)(iVar4);",
       "type": "unresolved_funcptr"
     },
     {

@@ -2,17 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 34,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 1,
     "suspect_types": [
       "raw_address_constant"
     ],
-    "total_lines": 58
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -49,25 +49,25 @@
   "globals": [
     {
       "addr": "006b0268",
-      "name": "g_UINT_006b0268",
+      "name": "g_ProcessedVertexBackupOffset",
       "type": "uint",
       "value": null
     },
     {
       "addr": "006b02dc",
-      "name": "g_INT_ARRAY_006b029c[16]",
+      "name": "g_ProcessedVertexIndices[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006b02e0",
-      "name": "g_INT_ARRAY_006b029c[17]",
+      "name": "g_ProcessedVertexIndices[17]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006b02e4",
-      "name": "g_INT_ARRAY_006b029c[18]",
+      "name": "g_ProcessedVertexIndices[18]",
       "type": "undefined4",
       "value": null
     },
@@ -160,11 +160,11 @@
   },
   "suspects": [
     {
-      "description": "Raw hex literal 0x6b02dc matches address of g_INT_ARRAY_006b029c (+64 bytes into) (type int[24]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 16,
+      "description": "Raw hex literal 0x6b02dc matches address of g_ProcessedVertexIndices (+64 bytes into) (type int[24]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 17,
       "match": "0x6b02dc",
       "severity": "moderate",
-      "text": "g_INT_ARRAY_006b415c[g_UINT_006b0268] = g_UINT_006b0268 * 0x20 + 0x6b02dc;",
+      "text": "g_ProcessedVertexBackupOffset * 0x20 + 0x6b02dc;",
       "type": "raw_address_constant"
     }
   ]

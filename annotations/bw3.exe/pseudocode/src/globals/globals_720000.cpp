@@ -22,5 +22,5 @@ undefined4 DAT_0072ff68 = {};
 undefined4 DAT_0072ffb8 = {};
 
 // void*
-void* g_PTR_0072ffac = {};
+void* g_SoftwareZBuffer = {};
 

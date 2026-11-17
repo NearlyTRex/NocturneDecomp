@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a1ec0(SPageResource *this_ptr,char *param_2)
+; void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a1ec0(SPageResource *this_ptr,char *link)
 ;
 ; Parameters:
 ; SPageResource *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   link
 ;
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d046a0

@@ -10,13 +10,13 @@
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_00552aa0 at 00552aa5
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02648e80
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02648e80],0x0      ; 00552b10 | g_CSoundDevice_PTR_02648e80
+    CMP dword ptr [0x02648e80],0x0      ; 00552b10 | g_CSoundDevicePtr
         ;   Label: sound_sndmain.cpp_isSoundSystemActive_FUN_00552b10
     SETNZ AL                            ; 00552b17
     AND EAX,0xff                        ; 00552b1a

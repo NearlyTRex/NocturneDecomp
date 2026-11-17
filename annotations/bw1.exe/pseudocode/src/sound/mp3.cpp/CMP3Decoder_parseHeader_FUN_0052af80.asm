@@ -23,7 +23,7 @@
 ;   TerminatedCString s_sound_mp3_cpp_005eb13d
 ;   TerminatedCString s_Out_of_memory_File_s_005eb14e
 ;   double g_DOUBLE_005eb58e = 1000
-;   double[2][4] g_DOUBLE_ARRAY_ARRAY_006202e8
+;   double[2][4] g_MpegSampleRateTable
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -138,7 +138,7 @@ section .text
     MOV EBX,dword ptr [ESP]             ; 0052b07f
     MOV EAX,dword ptr [ESP + 0x10]      ; 0052b082
     SHL EBX,0x5                         ; 0052b086
-    FLD double ptr [EBX + EAX*0x8 + 0x6202e8] ; 0052b089 | g_DOUBLE_ARRAY_ARRAY_006202e8
+    FLD double ptr [EBX + EAX*0x8 + 0x6202e8] ; 0052b089 | g_MpegSampleRateTable
     FMUL double ptr [0x005eb58e]        ; 0052b090 | g_DOUBLE_005eb58e
     PUSH 0x0                            ; 0052b096
     CALL crt_math.c_round_FUN_005c03a0  ; 0052b098

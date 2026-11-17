@@ -25,8 +25,8 @@ void __watcallRegister entry(void)
   
   uStack_14 = 0x5ad1f1;
   FUN_005ae4a0();
-  iVar5 = -(g_ULONG_00607e78 + 3 & 0xfffffffc);
-  *(ulong *)(auStack_10 + iVar5 + -4) = g_ULONG_00607e78;
+  iVar5 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
+  *(ulong *)(auStack_10 + iVar5 + -4) = g_RuntimeBufferSize;
   *(uint *)((int)aiStack_1c + iVar5 + 4) = 0;
   *(byte **)((int)aiStack_1c + iVar5) = auStack_10 + iVar5;
   *(uint *)((int)&uStack_20 + iVar5) = 0x5ad20e;
@@ -34,30 +34,30 @@ void __watcallRegister entry(void)
             (*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),
              *(ulong *)(auStack_10 + iVar5 + -4));
   *(byte **)(auStack_10 + iVar5 + -4) = auStack_10 + iVar5;
-  *(ulong *)(&stack0x000000e0 + iVar5) = g_ULONG_00607e78;
+  *(ulong *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;
   *(byte **)((int)aiStack_1c + iVar5 + 4) = auStack_10;
   *(uint *)((int)aiStack_1c + iVar5) = 0x5ad226;
   FUN_005a81b8();
   puVar7 = auStack_10 + iVar5;
-  uVar6 = g_INT_00607964 + 3U & 0xfffffffc;
+  uVar6 = g_StackAllocSize + 3U & 0xfffffffc;
   *(uint *)(auStack_10 + iVar5 + -4) = 0x5ad23a;
   uVar2 = FUN_005aefe0();
   if (uVar6 < uVar2) {
     *(uint *)(auStack_10 + iVar5 + -4) = uVar6;
     *(uint *)((int)aiStack_1c + iVar5 + 4) = 0x5ad244;
     FUN_005a6033();
-    iVar1 = -(g_INT_00607964 + 3U & 0xfffffffc);
+    iVar1 = -(g_StackAllocSize + 3U & 0xfffffffc);
     puVar7 = auStack_10 + iVar1 + iVar5;
     puVar3 = auStack_10 + iVar1 + iVar5;
   }
   else {
     puVar3 = (byte *)0x0;
   }
-  g_PTR_00607968 = puVar3 + g_INT_00607964;
+  g_CrtStackBuffer = puVar3 + g_StackAllocSize;
   *(uint *)(puVar7 + -4) = 0x5ad268;
   FUN_005af7f0();
   *(uint *)(puVar7 + -4) = 10;
-  *(int *)(puVar7 + -8) = g_INT_00607940;
+  *(int *)(puVar7 + -8) = g_WinMainCmdShow;
   *(uint *)(puVar7 + -0xc) = 0;
   *(uint *)(puVar7 + -0x10) = 0;
   *(uint *)(puVar7 + -0x14) = 0x5ad27c;

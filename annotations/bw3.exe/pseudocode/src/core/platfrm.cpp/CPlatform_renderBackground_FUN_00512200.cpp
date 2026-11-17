@@ -36,12 +36,12 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_00512200(CPlatform 
       return;
     }
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (g_CEventList_PTR_005fba60,this_ptr->to_end_event);
+                      (g_CEventListPtr,this_ptr->to_end_event);
     if (iVar1 != 0) {
       return;
     }
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (g_CEventList_PTR_005fba60,this_ptr->to_start_event);
+                      (g_CEventListPtr,this_ptr->to_start_event);
     if (iVar1 != 0) {
       return;
     }
@@ -77,9 +77,9 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_00512200(CPlatform 
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
     iStack_c = (int)ROUND((this_ptr->base).location.position.x * 256.0f);
-    g_INT_01547200 =
-         (*((g_CDemonCamera_PTR_007e2a54->base).vtable)->getFogValueAtPosition)
-                   (g_CDemonCamera_PTR_007e2a54,(CVector3i *)&iStack_c,(SProjectedVertex *)0x0);
+    g_FlatShadingLightLevel =
+         (*((g_CurrentSceneCamera->base).vtable)->getFogValueAtPosition)
+                   (g_CurrentSceneCamera,(CVector3i *)&iStack_c,(SProjectedVertex *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

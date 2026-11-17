@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   int g_INT_01d51d9c
+;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
 ;
 ; Called Functions:
@@ -98,7 +98,7 @@ section .text
     SAR EDX,0x1f                        ; 0052ca1e
     IDIV EBX                            ; 0052ca21
     PUSH 0x5eb840                       ; 0052ca23
-    MOV [0x01d51d9c],EAX                ; 0052ca28 | g_INT_01d51d9c
+    MOV [0x01d51d9c],EAX                ; 0052ca28 | g_LastPingTime
     MOV EAX,[0x0061abc0]                ; 0052ca2d | g_CEditorToolsPtr
     PUSH EAX                            ; 0052ca32
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400 ; 0052ca33

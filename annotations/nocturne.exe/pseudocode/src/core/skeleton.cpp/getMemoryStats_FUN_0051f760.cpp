@@ -29,16 +29,16 @@ void __cdecl core_skeleton_cpp_getMemoryStats_FUN_0051f760(char *output_buffer)
   }
   iVar3 = 0;
   iVar1 = 0;
-  if (0 < g_INT_0268cef0) {
+  if (0 < g_DeformableModelCount) {
     this_ptr_00 = g_DeformableModelPool;
     do {
       iVar2 = core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0051b600(this_ptr_00);
       iVar3 = iVar3 + 1;
       iVar1 = iVar1 + iVar2;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar3 < g_INT_0268cef0);
+    } while (iVar3 < g_DeformableModelCount);
   }
-  _sprintf(output_buffer,"%d skeletons, %d bytes, %d models, %d bytes",g_INT_02737ef4,iVar4,g_INT_0268cef0,
-             iVar1);
+  _sprintf(output_buffer,"%d skeletons, %d bytes, %d models, %d bytes",g_INT_02737ef4,iVar4,
+             g_DeformableModelCount,iVar1);
   return;
 }

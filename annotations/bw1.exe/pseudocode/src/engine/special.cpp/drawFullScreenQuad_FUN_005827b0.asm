@@ -10,10 +10,10 @@
 ;   engine_special.cpp_clearScreenRegion_FUN_0057dd07 at 0057dd18
 ;
 ; Referenced Globals:
-;   int g_INT_006258dc = 0x3c000
+;   int g_FullScreenQuadDepth = 0x3c000
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;   int g_INT_01c4f020
 ;
@@ -40,7 +40,7 @@ section .text
     MOV EAX,[0x01c4f00c]                ; 005827d6 | g_INT_01c4f00c
     SHL EAX,0x10                        ; 005827db
     MOV dword ptr [ESP + 0x14],EAX      ; 005827de
-    MOV EAX,[0x01c4f010]                ; 005827e2 | g_INT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 005827e2 | g_ClipRight
     SHL EAX,0x10                        ; 005827e7
     MOV dword ptr [ESP + 0x40],EAX      ; 005827ea
     MOV EAX,dword ptr [ESP + 0x14]      ; 005827ee
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [ESP + 0xa0],EAX      ; 0058280e
     MOV EAX,dword ptr [ESP + 0x74]      ; 00582815
     MOV dword ptr [ESP + 0xa4],EAX      ; 00582819
-    MOV EAX,[0x006258dc]                ; 00582820 | g_INT_006258dc
+    MOV EAX,[0x006258dc]                ; 00582820 | g_FullScreenQuadDepth
     PUSH 0x10                           ; 00582825
     MOV dword ptr [ESP + 0xc],EAX       ; 00582827
     MOV dword ptr [ESP + 0x3c],EAX      ; 0058282b

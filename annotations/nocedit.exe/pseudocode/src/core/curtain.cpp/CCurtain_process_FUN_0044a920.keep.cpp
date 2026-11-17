@@ -111,28 +111,28 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
           pSVar10 = pSVar10 + 1;
         } while (iVar8 < this_ptr->vertex_count);
       }
-      INT_008879bc = 0;
-      for (iStack_20 = 0; iVar8 = INT_008879bc, iStack_20 < g_CDemonSetPtr->character_count;
+      g_CurtainCollisionCount = 0;
+      for (iStack_20 = 0; iVar8 = g_CurtainCollisionCount, iStack_20 < g_CDemonSetPtr->character_count;
           iStack_20 = iStack_20 + 1) {
         iVar2 = (CDemonActor *)g_CDemonSetPtr->characters[iStack_20];
-        pSVar11 = SCollisionInfo_ARRAY_00887e70 + INT_008879bc;
-        if (CVector3f_ARRAY_008879c0 + INT_008879bc != &iVar2->location.position) {
-          CVector3f_ARRAY_008879c0[INT_008879bc] = iVar2->location.position;
+        pSVar11 = g_CurtainCollisionInfos + g_CurtainCollisionCount;
+        if (g_CurtainCollisionPositions + g_CurtainCollisionCount != &iVar2->location.position) {
+          g_CurtainCollisionPositions[g_CurtainCollisionCount] = iVar2->location.position;
         }
         pSVar11->ray_query.ray_type = 0;
         iVar7 = (*(iVar2->vtable._ub)->getCollisionType)(iVar2,pSVar11);
         if (((iVar7 == 2) && (iVar2->location.position.y <= local_78)) &&
            ((local_a8 <=
-             iVar2->location.position.y + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_top_y &&
+             iVar2->location.position.y + g_CurtainCollisionInfos[iVar8].cylinder_top_y &&
             ((((local_ac <=
-                iVar2->location.position.x + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius &&
-               (iVar2->location.position.x - SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius <=
+                iVar2->location.position.x + g_CurtainCollisionInfos[iVar8].cylinder_radius &&
+               (iVar2->location.position.x - g_CurtainCollisionInfos[iVar8].cylinder_radius <=
                 local_7c)) &&
               (local_a4 <=
-               iVar2->location.position.z + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius)) &&
-             (iVar2->location.position.z - SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius <=
+               iVar2->location.position.z + g_CurtainCollisionInfos[iVar8].cylinder_radius)) &&
+             (iVar2->location.position.z - g_CurtainCollisionInfos[iVar8].cylinder_radius <=
               local_74)))))) {
-          INT_008879bc = INT_008879bc + 1;
+          g_CurtainCollisionCount = g_CurtainCollisionCount + 1;
         }
       }
       this_ptr->needs_update = 1;

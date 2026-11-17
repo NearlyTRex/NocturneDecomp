@@ -16,9 +16,9 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004676
   
   iVar2 = x2;
   iVar1 = x1;
-  if (g_INT_01c2a374 != g_INT_01ba59a4) {
-    g_FLOAT_01ba599c = (float)g_INT_01c2a370 * 1.525879e-05f + g_FLOAT_01ba599c;
-    g_INT_01ba59a4 = g_INT_01c2a374;
+  if (g_AnimationTimerValue != g_INT_01ba59a4) {
+    g_FLOAT_01ba599c = (float)g_GlobalDeltaTimeInt * 1.525879e-05f + g_FLOAT_01ba599c;
+    g_INT_01ba59a4 = g_AnimationTimerValue;
     if (g_FLOAT_0060b274 < g_FLOAT_01ba599c) {
       g_FLOAT_01ba59a0 = g_FLOAT_01ba599c / g_FLOAT_0060b274 + g_FLOAT_01ba59a0;
       if ((float)(g_INT_0060b270 * 2) < g_FLOAT_01ba59a0) {

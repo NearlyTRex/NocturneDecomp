@@ -23,7 +23,7 @@
 ;   TerminatedCString s_Hero_doesn_t_exist_0058e0f6
 ;   TerminatedCString s_Actor_s_does_not_exist_0058e10d
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_0058e128
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CNetGame* g_CNetGamePtr = 01cea280
 ;   int g_LocalHeroIndex
@@ -50,7 +50,7 @@ section .text
     PUSH EBP                            ; 004fe183
     MOV EBX,dword ptr [ESP + 0x14]      ; 004fe184
     XOR EDX,EDX                         ; 004fe188
-    MOV dword ptr [0x01e56c2c],EDX      ; 004fe18a | g_INT_01e56c2c
+    MOV dword ptr [0x01e56c2c],EDX      ; 004fe18a | g_ActorLookedUpByVariable
     TEST EBX,EBX                        ; 004fe190
     JZ 0x004fe1b5                       ; 004fe192
         ;   XREF to: 004fe1b5 (CONDITIONAL_JUMP)  ; LAB_004fe1b5
@@ -76,16 +76,16 @@ section .text
     MOV ESI,0x58e068                    ; 004fe1b5 | = "Must specify actor name"
         ;   Label: LAB_004fe1b5
     MOV EDI,0x1e56420                   ; 004fe1ba
-    PUSH EDI                            ; 004fe1bf | g_CHAR_ARRAY_01e56420
+    PUSH EDI                            ; 004fe1bf | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 004fe1c0 | = "Must specify actor name" | s_st_specify_actor_name_0058e068+2
         ;   Label: LAB_004fe1c0
-    MOV byte ptr [EDI],AL               ; 004fe1c2 | g_CHAR_ARRAY_01e56420 | g_CHAR_ARRAY_01e56420+2
+    MOV byte ptr [EDI],AL               ; 004fe1c2 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 004fe1c4
     JZ 0x004fe1d8                       ; 004fe1c6
         ;   XREF to: 004fe1d8 (CONDITIONAL_JUMP)  ; LAB_004fe1d8
     MOV AL,byte ptr [ESI + 0x1]         ; 004fe1c8 | s_ust_specify_actor_name_0058e068+1 | s_t_specify_actor_name_0058e068+3
     ADD ESI,0x2                         ; 004fe1cb
-    MOV byte ptr [EDI + 0x1],AL         ; 004fe1ce | g_CHAR_ARRAY_01e56420+1 | g_CHAR_ARRAY_01e56420+3
+    MOV byte ptr [EDI + 0x1],AL         ; 004fe1ce | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 004fe1d1
     CMP AL,0x0                          ; 004fe1d4
     JNZ 0x004fe1c0                      ; 004fe1d6
@@ -100,10 +100,10 @@ section .text
     RET                                 ; 004fe1df
     PUSH EBX                            ; 004fe1e0
         ;   Label: LAB_004fe1e0
-    MOV EAX,[0x005b7650]                ; 004fe1e1 | g_CEventList_PTR_005b7650
+    MOV EAX,[0x005b7650]                ; 004fe1e1 | g_CEventListPtr
     MOV EBP,0x1                         ; 004fe1e6
     PUSH EAX                            ; 004fe1eb
-    MOV dword ptr [0x01e56c2c],EBP      ; 004fe1ec | g_INT_01e56c2c
+    MOV dword ptr [0x01e56c2c],EBP      ; 004fe1ec | g_ActorLookedUpByVariable
     CALL core_event.cpp_CEventList_getActorByVarName_FUN_00480b30 ; 004fe1f2
         ;   XREF to: 00480b30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_CEventList_getActorByVarName_FUN_00480b30(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 004fe1f7
@@ -161,7 +161,7 @@ section .text
     PUSH 0x58e0f6                       ; 004fe264 | = "Hero doesn't exist!!?!"
     MOV EDI,0x1                         ; 004fe269
     PUSH 0x1e56420                      ; 004fe26e
-    MOV dword ptr [0x01e56c2c],EDI      ; 004fe273 | g_INT_01e56c2c
+    MOV dword ptr [0x01e56c2c],EDI      ; 004fe273 | g_ActorLookedUpByVariable
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe279
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004fe27e

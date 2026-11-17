@@ -31,7 +31,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
   do {
     iVar4 = iVar4 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-              (g_CFireEffect_PTR_0061c010,&CStack_28,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
+              (g_CFireEffectPtr,&CStack_28,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
   } while (iVar4 < 3);
   this_ptr_00 = &(this_ptr->base).base.model;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);

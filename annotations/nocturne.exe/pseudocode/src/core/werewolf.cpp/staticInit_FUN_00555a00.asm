@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CWerewolf_00597cc9
-;   CVector3f CVector3f_02de0774
-;   undefined4 CVector3f_02de0774.y
-;   undefined4 CVector3f_02de0774.z
-;   CVector3f CVector3f_02de0780
-;   undefined4 CVector3f_02de0780.y
-;   undefined4 CVector3f_02de0780.z
+;   CVector3f g_WerewolfEyeGlowOffsetLeft
+;   undefined4 g_WerewolfEyeGlowOffsetLeft.y
+;   undefined4 g_WerewolfEyeGlowOffsetLeft.z
+;   CVector3f g_WerewolfEyeGlowOffsetRight
+;   undefined4 g_WerewolfEyeGlowOffsetRight.y
+;   undefined4 g_WerewolfEyeGlowOffsetRight.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0
@@ -31,14 +31,14 @@ section .text
     MOV EBX,0x3f19999a                  ; 00555a18
     MOV ESI,0x3eb33333                  ; 00555a1d
     PUSH 0x555a60                       ; 00555a22
-    MOV dword ptr [0x02de0774],EDX      ; 00555a27 | CVector3f_02de0774
-    MOV dword ptr [0x02de0778],ECX      ; 00555a2d | CVector3f_02de0774.y
+    MOV dword ptr [0x02de0774],EDX      ; 00555a27 | g_WerewolfEyeGlowOffsetLeft
+    MOV dword ptr [0x02de0778],ECX      ; 00555a2d | g_WerewolfEyeGlowOffsetLeft.y
     PUSH 0x597cc9                       ; 00555a33 | = "CWerewolf"
-    MOV dword ptr [0x02de077c],EBX      ; 00555a38 | CVector3f_02de0774.z
-    MOV dword ptr [0x02de0780],ESI      ; 00555a3e | CVector3f_02de0780
+    MOV dword ptr [0x02de077c],EBX      ; 00555a38 | g_WerewolfEyeGlowOffsetLeft.z
+    MOV dword ptr [0x02de0780],ESI      ; 00555a3e | g_WerewolfEyeGlowOffsetRight
     PUSH 0x2de078c                      ; 00555a44
-    MOV dword ptr [0x02de0784],ECX      ; 00555a49 | CVector3f_02de0780.y
-    MOV dword ptr [0x02de0788],EBX      ; 00555a4f | CVector3f_02de0780.z
+    MOV dword ptr [0x02de0784],ECX      ; 00555a49 | g_WerewolfEyeGlowOffsetRight.y
+    MOV dword ptr [0x02de0788],EBX      ; 00555a4f | g_WerewolfEyeGlowOffsetRight.z
     CALL core_actor.cpp_registerActorClass_FUN_0040d3f0 ; 00555a55
         ;   XREF to: 0040d3f0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040d3f0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 00555a5a

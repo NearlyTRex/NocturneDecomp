@@ -21,7 +21,7 @@
 ;   double g_DOUBLE_005d4f70 = 2.5
 ;   float g_FLOAT_005fd08c = 2.5
 ;   CGore* g_CGorePtr = 01cd0e3c
-;   CVector3f g_CVector3f_007c5340
+;   CVector3f g_BrideOffsetPlusX
 ;   int[11] g_INT_ARRAY_007c5388
 ;   ... and 6 more
 ;
@@ -566,7 +566,7 @@ section .text
     LEA EDI,[EBP + 0xffffff2e]          ; 00424176
     PUSH EAX                            ; 0042417c
     FLD float ptr [EBP + 0x76]          ; 0042417d
-    PUSH 0x7c5340                       ; 00424180 | g_CVector3f_007c5340
+    PUSH 0x7c5340                       ; 00424180 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffdd6]   ; 00424185
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0042418b
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -639,7 +639,7 @@ section .text
     LEA EDI,[EBP + -0x66]               ; 00424261
     PUSH EAX                            ; 00424264
     FLD float ptr [EBP + 0x76]          ; 00424265
-    PUSH 0x7c5340                       ; 00424268 | g_CVector3f_007c5340
+    PUSH 0x7c5340                       ; 00424268 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffe4e]   ; 0042426d
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00424273
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -765,7 +765,7 @@ section .text
     LEA EDI,[EBP + 0x6]                 ; 004243ce
     PUSH EAX                            ; 004243d1
     FLD float ptr [EBP + 0x76]          ; 004243d2
-    PUSH 0x7c5340                       ; 004243d5 | g_CVector3f_007c5340
+    PUSH 0x7c5340                       ; 004243d5 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffe8a]   ; 004243da
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 004243e0
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -853,7 +853,7 @@ section .text
     LEA EDI,[EBP + 0xffffff6a]          ; 004244d6
     PUSH EAX                            ; 004244dc
     FLD float ptr [EBP + 0x76]          ; 004244dd
-    PUSH 0x7c5340                       ; 004244e0 | g_CVector3f_007c5340
+    PUSH 0x7c5340                       ; 004244e0 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffec6]   ; 004244e5
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 004244eb
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

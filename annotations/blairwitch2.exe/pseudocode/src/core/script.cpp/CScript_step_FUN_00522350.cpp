@@ -2,7 +2,7 @@
 // Address: 00522350
 // Address Range: [[00522350, 00529744]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *param_2)
+// Signature: int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *time_remaining)
 
 #include "nocturne.h"
 
@@ -11,7 +11,7 @@
 /* WARNING: Removing unreachable block (ram,0x005289c1) */
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *param_2)
+int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *time_remaining)
 
 {
   char cVar1;
@@ -326,12 +326,12 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
   }
   else if (cVar1 == ':') {
     local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 1);
-    if (g_INT_01e650f8 != 0) {
+    if (g_ScriptEventsEnabled != 0) {
       cVar1 = *local_1ec;
       for (pcVar18 = local_1ec;
           (cVar1 != '\0' &&
-          (((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar18 + 1)] & 0xe0) != 0 || (*pcVar18 == '_'))));
-          pcVar18 = pcVar18 + 1) {
+          (((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 0xe0) != 0 || (*pcVar18 == '_'))
+          )); pcVar18 = pcVar18 + 1) {
         cVar1 = pcVar18[1];
       }
       if (*pcVar18 != '\0') {
@@ -353,142 +353,167 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
   }
   else {
     iVar5 = _strnicmp(pcVar18,"syntaxCheckOn",0xd);
-    if ((iVar5 == 0) && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
-      if (g_INT_01e650f8 != 0) {
-        g_INT_01e650f8 = 1;
+    if ((iVar5 == 0) && ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
+      if (g_ScriptEventsEnabled != 0) {
+        g_ScriptEventsEnabled = 1;
       }
       local_1ec = &g_CHAR_005e321a;
     }
     else {
       iVar5 = _strnicmp(pcVar18,"syntaxCheckOff",0xe);
-      if ((iVar5 == 0) && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
-        if (g_INT_01e650f8 != 0) {
-          g_INT_01e650f8 = 2;
+      if ((iVar5 == 0) && ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0))
+      {
+        if (g_ScriptEventsEnabled != 0) {
+          g_ScriptEventsEnabled = 2;
         }
         local_1ec = &g_CHAR_005e322a;
       }
-      else if (g_INT_01e650f8 != 2) {
+      else if (g_ScriptEventsEnabled != 2) {
         iVar5 = _strnicmp(pcVar18,"activateGadget",0xe);
-        if ((((((((((iVar5 == 0) && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)
-                   ) || ((iVar5 = _strnicmp
-                                            (pcVar18,"activatePuzzle",0xe), iVar5 == 0 &&
-                         ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)))) ||
+        if ((((((((((iVar5 == 0) &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) ||
+                  ((iVar5 = _strnicmp
+                                      (pcVar18,"activatePuzzle",0xe), iVar5 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)))) ||
                  ((iVar5 = _strnicmp
                                      (pcVar18,"addFieldNotesTask",0x11), iVar5 == 0 &&
-                  ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)))) ||
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)))) ||
                 ((iVar5 = _strnicmp
                                     (pcVar18,"advanceLightFilter",0x12), iVar5 == 0 &&
-                 ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)))) ||
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)))) ||
                ((((iVar5 = _strnicmp
                                      (pcVar18,"beginCarryItem",0xe), iVar5 == 0 &&
-                  ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) ||
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) ||
                  ((iVar5 = _strnicmp
                                      (pcVar18,"completeFieldNotesTask",0x16), iVar5 == 0 &&
-                  ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x16] + 1)] & 0xe0) == 0)))) ||
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[0x16] + 1)] & 0xe0) == 0)))) ||
                 ((iVar5 = _strnicmp
                                     (pcVar18,"createExplosion",0xf), iVar5 == 0 &&
-                 ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)))))) ||
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)))))) ||
               ((iVar5 = _strnicmp(pcVar18,"deleteActor",0xb),
-               iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)))) ||
+               iVar5 == 0 &&
+               ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)))) ||
              (((((iVar5 = _strnicmp(pcVar18,"displayBitmap",0xd),
-                 iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) ||
+                 iVar5 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) ||
                 ((iVar5 = _strnicmp
                                     (pcVar18,"displayFieldNotes",0x11), iVar5 == 0 &&
-                 ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)))) ||
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)))) ||
                ((((iVar5 = _strnicmp(pcVar18,"dropItem",8),
-                  iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[8] + 1)] & 0xe0) == 0)) ||
+                  iVar5 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[8] + 1)] & 0xe0) == 0)) ||
                  ((iVar5 = _strnicmp(pcVar18,"hurtCharacter",0xd)
-                  , iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)))
-                 ) || ((((iVar5 = _strnicmp
-                                            (pcVar18,"incCounter",10), iVar5 == 0 &&
-                         ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) ||
-                        ((iVar5 = _strnicmp
-                                            (pcVar18,"enableFieldNotesEntry",0x15),
-                         iVar5 == 0 &&
-                         ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x15] + 1)] & 0xe0) == 0)))) ||
-                       ((iVar5 = _strnicmp
-                                           (pcVar18,"enableFieldNotesAnnotation",0x1a),
-                        iVar5 == 0 &&
-                        ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x1a] + 1)] & 0xe0) == 0)))))))) ||
-              ((iVar5 = _strnicmp(pcVar18,"fadeSfx",7),
-               iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)))))) ||
+                  , iVar5 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)))) ||
+                ((((iVar5 = _strnicmp(pcVar18,"incCounter",10),
+                   iVar5 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) ||
+                  ((iVar5 = _strnicmp
+                                      (pcVar18,"enableFieldNotesEntry",0x15), iVar5 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[0x15] + 1)] & 0xe0) == 0)))) ||
+                 ((iVar5 = _strnicmp
+                                     (pcVar18,"enableFieldNotesAnnotation",0x1a), iVar5 == 0
+                  && ((g_CharacterClassificationTable[(byte)(pcVar18[0x1a] + 1)] & 0xe0) == 0)))))))
+               ) || ((iVar5 = _strnicmp(pcVar18,"fadeSfx",7),
+                     iVar5 == 0 &&
+                     ((g_CharacterClassificationTable[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)))))) ||
             ((((((iVar5 = _strnicmp
                                     (pcVar18,"fadeAmbientSound",0x10), iVar5 == 0 &&
-                 ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) ||
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) ||
                 ((iVar5 = _strnicmp(pcVar18,"flagOn",6),
-                 iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[6] + 1)] & 0xe0) == 0)))) ||
+                 iVar5 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[6] + 1)] & 0xe0) == 0)))) ||
                ((((iVar5 = _strnicmp(pcVar18,"flagOff",7),
-                  iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) ||
+                  iVar5 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) ||
                  (((iVar5 = _strnicmp(pcVar18,"gameFlagOn",10),
-                   iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) ||
+                   iVar5 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) ||
                   ((((iVar5 = _strnicmp
                                         (pcVar18,"gameFlagOff",0xb), iVar5 == 0 &&
-                     ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) ||
+                     ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) ||
                     ((iVar5 = _strnicmp
                                         (pcVar18,"killCharacter",0xd), iVar5 == 0 &&
-                     ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)))) ||
+                     ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)))) ||
                    ((iVar5 = _strnicmp(pcVar18,"killHero",8),
-                    iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[8] + 1)] & 0xe0) == 0)))))
-                  ))) || ((iVar5 = _strnicmp(pcVar18,"killSfx",7)
-                          , iVar5 == 0 &&
-                          ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)))))) ||
+                    iVar5 == 0 &&
+                    ((g_CharacterClassificationTable[(byte)(pcVar18[8] + 1)] & 0xe0) == 0)))))))) ||
+                ((iVar5 = _strnicmp(pcVar18,"killSfx",7),
+                 iVar5 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)))))) ||
               ((((((iVar5 = _strnicmp(pcVar18,"lightning",9),
-                   iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) ||
+                   iVar5 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) ||
                   ((iVar5 = _strnicmp(pcVar18,"playSfx",7),
-                   iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[7] + 1)] & 0xe0) == 0))))
-                 || ((iVar5 = _strnicmp(pcVar18,"resetGore",9),
-                     iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[9] + 1)] & 0xe0) == 0))))
-                || ((iVar5 = _strnicmp
-                                       (pcVar18,"setActorBool",0xc), iVar5 == 0 &&
-                    ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)))) ||
+                   iVar5 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[7] + 1)] & 0xe0) == 0)))) ||
+                 ((iVar5 = _strnicmp(pcVar18,"resetGore",9),
+                  iVar5 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[9] + 1)] & 0xe0) == 0)))) ||
+                ((iVar5 = _strnicmp(pcVar18,"setActorBool",0xc),
+                 iVar5 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)))) ||
                ((((iVar5 = _strnicmp
                                      (pcVar18,"setCameraAmbient",0x10), iVar5 == 0 &&
-                  ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) ||
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) ||
                  ((iVar5 = _strnicmp(pcVar18,"setCounter",10),
-                  iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[10] + 1)] & 0xe0) == 0))))
-                || ((iVar5 = _strnicmp
-                                       (pcVar18,"setDoorState",0xc), iVar5 == 0 &&
-                    ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)))))))) ||
+                  iVar5 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)))) ||
+                ((iVar5 = _strnicmp(pcVar18,"setDoorState",0xc),
+                 iVar5 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)))))))) ||
              ((iVar5 = _strnicmp(pcVar18,"setGroupAmbient",0xf),
-              iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)))))) ||
+              iVar5 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)
+              ))))) ||
            ((((iVar5 = _strnicmp
                                  (pcVar18,"setLightFilterFrame",0x13), iVar5 == 0 &&
-              ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x13] + 1)] & 0xe0) == 0)) ||
+              ((g_CharacterClassificationTable[(byte)(pcVar18[0x13] + 1)] & 0xe0) == 0)) ||
              ((iVar5 = _strnicmp(pcVar18,"setLeverState",0xd),
-              iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)))) ||
-            (((((iVar5 = _strnicmp(pcVar18,"setModelState",0xd),
-                iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) ||
-               ((iVar5 = _strnicmp(pcVar18,"setSunlight",0xb),
-                iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)))) ||
-              (((((iVar5 = _strnicmp(pcVar18,"setTimer",8),
-                  iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[8] + 1)] & 0xe0) == 0)) ||
-                 ((iVar5 = _strnicmp(pcVar18,"setWeather",10),
-                  iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[10] + 1)] & 0xe0) == 0))))
-                || ((iVar5 = _strnicmp(pcVar18,"shakeScreen",0xb)
-                    , iVar5 == 0 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)
-                    ))) ||
-               ((iVar5 = _strnicmp
-                                   (pcVar18,"slamModelToMotion",0x11), iVar5 == 0 &&
-                ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)))))) ||
-             (((iVar5 = _strnicmp
-                                  (pcVar18,"turnToFieldNotesEntry",0x15), iVar5 == 0 &&
-               ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x15] + 1)] & 0xe0) == 0)) ||
-              ((iVar5 = _strnicmp(pcVar18,"warpTo",6), iVar5 == 0
-               && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[6] + 1)] & 0xe0) == 0)))))))))) {
-          if (g_INT_01e650f8 == 0) {
-            core_event_cpp_CEventList_executeCommands_FUN_004894f0
-                      (g_CEventList_PTR_006141f0,pcVar18);
+              iVar5 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)
+              ))) || (((((iVar5 = _strnicmp
+                                            (pcVar18,"setModelState",0xd), iVar5 == 0 &&
+                         ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0))
+                        || ((iVar5 = _strnicmp
+                                               (pcVar18,"setSunlight",0xb), iVar5 == 0 &&
+                            ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)
+                            ))) ||
+                       (((((iVar5 = _strnicmp
+                                              (pcVar18,"setTimer",8), iVar5 == 0 &&
+                           ((g_CharacterClassificationTable[(byte)(pcVar18[8] + 1)] & 0xe0) == 0))
+                          || ((iVar5 = _strnicmp
+                                                 (pcVar18,"setWeather",10), iVar5 == 0 &&
+                              ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] & 0xe0) == 0
+                              )))) ||
+                         ((iVar5 = _strnicmp
+                                             (pcVar18,"shakeScreen",0xb), iVar5 == 0 &&
+                          ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)))
+                         ) || ((iVar5 = _strnicmp
+                                                  (pcVar18,"slamModelToMotion",0x11),
+                               iVar5 == 0 &&
+                               ((g_CharacterClassificationTable[(byte)(pcVar18[0x11] + 1)] & 0xe0)
+                                == 0)))))) ||
+                      (((iVar5 = _strnicmp
+                                           (pcVar18,"turnToFieldNotesEntry",0x15),
+                        iVar5 == 0 &&
+                        ((g_CharacterClassificationTable[(byte)(pcVar18[0x15] + 1)] & 0xe0) == 0))
+                       || ((iVar5 = _strnicmp(pcVar18,"warpTo",6)
+                           , iVar5 == 0 &&
+                           ((g_CharacterClassificationTable[(byte)(pcVar18[6] + 1)] & 0xe0) == 0))))
+                      )))))) {
+          if (g_ScriptEventsEnabled == 0) {
+            core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventListPtr,pcVar18);
           }
           else {
             pcVar18 = core_event_cpp_CEventList_validateCommands_FUN_0048e3e0
-                                (g_CEventList_PTR_006141f0,pcVar18);
+                                (g_CEventListPtr,pcVar18);
             if (pcVar18 != (char *)0x0) goto LAB_00523d13;
           }
           local_1ec = &g_CHAR_005e346e;
         }
         else {
           iVar5 = _strnicmp(pcVar18,"addItemToInventory",0x12);
-          if ((iVar5 == 0) && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)) {
+          if ((iVar5 == 0) &&
+             ((g_CharacterClassificationTable[(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)) {
             local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0x12);
             local_160 = -1;
             sscanf(local_1ec," ( %[^,], %[^)])%n");
@@ -506,14 +531,15 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
                                     (local_1e2c,g_CDemonActorClassInfo.name_hash,
                                      &g_CDemonActorClassInfo), pCVar12 == (CDemonActor *)0x0))
             goto joined_r0x0052419d;
-            if (g_INT_01e650f8 == 0) {
+            if (g_ScriptEventsEnabled == 0) {
               core_inv_cpp_CInventory_addItem_FUN_004dadb0
                         ((CInventory *)&pCVar15[0xd6].process_disabled,pCVar12,0,0);
             }
           }
           else {
             iVar5 = _strnicmp(pcVar18,"addLightFilter",0xe);
-            if ((iVar5 == 0) && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
+            if ((iVar5 == 0) &&
+               ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
               local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0xe);
               local_64 = -1;
               sscanf(local_1ec,"( %[^,], %[^,], %f )%n");
@@ -533,14 +559,14 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
                 _sprintf(g_CHAR_ARRAY_01e65100,"Can't open filter \"%s\"");
                 return -1;
               }
-              if (g_INT_01e650f8 == 0) {
+              if (g_ScriptEventsEnabled == 0) {
                 core_setutil_cpp_C3DSLight_addFilter_FUN_0053bbc0(local_1f8,local_770,local_158,0);
               }
             }
             else {
               iVar5 = _strnicmp(pcVar18,"allowEnemyAttack",0x10);
-              if ((iVar5 == 0) && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0))
-              {
+              if ((iVar5 == 0) &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) {
                 local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0x10);
                 pcVar18 = core_script_cpp_parseConditionExpr_FUN_00521250(&local_1ec,local_70c);
                 if (pcVar18 != (char *)0x0) {
@@ -559,9 +585,9 @@ LAB_00523d13:
                   } while (cVar1 != '\0');
                   return -1;
                 }
-                if (g_INT_01e650f8 == 0) {
+                if (g_ScriptEventsEnabled == 0) {
                   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                    (g_CEventList_PTR_006141f0,local_70c);
+                                    (g_CEventListPtr,local_70c);
                   g_CGamePtr->allow_enemy_attack_flag = iVar5;
                 }
               }
@@ -569,13 +595,13 @@ LAB_00523d13:
                 iVar5 = _strnicmp
                                   (pcVar18,"allowHeroControls",0x11);
                 if ((iVar5 == 0) &&
-                   ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)) {
+                   ((g_CharacterClassificationTable[(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)) {
                   local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0x11);
                   pcVar18 = core_script_cpp_parseConditionExpr_FUN_00521250(&local_1ec,local_edc);
                   if (pcVar18 != (char *)0x0) goto LAB_00523d13;
-                  if (g_INT_01e650f8 == 0) {
+                  if (g_ScriptEventsEnabled == 0) {
                     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                      (g_CEventList_PTR_006141f0,local_edc);
+                                      (g_CEventListPtr,local_edc);
                     g_INT_01e65904 = (int)(iVar5 == 0);
                     g_CGamePtr->hero_controls_blocked = g_INT_01e65904;
                   }
@@ -584,13 +610,13 @@ LAB_00523d13:
                   iVar5 = _strnicmp
                                     (pcVar18,"allowHeroDamage",0xf);
                   if ((iVar5 == 0) &&
-                     ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)) {
+                     ((g_CharacterClassificationTable[(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)) {
                     local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0xf);
                     pcVar18 = core_script_cpp_parseConditionExpr_FUN_00521250(&local_1ec,local_5e0);
                     if (pcVar18 != (char *)0x0) goto LAB_00523d13;
-                    if (g_INT_01e650f8 == 0) {
+                    if (g_ScriptEventsEnabled == 0) {
                       iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                        (g_CEventList_PTR_006141f0,local_5e0);
+                                        (g_CEventListPtr,local_5e0);
                       g_CGamePtr->allow_damage_flag = iVar5;
                     }
                   }
@@ -598,7 +624,7 @@ LAB_00523d13:
                     iVar5 = _strnicmp
                                       (pcVar18,"attachActorToPlatform",0x15);
                     if ((iVar5 == 0) &&
-                       ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x15] + 1)] & 0xe0) == 0)) {
+                       ((g_CharacterClassificationTable[(byte)(pcVar18[0x15] + 1)] & 0xe0) == 0)) {
                       local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0x15);
                       local_1fc = -1;
                       sscanf(local_1ec,"(%[^,], %[^)])%n");
@@ -618,7 +644,7 @@ LAB_00523d13:
                                               (local_133c,g_CDemonActorClassInfo.name_hash,
                                                &g_CDemonActorClassInfo),
                          pCVar15 == (CDemonActor *)0x0)) goto joined_r0x0052419d;
-                      if (g_INT_01e650f8 == 0) {
+                      if (g_ScriptEventsEnabled == 0) {
                         core_platfrm_cpp_CPlatform_attachActor_FUN_00519a60(pCVar7,pCVar15);
                       }
                     }
@@ -626,9 +652,9 @@ LAB_00523d13:
                       iVar5 = _strnicmp
                                         (pcVar18,"beginFadeIn",0xb);
                       if ((iVar5 == 0) &&
-                         ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
+                         ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                         local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0xb);
-                        if (g_INT_01e650f8 == 0) {
+                        if (g_ScriptEventsEnabled == 0) {
                           core_game_cpp_CGame_beginFadeIn_FUN_004bb240(g_CGamePtr);
                         }
                       }
@@ -636,9 +662,10 @@ LAB_00523d13:
                         iVar5 = _strnicmp
                                           (pcVar18,"beginFadeOut",0xc);
                         if ((iVar5 == 0) &&
-                           ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
+                           ((g_CharacterClassificationTable[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0))
+                        {
                           local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0xc);
-                          if (g_INT_01e650f8 == 0) {
+                          if (g_ScriptEventsEnabled == 0) {
                             core_game_cpp_CGame_beginFadeOut_FUN_004bb280(g_CGamePtr);
                           }
                         }
@@ -646,9 +673,10 @@ LAB_00523d13:
                           iVar5 = _strnicmp
                                             (pcVar18,"breakPoint",10);
                           if ((iVar5 == 0) &&
-                             ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
+                             ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)
+                             ) {
                             local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 10);
-                            if (g_INT_01e650f8 == 0) {
+                            if (g_ScriptEventsEnabled == 0) {
                               _sprintf(local_c84,"Script breakpoint reached at line %d");
                               core_game_cpp_CGame_displayMessage_FUN_004b31a0
                                         (g_CGamePtr,local_c84,5.0);
@@ -659,10 +687,11 @@ LAB_00523d13:
                             iVar5 = _strnicmp
                                               (pcVar18,"cancelCameraHold",0x10);
                             if ((iVar5 == 0) &&
-                               ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) {
+                               ((g_CharacterClassificationTable[(byte)(pcVar18[0x10] + 1)] & 0xe0)
+                                == 0)) {
                               local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                     (pcVar18 + 0x10);
-                              if (g_INT_01e650f8 == 0) {
+                              if (g_ScriptEventsEnabled == 0) {
                                 core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00539840
                                           (g_CDemonSetPtr);
                               }
@@ -671,7 +700,8 @@ LAB_00523d13:
                               iVar5 = _strnicmp
                                                 (pcVar18,"cancelWalkTo",0xc);
                               if ((iVar5 == 0) &&
-                                 ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
+                                 ((g_CharacterClassificationTable[(byte)(pcVar18[0xc] + 1)] & 0xe0)
+                                  == 0)) {
                                 local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                       (pcVar18 + 0xc);
                                 pcVar18 = core_script_cpp_parseArgument_FUN_005211a0
@@ -694,7 +724,7 @@ LAB_00523d13:
                                 iVar5 = _stricmp
                                                   (local_1a44,"all");
                                 if (iVar5 == 0) {
-                                  if (g_INT_01e650f8 == 0) {
+                                  if (g_ScriptEventsEnabled == 0) {
                                     iVar13 = 0;
                                     for (iVar5 = 0; iVar5 < g_CDemonSetPtr->actor_count;
                                         iVar5 = iVar5 + 1) {
@@ -717,7 +747,7 @@ LAB_00523d13:
                                                       (local_1a44,g_CCharacterClassInfo.name_hash,
                                                        &g_CCharacterClassInfo);
                                   if (pCVar14 == (CCharacter *)0x0) goto joined_r0x0052419d;
-                                  if (g_INT_01e650f8 == 0) {
+                                  if (g_ScriptEventsEnabled == 0) {
                                     (*(((pCVar14->base).vtable._uc)->_uc).setWalkTarget)
                                               (pCVar14,(CDemonActor *)0x0,0.0,0.0);
                                   }
@@ -727,8 +757,8 @@ LAB_00523d13:
                                 iVar5 = _strnicmp
                                                   (pcVar18,"chainToMission",0xe);
                                 if ((iVar5 == 0) &&
-                                   ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0))
-                                {
+                                   ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0
+                                    ) == 0)) {
                                   local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                         (pcVar18 + 0xe);
                                   pcVar18 = core_script_cpp_parseArgument_FUN_005211a0
@@ -750,8 +780,8 @@ LAB_00524455:
                                     return -1;
                                   }
                                   core_script_cpp_trimString_FUN_00521110(local_3a4c);
-                                  iVar5 = g_INT_01e650f8;
-                                  if (g_INT_01e650f8 == 0) {
+                                  iVar5 = g_ScriptEventsEnabled;
+                                  if (g_ScriptEventsEnabled == 0) {
                                     core_mission_cpp_CDemonMission_setMissionName_FUN_004fccd0
                                               (g_CDemonMission_PTR_00618170,local_3a4c);
                                     this_ptr->mission_ended = 1;
@@ -762,8 +792,8 @@ LAB_00524455:
                                   iVar5 = _strnicmp
                                                     (pcVar18,"changeSetFilename",0x11);
                                   if ((iVar5 == 0) &&
-                                     ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0x11] + 1)] & 0xe0) ==
-                                      0)) {
+                                     ((g_CharacterClassificationTable[(byte)(pcVar18[0x11] + 1)] &
+                                      0xe0) == 0)) {
                                     local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                           (pcVar18 + 0x11);
                                     local_1f0 = -1;
@@ -813,7 +843,7 @@ LAB_00524455:
                                       _sprintf(g_CHAR_ARRAY_01e65100,g_CHAR_ARRAY_005e36b1 + 0xc);
                                       return -1;
                                     }
-                                    if (g_INT_01e650f8 == 0) {
+                                    if (g_ScriptEventsEnabled == 0) {
                                       core_mission_cpp_CDemonMission_changeSetName_FUN_004fc5a0
                                                 (g_CDemonMission_PTR_00618170,local_1f4,local_4034);
                                     }
@@ -822,8 +852,8 @@ LAB_00524455:
                                     iVar5 = _strnicmp
                                                       (pcVar18,g_CHAR_ARRAY_005e36b1 + 0x29,5);
                                     if ((iVar5 == 0) &&
-                                       ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[5] + 1)] & 0xe0) == 0
-                                       )) {
+                                       ((g_CharacterClassificationTable[(byte)(pcVar18[5] + 1)] &
+                                        0xe0) == 0)) {
                                       local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 5);
                                       local_1e8 = (char *)0xffffffff;
@@ -870,11 +900,11 @@ LAB_00524455:
                                           return -1;
                                         }
                                       }
-                                      if ((g_INT_01e650f8 == 0) &&
+                                      if ((g_ScriptEventsEnabled == 0) &&
                                          (local_210 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00529910
                                                             (this_ptr,this_ptr->dialog_wav_time,
-                                                             param_2), 0 < local_210)) {
+                                                             time_remaining), 0 < local_210)) {
                                         core_script_cpp_CScript_setSpeaker_FUN_00529990
                                                   (this_ptr,this_ptr->who_is_speaking);
                                       }
@@ -883,8 +913,8 @@ LAB_00524455:
                                       iVar5 = _strnicmp
                                                         (pcVar18,g_CHAR_ARRAY_005e36b1 + 0x75,10);
                                       if ((iVar5 == 0) &&
-                                         ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[10] + 1)] & 0xe0)
-                                          == 0)) {
+                                         ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] &
+                                          0xe0) == 0)) {
                                         local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                               (pcVar18 + 10);
                                         local_1e4 = -1;
@@ -938,8 +968,8 @@ joined_r0x00528f4d:
                                                           (pcVar18,g_CHAR_ARRAY_005e36b1 + 0xc6,0xe)
                                         ;
                                         if ((iVar5 == 0) &&
-                                           ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[0xe] + 1)] & 0xe0
-                                            ) == 0)) {
+                                           ((g_CharacterClassificationTable
+                                             [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                           local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                                 (pcVar18 + 0xe);
                                           local_1d8 = -1;
@@ -973,7 +1003,7 @@ joined_r0x00528f4d:
                                               pcVar20 = pcVar20 + 2;
                                             } while (cVar1 != '\0');
                                           }
-                                          if (g_INT_01e650f8 == 0) {
+                                          if (g_ScriptEventsEnabled == 0) {
                                             pcVar18 = this_ptr->current_message;
                                             pcVar20 = local_1c8;
                                             do {
@@ -987,7 +1017,7 @@ joined_r0x00528f4d:
                                             } while (cVar1 != '\0');
                                             local_210 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00529910
-                                                            (this_ptr,local_194,param_2);
+                                                            (this_ptr,local_194,time_remaining);
                                             if (0 < local_210) {
                                               this_ptr->current_message[0] = '\0';
                                             }
@@ -998,14 +1028,14 @@ joined_r0x00528f4d:
                                                             (pcVar18,g_CHAR_ARRAY_005e36b1 + 0x126,5
                                                             );
                                           if ((iVar5 == 0) &&
-                                             ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[5] + 1)] & 0xe0
-                                              ) == 0)) {
+                                             ((g_CharacterClassificationTable
+                                               [(byte)(pcVar18[5] + 1)] & 0xe0) == 0)) {
                                             local_1ec = core_script_cpp_skipWhitespace_FUN_00521180
                                                                   (pcVar18 + 5);
                                             pcVar18 = core_script_cpp_parseArgument_FUN_005211a0
                                                                 (&local_1ec,local_4490,300);
                                             if (pcVar18 != (char *)0x0) goto LAB_00524455;
-                                            if (g_INT_01e650f8 == 0) {
+                                            if (g_ScriptEventsEnabled == 0) {
                                               shape_edittool_cpp_CEditorTools_showMessage_FUN_0047bda0
                                                         (g_CEditorToolsPtr,
                                                          g_CHAR_ARRAY_005e36b1 + 300);
@@ -1016,8 +1046,8 @@ joined_r0x00528f4d:
                                                               (pcVar18,g_CHAR_ARRAY_005e36b1 + 0x150
                                                                ,9);
                                             if ((iVar5 == 0) &&
-                                               ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[9] + 1)] &
-                                                0xe0) == 0)) {
+                                               ((g_CharacterClassificationTable
+                                                 [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                               local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 9);
@@ -1107,7 +1137,7 @@ joined_r0x00528f4d:
                                                 return -1;
                                               }
                                               local_1ec = local_1ec + 1;
-                                              if (g_INT_01e650f8 == 0) {
+                                              if (g_ScriptEventsEnabled == 0) {
                                                 iVar5 = 0;
                                                 local_1cc = 
                                                   core_bodypart_cpp_createBodyPart_FUN_004154f0
@@ -1134,8 +1164,8 @@ joined_r0x00528f4d:
                                                                 (pcVar18,g_CHAR_ARRAY_005e36b1 +
                                                                          0x1fa,7);
                                               if ((iVar5 == 0) &&
-                                                 ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[7] + 1)] &
-                                                  0xe0) == 0)) {
+                                                 ((g_CharacterClassificationTable
+                                                   [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                 local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 7);
@@ -1154,8 +1184,8 @@ joined_r0x00528f4d:
                                                                   (pcVar18,g_CHAR_ARRAY_005e36b1 +
                                                                            0x236,4);
                                                 if ((iVar5 == 0) &&
-                                                   ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar18[4] + 1)]
-                                                    & 0xe0) == 0)) {
+                                                   ((g_CharacterClassificationTable
+                                                     [(byte)(pcVar18[4] + 1)] & 0xe0) == 0)) {
                                                   local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 4);
@@ -1174,7 +1204,7 @@ joined_r0x00528f4d:
                                                                     (pcVar18,g_CHAR_ARRAY_005e36b1 +
                                                                              0x273,0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1201,17 +1231,17 @@ joined_r0x00528f4d:
                                                                g_CHAR_ARRAY_005e36b1 + 0x2b2);
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     iVar13 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,local_2214);
+                                                            (g_CEventListPtr,local_2214);
                                                   core_set_cpp_CDemonSet_setCameraEnabled_FUN_00534700
                                                             (g_CDemonSetPtr,iVar5,iVar13);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0048e3a0
-                                                            (g_CEventList_PTR_006141f0,local_2214);
+                                                            (g_CEventListPtr,local_2214);
                                                   if (pcVar18 != (char *)0x0) {
                                                     pcVar20 = g_CHAR_ARRAY_01e65100;
                                                     do {
@@ -1234,7 +1264,7 @@ joined_r0x00528f4d:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x2ce,0x11);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0))
                                                     {
                                                       local_1ec = 
@@ -1252,17 +1282,17 @@ joined_r0x00528f4d:
                                                   local_1ec = local_1ec + local_1c0;
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_3e34);
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     iVar5 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,local_3e34);
+                                                            (g_CEventListPtr,local_3e34);
                                                   core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_00534720
                                                             (g_CDemonSetPtr,local_1c4,iVar5);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0048e3a0
-                                                            (g_CEventList_PTR_006141f0,local_3e34);
+                                                            (g_CEventListPtr,local_3e34);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00525147:
                                                     pcVar20 = g_CHAR_ARRAY_01e65100;
@@ -1286,7 +1316,7 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x315,0xf);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1337,7 +1367,7 @@ LAB_00525147:
                                                       fVar6 = 2.8026e-45;
                                                     }
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     pCVar15[0xd].particle_systems[4].fade_end =
                                                          fVar6;
                                                   }
@@ -1347,13 +1377,13 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x389,3);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[3] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 3);
-                                                  if (g_INT_01e650f8 == 0) {
-                                                    local_210 = g_INT_01e650f8;
+                                                  if (g_ScriptEventsEnabled == 0) {
+                                                    local_210 = g_ScriptEventsEnabled;
                                                     this_ptr->mission_ended = 1;
                                                   }
                                                   }
@@ -1362,13 +1392,13 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x38d,6);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[6] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 6);
-                                                  if (g_INT_01e650f8 == 0) {
-                                                    local_210 = g_INT_01e650f8;
+                                                  if (g_ScriptEventsEnabled == 0) {
+                                                    local_210 = g_ScriptEventsEnabled;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       uVar16 = 
                                                   core_game_cpp_CGame_fadeIn_FUN_004bb4e0
@@ -1390,14 +1420,14 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x394,7);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 7);
-                                                  iVar5 = g_INT_01e650f8;
+                                                  iVar5 = g_ScriptEventsEnabled;
                                                   pCVar3 = g_CGamePtr;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     g_CGamePtr->allow_damage_flag = 0;
                                                     local_210 = iVar5;
                                                     if (0.0 <= this_ptr->cmd_timer) {
@@ -1419,7 +1449,7 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x39c,7);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1446,7 +1476,7 @@ LAB_00525147:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     uVar16 = 
                                                   core_charactr_cpp_CCharacter_initGesture_FUN_004291b0
                                                             (pCVar14,local_2aac);
@@ -1476,7 +1506,7 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x40d,9);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1495,19 +1525,18 @@ LAB_00525147:
                                                             (local_214c);
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_2534);
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004d8910
                                                               (&local_4dac,
                                                                g_CHAR_ARRAY_005e36b1 + 0x455,
                                                                g_CHAR_ARRAY_005e36b1 + 0x450);
                                                     local_1b0 = 
                                                   core_event_cpp_CEventList_getCounterValue_FUN_00491510
-                                                            (g_CEventList_PTR_006141f0,local_2534);
+                                                            (g_CEventListPtr,local_2534);
                                                   engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20
                                                             (&local_4dac,local_214c,&local_1b0);
                                                   core_event_cpp_CEventList_setCounter_FUN_00491400
-                                                            (g_CEventList_PTR_006141f0,local_2534,
-                                                             local_1b0);
+                                                            (g_CEventListPtr,local_2534,local_1b0);
                                                   engine_ini_cpp_CIniFile_dtor_FUN_004d8940
                                                             (&local_4dac,0);
                                                   }
@@ -1517,7 +1546,7 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x469,0xf);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1548,10 +1577,10 @@ LAB_00525147:
                                                                        ,&g_CTriggerClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_00491680
-                                                            (g_CEventList_PTR_006141f0,local_246c,
+                                                            (g_CEventListPtr,local_246c,
                                                              (CDemonActor *)
                                                              pCVar15[1].particle_systems[1].active);
                                                   }
@@ -1561,7 +1590,7 @@ LAB_00525147:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x4b6,5);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[5] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1575,7 +1604,7 @@ LAB_005224bf:
                                                     _sprintf(g_CHAR_ARRAY_01e65100,pcVar18);
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     if (7 < this_ptr->call_stack_count) {
                                                       _sprintf(g_CHAR_ARRAY_01e65100,
                                                                  g_CHAR_ARRAY_005e36b1 + 0x4f2);
@@ -1597,7 +1626,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x523,4);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[4] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1609,7 +1638,7 @@ LAB_005224bf:
                                                     pcVar18 = g_CHAR_ARRAY_005e36b1 + 0x528;
                                                     goto LAB_005224bf;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     this_ptr->next_cmd = iVar5;
                                                     local_1ec = g_CHAR_ARRAY_005e36b1 + 0x55d;
                                                   }
@@ -1622,7 +1651,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x55e,4);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[4] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1631,7 +1660,7 @@ LAB_005224bf:
                                                   core_script_cpp_parseArgument_FUN_005211a0
                                                             (&local_1ec,local_4364,300);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00525147;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
                                                             (g_CEditorToolsPtr,
@@ -1645,7 +1674,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x593,0xd);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1703,17 +1732,15 @@ LAB_005224bf:
                                                     }
                                                     local_1ec = local_1ec + local_50;
                                                     acStack_1596[~uVar16] = '\0';
-                                                    if (g_INT_01e650f8 == 0) {
+                                                    if (g_ScriptEventsEnabled == 0) {
                                                       local_1a8 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,
-                                                             acStack_1596 + 2);
+                                                            (g_CEventListPtr,acStack_1596 + 2);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0048e3a0
-                                                            (g_CEventList_PTR_006141f0,
-                                                             acStack_1596 + 2);
+                                                            (g_CEventListPtr,acStack_1596 + 2);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00525afd;
                                                   }
                                                   }
@@ -1723,7 +1750,7 @@ LAB_005224bf:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + 1;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     (*(((local_1ac->base).base.vtable._ue)->_ue).
                                                       updateVictim)(local_1ac,
                                                                     SUB14(local_1a8 == 0,0));
@@ -1734,7 +1761,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x62c,4);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[4] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1747,7 +1774,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x631,2);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[2] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1756,11 +1783,11 @@ LAB_005224bf:
                                                   core_script_cpp_parseConditionExpr_FUN_00521250
                                                             (&local_1ec,local_c20);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00525afd;
-                                                  if ((g_INT_01e650f8 == 0) &&
+                                                  if ((g_ScriptEventsEnabled == 0) &&
                                                      (iVar5 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,local_c20),
-                                                  iVar5 == 0)) {
+                                                            (g_CEventListPtr,local_c20), iVar5 == 0)
+                                                  ) {
                                                     iVar5 = 
                                                   core_script_cpp_CScript_skipCommands_FUN_00529a10
                                                             (this_ptr,this_ptr->next_cmd,0);
@@ -1784,7 +1811,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x66f,0xb);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1793,7 +1820,7 @@ LAB_005224bf:
                                                   sscanf
                                                             (local_1ec,g_CHAR_ARRAY_005e36b1 + 0x67b
                                                             );
-                                                  iVar5 = g_INT_01e650f8;
+                                                  iVar5 = g_ScriptEventsEnabled;
                                                   pCVar3 = g_CGamePtr;
                                                   if (local_1a4 < 2) {
                                                     _sprintf(g_CHAR_ARRAY_01e65100,
@@ -1801,7 +1828,7 @@ LAB_005224bf:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_1a4;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     this_ptr->mission_ended = 1;
                                                     local_210 = iVar5;
                                                     pCVar3->act_completion_state = 1;
@@ -1812,7 +1839,7 @@ LAB_005224bf:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x6a4,9);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1861,7 +1888,7 @@ LAB_00525afd:
                                                                g_CHAR_ARRAY_005e36b1 + 0x6c0);
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     g_CGamePtr->letterbox_mode = iVar13;
                                                     pCVar3->allow_damage_flag = (uint)(iVar13 == 0);
                                                     pCVar3->allow_enemy_attack_flag =
@@ -1902,7 +1929,7 @@ LAB_00525afd:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x6db,0xe);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1911,7 +1938,7 @@ LAB_00525afd:
                                                   core_script_cpp_parseArgument_FUN_005211a0
                                                             (&local_1ec,local_4238,0x104);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00525afd;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004a41b0
                                                             (g_CFieldNotesPtr,local_4238,(char *)0x0
@@ -1936,7 +1963,7 @@ joined_r0x00527108:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x6ea,0xe);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1945,10 +1972,10 @@ joined_r0x00527108:
                                                   core_script_cpp_parseConditionExpr_FUN_00521250
                                                             (&local_1ec,local_af4);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00525afd;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     iVar5 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,local_af4);
+                                                            (g_CEventListPtr,local_af4);
                                                   this_ptr->focus_actor_locked = iVar5;
                                                   }
                                                   }
@@ -1957,7 +1984,7 @@ joined_r0x00527108:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x6f9,6);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[6] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -1982,7 +2009,7 @@ joined_r0x00527108:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0) {
 joined_r0x0052419d:
-                                                    if (g_INT_01e6590c == 0) {
+                                                    if (g_ActorLookedUpByVariable == 0) {
                                                       return -1;
                                                     }
                                                     goto LAB_00522414;
@@ -2015,7 +2042,7 @@ joined_r0x0052419d:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + 1;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00429c60
                                                             (pCVar14,pCVar15);
@@ -2026,7 +2053,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x780,0xd);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2052,7 +2079,7 @@ joined_r0x0052419d:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     this_ptr->monster_vision_actor = pCVar14;
                                                     local_19c = (uint)(g_CGamePtr->
                                                                        special_view_active == 0);
@@ -2065,7 +2092,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,g_CHAR_ARRAY_005e36b1
                                                                                + 0x7c7,0xc);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2098,7 +2125,7 @@ joined_r0x0052419d:
                                                     pcVar18 = "Invalid movement rate %f";
                                                     goto LAB_005224bf;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_platfrm_cpp_CPlatform_startMovement_FUN_00518ff0
                                                             (pCVar7,local_4db0,local_4dc0);
@@ -2109,7 +2136,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,"openDoor",8
                                                                       );
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[8] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2140,8 +2167,8 @@ joined_r0x0052419d:
                                                              &g_CCharacterClassInfo),
                                                   pCVar14 == (CCharacter *)0x0))
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
-                                                    local_210 = g_INT_01e650f8;
+                                                  if (g_ScriptEventsEnabled == 0) {
+                                                    local_210 = g_ScriptEventsEnabled;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       iVar5 = (*(((pCVar14->base).vtable._uc)->_uc).
                                                                 hasDoorTarget)(pCVar14);
@@ -2161,7 +2188,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,
                                                   "pressButton",0xb);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2190,13 +2217,13 @@ joined_r0x0052419d:
                                                             ((SPlayerActionState *)
                                                              &pCVar15[0x62].particle_systems[0].
                                                               fade_duration,local_e78);
-                                                  iVar5 = g_INT_01e650f8;
+                                                  iVar5 = g_ScriptEventsEnabled;
                                                   if (piVar8 == (int *)0x0) {
                                                     _sprintf(g_CHAR_ARRAY_01e65100,
                                                                "Invalid button name: %s");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     if (g_INT_01e65904 != 0) {
                                                                                                             
                                                   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
@@ -2210,7 +2237,7 @@ joined_r0x0052419d:
                                                     iVar5 = _strnicmp
                                                                       (pcVar18,"raise",5);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[5] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2223,15 +2250,15 @@ joined_r0x0052419d:
                                                                "Error parsing event expression on raise statament: %s");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_executeCommands_FUN_004894f0
-                                                            (g_CEventList_PTR_006141f0,local_f40);
+                                                            (g_CEventListPtr,local_f40);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCommands_FUN_0048e3e0
-                                                            (g_CEventList_PTR_006141f0,local_f40);
+                                                            (g_CEventListPtr,local_f40);
                                                   if (pcVar18 != (char *)0x0) {
                                                     pcVar20 = g_CHAR_ARRAY_01e65100;
                                                     do {
@@ -2254,7 +2281,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,
                                                   "releaseButton",0xd);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2288,7 +2315,7 @@ joined_r0x0052419d:
                                                                "Invalid button name: %s");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     if (g_INT_01e65904 != 0) {
                                                                                                             
                                                   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
@@ -2303,7 +2330,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,
                                                   "removeAllItemsFromInventory",0x1b);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x1b] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2325,7 +2352,7 @@ joined_r0x0052419d:
                                                                        &g_CHeroClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_inv_cpp_CInventory_initialize_FUN_004da900
                                                               ((CInventory *)
                                                                &pCVar15[0xd6].process_disabled);
@@ -2336,7 +2363,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,
                                                   "removeItemFromInventory",0x17);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x17] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2372,15 +2399,15 @@ joined_r0x0052419d:
                                                       return -1;
                                                     }
                                                     local_1ec = local_1ec + local_17c;
-                                                    if (g_INT_01e650f8 == 0) {
+                                                    if (g_ScriptEventsEnabled == 0) {
                                                       iVar5 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,local_1bd4);
+                                                            (g_CEventListPtr,local_1bd4);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0048e3a0
-                                                            (g_CEventList_PTR_006141f0,local_1bd4);
+                                                            (g_CEventListPtr,local_1bd4);
                                                   if (pcVar18 != (char *)0x0) {
                                                     pcVar20 = g_CHAR_ARRAY_01e65100;
                                                     do {
@@ -2404,7 +2431,7 @@ joined_r0x0052419d:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + 1;
-                                                  if (((g_INT_01e650f8 == 0) &&
+                                                  if (((g_ScriptEventsEnabled == 0) &&
                                                       (pCVar15 = 
                                                   core_inv_cpp_CInventory_findItemByName_FUN_004db830
                                                             (g_CHero_PTR_ARRAY_01cedee4
@@ -2429,7 +2456,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,"removeKeys"
                                                                        ,10);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2449,7 +2476,7 @@ joined_r0x0052419d:
                                                                "Can't use removeKeys command in multi-player");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_hero_cpp_CHero_removeMatchingKeys_FUN_004d0070
                                                             (g_CHero_PTR_ARRAY_01cedee4
@@ -2460,12 +2487,12 @@ joined_r0x0052419d:
                                                     iVar5 = _strnicmp
                                                                       (pcVar18,"return",6);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[6] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (pcVar18 + 6);
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     iVar5 = this_ptr->call_stack_count;
                                                     if (iVar5 < 1) {
                                                       _sprintf(g_CHAR_ARRAY_01e65100,
@@ -2483,7 +2510,7 @@ joined_r0x0052419d:
                                                                       (pcVar18,
                                                   "rollCredits",0xb);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2498,8 +2525,8 @@ joined_r0x0052419d:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_16c;
-                                                  if (g_INT_01e650f8 == 0) {
-                                                    local_210 = g_INT_01e650f8;
+                                                  if (g_ScriptEventsEnabled == 0) {
+                                                    local_210 = g_ScriptEventsEnabled;
                                                     this_ptr->mission_ended = 1;
                                                     pCVar3->act_completion_state = 2;
                                                   }
@@ -2508,7 +2535,7 @@ joined_r0x0052419d:
                                                     iVar5 = _strnicmp
                                                                       (pcVar18,"say",3);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[3] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2557,11 +2584,11 @@ LAB_00526d4a:
                                                     return -1;
                                                   }
                                                   }
-                                                  if ((g_INT_01e650f8 == 0) &&
+                                                  if ((g_ScriptEventsEnabled == 0) &&
                                                      (local_210 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00529910
                                                             (this_ptr,this_ptr->dialog_wav_time,
-                                                             param_2), 0 < local_210)) {
+                                                             time_remaining), 0 < local_210)) {
                                                     core_script_cpp_CScript_setSpeaker_FUN_00529990
                                                               (this_ptr,this_ptr->who_is_speaking);
                                                   }
@@ -2571,7 +2598,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "selectWeapon",0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2595,9 +2622,9 @@ LAB_00526d4a:
                                                                        &g_CHeroClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     piVar8 = &pCVar15[0xd6].process_disabled;
-                                                    local_20 = g_INT_01e650f8;
+                                                    local_20 = g_ScriptEventsEnabled;
                                                     actor_ptr = 
                                                   core_doc_cpp_getSelectedWeapon_FUN_0045e1b0
                                                             ((CInventory *)piVar8);
@@ -2635,7 +2662,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setActorVariable",0x10);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x10] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2664,14 +2691,13 @@ LAB_00526d4a:
                                                                        g_CDemonActorClassInfo.
                                                                        name_hash,
                                                                        &g_CDemonActorClassInfo);
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_00491680
-                                                            (g_CEventList_PTR_006141f0,local_165c,
-                                                             pCVar15);
+                                                            (g_CEventListPtr,local_165c,pCVar15);
                                                   }
                                                   else {
-                                                    iVar5 = g_INT_01e6590c;
+                                                    iVar5 = g_ActorLookedUpByVariable;
                                                     if (pCVar15 == (CDemonActor *)0x0)
                                                     goto joined_r0x00527108;
                                                   }
@@ -2681,7 +2707,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setAmbientSound",0xf);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2690,7 +2716,7 @@ LAB_00526d4a:
                                                   core_script_cpp_parseArgument_FUN_005211a0
                                                             (&local_1ec,local_fa4,100);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00526d4a;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_sound_cpp_CSound_playAmbientSound_FUN_0055adc0
                                                             (g_CSound_PTR_0061c068,local_fa4);
@@ -2701,7 +2727,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setCameraGroup",0xe);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2728,7 +2754,7 @@ LAB_00526d4a:
                                                              g_CDemonSetPtr->cameras[0].name + iVar5
                                                              ,0);
                                                   if ((iVar9 != 0) &&
-                                                     (local_148 = 1, g_INT_01e650f8 == 0)) {
+                                                     (local_148 = 1, g_ScriptEventsEnabled == 0)) {
                                                     *(uint *)
                                                      ((int)(&g_CDemonSetPtr->cameras[0].
                                                              rotation_matrix + 1) + iVar5 + 0x10) =
@@ -2747,7 +2773,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setCharacterModel",0x11);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2774,7 +2800,7 @@ LAB_00526d4a:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     (*(((pCVar14->base).vtable._uc)->_uc).
                                                       setCharacterModel)
                                                               (pCVar14,local_3a8,local_514);
@@ -2785,7 +2811,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"setAIState"
                                                                        ,10);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2810,7 +2836,7 @@ LAB_00526d4a:
                                                                        &g_CBasicEnemyClassInfo);
                                                   if (pCVar11 == (CBasicEnemy *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_basicene_cpp_CBasicEnemy_setAIState_FUN_0059e7a0
                                                             (pCVar11,local_444);
@@ -2821,7 +2847,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setAnimation",0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2844,9 +2870,9 @@ LAB_00526d4a:
                                                                        &g_CBasicEnemyClassInfo);
                                                   if (pCVar11 == (CBasicEnemy *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     pcVar18 = local_3dc;
-                                                    iVar5 = g_INT_01e650f8;
+                                                    iVar5 = g_ScriptEventsEnabled;
                                                     pCVar10 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_00503860
                                                             (&(pCVar11->base).base.model.base);
@@ -2862,7 +2888,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"startPS",7)
                                                     ;
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2884,7 +2910,7 @@ LAB_00526d4a:
                                                                        &g_CDemonActorClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_actor_cpp_CDemonActor_startParticleSystem_FUN_0040ce40
                                                             (pCVar15,local_138,local_134);
@@ -2894,7 +2920,7 @@ LAB_00526d4a:
                                                     iVar5 = _strnicmp
                                                                       (pcVar18,"stopPS",6);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[6] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2916,7 +2942,7 @@ LAB_00526d4a:
                                                                        &g_CDemonActorClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_actor_cpp_CDemonActor_stopParticleSystem_FUN_0040ce70
                                                             (pCVar15,local_12c,local_128);
@@ -2927,7 +2953,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"setPSFade",
                                                                        9);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2949,7 +2975,7 @@ LAB_00526d4a:
                                                                        &g_CDemonActorClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_actor_cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0
                                                             (pCVar15,local_120,local_11c,local_118,
@@ -2961,7 +2987,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "resetInitialPos",0xf);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xf] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -2984,7 +3010,7 @@ LAB_00526d4a:
                                                                        &g_CBasicEnemyClassInfo);
                                                   if (pCVar11 == (CBasicEnemy *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_basicene_cpp_CBasicEnemy_resetInitialPos_FUN_005a0240
                                                             (pCVar11);
@@ -2995,7 +3021,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"setFade",7)
                                                     ;
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3021,7 +3047,7 @@ LAB_00526d4a:
                                                                        &g_CBasicEnemyClassInfo);
                                                   if (pCVar11 == (CBasicEnemy *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0
                                                             (pCVar11,local_104,local_100,local_fc);
@@ -3032,7 +3058,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"startFade",
                                                                        9);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3055,7 +3081,7 @@ LAB_00526d4a:
                                                                        &g_CBasicEnemyClassInfo);
                                                   if (pCVar11 == (CBasicEnemy *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570
                                                             (pCVar11);
@@ -3066,7 +3092,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setAlphaFade",0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3085,7 +3111,7 @@ LAB_00526d4a:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_d8;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_game_cpp_CGame_setAlphaFade_FUN_004bb500
                                                               (g_CGamePtr,local_f0,local_ec,local_e8
                                                                ,local_e4,local_e0,local_dc,0);
@@ -3096,7 +3122,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "startAlphaFade",0xe);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3109,7 +3135,7 @@ LAB_00526d4a:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_d4;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_game_cpp_CGame_startAlphaFade_FUN_004bb550
                                                               (g_CGamePtr);
                                                   }
@@ -3119,7 +3145,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "stopAlphaFade",0xd);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3132,7 +3158,7 @@ LAB_00526d4a:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_d0;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_game_cpp_CGame_stopAlphaFade_FUN_004bb580
                                                               (g_CGamePtr);
                                                   }
@@ -3142,7 +3168,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setInventoryIndex",0x11);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x11] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3156,7 +3182,7 @@ LAB_00526d4a:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_c8;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     (*(((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]
                                                         ->base).base.vtable._uh)->_uh).
                                                       setInventoryIndex)
@@ -3169,7 +3195,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setPhantomEyes",0xe);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3195,7 +3221,7 @@ LAB_00526d4a:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     color.y = local_b0;
                                                     color.x = (float)local_b8;
                                                     color.z = local_b0;
@@ -3210,7 +3236,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"selectItem"
                                                                        ,10);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3234,7 +3260,7 @@ LAB_00526d4a:
                                                                        &g_CHeroClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     piVar8 = &pCVar15[0xd6].process_disabled;
                                                     pCVar15 = 
                                                   core_inv_cpp_CInventory_findItemByName_FUN_004db830
@@ -3254,7 +3280,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setCharacterHealth",0x12);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3277,7 +3303,7 @@ LAB_00526d4a:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     *(float *)&pCVar15[0xd].particle_systems[4].
                                                                field_0x20 =
                                                          pCVar15[0xd].particle_systems[4].fade_start
@@ -3289,7 +3315,7 @@ LAB_00526d4a:
                                                                       (pcVar18,"setEyes",7)
                                                     ;
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3313,7 +3339,7 @@ LAB_00526d4a:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_charactr_cpp_CCharacter_setEyeFrame_FUN_00424b50
                                                             (pCVar14,0,local_98,local_90);
@@ -3326,7 +3352,7 @@ LAB_00526d4a:
                                                                       (pcVar18,
                                                   "setSwitchmap",0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3352,7 +3378,7 @@ LAB_005281fe:
                                                   }
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_17ec);
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_mission_cpp_CDemonMission_setVersionControlDirectory_FUN_004fd460
                                                             (g_CDemonMission_PTR_00618170,local_17ec
@@ -3364,7 +3390,7 @@ LAB_005281fe:
                                                                       (pcVar18,
                                                   "setFieldNotesImageSuffix",0x18);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x18] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3373,7 +3399,7 @@ LAB_005281fe:
                                                   core_script_cpp_parseArgument_FUN_005211a0
                                                             (&local_1ec,local_3f34,0x100);
                                                   if (pcVar18 != (char *)0x0) goto LAB_005281fe;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_fldnotes_cpp_CFieldNotes_setImageSuffix_FUN_004a56c0
                                                             (g_CFieldNotesPtr,local_3f34);
@@ -3384,7 +3410,7 @@ LAB_005281fe:
                                                                       (pcVar18,
                                                   "setFocusActor",0xd);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3424,7 +3450,7 @@ LAB_005281fe:
                                                                       (pcVar18,
                                                   "setHeroTask",0xb);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3484,7 +3510,7 @@ LAB_005281fe:
                                                       }
                                                     }
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_hero_cpp_CHero_setAiTask_FUN_004d0090
                                                               (this_ptr_00,iVar5);
                                                   }
@@ -3494,7 +3520,7 @@ LAB_005281fe:
                                                                       (pcVar18,"setIniInt",
                                                                        9);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3510,7 +3536,7 @@ LAB_005281fe:
                                                   local_1ec = local_1ec + local_7c;
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_372c);
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004d8910
                                                               (&local_4ba8,
                                                                "system\\nocturne.ini",
@@ -3526,7 +3552,7 @@ LAB_005281fe:
                                                                       (pcVar18,"setMouth",8
                                                                       );
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[8] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3550,7 +3576,7 @@ LAB_005281fe:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_charactr_cpp_CCharacter_setMouthFrame_FUN_00424b90
                                                             (pCVar14,local_78,local_74);
@@ -3561,7 +3587,7 @@ LAB_005281fe:
                                                                       (pcVar18,
                                                   "setSayTimeOverride",0x12);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3591,7 +3617,7 @@ LAB_005281fe:
                                                     }
                                                     local_1ec = local_1ec + local_6c;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     this_ptr->message_duration = local_68;
                                                   }
                                                   }
@@ -3600,7 +3626,7 @@ LAB_005281fe:
                                                                       (pcVar18,
                                                   "setSkipLabel",0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3632,7 +3658,7 @@ LAB_00528804:
                                                                "Undefined label '%s'");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     this_ptr->saved_cmd_index = iVar5;
                                                   }
                                                   }
@@ -3641,7 +3667,7 @@ LAB_00528804:
                                                                       (pcVar18,"setSpeaker"
                                                                        ,10);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3678,7 +3704,7 @@ LAB_00528804:
                                                                       (pcVar18,
                                                   "setTimeFactor",0xd);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3711,7 +3737,7 @@ LAB_00528804:
                                                                     (pcVar18,"setVictim",9)
                                                   ;
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[9] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3751,7 +3777,7 @@ LAB_00528804:
                                                     iVar5 = _stricmp
                                                                       (local_37f4,"disable"
                                                                       );
-                                                    pCVar15 = g_CDemonActor_PTR_005fb000;
+                                                    pCVar15 = g_ScriptSentinelActor;
                                                     if ((iVar5 != 0) &&
                                                        (pCVar15 = 
                                                   core_script_cpp_getActor_FUN_00521290
@@ -3767,7 +3793,7 @@ LAB_00528804:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + 1;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_enemy_cpp_CEnemy_setVictim_FUN_00488850
                                                               (this_ptr_01,pCVar15);
                                                   }
@@ -3777,7 +3803,7 @@ LAB_00528804:
                                                                       (pcVar18,
                                                   "setWalkTimeout",0xe);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3801,7 +3827,7 @@ LAB_00528804:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     (*(((pCVar14->base).vtable._uc)->_uc).
                                                       setWalkTimeout)(pCVar14,local_58);
                                                   }
@@ -3811,7 +3837,7 @@ LAB_00528804:
                                                                       (pcVar18,"snapToFace"
                                                                        ,10);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3842,7 +3868,7 @@ LAB_00528804:
                                                              &g_CDemonActorClassInfo),
                                                   pCVar15 == (CDemonActor *)0x0))
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     core_bodypart_cpp_subtractVector_FUN_00417b60
                                                               (&(pCVar15->location).position,
                                                                &(local_48->location).position,
@@ -3881,7 +3907,7 @@ LAB_00528804:
                                                                       (pcVar18,"startSay",8
                                                                       );
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[8] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -3931,7 +3957,7 @@ LAB_00528804:
                                                                     (pcVar18,"switchCamera"
                                                                      ,0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -4019,7 +4045,7 @@ LAB_00528fd3:
                                                                "Invalid hold time value");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00539820
                                                             (g_CDemonSetPtr,iVar5,1e+10);
@@ -4030,7 +4056,7 @@ LAB_00528fd3:
                                                                       (pcVar18,
                                                   "timedDisplay",0xc);
                                                   if ((iVar5 == 0) &&
-                                                     ((g_UCHAR_ARRAY_0061ed94
+                                                     ((g_CharacterClassificationTable
                                                        [(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -4062,7 +4088,7 @@ LAB_00529169:
                                                                "Error parsing time value");
                                                     return -1;
                                                   }
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     pcVar20 = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
                                                             (local_45bc + local_3c);
@@ -4078,7 +4104,7 @@ LAB_00529169:
                                                   } while (cVar1 != '\0');
                                                   local_210 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00529910
-                                                            (this_ptr,local_38,param_2);
+                                                            (this_ptr,local_38,time_remaining);
                                                   if (0 < local_210) {
                                                     this_ptr->current_message[0] = '\0';
                                                   }
@@ -4089,7 +4115,7 @@ LAB_00529169:
                                                                       (pcVar18,"turnToFace"
                                                                        ,10);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[10] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -4121,7 +4147,7 @@ LAB_00529169:
                                                              &g_CDemonActorClassInfo),
                                                   pCVar15 == (CDemonActor *)0x0))
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     (*(((pCVar14->base).vtable._uc)->_uc).
                                                       setWalkTargetImmediate)(pCVar14,pCVar15);
                                                   }
@@ -4130,7 +4156,7 @@ LAB_00529169:
                                                     iVar5 = _strnicmp
                                                                       (pcVar18,"wait",4);
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[4] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -4144,10 +4170,10 @@ LAB_00529169:
                                                     return -1;
                                                   }
                                                   local_1ec = local_1ec + local_30;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     local_210 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00529910
-                                                            (this_ptr,local_2c,param_2);
+                                                            (this_ptr,local_2c,time_remaining);
                                                   }
                                                   }
                                                   else {
@@ -4155,7 +4181,7 @@ LAB_00529169:
                                                                       (pcVar18,"waitFor",7)
                                                     ;
                                                     if ((iVar5 == 0) &&
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[7] + 1)] & 0xe0) == 0)) {
                                                       local_1ec = 
                                                   core_script_cpp_skipWhitespace_FUN_00521180
@@ -4164,11 +4190,11 @@ LAB_00529169:
                                                   core_script_cpp_parseConditionExpr_FUN_00521250
                                                             (&local_1ec,local_900);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00529169;
-                                                  if ((g_INT_01e650f8 == 0) &&
+                                                  if ((g_ScriptEventsEnabled == 0) &&
                                                      (iVar5 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                                            (g_CEventList_PTR_006141f0,local_900),
-                                                  iVar5 == 0)) {
+                                                            (g_CEventListPtr,local_900), iVar5 == 0)
+                                                  ) {
                                                     local_210 = 0;
                                                   }
                                                   }
@@ -4176,7 +4202,7 @@ LAB_00529169:
                                                     iVar5 = _strnicmp
                                                                       (pcVar18,"walkTo",6);
                                                     if ((iVar5 != 0) ||
-                                                       ((g_UCHAR_ARRAY_0061ed94
+                                                       ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[6] + 1)] & 0xe0) != 0)) {
                                                       pcVar18 = "Unknown command on line %d: %s";
                                                       goto LAB_005224bf;
@@ -4243,7 +4269,7 @@ LAB_00529169:
                                                              &g_CDemonActorClassInfo),
                                                   pCVar15 == (CDemonActor *)0x0))
                                                   goto joined_r0x0052419d;
-                                                  if (g_INT_01e650f8 == 0) {
+                                                  if (g_ScriptEventsEnabled == 0) {
                                                     (*(((pCVar14->base).vtable._uc)->_uc).
                                                       setWalkTarget)(pCVar14,pCVar15,local_28,
                                                                      local_24);
@@ -4343,14 +4369,14 @@ LAB_00529169:
     }
   }
 LAB_005223fb:
-  if ((g_INT_01e650f8 != 2) && (*local_1e8 != '\0')) {
+  if ((g_ScriptEventsEnabled != 2) && (*local_1e8 != '\0')) {
     _sprintf(g_CHAR_ARRAY_01e65100,"Extra characters \"%s\" on line %d");
     return -1;
   }
 LAB_00522414:
   if (local_20c == 1) {
     this_ptr->dialog_wav_time = -1.0;
-    iVar5 = g_INT_01e650f8;
+    iVar5 = g_ScriptEventsEnabled;
     this_ptr->cmd_timer = -1.0;
     if ((iVar5 == 0) && (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
       _sprintf(g_CHAR_ARRAY_01e65100,"Overrun past the end of the script.");

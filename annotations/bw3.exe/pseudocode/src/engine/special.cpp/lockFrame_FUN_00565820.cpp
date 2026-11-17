@@ -15,7 +15,7 @@ int __cdecl engine_special_cpp_lockFrame_FUN_00565820(void)
     g_INT_02cf612c = g_INT_01c6cee8;
   }
   else {
-    iVar1 = (*(code *)g_PTR_02cf6004)();
+    iVar1 = (*(code *)g_APIDLL_lockFrame)();
     if (iVar1 != 0) {
       g_INT_02cf6128 = g_INT_005fba20;
       g_INT_02cf612c = 1;

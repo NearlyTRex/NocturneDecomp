@@ -154,7 +154,7 @@ LAB_0051260f:
   iStack_1c4 = (int)ROUND(fStack_100 * 256.0f);
   iStack_1c0 = (int)ROUND(fStack_fc * 256.0f);
   SStack_1bc.base.type = (int)ROUND(CStack_f8.x * 256.0f);
-  pSVar5 = g_SMRGLPrimitiveQuad_ARRAY_005be774;
+  pSVar5 = g_BoundingBoxQuadTemplates;
   do {
     iVar14 = pSVar5->vertices[0].vertex_index;
     pSVar6 = pSVar5 + 1;
@@ -163,7 +163,7 @@ LAB_0051260f:
          (pSVar5->base).surface_normal.A.i * aiStack_21c[iVar14 * 3 + -2] +
          (pSVar5->base).surface_normal.C.i * aiStack_21c[iVar14 * 3];
     pSVar5 = pSVar6;
-  } while (pSVar6 != g_SMRGLPrimitiveQuad_ARRAY_005be774 + sizeof(g_SMRGLPrimitiveQuad_ARRAY_005be774) / sizeof(g_SMRGLPrimitiveQuad_ARRAY_005be774[0]));
+  } while (pSVar6 != g_BoundingBoxQuadTemplates + sizeof(g_BoundingBoxQuadTemplates) / sizeof(g_BoundingBoxQuadTemplates[0]));
   if (force_evaluation_mode == 0) {
     iStack_18 = this_ptr->camera_count * 10;
     dVar23 = round
@@ -208,7 +208,7 @@ LAB_0051260f:
     iVar14 = iVar7;
   } while (iVar7 != 0xc0);
   iVar14 = 0;
-  g_INT_026639ec = 0;
+  g_VDNearbyActorCount = 0;
   fStack_ac = 100.0f * 100.0f;
   for (iStack_24 = 0; iStack_24 < g_CDemonSetPtr->actor_count; iStack_24 = iStack_24 + 1) {
     this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar14);
@@ -218,21 +218,21 @@ LAB_0051260f:
        fVar3 = (this_ptr_00->location).position.y - (actor->location).position.y,
        fVar2 = (this_ptr_00->location).position.z - (actor->location).position.z,
        fVar2 * fVar2 + fVar3 * fVar3 + fVar24 * fVar24 <= fStack_ac)) {
-      g_CDemonActor_PTR_ARRAY_026639f0[g_INT_026639ec] = this_ptr_00;
+      g_VDNearbyActorPointers[g_VDNearbyActorCount] = this_ptr_00;
       pCVar8 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
                          (this_ptr_00,(CBoundingBox3D *)(local_160 + 0x14));
-      iVar7 = g_INT_026639ec;
-      if (g_CBoundingBox3D_ARRAY_02665930 + g_INT_026639ec != pCVar8) {
-        g_CBoundingBox3D_ARRAY_02665930[g_INT_026639ec].min.x = (pCVar8->min).x;
-        g_CBoundingBox3D_ARRAY_02665930[iVar7].min.y = (pCVar8->min).y;
-        g_CBoundingBox3D_ARRAY_02665930[iVar7].min.z = (pCVar8->min).z;
+      iVar7 = g_VDNearbyActorCount;
+      if (g_VDNearbyActorBoundingBoxes + g_VDNearbyActorCount != pCVar8) {
+        g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;
+        g_VDNearbyActorBoundingBoxes[iVar7].min.y = (pCVar8->min).y;
+        g_VDNearbyActorBoundingBoxes[iVar7].min.z = (pCVar8->min).z;
       }
-      if (&g_CBoundingBox3D_ARRAY_02665930[iVar7].max != &pCVar8->max) {
-        g_CBoundingBox3D_ARRAY_02665930[iVar7].max.x = (pCVar8->max).x;
-        g_CBoundingBox3D_ARRAY_02665930[iVar7].max.y = (pCVar8->max).y;
-        g_CBoundingBox3D_ARRAY_02665930[iVar7].max.z = (pCVar8->max).z;
+      if (&g_VDNearbyActorBoundingBoxes[iVar7].max != &pCVar8->max) {
+        g_VDNearbyActorBoundingBoxes[iVar7].max.x = (pCVar8->max).x;
+        g_VDNearbyActorBoundingBoxes[iVar7].max.y = (pCVar8->max).y;
+        g_VDNearbyActorBoundingBoxes[iVar7].max.z = (pCVar8->max).z;
       }
-      g_INT_026639ec = g_INT_026639ec + 1;
+      g_VDNearbyActorCount = g_VDNearbyActorCount + 1;
     }
     iVar14 = iVar14 + 4;
   }
@@ -283,7 +283,7 @@ LAB_0051260f:
     }
     if (iStack_b0 == this_ptr->cameras[g_INT_020875f4].vdir_zone) {
       pCStack_98 = actor;
-      pSStack_94 = (SMRGLPrimitivePoly *)g_SMRGLPrimitiveQuad_ARRAY_005be774;
+      pSStack_94 = (SMRGLPrimitivePoly *)g_BoundingBoxQuadTemplates;
       this_ptr_02 = pCStack_9c + g_INT_020875f4;
       pCStack_8c = this_ptr_02;
       iStack_90 = g_INT_020875f4;
@@ -375,13 +375,13 @@ LAB_0051260f:
             iStack_20 = 0;
             iStack_78 = 0;
             iStack_30 = 0x180;
-            if (0 < g_INT_026639ec) {
+            if (0 < g_VDNearbyActorCount) {
               iStack_2c = 0;
               paauStack_38 = g_ThumbZBufferTable + iStack_90;
-              pCStack_28 = g_CBoundingBox3D_ARRAY_02665930;
+              pCStack_28 = g_VDNearbyActorBoundingBoxes;
               pCStack_50 = &pCStack_8c->position;
               do {
-                pCStack_60 = *(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_026639f0 + iStack_2c);
+                pCStack_60 = *(CDemonActor **)((int)g_VDNearbyActorPointers + iStack_2c);
                 fVar24 = (pCStack_60->location).position.x - pCStack_50->x;
                 fVar3 = (pCStack_60->location).position.y - pCStack_50->y;
                 fVar2 = (pCStack_60->location).position.z - pCStack_50->z;
@@ -480,7 +480,7 @@ LAB_0051260f:
                 iStack_2c = iStack_2c + 4;
                 pCStack_28 = pCStack_28 + 1;
                 iStack_20 = iStack_20 + 1;
-              } while (iStack_20 < g_INT_026639ec);
+              } while (iStack_20 < g_VDNearbyActorCount);
             }
             engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
                       (g_CDemonRenderer_PTR_005ae704,0);

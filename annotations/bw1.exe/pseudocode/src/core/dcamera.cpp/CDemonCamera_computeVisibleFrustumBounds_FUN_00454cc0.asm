@@ -10,10 +10,10 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0 at 0054e9f4
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005fe604 = 0.00390625
-;   CVector3f g_CVector3f_02c8af28
-;   undefined4 g_CVector3f_02c8af28.y
-;   undefined4 g_CVector3f_02c8af28.z
+;   float g_WorldToFloat = 0.00390625
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
@@ -85,12 +85,12 @@ section .text
     MOV dword ptr [ESP + 0xe4],ECX      ; 00454da9
     JMP 0x00454d1d                      ; 00454db0
         ;   XREF to: 00454d1d (UNCONDITIONAL_JUMP)  ; LAB_00454d1d
-    MOV EAX,[0x02c8af28]                ; 00454db5 | g_CVector3f_02c8af28
+    MOV EAX,[0x02c8af28]                ; 00454db5 | g_ZeroVector
         ;   Label: LAB_00454db5
     MOV dword ptr [ESP + 0xc],EAX       ; 00454dba
-    MOV EAX,[0x02c8af2c]                ; 00454dbe | g_CVector3f_02c8af28.y
+    MOV EAX,[0x02c8af2c]                ; 00454dbe | g_ZeroVector.y
     MOV dword ptr [ESP + 0x10],EAX      ; 00454dc3
-    MOV EAX,[0x02c8af30]                ; 00454dc7 | g_CVector3f_02c8af28.z
+    MOV EAX,[0x02c8af30]                ; 00454dc7 | g_ZeroVector.z
     MOV dword ptr [ESP + 0x14],EAX      ; 00454dcc
     JMP 0x00454ce6                      ; 00454dd0
         ;   XREF to: 00454ce6 (UNCONDITIONAL_JUMP)  ; LAB_00454ce6
@@ -173,13 +173,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00454ec3
     MOVSD ES:EDI,ESI                    ; 00454ec4
     FILD dword ptr [EAX]                ; 00454ec5
-    FMUL float ptr [0x005fe604]         ; 00454ec7 | g_FLOAT_005fe604
+    FMUL float ptr [0x005fe604]         ; 00454ec7 | g_WorldToFloat
     FSTP float ptr [EBX]                ; 00454ecd
     FILD dword ptr [EAX + 0x4]          ; 00454ecf
-    FMUL float ptr [0x005fe604]         ; 00454ed2 | g_FLOAT_005fe604
+    FMUL float ptr [0x005fe604]         ; 00454ed2 | g_WorldToFloat
     FSTP float ptr [EBX + 0x4]          ; 00454ed8
     FILD dword ptr [EAX + 0x8]          ; 00454edb
-    FMUL float ptr [0x005fe604]         ; 00454ede | g_FLOAT_005fe604
+    FMUL float ptr [0x005fe604]         ; 00454ede | g_WorldToFloat
     FSTP float ptr [EBX + 0x8]          ; 00454ee4
     FLD float ptr [ESP + 0xc0]          ; 00454ee7
     FLD float ptr [ESP + 0xc4]          ; 00454eee

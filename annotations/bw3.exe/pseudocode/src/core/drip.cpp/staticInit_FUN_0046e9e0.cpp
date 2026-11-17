@@ -12,6 +12,6 @@ void __cdecl core_drip_cpp_staticInit_FUN_0046e9e0(void)
   core_actor_cpp_registerActorClass_FUN_0040c3a0
             (&g_CDripClassInfo,"CDrip",core_drip_cpp_factoryFuncDrip_FUN_0046ea20,
              &g_CDripClassVersion,6,&g_CDemonActorClassInfo);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500(&g_CKeyFramedModelInstance_01c0b3dc);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500(&g_StalactiteRockModelInstance);
   return;
 }

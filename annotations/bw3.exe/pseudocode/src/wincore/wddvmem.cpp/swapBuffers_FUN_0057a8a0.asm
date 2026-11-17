@@ -31,16 +31,16 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   int g_INT_00607288 = -0x1
+;   int g_WindowActive = -0x1
 ;   void* g_PTR_0060b010
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6cee8
-;   int g_INT_01c6e2a0
+;   int g_MMXSupported
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02d0bce4
-;   int g_INT_02d0bcf4
+;   IDirectDrawSurface* g_DirectDrawSurface
+;   int g_FlipPending
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -63,14 +63,14 @@ section .text
     PUSH EBP                            ; 0057a8a3
     MOV EBP,ESP                         ; 0057a8a4
     SUB ESP,0x7c                        ; 0057a8a6
-    CMP dword ptr [0x00607288],0x0      ; 0057a8a9 | g_INT_00607288
+    CMP dword ptr [0x00607288],0x0      ; 0057a8a9 | g_WindowActive
     JZ 0x0057a971                       ; 0057a8b0
         ;   XREF to: 0057a971 (CONDITIONAL_JUMP)  ; LAB_0057a971
     MOV ECX,dword ptr [0x01c6cee8]      ; 0057a8b6 | g_INT_01c6cee8
     TEST ECX,ECX                        ; 0057a8bc
     JNZ 0x0057a985                      ; 0057a8be
         ;   XREF to: 0057a985 (CONDITIONAL_JUMP)  ; LAB_0057a985
-    MOV EBX,dword ptr [0x02d0bcf4]      ; 0057a8c4 | g_INT_02d0bcf4
+    MOV EBX,dword ptr [0x02d0bcf4]      ; 0057a8c4 | g_FlipPending
     TEST EBX,EBX                        ; 0057a8ca
     JNZ 0x0057a94d                      ; 0057a8cc
         ;   XREF to: 0057a94d (CONDITIONAL_JUMP)  ; LAB_0057a94d
@@ -89,7 +89,7 @@ section .text
     XOR EDI,EDI                         ; 0057a8fc
     MOV EBX,dword ptr [0x005fba18]      ; 0057a8fe | g_INT_005fba18
         ;   Label: LAB_0057a8fe
-    MOV EAX,dword ptr [EDI + 0x1c5faec] ; 0057a904 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EAX,dword ptr [EDI + 0x1c5faec] ; 0057a904 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR EDX,EDX                         ; 0057a90a
     TEST EBX,EBX                        ; 0057a90c
     JLE 0x0057a931                      ; 0057a90e
@@ -119,7 +119,7 @@ section .text
         ;   XREF to: 0057a4b0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0()
         ;   Label: LAB_0057a93e
     MOV dword ptr [0x02d0bcfc],0x1      ; 0057a943 | g_INT_02d0bcfc
-    MOV ESI,dword ptr [0x02d0bce4]      ; 0057a94d | g_IDirectDrawSurface_PTR_02d0bce4
+    MOV ESI,dword ptr [0x02d0bce4]      ; 0057a94d | g_DirectDrawSurface
         ;   Label: LAB_0057a94d
     TEST ESI,ESI                        ; 0057a953
     JZ 0x0057a971                       ; 0057a955
@@ -139,7 +139,7 @@ section .text
         ;   XREF to: 0057ab70 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_0057ab70()
     XOR EDI,EDI                         ; 0057a971
         ;   Label: LAB_0057a971
-    MOV dword ptr [0x02d0bcf4],EDI      ; 0057a973 | g_INT_02d0bcf4
+    MOV dword ptr [0x02d0bcf4],EDI      ; 0057a973 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 0057a979
         ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV ESP,EBP                         ; 0057a97e
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 00566260 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_00566260(int skip_buffer_copy)
     ADD ESP,0x4                         ; 0057a98c
     XOR EDI,EDI                         ; 0057a98f
-    MOV dword ptr [0x02d0bcf4],EDI      ; 0057a991 | g_INT_02d0bcf4
+    MOV dword ptr [0x02d0bcf4],EDI      ; 0057a991 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 0057a997
         ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV ESP,EBP                         ; 0057a99c
@@ -187,7 +187,7 @@ section .text
     LEA EDX,[EBP + -0x7c]               ; 0057a9db
     MOV EDI,0x6c                        ; 0057a9de
     PUSH EDX                            ; 0057a9e3
-    MOV EAX,[0x02d0bce4]                ; 0057a9e4 | g_IDirectDrawSurface_PTR_02d0bce4
+    MOV EAX,[0x02d0bce4]                ; 0057a9e4 | g_DirectDrawSurface
     MOV dword ptr [EBP + -0x7c],EDI     ; 0057a9e9
     PUSH EBX                            ; 0057a9ec
     MOV ECX,dword ptr [EAX]             ; 0057a9ed
@@ -220,7 +220,7 @@ section .text
     TEST EDX,EDX                        ; 0057aa43
     JLE 0x0057aaae                      ; 0057aa45
         ;   XREF to: 0057aaae (CONDITIONAL_JUMP)  ; LAB_0057aaae
-    CMP dword ptr [0x01c6e2a0],0x0      ; 0057aa47 | g_INT_01c6e2a0
+    CMP dword ptr [0x01c6e2a0],0x0      ; 0057aa47 | g_MMXSupported
         ;   Label: LAB_0057aa47
     JZ 0x0057aafd                       ; 0057aa4e
         ;   XREF to: 0057aafd (CONDITIONAL_JUMP)  ; LAB_0057aafd
@@ -256,7 +256,7 @@ section .text
         ;   XREF to: 0057aa47 (CONDITIONAL_JUMP)  ; LAB_0057aa47
     PUSH 0x0                            ; 0057aaae
         ;   Label: LAB_0057aaae
-    MOV EAX,[0x02d0bce4]                ; 0057aab0 | g_IDirectDrawSurface_PTR_02d0bce4
+    MOV EAX,[0x02d0bce4]                ; 0057aab0 | g_DirectDrawSurface
     PUSH EAX                            ; 0057aab5
     MOV EDX,dword ptr [EAX]             ; 0057aab6
     CALL dword ptr [EDX + 0x80]         ; 0057aab8
@@ -272,7 +272,7 @@ section .text
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057aae6
     XOR EDI,EDI                         ; 0057aae9
-    MOV dword ptr [0x02d0bcf4],EDI      ; 0057aaeb | g_INT_02d0bcf4
+    MOV dword ptr [0x02d0bcf4],EDI      ; 0057aaeb | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 0057aaf1
         ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV ESP,EBP                         ; 0057aaf6

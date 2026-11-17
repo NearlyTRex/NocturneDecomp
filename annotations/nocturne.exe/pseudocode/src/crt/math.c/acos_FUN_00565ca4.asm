@@ -18,7 +18,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   float10 g_FLOAT10_005c17ec = 1.570796326794896558
+;   float10 g_PiOver2 = 1.570796326794896558
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_00566c81
@@ -62,7 +62,7 @@ section .text
     FXCH                                ; 00565ccf
     CALL crt_math.c_atan2_FUN_00566c81  ; 00565cd1
         ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
-    FLD extended double ptr [0x005c17ec] ; 00565cd6 | g_FLOAT10_005c17ec
+    FLD extended double ptr [0x005c17ec] ; 00565cd6 | g_PiOver2
     FSUBRP                              ; 00565cdc
     POP AX                              ; 00565cde
         ;   Label: LAB_00565cde

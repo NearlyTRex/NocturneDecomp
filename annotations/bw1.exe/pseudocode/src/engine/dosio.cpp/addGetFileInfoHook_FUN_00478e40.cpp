@@ -9,12 +9,12 @@
 void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(FileSearchHandlerFunc *handler)
 
 {
-  if (4 < g_INT_01b6892c) {
+  if (4 < g_NumSearchHandlers) {
     g_CHAR_PTR_01d1d400 = "..\\engine\\dosio.c";
     g_INT_01d1d404 = 0x6a;
     core_main_c_displayErrorAndQuit_FUN_005030e0("addGetFileInfoHook - too many!");
   }
-  g_FileSearchHandlerFunc_PTR_ARRAY_01b68930[g_INT_01b6892c] = handler;
-  g_INT_01b6892c = g_INT_01b6892c + 1;
+  g_SearchHandlers[g_NumSearchHandlers] = handler;
+  g_NumSearchHandlers = g_NumSearchHandlers + 1;
   return;
 }

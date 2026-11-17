@@ -16,11 +16,11 @@ int __cdecl engine_font_cpp_clipCharacter_FUN_004a7ab0(int *bitmap_offset,int *l
     *bitmap_offset = *bitmap_offset + (g_INT_01c35e48 - *left_x);
     *left_x = g_INT_01c35e48;
   }
-  if (g_INT_01c35e50 < *right_x) {
-    if (g_INT_01c35e50 < *left_x) {
+  if (g_ClipRight < *right_x) {
+    if (g_ClipRight < *left_x) {
       return 1;
     }
-    *right_x = g_INT_01c35e50;
+    *right_x = g_ClipRight;
   }
   if (*top_y < g_INT_01c35e4c) {
     if (*bottom_y < g_INT_01c35e4c) {

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(CSentinel *this_ptr)
 
 {
-  return &g_CSentinelActorType_01e57248;
+  return &g_CSentinelClassInfo;
 }

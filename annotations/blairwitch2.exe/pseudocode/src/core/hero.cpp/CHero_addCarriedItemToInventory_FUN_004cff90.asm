@@ -21,7 +21,7 @@
 ;   TerminatedCString s_searchedravine_005d9daf
 ;   TerminatedCString s_s_63Ravinfood01_005d9dbe
 ;   TerminatedCString s_searchedravine_005d9dcc
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
@@ -77,7 +77,7 @@ section .text
     PUSH EDI                            ; 004cffed
     PUSH 0x1                            ; 004cffee
     PUSH 0x5d9dcc                       ; 004cfff0 | = "searchedravine"
-    MOV EDI,dword ptr [0x006141f0]      ; 004cfff5 | g_CEventList_PTR_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 004cfff5 | g_CEventListPtr
     PUSH EDI                            ; 004cfffb
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004cfffc
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
@@ -105,7 +105,7 @@ section .text
     PUSH 0x1                            ; 004d0035
         ;   Label: LAB_004d0035
     PUSH 0x5d9d92                       ; 004d0037 | = "searchedravine"
-    MOV EDX,dword ptr [0x006141f0]      ; 004d003c | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004d003c | g_CEventListPtr
     PUSH EDX                            ; 004d0042
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004d0043
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
@@ -115,7 +115,7 @@ section .text
     PUSH 0x1                            ; 004d0050
         ;   Label: LAB_004d0050
     PUSH 0x5d9daf                       ; 004d0052 | = "searchedravine"
-    MOV ECX,dword ptr [0x006141f0]      ; 004d0057 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004d0057 | g_CEventListPtr
     PUSH ECX                            ; 004d005d
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004d005e
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)

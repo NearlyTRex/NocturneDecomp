@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6000
+;   void* g_APIDLL_endScene
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
         ;   XREF to: 005658dc (CONDITIONAL_JUMP)  ; LAB_005658dc
     XOR EAX,EAX                         ; 005658d9
     RET                                 ; 005658db
-    CALL dword ptr [0x02cf6000]         ; 005658dc | g_PTR_02cf6000
+    CALL dword ptr [0x02cf6000]         ; 005658dc | g_APIDLL_endScene
         ;   Label: LAB_005658dc
     RET                                 ; 005658e2
 

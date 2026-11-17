@@ -9,7 +9,7 @@
 ;   CVector3f g_CVector3f_02c83354
 ;   undefined4 g_CVector3f_02c83354.y
 ;   undefined4 g_CVector3f_02c83354.z
-;   int g_INT_02c83364
+;   int g_TrainLastCameraIndex
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     CMP EAX,0x2c83354                   ; 0057c523
     JNZ 0x0057c53a                      ; 0057c528
         ;   XREF to: 0057c53a (CONDITIONAL_JUMP)  ; LAB_0057c53a
-    MOV dword ptr [0x02c83364],0xffffffff ; 0057c52a | g_INT_02c83364
+    MOV dword ptr [0x02c83364],0xffffffff ; 0057c52a | g_TrainLastCameraIndex
     ADD ESP,0x18                        ; 0057c534
     POP EDI                             ; 0057c537
     POP ESI                             ; 0057c538
@@ -55,7 +55,7 @@ section .text
     MOV [0x02c83358],EAX                ; 0057c546 | g_CVector3f_02c83354.y
     MOV EAX,dword ptr [ESP + 0x8]       ; 0057c54b
     MOV [0x02c8335c],EAX                ; 0057c54f | g_CVector3f_02c83354.z
-    MOV dword ptr [0x02c83364],0xffffffff ; 0057c554 | g_INT_02c83364
+    MOV dword ptr [0x02c83364],0xffffffff ; 0057c554 | g_TrainLastCameraIndex
     ADD ESP,0x18                        ; 0057c55e
     POP EDI                             ; 0057c561
     POP ESI                             ; 0057c562

@@ -7,11 +7,11 @@
 ; SCPUInfo *       Stack[0x4]:4   cpu_info
 ;
 ; Referenced Globals:
-;   uchar g_UCHAR_0061f7b8 = \x00
-;   uchar g_UCHAR_0061f7b9 = \x00
-;   uchar g_UCHAR_0061f7ba = \x00
-;   uchar g_UCHAR_0061f7bc = \x00
-;   uchar g_UCHAR_0061f7c1 = \x00
+;   uchar g_CPUInfoFamily = \x00
+;   uchar g_CPUInfoModel = \x00
+;   uchar g_CPUInfoStepping = \x00
+;   uchar g_CPUInfoIntelCPU = \x00
+;   uchar g_CPUInfoMMXSupported = \x00
 ;
 ; Called Functions:
 ;   core_mmx.c_detectIntelProcessor_FUN_0051c48c
@@ -34,15 +34,15 @@ section .text
         ;   XREF to: 0051c48c (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectIntelProcessor_FUN_0051c48c()
     CALL core_mmx.c_detectMMXSupport_FUN_0051c539 ; 0051c565
         ;   XREF to: 0051c539 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_0051c539()
-    MOVZX EAX,byte ptr [0x0061f7b8]     ; 0051c56a | g_UCHAR_0061f7b8
+    MOVZX EAX,byte ptr [0x0061f7b8]     ; 0051c56a | g_CPUInfoFamily
     MOV dword ptr [EDI],EAX             ; 0051c571
-    MOVZX EAX,byte ptr [0x0061f7b9]     ; 0051c573 | g_UCHAR_0061f7b9
+    MOVZX EAX,byte ptr [0x0061f7b9]     ; 0051c573 | g_CPUInfoModel
     MOV dword ptr [EDI + 0x4],EAX       ; 0051c57a
-    MOVZX EAX,byte ptr [0x0061f7ba]     ; 0051c57d | g_UCHAR_0061f7ba
+    MOVZX EAX,byte ptr [0x0061f7ba]     ; 0051c57d | g_CPUInfoStepping
     MOV dword ptr [EDI + 0x8],EAX       ; 0051c584
-    MOVZX EAX,byte ptr [0x0061f7bc]     ; 0051c587 | g_UCHAR_0061f7bc
+    MOVZX EAX,byte ptr [0x0061f7bc]     ; 0051c587 | g_CPUInfoIntelCPU
     MOV dword ptr [EDI + 0xc],EAX       ; 0051c58e
-    MOVZX EAX,byte ptr [0x0061f7c1]     ; 0051c591 | g_UCHAR_0061f7c1
+    MOVZX EAX,byte ptr [0x0061f7c1]     ; 0051c591 | g_CPUInfoMMXSupported
     MOV dword ptr [EDI + 0x10],EAX      ; 0051c598
     MOV EAX,0x1                         ; 0051c59b
     POP EDI                             ; 0051c5a0

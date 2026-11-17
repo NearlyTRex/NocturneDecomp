@@ -12,8 +12,8 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004a3b90 at 004a3e55
 ;
 ; Referenced Globals:
-;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4810
-;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4818
+;   WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout
+;   WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout
 ;   void* PTR_crt_fstream.cpp_ofstream_dtor_FUN_005651ca_005a4824 = 005651ca
 ;   void* PTR_crt_unknown.c_FUN_0056519c_005a482c = 0056519c
 ;   void* PTR_crt_unknown.c_FUN_005651b2_005a4834 = 005651b2
@@ -55,11 +55,11 @@ section .text
     ADD ESP,0x8                         ; 005653ac
     MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a4834 ; 005653af | PTR_crt_unknown.c_FUN_005651b2_005a4834
     RET                                 ; 005653b7
-    MOV dword ptr [EAX],0x5a4810        ; 005653b8 | g_WatcomVirtualBaseDescriptor_005a4810
+    MOV dword ptr [EAX],0x5a4810        ; 005653b8 | g_OFStream_VirtualBaseLayout
         ;   Label: LAB_005653b8
     ADD EAX,0x50                        ; 005653be
     PUSH EAX                            ; 005653c1
-    MOV dword ptr [EAX + -0xc],0x5a4818 ; 005653c2 | g_WatcomVirtualBaseDescriptor_005a4818
+    MOV dword ptr [EAX + -0xc],0x5a4818 ; 005653c2 | g_OFStream_OStreamSubobjectLayout
     CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 005653c9
         ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_0056b503(ios * this_ptr)
     ADD ESP,0x4                         ; 005653ce

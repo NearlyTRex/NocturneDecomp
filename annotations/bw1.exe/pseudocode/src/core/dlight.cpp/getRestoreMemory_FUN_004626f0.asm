@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d8f34
 ;   TerminatedCString s_getRestoreMemory_Need_mo_005d8f47
-;   uint g_UINT_01b2d370
+;   uint g_ShadowRestoreAllocator
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -27,21 +27,21 @@ section .text
         ;   Label: core_dlight.cpp_getRestoreMemory_FUN_004626f0
     MOV EAX,0x300064                    ; 004626f1
     SUB EAX,dword ptr [ESP + 0x8]       ; 004626f6
-    MOV ECX,dword ptr [0x01b2d370]      ; 004626fa | g_UINT_01b2d370
+    MOV ECX,dword ptr [0x01b2d370]      ; 004626fa | g_ShadowRestoreAllocator
     SUB EAX,0x4                         ; 00462700
     CMP EAX,ECX                         ; 00462703
     JC 0x0046272f                       ; 00462705
         ;   XREF to: 0046272f (CONDITIONAL_JUMP)  ; LAB_0046272f
     MOV EDX,dword ptr [ESP + 0x8]       ; 00462707
         ;   Label: LAB_00462707
-    MOV EAX,[0x01b2d370]                ; 0046270b | g_UINT_01b2d370
-    MOV EDI,dword ptr [0x01b2d370]      ; 00462710 | g_UINT_01b2d370
+    MOV EAX,[0x01b2d370]                ; 0046270b | g_ShadowRestoreAllocator
+    MOV EDI,dword ptr [0x01b2d370]      ; 00462710 | g_ShadowRestoreAllocator
     ADD EAX,EAX                         ; 00462716
     ADD EDX,0x8                         ; 00462718
     ADD EAX,0x152d2a8                   ; 0046271b
     ADD EDI,EDX                         ; 00462720
     ADD EAX,0x10                        ; 00462722
-    MOV dword ptr [0x01b2d370],EDI      ; 00462725 | g_UINT_01b2d370
+    MOV dword ptr [0x01b2d370],EDI      ; 00462725 | g_ShadowRestoreAllocator
     AND AL,0xf0                         ; 0046272b
     POP EDI                             ; 0046272d
     RET                                 ; 0046272e

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 661,
-    "complexity_score": 338,
+    "complexity_score": 336,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 253,
+    "pseudocode_lines": 251,
     "suspect_count": 7,
     "suspect_types": [
       "unknown_field",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 914
+    "total_lines": 912
   },
   "cross_references": [],
   "function": {
@@ -191,13 +191,13 @@
     },
     {
       "addr": "005b7650",
-      "name": "g_CEventList_PTR_005b7650",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c03a10"
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -532,7 +532,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 200,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.x = fStack_c4 * 5.2220990168285998e-315._0_4_;",
@@ -540,7 +540,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 203,
+      "line": 202,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.y = fStack_c0 * 5.2220990168285998e-315._0_4_;",
@@ -548,7 +548,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 204,
+      "line": 203,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.z = fStack_bc * 5.2220990168285998e-315._0_4_;",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 105,
+      "line": 104,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_70.x = (pCVar1->position).x;",
@@ -564,7 +564,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 171,
+      "line": 170,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_4c[0].x = (pCVar1->position).x;",
@@ -572,7 +572,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 212,
+      "line": 211,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_58.x = CStack_7c.x;",

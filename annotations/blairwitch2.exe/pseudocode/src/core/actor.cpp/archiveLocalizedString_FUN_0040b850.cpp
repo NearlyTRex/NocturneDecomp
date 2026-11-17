@@ -17,7 +17,7 @@ void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040b850(char *string_buf
   char local_134 [300];
   
   pcVar5 = local_134;
-  pcVar3 = g_CHAR_ARRAY_006095f8;
+  pcVar3 = g_LocalizationTemplate;
   pcVar4 = local_134;
   for (iVar2 = 0x4b; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar4 = *(uint *)pcVar3;

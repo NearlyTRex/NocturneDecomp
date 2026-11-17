@@ -10,8 +10,8 @@ void __cdecl engine_mini3d_cpp_enableClipping_FUN_004f5dc0(void)
 
 {
   g_INT_01d0c39c = 1;
-  if ((g_PTR_0264bcc4 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-    (*(code *)g_PTR_0264bcc4)(1);
+  if ((g_APIDLL_getTextureHandle != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_APIDLL_getTextureHandle)(1);
     return;
   }
   return;

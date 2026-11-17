@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   double DOUBLE_0058d080 = -1
 ;   double DOUBLE_0058d088 = 0.100000000000000
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
-;   undefined4 g_CHeroActorType_01cae0ec.name_hash
+;   undefined4 g_CEnemyClassInfo.name_hash
+;   undefined4 g_CHeroClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
@@ -42,7 +42,7 @@ section .text
     LEA EAX,[ESI + 0x330]               ; 004f3a35
         ;   Label: LAB_004f3a35
     PUSH EAX                            ; 004f3a3b
-    MOV EBX,dword ptr [0x005b7650]      ; 004f3a3c | g_CEventList_PTR_005b7650
+    MOV EBX,dword ptr [0x005b7650]      ; 004f3a3c | g_CEventListPtr
     PUSH EBX                            ; 004f3a42
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004f3a43
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -108,7 +108,7 @@ section .text
     LEA EAX,[ESI + 0x2cc]               ; 004f3af4
         ;   Label: LAB_004f3af4
     PUSH EAX                            ; 004f3afa
-    MOV ECX,dword ptr [0x005b7650]      ; 004f3afb | g_CEventList_PTR_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004f3afb | g_CEventListPtr
     PUSH ECX                            ; 004f3b01
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004f3b02
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -129,7 +129,7 @@ section .text
     POP ESI                             ; 004f3b28
     POP EBX                             ; 004f3b29
     RET                                 ; 004f3b2a
-    MOV EAX,[0x01cae124]                ; 004f3b2b | g_CHeroActorType_01cae0ec.name_hash
+    MOV EAX,[0x01cae124]                ; 004f3b2b | g_CHeroClassInfo.name_hash
         ;   Label: LAB_004f3b2b
     PUSH EAX                            ; 004f3b30
     PUSH EBX                            ; 004f3b31
@@ -148,7 +148,7 @@ section .text
     ADD ESP,0x10                        ; 004f3b48
     JMP 0x004f3aee                      ; 004f3b4b
         ;   XREF to: 004f3aee (UNCONDITIONAL_JUMP)  ; LAB_004f3aee
-    MOV ECX,dword ptr [0x01bcdef4]      ; 004f3b4d | g_CEnemyActorType_01bcdebc.name_hash
+    MOV ECX,dword ptr [0x01bcdef4]      ; 004f3b4d | g_CEnemyClassInfo.name_hash
         ;   Label: LAB_004f3b4d
     PUSH ECX                            ; 004f3b53
     PUSH EBX                            ; 004f3b54

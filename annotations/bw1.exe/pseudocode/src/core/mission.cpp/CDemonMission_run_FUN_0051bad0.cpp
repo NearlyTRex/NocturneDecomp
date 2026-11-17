@@ -14,7 +14,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
   int image_variant;
   
   while( true ) {
-    if (g_INT_01d06aa0 < 1) {
+    if (g_HeroCount < 1) {
       g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
       g_INT_01d1d404 = 0x520;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::run - hero list empty");

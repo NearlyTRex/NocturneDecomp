@@ -11,7 +11,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_CVector3f_02c8af28
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 004af0b4
     LEA EAX,[ESP + 0x8]                 ; 004af0b5
     PUSH EAX                            ; 004af0b9
-    PUSH 0x2c8af28                      ; 004af0ba | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004af0ba | g_ZeroVector
     PUSH EBX                            ; 004af0bf
     MOV ESI,dword ptr [0x00622c18]      ; 004af0c0 | g_CDemonSetPtr
     PUSH ESI                            ; 004af0c6 | g_CDemonSetInstance

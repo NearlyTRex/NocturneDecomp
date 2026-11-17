@@ -22,23 +22,23 @@ void __cdecl core_gore_cpp_CGore_process_FUN_004ce7e0(CGore *this_ptr)
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != g_BloodParticles + sizeof(g_BloodParticles) / sizeof(g_BloodParticles[0]));
   iVar1 = 0;
-  if (0 < g_INT_01d276b8) {
+  if (0 < g_BloodSplatCount) {
     this_ptr_02 = g_CBloodSplat_ARRAY_01d276bc;
     do {
       core_gore_cpp_CBloodSplat_processAge_FUN_004cdb20(this_ptr_02);
       iVar1 = iVar1 + 1;
       this_ptr_02 = this_ptr_02 + 1;
-    } while (iVar1 < g_INT_01d276b8);
+    } while (iVar1 < g_BloodSplatCount);
   }
   core_gore_cpp_CBloodPool_setupRenderState_FUN_004cdc90(g_CBloodPool_ARRAY_01d4a944);
   iVar1 = 0;
-  if (0 < g_INT_01d4a940) {
+  if (0 < g_BloodPoolCount) {
     this_ptr_01 = g_CBloodPool_ARRAY_01d4a944;
     do {
       core_gore_cpp_CBloodPool_processAge_FUN_004cdfc0(this_ptr_01);
       iVar1 = iVar1 + 1;
       this_ptr_01 = this_ptr_01 + 1;
-    } while (iVar1 < g_INT_01d4a940);
+    } while (iVar1 < g_BloodPoolCount);
   }
   return;
 }

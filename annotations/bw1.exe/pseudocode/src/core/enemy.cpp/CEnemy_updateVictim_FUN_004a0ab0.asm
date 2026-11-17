@@ -13,13 +13,13 @@
 ;   float g_FLOAT_005dcb8e = 3
 ;   float g_FLOAT_005ffb48 = NaN
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   CDemonActor*[2000] g_CDemonActor_PTR_ARRAY_01c3f6a4
-;   float[2000] g_FLOAT_ARRAY_01c415e4
+;   CDemonActor*[2000] g_EnemyVictimCandidates
+;   float[2000] g_EnemyVictimCandidateDistances
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;   undefined4 g_CGameInstance.allow_enemy_attack_flag
 ;   undefined4 g_CDemonSetInstance.character_count
@@ -93,7 +93,7 @@ section .text
     RET                                 ; 004a0b50
     PUSH 0x5dcb72                       ; 004a0b51 | = "Capture"
         ;   Label: LAB_004a0b51
-    MOV ESI,dword ptr [0x0061b4d0]      ; 004a0b56 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 004a0b56 | g_CEventListPtr
     PUSH ESI                            ; 004a0b5c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004a0b5d
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -187,14 +187,14 @@ section .text
     JLE 0x004a0cb9                      ; 004a0c8e
         ;   XREF to: 004a0cb9 (CONDITIONAL_JUMP)  ; LAB_004a0cb9
     XOR ECX,ECX                         ; 004a0c90
-    FLD float ptr [ECX + 0x1c415e4]     ; 004a0c92 | g_FLOAT_ARRAY_01c415e4
+    FLD float ptr [ECX + 0x1c415e4]     ; 004a0c92 | g_EnemyVictimCandidateDistances
         ;   Label: LAB_004a0c92
     FCOMP float ptr [ESP + 0x48]        ; 004a0c98
     FNSTSW AX                           ; 004a0c9c
     SAHF                                ; 004a0c9e
     JNC 0x004a0cad                      ; 004a0c9f
         ;   XREF to: 004a0cad (CONDITIONAL_JUMP)  ; LAB_004a0cad
-    MOV EAX,dword ptr [ECX + 0x1c415e4] ; 004a0ca1 | g_FLOAT_ARRAY_01c415e4
+    MOV EAX,dword ptr [ECX + 0x1c415e4] ; 004a0ca1 | g_EnemyVictimCandidateDistances
     MOV EBX,EDX                         ; 004a0ca7
     MOV dword ptr [ESP + 0x48],EAX      ; 004a0ca9
     MOV EAX,dword ptr [ESP + 0x44]      ; 004a0cad
@@ -208,7 +208,7 @@ section .text
         ;   Label: LAB_004a0cb9
     JL 0x004a0afe                       ; 004a0cbb
         ;   XREF to: 004a0afe (CONDITIONAL_JUMP)  ; LAB_004a0afe
-    MOV ESI,dword ptr [EBX*0x4 + 0x1c3f6a4] ; 004a0cc1 | g_CDemonActor_PTR_ARRAY_01c3f6a4 | g_CEnemyClassInfo.name_hash
+    MOV ESI,dword ptr [EBX*0x4 + 0x1c3f6a4] ; 004a0cc1 | g_EnemyVictimCandidates | g_CEnemyClassInfo.name_hash
     PUSH ESI                            ; 004a0cc8
     MOV EDX,dword ptr [EBP + 0x14]      ; 004a0cc9
     PUSH EDX                            ; 004a0ccc
@@ -245,7 +245,7 @@ section .text
     CMP EAX,0x1                         ; 004a0d1c
     JZ 0x004a0ec7                       ; 004a0d1f
         ;   XREF to: 004a0ec7 (CONDITIONAL_JUMP)  ; LAB_004a0ec7
-    MOV dword ptr [EBX*0x4 + 0x1c415e4],0x7149f2ca ; 004a0d25 | g_FLOAT_ARRAY_01c415e4
+    MOV dword ptr [EBX*0x4 + 0x1c415e4],0x7149f2ca ; 004a0d25 | g_EnemyVictimCandidateDistances
         ;   Label: LAB_004a0d25
     CMP ESI,EDI                         ; 004a0d30
     JNZ 0x004a0c78                      ; 004a0d32
@@ -348,9 +348,9 @@ section .text
         ;   XREF to: 004a0e76 (CONDITIONAL_JUMP)  ; LAB_004a0e76
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004a0e4e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 004a0e52
-    MOV dword ptr [EAX + 0x1c3f6a4],EBX ; 004a0e56 | g_CDemonActor_PTR_ARRAY_01c3f6a4
+    MOV dword ptr [EAX + 0x1c3f6a4],EBX ; 004a0e56 | g_EnemyVictimCandidates
     MOV EAX,dword ptr [ESP + 0x30]      ; 004a0e5c
-    MOV dword ptr [EDX + 0x1c415e4],EAX ; 004a0e60 | g_FLOAT_ARRAY_01c415e4
+    MOV dword ptr [EDX + 0x1c415e4],EAX ; 004a0e60 | g_EnemyVictimCandidateDistances
     MOV EAX,dword ptr [ESP + 0x44]      ; 004a0e66
     LEA EDI,[EDX + 0x4]                 ; 004a0e6a
     INC EAX                             ; 004a0e6d

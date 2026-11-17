@@ -81,17 +81,17 @@ section .text
     PUSH 0x1d1f65c                      ; 0050aad2
     PUSH 0x1d1f61c                      ; 0050aad7
     PUSH 0x1d1f5dc                      ; 0050aadc
-    PUSH 0x1d1f5d8                      ; 0050aae1 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    PUSH 0x1d1f5d8                      ; 0050aae1 | g_GraphicsMenuTextPointers[8]
     XOR EBP,EBP                         ; 0050aae6
     CALL engine_special.cpp_buildCardList_FUN_00582b30 ; 0050aae8
         ;   XREF to: 00582b30 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_buildCardList_FUN_00582b30(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
-    MOV EAX,[0x01d1f5d4]                ; 0050aaed | g_CHAR_PTR_ARRAY_01d1f5b8[7]
-    MOV EBX,dword ptr [0x01d1f5d8]      ; 0050aaf2 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    MOV EAX,[0x01d1f5d4]                ; 0050aaed | g_GraphicsMenuTextPointers[7]
+    MOV EBX,dword ptr [0x01d1f5d8]      ; 0050aaf2 | g_GraphicsMenuTextPointers[8]
     ADD ESP,0x14                        ; 0050aaf8
     CMP EAX,EBX                         ; 0050aafb
     JL 0x0050ab05                       ; 0050aafd
         ;   XREF to: 0050ab05 (CONDITIONAL_JUMP)  ; LAB_0050ab05
-    MOV dword ptr [0x01d1f5d4],EBP      ; 0050aaff | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV dword ptr [0x01d1f5d4],EBP      ; 0050aaff | g_GraphicsMenuTextPointers[7]
     LEA EAX,[ESP + 0x12c]               ; 0050ab05
         ;   Label: LAB_0050ab05
     PUSH EAX                            ; 0050ab0c
@@ -147,15 +147,15 @@ section .text
         ;   XREF to: 0050aba8 (CONDITIONAL_JUMP)  ; LAB_0050aba8
     POP EDI                             ; 0050abc0
         ;   Label: LAB_0050abc0
-    CMP dword ptr [0x01d1f5d8],0x0      ; 0050abc1 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    CMP dword ptr [0x01d1f5d8],0x0      ; 0050abc1 | g_GraphicsMenuTextPointers[8]
     JLE 0x0050acb6                      ; 0050abc8
         ;   XREF to: 0050acb6 (CONDITIONAL_JUMP)  ; LAB_0050acb6
     CMP dword ptr [0x02c83370],0x0      ; 0050abce | g_INT_02c83370
     JZ 0x0050acb6                       ; 0050abd5
         ;   XREF to: 0050acb6 (CONDITIONAL_JUMP)  ; LAB_0050acb6
-    MOV EAX,[0x01d1f5d4]                ; 0050abdb | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050abdb | g_GraphicsMenuTextPointers[7]
     SHL EAX,0x2                         ; 0050abe0
-    CMP dword ptr [EAX + 0x1d1f65c],0x121a ; 0050abe3 | g_INT_ARRAY_01d1f65c
+    CMP dword ptr [EAX + 0x1d1f65c],0x121a ; 0050abe3 | g_GraphicsCardVendorIDs
     JNZ 0x0050ac11                      ; 0050abed
         ;   XREF to: 0050ac11 (CONDITIONAL_JUMP)  ; LAB_0050ac11
     CMP dword ptr [EAX + 0x1d1f69c],0x5 ; 0050abef
@@ -165,10 +165,10 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 0050abfd | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 0050ac04 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 0050ac0a | g_CGameInstance.game_pixy
-    MOV EAX,[0x01d1f5d4]                ; 0050ac11 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050ac11 | g_GraphicsMenuTextPointers[7]
         ;   Label: LAB_0050ac11
     SHL EAX,0x2                         ; 0050ac16
-    CMP dword ptr [EAX + 0x1d1f65c],0x8086 ; 0050ac19 | g_INT_ARRAY_01d1f65c
+    CMP dword ptr [EAX + 0x1d1f65c],0x8086 ; 0050ac19 | g_GraphicsCardVendorIDs
     JNZ 0x0050ac4a                      ; 0050ac23
         ;   XREF to: 0050ac4a (CONDITIONAL_JUMP)  ; LAB_0050ac4a
     CMP dword ptr [EAX + 0x1d1f69c],0x7800 ; 0050ac25
@@ -178,10 +178,10 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 0050ac36 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 0050ac3d | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 0050ac43 | g_CGameInstance.game_pixy
-    MOV EAX,[0x01d1f5d4]                ; 0050ac4a | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050ac4a | g_GraphicsMenuTextPointers[7]
         ;   Label: LAB_0050ac4a
     SHL EAX,0x2                         ; 0050ac4f
-    CMP dword ptr [EAX + 0x1d1f65c],0x12d2 ; 0050ac52 | g_INT_ARRAY_01d1f65c
+    CMP dword ptr [EAX + 0x1d1f65c],0x12d2 ; 0050ac52 | g_GraphicsCardVendorIDs
     JNZ 0x0050ac80                      ; 0050ac5c
         ;   XREF to: 0050ac80 (CONDITIONAL_JUMP)  ; LAB_0050ac80
     CMP dword ptr [EAX + 0x1d1f69c],0x18 ; 0050ac5e
@@ -191,10 +191,10 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 0050ac6c | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 0050ac73 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 0050ac79 | g_CGameInstance.game_pixy
-    MOV EAX,[0x01d1f5d4]                ; 0050ac80 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050ac80 | g_GraphicsMenuTextPointers[7]
         ;   Label: LAB_0050ac80
     SHL EAX,0x2                         ; 0050ac85
-    CMP dword ptr [EAX + 0x1d1f65c],0x12d2 ; 0050ac88 | g_INT_ARRAY_01d1f65c
+    CMP dword ptr [EAX + 0x1d1f65c],0x12d2 ; 0050ac88 | g_GraphicsCardVendorIDs
     JNZ 0x0050acb6                      ; 0050ac92
         ;   XREF to: 0050acb6 (CONDITIONAL_JUMP)  ; LAB_0050acb6
     CMP dword ptr [EAX + 0x1d1f69c],0x19 ; 0050ac94
@@ -236,7 +236,7 @@ section .text
     JZ 0x0050af95                       ; 0050ad17
         ;   XREF to: 0050af95 (CONDITIONAL_JUMP)  ; LAB_0050af95
     XOR EBX,EBX                         ; 0050ad1d
-    MOV ESI,dword ptr [0x01d1f5d8]      ; 0050ad1f | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    MOV ESI,dword ptr [0x01d1f5d8]      ; 0050ad1f | g_GraphicsMenuTextPointers[8]
     MOV dword ptr [0x02c83370],EBX      ; 0050ad25 | g_INT_02c83370
     TEST ESI,ESI                        ; 0050ad2b
     JNZ 0x0050af8b                      ; 0050ad2d
@@ -264,7 +264,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050ad6e
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050ad73
-    CMP dword ptr [0x01d1f5d8],0x0      ; 0050ad76 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    CMP dword ptr [0x01d1f5d8],0x0      ; 0050ad76 | g_GraphicsMenuTextPointers[8]
     JNZ 0x0050b03c                      ; 0050ad7d
         ;   XREF to: 0050b03c (CONDITIONAL_JUMP)  ; LAB_0050b03c
     PUSH 0x5e7e08                       ; 0050ad83 | = "No 3D Hardware detected"
@@ -397,7 +397,7 @@ section .text
         ;   XREF to: 0050aef2 (CONDITIONAL_JUMP)  ; caseD_7
     JMP dword ptr [EBX*0x4 + 0x50aa70]  ; 0050aeae | caseD_0 | caseD_1 | caseD_7
         ;   Label: switchD
-    CMP dword ptr [0x01d1ee8c],0x1      ; 0050aeb5 | g_INT_01d1ee8c
+    CMP dword ptr [0x01d1ee8c],0x1      ; 0050aeb5 | g_MenuLeftRightPressed
         ;   Label: caseD_0
     JNZ 0x0050b1c1                      ; 0050aebc
         ;   XREF to: 0050b1c1 (CONDITIONAL_JUMP)  ; LAB_0050b1c1
@@ -563,8 +563,8 @@ section .text
         ;   XREF to: 0050b051 (CONDITIONAL_JUMP)  ; LAB_0050b051
     POP EDI                             ; 0050b069
         ;   Label: LAB_0050b069
-    MOV ESI,dword ptr [0x01d1f5d4]      ; 0050b06a | g_CHAR_PTR_ARRAY_01d1f5b8[7]
-    MOV ESI,dword ptr [ESI*0x4 + 0x1d1f61c] ; 0050b070 | g_CHAR_PTR_ARRAY_01d1f61c
+    MOV ESI,dword ptr [0x01d1f5d4]      ; 0050b06a | g_GraphicsMenuTextPointers[7]
+    MOV ESI,dword ptr [ESI*0x4 + 0x1d1f61c] ; 0050b070 | g_GraphicsCardNames
     PUSH EDI                            ; 0050b077 | g_CHAR_ARRAY_01d1f1b8
     SUB ECX,ECX                         ; 0050b078
     DEC ECX                             ; 0050b07a
@@ -586,7 +586,7 @@ section .text
         ;   XREF to: 0050b080 (CONDITIONAL_JUMP)  ; LAB_0050b080
     POP EDI                             ; 0050b098
         ;   Label: LAB_0050b098
-    MOV EAX,[0x01d1f5d4]                ; 0050b099 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050b099 | g_GraphicsMenuTextPointers[7]
     PUSH EAX                            ; 0050b09e
     PUSH 0x5e7e2b                       ; 0050b09f | = " (%d)"
     LEA EAX,[ESP + 0x108]               ; 0050b0a4
@@ -772,10 +772,10 @@ section .text
     JZ 0x0050b343                       ; 0050b2cc
         ;   XREF to: 0050b343 (CONDITIONAL_JUMP)  ; LAB_0050b343
     PUSH 0x1d1f69c                      ; 0050b2ce
-    PUSH 0x1d1f65c                      ; 0050b2d3 | g_INT_ARRAY_01d1f65c
+    PUSH 0x1d1f65c                      ; 0050b2d3 | g_GraphicsCardVendorIDs
     PUSH 0x1d1f61c                      ; 0050b2d8
     PUSH 0x1d1f5dc                      ; 0050b2dd
-    PUSH 0x1d1f5d8                      ; 0050b2e2 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    PUSH 0x1d1f5d8                      ; 0050b2e2 | g_GraphicsMenuTextPointers[8]
     CALL engine_special.cpp_buildCardList_FUN_00582b30 ; 0050b2e7
         ;   XREF to: 00582b30 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_buildCardList_FUN_00582b30(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     ADD ESP,0x14                        ; 0050b2ec
@@ -788,9 +788,9 @@ section .text
     CALL engine_special.cpp_getVideoMemory_FUN_00582ae0 ; 0050b307
         ;   XREF to: 00582ae0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getVideoMemory_FUN_00582ae0(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 0050b30c
-    MOV EAX,[0x01d1f5d4]                ; 0050b30f | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050b30f | g_GraphicsMenuTextPointers[7]
         ;   Label: LAB_0050b30f
-    CMP dword ptr [EAX*0x4 + 0x1d1f65c],0x121a ; 0050b314 | g_INT_ARRAY_01d1f65c
+    CMP dword ptr [EAX*0x4 + 0x1d1f65c],0x121a ; 0050b314 | g_GraphicsCardVendorIDs
     JNZ 0x0050aef2                      ; 0050b31f
         ;   XREF to: 0050aef2 (CONDITIONAL_JUMP)  ; caseD_7
     MOV EAX,[0x0061d95c]                ; 0050b325 | g_CGamePtr
@@ -799,37 +799,37 @@ section .text
     MOV dword ptr [EAX + 0x4],0x1e0     ; 0050b337 | g_CGameInstance.game_pixy
     JMP 0x0050aef2                      ; 0050b33e
         ;   XREF to: 0050aef2 (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV dword ptr [0x01d1f5d8],EDI      ; 0050b343 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    MOV dword ptr [0x01d1f5d8],EDI      ; 0050b343 | g_GraphicsMenuTextPointers[8]
         ;   Label: LAB_0050b343
     JMP 0x0050b30f                      ; 0050b349
         ;   XREF to: 0050b30f (UNCONDITIONAL_JUMP)  ; LAB_0050b30f
-    MOV dword ptr [0x01d1f5d8],EDX      ; 0050b34b | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    MOV dword ptr [0x01d1f5d8],EDX      ; 0050b34b | g_GraphicsMenuTextPointers[8]
         ;   Label: LAB_0050b34b
     JMP 0x0050aef2                      ; 0050b351
         ;   XREF to: 0050aef2 (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV ECX,dword ptr [0x01d1f5d8]      ; 0050b356 | g_CHAR_PTR_ARRAY_01d1f5b8[8]
+    MOV ECX,dword ptr [0x01d1f5d8]      ; 0050b356 | g_GraphicsMenuTextPointers[8]
         ;   Label: caseD_3
     TEST ECX,ECX                        ; 0050b35c
     JNZ 0x0050b36b                      ; 0050b35e
         ;   XREF to: 0050b36b (CONDITIONAL_JUMP)  ; LAB_0050b36b
-    MOV dword ptr [0x01d1f5d4],EDX      ; 0050b360 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV dword ptr [0x01d1f5d4],EDX      ; 0050b360 | g_GraphicsMenuTextPointers[7]
     JMP 0x0050aef2                      ; 0050b366
         ;   XREF to: 0050aef2 (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV EBX,dword ptr [0x01d1f5d4]      ; 0050b36b | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EBX,dword ptr [0x01d1f5d4]      ; 0050b36b | g_GraphicsMenuTextPointers[7]
         ;   Label: LAB_0050b36b
     INC EBX                             ; 0050b371
-    MOV dword ptr [0x01d1f5d4],EBX      ; 0050b372 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV dword ptr [0x01d1f5d4],EBX      ; 0050b372 | g_GraphicsMenuTextPointers[7]
     CMP EBX,ECX                         ; 0050b378
     JL 0x0050b382                       ; 0050b37a
         ;   XREF to: 0050b382 (CONDITIONAL_JUMP)  ; LAB_0050b382
-    MOV dword ptr [0x01d1f5d4],EDX      ; 0050b37c | g_CHAR_PTR_ARRAY_01d1f5b8[7]
-    MOV EAX,[0x01d1f5d4]                ; 0050b382 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV dword ptr [0x01d1f5d4],EDX      ; 0050b37c | g_GraphicsMenuTextPointers[7]
+    MOV EAX,[0x01d1f5d4]                ; 0050b382 | g_GraphicsMenuTextPointers[7]
         ;   Label: LAB_0050b382
     PUSH EAX                            ; 0050b387
     CALL engine_special.cpp_selectCard_FUN_00582b10 ; 0050b388
         ;   XREF to: 00582b10 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_00582b10(int card_index)
-    MOV EAX,[0x01d1f5d4]                ; 0050b38d | g_CHAR_PTR_ARRAY_01d1f5b8[7]
-    MOV EDX,dword ptr [EAX*0x4 + 0x1d1f65c] ; 0050b392 | g_INT_ARRAY_01d1f65c
+    MOV EAX,[0x01d1f5d4]                ; 0050b38d | g_GraphicsMenuTextPointers[7]
+    MOV EDX,dword ptr [EAX*0x4 + 0x1d1f65c] ; 0050b392 | g_GraphicsCardVendorIDs
     ADD ESP,0x4                         ; 0050b399
     CMP EDX,0x121a                      ; 0050b39c
     JNZ 0x0050aef2                      ; 0050b3a2

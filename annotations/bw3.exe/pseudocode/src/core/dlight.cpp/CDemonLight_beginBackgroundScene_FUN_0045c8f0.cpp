@@ -22,10 +22,10 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0045c8f0(CDemo
     g_INT_01d71de4 = 0x1af;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonLight::beginBackgroundScene - Scene not open");
   }
-  g_INT_01b49be0 = g_INT_01b49be0 + 1;
-  if (g_INT_01b49be0 == 1) {
-    ppuVar4 = g_ARRAY_PTR_01c5faec;
-    ppuVar5 = g_ARRAY_PTR_01b49be4;
+  g_BackgroundSceneNestingCount = g_BackgroundSceneNestingCount + 1;
+  if (g_BackgroundSceneNestingCount == 1) {
+    ppuVar4 = g_ScreenBufferArray;
+    ppuVar5 = g_SavedScreenBufferArray;
     for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
       *ppuVar5 = *ppuVar4;
       ppuVar4 = ppuVar4 + (uint)bVar6 * -2 + 1;
@@ -45,7 +45,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0045c8f0(CDemo
     if (0 < this_ptr->shadow_map_height) {
       iVar3 = 0;
       do {
-        *(void **)((int)g_ARRAY_PTR_01c5faec + iVar3) =
+        *(void **)((int)g_ScreenBufferArray + iVar3) =
              (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;

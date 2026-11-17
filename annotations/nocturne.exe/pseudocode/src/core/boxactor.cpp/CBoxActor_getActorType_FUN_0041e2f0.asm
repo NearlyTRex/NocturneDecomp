@@ -7,13 +7,13 @@
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CBoxActorActorType_00764800
+;   CDemonActorType g_CBoxActorClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x764800                    ; 0041e2f0 | g_CBoxActorActorType_00764800
+    MOV EAX,0x764800                    ; 0041e2f0 | g_CBoxActorClassInfo
         ;   Label: core_boxactor.cpp_CBoxActor_getActorType_FUN_0041e2f0
     RET                                 ; 0041e2f5
 

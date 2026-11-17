@@ -17,21 +17,21 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005b21e0(void)
   int local_18;
   int local_14;
   
-  BVar1 = QueryPerformanceFrequency((LARGE_INTEGER *)&g_struct_19_02c9a5b0);
+  BVar1 = QueryPerformanceFrequency((LARGE_INTEGER *)&g_PerformanceFrequency);
   if (BVar1 == 1) {
-    g_DOUBLE_02c9a5b8 =
-         (double)g_struct_19_02c9a5b0.LowPart +
-         (double)g_struct_19_02c9a5b0.HighPart * 4294967296;
-    QueryPerformanceCounter((LARGE_INTEGER *)&g_struct_19_02c9a5a8);
+    g_TimerCalibration =
+         (double)g_PerformanceFrequency.LowPart +
+         (double)g_PerformanceFrequency.HighPart * 4294967296;
+    QueryPerformanceCounter((LARGE_INTEGER *)&g_PerformanceCounter);
   }
   else {
-    g_INT_ARRAY_02c9a5c4[0] = 1;
+    g_UseMultimediaTimer[0] = 1;
     MVar4 = timeBeginPeriod(1);
     if (MVar4 != 0) {
-      iVar2 = MessageBoxA(g_HWND_02c9be68,"Unable to set timer",PTR_s_Nocturne_006260e0,
+      iVar2 = MessageBoxA(g_MainWindowHandle,"Unable to set timer",PTR_s_Nocturne_006260e0,
                           0x31);
       if (iVar2 == 2) {
-        g_INT_02c9be70 = 1;
+        g_InputDisabled = 1;
       }
     }
   }
@@ -47,6 +47,6 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005b21e0(void)
     local_18 = local_18 + 0x7080000U / (uint)(iVar3 - iVar2);
     local_14 = local_14 + 1;
   } while (local_14 < 5);
-  g_INT_01c51d08 = local_18 / 5;
+  g_CalibratedCPUSpeed = local_18 / 5;
   return;
 }

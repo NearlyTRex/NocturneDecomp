@@ -14,10 +14,10 @@
 ;   crt_unknown.c_FUN_005c4030 at 005c4050
 ;
 ; Referenced Globals:
-;   short g_SHORT_006013f4 = 0x0
-;   short g_SHORT_0060140e = 0x0
-;   int g_INT_0061f638 = 0x4650
-;   int g_INT_0061f640 = 0xe10
+;   short g_DaysInMonth_Normal = 0x0
+;   short g_DaysInMonth_Leap = 0x0
+;   int g_TimezoneOffset = 0x4650
+;   int g_DaylightSavingOffset = 0xe10
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c1168
@@ -41,7 +41,7 @@ section .text
     MOV EBX,0xc                         ; 005c43f0
     SAR EDX,0x1f                        ; 005c43f5
     IDIV EBX                            ; 005c43f8
-    MOV EBP,0x6013f4                    ; 005c43fa | g_SHORT_006013f4
+    MOV EBP,0x6013f4                    ; 005c43fa | g_DaysInMonth_Normal
     MOV ESI,dword ptr [EDI + 0x14]      ; 005c43ff
     MOV EBX,EDX                         ; 005c4402
     CMP ESI,0xf4fb7ea1                  ; 005c4404
@@ -86,7 +86,7 @@ section .text
     TEST EAX,EAX                        ; 005c4453
     JZ 0x005c445c                       ; 005c4455
         ;   XREF to: 005c445c (CONDITIONAL_JUMP)  ; LAB_005c445c
-    MOV EBP,0x60140e                    ; 005c4457 | g_SHORT_0060140e
+    MOV EBP,0x60140e                    ; 005c4457 | g_DaysInMonth_Leap
     LEA EDX,[ESI + 0x3]                 ; 005c445c
         ;   Label: LAB_005c445c
     MOV EAX,EDX                         ; 005c445f
@@ -117,7 +117,7 @@ section .text
     SAR EDX,0x1f                        ; 005c44a9
     IDIV ESI                            ; 005c44ac
     ADD ECX,EAX                         ; 005c44ae
-    MOVSX EAX,word ptr [EBP + EBX*0x2]  ; 005c44b0 | g_SHORT_0060140e
+    MOVSX EAX,word ptr [EBP + EBX*0x2]  ; 005c44b0 | g_DaysInMonth_Leap
     MOV EDX,dword ptr [EDI + 0xc]       ; 005c44b5
     ADD EAX,ECX                         ; 005c44b8
     ADD EAX,EDX                         ; 005c44ba
@@ -154,7 +154,7 @@ section .text
     ADD ESP,0x10                        ; 005c44f8
     CALL crt_unknown.c_FUN_005c1168     ; 005c44fb
         ;   XREF to: 005c1168 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1168()
-    MOV ECX,dword ptr [0x0061f638]      ; 005c4500 | g_INT_0061f638
+    MOV ECX,dword ptr [0x0061f638]      ; 005c4500 | g_TimezoneOffset
     MOV EBP,dword ptr [EDI + 0x20]      ; 005c4506
     ADD EBX,ECX                         ; 005c4509
     TEST EBP,EBP                        ; 005c450b
@@ -168,7 +168,7 @@ section .text
         ;   Label: LAB_005c4518
     JLE 0x005c4524                      ; 005c451c
         ;   XREF to: 005c4524 (CONDITIONAL_JUMP)  ; LAB_005c4524
-    SUB EBX,dword ptr [0x0061f640]      ; 005c451e | g_INT_0061f640
+    SUB EBX,dword ptr [0x0061f640]      ; 005c451e | g_DaylightSavingOffset
     TEST EBX,EBX                        ; 005c4524
         ;   Label: LAB_005c4524
     JGE 0x005c4531                      ; 005c4526
@@ -191,7 +191,7 @@ section .text
     JNZ 0x005c4569                      ; 005c4546
         ;   XREF to: 005c4569 (CONDITIONAL_JUMP)  ; LAB_005c4569
         ;   Label: LAB_005c4546
-    MOV ECX,dword ptr [0x0061f638]      ; 005c4548 | g_INT_0061f638
+    MOV ECX,dword ptr [0x0061f638]      ; 005c4548 | g_TimezoneOffset
     SUB EBX,0x15180                     ; 005c454e
     TEST ECX,ECX                        ; 005c4554
     JLE 0x005c455c                      ; 005c4556

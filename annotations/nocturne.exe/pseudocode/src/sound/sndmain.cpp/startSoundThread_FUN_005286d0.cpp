@@ -15,36 +15,36 @@ int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005286d0(double latency_secon
   int iVar3;
   
   iVar2 = sound_sndmain_cpp_killSoundThread_FUN_00528780();
-  dVar1 = __BITCAST_DOUBLE(CONCAT44(g_DOUBLE_02dc84a8._4_4_,g_DOUBLE_02dc84a8._0_4_));
+  dVar1 = __BITCAST_DOUBLE(CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));
   if (iVar2 != 0) {
     if (latency_seconds < 0.002) {
       latency_seconds = 0.002;
     }
     iVar2 = 0;
-    g_INT_02dc84b0 = 0;
-    g_INT_02dc84b4 = 0;
-    g_DOUBLE_02dc84a8 = latency_seconds;
+    g_AudioThreadRunning = 0;
+    g_AudioThreadShutdownFlag = 0;
+    g_AudioLatencySeconds = latency_seconds;
     hThread = wincore_winrun_cpp_createThread_FUN_00559c50
                         (sound_sndmain_cpp_audioThreadProc_FUN_00528670,(LPVOID)0x0);
-    dVar1 = g_DOUBLE_02dc84a8;
+    dVar1 = g_AudioLatencySeconds;
     if (hThread != (HANDLE)0x0) {
       iVar3 = wincore_winrun_cpp_setThreadPriority_FUN_00559c80(hThread,3);
-      dVar1 = g_DOUBLE_02dc84a8;
+      dVar1 = g_AudioLatencySeconds;
       if (iVar3 != 0) {
         do {
-          dVar1 = g_DOUBLE_02dc84a8;
-          if (g_INT_02dc84b0 != 0) break;
+          dVar1 = g_AudioLatencySeconds;
+          if (g_AudioThreadRunning != 0) break;
           iVar2 = iVar2 + 1;
           wincore_winrun_cpp_sleep_FUN_00559cc0(0.01);
-          dVar1 = g_DOUBLE_02dc84a8;
+          dVar1 = g_AudioLatencySeconds;
         } while (iVar2 < 100);
-        g_DOUBLE_02dc84a8._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-        g_DOUBLE_02dc84a8._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);
-        return g_INT_02dc84b0;
+        g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+        g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);
+        return g_AudioThreadRunning;
       }
     }
   }
-  g_DOUBLE_02dc84a8._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-  g_DOUBLE_02dc84a8._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);
+  g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+  g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);
   return 0;
 }

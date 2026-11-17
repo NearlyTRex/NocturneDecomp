@@ -37,7 +37,7 @@ CFieldNotes g_CFieldNotesInstance = {};
 CVector3f g_CVector3f_01d1e328 = {};
 
 // SHardwareEdge[16]
-SHardwareEdge g_SHardwareEdge_ARRAY_01d1ad7c[16] = {};
+SHardwareEdge g_HardwareEdgeTable[16] = {};
 
 // STextView
 STextView g_STextViewInstance = {};
@@ -51,8 +51,8 @@ char g_CHAR_01d1a960 = {};
 char g_CHAR_01d1b110 = {};
 
 // char[5120]
-char g_CHAR_ARRAY_01d1bb20[5120] = {};
-char g_CHAR_ARRAY_01d1cf20[5120] = {};
+char g_ActStatsTextBuffer1[5120] = {};
+char g_ActStatsTextBuffer2[5120] = {};
 
 // char[64]
 char g_CHAR_ARRAY_01d19cf0[64] = {};
@@ -61,7 +61,7 @@ char g_CHAR_ARRAY_01d19cf0[64] = {};
 double g_DOUBLE_01d1bb10 = {};
 
 // float
-float g_FLOAT_01d1a0a0 = {};
+float g_FastSqrtMagicSeedOne = {};
 float g_FLOAT_01d1a0ac = {};
 float g_FLOAT_01d1a0b0 = {};
 float g_FLOAT_01d1a0b4 = {};
@@ -80,7 +80,7 @@ float g_FLOAT_01d1e340 = {};
 float g_FLOAT_01d1e344 = {};
 
 // float[64][8]
-float g_FLOAT_ARRAY_ARRAY_01d1a124[64][8] = {};
+float g_SplineBasisTable[64][8] = {};
 
 // int
 int g_INT_01d19ba8 = {};
@@ -91,17 +91,17 @@ int g_INT_01d19f84 = {};
 int g_INT_01d19f88 = {};
 int g_INT_01d19f8c = {};
 int g_INT_01d1a058 = {};
-int g_INT_01d1a0a4 = {};
-int g_INT_01d1a0a8 = {};
-int g_INT_01d1a0dc = {};
-int g_INT_01d1ad64 = {};
-int g_INT_01d1ad68 = {};
-int g_INT_01d1ad6c = {};
-int g_INT_01d1ad70 = {};
+int g_FastSqrtMagic = {};
+int g_FastInvSqrtMagic = {};
+int g_FliesInitialized = {};
+int g_ShadowColor32 = {};
+int g_ShadowColorRed = {};
+int g_ShadowColorGreen = {};
+int g_ShadowColorBlue = {};
 int g_INT_01d1ad74 = {};
-int g_INT_01d1ad78 = {};
-int g_INT_01d1b0fc = {};
-int g_INT_01d1b100 = {};
+int g_EdgeCount = {};
+int g_EdgeListMinY = {};
+int g_EdgeListMaxY = {};
 int g_INT_01d1bb18 = {};
 int g_INT_01d1e320 = {};
 int g_INT_01d1e324 = {};
@@ -111,8 +111,8 @@ int g_INT_01d1e354 = {};
 int g_INT_01d1e358 = {};
 
 // uint
-uint g_UINT_01d1a11c = {};
-uint g_UINT_01d1a120 = {};
+uint g_FlyBlendColor = {};
+uint g_FlyInvBlendColor = {};
 
 // ushort
 ushort g_USHORT_01d1ad62 = {};

@@ -36,8 +36,8 @@ __asm {
         movd MM0,dword ptr [g_INT_01c6b5c0]
         pxor MM7,MM7
         movd MM1,dword ptr [EDI]
-        movd MM2,dword ptr [g_UINT_01d1a11c]
-        movd MM3,dword ptr [g_UINT_01d1a120]
+        movd MM2,dword ptr [g_FlyBlendColor]
+        movd MM3,dword ptr [g_FlyInvBlendColor]
         punpcklbw MM0,MM7
         punpcklbw MM1,MM7
         punpcklbw MM2,MM7

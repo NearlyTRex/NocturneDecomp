@@ -27,8 +27,8 @@
 ;   TerminatedCString s_Dangling_corrupt_actor_p_00577987
 ;   float g_FLOAT_005779d5 = 99999
 ;   uchar[257] g_CharacterClassificationTable
-;   char[52] g_CHAR_ARRAY_00763e10
-;   undefined4 g_CHAR_ARRAY_00763e10+4
+;   char[52] g_ActorDebugBuffer
+;   undefined4 g_ActorDebugBuffer+4
 ;   undefined4 g_CHAR_ARRAY_0077d250+0xced3
 ;   ... and 2 more
 ;
@@ -80,23 +80,23 @@ section .text
     PUSH 0x0                            ; 0040bdee
     MOV EDX,0x727                       ; 0040bdf0
     MOV ESI,EBX                         ; 0040bdf5
-    PUSH 0x763e10                       ; 0040bdf7 | g_CHAR_ARRAY_00763e10
+    PUSH 0x763e10                       ; 0040bdf7 | g_ActorDebugBuffer
     MOV [0x01cc4800],EAX                ; 0040bdfc | g_CurrentFilename
     MOV dword ptr [0x01cc4804],EDX      ; 0040be01 | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040be07
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040be0c
-    MOV EDI,0x763e10                    ; 0040be0f | g_CHAR_ARRAY_00763e10
+    MOV EDI,0x763e10                    ; 0040be0f | g_ActorDebugBuffer
     MOV ECX,0x31                        ; 0040be14
-    PUSH EDI                            ; 0040be19 | g_CHAR_ARRAY_00763e10
+    PUSH EDI                            ; 0040be19 | g_ActorDebugBuffer
     MOV EAX,ECX                         ; 0040be1a
     SHR ECX,0x2                         ; 0040be1c
-    MOVSD.REP ES:EDI,ESI                ; 0040be1f | g_CHAR_ARRAY_00763e10 | g_CHAR_ARRAY_00763e10+4
+    MOVSD.REP ES:EDI,ESI                ; 0040be1f | g_ActorDebugBuffer | g_ActorDebugBuffer+4
     MOV CL,AL                           ; 0040be21
     AND CL,0x3                          ; 0040be23
-    MOVSB.REP ES:EDI,ESI                ; 0040be26 | g_CHAR_ARRAY_00763e10+4
+    MOVSB.REP ES:EDI,ESI                ; 0040be26 | g_ActorDebugBuffer+4
     POP EDI                             ; 0040be28
-    PUSH EDI                            ; 0040be29 | g_CHAR_ARRAY_00763e10
+    PUSH EDI                            ; 0040be29 | g_ActorDebugBuffer
     PUSH EBX                            ; 0040be2a
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0040be2b
     PUSH ESI                            ; 0040be2e
@@ -135,8 +135,8 @@ section .text
     MOV EAX,0x577908                    ; 0040be7f | = "..\\core\\actor.cpp"
     PUSH 0x0                            ; 0040be84
     MOV EDX,0x732                       ; 0040be86
-    MOV EDI,0x763e10                    ; 0040be8b | g_CHAR_ARRAY_00763e10
-    PUSH 0x763e10                       ; 0040be90 | g_CHAR_ARRAY_00763e10
+    MOV EDI,0x763e10                    ; 0040be8b | g_ActorDebugBuffer
+    PUSH 0x763e10                       ; 0040be90 | g_ActorDebugBuffer
     MOV [0x01cc4800],EAX                ; 0040be95 | g_CurrentFilename
     MOV dword ptr [0x01cc4804],EDX      ; 0040be9a | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bea0
@@ -144,15 +144,15 @@ section .text
     ADD ESP,0xc                         ; 0040bea5
     MOV ESI,EBX                         ; 0040bea8
     MOV ECX,0x31                        ; 0040beaa
-    PUSH EDI                            ; 0040beaf | g_CHAR_ARRAY_00763e10
+    PUSH EDI                            ; 0040beaf | g_ActorDebugBuffer
     MOV EAX,ECX                         ; 0040beb0
     SHR ECX,0x2                         ; 0040beb2
-    MOVSD.REP ES:EDI,ESI                ; 0040beb5 | g_CHAR_ARRAY_00763e10 | g_CHAR_ARRAY_00763e10+4
+    MOVSD.REP ES:EDI,ESI                ; 0040beb5 | g_ActorDebugBuffer | g_ActorDebugBuffer+4
     MOV CL,AL                           ; 0040beb7
     AND CL,0x3                          ; 0040beb9
-    MOVSB.REP ES:EDI,ESI                ; 0040bebc | g_CHAR_ARRAY_00763e10+4
+    MOVSB.REP ES:EDI,ESI                ; 0040bebc | g_ActorDebugBuffer+4
     POP EDI                             ; 0040bebe
-    PUSH EDI                            ; 0040bebf | g_CHAR_ARRAY_00763e10
+    PUSH EDI                            ; 0040bebf | g_ActorDebugBuffer
     PUSH EBX                            ; 0040bec0
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0040bec1
     PUSH ECX                            ; 0040bec4
@@ -188,7 +188,7 @@ section .text
     PUSH 0x0                            ; 0040bf0f
     MOV ESI,0x577975                    ; 0040bf11 | = "..\\core\\actor.cpp"
     MOV EDI,0x740                       ; 0040bf16
-    PUSH 0x763e10                       ; 0040bf1b | g_CHAR_ARRAY_00763e10
+    PUSH 0x763e10                       ; 0040bf1b | g_ActorDebugBuffer
     MOV dword ptr [0x01cc4800],ESI      ; 0040bf20 | g_CurrentFilename
     MOV dword ptr [0x01cc4804],EDI      ; 0040bf26 | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bf2c
@@ -198,17 +198,17 @@ section .text
     JZ 0x0040bf54                       ; 0040bf36
         ;   XREF to: 0040bf54 (CONDITIONAL_JUMP)  ; LAB_0040bf54
     MOV ECX,0x31                        ; 0040bf38
-    MOV EDI,0x763e10                    ; 0040bf3d | g_CHAR_ARRAY_00763e10
+    MOV EDI,0x763e10                    ; 0040bf3d | g_ActorDebugBuffer
     MOV ESI,EBX                         ; 0040bf42
-    PUSH EDI                            ; 0040bf44 | g_CHAR_ARRAY_00763e10
+    PUSH EDI                            ; 0040bf44 | g_ActorDebugBuffer
     MOV EAX,ECX                         ; 0040bf45
     SHR ECX,0x2                         ; 0040bf47
-    MOVSD.REP ES:EDI,ESI                ; 0040bf4a | g_CHAR_ARRAY_00763e10 | g_CHAR_ARRAY_00763e10+4
+    MOVSD.REP ES:EDI,ESI                ; 0040bf4a | g_ActorDebugBuffer | g_ActorDebugBuffer+4
     MOV CL,AL                           ; 0040bf4c
     AND CL,0x3                          ; 0040bf4e
-    MOVSB.REP ES:EDI,ESI                ; 0040bf51 | g_CHAR_ARRAY_00763e10+4
+    MOVSB.REP ES:EDI,ESI                ; 0040bf51 | g_ActorDebugBuffer+4
     POP EDI                             ; 0040bf53
-    PUSH 0x763e10                       ; 0040bf54 | g_CHAR_ARRAY_00763e10
+    PUSH 0x763e10                       ; 0040bf54 | g_ActorDebugBuffer
         ;   Label: LAB_0040bf54
     PUSH EBX                            ; 0040bf59
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0040bf5a

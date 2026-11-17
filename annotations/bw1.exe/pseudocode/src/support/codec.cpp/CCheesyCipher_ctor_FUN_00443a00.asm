@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 00443a29
     PUSH EBX                            ; 00443a2a
     CALL support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50 ; 00443a2b
-        ;   XREF to: 00443a50 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50(CCheesyCipher * this_ptr, uint param_2)
+        ;   XREF to: 00443a50 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50(CCheesyCipher * this_ptr, uint key)
     ADD ESP,0x8                         ; 00443a30
     MOV EAX,EBX                         ; 00443a33
     POP ESI                             ; 00443a35

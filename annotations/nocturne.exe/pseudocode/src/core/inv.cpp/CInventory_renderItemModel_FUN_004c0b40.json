@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 162,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 136,
     "suspect_count": 2,
     "suspect_types": [
       "signed_shift_global_idiom"
     ],
-    "total_lines": 533
+    "total_lines": 532
   },
   "cross_references": [
     {
@@ -225,7 +225,7 @@
     },
     {
       "addr": "01bd1d80",
-      "name": "g_INT_01bd1d80",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -237,13 +237,13 @@
     },
     {
       "addr": "01cc30a4",
-      "name": "g_INT_01cc30a4",
+      "name": "g_InventoryLightAngle",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cc56dc",
-      "name": "g_CMeleeActorType_01cc56a4.name_hash",
+      "name": "g_CMeleeClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -641,7 +641,7 @@
       "line": 44,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_01bd1d80 + (g_INT_01bd1d80 >> 0x1f) * -4) -",
+      "text": "((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -649,7 +649,7 @@
       "line": 45,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_01bd1d80 >> 0x1f) << 1 < 0)) >> 2);",
+      "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
       "type": "signed_shift_global_idiom"
     }
   ]

@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057db72
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_0057db88
-;   int g_INT_00766c70
-;   SRenderVertex[16] g_SRenderVertex_ARRAY_00766c74
+;   int g_ClippedVertexCount
+;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   undefined4 g_RenderStateFlags+1
 ;   char* g_CurrentFilename
@@ -129,13 +129,13 @@ section .text
     PUSH EBX                            ; 0045ee22
     CALL core_xform.cpp_transformAndClipGeometry_FUN_0055e040 ; 0045ee23
         ;   XREF to: 0055e040 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count, int * vertex_indices)
-    MOV ECX,dword ptr [0x00766c70]      ; 0045ee28 | g_INT_00766c70
+    MOV ECX,dword ptr [0x00766c70]      ; 0045ee28 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 0045ee2e
     CMP ECX,0x2                         ; 0045ee31
     JLE 0x0045edbe                      ; 0045ee34
         ;   XREF to: 0045edbe (CONDITIONAL_JUMP)  ; LAB_0045edbe
     PUSH ECX                            ; 0045ee36
-    PUSH 0x766c74                       ; 0045ee37 | g_SRenderVertex_ARRAY_00766c74
+    PUSH 0x766c74                       ; 0045ee37 | g_ClippedVertexBuffer
     CALL engine_zraster.c_rasterizeTriangle_FUN_005628c0 ; 0045ee3c
         ;   XREF to: 005628c0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005628c0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 0045ee41

@@ -13,9 +13,9 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0046af90 at 0046afa0
 ;
 ; Referenced Globals:
-;   int g_INT_01c38b78
-;   int g_INT_01c38b7c
-;   int g_INT_01c38b80
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;
 ; *****************************************************************************
 
@@ -23,10 +23,10 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004ea360
         ;   Label: engine_matrix.c_setCameraOrigin_FUN_004ea360
-    MOV [0x01c38b78],EAX                ; 004ea364 | g_INT_01c38b78
+    MOV [0x01c38b78],EAX                ; 004ea364 | g_CameraOriginX
     MOV EAX,dword ptr [ESP + 0x8]       ; 004ea369
-    MOV [0x01c38b7c],EAX                ; 004ea36d | g_INT_01c38b7c
+    MOV [0x01c38b7c],EAX                ; 004ea36d | g_CameraOriginY
     MOV EAX,dword ptr [ESP + 0xc]       ; 004ea372
-    MOV [0x01c38b80],EAX                ; 004ea376 | g_INT_01c38b80
+    MOV [0x01c38b80],EAX                ; 004ea376 | g_CameraOriginZ
     RET                                 ; 004ea37b
 

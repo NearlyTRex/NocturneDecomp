@@ -63,7 +63,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombi
       }
       local_b4 = 0.7853982;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_INT_02d24978,
                  &local_68);
       input_local_point = &local_5c;

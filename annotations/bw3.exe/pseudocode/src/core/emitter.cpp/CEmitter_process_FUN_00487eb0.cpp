@@ -76,7 +76,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                        (g_CEventList_PTR_005fba60,this_ptr->event_on), iVar4 != 0)) {
+                        (g_CEventListPtr,this_ptr->event_on), iVar4 != 0)) {
     iVar7 = 1;
     this_ptr->is_active = 1;
     pCVar3 = g_CDemonSetPtr;
@@ -85,7 +85,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
     core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00534820(pCVar3,&this_ptr->base);
   }
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                    (g_CEventList_PTR_005fba60,this_ptr->event_off);
+                    (g_CEventListPtr,this_ptr->event_off);
   if (iVar4 != 0) {
     this_ptr->emitter_state = 0;
     this_ptr->is_active = 0;

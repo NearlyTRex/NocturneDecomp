@@ -47,21 +47,21 @@ void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,S
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,"CGun");
       if (iVar3 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (g_CEventList_PTR_0061b4d0,"ShotDjienWithPistol");
+                  (g_CEventListPtr,"ShotDjienWithPistol");
       }
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,"CRifle");
       if (iVar3 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (g_CEventList_PTR_0061b4d0,"ShotDjienWithRifle");
+                  (g_CEventListPtr,"ShotDjienWithRifle");
       }
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,"CLightgun");
       if (iVar3 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (g_CEventList_PTR_0061b4d0,"ShotDjienWithLightgun");
+                  (g_CEventListPtr,"ShotDjienWithLightgun");
       }
     }
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"DjienInvulnerable");
+              (g_CEventListPtr,"DjienInvulnerable");
   }
   return;
 }

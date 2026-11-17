@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00552470 at 00552493
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02649868
+;   CSoundDevice* g_RecordingDeviceInterface
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_stopRecordingDevice_FUN_00553140
@@ -24,7 +24,7 @@ section .text
     TEST EAX,EAX                        ; 00552f15
     JZ 0x00552f28                       ; 00552f17
         ;   XREF to: 00552f28 (CONDITIONAL_JUMP)  ; LAB_00552f28
-    MOV EDX,dword ptr [0x02649868]      ; 00552f19 | g_CSoundDevice_PTR_02649868
+    MOV EDX,dword ptr [0x02649868]      ; 00552f19 | g_RecordingDeviceInterface
     TEST EDX,EDX                        ; 00552f1f
     JNZ 0x00552f29                      ; 00552f21
         ;   XREF to: 00552f29 (CONDITIONAL_JUMP)  ; LAB_00552f29
@@ -42,6 +42,6 @@ section .text
         ;   XREF to: 00552f28 (CONDITIONAL_JUMP)  ; LAB_00552f28
     XOR ECX,ECX                         ; 00552f37
     MOV EAX,0x1                         ; 00552f39
-    MOV dword ptr [0x02649868],ECX      ; 00552f3e | g_CSoundDevice_PTR_02649868
+    MOV dword ptr [0x02649868],ECX      ; 00552f3e | g_RecordingDeviceInterface
     RET                                 ; 00552f44
 

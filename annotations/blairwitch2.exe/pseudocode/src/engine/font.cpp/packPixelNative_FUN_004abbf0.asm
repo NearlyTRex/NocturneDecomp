@@ -10,9 +10,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -24,11 +24,11 @@ section .text
     CMP dword ptr [0x006141c0],0x20     ; 004abbf8 | g_INT_006141c0
     JNZ 0x004abc26                      ; 004abbff
         ;   XREF to: 004abc26 (CONDITIONAL_JUMP)  ; LAB_004abc26
-    MOV CL,byte ptr [0x01c35814]        ; 004abc01 | g_BIT_INTEGER32_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 004abc01 | g_RedBitPosition
     SHL EAX,CL                          ; 004abc07
-    MOV CL,byte ptr [0x01c35820]        ; 004abc09 | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 004abc09 | g_GreenBitPosition
     SHL EDX,CL                          ; 004abc0f
-    MOV CL,byte ptr [0x01c3582c]        ; 004abc11 | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 004abc11 | g_BlueBitPosition
     OR EAX,EDX                          ; 004abc17
     MOV EDX,dword ptr [ESP + 0xc]       ; 004abc19
     SHL EDX,CL                          ; 004abc1d

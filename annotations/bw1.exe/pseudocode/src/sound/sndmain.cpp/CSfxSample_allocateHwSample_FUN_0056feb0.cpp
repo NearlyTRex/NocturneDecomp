@@ -53,13 +53,12 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSampl
         puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
         pCVar7 = (CSampleInfo *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
       }
-      if (g_CSoundDevice_PTR_02c80650 != (CSoundDevice *)0x0) {
+      if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
         do {
-          iVar3 = (*g_CSoundDevice_PTR_02c80650->vtable->allocateSample)
-                            (g_CSoundDevice_PTR_02c80650,&local_160);
+          iVar3 = (*g_CSoundDevicePtr->vtable->allocateSample)(g_CSoundDevicePtr,&local_160);
           if (iVar3 != 0) goto LAB_0056ff7a;
           iVar4 = 0;
-          iVar3 = g_INT_02c78ff0;
+          iVar3 = g_LastSampleAccessIndex;
           do {
             iVar3 = iVar3 + 1;
             if (0x3f < iVar3) {
@@ -68,7 +67,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSampl
             if ((((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].buffer_id != 0)) &&
                 (g_SfxSamples[iVar3].taken == 0)) &&
                ((g_SfxSamples[iVar3].is_user_sample == 0 &&
-                (g_SfxSamples[g_INT_02c78ff0].locked_length == 0)))) {
+                (g_SfxSamples[g_LastSampleAccessIndex].locked_length == 0)))) {
               sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(g_SfxSamples + iVar3);
               break;
             }

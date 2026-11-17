@@ -60,7 +60,7 @@ section .text
     PUSH EDI                            ; 0056e832
     PUSH EBP                            ; 0056e833
     SUB ESP,0x22c                       ; 0056e834
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e83a | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e83a | g_LastSampleAccessIndex
     MOV EBP,0x2c78ff4                   ; 0056e840
     MOV EDI,dword ptr [ESP + 0x240]     ; 0056e845
     XOR ESI,ESI                         ; 0056e84c
@@ -73,7 +73,7 @@ section .text
     TEST EAX,EAX                        ; 0056e858
     JNZ 0x0056ead1                      ; 0056e85a
         ;   XREF to: 0056ead1 (CONDITIONAL_JUMP)  ; LAB_0056ead1
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e860 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e860 | g_LastSampleAccessIndex
     MOV EAX,EBP                         ; 0056e866
     TEST EAX,EAX                        ; 0056e868
         ;   Label: LAB_0056e868
@@ -101,7 +101,7 @@ section .text
     XOR EAX,EAX                         ; 0056e896
     MOV EBP,EAX                         ; 0056e898
         ;   Label: LAB_0056e898
-    MOV dword ptr [0x02c78ff0],EBX      ; 0056e89a | g_INT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 0056e89a | g_LastSampleAccessIndex
     JZ 0x0056eac0                       ; 0056e8a0
         ;   XREF to: 0056eac0 (CONDITIONAL_JUMP)  ; LAB_0056eac0
     PUSH EAX                            ; 0056e8a6
@@ -289,7 +289,7 @@ section .text
         ;   XREF to: 00570020 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0056eabb
     XOR EAX,EAX                         ; 0056eabe
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eac0 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eac0 | g_LastSampleAccessIndex
         ;   Label: LAB_0056eac0
     ADD ESP,0x22c                       ; 0056eac6
     POP EBP                             ; 0056eacc
@@ -303,13 +303,13 @@ section .text
     CMP ESI,0x40                        ; 0056ead8
     JL 0x0056e84e                       ; 0056eadb
         ;   XREF to: 0056e84e (CONDITIONAL_JUMP)  ; LAB_0056e84e
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eae1 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eae1 | g_LastSampleAccessIndex
     XOR EAX,EAX                         ; 0056eae7
     JMP 0x0056e868                      ; 0056eae9
         ;   XREF to: 0056e868 (UNCONDITIONAL_JUMP)  ; LAB_0056e868
-    MOV dword ptr [0x02c78ff0],EBX      ; 0056eaee | g_INT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 0056eaee | g_LastSampleAccessIndex
         ;   Label: LAB_0056eaee
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eaf4 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eaf4 | g_LastSampleAccessIndex
     ADD ESP,0x22c                       ; 0056eafa
     POP EBP                             ; 0056eb00
     POP EDI                             ; 0056eb01
@@ -414,7 +414,7 @@ section .text
         ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0056ec0d
     MOV EAX,EBP                         ; 0056ec10
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056ec12 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056ec12 | g_LastSampleAccessIndex
     ADD ESP,0x22c                       ; 0056ec18
     POP EBP                             ; 0056ec1e
     POP EDI                             ; 0056ec1f

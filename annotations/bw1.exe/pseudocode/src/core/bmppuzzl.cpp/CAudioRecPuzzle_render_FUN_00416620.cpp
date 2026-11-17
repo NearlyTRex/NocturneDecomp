@@ -42,7 +42,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_00416620(CAudioRecPuzz
   (**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);
   iVar3 = this_ptr->cursor_index;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
-            (CAlphaBitmap_ARRAY_007c3984 + iVar3,g_INT_01c4353c - this_ptr->cursor_offset_x[iVar3],
-             g_INT_01c43540 - this_ptr->cursor_offset_y[iVar3],0xffff);
+            (CAlphaBitmap_ARRAY_007c3984 + iVar3,g_MouseX - this_ptr->cursor_offset_x[iVar3],
+             g_MouseY - this_ptr->cursor_offset_y[iVar3],0xffff);
   return;
 }

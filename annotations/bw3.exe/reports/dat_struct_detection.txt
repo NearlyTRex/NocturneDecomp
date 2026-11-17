@@ -197,7 +197,7 @@ HIGH CONFIDENCE (4 clusters)
     Likely type: char[3]
     Reason: 2 consecutive bytes
     Referenced by: 1 functions
-     near: g_CHAR_ARRAY_005f0990 (char[104]) at -2
+     near: g_PropertyNamePrefix (char[104]) at -2
       0x005f098e  DAT_005f098e  undefined4 [byte]
       0x005f098f  DAT_005f098f  undefined1
 
@@ -210,7 +210,7 @@ MEDIUM CONFIDENCE (14 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
     Referenced by: 1 functions
-     near: g_SMRGLTextureBasic_00603e44 (SMRGLTextureBasic) at +168
+     near: g_EnvMapTexture (SMRGLTextureBasic) at +168
       0x00603eec  DAT_00603eec  undefined4
       0x00603ef4  DAT_00603ef4  undefined4
       0x00603ef8  DAT_00603ef8  undefined4
@@ -379,7 +379,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: struct (864 bytes span, 13 fields)
     Reason: mixed strides, shared by 6 functions
     Referenced by: 6 functions
-     near: g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type (undefined4) at +456
+     near: g_FireEffectLightningBoltTextures[1].base.type (undefined4) at +456
       0x005fd7ec  DAT_005fd7ec  undefined4
       0x005fd81c  DAT_005fd81c  undefined4
       0x005fd834  DAT_005fd834  undefined4
@@ -407,7 +407,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: struct (172 bytes span, 9 fields)
     Reason: mixed strides, shared by 4 functions
     Referenced by: 4 functions
-     near: g_UINT_00607b84 (uint) at -4
+     near: g_MaxHandleCount (uint) at -4
       0x00607b80  DAT_00607b80  undefined4
       0x00607b88  DAT_00607b88  undefined4
       0x00607b89  DAT_00607b89  undefined4 [byte]
@@ -435,7 +435,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: struct (232 bytes span, 8 fields)
     Reason: mixed strides, shared by 2 functions
     Referenced by: 2 functions
-     near: g_PTR_02cf5fec (void*) at +4
+     near: g_APIDLL_toggle (void*) at +4
       0x02cf5ff0  DAT_02cf5ff0  undefined4
       0x02cf605c  DAT_02cf605c  undefined4
       0x02cf6060  DAT_02cf6060  undefined4
@@ -488,7 +488,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: struct (352 bytes span, 5 fields)
     Reason: mixed strides, shared by 2 functions
     Referenced by: 2 functions
-     near: g_CEventList_PTR_005fba60 (CEventList*) at +4
+     near: g_CEventListPtr (CEventList*) at +4
       0x005fba64  DAT_005fba64  undefined4
       0x005fbaf8  DAT_005fbaf8  undefined4
       0x005fbafc  DAT_005fbafc  undefined4
@@ -620,7 +620,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=5 bytes
     Referenced by: 1 functions
-     near: g_INT_021221f0 (int) at +804
+     near: g_RaytraceStateStackDepth (int) at +804
       0x02122514  DAT_02122514  undefined4
       0x02122518  DAT_02122518  undefined4
       0x02122519  DAT_02122519  undefined4
@@ -694,7 +694,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 1 functions
-     near: g_CHAR_ARRAY_00604268+4 (undefined4) at +252
+     near: g_DefaultSoundDeviceName+4 (undefined4) at +252
       0x00604368  DAT_00604368  undefined4
       0x0060436c  DAT_0060436c  undefined4
 
@@ -703,7 +703,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 1 functions
-     near: g_CHAR_ARRAY_006047b0+4 (undefined4) at +100
+     near: g_SoundResultBufferTemplate+4 (undefined4) at +100
       0x00604818  DAT_00604818  undefined4
       0x0060481c  DAT_0060481c  undefined4
 
@@ -730,7 +730,7 @@ LOW CONFIDENCE (35 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 36 functions
-     near: g_SMRGLPrimitiveQuadIndex_01d81058.vertices[3] (undefined4) at +4
+     near: g_MirrorTempPrimitive.vertices[3] (undefined4) at +4
       0x01d81080  DAT_01d81080  undefined4
       0x01d81084  DAT_01d81084  undefined4
 
@@ -758,7 +758,7 @@ ISOLATED DAT_ GLOBALS (25 - not part of any cluster)
   DAT_01d22c6c                    addr=01d22c6c    type=undefined4      refs=3  near: g_CHAR_ARRAY_01d22c6f+1(-4)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_0203b3f0                    addr=0203b3f0    type=undefined4      refs=2  near: g_INT_0203b3ec(+4)
-  DAT_00607684                    addr=00607684    type=undefined1      refs=2 [likely byte]  near: g_FILE_PTR_00607678(+12)
+  DAT_00607684                    addr=00607684    type=undefined1      refs=2 [likely byte]  near: g_StaticFilePoolStart(+12)
   DAT_007e2aec                    addr=007e2aec    type=undefined4      refs=1  near: g_INT_007e2ae8(+4)
   DAT_005f2a20                    addr=005f2a20    type=undefined4      refs=1  near: g_CZombieDogClassVersion(-60)
   DAT_005df358                    addr=005df358    type=undefined4      refs=1  near: g_CEmitterTypeInfo(+56)
@@ -868,6 +868,6 @@ FILTERED OUT - INSIDE NAMED DATA (86)
   DAT_00607d31                    inside s_EDT_00607cb1
   DAT_0060a09c                    inside g_FLOAT10_0060a092
   DAT_01d22c83                    inside g_CHAR_ARRAY_01d22c6f+0x13
-  DAT_02cfd8a0                    inside g_UCHAR_ARRAY_02cfd89c
-  DAT_02cfd8a4                    inside g_UCHAR_ARRAY_02cfd89c
+  DAT_02cfd8a0                    inside g_AnyAddressIP
+  DAT_02cfd8a4                    inside g_AnyAddressIP
 

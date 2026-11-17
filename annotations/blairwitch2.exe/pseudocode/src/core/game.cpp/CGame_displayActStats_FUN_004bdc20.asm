@@ -12,7 +12,7 @@
 ;   double g_DOUBLE_005d89a3 = 0.0166666666666667
 ;   double g_DOUBLE_005d89ab = 60
 ;   double g_DOUBLE_005d89b3 = 100
-;   CBitFont* g_CBitFont_PTR_01511cc0
+;   CBitFont* g_ThemeFont
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -294,7 +294,7 @@ section .text
     POP EDI                             ; 004bdee4
         ;   Label: LAB_004bdee4
     PUSH 0xffff                         ; 004bdee5
-    MOV EBP,dword ptr [0x01511cc0]      ; 004bdeea | g_CBitFont_PTR_01511cc0
+    MOV EBP,dword ptr [0x01511cc0]      ; 004bdeea | g_ThemeFont
     CALL engine_3d.c_setRenderAlpha_FUN_00406da0 ; 004bdef0
         ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406da0(int alpha_color_value)
     ADD ESP,0x4                         ; 004bdef5

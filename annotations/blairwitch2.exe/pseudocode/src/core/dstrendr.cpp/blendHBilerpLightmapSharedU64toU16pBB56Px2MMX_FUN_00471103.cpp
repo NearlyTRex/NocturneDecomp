@@ -36,16 +36,16 @@ void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN
   uint5 uVar25;
   
   uVar24 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c38b5c >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
                                                                                 0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)(g_ULONG_01c38b5c >> 0x10)) << 0x20)
-                                        >> 0x18),(char)(g_ULONG_01c38b5c >> 8)),
-                          (ushort)(byte)g_ULONG_01c38b5c),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar9 = *texture_buffer;
-    uVar1 = g_UINT_ARRAY_00b6639c[*texture_indices];
-    uVar2 = g_UINT_ARRAY_00b6639c[texture_indices[1]];
+    uVar1 = g_LightmapTexturePalette[*texture_indices];
+    uVar2 = g_LightmapTexturePalette[texture_indices[1]];
     uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
                                             CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
                   >> 0x18);
@@ -61,9 +61,8 @@ void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN
     sVar21 = (short)(uVar19 >> 0x18);
     uVar10 = (ushort)(((uint7)(byte)(uVar9 >> 0x38) << 0x30) >> 0x28);
     uVar18 = *(ulonglong *)
-              (g_USHORT_ARRAY_00612880 +
-              ((uint)*lightmap_indices + (uint)(texture_indices[1] >> 1)) * 4) ^
-             g_USHORT_ARRAY_00612880._2040_8_;
+              (g_LightmapData + ((uint)*lightmap_indices + (uint)(texture_indices[1] >> 1)) * 4) ^
+             g_LightmapData._2040_8_;
     uVar8 = pmulhw(CONCAT26((uVar7 >> 8) * sVar21,
                             CONCAT24((short)CONCAT21(uVar7,(char)(uVar9 >> 0x10)) * sVar20,
                                      CONCAT22((byte)(uVar9 >> 8) * uVar12,(byte)uVar9 * uVar11))),
@@ -79,25 +78,25 @@ void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN
                                                ((ushort)(((ushort)uVar2 & 0xff) + uVar11) >> 1)))),
                     uVar18);
     uVar22 = pmulhw(uVar24,*(ulonglong *)
-                            (g_USHORT_ARRAY_00612880 +
+                            (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(texture_indices[1] >> 1)) * 4));
     sVar20 = (short)((ulonglong)uVar22 >> 0x10);
     sVar21 = (short)((ulonglong)uVar22 >> 0x20);
     sVar23 = (short)((ulonglong)uVar22 >> 0x30);
-    uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)g_MMX_INTEGER_00611328.mm) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)g_LightmapBlendBias5.mm) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + sVar20 +
-                     (short)(g_MMX_INTEGER_00611328.mm >> 0x10)) >> 4;
+                     (short)(g_LightmapBlendBias5.mm >> 0x10)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + sVar21 +
-                     (short)(g_MMX_INTEGER_00611328.mm >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias5.mm >> 0x20)) >> 4;
     uVar12 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + sVar23 +
-                     (short)(g_MMX_INTEGER_00611328.mm >> 0x30)) >> 4;
-    uVar13 = (ushort)((short)uVar14 + (short)uVar22 + (short)g_MMX_INTEGER_00611330.mm) >> 4;
+                     (short)(g_LightmapBlendBias5.mm >> 0x30)) >> 4;
+    uVar13 = (ushort)((short)uVar14 + (short)uVar22 + (short)g_LightmapBlendBias6.mm) >> 4;
     uVar15 = (ushort)((short)((ulonglong)uVar14 >> 0x10) + sVar20 +
-                     (short)(g_MMX_INTEGER_00611330.mm >> 0x10)) >> 4;
+                     (short)(g_LightmapBlendBias6.mm >> 0x10)) >> 4;
     uVar16 = (ushort)((short)((ulonglong)uVar14 >> 0x20) + sVar21 +
-                     (short)(g_MMX_INTEGER_00611330.mm >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias6.mm >> 0x20)) >> 4;
     uVar17 = (ushort)((short)((ulonglong)uVar14 >> 0x30) + sVar23 +
-                     (short)(g_MMX_INTEGER_00611330.mm >> 0x30)) >> 4;
+                     (short)(g_LightmapBlendBias6.mm >> 0x30)) >> 4;
     uVar9 = (ulonglong)
             CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                      CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
@@ -116,12 +115,12 @@ void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN
     texture_indices = texture_indices + 1;
     lightmap_indices = lightmap_indices + 1;
     *output_buffer =
-         (uint)((uVar9 & g_QWORD_0061c928) >> g_QWORD_0061c970) |
-         (uint)((uVar9 & g_QWORD_0061c908) >> g_QWORD_0061c950) |
-         (uint)((uVar9 & g_QWORD_0061c8e8) >> g_QWORD_0061c930) |
-         (uint)(((uVar18 & g_QWORD_0061c928) >> g_QWORD_0061c970 |
-                 (uVar18 & g_QWORD_0061c908) >> g_QWORD_0061c950 |
-                (uVar18 & g_QWORD_0061c8e8) >> g_QWORD_0061c930) << 0x10);
+         (uint)((uVar9 & g_BlueMask32) >> g_BlueBitShift) |
+         (uint)((uVar9 & g_GreenMask32) >> g_GreenBlueDitherShift) |
+         (uint)((uVar9 & g_RedMask32) >> g_TotalDitherShift) |
+         (uint)(((uVar18 & g_BlueMask32) >> g_BlueBitShift |
+                 (uVar18 & g_GreenMask32) >> g_GreenBlueDitherShift |
+                (uVar18 & g_RedMask32) >> g_TotalDitherShift) << 0x10);
     output_buffer = output_buffer + 1;
     iVar6 = pixel_count + -2;
     bVar3 = 1 < pixel_count;

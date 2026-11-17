@@ -326,7 +326,7 @@ LAB_0056f82c:
                (this_ptr->base).base.closest_distance_threshold,&this_ptr->hotdemon_model);
   }
   iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (g_CEventList_PTR_006141f0,"succubusShutUp");
+                    (g_CEventListPtr,"succubusShutUp");
   if (iVar9 == 0) {
     iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
     if ((iVar9 == 0) &&

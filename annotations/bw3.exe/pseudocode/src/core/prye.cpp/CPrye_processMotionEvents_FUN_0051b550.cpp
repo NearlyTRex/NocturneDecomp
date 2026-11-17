@@ -78,9 +78,9 @@ void __cdecl core_prye_cpp_CPrye_processMotionEvents_FUN_0051b550(CPrye *this_pt
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_0051b5c3:
-            iVar2 = g_INT_ARRAY_01ed36ec[3];
+            iVar2 = g_StrangerIndices[3];
             if (bone_index == 7) {
-              iVar2 = g_INT_ARRAY_01ed36ec[4];
+              iVar2 = g_StrangerIndices[4];
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
                       (local_24,iVar2,(CVector3f *)(auStack_a8 + 8));
@@ -298,7 +298,7 @@ LAB_0051b6b9:
         local_2c = local_28;
         if (local_28 != (CCharacter *)0x0) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-                    (local_24,g_INT_ARRAY_01ed36ec[8],&local_58);
+                    (local_24,g_StrangerIndices[8],&local_58);
           pCVar10 = &local_7c;
           local_7c.x = local_58.x;
           *(uint *)((int)&local_7c + (uint)bVar8 * -8 + 4) =

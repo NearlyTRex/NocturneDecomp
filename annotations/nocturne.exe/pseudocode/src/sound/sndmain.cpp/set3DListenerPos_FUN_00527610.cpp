@@ -12,10 +12,9 @@ void __cdecl sound_sndmain_cpp_set3DListenerPos_FUN_00527610(double pos_x,double
   g_DOUBLE_02dc78e0 = pos_x;
   g_DOUBLE_02dc78e8 = pos_y;
   g_DOUBLE_02dc78f0 = pos_z;
-  if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }
-  (*g_CSoundDevice_PTR_02dc8318->vtable->set3DListenerPos)
-            (g_CSoundDevice_PTR_02dc8318,pos_x,pos_y,pos_z);
+  (*g_CSoundDevicePtr->vtable->set3DListenerPos)(g_CSoundDevicePtr,pos_x,pos_y,pos_z);
   return;
 }

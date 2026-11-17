@@ -71,7 +71,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
   switch(this_ptr->door_state) {
   case DOOR_STATE_CLOSED:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->open_condition);
+                      (g_CEventListPtr,this_ptr->open_condition);
     if (iVar3 != 0) {
       this_ptr->door_state = DOOR_STATE_OPENING;
       if (this_ptr->open_sound[0] != '\0') {
@@ -102,7 +102,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
     break;
   case DOOR_STATE_OPEN:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->close_condition);
+                      (g_CEventListPtr,this_ptr->close_condition);
     if ((iVar3 != 0) &&
        (this_ptr->door_state = DOOR_STATE_CLOSING, this_ptr->close_sound[0] != '\0')) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
@@ -139,7 +139,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
     goto LAB_0045f677;
     commands = this_ptr->on_open_trigger_event;
   }
-  core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventList_PTR_006141f0,commands);
+  core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventListPtr,commands);
 LAB_0045f677:
   core_door_cpp_CDoor_reposition_FUN_0045f030(this_ptr);
   if ((this_ptr->param != fStack_58) && (this_ptr->door_type != DOOR_TYPE_TILT)) {

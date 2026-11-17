@@ -9,8 +9,8 @@
 void __cdecl core_tvbat_cpp_staticInit_FUN_00576230(void)
 
 {
-  g_CVector3f_02cfd900.y = 0.0;
-  g_CVector3f_02cfd900.z = 0.0;
-  g_CVector3f_02cfd900.x = 0.0;
+  g_ZeroVector.y = 0.0;
+  g_ZeroVector.z = 0.0;
+  g_ZeroVector.x = 0.0;
   return;
 }

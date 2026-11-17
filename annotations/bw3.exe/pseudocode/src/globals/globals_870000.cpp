@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonCamera*
-CDemonCamera* g_CDemonCamera_PTR_00874584 = {};
+CDemonCamera* g_SkipClearBuffersSceneCamera = {};
 
-// CVector3i[15499]
-CVector3i g_CVector3i_ARRAY_00874588[15499] = {};
+// CVector3i[77120]
+CVector3i g_PrecomputedWorldPositions[77120] = {};
 

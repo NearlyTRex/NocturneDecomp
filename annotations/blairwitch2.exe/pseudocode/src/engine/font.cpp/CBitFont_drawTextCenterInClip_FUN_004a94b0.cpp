@@ -12,7 +12,7 @@ int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004a94b0(CBitFont 
   int iVar1;
   int iVar2;
   
-  iVar2 = g_INT_01c35e48 + g_INT_01c35e50;
+  iVar2 = g_INT_01c35e48 + g_ClipRight;
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(this_ptr,text);
   iVar1 = engine_font_cpp_CBitFont_drawTextWrapper_FUN_004a90b0
                     (this_ptr,((iVar2 + 1) - iVar1) / 2,y,color_mode,color_value,text);

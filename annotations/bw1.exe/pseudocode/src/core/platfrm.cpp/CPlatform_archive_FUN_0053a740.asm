@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 0053a934
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0053a935
         ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
-    MOV ECX,dword ptr [0x007c3038]      ; 0053a93a | g_INT_007c3038
+    MOV ECX,dword ptr [0x007c3038]      ; 0053a93a | g_ActorReadingMode
     ADD ESP,0x8                         ; 0053a940
     CMP ECX,0x1                         ; 0053a943
     JZ 0x0053aa65                       ; 0053a946

@@ -12,19 +12,19 @@ void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401280(int x_coord,int y_coord
   int iVar1;
   
   iVar1 = g_INT_0061b4a0;
-  if (g_UINT_PTR_ARRAY_01c4480c[y_coord][x_coord] < depth_value) {
-    g_UINT_PTR_ARRAY_01c4480c[y_coord][x_coord] = depth_value;
+  if (g_ZBufferScanlineArray[y_coord][x_coord] < depth_value) {
+    g_ZBufferScanlineArray[y_coord][x_coord] = depth_value;
     if (iVar1 == 8) {
-      g_ARRAY_PTR_01c4354c[y_coord][x_coord] = (byte)g_INT_01c4f020;
+      g_ScreenBufferArray[y_coord][x_coord] = (byte)g_INT_01c4f020;
       return;
     }
     if (iVar1 != 0x10) {
-      *(uint *)(g_ARRAY_PTR_01c4354c[y_coord] + x_coord * 4) =
-           g_UINT_ARRAY_01c4dcd0[g_INT_01c4f020 & 0xffU];
+      *(uint *)(g_ScreenBufferArray[y_coord] + x_coord * 4) = g_ColorTable32[g_INT_01c4f020 & 0xffU]
+      ;
       return;
     }
-    *(ushort *)(g_ARRAY_PTR_01c4354c[y_coord] + x_coord * 2) =
-         g_USHORT_ARRAY_01c4dad0[g_INT_01c4f020 & 0xffU];
+    *(ushort *)(g_ScreenBufferArray[y_coord] + x_coord * 2) = g_ColorTable16[g_INT_01c4f020 & 0xffU]
+    ;
   }
   return;
 }

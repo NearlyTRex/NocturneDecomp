@@ -14,39 +14,39 @@ void __cdecl core_colonel_cpp_CColonel_setup_FUN_00435680(CColonel *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
                           (&(this_ptr->base).base.model);
-  g_INT_ARRAY_007c150c[0] =
+  g_ColonelIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 head",1);
-  g_INT_ARRAY_007c150c[1] =
+  g_ColonelIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Clavicle",1);
-  g_INT_ARRAY_007c150c[2] =
+  g_ColonelIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Clavicle",1);
-  g_INT_ARRAY_007c150c[3] =
+  g_ColonelIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_007c150c[4] =
+  g_ColonelIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_007c150c[5] =
+  g_ColonelIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_007c150c[6] =
+  g_ColonelIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_007c150c[7] =
+  g_ColonelIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Foot",1);
-  g_INT_ARRAY_007c150c[8] =
+  g_ColonelIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Foot",1);
-  g_INT_ARRAY_007c150c[9] =
+  g_ColonelIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Thigh",1);
-  g_INT_ARRAY_007c150c[10] =
+  g_ColonelIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Thigh",1);
-  g_INT_ARRAY_007c150c[0xb] =
+  g_ColonelIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Calf",1);
-  g_INT_ARRAY_007c150c[0xc] =
+  g_ColonelIndices[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Calf",1);
-  g_INT_ARRAY_007c150c[0xd] =
+  g_ColonelIndices[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Hand",1);
-  g_INT_ARRAY_007c150c[0xe] =
+  g_ColonelIndices[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Hand",1);
-  g_INT_ARRAY_007c150c[0xf] =
+  g_ColonelIndices[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine2",1);
-  g_INT_ARRAY_007c150c[0x10] =
+  g_ColonelIndices[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
   this_ptr->guns_drawn = 0;
   return;

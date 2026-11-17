@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005fffac = 0.02000000
-;   int g_INT_01caf068
+;   int g_LaserBeamActiveCount
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLaserBeam_init_FUN_004b0000
@@ -32,7 +32,7 @@ section .text
 
     PUSH EBP                            ; 004b60e0
         ;   Label: core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0
-    MOV EDX,dword ptr [0x01caf068]      ; 004b60e1 | g_INT_01caf068
+    MOV EDX,dword ptr [0x01caf068]      ; 004b60e1 | g_LaserBeamActiveCount
     CMP EDX,0x40                        ; 004b60e7
     JL 0x004b60ee                       ; 004b60ea
         ;   XREF to: 004b60ee (CONDITIONAL_JUMP)  ; LAB_004b60ee
@@ -63,10 +63,10 @@ section .text
     PUSH EAX                            ; 004b6126
     CALL core_fire.cpp_CLaserBeam_init_FUN_004b0000 ; 004b6127
         ;   XREF to: 004b0000 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_init_FUN_004b0000(CLaserBeam * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
-    MOV EAX,[0x01caf068]                ; 004b612c | g_INT_01caf068
+    MOV EAX,[0x01caf068]                ; 004b612c | g_LaserBeamActiveCount
     INC EAX                             ; 004b6131
     ADD ESP,0x2c                        ; 004b6132
-    MOV [0x01caf068],EAX                ; 004b6135 | g_INT_01caf068
+    MOV [0x01caf068],EAX                ; 004b6135 | g_LaserBeamActiveCount
     POP EBX                             ; 004b613a
     POP ESI                             ; 004b613b
     POP EDI                             ; 004b613c

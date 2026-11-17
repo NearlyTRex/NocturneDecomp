@@ -48,8 +48,8 @@
 ;   TerminatedCString s_light_wav_0_6_005f997f
 ;   double g_DOUBLE_005f9992 = 0.5
 ;   float g_FLOAT_005f999a = 0.6500000
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
@@ -219,7 +219,7 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 005ae76a
     PUSH dword ptr [ESP + 0xac]         ; 005ae76e
     PUSH EAX                            ; 005ae775
-    MOV EAX,[0x0061c010]                ; 005ae776 | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 005ae776 | g_CFireEffectPtr
     PUSH EAX                            ; 005ae77b
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004b6fe0 ; 005ae77c
         ;   XREF to: 004b6fe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004b6fe0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
@@ -229,7 +229,7 @@ section .text
         ;   Label: LAB_005ae784
     PUSH 0x5f996e                       ; 005ae789 | = "noLightningFlash"
     MOV dword ptr [ESP + 0xac],EAX      ; 005ae78e
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005ae795 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005ae795 | g_CEventListPtr
     MOV EAX,dword ptr [ESP + 0xac]      ; 005ae79b
     MOV dword ptr [EBX + 0x30],EAX      ; 005ae7a2
     MOV EAX,dword ptr [EBX + 0x30]      ; 005ae7a5

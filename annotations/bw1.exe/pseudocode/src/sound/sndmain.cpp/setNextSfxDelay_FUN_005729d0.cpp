@@ -9,6 +9,6 @@
 void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_005729d0(float delay_seconds)
 
 {
-  g_CSfxOptions_ARRAY_02c78cf0[g_INT_02c78cec].delay_remaining = delay_seconds;
+  g_CSfxOptions_ARRAY_02c78cf0[g_SfxLastSlot].delay_remaining = delay_seconds;
   return;
 }

@@ -51,21 +51,21 @@ LAB_0047b245:
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   pCVar1 = &(this_ptr->base).base.model;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(pCVar1);
-  g_INT_ARRAY_01bc0d34[0] =
+  g_DraculaBrideIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Head",1);
-  g_INT_ARRAY_01bc0d34[1] =
+  g_DraculaBrideIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L Hand",1);
-  g_INT_ARRAY_01bc0d34[2] =
+  g_DraculaBrideIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Hand",1);
-  g_INT_ARRAY_01bc0d34[3] =
+  g_DraculaBrideIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01bc0d34[4] =
+  g_DraculaBrideIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01bc0d34[5] =
+  g_DraculaBrideIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine",1);
-  g_INT_ARRAY_01bc0d34[6] =
+  g_DraculaBrideIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine1",1);
-  g_INT_ARRAY_01bc0d34[7] =
+  g_DraculaBrideIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine2",1);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(pCVar1);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780

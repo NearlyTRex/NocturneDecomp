@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 387,
-    "complexity_score": 612,
+    "complexity_score": 610,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 152,
+    "pseudocode_lines": 150,
     "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "signed_shift_global_idiom",
       "unrolled_memcpy"
     ],
-    "total_lines": 539
+    "total_lines": 537
   },
   "cross_references": [
     {
@@ -146,19 +146,19 @@
     },
     {
       "addr": "01c25590",
-      "name": "g_CBitFont_PTR_01c25590",
+      "name": "g_EditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c2559c",
-      "name": "g_INT_01c2559c",
+      "name": "g_WindowStackCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c25f78",
-      "name": "g_INT_01c25f78",
+      "name": "g_EditorFontMaxCharWidth",
       "type": "int",
       "value": null
     },
@@ -176,7 +176,7 @@
     },
     {
       "addr": "01c2a38c",
-      "name": "g_ARRAY_PTR_01c2a38c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
@@ -218,7 +218,7 @@
     },
     {
       "addr": "01c35e50",
-      "name": "g_INT_01c35e50",
+      "name": "g_ClipRight",
       "type": "int",
       "value": null
     },
@@ -230,13 +230,13 @@
     },
     {
       "addr": "01c35e58",
-      "name": "g_INT_01c35e58",
+      "name": "g_ViewportWidth",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c35e5c",
-      "name": "g_INT_01c35e5c",
+      "name": "g_ViewportHeight",
       "type": "int",
       "value": null
     },
@@ -458,7 +458,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(byte *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(byte *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x48) = 0;",
@@ -466,7 +466,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(char *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "buffer = (char *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x48);",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(char *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "(this_ptr_00,(char *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x48));",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 87,
       "match": "(uint *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8) = 0;",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 93,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e4) = g_INT_006141b8;",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 94,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e4) * g_INT_006141c0;",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 95,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8) = g_INT_006141bc;",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 98,
       "match": "(uint *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1dc) = 0;",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 99,
       "match": "(uint *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) = 0;",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 101,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "(*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8) * uVar6);",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 102,
       "match": "(uint **)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(uint **)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8) = local_18;",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 104,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "(iVar4 = 0, 0 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8))) {",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 106,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "iVar9 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1dc) * g_INT_006141c0;",
@@ -562,7 +562,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 110,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "[*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] +",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 120,
       "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 121,
       "match": "(uint *)((int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
@@ -586,7 +586,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 123,
       "match": "(uint *)((int)local_18",
       "severity": "moderate",
       "text": "local_18 = (uint *)((int)local_18 + uVar6);",
@@ -594,7 +594,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 125,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "} while (iVar4 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8));",
@@ -602,7 +602,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 129,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x10) = g_INT_01c35e48;",
@@ -610,7 +610,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 130,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x14) = g_INT_01c35e4c;",
@@ -618,15 +618,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 131,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x18) = g_INT_01c35e50;",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x18) = g_ClipRight;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 132,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1c) = g_INT_01c35e54;",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 133,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x30) = g_INT_01c35e38;",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 134,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x34) = g_INT_01c35e3c;",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 135,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x38) = g_INT_01c35e40;",
@@ -658,7 +658,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 136,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x3c) = g_INT_01c35e44;",
@@ -666,23 +666,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 137,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x40) = g_INT_01c35e58;",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x40) = g_ViewportWidth;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x44) = g_ViewportHeight;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 140,
-      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x44) = g_INT_01c35e5c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
       "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "((float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x20),",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 141,
       "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x24),",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 142,
       "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x28),",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
+      "line": 143,
       "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x2c));",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 146,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1) = left;",
@@ -722,7 +722,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 147,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 4) = top;",
@@ -730,7 +730,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 148,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 8) = right;",
@@ -738,7 +738,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 149,
       "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0xc) = bottom;",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
+      "line": 120,
       "match": "(int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 121,
       "match": "(int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 125,
+      "line": 123,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "local_18 = (uint *)((int)local_18 + uVar6);",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 115,
+      "line": 113,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 120,
+      "line": 118,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar7 = uVar6 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 36,
+      "line": 35,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar2 = (int)((g_INT_006141b8 + (g_INT_006141b8 >> 0x1f) * -0x80) -",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 37,
+      "line": 36,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_006141b8 >> 0x1f) << 6 < 0)) >> 7;",

@@ -88,12 +88,12 @@
 ;   double DOUBLE_0057c81e = 0.25
 ;   float g_FLOAT_0059c030 = 256
 ;   float g_FLOAT_0059c038 = 0.00390625
-;   undefined4 g_SLightGlowTable_005ae458.sprites[0].texture.base.type
-;   undefined4 g_SLightGlowTable_005ae458.sprites[0].params.size
-;   undefined4 g_SLightGlowTable_005ae458.sprites[0].params.uv[0]
-;   undefined4 g_SLightGlowTable_005ae458.sprites[0].params.uv[1]
-;   undefined4 g_SLightGlowTable_005ae458.sprites[0].params.uv[2]
-;   undefined4 g_SLightGlowTable_005ae458.sprites[0].params.uv[3]
+;   undefined4 g_LightGlow.sprites[0].texture.base.type
+;   undefined4 g_LightGlow.sprites[0].params.size
+;   undefined4 g_LightGlow.sprites[0].params.uv[0]
+;   undefined4 g_LightGlow.sprites[0].params.uv[1]
+;   undefined4 g_LightGlow.sprites[0].params.uv[2]
+;   undefined4 g_LightGlow.sprites[0].params.uv[3]
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -327,7 +327,7 @@ section .text
     ADD ESP,0x8                         ; 0044fccf
     MOV dword ptr [ESP + 0x130],EDI     ; 0044fcd2
     MOV dword ptr [ESP + 0x128],EBX     ; 0044fcd9
-    MOV EDI,0x5ae488                    ; 0044fce0 | g_SLightGlowTable_005ae458.sprites[0].texture.base.type
+    MOV EDI,0x5ae488                    ; 0044fce0 | g_LightGlow.sprites[0].texture.base.type
     MOV EAX,dword ptr [ESP + 0x130]     ; 0044fce5
         ;   Label: LAB_0044fce5
     MOV dword ptr [ESP + 0x134],EAX     ; 0044fcec
@@ -340,7 +340,7 @@ section .text
     FLD ST0                             ; 0044fd11
     FMUL double ptr [0x0057c7ee]        ; 0044fd13 | DOUBLE_0057c7ee
     FDIVRP ST2,ST0                      ; 0044fd19
-    FLD float ptr [EDI + 0x1c]          ; 0044fd1b | g_SLightGlowTable_005ae458.sprites[0].params.size | g_SLightGlowTable_005ae458.sprites[1].params.size
+    FLD float ptr [EDI + 0x1c]          ; 0044fd1b | g_LightGlow.sprites[0].params.size | g_LightGlow.sprites[1].params.size
     FMUL double ptr [0x0057c816]        ; 0044fd1e | DOUBLE_0057c816
     MOV EAX,dword ptr [EAX + 0x118]     ; 0044fd24
     FXCH                                ; 0044fd2a
@@ -512,7 +512,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044ffaa
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0044ffaf
-    PUSH ESI                            ; 0044ffb2 | g_SLightGlowTable_005ae458.sprites[0].texture.base.type
+    PUSH ESI                            ; 0044ffb2 | g_LightGlow.sprites[0].texture.base.type
     MOV EAX,[0x005ae704]                ; 0044ffb3 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0044ffb8 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0044ffb9
@@ -527,11 +527,11 @@ section .text
     MOV dword ptr [ESP + 0x18],ECX      ; 0044ffd8
     MOV dword ptr [ESP + 0x28],ECX      ; 0044ffdc
     MOV EDX,dword ptr [0x005ae704]      ; 0044ffe0 | g_CDemonRenderer_PTR_005ae704
-    MOV EBX,dword ptr [ESI + 0x20]      ; 0044ffe6 | g_SLightGlowTable_005ae458.sprites[0].params.uv[0]
+    MOV EBX,dword ptr [ESI + 0x20]      ; 0044ffe6 | g_LightGlow.sprites[0].params.uv[0]
     MOV EAX,dword ptr [EDX]             ; 0044ffe9 | g_CDemonRenderer_01b4d738
     SHL EBX,0x10                        ; 0044ffeb
     MOV dword ptr [EAX + 0x18],EBX      ; 0044ffee
-    MOV EAX,dword ptr [ESI + 0x24]      ; 0044fff1 | g_SLightGlowTable_005ae458.sprites[0].params.uv[1]
+    MOV EAX,dword ptr [ESI + 0x24]      ; 0044fff1 | g_LightGlow.sprites[0].params.uv[1]
     MOV EBX,dword ptr [EDX]             ; 0044fff4 | g_CDemonRenderer_01b4d738
     SHL EAX,0x10                        ; 0044fff6
     MOV dword ptr [EBX + 0x1c],EAX      ; 0044fff9
@@ -546,11 +546,11 @@ section .text
     MOV EBX,0x1                         ; 0045001c
     MOV dword ptr [EAX + 0x28],0xffff   ; 00450021
     MOV dword ptr [ESP + 0x2c],EBX      ; 00450028
-    MOV EBX,dword ptr [ESI + 0x28]      ; 0045002c | g_SLightGlowTable_005ae458.sprites[0].params.uv[2]
+    MOV EBX,dword ptr [ESI + 0x28]      ; 0045002c | g_LightGlow.sprites[0].params.uv[2]
     MOV EAX,dword ptr [EDX]             ; 0045002f | g_CDemonRenderer_01b4d738
     SHL EBX,0x10                        ; 00450031
     MOV dword ptr [EAX + 0x48],EBX      ; 00450034
-    MOV EAX,dword ptr [ESI + 0x24]      ; 00450037 | g_SLightGlowTable_005ae458.sprites[0].params.uv[1]
+    MOV EAX,dword ptr [ESI + 0x24]      ; 00450037 | g_LightGlow.sprites[0].params.uv[1]
     MOV EBX,dword ptr [EDX]             ; 0045003a | g_CDemonRenderer_01b4d738
     SHL EAX,0x10                        ; 0045003c
     MOV dword ptr [EBX + 0x4c],EAX      ; 0045003f
@@ -564,11 +564,11 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00450060 | g_CDemonRenderer_01b4d738
     MOV dword ptr [EAX + 0x58],0xffff   ; 00450062
     MOV dword ptr [ESP + 0x30],0x2      ; 00450069
-    MOV EAX,dword ptr [ESI + 0x28]      ; 00450071 | g_SLightGlowTable_005ae458.sprites[0].params.uv[2]
+    MOV EAX,dword ptr [ESI + 0x28]      ; 00450071 | g_LightGlow.sprites[0].params.uv[2]
     MOV EBX,dword ptr [EDX]             ; 00450074 | g_CDemonRenderer_01b4d738
     SHL EAX,0x10                        ; 00450076
     MOV dword ptr [EBX + 0x78],EAX      ; 00450079
-    MOV EAX,dword ptr [ESI + 0x2c]      ; 0045007c | g_SLightGlowTable_005ae458.sprites[0].params.uv[3]
+    MOV EAX,dword ptr [ESI + 0x2c]      ; 0045007c | g_LightGlow.sprites[0].params.uv[3]
     MOV EBX,dword ptr [EDX]             ; 0045007f | g_CDemonRenderer_01b4d738
     SHL EAX,0x10                        ; 00450081
     MOV dword ptr [EBX + 0x7c],EAX      ; 00450084
@@ -583,11 +583,11 @@ section .text
     MOV ECX,0x3                         ; 004500b0
     MOV dword ptr [EAX + 0x88],0xffff   ; 004500b5
     MOV dword ptr [ESP + 0x34],ECX      ; 004500bf
-    MOV EBX,dword ptr [ESI + 0x20]      ; 004500c3 | g_SLightGlowTable_005ae458.sprites[0].params.uv[0]
+    MOV EBX,dword ptr [ESI + 0x20]      ; 004500c3 | g_LightGlow.sprites[0].params.uv[0]
     MOV EAX,dword ptr [EDX]             ; 004500c6 | g_CDemonRenderer_01b4d738
     SHL EBX,0x10                        ; 004500c8
     MOV dword ptr [EAX + 0xa8],EBX      ; 004500cb
-    MOV EAX,dword ptr [ESI + 0x2c]      ; 004500d1 | g_SLightGlowTable_005ae458.sprites[0].params.uv[3]
+    MOV EAX,dword ptr [ESI + 0x2c]      ; 004500d1 | g_LightGlow.sprites[0].params.uv[3]
     MOV EBX,dword ptr [EDX]             ; 004500d4 | g_CDemonRenderer_01b4d738
     SHL EAX,0x10                        ; 004500d6
     MOV dword ptr [EBX + 0xac],EAX      ; 004500d9

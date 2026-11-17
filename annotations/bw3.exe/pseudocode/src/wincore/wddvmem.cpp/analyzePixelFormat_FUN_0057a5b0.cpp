@@ -18,15 +18,14 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_0057a5b0(void)
   
   memset(&local_70,0,0x6c);
   local_70.dwSize = 0x6c;
-  HVar1 = (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Lock)
-                    (g_IDirectDrawSurface_PTR_02d0bce8,(RECT *)0x0,&local_70,1,(void *)0x0);
+  HVar1 = (*g_SoftwareRenderSurface->vtable->Lock)
+                    (g_SoftwareRenderSurface,(RECT *)0x0,&local_70,1,(void *)0x0);
   if (HVar1 != 0) {
     g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
     g_INT_01d71de4 = 0x2be;
     core_main_c_displayErrorAndQuit_FUN_004e4330("setColorTable16 - Unable to lock back buffer!");
   }
-  HVar1 = (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Unlock)
-                    (g_IDirectDrawSurface_PTR_02d0bce8,(void *)0x0);
+  HVar1 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
   if (HVar1 != 0) {
     g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
     g_INT_01d71de4 = 0x2c0;

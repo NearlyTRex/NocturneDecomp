@@ -10,13 +10,13 @@
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_00528210 at 0052821b
 ;
 ; Referenced Globals:
-;   int g_INT_005bea64 = 0x10
+;   int g_AudioBitsPerSample = 0x10
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x005bea64]                ; 005281a0 | g_INT_005bea64
+    MOV EAX,[0x005bea64]                ; 005281a0 | g_AudioBitsPerSample
         ;   Label: sound_sndmain.cpp_getAudioBitDepth_FUN_005281a0
     RET                                 ; 005281a5
 

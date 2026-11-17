@@ -18,12 +18,12 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(int bits_per_sampl
     g_INT_01d1d404 = 0x1479;
     core_main_c_displayErrorAndQuit_FUN_005030e0("setSoundOutputMode - can't do this while sound active!");
   }
-  g_INT_006232e8 = bits_per_sample;
-  g_INT_006232ec = channels;
-  g_INT_006232f0 = sample_rate;
-  if (g_CSoundDevice_PTR_02c80650 != (CSoundDevice *)0x0) {
-    iVar1 = (*g_CSoundDevice_PTR_02c80650->vtable->setMode)
-                      (g_CSoundDevice_PTR_02c80650,bits_per_sample,channels,sample_rate,&iStack_10);
+  g_AudioBitsPerSample = bits_per_sample;
+  g_AudioChannelCount = channels;
+  g_AudioSampleRate = sample_rate;
+  if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+    iVar1 = (*g_CSoundDevicePtr->vtable->setMode)
+                      (g_CSoundDevicePtr,bits_per_sample,channels,sample_rate,&iStack_10);
     if (iVar1 == 0) {
       return 0;
     }

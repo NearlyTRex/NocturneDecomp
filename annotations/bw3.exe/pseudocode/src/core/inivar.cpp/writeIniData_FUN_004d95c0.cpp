@@ -22,7 +22,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004d95c0(void)
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"useDirect3D",g_INT_02cf5fcc);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"useAGPFlag",g_INT_02cf5fd8);
   engine_ini_cpp_CIniFile_setString_FUN_004d8bb0
-            (&local_214,"rendererDLLPath",g_CHAR_ARRAY_00606730);
+            (&local_214,"rendererDLLPath",g_RendererDllPath);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"gamma",g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
             (&local_214,"heroNumber",g_CGamePtr->hero_number);

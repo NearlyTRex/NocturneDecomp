@@ -27,9 +27,9 @@
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 at 00478246
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005d1dd3 = -2
-;   float g_FLOAT_005d1dd7 = 4
-;   float g_FLOAT_005d1ddb = 2
+;   float g_CylinderScale2 = -2
+;   float g_CylinderScale1 = 4
+;   float g_CylinderInvScale = 2
 ;
 ; *****************************************************************************
 
@@ -214,14 +214,14 @@ section .text
     FMULP                               ; 00477e3a
     FXCH ST4                            ; 00477e3c
     FST float ptr [ESP + 0x38]          ; 00477e3e
-    FMUL float ptr [0x005d1dd7]         ; 00477e42 | g_FLOAT_005d1dd7
+    FMUL float ptr [0x005d1dd7]         ; 00477e42 | g_CylinderScale1
     FXCH ST4                            ; 00477e48
     FADDP ST3,ST0                       ; 00477e4a
     FADDP                               ; 00477e4c
     FLD float ptr [EDX + 0x20]          ; 00477e4e
     FMUL ST0                            ; 00477e51
     FXCH                                ; 00477e53
-    FMUL float ptr [0x005d1dd3]         ; 00477e55 | g_FLOAT_005d1dd3
+    FMUL float ptr [0x005d1dd3]         ; 00477e55 | g_CylinderScale2
     FXCH                                ; 00477e5b
     FSUBP ST2,ST0                       ; 00477e5d
     FXCH ST2                            ; 00477e5f
@@ -244,7 +244,7 @@ section .text
     FSQRT                               ; 00477e8a
     FSUBP                               ; 00477e8c
     FLD float ptr [ESP + 0x38]          ; 00477e8e
-    FMUL float ptr [0x005d1ddb]         ; 00477e92 | g_FLOAT_005d1ddb
+    FMUL float ptr [0x005d1ddb]         ; 00477e92 | g_CylinderInvScale
     FDIVP                               ; 00477e98
     FLDZ                                ; 00477e9a
     FXCH                                ; 00477e9c

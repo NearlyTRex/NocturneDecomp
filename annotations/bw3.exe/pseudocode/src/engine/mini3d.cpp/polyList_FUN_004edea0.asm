@@ -11,15 +11,15 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;   int g_INT_01d76c34
 ;   float* g_FLOAT_PTR_01d76f60
 ;   int g_INT_01d7a694
 ;   int g_INT_01d7a698
-;   int g_INT_01ed3198
-;   void* g_PTR_02cf60b4
+;   int g_RenderedTriangleCount
+;   void* g_APIDLL_polyList
 ;   void* g_PTR_02cf60bc
 ;   void* g_PTR_02cf60c0
 ;
@@ -52,12 +52,12 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 004edeab
     MOV EAX,dword ptr [ESP + 0x28]      ; 004edeaf
     MOV ECX,dword ptr [0x01d76c34]      ; 004edeb3 | g_INT_01d76c34
-    MOV EDX,dword ptr [0x01ed3198]      ; 004edeb9 | g_INT_01ed3198
+    MOV EDX,dword ptr [0x01ed3198]      ; 004edeb9 | g_RenderedTriangleCount
     MOV ESI,dword ptr [0x01d7a694]      ; 004edebf | g_INT_01d7a694
     ADD ECX,EDI                         ; 004edec5
     ADD EDX,EAX                         ; 004edec7
     MOV dword ptr [0x01d76c34],ECX      ; 004edec9 | g_INT_01d76c34
-    MOV dword ptr [0x01ed3198],EDX      ; 004edecf | g_INT_01ed3198
+    MOV dword ptr [0x01ed3198],EDX      ; 004edecf | g_RenderedTriangleCount
     TEST ESI,ESI                        ; 004eded5
     JNZ 0x004edf99                      ; 004eded7
         ;   XREF to: 004edf99 (CONDITIONAL_JUMP)  ; LAB_004edf99
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 004edcc0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateTransform_FUN_004edcc0()
     CALL engine_mini3d.cpp_updateRenderState_FUN_004f2430 ; 004edee2
         ;   XREF to: 004f2430 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateRenderState_FUN_004f2430()
-    CMP dword ptr [0x02cf60b4],0x0      ; 004edee7 | g_PTR_02cf60b4
+    CMP dword ptr [0x02cf60b4],0x0      ; 004edee7 | g_APIDLL_polyList
     JZ 0x004edefd                       ; 004edeee
         ;   XREF to: 004edefd (CONDITIONAL_JUMP)  ; LAB_004edefd
     CMP dword ptr [0x01c6cee8],0x0      ; 004edef0 | g_INT_01c6cee8
@@ -113,7 +113,7 @@ section .text
     JL 0x004edf59                       ; 004edf6c
         ;   XREF to: 004edf59 (CONDITIONAL_JUMP)  ; LAB_004edf59
     MOV EAX,EAX                         ; 004edf6e
-    MOV EBX,dword ptr [0x01c6e2b4]      ; 004edf70 | g_BIT_INTEGER32_01c6e2b4
+    MOV EBX,dword ptr [0x01c6e2b4]      ; 004edf70 | g_RenderStateFlags
         ;   Label: LAB_004edf70
     PUSH EBX                            ; 004edf76
     MOV ESI,dword ptr [ESP + 0x2c]      ; 004edf77
@@ -146,7 +146,7 @@ section .text
     POP ESI                             ; 004edfae
     POP EBX                             ; 004edfaf
     RET                                 ; 004edfb0
-    MOV ESI,dword ptr [0x01c6e2b4]      ; 004edfb1 | g_BIT_INTEGER32_01c6e2b4
+    MOV ESI,dword ptr [0x01c6e2b4]      ; 004edfb1 | g_RenderStateFlags
         ;   Label: LAB_004edfb1
     PUSH ESI                            ; 004edfb7
     MOV EBP,dword ptr [ESP + 0x2c]      ; 004edfb8
@@ -155,7 +155,7 @@ section .text
     PUSH EAX                            ; 004edfc1
     PUSH EDI                            ; 004edfc2
     PUSH EBX                            ; 004edfc3
-    CALL dword ptr [0x02cf60b4]         ; 004edfc4 | g_PTR_02cf60b4
+    CALL dword ptr [0x02cf60b4]         ; 004edfc4 | g_APIDLL_polyList
     ADD ESP,0x14                        ; 004edfca
     ADD ESP,0x8                         ; 004edfcd
     POP EBP                             ; 004edfd0
@@ -189,7 +189,7 @@ section .text
         ;   XREF to: 004edff3 (CONDITIONAL_JUMP)  ; LAB_004edff3
     LEA EAX,[EAX]                       ; 004ee008
     MOV EDX,EDX                         ; 004ee00e
-    MOV EBP,dword ptr [0x01c6e2b4]      ; 004ee010 | g_BIT_INTEGER32_01c6e2b4
+    MOV EBP,dword ptr [0x01c6e2b4]      ; 004ee010 | g_RenderStateFlags
         ;   Label: LAB_004ee010
     PUSH EBP                            ; 004ee016
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004ee017

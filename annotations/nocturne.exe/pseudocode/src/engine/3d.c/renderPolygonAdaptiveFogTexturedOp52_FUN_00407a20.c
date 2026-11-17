@@ -81,7 +81,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
                   ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i)
         ;
         g_ActiveRenderColor =
-             engine_3d_c_lookupLitColor_FUN_00404680(g_INT_006b0260,g_CurrentLightingValue);
+             engine_3d_c_lookupLitColor_FUN_00404680(g_CurrentPolygonColor,g_CurrentLightingValue);
       }
     }
     else {
@@ -102,18 +102,18 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = 0;
     }
-    piVar3 = g_INT_ARRAY_006b029c;
+    piVar3 = g_ProcessedVertexIndices;
     pSVar2 = prim + 1;
     for (iVar1 = 0; iVar1 < (prim->base).count * 3; iVar1 = iVar1 + 3) {
-      *piVar3 = (pSVar2->base).type + g_UINT_006b0264;
-      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_UINT_006b0264].u = (pSVar2->base).count
-      ;
+      *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
+      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_ProcessedVertexOffset].u =
+           (pSVar2->base).count;
       piVar3 = piVar3 + 1;
-      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_UINT_006b0264].v =
+      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_ProcessedVertexOffset].v =
            (int)(pSVar2->surface_normal).A;
       pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_INT_ARRAY_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

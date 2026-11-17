@@ -17,9 +17,9 @@
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_00504890 at 00504a27
 ;
 ; Referenced Globals:
-;   int g_INT_01da6474
+;   int g_LastPingTime
 ;   uint g_UINT_01da6478
-;   UNetPacket g_UNetPacket_01dd4488
+;   UNetPacket g_NetworkReceivePacket
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60
@@ -43,10 +43,10 @@ section .text
     MOV EBX,0x12                        ; 00504c80
     SAR EDX,0x1f                        ; 00504c85
     IDIV EBX                            ; 00504c88
-    MOV ECX,dword ptr [0x01da6474]      ; 00504c8a | g_INT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 00504c8a | g_LastPingTime
     MOV EDX,EAX                         ; 00504c90
     SUB EAX,ECX                         ; 00504c92
-    MOV dword ptr [0x01da6474],EDX      ; 00504c94 | g_INT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 00504c94 | g_LastPingTime
     TEST EAX,EAX                        ; 00504c9a
     JL 0x00504cc4                       ; 00504c9c
         ;   XREF to: 00504cc4 (CONDITIONAL_JUMP)  ; LAB_00504cc4
@@ -89,8 +89,8 @@ section .text
     JLE 0x00504d04                      ; 00504ce7
         ;   XREF to: 00504d04 (CONDITIONAL_JUMP)  ; LAB_00504d04
     INC EAX                             ; 00504ce9
-    PUSH 0x1dd4488                      ; 00504cea | g_UNetPacket_01dd4488
-    MOV [0x01dd4488],EAX                ; 00504cef | g_UNetPacket_01dd4488
+    PUSH 0x1dd4488                      ; 00504cea | g_NetworkReceivePacket
+    MOV [0x01dd4488],EAX                ; 00504cef | g_NetworkReceivePacket
     LEA EAX,[ESP + 0x4]                 ; 00504cf4
     PUSH EAX                            ; 00504cf8
     PUSH ESI                            ; 00504cf9

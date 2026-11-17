@@ -35,7 +35,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00551620(CSfxSampl
   
   bVar10 = 0;
   fVar2 = 20.0f * g_FLOAT_00604244;
-  fVar3 = g_FLOAT_02ce7210 * g_FLOAT_00604244;
+  fVar3 = g_SoundReferenceVolumeDistance * g_FLOAT_00604244;
   fVar4 = 10000.0f * g_FLOAT_00604244;
   this_ptr->loop_marker_count = 1;
   (this_ptr->sample_info).reference_distance = fVar2;
@@ -84,11 +84,12 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00551620(CSfxSampl
       } while (*pcVar7 != '\0');
       pcVar7 = (char *)0x0;
 joined_r0x00551849:
-      while ((local_484 < pcVar7 && ((g_UCHAR_ARRAY_006074b8[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {
+      while ((local_484 < pcVar7 &&
+             ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {
         pcVar7 = pcVar7 + -1;
       }
       *pcVar7 = '\0';
-      while ((g_UCHAR_ARRAY_006074b8[(byte)(local_484[0] + 1)] & 2) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(local_484[0] + 1)] & 2) != 0) {
         uVar8 = 0xffffffff;
         pcVar9 = local_484;
         do {

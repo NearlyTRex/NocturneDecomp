@@ -39,10 +39,10 @@ _tm * __cdecl gmtime_r(time_t days,time_t seconds,time_t timezone_offset,_tm *re
   }
   result->tm_year = uVar3;
   result->tm_yday = uVar4;
-  local_14 = &g_SHORT_005a4a78;
+  local_14 = &g_DaysInMonth_Normal;
   iVar2 = is_leap_year(uVar3 + 0x76c);
   if (iVar2 != 0) {
-    local_14 = &g_SHORT_005a4a92;
+    local_14 = &g_DaysInMonth_Leap;
   }
   uVar3 = uVar4 / 0x1f;
   if ((uint)(*(int *)(local_14 + uVar3) >> 0x10) <= uVar4) {

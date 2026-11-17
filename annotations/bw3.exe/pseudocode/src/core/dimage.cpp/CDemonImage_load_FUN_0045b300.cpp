@@ -92,7 +92,7 @@ LAB_0045b3bd:
     *(ushort *)(pcVar6 + 0x100) = uVar3;
     pcVar6 = pcVar6 + 2;
     pcVar5 = pcVar5 + 3;
-    *puVar7 = g_UCHAR_ARRAY_01c62070
+    *puVar7 = g_ColorCubeLookup
               [(uint)(bVar2 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3)];
     puVar7 = puVar7 + 1;
   } while (pcVar6 != unaff_retaddr);

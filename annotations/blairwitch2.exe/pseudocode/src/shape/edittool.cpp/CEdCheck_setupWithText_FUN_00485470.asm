@@ -10,8 +10,8 @@
 ; char *           Stack[0x10]:4   checkbox_text
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c25f78
+;   CBitFont* g_EditorFont
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c25f7c
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
@@ -61,21 +61,21 @@ section .text
         ;   XREF to: 00485497 (CONDITIONAL_JUMP)  ; LAB_00485497
     POP EDI                             ; 004854af
         ;   Label: LAB_004854af
-    CMP dword ptr [0x01c25590],0x0      ; 004854b0 | g_CBitFont_PTR_01c25590
+    CMP dword ptr [0x01c25590],0x0      ; 004854b0 | g_EditorFont
     JZ 0x0048552a                       ; 004854b7
         ;   XREF to: 0048552a (CONDITIONAL_JUMP)  ; LAB_0048552a
-    MOV EAX,[0x01c25590]                ; 004854b9 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 004854b9 | g_EditorFont
         ;   Label: LAB_004854b9
     PUSH 0x6a                           ; 004854be
     MOV ESI,dword ptr [EAX + 0x41e8]    ; 004854c0
     PUSH EAX                            ; 004854c6
-    MOV dword ptr [0x01c25f78],ESI      ; 004854c7 | g_INT_01c25f78
+    MOV dword ptr [0x01c25f78],ESI      ; 004854c7 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004854cd
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004854d2
     LEA ESI,[EBX + 0x24]                ; 004854d5
     PUSH ESI                            ; 004854d8
-    MOV EDI,dword ptr [0x01c25590]      ; 004854d9 | g_CBitFont_PTR_01c25590
+    MOV EDI,dword ptr [0x01c25590]      ; 004854d9 | g_EditorFont
     PUSH EDI                            ; 004854df
     MOV [0x01c25f7c],EAX                ; 004854e0 | g_INT_01c25f7c
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 004854e5
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 004855f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 0048550b
     PUSH ESI                            ; 0048550e
-    MOV EBP,dword ptr [0x01c25590]      ; 0048550f | g_CBitFont_PTR_01c25590
+    MOV EBP,dword ptr [0x01c25590]      ; 0048550f | g_EditorFont
     PUSH EBP                            ; 00485515
     ADD EDI,EAX                         ; 00485516
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 00485518

@@ -39,19 +39,19 @@
   "globals": [
     {
       "addr": "012b0660",
-      "name": "g_BIT_INTEGER32_012b0660",
+      "name": "g_CameraDownscaleIterations",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "0140d780",
-      "name": "g_INT_0140d780",
+      "name": "g_ImageBytesPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "014b7190",
-      "name": "g_INT_014b7190",
+      "name": "g_FlatShadingLightLevel",
       "type": "int",
       "value": null
     },
@@ -224,7 +224,7 @@
       "line": 38,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "cVar2 = (char)((g_INT_014b7190 + (g_INT_014b7190 >> 0x1f) * -0x100) -",
+      "text": "cVar2 = (char)((g_FlatShadingLightLevel + (g_FlatShadingLightLevel >> 0x1f) * -0x100) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -232,14 +232,14 @@
       "line": 39,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_014b7190 >> 0x1f) << 7 < 0) >> 8);",
+      "text": "(uint)((g_FlatShadingLightLevel >> 0x1f) << 7 < 0) >> 8);",
       "type": "signed_shift_global_idiom"
     },
     {
-      "description": "'g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar4]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar4 is multiplied by 0x140 and stepped by 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar4]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar4 is multiplied by 0x140 and stepped by 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 58,
       "severity": "major",
-      "text": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar4] = cVar2;",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar4] = cVar2;",
       "type": "flattened_array_index"
     }
   ]

@@ -151,7 +151,7 @@ void __cdecl giveHeroWeapon(char *class_name);
 
 // Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0
 // Address: 004a03a0
-void __cdecl giveHeroWeaponAmmo(char *param_1,EAmmoType param_2);
+void __cdecl giveHeroWeaponAmmo(char *class_name,EAmmoType ammo_type);
 
 // Original: core_game.cpp_checkCheatAndGiveWeapon_FUN_004a0430
 // Address: 004a0430

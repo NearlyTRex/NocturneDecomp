@@ -12,14 +12,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0(CSfxSlot *this
   int iVar1;
   
   if (this_ptr->hardware_buffer_handle != 0) {
-    if (g_CSoundDevice_PTR_02648e80 != (CSoundDevice *)0x0) {
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
       if (this_ptr->sample == (CSfxSample *)0x0) {
         g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
         g_INT_01d046a4 = 0xcf9;
         core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::pollHwHandle - no sample?");
       }
-      iVar1 = (*g_CSoundDevice_PTR_02648e80->vtable->isSfxPlaying)
-                        (g_CSoundDevice_PTR_02648e80,this_ptr);
+      iVar1 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,this_ptr);
       if (iVar1 != 0) {
         return;
       }

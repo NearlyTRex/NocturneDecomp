@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   void* g_PTR_02c8339c
+;   void* g_APIDLL_restoreVideoMode
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     JZ 0x0058232c                       ; 00582318
         ;   XREF to: 0058232c (CONDITIONAL_JUMP)  ; LAB_0058232c
     XOR ECX,ECX                         ; 0058231a
-    MOV EBX,dword ptr [0x02c8339c]      ; 0058231c | g_PTR_02c8339c
+    MOV EBX,dword ptr [0x02c8339c]      ; 0058231c | g_APIDLL_restoreVideoMode
     MOV dword ptr [0x01c50948],ECX      ; 00582322 | g_INT_01c50948
     TEST EBX,EBX                        ; 00582328
     JNZ 0x00582330                      ; 0058232a
@@ -31,7 +31,7 @@ section .text
         ;   Label: LAB_0058232c
     POP EBX                             ; 0058232e
     RET                                 ; 0058232f
-    CALL dword ptr [0x02c8339c]         ; 00582330 | g_PTR_02c8339c
+    CALL dword ptr [0x02c8339c]         ; 00582330 | g_APIDLL_restoreVideoMode
         ;   Label: LAB_00582330
     POP EBX                             ; 00582336
     RET                                 ; 00582337

@@ -91,8 +91,8 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
     _fseek(p_Var3,iVar9,0);
     uVar6 = 0xffffffff;
     for (size = local_24; 0xffff < (int)size; size = size - 0x10000) {
-      pcVar8 = g_CHAR_ARRAY_01e428d0;
-      _fread(g_CHAR_ARRAY_01e428d0,0x10000,1,p_Var3);
+      pcVar8 = g_FileIOBuffer;
+      _fread(g_FileIOBuffer,0x10000,1,p_Var3);
       uVar7 = 0;
       do {
         uVar1 = *pcVar8;
@@ -101,8 +101,8 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
         uVar6 = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(uVar6,uVar1);
       } while (uVar7 < 0x10000);
     }
-    pcVar8 = g_CHAR_ARRAY_01e428d0;
-    _fread(g_CHAR_ARRAY_01e428d0,size,1,p_Var3);
+    pcVar8 = g_FileIOBuffer;
+    _fread(g_FileIOBuffer,size,1,p_Var3);
     uVar7 = 0;
     local_18 = size;
     if (size != 0) {

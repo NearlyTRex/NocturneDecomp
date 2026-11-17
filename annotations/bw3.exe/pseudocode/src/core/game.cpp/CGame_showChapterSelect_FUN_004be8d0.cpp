@@ -49,9 +49,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_11c,0);
     if (iVar4 == 0) goto LAB_004beb21;
-    g_CHAR_ARRAY_01d229f0[0] = '\0';
-    g_FLOAT_01d22af4 = 0.0;
-    g_INT_01d22af0 = 0;
+    g_ChapterDisplayName[0] = '\0';
+    g_OverlayDisplayTimer = 0.0;
+    g_ChapterDisplayYear = 0;
   }
   else {
     pcVar6 = "town_act1.msn";
@@ -67,12 +67,12 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,
     } while (cVar1 != '\0');
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004ab7a0(g_CFieldNotesPtr);
-  core_event_cpp_CEventList_resetGameFlags_FUN_00494880(g_CEventList_PTR_005fba60);
+  core_event_cpp_CEventList_resetGameFlags_FUN_00494880(g_CEventListPtr);
   load_flags = 1;
-  iVar4 = _stricmp(g_CHAR_ARRAY_01d225c8,local_11c);
+  iVar4 = _stricmp(g_CurrentSaveFile,local_11c);
   if (iVar4 != 0) {
     pcVar5 = local_11c;
-    pcVar6 = g_CHAR_ARRAY_01d225c8;
+    pcVar6 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar5;
       *pcVar6 = cVar1;

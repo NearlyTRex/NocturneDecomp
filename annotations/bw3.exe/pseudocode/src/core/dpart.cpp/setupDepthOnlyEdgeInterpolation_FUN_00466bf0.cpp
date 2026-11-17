@@ -17,7 +17,7 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwa
   int iVar6;
   SSoftwareEdge *pSVar7;
   
-  iVar2 = g_INT_01bdcfd4;
+  iVar2 = g_RenderTriangleEdgeCount;
   iVar6 = (vertex_b->base).red_gradient >> 0x10;
   iVar3 = (vertex_a->base).red_gradient >> 0x10;
   if (iVar3 != iVar6) {
@@ -29,14 +29,14 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwa
       pSVar7 = vertex_b;
       vertex_b = vertex_a;
     }
-    g_SSoftwareEdge_ARRAY_01bdcfd8[g_INT_01bdcfd4].base.y_min = iVar4;
-    iVar3 = g_INT_01bdd4d8;
+    g_SSoftwareEdge_ARRAY_01bdcfd8[g_RenderTriangleEdgeCount].base.y_min = iVar4;
+    iVar3 = g_RenderTriangleMinScanlineY;
     g_SSoftwareEdge_ARRAY_01bdcfd8[iVar2].base.y_max = iVar6;
     if (iVar4 < iVar3) {
-      g_INT_01bdd4d8 = iVar4;
+      g_RenderTriangleMinScanlineY = iVar4;
     }
-    if (g_INT_01bdd4dc < iVar6) {
-      g_INT_01bdd4dc = iVar6;
+    if (g_RenderTriangleMaxScanlineY < iVar6) {
+      g_RenderTriangleMaxScanlineY = iVar6;
     }
     uVar5 = (vertex_b->base).red_gradient - (pSVar7->base).red_gradient;
     if (uVar5 < 0x10000) {
@@ -52,7 +52,7 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwa
             (longlong)(((vertex_b->base).x_current - (pSVar7->base).x_current) * 0x100);
     g_SSoftwareEdge_ARRAY_01bdcfd8[iVar2].base.depth_gradient =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar3 = g_INT_01bdd520;
+    iVar3 = g_RasterizerDepthBias;
     uVar5 = (uint)(ushort)((ushort)(pSVar7->base).red_gradient ^ 0xffff);
     lVar1 = (longlong)(int)uVar5 * (longlong)g_SSoftwareEdge_ARRAY_01bdcfd8[iVar2].base.x_gradient;
     iVar6 = g_SSoftwareEdge_ARRAY_01bdcfd8[iVar2].base.depth_gradient;
@@ -60,7 +60,7 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwa
          (pSVar7->base).red_current +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)(int)uVar5 * (longlong)iVar6;
-    g_INT_01bdcfd4 = g_INT_01bdcfd4 + 1;
+    g_RenderTriangleEdgeCount = g_RenderTriangleEdgeCount + 1;
     g_SSoftwareEdge_ARRAY_01bdcfd8[iVar2].base.depth_current =
          ((pSVar7->base).x_current * 0x100 - iVar3) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

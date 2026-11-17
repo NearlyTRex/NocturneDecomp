@@ -38,7 +38,7 @@
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].r
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].b
-;   int g_INT_01cc804c
+;   int g_FastSqrtMagic
 ;   int g_INT_01fe5c88
 ;
 ; Called Functions:
@@ -193,7 +193,7 @@ section .text
     FADDP                               ; 00552ec8
     FSTP float ptr [ESP + 0x48]         ; 00552eca
     MOV EAX,dword ptr [ESP + 0x48]      ; 00552ece
-    MOV EDI,dword ptr [0x01cc804c]      ; 00552ed2 | g_INT_01cc804c
+    MOV EDI,dword ptr [0x01cc804c]      ; 00552ed2 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00552ed8
     ADD EAX,EDI                         ; 00552eda
     MOV dword ptr [ESP + 0x44],EAX      ; 00552edc

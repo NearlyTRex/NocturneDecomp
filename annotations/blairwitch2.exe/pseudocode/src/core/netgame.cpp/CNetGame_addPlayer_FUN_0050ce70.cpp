@@ -45,12 +45,12 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_0050ce70(CNetGame *this_ptr,
   dest->local_sync_stage = 0;
   dest->hero_number = hero_number;
   dest->aim_mode = aim_mode;
-  uVar4 = g_UINT_01d34e38;
-  dest->last_arrival_time = g_UINT_01d34e38;
+  uVar4 = g_CurrentGameTime;
+  dest->last_arrival_time = g_CurrentGameTime;
   uVar4 = uVar4 - 0x1e0000;
   dest->last_ping_sent = uVar4;
   dest->last_ping_response = uVar4;
-  iVar3 = g_INT_01d34e44;
+  iVar3 = g_NetNextPlayerId;
   dest->last_update_time = uVar4;
   dest->player_id = iVar3 + -1;
   return iVar2;

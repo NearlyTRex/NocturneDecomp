@@ -3269,28 +3269,28 @@ static TerminatedCString s_sound_mp3_cpp_005dffbf = "..\\sound\\mp3.cpp";
 static TerminatedCString s_Illegal_Huffman_code_in_005dffd0 = "Illegal Huffman code in data.  File: %s";
 
 // char[50] constants
-static char g_CHAR_ARRAY_005d7fef[50] = {
+static char g_CheatStr_TimeFactor[50] = {
     (char)0xD2, (char)0xDB, (char)0xEC, (char)0x35, (char)0x1E, (char)0xE4, (char)0x90, (char)0xA4, (char)0xDE, (char)0x04, (char)0xFA, (char)0xD7,
     (char)0xFD, (char)0x9D, (char)0x69, (char)0x92, (char)0xE1, (char)0x46, (char)0xD1, (char)0xBA, (char)0x17, (char)0x54, (char)0xD5, (char)0x83,
     (char)0xF5, (char)0x80, (char)0x1F, (char)0x73, (char)0xB5, (char)0x0C, (char)0xA8, (char)0x8C, (char)0x86, (char)0xDC, (char)0x62, (char)0xBF,
     (char)0xC5, (char)0xC5, (char)0x61, (char)0x8A, (char)0xA9, (char)0x6E, (char)0x59, (char)0x22, (char)0x5F, (char)0xFC, (char)0xAA, (char)0x83,
     (char)0x38, (char)0x00
 };
-static char g_CHAR_ARRAY_005d816b[50] = {
+static char g_CheatStr_ResetEffects[50] = {
     (char)0xBE, (char)0xC2, (char)0x80, (char)0x79, (char)0x52, (char)0xF8, (char)0xC4, (char)0xA0, (char)0xCA, (char)0x60, (char)0x46, (char)0x6B,
     (char)0xC1, (char)0x31, (char)0x3D, (char)0x16, (char)0x75, (char)0x22, (char)0x3D, (char)0x76, (char)0xDB, (char)0x68, (char)0x61, (char)0x97,
     (char)0x89, (char)0xFB, (char)0x8D, (char)0x2F, (char)0xE9, (char)0xA0, (char)0x5C, (char)0x08, (char)0x32, (char)0xB8, (char)0x4E, (char)0x73,
     (char)0x89, (char)0xD9, (char)0xB5, (char)0x8E, (char)0xBD, (char)0x4A, (char)0x25, (char)0x5E, (char)0xA3, (char)0x10, (char)0xFE, (char)0x07,
     (char)0xAC, (char)0x00
 };
-static char g_CHAR_ARRAY_005d819d[50] = {
+static char g_CheatStr_SingleStep[50] = {
     (char)0xF8, (char)0x31, (char)0xC6, (char)0x27, (char)0x48, (char)0x5A, (char)0xAA, (char)0x16, (char)0x90, (char)0x62, (char)0xC0, (char)0x05,
     (char)0x8B, (char)0x53, (char)0xA3, (char)0x40, (char)0xDF, (char)0xE0, (char)0x7B, (char)0xC8, (char)0x61, (char)0x4A, (char)0x4F, (char)0x96,
     (char)0x26, (char)0x6E, (char)0x90, (char)0xC1, (char)0x23, (char)0x42, (char)0x62, (char)0x3E, (char)0x18, (char)0xFA, (char)0x08, (char)0xAD,
     (char)0x93, (char)0xBB, (char)0x1B, (char)0x78, (char)0x67, (char)0x48, (char)0xA3, (char)0x70, (char)0x69, (char)0xB2, (char)0x60, (char)0xD1,
     (char)0xC6, (char)0x00
 };
-static char g_CHAR_ARRAY_005d839c[50] = {
+static char g_CheatStr_LithiumAmmo[50] = {
     (char)0xD3, (char)0x27, (char)0xED, (char)0xF6, (char)0x97, (char)0x83, (char)0x61, (char)0xF7, (char)0xB7, (char)0x4B, (char)0x1B, (char)0x34,
     (char)0xA4, (char)0x5A, (char)0x78, (char)0x81, (char)0xD8, (char)0xB9, (char)0x90, (char)0xB9, (char)0x5E, (char)0x33, (char)0x44, (char)0xB7,
     (char)0x13, (char)0x9A, (char)0x7F, (char)0xD5, (char)0x13, (char)0x9B, (char)0x50, (char)0xFC, (char)0x50, (char)0xDF, (char)0xFD, (char)0x6B,
@@ -3299,35 +3299,35 @@ static char g_CHAR_ARRAY_005d839c[50] = {
 };
 
 // char[51] constants
-static char g_CHAR_ARRAY_005d7b7a[51] = {
+static char g_CheatStr_EventDebug[51] = {
     (char)0xE9, (char)0xD2, (char)0xD7, (char)0x38, (char)0x51, (char)0xB1, (char)0x6B, (char)0x11, (char)0xD9, (char)0xF9, (char)0x71, (char)0x0A,
     (char)0x22, (char)0x48, (char)0x82, (char)0x67, (char)0x46, (char)0x6B, (char)0x0A, (char)0xF7, (char)0x18, (char)0x61, (char)0xCE, (char)0x47,
     (char)0x2D, (char)0x95, (char)0xDF, (char)0x5A, (char)0x57, (char)0x61, (char)0x08, (char)0x94, (char)0xB0, (char)0x3A, (char)0x90, (char)0x36,
     (char)0x1B, (char)0x11, (char)0x41, (char)0xED, (char)0x26, (char)0x45, (char)0x52, (char)0xED, (char)0x06, (char)0x2B, (char)0xF8, (char)0xB6,
     (char)0xDF, (char)0xA4, (char)0x00
 };
-static char g_CHAR_ARRAY_005d7cc5[51] = {
+static char g_CheatStr_MovieRecording[51] = {
     (char)0xC0, (char)0x9E, (char)0xFE, (char)0xFF, (char)0x40, (char)0x42, (char)0x62, (char)0x3E, (char)0x18, (char)0xFA, (char)0x08, (char)0xAD,
     (char)0x93, (char)0xBB, (char)0x1B, (char)0x78, (char)0x67, (char)0x48, (char)0xA3, (char)0x70, (char)0x69, (char)0xB2, (char)0x07, (char)0xAC,
     (char)0xAF, (char)0xC7, (char)0xC7, (char)0x69, (char)0xDB, (char)0xAA, (char)0x3A, (char)0xE6, (char)0x80, (char)0x52, (char)0x70, (char)0xF5,
     (char)0x9B, (char)0xA3, (char)0xD3, (char)0x10, (char)0xEF, (char)0xD0, (char)0xEB, (char)0x98, (char)0x71, (char)0x9A, (char)0x98, (char)0x29,
     (char)0xBE, (char)0x00, (char)0x41
 };
-static char g_CHAR_ARRAY_005d8033[51] = {
+static char g_CheatStr_NoD3D[51] = {
     (char)0xA6, (char)0x35, (char)0x98, (char)0xB1, (char)0xAA, (char)0x00, (char)0xBC, (char)0xE8, (char)0x12, (char)0x18, (char)0xAE, (char)0xD3,
     (char)0xE9, (char)0xB9, (char)0x95, (char)0x6E, (char)0x9D, (char)0x2A, (char)0x05, (char)0x3E, (char)0x83, (char)0xF0, (char)0xF9, (char)0xD5,
     (char)0x3F, (char)0xF5, (char)0x9D, (char)0x33, (char)0xDC, (char)0x30, (char)0x3F, (char)0x5D, (char)0x4B, (char)0xBB, (char)0x5F, (char)0x3F,
     (char)0xA0, (char)0x60, (char)0x16, (char)0xD4, (char)0xED, (char)0x64, (char)0x0D, (char)0x34, (char)0x4D, (char)0x9A, (char)0x6F, (char)0x3F,
     (char)0x04, (char)0x65, (char)0x00
 };
-static char g_CHAR_ARRAY_005d8099[51] = {
+static char g_CheatStr_ToggleRenderMode[51] = {
     (char)0x64, (char)0xBC, (char)0x5A, (char)0xEB, (char)0x7C, (char)0xFE, (char)0x5E, (char)0x92, (char)0x1C, (char)0xCE, (char)0x2C, (char)0xD9,
     (char)0x5F, (char)0x77, (char)0xF7, (char)0x44, (char)0xE3, (char)0xDC, (char)0xC7, (char)0x04, (char)0xB5, (char)0xEE, (char)0x1B, (char)0x03,
     (char)0xAB, (char)0xD5, (char)0xE2, (char)0xB4, (char)0x84, (char)0x64, (char)0x8B, (char)0x2D, (char)0x17, (char)0x34, (char)0x81, (char)0xB5,
     (char)0xFF, (char)0xDE, (char)0x3E, (char)0xF2, (char)0xFC, (char)0x2E, (char)0x8C, (char)0x39, (char)0x3F, (char)0x57, (char)0x57, (char)0xA4,
     (char)0x43, (char)0x3C, (char)0xA7
 };
-static char g_CHAR_ARRAY_005d8138[51] = {
+static char g_CheatStr_ClearFramebuffer[51] = {
     (char)0x5F, (char)0xFF, (char)0x61, (char)0x1A, (char)0xAB, (char)0x47, (char)0x35, (char)0x93, (char)0xC3, (char)0x57, (char)0x07, (char)0x68,
     (char)0x08, (char)0x9E, (char)0xAC, (char)0x25, (char)0x8C, (char)0x35, (char)0x1C, (char)0x15, (char)0x42, (char)0xF7, (char)0x30, (char)0x42,
     (char)0x4D, (char)0xFF, (char)0x09, (char)0x27, (char)0xBD, (char)0xD7, (char)0xA6, (char)0xD6, (char)0x7A, (char)0x44, (char)0x66, (char)0xD4,
@@ -3336,21 +3336,21 @@ static char g_CHAR_ARRAY_005d8138[51] = {
 };
 
 // char[52] constants
-static char g_CHAR_ARRAY_005d7bcc[52] = {
+static char g_CheatStr_MemoryDebug[52] = {
     (char)0xC3, (char)0xC6, (char)0xFD, (char)0xC6, (char)0x27, (char)0x33, (char)0x51, (char)0xA7, (char)0x07, (char)0x9B, (char)0x6B, (char)0xC4,
     (char)0x14, (char)0x8A, (char)0x48, (char)0xB1, (char)0x48, (char)0xC9, (char)0xE0, (char)0x69, (char)0xCE, (char)0x63, (char)0x54, (char)0x47,
     (char)0x86, (char)0x20, (char)0x62, (char)0x90, (char)0x95, (char)0x7E, (char)0x5A, (char)0x69, (char)0x33, (char)0x09, (char)0xF1, (char)0x01,
     (char)0xA9, (char)0x82, (char)0xBA, (char)0x00, (char)0x6A, (char)0x6F, (char)0x5E, (char)0xA3, (char)0x62, (char)0x6F, (char)0xB0, (char)0x19,
     (char)0xD1, (char)0xC6, (char)0xAF, (char)0x00
 };
-static char g_CHAR_ARRAY_005d7c21[52] = {
+static char g_CheatStr_ManualAim[52] = {
     (char)0x0C, (char)0xB7, (char)0x32, (char)0xE3, (char)0x14, (char)0x46, (char)0x76, (char)0x1A, (char)0xE4, (char)0x06, (char)0x74, (char)0xC1,
     (char)0x47, (char)0x3F, (char)0x8F, (char)0xDC, (char)0x4B, (char)0x04, (char)0x6F, (char)0x0C, (char)0x9D, (char)0xB6, (char)0x33, (char)0x84,
     (char)0x23, (char)0x02, (char)0x1B, (char)0x57, (char)0xEB, (char)0x6B, (char)0x5D, (char)0x44, (char)0xF0, (char)0x04, (char)0x3E, (char)0xE4,
     (char)0xDA, (char)0xB7, (char)0xDD, (char)0x7D, (char)0x49, (char)0x72, (char)0xC1, (char)0x26, (char)0x31, (char)0x1A, (char)0x77, (char)0x34,
     (char)0x52, (char)0x0B, (char)0xA0, (char)0x00
 };
-static char g_CHAR_ARRAY_005d8323[52] = {
+static char g_CheatStr_GeometryDebug[52] = {
     (char)0x56, (char)0x62, (char)0x68, (char)0x41, (char)0xFA, (char)0xF0, (char)0xEC, (char)0xD8, (char)0x22, (char)0xE8, (char)0xFE, (char)0x23,
     (char)0x99, (char)0x29, (char)0x25, (char)0x5E, (char)0x4D, (char)0xBA, (char)0x55, (char)0x2E, (char)0xB3, (char)0x60, (char)0x09, (char)0xDB,
     (char)0xEF, (char)0x73, (char)0x0A, (char)0x22, (char)0x5E, (char)0xDD, (char)0x77, (char)0x46, (char)0x76, (char)0x1A, (char)0xE4, (char)0x06,
@@ -3359,21 +3359,21 @@ static char g_CHAR_ARRAY_005d8323[52] = {
 };
 
 // char[53] constants
-static char g_CHAR_ARRAY_005d7de9[53] = {
+static char g_CheatStr_FreezeEnemies[53] = {
     (char)0xF4, (char)0x98, (char)0xCA, (char)0x1B, (char)0x6C, (char)0xCE, (char)0xEE, (char)0x62, (char)0x0C, (char)0x3E, (char)0x5C, (char)0x89,
     (char)0x6F, (char)0x47, (char)0x67, (char)0x14, (char)0xF3, (char)0x0C, (char)0x77, (char)0xD4, (char)0x45, (char)0x3E, (char)0x8B, (char)0xD6,
     (char)0x41, (char)0x13, (char)0x7B, (char)0x0C, (char)0x97, (char)0xB6, (char)0x3B, (char)0xC9, (char)0x3B, (char)0x0A, (char)0x1A, (char)0x46,
     (char)0xE0, (char)0x32, (char)0x50, (char)0x55, (char)0xFB, (char)0x03, (char)0x33, (char)0xF0, (char)0xCF, (char)0xB0, (char)0xCB, (char)0x78,
     (char)0x51, (char)0x7A, (char)0xB8, (char)0x49, (char)0x5E
 };
-static char g_CHAR_ARRAY_005d7f41[53] = {
+static char g_CheatStr_KillNearby[53] = {
     (char)0xAC, (char)0xAA, (char)0x92, (char)0xC3, (char)0xF4, (char)0x66, (char)0x96, (char)0x3A, (char)0x04, (char)0x26, (char)0x94, (char)0xE1,
     (char)0xE7, (char)0xDF, (char)0x2F, (char)0xFC, (char)0xEB, (char)0x24, (char)0x8F, (char)0x2C, (char)0x3D, (char)0x56, (char)0x53, (char)0xAB,
     (char)0x4F, (char)0x28, (char)0xB6, (char)0x6A, (char)0x1D, (char)0xC6, (char)0xA0, (char)0x7C, (char)0x1B, (char)0x29, (char)0x4F, (char)0x8F,
     (char)0x73, (char)0x53, (char)0x6C, (char)0x1C, (char)0xF2, (char)0x00, (char)0x69, (char)0xD0, (char)0x51, (char)0x28, (char)0x91, (char)0xD6,
     (char)0x4B, (char)0x6B, (char)0x00, (char)0x71, (char)0x00
 };
-static char g_CHAR_ARRAY_005d8357[53] = {
+static char g_CheatStr_GasMask[53] = {
     (char)0xDA, (char)0x79, (char)0xE4, (char)0xCD, (char)0x56, (char)0x8C, (char)0x28, (char)0x0C, (char)0x06, (char)0x5C, (char)0xE2, (char)0x3F,
     (char)0x45, (char)0x45, (char)0xE1, (char)0x0A, (char)0x29, (char)0xEE, (char)0xD9, (char)0xA2, (char)0xDF, (char)0x7C, (char)0x4D, (char)0x77,
     (char)0xC1, (char)0x34, (char)0x2E, (char)0x16, (char)0x75, (char)0x71, (char)0x33, (char)0x72, (char)0xD2, (char)0x6E, (char)0x68, (char)0x8A,
@@ -3382,35 +3382,35 @@ static char g_CHAR_ARRAY_005d8357[53] = {
 };
 
 // char[54] constants
-static char g_CHAR_ARRAY_005d7a93[54] = {
+static char g_CheatStr_DebugMode[54] = {
     (char)0x86, (char)0xE5, (char)0xB8, (char)0xD1, (char)0x4A, (char)0xE0, (char)0x9C, (char)0x48, (char)0x72, (char)0xF8, (char)0x8E, (char)0xB3,
     (char)0xC9, (char)0x19, (char)0xF5, (char)0xCE, (char)0xFD, (char)0x8A, (char)0x65, (char)0x9E, (char)0xE3, (char)0x50, (char)0xD9, (char)0xAE,
     (char)0x1E, (char)0x5D, (char)0xC1, (char)0x94, (char)0xF7, (char)0xCD, (char)0x07, (char)0x36, (char)0xA6, (char)0x0A, (char)0xB4, (char)0x96,
     (char)0x84, (char)0xD1, (char)0x77, (char)0xAF, (char)0xDF, (char)0xCC, (char)0x7B, (char)0x94, (char)0xBF, (char)0x7C, (char)0x4D, (char)0x26,
     (char)0x24, (char)0x85, (char)0xAA, (char)0x00, (char)0x0A, (char)0xFD
 };
-static char g_CHAR_ARRAY_005d7e95[54] = {
+static char g_CheatStr_AllWeapons[54] = {
     (char)0xD0, (char)0x21, (char)0xEE, (char)0xAF, (char)0x30, (char)0x12, (char)0x72, (char)0x0E, (char)0x88, (char)0xAA, (char)0x38, (char)0x9D,
     (char)0x23, (char)0x0B, (char)0x0B, (char)0x48, (char)0xF7, (char)0x38, (char)0x53, (char)0x40, (char)0xF9, (char)0x02, (char)0x37, (char)0xEA,
     (char)0xC3, (char)0xAD, (char)0xDA, (char)0x75, (char)0x59, (char)0x68, (char)0xD7, (char)0x75, (char)0x3F, (char)0x1E, (char)0x7E, (char)0x32,
     (char)0x3C, (char)0x6E, (char)0xCC, (char)0x79, (char)0x7F, (char)0x97, (char)0x97, (char)0xE4, (char)0x83, (char)0x7C, (char)0xE7, (char)0xA4,
     (char)0x55, (char)0x0E, (char)0x5C, (char)0xDD, (char)0x22, (char)0x00
 };
-static char g_CHAR_ARRAY_005d7eff[54] = {
+static char g_CheatStr_MoreAmmo[54] = {
     (char)0x22, (char)0xF9, (char)0x1C, (char)0x25, (char)0xCE, (char)0x74, (char)0x60, (char)0xB4, (char)0x0E, (char)0xB4, (char)0xAA, (char)0xC7,
     (char)0xCD, (char)0x2D, (char)0xD9, (char)0xA2, (char)0x31, (char)0xF6, (char)0x81, (char)0x4A, (char)0x67, (char)0xE4, (char)0x85, (char)0xB5,
     (char)0xCD, (char)0x14, (char)0xF9, (char)0xC6, (char)0xB8, (char)0x84, (char)0x73, (char)0x91, (char)0xE7, (char)0x47, (char)0xDB, (char)0xAB,
     (char)0x04, (char)0x54, (char)0xCA, (char)0x88, (char)0xF1, (char)0x88, (char)0x09, (char)0x20, (char)0xA9, (char)0x0E, (char)0xA3, (char)0xF3,
     (char)0xE8, (char)0xB9, (char)0x00, (char)0x52, (char)0x61, (char)0x69
 };
-static char g_CHAR_ARRAY_005d7f76[54] = {
+static char g_CheatStr_Dismemberment[54] = {
     (char)0x55, (char)0x16, (char)0x6B, (char)0xFC, (char)0x05, (char)0xD5, (char)0x1F, (char)0x8D, (char)0x45, (char)0xA5, (char)0x5D, (char)0xCE,
     (char)0xF6, (char)0x6C, (char)0xD6, (char)0x6B, (char)0x4A, (char)0x47, (char)0x96, (char)0x33, (char)0x6C, (char)0x85, (char)0x9A, (char)0x39,
     (char)0x48, (char)0x7E, (char)0x38, (char)0x07, (char)0xEC, (char)0x1C, (char)0xBC, (char)0xD6, (char)0xA2, (char)0x01, (char)0x7B, (char)0x61,
     (char)0x49, (char)0xA9, (char)0x61, (char)0x7A, (char)0xB2, (char)0x18, (char)0xB2, (char)0xB7, (char)0xD6, (char)0xDB, (char)0x3A, (char)0xC7,
     (char)0xA8, (char)0x31, (char)0x99, (char)0xEE, (char)0x37, (char)0x00
 };
-static char g_CHAR_ARRAY_005d81f8[54] = {
+static char g_CheatStr_RestoreBattery[54] = {
     (char)0x1F, (char)0x1B, (char)0x21, (char)0xDA, (char)0x6B, (char)0x87, (char)0x75, (char)0xD3, (char)0x03, (char)0x97, (char)0x47, (char)0xA8,
     (char)0x48, (char)0xDE, (char)0xEC, (char)0x65, (char)0xCC, (char)0x75, (char)0x5C, (char)0x55, (char)0x82, (char)0x37, (char)0x70, (char)0x92,
     (char)0x84, (char)0x3D, (char)0x4F, (char)0x6D, (char)0x2F, (char)0x0D, (char)0xE6, (char)0x58, (char)0xA4, (char)0x93, (char)0xB1, (char)0x07,
@@ -3419,14 +3419,14 @@ static char g_CHAR_ARRAY_005d81f8[54] = {
 };
 
 // char[55] constants
-static char g_CHAR_ARRAY_005d7d3b[55] = {
+static char g_CheatStr_CollisionDebug[55] = {
     (char)0xCE, (char)0x67, (char)0xF0, (char)0x29, (char)0xC2, (char)0x48, (char)0xD4, (char)0xF0, (char)0x7A, (char)0xD0, (char)0x76, (char)0x5B,
     (char)0x51, (char)0x81, (char)0x2D, (char)0x66, (char)0x85, (char)0x92, (char)0x2D, (char)0x46, (char)0x6B, (char)0x38, (char)0x11, (char)0xE0,
     (char)0x17, (char)0xB5, (char)0x9A, (char)0xB6, (char)0x17, (char)0x7C, (char)0x6D, (char)0x55, (char)0xF0, (char)0x6C, (char)0x6B, (char)0xB9,
     (char)0x1F, (char)0xBF, (char)0xA3, (char)0xC3, (char)0xDC, (char)0x2C, (char)0xC2, (char)0xB0, (char)0x39, (char)0xE0, (char)0x81, (char)0x58,
     (char)0x61, (char)0xE6, (char)0x9B, (char)0xDB, (char)0xB0, (char)0x61, (char)0x00
 };
-static char g_CHAR_ARRAY_005d82bb[55] = {
+static char g_CheatStr_WeatherSnow[55] = {
     (char)0x4E, (char)0x33, (char)0x70, (char)0xA9, (char)0x42, (char)0xC8, (char)0x54, (char)0x70, (char)0xFA, (char)0x50, (char)0xF6, (char)0xDB,
     (char)0xD1, (char)0x01, (char)0xAD, (char)0xE6, (char)0x05, (char)0x12, (char)0xAD, (char)0xC6, (char)0xEB, (char)0xB8, (char)0x91, (char)0x61,
     (char)0x91, (char)0x3E, (char)0x1E, (char)0x3A, (char)0x85, (char)0xF1, (char)0xA2, (char)0xC6, (char)0x35, (char)0xFF, (char)0xED, (char)0x25,
@@ -3435,7 +3435,7 @@ static char g_CHAR_ARRAY_005d82bb[55] = {
 };
 
 // char[57] constants
-static char g_CHAR_ARRAY_005d7d72[57] = {
+static char g_CheatStr_SkeletonKey[57] = {
     (char)0xC1, (char)0x7B, (char)0xFF, (char)0x40, (char)0x39, (char)0x69, (char)0x33, (char)0x09, (char)0xF1, (char)0x01, (char)0xA9, (char)0x82,
     (char)0xBA, (char)0x00, (char)0x6A, (char)0x6F, (char)0x5E, (char)0xA3, (char)0x62, (char)0x6F, (char)0xB0, (char)0x19, (char)0xB6, (char)0xA9,
     (char)0xD8, (char)0xCD, (char)0x25, (char)0xC3, (char)0xBB, (char)0x3B, (char)0xEB, (char)0x99, (char)0x4E, (char)0x79, (char)0xA1, (char)0x83,
@@ -3530,29 +3530,29 @@ static double g_DOUBLE_005d10b4 = 5;
 static double g_DOUBLE_005d10c4 = 0.5;
 static double g_DOUBLE_005d119c = 20;
 static double g_DOUBLE_005d11d4 = 2;
-static double g_DOUBLE_005d1563 = 256;
-static double g_DOUBLE_005d1573 = 32768;
+static double g_CameraScaleFactor = 256;
+static double g_CameraRotationFixedPoint = 32768;
 static double g_DOUBLE_005d157b = 65536;
-static double g_DOUBLE_005d1583 = 256;
+static double g_WorldToCameraScale = 256;
 static double g_DOUBLE_005d158b = 256;
 static double g_DOUBLE_005d159b = 32768;
-static double g_DOUBLE_005d15a3 = 18;
-static double g_DOUBLE_005d15ab = 65536;
-static double g_DOUBLE_005d15b3 = 65536;
-static double g_DOUBLE_005d15bb = 65536;
-static double g_DOUBLE_005d15c3 = 65536;
-static double g_DOUBLE_005d15cb = 0.00390625;
-static double g_DOUBLE_005d15d3 = 3.0517578125e-05;
+static double g_ProjectionRenderDivisor = 18;
+static double g_ProjectionRenderMultiplier = 65536;
+static double g_ProjectionRenderScaleDivisor = 65536;
+static double g_LightIntensityScale = 65536;
+static double g_LightDirectionalScale = 65536;
+static double g_CameraOriginScale = 0.00390625;
+static double g_AngleToRadianScale = 3.0517578125e-05;
 static double g_DOUBLE_005d15db = 3.1415926535000001;
-static double g_DOUBLE_005d15e3 = 18;
-static double g_DOUBLE_005d15eb = 65536;
-static double g_DOUBLE_005d15f3 = 65535;
+static double g_ProjectionDivisorFactor = 18;
+static double g_ProjectionMultiplierFactor = 65536;
+static double g_RenderAlphaFixedScale = 65535;
 static double g_DOUBLE_005d1805 = 32;
 static double g_DOUBLE_005d180d = 0.84999999999999998;
 static double g_DOUBLE_005d18a1 = 2;
-static double g_DOUBLE_005d190b = 2;
-static double g_DOUBLE_005d191b = 0.5;
-static double g_DOUBLE_005d1923 = 256;
+static double g_SkyDomeVScale1 = 2;
+static double g_SkyDomeVScale2 = 0.5;
+static double g_SkyDomeWorldRadius = 256;
 static double g_DOUBLE_005d192b = 0.5;
 static double g_DOUBLE_005d1933 = 1.4139999999999999;
 static double g_DOUBLE_005d193b = 0.58904862253125001;
@@ -3561,24 +3561,24 @@ static double g_DOUBLE_005d1bb3 = -256;
 static double g_DOUBLE_005d1bbb = 256;
 static double g_DOUBLE_005d1bc3 = 0.00390625;
 static double g_DOUBLE_005d1bd3 = 256;
-static double g_DOUBLE_005d1d33 = 2;
+static double g_VoxelStepMultiplier = 2;
 static double g_DOUBLE_005d1d3b = 0.5;
-static double g_DOUBLE_005d1d43 = 2;
+static double g_VoxelStepMultiplier2 = 2;
 static double g_DOUBLE_005d1d4b = 0.5;
-static double g_DOUBLE_005d1de3 = 2;
-static double g_DOUBLE_005d1deb = 4;
+static double g_QuadraticDouble = 2;
+static double g_QuadraticQuarter = 4;
 static double g_DOUBLE_005d1df3 = -0.34000000000000002;
 static double g_DOUBLE_005d1dfb = 0.01;
 static double g_DOUBLE_005d1e23 = -65536;
 static double g_DOUBLE_005d1e2b = 65536;
 static double g_DOUBLE_005d1e33 = 256;
 static double g_DOUBLE_005d1e63 = 5;
-static double g_DOUBLE_005d2337 = 100;
+static double g_PercentageMultiplier = 100;
 static double g_DOUBLE_005d233f = 0.5;
-static double g_DOUBLE_005d2347 = 8.4771050347222196e-07;
-static double g_DOUBLE_005d234f = 5;
+static double g_TimeScalingFactor = 8.4771050347222196e-07;
+static double g_TimeDisplayThreshold = 5;
 static double g_DOUBLE_005d24df = 256;
-static double g_DOUBLE_005d254f = 0.0009765625;
+static double g_BytesToKilobytesScale = 0.0009765625;
 static double g_DOUBLE_005d28f7 = 294912;
 static double g_DOUBLE_005d2b4e = 0.0055555555555555497;
 static double g_DOUBLE_005d2b5e = 1.5;
@@ -3727,12 +3727,12 @@ static double g_DOUBLE_005d718b = 1.5;
 static double g_DOUBLE_005d71bb = 0.5;
 static double g_DOUBLE_005d7203 = 0.69999999999999996;
 static double g_DOUBLE_005d720b = 0.29999999999999999;
-static double g_DOUBLE_005d72f3 = 1.52587890625e-05;
+static double g_DeltaTimeToSeconds = 1.52587890625e-05;
 static double g_DOUBLE_005d72fb = 0.59999999999999998;
 static double g_DOUBLE_005d7303 = 0.34999999999999998;
-static double g_DOUBLE_005d7313 = 65535;
-static double g_DOUBLE_005d731b = 0.59999999999999998;
-static double g_DOUBLE_005d7323 = 0.34999999999999998;
+static double g_AlphaConversionFactor = 65535;
+static double g_StatusThresholdHigh = 0.59999999999999998;
+static double g_StatusThresholdLow = 0.34999999999999998;
 static double g_DOUBLE_005d732b = 0.10000000000000001;
 static double g_DOUBLE_005d7643 = 0.055555555555555601;
 static double g_DOUBLE_005d764b = 1.52587890625e-05;
@@ -3883,9 +3883,9 @@ static double g_DOUBLE_005dab51 = 2.5;
 static double g_DOUBLE_005dab79 = 2;
 static double g_DOUBLE_005db3ea = 65536;
 static double g_DOUBLE_005db3f2 = 0.5;
-static double g_DOUBLE_005db42a = 2;
+static double g_InventoryRandTwoFactor = 2;
 static double g_DOUBLE_005db702 = 0.025000000000000001;
-static double g_DOUBLE_005db7a2 = 2;
+static double g_InventoryDoubleScale = 2;
 static double g_DOUBLE_005db9e2 = 98;
 static double g_DOUBLE_005db9ea = 100;
 static double g_DOUBLE_005dbb0a = 100;
@@ -3894,10 +3894,10 @@ static double g_DOUBLE_005dbb1a = 65535;
 static double g_DOUBLE_005dbb22 = 0.5;
 static double g_DOUBLE_005dbbbe = 8192;
 static double g_DOUBLE_005dbbc6 = 16384;
-static double g_DOUBLE_005dbbf6 = 65535;
-static double g_DOUBLE_005dbbfe = 65535;
-static double g_DOUBLE_005dbca6 = 1.52587890625e-05;
-static double g_DOUBLE_005dbcb6 = 65536;
+static double g_NormalTo16BitScale1 = 65535;
+static double g_NormalTo16BitScale2 = 65535;
+static double g_SplineNormalizer = 1.52587890625e-05;
+static double g_SplineCoeff_Scale = 65536;
 static double g_DOUBLE_005dbd66 = 0.5;
 static double g_DOUBLE_005dbd6e = 0.10000000000000001;
 static double g_DOUBLE_005dbe1e = 0.39269908168750001;
@@ -3934,10 +3934,10 @@ static double g_DOUBLE_005dc585 = 0.0039215686274509803;
 static double g_DOUBLE_005dc735 = 0.20000000000000001;
 static double g_DOUBLE_005dc73d = -0.01;
 static double g_DOUBLE_005dc786 = 65536;
-static double g_DOUBLE_005dc78e = 1.52587890625e-05;
-static double g_DOUBLE_005dc796 = 65536;
-static double g_DOUBLE_005dc836 = 65535;
-static double g_DOUBLE_005dcb2d = 1.52587890625e-05;
+static double g_FixedToFloat = 1.52587890625e-05;
+static double g_Fixed16Scale = 65536;
+static double g_NormalizationScale = 65535;
+static double g_MouseSensitivityScale = 1.52587890625e-05;
 static double g_DOUBLE_005dcb3d = 1.52587890625e-05;
 static double g_DOUBLE_005dcf0d = 1.5259021896696401e-05;
 static double g_DOUBLE_005dcf15 = 1.52587890625e-05;
@@ -4015,25 +4015,25 @@ static float g_FLOAT_005d156b = 0.3183099f;
 static float g_FLOAT_005d1593 = 0.3183099f;
 static float g_FLOAT_005d1801 = -5000.0f;
 static float g_FLOAT_005d1815 = 20.0f;
-static float g_FLOAT_005d18ff = 0.0625f;
+static float g_SkyDomeUCoordToAngleScale = 0.0625f;
 static float g_FLOAT_005d1903 = 3.141593f;
-static float g_FLOAT_005d1913 = 0.25f;
+static float g_SkyDomeVCoordToAngleScale = 0.25f;
 static float g_FLOAT_005d1b47 = 0.125f;
 static float g_FLOAT_005d1b53 = 2.684355e+08f;
 static float g_FLOAT_005d1b57 = 2.684355e+08f;
-static float g_FLOAT_005d1b5b = 2.0f;
+static float g_GroundCheckOffsetAbove = 2.0f;
 static float g_FLOAT_005d1b5f = -10.0f;
 static float g_FLOAT_005d1b63 = 2.0f;
 static float g_FLOAT_005d1b67 = -10.0f;
 static float g_FLOAT_005d1b6b = 0.125f;
-static float g_FLOAT_005d1b6f = 0.125f;
+static float g_VoxelSubGridScale = 0.125f;
 static float g_FLOAT_005d1bcb = 256.0f;
-static float g_FLOAT_005d1d23 = 0.125f;
-static float g_FLOAT_005d1d27 = 0.125f;
-static float g_FLOAT_005d1d2b = 2.684355e+08f;
-static float g_FLOAT_005d1dd3 = -2.0f;
-static float g_FLOAT_005d1dd7 = 4.0f;
-static float g_FLOAT_005d1ddb = 2.0f;
+static float g_VoxelSizeReciprocal = 0.125f;
+static float g_VoxelSizeReciprocal2 = 0.125f;
+static float g_RaycastStepScale = 2.684355e+08f;
+static float g_CylinderScale2 = -2.0f;
+static float g_CylinderScale1 = 4.0f;
+static float g_CylinderInvScale = 2.0f;
 static float g_FLOAT_005d1e6b = 0.5f;
 static float g_FLOAT_005d1eaf = 1.525902e-05f;
 static float g_FLOAT_005d24e7 = 0.2f;
@@ -4057,7 +4057,7 @@ static float g_FLOAT_005d437f = 0.01745329f;
 static float g_FLOAT_005d4ca3 = 3.141593f;
 static float g_FLOAT_005d531d = 3.141593f;
 static float g_FLOAT_005d5342 = 30.0f;
-static float g_FLOAT_005d5386 = 0.1f;
+static float g_BulletHoleNormalOffset = 0.1f;
 static float g_FLOAT_005d5396 = 2.0f;
 static float g_FLOAT_005d53ba = 2.0f;
 static float g_FLOAT_005d5452 = 0.3333333f;
@@ -4124,7 +4124,7 @@ static float g_FLOAT_005d717f = 0.5f;
 static float g_FLOAT_005d71b3 = 50.0f;
 static float g_FLOAT_005d71b7 = -0.3f;
 static float g_FLOAT_005d71fb = 0.5f;
-static float g_FLOAT_005d72ef = 65536.0f;
+static float g_MovieRecordingFrameBase = 65536.0f;
 static float g_FLOAT_005d765b = 0.3183099f;
 static float g_FLOAT_005d78c3 = 0.01f;
 static float g_FLOAT_005d78c7 = -1.0f;
@@ -4134,7 +4134,7 @@ static float g_FLOAT_005d78e3 = -0.25f;
 static float g_FLOAT_005d78e7 = 0.1f;
 static float g_FLOAT_005d83eb = 0.5f;
 static float g_FLOAT_005d8403 = 65535.0f;
-static float g_FLOAT_005d884b = 65536.0f;
+static float g_DeltaTimeScale = 65536.0f;
 static float g_FLOAT_005d8ab3 = 32.0f;
 static float g_FLOAT_005d8ac3 = -2500.0f;
 static float g_FLOAT_005d8ac7 = 10.0f;
@@ -4182,27 +4182,27 @@ static float g_FLOAT_005da8be = 0.3183099f;
 static float g_FLOAT_005da8e6 = 3.141593f;
 static float g_FLOAT_005da8ea = -3.141593f;
 static float g_FLOAT_005daae9 = 4.0f;
-static float g_FLOAT_005db41e = 3.051851e-05f;
+static float g_InventoryRandNormalizationFactor = 3.051851e-05f;
 static float g_FLOAT_005db422 = 3.141593f;
 static float g_FLOAT_005db79a = 0.5f;
 static float g_FLOAT_005db7aa = -0.5f;
-static float g_FLOAT_005db7ae = 1.570796f;
+static float g_InventoryPiOver2 = 1.570796f;
 static float g_FLOAT_005db7b2 = -3.141593f;
 static float g_FLOAT_005db7b6 = -1.570796f;
 static float g_FLOAT_005db7ba = -0.7853982f;
 static float g_FLOAT_005dba86 = 65535.0f;
 static float g_FLOAT_005dbb06 = 65535.0f;
 static float g_FLOAT_005dbbba = 3.141593f;
-static float g_FLOAT_005dbcae = -0.5f;
-static float g_FLOAT_005dbcb2 = 0.5f;
-static float g_FLOAT_005dbcbe = 1.5f;
-static float g_FLOAT_005dbcc2 = -2.5f;
-static float g_FLOAT_005dbcc6 = 2.0f;
-static float g_FLOAT_005dbcca = -1.5f;
+static float g_SplineCoeff_T3_W0 = -0.5f;
+static float g_SplineCoeff_T1_W0 = 0.5f;
+static float g_SplineCoeff_T3_W2 = 1.5f;
+static float g_SplineCoeff_T2_W2 = -2.5f;
+static float g_SplineCoeff_T2_W3 = 2.0f;
+static float g_SplineCoeff_T3_W3 = -1.5f;
 static float g_FLOAT_005dbe3e = 2.0f;
 static float g_FLOAT_005dc0a6 = -4.0f;
 static float g_FLOAT_005dc0aa = 0.5f;
-static float g_FLOAT_005dc481 = 9.536743e-07f;
+static float g_AvailableMemMultiplier = 9.536743e-07f;
 static float g_FLOAT_005dc50d = -4.0f;
 static float g_FLOAT_005dc525 = 256.0f;
 static float g_FLOAT_005dc5e9 = 255.0f;
@@ -4259,8 +4259,8 @@ static float g_FLOAT_005df251 = 0.3183099f;
 static float g_FLOAT_005df261 = 3.141593f;
 static float g_FLOAT_005df265 = -3.141593f;
 static float g_FLOAT_005df2ed = -74.0f;
-static float g_FLOAT_005dfc94 = -1.0f;
-static float g_FLOAT_005dfcfc = -1.0f;
+static float g_MotionControllerAutoDetermineFrame = -1.0f;
+static float g_MotionControllerTargetFrameEnd2 = -1.0f;
 static float g_FLOAT_005dfd08 = -1.0f;
 
 // undefined1 constants

@@ -1721,7 +1721,7 @@ static TerminatedCString s_C_FILE_INFO_00599294 = "C_FILE_INFO=";
 static TerminatedCString s_bgnthd_005992a4 = "__bgnthd";
 
 // char[36] constants
-static char g_CHAR_ARRAY_00598b2c[36] = {
+static char g_EmptyStringBuffer[36] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x54, (char)0x4D, (char)0x50, (char)0x00, (char)0x54, (char)0x45, (char)0x4D, (char)0x50,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x54, (char)0x4D, (char)0x50, (char)0x44, (char)0x49, (char)0x52, (char)0x00, (char)0x00,
     (char)0x54, (char)0x45, (char)0x4D, (char)0x50, (char)0x44, (char)0x49, (char)0x52, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00
@@ -2122,9 +2122,9 @@ static double DOUBLE_005982d6 = 5.3700914947311079e-315;
 static double DOUBLE_005982de = 0.70699999999999996;
 static double DOUBLE_005982e6 = -0.70699999999999996;
 static double DOUBLE_005982ee = 3.1415926535900001;
-static double g_DOUBLE_0059832e = 0.5;
+static double g_GramSchmidtBlendFactor = 0.5;
 static double DOUBLE_00598336 = 2;
-static double g_DOUBLE_0059833e = 2;
+static double g_YFlipMatrixScaleFactor = 2;
 static double DOUBLE_00598346 = 2;
 static double DOUBLE_0059834e = 2;
 static double DOUBLE_00598356 = 0.5;
@@ -2305,7 +2305,7 @@ static float FLOAT_0059a89c = 3.0f;
 static float FLOAT_0059a8a0 = 50.0f;
 static float FLOAT_0059a8a4 = 100.0f;
 static float FLOAT_0059a8a8 = 2.0f;
-static float g_FLOAT_0059aa80 = 256.0f;
+static float g_BoundingBoxWorldToIntegerScale = 256.0f;
 static float g_FLOAT_0059aa88 = 0.00390625f;
 static float FLOAT_0059ad0c = 2.5f;
 static float FLOAT_0059ad10 = 50.0f;
@@ -2339,13 +2339,13 @@ static float g_FLOAT_0059bc70 = 256.0f;
 static float FLOAT_0059bddc = 256.0f;
 static float FLOAT_0059bde0 = 65536.0f;
 static float FLOAT_0059bde4 = 0.00390625f;
-static float g_FLOAT_0059be10 = 256.0f;
-static float g_FLOAT_0059bff0 = 256.0f;
+static float g_CubeWorldToScreenScale = 256.0f;
+static float g_CoronaCoordinateScaleFactor = 256.0f;
 static float FLOAT_0059bff8 = 0.00390625f;
 static float g_FLOAT_0059bffc = 1.525879e-05f;
 static float g_FLOAT_0059c030 = 256.0f;
 static float g_FLOAT_0059c038 = 0.00390625f;
-static float g_FLOAT_0059c064 = 0.00390625f;
+static float g_Fixed16ToFloat = 0.00390625f;
 static float FLOAT_0059c0d8 = 3.0f;
 static float FLOAT_0059c0dc = 50.0f;
 static float FLOAT_0059c0e0 = 100.0f;
@@ -2363,10 +2363,10 @@ static float FLOAT_0059c40c = 5.0f;
 static float FLOAT_0059c6f8 = 3.0f;
 static float FLOAT_0059c6fc = 50.0f;
 static float FLOAT_0059c700 = 100.0f;
-static float g_FLOAT_0059c8a0 = 256.0f;
-static float g_FLOAT_0059c8e0 = 256.0f;
+static float g_RaytraceWorldToScreenScale = 256.0f;
+static float g_VertexCoordinateScaleFactor = 256.0f;
 static float g_FLOAT_0059c91c = 3.5f;
-static float g_FLOAT_0059ca4c = 256.0f;
+static float g_WorldToScreenScale2 = 256.0f;
 static float g_FLOAT_0059ca5c = 10430.38f;
 static float g_FLOAT_0059cb2c = 8.0f;
 static float FLOAT_0059d1f8 = 256.0f;

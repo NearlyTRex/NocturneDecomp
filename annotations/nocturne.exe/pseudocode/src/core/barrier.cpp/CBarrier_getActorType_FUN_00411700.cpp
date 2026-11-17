@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_barrier_cpp_CBarrier_getActorType_FUN_00411700(CBarrier *this_ptr)
 
 {
-  return &g_CBarrierActorType_00764524;
+  return &g_CBarrierClassInfo;
 }

@@ -7,9 +7,9 @@
 ; CMouse *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   int g_INT_01c2a370
-;   int g_INT_01c2a37c
-;   int g_INT_01c2a380
+;   int g_GlobalDeltaTimeInt
+;   int g_MouseX
+;   int g_MouseY
 ;
 ; Called Functions:
 ;   engine_3d.c_setBlendMode_FUN_00406df0
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_ncursfx.cpp_CMouse_render_FUN_00510250
     PUSH EDI                            ; 00510251
     MOV EBX,dword ptr [ESP + 0xc]       ; 00510252
-    MOV EDX,dword ptr [0x01c2a380]      ; 00510256 | g_INT_01c2a380
-    MOV EAX,[0x01c2a37c]                ; 0051025c | g_INT_01c2a37c
+    MOV EDX,dword ptr [0x01c2a380]      ; 00510256 | g_MouseY
+    MOV EAX,[0x01c2a37c]                ; 0051025c | g_MouseX
     MOV ECX,dword ptr [EBX + 0x25c]     ; 00510261
     SUB EDX,0xc                         ; 00510267
     SUB EAX,0xd                         ; 0051026a
@@ -62,7 +62,7 @@ section .text
     CMP EDI,0x2                         ; 005102be
     JNZ 0x00510341                      ; 005102c1
         ;   XREF to: 00510341 (CONDITIONAL_JUMP)  ; LAB_00510341
-    MOV EAX,[0x01c2a370]                ; 005102c7 | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 005102c7 | g_GlobalDeltaTimeInt
         ;   Label: LAB_005102c7
     MOV EDX,dword ptr [EBX + 0x258]     ; 005102cc
     SHL EAX,0x5                         ; 005102d2
@@ -112,11 +112,11 @@ section .text
     CALL engine_3d.c_setBlendMode_FUN_00406df0 ; 00510343
         ;   XREF to: 00406df0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406df0(int blend_mode)
     ADD ESP,0x4                         ; 00510348
-    MOV EAX,[0x01c2a380]                ; 0051034b | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 0051034b | g_MouseY
     PUSH 0x8000                         ; 00510350
     SUB EAX,0xc                         ; 00510355
     PUSH EAX                            ; 00510358
-    MOV EAX,[0x01c2a37c]                ; 00510359 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 00510359 | g_MouseX
     SUB EAX,0xd                         ; 0051035e
     PUSH EAX                            ; 00510361
     MOV EAX,dword ptr [EBX + 0x258]     ; 00510362

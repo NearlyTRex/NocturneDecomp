@@ -10,10 +10,10 @@ float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(int channel_index)
 
 {
   if ((-1 < channel_index) && (channel_index < 0x20)) {
-    return g_FLOAT_ARRAY_02c7fc90[channel_index];
+    return g_SfxChannelVolumes[channel_index];
   }
   g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
   g_INT_01d1d404 = 0x111a;
   core_main_c_displayErrorAndQuit_FUN_005030e0("getSfxChannelVol - invalid channel index: %d");
-  return g_FLOAT_ARRAY_02c7fc90[channel_index];
+  return g_SfxChannelVolumes[channel_index];
 }

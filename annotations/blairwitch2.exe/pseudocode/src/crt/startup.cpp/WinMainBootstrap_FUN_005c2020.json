@@ -95,25 +95,25 @@
     },
     {
       "addr": "0061f244",
-      "name": "g_INT_0061f244",
+      "name": "g_WinMainCmdShow",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "0061f268",
-      "name": "g_INT_0061f268",
+      "name": "g_StackAllocSize",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "0061f26c",
-      "name": "g_PTR_0061f26c",
+      "name": "g_CrtStackBuffer",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f754",
-      "name": "g_ULONG_0061f754",
+      "name": "g_RuntimeBufferSize",
       "type": "ulong",
       "value": "0xf4"
     }
@@ -266,7 +266,7 @@
       "line": 30,
       "match": "&stack0x000000e0",
       "severity": "moderate",
-      "text": "*(ulong *)(&stack0x000000e0 + iVar5) = g_ULONG_0061f754;",
+      "text": "*(ulong *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
     {

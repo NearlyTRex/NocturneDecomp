@@ -22,7 +22,7 @@
 ;   TerminatedCString s_popSfxOptions_stack_empt_005f3e62
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_02c78cec
+;   int g_SfxLastSlot
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -31,10 +31,10 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 00572b40 | g_INT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 00572b40 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_popSfxOptions_FUN_00572b40
     DEC EDX                             ; 00572b46
-    MOV dword ptr [0x02c78cec],EDX      ; 00572b47 | g_INT_02c78cec
+    MOV dword ptr [0x02c78cec],EDX      ; 00572b47 | g_SfxLastSlot
     TEST EDX,EDX                        ; 00572b4d
     JL 0x00572b52                       ; 00572b4f
         ;   XREF to: 00572b52 (CONDITIONAL_JUMP)  ; LAB_00572b52

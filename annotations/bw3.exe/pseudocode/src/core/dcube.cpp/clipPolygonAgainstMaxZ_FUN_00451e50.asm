@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00451e38 = 00451f04
 ;   undefined1* PTR_caseD_3_00451e40 = 00451ee9
-;   uint g_UINT_015489d0
-;   uint g_UINT_01548a94
+;   uint g_CubeClipStage5Count
+;   uint g_CubeClippedTriangleCount
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004515b0
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00451e54
     SUB ESP,0x8                         ; 00451e56
     AND ESP,0xfffffff8                  ; 00451e59
-    MOV EBX,dword ptr [0x01548a94]      ; 00451e5c | g_UINT_01548a94
+    MOV EBX,dword ptr [0x01548a94]      ; 00451e5c | g_CubeClippedTriangleCount
     MOV EDX,dword ptr [EBP + 0x14]      ; 00451e62
     MOV dword ptr [ESP],EDX             ; 00451e65
-    MOV EDX,dword ptr [0x015489d0]      ; 00451e68 | g_UINT_015489d0
+    MOV EDX,dword ptr [0x015489d0]      ; 00451e68 | g_CubeClipStage5Count
     XOR EDI,EDI                         ; 00451e6e
     TEST EDX,EDX                        ; 00451e70
     JLE 0x00451ef7                      ; 00451e72
         ;   XREF to: 00451ef7 (CONDITIONAL_JUMP)  ; LAB_00451ef7
     MOV ESI,0x15489d4                   ; 00451e78
-    MOV EAX,[0x015489d0]                ; 00451e7d | g_UINT_015489d0
+    MOV EAX,[0x015489d0]                ; 00451e7d | g_CubeClipStage5Count
         ;   Label: LAB_00451e7d
     LEA ECX,[EDI + 0x1]                 ; 00451e82
     CMP ECX,EAX                         ; 00451e85
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00451ee5
     INC EBX                             ; 00451ee8
         ;   Label: LAB_00451ee8
-    MOV ECX,dword ptr [0x015489d0]      ; 00451ee9 | g_UINT_015489d0
+    MOV ECX,dword ptr [0x015489d0]      ; 00451ee9 | g_CubeClipStage5Count
         ;   Label: caseD_3
     INC EDI                             ; 00451eef
     ADD ESI,0xc                         ; 00451ef0
     CMP EDI,ECX                         ; 00451ef3
     JL 0x00451e7d                       ; 00451ef5
         ;   XREF to: 00451e7d (CONDITIONAL_JUMP)  ; LAB_00451e7d
-    MOV dword ptr [0x01548a94],EBX      ; 00451ef7 | g_UINT_01548a94
+    MOV dword ptr [0x01548a94],EBX      ; 00451ef7 | g_CubeClippedTriangleCount
         ;   Label: LAB_00451ef7
     MOV ESP,EBP                         ; 00451efd
     POP EBP                             ; 00451eff
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00451f26
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00451f27
     PUSH EAX                            ; 00451f2b
-    MOV dword ptr [0x01548a94],EBX      ; 00451f2c | g_UINT_01548a94
+    MOV dword ptr [0x01548a94],EBX      ; 00451f2c | g_CubeClippedTriangleCount
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00451f32
         ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01548a94]      ; 00451f37 | g_UINT_01548a94
+    MOV EBX,dword ptr [0x01548a94]      ; 00451f37 | g_CubeClippedTriangleCount
     ADD ESP,0x2c                        ; 00451f3d
     JMP 0x00451ee8                      ; 00451f40
         ;   XREF to: 00451ee8 (UNCONDITIONAL_JUMP)  ; LAB_00451ee8
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00451f82
     PUSH ECX                            ; 00451f86
     PUSH EDX                            ; 00451f87
-    MOV dword ptr [0x01548a94],EBX      ; 00451f88 | g_UINT_01548a94
+    MOV dword ptr [0x01548a94],EBX      ; 00451f88 | g_CubeClippedTriangleCount
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00451f8e
         ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01548a94]      ; 00451f93 | g_UINT_01548a94
+    MOV EBX,dword ptr [0x01548a94]      ; 00451f93 | g_CubeClippedTriangleCount
     ADD ESP,0x2c                        ; 00451f99
     JMP 0x00451ee8                      ; 00451f9c
         ;   XREF to: 00451ee8 (UNCONDITIONAL_JUMP)  ; LAB_00451ee8

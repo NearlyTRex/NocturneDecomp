@@ -10,12 +10,12 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   float* g_FLOAT_PTR_01d09b7c
 ;   int g_INT_01d0d2e8
 ;   int g_INT_01d0d2ec
 ;   int g_INT_01d0d2f0
-;   void* g_PTR_0264bca0
+;   void* g_APIDLL_lockFrameX
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_rasterizeTriangle_FUN_004f7280
@@ -38,13 +38,13 @@ section .text
         ;   XREF to: 004f69f0 (CONDITIONAL_JUMP)  ; LAB_004f69f0
     PUSH ESI                            ; 004f6992
     PUSH EBX                            ; 004f6993
-    CMP dword ptr [0x0264bca0],0x0      ; 004f6994 | g_PTR_0264bca0
+    CMP dword ptr [0x0264bca0],0x0      ; 004f6994 | g_APIDLL_lockFrameX
     JZ 0x004f69f9                       ; 004f699b
         ;   XREF to: 004f69f9 (CONDITIONAL_JUMP)  ; LAB_004f69f9
     CMP dword ptr [0x01c37788],0x0      ; 004f699d | g_INT_01c37788
     JZ 0x004f69f9                       ; 004f69a4
         ;   XREF to: 004f69f9 (CONDITIONAL_JUMP)  ; LAB_004f69f9
-    MOV EAX,[0x01c38b54]                ; 004f69a6 | g_BIT_INTEGER32_01c38b54
+    MOV EAX,[0x01c38b54]                ; 004f69a6 | g_RenderStateFlags
     MOV EBX,0x3                         ; 004f69ab
     PUSH EAX                            ; 004f69b0
     MOV EAX,EDX                         ; 004f69b1
@@ -58,7 +58,7 @@ section .text
     PUSH ECX                            ; 004f69c8
     ADD EAX,EDX                         ; 004f69c9
     PUSH EAX                            ; 004f69cb
-    CALL dword ptr [0x0264bca0]         ; 004f69cc | g_PTR_0264bca0
+    CALL dword ptr [0x0264bca0]         ; 004f69cc | g_APIDLL_lockFrameX
     MOV EDI,dword ptr [0x01d0d2e8]      ; 004f69d2 | g_INT_01d0d2e8
     ADD ESP,0x14                        ; 004f69d8
     LEA EAX,[EAX]                       ; 004f69db

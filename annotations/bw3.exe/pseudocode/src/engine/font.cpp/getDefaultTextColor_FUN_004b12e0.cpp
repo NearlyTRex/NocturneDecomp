@@ -12,5 +12,5 @@ int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004b12e0(void)
   if (g_INT_005fba20 == 0x10) {
     return (uint)g_USHORT_01d1ad62;
   }
-  return g_INT_01d1ad64;
+  return g_ShadowColor32;
 }

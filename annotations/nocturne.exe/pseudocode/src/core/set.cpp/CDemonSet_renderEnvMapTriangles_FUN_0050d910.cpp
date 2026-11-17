@@ -29,7 +29,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910(CDemonSet
   
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005be680);
+            (g_CDemonRenderer_PTR_005ae704,&g_EnvMapTexture);
   if (g_CGamePtr->render_mode == 2) {
     alpha = g_CurrentAlphaValue << 8;
   }
@@ -61,7 +61,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910(CDemonSet
       SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
       if (this_ptr->skip_normal_normalization != 0) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920
-                  (g_CVector3i_ARRAY_0200b130,(SMRGLPrimitiveTriangle *)&SStack_118);
+                  (g_TransformedVertexArray,(SMRGLPrimitiveTriangle *)&SStack_118);
       }
       local_28[4] = 0;
       if (0 < SStack_118.base.base.count) {
@@ -79,11 +79,11 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910(CDemonSet
           }
           else {
             local_50.x = (int)ROUND(g_FLOAT_01fff54c * 256.0f) -
-                         g_CVector3i_ARRAY_0200b130[iVar3].x;
+                         g_TransformedVertexArray[iVar3].x;
             local_50.y = (int)ROUND(_DAT_01fff550 * 256.0f) -
-                         g_CVector3i_ARRAY_0200b130[iVar3].y;
+                         g_TransformedVertexArray[iVar3].y;
             local_50.z = (int)ROUND(g_FLOAT_01fff554 * 256.0f) -
-                         g_CVector3i_ARRAY_0200b130[iVar3].z;
+                         g_TransformedVertexArray[iVar3].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_50,&local_38);
             local_2c = local_38.x;
             local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);

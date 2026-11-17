@@ -8,13 +8,13 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_0070ca5c
+;   int g_CurrentPolygonColor
 ;   int g_INT_01c35e60
-;   int g_INT_01c35e64
-;   void* g_PTR_01c35e6c
-;   int g_INT_01c38b40
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
+;   int g_CurrentLightingValue
+;   void* g_ScanlineRenderFunc
+;   int g_MMXSupported
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -40,13 +40,13 @@ section .text
     TEST EAX,EAX                        ; 00406706
     JZ 0x0040677a                       ; 00406708
         ;   XREF to: 0040677a (CONDITIONAL_JUMP)  ; LAB_0040677a
-    CMP dword ptr [0x01c38b40],0x0      ; 0040670a | g_INT_01c38b40
+    CMP dword ptr [0x01c38b40],0x0      ; 0040670a | g_MMXSupported
     JNZ 0x00406795                      ; 00406711
         ;   XREF to: 00406795 (CONDITIONAL_JUMP)  ; LAB_00406795
     CMP dword ptr [0x006141c0],0x20     ; 00406717 | g_INT_006141c0
     JNZ 0x00406789                      ; 0040671e
         ;   XREF to: 00406789 (CONDITIONAL_JUMP)  ; LAB_00406789
-    MOV dword ptr [0x01c35e6c],0x55d0b3 ; 00406720 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55d0b3 ; 00406720 | g_ScanlineRenderFunc
     PUSH EDI                            ; 0040672a
         ;   Label: LAB_0040672a
     MOV EAX,dword ptr [EBX + 0x10]      ; 0040672b
@@ -57,15 +57,15 @@ section .text
     MOV ECX,dword ptr [EBX + 0x8]       ; 00406738
     XOR EBP,EBP                         ; 0040673b
     PUSH ECX                            ; 0040673d
-    MOV dword ptr [0x01c38b54],EDI      ; 0040673e | g_BIT_INTEGER32_01c38b54
-    MOV dword ptr [0x01c38b58],EBP      ; 00406744 | g_INT_01c38b58
+    MOV dword ptr [0x01c38b54],EDI      ; 0040673e | g_RenderStateFlags
+    MOV dword ptr [0x01c38b58],EBP      ; 00406744 | g_VertexPreprocessMode
     CALL engine_light.cpp_calculateLighting_FUN_004e28b0 ; 0040674a
         ;   XREF to: 004e28b0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004e28b0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 0040674f
     PUSH EAX                            ; 00406752
-    MOV EDI,dword ptr [0x0070ca5c]      ; 00406753 | g_INT_0070ca5c
+    MOV EDI,dword ptr [0x0070ca5c]      ; 00406753 | g_CurrentPolygonColor
     PUSH EDI                            ; 00406759
-    MOV [0x01c35e64],EAX                ; 0040675a | g_INT_01c35e64
+    MOV [0x01c35e64],EAX                ; 0040675a | g_CurrentLightingValue
     CALL engine_3d.c_lookupLitColor_FUN_004039e0 ; 0040675f
         ;   XREF to: 004039e0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_004039e0(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 00406764
@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 00406786
     POP EBX                             ; 00406787
     RET                                 ; 00406788
-    MOV dword ptr [0x01c35e6c],0x55d2e9 ; 00406789 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55d2e9 ; 00406789 | g_ScanlineRenderFunc
         ;   Label: LAB_00406789
     JMP 0x0040672a                      ; 00406793
         ;   XREF to: 0040672a (UNCONDITIONAL_JUMP)  ; LAB_0040672a
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_00406795
     JNZ 0x004067aa                      ; 0040679c
         ;   XREF to: 004067aa (CONDITIONAL_JUMP)  ; LAB_004067aa
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0040679e | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0040679e | g_ScanlineRenderFunc
     JMP 0x0040672a                      ; 004067a8
         ;   XREF to: 0040672a (UNCONDITIONAL_JUMP)  ; LAB_0040672a
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 004067aa | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 004067aa | g_ScanlineRenderFunc
         ;   Label: LAB_004067aa
     JMP 0x0040672a                      ; 004067b4
         ;   XREF to: 0040672a (UNCONDITIONAL_JUMP)  ; LAB_0040672a

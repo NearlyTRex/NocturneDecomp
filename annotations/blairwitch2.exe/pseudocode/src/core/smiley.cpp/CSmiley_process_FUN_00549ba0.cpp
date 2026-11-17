@@ -167,7 +167,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
     switch(iVar6) {
     case 1:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,"Capture");
+                        (g_CEventListPtr,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -209,7 +209,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
       break;
     case 2:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,"Capture");
+                        (g_CEventListPtr,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -280,7 +280,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
         fVar12 = 1.0;
         pCStack_14 = (CVector3f *)SStack_1ec.damage_amount;
         core_xform_cpp_transformVector3x4_FUN_00591530
-                  (&g_CVector3f_0265370c,
+                  (&g_ZeroVector,
                    (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                    g_INT_ARRAY_02628610[2],&CStack_114);
         pCVar11 = &CStack_fc;
@@ -343,7 +343,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
           fVar12 = 1.0;
           pCStack_14 = (CVector3f *)SStack_1b0.damage_amount;
           core_xform_cpp_transformVector3x4_FUN_00591530
-                    (&g_CVector3f_0265370c,
+                    (&g_ZeroVector,
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                      g_INT_ARRAY_02628610[2],&CStack_c0);
           pCVar11 = &CStack_54;

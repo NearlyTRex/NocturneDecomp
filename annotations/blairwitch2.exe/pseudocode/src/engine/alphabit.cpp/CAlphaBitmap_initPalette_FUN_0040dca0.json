@@ -52,19 +52,19 @@
     },
     {
       "addr": "01c35214",
-      "name": "g_UINT_ARRAY_01c35214",
+      "name": "g_Hardware32BitPalette",
       "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c35218",
-      "name": "g_UINT_ARRAY_01c35214[1]",
+      "name": "g_Hardware32BitPalette[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c35219",
-      "name": "g_UINT_ARRAY_01c35214[1]+1",
+      "name": "g_Hardware32BitPalette[1]+1",
       "type": "undefined4",
       "value": null
     }
@@ -185,9 +185,9 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(ushort *)((int)g_USHORT_ARRAY_01c35614",
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
       "severity": "moderate",
-      "text": "*(ushort *)((int)g_USHORT_ARRAY_01c35614 + iVar3) = *puVar1;",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar3) = *puVar1;",
       "type": "pointer_cast"
     },
     {
@@ -235,7 +235,7 @@
       "line": 28,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0040dce3: MOVSD.REP ES:EDI,ESI  ; g_UINT_ARRAY_01c35214 | g_UINT_ARRAY_01c35214[1]",
+      "text": "// 0040dce3: MOVSD.REP ES:EDI,ESI  ; g_Hardware32BitPalette | g_Hardware32BitPalette[1]",
       "type": "unrolled_memcpy"
     }
   ]

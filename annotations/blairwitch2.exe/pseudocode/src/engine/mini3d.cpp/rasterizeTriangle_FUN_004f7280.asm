@@ -61,8 +61,8 @@
 ;   double g_DOUBLE_005ddefc = 65536
 ;   int g_INT_006141c0 = 0x8
 ;   int g_INT_01c37788
-;   int g_INT_01c38b40
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   int g_MMXSupported
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_INT_01d09858
 ;   int g_INT_01d17ab4
 ;   SSoftwareEdge g_SSoftwareEdge_01d17ab8
@@ -421,7 +421,7 @@ section .text
         ;   XREF to: 004f7260 (UNCONDITIONAL_CALL)  ; int engine_mini3d.cpp_roundFloat_FUN_004f7260(float value)
     ADD ESP,0x4                         ; 004f76ee
     MOV dword ptr [ESP + 0x8c],EAX      ; 004f76f1
-    MOV ESI,dword ptr [0x01c38b54]      ; 004f76f8 | g_BIT_INTEGER32_01c38b54
+    MOV ESI,dword ptr [0x01c38b54]      ; 004f76f8 | g_RenderStateFlags
     PUSH ESI                            ; 004f76fe
     PUSH 0x3                            ; 004f76ff
     LEA EAX,[ESP + 0x8]                 ; 004f7701
@@ -566,7 +566,7 @@ section .text
     TEST EAX,EAX                        ; 004f788c
     JZ 0x004f770e                       ; 004f788e
         ;   XREF to: 004f770e (CONDITIONAL_JUMP)  ; LAB_004f770e
-    CMP dword ptr [0x01c38b40],0x0      ; 004f7894 | g_INT_01c38b40
+    CMP dword ptr [0x01c38b40],0x0      ; 004f7894 | g_MMXSupported
         ;   Label: LAB_004f7894
     JZ 0x004f7a0c                       ; 004f789b
         ;   XREF to: 004f7a0c (CONDITIONAL_JUMP)  ; LAB_004f7a0c

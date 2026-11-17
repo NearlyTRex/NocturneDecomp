@@ -9,8 +9,8 @@
 void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0(char *property_description,char *property_type)
 
 {
-  if (g_CDemonActor_PTR_007df9bc != (CDemonActor *)0x0) {
-    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(g_CDemonActor_PTR_007df9bc);
+  if (g_CurrentActorBeingProcessed != (CDemonActor *)0x0) {
+    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(g_CurrentActorBeingProcessed);
   }
   g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
   g_INT_01d71de4 = 0x85d;

@@ -10,10 +10,10 @@
 ;   float g_FLOAT_005f64e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   CDemonCamera* g_CDemonCamera_PTR_007bda74
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_0044e6a0
@@ -88,7 +88,7 @@ section .text
     JNZ 0x0049b782                      ; 0049b76e
         ;   XREF to: 0049b782 (CONDITIONAL_JUMP)  ; LAB_0049b782
     PUSH 0x0                            ; 0049b770
-    MOV EAX,[0x007bda74]                ; 0049b772 | g_CDemonCamera_PTR_007bda74
+    MOV EAX,[0x007bda74]                ; 0049b772 | g_CurrentSceneCamera
     PUSH ESI                            ; 0049b777
     MOV EBX,dword ptr [EAX + 0x3c]      ; 0049b778
     PUSH EAX                            ; 0049b77b
@@ -96,8 +96,8 @@ section .text
     ADD ESP,0xc                         ; 0049b77f
     PUSH 0x0                            ; 0049b782
         ;   Label: LAB_0049b782
-    PUSH 0x265370c                      ; 0049b784 | g_CVector3f_0265370c
-    PUSH 0x265370c                      ; 0049b789 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0049b784 | g_ZeroVector
+    PUSH 0x265370c                      ; 0049b789 | g_ZeroVector
     LEA EBX,[ESI + 0x40]                ; 0049b78e
     PUSH EBX                            ; 0049b791
     PUSH ESI                            ; 0049b792

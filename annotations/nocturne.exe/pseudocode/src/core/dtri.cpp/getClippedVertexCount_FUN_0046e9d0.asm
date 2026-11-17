@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01bc9e04
+;   int g_ClipOutputVertexCount
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01bc9e04]                ; 0046e9d0 | g_INT_01bc9e04
+    MOV EAX,[0x01bc9e04]                ; 0046e9d0 | g_ClipOutputVertexCount
         ;   Label: core_dtri.cpp_getClippedVertexCount_FUN_0046e9d0
     RET                                 ; 0046e9d5
 

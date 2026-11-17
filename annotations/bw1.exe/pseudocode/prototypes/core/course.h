@@ -15,7 +15,7 @@ CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 
 // Original: core_course.cpp_CCourse_allocMemory_FUN_00447d50
 // Address: 00447d50
-void __cdecl CCourse::allocMemory(CCourse *this_ptr,int param_2);
+void __cdecl CCourse::allocMemory(CCourse *this_ptr,int count);
 
 // Original: core_course.cpp_CCourse_load_FUN_00447db0
 // Address: 00447db0

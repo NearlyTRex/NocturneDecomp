@@ -12,6 +12,6 @@ int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass *t
   int iVar1;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->breakable_condition);
+                    (g_CEventListPtr,this_ptr->breakable_condition);
   return iVar1;
 }

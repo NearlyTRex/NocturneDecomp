@@ -35,7 +35,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_0059832e = 0.5
+;   double g_GramSchmidtBlendFactor = 0.5
 ;
 ; *****************************************************************************
 
@@ -183,7 +183,7 @@ section .text
     FXCH ST2                            ; 0055c332
     FSUBP ST5,ST0                       ; 0055c334
     FSUBP ST3,ST0                       ; 0055c336
-    FLD double ptr [0x0059832e]         ; 0055c338 | g_DOUBLE_0059832e
+    FLD double ptr [0x0059832e]         ; 0055c338 | g_GramSchmidtBlendFactor
     FLD double ptr [ESP]                ; 0055c33e
     FMUL ST1                            ; 0055c341
     FLD double ptr [ESP + 0x60]         ; 0055c343

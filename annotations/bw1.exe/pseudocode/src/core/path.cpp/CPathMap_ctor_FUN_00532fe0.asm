@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01e6be48
+;   int g_PathMapCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -35,16 +35,16 @@ section .text
     MOV dword ptr [EBX + 0x138b0],EAX   ; 00532ffd
     CALL core_path.cpp_CPathMap_reset_FUN_00535200 ; 00533003
         ;   XREF to: 00535200 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_00535200(CPathMap * this_ptr)
-    MOV EDX,dword ptr [0x01e6be48]      ; 00533008 | g_INT_01e6be48
+    MOV EDX,dword ptr [0x01e6be48]      ; 00533008 | g_PathMapCount
     ADD ESP,0x4                         ; 0053300e
     CMP EDX,0xc8                        ; 00533011
     JGE 0x00533033                      ; 00533017
         ;   XREF to: 00533033 (CONDITIONAL_JUMP)  ; LAB_00533033
-    MOV EAX,[0x01e6be48]                ; 00533019 | g_INT_01e6be48
+    MOV EAX,[0x01e6be48]                ; 00533019 | g_PathMapCount
         ;   Label: LAB_00533019
     LEA EDI,[EAX + 0x1]                 ; 0053301e
     MOV dword ptr [EAX*0x4 + 0x1e6be4c],EBX ; 00533021
-    MOV dword ptr [0x01e6be48],EDI      ; 00533028 | g_INT_01e6be48
+    MOV dword ptr [0x01e6be48],EDI      ; 00533028 | g_PathMapCount
     MOV EAX,EBX                         ; 0053302e
     POP EDI                             ; 00533030
     POP EBX                             ; 00533031

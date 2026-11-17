@@ -9,17 +9,17 @@
 void __cdecl sound_sndmain_cpp_lockSound_FUN_00575d20(void)
 
 {
-  if (g_HANDLE_02c807e8 == (HANDLE)0x0) {
-    g_HANDLE_02c807e8 = wincore_winrun_cpp_createMutex_FUN_005b3740();
-    if (g_HANDLE_02c807e8 == (HANDLE)0x0) {
+  if (g_SoundMutex == (HANDLE)0x0) {
+    g_SoundMutex = wincore_winrun_cpp_createMutex_FUN_005b3740();
+    if (g_SoundMutex == (HANDLE)0x0) {
       g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
       g_INT_01d1d404 = 0x17d4;
       core_main_c_displayErrorAndQuit_FUN_005030e0("lockSound - unable to create mutex object");
     }
   }
-  wincore_winrun_cpp_waitForMutex_FUN_005b3750(g_HANDLE_02c807e8);
-  g_INT_02c807ec = g_INT_02c807ec + 1;
-  if (g_INT_02c807ec < 100) {
+  wincore_winrun_cpp_waitForMutex_FUN_005b3750(g_SoundMutex);
+  g_SoundLockCount = g_SoundLockCount + 1;
+  if (g_SoundLockCount < 100) {
     return;
   }
   g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";

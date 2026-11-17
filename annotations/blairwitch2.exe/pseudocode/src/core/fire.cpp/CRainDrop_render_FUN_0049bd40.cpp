@@ -87,10 +87,10 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_44);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00615874);
-  (*((g_CDemonCamera_PTR_007bda74->base).vtable)->setupPerspectiveAndFog)
-            (g_CDemonCamera_PTR_007bda74,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
-  iStack_14 = 0xffff - g_INT_01c38aec;
+            (g_CDemonRenderer_PTR_0060b280,&g_FireEffectRainDropTexture);
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  iStack_14 = 0xffff - g_PerspectiveReciprocal;
   g_SRenderVertex_ARRAY_00622014[1].u = 0xd00000;
   g_SRenderVertex_ARRAY_00622014[0].u = 0x800000;
   g_SRenderVertex_ARRAY_00622014[0].v = 0xdc0000;
@@ -112,7 +112,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   g_SRenderVertex_ARRAY_00622014[3].a = g_SRenderVertex_ARRAY_00622014[0].a;
   CStack_20.z = g_SRenderVertex_ARRAY_00622014[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-            (g_CDemonSetPtr,(CVector3i *)(auStack_38 + 8),&g_CVector3i_01c3dec4,0,4);
+            (g_CDemonSetPtr,(CVector3i *)(auStack_38 + 8),&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
   iStack_a8 = 4;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930

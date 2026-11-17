@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 48,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 34,
     "suspect_count": 1,
     "suspect_types": [
       "fast_inv_sqrt_inline"
     ],
-    "total_lines": 157
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -50,13 +50,13 @@
     },
     {
       "addr": "005fe604",
-      "name": "g_FLOAT_005fe604",
+      "name": "g_WorldToFloat",
       "type": "float",
       "value": "0.00390625"
     },
     {
       "addr": "01cc8050",
-      "name": "g_INT_01cc8050",
+      "name": "g_FastInvSqrtMagic",
       "type": "int",
       "value": null
     }
@@ -310,11 +310,11 @@
   },
   "suspects": [
     {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `g_INT_01cc8050`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01cc8050` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
       "line": 21,
-      "match": "fVar8 = (float)(g_INT_01cc8050 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * ",
+      "match": "fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar",
       "severity": "moderate",
-      "text": "fVar8 = (float)(g_INT_01cc8050 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));",
+      "text": "fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1) );",
       "type": "fast_inv_sqrt_inline"
     }
   ]

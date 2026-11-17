@@ -20,11 +20,11 @@
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[3].u
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[3].v
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.base.base.count
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[0]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[1]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[2]
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[3]
+;   undefined4 g_GoreQuadPrimitive.base.base.count
+;   undefined4 g_GoreQuadPrimitive.vertices[0]
+;   undefined4 g_GoreQuadPrimitive.vertices[1]
+;   undefined4 g_GoreQuadPrimitive.vertices[2]
+;   undefined4 g_GoreQuadPrimitive.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
@@ -46,11 +46,11 @@ section .text
     MOV EAX,0xf80000                    ; 004aeafd
     PUSH 0xffff                         ; 004aeb02
     XOR ECX,ECX                         ; 004aeb07
-    MOV dword ptr [0x01c78c84],EDX      ; 004aeb09 | g_SMRGLPrimitiveQuadIndex_01c78c80.base.base.count
-    MOV dword ptr [0x01c78c98],ECX      ; 004aeb0f | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[0]
-    MOV dword ptr [0x01c78c9c],EBX      ; 004aeb15 | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[1]
-    MOV dword ptr [0x01c78ca0],ESI      ; 004aeb1b | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[2]
-    MOV dword ptr [0x01c78ca4],EDI      ; 004aeb21 | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[3]
+    MOV dword ptr [0x01c78c84],EDX      ; 004aeb09 | g_GoreQuadPrimitive.base.base.count
+    MOV dword ptr [0x01c78c98],ECX      ; 004aeb0f | g_GoreQuadPrimitive.vertices[0]
+    MOV dword ptr [0x01c78c9c],EBX      ; 004aeb15 | g_GoreQuadPrimitive.vertices[1]
+    MOV dword ptr [0x01c78ca0],ESI      ; 004aeb1b | g_GoreQuadPrimitive.vertices[2]
+    MOV dword ptr [0x01c78ca4],EDI      ; 004aeb21 | g_GoreQuadPrimitive.vertices[3]
     MOV dword ptr [0x005c502c],EBP      ; 004aeb27 | g_SRenderVertex_ARRAY_005c5014[0].u
     MOV [0x005c5030],EAX                ; 004aeb2d | g_SRenderVertex_ARRAY_005c5014[0].v
     MOV [0x005c505c],EAX                ; 004aeb32 | g_SRenderVertex_ARRAY_005c5014[1].u

@@ -15,7 +15,7 @@ int FUN_005c0d60(byte *param_1,int param_2)
   iVar2 = 0;
   for (; (iVar1 = FUN_005c4260(param_1), iVar1 == 0 && (param_2 != 0));
       param_2 = param_2 + -1) {
-    if ((g_INT_026807f0 == 0) || ((g_CHAR_ARRAY_02680801[*param_1] & 1U) == 0)) {
+    if ((g_MultibyteLocaleActive == 0) || ((g_LeadByteTable[*param_1] & 1U) == 0)) {
       iVar2 = iVar2 + 1;
     }
     else {

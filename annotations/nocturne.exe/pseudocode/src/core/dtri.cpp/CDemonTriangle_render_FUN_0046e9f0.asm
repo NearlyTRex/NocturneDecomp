@@ -21,10 +21,10 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_0057e4ae = -65536
+;   double g_NormalVectorScaleFactor = -65536
 ;   double DOUBLE_0057e4b6 = 65536
 ;   double DOUBLE_0057e4be = 256
-;   float g_FLOAT_0059c8e0 = 256
+;   float g_VertexCoordinateScaleFactor = 256
 ;   void* PTR_g_CDemonRenderer_01b4d738_005ae700 = 01b4d738
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
@@ -47,13 +47,13 @@ section .text
     MOV EAX,ESI                         ; 0046e9fe
     MOV EDX,dword ptr [0x005ae700]      ; 0046ea00 | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0046ea06
-    FMUL float ptr [0x0059c8e0]         ; 0046ea08 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea08 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0046ea0e
     FLD float ptr [EAX + 0x4]           ; 0046ea10
-    FMUL float ptr [0x0059c8e0]         ; 0046ea13 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea13 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0046ea19
     FLD float ptr [EAX + 0x8]           ; 0046ea1c
-    FMUL float ptr [0x0059c8e0]         ; 0046ea1f | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea1f | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0046ea25
     LEA EAX,[ESP + 0x48]                ; 0046ea28
     PUSH EAX                            ; 0046ea2c
@@ -66,13 +66,13 @@ section .text
     LEA EAX,[ESI + 0xc]                 ; 0046ea3c
     MOV EDX,dword ptr [0x005ae700]      ; 0046ea3f | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0046ea45
-    FMUL float ptr [0x0059c8e0]         ; 0046ea47 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea47 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0046ea4d
     FLD float ptr [EAX + 0x4]           ; 0046ea4f
-    FMUL float ptr [0x0059c8e0]         ; 0046ea52 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea52 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0046ea58
     FLD float ptr [EAX + 0x8]           ; 0046ea5b
-    FMUL float ptr [0x0059c8e0]         ; 0046ea5e | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea5e | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0046ea64
     LEA EAX,[ESP + 0x60]                ; 0046ea67
     PUSH EAX                            ; 0046ea6b
@@ -86,13 +86,13 @@ section .text
     LEA EAX,[ESI + 0x18]                ; 0046ea7e
     MOV EDX,dword ptr [0x005ae700]      ; 0046ea81 | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0046ea87
-    FMUL float ptr [0x0059c8e0]         ; 0046ea89 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea89 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0046ea8f
     FLD float ptr [EAX + 0x4]           ; 0046ea91
-    FMUL float ptr [0x0059c8e0]         ; 0046ea94 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea94 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0046ea9a
     FLD float ptr [EAX + 0x8]           ; 0046ea9d
-    FMUL float ptr [0x0059c8e0]         ; 0046eaa0 | g_FLOAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046eaa0 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0046eaa6
     LEA EAX,[ESP + 0x54]                ; 0046eaa9
     PUSH EAX                            ; 0046eaad
@@ -104,7 +104,7 @@ section .text
     MOV EDX,0x3                         ; 0046eab9
     ADD ESP,0x8                         ; 0046eabe
     MOV dword ptr [ESP + 0x4],EDX       ; 0046eac1
-    FLD double ptr [0x0057e4ae]         ; 0046eac5 | g_DOUBLE_0057e4ae
+    FLD double ptr [0x0057e4ae]         ; 0046eac5 | g_NormalVectorScaleFactor
     FLD float ptr [ESI + 0x24]          ; 0046eacb
     FMUL ST1                            ; 0046eace
     CALL crt_math.c_round_FUN_00563a30  ; 0046ead0

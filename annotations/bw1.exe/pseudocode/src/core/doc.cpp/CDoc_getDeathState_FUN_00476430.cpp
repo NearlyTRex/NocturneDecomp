@@ -13,7 +13,7 @@ EDeathState __cdecl core_doc_cpp_CDoc_getDeathState_FUN_00476430(CDoc *this_ptr)
   EDeathState EVar2;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,"docCannotDie");
+                    (g_CEventListPtr,"docCannotDie");
   if (iVar1 != 0) {
     return DEATH_STATE_ALIVE;
   }

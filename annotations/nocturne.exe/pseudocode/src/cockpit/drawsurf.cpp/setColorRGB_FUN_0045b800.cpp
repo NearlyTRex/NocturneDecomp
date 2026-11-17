@@ -20,8 +20,8 @@ void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_0045b800(int red,int green,int
   uVar3 = green & 0xff;
   uVar2 = blue & 0xff;
   iVar4 = ((int)uVar2 >> 3) + ((int)uVar3 >> 3) * 0x20 + ((int)uVar1 >> 3) * 0x400;
-  g_INT_01b4d714 = (int)g_ColorCubeLookup[iVar4];
-  g_INT_01b4d71c = 0;
+  g_PaletteColorIndex = (int)g_ColorCubeLookup[iVar4];
+  g_UseRGBConversion = 0;
   if ((uint)g_BitsPerPixel < 0x10) {
     if (g_BitsPerPixel == 8) {
       g_INT_01b4d710 = (uint)g_ColorCubeLookup[iVar4];

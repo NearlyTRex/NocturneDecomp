@@ -21,10 +21,10 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   double g_DOUBLE_00604d1c = 0.0
-;   double g_DOUBLE_00604d24 = 0.0
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6cee8
 ;
 ; Called Functions:
@@ -57,8 +57,8 @@ section .text
     IMUL dword ptr [0x005fba20]         ; 00560d96 | g_INT_005fba20
     SHR EAX,0x3                         ; 00560d9c
     MOV ECX,EAX                         ; 00560d9f
-    MOV EDI,dword ptr [EBX*0x4 + 0x1c5faec] ; 00560da1 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
-    FLD double ptr [0x00604d1c]         ; 00560da8 | g_DOUBLE_00604d1c
+    MOV EDI,dword ptr [EBX*0x4 + 0x1c5faec] ; 00560da1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
+    FLD double ptr [0x00604d1c]         ; 00560da8 | g_BufferFillZeroQword
     FST double ptr [EDI]                ; 00560dae
         ;   Label: LAB_00560dae
     FST double ptr [EDI + 0x8]          ; 00560db0
@@ -68,7 +68,7 @@ section .text
     SUB ECX,0x20                        ; 00560dbc
     JG 0x00560dae                       ; 00560dbf
         ;   XREF to: 00560dae (CONDITIONAL_JUMP)  ; LAB_00560dae
-    FSTP double ptr [0x00604d24]        ; 00560dc1 | g_DOUBLE_00604d24
+    FSTP double ptr [0x00604d24]        ; 00560dc1 | g_BufferFillFpuPopST0
     INC EBX                             ; 00560dc7
     CMP EBX,dword ptr [0x005fba1c]      ; 00560dc8 | g_INT_005fba1c
     JL 0x00560d91                       ; 00560dce

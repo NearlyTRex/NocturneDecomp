@@ -25,7 +25,7 @@
 ;   float FLOAT_006222b7 = 20
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CKeyFramedModelInstance CKeyFramedModelInstance_02c9b170
+;   CKeyFramedModelInstance g_StalactiteRockModelInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
@@ -274,7 +274,7 @@ section .text
     FMUL float ptr [ESP + 0x9c]         ; 0048e59e
     FXCH                                ; 0048e5a5
     FMUL float ptr [ESP + 0x9c]         ; 0048e5a7
-    PUSH 0x2c9b170                      ; 0048e5ae | CKeyFramedModelInstance_02c9b170
+    PUSH 0x2c9b170                      ; 0048e5ae | g_StalactiteRockModelInstance
     FXCH ST2                            ; 0048e5b3
     FSTP float ptr [ESP + 0x80]         ; 0048e5b5
     FSTP float ptr [ESP + 0x7c]         ; 0048e5bc

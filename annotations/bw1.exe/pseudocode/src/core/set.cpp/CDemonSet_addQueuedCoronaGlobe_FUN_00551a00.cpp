@@ -13,11 +13,11 @@ void __cdecl core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00551a00(CDemonSet 
   int iVar1;
   
   this_ptr_00 = g_CDemonRenderer_PTR_00612560;
-  if ((g_CDemonMission_PTR_0061f650->is_in_editor == 0) && (g_INT_01fe5764 < 100)) {
-    g_CDemonGlobe_PTR_ARRAY_01fe5768[g_INT_01fe5764] = globe;
+  if ((g_CDemonMission_PTR_0061f650->is_in_editor == 0) && (g_QueuedCoronaGlobeCount < 100)) {
+    g_QueuedCoronaGlobes[g_QueuedCoronaGlobeCount] = globe;
     iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(this_ptr_00);
-    g_INT_ARRAY_01fe58f8[g_INT_01fe5764] = iVar1;
-    g_INT_01fe5764 = g_INT_01fe5764 + 1;
+    g_QueuedCoronaGlobeAlphaMasks[g_QueuedCoronaGlobeCount] = iVar1;
+    g_QueuedCoronaGlobeCount = g_QueuedCoronaGlobeCount + 1;
     return;
   }
   return;

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 464,
+    "complexity_score": 379,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 30,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "unnamed_param",
       "warning_type_propagation"
     ],
     "total_lines": 394
@@ -30,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_yow.cpp_CYow_getTargetPoints_FUN_00586fa0",
-    "signature": "int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_00586fa0(CYow *this_ptr,float *param_2)"
+    "signature": "int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_00586fa0(CYow *this_ptr,float *out_points_array)"
   },
   "function_calls": [
     {
@@ -140,7 +139,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "out_points_array",
         "offset": 8,
         "size": 4,
         "type": "float *"
@@ -174,76 +173,12 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_00586fa0(CYow *this_ptr,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
       "match": "afStackY_1088",
       "severity": "moderate",
       "text": "float afStackY_1088 [1016];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&fStack_58 != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = fStack_58;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = afStack_54[0];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = afStack_54[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3 = param_2 + iStack_14 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3 = param_2 + iStack_14 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3 = param_2 + iStack_14 * 3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&CStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

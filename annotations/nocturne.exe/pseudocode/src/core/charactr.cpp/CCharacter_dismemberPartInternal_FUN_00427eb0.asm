@@ -37,7 +37,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CKeyFramedModelInstance_007658e4.model_name[0]
+;   undefined4 g_StakeModelInstance.model_name[0]
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0
@@ -198,7 +198,7 @@ section .text
     MOV dword ptr [EBP + 0x5a],EAX      ; 00428041
     LEA EAX,[EBP + 0x52]                ; 00428044
     PUSH EAX                            ; 00428047
-    PUSH 0x76595c                       ; 00428048 | g_CKeyFramedModelInstance_007658e4.model_name[0]
+    PUSH 0x76595c                       ; 00428048 | g_StakeModelInstance.model_name[0]
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0042804d
     PUSH EAX                            ; 00428053
     CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 ; 00428054

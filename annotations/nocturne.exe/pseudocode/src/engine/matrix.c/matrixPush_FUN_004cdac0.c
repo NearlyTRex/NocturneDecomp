@@ -9,23 +9,23 @@
 void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 
 {
-  g_INT_ARRAY_01cc52e0[g_INT_01cc5174] = g_RelativeX;
-  g_INT_ARRAY_01cc5308[g_INT_01cc5174] = g_RelativeY;
-  g_INT_ARRAY_01cc5330[g_INT_01cc5174] = g_RelativeZ;
-  g_INT_ARRAY_01cc5358[g_INT_01cc5174] = g_INT_01c039dc;
-  g_INT_ARRAY_01cc5380[g_INT_01cc5174] = g_INT_01c039e0;
-  g_INT_ARRAY_01cc53a8[g_INT_01cc5174] = g_INT_01c039e4;
-  g_INT_ARRAY_01cc5178[g_INT_01cc5174] = g_TransformMatrix.m[0].x;
-  g_INT_ARRAY_01cc51a0[g_INT_01cc5174] = g_TransformMatrix.m[0].y;
-  g_INT_ARRAY_01cc51c8[g_INT_01cc5174] = g_TransformMatrix.m[0].z;
-  g_INT_ARRAY_01cc51f0[g_INT_01cc5174] = g_TransformMatrix.m[1].x;
-  g_INT_ARRAY_01cc5218[g_INT_01cc5174] = g_TransformMatrix.m[1].y;
-  g_INT_ARRAY_01cc5240[g_INT_01cc5174] = g_TransformMatrix.m[1].z;
-  g_INT_ARRAY_01cc5268[g_INT_01cc5174] = g_TransformMatrix.m[2].x;
-  g_INT_ARRAY_01cc5290[g_INT_01cc5174] = g_TransformMatrix.m[2].y;
-  g_INT_ARRAY_01cc52b8[g_INT_01cc5174] = g_TransformMatrix.m[2].z;
-  g_INT_01cc5174 = g_INT_01cc5174 + 1;
-  if (g_INT_01cc5174 < 10) {
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
+  g_MatrixStack_RelY[g_MatrixStackIndex] = g_RelativeY;
+  g_MatrixStack_RelZ[g_MatrixStackIndex] = g_RelativeZ;
+  g_MatrixStack_Unk1[g_MatrixStackIndex] = g_LightDirectionX;
+  g_MatrixStack_Unk2[g_MatrixStackIndex] = g_LightDirectionY;
+  g_MatrixStack_Unk3[g_MatrixStackIndex] = g_LightDirectionZ;
+  g_MatrixStack_M00[g_MatrixStackIndex] = g_TransformMatrix.m[0].x;
+  g_MatrixStack_M01[g_MatrixStackIndex] = g_TransformMatrix.m[0].y;
+  g_MatrixStack_M02[g_MatrixStackIndex] = g_TransformMatrix.m[0].z;
+  g_MatrixStack_M10[g_MatrixStackIndex] = g_TransformMatrix.m[1].x;
+  g_MatrixStack_M11[g_MatrixStackIndex] = g_TransformMatrix.m[1].y;
+  g_MatrixStack_M12[g_MatrixStackIndex] = g_TransformMatrix.m[1].z;
+  g_MatrixStack_M20[g_MatrixStackIndex] = g_TransformMatrix.m[2].x;
+  g_MatrixStack_M21[g_MatrixStackIndex] = g_TransformMatrix.m[2].y;
+  g_MatrixStack_M22[g_MatrixStackIndex] = g_TransformMatrix.m[2].z;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
+  if (g_MatrixStackIndex < 10) {
     return;
   }
   g_CurrentFilename = "..\\engine\\matrix.c";

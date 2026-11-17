@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_isSoundMuted_FUN_00550bc0(void)
 
 {
-  return g_INT_02648e8c;
+  return g_SoundMuted;
 }

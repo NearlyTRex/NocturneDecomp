@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005e8c83 = 255
 ;   float g_FLOAT_005e8c8b = 255
-;   int g_INT_0061b4b8 = 0xff
+;   int g_CurrentAlphaValue = 0xff
 ;   int g_INT_01c50948
 ;   float g_FLOAT_01d224c0
 ;   float g_FLOAT_01d22548
@@ -67,7 +67,7 @@ section .text
     CALL crt_math.c_round_FUN_005c03a0  ; 0051236f
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     OR EDX,EAX                          ; 00512374
-    FISTP dword ptr [0x0061b4b8]        ; 00512376 | g_INT_0061b4b8
+    FISTP dword ptr [0x0061b4b8]        ; 00512376 | g_CurrentAlphaValue
     MOV dword ptr [0x01d25f44],EDX      ; 0051237c | g_INT_01d25f44
     ADD ESP,0x4                         ; 00512382
     RET                                 ; 00512385

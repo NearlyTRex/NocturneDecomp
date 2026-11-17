@@ -46,7 +46,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 01c775ec
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005be680
+;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   int g_INT_01c038f4
 ;   undefined4 g_CGameInstance.render_mode
@@ -79,7 +79,7 @@ section .text
     MOV EBP,ESP                         ; 0050d914
     SUB ESP,0x108                       ; 0050d916
     AND ESP,0xfffffff8                  ; 0050d91c
-    PUSH 0x5be680                       ; 0050d91f | g_SMRGLTextureBasic_005be680
+    PUSH 0x5be680                       ; 0050d91f | g_EnvMapTexture
     MOV EDX,dword ptr [0x005ae704]      ; 0050d924 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0050d92a | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0050d92b

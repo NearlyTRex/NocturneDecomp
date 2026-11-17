@@ -17,6 +17,6 @@ void __cdecl engine_texture_cpp_CTextureCache_selectTextureByHandle_FUN_0056a610
     g_INT_01d71de4 = 0x2e9;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::selectTextureByHandle - Out of range : %d,%s");
   }
-  (*(code *)g_PTR_02cf60e4)(this_ptr->entries[(texture->base).count].hw_texture_handle,0);
+  (*(code *)g_APIDLL_setFog)(this_ptr->entries[(texture->base).count].hw_texture_handle,0);
   return;
 }

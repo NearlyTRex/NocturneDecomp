@@ -25,14 +25,14 @@
 ;   TerminatedCString s_Warning_0057e5cf
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CBitFont* g_CBitFont_PTR_01bcd070
-;   int g_INT_01bcd9b8
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01bcd9bc
 ;   int g_INT_01bcddd4
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
-;   CKeys g_CKeys_01cc30e4
+;   CKeys g_CKeysInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -78,7 +78,7 @@ section .text
     PUSH 0x6a                           ; 0046fb7c
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0046fb7e
     PUSH EAX                            ; 0046fb84
-    MOV dword ptr [0x01bcd9b8],EDX      ; 0046fb85 | g_INT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EDX      ; 0046fb85 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0046fb8b
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0046fb90
@@ -131,7 +131,7 @@ section .text
     ADD EAX,EAX                         ; 0046fc15
     ADD EAX,EBX                         ; 0046fc17
     PUSH EAX                            ; 0046fc19
-    MOV EAX,[0x01bcd9b8]                ; 0046fc1a | g_INT_01bcd9b8
+    MOV EAX,[0x01bcd9b8]                ; 0046fc1a | g_EditorFontMaxCharWidth
     SHL EAX,0x2                         ; 0046fc1f
     ADD EAX,ESI                         ; 0046fc22
     PUSH EAX                            ; 0046fc24
@@ -179,7 +179,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046fc9a
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EBP,dword ptr [0x005bac64]      ; 0046fc9f | g_CKeys_PTR_005bac64
-    PUSH EBP                            ; 0046fca5 | g_CKeys_01cc30e4
+    PUSH EBP                            ; 0046fca5 | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046fca6
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0046fcab

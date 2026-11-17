@@ -280,13 +280,13 @@
     {
       "description": "Complex pointer cast",
       "line": 11,
-      "match": "(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "if (light == *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar1)) {",
+      "text": "if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Scalar global g_INT_01fc9608 accessed via (&g_INT_01fc9608)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CDemonLight_PTR_ARRAY_01fc960c (at 0x01fc960c, +4 bytes).",
+      "description": "Scalar global g_INT_01fc9608 accessed via (&g_INT_01fc9608)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DynamicLights (at 0x01fc960c, +4 bytes).",
       "line": 23,
       "match": "g_INT_01fc9608",
       "severity": "moderate",
@@ -294,19 +294,19 @@
       "type": "wrong_global"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "if (light == *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar1)) {",
+      "text": "if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Compiler displaced index base: [reg*4 + 0x1fc9608] lands in g_INT_01fc9608 but intended target is g_CDemonLight_PTR_ARRAY_01fc960c at 0x1fc960c (displaced by 4 bytes)",
+      "description": "Compiler displaced index base: [reg*4 + 0x1fc9608] lands in g_INT_01fc9608 but intended target is g_DynamicLights at 0x1fc960c (displaced by 4 bytes)",
       "displaced_from": "g_INT_01fc9608",
       "displacement": "0x1fc9608",
       "instruction_address": "",
-      "intended_global": "g_CDemonLight_PTR_ARRAY_01fc960c",
+      "intended_global": "g_DynamicLights",
       "line": 30,
       "match": "0x1fc9608",
       "scale": 4,

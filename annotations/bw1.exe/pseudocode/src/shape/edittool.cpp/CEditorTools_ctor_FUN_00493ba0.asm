@@ -10,7 +10,7 @@
 ;   shape_edittool.cpp_staticInit_FUN_00492920 at 00492925
 ;
 ; Referenced Globals:
-;   int g_INT_01c3eb5c
+;   int g_WindowStackCount
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -27,7 +27,7 @@ section .text
     XOR EDX,EDX                         ; 00493baa
     PUSH EDX                            ; 00493bac
     PUSH 0x1c3eb60                      ; 00493bad
-    MOV dword ptr [0x01c3eb5c],EDX      ; 00493bb2 | g_INT_01c3eb5c
+    MOV dword ptr [0x01c3eb5c],EDX      ; 00493bb2 | g_WindowStackCount
     CALL crt_memory.c_memset_FUN_005bfb70 ; 00493bb8
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00493bbd

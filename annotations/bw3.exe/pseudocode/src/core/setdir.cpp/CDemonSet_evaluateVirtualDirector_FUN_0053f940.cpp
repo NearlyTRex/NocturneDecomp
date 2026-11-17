@@ -287,8 +287,8 @@ LAB_0053f9af:
   iVar9 = 0;
   do {
     iVar7 = iVar9 + 4;
-    *(uint *)(&stack0xfffffc70 + iVar9) =
-         *(uint *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9);
+    *(uint *)(&stack0xfffffc70 + iVar9) = *(uint *)((int)g_ZBufferScanlineArray + iVar9)
+    ;
     iVar9 = iVar7;
   } while (iVar7 != 0xc0);
   g_FLOAT_ARRAY_02701528[0xfa] = 0.0;
@@ -489,7 +489,7 @@ LAB_0053f9af:
                       iStack_78 = 1;
                       iVar7 = 0;
                       do {
-                        *(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar7) = puVar12;
+                        *(byte **)((int)g_ZBufferScanlineArray + iVar7) = puVar12;
                         iVar7 = iVar7 + 4;
                         puVar12 = puVar12 + 0x100;
                       } while (iVar7 != 0xc0);
@@ -548,7 +548,7 @@ LAB_0053f9af:
               pcVar11 = g_CHAR_ARRAY_0212551c + iStack_90 * 0x3000;
               iVar9 = 0;
               do {
-                *(char **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) = pcVar11;
+                *(char **)((int)g_ZBufferScanlineArray + iVar9) = pcVar11;
                 iVar9 = iVar9 + 4;
                 pcVar11 = pcVar11 + 0x100;
               } while (iVar9 != 0xc0);
@@ -574,7 +574,7 @@ LAB_0053f9af:
               iVar9 = 0;
               do {
                 iVar10 = iVar9 + 4;
-                puVar15 = *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9);
+                puVar15 = *(uint **)((int)g_ZBufferScanlineArray + iVar9);
                 puVar17 = puVar14;
                 for (iVar7 = 0x40; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar17 = *puVar15;
@@ -586,7 +586,7 @@ LAB_0053f9af:
                   puVar15 = (uint *)((int)puVar15 + (uint)bVar19 * -2 + 1);
                   puVar17 = (uint *)((int)puVar17 + (uint)bVar19 * -2 + 1);
                 }
-                *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) = puVar14;
+                *(uint **)((int)g_ZBufferScanlineArray + iVar9) = puVar14;
                 puVar14 = puVar14 + 0x40;
                 iVar9 = iVar10;
               } while (iVar10 != 0xc0);
@@ -634,8 +634,8 @@ LAB_0053f9af:
   iVar9 = 0;
   do {
     iVar7 = iVar9 + 4;
-    *(uint *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) =
-         *(uint *)(&stack0xfffffc70 + iVar9);
+    *(uint *)((int)g_ZBufferScanlineArray + iVar9) = *(uint *)(&stack0xfffffc70 + iVar9)
+    ;
     iVar9 = iVar7;
   } while (iVar7 != 0xc0);
   engine_drender_cpp_popViewport_FUN_0046d320();

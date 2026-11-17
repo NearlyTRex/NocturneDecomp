@@ -53,7 +53,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00498360(CEdit
     g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c3eb50->max_char_width;
   g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
   ;
   iVar2 = g_INT_01c3f544;
@@ -218,7 +218,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00498360(CEdit
       engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
       engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
                 (g_CBitFont_PTR_01c3eb50,(char *)aiStack_18,iVar18 >> 0x10,iVar1 >> 0x10,
-                 g_INT_01c3f594,-1);
+                 g_AxisLabelTextColor,-1);
     }
     iVar2 = iVar2 + 1;
     iVar17 = iVar17 + 0x30;

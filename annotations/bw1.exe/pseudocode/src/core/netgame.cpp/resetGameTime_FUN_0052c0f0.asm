@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01d51d9c
+;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
 ;
 ; Called Functions:
@@ -23,6 +23,6 @@ section .text
     MOV ECX,0x12                        ; 0052c101
     SAR EDX,0x1f                        ; 0052c106
     IDIV ECX                            ; 0052c109
-    MOV [0x01d51d9c],EAX                ; 0052c10b | g_INT_01d51d9c
+    MOV [0x01d51d9c],EAX                ; 0052c10b | g_LastPingTime
     RET                                 ; 0052c110
 

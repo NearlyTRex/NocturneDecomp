@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 383,
+    "complexity_score": 384,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 129,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 403
+    "total_lines": 404
   },
   "cross_references": [
     {
@@ -165,7 +165,7 @@
     },
     {
       "addr": "005bdf50",
-      "name": "g_CHAR_ARRAY_005bdf50",
+      "name": "g_OSFontName",
       "type": "char[128]",
       "value": null
     },
@@ -183,37 +183,37 @@
     },
     {
       "addr": "01d16810",
-      "name": "g_INT_01d16810",
+      "name": "g_UseOSFonts",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d16814",
-      "name": "g_INT_01d16814",
+      "name": "g_LocalizationLoaded",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d16818",
-      "name": "g_INT_01d16818",
+      "name": "g_LocalizedStringCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d16820",
-      "name": "g_CHAR_PTR_ARRAY_01d1681c[1]",
+      "name": "g_MessageKeys[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d16824",
-      "name": "g_CHAR_PTR_ARRAY_01d1681c[2]",
+      "name": "g_MessageKeys[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d16ff0",
-      "name": "g_CHAR_PTR_ARRAY_01d16fec[1]",
+      "name": "g_MessageTexts[1]",
       "type": "undefined4",
       "value": null
     }
@@ -372,183 +372,183 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(char **)((int)g_CHAR_PTR_ARRAY_01d1681c",
-      "severity": "moderate",
-      "text": "(*(char **)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 72,
-      "match": "(char **)((int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(char **)((int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8));",
+      "text": "(*(char **)((int)g_MessageKeys + iVar3),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c",
+      "line": 73,
+      "match": "(char **)((int)g_MessageKeys",
       "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3);",
+      "text": "*(char **)((int)g_MessageKeys + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(uint *)((int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3) =",
+      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(uint *)((int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8);",
+      "text": "*(uint *)((int)g_MessageKeys + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(uint *)((int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8) = uVar2;",
+      "text": "*(uint *)((int)g_MessageKeys + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(uint *)((int)g_MessageKeys",
       "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar3);",
+      "text": "*(uint *)((int)g_MessageKeys + iVar8) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(uint *)((int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar3) =",
+      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 80,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(uint *)((int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar8);",
+      "text": "*(uint *)((int)g_MessageTexts + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 81,
-      "match": "(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(uint *)((int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar8) = uVar2;",
+      "text": "*(uint *)((int)g_MessageTexts + iVar8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(uint *)((int)g_MessageTexts",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageTexts + iVar8) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 57,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(char (**) [128])((int)g_CHAR_PTR_ARRAY_01d1681c + iVar5) = pacVar9;",
+      "text": "*(char (**) [128])((int)g_MessageKeys + iVar5) = pacVar9;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d16fec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageTexts` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 58,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(char (**) [256])((int)g_CHAR_PTR_ARRAY_01d16fec + iVar5) = pacVar7;",
+      "text": "*(char (**) [256])((int)g_MessageTexts + iVar5) = pacVar7;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
-      "severity": "moderate",
-      "text": "(*(char **)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3),",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 72,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8));",
+      "text": "(*(char **)((int)g_MessageKeys + iVar3),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3);",
+      "text": "*(char **)((int)g_MessageKeys + iVar8));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 75,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar3) =",
+      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar3);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 76,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8);",
+      "text": "*(uint *)((int)g_MessageKeys + iVar3) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d1681c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 77,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d1681c",
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d1681c + iVar8) = uVar2;",
+      "text": "*(uint *)((int)g_MessageKeys + iVar8);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d16fec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageKeys` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 78,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(int)g_MessageKeys",
       "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar3);",
+      "text": "*(uint *)((int)g_MessageKeys + iVar8) = uVar2;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d16fec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageTexts` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 79,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar3) =",
+      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar3);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d16fec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageTexts` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 80,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar8);",
+      "text": "*(uint *)((int)g_MessageTexts + iVar3) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01d16fec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_MessageTexts` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 81,
-      "match": "(int)g_CHAR_PTR_ARRAY_01d16fec",
+      "match": "(int)g_MessageTexts",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_CHAR_PTR_ARRAY_01d16fec + iVar8) = uVar2;",
+      "text": "*(uint *)((int)g_MessageTexts + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_MessageTexts` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)g_MessageTexts",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageTexts + iVar8) = uVar2;",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 106,
+      "line": 107,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 117,
+      "line": 118,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

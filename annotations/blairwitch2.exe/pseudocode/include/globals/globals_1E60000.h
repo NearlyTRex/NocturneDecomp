@@ -35,40 +35,40 @@ extern CPickList g_ScriptPickList;
 extern CScript g_CScriptInstance;
 
 // SMRGLPrimitiveQuad
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e613f0;
+extern SMRGLPrimitiveQuad g_PathMapQuad;
 
 // SSoftwareEdge[16]
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e6164c[16];
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e61b60[16];
 
 // char[10][1024]
-extern char g_CHAR_ARRAY_ARRAY_01e620f8[10][1024];
+extern char g_ScriptSubtitleLines[10][1024];
 
 // char[2048]
-extern char g_CHAR_ARRAY_01e648f8[2048];
+extern char g_ScriptLineBuffer[2048];
 extern char g_CHAR_ARRAY_01e65100[2048];
 
 // float
-extern float g_FLOAT_01e65900;
+extern float g_ScriptTimeScale;
 
 // int
-extern int g_INT_01e613ec;
-extern int g_INT_01e61648;
-extern int g_INT_01e61b4c;
-extern int g_INT_01e61b50;
-extern int g_INT_01e61b58;
-extern int g_INT_01e61b5c;
-extern int g_INT_01e62060;
-extern int g_INT_01e62064;
-extern int g_INT_01e620f0;
-extern int g_INT_01e650f8;
+extern int g_PathfindingNodesExpanded;
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
+extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+extern int g_PreviousLetterboxMode;
+extern int g_ScriptEventsEnabled;
 extern int g_INT_01e65904;
-extern int g_INT_01e65908;
-extern int g_INT_01e6590c;
+extern int g_ScriptLoopWarningShown;
+extern int g_ActorLookedUpByVariable;
 
 // int[12]
-extern int g_INT_ARRAY_01e6614c[12];
+extern int g_SentinelIndices[12];
 
 // int[18]
-extern int g_INT_ARRAY_01e62068[18];
+extern int g_ScatIndices[18];
 

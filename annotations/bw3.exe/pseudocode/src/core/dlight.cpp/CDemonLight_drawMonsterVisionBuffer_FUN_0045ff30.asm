@@ -29,7 +29,7 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
+;   void*[1200] g_ScreenBufferArray
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
@@ -102,7 +102,7 @@ section .text
     ADD EAX,dword ptr [ESP + 0x4c]      ; 0045ffb3
     JMP 0x0045ff84                      ; 0045ffb7
         ;   XREF to: 0045ff84 (UNCONDITIONAL_JUMP)  ; LAB_0045ff84
-    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045ffb9 | g_ARRAY_PTR_01c5faec
+    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045ffb9 | g_ScreenBufferArray
         ;   Label: LAB_0045ffb9
     MOV EAX,dword ptr [ESP + 0x44]      ; 0045ffc0
     MOV ECX,dword ptr [ESP + 0x18]      ; 0045ffc4
@@ -247,7 +247,7 @@ section .text
         ;   XREF to: 00460103 (UNCONDITIONAL_JUMP)  ; LAB_00460103
     MOV EDX,dword ptr [ESP + 0x44]      ; 00460136
         ;   Label: LAB_00460136
-    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0046013a | g_ARRAY_PTR_01c5faec
+    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0046013a | g_ScreenBufferArray
     MOV EAX,dword ptr [ESP + 0x14]      ; 00460141
     MOV EDI,dword ptr [EDX + 0x1cc0]    ; 00460145
     IMUL EAX,EDI                        ; 0046014b

@@ -62,10 +62,10 @@
 ;   TerminatedCString s_axe1_kfm_005e65af
 ;   TerminatedCString s_ax_kfm_005e65b8
 ;   float g_FLOAT_005e65c0 = 0.5
-;   double g_DOUBLE_005e65c8 = 2
+;   double g_InventoryDoubleScale = 2
 ;   float g_FLOAT_005e65d0 = -0.5
-;   float g_FLOAT_005e65d4 = 1.570796
-;   float g_FLOAT_005e65d8 = -1.570796
+;   float g_InventoryPiOver2 = 1.570796
+;   float g_InventoryNegativePiOver2 = -1.570796
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
@@ -143,20 +143,20 @@ section .text
     MOV dword ptr [EAX + 0x15ae8c],0xffffb7d5 ; 004f9172 | g_CDemonSetInstance.light_direction.y
     MOV dword ptr [EAX + 0x15ae90],0x482b ; 004f917c | g_CDemonSetInstance.light_direction.z
     MOV dword ptr [EAX + 0x15ae94],0x7d00 ; 004f9186 | g_CDemonSetInstance.ambient_base_quick
-    MOV EAX,[0x01c43530]                ; 004f9190 | g_INT_01c43530
+    MOV EAX,[0x01c43530]                ; 004f9190 | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 004f9195
     SAR EDX,0x1f                        ; 004f9197
     SHL EDX,0x2                         ; 004f919a
     SBB EAX,EDX                         ; 004f919d
     SAR EAX,0x2                         ; 004f919f
-    MOV EDI,dword ptr [0x01d1bc60]      ; 004f91a2 | g_INT_01d1bc60
+    MOV EDI,dword ptr [0x01d1bc60]      ; 004f91a2 | g_InventoryLightAngle
     ADD EDI,EAX                         ; 004f91a8
     PUSH EDI                            ; 004f91aa
-    MOV dword ptr [0x01d1bc60],EDI      ; 004f91ab | g_INT_01d1bc60
+    MOV dword ptr [0x01d1bc60],EDI      ; 004f91ab | g_InventoryLightAngle
     CALL engine_matrix.c_interpolatedSin_FUN_00507350 ; 004f91b1
         ;   XREF to: 00507350 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_00507350(int angle)
     ADD ESP,0x4                         ; 004f91b6
-    MOV EDX,dword ptr [0x01d1bc60]      ; 004f91b9 | g_INT_01d1bc60
+    MOV EDX,dword ptr [0x01d1bc60]      ; 004f91b9 | g_InventoryLightAngle
     PUSH EDX                            ; 004f91bf
     MOV EDI,EAX                         ; 004f91c0
     CALL engine_matrix.c_interpolatedCos_FUN_00507390 ; 004f91c2
@@ -260,14 +260,14 @@ section .text
     FLD float ptr [EBP + 0x62]          ; 004f92d3
         ;   Label: LAB_004f92d3
     FLD ST0                             ; 004f92d6
-    FMUL double ptr [0x005e65c8]        ; 004f92d8 | g_DOUBLE_005e65c8
+    FMUL double ptr [0x005e65c8]        ; 004f92d8 | g_InventoryDoubleScale
     FSTP ST1                            ; 004f92de
     FSTP float ptr [EBP + 0x62]         ; 004f92e0
     FLD float ptr [EBP + 0x62]          ; 004f92e3
         ;   Label: LAB_004f92e3
     FCHS                                ; 004f92e6
     XOR EAX,EAX                         ; 004f92e8
-    FMUL double ptr [0x005e65c8]        ; 004f92ea | g_DOUBLE_005e65c8
+    FMUL double ptr [0x005e65c8]        ; 004f92ea | g_InventoryDoubleScale
     MOV dword ptr [EBP + -0xe],EAX      ; 004f92f0
     MOV dword ptr [EBP + -0xa],EAX      ; 004f92f3
     FSTP float ptr [EBP + 0x5a]         ; 004f92f6
@@ -286,13 +286,13 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 004f931e
         ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004f9323
-    PUSH 0x2c8af28                      ; 004f9326 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004f9326 | g_ZeroVector
     MOV EDI,dword ptr [0x00612560]      ; 004f932b | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 004f9331 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530 ; 004f9332
         ;   XREF to: 00483530 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004f9337
-    PUSH 0x2c8af28                      ; 004f933a | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004f933a | g_ZeroVector
     MOV EAX,[0x00612560]                ; 004f933f | g_CDemonRenderer_PTR_00612560
     PUSH EAX                            ; 004f9344 | g_CDemonRenderer_01bc120c
     LEA ESI,[EBP + 0x2e]                ; 004f9345
@@ -326,7 +326,7 @@ section .text
     ADD ESP,0x8                         ; 004f938d
     XOR EDX,EDX                         ; 004f9390
     PUSH 0x5e659b                       ; 004f9392 | = "CBoxActor"
-    MOV dword ptr [0x01c51cac],EDX      ; 004f9397 | g_INT_01c51cac
+    MOV dword ptr [0x01c51cac],EDX      ; 004f9397 | g_PerspectiveReciprocal
     PUSH EBX                            ; 004f939d
     LEA EDI,[EBP + -0x1a]               ; 004f939e
     LEA ESI,[EBP + -0x2]                ; 004f93a1
@@ -370,7 +370,7 @@ section .text
     JZ 0x004f940e                       ; 004f9400
         ;   XREF to: 004f940e (CONDITIONAL_JUMP)  ; LAB_004f940e
     FLD float ptr [EBP + 0x3a]          ; 004f9402
-    FADD float ptr [0x005e65d4]         ; 004f9405 | g_FLOAT_005e65d4
+    FADD float ptr [0x005e65d4]         ; 004f9405 | g_InventoryPiOver2
     FSTP float ptr [EBP + 0x3a]         ; 004f940b
     MOV EAX,[0x01d1e2dc]                ; 004f940e | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_004f940e
@@ -393,7 +393,7 @@ section .text
     JNZ 0x004f9454                      ; 004f9438
         ;   XREF to: 004f9454 (CONDITIONAL_JUMP)  ; LAB_004f9454
     FLD float ptr [EBP + 0x42]          ; 004f943a
-    FLD float ptr [0x005e65d8]          ; 004f943d | g_FLOAT_005e65d8
+    FLD float ptr [0x005e65d8]          ; 004f943d | g_InventoryNegativePiOver2
     FLD float ptr [EBP + 0x3a]          ; 004f9443
     FADD ST0,ST1                        ; 004f9446
     FXCH ST2                            ; 004f9448
@@ -412,7 +412,7 @@ section .text
     JNZ 0x004f9486                      ; 004f946a
         ;   XREF to: 004f9486 (CONDITIONAL_JUMP)  ; LAB_004f9486
     FLD float ptr [EBP + 0x42]          ; 004f946c
-    FLD float ptr [0x005e65d8]          ; 004f946f | g_FLOAT_005e65d8
+    FLD float ptr [0x005e65d8]          ; 004f946f | g_InventoryNegativePiOver2
     FLD float ptr [EBP + 0x3a]          ; 004f9475
     FADD ST0,ST1                        ; 004f9478
     FXCH ST2                            ; 004f947a
@@ -431,7 +431,7 @@ section .text
     ADD ESP,0xc                         ; 004f9498
     LEA EAX,[EBP + -0x1a]               ; 004f949b
     PUSH EAX                            ; 004f949e
-    PUSH 0x2c8af28                      ; 004f949f | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004f949f | g_ZeroVector
     MOV ECX,dword ptr [0x00612560]      ; 004f94a4 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 004f94aa | g_CDemonRenderer_01bc120c
     MOV EBX,dword ptr [EBP + 0x92]      ; 004f94ab

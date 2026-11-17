@@ -11,14 +11,14 @@
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004ce980 at 004ce990
 ;
 ; Referenced Globals:
-;   int g_INT_01d276b4
-;   int g_INT_01d276b8
+;   int g_BloodSplatIndex
+;   int g_BloodSplatCount
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV ECX,dword ptr [0x01d276b4]      ; 004ce900 | g_INT_01d276b4
+    MOV ECX,dword ptr [0x01d276b4]      ; 004ce900 | g_BloodSplatIndex
         ;   Label: core_gore.cpp_CGore_allocateBloodSplat_FUN_004ce900
     LEA EAX,[ECX*0x8 + 0x0]             ; 004ce906
     ADD EAX,ECX                         ; 004ce90d
@@ -29,18 +29,18 @@ section .text
     JL 0x004ce922                       ; 004ce91e
         ;   XREF to: 004ce922 (CONDITIONAL_JUMP)  ; LAB_004ce922
     XOR ECX,ECX                         ; 004ce920
-    MOV EDX,dword ptr [0x01d276b8]      ; 004ce922 | g_INT_01d276b8
+    MOV EDX,dword ptr [0x01d276b8]      ; 004ce922 | g_BloodSplatCount
         ;   Label: LAB_004ce922
     CMP EDX,0x7d0                       ; 004ce928
     JL 0x004ce937                       ; 004ce92e
         ;   XREF to: 004ce937 (CONDITIONAL_JUMP)  ; LAB_004ce937
-    MOV dword ptr [0x01d276b4],ECX      ; 004ce930 | g_INT_01d276b4
+    MOV dword ptr [0x01d276b4],ECX      ; 004ce930 | g_BloodSplatIndex
     RET                                 ; 004ce936
     PUSH EBX                            ; 004ce937
         ;   Label: LAB_004ce937
     LEA EBX,[EDX + 0x1]                 ; 004ce938
-    MOV dword ptr [0x01d276b8],EBX      ; 004ce93b | g_INT_01d276b8
+    MOV dword ptr [0x01d276b8],EBX      ; 004ce93b | g_BloodSplatCount
     POP EBX                             ; 004ce941
-    MOV dword ptr [0x01d276b4],ECX      ; 004ce942 | g_INT_01d276b4
+    MOV dword ptr [0x01d276b4],ECX      ; 004ce942 | g_BloodSplatIndex
     RET                                 ; 004ce948
 

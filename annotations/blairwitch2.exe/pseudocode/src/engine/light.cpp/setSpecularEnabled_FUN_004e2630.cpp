@@ -9,6 +9,6 @@
 void __cdecl engine_light_cpp_setSpecularEnabled_FUN_004e2630(int enabled)
 
 {
-  g_INT_00617e44 = enabled;
+  g_SpecularEnabled = enabled;
   return;
 }

@@ -8,7 +8,7 @@
 ; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   int g_INT_01bdcfd4
+;   int g_RenderTriangleEdgeCount
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 00466d10
         ;   Label: core_dpart.cpp_findEdgeByYStart_FUN_00466d10
     PUSH ESI                            ; 00466d11
-    MOV EBX,dword ptr [0x01bdcfd4]      ; 00466d12 | g_INT_01bdcfd4
+    MOV EBX,dword ptr [0x01bdcfd4]      ; 00466d12 | g_RenderTriangleEdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 00466d18
     MOV ESI,dword ptr [ESP + 0x10]      ; 00466d1c
     MOV EAX,0x1bdcfd8                   ; 00466d20
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00466d2b (CONDITIONAL_JUMP)  ; LAB_00466d2b
     XOR EAX,EAX                         ; 00466d3b
         ;   Label: LAB_00466d3b
-    MOV dword ptr [0x01bdcfd4],EBX      ; 00466d3d | g_INT_01bdcfd4
+    MOV dword ptr [0x01bdcfd4],EBX      ; 00466d3d | g_RenderTriangleEdgeCount
         ;   Label: LAB_00466d3d
     POP ESI                             ; 00466d43
     POP EBX                             ; 00466d44

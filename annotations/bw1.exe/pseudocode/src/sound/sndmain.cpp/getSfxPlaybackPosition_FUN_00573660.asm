@@ -18,7 +18,7 @@
 ;   core_turret.cpp_CTurret_process_FUN_005a23b0 at 005a285f
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430
@@ -51,7 +51,7 @@ section .text
     CMP dword ptr [EAX + 0x60],0x0      ; 00573680
     JZ 0x0057369c                       ; 00573684
         ;   XREF to: 0057369c (CONDITIONAL_JUMP)  ; LAB_0057369c
-    CMP dword ptr [0x02c80650],0x0      ; 00573686 | g_CSoundDevice_PTR_02c80650
+    CMP dword ptr [0x02c80650],0x0      ; 00573686 | g_CSoundDevicePtr
     JZ 0x0057369c                       ; 0057368d
         ;   XREF to: 0057369c (CONDITIONAL_JUMP)  ; LAB_0057369c
     PUSH EAX                            ; 0057368f

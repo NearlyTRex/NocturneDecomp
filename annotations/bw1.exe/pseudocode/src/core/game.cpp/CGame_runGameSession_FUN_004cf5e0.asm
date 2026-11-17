@@ -86,7 +86,7 @@ section .text
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004cf62c
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004cf631
-    MOV EDX,dword ptr [0x02c9be78]      ; 004cf634 | g_INT_02c9be78
+    MOV EDX,dword ptr [0x02c9be78]      ; 004cf634 | g_TotalPhysicalMemory
     PUSH EDX                            ; 004cf63a
     PUSH 0x5e17ee                       ; 004cf63b | = "System RAM: %d\n"
     MOV ECX,dword ptr [0x00611100]      ; 004cf640 | g_CConsolePtr
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004cf651
     MOV dword ptr [EBP + -0x8],EBX      ; 004cf654
-    MOV EBX,dword ptr [0x02c9be7c]      ; 004cf657 | g_INT_02c9be7c
+    MOV EBX,dword ptr [0x02c9be7c]      ; 004cf657 | g_AvailableSwapSpace
     PUSH EBX                            ; 004cf65d
     PUSH 0x5e17fe                       ; 004cf65e | = "Swap file: %d\n"
     MOV ESI,dword ptr [0x00611100]      ; 004cf663 | g_CConsolePtr
@@ -225,7 +225,7 @@ section .text
     TEST EBX,EBX                        ; 004cf88d
     JZ 0x004cfd36                       ; 004cf88f
         ;   XREF to: 004cfd36 (CONDITIONAL_JUMP)  ; LAB_004cfd36
-    PUSH 0x1cd06c4                      ; 004cf895 | g_INT_ARRAY_01cd06c4
+    PUSH 0x1cd06c4                      ; 004cf895 | g_MasterLightStateSaveBuffer
     MOV EAX,[0x00622c18]                ; 004cf89a | g_CDemonSetPtr
     XOR EDI,EDI                         ; 004cf89f
     PUSH EAX                            ; 004cf8a1 | g_CDemonSetInstance
@@ -645,7 +645,7 @@ section .text
     POP ESI                             ; 004cfd33
     POP EBX                             ; 004cfd34
     RET                                 ; 004cfd35
-    MOV ESI,dword ptr [0x0061c010]      ; 004cfd36 | g_CFireEffect_PTR_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 004cfd36 | g_CFireEffectPtr
         ;   Label: LAB_004cfd36
     PUSH ESI                            ; 004cfd3c
     CALL core_fire.cpp_CFireEffect_init_FUN_004b4b30 ; 004cfd3d
@@ -944,7 +944,7 @@ section .text
     CMP ESI,0xf0                        ; 004d0098
     JLE 0x004d023b                      ; 004d009e
         ;   XREF to: 004d023b (CONDITIONAL_JUMP)  ; LAB_004d023b
-    MOV EAX,[0x0152d244]                ; 004d00a4 | g_CBitFont_PTR_0152d244
+    MOV EAX,[0x0152d244]                ; 004d00a4 | g_ThemeFont
     MOV [0x01c3eb50],EAX                ; 004d00a9 | g_CBitFont_PTR_01c3eb50
         ;   Label: LAB_004d00a9
     CMP EBX,0x2                         ; 004d00ae
@@ -1094,7 +1094,7 @@ section .text
     MOV dword ptr [0x01cd01f8],EDI      ; 004d0230 | g_INT_01cd01f8
     JMP 0x004cfde8                      ; 004d0236
         ;   XREF to: 004cfde8 (UNCONDITIONAL_JUMP)  ; LAB_004cfde8
-    MOV EAX,[0x0152d248]                ; 004d023b | g_CBitFont_PTR_0152d248
+    MOV EAX,[0x0152d248]                ; 004d023b | g_SmallEditorFont
         ;   Label: LAB_004d023b
     JMP 0x004d00a9                      ; 004d0240
         ;   XREF to: 004d00a9 (UNCONDITIONAL_JUMP)  ; LAB_004d00a9
@@ -1248,7 +1248,7 @@ section .text
         ;   XREF to: 004cf9e0 (CONDITIONAL_JUMP)  ; LAB_004cf9e0
     PUSH EDI                            ; 004d03c1
     PUSH 0x5e1959                       ; 004d03c2 | = "NewSet"
-    MOV EBX,dword ptr [0x0061b4d0]      ; 004d03c7 | g_CEventList_PTR_0061b4d0
+    MOV EBX,dword ptr [0x0061b4d0]      ; 004d03c7 | g_CEventListPtr
     PUSH EBX                            ; 004d03cd
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870 ; 004d03ce
         ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870(CEventList * this_ptr, char * name, int add_flag)

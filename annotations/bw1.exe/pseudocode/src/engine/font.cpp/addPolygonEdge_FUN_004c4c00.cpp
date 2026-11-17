@@ -17,7 +17,7 @@ void __cdecl engine_font_cpp_addPolygonEdge_FUN_004c4c00(SRenderVertex *vertex1,
   uint uVar6;
   SRenderVertex *pSVar7;
   
-  iVar2 = g_INT_01cc8ce8;
+  iVar2 = g_EdgeCount;
   iVar3 = (vertex2->projected_vertex).screen_y >> 0x10;
   iVar5 = (vertex1->projected_vertex).screen_y >> 0x10;
   if (iVar5 != iVar3) {
@@ -29,18 +29,18 @@ void __cdecl engine_font_cpp_addPolygonEdge_FUN_004c4c00(SRenderVertex *vertex1,
       pSVar7 = vertex2;
       vertex2 = vertex1;
     }
-    g_SHardwareEdge_ARRAY_01cc8cec[g_INT_01cc8ce8].y_min = iVar5;
-    iVar3 = g_INT_01cc906c;
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].y_max = iVar4;
+    g_HardwareEdgeTable[g_EdgeCount].y_min = iVar5;
+    iVar3 = g_EdgeListMinY;
+    g_HardwareEdgeTable[iVar2].y_max = iVar4;
     if (iVar5 < iVar3) {
-      g_INT_01cc906c = iVar5;
+      g_EdgeListMinY = iVar5;
     }
-    if (g_INT_01cc9070 < iVar4) {
-      g_INT_01cc9070 = iVar4;
+    if (g_EdgeListMaxY < iVar4) {
+      g_EdgeListMaxY = iVar4;
     }
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].x_current = (pSVar7->projected_vertex).screen_x;
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].u_current = pSVar7->u;
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].v_current = pSVar7->v;
+    g_HardwareEdgeTable[iVar2].x_current = (pSVar7->projected_vertex).screen_x;
+    g_HardwareEdgeTable[iVar2].u_current = pSVar7->u;
+    g_HardwareEdgeTable[iVar2].v_current = pSVar7->v;
     uVar6 = (vertex2->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
     if (uVar6 < 0x10000) {
       iVar5 = 0;
@@ -50,29 +50,29 @@ void __cdecl engine_font_cpp_addPolygonEdge_FUN_004c4c00(SRenderVertex *vertex1,
     }
     lVar1 = (longlong)iVar5 *
             (longlong)((vertex2->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].x_gradient =
+    g_HardwareEdgeTable[iVar2].x_gradient =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar5 * (longlong)(vertex2->u - pSVar7->u);
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].u_gradient =
+    g_HardwareEdgeTable[iVar2].u_gradient =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar5 * (longlong)(vertex2->v - pSVar7->v);
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].v_gradient =
+    g_HardwareEdgeTable[iVar2].v_gradient =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     uVar6 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);
-    lVar1 = (longlong)(int)uVar6 * (longlong)g_SHardwareEdge_ARRAY_01cc8cec[iVar2].x_gradient;
-    iVar5 = g_SHardwareEdge_ARRAY_01cc8cec[iVar2].u_gradient;
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].x_current =
-         g_SHardwareEdge_ARRAY_01cc8cec[iVar2].x_current +
+    lVar1 = (longlong)(int)uVar6 * (longlong)g_HardwareEdgeTable[iVar2].x_gradient;
+    iVar5 = g_HardwareEdgeTable[iVar2].u_gradient;
+    g_HardwareEdgeTable[iVar2].x_current =
+         g_HardwareEdgeTable[iVar2].x_current +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)(int)uVar6 * (longlong)iVar5;
-    iVar5 = g_SHardwareEdge_ARRAY_01cc8cec[iVar2].v_gradient;
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].u_current =
-         g_SHardwareEdge_ARRAY_01cc8cec[iVar2].u_current +
+    iVar5 = g_HardwareEdgeTable[iVar2].v_gradient;
+    g_HardwareEdgeTable[iVar2].u_current =
+         g_HardwareEdgeTable[iVar2].u_current +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)(int)uVar6 * (longlong)iVar5;
-    g_INT_01cc8ce8 = g_INT_01cc8ce8 + 1;
-    g_SHardwareEdge_ARRAY_01cc8cec[iVar2].v_current =
-         g_SHardwareEdge_ARRAY_01cc8cec[iVar2].v_current +
+    g_EdgeCount = g_EdgeCount + 1;
+    g_HardwareEdgeTable[iVar2].v_current =
+         g_HardwareEdgeTable[iVar2].v_current +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;

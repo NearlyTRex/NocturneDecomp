@@ -7,8 +7,8 @@
 ; HWND             Stack[0x4]:4   parent_window
 ;
 ; Referenced Globals:
-;   int g_INT_02c9d298
-;   int g_INT_02c9d2a0
+;   int g_MovieWindowHandle
+;   int g_MoviePlaying
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBP                            ; 005b47d0
         ;   Label: wincore_winrun.cpp_positionMovieWindow_FUN_005b47d0
     SUB ESP,0xa0                        ; 005b47d1
-    CMP dword ptr [0x02c9d2a0],0x0      ; 005b47d7 | g_INT_02c9d2a0
+    CMP dword ptr [0x02c9d2a0],0x0      ; 005b47d7 | g_MoviePlaying
     JNZ 0x005b47e8                      ; 005b47de
         ;   XREF to: 005b47e8 (CONDITIONAL_JUMP)  ; LAB_005b47e8
     ADD ESP,0xa0                        ; 005b47e0
@@ -164,7 +164,7 @@ section .text
     SUB ECX,EAX                         ; 005b4941
     PUSH ECX                            ; 005b4943
     PUSH EBX                            ; 005b4944
-    MOV EDI,dword ptr [0x02c9d298]      ; 005b4945 | g_INT_02c9d298
+    MOV EDI,dword ptr [0x02c9d298]      ; 005b4945 | g_MovieWindowHandle
     PUSH EDI                            ; 005b494b
     CALL dword ptr CS:[0x5d04e0]        ; 005b494c
     POP EBX                             ; 005b4953

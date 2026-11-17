@@ -37,8 +37,8 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b7050(CGame *this_ptr)
         g_INT_01d046a4 = 0x7d9;
         core_main_c_displayErrorAndQuit_FUN_004e4500("CGame::playerControls - unknown control type");
       }
-      pcVar2 = g_CHAR_ARRAY_01c37790;
-      pcVar3 = g_CHAR_ARRAY_01cb7528;
+      pcVar2 = g_KeyboardState;
+      pcVar3 = g_PrevKeyboardState;
       for (iVar1 = 0x96; iVar1 != 0; iVar1 = iVar1 + -1) {
         *(uint *)pcVar3 = *(uint *)pcVar2;
         pcVar2 = pcVar2 + ((uint)bVar4 * -2 + 1) * 4;
@@ -49,8 +49,8 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b7050(CGame *this_ptr)
         pcVar2 = pcVar2 + (uint)bVar4 * -2 + 1;
         pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
       }
-      g_INT_01cb7780 = g_BIT_INTEGER32_01c2a384.dword;
-      g_INT_01cb7784 = g_CDemonSetPtr->selected_camera_index;
+      g_InputResetFlag = g_MouseButtonFlags.dword;
+      g_StoredCameraValue = g_CDemonSetPtr->selected_camera_index;
       return;
     }
     return;

@@ -63,10 +63,10 @@
 ;   double g_DOUBLE_005d9184 = 0.00390625
 ;   double g_DOUBLE_005d918c = 65536
 ;   float g_FLOAT_005febd0 = 256
-;   undefined4 g_SLightGlowTable_006122a8.headlight.base.type
+;   undefined4 g_LightGlow.headlight.base.type
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01c51cac
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
@@ -232,7 +232,7 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 00463a06
     FSTP float ptr [ESP + 0x5c]         ; 00463a0a
     FSTP float ptr [ESP + 0x60]         ; 00463a0e
-    MOV EAX,[0x01c51cac]                ; 00463a12 | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 00463a12 | g_PerspectiveReciprocal
         ;   Label: LAB_00463a12
     MOV EDX,EAX                         ; 00463a17
     SAR EDX,0x1f                        ; 00463a19
@@ -414,7 +414,7 @@ section .text
     MOV dword ptr [EBX + 0xb0],0xffff   ; 00463d01
     MOV EDX,dword ptr [EAX]             ; 00463d0b | g_CDemonRenderer_01bc120c
     MOV dword ptr [EDX + 0xb4],0xffff   ; 00463d0d
-    PUSH 0x6122c0                       ; 00463d17 | g_SLightGlowTable_006122a8.headlight.base.type
+    PUSH 0x6122c0                       ; 00463d17 | g_LightGlow.headlight.base.type
     MOV EDX,dword ptr [EAX]             ; 00463d1c | g_CDemonRenderer_01bc120c
     PUSH EAX                            ; 00463d1e | g_CDemonRenderer_01bc120c
     MOV dword ptr [EDX + 0xb8],0xffff   ; 00463d1f

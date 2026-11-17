@@ -226,14 +226,13 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005766b0(CCryptVessel *thi
         pCVar5->state = 1;
         this_ptr->prey->timer = 0.0;
         core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (g_CEventList_PTR_005fba60,this_ptr->prey->destroyed_event);
+                  (g_CEventListPtr,this_ptr->prey->destroyed_event);
       }
       if (((this_ptr->prey != (CCryptVessel *)0x0) && (this_ptr->neutral != (CCryptVessel *)0x0)) &&
          ((this_ptr->end_loc->triggered != 0 &&
           ((this_ptr->prey->end_loc->triggered != 0 && (this_ptr->neutral->end_loc->triggered != 0))
           )))) {
-        core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (g_CEventList_PTR_005fba60,this_ptr->win_event);
+        core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,this_ptr->win_event);
         this_ptr->prey->puzzle_complete = 1;
         this_ptr->neutral->puzzle_complete = 1;
         this_ptr->puzzle_complete = 1;

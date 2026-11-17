@@ -22,7 +22,7 @@ void __cdecl engine_mini3d_cpp_setAlpha_FUN_004f3570(float alpha)
   fVar1 = alpha * 255.0f;
   dVar3 = round((double)(alpha * (float)255));
   dVar4 = round((double)fVar1);
-  g_INT_006141d8 = (int)ROUND(dVar4);
+  g_CurrentAlphaValue = (int)ROUND(dVar4);
   g_INT_01d0d2e4 = iVar2 & 0xffffffU | (int)ROUND(dVar3) << 0x18;
   return;
 }

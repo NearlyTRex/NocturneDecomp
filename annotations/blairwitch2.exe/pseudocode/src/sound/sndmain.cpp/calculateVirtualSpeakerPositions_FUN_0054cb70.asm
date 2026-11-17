@@ -21,18 +21,18 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005e7f2e = 0.5
-;   int g_INT_0061bc9c = 0x2
+;   int g_AudioChannelCount = 0x2
 ;   float g_FLOAT_0061bcb8 = 1
 ;   double g_DOUBLE_02648428
 ;   double g_DOUBLE_02648438
 ;   double g_DOUBLE_02648448
 ;   int g_INT_026484b8
-;   double[8] g_DOUBLE_ARRAY_02648f40
-;   undefined4 g_DOUBLE_ARRAY_02648f40[1]
-;   double[8] g_DOUBLE_ARRAY_02648f80
-;   undefined4 g_DOUBLE_ARRAY_02648f80[1]
-;   double[8] g_DOUBLE_ARRAY_02648fc0
-;   undefined4 g_DOUBLE_ARRAY_02648fc0[1]
+;   double[8] g_VirtualSpeakerXPositions
+;   undefined4 g_VirtualSpeakerXPositions[1]
+;   double[8] g_VirtualSpeakerYPositions
+;   undefined4 g_VirtualSpeakerYPositions[1]
+;   double[8] g_VirtualSpeakerZPositions
+;   undefined4 g_VirtualSpeakerZPositions[1]
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     MOV EBP,ESP                         ; 0054cb72
     SUB ESP,0x34                        ; 0054cb74
     AND ESP,0xfffffff8                  ; 0054cb77
-    MOV ECX,dword ptr [0x0061bc9c]      ; 0054cb7a | g_INT_0061bc9c
+    MOV ECX,dword ptr [0x0061bc9c]      ; 0054cb7a | g_AudioChannelCount
     MOV EAX,[0x026484b8]                ; 0054cb80 | g_INT_026484b8
     SHL EAX,0x3                         ; 0054cb85
     CMP ECX,0x2                         ; 0054cb88
@@ -70,22 +70,22 @@ section .text
     ADD EAX,0x8                         ; 0054cbdd
         ;   Label: LAB_0054cbdd
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054cbe0
-    MOV dword ptr [EAX + 0x2648f38],EBX ; 0054cbe4 | g_DOUBLE_ARRAY_02648f40 | g_DOUBLE_ARRAY_02648f40[1]
+    MOV dword ptr [EAX + 0x2648f38],EBX ; 0054cbe4 | g_VirtualSpeakerXPositions | g_VirtualSpeakerXPositions[1]
     MOV EBX,dword ptr [ESP + 0x14]      ; 0054cbea
     MOV dword ptr [EAX + 0x2648f3c],EBX ; 0054cbee
     MOV EBX,dword ptr [ESP + 0x8]       ; 0054cbf4
-    MOV dword ptr [EAX + 0x2648f78],EBX ; 0054cbf8 | g_DOUBLE_ARRAY_02648f80 | g_DOUBLE_ARRAY_02648f80[1]
+    MOV dword ptr [EAX + 0x2648f78],EBX ; 0054cbf8 | g_VirtualSpeakerYPositions | g_VirtualSpeakerYPositions[1]
     MOV EBX,dword ptr [ESP + 0xc]       ; 0054cbfe
     MOV dword ptr [EAX + 0x2648f7c],EBX ; 0054cc02
     MOV EBX,dword ptr [ESP]             ; 0054cc08
-    MOV dword ptr [EAX + 0x2648fb8],EBX ; 0054cc0b | g_DOUBLE_ARRAY_02648fc0 | g_DOUBLE_ARRAY_02648fc0[1]
+    MOV dword ptr [EAX + 0x2648fb8],EBX ; 0054cc0b | g_VirtualSpeakerZPositions | g_VirtualSpeakerZPositions[1]
     MOV EBX,dword ptr [ESP + 0x4]       ; 0054cc11
     MOV dword ptr [EAX + 0x2648fbc],EBX ; 0054cc15
     CMP EAX,EDX                         ; 0054cc1b
     JL 0x0054cbdd                       ; 0054cc1d
         ;   XREF to: 0054cbdd (CONDITIONAL_JUMP)  ; LAB_0054cbdd
     NOP                                 ; 0054cc1f
-    MOV dword ptr [0x0061bc9c],ECX      ; 0054cc20 | g_INT_0061bc9c
+    MOV dword ptr [0x0061bc9c],ECX      ; 0054cc20 | g_AudioChannelCount
         ;   Label: LAB_0054cc20
     MOV ESP,EBP                         ; 0054cc26
     POP EBP                             ; 0054cc28
@@ -125,17 +125,17 @@ section .text
     FXCH                                ; 0054ccaa
     FADD double ptr [ESP + 0x20]        ; 0054ccac
     FXCH ST3                            ; 0054ccb0
-    FSTP double ptr [0x02648f40]        ; 0054ccb2 | g_DOUBLE_ARRAY_02648f40
+    FSTP double ptr [0x02648f40]        ; 0054ccb2 | g_VirtualSpeakerXPositions
     FXCH ST4                            ; 0054ccb8
-    FSTP double ptr [0x02648f80]        ; 0054ccba | g_DOUBLE_ARRAY_02648f80
+    FSTP double ptr [0x02648f80]        ; 0054ccba | g_VirtualSpeakerYPositions
     FXCH ST2                            ; 0054ccc0
-    FSTP double ptr [0x02648fc0]        ; 0054ccc2 | g_DOUBLE_ARRAY_02648fc0
+    FSTP double ptr [0x02648fc0]        ; 0054ccc2 | g_VirtualSpeakerZPositions
     FXCH                                ; 0054ccc8
-    FSTP double ptr [0x02648f48]        ; 0054ccca | g_DOUBLE_ARRAY_02648f40[1]
+    FSTP double ptr [0x02648f48]        ; 0054ccca | g_VirtualSpeakerXPositions[1]
     FXCH                                ; 0054ccd0
-    FSTP double ptr [0x02648f88]        ; 0054ccd2 | g_DOUBLE_ARRAY_02648f80[1]
-    FSTP double ptr [0x02648fc8]        ; 0054ccd8 | g_DOUBLE_ARRAY_02648fc0[1]
-    MOV dword ptr [0x0061bc9c],ECX      ; 0054ccde | g_INT_0061bc9c
+    FSTP double ptr [0x02648f88]        ; 0054ccd2 | g_VirtualSpeakerYPositions[1]
+    FSTP double ptr [0x02648fc8]        ; 0054ccd8 | g_VirtualSpeakerZPositions[1]
+    MOV dword ptr [0x0061bc9c],ECX      ; 0054ccde | g_AudioChannelCount
     MOV ESP,EBP                         ; 0054cce4
     POP EBP                             ; 0054cce6
     POP EBX                             ; 0054cce7

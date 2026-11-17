@@ -11,14 +11,14 @@ CFirefly CFirefly_ARRAY_01cba2b8[64] = {};
 CGlassParticle CGlassParticle_ARRAY_01cbc0f0[1000] = {};
 
 // CMuzzleFlash[20]
-CMuzzleFlash g_CMuzzleFlash_ARRAY_01cbb9bc[20] = {};
+CMuzzleFlash g_MuzzleFlashPool[20] = {};
 
 // CSpark[256]
 CSpark g_SparkPool[256] = {};
 
 // int
 int g_INT_01cb4eb0 = {};
-int g_INT_01cba2b4 = {};
-int g_INT_01cbb9b8 = {};
+int g_TossAllocIndex = {};
+int g_MuzzleFlashAllocIndex = {};
 int g_INT_01cbc0ec = {};
 

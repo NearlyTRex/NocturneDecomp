@@ -44,11 +44,11 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   int g_INT_005c11f0 = 0x2000
-;   SMRGLTextureBasic[16] g_SMRGLTextureBasic_ARRAY_005c11f4
-;   SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_005c1374
+;   int g_WaterFrameDuration = 0x2000
+;   SMRGLTextureBasic[16] g_WaterTextures
+;   SMRGLPrimitiveQuad g_WaterRenderQuad
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   int g_INT_01bd1d80
+;   int g_GlobalDeltaTimeInt
 ;   int g_UseExternalRenderer
 ;   int g_INT_01c038f4
 ;   ... and 12 more
@@ -81,42 +81,42 @@ section .text
     TEST dword ptr [ESI + 0x4],0x7fffffff ; 00550cbf
     JZ 0x00551121                       ; 00550cc6
         ;   XREF to: 00551121 (CONDITIONAL_JUMP)  ; LAB_00551121
-    MOV ECX,dword ptr [0x02dd122c]      ; 00550ccc | g_INT_02dd122c
-    ADD ECX,dword ptr [0x01bd1d80]      ; 00550cd2 | g_INT_01bd1d80
-    MOV EBX,dword ptr [0x005c11f0]      ; 00550cd8 | g_INT_005c11f0
-    MOV dword ptr [0x02dd122c],ECX      ; 00550cde | g_INT_02dd122c
+    MOV ECX,dword ptr [0x02dd122c]      ; 00550ccc | g_WaterAnimationTimer
+    ADD ECX,dword ptr [0x01bd1d80]      ; 00550cd2 | g_GlobalDeltaTimeInt
+    MOV EBX,dword ptr [0x005c11f0]      ; 00550cd8 | g_WaterFrameDuration
+    MOV dword ptr [0x02dd122c],ECX      ; 00550cde | g_WaterAnimationTimer
     CMP ECX,EBX                         ; 00550ce4
     JLE 0x00550d0a                      ; 00550ce6
         ;   XREF to: 00550d0a (CONDITIONAL_JUMP)  ; LAB_00550d0a
     MOV EDI,ECX                         ; 00550ce8
-    MOV EAX,[0x02dd1230]                ; 00550cea | g_INT_02dd1230
+    MOV EAX,[0x02dd1230]                ; 00550cea | g_WaterCurrentFrame
     SUB EDI,EBX                         ; 00550cef
     INC EAX                             ; 00550cf1
-    MOV dword ptr [0x02dd122c],EDI      ; 00550cf2 | g_INT_02dd122c
-    MOV [0x02dd1230],EAX                ; 00550cf8 | g_INT_02dd1230
+    MOV dword ptr [0x02dd122c],EDI      ; 00550cf2 | g_WaterAnimationTimer
+    MOV [0x02dd1230],EAX                ; 00550cf8 | g_WaterCurrentFrame
     CMP EAX,0x10                        ; 00550cfd
     JL 0x00550d0a                       ; 00550d00
         ;   XREF to: 00550d0a (CONDITIONAL_JUMP)  ; LAB_00550d0a
     XOR ECX,ECX                         ; 00550d02
-    MOV dword ptr [0x02dd1230],ECX      ; 00550d04 | g_INT_02dd1230
+    MOV dword ptr [0x02dd1230],ECX      ; 00550d04 | g_WaterCurrentFrame
     MOV EDX,0xffff                      ; 00550d0a
         ;   Label: LAB_00550d0a
-    MOV EBX,dword ptr [0x005c11f0]      ; 00550d0f | g_INT_005c11f0
-    MOV EAX,[0x02dd122c]                ; 00550d15 | g_INT_02dd122c
+    MOV EBX,dword ptr [0x005c11f0]      ; 00550d0f | g_WaterFrameDuration
+    MOV EAX,[0x02dd122c]                ; 00550d15 | g_WaterAnimationTimer
     IMUL EDX                            ; 00550d1a
     IDIV EBX                            ; 00550d1c
-    MOV [0x02dd925c],EAX                ; 00550d1e | g_INT_02dd925c
+    MOV [0x02dd925c],EAX                ; 00550d1e | g_WaterAnimationBlend
     CMP EAX,0xffff                      ; 00550d23
     JLE 0x00551128                      ; 00550d28
         ;   XREF to: 00551128 (CONDITIONAL_JUMP)  ; LAB_00551128
-    MOV dword ptr [0x02dd925c],0xffff   ; 00550d2e | g_INT_02dd925c
-    MOV EDX,dword ptr [0x02dd1230]      ; 00550d38 | g_INT_02dd1230
+    MOV dword ptr [0x02dd925c],0xffff   ; 00550d2e | g_WaterAnimationBlend
+    MOV EDX,dword ptr [0x02dd1230]      ; 00550d38 | g_WaterCurrentFrame
         ;   Label: LAB_00550d38
     LEA EAX,[EDX*0x4 + 0x0]             ; 00550d3e
     SUB EAX,EDX                         ; 00550d45
     SHL EAX,0x3                         ; 00550d47
-    ADD EAX,0x5c11f4                    ; 00550d4a | g_SMRGLTextureBasic_ARRAY_005c11f4
-    PUSH EAX                            ; 00550d4f | g_SMRGLTextureBasic_ARRAY_005c11f4
+    ADD EAX,0x5c11f4                    ; 00550d4a | g_WaterTextures
+    PUSH EAX                            ; 00550d4f | g_WaterTextures
     MOV EAX,[0x005ae704]                ; 00550d50 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 00550d55 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00550d56
@@ -126,26 +126,26 @@ section .text
     FMUL double ptr [0x0059759f]        ; 00550d66 | DOUBLE_0059759f
     FMUL double ptr [0x005975a7]        ; 00550d6c | DOUBLE_005975a7
     FMUL double ptr [0x005975af]        ; 00550d72 | DOUBLE_005975af
-    MOV EBX,dword ptr [0x02dd1234]      ; 00550d78 | g_INT_02dd1234
+    MOV EBX,dword ptr [0x02dd1234]      ; 00550d78 | g_VisibleWaterTileCount
     XOR EDX,EDX                         ; 00550d7e
     ADD ESP,0x8                         ; 00550d80
     MOV dword ptr [0x01c038f4],EDX      ; 00550d83 | g_INT_01c038f4
-    FLD float ptr [0x02dd9260]          ; 00550d89 | g_FLOAT_02dd9260
+    FLD float ptr [0x02dd9260]          ; 00550d89 | g_WaterAnimationPhase
     FXCH                                ; 00550d8f
     FADD ST0,ST1                        ; 00550d91
     MOV dword ptr [ESP + 0x54],EDX      ; 00550d93
     FSTP ST1                            ; 00550d97
-    FSTP float ptr [0x02dd9260]         ; 00550d99 | g_FLOAT_02dd9260
+    FSTP float ptr [0x02dd9260]         ; 00550d99 | g_WaterAnimationPhase
     TEST EBX,EBX                        ; 00550d9f
     JLE 0x00551121                      ; 00550da1
         ;   XREF to: 00551121 (CONDITIONAL_JUMP)  ; LAB_00551121
     MOV dword ptr [ESP + 0x58],EDX      ; 00550da7
     MOV EDI,dword ptr [ESP + 0x58]      ; 00550dab
         ;   Label: LAB_00550dab
-    MOV EDI,dword ptr [EDI + 0x2dd1238] ; 00550daf | g_INT_ARRAY_02dd1238
+    MOV EDI,dword ptr [EDI + 0x2dd1238] ; 00550daf | g_VisibleWaterTilesX
     MOV EAX,dword ptr [ESP + 0x58]      ; 00550db5
     MOV dword ptr [ESP + 0x5c],EDI      ; 00550db9
-    MOV EAX,dword ptr [EAX + 0x2dd5238] ; 00550dbd | g_INT_ARRAY_02dd5238
+    MOV EAX,dword ptr [EAX + 0x2dd5238] ; 00550dbd | g_VisibleWaterTilesY
     FILD dword ptr [ESP + 0x5c]         ; 00550dc3
     FMUL float ptr [ESI + 0x8]          ; 00550dc7
     MOV dword ptr [ESP],EAX             ; 00550dca
@@ -197,7 +197,7 @@ section .text
     FILD dword ptr [ESP + 0x5c]         ; 00550e72
     FMULP ST2                           ; 00550e76
     FADDP                               ; 00550e78
-    FADD float ptr [0x02dd9260]         ; 00550e7a | g_FLOAT_02dd9260
+    FADD float ptr [0x02dd9260]         ; 00550e7a | g_WaterAnimationPhase
     FSIN                                ; 00550e80
     FMUL double ptr [0x005975b7]        ; 00550e82 | DOUBLE_005975b7
     FSTP float ptr [ESP + 0x8]          ; 00550e88
@@ -247,7 +247,7 @@ section .text
     FILD dword ptr [ESP + 0x5c]         ; 00550f12
     FMULP ST2                           ; 00550f16
     FADDP                               ; 00550f18
-    FADD float ptr [0x02dd9260]         ; 00550f1a | g_FLOAT_02dd9260
+    FADD float ptr [0x02dd9260]         ; 00550f1a | g_WaterAnimationPhase
     FSIN                                ; 00550f20
     FMUL double ptr [0x005975b7]        ; 00550f22 | DOUBLE_005975b7
     FSTP float ptr [ESP + 0x8]          ; 00550f28
@@ -299,7 +299,7 @@ section .text
     FILD dword ptr [ESP + 0x5c]         ; 00550fb7
     FMULP ST2                           ; 00550fbb
     FADDP                               ; 00550fbd
-    FADD float ptr [0x02dd9260]         ; 00550fbf | g_FLOAT_02dd9260
+    FADD float ptr [0x02dd9260]         ; 00550fbf | g_WaterAnimationPhase
     FSIN                                ; 00550fc5
     FMUL double ptr [0x005975b7]        ; 00550fc7 | DOUBLE_005975b7
     FSTP float ptr [ESP + 0x8]          ; 00550fcd
@@ -350,7 +350,7 @@ section .text
     FILD dword ptr [ESP + 0x5c]         ; 00551057
     FMULP ST2                           ; 0055105b
     FADDP                               ; 0055105d
-    FADD float ptr [0x02dd9260]         ; 0055105f | g_FLOAT_02dd9260
+    FADD float ptr [0x02dd9260]         ; 0055105f | g_WaterAnimationPhase
     FSIN                                ; 00551065
     FMUL double ptr [0x005975b7]        ; 00551067 | DOUBLE_005975b7
     FSTP float ptr [ESP + 0x8]          ; 0055106d
@@ -395,7 +395,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 005510e3
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 005510e8
-    PUSH 0x5c1374                       ; 005510eb | g_SMRGLPrimitiveQuad_005c1374
+    PUSH 0x5c1374                       ; 005510eb | g_WaterRenderQuad
     MOV ECX,dword ptr [0x005ae704]      ; 005510f0 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 005510f6 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370 ; 005510f7
@@ -404,7 +404,7 @@ section .text
         ;   Label: LAB_005510fc
     MOV EDI,dword ptr [ESP + 0x58]      ; 005510ff
     MOV EAX,dword ptr [ESP + 0x54]      ; 00551103
-    MOV EDX,dword ptr [0x02dd1234]      ; 00551107 | g_INT_02dd1234
+    MOV EDX,dword ptr [0x02dd1234]      ; 00551107 | g_VisibleWaterTileCount
     ADD EDI,0x4                         ; 0055110d
     INC EAX                             ; 00551110
     MOV dword ptr [ESP + 0x58],EDI      ; 00551111
@@ -424,7 +424,7 @@ section .text
     JGE 0x00550d38                      ; 0055112a
         ;   XREF to: 00550d38 (CONDITIONAL_JUMP)  ; LAB_00550d38
     XOR EBX,EBX                         ; 00551130
-    MOV dword ptr [0x02dd925c],EBX      ; 00551132 | g_INT_02dd925c
+    MOV dword ptr [0x02dd925c],EBX      ; 00551132 | g_WaterAnimationBlend
     JMP 0x00550d38                      ; 00551138
         ;   XREF to: 00550d38 (UNCONDITIONAL_JUMP)  ; LAB_00550d38
     CMP dword ptr [0x01c02594],0x0      ; 0055113d | g_UseExternalRenderer
@@ -434,7 +434,7 @@ section .text
     CMP dword ptr [EBP + 0x18],0x0      ; 00551146
     JZ 0x00551185                       ; 0055114a
         ;   XREF to: 00551185 (CONDITIONAL_JUMP)  ; LAB_00551185
-    PUSH 0x5c1374                       ; 0055114c | g_SMRGLPrimitiveQuad_005c1374
+    PUSH 0x5c1374                       ; 0055114c | g_WaterRenderQuad
     MOV EBX,dword ptr [0x005ae704]      ; 00551151 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 00551157 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790 ; 00551158
@@ -448,14 +448,14 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10 ; 00551168
         ;   XREF to: 00460f10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(CDemonRenderer * this_ptr, int color)
     ADD ESP,0x8                         ; 0055116d
-    PUSH 0x5c1374                       ; 00551170 | g_SMRGLPrimitiveQuad_005c1374
+    PUSH 0x5c1374                       ; 00551170 | g_WaterRenderQuad
     MOV EAX,[0x005ae704]                ; 00551175 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0055117a | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 0055117b
         ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x005510fc                      ; 00551180
         ;   XREF to: 005510fc (UNCONDITIONAL_JUMP)  ; LAB_005510fc
-    PUSH 0x5c1374                       ; 00551185 | g_SMRGLPrimitiveQuad_005c1374
+    PUSH 0x5c1374                       ; 00551185 | g_WaterRenderQuad
         ;   Label: LAB_00551185
     MOV ECX,dword ptr [0x005ae704]      ; 0055118a | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00551190 | g_CDemonRenderer_01b4d738

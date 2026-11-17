@@ -82,7 +82,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00464ac0(CDraculaBr
                       (g_CDemonRenderer_PTR_0060b280);
           }
         }
-        if (g_INT_01d1cdc8 != 0) {
+        if (g_RenderMotionDebug != 0) {
           iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
                             (g_CDemonRenderer_PTR_0060b280);
           if (iVar2 == 0) {

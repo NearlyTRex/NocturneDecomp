@@ -37,10 +37,10 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047c050(CInputString *thi
     local_14 = y_pos;
     local_20 = y2;
     if (g_INT_01c5baec == 0) {
-      engine_2d_c_fillRectColor_FUN_004031c0(local_1c,y_pos,local_18,y2,g_INT_01c5bb10);
+      engine_2d_c_fillRectColor_FUN_004031c0(local_1c,y_pos,local_18,y2,g_SelectionColor);
     }
     else {
-      iVar2 = (g_INT_01c5bb10 & 0xffU) * 3;
+      iVar2 = (g_SelectionColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f3520
                 ((uint)g_UCHAR_ARRAY_01c6af98[iVar2] << 0x10 |
                  (uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 1] << 8 |
@@ -62,14 +62,14 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047c050(CInputString *thi
     text = local_420;
   }
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-            (g_CBitFont_PTR_01c5b0e0,text->string_data,x_pos,y_pos,g_INT_01c5bb14,-1);
+            (g_CBitFont_PTR_01c5b0e0,text->string_data,x_pos,y_pos,g_TextColor,-1);
   uVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
   if ((uVar1 & 0x40000) != 0) {
     if (g_INT_01c5baec == 0) {
-      g_INT_01c6b5c0 = g_INT_01c5bb18;
+      g_INT_01c6b5c0 = g_CursorColor;
     }
     else {
-      iVar2 = (g_INT_01c5bb18 & 0xffU) * 3;
+      iVar2 = (g_CursorColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f3520
                 ((uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 2] |
                  (uint)g_UCHAR_ARRAY_01c6af98[iVar2] << 0x10 |

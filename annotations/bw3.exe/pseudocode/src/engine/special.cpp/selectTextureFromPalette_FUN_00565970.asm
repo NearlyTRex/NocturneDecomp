@@ -9,10 +9,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba28 = 0x100
-;   uchar* g_UCHAR_PTR_01c6ced0
-;   uchar* g_UCHAR_PTR_01c6ced4
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf600c
+;   void* g_APIDLL_selectTexture
 ;
 ; *****************************************************************************
 
@@ -30,17 +30,17 @@ section .text
         ;   Label: LAB_0056597e
     PUSH ESI                            ; 0056597f
     PUSH EBX                            ; 00565980
-    MOV ECX,dword ptr [0x01c6ced4]      ; 00565981 | g_UCHAR_PTR_01c6ced4
+    MOV ECX,dword ptr [0x01c6ced4]      ; 00565981 | g_CurrentTextureOpacityData
     PUSH ECX                            ; 00565987
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00565988
     PUSH EBX                            ; 0056598c
-    MOV ESI,dword ptr [0x01c6ced0]      ; 0056598d | g_UCHAR_PTR_01c6ced0
+    MOV ESI,dword ptr [0x01c6ced0]      ; 0056598d | g_CurrentTextureData
     PUSH ESI                            ; 00565993
     MOV EDI,dword ptr [0x005fba28]      ; 00565994 | g_INT_005fba28
     PUSH EDI                            ; 0056599a
     MOV EBP,dword ptr [ESP + 0x24]      ; 0056599b
     PUSH EBP                            ; 0056599f
-    CALL dword ptr [0x02cf600c]         ; 005659a0 | g_PTR_02cf600c
+    CALL dword ptr [0x02cf600c]         ; 005659a0 | g_APIDLL_selectTexture
     ADD ESP,0x14                        ; 005659a6
     POP EBX                             ; 005659a9
     POP ESI                             ; 005659aa

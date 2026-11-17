@@ -13,7 +13,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   int g_INT_005fba28 = 0x100
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   uchar* g_UCHAR_PTR_01c6ced0
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_004096c0
@@ -112,7 +112,7 @@ section .text
     IMUL EAX,dword ptr [0x005fba28]     ; 004cc560 | g_INT_005fba28
     MOV EBX,dword ptr [ESP + 0xc]       ; 004cc567
     ADD EBX,EAX                         ; 004cc56b
-    MOV EAX,[0x01c6ced0]                ; 004cc56d | g_UCHAR_PTR_01c6ced0
+    MOV EAX,[0x01c6ced0]                ; 004cc56d | g_CurrentTextureData
     CMP byte ptr [EBX + EAX*0x1],0x0    ; 004cc572
     JNZ 0x004cc4b7                      ; 004cc576
         ;   XREF to: 004cc4b7 (CONDITIONAL_JUMP)  ; LAB_004cc4b7

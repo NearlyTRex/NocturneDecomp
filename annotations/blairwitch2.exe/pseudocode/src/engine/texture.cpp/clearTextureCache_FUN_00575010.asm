@@ -10,7 +10,7 @@
 ;   engine_mini3d.cpp_resetTextureCache_FUN_004f3420 at 004f3420
 ;
 ; Referenced Globals:
-;   CTextureCache* g_CTextureCache_PTR_02652eb0
+;   CTextureCache* g_TextureCacheInstance
 ;   int g_INT_02652eb4
 ;
 ; Called Functions:
@@ -20,7 +20,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02652eb0]      ; 00575010 | g_CTextureCache_PTR_02652eb0
+    MOV EDX,dword ptr [0x02652eb0]      ; 00575010 | g_TextureCacheInstance
         ;   Label: engine_texture.cpp_clearTextureCache_FUN_00575010
     PUSH EDX                            ; 00575016
     CALL engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0 ; 00575017

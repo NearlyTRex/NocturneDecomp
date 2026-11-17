@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_REC_FOWARD_SWITCH_WAV_005d3fca
 ;   int g_INT_007c397c
-;   int g_INT_01c4353c
+;   int g_MouseX
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
@@ -43,7 +43,7 @@ section .text
     SUB EAX,EDX                         ; 00416d8a
     MOV ESI,dword ptr [0x007c397c]      ; 00416d8c | g_INT_007c397c
     MOV dword ptr [EBX + EAX*0x4 + 0x88],0x0 ; 00416d92
-    CMP ESI,dword ptr [0x01c4353c]      ; 00416d9d | g_INT_01c4353c
+    CMP ESI,dword ptr [0x01c4353c]      ; 00416d9d | g_MouseX
     JGE 0x00416de9                      ; 00416da3
         ;   XREF to: 00416de9 (CONDITIONAL_JUMP)  ; LAB_00416de9
     MOV EAX,dword ptr [EBX + 0x34]      ; 00416da5
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 00572d20 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00572d20(char * filename)
     ADD ESP,0x4                         ; 00416dc2
     MOV dword ptr [EBX + 0x58],EAX      ; 00416dc5
-    MOV EAX,[0x01c4353c]                ; 00416dc8 | g_INT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 00416dc8 | g_MouseX
     MOV ECX,dword ptr [EBX + 0x34]      ; 00416dcd
     MOV [0x007c397c],EAX                ; 00416dd0 | g_INT_007c397c
     CMP ECX,0x2                         ; 00416dd5

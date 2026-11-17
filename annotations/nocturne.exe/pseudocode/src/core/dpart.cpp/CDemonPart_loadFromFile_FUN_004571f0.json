@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 509,
+    "complexity_score": 505,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 110,
     "suspect_count": 38,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_param"
     ],
-    "total_lines": 399
+    "total_lines": 395
   },
   "cross_references": [],
   "function": {
@@ -187,46 +187,46 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0",
+      "match": "(uint *)((int)g_FaceConversionBuffer",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices + iVar6 + -0x10);",
+      "text": "*(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 53,
-      "match": "(uint *)((int)(g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices + -1) +",
+      "match": "(uint *)((int)(g_FaceConversionBuffer[0].vertices + -1) +",
       "severity": "moderate",
-      "text": "*(uint *)((int)(g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices + -1) + iVar6);",
+      "text": "*(uint *)((int)(g_FaceConversionBuffer[0].vertices + -1) + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0",
+      "match": "(uint *)((int)g_FaceConversionBuffer",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices + iVar6 + -8);",
+      "text": "*(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0",
+      "match": "(uint *)((int)g_FaceConversionBuffer",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices + iVar6 + -4);",
+      "text": "*(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0",
+      "line": 64,
+      "match": "(int *)((int)g_FaceConversionBuffer",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices + iVar6 + -0x14) == 3) {",
+      "text": "if (*(int *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -0x14) == 3) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 77,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "if (in_stack_00000010 != (float *)0x0) {",
@@ -234,7 +234,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 78,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "dVar9 = (double)in_stack_00000010[1] * 256;",
@@ -242,7 +242,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 79,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "dVar10 = (double)in_stack_00000010[2] * 256;",
@@ -250,7 +250,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 82,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "dVar8 = round((double)*in_stack_00000010 * 256);",
@@ -265,48 +265,48 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
-      "match": "(int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[0].vertex_index",
+      "description": "Pointer value `&g_FaceConversionBuffer[0].vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)&g_FaceConversionBuffer[0].vertices[0].vertex_index",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[0].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[0].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "(int)&this_ptr->face_data->vertex_index_2",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
-      "match": "(int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[1].vertex_index",
+      "description": "Pointer value `&g_FaceConversionBuffer[0].vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)&g_FaceConversionBuffer[0].vertices[1].vertex_index",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[1].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[1].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&this_ptr->face_data->vertex_index_3",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
-      "match": "(int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[2].vertex_index",
+      "description": "Pointer value `&g_FaceConversionBuffer[0].vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 63,
+      "match": "(int)&g_FaceConversionBuffer[0].vertices[2].vertex_index",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[2].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[2].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 65,
       "match": "(int)&this_ptr->face_data->vertex_index_4",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) = 0xffffffff;",
@@ -314,23 +314,23 @@
     },
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
+      "line": 68,
       "match": "(int)&this_ptr->face_data->vertex_index_4",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[3].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
-      "match": "(int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[3].vertex_index",
+      "description": "Pointer value `&g_FaceConversionBuffer[0].vertices[3].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&g_FaceConversionBuffer[0].vertices[3].vertex_index",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[3].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[3].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->vertex_positions->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
+      "line": 88,
       "match": "(int)&this_ptr->vertex_positions->x",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
@@ -338,7 +338,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->vertex_positions->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 94,
+      "line": 90,
       "match": "(int)&this_ptr->vertex_positions->y",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
@@ -346,7 +346,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->vertex_positions->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
+      "line": 92,
       "match": "(int)&this_ptr->vertex_positions->z",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",
@@ -394,15 +394,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[0].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[0].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) =",
@@ -410,15 +410,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[1].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[1].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) =",
@@ -426,15 +426,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 66,
+      "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[2].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[2].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
+      "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) = 0xffffffff;",
@@ -442,7 +442,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 71,
+      "line": 68,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) =",
@@ -450,15 +450,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 73,
+      "line": 69,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[0].vertices[3].vertex_index + iVar6);",
+      "text": "*(uint *)((int)&g_FaceConversionBuffer[0].vertices[3].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 92,
+      "line": 88,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
@@ -466,7 +466,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 94,
+      "line": 90,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
@@ -474,7 +474,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 96,
+      "line": 92,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",

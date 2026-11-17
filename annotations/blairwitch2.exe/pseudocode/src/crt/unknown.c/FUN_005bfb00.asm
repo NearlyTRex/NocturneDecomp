@@ -13,10 +13,10 @@
 ;   void* PTR_WriteFile_005c8678 = 001c92cc
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
-;   void* g_PTR_0061f414 = 00000000
-;   void* g_PTR_0061f440 = 00000000
-;   uint g_UINT_0061f480 = 0x14
-;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
+;   void* g_SpecialDeviceWriteFuncPtr = 00000000
+;   uint g_MaxHandleCount = 0x14
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -41,7 +41,7 @@ section .text
     TEST EBX,EBX                        ; 005bfb0f
     JL 0x005bfb1b                       ; 005bfb11
         ;   XREF to: 005bfb1b (CONDITIONAL_JUMP)  ; LAB_005bfb1b
-    CMP EBX,dword ptr [0x0061f480]      ; 005bfb13 | g_UINT_0061f480
+    CMP EBX,dword ptr [0x0061f480]      ; 005bfb13 | g_MaxHandleCount
     JBE 0x005bfb2f                      ; 005bfb19
         ;   XREF to: 005bfb2f (CONDITIONAL_JUMP)  ; LAB_005bfb2f
     PUSH 0x4                            ; 005bfb1b
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x4                         ; 005bfb27
     JMP 0x005bfc02                      ; 005bfb2a
         ;   XREF to: 005bfc02 (UNCONDITIONAL_JUMP)  ; LAB_005bfc02
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005bfb2f | g_SIOControlBlock_PTR_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005bfb2f | g_IOControlBlock
         ;   Label: LAB_005bfb2f
     PUSH EBX                            ; 005bfb35
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005bfb36
@@ -84,12 +84,12 @@ section .text
     POP ESI                             ; 005bfb76
     POP EBX                             ; 005bfb77
     RET                                 ; 005bfb78
-    CMP dword ptr [0x0061f440],0x0      ; 005bfb79 | g_PTR_0061f440
+    CMP dword ptr [0x0061f440],0x0      ; 005bfb79 | g_SpecialDeviceWriteFuncPtr
         ;   Label: LAB_005bfb79
     JZ 0x005bfbb6                       ; 005bfb80
         ;   XREF to: 005bfbb6 (CONDITIONAL_JUMP)  ; LAB_005bfbb6
     PUSH EBX                            ; 005bfb82
-    CALL dword ptr [0x0061f414]         ; 005bfb83 | g_PTR_0061f414
+    CALL dword ptr [0x0061f414]         ; 005bfb83 | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005bfb89
     TEST EAX,EAX                        ; 005bfb8c
     JZ 0x005bfbb6                       ; 005bfb8e
@@ -98,7 +98,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 005bfb91
     PUSH EDX                            ; 005bfb95
     PUSH EAX                            ; 005bfb96
-    CALL dword ptr [0x0061f440]         ; 005bfb97 | g_PTR_0061f440
+    CALL dword ptr [0x0061f440]         ; 005bfb97 | g_SpecialDeviceWriteFuncPtr
     ADD ESP,0xc                         ; 005bfb9d
     PUSH EBX                            ; 005bfba0
     MOV ESI,EAX                         ; 005bfba1

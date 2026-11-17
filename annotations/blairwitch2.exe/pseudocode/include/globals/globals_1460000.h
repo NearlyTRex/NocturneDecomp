@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SFogGrid.h"
@@ -13,35 +14,35 @@
 // =============================================================================
 
 // CVector3i
-extern CVector3i g_CVector3i_01468540;
+extern CVector3i g_CameraOutOfBoundsCoord;
 
 // SCameraViewportState
-extern SCameraViewportState g_SCameraViewportState_01468440;
+extern SCameraViewportState g_BackgroundSavedCameraState;
 
 // SFogGrid
-extern SFogGrid g_SFogGrid_0146592c;
+extern SFogGrid g_CameraFogGrid;
 
 // char[307200]
-extern char g_CHAR_ARRAY_01468550[307200];
+extern char g_CameraIndexedImageData[307200];
 
 // int
-extern int g_INT_01465920;
-extern int g_INT_01465924;
-extern int g_INT_01465928;
-extern int g_INT_0146694c;
-extern int g_INT_01466950;
-extern int g_INT_01466954;
-extern int g_INT_01467158;
-extern int g_INT_0146715c;
-extern int g_INT_01467160;
-extern int g_INT_01468424;
-extern int g_INT_01468428;
-extern int g_INT_0146842c;
+extern int g_ImageProcessingState1;
+extern int g_ImageProcessingState2;
+extern int g_ImageBytesPerPixel;
+extern int g_CameraScreenWidth;
+extern int g_CameraScreenHeight;
+extern int g_ScanlineSpanCount;
+extern int g_BackgroundSceneDepth;
+extern int g_BackgroundSavedBitsPerPixel;
+extern int g_BackgroundSavedUseExternalRenderer;
+extern int g_BackgroundSavedRedBitPosition;
+extern int g_BackgroundSavedGreenBitPosition;
+extern int g_BackgroundSavedBlueBitPosition;
 
 // int[256]
-extern int g_INT_ARRAY_01466958[256];
-extern int g_INT_ARRAY_01466d58[256];
+extern int g_ScanlineSpanLeft[256];
+extern int g_ScanlineSpanRight[256];
 
-// void*[1200]
-extern void* g_ARRAY_PTR_01467164[1200];
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_BackgroundSavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

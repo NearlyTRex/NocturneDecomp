@@ -39,10 +39,10 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CScript* g_CScriptPtr = 01e81c80
-;   int g_INT_00622c28 = 0x1
+;   int g_RenderMirrorsFlag = 0x1
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
@@ -226,14 +226,14 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 005512f4
     PUSH dword ptr [EAX + 0x140]        ; 005512f7 | g_CDemonLightInstance.base.max_distance
     PUSH ESI                            ; 005512fd
-    MOV dword ptr [0x00622c28],EBX      ; 005512fe | g_INT_00622c28
+    MOV dword ptr [0x00622c28],EBX      ; 005512fe | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0 ; 00551304
         ;   XREF to: 0054e3c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00551309
     PUSH -0x1                           ; 0055130c
     MOV EDI,0x1                         ; 0055130e
     PUSH ESI                            ; 00551313
-    MOV dword ptr [0x00622c28],EDI      ; 00551314 | g_INT_00622c28
+    MOV dword ptr [0x00622c28],EDI      ; 00551314 | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 ; 0055131a
         ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0055131f
@@ -280,7 +280,7 @@ section .text
     CALL core_gore.cpp_CGore_renderParticles_FUN_004e5c50 ; 00551387
         ;   XREF to: 004e5c50 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004e5c50(CGore * this_ptr)
     ADD ESP,0x4                         ; 0055138c
-    MOV EBX,dword ptr [0x0061c010]      ; 0055138f | g_CFireEffect_PTR_0061c010
+    MOV EBX,dword ptr [0x0061c010]      ; 0055138f | g_CFireEffectPtr
     PUSH EBX                            ; 00551395
     CALL core_fire.cpp_CFireEffect_render_FUN_004b5100 ; 00551396
         ;   XREF to: 004b5100 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_004b5100(CFireEffect * this_ptr)

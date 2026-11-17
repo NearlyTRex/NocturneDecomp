@@ -15,41 +15,41 @@ void __cdecl core_scat_cpp_CScat_setup_FUN_004fbcc0(CScat *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004b48d0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                           (&(this_ptr->base).base.model);
-  g_INT_ARRAY_01e53388[0] =
+  g_ScatIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 head",1);
-  g_INT_ARRAY_01e53388[1] =
+  g_ScatIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Clavicle",1);
-  g_INT_ARRAY_01e53388[2] =
+  g_ScatIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Clavicle",1);
-  g_INT_ARRAY_01e53388[3] =
+  g_ScatIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01e53388[4] =
+  g_ScatIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01e53388[5] =
+  g_ScatIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_01e53388[6] =
+  g_ScatIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_01e53388[7] =
+  g_ScatIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Foot",1);
-  g_INT_ARRAY_01e53388[8] =
+  g_ScatIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Foot",1);
-  g_INT_ARRAY_01e53388[9] =
+  g_ScatIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Thigh",1);
-  g_INT_ARRAY_01e53388[10] =
+  g_ScatIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Thigh",1);
-  g_INT_ARRAY_01e53388[0xb] =
+  g_ScatIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Calf",1);
-  g_INT_ARRAY_01e53388[0xc] =
+  g_ScatIndices[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Calf",1);
-  g_INT_ARRAY_01e53388[0xd] =
+  g_ScatIndices[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Hand",1);
-  g_INT_ARRAY_01e53388[0xe] =
+  g_ScatIndices[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Hand",1);
-  g_INT_ARRAY_01e53388[0xf] =
+  g_ScatIndices[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine2",1);
-  g_INT_ARRAY_01e53388[0x11] =
+  g_ScatIndices[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine",1);
-  g_INT_ARRAY_01e53388[0x10] =
+  g_ScatIndices[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine1",1);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine1",1);
   this_ptr->guns_drawn = 0;

@@ -345,7 +345,7 @@
     },
     {
       "addr": "02664628",
-      "name": "g_HWND_02664628",
+      "name": "g_MainWindowHandle",
       "type": "HWND",
       "value": null
     },
@@ -357,7 +357,7 @@
     },
     {
       "addr": "02664638",
-      "name": "g_INT_02664638",
+      "name": "g_TotalPhysicalMemory",
       "type": "int",
       "value": null
     },
@@ -369,55 +369,55 @@
     },
     {
       "addr": "02664fb8",
-      "name": "g_CHAR_ARRAY_02664fb8",
+      "name": "g_ModuleFileName",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "02664fb9",
-      "name": "g_CHAR_ARRAY_02664fb8+1",
+      "name": "g_ModuleFileName+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026650b8",
-      "name": "g_CHAR_ARRAY_026650b8",
+      "name": "g_CurrentDirectory",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "026651b8",
-      "name": "g_CHAR_ARRAY_026651b8",
+      "name": "g_CommandLineBuffer",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "026651b9",
-      "name": "g_CHAR_ARRAY_026651b8+1",
+      "name": "g_CommandLineBuffer+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026651ba",
-      "name": "g_CHAR_ARRAY_026651b8+2",
+      "name": "g_CommandLineBuffer+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026651bb",
-      "name": "g_CHAR_ARRAY_026651b8+3",
+      "name": "g_CommandLineBuffer+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026651bc",
-      "name": "g_CHAR_ARRAY_026651b8+4",
+      "name": "g_CommandLineBuffer+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026652b8",
-      "name": "g_INT_026652b8",
+      "name": "g_ArgCount",
       "type": "int",
       "value": null
     }
@@ -659,9 +659,9 @@
     {
       "description": "Complex pointer cast",
       "line": 70,
-      "match": "(char **)((int)g_CHAR_PTR_ARRAY_026652bc",
+      "match": "(char **)((int)g_ArgVector",
       "severity": "moderate",
-      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_026652bc + iVar8) = pcVar11;",
+      "text": "*(char **)((int)g_ArgVector + iVar8) = pcVar11;",
       "type": "pointer_cast"
     },
     {
@@ -713,11 +713,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_026652bc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ArgVector` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 70,
-      "match": "(int)g_CHAR_PTR_ARRAY_026652bc",
+      "match": "(int)g_ArgVector",
       "severity": "moderate",
-      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_026652bc + iVar8) = pcVar11;",
+      "text": "*(char **)((int)g_ArgVector + iVar8) = pcVar11;",
       "type": "pointer_truncation"
     },
     {

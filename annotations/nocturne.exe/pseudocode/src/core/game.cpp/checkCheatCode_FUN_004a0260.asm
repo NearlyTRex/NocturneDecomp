@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 g_CHAR_ARRAY_01c78aef+1
+;   undefined4 g_InputHistory+1
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_00565e20
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_004a028c
     MOV AL,byte ptr [ESI]               ; 004a028e
     PUSH EAX                            ; 004a0290
-    MOVZX EDI,byte ptr [EBX + 0x1c78aef] ; 004a0291 | g_CHAR_ARRAY_01c78aef+1
+    MOVZX EDI,byte ptr [EBX + 0x1c78aef] ; 004a0291 | g_InputHistory+1
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 004a0298
         ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 004a029d
@@ -67,7 +67,7 @@ section .text
     JNZ 0x004a02c9                      ; 004a02b2
         ;   XREF to: 004a02c9 (CONDITIONAL_JUMP)  ; LAB_004a02c9
     XOR AH,AH                           ; 004a02b4
-    MOV byte ptr [0x01c78af0],AH        ; 004a02b6 | g_CHAR_ARRAY_01c78aef+1
+    MOV byte ptr [0x01c78af0],AH        ; 004a02b6 | g_InputHistory+1
     MOV EAX,0x1                         ; 004a02bc
     ADD ESP,0x8                         ; 004a02c1
     POP EBP                             ; 004a02c4

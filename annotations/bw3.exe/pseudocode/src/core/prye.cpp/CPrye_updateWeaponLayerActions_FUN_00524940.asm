@@ -223,7 +223,7 @@ section .text
     JZ 0x00524b1a                       ; 00524b04
         ;   XREF to: 00524b1a (CONDITIONAL_JUMP)  ; LAB_00524b1a
     PUSH 0x5cd78f                       ; 00524b06 | = "UseSPS"
-    MOV EDI,dword ptr [0x005fba60]      ; 00524b0b | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 00524b0b | g_CEventListPtr
     PUSH EDI                            ; 00524b11
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00524b12
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -265,7 +265,7 @@ section .text
     JZ 0x00524b9b                       ; 00524b86
         ;   XREF to: 00524b9b (CONDITIONAL_JUMP)  ; LAB_00524b9b
     PUSH 0x5cd796                       ; 00524b88 | = "UseSPS"
-    MOV EAX,[0x005fba60]                ; 00524b8d | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 00524b8d | g_CEventListPtr
     PUSH EAX                            ; 00524b92
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00524b93
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

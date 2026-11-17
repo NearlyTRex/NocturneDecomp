@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061d310 = -0x1
-;   CBitFont* g_CBitFont_PTR_0152d240
+;   CBitFont* g_TinyFont
 ;   int g_INT_01cc7f1c
 ;   int g_INT_01cc7f20
 ;   int g_INT_01cc7f24
@@ -66,7 +66,7 @@ section .text
     MOV ECX,dword ptr [0x01cc7f2c]      ; 004b9fd1 | g_INT_01cc7f2c
     PUSH ECX                            ; 004b9fd7
     PUSH 0x1cc7f38                      ; 004b9fd8
-    MOV EBX,dword ptr [0x0152d240]      ; 004b9fdd | g_CBitFont_PTR_0152d240
+    MOV EBX,dword ptr [0x0152d240]      ; 004b9fdd | g_TinyFont
     PUSH EBX                            ; 004b9fe3
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004b9fe4
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)

@@ -50,7 +50,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
     lVar1 = (longlong)(this_ptr->flat_color).b * (longlong)iVar8;
     g_SRenderVertex_ARRAY_00629014[vertex_index].b =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SRenderVertex_ARRAY_00629014[vertex_index].a = g_INT_01c51cac;
+    g_SRenderVertex_ARRAY_00629014[vertex_index].a = g_PerspectiveReciprocal;
     return;
   }
   if (skip_lighting_calculation == 0) {
@@ -62,7 +62,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
       if (0x1000 < g_CDemonCameraInstance.corona_blend_factor) {
         iVar10 = 0x1000;
       }
-      if (g_INT_01c51d38 < 0) {
+      if (g_CameraOriginX < 0) {
         lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
         uVar4 = -((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
@@ -70,7 +70,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
         lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       }
-      if (g_INT_01c51d40 < 0) {
+      if (g_CameraOriginZ < 0) {
         lVar1 = (longlong)iVar10 * (longlong)surface_normal->z;
         iVar8 = (iVar8 + uVar4) - ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
     iVar8 = 0xffff;
     local_18 = 0;
   }
-  if (g_INT_0202a51c < 1) {
+  if (g_ColorCorrectionCount < 1) {
     iVar8 = iVar8 + local_18;
     lVar1 = (longlong)iVar8 * (longlong)(this_ptr->flat_color).r;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
@@ -100,19 +100,19 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
   }
   else {
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)g_INT_0202a89c) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_0202a89c) >> 0x20) << 0x10) +
-                 local_18) * (longlong)(this_ptr->flat_color).r;
+            (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >>
+                       0x20) << 0x10) + local_18) * (longlong)(this_ptr->flat_color).r;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)g_INT_0202a8a0) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_0202a8a0) >> 0x20) << 0x10) +
-                 local_18) * (longlong)(this_ptr->flat_color).g;
+            (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >>
+                       0x20) << 0x10) + local_18) * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     iVar10 = (this_ptr->flat_color).b;
-    iVar8 = ((uint)((longlong)iVar8 * (longlong)g_INT_0202a8a4) >> 0x10 |
-            (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_0202a8a4) >> 0x20) << 0x10) +
-            local_18;
+    iVar8 = ((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x10 |
+            (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x20)
+            << 0x10) + local_18;
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
           (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10;
@@ -153,8 +153,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  g_SRenderVertex_ARRAY_00629014[vertex_index].r = g_INT_ARRAY_01fe6344[local_14];
-  g_SRenderVertex_ARRAY_00629014[vertex_index].g = g_INT_ARRAY_01fe6344[uVar4];
-  g_SRenderVertex_ARRAY_00629014[vertex_index].b = g_INT_ARRAY_01fe6344[uVar5];
+  g_SRenderVertex_ARRAY_00629014[vertex_index].r = g_IntensityToValueLookupTable[local_14];
+  g_SRenderVertex_ARRAY_00629014[vertex_index].g = g_IntensityToValueLookupTable[uVar4];
+  g_SRenderVertex_ARRAY_00629014[vertex_index].b = g_IntensityToValueLookupTable[uVar5];
   return;
 }

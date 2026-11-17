@@ -9,7 +9,7 @@
 void FUN_00572d50(byte *param_1,byte *param_2)
 
 {
-  if ((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[*param_2] & 1U) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[*param_2] & 1U) != 0)) {
     *param_1 = *param_2;
     param_1[1] = param_2[1];
     return;

@@ -7,8 +7,8 @@
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005d8913 = 0.00390625
-;   float g_FLOAT_005fe9d0 = 256
+;   double g_CoronaVertexScale = 0.00390625
+;   float g_CoronaCoordinateScaleFactor = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0061255c = 01bc120c
 ;
 ; Called Functions:
@@ -40,15 +40,15 @@ section .text
     ADD ESP,0x8                         ; 0045ec7f
     FILD dword ptr [EDI + 0x6113a0]     ; 0045ec82
         ;   Label: LAB_0045ec82
-    FMUL double ptr [0x005d8913]        ; 0045ec88 | g_DOUBLE_005d8913
+    FMUL double ptr [0x005d8913]        ; 0045ec88 | g_CoronaVertexScale
     FMUL float ptr [EBP + 0x30]         ; 0045ec8e
     FILD dword ptr [EDI + 0x6113a4]     ; 0045ec91
-    FMUL double ptr [0x005d8913]        ; 0045ec97 | g_DOUBLE_005d8913
+    FMUL double ptr [0x005d8913]        ; 0045ec97 | g_CoronaVertexScale
     FXCH                                ; 0045ec9d
     FSTP float ptr [ESP + 0x28]         ; 0045ec9f
     FMUL float ptr [EBP + 0x30]         ; 0045eca3
     FILD dword ptr [EDI + 0x6113a8]     ; 0045eca6
-    FMUL double ptr [0x005d8913]        ; 0045ecac | g_DOUBLE_005d8913
+    FMUL double ptr [0x005d8913]        ; 0045ecac | g_CoronaVertexScale
     FXCH                                ; 0045ecb2
     FSTP float ptr [ESP + 0x2c]         ; 0045ecb4
     FMUL float ptr [EBP + 0x30]         ; 0045ecb8
@@ -57,13 +57,13 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 0045ecc3 | g_CDemonRenderer_PTR_0061255c
     FSTP float ptr [ESP + 0x30]         ; 0045ecc9
     FLD float ptr [EAX]                 ; 0045eccd
-    FMUL float ptr [0x005fe9d0]         ; 0045eccf | g_FLOAT_005fe9d0
+    FMUL float ptr [0x005fe9d0]         ; 0045eccf | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0045ecd5
     FLD float ptr [EAX + 0x4]           ; 0045ecd7
-    FMUL float ptr [0x005fe9d0]         ; 0045ecda | g_FLOAT_005fe9d0
+    FMUL float ptr [0x005fe9d0]         ; 0045ecda | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0045ece0
     FLD float ptr [EAX + 0x8]           ; 0045ece3
-    FMUL float ptr [0x005fe9d0]         ; 0045ece6 | g_FLOAT_005fe9d0
+    FMUL float ptr [0x005fe9d0]         ; 0045ece6 | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0045ecec
     LEA EAX,[ESP + 0x34]                ; 0045ecef
     PUSH EAX                            ; 0045ecf3

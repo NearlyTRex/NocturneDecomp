@@ -7,13 +7,13 @@
 ; Referenced Globals:
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   int g_INT_006164a4 = 0x40
-;   int g_INT_006164a8 = 0x40
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
-;   int g_INT_01cb80d0
-;   int g_INT_01cb80d4
-;   int g_INT_01cb80d8
-;   int g_INT_01cb80dc
+;   int g_MovieRecordingWidth = 0x40
+;   int g_MovieRecordingHeight = 0x40
+;   CKeys* g_CKeysPtr = 01d02f84
+;   int g_MovieRecordingArmed
+;   int g_MovieRecordingActive
+;   int g_MovieRecordingMaxFrames
+;   int g_MovieRecordingFrameCounter
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005b89c0
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 004b2a52
     PUSH EBP                            ; 004b2a53
     SUB ESP,0x150                       ; 004b2a54
-    CMP dword ptr [0x01cb80d0],0x0      ; 004b2a5a | g_INT_01cb80d0
+    CMP dword ptr [0x01cb80d0],0x0      ; 004b2a5a | g_MovieRecordingArmed
     JNZ 0x004b2a6e                      ; 004b2a61
         ;   XREF to: 004b2a6e (CONDITIONAL_JUMP)  ; LAB_004b2a6e
     ADD ESP,0x150                       ; 004b2a63
@@ -44,7 +44,7 @@ section .text
     RET                                 ; 004b2a6d
     PUSH 0x1d                           ; 004b2a6e
         ;   Label: LAB_004b2a6e
-    MOV EAX,[0x00617dd4]                ; 004b2a70 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004b2a70 | g_CKeysPtr
     PUSH EAX                            ; 004b2a75
     MOV EDX,dword ptr [EAX]             ; 004b2a76
     CALL dword ptr [EDX]                ; 004b2a78
@@ -53,7 +53,7 @@ section .text
     JZ 0x004b2aab                       ; 004b2a7f
         ;   XREF to: 004b2aab (CONDITIONAL_JUMP)  ; LAB_004b2aab
     PUSH 0x2f                           ; 004b2a81
-    MOV EAX,[0x00617dd4]                ; 004b2a83 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004b2a83 | g_CKeysPtr
     PUSH EAX                            ; 004b2a88
     MOV EDX,dword ptr [EAX]             ; 004b2a89
     CALL dword ptr [EDX + 0x4]          ; 004b2a8b
@@ -61,25 +61,25 @@ section .text
     TEST EAX,EAX                        ; 004b2a91
     JZ 0x004b2aab                       ; 004b2a93
         ;   XREF to: 004b2aab (CONDITIONAL_JUMP)  ; LAB_004b2aab
-    MOV ECX,dword ptr [0x01cb80d4]      ; 004b2a95 | g_INT_01cb80d4
+    MOV ECX,dword ptr [0x01cb80d4]      ; 004b2a95 | g_MovieRecordingActive
     TEST ECX,ECX                        ; 004b2a9b
     JZ 0x004b2d4d                       ; 004b2a9d
         ;   XREF to: 004b2d4d (CONDITIONAL_JUMP)  ; LAB_004b2d4d
     XOR EDI,EDI                         ; 004b2aa3
-    MOV dword ptr [0x01cb80d4],EDI      ; 004b2aa5 | g_INT_01cb80d4
-    MOV EBP,dword ptr [0x01cb80d8]      ; 004b2aab | g_INT_01cb80d8
+    MOV dword ptr [0x01cb80d4],EDI      ; 004b2aa5 | g_MovieRecordingActive
+    MOV EBP,dword ptr [0x01cb80d8]      ; 004b2aab | g_MovieRecordingMaxFrames
         ;   Label: LAB_004b2aab
     TEST EBP,EBP                        ; 004b2ab1
     JLE 0x004b2ac1                      ; 004b2ab3
         ;   XREF to: 004b2ac1 (CONDITIONAL_JUMP)  ; LAB_004b2ac1
-    CMP EBP,dword ptr [0x01cb80dc]      ; 004b2ab5 | g_INT_01cb80dc
+    CMP EBP,dword ptr [0x01cb80dc]      ; 004b2ab5 | g_MovieRecordingFrameCounter
     JLE 0x004b2d63                      ; 004b2abb
         ;   XREF to: 004b2d63 (CONDITIONAL_JUMP)  ; LAB_004b2d63
-    CMP dword ptr [0x01cb80d4],0x0      ; 004b2ac1 | g_INT_01cb80d4
+    CMP dword ptr [0x01cb80d4],0x0      ; 004b2ac1 | g_MovieRecordingActive
         ;   Label: LAB_004b2ac1
     JZ 0x004b2a63                       ; 004b2ac8
         ;   XREF to: 004b2a63 (CONDITIONAL_JUMP)  ; LAB_004b2a63
-    MOV EBX,dword ptr [0x01cb80dc]      ; 004b2aca | g_INT_01cb80dc
+    MOV EBX,dword ptr [0x01cb80dc]      ; 004b2aca | g_MovieRecordingFrameCounter
     PUSH EBX                            ; 004b2ad0
     PUSH 0x5d72b7                       ; 004b2ad1
     LEA EAX,[ESP + 0xd0]                ; 004b2ad6
@@ -107,14 +107,14 @@ section .text
     JZ 0x004b2a63                       ; 004b2b23
         ;   XREF to: 004b2a63 (CONDITIONAL_JUMP)  ; LAB_004b2a63
     XOR ESI,ESI                         ; 004b2b29
-    MOV EDI,dword ptr [0x006164a8]      ; 004b2b2b | g_INT_006164a8
+    MOV EDI,dword ptr [0x006164a8]      ; 004b2b2b | g_MovieRecordingHeight
     MOV dword ptr [ESP + 0x130],ESI     ; 004b2b31
     TEST EDI,EDI                        ; 004b2b38
     JLE 0x004b2d14                      ; 004b2b3a
         ;   XREF to: 004b2d14 (CONDITIONAL_JUMP)  ; LAB_004b2d14
     XOR ESI,ESI                         ; 004b2b40
         ;   Label: LAB_004b2b40
-    MOV EDI,dword ptr [0x006164a4]      ; 004b2b42 | g_INT_006164a4
+    MOV EDI,dword ptr [0x006164a4]      ; 004b2b42 | g_MovieRecordingWidth
     MOV dword ptr [ESP + 0x138],ESI     ; 004b2b48
     TEST EDI,EDI                        ; 004b2b4f
     JLE 0x004b2cf7                      ; 004b2b51
@@ -126,7 +126,7 @@ section .text
         ;   Label: LAB_004b2b66
     MOV ESI,dword ptr [0x006141b8]      ; 004b2b6d | g_INT_006141b8
     IMUL EDX,ESI                        ; 004b2b73
-    MOV EDI,dword ptr [0x006164a4]      ; 004b2b76 | g_INT_006164a4
+    MOV EDI,dword ptr [0x006164a4]      ; 004b2b76 | g_MovieRecordingWidth
     MOV EAX,EDX                         ; 004b2b7c
     SAR EDX,0x1f                        ; 004b2b7e
     IDIV EDI                            ; 004b2b81
@@ -140,7 +140,7 @@ section .text
     MOV EBX,dword ptr [0x006141bc]      ; 004b2b9c | g_INT_006141bc
     MOV EDX,dword ptr [ESP + 0x130]     ; 004b2ba2
     IMUL EDX,EBX                        ; 004b2ba9
-    MOV ESI,dword ptr [0x006164a8]      ; 004b2bac | g_INT_006164a8
+    MOV ESI,dword ptr [0x006164a8]      ; 004b2bac | g_MovieRecordingHeight
     MOV dword ptr [ESP + 0x148],EAX     ; 004b2bb2
     MOV EAX,EDX                         ; 004b2bb9
     SAR EDX,0x1f                        ; 004b2bbb
@@ -238,7 +238,7 @@ section .text
     ADD ESP,0x8                         ; 004b2cd7
     MOV ECX,dword ptr [ESP + 0x138]     ; 004b2cda
     INC ECX                             ; 004b2ce1
-    MOV EBX,dword ptr [0x006164a4]      ; 004b2ce2 | g_INT_006164a4
+    MOV EBX,dword ptr [0x006164a4]      ; 004b2ce2 | g_MovieRecordingWidth
     MOV dword ptr [ESP + 0x138],ECX     ; 004b2ce8
     CMP ECX,EBX                         ; 004b2cef
     JL 0x004b2b66                       ; 004b2cf1
@@ -246,7 +246,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x130]     ; 004b2cf7
         ;   Label: LAB_004b2cf7
     INC EAX                             ; 004b2cfe
-    MOV EDX,dword ptr [0x006164a8]      ; 004b2cff | g_INT_006164a8
+    MOV EDX,dword ptr [0x006164a8]      ; 004b2cff | g_MovieRecordingHeight
     MOV dword ptr [ESP + 0x130],EAX     ; 004b2d05
     CMP EAX,EDX                         ; 004b2d0c
     JL 0x004b2b40                       ; 004b2d0e
@@ -263,10 +263,10 @@ section .text
     PUSH EAX                            ; 004b2d2c
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 004b2d2d
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
-    MOV EBX,dword ptr [0x01cb80dc]      ; 004b2d32 | g_INT_01cb80dc
+    MOV EBX,dword ptr [0x01cb80dc]      ; 004b2d32 | g_MovieRecordingFrameCounter
     INC EBX                             ; 004b2d38
     ADD ESP,0xc                         ; 004b2d39
-    MOV dword ptr [0x01cb80dc],EBX      ; 004b2d3c | g_INT_01cb80dc
+    MOV dword ptr [0x01cb80dc],EBX      ; 004b2d3c | g_MovieRecordingFrameCounter
     ADD ESP,0x150                       ; 004b2d42
     POP EBP                             ; 004b2d48
     POP EDI                             ; 004b2d49
@@ -275,13 +275,13 @@ section .text
     RET                                 ; 004b2d4c
     MOV ESI,0x1                         ; 004b2d4d
         ;   Label: LAB_004b2d4d
-    MOV dword ptr [0x01cb80dc],ECX      ; 004b2d52 | g_INT_01cb80dc
-    MOV dword ptr [0x01cb80d4],ESI      ; 004b2d58 | g_INT_01cb80d4
+    MOV dword ptr [0x01cb80dc],ECX      ; 004b2d52 | g_MovieRecordingFrameCounter
+    MOV dword ptr [0x01cb80d4],ESI      ; 004b2d58 | g_MovieRecordingActive
     JMP 0x004b2aab                      ; 004b2d5e
         ;   XREF to: 004b2aab (UNCONDITIONAL_JUMP)  ; LAB_004b2aab
     XOR EBP,EBP                         ; 004b2d63
         ;   Label: LAB_004b2d63
-    MOV dword ptr [0x01cb80d4],EBP      ; 004b2d65 | g_INT_01cb80d4
+    MOV dword ptr [0x01cb80d4],EBP      ; 004b2d65 | g_MovieRecordingActive
     ADD ESP,0x150                       ; 004b2d6b
     POP EBP                             ; 004b2d71
     POP EDI                             ; 004b2d72

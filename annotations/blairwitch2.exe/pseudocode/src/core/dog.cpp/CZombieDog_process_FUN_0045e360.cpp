@@ -117,7 +117,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
                afStack_88[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
           fStack_2c = afStack_100[1] * afStack_100[1] +
                       fStack_104 * fStack_104 + afStack_100[0] * afStack_100[0];
-          fStack_28 = (float)(((int)fStack_2c >> 1) + g_INT_01caf5b4);
+          fStack_28 = (float)(((int)fStack_2c >> 1) + g_FastSqrtMagic);
           if (fStack_28 < 8.0f) {
             iVar5 = 1;
           }
@@ -216,7 +216,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
       fVar11 = 0.7;
       fStack_14 = SStack_158.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[1],&CStack_110);
       pCVar10 = &CStack_44;

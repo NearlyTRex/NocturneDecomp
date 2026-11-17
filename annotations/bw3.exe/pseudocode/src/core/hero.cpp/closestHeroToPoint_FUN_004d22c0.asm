@@ -11,7 +11,7 @@
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80 at 00487c9b
 ;
 ; Referenced Globals:
-;   int g_INT_01d5ba00
+;   int g_HeroCount
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -30,7 +30,7 @@ section .text
     SUB ESP,0x14                        ; 004d22c4
     MOV EBX,dword ptr [ESP + 0x28]      ; 004d22c7
     MOV EDX,0x7149f2ca                  ; 004d22cb
-    MOV ECX,dword ptr [0x01d5ba00]      ; 004d22d0 | g_INT_01d5ba00
+    MOV ECX,dword ptr [0x01d5ba00]      ; 004d22d0 | g_HeroCount
     XOR ESI,ESI                         ; 004d22d6
     MOV dword ptr [ESP + 0x8],EDX       ; 004d22d8
     TEST ECX,ECX                        ; 004d22dc

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 113,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
+    "pseudocode_lines": 82,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 268
+    "total_lines": 267
   },
   "cross_references": [
     {
@@ -105,25 +105,25 @@
     },
     {
       "addr": "00765a60",
-      "name": "g_CCharacterActorType_00765a60",
+      "name": "g_CCharacterClassInfo",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e56418",
-      "name": "g_INT_01e56418",
+      "name": "g_ScriptEventsEnabled",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e56c2c",
-      "name": "g_INT_01e56c2c",
+      "name": "g_ActorLookedUpByVariable",
       "type": "int",
       "value": null
     }
@@ -340,7 +340,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 63,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

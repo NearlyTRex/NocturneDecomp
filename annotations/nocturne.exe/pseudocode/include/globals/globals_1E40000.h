@@ -12,23 +12,23 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CPendulumActorType_01e42858;
-extern CDemonActorType g_CPlatformActorType_01e42894;
+extern CDemonActorType g_CPendulumClassInfo;
+extern CDemonActorType g_CPlatformClassInfo;
 
 // SMRGLPrimitiveQuad
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e42810;
+extern SMRGLPrimitiveQuad g_PathMapQuad;
 
 // char[101][100]
-extern char g_CHAR_ARRAY_ARRAY_01e40098[101][100];
+extern char g_PathfindingVisited[101][100];
 
 // char[65536]
-extern char g_CHAR_ARRAY_01e428d0[65536];
+extern char g_FileIOBuffer[65536];
 
 // int
-extern int g_INT_01e4008c;
-extern int g_INT_01e40090;
-extern int g_INT_01e4280c;
+extern int g_PathfindingQueueHead;
+extern int g_PathfindingQueueTail;
+extern int g_PathfindingNodesExpanded;
 
 // uchar
-extern uchar g_UCHAR_01e40097;
+extern uchar g_PathfindingVisitedMinus1;
 

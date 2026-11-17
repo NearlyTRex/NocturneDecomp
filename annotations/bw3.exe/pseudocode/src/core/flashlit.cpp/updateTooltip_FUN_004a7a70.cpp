@@ -37,22 +37,22 @@ void __cdecl core_flashlit_cpp_updateTooltip_FUN_004a7a70(char *text)
     } while (cVar1 != '\0');
     g_INT_005fe3a8 = -1;
   }
-  g_INT_01d19f78 = g_INT_01d19f78 + g_INT_01c5fad0;
+  g_INT_01d19f78 = g_INT_01d19f78 + g_GlobalDeltaTimeInt;
   if (g_INT_01d19f78 < 0x10000) {
     return;
   }
-  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549aa4,text);
-  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_CBitFont_PTR_01549aa4,text);
-  g_INT_01d19f7c = g_INT_01c5fae0 + 0x40;
-  g_INT_01d19f80 = g_INT_01c5fadc + iVar2 + 8;
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_TinyFont,text);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_TinyFont,text);
+  g_INT_01d19f7c = g_MouseY + 0x40;
+  g_INT_01d19f80 = g_MouseX + iVar2 + 8;
   g_INT_01d19f84 = g_INT_01d19f7c + iVar3 + 6;
-  g_INT_005fe3a8 = g_INT_01c5fadc;
+  g_INT_005fe3a8 = g_MouseX;
   if (g_INT_005fba18 < g_INT_01d19f80) {
     g_INT_005fe3a8 = g_INT_005fba18 - (iVar2 + 8);
     g_INT_01d19f80 = g_INT_005fba18;
   }
   if (g_INT_005fba1c < g_INT_01d19f84) {
-    g_INT_01d19f84 = g_INT_01c5fae0 + -0x14;
+    g_INT_01d19f84 = g_MouseY + -0x14;
     g_INT_01d19f7c = g_INT_01d19f84 - (iVar3 + 6);
   }
   g_INT_01d19f88 = ((g_INT_005fe3a8 + g_INT_01d19f80) - iVar2) / 2;

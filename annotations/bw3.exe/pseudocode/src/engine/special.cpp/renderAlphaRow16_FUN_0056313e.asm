@@ -15,18 +15,18 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 at 0040da49
 ;
 ; Referenced Globals:
-;   _MMX_INTEGER g_MMX_INTEGER_00604e60
-;   _MMX_INTEGER g_MMX_INTEGER_00604e68
-;   _MMX_INTEGER g_MMX_INTEGER_00604e70
-;   qword g_QWORD_00604e78 = 0xf80000
-;   qword g_QWORD_00604e98 = 0xfc00
-;   qword g_QWORD_00604eb8 = 0xf8
-;   qword g_QWORD_00604ec0 = 0x8
-;   qword g_QWORD_00604ee0 = 0x5
-;   qword g_QWORD_00604f00 = 0x3
+;   _MMX_INTEGER g_RedMask16
+;   _MMX_INTEGER g_GreenMask16
+;   _MMX_INTEGER g_BlueMask16
+;   qword g_RedMask32 = 0xf80000
+;   qword g_GreenMask32 = 0xfc00
+;   qword g_BlueMask32 = 0xf8
+;   qword g_TotalDitherShift = 0x8
+;   qword g_GreenBlueDitherShift = 0x5
+;   qword g_BlueBitShift = 0x3
 ;   qword[512] g_QWORD_ARRAY_00605710
 ;   undefined4 g_QWORD_ARRAY_00605710[255]
-;   uint[256] g_UINT_ARRAY_01c6a974
+;   uint[256] g_Hardware32BitPalette
 ;   int g_INT_01c6e2ac
 ;
 ; *****************************************************************************
@@ -46,7 +46,7 @@ section .text
     SHR EBP,0x8                         ; 00563154
     MOVZX EAX,byte ptr [ESI]            ; 00563157
         ;   Label: LAB_00563157
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c6a974] ; 0056315a | g_UINT_ARRAY_01c6a974
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c6a974] ; 0056315a | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 00563162
     IMUL EAX,EBP                        ; 00563165
     CMP dword ptr [0x01c6e2ac],0x1      ; 00563168 | g_INT_01c6e2ac
@@ -66,15 +66,15 @@ section .text
     PXOR MM2,qword ptr [0x00605f08]     ; 00563198 | g_QWORD_ARRAY_00605710[255]
     MOVZX EAX,word ptr [EDI]            ; 0056319f
     MOVD MM3,EAX                        ; 005631a2
-    PAND MM3,qword ptr [0x00604e70]     ; 005631a5 | g_MMX_INTEGER_00604e70
-    PSLLQ MM3,qword ptr [0x00604f00]    ; 005631ac | g_QWORD_00604f00
+    PAND MM3,qword ptr [0x00604e70]     ; 005631a5 | g_BlueMask16
+    PSLLQ MM3,qword ptr [0x00604f00]    ; 005631ac | g_BlueBitShift
     MOVD MM4,EAX                        ; 005631b3
-    PAND MM4,qword ptr [0x00604e68]     ; 005631b6 | g_MMX_INTEGER_00604e68
-    PSLLQ MM4,qword ptr [0x00604ee0]    ; 005631bd | g_QWORD_00604ee0
+    PAND MM4,qword ptr [0x00604e68]     ; 005631b6 | g_GreenMask16
+    PSLLQ MM4,qword ptr [0x00604ee0]    ; 005631bd | g_GreenBlueDitherShift
     POR MM3,MM4                         ; 005631c4
     MOVD MM5,EAX                        ; 005631c7
-    PAND MM5,qword ptr [0x00604e60]     ; 005631ca | g_MMX_INTEGER_00604e60
-    PSLLQ MM5,qword ptr [0x00604ec0]    ; 005631d1 | g_QWORD_00604ec0
+    PAND MM5,qword ptr [0x00604e60]     ; 005631ca | g_RedMask16
+    PSLLQ MM5,qword ptr [0x00604ec0]    ; 005631d1 | g_TotalDitherShift
     POR MM3,MM5                         ; 005631d8
     PUNPCKLBW MM3,MM7                   ; 005631db
     CMP dword ptr [0x01c6e2ac],0x1      ; 005631de | g_INT_01c6e2ac
@@ -96,12 +96,12 @@ section .text
     MOVQ MM2,MM0                        ; 0056320a
         ;   Label: LAB_0056320a
     MOVQ MM4,MM0                        ; 0056320d
-    PAND MM0,qword ptr [0x00604eb8]     ; 00563210 | g_QWORD_00604eb8
-    PAND MM2,qword ptr [0x00604e98]     ; 00563217 | g_QWORD_00604e98
-    PAND MM4,qword ptr [0x00604e78]     ; 0056321e | g_QWORD_00604e78
-    PSRLQ MM0,qword ptr [0x00604f00]    ; 00563225 | g_QWORD_00604f00
-    PSRLQ MM2,qword ptr [0x00604ee0]    ; 0056322c | g_QWORD_00604ee0
-    PSRLQ MM4,qword ptr [0x00604ec0]    ; 00563233 | g_QWORD_00604ec0
+    PAND MM0,qword ptr [0x00604eb8]     ; 00563210 | g_BlueMask32
+    PAND MM2,qword ptr [0x00604e98]     ; 00563217 | g_GreenMask32
+    PAND MM4,qword ptr [0x00604e78]     ; 0056321e | g_RedMask32
+    PSRLQ MM0,qword ptr [0x00604f00]    ; 00563225 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x00604ee0]    ; 0056322c | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x00604ec0]    ; 00563233 | g_TotalDitherShift
     POR MM0,MM2                         ; 0056323a
     POR MM0,MM4                         ; 0056323d
     MOVD EAX,MM0                        ; 00563240

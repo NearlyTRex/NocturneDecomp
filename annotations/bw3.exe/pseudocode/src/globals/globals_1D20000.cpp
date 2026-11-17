@@ -33,12 +33,12 @@ CGore g_CGoreInstance = {};
 CPickList g_CPickList = {};
 
 // CVector3f
-CVector3f g_CVector3f_01d22d4c = {};
-CVector3f g_CVector3f_01d22d58 = {};
+CVector3f g_GhoulOffsetMinusX = {};
+CVector3f g_GhoulOffsetPlusX = {};
 
 // CVector3i
-CVector3i g_CVector3i_01d22e70 = {};
-CVector3i g_CVector3i_01d22e7c = {};
+CVector3i g_ParticleCameraRotation = {};
+CVector3i g_BloodParticleViewDirection = {};
 
 // SMRGLHeaderPrimitive
 SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d22e88 = {};
@@ -50,61 +50,61 @@ SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d22e48 = {};
 char g_CHAR_ARRAY_01d22c6f[20] = {};
 
 // char[256]
-char g_CHAR_ARRAY_01d21ea0[256] = {};
-char g_CHAR_ARRAY_01d225c8[256] = {};
-char g_CHAR_ARRAY_01d229f0[256] = {};
+char g_ScreenshotFilename[256] = {};
+char g_CurrentSaveFile[256] = {};
+char g_ChapterDisplayName[256] = {};
 
 // char[600]
-char g_CHAR_ARRAY_01d21fa0[600] = {};
+char g_PrevKeyboardState[600] = {};
 
 // float
-float g_FLOAT_01d22af4 = {};
+float g_OverlayDisplayTimer = {};
 float g_FLOAT_01d22c30 = {};
 float g_FLOAT_01d22c34 = {};
 float g_FLOAT_01d22c38 = {};
-float g_FLOAT_01d22c88 = {};
+float g_IrisFadeRadius = {};
 
 // int
-int g_INT_01d21e9c = {};
-int g_INT_01d221f8 = {};
+int g_ScreenshotIndex = {};
+int g_InputResetFlag = {};
 int g_INT_01d221fc = {};
 int g_INT_01d22200 = {};
 int g_INT_01d226c8 = {};
-int g_INT_01d22af0 = {};
+int g_ChapterDisplayYear = {};
 int g_INT_01d22b44 = {};
 int g_INT_01d22b48 = {};
 int g_INT_01d22c2c = {};
 int g_INT_01d22c3c = {};
-int g_INT_01d22c40 = {};
-int g_INT_01d22c44 = {};
-int g_INT_01d22c48 = {};
-int g_INT_01d22c4c = {};
-int g_INT_01d22c50 = {};
+int g_MovieRecordingArmed = {};
+int g_MovieRecordingActive = {};
+int g_MovieRecordingMaxFrames = {};
+int g_MovieRecordingFrameCounter = {};
+int g_SoundDebugEnabled = {};
 int g_INT_01d22c54 = {};
 int g_INT_01d22c58 = {};
 int g_INT_01d22c5c = {};
-int g_INT_01d22c60 = {};
+int g_HelpCharWidth = {};
 int g_INT_01d22c64 = {};
 int g_INT_01d22c68 = {};
 int g_INT_01d22c84 = {};
-int g_INT_01d22c8c = {};
-int g_INT_01d22c90 = {};
+int g_IrisFadeCenterX = {};
+int g_IrisFadeCenterY = {};
 int g_INT_01d22c94 = {};
-int g_INT_01d22c98 = {};
+int g_ProfileStartTime = {};
 int g_INT_01d22c9c = {};
-int g_INT_01d22eb0 = {};
-int g_INT_01d276b4 = {};
-int g_INT_01d276b8 = {};
+int g_BloodParticleIndex = {};
+int g_BloodSplatIndex = {};
+int g_BloodSplatCount = {};
 
 // int[11]
-int g_INT_ARRAY_01d22da0[11] = {};
+int g_GhoulIndices[11] = {};
 
 // int[12]
-int g_INT_ARRAY_01d22ca4[12] = {};
+int g_GargoyleIndices[12] = {};
 
 // int[16]
 int g_INT_ARRAY_01d22bec[16] = {};
 
 // int[201]
-int g_INT_ARRAY_01d226cc[201] = {};
+int g_MasterLightStateSaveBuffer[201] = {};
 

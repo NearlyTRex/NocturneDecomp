@@ -9,8 +9,8 @@
 void __cdecl core_path_cpp_resetPathfindingQueue_FUN_004efc10(void)
 
 {
-  g_INT_01e4008c = 0;
-  g_INT_01e40090 = 0;
-  g_INT_01e4280c = 0;
+  g_PathfindingQueueHead = 0;
+  g_PathfindingQueueTail = 0;
+  g_PathfindingNodesExpanded = 0;
   return;
 }

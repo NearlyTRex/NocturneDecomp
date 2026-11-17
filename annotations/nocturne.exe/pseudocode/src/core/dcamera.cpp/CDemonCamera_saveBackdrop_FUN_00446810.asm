@@ -51,7 +51,7 @@
 ;   TerminatedCString s_core_dcamera_cpp_0057baa1
 ;   TerminatedCString s_Error_writing_compressed_0057bab5
 ;   double DOUBLE_0057badb = 256
-;   int g_INT_005a47a0 = 0x1a4
+;   int g_DefaultStreamBufferSize = 0x1a4
 ;   TerminatedCString s_EFD_005ad4b8
 ;   ... and 15 more
 ;
@@ -86,21 +86,21 @@ section .text
     PUSH 0x140d784                      ; 0044681e
     MOV ESI,0x10                        ; 00446823
     XOR ECX,ECX                         ; 00446828
-    MOV dword ptr [0x012b022c],EDX      ; 0044682a | g_INT_012b022c
-    MOV dword ptr [0x0140d778],ECX      ; 00446830 | g_INT_0140d778
-    MOV dword ptr [0x0140d77c],ECX      ; 00446836 | g_INT_0140d77c
+    MOV dword ptr [0x012b022c],EDX      ; 0044682a | g_BackdropSaveActive
+    MOV dword ptr [0x0140d778],ECX      ; 00446830 | g_ImageProcessingState1
+    MOV dword ptr [0x0140d77c],ECX      ; 00446836 | g_ImageProcessingState2
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20 ; 0044683c
         ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20(SFogGrid * fog)
-    MOV EAX,[0x0140e790]                ; 00446841 | g_SFogGrid_0140d784.scroll_vector.x
-    MOV EDI,dword ptr [0x0140e794]      ; 00446846 | g_SFogGrid_0140d784.scroll_vector.y
-    MOV EBP,dword ptr [0x0140e798]      ; 0044684c | g_SFogGrid_0140d784.scroll_vector.z
+    MOV EAX,[0x0140e790]                ; 00446841 | g_CameraFogGrid.scroll_vector.x
+    MOV EDI,dword ptr [0x0140e794]      ; 00446846 | g_CameraFogGrid.scroll_vector.y
+    MOV EBP,dword ptr [0x0140e798]      ; 0044684c | g_CameraFogGrid.scroll_vector.z
     ADD ESP,0x4                         ; 00446852
     OR EAX,EDI                          ; 00446855
-    MOV dword ptr [0x0140d780],ESI      ; 00446857 | g_INT_0140d780
+    MOV dword ptr [0x0140d780],ESI      ; 00446857 | g_ImageBytesPerPixel
     OR EAX,EBP                          ; 0044685d
     JNZ 0x0044686b                      ; 0044685f
         ;   XREF to: 0044686b (CONDITIONAL_JUMP)  ; LAB_0044686b
-    MOV dword ptr [0x0140d780],0x1      ; 00446861 | g_INT_0140d780
+    MOV dword ptr [0x0140d780],0x1      ; 00446861 | g_ImageBytesPerPixel
     MOV EDX,dword ptr [ESP + 0x278]     ; 0044686b
         ;   Label: LAB_0044686b
     PUSH EDX                            ; 00446872
@@ -128,7 +128,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004468b4
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004468b9
-    MOV ECX,dword ptr [0x005a47a0]      ; 004468bc | g_INT_005a47a0
+    MOV ECX,dword ptr [0x005a47a0]      ; 004468bc | g_DefaultStreamBufferSize
     PUSH ECX                            ; 004468c2
     PUSH 0x110                          ; 004468c3
     LEA EAX,[ESP + 0x184]               ; 004468c8
@@ -159,7 +159,7 @@ section .text
     PUSH EAX                            ; 00446928
     CALL crt_fstream.cpp_ostream_write_FUN_00565a13 ; 00446929
         ;   XREF to: 00565a13 (UNCONDITIONAL_CALL)  ; _ostream * crt_fstream.cpp_ostream_write_FUN_00565a13(_ostream * stream, void * buffer, SIZE_T count)
-    MOV EBP,dword ptr [0x0140e7a0]      ; 0044692e | g_SFogGrid_0140d784.density_multiplier
+    MOV EBP,dword ptr [0x0140e7a0]      ; 0044692e | g_CameraFogGrid.density_multiplier
     ADD ESP,0xc                         ; 00446934
     TEST EBP,EBP                        ; 00446937
     JZ 0x00446e00                       ; 00446939
@@ -204,7 +204,7 @@ section .text
         ;   XREF to: 00439880 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_00439880(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 004469d1
     XOR EAX,EAX                         ; 004469d4
-    MOV EDX,dword ptr [0x0140d780]      ; 004469d6 | g_INT_0140d780
+    MOV EDX,dword ptr [0x0140d780]      ; 004469d6 | g_ImageBytesPerPixel
     MOV dword ptr [ESP + 0x264],EAX     ; 004469dc
     TEST EDX,EDX                        ; 004469e3
     JLE 0x00446d94                      ; 004469e5
@@ -427,7 +427,7 @@ section .text
         ;   Label: LAB_00446d4f
     MOV EBX,dword ptr [ESP + 0x238]     ; 00446d56
     MOV ESI,dword ptr [ESP + 0x264]     ; 00446d5d
-    MOV EDI,dword ptr [0x0140d780]      ; 00446d64 | g_INT_0140d780
+    MOV EDI,dword ptr [0x0140d780]      ; 00446d64 | g_ImageBytesPerPixel
     ADD ECX,0x12c00                     ; 00446d6a
     ADD EBX,0x12c00                     ; 00446d70
     INC ESI                             ; 00446d76

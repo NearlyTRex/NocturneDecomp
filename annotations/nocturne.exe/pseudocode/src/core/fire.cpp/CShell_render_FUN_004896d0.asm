@@ -14,7 +14,7 @@
 ;   float FLOAT_0059d1f8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   CDemonCamera* g_CDemonCamera_PTR_007f7370
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CDemonSet g_CDemonSetInstance
 ;   UVector3 g_ZeroVector
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 00489761 (CONDITIONAL_JUMP)  ; LAB_00489761
     PUSH EAX                            ; 00489750
     PUSH ESI                            ; 00489751
-    MOV EBX,dword ptr [0x007f7370]      ; 00489752 | g_CDemonCamera_PTR_007f7370
+    MOV EBX,dword ptr [0x007f7370]      ; 00489752 | g_CurrentSceneCamera
     PUSH EBX                            ; 00489758
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00489759
         ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)

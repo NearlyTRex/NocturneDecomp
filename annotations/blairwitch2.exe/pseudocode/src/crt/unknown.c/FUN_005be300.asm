@@ -12,10 +12,10 @@
 ;   void* PTR_ReadFile_005c8604 = 001c90be
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
-;   void* g_PTR_0061f414 = 00000000
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
 ;   void* g_PTR_0061f43c = 00000000
-;   uint g_UINT_0061f480 = 0x14
-;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
+;   uint g_MaxHandleCount = 0x14
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -37,7 +37,7 @@ section .text
     TEST EBX,EBX                        ; 005be30b
     JL 0x005be317                       ; 005be30d
         ;   XREF to: 005be317 (CONDITIONAL_JUMP)  ; LAB_005be317
-    CMP EBX,dword ptr [0x0061f480]      ; 005be30f | g_UINT_0061f480
+    CMP EBX,dword ptr [0x0061f480]      ; 005be30f | g_MaxHandleCount
     JBE 0x005be32b                      ; 005be315
         ;   XREF to: 005be32b (CONDITIONAL_JUMP)  ; LAB_005be32b
     PUSH 0x4                            ; 005be317
@@ -57,7 +57,7 @@ section .text
     JZ 0x005be377                       ; 005be33d
         ;   XREF to: 005be377 (CONDITIONAL_JUMP)  ; LAB_005be377
     PUSH EBX                            ; 005be33f
-    CALL dword ptr [0x0061f414]         ; 005be340 | g_PTR_0061f414
+    CALL dword ptr [0x0061f414]         ; 005be340 | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005be346
     TEST EAX,EAX                        ; 005be349
     JZ 0x005be377                       ; 005be34b
@@ -87,7 +87,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 005be37e
     PUSH EDI                            ; 005be382
     MOV EBP,dword ptr [ESP + 0x28]      ; 005be383
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005be387 | g_SIOControlBlock_PTR_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005be387 | g_IOControlBlock
     PUSH EBP                            ; 005be38d
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005be38e
     PUSH ESI                            ; 005be391

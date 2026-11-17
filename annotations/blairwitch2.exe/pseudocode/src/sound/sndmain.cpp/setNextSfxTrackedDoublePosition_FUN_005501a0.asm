@@ -7,13 +7,13 @@
 ; CVector3d *      Stack[0x4]:4   position_source_ptr
 ;
 ; Referenced Globals:
-;   int g_INT_0264161c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 005501a0 | g_INT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 005501a0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_005501a0
     LEA EAX,[EDX*0x4 + 0x0]             ; 005501a6
     SUB EAX,EDX                         ; 005501ad

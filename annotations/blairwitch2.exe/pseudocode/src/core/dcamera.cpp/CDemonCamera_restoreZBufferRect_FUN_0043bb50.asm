@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   uint*[1200] g_UINT_PTR_ARRAY_01c2b64c
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c37788
 ;
 ; Called Functions:
@@ -58,7 +58,7 @@ section .text
     LEA EBP,[EDI*0x4 + 0x0]             ; 0043bbaa
     MOV ECX,dword ptr [ESI]             ; 0043bbb1
         ;   Label: LAB_0043bbb1
-    MOV EAX,dword ptr [EBP + 0x1c2b64c] ; 0043bbb3 | g_UINT_PTR_ARRAY_01c2b64c
+    MOV EAX,dword ptr [EBP + 0x1c2b64c] ; 0043bbb3 | g_ZBufferScanlineArray
     SHL ECX,0x2                         ; 0043bbb9
     ADD ECX,EAX                         ; 0043bbbc
     MOV EAX,dword ptr [ESP + 0x14]      ; 0043bbbe

@@ -602,7 +602,7 @@ LAB_004c7569:
   }
   pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
                       ((this_ptr->base).base.carry_hands[0].carry_actor,
-                       g_CDemonActorType_007c52f8.name_hash);
+                       g_CLightActorClassInfo.name_hash);
   if (pCVar10 != (CDemonActor *)0x0) {
     if ((((this_ptr->base).player_input.action_state.light != 0) && (uStack_1c == 0)) &&
        (uVar8 = pCVar10[4].blood_effect_color,

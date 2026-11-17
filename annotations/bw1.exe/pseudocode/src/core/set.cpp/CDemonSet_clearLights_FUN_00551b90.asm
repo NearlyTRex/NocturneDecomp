@@ -12,7 +12,7 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0 at 0054ec3c
 ;
 ; Referenced Globals:
-;   int g_INT_01fe4cb4
+;   int g_MasterLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fe4cb8
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     PUSH EDI                            ; 00551b92
     PUSH EBP                            ; 00551b93
     MOV EDI,dword ptr [ESP + 0x14]      ; 00551b94
-    MOV EDX,dword ptr [0x01fe4cb4]      ; 00551b98 | g_INT_01fe4cb4
+    MOV EDX,dword ptr [0x01fe4cb4]      ; 00551b98 | g_MasterLightCount
     XOR ESI,ESI                         ; 00551b9e
     TEST EDX,EDX                        ; 00551ba0
     JLE 0x00551bc6                      ; 00551ba2
@@ -41,7 +41,7 @@ section .text
     TEST EAX,EAX                        ; 00551bac
     JNZ 0x00551c17                      ; 00551bae
         ;   XREF to: 00551c17 (CONDITIONAL_JUMP)  ; LAB_00551c17
-    MOV EBP,dword ptr [0x01fe4cb4]      ; 00551bb0 | g_INT_01fe4cb4
+    MOV EBP,dword ptr [0x01fe4cb4]      ; 00551bb0 | g_MasterLightCount
         ;   Label: LAB_00551bb0
     ADD EBX,0x4                         ; 00551bb6
     XOR ECX,ECX                         ; 00551bb9
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00551bc6
     XOR EAX,EAX                         ; 00551bcc
     XOR ESI,ESI                         ; 00551bce
-    MOV [0x01fe4cb4],EAX                ; 00551bd0 | g_INT_01fe4cb4
+    MOV [0x01fe4cb4],EAX                ; 00551bd0 | g_MasterLightCount
     TEST EDX,EDX                        ; 00551bd5
     JLE 0x00551c00                      ; 00551bd7
         ;   XREF to: 00551c00 (CONDITIONAL_JUMP)  ; LAB_00551c00

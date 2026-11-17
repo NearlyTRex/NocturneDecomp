@@ -12,6 +12,6 @@ void __cdecl core_game_cpp_beginProfileTimer_FUN_004d7fc0(void)
   if (g_CGamePtr->profile_mode != 1) {
     return;
   }
-  g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+  g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005b2420();
   return;
 }

@@ -32,10 +32,10 @@ CVector3f * __stack_esi core_gabriela_cpp_CGabriella_getTorsoCenterPosition_FUN_
   bVar2 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-            (this_ptr_00,g_INT_ARRAY_01cc9108[0x11],&local_48);
+            (this_ptr_00,g_GabriellaIndices[0x11],&local_48);
   local_30 = local_48.x;
   local_2c[(uint)bVar2 * -2] = *(float *)((int)&local_48 + (uint)bVar2 * -8 + 4);
-  bone_index = g_INT_ARRAY_01cc9108[0x10];
+  bone_index = g_GabriellaIndices[0x10];
   local_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        *(float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040

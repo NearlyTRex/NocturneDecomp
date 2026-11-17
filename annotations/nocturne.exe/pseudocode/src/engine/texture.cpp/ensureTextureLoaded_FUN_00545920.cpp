@@ -15,18 +15,17 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_0054592
   if ((g_TexturesDisabled == 0) && (texture->texture_name[0] != '\0')) {
     texture_index =
          engine_texture_cpp_CTextureCache_findTexture_FUN_00545390
-                   (g_CTextureCache_PTR_02dd0f84,(texture->base).count & 0xffff,
-                    texture->texture_name);
+                   (g_TextureCacheInstance,(texture->base).count & 0xffff,texture->texture_name);
     bVar1 = texture_index == -1;
     if (bVar1) {
       texture_index =
            engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0
-                     (g_CTextureCache_PTR_02dd0f84,texture->texture_name);
+                     (g_TextureCacheInstance,texture->texture_name);
       (texture->base).count = texture_index;
     }
-    g_INT_02dd0f80 = texture_index;
-    engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410
-              (g_CTextureCache_PTR_02dd0f84,texture_index);
+    g_CurrentTextureIndex = texture_index;
+    engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(g_TextureCacheInstance,texture_index)
+    ;
     if (g_UseExternalRenderer != 0) {
       if (bVar1) {
         engine_special_cpp_updateTextureFromPalette_FUN_00532440(texture,g_CurrentPalette);

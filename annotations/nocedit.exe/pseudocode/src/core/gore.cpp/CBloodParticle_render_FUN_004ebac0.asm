@@ -258,7 +258,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004ebd65
     PUSH 0x4                            ; 004ebd68
     PUSH ESI                            ; 004ebd6a
-    PUSH 0x2d8339c                      ; 004ebd6b | CVector3i_02d8339c
+    PUSH 0x2d8339c                      ; 004ebd6b | g_BloodParticleViewDirection
     LEA EAX,[ESP + 0x7c]                ; 004ebd70
     PUSH EAX                            ; 004ebd74
     MOV EDX,dword ptr [0x006810c8]      ; 004ebd75 | g_CDemonSetPtr | g_CDemonSetInstance
@@ -530,7 +530,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004ec164
     PUSH 0x4                            ; 004ec167
     PUSH 0x0                            ; 004ec169
-    PUSH 0x2d8339c                      ; 004ec16b | CVector3i_02d8339c
+    PUSH 0x2d8339c                      ; 004ec16b | g_BloodParticleViewDirection
     LEA EAX,[ESP + 0x7c]                ; 004ec170
     PUSH EAX                            ; 004ec174
     MOV ECX,dword ptr [0x006810c8]      ; 004ec175 | g_CDemonSetPtr | g_CDemonSetInstance

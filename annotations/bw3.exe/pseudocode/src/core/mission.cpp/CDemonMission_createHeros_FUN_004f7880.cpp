@@ -22,7 +22,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004f7880(CDemonMissio
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
   if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
-    g_INT_01d5ba00 = 1;
+    g_HeroCount = 1;
     g_INT_01d5ba14 = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_004f7710
                       (this_ptr,0,g_CGamePtr->hero_number,existing_hero);
@@ -32,14 +32,14 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004f7880(CDemonMissio
     g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->aim_mode = g_CGamePtr->aim_mode;
   }
   else {
-    g_INT_01d5ba00 = g_CNetGamePtr->player_count;
-    if (3 < g_INT_01d5ba00) {
+    g_HeroCount = g_CNetGamePtr->player_count;
+    if (3 < g_HeroCount) {
       g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
       g_INT_01d71de4 = 0x69a;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::createHeros - too many network players for MAX_HERO");
     }
     iVar4 = 0;
-    if (0 < g_INT_01d5ba00) {
+    if (0 < g_HeroCount) {
       iVar3 = 0;
       iVar2 = 0;
       do {
@@ -55,7 +55,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004f7880(CDemonMissio
              *(uint *)(g_CNetGamePtr->players[0].name + iVar3 + 0x18);
         iVar3 = iVar3 + 0x80;
         iVar2 = iVar2 + 4;
-      } while (iVar4 < g_INT_01d5ba00);
+      } while (iVar4 < g_HeroCount);
     }
     g_INT_01d5ba14 = g_CNetGamePtr->local_player_index;
   }

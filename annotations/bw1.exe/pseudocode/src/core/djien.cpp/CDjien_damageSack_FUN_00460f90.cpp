@@ -36,7 +36,7 @@ void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDam
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"djien-heart?.wav @ 6");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(body_part);
-      this_ptr_00 = g_CEventList_PTR_0061b4d0;
+      this_ptr_00 = g_CEventListPtr;
       damage->gore_multiplier = damage->gore_multiplier * (float)7;
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(this_ptr_00,"DjienSackBlown");
       return;

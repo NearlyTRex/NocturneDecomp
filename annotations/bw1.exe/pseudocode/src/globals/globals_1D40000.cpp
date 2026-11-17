@@ -5,8 +5,8 @@
 // =============================================================================
 
 // SHuffmanTable[34]
-SHuffmanTable g_SHuffmanTable_ARRAY_01d405c8[34] = {};
+SHuffmanTable g_HuffmanTables[34] = {};
 
 // char[256]
-char g_CHAR_ARRAY_01d404c8[256] = {};
+char g_CurrentMp3Filename[256] = {};
 

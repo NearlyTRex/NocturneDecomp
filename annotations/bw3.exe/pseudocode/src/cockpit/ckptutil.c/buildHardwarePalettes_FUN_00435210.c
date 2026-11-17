@@ -17,7 +17,7 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(SRGBColorPale
   int iVar4;
   int iVar5;
   
-  g_SRGBColorPalette_PTR_01c6a970 = rgb_palette_data;
+  g_CurrentPalette = rgb_palette_data;
   if (g_INT_005fba20 != 0x20) {
     iVar4 = 0;
     do {
@@ -26,7 +26,7 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(SRGBColorPale
       puVar2 = &rgb_palette_data->colors[0].b;
       iVar5 = iVar4 + 2;
       rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
-      *(ushort *)((int)g_USHORT_ARRAY_01c6ad74 + iVar4) =
+      *(ushort *)((int)g_Hardware16BitPalette + iVar4) =
            (ushort)((uint)*puVar1 / (uint)g_INT_01c6af84 <<
                    (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
            (ushort)((uint)pSVar3->r / (uint)g_INT_01c6af78 <<
@@ -44,7 +44,7 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(SRGBColorPale
     puVar2 = &rgb_palette_data->colors[0].b;
     iVar5 = iVar4 + 4;
     rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
-    *(uint *)((int)g_UINT_ARRAY_01c6a974 + iVar4) =
+    *(uint *)((int)g_Hardware32BitPalette + iVar4) =
          (uint)*puVar2 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
          (uint)pSVar3->r << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
          (uint)*puVar1 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);

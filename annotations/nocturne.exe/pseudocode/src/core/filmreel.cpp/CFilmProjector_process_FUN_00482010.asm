@@ -15,8 +15,8 @@
 ;   TerminatedCString s_s_35_end_wav_0058103e
 ;   double DOUBLE_0058104b = 3.14159265350000
 ;   CFilterFX* g_CFilterFXPtr = 014b98ec
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
-;   undefined4 g_CFilmReelActorType_01c08c8c.name_hash
+;   CEventList* g_CEventListPtr = 01c03a10
+;   undefined4 g_CFilmReelClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 00482032 (CONDITIONAL_JUMP)  ; LAB_00482032
     LEA EAX,[EBX + 0x36c]               ; 004820ac
     PUSH EAX                            ; 004820b2
-    MOV ESI,dword ptr [0x005b7650]      ; 004820b3 | g_CEventList_PTR_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 004820b3 | g_CEventListPtr
     PUSH ESI                            ; 004820b9
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004820ba
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
@@ -110,7 +110,7 @@ section .text
     MOV dword ptr [EBX + 0x3d8],EAX     ; 004820d9
     JMP 0x0048209e                      ; 004820df
         ;   XREF to: 0048209e (UNCONDITIONAL_JUMP)  ; LAB_0048209e
-    MOV EAX,[0x01c08cc4]                ; 004820e1 | g_CFilmReelActorType_01c08c8c.name_hash
+    MOV EAX,[0x01c08cc4]                ; 004820e1 | g_CFilmReelClassInfo.name_hash
         ;   Label: LAB_004820e1
     PUSH EAX                            ; 004820e6
     MOV EDX,dword ptr [EBX + 0x150]     ; 004820e7

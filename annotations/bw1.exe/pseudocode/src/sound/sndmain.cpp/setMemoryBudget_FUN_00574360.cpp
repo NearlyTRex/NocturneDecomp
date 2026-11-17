@@ -9,8 +9,8 @@
 void __cdecl sound_sndmain_cpp_setMemoryBudget_FUN_00574360(int min_bytes,int max_bytes)
 
 {
-  g_INT_0062330c = min_bytes;
-  g_INT_00623310 = max_bytes;
+  g_MinimumSoundMemoryBudget = min_bytes;
+  g_MaximumSoundMemoryBudget = max_bytes;
   sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_0056dfd0(0);
   return;
 }

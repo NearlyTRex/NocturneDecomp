@@ -29,10 +29,10 @@
 ;   int g_INT_005fab0c = 0x9
 ;   TerminatedCString s_a_b_d_Y_005fab10
 ;   TerminatedCString s_H_M_S_005fab20
-;   char[7][4] g_CHAR_ARRAY_ARRAY_00626238
-;   char*[7] g_CHAR_PTR_ARRAY_00626254
-;   char[12][4] g_CHAR_ARRAY_ARRAY_00626270
-;   char*[12] g_CHAR_PTR_ARRAY_006262a0
+;   char[7][4] g_WeekdayNamesShort
+;   char*[7] g_WeekdayNamesLong
+;   char[12][4] g_MonthNamesShort
+;   char*[12] g_MonthNamesLong
 ;   void* PTR_s_EST_00626990 = 0062688c
 ;
 ; Called Functions:
@@ -230,25 +230,25 @@ section .text
         ;   XREF to: 005c2b64 (UNCONDITIONAL_JUMP)  ; LAB_005c2b64
     MOV EAX,dword ptr [EBX + 0x18]      ; 005c2931
         ;   Label: LAB_005c2931
-    MOV ESI,0x626238                    ; 005c2934 | g_CHAR_ARRAY_ARRAY_00626238
+    MOV ESI,0x626238                    ; 005c2934 | g_WeekdayNamesShort
     SHL EAX,0x2                         ; 005c2939
     ADD ESI,EAX                         ; 005c293c
     JMP 0x005c2b70                      ; 005c293e
         ;   XREF to: 005c2b70 (UNCONDITIONAL_JUMP)  ; LAB_005c2b70
     MOV ESI,dword ptr [EBX + 0x18]      ; 005c2943
         ;   Label: LAB_005c2943
-    MOV ESI,dword ptr [ESI*0x4 + 0x626254] ; 005c2946 | g_CHAR_PTR_ARRAY_00626254
+    MOV ESI,dword ptr [ESI*0x4 + 0x626254] ; 005c2946 | g_WeekdayNamesLong
     JMP 0x005c2b70                      ; 005c294d
         ;   XREF to: 005c2b70 (UNCONDITIONAL_JUMP)  ; LAB_005c2b70
     MOV ESI,dword ptr [EBX + 0x10]      ; 005c2952
         ;   Label: LAB_005c2952
     SHL ESI,0x2                         ; 005c2955
-    ADD ESI,0x626270                    ; 005c2958 | g_CHAR_ARRAY_ARRAY_00626270
+    ADD ESI,0x626270                    ; 005c2958 | g_MonthNamesShort
     JMP 0x005c2b70                      ; 005c295e
         ;   XREF to: 005c2b70 (UNCONDITIONAL_JUMP)  ; LAB_005c2b70
     MOV ESI,dword ptr [EBX + 0x10]      ; 005c2963
         ;   Label: LAB_005c2963
-    MOV ESI,dword ptr [ESI*0x4 + 0x6262a0] ; 005c2966 | g_CHAR_PTR_ARRAY_006262a0
+    MOV ESI,dword ptr [ESI*0x4 + 0x6262a0] ; 005c2966 | g_MonthNamesLong
     JMP 0x005c2b70                      ; 005c296d
         ;   XREF to: 005c2b70 (UNCONDITIONAL_JUMP)  ; LAB_005c2b70
     MOV EDI,dword ptr [EBX + 0xc]       ; 005c2972

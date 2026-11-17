@@ -63,8 +63,8 @@ section .text
     MOV EBX,0x1                         ; 005032b9
     XOR EDX,EDX                         ; 005032be
     PUSH 0x5e70d5                       ; 005032c0 | = "stderr.txt"
-    MOV dword ptr [0x01c51d10],EDX      ; 005032c5 | g_INT_01c51d10
-    MOV dword ptr [0x006258dc],ECX      ; 005032cb | g_INT_006258dc
+    MOV dword ptr [0x01c51d10],EDX      ; 005032c5 | g_ProcessorType
+    MOV dword ptr [0x006258dc],ECX      ; 005032cb | g_FullScreenQuadDepth
     MOV dword ptr [0x006258d0],EBX      ; 005032d1 | g_INT_006258d0
     CALL crt_stdio.c_fopen_FUN_005c157c ; 005032d7
         ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
@@ -104,7 +104,7 @@ section .text
     ADD ESP,0x4                         ; 00503345
     CALL core_mmx.c_detectCPUFeatures_FUN_0051c450 ; 00503348
         ;   XREF to: 0051c450 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_0051c450()
-    CMP dword ptr [0x01c51d00],0x0      ; 0050334d | g_INT_01c51d00
+    CMP dword ptr [0x01c51d00],0x0      ; 0050334d | g_MMXSupported
     JNZ 0x00503382                      ; 00503354
         ;   XREF to: 00503382 (CONDITIONAL_JUMP)  ; LAB_00503382
     MOV EBX,0x5e713c                    ; 00503356 | = "..\\core\\main.c"
@@ -150,7 +150,7 @@ section .text
     CALL core_dfont.cpp_initFonts_FUN_0045e000 ; 005033d5
         ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_0045e000()
         ;   Label: LAB_005033d5
-    CMP dword ptr [0x02c9be78],0x3c00000 ; 005033da | g_INT_02c9be78
+    CMP dword ptr [0x02c9be78],0x3c00000 ; 005033da | g_TotalPhysicalMemory
     JGE 0x00503658                      ; 005033e4
         ;   XREF to: 00503658 (CONDITIONAL_JUMP)  ; LAB_00503658
     PUSH 0x5e720f                       ; 005033ea | = "Windows is reporting "
@@ -175,7 +175,7 @@ section .text
         ;   XREF to: 00503401 (CONDITIONAL_JUMP)  ; LAB_00503401
     POP EDI                             ; 00503419
         ;   Label: LAB_00503419
-    FILD dword ptr [0x02c9be78]         ; 0050341a | g_INT_02c9be78
+    FILD dword ptr [0x02c9be78]         ; 0050341a | g_TotalPhysicalMemory
     FMUL float ptr [0x005e73d1]         ; 00503420 | g_FLOAT_005e73d1
     SUB ESP,0x8                         ; 00503426
     FSTP double ptr [ESP]               ; 00503429
@@ -442,7 +442,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 00503650
         ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00503655
-    CMP dword ptr [0x02c9be7c],0xc800000 ; 00503658 | g_INT_02c9be7c
+    CMP dword ptr [0x02c9be7c],0xc800000 ; 00503658 | g_AvailableSwapSpace
         ;   Label: LAB_00503658
     JGE 0x005037e2                      ; 00503662
         ;   XREF to: 005037e2 (CONDITIONAL_JUMP)  ; LAB_005037e2
@@ -468,7 +468,7 @@ section .text
         ;   XREF to: 0050367a (CONDITIONAL_JUMP)  ; LAB_0050367a
     POP EDI                             ; 00503692
         ;   Label: LAB_00503692
-    FILD dword ptr [0x02c9be7c]         ; 00503693 | g_INT_02c9be7c
+    FILD dword ptr [0x02c9be7c]         ; 00503693 | g_AvailableSwapSpace
     FMUL float ptr [0x005e73d1]         ; 00503699 | g_FLOAT_005e73d1
     SUB ESP,0x8                         ; 0050369f
     FSTP double ptr [ESP]               ; 005036a2
@@ -671,13 +671,13 @@ section .text
         ;   Label: LAB_00503835
     LEA EAX,[ESP + 0x500]               ; 00503836
     PUSH EAX                            ; 0050383d
-    MOV ECX,dword ptr [0x0152d244]      ; 0050383e | g_CBitFont_PTR_0152d244
+    MOV ECX,dword ptr [0x0152d244]      ; 0050383e | g_ThemeFont
     PUSH ECX                            ; 00503844
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00503845
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0050384a
     PUSH 0x58                           ; 0050384d
-    MOV EBX,dword ptr [0x0152d244]      ; 0050384f | g_CBitFont_PTR_0152d244
+    MOV EBX,dword ptr [0x0152d244]      ; 0050384f | g_ThemeFont
     PUSH EBX                            ; 00503855
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 00503856
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
@@ -747,16 +747,16 @@ section .text
         ;   Label: LAB_0050391d
     MOV EAX,dword ptr [EBX + 0x611348]  ; 00503924 | g_PlayerFilters | DAT_0061134c
     FILD dword ptr [ESP + 0x714]        ; 0050392a
-    MOV dword ptr [EAX],0x100           ; 00503931 | CDemonFilter_ARRAY_0152c39c | CDemonFilter_ARRAY_0152c39c[1].size
+    MOV dword ptr [EAX],0x100           ; 00503931 | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     FMUL double ptr [0x005e73dd]        ; 00503937 | g_DOUBLE_005e73dd
     MOV EAX,dword ptr [EBX + 0x611348]  ; 0050393d | g_PlayerFilters | DAT_0061134c
     PUSH 0x0                            ; 00503943
-    MOV dword ptr [EAX + 0x4],0x100     ; 00503945 | CDemonFilter_ARRAY_0152c39c[0].count | CDemonFilter_ARRAY_0152c39c[1].count
+    MOV dword ptr [EAX + 0x4],0x100     ; 00503945 | g_PlayerFilterPool[0].count | g_PlayerFilterPool[1].count
     FADD double ptr [0x005e73dd]        ; 0050394c | g_DOUBLE_005e73dd
     SUB ESP,0x4                         ; 00503952
     FSTP float ptr [ESP]                ; 00503955
     MOV EDX,dword ptr [EBX + 0x611348]  ; 00503958 | g_PlayerFilters | DAT_0061134c
-    PUSH EDX                            ; 0050395e | CDemonFilter_ARRAY_0152c39c | CDemonFilter_ARRAY_0152c39c[1].size
+    PUSH EDX                            ; 0050395e | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     ADD EBX,0x4                         ; 0050395f
     INC ESI                             ; 00503962
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30 ; 00503963

@@ -65,7 +65,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_00487790(CEmitter *this_p
     CStack_1c.x = CStack_34.x;
     *(uint *)((int)&CStack_1c + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
-    this_ptr_00 = g_CFireEffect_PTR_00614d30;
+    this_ptr_00 = g_CFireEffectPtr;
     *(uint *)((int)&CStack_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     laser_info.stored_angle = (float)uVar9;

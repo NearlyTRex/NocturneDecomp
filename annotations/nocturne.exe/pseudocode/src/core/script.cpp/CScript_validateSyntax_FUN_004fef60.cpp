@@ -13,7 +13,7 @@ char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_004fef60(CScript *this
   int iVar2;
   float local_10;
   
-  g_INT_01e56418 = 1;
+  g_ScriptEventsEnabled = 1;
   core_script_cpp_CScript_initRuntime_FUN_004feff0(this_ptr);
   shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_ScriptPickList);
   if (this_ptr->next_cmd < this_ptr->parsed_line_count) {
@@ -23,12 +23,12 @@ char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_004fef60(CScript *this
       iVar1 = core_script_cpp_CScript_step_FUN_004ff2c0(this_ptr,&local_10);
       if (iVar1 < 0) {
         *error_line_out = this_ptr->parsed_lines[iVar2].line_number + -1;
-        return g_CHAR_ARRAY_01e56420;
+        return g_ScriptErrorBuffer;
       }
       iVar2 = iVar2 + 1;
       this_ptr->next_cmd = iVar2;
     } while (iVar2 < this_ptr->parsed_line_count);
   }
-  g_INT_01e56418 = 0;
+  g_ScriptEventsEnabled = 0;
   return (char *)0x0;
 }

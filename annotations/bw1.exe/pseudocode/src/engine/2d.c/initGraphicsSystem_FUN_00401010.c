@@ -20,13 +20,13 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
   engine_2d_c_loadPaletteFile_FUN_00401590("vga.act");
   engine_2d_c_loadOrBuildColorMap_FUN_00402940("vga.map");
   wincore_wddvmem_cpp_setupColorPalette_FUN_005acec0();
-  g_UINT_ARRAY_01c4f030[0] = 0xffffffff;
+  g_ReciprocalLookupTable[0] = 0xffffffff;
   uVar3 = 1;
   iVar2 = 4;
   do {
     uVar1 = (ulonglong)uVar3;
     uVar3 = uVar3 + 1;
-    *(int *)((int)g_UINT_ARRAY_01c4f030 + iVar2) = (int)(0xffffffff / uVar1);
+    *(int *)((int)g_ReciprocalLookupTable + iVar2) = (int)(0xffffffff / uVar1);
     iVar2 = iVar2 + 4;
   } while (uVar3 < 0x640);
   support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_30);
@@ -36,7 +36,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_30,0);
     return;
   }
-  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_30,g_UCHAR_ARRAY_01c4ecf8,0x300);
+  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_30,g_DefaultPalette,0x300);
   support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_30);
   support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_30,0);
   return;

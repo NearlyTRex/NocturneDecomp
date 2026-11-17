@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   int g_INT_01d34e34
-;   uint g_UINT_01d34e38
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130
@@ -87,7 +87,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130 ; 0050b81d
         ;   XREF to: 0050c130 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050b822
-    MOV dword ptr [0x01d34e38],EBP      ; 0050b825 | g_UINT_01d34e38
+    MOV dword ptr [0x01d34e38],EBP      ; 0050b825 | g_CurrentGameTime
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050b82b
         ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050b830
@@ -95,7 +95,7 @@ section .text
     SAR EDX,0x1f                        ; 0050b837
     IDIV EBX                            ; 0050b83a
     PUSH 0x5e05e5                       ; 0050b83c
-    MOV [0x01d34e34],EAX                ; 0050b841 | g_INT_01d34e34
+    MOV [0x01d34e34],EAX                ; 0050b841 | g_LastPingTime
     MOV EAX,[0x006138e0]                ; 0050b846 | g_CEditorToolsPtr
     PUSH EAX                            ; 0050b84b
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0050b84c

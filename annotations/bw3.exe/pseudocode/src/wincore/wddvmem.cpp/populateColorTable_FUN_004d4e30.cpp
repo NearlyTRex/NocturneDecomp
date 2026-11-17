@@ -30,7 +30,7 @@ void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d4e30(void)
     }
     iVar4 = iVar3 + 4;
     iVar1 = iVar1 + 3;
-    *(uint *)((int)g_UINT_ARRAY_01c6a270 + iVar3) = uVar2;
+    *(uint *)((int)g_ColorTable32 + iVar3) = uVar2;
     iVar3 = iVar4;
   } while (iVar4 != 0x400);
   return;

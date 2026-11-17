@@ -27,7 +27,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CDemonCamera* g_CDemonCamera_PTR_007e2a54
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   UVector3 g_UVector3_021221d4
 ;   undefined4 g_UVector3_021221d4+4
@@ -35,7 +35,7 @@
 ;   CVector3f g_CVector3f_021221e0
 ;   undefined4 g_CVector3f_021221e0.y
 ;   undefined4 g_CVector3f_021221e0.z
-;   float g_FLOAT_021221ec
+;   float g_SavedProjectionFactor
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0
@@ -108,9 +108,9 @@ section .text
     LEA ESI,[EBX*0x4 + 0x0]             ; 0053ae93
     FLD float ptr [ESP + 0x34]          ; 0053ae9a
     ADD ESP,0x4                         ; 0053ae9e
-    FSTP float ptr [0x021221ec]         ; 0053aea1 | g_FLOAT_021221ec
+    FSTP float ptr [0x021221ec]         ; 0053aea1 | g_SavedProjectionFactor
     MOV EDI,dword ptr [ESP + 0x48]      ; 0053aea7
-    PUSH dword ptr [0x021221ec]         ; 0053aeab | g_FLOAT_021221ec
+    PUSH dword ptr [0x021221ec]         ; 0053aeab | g_SavedProjectionFactor
     ADD ESI,EDI                         ; 0053aeb1
     PUSH 0x21221e0                      ; 0053aeb3 | g_CVector3f_021221e0
     MOV EAX,dword ptr [ESI + 0x15accc]  ; 0053aeb8
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 0046d870 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0053aedf
     INC EBX                             ; 0053aee2
-    MOV EAX,[0x007e2a54]                ; 0053aee3 | g_CDemonCamera_PTR_007e2a54
+    MOV EAX,[0x007e2a54]                ; 0053aee3 | g_CurrentSceneCamera
     PUSH EBX                            ; 0053aee8
     MOV EDX,dword ptr [EAX + 0x3c]      ; 0053aee9
     PUSH EAX                            ; 0053aeec

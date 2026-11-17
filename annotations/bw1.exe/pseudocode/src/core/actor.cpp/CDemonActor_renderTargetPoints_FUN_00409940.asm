@@ -13,7 +13,7 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   undefined4 g_UCHAR_ARRAY_01c45ad0+0x7c00
+;   undefined4 g_ColorCubeLookup+0x7c00
 ;   int g_INT_01c4f020
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     MOV EDI,ESP                         ; 00409982
     XOR EAX,EAX                         ; 00409984
         ;   Label: LAB_00409984
-    MOV AL,[0x01c4d6d0]                 ; 00409986 | g_UCHAR_ARRAY_01c45ad0+0x7c00
+    MOV AL,[0x01c4d6d0]                 ; 00409986 | g_ColorCubeLookup+0x7c00
     LEA EBX,[ESP + 0x78]                ; 0040998b
     MOV dword ptr [ESP + 0x88],EAX      ; 0040998f
     MOV EAX,EDI                         ; 00409996

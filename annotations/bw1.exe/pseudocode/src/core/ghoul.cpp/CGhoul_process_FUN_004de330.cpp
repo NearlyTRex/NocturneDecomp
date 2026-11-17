@@ -340,9 +340,9 @@ LAB_004de7f3:
     case 0xc:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
                 ((CDeformableModelInstance *)pCStack_18);
-      iVar9 = g_INT_ARRAY_01cd0d98[1];
+      iVar9 = g_GhoulIndices[1];
       if (iVar6 == 0xc) {
-        iVar9 = g_INT_ARRAY_01cd0d98[2];
+        iVar9 = g_GhoulIndices[2];
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
                 ((CDeformableModelInstance *)pCStack_18,iVar9,&CStack_1ac);
@@ -374,7 +374,7 @@ LAB_004de7f3:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
                 ((CDeformableModelInstance *)pCStack_18);
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                ((CDeformableModelInstance *)pCStack_18,g_INT_ARRAY_01cd0d98[0],&CStack_2d8);
+                ((CDeformableModelInstance *)pCStack_18,g_GhoulIndices[0],&CStack_2d8);
       pCVar26 = &CStack_368;
       CStack_368.x = CStack_2d8.x;
       *(uint *)((int)&CStack_368 + (uint)bVar20 * -8 + 4) =
@@ -407,7 +407,7 @@ LAB_004de7f3:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
                 ((CDeformableModelInstance *)pCStack_18);
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                ((CDeformableModelInstance *)pCStack_18,g_INT_ARRAY_01cd0d98[0],&CStack_308);
+                ((CDeformableModelInstance *)pCStack_18,g_GhoulIndices[0],&CStack_308);
       pCVar26 = &CStack_32c;
       CStack_32c.x = CStack_308.x;
       *(uint *)((int)&CStack_32c + (uint)bVar20 * -8 + 4) =
@@ -804,10 +804,10 @@ LAB_004df445:
               SStack_43c.wielder = (CDemonActor *)this_ptr;
               fVar28 = 0.2;
               core_xform_cpp_transformVector3x4_FUN_005b5080
-                        (&g_CVector3f_01cd0d50,
+                        (&g_GhoulOffsetPlusX,
                          (CMatrix3x4f *)
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                         [g_INT_ARRAY_01cd0d98[2]].m,&CStack_188);
+                         [g_GhoulIndices[2]].m,&CStack_188);
               pCVar26 = &CStack_260;
               CStack_260.x = CStack_188.x;
               *(uint *)((int)&CStack_260 + (uint)bVar20 * -8 + 4) =
@@ -866,8 +866,8 @@ LAB_004df445:
       }
       this_ptr->is_berserk = 0;
       if (((0 < this_ptr->spasm_count) || (0 < this_ptr->lives_left)) &&
-         (iVar6 = this_ptr->spasm_timer - g_INT_01c43530, this_ptr->spasm_timer = iVar6, iVar6 < 1))
-      {
+         (iVar6 = this_ptr->spasm_timer - g_GlobalDeltaTimeInt, this_ptr->spasm_timer = iVar6,
+         iVar6 < 1)) {
         if (this_ptr->lives_left < 1) {
           this_ptr->spasm_count = this_ptr->spasm_count + -1;
         }
@@ -884,7 +884,7 @@ LAB_004df445:
       if (0 < this_ptr->lives_left) {
         iVar6 = this_ptr->arise_timer;
         if (iVar6 < 1) {
-          iVar6 = iVar6 + g_INT_01c43530;
+          iVar6 = iVar6 + g_GlobalDeltaTimeInt;
           iStack_58 = 0;
           this_ptr->arise_timer = iVar6;
           if (iVar6 < 0) {
@@ -911,7 +911,7 @@ LAB_004df445:
               }
               fStack_7c = fStack_138 * fStack_138 +
                           fStack_140 * fStack_140 + fStack_13c * fStack_13c;
-              fStack_78 = (float)(((int)fStack_7c >> 1) + g_INT_01cc804c);
+              fStack_78 = (float)(((int)fStack_7c >> 1) + g_FastSqrtMagic);
               if (fStack_78 < (float)8) goto LAB_004df0bb;
             }
             if (iStack_58 == 0) break;
@@ -963,7 +963,7 @@ LAB_004df0bb:
           }
         }
         else {
-          iVar6 = iVar6 - g_INT_01c43530;
+          iVar6 = iVar6 - g_GlobalDeltaTimeInt;
           this_ptr->arise_timer = iVar6;
           if (iVar6 < 1) {
             fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,30.0);
@@ -1029,10 +1029,10 @@ LAB_004dfce9:
             SStack_478.wielder = (CDemonActor *)this_ptr;
             fVar28 = 0.4;
             core_xform_cpp_transformVector3x4_FUN_005b5080
-                      (&g_CVector3f_01cd0d44,
+                      (&g_GhoulOffsetMinusX,
                        (CMatrix3x4f *)
                        (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                       [g_INT_ARRAY_01cd0d98[1]].m,&CStack_248);
+                       [g_GhoulIndices[1]].m,&CStack_248);
             pCVar26 = &CStack_290;
             CStack_290.x = CStack_248.x;
             *(uint *)((int)&CStack_290 + (uint)bVar20 * -8 + 4) =
@@ -1061,7 +1061,7 @@ LAB_004dfce9:
       break;
     case 0xd:
     case 0xe:
-      iVar6 = this_ptr->burp_timer - g_INT_01c43530;
+      iVar6 = this_ptr->burp_timer - g_GlobalDeltaTimeInt;
       this_ptr->burp_timer = iVar6;
       if (iVar6 < 1) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -1201,7 +1201,7 @@ LAB_004de489:
     fStack_68 = 1.0 - fVar28 * fVar28 * fVar28;
     fStack_14 = fStack_6c;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
-              (pCVar1,this_ptr->flinch_motion_index,fStack_6c,fStack_68,g_INT_ARRAY_01cd0d98[9],
+              (pCVar1,this_ptr->flinch_motion_index,fStack_6c,fStack_68,g_GhoulIndices[9],
                core_skeleton_cpp_blendWeightCallback_FUN_00567360);
     fVar28 = this_ptr->flinch_blend_weight - delta_time / 0.7f;
     this_ptr->flinch_blend_weight = fVar28;
@@ -1230,24 +1230,24 @@ LAB_004de489:
     iVar6 = this_ptr->part_indices[9];
     if ((this_ptr->base).base.model.part_data.visibility_flags[iVar6] == 0) {
       fVar28 = 0.5;
-      iVar9 = g_INT_ARRAY_01cd0d98[10];
+      iVar9 = g_GhoulIndices[10];
     }
     else {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_INT_ARRAY_01cd0d98[5],0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_GhoulIndices[5],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_INT_ARRAY_01cd0d98[3],0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_GhoulIndices[3],0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_INT_ARRAY_01cd0d98[6],0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_GhoulIndices[6],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_INT_ARRAY_01cd0d98[4],0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_GhoulIndices[4],0.2);
       }
       fVar28 = 0.7;
       iVar6 = this_ptr->part_indices[10];
-      iVar9 = g_INT_ARRAY_01cd0d98[0];
+      iVar9 = g_GhoulIndices[0];
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
               ((CCharacter *)this_ptr,iVar6,iVar9,fVar28);

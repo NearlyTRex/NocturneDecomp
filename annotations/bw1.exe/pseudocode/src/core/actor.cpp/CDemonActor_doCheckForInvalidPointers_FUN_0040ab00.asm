@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   context_line
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005d27fd = 99999
+;   float g_MaxValidPosition = 99999
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -98,7 +98,7 @@ section .text
     FMUL ST0                            ; 0040abc1
     FADDP                               ; 0040abc3
     FSQRT                               ; 0040abc5
-    FCOMP float ptr [0x005d27fd]        ; 0040abc7 | g_FLOAT_005d27fd
+    FCOMP float ptr [0x005d27fd]        ; 0040abc7 | g_MaxValidPosition
     FNSTSW AX                           ; 0040abcd
     SAHF                                ; 0040abcf
     JBE 0x0040ac46                      ; 0040abd0

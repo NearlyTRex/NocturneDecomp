@@ -14,7 +14,7 @@
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e85f8
 ;
 ; Referenced Globals:
-;   void* g_PTR_02cf6074
+;   void* g_APIDLL_buildCardList
 ;   int g_INT_02cf6108
 ;
 ; *****************************************************************************
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 00566424
     MOV EBP,dword ptr [ESP + 0x24]      ; 00566425
     PUSH EBP                            ; 00566429
-    CALL dword ptr [0x02cf6074]         ; 0056642a | g_PTR_02cf6074
+    CALL dword ptr [0x02cf6074]         ; 0056642a | g_APIDLL_buildCardList
     ADD ESP,0x14                        ; 00566430
     POP EBX                             ; 00566433
     POP ESI                             ; 00566434

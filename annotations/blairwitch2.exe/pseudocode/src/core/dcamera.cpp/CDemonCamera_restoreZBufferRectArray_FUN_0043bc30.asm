@@ -22,8 +22,8 @@
 ; Referenced Globals:
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   int g_INT_01466954
-;   uint*[1200] g_UINT_PTR_ARRAY_01c2b64c
+;   int g_ScanlineSpanCount
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c37788
 ;
 ; Called Functions:
@@ -139,7 +139,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 0043bd32
     MOV dword ptr [ESP + 0x1c],ECX      ; 0043bd36
     MOV ESI,dword ptr [EAX + 0x1d0]     ; 0043bd3a
-    MOV dword ptr [0x01466954],ECX      ; 0043bd40 | g_INT_01466954
+    MOV dword ptr [0x01466954],ECX      ; 0043bd40 | g_ScanlineSpanCount
     TEST ESI,ESI                        ; 0043bd46
     JLE 0x0043bdd0                      ; 0043bd48
         ;   XREF to: 0043bdd0 (CONDITIONAL_JUMP)  ; LAB_0043bdd0
@@ -155,7 +155,7 @@ section .text
     CMP EAX,dword ptr [EDI + 0xc]       ; 0043bd61
     JG 0x0043bdb6                       ; 0043bd64
         ;   XREF to: 0043bdb6 (CONDITIONAL_JUMP)  ; LAB_0043bdb6
-    MOV EBX,dword ptr [0x01466954]      ; 0043bd66 | g_INT_01466954
+    MOV EBX,dword ptr [0x01466954]      ; 0043bd66 | g_ScanlineSpanCount
     XOR ECX,ECX                         ; 0043bd6c
     TEST EBX,EBX                        ; 0043bd6e
     JLE 0x0043bd91                      ; 0043bd70
@@ -179,11 +179,11 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0043bd95
     MOV dword ptr [EBP + 0x1466958],EAX ; 0043bd97
     MOV EAX,dword ptr [EDX + 0x4]       ; 0043bd9d
-    MOV EDX,dword ptr [0x01466954]      ; 0043bda0 | g_INT_01466954
+    MOV EDX,dword ptr [0x01466954]      ; 0043bda0 | g_ScanlineSpanCount
     ADD EBP,0x4                         ; 0043bda6
     INC EDX                             ; 0043bda9
     MOV dword ptr [EBP + 0x1466d54],EAX ; 0043bdaa
-    MOV dword ptr [0x01466954],EDX      ; 0043bdb0 | g_INT_01466954
+    MOV dword ptr [0x01466954],EDX      ; 0043bdb0 | g_ScanlineSpanCount
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0043bdb6
         ;   Label: LAB_0043bdb6
     MOV EDX,dword ptr [ESP + 0x38]      ; 0043bdba
@@ -194,7 +194,7 @@ section .text
     CMP EAX,ECX                         ; 0043bdcc
     JL 0x0043bd54                       ; 0043bdce
         ;   XREF to: 0043bd54 (CONDITIONAL_JUMP)  ; LAB_0043bd54
-    MOV EBX,dword ptr [0x01466954]      ; 0043bdd0 | g_INT_01466954
+    MOV EBX,dword ptr [0x01466954]      ; 0043bdd0 | g_ScanlineSpanCount
         ;   Label: LAB_0043bdd0
     XOR EDI,EDI                         ; 0043bdd6
     TEST EBX,EBX                        ; 0043bdd8
@@ -204,7 +204,7 @@ section .text
     XOR ESI,ESI                         ; 0043bde0
     MOV EAX,dword ptr [ESI + 0x1466958] ; 0043bde2
         ;   Label: LAB_0043bde2
-    MOV EDX,dword ptr [EBP + 0x1c2b64c] ; 0043bde8 | g_UINT_PTR_ARRAY_01c2b64c
+    MOV EDX,dword ptr [EBP + 0x1c2b64c] ; 0043bde8 | g_ZBufferScanlineArray
     SHL EAX,0x2                         ; 0043bdee
     LEA ECX,[EDX + EAX*0x1]             ; 0043bdf1
     MOV EDX,dword ptr [ESP + 0x38]      ; 0043bdf4
@@ -227,7 +227,7 @@ section .text
     INC EDI                             ; 0043be36
     CALL core_dstrendr.cpp_memcpyMMX_FUN_00470201 ; 0043be37
         ;   XREF to: 00470201 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00470201(void * dest, void * src, int byte_count)
-    MOV EAX,[0x01466954]                ; 0043be3c | g_INT_01466954
+    MOV EAX,[0x01466954]                ; 0043be3c | g_ScanlineSpanCount
     ADD ESP,0xc                         ; 0043be41
     CMP EDI,EAX                         ; 0043be44
     JL 0x0043bde2                       ; 0043be46

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005a18c0(COutStreamFile *this_ptr,byte param_2)
+; uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005a18c0(COutStreamFile *this_ptr,byte character)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; byte             Stack[0x8]:1   param_2
+; byte             Stack[0x8]:1   character
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_005c2f00

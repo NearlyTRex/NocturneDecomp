@@ -14,7 +14,7 @@
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00549620 at 00549669
 ;
 ; Referenced Globals:
-;   int g_INT_007303dc
+;   int g_CurrentPolygonColor
 ;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 0046d553
     SUB ESP,0x90                        ; 0046d554
     MOV EBP,dword ptr [ESP + 0xa4]      ; 0046d55a
-    MOV EAX,[0x007303dc]                ; 0046d561 | g_INT_007303dc
+    MOV EAX,[0x007303dc]                ; 0046d561 | g_CurrentPolygonColor
     MOV EBX,dword ptr [ESP + 0xa8]      ; 0046d566
     MOV [0x01c6b5c0],EAX                ; 0046d56d | g_INT_01c6b5c0
     LEA EAX,[EBX*0x4 + 0x0]             ; 0046d572

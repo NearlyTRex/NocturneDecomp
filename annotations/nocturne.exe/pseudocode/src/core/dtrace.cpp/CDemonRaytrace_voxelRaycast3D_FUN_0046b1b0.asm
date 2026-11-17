@@ -41,7 +41,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0057e3b2 = 0.125
 ;   double DOUBLE_0057e3b6 = 6.42401069530502E-315
-;   uchar[8] g_UCHAR_ARRAY_005b6d08
+;   uchar[8] g_VoxelYBitMasks
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
@@ -355,7 +355,7 @@ section .text
     MOV AL,byte ptr [EDX + EAX*0x1]     ; 0046b4e3
     XOR EDX,EDX                         ; 0046b4e6
     AND EAX,0xff                        ; 0046b4e8
-    MOV DL,byte ptr [ESI + 0x5b6d08]    ; 0046b4ed | g_UCHAR_ARRAY_005b6d08
+    MOV DL,byte ptr [ESI + 0x5b6d08]    ; 0046b4ed | g_VoxelYBitMasks
     TEST EAX,EDX                        ; 0046b4f3
     JNZ 0x0046b5f9                      ; 0046b4f5
         ;   XREF to: 0046b5f9 (CONDITIONAL_JUMP)  ; LAB_0046b5f9

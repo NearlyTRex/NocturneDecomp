@@ -8,7 +8,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
-;   char[256] g_CHAR_ARRAY_01cb7b50
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00
@@ -67,7 +67,7 @@ section .text
     JZ 0x004bd42e                       ; 004bd400
         ;   XREF to: 004bd42e (CONDITIONAL_JUMP)  ; LAB_004bd42e
     XOR AH,AH                           ; 004bd402
-    MOV byte ptr [0x01cb7b50],AH        ; 004bd404 | g_CHAR_ARRAY_01cb7b50
+    MOV byte ptr [0x01cb7b50],AH        ; 004bd404 | g_CurrentSaveFile
     MOV ESI,dword ptr [0x0061b120]      ; 004bd40a | g_CNetGamePtr
         ;   Label: LAB_004bd40a
     PUSH ESI                            ; 004bd410

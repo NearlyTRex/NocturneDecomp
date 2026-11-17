@@ -17,7 +17,7 @@ void FUN_005c9fa0(void)
   _FILE **pp_Var4;
   
   g_FILE_00626308._flag._1_1_ = g_FILE_00626308._flag._1_1_ & 0xf8 | 4;
-  pp_Var4 = &g_FILE_PTR_006262d4;
+  pp_Var4 = &g_StaticFilePoolStart;
   uVar1 = _DAT_006262e0;
   while (uVar1 != 0) {
     psVar3 = InternalHeapAlloc(0x1d);
@@ -26,16 +26,16 @@ void FUN_005c9fa0(void)
       FUN_005c9f70("Not enough memory to allocate file structures\r\n",1);
     }
     psVar3->__reserve_base = (char *)pp_Var4;
-    psVar3->__b_lock = g_FileListNode_PTR_02c9f050;
+    psVar3->__b_lock = g_AllocatedListHead;
     ((_FILE *)pp_Var4)->_link = psVar3;
     psVar3->__reserve_end = (char *)0x0;
     *(byte *)&((_FILE *)pp_Var4)->_link->__get_ptr = 0;
     ((_FILE *)pp_Var4)->_link->__get_base = (char *)0x0;
     p_Var2 = (_FILE *)((int)pp_Var4 + 0x1a);
     pp_Var4 = (_FILE **)((int)pp_Var4 + 0x1a);
-    g_FileListNode_PTR_02c9f050 = (FileListNode *)psVar3;
+    g_AllocatedListHead = (FileListNode *)psVar3;
     uVar1 = p_Var2->_flag;
   }
-  g_FileListNode_PTR_02c9f054 = (FileListNode *)0x0;
+  g_FreeListHeadPointer = (FileListNode *)0x0;
   return;
 }

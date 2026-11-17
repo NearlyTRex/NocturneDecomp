@@ -25,7 +25,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->vertex_count,"vertexCount");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->tri_count,"triCount");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->texture_count,"textureCount");
-  if (g_INT_00763e88 == 1) {
+  if (g_ActorReadingMode == 1) {
     core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0
               (this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
     iVar6 = 0;
@@ -35,7 +35,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
         iVar7 = (int)&this_ptr->vertices->x + iVar9;
         iVar6 = iVar6 + 1;
         iVar9 = iVar9 + 0xc;
-        _fscanf(g_FILE_PTR_00763e84,"%d,%d,%d\n",iVar7,iVar7 + 4,iVar7 + 8);
+        _fscanf(g_ActorDataFile,"%d,%d,%d\n",iVar7,iVar7 + 4,iVar7 + 8);
       } while (iVar6 < this_ptr->vertex_count);
     }
     local_14 = 0;
@@ -44,7 +44,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
       iVar6 = 0;
       do {
         pSVar5 = this_ptr->faces;
-        _fscanf(g_FILE_PTR_00763e84,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
+        _fscanf(g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
                    (int)this_ptr->face_texture_indices + iVar9,
                    (int)&pSVar5->vertices[0].vertex_index + iVar6,
                    (int)&pSVar5->vertices[0].texture_u + iVar6,
@@ -66,7 +66,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
       pcVar8 = this_ptr->textures[0].texture_name;
       do {
         iVar6 = iVar6 + 1;
-        _fscanf(g_FILE_PTR_00763e84," \"%[^\"]\"\n",pcVar8);
+        _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pcVar8);
         pcVar8 = pcVar8 + 0x18;
       } while (iVar6 < this_ptr->texture_count);
     }
@@ -83,7 +83,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
         puVar1 = (uint *)((int)&pCVar4->x + iVar9);
         iVar9 = iVar9 + 0xc;
         iVar6 = iVar6 + 1;
-        _fprintf(g_FILE_PTR_00763e84,"\t%d,%d,%d\n",*puVar1,*puVar3,*puVar2);
+        _fprintf(g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*puVar3,*puVar2);
       } while (iVar6 < this_ptr->vertex_count);
     }
     iVar6 = 0;
@@ -92,7 +92,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
       iVar9 = 0;
       do {
         pSVar5 = this_ptr->faces;
-        _fprintf(g_FILE_PTR_00763e84,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
+        _fprintf(g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
                    *(uint *)(iVar9 + (int)this_ptr->face_texture_indices),
                    *(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),
                    *(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),
@@ -113,27 +113,27 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
       pcVar8 = this_ptr->textures[0].texture_name;
       do {
         iVar6 = iVar6 + 1;
-        _fprintf(g_FILE_PTR_00763e84,"\t\"%s\"\n",pcVar8);
+        _fprintf(g_ActorDataFile,"\t\"%s\"\n",pcVar8);
         pcVar8 = pcVar8 + 0x18;
       } while (iVar6 < this_ptr->texture_count);
     }
   }
-  if (1 < g_INT_005ad00c) {
+  if (1 < g_CBodyPartClassVersion) {
     core_actor_cpp_archiveBox_FUN_0040ce80(&this_ptr->physics_box,"simBox");
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->carried_by_actor,"carriedByActor");
   }
-  if (2 < g_INT_005ad00c) {
+  if (2 < g_CBodyPartClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->blood_type,"bloodType");
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->dont_use_normals,"dontUseNormals");
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->transparent_geometry_flag,"transparentGeometryFlag");
   }
-  if (3 < g_INT_005ad00c) {
+  if (3 < g_CBodyPartClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->render_in_background,"renderInBackground");
   }
-  if (4 < g_INT_005ad00c) {
+  if (4 < g_CBodyPartClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->dont_pick_me_up,"dontPickMeUp");
     return;
   }

@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005ccdc2 = 0.5
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -91,7 +91,7 @@ section .text
     PUSH 0x40000000                     ; 00427318
     LEA EDI,[ESP + 0x48]                ; 0042731d
     PUSH EAX                            ; 00427321
-    MOV EDX,dword ptr [0x00614d30]      ; 00427322 | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 00427322 | g_CFireEffectPtr
     LEA ESI,[ESP + 0x58]                ; 00427328
     PUSH EDX                            ; 0042732c
     MOVSD ES:EDI,ESI                    ; 0042732d

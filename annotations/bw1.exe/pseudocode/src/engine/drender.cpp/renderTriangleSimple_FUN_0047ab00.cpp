@@ -30,17 +30,17 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(CVector3i *ver
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
   
-  if ((g_INT_00713a7c != 0) &&
+  if ((g_CullingMode != 0) &&
      (iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60
                         (g_SRenderVertex_ARRAY_00629014 + vertex_indices->x,
                          g_SRenderVertex_ARRAY_00629014 + vertex_indices->y,
                          g_SRenderVertex_ARRAY_00629014 + vertex_indices->z), iVar3 == 0)) {
     return;
   }
-  g_INT_01e7dac8 = g_INT_01e7dac8 + 1;
-  if ((g_INT_01c50948 == 0) || (g_INT_00713a74 != 0)) {
-    if (g_INT_01c51d18 != 0) {
-      if ((uint)g_INT_01c51d18 < 2) {
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
+  if ((g_INT_01c50948 == 0) || (g_TexturesDisabled != 0)) {
+    if (g_VertexPreprocessMode != 0) {
+      if ((uint)g_VertexPreprocessMode < 2) {
         iVar3 = 0;
         pCVar8 = vertex_indices;
         if (0 < vertex_count) {
@@ -52,7 +52,8 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(CVector3i *ver
           } while (iVar3 < vertex_count);
         }
       }
-      else if ((g_INT_01c51d18 == 6) && (iVar3 = 0, pCVar8 = vertex_indices, 0 < vertex_count)) {
+      else if ((g_VertexPreprocessMode == 6) &&
+              (iVar3 = 0, pCVar8 = vertex_indices, 0 < vertex_count)) {
         do {
           iVar3 = iVar3 + 1;
           engine_prim_c_replaceWWithDepth_FUN_0053dd20(g_SRenderVertex_ARRAY_00629014 + pCVar8->x,1)
@@ -124,7 +125,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(CVector3i *ver
           lVar1 = (longlong)(int)uVar6 * (longlong)*(int *)(iVar9 + 0x1bc07b4);
           g_INT_01bc0784 = g_INT_01bc0784 + 1;
           *(uint *)(iVar9 + 0x1bc07b0) =
-               ((pSVar10->projected_vertex).transformed_z * 0x100 - g_INT_01bc0cd0) +
+               ((pSVar10->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         }
         local_30 = (CVector3i *)&local_30->y;
@@ -132,7 +133,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(CVector3i *ver
       } while (local_2c < vertex_count);
     }
     iVar3 = 0;
-    g_INT_01bc123c = 0;
+    g_RenderAbortFlag = 0;
     local_14 = (SSoftwareEdge *)&DAT_01bc0788;
     if (0 < g_INT_01bc0784) {
       do {
@@ -198,7 +199,7 @@ LAB_0047add8:
           }
           local_74[0] = (SRenderVertex *)0x47adfb;
           engine_special_cpp_renderScanline_FUN_00580127(local_18,local_14,(int)local_1c);
-          if (g_INT_01bc123c != 0) {
+          if (g_RenderAbortFlag != 0) {
             return;
           }
           (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
@@ -222,8 +223,7 @@ LAB_0047add8:
         iVar3 = iVar9;
       } while (iVar9 < vertex_count);
     }
-    engine_special_cpp_drawPolygon2_FUN_00582370
-              (local_74,vertex_count,g_BIT_INTEGER32_01c51d14.dword);
+    engine_special_cpp_drawPolygon2_FUN_00582370(local_74,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

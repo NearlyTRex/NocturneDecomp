@@ -9,6 +9,6 @@
 void __cdecl sound_sndmain_cpp_setNextSfxVolume_FUN_005728e0(float volume)
 
 {
-  g_CSfxOptions_ARRAY_02c78cf0[g_INT_02c78cec].current_volume = volume;
+  g_CSfxOptions_ARRAY_02c78cf0[g_SfxLastSlot].current_volume = volume;
   return;
 }

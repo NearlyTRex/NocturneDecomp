@@ -13,7 +13,7 @@
 ;   double g_DOUBLE_005f9bd2 = 2
 ;   double g_DOUBLE_005f9bda = 5
 ;   double g_DOUBLE_005f9be2 = -5
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
@@ -195,7 +195,7 @@ section .text
     PUSH 0x0                            ; 005b161c
     LEA EAX,[ESP + 0x28]                ; 005b161e
     PUSH EAX                            ; 005b1622
-    MOV ECX,dword ptr [0x0061c010]      ; 005b1623 | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 005b1623 | g_CFireEffectPtr
     PUSH ECX                            ; 005b1629
     INC EBX                             ; 005b162a
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 005b162b

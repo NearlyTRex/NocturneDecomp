@@ -31,19 +31,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
     g_INT_01d71de4 = 0xa7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
-  g_INT_01c5bae0 = g_CBitFont_PTR_01c5b0e0->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
-  if (4 < g_INT_01c5b104) {
+  if (4 < g_WindowStackCount) {
     g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
     g_INT_01d71de4 = 0x867;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open another window!");
   }
-  iVar1 = g_INT_01c5b104 * 0x1f8;
+  iVar1 = g_WindowStackCount * 0x1f8;
   iVar2 = (int)((g_INT_005fba18 + (g_INT_005fba18 >> 0x1f) * -0x80) -
                (uint)((g_INT_005fba18 >> 0x1f) << 6 < 0)) >> 7;
   iVar3 = g_INT_005fba1c / 0x60;
-  g_INT_01c5b104 = g_INT_01c5b104 + 1;
+  g_WindowStackCount = g_WindowStackCount + 1;
   left = left - iVar2;
   top = top - iVar3;
   right = right + iVar2;
@@ -59,7 +59,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
   if (text_content != (char *)0x0) {
     buffer = (char *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x48);
     iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
-                      (g_CBitFont_PTR_01c5b0e0,text_content,g_CHAR_ARRAY_01c5a140,0x14,200,
+                      (g_CBitFont_PTR_01c5b0e0,text_content,g_TextWrapBuffer,0x14,200,
                        (right - left) + iVar2 * -2);
     iVar9 = 0;
     if (0 < iVar4) {
@@ -95,10 +95,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
   }
   *(uint *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1d8) = 0;
   if ((window_flags & 1) == 0) {
-    if (g_INT_01c5b104 == 1) {
+    if (g_WindowStackCount == 1) {
       shape_edittool_cpp_CEditorTools_backupScreen_FUN_0047cbd0(this_ptr);
     }
-    if (g_ARRAY_PTR_01c5faec[0] != (byte *)0x0) {
+    if (g_ScreenBufferArray[0] != (byte *)0x0) {
       *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1e4) = g_INT_005fba18;
       iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1e4) * g_INT_005fba20;
       *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1e8) = g_INT_005fba1c;
@@ -115,7 +115,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
           iVar9 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1dc) * g_INT_005fba20;
           iVar5 = iVar9 >> 0x1f;
           puVar8 = (uint *)
-                   (g_ARRAY_PTR_01c5faec
+                   (g_ScreenBufferArray
                     [*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1e0) + iVar4] +
                    ((int)((iVar9 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3));
           puVar10 = local_18;
@@ -143,8 +143,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
   *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x34) = g_INT_01c6b59c;
   *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x38) = g_INT_01c6b5a0;
   *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x3c) = g_INT_01c6b5a4;
-  *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x40) = g_INT_01c6b5b8;
-  *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x44) = g_INT_01c6b5bc;
+  *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x40) = g_ViewportWidth;
+  *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x44) = g_ViewportHeight;
   engine_mini3d_cpp_getRenderViewport_FUN_004ed150
             ((float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x20),
              (float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x24),

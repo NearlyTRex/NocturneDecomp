@@ -18,7 +18,7 @@
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;   char[6200] g_CHAR_ARRAY_02d20340
-;   HWND g_HWND_02d21b78
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -48,7 +48,7 @@ section .text
     MOV ESI,dword ptr [0x00607280]      ; 0058132a | PTR_s_Blair_Witch_3_00607280
     PUSH ESI                            ; 00581330 | = "Blair Witch 3"
     PUSH 0x2d20340                      ; 00581331 | g_CHAR_ARRAY_02d20340
-    MOV EDI,dword ptr [0x02d21b78]      ; 00581336 | g_HWND_02d21b78
+    MOV EDI,dword ptr [0x02d21b78]      ; 00581336 | g_MainWindowHandle
     PUSH EDI                            ; 0058133c
     CALL dword ptr CS:[0x5b34d8]        ; 0058133d | PTR_MessageBoxA_005b34d8
     PUSH 0x1                            ; 00581344

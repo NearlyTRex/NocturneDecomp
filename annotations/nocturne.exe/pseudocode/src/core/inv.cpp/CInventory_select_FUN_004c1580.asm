@@ -28,9 +28,9 @@
 ;   TerminatedCString s_CGasMask_005873e9
 ;   TerminatedCString s_CBoxActor_005873f2
 ;   double DOUBLE_00587401 = 98
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CGame* g_CGamePtr = 01c775ec
-;   undefined4 g_CAmmoActorType_007641bc.name_hash
+;   undefined4 g_CAmmoClassInfo.name_hash
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -66,7 +66,7 @@ section .text
     TEST EAX,EAX                        ; 004c15a6
     JZ 0x004c1600                       ; 004c15a8
         ;   XREF to: 004c1600 (CONDITIONAL_JUMP)  ; LAB_004c1600
-    MOV EDX,dword ptr [0x007641f4]      ; 004c15aa | g_CAmmoActorType_007641bc.name_hash
+    MOV EDX,dword ptr [0x007641f4]      ; 004c15aa | g_CAmmoClassInfo.name_hash
     PUSH EDX                            ; 004c15b0
     PUSH EBX                            ; 004c15b1
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c15b2
@@ -116,7 +116,7 @@ section .text
     TEST EAX,EAX                        ; 004c1624
     JZ 0x004c1796                       ; 004c1626
         ;   XREF to: 004c1796 (CONDITIONAL_JUMP)  ; LAB_004c1796
-    MOV EAX,[0x01cae0d0]                ; 004c162c | g_CHealthItemActorType_01cae098.name_hash
+    MOV EAX,[0x01cae0d0]                ; 004c162c | g_CHealthItemClassInfo.name_hash
     PUSH EAX                            ; 004c1631
     PUSH EBX                            ; 004c1632
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1633
@@ -283,7 +283,7 @@ section .text
     TEST EAX,EAX                        ; 004c17a4
     JZ 0x004c17e3                       ; 004c17a6
         ;   XREF to: 004c17e3 (CONDITIONAL_JUMP)  ; LAB_004c17e3
-    MOV ESI,dword ptr [0x01c78bbc]      ; 004c17a8 | g_CGasMaskActorType_01c78b84.name_hash
+    MOV ESI,dword ptr [0x01c78bbc]      ; 004c17a8 | g_CGasMaskClassInfo.name_hash
     PUSH ESI                            ; 004c17ae
     PUSH EBX                            ; 004c17af
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c17b0
@@ -312,7 +312,7 @@ section .text
     TEST EAX,EAX                        ; 004c17f1
     JZ 0x004c15f3                       ; 004c17f3
         ;   XREF to: 004c15f3 (CONDITIONAL_JUMP)  ; LAB_004c15f3
-    MOV EDX,dword ptr [0x00764838]      ; 004c17f9 | g_CBoxActorActorType_00764800.name_hash
+    MOV EDX,dword ptr [0x00764838]      ; 004c17f9 | g_CBoxActorClassInfo.name_hash
     PUSH EDX                            ; 004c17ff
     PUSH EBX                            ; 004c1800
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1801
@@ -320,7 +320,7 @@ section .text
     ADD ESP,0x8                         ; 004c1806
     ADD EAX,0x5f8                       ; 004c1809
     PUSH EAX                            ; 004c180e
-    MOV ECX,dword ptr [0x005b7650]      ; 004c180f | g_CEventList_PTR_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004c180f | g_CEventListPtr
     PUSH ECX                            ; 004c1815
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c1816
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

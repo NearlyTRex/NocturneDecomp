@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 911,
-    "complexity_score": 406,
+    "complexity_score": 405,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 296,
+    "pseudocode_lines": 295,
     "suspect_count": 9,
     "suspect_types": [
       "bit_int_float_compare",
@@ -15,7 +15,7 @@
       "raw_address_constant",
       "undefined_data"
     ],
-    "total_lines": 1207
+    "total_lines": 1206
   },
   "cross_references": [
     {
@@ -237,25 +237,25 @@
     },
     {
       "addr": "00600180",
-      "name": "g_INT_00600180",
+      "name": "g_InventoryWidth",
       "type": "int",
       "value": "0xd0"
     },
     {
       "addr": "00600184",
-      "name": "g_INT_00600184",
+      "name": "g_InventoryHeight",
       "type": "int",
       "value": "0x60"
     },
     {
       "addr": "01549ab4",
-      "name": "g_CBitFont_PTR_01549ab4",
+      "name": "g_SmallEditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549abc",
-      "name": "g_CBitFont_PTR_01549abc",
+      "name": "g_MicroFont",
       "type": "CBitFont*",
       "value": null
     },
@@ -309,13 +309,13 @@
     },
     {
       "addr": "01d70a34",
-      "name": "g_INT_01d70a34",
+      "name": "g_InventoryScreenHeight",
       "type": "int",
       "value": null
     },
     {
       "addr": "01dd4890",
-      "name": "g_INT_01dd4890",
+      "name": "g_UseOSFonts",
       "type": "int",
       "value": null
     }
@@ -696,15 +696,15 @@
     },
     {
       "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 268,
+      "line": 267,
       "match": "(int)local_28",
       "severity": "moderate",
-      "text": "(iVar6 = 0, 0 < (int)local_28)) {",
+      "text": "if (((g_MicroFont != local_24) || (g_UseOSFonts == 0)) && (iVar6 = 0, 0 < (int)local_28)) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 275,
+      "line": 274,
       "match": "(int)local_28",
       "severity": "moderate",
       "text": "} while (iVar6 < (int)local_28);",

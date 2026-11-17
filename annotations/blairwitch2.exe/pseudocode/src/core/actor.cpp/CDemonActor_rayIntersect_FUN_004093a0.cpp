@@ -182,9 +182,9 @@ LAB_0040957e:
                         (this_ptr_01,lod_level,iVar2);
       out_hit->bone_index = iVar2;
       if ((SVert **)&stack0x00000000 != g_DeformableModelPool[0].vertex_data_ptr + 3) {
-        local_60.x = g_CVector3f_020ccfe0.x;
-        local_60.y = g_CVector3f_020ccfe0.y;
-        local_60.z = g_CVector3f_020ccfe0.z;
+        local_60.x = g_DeformableModelRayHitNormal.x;
+        local_60.y = g_DeformableModelRayHitNormal.y;
+        local_60.z = g_DeformableModelRayHitNormal.z;
       }
     }
   }

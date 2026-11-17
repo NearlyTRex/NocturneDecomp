@@ -21,10 +21,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057da84
 ;   TerminatedCString s_CDrawSurface_fillPoly_to_0057da9c
-;   SEdgeTableEntry[40] g_SEdgeTableEntry_ARRAY_01b4d490
-;   undefined4 g_SEdgeTableEntry_ARRAY_01b4d490[0].y_start
-;   undefined4 g_SEdgeTableEntry_ARRAY_01b4d490[0].x_fixed_point
-;   undefined4 g_SEdgeTableEntry_ARRAY_01b4d490[0].x_increment
+;   SEdgeTableEntry[40] g_GlobalEdgeTable
+;   undefined4 g_GlobalEdgeTable[0].y_start
+;   undefined4 g_GlobalEdgeTable[0].x_fixed_point
+;   undefined4 g_GlobalEdgeTable[0].x_increment
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -106,18 +106,18 @@ section .text
     SHL ECX,0x4                         ; 0045d3f2
     MOV EDI,dword ptr [EAX + 0x1b4d4a0] ; 0045d3f5
         ;   Label: LAB_0045d3f5
-    CMP EDI,dword ptr [EAX + 0x1b4d490] ; 0045d3fb | g_SEdgeTableEntry_ARRAY_01b4d490
+    CMP EDI,dword ptr [EAX + 0x1b4d490] ; 0045d3fb | g_GlobalEdgeTable
     JGE 0x0045d435                      ; 0045d401
         ;   XREF to: 0045d435 (CONDITIONAL_JUMP)  ; LAB_0045d435
     LEA EDI,[ESP + 0xa0]                ; 0045d403
     LEA ESI,[EAX + 0x1b4d490]           ; 0045d40a
-    MOVSD ES:EDI,ESI                    ; 0045d410 | g_SEdgeTableEntry_ARRAY_01b4d490
-    MOVSD ES:EDI,ESI                    ; 0045d411 | g_SEdgeTableEntry_ARRAY_01b4d490[0].y_start
+    MOVSD ES:EDI,ESI                    ; 0045d410 | g_GlobalEdgeTable
+    MOVSD ES:EDI,ESI                    ; 0045d411 | g_GlobalEdgeTable[0].y_start
     MOVSD ES:EDI,ESI                    ; 0045d412
     MOVSD ES:EDI,ESI                    ; 0045d413
     LEA EDI,[EAX + 0x1b4d490]           ; 0045d414
     LEA ESI,[EAX + 0x1b4d4a0]           ; 0045d41a
-    MOVSD ES:EDI,ESI                    ; 0045d420 | g_SEdgeTableEntry_ARRAY_01b4d490
+    MOVSD ES:EDI,ESI                    ; 0045d420 | g_GlobalEdgeTable
     MOVSD ES:EDI,ESI                    ; 0045d421
     MOVSD ES:EDI,ESI                    ; 0045d422
     MOVSD ES:EDI,ESI                    ; 0045d423
@@ -139,7 +139,7 @@ section .text
         ;   XREF to: 0045d3ec (CONDITIONAL_JUMP)  ; LAB_0045d3ec
     MOV ESI,dword ptr [ESP + 0xbc]      ; 0045d441
         ;   Label: LAB_0045d441
-    MOV EAX,[0x01b4d490]                ; 0045d448 | g_SEdgeTableEntry_ARRAY_01b4d490
+    MOV EAX,[0x01b4d490]                ; 0045d448 | g_GlobalEdgeTable
     XOR EDI,EDI                         ; 0045d44d
     XOR EBP,EBP                         ; 0045d44f
     MOV dword ptr [ESP + 0xc8],EAX      ; 0045d451
@@ -303,51 +303,51 @@ section .text
         ;   Label: LAB_0045d603
     SHL EAX,0x10                        ; 0045d605
     MOV EDX,0x10000                     ; 0045d608
-    MOV dword ptr [EDI + 0x8],EAX       ; 0045d60d | g_SEdgeTableEntry_ARRAY_01b4d490[0].x_fixed_point
+    MOV dword ptr [EDI + 0x8],EAX       ; 0045d60d | g_GlobalEdgeTable[0].x_fixed_point
     MOV EAX,dword ptr [ESP + 0xbc]      ; 0045d610
     MOV ECX,EDI                         ; 0045d617
     INC EAX                             ; 0045d619
-    MOV dword ptr [EDI + 0x4],EBX       ; 0045d61a | g_SEdgeTableEntry_ARRAY_01b4d490[0].y_start
+    MOV dword ptr [EDI + 0x4],EBX       ; 0045d61a | g_GlobalEdgeTable[0].y_start
     MOV dword ptr [ESP + 0xbc],EAX      ; 0045d61d
     MOV EAX,dword ptr [ESP + 0xb0]      ; 0045d624
     SUB EBX,ESI                         ; 0045d62b
     SUB EAX,EBP                         ; 0045d62d
-    MOV dword ptr [EDI],ESI             ; 0045d62f | g_SEdgeTableEntry_ARRAY_01b4d490
+    MOV dword ptr [EDI],ESI             ; 0045d62f | g_GlobalEdgeTable
     IMUL EDX                            ; 0045d631
     IDIV EBX                            ; 0045d633
-    MOV dword ptr [ECX + 0xc],EAX       ; 0045d635 | g_SEdgeTableEntry_ARRAY_01b4d490[0].x_increment
+    MOV dword ptr [ECX + 0xc],EAX       ; 0045d635 | g_GlobalEdgeTable[0].x_increment
     MOV EDX,dword ptr [ESP + 0xe0]      ; 0045d638
-    MOV EAX,dword ptr [ECX]             ; 0045d63f | g_SEdgeTableEntry_ARRAY_01b4d490
+    MOV EAX,dword ptr [ECX]             ; 0045d63f | g_GlobalEdgeTable
     MOV EBX,dword ptr [EDX + 0x14]      ; 0045d641
     ADD EDI,0x10                        ; 0045d644
     CMP EAX,EBX                         ; 0045d647
     JGE 0x0045d66b                      ; 0045d649
         ;   XREF to: 0045d66b (CONDITIONAL_JUMP)  ; LAB_0045d66b
     MOV EAX,EBX                         ; 0045d64b
-    MOV ESI,dword ptr [ECX]             ; 0045d64d | g_SEdgeTableEntry_ARRAY_01b4d490
-    MOV EBP,dword ptr [ECX + 0xc]       ; 0045d64f | g_SEdgeTableEntry_ARRAY_01b4d490[0].x_increment
+    MOV ESI,dword ptr [ECX]             ; 0045d64d | g_GlobalEdgeTable
+    MOV EBP,dword ptr [ECX + 0xc]       ; 0045d64f | g_GlobalEdgeTable[0].x_increment
     SUB EAX,ESI                         ; 0045d652
     IMUL EAX,EBP                        ; 0045d654
-    MOV EDX,dword ptr [ECX + 0x8]       ; 0045d657 | g_SEdgeTableEntry_ARRAY_01b4d490[0].x_fixed_point
+    MOV EDX,dword ptr [ECX + 0x8]       ; 0045d657 | g_GlobalEdgeTable[0].x_fixed_point
     ADD EDX,EAX                         ; 0045d65a
     MOV EAX,dword ptr [ESP + 0xe0]      ; 0045d65c
-    MOV dword ptr [ECX + 0x8],EDX       ; 0045d663 | g_SEdgeTableEntry_ARRAY_01b4d490[0].x_fixed_point
+    MOV dword ptr [ECX + 0x8],EDX       ; 0045d663 | g_GlobalEdgeTable[0].x_fixed_point
     MOV EAX,dword ptr [EAX + 0x14]      ; 0045d666
-    MOV dword ptr [ECX],EAX             ; 0045d669 | g_SEdgeTableEntry_ARRAY_01b4d490
+    MOV dword ptr [ECX],EAX             ; 0045d669 | g_GlobalEdgeTable
     MOV EDX,dword ptr [ESP + 0xe0]      ; 0045d66b
         ;   Label: LAB_0045d66b
-    MOV EAX,dword ptr [ECX + 0x4]       ; 0045d672 | g_SEdgeTableEntry_ARRAY_01b4d490[0].y_start
+    MOV EAX,dword ptr [ECX + 0x4]       ; 0045d672 | g_GlobalEdgeTable[0].y_start
     MOV EBX,dword ptr [EDX + 0x1c]      ; 0045d675
     CMP EAX,EBX                         ; 0045d678
     JLE 0x0045d3a8                      ; 0045d67a
         ;   XREF to: 0045d3a8 (CONDITIONAL_JUMP)  ; LAB_0045d3a8
-    MOV dword ptr [ECX + 0x4],EBX       ; 0045d680 | g_SEdgeTableEntry_ARRAY_01b4d490[0].y_start
+    MOV dword ptr [ECX + 0x4],EBX       ; 0045d680 | g_GlobalEdgeTable[0].y_start
     JMP 0x0045d3a8                      ; 0045d683
         ;   XREF to: 0045d3a8 (UNCONDITIONAL_JUMP)  ; LAB_0045d3a8
     MOV EAX,dword ptr [ESP + 0xc4]      ; 0045d688
         ;   Label: LAB_0045d688
     MOV ECX,dword ptr [ESP + 0xc8]      ; 0045d68f
-    CMP ECX,dword ptr [EAX + 0x1b4d490] ; 0045d696 | g_SEdgeTableEntry_ARRAY_01b4d490
+    CMP ECX,dword ptr [EAX + 0x1b4d490] ; 0045d696 | g_GlobalEdgeTable
     JL 0x0045d479                       ; 0045d69c
         ;   XREF to: 0045d479 (CONDITIONAL_JUMP)  ; LAB_0045d479
     MOV EBX,dword ptr [ESP + 0xc4]      ; 0045d6a2

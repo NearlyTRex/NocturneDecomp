@@ -13,10 +13,10 @@
 ;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00454970 at 004549f5
 ;
 ; Referenced Globals:
-;   ushort[2048] g_USHORT_ARRAY_00619b60
-;   undefined4 g_USHORT_ARRAY_00619b60[1020]
-;   uint[256] g_UINT_ARRAY_00b8189c
-;   ulong g_ULONG_01c51d1c
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
+;   uint[256] g_LightmapTexturePalette
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -33,22 +33,22 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 0048868c
     MOV EBP,dword ptr [EBP + 0x14]      ; 0048868f
     PXOR MM7,MM7                        ; 00488692
-    MOVD MM5,dword ptr [0x01c51d1c]     ; 00488695 | g_ULONG_01c51d1c
+    MOVD MM5,dword ptr [0x01c51d1c]     ; 00488695 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 0048869c
     PSLLW MM5,0x6                       ; 0048869f
     MOVZX EDX,byte ptr [EBX]            ; 004886a3
     MOVD MM0,dword ptr [ESI]            ; 004886a6
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 004886a9 | g_UINT_ARRAY_00b8189c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 004886a9 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 004886b1
     PUNPCKLBW MM0,MM7                   ; 004886b5
     SHR EDX,0x1                         ; 004886b8
     PUNPCKLBW MM2,MM7                   ; 004886ba
     ADD EAX,EDX                         ; 004886bd
     PMULLW MM0,MM2                      ; 004886bf
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 004886c2 | g_USHORT_ARRAY_00619b60
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 004886c2 | g_LightmapData
     MOVQ MM2,MM3                        ; 004886ca
     MOVQ MM4,MM5                        ; 004886cd
-    PXOR MM2,qword ptr [0x0061a358]     ; 004886d0 | g_USHORT_ARRAY_00619b60[1020]
+    PXOR MM2,qword ptr [0x0061a358]     ; 004886d0 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004886d7
     PMULHW MM4,MM3                      ; 004886da
     PADDW MM0,MM4                       ; 004886dd

@@ -265,7 +265,7 @@ section .text
     ADD ESP,0xc                         ; 004d6bbb
     JMP 0x004d69ec                      ; 004d6bbe
         ;   XREF to: 004d69ec (UNCONDITIONAL_JUMP)  ; LAB_004d69ec
-    MOV ECX,dword ptr [0x01cee138]      ; 004d6bc3 | g_INT_ARRAY_01cee138
+    MOV ECX,dword ptr [0x01cee138]      ; 004d6bc3 | g_ImpIndices
         ;   Label: LAB_004d6bc3
     PUSH ECX                            ; 004d6bc9
     MOV ESI,dword ptr [EBP + 0x6e]      ; 004d6bca
@@ -695,7 +695,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004d70aa
     ADD ESP,0x8                         ; 004d70ad
     LEA EAX,[EBP + 0xfffffe0a]          ; 004d70b0
-    MOV EDX,dword ptr [0x01cee140]      ; 004d70b6 | g_INT_ARRAY_01cee138[2]
+    MOV EDX,dword ptr [0x01cee140]      ; 004d70b6 | g_ImpIndices[2]
     PUSH EAX                            ; 004d70bc
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d70bd
     LEA ESI,[EBP + 0xfffffefa]          ; 004d70c4
@@ -710,7 +710,7 @@ section .text
     LEA EDI,[EBP + 0xffffff06]          ; 004d70ea
     PUSH EAX                            ; 004d70f0
     FLD float ptr [EBP + 0x76]          ; 004d70f1
-    PUSH 0x265370c                      ; 004d70f4 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004d70f4 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffe0e]   ; 004d70f9
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004d70ff
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

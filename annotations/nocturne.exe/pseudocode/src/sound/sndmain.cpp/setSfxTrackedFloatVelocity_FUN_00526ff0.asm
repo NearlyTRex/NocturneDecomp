@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CFireEffect_createFireball_FUN_0048b270 at 0048b304
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -52,7 +52,7 @@ section .text
     TEST ECX,ECX                        ; 0052702b
     JZ 0x00527047                       ; 0052702d
         ;   XREF to: 00527047 (CONDITIONAL_JUMP)  ; LAB_00527047
-    MOV EDI,dword ptr [0x02dc8318]      ; 0052702f | g_CSoundDevice_PTR_02dc8318
+    MOV EDI,dword ptr [0x02dc8318]      ; 0052702f | g_CSoundDevicePtr
     TEST EDI,EDI                        ; 00527035
     JZ 0x00527047                       ; 00527037
         ;   XREF to: 00527047 (CONDITIONAL_JUMP)  ; LAB_00527047

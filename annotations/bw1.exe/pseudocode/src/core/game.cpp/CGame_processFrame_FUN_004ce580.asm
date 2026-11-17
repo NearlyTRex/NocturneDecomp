@@ -71,7 +71,7 @@ section .text
         ;   Label: LAB_004ce5a9
     XOR EBX,EBX                         ; 004ce5ac
     MOV ESI,dword ptr [EAX + 0xe0]      ; 004ce5ae
-    MOV dword ptr [0x01e7dac8],EBX      ; 004ce5b4 | g_INT_01e7dac8
+    MOV dword ptr [0x01e7dac8],EBX      ; 004ce5b4 | g_RenderedTriangleCount
     TEST ESI,ESI                        ; 004ce5ba
     JNZ 0x004ce5cc                      ; 004ce5bc
         ;   XREF to: 004ce5cc (CONDITIONAL_JUMP)  ; LAB_004ce5cc
@@ -213,14 +213,14 @@ section .text
     MOV ECX,dword ptr [EAX + 0x154]     ; 004ce759
     PUSH EAX                            ; 004ce75f
     CALL dword ptr [ECX + 0x68]         ; 004ce760
-    MOV AH,byte ptr [0x01c43544]        ; 004ce763 | g_BIT_INTEGER32_01c43544
+    MOV AH,byte ptr [0x01c43544]        ; 004ce763 | g_MouseButtonFlags
     ADD ESP,0xc                         ; 004ce769
     TEST AH,0x1                         ; 004ce76c
     JZ 0x004ce839                       ; 004ce76f
         ;   XREF to: 004ce839 (CONDITIONAL_JUMP)  ; LAB_004ce839
-    MOV EDX,dword ptr [0x01c43540]      ; 004ce775 | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 004ce775 | g_MouseY
     PUSH EDX                            ; 004ce77b
-    MOV ECX,dword ptr [0x01c4353c]      ; 004ce77c | g_INT_01c4353c
+    MOV ECX,dword ptr [0x01c4353c]      ; 004ce77c | g_MouseX
     PUSH ECX                            ; 004ce782
     PUSH 0x1fe37ec                      ; 004ce783
     LEA ESI,[ESP + 0x6d4]               ; 004ce788
@@ -264,10 +264,10 @@ section .text
     MOV ECX,dword ptr [EAX + 0x154]     ; 004ce81d
     PUSH EAX                            ; 004ce823
     CALL dword ptr [ECX + 0x68]         ; 004ce824
-    MOV DL,byte ptr [0x01c43544]        ; 004ce827 | g_BIT_INTEGER32_01c43544
+    MOV DL,byte ptr [0x01c43544]        ; 004ce827 | g_MouseButtonFlags
     AND DL,0xfe                         ; 004ce82d
     ADD ESP,0xc                         ; 004ce830
-    MOV byte ptr [0x01c43544],DL        ; 004ce833 | g_BIT_INTEGER32_01c43544
+    MOV byte ptr [0x01c43544],DL        ; 004ce833 | g_MouseButtonFlags
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ce839
         ;   Label: LAB_004ce839
     PUSH EBX                            ; 004ce83c
@@ -347,12 +347,12 @@ section .text
     TEST EAX,EAX                        ; 004ce928
     JZ 0x004ce957                       ; 004ce92a
         ;   XREF to: 004ce957 (CONDITIONAL_JUMP)  ; LAB_004ce957
-    MOV EAX,[0x01ccfe94]                ; 004ce92c | g_INT_01ccfe94
+    MOV EAX,[0x01ccfe94]                ; 004ce92c | g_ScreenshotIndex
     INC EAX                             ; 004ce931
     PUSH EAX                            ; 004ce932
     PUSH 0x5e15cb                       ; 004ce933 | = "demon%d.pcx"
     PUSH 0x1ccfe98                      ; 004ce938
-    MOV [0x01ccfe94],EAX                ; 004ce93d | g_INT_01ccfe94
+    MOV [0x01ccfe94],EAX                ; 004ce93d | g_ScreenshotIndex
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004ce942
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ce947
@@ -382,7 +382,7 @@ section .text
     PUSH ESI                            ; 004ce98f
     CALL core_game.cpp_CGame_drawScreenBorder_FUN_004cc0c0 ; 004ce990
         ;   XREF to: 004cc0c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_drawScreenBorder_FUN_004cc0c0(CGame * this_ptr)
-    MOV EDI,dword ptr [0x01cd0c38]      ; 004ce995 | g_INT_01cd0c38
+    MOV EDI,dword ptr [0x01cd0c38]      ; 004ce995 | g_MovieRecordingArmed
     ADD ESP,0x4                         ; 004ce99b
     TEST EDI,EDI                        ; 004ce99e
     JZ 0x004cea00                       ; 004ce9a0
@@ -405,22 +405,22 @@ section .text
     TEST EAX,EAX                        ; 004ce9c5
     JZ 0x004ce9de                       ; 004ce9c7
         ;   XREF to: 004ce9de (CONDITIONAL_JUMP)  ; LAB_004ce9de
-    MOV EAX,[0x01cd0c3c]                ; 004ce9c9 | g_INT_01cd0c3c
+    MOV EAX,[0x01cd0c3c]                ; 004ce9c9 | g_MovieRecordingActive
     TEST EAX,EAX                        ; 004ce9ce
     JZ 0x004cf141                       ; 004ce9d0
         ;   XREF to: 004cf141 (CONDITIONAL_JUMP)  ; LAB_004cf141
     XOR EBX,EBX                         ; 004ce9d6
-    MOV dword ptr [0x01cd0c3c],EBX      ; 004ce9d8 | g_INT_01cd0c3c
-    MOV ESI,dword ptr [0x01cd0c40]      ; 004ce9de | g_INT_01cd0c40
+    MOV dword ptr [0x01cd0c3c],EBX      ; 004ce9d8 | g_MovieRecordingActive
+    MOV ESI,dword ptr [0x01cd0c40]      ; 004ce9de | g_MovieRecordingMaxFrames
         ;   Label: LAB_004ce9de
     TEST ESI,ESI                        ; 004ce9e4
     JLE 0x004cf156                      ; 004ce9e6
         ;   XREF to: 004cf156 (CONDITIONAL_JUMP)  ; LAB_004cf156
-    CMP ESI,dword ptr [0x01cd0c44]      ; 004ce9ec | g_INT_01cd0c44
+    CMP ESI,dword ptr [0x01cd0c44]      ; 004ce9ec | g_MovieRecordingFrameCounter
     JG 0x004cf156                       ; 004ce9f2
         ;   XREF to: 004cf156 (CONDITIONAL_JUMP)  ; LAB_004cf156
     XOR ESI,ESI                         ; 004ce9f8
-    MOV dword ptr [0x01cd0c3c],ESI      ; 004ce9fa | g_INT_01cd0c3c
+    MOV dword ptr [0x01cd0c3c],ESI      ; 004ce9fa | g_MovieRecordingActive
     MOV EAX,[0x00622ad0]                ; 004cea00 | g_CScriptPtr
         ;   Label: LAB_004cea00
     PUSH EAX                            ; 004cea05 | g_CScriptInstance
@@ -488,7 +488,7 @@ section .text
     FXCH                                ; 004cead4
     FSTP double ptr [0x01cc9ba0]        ; 004cead6 | g_DOUBLE_01cc9ba0
     FDIV double ptr [0x01cc9ba0]        ; 004ceadc | g_DOUBLE_01cc9ba0
-    MOV ESI,dword ptr [0x01e7dac8]      ; 004ceae2 | g_INT_01e7dac8
+    MOV ESI,dword ptr [0x01e7dac8]      ; 004ceae2 | g_RenderedTriangleCount
     PUSH ESI                            ; 004ceae8
     FLD1                                ; 004ceae9
     SUB ESP,0x8                         ; 004ceaeb
@@ -801,7 +801,7 @@ section .text
     CMP dword ptr [EAX + 0x1f4],0x0     ; 004cee83
     JZ 0x004cee9b                       ; 004cee8a
         ;   XREF to: 004cee9b (CONDITIONAL_JUMP)  ; LAB_004cee9b
-    MOV EBX,dword ptr [0x0061b4d0]      ; 004cee8c | g_CEventList_PTR_0061b4d0
+    MOV EBX,dword ptr [0x0061b4d0]      ; 004cee8c | g_CEventListPtr
     PUSH EBX                            ; 004cee92
     CALL core_event.cpp_CEventList_render_FUN_004a6d80 ; 004cee93
         ;   XREF to: 004a6d80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_render_FUN_004a6d80(CEventList * this_ptr)
@@ -925,7 +925,7 @@ section .text
     JNZ 0x004ceffa                      ; 004cefce
         ;   XREF to: 004ceffa (CONDITIONAL_JUMP)  ; LAB_004ceffa
     PUSH 0x5e1708                       ; 004cefd0 | = "MouseControlMode"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 004cefd5 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 004cefd5 | g_CEventListPtr
     PUSH ESI                            ; 004cefdb
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004cefdc
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -1061,15 +1061,15 @@ section .text
         ;   XREF to: 004ce957 (UNCONDITIONAL_JUMP)  ; LAB_004ce957
     MOV ECX,0x1                         ; 004cf141
         ;   Label: LAB_004cf141
-    MOV [0x01cd0c44],EAX                ; 004cf146 | g_INT_01cd0c44
-    MOV dword ptr [0x01cd0c3c],ECX      ; 004cf14b | g_INT_01cd0c3c
+    MOV [0x01cd0c44],EAX                ; 004cf146 | g_MovieRecordingFrameCounter
+    MOV dword ptr [0x01cd0c3c],ECX      ; 004cf14b | g_MovieRecordingActive
     JMP 0x004ce9de                      ; 004cf151
         ;   XREF to: 004ce9de (UNCONDITIONAL_JUMP)  ; LAB_004ce9de
-    CMP dword ptr [0x01cd0c3c],0x0      ; 004cf156 | g_INT_01cd0c3c
+    CMP dword ptr [0x01cd0c3c],0x0      ; 004cf156 | g_MovieRecordingActive
         ;   Label: LAB_004cf156
     JZ 0x004cea00                       ; 004cf15d
         ;   XREF to: 004cea00 (CONDITIONAL_JUMP)  ; LAB_004cea00
-    MOV EDX,dword ptr [0x01cd0c44]      ; 004cf163 | g_INT_01cd0c44
+    MOV EDX,dword ptr [0x01cd0c44]      ; 004cf163 | g_MovieRecordingFrameCounter
     PUSH EDX                            ; 004cf169
     PUSH 0x5e1330                       ; 004cf16a | = "noc%05d.raw"
     LEA EAX,[ESP + 0x62c]               ; 004cf16f
@@ -1097,14 +1097,14 @@ section .text
     JZ 0x004cea00                       ; 004cf1bf
         ;   XREF to: 004cea00 (CONDITIONAL_JUMP)  ; LAB_004cea00
     XOR ECX,ECX                         ; 004cf1c5
-    MOV EBX,dword ptr [0x0061d970]      ; 004cf1c7 | g_INT_0061d970
+    MOV EBX,dword ptr [0x0061d970]      ; 004cf1c7 | g_MovieRecordingHeight
     MOV dword ptr [ESP + 0x6f4],ECX     ; 004cf1cd
     TEST EBX,EBX                        ; 004cf1d4
     JLE 0x004cf3dd                      ; 004cf1d6
         ;   XREF to: 004cf3dd (CONDITIONAL_JUMP)  ; LAB_004cf3dd
     XOR ESI,ESI                         ; 004cf1dc
         ;   Label: LAB_004cf1dc
-    MOV EDI,dword ptr [0x0061d96c]      ; 004cf1de | g_INT_0061d96c
+    MOV EDI,dword ptr [0x0061d96c]      ; 004cf1de | g_MovieRecordingWidth
     MOV dword ptr [ESP + 0x6fc],ESI     ; 004cf1e4
     TEST EDI,EDI                        ; 004cf1eb
     JLE 0x004cf3c0                      ; 004cf1ed
@@ -1116,7 +1116,7 @@ section .text
         ;   Label: LAB_004cf202
     MOV ECX,dword ptr [0x0061b498]      ; 004cf209 | g_INT_0061b498
     IMUL EDX,ECX                        ; 004cf20f
-    MOV EBX,dword ptr [0x0061d96c]      ; 004cf212 | g_INT_0061d96c
+    MOV EBX,dword ptr [0x0061d96c]      ; 004cf212 | g_MovieRecordingWidth
     MOV EAX,EDX                         ; 004cf218
     SAR EDX,0x1f                        ; 004cf21a
     IDIV EBX                            ; 004cf21d
@@ -1130,14 +1130,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x6f4]     ; 004cf238
     MOV dword ptr [ESP + 0x70c],EAX     ; 004cf23f
     IMUL EDX,dword ptr [0x0061b49c]     ; 004cf246 | g_INT_0061b49c
-    MOV ECX,dword ptr [0x0061d970]      ; 004cf24d | g_INT_0061d970
+    MOV ECX,dword ptr [0x0061d970]      ; 004cf24d | g_MovieRecordingHeight
     MOV EAX,EDX                         ; 004cf253
     SAR EDX,0x1f                        ; 004cf255
     IDIV ECX                            ; 004cf258
     MOV EBX,dword ptr [0x0061b49c]      ; 004cf25a | g_INT_0061b49c
     MOV EDX,dword ptr [ESP + 0x6f0]     ; 004cf260
     IMUL EDX,EBX                        ; 004cf267
-    MOV ESI,dword ptr [0x0061d970]      ; 004cf26a | g_INT_0061d970
+    MOV ESI,dword ptr [0x0061d970]      ; 004cf26a | g_MovieRecordingHeight
     MOV ECX,EAX                         ; 004cf270
     MOV EAX,EDX                         ; 004cf272
     SAR EDX,0x1f                        ; 004cf274
@@ -1162,7 +1162,7 @@ section .text
         ;   XREF to: 004cf317 (CONDITIONAL_JUMP)  ; LAB_004cf317
     MOV EAX,dword ptr [ESP + 0x708]     ; 004cf2bb
     LEA EDX,[ECX*0x4 + 0x0]             ; 004cf2c2
-    MOV EAX,dword ptr [EAX + 0x1c4354c] ; 004cf2c9 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV EAX,dword ptr [EAX + 0x1c4354c] ; 004cf2c9 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,EAX                         ; 004cf2cf
     MOV EAX,dword ptr [EDX]             ; 004cf2d1
         ;   Label: LAB_004cf2d1
@@ -1231,7 +1231,7 @@ section .text
     ADD ESP,0x8                         ; 004cf3a0
     MOV EDI,dword ptr [ESP + 0x6fc]     ; 004cf3a3
     INC EDI                             ; 004cf3aa
-    MOV EDX,dword ptr [0x0061d96c]      ; 004cf3ab | g_INT_0061d96c
+    MOV EDX,dword ptr [0x0061d96c]      ; 004cf3ab | g_MovieRecordingWidth
     MOV dword ptr [ESP + 0x6fc],EDI     ; 004cf3b1
     CMP EDI,EDX                         ; 004cf3b8
     JL 0x004cf202                       ; 004cf3ba
@@ -1239,7 +1239,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x6f4]     ; 004cf3c0
         ;   Label: LAB_004cf3c0
     INC EDI                             ; 004cf3c7
-    MOV EDX,dword ptr [0x0061d970]      ; 004cf3c8 | g_INT_0061d970
+    MOV EDX,dword ptr [0x0061d970]      ; 004cf3c8 | g_MovieRecordingHeight
     MOV dword ptr [ESP + 0x6f4],EDI     ; 004cf3ce
     CMP EDI,EDX                         ; 004cf3d5
     JL 0x004cf1dc                       ; 004cf3d7
@@ -1256,10 +1256,10 @@ section .text
     PUSH EAX                            ; 004cf3f8
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 004cf3f9
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
-    MOV EBX,dword ptr [0x01cd0c44]      ; 004cf3fe | g_INT_01cd0c44
+    MOV EBX,dword ptr [0x01cd0c44]      ; 004cf3fe | g_MovieRecordingFrameCounter
     INC EBX                             ; 004cf404
     ADD ESP,0xc                         ; 004cf405
-    MOV dword ptr [0x01cd0c44],EBX      ; 004cf408 | g_INT_01cd0c44
+    MOV dword ptr [0x01cd0c44],EBX      ; 004cf408 | g_MovieRecordingFrameCounter
     JMP 0x004cea00                      ; 004cf40e
         ;   XREF to: 004cea00 (UNCONDITIONAL_JUMP)  ; LAB_004cea00
     MOV dword ptr [0x01cc9ba8],EBX      ; 004cf413 | g_INT_01cc9ba8

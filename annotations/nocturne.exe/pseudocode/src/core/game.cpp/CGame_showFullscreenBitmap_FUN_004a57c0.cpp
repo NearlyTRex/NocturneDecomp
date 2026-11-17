@@ -173,8 +173,8 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004a57c0(CGame *this_p
       } while (((iVar2 == 0) &&
                (iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)
                                   (g_CKeys_PTR_005bac64,this_ptr->key_fire), iVar2 == 0)) &&
-              (g_BIT_INTEGER32_01bd1d94.dword == 0));
-      while ((g_BIT_INTEGER32_01bd1d94.dword != 0 ||
+              (g_MouseButtonFlags.dword == 0));
+      while ((g_MouseButtonFlags.dword != 0 ||
              (iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)
                                 (g_CKeys_PTR_005bac64,this_ptr->key_fire), iVar2 != 0))) {
         if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {

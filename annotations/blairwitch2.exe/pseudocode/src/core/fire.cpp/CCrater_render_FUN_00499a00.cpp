@@ -24,7 +24,7 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_00499a00(CCrater *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (g_CDemonRenderer_PTR_0060b280,&this_ptr->center_position);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_006157b4);
+            (g_CDemonRenderer_PTR_0060b280,&g_FireEffectBlastTexture);
   local_38.x = (int)ROUND(this_ptr->corner_positions[0].x * 256.0f);
   local_38.y = (int)ROUND(this_ptr->corner_positions[0].y * 256.0f);
   local_38.z = (int)ROUND(this_ptr->corner_positions[0].z * 256.0f);

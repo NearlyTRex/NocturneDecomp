@@ -22,10 +22,10 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 00416333
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005cbf3a = 1.5
-;   double g_DOUBLE_005cbf42 = 3
-;   double g_DOUBLE_005cbf4a = 0.200000000000000
-;   double g_DOUBLE_005cbf52 = 5
+;   double g_BodyPartFlameBaseScale = 1.5
+;   double g_BodyPartFlameMaxScale = 3
+;   double g_BodyPartFireFadeMultiplier = 0.200000000000000
+;   double g_BodyPartFireFadeThreshold = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -94,20 +94,20 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0041655c
     FLD float ptr [EAX + 0x10dc]        ; 0041655f
     FST double ptr [ESP]                ; 00416565
-    FCOMP double ptr [0x005cbf52]       ; 00416568 | g_DOUBLE_005cbf52
+    FCOMP double ptr [0x005cbf52]       ; 00416568 | g_BodyPartFireFadeThreshold
     FNSTSW AX                           ; 0041656e
     SAHF                                ; 00416570
     JNC 0x00416580                      ; 00416571
         ;   XREF to: 00416580 (CONDITIONAL_JUMP)  ; LAB_00416580
     FLD double ptr [ESP]                ; 00416573
-    FMUL double ptr [0x005cbf4a]        ; 00416576 | g_DOUBLE_005cbf4a
+    FMUL double ptr [0x005cbf4a]        ; 00416576 | g_BodyPartFireFadeMultiplier
     FSTP float ptr [ESP + 0x8]          ; 0041657c
     FLD float ptr [ESP + 0x8]           ; 00416580
         ;   Label: LAB_00416580
     FLD ST0                             ; 00416584
-    FMUL double ptr [0x005cbf3a]        ; 00416586 | g_DOUBLE_005cbf3a
+    FMUL double ptr [0x005cbf3a]        ; 00416586 | g_BodyPartFlameBaseScale
     FXCH                                ; 0041658c
-    FMUL double ptr [0x005cbf42]        ; 0041658e | g_DOUBLE_005cbf42
+    FMUL double ptr [0x005cbf42]        ; 0041658e | g_BodyPartFlameMaxScale
     ADD EBX,0xc                         ; 00416594
     FXCH                                ; 00416597
     FSTP float ptr [ESP + 0x2c]         ; 00416599

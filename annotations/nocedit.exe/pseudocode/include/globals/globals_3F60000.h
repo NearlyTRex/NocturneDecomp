@@ -291,11 +291,11 @@ extern CVector3d g_Cached3DListenerOrientRight;
 
 // CVector3f
 extern CVector3f g_SoundListenerPrev;
-extern CVector3f CVector3f_03f6af7c;
+extern CVector3f g_WindVolume;
 extern CVector3f g_TrainVelocityVector;
-extern CVector3f CVector3f_03f6ba9c;
-extern CVector3f CVector3f_03f6bab0;
-extern CVector3f CVector3f_03f6babc;
+extern CVector3f g_StrangerBoundsCenter;
+extern CVector3f g_StrangerWeaponEulerPlusX;
+extern CVector3f g_StrangerWeaponEulerMinusX;
 
 // CWavInDevice
 extern CWavInDevice g_CWavInDeviceInstance;
@@ -380,7 +380,7 @@ extern SSoundDeviceInfo g_SoundDevices[8];
 extern STrainNoise g_TrainNoiseArray[10];
 
 // byte
-extern byte BYTE_03f6baac;
+extern byte g_StrangerBoundsCenterInit;
 
 // char[40]
 extern char g_SoundAmbientSoundName[40];
@@ -480,7 +480,7 @@ extern int g_SavedBitsPerPixel;
 extern int g_ExternalFrameLocked;
 extern int g_VideoModeXBPP;
 extern int g_LogInitialized;
-extern int INT_03f6bbe4;
+extern int g_CubeReduceFileIndex;
 extern int g_TriListTextureCount;
 
 // int[13]

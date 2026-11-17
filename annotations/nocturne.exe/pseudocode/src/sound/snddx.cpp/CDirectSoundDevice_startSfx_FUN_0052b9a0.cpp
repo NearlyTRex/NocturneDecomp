@@ -19,7 +19,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(CDirectSoun
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) ||
-      (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+      (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
      (g_INT_ARRAY_02dc9324[iVar1] == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 953;
@@ -37,8 +37,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(CDirectSoun
     if (slot->sample->streaming_buffer_size != (slot->sample->sample_info).sample_count) {
       dwFlags = 1;
     }
-    error_code = (*g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1]->vtable->Play)
-                           (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1],0,0,dwFlags);
+    error_code = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->Play)
+                           (g_DirectSoundHardwareSfxBuffers[iVar1],0,0,dwFlags);
     if (error_code != 0) {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
       _sprintf(acStack_194,"DirectSux: Unable to %s.  (%s)","Play hardware sfx secondary buffer",

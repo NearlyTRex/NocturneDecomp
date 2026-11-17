@@ -23,10 +23,10 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_005f4a58 = 01c0b558
-;   CVector3i g_CVector3i_00603b2c
-;   int g_INT_00603b38 = 0x1
-;   CTerrain* g_CTerrain_PTR_00606aa0 = 02cfd8b8
+;   SMRGLSkyTexture* g_SkyDomeTexturePtr = 01c0b558
+;   CVector3i g_GlobalLightDirection
+;   int g_RenderMirrorsFlag = 0x1
+;   CTerrain* g_CTerrainPtr = 02cfd8b8
 ;   CWater* g_CWaterPtr = 02cfd950
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   int g_INT_01c6cee8
@@ -63,7 +63,7 @@ section .text
     SUB ESP,0xc                         ; 00533b84
     MOV EBX,dword ptr [ESP + 0x20]      ; 00533b87
     MOV ESI,dword ptr [ESP + 0x28]      ; 00533b8b
-    PUSH 0x603b2c                       ; 00533b8f | g_CVector3i_00603b2c
+    PUSH 0x603b2c                       ; 00533b8f | g_GlobalLightDirection
     MOV EDX,dword ptr [0x005f2afc]      ; 00533b94 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 00533b9a | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100 ; 00533b9b
@@ -168,7 +168,7 @@ section .text
     JZ 0x00533ccb                       ; 00533cb8
         ;   XREF to: 00533ccb (CONDITIONAL_JUMP)  ; LAB_00533ccb
     PUSH 0x1                            ; 00533cba
-    MOV ESI,dword ptr [0x00606aa0]      ; 00533cbc | g_CTerrain_PTR_00606aa0
+    MOV ESI,dword ptr [0x00606aa0]      ; 00533cbc | g_CTerrainPtr
     PUSH ESI                            ; 00533cc2
     CALL core_terrain.cpp_CTerrain_render_FUN_005723d0 ; 00533cc3
         ;   XREF to: 005723d0 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_005723d0(CTerrain * this_ptr, int render_pass)
@@ -252,7 +252,7 @@ section .text
     PUSH ESI                            ; 00533d84
     LEA EAX,[EBX + 0x161644]            ; 00533d85
     PUSH EAX                            ; 00533d8b
-    MOV EDI,dword ptr [0x005f4a58]      ; 00533d8c | g_SMRGLSkyTexture_PTR_005f4a58
+    MOV EDI,dword ptr [0x005f4a58]      ; 00533d8c | g_SkyDomeTexturePtr
     PUSH EDI                            ; 00533d92
     CALL core_dskybox.cpp_renderSkyDome_FUN_0046f480 ; 00533d93
         ;   XREF to: 0046f480 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
@@ -277,7 +277,7 @@ section .text
     ADD ESP,0x8                         ; 00533dc5
     JMP 0x00533cb1                      ; 00533dc8
         ;   XREF to: 00533cb1 (UNCONDITIONAL_JUMP)  ; LAB_00533cb1
-    CMP dword ptr [0x00603b38],0x0      ; 00533dcd | g_INT_00603b38
+    CMP dword ptr [0x00603b38],0x0      ; 00533dcd | g_RenderMirrorsFlag
         ;   Label: LAB_00533dcd
     JZ 0x00533d3c                       ; 00533dd4
         ;   XREF to: 00533d3c (CONDITIONAL_JUMP)  ; LAB_00533d3c

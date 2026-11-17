@@ -31,7 +31,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffe
   if ((surface_normal->y < (float)0.20000000000000001) &&
      (-0.20000000000000001 < (double)surface_normal->y)) {
     local_18 = 1;
-    local_14 = g_CBulletHole_ARRAY_01c6eaa8;
+    local_14 = g_BulletHolePool;
     if ((hit_actor == (CDemonActor *)0x0) ||
        (iVar2 = (*((hit_actor->vtable)._ub)->allowBulletHoles)(hit_actor), iVar2 != 0)) {
       if ((local_18 != 0) && (iVar2 = 0, 0 < g_INT_01c6eaa0)) {
@@ -67,11 +67,11 @@ LAB_004b57a0:
   if (iVar2 != 0) {
     iVar2 = 0;
     do {
-      iVar1 = g_INT_01c58a9c + 1;
-      this_ptr_00 = g_CSmokeParticle_ARRAY_01c58aa0 + g_INT_01c58a9c;
-      g_INT_01c58a9c = iVar1;
+      iVar1 = g_SmokeParticleAllocIndex + 1;
+      this_ptr_00 = g_SmokeParticlePool + g_SmokeParticleAllocIndex;
+      g_SmokeParticleAllocIndex = iVar1;
       if (0x7ff < iVar1) {
-        g_INT_01c58a9c = 0;
+        g_SmokeParticleAllocIndex = 0;
       }
       iVar2 = iVar2 + 1;
       core_fire_cpp_CSmokeParticle_init_FUN_004abeb0
@@ -89,7 +89,7 @@ LAB_004b57a0:
       } while (iVar2 < 8);
     }
   }
-  pcVar3 = g_CHAR_ARRAY_0061cb70;
+  pcVar3 = g_DefaultRicochetSound;
   pcVar4 = acStack_70;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar4 = *(uint *)pcVar3;

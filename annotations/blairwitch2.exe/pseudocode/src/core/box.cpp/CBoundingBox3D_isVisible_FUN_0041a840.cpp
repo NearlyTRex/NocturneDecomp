@@ -53,9 +53,9 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D *t
       local_5c = local_20[0];
       local_58 = local_20[1];
     }
-    local_30.x = (float)g_INT_0070ca88 * 0.00390625f;
-    local_30.y = (float)g_INT_0070ca8c * 0.00390625f;
-    local_30.z = (float)g_INT_0070ca90 * 0.00390625f;
+    local_30.x = (float)g_StoredX * 0.00390625f;
+    local_30.y = (float)g_StoredY * 0.00390625f;
+    local_30.z = (float)g_StoredZ * 0.00390625f;
     local_48.x = (int)ROUND(local_60 * 256.0f);
     local_48.y = (int)ROUND(local_5c * 256.0f);
     local_48.z = (int)ROUND(local_58 * 256.0f);
@@ -63,13 +63,13 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D *t
     local_30.x = local_30.x + local_60;
     local_30.y = local_30.y + local_5c;
     local_30.z = local_30.z + local_58;
-    if (g_CDemonCamera_PTR_007bda74 == (CDemonCamera *)0x0) {
-      g_INT_01c38aec = (int)g_CDemonCamera_PTR_007bda74;
+    if (g_CurrentSceneCamera == (CDemonCamera *)0x0) {
+      g_PerspectiveReciprocal = (int)g_CurrentSceneCamera;
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80
                 (&g_CDemonCameraInstance,&local_30,local_90);
-      if (65000 < g_INT_01c38aec) {
+      if (65000 < g_PerspectiveReciprocal) {
         return 0;
       }
     }

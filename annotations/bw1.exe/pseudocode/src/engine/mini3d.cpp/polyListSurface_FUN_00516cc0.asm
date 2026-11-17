@@ -25,7 +25,7 @@
 ;   int g_INT_01d224b4
 ;   float* g_FLOAT_PTR_01d227e4
 ;   int g_INT_01d25f14
-;   int g_INT_01e7dac8
+;   int g_RenderedTriangleCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -47,11 +47,11 @@ section .text
     SUB ESP,0x4                         ; 00516cc4
     MOV EBP,dword ptr [ESP + 0x1c]      ; 00516cc7
     MOV EAX,dword ptr [ESP + 0x24]      ; 00516ccb
-    MOV EDX,dword ptr [0x01e7dac8]      ; 00516ccf | g_INT_01e7dac8
+    MOV EDX,dword ptr [0x01e7dac8]      ; 00516ccf | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d224b4]      ; 00516cd5 | g_INT_01d224b4
     ADD EDX,EAX                         ; 00516cdb
     ADD ECX,EBP                         ; 00516cdd
-    MOV dword ptr [0x01e7dac8],EDX      ; 00516cdf | g_INT_01e7dac8
+    MOV dword ptr [0x01e7dac8],EDX      ; 00516cdf | g_RenderedTriangleCount
     MOV dword ptr [0x01d224b4],ECX      ; 00516ce5 | g_INT_01d224b4
     CALL engine_mini3d.cpp_allocVertexList_FUN_00512670 ; 00516ceb
         ;   XREF to: 00512670 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_allocVertexList_FUN_00512670()

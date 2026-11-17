@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_005e4614
 ;   TerminatedCString s_closestHeroToPoint_no_he_005e4625
-;   int g_INT_01d06aa0
+;   int g_HeroCount
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x14                        ; 004ea644
     MOV EBX,dword ptr [ESP + 0x28]      ; 004ea647
     MOV EDX,0x7149f2ca                  ; 004ea64b
-    MOV ECX,dword ptr [0x01d06aa0]      ; 004ea650 | g_INT_01d06aa0
+    MOV ECX,dword ptr [0x01d06aa0]      ; 004ea650 | g_HeroCount
     XOR ESI,ESI                         ; 004ea656
     MOV dword ptr [ESP + 0x8],EDX       ; 004ea658
     TEST ECX,ECX                        ; 004ea65c

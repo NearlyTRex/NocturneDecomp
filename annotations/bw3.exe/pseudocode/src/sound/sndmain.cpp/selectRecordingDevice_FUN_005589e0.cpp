@@ -18,13 +18,13 @@ void __cdecl sound_sndmain_cpp_selectRecordingDevice_FUN_005589e0(int device_id)
     core_main_c_displayErrorAndQuit_FUN_004e4330("selectRecordingDevice - device already open.");
   }
   if (device_id < 0) {
-    device_id = g_INT_00604258;
+    device_id = g_CurrentRecordingDevice;
   }
   iVar1 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005588a0();
   if ((device_id < iVar1) && (-1 < device_id)) {
-    g_INT_00604258 = device_id;
+    g_CurrentRecordingDevice = device_id;
     return;
   }
-  g_INT_00604258 = sound_sndmain_cpp_findBestRecordingDevice_FUN_00558960();
+  g_CurrentRecordingDevice = sound_sndmain_cpp_findBestRecordingDevice_FUN_00558960();
   return;
 }

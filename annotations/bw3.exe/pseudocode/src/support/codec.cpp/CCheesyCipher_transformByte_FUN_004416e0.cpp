@@ -2,21 +2,21 @@
 // Address: 004416e0
 // Address Range: [[004416e0, 00441749]]
 // Convention: __cdecl
-// Signature: uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2)
+// Signature: uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte value)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2)
+uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte value)
 
 {
   uint extraout_EAX;
   
   support_codec_cpp_CCheesyCipher_advanceKey_FUN_004417d0(this_ptr);
   if (this_ptr->mode == 0) {
-    return (uint)(byte)(&DAT_005f1368)[(uint)param_2 + this_ptr->key_state & 0xff];
+    return (uint)(byte)(&DAT_005f1368)[(uint)value + this_ptr->key_state & 0xff];
   }
   if (this_ptr->mode == 1) {
-    return (uint)(byte)((&DAT_005f1468)[param_2] - (char)this_ptr->key_state);
+    return (uint)(byte)((&DAT_005f1468)[value] - (char)this_ptr->key_state);
   }
   g_CHAR_PTR_01d71de0 = "..\\support\\codec.cpp";
   g_INT_01d71de4 = 0x70b;

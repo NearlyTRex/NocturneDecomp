@@ -27,9 +27,9 @@
 ;   float g_FLOAT_0152c2c0
 ;   int g_INT_0152c2c4
 ;   float g_FLOAT_0152c2c8
-;   CVector3f g_CVector3f_02c8af28
-;   undefined4 g_CVector3f_02c8af28.y
-;   undefined4 g_CVector3f_02c8af28.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_004583d0
@@ -211,10 +211,10 @@ section .text
     POP ESI                             ; 0048c4a2
     POP EBX                             ; 0048c4a3
     RET                                 ; 0048c4a4
-    FLD float ptr [0x02c8af28]          ; 0048c4a5 | g_CVector3f_02c8af28
+    FLD float ptr [0x02c8af28]          ; 0048c4a5 | g_ZeroVector
         ;   Label: LAB_0048c4a5
-    FLD float ptr [0x02c8af30]          ; 0048c4ab | g_CVector3f_02c8af28.z
-    MOV EAX,[0x02c8af2c]                ; 0048c4b1 | g_CVector3f_02c8af28.y
+    FLD float ptr [0x02c8af30]          ; 0048c4ab | g_ZeroVector.z
+    MOV EAX,[0x02c8af2c]                ; 0048c4b1 | g_ZeroVector.y
     MOV [0x0152c2c4],EAX                ; 0048c4b6 | g_INT_0152c2c4
     FSTP float ptr [0x0152c2c8]         ; 0048c4bb | g_FLOAT_0152c2c8
     FSTP float ptr [0x0152c2c0]         ; 0048c4c1 | g_FLOAT_0152c2c0

@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   uint[256] g_UINT_ARRAY_01c35214
-;   undefined4 g_UINT_ARRAY_01c35214[1]
-;   undefined4 g_UINT_ARRAY_01c35214[1]+1
+;   uint[256] g_Hardware32BitPalette
+;   undefined4 g_Hardware32BitPalette[1]
+;   undefined4 g_Hardware32BitPalette[1]+1
 ;
 ; *****************************************************************************
 
@@ -47,10 +47,10 @@ section .text
     PUSH EDI                            ; 0040dcdd
     MOV EAX,ECX                         ; 0040dcde
     SHR ECX,0x2                         ; 0040dce0
-    MOVSD.REP ES:EDI,ESI                ; 0040dce3 | g_UINT_ARRAY_01c35214 | g_UINT_ARRAY_01c35214[1]
+    MOVSD.REP ES:EDI,ESI                ; 0040dce3 | g_Hardware32BitPalette | g_Hardware32BitPalette[1]
     MOV CL,AL                           ; 0040dce5
     AND CL,0x3                          ; 0040dce7
-    MOVSB.REP ES:EDI,ESI                ; 0040dcea | g_UINT_ARRAY_01c35214[1] | g_UINT_ARRAY_01c35214[1]+1
+    MOVSB.REP ES:EDI,ESI                ; 0040dcea | g_Hardware32BitPalette[1] | g_Hardware32BitPalette[1]+1
     POP EDI                             ; 0040dcec
     POP EDI                             ; 0040dced
     POP ESI                             ; 0040dcee

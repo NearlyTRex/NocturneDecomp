@@ -5,15 +5,15 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_0060727c = 0x8
-;   int g_INT_01c5fadc
-;   int g_INT_01c5fae0
+;   int g_BrightnessDirection = 0x8
+;   int g_MouseX
+;   int g_MouseY
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b0
 ;   int g_INT_01c6b5b4
 ;   int g_INT_01c6b5c0
-;   int g_INT_02d20338
+;   int g_CrosshairBrightness
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -27,11 +27,11 @@ section .text
     PUSH ESI                            ; 005808d1
     PUSH EDI                            ; 005808d2
     PUSH EBP                            ; 005808d3
-    MOV EAX,[0x0060727c]                ; 005808d4 | g_INT_0060727c
-    MOV EDX,dword ptr [0x02d20338]      ; 005808d9 | g_INT_02d20338
+    MOV EAX,[0x0060727c]                ; 005808d4 | g_BrightnessDirection
+    MOV EDX,dword ptr [0x02d20338]      ; 005808d9 | g_CrosshairBrightness
     ADD EDX,EAX                         ; 005808df
-    MOV ESI,dword ptr [0x01c5fadc]      ; 005808e1 | g_INT_01c5fadc
-    MOV dword ptr [0x02d20338],EDX      ; 005808e7 | g_INT_02d20338
+    MOV ESI,dword ptr [0x01c5fadc]      ; 005808e1 | g_MouseX
+    MOV dword ptr [0x02d20338],EDX      ; 005808e7 | g_CrosshairBrightness
     CMP EDX,0xff                        ; 005808ed
     JG 0x0058093f                       ; 005808f3
         ;   XREF to: 0058093f (CONDITIONAL_JUMP)  ; LAB_0058093f
@@ -42,7 +42,7 @@ section .text
         ;   Label: LAB_005808f9
     MOV EBX,0xfffffffb                  ; 005808fe
     MOV dword ptr [0x01c6b5c0],ECX      ; 00580903 | g_INT_01c6b5c0
-    MOV EAX,[0x01c5fae0]                ; 00580909 | g_INT_01c5fae0
+    MOV EAX,[0x01c5fae0]                ; 00580909 | g_MouseY
         ;   Label: LAB_00580909
     MOV EDI,dword ptr [0x01c6b5a8]      ; 0058090e | g_INT_01c6b5a8
     ADD EAX,EBX                         ; 00580914
@@ -58,7 +58,7 @@ section .text
     ADD ESI,0x6                         ; 00580923
     MOV EDI,dword ptr [0x01c6b5a8]      ; 00580926 | g_INT_01c6b5a8
         ;   Label: LAB_00580926
-    MOV EAX,[0x01c5fae0]                ; 0058092c | g_INT_01c5fae0
+    MOV EAX,[0x01c5fae0]                ; 0058092c | g_MouseY
     CMP EBX,EDI                         ; 00580931
     JG 0x0058098f                       ; 00580933
         ;   XREF to: 0058098f (CONDITIONAL_JUMP)  ; LAB_0058098f
@@ -75,15 +75,15 @@ section .text
     MOV EDX,0xfffffff8                  ; 0058093f
         ;   Label: LAB_0058093f
     MOV EAX,0xff                        ; 00580944
-    MOV dword ptr [0x0060727c],EDX      ; 00580949 | g_INT_0060727c
-    MOV [0x02d20338],EAX                ; 0058094f | g_INT_02d20338
+    MOV dword ptr [0x0060727c],EDX      ; 00580949 | g_BrightnessDirection
+    MOV [0x02d20338],EAX                ; 0058094f | g_CrosshairBrightness
     JMP 0x005808f9                      ; 00580954
         ;   XREF to: 005808f9 (UNCONDITIONAL_JUMP)  ; LAB_005808f9
     MOV EBP,0x8                         ; 00580956
         ;   Label: LAB_00580956
     XOR EDI,EDI                         ; 0058095b
-    MOV dword ptr [0x0060727c],EBP      ; 0058095d | g_INT_0060727c
-    MOV dword ptr [0x02d20338],EDI      ; 00580963 | g_INT_02d20338
+    MOV dword ptr [0x0060727c],EBP      ; 0058095d | g_BrightnessDirection
+    MOV dword ptr [0x02d20338],EDI      ; 00580963 | g_CrosshairBrightness
     JMP 0x005808f9                      ; 00580969
         ;   XREF to: 005808f9 (UNCONDITIONAL_JUMP)  ; LAB_005808f9
     CMP EAX,dword ptr [0x01c6b5ac]      ; 0058096b | g_INT_01c6b5ac

@@ -9,8 +9,8 @@
 ; int *            Stack[0xc]:4   out_y
 ;
 ; Referenced Globals:
-;   int g_INT_01bd1d8c
-;   int g_INT_01bd1d90
+;   int g_MouseX
+;   int g_MouseY
 ;
 ; *****************************************************************************
 
@@ -18,10 +18,10 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x8]       ; 004ee720
         ;   Label: engine_ncursfx.cpp_CMouse_getPosition_FUN_004ee720
-    MOV EAX,[0x01bd1d8c]                ; 004ee724 | g_INT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 004ee724 | g_MouseX
     MOV dword ptr [EDX],EAX             ; 004ee729
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ee72b
-    MOV EAX,[0x01bd1d90]                ; 004ee72f | g_INT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 004ee72f | g_MouseY
     MOV dword ptr [EDX],EAX             ; 004ee734
     RET                                 ; 004ee736
 

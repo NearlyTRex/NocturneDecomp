@@ -30,9 +30,9 @@
 ;   double DOUBLE_0061f143 = 256
 ;   float FLOAT_0065c900 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   CVector3f CVector3f_026a72d8
-;   undefined4 CVector3f_026a72d8.y
-;   undefined4 CVector3f_026a72d8.z
+;   CVector3f g_CoronaGeometryOrigin
+;   undefined4 g_CoronaGeometryOrigin.y
+;   undefined4 g_CoronaGeometryOrigin.z
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -139,14 +139,14 @@ section .text
     JL 0x00473732                       ; 004737c0
         ;   XREF to: 00473732 (CONDITIONAL_JUMP)  ; LAB_00473732
     LEA EBX,[ESP + 0x2c]                ; 004737c6
-    MOV EAX,0x26a72d8                   ; 004737ca | CVector3f_026a72d8
-    FLD float ptr [EAX]                 ; 004737cf | CVector3f_026a72d8
+    MOV EAX,0x26a72d8                   ; 004737ca | g_CoronaGeometryOrigin
+    FLD float ptr [EAX]                 ; 004737cf | g_CoronaGeometryOrigin
     FMUL float ptr [0x0065c900]         ; 004737d1 | FLOAT_0065c900
     FISTP dword ptr [EBX]               ; 004737d7
-    FLD float ptr [EAX + 0x4]           ; 004737d9 | CVector3f_026a72d8.y
+    FLD float ptr [EAX + 0x4]           ; 004737d9 | g_CoronaGeometryOrigin.y
     FMUL float ptr [0x0065c900]         ; 004737dc | FLOAT_0065c900
     FISTP dword ptr [EBX + 0x4]         ; 004737e2
-    FLD float ptr [EAX + 0x8]           ; 004737e5 | CVector3f_026a72d8.z
+    FLD float ptr [EAX + 0x8]           ; 004737e5 | g_CoronaGeometryOrigin.z
     FMUL float ptr [0x0065c900]         ; 004737e8 | FLOAT_0065c900
     FISTP dword ptr [EBX + 0x8]         ; 004737ee
     LEA EAX,[ESP + 0x2c]                ; 004737f1

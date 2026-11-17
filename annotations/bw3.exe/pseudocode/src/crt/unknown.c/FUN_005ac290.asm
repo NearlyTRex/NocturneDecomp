@@ -11,8 +11,8 @@
 ;   crt_unknown.c_FUN_005a55d0 at 005a55ef
 ;
 ; Referenced Globals:
-;   short g_SHORT_005e8804 = 0x0
-;   short g_SHORT_005e881e = 0x0
+;   short g_DaysInMonth_Normal = 0x0
+;   short g_DaysInMonth_Leap = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005abdf0
@@ -117,17 +117,17 @@ section .text
     MOV dword ptr [EDI + 0x14],ESI      ; 005ac360
         ;   Label: LAB_005ac360
     ADD ESI,0x76c                       ; 005ac363
-    MOV EDX,0x5e8804                    ; 005ac369 | g_SHORT_005e8804
+    MOV EDX,0x5e8804                    ; 005ac369 | g_DaysInMonth_Normal
     PUSH ESI                            ; 005ac36e
     MOV dword ptr [EDI + 0x1c],EBX      ; 005ac36f
-    MOV dword ptr [ESP + 0x4],EDX       ; 005ac372 | g_SHORT_005e8804
+    MOV dword ptr [ESP + 0x4],EDX       ; 005ac372 | g_DaysInMonth_Normal
     CALL crt_unknown.c_FUN_005abdf0     ; 005ac376
         ;   XREF to: 005abdf0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005abdf0()
     ADD ESP,0x4                         ; 005ac37b
     TEST EAX,EAX                        ; 005ac37e
     JZ 0x005ac389                       ; 005ac380
         ;   XREF to: 005ac389 (CONDITIONAL_JUMP)  ; LAB_005ac389
-    MOV dword ptr [ESP],0x5e881e        ; 005ac382 | g_SHORT_005e881e
+    MOV dword ptr [ESP],0x5e881e        ; 005ac382 | g_DaysInMonth_Leap
     MOV ESI,0x1f                        ; 005ac389
         ;   Label: LAB_005ac389
     MOV EAX,EBX                         ; 005ac38e
@@ -136,7 +136,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 005ac394
     LEA ESI,[EAX*0x2 + 0x0]             ; 005ac397
     ADD ESI,EDX                         ; 005ac39e
-    MOV ESI,dword ptr [ESI]             ; 005ac3a0 | g_SHORT_005e881e | g_SHORT_005e8804
+    MOV ESI,dword ptr [ESI]             ; 005ac3a0 | g_DaysInMonth_Leap | g_DaysInMonth_Normal
     SAR ESI,0x10                        ; 005ac3a2
     CMP EBX,ESI                         ; 005ac3a5
     JC 0x005ac3aa                       ; 005ac3a7
@@ -147,7 +147,7 @@ section .text
     MOV dword ptr [EDI + 0x10],EAX      ; 005ac3ad
     ADD EAX,EAX                         ; 005ac3b0
     ADD EAX,ECX                         ; 005ac3b2
-    MOVSX EAX,word ptr [EAX]            ; 005ac3b4 | g_SHORT_005e881e | g_SHORT_005e8804
+    MOVSX EAX,word ptr [EAX]            ; 005ac3b4 | g_DaysInMonth_Leap | g_DaysInMonth_Normal
     SUB EBX,EAX                         ; 005ac3b7
     XOR EDX,EDX                         ; 005ac3b9
     INC EBX                             ; 005ac3bb

@@ -26,7 +26,7 @@
 ;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].hardware_buffer_handle
 ;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].playback_state
 ;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].changed_flags
-;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -60,7 +60,7 @@ section .text
     ADD ESP,0x8                         ; 00556cc0
     MOV EDX,dword ptr [ESP + 0x10]      ; 00556cc3
         ;   Label: LAB_00556cc3
-    MOV ESI,dword ptr [0x02cf3280]      ; 00556cc7 | g_CSoundDevice_PTR_02cf3280
+    MOV ESI,dword ptr [0x02cf3280]      ; 00556cc7 | g_CSoundDevicePtr
     MOV dword ptr [EBX*0x4 + 0x2cf28c0],EDX ; 00556ccd
     TEST ESI,ESI                        ; 00556cd4
     JNZ 0x00556cdb                      ; 00556cd6

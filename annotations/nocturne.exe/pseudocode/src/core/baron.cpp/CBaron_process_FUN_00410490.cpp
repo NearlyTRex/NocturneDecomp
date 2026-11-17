@@ -45,7 +45,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   pCVar9 = &(this_ptr->base).base.model;
   if (this_ptr->summoned == 0) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (g_CEventList_PTR_005b7650,this_ptr->summon_event);
+                      (g_CEventListPtr,this_ptr->summon_event);
     if (iVar3 != 0) {
       this_ptr->summoned = 1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,6,1);
@@ -54,7 +54,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   }
   else {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (g_CEventList_PTR_005b7650,this_ptr->go_away_event);
+                      (g_CEventListPtr,this_ptr->go_away_event);
     if (iVar3 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,7,1);
     }
@@ -144,10 +144,10 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
       }
       if (this_ptr->new_attack == 0) {
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_0048c590
-                  (g_CFireEffect_PTR_005b80f0,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
+                  (g_CFireEffectPtr,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
                    &g_SMRGLTextureBasic_005acf40);
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_0048c590
-                  (g_CFireEffect_PTR_005b80f0,&local_54,&this_ptr->right_hand_pos,2.0,0.5,0.5,
+                  (g_CFireEffectPtr,&local_54,&this_ptr->right_hand_pos,2.0,0.5,0.5,
                    &g_SMRGLTextureBasic_005acf40);
       }
       if (&this_ptr->left_hand_pos != &local_30) {
@@ -231,7 +231,7 @@ switchD_00410a6d_default:
     local_60.y = local_60.y + (this_ptr->base).base.base.location.position.y;
     local_60.z = local_10 + (this_ptr->base).base.base.location.position.z;
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-              (g_CFireEffect_PTR_005b80f0,&local_60,2.0,(CVector3f *)0x0,0xffff);
+              (g_CFireEffectPtr,&local_60,2.0,(CVector3f *)0x0,0xffff);
   } while (iVar3 < 2);
   g_FLOAT_0076432c = g_FLOAT_0076432c + delta_time;
   return;

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3375,
-    "complexity_score": 2175,
+    "complexity_score": 2171,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 224,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1575,
+    "pseudocode_lines": 1571,
     "suspect_count": 57,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_strlen",
       "warning_type_propagation"
     ],
-    "total_lines": 4950
+    "total_lines": 4946
   },
   "cross_references": [
     {
@@ -1355,13 +1355,13 @@
     },
     {
       "addr": "0059cf1c",
-      "name": "g_CDemonActor_PTR_0059cf1c",
+      "name": "g_ActorNameSentinel",
       "type": "CDemonActor*",
       "value": "0fffffff"
     },
     {
       "addr": "005b7650",
-      "name": "g_CEventList_PTR_005b7650",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c03a10"
     },
@@ -1391,49 +1391,49 @@
     },
     {
       "addr": "00763e48",
-      "name": "g_CDemonActorActorType_00763e48",
+      "name": "g_CDemonActorClassInfo",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00763e80",
-      "name": "g_CDemonActorActorType_00763e48.name_hash",
+      "name": "g_CDemonActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00765a60",
-      "name": "g_CCharacterActorType_00765a60",
+      "name": "g_CCharacterClassInfo",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08b60",
-      "name": "g_CHAR_ARRAY_01c08b60",
+      "name": "g_EventErrorMessageBuffer",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "01c08b61",
-      "name": "g_CHAR_ARRAY_01c08b60+1",
+      "name": "g_EventErrorMessageBuffer+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08b62",
-      "name": "g_CHAR_ARRAY_01c08b60+2",
+      "name": "g_EventErrorMessageBuffer+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08b63",
-      "name": "g_CHAR_ARRAY_01c08b60+3",
+      "name": "g_EventErrorMessageBuffer+3",
       "type": "undefined4",
       "value": null
     },
@@ -1445,7 +1445,7 @@
     },
     {
       "addr": "01c78c78",
-      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "name": "g_CGlassClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -1457,7 +1457,7 @@
     },
     {
       "addr": "01cae124",
-      "name": "g_CHeroActorType_01cae0ec.name_hash",
+      "name": "g_CHeroClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -2398,31 +2398,31 @@
       "line": 1133,
       "match": "(uint)pCVar10",
       "severity": "moderate",
-      "text": "local_dc = (uint)pCVar10 ^ (uint)g_CDemonActor_PTR_0059cf1c;",
+      "text": "local_dc = (uint)pCVar10 ^ (uint)g_ActorNameSentinel;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonActor_PTR_0059cf1c` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ActorNameSentinel` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 1133,
-      "match": "(uint)g_CDemonActor_PTR_0059cf1c",
+      "match": "(uint)g_ActorNameSentinel",
       "severity": "moderate",
-      "text": "local_dc = (uint)pCVar10 ^ (uint)g_CDemonActor_PTR_0059cf1c;",
+      "text": "local_dc = (uint)pCVar10 ^ (uint)g_ActorNameSentinel;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `this_ptr_01` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1228,
+      "line": 1227,
       "match": "(uint)this_ptr_01",
       "severity": "moderate",
-      "text": "local_dc = (uint)this_ptr_01 ^ (uint)g_CDemonActor_PTR_0059cf1c;",
+      "text": "local_dc = (uint)this_ptr_01 ^ (uint)g_ActorNameSentinel;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonActor_PTR_0059cf1c` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1228,
-      "match": "(uint)g_CDemonActor_PTR_0059cf1c",
+      "description": "Pointer value `g_ActorNameSentinel` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1227,
+      "match": "(uint)g_ActorNameSentinel",
       "severity": "moderate",
-      "text": "local_dc = (uint)this_ptr_01 ^ (uint)g_CDemonActor_PTR_0059cf1c;",
+      "text": "local_dc = (uint)this_ptr_01 ^ (uint)g_ActorNameSentinel;",
       "type": "pointer_truncation"
     },
     {
@@ -2667,7 +2667,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1247,
+      "line": 1246,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2675,7 +2675,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1284,
+      "line": 1283,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2683,7 +2683,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1304,
+      "line": 1303,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2691,7 +2691,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1345,
+      "line": 1343,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2699,7 +2699,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1381,
+      "line": 1379,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2707,7 +2707,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1502,
+      "line": 1500,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2795,7 +2795,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1397,
+      "line": 1395,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2803,7 +2803,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1420,
+      "line": 1418,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2811,7 +2811,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1443,
+      "line": 1441,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

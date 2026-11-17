@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdbda
 ;
 ; Referenced Globals:
-;   int g_INT_0203a414
+;   int g_MasterLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a418
 ;
 ; *****************************************************************************
@@ -20,7 +20,7 @@ section .text
 
     PUSH EBX                            ; 0053b6a0
         ;   Label: core_set.cpp_CDemonSet_saveMasterLightStates_FUN_0053b6a0
-    MOV EBX,dword ptr [0x0203a414]      ; 0053b6a1 | g_INT_0203a414
+    MOV EBX,dword ptr [0x0203a414]      ; 0053b6a1 | g_MasterLightCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 0053b6a7
     MOV EAX,EBX                         ; 0053b6ab
     MOV dword ptr [ECX],EBX             ; 0053b6ad
@@ -39,7 +39,7 @@ section .text
     JL 0x0053b6b7                       ; 0053b6cc
         ;   XREF to: 0053b6b7 (CONDITIONAL_JUMP)  ; LAB_0053b6b7
     MOV EAX,EAX                         ; 0053b6ce
-    MOV dword ptr [0x0203a414],EBX      ; 0053b6d0 | g_INT_0203a414
+    MOV dword ptr [0x0203a414],EBX      ; 0053b6d0 | g_MasterLightCount
         ;   Label: LAB_0053b6d0
     POP EBX                             ; 0053b6d6
     RET                                 ; 0053b6d7

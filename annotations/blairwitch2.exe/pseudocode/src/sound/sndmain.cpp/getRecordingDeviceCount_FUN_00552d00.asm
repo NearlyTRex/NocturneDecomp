@@ -11,8 +11,8 @@
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40 at 00552e58
 ;
 ; Referenced Globals:
-;   int g_INT_0061bca8 = -0x1
-;   int g_INT_0061bcc8 = -0x1
+;   int g_SoundDeviceCount = -0x1
+;   int g_RecordingDeviceCount = -0x1
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
@@ -25,12 +25,12 @@ section .text
 
     PUSH ESI                            ; 00552d00
         ;   Label: sound_sndmain.cpp_getRecordingDeviceCount_FUN_00552d00
-    MOV ESI,dword ptr [0x0061bcc8]      ; 00552d01 | g_INT_0061bcc8
+    MOV ESI,dword ptr [0x0061bcc8]      ; 00552d01 | g_RecordingDeviceCount
     TEST ESI,ESI                        ; 00552d07
     JL 0x00552d15                       ; 00552d09
         ;   XREF to: 00552d15 (CONDITIONAL_JUMP)  ; LAB_00552d15
     MOV EAX,ESI                         ; 00552d0b
-    MOV dword ptr [0x0061bcc8],ESI      ; 00552d0d | g_INT_0061bcc8
+    MOV dword ptr [0x0061bcc8],ESI      ; 00552d0d | g_RecordingDeviceCount
     POP ESI                             ; 00552d13
     RET                                 ; 00552d14
     PUSH EBX                            ; 00552d15
@@ -46,10 +46,10 @@ section .text
     ADD EAX,0x2649028                   ; 00552d2a
     PUSH EAX                            ; 00552d2f
     PUSH EBX                            ; 00552d30
-    MOV dword ptr [0x0061bcc8],ESI      ; 00552d31 | g_INT_0061bcc8
+    MOV dword ptr [0x0061bcc8],ESI      ; 00552d31 | g_RecordingDeviceCount
     CALL sound_sndwav.cpp_enumerateWavInDevice_FUN_00558a30 ; 00552d37
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_enumerateWavInDevice_FUN_00558a30(UINT device_id, SRecordingDeviceInfo * device_info)
-    MOV ESI,dword ptr [0x0061bcc8]      ; 00552d3c | g_INT_0061bcc8
+    MOV ESI,dword ptr [0x0061bcc8]      ; 00552d3c | g_RecordingDeviceCount
     ADD ESP,0x8                         ; 00552d42
     TEST EAX,EAX                        ; 00552d45
     JZ 0x00552d50                       ; 00552d47
@@ -59,10 +59,10 @@ section .text
     CMP ESI,0x8                         ; 00552d4b
     JL 0x00552d24                       ; 00552d4e
         ;   XREF to: 00552d24 (CONDITIONAL_JUMP)  ; LAB_00552d24
-    MOV EAX,[0x0061bca8]                ; 00552d50 | g_INT_0061bca8
+    MOV EAX,[0x0061bca8]                ; 00552d50 | g_SoundDeviceCount
         ;   Label: LAB_00552d50
     POP EBX                             ; 00552d55
-    MOV dword ptr [0x0061bcc8],ESI      ; 00552d56 | g_INT_0061bcc8
+    MOV dword ptr [0x0061bcc8],ESI      ; 00552d56 | g_RecordingDeviceCount
     POP ESI                             ; 00552d5c
     RET                                 ; 00552d5d
 

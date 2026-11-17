@@ -12,14 +12,14 @@ uint FUN_005c08b0(void)
   uint uVar1;
   int iVar2;
   
-  if ((uint)g_INT_0061f4dc < g_UINT_0061f480) {
+  if ((uint)g_INT_0061f4dc < g_MaxHandleCount) {
     uVar1 = 0;
   }
   else {
     if (0 < g_INT_0061f4dc) {
       iVar2 = 0;
       do {
-        if (*(int *)((int)g_SIOControlBlock_PTR_0061f4d8->standard_handles + iVar2) == 0) {
+        if (*(int *)((int)g_IOControlBlock->standard_handles + iVar2) == 0) {
           return 0;
         }
         iVar2 = iVar2 + 4;

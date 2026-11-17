@@ -43,9 +43,9 @@ void __cdecl core_prye_cpp_CPrye_updateTurnBlending_FUN_0051e380(CPrye *this_ptr
     }
   }
   iVar1 = this_ptr->turn_motion_index;
-  this_ptr->turn_motion_index = g_INT_ARRAY_01ed36ec[0x14];
+  this_ptr->turn_motion_index = g_StrangerIndices[0x14];
   if (this_ptr->turn_angle < 0.0) {
-    this_ptr->turn_motion_index = g_INT_ARRAY_01ed36ec[0x15];
+    this_ptr->turn_motion_index = g_StrangerIndices[0x15];
   }
   if (this_ptr->turn_blend_weight <= (float)0.20000000000000001) {
     this_ptr->turn_elapsed = 0.0;

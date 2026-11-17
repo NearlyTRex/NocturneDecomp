@@ -16,7 +16,7 @@
 ;   TerminatedCString s_C3DSLight_process_NULL_C_005f1325
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   int g_INT_01c43530
+;   int g_GlobalDeltaTimeInt
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -77,7 +77,7 @@ section .text
     JL 0x0055d23c                       ; 0055d230
         ;   XREF to: 0055d23c (CONDITIONAL_JUMP)  ; LAB_0055d23c
     MOV dword ptr [EBX + 0x1890],0x0    ; 0055d232
-    MOV EAX,[0x01c43530]                ; 0055d23c | g_INT_01c43530
+    MOV EAX,[0x01c43530]                ; 0055d23c | g_GlobalDeltaTimeInt
         ;   Label: LAB_0055d23c
     MOV EDX,dword ptr [EBX + 0x17f8]    ; 0055d241
     IMUL EDX                            ; 0055d247
@@ -85,7 +85,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1800]    ; 0055d24d
     MOV EDX,dword ptr [EBX + 0x17fc]    ; 0055d253
     ADD ECX,EAX                         ; 0055d259
-    MOV EAX,[0x01c43530]                ; 0055d25b | g_INT_01c43530
+    MOV EAX,[0x01c43530]                ; 0055d25b | g_GlobalDeltaTimeInt
     MOV dword ptr [EBX + 0x1800],ECX    ; 0055d260
     IMUL EDX                            ; 0055d266
     SHRD EAX,EDX,0x10                   ; 0055d268

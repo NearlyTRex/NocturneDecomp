@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_004ee940(CNPC *this_ptr)
 
 {
-  return &g_CNPCActorType_01d46820;
+  return &g_CNPCClassInfo;
 }

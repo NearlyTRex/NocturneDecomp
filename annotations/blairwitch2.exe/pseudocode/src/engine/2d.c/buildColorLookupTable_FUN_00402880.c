@@ -34,7 +34,7 @@ void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402880(void)
               (float)*pbVar1 * (float)*pbVar1) * fVar2;
     iVar6 = iVar7;
   } while (iVar7 != 0x400);
-  puVar8 = g_UCHAR_ARRAY_01c2c910;
+  puVar8 = g_ColorCubeLookup;
   iVar6 = 0;
   do {
     iVar4 = 0;
@@ -53,6 +53,6 @@ void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402880(void)
     } while (iVar4 < 0x100);
     iVar6 = iVar6 + 8;
   } while (iVar6 < 0x100);
-  g_UCHAR_ARRAY_01c2c910[0] = '\0';
+  g_ColorCubeLookup[0] = '\0';
   return;
 }

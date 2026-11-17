@@ -22,7 +22,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   CConsole g_CConsoleInstance
-;   int g_INT_01cc804c
+;   int g_FastSqrtMagic
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -360,7 +360,7 @@ section .text
     ADD EAX,EDX                         ; 00476bff
     PUSH 0x3f333333                     ; 00476c01
     PUSH EAX                            ; 00476c06
-    PUSH 0x2c8af28                      ; 00476c07 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 00476c07 | g_ZeroVector
     LEA ESI,[EBP + 0xffffff7a]          ; 00476c0c
     LEA EDI,[EBP + 0x46]                ; 00476c12
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00476c15
@@ -508,7 +508,7 @@ section .text
     FADDP                               ; 00476d8e
     FSTP float ptr [EBP + 0x5e]         ; 00476d90
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00476d93
-    MOV EDX,dword ptr [0x01cc804c]      ; 00476d96 | g_INT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 00476d96 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00476d9c
     ADD EAX,EDX                         ; 00476d9e
     MOV dword ptr [EBP + 0x62],EAX      ; 00476da0

@@ -39,7 +39,7 @@ void __cdecl core_lever_cpp_CLever_process_FUN_004e0250(CLever *this_ptr,float d
       if ((this_ptr->momentary_flag != 0) && ((float)0.90000000000000002 < this_ptr->param)) {
         commands = this_ptr->on_event;
 LAB_004e033c:
-        core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventList_PTR_005fba60,commands);
+        core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,commands);
       }
     }
   }
@@ -70,12 +70,10 @@ LAB_004e033c:
 LAB_004e0268:
   if (this_ptr->momentary_flag == 0) {
     if ((this_ptr->param < (float)0.10000000000000001) && (this_ptr->off_event[0] != '\0')) {
-      core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                (g_CEventList_PTR_005fba60,this_ptr->off_event);
+      core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,this_ptr->off_event);
     }
     if (((float)0.90000000000000002 < this_ptr->param) && (this_ptr->on_event[0] != '\0')) {
-      core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                (g_CEventList_PTR_005fba60,this_ptr->on_event);
+      core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,this_ptr->on_event);
       return;
     }
   }

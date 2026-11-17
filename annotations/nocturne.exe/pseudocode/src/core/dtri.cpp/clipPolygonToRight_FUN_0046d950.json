@@ -50,61 +50,61 @@
     },
     {
       "addr": "01bc9af4",
-      "name": "g_INT_01bc9af4",
+      "name": "g_ClipBuffer2VertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01bc9af8",
-      "name": "g_CVector3f_ARRAY_01bc9af8",
+      "name": "g_ClipBuffer2Vertices",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01bc9afc",
-      "name": "g_CVector3f_ARRAY_01bc9af8[0].y",
+      "name": "g_ClipBuffer2Vertices[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9b00",
-      "name": "g_CVector3f_ARRAY_01bc9af8[0].z",
+      "name": "g_ClipBuffer2Vertices[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9b04",
-      "name": "g_CVector3f_ARRAY_01bc9af8[1].x",
+      "name": "g_ClipBuffer2Vertices[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9b10",
-      "name": "g_CVector3f_ARRAY_01bc9af8[2].x",
+      "name": "g_ClipBuffer2Vertices[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9bb8",
-      "name": "g_INT_01bc9bb8",
+      "name": "g_ClipBuffer3VertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01bc9bbc",
-      "name": "g_CVector3f_ARRAY_01bc9bbc",
+      "name": "g_ClipBuffer3Vertices",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01bc9bc0",
-      "name": "g_CVector3f_ARRAY_01bc9bbc[0].y",
+      "name": "g_ClipBuffer3Vertices[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9bc4",
-      "name": "g_CVector3f_ARRAY_01bc9bbc[0].z",
+      "name": "g_ClipBuffer3Vertices[0].z",
       "type": "undefined4",
       "value": null
     }
@@ -237,7 +237,7 @@
       "line": 27,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9bbc[g_INT_01bc9bb8].x = point1_ptr->x;",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -245,7 +245,7 @@
       "line": 39,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9bbc[g_INT_01bc9bb8].x = point1_ptr->x;",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;",
       "type": "unrolled_memcpy"
     }
   ]

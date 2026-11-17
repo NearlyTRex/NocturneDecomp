@@ -119,7 +119,7 @@ LAB_004f7885:
                 return;
               }
             }
-            if (g_INT_01c38b40 == 0) {
+            if (g_MMXSupported == 0) {
               if (g_INT_006141c0 == 0x20) {
                 engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3
                           (local_14,right_vertex,local_18);
@@ -238,7 +238,7 @@ LAB_004f7885:
         fVar1 = v2[0xd];
       }
       local_28 = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * 65535.0f);
-      engine_special_cpp_drawPolygon_FUN_0055f8f0(&local_b4,3,g_BIT_INTEGER32_01c38b54.dword);
+      engine_special_cpp_drawPolygon_FUN_0055f8f0(&local_b4,3,g_RenderStateFlags.dword);
     }
   }
   return;

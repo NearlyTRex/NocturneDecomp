@@ -13,7 +13,7 @@ uint FUN_0056f2d0(void)
   Heap *pHVar2;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8)();
-  pHVar1 = g_Heap_PTR_005c1680;
+  pHVar1 = g_MainHeap;
   while (pHVar2 = pHVar1, pHVar2 != (Heap *)0x0) {
     pHVar1 = pHVar2->next_heap_block;
     if (pHVar2->heap_size + -0x2c == *(int *)pHVar2[3].heap_size) {

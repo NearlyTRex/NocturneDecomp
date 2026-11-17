@@ -20,12 +20,15 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemo
             (g_CDemonRenderer_PTR_0061255c,&this_ptr->position);
   iVar2 = 0;
   do {
-    CStack_1c.x = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_006113a0[0].x + iVar3) *
-                             (float)0.00390625 * this_ptr->radius * 256.0f);
-    CStack_1c.y = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_006113a0[0].y + iVar3) *
-                             (float)0.00390625 * this_ptr->radius * 256.0f);
-    CStack_1c.z = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_006113a0[0].z + iVar3) *
-                             (float)0.00390625 * this_ptr->radius * 256.0f);
+    CStack_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *
+                             (float)0.00390625 * this_ptr->radius *
+                             256.0f);
+    CStack_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *
+                             (float)0.00390625 * this_ptr->radius *
+                             256.0f);
+    CStack_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *
+                             (float)0.00390625 * this_ptr->radius *
+                             256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
                ((int)&(g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr->projected_vertex).
@@ -40,7 +43,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemo
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar2) = 0xffff;
     iVar2 = iVar2 + 0x30;
   } while (iVar3 != 0x2e8);
-  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(&g_SMRGLTextureBasic_00611388);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(&g_CoronaHeadliteTexture);
   iVar2 = 0;
   do {
     pCVar1 = g_CDemonRenderer_PTR_0061255c;
@@ -48,8 +51,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemo
     iVar2 = iVar2 + 0x24;
     prim = (SMRGLHeaderPrimitive *)0x45edcd;
     round
-              ((double)((float)*(int *)((int)g_SMRGLLightPrimitive_ARRAY_00611688[0].vertices +
-                                       iVar3) * this_ptr->radius));
+              ((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *
+                       this_ptr->radius));
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(pCVar1,prim);
   } while (iVar2 != 0xbd0);
   return;

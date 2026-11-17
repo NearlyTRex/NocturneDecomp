@@ -10,11 +10,11 @@
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
-;   int g_INT_006b0260
+;   int g_CurrentPolygonColor
 ;   int g_INT_006b0274
 ;   int g_TexturesDisabled
-;   int[24] g_INT_ARRAY_006b029c
-;   undefined4 g_INT_ARRAY_006b029c[1]
+;   int[24] g_ProcessedVertexIndices
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
 ;   MainScanlineFunc* g_ScanlineRenderFunc
@@ -74,7 +74,7 @@ section .text
     JGE 0x00405fdf                      ; 00405e76
         ;   XREF to: 00405fdf (CONDITIONAL_JUMP)  ; LAB_00405fdf
     MOV ESI,dword ptr [EAX]             ; 00405e7c
-    MOV dword ptr [ECX + 0x6b029c],ESI  ; 00405e7e | g_INT_ARRAY_006b029c | g_INT_ARRAY_006b029c[1]
+    MOV dword ptr [ECX + 0x6b029c],ESI  ; 00405e7e | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     IMUL EDI,ESI,0x30                   ; 00405e84
     MOV ESI,dword ptr [EAX + 0x4]       ; 00405e87
     MOV dword ptr [EDI + 0x5c502c],ESI  ; 00405e8a | g_SRenderVertex_ARRAY_005c5014[0].u
@@ -163,7 +163,7 @@ section .text
     ADD ESP,0xc                         ; 00405f90
     MOV EAX,[0x01c00c74]                ; 00405f93 | g_CurrentLightingValue
     PUSH EAX                            ; 00405f98
-    MOV EDX,dword ptr [0x006b0260]      ; 00405f99 | g_INT_006b0260
+    MOV EDX,dword ptr [0x006b0260]      ; 00405f99 | g_CurrentPolygonColor
     PUSH EDX                            ; 00405f9f
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00405fa0
         ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_00404680(int color_value, int lighting_value)
@@ -186,7 +186,7 @@ section .text
         ;   Label: LAB_00405fd3
     JMP 0x00405f6a                      ; 00405fdd
         ;   XREF to: 00405f6a (UNCONDITIONAL_JUMP)  ; LAB_00405f6a
-    PUSH 0x6b029c                       ; 00405fdf | g_INT_ARRAY_006b029c
+    PUSH 0x6b029c                       ; 00405fdf | g_ProcessedVertexIndices
         ;   Label: LAB_00405fdf
     PUSH EBX                            ; 00405fe4
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00405fe5

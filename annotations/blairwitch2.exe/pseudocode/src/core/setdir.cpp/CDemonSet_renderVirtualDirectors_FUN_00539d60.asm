@@ -25,8 +25,8 @@
 ;   TerminatedCString s_g_005e609c
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   undefined4 g_INT_ARRAY_020b1524[1]
-;   undefined4 g_INT_ARRAY_020b1524[2]
+;   undefined4 g_VDCameraSortIndices[1]
+;   undefined4 g_VDCameraSortIndices[2]
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_render_FUN_00538a60
@@ -50,7 +50,7 @@ section .text
     JLE 0x00539d90                      ; 00539d77
         ;   XREF to: 00539d90 (CONDITIONAL_JUMP)  ; LAB_00539d90
     XOR EBP,EBP                         ; 00539d79
-    MOV dword ptr [EBP + 0x20b1524],EAX ; 00539d7b | g_INT_ARRAY_020b1524[1]
+    MOV dword ptr [EBP + 0x20b1524],EAX ; 00539d7b | g_VDCameraSortIndices[1]
         ;   Label: LAB_00539d7b
     INC EAX                             ; 00539d81
     MOV ECX,dword ptr [EDI]             ; 00539d82
@@ -75,19 +75,19 @@ section .text
         ;   XREF to: 00539df0 (CONDITIONAL_JUMP)  ; LAB_00539df0
     MOV EBX,dword ptr [ESP + 0x70]      ; 00539da4
     LEA EDX,[ECX*0x4 + 0x0]             ; 00539da8
-    MOV EAX,dword ptr [EBX + 0x20b1524] ; 00539daf | g_INT_ARRAY_020b1524[1]
+    MOV EAX,dword ptr [EBX + 0x20b1524] ; 00539daf | g_VDCameraSortIndices[1]
         ;   Label: LAB_00539daf
-    MOV ESI,dword ptr [EDX + 0x20b1524] ; 00539db5 | g_INT_ARRAY_020b1524[1] | g_INT_ARRAY_020b1524[2]
+    MOV ESI,dword ptr [EDX + 0x20b1524] ; 00539db5 | g_VDCameraSortIndices[1] | g_VDCameraSortIndices[2]
     FLD float ptr [EAX*0x4 + 0x209394c] ; 00539dbb
     FCOMP float ptr [ESI*0x4 + 0x209394c] ; 00539dc2
     FNSTSW AX                           ; 00539dc9
     SAHF                                ; 00539dcb
     JNC 0x00539de6                      ; 00539dcc
         ;   XREF to: 00539de6 (CONDITIONAL_JUMP)  ; LAB_00539de6
-    MOV EAX,dword ptr [EDX + 0x20b1524] ; 00539dce | g_INT_ARRAY_020b1524[1] | g_INT_ARRAY_020b1524[2]
+    MOV EAX,dword ptr [EDX + 0x20b1524] ; 00539dce | g_VDCameraSortIndices[1] | g_VDCameraSortIndices[2]
     MOV ESI,dword ptr [EBX + 0x20b1524] ; 00539dd4
     MOV dword ptr [EBX + 0x20b1524],EAX ; 00539dda
-    MOV dword ptr [EDX + 0x20b1524],ESI ; 00539de0 | g_INT_ARRAY_020b1524[1] | g_INT_ARRAY_020b1524[2]
+    MOV dword ptr [EDX + 0x20b1524],ESI ; 00539de0 | g_VDCameraSortIndices[1] | g_VDCameraSortIndices[2]
     INC ECX                             ; 00539de6
         ;   Label: LAB_00539de6
     MOV EAX,dword ptr [EDI]             ; 00539de7
@@ -128,7 +128,7 @@ section .text
     MOV dword ptr [ESP + 0x74],EAX      ; 00539e45
     MOV EAX,dword ptr [ESP + 0x7c]      ; 00539e49
         ;   Label: LAB_00539e49
-    MOV EAX,dword ptr [EAX + 0x20b1524] ; 00539e4d | g_INT_ARRAY_020b1524[1]
+    MOV EAX,dword ptr [EAX + 0x20b1524] ; 00539e4d | g_VDCameraSortIndices[1]
     MOV ECX,EAX                         ; 00539e53
     MOV dword ptr [ESP + 0x84],EAX      ; 00539e55
     IMUL EAX,EAX,0x1a4                  ; 00539e5c

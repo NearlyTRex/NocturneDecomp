@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CShadow_005d2e64
 ;   TerminatedCString s_footstep_s_s_wav_f_005d2e6c
 ;   float g_FLOAT_005d2e89 = 10000
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
@@ -107,7 +107,7 @@ section .text
     JZ 0x0040c929                       ; 0040c913
         ;   XREF to: 0040c929 (CONDITIONAL_JUMP)  ; LAB_0040c929
     PUSH 0x5d2e4f                       ; 0040c915 | = "FeetAreWet"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0040c91a | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0040c91a | g_CEventListPtr
     PUSH ESI                            ; 0040c920
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0040c921
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -229,7 +229,7 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0040ca92
     PUSH EAX                            ; 0040ca96
     PUSH EBX                            ; 0040ca97
-    MOV EDX,dword ptr [0x0061c010]      ; 0040ca98 | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 0040ca98 | g_CFireEffectPtr
     PUSH EDX                            ; 0040ca9e
     INC ESI                             ; 0040ca9f
     CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00 ; 0040caa0

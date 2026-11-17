@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_0056e608 at 0056e61d
 ;
 ; Referenced Globals:
-;   DWORD g_DWORD_005c20cc = 0xf4
+;   DWORD g_RuntimeBufferSize = 0xf4
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_00565c50
@@ -25,7 +25,7 @@ section .text
     TEST EBX,EBX                        ; 0056e571
     JNZ 0x0056e59c                      ; 0056e573
         ;   XREF to: 0056e59c (CONDITIONAL_JUMP)  ; LAB_0056e59c
-    MOV EDX,dword ptr [0x005c20cc]      ; 0056e575 | g_DWORD_005c20cc
+    MOV EDX,dword ptr [0x005c20cc]      ; 0056e575 | g_RuntimeBufferSize
     PUSH EDX                            ; 0056e57b
     PUSH 0x1                            ; 0056e57c
     CALL crt_memory.c_calloc_FUN_00565c50 ; 0056e57e
@@ -35,7 +35,7 @@ section .text
     TEST EAX,EAX                        ; 0056e588
     JZ 0x0056e59c                       ; 0056e58a
         ;   XREF to: 0056e59c (CONDITIONAL_JUMP)  ; LAB_0056e59c
-    MOV EDX,dword ptr [0x005c20cc]      ; 0056e58c | g_DWORD_005c20cc
+    MOV EDX,dword ptr [0x005c20cc]      ; 0056e58c | g_RuntimeBufferSize
     MOV byte ptr [EAX + 0x52],0x1       ; 0056e592
     MOV dword ptr [EAX + 0xf0],EDX      ; 0056e596
     PUSH EBX                            ; 0056e59c

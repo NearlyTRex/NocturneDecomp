@@ -23,10 +23,10 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005d1e85
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c25f78
+;   CBitFont* g_EditorFont
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c25f7c
-;   int g_INT_01c263b4
+;   int g_StatusTextColor
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -50,15 +50,15 @@ section .text
     PUSH EDI                            ; 0047be92
     PUSH EBP                            ; 0047be93
     SUB ESP,0x4                         ; 0047be94
-    CMP dword ptr [0x01c25590],0x0      ; 0047be97 | g_CBitFont_PTR_01c25590
+    CMP dword ptr [0x01c25590],0x0      ; 0047be97 | g_EditorFont
     JZ 0x0047bf4c                       ; 0047be9e
         ;   XREF to: 0047bf4c (CONDITIONAL_JUMP)  ; LAB_0047bf4c
-    MOV EAX,[0x01c25590]                ; 0047bea4 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047bea4 | g_EditorFont
         ;   Label: LAB_0047bea4
     PUSH 0x6a                           ; 0047bea9
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047beab
     PUSH EAX                            ; 0047beb1
-    MOV dword ptr [0x01c25f78],EDX      ; 0047beb2 | g_INT_01c25f78
+    MOV dword ptr [0x01c25f78],EDX      ; 0047beb2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 0047beb8
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047bebd
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x4                         ; 0047bf10
     PUSH 0x1c231f0                      ; 0047bf13
     PUSH -0x1                           ; 0047bf18
-    MOV EBP,dword ptr [0x01c263b4]      ; 0047bf1a | g_INT_01c263b4
+    MOV EBP,dword ptr [0x01c263b4]      ; 0047bf1a | g_StatusTextColor
     PUSH EBP                            ; 0047bf20
     PUSH EAX                            ; 0047bf21
     MOV EAX,[0x006141b8]                ; 0047bf22 | g_INT_006141b8
@@ -101,7 +101,7 @@ section .text
     SUB EAX,EDX                         ; 0047bf2c
     SAR EAX,0x1                         ; 0047bf2e
     PUSH EAX                            ; 0047bf30
-    MOV EAX,[0x01c25590]                ; 0047bf31 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047bf31 | g_EditorFont
     PUSH EAX                            ; 0047bf36
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0 ; 0047bf37
         ;   XREF to: 004a92a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0(CBitFont * this_ptr, int x, int y, int color_mode, ...)

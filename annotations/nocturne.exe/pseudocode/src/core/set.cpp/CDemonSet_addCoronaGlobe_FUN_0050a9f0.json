@@ -224,7 +224,7 @@
   },
   "suspects": [
     {
-      "description": "Scalar global g_INT_01fba2ec accessed via (&g_INT_01fba2ec)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CDemonGlobe_PTR_ARRAY_01fba2f0 (at 0x01fba2f0, +4 bytes).",
+      "description": "Scalar global g_INT_01fba2ec accessed via (&g_INT_01fba2ec)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CoronaGlobes (at 0x01fba2f0, +4 bytes).",
       "line": 6,
       "match": "g_INT_01fba2ec",
       "severity": "moderate",
@@ -232,11 +232,11 @@
       "type": "wrong_global"
     },
     {
-      "description": "Compiler displaced index base: [reg*4 + 0x1fba2ec] lands in g_INT_01fba2ec but intended target is g_CDemonGlobe_PTR_ARRAY_01fba2f0 at 0x1fba2f0 (displaced by 4 bytes)",
+      "description": "Compiler displaced index base: [reg*4 + 0x1fba2ec] lands in g_INT_01fba2ec but intended target is g_CoronaGlobes at 0x1fba2f0 (displaced by 4 bytes)",
       "displaced_from": "g_INT_01fba2ec",
       "displacement": "0x1fba2ec",
       "instruction_address": "",
-      "intended_global": "g_CDemonGlobe_PTR_ARRAY_01fba2f0",
+      "intended_global": "g_CoronaGlobes",
       "line": 15,
       "match": "0x1fba2ec",
       "scale": 4,

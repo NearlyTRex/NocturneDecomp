@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2365,
-    "complexity_score": 491,
+    "complexity_score": 492,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 466,
+    "pseudocode_lines": 467,
     "suspect_count": 2,
     "suspect_types": [
       "sign_compare_idiom"
     ],
-    "total_lines": 2831
+    "total_lines": 2832
   },
   "cross_references": [
     {
@@ -344,7 +344,7 @@
     },
     {
       "addr": "01d22c60",
-      "name": "g_INT_01d22c60",
+      "name": "g_HelpCharWidth",
       "type": "int",
       "value": null
     }
@@ -647,7 +647,7 @@
   "suspects": [
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 159,
+      "line": 160,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar3 = SBORROW4(iVar2,g_INT_01d22c58);",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 172,
+      "line": 173,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar3 = SBORROW4(iVar2,g_INT_01d22c58);",

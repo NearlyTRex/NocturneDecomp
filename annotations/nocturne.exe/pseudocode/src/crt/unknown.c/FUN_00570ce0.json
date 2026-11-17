@@ -45,7 +45,7 @@
   "globals": [
     {
       "addr": "02de5c30",
-      "name": "g_INT_02de5c30",
+      "name": "g_MultibyteLocaleActive",
       "type": "int",
       "value": null
     }
@@ -224,7 +224,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((((*param_2 != '\\0') && (param_1 < dest)) && (g_INT_02de5c30 != 0)) &&",
+      "text": "if ((((*param_2 != '\\0') && (param_1 < dest)) && (g_MultibyteLocaleActive != 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -232,7 +232,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((*param_2 != '\\0') && (param_1 < dest)) && (g_INT_02de5c30 != 0)) &&",
+      "text": "if ((((*param_2 != '\\0') && (param_1 < dest)) && (g_MultibyteLocaleActive != 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -240,7 +240,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "((g_CHAR_ARRAY_02de5c41[(byte)param_2[-1]] & 1U) != 0)) {",
+      "text": "((g_LeadByteTable[(byte)param_2[-1]] & 1U) != 0)) {",
       "type": "unnamed_param"
     },
     {

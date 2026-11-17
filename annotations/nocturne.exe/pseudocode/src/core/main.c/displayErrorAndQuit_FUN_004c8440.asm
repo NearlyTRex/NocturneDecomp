@@ -26,7 +26,7 @@
 ;   char[4352] g_CHAR_ARRAY_01cc3700
 ;   char* g_CurrentFilename
 ;   int g_INT_01cc4808
-;   CSound g_CSound_02dc9450
+;   CSound g_CSoundInstance
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_dtor_FUN_0052dd80
@@ -92,7 +92,7 @@ section .text
     JNZ 0x004c84e0                      ; 004c84a8
         ;   XREF to: 004c84e0 (CONDITIONAL_JUMP)  ; LAB_004c84e0
     MOV EDI,dword ptr [0x005bed68]      ; 004c84aa | g_CSound_PTR_005bed68
-    PUSH EDI                            ; 004c84b0 | g_CSound_02dc9450
+    PUSH EDI                            ; 004c84b0 | g_CSoundInstance
     CALL core_sound.cpp_CSound_dtor_FUN_0052dd80 ; 004c84b1
         ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_0052dd80(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c84b6

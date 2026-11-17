@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   WatcomStaticDestructorNode* g_WatcomStaticDestructorNode_PTR_0061f64c = 00000000
+;   WatcomStaticDestructorNode* g_AtexitListHead = 00000000
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0061f64c]                ; 005bef1e | g_WatcomStaticDestructorNode_PTR_0061f64c
+    MOV EAX,[0x0061f64c]                ; 005bef1e | g_AtexitListHead
         ;   Label: crt_unknown.c_FUN_005bef1e
     TEST EAX,EAX                        ; 005bef23
     JNZ 0x005bef2a                      ; 005bef25
@@ -22,7 +22,7 @@ section .text
     RET                                 ; 005bef29
     MOV EDX,dword ptr [EAX]             ; 005bef2a
         ;   Label: LAB_005bef2a
-    MOV dword ptr [0x0061f64c],EDX      ; 005bef2c | g_WatcomStaticDestructorNode_PTR_0061f64c
+    MOV dword ptr [0x0061f64c],EDX      ; 005bef2c | g_AtexitListHead
     JMP 0x005bef27                      ; 005bef32
         ;   XREF to: 005bef27 (UNCONDITIONAL_JUMP)  ; LAB_005bef27
     MOV EAX,dword ptr [EAX + 0x4]       ; 005bef34

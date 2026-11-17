@@ -77,21 +77,21 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004ce590(CHero *this_ptr)
     }
     if (g_CHeroClassVersion < 0x11) {
       if (5 < g_CHeroClassVersion) {
-        if (g_INT_007bc038 == 1) {
-          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,g_FILE_PTR_007bc034);
+        if (g_ActorReadingMode == 1) {
+          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,g_ActorDataFile);
         }
         else {
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,g_FILE_PTR_007bc034);
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,g_ActorDataFile);
         }
       }
       if (0xd < g_CHeroClassVersion) {
-        if (g_INT_007bc038 == 1) {
-          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 1,g_FILE_PTR_007bc034);
-          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 2,g_FILE_PTR_007bc034);
+        if (g_ActorReadingMode == 1) {
+          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 1,g_ActorDataFile);
+          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 2,g_ActorDataFile);
         }
         else {
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 1,g_FILE_PTR_007bc034);
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 2,g_FILE_PTR_007bc034);
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 1,g_ActorDataFile);
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 2,g_ActorDataFile);
         }
       }
       if (0xe < g_CHeroClassVersion) {
@@ -123,11 +123,11 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004ce590(CHero *this_ptr)
                   (&this_ptr->inventories[0].current_group,"InventoryIndex");
       }
       if (5 < g_CHeroClassVersion) {
-        if (g_INT_007bc038 != 1) {
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,g_FILE_PTR_007bc034);
+        if (g_ActorReadingMode != 1) {
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,g_ActorDataFile);
           return;
         }
-        core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,g_FILE_PTR_007bc034);
+        core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,g_ActorDataFile);
         return;
       }
     }

@@ -63,7 +63,7 @@ section .text
     PUSH 0x6a                           ; 00472df9
     MOV EBX,dword ptr [EAX + 0x3168]    ; 00472dfb
     PUSH EAX                            ; 00472e01
-    MOV dword ptr [0x01bcd9b8],EBX      ; 00472e02 | g_INT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EBX      ; 00472e02 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00472e08
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00472e0d
@@ -204,7 +204,7 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 00472fa2
     PUSH -0x1                           ; 00472fa5
-    MOV EAX,[0x01bcde04]                ; 00472fa7 | g_INT_01bcde04
+    MOV EAX,[0x01bcde04]                ; 00472fa7 | g_AxisLabelTextColor
     PUSH EAX                            ; 00472fac
     SAR EDI,0x10                        ; 00472fad
     PUSH EDI                            ; 00472fb0

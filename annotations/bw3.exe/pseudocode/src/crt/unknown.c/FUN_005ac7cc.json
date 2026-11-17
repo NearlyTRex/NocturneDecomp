@@ -49,25 +49,25 @@
   "globals": [
     {
       "addr": "00607be8",
-      "name": "g_dst_rule_00607be8",
+      "name": "g_DstStartRule",
       "type": "dst_rule",
       "value": null
     },
     {
       "addr": "00607c0c",
-      "name": "g_INT_00607c0c",
+      "name": "g_DstTransitionSecond",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "00607c10",
-      "name": "g_INT_00607c10",
+      "name": "g_DstTransitionMinute",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "00607c14",
-      "name": "g_INT_00607c14",
+      "name": "g_DstTransitionHour",
       "type": "int",
       "value": "0x1"
     },
@@ -85,19 +85,19 @@
     },
     {
       "addr": "00607d3c",
-      "name": "g_INT_00607d3c",
+      "name": "g_TimezoneOffset",
       "type": "int",
       "value": "0x4650"
     },
     {
       "addr": "00607d40",
-      "name": "g_INT_00607d40",
+      "name": "g_DaylightSavingActive",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "00607d44",
-      "name": "g_INT_00607d44",
+      "name": "g_DaylightSavingOffset",
       "type": "int",
       "value": "0xe10"
     }
@@ -193,7 +193,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar1 = (char *)FUN_005ac5a8(param_1,\"EST\",&g_INT_00607d3c);",
+      "text": "pcVar1 = (char *)FUN_005ac5a8(param_1,\"EST\",&g_TimezoneOffset);",
       "type": "unnamed_param"
     }
   ]

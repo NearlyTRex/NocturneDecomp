@@ -108,7 +108,7 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
       local_b0 = local_3c[1];
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-              (&(this_ptr->base).base.model,g_INT_ARRAY_0264be30[1],&local_c4);
+              (&(this_ptr->base).base.model,g_StrangerIndices[1],&local_c4);
     local_a0.x = local_c4.x;
     *(uint *)((int)&local_a0 + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&local_c4 + (uint)bVar4 * -8 + 4);
@@ -144,7 +144,7 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
       local_154 = fVar1;
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-              (&(this_ptr->base).base.model,g_INT_ARRAY_0264be30[2],&local_d0);
+              (&(this_ptr->base).base.model,g_StrangerIndices[2],&local_d0);
     input_local_point = &local_dc;
     local_dc.x = local_d0.x;
     *(uint *)((int)&local_dc + (uint)bVar4 * -8 + 4) =

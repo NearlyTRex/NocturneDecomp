@@ -276,7 +276,7 @@ LAB_00435ae3:
   if (EVar7 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar14 = this_ptr->head_look_blend_weight;
-    iVar6 = g_INT_ARRAY_007c150c[0];
+    iVar6 = g_ColonelIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_00594380(&this_ptr->head_look_euler,&CStack_c4);
     source_quaternions = &CStack_d4;
     CStack_d4.w = CStack_c4.w;

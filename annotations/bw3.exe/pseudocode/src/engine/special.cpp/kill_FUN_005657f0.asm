@@ -10,7 +10,7 @@
 ;   wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_00579a60 at 00579a8c
 ;
 ; Referenced Globals:
-;   void* g_PTR_02cf5fe8
+;   void* g_APIDLL_kill
 ;   int g_INT_02cf6108
 ;
 ; Called Functions:
@@ -26,7 +26,7 @@ section .text
         ;   XREF to: 005657ff (CONDITIONAL_JUMP)  ; LAB_005657ff
     MOV EAX,0x1                         ; 005657f9
     RET                                 ; 005657fe
-    CALL dword ptr [0x02cf5fe8]         ; 005657ff | g_PTR_02cf5fe8
+    CALL dword ptr [0x02cf5fe8]         ; 005657ff | g_APIDLL_kill
         ;   Label: LAB_005657ff
     CALL engine_special.cpp_shutdownExternalRenderer_FUN_00564010 ; 00565805
         ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_shutdownExternalRenderer_FUN_00564010()

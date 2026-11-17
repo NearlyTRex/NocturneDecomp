@@ -152,16 +152,16 @@ section .text
         ;   XREF to: 004beb7a (CONDITIONAL_JUMP)  ; LAB_004beb7a
     XOR AH,AH                           ; 004bea1a
     XOR EDX,EDX                         ; 004bea1c
-    MOV byte ptr [0x01d229f0],AH        ; 004bea1e | g_CHAR_ARRAY_01d229f0
-    MOV dword ptr [0x01d22af4],EDX      ; 004bea24 | g_FLOAT_01d22af4
-    MOV dword ptr [0x01d22af0],EDX      ; 004bea2a | g_INT_01d22af0
+    MOV byte ptr [0x01d229f0],AH        ; 004bea1e | g_ChapterDisplayName
+    MOV dword ptr [0x01d22af4],EDX      ; 004bea24 | g_OverlayDisplayTimer
+    MOV dword ptr [0x01d22af0],EDX      ; 004bea2a | g_ChapterDisplayYear
     MOV ESI,dword ptr [0x005fe4b0]      ; 004bea30 | g_CFieldNotesPtr
         ;   Label: LAB_004bea30
     PUSH ESI                            ; 004bea36
     CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 ; 004bea37
         ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004bea3c
-    MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | g_CEventListPtr
     PUSH EDI                            ; 004bea45
     CALL core_event.cpp_CEventList_resetGameFlags_FUN_00494880 ; 004bea46
         ;   XREF to: 00494880 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_00494880(CEventList * this_ptr)
@@ -181,13 +181,13 @@ section .text
     PUSH EDI                            ; 004bea78
     MOV AL,byte ptr [ESI]               ; 004bea79
         ;   Label: LAB_004bea79
-    MOV byte ptr [EDI],AL               ; 004bea7b | g_CHAR_ARRAY_01d225c8 | g_CHAR_ARRAY_01d225c8+2
+    MOV byte ptr [EDI],AL               ; 004bea7b | g_CurrentSaveFile | g_CurrentSaveFile+2
     CMP AL,0x0                          ; 004bea7d
     JZ 0x004bea91                       ; 004bea7f
         ;   XREF to: 004bea91 (CONDITIONAL_JUMP)  ; LAB_004bea91
     MOV AL,byte ptr [ESI + 0x1]         ; 004bea81
     ADD ESI,0x2                         ; 004bea84
-    MOV byte ptr [EDI + 0x1],AL         ; 004bea87 | g_CHAR_ARRAY_01d225c8+1 | g_CHAR_ARRAY_01d225c8+3
+    MOV byte ptr [EDI + 0x1],AL         ; 004bea87 | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD EDI,0x2                         ; 004bea8a
     CMP AL,0x0                          ; 004bea8d
     JNZ 0x004bea79                      ; 004bea8f

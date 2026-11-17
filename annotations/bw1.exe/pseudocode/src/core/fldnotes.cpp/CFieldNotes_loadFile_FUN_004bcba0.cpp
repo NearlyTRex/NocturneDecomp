@@ -87,7 +87,7 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *thi
         do {
           pbVar12 = pbVar13;
           pbVar13 = pbVar12 + 1;
-        } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+        } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
         pbVar15 = local_40;
         bVar2 = "section"[0];
         if (*pbVar12 == 0x5c) {
@@ -101,7 +101,7 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *thi
             pbVar15 = local_40;
             bVar2 = *pbVar12;
           }
-          while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+          while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
             pbVar13 = pbVar13 + 1;
           }
           do {
@@ -140,7 +140,7 @@ LAB_004bceb4:
           do {
             pbVar12 = pbVar13;
             pbVar13 = pbVar12 + 1;
-          } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+          } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
           pbVar15 = local_3c;
           pSVar10 = local_48;
           pSVar7 = local_44;
@@ -158,7 +158,7 @@ LAB_004bceb4:
               pSVar7 = local_44;
               bVar2 = *pbVar12;
             }
-            while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+            while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
               pbVar13 = pbVar13 + 1;
             }
             do {
@@ -209,7 +209,7 @@ LAB_004bcfcf:
             do {
               pbVar12 = pbVar13;
               pbVar13 = pbVar12 + 1;
-            } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+            } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
             pbVar15 = local_38;
             pSVar10 = local_48;
             bVar2 = "entry"[0];
@@ -225,7 +225,7 @@ LAB_004bcfcf:
                 pSVar10 = local_48;
                 bVar2 = *pbVar12;
               }
-              while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+              while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
                 pbVar13 = pbVar13 + 1;
               }
               do {
@@ -273,7 +273,7 @@ LAB_004bd0f5:
               do {
                 pbVar12 = pbVar13;
                 pbVar13 = pbVar12 + 1;
-              } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+              } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
               pbVar15 = local_30;
               pSVar10 = local_48;
               bVar2 = "task"[0];
@@ -289,7 +289,7 @@ LAB_004bd0f5:
                   pSVar10 = local_48;
                   bVar2 = *pbVar12;
                 }
-                while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
                   pbVar13 = pbVar13 + 1;
                 }
                 do {
@@ -338,7 +338,7 @@ LAB_004bd25d:
                 do {
                   pbVar12 = pbVar13;
                   pbVar13 = pbVar12 + 1;
-                } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+                } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
                 pbVar15 = local_24;
                 pSVar10 = local_48;
                 bVar2 = "map"[0];
@@ -354,7 +354,7 @@ LAB_004bd25d:
                     pSVar10 = local_48;
                     bVar2 = *pbVar12;
                   }
-                  while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                  while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
                     pbVar13 = pbVar13 + 1;
                   }
                   do {
@@ -390,7 +390,7 @@ LAB_004bd3d9:
                   do {
                     pbVar12 = pbVar13;
                     pbVar13 = pbVar12 + 1;
-                  } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+                  } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
                   pbVar15 = local_20;
                   pSVar7 = local_44;
                   bVar2 = "image"[0];
@@ -406,7 +406,7 @@ LAB_004bd3d9:
                       pSVar7 = local_44;
                       bVar2 = *pbVar12;
                     }
-                    while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                    while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
                       pbVar13 = pbVar13 + 1;
                     }
                     do {
@@ -449,7 +449,7 @@ LAB_004bd503:
                     do {
                       pbVar12 = pbVar13;
                       pbVar13 = pbVar12 + 1;
-                    } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+                    } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
                     pbVar15 = local_1c;
                     pSVar7 = local_44;
                     bVar2 = "set"[0];
@@ -465,7 +465,7 @@ LAB_004bd503:
                         pSVar7 = local_44;
                         bVar2 = *pbVar12;
                       }
-                      while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                      while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
                         pbVar13 = pbVar13 + 1;
                       }
                       do {
@@ -511,7 +511,7 @@ LAB_004bd681:
                       do {
                         pbVar12 = pbVar13;
                         pbVar13 = pbVar12 + 1;
-                      } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+                      } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
                       pbVar15 = local_18;
                       pSVar7 = local_44;
                       bVar2 = "annotation"[0];
@@ -527,7 +527,7 @@ LAB_004bd681:
                           pSVar7 = local_44;
                           bVar2 = *pbVar12;
                         }
-                        while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                        while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
                           pbVar13 = pbVar13 + 1;
                         }
                         do {
@@ -576,7 +576,7 @@ LAB_004bd820:
                         do {
                           pbVar12 = pbVar13;
                           pbVar13 = pbVar12 + 1;
-                        } while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar12 + 1)] & 2) != 0);
+                        } while ((g_CharacterClassificationTable[(byte)(*pbVar12 + 1)] & 2) != 0);
                         pbVar15 = local_14;
                         p_Var3 = local_50;
                         bVar2 = "end"[0];
@@ -642,7 +642,7 @@ LAB_004bcdbb:
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(this_ptr);
   return 0;
 LAB_004bda1e:
-  while ((g_UCHAR_ARRAY_00626114[(byte)(*pbVar13 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pbVar13 + 1)] & 2) != 0) {
     pbVar13 = pbVar13 + 1;
   }
   do {

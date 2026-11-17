@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int g_INT_01c5fad0
+;   int g_GlobalDeltaTimeInt
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_00499370
     CALL core_particle.cpp_CParticle_process_FUN_00509f30 ; 00499371
         ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00509f30(CParticle * this_ptr)
-    MOV EAX,[0x01c5fad0]                ; 00499376 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 00499376 | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 0049937b
     SAR EDX,0x1f                        ; 0049937d
     SHL EDX,0x2                         ; 00499380
@@ -52,7 +52,7 @@ section .text
     SAR EAX,0x2                         ; 00499385
     MOV ESI,dword ptr [EBP + 0x54]      ; 00499388
     ADD ESI,EAX                         ; 0049938b
-    MOV EAX,[0x01c5fad0]                ; 0049938d | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 0049938d | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 00499392
     SAR EDX,0x1f                        ; 00499394
     SUB EAX,EDX                         ; 00499397
@@ -96,7 +96,7 @@ section .text
     MOV dword ptr [EBX + 0x20],0x0      ; 004993fa
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0 ; 00499401
         ;   XREF to: 005372f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(CDemonSet * this_ptr, CDemonGlobe * globe)
-    MOV EAX,[0x01c5fad0]                ; 00499406 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 00499406 | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBP + 0x50]      ; 0049940b
     ADD ECX,EAX                         ; 0049940e
     ADD ESP,0x8                         ; 00499410
@@ -182,7 +182,7 @@ section .text
     POP ESI                             ; 00499502
     POP EBX                             ; 00499503
     RET                                 ; 00499504
-    MOV EDX,dword ptr [0x01c5fad0]      ; 00499505 | g_INT_01c5fad0
+    MOV EDX,dword ptr [0x01c5fad0]      ; 00499505 | g_GlobalDeltaTimeInt
         ;   Label: LAB_00499505
     MOV EAX,dword ptr [EBP + 0x44]      ; 0049950b
     IMUL EDX                            ; 0049950e

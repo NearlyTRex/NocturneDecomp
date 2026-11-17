@@ -10,7 +10,7 @@
 ;   int g_INT_0061b4a0 = 0x8
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;   int g_INT_01c50948
 ;
@@ -42,7 +42,7 @@ section .text
     CLD                                 ; 0057dd23
     PUSH DS                             ; 0057dd24
     POP ES                              ; 0057dd25
-    MOV ECX,dword ptr [0x01c4f010]      ; 0057dd26 | g_INT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 0057dd26 | g_ClipRight
     MOV EAX,dword ptr [EBP + 0x8]       ; 0057dd2c
     SUB ECX,dword ptr [0x01c4f008]      ; 0057dd2f | g_INT_01c4f008
     MOV EBX,dword ptr [0x01c4f00c]      ; 0057dd35 | g_INT_01c4f00c

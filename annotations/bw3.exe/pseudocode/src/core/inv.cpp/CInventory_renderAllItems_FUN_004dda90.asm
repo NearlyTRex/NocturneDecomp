@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 004de350 (CONDITIONAL_JUMP)  ; LAB_004de350
     MOV ESI,dword ptr [0x005fba1c]      ; 004ddad9 | g_INT_005fba1c
         ;   Label: LAB_004ddad9
-    CMP ESI,dword ptr [0x01d70a34]      ; 004ddadf | g_INT_01d70a34
+    CMP ESI,dword ptr [0x01d70a34]      ; 004ddadf | g_InventoryScreenHeight
     JZ 0x004ddaec                       ; 004ddae5
         ;   XREF to: 004ddaec (CONDITIONAL_JUMP)  ; LAB_004ddaec
     CALL core_inv.cpp_loadAssets_FUN_004da570 ; 004ddae7
@@ -113,7 +113,7 @@ section .text
     MOV EAX,[0x01c6cee8]                ; 004ddaec | g_INT_01c6cee8
         ;   Label: LAB_004ddaec
     MOV dword ptr [ESP + 0x520],EAX     ; 004ddaf1
-    MOV EAX,[0x01549ab4]                ; 004ddaf8 | g_CBitFont_PTR_01549ab4
+    MOV EAX,[0x01549ab4]                ; 004ddaf8 | g_SmallEditorFont
     XOR EDI,EDI                         ; 004ddafd
     MOV dword ptr [ESP + 0x534],EAX     ; 004ddaff
     MOV EAX,[0x005fba1c]                ; 004ddb06 | g_INT_005fba1c
@@ -139,10 +139,10 @@ section .text
         ;   XREF to: 004ddcd0 (CONDITIONAL_JUMP)  ; LAB_004ddcd0
     MOV EBX,0x70                        ; 004ddb4b
     MOV EDI,0x10                        ; 004ddb50
-    MOV ESI,dword ptr [0x00600180]      ; 004ddb55 | g_INT_00600180
+    MOV ESI,dword ptr [0x00600180]      ; 004ddb55 | g_InventoryWidth
     MOV EAX,[0x005fba1c]                ; 004ddb5b | g_INT_005fba1c
     MOV dword ptr [ESP + 0x528],EBX     ; 004ddb60
-    MOV EBX,dword ptr [0x00600184]      ; 004ddb67 | g_INT_00600184
+    MOV EBX,dword ptr [0x00600184]      ; 004ddb67 | g_InventoryHeight
     CMP EAX,0x180                       ; 004ddb6d
     JGE 0x004ddb84                      ; 004ddb72
         ;   XREF to: 004ddb84 (CONDITIONAL_JUMP)  ; LAB_004ddb84
@@ -270,10 +270,10 @@ section .text
         ;   XREF to: 004ddf00 (CONDITIONAL_JUMP)  ; LAB_004ddf00
     MOV ESI,0x70                        ; 004ddcf3
     MOV EDI,0x10                        ; 004ddcf8
-    MOV EBX,dword ptr [0x00600184]      ; 004ddcfd | g_INT_00600184
+    MOV EBX,dword ptr [0x00600184]      ; 004ddcfd | g_InventoryHeight
     MOV EAX,[0x005fba1c]                ; 004ddd03 | g_INT_005fba1c
     MOV dword ptr [ESP + 0x530],ESI     ; 004ddd08
-    MOV ESI,dword ptr [0x00600180]      ; 004ddd0f | g_INT_00600180
+    MOV ESI,dword ptr [0x00600180]      ; 004ddd0f | g_InventoryWidth
     CMP EAX,0x180                       ; 004ddd15
     JGE 0x004ddd2c                      ; 004ddd1a
         ;   XREF to: 004ddd2c (CONDITIONAL_JUMP)  ; LAB_004ddd2c
@@ -666,11 +666,11 @@ section .text
     PUSH EDI                            ; 004de21a
     CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 004de21b
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
-    MOV EAX,[0x01549ab4]                ; 004de220 | g_CBitFont_PTR_01549ab4
+    MOV EAX,[0x01549ab4]                ; 004de220 | g_SmallEditorFont
     ADD ESP,0x4                         ; 004de225
     MOV dword ptr [ESP + 0x560],EAX     ; 004de228
     MOV EAX,[0x005fba1c]                ; 004de22f | g_INT_005fba1c
-    MOV EDX,dword ptr [0x00600184]      ; 004de234 | g_INT_00600184
+    MOV EDX,dword ptr [0x00600184]      ; 004de234 | g_InventoryHeight
     CMP EAX,0x180                       ; 004de23a
     JGE 0x004de258                      ; 004de23f
         ;   XREF to: 004de258 (CONDITIONAL_JUMP)  ; LAB_004de258
@@ -679,7 +679,7 @@ section .text
     SUB EAX,EDX                         ; 004de246
     SAR EAX,0x1                         ; 004de248
     MOV EDX,EAX                         ; 004de24a
-    MOV EAX,[0x01549abc]                ; 004de24c | g_CBitFont_PTR_01549abc
+    MOV EAX,[0x01549abc]                ; 004de24c | g_MicroFont
     MOV dword ptr [ESP + 0x560],EAX     ; 004de251
     MOV EAX,[0x005fba18]                ; 004de258 | g_INT_005fba18
         ;   Label: LAB_004de258
@@ -709,12 +709,12 @@ section .text
     IMUL EAX,EBX                        ; 004de2aa
     MOV EBX,dword ptr [0x005fba1c]      ; 004de2ad | g_INT_005fba1c
     SUB EBX,0x4                         ; 004de2b3
-    MOV ESI,dword ptr [0x01549abc]      ; 004de2b6 | g_CBitFont_PTR_01549abc
+    MOV ESI,dword ptr [0x01549abc]      ; 004de2b6 | g_MicroFont
     SUB EBX,EAX                         ; 004de2bc
     CMP ESI,dword ptr [ESP + 0x560]     ; 004de2be
     JNZ 0x004de57c                      ; 004de2c5
         ;   XREF to: 004de57c (CONDITIONAL_JUMP)  ; LAB_004de57c
-    CMP dword ptr [0x01dd4890],0x0      ; 004de2cb | g_INT_01dd4890
+    CMP dword ptr [0x01dd4890],0x0      ; 004de2cb | g_UseOSFonts
     JZ 0x004de57c                       ; 004de2d2
         ;   XREF to: 004de57c (CONDITIONAL_JUMP)  ; LAB_004de57c
     LEA EAX,[EAX]                       ; 004de2d8
@@ -769,7 +769,7 @@ section .text
     MOV dword ptr [EAX + 0x340],0x0     ; 004de371
     JMP 0x004ddad9                      ; 004de37b
         ;   XREF to: 004ddad9 (UNCONDITIONAL_JUMP)  ; LAB_004ddad9
-    MOV EAX,[0x01549abc]                ; 004de380 | g_CBitFont_PTR_01549abc
+    MOV EAX,[0x01549abc]                ; 004de380 | g_MicroFont
         ;   Label: LAB_004de380
     MOV dword ptr [ESP + 0x534],EAX     ; 004de385
     JMP 0x004ddb28                      ; 004de38c

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 269,
+    "complexity_score": 268,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 63,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 140
+    "total_lines": 139
   },
   "cross_references": [],
   "function": {
@@ -44,7 +44,7 @@
   "globals": [
     {
       "addr": "005ad49c",
-      "name": "g_SMRGLTextureBasic_005ad49c",
+      "name": "g_CameraBackdropTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -56,37 +56,37 @@
     },
     {
       "addr": "00b0daf8",
-      "name": "g_SRGBColorPalette_00b0daf8",
+      "name": "g_CameraImagePaletteData",
       "type": "SRGBColorPalette",
       "value": null
     },
     {
       "addr": "00b0dafc",
-      "name": "g_SRGBColorPalette_00b0daf8.colors[1].g",
+      "name": "g_CameraImagePaletteData.colors[1].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b0dafd",
-      "name": "g_SRGBColorPalette_00b0daf8.colors[1].b",
+      "name": "g_CameraImagePaletteData.colors[1].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0145b290",
-      "name": "g_UINT_ARRAY_0145b290",
+      "name": "g_CameraTextureWorkBuffer",
       "type": "uint[16384]",
       "value": null
     },
     {
       "addr": "0145b294",
-      "name": "g_UINT_ARRAY_0145b290[1]",
+      "name": "g_CameraTextureWorkBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0145b295",
-      "name": "g_UINT_ARRAY_0145b290[1]+1",
+      "name": "g_CameraTextureWorkBuffer[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -201,9 +201,9 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(char *)((int)g_UINT_ARRAY_0145b290",
+      "match": "(char *)((int)g_CameraTextureWorkBuffer",
       "severity": "moderate",
-      "text": "*(char *)((int)g_UINT_ARRAY_0145b290 + iVar4) =",
+      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -339,7 +339,7 @@
       "line": 49,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00443207: MOVSD.REP ES:EDI,ESI  ; g_UINT_ARRAY_0145b290 | g_UINT_ARRAY_0145b290[1]",
+      "text": "// 00443207: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
       "type": "unrolled_memcpy"
     },
     {
@@ -347,7 +347,7 @@
       "line": 60,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00443227: MOVSD.REP ES:EDI,ESI  ; g_SRGBColorPalette_00b0daf8 | g_SRGBColorPalette_00b0daf8.colors[1].g",
+      "text": "// 00443227: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
       "type": "unrolled_memcpy"
     }
   ]

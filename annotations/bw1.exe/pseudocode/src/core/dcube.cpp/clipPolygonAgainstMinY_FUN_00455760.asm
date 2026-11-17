@@ -10,7 +10,7 @@
 ;   undefined1* PTR_caseD_1_00455754 = 00455814
 ;   undefined1* PTR_caseD_3_0045575c = 004557f9
 ;   int g_INT_0152be10
-;   uint g_UINT_0152bed4
+;   uint g_CubeClipStage2Count
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_00455460
@@ -27,7 +27,7 @@ section .text
     MOV EBP,ESP                         ; 00455764
     SUB ESP,0x8                         ; 00455766
     AND ESP,0xfffffff8                  ; 00455769
-    MOV EBX,dword ptr [0x0152bed4]      ; 0045576c | g_UINT_0152bed4
+    MOV EBX,dword ptr [0x0152bed4]      ; 0045576c | g_CubeClipStage2Count
     MOV EDX,dword ptr [EBP + 0x14]      ; 00455772
     MOV dword ptr [ESP],EDX             ; 00455775
     MOV EDX,dword ptr [0x0152be10]      ; 00455778 | g_INT_0152be10
@@ -93,7 +93,7 @@ section .text
     CMP EDI,ECX                         ; 00455803
     JL 0x0045578d                       ; 00455805
         ;   XREF to: 0045578d (CONDITIONAL_JUMP)  ; LAB_0045578d
-    MOV dword ptr [0x0152bed4],EBX      ; 00455807 | g_UINT_0152bed4
+    MOV dword ptr [0x0152bed4],EBX      ; 00455807 | g_CubeClipStage2Count
         ;   Label: LAB_00455807
     MOV ESP,EBP                         ; 0045580d
     POP EBP                             ; 0045580f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00455836
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00455837
     PUSH EAX                            ; 0045583b
-    MOV dword ptr [0x0152bed4],EBX      ; 0045583c | g_UINT_0152bed4
+    MOV dword ptr [0x0152bed4],EBX      ; 0045583c | g_CubeClipStage2Count
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00455842
         ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x0152bed4]      ; 00455847 | g_UINT_0152bed4
+    MOV EBX,dword ptr [0x0152bed4]      ; 00455847 | g_CubeClipStage2Count
     ADD ESP,0x2c                        ; 0045584d
     JMP 0x004557f8                      ; 00455850
         ;   XREF to: 004557f8 (UNCONDITIONAL_JUMP)  ; LAB_004557f8
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00455892
     PUSH ECX                            ; 00455896
     PUSH EDX                            ; 00455897
-    MOV dword ptr [0x0152bed4],EBX      ; 00455898 | g_UINT_0152bed4
+    MOV dword ptr [0x0152bed4],EBX      ; 00455898 | g_CubeClipStage2Count
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 0045589e
         ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x0152bed4]      ; 004558a3 | g_UINT_0152bed4
+    MOV EBX,dword ptr [0x0152bed4]      ; 004558a3 | g_CubeClipStage2Count
     ADD ESP,0x2c                        ; 004558a9
     JMP 0x004557f8                      ; 004558ac
         ;   XREF to: 004557f8 (UNCONDITIONAL_JUMP)  ; LAB_004557f8

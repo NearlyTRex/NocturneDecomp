@@ -12,14 +12,14 @@
 // =============================================================================
 
 // CBloodPool[32]
-extern CBloodPool g_CBloodPool_ARRAY_01cf69fc[32];
+extern CBloodPool g_BloodPools[32];
 
 // CFootstep[1000]
-extern CFootstep g_CFootstep_ARRAY_01cf6f04[1000];
+extern CFootstep g_Footsteps[1000];
 
 // int
-extern int g_INT_01cf69f4;
-extern int g_INT_01cf69f8;
-extern int g_INT_01cf6efc;
-extern int g_INT_01cf6f00;
+extern int g_BloodPoolIndex;
+extern int g_BloodPoolCount;
+extern int g_FootstepIndex;
+extern int g_FootstepCount;
 

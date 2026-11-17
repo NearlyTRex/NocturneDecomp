@@ -71,12 +71,12 @@ section .text
     PUSH EAX                            ; 004f3cb9
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004f3cba
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005be164]      ; 004f3cbf | INT_005be164
+    MOV EDX,dword ptr [0x005be164]      ; 004f3cbf | g_CPendulumClassVersion
     ADD ESP,0x8                         ; 004f3cc5
     CMP EDX,0x2                         ; 004f3cc8
     JGE 0x004f3dbd                      ; 004f3ccb
         ;   XREF to: 004f3dbd (CONDITIONAL_JUMP)  ; LAB_004f3dbd
-    CMP dword ptr [0x005be164],0x3      ; 004f3cd1 | INT_005be164
+    CMP dword ptr [0x005be164],0x3      ; 004f3cd1 | g_CPendulumClassVersion
         ;   Label: LAB_004f3cd1
     JL 0x004f3d16                       ; 004f3cd8
         ;   XREF to: 004f3d16 (CONDITIONAL_JUMP)  ; LAB_004f3d16
@@ -98,7 +98,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004f3d0e
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f3d13
-    CMP dword ptr [0x005be164],0x4      ; 004f3d16 | INT_005be164
+    CMP dword ptr [0x005be164],0x4      ; 004f3d16 | g_CPendulumClassVersion
         ;   Label: LAB_004f3d16
     JL 0x004f3d47                       ; 004f3d1d
         ;   XREF to: 004f3d47 (CONDITIONAL_JUMP)  ; LAB_004f3d47
@@ -114,7 +114,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004f3d3f
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f3d44
-    CMP dword ptr [0x005be164],0x5      ; 004f3d47 | INT_005be164
+    CMP dword ptr [0x005be164],0x5      ; 004f3d47 | g_CPendulumClassVersion
         ;   Label: LAB_004f3d47
     JL 0x004f3d78                       ; 004f3d4e
         ;   XREF to: 004f3d78 (CONDITIONAL_JUMP)  ; LAB_004f3d78
@@ -130,7 +130,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004f3d70
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f3d75
-    CMP dword ptr [0x005be164],0x6      ; 004f3d78 | INT_005be164
+    CMP dword ptr [0x005be164],0x6      ; 004f3d78 | g_CPendulumClassVersion
         ;   Label: LAB_004f3d78
     JL 0x004f3d95                       ; 004f3d7f
         ;   XREF to: 004f3d95 (CONDITIONAL_JUMP)  ; LAB_004f3d95
@@ -140,7 +140,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004f3d8d
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f3d92
-    CMP dword ptr [0x005be164],0x7      ; 004f3d95 | INT_005be164
+    CMP dword ptr [0x005be164],0x7      ; 004f3d95 | g_CPendulumClassVersion
         ;   Label: LAB_004f3d95
     JL 0x004f3db2                       ; 004f3d9c
         ;   XREF to: 004f3db2 (CONDITIONAL_JUMP)  ; LAB_004f3db2
@@ -150,7 +150,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004f3daa
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004f3daf
-    CMP dword ptr [0x005be164],0x8      ; 004f3db2 | INT_005be164
+    CMP dword ptr [0x005be164],0x8      ; 004f3db2 | g_CPendulumClassVersion
         ;   Label: LAB_004f3db2
     JGE 0x004f3dd6                      ; 004f3db9
         ;   XREF to: 004f3dd6 (CONDITIONAL_JUMP)  ; LAB_004f3dd6

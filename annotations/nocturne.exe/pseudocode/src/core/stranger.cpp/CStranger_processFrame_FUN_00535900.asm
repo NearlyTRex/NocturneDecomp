@@ -63,7 +63,7 @@ section .text
     AND ESP,0xfffffff8                  ; 0053590c
     MOV EBX,dword ptr [EBP + 0x14]      ; 0053590f
     PUSH 0x5954d7                       ; 00535912 | = "DebugActionPending"
-    MOV EDX,dword ptr [0x005b7650]      ; 00535917 | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00535917 | g_CEventListPtr
     PUSH EDX                            ; 0053591d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0053591e
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -639,7 +639,7 @@ section .text
     CMP EAX,0x1b                        ; 00536047
     JNZ 0x005360a1                      ; 0053604a
         ;   XREF to: 005360a1 (CONDITIONAL_JUMP)  ; LAB_005360a1
-    MOV EDX,dword ptr [0x00764230]      ; 0053604c | g_CAmmoBoxActorType_007641f8.name_hash
+    MOV EDX,dword ptr [0x00764230]      ; 0053604c | g_CAmmoBoxClassInfo.name_hash
     PUSH EDX                            ; 00536052
     MOV ECX,dword ptr [EBX + 0x1fa08]   ; 00536053
     PUSH ECX                            ; 00536059
@@ -913,7 +913,7 @@ section .text
     SAHF                                ; 005363aa
     JNC 0x00536472                      ; 005363ab
         ;   XREF to: 00536472 (CONDITIONAL_JUMP)  ; LAB_00536472
-    MOV ECX,dword ptr [0x00764838]      ; 005363b1 | g_CBoxActorActorType_00764800.name_hash
+    MOV ECX,dword ptr [0x00764838]      ; 005363b1 | g_CBoxActorClassInfo.name_hash
     PUSH ECX                            ; 005363b7
     MOV ESI,dword ptr [EBX + 0x1fa0c]   ; 005363b8
     PUSH ESI                            ; 005363be

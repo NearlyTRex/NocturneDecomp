@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 672,
+    "complexity_score": 663,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 277,
+    "pseudocode_lines": 268,
     "suspect_count": 39,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 731
+    "total_lines": 722
   },
   "cross_references": [
     {
@@ -93,127 +93,127 @@
     },
     {
       "addr": "00618e80",
-      "name": "g_INT_00618e80",
+      "name": "g_Mp3SynthesisTablesInitialized",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "01d21c08",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][18]",
+      "name": "g_Mp3WindowTables[1][18]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c0c",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][18]+4",
+      "name": "g_Mp3WindowTables[1][18]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c10",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][19]",
+      "name": "g_Mp3WindowTables[1][19]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c14",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][19]+4",
+      "name": "g_Mp3WindowTables[1][19]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c18",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][20]",
+      "name": "g_Mp3WindowTables[1][20]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c20",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][21]",
+      "name": "g_Mp3WindowTables[1][21]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c68",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][30]",
+      "name": "g_Mp3WindowTables[1][30]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c6c",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][30]+4",
+      "name": "g_Mp3WindowTables[1][30]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c70",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][31]",
+      "name": "g_Mp3WindowTables[1][31]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21c74",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[1][31]+4",
+      "name": "g_Mp3WindowTables[1][31]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21cf8",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[2][12]",
+      "name": "g_Mp3WindowTables[2][12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21cfc",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[2][12]+4",
+      "name": "g_Mp3WindowTables[2][12]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21d00",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[2][13]",
+      "name": "g_Mp3WindowTables[2][13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21d04",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[2][13]+4",
+      "name": "g_Mp3WindowTables[2][13]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e18",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[3][12]",
+      "name": "g_Mp3WindowTables[3][12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e1c",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[3][12]+4",
+      "name": "g_Mp3WindowTables[3][12]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e20",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[3][13]",
+      "name": "g_Mp3WindowTables[3][13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e24",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[3][13]+4",
+      "name": "g_Mp3WindowTables[3][13]+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e28",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[3][14]",
+      "name": "g_Mp3WindowTables[3][14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e30",
-      "name": "g_DOUBLE_ARRAY_ARRAY_01d21a58[3][15]",
+      "name": "g_Mp3WindowTables[3][15]",
       "type": "undefined4",
       "value": null
     }
@@ -435,313 +435,313 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[0] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[0] + iVar11) = (double)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[1] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[1] + iVar11) = (double)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 59,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[1] + iVar11 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11 + 4) = 0x3ff00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[1] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[1] + iVar11) = (double)fVar15;",
+      "text": "*(double *)((int)g_Mp3WindowTables[1] + iVar11) = (double)fVar15;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[1] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[1] + iVar11 + 4) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[3] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 85,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[3] + iVar11 + 4) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 96,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[3] + iVar11) = (double)fVar15;",
+      "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar11) = (double)fVar15;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 102,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[3] + iVar11 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11 + 4) = 0x3ff00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 103,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[3] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 113,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[3] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar11) = (double)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 123,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[2] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[2] + iVar11) = (double)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 129,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[2] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[2] + iVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 130,
-      "match": "(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(uint *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[2] + iVar11 + 4) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[2] + iVar11 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 143,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar10) = (double)fVar13;",
+      "text": "*(double *)((int)g_Mp3DctMatrix[0] + iVar10) = (double)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 161,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d22118",
+      "match": "(double *)((int)g_Mp3PolyCoefficients",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d22118[0] + iVar11) = (double)fVar13;",
+      "text": "*(double *)((int)g_Mp3PolyCoefficients[0] + iVar11) = (double)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 209,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "pdVar1 = (double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar11);",
+      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 214,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[2] + iVar10);",
+      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "pfVar9[6] = (input_samples[0xf] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 218,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar7) +",
+      "text": "input_samples[0xc] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "input_samples[9] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 220,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar6) +",
+      "text": "input_samples[6] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "line": 222,
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "input_samples[9] * (float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar5)",
+      "text": "input_samples[3] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "line": 231,
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar4) +",
+      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 226,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "line": 236,
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar8)) *",
+      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "line": 239,
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "pdVar1 = (double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar11);",
+      "text": "pfVar9[0xc] = (input_samples[0x10] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 240,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[2] + iVar10);",
+      "text": "input_samples[0xd] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 241,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "input_samples[10] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 242,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "input_samples[7] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 244,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar7) +",
+      "text": "input_samples[4] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 246,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "line": 252,
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar6) +",
+      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "line": 257,
+      "match": "(double *)((int)g_Mp3WindowTables",
       "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar5) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 250,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar4) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 253,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "(float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar8)) *",
+      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 261,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "pdVar1 = (double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar11);",
+      "text": "(input_samples[0x11] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "input_samples[0xe] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 263,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "input_samples[0xb] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 264,
+      "match": "(double *)((int)g_Mp3DctMatrix",
+      "severity": "moderate",
+      "text": "input_samples[8] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 266,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58",
+      "match": "(double *)((int)g_Mp3DctMatrix",
       "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21a58[2] + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 270,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "(input_samples[0x11] * (float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar7) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 271,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "input_samples[0xe] * (float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar6) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 272,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "input_samples[0xb] * (float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar5) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 273,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "input_samples[8] * (float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar4) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 275,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8",
-      "severity": "moderate",
-      "text": "input_samples[5] * (float)*(double *)((int)g_DOUBLE_ARRAY_ARRAY_01d21ed8[0] + iVar8)) *",
+      "text": "input_samples[5] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) * (float)*pdVar2 +",
       "type": "pointer_cast"
     }
   ]

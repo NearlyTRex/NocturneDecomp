@@ -9,6 +9,6 @@
 void __cdecl core_game_cpp_CGame_resetIrisFade_FUN_004bb090(CGame *this_ptr)
 
 {
-  g_INT_01cb80e0 = 0;
+  g_IrisFadeType = 0;
   return;
 }

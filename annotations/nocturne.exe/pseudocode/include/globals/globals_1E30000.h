@@ -12,19 +12,19 @@
 // =============================================================================
 
 // CPathMap*[200]
-extern CPathMap* g_CPathMap_PTR_ARRAY_01e312fc[200];
+extern CPathMap* g_PathMapList[200];
 
 // CPathQueueNode[5000]
-extern CPathQueueNode g_CPathQueueNode_ARRAY_01e3162c[5000];
+extern CPathQueueNode g_PathfindingQueue[5000];
 
 // int
-extern int g_INT_01e312f4;
-extern int g_INT_01e312f8;
-extern int g_INT_01e3161c;
-extern int g_INT_01e31620;
-extern int g_INT_01e31624;
-extern int g_INT_01e31628;
+extern int g_PathfindingMaxClimbHeight;
+extern int g_PathMapCount;
+extern int g_PathfindingCurrentX;
+extern int g_PathfindingCurrentZ;
+extern int g_PathfindingDestX;
+extern int g_PathfindingDestZ;
 
 // uchar
-extern uchar g_UCHAR_01e312f0;
+extern uchar g_PathMapCacheInitFlag;
 

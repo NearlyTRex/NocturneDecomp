@@ -54,7 +54,6 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_004102c0(CBaron *this_ptr)
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine1",1);
   this_ptr->target_actor = (CDemonActor *)0x0;
   (this_ptr->base).base.gesture_branch_root = iVar1;
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&g_CKeyFramedModelInstance_0076436c)
-  ;
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&g_CKeyFramedModelInstanceInstance);
   return;
 }

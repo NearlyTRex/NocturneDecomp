@@ -12,9 +12,9 @@
 ;   undefined4 g_SRenderVertex_ARRAY_007bee34[0].projected_vertex.transformed_y
 ;   undefined4 g_SRenderVertex_ARRAY_007bee34[0].projected_vertex.inv_z
 ;   undefined4 g_SRenderVertex_ARRAY_007bee34[0].projected_vertex.screen_x
-;   int g_INT_02665a68
-;   undefined4 g_SRenderVertex_ARRAY_02666c6c[0].projected_vertex.transformed_y
-;   undefined4 g_SRenderVertex_ARRAY_02666c6c[0].projected_vertex.transformed_z
+;   int g_ClipVertexCountStage4
+;   undefined4 g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
+;   undefined4 g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
 ;
 ; Called Functions:
 ;   core_xform.cpp_clipInterpolateBottomPlane_FUN_005947f0
@@ -30,7 +30,7 @@ section .text
     PUSH EBP                            ; 00594d23
     SUB ESP,0x4                         ; 00594d24
     XOR EDX,EDX                         ; 00594d27
-    MOV ECX,dword ptr [0x02665a68]      ; 00594d29 | g_INT_02665a68
+    MOV ECX,dword ptr [0x02665a68]      ; 00594d29 | g_ClipVertexCountStage4
     MOV dword ptr [ESP],EDX             ; 00594d2f
     TEST ECX,ECX                        ; 00594d32
     JLE 0x00594de5                      ; 00594d34
@@ -38,7 +38,7 @@ section .text
     MOV EBX,0x2666c6c                   ; 00594d3a
     MOV EAX,dword ptr [ESP]             ; 00594d3f
         ;   Label: LAB_00594d3f
-    MOV EBP,dword ptr [0x02665a68]      ; 00594d42 | g_INT_02665a68
+    MOV EBP,dword ptr [0x02665a68]      ; 00594d42 | g_ClipVertexCountStage4
     INC EAX                             ; 00594d48
     CMP EAX,EBP                         ; 00594d49
     JNZ 0x00594d4f                      ; 00594d4b
@@ -57,9 +57,9 @@ section .text
     JL 0x00594d6e                       ; 00594d67
         ;   XREF to: 00594d6e (CONDITIONAL_JUMP)  ; LAB_00594d6e
     MOV EAX,0x1                         ; 00594d69
-    MOV EDI,dword ptr [EBP + 0x8]       ; 00594d6e | g_SRenderVertex_ARRAY_02666c6c[0].projected_vertex.transformed_z
+    MOV EDI,dword ptr [EBP + 0x8]       ; 00594d6e | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
         ;   Label: LAB_00594d6e
-    MOV ESI,dword ptr [EBP + 0x4]       ; 00594d71 | g_SRenderVertex_ARRAY_02666c6c[0].projected_vertex.transformed_y
+    MOV ESI,dword ptr [EBP + 0x4]       ; 00594d71 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     NEG EDI                             ; 00594d74
     CMP EDI,ESI                         ; 00594d76
     JL 0x00594d7c                       ; 00594d78
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_00594dc7
     MOV ESI,dword ptr [ESP]             ; 00594dcd
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x02665a68]      ; 00594dd0 | g_INT_02665a68
+    MOV EDI,dword ptr [0x02665a68]      ; 00594dd0 | g_ClipVertexCountStage4
     INC ESI                             ; 00594dd6
     ADD EBX,0x30                        ; 00594dd7
     MOV dword ptr [ESP],ESI             ; 00594dda

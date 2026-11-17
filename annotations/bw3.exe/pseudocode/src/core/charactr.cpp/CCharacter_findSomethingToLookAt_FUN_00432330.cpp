@@ -144,7 +144,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCh
         }
       }
       iStack_28 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                            (g_CEventList_PTR_005fba60,"heroCanSee");
+                            (g_CEventListPtr,"heroCanSee");
       iStack_20 = 0;
       for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->character_count; iStack_1c = iStack_1c + 1) {
         pCVar4 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_20);

@@ -28,7 +28,7 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00504d90(CScript *this_ptr
       shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                 (g_CEditorToolsPtr,"Error processing script to skip cinematic.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
                  this_ptr->parsed_lines[iVar1].line_number,this_ptr->parsed_lines[iVar1].text,
-                 g_CHAR_ARRAY_01e56420);
+                 g_ScriptErrorBuffer);
     }
     iVar3 = iVar3 + 1;
     if (300 < iVar3) {

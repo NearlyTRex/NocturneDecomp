@@ -5,9 +5,9 @@
 // =============================================================================
 
 // CBulletHole[256]
-CBulletHole g_CBulletHole_ARRAY_01c6eaa8[256] = {};
+CBulletHole g_BulletHolePool[256] = {};
 
 // int
 int g_INT_01c6eaa0 = {};
-int g_INT_01c6eaa4 = {};
+int g_BulletHoleAllocIndex = {};
 

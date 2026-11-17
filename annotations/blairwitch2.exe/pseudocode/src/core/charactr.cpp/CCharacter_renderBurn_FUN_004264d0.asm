@@ -20,10 +20,10 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005ccd9e = 65535
 ;   float g_FLOAT_005f4080 = 3
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00609acc
+;   SMRGLTextureBasic g_BurnCharTexture
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   float[100] g_FLOAT_ARRAY_007bdc9c
-;   undefined4 g_FLOAT_ARRAY_007bdc9c[1]
+;   float[100] g_BoneBurnIntensity
+;   undefined4 g_BoneBurnIntensity[1]
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     POP ESI                             ; 004264ec
     POP EBX                             ; 004264ed
     RET                                 ; 004264ee
-    PUSH 0x609acc                       ; 004264ef | g_SMRGLTextureBasic_00609acc
+    PUSH 0x609acc                       ; 004264ef | g_BurnCharTexture
         ;   Label: LAB_004264ef
     MOV ECX,dword ptr [0x0060b280]      ; 004264f4 | g_CDemonRenderer_PTR_0060b280
     PUSH ECX                            ; 004264fa | g_CDemonRenderer_01ba5c50
@@ -91,7 +91,7 @@ section .text
     XOR EDX,EDX                         ; 00426550
     XOR ECX,ECX                         ; 00426552
         ;   Label: LAB_00426552
-    MOV dword ptr [EDX + 0x7bdc9c],ECX  ; 00426554 | g_FLOAT_ARRAY_007bdc9c | g_FLOAT_ARRAY_007bdc9c[1]
+    MOV dword ptr [EDX + 0x7bdc9c],ECX  ; 00426554 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
     INC EAX                             ; 0042655a
     MOV ESI,dword ptr [EBX + 0x1d1f8]   ; 0042655b
     ADD EDX,0x4                         ; 00426561
@@ -114,11 +114,11 @@ section .text
         ;   Label: LAB_0042658d
     MOV EAX,dword ptr [EDX + 0x3574]    ; 00426593
     FMUL ST1                            ; 00426599
-    FLD float ptr [EAX*0x4 + 0x7bdc9c]  ; 0042659b | g_FLOAT_ARRAY_007bdc9c
+    FLD float ptr [EAX*0x4 + 0x7bdc9c]  ; 0042659b | g_BoneBurnIntensity
     FLD ST3                             ; 004265a2
     FDIVP ST2,ST0                       ; 004265a4
     FADDP                               ; 004265a6
-    FSTP float ptr [EAX*0x4 + 0x7bdc9c] ; 004265a8 | g_FLOAT_ARRAY_007bdc9c
+    FSTP float ptr [EAX*0x4 + 0x7bdc9c] ; 004265a8 | g_BoneBurnIntensity
     MOV EAX,dword ptr [EBP + 0x14]      ; 004265af
     INC ECX                             ; 004265b2
     MOV ESI,dword ptr [EAX + 0x3564]    ; 004265b3
@@ -136,7 +136,7 @@ section .text
     JLE 0x00426601                      ; 004265d0
         ;   XREF to: 00426601 (CONDITIONAL_JUMP)  ; LAB_00426601
     MOV EDI,dword ptr [ESP + 0x10]      ; 004265d2
-    FLD float ptr [ECX*0x4 + 0x7bdc9c]  ; 004265d6 | g_FLOAT_ARRAY_007bdc9c | g_FLOAT_ARRAY_007bdc9c[1]
+    FLD float ptr [ECX*0x4 + 0x7bdc9c]  ; 004265d6 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
         ;   Label: LAB_004265d6
     FCOMP double ptr [0x005ccd9e]       ; 004265dd | g_DOUBLE_005ccd9e
     FNSTSW AX                           ; 004265e3
@@ -190,7 +190,7 @@ section .text
     XOR EAX,EAX                         ; 00426653
     MOV AL,byte ptr [EBX + 0x1]         ; 00426655
     FLD float ptr [ECX + 0x4]           ; 00426658
-    FMUL float ptr [EAX*0x4 + 0x7bdc9c] ; 0042665b | g_FLOAT_ARRAY_007bdc9c
+    FMUL float ptr [EAX*0x4 + 0x7bdc9c] ; 0042665b | g_BoneBurnIntensity
     CALL crt_math.c_round_FUN_005b7ff0  ; 00426662
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 00426667

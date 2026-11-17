@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c4f008
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060
@@ -40,7 +40,7 @@ section .text
     PUSH ESI                            ; 004c2477
     MOV EBP,dword ptr [ESP + 0x24]      ; 004c2478
     PUSH EDX                            ; 004c247c
-    MOV EDI,dword ptr [0x01c4f010]      ; 004c247d | g_INT_01c4f010
+    MOV EDI,dword ptr [0x01c4f010]      ; 004c247d | g_ClipRight
     MOV EBX,dword ptr [0x01c4f008]      ; 004c2483 | g_INT_01c4f008
     PUSH EBP                            ; 004c2489
     ADD EBX,EDI                         ; 004c248a

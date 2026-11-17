@@ -1429,7 +1429,7 @@ section .text
     FADDP                               ; 00589fa9
     FSTP float ptr [EBP + 0x6a]         ; 00589fab
     MOV EAX,dword ptr [EBP + 0x6a]      ; 00589fae
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 00589fb1 | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 00589fb1 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00589fb7
     ADD EAX,EDI                         ; 00589fb9
     MOV dword ptr [EBP + 0x6e],EAX      ; 00589fbb
@@ -1571,7 +1571,7 @@ section .text
     FADDP                               ; 0058a14b
     FSTP float ptr [EBP + -0x2]         ; 0058a14d
     MOV EAX,dword ptr [EBP + -0x2]      ; 0058a150
-    MOV EDX,dword ptr [0x01d1a0a4]      ; 0058a153 | g_INT_01d1a0a4
+    MOV EDX,dword ptr [0x01d1a0a4]      ; 0058a153 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0058a159
     ADD EAX,EDX                         ; 0058a15b
     MOV dword ptr [EBP + 0x2],EAX       ; 0058a15d
@@ -1595,7 +1595,7 @@ section .text
     LEA EAX,[EBX + 0xd074]              ; 0058a193
         ;   Label: caseD_f
     PUSH EAX                            ; 0058a199
-    MOV ESI,dword ptr [0x005fba60]      ; 0058a19a | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 0058a19a | g_CEventListPtr
     PUSH ESI                            ; 0058a1a0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0058a1a1
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -1794,7 +1794,7 @@ section .text
     FADDP                               ; 0058a406
     FSTP float ptr [EBP + 0x1a]         ; 0058a408
     MOV EAX,dword ptr [EBP + 0x1a]      ; 0058a40b
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 0058a40e | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 0058a40e | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0058a414
     ADD EAX,EDI                         ; 0058a416
     FLD float ptr [EBX + 0xd0e4]        ; 0058a418

@@ -5,5 +5,5 @@
 // =============================================================================
 
 // CVector3f[241][320]
-CVector3f g_CVector3f_ARRAY_ARRAY_00a1bad8[241][320] = {};
+CVector3f g_PrecomputedSurfaceNormals[241][320] = {};
 

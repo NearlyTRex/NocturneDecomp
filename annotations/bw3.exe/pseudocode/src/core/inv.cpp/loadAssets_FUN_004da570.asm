@@ -45,7 +45,7 @@ section .text
     PUSH 0x5c5f42                       ; 004da576 | = "invsize.txt"
     MOV EAX,[0x005fba1c]                ; 004da57b | g_INT_005fba1c
     PUSH 0x5c5f4e                       ; 004da580 | = "data"
-    MOV [0x01d70a34],EAX                ; 004da585 | g_INT_01d70a34
+    MOV [0x01d70a34],EAX                ; 004da585 | g_InventoryScreenHeight
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004da58a
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004da58f
@@ -230,7 +230,7 @@ section .text
     PUSH 0x5c5fd4                       ; 004da7b8 | = "itemlist.txt"
     XOR EBX,EBX                         ; 004da7bd
     PUSH 0x5c5fe1                       ; 004da7bf | g_CHAR_005c5fe1
-    MOV dword ptr [0x01d5dc88],EBX      ; 004da7c4 | g_INT_01d5dc88
+    MOV dword ptr [0x01d5dc88],EBX      ; 004da7c4 | g_ItemDefinitionCount
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004da7ca
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004da7cf
@@ -242,7 +242,7 @@ section .text
         ;   Label: LAB_004da7d8
     JNZ 0x004da829                      ; 004da7dc
         ;   XREF to: 004da829 (CONDITIONAL_JUMP)  ; LAB_004da829
-    IMUL EAX,dword ptr [0x01d5dc88],0x300 ; 004da7de | g_INT_01d5dc88
+    IMUL EAX,dword ptr [0x01d5dc88],0x300 ; 004da7de | g_ItemDefinitionCount
     PUSH EBX                            ; 004da7e8
     ADD EAX,0x1d5dc90                   ; 004da7e9
     PUSH EAX                            ; 004da7ee
@@ -252,12 +252,12 @@ section .text
     TEST EAX,EAX                        ; 004da7f7
     JZ 0x004da829                       ; 004da7f9
         ;   XREF to: 004da829 (CONDITIONAL_JUMP)  ; LAB_004da829
-    INC dword ptr [0x01d5dc88]          ; 004da7fb | g_INT_01d5dc88
+    INC dword ptr [0x01d5dc88]          ; 004da7fb | g_ItemDefinitionCount
     JMP 0x004da7d8                      ; 004da801
         ;   XREF to: 004da7d8 (UNCONDITIONAL_JUMP)  ; LAB_004da7d8
-    PUSH 0x600184                       ; 004da803 | g_INT_00600184
+    PUSH 0x600184                       ; 004da803 | g_InventoryHeight
         ;   Label: LAB_004da803
-    PUSH 0x600180                       ; 004da808 | g_INT_00600180
+    PUSH 0x600180                       ; 004da808 | g_InventoryWidth
     PUSH 0x5c5f53                       ; 004da80d | = "%d,%d\n"
     PUSH EAX                            ; 004da812
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004da813

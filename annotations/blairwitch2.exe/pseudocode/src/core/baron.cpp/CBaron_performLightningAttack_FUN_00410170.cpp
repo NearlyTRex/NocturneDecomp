@@ -75,9 +75,9 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
   if ((local_44.y < -0.7853982f) || (0x3f490fdb < (int)local_44.y)) {
     start_position = &(this_ptr_00->base).base.location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
-              (g_CFireEffect_PTR_00614d30,&start_position->position,16.0,1,0.0);
+              (g_CFireEffectPtr,&start_position->position,16.0,1,0.0);
     core_fire_cpp_CFireEffect_createCrater_FUN_0049e630
-              (g_CFireEffect_PTR_00614d30,&start_position->position,4.0);
+              (g_CFireEffectPtr,&start_position->position,4.0);
   }
   else {
     __arrinit(local_1a0,10,&g_CVectorTypeInfo);
@@ -111,7 +111,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
     }
     local_c = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,local_c + g_INT_ARRAY_007bc498[0xd],&CStack_2c);
+              (&g_ZeroVector,local_c + g_BaronIndices[0xd],&CStack_2c);
     pCVar4 = &CStack_ec;
     CStack_ec.x = CStack_2c.x;
     *(uint *)((int)&CStack_ec + (uint)bVar3 * -8 + 4) =
@@ -126,7 +126,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
     *(uint *)((int)&CStack_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          *(uint *)((int)&CStack_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_xform_cpp_transformVector3x4_FUN_00591530
-              (&g_CVector3f_0265370c,local_c + g_INT_ARRAY_007bc498[0xe],&CStack_c8);
+              (&g_ZeroVector,local_c + g_BaronIndices[0xe],&CStack_c8);
     pCVar4 = &CStack_8c;
     CStack_8c.x = CStack_c8.x;
     *(uint *)((int)&CStack_8c + (uint)bVar3 * -8 + 4) =
@@ -143,13 +143,13 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
     CStack_98.x = CStack_e0.x;
     *(uint *)((int)&CStack_98 + (uint)bVar3 * -8 + 4) =
          *(uint *)((int)&CStack_e0 + (uint)bVar3 * -8 + 4);
-    this_ptr_01 = g_CFireEffect_PTR_00614d30;
+    this_ptr_01 = g_CFireEffectPtr;
     *(uint *)((int)&CStack_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          *(uint *)((int)&CStack_e0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760
               (this_ptr_01,start_position_00,pCVar4,iVar1,end_width,end_spread);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760
-              (g_CFireEffect_PTR_00614d30,&CStack_98,&CStack_50,1,0.5,4.0);
+              (g_CFireEffectPtr,&CStack_98,&CStack_50,1,0.5,4.0);
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"baron-attack.wav");
   }

@@ -18,27 +18,27 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_0041fc20(CBride *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr_00);
-  g_INT_ARRAY_00764b2c[0] =
+  g_BrideIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_00764b2c[3] =
+  g_BrideIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_00764b2c[4] =
+  g_BrideIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_00764b2c[7] =
+  g_BrideIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 L Foot",1);
-  g_INT_ARRAY_00764b2c[8] =
+  g_BrideIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 R Foot",1);
-  g_INT_ARRAY_00764b2c[1] =
+  g_BrideIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 L Hand",1);
-  g_INT_ARRAY_00764b2c[2] =
+  g_BrideIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 R Hand",1);
-  g_INT_ARRAY_00764b2c[5] =
+  g_BrideIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_00764b2c[6] =
+  g_BrideIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_00764b2c[9] =
+  g_BrideIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_00764b2c[10] =
+  g_BrideIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00519b30

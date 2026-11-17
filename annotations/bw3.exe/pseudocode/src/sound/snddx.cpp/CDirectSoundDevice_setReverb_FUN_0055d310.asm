@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   GUID g_DSPROPSETID_EAX_ReverbProperties = 4a4e6fc1-c341-11d1-b73a-444553540000
-;   IKsPropertySet* g_IKsPropertySet_PTR_02cf49d4
+;   IKsPropertySet* g_DirectSoundPropertySet
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
 
     SUB ESP,0x10                        ; 0055d310
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_setReverb_FUN_0055d310
-    MOV EDX,dword ptr [0x02cf49d4]      ; 0055d313 | g_IKsPropertySet_PTR_02cf49d4
+    MOV EDX,dword ptr [0x02cf49d4]      ; 0055d313 | g_DirectSoundPropertySet
     TEST EDX,EDX                        ; 0055d319
     JNZ 0x0055d321                      ; 0055d31b
         ;   XREF to: 0055d321 (CONDITIONAL_JUMP)  ; LAB_0055d321

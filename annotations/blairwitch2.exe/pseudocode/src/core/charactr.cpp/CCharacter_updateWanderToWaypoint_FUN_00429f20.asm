@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005cd146 = 4
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -135,7 +135,7 @@ section .text
     PUSH 0x0                            ; 0042a058
         ;   Label: LAB_0042a058
     PUSH 0x0                            ; 0042a05a
-    PUSH 0x265370c                      ; 0042a05c | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042a05c | g_ZeroVector
     MOV EAX,EDX                         ; 0042a061
     MOV EDX,dword ptr [EDX + 0x2b0]     ; 0042a063
     PUSH EAX                            ; 0042a069

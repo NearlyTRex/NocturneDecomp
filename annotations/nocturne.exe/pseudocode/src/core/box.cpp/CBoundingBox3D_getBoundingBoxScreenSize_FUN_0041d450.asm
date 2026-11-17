@@ -25,9 +25,9 @@
 ; Referenced Globals:
 ;   float FLOAT_005797c9 = 0.5
 ;   double DOUBLE_005797cd = 0.00390625
-;   float g_FLOAT_0059aa80 = 256
+;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   int g_INT_005b7648 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;
@@ -74,13 +74,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0041d4a8
     FSTP float ptr [ESP + 0x20]         ; 0041d4ac
     FLD float ptr [EAX]                 ; 0041d4b0
-    FMUL float ptr [0x0059aa80]         ; 0041d4b2 | g_FLOAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041d4b2 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041d4b8
     FLD float ptr [EAX + 0x4]           ; 0041d4ba
-    FMUL float ptr [0x0059aa80]         ; 0041d4bd | g_FLOAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041d4bd | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041d4c3
     FLD float ptr [EAX + 0x8]           ; 0041d4c6
-    FMUL float ptr [0x0059aa80]         ; 0041d4c9 | g_FLOAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041d4c9 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041d4cf
     LEA EAX,[ESP + 0xc]                 ; 0041d4d2
     PUSH EAX                            ; 0041d4d6
@@ -104,7 +104,7 @@ section .text
     FDIVP                               ; 0041d50c
     FILD dword ptr [0x01c00c4c]         ; 0041d50e | g_Projection.neg_half_height_fixed
     FMULP                               ; 0041d514
-    FILD dword ptr [0x005b7648]         ; 0041d516 | g_INT_005b7648
+    FILD dword ptr [0x005b7648]         ; 0041d516 | g_ProjectionScale
     FDIVP                               ; 0041d51c
     FABS                                ; 0041d51e
     FSTP float ptr [ESP + 0x24]         ; 0041d520

@@ -19,8 +19,7 @@ void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(CScat 
     if (bone_index == 100) {
       this_ptr_00 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              ((this_ptr->base).base.grabbed_by,g_CEnemyActorType_01bcdebc.name_hash
-                              );
+                              ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
       if (this_ptr_00 != (CCharacter *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_50);
         SStack_50.damage_amount = 5.0;

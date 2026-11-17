@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d1eb3
 ;   TerminatedCString s_CInputString_calcX_strin_005d1ec9
-;   CBitFont* g_CBitFont_PTR_01c25590
+;   CBitFont* g_EditorFont
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -68,7 +68,7 @@ section .text
     XOR AH,AH                           ; 0047af56
     PUSH 0x1c25f88                      ; 0047af58
     MOV byte ptr [EBX + 0x1c25f88],AH   ; 0047af5d
-    MOV EAX,[0x01c25590]                ; 0047af63 | g_CBitFont_PTR_01c25590
+    MOV EAX,[0x01c25590]                ; 0047af63 | g_EditorFont
     PUSH EAX                            ; 0047af68
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 0047af69
         ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
@@ -88,7 +88,7 @@ section .text
     PUSH EAX                            ; 0047af7d
     ADD EBX,EAX                         ; 0047af7e
     XOR EDX,EDX                         ; 0047af80
-    MOV ESI,dword ptr [0x01c25590]      ; 0047af82 | g_CBitFont_PTR_01c25590
+    MOV ESI,dword ptr [0x01c25590]      ; 0047af82 | g_EditorFont
     MOV DL,byte ptr [EBX]               ; 0047af88
     PUSH ESI                            ; 0047af8a
     MOV dword ptr [ESP + 0x10],EDX      ; 0047af8b

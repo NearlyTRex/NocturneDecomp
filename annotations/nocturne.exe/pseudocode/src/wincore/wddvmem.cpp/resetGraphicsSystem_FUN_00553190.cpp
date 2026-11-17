@@ -12,7 +12,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00553190(void)
   int iVar1;
   HRESULT HVar2;
   
-  g_INT_02ddf568 = 1;
+  g_GraphicsResetFlag = 1;
   if (g_UseDirect3D != 0) {
     if (g_BitsPerPixel < 0x10) {
       wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,0x10);
@@ -67,7 +67,8 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00553190(void)
       }
       HVar2 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
       if (HVar2 == 0) {
-        (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_HWND_02de2098,0x11);
+        (*g_DirectDrawObject->vtable->SetCooperativeLevel)
+                  (g_DirectDrawObject,g_MainWindowHandle,0x11);
       }
       wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
                 (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);

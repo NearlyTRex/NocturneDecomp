@@ -52,7 +52,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
       g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D.i = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                 (g_CDemonRenderer_PTR_005f2afc,
-                 g_SMRGLTextureBasic_ARRAY_005fedac + this_ptr->texture_variant * 0x10 + local_18);
+                 g_BloodSplatAnimTextures + this_ptr->texture_variant * 0x10 + local_18);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
                 (g_CDemonRenderer_PTR_005f2afc,&this_ptr->rotation,(CVector3f *)0x0);
       local_6c = 0xbf000000;
@@ -96,8 +96,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
       g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C.i = 0;
       g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D.i = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-                (g_CDemonRenderer_PTR_005f2afc,
-                 g_SMRGLTextureBasic_ARRAY_005fed4c + this_ptr->texture_variant);
+                (g_CDemonRenderer_PTR_005f2afc,g_BloodSplatTextures + this_ptr->texture_variant);
       local_24 = 0xbf000000;
       local_20 = 0;
       local_1c = 0xbf000000;

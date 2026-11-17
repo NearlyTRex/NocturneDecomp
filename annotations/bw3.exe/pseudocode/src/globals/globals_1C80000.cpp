@@ -12,7 +12,7 @@ CStake g_StakePool[256] = {};
 
 // int
 int g_INT_01c8aea0 = {};
-int g_INT_01c8aea4 = {};
+int g_BulletHoleAllocIndex = {};
 int g_INT_01c8eea8 = {};
 int g_INT_01c8eeac = {};
 

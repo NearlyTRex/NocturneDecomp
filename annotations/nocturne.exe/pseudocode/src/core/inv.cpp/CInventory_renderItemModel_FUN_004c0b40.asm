@@ -130,21 +130,21 @@ section .text
     MOV dword ptr [EAX + 0x15aa90],0xffffb7d5 ; 004c0bcd | g_CDemonSetInstance.light_direction.y
     MOV dword ptr [EAX + 0x15aa94],0x482b ; 004c0bd7 | g_CDemonSetInstance.light_direction.z
     MOV dword ptr [EAX + 0x15aa98],0x7d00 ; 004c0be1 | g_CDemonSetInstance.ambient_base_quick
-    MOV EAX,[0x01bd1d80]                ; 004c0beb | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004c0beb | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 004c0bf0
     SAR EDX,0x1f                        ; 004c0bf2
     SHL EDX,0x2                         ; 004c0bf5
     SBB EAX,EDX                         ; 004c0bf8
     SAR EAX,0x2                         ; 004c0bfa
-    MOV EDX,dword ptr [0x01cc30a4]      ; 004c0bfd | g_INT_01cc30a4
+    MOV EDX,dword ptr [0x01cc30a4]      ; 004c0bfd | g_InventoryLightAngle
     ADD EDX,EAX                         ; 004c0c03
     PUSH EDX                            ; 004c0c05
-    MOV dword ptr [0x01cc30a4],EDX      ; 004c0c06 | g_INT_01cc30a4
+    MOV dword ptr [0x01cc30a4],EDX      ; 004c0c06 | g_InventoryLightAngle
     CALL engine_matrix.c_interpolatedSin_FUN_004cca60 ; 004c0c0c
         ;   XREF to: 004cca60 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004cca60(int angle)
     ADD ESP,0x4                         ; 004c0c11
     MOV ESI,EAX                         ; 004c0c14
-    MOV EAX,[0x01cc30a4]                ; 004c0c16 | g_INT_01cc30a4
+    MOV EAX,[0x01cc30a4]                ; 004c0c16 | g_InventoryLightAngle
     PUSH EAX                            ; 004c0c1b
     CALL engine_matrix.c_interpolatedCos_FUN_004ccaa0 ; 004c0c1c
         ;   XREF to: 004ccaa0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004ccaa0(int angle)
@@ -327,7 +327,7 @@ section .text
     FLD float ptr [EBP + -0x28]         ; 004c0e10
     FADD float ptr [0x005871ed]         ; 004c0e13 | FLOAT_005871ed
     FSTP float ptr [EBP + -0x28]        ; 004c0e19
-    MOV EAX,[0x01cc56dc]                ; 004c0e1c | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EAX,[0x01cc56dc]                ; 004c0e1c | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_004c0e1c
     PUSH EAX                            ; 004c0e21
     PUSH EBX                            ; 004c0e22

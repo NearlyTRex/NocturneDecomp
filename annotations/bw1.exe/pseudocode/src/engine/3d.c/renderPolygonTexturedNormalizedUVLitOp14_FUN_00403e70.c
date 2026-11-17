@@ -17,36 +17,36 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp
   
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar2 != 0) {
-    if (g_INT_01c51d00 == 0) {
+    if (g_MMXSupported == 0) {
       if (g_INT_0061b4a0 == 0x20) {
-        g_PTR_01c4f02c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03;
       }
       else {
-        g_PTR_01c4f02c = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39;
       }
     }
     else if (g_INT_0061b4a0 == 0x20) {
-      g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
     }
     else {
-      g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
     }
-    g_BIT_INTEGER32_01c51d14.dword = 1;
-    g_INT_01c51d18 = 2;
+    g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+    g_VertexPreprocessMode = 2;
     engine_3d_c_calculatePolygonLighting_FUN_004039d0(prim);
     vertex_count = 0;
     iVar2 = 0;
     pSVar3 = prim + 1;
     for (iVar4 = 0; iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
-      *(int *)((int)g_INT_ARRAY_00713a98 + iVar2) = iVar1;
+      *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
       g_SRenderVertex_ARRAY_00629014[iVar1].u = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
       vertex_count = vertex_count + 1;
       g_SRenderVertex_ARRAY_00629014[(pSVar3->base).type].v = (int)(pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_0043cbf0(vertex_count,g_INT_ARRAY_00713a98);
+    engine_clipper_c_clipAndRasterize_FUN_0043cbf0(vertex_count,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

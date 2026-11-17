@@ -50,13 +50,13 @@
     },
     {
       "addr": "015109d4",
-      "name": "g_UINT_015109d4",
+      "name": "g_CubeClipStage2Count",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01510a98",
-      "name": "g_UINT_01510a98",
+      "name": "g_CubeClipStage3Count",
       "type": "uint",
       "value": null
     }
@@ -175,7 +175,7 @@
       "line": 27,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01510a9c[g_UINT_01510a98].x = vertex1->x;",
+      "text": "g_ClipStageMaxXBuffer[g_CubeClipStage3Count].x = vertex1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -183,7 +183,7 @@
       "line": 39,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01510a9c[g_UINT_01510a98].x = vertex1->x;",
+      "text": "g_ClipStageMaxXBuffer[g_CubeClipStage3Count].x = vertex1->x;",
       "type": "unrolled_memcpy"
     }
   ]

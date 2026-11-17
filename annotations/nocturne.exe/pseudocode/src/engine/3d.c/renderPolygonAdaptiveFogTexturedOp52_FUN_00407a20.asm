@@ -11,12 +11,12 @@
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
-;   int g_INT_006b0260
-;   uint g_UINT_006b0264
+;   int g_CurrentPolygonColor
+;   uint g_ProcessedVertexOffset
 ;   int g_INT_006b0274
 ;   int g_TexturesDisabled
-;   int[24] g_INT_ARRAY_006b029c
-;   undefined4 g_INT_ARRAY_006b029c[1]
+;   int[24] g_ProcessedVertexIndices
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
 ;   MainScanlineFunc* g_ScanlineRenderFunc
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20
     PUSH EDI                            ; 00407a21
     PUSH EBP                            ; 00407a22
-    MOV EBP,dword ptr [0x006b0264]      ; 00407a23 | g_UINT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 00407a23 | g_ProcessedVertexOffset
     MOV EDI,dword ptr [ESP + 0x10]      ; 00407a29
     LEA ESI,[EDI + 0x18]                ; 00407a2d
     LEA EAX,[EDI + 0x8]                 ; 00407a30
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 00407c96 (CONDITIONAL_JUMP)  ; LAB_00407c96
     PUSH EBX                            ; 00407a44
     MOV EDX,dword ptr [0x006b0278]      ; 00407a45 | g_TexturesDisabled
-    MOV EBP,dword ptr [0x006b0264]      ; 00407a4b | g_UINT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 00407a4b | g_ProcessedVertexOffset
     TEST EDX,EDX                        ; 00407a51
     JZ 0x00407b14                       ; 00407a53
         ;   XREF to: 00407b14 (CONDITIONAL_JUMP)  ; LAB_00407b14
@@ -64,25 +64,25 @@ section .text
     MOV dword ptr [0x01c00c7c],0x5300ec ; 00407a6f | g_ScanlineRenderFunc
     XOR ECX,ECX                         ; 00407a79
         ;   Label: LAB_00407a79
-    MOV dword ptr [0x006b0264],EBP      ; 00407a7b | g_UINT_006b0264
+    MOV dword ptr [0x006b0264],EBP      ; 00407a7b | g_ProcessedVertexOffset
     MOV dword ptr [0x01c039a4],ECX      ; 00407a81 | g_VertexPreprocessMode
     MOV dword ptr [0x01c039a0],ECX      ; 00407a87 | g_RenderStateFlags
         ;   Label: LAB_00407a87
-    MOV EBX,0x6b029c                    ; 00407a8d | g_INT_ARRAY_006b029c
+    MOV EBX,0x6b029c                    ; 00407a8d | g_ProcessedVertexIndices
         ;   Label: LAB_00407a8d
-    MOV EBP,dword ptr [0x006b0264]      ; 00407a92 | g_UINT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 00407a92 | g_ProcessedVertexOffset
     MOV EAX,ESI                         ; 00407a98
     XOR ECX,ECX                         ; 00407a9a
     MOV EDX,dword ptr [EDI + 0x4]       ; 00407a9c
         ;   Label: LAB_00407a9c
     LEA EDX,[EDX + EDX*0x2]             ; 00407a9f
-    MOV dword ptr [0x006b0264],EBP      ; 00407aa2 | g_UINT_006b0264
+    MOV dword ptr [0x006b0264],EBP      ; 00407aa2 | g_ProcessedVertexOffset
     CMP ECX,EDX                         ; 00407aa8
     JGE 0x00407c84                      ; 00407aaa
         ;   XREF to: 00407c84 (CONDITIONAL_JUMP)  ; LAB_00407c84
     MOV EDX,dword ptr [EAX]             ; 00407ab0
     ADD EDX,EBP                         ; 00407ab2
-    MOV dword ptr [EBX],EDX             ; 00407ab4 | g_INT_ARRAY_006b029c | g_INT_ARRAY_006b029c[1]
+    MOV dword ptr [EBX],EDX             ; 00407ab4 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 00407ab6
     ADD EDX,EBP                         ; 00407ab8
     IMUL ESI,EDX,0x30                   ; 00407aba
@@ -139,7 +139,7 @@ section .text
         ;   Label: LAB_00407b66
     MOV dword ptr [0x01c039a4],EDX      ; 00407b68 | g_VertexPreprocessMode
     MOV ECX,0xc1                        ; 00407b6e
-    MOV dword ptr [0x006b0264],EBP      ; 00407b73 | g_UINT_006b0264
+    MOV dword ptr [0x006b0264],EBP      ; 00407b73 | g_ProcessedVertexOffset
     JMP 0x00407a87                      ; 00407b79
         ;   XREF to: 00407a87 (UNCONDITIONAL_JUMP)  ; LAB_00407a87
     MOV dword ptr [0x01c00c7c],0x530322 ; 00407b7e | g_ScanlineRenderFunc
@@ -175,7 +175,7 @@ section .text
     MOV dword ptr [0x01c039a4],0x1      ; 00407bd8 | g_VertexPreprocessMode
         ;   Label: LAB_00407bd8
     MOV ECX,0xc1                        ; 00407be2
-    MOV dword ptr [0x006b0264],EBP      ; 00407be7 | g_UINT_006b0264
+    MOV dword ptr [0x006b0264],EBP      ; 00407be7 | g_ProcessedVertexOffset
     JMP 0x00407a87                      ; 00407bed
         ;   XREF to: 00407a87 (UNCONDITIONAL_JUMP)  ; LAB_00407a87
     CMP dword ptr [0x01c03948],0x0      ; 00407bf2 | g_MMXSupported
@@ -202,7 +202,7 @@ section .text
     ADD ESP,0xc                         ; 00407c35
     MOV EBX,dword ptr [0x01c00c74]      ; 00407c38 | g_CurrentLightingValue
     PUSH EBX                            ; 00407c3e
-    MOV EAX,[0x006b0260]                ; 00407c3f | g_INT_006b0260
+    MOV EAX,[0x006b0260]                ; 00407c3f | g_CurrentPolygonColor
     PUSH EAX                            ; 00407c44
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00407c45
         ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_00404680(int color_value, int lighting_value)
@@ -225,7 +225,7 @@ section .text
         ;   Label: LAB_00407c78
     JMP 0x00407c0e                      ; 00407c82
         ;   XREF to: 00407c0e (UNCONDITIONAL_JUMP)  ; LAB_00407c0e
-    PUSH 0x6b029c                       ; 00407c84 | g_INT_ARRAY_006b029c
+    PUSH 0x6b029c                       ; 00407c84 | g_ProcessedVertexIndices
         ;   Label: LAB_00407c84
     MOV ESI,dword ptr [EDI + 0x4]       ; 00407c89
     PUSH ESI                            ; 00407c8c
@@ -239,7 +239,7 @@ section .text
     SUB EAX,EDX                         ; 00407ca0
     ADD EDI,0x18                        ; 00407ca2
     SHL EAX,0x2                         ; 00407ca5
-    MOV EBP,dword ptr [0x006b0264]      ; 00407ca8 | g_UINT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 00407ca8 | g_ProcessedVertexOffset
     ADD EAX,EDI                         ; 00407cae
     POP EBP                             ; 00407cb0
     POP EDI                             ; 00407cb1

@@ -30,20 +30,20 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00455ee0(CDoor *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->max_param,"maxParam");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->open_speed,"openSpeed");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->close_speed,"closeSpeed");
-  if (1 < g_INT_005ae690) {
+  if (1 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ground_type,"groundType");
   }
-  if (2 < g_INT_005ae690) {
+  if (2 < g_CDoorClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0
               (this_ptr->on_open_trigger_event,"eventToTriggerWhenOpen");
     core_actor_cpp_archiveString_FUN_0040c6d0
               (this_ptr->on_close_trigger_event,"eventToTriggerWhenClosed");
   }
-  if (3 < g_INT_005ae690) {
+  if (3 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->one_shot,"oneShot");
   }
-  if (g_INT_005ae690 < 7) {
-    if (4 < g_INT_005ae690) {
+  if (g_CDoorClassVersion < 7) {
+    if (4 < g_CDoorClassVersion) {
       core_actor_cpp_archiveString_FUN_0040c6d0
                 ((this_ptr->open_rule).events[0],"scriptOpenEvent");
       if ((this_ptr->open_rule).events[0][0] == '\0') {
@@ -68,23 +68,23 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00455ee0(CDoor *this_ptr)
   else {
     core_actor_cpp_archiveRules_FUN_0040d110(&this_ptr->open_rule,"openRules");
   }
-  if (5 < g_INT_005ae690) {
+  if (5 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->block_virtual_director_flag,"blockVirtualDirectorFlag");
   }
-  if (7 < g_INT_005ae690) {
+  if (7 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->plot_as_box_in_shadow,"plotAsBoxInShadow");
   }
-  if (8 < g_INT_005ae690) {
+  if (8 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               ((int *)&this_ptr->allowed_sides,"allowedSides");
   }
-  if (9 < g_INT_005ae690) {
+  if (9 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->allow_bullet_holes,"allowBulletHoles");
   }
-  if (g_INT_005ae690 < 0xb) {
+  if (g_CDoorClassVersion < 0xb) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->locked_sound,"lockedSound");

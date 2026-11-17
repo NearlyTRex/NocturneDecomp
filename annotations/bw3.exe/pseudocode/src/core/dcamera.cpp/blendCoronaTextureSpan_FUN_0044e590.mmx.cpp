@@ -28,7 +28,7 @@ __asm {
         mov EAX,dword ptr [EBP + 0x1c]
         sub EAX,ECX
         mov dword ptr [EBP + -0x8],EAX
-        mov EAX,[g_CDemonGlobe_PTR_015484c8]
+        mov EAX,[g_CurrentGlobe]
         mov EAX,dword ptr [EAX + 0x3c]
         mov dword ptr [EBP + -0x4],EAX
         mov ECX,dword ptr [EBP + 0xfffffff8]

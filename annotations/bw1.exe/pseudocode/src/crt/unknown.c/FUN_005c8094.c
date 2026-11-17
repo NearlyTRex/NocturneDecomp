@@ -37,8 +37,8 @@ int __cdecl FUN_005c8094(char *filename,WatcomStat *file_info)
     FUN_005c91d0((char *)local_124,0x104);
     pcVar4 = _fullpath(&local_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
-       (((((g_UCHAR_ARRAY_00626114[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
-         (local_226 == '\\')) && (local_225 == '\0')))) {
+       (((((g_CharacterClassificationTable[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')
+          ) && (local_226 == '\\')) && (local_225 == '\0')))) {
       bVar1 = true;
     }
     pcVar5 = (char *)FUN_005c90c0(filename);

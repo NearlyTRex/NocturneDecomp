@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CScatActorType_01e533d0 = {};
-CDemonActorType g_CSentinelActorType_01e57248 = {};
+CDemonActorType g_CScatClassInfo = {};
+CDemonActorType g_CSentinelClassInfo = {};
 
 // CDemonPod
 CDemonPod g_CDemonPodInstance = {};
@@ -21,32 +21,32 @@ CPickList g_ScriptPickList = {};
 CScript g_CScriptInstance = {};
 
 // SSoftwareEdge[16]
-SSoftwareEdge g_SSoftwareEdge_ARRAY_01e52a6c[16] = {};
-SSoftwareEdge g_SSoftwareEdge_ARRAY_01e52f00[16] = {};
+SSoftwareEdge g_SoftwareEdgeBuffer[16] = {};
+SSoftwareEdge g_SoftwareEdgeTable[16] = {};
 
 // char[10][1024]
-char g_CHAR_ARRAY_ARRAY_01e53418[10][1024] = {};
+char g_ScriptSubtitleLines[10][1024] = {};
 
 // char[2048]
-char g_CHAR_ARRAY_01e55c18[2048] = {};
-char g_CHAR_ARRAY_01e56420[2048] = {};
+char g_ScriptLineBuffer[2048] = {};
+char g_ScriptErrorBuffer[2048] = {};
 
 // float
-float g_FLOAT_01e56c20 = {};
+float g_ScriptTimeScale = {};
 
 // int
-int g_INT_01e52a68 = {};
-int g_INT_01e52eec = {};
-int g_INT_01e52ef0 = {};
+int g_SoftwareEdgeCount = {};
+int g_SoftwareMinScanline = {};
+int g_SoftwareMaxScanline = {};
 int g_RenderedTriangleCount = {};
-int g_INT_01e52efc = {};
-int g_INT_01e53380 = {};
-int g_INT_01e53384 = {};
-int g_INT_01e53410 = {};
-int g_INT_01e56418 = {};
-int g_INT_01e56c24 = {};
-int g_INT_01e56c28 = {};
-int g_INT_01e56c2c = {};
+int g_ActiveEdgeCount = {};
+int g_MinScanline = {};
+int g_MaxScanline = {};
+int g_PreviousLetterboxMode = {};
+int g_ScriptEventsEnabled = {};
+int g_ScriptInputFlag = {};
+int g_ScriptLoopWarningShown = {};
+int g_ActorLookedUpByVariable = {};
 int g_INT_01e57218 = {};
 int g_INT_01e5721c = {};
 int g_INT_01e57220 = {};
@@ -56,5 +56,5 @@ int g_INT_01e5723c = {};
 int g_INT_01e57244 = {};
 
 // int[18]
-int g_INT_ARRAY_01e53388[18] = {};
+int g_ScatIndices[18] = {};
 

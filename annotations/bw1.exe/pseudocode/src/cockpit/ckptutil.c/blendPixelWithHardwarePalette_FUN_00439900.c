@@ -29,38 +29,38 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00439900(int x
   uint uStack_34;
   uint uStack_2c;
   
-  uVar6 = g_BIT_INTEGER32_01c4e9dc.bytes[0];
-  uVar5 = g_BIT_INTEGER32_01c4e9d4.bytes[0];
-  if ((((g_INT_01c4f008 <= x) && (x <= g_INT_01c4f010)) && (g_INT_01c4f00c <= y)) &&
+  uVar6 = g_RedDitherShift.bytes[0];
+  uVar5 = g_RedBitPosition.bytes[0];
+  if ((((g_INT_01c4f008 <= x) && (x <= g_ClipRight)) && (g_INT_01c4f00c <= y)) &&
      ((y <= g_INT_01c4f014 && (g_INT_0061b4a0 != 8)))) {
     if (g_INT_0061b4a0 == 0x10) {
-      uVar1 = *(ushort *)(g_ARRAY_PTR_01c4354c[y] + x * 2);
-      uVar7 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
-              (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f);
-      uVar8 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
-              (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f);
-      uVar9 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
-              (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f);
+      uVar1 = *(ushort *)(g_ScreenBufferArray[y] + x * 2);
+      uVar7 = (uint)(uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
+              (g_RedDitherShift.bytes[0] & 0x1f);
+      uVar8 = (uint)(uVar1 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+              (g_GreenDitherShift.bytes[0] & 0x1f);
+      uVar9 = (uint)(uVar1 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+              (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
-      puVar11 = (uint *)(g_ARRAY_PTR_01c4354c[y] + x * 4);
-      uVar7 = *puVar11 >> (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
-      uVar8 = *puVar11 >> (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
-      uVar9 = *puVar11 >> (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
+      puVar11 = (uint *)(g_ScreenBufferArray[y] + x * 4);
+      uVar7 = *puVar11 >> (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar8 = *puVar11 >> (g_GreenBitPosition.bytes[0] & 0x1f);
+      uVar9 = *puVar11 >> (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     if (g_INT_0061b4a0 == 0x10) {
-      uVar1 = g_USHORT_ARRAY_01c4e7d4[color];
-      uStack_38 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
-                  (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f);
-      uVar12 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
-               (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f);
-      uVar10 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
-               (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f);
+      uVar1 = g_Hardware16BitPalette[color];
+      uStack_38 = (uint)(uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                  (g_RedDitherShift.bytes[0] & 0x1f);
+      uVar12 = (uint)(uVar1 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+               (g_GreenDitherShift.bytes[0] & 0x1f);
+      uVar10 = (uint)(uVar1 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+               (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
-      uStack_38 = g_UINT_ARRAY_01c4e3d4[color] >> (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
-      uVar12 = g_UINT_ARRAY_01c4e3d4[color] >> (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
-      uVar10 = g_UINT_ARRAY_01c4e3d4[color] >> (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
+      uStack_38 = g_Hardware32BitPalette[color] >> (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar12 = g_Hardware32BitPalette[color] >> (g_GreenBitPosition.bytes[0] & 0x1f);
+      uVar10 = g_Hardware32BitPalette[color] >> (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     uStack_38 = uStack_38 & 0xff;
     fVar2 = 1.0 - alpha;
@@ -74,9 +74,9 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00439900(int x
       uStack_34 = (uint)(longlong)ROUND(dVar13);
       uStack_2c = (uint)(longlong)ROUND(dVar15);
       uStack_3c = (uint)(longlong)ROUND(dVar14);
-      *(uint *)(g_ARRAY_PTR_01c4354c[y] + x * 4) =
-           uStack_3c << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f) | uStack_34 << (uVar5 & 0x1f) |
-           uStack_2c << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
+      *(uint *)(g_ScreenBufferArray[y] + x * 4) =
+           uStack_3c << (g_GreenBitPosition.bytes[0] & 0x1f) | uStack_34 << (uVar5 & 0x1f) |
+           uStack_2c << (g_BlueBitPosition.bytes[0] & 0x1f);
       return;
     }
     dVar13 = round((double)fVar4);
@@ -85,12 +85,12 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00439900(int x
     uStack_2c = (uint)(longlong)ROUND(dVar14);
     uStack_34 = (uint)(longlong)ROUND(dVar15);
     uStack_3c = (uint)(longlong)ROUND(dVar13);
-    *(ushort *)(g_ARRAY_PTR_01c4354c[y] + x * 2) =
-         (ushort)((uStack_2c >> (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f)) <<
-                 (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
-         (ushort)((uStack_3c >> (uVar6 & 0x1f)) << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
-         (ushort)((uStack_34 >> (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f)) <<
-                 (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f));
+    *(ushort *)(g_ScreenBufferArray[y] + x * 2) =
+         (ushort)((uStack_2c >> (g_GreenDitherShift.bytes[0] & 0x1f)) <<
+                 (g_GreenBitPosition.bytes[0] & 0x1f)) |
+         (ushort)((uStack_3c >> (uVar6 & 0x1f)) << (g_RedBitPosition.bytes[0] & 0x1f)) |
+         (ushort)((uStack_34 >> (g_BlueDitherShift.bytes[0] & 0x1f)) <<
+                 (g_BlueBitPosition.bytes[0] & 0x1f));
   }
   return;
 }

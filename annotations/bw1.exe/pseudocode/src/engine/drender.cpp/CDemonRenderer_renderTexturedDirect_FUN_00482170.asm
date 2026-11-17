@@ -22,9 +22,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   void* g_PTR_01c4f02c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
-;   int g_INT_01c51d18
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -56,9 +56,9 @@ section .text
         ;   XREF to: 004821d7 (CONDITIONAL_JUMP)  ; LAB_004821d7
     XOR EBP,EBP                         ; 00482196
     MOV ESI,0x486e26                    ; 00482198
-    MOV dword ptr [0x01c51d14],EBP      ; 0048219d | g_BIT_INTEGER32_01c51d14
-    MOV dword ptr [0x01c51d18],EBP      ; 004821a3 | g_INT_01c51d18
-    MOV dword ptr [0x01c4f02c],ESI      ; 004821a9 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c51d14],EBP      ; 0048219d | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],EBP      ; 004821a3 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],ESI      ; 004821a9 | g_ScanlineRenderFunc
     LEA EAX,[EDI + 0x18]                ; 004821af
         ;   Label: LAB_004821af
     PUSH EAX                            ; 004821b2
@@ -89,14 +89,14 @@ section .text
         ;   Label: LAB_004821d7
     JNZ 0x004821fd                      ; 004821de
         ;   XREF to: 004821fd (CONDITIONAL_JUMP)  ; LAB_004821fd
-    MOV dword ptr [0x01c4f02c],0x57de01 ; 004821e0 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57de01 ; 004821e0 | g_ScanlineRenderFunc
     MOV ECX,0x6                         ; 004821ea
         ;   Label: LAB_004821ea
-    MOV dword ptr [0x01c51d14],ESI      ; 004821ef | g_BIT_INTEGER32_01c51d14
-    MOV dword ptr [0x01c51d18],ECX      ; 004821f5 | g_INT_01c51d18
+    MOV dword ptr [0x01c51d14],ESI      ; 004821ef | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],ECX      ; 004821f5 | g_VertexPreprocessMode
     JMP 0x004821af                      ; 004821fb
         ;   XREF to: 004821af (UNCONDITIONAL_JUMP)  ; LAB_004821af
-    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 004821fd | g_PTR_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 004821fd | g_ScanlineRenderFunc
         ;   Label: LAB_004821fd
     JMP 0x004821ea                      ; 00482207
         ;   XREF to: 004821ea (UNCONDITIONAL_JUMP)  ; LAB_004821ea

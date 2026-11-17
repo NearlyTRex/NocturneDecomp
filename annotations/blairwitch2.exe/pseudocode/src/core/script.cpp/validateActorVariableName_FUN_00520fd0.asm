@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Actor_variable_name_must_005e2c0b
 ;   TerminatedCString s_Actor_variable_name_s_is_005e2c33
 ;   TerminatedCString s_Actor_variable_name_s_is_005e2c58
-;   uchar[257] g_UCHAR_ARRAY_0061ed94
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -48,7 +48,7 @@ section .text
     XOR ECX,ECX                         ; 00520ff7
     INC BL                              ; 00520ff9
     MOV CL,BL                           ; 00520ffb
-    TEST byte ptr [ECX + 0x61ed94],0xe0 ; 00520ffd | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0xe0 ; 00520ffd | g_CharacterClassificationTable
     JZ 0x00521037                       ; 00521004
         ;   XREF to: 00521037 (CONDITIONAL_JUMP)  ; LAB_00521037
     INC EDX                             ; 00521006

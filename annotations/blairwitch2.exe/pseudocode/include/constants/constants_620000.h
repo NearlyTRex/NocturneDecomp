@@ -14,9 +14,9 @@
 static double g_DOUBLE_006217dc = 1;
 
 // float constants
-static float g_FLOAT_006216d0 = 0.9375f;
-static float g_FLOAT_006216d4 = 1.0625f;
-static float g_FLOAT_006216d8 = 9.223372e+18f;
+static float g_IEEE754NormalScaleFactor = 0.9375f;
+static float g_IEEE754SubnormalScaleFactor = 1.0625f;
+static float g_IEEE754RenormScaleFactor = 9.223372e+18f;
 static float g_FLOAT_00621820 = 16.0f;
 static float g_FLOAT_00621824 = 0.0625f;
 

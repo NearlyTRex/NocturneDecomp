@@ -192,9 +192,9 @@ section .text
     TEST ESI,ESI                        ; 004a588b
     JNZ 0x004a5f2d                      ; 004a588d
         ;   XREF to: 004a5f2d (CONDITIONAL_JUMP)  ; LAB_004a5f2d
-    MOV EDI,dword ptr [0x01c2a380]      ; 004a5893 | g_INT_01c2a380
+    MOV EDI,dword ptr [0x01c2a380]      ; 004a5893 | g_MouseY
     PUSH EDI                            ; 004a5899
-    MOV EBP,dword ptr [0x01c2a37c]      ; 004a589a | g_INT_01c2a37c
+    MOV EBP,dword ptr [0x01c2a37c]      ; 004a589a | g_MouseX
     PUSH EBP                            ; 004a58a0
     CALL core_flashlit.cpp_hitTestSectionTab_FUN_004a1bb0 ; 004a58a1
         ;   XREF to: 004a1bb0 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestSectionTab_FUN_004a1bb0(int x, int y)
@@ -219,10 +219,10 @@ section .text
     MOV EAX,0x1                         ; 004a58d1
     ADD ESP,0x4                         ; 004a58d6
     MOV dword ptr [ESP + 0x508],EAX     ; 004a58d9
-    MOV EDX,dword ptr [0x01c2a380]      ; 004a58e0 | g_INT_01c2a380
+    MOV EDX,dword ptr [0x01c2a380]      ; 004a58e0 | g_MouseY
         ;   Label: LAB_004a58e0
     PUSH EDX                            ; 004a58e6
-    MOV ECX,dword ptr [0x01c2a37c]      ; 004a58e7 | g_INT_01c2a37c
+    MOV ECX,dword ptr [0x01c2a37c]      ; 004a58e7 | g_MouseX
     PUSH ECX                            ; 004a58ed
     CALL core_flashlit.cpp_hitTestPageArrows_FUN_004a1c60 ; 004a58ee
         ;   XREF to: 004a1c60 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestPageArrows_FUN_004a1c60(int x, int y)
@@ -234,9 +234,9 @@ section .text
     MOV EBX,dword ptr [0x01caf110]      ; 004a5905 | g_INT_01caf110
         ;   Label: LAB_004a5905
     LEA EAX,[EBX*0x4 + 0x0]             ; 004a590b
-    MOV ESI,dword ptr [0x01c2a380]      ; 004a5912 | g_INT_01c2a380
+    MOV ESI,dword ptr [0x01c2a380]      ; 004a5912 | g_MouseY
     ADD EAX,EBX                         ; 004a5918
-    MOV EDI,dword ptr [0x01c2a37c]      ; 004a591a | g_INT_01c2a37c
+    MOV EDI,dword ptr [0x01c2a37c]      ; 004a591a | g_MouseX
     SHL EAX,0x4                         ; 004a5920
     PUSH ESI                            ; 004a5923
     ADD EAX,EBX                         ; 004a5924
@@ -251,9 +251,9 @@ section .text
     TEST EAX,EAX                        ; 004a593b
     JZ 0x004a5971                       ; 004a593d
         ;   XREF to: 004a5971 (CONDITIONAL_JUMP)  ; LAB_004a5971
-    MOV EBX,dword ptr [0x01c2a380]      ; 004a593f | g_INT_01c2a380
+    MOV EBX,dword ptr [0x01c2a380]      ; 004a593f | g_MouseY
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a5945
-    MOV ESI,dword ptr [0x01c2a37c]      ; 004a5948 | g_INT_01c2a37c
+    MOV ESI,dword ptr [0x01c2a37c]      ; 004a5948 | g_MouseX
     SUB EBX,EDX                         ; 004a594e
     MOV EBP,dword ptr [EAX]             ; 004a5950
     PUSH EBX                            ; 004a5952
@@ -306,8 +306,8 @@ section .text
     PUSH 0x1caf218                      ; 004a59de
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900 ; 004a59e3
         ;   XREF to: 0040d900 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap * this_ptr, int x, int y, int alpha)
-    MOV ESI,dword ptr [0x01c2a37c]      ; 004a59e8 | g_INT_01c2a37c
-    MOV EBX,dword ptr [0x01c2a380]      ; 004a59ee | g_INT_01c2a380
+    MOV ESI,dword ptr [0x01c2a37c]      ; 004a59e8 | g_MouseX
+    MOV EBX,dword ptr [0x01c2a380]      ; 004a59ee | g_MouseY
     MOV EDI,dword ptr [0x00616028]      ; 004a59f4 | g_INT_00616028
     ADD ESP,0x10                        ; 004a59fa
     CMP ESI,EDI                         ; 004a59fd
@@ -342,7 +342,7 @@ section .text
     MOV EDI,dword ptr [0x01caf498]      ; 004a5a4b | g_INT_01caf498
     PUSH EDI                            ; 004a5a51
     PUSH 0x1caf4a0                      ; 004a5a52 | g_CHAR_01caf4a0
-    MOV EBP,dword ptr [0x01511cbc]      ; 004a5a57 | g_CBitFont_PTR_01511cbc
+    MOV EBP,dword ptr [0x01511cbc]      ; 004a5a57 | g_TinyFont
     PUSH EBP                            ; 004a5a5d
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004a5a5e
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -350,8 +350,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x508]     ; 004a5a66
         ;   Label: LAB_004a5a66
     MOV EDX,dword ptr [0x00616030]      ; 004a5a6d | DAT_00616030
-    MOV EBX,dword ptr [0x01c2a37c]      ; 004a5a73 | g_INT_01c2a37c
-    MOV EAX,[0x01c2a380]                ; 004a5a79 | g_INT_01c2a380
+    MOV EBX,dword ptr [0x01c2a37c]      ; 004a5a73 | g_MouseX
+    MOV EAX,[0x01c2a380]                ; 004a5a79 | g_MouseY
     MOV ECX,dword ptr [0x00616034]      ; 004a5a7e | DAT_00616034
     SUB EBX,EDX                         ; 004a5a84
     SUB EAX,ECX                         ; 004a5a86

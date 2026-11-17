@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 109,
+    "complexity_score": 108,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 23,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation"
     ],
-    "total_lines": 74
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -174,49 +174,49 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
       "severity": "moderate",
-      "text": "if (globe == *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar2)) {",
+      "text": "if (globe == *(CDemonGlobe **)((int)g_CoronaGlobes + iVar2)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(void *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "match": "(void *)((int)g_CoronaGlobes",
       "severity": "moderate",
-      "text": "((void *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar2),",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(void *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "line": 17,
+      "match": "(void *)((int)g_CoronaGlobes",
       "severity": "moderate",
-      "text": "(void *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar2 + 4),",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_CoronaGlobes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 14,
-      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "match": "(int)g_CoronaGlobes",
       "severity": "moderate",
-      "text": "if (globe == *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar2)) {",
+      "text": "if (globe == *(CDemonGlobe **)((int)g_CoronaGlobes + iVar2)) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_CoronaGlobes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 17,
-      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "match": "(int)g_CoronaGlobes",
       "severity": "moderate",
-      "text": "((void *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar2),",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 18,
-      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "description": "Pointer value `g_CoronaGlobes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_CoronaGlobes",
       "severity": "moderate",
-      "text": "(void *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar2 + 4),",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
       "type": "pointer_truncation"
     },
     {

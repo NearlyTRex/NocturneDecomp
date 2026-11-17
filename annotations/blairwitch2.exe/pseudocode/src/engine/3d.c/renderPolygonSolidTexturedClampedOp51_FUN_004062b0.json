@@ -56,7 +56,7 @@
     },
     {
       "addr": "006141c8",
-      "name": "g_INT_006141c8",
+      "name": "g_CurrentTextureDimension",
       "type": "int",
       "value": "0x100"
     },
@@ -74,37 +74,37 @@
     },
     {
       "addr": "0070ca98",
-      "name": "g_INT_ARRAY_0070ca98",
+      "name": "g_ProcessedVertexIndices",
       "type": "int[24]",
       "value": null
     },
     {
       "addr": "0070ca9c",
-      "name": "g_INT_ARRAY_0070ca98[1]",
+      "name": "g_ProcessedVertexIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c35e6c",
-      "name": "g_PTR_01c35e6c",
+      "name": "g_ScanlineRenderFunc",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c38b40",
-      "name": "g_INT_01c38b40",
+      "name": "g_MMXSupported",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "g_BIT_INTEGER32_01c38b54",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "g_INT_01c38b58",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     }
@@ -198,9 +198,9 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(int *)((int)g_INT_ARRAY_0070ca98",
+      "match": "(int *)((int)g_ProcessedVertexIndices",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_0070ca98 + iVar2) = (pSVar4->base).type;",
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;",
       "type": "pointer_cast"
     },
     {
@@ -212,7 +212,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 46,
       "match": "0xfbffff",
       "severity": "moderate",
@@ -220,7 +220,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 47,
       "match": "0xfbffff",
       "severity": "moderate",
@@ -228,7 +228,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 49,
       "match": "0xfbffff",
       "severity": "moderate",
@@ -236,7 +236,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 50,
       "match": "0xfbffff",
       "severity": "moderate",
@@ -244,7 +244,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 60,
       "match": "0xfeffff",
       "severity": "moderate",
@@ -252,7 +252,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 61,
       "match": "0xfeffff",
       "severity": "moderate",
@@ -260,7 +260,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 63,
       "match": "0xfeffff",
       "severity": "moderate",
@@ -268,7 +268,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 64,
       "match": "0xfeffff",
       "severity": "moderate",

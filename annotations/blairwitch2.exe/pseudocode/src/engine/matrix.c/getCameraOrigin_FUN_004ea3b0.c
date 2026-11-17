@@ -12,9 +12,9 @@ void __esi engine_matrix_c_getCameraOrigin_FUN_004ea3b0(CVector3i *output)
   int iVar1;
   int iVar2;
   
-  iVar2 = g_INT_01c38b80;
-  iVar1 = g_INT_01c38b7c;
-  output->x = g_INT_01c38b78;
+  iVar2 = g_CameraOriginZ;
+  iVar1 = g_CameraOriginY;
+  output->x = g_CameraOriginX;
   output->y = iVar1;
   output->z = iVar2;
   return;

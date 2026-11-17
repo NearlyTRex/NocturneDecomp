@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
   if (this_ptr->hardware_buffer_handle == 0) {
     return;
   }
-  if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
     return;
   }
@@ -24,8 +24,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
     g_CurrentLineNumber = 2915;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::pollHwHandle - no sample?");
   }
-  iVar1 = (*g_CSoundDevice_PTR_02dc8318->vtable->isSfxPlaying)(g_CSoundDevice_PTR_02dc8318,this_ptr)
-  ;
+  iVar1 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,this_ptr);
   if (iVar1 == 0) {
     if (this_ptr->sample->loops != 0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980
@@ -51,8 +50,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
     return;
   }
 LAB_005257a3:
-  iVar1 = (*g_CSoundDevice_PTR_02dc8318->vtable->setSfxPos)
-                    (g_CSoundDevice_PTR_02dc8318,this_ptr,update_flags);
+  iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,update_flags);
   if (iVar1 != 0) {
     return;
   }

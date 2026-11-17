@@ -9,7 +9,7 @@
 float10 __fpureg atan2(float10 y,float10 x)
 
 {
-  if ((g_BYTE_006267b8 & 1) == 0) {
+  if ((g_UseSoftwareMath & 1) == 0) {
     x = (float10)fpatan(y,x);
   }
   else {

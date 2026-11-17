@@ -16,7 +16,7 @@
 extern CVector3f g_CVector3f_021221e0;
 
 // SRaytraceState[5]
-extern SRaytraceState g_SRaytraceState_ARRAY_021221f4[5];
+extern SRaytraceState g_RaytraceStateStack[5];
 
 // UVector3
 extern UVector3 g_UVector3_021221d4;
@@ -25,10 +25,10 @@ extern UVector3 g_UVector3_021221d4;
 extern char g_CHAR_ARRAY_0212551c[3072000];
 
 // float
-extern float g_FLOAT_021221ec;
+extern float g_SavedProjectionFactor;
 
 // int
-extern int g_INT_021221f0;
+extern int g_RaytraceStateStackDepth;
 extern int g_INT_02125514;
 extern int g_INT_02125518;
 

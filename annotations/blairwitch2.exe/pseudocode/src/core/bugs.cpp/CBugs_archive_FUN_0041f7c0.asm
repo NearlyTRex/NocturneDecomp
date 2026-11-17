@@ -16,7 +16,7 @@
 ;   TerminatedCString s_allowChaseEvent_005cc993
 ;   TerminatedCString s_allowSwarmEvent_005cc9a3
 ;   TerminatedCString s_animateEvent_005cc9b3
-;   int g_INT_007bc038
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 0041f7f0
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 0041f7f1
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x007bc038]      ; 0041f7f6 | g_INT_007bc038
+    MOV EDX,dword ptr [0x007bc038]      ; 0041f7f6 | g_ActorReadingMode
     ADD ESP,0x8                         ; 0041f7fc
     CMP EDX,0x1                         ; 0041f7ff
     JNZ 0x0041f830                      ; 0041f802

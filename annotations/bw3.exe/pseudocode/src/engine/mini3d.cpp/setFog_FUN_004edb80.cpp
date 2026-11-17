@@ -15,13 +15,13 @@ void __cdecl engine_mini3d_cpp_setFog_FUN_004edb80(int red,int green,int blue,fl
   g_FLOAT_01d76cf0 = fog_near;
   g_FLOAT_01d76cf4 = fog_far;
   if (g_INT_005fba20 == 0x20) {
-    g_ULONG_01c6e2bc =
+    g_SolidColorMode =
          blue << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
          red << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
          green << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
   }
   else {
-    g_ULONG_01c6e2bc = red << 0x10 | green << 8 | blue;
+    g_SolidColorMode = red << 0x10 | green << 8 | blue;
   }
   if ((g_PTR_02cf60f8 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
     (*(code *)g_PTR_02cf60f8)(g_FLOAT_01d76ce4,g_FLOAT_01d76ce8,g_FLOAT_01d76cec,fog_near,fog_far);

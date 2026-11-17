@@ -27,20 +27,20 @@ void __cdecl core_flashlit_cpp_trimAndNormalizeWhitespace_FUN_004b9c50(char *tex
   if (0 < (int)n) {
     pcVar2 = text + n;
     do {
-      if ((g_UCHAR_ARRAY_00626114[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
       n = n - 1;
       pcVar2 = pcVar2 + -1;
     } while (0 < (int)n);
   }
   text[n] = '\0';
-  while ((g_UCHAR_ARRAY_00626114[(byte)(*text + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*text + 1)] & 2) != 0) {
     memmove(text,text + 1,n);
     n = n - 1;
   }
   iVar4 = 0;
   if (0 < (int)n) {
     do {
-      while ((g_UCHAR_ARRAY_00626114[(byte)(*text + 1)] & 2) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(*text + 1)] & 2) != 0) {
         *text = ' ';
         iVar4 = iVar4 + 1;
         text = text + 1;

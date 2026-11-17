@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 125,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 109,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 372
+    "total_lines": 371
   },
   "cross_references": [],
   "function": {
@@ -128,13 +128,13 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "g_CEventList_PTR_0061b4d0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c51d80"
     },
     {
       "addr": "0061c010",
-      "name": "g_CFireEffect_PTR_0061c010",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c57074"
     },
@@ -297,7 +297,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 98,
+      "line": 97,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_6c.x = position->x;",

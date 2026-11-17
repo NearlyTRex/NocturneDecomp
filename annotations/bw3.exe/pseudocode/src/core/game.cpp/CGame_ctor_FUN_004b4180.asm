@@ -10,7 +10,7 @@
 ;   core_game.cpp_staticInit_FUN_004b3cd0 at 004b3cf9
 ;
 ; Referenced Globals:
-;   char[256] g_CHAR_ARRAY_01d225c8
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetMusic_FUN_004c4d10
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [EBX + 0x290],0x1     ; 004b43ea
     XOR AH,AH                           ; 004b43f4
     MOV dword ptr [EBX + 0x294],0xbf800000 ; 004b43f6
-    MOV byte ptr [0x01d225c8],AH        ; 004b4400 | g_CHAR_ARRAY_01d225c8
+    MOV byte ptr [0x01d225c8],AH        ; 004b4400 | g_CurrentSaveFile
     MOV byte ptr [EBX + 0xa7c],AH       ; 004b4406
     CALL core_game.cpp_CGame_resetMusic_FUN_004c4d10 ; 004b440c
         ;   XREF to: 004c4d10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetMusic_FUN_004c4d10(CGame * this_ptr)

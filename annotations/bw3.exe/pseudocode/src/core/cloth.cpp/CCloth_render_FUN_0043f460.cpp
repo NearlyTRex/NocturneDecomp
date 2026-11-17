@@ -119,7 +119,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043f460(CCloth *this_ptr,CDeforma
     }
     local_1c = 0;
     if (0 < local_20) {
-      local_18 = g_SMRGLPrimitiveQuad_ARRAY_007e6564;
+      local_18 = g_ClothBackfaceBuffer;
       do {
         pSVar9 = (this_ptr->model).poly_vert_list;
         (local_18->base).base.count = pSVar9[local_1c].base.base.count;
@@ -142,15 +142,14 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043f460(CCloth *this_ptr,CDeforma
       } while (local_1c < local_20);
     }
     core_set_cpp_CDemonSet_lightVerticies_FUN_00538dd0
-              (g_CDemonSetPtr,(this_ptr->model).vertex_count,local_20,
-               g_SMRGLPrimitiveQuad_ARRAY_007e6564,(this_ptr->model).vertex_list,4,(CVector3i *)0x0)
-    ;
+              (g_CDemonSetPtr,(this_ptr->model).vertex_count,local_20,g_ClothBackfaceBuffer,
+               (this_ptr->model).vertex_list,4,(CVector3i *)0x0);
     if (62999 < iVar11) {
       iVar11 = -1;
-      pSVar9 = g_SMRGLPrimitiveQuad_ARRAY_007e6564;
+      pSVar9 = g_ClothBackfaceBuffer;
       goto LAB_0043f65a;
     }
-    pSVar9 = g_SMRGLPrimitiveQuad_ARRAY_007e6564;
+    pSVar9 = g_ClothBackfaceBuffer;
   }
   iVar11 = 0x267;
 LAB_0043f65a:

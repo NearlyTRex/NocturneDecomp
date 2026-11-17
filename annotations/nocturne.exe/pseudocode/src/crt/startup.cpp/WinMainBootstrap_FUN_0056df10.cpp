@@ -25,8 +25,8 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
   
   uStack_14 = 0x56df21;
   ProcessInitTermHandlers(1);
-  iVar5 = -(g_DWORD_005c20cc + 3 & 0xfffffffc);
-  *(DWORD *)(local_10 + iVar5 + -4) = g_DWORD_005c20cc;
+  iVar5 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
+  *(DWORD *)(local_10 + iVar5 + -4) = g_RuntimeBufferSize;
   *(uint *)((int)aiStack_1c + iVar5 + 4) = 0;
   *(byte **)((int)aiStack_1c + iVar5) = local_10 + iVar5;
   *(uint *)((int)&uStack_20 + iVar5) = 0x56df3e;
@@ -34,30 +34,30 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
             (*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),
              *(ulong *)(local_10 + iVar5 + -4));
   *(byte **)(local_10 + iVar5 + -4) = local_10 + iVar5;
-  *(DWORD *)(&stack0x000000e0 + iVar5) = g_DWORD_005c20cc;
+  *(DWORD *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;
   *(byte **)((int)aiStack_1c + iVar5 + 4) = local_10;
   *(uint *)((int)aiStack_1c + iVar5) = 0x56df56;
   crt_startup_cpp_InitializeWinAppRuntime_FUN_00567458(local_10);
   puVar7 = local_10 + iVar5;
-  uVar6 = g_DWORD_005c1cf0 + 3 & 0xfffffffc;
+  uVar6 = g_StackAllocSize + 3 & 0xfffffffc;
   *(uint *)(local_10 + iVar5 + -4) = 0x56df6a;
   uVar2 = GetStackUsage();
   if (uVar6 < uVar2) {
     *(uint *)(local_10 + iVar5 + -4) = uVar6;
     *(uint *)((int)aiStack_1c + iVar5 + 4) = 0x56df74;
     ProbeStackSpace(*(uint *)(local_10 + iVar5 + -4));
-    iVar1 = -(g_DWORD_005c1cf0 + 3 & 0xfffffffc);
+    iVar1 = -(g_StackAllocSize + 3 & 0xfffffffc);
     puVar7 = local_10 + iVar1 + iVar5;
     puVar3 = local_10 + iVar1 + iVar5;
   }
   else {
     puVar3 = (byte *)0x0;
   }
-  g_PTR_005c1cf4 = puVar3 + g_DWORD_005c1cf0;
+  g_CrtStackBuffer = puVar3 + g_StackAllocSize;
   *(uint *)(puVar7 + -4) = 0x56df98;
   FUN_00571160();
   *(uint *)(puVar7 + -4) = 10;
-  *(DWORD *)(puVar7 + -8) = g_DWORD_005c1ccc;
+  *(DWORD *)(puVar7 + -8) = g_WinMainCmdShow;
   *(uint *)(puVar7 + -0xc) = 0;
   *(uint *)(puVar7 + -0x10) = 0;
   *(uint *)(puVar7 + -0x14) = 0x56dfac;

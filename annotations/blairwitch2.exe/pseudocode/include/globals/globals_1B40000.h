@@ -27,7 +27,7 @@ extern CVector3f g_CVector3f_01b4d23c;
 extern CVector3f g_CVector3f_01b4d248;
 
 // FileSearchHandlerFunc*[5]
-extern FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01b4d374[5];
+extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
 // byte
 extern byte g_BYTE_01b4d230;
@@ -56,8 +56,8 @@ extern int g_INT_01b4d29c;
 extern int g_INT_01b4d2a8;
 extern int g_INT_01b4d2ac;
 extern int g_INT_01b4d2b0;
-extern int g_INT_01b4d370;
+extern int g_NumSearchHandlers;
 
 // uint
-extern uint g_UINT_01b4d330;
+extern uint g_DoorLockedSoundHandle;
 

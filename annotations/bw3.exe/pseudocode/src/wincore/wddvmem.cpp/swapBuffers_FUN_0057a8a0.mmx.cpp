@@ -11,12 +11,12 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0(void)
 __asm {
         mov EBP,ESP
         sub ESP,0x7c
-        cmp dword ptr [g_INT_00607288],0x0
+        cmp dword ptr [g_WindowActive],0x0
         jz LAB_0057a971
         mov ECX,dword ptr [g_INT_01c6cee8]
         test ECX,ECX
         jnz LAB_0057a985
-        mov EBX,dword ptr [g_INT_02d0bcf4]
+        mov EBX,dword ptr [g_FlipPending]
         test EBX,EBX
         jnz LAB_0057a94d
         cmp dword ptr [g_INT_02d0bcfc],0x0
@@ -31,7 +31,7 @@ __asm {
         xor EDI,EDI
     LAB_0057a8fe:
         mov EBX,dword ptr [g_INT_005fba18]
-        mov EAX,dword ptr [g_ARRAY_PTR_01c5faec + EDI]
+        mov EAX,dword ptr [g_ScreenBufferArray + EDI]
         xor EDX,EDX
         test EBX,EBX
         jle LAB_0057a931
@@ -58,7 +58,7 @@ __asm {
         call wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0
         mov dword ptr [g_INT_02d0bcfc],0x1
     LAB_0057a94d:
-        mov ESI,dword ptr [g_IDirectDrawSurface_PTR_02d0bce4]
+        mov ESI,dword ptr [g_DirectDrawSurface]
         test ESI,ESI
         jz LAB_0057a971
         push 0x1
@@ -73,7 +73,7 @@ __asm {
         call wincore_wddvmem_cpp_videoRestore_FUN_0057ab70
     LAB_0057a971:
         xor EDI,EDI
-        mov dword ptr [g_INT_02d0bcf4],EDI
+        mov dword ptr [g_FlipPending],EDI
         call wincore_winrun_cpp_processWindowMessages_FUN_00580f70
         mov ESP,EBP
         pop EBP
@@ -86,7 +86,7 @@ __asm {
         call engine_special_cpp_presentToExternalRenderer_FUN_00566260
         add ESP,0x4
         xor EDI,EDI
-        mov dword ptr [g_INT_02d0bcf4],EDI
+        mov dword ptr [g_FlipPending],EDI
         call wincore_winrun_cpp_processWindowMessages_FUN_00580f70
         mov ESP,EBP
         pop EBP
@@ -117,7 +117,7 @@ __asm {
         lea EDX,[EBP + -0x7c]
         mov EDI,0x6c
         push EDX
-        mov EAX,[g_IDirectDrawSurface_PTR_02d0bce4]
+        mov EAX,[g_DirectDrawSurface]
         mov dword ptr [EBP + -0x7c],EDI
         push EBX
         mov ECX,dword ptr [EAX]
@@ -148,7 +148,7 @@ __asm {
         test EDX,EDX
         jle LAB_0057aaae
     LAB_0057aa47:
-        cmp dword ptr [g_INT_01c6e2a0],0x0
+        cmp dword ptr [g_MMXSupported],0x0
         jz LAB_0057aafd
         mov ECX,dword ptr [EBP + 0xfffffff4]
         mov ESI,dword ptr [EBP + 0xfffffff0]
@@ -180,7 +180,7 @@ __asm {
         jl LAB_0057aa47
     LAB_0057aaae:
         push 0x0
-        mov EAX,[g_IDirectDrawSurface_PTR_02d0bce4]
+        mov EAX,[g_DirectDrawSurface]
         push EAX
         mov EDX,dword ptr [EAX]
         call dword ptr [EDX + 0x80]
@@ -194,7 +194,7 @@ __asm {
         call core_main_c_displayErrorAndQuit_FUN_004e4330
         add ESP,0x4
         xor EDI,EDI
-        mov dword ptr [g_INT_02d0bcf4],EDI
+        mov dword ptr [g_FlipPending],EDI
         call wincore_winrun_cpp_processWindowMessages_FUN_00580f70
         mov ESP,EBP
         pop EBP

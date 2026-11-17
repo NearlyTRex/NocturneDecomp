@@ -18,7 +18,7 @@ void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_00515510(SRenderVertex *st
   int iVar7;
   uint uVar8;
   
-  iVar2 = g_INT_01ed2c88;
+  iVar2 = g_SoftwareEdgeCount;
   iVar7 = (end_vertex->projected_vertex).screen_y >> 0x10;
   iVar3 = (start_vertex->projected_vertex).screen_y >> 0x10;
   if (iVar3 != iVar7) {
@@ -30,14 +30,14 @@ void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_00515510(SRenderVertex *st
       start_vertex = end_vertex;
       iVar7 = iVar3;
     }
-    g_SSoftwareEdge_ARRAY_01ed2c8c[g_INT_01ed2c88].base.y_min = iVar4;
-    iVar3 = g_INT_01ed318c;
+    g_SSoftwareEdge_ARRAY_01ed2c8c[g_SoftwareEdgeCount].base.y_min = iVar4;
+    iVar3 = g_SoftwareMinScanline;
     g_SSoftwareEdge_ARRAY_01ed2c8c[iVar2].base.y_max = iVar7;
     if (iVar4 < iVar3) {
-      g_INT_01ed318c = iVar4;
+      g_SoftwareMinScanline = iVar4;
     }
-    if (g_INT_01ed3190 < iVar7) {
-      g_INT_01ed3190 = iVar7;
+    if (g_SoftwareMaxScanline < iVar7) {
+      g_SoftwareMaxScanline = iVar7;
     }
     uVar5 = (pSVar6->projected_vertex).screen_y - (start_vertex->projected_vertex).screen_y;
     if (uVar5 < 0x10000) {
@@ -87,7 +87,7 @@ void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_00515510(SRenderVertex *st
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_SSoftwareEdge_ARRAY_01ed2c8c[iVar2].base.depth_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    g_INT_01ed2c88 = g_INT_01ed2c88 + 1;
+    g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
     g_SSoftwareEdge_ARRAY_01ed2c8c[iVar2].base.depth_current =
          (start_vertex->projected_vertex).transformed_z +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

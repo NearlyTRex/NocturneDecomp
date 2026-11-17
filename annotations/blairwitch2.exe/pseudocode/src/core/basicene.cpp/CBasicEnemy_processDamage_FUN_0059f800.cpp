@@ -48,7 +48,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnem
   }
   else {
     core_event_cpp_CEventList_executeCommands_FUN_004894f0
-              (g_CEventList_PTR_006141f0,"ShotInvulnerable");
+              (g_CEventListPtr,"ShotInvulnerable");
   }
   return;
 }

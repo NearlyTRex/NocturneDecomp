@@ -83,7 +83,7 @@ LAB_005c73bb:
     }
     uVar4 = (*(code *)PTR_crt_unknown_c_FUN_005c50d8_00626608)(hObject);
     uVar5 = 0;
-    if (g_UINT_006267e0 <= uVar4) {
+    if (g_MaxHandleCount <= uVar4) {
       CloseHandle(hObject);
       setErrno(5);
       return 0xffffffff;

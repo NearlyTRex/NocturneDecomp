@@ -11,8 +11,8 @@
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00552470 at 00552489
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02648e80
-;   int g_INT_02648e88
+;   CSoundDevice* g_CSoundDevicePtr
+;   int g_HasHardware3DSound
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0
@@ -41,7 +41,7 @@ section .text
     CMP EBX,ESI                         ; 00552c65
     JNZ 0x00552c56                      ; 00552c67
         ;   XREF to: 00552c56 (CONDITIONAL_JUMP)  ; LAB_00552c56
-    MOV EDX,dword ptr [0x02648e80]      ; 00552c69 | g_CSoundDevice_PTR_02648e80
+    MOV EDX,dword ptr [0x02648e80]      ; 00552c69 | g_CSoundDevicePtr
     TEST EDX,EDX                        ; 00552c6f
     JNZ 0x00552c7b                      ; 00552c71
         ;   XREF to: 00552c7b (CONDITIONAL_JUMP)  ; LAB_00552c7b
@@ -60,8 +60,8 @@ section .text
         ;   XREF to: 00552c78 (CONDITIONAL_JUMP)  ; LAB_00552c78
     XOR ECX,ECX                         ; 00552c87
     MOV EAX,0x1                         ; 00552c89
-    MOV dword ptr [0x02648e88],ECX      ; 00552c8e | g_INT_02648e88
-    MOV dword ptr [0x02648e80],ECX      ; 00552c94 | g_CSoundDevice_PTR_02648e80
+    MOV dword ptr [0x02648e88],ECX      ; 00552c8e | g_HasHardware3DSound
+    MOV dword ptr [0x02648e80],ECX      ; 00552c94 | g_CSoundDevicePtr
     POP ESI                             ; 00552c9a
     POP EBX                             ; 00552c9b
     RET                                 ; 00552c9c

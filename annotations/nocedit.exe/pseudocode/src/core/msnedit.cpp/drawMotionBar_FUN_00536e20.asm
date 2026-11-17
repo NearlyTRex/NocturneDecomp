@@ -62,7 +62,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 00536e2f | g_CDemonMissionPtr
     XOR EDX,EDX                         ; 00536e35
     MOV ECX,dword ptr [EDI + 0x28]      ; 00536e37 | g_CDemonMissionInstance.selected_actor
-    MOV dword ptr [0x02f7c538],EDX      ; 00536e3a | INT_02f7c538
+    MOV dword ptr [0x02f7c538],EDX      ; 00536e3a | g_MsnEditMouseOverPanel
     TEST ECX,ECX                        ; 00536e40
     JZ 0x005371ef                       ; 00536e42
         ;   XREF to: 005371ef (CONDITIONAL_JUMP)  ; LAB_005371ef
@@ -112,7 +112,7 @@ section .text
     CMP EAX,EDI                         ; 00536edd
     JL 0x00536ee7                       ; 00536edf
         ;   XREF to: 00536ee7 (CONDITIONAL_JUMP)  ; LAB_00536ee7
-    MOV dword ptr [0x02f7c538],EDX      ; 00536ee1 | INT_02f7c538
+    MOV dword ptr [0x02f7c538],EDX      ; 00536ee1 | g_MsnEditMouseOverPanel
     PUSH 0xff                           ; 00536ee7
         ;   Label: LAB_00536ee7
     PUSH 0x0                            ; 00536eec

@@ -43,7 +43,7 @@ extern CConstruct_full_vtable g_CConstructVTable;
 extern CDemnfolk_full_vtable g_CDemnfolkVTable;
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_005ffcb8;
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -235,7 +235,7 @@ extern WatcomTypeInfo g_CFilmReelTypeInfo;
 extern WatcomTypeInfo g_CFilmProjectorTypeInfo;
 
 // char
-extern char g_CHAR_005fb299;
+extern char g_SpaceCharacter;
 
 // int
 extern int g_INT_005faaf4;

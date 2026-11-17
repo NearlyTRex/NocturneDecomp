@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 81,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 30,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -57,19 +57,19 @@
     },
     {
       "addr": "01c4353c",
-      "name": "g_INT_01c4353c",
+      "name": "g_MouseX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c43540",
-      "name": "g_INT_01c43540",
+      "name": "g_MouseY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c43544",
-      "name": "g_BIT_INTEGER32_01c43544",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -179,7 +179,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(code **)((int)g_CPuzzle_PTR_007c3978",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x20))",
@@ -187,7 +187,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x20))",

@@ -12,12 +12,12 @@
 ;   float g_FLOAT_005f809c = 0.5
 ;   double g_DOUBLE_005f80a4 = 65536
 ;   float g_FLOAT_006071b0 = 256
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   int g_INT_01cc804c
-;   int g_INT_01d06aa0
+;   int g_FastSqrtMagic
+;   int g_HeroCount
 ;   undefined4 DAT_01d2c900
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -73,7 +73,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x154]     ; 0059b297
     LEA ESI,[ESP + 0xc]                 ; 0059b29d
     CALL dword ptr [EAX + 0x1c]         ; 0059b2a1
-    MOV EBX,dword ptr [0x01d06aa0]      ; 0059b2a4 | g_INT_01d06aa0
+    MOV EBX,dword ptr [0x01d06aa0]      ; 0059b2a4 | g_HeroCount
     ADD ESP,0x4                         ; 0059b2aa
     XOR ESI,ESI                         ; 0059b2ad
     TEST EBX,EBX                        ; 0059b2af
@@ -123,7 +123,7 @@ section .text
         ;   XREF to: 0059b88f (CONDITIONAL_JUMP)  ; LAB_0059b88f
     LEA EAX,[EDX + 0x224]               ; 0059b33a
     PUSH EAX                            ; 0059b340
-    MOV EDI,dword ptr [0x0061b4d0]      ; 0059b341 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 0059b341 | g_CEventListPtr
     PUSH EDI                            ; 0059b347
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0059b348
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -134,7 +134,7 @@ section .text
     POP ESI                             ; 0059b354
     POP EBX                             ; 0059b355
     RET                                 ; 0059b356
-    MOV EDI,dword ptr [0x01d06aa0]      ; 0059b357 | g_INT_01d06aa0
+    MOV EDI,dword ptr [0x01d06aa0]      ; 0059b357 | g_HeroCount
         ;   Label: LAB_0059b357
     INC ESI                             ; 0059b35d
     ADD EBX,0x4                         ; 0059b35e
@@ -389,13 +389,13 @@ section .text
     PUSH 0x0                            ; 0059b679
     FSTP float ptr [ESP + 0xc0]         ; 0059b67b
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0059b682
-    MOV ECX,dword ptr [0x01cc804c]      ; 0059b689 | g_INT_01cc804c
+    MOV ECX,dword ptr [0x01cc804c]      ; 0059b689 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0059b68f
     PUSH 0x0                            ; 0059b691
     ADD EAX,ECX                         ; 0059b693
     PUSH EAX                            ; 0059b695
     PUSH EBX                            ; 0059b696
-    MOV EBX,dword ptr [0x0061c010]      ; 0059b697 | g_CFireEffect_PTR_0061c010
+    MOV EBX,dword ptr [0x0061c010]      ; 0059b697 | g_CFireEffectPtr
     PUSH EBX                            ; 0059b69d
     CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004b6ce0 ; 0059b69e
         ;   XREF to: 004b6ce0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004b6ce0(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
@@ -577,7 +577,7 @@ section .text
     LEA EAX,[EDX + 0x288]               ; 0059b88f
         ;   Label: LAB_0059b88f
     PUSH EAX                            ; 0059b895
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0059b896 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0059b896 | g_CEventListPtr
     PUSH ESI                            ; 0059b89c
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0059b89d
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

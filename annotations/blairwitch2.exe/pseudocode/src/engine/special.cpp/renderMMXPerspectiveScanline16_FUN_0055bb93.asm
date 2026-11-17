@@ -18,21 +18,21 @@
 ;   ... and 48 more
 ;
 ; Referenced Globals:
-;   int g_INT_006141d8 = 0xff
-;   int g_INT_0061c314 = 0x0
-;   int g_INT_0061c350 = 0x0
-;   int g_INT_0061c354 = 0x0
-;   int g_INT_0061c35c = 0x0
-;   int* g_INT_PTR_0061c378 = 00000000
-;   int* g_INT_PTR_0061c37c = 00000000
-;   int g_INT_0061c780 = 0x0
-;   int g_INT_0061c784 = 0x0
-;   int g_INT_0061c788 = 0x0
-;   double g_DOUBLE_0061c78c = 0.0
-;   qword g_QWORD_0061c800 = 0x0
-;   _MMX_INTEGER g_MMX_INTEGER_0061c808
-;   _MMX_INTEGER g_MMX_INTEGER_0061c810
-;   qword g_QWORD_0061c820 = 0x0
+;   int g_CurrentAlphaValue = 0xff
+;   int g_ScanlinePixelCount = 0x0
+;   int g_StartTextureU = 0x0
+;   int g_StartTextureV = 0x0
+;   int g_StartDepthW = 0x0
+;   int* g_CurrentScreenPtr = 00000000
+;   int* g_CurrentZBufferPtr = 00000000
+;   int g_HardwareDeltaTextureU = 0x0
+;   int g_HardwareDeltaTextureV = 0x0
+;   int g_HardwareDeltaDepthZ = 0x0
+;   double g_BufferFillZeroQword = 0.0
+;   qword g_VertexRedStart = 0x0
+;   _MMX_INTEGER g_VertexGreenStart
+;   _MMX_INTEGER g_VertexBlueStart
+;   qword g_VertexRedDelta = 0x0
 ;   ... and 32 more
 ;
 ; *****************************************************************************
@@ -53,21 +53,21 @@ section .text
     SHR ECX,0x10                        ; 0055bba3
         ;   Label: LAB_0055bba3
     SHR EAX,0x10                        ; 0055bba6
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0055bba9 | g_UINT_PTR_ARRAY_01c2b64c
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0055bbb0 | g_ARRAY_PTR_01c2a38c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0055bba9 | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0055bbb0 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 0055bbb7
     JLE 0x0055c08c                      ; 0055bbb9
         ;   XREF to: 0055c08c (CONDITIONAL_JUMP)  ; LAB_0055c08c
     LEA EBX,[EBX + EAX*0x2]             ; 0055bbbf
     SHL ECX,0x2                         ; 0055bbc2
     LEA EBP,[EBP + EAX*0x4]             ; 0055bbc5
-    MOV dword ptr [0x0061c314],ECX      ; 0055bbc9 | g_INT_0061c314
-    MOV dword ptr [0x0061c378],EBX      ; 0055bbcf | g_INT_PTR_0061c378
-    MOV dword ptr [0x0061c37c],EBP      ; 0055bbd5 | g_INT_PTR_0061c37c
-    CMP dword ptr [0x01c38b54],0x80     ; 0055bbdb | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x0061c314],ECX      ; 0055bbc9 | g_ScanlinePixelCount
+    MOV dword ptr [0x0061c378],EBX      ; 0055bbcf | g_CurrentScreenPtr
+    MOV dword ptr [0x0061c37c],EBP      ; 0055bbd5 | g_CurrentZBufferPtr
+    CMP dword ptr [0x01c38b54],0x80     ; 0055bbdb | g_RenderStateFlags
     JZ 0x0055c419                       ; 0055bbe5
         ;   XREF to: 0055c419 (CONDITIONAL_JUMP)  ; LAB_0055c419
-    CMP dword ptr [0x01c38b58],0x5      ; 0055bbeb | g_INT_01c38b58
+    CMP dword ptr [0x01c38b58],0x5      ; 0055bbeb | g_VertexPreprocessMode
     JNZ 0x0055bc64                      ; 0055bbf2
         ;   XREF to: 0055bc64 (CONDITIONAL_JUMP)  ; LAB_0055bc64
     MOV EAX,dword ptr [ESI + 0x18]      ; 0055bbf4
@@ -76,69 +76,69 @@ section .text
     SHLD EDX,EAX,0x18                   ; 0055bbfb
     SHL EAX,0x18                        ; 0055bbff
     IDIV EBX                            ; 0055bc02
-    MOV [0x0061c350],EAX                ; 0055bc04 | g_INT_0061c350
+    MOV [0x0061c350],EAX                ; 0055bc04 | g_StartTextureU
     MOV EAX,dword ptr [EDI + 0x18]      ; 0055bc09
     MOV EBX,dword ptr [EDI + 0x28]      ; 0055bc0c
     CDQ                                 ; 0055bc0f
     SHLD EDX,EAX,0x18                   ; 0055bc10
     SHL EAX,0x18                        ; 0055bc14
     IDIV EBX                            ; 0055bc17
-    SUB EAX,dword ptr [0x0061c350]      ; 0055bc19 | g_INT_0061c350
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc1f | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c780],EDX      ; 0055bc25 | g_INT_0061c780
+    SUB EAX,dword ptr [0x0061c350]      ; 0055bc19 | g_StartTextureU
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc1f | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c780],EDX      ; 0055bc25 | g_HardwareDeltaTextureU
     MOV EAX,dword ptr [ESI + 0x20]      ; 0055bc2b
     MOV EBX,dword ptr [ESI + 0x28]      ; 0055bc2e
     CDQ                                 ; 0055bc31
     SHLD EDX,EAX,0x18                   ; 0055bc32
     SHL EAX,0x18                        ; 0055bc36
     IDIV EBX                            ; 0055bc39
-    MOV [0x0061c354],EAX                ; 0055bc3b | g_INT_0061c354
+    MOV [0x0061c354],EAX                ; 0055bc3b | g_StartTextureV
     MOV EAX,dword ptr [EDI + 0x20]      ; 0055bc40
     MOV EBX,dword ptr [EDI + 0x28]      ; 0055bc43
     CDQ                                 ; 0055bc46
     SHLD EDX,EAX,0x18                   ; 0055bc47
     SHL EAX,0x18                        ; 0055bc4b
     IDIV EBX                            ; 0055bc4e
-    SUB EAX,dword ptr [0x0061c354]      ; 0055bc50 | g_INT_0061c354
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc56 | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c784],EDX      ; 0055bc5c | g_INT_0061c784
+    SUB EAX,dword ptr [0x0061c354]      ; 0055bc50 | g_StartTextureV
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc56 | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c784],EDX      ; 0055bc5c | g_HardwareDeltaTextureV
     JMP 0x0055bc98                      ; 0055bc62
         ;   XREF to: 0055bc98 (UNCONDITIONAL_JUMP)  ; LAB_0055bc98
     MOV EAX,dword ptr [EDI + 0x18]      ; 0055bc64
         ;   Label: LAB_0055bc64
     MOV EBX,dword ptr [ESI + 0x18]      ; 0055bc67
     SUB EAX,EBX                         ; 0055bc6a
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc6c | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c350],EBX      ; 0055bc72 | g_INT_0061c350
-    MOV dword ptr [0x0061c780],EDX      ; 0055bc78 | g_INT_0061c780
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc6c | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c350],EBX      ; 0055bc72 | g_StartTextureU
+    MOV dword ptr [0x0061c780],EDX      ; 0055bc78 | g_HardwareDeltaTextureU
     MOV EAX,dword ptr [EDI + 0x20]      ; 0055bc7e
     MOV EBX,dword ptr [ESI + 0x20]      ; 0055bc81
     SUB EAX,EBX                         ; 0055bc84
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc86 | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c354],EBX      ; 0055bc8c | g_INT_0061c354
-    MOV dword ptr [0x0061c784],EDX      ; 0055bc92 | g_INT_0061c784
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bc86 | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c354],EBX      ; 0055bc8c | g_StartTextureV
+    MOV dword ptr [0x0061c784],EDX      ; 0055bc92 | g_HardwareDeltaTextureV
     MOV EAX,dword ptr [EDI + 0x28]      ; 0055bc98
         ;   Label: LAB_0055bc98
     MOV EBX,dword ptr [ESI + 0x28]      ; 0055bc9b
     SUB EAX,EBX                         ; 0055bc9e
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bca0 | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c35c],EBX      ; 0055bca6 | g_INT_0061c35c
-    MOV dword ptr [0x0061c788],EDX      ; 0055bcac | g_INT_0061c788
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bca0 | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c35c],EBX      ; 0055bca6 | g_StartDepthW
+    MOV dword ptr [0x0061c788],EDX      ; 0055bcac | g_HardwareDeltaDepthZ
     MOV EAX,dword ptr [EDI + 0x30]      ; 0055bcb2
     MOV EBX,dword ptr [ESI + 0x30]      ; 0055bcb5
     SUB EAX,EBX                         ; 0055bcb8
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bcba | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c840],EBX      ; 0055bcc0 | g_INT_0061c840
-    MOV dword ptr [0x0061c848],EDX      ; 0055bcc6 | g_INT_0061c848
-    MOV EBP,dword ptr [0x0061c840]      ; 0055bccc | g_INT_0061c840
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bcba | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c840],EBX      ; 0055bcc0 | g_VertexAlphaStart
+    MOV dword ptr [0x0061c848],EDX      ; 0055bcc6 | g_VertexAlphaDelta
+    MOV EBP,dword ptr [0x0061c840]      ; 0055bccc | g_VertexAlphaStart
     PXOR MM7,MM7                        ; 0055bcd2
-    TEST dword ptr [0x01c38b54],0x200   ; 0055bcd5 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x200   ; 0055bcd5 | g_RenderStateFlags
     JNZ 0x0055bd14                      ; 0055bcdf
         ;   XREF to: 0055bd14 (CONDITIONAL_JUMP)  ; LAB_0055bd14
-    TEST dword ptr [0x01c38b54],0x4     ; 0055bce1 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x4     ; 0055bce1 | g_RenderStateFlags
     JNZ 0x0055bdd1                      ; 0055bceb
         ;   XREF to: 0055bdd1 (CONDITIONAL_JUMP)  ; LAB_0055bdd1
-    TEST dword ptr [0x01c38b54],0x10    ; 0055bcf1 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x10    ; 0055bcf1 | g_RenderStateFlags
     JNZ 0x0055be5d                      ; 0055bcfb
         ;   XREF to: 0055be5d (CONDITIONAL_JUMP)  ; LAB_0055be5d
     MOVQ MM5,qword ptr [0x0061d978]     ; 0055bd01 | g_QWORD_ARRAY_0061d180[255]
@@ -152,41 +152,41 @@ section .text
     SHR EAX,0x1                         ; 0055bd1a
     SHR EBX,0x1                         ; 0055bd1c
     SUB EAX,EBX                         ; 0055bd1e
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bd20 | g_UINT_ARRAY_01c35e70[1]
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bd20 | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 0055bd26
     AND EDX,0xffff                      ; 0055bd2c
-    MOV dword ptr [0x0061c800],EBX      ; 0055bd32 | g_QWORD_0061c800
-    MOV dword ptr [0x0061c820],EDX      ; 0055bd38 | g_QWORD_0061c820
+    MOV dword ptr [0x0061c800],EBX      ; 0055bd32 | g_VertexRedStart
+    MOV dword ptr [0x0061c820],EDX      ; 0055bd38 | g_VertexRedDelta
     MOV EAX,dword ptr [EDI + 0x38]      ; 0055bd3e
     MOV EBX,dword ptr [ESI + 0x38]      ; 0055bd41
     SHR EAX,0x1                         ; 0055bd44
     SHR EBX,0x1                         ; 0055bd46
     SUB EAX,EBX                         ; 0055bd48
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bd4a | g_UINT_ARRAY_01c35e70[1]
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bd4a | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 0055bd50
     AND EDX,0xffff                      ; 0055bd56
-    MOV dword ptr [0x0061c808],EBX      ; 0055bd5c | g_MMX_INTEGER_0061c808
-    MOV dword ptr [0x0061c828],EDX      ; 0055bd62 | g_MMX_INTEGER_0061c828
+    MOV dword ptr [0x0061c808],EBX      ; 0055bd5c | g_VertexGreenStart
+    MOV dword ptr [0x0061c828],EDX      ; 0055bd62 | g_VertexGreenDelta
     MOV EAX,dword ptr [EDI + 0x40]      ; 0055bd68
     MOV EBX,dword ptr [ESI + 0x40]      ; 0055bd6b
     SHR EAX,0x1                         ; 0055bd6e
     SHR EBX,0x1                         ; 0055bd70
     SUB EAX,EBX                         ; 0055bd72
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bd74 | g_UINT_ARRAY_01c35e70[1]
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055bd74 | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 0055bd7a
     AND EDX,0xffff                      ; 0055bd80
-    MOV dword ptr [0x0061c810],EBX      ; 0055bd86 | g_MMX_INTEGER_0061c810
-    MOV dword ptr [0x0061c830],EDX      ; 0055bd8c | g_MMX_INTEGER_0061c830
-    MOVQ MM5,qword ptr [0x0061c800]     ; 0055bd92 | g_QWORD_0061c800
-    MOVQ MM6,qword ptr [0x0061c820]     ; 0055bd99 | g_QWORD_0061c820
+    MOV dword ptr [0x0061c810],EBX      ; 0055bd86 | g_VertexBlueStart
+    MOV dword ptr [0x0061c830],EDX      ; 0055bd8c | g_VertexBlueDelta
+    MOVQ MM5,qword ptr [0x0061c800]     ; 0055bd92 | g_VertexRedStart
+    MOVQ MM6,qword ptr [0x0061c820]     ; 0055bd99 | g_VertexRedDelta
     PSLLQ MM5,0x10                      ; 0055bda0
     PSLLQ MM6,0x10                      ; 0055bda4
-    POR MM5,qword ptr [0x0061c808]      ; 0055bda8 | g_MMX_INTEGER_0061c808
-    POR MM6,qword ptr [0x0061c828]      ; 0055bdaf | g_MMX_INTEGER_0061c828
+    POR MM5,qword ptr [0x0061c808]      ; 0055bda8 | g_VertexGreenStart
+    POR MM6,qword ptr [0x0061c828]      ; 0055bdaf | g_VertexGreenDelta
     PSLLQ MM5,0x10                      ; 0055bdb6
     PSLLQ MM6,0x10                      ; 0055bdba
-    POR MM5,qword ptr [0x0061c810]      ; 0055bdbe | g_MMX_INTEGER_0061c810
-    POR MM6,qword ptr [0x0061c830]      ; 0055bdc5 | g_MMX_INTEGER_0061c830
+    POR MM5,qword ptr [0x0061c810]      ; 0055bdbe | g_VertexBlueStart
+    POR MM6,qword ptr [0x0061c830]      ; 0055bdc5 | g_VertexBlueDelta
     JMP 0x0055be87                      ; 0055bdcc
         ;   XREF to: 0055be87 (UNCONDITIONAL_JUMP)  ; LAB_0055be87
     MOV EAX,dword ptr [EDI + 0x10]      ; 0055bdd1
@@ -207,24 +207,24 @@ section .text
         ;   Label: LAB_0055bdfb
     SHL EBX,0x3                         ; 0055bdfe
     SUB EAX,EBX                         ; 0055be01
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055be03 | g_UINT_ARRAY_01c35e70[1]
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055be03 | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 0055be09
     AND EDX,0xffff                      ; 0055be0f
-    MOV dword ptr [0x0061c800],EBX      ; 0055be15 | g_QWORD_0061c800
-    MOV dword ptr [0x0061c820],EDX      ; 0055be1b | g_QWORD_0061c820
-    MOVQ MM5,qword ptr [0x0061c800]     ; 0055be21 | g_QWORD_0061c800
-    MOVQ MM6,qword ptr [0x0061c820]     ; 0055be28 | g_QWORD_0061c820
+    MOV dword ptr [0x0061c800],EBX      ; 0055be15 | g_VertexRedStart
+    MOV dword ptr [0x0061c820],EDX      ; 0055be1b | g_VertexRedDelta
+    MOVQ MM5,qword ptr [0x0061c800]     ; 0055be21 | g_VertexRedStart
+    MOVQ MM6,qword ptr [0x0061c820]     ; 0055be28 | g_VertexRedDelta
     PSLLQ MM5,0x10                      ; 0055be2f
     PSLLQ MM6,0x10                      ; 0055be33
-    POR MM5,qword ptr [0x0061c800]      ; 0055be37 | g_QWORD_0061c800
-    POR MM6,qword ptr [0x0061c820]      ; 0055be3e | g_QWORD_0061c820
+    POR MM5,qword ptr [0x0061c800]      ; 0055be37 | g_VertexRedStart
+    POR MM6,qword ptr [0x0061c820]      ; 0055be3e | g_VertexRedDelta
     PSLLQ MM5,0x10                      ; 0055be45
     PSLLQ MM6,0x10                      ; 0055be49
-    POR MM5,qword ptr [0x0061c800]      ; 0055be4d | g_QWORD_0061c800
-    POR MM6,qword ptr [0x0061c820]      ; 0055be54 | g_QWORD_0061c820
+    POR MM5,qword ptr [0x0061c800]      ; 0055be4d | g_VertexRedStart
+    POR MM6,qword ptr [0x0061c820]      ; 0055be54 | g_VertexRedDelta
     JMP 0x0055be87                      ; 0055be5b
         ;   XREF to: 0055be87 (UNCONDITIONAL_JUMP)  ; LAB_0055be87
-    MOV EAX,[0x01c35e64]                ; 0055be5d | g_INT_01c35e64
+    MOV EAX,[0x01c35e64]                ; 0055be5d | g_CurrentLightingValue
         ;   Label: LAB_0055be5d
     SUB EAX,0x100                       ; 0055be62
     SHR EAX,0x4                         ; 0055be67
@@ -238,72 +238,72 @@ section .text
     PXOR MM6,MM6                        ; 0055be82
     JMP 0x0055be87                      ; 0055be85
         ;   XREF to: 0055be87 (UNCONDITIONAL_JUMP)  ; LAB_0055be87
-    MOV ECX,dword ptr [0x0061c350]      ; 0055be87 | g_INT_0061c350
+    MOV ECX,dword ptr [0x0061c350]      ; 0055be87 | g_StartTextureU
         ;   Label: LAB_0055be87
-    MOV EDX,dword ptr [0x0061c354]      ; 0055be8d | g_INT_0061c354
-    MOV ESI,dword ptr [0x0061c35c]      ; 0055be93 | g_INT_0061c35c
+    MOV EDX,dword ptr [0x0061c354]      ; 0055be8d | g_StartTextureV
+    MOV ESI,dword ptr [0x0061c35c]      ; 0055be93 | g_StartDepthW
     MOV EDI,0x0                         ; 0055be99
-    CMP dword ptr [0x01c37774],0x0      ; 0055be9e | g_UCHAR_PTR_01c37774
+    CMP dword ptr [0x01c37774],0x0      ; 0055be9e | g_CurrentTextureOpacityData
     JNZ 0x0055beb7                      ; 0055bea5
         ;   XREF to: 0055beb7 (CONDITIONAL_JUMP)  ; LAB_0055beb7
-    TEST dword ptr [0x01c38b54],0x2     ; 0055bea7 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x2     ; 0055bea7 | g_RenderStateFlags
     JZ 0x0055c281                       ; 0055beb1
         ;   XREF to: 0055c281 (CONDITIONAL_JUMP)  ; LAB_0055c281
-    TEST dword ptr [0x01c38b54],0x100   ; 0055beb7 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x100   ; 0055beb7 | g_RenderStateFlags
         ;   Label: LAB_0055beb7
     JNZ 0x0055bed6                      ; 0055bec1
         ;   XREF to: 0055bed6 (CONDITIONAL_JUMP)  ; LAB_0055bed6
-    MOV EBP,dword ptr [0x006141d8]      ; 0055bec3 | g_INT_006141d8
+    MOV EBP,dword ptr [0x006141d8]      ; 0055bec3 | g_CurrentAlphaValue
     SHL EBP,0x8                         ; 0055bec9
-    MOV dword ptr [0x0061c848],0x0      ; 0055becc | g_INT_0061c848
-    CMP dword ptr [0x01c37774],0x0      ; 0055bed6 | g_UCHAR_PTR_01c37774
+    MOV dword ptr [0x0061c848],0x0      ; 0055becc | g_VertexAlphaDelta
+    CMP dword ptr [0x01c37774],0x0      ; 0055bed6 | g_CurrentTextureOpacityData
         ;   Label: LAB_0055bed6
     JNZ 0x0055c092                      ; 0055bedd
         ;   XREF to: 0055c092 (CONDITIONAL_JUMP)  ; LAB_0055c092
-    TEST dword ptr [0x01c38b54],0x40    ; 0055bee3 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x40    ; 0055bee3 | g_RenderStateFlags
         ;   Label: LAB_0055bee3
     JZ 0x0055beff                       ; 0055beed
         ;   XREF to: 0055beff (CONDITIONAL_JUMP)  ; LAB_0055beff
     LEA EAX,[EDI]                       ; 0055beef
-    ADD EAX,dword ptr [0x0061c37c]      ; 0055bef1 | g_INT_PTR_0061c37c
+    ADD EAX,dword ptr [0x0061c37c]      ; 0055bef1 | g_CurrentZBufferPtr
     CMP ESI,dword ptr [EAX]             ; 0055bef7
     JL 0x0055c054                       ; 0055bef9
         ;   XREF to: 0055c054 (CONDITIONAL_JUMP)  ; LAB_0055c054
     MOVD MM0,ECX                        ; 0055beff
         ;   Label: LAB_0055beff
     MOVD MM2,EDX                        ; 0055bf02
-    PSRLQ MM0,qword ptr [0x0061c868]    ; 0055bf05 | g_QWORD_0061c868
-    PSRLQ MM2,qword ptr [0x0061c888]    ; 0055bf0c | g_QWORD_0061c888
-    PAND MM0,qword ptr [0x0061c8a8]     ; 0055bf13 | g_QWORD_0061c8a8
-    PAND MM2,qword ptr [0x0061c8c8]     ; 0055bf1a | g_QWORD_0061c8c8
+    PSRLQ MM0,qword ptr [0x0061c868]    ; 0055bf05 | g_TextureShift1
+    PSRLQ MM2,qword ptr [0x0061c888]    ; 0055bf0c | g_TextureShift2
+    PAND MM0,qword ptr [0x0061c8a8]     ; 0055bf13 | g_TextureMask1
+    PAND MM2,qword ptr [0x0061c8c8]     ; 0055bf1a | g_TextureMask2
     PADDD MM0,MM2                       ; 0055bf21
     MOVD EBX,MM0                        ; 0055bf24
-    ADD EBX,dword ptr [0x01c37770]      ; 0055bf27 | g_UCHAR_PTR_01c37770
+    ADD EBX,dword ptr [0x01c37770]      ; 0055bf27 | g_CurrentTextureData
     MOVZX EAX,byte ptr [EBX]            ; 0055bf2d
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c35214] ; 0055bf30 | g_UINT_ARRAY_01c35214
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c35214] ; 0055bf30 | g_Hardware32BitPalette
     CMP EAX,0x0                         ; 0055bf37
     JZ 0x0055c054                       ; 0055bf3a
         ;   XREF to: 0055c054 (CONDITIONAL_JUMP)  ; LAB_0055c054
     MOVD MM0,EAX                        ; 0055bf40
     PUNPCKLBW MM0,MM7                   ; 0055bf43
     PXOR MM4,MM4                        ; 0055bf46
-    TEST dword ptr [0x01c38b54],0x20    ; 0055bf49 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x20    ; 0055bf49 | g_RenderStateFlags
     JZ 0x0055bf9e                       ; 0055bf53
         ;   XREF to: 0055bf9e (CONDITIONAL_JUMP)  ; LAB_0055bf9e
     MOV EBX,EDI                         ; 0055bf55
     SHR EBX,0x1                         ; 0055bf57
-    ADD EBX,dword ptr [0x0061c378]      ; 0055bf59 | g_INT_PTR_0061c378
+    ADD EBX,dword ptr [0x0061c378]      ; 0055bf59 | g_CurrentScreenPtr
     MOVZX EBX,word ptr [EBX]            ; 0055bf5f
     MOVD MM4,EBX                        ; 0055bf62
-    PAND MM4,qword ptr [0x0061c8e0]     ; 0055bf65 | g_MMX_INTEGER_0061c8e0
-    PSLLQ MM4,qword ptr [0x0061c970]    ; 0055bf6c | g_QWORD_0061c970
+    PAND MM4,qword ptr [0x0061c8e0]     ; 0055bf65 | g_BlueMask16
+    PSLLQ MM4,qword ptr [0x0061c970]    ; 0055bf6c | g_BlueBitShift
     MOVD MM2,EBX                        ; 0055bf73
-    PAND MM2,qword ptr [0x0061c8d8]     ; 0055bf76 | g_MMX_INTEGER_0061c8d8
-    PSLLQ MM2,qword ptr [0x0061c950]    ; 0055bf7d | g_QWORD_0061c950
+    PAND MM2,qword ptr [0x0061c8d8]     ; 0055bf76 | g_GreenMask16
+    PSLLQ MM2,qword ptr [0x0061c950]    ; 0055bf7d | g_GreenBlueDitherShift
     POR MM4,MM2                         ; 0055bf84
     MOVD MM2,EBX                        ; 0055bf87
-    PAND MM2,qword ptr [0x0061c8d0]     ; 0055bf8a | g_MMX_INTEGER_0061c8d0
-    PSLLQ MM2,qword ptr [0x0061c930]    ; 0055bf91 | g_QWORD_0061c930
+    PAND MM2,qword ptr [0x0061c8d0]     ; 0055bf8a | g_RedMask16
+    PSLLQ MM2,qword ptr [0x0061c930]    ; 0055bf91 | g_TotalDitherShift
     POR MM4,MM2                         ; 0055bf98
     PUNPCKLBW MM4,MM7                   ; 0055bf9b
     PSLLW MM0,0x4                       ; 0055bf9e
@@ -319,7 +319,7 @@ section .text
     PACKUSWB MM0,MM7                    ; 0055bfbf
     PXOR MM3,qword ptr [0x0061d978]     ; 0055bfc2 | g_QWORD_ARRAY_0061d180[255]
     PUNPCKLBW MM0,MM7                   ; 0055bfc9
-    CMP dword ptr [0x01c38b4c],0x0      ; 0055bfcc | g_INT_01c38b4c
+    CMP dword ptr [0x01c38b4c],0x0      ; 0055bfcc | g_BlendMode
     JNZ 0x0055bfe7                      ; 0055bfd3
         ;   XREF to: 0055bfe7 (CONDITIONAL_JUMP)  ; LAB_0055bfe7
     PMULLW MM4,MM3                      ; 0055bfd5
@@ -338,37 +338,37 @@ section .text
     MOV EBX,EDI                         ; 0055bff8
         ;   Label: LAB_0055bff8
     SHR EBX,0x1                         ; 0055bffa
-    ADD EBX,dword ptr [0x0061c378]      ; 0055bffc | g_INT_PTR_0061c378
+    ADD EBX,dword ptr [0x0061c378]      ; 0055bffc | g_CurrentScreenPtr
     MOVQ MM2,MM0                        ; 0055c002
     MOVQ MM4,MM0                        ; 0055c005
-    PAND MM0,qword ptr [0x0061c928]     ; 0055c008 | g_QWORD_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 0055c00f | g_QWORD_0061c908
-    PAND MM4,qword ptr [0x0061c8e8]     ; 0055c016 | g_QWORD_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 0055c01d | g_QWORD_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 0055c024 | g_QWORD_0061c950
-    PSRLQ MM4,qword ptr [0x0061c930]    ; 0055c02b | g_QWORD_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 0055c008 | g_BlueMask32
+    PAND MM2,qword ptr [0x0061c908]     ; 0055c00f | g_GreenMask32
+    PAND MM4,qword ptr [0x0061c8e8]     ; 0055c016 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 0055c01d | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 0055c024 | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x0061c930]    ; 0055c02b | g_TotalDitherShift
     POR MM0,MM2                         ; 0055c032
     POR MM0,MM4                         ; 0055c035
     MOVD EAX,MM0                        ; 0055c038
     MOV word ptr [EBX],AX               ; 0055c03b
-    TEST dword ptr [0x01c38b54],0x80    ; 0055c03e | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x80    ; 0055c03e | g_RenderStateFlags
     JZ 0x0055c054                       ; 0055c048
         ;   XREF to: 0055c054 (CONDITIONAL_JUMP)  ; LAB_0055c054
     MOV EAX,EDI                         ; 0055c04a
-    ADD EAX,dword ptr [0x0061c37c]      ; 0055c04c | g_INT_PTR_0061c37c
+    ADD EAX,dword ptr [0x0061c37c]      ; 0055c04c | g_CurrentZBufferPtr
     MOV dword ptr [EAX],ESI             ; 0055c052
     ADD EDI,0x4                         ; 0055c054
         ;   Label: LAB_0055c054
-    CMP EDI,dword ptr [0x0061c314]      ; 0055c057 | g_INT_0061c314
+    CMP EDI,dword ptr [0x0061c314]      ; 0055c057 | g_ScanlinePixelCount
     JNC 0x0055c08c                      ; 0055c05d
         ;   XREF to: 0055c08c (CONDITIONAL_JUMP)  ; LAB_0055c08c
-    ADD ECX,dword ptr [0x0061c780]      ; 0055c05f | g_INT_0061c780
+    ADD ECX,dword ptr [0x0061c780]      ; 0055c05f | g_HardwareDeltaTextureU
     PADDW MM5,MM6                       ; 0055c065
-    ADD EDX,dword ptr [0x0061c784]      ; 0055c068 | g_INT_0061c784
+    ADD EDX,dword ptr [0x0061c784]      ; 0055c068 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 0055c06e
-    ADD ESI,dword ptr [0x0061c788]      ; 0055c071 | g_INT_0061c788
-    PCMPGTW MM5,qword ptr [0x0061c78c]  ; 0055c077 | g_DOUBLE_0061c78c
-    ADD EBP,dword ptr [0x0061c848]      ; 0055c07e | g_INT_0061c848
+    ADD ESI,dword ptr [0x0061c788]      ; 0055c071 | g_HardwareDeltaDepthZ
+    PCMPGTW MM5,qword ptr [0x0061c78c]  ; 0055c077 | g_BufferFillZeroQword
+    ADD EBP,dword ptr [0x0061c848]      ; 0055c07e | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 0055c084
     JMP 0x0055bee3                      ; 0055c087
         ;   XREF to: 0055bee3 (UNCONDITIONAL_JUMP)  ; LAB_0055bee3
@@ -378,30 +378,30 @@ section .text
     POP EDI                             ; 0055c08f
     POP ESI                             ; 0055c090
     RET                                 ; 0055c091
-    TEST dword ptr [0x01c38b54],0x40    ; 0055c092 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x40    ; 0055c092 | g_RenderStateFlags
         ;   Label: LAB_0055c092
     JZ 0x0055c0ae                       ; 0055c09c
         ;   XREF to: 0055c0ae (CONDITIONAL_JUMP)  ; LAB_0055c0ae
     LEA EAX,[EDI]                       ; 0055c09e
-    ADD EAX,dword ptr [0x0061c37c]      ; 0055c0a0 | g_INT_PTR_0061c37c
+    ADD EAX,dword ptr [0x0061c37c]      ; 0055c0a0 | g_CurrentZBufferPtr
     CMP ESI,dword ptr [EAX]             ; 0055c0a6
     JL 0x0055c243                       ; 0055c0a8
         ;   XREF to: 0055c243 (CONDITIONAL_JUMP)  ; LAB_0055c243
     MOVD MM0,ECX                        ; 0055c0ae
         ;   Label: LAB_0055c0ae
     MOVD MM2,EDX                        ; 0055c0b1
-    PSRLQ MM0,qword ptr [0x0061c868]    ; 0055c0b4 | g_QWORD_0061c868
-    PSRLQ MM2,qword ptr [0x0061c888]    ; 0055c0bb | g_QWORD_0061c888
-    PAND MM0,qword ptr [0x0061c8a8]     ; 0055c0c2 | g_QWORD_0061c8a8
-    PAND MM2,qword ptr [0x0061c8c8]     ; 0055c0c9 | g_QWORD_0061c8c8
+    PSRLQ MM0,qword ptr [0x0061c868]    ; 0055c0b4 | g_TextureShift1
+    PSRLQ MM2,qword ptr [0x0061c888]    ; 0055c0bb | g_TextureShift2
+    PAND MM0,qword ptr [0x0061c8a8]     ; 0055c0c2 | g_TextureMask1
+    PAND MM2,qword ptr [0x0061c8c8]     ; 0055c0c9 | g_TextureMask2
     PADDD MM0,MM2                       ; 0055c0d0
     MOVD EBX,MM0                        ; 0055c0d3
-    ADD EBX,dword ptr [0x01c37770]      ; 0055c0d6 | g_UCHAR_PTR_01c37770
+    ADD EBX,dword ptr [0x01c37770]      ; 0055c0d6 | g_CurrentTextureData
     MOVZX EAX,byte ptr [EBX]            ; 0055c0dc
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c35214] ; 0055c0df | g_UINT_ARRAY_01c35214
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c35214] ; 0055c0df | g_Hardware32BitPalette
     PUNPCKLBW MM0,MM7                   ; 0055c0e7
-    SUB EBX,dword ptr [0x01c37770]      ; 0055c0ea | g_UCHAR_PTR_01c37770
-    ADD EBX,dword ptr [0x01c37774]      ; 0055c0f0 | g_UCHAR_PTR_01c37774
+    SUB EBX,dword ptr [0x01c37770]      ; 0055c0ea | g_CurrentTextureData
+    ADD EBX,dword ptr [0x01c37774]      ; 0055c0f0 | g_CurrentTextureOpacityData
     MOVZX EAX,byte ptr [EBX]            ; 0055c0f6
     TEST EAX,0xffffffff                 ; 0055c0f9
     JZ 0x0055c243                       ; 0055c0fe
@@ -415,18 +415,18 @@ section .text
     MOV EBX,EDI                         ; 0055c117
         ;   Label: LAB_0055c117
     SHR EBX,0x1                         ; 0055c119
-    ADD EBX,dword ptr [0x0061c378]      ; 0055c11b | g_INT_PTR_0061c378
+    ADD EBX,dword ptr [0x0061c378]      ; 0055c11b | g_CurrentScreenPtr
     MOVZX EBX,word ptr [EBX]            ; 0055c121
     MOVD MM4,EBX                        ; 0055c124
-    PAND MM4,qword ptr [0x0061c8e0]     ; 0055c127 | g_MMX_INTEGER_0061c8e0
-    PSLLQ MM4,qword ptr [0x0061c970]    ; 0055c12e | g_QWORD_0061c970
+    PAND MM4,qword ptr [0x0061c8e0]     ; 0055c127 | g_BlueMask16
+    PSLLQ MM4,qword ptr [0x0061c970]    ; 0055c12e | g_BlueBitShift
     MOVD MM2,EBX                        ; 0055c135
-    PAND MM2,qword ptr [0x0061c8d8]     ; 0055c138 | g_MMX_INTEGER_0061c8d8
-    PSLLQ MM2,qword ptr [0x0061c950]    ; 0055c13f | g_QWORD_0061c950
+    PAND MM2,qword ptr [0x0061c8d8]     ; 0055c138 | g_GreenMask16
+    PSLLQ MM2,qword ptr [0x0061c950]    ; 0055c13f | g_GreenBlueDitherShift
     POR MM4,MM2                         ; 0055c146
     MOVD MM2,EBX                        ; 0055c149
-    PAND MM2,qword ptr [0x0061c8d0]     ; 0055c14c | g_MMX_INTEGER_0061c8d0
-    PSLLQ MM2,qword ptr [0x0061c930]    ; 0055c153 | g_QWORD_0061c930
+    PAND MM2,qword ptr [0x0061c8d0]     ; 0055c14c | g_RedMask16
+    PSLLQ MM2,qword ptr [0x0061c930]    ; 0055c153 | g_TotalDitherShift
     POR MM4,MM2                         ; 0055c15a
     PUNPCKLBW MM4,MM7                   ; 0055c15d
     PSLLW MM0,0x4                       ; 0055c160
@@ -441,7 +441,7 @@ section .text
     PACKUSWB MM0,MM7                    ; 0055c182
     PXOR MM3,qword ptr [0x0061d978]     ; 0055c185 | g_QWORD_ARRAY_0061d180[255]
     PUNPCKLBW MM0,MM7                   ; 0055c18c
-    CMP dword ptr [0x01c38b4c],0x0      ; 0055c18f | g_INT_01c38b4c
+    CMP dword ptr [0x01c38b4c],0x0      ; 0055c18f | g_BlendMode
     JNZ 0x0055c1d6                      ; 0055c196
         ;   XREF to: 0055c1d6 (CONDITIONAL_JUMP)  ; LAB_0055c1d6
     PMULLW MM4,MM3                      ; 0055c198
@@ -455,7 +455,7 @@ section .text
         ;   Label: LAB_0055c1aa
     JL 0x0055c117                       ; 0055c1b0
         ;   XREF to: 0055c117 (CONDITIONAL_JUMP)  ; LAB_0055c117
-    CMP dword ptr [0x01c38b4c],0x0      ; 0055c1b6 | g_INT_01c38b4c
+    CMP dword ptr [0x01c38b4c],0x0      ; 0055c1b6 | g_BlendMode
     JNZ 0x0055c117                      ; 0055c1bd
         ;   XREF to: 0055c117 (CONDITIONAL_JUMP)  ; LAB_0055c117
     MOVQ MM3,MM5                        ; 0055c1c3
@@ -474,37 +474,37 @@ section .text
     MOV EBX,EDI                         ; 0055c1e7
         ;   Label: LAB_0055c1e7
     SHR EBX,0x1                         ; 0055c1e9
-    ADD EBX,dword ptr [0x0061c378]      ; 0055c1eb | g_INT_PTR_0061c378
+    ADD EBX,dword ptr [0x0061c378]      ; 0055c1eb | g_CurrentScreenPtr
     MOVQ MM2,MM0                        ; 0055c1f1
     MOVQ MM4,MM0                        ; 0055c1f4
-    PAND MM0,qword ptr [0x0061c928]     ; 0055c1f7 | g_QWORD_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 0055c1fe | g_QWORD_0061c908
-    PAND MM4,qword ptr [0x0061c8e8]     ; 0055c205 | g_QWORD_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 0055c20c | g_QWORD_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 0055c213 | g_QWORD_0061c950
-    PSRLQ MM4,qword ptr [0x0061c930]    ; 0055c21a | g_QWORD_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 0055c1f7 | g_BlueMask32
+    PAND MM2,qword ptr [0x0061c908]     ; 0055c1fe | g_GreenMask32
+    PAND MM4,qword ptr [0x0061c8e8]     ; 0055c205 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 0055c20c | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 0055c213 | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x0061c930]    ; 0055c21a | g_TotalDitherShift
     POR MM0,MM2                         ; 0055c221
     POR MM0,MM4                         ; 0055c224
     MOVD EAX,MM0                        ; 0055c227
     MOV word ptr [EBX],AX               ; 0055c22a
-    TEST dword ptr [0x01c38b54],0x80    ; 0055c22d | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x80    ; 0055c22d | g_RenderStateFlags
     JZ 0x0055c243                       ; 0055c237
         ;   XREF to: 0055c243 (CONDITIONAL_JUMP)  ; LAB_0055c243
     MOV EAX,EDI                         ; 0055c239
-    ADD EAX,dword ptr [0x0061c37c]      ; 0055c23b | g_INT_PTR_0061c37c
+    ADD EAX,dword ptr [0x0061c37c]      ; 0055c23b | g_CurrentZBufferPtr
     MOV dword ptr [EAX],ESI             ; 0055c241
     ADD EDI,0x4                         ; 0055c243
         ;   Label: LAB_0055c243
-    CMP EDI,dword ptr [0x0061c314]      ; 0055c246 | g_INT_0061c314
+    CMP EDI,dword ptr [0x0061c314]      ; 0055c246 | g_ScanlinePixelCount
     JNC 0x0055c27b                      ; 0055c24c
         ;   XREF to: 0055c27b (CONDITIONAL_JUMP)  ; LAB_0055c27b
-    ADD ECX,dword ptr [0x0061c780]      ; 0055c24e | g_INT_0061c780
+    ADD ECX,dword ptr [0x0061c780]      ; 0055c24e | g_HardwareDeltaTextureU
     PADDW MM5,MM6                       ; 0055c254
-    ADD EDX,dword ptr [0x0061c784]      ; 0055c257 | g_INT_0061c784
+    ADD EDX,dword ptr [0x0061c784]      ; 0055c257 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 0055c25d
-    ADD ESI,dword ptr [0x0061c788]      ; 0055c260 | g_INT_0061c788
-    PCMPGTW MM5,qword ptr [0x0061c78c]  ; 0055c266 | g_DOUBLE_0061c78c
-    ADD EBP,dword ptr [0x0061c848]      ; 0055c26d | g_INT_0061c848
+    ADD ESI,dword ptr [0x0061c788]      ; 0055c260 | g_HardwareDeltaDepthZ
+    PCMPGTW MM5,qword ptr [0x0061c78c]  ; 0055c266 | g_BufferFillZeroQword
+    ADD EBP,dword ptr [0x0061c848]      ; 0055c26d | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 0055c273
     JMP 0x0055c092                      ; 0055c276
         ;   XREF to: 0055c092 (UNCONDITIONAL_JUMP)  ; LAB_0055c092
@@ -514,38 +514,38 @@ section .text
     POP EDI                             ; 0055c27e
     POP ESI                             ; 0055c27f
     RET                                 ; 0055c280
-    MOVQ MM1,qword ptr [0x01c38b5c]     ; 0055c281 | g_ULONG_01c38b5c
+    MOVQ MM1,qword ptr [0x01c38b5c]     ; 0055c281 | g_SolidColorMode
         ;   Label: LAB_0055c281
     PUNPCKLBW MM1,MM7                   ; 0055c288
-    TEST dword ptr [0x01c38b54],0x8     ; 0055c28b | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x8     ; 0055c28b | g_RenderStateFlags
     JNZ 0x0055c2a6                      ; 0055c295
         ;   XREF to: 0055c2a6 (CONDITIONAL_JUMP)  ; LAB_0055c2a6
     MOV EBP,0x0                         ; 0055c297
-    MOV dword ptr [0x0061c848],0x0      ; 0055c29c | g_INT_0061c848
-    TEST dword ptr [0x01c38b54],0x40    ; 0055c2a6 | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x0061c848],0x0      ; 0055c29c | g_VertexAlphaDelta
+    TEST dword ptr [0x01c38b54],0x40    ; 0055c2a6 | g_RenderStateFlags
         ;   Label: LAB_0055c2a6
     JZ 0x0055c2c2                       ; 0055c2b0
         ;   XREF to: 0055c2c2 (CONDITIONAL_JUMP)  ; LAB_0055c2c2
     LEA EAX,[EDI]                       ; 0055c2b2
-    ADD EAX,dword ptr [0x0061c37c]      ; 0055c2b4 | g_INT_PTR_0061c37c
+    ADD EAX,dword ptr [0x0061c37c]      ; 0055c2b4 | g_CurrentZBufferPtr
     CMP ESI,dword ptr [EAX]             ; 0055c2ba
     JL 0x0055c3b3                       ; 0055c2bc
         ;   XREF to: 0055c3b3 (CONDITIONAL_JUMP)  ; LAB_0055c3b3
-    TEST dword ptr [0x01c38b54],0x1     ; 0055c2c2 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x1     ; 0055c2c2 | g_RenderStateFlags
         ;   Label: LAB_0055c2c2
     JZ 0x0055c3f5                       ; 0055c2cc
         ;   XREF to: 0055c3f5 (CONDITIONAL_JUMP)  ; LAB_0055c3f5
     MOVD MM0,ECX                        ; 0055c2d2
     MOVD MM2,EDX                        ; 0055c2d5
-    PSRLQ MM0,qword ptr [0x0061c868]    ; 0055c2d8 | g_QWORD_0061c868
-    PSRLQ MM2,qword ptr [0x0061c888]    ; 0055c2df | g_QWORD_0061c888
-    PAND MM0,qword ptr [0x0061c8a8]     ; 0055c2e6 | g_QWORD_0061c8a8
-    PAND MM2,qword ptr [0x0061c8c8]     ; 0055c2ed | g_QWORD_0061c8c8
+    PSRLQ MM0,qword ptr [0x0061c868]    ; 0055c2d8 | g_TextureShift1
+    PSRLQ MM2,qword ptr [0x0061c888]    ; 0055c2df | g_TextureShift2
+    PAND MM0,qword ptr [0x0061c8a8]     ; 0055c2e6 | g_TextureMask1
+    PAND MM2,qword ptr [0x0061c8c8]     ; 0055c2ed | g_TextureMask2
     PADDD MM0,MM2                       ; 0055c2f4
     MOVD EBX,MM0                        ; 0055c2f7
-    ADD EBX,dword ptr [0x01c37770]      ; 0055c2fa | g_UCHAR_PTR_01c37770
+    ADD EBX,dword ptr [0x01c37770]      ; 0055c2fa | g_CurrentTextureData
     MOVZX EAX,byte ptr [EBX]            ; 0055c300
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c35214] ; 0055c303 | g_UINT_ARRAY_01c35214
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c35214] ; 0055c303 | g_Hardware32BitPalette
     MOVQ MM3,MM5                        ; 0055c30b
         ;   Label: LAB_0055c30b
     PUNPCKLBW MM0,MM7                   ; 0055c30e
@@ -553,7 +553,7 @@ section .text
     PSLLW MM0,0x4                       ; 0055c315
     PMULHW MM0,MM3                      ; 0055c319
     PACKUSWB MM0,MM7                    ; 0055c31c
-    TEST dword ptr [0x01c38b54],0x8     ; 0055c31f | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x8     ; 0055c31f | g_RenderStateFlags
     JZ 0x0055c358                       ; 0055c329
         ;   XREF to: 0055c358 (CONDITIONAL_JUMP)  ; LAB_0055c358
     MOV EAX,EBP                         ; 0055c32b
@@ -571,48 +571,48 @@ section .text
     MOV EBX,EDI                         ; 0055c358
         ;   Label: LAB_0055c358
     SHR EBX,0x1                         ; 0055c35a
-    ADD EBX,dword ptr [0x0061c378]      ; 0055c35c | g_INT_PTR_0061c378
+    ADD EBX,dword ptr [0x0061c378]      ; 0055c35c | g_CurrentScreenPtr
     MOVQ MM2,MM0                        ; 0055c362
     MOVQ MM4,MM0                        ; 0055c365
-    PAND MM0,qword ptr [0x0061c928]     ; 0055c368 | g_QWORD_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 0055c36f | g_QWORD_0061c908
-    PAND MM4,qword ptr [0x0061c8e8]     ; 0055c376 | g_QWORD_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 0055c37d | g_QWORD_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 0055c384 | g_QWORD_0061c950
-    PSRLQ MM4,qword ptr [0x0061c930]    ; 0055c38b | g_QWORD_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 0055c368 | g_BlueMask32
+    PAND MM2,qword ptr [0x0061c908]     ; 0055c36f | g_GreenMask32
+    PAND MM4,qword ptr [0x0061c8e8]     ; 0055c376 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 0055c37d | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 0055c384 | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x0061c930]    ; 0055c38b | g_TotalDitherShift
     POR MM0,MM2                         ; 0055c392
     POR MM0,MM4                         ; 0055c395
     MOVD EAX,MM0                        ; 0055c398
     MOV word ptr [EBX],AX               ; 0055c39b
-    TEST dword ptr [0x01c38b54],0x80    ; 0055c39e | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x80    ; 0055c39e | g_RenderStateFlags
     JZ 0x0055c3b3                       ; 0055c3a8
         ;   XREF to: 0055c3b3 (CONDITIONAL_JUMP)  ; LAB_0055c3b3
-    MOV EAX,[0x0061c37c]                ; 0055c3aa | g_INT_PTR_0061c37c
+    MOV EAX,[0x0061c37c]                ; 0055c3aa | g_CurrentZBufferPtr
     ADD EAX,EDI                         ; 0055c3af
     MOV dword ptr [EAX],ESI             ; 0055c3b1
     ADD EDI,0x4                         ; 0055c3b3
         ;   Label: LAB_0055c3b3
-    CMP EDI,dword ptr [0x0061c314]      ; 0055c3b6 | g_INT_0061c314
+    CMP EDI,dword ptr [0x0061c314]      ; 0055c3b6 | g_ScanlinePixelCount
     JNC 0x0055c08c                      ; 0055c3bc
         ;   XREF to: 0055c08c (CONDITIONAL_JUMP)  ; LAB_0055c08c
-    ADD ECX,dword ptr [0x0061c780]      ; 0055c3c2 | g_INT_0061c780
+    ADD ECX,dword ptr [0x0061c780]      ; 0055c3c2 | g_HardwareDeltaTextureU
     PADDW MM5,MM6                       ; 0055c3c8
-    ADD EDX,dword ptr [0x0061c784]      ; 0055c3cb | g_INT_0061c784
+    ADD EDX,dword ptr [0x0061c784]      ; 0055c3cb | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 0055c3d1
-    ADD ESI,dword ptr [0x0061c788]      ; 0055c3d4 | g_INT_0061c788
-    PCMPGTW MM5,qword ptr [0x0061c78c]  ; 0055c3da | g_DOUBLE_0061c78c
-    ADD EBP,dword ptr [0x0061c848]      ; 0055c3e1 | g_INT_0061c848
+    ADD ESI,dword ptr [0x0061c788]      ; 0055c3d4 | g_HardwareDeltaDepthZ
+    PCMPGTW MM5,qword ptr [0x0061c78c]  ; 0055c3da | g_BufferFillZeroQword
+    ADD EBP,dword ptr [0x0061c848]      ; 0055c3e1 | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 0055c3e7
     JMP 0x0055c2a6                      ; 0055c3ea
         ;   XREF to: 0055c2a6 (UNCONDITIONAL_JUMP)  ; LAB_0055c2a6
-    TEST dword ptr [0x01c38b54],0x200   ; 0055c3f5 | g_BIT_INTEGER32_01c38b54
+    TEST dword ptr [0x01c38b54],0x200   ; 0055c3f5 | g_RenderStateFlags
         ;   Label: LAB_0055c3f5
     JNZ 0x0055c40d                      ; 0055c3ff
         ;   XREF to: 0055c40d (CONDITIONAL_JUMP)  ; LAB_0055c40d
     MOVD MM0,dword ptr [0x01c35e60]     ; 0055c401 | g_INT_01c35e60
     JMP 0x0055c30b                      ; 0055c408
         ;   XREF to: 0055c30b (UNCONDITIONAL_JUMP)  ; LAB_0055c30b
-    MOVD MM0,dword ptr [0x0061c978]     ; 0055c40d | g_INT_0061c978
+    MOVD MM0,dword ptr [0x0061c978]     ; 0055c40d | g_SpecialColor
         ;   Label: LAB_0055c40d
     JMP 0x0055c30b                      ; 0055c414
         ;   XREF to: 0055c30b (UNCONDITIONAL_JUMP)  ; LAB_0055c30b
@@ -620,13 +620,13 @@ section .text
         ;   Label: LAB_0055c419
     MOV EBX,dword ptr [ESI + 0x28]      ; 0055c41c
     SUB EAX,EBX                         ; 0055c41f
-    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055c421 | g_UINT_ARRAY_01c35e70[1]
-    MOV dword ptr [0x0061c35c],EBX      ; 0055c427 | g_INT_0061c35c
-    MOV dword ptr [0x0061c788],EDX      ; 0055c42d | g_INT_0061c788
-    MOV EAX,[0x0061c35c]                ; 0055c433 | g_INT_0061c35c
-    MOV EBX,dword ptr [0x0061c788]      ; 0055c438 | g_INT_0061c788
-    MOV ESI,dword ptr [0x0061c37c]      ; 0055c43e | g_INT_PTR_0061c37c
-    MOV ECX,dword ptr [0x0061c314]      ; 0055c444 | g_INT_0061c314
+    IMUL dword ptr [ECX + 0x1c35e74]    ; 0055c421 | g_ReciprocalLookupTable[1]
+    MOV dword ptr [0x0061c35c],EBX      ; 0055c427 | g_StartDepthW
+    MOV dword ptr [0x0061c788],EDX      ; 0055c42d | g_HardwareDeltaDepthZ
+    MOV EAX,[0x0061c35c]                ; 0055c433 | g_StartDepthW
+    MOV EBX,dword ptr [0x0061c788]      ; 0055c438 | g_HardwareDeltaDepthZ
+    MOV ESI,dword ptr [0x0061c37c]      ; 0055c43e | g_CurrentZBufferPtr
+    MOV ECX,dword ptr [0x0061c314]      ; 0055c444 | g_ScanlinePixelCount
     MOV dword ptr [ESI],EAX             ; 0055c44a
         ;   Label: LAB_0055c44a
     ADD EAX,EBX                         ; 0055c44c

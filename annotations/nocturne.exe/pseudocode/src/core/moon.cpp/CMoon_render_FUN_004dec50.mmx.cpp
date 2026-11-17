@@ -70,7 +70,7 @@ __asm {
         mov EAX,[g_CDemonSetPtr]
         mov dword ptr [EAX + 0x15aa8c],0xffffb7bc
         mov dword ptr [EAX + 0x15aa90],0xffffb7bc
-        mov EDX,dword ptr [g_INT_005bb210]
+        mov EDX,dword ptr [g_MoonBatsEnabled]
         mov dword ptr [EAX + 0x15aa94],0x4844
         add ESP,0x10
         mov dword ptr [EAX + 0x15aa98],0x2000
@@ -169,11 +169,11 @@ __asm {
         push 0x1ccdc50
         mov dword ptr [EAX + 0x15aa88],0x0
         call engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0
-        mov EAX,[g_INT_01ccdebc]
+        mov EAX,[g_MoonCloudScrollX]
         add ESP,0x4
         sar EAX,0x10
         mov dword ptr [EBP + -0x20],EAX
-        mov EAX,[g_INT_01ccdec0]
+        mov EAX,[g_MoonCloudScrollY]
         sar EAX,0x10
         mov dword ptr [EBP + -0x14],EAX
         mov EAX,[g_MoonCloudTexture]
@@ -239,7 +239,7 @@ __asm {
     LAB_004defd0:
         push 0x1
         call engine_3d_c_setBlendMode_FUN_004083c0
-        fld float ptr [g_FLOAT_01ccdec4]
+        fld float ptr [g_MoonAnimationTimer]
         call crt_math_c_round_FUN_00563a30
         fistp dword ptr [EBP + -0xc]
         mov ESI,dword ptr [EBP + -0xc]

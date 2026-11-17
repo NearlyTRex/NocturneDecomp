@@ -5,9 +5,9 @@
 // =============================================================================
 
 // int[240]
-int g_INT_ARRAY_0146b290[240] = {};
-int g_INT_ARRAY_0146b650[240] = {};
+int g_CoronaLeftExtent[240] = {};
+int g_CoronaRightExtent[240] = {};
 
 // int[240][320]
-int g_INT_ARRAY_ARRAY_0146ba10[240][320] = {};
+int g_CoronaDepthBuffer[240][320] = {};
 

@@ -22,9 +22,9 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   int g_INT_005c1664 = 0x1
-;   uint g_UINT_01cea3f8
-;   int g_INT_01cea3fc
+;   int g_ForceMessagePump = 0x1
+;   uint g_CurrentGameTime
+;   int g_ConnectionStatus
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440
@@ -106,7 +106,7 @@ section .text
     PUSH EBX                            ; 004e9b27
     CALL core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440 ; 004e9b28
         ;   XREF to: 004eb440 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440(CNetGame * this_ptr, SNetworkAddr * addr, char * name, int hero_number, ...)
-    MOV EDI,dword ptr [0x01cea3f8]      ; 004e9b2d | g_UINT_01cea3f8
+    MOV EDI,dword ptr [0x01cea3f8]      ; 004e9b2d | g_CurrentGameTime
     ADD ESP,0x14                        ; 004e9b33
     MOV dword ptr [EBX],0x2             ; 004e9b36
     MOV EDX,dword ptr [0x005b6d50]      ; 004e9b3c | g_CEditorToolsPtr
@@ -116,20 +116,20 @@ section .text
     XOR EAX,EAX                         ; 004e9b54
     PUSH EDX                            ; 004e9b56
     SUB EDI,0x50000                     ; 004e9b57
-    MOV [0x01cea3fc],EAX                ; 004e9b5d | g_INT_01cea3fc
+    MOV [0x01cea3fc],EAX                ; 004e9b5d | g_ConnectionStatus
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9b62
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
-    MOV EAX,[0x005c1664]                ; 004e9b67 | g_INT_005c1664
+    MOV EAX,[0x005c1664]                ; 004e9b67 | g_ForceMessagePump
     ADD ESP,0x8                         ; 004e9b6c
     XOR ECX,ECX                         ; 004e9b6f
     MOV dword ptr [ESP + 0x44],EAX      ; 004e9b71
     MOV EAX,dword ptr [EBX + 0x110]     ; 004e9b75
-    MOV dword ptr [0x005c1664],ECX      ; 004e9b7b | g_INT_005c1664
+    MOV dword ptr [0x005c1664],ECX      ; 004e9b7b | g_ForceMessagePump
     TEST EAX,EAX                        ; 004e9b81
     JL 0x004e9c99                       ; 004e9b83
         ;   XREF to: 004e9c99 (CONDITIONAL_JUMP)  ; LAB_004e9c99
     MOV dword ptr [ESP + 0x48],ESI      ; 004e9b89
-    MOV EAX,[0x01cea3f8]                ; 004e9b8d | g_UINT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004e9b8d | g_CurrentGameTime
         ;   Label: LAB_004e9b8d
     SUB EAX,EDI                         ; 004e9b92
     MOV dword ptr [ESP + 0x40],EAX      ; 004e9b94
@@ -198,7 +198,7 @@ section .text
     PUSH EBX                            ; 004e9c3b
     CALL core_netgame.cpp_CNetGame_send_FUN_004eb350 ; 004e9c3c
         ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_004eb350(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
-    MOV EDI,dword ptr [0x01cea3f8]      ; 004e9c41 | g_UINT_01cea3f8
+    MOV EDI,dword ptr [0x01cea3f8]      ; 004e9c41 | g_CurrentGameTime
     ADD ESP,0xc                         ; 004e9c47
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004e9c4a
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
@@ -206,7 +206,7 @@ section .text
     PUSH EBX                            ; 004e9c4f
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004e9c50
         ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
-    MOV EAX,[0x01cea3fc]                ; 004e9c55 | g_INT_01cea3fc
+    MOV EAX,[0x01cea3fc]                ; 004e9c55 | g_ConnectionStatus
     ADD ESP,0x4                         ; 004e9c5a
     CMP EAX,0x1                         ; 004e9c5d
     JZ 0x004e9d31                       ; 004e9c60
@@ -311,7 +311,7 @@ section .text
         ;   XREF to: 004e9c74 (UNCONDITIONAL_JUMP)  ; LAB_004e9c74
     MOV EAX,dword ptr [ESP + 0x44]      ; 004e9d31
         ;   Label: LAB_004e9d31
-    MOV [0x005c1664],EAX                ; 004e9d35 | g_INT_005c1664
+    MOV [0x005c1664],EAX                ; 004e9d35 | g_ForceMessagePump
     MOV EAX,0x1                         ; 004e9d3a
     MOV ESP,EBP                         ; 004e9d3f
     POP EBP                             ; 004e9d41

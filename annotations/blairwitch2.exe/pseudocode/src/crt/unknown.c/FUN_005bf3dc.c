@@ -40,7 +40,7 @@ uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint para
     return uVar2;
   }
   uVar2 = (param_2 & 0x7fffffff) >> 0x1b;
-  if (g_BYTE_ARRAY_006216c0[uVar2] != 0) {
+  if (g_IEEE754ExponentClassTable[uVar2] != 0) {
     if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {
       if ((param_6 & 0x7fff) != 1) {
         return param_6 & 0x7fff;

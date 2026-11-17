@@ -23,7 +23,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_processDamage_FUN_00561330(CShadowsc *t
        ((EVar1 == DAMAGE_TYPE_ATTACK_GAS ||
         ((EVar1 == DAMAGE_TYPE_ATTACK_ELECTROCUTE || (EVar1 == DAMAGE_TYPE_PIERCING)))))) {
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                (g_CEventList_PTR_0061b4d0,"ShotShadowWithLead");
+                (g_CEventListPtr,"ShotShadowWithLead");
       damage_info->damage_amount = 0.0;
       return;
     }

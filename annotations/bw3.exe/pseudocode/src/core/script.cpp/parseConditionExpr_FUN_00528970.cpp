@@ -13,8 +13,7 @@ char * __cdecl core_script_cpp_parseConditionExpr_FUN_00528970(char **cursor,cha
   
   pcVar1 = core_script_cpp_parseArgument_FUN_005288c0(cursor,out_buffer,100);
   if ((pcVar1 == (char *)0x0) && (g_INT_01ed6808 != 0)) {
-    pcVar1 = core_event_cpp_CEventList_validateCondition_FUN_00491b00
-                       (g_CEventList_PTR_005fba60,out_buffer);
+    pcVar1 = core_event_cpp_CEventList_validateCondition_FUN_00491b00(g_CEventListPtr,out_buffer);
     return pcVar1;
   }
   return pcVar1;

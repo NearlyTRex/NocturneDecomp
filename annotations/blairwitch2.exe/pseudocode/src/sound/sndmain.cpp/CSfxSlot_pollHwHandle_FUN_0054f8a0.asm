@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Killing_looped_sfx_s_whi_005e88a4
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   CSoundDevice* g_CSoundDevice_PTR_02648e80
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -34,7 +34,7 @@ section .text
     CMP dword ptr [EBX + 0x60],0x0      ; 0054f8a6
     JZ 0x0054f921                       ; 0054f8aa
         ;   XREF to: 0054f921 (CONDITIONAL_JUMP)  ; LAB_0054f921
-    CMP dword ptr [0x02648e80],0x0      ; 0054f8b0 | g_CSoundDevice_PTR_02648e80
+    CMP dword ptr [0x02648e80],0x0      ; 0054f8b0 | g_CSoundDevicePtr
     JZ 0x0054f918                       ; 0054f8b7
         ;   XREF to: 0054f918 (CONDITIONAL_JUMP)  ; LAB_0054f918
     CMP dword ptr [EBX + 0x68],0x0      ; 0054f8b9
@@ -52,7 +52,7 @@ section .text
     POP EDI                             ; 0054f8e3
     PUSH EBX                            ; 0054f8e4
         ;   Label: LAB_0054f8e4
-    MOV EAX,[0x02648e80]                ; 0054f8e5 | g_CSoundDevice_PTR_02648e80
+    MOV EAX,[0x02648e80]                ; 0054f8e5 | g_CSoundDevicePtr
     PUSH EAX                            ; 0054f8ea
     MOV EDX,dword ptr [EAX]             ; 0054f8eb
     CALL dword ptr [EDX + 0x54]         ; 0054f8ed

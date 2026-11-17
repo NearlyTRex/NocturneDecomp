@@ -27,7 +27,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40(CDem
   ushort *local_18;
   ushort *local_14;
   
-  g_INT_01b4b6b4 = 0;
+  g_NoiseTableIndex = 0;
   iVar7 = 0;
   do {
     uVar4 = rand();
@@ -40,7 +40,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40(CDem
     iVar6 = 0;
     do {
       iVar5 = g_INT_005fba18 * g_INT_005fba20 >> 0x1f;
-      puVar1 = (uint *)((int)g_ARRAY_PTR_01c5faec + iVar6);
+      puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);
       iVar6 = iVar6 + 4;
       iVar7 = iVar7 + 1;
       memset
@@ -59,7 +59,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40(CDem
         }
         iVar7 = iVar7 + screen_y;
         if ((-1 < iVar7) && (iVar7 < g_INT_005fba1c)) {
-          puVar8 = (uint *)(g_ARRAY_PTR_01c5faec[iVar7] + screen_x * 4);
+          puVar8 = (uint *)(g_ScreenBufferArray[iVar7] + screen_x * 4);
           local_18 = this_ptr->shadow_depth_buffer + local_30 * this_ptr->shadow_map_width;
           local_24 = 0;
           local_20 = 0;
@@ -67,11 +67,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40(CDem
             do {
               iVar7 = g_INT_005fba18;
               if (*local_18 != 0) {
-                piVar2 = g_INT_ARRAY_01b4b6b8 + g_INT_01b4b6b4;
-                g_INT_01b4b6b4 = g_INT_01b4b6b4 + 1;
+                piVar2 = g_INT_ARRAY_01b4b6b8 + g_NoiseTableIndex;
+                g_NoiseTableIndex = g_NoiseTableIndex + 1;
                 uVar4 = (uint)(*local_18 >> 6) + *piVar2;
-                if (99 < g_INT_01b4b6b4) {
-                  g_INT_01b4b6b4 = 0;
+                if (99 < g_NoiseTableIndex) {
+                  g_NoiseTableIndex = 0;
                 }
                 if (0x7f < uVar4) {
                   uVar4 = 0x7f;
@@ -120,18 +120,18 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40(CDem
         }
         iVar7 = iVar7 + screen_y;
         if ((-1 < iVar7) && (iVar7 < g_INT_005fba1c)) {
-          puVar9 = (ushort *)(g_ARRAY_PTR_01c5faec[iVar7] + screen_x * 2);
+          puVar9 = (ushort *)(g_ScreenBufferArray[iVar7] + screen_x * 2);
           local_14 = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_28 = 0;
           local_1c = 0;
           if (0 < this_ptr->shadow_map_width) {
             do {
               if (*local_14 != 0) {
-                piVar2 = g_INT_ARRAY_01b4b6b8 + g_INT_01b4b6b4;
-                g_INT_01b4b6b4 = g_INT_01b4b6b4 + 1;
+                piVar2 = g_INT_ARRAY_01b4b6b8 + g_NoiseTableIndex;
+                g_NoiseTableIndex = g_NoiseTableIndex + 1;
                 uVar4 = (uint)(*local_14 >> 6) + *piVar2;
-                if (99 < g_INT_01b4b6b4) {
-                  g_INT_01b4b6b4 = 0;
+                if (99 < g_NoiseTableIndex) {
+                  g_NoiseTableIndex = 0;
                 }
                 if (0x7f < uVar4) {
                   uVar4 = 0x7f;

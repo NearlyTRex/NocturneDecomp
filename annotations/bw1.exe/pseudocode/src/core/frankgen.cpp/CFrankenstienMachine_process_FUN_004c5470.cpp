@@ -103,7 +103,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004c5470(CFranke
           wind_influence = (CVector3f *)0x0;
           fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.5,1.5);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                    (g_CFireEffect_PTR_0061c010,&CStack_18,fVar2,wind_influence,iVar3);
+                    (g_CFireEffectPtr,&CStack_18,fVar2,wind_influence,iVar3);
           iVar4 = iVar4 + 1;
         } while (iVar4 < unaff_EBP);
       }
@@ -133,7 +133,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004c5470(CFranke
         CStack_4c.z = afStack_2c[0];
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (g_CFireEffect_PTR_0061c010,&CStack_4c,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_4c,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     }
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004c59f0
               (this_ptr,1.0,"frankx-bed1.wav");

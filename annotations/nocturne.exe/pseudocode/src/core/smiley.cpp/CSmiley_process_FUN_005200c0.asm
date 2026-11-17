@@ -67,7 +67,7 @@
 ;   double DOUBLE_0059209d = 32
 ;   float FLOAT_005a1f98 = 2.5
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
@@ -635,7 +635,7 @@ section .text
         ;   XREF to: 0052037b (UNCONDITIONAL_JUMP)  ; caseD_7
     PUSH 0x59207c                       ; 005206a7 | = "Capture"
         ;   Label: caseD_1
-    MOV EDI,dword ptr [0x005b7650]      ; 005206ac | g_CEventList_PTR_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 005206ac | g_CEventListPtr
     PUSH EDI                            ; 005206b2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005206b3
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -733,7 +733,7 @@ section .text
         ;   XREF to: 00520736 (UNCONDITIONAL_JUMP)  ; LAB_00520736
     PUSH 0x592084                       ; 005207b0 | = "Capture"
         ;   Label: caseD_2
-    MOV ECX,dword ptr [0x005b7650]      ; 005207b5 | g_CEventList_PTR_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 005207b5 | g_CEventListPtr
     PUSH ECX                            ; 005207bb
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005207bc
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

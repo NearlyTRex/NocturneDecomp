@@ -57,7 +57,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_0059b240(CTrigger *this_ptr,f
     if (iVar6 != 0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);
       iVar6 = 0;
-      if (0 < g_INT_01d06aa0) {
+      if (0 < g_HeroCount) {
         iVar10 = 0;
         do {
           iVar7 = core_trigger_cpp_CTrigger_containsActor_FUN_0059c090
@@ -69,7 +69,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_0059b240(CTrigger *this_ptr,f
           }
           iVar6 = iVar6 + 1;
           iVar10 = iVar10 + 4;
-        } while (iVar6 < g_INT_01d06aa0);
+        } while (iVar6 < g_HeroCount);
       }
     }
     break;
@@ -158,8 +158,8 @@ LAB_0059b2e5:
       fVar4 = (this_ptr->trigger_size).z;
       afStack_40[3] = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
       iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004b6ce0
-                            (g_CFireEffect_PTR_0061c010,&pCVar1->position,
-                             (float)(((int)afStack_40[3] >> 1) + g_INT_01cc804c),(CVector3f *)0x0,
+                            (g_CFireEffectPtr,&pCVar1->position,
+                             (float)(((int)afStack_40[3] >> 1) + g_FastSqrtMagic),(CVector3f *)0x0,
                              (float *)0x0);
     }
     break;
@@ -251,12 +251,10 @@ LAB_0059b85a:
 switchD_0059b2f9_default:
   this_ptr->prev_triggered = iStack_24;
   if (this_ptr->trigger_state == 0) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,this_ptr->off_event);
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,this_ptr->off_event);
     this_ptr->triggering_actor = (CDemonActor *)0x0;
     return;
   }
-  core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-            (g_CEventList_PTR_0061b4d0,this_ptr->on_event);
+  core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,this_ptr->on_event);
   return;
 }

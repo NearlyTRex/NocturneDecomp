@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic[40] g_SMRGLTextureBasic_ARRAY_00615b00
-;   undefined4 g_SMRGLTextureBasic_ARRAY_00615b00[1].base.type
-;   undefined4 g_SMRGLTextureBasic_ARRAY_00615b00[8].base.type
+;   SMRGLTextureBasic[40] g_FlameFrameTextures
+;   undefined4 g_FlameFrameTextures[1].base.type
+;   undefined4 g_FlameFrameTextures[8].base.type
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 0049f273
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049f274
     PUSH EDX                            ; 0049f278
-    MOV EBP,0x615b00                    ; 0049f279 | g_SMRGLTextureBasic_ARRAY_00615b00
+    MOV EBP,0x615b00                    ; 0049f279 | g_FlameFrameTextures
     XOR EDI,EDI                         ; 0049f27e
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408a80 ; 0049f280
         ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408a80(CDemonActor * this_ptr)
@@ -42,8 +42,8 @@ section .text
     IMUL EBX,EDI,0xc0                   ; 0049f28e
         ;   Label: LAB_0049f28e
     MOV ESI,EBP                         ; 0049f294
-    ADD EBX,0x615b00                    ; 0049f296 | g_SMRGLTextureBasic_ARRAY_00615b00
-    PUSH EBX                            ; 0049f29c | g_SMRGLTextureBasic_ARRAY_00615b00 | g_SMRGLTextureBasic_ARRAY_00615b00[1].base.type | g_SMRGLTextureBasic_ARRAY_00615b00[8].base.type
+    ADD EBX,0x615b00                    ; 0049f296 | g_FlameFrameTextures
+    PUSH EBX                            ; 0049f29c | g_FlameFrameTextures | g_FlameFrameTextures[1].base.type | g_FlameFrameTextures[8].base.type
         ;   Label: LAB_0049f29c
     MOV ECX,dword ptr [0x0060b280]      ; 0049f29d | g_CDemonRenderer_PTR_0060b280
     PUSH ECX                            ; 0049f2a3 | g_CDemonRenderer_01ba5c50

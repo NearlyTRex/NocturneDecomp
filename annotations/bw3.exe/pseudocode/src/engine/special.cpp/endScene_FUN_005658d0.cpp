@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_endScene_FUN_005658d0(void)
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6000)();
+  iVar1 = (*(code *)g_APIDLL_endScene)();
   return iVar1;
 }

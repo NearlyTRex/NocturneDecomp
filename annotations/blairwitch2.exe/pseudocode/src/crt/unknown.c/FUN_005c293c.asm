@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005c29d8 at 005c29ed
 ;
 ; Referenced Globals:
-;   ulong g_ULONG_0061f754 = 0xf4
+;   ulong g_RuntimeBufferSize = 0xf4
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_005b98d0
@@ -25,7 +25,7 @@ section .text
     TEST EBX,EBX                        ; 005c2941
     JNZ 0x005c296c                      ; 005c2943
         ;   XREF to: 005c296c (CONDITIONAL_JUMP)  ; LAB_005c296c
-    MOV EDX,dword ptr [0x0061f754]      ; 005c2945 | g_ULONG_0061f754
+    MOV EDX,dword ptr [0x0061f754]      ; 005c2945 | g_RuntimeBufferSize
     PUSH EDX                            ; 005c294b
     PUSH 0x1                            ; 005c294c
     CALL crt_memory.c_calloc_FUN_005b98d0 ; 005c294e
@@ -35,7 +35,7 @@ section .text
     TEST EAX,EAX                        ; 005c2958
     JZ 0x005c296c                       ; 005c295a
         ;   XREF to: 005c296c (CONDITIONAL_JUMP)  ; LAB_005c296c
-    MOV EDX,dword ptr [0x0061f754]      ; 005c295c | g_ULONG_0061f754
+    MOV EDX,dword ptr [0x0061f754]      ; 005c295c | g_RuntimeBufferSize
     MOV byte ptr [EAX + 0x52],0x1       ; 005c2962
     MOV dword ptr [EAX + 0xf0],EDX      ; 005c2966
     PUSH EBX                            ; 005c296c

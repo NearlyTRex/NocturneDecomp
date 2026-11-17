@@ -22,11 +22,11 @@ int FUN_005c6580(byte *param_1,int param_2)
   byte *pbVar9;
   SIZE_T n;
   
-  dest = g_CHAR_PTR_PTR_026807e4;
+  dest = g_EnvironmentBlock;
   do {
     pbVar8 = (byte *)*dest;
     if (pbVar8 == (byte *)0x0) {
-      return (int)g_CHAR_PTR_PTR_026807e4 - (int)dest >> 2;
+      return (int)g_EnvironmentBlock - (int)dest >> 2;
     }
     bVar3 = *param_1;
     pbVar9 = param_1;
@@ -35,7 +35,7 @@ int FUN_005c6580(byte *param_1,int param_2)
       iVar6 = toupper((uint)*pbVar9);
       if (iVar5 != iVar6) break;
       if (*pbVar8 == 0x3d) {
-        iVar5 = (int)dest - (int)g_CHAR_PTR_PTR_026807e4 >> 2;
+        iVar5 = (int)dest - (int)g_EnvironmentBlock >> 2;
         if (param_2 == 0) {
           return iVar5 + 1;
         }
@@ -47,13 +47,13 @@ int FUN_005c6580(byte *param_1,int param_2)
           dest = dest + 1;
           pcVar4 = *ppcVar1;
         }
-        if (g_CHAR_PTR_PTR_026807e0 != (char **)0x0) {
-          if (*(char *)(iVar5 + (int)g_CHAR_PTR_PTR_026807e0) != '\0') {
+        if (g_EnvironStringArea != (char **)0x0) {
+          if (*(char *)(iVar5 + (int)g_EnvironStringArea) != '\0') {
             debugFree(ptr);
           }
-          n = (int)dest - (int)g_CHAR_PTR_PTR_026807e4 >> 2;
-          memmove(dest,g_CHAR_PTR_PTR_026807e0,n);
-          g_CHAR_PTR_PTR_026807e0 = dest;
+          n = (int)dest - (int)g_EnvironmentBlock >> 2;
+          memmove(dest,g_EnvironStringArea,n);
+          g_EnvironStringArea = dest;
           if (iVar5 < (int)n) {
             puVar7 = (byte *)(iVar5 + (int)dest);
             do {

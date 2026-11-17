@@ -104,7 +104,7 @@ section .text
     ADD ESP,0x4                         ; 004e4585
     CALL core_mmx.c_detectCPUFeatures_FUN_004f7c30 ; 004e4588
         ;   XREF to: 004f7c30 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_004f7c30()
-    CMP dword ptr [0x01c6e2a0],0x0      ; 004e458d | g_INT_01c6e2a0
+    CMP dword ptr [0x01c6e2a0],0x0      ; 004e458d | g_MMXSupported
     JNZ 0x004e45c2                      ; 004e4594
         ;   XREF to: 004e45c2 (CONDITIONAL_JUMP)  ; LAB_004e45c2
     MOV EBX,0x5c6c08                    ; 004e4596 | = "..\\core\\main.c"
@@ -150,7 +150,7 @@ section .text
     CALL core_dfont.cpp_initFonts_FUN_00459f50 ; 004e4615
         ;   XREF to: 00459f50 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_00459f50()
         ;   Label: LAB_004e4615
-    CMP dword ptr [0x02d21b88],0x3c00000 ; 004e461a | g_INT_02d21b88
+    CMP dword ptr [0x02d21b88],0x3c00000 ; 004e461a | g_TotalPhysicalMemory
     JGE 0x004e4898                      ; 004e4624
         ;   XREF to: 004e4898 (CONDITIONAL_JUMP)  ; LAB_004e4898
     PUSH 0x5c6cdb                       ; 004e462a | = "Windows is reporting "
@@ -175,7 +175,7 @@ section .text
         ;   XREF to: 004e4641 (CONDITIONAL_JUMP)  ; LAB_004e4641
     POP EDI                             ; 004e4659
         ;   Label: LAB_004e4659
-    FILD dword ptr [0x02d21b88]         ; 004e465a | g_INT_02d21b88
+    FILD dword ptr [0x02d21b88]         ; 004e465a | g_TotalPhysicalMemory
     FMUL float ptr [0x005c6ea6]         ; 004e4660 | g_FLOAT_005c6ea6
     SUB ESP,0x8                         ; 004e4666
     FSTP double ptr [ESP]               ; 004e4669
@@ -442,7 +442,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 004e4890
         ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e4895
-    CMP dword ptr [0x02d21b8c],0xc800000 ; 004e4898 | g_INT_02d21b8c
+    CMP dword ptr [0x02d21b8c],0xc800000 ; 004e4898 | g_AvailableSwapSpace
         ;   Label: LAB_004e4898
     JGE 0x004e4a22                      ; 004e48a2
         ;   XREF to: 004e4a22 (CONDITIONAL_JUMP)  ; LAB_004e4a22
@@ -468,7 +468,7 @@ section .text
         ;   XREF to: 004e48ba (CONDITIONAL_JUMP)  ; LAB_004e48ba
     POP EDI                             ; 004e48d2
         ;   Label: LAB_004e48d2
-    FILD dword ptr [0x02d21b8c]         ; 004e48d3 | g_INT_02d21b8c
+    FILD dword ptr [0x02d21b8c]         ; 004e48d3 | g_AvailableSwapSpace
     FMUL float ptr [0x005c6ea6]         ; 004e48d9 | g_FLOAT_005c6ea6
     SUB ESP,0x8                         ; 004e48df
     FSTP double ptr [ESP]               ; 004e48e2
@@ -747,16 +747,16 @@ section .text
         ;   Label: LAB_004e4b5d
     MOV EAX,dword ptr [EBX + 0x5f18fc]  ; 004e4b64 | g_PlayerFilters | DAT_005f1900
     FILD dword ptr [ESP + 0x714]        ; 004e4b6a
-    MOV dword ptr [EAX],0x100           ; 004e4b71 | CDemonFilter_ARRAY_01548c00 | CDemonFilter_ARRAY_01548c00[1].size
+    MOV dword ptr [EAX],0x100           ; 004e4b71 | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     FMUL double ptr [0x005c6eb2]        ; 004e4b77 | g_DOUBLE_005c6eb2
     MOV EAX,dword ptr [EBX + 0x5f18fc]  ; 004e4b7d | g_PlayerFilters | DAT_005f1900
     PUSH 0x0                            ; 004e4b83
-    MOV dword ptr [EAX + 0x4],0x100     ; 004e4b85 | CDemonFilter_ARRAY_01548c00[0].count | CDemonFilter_ARRAY_01548c00[1].count
+    MOV dword ptr [EAX + 0x4],0x100     ; 004e4b85 | g_PlayerFilterPool[0].count | g_PlayerFilterPool[1].count
     FADD double ptr [0x005c6eb2]        ; 004e4b8c | g_DOUBLE_005c6eb2
     SUB ESP,0x4                         ; 004e4b92
     FSTP float ptr [ESP]                ; 004e4b95
     MOV EDX,dword ptr [EBX + 0x5f18fc]  ; 004e4b98 | g_PlayerFilters | DAT_005f1900
-    PUSH EDX                            ; 004e4b9e | CDemonFilter_ARRAY_01548c00 | CDemonFilter_ARRAY_01548c00[1].size
+    PUSH EDX                            ; 004e4b9e | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     ADD EBX,0x4                         ; 004e4b9f
     INC ESI                             ; 004e4ba2
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_00459b80 ; 004e4ba3

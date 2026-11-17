@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0x3]:1  local_3
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01b4d718
+;   CBitFont* g_CurrentFont
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_00401ed0
@@ -24,7 +24,7 @@ section .text
     SUB ESP,0x4                         ; 0045e2e0
         ;   Label: cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_0045e2e0
     MOV EAX,dword ptr [ESP + 0xc]       ; 0045e2e3
-    MOV EDX,dword ptr [0x01b4d718]      ; 0045e2e7 | g_CBitFont_PTR_01b4d718
+    MOV EDX,dword ptr [0x01b4d718]      ; 0045e2e7 | g_CurrentFont
     TEST EDX,EDX                        ; 0045e2ed
     JZ 0x0045e2ff                       ; 0045e2ef
         ;   XREF to: 0045e2ff (CONDITIONAL_JUMP)  ; LAB_0045e2ff

@@ -69,14 +69,13 @@ LAB_005148c3:
     local_18 = 0;
     do {
       iVar5 = 0;
-      puVar2 = *(uint **)((int)g_ARRAY_PTR_01c2a38c + local_18);
+      puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);
       if (0 < g_INT_006141b8) {
         do {
-          uVar3 = (*puVar2 >> (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) * g_INT_01c35824;
-          local_1c = (*puVar2 >> (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) * g_INT_01c35830 & 0xff
+          uVar3 = (*puVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor;
+          local_1c = (*puVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) * g_BlueScaleFactor & 0xff;
+          _fputc(g_RedScaleFactor * (*puVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) & 0xff,file)
           ;
-          _fputc(g_INT_01c35818 * (*puVar2 >> (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)) & 0xff
-                     ,file);
           _fputc(uVar3 & 0xff,file);
           puVar2 = puVar2 + 1;
           iVar5 = iVar5 + 1;

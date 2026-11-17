@@ -25,7 +25,7 @@ int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_004141c0(CBatman *this_p
   bVar3 = 0;
   iVar2 = 1;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,g_INT_ARRAY_007c37b8[0],&CStack_34);
+            (&(this_ptr->base).base.model,g_BatmanIndices[0],&CStack_34);
   CStack_4c.x = CStack_34.x;
   *(uint *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) =
        *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + 4);
@@ -38,7 +38,7 @@ int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_004141c0(CBatman *this_p
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-              (&(this_ptr->base).base.model,g_INT_ARRAY_007c37b8[9],&CStack_58);
+              (&(this_ptr->base).base.model,g_BatmanIndices[9],&CStack_58);
     CStack_1c.x = CStack_58.x;
     *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + 4) =
          *(uint *)((int)&CStack_58 + (uint)bVar3 * -8 + 4);
@@ -55,7 +55,7 @@ int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_004141c0(CBatman *this_p
     return iVar2;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,g_INT_ARRAY_007c37b8[0xb],&CStack_40);
+            (&(this_ptr->base).base.model,g_BatmanIndices[0xb],&CStack_40);
   pCVar1 = out_points_array + iVar2;
   CStack_28.x = CStack_40.x;
   *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =

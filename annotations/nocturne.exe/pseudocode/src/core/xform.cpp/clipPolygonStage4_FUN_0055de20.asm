@@ -10,10 +10,10 @@
 ;   undefined1* switchdataD_0055de10 = 0055de88
 ;   undefined1* PTR_caseD_1_0055de14 = 0055deed
 ;   undefined1* PTR_caseD_3_0055de1c = 0055decd
-;   int g_INT_00766c70
-;   int g_INT_02de313c
-;   undefined4 g_SRenderVertex_ARRAY_02de4340[0].projected_vertex.transformed_y
-;   undefined4 g_SRenderVertex_ARRAY_02de4340[0].projected_vertex.transformed_z
+;   int g_ClippedVertexCount
+;   int g_ClipVertexCountStage4
+;   undefined4 g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
+;   undefined4 g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
 ;
 ; Called Functions:
 ;   core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
@@ -29,7 +29,7 @@ section .text
     PUSH EBP                            ; 0055de23
     SUB ESP,0x4                         ; 0055de24
     XOR EDX,EDX                         ; 0055de27
-    MOV ECX,dword ptr [0x02de313c]      ; 0055de29 | g_INT_02de313c
+    MOV ECX,dword ptr [0x02de313c]      ; 0055de29 | g_ClipVertexCountStage4
     MOV dword ptr [ESP],EDX             ; 0055de2f
     TEST ECX,ECX                        ; 0055de32
     JLE 0x0055dee5                      ; 0055de34
@@ -37,7 +37,7 @@ section .text
     MOV EBX,0x2de4340                   ; 0055de3a
     MOV EAX,dword ptr [ESP]             ; 0055de3f
         ;   Label: LAB_0055de3f
-    MOV EBP,dword ptr [0x02de313c]      ; 0055de42 | g_INT_02de313c
+    MOV EBP,dword ptr [0x02de313c]      ; 0055de42 | g_ClipVertexCountStage4
     INC EAX                             ; 0055de48
     CMP EAX,EBP                         ; 0055de49
     JNZ 0x0055de4f                      ; 0055de4b
@@ -56,9 +56,9 @@ section .text
     JL 0x0055de6e                       ; 0055de67
         ;   XREF to: 0055de6e (CONDITIONAL_JUMP)  ; LAB_0055de6e
     MOV EAX,0x1                         ; 0055de69
-    MOV EDI,dword ptr [EBP + 0x8]       ; 0055de6e | g_SRenderVertex_ARRAY_02de4340[0].projected_vertex.transformed_z
+    MOV EDI,dword ptr [EBP + 0x8]       ; 0055de6e | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
         ;   Label: LAB_0055de6e
-    MOV ESI,dword ptr [EBP + 0x4]       ; 0055de71 | g_SRenderVertex_ARRAY_02de4340[0].projected_vertex.transformed_y
+    MOV ESI,dword ptr [EBP + 0x4]       ; 0055de71 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     NEG EDI                             ; 0055de74
     CMP EDI,ESI                         ; 0055de76
     JL 0x0055de7c                       ; 0055de78
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 0055decd (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x55de10]  ; 0055de81 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EDI,dword ptr [0x00766c70],0x30 ; 0055de88 | g_INT_00766c70
+    IMUL EDI,dword ptr [0x00766c70],0x30 ; 0055de88 | g_ClippedVertexCount
         ;   Label: caseD_0
     MOV ECX,0x30                        ; 0055de8f
     MOV ESI,EDX                         ; 0055de94
@@ -101,11 +101,11 @@ section .text
     JLE 0x0055dec7                      ; 0055dec4
         ;   XREF to: 0055dec7 (CONDITIONAL_JUMP)  ; LAB_0055dec7
     MOVSD ES:EDI,ESI                    ; 0055dec6
-    INC dword ptr [0x00766c70]          ; 0055dec7 | g_INT_00766c70
+    INC dword ptr [0x00766c70]          ; 0055dec7 | g_ClippedVertexCount
         ;   Label: LAB_0055dec7
     MOV ESI,dword ptr [ESP]             ; 0055decd
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x02de313c]      ; 0055ded0 | g_INT_02de313c
+    MOV EDI,dword ptr [0x02de313c]      ; 0055ded0 | g_ClipVertexCountStage4
     INC ESI                             ; 0055ded6
     ADD EBX,0x30                        ; 0055ded7
     MOV dword ptr [ESP],ESI             ; 0055deda
@@ -119,7 +119,7 @@ section .text
     POP ESI                             ; 0055deea
     POP EBX                             ; 0055deeb
     RET                                 ; 0055deec
-    IMUL EAX,dword ptr [0x00766c70],0x30 ; 0055deed | g_INT_00766c70
+    IMUL EAX,dword ptr [0x00766c70],0x30 ; 0055deed | g_ClippedVertexCount
         ;   Label: caseD_1
     ADD EAX,0x766c74                    ; 0055def4
     PUSH EAX                            ; 0055def9
@@ -127,13 +127,13 @@ section .text
     PUSH EBP                            ; 0055defb
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055defc
         ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
-    MOV ESI,dword ptr [0x00766c70]      ; 0055df01 | g_INT_00766c70
+    MOV ESI,dword ptr [0x00766c70]      ; 0055df01 | g_ClippedVertexCount
     INC ESI                             ; 0055df07
     ADD ESP,0xc                         ; 0055df08
-    MOV dword ptr [0x00766c70],ESI      ; 0055df0b | g_INT_00766c70
+    MOV dword ptr [0x00766c70],ESI      ; 0055df0b | g_ClippedVertexCount
     JMP 0x0055decd                      ; 0055df11
         ;   XREF to: 0055decd (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EDI,dword ptr [0x00766c70],0x30 ; 0055df13 | g_INT_00766c70
+    IMUL EDI,dword ptr [0x00766c70],0x30 ; 0055df13 | g_ClippedVertexCount
         ;   Label: caseD_2
     MOV ECX,0x30                        ; 0055df1a
     MOV ESI,EDX                         ; 0055df1f
@@ -164,10 +164,10 @@ section .text
     JLE 0x0055df52                      ; 0055df4f
         ;   XREF to: 0055df52 (CONDITIONAL_JUMP)  ; LAB_0055df52
     MOVSD ES:EDI,ESI                    ; 0055df51
-    MOV ECX,dword ptr [0x00766c70]      ; 0055df52 | g_INT_00766c70
+    MOV ECX,dword ptr [0x00766c70]      ; 0055df52 | g_ClippedVertexCount
         ;   Label: LAB_0055df52
     INC ECX                             ; 0055df58
-    MOV dword ptr [0x00766c70],ECX      ; 0055df59 | g_INT_00766c70
+    MOV dword ptr [0x00766c70],ECX      ; 0055df59 | g_ClippedVertexCount
     IMUL EAX,ECX,0x30                   ; 0055df5f
     ADD EAX,0x766c74                    ; 0055df62
     PUSH EAX                            ; 0055df67
@@ -175,10 +175,10 @@ section .text
     PUSH EDX                            ; 0055df69
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055df6a
         ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
-    MOV EDI,dword ptr [0x00766c70]      ; 0055df6f | g_INT_00766c70
+    MOV EDI,dword ptr [0x00766c70]      ; 0055df6f | g_ClippedVertexCount
     INC EDI                             ; 0055df75
     ADD ESP,0xc                         ; 0055df76
-    MOV dword ptr [0x00766c70],EDI      ; 0055df79 | g_INT_00766c70
+    MOV dword ptr [0x00766c70],EDI      ; 0055df79 | g_ClippedVertexCount
     JMP 0x0055decd                      ; 0055df7f
         ;   XREF to: 0055decd (UNCONDITIONAL_JUMP)  ; caseD_3
 

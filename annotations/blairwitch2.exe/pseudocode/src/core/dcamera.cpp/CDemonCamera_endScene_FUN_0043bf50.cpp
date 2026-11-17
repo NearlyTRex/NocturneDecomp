@@ -36,8 +36,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0043bf50(CDemonCamera *t
         iVar2 = iVar2 + 1;
         _memcpy
                   ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
-                   *(void **)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar3),
-                   this_ptr->framebuffer_width << 2);
+                   *(void **)((int)g_ZBufferScanlineArray + iVar3),this_ptr->framebuffer_width << 2)
+        ;
         iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->framebuffer_height);
     }

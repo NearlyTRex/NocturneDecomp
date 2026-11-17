@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   play_state
 ;
 ; Referenced Globals:
-;   int g_INT_02c9d29c
-;   int g_INT_02c9d2a8
+;   int g_MovieHandle
+;   int g_FullscreenMovie
 ;
 ; *****************************************************************************
 
@@ -19,18 +19,18 @@ section .text
         ;   Label: wincore_winvideo.cpp_toggleMoviePlayback_FUN_005b4c60
     PUSH EDI                            ; 005b4c61
     MOV EDX,dword ptr [ESP + 0xc]       ; 005b4c62
-    CMP dword ptr [0x02c9d29c],0x0      ; 005b4c66 | g_INT_02c9d29c
+    CMP dword ptr [0x02c9d29c],0x0      ; 005b4c66 | g_MovieHandle
     SETZ AL                             ; 005b4c6d
     AND EAX,0xff                        ; 005b4c70
     MOV EBX,dword ptr [ESP + 0x10]      ; 005b4c75
-    MOV [0x02c9d29c],EAX                ; 005b4c79 | g_INT_02c9d29c
+    MOV [0x02c9d29c],EAX                ; 005b4c79 | g_MovieHandle
     TEST EBX,EBX                        ; 005b4c7e
     JZ 0x005b4ca4                       ; 005b4c80
         ;   XREF to: 005b4ca4 (CONDITIONAL_JUMP)  ; LAB_005b4ca4
     TEST EAX,EAX                        ; 005b4c82
     JZ 0x005b4caa                       ; 005b4c84
         ;   XREF to: 005b4caa (CONDITIONAL_JUMP)  ; LAB_005b4caa
-    MOV EDI,dword ptr [0x02c9d2a8]      ; 005b4c86 | g_INT_02c9d2a8
+    MOV EDI,dword ptr [0x02c9d2a8]      ; 005b4c86 | g_FullscreenMovie
     TEST EDI,EDI                        ; 005b4c8c
     JZ 0x005b4cb7                       ; 005b4c8e
         ;   XREF to: 005b4cb7 (CONDITIONAL_JUMP)  ; LAB_005b4cb7
@@ -43,7 +43,7 @@ section .text
     POP EDI                             ; 005b4ca1
     POP EBX                             ; 005b4ca2
     RET                                 ; 005b4ca3
-    MOV dword ptr [0x02c9d29c],EBX      ; 005b4ca4 | g_INT_02c9d29c
+    MOV dword ptr [0x02c9d29c],EBX      ; 005b4ca4 | g_MovieHandle
         ;   Label: LAB_005b4ca4
     PUSH 0x0                            ; 005b4caa
         ;   Label: LAB_005b4caa

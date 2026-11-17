@@ -759,7 +759,7 @@ LAB_004daa67:
   } while (cVar1 != '\0');
   local_14 = (CDemonActor *)
              engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80
-                       (g_CBitFont_PTR_01549ab4,this_ptr->message_text);
+                       (g_SmallEditorFont,this_ptr->message_text);
   this_ptr->message_display_timer = (float)(int)local_14 * (float)0.025000000000000001;
 LAB_004db104:
   if ((local_38 != (CHealthItem *)0x0) && (!bVar2)) {

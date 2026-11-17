@@ -70,8 +70,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_00569a10 at 00569a49
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005f2005 = 127
-;   double g_DOUBLE_005f2009 = 127
+;   float g_NormalVisualizationBias = 127
+;   double g_NormalVisualizationScale = 127
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
@@ -535,7 +535,7 @@ section .text
         ;   XREF to: 0056488e (CONDITIONAL_JUMP)  ; LAB_0056488e
     FLD float ptr [ESP]                 ; 00564777
     FSQRT                               ; 0056477a
-    FDIVR double ptr [0x005f2009]       ; 0056477c | g_DOUBLE_005f2009
+    FDIVR double ptr [0x005f2009]       ; 0056477c | g_NormalVisualizationScale
     FSTP float ptr [ESP]                ; 00564782
     FLD float ptr [ESP]                 ; 00564785
         ;   Label: LAB_00564785
@@ -552,7 +552,7 @@ section .text
     FLD float ptr [ESP + 0xf4]          ; 005647ba
     FLD float ptr [ESP + 0xfc]          ; 005647c1
     FXCH ST2                            ; 005647c8
-    FLD float ptr [0x005f2005]          ; 005647ca | g_FLOAT_005f2005
+    FLD float ptr [0x005f2005]          ; 005647ca | g_NormalVisualizationBias
     FXCH                                ; 005647d0
     FADD ST0,ST1                        ; 005647d2
     FXCH ST2                            ; 005647d4

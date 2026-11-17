@@ -371,7 +371,7 @@
 ;   float g_FLOAT_005d02ff = 0.3330000
 ;   double g_DOUBLE_005d0307 = 0.5
 ;   undefined4 g_CBoxActorClassInfo.name_hash
-;   undefined4 g_CDemonActorType_007bcc4c.name_hash
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;   int g_INT_01b4d28c
 ;   int g_INT_01b4d290
 ;   char* g_CHAR_PTR_01d046a0
@@ -474,7 +474,7 @@ section .text
     CMP dword ptr [EBP + 0x8e],0x0      ; 004569c7
     JNZ 0x004576a6                      ; 004569ce
         ;   XREF to: 004576a6 (CONDITIONAL_JUMP)  ; LAB_004576a6
-    PUSH 0x265370c                      ; 004569d4 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004569d4 | g_ZeroVector
     PUSH 0x1b4d248                      ; 004569d9
     LEA EAX,[EBP + 0xfffff4e2]          ; 004569de
     PUSH EAX                            ; 004569e4
@@ -1371,7 +1371,7 @@ section .text
     LEA ESI,[EBP + 0xffffef72]          ; 0045769b
     JMP 0x00456abb                      ; 004576a1
         ;   XREF to: 00456abb (UNCONDITIONAL_JUMP)  ; LAB_00456abb
-    PUSH 0x265370c                      ; 004576a6 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004576a6 | g_ZeroVector
         ;   Label: LAB_004576a6
     PUSH 0x1b4d23c                      ; 004576ab
     LEA EAX,[EBP + 0xfffff6c2]          ; 004576b0
@@ -1442,7 +1442,7 @@ section .text
     CMP dword ptr [EBX + 0x2d04],0x9    ; 004577ad
     JZ 0x00457cb5                       ; 004577b4
         ;   XREF to: 00457cb5 (CONDITIONAL_JUMP)  ; LAB_00457cb5
-    MOV EAX,[0x007bcc84]                ; 004577ba | g_CDemonActorType_007bcc4c.name_hash
+    MOV EAX,[0x007bcc84]                ; 004577ba | g_CLightActorClassInfo.name_hash
     PUSH EAX                            ; 004577bf
     MOV EDX,dword ptr [EBP + 0x8a]      ; 004577c0
     PUSH EDX                            ; 004577c6
@@ -1803,7 +1803,7 @@ section .text
     SHL EAX,0x4                         ; 00457cc7
     ADD EAX,EDX                         ; 00457cca
     PUSH EAX                            ; 00457ccc
-    PUSH 0x265370c                      ; 00457ccd | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00457ccd | g_ZeroVector
     LEA ESI,[EBP + 0xfffffede]          ; 00457cd2
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00457cd8
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -1820,7 +1820,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00457d04
     MOVSD ES:EDI,ESI                    ; 00457d05
     MOVSD ES:EDI,ESI                    ; 00457d06
-    PUSH 0x265370c                      ; 00457d07 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00457d07 | g_ZeroVector
     LEA ESI,[EBP + 0xfffffc86]          ; 00457d0c
     LEA EDI,[EBP + 0xa]                 ; 00457d12
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00457d15

@@ -129,7 +129,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
               ((CDemonActor *)this_ptr,input_local_point,&CStack_104);
     core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0
-              (g_CFireEffect_PTR_0061c010,&CStack_74,&CStack_ec,1.0,0xff,0,0,fStack_138);
+              (g_CFireEffectPtr,&CStack_74,&CStack_ec,1.0,0xff,0,0,fStack_138);
     if (this_ptr->hit_enemy != 0) {
       this_ptr->hit_enemy = 0;
       fVar2 = 1.4013e-45;
@@ -137,7 +137,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
         fVar3 = (float)((int)fVar2 + 1);
         fStack_18 = fVar2;
         core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0
-                  (g_CFireEffect_PTR_0061c010,&CStack_74,&CStack_ec,1.0,0xff,0,0,
+                  (g_CFireEffectPtr,&CStack_74,&CStack_ec,1.0,0xff,0,0,
                    (float)(int)fVar2 * fStack_138 * (float)0.10000000000000001);
         fVar2 = fVar3;
       } while ((int)fVar3 < 10);
@@ -191,7 +191,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
         fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
         CStack_a4.z = fStack_18 * (float)dStack_38;
         core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                  (g_CFireEffect_PTR_0061c010,&CStack_f8,&CStack_a4,0xffdc,5000,3,5000);
+                  (g_CFireEffectPtr,&CStack_f8,&CStack_a4,0xffdc,5000,3,5000);
         iVar1 = iVar1 + 1;
         CStack_f8.x = CStack_f8.x + fStack_98;
         CStack_f8.y = CStack_f8.y + afStack_94[0];

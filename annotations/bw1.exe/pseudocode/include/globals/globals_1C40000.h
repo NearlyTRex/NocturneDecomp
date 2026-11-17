@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "system/winnt.h"
 #include "types/structs/SRGBColorPalette.h"
 
@@ -12,68 +13,68 @@
 // =============================================================================
 
 // SRGBColorPalette*
-extern SRGBColorPalette* g_SRGBColorPalette_PTR_01c4e3d0;
+extern SRGBColorPalette* g_CurrentPalette;
 
 // _BIT_INTEGER32
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c43544;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9dc;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e8;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9f4;
+extern _BIT_INTEGER32 g_MouseButtonFlags;
+extern _BIT_INTEGER32 g_RedBitPosition;
+extern _BIT_INTEGER32 g_RedDitherShift;
+extern _BIT_INTEGER32 g_GreenBitPosition;
+extern _BIT_INTEGER32 g_GreenDitherShift;
+extern _BIT_INTEGER32 g_BlueBitPosition;
+extern _BIT_INTEGER32 g_BlueDitherShift;
 
 // float[2000]
-extern float g_FLOAT_ARRAY_01c415e4[2000];
+extern float g_EnemyVictimCandidateDistances[2000];
 
 // int
-extern int g_INT_01c43530;
-extern int g_INT_01c43534;
-extern int g_INT_01c4353c;
-extern int g_INT_01c43540;
-extern int g_INT_01c4e9d8;
-extern int g_INT_01c4e9e4;
-extern int g_INT_01c4e9f0;
+extern int g_GlobalDeltaTimeInt;
+extern int g_AnimationTimerValue;
+extern int g_MouseX;
+extern int g_MouseY;
+extern int g_RedScaleFactor;
+extern int g_GreenScaleFactor;
+extern int g_BlueScaleFactor;
 extern int g_INT_01c4eff8;
 extern int g_INT_01c4effc;
 extern int g_INT_01c4f000;
 extern int g_INT_01c4f004;
 extern int g_INT_01c4f008;
 extern int g_INT_01c4f00c;
-extern int g_INT_01c4f010;
+extern int g_ClipRight;
 extern int g_INT_01c4f014;
-extern int g_INT_01c4f018;
-extern int g_INT_01c4f01c;
+extern int g_ViewportWidth;
+extern int g_ViewportHeight;
 extern int g_INT_01c4f020;
-extern int g_INT_01c4f024;
-extern int g_INT_01c4f028;
+extern int g_CurrentLightingValue;
+extern int g_AdvancedClippingEnabled;
 
 // uchar[32768]
-extern uchar g_UCHAR_ARRAY_01c45ad0[32768];
+extern uchar g_ColorCubeLookup[32768];
 
 // uchar[768]
 extern uchar g_UCHAR_ARRAY_01c4e9f8[768];
-extern uchar g_UCHAR_ARRAY_01c4ecf8[768];
+extern uchar g_DefaultPalette[768];
 
-// uint*[1200]
-extern uint* g_UINT_PTR_ARRAY_01c4480c[1200];
-
-// uint[1600]
-extern uint g_UINT_ARRAY_01c4f030[1600];
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+extern uint* g_ZBufferScanlineArray[GAME_SCREEN_MAX_HEIGHT];
 
 // uint[256]
-extern uint g_UINT_ARRAY_01c4e3d4[256];
+extern uint g_Hardware32BitPalette[256];
 
 // uint[448]
-extern uint g_UINT_ARRAY_01c4dcd0[448];
+extern uint g_ColorTable32[448];
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+extern uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE];
 
 // ushort[256]
-extern ushort g_USHORT_ARRAY_01c4dad0[256];
-extern ushort g_USHORT_ARRAY_01c4e7d4[256];
+extern ushort g_ColorTable16[256];
+extern ushort g_Hardware16BitPalette[256];
 
 // void*
-extern void* g_PTR_01c4f02c;
+extern void* g_ScanlineRenderFunc;
 
-// void*[1200]
-extern void* g_ARRAY_PTR_01c4354c[1200];
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_ScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

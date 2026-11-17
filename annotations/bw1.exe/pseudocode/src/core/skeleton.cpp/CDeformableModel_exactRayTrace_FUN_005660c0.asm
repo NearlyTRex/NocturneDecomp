@@ -42,15 +42,15 @@
 ;   float g_FLOAT_00605890 = 0.00390625
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   CVector3f[5000] g_CVector3f_ARRAY_026a0b9c
-;   undefined4 g_CVector3f_ARRAY_026a0b9c[0].y
-;   undefined4 g_CVector3f_ARRAY_026a0b9c[0].z
-;   undefined4 g_CVector3f_ARRAY_026a0b9c[1].x
-;   undefined4 g_CVector3f_ARRAY_026a0b9c[1].y
-;   undefined4 g_CVector3f_ARRAY_026a0b9c[1].z
-;   uchar g_UCHAR_026af5fc
+;   CVector3f[5000] g_FloatVertexArray
+;   undefined4 g_FloatVertexArray[0].y
+;   undefined4 g_FloatVertexArray[0].z
+;   undefined4 g_FloatVertexArray[1].x
+;   undefined4 g_FloatVertexArray[1].y
+;   undefined4 g_FloatVertexArray[1].z
+;   uchar g_FloatVertexArrayInitialized
 ;   int g_INT_026b82a4
-;   CVector3f g_CVector3f_026b82a8
+;   CVector3f g_DeformableModelRayHitNormal
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     MOV EBP,ESP                         ; 005660c4
     SUB ESP,0x7c                        ; 005660c6
     AND ESP,0xfffffff8                  ; 005660c9
-    MOV AH,byte ptr [0x026af5fc]        ; 005660cc | g_UCHAR_026af5fc
+    MOV AH,byte ptr [0x026af5fc]        ; 005660cc | g_FloatVertexArrayInitialized
     TEST AH,0x1                         ; 005660d2
     JZ 0x0056634f                       ; 005660d5
         ;   XREF to: 0056634f (CONDITIONAL_JUMP)  ; LAB_0056634f
@@ -108,13 +108,13 @@ section .text
     MOV EBX,EDX                         ; 00566130
     FILD dword ptr [EAX]                ; 00566132
     FMUL float ptr [0x00605890]         ; 00566134 | g_FLOAT_00605890
-    FSTP float ptr [EBX]                ; 0056613a | g_CVector3f_ARRAY_026a0b9c | g_CVector3f_ARRAY_026a0b9c[1].x
+    FSTP float ptr [EBX]                ; 0056613a | g_FloatVertexArray | g_FloatVertexArray[1].x
     FILD dword ptr [EAX + 0x4]          ; 0056613c
     FMUL float ptr [0x00605890]         ; 0056613f | g_FLOAT_00605890
-    FSTP float ptr [EBX + 0x4]          ; 00566145 | g_CVector3f_ARRAY_026a0b9c[0].y | g_CVector3f_ARRAY_026a0b9c[1].y
+    FSTP float ptr [EBX + 0x4]          ; 00566145 | g_FloatVertexArray[0].y | g_FloatVertexArray[1].y
     FILD dword ptr [EAX + 0x8]          ; 00566148
     FMUL float ptr [0x00605890]         ; 0056614b | g_FLOAT_00605890
-    FSTP float ptr [EBX + 0x8]          ; 00566151 | g_CVector3f_ARRAY_026a0b9c[0].z | g_CVector3f_ARRAY_026a0b9c[1].z
+    FSTP float ptr [EBX + 0x8]          ; 00566151 | g_FloatVertexArray[0].z | g_FloatVertexArray[1].z
     INC ESI                             ; 00566154
     ADD EDX,0xc                         ; 00566155
     MOV EAX,dword ptr [EDI + 0x2c]      ; 00566158
@@ -243,11 +243,11 @@ section .text
     JZ 0x005662e1                       ; 005662c4
         ;   XREF to: 005662e1 (CONDITIONAL_JUMP)  ; LAB_005662e1
     MOV EAX,dword ptr [ESP + 0x50]      ; 005662c6
-    MOV [0x026b82a8],EAX                ; 005662ca | g_CVector3f_026b82a8
+    MOV [0x026b82a8],EAX                ; 005662ca | g_DeformableModelRayHitNormal
     MOV EAX,dword ptr [ESP + 0x54]      ; 005662cf
-    MOV [0x026b82ac],EAX                ; 005662d3 | g_CVector3f_026b82a8.y
+    MOV [0x026b82ac],EAX                ; 005662d3 | g_DeformableModelRayHitNormal.y
     MOV EAX,dword ptr [ESP + 0x58]      ; 005662d8
-    MOV [0x026b82b0],EAX                ; 005662dc | g_CVector3f_026b82a8.z
+    MOV [0x026b82b0],EAX                ; 005662dc | g_DeformableModelRayHitNormal.z
     MOV EAX,dword ptr [ESP + 0x6c]      ; 005662e1
         ;   Label: LAB_005662e1
     MOV [0x026b82a4],EAX                ; 005662e5 | g_INT_026b82a4
@@ -292,8 +292,8 @@ section .text
     MOV DL,AH                           ; 00566354
     PUSH 0x1388                         ; 00566356
     OR DL,0x1                           ; 0056635b
-    PUSH 0x26a0b9c                      ; 0056635e | g_CVector3f_ARRAY_026a0b9c
-    MOV byte ptr [0x026af5fc],DL        ; 00566363 | g_UCHAR_026af5fc
+    PUSH 0x26a0b9c                      ; 0056635e | g_FloatVertexArray
+    MOV byte ptr [0x026af5fc],DL        ; 00566363 | g_FloatVertexArrayInitialized
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00566369
         ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0056636e

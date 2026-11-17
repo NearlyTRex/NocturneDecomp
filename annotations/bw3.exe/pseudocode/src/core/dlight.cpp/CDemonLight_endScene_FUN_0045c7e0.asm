@@ -19,11 +19,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005bb355
 ;   TerminatedCString s_CDemonLight_endScene_Sce_005bb368
-;   double g_DOUBLE_005bb394 = 0.00390625
+;   double g_ShadowDepthToDistanceScale = 0.00390625
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -79,7 +79,7 @@ section .text
     MOV dword ptr [ESP],EBX             ; 0045c838
         ;   Label: LAB_0045c838
     FILD dword ptr [ESP]                ; 0045c83b
-    FMUL double ptr [0x005bb394]        ; 0045c83e | g_DOUBLE_005bb394
+    FMUL double ptr [0x005bb394]        ; 0045c83e | g_ShadowDepthToDistanceScale
     FSTP float ptr [ESI + 0x140]        ; 0045c844
     PUSH 0x0                            ; 0045c84a
         ;   Label: LAB_0045c84a
@@ -101,7 +101,7 @@ section .text
     MOV EDX,ESI                         ; 0045c876
     MOV ECX,dword ptr [EDX + 0x1cd4]    ; 0045c878
         ;   Label: LAB_0045c878
-    MOV dword ptr [EAX*0x4 + 0x1c5faec],ECX ; 0045c87e | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV dword ptr [EAX*0x4 + 0x1c5faec],ECX ; 0045c87e | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0045c885
     MOV EDI,dword ptr [ESI + 0x1cc4]    ; 0045c886
     ADD EDX,0x4                         ; 0045c88c

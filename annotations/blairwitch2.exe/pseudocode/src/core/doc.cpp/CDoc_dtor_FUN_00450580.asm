@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 00450595
     MOV dword ptr [EBX + 0x2b0],0x5f5174 ; 00450596 | g_CDocVTable
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 004505a0
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 004505a5
     PUSH ESI                            ; 004505a8
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 004505a9

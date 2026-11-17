@@ -51,55 +51,55 @@
     },
     {
       "addr": "00767b3c",
-      "name": "g_INT_00767b3c",
+      "name": "g_InputVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "00767b40",
-      "name": "g_INT_00767b40",
+      "name": "g_OutputVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "00767b4c",
-      "name": "g_SRenderVertex_ARRAY_00767b4c",
+      "name": "g_ClipperOutputBuffer",
       "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "00767b50",
-      "name": "g_SRenderVertex_ARRAY_00767b4c[0].projected_vertex.transformed_y",
+      "name": "g_ClipperOutputBuffer[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0076814c",
-      "name": "g_SRenderVertex_ARRAY_0076814c",
+      "name": "g_ClipperInputBuffer",
       "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "00768154",
-      "name": "g_SRenderVertex_ARRAY_0076814c[0].projected_vertex.transformed_z",
+      "name": "g_ClipperInputBuffer[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0076817c",
-      "name": "g_SRenderVertex_ARRAY_0076814c[1].projected_vertex.transformed_x",
+      "name": "g_ClipperInputBuffer[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00768180",
-      "name": "g_SRenderVertex_ARRAY_0076814c[1].projected_vertex.transformed_y",
+      "name": "g_ClipperInputBuffer[1].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00768184",
-      "name": "g_SRenderVertex_ARRAY_0076814c[1].projected_vertex.transformed_z",
+      "name": "g_ClipperInputBuffer[1].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     }
@@ -357,7 +357,7 @@
       "line": 54,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00433ceb: MOVSD.REP ES:EDI,ESI  ; g_SRenderVertex_ARRAY_0076814c[1].projected_vertex.transformed_x | g_SRenderVertex_",
+      "text": "// 00433ceb: MOVSD.REP ES:EDI,ESI  ; g_ClipperInputBuffer[1].projected_vertex.transformed_x | g_ClipperOutputBuffer | g_",
       "type": "unrolled_memcpy"
     },
     {
@@ -365,7 +365,7 @@
       "line": 98,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00433d57: MOVSD.REP ES:EDI,ESI  ; g_SRenderVertex_ARRAY_0076814c[1].projected_vertex.transformed_x | g_SRenderVertex_",
+      "text": "// 00433d57: MOVSD.REP ES:EDI,ESI  ; g_ClipperInputBuffer[1].projected_vertex.transformed_x | g_ClipperOutputBuffer | g_",
       "type": "unrolled_memcpy"
     }
   ]

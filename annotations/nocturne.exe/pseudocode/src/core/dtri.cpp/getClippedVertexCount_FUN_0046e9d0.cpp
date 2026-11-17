@@ -9,5 +9,5 @@
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0046e9d0(void)
 
 {
-  return g_INT_01bc9e04;
+  return g_ClipOutputVertexCount;
 }

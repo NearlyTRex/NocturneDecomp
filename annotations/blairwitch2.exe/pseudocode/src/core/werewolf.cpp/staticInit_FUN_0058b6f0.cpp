@@ -9,12 +9,12 @@
 void __cdecl core_werewolf_cpp_staticInit_FUN_0058b6f0(void)
 
 {
-  g_CVector3f_02662d04.x = -0.28;
-  g_CVector3f_02662d04.y = 0.42;
-  g_CVector3f_02662d04.z = 0.6;
-  g_CVector3f_02662d10.x = 0.35;
-  g_CVector3f_02662d10.y = 0.42;
-  g_CVector3f_02662d10.z = 0.6;
+  g_WerewolfEyeGlowOffsetLeft.x = -0.28;
+  g_WerewolfEyeGlowOffsetLeft.y = 0.42;
+  g_WerewolfEyeGlowOffsetLeft.z = 0.6;
+  g_WerewolfEyeGlowOffsetRight.x = 0.35;
+  g_WerewolfEyeGlowOffsetRight.y = 0.42;
+  g_WerewolfEyeGlowOffsetRight.z = 0.6;
   core_actor_cpp_registerActorClass_FUN_0040c450
             (&g_CWerewolfClassInfo,"CWerewolf",
              core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750,&g_CWerewolfClassVersion,6,

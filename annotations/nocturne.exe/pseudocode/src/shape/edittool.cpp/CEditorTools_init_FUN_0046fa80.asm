@@ -15,16 +15,16 @@
 ;   int g_INT_01bcddd0
 ;   int g_INT_01bcddd4
 ;   int g_INT_01bcddd8
-;   int g_INT_01bcdddc
-;   int g_INT_01bcdde0
-;   int g_INT_01bcdde4
-;   int g_INT_01bcdde8
-;   int g_INT_01bcddec
-;   int g_INT_01bcddf0
-;   int g_INT_01bcddf4
-;   int g_INT_01bcddf8
-;   int g_INT_01bcddfc
-;   int g_INT_01bcde00
+;   int g_SelectionColor
+;   int g_TextColor
+;   int g_CursorColor
+;   int g_StatusTextColor
+;   int g_WindowStatusTextColor
+;   int g_DialogTextColor
+;   int g_ActiveItemTextColor
+;   int g_ProgressBarBackgroundColor
+;   int g_ProgressBarFillColor
+;   int g_ProgressBarBorderColor
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -46,17 +46,17 @@ section .text
     MOV dword ptr [0x01bcddd0],EBX      ; 0046faa5 | g_INT_01bcddd0
     MOV dword ptr [0x01bcddd4],ESI      ; 0046faab | g_INT_01bcddd4
     MOV dword ptr [0x01bcddd8],ESI      ; 0046fab1 | g_INT_01bcddd8
-    MOV dword ptr [0x01bcdddc],EBP      ; 0046fab7 | g_INT_01bcdddc
-    MOV dword ptr [0x01bcdde0],ESI      ; 0046fabd | g_INT_01bcdde0
-    MOV dword ptr [0x01bcdde4],ESI      ; 0046fac3 | g_INT_01bcdde4
-    MOV dword ptr [0x01bcdde8],ESI      ; 0046fac9 | g_INT_01bcdde8
-    MOV dword ptr [0x01bcddec],ESI      ; 0046facf | g_INT_01bcddec
-    MOV dword ptr [0x01bcddf0],ESI      ; 0046fad5 | g_INT_01bcddf0
-    MOV dword ptr [0x01bcddf4],EDI      ; 0046fadb | g_INT_01bcddf4
-    MOV dword ptr [0x01bcddf8],EDX      ; 0046fae1 | g_INT_01bcddf8
-    MOV dword ptr [0x01bcddfc],EBP      ; 0046fae7 | g_INT_01bcddfc
-    MOV dword ptr [0x01bcde00],ESI      ; 0046faed | g_INT_01bcde00
-    MOV dword ptr [0x01bcde04],ESI      ; 0046faf3 | g_INT_01bcde04
+    MOV dword ptr [0x01bcdddc],EBP      ; 0046fab7 | g_SelectionColor
+    MOV dword ptr [0x01bcdde0],ESI      ; 0046fabd | g_TextColor
+    MOV dword ptr [0x01bcdde4],ESI      ; 0046fac3 | g_CursorColor
+    MOV dword ptr [0x01bcdde8],ESI      ; 0046fac9 | g_StatusTextColor
+    MOV dword ptr [0x01bcddec],ESI      ; 0046facf | g_WindowStatusTextColor
+    MOV dword ptr [0x01bcddf0],ESI      ; 0046fad5 | g_DialogTextColor
+    MOV dword ptr [0x01bcddf4],EDI      ; 0046fadb | g_ActiveItemTextColor
+    MOV dword ptr [0x01bcddf8],EDX      ; 0046fae1 | g_ProgressBarBackgroundColor
+    MOV dword ptr [0x01bcddfc],EBP      ; 0046fae7 | g_ProgressBarFillColor
+    MOV dword ptr [0x01bcde00],ESI      ; 0046faed | g_ProgressBarBorderColor
+    MOV dword ptr [0x01bcde04],ESI      ; 0046faf3 | g_AxisLabelTextColor
     MOV dword ptr [0x01bcde08],ESI      ; 0046faf9 | g_INT_01bcde08
     MOV dword ptr [0x01bcde18],ECX      ; 0046faff | g_INT_01bcde18
     MOV dword ptr [0x01bcddc8],EDX      ; 0046fb05 | g_INT_01bcddc8

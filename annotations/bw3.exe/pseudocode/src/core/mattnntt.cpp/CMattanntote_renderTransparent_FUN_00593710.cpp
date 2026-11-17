@@ -93,7 +93,7 @@ LAB_005937aa:
               (this_ptr_00,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
               (g_CDemonRenderer_PTR_005f2afc);
-    if (g_INT_01d8e40c != 0) {
+    if (g_RenderMotionDebug != 0) {
       core_motion_cpp_CMotionController_render_FUN_004fcdc0
                 (&this_ptr_00->base,(CDemonActor *)this_ptr);
     }

@@ -86,7 +86,7 @@ uint FUN_005ce510(CHAR *param_1)
       return 0xffffffff;
     }
     uVar2 = 0;
-    if (g_INT_02c9f6d8 != 0) {
+    if (g_EnvironInitialized != 0) {
       iVar5 = FUN_005cebe0(param_1);
       ptr = malloc((iVar5 + 1) * 2);
       if (ptr == (void *)0x0) {

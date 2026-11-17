@@ -441,7 +441,7 @@ switchD_00531823_caseD_4:
       fVar13 = 1.0;
       fStack_14 = SStack_290.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_40 + g_INT_ARRAY_01ed785c[2],&CStack_b0);
+                (&g_ZeroVector,pCStack_40 + g_SentinelIndices[2],&CStack_b0);
       pCVar12 = &CStack_104;
       CStack_104.x = CStack_b0.x;
       *(uint *)((int)&CStack_104 + (uint)bVar10 * -8 + 4) =
@@ -465,7 +465,7 @@ switchD_00531823_caseD_4:
       SStack_290.wielder = (CDemonActor *)this_ptr;
       fStack_14 = SStack_290.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_40 + g_INT_ARRAY_01ed785c[0],&CStack_c8);
+                (&g_ZeroVector,pCStack_40 + g_SentinelIndices[0],&CStack_c8);
       pCVar12 = &CStack_8c;
       CStack_8c.x = CStack_c8.x;
       *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4) =

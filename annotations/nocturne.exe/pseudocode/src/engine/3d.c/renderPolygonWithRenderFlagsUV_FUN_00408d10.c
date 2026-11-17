@@ -52,7 +52,7 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(SMRGLHeader
       pSVar3 = prim;
       do {
         iVar1 = pSVar3[1].base.type;
-        *(int *)((int)g_INT_ARRAY_006b029c + iVar4) = iVar1;
+        *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
         g_SRenderVertex_ARRAY_005c5014[iVar1].u = pSVar3[1].base.count;
         iVar4 = iVar4 + 4;
         g_SRenderVertex_ARRAY_005c5014[iVar1].v = (int)pSVar3[1].surface_normal.A;
@@ -61,10 +61,11 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(SMRGLHeader
       } while (iVar2 < (prim->base).count);
     }
     if (g_AdvancedClippingEnabled == 0) {
-      engine_clipper_c_clipPolygonToViewport_FUN_004349a0((prim->base).count,g_INT_ARRAY_006b029c);
+      engine_clipper_c_clipPolygonToViewport_FUN_004349a0
+                ((prim->base).count,g_ProcessedVertexIndices);
       return;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_INT_ARRAY_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_ProcessedVertexIndices);
   }
   return;
 }

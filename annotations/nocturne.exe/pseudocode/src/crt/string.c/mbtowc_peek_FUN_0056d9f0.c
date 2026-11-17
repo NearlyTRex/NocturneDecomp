@@ -9,7 +9,7 @@
 int __watcallStack mbtowc_peek(char *str)
 
 {
-  if ((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(byte)*str] & 1U) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*str] & 1U) != 0)) {
     return (uint)CONCAT11(*str,str[1]);
   }
   return (uint)(byte)*str;

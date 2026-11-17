@@ -40,13 +40,13 @@
 ;   float FLOAT_0058a956 = 1.570796
 ;   double DOUBLE_0058a95e = 0.5
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   int g_INT_005bb210 = 0x1
+;   int g_MoonBatsEnabled = 0x1
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   void*[1200] g_ScreenBufferArray
 ;   uint[256] g_Hardware32BitPalette
 ;   CAlphaBitmap g_MoonCloudTexture
-;   int g_INT_01ccdebc
+;   int g_MoonCloudScrollX
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -146,7 +146,7 @@ section .text
     MOV EAX,[0x005be368]                ; 004ded44 | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15aa8c],0xffffb7bc ; 004ded49 | g_CDemonSetInstance.light_direction.x
     MOV dword ptr [EAX + 0x15aa90],0xffffb7bc ; 004ded53 | g_CDemonSetInstance.light_direction.y
-    MOV EDX,dword ptr [0x005bb210]      ; 004ded5d | g_INT_005bb210
+    MOV EDX,dword ptr [0x005bb210]      ; 004ded5d | g_MoonBatsEnabled
     MOV dword ptr [EAX + 0x15aa94],0x4844 ; 004ded63 | g_CDemonSetInstance.light_direction.z
     ADD ESP,0x10                        ; 004ded6d
     MOV dword ptr [EAX + 0x15aa98],0x2000 ; 004ded70 | g_CDemonSetInstance.ambient_base_quick
@@ -257,11 +257,11 @@ section .text
     MOV dword ptr [EAX + 0x15aa88],0x0  ; 004deeb8 | g_CDemonSetInstance.rendering_mode
     CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0 ; 004deec2
         ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0(CAlphaBitmap * this_ptr)
-    MOV EAX,[0x01ccdebc]                ; 004deec7 | g_INT_01ccdebc
+    MOV EAX,[0x01ccdebc]                ; 004deec7 | g_MoonCloudScrollX
     ADD ESP,0x4                         ; 004deecc
     SAR EAX,0x10                        ; 004deecf
     MOV dword ptr [EBP + -0x20],EAX     ; 004deed2
-    MOV EAX,[0x01ccdec0]                ; 004deed5 | g_INT_01ccdec0
+    MOV EAX,[0x01ccdec0]                ; 004deed5 | g_MoonCloudScrollY
     SAR EAX,0x10                        ; 004deeda
     MOV dword ptr [EBP + -0x14],EAX     ; 004deedd
     MOV EAX,[0x01ccdc50]                ; 004deee0 | g_MoonCloudTexture
@@ -331,7 +331,7 @@ section .text
         ;   Label: LAB_004defd0
     CALL engine_3d.c_setBlendMode_FUN_004083c0 ; 004defd2
         ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_004083c0(int blend_mode)
-    FLD float ptr [0x01ccdec4]          ; 004defd7 | g_FLOAT_01ccdec4
+    FLD float ptr [0x01ccdec4]          ; 004defd7 | g_MoonAnimationTimer
     CALL crt_math.c_round_FUN_00563a30  ; 004defdd
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBP + -0xc]        ; 004defe2

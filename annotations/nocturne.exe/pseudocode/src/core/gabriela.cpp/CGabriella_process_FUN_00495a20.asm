@@ -462,7 +462,7 @@ section .text
     TEST ESI,ESI                        ; 00495df6
     JZ 0x0049695c                       ; 00495df8
         ;   XREF to: 0049695c (CONDITIONAL_JUMP)  ; LAB_0049695c
-    MOV ECX,dword ptr [0x00764ad4]      ; 00495dfe | g_CLightActorActorType_00764a9c.name_hash
+    MOV ECX,dword ptr [0x00764ad4]      ; 00495dfe | g_CLightActorClassInfo.name_hash
         ;   Label: LAB_00495dfe
     PUSH ECX                            ; 00495e04
     MOV EDI,dword ptr [EBX + 0x24ac]    ; 00495e05
@@ -692,7 +692,7 @@ section .text
     SAHF                                ; 004960b9
     JNC 0x0049616c                      ; 004960ba
         ;   XREF to: 0049616c (CONDITIONAL_JUMP)  ; LAB_0049616c
-    MOV EAX,[0x00764838]                ; 004960c0 | g_CBoxActorActorType_00764800.name_hash
+    MOV EAX,[0x00764838]                ; 004960c0 | g_CBoxActorClassInfo.name_hash
     PUSH EAX                            ; 004960c5
     MOV EDX,dword ptr [EBX + 0x1fa0c]   ; 004960c6
     PUSH EDX                            ; 004960cc
@@ -761,7 +761,7 @@ section .text
     CMP ESI,0x3                         ; 00496181
     JNZ 0x00496cc5                      ; 00496184
         ;   XREF to: 00496cc5 (CONDITIONAL_JUMP)  ; LAB_00496cc5
-    MOV EDI,dword ptr [0x01bca0c0]      ; 0049618a | g_CDynamiteActorType_01bca088.name_hash
+    MOV EDI,dword ptr [0x01bca0c0]      ; 0049618a | g_CDynamiteClassInfo.name_hash
     LEA EAX,[EBX + 0x1f5a0]             ; 00496190
     PUSH EDI                            ; 00496196
     MOV EAX,dword ptr [EAX + 0x330]     ; 00496197
@@ -1280,7 +1280,7 @@ section .text
         ;   Label: LAB_0049673f
     JMP 0x004966a4                      ; 00496744
         ;   XREF to: 004966a4 (UNCONDITIONAL_JUMP)  ; LAB_004966a4
-    MOV EAX,[0x00764230]                ; 00496749 | g_CAmmoBoxActorType_007641f8.name_hash
+    MOV EAX,[0x00764230]                ; 00496749 | g_CAmmoBoxClassInfo.name_hash
         ;   Label: LAB_00496749
     PUSH EAX                            ; 0049674e
     MOV EDX,dword ptr [EBX + 0x1fa08]   ; 0049674f

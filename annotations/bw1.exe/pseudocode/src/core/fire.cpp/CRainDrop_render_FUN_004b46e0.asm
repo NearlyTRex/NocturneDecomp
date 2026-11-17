@@ -10,7 +10,7 @@
 ;   double g_DOUBLE_005df5ac = 4
 ;   float g_FLOAT_005fff94 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061cb54
+;   SMRGLTextureBasic g_FireEffectRainDropTexture
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[0].v
@@ -207,14 +207,14 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 004b48e6
         ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004b48eb
-    PUSH 0x61cb54                       ; 004b48ee | g_SMRGLTextureBasic_0061cb54
+    PUSH 0x61cb54                       ; 004b48ee | g_FireEffectRainDropTexture
     MOV EDI,dword ptr [0x00612560]      ; 004b48f3 | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 004b48f9 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004b48fa
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004b48ff
     PUSH 0x0                            ; 004b4902
-    MOV EAX,[0x007c6120]                ; 004b4904 | g_CDemonCamera_PTR_007c6120
+    MOV EAX,[0x007c6120]                ; 004b4904 | g_CurrentSceneCamera
     PUSH EBP                            ; 004b4909
     MOV EBX,dword ptr [EAX + 0x3c]      ; 004b490a
     PUSH EAX                            ; 004b490d
@@ -222,14 +222,14 @@ section .text
     FLD float ptr [EBP + 0x24]          ; 004b4911
     FMUL double ptr [0x005df5ac]        ; 004b4914 | g_DOUBLE_005df5ac
     MOV EAX,0xffff                      ; 004b491a
-    MOV EDX,dword ptr [0x01c51cac]      ; 004b491f | g_INT_01c51cac
+    MOV EDX,dword ptr [0x01c51cac]      ; 004b491f | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004b4925
     SUB EAX,EDX                         ; 004b4928
     MOV dword ptr [ESP + 0x9c],EAX      ; 004b492a
     FILD dword ptr [ESP + 0x9c]         ; 004b4931
     FMULP                               ; 004b4938
     MOV ESI,0xd00000                    ; 004b493a
-    MOV ECX,0x800000                    ; 004b493f | g_CHAR_ARRAY_007ddbb4+0x2244c
+    MOV ECX,0x800000                    ; 004b493f | g_CameraLoadImageReadBuffer+0x2244c
     MOV EBX,0xdc0000                    ; 004b4944
     MOV dword ptr [0x0062905c],ESI      ; 004b4949 | g_SRenderVertex_ARRAY_00629014[1].u
     MOV dword ptr [0x0062902c],ECX      ; 004b494f | g_SRenderVertex_ARRAY_00629014[0].u
@@ -262,7 +262,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004b49d4
     PUSH 0x4                            ; 004b49d7
     PUSH 0x0                            ; 004b49d9
-    PUSH 0x1c57084                      ; 004b49db | g_CVector3i_01c57084
+    PUSH 0x1c57084                      ; 004b49db | g_BillboardCameraUp
     LEA EAX,[ESP + 0x8c]                ; 004b49e0
     PUSH EAX                            ; 004b49e7
     MOV ESI,dword ptr [0x00622c18]      ; 004b49e8 | g_CDemonSetPtr

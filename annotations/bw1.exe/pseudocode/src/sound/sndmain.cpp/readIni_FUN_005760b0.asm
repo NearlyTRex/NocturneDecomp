@@ -22,9 +22,9 @@
 ;   TerminatedCString s_Mute_005f4512
 ;   TerminatedCString s_SfxChannel_dEnabled_005f4517
 ;   TerminatedCString s_SfxChannel_dVol_005f452b
-;   int g_INT_006232e4 = 0x20
-;   char[256] g_CHAR_ARRAY_00623330
-;   undefined4 g_CHAR_ARRAY_00623330+4
+;   int g_MaxSoundChannels = 0x20
+;   char[256] g_DefaultSoundDeviceName
+;   undefined4 g_DefaultSoundDeviceName+4
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -59,9 +59,9 @@ section .text
     LEA EDI,[ESP + 0x220]               ; 005760c6
     PUSH 0x100                          ; 005760cd
     LEA EAX,[ESP + 0x224]               ; 005760d2
-    MOV ESI,0x623330                    ; 005760d9 | g_CHAR_ARRAY_00623330
+    MOV ESI,0x623330                    ; 005760d9 | g_DefaultSoundDeviceName
     PUSH EAX                            ; 005760de
-    MOVSD.REP ES:EDI,ESI                ; 005760df | g_CHAR_ARRAY_00623330 | g_CHAR_ARRAY_00623330+4
+    MOVSD.REP ES:EDI,ESI                ; 005760df | g_DefaultSoundDeviceName | g_DefaultSoundDeviceName+4
     PUSH 0x5f44c8                       ; 005760e1 | = "DeviceName"
     MOV EBX,dword ptr [EBP + 0x200]     ; 005760e6
     PUSH EBP                            ; 005760ec
@@ -233,7 +233,7 @@ section .text
     XOR EBX,EBX                         ; 005762c7
     CALL sound_sndmain.cpp_setSoundMuted_FUN_00573600 ; 005762c9
         ;   XREF to: 00573600 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_00573600(int muted)
-    MOV EAX,[0x006232e4]                ; 005762ce | g_INT_006232e4
+    MOV EAX,[0x006232e4]                ; 005762ce | g_MaxSoundChannels
     ADD ESP,0x4                         ; 005762d3
     TEST EAX,EAX                        ; 005762d6
     JLE 0x005763a0                      ; 005762d8
@@ -291,7 +291,7 @@ section .text
     PUSH EBX                            ; 00576382
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30 ; 00576383
         ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30(int channel_index, float volume)
-    MOV ECX,dword ptr [0x006232e4]      ; 00576388 | g_INT_006232e4
+    MOV ECX,dword ptr [0x006232e4]      ; 00576388 | g_MaxSoundChannels
     INC EBX                             ; 0057638e
     ADD ESP,0x8                         ; 0057638f
     CMP EBX,ECX                         ; 00576392

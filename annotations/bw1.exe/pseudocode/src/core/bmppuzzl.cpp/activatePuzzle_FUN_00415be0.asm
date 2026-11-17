@@ -18,7 +18,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CPuzzle* g_CPuzzle_PTR_007c3978
 ;   int g_INT_007c3980
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   CGame g_CGameInstance
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     TEST ECX,ECX                        ; 00415be9
     JZ 0x00415c18                       ; 00415beb
         ;   XREF to: 00415c18 (CONDITIONAL_JUMP)  ; LAB_00415c18
-    MOV EAX,[0x01c43544]                ; 00415bed | g_BIT_INTEGER32_01c43544
+    MOV EAX,[0x01c43544]                ; 00415bed | g_MouseButtonFlags
     MOV dword ptr [0x007c3978],EDX      ; 00415bf2 | g_CPuzzle_PTR_007c3978
     MOV [0x007c3980],EAX                ; 00415bf8 | g_INT_007c3980
     PUSH ECX                            ; 00415bfd

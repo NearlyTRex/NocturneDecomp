@@ -18,7 +18,7 @@
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   char[6000] g_CHAR_ARRAY_02c9a630
-;   HWND g_HWND_02c9be68
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -48,7 +48,7 @@ section .text
     MOV ESI,dword ptr [0x006260dc]      ; 005b30aa | PTR_s_Nocturne_006260dc
     PUSH ESI                            ; 005b30b0 | = "Nocturne"
     PUSH 0x2c9a630                      ; 005b30b1 | g_CHAR_ARRAY_02c9a630
-    MOV EDI,dword ptr [0x02c9be68]      ; 005b30b6 | g_HWND_02c9be68
+    MOV EDI,dword ptr [0x02c9be68]      ; 005b30b6 | g_MainWindowHandle
     PUSH EDI                            ; 005b30bc
     CALL dword ptr CS:[0x5d04dc]        ; 005b30bd | PTR_MessageBoxA_005d04dc
     PUSH 0x1                            ; 005b30c4

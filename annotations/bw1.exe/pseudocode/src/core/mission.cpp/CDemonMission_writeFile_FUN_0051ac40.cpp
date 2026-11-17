@@ -33,11 +33,11 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_0051ac40(CDemonMission
   _fprintf(file_handle,"%d\n");
   core_actor_cpp_syncActorTypeIDs_FUN_0040c630();
   iVar4 = 0;
-  if (0 < g_INT_007c3044) {
+  if (0 < g_NumActorClassTypes) {
     do {
       iVar4 = iVar4 + 1;
       _fprintf(file_handle,"%s %d\n");
-    } while (iVar4 < g_INT_007c3044);
+    } while (iVar4 < g_NumActorClassTypes);
   }
   _fprintf(file_handle,"// actor count\n");
   core_mission_cpp_CDemonMission_countActors_FUN_0051b280(this_ptr);

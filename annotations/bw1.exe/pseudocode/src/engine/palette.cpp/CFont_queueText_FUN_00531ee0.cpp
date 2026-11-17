@@ -45,9 +45,9 @@ int __cdecl engine_palette_cpp_CFont_queueText_FUN_00531ee0(CFont *this_ptr,char
     if (g_INT_0061b4a0 != 0x10) {
       if (g_INT_0061b4a0 == 0x20) {
         this_ptr->queued_foreground_color[this_ptr->queued_text_count] =
-             (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 2] << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
-             (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
-             (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
+             (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+             (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << (g_RedBitPosition.bytes[0] & 0x1f) |
+             (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f);
       }
       else {
         this_ptr->queued_foreground_color[this_ptr->queued_text_count] =
@@ -57,12 +57,12 @@ int __cdecl engine_palette_cpp_CFont_queueText_FUN_00531ee0(CFont *this_ptr,char
       goto LAB_00532022;
     }
     iVar4 = this_ptr->queued_text_count;
-    uVar3 = ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 2] / (uint)g_INT_01c4e9f0 <<
-             (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
-            (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] / (uint)g_INT_01c4e9d8 <<
-            (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
-            (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] / (uint)g_INT_01c4e9e4 <<
-            (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) & 0xffff;
+    uVar3 = ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 2] / (uint)g_BlueScaleFactor <<
+             (g_BlueBitPosition.bytes[0] & 0x1f) |
+            (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] / (uint)g_RedScaleFactor <<
+            (g_RedBitPosition.bytes[0] & 0x1f) |
+            (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] / (uint)g_GreenScaleFactor <<
+            (g_GreenBitPosition.bytes[0] & 0x1f)) & 0xffff;
   }
   this_ptr->queued_foreground_color[iVar4] = uVar3;
 LAB_00532022:

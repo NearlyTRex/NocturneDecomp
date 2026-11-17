@@ -459,7 +459,7 @@ section .text
     ADD EAX,EDX                         ; 00560ab0
     PUSH 0x40800000                     ; 00560ab2
     PUSH EAX                            ; 00560ab7
-    PUSH 0x2c8af28                      ; 00560ab8 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 00560ab8 | g_ZeroVector
     LEA ESI,[EBP + 0xe]                 ; 00560abd
     LEA EDI,[EBP + -0x2e]               ; 00560ac0
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00560ac3
@@ -488,7 +488,7 @@ section .text
         ;   XREF to: 004a0770 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00560af4
     PUSH 0x5f1860                       ; 00560af7 | = "ScorpTailAttack"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00560afc | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00560afc | g_CEventListPtr
     PUSH EDX                            ; 00560b02
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00560b03
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -511,7 +511,7 @@ section .text
         ;   XREF to: 005607c1 (UNCONDITIONAL_JUMP)  ; caseD_5
     PUSH 0x5f1870                       ; 00560b37 | = "ScorpDying"
         ;   Label: caseD_6
-    MOV EAX,[0x0061b4d0]                ; 00560b3c | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 00560b3c | g_CEventListPtr
     PUSH EAX                            ; 00560b41
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00560b42
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

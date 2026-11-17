@@ -81,7 +81,7 @@ CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_00502350(CMoon *this_ptr);
 CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags);
 void __cdecl core_moon_cpp_CMoon_init_FUN_005023e0(CMoon *this_ptr);
 void __cdecl core_moon_cpp_CMoon_free_FUN_00502450(CMoon *this_ptr);
-void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float param_2);
+void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float delta_time);
 void __cdecl core_moon_cpp_CMoon_render_FUN_00502510(CMoon *this_ptr);
 CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor75_FUN_00502720(CAlphaBitmap *this_ptr,uint flags);
 CMotionList * __cdecl core_moon_cpp_CMotionList_ctor_FUN_00502760(CMotionList *this_ptr);

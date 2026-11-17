@@ -35,7 +35,7 @@ void __cdecl CZombiePriest::setup(CZombiePriest *this_ptr);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960
 // Address: 0058d960
-void __cdecl CZombiePriest::process(CZombiePriest *this_ptr,float param_2);
+void __cdecl CZombiePriest::process(CZombiePriest *this_ptr,float delta_time);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0
 // Address: 0058e8d0

@@ -99,7 +99,7 @@ void __cdecl CScript::executeInitSection(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_step_FUN_00522350
 // Address: 00522350
-int __cdecl CScript::step(CScript *this_ptr,float *param_2);
+int __cdecl CScript::step(CScript *this_ptr,float *time_remaining);
 
 // Original: core_script.cpp_CScript_startDialogLine_FUN_00529750
 // Address: 00529750

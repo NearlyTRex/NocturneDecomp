@@ -16,12 +16,12 @@
 ;   TerminatedCString s_sound_sndmain_cpp_00592d4d
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592d62
 ;   double g_DOUBLE_005a2150 = 1116.40000000000
-;   int g_INT_005bea68 = 0x2
-;   int g_INT_005bea6c = 0x5622
-;   double g_DOUBLE_005bea80 = 1
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
+;   double g_Cached3DDistanceFactor = 1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_INT_02dc84bc
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -39,12 +39,12 @@ section .text
     MOV EBP,ESP                         ; 00524524
     SUB ESP,0xc                         ; 00524526
     AND ESP,0xfffffff8                  ; 00524529
-    MOV ESI,dword ptr [0x005bea68]      ; 0052452c | g_INT_005bea68
+    MOV ESI,dword ptr [0x005bea68]      ; 0052452c | g_AudioChannelCount
     MOV EDI,dword ptr [EBP + 0x14]      ; 00524532
-    CMP dword ptr [0x02dc84bc],0x0      ; 00524535 | g_INT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 00524535 | g_SoundLockCount
     JLE 0x0052457d                      ; 0052453c
         ;   XREF to: 0052457d (CONDITIONAL_JUMP)  ; LAB_0052457d
-    MOV ESI,dword ptr [0x005bea68]      ; 0052453e | g_INT_005bea68
+    MOV ESI,dword ptr [0x005bea68]      ; 0052453e | g_AudioChannelCount
         ;   Label: LAB_0052453e
     CMP ESI,0x2                         ; 00524544
     JL 0x005245a2                       ; 00524547
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00524557 (CONDITIONAL_JUMP)  ; LAB_00524557
     LEA EAX,[EAX]                       ; 00524569
     NOP                                 ; 0052456f
-    MOV dword ptr [0x005bea68],ESI      ; 00524570 | g_INT_005bea68
+    MOV dword ptr [0x005bea68],ESI      ; 00524570 | g_AudioChannelCount
         ;   Label: LAB_00524570
     MOV ESP,EBP                         ; 00524576
     POP EBP                             ; 00524578
@@ -89,10 +89,10 @@ section .text
         ;   Label: LAB_005245a2
     JMP 0x00524570                      ; 005245ac
         ;   XREF to: 00524570 (UNCONDITIONAL_JUMP)  ; LAB_00524570
-    FLD double ptr [0x005bea80]         ; 005245ae | g_DOUBLE_005bea80
+    FLD double ptr [0x005bea80]         ; 005245ae | g_Cached3DDistanceFactor
         ;   Label: LAB_005245ae
     FDIV double ptr [0x005a2150]        ; 005245b4 | g_DOUBLE_005a2150
-    FILD dword ptr [0x005bea6c]         ; 005245ba | g_INT_005bea6c
+    FILD dword ptr [0x005bea6c]         ; 005245ba | g_AudioSampleRate
     FMULP                               ; 005245c0
     MOV EBX,0x1869f                     ; 005245c2
     XOR ECX,ECX                         ; 005245c7
@@ -134,7 +134,7 @@ section .text
     CMP EDX,ESI                         ; 00524617
     JL 0x00524605                       ; 00524619
         ;   XREF to: 00524605 (CONDITIONAL_JUMP)  ; LAB_00524605
-    MOV dword ptr [0x005bea68],ESI      ; 0052461b | g_INT_005bea68
+    MOV dword ptr [0x005bea68],ESI      ; 0052461b | g_AudioChannelCount
     MOV ESP,EBP                         ; 00524621
     POP EBP                             ; 00524623
     POP EDI                             ; 00524624

@@ -25,8 +25,8 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_005c2020(void)
   
   uStack_14 = 0x5c2031;
   FUN_005c3330();
-  iVar5 = -(g_ULONG_0061f754 + 3 & 0xfffffffc);
-  *(ulong *)(local_10 + iVar5 + -4) = g_ULONG_0061f754;
+  iVar5 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
+  *(ulong *)(local_10 + iVar5 + -4) = g_RuntimeBufferSize;
   *(uint *)((int)aiStack_1c + iVar5 + 4) = 0;
   *(byte **)((int)aiStack_1c + iVar5) = local_10 + iVar5;
   *(uint *)((int)&uStack_20 + iVar5) = 0x5c204e;
@@ -34,30 +34,30 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_005c2020(void)
             (*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),
              *(ulong *)(local_10 + iVar5 + -4));
   *(byte **)(local_10 + iVar5 + -4) = local_10 + iVar5;
-  *(ulong *)(&stack0x000000e0 + iVar5) = g_ULONG_0061f754;
+  *(ulong *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;
   *(byte **)((int)aiStack_1c + iVar5 + 4) = local_10;
   *(uint *)((int)aiStack_1c + iVar5) = 0x5c2066;
   FUN_005bd078();
   puVar7 = local_10 + iVar5;
-  uVar6 = g_INT_0061f268 + 3U & 0xfffffffc;
+  uVar6 = g_StackAllocSize + 3U & 0xfffffffc;
   *(uint *)(local_10 + iVar5 + -4) = 0x5c207a;
   uVar2 = FUN_005c4070();
   if (uVar6 < uVar2) {
     *(uint *)(local_10 + iVar5 + -4) = uVar6;
     *(uint *)((int)aiStack_1c + iVar5 + 4) = 0x5c2084;
     FUN_005bae03();
-    iVar1 = -(g_INT_0061f268 + 3U & 0xfffffffc);
+    iVar1 = -(g_StackAllocSize + 3U & 0xfffffffc);
     puVar7 = local_10 + iVar1 + iVar5;
     puVar3 = local_10 + iVar1 + iVar5;
   }
   else {
     puVar3 = (byte *)0x0;
   }
-  g_PTR_0061f26c = puVar3 + g_INT_0061f268;
+  g_CrtStackBuffer = puVar3 + g_StackAllocSize;
   *(uint *)(puVar7 + -4) = 0x5c20a8;
   FUN_005c4840();
   *(uint *)(puVar7 + -4) = 10;
-  *(int *)(puVar7 + -8) = g_INT_0061f244;
+  *(int *)(puVar7 + -8) = g_WinMainCmdShow;
   *(uint *)(puVar7 + -0xc) = 0;
   *(uint *)(puVar7 + -0x10) = 0;
   *(uint *)(puVar7 + -0x14) = 0x5c20bc;

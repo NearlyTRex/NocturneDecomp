@@ -28,5 +28,5 @@ extern CMuzzleFlash g_CMuzzleFlash_ARRAY_01c86730[20];
 extern int g_INT_01c848f4;
 extern int g_INT_01c85ff8;
 extern int g_INT_01c8672c;
-extern int g_INT_01c86e60;
+extern int g_GlassParticleAllocIndex;
 

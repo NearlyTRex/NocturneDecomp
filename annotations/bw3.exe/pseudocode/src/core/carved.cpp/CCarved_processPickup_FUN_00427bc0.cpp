@@ -312,9 +312,9 @@ LAB_004281bf:
       }
     }
     iVar5 = local_24;
-    CStack_10c.x = g_CVector3f_02cfd900.x;
+    CStack_10c.x = g_ZeroVector.x;
     *(uint *)((int)&CStack_10c + (uint)bVar11 * -8 + 4) =
-         *(uint *)((int)&g_CVector3f_02cfd900 + (uint)bVar11 * -8 + 4);
+         *(uint *)((int)&g_ZeroVector + (uint)bVar11 * -8 + 4);
     *(uint *)((int)&CStack_10c + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4 + 8) =
          *(uint *)((uint)bVar11 * -8 + 0x2cfd908 + (uint)bVar11 * -8);
     if (iVar5 == 0) {

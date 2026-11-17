@@ -63,7 +63,7 @@ LAB_00433fe3:
   }
   fVar5 = 0.0;
   fVar4 = 0.0;
-  direction = &g_CVector3f_02c8af28;
+  direction = &g_ZeroVector;
   path_map = (*((pCVar2->base).base.vtable._ub)->getPathMap)((CDemonActor *)pCVar2);
   iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042ccf0
                     (this_ptr,&(this_ptr->wander_nearest_waypoint->base).base.location.position,

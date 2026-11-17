@@ -78,7 +78,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFo
         if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
           iVar4 = 0;
           if (0 < iVar2) {
-            puVar6 = (ushort *)(g_ARRAY_PTR_01c5faec[iVar3] + x * 2);
+            puVar6 = (ushort *)(g_ScreenBufferArray[iVar3] + x * 2);
             do {
               if (*(short *)((int)this_ptr->ppv_bits + (iStack_18 * this_ptr->right + iVar4) * 2) !=
                   0x7c1f) {
@@ -103,7 +103,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFo
         if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
           iVar4 = 0;
           if (0 < iVar2) {
-            piVar7 = (int *)(g_ARRAY_PTR_01c5faec[iVar3] + x * 4);
+            piVar7 = (int *)(g_ScreenBufferArray[iVar3] + x * 4);
             do {
               if (*(int *)((int)this_ptr->ppv_bits + (iStack_1c * this_ptr->right + iVar4) * 4) !=
                   0xff00ff) {

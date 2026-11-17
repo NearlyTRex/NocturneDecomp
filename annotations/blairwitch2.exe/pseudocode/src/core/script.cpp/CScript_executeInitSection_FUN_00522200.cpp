@@ -15,7 +15,7 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00522200(CScript *th
   float local_14;
   int local_10;
   
-  g_INT_01e650f8 = 0;
+  g_ScriptEventsEnabled = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
     iVar1 = core_script_cpp_CScript_findLabelIndex_FUN_005299b0(this_ptr,"initSection");
     if (-1 < iVar1) {

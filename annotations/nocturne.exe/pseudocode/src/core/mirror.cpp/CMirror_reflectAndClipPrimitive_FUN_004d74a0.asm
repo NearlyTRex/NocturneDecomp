@@ -19,17 +19,17 @@
 ;   float FLOAT_005a0888 = 0.00390625
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   int g_INT_01cc9120
-;   CVector3f[32] g_CVector3f_ARRAY_01cc9124
-;   undefined4 g_CVector3f_ARRAY_01cc9124[0].y
-;   undefined4 g_CVector3f_ARRAY_01cc9124[0].z
-;   undefined4 g_CVector3f_ARRAY_01cc9124[1].x
-;   undefined4 g_CVector3f_ARRAY_01cc9124[1].y
-;   undefined4 g_CVector3f_ARRAY_01cc9124[1].z
-;   int g_INT_01cc92a4
-;   CVector3f[32] g_CVector3f_ARRAY_01cc92a8
-;   undefined4 g_CVector3f_ARRAY_01cc92a8[0].y
-;   undefined4 g_CVector3f_ARRAY_01cc92a8[0].z
+;   int g_MirrorInputVertexCount
+;   CVector3f[32] g_MirrorInputVertices
+;   undefined4 g_MirrorInputVertices[0].y
+;   undefined4 g_MirrorInputVertices[0].z
+;   undefined4 g_MirrorInputVertices[1].x
+;   undefined4 g_MirrorInputVertices[1].y
+;   undefined4 g_MirrorInputVertices[1].z
+;   int g_MirrorOutputVertexCount
+;   CVector3f[32] g_MirrorOutputVertices
+;   undefined4 g_MirrorOutputVertices[0].y
+;   undefined4 g_MirrorOutputVertices[0].z
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004d74a7
     MOV EAX,dword ptr [EDI + 0x4]       ; 004d74ab
     XOR EBP,EBP                         ; 004d74ae
-    MOV [0x01cc9120],EAX                ; 004d74b0 | g_INT_01cc9120
+    MOV [0x01cc9120],EAX                ; 004d74b0 | g_MirrorInputVertexCount
     TEST EAX,EAX                        ; 004d74b5
     JLE 0x004d7510                      ; 004d74b7
         ;   XREF to: 004d7510 (CONDITIONAL_JUMP)  ; LAB_004d7510
@@ -66,13 +66,13 @@ section .text
     INC EBP                             ; 004d74d4
     FILD dword ptr [EAX]                ; 004d74d5
     FMUL float ptr [0x005a0888]         ; 004d74d7 | FLOAT_005a0888
-    FSTP float ptr [EBX]                ; 004d74dd | g_CVector3f_ARRAY_01cc9124 | g_CVector3f_ARRAY_01cc9124[1].x
+    FSTP float ptr [EBX]                ; 004d74dd | g_MirrorInputVertices | g_MirrorInputVertices[1].x
     FILD dword ptr [EAX + 0x4]          ; 004d74df
     FMUL float ptr [0x005a0888]         ; 004d74e2 | FLOAT_005a0888
-    FSTP float ptr [EBX + 0x4]          ; 004d74e8 | g_CVector3f_ARRAY_01cc9124[0].y | g_CVector3f_ARRAY_01cc9124[1].y
+    FSTP float ptr [EBX + 0x4]          ; 004d74e8 | g_MirrorInputVertices[0].y | g_MirrorInputVertices[1].y
     FILD dword ptr [EAX + 0x8]          ; 004d74eb
     FMUL float ptr [0x005a0888]         ; 004d74ee | FLOAT_005a0888
-    FSTP float ptr [EBX + 0x8]          ; 004d74f4 | g_CVector3f_ARRAY_01cc9124[0].z | g_CVector3f_ARRAY_01cc9124[1].z
+    FSTP float ptr [EBX + 0x8]          ; 004d74f4 | g_MirrorInputVertices[0].z | g_MirrorInputVertices[1].z
     MOV ECX,dword ptr [EDI + 0x4]       ; 004d74f7
     ADD EDX,0xc                         ; 004d74fa
     CMP EBP,ECX                         ; 004d74fd
@@ -81,18 +81,18 @@ section .text
     LEA EAX,[EAX]                       ; 004d7501
     LEA EDX,[EDX]                       ; 004d7507
     LEA EAX,[EAX]                       ; 004d750d
-    PUSH 0x1cc92a4                      ; 004d7510 | g_INT_01cc92a4
+    PUSH 0x1cc92a4                      ; 004d7510 | g_MirrorOutputVertexCount
         ;   Label: LAB_004d7510
-    PUSH 0x1cc92a8                      ; 004d7515 | g_CVector3f_ARRAY_01cc92a8
-    MOV EBX,dword ptr [0x01cc9120]      ; 004d751a | g_INT_01cc9120
+    PUSH 0x1cc92a8                      ; 004d7515 | g_MirrorOutputVertices
+    MOV EBX,dword ptr [0x01cc9120]      ; 004d751a | g_MirrorInputVertexCount
     PUSH EBX                            ; 004d7520
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d7521
-    PUSH 0x1cc9124                      ; 004d7525 | g_CVector3f_ARRAY_01cc9124
+    PUSH 0x1cc9124                      ; 004d7525 | g_MirrorInputVertices
     ADD EAX,0x98                        ; 004d752a
     PUSH EAX                            ; 004d752f
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d7530
         ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV ESI,dword ptr [0x01cc92a4]      ; 004d7535 | g_INT_01cc92a4
+    MOV ESI,dword ptr [0x01cc92a4]      ; 004d7535 | g_MirrorOutputVertexCount
     ADD ESP,0x14                        ; 004d753b
     CMP ESI,0x3                         ; 004d753e
     JGE 0x004d754d                      ; 004d7541
@@ -105,9 +105,9 @@ section .text
     POP ESI                             ; 004d754a
     POP EBX                             ; 004d754b
     RET                                 ; 004d754c
-    PUSH 0x1cc9120                      ; 004d754d | g_INT_01cc9120
+    PUSH 0x1cc9120                      ; 004d754d | g_MirrorInputVertexCount
         ;   Label: LAB_004d754d
-    PUSH 0x1cc9124                      ; 004d7552 | g_CVector3f_ARRAY_01cc9124
+    PUSH 0x1cc9124                      ; 004d7552 | g_MirrorInputVertices
     PUSH ESI                            ; 004d7557
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d7558
     PUSH 0x1cc92a8                      ; 004d755c
@@ -115,27 +115,27 @@ section .text
     PUSH EAX                            ; 004d7566
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d7567
         ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV EAX,[0x01cc9120]                ; 004d756c | g_INT_01cc9120
+    MOV EAX,[0x01cc9120]                ; 004d756c | g_MirrorInputVertexCount
     ADD ESP,0x14                        ; 004d7571
     CMP EAX,0x3                         ; 004d7574
     JL 0x004d7543                       ; 004d7577
         ;   XREF to: 004d7543 (CONDITIONAL_JUMP)  ; LAB_004d7543
-    PUSH 0x1cc92a4                      ; 004d7579 | g_INT_01cc92a4
+    PUSH 0x1cc92a4                      ; 004d7579 | g_MirrorOutputVertexCount
     PUSH 0x1cc92a8                      ; 004d757e
     PUSH EAX                            ; 004d7583
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d7584
-    PUSH 0x1cc9124                      ; 004d7588 | g_CVector3f_ARRAY_01cc9124
+    PUSH 0x1cc9124                      ; 004d7588 | g_MirrorInputVertices
     ADD EAX,0xb8                        ; 004d758d
     PUSH EAX                            ; 004d7592
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d7593
         ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV ECX,dword ptr [0x01cc92a4]      ; 004d7598 | g_INT_01cc92a4
+    MOV ECX,dword ptr [0x01cc92a4]      ; 004d7598 | g_MirrorOutputVertexCount
     ADD ESP,0x14                        ; 004d759e
     CMP ECX,0x3                         ; 004d75a1
     JL 0x004d7543                       ; 004d75a4
         ;   XREF to: 004d7543 (CONDITIONAL_JUMP)  ; LAB_004d7543
-    PUSH 0x1cc9120                      ; 004d75a6 | g_INT_01cc9120
-    PUSH 0x1cc9124                      ; 004d75ab | g_CVector3f_ARRAY_01cc9124
+    PUSH 0x1cc9120                      ; 004d75a6 | g_MirrorInputVertexCount
+    PUSH 0x1cc9124                      ; 004d75ab | g_MirrorInputVertices
     PUSH ECX                            ; 004d75b0
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d75b1
     PUSH 0x1cc92a8                      ; 004d75b5
@@ -143,21 +143,21 @@ section .text
     PUSH EAX                            ; 004d75bf
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d75c0
         ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV ESI,dword ptr [0x01cc9120]      ; 004d75c5 | g_INT_01cc9120
+    MOV ESI,dword ptr [0x01cc9120]      ; 004d75c5 | g_MirrorInputVertexCount
     ADD ESP,0x14                        ; 004d75cb
     CMP ESI,0x3                         ; 004d75ce
     JL 0x004d7543                       ; 004d75d1
         ;   XREF to: 004d7543 (CONDITIONAL_JUMP)  ; LAB_004d7543
-    PUSH 0x1cc92a4                      ; 004d75d7 | g_INT_01cc92a4
+    PUSH 0x1cc92a4                      ; 004d75d7 | g_MirrorOutputVertexCount
     PUSH 0x1cc92a8                      ; 004d75dc
     PUSH ESI                            ; 004d75e1
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d75e2
-    PUSH 0x1cc9124                      ; 004d75e6 | g_CVector3f_ARRAY_01cc9124
+    PUSH 0x1cc9124                      ; 004d75e6 | g_MirrorInputVertices
     ADD EAX,0xd8                        ; 004d75eb
     PUSH EAX                            ; 004d75f0
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d75f1
         ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV EAX,[0x01cc92a4]                ; 004d75f6 | g_INT_01cc92a4
+    MOV EAX,[0x01cc92a4]                ; 004d75f6 | g_MirrorOutputVertexCount
     ADD ESP,0x14                        ; 004d75fb
     CMP EAX,0x3                         ; 004d75fe
     JL 0x004d7543                       ; 004d7601
@@ -172,7 +172,7 @@ section .text
     MOV dword ptr [EDX + 0xf8],EAX      ; 004d7626
     MOV EAX,dword ptr [EDI + 0x14]      ; 004d762c
     MOV dword ptr [EDX + 0xfc],EAX      ; 004d762f
-    MOV EDX,dword ptr [0x01cc92a4]      ; 004d7635 | g_INT_01cc92a4
+    MOV EDX,dword ptr [0x01cc92a4]      ; 004d7635 | g_MirrorOutputVertexCount
     XOR EBP,EBP                         ; 004d763b
     TEST EDX,EDX                        ; 004d763d
     JLE 0x004d76d0                      ; 004d763f
@@ -186,13 +186,13 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004d765b | g_CDemonRenderer_01b4d738
     MOV EAX,dword ptr [ESP]             ; 004d765d
     ADD EBX,EDI                         ; 004d7660
-    FLD float ptr [EAX]                 ; 004d7662 | g_CVector3f_ARRAY_01cc92a8 | g_CVector3f_ARRAY_01cc92a8[1].x
+    FLD float ptr [EAX]                 ; 004d7662 | g_MirrorOutputVertices | g_MirrorOutputVertices[1].x
     FMUL float ptr [0x005a0880]         ; 004d7664 | FLOAT_005a0880
     FISTP dword ptr [EBX]               ; 004d766a
-    FLD float ptr [EAX + 0x4]           ; 004d766c | g_CVector3f_ARRAY_01cc92a8[0].y | g_CVector3f_ARRAY_01cc92a8[1].y
+    FLD float ptr [EAX + 0x4]           ; 004d766c | g_MirrorOutputVertices[0].y | g_MirrorOutputVertices[1].y
     FMUL float ptr [0x005a0880]         ; 004d766f | FLOAT_005a0880
     FISTP dword ptr [EBX + 0x4]         ; 004d7675
-    FLD float ptr [EAX + 0x8]           ; 004d7678 | g_CVector3f_ARRAY_01cc92a8[0].z | g_CVector3f_ARRAY_01cc92a8[1].z
+    FLD float ptr [EAX + 0x8]           ; 004d7678 | g_MirrorOutputVertices[0].z | g_MirrorOutputVertices[1].z
     FMUL float ptr [0x005a0880]         ; 004d767b | FLOAT_005a0880
     FISTP dword ptr [EBX + 0x8]         ; 004d7681
     MOV EAX,[0x005ae704]                ; 004d7684 | g_CDemonRenderer_PTR_005ae704
@@ -209,7 +209,7 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 004d76ac
     ADD EDI,0x30                        ; 004d76af
     ADD ECX,0xc                         ; 004d76b2
-    MOV EBX,dword ptr [0x01cc92a4]      ; 004d76b5 | g_INT_01cc92a4
+    MOV EBX,dword ptr [0x01cc92a4]      ; 004d76b5 | g_MirrorOutputVertexCount
     MOV dword ptr [ESP],ECX             ; 004d76bb
     CMP EBP,EBX                         ; 004d76be
     JL 0x004d7656                       ; 004d76c0

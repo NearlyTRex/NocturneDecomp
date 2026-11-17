@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 25,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 11,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 39
+    "total_lines": 40
   },
   "cross_references": [],
   "function": {
@@ -37,13 +37,13 @@
     },
     {
       "addr": "01c6ced0",
-      "name": "g_UCHAR_PTR_01c6ced0",
+      "name": "g_CurrentTextureData",
       "type": "uchar*",
       "value": null
     },
     {
       "addr": "01c6ced4",
-      "name": "g_UCHAR_PTR_01c6ced4",
+      "name": "g_CurrentTextureOpacityData",
       "type": "uchar*",
       "value": null
     },
@@ -55,7 +55,7 @@
     },
     {
       "addr": "02cf600c",
-      "name": "g_PTR_02cf600c",
+      "name": "g_APIDLL_selectTexture",
       "type": "void*",
       "value": null
     }
@@ -149,7 +149,7 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)g_PTR_02cf600c)",
+      "text": "iVar1 = (*(code *)g_APIDLL_selectTexture)",
       "type": "unresolved_funcptr"
     }
   ]

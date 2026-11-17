@@ -31,26 +31,26 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
   ulonglong *local_18;
   int local_14;
   
-  iVar14 = g_INT_02661af4;
+  iVar14 = g_FlipPending;
   puVar12 = g_PTR_00622010;
   bVar16 = 0;
-  if (g_INT_0061e98c != 0) {
+  if (g_WindowActive != 0) {
     if (g_INT_01c37788 != 0) {
       engine_special_cpp_presentToExternalRenderer_FUN_0055ff40(0);
-      g_INT_02661af4 = 0;
+      g_FlipPending = 0;
       wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
       return;
     }
-    if (g_INT_02661af4 == 0) {
-      if (g_INT_02661afc == 0) {
+    if (g_FlipPending == 0) {
+      if (g_Display24BitFallback == 0) {
         local_20 = (ulonglong *)g_PTR_00622010;
         local_1c = g_INT_006141b8 *
                    ((int)((g_INT_006141c0 + (g_INT_006141c0 >> 0x1f) * -8) -
                          (uint)((g_INT_006141c0 >> 0x1f) << 2 < 0)) >> 3);
         memset(&local_8c,0,0x6c);
         local_8c.dwSize = 0x6c;
-        HVar6 = (*g_IDirectDrawSurface_PTR_02661ae4->vtable->Lock)
-                          (g_IDirectDrawSurface_PTR_02661ae4,(RECT *)0x0,&local_8c,1,(void *)0x0);
+        HVar6 = (*g_DirectDrawSurface->vtable->Lock)
+                          (g_DirectDrawSurface,(RECT *)0x0,&local_8c,1,(void *)0x0);
         local_18 = local_8c.lpSurface;
         if ((HVar6 == 0) && (local_8c.lpSurface != (ulonglong *)0x0)) {
           local_14 = iVar14;
@@ -59,7 +59,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
               uVar9 = local_1c;
               puVar13 = local_20;
               puVar15 = local_18;
-              if (g_INT_01c38b40 == 0) {
+              if (g_MMXSupported == 0) {
                 for (uVar9 = local_1c >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
                   *(uint *)puVar15 = *(uint *)puVar13;
                   puVar13 = (ulonglong *)((int)puVar13 + (uint)bVar16 * -8 + 4);
@@ -92,26 +92,25 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
               local_14 = local_14 + 1;
             } while (local_14 < g_INT_006141bc);
           }
-          HVar6 = (*g_IDirectDrawSurface_PTR_02661ae4->vtable->Unlock)
-                            (g_IDirectDrawSurface_PTR_02661ae4,(void *)0x0);
+          HVar6 = (*g_DirectDrawSurface->vtable->Unlock)(g_DirectDrawSurface,(void *)0x0);
           if (HVar6 != 0) {
             g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
             g_INT_01d046a4 = 0x356;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to unlock front buffer");
-            g_INT_02661af4 = 0;
+            g_FlipPending = 0;
             wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
             return;
           }
         }
         goto LAB_00589632;
       }
-      g_INT_02661afc = g_INT_01c37788;
+      g_Display24BitFallback = g_INT_01c37788;
       wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0();
       iVar14 = 0;
       if (0 < g_INT_006141bc) {
         iVar7 = 0;
         do {
-          puVar5 = *(byte **)((int)g_ARRAY_PTR_01c2a38c + iVar7);
+          puVar5 = *(byte **)((int)g_ScreenBufferArray + iVar7);
           iVar10 = 0;
           puVar11 = puVar12;
           if (0 < g_INT_006141b8) {
@@ -130,17 +129,17 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
         } while (iVar14 < g_INT_006141bc);
       }
       wincore_wddvmem_cpp_closeScreenDevice_FUN_00589170();
-      g_INT_02661afc = 1;
+      g_Display24BitFallback = 1;
     }
-    if (((g_IDirectDrawSurface_PTR_02661ae4 != (IDirectDrawSurface *)0x0) &&
-        (HVar6 = (*g_IDirectDrawSurface_PTR_02661ae4->vtable->Flip)
-                           (g_IDirectDrawSurface_PTR_02661ae4,(IDirectDrawSurface *)0x0,1),
-        HVar6 != 0)) && (HVar6 == -0x7789fe3e)) {
+    if (((g_DirectDrawSurface != (IDirectDrawSurface *)0x0) &&
+        (HVar6 = (*g_DirectDrawSurface->vtable->Flip)
+                           (g_DirectDrawSurface,(IDirectDrawSurface *)0x0,1), HVar6 != 0)) &&
+       (HVar6 == -0x7789fe3e)) {
       wincore_wddvmem_cpp_videoRestore_FUN_005897e0();
     }
   }
 LAB_00589632:
-  g_INT_02661af4 = 0;
+  g_FlipPending = 0;
   wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
   return;
 }

@@ -81,7 +81,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
   
   bVar17 = 0;
   iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->death_event);
+                    (g_CEventListPtr,this_ptr->death_event);
   if (iVar8 != 0) {
     (this_ptr->base).base.hit_points = 0.0;
     (this_ptr->base).pool_me = 1;
@@ -302,7 +302,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
       pCVar14 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                           (&local_94,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           g_INT_ARRAY_00764794[0]);
+                           g_BoneGuyIndices[0]);
       pCVar14 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           ((CDemonActor *)this_ptr,&local_e8,pCVar14);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0

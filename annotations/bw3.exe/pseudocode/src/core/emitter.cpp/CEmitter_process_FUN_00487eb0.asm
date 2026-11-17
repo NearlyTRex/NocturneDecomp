@@ -16,7 +16,7 @@
 ;   float g_FLOAT_005bda3c = 0.5
 ;   double g_DOUBLE_005bda44 = 0.5
 ;   double g_DOUBLE_005bda4c = 2.5
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGore* g_CGorePtr = 01d22e44
@@ -69,7 +69,7 @@ section .text
     LEA EAX,[EBX + 0x1d0]               ; 00487ee4
         ;   Label: LAB_00487ee4
     PUSH EAX                            ; 00487eea
-    MOV EDI,dword ptr [0x005fba60]      ; 00487eeb | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 00487eeb | g_CEventListPtr
     PUSH EDI                            ; 00487ef1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00487ef2
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -227,7 +227,7 @@ section .text
     RET                                 ; 004880bd
     PUSH EDI                            ; 004880be
         ;   Label: LAB_004880be
-    MOV EDX,dword ptr [0x005fba60]      ; 004880bf | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 004880bf | g_CEventListPtr
     PUSH EDX                            ; 004880c5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004880c6
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

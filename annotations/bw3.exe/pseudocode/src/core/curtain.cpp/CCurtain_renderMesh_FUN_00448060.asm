@@ -13,7 +13,7 @@
 ;   float g_FLOAT_005dde50 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int g_INT_01c6e2d4
+;   int g_RelativeZ
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -135,7 +135,7 @@ section .text
     PUSH EBX                            ; 0044817f
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460 ; 00448180
         ;   XREF to: 0046d460 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460(CDemonRenderer * this_ptr, int state_flag)
-    MOV ESI,dword ptr [0x01c6e2d4]      ; 00448185 | g_INT_01c6e2d4
+    MOV ESI,dword ptr [0x01c6e2d4]      ; 00448185 | g_RelativeZ
     ADD ESP,0x8                         ; 0044818b
     XOR EDX,EDX                         ; 0044818e
     TEST ESI,ESI                        ; 00448190

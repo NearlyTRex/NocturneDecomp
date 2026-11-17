@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 145,
+    "complexity_score": 154,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
-    "suspect_count": 5,
+    "pseudocode_lines": 74,
+    "suspect_count": 7,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
-    "total_lines": 229
+    "total_lines": 218
   },
   "cross_references": [
     {
@@ -87,7 +87,7 @@
     },
     {
       "addr": "020842d0",
-      "name": "g_INT_020842d0",
+      "name": "g_RaytraceStateStackDepth",
       "type": "int",
       "value": null
     }
@@ -238,7 +238,7 @@
       "line": 44,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_SRaytraceState_ARRAY_020842d4[iVar3].saved_ray_origin.x = (this_ptr->ray_origin).x;",
+      "text": "g_RaytraceStateStack[iVar3].saved_ray_origin.x = (this_ptr->ray_origin).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -246,7 +246,7 @@
       "line": 49,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_SRaytraceState_ARRAY_020842d4[iVar3].saved_ray_target.x = (this_ptr->ray_target).x;",
+      "text": "g_RaytraceStateStack[iVar3].saved_ray_target.x = (this_ptr->ray_target).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -254,7 +254,23 @@
       "line": 56,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_SRaytraceState_ARRAY_020842d4[iVar3].voxel_hit_point.x = (this_ptr->voxel_hit_point).x;",
+      "text": "g_RaytraceStateStack[iVar3].voxel_hit_point.x = (this_ptr->voxel_hit_point).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 62,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RaytraceStateStack[iVar3].saved_collision_normal.x = (this_ptr->collision_normal).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 68,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RaytraceStateStack[iVar3].saved_collision_point.x = (this_ptr->collision_impact_position).x;",
       "type": "unrolled_memcpy"
     },
     {

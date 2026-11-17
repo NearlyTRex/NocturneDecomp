@@ -18,7 +18,7 @@
 ;   double g_DOUBLE_005da856 = 2
 ;   float g_FLOAT_005da85e = 3.141593
 ;   float g_FLOAT_005da862 = -0.7853982
-;   undefined4 g_INT_ARRAY_01cee0b4[16]
+;   undefined4 g_IcePickIndices[16]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004d54d6
     PUSH 0x544cc0                       ; 004d54d9
-    MOV EDI,dword ptr [0x01cee0f4]      ; 004d54de | g_INT_ARRAY_01cee0b4[16]
+    MOV EDI,dword ptr [0x01cee0f4]      ; 004d54de | g_IcePickIndices[16]
     PUSH EDI                            ; 004d54e4
     PUSH dword ptr [EBX + 0x25668]      ; 004d54e5
     PUSH 0x0                            ; 004d54eb
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0x4                         ; 004d5542
     LEA EDI,[ESP + 0x18]                ; 004d5545
     PUSH 0x544cc0                       ; 004d5549
-    MOV EAX,[0x01cee0f4]                ; 004d554e | g_INT_ARRAY_01cee0b4[16]
+    MOV EAX,[0x01cee0f4]                ; 004d554e | g_IcePickIndices[16]
     LEA ESI,[ESP + 0xc]                 ; 004d5553
     PUSH EAX                            ; 004d5557
     MOVSD ES:EDI,ESI                    ; 004d5558

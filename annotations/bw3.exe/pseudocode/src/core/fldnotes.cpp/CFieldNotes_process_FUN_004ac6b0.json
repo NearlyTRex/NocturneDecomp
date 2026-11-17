@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 107,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 61,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unresolved_funcptr"
     ],
-    "total_lines": 266
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -96,25 +96,25 @@
     },
     {
       "addr": "00600284",
-      "name": "g_CKeys_PTR_00600284",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d70a78"
     },
     {
       "addr": "01c5fadc",
-      "name": "g_INT_01c5fadc",
+      "name": "g_MouseX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae0",
-      "name": "g_INT_01c5fae0",
+      "name": "g_MouseY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae4",
-      "name": "g_BIT_INTEGER32_01c5fae4",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -286,7 +286,7 @@
       "line": 58,
       "match": "(code **)((int)pSVar1",
       "severity": "moderate",
-      "text": "(**(code **)((int)pSVar1->vtable + 8))",
+      "text": "(**(code **)((int)pSVar1->vtable + 8))(pSVar1,1,g_MouseX - pSVar1->x,g_MouseY - pSVar1->y);",
       "type": "pointer_cast"
     },
     {
@@ -294,7 +294,7 @@
       "line": 58,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)pSVar1->vtable + 8))",
+      "text": "(**(code **)((int)pSVar1->vtable + 8))(pSVar1,1,g_MouseX - pSVar1->x,g_MouseY - pSVar1->y);",
       "type": "unresolved_funcptr"
     },
     {
@@ -302,7 +302,7 @@
       "line": 58,
       "match": "(int)pSVar1->vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)pSVar1->vtable + 8))",
+      "text": "(**(code **)((int)pSVar1->vtable + 8))(pSVar1,1,g_MouseX - pSVar1->x,g_MouseY - pSVar1->y);",
       "type": "pointer_truncation"
     }
   ]

@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2af8 = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01c0b7b4
-;   CVector3f[20000] g_CVector3f_ARRAY_01c1f03c
+;   int g_PVSDrawnCubeCount
+;   CVector3f[20000] g_PVSCubePositions
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004540c0
@@ -36,7 +36,7 @@ section .text
     XOR ESI,ESI                         ; 00477308
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0 ; 0047730a
         ;   XREF to: 0046d3d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
-    MOV ECX,dword ptr [0x01c0b7b4]      ; 0047730f | g_INT_01c0b7b4
+    MOV ECX,dword ptr [0x01c0b7b4]      ; 0047730f | g_PVSDrawnCubeCount
     ADD ESP,0x10                        ; 00477315
     TEST ECX,ECX                        ; 00477318
     JLE 0x0047735e                      ; 0047731a
@@ -45,7 +45,7 @@ section .text
     PUSH EBX                            ; 0047731d
     MOV EBX,0x1c1f03c                   ; 0047731e
     XOR EDI,EDI                         ; 00477323
-    PUSH EBX                            ; 00477325 | g_CVector3f_ARRAY_01c1f03c
+    PUSH EBX                            ; 00477325 | g_PVSCubePositions
         ;   Label: LAB_00477325
     MOV EBP,dword ptr [0x005f2af8]      ; 00477326 | g_CDemonRenderer_PTR_005f2af8
     PUSH EBP                            ; 0047732c | g_CDemonRenderer_01bdd7e4
@@ -62,7 +62,7 @@ section .text
     INC ESI                             ; 00477349
     CALL engine_special.cpp_sync_FUN_005661f0 ; 0047734a
         ;   XREF to: 005661f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_sync_FUN_005661f0()
-    MOV EDX,dword ptr [0x01c0b7b4]      ; 0047734f | g_INT_01c0b7b4
+    MOV EDX,dword ptr [0x01c0b7b4]      ; 0047734f | g_PVSDrawnCubeCount
     ADD EBX,0xc                         ; 00477355
     CMP ESI,EDX                         ; 00477358
     JL 0x00477325                       ; 0047735a

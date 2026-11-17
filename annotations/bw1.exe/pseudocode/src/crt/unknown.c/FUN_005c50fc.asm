@@ -14,15 +14,15 @@
 ;   void* PTR_GetEnvironmentStrings_005d0598 = 001d0e94
 ;   void* PTR_GetModuleFileNameA_005d05b8 = 001d0f20
 ;   void* PTR_GetVersion_005d05d8 = 001d0fbc
-;   char[36] g_CHAR_ARRAY_005fab8c
-;   uchar[257] g_UCHAR_ARRAY_00626114
-;   int g_INT_0062659c = 0x0
-;   char* g_CHAR_PTR_006265a0 = 00000000
-;   char* g_CHAR_PTR_006265a4 = 00000000
-;   WCHAR* g_WCHAR_PTR_006265a8 = 00000000
-;   WCHAR* g_WCHAR_PTR_006265ac = 00000000
-;   WCHAR* g_WCHAR_PTR_006265b0 = 00000000
-;   char* g_CHAR_PTR_006265d9 = 00000000
+;   char[36] g_EmptyStringBuffer
+;   uchar[257] g_CharacterClassificationTable
+;   int g_WinMainCmdShow = 0x0
+;   char* g_ExeFileNameA = 00000000
+;   char* g_DllFileNameA = 00000000
+;   WCHAR* g_CommandLineArgsW = 00000000
+;   WCHAR* g_ExeFileNameW = 00000000
+;   WCHAR* g_DllFileNameW = 00000000
+;   char* g_EnvironmentStrings = 00000000
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -50,11 +50,11 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005c5100
     MOV EDX,dword ptr [ESP + 0x18]      ; 005c5104
     PUSH EDX                            ; 005c5108
-    MOV dword ptr [0x02c9f060],ESI      ; 005c5109 | g_INT_02c9f060
+    MOV dword ptr [0x02c9f060],ESI      ; 005c5109 | g_EmergencyExitFlag
     CALL crt_unknown.c_FUN_005cac3c     ; 005c510f
         ;   XREF to: 005cac3c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cac3c()
     ADD ESP,0x4                         ; 005c5114
-    MOV [0x02c9f06c],EAX                ; 005c5117 | g_PTR_02c9f06c
+    MOV [0x02c9f06c],EAX                ; 005c5117 | g_CurrentThreadTlsBlock
     TEST EAX,EAX                        ; 005c511c
     JNZ 0x005c5131                      ; 005c511e
         ;   XREF to: 005c5131 (CONDITIONAL_JUMP)  ; LAB_005c5131
@@ -68,47 +68,47 @@ section .text
         ;   Label: LAB_005c5131
     CALL dword ptr CS:[0x5d0598]        ; 005c5136 | PTR_GetEnvironmentStrings_005d0598
     XOR EBX,EBX                         ; 005c513d
-    MOV [0x006265d9],EAX                ; 005c513f | g_CHAR_PTR_006265d9
-    MOV dword ptr [0x02c9f6d4],EBX      ; 005c5144 | g_CHAR_PTR_PTR_02c9f6d4
+    MOV [0x006265d9],EAX                ; 005c513f | g_EnvironmentStrings
+    MOV dword ptr [0x02c9f6d4],EBX      ; 005c5144 | g_EnvironmentBlock
     CALL dword ptr CS:[0x5d05d8]        ; 005c514a | PTR_GetVersion_005d05d8
     MOV EDX,EAX                         ; 005c5151
     MOV EBX,EAX                         ; 005c5153
-    MOV [0x006265df],AL                 ; 005c5155 | g_BYTE_006265df
+    MOV [0x006265df],AL                 ; 005c5155 | g_WindowsMinorVersion
     SHR EAX,0x10                        ; 005c515a
     AND EAX,0xffff                      ; 005c515d
-    MOV [0x006265e1],AX                 ; 005c5162 | g_SHORT_006265e1
+    MOV [0x006265e1],AX                 ; 005c5162 | g_WindowsPlatformVersion
     XOR EAX,EAX                         ; 005c5168
-    MOV AX,[0x006265e1]                 ; 005c516a | g_SHORT_006265e1
+    MOV AX,[0x006265e1]                 ; 005c516a | g_WindowsPlatformVersion
     AND EDX,0xffff                      ; 005c5170
-    MOV [0x006265e3],EAX                ; 005c5176 | g_UINT_006265e3
+    MOV [0x006265e3],EAX                ; 005c5176 | g_WindowsPlatformVersionExt
     XOR EAX,EAX                         ; 005c517b
     SAR EDX,0x8                         ; 005c517d
     MOV AL,BL                           ; 005c5180
     AND EDX,0xff                        ; 005c5182
-    MOV [0x006265e7],EAX                ; 005c5188 | g_UINT_006265e7
+    MOV [0x006265e7],EAX                ; 005c5188 | g_WindowsVersionLow
     XOR EAX,EAX                         ; 005c518d
     PUSH 0x104                          ; 005c518f
     MOV AL,DL                           ; 005c5194
     MOV byte ptr [0x006265e0],DL        ; 005c5196 | g_BYTE_006265e0
-    MOV [0x006265eb],EAX                ; 005c519c | g_UINT_006265eb
-    MOV EAX,[0x006265e7]                ; 005c51a1 | g_UINT_006265e7
-    MOV EDX,dword ptr [0x006265eb]      ; 005c51a6 | g_UINT_006265eb
+    MOV [0x006265eb],EAX                ; 005c519c | g_WindowsVersionMid
+    MOV EAX,[0x006265e7]                ; 005c51a1 | g_WindowsVersionLow
+    MOV EDX,dword ptr [0x006265eb]      ; 005c51a6 | g_WindowsVersionMid
     SHL EAX,0x8                         ; 005c51ac
-    PUSH 0x2c9f070                      ; 005c51af | g_CHAR_ARRAY_02c9f070
+    PUSH 0x2c9f070                      ; 005c51af | g_ExeFileNameBuffer_A
     OR EAX,EDX                          ; 005c51b4
     PUSH 0x0                            ; 005c51b6
-    MOV [0x006265ef],EAX                ; 005c51b8 | g_UINT_006265ef
+    MOV [0x006265ef],EAX                ; 005c51b8 | g_WindowsVersionCombined
     CALL dword ptr CS:[0x5d05b8]        ; 005c51bd | PTR_GetModuleFileNameA_005d05b8
     PUSH 0x208                          ; 005c51c4
     PUSH 0x2c9f174                      ; 005c51c9
     MOV ECX,0x2c9f070                   ; 005c51ce
     PUSH 0x0                            ; 005c51d3
     MOV EDI,0x2c9f174                   ; 005c51d5
-    MOV dword ptr [0x006265a0],ECX      ; 005c51da | g_CHAR_PTR_006265a0
+    MOV dword ptr [0x006265a0],ECX      ; 005c51da | g_ExeFileNameA
     CALL crt_unknown.c_FUN_005caf60     ; 005c51e0
         ;   XREF to: 005caf60 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005caf60()
     ADD ESP,0xc                         ; 005c51e5
-    MOV dword ptr [0x006265ac],EDI      ; 005c51e8 | g_WCHAR_PTR_006265ac
+    MOV dword ptr [0x006265ac],EDI      ; 005c51e8 | g_ExeFileNameW
     CALL dword ptr CS:[0x5d0574]        ; 005c51ee | PTR_GetCommandLineA_005d0574
     PUSH EAX                            ; 005c51f5
     CALL crt_unknown.c_FUN_005cb010     ; 005c51f6
@@ -116,7 +116,7 @@ section .text
     MOV EDX,EAX                         ; 005c51fb
     ADD ESP,0x4                         ; 005c51fd
     MOV BL,byte ptr [EAX]               ; 005c5200
-    MOV [0x02c9f064],EAX                ; 005c5202 | g_CHAR_PTR_02c9f064
+    MOV [0x02c9f064],EAX                ; 005c5202 | g_CommandLineA
     CMP BL,0x22                         ; 005c5207
     JNZ 0x005c522a                      ; 005c520a
         ;   XREF to: 005c522a (CONDITIONAL_JUMP)  ; LAB_005c522a
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_005c522a
     INC DL                              ; 005c522c
     AND EDX,0xff                        ; 005c522e
-    TEST byte ptr [EDX + 0x626114],0x2  ; 005c5234 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 005c5234 | g_CharacterClassificationTable
     JNZ 0x005c5245                      ; 005c523b
         ;   XREF to: 005c5245 (CONDITIONAL_JUMP)  ; LAB_005c5245
     CMP byte ptr [EAX],0x0              ; 005c523d
@@ -158,13 +158,13 @@ section .text
         ;   Label: LAB_005c5245
     INC DL                              ; 005c5247
     AND EDX,0xff                        ; 005c5249
-    TEST byte ptr [EDX + 0x626114],0x2  ; 005c524f | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 005c524f | g_CharacterClassificationTable
     JZ 0x005c525b                       ; 005c5256
         ;   XREF to: 005c525b (CONDITIONAL_JUMP)  ; LAB_005c525b
     INC EAX                             ; 005c5258
     JMP 0x005c5245                      ; 005c5259
         ;   XREF to: 005c5245 (UNCONDITIONAL_JUMP)  ; LAB_005c5245
-    MOV [0x0062659c],EAX                ; 005c525b | g_INT_0062659c
+    MOV [0x0062659c],EAX                ; 005c525b | g_WinMainCmdShow
         ;   Label: LAB_005c525b
     CALL dword ptr CS:[0x5d0578]        ; 005c5260 | PTR_GetCommandLineW_005d0578
     TEST EAX,EAX                        ; 005c5267
@@ -176,7 +176,7 @@ section .text
     MOV EDX,EAX                         ; 005c5275
     ADD ESP,0x4                         ; 005c5277
     MOV BX,word ptr [EAX]               ; 005c527a
-    MOV [0x02c9f068],EAX                ; 005c527d | g_WCHAR_PTR_02c9f068
+    MOV [0x02c9f068],EAX                ; 005c527d | g_CommandLineW
     CMP BX,0x22                         ; 005c5282
     JNZ 0x005c52b2                      ; 005c5286
         ;   XREF to: 005c52b2 (CONDITIONAL_JUMP)  ; LAB_005c52b2
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_005c52b7
     INC DL                              ; 005c52b9
     AND EDX,0xff                        ; 005c52bb
-    TEST byte ptr [EDX + 0x626114],BL   ; 005c52c1 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EDX + 0x626114],BL   ; 005c52c1 | g_CharacterClassificationTable
     JNZ 0x005c52d4                      ; 005c52c7
         ;   XREF to: 005c52d4 (CONDITIONAL_JUMP)  ; LAB_005c52d4
     CMP word ptr [EAX],0x0              ; 005c52c9
@@ -222,21 +222,21 @@ section .text
         ;   Label: LAB_005c52d9
     INC DL                              ; 005c52db
     AND EDX,0xff                        ; 005c52dd
-    TEST byte ptr [EDX + 0x626114],BL   ; 005c52e3 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EDX + 0x626114],BL   ; 005c52e3 | g_CharacterClassificationTable
     JZ 0x005c52f5                       ; 005c52e9
         ;   XREF to: 005c52f5 (CONDITIONAL_JUMP)  ; LAB_005c52f5
     ADD EAX,0x2                         ; 005c52eb
     JMP 0x005c52d9                      ; 005c52ee
         ;   XREF to: 005c52d9 (UNCONDITIONAL_JUMP)  ; LAB_005c52d9
-    MOV EAX,0x5fab8c                    ; 005c52f0 | g_CHAR_ARRAY_005fab8c
+    MOV EAX,0x5fab8c                    ; 005c52f0 | g_EmptyStringBuffer
         ;   Label: LAB_005c52f0
-    MOV [0x006265a8],EAX                ; 005c52f5 | g_WCHAR_PTR_006265a8
+    MOV [0x006265a8],EAX                ; 005c52f5 | g_CommandLineArgsW
         ;   Label: LAB_005c52f5
     TEST ESI,ESI                        ; 005c52fa
     JZ 0x005c533c                       ; 005c52fc
         ;   XREF to: 005c533c (CONDITIONAL_JUMP)  ; LAB_005c533c
     PUSH 0x104                          ; 005c52fe
-    PUSH 0x2c9f37c                      ; 005c5303 | g_CHAR_ARRAY_02c9f37c
+    PUSH 0x2c9f37c                      ; 005c5303 | g_DllFileNameBuffer_A
     MOV EBP,dword ptr [ESP + 0x24]      ; 005c5308
     PUSH EBP                            ; 005c530c
     CALL dword ptr CS:[0x5d05b8]        ; 005c530d | PTR_GetModuleFileNameA_005d05b8
@@ -245,11 +245,11 @@ section .text
     MOV EAX,0x2c9f37c                   ; 005c531e
     PUSH EBP                            ; 005c5323
     MOV EBX,0x2c9f480                   ; 005c5324
-    MOV [0x006265a4],EAX                ; 005c5329 | g_CHAR_PTR_006265a4
+    MOV [0x006265a4],EAX                ; 005c5329 | g_DllFileNameA
     CALL crt_unknown.c_FUN_005caf60     ; 005c532e
         ;   XREF to: 005caf60 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005caf60()
     ADD ESP,0xc                         ; 005c5333
-    MOV dword ptr [0x006265b0],EBX      ; 005c5336 | g_WCHAR_PTR_006265b0
+    MOV dword ptr [0x006265b0],EBX      ; 005c5336 | g_DllFileNameW
     MOV EAX,0x1                         ; 005c533c
         ;   Label: LAB_005c533c
     POP EBP                             ; 005c5341

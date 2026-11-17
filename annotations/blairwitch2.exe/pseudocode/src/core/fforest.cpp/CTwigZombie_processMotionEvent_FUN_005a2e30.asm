@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_005a2e65
     PUSH EBX                            ; 005a2e66
     CALL core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880 ; 005a2e67
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int param_2)
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int event_id)
     ADD ESP,0x8                         ; 005a2e6c
     POP ESI                             ; 005a2e6f
     POP EBX                             ; 005a2e70

@@ -56,19 +56,19 @@
     },
     {
       "addr": "01e7dac8",
-      "name": "g_INT_01e7dac8",
+      "name": "g_RenderedTriangleCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c833c8",
-      "name": "g_PTR_02c833c8",
+      "name": "g_APIDLL_drawPolygon2",
       "type": "void*",
       "value": null
     },
     {
       "addr": "02c833cc",
-      "name": "g_PTR_02c833cc",
+      "name": "g_APIDLL_drawPolyList",
       "type": "void*",
       "value": null
     }
@@ -255,7 +255,7 @@
       "line": 17,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (*(code *)g_PTR_02c833cc)(vertex_buffer,polygons,polygon_count,render_flags);",
+      "text": "iVar2 = (*(code *)g_APIDLL_drawPolyList)(vertex_buffer,polygons,polygon_count,render_flags);",
       "type": "unresolved_funcptr"
     },
     {
@@ -263,7 +263,7 @@
       "line": 42,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02c833c8)(&local_20,(pSVar1->base).base.count,render_flags);",
+      "text": "(*(code *)g_APIDLL_drawPolygon2)(&local_20,(pSVar1->base).base.count,render_flags);",
       "type": "unresolved_funcptr"
     }
   ]

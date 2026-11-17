@@ -13,7 +13,7 @@ uint FUN_0056d4d0(void)
 {
   uint uVar1;
   
-  uVar1 = _g_BYTE_005c1f20 & 1;
-  _g_BYTE_005c1f20 = _g_BYTE_005c1f20 & 0xfffffffc;
+  uVar1 = _g_TimezoneInitFlags & 1;
+  _g_TimezoneInitFlags = _g_TimezoneInitFlags & 0xfffffffc;
   return uVar1;
 }

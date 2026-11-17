@@ -34,15 +34,15 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
   pcVar4 = g_CHAR_ARRAY_01d1eeb8;
   iVar3 = 0;
   do {
-    *(char **)((int)g_CHAR_PTR_ARRAY_01d1f5b8 + iVar3) = pcVar4;
+    *(char **)((int)g_GraphicsMenuTextPointers + iVar3) = pcVar4;
     iVar3 = iVar3 + 4;
     pcVar4 = pcVar4 + 0x100;
   } while (iVar3 != 0x1c);
   engine_special_cpp_buildCardList_FUN_00582b30
-            ((int *)(g_CHAR_PTR_ARRAY_01d1f5b8 + 8),g_CHAR_PTR_ARRAY_01d1f5dc,
-             g_CHAR_PTR_ARRAY_01d1f61c,g_INT_ARRAY_01d1f65c,g_INT_ARRAY_01d1f69c);
-  if ((int)g_CHAR_PTR_ARRAY_01d1f5b8[8] <= (int)g_CHAR_PTR_ARRAY_01d1f5b8[7]) {
-    g_CHAR_PTR_ARRAY_01d1f5b8[7] = (char *)0x0;
+            ((int *)(g_GraphicsMenuTextPointers + 8),g_GraphicsCardDriverNames,g_GraphicsCardNames,
+             g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
+  if ((int)g_GraphicsMenuTextPointers[8] <= (int)g_GraphicsMenuTextPointers[7]) {
+    g_GraphicsMenuTextPointers[7] = (char *)0x0;
   }
   local_1c[0] = 0;
   local_1c[1] = 0;
@@ -69,30 +69,30 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     pCVar2 = g_CGamePtr;
-    if ((0 < (int)g_CHAR_PTR_ARRAY_01d1f5b8[8]) && (g_INT_02c83370 != 0)) {
-      if ((g_INT_ARRAY_01d1f65c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x121a) &&
-         (g_INT_ARRAY_01d1f69c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] < 6)) {
+    if ((0 < (int)g_GraphicsMenuTextPointers[8]) && (g_INT_02c83370 != 0)) {
+      if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x121a) &&
+         (g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] < 6)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
       }
       pCVar2 = g_CGamePtr;
-      if ((g_INT_ARRAY_01d1f65c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x8086) &&
-         (g_INT_ARRAY_01d1f69c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x7800)) {
+      if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x8086) &&
+         (g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x7800)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
       }
       pCVar2 = g_CGamePtr;
-      if ((g_INT_ARRAY_01d1f65c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x12d2) &&
-         (g_INT_ARRAY_01d1f69c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x18)) {
+      if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x12d2) &&
+         (g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x18)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
       }
       pCVar2 = g_CGamePtr;
-      if ((g_INT_ARRAY_01d1f65c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x12d2) &&
-         (g_INT_ARRAY_01d1f69c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x19)) {
+      if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x12d2) &&
+         (g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x19)) {
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
@@ -172,7 +172,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
     }
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090(pcVar5);
     _sprintf(g_CHAR_ARRAY_01d1f0b8,pcVar5);
-    if (g_CHAR_PTR_ARRAY_01d1f5b8[8] == (char *)0x0) {
+    if (g_GraphicsMenuTextPointers[8] == (char *)0x0) {
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                          ("No 3D Hardware detected");
       _sprintf(g_CHAR_ARRAY_01d1f1b8,pcVar5);
@@ -189,7 +189,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = g_CHAR_PTR_ARRAY_01d1f61c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]];
+      pcVar5 = g_GraphicsCardNames[(int)g_GraphicsMenuTextPointers[7]];
       iVar3 = -1;
       pcVar6 = g_CHAR_ARRAY_01d1f1b8;
       do {
@@ -290,12 +290,12 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Graphic Options");
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20
-                      (g_CHAR_PTR_ARRAY_01d1f5b8,iVar3,&local_20,0x32,pcVar4);
+                      (g_GraphicsMenuTextPointers,iVar3,&local_20,0x32,pcVar4);
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     pCVar2 = g_CGamePtr;
     switch(iVar3) {
     case 0:
-      if (g_INT_01d1ee8c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         if ((g_CGamePtr->game_pixy == 0xf0) && (24000000 < local_1c[0])) {
 LAB_0050aee5:
           g_CGamePtr->game_pixy = 0x3c0;
@@ -371,35 +371,35 @@ LAB_0050b161:
         pcVar4 = (char *)g_INT_02c83370;
         if (g_INT_02c83370 != 0) {
           engine_special_cpp_buildCardList_FUN_00582b30
-                    ((int *)(g_CHAR_PTR_ARRAY_01d1f5b8 + 8),g_CHAR_PTR_ARRAY_01d1f5dc,
-                     g_CHAR_PTR_ARRAY_01d1f61c,g_INT_ARRAY_01d1f65c,g_INT_ARRAY_01d1f69c);
+                    ((int *)(g_GraphicsMenuTextPointers + 8),g_GraphicsCardDriverNames,
+                     g_GraphicsCardNames,g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
           engine_special_cpp_getVideoMemory_FUN_00582ae0(local_1c,local_1c + 1,local_1c + 2);
-          pcVar4 = g_CHAR_PTR_ARRAY_01d1f5b8[8];
+          pcVar4 = g_GraphicsMenuTextPointers[8];
         }
-        g_CHAR_PTR_ARRAY_01d1f5b8[8] = pcVar4;
+        g_GraphicsMenuTextPointers[8] = pcVar4;
         pCVar2 = g_CGamePtr;
-        if (g_INT_ARRAY_01d1f65c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x121a) {
+        if (g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x121a) {
           g_CGamePtr->game_bpp = 0x10;
           pCVar2->game_pixx = 0x280;
           pCVar2->game_pixy = 0x1e0;
         }
       }
       else {
-        g_CHAR_PTR_ARRAY_01d1f5b8[8] = (char *)0x0;
+        g_GraphicsMenuTextPointers[8] = (char *)0x0;
       }
       break;
     case 3:
-      if (g_CHAR_PTR_ARRAY_01d1f5b8[8] == (char *)0x0) {
-        g_CHAR_PTR_ARRAY_01d1f5b8[7] = (char *)0x0;
+      if (g_GraphicsMenuTextPointers[8] == (char *)0x0) {
+        g_GraphicsMenuTextPointers[7] = (char *)0x0;
       }
       else {
-        g_CHAR_PTR_ARRAY_01d1f5b8[7] = g_CHAR_PTR_ARRAY_01d1f5b8[7] + 1;
-        if ((int)g_CHAR_PTR_ARRAY_01d1f5b8[8] <= (int)g_CHAR_PTR_ARRAY_01d1f5b8[7]) {
-          g_CHAR_PTR_ARRAY_01d1f5b8[7] = (char *)0x0;
+        g_GraphicsMenuTextPointers[7] = g_GraphicsMenuTextPointers[7] + 1;
+        if ((int)g_GraphicsMenuTextPointers[8] <= (int)g_GraphicsMenuTextPointers[7]) {
+          g_GraphicsMenuTextPointers[7] = (char *)0x0;
         }
-        engine_special_cpp_selectCard_FUN_00582b10((int)g_CHAR_PTR_ARRAY_01d1f5b8[7]);
+        engine_special_cpp_selectCard_FUN_00582b10((int)g_GraphicsMenuTextPointers[7]);
         pCVar2 = g_CGamePtr;
-        if (g_INT_ARRAY_01d1f65c[(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]] == 0x121a) {
+        if (g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x121a) {
           g_CGamePtr->game_bpp = 0x10;
           pCVar2->game_pixx = 0x280;
           pCVar2->game_pixy = 0x1e0;

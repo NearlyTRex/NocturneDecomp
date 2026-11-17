@@ -19,6 +19,6 @@ void __cdecl core_game_cpp_CGame_slamDT_FUN_004d7f50(CGame *this_ptr,float delta
   this_ptr->delta_time_float = delta_time;
   dVar1 = round((double)(this_ptr->delta_time_float * 65536.0f));
   this_ptr->delta_time_int = (int)ROUND(dVar1);
-  g_INT_01c43530 = this_ptr->delta_time_int;
+  g_GlobalDeltaTimeInt = this_ptr->delta_time_int;
   return;
 }

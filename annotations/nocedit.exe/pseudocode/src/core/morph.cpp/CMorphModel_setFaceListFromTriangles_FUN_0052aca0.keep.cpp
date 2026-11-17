@@ -46,7 +46,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0(CM
     src_v = &src->v_coord_0;
     dst->base.base.count = 3;
     for (v = 0; v < 3; v = v + 1) {
-      slot = (INT_02f43974 != 0) ? 2 - v : v;
+      slot = (g_MorphReverseWinding != 0) ? 2 - v : v;
       dst->vertices[slot].vertex_index = (uint)src_vidx[v];
       dst->vertices[slot].texture_u = (uint)src_u[v] << 8;
       dst->vertices[slot].texture_v = (uint)src_v[v] << 8;

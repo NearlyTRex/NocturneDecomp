@@ -26,14 +26,14 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y
   ushort uVar15;
   uint7 uVar16;
   
-  pcVar9 = g_CHAR_ARRAY_ARRAY_00b2cfc8[scanline_y] + x_start;
+  pcVar9 = g_CoronaBlurOutputBuffer[scanline_y] + x_start;
   pcVar8 = source_entry->lightmap[scanline_y] + x_start;
-  uVar7 = (uint)g_CDemonGlobe_PTR_015484c8->intensity_multiplier >> 10;
+  uVar7 = (uint)g_CurrentGlobe->intensity_multiplier >> 10;
   uVar16 = (uint7)uVar7 | (uint7)uVar7 << 0x18 | (uint7)uVar7 << 0x10 | (uint7)uVar7 << 8;
   uVar3 = (ushort)(((uVar16 >> 0x18) << 0x30) >> 0x28);
   iVar6 = x_end - x_start;
   while (((uint)pcVar9 & 3) != 0) {
-    *pcVar9 = *pcVar9 + g_CHAR_ARRAY_0135dab0[(uint)(byte)*pcVar8 * 0x40 + uVar7];
+    *pcVar9 = *pcVar9 + g_CameraLookupTable[(uint)(byte)*pcVar8 * 0x40 + uVar7];
     pcVar8 = pcVar8 + 1;
     pcVar9 = pcVar9 + 1;
     iVar5 = iVar6 + -1;
@@ -70,7 +70,7 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y
     return;
   }
   do {
-    *pcVar9 = *pcVar9 + g_CHAR_ARRAY_0135dab0[(uint)(byte)*pcVar8 * 0x40 + uVar7];
+    *pcVar9 = *pcVar9 + g_CameraLookupTable[(uint)(byte)*pcVar8 * 0x40 + uVar7];
     pcVar8 = pcVar8 + 1;
     pcVar9 = pcVar9 + 1;
     iVar5 = iVar6 + -1;

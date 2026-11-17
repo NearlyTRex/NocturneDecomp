@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_wav_005cb36e
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
@@ -102,7 +102,7 @@ section .text
     ADD ESP,0x8                         ; 0040efca
     LEA EAX,[ESI + 0x10af8]             ; 0040efcd
     PUSH EAX                            ; 0040efd3
-    MOV EDX,dword ptr [0x006141f0]      ; 0040efd4 | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0040efd4 | g_CEventListPtr
     PUSH EDX                            ; 0040efda
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0040efdb
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

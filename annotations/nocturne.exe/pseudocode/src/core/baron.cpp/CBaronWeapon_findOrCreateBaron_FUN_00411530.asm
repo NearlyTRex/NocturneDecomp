@@ -16,7 +16,7 @@
 ;   TerminatedCString s_CBaron_00578729
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CBaronActorType_00764330.name_hash
+;   undefined4 g_CBaronClassInfo.name_hash
 ;   undefined4 DAT_01cc9450
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -58,7 +58,7 @@ section .text
     POP ESI                             ; 0041155d
     POP EBX                             ; 0041155e
     RET                                 ; 0041155f
-    MOV EBP,dword ptr [0x00764368]      ; 00411560 | g_CBaronActorType_00764330.name_hash
+    MOV EBP,dword ptr [0x00764368]      ; 00411560 | g_CBaronClassInfo.name_hash
         ;   Label: LAB_00411560
     PUSH EBP                            ; 00411566
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00411567 | g_CDemonSetInstance.actors[0]

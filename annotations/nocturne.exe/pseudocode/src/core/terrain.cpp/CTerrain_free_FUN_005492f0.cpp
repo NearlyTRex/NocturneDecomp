@@ -10,6 +10,6 @@ void __cdecl core_terrain_cpp_CTerrain_free_FUN_005492f0(CTerrain *this_ptr)
 
 {
   core_ground_cpp_CGround_free_FUN_004b1470(g_CGroundPtr);
-  g_CTerrain_02dd10c8.initialized = 0;
+  g_CTerrainInstance.initialized = 0;
   return;
 }

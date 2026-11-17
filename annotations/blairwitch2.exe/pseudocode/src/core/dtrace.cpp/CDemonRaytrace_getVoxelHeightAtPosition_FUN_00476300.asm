@@ -11,7 +11,7 @@
 ;   core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_00535e90 at 00535e9d
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005d1d23 = 0.125
+;   float g_VoxelSizeReciprocal = 0.125
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
@@ -48,7 +48,7 @@ section .text
     FMUL float ptr [EBX + 0x28]         ; 00476340
     FADD float ptr [EBX + 0x10]         ; 00476343
     FSUBR float ptr [EDX]               ; 00476346
-    FLD float ptr [0x005d1d23]          ; 00476348 | g_FLOAT_005d1d23
+    FLD float ptr [0x005d1d23]          ; 00476348 | g_VoxelSizeReciprocal
     FLD float ptr [EBX + 0x28]          ; 0047634e
     FMUL ST1                            ; 00476351
     FDIVP ST2,ST0                       ; 00476353
@@ -177,7 +177,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00476497
     FILD dword ptr [ESP + 0x1c]         ; 0047649b
     FMUL float ptr [EBX + 0x2c]         ; 0047649f
-    FMUL float ptr [0x005d1d23]         ; 004764a2 | g_FLOAT_005d1d23
+    FMUL float ptr [0x005d1d23]         ; 004764a2 | g_VoxelSizeReciprocal
     FADDP                               ; 004764a8
     FSTP float ptr [ESP + 0x4]          ; 004764aa
     MOV EAX,dword ptr [ESP + 0x4]       ; 004764ae

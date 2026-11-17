@@ -29,7 +29,7 @@
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CLadderActorType_01cc30e8.name_hash
+;   undefined4 g_CLadderClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 0053c41b (UNCONDITIONAL_JUMP)  ; LAB_0053c41b
     MOV EBX,dword ptr [ESP + 0xd8]      ; 0053c45a
         ;   Label: LAB_0053c45a
-    MOV ESI,dword ptr [0x01cc3120]      ; 0053c461 | g_CLadderActorType_01cc30e8.name_hash
+    MOV ESI,dword ptr [0x01cc3120]      ; 0053c461 | g_CLadderClassInfo.name_hash
     ADD EAX,EBX                         ; 0053c467
     PUSH ESI                            ; 0053c469
     MOV EAX,dword ptr [EAX + 0x14cd70]  ; 0053c46a | g_CDemonSetInstance.actors[0]

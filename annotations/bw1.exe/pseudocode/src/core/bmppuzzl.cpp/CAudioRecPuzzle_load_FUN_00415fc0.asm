@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   activate
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   int g_INT_007c397c
 ;
 ; Called Functions:
@@ -406,7 +406,7 @@ section .text
     CALL dword ptr [EAX + 0x28]         ; 004163f5
     ADD ESP,0x24                        ; 004163f8
     PUSH 0x5d3eee                       ; 004163fb
-    MOV ESI,dword ptr [0x0061b4d0]      ; 00416400 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 00416400 | g_CEventListPtr
     PUSH ESI                            ; 00416406
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00416407
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -429,7 +429,7 @@ section .text
     RET                                 ; 0041645d
     PUSH 0x5d3f02                       ; 0041645e
         ;   Label: LAB_0041645e
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00416463 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00416463 | g_CEventListPtr
     PUSH EDI                            ; 00416469
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0041646a
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

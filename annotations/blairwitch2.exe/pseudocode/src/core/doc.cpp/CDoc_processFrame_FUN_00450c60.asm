@@ -307,7 +307,7 @@ section .text
         ;   XREF to: 0059e110 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SFollowFormation_process_FUN_0059e110(SFollowFormation * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450c87
     PUSH 0x5cfe3f                       ; 00450c8a | = "DebugActionPending"
-    MOV EDX,dword ptr [0x006141f0]      ; 00450c8f | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 00450c8f | g_CEventListPtr
     PUSH EDX                            ; 00450c95
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00450c96
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -1158,7 +1158,7 @@ section .text
     LEA EAX,[EBX + 0x1134]              ; 00451655
     ADD EAX,EDX                         ; 0045165b
     PUSH EAX                            ; 0045165d
-    PUSH 0x265370c                      ; 0045165e | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0045165e | g_ZeroVector
     LEA ESI,[EBP + 0xfffffd56]          ; 00451663
     LEA EDI,[EBP + 0xfffffe76]          ; 00451669
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0045166f
@@ -2973,7 +2973,7 @@ section .text
     FADDP                               ; 00452c83
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00452c85
     FSTP float ptr [ESP]                ; 00452c8b
-    PUSH 0x265370c                      ; 00452c8e | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00452c8e | g_ZeroVector
     PUSH EBX                            ; 00452c93
     CALL dword ptr [EAX + 0x2c]         ; 00452c94
     ADD ESP,0xc                         ; 00452c97

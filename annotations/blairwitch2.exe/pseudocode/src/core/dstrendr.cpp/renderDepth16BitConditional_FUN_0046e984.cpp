@@ -34,10 +34,10 @@ void __edi_esi_ebx core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046e984(SS
   uVar5 = uVar5 >> 0x10;
   iVar7 = (uVar6 >> 0x10) - uVar5;
   if (iVar7 != 0 && uVar5 <= uVar6 >> 0x10) {
-    psVar9 = (short *)(g_ARRAY_PTR_01c2a38c[scanline_y] + uVar5 * 2);
+    psVar9 = (short *)(g_ScreenBufferArray[scanline_y] + uVar5 * 2);
     iVar2 = (left_edge->base).depth_current;
     iVar3 = (pSVar10->base).depth_current;
-    uVar1 = g_UINT_ARRAY_01c35e70[iVar7 + 1];
+    uVar1 = g_ReciprocalLookupTable[iVar7 + 1];
     iVar11 = (pSVar10->base).depth_current;
     do {
       if (*psVar9 != 0) {

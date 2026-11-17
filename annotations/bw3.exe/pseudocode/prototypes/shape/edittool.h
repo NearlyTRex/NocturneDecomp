@@ -327,7 +327,7 @@ void __cdecl CStrList::allocate(CStrList *this_ptr,int new_capacity);
 
 // Original: shape_edittool.cpp_CStrList_insertRange_FUN_00482250
 // Address: 00482250
-void __cdecl CStrList::insertRange(CStrList *this_ptr,int param_2,CStrList *param_3);
+void __cdecl CStrList::insertRange(CStrList *this_ptr,int insert_index,CStrList *source_list);
 
 // Original: shape_edittool.cpp_CStrList_remove_FUN_004822d0
 // Address: 004822d0

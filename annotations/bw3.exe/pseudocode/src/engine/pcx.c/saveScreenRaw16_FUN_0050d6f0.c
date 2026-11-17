@@ -71,7 +71,7 @@ LAB_0050d733:
     local_18 = 0;
     do {
       iVar3 = 0;
-      puVar6 = *(ushort **)((int)g_ARRAY_PTR_01c5faec + local_18);
+      puVar6 = *(ushort **)((int)g_ScreenBufferArray + local_18);
       if (0 < g_INT_005fba18) {
         do {
           uVar2 = *puVar6;

@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058cd8f = 4
-;   int g_INT_01bd1d80
+;   int g_GlobalDeltaTimeInt
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     CMP dword ptr [EBP + 0x1c],0x0      ; 004f0372
     JNZ 0x004f0448                      ; 004f0376
         ;   XREF to: 004f0448 (CONDITIONAL_JUMP)  ; LAB_004f0448
-    MOV EAX,[0x01bd1d80]                ; 004f037c | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004f037c | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBX + 0x138d8]   ; 004f0381
     SUB ECX,EAX                         ; 004f0387
     MOV dword ptr [EBX + 0x138d8],ECX   ; 004f0389

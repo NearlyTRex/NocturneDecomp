@@ -11,5 +11,5 @@
 // =============================================================================
 
 // SFace*[5000]
-extern SFace* g_SFace_PTR_ARRAY_01bccdcc[5000];
+extern SFace* g_CapturedFacePointers[5000];
 

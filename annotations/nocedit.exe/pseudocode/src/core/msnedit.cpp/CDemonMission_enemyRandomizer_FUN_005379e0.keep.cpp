@@ -89,9 +89,9 @@ LAB_00537aa5:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&local_958.base,"Randomize speed for all specified enemies");
           iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_958,"Randomize speeds",INT_02f797e0,0);
+                            (&local_958,"Randomize speeds",g_RandomizeSpeedsChoice,0);
           if (-1 < iVar3) {
-            INT_02f797e0 = iVar3;
+            g_RandomizeSpeedsChoice = iVar3;
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_d00);
             for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0;
                 pCVar1 = pCVar1->next_actor) {
@@ -99,7 +99,7 @@ LAB_00537aa5:
                           core_actor_cpp_castToClassHash_FUN_0040c790
                                     (pCVar1,g_CEnemyClassInfo.name_hash);
               if (((actor_ptr != (CEnemy *)0x0) &&
-                  (((INT_02f797e0 != 0 || (actor_ptr->randomize_me != 0)) &&
+                  (((g_RandomizeSpeedsChoice != 0 || (actor_ptr->randomize_me != 0)) &&
                    (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                                       ((CDemonActor *)actor_ptr,g_ActorEnemyBuffer), iVar3 != 0))))
                  && (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20

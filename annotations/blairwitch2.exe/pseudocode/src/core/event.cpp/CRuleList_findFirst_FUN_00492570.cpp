@@ -18,7 +18,7 @@ int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00492570(CRuleList *this_ptr)
     condition_expression = this_ptr->conditions;
     do {
       iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,*condition_expression);
+                        (g_CEventListPtr,*condition_expression);
       if (iVar1 != 0) {
         return iVar2;
       }

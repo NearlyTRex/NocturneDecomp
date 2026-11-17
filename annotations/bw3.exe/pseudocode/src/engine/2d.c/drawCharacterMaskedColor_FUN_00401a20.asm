@@ -20,13 +20,13 @@
 ;   engine_2d.c_drawTextWrappedColor_FUN_00401ec0 at 00401f16
 ;
 ; Referenced Globals:
-;   SFontGlyph[224] g_SFontGlyph_ARRAY_005e8840
-;   undefined4 g_SFontGlyph_ARRAY_005e8840[0].bitmap[0]
-;   undefined4 g_SFontGlyph_ARRAY_005e8840[0].bitmap[1]
-;   undefined4 g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
+;   SFontGlyph[224] g_FontTable
+;   undefined4 g_FontTable[0].bitmap[0]
+;   undefined4 g_FontTable[0].bitmap[1]
+;   undefined4 g_FontTable[0].bitmap[2]
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b0
@@ -49,10 +49,10 @@ section .text
     SHL EAX,0x4                         ; 00401a3a
     ADD EAX,EDX                         ; 00401a3d
     MOV ECX,dword ptr [ESP + 0x24]      ; 00401a3f
-    ADD EAX,0x5e8840                    ; 00401a43 | g_SFontGlyph_ARRAY_005e8840
+    ADD EAX,0x5e8840                    ; 00401a43 | g_FontTable
     XOR EDX,EDX                         ; 00401a48
     MOV EBX,dword ptr [0x01c6b5a8]      ; 00401a4a | g_INT_01c6b5a8
-    MOV DL,byte ptr [EAX]               ; 00401a50 | g_SFontGlyph_ARRAY_005e8840
+    MOV DL,byte ptr [EAX]               ; 00401a50 | g_FontTable
     CMP ECX,EBX                         ; 00401a52
     JL 0x00401ad2                       ; 00401a54
         ;   XREF to: 00401ad2 (CONDITIONAL_JUMP)  ; LAB_00401ad2
@@ -82,13 +82,13 @@ section .text
     MOV EDI,ECX                         ; 00401a97
     MOV ECX,dword ptr [ESP + 0x28]      ; 00401a99
         ;   Label: LAB_00401a99
-    MOV ESI,dword ptr [EBP + 0x1c5faec] ; 00401a9d | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV ESI,dword ptr [EBP + 0x1c5faec] ; 00401a9d | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD ESI,ECX                         ; 00401aa3
     XOR ECX,ECX                         ; 00401aa5
     TEST EDX,EDX                        ; 00401aa7
     JLE 0x00401abe                      ; 00401aa9
         ;   XREF to: 00401abe (CONDITIONAL_JUMP)  ; LAB_00401abe
-    MOV BL,byte ptr [EAX]               ; 00401aab | g_SFontGlyph_ARRAY_005e8840[0].bitmap[0] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[1] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
+    MOV BL,byte ptr [EAX]               ; 00401aab | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[2]
         ;   Label: LAB_00401aab
     TEST BL,BL                          ; 00401aad
     JZ 0x00401ab7                       ; 00401aaf
@@ -133,13 +133,13 @@ section .text
     MOV dword ptr [ESP + 0x4],EBX       ; 00401aeb
     MOV ECX,dword ptr [ESP + 0x4]       ; 00401aef
         ;   Label: LAB_00401aef
-    MOV ESI,dword ptr [EBP + 0x1c5faec] ; 00401af3 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV ESI,dword ptr [EBP + 0x1c5faec] ; 00401af3 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD ESI,ECX                         ; 00401af9
     XOR ECX,ECX                         ; 00401afb
     TEST EDX,EDX                        ; 00401afd
     JLE 0x00401b1a                      ; 00401aff
         ;   XREF to: 00401b1a (CONDITIONAL_JUMP)  ; LAB_00401b1a
-    MOV BL,byte ptr [EAX]               ; 00401b01 | g_SFontGlyph_ARRAY_005e8840[0].bitmap[0] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[1] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
+    MOV BL,byte ptr [EAX]               ; 00401b01 | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[2]
         ;   Label: LAB_00401b01
     TEST BL,BL                          ; 00401b03
     JZ 0x00401b11                       ; 00401b05
@@ -170,13 +170,13 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 00401b39
     MOV EBX,dword ptr [ESP + 0xc]       ; 00401b3d
         ;   Label: LAB_00401b3d
-    MOV ECX,dword ptr [EBP + 0x1c5faec] ; 00401b41 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV ECX,dword ptr [EBP + 0x1c5faec] ; 00401b41 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR ESI,ESI                         ; 00401b47
     ADD ECX,EBX                         ; 00401b49
     TEST EDX,EDX                        ; 00401b4b
     JLE 0x00401b66                      ; 00401b4d
         ;   XREF to: 00401b66 (CONDITIONAL_JUMP)  ; LAB_00401b66
-    MOV BL,byte ptr [EAX]               ; 00401b4f | g_SFontGlyph_ARRAY_005e8840[0].bitmap[0] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[1] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
+    MOV BL,byte ptr [EAX]               ; 00401b4f | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[2]
         ;   Label: LAB_00401b4f
     TEST BL,BL                          ; 00401b51
     JZ 0x00401b5d                       ; 00401b53

@@ -67,13 +67,13 @@
     },
     {
       "addr": "006b029c",
-      "name": "g_INT_ARRAY_006b029c",
+      "name": "g_ProcessedVertexIndices",
       "type": "int[24]",
       "value": null
     },
     {
       "addr": "006b02a0",
-      "name": "g_INT_ARRAY_006b029c[1]",
+      "name": "g_ProcessedVertexIndices[1]",
       "type": "undefined4",
       "value": null
     },
@@ -187,9 +187,9 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(int *)((int)g_INT_ARRAY_006b029c",
+      "match": "(int *)((int)g_ProcessedVertexIndices",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_006b029c + iVar2) = iVar1;",
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
     {

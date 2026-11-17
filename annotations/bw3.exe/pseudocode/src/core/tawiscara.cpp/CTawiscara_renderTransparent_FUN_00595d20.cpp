@@ -56,7 +56,7 @@ int __cdecl core_tawiscara_cpp_CTawiscara_renderTransparent_FUN_00595d20(CTawisc
       *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
            *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-                (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900,translation);
+                (g_CDemonRenderer_PTR_005f2afc,&g_ZeroVector,translation);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
                 (g_CDemonRenderer_PTR_005f2afc,&CStack_2c,(CVector3f *)0x0);
       core_tawiscara_cpp_CTawiscara_renderEyeGlow_FUN_00595760(this_ptr,&g_CVector3f_02d24a54);

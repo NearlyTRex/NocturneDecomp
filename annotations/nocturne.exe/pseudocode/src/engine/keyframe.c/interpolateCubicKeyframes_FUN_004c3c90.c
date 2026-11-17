@@ -67,7 +67,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   local_1c = iVar24 + 1;
   iVar28 = (keyframe_model->header).child_count;
   keyframe_model->current_position =
-       g_INT_01bd1d84 % (int)((keyframe_model->header).child_count * uVar20);
+       g_AnimationTimerValue % (int)((keyframe_model->header).child_count * uVar20);
   if (iVar28 <= local_1c) {
     local_1c = 0;
   }

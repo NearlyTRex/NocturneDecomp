@@ -20,9 +20,9 @@
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   int g_INT_006104f0 = 0xffffff
-;   int g_INT_0061b4b8 = 0xff
-;   int g_INT_00713a80
+;   int g_CurrentRenderColor = 0xffffff
+;   int g_CurrentAlphaValue = 0xff
+;   int g_CurrentInvertedColor
 ;
 ; *****************************************************************************
 
@@ -48,9 +48,9 @@ section .text
     OR ECX,EAX                          ; 00406bf6
     MOV EAX,ECX                         ; 00406bf8
     XOR EAX,0xffffff                    ; 00406bfa
-    MOV dword ptr [0x006104f0],ECX      ; 00406bff | g_INT_006104f0
-    MOV [0x00713a80],EAX                ; 00406c05 | g_INT_00713a80
-    MOV dword ptr [0x0061b4b8],EDX      ; 00406c0a | g_INT_0061b4b8
+    MOV dword ptr [0x006104f0],ECX      ; 00406bff | g_CurrentRenderColor
+    MOV [0x00713a80],EAX                ; 00406c05 | g_CurrentInvertedColor
+    MOV dword ptr [0x0061b4b8],EDX      ; 00406c0a | g_CurrentAlphaValue
     RET                                 ; 00406c10
     XOR EDX,EDX                         ; 00406c11
         ;   Label: LAB_00406c11

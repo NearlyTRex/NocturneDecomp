@@ -42,7 +42,7 @@
 ;   double g_DOUBLE_005cd266 = 32
 ;   float g_FLOAT_005cd26e = 0.2000000
 ;   float g_FLOAT_005cd272 = 1.5
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.active_fog.temperature
@@ -207,7 +207,7 @@ section .text
     LEA EAX,[EBP + 0x4a]                ; 0042a90a
     LEA EDI,[EBP + 0x4a]                ; 0042a90d
     PUSH EAX                            ; 0042a910
-    MOV EDX,dword ptr [0x00614d30]      ; 0042a911 | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 0042a911 | g_CFireEffectPtr
     LEA ESI,[EBP + 0x32]                ; 0042a917
     PUSH EDX                            ; 0042a91a
     MOVSD ES:EDI,ESI                    ; 0042a91b

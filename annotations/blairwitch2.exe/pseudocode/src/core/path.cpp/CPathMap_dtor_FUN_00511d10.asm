@@ -18,7 +18,7 @@
 ;   core_tbplayer.cpp_CDrummer_dtor_FUN_00572060 at 00572075
 ;
 ; Referenced Globals:
-;   int g_INT_01e4fed8
+;   int g_PathMapCount
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005ba1f0
@@ -32,7 +32,7 @@ section .text
     PUSH ESI                            ; 00511d11
     PUSH EDI                            ; 00511d12
     PUSH EBP                            ; 00511d13
-    MOV EDI,dword ptr [0x01e4fed8]      ; 00511d14 | g_INT_01e4fed8
+    MOV EDI,dword ptr [0x01e4fed8]      ; 00511d14 | g_PathMapCount
     MOV ESI,dword ptr [ESP + 0x14]      ; 00511d1a
     XOR ECX,ECX                         ; 00511d1e
     TEST EDI,EDI                        ; 00511d20
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 00511d2d (CONDITIONAL_JUMP)  ; LAB_00511d2d
     MOV EAX,ESI                         ; 00511d41
         ;   Label: LAB_00511d41
-    MOV dword ptr [0x01e4fed8],EDI      ; 00511d43 | g_INT_01e4fed8
+    MOV dword ptr [0x01e4fed8],EDI      ; 00511d43 | g_PathMapCount
     POP EBP                             ; 00511d49
     POP EDI                             ; 00511d4a
     POP ESI                             ; 00511d4b
@@ -69,15 +69,15 @@ section .text
     PUSH EDX                            ; 00511d61
     ADD EAX,0x1e4fedc                   ; 00511d62
     PUSH EAX                            ; 00511d67
-    MOV dword ptr [0x01e4fed8],EDI      ; 00511d68 | g_INT_01e4fed8
+    MOV dword ptr [0x01e4fed8],EDI      ; 00511d68 | g_PathMapCount
     CALL crt_string.c_memmove_FUN_005ba1f0 ; 00511d6e
         ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005ba1f0(void * dest, void * src, SIZE_T n)
-    MOV EDI,dword ptr [0x01e4fed8]      ; 00511d73 | g_INT_01e4fed8
+    MOV EDI,dword ptr [0x01e4fed8]      ; 00511d73 | g_PathMapCount
     XOR EAX,EAX                         ; 00511d79
     ADD ESP,0xc                         ; 00511d7b
     MOV dword ptr [EDI*0x4 + 0x1e4fedc],EAX ; 00511d7e
     MOV EAX,ESI                         ; 00511d85
-    MOV dword ptr [0x01e4fed8],EDI      ; 00511d87 | g_INT_01e4fed8
+    MOV dword ptr [0x01e4fed8],EDI      ; 00511d87 | g_PathMapCount
     POP EBP                             ; 00511d8d
     POP EDI                             ; 00511d8e
     POP ESI                             ; 00511d8f

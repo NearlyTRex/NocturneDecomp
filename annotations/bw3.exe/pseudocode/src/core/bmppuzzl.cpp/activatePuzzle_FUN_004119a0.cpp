@@ -12,7 +12,7 @@ void __cdecl core_bmppuzzl_cpp_activatePuzzle_FUN_004119a0(CPuzzle *puzzle,int a
   g_CPuzzle_PTR_007dffb4 = (CPuzzle *)activate;
   if (activate != 0) {
     g_CPuzzle_PTR_007dffb4 = puzzle;
-    g_INT_007dffbc = g_BIT_INTEGER32_01c5fae4.dword;
+    g_INT_007dffbc = g_MouseButtonFlags.dword;
   }
   (**(code **)((int)puzzle->vtable + 0x14))(puzzle,activate);
   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);

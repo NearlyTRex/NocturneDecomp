@@ -79,7 +79,7 @@ LAB_00513cce:
                (-fVar2 < fVar1)) &&
               (fVar5 = fVar5 * (1.0 / fVar2), fVar1 = fVar1 * (1.0 / fVar2),
               fVar1 = fVar1 * fVar1 + fVar5 * fVar5, (int)fVar1 < 0x3f800000)))) {
-            fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_INT_01cc804c)) *
+            fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_FastSqrtMagic)) *
                     g_FLOAT_01d22548 * fStack_2c * (1.0 - fVar2 / pfVar6[0xd]);
             fStack_4c = pfVar6[0x10] * fVar1 + fStack_4c;
             fStack_48 = pfVar6[0x11] * fVar1 + fStack_48;

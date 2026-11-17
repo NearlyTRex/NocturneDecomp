@@ -12,7 +12,7 @@
 ;   double g_DOUBLE_005d96a1 = 65536
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01d8e40c
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -148,7 +148,7 @@ section .text
     PUSH EDX                            ; 00597ac0 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 ; 00597ac1
         ;   XREF to: 0046e4e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer * this_ptr)
-    MOV ECX,dword ptr [0x01d8e40c]      ; 00597ac6 | g_INT_01d8e40c
+    MOV ECX,dword ptr [0x01d8e40c]      ; 00597ac6 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 00597acc
     TEST ECX,ECX                        ; 00597acf
     JZ 0x00597a27                       ; 00597ad1

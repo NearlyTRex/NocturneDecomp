@@ -20,10 +20,10 @@
 ;   int g_INT_01c6cee8
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   void* g_PTR_02cf6058
-;   IDirectDraw* g_IDirectDraw_PTR_02d0bce0
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02d0bce4
-;   IUnknown* g_IUnknown_PTR_02d0bcec
+;   void* g_APIDLL_setColorTable16
+;   IDirectDraw* g_DirectDrawObject
+;   IDirectDrawSurface* g_DirectDrawSurface
+;   IUnknown* g_DirectDrawUnknown
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -41,7 +41,7 @@ section .text
     CMP dword ptr [0x01c6cee8],0x0      ; 0057a773 | g_INT_01c6cee8
     JNZ 0x0057a860                      ; 0057a77a
         ;   XREF to: 0057a860 (CONDITIONAL_JUMP)  ; LAB_0057a860
-    MOV ECX,dword ptr [0x02d0bcec]      ; 0057a780 | g_IUnknown_PTR_02d0bcec
+    MOV ECX,dword ptr [0x02d0bcec]      ; 0057a780 | g_DirectDrawUnknown
     TEST ECX,ECX                        ; 0057a786
     JNZ 0x0057a87c                      ; 0057a788
         ;   XREF to: 0057a87c (CONDITIONAL_JUMP)  ; LAB_0057a87c
@@ -66,9 +66,9 @@ section .text
     JNZ 0x0057a79f                      ; 0057a7d6
         ;   XREF to: 0057a79f (CONDITIONAL_JUMP)  ; LAB_0057a79f
     PUSH 0x0                            ; 0057a7d8
-    PUSH 0x2d0bcec                      ; 0057a7da | g_IUnknown_PTR_02d0bcec
+    PUSH 0x2d0bcec                      ; 0057a7da | g_DirectDrawUnknown
     PUSH 0x2d0bd18                      ; 0057a7df
-    MOV EAX,[0x02d0bce0]                ; 0057a7e4 | g_IDirectDraw_PTR_02d0bce0
+    MOV EAX,[0x02d0bce0]                ; 0057a7e4 | g_DirectDrawObject
     PUSH 0x4                            ; 0057a7e9
     MOV EDX,dword ptr [EAX]             ; 0057a7eb
     PUSH EAX                            ; 0057a7ed
@@ -84,9 +84,9 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057a810
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057a815
-    MOV ECX,dword ptr [0x02d0bcec]      ; 0057a818 | g_IUnknown_PTR_02d0bcec
+    MOV ECX,dword ptr [0x02d0bcec]      ; 0057a818 | g_DirectDrawUnknown
         ;   Label: LAB_0057a818
-    MOV EAX,[0x02d0bce4]                ; 0057a81e | g_IDirectDrawSurface_PTR_02d0bce4
+    MOV EAX,[0x02d0bce4]                ; 0057a81e | g_DirectDrawSurface
     PUSH ECX                            ; 0057a823
     MOV EDX,dword ptr [EAX]             ; 0057a824
     PUSH EAX                            ; 0057a826
@@ -115,7 +115,7 @@ section .text
     PUSH 0x1c6a070                      ; 0057a860
         ;   Label: LAB_0057a860
     PUSH 0x1c6af98                      ; 0057a865 | g_UCHAR_ARRAY_01c6af98
-    CALL dword ptr [0x02cf6058]         ; 0057a86a | g_PTR_02cf6058
+    CALL dword ptr [0x02cf6058]         ; 0057a86a | g_APIDLL_setColorTable16
     ADD ESP,0x8                         ; 0057a870
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0 ; 0057a873
         ;   XREF to: 004d4eb0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0()
@@ -128,7 +128,7 @@ section .text
     MOV EDX,dword ptr [ECX]             ; 0057a87d
     XOR EBX,EBX                         ; 0057a87f
     CALL dword ptr [EDX + 0x8]          ; 0057a881
-    MOV dword ptr [0x02d0bcec],EBX      ; 0057a884 | g_IUnknown_PTR_02d0bcec
+    MOV dword ptr [0x02d0bcec],EBX      ; 0057a884 | g_DirectDrawUnknown
     JMP 0x0057a78e                      ; 0057a88a
         ;   XREF to: 0057a78e (UNCONDITIONAL_JUMP)  ; LAB_0057a78e
     CALL wincore_wddvmem.cpp_analyzePixelFormat_FUN_0057a5b0 ; 0057a88f

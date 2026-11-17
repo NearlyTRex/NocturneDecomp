@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_00494620(CFrankenstienMachine *this_ptr)
 
 {
-  return &g_CFrankenstienMachineActorType_01c71304;
+  return &g_CFrankenstienMachineClassInfo;
 }

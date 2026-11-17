@@ -14,15 +14,15 @@ int __cdecl close(int fd)
   int iVar2;
   BOOL BVar3;
   
-  if ((fd < 0) || (g_UINT_005c1f90 < (uint)fd)) {
+  if ((fd < 0) || (g_MaxHandleCount < (uint)fd)) {
     setErrno(4);
     iVar1 = -1;
   }
   else {
-    hObject = g_SIOControlBlock_PTR_005c1f54->standard_handles[fd];
+    hObject = g_IOControlBlock->standard_handles[fd];
     iVar1 = 0;
-    if ((g_PTR_005c1d60 == (byte *)0x0) || (iVar2 = (*(code *)g_PTR_005c1d54)(fd), iVar2 == 0))
-    {
+    if ((g_SpecialDeviceCloseFunc == (byte *)0x0) ||
+       (iVar2 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar2 == 0)) {
       BVar3 = CloseHandle(hObject);
       if (BVar3 == 0) {
         setErrno(4);
@@ -30,8 +30,8 @@ int __cdecl close(int fd)
       }
     }
     else {
-      (*(code *)g_PTR_005c1d58)(fd);
-      (*(code *)g_PTR_005c1d60)(iVar2);
+      (*(code *)g_SpecialDeviceCleanupFunc)(fd);
+      (*(code *)g_SpecialDeviceCloseFunc)(iVar2);
     }
     FUN_0056f278(fd,0);
   }

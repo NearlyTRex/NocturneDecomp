@@ -81,28 +81,28 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
     local_2c = this_ptr->rect_array;
     do {
       local_1c = 0;
-      g_INT_0140e7a4 = 0;
+      g_ScanlineSpanCount = 0;
       if (0 < this_ptr->rect_array_count) {
         local_14 = 0;
         pCVar6 = local_2c;
         do {
           if ((pCVar6->y_min <= (int)local_18) && ((int)local_18 <= pCVar6->y_max)) {
             bVar5 = false;
-            if (0 < g_INT_0140e7a4) {
-              iVar8 = g_INT_0140e7a4 * 4;
+            if (0 < g_ScanlineSpanCount) {
+              iVar8 = g_ScanlineSpanCount * 4;
               iVar7 = 0;
               do {
                 if ((*(int *)((int)g_INT_ARRAY_0140e7a8 + iVar7) <= pCVar6->x_max) &&
-                   (pCVar6->x_min <= *(int *)((int)g_INT_ARRAY_0140eba8 + iVar7))) {
+                   (pCVar6->x_min <= *(int *)((int)g_ScanlineSpanRight + iVar7))) {
                   if ((*(int *)((int)g_INT_ARRAY_0140e7a8 + iVar7) <= pCVar6->x_min) &&
-                     (pCVar6->x_max <= *(int *)((int)g_INT_ARRAY_0140eba8 + iVar7)))
+                     (pCVar6->x_max <= *(int *)((int)g_ScanlineSpanRight + iVar7)))
                   goto LAB_0044089a;
                   if (pCVar6->x_min < *(int *)((int)g_INT_ARRAY_0140e7a8 + iVar7)) {
                     bVar5 = true;
                     *(int *)((int)g_INT_ARRAY_0140e7a8 + iVar7) = pCVar6->x_min;
                   }
-                  if (*(int *)((int)g_INT_ARRAY_0140eba8 + iVar7) < pCVar6->x_max) {
-                    *(int *)((int)g_INT_ARRAY_0140eba8 + iVar7) = pCVar6->x_max;
+                  if (*(int *)((int)g_ScanlineSpanRight + iVar7) < pCVar6->x_max) {
+                    *(int *)((int)g_ScanlineSpanRight + iVar7) = pCVar6->x_max;
                     goto LAB_0044089a;
                   }
                   if (bVar5) break;
@@ -112,8 +112,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
             }
             if (!bVar5) {
               *(int *)((int)g_INT_ARRAY_0140e7a8 + local_14) = pCVar6->x_min;
-              *(int *)((int)g_INT_ARRAY_0140eba8 + local_14) = pCVar6->x_max;
-              g_INT_0140e7a4 = g_INT_0140e7a4 + 1;
+              *(int *)((int)g_ScanlineSpanRight + local_14) = pCVar6->x_max;
+              g_ScanlineSpanCount = g_ScanlineSpanCount + 1;
               local_14 = local_14 + 4;
             }
           }
@@ -123,14 +123,14 @@ LAB_0044089a:
         } while (local_1c < this_ptr->rect_array_count);
       }
       iVar8 = 0;
-      if (0 < g_INT_0140e7a4) {
+      if (0 < g_ScanlineSpanCount) {
         iVar7 = 0;
         local_20 = local_28;
         do {
           piVar1 = (int *)((int)g_INT_ARRAY_0140e7a8 + iVar7);
           piVar2 = (int *)((int)g_INT_ARRAY_0140e7a8 + iVar7);
           piVar3 = (int *)((int)g_INT_ARRAY_0140e7a8 + iVar7);
-          piVar4 = (int *)((int)g_INT_ARRAY_0140eba8 + iVar7);
+          piVar4 = (int *)((int)g_ScanlineSpanRight + iVar7);
           iVar7 = iVar7 + 4;
           iVar8 = iVar8 + 1;
           core_dstrendr_cpp_memcpyMMX_FUN_00465341
@@ -139,7 +139,7 @@ LAB_0044089a:
                              ((((int)local_18 - this_ptr->framebuffer_height) *
                                this_ptr->screen_width + *piVar2) - this_ptr->framebuffer_width) * 4)
                      ,(*piVar4 - *piVar3) * 4 + 4);
-        } while (iVar8 < g_INT_0140e7a4);
+        } while (iVar8 < g_ScanlineSpanCount);
       }
       local_28 = local_28 + 4;
       local_18 = (float)((int)local_18 + 1);

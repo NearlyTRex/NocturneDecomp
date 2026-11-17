@@ -168,7 +168,7 @@ void __cdecl core_doc_cpp_CDoc_processFrame_FUN_00469550(CDoc *this_ptr,float de
   
   bVar20 = 0;
   local_28 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                       (g_CEventList_PTR_0061b4d0,"DebugActionPending");
+                       (g_CEventListPtr,"DebugActionPending");
   pCVar13 = (this_ptr->base).base.carry_hands[1].carry_actor;
   if ((pCVar13 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
     (*((pCVar13->vtable)._ub)->getBoundingBox)(pCVar13,in_stack_fffffb18);
@@ -768,7 +768,7 @@ LAB_0046b2fb:
                           ((CCharacter *)this_ptr);
               }
               else if (((this_ptr->base).player_input.action_state.fire != 0) ||
-                      (g_BIT_INTEGER32_01c43544.dword != 0)) {
+                      (g_MouseButtonFlags.dword != 0)) {
                 pCVar2 = &(this_ptr->base).base.model;
                 in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x28,pCVar2));
                 core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x28,1)
@@ -1134,7 +1134,7 @@ LAB_00469e25:
         if (iStack_3c == 0x12) goto LAB_0046b941;
 LAB_0046b950:
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                  ((CDemonActor *)this_ptr,&g_CVector3f_02c8af28,fVar10 * 0.025f + 1.0);
+                  ((CDemonActor *)this_ptr,&g_ZeroVector,fVar10 * 0.025f + 1.0);
         goto LAB_0046b976;
       }
       core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_484);

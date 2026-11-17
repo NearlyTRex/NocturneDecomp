@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5)
+; void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *quad_vertices,int *quad_uv_u,int *quad_uv_v,int subdivision_level)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   param_2
-; int *            Stack[0xc]:4   param_3
-; int *            Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
+; float *          Stack[0x8]:4   quad_vertices
+; int *            Stack[0xc]:4   quad_uv_u
+; int *            Stack[0x10]:4   quad_uv_v
+; int              Stack[0x14]:4   subdivision_level
 ; Local Variables:
 ; undefined4       Stack[-0x1e4]:4  local_1e4
 ; undefined4       Stack[-0x1e0]:4  local_1e0
@@ -137,7 +137,7 @@
 ;   float FLOAT_00585040 = 4
 ;   float FLOAT_00585044 = 0.25
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040dea0
@@ -240,7 +240,7 @@ section .text
     PUSH EAX                            ; 004acdff
     LEA EAX,[ESP + 0x10]                ; 004ace00
     PUSH EAX                            ; 004ace04
-    MOV EDX,dword ptr [0x005b80f0]      ; 004ace05 | g_CFireEffect_PTR_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 004ace05 | g_CFireEffectPtr
     PUSH EDX                            ; 004ace0b
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_0048b1c0 ; 004ace0c
         ;   XREF to: 0048b1c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
@@ -287,7 +287,7 @@ section .text
     PUSH EAX                            ; 004ace85
     LEA EAX,[ESP + 0x10]                ; 004ace86
     PUSH EAX                            ; 004ace8a
-    MOV EBX,dword ptr [0x005b80f0]      ; 004ace8b | g_CFireEffect_PTR_005b80f0
+    MOV EBX,dword ptr [0x005b80f0]      ; 004ace8b | g_CFireEffectPtr
     PUSH EBX                            ; 004ace91
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_0048b1c0 ; 004ace92
         ;   XREF to: 0048b1c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
@@ -509,7 +509,7 @@ section .text
     PUSH EAX                            ; 004ad171
     PUSH EBP                            ; 004ad172
     CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 ; 004ad173
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * quad_vertices, int * quad_uv_u, int * quad_uv_v, ...)
     LEA EAX,[EBX + 0xc]                 ; 004ad178
     FLD float ptr [EBX]                 ; 004ad17b
     FADD float ptr [EAX]                ; 004ad17d
@@ -720,7 +720,7 @@ section .text
     PUSH EAX                            ; 004ad440
     PUSH EBP                            ; 004ad441
     CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 ; 004ad442
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * quad_vertices, int * quad_uv_u, int * quad_uv_v, ...)
     LEA ECX,[EBX + 0xc]                 ; 004ad447
     FLD float ptr [EBX]                 ; 004ad44a
     ADD ESP,0x14                        ; 004ad44c
@@ -931,7 +931,7 @@ section .text
     PUSH EAX                            ; 004ad701
     PUSH EBP                            ; 004ad702
     CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 ; 004ad703
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * quad_vertices, int * quad_uv_u, int * quad_uv_v, ...)
     LEA EAX,[EBX + 0x24]                ; 004ad708
     FLD float ptr [EBX]                 ; 004ad70b
     FADD float ptr [EAX]                ; 004ad70d
@@ -1142,7 +1142,7 @@ section .text
     PUSH EAX                            ; 004ad9e6
     PUSH EBP                            ; 004ad9e7
     CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 ; 004ad9e8
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * quad_vertices, int * quad_uv_u, int * quad_uv_v, ...)
     ADD ESP,0x14                        ; 004ad9ed
     ADD ESP,0x1d4                       ; 004ad9f0
     POP EBP                             ; 004ad9f6

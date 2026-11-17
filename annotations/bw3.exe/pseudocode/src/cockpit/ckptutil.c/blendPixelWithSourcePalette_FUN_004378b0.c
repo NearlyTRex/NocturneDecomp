@@ -29,7 +29,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int x,i
   if ((((g_INT_01c6b5a8 <= x) && (x <= g_INT_01c6b5b0)) && (g_INT_01c6b5ac <= y)) &&
      ((y <= g_INT_01c6b5b4 && (g_INT_005fba20 != 8)))) {
     if (g_INT_005fba20 == 0x10) {
-      uVar3 = *(ushort *)(g_ARRAY_PTR_01c5faec[y] + x * 2);
+      uVar3 = *(ushort *)(g_ScreenBufferArray[y] + x * 2);
       uVar7 = (uint)(uVar3 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
               (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f);
       uVar8 = (uint)(uVar3 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
@@ -38,7 +38,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int x,i
               (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f);
     }
     else {
-      puVar10 = (uint *)(g_ARRAY_PTR_01c5faec[y] + x * 4);
+      puVar10 = (uint *)(g_ScreenBufferArray[y] + x * 4);
       uVar7 = (*puVar10 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
               (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f);
       uVar8 = (*puVar10 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
@@ -64,13 +64,13 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int x,i
     uStack_34 = uStack_34 >> (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f);
     uStack_38 = uStack_38 >> (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f);
     if (g_INT_005fba20 != 0x10) {
-      *(uint *)(g_ARRAY_PTR_01c5faec[y] + x * 4) =
+      *(uint *)(g_ScreenBufferArray[y] + x * 4) =
            uStack_3c << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
            uStack_34 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f) |
            uStack_38 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
       return;
     }
-    *(ushort *)(g_ARRAY_PTR_01c5faec[y] + x * 2) =
+    *(ushort *)(g_ScreenBufferArray[y] + x * 2) =
          (ushort)(uStack_34 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
          (ushort)(uStack_3c << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
          (ushort)(uStack_38 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f));

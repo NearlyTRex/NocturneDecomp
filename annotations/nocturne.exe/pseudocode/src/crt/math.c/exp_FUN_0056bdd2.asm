@@ -13,7 +13,7 @@
 ;   crt_math.c_pow_FUN_00565ad6 at 00565bf4
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005c1d9c = 709.782712893384
+;   double g_ExpUnderflowLimit = 709.782712893384
 ;   double g_DOUBLE_005c1da4 = -709.782712893384
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
         ;   Label: crt_math.c_exp_FUN_0056bdd2
     MOV EBP,ESP                         ; 0056bdd3
     SUB ESP,0x10                        ; 0056bdd5
-    FCOM double ptr [0x005c1d9c]        ; 0056bdd8 | g_DOUBLE_005c1d9c
+    FCOM double ptr [0x005c1d9c]        ; 0056bdd8 | g_ExpUnderflowLimit
     FSTSW word ptr [EBP + -0x10]        ; 0056bdde
     WAIT                                ; 0056bde2
     MOV AH,byte ptr [EBP + -0xf]        ; 0056bde3

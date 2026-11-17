@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(CTVBat *this_ptr)
 
 {
-  return &g_CTVBatActorType_02dd110c;
+  return &g_CTVBatClassInfo;
 }

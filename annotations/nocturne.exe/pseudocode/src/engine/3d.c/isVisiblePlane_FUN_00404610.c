@@ -16,9 +16,9 @@ int __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(SClipPlane *plane)
   int iVar5;
   int iVar6;
   
-  g_INT_006b026c = g_INT_006b026c + 1;
+  g_PlaneTestCount = g_PlaneTestCount + 1;
   iVar4 = 1;
-  if (((g_INT_006b0280 == 0) &&
+  if (((g_CullingMode == 0) &&
       ((((plane->A).i != 0 || (plane->B).i != 0) || (plane->C).i != 0) || (plane->D).i != 0)) &&
      (lVar3 = (longlong)(plane->B).i * (longlong)g_RelativeY +
               (longlong)(plane->A).i * (longlong)g_RelativeX +

@@ -9,7 +9,7 @@
 uint FUN_005aca50(byte *param_1)
 
 {
-  if ((g_INT_02d25930 != 0) && ((g_CHAR_ARRAY_02d25941[*param_1] & 1U) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[*param_1] & 1U) != 0)) {
     return 2;
   }
   return 1;

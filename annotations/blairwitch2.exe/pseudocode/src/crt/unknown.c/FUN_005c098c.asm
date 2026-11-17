@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2d8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2dc = 005bce04
-;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;   int g_INT_0061f4dc = 0x0
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 005c098d
     PUSH EDI                            ; 005c098e
     PUSH EBP                            ; 005c098f
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005c0990 | g_SIOControlBlock_PTR_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005c0990 | g_IOControlBlock
     MOV EDI,dword ptr [ESP + 0x18]      ; 005c0996
     TEST EDI,EDI                        ; 005c099a
     JL 0x005c0a56                       ; 005c099c
@@ -65,7 +65,7 @@ section .text
     MOV EBP,dword ptr [0x0061f4dc]      ; 005c09da | g_INT_0061f4dc
         ;   Label: LAB_005c09da
     LEA EBX,[EDI*0x4 + 0x0]             ; 005c09e0
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005c09e7 | g_SIOControlBlock_PTR_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005c09e7 | g_IOControlBlock
     CMP EDI,EBP                         ; 005c09ed
     JGE 0x005c09fb                      ; 005c09ef
         ;   XREF to: 005c09fb (CONDITIONAL_JUMP)  ; LAB_005c09fb
@@ -101,13 +101,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 005c0a35
     INC EDI                             ; 005c0a39
     ADD EAX,ESI                         ; 005c0a3a
-    MOV dword ptr [0x0061f4d8],ESI      ; 005c0a3c | g_SIOControlBlock_PTR_0061f4d8
+    MOV dword ptr [0x0061f4d8],ESI      ; 005c0a3c | g_IOControlBlock
     MOV dword ptr [0x0061f4dc],EDI      ; 005c0a42 | g_INT_0061f4dc
     MOV dword ptr [EAX],EDX             ; 005c0a48
     CALL dword ptr [0x0061f2dc]         ; 005c0a4a | PTR_crt_unknown.c_FUN_005bce04_0061f2dc
         ;   Label: LAB_005c0a4a
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005c0a50 | g_SIOControlBlock_PTR_0061f4d8
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005c0a56 | g_SIOControlBlock_PTR_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005c0a50 | g_IOControlBlock
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005c0a56 | g_IOControlBlock
         ;   Label: LAB_005c0a56
     POP EBP                             ; 005c0a5c
     POP EDI                             ; 005c0a5d

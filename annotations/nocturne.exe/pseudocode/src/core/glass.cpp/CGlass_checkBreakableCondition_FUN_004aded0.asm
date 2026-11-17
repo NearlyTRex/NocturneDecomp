@@ -17,7 +17,7 @@
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af9f
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -30,7 +30,7 @@ section .text
         ;   Label: core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0
     ADD EAX,0x304                       ; 004aded4
     PUSH EAX                            ; 004aded9
-    MOV EDX,dword ptr [0x005b7650]      ; 004adeda | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 004adeda | g_CEventListPtr
     PUSH EDX                            ; 004adee0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004adee1
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

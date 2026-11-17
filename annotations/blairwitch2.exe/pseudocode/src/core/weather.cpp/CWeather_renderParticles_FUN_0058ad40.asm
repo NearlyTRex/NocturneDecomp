@@ -69,17 +69,17 @@
 ;   float g_FLOAT_005fe090 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061e8f8
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061e910
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061e928
+;   SMRGLTextureBasic g_RainDropTexture
+;   SMRGLTextureBasic g_RainSplashTexture
+;   SMRGLTextureBasic g_SnowflakeTexture
 ;   undefined4 DAT_00780000
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   CVector3f[200] g_CVector3f_ARRAY_02661fb8
-;   undefined4 g_CVector3f_ARRAY_02661fb8[0].y
-;   undefined4 g_CVector3f_ARRAY_02661fb8[0].z
-;   undefined4 g_CVector3f_ARRAY_02661fb8[1].x
-;   undefined4 g_CVector3f_ARRAY_02661fb8[1].y
-;   undefined4 g_CVector3f_ARRAY_02661fb8[1].z
+;   CVector3f[200] g_WeatherParticlePositions
+;   undefined4 g_WeatherParticlePositions[0].y
+;   undefined4 g_WeatherParticlePositions[0].z
+;   undefined4 g_WeatherParticlePositions[1].x
+;   undefined4 g_WeatherParticlePositions[1].y
+;   undefined4 g_WeatherParticlePositions[1].z
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_005317c0
@@ -137,7 +137,7 @@ section .text
     CMP dword ptr [EAX],0x1             ; 0058ad9c
     JNZ 0x0058b24e                      ; 0058ad9f
         ;   XREF to: 0058b24e (CONDITIONAL_JUMP)  ; LAB_0058b24e
-    PUSH 0x61e8f8                       ; 0058ada5 | g_SMRGLTextureBasic_0061e8f8
+    PUSH 0x61e8f8                       ; 0058ada5 | g_RainDropTexture
     MOV EAX,[0x0060b280]                ; 0058adaa | g_CDemonRenderer_PTR_0060b280
     PUSH EAX                            ; 0058adaf | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0058adb0
@@ -214,13 +214,13 @@ section .text
     LEA EBX,[ESP + 0x5c]                ; 0058aeb5
     MOV EAX,ESI                         ; 0058aeb9
     MOV EBP,dword ptr [EBP]             ; 0058aebb | g_CDemonRenderer_01ba5c50
-    FLD float ptr [EAX]                 ; 0058aebe | g_CVector3f_ARRAY_02661fb8 | g_CVector3f_ARRAY_02661fb8[1].x
+    FLD float ptr [EAX]                 ; 0058aebe | g_WeatherParticlePositions | g_WeatherParticlePositions[1].x
     FMUL float ptr [0x005fe090]         ; 0058aec0 | g_FLOAT_005fe090
     FISTP dword ptr [EBX]               ; 0058aec6
-    FLD float ptr [EAX + 0x4]           ; 0058aec8 | g_CVector3f_ARRAY_02661fb8[0].y | g_CVector3f_ARRAY_02661fb8[1].y
+    FLD float ptr [EAX + 0x4]           ; 0058aec8 | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     FMUL float ptr [0x005fe090]         ; 0058aecb | g_FLOAT_005fe090
     FISTP dword ptr [EBX + 0x4]         ; 0058aed1
-    FLD float ptr [EAX + 0x8]           ; 0058aed4 | g_CVector3f_ARRAY_02661fb8[0].z | g_CVector3f_ARRAY_02661fb8[1].z
+    FLD float ptr [EAX + 0x8]           ; 0058aed4 | g_WeatherParticlePositions[0].z | g_WeatherParticlePositions[1].z
     FMUL float ptr [0x005fe090]         ; 0058aed7 | g_FLOAT_005fe090
     FISTP dword ptr [EBX + 0x8]         ; 0058aedd
     LEA EAX,[ESP + 0x5c]                ; 0058aee0
@@ -238,7 +238,7 @@ section .text
     TEST EAX,EAX                        ; 0058aefe
     JZ 0x0058b163                       ; 0058af00
         ;   XREF to: 0058b163 (CONDITIONAL_JUMP)  ; LAB_0058b163
-    PUSH ESI                            ; 0058af06 | g_CVector3f_ARRAY_02661fb8
+    PUSH ESI                            ; 0058af06 | g_WeatherParticlePositions
     MOV EAX,[0x0060b280]                ; 0058af07 | g_CDemonRenderer_PTR_0060b280
     PUSH EAX                            ; 0058af0c | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0 ; 0058af0d
@@ -254,13 +254,13 @@ section .text
     ADD ESP,0xc                         ; 0058af28
     LEA EBX,[ESP + 0xb0]                ; 0058af2b
     MOV EAX,ESI                         ; 0058af32
-    FLD float ptr [EAX]                 ; 0058af34 | g_CVector3f_ARRAY_02661fb8
+    FLD float ptr [EAX]                 ; 0058af34 | g_WeatherParticlePositions
     FMUL float ptr [0x005fe090]         ; 0058af36 | g_FLOAT_005fe090
     FISTP dword ptr [EBX]               ; 0058af3c
-    FLD float ptr [EAX + 0x4]           ; 0058af3e | g_CVector3f_ARRAY_02661fb8[0].y
+    FLD float ptr [EAX + 0x4]           ; 0058af3e | g_WeatherParticlePositions[0].y
     FMUL float ptr [0x005fe090]         ; 0058af41 | g_FLOAT_005fe090
     FISTP dword ptr [EBX + 0x4]         ; 0058af47
-    FLD float ptr [EAX + 0x8]           ; 0058af4a | g_CVector3f_ARRAY_02661fb8[0].z
+    FLD float ptr [EAX + 0x8]           ; 0058af4a | g_WeatherParticlePositions[0].z
     FMUL float ptr [0x005fe090]         ; 0058af4d | g_FLOAT_005fe090
     FISTP dword ptr [EBX + 0x8]         ; 0058af53
     PUSH 0x4                            ; 0058af56
@@ -425,7 +425,7 @@ section .text
     CMP dword ptr [EAX],0x1             ; 0058b17a
     JNZ 0x0058b232                      ; 0058b17d
         ;   XREF to: 0058b232 (CONDITIONAL_JUMP)  ; LAB_0058b232
-    PUSH 0x61e910                       ; 0058b183 | g_SMRGLTextureBasic_0061e910
+    PUSH 0x61e910                       ; 0058b183 | g_RainSplashTexture
     MOV EBX,dword ptr [0x0060b280]      ; 0058b188 | g_CDemonRenderer_PTR_0060b280
     PUSH EBX                            ; 0058b18e | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0058b18f
@@ -479,7 +479,7 @@ section .text
     POP EDI                             ; 0058b24b
     POP ESI                             ; 0058b24c
     RET                                 ; 0058b24d
-    PUSH 0x61e928                       ; 0058b24e | g_SMRGLTextureBasic_0061e928
+    PUSH 0x61e928                       ; 0058b24e | g_SnowflakeTexture
         ;   Label: LAB_0058b24e
     MOV EBP,dword ptr [0x0060b280]      ; 0058b253 | g_CDemonRenderer_PTR_0060b280
     PUSH EBP                            ; 0058b259 | g_CDemonRenderer_01ba5c50
@@ -501,9 +501,9 @@ section .text
     LEA EDI,[ESP + 0x38]                ; 0058b292
     LEA ESI,[ESI + 0x2661fb8]           ; 0058b296
     MOV EAX,dword ptr [EAX + 0x2662918] ; 0058b29c
-    MOVSD ES:EDI,ESI                    ; 0058b2a2 | g_CVector3f_ARRAY_02661fb8[1].x
-    MOVSD ES:EDI,ESI                    ; 0058b2a3 | g_CVector3f_ARRAY_02661fb8[1].y
-    MOVSD ES:EDI,ESI                    ; 0058b2a4 | g_CVector3f_ARRAY_02661fb8[1].z
+    MOVSD ES:EDI,ESI                    ; 0058b2a2 | g_WeatherParticlePositions[1].x
+    MOVSD ES:EDI,ESI                    ; 0058b2a3 | g_WeatherParticlePositions[1].y
+    MOVSD ES:EDI,ESI                    ; 0058b2a4 | g_WeatherParticlePositions[1].z
     MOV dword ptr [ESP + 0x3c],EAX      ; 0058b2a5
     LEA EAX,[ESP + 0x38]                ; 0058b2a9
     PUSH EAX                            ; 0058b2ad

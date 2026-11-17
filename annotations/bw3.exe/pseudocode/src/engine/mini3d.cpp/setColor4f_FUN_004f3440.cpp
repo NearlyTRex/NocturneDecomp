@@ -22,8 +22,8 @@ void __cdecl engine_mini3d_cpp_setColor4f_FUN_004f3440(float alpha,float red,flo
   g_FLOAT_01d7a6c0 = blue;
   if (g_FLOAT_01d76c40 != alpha) {
     g_FLOAT_01d76c40 = alpha;
-    if ((g_PTR_02cf60a4 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
-      (*(code *)g_PTR_02cf60a4)(g_FLOAT_01d76cc8,g_INT_01d76ccc,g_INT_01d76cd0,alpha);
+    if ((g_APIDLL_setLightConstants != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+      (*(code *)g_APIDLL_setLightConstants)(g_FLOAT_01d76cc8,g_INT_01d76ccc,g_INT_01d76cd0,alpha);
     }
   }
   fVar1 = green * 255.0f;

@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   int g_INT_01d224b4
-;   int g_INT_01e7dac8
+;   int g_RenderedTriangleCount
 ;   void* g_PTR_02c83468
 ;
 ; Called Functions:
@@ -31,11 +31,11 @@ section .text
         ;   Label: engine_mini3d.cpp_polyListD3DL2_FUN_00512bd0
     PUSH EBP                            ; 00512bd1
     MOV EAX,dword ptr [ESP + 0x18]      ; 00512bd2
-    MOV EDX,dword ptr [0x01e7dac8]      ; 00512bd6 | g_INT_01e7dac8
+    MOV EDX,dword ptr [0x01e7dac8]      ; 00512bd6 | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d224b4]      ; 00512bdc | g_INT_01d224b4
     ADD EDX,EAX                         ; 00512be2
     ADD ECX,dword ptr [ESP + 0x10]      ; 00512be4
-    MOV dword ptr [0x01e7dac8],EDX      ; 00512be8 | g_INT_01e7dac8
+    MOV dword ptr [0x01e7dac8],EDX      ; 00512be8 | g_RenderedTriangleCount
     MOV dword ptr [0x01d224b4],ECX      ; 00512bee | g_INT_01d224b4
     CALL engine_mini3d.cpp_updateTransform_FUN_005124f0 ; 00512bf4
         ;   XREF to: 005124f0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateTransform_FUN_005124f0()
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 00512c3a (CONDITIONAL_JUMP)  ; LAB_00512c3a
     PUSH ESI                            ; 00512c10
     PUSH EBX                            ; 00512c11
-    MOV EAX,[0x01c51d14]                ; 00512c12 | g_BIT_INTEGER32_01c51d14
+    MOV EAX,[0x01c51d14]                ; 00512c12 | g_RenderStateFlags
     PUSH EAX                            ; 00512c17
     MOV EDX,dword ptr [ESP + 0x24]      ; 00512c18
     PUSH EDX                            ; 00512c1c

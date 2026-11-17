@@ -78,18 +78,18 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
   uVar10 = uVar10 >> 0x10;
   iVar11 = (uVar15 >> 0x10) - uVar10;
   if (iVar11 != 0 && uVar10 <= uVar15 >> 0x10) {
-    g_INT_PTR_0061c378 = (int *)(g_ARRAY_PTR_01c2a38c[scanline_y] + uVar10 * 2);
-    g_INT_0061c314 = iVar11 * 4;
-    puVar21 = g_UINT_PTR_ARRAY_01c2b64c[scanline_y] + uVar10;
-    g_INT_PTR_0061c37c = (int *)puVar21;
-    if (g_BIT_INTEGER32_01c38b54.dword == 0x80) {
+    g_CurrentScreenPtr = (int *)(g_ScreenBufferArray[scanline_y] + uVar10 * 2);
+    g_ScanlinePixelCount = iVar11 * 4;
+    puVar21 = g_ZBufferScanlineArray[scanline_y] + uVar10;
+    g_CurrentZBufferPtr = (int *)puVar21;
+    if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
       uVar12 = (pSVar19->base).depth_current;
       iVar20 = (int)((ulonglong)
                      ((longlong)(int)((left_vertex->base).depth_current - uVar12) *
-                     (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-      iVar11 = g_INT_0061c314;
-      g_INT_0061c35c = uVar12;
-      g_INT_0061c788 = iVar20;
+                     (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
+      iVar11 = g_ScanlinePixelCount;
+      g_StartDepthW = uVar12;
+      g_HardwareDeltaDepthZ = iVar20;
       do {
         *puVar21 = uVar12;
         uVar12 = uVar12 + iVar20;
@@ -101,98 +101,98 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
       return;
     }
     uVar12 = (pSVar19->base).u_current;
-    g_INT_0061c780 =
+    g_HardwareDeltaTextureU =
          (int)((ulonglong)
                ((longlong)(int)((left_vertex->base).u_current - uVar12) *
-               (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
     uVar15 = (pSVar19->base).v_current;
-    g_INT_0061c784 =
+    g_HardwareDeltaTextureV =
          (int)((ulonglong)
                ((longlong)(int)((left_vertex->base).v_current - uVar15) *
-               (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
     iVar20 = (pSVar19->base).depth_current;
-    g_INT_0061c788 =
+    g_HardwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)((left_vertex->base).depth_current - iVar20) *
-               (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-    if ((g_BIT_INTEGER32_01c38b54.dword & 8) == 0) {
-      g_INT_0061c840 = 0;
-      g_INT_0061c848 = 0;
+               (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
+    if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) == 0) {
+      g_VertexAlphaStart = 0;
+      g_VertexAlphaDelta = 0;
     }
     else {
-      g_INT_0061c840 = (pSVar19->base).alpha_current;
-      g_INT_0061c848 =
+      g_VertexAlphaStart = (pSVar19->base).alpha_current;
+      g_VertexAlphaDelta =
            (int)((ulonglong)
-                 ((longlong)((left_vertex->base).alpha_current - g_INT_0061c840) *
-                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+                 ((longlong)((left_vertex->base).alpha_current - g_VertexAlphaStart) *
+                 (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
     }
-    if ((g_BIT_INTEGER32_01c38b54.dword & 0x20) != 0) {
+    if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) != 0) {
       g_INT_0061c850 = *(int *)&pSVar19->field_0x48;
       g_INT_0061c858 =
            (int)((ulonglong)
                  ((longlong)(*(int *)&left_vertex->field_0x48 - g_INT_0061c850) *
-                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
     }
     uVar16 = (uint)(pSVar19->base).red_current >> 1;
     uVar10 = (uint)((ulonglong)
                     ((longlong)(int)(((uint)(left_vertex->base).red_current >> 1) - uVar16) *
-                    (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-    g_QWORD_0061c800._0_4_ = uVar16 & 0xffff;
-    g_QWORD_0061c820._0_4_ = uVar10 & 0xffff;
+                    (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
+    g_VertexRedStart._0_4_ = uVar16 & 0xffff;
+    g_VertexRedDelta._0_4_ = uVar10 & 0xffff;
     uVar17 = (uint)pSVar19->green_current >> 1;
     uVar13 = (uint)((ulonglong)
                     ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar17) *
-                    (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-    g_MMX_INTEGER_0061c808.u32[0] = uVar17 & 0xffff;
-    g_MMX_INTEGER_0061c828.u32[0] = uVar13 & 0xffff;
+                    (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
+    g_VertexGreenStart.u32[0] = uVar17 & 0xffff;
+    g_VertexGreenDelta.u32[0] = uVar13 & 0xffff;
     uVar18 = (uint)pSVar19->blue_current >> 1;
     uVar14 = (uint)((ulonglong)
                     ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar18) *
-                    (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-    g_MMX_INTEGER_0061c810.u32[0] = uVar18 & 0xffff;
-    g_MMX_INTEGER_0061c830.u32[0] = uVar14 & 0xffff;
-    uVar49 = ((CONCAT44(g_QWORD_0061c800._4_4_,uVar16) & 0xffffffff0000ffff) << 0x10 |
-             CONCAT44(g_MMX_INTEGER_0061c808.u32[1],uVar17) & 0xffffffff0000ffff) << 0x10 |
-             CONCAT44(g_MMX_INTEGER_0061c810.u32[1],uVar18) & 0xffffffff0000ffff;
+                    (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
+    g_VertexBlueStart.u32[0] = uVar18 & 0xffff;
+    g_VertexBlueDelta.u32[0] = uVar14 & 0xffff;
+    uVar49 = ((CONCAT44(g_VertexRedStart._4_4_,uVar16) & 0xffffffff0000ffff) << 0x10 |
+             CONCAT44(g_VertexGreenStart.u32[1],uVar17) & 0xffffffff0000ffff) << 0x10 |
+             CONCAT44(g_VertexBlueStart.u32[1],uVar18) & 0xffffffff0000ffff;
     g_QWORD_0061c860 =
-         ((CONCAT44(g_QWORD_0061c820._4_4_,uVar10) & 0xffffffff0000ffff) << 0x10 |
-         CONCAT44(g_MMX_INTEGER_0061c828.u32[1],uVar13) & 0xffffffff0000ffff) << 0x10 |
-         CONCAT44(g_MMX_INTEGER_0061c830.u32[1],uVar14) & 0xffffffff0000ffff;
+         ((CONCAT44(g_VertexRedDelta._4_4_,uVar10) & 0xffffffff0000ffff) << 0x10 |
+         CONCAT44(g_VertexGreenDelta.u32[1],uVar13) & 0xffffffff0000ffff) << 0x10 |
+         CONCAT44(g_VertexBlueDelta.u32[1],uVar14) & 0xffffffff0000ffff;
     uVar10 = 0;
-    iVar11 = g_INT_0061c840;
-    g_INT_0061c350 = uVar12;
-    g_INT_0061c354 = uVar15;
-    g_INT_0061c35c = iVar20;
+    iVar11 = g_VertexAlphaStart;
+    g_StartTextureU = uVar12;
+    g_StartTextureV = uVar15;
+    g_StartDepthW = iVar20;
     iVar25 = g_INT_0061c850;
-    if ((g_BIT_INTEGER32_01c38b54.dword & 0x20) == 0) {
-      uVar14 = g_ULONG_01c38b5c >> 0x10;
-      uVar53 = (ushort)(((uint7)(byte)(g_ULONG_01c38b5c >> 0x18) << 0x30) >> 0x28);
-      uVar13 = g_ULONG_01c38b5c >> 8;
-      bVar36 = (byte)g_ULONG_01c38b5c;
-      if ((g_BIT_INTEGER32_01c38b54.dword & 8) == 0) {
+    if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) == 0) {
+      uVar14 = g_SolidColorMode >> 0x10;
+      uVar53 = (ushort)(((uint7)(byte)(g_SolidColorMode >> 0x18) << 0x30) >> 0x28);
+      uVar13 = g_SolidColorMode >> 8;
+      bVar36 = (byte)g_SolidColorMode;
+      if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) == 0) {
         iVar11 = 0;
-        g_INT_0061c848 = 0;
+        g_VertexAlphaDelta = 0;
       }
       while( true ) {
         uVar54 = (ushort)(uVar49 >> 0x10);
         uVar55 = (ushort)(uVar49 >> 0x20);
         uVar22 = (ushort)(uVar49 >> 0x30);
-        if (((g_BIT_INTEGER32_01c38b54.dword & 0x40) == 0) ||
-           (*(int *)(uVar10 + (int)g_INT_PTR_0061c37c) <= iVar20)) {
-          if ((g_BIT_INTEGER32_01c38b54.dword & 1) == 0) {
-            uVar16 = g_INT_0061c978;
-            if ((g_BIT_INTEGER32_01c38b54.dword & 0x200) == 0) {
+        if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
+           (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar20)) {
+          if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0) {
+            uVar16 = g_SpecialColor;
+            if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
               uVar16 = g_INT_01c35e60;
             }
           }
           else {
-            iVar25 = (uVar12 >> g_QWORD_0061c868 & (uint)g_QWORD_0061c8a8) +
-                     (uVar15 >> g_QWORD_0061c888 & (uint)g_QWORD_0061c8c8);
+            iVar25 = (uVar12 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                     (uVar15 >> g_TextureShift2 & (uint)g_TextureMask2);
             if (g_INT_01c37784 == 0) {
-              uVar16 = g_UINT_ARRAY_01c35214[g_UCHAR_PTR_01c37770[iVar25]];
+              uVar16 = g_Hardware32BitPalette[g_CurrentTextureData[iVar25]];
             }
             else {
-              uVar16 = *(uint *)(g_UCHAR_PTR_01c37770 + iVar25 * 4);
+              uVar16 = *(uint *)(g_CurrentTextureData + iVar25 * 4);
             }
           }
           uVar26 = psllw((ulonglong)
@@ -218,7 +218,7 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
                   (0xff < sVar48);
           uVar16 = CONCAT13(cVar5,CONCAT12(cVar4,uVar23));
           uVar37 = (ulonglong)(uint6)uVar16;
-          if ((g_BIT_INTEGER32_01c38b54.dword & 8) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
             uVar37 = g_QWORD_ARRAY_0061d180[iVar11 >> 8];
             uVar39 = uVar37 ^ g_QWORD_ARRAY_0061d180[0xff];
             uVar16 = (uint)(CONCAT34((int3)(CONCAT25((short)(CONCAT16(cVar5,(uint6)uVar16) >> 0x28),
@@ -246,29 +246,30 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
                                                 (uVar30 != 0) * (uVar30 < 0x100) *
                                                 (char)(uVar27 >> 8) - (0xff < uVar30))));
           }
-          *(ushort *)((uVar10 >> 1) + (int)g_INT_PTR_0061c378) =
-               (ushort)((uVar37 & g_QWORD_0061c928) >> g_QWORD_0061c970) |
-               (ushort)((uVar37 & g_QWORD_0061c908) >> g_QWORD_0061c950) |
-               (ushort)((uVar37 & g_QWORD_0061c8e8) >> g_QWORD_0061c930);
-          if ((g_BIT_INTEGER32_01c38b54.dword & 0x80) != 0) {
-            *(int *)((int)g_INT_PTR_0061c37c + uVar10) = iVar20;
+          *(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) =
+               (ushort)((uVar37 & g_BlueMask32) >> g_BlueBitShift) |
+               (ushort)((uVar37 & g_GreenMask32) >> g_GreenBlueDitherShift) |
+               (ushort)((uVar37 & g_RedMask32) >> g_TotalDitherShift);
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
+            *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar20;
           }
         }
         uVar10 = uVar10 + 4;
-        if ((uint)g_INT_0061c314 <= uVar10) break;
-        uVar12 = uVar12 + g_INT_0061c780;
+        if ((uint)g_ScanlinePixelCount <= uVar10) break;
+        uVar12 = uVar12 + g_HardwareDeltaTextureU;
         sVar48 = (ushort)uVar49 + (short)g_QWORD_0061c860;
         sVar50 = uVar54 + (short)(g_QWORD_0061c860 >> 0x10);
         sVar51 = uVar55 + (short)(g_QWORD_0061c860 >> 0x20);
         sVar52 = uVar22 + (short)(g_QWORD_0061c860 >> 0x30);
-        uVar15 = uVar15 + g_INT_0061c784;
-        iVar20 = iVar20 + g_INT_0061c788;
-        iVar11 = iVar11 + g_INT_0061c848;
-        uVar49 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x30) < sVar52),
-                          CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x20) < sVar51)
-                                   ,CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x10)
-                                                      < sVar50),
-                                             -(ushort)(SUB82(g_DOUBLE_0061c78c,0) < sVar48)))) &
+        uVar15 = uVar15 + g_HardwareDeltaTextureV;
+        iVar20 = iVar20 + g_HardwareDeltaDepthZ;
+        iVar11 = iVar11 + g_VertexAlphaDelta;
+        uVar49 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar52),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+                                            sVar51),
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                             0x10) < sVar50),
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar48)))) &
                  CONCAT26(sVar52,CONCAT24(sVar51,CONCAT22(sVar50,sVar48)));
       }
     }
@@ -277,28 +278,28 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
         uVar53 = (ushort)(uVar49 >> 0x10);
         uVar54 = (ushort)(uVar49 >> 0x20);
         uVar55 = (ushort)(uVar49 >> 0x30);
-        if (((g_BIT_INTEGER32_01c38b54.dword & 0x40) == 0) ||
-           (*(int *)(uVar10 + (int)g_INT_PTR_0061c37c) <= iVar20)) {
-          iVar24 = (uVar12 >> g_QWORD_0061c868 & (uint)g_QWORD_0061c8a8) +
-                   (uVar15 >> g_QWORD_0061c888 & (uint)g_QWORD_0061c8c8);
+        if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
+           (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar20)) {
+          iVar24 = (uVar12 >> g_TextureShift1 & (uint)g_TextureMask1) +
+                   (uVar15 >> g_TextureShift2 & (uint)g_TextureMask2);
           if (g_INT_01c37784 == 0) {
-            uVar13 = g_UINT_ARRAY_01c35214[g_UCHAR_PTR_01c37770[iVar24]];
+            uVar13 = g_Hardware32BitPalette[g_CurrentTextureData[iVar24]];
             uVar37 = (ulonglong)
                      CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar13 
                                                   >> 0x18) << 0x30) >> 0x28),
                                                   CONCAT14((char)(uVar13 >> 0x10),uVar13)) >> 0x20),
                                                   uVar13) >> 0x18),(char)(uVar13 >> 8)),
                               (ushort)(byte)uVar13) & 0xffffffff00ffffff;
-            if (g_UCHAR_PTR_01c37774 == (uchar *)0x0) {
+            if (g_CurrentTextureOpacityData == (uchar *)0x0) {
               uVar13 = 0xff;
             }
             else {
-              uVar13 = (uint)g_UCHAR_PTR_01c37774
-                             [(int)(g_UCHAR_PTR_01c37770 + iVar24) - (int)g_UCHAR_PTR_01c37770];
+              uVar13 = (uint)g_CurrentTextureOpacityData
+                             [(int)(g_CurrentTextureData + iVar24) - (int)g_CurrentTextureData];
             }
           }
           else {
-            uVar13 = *(uint *)(g_UCHAR_PTR_01c37770 + iVar24 * 4);
+            uVar13 = *(uint *)(g_CurrentTextureData + iVar24 * 4);
             uVar37 = (ulonglong)
                      CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar13 
                                                   >> 0x18) << 0x30) >> 0x28),
@@ -308,10 +309,10 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
             uVar13 = uVar13 >> 0x18;
           }
           if (uVar13 != 0) {
-            uVar14 = (uint)*(ushort *)((uVar10 >> 1) + (int)g_INT_PTR_0061c378);
-            uVar44 = (uint7)((uVar14 & g_MMX_INTEGER_0061c8e0.mm) << g_QWORD_0061c970) |
-                     (uint7)((uVar14 & g_MMX_INTEGER_0061c8d8.mm) << g_QWORD_0061c950) |
-                     (uint7)((uVar14 & g_MMX_INTEGER_0061c8d0.mm) << g_QWORD_0061c930);
+            uVar14 = (uint)*(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr);
+            uVar44 = (uint7)((uVar14 & g_BlueMask16.mm) << g_BlueBitShift) |
+                     (uint7)((uVar14 & g_GreenMask16.mm) << g_GreenBlueDitherShift) |
+                     (uint7)((uVar14 & g_RedMask16.mm) << g_TotalDitherShift);
             uVar22 = (ushort)(((uVar44 >> 0x18) << 0x30) >> 0x28);
             uVar6 = CONCAT21(uVar22,(char)(uVar44 >> 0x10));
             uVar7 = CONCAT41((int)(((uint7)uVar6 << 0x20) >> 0x18),(char)(uVar44 >> 8));
@@ -335,21 +336,21 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
             uVar27 = (ushort)(byte)((0 < sVar48) * (sVar48 < 0x100) * (char)uVar26 - (0xff < sVar48)
                                    );
             uVar37 = (ulonglong)CONCAT52(uVar9,uVar27);
-            if ((g_BIT_INTEGER32_01c38b54.dword & 8) != 0) {
+            if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
               uVar37 = g_QWORD_ARRAY_0061d180[iVar11 >> 8];
               uVar39 = uVar37 ^ g_QWORD_ARRAY_0061d180[0xff];
-              uVar28 = (ushort)(((uint7)(byte)(g_ULONG_01c38b5c >> 0x18) << 0x30) >> 0x28);
+              uVar28 = (ushort)(((uint7)(byte)(g_SolidColorMode >> 0x18) << 0x30) >> 0x28);
               uVar37 = CONCAT26((ushort)((uVar30 >> 8) * (short)(uVar39 >> 0x30) +
                                         (uVar28 >> 8) * (short)(uVar37 >> 0x30)) >> 8,
                                 CONCAT24((ushort)((short)uVar8 * (short)(uVar39 >> 0x20) +
-                                                 (short)CONCAT21(uVar28,(char)(g_ULONG_01c38b5c >>
+                                                 (short)CONCAT21(uVar28,(char)(g_SolidColorMode >>
                                                                               0x10)) *
                                                  (short)(uVar37 >> 0x20)) >> 8,
                                          CONCAT22((ushort)((short)uVar9 * (short)(uVar39 >> 0x10) +
-                                                          (ushort)(byte)(g_ULONG_01c38b5c >> 8) *
+                                                          (ushort)(byte)(g_SolidColorMode >> 8) *
                                                           (short)(uVar37 >> 0x10)) >> 8,
                                                   (ushort)(uVar27 * (short)uVar39 +
-                                                          ((ushort)g_ULONG_01c38b5c & 0xff) *
+                                                          ((ushort)g_SolidColorMode & 0xff) *
                                                           (short)uVar37) >> 8)));
             }
             uVar39 = g_QWORD_ARRAY_0061d180[uVar13 * iVar25 >> 0x10];
@@ -362,7 +363,7 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
             sVar50 = (short)(uVar37 >> 0x10);
             sVar51 = (short)(uVar37 >> 0x20);
             sVar52 = (short)(uVar37 >> 0x30);
-            if (g_INT_01c38b4c == 1) {
+            if (g_BlendMode == 1) {
               uVar26 = CONCAT26(sVar52 * sVar42,
                                 CONCAT24(sVar51 * sVar41,CONCAT22(sVar50 * sVar40,sVar48 * sVar38)))
               ;
@@ -372,7 +373,7 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
               sVar46 = (short)uVar7;
               sVar47 = (short)uVar6;
               uVar22 = uVar22 >> 8;
-              if (g_INT_01c38b4c == 2) {
+              if (g_BlendMode == 2) {
                 uVar45 = CONCAT26(uVar22 * sVar52,
                                   CONCAT24(sVar47 * sVar51,CONCAT22(sVar46 * sVar50,uVar33 * sVar48)
                                           ));
@@ -380,7 +381,7 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
                                   CONCAT24(sVar51 * sVar41,CONCAT22(sVar50 * sVar40,sVar48 * sVar38)
                                           ));
               }
-              else if (g_INT_01c38b4c == 3) {
+              else if (g_BlendMode == 3) {
                 uVar37 = uVar37 ^ g_QWORD_ARRAY_0061d180[0xff];
                 uVar45 = CONCAT26(uVar22 * (short)(uVar37 >> 0x30),
                                   CONCAT24(sVar47 * (short)(uVar37 >> 0x20),
@@ -414,31 +415,32 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FU
                                                 (char)((ulonglong)uVar26 >> 0x18) - (0xff < uVar27),
                                                 (uVar22 != 0) * (uVar22 < 0x100) *
                                                 (char)((ulonglong)uVar26 >> 8) - (0xff < uVar22))));
-            *(ushort *)((uVar10 >> 1) + (int)g_INT_PTR_0061c378) =
-                 (ushort)((uVar37 & g_QWORD_0061c928) >> g_QWORD_0061c970) |
-                 (ushort)((uVar37 & g_QWORD_0061c908) >> g_QWORD_0061c950) |
-                 (ushort)((uVar37 & g_QWORD_0061c8e8) >> g_QWORD_0061c930);
-            if ((g_BIT_INTEGER32_01c38b54.dword & 0x80) != 0) {
-              *(int *)(uVar10 + (int)g_INT_PTR_0061c37c) = iVar20;
+            *(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) =
+                 (ushort)((uVar37 & g_BlueMask32) >> g_BlueBitShift) |
+                 (ushort)((uVar37 & g_GreenMask32) >> g_GreenBlueDitherShift) |
+                 (ushort)((uVar37 & g_RedMask32) >> g_TotalDitherShift);
+            if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
+              *(int *)(uVar10 + (int)g_CurrentZBufferPtr) = iVar20;
             }
           }
         }
         uVar10 = uVar10 + 4;
-        if ((uint)g_INT_0061c314 <= uVar10) break;
-        uVar12 = uVar12 + g_INT_0061c780;
+        if ((uint)g_ScanlinePixelCount <= uVar10) break;
+        uVar12 = uVar12 + g_HardwareDeltaTextureU;
         sVar48 = (ushort)uVar49 + (short)g_QWORD_0061c860;
         sVar50 = uVar53 + (short)(g_QWORD_0061c860 >> 0x10);
         sVar51 = uVar54 + (short)(g_QWORD_0061c860 >> 0x20);
         sVar52 = uVar55 + (short)(g_QWORD_0061c860 >> 0x30);
-        uVar15 = uVar15 + g_INT_0061c784;
-        iVar20 = iVar20 + g_INT_0061c788;
-        uVar49 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x30) < sVar52),
-                          CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x20) < sVar51)
-                                   ,CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x10)
-                                                      < sVar50),
-                                             -(ushort)(SUB82(g_DOUBLE_0061c78c,0) < sVar48)))) &
+        uVar15 = uVar15 + g_HardwareDeltaTextureV;
+        iVar20 = iVar20 + g_HardwareDeltaDepthZ;
+        uVar49 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar52),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+                                            sVar51),
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                             0x10) < sVar50),
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar48)))) &
                  CONCAT26(sVar52,CONCAT24(sVar51,CONCAT22(sVar50,sVar48)));
-        iVar11 = iVar11 + g_INT_0061c848;
+        iVar11 = iVar11 + g_VertexAlphaDelta;
         iVar25 = iVar25 + g_INT_0061c858;
       }
     }

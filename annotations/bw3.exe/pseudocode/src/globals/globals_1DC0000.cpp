@@ -5,13 +5,13 @@
 // =============================================================================
 
 // SChatOutMessage[50]
-SChatOutMessage g_SChatOutMessage_ARRAY_01dc2694[50] = {};
+SChatOutMessage g_ChatOutMessages[50] = {};
 
 // SSimFrame[512]
 SSimFrame g_SSimFrame_ARRAY_01dc5c84[512] = {};
 
 // int
-int g_INT_01dc2690 = {};
-int g_INT_01dc5c7c = {};
-int g_INT_01dc5c80 = {};
+int g_ChatOutCount = {};
+int g_ChatOutSequence = {};
+int g_SimFrameCount = {};
 

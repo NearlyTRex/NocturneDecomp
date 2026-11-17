@@ -30,8 +30,8 @@
 ;   engine_matrix.c_buildRotationMatrix_FUN_005076b0 at 00507994
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005e76de = 0.0000152587890625
-;   double g_DOUBLE_005e76e6 = 65536
+;   double g_FixedToFloat = 0.0000152587890625
+;   double g_Fixed16Scale = 65536
 ;   int g_INT_01c51d5c
 ;   int g_INT_01c51d60
 ;   int g_INT_01c51d64
@@ -60,27 +60,27 @@ section .text
     SUB ESP,0x54                        ; 005073d3
     AND ESP,0xfffffff8                  ; 005073d6
     FILD dword ptr [0x01c51d5c]         ; 005073d9 | g_INT_01c51d5c
-    FMUL double ptr [0x005e76de]        ; 005073df | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 005073df | g_FixedToFloat
     FILD dword ptr [0x01c51d60]         ; 005073e5 | g_INT_01c51d60
-    FMUL double ptr [0x005e76de]        ; 005073eb | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 005073eb | g_FixedToFloat
     FILD dword ptr [0x01c51d64]         ; 005073f1 | g_INT_01c51d64
-    FMUL double ptr [0x005e76de]        ; 005073f7 | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 005073f7 | g_FixedToFloat
     FILD dword ptr [0x01c51d68]         ; 005073fd | g_INT_01c51d68
-    FMUL double ptr [0x005e76de]        ; 00507403 | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 00507403 | g_FixedToFloat
     FILD dword ptr [0x01c51d6c]         ; 00507409 | g_INT_01c51d6c
-    FMUL double ptr [0x005e76de]        ; 0050740f | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 0050740f | g_FixedToFloat
     FILD dword ptr [0x01c51d70]         ; 00507415 | g_INT_01c51d70
-    FMUL double ptr [0x005e76de]        ; 0050741b | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 0050741b | g_FixedToFloat
     FILD dword ptr [0x01c51d74]         ; 00507421 | g_INT_01c51d74
-    FMUL double ptr [0x005e76de]        ; 00507427 | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 00507427 | g_FixedToFloat
     FXCH ST6                            ; 0050742d
     FSTP float ptr [ESP + 0x48]         ; 0050742f
     FILD dword ptr [0x01c51d78]         ; 00507433 | g_INT_01c51d78
-    FMUL double ptr [0x005e76de]        ; 00507439 | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 00507439 | g_FixedToFloat
     FXCH ST2                            ; 0050743f
     FSTP float ptr [ESP + 0x3c]         ; 00507441
     FILD dword ptr [0x01c51d7c]         ; 00507445 | g_INT_01c51d7c
-    FMUL double ptr [0x005e76de]        ; 0050744b | g_DOUBLE_005e76de
+    FMUL double ptr [0x005e76de]        ; 0050744b | g_FixedToFloat
     FXCH                                ; 00507451
     FSTP float ptr [ESP + 0x34]         ; 00507453
     FLD float ptr [ESP + 0x3c]          ; 00507457
@@ -122,49 +122,49 @@ section .text
     MOV EAX,[0x01c51d5c]                ; 005074d1 | g_INT_01c51d5c
     FLD float ptr [ESP + 0x50]          ; 005074d6
     FMUL ST6                            ; 005074da
-    MOV [0x01d1dd40],EAX                ; 005074dc | g_CMatrix3x3i_01d1dd40
+    MOV [0x01d1dd40],EAX                ; 005074dc | g_TransformMatrixCopy
     FSUBP ST3,ST0                       ; 005074e1
     MOV EAX,[0x01c51d60]                ; 005074e3 | g_INT_01c51d60
     FLD float ptr [ESP + 0x44]          ; 005074e8
     FMUL float ptr [ESP + 0x40]         ; 005074ec
-    MOV [0x01d1dd44],EAX                ; 005074f0 | g_CMatrix3x3i_01d1dd40.m[0].y
+    MOV [0x01d1dd44],EAX                ; 005074f0 | g_TransformMatrixCopy.m[0].y
     MOV EAX,[0x01c51d64]                ; 005074f5 | g_INT_01c51d64
     FSTP float ptr [ESP + 0x18]         ; 005074fa
     FLD float ptr [ESP + 0x3c]          ; 005074fe
     FMUL float ptr [ESP + 0x38]         ; 00507502
-    MOV [0x01d1dd48],EAX                ; 00507506 | g_CMatrix3x3i_01d1dd40.m[0].z
+    MOV [0x01d1dd48],EAX                ; 00507506 | g_TransformMatrixCopy.m[0].z
     FSUBR float ptr [ESP + 0x18]        ; 0050750b
     MOV EAX,[0x01c51d68]                ; 0050750f | g_INT_01c51d68
     FSTP float ptr [ESP + 0x30]         ; 00507514
     FLD float ptr [ESP + 0x4c]          ; 00507518
     FMUL float ptr [ESP + 0x30]         ; 0050751c
-    MOV [0x01d1dd4c],EAX                ; 00507520 | g_CMatrix3x3i_01d1dd40.m[1].x
+    MOV [0x01d1dd4c],EAX                ; 00507520 | g_TransformMatrixCopy.m[1].x
     FXCH ST2                            ; 00507525
     FSUBP ST4,ST0                       ; 00507527
     MOV EAX,[0x01c51d6c]                ; 00507529 | g_INT_01c51d6c
     FSUBP ST4,ST0                       ; 0050752e
-    MOV [0x01d1dd50],EAX                ; 00507530 | g_CMatrix3x3i_01d1dd40.m[1].y
+    MOV [0x01d1dd50],EAX                ; 00507530 | g_TransformMatrixCopy.m[1].y
     MOV EAX,[0x01c51d70]                ; 00507535 | g_INT_01c51d70
     FXCH ST2                            ; 0050753a
     FCHS                                ; 0050753c
-    MOV [0x01d1dd54],EAX                ; 0050753e | g_CMatrix3x3i_01d1dd40.m[1].z
+    MOV [0x01d1dd54],EAX                ; 0050753e | g_TransformMatrixCopy.m[1].z
     MOV EAX,[0x01c51d74]                ; 00507543 | g_INT_01c51d74
     FXCH ST3                            ; 00507548
     FSTP float ptr [ESP + 0x28]         ; 0050754a
-    MOV [0x01d1dd58],EAX                ; 0050754e | g_CMatrix3x3i_01d1dd40.m[2].x
+    MOV [0x01d1dd58],EAX                ; 0050754e | g_TransformMatrixCopy.m[2].x
     MOV EAX,[0x01c51d78]                ; 00507553 | g_INT_01c51d78
     FXCH ST2                            ; 00507558
     FSTP float ptr [ESP + 0x24]         ; 0050755a
-    MOV [0x01d1dd5c],EAX                ; 0050755e | g_CMatrix3x3i_01d1dd40.m[2].y
+    MOV [0x01d1dd5c],EAX                ; 0050755e | g_TransformMatrixCopy.m[2].y
     FXCH ST2                            ; 00507563
     FCHS                                ; 00507565
     FSTP float ptr [ESP + 0x20]         ; 00507567
     MOV EAX,[0x01c51d7c]                ; 0050756b | g_INT_01c51d7c
     FADDP                               ; 00507570
-    MOV [0x01d1dd60],EAX                ; 00507572 | g_CMatrix3x3i_01d1dd40.m[2].z
+    MOV [0x01d1dd60],EAX                ; 00507572 | g_TransformMatrixCopy.m[2].z
     FSTP float ptr [ESP]                ; 00507577
     FLD float ptr [ESP]                 ; 0050757a
-    FDIVR double ptr [0x005e76e6]       ; 0050757d | g_DOUBLE_005e76e6
+    FDIVR double ptr [0x005e76e6]       ; 0050757d | g_Fixed16Scale
     FLD float ptr [ESP + 0x48]          ; 00507583
     FLD ST0                             ; 00507587
     FMUL float ptr [ESP + 0x40]         ; 00507589

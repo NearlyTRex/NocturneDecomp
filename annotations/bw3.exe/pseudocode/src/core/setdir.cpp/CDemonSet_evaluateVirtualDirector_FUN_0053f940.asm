@@ -379,7 +379,7 @@ section .text
     XOR EAX,EAX                         ; 0053fded
     ADD EAX,0x4                         ; 0053fdef
         ;   Label: LAB_0053fdef
-    MOV EDX,dword ptr [EAX + 0x1c60da8] ; 0053fdf2 | g_UINT_PTR_ARRAY_01c60dac
+    MOV EDX,dword ptr [EAX + 0x1c60da8] ; 0053fdf2 | g_ZBufferScanlineArray
     MOV dword ptr [ESP + EAX*0x1 + 0x8],EDX ; 0053fdf8
     CMP EAX,0xc0                        ; 0053fdfc
     JNZ 0x0053fdef                      ; 0053fe01
@@ -429,7 +429,7 @@ section .text
     ADD EAX,0x4                         ; 0053fea6
         ;   Label: LAB_0053fea6
     MOV EDX,dword ptr [ESP + EAX*0x1 + 0x8] ; 0053fea9
-    MOV dword ptr [EAX + 0x1c60da8],EDX ; 0053fead | g_UINT_PTR_ARRAY_01c60dac
+    MOV dword ptr [EAX + 0x1c60da8],EDX ; 0053fead | g_ZBufferScanlineArray
     CMP EAX,0xc0                        ; 0053feb3
     JNZ 0x0053fea6                      ; 0053feb8
         ;   XREF to: 0053fea6 (CONDITIONAL_JUMP)  ; LAB_0053fea6
@@ -1089,7 +1089,7 @@ section .text
     MOV EDX,0x212551c                   ; 0054074b
     ADD EDX,EAX                         ; 00540750
     XOR EAX,EAX                         ; 00540752
-    MOV dword ptr [EAX + 0x1c60dac],EDX ; 00540754 | g_UINT_PTR_ARRAY_01c60dac
+    MOV dword ptr [EAX + 0x1c60dac],EDX ; 00540754 | g_ZBufferScanlineArray
         ;   Label: LAB_00540754
     ADD EAX,0x4                         ; 0054075a
     ADD EDX,0x100                       ; 0054075d
@@ -1146,7 +1146,7 @@ section .text
     MOV ECX,0x100                       ; 0054080b
         ;   Label: LAB_0054080b
     MOV EDI,EDX                         ; 00540810
-    MOV ESI,dword ptr [EBX + 0x1c60dac] ; 00540812 | g_UINT_PTR_ARRAY_01c60dac
+    MOV ESI,dword ptr [EBX + 0x1c60dac] ; 00540812 | g_ZBufferScanlineArray
     ADD EBX,0x4                         ; 00540818
     PUSH EDI                            ; 0054081b
     MOV EAX,ECX                         ; 0054081c
@@ -1156,7 +1156,7 @@ section .text
     AND CL,0x3                          ; 00540825
     MOVSB.REP ES:EDI,ESI                ; 00540828
     POP EDI                             ; 0054082a
-    MOV dword ptr [EBX + 0x1c60da8],EDX ; 0054082b | g_UINT_PTR_ARRAY_01c60dac
+    MOV dword ptr [EBX + 0x1c60da8],EDX ; 0054082b | g_ZBufferScanlineArray
     ADD EDX,0x100                       ; 00540831
     CMP EBX,0xc0                        ; 00540837
     JNZ 0x0054080b                      ; 0054083d
@@ -1241,7 +1241,7 @@ section .text
     MOV EDX,EDI                         ; 00540930
     MOV dword ptr [ESP + 0x324],EBX     ; 00540932
     XOR EAX,EAX                         ; 00540939
-    MOV dword ptr [EAX + 0x1c60dac],EDX ; 0054093b | g_UINT_PTR_ARRAY_01c60dac | DAT_02122514
+    MOV dword ptr [EAX + 0x1c60dac],EDX ; 0054093b | g_ZBufferScanlineArray | DAT_02122514
         ;   Label: LAB_0054093b
     ADD EAX,0x4                         ; 00540941
     ADD EDX,0x100                       ; 00540944

@@ -13,13 +13,13 @@
 ;   sound_sndmain.cpp_startRecording_FUN_00575aa0 at 00575ae0
 ;
 ; Referenced Globals:
-;   int g_INT_00623320 = 0x8
-;   int g_INT_00623324 = 0x1
-;   int g_INT_00623328 = 0x2b11
+;   int g_RecordingBitsPerSample = 0x8
+;   int g_RecordingChannelCount = 0x1
+;   int g_RecordingSampleRate = 0x2b11
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   CSoundDevice* g_CSoundDevice_PTR_02c81038
-;   int g_INT_02c81040
+;   CSoundDevice* g_RecordingDeviceInterface
+;   int g_RecordingSamplesSigned
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -41,17 +41,17 @@ section .text
         ;   XREF to: 005759ff (CONDITIONAL_JUMP)  ; LAB_005759ff
     MOV EAX,dword ptr [ESP + 0x14]      ; 005759bd
         ;   Label: LAB_005759bd
-    MOV [0x00623320],EAX                ; 005759c1 | g_INT_00623320
+    MOV [0x00623320],EAX                ; 005759c1 | g_RecordingBitsPerSample
     MOV EAX,dword ptr [ESP + 0x18]      ; 005759c6
-    MOV [0x00623324],EAX                ; 005759ca | g_INT_00623324
+    MOV [0x00623324],EAX                ; 005759ca | g_RecordingChannelCount
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005759cf
     MOV EBX,dword ptr [ESP + 0x20]      ; 005759d3
-    MOV [0x00623328],EAX                ; 005759d7 | g_INT_00623328
+    MOV [0x00623328],EAX                ; 005759d7 | g_RecordingSampleRate
     TEST EBX,EBX                        ; 005759dc
     SETNZ AL                            ; 005759de
     AND EAX,0xff                        ; 005759e1
-    MOV ESI,dword ptr [0x02c81038]      ; 005759e6 | g_CSoundDevice_PTR_02c81038
-    MOV [0x02c81040],EAX                ; 005759ec | g_INT_02c81040
+    MOV ESI,dword ptr [0x02c81038]      ; 005759e6 | g_RecordingDeviceInterface
+    MOV [0x02c81040],EAX                ; 005759ec | g_RecordingSamplesSigned
     TEST ESI,ESI                        ; 005759f1
     JNZ 0x00575a24                      ; 005759f3
         ;   XREF to: 00575a24 (CONDITIONAL_JUMP)  ; LAB_00575a24
@@ -75,11 +75,11 @@ section .text
         ;   XREF to: 005759bd (UNCONDITIONAL_JUMP)  ; LAB_005759bd
     PUSH EAX                            ; 00575a24
         ;   Label: LAB_00575a24
-    MOV EDI,dword ptr [0x00623328]      ; 00575a25 | g_INT_00623328
+    MOV EDI,dword ptr [0x00623328]      ; 00575a25 | g_RecordingSampleRate
     PUSH EDI                            ; 00575a2b
-    MOV EBP,dword ptr [0x00623324]      ; 00575a2c | g_INT_00623324
+    MOV EBP,dword ptr [0x00623324]      ; 00575a2c | g_RecordingChannelCount
     PUSH EBP                            ; 00575a32
-    MOV EAX,[0x00623320]                ; 00575a33 | g_INT_00623320
+    MOV EAX,[0x00623320]                ; 00575a33 | g_RecordingBitsPerSample
     PUSH EAX                            ; 00575a38
     MOV ECX,dword ptr [ESI]             ; 00575a39
     PUSH ESI                            ; 00575a3b

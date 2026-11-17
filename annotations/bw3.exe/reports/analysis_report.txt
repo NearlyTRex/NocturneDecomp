@@ -7,28 +7,28 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 5183
-Clean functions: 2972 (57.3%)
-Functions with suspects: 2211 (42.7%)
+Clean functions: 2983 (57.6%)
+Functions with suspects: 2200 (42.4%)
 
-Total suspect patterns: 30441
-Average suspects per function: 5.87
+Total suspect patterns: 30234
+Average suspects per function: 5.83
 
 Virtual files: 205 total, 12 at 100%, 15 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3999, Average: 50.1
+  Min: 4, Max: 4012, Average: 50.1
 
-Average complexity score: 115.1
+Average complexity score: 114.7
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              9265
-  pointer_truncation        7764
-  unrolled_memcpy           1610
+  pointer_truncation        7762
+  unrolled_memcpy           1615
   stack_ref                 1490
   stack_param               1466
   unknown_field             1279
-  concat_reconstruction     817
+  concat_reconstruction     827
   unaffected_reg            741
   shadow_pointer_walk       635
   stack_alignment_array     581
@@ -40,7 +40,6 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strlen           276
   unrolled_memset           242
   undefined_data            240
-  unnamed_param             210
   suspect_float             205
   warning_unreachable       157
   warning_type_propagation  149
@@ -64,11 +63,11 @@ SUSPECT PATTERN BREAKDOWN
   alloc_magic_size          27
   eflags_input              26
   sign_compare_idiom        25
-  fnstsw_flag_artifact      24
   preinc_loop_idiom         23
   param_count_too_few       19
   undefined_type            16
   unnamed_field             15
+  fnstsw_flag_artifact      14
   raw_address_pointer_store 13
   suspicious_cast           12
   fast_inv_sqrt_inline      9
@@ -151,40 +150,40 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   004131e0: core_bmppuzzl.cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004131e0 (4 lines)
   004131f0: core_bmppuzzl.cpp_CAudioRecPuzzle_getTransportState_FUN_004131f0 (4 lines)
   004133b0: core_bmppuzzl.cpp_CChemPuzzle_restoreGraphics_FUN_004133b0 (4 lines)
-  ... and 2922 more
+  ... and 2933 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  004c07b0: core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 (score: 5533, suspects: 342, lines: 2048)
-  0048c2e0: core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 (score: 5109, suspects: 105, lines: 3999)
+  004c07b0: core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 (score: 5523, suspects: 342, lines: 2038)
+  0048c2e0: core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 (score: 5122, suspects: 105, lines: 4012)
   0051c1c0: core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 (score: 4862, suspects: 347, lines: 1352)
-  00529a70: core_script.cpp_CScript_step_FUN_00529a70 (score: 4680, suspects: 82, lines: 3810)
-  00455080: core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 (score: 4167, suspects: 267, lines: 1437)
+  00529a70: core_script.cpp_CScript_step_FUN_00529a70 (score: 4707, suspects: 82, lines: 3837)
+  00455080: core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 (score: 3894, suspects: 240, lines: 1439)
   0051f490: core_prye.cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490 (score: 3882, suspects: 278, lines: 1067)
   00588ee0: core_zombie.cpp_CZombie_process_FUN_00588ee0 (score: 3734, suspects: 229, lines: 1379)
   004c6eb0: core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 (score: 3652, suspects: 233, lines: 1267)
-  0041b470: core_box.cpp_CBox_processPhysics_FUN_0041b470 (score: 3493, suspects: 241, lines: 1038)
-  00594000: core_tawiscara.cpp_CTawiscara_process_FUN_00594000 (score: 3275, suspects: 228, lines: 940)
+  0041b470: core_box.cpp_CBox_processPhysics_FUN_0041b470 (score: 3497, suspects: 241, lines: 1042)
   00518cd0: core_prye.cpp_CPrye_processFrame_FUN_00518cd0 (score: 3250, suspects: 177, lines: 1425)
   0057d720: core_werewolf.cpp_CWerewolf_process_FUN_0057d720 (score: 3101, suspects: 211, lines: 941)
+  00594000: core_tawiscara.cpp_CTawiscara_process_FUN_00594000 (score: 3101, suspects: 211, lines: 941)
   00425da0: core_carved.cpp_CCarved_process_FUN_00425da0 (score: 3023, suspects: 192, lines: 1053)
   00591f30: core_mattnntt.cpp_CMattanntote_process_FUN_00591f30 (score: 2946, suspects: 188, lines: 1001)
   004e2050: core_lightsta.cpp_CLightStaff_process_FUN_004e2050 (score: 2931, suspects: 190, lines: 976)
   0059e600: core_styldemo.cpp_CStylerDemon_process_FUN_0059e600 (score: 2928, suspects: 172, lines: 1153)
-  00491f40: core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 (score: 2801, suspects: 94, lines: 1821)
+  00491f40: core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 (score: 2807, suspects: 94, lines: 1827)
   0054c1b0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0 (score: 2319, suspects: 181, lines: 484)
   00481350: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350 (score: 2272, suspects: 188, lines: 342)
   0042ac20: core_charactr.cpp_CCharacter_ctor_FUN_0042ac20 (score: 2215, suspects: 206, lines: 145)
   004e1070: core_lightsta.cpp_CLightStaff_fire_FUN_004e1070 (score: 2201, suspects: 165, lines: 476)
-  00561713: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713 (score: 2153, suspects: 152, lines: 593)
+  00561713: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713 (score: 2155, suspects: 152, lines: 595)
   005438d0: core_shadow.cpp_CShadow_process_FUN_005438d0 (score: 2124, suspects: 123, lines: 844)
-  004bb100: core_game.cpp_CGame_processCheatCodes_FUN_004bb100 (score: 2083, suspects: 46, lines: 1578)
-  00560f31: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31 (score: 2054, suspects: 146, lines: 554)
-  00538dd0: core_set.cpp_CDemonSet_lightVerticies_FUN_00538dd0 (score: 2041, suspects: 141, lines: 601)
+  004bb100: core_game.cpp_CGame_processCheatCodes_FUN_004bb100 (score: 2081, suspects: 46, lines: 1576)
+  00560f31: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31 (score: 2056, suspects: 146, lines: 556)
+  00538dd0: core_set.cpp_CDemonSet_lightVerticies_FUN_00538dd0 (score: 2044, suspects: 141, lines: 604)
   0053bc80: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 (score: 2002, suspects: 148, lines: 472)
   004da880: core_inv.cpp_CInventory_addItem_FUN_004da880 (score: 1979, suspects: 109, lines: 849)
-  0058d960: core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960 (score: 1968, suspects: 128, lines: 648)
   00590010: core_kedward.cpp_CKedward_process_FUN_00590010 (score: 1966, suspects: 103, lines: 896)
+  00442a20: core_construc.cpp_CConstruct_process_FUN_00442a20 (score: 1866, suspects: 107, lines: 746)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -422,19 +421,6 @@ FUNCTIONS BY SUSPECT TYPE
     00411a10: core_bmppuzzl.cpp_restorePuzzleGraphics_FUN_00411a10
     00411a40: core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00411a40
     ... and 65 more
-
-  unnamed_param (29 functions):
-    0040d320: engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320
-    004416b0: support_codec.cpp_CCheesyCipher_setKey_FUN_004416b0
-    004416e0: support_codec.cpp_CCheesyCipher_transformByte_FUN_004416e0
-    004444c0: core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0
-    00444910: core_course.cpp_CCourse_allocMemory_FUN_00444910
-    00450670: core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00450670
-    00455080: core_demnfolk.cpp_CDemnfolk_process_FUN_00455080
-    0046a4d0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0
-    0046b7d0: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0
-    00473940: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940
-    ... and 19 more
 
   suspect_float (77 functions):
     00408600: core_actor.cpp_CDemonActor_ctor_FUN_00408600
@@ -715,15 +701,6 @@ FUNCTIONS BY SUSPECT TYPE
     00515d60: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60
     ... and 3 more
 
-  fnstsw_flag_artifact (7 functions):
-    0049fdf0: core_fire.cpp_CRing_process_FUN_0049fdf0
-    004eedd0: engine_mini3d.cpp_getClipFlags_FUN_004eedd0
-    004eeeb0: engine_mini3d.cpp_getBehindClipFlag_FUN_004eeeb0
-    00560f31: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31
-    00561713: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713
-    00561fdc: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
-    005625a3: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
-
   preinc_loop_idiom (10 functions):
     004132c0: core_bmppuzzl.cpp_CChemPuzzle_reset_FUN_004132c0
     004133c0: core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0
@@ -768,6 +745,15 @@ FUNCTIONS BY SUSPECT TYPE
     004f13a0: engine_mini3d.cpp_setupScanEdge_FUN_004f13a0
     004f1830: engine_mini3d.cpp_rasterizeTriangle_FUN_004f1830
     004f2090: engine_mini3d.cpp_fillPolygon_FUN_004f2090
+    00561fdc: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
+    005625a3: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
+
+  fnstsw_flag_artifact (7 functions):
+    0049fdf0: core_fire.cpp_CRing_process_FUN_0049fdf0
+    004eedd0: engine_mini3d.cpp_getClipFlags_FUN_004eedd0
+    004eeeb0: engine_mini3d.cpp_getBehindClipFlag_FUN_004eeeb0
+    00560f31: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31
+    00561713: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713
     00561fdc: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
     005625a3: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
 

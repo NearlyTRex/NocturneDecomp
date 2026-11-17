@@ -26,7 +26,7 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00430b70(SRenderVertex **
     iVar5 = iVar4;
     v1 = input_vertices[vertex_count + -1];
     do {
-      iVar1 = g_INT_007bfcf8;
+      iVar1 = g_ClipperTempCount;
       v2 = *ppSStack_14;
       bVar2 = (v1->projected_vertex).transformed_z <= (v1->projected_vertex).transformed_x;
       if ((v2->projected_vertex).transformed_z <= (v2->projected_vertex).transformed_x) {
@@ -39,14 +39,14 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00430b70(SRenderVertex **
         output_vertices[iVar5] = v1;
         break;
       case 1:
-        if (0xb < g_INT_007bfcf8) {
+        if (0xb < g_ClipperTempCount) {
           g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
           g_INT_01d046a4 = 0x5e;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
         }
-        pSVar3 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
         iVar4 = iVar5 + 1;
-        g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+        g_ClipperTempCount = g_ClipperTempCount + 1;
         output_vertices[iVar5] = pSVar3;
         engine_clipper_c_interpolateVertexRightClip_FUN_00430650(v2,v1,pSVar3);
         break;
@@ -57,9 +57,9 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00430b70(SRenderVertex **
           g_INT_01d046a4 = 0x5e;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
         }
-        pSVar3 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
         iVar4 = iVar5 + 2;
-        g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+        g_ClipperTempCount = g_ClipperTempCount + 1;
         output_vertices[iVar5 + 1] = pSVar3;
         engine_clipper_c_interpolateVertexRightClip_FUN_00430650(v1,v2,pSVar3);
       }

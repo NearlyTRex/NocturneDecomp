@@ -154,12 +154,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
     out_euler_angles->z = local_58.z;
     return 2;
   }
-  g_INT_01ec183c = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
-  g_INT_01ec1848 = 0x32;
-  g_INT_01ec1844 = 0x32;
-  g_INT_01ec1840 = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
-  if ((((g_INT_01ec183c < 0) || (99 < g_INT_01ec183c)) || (g_INT_01ec1840 < 0)) ||
-     (99 < g_INT_01ec1840)) {
+  g_PathfindingCurrentX = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
+  g_PathfindingDestZ = 0x32;
+  g_PathfindingDestX = 0x32;
+  g_PathfindingCurrentZ = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
+  if ((((g_PathfindingCurrentX < 0) || (99 < g_PathfindingCurrentX)) || (g_PathfindingCurrentZ < 0))
+     || (99 < g_PathfindingCurrentZ)) {
     local_16c[0] = (this_ptr->current_position).x - dest_position->x;
     local_16c[1] = (this_ptr->current_position).y - dest_position->y;
     local_164[0].x = (this_ptr->current_position).z - dest_position->z;
@@ -181,7 +181,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
     out_euler_angles->z = local_a0.z;
     return 2;
   }
-  if ((g_INT_01ec183c == 0x32) && (g_INT_01ec1840 == 0x32)) {
+  if ((g_PathfindingCurrentX == 0x32) && (g_PathfindingCurrentZ == 0x32)) {
     local_34[0] = (this_ptr->current_position).x - dest_position->x;
     local_34[1] = (this_ptr->current_position).y - dest_position->y;
     local_34[2] = (this_ptr->current_position).z - dest_position->z;
@@ -213,12 +213,13 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
   dVar8 = round((double)*(float *)(unaff_retaddr + 8));
   fStack_24 = (float)(int)ROUND(dVar8);
   iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
-                    (this_ptr,g_INT_01ec1840,g_INT_01ec183c,(this_ptr->dest_voxel_coords).y);
+                    (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,
+                     (this_ptr->dest_voxel_coords).y);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
-                    (this_ptr,g_INT_01ec1848,g_INT_01ec1844,(this_ptr->voxel_coords).y);
+                    (this_ptr,g_PathfindingDestZ,g_PathfindingDestX,(this_ptr->voxel_coords).y);
   iVar1 = core_path_cpp_CPathMap_isLineWalkable_FUN_0050b3c0
-                    (this_ptr,g_INT_01ec183c,g_INT_01ec1840,iVar1,g_INT_01ec1844,g_INT_01ec1848,
-                     iVar2);
+                    (this_ptr,g_PathfindingCurrentX,g_PathfindingCurrentZ,iVar1,g_PathfindingDestX,
+                     g_PathfindingDestZ,iVar2);
   if (iVar1 != 0) {
     local_88.z = g_CDemonRaytraceInstance.adjusted_size.x;
     local_7c[(uint)bVar7 * -2] =
@@ -257,12 +258,14 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
     return 1;
   }
   iVar1 = core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610
-                    (this_ptr,g_INT_01ec1844,g_INT_01ec1848,g_INT_01ec183c,g_INT_01ec1840);
+                    (this_ptr,g_PathfindingDestX,g_PathfindingDestZ,g_PathfindingCurrentX,
+                     g_PathfindingCurrentZ);
   if (iVar1 == 0) {
     uVar4 = core_path_cpp_CPathMap_searchGrid_FUN_0050d170(this_ptr,(this_ptr->dest_voxel_coords).y)
     ;
     if (uVar4 != 0) {
-      uVar4 = this_ptr->height_cache[g_INT_01ec1848][g_INT_01ec1844] - (this_ptr->voxel_coords).y;
+      uVar4 = this_ptr->height_cache[g_PathfindingDestZ][g_PathfindingDestX] -
+              (this_ptr->voxel_coords).y;
       uVar5 = (int)uVar4 >> 0x1f;
       if (3 < (int)((uVar4 ^ uVar5) - uVar5)) {
         fStack_188 = (this_ptr->current_position).x - unaff_ESI->x;
@@ -288,12 +291,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
       }
       uVar4 = 0xffffffff;
       local_28 = 0xffffffff;
-      iVar1 = g_INT_01ec1848;
-      iVar2 = g_INT_01ec1844;
+      iVar1 = g_PathfindingDestZ;
+      iVar2 = g_PathfindingDestX;
       do {
         local_34[2] = (float)local_28;
         local_28 = uVar4;
-        uVar4 = (uint)(byte)g_CHAR_ARRAY_ARRAY_01ed02b8[iVar1][iVar2];
+        uVar4 = (uint)(byte)g_PathfindingVisited[iVar1][iVar2];
         if (uVar4 == 0) {
           local_19c[2] = (this_ptr->current_position).x - unaff_ESI->x;
           local_19c[3] = (this_ptr->current_position).y - unaff_ESI->y;
@@ -316,8 +319,8 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
           unaff_EBX[2] = local_16c[1];
           return 2;
         }
-        iVar2 = iVar2 - g_INT_ARRAY_00603664[uVar4];
-        iVar1 = iVar1 - g_INT_ARRAY_00603688[uVar4];
+        iVar2 = iVar2 - g_PathfindingDeltaX[uVar4];
+        iVar1 = iVar1 - g_PathfindingDeltaZ[uVar4];
         if (iVar2 < 0) {
           g_CHAR_PTR_01d71de0 = "..\\core\\path.cpp";
           g_INT_01d71de4 = 0x548;
@@ -338,7 +341,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
           g_INT_01d71de4 = 0x54b;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Out of bounds4!");
         }
-      } while ((iVar2 != g_INT_01ec183c) || (iVar1 != g_INT_01ec1840));
+      } while ((iVar2 != g_PathfindingCurrentX) || (iVar1 != g_PathfindingCurrentZ));
       *unaff_EBX = 0.0;
       unaff_EBX[2] = 0.0;
       fVar3 = core_path_cpp_CPathMap_getDirection_FUN_0050ae20
@@ -368,11 +371,11 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
     return 2;
   }
   if (iVar1 == 1) {
-    if (g_INT_01ec1844 <= g_INT_01ec183c) {
-      if (g_INT_01ec1844 < g_INT_01ec183c) {
+    if (g_PathfindingDestX <= g_PathfindingCurrentX) {
+      if (g_PathfindingDestX < g_PathfindingCurrentX) {
         iVar1 = 4;
       }
-      else if (g_INT_01ec1840 < g_INT_01ec1848) {
+      else if (g_PathfindingCurrentZ < g_PathfindingDestZ) {
         iVar1 = 1;
       }
       else {
@@ -382,15 +385,15 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *
     }
   }
   else {
-    if (g_INT_01ec1840 < g_INT_01ec1848) {
+    if (g_PathfindingCurrentZ < g_PathfindingDestZ) {
       iVar1 = 1;
       goto LAB_0050c11f;
     }
-    if (g_INT_01ec1848 < g_INT_01ec1840) {
+    if (g_PathfindingDestZ < g_PathfindingCurrentZ) {
       iVar1 = 2;
       goto LAB_0050c11f;
     }
-    if (g_INT_01ec1844 <= g_INT_01ec183c) {
+    if (g_PathfindingDestX <= g_PathfindingCurrentX) {
       iVar1 = 4;
       goto LAB_0050c11f;
     }

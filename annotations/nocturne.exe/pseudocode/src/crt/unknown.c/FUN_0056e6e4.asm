@@ -75,7 +75,7 @@ section .text
     CALL crt_unknown.c_FUN_0056e254     ; 0056e79a
         ;   XREF to: 0056e254 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e254()
     MOV ECX,0x56e50c                    ; 0056e79f
-    MOV EBP,dword ptr [0x02de4e3c]      ; 0056e7a4 | g_PTR_02de4e3c
+    MOV EBP,dword ptr [0x02de4e3c]      ; 0056e7a4 | g_CurrentThreadTlsBlock
     MOV [0x02de5be0],EAX                ; 0056e7aa | DAT_02de5be0
     MOV dword ptr [0x02de5be4],EBX      ; 0056e7af | DAT_02de5be4
     PUSH EBP                            ; 0056e7b5
@@ -87,7 +87,7 @@ section .text
     CALL crt_unknown.c_FUN_00571280     ; 0056e7cf
         ;   XREF to: 00571280 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571280()
     ADD ESP,0x8                         ; 0056e7d4
-    MOV EBX,dword ptr [0x02de4e3c]      ; 0056e7d7 | g_PTR_02de4e3c
+    MOV EBX,dword ptr [0x02de4e3c]      ; 0056e7d7 | g_CurrentThreadTlsBlock
     PUSH EBX                            ; 0056e7dd
     MOV ECX,dword ptr [0x005c1ab8]      ; 0056e7de | g_INT_005c1ab8
     PUSH ECX                            ; 0056e7e4

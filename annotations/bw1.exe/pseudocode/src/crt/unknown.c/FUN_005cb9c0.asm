@@ -13,8 +13,8 @@
 ;   void* PTR_WriteConsoleA_005d0688 = 001d12f8
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626604 = 005c50d4
-;   void* g_PTR_00626774 = 00000000
-;   void* g_PTR_006267b0 = 00000000
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
+;   void* g_SpecialConsoleOutputHandler = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c50d4
@@ -29,17 +29,17 @@ section .text
         ;   Label: crt_unknown.c_FUN_005cb9c0
     SUB ESP,0x8                         ; 005cb9c1
     MOV EBX,dword ptr [ESP + 0x10]      ; 005cb9c4
-    MOV EDX,dword ptr [0x006267b0]      ; 005cb9c8 | g_PTR_006267b0
+    MOV EDX,dword ptr [0x006267b0]      ; 005cb9c8 | g_SpecialConsoleOutputHandler
     MOV byte ptr [ESP + 0x4],BL         ; 005cb9ce
     TEST EDX,EDX                        ; 005cb9d2
     JZ 0x005cb9ee                       ; 005cb9d4
         ;   XREF to: 005cb9ee (CONDITIONAL_JUMP)  ; LAB_005cb9ee
     PUSH 0x1                            ; 005cb9d6
-    CALL dword ptr [0x00626774]         ; 005cb9d8 | g_PTR_00626774
+    CALL dword ptr [0x00626774]         ; 005cb9d8 | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005cb9de
     PUSH EBX                            ; 005cb9e1
     PUSH EAX                            ; 005cb9e2
-    CALL dword ptr [0x006267b0]         ; 005cb9e3 | g_PTR_006267b0
+    CALL dword ptr [0x006267b0]         ; 005cb9e3 | g_SpecialConsoleOutputHandler
     ADD ESP,0x8                         ; 005cb9e9
     JMP 0x005cba1f                      ; 005cb9ec
         ;   XREF to: 005cba1f (UNCONDITIONAL_JUMP)  ; LAB_005cba1f

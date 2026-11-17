@@ -19,7 +19,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,f
   float10 fVar8;
   float local_28;
   
-  if (g_INT_0264901c < 1) {
+  if (g_SoundLockCount < 1) {
     g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
     g_INT_01d046a4 = 0xade;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::compute - must be locked!");
@@ -118,11 +118,11 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,f
       engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  vol = %5.2f\n");
     }
     sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_0054e6e0(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar5 = 0, 0 < g_INT_0061bc9c)) {
+    if ((this_ptr->is_active == 1) && (iVar5 = 0, 0 < g_AudioChannelCount)) {
       do {
         iVar5 = iVar5 + 1;
         engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  channelVol[%d] = %5.2f\n");
-      } while (iVar5 < g_INT_0061bc9c);
+      } while (iVar5 < g_AudioChannelCount);
     }
     if (this_ptr->effective_frequency < 1.0 / 20.0f) {
       this_ptr->effective_frequency = 1.0 / 20.0f;

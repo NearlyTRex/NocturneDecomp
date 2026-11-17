@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6eaa0
-;   int g_INT_01c726a8
+;   int g_StakeActiveCount
 ;   undefined4 g_StakePool[0].physics_box.is_valid
 ;   undefined4 g_StakePool[1].physics_box.is_valid
 ;
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_004b54f4
     JZ 0x004b554c                       ; 004b54f9
         ;   XREF to: 004b554c (CONDITIONAL_JUMP)  ; LAB_004b554c
-    MOV ECX,dword ptr [0x01c726a8]      ; 004b54fb | g_INT_01c726a8
+    MOV ECX,dword ptr [0x01c726a8]      ; 004b54fb | g_StakeActiveCount
     XOR ESI,ESI                         ; 004b5501
     TEST ECX,ECX                        ; 004b5503
     JLE 0x004b554c                      ; 004b5505
@@ -92,7 +92,7 @@ section .text
     CALL core_fire.cpp_CStake_render_FUN_004ace60 ; 004b552d
         ;   XREF to: 004ace60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_004ace60(CStake * this_ptr)
     ADD ESP,0x4                         ; 004b5532
-    MOV ECX,dword ptr [0x01c726a8]      ; 004b5535 | g_INT_01c726a8
+    MOV ECX,dword ptr [0x01c726a8]      ; 004b5535 | g_StakeActiveCount
         ;   Label: LAB_004b5535
     ADD EBX,0x260                       ; 004b553b
     INC ESI                             ; 004b5541

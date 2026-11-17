@@ -23,7 +23,7 @@
 ;   TerminatedCString s_fog_005b50ed
 ;   TerminatedCString s_engine_2d_c_005b50f1
 ;   TerminatedCString s_Unable_to_write_quick_ma_005b5100
-;   uchar[32768] g_UCHAR_ARRAY_01c62070
+;   uchar[32768] g_ColorCubeLookup
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -156,7 +156,7 @@ section .text
     POP EBX                             ; 00402a45
     PUSH 0x8000                         ; 00402a46
         ;   Label: LAB_00402a46
-    PUSH 0x1c62070                      ; 00402a4b | g_UCHAR_ARRAY_01c62070
+    PUSH 0x1c62070                      ; 00402a4b | g_ColorCubeLookup
     LEA EAX,[ESP + 0x84]                ; 00402a50
     PUSH EAX                            ; 00402a57
     CALL support_trstream.cpp_COutStreamFile_write_FUN_005748e0 ; 00402a58
@@ -186,7 +186,7 @@ section .text
     RET                                 ; 00402a96
     PUSH 0x8000                         ; 00402a97
         ;   Label: LAB_00402a97
-    PUSH 0x1c62070                      ; 00402a9c | g_UCHAR_ARRAY_01c62070
+    PUSH 0x1c62070                      ; 00402a9c | g_ColorCubeLookup
     LEA EAX,[ESP + 0x58]                ; 00402aa1
     PUSH EAX                            ; 00402aa5
     CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 00402aa6

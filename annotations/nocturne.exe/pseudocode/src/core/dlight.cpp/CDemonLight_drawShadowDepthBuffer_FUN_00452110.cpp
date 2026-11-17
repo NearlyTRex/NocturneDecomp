@@ -27,7 +27,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
   ushort *local_18;
   ushort *local_14;
   
-  g_INT_01abb4c4 = 0;
+  g_NoiseTableIndex = 0;
   iVar7 = 0;
   do {
     uVar4 = rand();
@@ -67,11 +67,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
             do {
               iVar7 = g_WindowWidth;
               if (*local_18 != 0) {
-                piVar2 = g_INT_ARRAY_01abb4c8 + g_INT_01abb4c4;
-                g_INT_01abb4c4 = g_INT_01abb4c4 + 1;
+                piVar2 = g_INT_ARRAY_01abb4c8 + g_NoiseTableIndex;
+                g_NoiseTableIndex = g_NoiseTableIndex + 1;
                 uVar4 = (uint)(*local_18 >> 6) + *piVar2;
-                if (99 < g_INT_01abb4c4) {
-                  g_INT_01abb4c4 = 0;
+                if (99 < g_NoiseTableIndex) {
+                  g_NoiseTableIndex = 0;
                 }
                 if (0x7f < uVar4) {
                   uVar4 = 0x7f;
@@ -127,11 +127,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
           if (0 < this_ptr->shadow_map_width) {
             do {
               if (*local_14 != 0) {
-                piVar2 = g_INT_ARRAY_01abb4c8 + g_INT_01abb4c4;
-                g_INT_01abb4c4 = g_INT_01abb4c4 + 1;
+                piVar2 = g_INT_ARRAY_01abb4c8 + g_NoiseTableIndex;
+                g_NoiseTableIndex = g_NoiseTableIndex + 1;
                 uVar4 = (uint)(*local_14 >> 6) + *piVar2;
-                if (99 < g_INT_01abb4c4) {
-                  g_INT_01abb4c4 = 0;
+                if (99 < g_NoiseTableIndex) {
+                  g_NoiseTableIndex = 0;
                 }
                 if (0x7f < uVar4) {
                   uVar4 = 0x7f;

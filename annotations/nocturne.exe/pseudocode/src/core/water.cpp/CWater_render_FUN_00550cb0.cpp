@@ -23,35 +23,36 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
   int local_14;
   
   if (ABS(this_ptr->water_level_y) != 0.0) {
-    g_INT_02dd122c = g_INT_02dd122c + g_INT_01bd1d80;
-    if (g_INT_005c11f0 < g_INT_02dd122c) {
-      g_INT_02dd122c = g_INT_02dd122c - g_INT_005c11f0;
-      g_INT_02dd1230 = g_INT_02dd1230 + 1;
-      if (0xf < g_INT_02dd1230) {
-        g_INT_02dd1230 = 0;
+    g_WaterAnimationTimer = g_WaterAnimationTimer + g_GlobalDeltaTimeInt;
+    if (g_WaterFrameDuration < g_WaterAnimationTimer) {
+      g_WaterAnimationTimer = g_WaterAnimationTimer - g_WaterFrameDuration;
+      g_WaterCurrentFrame = g_WaterCurrentFrame + 1;
+      if (0xf < g_WaterCurrentFrame) {
+        g_WaterCurrentFrame = 0;
       }
     }
-    g_INT_02dd925c = (int)(((longlong)g_INT_02dd122c * 0xffff) / (longlong)g_INT_005c11f0);
-    if (g_INT_02dd925c < 0x10000) {
-      if (g_INT_02dd925c < 0) {
-        g_INT_02dd925c = 0;
+    g_WaterAnimationBlend =
+         (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)g_WaterFrameDuration);
+    if (g_WaterAnimationBlend < 0x10000) {
+      if (g_WaterAnimationBlend < 0) {
+        g_WaterAnimationBlend = 0;
       }
     }
     else {
-      g_INT_02dd925c = 0xffff;
+      g_WaterAnimationBlend = 0xffff;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (g_CDemonRenderer_PTR_005ae704,g_SMRGLTextureBasic_ARRAY_005c11f4 + g_INT_02dd1230);
+              (g_CDemonRenderer_PTR_005ae704,g_WaterTextures + g_WaterCurrentFrame);
     g_INT_01c038f4 = 0;
-    g_FLOAT_02dd9260 =
+    g_WaterAnimationPhase =
          g_CGamePtr->delta_time_float * (float)3.1415926535000001 * (float)0.5 *
-         (float)2 + g_FLOAT_02dd9260;
+         (float)2 + g_WaterAnimationPhase;
     local_1c = 0;
-    if (0 < g_INT_02dd1234) {
+    if (0 < g_VisibleWaterTileCount) {
       local_18 = 0;
       do {
-        iVar1 = *(int *)((int)g_INT_ARRAY_02dd1238 + local_18);
-        iVar2 = *(int *)((int)g_INT_ARRAY_02dd5238 + local_18);
+        iVar1 = *(int *)((int)g_VisibleWaterTilesX + local_18);
+        iVar2 = *(int *)((int)g_VisibleWaterTilesY + local_18);
         local_6c.x = (float)iVar1 * this_ptr->tile_size + g_FLOAT_02dd1220;
         local_6c.y = this_ptr->water_level_y + g_FLOAT_02dd1224;
         local_6c.z = (float)iVar2 * this_ptr->tile_size + g_FLOAT_02dd1228;
@@ -67,7 +68,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         if (this_ptr->wave_animation_enabled != 0) {
           fVar3 = (float10)fsin((float10)iVar2 * (float10)3.1415926535000001 * (float10)0.5
                                 + (float10)iVar1 * (float10)3.1415926535000001 +
-                                (float10)g_FLOAT_02dd9260);
+                                (float10)g_WaterAnimationPhase);
           local_6c.y = (float)(fVar3 * (float10)0.25);
           local_14 = iVar1;
         }
@@ -83,7 +84,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
           local_14 = iVar1 + 1;
           fVar3 = (float10)fsin((float10)iVar2 * (float10)3.1415926535000001 * (float10)0.5
                                 + (float10)local_14 * (float10)3.1415926535000001 +
-                                (float10)g_FLOAT_02dd9260);
+                                (float10)g_WaterAnimationPhase);
           local_6c.y = (float)(fVar3 * (float10)0.25);
         }
         local_54.x = (int)ROUND(local_6c.x * 256.0f);
@@ -99,7 +100,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
           fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *
                                 (float10)0.5 +
                                 (float10)local_14 * (float10)3.1415926535000001 +
-                                (float10)g_FLOAT_02dd9260);
+                                (float10)g_WaterAnimationPhase);
           local_6c.y = (float)(fVar3 * (float10)0.25);
         }
         local_48.x = (int)ROUND(local_6c.x * 256.0f);
@@ -113,7 +114,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         if (this_ptr->wave_animation_enabled != 0) {
           fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *
                                 (float10)0.5 + (float10)iVar1 * (float10)3.1415926535000001
-                                + (float10)g_FLOAT_02dd9260);
+                                + (float10)g_WaterAnimationPhase);
           local_6c.y = (float)(fVar3 * (float10)0.25);
           local_14 = iVar1;
         }
@@ -128,33 +129,29 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
           if (g_UseExternalRenderer == 0) {
             if (render_mode == 0) {
               engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0
-                        (g_CDemonRenderer_PTR_005ae704,
-                         (SMRGLPrimitivePoly *)&g_SMRGLPrimitiveQuad_005c1374);
+                        (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&g_WaterRenderQuad);
             }
             else {
               engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
-                        (g_CDemonRenderer_PTR_005ae704,
-                         (SMRGLPrimitivePoly *)&g_SMRGLPrimitiveQuad_005c1374);
+                        (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&g_WaterRenderQuad);
             }
           }
           else {
             engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10
                       (g_CDemonRenderer_PTR_005ae704,1);
             engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
-                      (g_CDemonRenderer_PTR_005ae704,
-                       (SMRGLPrimitivePoly *)&g_SMRGLPrimitiveQuad_005c1374);
+                      (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&g_WaterRenderQuad);
           }
         }
         else {
           engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
                     (g_CDemonRenderer_PTR_005ae704,0xa000);
           engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370
-                    (g_CDemonRenderer_PTR_005ae704,
-                     (SMRGLPrimitivePoly *)&g_SMRGLPrimitiveQuad_005c1374);
+                    (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&g_WaterRenderQuad);
         }
         local_18 = local_18 + 4;
         local_1c = local_1c + 1;
-      } while (local_1c < g_INT_02dd1234);
+      } while (local_1c < g_VisibleWaterTileCount);
     }
   }
   return;

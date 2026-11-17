@@ -13,7 +13,7 @@
 ;   engine_mini3d.cpp_polyList_FUN_005126d0 at 005128a0
 ;
 ; Referenced Globals:
-;   int g_INT_01cc804c
+;   int g_FastSqrtMagic
 ;   float g_FLOAT_01d224c0
 ;   float g_FLOAT_01d22548
 ;   float g_FLOAT_01d22554
@@ -353,7 +353,7 @@ section .text
     SAR EAX,0x1                         ; 0051404c
     FLD1                                ; 0051404e
     FSUBRP                              ; 00514050
-    ADD EAX,dword ptr [0x01cc804c]      ; 00514052 | g_INT_01cc804c
+    ADD EAX,dword ptr [0x01cc804c]      ; 00514052 | g_FastSqrtMagic
     FLD float ptr [0x01d22548]          ; 00514058 | g_FLOAT_01d22548
     FMUL float ptr [ESP + 0x4c]         ; 0051405e
     MOV dword ptr [ESP + 0x18],EAX      ; 00514062

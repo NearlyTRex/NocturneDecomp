@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_waveOutGetDevCapsA_005753f4 = 00175868
-;   UINT g_UINT_005bed44 = 0xffffffff
+;   UINT g_WaveOutDeviceID = 0xffffffff
 ;
 ; Called Functions:
 ;   sound_sndwav.cpp_CWavOutDevice_close_FUN_0052c290
@@ -49,7 +49,7 @@ section .text
     RET                                 ; 0052c794
     MOV EAX,dword ptr [ESP + 0x38]      ; 0052c795
         ;   Label: LAB_0052c795
-    MOV [0x005bed44],EAX                ; 0052c799 | g_UINT_005bed44
+    MOV [0x005bed44],EAX                ; 0052c799 | g_WaveOutDeviceID
     MOV EAX,0x2dc9440                   ; 0052c79e
     ADD ESP,0x34                        ; 0052c7a3
     RET                                 ; 0052c7a6

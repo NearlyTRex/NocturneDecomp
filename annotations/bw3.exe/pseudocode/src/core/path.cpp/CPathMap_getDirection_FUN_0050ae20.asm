@@ -47,14 +47,14 @@
 ;   void* switchdataD_0050ae04 = 0050b0ff
 ;   TerminatedCString s_core_path_cpp_005cb792
 ;   TerminatedCString s_CPathMap_getDirection_Sh_005cb7a3
-;   float g_FLOAT_005cb81c = 0.01000000
-;   float g_FLOAT_005cb820 = -1
-;   double g_DOUBLE_005cb824 = -2.35619449012500
-;   double g_DOUBLE_005cb82c = 2.35619449012500
-;   double g_DOUBLE_005cb834 = -0.785398163375000
-;   double g_DOUBLE_005cb83c = 0.785398163375000
-;   double g_DOUBLE_005cb844 = -1.57079632675000
-;   double g_DOUBLE_005cb84c = 1.57079632675000
+;   float g_PathRotationScaleFactor = 0.01000000
+;   float g_PathNegativeOne = -1
+;   double g_PathAngleNeg3PiOver4 = -2.35619449012500
+;   double g_PathAngle3PiOver4 = 2.35619449012500
+;   double g_PathAngleNegPiOver4 = -0.785398163375000
+;   double g_PathAnglePiOver4 = 0.785398163375000
+;   double g_PathAngleNegPiOver2 = -1.57079632675000
+;   double g_PathAnglePiOver2 = 1.57079632675000
 ;   float g_FLOAT_005cb854 = 3.141593
 ;   ... and 2 more
 ;
@@ -104,7 +104,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0050ae7b
     MOVSD ES:EDI,ESI                    ; 0050ae7c
     MOVSD ES:EDI,ESI                    ; 0050ae7d
-    FLD float ptr [0x005cb81c]          ; 0050ae7e | g_FLOAT_005cb81c
+    FLD float ptr [0x005cb81c]          ; 0050ae7e | g_PathRotationScaleFactor
     FLD float ptr [ESP + 0x18]          ; 0050ae84
     FMUL ST1                            ; 0050ae88
     FLD float ptr [ESP + 0x1c]          ; 0050ae8a
@@ -211,7 +211,7 @@ section .text
         ;   Label: switchD
     FLD float ptr [ESP + 0x44]          ; 0050afb3
         ;   Label: caseD_2
-    FADD float ptr [0x005cb820]         ; 0050afb7 | g_FLOAT_005cb820
+    FADD float ptr [0x005cb820]         ; 0050afb7 | g_PathNegativeOne
     JMP 0x0050aefc                      ; 0050afbd
         ;   XREF to: 0050aefc (UNCONDITIONAL_JUMP)  ; LAB_0050aefc
     FLD1                                ; 0050afc2
@@ -223,14 +223,14 @@ section .text
         ;   XREF to: 0050af01 (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x3c]          ; 0050afd2
         ;   Label: caseD_4
-    FADD float ptr [0x005cb820]         ; 0050afd6 | g_FLOAT_005cb820
+    FADD float ptr [0x005cb820]         ; 0050afd6 | g_PathNegativeOne
     INC EBX                             ; 0050afdc
     FSTP float ptr [ESP + 0x3c]         ; 0050afdd
     JMP 0x0050af01                      ; 0050afe1
         ;   XREF to: 0050af01 (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x28]          ; 0050afe6
         ;   Label: caseD_5
-    FADD double ptr [0x005cb83c]        ; 0050afea | g_DOUBLE_005cb83c
+    FADD double ptr [0x005cb83c]        ; 0050afea | g_PathAnglePiOver4
     FSTP float ptr [ESP + 0x8c]         ; 0050aff0
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0050aff7
     MOV ESP,EBP                         ; 0050affe
@@ -241,7 +241,7 @@ section .text
     RET                                 ; 0050b004
     FLD float ptr [ESP + 0x28]          ; 0050b005
         ;   Label: caseD_3
-    FADD double ptr [0x005cb84c]        ; 0050b009 | g_DOUBLE_005cb84c
+    FADD double ptr [0x005cb84c]        ; 0050b009 | g_PathAnglePiOver2
     FSTP float ptr [ESP + 0x8c]         ; 0050b00f
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0050b016
     MOV ESP,EBP                         ; 0050b01d
@@ -252,7 +252,7 @@ section .text
     RET                                 ; 0050b023
     FLD float ptr [ESP + 0x28]          ; 0050b024
         ;   Label: caseD_7
-    FADD double ptr [0x005cb82c]        ; 0050b028 | g_DOUBLE_005cb82c
+    FADD double ptr [0x005cb82c]        ; 0050b028 | g_PathAngle3PiOver4
     FSTP float ptr [ESP + 0x8c]         ; 0050b02e
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0050b035
     MOV ESP,EBP                         ; 0050b03c
@@ -274,7 +274,7 @@ section .text
     RET                                 ; 0050b061
     FLD float ptr [ESP + 0x28]          ; 0050b062
         ;   Label: caseD_8
-    FADD double ptr [0x005cb824]        ; 0050b066 | g_DOUBLE_005cb824
+    FADD double ptr [0x005cb824]        ; 0050b066 | g_PathAngleNeg3PiOver4
     FSTP float ptr [ESP + 0x8c]         ; 0050b06c
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0050b073
     MOV ESP,EBP                         ; 0050b07a
@@ -285,7 +285,7 @@ section .text
     RET                                 ; 0050b080
     FLD float ptr [ESP + 0x28]          ; 0050b081
         ;   Label: caseD_4
-    FADD double ptr [0x005cb844]        ; 0050b085 | g_DOUBLE_005cb844
+    FADD double ptr [0x005cb844]        ; 0050b085 | g_PathAngleNegPiOver2
     FSTP float ptr [ESP + 0x8c]         ; 0050b08b
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0050b092
     MOV ESP,EBP                         ; 0050b099
@@ -296,7 +296,7 @@ section .text
     RET                                 ; 0050b09f
     FLD float ptr [ESP + 0x28]          ; 0050b0a0
         ;   Label: caseD_6
-    FADD double ptr [0x005cb834]        ; 0050b0a4 | g_DOUBLE_005cb834
+    FADD double ptr [0x005cb834]        ; 0050b0a4 | g_PathAngleNegPiOver4
     FSTP float ptr [ESP + 0x8c]         ; 0050b0aa
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0050b0b1
     MOV ESP,EBP                         ; 0050b0b8
@@ -386,7 +386,7 @@ section .text
         ;   XREF to: 0050b10a (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x44]          ; 0050b19b
         ;   Label: caseD_2
-    FADD float ptr [0x005cb820]         ; 0050b19f | g_FLOAT_005cb820
+    FADD float ptr [0x005cb820]         ; 0050b19f | g_PathNegativeOne
     JMP 0x0050b105                      ; 0050b1a5
         ;   XREF to: 0050b105 (UNCONDITIONAL_JUMP)  ; LAB_0050b105
     FLD1                                ; 0050b1aa
@@ -398,7 +398,7 @@ section .text
         ;   XREF to: 0050b10a (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x3c]          ; 0050b1ba
         ;   Label: caseD_4
-    FADD float ptr [0x005cb820]         ; 0050b1be | g_FLOAT_005cb820
+    FADD float ptr [0x005cb820]         ; 0050b1be | g_PathNegativeOne
     INC EBX                             ; 0050b1c4
     FSTP float ptr [ESP + 0x3c]         ; 0050b1c5
     JMP 0x0050b10a                      ; 0050b1c9

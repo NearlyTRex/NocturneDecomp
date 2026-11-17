@@ -35,7 +35,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(CDrawS
       iVar3 = this_ptr->clip_bottom;
     }
     if (iVar4 <= iVar3) {
-      if (g_INT_01b4d71c == 0) {
+      if (g_UseRGBConversion == 0) {
         iVar3 = iVar3 * 4;
         iVar4 = iVar4 * 4;
         if ((uint)g_BitsPerPixel < 0x10) {

@@ -20,54 +20,54 @@
 // =============================================================================
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_00763e44;
-extern CDemonActor* g_CDemonActor_PTR_00763e8c;
-extern CDemonActor* g_CDemonActor_PTR_00765a9c;
+extern CDemonActor* g_CurrentProcessingActor;
+extern CDemonActor* g_CurrentActorBeingProcessed;
+extern CDemonActor* g_LastCollisionActor;
 
 // CDemonActorType
-extern CDemonActorType g_CDemonActorActorType_00763e48;
-extern CDemonActorType g_CAmmoActorType_007641bc;
-extern CDemonActorType g_CAmmoBoxActorType_007641f8;
-extern CDemonActorType g_CAnvilActorType_00764234;
-extern CDemonActorType g_CArmourActorType_00764270;
-extern CDemonActorType g_CBackgroundActorActorType_007642ac;
-extern CDemonActorType g_CBaronActorType_00764330;
-extern CDemonActorType g_CBaronWeaponActorType_007644e8;
-extern CDemonActorType g_CBarrierActorType_00764524;
-extern CDemonActorType g_CBatActorType_00764560;
-extern CDemonActorType g_CBatCreatureActorType_007645cc;
-extern CDemonActorType g_CBatmanActorType_00764638;
-extern CDemonActorType g_CBatteryActorType_00764674;
-extern CDemonActorType g_CBeastActorType_007646b0;
-extern CDemonActorType g_CBiggsActorType_0076471c;
-extern CDemonActorType g_CBodyPartActorType_00764758;
-extern CDemonActorType g_CBoneGuyActorType_007647c0;
-extern CDemonActorType g_CBoxActorActorType_00764800;
-extern CDemonActorType g_CLightActorActorType_00764a9c;
-extern CDemonActorType g_CBrideActorType_00764af0;
-extern CDemonActorType g_CBugsActorType_00765888;
-extern CDemonActorType g_CCharacterActorType_00765a60;
-extern CDemonActorType g_CChainActorType_00765c30;
+extern CDemonActorType g_CDemonActorClassInfo;
+extern CDemonActorType g_CAmmoClassInfo;
+extern CDemonActorType g_CAmmoBoxClassInfo;
+extern CDemonActorType g_CAnvilClassInfo;
+extern CDemonActorType g_CArmourClassInfo;
+extern CDemonActorType g_CBackgroundActorClassInfo;
+extern CDemonActorType g_CBaronClassInfo;
+extern CDemonActorType g_CBaronWeaponClassInfo;
+extern CDemonActorType g_CBarrierClassInfo;
+extern CDemonActorType g_CBatClassInfo;
+extern CDemonActorType g_CBatCreatureClassInfo;
+extern CDemonActorType g_CBatmanClassInfo;
+extern CDemonActorType g_CBatteryClassInfo;
+extern CDemonActorType g_CBeastClassInfo;
+extern CDemonActorType g_CBiggsClassInfo;
+extern CDemonActorType g_CBodyPartClassInfo;
+extern CDemonActorType g_CBoneGuyClassInfo;
+extern CDemonActorType g_CBoxActorClassInfo;
+extern CDemonActorType g_CLightActorClassInfo;
+extern CDemonActorType g_CBrideClassInfo;
+extern CDemonActorType g_CBugsClassInfo;
+extern CDemonActorType g_CCharacterClassInfo;
+extern CDemonActorType g_CChainClassInfo;
 
 // CDemonActorType*[200]
-extern CDemonActorType* g_CDemonActorType_PTR_ARRAY_00763e98[200];
+extern CDemonActorType* g_ActorClassRegistrations[200];
 
 // CDemonFilter[8]
-extern CDemonFilter g_CDemonFilter_ARRAY_0076483c[8];
+extern CDemonFilter g_LightActorFilters[8];
 
 // CKeyFramedModelInstance
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_0076436c;
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_007658e4;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
+extern CKeyFramedModelInstance g_StakeModelInstance;
 
 // CVector3f
-extern CVector3f CVector3f_00764ad8;
-extern CVector3f CVector3f_00764ae4;
+extern CVector3f g_BrideOffsetMinusX;
+extern CVector3f g_BrideOffsetPlusX;
 
 // SMRGLHeaderPrimitive*[2000]
-extern SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8[2000];
+extern SMRGLHeaderPrimitive* g_RenderFaceArray[2000];
 
 // SMRGLPrimitiveQuad[1000]
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_0076934c[1000];
+extern SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000];
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_SMRGLTextureBasic_007658c4;
@@ -78,36 +78,36 @@ extern SRenderVertex* g_SRenderVertex_PTR_00767278;
 extern SRenderVertex* g_SRenderVertex_PTR_0076727c;
 
 // SRenderVertex[12]
-extern SRenderVertex g_SRenderVertex_ARRAY_007678f8[12];
+extern SRenderVertex g_ClipperTempBuffer[12];
 
 // SRenderVertex[16]
-extern SRenderVertex g_SRenderVertex_ARRAY_00766c74[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007672f8[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_00767b4c[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_0076814c[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_0076874c[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_00768d4c[16];
+extern SRenderVertex g_ClippedVertexBuffer[16];
+extern SRenderVertex g_SecondaryClipVertexBuffer[16];
+extern SRenderVertex g_ClipperOutputBuffer[16];
+extern SRenderVertex g_ClipperInputBuffer[16];
+extern SRenderVertex g_ClipperWorkingBuffer[16];
+extern SRenderVertex g_ClipperIntermediateBuffer[16];
 
 // _FILE*
-extern _FILE* g_FILE_PTR_00763e84;
+extern _FILE* g_ActorDataFile;
 
 // char[52]
-extern char g_CHAR_ARRAY_00763e10[52];
+extern char g_ActorDebugBuffer[52];
 
 // float
 extern float g_FLOAT_0076432c;
 
 // float[100]
-extern float g_FLOAT_ARRAY_00765aa0[100];
+extern float g_BoneBurnIntensity[100];
 
 // float[12][12]
-extern float g_FLOAT_ARRAY_ARRAY_00764b58[12][12];
+extern float g_BugsGroundHeightGridTemp[12][12];
 
 // int
-extern int g_INT_00761ec4;
-extern int g_INT_00763e88;
-extern int g_INT_00763e90;
-extern int g_INT_00763e94;
+extern int g_RenderFaceCount;
+extern int g_ActorReadingMode;
+extern int g_IncludeCommentsWhenWriting;
+extern int g_NumActorClassTypes;
 extern int g_INT_007642e8;
 extern int g_INT_0076431c;
 extern int g_INT_00764320;
@@ -124,29 +124,29 @@ extern int g_INT_00764620;
 extern int g_INT_0076462c;
 extern int g_INT_00764634;
 extern int g_INT_007647fc;
-extern int g_INT_007658dc;
-extern int g_INT_007658e0;
-extern int g_INT_00766c6c;
-extern int g_INT_00766c70;
-extern int g_INT_007672f4;
-extern int g_INT_00767b38;
-extern int g_INT_00767b3c;
-extern int g_INT_00767b40;
-extern int g_INT_00767b44;
-extern int g_INT_00767b48;
+extern int g_EtherealUVScroll;
+extern int g_EtherealBoltFrame;
+extern int g_LineBlendingDisabled;
+extern int g_ClippedVertexCount;
+extern int g_SecondaryClipVertexCount;
+extern int g_ClipperTempCount;
+extern int g_InputVertexCount;
+extern int g_OutputVertexCount;
+extern int g_TempVertexCount;
+extern int g_IntermediateVertexCount;
 
 // int[11]
-extern int g_INT_ARRAY_00764794[11];
-extern int g_INT_ARRAY_00764b2c[11];
+extern int g_BoneGuyIndices[11];
+extern int g_BrideIndices[11];
 
 // int[1]
 extern int g_INT_ARRAY_00767270[1];
 
 // int[700]
-extern int g_INT_ARRAY_00764d98[700];
+extern int g_BugsSortedVertexIndices[700];
 
 // uint
-extern uint g_UINT_007641b8;
+extern uint g_RandomSeedValue;
 
 // undefined2
 extern undefined2 DAT_00765c6c;

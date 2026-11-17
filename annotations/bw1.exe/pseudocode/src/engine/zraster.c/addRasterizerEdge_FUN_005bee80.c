@@ -18,7 +18,7 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,S
   SRenderVertex *pSVar7;
   uint uVar8;
   
-  iVar2 = g_INT_02c9eb34;
+  iVar2 = g_RasterizerEdgeCount;
   iVar6 = (v1->projected_vertex).screen_y >> 0x10;
   iVar3 = (v0->projected_vertex).screen_y >> 0x10;
   if (iVar3 != iVar6) {
@@ -30,14 +30,14 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,S
       pSVar7 = v1;
       v1 = v0;
     }
-    g_SSoftwareEdge_ARRAY_02c9eb38[g_INT_02c9eb34].base.y_min = iVar4;
-    iVar3 = g_INT_02c9f038;
+    g_SSoftwareEdge_ARRAY_02c9eb38[g_RasterizerEdgeCount].base.y_min = iVar4;
+    iVar3 = g_RasterizerMinY;
     g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.y_max = iVar6;
     if (iVar4 < iVar3) {
-      g_INT_02c9f038 = iVar4;
+      g_RasterizerMinY = iVar4;
     }
-    if (g_INT_02c9f03c < iVar6) {
-      g_INT_02c9f03c = iVar6;
+    if (g_RasterizerMaxY < iVar6) {
+      g_RasterizerMaxY = iVar6;
     }
     uVar5 = (v1->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
     if (uVar5 < 0x10000) {
@@ -63,9 +63,9 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,S
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)(int)uVar8 *
             (longlong)g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.depth_gradient;
-    g_INT_02c9eb34 = g_INT_02c9eb34 + 1;
+    g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
     g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.depth_current =
-         ((pSVar7->projected_vertex).transformed_z * 0x100 - g_INT_01bc0cd0) +
+         ((pSVar7->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;

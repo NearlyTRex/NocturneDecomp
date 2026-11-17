@@ -12,6 +12,6 @@ int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_004036a0(void)
   int iVar1;
   
   iVar1 = engine_2d_c_mapFrameBuffer_FUN_00403480
-                    (g_UCHAR_PTR_01c6ced0,g_INT_005fba28,g_INT_005fba28,8,g_INT_005fba28);
+                    (g_CurrentTextureData,g_INT_005fba28,g_INT_005fba28,8,g_INT_005fba28);
   return iVar1;
 }

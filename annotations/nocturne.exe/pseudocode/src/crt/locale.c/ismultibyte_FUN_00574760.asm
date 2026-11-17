@@ -10,7 +10,7 @@
 ;   crt_locale.c_islower_multibyte_FUN_00574710 at 00574716
 ;
 ; Referenced Globals:
-;   int g_INT_02de5c30
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_locale.c_istrailbyte_FUN_005747b0
@@ -21,7 +21,7 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 00574760
         ;   Label: crt_locale.c_ismultibyte_FUN_00574760
-    CMP dword ptr [0x02de5c30],0x0      ; 00574764 | g_INT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 00574764 | g_MultibyteLocaleActive
     JZ 0x005747a0                       ; 0057476b
         ;   XREF to: 005747a0 (CONDITIONAL_JUMP)  ; LAB_005747a0
     MOV EAX,EDX                         ; 0057476d

@@ -70,7 +70,7 @@
     },
     {
       "addr": "00607e7c",
-      "name": "g_UINT_00607e7c",
+      "name": "g_CodePage",
       "type": "uint",
       "value": "0x1"
     }
@@ -258,7 +258,7 @@
       "line": 10,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "iVar1 = WideCharToMultiByte(g_UINT_00607e7c,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,",
+      "text": "iVar1 = WideCharToMultiByte(g_CodePage,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,(LPCSTR)0x0,",
       "type": "stack_ref"
     },
     {
@@ -266,7 +266,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = WideCharToMultiByte(g_UINT_00607e7c,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,",
+      "text": "iVar1 = WideCharToMultiByte(g_CodePage,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,(LPCSTR)0x0,",
       "type": "unnamed_param"
     },
     {

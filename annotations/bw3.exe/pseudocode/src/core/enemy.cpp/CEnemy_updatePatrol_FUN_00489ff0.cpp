@@ -13,7 +13,7 @@ int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(CEnemy *this_ptr,flo
   
   if (g_CGamePtr->freeze_enemies_enabled == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (g_CEventList_PTR_005fba60,"Capture");
+                      (g_CEventListPtr,"Capture");
     if (iVar1 == 0) {
       iVar1 = core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0
                         (&this_ptr->base,delta_time,this_ptr->patrol_name_pattern);

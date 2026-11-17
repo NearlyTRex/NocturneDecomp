@@ -74,7 +74,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[16209].g+1
-;   CDemonActor* g_CDemonActor_PTR_007c6380
+;   CDemonActor* g_LastCollisionActor
 ;   float g_FLOAT_0152c2a8
 ;   int g_INT_0152c2ac
 ;   float g_FLOAT_0152c2b0
@@ -106,7 +106,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0042d762
     XOR EDX,EDX                         ; 0042d765
     MOV ECX,dword ptr [EAX + 0x8]       ; 0042d767
-    MOV dword ptr [0x007c6380],EDX      ; 0042d76a | g_CDemonActor_PTR_007c6380
+    MOV dword ptr [0x007c6380],EDX      ; 0042d76a | g_LastCollisionActor
     TEST ECX,0x7fffffff                 ; 0042d770
     JNZ 0x0042d7a8                      ; 0042d776
         ;   XREF to: 0042d7a8 (CONDITIONAL_JUMP)  ; LAB_0042d7a8
@@ -285,14 +285,14 @@ section .text
     MOV dword ptr [ESP + 0x110],EAX     ; 0042d9f6
     FLD float ptr [ESP + 0x110]         ; 0042d9fd
     ADD ESP,0x20                        ; 0042da04
-    MOV EAX,[0x007c6380]                ; 0042da07 | g_CDemonActor_PTR_007c6380
+    MOV EAX,[0x007c6380]                ; 0042da07 | g_LastCollisionActor
     FSTP float ptr [ESP + 0x10]         ; 0042da0c
     TEST EAX,EAX                        ; 0042da10
     JNZ 0x0042da24                      ; 0042da12
         ;   XREF to: 0042da24 (CONDITIONAL_JUMP)  ; LAB_0042da24
     MOV EAX,[0x00622c18]                ; 0042da14 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x14d144]  ; 0042da19 | g_CDemonSetInstance.collision_actor
-    MOV [0x007c6380],EAX                ; 0042da1f | g_CDemonActor_PTR_007c6380
+    MOV [0x007c6380],EAX                ; 0042da1f | g_LastCollisionActor
     IMUL EAX,dword ptr [ESP + 0xec],0x24 ; 0042da24
         ;   Label: LAB_0042da24
     ADD EAX,dword ptr [ESP + 0xc4]      ; 0042da2c

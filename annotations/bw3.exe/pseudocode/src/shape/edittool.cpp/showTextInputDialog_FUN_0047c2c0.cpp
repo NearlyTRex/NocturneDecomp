@@ -27,7 +27,7 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_tit
     g_INT_01d71de4 = 0xa7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
-  g_INT_01c5bae0 = g_CBitFont_PTR_01c5b0e0->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
@@ -55,8 +55,8 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_tit
             (&local_fc,iVar4 + 1,local_18,iVar4 + iVar3,g_INT_01c6b5b4,"OK");
   shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004860d0
             (&local_1e0,iVar2,local_18,iVar3 + iVar2 + -1,g_INT_01c6b5b4,"Cancel");
-  local_14 = g_INT_005fba2c;
-  g_INT_005fba2c = 0x7f;
+  local_14 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   iVar2 = 0;
   while( true ) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(g_CEditorToolsPtr);
@@ -66,16 +66,14 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_tit
     shape_edittool_cpp_CEdButton_paint_FUN_00486120(&local_1e0,(uint)(iVar2 == 1));
     shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00480410(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-    iVar3 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_LSHIFT);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar3 == 0) &&
-       (iVar3 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_TAB),
-       iVar3 != 0)) {
+       (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar3 != 0)) {
       iVar2 = iVar2 + 1;
     }
-    iVar3 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_LSHIFT);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar3 != 0) &&
-       (iVar3 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_TAB),
-       iVar3 != 0)) {
+       (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar3 != 0)) {
       iVar2 = iVar2 + -1;
     }
     pCVar6 = &local_320;
@@ -87,9 +85,9 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_tit
     else {
       iVar2 = 0;
     }
-    if (g_INT_02d21b80 != 0) break;
+    if (g_InputDisabled != 0) break;
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800(), iVar3 != 0) {
-      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004df580(g_CKeys_PTR_00600284);
+      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004df580(g_CKeysPtr);
       if (iVar3 == 0x1b) {
 LAB_0047c596:
         iVar2 = 0;
@@ -102,7 +100,7 @@ LAB_0047c596:
       if (iVar3 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_0047bc60(&local_320);
       }
-      else if ((g_UCHAR_ARRAY_006074b8[(byte)((char)iVar3 + 1)] & 8) != 0) {
+      else if ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(&local_320);
         shape_edittool_cpp_CInputString_insertChar_FUN_0047bb10(&local_320,(char)iVar3,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0047baf0(&local_320);
@@ -115,12 +113,12 @@ LAB_0047c64e:
       iVar2 = 1;
       goto LAB_0047c658;
     }
-    if (&local_fc == (CEdButton *)g_PTR_01c5bb78) {
+    if (&local_fc == (CEdButton *)g_ActiveControl) {
       iVar2 = 0;
     }
     iVar3 = shape_edittool_cpp_CEdButton_wasClicked_FUN_00486440(&local_1e0);
     if (iVar3 != 0) break;
-    if (&local_1e0 == (CEdButton *)g_PTR_01c5bb78) {
+    if (&local_1e0 == (CEdButton *)g_ActiveControl) {
       iVar2 = 1;
     }
   }
@@ -140,7 +138,7 @@ LAB_0047c658:
 LAB_0047c598:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(g_CEditorToolsPtr);
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  g_INT_005fba2c = local_14;
+  g_InputKeyMask = local_14;
   shape_edittool_cpp_CEdButton_dtor_FUN_00486050(&local_1e0,0);
   shape_edittool_cpp_CEdButton_dtor_FUN_00486050(&local_fc,0);
   return iVar2;

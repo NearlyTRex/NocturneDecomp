@@ -12,11 +12,11 @@
 // =============================================================================
 
 // CBoundingBox3D[2000]
-extern CBoundingBox3D g_CBoundingBox3D_ARRAY_020a46d8[2000];
+extern CBoundingBox3D g_VDNearbyActorBoundingBoxes[2000];
 
 // CDemonActor*[2000]
-extern CDemonActor* g_CDemonActor_PTR_ARRAY_020a2798[2000];
+extern CDemonActor* g_VDNearbyActorPointers[2000];
 
 // int
-extern int g_INT_020a2794;
+extern int g_VDNearbyActorCount;
 

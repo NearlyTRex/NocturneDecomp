@@ -48,6 +48,6 @@ void __cdecl core_ammo_cpp_CAmmoMana_process_FUN_0040e140(CAmmoMana *this_ptr,fl
     CStack_24.z = CStack_3c.z;
   }
   core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-            (g_CFireEffect_PTR_005fc5a0,&CStack_24,&g_CVector3f_02cfd900,1,0,4);
+            (g_CFireEffect_PTR_005fc5a0,&CStack_24,&g_ZeroVector,1,0,4);
   return;
 }

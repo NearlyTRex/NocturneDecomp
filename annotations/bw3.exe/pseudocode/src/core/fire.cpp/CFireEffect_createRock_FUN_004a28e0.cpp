@@ -12,11 +12,11 @@ void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004a28e0(CFireEffect *this
   CRock *this_ptr_00;
   int iVar1;
   
-  iVar1 = g_INT_01cf2780 + 1;
-  this_ptr_00 = g_RockPool + g_INT_01cf2780;
-  g_INT_01cf2780 = iVar1;
+  iVar1 = g_RockAllocIndex + 1;
+  this_ptr_00 = g_RockPool + g_RockAllocIndex;
+  g_RockAllocIndex = iVar1;
   if (0x3f < iVar1) {
-    g_INT_01cf2780 = 0;
+    g_RockAllocIndex = 0;
   }
   core_fire_cpp_CRock_setup_FUN_00499fe0(this_ptr_00,position,velocity,model_ptr);
   return;

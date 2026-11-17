@@ -12,8 +12,8 @@ void * FUN_005c293c(void *param_1)
   ulong uVar1;
   
   if (param_1 == (void *)0x0) {
-    param_1 = calloc(1,g_ULONG_0061f754);
-    uVar1 = g_ULONG_0061f754;
+    param_1 = calloc(1,g_RuntimeBufferSize);
+    uVar1 = g_RuntimeBufferSize;
     if (param_1 != (void *)0x0) {
       *(byte *)((int)param_1 + 0x52) = 1;
       *(ulong *)((int)param_1 + 0xf0) = uVar1;

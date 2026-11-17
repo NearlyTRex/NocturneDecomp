@@ -10,7 +10,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40 at 00469de9
 ;
 ; Referenced Globals:
-;   int g_INT_005f0770 = 0xf8
+;   int g_CurrentTextColor = 0xf8
 ;
 ; *****************************************************************************
 
@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00402850
         ;   Label: engine_2d.c_setTextColor_FUN_00402850
-    MOV [0x005f0770],EAX                ; 00402854 | g_INT_005f0770
+    MOV [0x005f0770],EAX                ; 00402854 | g_CurrentTextColor
     RET                                 ; 00402859
 

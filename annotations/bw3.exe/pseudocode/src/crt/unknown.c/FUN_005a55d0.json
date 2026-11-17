@@ -54,13 +54,13 @@
   "globals": [
     {
       "addr": "00607d3c",
-      "name": "g_INT_00607d3c",
+      "name": "g_TimezoneOffset",
       "type": "int",
       "value": "0x4650"
     },
     {
       "addr": "00607d44",
-      "name": "g_INT_00607d44",
+      "name": "g_DaylightSavingOffset",
       "type": "int",
       "value": "0xe10"
     }
@@ -175,7 +175,7 @@
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005ac290(0x63df,uVar1,g_INT_00607d3c,param_2);",
+      "text": "FUN_005ac290(0x63df,uVar1,g_TimezoneOffset,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -191,7 +191,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005ac290(0x63df,uVar1,g_INT_00607d3c - g_INT_00607d44,param_2);",
+      "text": "FUN_005ac290(0x63df,uVar1,g_TimezoneOffset - g_DaylightSavingOffset,param_2);",
       "type": "unnamed_param"
     },
     {

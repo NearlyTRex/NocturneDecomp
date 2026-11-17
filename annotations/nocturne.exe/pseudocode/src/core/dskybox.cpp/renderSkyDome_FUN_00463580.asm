@@ -61,9 +61,9 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CVector3f CVector3f_005b0678
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   CVector3f g_CVector3f_01b7b728
-;   undefined4 g_CVector3f_01b7b728.y
-;   undefined4 g_CVector3f_01b7b728.z
+;   CVector3f g_SkyDomeCenter
+;   undefined4 g_SkyDomeCenter.y
+;   undefined4 g_SkyDomeCenter.z
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -138,11 +138,11 @@ section .text
     XOR EDX,EDX                         ; 00463617
     MOV EAX,dword ptr [ESP + 0x58]      ; 00463619
     MOV dword ptr [0x005b0678],EDX      ; 0046361d | CVector3f_005b0678
-    MOV [0x01b7b72c],EAX                ; 00463623 | g_CVector3f_01b7b728.y
+    MOV [0x01b7b72c],EAX                ; 00463623 | g_SkyDomeCenter.y
     FXCH ST2                            ; 00463628
-    FSTP float ptr [0x01b7b728]         ; 0046362a | g_CVector3f_01b7b728
+    FSTP float ptr [0x01b7b728]         ; 0046362a | g_SkyDomeCenter
     FXCH ST2                            ; 00463630
-    FSTP float ptr [0x01b7b730]         ; 00463632 | g_CVector3f_01b7b728.z
+    FSTP float ptr [0x01b7b730]         ; 00463632 | g_SkyDomeCenter.z
     FXCH                                ; 00463638
     FSTP float ptr [ESP + 0x80]         ; 0046363a
     FCOMP float ptr [ESP + 0x80]        ; 00463641
@@ -175,7 +175,7 @@ section .text
         ;   XREF to: 004636af (CONDITIONAL_JUMP)  ; LAB_004636af
     MOV EAX,dword ptr [ESP + 0x84]      ; 004636a3
     MOV [0x005b0678],EAX                ; 004636aa | CVector3f_005b0678
-    PUSH 0x1b7b728                      ; 004636af | g_CVector3f_01b7b728
+    PUSH 0x1b7b728                      ; 004636af | g_SkyDomeCenter
         ;   Label: LAB_004636af
     MOV ECX,dword ptr [0x005ae704]      ; 004636b4 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004636ba | g_CDemonRenderer_01b4d738

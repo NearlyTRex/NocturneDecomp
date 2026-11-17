@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 80,
+    "complexity_score": 81,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 46,
     "suspect_count": 3,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 145
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -71,7 +71,7 @@
     },
     {
       "addr": "01c2a38c",
-      "name": "g_ARRAY_PTR_01c2a38c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
@@ -89,7 +89,7 @@
     },
     {
       "addr": "0264bbb0",
-      "name": "g_INT_0264bbb0",
+      "name": "g_FrameBufferTestResult",
       "type": "int",
       "value": null
     },
@@ -113,37 +113,37 @@
     },
     {
       "addr": "0264bcdc",
-      "name": "g_INT_0264bcdc",
+      "name": "g_LoadedExternalDLLRenderer",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264bce4",
-      "name": "g_INT_0264bce4",
+      "name": "g_FogColorRed",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264bce8",
-      "name": "g_INT_0264bce8",
+      "name": "g_FogColorGreen",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264bcec",
-      "name": "g_INT_0264bcec",
+      "name": "g_FogColorBlue",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264bcf0",
-      "name": "g_HWND_0264bcf0",
+      "name": "g_StoredWindowHandle",
       "type": "HWND",
       "value": null
     },
     {
       "addr": "0264bcf4",
-      "name": "g_INT_0264bcf4",
+      "name": "g_ExternalBitsPerPixel",
       "type": "int",
       "value": null
     }
@@ -266,26 +266,26 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (*(code *)g_PTR_0264bbc8)(width,height,bits_per_pixel,g_ARRAY_PTR_01c2a38c);",
+      "text": "iVar4 = (*(code *)g_PTR_0264bbc8)(width,height,bits_per_pixel,g_ScreenBufferArray);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_USHORT_ARRAY_01c34910);",
+      "text": "(*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_ColorTable16);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_0264bc1c)(g_INT_0264bce4,g_INT_0264bce8,g_INT_0264bcec);",
+      "text": "(*(code *)g_PTR_0264bc1c)(g_FogColorRed,g_FogColorGreen,g_FogColorBlue);",
       "type": "unresolved_funcptr"
     }
   ]

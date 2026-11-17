@@ -31,7 +31,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *t
     if (0 < g_INT_01fc9608) {
       local_30 = 0;
       do {
-        pCVar2 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + local_30);
+        pCVar2 = *(CDemonLight **)((int)g_DynamicLights + local_30);
         if (pCVar2->light_enabled_flag != 0) {
           fVar3 = (pCVar2->base).max_distance;
           core_dlight_cpp_CDemonLight_beginScene_FUN_0044a020(pCVar2,0);
@@ -64,7 +64,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *t
               } while (local_18 < this_ptr->sorted_render_actor_count);
             }
             core_gore_cpp_CGore_renderParticles_FUN_004c9440(g_CGorePtr);
-            core_fire_cpp_CFireEffect_render_FUN_0049c780(g_CFireEffect_PTR_00614d30);
+            core_fire_cpp_CFireEffect_render_FUN_0049c780(g_CFireEffectPtr);
           }
           core_dlight_cpp_CDemonLight_endScene_FUN_0044a2d0(pCVar2,1);
           (pCVar2->base).max_distance = fVar3;
@@ -74,7 +74,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *t
       } while (local_28 < g_INT_01fc9608);
     }
     local_24 = 0;
-    if (0 < g_INT_01fc8e84) {
+    if (0 < g_SpotLightCount) {
       local_2c = 0;
       do {
         pCVar2 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + local_2c);
@@ -83,7 +83,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *t
           core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(this_ptr,0x22);
           iVar6 = 0;
           pCVar5 = this_ptr;
-          g_CDemonLight_PTR_01511ce4 = pCVar2;
+          g_CurrentShadowLight = pCVar2;
           if (0 < this_ptr->sorted_render_actor_count) {
             do {
               this_ptr_00 = pCVar5->sorted_render_actors[0];
@@ -103,13 +103,13 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *t
             } while (iVar6 < this_ptr->sorted_render_actor_count);
           }
           core_gore_cpp_CGore_renderParticles_FUN_004c9440(g_CGorePtr);
-          core_fire_cpp_CFireEffect_render_FUN_0049c780(g_CFireEffect_PTR_00614d30);
-          g_CDemonLight_PTR_01511ce4 = (CDemonLight *)0x0;
+          core_fire_cpp_CFireEffect_render_FUN_0049c780(g_CFireEffectPtr);
+          g_CurrentShadowLight = (CDemonLight *)0x0;
           core_dlight_cpp_CDemonLight_endScene_FUN_0044a2d0(pCVar2,0);
         }
         local_2c = local_2c + 4;
         local_24 = local_24 + 1;
-      } while (local_24 < g_INT_01fc8e84);
+      } while (local_24 < g_SpotLightCount);
     }
     if (g_CGamePtr->profile_mode != 0) {
       wincore_winrun_cpp_getTime_FUN_0058e9e0();

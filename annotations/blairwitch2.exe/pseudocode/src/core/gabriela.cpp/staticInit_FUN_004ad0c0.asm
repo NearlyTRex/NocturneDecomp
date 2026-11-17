@@ -14,12 +14,12 @@
 ;   float g_FLOAT_01cb0638
 ;   float g_FLOAT_01cb063c
 ;   float g_FLOAT_01cb0640
-;   UVector3 g_UVector3_01cb0644
-;   undefined4 g_UVector3_01cb0644+4
-;   undefined4 g_UVector3_01cb0644+8
-;   UVector3 g_UVector3_01cb0650
-;   undefined4 g_UVector3_01cb0650+4
-;   undefined4 g_UVector3_01cb0650+8
+;   UVector3 g_GabriellaWeaponEuler
+;   undefined4 g_GabriellaWeaponEuler+4
+;   undefined4 g_GabriellaWeaponEuler+8
+;   UVector3 g_GabriellaWeaponAttachEuler
+;   undefined4 g_GabriellaWeaponAttachEuler+4
+;   undefined4 g_GabriellaWeaponAttachEuler+8
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -49,14 +49,14 @@ section .text
     MOV EAX,0x3fc90fdb                  ; 004ad106
     XOR EBP,EBP                         ; 004ad10b
     PUSH 0x3                            ; 004ad10d
-    MOV dword ptr [0x01cb0644],EDX      ; 004ad10f | g_UVector3_01cb0644
-    MOV dword ptr [0x01cb0648],ECX      ; 004ad115 | g_UVector3_01cb0644+4
-    MOV dword ptr [0x01cb064c],EBX      ; 004ad11b | g_UVector3_01cb0644+8
-    MOV dword ptr [0x01cb0650],ESI      ; 004ad121 | g_UVector3_01cb0650
-    MOV dword ptr [0x01cb0654],EDI      ; 004ad127 | g_UVector3_01cb0650+4
-    MOV dword ptr [0x01cb0658],EBP      ; 004ad12d | g_UVector3_01cb0650+8
-    MOV [0x01cb065c],EAX                ; 004ad133 | g_UVector3_01cb065c
-    MOV dword ptr [0x01cb0660],EBP      ; 004ad138 | g_UVector3_01cb065c+4
+    MOV dword ptr [0x01cb0644],EDX      ; 004ad10f | g_GabriellaWeaponEuler
+    MOV dword ptr [0x01cb0648],ECX      ; 004ad115 | g_GabriellaWeaponEuler+4
+    MOV dword ptr [0x01cb064c],EBX      ; 004ad11b | g_GabriellaWeaponEuler+8
+    MOV dword ptr [0x01cb0650],ESI      ; 004ad121 | g_GabriellaWeaponAttachEuler
+    MOV dword ptr [0x01cb0654],EDI      ; 004ad127 | g_GabriellaWeaponAttachEuler+4
+    MOV dword ptr [0x01cb0658],EBP      ; 004ad12d | g_GabriellaWeaponAttachEuler+8
+    MOV [0x01cb065c],EAX                ; 004ad133 | g_GabriellaWeaponAttachOffset
+    MOV dword ptr [0x01cb0660],EBP      ; 004ad138 | g_GabriellaWeaponAttachOffset+4
     MOV dword ptr [0x01cb0670],EBP      ; 004ad13e | g_FLOAT_01cb0670
     FXCH ST2                            ; 004ad144
     FSTP float ptr [0x01cb0638]         ; 004ad146 | g_FLOAT_01cb0638
@@ -68,7 +68,7 @@ section .text
     MOV EBX,0x40133333                  ; 004ad167
     PUSH 0x5d6d7b                       ; 004ad16c
     MOV ESI,0x408ccccd                  ; 004ad171
-    MOV dword ptr [0x01cb0664],ECX      ; 004ad176 | g_UVector3_01cb065c+8
+    MOV dword ptr [0x01cb0664],ECX      ; 004ad176 | g_GabriellaWeaponAttachOffset+8
     PUSH 0x1cb06c8                      ; 004ad17c
     MOV dword ptr [0x01cb0668],EBX      ; 004ad181 | g_FLOAT_01cb0668
     MOV dword ptr [0x01cb066c],ESI      ; 004ad187 | g_FLOAT_01cb066c

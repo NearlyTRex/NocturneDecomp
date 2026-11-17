@@ -9,9 +9,9 @@
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0(CEdScrollBar *this_ptr)
 
 {
-  if (this_ptr != (CEdScrollBar *)g_PTR_01bcde24) {
+  if (this_ptr != (CEdScrollBar *)g_ActiveControl) {
     return;
   }
-  g_PTR_01bcde24 = (byte *)0x0;
+  g_ActiveControl = (byte *)0x0;
   return;
 }

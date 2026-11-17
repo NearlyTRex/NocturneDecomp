@@ -24,7 +24,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
   
-  if ((INT_005b7644 != 0) && (iVar8 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
+  if ((g_VertexProcessingEnabled != 0) && (iVar8 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
     do {
       if ((int)((pSVar6->projected_vertex).screen_x & -0x80000000) != 0) {
         if ((g_VertexPreprocessMode & 6U) != 0) {
@@ -48,7 +48,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
       pSVar6 = pSVar6 + 1;
     } while (iVar8 < vertex_count);
   }
-  if ((g_INT_006b0280 != 0) &&
+  if ((g_CullingMode != 0) &&
      (iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
                         (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar8 == 0)) {
     return;
@@ -67,11 +67,11 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
       engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertex_buffer,vertex_count);
     }
   }
-  g_INT_02de497c = 0;
+  g_RasterizerEdgeCount = 0;
   iVar10 = 0;
-  g_INT_02de4e04 = 0;
-  g_INT_02de4e00 = GAME_SCREEN_MAX_HEIGHT;
-  iVar8 = g_INT_02de497c;
+  g_RasterizerMaxY = 0;
+  g_RasterizerMinY = GAME_SCREEN_MAX_HEIGHT;
+  iVar8 = g_RasterizerEdgeCount;
   if (0 < vertex_count) {
     do {
       iVar2 = iVar10 + 1;
@@ -82,7 +82,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
       pSVar6 = vertex_buffer + iVar10;
       iVar2 = (pSVar6->projected_vertex).screen_y >> 0x10;
       iVar3 = (local_20->projected_vertex).screen_y >> 0x10;
-      g_INT_02de497c = iVar8;
+      g_RasterizerEdgeCount = iVar8;
       if (iVar2 != iVar3) {
         iVar4 = iVar3;
         pSVar9 = pSVar6;
@@ -92,14 +92,14 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
           pSVar9 = local_20;
           local_20 = pSVar6;
         }
-        g_SSoftwareEdge_ARRAY_02de4980[iVar8].base.y_min = iVar2;
-        iVar3 = g_INT_02de4e00;
-        g_SSoftwareEdge_ARRAY_02de4980[iVar8].base.y_max = iVar4;
+        g_RasterizerEdgeArray[iVar8].base.y_min = iVar2;
+        iVar3 = g_RasterizerMinY;
+        g_RasterizerEdgeArray[iVar8].base.y_max = iVar4;
         if (iVar2 < iVar3) {
-          g_INT_02de4e00 = iVar2;
+          g_RasterizerMinY = iVar2;
         }
-        if (g_INT_02de4e04 < iVar4) {
-          g_INT_02de4e04 = iVar4;
+        if (g_RasterizerMaxY < iVar4) {
+          g_RasterizerMaxY = iVar4;
         }
         uVar7 = (local_20->projected_vertex).screen_y - (pSVar9->projected_vertex).screen_y;
         if (uVar7 < 0x10000) {
@@ -113,9 +113,9 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
                 (longlong)
                 ((local_20->projected_vertex).screen_x - (pSVar9->projected_vertex).screen_x);
         uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SSoftwareEdge_ARRAY_02de4980[iVar8].base.x_gradient = uVar5;
+        g_RasterizerEdgeArray[iVar8].base.x_gradient = uVar5;
         lVar1 = (longlong)(int)uVar7 * (longlong)(int)uVar5;
-        g_SSoftwareEdge_ARRAY_02de4980[iVar8].base.x_current =
+        g_RasterizerEdgeArray[iVar8].base.x_current =
              (pSVar9->projected_vertex).screen_x +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         lVar1 = (longlong)iVar2 *
@@ -123,56 +123,57 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
                 (((local_20->projected_vertex).transformed_z -
                  (pSVar9->projected_vertex).transformed_z) * 0x100);
         uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SSoftwareEdge_ARRAY_02de4980[iVar8].base.depth_gradient = uVar5;
+        g_RasterizerEdgeArray[iVar8].base.depth_gradient = uVar5;
         lVar1 = (longlong)(int)uVar7 * (longlong)(int)uVar5;
-        g_INT_02de497c = g_INT_02de497c + 1;
-        g_SSoftwareEdge_ARRAY_02de4980[iVar8].base.depth_current =
-             ((pSVar9->projected_vertex).transformed_z * 0x100 - g_INT_01b4d1fc) +
+        g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
+        g_RasterizerEdgeArray[iVar8].base.depth_current =
+             ((pSVar9->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
       iVar10 = iVar10 + 1;
-      iVar8 = g_INT_02de497c;
+      iVar8 = g_RasterizerEdgeCount;
     } while (iVar10 < vertex_count);
   }
-  local_14 = g_SSoftwareEdge_ARRAY_02de4980;
+  local_14 = g_RasterizerEdgeArray;
   iVar8 = 0;
-  g_INT_01b4d768 = 0;
-  if (0 < g_INT_02de497c) {
+  g_RenderAbortFlag = 0;
+  if (0 < g_RasterizerEdgeCount) {
     do {
-      if ((g_INT_02de4e00 == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
+      if ((g_RasterizerMinY == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
       goto LAB_00562a68;
       iVar8 = iVar8 + 1;
       local_14 = local_14 + 1;
-    } while (iVar8 < g_INT_02de497c);
+    } while (iVar8 < g_RasterizerEdgeCount);
   }
   local_14 = (SSoftwareEdge *)0x0;
 LAB_00562a68:
   if (local_14 != (SSoftwareEdge *)0x0) {
-    local_18 = g_SSoftwareEdge_ARRAY_02de4980;
+    local_18 = g_RasterizerEdgeArray;
     iVar8 = 0;
-    if (0 < g_INT_02de497c) {
+    if (0 < g_RasterizerEdgeCount) {
       do {
-        if ((g_INT_02de4e00 == (local_18->base).y_min) && (local_18 != local_14)) goto LAB_00562aa1;
+        if ((g_RasterizerMinY == (local_18->base).y_min) && (local_18 != local_14))
+        goto LAB_00562aa1;
         iVar8 = iVar8 + 1;
         local_18 = local_18 + 1;
-      } while (iVar8 < g_INT_02de497c);
+      } while (iVar8 < g_RasterizerEdgeCount);
     }
     local_18 = (SSoftwareEdge *)0x0;
 LAB_00562aa1:
-    scanline_y = (byte *)g_INT_02de4e00;
+    scanline_y = (byte *)g_RasterizerMinY;
     if (local_18 != (SSoftwareEdge *)0x0) {
       do {
         if ((local_14->base).y_max <= (int)scanline_y) {
           (local_14->base).y_min = -1;
-          local_14 = g_SSoftwareEdge_ARRAY_02de4980;
+          local_14 = g_RasterizerEdgeArray;
           iVar8 = 0;
-          if (0 < g_INT_02de497c) {
+          if (0 < g_RasterizerEdgeCount) {
             do {
               if ((scanline_y == (byte *)(local_14->base).y_min) && (local_14 != local_18))
               goto LAB_00562afc;
               iVar8 = iVar8 + 1;
               local_14 = local_14 + 1;
-            } while (iVar8 < g_INT_02de497c);
+            } while (iVar8 < g_RasterizerEdgeCount);
           }
           local_14 = (SSoftwareEdge *)0x0;
 LAB_00562afc:
@@ -182,15 +183,15 @@ LAB_00562afc:
         }
         if ((local_18->base).y_max <= (int)scanline_y) {
           (local_18->base).y_min = -1;
-          local_18 = g_SSoftwareEdge_ARRAY_02de4980;
+          local_18 = g_RasterizerEdgeArray;
           iVar8 = 0;
-          if (0 < g_INT_02de497c) {
+          if (0 < g_RasterizerEdgeCount) {
             do {
               if ((scanline_y == (byte *)(local_18->base).y_min) && (local_18 != local_14))
               goto LAB_00562b4c;
               iVar8 = iVar8 + 1;
               local_18 = local_18 + 1;
-            } while (iVar8 < g_INT_02de497c);
+            } while (iVar8 < g_RasterizerEdgeCount);
           }
           local_18 = (SSoftwareEdge *)0x0;
 LAB_00562b4c:
@@ -199,7 +200,7 @@ LAB_00562b4c:
           }
         }
         engine_special_cpp_renderScanline_FUN_00530710(local_18,local_14,(int)scanline_y);
-        if (g_INT_01b4d768 != 0) {
+        if (g_RenderAbortFlag != 0) {
           return;
         }
         (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;

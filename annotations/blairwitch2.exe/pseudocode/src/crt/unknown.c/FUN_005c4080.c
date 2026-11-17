@@ -11,7 +11,7 @@ uint FUN_005c4080(uint param_1)
 {
   uint uVar1;
   
-  if ((-1 < (int)param_1) && (param_1 <= g_UINT_0061f480)) {
+  if ((-1 < (int)param_1) && (param_1 <= g_MaxHandleCount)) {
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(param_1);
     uVar1 = FUN_005bec40(param_1);
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);

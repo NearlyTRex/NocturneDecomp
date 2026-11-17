@@ -93,7 +93,7 @@ LAB_004f826f:
             iVar4 = iVar5;
           }
           iVar3 = iVar3 >> 0x10;
-          puVar6 = (uint *)(g_ARRAY_PTR_01c2a38c[local_14] + iVar3 * 4);
+          puVar6 = (uint *)(g_ScreenBufferArray[local_14] + iVar3 * 4);
           for (; iVar3 < iVar4 >> 0x10; iVar3 = iVar3 + 1) {
             *puVar6 = 0x80000000;
             puVar6 = puVar6 + 1;

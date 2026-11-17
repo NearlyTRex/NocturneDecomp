@@ -18,10 +18,10 @@
 ;   TerminatedCString s_core_dlight_cpp_005bb2d4
 ;   TerminatedCString s_CDemonLight_beginScene_S_005bb2e7
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   int g_INT_01bdd520
+;   int g_RasterizerDepthBias
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6e300
 ;   int g_INT_01c6e30c
 ;   int g_INT_01c6e318
@@ -128,7 +128,7 @@ section .text
     JLE 0x0045c690                      ; 0045c64c
         ;   XREF to: 0045c690 (CONDITIONAL_JUMP)  ; LAB_0045c690
     MOV EDX,EBX                         ; 0045c64e
-    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045c650 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045c650 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0045c650
     MOV dword ptr [EDX + 0x1cd4],ESI    ; 0045c657
     MOV ESI,dword ptr [EBX + 0x1cc0]    ; 0045c65d
@@ -136,7 +136,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2f94]    ; 0045c666
     ADD ESI,ESI                         ; 0045c66c
     ADD ESI,EDI                         ; 0045c66e
-    MOV dword ptr [EAX*0x4 + 0x1c5faec],ESI ; 0045c670 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV dword ptr [EAX*0x4 + 0x1c5faec],ESI ; 0045c670 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0045c677
     MOV ECX,dword ptr [EBX + 0x1cc4]    ; 0045c678
     ADD EDX,0x4                         ; 0045c67e
@@ -161,7 +161,7 @@ section .text
     TEST ESI,ESI                        ; 0045c6ae
     JZ 0x0045c70e                       ; 0045c6b0
         ;   XREF to: 0045c70e (CONDITIONAL_JUMP)  ; LAB_0045c70e
-    MOV dword ptr [0x01bdd520],0x8000   ; 0045c6b2 | g_INT_01bdd520
+    MOV dword ptr [0x01bdd520],0x8000   ; 0045c6b2 | g_RasterizerDepthBias
     POP EBP                             ; 0045c6bc
     POP EDI                             ; 0045c6bd
     POP ESI                             ; 0045c6be
@@ -189,7 +189,7 @@ section .text
         ;   XREF to: 00495ec0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00495ec0(void * dest, int fill_byte, uint size)
     JMP 0x0045c642                      ; 0045c709
         ;   XREF to: 0045c642 (UNCONDITIONAL_JUMP)  ; LAB_0045c642
-    MOV dword ptr [0x01bdd520],ESI      ; 0045c70e | g_INT_01bdd520
+    MOV dword ptr [0x01bdd520],ESI      ; 0045c70e | g_RasterizerDepthBias
         ;   Label: LAB_0045c70e
     POP EBP                             ; 0045c714
     POP EDI                             ; 0045c715

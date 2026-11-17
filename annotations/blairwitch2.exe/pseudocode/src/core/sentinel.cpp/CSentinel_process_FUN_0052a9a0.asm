@@ -21,8 +21,8 @@
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CConsole g_CConsoleInstance
-;   int[12] g_INT_ARRAY_01e6614c
-;   undefined4 g_INT_ARRAY_01e6614c[2]
+;   int[12] g_SentinelIndices
+;   undefined4 g_SentinelIndices[2]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -600,7 +600,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0052afe2
     ADD ESP,0x8                         ; 0052afe5
     LEA EAX,[EBP + 0xfffffdfa]          ; 0052afe8
-    MOV EDX,dword ptr [0x01e66154]      ; 0052afee | g_INT_ARRAY_01e6614c[2]
+    MOV EDX,dword ptr [0x01e66154]      ; 0052afee | g_SentinelIndices[2]
     PUSH EAX                            ; 0052aff4
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052aff5
     MOV dword ptr [EBP + 0xfffffe2e],EBX ; 0052affc
@@ -613,7 +613,7 @@ section .text
     LEA EDI,[EBP + 0xffffff7a]          ; 0052b01a
     PUSH EAX                            ; 0052b020
     FLD float ptr [EBP + 0x76]          ; 0052b021
-    PUSH 0x265370c                      ; 0052b024 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0052b024 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffdfe]   ; 0052b029
     MOV dword ptr [EBP + 0x46],EDX      ; 0052b02f
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0052b032
@@ -650,7 +650,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0052b081
     ADD ESP,0x8                         ; 0052b084
     LEA EAX,[EBP + 0xfffffdfa]          ; 0052b087
-    MOV EDX,dword ptr [0x01e6614c]      ; 0052b08d | g_INT_ARRAY_01e6614c
+    MOV EDX,dword ptr [0x01e6614c]      ; 0052b08d | g_SentinelIndices
     PUSH EAX                            ; 0052b093
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052b094
     MOV ECX,dword ptr [EBP + 0x46]      ; 0052b09b
@@ -662,7 +662,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffe32],EBX ; 0052b0b0
     PUSH EAX                            ; 0052b0b6
     FLD float ptr [EBP + 0x76]          ; 0052b0b7
-    PUSH 0x265370c                      ; 0052b0ba | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0052b0ba | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffdfe]   ; 0052b0bf
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0052b0c5
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

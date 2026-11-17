@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [EAX + 0x244],EDX     ; 005220e9 | g_CGameInstance.letterbox_mode
     LEA EAX,[ESP + 0x4]                 ; 005220ef
     PUSH EAX                            ; 005220f3
-    MOV dword ptr [0x01e65900],EDX      ; 005220f4 | g_FLOAT_01e65900
+    MOV dword ptr [0x01e65900],EDX      ; 005220f4 | g_ScriptTimeScale
     MOV dword ptr [EBX + 0x450],0xbf800000 ; 005220fa
     PUSH EDX                            ; 00522104
     MOV dword ptr [EBX + 0x454],0xffffffff ; 00522105
@@ -75,7 +75,7 @@ section .text
     ADD EAX,0x14d0f0                    ; 00522115
     MOV dword ptr [EBX + 0x458],EDX     ; 0052211a
     PUSH EAX                            ; 00522120
-    MOV dword ptr [0x01e65908],EDX      ; 00522121 | g_INT_01e65908
+    MOV dword ptr [0x01e65908],EDX      ; 00522121 | g_ScriptLoopWarningShown
     MOV dword ptr [EBX + 0x14],EDX      ; 00522127
     CALL crt_string.c_splitpath_FUN_005b9e58 ; 0052212a
         ;   XREF to: 005b9e58 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005b9e58(char * path, char * drive, char * dir, char * fname, ...)

@@ -26,7 +26,7 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004d1e10(CHealthItem *this_
     CStack_24.z = CStack_30.z;
   }
   core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-            (g_CFireEffect_PTR_005fc5a0,&CStack_24,&g_CVector3f_02cfd900,1,0,3);
+            (g_CFireEffect_PTR_005fc5a0,&CStack_24,&g_ZeroVector,1,0,3);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
   fStack_18 = delta_time * 10.0f;
   iVar1 = pCVar3->frame_count;

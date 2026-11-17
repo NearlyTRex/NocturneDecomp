@@ -8,7 +8,7 @@
 CVector3f g_CVector3f_021221e0 = {};
 
 // SRaytraceState[5]
-SRaytraceState g_SRaytraceState_ARRAY_021221f4[5] = {};
+SRaytraceState g_RaytraceStateStack[5] = {};
 
 // UVector3
 UVector3 g_UVector3_021221d4 = {};
@@ -17,10 +17,10 @@ UVector3 g_UVector3_021221d4 = {};
 char g_CHAR_ARRAY_0212551c[3072000] = {};
 
 // float
-float g_FLOAT_021221ec = {};
+float g_SavedProjectionFactor = {};
 
 // int
-int g_INT_021221f0 = {};
+int g_RaytraceStateStackDepth = {};
 int g_INT_02125514 = {};
 int g_INT_02125518 = {};
 

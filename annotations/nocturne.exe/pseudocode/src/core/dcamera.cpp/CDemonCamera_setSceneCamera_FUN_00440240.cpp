@@ -9,11 +9,11 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(CDemonCamera *this_ptr,int skip_clear_buffers)
 
 {
-  g_CDemonCamera_PTR_007f7370 = this_ptr;
+  g_CurrentSceneCamera = this_ptr;
   if (skip_clear_buffers != 0) {
-    g_CDemonCamera_PTR_007f7374 = this_ptr;
+    g_SkipClearBuffersSceneCamera = this_ptr;
     return;
   }
-  g_CDemonCamera_PTR_007f7374 = (CDemonCamera *)0x0;
+  g_SkipClearBuffersSceneCamera = (CDemonCamera *)0x0;
   return;
 }

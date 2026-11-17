@@ -29,8 +29,8 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005ddfc0 = 65536
-;   float g_FLOAT_005ddfc4 = 0.00390625
-;   int g_INT_01d1a0a8
+;   float g_WorldToFloat = 0.00390625
+;   int g_FastInvSqrtMagic
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044b4a0
@@ -73,13 +73,13 @@ section .text
     MOV EAX,EBP                         ; 0044bb3a
     LEA ESI,[ESP + 0x24]                ; 0044bb3c
     FILD dword ptr [EAX]                ; 0044bb40
-    FMUL float ptr [0x005ddfc4]         ; 0044bb42 | g_FLOAT_005ddfc4
+    FMUL float ptr [0x005ddfc4]         ; 0044bb42 | g_WorldToFloat
     FSTP float ptr [EBX]                ; 0044bb48
     FILD dword ptr [EAX + 0x4]          ; 0044bb4a
-    FMUL float ptr [0x005ddfc4]         ; 0044bb4d | g_FLOAT_005ddfc4
+    FMUL float ptr [0x005ddfc4]         ; 0044bb4d | g_WorldToFloat
     FSTP float ptr [EBX + 0x4]          ; 0044bb53
     FILD dword ptr [EAX + 0x8]          ; 0044bb56
-    FMUL float ptr [0x005ddfc4]         ; 0044bb59 | g_FLOAT_005ddfc4
+    FMUL float ptr [0x005ddfc4]         ; 0044bb59 | g_WorldToFloat
     FSTP float ptr [EBX + 0x8]          ; 0044bb5f
     FLD float ptr [ESP]                 ; 0044bb62
     FLD float ptr [ESP + 0x4]           ; 0044bb65
@@ -109,7 +109,7 @@ section .text
     FADDP                               ; 0044bba7
     FSTP float ptr [ESP + 0x30]         ; 0044bba9
     MOV EAX,dword ptr [ESP + 0x30]      ; 0044bbad
-    MOV EDX,dword ptr [0x01d1a0a8]      ; 0044bbb1 | g_INT_01d1a0a8
+    MOV EDX,dword ptr [0x01d1a0a8]      ; 0044bbb1 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0044bbb7
     SUB EDX,EAX                         ; 0044bbb9
     MOV dword ptr [ESP + 0x34],EDX      ; 0044bbbb

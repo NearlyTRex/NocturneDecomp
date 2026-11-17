@@ -31,21 +31,21 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_0052a0e0(float *input_sampl
   int local_1c;
   int local_14;
   
-  if (g_INT_0062029c != 0) {
+  if (g_Mp3AntiAliasInitialized != 0) {
     iVar11 = 0;
     do {
-      dVar5 = 1.0 / SQRT(*(double *)((int)g_DOUBLE_ARRAY_006202a0 + iVar11) *
-                         *(double *)((int)g_DOUBLE_ARRAY_006202a0 + iVar11) + 1.0);
+      dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) *
+                         *(double *)((int)g_Mp3AntiAliasCSSource + iVar11) + 1.0);
       iVar7 = iVar11 + 8;
       local_48 = SUB84(__BITCAST_UINT64(dVar5),0);
-      *(uint *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11) = local_48;
+      *(uint *)((int)g_Mp3AntiAliasCA + iVar11) = local_48;
       uStack_44 = (uint)((ulonglong)dVar5 >> 0x20);
-      *(double *)((int)g_DOUBLE_ARRAY_01d3e948 + iVar11) =
-           *(double *)((int)g_DOUBLE_ARRAY_006202a0 + iVar11) * dVar5;
-      *(uint *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11 + 4) = uStack_44;
+      *(double *)((int)g_Mp3AntiAliasCS + iVar11) =
+           *(double *)((int)g_Mp3AntiAliasCSSource + iVar11) * dVar5;
+      *(uint *)((int)g_Mp3AntiAliasCA + iVar11 + 4) = uStack_44;
       iVar11 = iVar7;
     } while (iVar7 != 0x40);
-    g_INT_0062029c = 0;
+    g_Mp3AntiAliasInitialized = 0;
   }
   iVar11 = 0;
   local_24 = output_samples;
@@ -87,10 +87,10 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_0052a0e0(float *input_sampl
         do {
           fVar3 = *pfVar6;
           fVar4 = *pfVar8;
-          *pfVar12 = fVar3 * (float)*(double *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11) -
-                     fVar4 * (float)*(double *)((int)g_DOUBLE_ARRAY_01d3e948 + iVar11);
-          pdVar1 = (double *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11);
-          pdVar2 = (double *)((int)g_DOUBLE_ARRAY_01d3e948 + iVar11);
+          *pfVar12 = fVar3 * (float)*(double *)((int)g_Mp3AntiAliasCA + iVar11) -
+                     fVar4 * (float)*(double *)((int)g_Mp3AntiAliasCS + iVar11);
+          pdVar1 = (double *)((int)g_Mp3AntiAliasCA + iVar11);
+          pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar11);
           pfVar10 = pfVar9 + 1;
           pfVar12 = pfVar12 + -1;
           iVar11 = iVar11 + 8;

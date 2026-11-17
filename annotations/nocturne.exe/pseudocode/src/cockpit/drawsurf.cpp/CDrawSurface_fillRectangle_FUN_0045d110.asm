@@ -24,7 +24,7 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057da6e
 ;   int g_BitsPerPixel = 0x8
 ;   int g_INT_01b4d710
-;   int g_INT_01b4d71c
+;   int g_UseRGBConversion
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
@@ -86,7 +86,7 @@ section .text
         ;   Label: LAB_0045d161
     JG 0x0045d190                       ; 0045d163
         ;   XREF to: 0045d190 (CONDITIONAL_JUMP)  ; LAB_0045d190
-    CMP dword ptr [0x01b4d71c],0x0      ; 0045d165 | g_INT_01b4d71c
+    CMP dword ptr [0x01b4d71c],0x0      ; 0045d165 | g_UseRGBConversion
     JZ 0x0045d250                       ; 0045d16c
         ;   XREF to: 0045d250 (CONDITIONAL_JUMP)  ; LAB_0045d250
     PUSH ESI                            ; 0045d172

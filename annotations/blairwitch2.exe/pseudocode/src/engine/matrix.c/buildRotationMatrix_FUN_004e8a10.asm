@@ -11,12 +11,12 @@
 ; Referenced Globals:
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   int g_INT_006141e4 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;   int g_INT_01c38b9c
 ;   int g_INT_01c38ba0
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 004e8d16 (CONDITIONAL_JUMP)  ; LAB_004e8d16
     JA 0x004e8d0f                       ; 004e8b7c
         ;   XREF to: 004e8d0f (CONDITIONAL_JUMP)  ; LAB_004e8d0f
-    MOV dword ptr [0x01d05010],0x15555  ; 004e8b82 | g_INT_01d05010
+    MOV dword ptr [0x01d05010],0x15555  ; 004e8b82 | g_PixelAspectCorrection
     MOV EAX,0x10000                     ; 004e8b8c
         ;   Label: LAB_004e8b8c
     MOV EBX,dword ptr [0x01c35e38]      ; 004e8b91 | g_INT_01c35e38
@@ -200,7 +200,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004e8bf7
     MOV ESI,dword ptr [0x01c35e48]      ; 004e8bfb | g_INT_01c35e48
     MOV [0x01c38bb4],EAX                ; 004e8c01 | g_INT_01c38bb4
-    MOV EAX,[0x01c35e50]                ; 004e8c06 | g_INT_01c35e50
+    MOV EAX,[0x01c35e50]                ; 004e8c06 | g_ClipRight
     SUB EAX,ESI                         ; 004e8c0b
     LEA EDX,[EAX*0x4 + 0x0]             ; 004e8c0d
     ADD EDX,EAX                         ; 004e8c14
@@ -232,25 +232,25 @@ section .text
     SHL EDX,0x2                         ; 004e8c65
     SBB EAX,EDX                         ; 004e8c68
     SAR EAX,0x2                         ; 004e8c6a
-    MOV EBX,dword ptr [0x006141e4]      ; 004e8c6d | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 004e8c6d | g_ProjectionScale
     MOV ECX,EAX                         ; 004e8c73
     MOV EAX,[0x01c38b9c]                ; 004e8c75 | g_INT_01c38b9c
     MOV EDX,ECX                         ; 004e8c7a
     IMUL EDX                            ; 004e8c7c
     IDIV EBX                            ; 004e8c7e
-    MOV EBX,dword ptr [0x006141e4]      ; 004e8c80 | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 004e8c80 | g_ProjectionScale
     MOV [0x01c38b9c],EAX                ; 004e8c86 | g_INT_01c38b9c
     MOV EDX,ECX                         ; 004e8c8b
     MOV EAX,[0x01c38ba0]                ; 004e8c8d | g_INT_01c38ba0
     IMUL EDX                            ; 004e8c92
     IDIV EBX                            ; 004e8c94
-    MOV EBX,dword ptr [0x006141e4]      ; 004e8c96 | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 004e8c96 | g_ProjectionScale
     MOV [0x01c38ba0],EAX                ; 004e8c9c | g_INT_01c38ba0
     MOV EDX,ECX                         ; 004e8ca1
     MOV EAX,[0x01c38ba8]                ; 004e8ca3 | g_INT_01c38ba8
     IMUL EDX                            ; 004e8ca8
     IDIV EBX                            ; 004e8caa
-    MOV EBX,dword ptr [0x006141e4]      ; 004e8cac | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 004e8cac | g_ProjectionScale
     MOV [0x01c38ba8],EAX                ; 004e8cb2 | g_INT_01c38ba8
     MOV EDX,ECX                         ; 004e8cb7
     MOV EAX,[0x01c38bac]                ; 004e8cb9 | g_INT_01c38bac
@@ -258,12 +258,12 @@ section .text
     IDIV EBX                            ; 004e8cc0
     MOV [0x01c38bac],EAX                ; 004e8cc2 | g_INT_01c38bac
     POP EDI                             ; 004e8cc7
-    MOV EBX,dword ptr [0x006141e4]      ; 004e8cc8 | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 004e8cc8 | g_ProjectionScale
     MOV EAX,[0x01c38bb4]                ; 004e8cce | g_INT_01c38bb4
     MOV EDX,ECX                         ; 004e8cd3
     IMUL EDX                            ; 004e8cd5
     IDIV EBX                            ; 004e8cd7
-    MOV EBX,dword ptr [0x006141e4]      ; 004e8cd9 | g_INT_006141e4
+    MOV EBX,dword ptr [0x006141e4]      ; 004e8cd9 | g_ProjectionScale
     MOV [0x01c38bb4],EAX                ; 004e8cdf | g_INT_01c38bb4
     MOV EDX,ECX                         ; 004e8ce4
     MOV EAX,[0x01c38bb8]                ; 004e8ce6 | g_INT_01c38bb8
@@ -277,7 +277,7 @@ section .text
     POP ESI                             ; 004e8cfd
     POP EBX                             ; 004e8cfe
     RET                                 ; 004e8cff
-    MOV dword ptr [0x01d05010],0xaaaa   ; 004e8d00 | g_INT_01d05010
+    MOV dword ptr [0x01d05010],0xaaaa   ; 004e8d00 | g_PixelAspectCorrection
         ;   Label: LAB_004e8d00
     JMP 0x004e8b8c                      ; 004e8d0a
         ;   XREF to: 004e8b8c (UNCONDITIONAL_JUMP)  ; LAB_004e8b8c
@@ -285,7 +285,7 @@ section .text
         ;   Label: LAB_004e8d0f
     JZ 0x004e8d00                       ; 004e8d14
         ;   XREF to: 004e8d00 (CONDITIONAL_JUMP)  ; LAB_004e8d00
-    MOV dword ptr [0x01d05010],0x10000  ; 004e8d16 | g_INT_01d05010
+    MOV dword ptr [0x01d05010],0x10000  ; 004e8d16 | g_PixelAspectCorrection
         ;   Label: LAB_004e8d16
     JMP 0x004e8b8c                      ; 004e8d20
         ;   XREF to: 004e8b8c (UNCONDITIONAL_JUMP)  ; LAB_004e8b8c

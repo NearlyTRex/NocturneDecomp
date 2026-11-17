@@ -10,7 +10,7 @@ void FUN_005ad2c4(uint param_1)
 
 {
   (*(code *)PTR_crt_unknown_c_FUN_005ad2c0_00607d78)();
-  if ((char)g_INT_02d252b0 == '\0') {
+  if ((char)g_EmergencyExitFlag == '\0') {
     FUN_005ae4f8();
   }
   FUN_005ad2f0(param_1);

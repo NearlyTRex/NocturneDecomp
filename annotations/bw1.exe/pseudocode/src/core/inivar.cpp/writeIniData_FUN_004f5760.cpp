@@ -37,7 +37,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004f5760(void)
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"quimbyFlag",g_CGamePtr->quimby_flag);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
-            (&local_214,"currentBoard",(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]);
+            (&local_214,"currentBoard",(int)g_GraphicsMenuTextPointers[7]);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70

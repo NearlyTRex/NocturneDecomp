@@ -32,7 +32,7 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004cdd30(CBloodPool *this_ptr,i
               (g_CDemonRenderer_PTR_005f2afc,&this_ptr->position);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
               (g_CDemonRenderer_PTR_005f2afc,
-               g_SMRGLTextureBasic_ARRAY_005ff3ac + this_ptr->texture_variant * 0x1d + local_10);
+               g_BloodPoolAnimTextures + this_ptr->texture_variant * 0x1d + local_10);
     local_28 = 0xbfaa9fbe;
     local_24 = 0;
     local_20 = 0xbfaa9fbe;

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   uchar[257] g_UCHAR_ARRAY_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00498210
@@ -41,7 +41,7 @@ section .text
     MOV DL,AL                           ; 0049316f
     INC DL                              ; 00493171
     AND EDX,0xff                        ; 00493173
-    TEST byte ptr [EDX + 0x626114],0x8  ; 00493179 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EDX + 0x626114],0x8  ; 00493179 | g_CharacterClassificationTable
     JNZ 0x00493185                      ; 00493180
         ;   XREF to: 00493185 (CONDITIONAL_JUMP)  ; LAB_00493185
     INC EBX                             ; 00493182

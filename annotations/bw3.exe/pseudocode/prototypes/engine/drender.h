@@ -51,7 +51,7 @@ void __cdecl CDemonRenderer::renderNearPlaneTexturedPoly(CDemonRenderer *this_pt
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0
 // Address: 0046b7d0
-void __cdecl CDemonRenderer::renderPerspectiveTextured(CDemonRenderer *this_ptr,int param_2);
+void __cdecl CDemonRenderer::renderPerspectiveTextured(CDemonRenderer *this_ptr,int polygon);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
 // Address: 0046b850

@@ -20,13 +20,13 @@
 ;   double DOUBLE_00597f29 = 4294967296
 ;   TerminatedCString s_Nocturne_0059815f
 ;   void* PTR_s_Nocturne_005c165c = 0059815f
-;   int g_INT_01c03950
-;   _struct_19 g_struct_19_02de07d8
-;   _struct_19 g_struct_19_02de07e0
-;   undefined4 g_struct_19_02de07e0.HighPart
-;   double g_DOUBLE_02de07e8
-;   BOOL g_BOOL_02de07f4
-;   HWND g_HWND_02de2098
+;   int g_CalibratedCPUSpeed
+;   _struct_19 g_PerformanceCounter
+;   _struct_19 g_PerformanceFrequency
+;   undefined4 g_PerformanceFrequency.HighPart
+;   double g_TimerCalibration
+;   BOOL g_UseMultimediaTimer
+;   HWND g_MainWindowHandle
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -47,21 +47,21 @@ section .text
     PUSH EBP                            ; 005587f3
     MOV EBP,ESP                         ; 005587f4
     SUB ESP,0x10                        ; 005587f6
-    PUSH 0x2de07e0                      ; 005587f9 | g_struct_19_02de07e0
+    PUSH 0x2de07e0                      ; 005587f9 | g_PerformanceFrequency
     CALL dword ptr CS:[0x575574]        ; 005587fe | PTR_QueryPerformanceFrequency_00575574
     CMP EAX,0x1                         ; 00558805
     JNZ 0x005589ca                      ; 00558808
         ;   XREF to: 005589ca (CONDITIONAL_JUMP)  ; LAB_005589ca
-    FILD dword ptr [0x02de07e4]         ; 0055880e | g_struct_19_02de07e0.HighPart
+    FILD dword ptr [0x02de07e4]         ; 0055880e | g_PerformanceFrequency.HighPart
     FMUL double ptr [0x00597f29]        ; 00558814 | DOUBLE_00597f29
     XOR EDX,EDX                         ; 0055881a
-    MOV EAX,[0x02de07e0]                ; 0055881c | g_struct_19_02de07e0
+    MOV EAX,[0x02de07e0]                ; 0055881c | g_PerformanceFrequency
     MOV dword ptr [EBP + -0xc],EDX      ; 00558821
     MOV dword ptr [EBP + -0x10],EAX     ; 00558824
     FILD qword ptr [EBP + -0x10]        ; 00558827
     FADDP                               ; 0055882a
-    PUSH 0x2de07d8                      ; 0055882c | g_struct_19_02de07d8
-    FSTP double ptr [0x02de07e8]        ; 00558831 | g_DOUBLE_02de07e8
+    PUSH 0x2de07d8                      ; 0055882c | g_PerformanceCounter
+    FSTP double ptr [0x02de07e8]        ; 00558831 | g_TimerCalibration
     CALL dword ptr CS:[0x575570]        ; 00558837 | PTR_QueryPerformanceCounter_00575570
     XOR EAX,EAX                         ; 0055883e
         ;   Label: LAB_0055883e
@@ -195,7 +195,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0x8]      ; 005589b6
     SAR EDX,0x1f                        ; 005589b9
     IDIV ECX                            ; 005589bc
-    MOV [0x01c03950],EAX                ; 005589be | g_INT_01c03950
+    MOV [0x01c03950],EAX                ; 005589be | g_CalibratedCPUSpeed
     MOV ESP,EBP                         ; 005589c3
     POP EBP                             ; 005589c5
     POP EDI                             ; 005589c6
@@ -205,7 +205,7 @@ section .text
     MOV ECX,0x1                         ; 005589ca
         ;   Label: LAB_005589ca
     PUSH ECX                            ; 005589cf
-    MOV dword ptr [0x02de07f4],ECX      ; 005589d0 | g_BOOL_02de07f4
+    MOV dword ptr [0x02de07f4],ECX      ; 005589d0 | g_UseMultimediaTimer
     CALL dword ptr CS:[0x5753e4]        ; 005589d6 | PTR_timeBeginPeriod_005753e4
     TEST EAX,EAX                        ; 005589dd
     JZ 0x0055883e                       ; 005589df
@@ -214,13 +214,13 @@ section .text
     MOV EBX,dword ptr [0x005c165c]      ; 005589e7 | PTR_s_Nocturne_005c165c
     PUSH EBX                            ; 005589ed | = "Nocturne"
     PUSH 0x597f11                       ; 005589ee | = "Unable to set timer"
-    MOV ESI,dword ptr [0x02de2098]      ; 005589f3 | g_HWND_02de2098
+    MOV ESI,dword ptr [0x02de2098]      ; 005589f3 | g_MainWindowHandle
     PUSH ESI                            ; 005589f9
     CALL dword ptr CS:[0x57544c]        ; 005589fa | PTR_MessageBoxA_0057544c
     CMP EAX,0x2                         ; 00558a01
     JNZ 0x0055883e                      ; 00558a04
         ;   XREF to: 0055883e (CONDITIONAL_JUMP)  ; LAB_0055883e
-    MOV dword ptr [0x02de20a0],0x1      ; 00558a0a | g_INT_02de20a0
+    MOV dword ptr [0x02de20a0],0x1      ; 00558a0a | g_InputDisabled
     JMP 0x0055883e                      ; 00558a14
         ;   XREF to: 0055883e (UNCONDITIONAL_JUMP)  ; LAB_0055883e
 

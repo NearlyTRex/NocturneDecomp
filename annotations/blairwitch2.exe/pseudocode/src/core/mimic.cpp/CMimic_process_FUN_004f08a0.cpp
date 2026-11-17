@@ -35,11 +35,11 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float d
     if (this_ptr->attack_mode < 2) {
       if ((this_ptr->attack_mode < 1) &&
          (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                            (g_CEventList_PTR_006141f0,this_ptr->attack_condition), iVar3 != 0)) {
+                            (g_CEventListPtr,this_ptr->attack_condition), iVar3 != 0)) {
         this_ptr->attack_mode = 1;
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,this_ptr->mirror_condition);
+                        (g_CEventListPtr,this_ptr->mirror_condition);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_CMimic_updatePose_FUN_004f0a50(this_ptr), this_ptr->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0

@@ -56,19 +56,19 @@
   "globals": [
     {
       "addr": "02cf5ec4",
-      "name": "g_INT_02cf5ec4",
+      "name": "g_SoundAudioInitialized",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf5f88",
-      "name": "g_UINT_02cf5f88",
+      "name": "g_TrainRailNoiseHandle",
       "type": "uint",
       "value": null
     },
     {
       "addr": "02cf5f8c",
-      "name": "g_UINT_02cf5f8c",
+      "name": "g_TrainExteriorAmbientHandle",
       "type": "uint",
       "value": null
     }
@@ -196,11 +196,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_TrainNoiseArray[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
-      "match": "(int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle",
+      "match": "(int)&g_TrainNoiseArray[0].sfx_handle",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle + iVar2);",
+      "text": "puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iVar2);",
       "type": "pointer_truncation"
     },
     {
@@ -208,7 +208,7 @@
       "line": 11,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle + iVar2);",
+      "text": "puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iVar2);",
       "type": "pointer_cast"
     }
   ]

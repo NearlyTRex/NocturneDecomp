@@ -19,7 +19,7 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(CLocation *locatio
   
   pCVar6 = (CHero *)0x0;
   local_1c = 1e+30;
-  if (0 < g_INT_01cae0d4) {
+  if (0 < g_HeroCount) {
     iVar5 = 0;
     do {
       pCVar1 = *(CHero **)((int)g_HeroActors + iVar5);
@@ -32,7 +32,7 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(CLocation *locatio
         local_1c = fVar2;
       }
       iVar5 = iVar5 + 4;
-    } while (iVar5 < g_INT_01cae0d4 * 4);
+    } while (iVar5 < g_HeroCount * 4);
   }
   if (pCVar6 != (CHero *)0x0) {
     return pCVar6;

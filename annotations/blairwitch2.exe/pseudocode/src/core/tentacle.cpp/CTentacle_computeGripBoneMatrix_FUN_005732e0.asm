@@ -17,10 +17,10 @@
 ;   core_tentacle.cpp_CTentacle_process_FUN_005726c0 at 00572874
 ;
 ; Referenced Globals:
-;   int[4] g_INT_ARRAY_0264c0b0
-;   undefined4 g_INT_ARRAY_0264c0b0[1]
-;   undefined4 g_INT_ARRAY_0264c0b0[2]
-;   undefined4 g_INT_ARRAY_0264c0b0[3]
+;   int[4] g_TentacleIndices
+;   undefined4 g_TentacleIndices[1]
+;   undefined4 g_TentacleIndices[2]
+;   undefined4 g_TentacleIndices[3]
 ;
 ; Called Functions:
 ;   core_xform.cpp_lerpMatrix3x4_FUN_00593770
@@ -35,7 +35,7 @@ section .text
     PUSH EBP                            ; 005732e2
     SUB ESP,0xf0                        ; 005732e3
     MOV EBX,ESI                         ; 005732e9
-    MOV EBP,dword ptr [0x0264c0b4]      ; 005732eb | g_INT_ARRAY_0264c0b0[1]
+    MOV EBP,dword ptr [0x0264c0b4]      ; 005732eb | g_TentacleIndices[1]
     LEA EAX,[EBP*0x4 + 0x0]             ; 005732f1
     SUB EAX,EBP                         ; 005732f8
     MOV EBP,dword ptr [ESP + 0x100]     ; 005732fa
@@ -43,7 +43,7 @@ section .text
     ADD EBP,0x1134                      ; 00573304
     PUSH 0x3f000000                     ; 0057330a
     ADD EAX,EBP                         ; 0057330f
-    MOV ESI,dword ptr [0x0264c0b0]      ; 00573311 | g_INT_ARRAY_0264c0b0
+    MOV ESI,dword ptr [0x0264c0b0]      ; 00573311 | g_TentacleIndices
     PUSH EAX                            ; 00573317
     LEA EAX,[ESI*0x4 + 0x0]             ; 00573318
     SUB EAX,ESI                         ; 0057331f
@@ -58,13 +58,13 @@ section .text
     LEA ESI,[ESP + 0x9c]                ; 0057333c
     ADD ESP,0xc                         ; 00573343
     MOVSD.REP ES:EDI,ESI                ; 00573346
-    MOV ESI,dword ptr [0x0264c0bc]      ; 00573348 | g_INT_ARRAY_0264c0b0[3]
+    MOV ESI,dword ptr [0x0264c0bc]      ; 00573348 | g_TentacleIndices[3]
     LEA EAX,[ESI*0x4 + 0x0]             ; 0057334e
     SUB EAX,ESI                         ; 00573355
     SHL EAX,0x4                         ; 00573357
     PUSH 0x3f000000                     ; 0057335a
     ADD EAX,EBP                         ; 0057335f
-    MOV ESI,dword ptr [0x0264c0b8]      ; 00573361 | g_INT_ARRAY_0264c0b0[2]
+    MOV ESI,dword ptr [0x0264c0b8]      ; 00573361 | g_TentacleIndices[2]
     PUSH EAX                            ; 00573367
     LEA EAX,[ESI*0x4 + 0x0]             ; 00573368
     SUB EAX,ESI                         ; 0057336f

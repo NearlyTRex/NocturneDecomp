@@ -7,10 +7,10 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   void* g_PTR_01c3f5d0
-;   int g_INT_01c4353c
-;   int g_INT_01c43540
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
+;   void* g_ActiveControl
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
 
     PUSH EBX                            ; 0049dda0
         ;   Label: shape_edittool.cpp_CEdCheck_handleInput_FUN_0049dda0
-    MOV ECX,dword ptr [0x01c3f5d0]      ; 0049dda1 | g_PTR_01c3f5d0
+    MOV ECX,dword ptr [0x01c3f5d0]      ; 0049dda1 | g_ActiveControl
     MOV EAX,dword ptr [ESP + 0x8]       ; 0049dda7
     CMP dword ptr [EAX + 0x8],0x0       ; 0049ddab
     JZ 0x0049de04                       ; 0049ddaf
@@ -29,7 +29,7 @@ section .text
         ;   Label: LAB_0049ddb3
     JNZ 0x0049de66                      ; 0049ddb5
         ;   XREF to: 0049de66 (CONDITIONAL_JUMP)  ; LAB_0049de66
-    MOV BH,byte ptr [0x01c43544]        ; 0049ddbb | g_BIT_INTEGER32_01c43544
+    MOV BH,byte ptr [0x01c43544]        ; 0049ddbb | g_MouseButtonFlags
     MOV dword ptr [EAX + 0x20],EDX      ; 0049ddc1
     TEST BH,0x1                         ; 0049ddc4
     JNZ 0x0049de5c                      ; 0049ddc7
@@ -51,23 +51,23 @@ section .text
     MOV EAX,0x1                         ; 0049ddf6
         ;   Label: LAB_0049ddf6
     POP EDI                             ; 0049ddfb
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049ddfc | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049ddfc | g_ActiveControl
     POP EBX                             ; 0049de02
     RET                                 ; 0049de03
-    MOV EDX,dword ptr [0x01c4353c]      ; 0049de04 | g_INT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 0049de04 | g_MouseX
         ;   Label: LAB_0049de04
     CMP EDX,dword ptr [EAX + 0x10]      ; 0049de0a
     JL 0x0049ddb1                       ; 0049de0d
         ;   XREF to: 0049ddb1 (CONDITIONAL_JUMP)  ; LAB_0049ddb1
-    MOV EDX,dword ptr [0x01c43540]      ; 0049de0f | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 0049de0f | g_MouseY
     CMP EDX,dword ptr [EAX + 0x14]      ; 0049de15
     JL 0x0049ddb1                       ; 0049de18
         ;   XREF to: 0049ddb1 (CONDITIONAL_JUMP)  ; LAB_0049ddb1
-    MOV EDX,dword ptr [0x01c4353c]      ; 0049de1a | g_INT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 0049de1a | g_MouseX
     CMP EDX,dword ptr [EAX + 0x18]      ; 0049de20
     JGE 0x0049ddb1                      ; 0049de23
         ;   XREF to: 0049ddb1 (CONDITIONAL_JUMP)  ; LAB_0049ddb1
-    MOV EDX,dword ptr [0x01c43540]      ; 0049de25 | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 0049de25 | g_MouseY
     CMP EDX,dword ptr [EAX + 0x1c]      ; 0049de2b
     JGE 0x0049ddb1                      ; 0049de2e
         ;   XREF to: 0049ddb1 (CONDITIONAL_JUMP)  ; LAB_0049ddb1
@@ -84,19 +84,19 @@ section .text
     MOV dword ptr [EAX + 0x4],0x0       ; 0049de47
     MOV EAX,0x1                         ; 0049de4e
     POP EDI                             ; 0049de53
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de54 | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de54 | g_ActiveControl
     POP EBX                             ; 0049de5a
     RET                                 ; 0049de5b
     XOR EAX,EAX                         ; 0049de5c
         ;   Label: LAB_0049de5c
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de5e | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de5e | g_ActiveControl
     POP EBX                             ; 0049de64
     RET                                 ; 0049de65
     TEST ECX,ECX                        ; 0049de66
         ;   Label: LAB_0049de66
     JNZ 0x0049de77                      ; 0049de68
         ;   XREF to: 0049de77 (CONDITIONAL_JUMP)  ; LAB_0049de77
-    TEST byte ptr [0x01c43544],0x1      ; 0049de6a | g_BIT_INTEGER32_01c43544
+    TEST byte ptr [0x01c43544],0x1      ; 0049de6a | g_MouseButtonFlags
     JZ 0x0049de77                       ; 0049de71
         ;   XREF to: 0049de77 (CONDITIONAL_JUMP)  ; LAB_0049de77
     TEST EDX,EDX                        ; 0049de73
@@ -104,14 +104,14 @@ section .text
         ;   XREF to: 0049de81 (CONDITIONAL_JUMP)  ; LAB_0049de81
     XOR EAX,EAX                         ; 0049de77
         ;   Label: LAB_0049de77
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de79 | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de79 | g_ActiveControl
     POP EBX                             ; 0049de7f
     RET                                 ; 0049de80
     MOV ECX,EAX                         ; 0049de81
         ;   Label: LAB_0049de81
     MOV dword ptr [EAX + 0x20],0x1      ; 0049de83
     XOR EAX,EAX                         ; 0049de8a
-    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de8c | g_PTR_01c3f5d0
+    MOV dword ptr [0x01c3f5d0],ECX      ; 0049de8c | g_ActiveControl
     POP EBX                             ; 0049de92
     RET                                 ; 0049de93
 

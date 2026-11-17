@@ -36,7 +36,7 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004c88a0(CBloodPool *this_ptr,i
             (g_CDemonRenderer_PTR_0060b280,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
             (g_CDemonRenderer_PTR_0060b280,
-             g_SMRGLTextureBasic_ARRAY_00616e68 + this_ptr->texture_variant * 0x1d + local_18);
+             g_BloodPoolAnimTextures + this_ptr->texture_variant * 0x1d + local_18);
   local_48 = 0xbfaa9fbe;
   local_40 = 0xbfaa9fbe;
   local_44 = 0;
@@ -150,6 +150,6 @@ LAB_004c8b36:
   g_SRenderVertex_ARRAY_00622014[3].b = 0;
 LAB_004c8b9a:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
+            (g_CDemonRenderer_PTR_0060b280,&g_GoreQuadPrimitive.base);
   return;
 }

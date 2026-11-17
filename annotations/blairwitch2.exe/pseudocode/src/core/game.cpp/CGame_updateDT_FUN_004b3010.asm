@@ -17,11 +17,11 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee1ea
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005d72ef = 65536
-;   double g_DOUBLE_005d72f3 = 0.0000152587890625
-;   float g_FLOAT_006164a0 = 30
-;   int g_INT_01c2a370
-;   int g_INT_01cb80d4
+;   float g_MovieRecordingFrameBase = 65536
+;   double g_DeltaTimeToSeconds = 0.0000152587890625
+;   float g_MovieRecordingTargetFPS = 30
+;   int g_GlobalDeltaTimeInt
+;   int g_MovieRecordingActive
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -57,7 +57,7 @@ section .text
     FILD dword ptr [EBX + 0x280]        ; 004b304e
         ;   Label: LAB_004b304e
     FMUL float ptr [EBX + 0x208]        ; 004b3054
-    MOV EDI,dword ptr [0x01cb80d4]      ; 004b305a | g_INT_01cb80d4
+    MOV EDI,dword ptr [0x01cb80d4]      ; 004b305a | g_MovieRecordingActive
     CALL crt_math.c_round_FUN_005b7ff0  ; 004b3060
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBX + 0x280]       ; 004b3065
@@ -67,8 +67,8 @@ section .text
     FILD dword ptr [EBX + 0x280]        ; 004b306f
         ;   Label: LAB_004b306f
     MOV EAX,dword ptr [EBX + 0x280]     ; 004b3075
-    FMUL double ptr [0x005d72f3]        ; 004b307b | g_DOUBLE_005d72f3
-    MOV [0x01c2a370],EAX                ; 004b3081 | g_INT_01c2a370
+    FMUL double ptr [0x005d72f3]        ; 004b307b | g_DeltaTimeToSeconds
+    MOV [0x01c2a370],EAX                ; 004b3081 | g_GlobalDeltaTimeInt
     FSTP float ptr [EBX + 0x284]        ; 004b3086
     POP EDI                             ; 004b308c
     POP ESI                             ; 004b308d
@@ -82,9 +82,9 @@ section .text
         ;   Label: LAB_004b309c
     JMP 0x004b304e                      ; 004b30a6
         ;   XREF to: 004b304e (UNCONDITIONAL_JUMP)  ; LAB_004b304e
-    FLD float ptr [0x005d72ef]          ; 004b30a8 | g_FLOAT_005d72ef
+    FLD float ptr [0x005d72ef]          ; 004b30a8 | g_MovieRecordingFrameBase
         ;   Label: LAB_004b30a8
-    FDIV float ptr [0x006164a0]         ; 004b30ae | g_FLOAT_006164a0
+    FDIV float ptr [0x006164a0]         ; 004b30ae | g_MovieRecordingTargetFPS
     FMUL float ptr [EBX + 0x208]        ; 004b30b4
     CALL crt_math.c_round_FUN_005b7ff0  ; 004b30ba
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)

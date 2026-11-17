@@ -79,13 +79,13 @@
     },
     {
       "addr": "005c1d54",
-      "name": "g_PTR_005c1d54",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005c1f54",
-      "name": "g_SIOControlBlock_PTR_005c1f54",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     }
@@ -215,7 +215,7 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)g_PTR_005c1d54)(handle_index);",
+      "text": "iVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(handle_index);",
       "type": "unresolved_funcptr"
     },
     {

@@ -21,7 +21,7 @@ int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_0053de20(
   iVar1 = triangle->vertices[0].vertex_index;
   iVar3 = triangle->vertices[1].vertex_index;
   iVar4 = triangle->vertices[2].vertex_index;
-  if (g_INT_00713a7c == 1) {
+  if (g_CullingMode == 1) {
     local_24 = g_SRenderVertex_ARRAY_00629014[iVar3].projected_vertex.screen_x -
                g_SRenderVertex_ARRAY_00629014[iVar1].projected_vertex.screen_x;
     local_20 = g_SRenderVertex_ARRAY_00629014[iVar3].projected_vertex.screen_y -

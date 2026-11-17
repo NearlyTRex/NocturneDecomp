@@ -101,7 +101,7 @@ int __cdecl core_flashlit_cpp_layoutSections_FUN_004a1d50(void);
 void __cdecl core_flashlit_cpp_relayoutSectionsIfDirty_FUN_004a1dd0(void);
 void __cdecl core_fldnotes_cpp_SPageResource_ctor_FUN_004a1e60(SPageResource *this_ptr);
 int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90(SPageResource *this_ptr);
-void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a1ec0(SPageResource *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a1ec0(SPageResource *this_ptr,char *link);
 bool __cdecl core_fldnotes_cpp_SPageResource_onMouse_FUN_004a1f60(SPageResource *this_ptr);
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *text,CBitFont *font);
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a2000(SPageResourceText *this_ptr,uint flags);

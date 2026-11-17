@@ -39,7 +39,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044cb60(CDemonCa
       iVar3 = iVar1 >> 0x1f;
       iVar5 = iVar4 + 1;
       iVar2 = iVar2 + local_14;
-      g_CHAR_ARRAY_01341200[iVar4] =
+      g_CameraLookupTable[iVar4] =
            (char)((int)(((iVar1 >> 4) + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2);
       iVar4 = iVar5;
     } while (iVar5 != local_18);

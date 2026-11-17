@@ -22,7 +22,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderSortedPolygonList_FUN_00405b40(S
   SMRGLHeaderExtended *unaff_EDI;
   
   if (primitive == (SMRGLHeaderExtended *)0x0) {
-    primitive = (SMRGLHeaderExtended *)&g_INT_006b0288;
+    primitive = (SMRGLHeaderExtended *)&g_RenderResult;
   }
   iVar7 = (primitive->base).type;
   owner_block = (SMRGLHeaderExtended *)0x0;
@@ -52,12 +52,12 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderSortedPolygonList_FUN_00405b40(S
     if (g_TexturesDisabled == 0) {
       iVar4 = 0;
       _qsort
-                (g_INT_ARRAY_006b415c,g_UINT_006b0268,4,
+                (g_INT_ARRAY_006b415c,g_ProcessedVertexBackupOffset,4,
                  engine_3d_c_compareSortedPolygonDepth_FUN_00405a60);
       pSVar5 = (SMRGLTextureBasic *)0x0;
       iVar7 = 0;
-      primitive = (SMRGLHeaderExtended *)g_UINT_006b0268;
-      if (0 < (int)g_UINT_006b0268) {
+      primitive = (SMRGLHeaderExtended *)g_ProcessedVertexBackupOffset;
+      if (0 < (int)g_ProcessedVertexBackupOffset) {
         do {
           texture = *(SMRGLTextureBasic **)(*(int *)((int)g_INT_ARRAY_006b415c + iVar7) + 4);
           if ((texture != (SMRGLTextureBasic *)0x0) && (pSVar5 != texture)) {
@@ -65,29 +65,29 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderSortedPolygonList_FUN_00405b40(S
             pSVar5 = *(SMRGLTextureBasic **)(*(int *)((int)g_INT_ARRAY_006b415c + iVar7) + 4);
           }
           puVar2 = *(uint **)((int)g_INT_ARRAY_006b415c + iVar7);
-          g_UINT_006b0264 = puVar2[4];
-          g_INT_01c039dc = puVar2[5];
-          g_INT_01c039e0 = puVar2[6];
-          g_INT_01c039e4 = puVar2[7];
+          g_ProcessedVertexOffset = puVar2[4];
+          g_LightDirectionX = puVar2[5];
+          g_LightDirectionY = puVar2[6];
+          g_LightDirectionZ = puVar2[7];
           iVar7 = iVar7 + 4;
           iVar4 = iVar4 + 1;
           primitive = engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340
                                 ((SMRGLHeaderPrimitive *)*puVar2);
-        } while (iVar4 < (int)g_UINT_006b0268);
+        } while (iVar4 < (int)g_ProcessedVertexBackupOffset);
       }
     }
     else {
       iVar7 = 0;
-      if (0 < (int)g_UINT_006b0268) {
+      if (0 < (int)g_ProcessedVertexBackupOffset) {
         iVar4 = 0;
         do {
           piVar1 = (int *)((int)g_INT_ARRAY_006b415c + iVar4);
           iVar4 = iVar4 + 4;
-          g_UINT_006b0264 = ((uint *)*piVar1)[4];
+          g_ProcessedVertexOffset = ((uint *)*piVar1)[4];
           iVar7 = iVar7 + 1;
           primitive = engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
                                 (*(SMRGLHeaderPrimitive **)*piVar1);
-        } while (iVar7 < (int)g_UINT_006b0268);
+        } while (iVar7 < (int)g_ProcessedVertexBackupOffset);
       }
     }
   }

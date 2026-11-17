@@ -108,7 +108,7 @@ HIGH CONFIDENCE (8 clusters)
     Likely type: char[5]
     Reason: 4 consecutive bytes
     Referenced by: 3 functions
-     near: g_UINT_ARRAY_0152c2cc[2] (undefined4) at +76
+     near: g_TempTriangleIndices[2] (undefined4) at +76
       0x0152c320  DAT_0152c320  undefined4 [byte]
       0x0152c321  DAT_0152c321  undefined4 [byte]
       0x0152c322  DAT_0152c322  undefined4
@@ -130,7 +130,7 @@ HIGH CONFIDENCE (8 clusters)
     Likely type: char[5]
     Reason: 4 consecutive bytes
     Referenced by: 1 functions
-     near: g_CHAR_PTR_ARRAY_01d1f5b8[7] (undefined4) at -284
+     near: g_GraphicsMenuTextPointers[7] (undefined4) at -284
       0x01d1f4b8  DAT_01d1f4b8  undefined4 [byte]
       0x01d1f4b9  DAT_01d1f4b9  undefined4 [byte]
       0x01d1f4ba  DAT_01d1f4ba  undefined4
@@ -171,7 +171,7 @@ HIGH CONFIDENCE (8 clusters)
     Likely type: char[3]
     Reason: 2 consecutive bytes
     Referenced by: 1 functions
-     near: g_CHAR_ARRAY_006106c0 (char[104]) at -2
+     near: g_PropertyNamePrefix (char[104]) at -2
       0x006106be  DAT_006106be  undefined4 [byte]
       0x006106bf  DAT_006106bf  undefined1
 
@@ -184,7 +184,7 @@ MEDIUM CONFIDENCE (16 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 17 groups of 3 consecutive ints found
     Referenced by: 3 functions
-     near: g_INT_01bc0cd0 (int) at +4
+     near: g_RasterizerDepthBias (int) at +4
       0x01bc0cd4  DAT_01bc0cd4  undefined4
       0x01bc0cd8  DAT_01bc0cd8  undefined4
       0x01bc0cdc  DAT_01bc0cdc  undefined4
@@ -198,7 +198,7 @@ MEDIUM CONFIDENCE (16 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
     Referenced by: 1 functions
-     near: g_SMRGLTextureBasic_00622f34 (SMRGLTextureBasic) at +168
+     near: g_EnvMapTexture (SMRGLTextureBasic) at +168
       0x00622fdc  DAT_00622fdc  undefined4
       0x00622fe4  DAT_00622fe4  undefined4
       0x00622fe8  DAT_00622fe8  undefined4
@@ -303,7 +303,7 @@ MEDIUM CONFIDENCE (16 clusters)
     Likely type: int[4]
     Reason: 4 elements at stride 4
     Referenced by: 3 functions
-     near: g_CDemonCamera_PTR_00857cd4 (CDemonCamera*) at +4
+     near: g_SkipClearBuffersSceneCamera (CDemonCamera*) at +4
       0x00857cd8  DAT_00857cd8  undefined4
       0x00857cdc  DAT_00857cdc  undefined4
       0x00857ce0  DAT_00857ce0  undefined4
@@ -377,7 +377,7 @@ LOW CONFIDENCE (28 clusters)
     Likely type: struct (172 bytes span, 9 fields)
     Reason: mixed strides, shared by 4 functions
     Referenced by: 4 functions
-     near: g_UINT_006267e0 (uint) at -4
+     near: g_MaxHandleCount (uint) at -4
       0x006267dc  DAT_006267dc  undefined4
       0x006267e4  DAT_006267e4  undefined4
       0x006267e5  DAT_006267e5  undefined4 [byte]
@@ -405,7 +405,7 @@ LOW CONFIDENCE (28 clusters)
     Likely type: struct (376 bytes span, 6 fields)
     Reason: mixed strides, shared by 4 functions
     Referenced by: 4 functions
-     near: g_INT_0061b4b8 (int) at +4
+     near: g_CurrentAlphaValue (int) at +4
       0x0061b4bc  DAT_0061b4bc  undefined4
       0x0061b4d4  DAT_0061b4d4  undefined4
       0x0061b568  DAT_0061b568  undefined4
@@ -542,7 +542,7 @@ LOW CONFIDENCE (28 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=5 bytes
     Referenced by: 1 functions
-     near: g_INT_020af5c8 (int) at +804
+     near: g_RaytraceStateStackDepth (int) at +804
       0x020af8ec  DAT_020af8ec  undefined4
       0x020af8f0  DAT_020af8f0  undefined4
       0x020af8f1  DAT_020af8f1  undefined4
@@ -598,7 +598,7 @@ LOW CONFIDENCE (28 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 1 functions
-     near: g_CHAR_ARRAY_00623870+4 (undefined4) at +100
+     near: g_SoundResultBufferTemplate+4 (undefined4) at +100
       0x006238d8  DAT_006238d8  undefined4
       0x006238dc  DAT_006238dc  undefined4
 
@@ -643,7 +643,7 @@ LOW CONFIDENCE (28 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 41 functions
-     near: g_SMRGLPrimitiveQuadIndex_01d2c8d8.vertices[3] (undefined4) at +4
+     near: g_MirrorTempPrimitive.vertices[3] (undefined4) at +4
       0x01d2c900  DAT_01d2c900  undefined4
       0x01d2c904  DAT_01d2c904  undefined4
 
@@ -670,8 +670,8 @@ ISOLATED DAT_ GLOBALS (21 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_0202a390                    addr=0202a390    type=undefined4      refs=2  near: g_INT_0202a38c(+4)
-  DAT_006262e0                    addr=006262e0    type=undefined1      refs=2 [likely byte]  near: g_FILE_PTR_006262d4(+12)
-  DAT_00713638                    addr=00713638    type=undefined4      refs=2 [likely float]  near: g_PTR_0071362c(+12)
+  DAT_006262e0                    addr=006262e0    type=undefined1      refs=2 [likely byte]  near: g_StaticFilePoolStart(+12)
+  DAT_00713638                    addr=00713638    type=undefined4      refs=2 [likely float]  near: g_SoftwareZBuffer(+12)
   DAT_005fea1c                    addr=005fea1c    type=undefined4      refs=1  near: g_FLOAT_005fea20(-4)
   DAT_00612488                    addr=00612488    type=undefined4      refs=1  near: g_CDocClassVersion(-68)
   DAT_005da15c                    addr=005da15c    type=undefined4      refs=1 [likely double]  near: g_DOUBLE_005da154(+8)
@@ -737,6 +737,6 @@ FILTERED OUT - INSIDE NAMED DATA (46)
   DAT_0062690c                    inside s_EST_0062688c
   DAT_0062698d                    inside s_EDT_0062690d
   DAT_00628d54                    inside g_FLOAT10_00628d4a
-  DAT_02c8ae50                    inside g_UCHAR_ARRAY_02c8ae4c
-  DAT_02c8ae54                    inside g_UCHAR_ARRAY_02c8ae4c
+  DAT_02c8ae50                    inside g_AnyAddressIP
+  DAT_02c8ae54                    inside g_AnyAddressIP
 

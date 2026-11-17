@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_bat_cpp_CBat_getActorType_FUN_00411a00(CBat *this_ptr)
 
 {
-  return &g_CBatActorType_00764560;
+  return &g_CBatClassInfo;
 }

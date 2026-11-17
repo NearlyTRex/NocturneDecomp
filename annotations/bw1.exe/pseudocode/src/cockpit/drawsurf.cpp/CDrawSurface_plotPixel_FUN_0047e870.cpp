@@ -22,20 +22,20 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0047e870(CDrawSurfa
   }
   iVar2 = iVar3 * 2;
   iVar1 = iVar3 * 4;
-  if (g_INT_01bc11f0 == 0) {
+  if (g_UseRGBConversion == 0) {
     if ((uint)g_INT_0061b4a0 < 0x10) {
       if (g_INT_0061b4a0 == 8) {
-        g_ARRAY_PTR_01c4354c[iVar4][iVar3] = (byte)g_INT_01bc11e4;
+        g_ScreenBufferArray[iVar4][iVar3] = (byte)g_CurrentDrawColor;
         return;
       }
     }
     else {
       if ((uint)g_INT_0061b4a0 < 0x11) {
-        *(ushort *)(g_ARRAY_PTR_01c4354c[iVar4] + iVar2) = (ushort)g_INT_01bc11e4;
+        *(ushort *)(g_ScreenBufferArray[iVar4] + iVar2) = (ushort)g_CurrentDrawColor;
         return;
       }
       if (g_INT_0061b4a0 == 0x20) {
-        *(int *)(g_ARRAY_PTR_01c4354c[iVar4] + iVar1) = g_INT_01bc11e4;
+        *(int *)(g_ScreenBufferArray[iVar4] + iVar1) = g_CurrentDrawColor;
         return;
       }
     }
@@ -51,15 +51,15 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0047e870(CDrawSurfa
   }
   else {
     if ((uint)g_INT_0061b4a0 < 0x11) {
-      *(ushort *)(g_ARRAY_PTR_01c4354c[iVar4] + iVar2) =
-           *(ushort *)(g_ARRAY_PTR_01c4354c[iVar4] + iVar2) >> ((byte)g_INT_01bc11f4 & 0x1f) &
-           (ushort)g_INT_01bc1204;
+      *(ushort *)(g_ScreenBufferArray[iVar4] + iVar2) =
+           *(ushort *)(g_ScreenBufferArray[iVar4] + iVar2) >> ((byte)g_OriginalColorValue & 0x1f) &
+           (ushort)g_PackedPixelColor;
       return;
     }
     if (g_INT_0061b4a0 == 0x20) {
-      *(uint *)(g_ARRAY_PTR_01c4354c[iVar4] + iVar1) =
-           *(uint *)(g_ARRAY_PTR_01c4354c[iVar4] + iVar1) >> ((byte)g_INT_01bc11f4 & 0x1f) &
-           g_INT_01bc1204;
+      *(uint *)(g_ScreenBufferArray[iVar4] + iVar1) =
+           *(uint *)(g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f) &
+           g_PackedPixelColor;
       return;
     }
   }

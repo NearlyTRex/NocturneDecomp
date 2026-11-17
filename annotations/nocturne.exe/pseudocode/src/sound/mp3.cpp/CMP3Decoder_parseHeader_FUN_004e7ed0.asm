@@ -40,8 +40,8 @@
 ;   TerminatedCString s_Out_of_memory_File_s_0058b578
 ;   double DOUBLE_0058b9b8 = 1000
 ;   undefined4 s_CMotionController_005bb246+0xa
-;   double[2][4] g_DOUBLE_ARRAY_ARRAY_005bbc48
-;   int[2][3][15] g_INT_ARRAY_ARRAY_ARRAY_005bbc88
+;   double[2][4] g_MpegSampleRateTable
+;   int[2][3][15] g_MpegBitrateTable
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -239,7 +239,7 @@ section .text
     SUB EAX,EDX                         ; 004e80b2
     ADD ECX,EAX                         ; 004e80b4
     MOV EAX,dword ptr [ESP + 0x50]      ; 004e80b6
-    MOV EDX,dword ptr [ECX + EAX*0x4 + 0x5bbc88] ; 004e80ba | g_INT_ARRAY_ARRAY_ARRAY_005bbc88
+    MOV EDX,dword ptr [ECX + EAX*0x4 + 0x5bbc88] ; 004e80ba | g_MpegBitrateTable
     MOV EAX,EDX                         ; 004e80c1
     MOV ECX,dword ptr [EBX + 0x10]      ; 004e80c3
     SAR EDX,0x1f                        ; 004e80c6
@@ -249,7 +249,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x10]      ; 004e80cf
     SHL EAX,0x5                         ; 004e80d2
     MOV dword ptr [ESP + 0x58],EBX      ; 004e80d5
-    FLD double ptr [EAX + ECX*0x8 + 0x5bbc48] ; 004e80d9 | g_DOUBLE_ARRAY_ARRAY_005bbc48
+    FLD double ptr [EAX + ECX*0x8 + 0x5bbc48] ; 004e80d9 | g_MpegSampleRateTable
     CALL crt_math.c_round_FUN_00563a30  ; 004e80e0
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x64]        ; 004e80e5
@@ -316,7 +316,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 004e819b
     MOV EAX,dword ptr [ESP + 0x10]      ; 004e819e
     SHL EDX,0x5                         ; 004e81a2
-    FLD double ptr [EDX + EAX*0x8 + 0x5bbc48] ; 004e81a5 | g_DOUBLE_ARRAY_ARRAY_005bbc48
+    FLD double ptr [EDX + EAX*0x8 + 0x5bbc48] ; 004e81a5 | g_MpegSampleRateTable
     FMUL double ptr [0x0058b9b8]        ; 004e81ac | DOUBLE_0058b9b8
     PUSH 0x0                            ; 004e81b2
     MOV EAX,dword ptr [ESP + 0x80]      ; 004e81b4

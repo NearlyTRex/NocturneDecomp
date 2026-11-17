@@ -84,7 +84,7 @@ void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_pt
     this_ptr->collide_bone_count = this_ptr->collide_bone_count + 1;
   }
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            (this_ptr,&UNION_UVector3_00838e40.f,&UNION_UVector3_00838e4c.f,
+            (this_ptr,&g_ClothEditorPosition.f,&g_ClothEditorEuler.f,
              &g_CDeformableModelInstanceInstance);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4cc,0);
   return;

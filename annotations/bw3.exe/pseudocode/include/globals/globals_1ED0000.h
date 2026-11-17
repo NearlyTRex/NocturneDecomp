@@ -51,7 +51,7 @@ extern CVector3f g_CVector3f_01ed36c0;
 extern CVector3f g_CVector3f_01ed36cc;
 
 // SMRGLPrimitiveQuad
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01ed2a30;
+extern SMRGLPrimitiveQuad g_PathMapQuad;
 
 // SSoftwareEdge[16]
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01ed2c8c[16];
@@ -61,47 +61,47 @@ extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01ed31a0[16];
 extern byte g_BYTE_01ed36bc;
 
 // char[101][100]
-extern char g_CHAR_ARRAY_ARRAY_01ed02b8[101][100];
+extern char g_PathfindingVisited[101][100];
 
 // char[10][1024]
-extern char g_CHAR_ARRAY_ARRAY_01ed3808[10][1024];
+extern char g_ScriptSubtitleLines[10][1024];
 
 // char[2048]
-extern char g_CHAR_ARRAY_01ed6008[2048];
+extern char g_ScriptLineBuffer[2048];
 extern char g_CHAR_ARRAY_01ed6810[2048];
 
 // float
 extern float g_FLOAT_01ed36d8;
 extern float g_FLOAT_01ed3784;
-extern float g_FLOAT_01ed7010;
+extern float g_ScriptTimeScale;
 
 // int
-extern int g_INT_01ed02ac;
-extern int g_INT_01ed02b0;
-extern int g_INT_01ed2a2c;
-extern int g_INT_01ed2c88;
-extern int g_INT_01ed318c;
-extern int g_INT_01ed3190;
-extern int g_INT_01ed3198;
-extern int g_INT_01ed319c;
-extern int g_INT_01ed36a0;
-extern int g_INT_01ed36a4;
+extern int g_PathfindingQueueHead;
+extern int g_PathfindingQueueTail;
+extern int g_PathfindingNodesExpanded;
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
+extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
 extern int g_INT_01ed36dc;
 extern int g_INT_01ed36e0;
 extern int g_INT_01ed36e4;
 extern int g_INT_01ed36e8;
-extern int g_INT_01ed3800;
+extern int g_PreviousLetterboxMode;
 extern int g_INT_01ed6808;
-extern int g_INT_01ed7014;
-extern int g_INT_01ed7018;
+extern int g_ScriptInputFlag;
+extern int g_ScriptLoopWarningShown;
 extern int g_INT_01ed701c;
 
 // int[12]
-extern int g_INT_ARRAY_01ed785c[12];
+extern int g_SentinelIndices[12];
 
 // int[23]
-extern int g_INT_ARRAY_01ed36ec[23];
+extern int g_StrangerIndices[23];
 
 // uchar
-extern uchar g_UCHAR_01ed02b7;
+extern uchar g_PathfindingVisitedMinus1;
 

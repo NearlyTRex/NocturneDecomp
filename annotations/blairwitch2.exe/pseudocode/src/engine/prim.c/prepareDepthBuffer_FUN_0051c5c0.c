@@ -12,7 +12,7 @@ void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(SRenderVertex *vertic
   int iVar1;
   int iVar2;
   
-  if (g_INT_01c38b50 == 0) {
+  if (g_ProcessorType == 0) {
     iVar2 = 0;
     if (0 < vertex_count) {
       do {

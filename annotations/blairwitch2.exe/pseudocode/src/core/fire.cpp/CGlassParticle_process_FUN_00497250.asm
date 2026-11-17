@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
-;   int g_INT_01c2a370
+;   int g_GlobalDeltaTimeInt
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
     FSTP float ptr [EBX + 0x60]         ; 0049727e
     CALL core_particle.cpp_CParticle_process_FUN_00510ef0 ; 00497281
         ;   XREF to: 00510ef0 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00510ef0(CParticle * this_ptr)
-    MOV EAX,[0x01c2a370]                ; 00497286 | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 00497286 | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 0049728b
     MOV ECX,0x6                         ; 0049728d
     SAR EDX,0x1f                        ; 00497292

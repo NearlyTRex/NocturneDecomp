@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CDemonFilter[8] CDemonFilter_ARRAY_008229ec
+;   CDemonFilter[8] g_LightActorFilters
 ;   CDemonSet g_CDemonSetInstance
 ;   UVector3 g_ZeroVector
 ;
@@ -90,7 +90,7 @@ section .text
     SUB EAX,EDX                         ; 00422ad2
     SHL EAX,0x2                         ; 00422ad4
     ADD ESP,0x8                         ; 00422ad7
-    ADD EAX,0x8229ec                    ; 00422ada | CDemonFilter_ARRAY_008229ec
+    ADD EAX,0x8229ec                    ; 00422ada | g_LightActorFilters
     PUSH EAX                            ; 00422adf
     LEA EAX,[EBX + 0x670]               ; 00422ae0
     PUSH EAX                            ; 00422ae6

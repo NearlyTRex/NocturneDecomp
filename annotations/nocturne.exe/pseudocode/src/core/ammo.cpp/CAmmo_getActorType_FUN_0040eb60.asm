@@ -7,13 +7,13 @@
 ; CAmmo *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CAmmoActorType_007641bc
+;   CDemonActorType g_CAmmoClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7641bc                    ; 0040eb60 | g_CAmmoActorType_007641bc
+    MOV EAX,0x7641bc                    ; 0040eb60 | g_CAmmoClassInfo
         ;   Label: core_ammo.cpp_CAmmo_getActorType_FUN_0040eb60
     RET                                 ; 0040eb65
 

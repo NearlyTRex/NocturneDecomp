@@ -14,33 +14,33 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(CRuleList *rules,char *pro
   char (*pacVar3) [100];
   char (*pacVar4) [100];
   
-  if (g_INT_00763e88 != 1) {
-    _fprintf(g_FILE_PTR_00763e84,"%s{ // %s\n",g_CHAR_ARRAY_005acc90,property_name);
+  if (g_ActorReadingMode != 1) {
+    _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(1);
-    _fprintf(g_FILE_PTR_00763e84,"%s%d // ruleCount\n",g_CHAR_ARRAY_005acc90,rules->list_size);
+    _fprintf(g_ActorDataFile,"%s%d // ruleCount\n",g_PropertyNamePrefix,rules->list_size);
     iVar1 = 0;
     if (0 < rules->list_size) {
       pacVar3 = rules->events;
       pacVar4 = rules->conditions;
       do {
-        _fprintf(g_FILE_PTR_00763e84,"%s\"%s\" => \"%s\"\n",g_CHAR_ARRAY_005acc90,pacVar4,pacVar3);
+        _fprintf(g_ActorDataFile,"%s\"%s\" => \"%s\"\n",g_PropertyNamePrefix,pacVar4,pacVar3);
         iVar1 = iVar1 + 1;
         pacVar3 = pacVar3 + 1;
         pacVar4 = pacVar4 + 1;
       } while (iVar1 < rules->list_size);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(-1);
-    _fprintf(g_FILE_PTR_00763e84,"%s}\n",g_CHAR_ARRAY_005acc90);
+    _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
-    iVar1 = _fgetc(g_FILE_PTR_00763e84);
+    iVar1 = _fgetc(g_ActorDataFile);
     if (iVar1 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("Rule list opening brace",property_name);
     }
   } while (iVar1 != 10);
-  iVar1 = _fscanf(g_FILE_PTR_00763e84,"%d",rules);
+  iVar1 = _fscanf(g_ActorDataFile,"%d",rules);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("rule count",property_name);
   }
@@ -50,7 +50,7 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(CRuleList *rules,char *pro
     pacVar3 = rules->events;
     pacVar4 = rules->conditions;
     do {
-      iVar2 = _fscanf(g_FILE_PTR_00763e84," \"%[^\"]\" => \"%[^\"]\"\n",pacVar4,pacVar3);
+      iVar2 = _fscanf(g_ActorDataFile," \"%[^\"]\" => \"%[^\"]\"\n",pacVar4,pacVar3);
       if (iVar2 != 2) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("rule",property_name);
       }
@@ -60,7 +60,7 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(CRuleList *rules,char *pro
     } while (iVar1 < rules->list_size);
   }
   do {
-    while (iVar1 = _fgetc(g_FILE_PTR_00763e84), -1 < iVar1) {
+    while (iVar1 = _fgetc(g_ActorDataFile), -1 < iVar1) {
       if (iVar1 == 10) {
         return;
       }

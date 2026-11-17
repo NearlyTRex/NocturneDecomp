@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
-;   int g_INT_01c2a37c
-;   int g_INT_01c2a380
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   int g_INT_026677e0
 ;   int g_INT_026677e8
@@ -39,7 +39,7 @@ section .text
     MOV CL,BL                           ; 0059ac78
     MOV EDX,dword ptr [0x026677e8]      ; 0059ac7a | g_INT_026677e8
     SHL EAX,CL                          ; 0059ac80
-    MOV ECX,dword ptr [0x01c2a384]      ; 0059ac82 | g_BIT_INTEGER32_01c2a384
+    MOV ECX,dword ptr [0x01c2a384]      ; 0059ac82 | g_MouseButtonFlags
     AND EDX,EAX                         ; 0059ac88
     AND ECX,EAX                         ; 0059ac8a
     CMP ECX,EDX                         ; 0059ac8c
@@ -59,7 +59,7 @@ section .text
     POP ESI                             ; 0059aca1
     POP EBX                             ; 0059aca2
     RET                                 ; 0059aca3
-    MOV EDX,dword ptr [0x01c2a384]      ; 0059aca4 | g_BIT_INTEGER32_01c2a384
+    MOV EDX,dword ptr [0x01c2a384]      ; 0059aca4 | g_MouseButtonFlags
         ;   Label: LAB_0059aca4
     MOV ECX,dword ptr [ESI]             ; 0059acaa
     MOV dword ptr [0x026677e8],EDX      ; 0059acac | g_INT_026677e8
@@ -68,9 +68,9 @@ section .text
     AND EAX,0xff                        ; 0059acb7
     PUSH EAX                            ; 0059acbc
     PUSH EBX                            ; 0059acbd
-    MOV EBP,dword ptr [0x01c2a380]      ; 0059acbe | g_INT_01c2a380
+    MOV EBP,dword ptr [0x01c2a380]      ; 0059acbe | g_MouseY
     PUSH EBP                            ; 0059acc4
-    MOV EAX,[0x01c2a37c]                ; 0059acc5 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 0059acc5 | g_MouseX
     PUSH EAX                            ; 0059acca
     PUSH ESI                            ; 0059accb
     MOV dword ptr [0x026677e0],ESI      ; 0059accc | g_INT_026677e0

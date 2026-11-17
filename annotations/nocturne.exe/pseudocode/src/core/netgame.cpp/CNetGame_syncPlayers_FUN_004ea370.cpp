@@ -35,18 +35,18 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
   }
   this_ptr->network_mode = NET_MODE_SYNCING;
   iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
-  iVar3 = iVar2 / 0x12 - g_INT_01cea3f4;
+  iVar3 = iVar2 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
   else if (0x20000 < iVar3) {
     iVar3 = 0x20000;
   }
-  g_UINT_01cea3f8 = g_UINT_01cea3f8 + iVar3;
-  g_INT_01cea3f4 = iVar2 / 0x12;
+  g_CurrentGameTime = g_CurrentGameTime + iVar3;
+  g_LastPingTime = iVar2 / 0x12;
   this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
   if (this_ptr->connection_type == CONNECTION_HOST) {
-    local_24 = g_UINT_01cea3f8 - 0x1e0000;
+    local_24 = g_CurrentGameTime - 0x1e0000;
     local_20 = this_ptr->players;
     while( true ) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
@@ -74,7 +74,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
       if (local_1c != 0.0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
-      local_14 = g_UINT_01cea3f8 - local_24;
+      local_14 = g_CurrentGameTime - local_24;
       local_198 = (float)local_14 * (float)1.52587890625e-05;
       if (local_198 < 0.0) {
         local_198 = fVar1;
@@ -83,7 +83,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
         local_198 = 30.0;
       }
       if ((float)0.10000000000000001 < local_198) {
-        local_24 = g_UINT_01cea3f8;
+        local_24 = g_CurrentGameTime;
         local_30.type = PACKET_SYNC_STAGE_REQ;
         local_30.size = 9;
         local_2b = sync_stage;
@@ -113,7 +113,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
     if (3 < sync_stage) {
       return 1;
     }
-    while (g_INT_01cea400 < sync_stage) {
+    while (g_RemoteSyncStage < sync_stage) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
       _sprintf(local_94,"Waiting on sync code %d from server...",sync_stage);
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);

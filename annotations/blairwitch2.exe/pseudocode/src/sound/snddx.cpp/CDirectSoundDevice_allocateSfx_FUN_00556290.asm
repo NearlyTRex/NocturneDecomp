@@ -21,8 +21,8 @@
 ;   CConsole g_CConsoleInstance
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   IDirectSound* g_IDirectSound_PTR_0264a5c4
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_0264a5d0
+;   IDirectSound* g_DirectSound
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005562ca
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005562cf
-    CMP dword ptr [0x0264a5c4],0x0      ; 005562d2 | g_IDirectSound_PTR_0264a5c4
+    CMP dword ptr [0x0264a5c4],0x0      ; 005562d2 | g_DirectSound
         ;   Label: LAB_005562d2
     JNZ 0x005562fd                      ; 005562d9
         ;   XREF to: 005562fd (CONDITIONAL_JUMP)  ; LAB_005562fd
@@ -131,7 +131,7 @@ section .text
     MOV dword ptr [EDI + 0xc],0x0       ; 00556395 | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[21]
     MOV dword ptr [EDI + 0x10],EAX      ; 0055639c | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[22]
     MOV dword ptr [ESI + 0x4],EBX       ; 0055639f
-    CMP dword ptr [0x0264a5d0],0x0      ; 005563a2 | g_IDirectSound3DListener_PTR_0264a5d0
+    CMP dword ptr [0x0264a5d0],0x0      ; 005563a2 | g_DirectSound3DListener
     JNZ 0x005564b4                      ; 005563a9
         ;   XREF to: 005564b4 (CONDITIONAL_JUMP)  ; LAB_005564b4
     MOV dword ptr [EDI + 0x1c],0xffffffff ; 005563af | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[25]
@@ -183,7 +183,7 @@ section .text
     PUSH EDI                            ; 00556437 | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[18]
         ;   Label: LAB_00556437
     MOV ECX,dword ptr [ESI]             ; 00556438
-    MOV EAX,[0x0264a5c4]                ; 0055643a | g_IDirectSound_PTR_0264a5c4
+    MOV EAX,[0x0264a5c4]                ; 0055643a | g_DirectSound
     PUSH ECX                            ; 0055643f
     MOV EDX,dword ptr [EAX]             ; 00556440
     PUSH EAX                            ; 00556442

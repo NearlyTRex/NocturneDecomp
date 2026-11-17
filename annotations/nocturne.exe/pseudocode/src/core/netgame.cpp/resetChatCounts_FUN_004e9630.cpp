@@ -9,7 +9,7 @@
 void __edx core_netgame_cpp_resetChatCounts_FUN_004e9630(int count)
 
 {
-  g_INT_01d06610 = 0;
-  g_INT_01cea40c = 0;
+  g_ChatOutCount = 0;
+  g_ChatHistoryCount = 0;
   return;
 }

@@ -141,7 +141,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005424f0(CScat *this_ptr,float
         afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
              *(float *)((int)&CStack_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                  (&(this_ptr->base).base.model,g_INT_ARRAY_01e7e014[6],&CStack_58);
+                  (&(this_ptr->base).base.model,g_ScatIndices[6],&CStack_58);
         fVar3 = afStack_84[2];
         fStack_ac = CStack_58.x;
         afStack_cc[(uint)bVar7 * -2 + 9] = *(float *)((int)&CStack_58 + (uint)bVar7 * -8 + 4);

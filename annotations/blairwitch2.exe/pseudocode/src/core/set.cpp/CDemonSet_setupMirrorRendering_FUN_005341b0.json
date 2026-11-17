@@ -103,7 +103,7 @@
     },
     {
       "addr": "007bda74",
-      "name": "g_CDemonCamera_PTR_007bda74",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -151,7 +151,7 @@
     },
     {
       "addr": "02093610",
-      "name": "g_FLOAT_02093610",
+      "name": "g_SavedProjectionFactor",
       "type": "float",
       "value": null
     }
@@ -476,7 +476,7 @@
       "line": 21,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((SRaytraceState *)&stack0x00000000 != g_SRaytraceState_ARRAY_02093618) {",
+      "text": "if ((SRaytraceState *)&stack0x00000000 != g_RaytraceStateStack) {",
       "type": "stack_ref"
     },
     {
@@ -484,7 +484,7 @@
       "line": 32,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != &g_SRaytraceState_ARRAY_02093618[0].collision_flag) {",
+      "text": "if ((int *)&stack0x00000000 != &g_RaytraceStateStack[0].collision_flag) {",
       "type": "stack_ref"
     },
     {

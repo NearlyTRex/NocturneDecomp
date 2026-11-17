@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005350b0(CStranger *this_ptr)
 
 {
-  return &g_CStrangerActorType_02dc9fac;
+  return &g_CStrangerClassInfo;
 }

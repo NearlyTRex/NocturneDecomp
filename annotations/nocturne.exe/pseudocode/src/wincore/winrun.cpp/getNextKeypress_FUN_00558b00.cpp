@@ -14,19 +14,19 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00558b00(void)
   byte uVar3;
   
   uVar3 = 0;
-  if (g_INT_02de0848 == g_INT_02de084c) {
+  if (g_InputReadIndex == g_InputWriteIndex) {
     do {
-      if (g_INT_02de20a0 != 0) break;
+      if (g_InputDisabled != 0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    } while (g_INT_02de0848 == g_INT_02de084c);
+    } while (g_InputReadIndex == g_InputWriteIndex);
   }
-  uVar2 = (undefined3)((uint)g_INT_02de0848 >> 8);
-  if (g_INT_02de0848 != g_INT_02de084c) {
-    iVar1 = g_INT_02de0848 + 1;
-    uVar3 = (byte)g_INT_ARRAY_02de07f8[g_INT_02de0848];
-    g_INT_02de0848 = iVar1;
+  uVar2 = (undefined3)((uint)g_InputReadIndex >> 8);
+  if (g_InputReadIndex != g_InputWriteIndex) {
+    iVar1 = g_InputReadIndex + 1;
+    uVar3 = (byte)g_InputBuffer[g_InputReadIndex];
+    g_InputReadIndex = iVar1;
     if (0x13 < iVar1) {
-      g_INT_02de0848 = 0;
+      g_InputReadIndex = 0;
       return CONCAT31(uVar2,uVar3);
     }
   }

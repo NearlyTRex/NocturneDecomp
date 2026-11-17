@@ -47,25 +47,24 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_process_FUN_004be970(CFieldNotes *thi
   }
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIM_LBUTTON),
-     (g_BIT_INTEGER32_01c43544.bytes[0] & 1) != 0)) {
-    iVar2 = core_flashlit_cpp_hitTestSectionTab_FUN_004ba490(g_INT_01c4353c,g_INT_01c43540);
+     (g_MouseButtonFlags.bytes[0] & 1) != 0)) {
+    iVar2 = core_flashlit_cpp_hitTestSectionTab_FUN_004ba490(g_MouseX,g_MouseY);
     if (-1 < iVar2) {
       g_INT_01cc7b90 = SNotesSection_ARRAY_01cc4474[iVar2].first_page;
     }
-    iVar2 = core_flashlit_cpp_hitTestPageArrows_FUN_004ba540(g_INT_01c4353c,g_INT_01c43540);
+    iVar2 = core_flashlit_cpp_hitTestPageArrows_FUN_004ba540(g_MouseX,g_MouseY);
     g_INT_01cc7b90 = g_INT_01cc7b90 + iVar2;
-    if ((((g_INT_0061d2f8 <= g_INT_01c4353c) && (g_INT_0061d2fc <= g_INT_01c43540)) &&
-        (g_INT_01c4353c < g_INT_0061d2f8 + CAlphaBitmap_01cc7cac.width)) &&
-       (g_INT_01c43540 < CAlphaBitmap_01cc7cac.height + g_INT_0061d2fc)) {
+    if ((((g_INT_0061d2f8 <= g_MouseX) && (g_INT_0061d2fc <= g_MouseY)) &&
+        (g_MouseX < g_INT_0061d2f8 + CAlphaBitmap_01cc7cac.width)) &&
+       (g_MouseY < CAlphaBitmap_01cc7cac.height + g_INT_0061d2fc)) {
       this_ptr->is_displayed = 0;
     }
     pSVar1 = core_fldnotes_cpp_STextPage_findResourceAt_FUN_004bb110
-                       (g_STextViewInstance.pages + g_INT_01cc7b90,g_INT_01c4353c,g_INT_01c43540);
+                       (g_STextViewInstance.pages + g_INT_01cc7b90,g_MouseX,g_MouseY);
     if (pSVar1 != (SPageResource *)0x0) {
-      (**(code **)((int)pSVar1->vtable + 8))
-                (pSVar1,1,g_INT_01c4353c - pSVar1->x,g_INT_01c43540 - pSVar1->y);
+      (**(code **)((int)pSVar1->vtable + 8))(pSVar1,1,g_MouseX - pSVar1->x,g_MouseY - pSVar1->y);
     }
-    g_BIT_INTEGER32_01c43544.bytes[0] = g_BIT_INTEGER32_01c43544.bytes[0] & 0xfe;
+    g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
     return;
   }
   return;

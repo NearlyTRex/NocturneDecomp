@@ -10,7 +10,7 @@
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8c8d
 ;
 ; Referenced Globals:
-;   char[8100] g_CHAR_ARRAY_01ccbbf0
+;   char[8100] g_PendingMissionName
 ;
 ; *****************************************************************************
 
@@ -36,6 +36,6 @@ section .text
     MOV dword ptr [EAX + 0x858],0x0     ; 004d7e6a
     XOR DL,DL                           ; 004d7e74
     MOV dword ptr [EAX + 0x8],0xffffffff ; 004d7e76
-    MOV byte ptr [0x01ccbbf0],DL        ; 004d7e7d | g_CHAR_ARRAY_01ccbbf0
+    MOV byte ptr [0x01ccbbf0],DL        ; 004d7e7d | g_PendingMissionName
     RET                                 ; 004d7e83
 

@@ -80,9 +80,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005ca3a7
 ;   TerminatedCString s_Not_enough_main_data_to_005ca3b8
-;   double[2][4] g_DOUBLE_ARRAY_ARRAY_006011b8
-;   int[2][3][15] g_INT_ARRAY_ARRAY_ARRAY_006011f8
-;   double[64] g_DOUBLE_ARRAY_00601360
+;   double[2][4] g_MpegSampleRateTable
+;   int[2][3][15] g_MpegBitrateTable
+;   double[64] g_MpegScalefactorTable
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -228,7 +228,7 @@ section .text
         ;   Label: LAB_00502eda
     MOV ESI,dword ptr [EBX]             ; 00502edc
     FLD ST0                             ; 00502ede
-    FMUL double ptr [ESI*0x8 + 0x601360] ; 00502ee0 | g_DOUBLE_ARRAY_00601360
+    FMUL double ptr [ESI*0x8 + 0x601360] ; 00502ee0 | g_MpegScalefactorTable
     ADD EBX,0x180                       ; 00502ee7
     ADD EDX,0x180                       ; 00502eed
     INC ECX                             ; 00502ef3
@@ -294,7 +294,7 @@ section .text
     ADD ECX,EAX                         ; 00502fad
     MOV EAX,dword ptr [ESP + 0x5fcc]    ; 00502faf
     MOV EDX,dword ptr [ESP + 0x5fd0]    ; 00502fb6
-    FILD dword ptr [ECX + EAX*0x4 + 0x6011f8] ; 00502fbd | g_INT_ARRAY_ARRAY_ARRAY_006011f8
+    FILD dword ptr [ECX + EAX*0x4 + 0x6011f8] ; 00502fbd | g_MpegBitrateTable
     MOV EAX,dword ptr [ESP + 0x5fc0]    ; 00502fc4
     SHL EDX,0x3                         ; 00502fcb
     SHL EAX,0x5                         ; 00502fce
@@ -304,7 +304,7 @@ section .text
     MOV dword ptr [ESP + 0x6010],ECX    ; 00502fd8
     MOV dword ptr [ESP + 0x600c],EDX    ; 00502fdf
     FILD qword ptr [ESP + 0x600c]       ; 00502fe6
-    FDIV double ptr [EAX + 0x6011b8]    ; 00502fed | g_DOUBLE_ARRAY_ARRAY_006011b8
+    FDIV double ptr [EAX + 0x6011b8]    ; 00502fed | g_MpegSampleRateTable
     FMULP                               ; 00502ff3
     MOV EAX,dword ptr [ESP + 0x4]       ; 00502ff5
     MOV dword ptr [ESP + 0x6010],ECX    ; 00502ff9

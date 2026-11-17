@@ -64,7 +64,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00518cdc
     MOV EBX,dword ptr [EBP + 0x14]      ; 00518cdf
     PUSH 0x5cd027                       ; 00518ce2 | = "DebugActionPending"
-    MOV EDX,dword ptr [0x005fba60]      ; 00518ce7 | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00518ce7 | g_CEventListPtr
     PUSH EDX                            ; 00518ced
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00518cee
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -1773,7 +1773,7 @@ section .text
     CMP dword ptr [EBX + 0xcde0],0x0    ; 0051a313
     JNZ 0x0051a329                      ; 0051a31a
         ;   XREF to: 0051a329 (CONDITIONAL_JUMP)  ; LAB_0051a329
-    CMP dword ptr [0x01c5fae4],0x0      ; 0051a31c | g_BIT_INTEGER32_01c5fae4
+    CMP dword ptr [0x01c5fae4],0x0      ; 0051a31c | g_MouseButtonFlags
     JZ 0x0051976f                       ; 0051a323
         ;   XREF to: 0051976f (CONDITIONAL_JUMP)  ; LAB_0051976f
     PUSH 0x1                            ; 0051a329
@@ -2936,7 +2936,7 @@ section .text
     FADDP                               ; 0051b296
     MOV EAX,dword ptr [EBX + 0x154]     ; 0051b298
     FSTP float ptr [ESP]                ; 0051b29e
-    PUSH 0x2cfd900                      ; 0051b2a1 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0051b2a1 | g_ZeroVector
     PUSH EBX                            ; 0051b2a6
     CALL dword ptr [EAX + 0x24]         ; 0051b2a7
     ADD ESP,0xc                         ; 0051b2aa

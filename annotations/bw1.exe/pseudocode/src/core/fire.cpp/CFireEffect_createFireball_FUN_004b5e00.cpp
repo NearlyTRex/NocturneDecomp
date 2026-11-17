@@ -13,12 +13,12 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00(CFireEffect *
   int iVar2;
   CFireball *this_ptr_00;
   
-  iVar1 = g_INT_01ca9e5c;
-  iVar2 = g_INT_01ca9e5c + 1;
-  this_ptr_00 = g_FireballPool + g_INT_01ca9e5c;
-  g_INT_01ca9e5c = iVar2;
+  iVar1 = g_FireballAllocIndex;
+  iVar2 = g_FireballAllocIndex + 1;
+  this_ptr_00 = g_FireballPool + g_FireballAllocIndex;
+  g_FireballAllocIndex = iVar2;
   if (0x3f < iVar2) {
-    g_INT_01ca9e5c = 0;
+    g_FireballAllocIndex = 0;
   }
   (*(g_FireballPool[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0xc000,0xffff);

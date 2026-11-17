@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 538,
+    "complexity_score": 539,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 218,
+    "pseudocode_lines": 219,
     "suspect_count": 28,
     "suspect_types": [
       "concat_reconstruction",
@@ -19,7 +19,7 @@
       "unaffected_reg",
       "undefined_type"
     ],
-    "total_lines": 673
+    "total_lines": 674
   },
   "cross_references": [
     {
@@ -219,7 +219,7 @@
     },
     {
       "addr": "005ba056",
-      "name": "g_DOUBLE_005ba056",
+      "name": "g_BackdropColorMultiplier",
       "type": "double",
       "value": "256"
     },
@@ -231,91 +231,91 @@
     },
     {
       "addr": "00b52f48",
-      "name": "g_INT_ARRAY_00b52a48[320]",
+      "name": "g_PrecomputedDepthBuffer[320]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b53448",
-      "name": "g_INT_ARRAY_00b52a48[640]",
+      "name": "g_PrecomputedDepthBuffer[640]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b5344c",
-      "name": "g_INT_ARRAY_00b52a48[641]",
+      "name": "g_PrecomputedDepthBuffer[641]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0134017c",
-      "name": "g_INT_0134017c",
+      "name": "g_BackdropSaveActive",
       "type": "int",
       "value": null
     },
     {
       "addr": "0135ead0",
-      "name": "g_SFogImagePlane_0135ead0",
+      "name": "g_CameraPlaneWorkBuffer",
       "type": "SFogImagePlane",
       "value": null
     },
     {
       "addr": "0135ead1",
-      "name": "g_SFogImagePlane_0135ead0.pixels[0][1]",
+      "name": "g_CameraPlaneWorkBuffer.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ec10",
-      "name": "g_SFogImagePlane_0135ead0.pixels[1][0]",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ed50",
-      "name": "g_SFogImagePlane_0135ead0.pixels[2][0]",
+      "name": "g_CameraPlaneWorkBuffer.pixels[2][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149d6d0",
-      "name": "g_INT_0149d6d0",
+      "name": "g_ImageProcessingState1",
       "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d4",
-      "name": "g_INT_0149d6d4",
+      "name": "g_ImageProcessingState2",
       "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d8",
-      "name": "g_INT_0149d6d8",
+      "name": "g_ImageBytesPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "0149e6e8",
-      "name": "g_SFogGrid_0149d6dc.scroll_vector.x",
+      "name": "g_CameraFogGrid.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149e6ec",
-      "name": "g_SFogGrid_0149d6dc.scroll_vector.y",
+      "name": "g_CameraFogGrid.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149e6f0",
-      "name": "g_SFogGrid_0149d6dc.scroll_vector.z",
+      "name": "g_CameraFogGrid.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149e6f8",
-      "name": "g_SFogGrid_0149d6dc.density_multiplier",
+      "name": "g_CameraFogGrid.density_multiplier",
       "type": "undefined4",
       "value": null
     },
@@ -669,9 +669,9 @@
     {
       "description": "Complex pointer cast",
       "line": 106,
-      "match": "(int *)((int)g_INT_ARRAY_00b52a48",
+      "match": "(int *)((int)g_PrecomputedDepthBuffer",
       "severity": "moderate",
-      "text": "piVar7 = (int *)((int)g_INT_ARRAY_00b52a48 + local_50);",
+      "text": "piVar7 = (int *)((int)g_PrecomputedDepthBuffer + local_50);",
       "type": "pointer_cast"
     },
     {
@@ -724,7 +724,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 179,
+      "line": 180,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (iVar12 < unaff_ESI->display_width);",
@@ -732,7 +732,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 184,
+      "line": 185,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (local_40 < unaff_ESI->display_height);",
@@ -740,23 +740,23 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 201,
+      "line": 202,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Pointer value `&g_CVector3i_ARRAY_00874588[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_PrecomputedWorldPositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 103,
-      "match": "(int)&g_CVector3i_ARRAY_00874588[0].x",
+      "match": "(int)&g_PrecomputedWorldPositions[0].x",
       "severity": "moderate",
-      "text": "end_pos = (CVector3i *)((int)&g_CVector3i_ARRAY_00874588[0].x + local_48);",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_48);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_5c.file[0xb89]._bufsize` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 207,
+      "line": 208,
       "match": "(int)&local_5c.file[0xb89]._bufsize",
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 201,
+      "line": 202,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
@@ -799,12 +799,12 @@
       "line": 103,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "end_pos = (CVector3i *)((int)&g_CVector3i_ARRAY_00874588[0].x + local_48);",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_48);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 159,
+      "line": 160,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "[(int)&(local_5c.file)->_ptr + local_38 + iVar12];",
@@ -812,7 +812,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 173,
+      "line": 174,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "[(int)&(local_5c.file)->_ptr + local_38 + iVar12];",
@@ -820,17 +820,17 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 207,
+      "line": 208,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "'g_SFogImagePlane_0135ead0.pixels[0][iVar8]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar8 is copied from local_38, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
-      "line": 168,
+      "description": "'g_CameraPlaneWorkBuffer.pixels[0][iVar8]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar8 is copied from local_38, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 169,
       "severity": "major",
-      "text": "g_SFogImagePlane_0135ead0.pixels[0][iVar8] = (char)iVar3;",
+      "text": "g_CameraPlaneWorkBuffer.pixels[0][iVar8] = (char)iVar3;",
       "type": "flattened_array_index"
     }
   ]

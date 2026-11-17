@@ -19,7 +19,7 @@
 ;   float g_FLOAT_005f17c7 = 2
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -60,7 +60,7 @@ section .text
     MOV EAX,0xffff                      ; 005b6cc9
     FLD float ptr [0x005f17c7]          ; 005b6cce | g_FLOAT_005f17c7
     FSUBRP ST2,ST0                      ; 005b6cd4
-    MOV EBX,dword ptr [0x01c38aec]      ; 005b6cd6 | g_INT_01c38aec
+    MOV EBX,dword ptr [0x01c38aec]      ; 005b6cd6 | g_PerspectiveReciprocal
     FMULP                               ; 005b6cdc
     SUB EAX,EBX                         ; 005b6cde
     CALL crt_math.c_round_FUN_005b7ff0  ; 005b6ce0

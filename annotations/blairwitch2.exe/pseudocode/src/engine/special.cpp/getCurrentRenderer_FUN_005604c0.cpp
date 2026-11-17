@@ -10,5 +10,5 @@ char * __cdecl engine_special_cpp_getCurrentRenderer_FUN_005604c0(int *card_inde
 
 {
   *card_index_out = g_INT_0264bba4;
-  return g_CHAR_ARRAY_0061e180;
+  return g_RendererDllPath;
 }

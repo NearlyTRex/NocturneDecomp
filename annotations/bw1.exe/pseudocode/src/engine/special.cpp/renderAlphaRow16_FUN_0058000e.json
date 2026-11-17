@@ -47,55 +47,55 @@
   "globals": [
     {
       "addr": "00623f20",
-      "name": "g_MMX_INTEGER_00623f20",
+      "name": "g_RedMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00623f28",
-      "name": "g_MMX_INTEGER_00623f28",
+      "name": "g_GreenMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00623f30",
-      "name": "g_MMX_INTEGER_00623f30",
+      "name": "g_BlueMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00623f38",
-      "name": "g_QWORD_00623f38",
+      "name": "g_RedMask32",
       "type": "qword",
       "value": "0xf80000"
     },
     {
       "addr": "00623f58",
-      "name": "g_QWORD_00623f58",
+      "name": "g_GreenMask32",
       "type": "qword",
       "value": "0xfc00"
     },
     {
       "addr": "00623f78",
-      "name": "g_QWORD_00623f78",
+      "name": "g_BlueMask32",
       "type": "qword",
       "value": "0xf8"
     },
     {
       "addr": "00623f80",
-      "name": "g_QWORD_00623f80",
+      "name": "g_TotalDitherShift",
       "type": "qword",
       "value": "0x8"
     },
     {
       "addr": "00623fa0",
-      "name": "g_QWORD_00623fa0",
+      "name": "g_GreenBlueDitherShift",
       "type": "qword",
       "value": "0x5"
     },
     {
       "addr": "00623fc0",
-      "name": "g_QWORD_00623fc0",
+      "name": "g_BlueBitShift",
       "type": "qword",
       "value": "0x3"
     },
@@ -113,13 +113,13 @@
     },
     {
       "addr": "01c4e3d4",
-      "name": "g_UINT_ARRAY_01c4e3d4",
+      "name": "g_Hardware32BitPalette",
       "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c51d0c",
-      "name": "g_INT_01c51d0c",
+      "name": "g_BlendMode",
       "type": "int",
       "value": null
     }
@@ -325,7 +325,7 @@
       "line": 45,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar24 = (uint7)((uVar6 & g_MMX_INTEGER_00623f30.mm) << g_QWORD_00623fc0) |",
+      "text": "uVar24 = (uint7)((uVar6 & g_BlueMask16.mm) << g_BlueBitShift) |",
       "type": "nonstandard_int"
     },
     {
@@ -333,7 +333,7 @@
       "line": 46,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar6 & g_MMX_INTEGER_00623f28.mm) << g_QWORD_00623fa0) |",
+      "text": "(uint7)((uVar6 & g_GreenMask16.mm) << g_GreenBlueDitherShift) |",
       "type": "nonstandard_int"
     },
     {
@@ -341,7 +341,7 @@
       "line": 47,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar6 & g_MMX_INTEGER_00623f20.mm) << g_QWORD_00623f80);",
+      "text": "(uint7)((uVar6 & g_RedMask16.mm) << g_TotalDitherShift);",
       "type": "nonstandard_int"
     },
     {

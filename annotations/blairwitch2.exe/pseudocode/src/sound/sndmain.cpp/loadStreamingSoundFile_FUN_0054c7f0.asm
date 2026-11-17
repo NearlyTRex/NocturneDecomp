@@ -24,7 +24,7 @@
 ;   float g_FLOAT_005fbc30 = 2
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_02641920
+;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].is_user_sample
@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 0054c7f2
     PUSH EBP                            ; 0054c7f3
     SUB ESP,0x108                       ; 0054c7f4
-    MOV EBX,dword ptr [0x02641920]      ; 0054c7fa | g_INT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054c7fa | g_LastSampleAccessIndex
     MOV ESI,dword ptr [ESP + 0x120]     ; 0054c800
     XOR EDX,EDX                         ; 0054c807
     XOR EBP,EBP                         ; 0054c809
@@ -83,12 +83,12 @@ section .text
     MOV dword ptr [ESP + 0x104],EBP     ; 0054c82b
     MOV EBP,dword ptr [ESP + 0x104]     ; 0054c832
         ;   Label: LAB_0054c832
-    MOV dword ptr [0x02641920],EBX      ; 0054c839 | g_INT_02641920
+    MOV dword ptr [0x02641920],EBX      ; 0054c839 | g_LastSampleAccessIndex
     TEST EBP,EBP                        ; 0054c83f
     JNZ 0x0054c882                      ; 0054c841
         ;   XREF to: 0054c882 (CONDITIONAL_JUMP)  ; LAB_0054c882
     XOR EAX,EAX                         ; 0054c843
-    MOV EBX,dword ptr [0x02641920]      ; 0054c845 | g_INT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054c845 | g_LastSampleAccessIndex
     ADD ESP,0x108                       ; 0054c84b
     POP EBP                             ; 0054c851
     POP EDI                             ; 0054c852
@@ -236,7 +236,7 @@ section .text
         ;   XREF to: 0054dc50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50(CSfxSample * this_ptr, int playback_position, int dest_buffer_offset)
     ADD ESP,0xc                         ; 0054ca12
     MOV EAX,EBP                         ; 0054ca15
-    MOV EBX,dword ptr [0x02641920]      ; 0054ca17 | g_INT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054ca17 | g_LastSampleAccessIndex
     ADD ESP,0x108                       ; 0054ca1d
     POP EBP                             ; 0054ca23
     POP EDI                             ; 0054ca24
@@ -335,7 +335,7 @@ section .text
         ;   XREF to: 0054d9b0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0054cb4e
     XOR EAX,EAX                         ; 0054cb51
-    MOV EBX,dword ptr [0x02641920]      ; 0054cb53 | g_INT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054cb53 | g_LastSampleAccessIndex
     ADD ESP,0x108                       ; 0054cb59
     POP EBP                             ; 0054cb5f
     POP EDI                             ; 0054cb60

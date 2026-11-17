@@ -15,13 +15,13 @@
 ;   sound_sndmain.cpp_writeIni_FUN_005763b0 at 005764d3
 ;
 ; Referenced Globals:
-;   int g_INT_02c8065c
+;   int g_SoundMuted
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c8065c]                ; 005735f0 | g_INT_02c8065c
+    MOV EAX,[0x02c8065c]                ; 005735f0 | g_SoundMuted
         ;   Label: sound_sndmain.cpp_isSoundMuted_FUN_005735f0
     RET                                 ; 005735f5
 

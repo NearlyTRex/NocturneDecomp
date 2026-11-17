@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_exploding_005ce1f7
 ;   CConsole* g_CConsolePtr = 007c158c
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d182f0
@@ -79,7 +79,7 @@ section .text
     FLD float ptr [ESP + 0x34]          ; 0043a3be
     PUSH 0x44bb8000                     ; 0043a3c2
     LEA EAX,[ESP + 0x40]                ; 0043a3c7
-    MOV ESI,dword ptr [0x00614d30]      ; 0043a3cb | g_CFireEffect_PTR_00614d30
+    MOV ESI,dword ptr [0x00614d30]      ; 0043a3cb | g_CFireEffectPtr
     PUSH 0x42000000                     ; 0043a3d1
     FSUB float ptr [ESP + 0x30]         ; 0043a3d6
     PUSH EAX                            ; 0043a3da

@@ -62,11 +62,11 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
                 (g_CDemonRenderer_PTR_005ae704,0);
     }
   }
-  if ((g_UCHAR_014b8488 & 1) == 0) {
-    g_UCHAR_014b8488 = g_UCHAR_014b8488 | 1;
-    g_CVector3f_014b847c.x = 0.57735026;
-    g_CVector3f_014b847c.z = 0.57735026;
-    g_CVector3f_014b847c.y = -0.57735026;
+  if ((g_ColorConstantsInitialized & 1) == 0) {
+    g_ColorConstantsInitialized = g_ColorConstantsInitialized | 1;
+    g_StaticColorVector.x = 0.57735026;
+    g_StaticColorVector.z = 0.57735026;
+    g_StaticColorVector.y = -0.57735026;
   }
   local_14 = 0;
   if (0 < this_ptr->triangle_count) {

@@ -12,8 +12,8 @@
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00523d07
 ;
 ; Referenced Globals:
-;   int g_INT_01c3dd0c
-;   char[256] g_CHAR_ARRAY_01c3dd10
+;   int g_EventDryRun
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommandString_FUN_00489510
@@ -38,15 +38,15 @@ section .text
     MOV EDX,0x1                         ; 0048e3f3
     PUSH ECX                            ; 0048e3f8
     XOR EBX,EBX                         ; 0048e3f9
-    MOV dword ptr [0x01c3dd0c],EDX      ; 0048e3fb | g_INT_01c3dd0c
+    MOV dword ptr [0x01c3dd0c],EDX      ; 0048e3fb | g_EventDryRun
     CALL core_event.cpp_CEventList_executeCommandString_FUN_00489510 ; 0048e401
         ;   XREF to: 00489510 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommandString_FUN_00489510(CEventList * this_ptr, char * command_string)
     ADD ESP,0x8                         ; 0048e406
-    MOV dword ptr [0x01c3dd0c],EBX      ; 0048e409 | g_INT_01c3dd0c
+    MOV dword ptr [0x01c3dd0c],EBX      ; 0048e409 | g_EventDryRun
     TEST EAX,EAX                        ; 0048e40f
     JNZ 0x0048e3ea                      ; 0048e411
         ;   XREF to: 0048e3ea (CONDITIONAL_JUMP)  ; LAB_0048e3ea
-    MOV EAX,0x1c3dd10                   ; 0048e413 | g_CHAR_ARRAY_01c3dd10
+    MOV EAX,0x1c3dd10                   ; 0048e413 | g_EventErrorMessageBuffer
     POP EBX                             ; 0048e418
     RET                                 ; 0048e419
 

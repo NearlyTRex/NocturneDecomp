@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005fbc24 = 4
-;   float g_FLOAT_005fbc28 = 20
-;   float g_FLOAT_0263cf10
+;   float g_SoundDivisorConstant = 4
+;   float g_SoundReferenceDistanceConstant = 20
+;   float g_SoundReferenceVolumeDistance
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005b7f5f
@@ -17,13 +17,13 @@
 
 section .text
 
-    FLD float ptr [0x005fbc28]          ; 0054ae20 | g_FLOAT_005fbc28
+    FLD float ptr [0x005fbc28]          ; 0054ae20 | g_SoundReferenceDistanceConstant
         ;   Label: sound_sndmain.cpp_staticInit_FUN_0054ae20
-    FDIV float ptr [0x005fbc24]         ; 0054ae26 | g_FLOAT_005fbc24
+    FDIV float ptr [0x005fbc24]         ; 0054ae26 | g_SoundDivisorConstant
     PUSH 0x5fbc40                       ; 0054ae2c
     PUSH 0x40                           ; 0054ae31
     PUSH 0x263cf1c                      ; 0054ae33
-    FSTP float ptr [0x0263cf10]         ; 0054ae38 | g_FLOAT_0263cf10
+    FSTP float ptr [0x0263cf10]         ; 0054ae38 | g_SoundReferenceVolumeDistance
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0054ae3e
         ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054ae43

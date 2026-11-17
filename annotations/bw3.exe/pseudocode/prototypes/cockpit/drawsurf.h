@@ -215,7 +215,7 @@ void __cdecl CDrawSurface::drawTextCenteredInAreaWithWidthPrintf(CDrawSurface *t
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0
 // Address: 0046a4d0
-void __cdecl CDrawSurface::drawTextCenteredFullWidth(CDrawSurface *this_ptr,char *param_2,int param_3);
+void __cdecl CDrawSurface::drawTextCenteredFullWidth(CDrawSurface *this_ptr,char *text,int y);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_0046a4f0
 // Address: 0046a4f0

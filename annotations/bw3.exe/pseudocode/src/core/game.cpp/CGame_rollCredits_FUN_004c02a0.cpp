@@ -173,9 +173,9 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
       engine_2d_c_fillRectColor_FUN_004031c0(0,0x1b7,0x27f,0x1df,0);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-    iVar9 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+    iVar9 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar9 != 0) {
-      if (g_INT_01dd4890 != 0) {
+      if (g_UseOSFonts != 0) {
         local_10->win_font_enabled = 1;
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();

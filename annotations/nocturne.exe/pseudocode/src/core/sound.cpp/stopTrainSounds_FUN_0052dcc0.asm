@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   uint g_UINT_02dc9d58
-;   uint g_UINT_02dc9d5c
+;   uint g_TrainRailNoiseHandle
+;   uint g_TrainExteriorAmbientHandle
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
@@ -28,12 +28,12 @@ section .text
     CMP EBX,0xa0                        ; 0052dcd5
     JNZ 0x0052dcc3                      ; 0052dcdb
         ;   XREF to: 0052dcc3 (CONDITIONAL_JUMP)  ; LAB_0052dcc3
-    MOV ECX,dword ptr [0x02dc9d58]      ; 0052dcdd | g_UINT_02dc9d58
+    MOV ECX,dword ptr [0x02dc9d58]      ; 0052dcdd | g_TrainRailNoiseHandle
     PUSH ECX                            ; 0052dce3
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0052dce4
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 0052dce9
-    MOV EBX,dword ptr [0x02dc9d5c]      ; 0052dcec | g_UINT_02dc9d5c
+    MOV EBX,dword ptr [0x02dc9d5c]      ; 0052dcec | g_TrainExteriorAmbientHandle
     PUSH EBX                            ; 0052dcf2
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0052dcf3
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)

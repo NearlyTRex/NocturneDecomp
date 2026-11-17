@@ -22,7 +22,7 @@ int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,
            (CONCAT22((short)((uint)in_EAX >> 0x10),
                      CONCAT11(g_FILE_005c18c8._flag._1_1_,(char)in_EAX)) & 0xfffff8ff);
   g_FILE_005c18c8._flag._1_1_ = (byte)((uint)psVar3 >> 8) | 4;
-  pp_Var5 = &g_FILE_PTR_005c1894;
+  pp_Var5 = &g_StaticFilePoolStart;
   uVar1 = _DAT_005c18a0;
   while (uVar1 != 0) {
     psVar4 = InternalHeapAlloc(0x1d);
@@ -31,7 +31,7 @@ int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,
       HandleRuntimeError("Not enough memory to allocate file structures\r\n",1);
     }
     psVar4->__reserve_base = (char *)pp_Var5;
-    psVar4->__b_lock = g_FileListNode_PTR_02de4e20;
+    psVar4->__b_lock = g_AllocatedListHead;
     ((_FILE *)pp_Var5)->_link = psVar4;
     psVar4->__reserve_end = (char *)0x0;
     *(byte *)&((_FILE *)pp_Var5)->_link->__get_ptr = 0;
@@ -39,9 +39,9 @@ int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,
     psVar3->__get_base = (char *)0x0;
     p_Var2 = (_FILE *)((int)pp_Var5 + 0x1a);
     pp_Var5 = (_FILE **)((int)pp_Var5 + 0x1a);
-    g_FileListNode_PTR_02de4e20 = (FileListNode *)psVar4;
+    g_AllocatedListHead = (FileListNode *)psVar4;
     uVar1 = p_Var2->_flag;
   }
-  g_FileListNode_PTR_02de4e24 = (FileListNode *)0x0;
+  g_FreeListHeadPointer = (FileListNode *)0x0;
   return (int)psVar3;
 }

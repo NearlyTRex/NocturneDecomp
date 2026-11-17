@@ -17,8 +17,8 @@ void __fastcall _memset(void *dest,int fill_byte,uint size)
   uint uVar6;
   bool bVar7;
   
-  uVar1 = g_ULONGLONG_ARRAY_005fbc30[fill_byte & 0xffU];
-  uVar2 = (uint)g_ULONGLONG_ARRAY_005fbc30[fill_byte & 0xffU];
+  uVar1 = g_ByteFillTable[fill_byte & 0xffU];
+  uVar2 = (uint)g_ByteFillTable[fill_byte & 0xffU];
   uVar3 = size - 8;
   if (size < 8 || uVar3 == 0) goto LAB_00495f08;
   uVar6 = -(int)dest & 7;

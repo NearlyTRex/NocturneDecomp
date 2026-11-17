@@ -50,31 +50,31 @@
   "globals": [
     {
       "addr": "01ba5c84",
-      "name": "g_INT_ARRAY_01ba5c84",
+      "name": "g_VertexIndexBuffer",
       "type": "int[16]",
       "value": null
     },
     {
       "addr": "01ba5c88",
-      "name": "g_INT_ARRAY_01ba5c84[1]",
+      "name": "g_VertexIndexBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c35e6c",
-      "name": "g_PTR_01c35e6c",
+      "name": "g_ScanlineRenderFunc",
       "type": "void*",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "g_BIT_INTEGER32_01c38b54",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "g_INT_01c38b58",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     }
@@ -198,9 +198,9 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(int *)((int)g_INT_ARRAY_01ba5c84",
+      "match": "(int *)((int)g_VertexIndexBuffer",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_01ba5c84 + iVar2) = iVar1;",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
     {

@@ -75,11 +75,11 @@ section .text
     XOR ESI,ESI                         ; 004eed8e
         ;   Label: LAB_004eed8e
     PUSH 0x5dd3a2                       ; 004eed90 | = "Forward"
-    MOV dword ptr [0x01d086f0],ESI      ; 004eed95 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ESI      ; 004eed95 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eed9b
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eeda0 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eeda6 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eeda6 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004eedac
     MOV ESI,EAX                         ; 004eedaf
     ADD EBX,0x28                        ; 004eedb1
@@ -94,11 +94,11 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eedd3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eedd8
-    MOV EAX,[0x01d086f0]                ; 004eeddb | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eeddb | g_CustomKeyCount
         ;   Label: LAB_004eeddb
     IMUL EDI,EAX,0x28                   ; 004eede0
     ADD EDI,0x1d08790                   ; 004eede3
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eede9 | g_INT_PTR_ARRAY_01d086f4 | g_CGameInstance.key_walk
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eede9 | g_CustomKeyPointers | g_CGameInstance.key_walk
     PUSH EDI                            ; 004eedf0
     MOV AL,byte ptr [ESI]               ; 004eedf1
         ;   Label: LAB_004eedf1
@@ -115,14 +115,14 @@ section .text
         ;   XREF to: 004eedf1 (CONDITIONAL_JUMP)  ; LAB_004eedf1
     POP EDI                             ; 004eee09
         ;   Label: LAB_004eee09
-    MOV ECX,dword ptr [0x01d086f0]      ; 004eee0a | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004eee0a | g_CustomKeyCount
     INC ECX                             ; 004eee10
     PUSH 0x5dd3aa                       ; 004eee11 | = "Back"
-    MOV dword ptr [0x01d086f0],ECX      ; 004eee16 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004eee16 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eee1c
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eee21 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eee27 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eee27 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004eee2d
     MOV ESI,EAX                         ; 004eee30
     ADD EBX,0x2c                        ; 004eee32
@@ -137,32 +137,32 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eee54
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eee59
-    MOV EAX,[0x01d086f0]                ; 004eee5c | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eee5c | g_CustomKeyCount
         ;   Label: LAB_004eee5c
     IMUL EDI,EAX,0x28                   ; 004eee61
     ADD EDI,0x1d08790                   ; 004eee64
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eee6a | g_INT_PTR_ARRAY_01d086f4[1] | g_CGameInstance.key_backup
-    PUSH EDI                            ; 004eee71 | g_CHAR_ARRAY_ARRAY_01d08790[1][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eee6a | g_CustomKeyPointers[1] | g_CGameInstance.key_backup
+    PUSH EDI                            ; 004eee71 | g_CustomKeyNames[1][0]
     MOV AL,byte ptr [ESI]               ; 004eee72
         ;   Label: LAB_004eee72
-    MOV byte ptr [EDI],AL               ; 004eee74 | g_CHAR_ARRAY_ARRAY_01d08790[1][0] | g_CHAR_ARRAY_ARRAY_01d08790[1][2]
+    MOV byte ptr [EDI],AL               ; 004eee74 | g_CustomKeyNames[1][0] | g_CustomKeyNames[1][2]
     CMP AL,0x0                          ; 004eee76
     JZ 0x004eee8a                       ; 004eee78
         ;   XREF to: 004eee8a (CONDITIONAL_JUMP)  ; LAB_004eee8a
     MOV AL,byte ptr [ESI + 0x1]         ; 004eee7a
     ADD ESI,0x2                         ; 004eee7d
-    MOV byte ptr [EDI + 0x1],AL         ; 004eee80 | g_CHAR_ARRAY_ARRAY_01d08790[1][1] | g_CHAR_ARRAY_ARRAY_01d08790[1][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004eee80 | g_CustomKeyNames[1][1] | g_CustomKeyNames[1][3]
     ADD EDI,0x2                         ; 004eee83
     CMP AL,0x0                          ; 004eee86
     JNZ 0x004eee72                      ; 004eee88
         ;   XREF to: 004eee72 (CONDITIONAL_JUMP)  ; LAB_004eee72
     POP EDI                             ; 004eee8a
         ;   Label: LAB_004eee8a
-    MOV ECX,dword ptr [0x01d086f0]      ; 004eee8b | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004eee8b | g_CustomKeyCount
     MOV EAX,[0x00616494]                ; 004eee91 | g_CGamePtr
     INC ECX                             ; 004eee96
     MOV EBX,dword ptr [EAX + 0xac]      ; 004eee97 | g_CGameInstance.always_run
-    MOV dword ptr [0x01d086f0],ECX      ; 004eee9d | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004eee9d | g_CustomKeyCount
     TEST EBX,EBX                        ; 004eeea3
     JZ 0x004efaff                       ; 004eeea5
         ;   XREF to: 004efaff (CONDITIONAL_JUMP)  ; LAB_004efaff
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
         ;   Label: LAB_004eeeb0
     MOV EBX,dword ptr [0x00616494]      ; 004eeeb5 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eeebb | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eeebb | g_CustomKeyCount
     ADD ESP,0x4                         ; 004eeec1
     MOV ESI,EAX                         ; 004eeec4
     ADD EBX,0x30                        ; 004eeec6
@@ -186,33 +186,33 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eeee8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eeeed
-    MOV EAX,[0x01d086f0]                ; 004eeef0 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eeef0 | g_CustomKeyCount
         ;   Label: LAB_004eeef0
     IMUL EDI,EAX,0x28                   ; 004eeef5
     ADD EDI,0x1d08790                   ; 004eeef8
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeefe | g_INT_PTR_ARRAY_01d086f4[2]
-    PUSH EDI                            ; 004eef05 | g_CHAR_ARRAY_ARRAY_01d08790[2][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeefe | g_CustomKeyPointers[2]
+    PUSH EDI                            ; 004eef05 | g_CustomKeyNames[2][0]
     MOV AL,byte ptr [ESI]               ; 004eef06
         ;   Label: LAB_004eef06
-    MOV byte ptr [EDI],AL               ; 004eef08 | g_CHAR_ARRAY_ARRAY_01d08790[2][0] | g_CHAR_ARRAY_ARRAY_01d08790[2][2]
+    MOV byte ptr [EDI],AL               ; 004eef08 | g_CustomKeyNames[2][0] | g_CustomKeyNames[2][2]
     CMP AL,0x0                          ; 004eef0a
     JZ 0x004eef1e                       ; 004eef0c
         ;   XREF to: 004eef1e (CONDITIONAL_JUMP)  ; LAB_004eef1e
     MOV AL,byte ptr [ESI + 0x1]         ; 004eef0e
     ADD ESI,0x2                         ; 004eef11
-    MOV byte ptr [EDI + 0x1],AL         ; 004eef14 | g_CHAR_ARRAY_ARRAY_01d08790[2][1] | g_CHAR_ARRAY_ARRAY_01d08790[2][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004eef14 | g_CustomKeyNames[2][1] | g_CustomKeyNames[2][3]
     ADD EDI,0x2                         ; 004eef17
     CMP AL,0x0                          ; 004eef1a
     JNZ 0x004eef06                      ; 004eef1c
         ;   XREF to: 004eef06 (CONDITIONAL_JUMP)  ; LAB_004eef06
     POP EDI                             ; 004eef1e
         ;   Label: LAB_004eef1e
-    INC dword ptr [0x01d086f0]          ; 004eef1f | g_INT_01d086f0
+    INC dword ptr [0x01d086f0]          ; 004eef1f | g_CustomKeyCount
     PUSH 0x5dd3b8                       ; 004eef25 | = "Strafe on"
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eef2a
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eef2f | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eef35 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eef35 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004eef3b
     MOV ESI,EAX                         ; 004eef3e
     ADD EBX,0x34                        ; 004eef40
@@ -227,35 +227,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eef62
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eef67
-    MOV EAX,[0x01d086f0]                ; 004eef6a | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eef6a | g_CustomKeyCount
         ;   Label: LAB_004eef6a
     IMUL EDI,EAX,0x28                   ; 004eef6f
     ADD EDI,0x1d08790                   ; 004eef72
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eef78 | g_INT_PTR_ARRAY_01d086f4[3]
-    PUSH EDI                            ; 004eef7f | g_CHAR_ARRAY_ARRAY_01d08790[3][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eef78 | g_CustomKeyPointers[3]
+    PUSH EDI                            ; 004eef7f | g_CustomKeyNames[3][0]
     MOV AL,byte ptr [ESI]               ; 004eef80
         ;   Label: LAB_004eef80
-    MOV byte ptr [EDI],AL               ; 004eef82 | g_CHAR_ARRAY_ARRAY_01d08790[3][0] | g_CHAR_ARRAY_ARRAY_01d08790[3][2]
+    MOV byte ptr [EDI],AL               ; 004eef82 | g_CustomKeyNames[3][0] | g_CustomKeyNames[3][2]
     CMP AL,0x0                          ; 004eef84
     JZ 0x004eef98                       ; 004eef86
         ;   XREF to: 004eef98 (CONDITIONAL_JUMP)  ; LAB_004eef98
     MOV AL,byte ptr [ESI + 0x1]         ; 004eef88
     ADD ESI,0x2                         ; 004eef8b
-    MOV byte ptr [EDI + 0x1],AL         ; 004eef8e | g_CHAR_ARRAY_ARRAY_01d08790[3][1] | g_CHAR_ARRAY_ARRAY_01d08790[3][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004eef8e | g_CustomKeyNames[3][1] | g_CustomKeyNames[3][3]
     ADD EDI,0x2                         ; 004eef91
     CMP AL,0x0                          ; 004eef94
     JNZ 0x004eef80                      ; 004eef96
         ;   XREF to: 004eef80 (CONDITIONAL_JUMP)  ; LAB_004eef80
     POP EDI                             ; 004eef98
         ;   Label: LAB_004eef98
-    MOV ECX,dword ptr [0x01d086f0]      ; 004eef99 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004eef99 | g_CustomKeyCount
     INC ECX                             ; 004eef9f
     PUSH 0x5dd3c2                       ; 004eefa0 | = "Strafe left"
-    MOV dword ptr [0x01d086f0],ECX      ; 004eefa5 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004eefa5 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eefab
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eefb0 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eefb6 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eefb6 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004eefbc
     MOV ESI,EAX                         ; 004eefbf
     ADD EBX,0x38                        ; 004eefc1
@@ -270,35 +270,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eefe3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eefe8
-    MOV EAX,[0x01d086f0]                ; 004eefeb | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eefeb | g_CustomKeyCount
         ;   Label: LAB_004eefeb
     IMUL EDI,EAX,0x28                   ; 004eeff0
     ADD EDI,0x1d08790                   ; 004eeff3
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeff9 | g_INT_PTR_ARRAY_01d086f4[4]
-    PUSH EDI                            ; 004ef000 | g_CHAR_ARRAY_ARRAY_01d08790[4][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeff9 | g_CustomKeyPointers[4]
+    PUSH EDI                            ; 004ef000 | g_CustomKeyNames[4][0]
     MOV AL,byte ptr [ESI]               ; 004ef001
         ;   Label: LAB_004ef001
-    MOV byte ptr [EDI],AL               ; 004ef003 | g_CHAR_ARRAY_ARRAY_01d08790[4][0] | g_CHAR_ARRAY_ARRAY_01d08790[4][2]
+    MOV byte ptr [EDI],AL               ; 004ef003 | g_CustomKeyNames[4][0] | g_CustomKeyNames[4][2]
     CMP AL,0x0                          ; 004ef005
     JZ 0x004ef019                       ; 004ef007
         ;   XREF to: 004ef019 (CONDITIONAL_JUMP)  ; LAB_004ef019
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef009
     ADD ESI,0x2                         ; 004ef00c
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef00f | g_CHAR_ARRAY_ARRAY_01d08790[4][1] | g_CHAR_ARRAY_ARRAY_01d08790[4][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef00f | g_CustomKeyNames[4][1] | g_CustomKeyNames[4][3]
     ADD EDI,0x2                         ; 004ef012
     CMP AL,0x0                          ; 004ef015
     JNZ 0x004ef001                      ; 004ef017
         ;   XREF to: 004ef001 (CONDITIONAL_JUMP)  ; LAB_004ef001
     POP EDI                             ; 004ef019
         ;   Label: LAB_004ef019
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef01a | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef01a | g_CustomKeyCount
     INC ECX                             ; 004ef020
     PUSH 0x5dd3ce                       ; 004ef021 | = "Strafe right"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef026 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef026 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef02c
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef031 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef037 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef037 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef03d
     MOV ESI,EAX                         ; 004ef040
     ADD EBX,0x3c                        ; 004ef042
@@ -313,35 +313,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef064
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef069
-    MOV EAX,[0x01d086f0]                ; 004ef06c | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef06c | g_CustomKeyCount
         ;   Label: LAB_004ef06c
     IMUL EDI,EAX,0x28                   ; 004ef071
     ADD EDI,0x1d08790                   ; 004ef074
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef07a | g_INT_PTR_ARRAY_01d086f4[5]
-    PUSH EDI                            ; 004ef081 | g_CHAR_ARRAY_ARRAY_01d08790[5][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef07a | g_CustomKeyPointers[5]
+    PUSH EDI                            ; 004ef081 | g_CustomKeyNames[5][0]
     MOV AL,byte ptr [ESI]               ; 004ef082
         ;   Label: LAB_004ef082
-    MOV byte ptr [EDI],AL               ; 004ef084 | g_CHAR_ARRAY_ARRAY_01d08790[5][0] | g_CHAR_ARRAY_ARRAY_01d08790[5][2]
+    MOV byte ptr [EDI],AL               ; 004ef084 | g_CustomKeyNames[5][0] | g_CustomKeyNames[5][2]
     CMP AL,0x0                          ; 004ef086
     JZ 0x004ef09a                       ; 004ef088
         ;   XREF to: 004ef09a (CONDITIONAL_JUMP)  ; LAB_004ef09a
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef08a
     ADD ESI,0x2                         ; 004ef08d
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef090 | g_CHAR_ARRAY_ARRAY_01d08790[5][1] | g_CHAR_ARRAY_ARRAY_01d08790[5][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef090 | g_CustomKeyNames[5][1] | g_CustomKeyNames[5][3]
     ADD EDI,0x2                         ; 004ef093
     CMP AL,0x0                          ; 004ef096
     JNZ 0x004ef082                      ; 004ef098
         ;   XREF to: 004ef082 (CONDITIONAL_JUMP)  ; LAB_004ef082
     POP EDI                             ; 004ef09a
         ;   Label: LAB_004ef09a
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef09b | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef09b | g_CustomKeyCount
     INC ECX                             ; 004ef0a1
     PUSH 0x5dd3db                       ; 004ef0a2 | = "Turn left"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef0a7 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef0a7 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef0ad
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef0b2 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef0b8 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef0b8 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef0be
     MOV ESI,EAX                         ; 004ef0c1
     ADD EBX,0x44                        ; 004ef0c3
@@ -356,35 +356,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef0e5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef0ea
-    MOV EAX,[0x01d086f0]                ; 004ef0ed | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef0ed | g_CustomKeyCount
         ;   Label: LAB_004ef0ed
     IMUL EDI,EAX,0x28                   ; 004ef0f2
     ADD EDI,0x1d08790                   ; 004ef0f5
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef0fb | g_INT_PTR_ARRAY_01d086f4[6]
-    PUSH EDI                            ; 004ef102 | g_CHAR_ARRAY_ARRAY_01d08790[6][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef0fb | g_CustomKeyPointers[6]
+    PUSH EDI                            ; 004ef102 | g_CustomKeyNames[6][0]
     MOV AL,byte ptr [ESI]               ; 004ef103
         ;   Label: LAB_004ef103
-    MOV byte ptr [EDI],AL               ; 004ef105 | g_CHAR_ARRAY_ARRAY_01d08790[6][0] | g_CHAR_ARRAY_ARRAY_01d08790[6][2]
+    MOV byte ptr [EDI],AL               ; 004ef105 | g_CustomKeyNames[6][0] | g_CustomKeyNames[6][2]
     CMP AL,0x0                          ; 004ef107
     JZ 0x004ef11b                       ; 004ef109
         ;   XREF to: 004ef11b (CONDITIONAL_JUMP)  ; LAB_004ef11b
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef10b
     ADD ESI,0x2                         ; 004ef10e
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef111 | g_CHAR_ARRAY_ARRAY_01d08790[6][1] | g_CHAR_ARRAY_ARRAY_01d08790[6][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef111 | g_CustomKeyNames[6][1] | g_CustomKeyNames[6][3]
     ADD EDI,0x2                         ; 004ef114
     CMP AL,0x0                          ; 004ef117
     JNZ 0x004ef103                      ; 004ef119
         ;   XREF to: 004ef103 (CONDITIONAL_JUMP)  ; LAB_004ef103
     POP EDI                             ; 004ef11b
         ;   Label: LAB_004ef11b
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef11c | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef11c | g_CustomKeyCount
     INC ECX                             ; 004ef122
     PUSH 0x5dd3e5                       ; 004ef123 | = "Turn right"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef128 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef128 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef12e
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef133 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef139 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef139 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef13f
     MOV ESI,EAX                         ; 004ef142
     ADD EBX,0x40                        ; 004ef144
@@ -399,35 +399,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef166
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef16b
-    MOV EAX,[0x01d086f0]                ; 004ef16e | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef16e | g_CustomKeyCount
         ;   Label: LAB_004ef16e
     IMUL EDI,EAX,0x28                   ; 004ef173
     ADD EDI,0x1d08790                   ; 004ef176
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef17c | g_INT_PTR_ARRAY_01d086f4[7]
-    PUSH EDI                            ; 004ef183 | g_CHAR_ARRAY_ARRAY_01d08790[7][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef17c | g_CustomKeyPointers[7]
+    PUSH EDI                            ; 004ef183 | g_CustomKeyNames[7][0]
     MOV AL,byte ptr [ESI]               ; 004ef184
         ;   Label: LAB_004ef184
-    MOV byte ptr [EDI],AL               ; 004ef186 | g_CHAR_ARRAY_ARRAY_01d08790[7][0] | g_CHAR_ARRAY_ARRAY_01d08790[7][2]
+    MOV byte ptr [EDI],AL               ; 004ef186 | g_CustomKeyNames[7][0] | g_CustomKeyNames[7][2]
     CMP AL,0x0                          ; 004ef188
     JZ 0x004ef19c                       ; 004ef18a
         ;   XREF to: 004ef19c (CONDITIONAL_JUMP)  ; LAB_004ef19c
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef18c
     ADD ESI,0x2                         ; 004ef18f
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef192 | g_CHAR_ARRAY_ARRAY_01d08790[7][1] | g_CHAR_ARRAY_ARRAY_01d08790[7][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef192 | g_CustomKeyNames[7][1] | g_CustomKeyNames[7][3]
     ADD EDI,0x2                         ; 004ef195
     CMP AL,0x0                          ; 004ef198
     JNZ 0x004ef184                      ; 004ef19a
         ;   XREF to: 004ef184 (CONDITIONAL_JUMP)  ; LAB_004ef184
     POP EDI                             ; 004ef19c
         ;   Label: LAB_004ef19c
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef19d | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef19d | g_CustomKeyCount
     INC ECX                             ; 004ef1a3
     PUSH 0x5dd3f0                       ; 004ef1a4 | = "Fire Gun/ Action"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef1a9 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef1a9 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef1af
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EDX,dword ptr [0x00616494]      ; 004ef1b4 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef1ba | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef1ba | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef1c0
     MOV ESI,EAX                         ; 004ef1c3
     LEA EBX,[EDX + 0x48]                ; 004ef1c5
@@ -442,35 +442,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef1e7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef1ec
-    MOV EAX,[0x01d086f0]                ; 004ef1ef | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef1ef | g_CustomKeyCount
         ;   Label: LAB_004ef1ef
     IMUL EDI,EAX,0x28                   ; 004ef1f4
     ADD EDI,0x1d08790                   ; 004ef1f7
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef1fd | g_INT_PTR_ARRAY_01d086f4[8]
-    PUSH EDI                            ; 004ef204 | g_CHAR_ARRAY_ARRAY_01d08790[8][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef1fd | g_CustomKeyPointers[8]
+    PUSH EDI                            ; 004ef204 | g_CustomKeyNames[8][0]
     MOV AL,byte ptr [ESI]               ; 004ef205
         ;   Label: LAB_004ef205
-    MOV byte ptr [EDI],AL               ; 004ef207 | g_CHAR_ARRAY_ARRAY_01d08790[8][0] | g_CHAR_ARRAY_ARRAY_01d08790[8][2]
+    MOV byte ptr [EDI],AL               ; 004ef207 | g_CustomKeyNames[8][0] | g_CustomKeyNames[8][2]
     CMP AL,0x0                          ; 004ef209
     JZ 0x004ef21d                       ; 004ef20b
         ;   XREF to: 004ef21d (CONDITIONAL_JUMP)  ; LAB_004ef21d
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef20d
     ADD ESI,0x2                         ; 004ef210
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef213 | g_CHAR_ARRAY_ARRAY_01d08790[8][1] | g_CHAR_ARRAY_ARRAY_01d08790[8][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef213 | g_CustomKeyNames[8][1] | g_CustomKeyNames[8][3]
     ADD EDI,0x2                         ; 004ef216
     CMP AL,0x0                          ; 004ef219
     JNZ 0x004ef205                      ; 004ef21b
         ;   XREF to: 004ef205 (CONDITIONAL_JUMP)  ; LAB_004ef205
     POP EDI                             ; 004ef21d
         ;   Label: LAB_004ef21d
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef21e | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef21e | g_CustomKeyCount
     INC ECX                             ; 004ef224
     PUSH 0x5dd401                       ; 004ef225 | = "Use item"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef22a | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef22a | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef230
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef235 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef23b | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef23b | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef241
     MOV ESI,EAX                         ; 004ef244
     ADD EBX,0x4c                        ; 004ef246
@@ -485,35 +485,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef268
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef26d
-    MOV EAX,[0x01d086f0]                ; 004ef270 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef270 | g_CustomKeyCount
         ;   Label: LAB_004ef270
     IMUL EDI,EAX,0x28                   ; 004ef275
     ADD EDI,0x1d08790                   ; 004ef278
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef27e | g_INT_PTR_ARRAY_01d086f4[9]
-    PUSH EDI                            ; 004ef285 | g_CHAR_ARRAY_ARRAY_01d08790[9][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef27e | g_CustomKeyPointers[9]
+    PUSH EDI                            ; 004ef285 | g_CustomKeyNames[9][0]
     MOV AL,byte ptr [ESI]               ; 004ef286
         ;   Label: LAB_004ef286
-    MOV byte ptr [EDI],AL               ; 004ef288 | g_CHAR_ARRAY_ARRAY_01d08790[9][0] | g_CHAR_ARRAY_ARRAY_01d08790[9][2]
+    MOV byte ptr [EDI],AL               ; 004ef288 | g_CustomKeyNames[9][0] | g_CustomKeyNames[9][2]
     CMP AL,0x0                          ; 004ef28a
     JZ 0x004ef29e                       ; 004ef28c
         ;   XREF to: 004ef29e (CONDITIONAL_JUMP)  ; LAB_004ef29e
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef28e
     ADD ESI,0x2                         ; 004ef291
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef294 | g_CHAR_ARRAY_ARRAY_01d08790[9][1] | g_CHAR_ARRAY_ARRAY_01d08790[9][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef294 | g_CustomKeyNames[9][1] | g_CustomKeyNames[9][3]
     ADD EDI,0x2                         ; 004ef297
     CMP AL,0x0                          ; 004ef29a
     JNZ 0x004ef286                      ; 004ef29c
         ;   XREF to: 004ef286 (CONDITIONAL_JUMP)  ; LAB_004ef286
     POP EDI                             ; 004ef29e
         ;   Label: LAB_004ef29e
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef29f | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef29f | g_CustomKeyCount
     INC ECX                             ; 004ef2a5
     PUSH 0x5dd40a                       ; 004ef2a6 | = "Lantern"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef2ab | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef2ab | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef2b1
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef2b6 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef2bc | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef2bc | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef2c2
     MOV ESI,EAX                         ; 004ef2c5
     ADD EBX,0x50                        ; 004ef2c7
@@ -528,35 +528,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef2e9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef2ee
-    MOV EAX,[0x01d086f0]                ; 004ef2f1 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef2f1 | g_CustomKeyCount
         ;   Label: LAB_004ef2f1
     IMUL EDI,EAX,0x28                   ; 004ef2f6
     ADD EDI,0x1d08790                   ; 004ef2f9
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef2ff | g_INT_PTR_ARRAY_01d086f4[10]
-    PUSH EDI                            ; 004ef306 | g_CHAR_ARRAY_ARRAY_01d08790[10][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef2ff | g_CustomKeyPointers[10]
+    PUSH EDI                            ; 004ef306 | g_CustomKeyNames[10][0]
     MOV AL,byte ptr [ESI]               ; 004ef307
         ;   Label: LAB_004ef307
-    MOV byte ptr [EDI],AL               ; 004ef309 | g_CHAR_ARRAY_ARRAY_01d08790[10][0] | g_CHAR_ARRAY_ARRAY_01d08790[10][2]
+    MOV byte ptr [EDI],AL               ; 004ef309 | g_CustomKeyNames[10][0] | g_CustomKeyNames[10][2]
     CMP AL,0x0                          ; 004ef30b
     JZ 0x004ef31f                       ; 004ef30d
         ;   XREF to: 004ef31f (CONDITIONAL_JUMP)  ; LAB_004ef31f
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef30f
     ADD ESI,0x2                         ; 004ef312
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef315 | g_CHAR_ARRAY_ARRAY_01d08790[10][1] | g_CHAR_ARRAY_ARRAY_01d08790[10][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef315 | g_CustomKeyNames[10][1] | g_CustomKeyNames[10][3]
     ADD EDI,0x2                         ; 004ef318
     CMP AL,0x0                          ; 004ef31b
     JNZ 0x004ef307                      ; 004ef31d
         ;   XREF to: 004ef307 (CONDITIONAL_JUMP)  ; LAB_004ef307
     POP EDI                             ; 004ef31f
         ;   Label: LAB_004ef31f
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef320 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef320 | g_CustomKeyCount
     INC ECX                             ; 004ef326
     PUSH 0x5dd412                       ; 004ef327 | = "Draw Gun"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef32c | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef32c | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef332
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef337 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef33d | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef33d | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef343
     MOV ESI,EAX                         ; 004ef346
     ADD EBX,0x68                        ; 004ef348
@@ -571,35 +571,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef36a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef36f
-    MOV EAX,[0x01d086f0]                ; 004ef372 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef372 | g_CustomKeyCount
         ;   Label: LAB_004ef372
     IMUL EDI,EAX,0x28                   ; 004ef377
     ADD EDI,0x1d08790                   ; 004ef37a
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef380 | g_INT_PTR_ARRAY_01d086f4[11]
-    PUSH EDI                            ; 004ef387 | g_CHAR_ARRAY_ARRAY_01d08790[11][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef380 | g_CustomKeyPointers[11]
+    PUSH EDI                            ; 004ef387 | g_CustomKeyNames[11][0]
     MOV AL,byte ptr [ESI]               ; 004ef388
         ;   Label: LAB_004ef388
-    MOV byte ptr [EDI],AL               ; 004ef38a | g_CHAR_ARRAY_ARRAY_01d08790[11][0] | g_CHAR_ARRAY_ARRAY_01d08790[11][2]
+    MOV byte ptr [EDI],AL               ; 004ef38a | g_CustomKeyNames[11][0] | g_CustomKeyNames[11][2]
     CMP AL,0x0                          ; 004ef38c
     JZ 0x004ef3a0                       ; 004ef38e
         ;   XREF to: 004ef3a0 (CONDITIONAL_JUMP)  ; LAB_004ef3a0
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef390
     ADD ESI,0x2                         ; 004ef393
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef396 | g_CHAR_ARRAY_ARRAY_01d08790[11][1] | g_CHAR_ARRAY_ARRAY_01d08790[11][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef396 | g_CustomKeyNames[11][1] | g_CustomKeyNames[11][3]
     ADD EDI,0x2                         ; 004ef399
     CMP AL,0x0                          ; 004ef39c
     JNZ 0x004ef388                      ; 004ef39e
         ;   XREF to: 004ef388 (CONDITIONAL_JUMP)  ; LAB_004ef388
     POP EDI                             ; 004ef3a0
         ;   Label: LAB_004ef3a0
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef3a1 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef3a1 | g_CustomKeyCount
     INC ECX                             ; 004ef3a7
     PUSH 0x5dd41b                       ; 004ef3a8 | = "Point up"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef3ad | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef3ad | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef3b3
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef3b8 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef3be | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef3be | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef3c4
     MOV ESI,EAX                         ; 004ef3c7
     ADD EBX,0x74                        ; 004ef3c9
@@ -614,35 +614,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef3eb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef3f0
-    MOV EAX,[0x01d086f0]                ; 004ef3f3 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef3f3 | g_CustomKeyCount
         ;   Label: LAB_004ef3f3
     IMUL EDI,EAX,0x28                   ; 004ef3f8
     ADD EDI,0x1d08790                   ; 004ef3fb
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef401 | g_INT_PTR_ARRAY_01d086f4[12]
-    PUSH EDI                            ; 004ef408 | g_CHAR_ARRAY_ARRAY_01d08790[12][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef401 | g_CustomKeyPointers[12]
+    PUSH EDI                            ; 004ef408 | g_CustomKeyNames[12][0]
     MOV AL,byte ptr [ESI]               ; 004ef409
         ;   Label: LAB_004ef409
-    MOV byte ptr [EDI],AL               ; 004ef40b | g_CHAR_ARRAY_ARRAY_01d08790[12][0] | g_CHAR_ARRAY_ARRAY_01d08790[12][2]
+    MOV byte ptr [EDI],AL               ; 004ef40b | g_CustomKeyNames[12][0] | g_CustomKeyNames[12][2]
     CMP AL,0x0                          ; 004ef40d
     JZ 0x004ef421                       ; 004ef40f
         ;   XREF to: 004ef421 (CONDITIONAL_JUMP)  ; LAB_004ef421
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef411
     ADD ESI,0x2                         ; 004ef414
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef417 | g_CHAR_ARRAY_ARRAY_01d08790[12][1] | g_CHAR_ARRAY_ARRAY_01d08790[12][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef417 | g_CustomKeyNames[12][1] | g_CustomKeyNames[12][3]
     ADD EDI,0x2                         ; 004ef41a
     CMP AL,0x0                          ; 004ef41d
     JNZ 0x004ef409                      ; 004ef41f
         ;   XREF to: 004ef409 (CONDITIONAL_JUMP)  ; LAB_004ef409
     POP EDI                             ; 004ef421
         ;   Label: LAB_004ef421
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef422 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef422 | g_CustomKeyCount
     INC ECX                             ; 004ef428
     PUSH 0x5dd424                       ; 004ef429 | = "Point down"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef42e | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef42e | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef434
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef439 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef43f | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef43f | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef445
     MOV ESI,EAX                         ; 004ef448
     ADD EBX,0x78                        ; 004ef44a
@@ -657,35 +657,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef46c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef471
-    MOV EAX,[0x01d086f0]                ; 004ef474 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef474 | g_CustomKeyCount
         ;   Label: LAB_004ef474
     IMUL EDI,EAX,0x28                   ; 004ef479
     ADD EDI,0x1d08790                   ; 004ef47c
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef482 | g_INT_PTR_ARRAY_01d086f4[13]
-    PUSH EDI                            ; 004ef489 | g_CHAR_ARRAY_ARRAY_01d08790[13][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef482 | g_CustomKeyPointers[13]
+    PUSH EDI                            ; 004ef489 | g_CustomKeyNames[13][0]
     MOV AL,byte ptr [ESI]               ; 004ef48a
         ;   Label: LAB_004ef48a
-    MOV byte ptr [EDI],AL               ; 004ef48c | g_CHAR_ARRAY_ARRAY_01d08790[13][0] | g_CHAR_ARRAY_ARRAY_01d08790[13][2]
+    MOV byte ptr [EDI],AL               ; 004ef48c | g_CustomKeyNames[13][0] | g_CustomKeyNames[13][2]
     CMP AL,0x0                          ; 004ef48e
     JZ 0x004ef4a2                       ; 004ef490
         ;   XREF to: 004ef4a2 (CONDITIONAL_JUMP)  ; LAB_004ef4a2
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef492
     ADD ESI,0x2                         ; 004ef495
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef498 | g_CHAR_ARRAY_ARRAY_01d08790[13][1] | g_CHAR_ARRAY_ARRAY_01d08790[13][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef498 | g_CustomKeyNames[13][1] | g_CustomKeyNames[13][3]
     ADD EDI,0x2                         ; 004ef49b
     CMP AL,0x0                          ; 004ef49e
     JNZ 0x004ef48a                      ; 004ef4a0
         ;   XREF to: 004ef48a (CONDITIONAL_JUMP)  ; LAB_004ef48a
     POP EDI                             ; 004ef4a2
         ;   Label: LAB_004ef4a2
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef4a3 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef4a3 | g_CustomKeyCount
     INC ECX                             ; 004ef4a9
     PUSH 0x5dd42f                       ; 004ef4aa | = "Select Revolver"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef4af | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef4af | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef4b5
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef4ba | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef4c0 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef4c0 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef4c6
     MOV ESI,EAX                         ; 004ef4c9
     ADD EBX,0x7c                        ; 004ef4cb
@@ -700,35 +700,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef4ed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef4f2
-    MOV EAX,[0x01d086f0]                ; 004ef4f5 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef4f5 | g_CustomKeyCount
         ;   Label: LAB_004ef4f5
     IMUL EDI,EAX,0x28                   ; 004ef4fa
     ADD EDI,0x1d08790                   ; 004ef4fd
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef503 | g_INT_PTR_ARRAY_01d086f4[14]
-    PUSH EDI                            ; 004ef50a | g_CHAR_ARRAY_ARRAY_01d08790[14][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef503 | g_CustomKeyPointers[14]
+    PUSH EDI                            ; 004ef50a | g_CustomKeyNames[14][0]
     MOV AL,byte ptr [ESI]               ; 004ef50b
         ;   Label: LAB_004ef50b
-    MOV byte ptr [EDI],AL               ; 004ef50d | g_CHAR_ARRAY_ARRAY_01d08790[14][0] | g_CHAR_ARRAY_ARRAY_01d08790[14][2]
+    MOV byte ptr [EDI],AL               ; 004ef50d | g_CustomKeyNames[14][0] | g_CustomKeyNames[14][2]
     CMP AL,0x0                          ; 004ef50f
     JZ 0x004ef523                       ; 004ef511
         ;   XREF to: 004ef523 (CONDITIONAL_JUMP)  ; LAB_004ef523
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef513
     ADD ESI,0x2                         ; 004ef516
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef519 | g_CHAR_ARRAY_ARRAY_01d08790[14][1] | g_CHAR_ARRAY_ARRAY_01d08790[14][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef519 | g_CustomKeyNames[14][1] | g_CustomKeyNames[14][3]
     ADD EDI,0x2                         ; 004ef51c
     CMP AL,0x0                          ; 004ef51f
     JNZ 0x004ef50b                      ; 004ef521
         ;   XREF to: 004ef50b (CONDITIONAL_JUMP)  ; LAB_004ef50b
     POP EDI                             ; 004ef523
         ;   Label: LAB_004ef523
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef524 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef524 | g_CustomKeyCount
     INC ECX                             ; 004ef52a
     PUSH 0x5dd43f                       ; 004ef52b | = "Select Sword / Axe"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef530 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef530 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef536
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef53b | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef541 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef541 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef547
     MOV ESI,EAX                         ; 004ef54a
     ADD EBX,0x80                        ; 004ef54c
@@ -743,35 +743,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef571
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef576
-    MOV EAX,[0x01d086f0]                ; 004ef579 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef579 | g_CustomKeyCount
         ;   Label: LAB_004ef579
     IMUL EDI,EAX,0x28                   ; 004ef57e
     ADD EDI,0x1d08790                   ; 004ef581
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef587 | g_INT_PTR_ARRAY_01d086f4[15]
-    PUSH EDI                            ; 004ef58e | g_CHAR_ARRAY_ARRAY_01d08790[15][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef587 | g_CustomKeyPointers[15]
+    PUSH EDI                            ; 004ef58e | g_CustomKeyNames[15][0]
     MOV AL,byte ptr [ESI]               ; 004ef58f
         ;   Label: LAB_004ef58f
-    MOV byte ptr [EDI],AL               ; 004ef591 | g_CHAR_ARRAY_ARRAY_01d08790[15][0] | g_CHAR_ARRAY_ARRAY_01d08790[15][2]
+    MOV byte ptr [EDI],AL               ; 004ef591 | g_CustomKeyNames[15][0] | g_CustomKeyNames[15][2]
     CMP AL,0x0                          ; 004ef593
     JZ 0x004ef5a7                       ; 004ef595
         ;   XREF to: 004ef5a7 (CONDITIONAL_JUMP)  ; LAB_004ef5a7
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef597
     ADD ESI,0x2                         ; 004ef59a
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef59d | g_CHAR_ARRAY_ARRAY_01d08790[15][1] | g_CHAR_ARRAY_ARRAY_01d08790[15][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef59d | g_CustomKeyNames[15][1] | g_CustomKeyNames[15][3]
     ADD EDI,0x2                         ; 004ef5a0
     CMP AL,0x0                          ; 004ef5a3
     JNZ 0x004ef58f                      ; 004ef5a5
         ;   XREF to: 004ef58f (CONDITIONAL_JUMP)  ; LAB_004ef58f
     POP EDI                             ; 004ef5a7
         ;   Label: LAB_004ef5a7
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef5a8 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef5a8 | g_CustomKeyCount
     INC ECX                             ; 004ef5ae
     PUSH 0x5dd452                       ; 004ef5af | = "Select Cross"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef5b4 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef5b4 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef5ba
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef5bf | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef5c5 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef5c5 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef5cb
     MOV ESI,EAX                         ; 004ef5ce
     ADD EBX,0x84                        ; 004ef5d0
@@ -786,35 +786,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef5f5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef5fa
-    MOV EAX,[0x01d086f0]                ; 004ef5fd | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef5fd | g_CustomKeyCount
         ;   Label: LAB_004ef5fd
     IMUL EDI,EAX,0x28                   ; 004ef602
     ADD EDI,0x1d08790                   ; 004ef605
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef60b | g_INT_PTR_ARRAY_01d086f4[16]
-    PUSH EDI                            ; 004ef612 | g_CHAR_ARRAY_ARRAY_01d08790[16][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef60b | g_CustomKeyPointers[16]
+    PUSH EDI                            ; 004ef612 | g_CustomKeyNames[16][0]
     MOV AL,byte ptr [ESI]               ; 004ef613
         ;   Label: LAB_004ef613
-    MOV byte ptr [EDI],AL               ; 004ef615 | g_CHAR_ARRAY_ARRAY_01d08790[16][0] | g_CHAR_ARRAY_ARRAY_01d08790[16][2]
+    MOV byte ptr [EDI],AL               ; 004ef615 | g_CustomKeyNames[16][0] | g_CustomKeyNames[16][2]
     CMP AL,0x0                          ; 004ef617
     JZ 0x004ef62b                       ; 004ef619
         ;   XREF to: 004ef62b (CONDITIONAL_JUMP)  ; LAB_004ef62b
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef61b
     ADD ESI,0x2                         ; 004ef61e
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef621 | g_CHAR_ARRAY_ARRAY_01d08790[16][1] | g_CHAR_ARRAY_ARRAY_01d08790[16][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef621 | g_CustomKeyNames[16][1] | g_CustomKeyNames[16][3]
     ADD EDI,0x2                         ; 004ef624
     CMP AL,0x0                          ; 004ef627
     JNZ 0x004ef613                      ; 004ef629
         ;   XREF to: 004ef613 (CONDITIONAL_JUMP)  ; LAB_004ef613
     POP EDI                             ; 004ef62b
         ;   Label: LAB_004ef62b
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef62c | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef62c | g_CustomKeyCount
     INC ECX                             ; 004ef632
     PUSH 0x5dd45f                       ; 004ef633 | = "Next weapon"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef638 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef638 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef63e
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EDX,dword ptr [0x00616494]      ; 004ef643 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef649 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef649 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef64f
     MOV ESI,EAX                         ; 004ef652
     LEA EBX,[EDX + 0x90]                ; 004ef654
@@ -829,35 +829,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef679
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef67e
-    MOV EAX,[0x01d086f0]                ; 004ef681 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef681 | g_CustomKeyCount
         ;   Label: LAB_004ef681
     IMUL EDI,EAX,0x28                   ; 004ef686
     ADD EDI,0x1d08790                   ; 004ef689
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef68f | g_INT_PTR_ARRAY_01d086f4[17]
-    PUSH EDI                            ; 004ef696 | g_CHAR_ARRAY_ARRAY_01d08790[17][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef68f | g_CustomKeyPointers[17]
+    PUSH EDI                            ; 004ef696 | g_CustomKeyNames[17][0]
     MOV AL,byte ptr [ESI]               ; 004ef697
         ;   Label: LAB_004ef697
-    MOV byte ptr [EDI],AL               ; 004ef699 | g_CHAR_ARRAY_ARRAY_01d08790[17][0] | g_CHAR_ARRAY_ARRAY_01d08790[17][2]
+    MOV byte ptr [EDI],AL               ; 004ef699 | g_CustomKeyNames[17][0] | g_CustomKeyNames[17][2]
     CMP AL,0x0                          ; 004ef69b
     JZ 0x004ef6af                       ; 004ef69d
         ;   XREF to: 004ef6af (CONDITIONAL_JUMP)  ; LAB_004ef6af
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef69f
     ADD ESI,0x2                         ; 004ef6a2
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef6a5 | g_CHAR_ARRAY_ARRAY_01d08790[17][1] | g_CHAR_ARRAY_ARRAY_01d08790[17][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef6a5 | g_CustomKeyNames[17][1] | g_CustomKeyNames[17][3]
     ADD EDI,0x2                         ; 004ef6a8
     CMP AL,0x0                          ; 004ef6ab
     JNZ 0x004ef697                      ; 004ef6ad
         ;   XREF to: 004ef697 (CONDITIONAL_JUMP)  ; LAB_004ef697
     POP EDI                             ; 004ef6af
         ;   Label: LAB_004ef6af
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef6b0 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef6b0 | g_CustomKeyCount
     INC ECX                             ; 004ef6b6
     PUSH 0x5dd46b                       ; 004ef6b7 | = "Previous weapon"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef6bc | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef6bc | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef6c2
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef6c7 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef6cd | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef6cd | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef6d3
     MOV ESI,EAX                         ; 004ef6d6
     ADD EBX,0x94                        ; 004ef6d8
@@ -872,35 +872,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef6fd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef702
-    MOV EAX,[0x01d086f0]                ; 004ef705 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef705 | g_CustomKeyCount
         ;   Label: LAB_004ef705
     IMUL EDI,EAX,0x28                   ; 004ef70a
     ADD EDI,0x1d08790                   ; 004ef70d
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef713 | g_INT_PTR_ARRAY_01d086f4[18]
-    PUSH EDI                            ; 004ef71a | g_CHAR_ARRAY_ARRAY_01d08790[18][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef713 | g_CustomKeyPointers[18]
+    PUSH EDI                            ; 004ef71a | g_CustomKeyNames[18][0]
     MOV AL,byte ptr [ESI]               ; 004ef71b
         ;   Label: LAB_004ef71b
-    MOV byte ptr [EDI],AL               ; 004ef71d | g_CHAR_ARRAY_ARRAY_01d08790[18][0] | g_CHAR_ARRAY_ARRAY_01d08790[18][2]
+    MOV byte ptr [EDI],AL               ; 004ef71d | g_CustomKeyNames[18][0] | g_CustomKeyNames[18][2]
     CMP AL,0x0                          ; 004ef71f
     JZ 0x004ef733                       ; 004ef721
         ;   XREF to: 004ef733 (CONDITIONAL_JUMP)  ; LAB_004ef733
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef723
     ADD ESI,0x2                         ; 004ef726
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef729 | g_CHAR_ARRAY_ARRAY_01d08790[18][1] | g_CHAR_ARRAY_ARRAY_01d08790[18][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef729 | g_CustomKeyNames[18][1] | g_CustomKeyNames[18][3]
     ADD EDI,0x2                         ; 004ef72c
     CMP AL,0x0                          ; 004ef72f
     JNZ 0x004ef71b                      ; 004ef731
         ;   XREF to: 004ef71b (CONDITIONAL_JUMP)  ; LAB_004ef71b
     POP EDI                             ; 004ef733
         ;   Label: LAB_004ef733
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef734 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef734 | g_CustomKeyCount
     INC ECX                             ; 004ef73a
     PUSH 0x5dd47b                       ; 004ef73b | = "Next item"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef740 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef740 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef746
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef74b | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef751 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef751 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef757
     MOV ESI,EAX                         ; 004ef75a
     ADD EBX,0x98                        ; 004ef75c
@@ -915,35 +915,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef781
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef786
-    MOV EAX,[0x01d086f0]                ; 004ef789 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef789 | g_CustomKeyCount
         ;   Label: LAB_004ef789
     IMUL EDI,EAX,0x28                   ; 004ef78e
     ADD EDI,0x1d08790                   ; 004ef791
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef797 | g_INT_PTR_ARRAY_01d086f4[19]
-    PUSH EDI                            ; 004ef79e | g_CHAR_ARRAY_ARRAY_01d08790[19][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef797 | g_CustomKeyPointers[19]
+    PUSH EDI                            ; 004ef79e | g_CustomKeyNames[19][0]
     MOV AL,byte ptr [ESI]               ; 004ef79f
         ;   Label: LAB_004ef79f
-    MOV byte ptr [EDI],AL               ; 004ef7a1 | g_CHAR_ARRAY_ARRAY_01d08790[19][0] | g_CHAR_ARRAY_ARRAY_01d08790[19][2]
+    MOV byte ptr [EDI],AL               ; 004ef7a1 | g_CustomKeyNames[19][0] | g_CustomKeyNames[19][2]
     CMP AL,0x0                          ; 004ef7a3
     JZ 0x004ef7b7                       ; 004ef7a5
         ;   XREF to: 004ef7b7 (CONDITIONAL_JUMP)  ; LAB_004ef7b7
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef7a7
     ADD ESI,0x2                         ; 004ef7aa
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef7ad | g_CHAR_ARRAY_ARRAY_01d08790[19][1] | g_CHAR_ARRAY_ARRAY_01d08790[19][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef7ad | g_CustomKeyNames[19][1] | g_CustomKeyNames[19][3]
     ADD EDI,0x2                         ; 004ef7b0
     CMP AL,0x0                          ; 004ef7b3
     JNZ 0x004ef79f                      ; 004ef7b5
         ;   XREF to: 004ef79f (CONDITIONAL_JUMP)  ; LAB_004ef79f
     POP EDI                             ; 004ef7b7
         ;   Label: LAB_004ef7b7
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef7b8 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef7b8 | g_CustomKeyCount
     INC ECX                             ; 004ef7be
     PUSH 0x5dd485                       ; 004ef7bf | = "Previous item"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef7c4 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef7c4 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef7ca
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef7cf | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef7d5 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef7d5 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef7db
     MOV ESI,EAX                         ; 004ef7de
     ADD EBX,0x9c                        ; 004ef7e0
@@ -958,35 +958,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef805
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef80a
-    MOV EAX,[0x01d086f0]                ; 004ef80d | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef80d | g_CustomKeyCount
         ;   Label: LAB_004ef80d
     IMUL EDI,EAX,0x28                   ; 004ef812
     ADD EDI,0x1d08790                   ; 004ef815
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef81b | g_INT_PTR_ARRAY_01d086f4[20]
-    PUSH EDI                            ; 004ef822 | g_CHAR_ARRAY_ARRAY_01d08790[20][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef81b | g_CustomKeyPointers[20]
+    PUSH EDI                            ; 004ef822 | g_CustomKeyNames[20][0]
     MOV AL,byte ptr [ESI]               ; 004ef823
         ;   Label: LAB_004ef823
-    MOV byte ptr [EDI],AL               ; 004ef825 | g_CHAR_ARRAY_ARRAY_01d08790[20][0] | g_CHAR_ARRAY_ARRAY_01d08790[20][2]
+    MOV byte ptr [EDI],AL               ; 004ef825 | g_CustomKeyNames[20][0] | g_CustomKeyNames[20][2]
     CMP AL,0x0                          ; 004ef827
     JZ 0x004ef83b                       ; 004ef829
         ;   XREF to: 004ef83b (CONDITIONAL_JUMP)  ; LAB_004ef83b
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef82b
     ADD ESI,0x2                         ; 004ef82e
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef831 | g_CHAR_ARRAY_ARRAY_01d08790[20][1] | g_CHAR_ARRAY_ARRAY_01d08790[20][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef831 | g_CustomKeyNames[20][1] | g_CustomKeyNames[20][3]
     ADD EDI,0x2                         ; 004ef834
     CMP AL,0x0                          ; 004ef837
     JNZ 0x004ef823                      ; 004ef839
         ;   XREF to: 004ef823 (CONDITIONAL_JUMP)  ; LAB_004ef823
     POP EDI                             ; 004ef83b
         ;   Label: LAB_004ef83b
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef83c | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef83c | g_CustomKeyCount
     INC ECX                             ; 004ef842
     PUSH 0x5dd493                       ; 004ef843 | = "Item description"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef848 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef848 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef84e
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef853 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef859 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef859 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef85f
     MOV ESI,EAX                         ; 004ef862
     ADD EBX,0xa0                        ; 004ef864
@@ -1001,35 +1001,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef889
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef88e
-    MOV EAX,[0x01d086f0]                ; 004ef891 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef891 | g_CustomKeyCount
         ;   Label: LAB_004ef891
     IMUL EDI,EAX,0x28                   ; 004ef896
     ADD EDI,0x1d08790                   ; 004ef899
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef89f | g_INT_PTR_ARRAY_01d086f4[21]
-    PUSH EDI                            ; 004ef8a6 | g_CHAR_ARRAY_ARRAY_01d08790[21][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef89f | g_CustomKeyPointers[21]
+    PUSH EDI                            ; 004ef8a6 | g_CustomKeyNames[21][0]
     MOV AL,byte ptr [ESI]               ; 004ef8a7
         ;   Label: LAB_004ef8a7
-    MOV byte ptr [EDI],AL               ; 004ef8a9 | g_CHAR_ARRAY_ARRAY_01d08790[21][0] | g_CHAR_ARRAY_ARRAY_01d08790[21][2]
+    MOV byte ptr [EDI],AL               ; 004ef8a9 | g_CustomKeyNames[21][0] | g_CustomKeyNames[21][2]
     CMP AL,0x0                          ; 004ef8ab
     JZ 0x004ef8bf                       ; 004ef8ad
         ;   XREF to: 004ef8bf (CONDITIONAL_JUMP)  ; LAB_004ef8bf
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef8af
     ADD ESI,0x2                         ; 004ef8b2
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef8b5 | g_CHAR_ARRAY_ARRAY_01d08790[21][1] | g_CHAR_ARRAY_ARRAY_01d08790[21][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef8b5 | g_CustomKeyNames[21][1] | g_CustomKeyNames[21][3]
     ADD EDI,0x2                         ; 004ef8b8
     CMP AL,0x0                          ; 004ef8bb
     JNZ 0x004ef8a7                      ; 004ef8bd
         ;   XREF to: 004ef8a7 (CONDITIONAL_JUMP)  ; LAB_004ef8a7
     POP EDI                             ; 004ef8bf
         ;   Label: LAB_004ef8bf
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef8c0 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef8c0 | g_CustomKeyCount
     INC ECX                             ; 004ef8c6
     PUSH 0x5dd4a4                       ; 004ef8c7 | = "Next ammo"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef8cc | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef8cc | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef8d2
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EDX,dword ptr [0x00616494]      ; 004ef8d7 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef8dd | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef8dd | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef8e3
     MOV ESI,EAX                         ; 004ef8e6
     LEA EBX,[EDX + 0xa4]                ; 004ef8e8
@@ -1044,35 +1044,35 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef90d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef912
-    MOV EAX,[0x01d086f0]                ; 004ef915 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef915 | g_CustomKeyCount
         ;   Label: LAB_004ef915
     IMUL EDI,EAX,0x28                   ; 004ef91a
     ADD EDI,0x1d08790                   ; 004ef91d
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef923 | g_INT_PTR_ARRAY_01d086f4[22]
-    PUSH EDI                            ; 004ef92a | g_CHAR_ARRAY_ARRAY_01d08790[22][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef923 | g_CustomKeyPointers[22]
+    PUSH EDI                            ; 004ef92a | g_CustomKeyNames[22][0]
     MOV AL,byte ptr [ESI]               ; 004ef92b
         ;   Label: LAB_004ef92b
-    MOV byte ptr [EDI],AL               ; 004ef92d | g_CHAR_ARRAY_ARRAY_01d08790[22][0] | g_CHAR_ARRAY_ARRAY_01d08790[22][2]
+    MOV byte ptr [EDI],AL               ; 004ef92d | g_CustomKeyNames[22][0] | g_CustomKeyNames[22][2]
     CMP AL,0x0                          ; 004ef92f
     JZ 0x004ef943                       ; 004ef931
         ;   XREF to: 004ef943 (CONDITIONAL_JUMP)  ; LAB_004ef943
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef933
     ADD ESI,0x2                         ; 004ef936
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef939 | g_CHAR_ARRAY_ARRAY_01d08790[22][1] | g_CHAR_ARRAY_ARRAY_01d08790[22][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef939 | g_CustomKeyNames[22][1] | g_CustomKeyNames[22][3]
     ADD EDI,0x2                         ; 004ef93c
     CMP AL,0x0                          ; 004ef93f
     JNZ 0x004ef92b                      ; 004ef941
         ;   XREF to: 004ef92b (CONDITIONAL_JUMP)  ; LAB_004ef92b
     POP EDI                             ; 004ef943
         ;   Label: LAB_004ef943
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef944 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef944 | g_CustomKeyCount
     INC ECX                             ; 004ef94a
     PUSH 0x5dd4ae                       ; 004ef94b | = "Drop item or weapon"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef950 | g_INT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef950 | g_CustomKeyCount
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef956
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef95b | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef961 | g_INT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef961 | g_CustomKeyCount
     ADD ESP,0x4                         ; 004ef967
     MOV ESI,EAX                         ; 004ef96a
     ADD EBX,0xaf0                       ; 004ef96c
@@ -1087,28 +1087,28 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef991
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef996
-    MOV EAX,[0x01d086f0]                ; 004ef999 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef999 | g_CustomKeyCount
         ;   Label: LAB_004ef999
     IMUL EDI,EAX,0x28                   ; 004ef99e
     ADD EDI,0x1d08790                   ; 004ef9a1
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef9a7 | g_INT_PTR_ARRAY_01d086f4[23]
-    PUSH EDI                            ; 004ef9ae | g_CHAR_ARRAY_ARRAY_01d08790[23][0]
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef9a7 | g_CustomKeyPointers[23]
+    PUSH EDI                            ; 004ef9ae | g_CustomKeyNames[23][0]
     MOV AL,byte ptr [ESI]               ; 004ef9af
         ;   Label: LAB_004ef9af
-    MOV byte ptr [EDI],AL               ; 004ef9b1 | g_CHAR_ARRAY_ARRAY_01d08790[23][0] | g_CHAR_ARRAY_ARRAY_01d08790[23][2]
+    MOV byte ptr [EDI],AL               ; 004ef9b1 | g_CustomKeyNames[23][0] | g_CustomKeyNames[23][2]
     CMP AL,0x0                          ; 004ef9b3
     JZ 0x004ef9c7                       ; 004ef9b5
         ;   XREF to: 004ef9c7 (CONDITIONAL_JUMP)  ; LAB_004ef9c7
     MOV AL,byte ptr [ESI + 0x1]         ; 004ef9b7
     ADD ESI,0x2                         ; 004ef9ba
-    MOV byte ptr [EDI + 0x1],AL         ; 004ef9bd | g_CHAR_ARRAY_ARRAY_01d08790[23][1] | g_CHAR_ARRAY_ARRAY_01d08790[23][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004ef9bd | g_CustomKeyNames[23][1] | g_CustomKeyNames[23][3]
     ADD EDI,0x2                         ; 004ef9c0
     CMP AL,0x0                          ; 004ef9c3
     JNZ 0x004ef9af                      ; 004ef9c5
         ;   XREF to: 004ef9af (CONDITIONAL_JUMP)  ; LAB_004ef9af
     POP EDI                             ; 004ef9c7
         ;   Label: LAB_004ef9c7
-    INC dword ptr [0x01d086f0]          ; 004ef9c8 | g_INT_01d086f0
+    INC dword ptr [0x01d086f0]          ; 004ef9c8 | g_CustomKeyCount
     CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 004ef9ce
         ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0055b1f0()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004ef9d3
@@ -1128,14 +1128,14 @@ section .text
     XOR EDI,EDI                         ; 004ef9f8
     CALL shape_edittool.cpp_CStrList_add_FUN_00480e70 ; 004ef9fa
         ;   XREF to: 00480e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00480e70(CStrList * this_ptr, char * string_data)
-    MOV EBX,dword ptr [0x01d086f0]      ; 004ef9ff | g_INT_01d086f0
+    MOV EBX,dword ptr [0x01d086f0]      ; 004ef9ff | g_CustomKeyCount
     ADD ESP,0x8                         ; 004efa05
     TEST EBX,EBX                        ; 004efa08
     JLE 0x004efa60                      ; 004efa0a
         ;   XREF to: 004efa60 (CONDITIONAL_JUMP)  ; LAB_004efa60
     MOV EBX,0x1d08790                   ; 004efa0c
     XOR ESI,ESI                         ; 004efa11
-    MOV EAX,dword ptr [ESI + 0x1d086f4] ; 004efa13 | g_INT_PTR_ARRAY_01d086f4 | g_INT_PTR_ARRAY_01d086f4[1]
+    MOV EAX,dword ptr [ESI + 0x1d086f4] ; 004efa13 | g_CustomKeyPointers | g_CustomKeyPointers[1]
         ;   Label: LAB_004efa13
     MOV EBP,dword ptr [EAX]             ; 004efa19 | g_CGameInstance.key_walk | g_CGameInstance.key_backup
     PUSH EBP                            ; 004efa1b
@@ -1159,7 +1159,7 @@ section .text
     ADD EBX,0x28                        ; 004efa4c
     CALL shape_edittool.cpp_CStrList_add_FUN_00480e70 ; 004efa4f
         ;   XREF to: 00480e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00480e70(CStrList * this_ptr, char * string_data)
-    MOV EAX,[0x01d086f0]                ; 004efa54 | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004efa54 | g_CustomKeyCount
     ADD ESP,0x8                         ; 004efa59
     CMP EDI,EAX                         ; 004efa5c
     JL 0x004efa13                       ; 004efa5e
@@ -1357,7 +1357,7 @@ section .text
     XOR EBX,EBX                         ; 004efc24
     PUSH EBX                            ; 004efc26
         ;   Label: LAB_004efc26
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efc27 | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efc27 | g_CKeysPtr
     PUSH ESI                            ; 004efc2d | g_PTR_01d02f84
     MOV EAX,dword ptr [ESI]             ; 004efc2e | g_PTR_01d02f84
     CALL dword ptr [EAX]                ; 004efc30
@@ -1379,7 +1379,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 004efc56
         ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efc5b
-    MOV EAX,[0x00617dd4]                ; 004efc5e | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004efc5e | g_CKeysPtr
     PUSH 0x1                            ; 004efc63
     MOV EDX,dword ptr [EAX]             ; 004efc65 | g_PTR_01d02f84
     PUSH EAX                            ; 004efc67 | g_PTR_01d02f84
@@ -1409,7 +1409,7 @@ section .text
         ;   XREF to: 004efc41 (CONDITIONAL_JUMP)  ; LAB_004efc41
     PUSH 0x1                            ; 004efc91
         ;   Label: LAB_004efc91
-    MOV EAX,[0x00617dd4]                ; 004efc93 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004efc93 | g_CKeysPtr
     PUSH EAX                            ; 004efc98 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004efc99 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 004efc9b
@@ -1471,7 +1471,7 @@ section .text
         ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efd1e
     PUSH 0x1                            ; 004efd21
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efd23 | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efd23 | g_CKeysPtr
     PUSH ESI                            ; 004efd29 | g_PTR_01d02f84
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0 ; 004efd2a
         ;   XREF to: 004dfee0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0(CKeys * this_ptr, int enable_extended)
@@ -1488,7 +1488,7 @@ section .text
     XOR EBX,EBX                         ; 004efd4e
     PUSH EBX                            ; 004efd50
         ;   Label: LAB_004efd50
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efd51 | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efd51 | g_CKeysPtr
     PUSH ESI                            ; 004efd57 | g_PTR_01d02f84
     MOV EAX,dword ptr [ESI]             ; 004efd58 | g_PTR_01d02f84
     CALL dword ptr [EAX]                ; 004efd5a
@@ -1508,7 +1508,7 @@ section .text
     TEST EDI,EDI                        ; 004efd72
     JL 0x004efd32                       ; 004efd74
         ;   XREF to: 004efd32 (CONDITIONAL_JUMP)  ; LAB_004efd32
-    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efd76 | g_INT_PTR_ARRAY_01d086f4
+    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efd76 | g_CustomKeyPointers
     PUSH 0x5dd59b                       ; 004efd7d | = "OK - you can release the key now..."
     MOV dword ptr [EAX],EDI             ; 004efd82
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004efd84
@@ -1530,7 +1530,7 @@ section .text
     XOR EBX,EBX                         ; 004efdae
     PUSH EBX                            ; 004efdb0
         ;   Label: LAB_004efdb0
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efdb1 | g_CKeys_PTR_00617dd4
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efdb1 | g_CKeysPtr
     PUSH ESI                            ; 004efdb7 | g_PTR_01d02f84
     MOV EAX,dword ptr [ESI]             ; 004efdb8 | g_PTR_01d02f84
     CALL dword ptr [EAX]                ; 004efdba
@@ -1583,7 +1583,7 @@ section .text
     CMP EDI,-0x1                        ; 004efe14
     JNZ 0x004efdcb                      ; 004efe17
         ;   XREF to: 004efdcb (CONDITIONAL_JUMP)  ; LAB_004efdcb
-    MOV ECX,dword ptr [0x01d086f0]      ; 004efe19 | g_INT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004efe19 | g_CustomKeyCount
     XOR EAX,EAX                         ; 004efe1f
     TEST ECX,ECX                        ; 004efe21
     JLE 0x004efe40                      ; 004efe23
@@ -1594,7 +1594,7 @@ section .text
         ;   Label: LAB_004efe2e
     JNZ 0x004efe57                      ; 004efe30
         ;   XREF to: 004efe57 (CONDITIONAL_JUMP)  ; LAB_004efe57
-    MOV ESI,dword ptr [0x01d086f0]      ; 004efe32 | g_INT_01d086f0
+    MOV ESI,dword ptr [0x01d086f0]      ; 004efe32 | g_CustomKeyCount
         ;   Label: LAB_004efe32
     INC EAX                             ; 004efe38
     ADD EBX,0x4                         ; 004efe39
@@ -1603,7 +1603,7 @@ section .text
         ;   XREF to: 004efe2e (CONDITIONAL_JUMP)  ; LAB_004efe2e
     PUSH 0x0                            ; 004efe40
         ;   Label: LAB_004efe40
-    MOV EDI,dword ptr [0x00617dd4]      ; 004efe42 | g_CKeys_PTR_00617dd4
+    MOV EDI,dword ptr [0x00617dd4]      ; 004efe42 | g_CKeysPtr
     PUSH EDI                            ; 004efe48 | g_PTR_01d02f84
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0 ; 004efe49
         ;   XREF to: 004dfee0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0(CKeys * this_ptr, int enable_extended)
@@ -1613,9 +1613,9 @@ section .text
         ;   Label: LAB_004efe53
     JMP 0x004efe0b                      ; 004efe55
         ;   XREF to: 004efe0b (UNCONDITIONAL_JUMP)  ; LAB_004efe0b
-    MOV ESI,dword ptr [EBX + 0x1d086f4] ; 004efe57 | g_INT_PTR_ARRAY_01d086f4[1]
+    MOV ESI,dword ptr [EBX + 0x1d086f4] ; 004efe57 | g_CustomKeyPointers[1]
         ;   Label: LAB_004efe57
-    MOV EDI,dword ptr [ECX + 0x1d086f4] ; 004efe5d | g_INT_PTR_ARRAY_01d086f4
+    MOV EDI,dword ptr [ECX + 0x1d086f4] ; 004efe5d | g_CustomKeyPointers
     MOV EDX,dword ptr [ESI]             ; 004efe63 | g_CGameInstance.key_backup
     CMP EDX,dword ptr [EDI]             ; 004efe65
     JNZ 0x004efe32                      ; 004efe67
@@ -1626,7 +1626,7 @@ section .text
     MOV dword ptr [ESP + 0xa90],EAX     ; 004efe71
         ;   Label: LAB_004efe71
     LEA EBP,[EAX + -0x1]                ; 004efe78
-    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efe7b | g_INT_PTR_ARRAY_01d086f4
+    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efe7b | g_CustomKeyPointers
     MOV EAX,dword ptr [EAX]             ; 004efe82
     SUB EAX,0x251                       ; 004efe84
     CMP EAX,0x5                         ; 004efe89

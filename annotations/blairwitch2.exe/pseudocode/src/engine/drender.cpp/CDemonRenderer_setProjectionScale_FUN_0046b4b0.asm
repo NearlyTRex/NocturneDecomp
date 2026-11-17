@@ -21,9 +21,9 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005d15a3 = 18
-;   double g_DOUBLE_005d15ab = 65536
-;   int g_INT_006141e4 = 0x10000
+;   double g_ProjectionRenderDivisor = 18
+;   double g_ProjectionRenderMultiplier = 65536
+;   int g_ProjectionScale = 0x10000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -34,10 +34,10 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 0046b4b0
         ;   Label: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
-    FDIVR double ptr [0x005d15a3]       ; 0046b4b4 | g_DOUBLE_005d15a3
-    FMUL double ptr [0x005d15ab]        ; 0046b4ba | g_DOUBLE_005d15ab
+    FDIVR double ptr [0x005d15a3]       ; 0046b4b4 | g_ProjectionRenderDivisor
+    FMUL double ptr [0x005d15ab]        ; 0046b4ba | g_ProjectionRenderMultiplier
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b4c0
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
-    FISTP dword ptr [0x006141e4]        ; 0046b4c5 | g_INT_006141e4
+    FISTP dword ptr [0x006141e4]        ; 0046b4c5 | g_ProjectionScale
     RET                                 ; 0046b4cb
 

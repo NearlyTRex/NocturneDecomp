@@ -10,12 +10,12 @@ void __watcallRegister InitializeConsoleHandles(void)
 
 {
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(0);
-  if (g_HANDLE_005c20d0 == (HANDLE)0xffffffff) {
-    g_HANDLE_005c20d0 =
+  if (g_ConsoleInputHandle == (HANDLE)0xffffffff) {
+    g_ConsoleInputHandle =
          CreateFileA("conin$",0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   }
-  if (g_HANDLE_005c20d4 == (HANDLE)0xffffffff) {
-    g_HANDLE_005c20d4 =
+  if (g_ConsoleOutputHandle == (HANDLE)0xffffffff) {
+    g_ConsoleOutputHandle =
          CreateFileA("conout$",0x40000000,2,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   }
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(0);

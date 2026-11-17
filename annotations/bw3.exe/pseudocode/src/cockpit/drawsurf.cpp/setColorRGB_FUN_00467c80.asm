@@ -13,9 +13,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   int g_INT_01bdd7bc
-;   int g_INT_01bdd7c0
-;   int g_INT_01bdd7c8
+;   int g_CurrentDrawColor
+;   int g_PaletteColorIndex
+;   int g_UseRGBConversion
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
@@ -57,9 +57,9 @@ section .text
     XOR ECX,ECX                         ; 00467cbd
     MOV CL,byte ptr [EDI + 0x1c62070]   ; 00467cbf
     XOR EDX,EDX                         ; 00467cc5
-    MOV dword ptr [0x01bdd7c0],ECX      ; 00467cc7 | g_INT_01bdd7c0
+    MOV dword ptr [0x01bdd7c0],ECX      ; 00467cc7 | g_PaletteColorIndex
     MOV ECX,dword ptr [0x005fba20]      ; 00467ccd | g_INT_005fba20
-    MOV dword ptr [0x01bdd7c8],EDX      ; 00467cd3 | g_INT_01bdd7c8
+    MOV dword ptr [0x01bdd7c8],EDX      ; 00467cd3 | g_UseRGBConversion
     CMP ECX,0x10                        ; 00467cd9
     JNC 0x00467dab                      ; 00467cdc
         ;   XREF to: 00467dab (CONDITIONAL_JUMP)  ; LAB_00467dab
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 00467db6 (CONDITIONAL_JUMP)  ; LAB_00467db6
     XOR EAX,EAX                         ; 00467ceb
     MOV AL,byte ptr [EDI + 0x1c62070]   ; 00467ced
-    MOV [0x01bdd7bc],EAX                ; 00467cf3 | g_INT_01bdd7bc
+    MOV [0x01bdd7bc],EAX                ; 00467cf3 | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00467cf8
     POP EBP                             ; 00467cfb
     POP EDI                             ; 00467cfc
@@ -100,7 +100,7 @@ section .text
     SHL EAX,CL                          ; 00467d4b
     OR EAX,EDI                          ; 00467d4d
     AND EAX,0xffff                      ; 00467d4f
-    MOV [0x01bdd7bc],EAX                ; 00467d54 | g_INT_01bdd7bc
+    MOV [0x01bdd7bc],EAX                ; 00467d54 | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00467d59
     POP EBP                             ; 00467d5c
     POP EDI                             ; 00467d5d
@@ -120,7 +120,7 @@ section .text
     OR EAX,ESI                          ; 00467d7d
     MOV ECX,EBX                         ; 00467d7f
     OR ECX,EAX                          ; 00467d81
-    MOV dword ptr [0x01bdd7bc],ECX      ; 00467d83 | g_INT_01bdd7bc
+    MOV dword ptr [0x01bdd7bc],ECX      ; 00467d83 | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00467d89
     POP EBP                             ; 00467d8c
     POP EDI                             ; 00467d8d
@@ -133,7 +133,7 @@ section .text
     SHL ECX,0x10                        ; 00467d96
     OR ECX,ESI                          ; 00467d99
     OR ECX,EBX                          ; 00467d9b
-    MOV dword ptr [0x01bdd7bc],ECX      ; 00467d9d | g_INT_01bdd7bc
+    MOV dword ptr [0x01bdd7bc],ECX      ; 00467d9d | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00467da3
     POP EBP                             ; 00467da6
     POP EDI                             ; 00467da7

@@ -26,15 +26,15 @@
 ;   undefined4 DAT_0207baac
 ;   undefined4 DAT_0207bab0
 ;   undefined4 DAT_0207bab4
-;   int g_INT_0207f958
-;   int g_INT_0207fadc
+;   int g_SecondaryDirectionalLightCount
+;   int g_PrimaryDirectionalLightCount
 ;   int g_INT_0207faf0
-;   int g_INT_0207ffa8
+;   int g_LightingSystemDirty
 ;   float g_FLOAT_0207ffac
 ;   float g_FLOAT_0207ffb8
 ;   float g_FLOAT_0207ffc4
 ;   float g_FLOAT_0207ffd0
-;   CMatrix3x3f g_CMatrix3x3f_0207ffdc
+;   CMatrix3x3f g_LightingRotationMatrix
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00
@@ -54,7 +54,7 @@ section .text
     PUSH EBP                            ; 00537e23
     SUB ESP,0x38                        ; 00537e24
     MOV EBP,dword ptr [ESP + 0x54]      ; 00537e27
-    MOV EDX,dword ptr [0x0207ffa8]      ; 00537e2b | g_INT_0207ffa8
+    MOV EDX,dword ptr [0x0207ffa8]      ; 00537e2b | g_LightingSystemDirty
     TEST EDX,EDX                        ; 00537e31
     JZ 0x00537e5d                       ; 00537e33
         ;   XREF to: 00537e5d (CONDITIONAL_JUMP)  ; LAB_00537e5d
@@ -73,8 +73,8 @@ section .text
         ;   Label: LAB_00537e4d
     ADD ESP,0x18                        ; 00537e52
     XOR EDI,EDI                         ; 00537e55
-    MOV dword ptr [0x0207ffa8],EDI      ; 00537e57 | g_INT_0207ffa8
-    MOV EAX,[0x0207fadc]                ; 00537e5d | g_INT_0207fadc
+    MOV dword ptr [0x0207ffa8],EDI      ; 00537e57 | g_LightingSystemDirty
+    MOV EAX,[0x0207fadc]                ; 00537e5d | g_PrimaryDirectionalLightCount
         ;   Label: LAB_00537e5d
     XOR ESI,ESI                         ; 00537e62
     XOR EBX,EBX                         ; 00537e64
@@ -94,7 +94,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00 ; 00537e82
         ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     ADD EBX,EAX                         ; 00537e87
-    MOV EAX,[0x0207fadc]                ; 00537e89 | g_INT_0207fadc
+    MOV EAX,[0x0207fadc]                ; 00537e89 | g_PrimaryDirectionalLightCount
     ADD ESP,0x10                        ; 00537e8e
     CMP ESI,EAX                         ; 00537e91
     JL 0x00537e6c                       ; 00537e93
@@ -102,7 +102,7 @@ section .text
     LEA EAX,[EAX]                       ; 00537e95
     LEA EDX,[EDX]                       ; 00537e9b
     MOV EBX,EBX                         ; 00537e9e
-    MOV EDX,dword ptr [0x0207f958]      ; 00537ea0 | g_INT_0207f958
+    MOV EDX,dword ptr [0x0207f958]      ; 00537ea0 | g_SecondaryDirectionalLightCount
         ;   Label: LAB_00537ea0
     XOR EDI,EDI                         ; 00537ea6
     TEST EDX,EDX                        ; 00537ea8
@@ -120,7 +120,7 @@ section .text
     INC EDI                             ; 00537ec3
     CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00 ; 00537ec4
         ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
-    MOV EDX,dword ptr [0x0207f958]      ; 00537ec9 | g_INT_0207f958
+    MOV EDX,dword ptr [0x0207f958]      ; 00537ec9 | g_SecondaryDirectionalLightCount
     ADD ESP,0x10                        ; 00537ecf
     ADD EBX,EAX                         ; 00537ed2
     CMP EDI,EDX                         ; 00537ed4
@@ -257,7 +257,7 @@ section .text
     POP ESI                             ; 0053802c
     POP EBX                             ; 0053802d
     RET                                 ; 0053802e
-    PUSH 0x207ffdc                      ; 0053802f | g_CMatrix3x3f_0207ffdc
+    PUSH 0x207ffdc                      ; 0053802f | g_LightingRotationMatrix
         ;   Label: LAB_0053802f
     PUSH 0x207ffd0                      ; 00538034 | g_FLOAT_0207ffd0
     PUSH 0x207ffc4                      ; 00538039 | g_FLOAT_0207ffc4

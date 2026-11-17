@@ -12,7 +12,7 @@ void FUN_005be810(_FILE *param_1)
   FileListNode *pFVar1;
   FileListNode *pFVar2;
   
-  pFVar1 = (FileListNode *)&g_FileListNode_PTR_02680160;
+  pFVar1 = (FileListNode *)&g_AllocatedListHead;
   do {
     pFVar2 = pFVar1;
     pFVar1 = pFVar2->next;
@@ -22,7 +22,7 @@ void FUN_005be810(_FILE *param_1)
   } while (param_1 != pFVar1->file_struct);
   *(byte *)&param_1->_flag = (byte)pFVar1->file_struct->_flag | 3;
   pFVar2->next = pFVar1->next;
-  pFVar1->next = g_FileListNode_PTR_02680164;
-  g_FileListNode_PTR_02680164 = pFVar1;
+  pFVar1->next = g_FreeListHeadPointer;
+  g_FreeListHeadPointer = pFVar1;
   return;
 }

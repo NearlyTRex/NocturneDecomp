@@ -45,49 +45,49 @@
   "globals": [
     {
       "addr": "00619298",
-      "name": "g_INT_ARRAY_00619298",
+      "name": "g_Layer3LongBandGroupCounts",
       "type": "int[5]",
       "value": null
     },
     {
       "addr": "0061929c",
-      "name": "g_INT_ARRAY_00619298[1]",
+      "name": "g_Layer3LongBandGroupCounts[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006192a0",
-      "name": "g_INT_ARRAY_00619298[2]",
+      "name": "g_Layer3LongBandGroupCounts[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006192ac",
-      "name": "g_INT_ARRAY_006192ac",
+      "name": "g_Layer3ShortBandGroupCounts",
       "type": "int[3]",
       "value": null
     },
     {
       "addr": "006192b0",
-      "name": "g_INT_ARRAY_006192ac[1]",
+      "name": "g_Layer3ShortBandGroupCounts[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006192b4",
-      "name": "g_INT_ARRAY_006192ac[2]",
+      "name": "g_Layer3ShortBandGroupCounts[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006192b8",
-      "name": "g_INT_ARRAY_ARRAY_006192b8",
+      "name": "g_Layer3ScalefacLengths",
       "type": "int[2][16]",
       "value": null
     },
     {
       "addr": "006192f8",
-      "name": "g_INT_ARRAY_ARRAY_006192b8[1][0]",
+      "name": "g_Layer3ScalefacLengths[1][0]",
       "type": "undefined4",
       "value": null
     }
@@ -378,17 +378,17 @@
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(int *)((int)g_INT_ARRAY_006192ac",
+      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
       "severity": "moderate",
-      "text": "local_1c = *(int *)((int)g_INT_ARRAY_006192ac + local_34);",
+      "text": "local_1c = *(int *)((int)g_Layer3ShortBandGroupCounts + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(int *)((int)g_INT_ARRAY_006192ac",
+      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
       "severity": "moderate",
-      "text": "if (local_1c < *(int *)((int)g_INT_ARRAY_006192ac + local_34 + 4)) {",
+      "text": "if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {",
       "type": "pointer_cast"
     },
     {
@@ -402,17 +402,17 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(uint *)((int)g_INT_ARRAY_ARRAY_006192b8",
+      "match": "(uint *)((int)g_Layer3ScalefacLengths",
       "severity": "moderate",
-      "text": "(this_ptr,*(uint *)((int)g_INT_ARRAY_ARRAY_006192b8[0] +",
+      "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths[0] +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(int *)((int)g_INT_ARRAY_006192ac",
+      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
       "severity": "moderate",
-      "text": "} while (local_1c < *(int *)((int)g_INT_ARRAY_006192ac + local_34 + 4));",
+      "text": "} while (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4));",
       "type": "pointer_cast"
     },
     {
@@ -434,25 +434,25 @@
     {
       "description": "Complex pointer cast",
       "line": 118,
-      "match": "(int *)((int)g_INT_ARRAY_00619298",
+      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
       "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)g_INT_ARRAY_00619298 + local_38);",
+      "text": "iVar3 = *(int *)((int)g_Layer3LongBandGroupCounts + local_38);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 120,
-      "match": "(int *)((int)g_INT_ARRAY_00619298",
+      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
       "severity": "moderate",
-      "text": "if (iVar3 < *(int *)((int)g_INT_ARRAY_00619298 + local_38 + 4)) {",
+      "text": "if (iVar3 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 129,
-      "match": "(int *)((int)g_INT_ARRAY_00619298",
+      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
       "severity": "moderate",
-      "text": "} while (iVar3 < *(int *)((int)g_INT_ARRAY_00619298 + local_38 + 4));",
+      "text": "} while (iVar3 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4));",
       "type": "pointer_cast"
     },
     {

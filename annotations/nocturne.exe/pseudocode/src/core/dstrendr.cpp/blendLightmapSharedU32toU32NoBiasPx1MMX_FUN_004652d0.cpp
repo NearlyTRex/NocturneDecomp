@@ -47,11 +47,10 @@ void __cdecl core_dstrendr_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00465
                                             ((ushort)CONCAT41(uVar4,(char)(uVar2 >> 8)) & 0xff),
                                             ((ushort)uVar1 & 0xff) * (ushort)(byte)uVar2))),
                  *(ulonglong *)
-                  (g_USHORT_ARRAY_005b5d00 +
-                  ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4) ^
-                 g_USHORT_ARRAY_005b5d00._2040_8_);
+                  (g_LightmapData + ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4) ^
+                 g_LightmapData._2040_8_);
   uVar12 = pmulhw(uVar12,*(ulonglong *)
-                          (g_USHORT_ARRAY_005b5d00 +
+                          (g_LightmapData +
                           ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4));
   uVar5 = (ushort)((short)uVar6 + (short)uVar12) >> 4;
   uVar7 = (ushort)((short)((ulonglong)uVar6 >> 0x10) + (short)((ulonglong)uVar12 >> 0x10)) >> 4;

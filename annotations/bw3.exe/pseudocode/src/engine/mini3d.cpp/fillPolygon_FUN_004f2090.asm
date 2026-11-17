@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   int g_INT_01c6e2a0
+;   int g_MMXSupported
 ;   int g_INT_01d76cf8
 ;   int g_INT_01d80844
 ;   SSoftwareEdge g_SSoftwareEdge_01d80848
@@ -216,7 +216,7 @@ section .text
     TEST EAX,EAX                        ; 004f224c
     JZ 0x004f237d                       ; 004f224e
         ;   XREF to: 004f237d (CONDITIONAL_JUMP)  ; LAB_004f237d
-    CMP dword ptr [0x01c6e2a0],0x0      ; 004f2254 | g_INT_01c6e2a0
+    CMP dword ptr [0x01c6e2a0],0x0      ; 004f2254 | g_MMXSupported
         ;   Label: LAB_004f2254
     JZ 0x004f23ed                       ; 004f225b
         ;   XREF to: 004f23ed (CONDITIONAL_JUMP)  ; LAB_004f23ed

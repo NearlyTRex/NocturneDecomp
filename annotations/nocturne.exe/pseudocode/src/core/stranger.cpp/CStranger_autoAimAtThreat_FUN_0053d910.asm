@@ -29,7 +29,7 @@
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.threat_count
 ;   ... and 4 more
@@ -111,8 +111,8 @@ section .text
     MOV EBX,0xbfa78d36                  ; 0053d9b6
         ;   Label: LAB_0053d9b6
     MOV EAX,0x3f060a92                  ; 0053d9bb
-    MOV ESI,dword ptr [0x02dc9f84]      ; 0053d9c0 | g_INT_ARRAY_02dc9f50[13]
-    MOV EDI,dword ptr [0x02dc9f5c]      ; 0053d9c6 | g_INT_ARRAY_02dc9f50[3]
+    MOV ESI,dword ptr [0x02dc9f84]      ; 0053d9c0 | g_StrangerIndices[13]
+    MOV EDI,dword ptr [0x02dc9f5c]      ; 0053d9c6 | g_StrangerIndices[3]
     MOV dword ptr [ESP + 0x188],EBX     ; 0053d9cc
     MOV dword ptr [ESP + 0x18c],EAX     ; 0053d9d3
     MOV EAX,dword ptr [EBP + 0x14]      ; 0053d9da
@@ -300,7 +300,7 @@ section .text
     JGE 0x0053e101                      ; 0053dc8b
         ;   XREF to: 0053e101 (CONDITIONAL_JUMP)  ; LAB_0053e101
     MOV ESI,dword ptr [ESP + 0x17c]     ; 0053dc91
-    MOV EBX,dword ptr [0x00765a98]      ; 0053dc98 | g_CCharacterActorType_00765a60.name_hash
+    MOV EBX,dword ptr [0x00765a98]      ; 0053dc98 | g_CCharacterClassInfo.name_hash
     ADD EAX,ESI                         ; 0053dc9e
     PUSH EBX                            ; 0053dca0
     MOV EDI,dword ptr [EAX + 0x152b3c]  ; 0053dca1
@@ -352,8 +352,8 @@ section .text
         ;   XREF to: 0053d994 (UNCONDITIONAL_JUMP)  ; LAB_0053d994
     MOV EAX,dword ptr [ESP + 0x170]     ; 0053dd35
         ;   Label: LAB_0053dd35
-    MOV ESI,dword ptr [0x02dc9f88]      ; 0053dd3c | g_INT_ARRAY_02dc9f50[14]
-    MOV EDI,dword ptr [0x02dc9f60]      ; 0053dd42 | g_INT_ARRAY_02dc9f50[4]
+    MOV ESI,dword ptr [0x02dc9f88]      ; 0053dd3c | g_StrangerIndices[14]
+    MOV EDI,dword ptr [0x02dc9f60]      ; 0053dd42 | g_StrangerIndices[4]
     TEST EAX,EAX                        ; 0053dd48
     JNZ 0x0053dd69                      ; 0053dd4a
         ;   XREF to: 0053dd69 (CONDITIONAL_JUMP)  ; LAB_0053dd69

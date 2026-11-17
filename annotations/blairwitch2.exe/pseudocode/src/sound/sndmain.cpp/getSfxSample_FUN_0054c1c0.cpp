@@ -40,14 +40,15 @@ LAB_0054c1f8:
   }
   iVar5 = 0;
   do {
-    g_INT_02641920 = g_INT_02641920 + 1;
-    if (0x3f < g_INT_02641920) {
-      g_INT_02641920 = 0;
+    g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+    if (0x3f < g_LastSampleAccessIndex) {
+      g_LastSampleAccessIndex = 0;
     }
-    if ((((g_SfxSamples[g_INT_02641920].taken == 0) && (g_SfxSamples[g_INT_02641920].ref_count == 0)
-         ) && (g_SfxSamples[g_INT_02641920].is_user_sample == 0)) &&
-       (g_SfxSamples[g_INT_02641920].locked_length == 0)) {
-      pCVar4 = g_SfxSamples + g_INT_02641920;
+    if ((((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+         (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) &&
+        (g_SfxSamples[g_LastSampleAccessIndex].is_user_sample == 0)) &&
+       (g_SfxSamples[g_LastSampleAccessIndex].locked_length == 0)) {
+      pCVar4 = g_SfxSamples + g_LastSampleAccessIndex;
       bVar7 = pCVar4 == (CSfxSample *)0x0;
       goto LAB_0054c228;
     }

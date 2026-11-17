@@ -1427,7 +1427,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffcf2],EDI ; 00520342
     JMP 0x005201e0                      ; 00520348
         ;   XREF to: 005201e0 (UNCONDITIONAL_JUMP)  ; LAB_005201e0
-    PUSH 0x2cfd900                      ; 0052034d | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0052034d | g_ZeroVector
         ;   Label: LAB_0052034d
     PUSH 0x1ed36cc                      ; 00520352
     LEA EAX,[EBP + 0xffffee32]          ; 00520357
@@ -1606,7 +1606,7 @@ section .text
     LEA ESI,[EBP + 0xfffff402]          ; 005205e7
     JMP 0x0051f652                      ; 005205ed
         ;   XREF to: 0051f652 (UNCONDITIONAL_JUMP)  ; LAB_0051f652
-    PUSH 0x2cfd900                      ; 005205f2 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 005205f2 | g_ZeroVector
         ;   Label: LAB_005205f2
     PUSH 0x1ed36c0                      ; 005205f7
     LEA EAX,[EBP + 0xfffffa92]          ; 005205fc

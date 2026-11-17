@@ -614,13 +614,13 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
     {
       "addr": "01cc5b5c",
-      "name": "g_INT_01cc5b5c",
+      "name": "g_MenuLeftRightPressed",
       "type": "int",
       "value": null
     },
@@ -722,7 +722,7 @@
     },
     {
       "addr": "01cc64a4",
-      "name": "g_INT_01cc64a4",
+      "name": "g_CurrentGraphicsBoard",
       "type": "int",
       "value": null
     },
@@ -978,15 +978,15 @@
       "line": 59,
       "match": "g_INT_01cc652c",
       "severity": "moderate",
-      "text": "if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x121a) && ((&g_INT_01cc656c)[g_INT_01cc64a4] < 6))",
+      "text": "if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x121a) &&",
       "type": "wrong_global"
     },
     {
-      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_ARRAY_01cc65b0 (at 0x01cc65b0, +68 bytes).",
-      "line": 59,
+      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_ControlsMenuTextBuffers (at 0x01cc65b0, +68 bytes).",
+      "line": 60,
       "match": "g_INT_01cc656c",
       "severity": "moderate",
-      "text": "if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x121a) && ((&g_INT_01cc656c)[g_INT_01cc64a4] < 6))",
+      "text": "((&g_INT_01cc656c)[g_CurrentGraphicsBoard] < 6)) {",
       "type": "wrong_global"
     },
     {
@@ -994,15 +994,15 @@
       "line": 115,
       "match": "g_INT_01cc652c",
       "severity": "moderate",
-      "text": "if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x8086) &&",
+      "text": "if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x8086) &&",
       "type": "wrong_global"
     },
     {
-      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_ARRAY_01cc65b0 (at 0x01cc65b0, +68 bytes).",
+      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_ControlsMenuTextBuffers (at 0x01cc65b0, +68 bytes).",
       "line": 116,
       "match": "g_INT_01cc656c",
       "severity": "moderate",
-      "text": "((&g_INT_01cc656c)[g_INT_01cc64a4] == 0x7800)) {",
+      "text": "((&g_INT_01cc656c)[g_CurrentGraphicsBoard] == 0x7800)) {",
       "type": "wrong_global"
     },
     {
@@ -1010,15 +1010,15 @@
       "line": 122,
       "match": "g_INT_01cc652c",
       "severity": "moderate",
-      "text": "if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x12d2) &&",
+      "text": "if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x12d2) &&",
       "type": "wrong_global"
     },
     {
-      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_ARRAY_01cc65b0 (at 0x01cc65b0, +68 bytes).",
+      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_ControlsMenuTextBuffers (at 0x01cc65b0, +68 bytes).",
       "line": 123,
       "match": "g_INT_01cc656c",
       "severity": "moderate",
-      "text": "((&g_INT_01cc656c)[g_INT_01cc64a4] == 0x18)) {",
+      "text": "((&g_INT_01cc656c)[g_CurrentGraphicsBoard] == 0x18)) {",
       "type": "wrong_global"
     },
     {
@@ -1026,15 +1026,15 @@
       "line": 129,
       "match": "g_INT_01cc652c",
       "severity": "moderate",
-      "text": "if (((&g_INT_01cc652c)[g_INT_01cc64a4] == 0x12d2) &&",
+      "text": "if (((&g_INT_01cc652c)[g_CurrentGraphicsBoard] == 0x12d2) &&",
       "type": "wrong_global"
     },
     {
-      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_ARRAY_01cc65b0 (at 0x01cc65b0, +68 bytes).",
+      "description": "Scalar global g_INT_01cc656c accessed via (&g_INT_01cc656c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_ControlsMenuTextBuffers (at 0x01cc65b0, +68 bytes).",
       "line": 130,
       "match": "g_INT_01cc656c",
       "severity": "moderate",
-      "text": "((&g_INT_01cc656c)[g_INT_01cc64a4] == 0x19)) {",
+      "text": "((&g_INT_01cc656c)[g_CurrentGraphicsBoard] == 0x19)) {",
       "type": "wrong_global"
     },
     {
@@ -1042,7 +1042,7 @@
       "line": 242,
       "match": "g_CHAR_PTR_01cc64ec",
       "severity": "moderate",
-      "text": "pcVar9 = (&g_CHAR_PTR_01cc64ec)[g_INT_01cc64a4];",
+      "text": "pcVar9 = (&g_CHAR_PTR_01cc64ec)[g_CurrentGraphicsBoard];",
       "type": "wrong_global"
     },
     {
@@ -1050,7 +1050,7 @@
       "line": 513,
       "match": "g_INT_01cc652c",
       "severity": "moderate",
-      "text": "if ((&g_INT_01cc652c)[g_INT_01cc64a4] != 0x121a) {",
+      "text": "if ((&g_INT_01cc652c)[g_CurrentGraphicsBoard] != 0x121a) {",
       "type": "wrong_global"
     },
     {
@@ -1062,7 +1062,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0xb71b01 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+406777 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xb71b01 matches address of g_LightBufferPool (+406777 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 435,
       "match": "0xb71b01",
       "severity": "moderate",
@@ -1070,7 +1070,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0x16e3601 matches address of g_UCHAR_ARRAY_014b9924 (+2268381 bytes into) (type uchar[6291656]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x16e3601 matches address of g_ShadowRestoreBuffer (+2268381 bytes into) (type uchar[6291656]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 438,
       "match": "0x16e3601",
       "severity": "moderate",

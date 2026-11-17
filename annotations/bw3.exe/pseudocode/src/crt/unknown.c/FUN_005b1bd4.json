@@ -73,13 +73,13 @@
   "globals": [
     {
       "addr": "02d25920",
-      "name": "g_CHAR_PTR_PTR_02d25920",
+      "name": "g_EnvironStringArea",
       "type": "char**",
       "value": null
     },
     {
       "addr": "02d25928",
-      "name": "g_INT_02d25928",
+      "name": "g_EnvironInitialized",
       "type": "int",
       "value": null
     }
@@ -280,9 +280,9 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(byte *)(n + (int)g_CHAR_PTR_PTR_02d25920",
+      "match": "(byte *)(n + (int)g_EnvironStringArea",
       "severity": "moderate",
-      "text": "*(byte *)(n + (int)g_CHAR_PTR_PTR_02d25920) = 0;",
+      "text": "*(byte *)(n + (int)g_EnvironStringArea) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -290,7 +290,7 @@
       "line": 39,
       "match": "(int)ptr",
       "severity": "moderate",
-      "text": "g_INT_02d25928 = (int)ptr;",
+      "text": "g_EnvironInitialized = (int)ptr;",
       "type": "pointer_truncation"
     },
     {
@@ -298,15 +298,15 @@
       "line": 70,
       "match": "(int)ptr",
       "severity": "moderate",
-      "text": "g_INT_02d25928 = (int)ptr;",
+      "text": "g_EnvironInitialized = (int)ptr;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_PTR_02d25920` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_EnvironStringArea` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 77,
-      "match": "(int)g_CHAR_PTR_PTR_02d25920",
+      "match": "(int)g_EnvironStringArea",
       "severity": "moderate",
-      "text": "*(byte *)(n + (int)g_CHAR_PTR_PTR_02d25920) = 0;",
+      "text": "*(byte *)(n + (int)g_EnvironStringArea) = 0;",
       "type": "pointer_truncation"
     },
     {

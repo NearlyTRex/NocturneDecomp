@@ -41,13 +41,13 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005cf197 = -1
-;   double g_DOUBLE_005cf19f = 0.707000000000000
-;   double g_DOUBLE_005cf1a7 = -0.707000000000000
-;   double g_DOUBLE_005cf1af = 3.14159265359000
-;   double g_DOUBLE_005cf1b7 = -3.14159265359000
-;   float g_FLOAT_005cf1bf = 6.283185
-;   float g_FLOAT_005cf1c3 = -6.283185
+;   double g_EulerGimbalLockThreshold = -1
+;   double g_EulerSinCosThreshold = 0.707000000000000
+;   double g_EulerSinCosThresholdNeg = -0.707000000000000
+;   double g_EulerPi = 3.14159265359000
+;   double g_EulerNegPi = -3.14159265359000
+;   float g_EulerTwoPi = 6.283185
+;   float g_EulerNegTwoPi = -6.283185
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_005b9924
@@ -69,7 +69,7 @@ section .text
     FLD float ptr [ECX + 0x14]          ; 004496f3
     FCHS                                ; 004496f6
     FST double ptr [ESP + 0x68]         ; 004496f8
-    FCOMP double ptr [0x005cf197]       ; 004496fc | g_DOUBLE_005cf197
+    FCOMP double ptr [0x005cf197]       ; 004496fc | g_EulerGimbalLockThreshold
     FNSTSW AX                           ; 00449702
     SAHF                                ; 00449704
     JBE 0x004497fe                      ; 00449705
@@ -98,13 +98,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 0044974f
     MOV dword ptr [ESP + 0x84],EDI      ; 00449753
     MOV dword ptr [ESP + 0x54],EAX      ; 0044975a
-    FCOMP double ptr [0x005cf19f]       ; 0044975e | g_DOUBLE_005cf19f
+    FCOMP double ptr [0x005cf19f]       ; 0044975e | g_EulerSinCosThreshold
     FNSTSW AX                           ; 00449764
     SAHF                                ; 00449766
     JNC 0x004499e5                      ; 00449767
         ;   XREF to: 004499e5 (CONDITIONAL_JUMP)  ; LAB_004499e5
     FLD double ptr [ESP + 0x60]         ; 0044976d
-    FCOMP double ptr [0x005cf1a7]       ; 00449771 | g_DOUBLE_005cf1a7
+    FCOMP double ptr [0x005cf1a7]       ; 00449771 | g_EulerSinCosThresholdNeg
     FNSTSW AX                           ; 00449777
     SAHF                                ; 00449779
     JBE 0x004499e5                      ; 0044977a
@@ -121,27 +121,27 @@ section .text
     JBE 0x004497a8                      ; 00449798
         ;   XREF to: 004497a8 (CONDITIONAL_JUMP)  ; LAB_004497a8
     FLD float ptr [ESP + 0x74]          ; 0044979a
-    FSUBR double ptr [0x005cf1af]       ; 0044979e | g_DOUBLE_005cf1af
+    FSUBR double ptr [0x005cf1af]       ; 0044979e | g_EulerPi
     FSTP float ptr [ESP + 0x74]         ; 004497a4
     FLD float ptr [ESP + 0x74]          ; 004497a8
         ;   Label: LAB_004497a8
-    FCOMP double ptr [0x005cf1b7]       ; 004497ac | g_DOUBLE_005cf1b7
+    FCOMP double ptr [0x005cf1b7]       ; 004497ac | g_EulerNegPi
     FNSTSW AX                           ; 004497b2
     SAHF                                ; 004497b4
     JNC 0x004497c5                      ; 004497b5
         ;   XREF to: 004497c5 (CONDITIONAL_JUMP)  ; LAB_004497c5
     FLD float ptr [ESP + 0x74]          ; 004497b7
-    FADD float ptr [0x005cf1bf]         ; 004497bb | g_FLOAT_005cf1bf
+    FADD float ptr [0x005cf1bf]         ; 004497bb | g_EulerTwoPi
     FSTP float ptr [ESP + 0x74]         ; 004497c1
     FLD float ptr [ESP + 0x74]          ; 004497c5
         ;   Label: LAB_004497c5
-    FCOMP double ptr [0x005cf1af]       ; 004497c9 | g_DOUBLE_005cf1af
+    FCOMP double ptr [0x005cf1af]       ; 004497c9 | g_EulerPi
     FNSTSW AX                           ; 004497cf
     SAHF                                ; 004497d1
     JBE 0x004497e2                      ; 004497d2
         ;   XREF to: 004497e2 (CONDITIONAL_JUMP)  ; LAB_004497e2
     FLD float ptr [ESP + 0x74]          ; 004497d4
-    FADD float ptr [0x005cf1c3]         ; 004497d8 | g_FLOAT_005cf1c3
+    FADD float ptr [0x005cf1c3]         ; 004497d8 | g_EulerNegTwoPi
     FSTP float ptr [ESP + 0x74]         ; 004497de
     MOV EAX,dword ptr [ESP + 0x74]      ; 004497e2
         ;   Label: LAB_004497e2
@@ -200,13 +200,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x44]      ; 0044986f
     FLD double ptr [ESP + 0x8]          ; 00449873
     MOV dword ptr [ESP + 0x3c],EAX      ; 00449877
-    FCOMP double ptr [0x005cf19f]       ; 0044987b | g_DOUBLE_005cf19f
+    FCOMP double ptr [0x005cf19f]       ; 0044987b | g_EulerSinCosThreshold
     FNSTSW AX                           ; 00449881
     SAHF                                ; 00449883
     JNC 0x00449a37                      ; 00449884
         ;   XREF to: 00449a37 (CONDITIONAL_JUMP)  ; LAB_00449a37
     FLD double ptr [ESP + 0x8]          ; 0044988a
-    FCOMP double ptr [0x005cf1a7]       ; 0044988e | g_DOUBLE_005cf1a7
+    FCOMP double ptr [0x005cf1a7]       ; 0044988e | g_EulerSinCosThresholdNeg
     FNSTSW AX                           ; 00449894
     SAHF                                ; 00449896
     JBE 0x00449a37                      ; 00449897
@@ -223,27 +223,27 @@ section .text
     JBE 0x004498c5                      ; 004498b5
         ;   XREF to: 004498c5 (CONDITIONAL_JUMP)  ; LAB_004498c5
     FLD float ptr [ESP + 0x78]          ; 004498b7
-    FSUBR double ptr [0x005cf1af]       ; 004498bb | g_DOUBLE_005cf1af
+    FSUBR double ptr [0x005cf1af]       ; 004498bb | g_EulerPi
     FSTP float ptr [ESP + 0x78]         ; 004498c1
     FLD float ptr [ESP + 0x78]          ; 004498c5
         ;   Label: LAB_004498c5
-    FCOMP double ptr [0x005cf1b7]       ; 004498c9 | g_DOUBLE_005cf1b7
+    FCOMP double ptr [0x005cf1b7]       ; 004498c9 | g_EulerNegPi
     FNSTSW AX                           ; 004498cf
     SAHF                                ; 004498d1
     JNC 0x004498e2                      ; 004498d2
         ;   XREF to: 004498e2 (CONDITIONAL_JUMP)  ; LAB_004498e2
     FLD float ptr [ESP + 0x78]          ; 004498d4
-    FADD float ptr [0x005cf1bf]         ; 004498d8 | g_FLOAT_005cf1bf
+    FADD float ptr [0x005cf1bf]         ; 004498d8 | g_EulerTwoPi
     FSTP float ptr [ESP + 0x78]         ; 004498de
     FLD float ptr [ESP + 0x78]          ; 004498e2
         ;   Label: LAB_004498e2
-    FCOMP double ptr [0x005cf1af]       ; 004498e6 | g_DOUBLE_005cf1af
+    FCOMP double ptr [0x005cf1af]       ; 004498e6 | g_EulerPi
     FNSTSW AX                           ; 004498ec
     SAHF                                ; 004498ee
     JBE 0x004498ff                      ; 004498ef
         ;   XREF to: 004498ff (CONDITIONAL_JUMP)  ; LAB_004498ff
     FLD float ptr [ESP + 0x78]          ; 004498f1
-    FADD float ptr [0x005cf1c3]         ; 004498f5 | g_FLOAT_005cf1c3
+    FADD float ptr [0x005cf1c3]         ; 004498f5 | g_EulerNegTwoPi
     FSTP float ptr [ESP + 0x78]         ; 004498fb
     FLD float ptr [ECX + 0x10]          ; 004498ff
         ;   Label: LAB_004498ff
@@ -267,13 +267,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0044993c
     FLD double ptr [ESP]                ; 00449940
     MOV dword ptr [ESP + 0x4c],EAX      ; 00449943
-    FCOMP double ptr [0x005cf19f]       ; 00449947 | g_DOUBLE_005cf19f
+    FCOMP double ptr [0x005cf19f]       ; 00449947 | g_EulerSinCosThreshold
     FNSTSW AX                           ; 0044994d
     SAHF                                ; 0044994f
     JNC 0x00449a89                      ; 00449950
         ;   XREF to: 00449a89 (CONDITIONAL_JUMP)  ; LAB_00449a89
     FLD double ptr [ESP]                ; 00449956
-    FCOMP double ptr [0x005cf1a7]       ; 00449959 | g_DOUBLE_005cf1a7
+    FCOMP double ptr [0x005cf1a7]       ; 00449959 | g_EulerSinCosThresholdNeg
     FNSTSW AX                           ; 0044995f
     SAHF                                ; 00449961
     JBE 0x00449a89                      ; 00449962
@@ -290,27 +290,27 @@ section .text
     JBE 0x0044998f                      ; 0044997f
         ;   XREF to: 0044998f (CONDITIONAL_JUMP)  ; LAB_0044998f
     FLD float ptr [ESP + 0x70]          ; 00449981
-    FSUBR double ptr [0x005cf1af]       ; 00449985 | g_DOUBLE_005cf1af
+    FSUBR double ptr [0x005cf1af]       ; 00449985 | g_EulerPi
     FSTP float ptr [ESP + 0x70]         ; 0044998b
     FLD float ptr [ESP + 0x70]          ; 0044998f
         ;   Label: LAB_0044998f
-    FCOMP double ptr [0x005cf1b7]       ; 00449993 | g_DOUBLE_005cf1b7
+    FCOMP double ptr [0x005cf1b7]       ; 00449993 | g_EulerNegPi
     FNSTSW AX                           ; 00449999
     SAHF                                ; 0044999b
     JNC 0x004499ac                      ; 0044999c
         ;   XREF to: 004499ac (CONDITIONAL_JUMP)  ; LAB_004499ac
     FLD float ptr [ESP + 0x70]          ; 0044999e
-    FADD float ptr [0x005cf1bf]         ; 004499a2 | g_FLOAT_005cf1bf
+    FADD float ptr [0x005cf1bf]         ; 004499a2 | g_EulerTwoPi
     FSTP float ptr [ESP + 0x70]         ; 004499a8
     FLD float ptr [ESP + 0x70]          ; 004499ac
         ;   Label: LAB_004499ac
-    FCOMP double ptr [0x005cf1af]       ; 004499b0 | g_DOUBLE_005cf1af
+    FCOMP double ptr [0x005cf1af]       ; 004499b0 | g_EulerPi
     FNSTSW AX                           ; 004499b6
     SAHF                                ; 004499b8
     JBE 0x004499c9                      ; 004499b9
         ;   XREF to: 004499c9 (CONDITIONAL_JUMP)  ; LAB_004499c9
     FLD float ptr [ESP + 0x70]          ; 004499bb
-    FADD float ptr [0x005cf1c3]         ; 004499bf | g_FLOAT_005cf1c3
+    FADD float ptr [0x005cf1c3]         ; 004499bf | g_EulerNegTwoPi
     FSTP float ptr [ESP + 0x70]         ; 004499c5
     MOV EAX,dword ptr [ESP + 0x70]      ; 004499c9
         ;   Label: LAB_004499c9
@@ -328,7 +328,7 @@ section .text
     RET                                 ; 004499e4
     FLD double ptr [ESP + 0x50]         ; 004499e5
         ;   Label: LAB_004499e5
-    FCOMP double ptr [0x005cf197]       ; 004499e9 | g_DOUBLE_005cf197
+    FCOMP double ptr [0x005cf197]       ; 004499e9 | g_EulerGimbalLockThreshold
     FNSTSW AX                           ; 004499ef
     SAHF                                ; 004499f1
     JA 0x00449a15                       ; 004499f2
@@ -364,7 +364,7 @@ section .text
         ;   XREF to: 004499fc (UNCONDITIONAL_JUMP)  ; LAB_004499fc
     FLD double ptr [ESP + 0x38]         ; 00449a37
         ;   Label: LAB_00449a37
-    FCOMP double ptr [0x005cf197]       ; 00449a3b | g_DOUBLE_005cf197
+    FCOMP double ptr [0x005cf197]       ; 00449a3b | g_EulerGimbalLockThreshold
     FNSTSW AX                           ; 00449a41
     SAHF                                ; 00449a43
     JA 0x00449a67                       ; 00449a44
@@ -400,7 +400,7 @@ section .text
         ;   XREF to: 00449a4e (UNCONDITIONAL_JUMP)  ; LAB_00449a4e
     FLD double ptr [ESP + 0x48]         ; 00449a89
         ;   Label: LAB_00449a89
-    FCOMP double ptr [0x005cf197]       ; 00449a8d | g_DOUBLE_005cf197
+    FCOMP double ptr [0x005cf197]       ; 00449a8d | g_EulerGimbalLockThreshold
     FNSTSW AX                           ; 00449a93
     SAHF                                ; 00449a95
     JA 0x00449ab9                       ; 00449a96

@@ -13,29 +13,29 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonBlendedLitOp63_FUN_00406a
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
-    if (g_INT_01c6e2a0 == 0) {
+    if (g_MMXSupported == 0) {
       if (g_INT_005fba20 == 0x20) {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
       }
       else {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
       }
     }
     else if (g_INT_005fba20 == 0x20) {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
     }
-    if (g_INT_01c6b5c8 == 0) {
-      g_BIT_INTEGER32_01c6e2b4.dword = 0x267;
+    if (g_AdvancedClippingEnabled == 0) {
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_COLOR_FROM_VERTEX);
     }
     else {
-      g_BIT_INTEGER32_01c6e2b4.dword = 0x67;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST);
     }
-    g_INT_01c6e2b8 = 1;
+    g_VertexPreprocessMode = 1;
     engine_3d_c_calculatePolygonLighting_FUN_004039d0(prim);
-    if (g_INT_01c6b5c8 == 0) {
+    if (g_AdvancedClippingEnabled == 0) {
       engine_clipper_c_clipPolygonToViewport_FUN_0043bac0((prim->base).count,(int *)(prim + 1));
       return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
     }

@@ -25,12 +25,12 @@ extern CSfxSlot g_CSfxSlot_ARRAY_02ce721c[64];
 extern byte g_BYTE_02ce71e8;
 
 // float
-extern float g_FLOAT_02ce7210;
+extern float g_SoundReferenceVolumeDistance;
 
 // int
-extern int g_INT_02ce71ec;
+extern int g_ShutdownInProgress;
 extern int g_INT_02ce7214;
 extern int g_INT_02ce7218;
-extern int g_INT_02ceb91c;
-extern int g_INT_02cebc20;
+extern int g_SfxLastSlot;
+extern int g_LastSampleAccessIndex;
 

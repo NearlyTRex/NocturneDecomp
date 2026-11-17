@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_killSoundThread_failed_005d3c9a
-;   int g_INT_02cf3410
-;   int g_INT_02cf3414
+;   int g_AudioThreadRunning
+;   int g_AudioThreadShutdownFlag
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
@@ -28,9 +28,9 @@ section .text
     MOV EBP,ESP                         ; 00558e12
     AND ESP,0xfffffff8                  ; 00558e14
     MOV EDX,0x1                         ; 00558e17
-    MOV ECX,dword ptr [0x02cf3410]      ; 00558e1c | g_INT_02cf3410
+    MOV ECX,dword ptr [0x02cf3410]      ; 00558e1c | g_AudioThreadRunning
     XOR EBX,EBX                         ; 00558e22
-    MOV dword ptr [0x02cf3414],EDX      ; 00558e24 | g_INT_02cf3414
+    MOV dword ptr [0x02cf3414],EDX      ; 00558e24 | g_AudioThreadShutdownFlag
     TEST ECX,ECX                        ; 00558e2a
     JZ 0x00558e4f                       ; 00558e2c
         ;   XREF to: 00558e4f (CONDITIONAL_JUMP)  ; LAB_00558e4f
@@ -44,14 +44,14 @@ section .text
     CMP EBX,0x64                        ; 00558e41
     JGE 0x00558e4f                      ; 00558e44
         ;   XREF to: 00558e4f (CONDITIONAL_JUMP)  ; LAB_00558e4f
-    CMP dword ptr [0x02cf3410],0x0      ; 00558e46 | g_INT_02cf3410
+    CMP dword ptr [0x02cf3410],0x0      ; 00558e46 | g_AudioThreadRunning
     JNZ 0x00558e2e                      ; 00558e4d
         ;   XREF to: 00558e2e (CONDITIONAL_JUMP)  ; LAB_00558e2e
-    CMP dword ptr [0x02cf3410],0x0      ; 00558e4f | g_INT_02cf3410
+    CMP dword ptr [0x02cf3410],0x0      ; 00558e4f | g_AudioThreadRunning
         ;   Label: LAB_00558e4f
     JNZ 0x00558e6c                      ; 00558e56
         ;   XREF to: 00558e6c (CONDITIONAL_JUMP)  ; LAB_00558e6c
-    CMP dword ptr [0x02cf3410],0x0      ; 00558e58 | g_INT_02cf3410
+    CMP dword ptr [0x02cf3410],0x0      ; 00558e58 | g_AudioThreadRunning
     SETZ AL                             ; 00558e5f
     AND EAX,0xff                        ; 00558e62
     MOV ESP,EBP                         ; 00558e67
@@ -63,7 +63,7 @@ section .text
     CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 00558e71
         ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 00558e76
-    CMP dword ptr [0x02cf3410],0x0      ; 00558e79 | g_INT_02cf3410
+    CMP dword ptr [0x02cf3410],0x0      ; 00558e79 | g_AudioThreadRunning
     SETZ AL                             ; 00558e80
     AND EAX,0xff                        ; 00558e83
     MOV ESP,EBP                         ; 00558e88

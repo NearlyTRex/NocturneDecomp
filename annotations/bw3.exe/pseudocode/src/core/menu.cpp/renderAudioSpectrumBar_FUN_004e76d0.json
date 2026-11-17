@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 125,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 57,
     "suspect_count": 6,
     "suspect_types": [
       "raw_address_constant",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 180
+    "total_lines": 182
   },
   "cross_references": [],
   "function": {
@@ -59,7 +59,7 @@
     },
     {
       "addr": "01d737e0",
-      "name": "g_INT_01d737e0",
+      "name": "g_AudioVisualizationCounter",
       "type": "int",
       "value": null
     }
@@ -164,7 +164,7 @@
   },
   "suspects": [
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 28,
       "match": "0xf80000",
       "severity": "moderate",
@@ -172,7 +172,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 29,
       "match": "0xf80000",
       "severity": "moderate",
@@ -180,7 +180,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 30,
       "match": "0xf80000",
       "severity": "moderate",
@@ -188,7 +188,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 31,
       "match": "0xf80000",
       "severity": "moderate",
@@ -197,18 +197,18 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 49,
+      "line": 50,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(((int)((g_INT_01d737e0 + (g_INT_01d737e0 >> 0x1f) * -0x10000) -",
+      "text": "(g_AudioVisualizationCounter >> 0x1f) * -0x10000) -",
       "type": "signed_shift_global_idiom"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 50,
+      "line": 51,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_01d737e0 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7));",
+      "text": "(uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center",
       "type": "signed_shift_global_idiom"
     }
   ]

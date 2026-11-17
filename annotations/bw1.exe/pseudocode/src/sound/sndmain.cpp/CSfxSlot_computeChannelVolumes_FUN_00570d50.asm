@@ -21,10 +21,10 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005f3764
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005f3779
 ;   float g_FLOAT_005f379c = 0.05000000
-;   int g_INT_006232ec = 0x2
+;   int g_AudioChannelCount = 0x2
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_02c807ec
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -39,9 +39,9 @@ section .text
     PUSH ESI                            ; 00570d51
     PUSH EBP                            ; 00570d52
     SUB ESP,0x1c                        ; 00570d53
-    MOV ESI,dword ptr [0x006232ec]      ; 00570d56 | g_INT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570d56 | g_AudioChannelCount
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00570d5c
-    CMP dword ptr [0x02c807ec],0x0      ; 00570d60 | g_INT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00570d60 | g_SoundLockCount
     JLE 0x00570dbd                      ; 00570d67
         ;   XREF to: 00570dbd (CONDITIONAL_JUMP)  ; LAB_00570dbd
     MOV EBP,dword ptr [EBX]             ; 00570d69
@@ -58,7 +58,7 @@ section .text
     TEST AH,0x1                         ; 00570d85
     JZ 0x00570de4                       ; 00570d88
         ;   XREF to: 00570de4 (CONDITIONAL_JUMP)  ; LAB_00570de4
-    MOV ESI,dword ptr [0x006232ec]      ; 00570d8a | g_INT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570d8a | g_AudioChannelCount
     XOR EDX,EDX                         ; 00570d90
     TEST ESI,ESI                        ; 00570d92
     JLE 0x00570db0                      ; 00570d94
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00570d99 (CONDITIONAL_JUMP)  ; LAB_00570d99
     LEA EAX,[EAX]                       ; 00570da7
     LEA EDX,[EDX]                       ; 00570dad
-    MOV dword ptr [0x006232ec],ESI      ; 00570db0 | g_INT_006232ec
+    MOV dword ptr [0x006232ec],ESI      ; 00570db0 | g_AudioChannelCount
         ;   Label: LAB_00570db0
     ADD ESP,0x1c                        ; 00570db6
     POP EBP                             ; 00570db9
@@ -93,7 +93,7 @@ section .text
     POP EDI                             ; 00570de1
     JMP 0x00570d69                      ; 00570de2
         ;   XREF to: 00570d69 (UNCONDITIONAL_JUMP)  ; LAB_00570d69
-    MOV ESI,dword ptr [0x006232ec]      ; 00570de4 | g_INT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570de4 | g_AudioChannelCount
         ;   Label: LAB_00570de4
     XOR ECX,ECX                         ; 00570dea
     TEST ESI,ESI                        ; 00570dec

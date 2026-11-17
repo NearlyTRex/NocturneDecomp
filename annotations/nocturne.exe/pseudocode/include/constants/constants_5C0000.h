@@ -76,7 +76,7 @@ static TerminatedCString s_s_0123456789abcdefghijkl_005c1ff0 = "0123456789abcdef
 static TerminatedCString s_s_0123456789abcdefghijkl_005c2018 = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 // char*[12] constants
-static char* g_CHAR_PTR_ARRAY_005c1860[12] = {
+static char* g_MonthNamesLong[12] = {
     "January", "February", "March", "April",
     "May", "June", "July", "August",
     "September", "October", "November", "December"
@@ -93,24 +93,24 @@ static char* g_CHAR_PTR_ARRAY_005c2070[23] = {
 };
 
 // char*[7] constants
-static char* g_CHAR_PTR_ARRAY_005c1814[7] = {
+static char* g_WeekdayNamesLong[7] = {
     "Sunday", "Monday", "Tuesday", "Wednesday",
     "Thursday", "Friday", "Saturday"
 };
-static char* g_CHAR_PTR_ARRAY_005c2148[7] = {
+static char* g_MathErrorMessages[7] = {
     nullptr, "Domain error", "Argument singularity", "Overflow range error",
     "Underflow range error", "Total loss of significance", "Partial loss of significance"
 };
 
 // char[12][4] constants
-static char g_CHAR_ARRAY_ARRAY_005c1830[12][4] = {
+static char g_MonthNamesShort[12][4] = {
     "Jan", "Feb", "Mar", "Apr",
     "May", "Jun", "Jul", "Aug",
     "Sep", "Oct", "Nov", "Dec"
 };
 
 // char[256] constants
-static char g_CHAR_ARRAY_005c2201[256] = {
+static char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -136,24 +136,24 @@ static char g_CHAR_ARRAY_005c2201[256] = {
 };
 
 // char[7][4] constants
-static char g_CHAR_ARRAY_ARRAY_005c17f8[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+static char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 // double constants
-static double g_DOUBLE_005c1d9c = 709.78271289338397;
+static double g_ExpUnderflowLimit = 709.78271289338397;
 static double g_DOUBLE_005c1da4 = -709.78271289338397;
 static double g_DOUBLE_005c4084 = 1;
 
 // float constants
 static float g_FLOAT_005c0fa8 = 12.0f;
 static float g_FLOAT_005c0fac = 1.0f;
-static float g_FLOAT_005c3f78 = 0.9375f;
-static float g_FLOAT_005c3f7c = 1.0625f;
-static float g_FLOAT_005c3f80 = 9.223372e+18f;
+static float g_IEEE754NormalScaleFactor = 0.9375f;
+static float g_IEEE754SubnormalScaleFactor = 1.0625f;
+static float g_IEEE754RenormScaleFactor = 9.223372e+18f;
 static float g_FLOAT_005c40c8 = 16.0f;
 static float g_FLOAT_005c40cc = 0.0625f;
 
 // float10 constants
-static float10 g_FLOAT10_005c17ec = 1.5707963f;
+static float10 g_PiOver2 = 1.5707963f;
 static float10 g_FLOAT10_005c40b4 = 3.1415927f;
 static float10 g_FLOAT10_005c40be = 1.5707963f;
 static float10 g_FLOAT10_005c40d0 = -0.33333333f;
@@ -209,8 +209,8 @@ static undefined1 DAT_005c18a0 = 0x01;
 static undefined1* DAT_005C0E70 = (undefined1*)s_anon_00595005;
 static undefined1* DAT_005C0E74 = (undefined1*)s_e_m_e_e_00595007;
 static undefined1* DAT_005C0E78 = (undefined1*)s_anon_00595008;
-static undefined1* DAT_005C1B18 = (undefined1*)&g_CHAR_ARRAY_00598b2c+0x10;
-static undefined1* DAT_005C1B1C = (undefined1*)&g_CHAR_ARRAY_00598b2c+0x18;
+static undefined1* DAT_005C1B18 = (undefined1*)&g_EmptyStringBuffer+0x10;
+static undefined1* DAT_005C1B1C = (undefined1*)&g_EmptyStringBuffer+0x18;
 static undefined1* DAT_005C3F88 = (undefined1*)crt_unknown_c_FUN_0056bf77;
 static undefined1* DAT_005C3F8C = (undefined1*)crt_unknown_c_FUN_0056bf7c;
 static undefined1* DAT_005C3F90 = (undefined1*)crt_unknown_c_FUN_0056bf82;

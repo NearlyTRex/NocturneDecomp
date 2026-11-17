@@ -27,7 +27,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
   ushort *local_18;
   ushort *local_14;
   
-  g_INT_01b2ee48 = 0;
+  g_NoiseTableIndex = 0;
   iVar7 = 0;
   do {
     uVar4 = rand();
@@ -40,7 +40,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
     iVar6 = 0;
     do {
       iVar5 = g_INT_0061b498 * g_INT_0061b4a0 >> 0x1f;
-      puVar1 = (uint *)((int)g_ARRAY_PTR_01c4354c + iVar6);
+      puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);
       iVar6 = iVar6 + 4;
       iVar7 = iVar7 + 1;
       memset
@@ -59,7 +59,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
         }
         iVar7 = iVar7 + screen_y;
         if ((-1 < iVar7) && (iVar7 < g_INT_0061b49c)) {
-          puVar8 = (uint *)(g_ARRAY_PTR_01c4354c[iVar7] + screen_x * 4);
+          puVar8 = (uint *)(g_ScreenBufferArray[iVar7] + screen_x * 4);
           local_18 = this_ptr->shadow_depth_buffer + local_30 * this_ptr->shadow_map_width;
           local_24 = 0;
           local_20 = 0;
@@ -67,11 +67,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
             do {
               iVar7 = g_INT_0061b498;
               if (*local_18 != 0) {
-                piVar2 = g_INT_ARRAY_01b2ee4c + g_INT_01b2ee48;
-                g_INT_01b2ee48 = g_INT_01b2ee48 + 1;
+                piVar2 = g_INT_ARRAY_01b2ee4c + g_NoiseTableIndex;
+                g_NoiseTableIndex = g_NoiseTableIndex + 1;
                 uVar4 = (uint)(*local_18 >> 6) + *piVar2;
-                if (99 < g_INT_01b2ee48) {
-                  g_INT_01b2ee48 = 0;
+                if (99 < g_NoiseTableIndex) {
+                  g_NoiseTableIndex = 0;
                 }
                 if (0x7f < uVar4) {
                   uVar4 = 0x7f;
@@ -83,9 +83,9 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
                 local_24 = uVar4 + local_24 >> 1;
                 uVar4 = local_24 * 3 >> 2;
                 if (g_INT_0061b4a0 == 0x20) {
-                  uVar4 = local_24 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
-                          uVar4 << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f) |
-                          uVar4 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
+                  uVar4 = local_24 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                          uVar4 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                          uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
                 }
                 else {
                   uVar4 = uVar4 << 0x10 | uVar4 << 8 | local_24;
@@ -120,18 +120,18 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
         }
         iVar7 = iVar7 + screen_y;
         if ((-1 < iVar7) && (iVar7 < g_INT_0061b49c)) {
-          puVar9 = (ushort *)(g_ARRAY_PTR_01c4354c[iVar7] + screen_x * 2);
+          puVar9 = (ushort *)(g_ScreenBufferArray[iVar7] + screen_x * 2);
           local_14 = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_28 = 0;
           local_1c = 0;
           if (0 < this_ptr->shadow_map_width) {
             do {
               if (*local_14 != 0) {
-                piVar2 = g_INT_ARRAY_01b2ee4c + g_INT_01b2ee48;
-                g_INT_01b2ee48 = g_INT_01b2ee48 + 1;
+                piVar2 = g_INT_ARRAY_01b2ee4c + g_NoiseTableIndex;
+                g_NoiseTableIndex = g_NoiseTableIndex + 1;
                 uVar4 = (uint)(*local_14 >> 6) + *piVar2;
-                if (99 < g_INT_01b2ee48) {
-                  g_INT_01b2ee48 = 0;
+                if (99 < g_NoiseTableIndex) {
+                  g_NoiseTableIndex = 0;
                 }
                 if (0x7f < uVar4) {
                   uVar4 = 0x7f;
@@ -142,12 +142,12 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDem
                 }
                 local_28 = uVar4 + local_28 >> 1;
                 uVar4 = local_28 * 3 >> 2;
-                uVar3 = (ushort)(local_28 / (uint)g_INT_01c4e9f0 <<
-                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) |
-                        (ushort)(uVar4 / (uint)g_INT_01c4e9d8 <<
-                                (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
-                        (ushort)(uVar4 / (uint)g_INT_01c4e9e4 <<
-                                (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f));
+                uVar3 = (ushort)(local_28 / (uint)g_BlueScaleFactor <<
+                                (g_BlueBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar4 / (uint)g_RedScaleFactor <<
+                                (g_RedBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar4 / (uint)g_GreenScaleFactor <<
+                                (g_GreenBitPosition.bytes[0] & 0x1f));
                 *puVar9 = uVar3;
                 if (0x140 < g_INT_0061b498) {
                   puVar9[1] = uVar3;

@@ -22,7 +22,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
   if (actor_ptr != (CWeapon *)0x0) {
     if ((this_ptr->cached_ammo_count != actor_ptr->ammo_count) &&
        (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (&actor_ptr->base,g_CLightGunActorType_01cc3688.name_hash),
+                           (&actor_ptr->base,g_CLightGunClassInfo.name_hash),
        pCVar3 == (CDemonActor *)0x0)) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(this_ptr,0);
     }
@@ -35,7 +35,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
     if (0 < this_ptr->item_count) {
       do {
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar5->items[0],g_CBatteryActorType_00764674.name_hash);
+                           (pCVar5->items[0],g_CBatteryClassInfo.name_hash);
         if (pCVar3 != (CDemonActor *)0x0) {
           local_20 = 1.0 / pCVar3[2].orient.vec.x + local_20;
         }
@@ -57,7 +57,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
     if (0 < this_ptr->item_count) {
       do {
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar5->items[0],g_CBatteryActorType_00764674.name_hash);
+                           (pCVar5->items[0],g_CBatteryClassInfo.name_hash);
         if (pCVar3 != (CDemonActor *)0x0) {
           local_1c = local_1c + pCVar3[2].orient.vec.y;
         }
@@ -77,7 +77,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
   if (0 < this_ptr->item_count) {
     do {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (pCVar5->items[0],g_CLightGunActorType_01cc3688.name_hash);
+                         (pCVar5->items[0],g_CLightGunClassInfo.name_hash);
       if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.area_id != 2)) {
         (*((pCVar3->vtable)._ub)->process)(pCVar3,g_CGamePtr->delta_time_float);
       }

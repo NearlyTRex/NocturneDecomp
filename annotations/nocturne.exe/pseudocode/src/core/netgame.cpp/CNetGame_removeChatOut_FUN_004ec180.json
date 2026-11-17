@@ -124,73 +124,73 @@
     },
     {
       "addr": "01cea3f4",
-      "name": "g_INT_01cea3f4",
+      "name": "g_LastPingTime",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea3f8",
-      "name": "g_UINT_01cea3f8",
+      "name": "g_CurrentGameTime",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01d06610",
-      "name": "g_INT_01d06610",
+      "name": "g_ChatOutCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d06614",
-      "name": "g_SChatOutMessage_ARRAY_01d06614",
+      "name": "g_ChatOutMessages",
       "type": "SChatOutMessage[50]",
       "value": null
     },
     {
       "addr": "01d06618",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].sequence_number",
+      "name": "g_ChatOutMessages[0].sequence_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d0661c",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].ack_flags",
+      "name": "g_ChatOutMessages[0].ack_flags",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d0661d",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].ack_flags+1",
+      "name": "g_ChatOutMessages[0].ack_flags+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d06624",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].player_timestamps[1]",
+      "name": "g_ChatOutMessages[0].player_timestamps[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d06628",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].message[0]",
+      "name": "g_ChatOutMessages[0].message[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d06629",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].message[1]",
+      "name": "g_ChatOutMessages[0].message[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d0662a",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].message[2]",
+      "name": "g_ChatOutMessages[0].message[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d0662b",
-      "name": "g_SChatOutMessage_ARRAY_01d06614[0].message[3]",
+      "name": "g_ChatOutMessages[0].message[3]",
       "type": "undefined4",
       "value": null
     }
@@ -493,7 +493,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((g_INT_01d06610 - iVar2) * 0x114) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((g_ChatOutCount - iVar2) * 0x114) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 117,
       "match": "memmove",
       "severity": "moderate",

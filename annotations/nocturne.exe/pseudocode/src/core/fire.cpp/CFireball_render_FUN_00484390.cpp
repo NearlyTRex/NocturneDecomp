@@ -56,13 +56,13 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
             (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&this_ptr->rotation_angle1,(CVector3i *)0x0)
   ;
   if (this_ptr->lighting_active == 0) {
-    this_ptr_00 = &g_CKeyFramedModelInstance_01c08ec4;
+    this_ptr_00 = &g_FireEffectFireballModel;
   }
   else if (this_ptr->lighting_active == 1) {
-    this_ptr_00 = &g_CKeyFramedModelInstance_01c09040;
+    this_ptr_00 = &g_FireEffectFireballSmallModel;
   }
   else {
-    this_ptr_00 = &g_CKeyFramedModelInstance_01c091bc;
+    this_ptr_00 = &g_FireEffectFireballGreenModel;
   }
   pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr_00);
   pCVar1 = pCVar4->frame_bounds;
@@ -92,7 +92,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
     g_SRenderVertex_ARRAY_005c5014[3].u = 0x80000;
     g_SRenderVertex_ARRAY_005c5014[3].v = 0x80000;
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (g_CDemonRenderer_PTR_005ae704,&g_CVector3i_01c08d08,(CVector3i *)0x0);
+              (g_CDemonRenderer_PTR_005ae704,&g_BillboardCameraRight,(CVector3i *)0x0);
     local_70 = -local_1c;
     local_68 = 0.0;
     local_64.x = (int)ROUND(local_70 * 256.0f);
@@ -135,7 +135,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
       texture = (SMRGLTextureBasic *)&DAT_005b84fc;
     }
     else {
-      texture = &g_SMRGLTextureBasic_005b84cc;
+      texture = &g_FireEffectSparkTexture;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,texture);
@@ -159,7 +159,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
     g_SRenderVertex_ARRAY_005c5014[3].a = g_SRenderVertex_ARRAY_005c5014[0].a;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
-              (g_CDemonRenderer_PTR_005ae704,&g_SMRGLPrimitiveQuadIndex_01c08d20.base);
+              (g_CDemonRenderer_PTR_005ae704,&g_BillboardPrimitive.base);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     if ((this_ptr->lighting_active != 1) && (this_ptr->lighting_active != 2)) {
@@ -185,7 +185,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (g_CDemonRenderer_PTR_005ae704,&local_48);
         engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-                  (g_CDemonRenderer_PTR_005ae704,&g_CVector3i_01c08d08,(CVector3i *)0x0);
+                  (g_CDemonRenderer_PTR_005ae704,&g_BillboardCameraRight,(CVector3i *)0x0);
         local_6c = -local_18 * local_e0.min.x;
         local_64.x = 0;
         local_90.x = (int)ROUND(local_6c * 256.0f);
@@ -223,7 +223,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
                    (CVector3i *)local_84);
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-                  (g_CDemonCamera_PTR_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
         lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - g_INT_01c038f4);
         g_SRenderVertex_ARRAY_005c5014[0].a =
              (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
@@ -245,7 +245,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1)
         ;
         engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
-                  (g_CDemonRenderer_PTR_005ae704,&g_SMRGLPrimitiveQuadIndex_01c08d20.base);
+                  (g_CDemonRenderer_PTR_005ae704,&g_BillboardPrimitive.base);
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0)
         ;
         iVar5 = iVar5 + 1;

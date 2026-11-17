@@ -42,7 +42,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004755c0(CDemonR
         iVar7 = 0;
         iStack_18 = iStack_20;
         do {
-          if ((*(byte *)(*(int *)voxel_data + iStack_18) & g_UCHAR_ARRAY_005fb0e8[iVar7]) != 0) {
+          if ((*(byte *)(*(int *)voxel_data + iStack_18) & g_VoxelYBitMasks[iVar7]) != 0) {
             CStack_34.x = (float)iVar7 * (this_ptr->cell_size).x * 0.125f +
                           (float)grid_x * fVar1 + fVar4;
             iStack_14 = iStack_1c;

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_shape_edittool_cpp_005d1f6c
 ;   TerminatedCString s_paintWindowBackground_ca_005d1f82
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_01c2559c
-;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   int g_WindowStackCount
+;   void*[1200] g_ScreenBufferArray
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -33,10 +33,10 @@ section .text
     PUSH EDI                            ; 0047bca2
     PUSH EBP                            ; 0047bca3
     SUB ESP,0x8                         ; 0047bca4
-    CMP dword ptr [0x01c2559c],0x1      ; 0047bca7 | g_INT_01c2559c
+    CMP dword ptr [0x01c2559c],0x1      ; 0047bca7 | g_WindowStackCount
     JL 0x0047bd37                       ; 0047bcae
         ;   XREF to: 0047bd37 (CONDITIONAL_JUMP)  ; LAB_0047bd37
-    MOV EAX,[0x01c2559c]                ; 0047bcb4 | g_INT_01c2559c
+    MOV EAX,[0x01c2559c]                ; 0047bcb4 | g_WindowStackCount
         ;   Label: LAB_0047bcb4
     DEC EAX                             ; 0047bcb9
     SHL EAX,0x3                         ; 0047bcba
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_0047bd08
     MOV EDI,dword ptr [EDI + 0x1e0]     ; 0047bd0c
     ADD EDI,EBP                         ; 0047bd12
-    MOV EDI,dword ptr [EDI*0x4 + 0x1c2a38c] ; 0047bd14 | g_ARRAY_PTR_01c2a38c
+    MOV EDI,dword ptr [EDI*0x4 + 0x1c2a38c] ; 0047bd14 | g_ScreenBufferArray
     TEST EDI,EDI                        ; 0047bd1b
     JNZ 0x0047bd5f                      ; 0047bd1d
         ;   XREF to: 0047bd5f (CONDITIONAL_JUMP)  ; LAB_0047bd5f

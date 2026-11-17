@@ -30,12 +30,12 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_00603e44);
+            (g_CDemonRenderer_PTR_005f2afc,&g_EnvMapTexture);
   if (g_CGamePtr->render_mode == 2) {
     alpha = g_INT_005fba38 << 8;
   }
   else {
-    lVar4 = (longlong)(0xffff - g_INT_01c6e24c) * (longlong)alpha;
+    lVar4 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
               (g_CDemonRenderer_PTR_005f2afc,
                (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);

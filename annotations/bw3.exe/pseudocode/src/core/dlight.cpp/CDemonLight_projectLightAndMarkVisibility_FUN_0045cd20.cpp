@@ -48,7 +48,7 @@ LAB_0045cdb3:
              this_ptr->lightmap_visibility_bits
              [((int)((iVar2 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3) +
               ((int)((uVar1 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3)] |
-             g_UCHAR_ARRAY_005f2820[uVar1 & 7];
+             g_LightBitMaskLookup[uVar1 & 7];
         return this_ptr->shadow_depth_buffer + uVar1 + iVar6 * this_ptr->shadow_map_width;
       }
     }

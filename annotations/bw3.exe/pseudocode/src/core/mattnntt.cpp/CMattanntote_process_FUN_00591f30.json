@@ -394,7 +394,7 @@
     },
     {
       "addr": "01d1a0a4",
-      "name": "g_INT_01d1a0a4",
+      "name": "g_FastSqrtMagic",
       "type": "int",
       "value": null
     },
@@ -1952,35 +1952,35 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 261,
-      "match": "fStack_84 = (float)(((int)fStack_68 >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_84 = (float)(((int)fStack_68 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_84 = (float)(((int)fStack_68 >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_84 = (float)(((int)fStack_68 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 515,
-      "match": "fStack_7c = (float)(((int)fStack_80 >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_7c = (float)(((int)fStack_80 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_7c = (float)(((int)fStack_80 >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_7c = (float)(((int)fStack_80 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 552,
-      "match": "fStack_74 = (float)(((int)fStack_78 >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_74 = (float)(((int)fStack_78 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_74 = (float)(((int)fStack_78 >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_74 = (float)(((int)fStack_78 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 595,
-      "match": "fStack_6c = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);",
+      "match": "fStack_6c = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
-      "text": "fStack_6c = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);",
+      "text": "fStack_6c = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     },
     {

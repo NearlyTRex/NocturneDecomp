@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
-;   uchar[257] g_UCHAR_ARRAY_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;   void* g_PTR_01d1bca0
 ;
 ; Called Functions:
@@ -168,7 +168,7 @@ section .text
     MOV AL,DL                           ; 0049aaf3
     INC AL                              ; 0049aaf5
     AND EAX,0xff                        ; 0049aaf7
-    TEST byte ptr [EAX + 0x626114],0xe0 ; 0049aafc | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0xe0 ; 0049aafc | g_CharacterClassificationTable
     JZ 0x0049ab27                       ; 0049ab03
         ;   XREF to: 0049ab27 (CONDITIONAL_JUMP)  ; LAB_0049ab27
     MOV EDI,ESI                         ; 0049ab05

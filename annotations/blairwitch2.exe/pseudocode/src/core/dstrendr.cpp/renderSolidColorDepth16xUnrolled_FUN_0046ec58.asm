@@ -9,10 +9,10 @@
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0 at 00469782
 ;
 ; Referenced Globals:
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   uint*[1200] g_UINT_PTR_ARRAY_01c2b64c
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c35e60
-;   uint[1600] g_UINT_ARRAY_01c35e70
+;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     SHR EAX,0x10                        ; 0046ec68
         ;   Label: LAB_0046ec68
     SHR ECX,0x10                        ; 0046ec6b
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0046ec6e | g_UINT_PTR_ARRAY_01c2b64c
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046ec75 | g_ARRAY_PTR_01c2a38c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0046ec6e | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046ec75 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 0046ec7c
     JLE 0x0046ee33                      ; 0046ec7e
         ;   XREF to: 0046ee33 (CONDITIONAL_JUMP)  ; LAB_0046ee33
@@ -43,7 +43,7 @@ section .text
     INC ECX                             ; 0046ec8b
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046ec8c
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046ec8f
-    IMUL dword ptr [ECX*0x4 + 0x1c35e70] ; 0046ec92 | g_UINT_ARRAY_01c35e70
+    IMUL dword ptr [ECX*0x4 + 0x1c35e70] ; 0046ec92 | g_ReciprocalLookupTable
     MOV EDI,EBX                         ; 0046ec99
     MOV EBX,EBP                         ; 0046ec9b
     DEC ECX                             ; 0046ec9d

@@ -11,21 +11,21 @@
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_00443af0 at 00443b25
 ;
 ; Referenced Globals:
-;   int g_INT_006141e4 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e40
 ;   int g_INT_01c35e44
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b70
-;   int g_INT_01c38b74
-;   int g_INT_01c38b78
-;   int g_INT_01c38b7c
-;   int g_INT_01c38b80
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;   ... and 21 more
 ;
 ; *****************************************************************************
@@ -43,31 +43,31 @@ section .text
     MOV EDX,dword ptr [EAX + 0xc]       ; 0046cb5e
     MOV dword ptr [0x01c35e44],EDX      ; 0046cb61 | g_INT_01c35e44
     MOV EDX,dword ptr [EAX + 0x10]      ; 0046cb67
-    MOV dword ptr [0x01c38b78],EDX      ; 0046cb6a | g_INT_01c38b78
+    MOV dword ptr [0x01c38b78],EDX      ; 0046cb6a | g_CameraOriginX
     MOV EDX,dword ptr [EAX + 0x14]      ; 0046cb70
-    MOV dword ptr [0x01c38b7c],EDX      ; 0046cb73 | g_INT_01c38b7c
+    MOV dword ptr [0x01c38b7c],EDX      ; 0046cb73 | g_CameraOriginY
     MOV EDX,dword ptr [EAX + 0x18]      ; 0046cb79
-    MOV dword ptr [0x01c38b80],EDX      ; 0046cb7c | g_INT_01c38b80
+    MOV dword ptr [0x01c38b80],EDX      ; 0046cb7c | g_CameraOriginZ
     MOV EDX,dword ptr [EAX + 0x1c]      ; 0046cb82
-    MOV dword ptr [0x01c38b84],EDX      ; 0046cb85 | g_INT_01c38b84
+    MOV dword ptr [0x01c38b84],EDX      ; 0046cb85 | g_CameraRotationPitch
     MOV EDX,dword ptr [EAX + 0x20]      ; 0046cb8b
-    MOV dword ptr [0x01c38b88],EDX      ; 0046cb8e | g_INT_01c38b88
+    MOV dword ptr [0x01c38b88],EDX      ; 0046cb8e | g_CameraRotationYaw
     MOV EDX,dword ptr [EAX + 0x24]      ; 0046cb94
-    MOV dword ptr [0x01c38b8c],EDX      ; 0046cb97 | g_INT_01c38b8c
+    MOV dword ptr [0x01c38b8c],EDX      ; 0046cb97 | g_CameraRotationRoll
     MOV EDX,dword ptr [EAX + 0x28]      ; 0046cb9d
     MOV dword ptr [0x01c35e48],EDX      ; 0046cba0 | g_INT_01c35e48
     MOV EDX,dword ptr [EAX + 0x2c]      ; 0046cba6
-    MOV dword ptr [0x01c35e50],EDX      ; 0046cba9 | g_INT_01c35e50
+    MOV dword ptr [0x01c35e50],EDX      ; 0046cba9 | g_ClipRight
     MOV EDX,dword ptr [EAX + 0x30]      ; 0046cbaf
     MOV dword ptr [0x01c35e4c],EDX      ; 0046cbb2 | g_INT_01c35e4c
     MOV EDX,dword ptr [EAX + 0x34]      ; 0046cbb8
     MOV dword ptr [0x01c35e54],EDX      ; 0046cbbb | g_INT_01c35e54
     MOV EDX,dword ptr [EAX + 0x38]      ; 0046cbc1
-    MOV dword ptr [0x01c38b6c],EDX      ; 0046cbc4 | g_INT_01c38b6c
+    MOV dword ptr [0x01c38b6c],EDX      ; 0046cbc4 | g_RelativeX
     MOV EDX,dword ptr [EAX + 0x3c]      ; 0046cbca
-    MOV dword ptr [0x01c38b70],EDX      ; 0046cbcd | g_INT_01c38b70
+    MOV dword ptr [0x01c38b70],EDX      ; 0046cbcd | g_RelativeY
     MOV EDX,dword ptr [EAX + 0x40]      ; 0046cbd3
-    MOV dword ptr [0x01c38b74],EDX      ; 0046cbd6 | g_INT_01c38b74
+    MOV dword ptr [0x01c38b74],EDX      ; 0046cbd6 | g_RelativeZ
     MOV EDX,dword ptr [EAX + 0x44]      ; 0046cbdc
     MOV dword ptr [0x01c38b9c],EDX      ; 0046cbdf | g_INT_01c38b9c
     MOV EDX,dword ptr [EAX + 0x48]      ; 0046cbe5
@@ -105,6 +105,6 @@ section .text
     MOV EDX,dword ptr [EAX + 0x88]      ; 0046cc7b
     MOV EAX,dword ptr [EAX + 0x8c]      ; 0046cc81
     MOV dword ptr [0x01d04fd8],EDX      ; 0046cc87 | g_INT_01d04fd8
-    MOV [0x006141e4],EAX                ; 0046cc8d | g_INT_006141e4
+    MOV [0x006141e4],EAX                ; 0046cc8d | g_ProjectionScale
     RET                                 ; 0046cc92
 

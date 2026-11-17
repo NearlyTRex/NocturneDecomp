@@ -18,13 +18,13 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0059a5a8 = 0059a647
-;   int g_INT_0070ca7c
+;   int g_CullingMode
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e40
 ;   int g_INT_01c35e44
-;   int g_INT_01c38b58
-;   int g_INT_01e61b58
+;   int g_VertexPreprocessMode
+;   int g_RenderedTriangleCount
 ;   int g_INT_026672a8
 ;   undefined4 DAT_026672ac
 ;   undefined4 DAT_026672fc
@@ -69,18 +69,18 @@ section .text
     CMP EDI,EBX                         ; 0059a60b
     JL 0x0059a5eb                       ; 0059a60d
         ;   XREF to: 0059a5eb (CONDITIONAL_JUMP)  ; LAB_0059a5eb
-    MOV EDI,dword ptr [0x0070ca7c]      ; 0059a60f | g_INT_0070ca7c
+    MOV EDI,dword ptr [0x0070ca7c]      ; 0059a60f | g_CullingMode
         ;   Label: LAB_0059a60f
     MOV dword ptr [0x026672a8],ESI      ; 0059a615 | g_INT_026672a8
     TEST EDI,EDI                        ; 0059a61b
     JNZ 0x0059a81e                      ; 0059a61d
         ;   XREF to: 0059a81e (CONDITIONAL_JUMP)  ; LAB_0059a81e
-    MOV EDX,dword ptr [0x01e61b58]      ; 0059a623 | g_INT_01e61b58
+    MOV EDX,dword ptr [0x01e61b58]      ; 0059a623 | g_RenderedTriangleCount
         ;   Label: LAB_0059a623
     MOV ESI,dword ptr [0x026672a8]      ; 0059a629 | g_INT_026672a8
     INC EDX                             ; 0059a62f
-    MOV EAX,[0x01c38b58]                ; 0059a630 | g_INT_01c38b58
-    MOV dword ptr [0x01e61b58],EDX      ; 0059a635 | g_INT_01e61b58
+    MOV EAX,[0x01c38b58]                ; 0059a630 | g_VertexPreprocessMode
+    MOV dword ptr [0x01e61b58],EDX      ; 0059a635 | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 0059a63b
     JA 0x0059a647                       ; 0059a63e
         ;   XREF to: 0059a647 (CONDITIONAL_JUMP)  ; caseD_4

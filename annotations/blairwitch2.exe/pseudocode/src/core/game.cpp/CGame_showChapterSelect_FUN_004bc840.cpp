@@ -30,9 +30,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004bc840(CGame *this_ptr,
   this_ptr->damageable_enemy_count = 0;
   this_ptr->total_kill_count = 0;
   this_ptr->total_game_time = 0.0;
-  pCVar2 = g_CBitFont_PTR_01c25590;
+  pCVar2 = g_EditorFont;
   this_ptr->total_play_time = 0.0;
-  g_CBitFont_PTR_01c25590 = g_CBitFont_PTR_01511cc0;
+  g_EditorFont = g_ThemeFont;
   this_ptr->is_loading = 0;
   p_Var3 = _fopen("pod.ini","rt");
   if (p_Var3 != (_FILE *)0x0) {
@@ -49,8 +49,8 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004bc840(CGame *this_ptr,
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_120,0);
     if (iVar4 == 0) goto LAB_004bca85;
-    g_CHAR_ARRAY_01cb7f78[0] = '\0';
-    g_INT_01cb8078 = 0;
+    g_ChapterDisplayName[0] = '\0';
+    g_ChapterDisplayYear = 0;
   }
   else {
     pcVar5 = local_120;
@@ -67,9 +67,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004bc840(CGame *this_ptr,
     } while (cVar1 != '\0');
     p_Var3 = engine_dosio_cpp_getFile_FUN_00460c70("world",local_120,"rt");
     if (p_Var3 == (_FILE *)0x0) goto LAB_004bca85;
-    pcVar6 = g_CHAR_ARRAY_01cb7f78;
+    pcVar6 = g_ChapterDisplayName;
     _fclose(p_Var3);
-    g_INT_01cb8078 = 0x00000795;
+    g_ChapterDisplayYear = 0x00000795;
     pcVar5 = local_18;
     do {
       cVar1 = *pcVar5;
@@ -81,14 +81,14 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004bc840(CGame *this_ptr,
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
   }
-  g_FLOAT_01cb807c = 0.0;
+  g_OverlayDisplayTimer = 0.0;
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(g_CFieldNotesPtr);
-  core_event_cpp_CEventList_resetGameFlags_FUN_004910b0(g_CEventList_PTR_006141f0);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004910b0(g_CEventListPtr);
   load_flags = 1;
-  iVar4 = _stricmp(g_CHAR_ARRAY_01cb7b50,local_120);
+  iVar4 = _stricmp(g_CurrentSaveFile,local_120);
   if (iVar4 != 0) {
     pcVar5 = local_120;
-    pcVar6 = g_CHAR_ARRAY_01cb7b50;
+    pcVar6 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar5;
       *pcVar6 = cVar1;
@@ -114,7 +114,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004bc840(CGame *this_ptr,
     }
   }
 LAB_004bca85:
-  g_CBitFont_PTR_01c25590 = pCVar2;
+  g_EditorFont = pCVar2;
   engine_ini_cpp_CIniFile_dtor_FUN_004d8940(&local_324,0);
   return;
 }

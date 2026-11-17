@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005c4629 = -65536
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CDemonCamera* g_CDemonCamera_PTR_007e2a54
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.base.base.count
 ;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.A
@@ -29,8 +29,8 @@
 ;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[1]
 ;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[2]
 ;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[3]
-;   CVector3i g_CVector3i_01d22e70
-;   undefined4 g_CVector3i_01d22e70.y
+;   CVector3i g_ParticleCameraRotation
+;   undefined4 g_ParticleCameraRotation.y
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -68,12 +68,12 @@ section .text
         ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004ccb56
     ADD ESP,0x4                         ; 004ccb5a
-    MOVSD ES:EDI,ESI                    ; 004ccb5d | g_CVector3i_01d22e70
-    MOVSD ES:EDI,ESI                    ; 004ccb5e | g_CVector3i_01d22e70.y
-    MOVSD ES:EDI,ESI                    ; 004ccb5f | g_CVector3i_01d22e70.z
+    MOVSD ES:EDI,ESI                    ; 004ccb5d | g_ParticleCameraRotation
+    MOVSD ES:EDI,ESI                    ; 004ccb5e | g_ParticleCameraRotation.y
+    MOVSD ES:EDI,ESI                    ; 004ccb5f | g_ParticleCameraRotation.z
     XOR ESI,ESI                         ; 004ccb60
-    MOV dword ptr [0x01d22e74],ESI      ; 004ccb62 | g_CVector3i_01d22e70.y
-    MOV ESI,dword ptr [0x007e2a54]      ; 004ccb68 | g_CDemonCamera_PTR_007e2a54
+    MOV dword ptr [0x01d22e74],ESI      ; 004ccb62 | g_ParticleCameraRotation.y
+    MOV ESI,dword ptr [0x007e2a54]      ; 004ccb68 | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004ccb6e
     LEA EDI,[ESP + 0x28]                ; 004ccb73
     LEA ESI,[ESI + 0x10]                ; 004ccb77
@@ -99,10 +99,10 @@ section .text
     CALL crt_math.c_round_FUN_005a3120  ; 004ccbb1
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 004ccbb6
-    FISTP dword ptr [0x01d22e7c]        ; 004ccbb8 | g_CVector3i_01d22e7c
+    FISTP dword ptr [0x01d22e7c]        ; 004ccbb8 | g_BloodParticleViewDirection
     FXCH                                ; 004ccbbe
-    FISTP dword ptr [0x01d22e80]        ; 004ccbc0 | g_CVector3i_01d22e7c.y
-    FISTP dword ptr [0x01d22e84]        ; 004ccbc6 | g_CVector3i_01d22e7c.z
+    FISTP dword ptr [0x01d22e80]        ; 004ccbc0 | g_BloodParticleViewDirection.y
+    FISTP dword ptr [0x01d22e84]        ; 004ccbc6 | g_BloodParticleViewDirection.z
     ADD ESP,0x5c                        ; 004ccbcc
     POP EDI                             ; 004ccbcf
     POP ESI                             ; 004ccbd0

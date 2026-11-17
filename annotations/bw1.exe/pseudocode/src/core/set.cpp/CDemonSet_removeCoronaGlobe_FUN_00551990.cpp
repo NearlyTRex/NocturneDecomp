@@ -18,11 +18,10 @@ void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(CDemonSet *th
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      if (globe == *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar2)) {
+      if (globe == *(CDemonGlobe **)((int)g_CoronaGlobes + iVar2)) {
         g_INT_01fe55d0 = g_INT_01fe55d0 + -1;
         memmove
-                  ((void *)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar2),
-                   (void *)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar2 + 4),
+                  ((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),
                    (g_INT_01fe55d0 - iVar3) * 4);
         return;
       }

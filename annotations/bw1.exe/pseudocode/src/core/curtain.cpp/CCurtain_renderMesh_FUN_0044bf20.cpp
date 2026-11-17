@@ -76,7 +76,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044bf20(CCurtain *this_ptr
   core_set_cpp_CDemonSet_rotateVerticies_FUN_00553140
             (g_CDemonSetPtr,this_ptr->vertex_count,(CVector3i *)input_vertices);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(g_CDemonRenderer_PTR_00612560,1);
-  bVar1 = 0 < g_INT_01c51d34;
+  bVar1 = 0 < g_RelativeZ;
   if (this_ptr->cinched_top == 0) {
     bVar1 = true;
 LAB_0044c074:
@@ -99,7 +99,7 @@ LAB_0044c074:
                  (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,-1);
     }
   }
-  else if (g_INT_01c51d34 < 0) goto LAB_0044c074;
+  else if (g_RelativeZ < 0) goto LAB_0044c074;
   if (bVar1) {
     pSVar6 = (SMRGLPrimitivePoly *)(this_ptr->mesh).back_faces;
     core_set_cpp_CDemonSet_lightVerticies_FUN_00553440

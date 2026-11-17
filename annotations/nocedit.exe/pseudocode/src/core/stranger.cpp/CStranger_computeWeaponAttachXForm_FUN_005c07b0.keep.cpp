@@ -237,7 +237,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else if (hand_index == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_75c,&CVector3f_03f6babc,&g_ZeroVector.f);
+                (&local_75c,&g_StrangerWeaponEulerMinusX,&g_ZeroVector.f);
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_66c);
       core_xform_cpp_buildRotationY_FUN_005f6cc0(-1.5707964,&local_bac);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_bac,&local_66c,&local_b7c);
@@ -247,7 +247,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_aec,&CVector3f_03f6bab0,&g_ZeroVector.f);
+                (&local_aec,&g_StrangerWeaponEulerPlusX,&g_ZeroVector.f);
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_72c);
       core_xform_cpp_buildRotationY_FUN_005f6cc0(1.5707964,&local_60c);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_60c,&local_72c,&local_42c);

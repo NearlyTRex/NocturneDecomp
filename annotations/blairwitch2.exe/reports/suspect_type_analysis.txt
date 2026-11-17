@@ -4,17 +4,17 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                   10451 ( 31.4%)
-  pointer_truncation              8784 ( 26.4%)
-  unrolled_memcpy                 1803 (  5.4%)
+  pointer_cast                   10451 ( 31.6%)
+  pointer_truncation              8782 ( 26.6%)
+  unrolled_memcpy                 1808 (  5.5%)
   stack_ref                       1658 (  5.0%)
   stack_param                     1514 (  4.6%)
   unknown_field                   1252 (  3.8%)
-  concat_reconstruction            816 (  2.5%)
-  unaffected_reg                   812 (  2.4%)
-  stack_alignment_array            678 (  2.0%)
+  concat_reconstruction            826 (  2.5%)
+  unaffected_reg                   812 (  2.5%)
+  stack_alignment_array            678 (  2.1%)
   shadow_pointer_walk              623 (  1.9%)
-  negative_offset                  581 (  1.7%)
+  negative_offset                  581 (  1.8%)
   unrolled_strcpy                  555 (  1.7%)
   raw_address_constant             333 (  1.0%)
   unresolved_funcptr               328 (  1.0%)
@@ -23,7 +23,6 @@ SUSPECT TYPE COUNTS
   suspect_float                    243 (  0.7%)
   unrolled_strlen                  242 (  0.7%)
   warning_type_propagation         227 (  0.7%)
-  unnamed_param                    222 (  0.7%)
   undefined_data                   139 (  0.4%)
   extra_output                     123 (  0.4%)
   warning_unreachable              121 (  0.4%)
@@ -46,11 +45,11 @@ SUSPECT TYPE COUNTS
   alloc_magic_size                  27 (  0.1%)
   eflags_input                      26 (  0.1%)
   sign_compare_idiom                23 (  0.1%)
-  fnstsw_flag_artifact              22 (  0.1%)
   param_count_too_few               16 (  0.0%)
   raw_address_pointer_store         15 (  0.0%)
   undefined_type                    15 (  0.0%)
   fast_sqrt_inline                  14 (  0.0%)
+  fnstsw_flag_artifact              12 (  0.0%)
   suspicious_cast                   12 (  0.0%)
   inline_exp_idiom                  10 (  0.0%)
   fast_inv_sqrt_inline               9 (  0.0%)
@@ -97,7 +96,7 @@ Unique patterns:
     58x  (CDemonActor **)((int)g_CDemonSetPtr
     57x  (int)&NAME byte-offset arithmetic split across lines
     57x  (code **)((int)this_ptr
-    56x  (int *)((int)g_ARRAY_PTR_01c2a38c
+    56x  (int *)((int)g_ScreenBufferArray
     56x  (SRenderVertex *)((int)pSVar4
     54x  (code **)((int)(this_ptr->base).vtable
     53x  (uint *)((int)pvVar2
@@ -1384,7 +1383,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_0058f310
 
 ====================================================================================================
-TYPE: pointer_truncation (8784 occurrences)
+TYPE: pointer_truncation (8782 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1395,7 +1394,7 @@ Unique patterns:
     83x  (int)pvVar2
     80x  (int)&CStack_24
     78x  (int)pCVar5
-    77x  (int)g_ARRAY_PTR_01c2a38c
+    77x  (int)g_ScreenBufferArray
     75x  (int)&CStack_1c
     75x  (int)&CStack_34
     73x  (int)&CStack_28
@@ -2471,12 +2470,12 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_0058f310
 
 ====================================================================================================
-TYPE: unrolled_memcpy (1803 occurrences)
+TYPE: unrolled_memcpy (1808 occurrences)
 ====================================================================================================
 
 Unique patterns:
    814x  for (...; != 0; ... + -1)
-   619x  field-by-field struct copy
+   624x  field-by-field struct copy
    361x  MOVSD.REP
      4x  MOVSB.REP
      3x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -4057,7 +4056,7 @@ Functions:
   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10
 
 ====================================================================================================
-TYPE: concat_reconstruction (816 occurrences)
+TYPE: concat_reconstruction (826 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -4065,9 +4064,9 @@ Unique patterns:
     87x  CONCAT11
     80x  CONCAT24
     69x  CONCAT44
+    69x  CONCAT22
     69x  CONCAT13
     65x  CONCAT14
-    59x  CONCAT22
     55x  CONCAT12
     41x  CONCAT34
     38x  CONCAT52
@@ -6717,54 +6716,6 @@ Functions:
   support_trstream.cpp_COutStream_vprintf_FUN_0057d8a0
 
 ====================================================================================================
-TYPE: unnamed_param (222 occurrences)
-====================================================================================================
-
-Unique patterns:
-   143x  param_2
-    35x  param_3
-    12x  param_5
-     9x  param_4
-     9x  param_6
-     7x  param_7
-     7x  param_8
-
-Functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00468900
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710
-  core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
-  core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
-  core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0
-  core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
-  core_construc.cpp_CConstruct_getCollisionType_FUN_00438370
-  core_course.cpp_CCourse_allocMemory_FUN_00438a90
-  core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70
-  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0
-  core_fire.cpp_CFireEffect_createBulletTrail_FUN_0049d4b0
-  core_fldnotes.cpp_SPageResource_setLink_FUN_004a1ec0
-  core_mission.cpp_CDemonMission_changeSetName_FUN_004fc5a0
-  core_moon.cpp_CMoon_update_FUN_005024a0
-  core_morph.cpp_CMorph_addQuadPartToModel_FUN_005b7050
-  core_morph.cpp_CMorph_addTriPartToModel_FUN_005b7000
-  core_script.cpp_CScript_step_FUN_00522350
-  core_shadow.cpp_CShadow_processDamage_FUN_0053ea00
-  core_shadow.cpp_CShadow_process_FUN_0053c500
-  core_shadow.cpp_CShadow_setWalkTarget_FUN_0053df10
-  engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460
-  engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0
-  engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_00469be0
-  shape_edittool.cpp_CStrList_insertRange_FUN_00481050
-  support_codec.cpp_CCheesyCipher_setKey_FUN_00434d30
-  support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60
-  support_trstream.cpp_CInStreamMemory_openOwned_FUN_0057d830
-  support_trstream.cpp_CInStreamMemory_open_FUN_0057d800
-  support_trstream.cpp_CInStreamMemory_seek_FUN_0057d710
-  support_trstream.cpp_COutStreamFile_attach_FUN_0057de20
-  support_trstream.cpp_COutStreamFile_putChar_FUN_0057dc70
-  support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_0057e150
-  support_trstream.cpp_COutStreamMemory_open_FUN_0057e110
-
-====================================================================================================
 TYPE: undefined_data (139 occurrences)
 ====================================================================================================
 
@@ -7681,32 +7632,6 @@ Functions:
   engine_prim.c_renderPolygonSoftware_FUN_0051cb20
 
 ====================================================================================================
-TYPE: fnstsw_flag_artifact (22 occurrences)
-====================================================================================================
-
-Unique patterns:
-    10x  CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x10
-     2x  CONCAT22((short)((uint)g_PTR_01d09918 >> 0x10
-     1x  CONCAT22((short)uVar6 * (short)(uVar36 >> 0x10
-     1x  CONCAT22((short)(uVar43 >> 0x10
-     1x  CONCAT22((short)uVar8 * (short)(uVar45 >> 0x10
-     1x  CONCAT22((short)(uVar45 >> 0x10
-     1x  CONCAT22((ushort)((short)uVar7 * (short)(uVar38 >> 0x10
-     1x  CONCAT22(sVar45 * (short)(uVar36 >> 0x10
-     1x  CONCAT22(sVar45 * (short)(uVar43 >> 0x10
-     1x  CONCAT22((ushort)((short)uVar9 * (short)(uVar39 >> 0x10
-     1x  CONCAT22(sVar46 * (short)(uVar37 >> 0x10
-     1x  CONCAT22(sVar46 * (short)(uVar43 >> 0x10
-
-Functions:
-  engine_mini3d.cpp_getBehindClipFlag_FUN_004f4990
-  engine_mini3d.cpp_getClipFlags_FUN_004f48b0
-  engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0055bb93
-  engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1
-  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23
-  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c
-
-====================================================================================================
 TYPE: param_count_too_few (16 occurrences)
 ====================================================================================================
 
@@ -7751,7 +7676,7 @@ Unique patterns:
      1x  *(CDemonActor **)(&stack0xfffffefc
      1x  *(CDemonActor **)(&stack0xfffffef8
      1x  *(CPodFile **)(&stack0xfffff55c
-     1x  *(void **)(g_INT_0264161c * 0x60 + 0x2641664
+     1x  *(void **)(g_SfxLastSlot * 0x60 + 0x2641664
      1x  *(code **)(iVar5 + 0x2664fac
      1x  *(CZombie **)(&stack0xfffffde4
      1x  *(CDemonActor **)(&stack0xfffffde4
@@ -7798,19 +7723,19 @@ TYPE: fast_sqrt_inline (14 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  fStack_28 = (float)(((int)fStack_2c >> 1) + g_INT_01caf5b4);
-     1x  fStack_78 = (float)(((int)fStack_7c >> 1) + g_INT_01caf5b4);
-     1x  fStack_38 = (float)(((int)fStack_1c >> 1) + g_INT_01caf5b4);
-     1x  fStack_48 = (float)(((int)fStack_4c >> 1) + g_INT_01caf5b4);
-     1x  fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_INT_01caf5b4)) * g_FLOAT_01d098e4 *
-     1x  fVar2 = (1.0 - (float)(((int)fVar2 >> 1) + g_INT_01caf5b4) * *(float *)(iVar5 + 
+     1x  fStack_28 = (float)(((int)fStack_2c >> 1) + g_FastSqrtMagic);
+     1x  fStack_78 = (float)(((int)fStack_7c >> 1) + g_FastSqrtMagic);
+     1x  fStack_38 = (float)(((int)fStack_1c >> 1) + g_FastSqrtMagic);
+     1x  fStack_48 = (float)(((int)fStack_4c >> 1) + g_FastSqrtMagic);
+     1x  fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_FastSqrtMagic)) * g_FLOAT_01d098e4 
+     1x  fVar2 = (1.0 - (float)(((int)fVar2 >> 1) + g_FastSqrtMagic) * *(float *)(iVar5 +
      1x  fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + g_
-     1x  return (float)(((int)value >> 1) + g_INT_01caf5b4);
+     1x  return (float)(((int)value >> 1) + g_FastSqrtMagic);
      1x  iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0049e3e0 (g_CFireEf
-     1x  fStack_94 = (float)(((int)fStack_18 >> 1) + g_INT_01caf5b4);
-     1x  local_30 = (float)(((int)local_48 >> 1) + g_INT_01caf5b4);
-     1x  local_18 = (float)(((int)local_70 >> 1) + g_INT_01caf5b4);
-     1x  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_INT_01c
+     1x  fStack_94 = (float)(((int)fStack_18 >> 1) + g_FastSqrtMagic);
+     1x  local_30 = (float)(((int)local_48 >> 1) + g_FastSqrtMagic);
+     1x  local_18 = (float)(((int)local_70 >> 1) + g_FastSqrtMagic);
+     1x  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqr
      1x  fVar6 = (float)(((int)(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0
 
 Functions:
@@ -7826,6 +7751,31 @@ Functions:
   core_trigger.cpp_CTrigger_process_FUN_005779d0
   core_zombie.cpp_CZombie_process_FUN_00595f30
   engine_mini3d.cpp_lightVertex_FUN_004f4f50
+
+====================================================================================================
+TYPE: fnstsw_flag_artifact (12 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  CONCAT22((short)((uint)g_PTR_01d09918 >> 0x10
+     1x  CONCAT22((short)uVar6 * (short)(uVar36 >> 0x10
+     1x  CONCAT22((short)(uVar43 >> 0x10
+     1x  CONCAT22((short)uVar8 * (short)(uVar45 >> 0x10
+     1x  CONCAT22((short)(uVar45 >> 0x10
+     1x  CONCAT22((ushort)((short)uVar7 * (short)(uVar38 >> 0x10
+     1x  CONCAT22(sVar45 * (short)(uVar36 >> 0x10
+     1x  CONCAT22(sVar45 * (short)(uVar43 >> 0x10
+     1x  CONCAT22((ushort)((short)uVar9 * (short)(uVar39 >> 0x10
+     1x  CONCAT22(sVar46 * (short)(uVar37 >> 0x10
+     1x  CONCAT22(sVar46 * (short)(uVar43 >> 0x10
+
+Functions:
+  engine_mini3d.cpp_getBehindClipFlag_FUN_004f4990
+  engine_mini3d.cpp_getClipFlags_FUN_004f48b0
+  engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0055bb93
+  engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1
+  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23
+  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c
 
 ====================================================================================================
 TYPE: suspicious_cast (12 occurrences)
@@ -7869,15 +7819,15 @@ TYPE: fast_inv_sqrt_inline (9 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  fVar8 = (float)(g_INT_01caf5b8 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * 
-     1x  fVar1 = (float)(g_INT_01caf5b8 - ((int)fVar1 >> 1));
-     1x  local_8c = (float)(g_INT_01caf5b8 - ((int)local_90 >> 1));
-     1x  local_b4 = (float)(g_INT_01caf5b8 - ((int)local_b8 >> 1));
-     1x  local_74 = (float)(g_INT_01caf5b8 - ((int)local_78 >> 1));
-     1x  local_80 = (float)(g_INT_01caf5b8 - ((int)local_84 >> 1));
-     1x  return (float)(g_INT_01caf5b8 - ((int)dist_sq >> 1));
-     1x  local_64 = (float)(g_INT_01caf5b8 - ((int)local_68 >> 1));
-     1x  fVar1 = (float)(g_INT_01caf5b8 - ((int)(v->z * v->z + v->x * v->x + v->y * v->y)
+     1x  fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar
+     1x  fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar1 >> 1));
+     1x  local_8c = (float)(g_FastInvSqrtMagic - ((int)local_90 >> 1));
+     1x  local_b4 = (float)(g_FastInvSqrtMagic - ((int)local_b8 >> 1));
+     1x  local_74 = (float)(g_FastInvSqrtMagic - ((int)local_78 >> 1));
+     1x  local_80 = (float)(g_FastInvSqrtMagic - ((int)local_84 >> 1));
+     1x  return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));
+     1x  local_64 = (float)(g_FastInvSqrtMagic - ((int)local_68 >> 1));
+     1x  fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v->x * v->x + v->y * v
 
 Functions:
   core_cloth.cpp_CCloth_applyConstraints_FUN_005af530

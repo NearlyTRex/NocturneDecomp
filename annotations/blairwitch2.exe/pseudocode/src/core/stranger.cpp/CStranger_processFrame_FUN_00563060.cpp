@@ -169,7 +169,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00563060(CStranger *th
   
   bVar28 = 0;
   local_2c = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                       (g_CEventList_PTR_006141f0,"DebugActionPending");
+                       (g_CEventListPtr,"DebugActionPending");
   pCVar9 = (this_ptr->base).base.carry_hands[1].carry_actor;
   if ((pCVar9 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
     (*((pCVar9->vtable)._ub)->getBoundingBox)(pCVar9,in_stack_fffffb70);
@@ -1158,8 +1158,7 @@ LAB_0056514e:
                      (int)((ulonglong)dVar31 >> 0x20));
         }
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                  ((CDemonActor *)this_ptr,&g_CVector3f_0265370c,fStack_470 * 0.025f + 1.0
-                  );
+                  ((CDemonActor *)this_ptr,&g_ZeroVector,fStack_470 * 0.025f + 1.0);
       }
       iVar23 = (this_ptr->base).base.is_on_ground;
       fStack_45c = 0.5f;

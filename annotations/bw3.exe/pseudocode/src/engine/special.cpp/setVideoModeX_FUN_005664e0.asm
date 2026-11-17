@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   flags
 ;
 ; Referenced Globals:
-;   void* g_PTR_02cf608c
+;   void* g_APIDLL_setVideoModeX
 ;   int g_INT_02cf6130
 ;
 ; *****************************************************************************
@@ -23,7 +23,7 @@ section .text
     PUSH EDI                            ; 005664e2
     PUSH EBP                            ; 005664e3
     XOR EDX,EDX                         ; 005664e4
-    MOV ECX,dword ptr [0x02cf608c]      ; 005664e6 | g_PTR_02cf608c
+    MOV ECX,dword ptr [0x02cf608c]      ; 005664e6 | g_APIDLL_setVideoModeX
     MOV dword ptr [0x02cf6130],EDX      ; 005664ec | g_INT_02cf6130
     TEST ECX,ECX                        ; 005664f2
     JNZ 0x005664fd                      ; 005664f4
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 0056650b
     MOV EBP,dword ptr [ESP + 0x20]      ; 0056650c
     PUSH EBP                            ; 00566510
-    CALL dword ptr [0x02cf608c]         ; 00566511 | g_PTR_02cf608c
+    CALL dword ptr [0x02cf608c]         ; 00566511 | g_APIDLL_setVideoModeX
     ADD ESP,0x10                        ; 00566517
     TEST EAX,EAX                        ; 0056651a
     JZ 0x005664f8                       ; 0056651c

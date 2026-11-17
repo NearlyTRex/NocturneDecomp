@@ -474,7 +474,7 @@
     },
     {
       "addr": "005b7650",
-      "name": "g_CEventList_PTR_005b7650",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c03a10"
     },
@@ -498,13 +498,13 @@
     },
     {
       "addr": "005b9364",
-      "name": "g_INT_005b9364",
+      "name": "g_MovieRecordingWidth",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "005b9368",
-      "name": "g_INT_005b9368",
+      "name": "g_MovieRecordingHeight",
       "type": "int",
       "value": "0x40"
     },
@@ -546,7 +546,7 @@
     },
     {
       "addr": "014b98f8",
-      "name": "g_CBitFont_PTR_014b98f8",
+      "name": "g_MediumFont",
       "type": "CBitFont*",
       "value": null
     },
@@ -558,19 +558,19 @@
     },
     {
       "addr": "01bd1d8c",
-      "name": "g_INT_01bd1d8c",
+      "name": "g_MouseX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01bd1d90",
-      "name": "g_INT_01bd1d90",
+      "name": "g_MouseY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01bd1d94",
-      "name": "g_BIT_INTEGER32_01bd1d94",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -624,7 +624,7 @@
     },
     {
       "addr": "01c780b8",
-      "name": "g_INT_01c780b8",
+      "name": "g_ScreenshotIndex",
       "type": "int",
       "value": null
     },
@@ -636,31 +636,31 @@
     },
     {
       "addr": "01c78ac8",
-      "name": "g_INT_01c78ac8",
+      "name": "g_MovieRecordingArmed",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c78acc",
-      "name": "g_INT_01c78acc",
+      "name": "g_MovieRecordingActive",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c78ad0",
-      "name": "g_INT_01c78ad0",
+      "name": "g_MovieRecordingMaxFrames",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c78ad4",
-      "name": "g_INT_01c78ad4",
+      "name": "g_MovieRecordingFrameCounter",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c78ad8",
-      "name": "g_INT_01c78ad8",
+      "name": "g_SoundDebugEnabled",
       "type": "int",
       "value": null
     },
@@ -672,7 +672,7 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
@@ -1143,7 +1143,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 226,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
@@ -1151,7 +1151,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 275,
+      "line": 276,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "_sprintf(local_2dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
@@ -1159,7 +1159,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 276,
+      "line": 277,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)g_INT_01c71e38 / g_DOUBLE_01c71e30),0),",
@@ -1167,7 +1167,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 287,
+      "line": 288,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
@@ -1175,7 +1175,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 288,
+      "line": 289,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
@@ -1183,15 +1183,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 289,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 289,
+      "line": 290,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
@@ -1202,15 +1194,15 @@
       "line": 290,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));",
+      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 298,
+      "line": 291,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "_sprintf(local_2dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
+      "text": "(int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));",
       "type": "sub84_truncation"
     },
     {
@@ -1218,7 +1210,7 @@
       "line": 299,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),",
+      "text": "_sprintf(local_2dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
       "type": "sub84_truncation"
     },
     {
@@ -1226,12 +1218,20 @@
       "line": 300,
       "match": "SUB84(",
       "severity": "moderate",
+      "text": "(int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 301,
+      "match": "SUB84(",
+      "severity": "moderate",
       "text": "(int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "Direct stack address reference",
-      "line": 320,
+      "line": 321,
       "match": "&stack0xfffff9fc",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_00525b70((CSfxSample *)&stack0xfffff9fc);",
@@ -1239,7 +1239,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 322,
+      "line": 323,
       "match": "&stack0xfffff9fc",
       "severity": "moderate",
       "text": "(uVar10,(CSfxSample *)&stack0xfffff9fc);",
@@ -1247,7 +1247,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 324,
+      "line": 325,
       "match": "&stack0xfffff9fc",
       "severity": "moderate",
       "text": "engine_2d_c_drawTextXY_FUN_00402760(0,iVar9,&stack0xfffff9fc);",
@@ -1327,7 +1327,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 225,
+      "line": 226,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
@@ -1335,7 +1335,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 346,
+      "line": 347,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

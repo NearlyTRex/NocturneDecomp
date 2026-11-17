@@ -11,30 +11,30 @@ uint FUN_005b0bb0(void)
 {
   char **ppcVar1;
   
-  ppcVar1 = g_CHAR_PTR_PTR_02d25924;
-  if (g_CHAR_PTR_PTR_02d25924 != (char **)0x0) {
+  ppcVar1 = g_EnvironmentBlock;
+  if (g_EnvironmentBlock != (char **)0x0) {
     for (; *ppcVar1 != (char *)0x0; ppcVar1 = ppcVar1 + 1) {
-      if (g_CHAR_PTR_PTR_02d25920 != (char **)0x0) {
-        if (*(char *)(((int)ppcVar1 - (int)g_CHAR_PTR_PTR_02d25924 >> 2) +
-                     (int)g_CHAR_PTR_PTR_02d25920) != '\0') {
+      if (g_EnvironStringArea != (char **)0x0) {
+        if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=
+            '\0') {
           debugFree(*ppcVar1);
         }
         *ppcVar1 = (char *)0x0;
       }
     }
-    if (g_CHAR_PTR_PTR_02d25920 == (char **)0x0) {
+    if (g_EnvironStringArea == (char **)0x0) {
       ppcVar1 = (char **)malloc(5);
     }
     else {
-      ppcVar1 = (char **)realloc(g_CHAR_PTR_PTR_02d25924,5);
+      ppcVar1 = (char **)realloc(g_EnvironmentBlock,5);
     }
     if (ppcVar1 == (char **)0x0) {
       return 0xffffffff;
     }
-    g_CHAR_PTR_PTR_02d25924 = ppcVar1;
+    g_EnvironmentBlock = ppcVar1;
     *ppcVar1 = (char *)0x0;
-    g_CHAR_PTR_PTR_02d25920 = ppcVar1 + 1;
-    *(byte *)g_CHAR_PTR_PTR_02d25920 = 0;
+    g_EnvironStringArea = ppcVar1 + 1;
+    *(byte *)g_EnvironStringArea = 0;
   }
   return 0;
 }

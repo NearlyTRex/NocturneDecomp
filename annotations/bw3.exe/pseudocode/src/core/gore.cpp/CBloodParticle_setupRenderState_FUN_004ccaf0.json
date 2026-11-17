@@ -65,7 +65,7 @@
     },
     {
       "addr": "007e2a54",
-      "name": "g_CDemonCamera_PTR_007e2a54",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -131,37 +131,37 @@
     },
     {
       "addr": "01d22e70",
-      "name": "g_CVector3i_01d22e70",
+      "name": "g_ParticleCameraRotation",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01d22e74",
-      "name": "g_CVector3i_01d22e70.y",
+      "name": "g_ParticleCameraRotation.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e78",
-      "name": "g_CVector3i_01d22e70.z",
+      "name": "g_ParticleCameraRotation.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e7c",
-      "name": "g_CVector3i_01d22e7c",
+      "name": "g_BloodParticleViewDirection",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01d22e80",
-      "name": "g_CVector3i_01d22e7c.y",
+      "name": "g_BloodParticleViewDirection.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e84",
-      "name": "g_CVector3i_01d22e7c.z",
+      "name": "g_BloodParticleViewDirection.z",
       "type": "undefined4",
       "value": null
     }
@@ -354,11 +354,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Pointer value `&g_CVector3i_01d22e70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ParticleCameraRotation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 33,
-      "match": "(int)&g_CVector3i_01d22e70",
+      "match": "(int)&g_ParticleCameraRotation",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01d22e70 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_ParticleCameraRotation + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -406,7 +406,7 @@
       "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01d22e70 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_ParticleCameraRotation + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {

@@ -13,7 +13,7 @@
 ;   float g_FLOAT_005d70b7 = -16
 ;   float g_FLOAT_005d70bb = 3.141593
 ;   float g_FLOAT_005d70bf = 1.700000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   int g_INT_01d5ba14
 ;
@@ -242,7 +242,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2d8]     ; 00576928
     ADD EAX,0x2e0                       ; 0057692e
     PUSH EAX                            ; 00576933
-    MOV EDX,dword ptr [0x005fba60]      ; 00576934 | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00576934 | g_CEventListPtr
     PUSH EDX                            ; 0057693a
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 0057693b
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -502,7 +502,7 @@ section .text
     LEA EAX,[EBX + 0x344]               ; 00576c47
         ;   Label: LAB_00576c47
     PUSH EAX                            ; 00576c4d
-    MOV ESI,dword ptr [0x005fba60]      ; 00576c4e | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 00576c4e | g_CEventListPtr
     PUSH ESI                            ; 00576c54
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00576c55
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

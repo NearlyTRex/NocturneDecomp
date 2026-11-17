@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_00713af8
-;   int g_INT_00713afc
+;   int g_RenderBufferEnabled
+;   int g_RenderBufferCount
 ;
 ; *****************************************************************************
 
@@ -15,7 +15,7 @@ section .text
     XOR ECX,ECX                         ; 00406eb0
         ;   Label: engine_3d.c_resetRenderBuffer_FUN_00406eb0
     MOV EDX,0x1                         ; 00406eb2
-    MOV dword ptr [0x00713afc],ECX      ; 00406eb7 | g_INT_00713afc
-    MOV dword ptr [0x00713af8],EDX      ; 00406ebd | g_INT_00713af8
+    MOV dword ptr [0x00713afc],ECX      ; 00406eb7 | g_RenderBufferCount
+    MOV dword ptr [0x00713af8],EDX      ; 00406ebd | g_RenderBufferEnabled
     RET                                 ; 00406ec3
 

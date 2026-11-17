@@ -9,7 +9,7 @@ char g_CHAR_005d5061 = '\0';
 char g_CHAR_005dbeaf = '\0';
 char g_CHAR_005dc4f9 = '\0';
 char g_CHAR_005dc604 = '\0';
-char g_CHAR_005dc89d = '\0';
+char g_DefaultButtonText = '\0';
 
 // dword
 dword DWORD_005d0000 = 0x1D00B4;

@@ -51,43 +51,43 @@
     },
     {
       "addr": "01510c20",
-      "name": "g_UINT_01510c20",
+      "name": "g_CubeClipStage5Count",
       "type": "uint",
       "value": null
     },
     {
       "addr": "01510c24",
-      "name": "g_CVector3f_ARRAY_01510c24",
+      "name": "g_ClipStageMinZBuffer",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01510c28",
-      "name": "g_CVector3f_ARRAY_01510c24[0].y",
+      "name": "g_ClipStageMinZBuffer[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510c2c",
-      "name": "g_CVector3f_ARRAY_01510c24[0].z",
+      "name": "g_ClipStageMinZBuffer[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510c38",
-      "name": "g_CVector3f_ARRAY_01510c24[1].z",
+      "name": "g_ClipStageMinZBuffer[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510c44",
-      "name": "g_CVector3f_ARRAY_01510c24[2].z",
+      "name": "g_ClipStageMinZBuffer[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510ce4",
-      "name": "g_UINT_01510ce4",
+      "name": "g_CubeClippedTriangleCount",
       "type": "uint",
       "value": null
     }
@@ -205,7 +205,7 @@
       "line": 26,
       "match": "DAT_01510cec",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01510cec + g_UINT_01510ce4 * 0xc) = vertex1->y;",
+      "text": "*(float *)(&DAT_01510cec + g_CubeClippedTriangleCount * 0xc) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -213,7 +213,7 @@
       "line": 39,
       "match": "DAT_01510cec",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01510cec + g_UINT_01510ce4 * 0xc) = vertex1->y;",
+      "text": "*(float *)(&DAT_01510cec + g_CubeClippedTriangleCount * 0xc) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -221,7 +221,7 @@
       "line": 27,
       "match": "g_FLOAT_01510cf0",
       "severity": "moderate",
-      "text": "(&g_FLOAT_01510cf0)[g_UINT_01510ce4 * 3] = vertex1->z;",
+      "text": "(&g_FLOAT_01510cf0)[g_CubeClippedTriangleCount * 3] = vertex1->z;",
       "type": "wrong_global"
     },
     {
@@ -229,7 +229,7 @@
       "line": 40,
       "match": "g_FLOAT_01510cf0",
       "severity": "moderate",
-      "text": "(&g_FLOAT_01510cf0)[g_UINT_01510ce4 * 3] = vertex1->z;",
+      "text": "(&g_FLOAT_01510cf0)[g_CubeClippedTriangleCount * 3] = vertex1->z;",
       "type": "wrong_global"
     }
   ]

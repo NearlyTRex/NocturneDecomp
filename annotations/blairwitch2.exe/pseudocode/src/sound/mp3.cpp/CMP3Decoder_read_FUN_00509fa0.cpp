@@ -21,7 +21,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0(CMP3Decoder *this_ptr,sh
   int local_14;
   
   bVar9 = 0;
-  pcVar7 = g_CHAR_ARRAY_01d23558;
+  pcVar7 = g_CurrentMp3Filename;
   pCVar5 = this_ptr;
   do {
     cVar1 = pCVar5->filename[0];

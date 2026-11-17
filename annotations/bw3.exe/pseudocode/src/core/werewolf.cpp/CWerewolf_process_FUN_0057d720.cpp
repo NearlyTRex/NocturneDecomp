@@ -222,7 +222,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_0057d720(CWerewolf *this_pt
       pCStack_28 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       pSStack_14 = pSVar11;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_28 + this_ptr->bone_indices[3],&CStack_33c);
+                (&g_ZeroVector,pCStack_28 + this_ptr->bone_indices[3],&CStack_33c);
       pCVar17 = &CStack_1d4;
       CStack_1d4.x = CStack_33c.x;
       *(uint *)((int)&CStack_1d4 + (uint)bVar14 * -8 + 4) =
@@ -243,7 +243,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_0057d720(CWerewolf *this_pt
       fVar16 = (this_ptr->base).base.size_scale;
       pSStack_14 = pSVar11;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_28 + this_ptr->bone_indices[2],&CStack_2f4);
+                (&g_ZeroVector,pCStack_28 + this_ptr->bone_indices[2],&CStack_2f4);
       pCVar17 = &CStack_30c;
       CStack_30c.x = CStack_2f4.x;
       *(uint *)((int)&CStack_30c + (uint)bVar14 * -8 + 4) =
@@ -264,7 +264,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_0057d720(CWerewolf *this_pt
       pSVar11 = (SDamageInfo *)&stack0xfffffb2c;
       fVar16 = (this_ptr->base).base.size_scale;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_28 + this_ptr->bone_indices[1],&CStack_e4);
+                (&g_ZeroVector,pCStack_28 + this_ptr->bone_indices[1],&CStack_e4);
       pCVar17 = &CStack_348;
       CStack_348.x = CStack_e4.x;
       *(uint *)((int)&CStack_348 + (uint)bVar14 * -8 + 4) =
@@ -297,7 +297,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_0057d720(CWerewolf *this_pt
             fVar16 = 0.4;
             pSStack_14 = (SDamageInfo *)SStack_420.damage_amount;
             core_xform_cpp_transformVector3x4_FUN_00583260
-                      (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[1],&CStack_6c);
+                      (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[1],&CStack_6c);
             pCVar17 = &CStack_120;
             CStack_120.x = CStack_6c.x;
             *(uint *)((int)&CStack_120 + (uint)bVar14 * -8 + 4) =
@@ -606,7 +606,7 @@ LAB_0057e486:
         fVar16 = 0.4;
         pSStack_14 = (SDamageInfo *)SStack_3e4.damage_amount;
         core_xform_cpp_transformVector3x4_FUN_00583260
-                  (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[2],&CStack_174);
+                  (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[2],&CStack_174);
         pCVar17 = &CStack_138;
         CStack_138.x = CStack_174.x;
         *(uint *)((int)&CStack_138 + (uint)bVar14 * -8 + 4) =
@@ -669,7 +669,7 @@ LAB_0057e486:
           fVar16 = 1.0;
           pSStack_14 = (SDamageInfo *)SStack_498.damage_amount;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[3],&CStack_2ac);
+                    (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[3],&CStack_2ac);
           pCVar17 = &CStack_240;
           CStack_240.x = CStack_2ac.x;
           *(uint *)((int)&CStack_240 + (uint)bVar14 * -8 + 4) =
@@ -689,7 +689,7 @@ LAB_0057e486:
           pSVar11 = &SStack_498;
           fVar16 = 1.0;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[2],&CStack_360);
+                    (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[2],&CStack_360);
           pCVar17 = &CStack_d8;
           CStack_d8.x = CStack_360.x;
           *(uint *)((int)&CStack_d8 + (uint)bVar14 * -8 + 4) =
@@ -709,7 +709,7 @@ LAB_0057e486:
           pSVar11 = &SStack_498;
           fVar16 = 1.0;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[1],&CStack_330);
+                    (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[1],&CStack_330);
           pCVar17 = &CStack_1f8;
           CStack_1f8.x = CStack_330.x;
           *(uint *)((int)&CStack_1f8 + (uint)bVar14 * -8 + 4) =
@@ -744,7 +744,7 @@ LAB_0057df41:
           fVar16 = 0.4;
           pSStack_14 = (SDamageInfo *)SStack_45c.damage_amount;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,
+                    (&g_ZeroVector,
                      (CMatrix3x4f *)
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices
                      [this_ptr->bone_indices[3]].m,&CStack_180);

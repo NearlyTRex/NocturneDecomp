@@ -22,16 +22,16 @@ extern byte g_BYTE_02630cb0;
 extern byte g_BYTE_0263cee8;
 
 // char[15360]
-extern char g_CHAR_ARRAY_02630cb8[15360];
+extern char g_SfxStreamReadBuffer[15360];
 
 // float
-extern float g_FLOAT_0263cf10;
+extern float g_SoundReferenceVolumeDistance;
 
 // int
-extern int g_INT_0263ceec;
+extern int g_ShutdownInProgress;
 extern int g_INT_0263cf14;
 extern int g_INT_0263cf18;
 
 // int[8]
-extern int g_INT_ARRAY_0263cef0[8];
+extern int g_ChannelFFTTimestamps[8];
 

@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402810(int enabled)
 
 {
-  g_INT_005f076c = enabled;
+  g_TextWrapEnabled = enabled;
   return;
 }

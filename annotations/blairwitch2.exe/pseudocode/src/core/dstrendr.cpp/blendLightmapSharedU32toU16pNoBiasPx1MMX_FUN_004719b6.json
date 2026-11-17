@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 307,
+    "complexity_score": 306,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 61,
     "suspect_count": 23,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
       "unknown_field"
     ],
-    "total_lines": 112
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -41,61 +41,61 @@
   "globals": [
     {
       "addr": "00612880",
-      "name": "g_USHORT_ARRAY_00612880",
+      "name": "g_LightmapData",
       "type": "ushort[2048]",
       "value": null
     },
     {
       "addr": "00613078",
-      "name": "g_USHORT_ARRAY_00612880[1020]",
+      "name": "g_LightmapData[1020]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061c8e8",
-      "name": "g_QWORD_0061c8e8",
+      "name": "g_RedMask32",
       "type": "qword",
       "value": "0xf80000"
     },
     {
       "addr": "0061c908",
-      "name": "g_QWORD_0061c908",
+      "name": "g_GreenMask32",
       "type": "qword",
       "value": "0xfc00"
     },
     {
       "addr": "0061c928",
-      "name": "g_QWORD_0061c928",
+      "name": "g_BlueMask32",
       "type": "qword",
       "value": "0xf8"
     },
     {
       "addr": "0061c930",
-      "name": "g_QWORD_0061c930",
+      "name": "g_TotalDitherShift",
       "type": "qword",
       "value": "0x8"
     },
     {
       "addr": "0061c950",
-      "name": "g_QWORD_0061c950",
+      "name": "g_GreenBlueDitherShift",
       "type": "qword",
       "value": "0x5"
     },
     {
       "addr": "0061c970",
-      "name": "g_QWORD_0061c970",
+      "name": "g_BlueBitShift",
       "type": "qword",
       "value": "0x3"
     },
     {
       "addr": "00b6639c",
-      "name": "g_UINT_ARRAY_00b6639c",
+      "name": "g_LightmapTexturePalette",
       "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c38b5c",
-      "name": "g_ULONG_01c38b5c",
+      "name": "g_SolidColorMode",
       "type": "ulong",
       "value": null
     }
@@ -234,7 +234,7 @@
       "line": 20,
       "match": "uint7",
       "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c38b5c >>",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "nonstandard_int"
     },
     {
@@ -242,7 +242,7 @@
       "line": 20,
       "match": "uint7",
       "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c38b5c >>",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "nonstandard_int"
     },
     {
@@ -295,10 +295,10 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 46,
+      "line": 45,
       "match": "._2040_8_",
       "severity": "mild",
-      "text": "g_USHORT_ARRAY_00612880._2040_8_);",
+      "text": "g_LightmapData._2040_8_);",
       "type": "unknown_field"
     },
     {
@@ -306,7 +306,7 @@
       "line": 20,
       "match": "CONCAT52",
       "severity": "moderate",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c38b5c >>",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "concat_reconstruction"
     },
     {
@@ -375,7 +375,7 @@
     },
     {
       "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "CONCAT13",
       "severity": "moderate",
       "text": "CONCAT13((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Ghidra CONCAT12 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 56,
+      "line": 55,
       "match": "CONCAT12",
       "severity": "moderate",
       "text": "CONCAT12((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "CONCAT11",
       "severity": "moderate",
       "text": "CONCAT11((uVar8 != 0) * (uVar8 < 0x100) * (char)uVar8 - (0xff < uVar8),",

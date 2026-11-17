@@ -54,13 +54,13 @@
   "globals": [
     {
       "addr": "0060852a",
-      "name": "g_INT_00608528+2",
+      "name": "g_DefaultStreamBufferSize+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060852c",
-      "name": "g_SHORT_0060852c",
+      "name": "g_DaysInMonth_Normal",
       "type": "short",
       "value": "0x0"
     },
@@ -72,7 +72,7 @@
     },
     {
       "addr": "00608546",
-      "name": "g_SHORT_00608546",
+      "name": "g_DaysInMonth_Leap",
       "type": "short",
       "value": "0x0"
     }
@@ -286,7 +286,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_SHORT_0060852c + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
     },
     {
@@ -294,7 +294,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)((int)&g_INT_00608528 + *(int *)(param_1 + 0x10) * 2 + 2);",
+      "text": "iVar2 = *(int *)((int)&g_DefaultStreamBufferSize + *(int *)(param_1 + 0x10) * 2 + 2);",
       "type": "unnamed_param"
     },
     {
@@ -302,7 +302,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_SHORT_00608546 + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
     },
     {
@@ -386,23 +386,23 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_0060852c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_0060852e (at 0x0060852e, +2 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_0060852e (at 0x0060852e, +2 bytes).",
       "line": 14,
-      "match": "g_SHORT_0060852c",
+      "match": "g_DaysInMonth_Normal",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_SHORT_0060852c + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_00608546 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SFontGlyph_ARRAY_00608570 (at 0x00608570, +42 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FontTable (at 0x00608570, +42 bytes).",
       "line": 18,
-      "match": "g_SHORT_00608546",
+      "match": "g_DaysInMonth_Leap",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_SHORT_00608546 + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_00608544 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SHORT_00608546 (at 0x00608546, +2 bytes).",
+      "description": "Cast-and-add on &g_SHORT_00608544 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x00608546, +2 bytes).",
       "line": 19,
       "match": "g_SHORT_00608544",
       "severity": "moderate",
@@ -410,11 +410,11 @@
       "type": "suspicious_cast"
     },
     {
-      "description": "Pointer value `&g_INT_00608528` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_DefaultStreamBufferSize` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
-      "match": "(int)&g_INT_00608528",
+      "match": "(int)&g_DefaultStreamBufferSize",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)&g_INT_00608528 + *(int *)(param_1 + 0x10) * 2 + 2);",
+      "text": "iVar2 = *(int *)((int)&g_DefaultStreamBufferSize + *(int *)(param_1 + 0x10) * 2 + 2);",
       "type": "pointer_truncation"
     },
     {
@@ -422,7 +422,7 @@
       "line": 15,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)&g_INT_00608528 + *(int *)(param_1 + 0x10) * 2 + 2);",
+      "text": "iVar2 = *(int *)((int)&g_DefaultStreamBufferSize + *(int *)(param_1 + 0x10) * 2 + 2);",
       "type": "pointer_cast"
     },
     {
@@ -437,11 +437,11 @@
       "type": "param_count_too_few"
     },
     {
-      "description": "Compiler displaced index base: [reg*2 + 0x608544] lands in g_SHORT_00608544 but intended target is g_SHORT_00608546 at 0x608546 (displaced by 2 bytes)",
+      "description": "Compiler displaced index base: [reg*2 + 0x608544] lands in g_SHORT_00608544 but intended target is g_DaysInMonth_Leap at 0x608546 (displaced by 2 bytes)",
       "displaced_from": "g_SHORT_00608544",
       "displacement": "0x608544",
       "instruction_address": "",
-      "intended_global": "g_SHORT_00608546",
+      "intended_global": "g_DaysInMonth_Leap",
       "line": 23,
       "match": "0x608544",
       "scale": 2,
@@ -450,8 +450,8 @@
       "type": "displaced_global_access"
     },
     {
-      "description": "Compiler displaced index base: [reg*2 + 0x60852c] lands in g_SHORT_0060852c but intended target is g_INT_0060852e at 0x60852e (displaced by 2 bytes)",
-      "displaced_from": "g_SHORT_0060852c",
+      "description": "Compiler displaced index base: [reg*2 + 0x60852c] lands in g_DaysInMonth_Normal but intended target is g_INT_0060852e at 0x60852e (displaced by 2 bytes)",
+      "displaced_from": "g_DaysInMonth_Normal",
       "displacement": "0x60852c",
       "instruction_address": "",
       "intended_global": "g_INT_0060852e",
@@ -459,20 +459,20 @@
       "match": "0x60852c",
       "scale": 2,
       "severity": "moderate",
-      "text": "// 005c99cb: MOV ESI,dword ptr [EAX*0x2 + 0x60852c]  ; g_SHORT_0060852c",
+      "text": "// 005c99cb: MOV ESI,dword ptr [EAX*0x2 + 0x60852c]  ; g_DaysInMonth_Normal",
       "type": "displaced_global_access"
     },
     {
-      "description": "Compiler displaced index base: [reg*2 + 0x60852a] lands in g_INT_00608528 but intended target is g_SHORT_0060852c at 0x60852c (displaced by 2 bytes)",
-      "displaced_from": "g_INT_00608528",
+      "description": "Compiler displaced index base: [reg*2 + 0x60852a] lands in g_DefaultStreamBufferSize but intended target is g_DaysInMonth_Normal at 0x60852c (displaced by 2 bytes)",
+      "displaced_from": "g_DefaultStreamBufferSize",
       "displacement": "0x60852a",
       "instruction_address": "",
-      "intended_global": "g_SHORT_0060852c",
+      "intended_global": "g_DaysInMonth_Normal",
       "line": 29,
       "match": "0x60852a",
       "scale": 2,
       "severity": "moderate",
-      "text": "// 005c99d2: MOV EAX,dword ptr [EAX*0x2 + 0x60852a]  ; g_INT_00608528+2",
+      "text": "// 005c99d2: MOV EAX,dword ptr [EAX*0x2 + 0x60852a]  ; g_DefaultStreamBufferSize+2",
       "type": "displaced_global_access"
     }
   ]

@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 0047a59f (CONDITIONAL_JUMP)  ; LAB_0047a59f
     MOV EBX,0x3                         ; 0047a4f0
     MOV ESI,dword ptr [EBP + 0x14]      ; 0047a4f5
-    MOV dword ptr [0x01c59e74],EBX      ; 0047a4f8 | g_INT_01c59e74
+    MOV dword ptr [0x01c59e74],EBX      ; 0047a4f8 | g_ClipOutputVertexCount
     CMP ESI,0x1c59e78                   ; 0047a4fe
     JZ 0x0047a522                       ; 0047a504
         ;   XREF to: 0047a522 (CONDITIONAL_JUMP)  ; LAB_0047a522
@@ -215,11 +215,11 @@ section .text
         ;   XREF to: 0047a9be (CONDITIONAL_JUMP)  ; LAB_0047a9be
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0047a5ab
     MOV ECX,dword ptr [0x01c599dc]      ; 0047a5ae | g_INT_01c599dc
-    MOV dword ptr [0x01c59b64],EDX      ; 0047a5b4 | g_INT_01c59b64
-    MOV dword ptr [0x01c59c28],EDX      ; 0047a5ba | g_INT_01c59c28
+    MOV dword ptr [0x01c59b64],EDX      ; 0047a5b4 | g_ClipBuffer2VertexCount
+    MOV dword ptr [0x01c59c28],EDX      ; 0047a5ba | g_ClipBuffer3VertexCount
     MOV dword ptr [0x01c59cec],EDX      ; 0047a5c0 | g_INT_01c59cec
-    MOV dword ptr [0x01c59db0],EDX      ; 0047a5c6 | g_INT_01c59db0
-    MOV dword ptr [0x01c59e74],EDX      ; 0047a5cc | g_INT_01c59e74
+    MOV dword ptr [0x01c59db0],EDX      ; 0047a5c6 | g_ClipBuffer5VertexCount
+    MOV dword ptr [0x01c59e74],EDX      ; 0047a5cc | g_ClipOutputVertexCount
     MOV dword ptr [0x01c59aa0],EDX      ; 0047a5d2 | g_INT_01c59aa0
     MOV EAX,dword ptr [EAX + 0x4]       ; 0047a5d8
     XOR EBX,EBX                         ; 0047a5db
@@ -269,11 +269,11 @@ section .text
     JZ 0x0047a657                       ; 0047a645
         ;   XREF to: 0047a657 (CONDITIONAL_JUMP)  ; LAB_0047a657
     MOV ECX,dword ptr [EDX]             ; 0047a647
-    MOV dword ptr [EAX],ECX             ; 0047a649 | g_CVector3f_ARRAY_01c59aa4
+    MOV dword ptr [EAX],ECX             ; 0047a649 | g_ClipBuffer1Vertices
     MOV ECX,dword ptr [EDX + 0x4]       ; 0047a64b
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047a64e | g_CVector3f_ARRAY_01c59aa4[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047a64e | g_ClipBuffer1Vertices[0].y
     MOV ECX,dword ptr [EDX + 0x8]       ; 0047a651
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047a654 | g_CVector3f_ARRAY_01c59aa4[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047a654 | g_ClipBuffer1Vertices[0].z
     INC dword ptr [0x01c59aa0]          ; 0047a657 | g_INT_01c59aa0
         ;   Label: LAB_0047a657
     MOV EDI,dword ptr [0x01c599dc]      ; 0047a65d | g_INT_01c599dc
@@ -305,7 +305,7 @@ section .text
     XOR EAX,EDI                         ; 0047a6a4
     IMUL EAX,EAX,0xc                    ; 0047a6a6
         ;   Label: LAB_0047a6a6
-    FLD float ptr [ESI + 0x4]           ; 0047a6a9 | g_CVector3f_ARRAY_01c59aa4[0].y | g_CVector3f_ARRAY_01c59aa4[1].y
+    FLD float ptr [ESI + 0x4]           ; 0047a6a9 | g_ClipBuffer1Vertices[0].y | g_ClipBuffer1Vertices[1].y
     MOV EDI,0x1c59aa4                   ; 0047a6ac
     MOV EDX,ESI                         ; 0047a6b1
     XOR ECX,ECX                         ; 0047a6b3
@@ -316,7 +316,7 @@ section .text
     JNC 0x0047a6c5                      ; 0047a6be
         ;   XREF to: 0047a6c5 (CONDITIONAL_JUMP)  ; LAB_0047a6c5
     MOV ECX,0x1                         ; 0047a6c0
-    FLD float ptr [EDI + 0x4]           ; 0047a6c5 | g_CVector3f_ARRAY_01c59aa4[0].y | g_CVector3f_ARRAY_01c59aa4[2].y
+    FLD float ptr [EDI + 0x4]           ; 0047a6c5 | g_ClipBuffer1Vertices[0].y | g_ClipBuffer1Vertices[2].y
         ;   Label: LAB_0047a6c5
     FCOMP float ptr [ESP + 0xc]         ; 0047a6c8
     FNSTSW AX                           ; 0047a6cc
@@ -330,19 +330,19 @@ section .text
         ;   XREF to: 0047a706 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x47a374]  ; 0047a6d9 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EAX,dword ptr [0x01c59b64],0xc ; 0047a6e0 | g_INT_01c59b64
+    IMUL EAX,dword ptr [0x01c59b64],0xc ; 0047a6e0 | g_ClipBuffer2VertexCount
         ;   Label: caseD_0
     ADD EAX,0x1c59b68                   ; 0047a6e7
     CMP EAX,EDX                         ; 0047a6ec
     JZ 0x0047a700                       ; 0047a6ee
         ;   XREF to: 0047a700 (CONDITIONAL_JUMP)  ; LAB_0047a700
-    MOV ECX,dword ptr [EDX]             ; 0047a6f0 | g_CVector3f_ARRAY_01c59aa4
-    MOV dword ptr [EAX],ECX             ; 0047a6f2 | g_CVector3f_ARRAY_01c59b68
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a6f4 | g_CVector3f_ARRAY_01c59aa4[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047a6f7 | g_CVector3f_ARRAY_01c59b68[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a6fa | g_CVector3f_ARRAY_01c59aa4[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047a6fd | g_CVector3f_ARRAY_01c59b68[0].z
-    INC dword ptr [0x01c59b64]          ; 0047a700 | g_INT_01c59b64
+    MOV ECX,dword ptr [EDX]             ; 0047a6f0 | g_ClipBuffer1Vertices
+    MOV dword ptr [EAX],ECX             ; 0047a6f2 | g_ClipBuffer2Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a6f4 | g_ClipBuffer1Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047a6f7 | g_ClipBuffer2Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a6fa | g_ClipBuffer1Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047a6fd | g_ClipBuffer2Vertices[0].z
+    INC dword ptr [0x01c59b64]          ; 0047a700 | g_ClipBuffer2VertexCount
         ;   Label: LAB_0047a700
     MOV EAX,[0x01c59aa0]                ; 0047a706 | g_INT_01c59aa0
         ;   Label: caseD_3
@@ -351,7 +351,7 @@ section .text
     CMP EBX,EAX                         ; 0047a70f
     JL 0x0047a697                       ; 0047a711
         ;   XREF to: 0047a697 (CONDITIONAL_JUMP)  ; LAB_0047a697
-    MOV EDX,dword ptr [0x01c59b64]      ; 0047a713 | g_INT_01c59b64
+    MOV EDX,dword ptr [0x01c59b64]      ; 0047a713 | g_ClipBuffer2VertexCount
         ;   Label: LAB_0047a713
     CMP EDX,0x3                         ; 0047a719
     JL 0x0047a9be                       ; 0047a71c
@@ -364,7 +364,7 @@ section .text
     JLE 0x0047a7b4                      ; 0047a72f
         ;   XREF to: 0047a7b4 (CONDITIONAL_JUMP)  ; LAB_0047a7b4
     MOV EBX,0x1c59b68                   ; 0047a735
-    MOV EDI,dword ptr [0x01c59b64]      ; 0047a73a | g_INT_01c59b64
+    MOV EDI,dword ptr [0x01c59b64]      ; 0047a73a | g_ClipBuffer2VertexCount
         ;   Label: LAB_0047a73a
     LEA EAX,[ESI + 0x1]                 ; 0047a740
     CMP EAX,EDI                         ; 0047a743
@@ -373,7 +373,7 @@ section .text
     XOR EAX,EDI                         ; 0047a747
     IMUL EAX,EAX,0xc                    ; 0047a749
         ;   Label: LAB_0047a749
-    FLD float ptr [EBX]                 ; 0047a74c | g_CVector3f_ARRAY_01c59b68 | g_CVector3f_ARRAY_01c59b68[1].x
+    FLD float ptr [EBX]                 ; 0047a74c | g_ClipBuffer2Vertices | g_ClipBuffer2Vertices[1].x
     MOV EDI,0x1c59b68                   ; 0047a74e
     MOV EDX,EBX                         ; 0047a753
     XOR ECX,ECX                         ; 0047a755
@@ -384,7 +384,7 @@ section .text
     JBE 0x0047a767                      ; 0047a760
         ;   XREF to: 0047a767 (CONDITIONAL_JUMP)  ; LAB_0047a767
     MOV ECX,0x1                         ; 0047a762
-    FLD float ptr [EDI]                 ; 0047a767 | g_CVector3f_ARRAY_01c59b68 | g_CVector3f_ARRAY_01c59b68[2].x
+    FLD float ptr [EDI]                 ; 0047a767 | g_ClipBuffer2Vertices | g_ClipBuffer2Vertices[2].x
         ;   Label: LAB_0047a767
     FCOMP float ptr [ESP + 0x18]        ; 0047a769
     FNSTSW AX                           ; 0047a76d
@@ -398,28 +398,28 @@ section .text
         ;   XREF to: 0047a7a7 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x47a384]  ; 0047a77a | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EAX,dword ptr [0x01c59c28],0xc ; 0047a781 | g_INT_01c59c28
+    IMUL EAX,dword ptr [0x01c59c28],0xc ; 0047a781 | g_ClipBuffer3VertexCount
         ;   Label: caseD_0
     ADD EAX,0x1c59c2c                   ; 0047a788
     CMP EAX,EDX                         ; 0047a78d
     JZ 0x0047a7a1                       ; 0047a78f
         ;   XREF to: 0047a7a1 (CONDITIONAL_JUMP)  ; LAB_0047a7a1
-    MOV ECX,dword ptr [EDX]             ; 0047a791 | g_CVector3f_ARRAY_01c59b68
-    MOV dword ptr [EAX],ECX             ; 0047a793 | g_CVector3f_ARRAY_01c59c2c
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a795 | g_CVector3f_ARRAY_01c59b68[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047a798 | g_CVector3f_ARRAY_01c59c2c[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a79b | g_CVector3f_ARRAY_01c59b68[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047a79e | g_CVector3f_ARRAY_01c59c2c[0].z
-    INC dword ptr [0x01c59c28]          ; 0047a7a1 | g_INT_01c59c28
+    MOV ECX,dword ptr [EDX]             ; 0047a791 | g_ClipBuffer2Vertices
+    MOV dword ptr [EAX],ECX             ; 0047a793 | g_ClipBuffer3Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a795 | g_ClipBuffer2Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047a798 | g_ClipBuffer3Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a79b | g_ClipBuffer2Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047a79e | g_ClipBuffer3Vertices[0].z
+    INC dword ptr [0x01c59c28]          ; 0047a7a1 | g_ClipBuffer3VertexCount
         ;   Label: LAB_0047a7a1
-    MOV EAX,[0x01c59b64]                ; 0047a7a7 | g_INT_01c59b64
+    MOV EAX,[0x01c59b64]                ; 0047a7a7 | g_ClipBuffer2VertexCount
         ;   Label: caseD_3
     INC ESI                             ; 0047a7ac
     ADD EBX,0xc                         ; 0047a7ad
     CMP ESI,EAX                         ; 0047a7b0
     JL 0x0047a73a                       ; 0047a7b2
         ;   XREF to: 0047a73a (CONDITIONAL_JUMP)  ; LAB_0047a73a
-    MOV EDX,dword ptr [0x01c59c28]      ; 0047a7b4 | g_INT_01c59c28
+    MOV EDX,dword ptr [0x01c59c28]      ; 0047a7b4 | g_ClipBuffer3VertexCount
         ;   Label: LAB_0047a7b4
     CMP EDX,0x3                         ; 0047a7ba
     JL 0x0047a9be                       ; 0047a7bd
@@ -432,14 +432,14 @@ section .text
     JLE 0x0047a86b                      ; 0047a7d0
         ;   XREF to: 0047a86b (CONDITIONAL_JUMP)  ; LAB_0047a86b
     MOV ESI,0x1c59c2c                   ; 0047a7d6
-    MOV EDI,dword ptr [0x01c59c28]      ; 0047a7db | g_INT_01c59c28
+    MOV EDI,dword ptr [0x01c59c28]      ; 0047a7db | g_ClipBuffer3VertexCount
         ;   Label: LAB_0047a7db
     LEA EAX,[EBX + 0x1]                 ; 0047a7e1
     CMP EAX,EDI                         ; 0047a7e4
     JNZ 0x0047a7ea                      ; 0047a7e6
         ;   XREF to: 0047a7ea (CONDITIONAL_JUMP)  ; LAB_0047a7ea
     XOR EAX,EDI                         ; 0047a7e8
-    FLD float ptr [ESI]                 ; 0047a7ea | g_CVector3f_ARRAY_01c59c2c | g_CVector3f_ARRAY_01c59c2c[1].x
+    FLD float ptr [ESI]                 ; 0047a7ea | g_ClipBuffer3Vertices | g_ClipBuffer3Vertices[1].x
         ;   Label: LAB_0047a7ea
     MOV ECX,EAX                         ; 0047a7ec
     SHL EAX,0x2                         ; 0047a7ee
@@ -455,7 +455,7 @@ section .text
     JNC 0x0047a80f                      ; 0047a808
         ;   XREF to: 0047a80f (CONDITIONAL_JUMP)  ; LAB_0047a80f
     MOV ECX,0x1                         ; 0047a80a
-    FLD float ptr [EDI]                 ; 0047a80f | g_CVector3f_ARRAY_01c59c2c
+    FLD float ptr [EDI]                 ; 0047a80f | g_ClipBuffer3Vertices
         ;   Label: LAB_0047a80f
     FCOMP float ptr [ESP + 0x8]         ; 0047a811
     FNSTSW AX                           ; 0047a815
@@ -478,15 +478,15 @@ section .text
     CMP EAX,EDX                         ; 0047a840
     JZ 0x0047a854                       ; 0047a842
         ;   XREF to: 0047a854 (CONDITIONAL_JUMP)  ; LAB_0047a854
-    MOV ECX,dword ptr [EDX]             ; 0047a844 | g_CVector3f_ARRAY_01c59c2c
-    MOV dword ptr [EAX],ECX             ; 0047a846 | g_CVector3f_ARRAY_01c59cf0
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a848 | g_CVector3f_ARRAY_01c59c2c[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047a84b | g_CVector3f_ARRAY_01c59cf0[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a84e | g_CVector3f_ARRAY_01c59c2c[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047a851 | g_CVector3f_ARRAY_01c59cf0[0].z
+    MOV ECX,dword ptr [EDX]             ; 0047a844 | g_ClipBuffer3Vertices
+    MOV dword ptr [EAX],ECX             ; 0047a846 | g_ClipBuffer4Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a848 | g_ClipBuffer3Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047a84b | g_ClipBuffer4Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a84e | g_ClipBuffer3Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047a851 | g_ClipBuffer4Vertices[0].z
     INC dword ptr [0x01c59cec]          ; 0047a854 | g_INT_01c59cec
         ;   Label: LAB_0047a854
-    MOV EAX,[0x01c59c28]                ; 0047a85a | g_INT_01c59c28
+    MOV EAX,[0x01c59c28]                ; 0047a85a | g_ClipBuffer3VertexCount
         ;   Label: caseD_3
     INC EBX                             ; 0047a85f
     ADD ESI,0xc                         ; 0047a860
@@ -515,7 +515,7 @@ section .text
     XOR EAX,EDI                         ; 0047a89f
     IMUL EAX,EAX,0xc                    ; 0047a8a1
         ;   Label: LAB_0047a8a1
-    FLD float ptr [EBX + 0x8]           ; 0047a8a4 | g_CVector3f_ARRAY_01c59cf0[0].z | g_CVector3f_ARRAY_01c59cf0[1].z
+    FLD float ptr [EBX + 0x8]           ; 0047a8a4 | g_ClipBuffer4Vertices[0].z | g_ClipBuffer4Vertices[1].z
     MOV EDI,0x1c59cf0                   ; 0047a8a7
     MOV EDX,EBX                         ; 0047a8ac
     XOR ECX,ECX                         ; 0047a8ae
@@ -526,7 +526,7 @@ section .text
     JNC 0x0047a8bf                      ; 0047a8b8
         ;   XREF to: 0047a8bf (CONDITIONAL_JUMP)  ; LAB_0047a8bf
     MOV ECX,0x1                         ; 0047a8ba
-    FLD float ptr [EDI + 0x8]           ; 0047a8bf | g_CVector3f_ARRAY_01c59cf0[0].z | g_CVector3f_ARRAY_01c59cf0[2].z
+    FLD float ptr [EDI + 0x8]           ; 0047a8bf | g_ClipBuffer4Vertices[0].z | g_ClipBuffer4Vertices[2].z
         ;   Label: LAB_0047a8bf
     FCOMP float ptr [ESP]               ; 0047a8c2
     FNSTSW AX                           ; 0047a8c5
@@ -540,19 +540,19 @@ section .text
         ;   XREF to: 0047a8ff (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x47a3a4]  ; 0047a8d2 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EAX,dword ptr [0x01c59db0],0xc ; 0047a8d9 | g_INT_01c59db0
+    IMUL EAX,dword ptr [0x01c59db0],0xc ; 0047a8d9 | g_ClipBuffer5VertexCount
         ;   Label: caseD_0
     ADD EAX,0x1c59db4                   ; 0047a8e0
     CMP EAX,EDX                         ; 0047a8e5
     JZ 0x0047a8f9                       ; 0047a8e7
         ;   XREF to: 0047a8f9 (CONDITIONAL_JUMP)  ; LAB_0047a8f9
-    MOV ECX,dword ptr [EDX]             ; 0047a8e9 | g_CVector3f_ARRAY_01c59cf0
-    MOV dword ptr [EAX],ECX             ; 0047a8eb | g_CVector3f_ARRAY_01c59db4
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a8ed | g_CVector3f_ARRAY_01c59cf0[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047a8f0 | g_CVector3f_ARRAY_01c59db4[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a8f3 | g_CVector3f_ARRAY_01c59cf0[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047a8f6 | g_CVector3f_ARRAY_01c59db4[0].z
-    INC dword ptr [0x01c59db0]          ; 0047a8f9 | g_INT_01c59db0
+    MOV ECX,dword ptr [EDX]             ; 0047a8e9 | g_ClipBuffer4Vertices
+    MOV dword ptr [EAX],ECX             ; 0047a8eb | g_ClipBuffer5Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a8ed | g_ClipBuffer4Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047a8f0 | g_ClipBuffer5Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a8f3 | g_ClipBuffer4Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047a8f6 | g_ClipBuffer5Vertices[0].z
+    INC dword ptr [0x01c59db0]          ; 0047a8f9 | g_ClipBuffer5VertexCount
         ;   Label: LAB_0047a8f9
     MOV EDX,dword ptr [0x01c59cec]      ; 0047a8ff | g_INT_01c59cec
         ;   Label: caseD_3
@@ -561,7 +561,7 @@ section .text
     CMP ESI,EDX                         ; 0047a909
     JL 0x0047a892                       ; 0047a90b
         ;   XREF to: 0047a892 (CONDITIONAL_JUMP)  ; LAB_0047a892
-    MOV ECX,dword ptr [0x01c59db0]      ; 0047a90d | g_INT_01c59db0
+    MOV ECX,dword ptr [0x01c59db0]      ; 0047a90d | g_ClipBuffer5VertexCount
         ;   Label: LAB_0047a90d
     CMP ECX,0x3                         ; 0047a913
     JL 0x0047a9be                       ; 0047a916
@@ -574,7 +574,7 @@ section .text
     JLE 0x0047a9b1                      ; 0047a92a
         ;   XREF to: 0047a9b1 (CONDITIONAL_JUMP)  ; LAB_0047a9b1
     MOV EBX,0x1c59db4                   ; 0047a930
-    MOV ECX,dword ptr [0x01c59db0]      ; 0047a935 | g_INT_01c59db0
+    MOV ECX,dword ptr [0x01c59db0]      ; 0047a935 | g_ClipBuffer5VertexCount
         ;   Label: LAB_0047a935
     LEA EAX,[ESI + 0x1]                 ; 0047a93b
     CMP EAX,ECX                         ; 0047a93e
@@ -583,7 +583,7 @@ section .text
     XOR EAX,ECX                         ; 0047a942
     IMUL EAX,EAX,0xc                    ; 0047a944
         ;   Label: LAB_0047a944
-    FLD float ptr [EBX + 0x8]           ; 0047a947 | g_CVector3f_ARRAY_01c59db4[0].z | g_CVector3f_ARRAY_01c59db4[1].z
+    FLD float ptr [EBX + 0x8]           ; 0047a947 | g_ClipBuffer5Vertices[0].z | g_ClipBuffer5Vertices[1].z
     MOV EDI,0x1c59db4                   ; 0047a94a
     MOV EDX,EBX                         ; 0047a94f
     XOR ECX,ECX                         ; 0047a951
@@ -594,7 +594,7 @@ section .text
     JBE 0x0047a963                      ; 0047a95c
         ;   XREF to: 0047a963 (CONDITIONAL_JUMP)  ; LAB_0047a963
     MOV ECX,0x1                         ; 0047a95e
-    FLD float ptr [EDI + 0x8]           ; 0047a963 | g_CVector3f_ARRAY_01c59db4[0].z | g_CVector3f_ARRAY_01c59db4[2].z
+    FLD float ptr [EDI + 0x8]           ; 0047a963 | g_ClipBuffer5Vertices[0].z | g_ClipBuffer5Vertices[2].z
         ;   Label: LAB_0047a963
     FCOMP float ptr [ESP + 0x4]         ; 0047a966
     FNSTSW AX                           ; 0047a96a
@@ -608,28 +608,28 @@ section .text
         ;   XREF to: 0047a9a4 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x47a3b4]  ; 0047a977 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EAX,dword ptr [0x01c59e74],0xc ; 0047a97e | g_INT_01c59e74
+    IMUL EAX,dword ptr [0x01c59e74],0xc ; 0047a97e | g_ClipOutputVertexCount
         ;   Label: caseD_0
     ADD EAX,0x1c59e78                   ; 0047a985
     CMP EAX,EDX                         ; 0047a98a
     JZ 0x0047a99e                       ; 0047a98c
         ;   XREF to: 0047a99e (CONDITIONAL_JUMP)  ; LAB_0047a99e
-    MOV ECX,dword ptr [EDX]             ; 0047a98e | g_CVector3f_ARRAY_01c59db4
+    MOV ECX,dword ptr [EDX]             ; 0047a98e | g_ClipBuffer5Vertices
     MOV dword ptr [EAX],ECX             ; 0047a990
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a992 | g_CVector3f_ARRAY_01c59db4[0].y
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047a992 | g_ClipBuffer5Vertices[0].y
     MOV dword ptr [EAX + 0x4],ECX       ; 0047a995
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a998 | g_CVector3f_ARRAY_01c59db4[0].z
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047a998 | g_ClipBuffer5Vertices[0].z
     MOV dword ptr [EAX + 0x8],ECX       ; 0047a99b
-    INC dword ptr [0x01c59e74]          ; 0047a99e | g_INT_01c59e74
+    INC dword ptr [0x01c59e74]          ; 0047a99e | g_ClipOutputVertexCount
         ;   Label: LAB_0047a99e
-    MOV EAX,[0x01c59db0]                ; 0047a9a4 | g_INT_01c59db0
+    MOV EAX,[0x01c59db0]                ; 0047a9a4 | g_ClipBuffer5VertexCount
         ;   Label: caseD_3
     INC ESI                             ; 0047a9a9
     ADD EBX,0xc                         ; 0047a9aa
     CMP ESI,EAX                         ; 0047a9ad
     JL 0x0047a935                       ; 0047a9af
         ;   XREF to: 0047a935 (CONDITIONAL_JUMP)  ; LAB_0047a935
-    CMP dword ptr [0x01c59e74],0x3      ; 0047a9b1 | g_INT_01c59e74
+    CMP dword ptr [0x01c59e74],0x3      ; 0047a9b1 | g_ClipOutputVertexCount
         ;   Label: LAB_0047a9b1
     JGE 0x0047a570                      ; 0047a9b8
         ;   XREF to: 0047a570 (CONDITIONAL_JUMP)  ; LAB_0047a570
@@ -673,11 +673,11 @@ section .text
     JZ 0x0047aa2d                       ; 0047aa1b
         ;   XREF to: 0047aa2d (CONDITIONAL_JUMP)  ; LAB_0047aa2d
     MOV ECX,dword ptr [EDX]             ; 0047aa1d
-    MOV dword ptr [EAX],ECX             ; 0047aa1f | g_CVector3f_ARRAY_01c59aa4
+    MOV dword ptr [EAX],ECX             ; 0047aa1f | g_ClipBuffer1Vertices
     MOV ECX,dword ptr [EDX + 0x4]       ; 0047aa21
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047aa24 | g_CVector3f_ARRAY_01c59aa4[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047aa24 | g_ClipBuffer1Vertices[0].y
     MOV ECX,dword ptr [EDX + 0x8]       ; 0047aa27
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047aa2a | g_CVector3f_ARRAY_01c59aa4[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047aa2a | g_ClipBuffer1Vertices[0].z
     MOV EAX,[0x01c59aa0]                ; 0047aa2d | g_INT_01c59aa0
         ;   Label: LAB_0047aa2d
     INC EAX                             ; 0047aa32
@@ -705,7 +705,7 @@ section .text
     MOV dword ptr [0x01c59aa0],EDI      ; 0047aa6d | g_INT_01c59aa0
     JMP 0x0047a65d                      ; 0047aa73
         ;   XREF to: 0047a65d (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59b64],0xc ; 0047aa78 | g_INT_01c59b64
+    IMUL EAX,dword ptr [0x01c59b64],0xc ; 0047aa78 | g_ClipBuffer2VertexCount
         ;   Label: caseD_1
     FLD float ptr [ESP + 0xc]           ; 0047aa7f
     SUB ESP,0x8                         ; 0047aa83
@@ -718,32 +718,32 @@ section .text
     PUSH 0x0                            ; 0047aa96
     ADD EAX,0x1c59b68                   ; 0047aa98
     PUSH EAX                            ; 0047aa9d
-    PUSH EDX                            ; 0047aa9e | g_CVector3f_ARRAY_01c59aa4
+    PUSH EDX                            ; 0047aa9e | g_ClipBuffer1Vertices
     PUSH EDI                            ; 0047aa9f
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047aaa0
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59b64]      ; 0047aaa5 | g_INT_01c59b64
+    MOV EDI,dword ptr [0x01c59b64]      ; 0047aaa5 | g_ClipBuffer2VertexCount
     INC EDI                             ; 0047aaab
     ADD ESP,0x2c                        ; 0047aaac
-    MOV dword ptr [0x01c59b64],EDI      ; 0047aaaf | g_INT_01c59b64
+    MOV dword ptr [0x01c59b64],EDI      ; 0047aaaf | g_ClipBuffer2VertexCount
     JMP 0x0047a706                      ; 0047aab5
         ;   XREF to: 0047a706 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59b64],0xc ; 0047aaba | g_INT_01c59b64
+    IMUL EAX,dword ptr [0x01c59b64],0xc ; 0047aaba | g_ClipBuffer2VertexCount
         ;   Label: caseD_2
     ADD EAX,0x1c59b68                   ; 0047aac1
     CMP EAX,EDX                         ; 0047aac6
     JZ 0x0047aada                       ; 0047aac8
         ;   XREF to: 0047aada (CONDITIONAL_JUMP)  ; LAB_0047aada
-    MOV ECX,dword ptr [EDX]             ; 0047aaca | g_CVector3f_ARRAY_01c59aa4
-    MOV dword ptr [EAX],ECX             ; 0047aacc | g_CVector3f_ARRAY_01c59b68
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047aace | g_CVector3f_ARRAY_01c59aa4[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047aad1 | g_CVector3f_ARRAY_01c59b68[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047aad4 | g_CVector3f_ARRAY_01c59aa4[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047aad7 | g_CVector3f_ARRAY_01c59b68[0].z
-    MOV EAX,[0x01c59b64]                ; 0047aada | g_INT_01c59b64
+    MOV ECX,dword ptr [EDX]             ; 0047aaca | g_ClipBuffer1Vertices
+    MOV dword ptr [EAX],ECX             ; 0047aacc | g_ClipBuffer2Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047aace | g_ClipBuffer1Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047aad1 | g_ClipBuffer2Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047aad4 | g_ClipBuffer1Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047aad7 | g_ClipBuffer2Vertices[0].z
+    MOV EAX,[0x01c59b64]                ; 0047aada | g_ClipBuffer2VertexCount
         ;   Label: LAB_0047aada
     INC EAX                             ; 0047aadf
-    MOV [0x01c59b64],EAX                ; 0047aae0 | g_INT_01c59b64
+    MOV [0x01c59b64],EAX                ; 0047aae0 | g_ClipBuffer2VertexCount
     IMUL EAX,EAX,0xc                    ; 0047aae5
     FLD float ptr [ESP + 0xc]           ; 0047aae8
     SUB ESP,0x8                         ; 0047aaec
@@ -757,16 +757,16 @@ section .text
     ADD EAX,0x1c59b68                   ; 0047ab01
     PUSH EAX                            ; 0047ab06
     PUSH EDI                            ; 0047ab07
-    PUSH EDX                            ; 0047ab08 | g_CVector3f_ARRAY_01c59aa4
+    PUSH EDX                            ; 0047ab08 | g_ClipBuffer1Vertices
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ab09
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59b64]      ; 0047ab0e | g_INT_01c59b64
+    MOV EDI,dword ptr [0x01c59b64]      ; 0047ab0e | g_ClipBuffer2VertexCount
     INC EDI                             ; 0047ab14
     ADD ESP,0x2c                        ; 0047ab15
-    MOV dword ptr [0x01c59b64],EDI      ; 0047ab18 | g_INT_01c59b64
+    MOV dword ptr [0x01c59b64],EDI      ; 0047ab18 | g_ClipBuffer2VertexCount
     JMP 0x0047a706                      ; 0047ab1e
         ;   XREF to: 0047a706 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59c28],0xc ; 0047ab23 | g_INT_01c59c28
+    IMUL EAX,dword ptr [0x01c59c28],0xc ; 0047ab23 | g_ClipBuffer3VertexCount
         ;   Label: caseD_1
     FLD float ptr [ESP + 0x18]          ; 0047ab2a
     SUB ESP,0x8                         ; 0047ab2e
@@ -780,32 +780,32 @@ section .text
     PUSH 0x0                            ; 0047ab43
     ADD EAX,0x1c59c2c                   ; 0047ab45
     PUSH EAX                            ; 0047ab4a
-    PUSH EDX                            ; 0047ab4b | g_CVector3f_ARRAY_01c59b68
+    PUSH EDX                            ; 0047ab4b | g_ClipBuffer2Vertices
     PUSH EDI                            ; 0047ab4c
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ab4d
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59c28]      ; 0047ab52 | g_INT_01c59c28
+    MOV EDI,dword ptr [0x01c59c28]      ; 0047ab52 | g_ClipBuffer3VertexCount
     INC EDI                             ; 0047ab58
     ADD ESP,0x2c                        ; 0047ab59
-    MOV dword ptr [0x01c59c28],EDI      ; 0047ab5c | g_INT_01c59c28
+    MOV dword ptr [0x01c59c28],EDI      ; 0047ab5c | g_ClipBuffer3VertexCount
     JMP 0x0047a7a7                      ; 0047ab62
         ;   XREF to: 0047a7a7 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59c28],0xc ; 0047ab67 | g_INT_01c59c28
+    IMUL EAX,dword ptr [0x01c59c28],0xc ; 0047ab67 | g_ClipBuffer3VertexCount
         ;   Label: caseD_2
     ADD EAX,0x1c59c2c                   ; 0047ab6e
     CMP EAX,EDX                         ; 0047ab73
     JZ 0x0047ab87                       ; 0047ab75
         ;   XREF to: 0047ab87 (CONDITIONAL_JUMP)  ; LAB_0047ab87
-    MOV ECX,dword ptr [EDX]             ; 0047ab77 | g_CVector3f_ARRAY_01c59b68
-    MOV dword ptr [EAX],ECX             ; 0047ab79 | g_CVector3f_ARRAY_01c59c2c
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047ab7b | g_CVector3f_ARRAY_01c59b68[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047ab7e | g_CVector3f_ARRAY_01c59c2c[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047ab81 | g_CVector3f_ARRAY_01c59b68[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047ab84 | g_CVector3f_ARRAY_01c59c2c[0].z
-    MOV EAX,[0x01c59c28]                ; 0047ab87 | g_INT_01c59c28
+    MOV ECX,dword ptr [EDX]             ; 0047ab77 | g_ClipBuffer2Vertices
+    MOV dword ptr [EAX],ECX             ; 0047ab79 | g_ClipBuffer3Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047ab7b | g_ClipBuffer2Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047ab7e | g_ClipBuffer3Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047ab81 | g_ClipBuffer2Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047ab84 | g_ClipBuffer3Vertices[0].z
+    MOV EAX,[0x01c59c28]                ; 0047ab87 | g_ClipBuffer3VertexCount
         ;   Label: LAB_0047ab87
     INC EAX                             ; 0047ab8c
-    MOV [0x01c59c28],EAX                ; 0047ab8d | g_INT_01c59c28
+    MOV [0x01c59c28],EAX                ; 0047ab8d | g_ClipBuffer3VertexCount
     IMUL EAX,EAX,0xc                    ; 0047ab92
     FLD float ptr [ESP + 0x18]          ; 0047ab95
     SUB ESP,0x8                         ; 0047ab99
@@ -820,13 +820,13 @@ section .text
     ADD EAX,0x1c59c2c                   ; 0047abb0
     PUSH EAX                            ; 0047abb5
     PUSH EDI                            ; 0047abb6
-    PUSH EDX                            ; 0047abb7 | g_CVector3f_ARRAY_01c59b68
+    PUSH EDX                            ; 0047abb7 | g_ClipBuffer2Vertices
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047abb8
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59c28]      ; 0047abbd | g_INT_01c59c28
+    MOV EDI,dword ptr [0x01c59c28]      ; 0047abbd | g_ClipBuffer3VertexCount
     INC EDI                             ; 0047abc3
     ADD ESP,0x2c                        ; 0047abc4
-    MOV dword ptr [0x01c59c28],EDI      ; 0047abc7 | g_INT_01c59c28
+    MOV dword ptr [0x01c59c28],EDI      ; 0047abc7 | g_ClipBuffer3VertexCount
     JMP 0x0047a7a7                      ; 0047abcd
         ;   XREF to: 0047a7a7 (UNCONDITIONAL_JUMP)  ; caseD_3
     FLD float ptr [ESP + 0x8]           ; 0047abd2
@@ -847,7 +847,7 @@ section .text
     PUSH 0x0                            ; 0047abfe
     ADD EAX,0x1c59cf0                   ; 0047ac00
     PUSH EAX                            ; 0047ac05
-    PUSH EDX                            ; 0047ac06 | g_CVector3f_ARRAY_01c59c2c
+    PUSH EDX                            ; 0047ac06 | g_ClipBuffer3Vertices
     PUSH EDI                            ; 0047ac07
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ac08
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
@@ -868,12 +868,12 @@ section .text
     CMP EAX,EDX                         ; 0047ac3c
     JZ 0x0047ac50                       ; 0047ac3e
         ;   XREF to: 0047ac50 (CONDITIONAL_JUMP)  ; LAB_0047ac50
-    MOV ECX,dword ptr [EDX]             ; 0047ac40 | g_CVector3f_ARRAY_01c59c2c
-    MOV dword ptr [EAX],ECX             ; 0047ac42 | g_CVector3f_ARRAY_01c59cf0
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047ac44 | g_CVector3f_ARRAY_01c59c2c[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047ac47 | g_CVector3f_ARRAY_01c59cf0[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047ac4a | g_CVector3f_ARRAY_01c59c2c[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047ac4d | g_CVector3f_ARRAY_01c59cf0[0].z
+    MOV ECX,dword ptr [EDX]             ; 0047ac40 | g_ClipBuffer3Vertices
+    MOV dword ptr [EAX],ECX             ; 0047ac42 | g_ClipBuffer4Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047ac44 | g_ClipBuffer3Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047ac47 | g_ClipBuffer4Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047ac4a | g_ClipBuffer3Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047ac4d | g_ClipBuffer4Vertices[0].z
     FLD float ptr [ESP + 0x8]           ; 0047ac50
         ;   Label: LAB_0047ac50
     SUB ESP,0x8                         ; 0047ac54
@@ -895,7 +895,7 @@ section .text
     ADD EAX,0x1c59cf0                   ; 0047ac84
     PUSH EAX                            ; 0047ac89
     PUSH EDI                            ; 0047ac8a
-    PUSH EDX                            ; 0047ac8b | g_CVector3f_ARRAY_01c59c2c
+    PUSH EDX                            ; 0047ac8b | g_ClipBuffer3Vertices
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ac8c
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59cec]      ; 0047ac91 | g_INT_01c59cec
@@ -904,7 +904,7 @@ section .text
     MOV dword ptr [0x01c59cec],EDI      ; 0047ac9b | g_INT_01c59cec
     JMP 0x0047a85a                      ; 0047aca1
         ;   XREF to: 0047a85a (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59db0],0xc ; 0047aca6 | g_INT_01c59db0
+    IMUL EAX,dword ptr [0x01c59db0],0xc ; 0047aca6 | g_ClipBuffer5VertexCount
         ;   Label: caseD_1
     FLD float ptr [ESP]                 ; 0047acad
     SUB ESP,0x8                         ; 0047acb0
@@ -917,32 +917,32 @@ section .text
     PUSH 0x0                            ; 0047acc3
     ADD EAX,0x1c59db4                   ; 0047acc5
     PUSH EAX                            ; 0047acca
-    PUSH EDX                            ; 0047accb | g_CVector3f_ARRAY_01c59cf0
+    PUSH EDX                            ; 0047accb | g_ClipBuffer4Vertices
     PUSH EDI                            ; 0047accc
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047accd
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59db0]      ; 0047acd2 | g_INT_01c59db0
+    MOV EDI,dword ptr [0x01c59db0]      ; 0047acd2 | g_ClipBuffer5VertexCount
     INC EDI                             ; 0047acd8
     ADD ESP,0x2c                        ; 0047acd9
-    MOV dword ptr [0x01c59db0],EDI      ; 0047acdc | g_INT_01c59db0
+    MOV dword ptr [0x01c59db0],EDI      ; 0047acdc | g_ClipBuffer5VertexCount
     JMP 0x0047a8ff                      ; 0047ace2
         ;   XREF to: 0047a8ff (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59db0],0xc ; 0047ace7 | g_INT_01c59db0
+    IMUL EAX,dword ptr [0x01c59db0],0xc ; 0047ace7 | g_ClipBuffer5VertexCount
         ;   Label: caseD_2
     ADD EAX,0x1c59db4                   ; 0047acee
     CMP EAX,EDX                         ; 0047acf3
     JZ 0x0047ad07                       ; 0047acf5
         ;   XREF to: 0047ad07 (CONDITIONAL_JUMP)  ; LAB_0047ad07
-    MOV ECX,dword ptr [EDX]             ; 0047acf7 | g_CVector3f_ARRAY_01c59cf0
-    MOV dword ptr [EAX],ECX             ; 0047acf9 | g_CVector3f_ARRAY_01c59db4
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047acfb | g_CVector3f_ARRAY_01c59cf0[0].y
-    MOV dword ptr [EAX + 0x4],ECX       ; 0047acfe | g_CVector3f_ARRAY_01c59db4[0].y
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047ad01 | g_CVector3f_ARRAY_01c59cf0[0].z
-    MOV dword ptr [EAX + 0x8],ECX       ; 0047ad04 | g_CVector3f_ARRAY_01c59db4[0].z
-    MOV EAX,[0x01c59db0]                ; 0047ad07 | g_INT_01c59db0
+    MOV ECX,dword ptr [EDX]             ; 0047acf7 | g_ClipBuffer4Vertices
+    MOV dword ptr [EAX],ECX             ; 0047acf9 | g_ClipBuffer5Vertices
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047acfb | g_ClipBuffer4Vertices[0].y
+    MOV dword ptr [EAX + 0x4],ECX       ; 0047acfe | g_ClipBuffer5Vertices[0].y
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047ad01 | g_ClipBuffer4Vertices[0].z
+    MOV dword ptr [EAX + 0x8],ECX       ; 0047ad04 | g_ClipBuffer5Vertices[0].z
+    MOV EAX,[0x01c59db0]                ; 0047ad07 | g_ClipBuffer5VertexCount
         ;   Label: LAB_0047ad07
     INC EAX                             ; 0047ad0c
-    MOV [0x01c59db0],EAX                ; 0047ad0d | g_INT_01c59db0
+    MOV [0x01c59db0],EAX                ; 0047ad0d | g_ClipBuffer5VertexCount
     IMUL EAX,EAX,0xc                    ; 0047ad12
     FLD float ptr [ESP]                 ; 0047ad15
     SUB ESP,0x8                         ; 0047ad18
@@ -956,16 +956,16 @@ section .text
     ADD EAX,0x1c59db4                   ; 0047ad2d
     PUSH EAX                            ; 0047ad32
     PUSH EDI                            ; 0047ad33
-    PUSH EDX                            ; 0047ad34 | g_CVector3f_ARRAY_01c59cf0
+    PUSH EDX                            ; 0047ad34 | g_ClipBuffer4Vertices
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ad35
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59db0]      ; 0047ad3a | g_INT_01c59db0
+    MOV EDI,dword ptr [0x01c59db0]      ; 0047ad3a | g_ClipBuffer5VertexCount
     INC EDI                             ; 0047ad40
     ADD ESP,0x2c                        ; 0047ad41
-    MOV dword ptr [0x01c59db0],EDI      ; 0047ad44 | g_INT_01c59db0
+    MOV dword ptr [0x01c59db0],EDI      ; 0047ad44 | g_ClipBuffer5VertexCount
     JMP 0x0047a8ff                      ; 0047ad4a
         ;   XREF to: 0047a8ff (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59e74],0xc ; 0047ad4f | g_INT_01c59e74
+    IMUL EAX,dword ptr [0x01c59e74],0xc ; 0047ad4f | g_ClipOutputVertexCount
         ;   Label: caseD_1
     FLD float ptr [ESP + 0x4]           ; 0047ad56
     SUB ESP,0x8                         ; 0047ad5a
@@ -978,32 +978,32 @@ section .text
     PUSH 0x0                            ; 0047ad6d
     ADD EAX,0x1c59e78                   ; 0047ad6f
     PUSH EAX                            ; 0047ad74
-    PUSH EDX                            ; 0047ad75 | g_CVector3f_ARRAY_01c59db4
+    PUSH EDX                            ; 0047ad75 | g_ClipBuffer5Vertices
     PUSH EDI                            ; 0047ad76
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ad77
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59e74]      ; 0047ad7c | g_INT_01c59e74
+    MOV EDI,dword ptr [0x01c59e74]      ; 0047ad7c | g_ClipOutputVertexCount
     INC EDI                             ; 0047ad82
     ADD ESP,0x2c                        ; 0047ad83
-    MOV dword ptr [0x01c59e74],EDI      ; 0047ad86 | g_INT_01c59e74
+    MOV dword ptr [0x01c59e74],EDI      ; 0047ad86 | g_ClipOutputVertexCount
     JMP 0x0047a9a4                      ; 0047ad8c
         ;   XREF to: 0047a9a4 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EAX,dword ptr [0x01c59e74],0xc ; 0047ad91 | g_INT_01c59e74
+    IMUL EAX,dword ptr [0x01c59e74],0xc ; 0047ad91 | g_ClipOutputVertexCount
         ;   Label: caseD_2
     ADD EAX,0x1c59e78                   ; 0047ad98
     CMP EAX,EDX                         ; 0047ad9d
     JZ 0x0047adb1                       ; 0047ad9f
         ;   XREF to: 0047adb1 (CONDITIONAL_JUMP)  ; LAB_0047adb1
-    MOV ECX,dword ptr [EDX]             ; 0047ada1 | g_CVector3f_ARRAY_01c59db4
+    MOV ECX,dword ptr [EDX]             ; 0047ada1 | g_ClipBuffer5Vertices
     MOV dword ptr [EAX],ECX             ; 0047ada3
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0047ada5 | g_CVector3f_ARRAY_01c59db4[0].y
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0047ada5 | g_ClipBuffer5Vertices[0].y
     MOV dword ptr [EAX + 0x4],ECX       ; 0047ada8
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0047adab | g_CVector3f_ARRAY_01c59db4[0].z
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0047adab | g_ClipBuffer5Vertices[0].z
     MOV dword ptr [EAX + 0x8],ECX       ; 0047adae
-    MOV EAX,[0x01c59e74]                ; 0047adb1 | g_INT_01c59e74
+    MOV EAX,[0x01c59e74]                ; 0047adb1 | g_ClipOutputVertexCount
         ;   Label: LAB_0047adb1
     INC EAX                             ; 0047adb6
-    MOV [0x01c59e74],EAX                ; 0047adb7 | g_INT_01c59e74
+    MOV [0x01c59e74],EAX                ; 0047adb7 | g_ClipOutputVertexCount
     IMUL EAX,EAX,0xc                    ; 0047adbc
     FLD float ptr [ESP + 0x4]           ; 0047adbf
     SUB ESP,0x8                         ; 0047adc3
@@ -1017,13 +1017,13 @@ section .text
     ADD EAX,0x1c59e78                   ; 0047add8
     PUSH EAX                            ; 0047addd
     PUSH EDI                            ; 0047adde
-    PUSH EDX                            ; 0047addf | g_CVector3f_ARRAY_01c59db4
+    PUSH EDX                            ; 0047addf | g_ClipBuffer5Vertices
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ade0
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EDI,dword ptr [0x01c59e74]      ; 0047ade5 | g_INT_01c59e74
+    MOV EDI,dword ptr [0x01c59e74]      ; 0047ade5 | g_ClipOutputVertexCount
     INC EDI                             ; 0047adeb
     ADD ESP,0x2c                        ; 0047adec
-    MOV dword ptr [0x01c59e74],EDI      ; 0047adef | g_INT_01c59e74
+    MOV dword ptr [0x01c59e74],EDI      ; 0047adef | g_ClipOutputVertexCount
     JMP 0x0047a9a4                      ; 0047adf5
         ;   XREF to: 0047a9a4 (UNCONDITIONAL_JUMP)  ; caseD_3
 

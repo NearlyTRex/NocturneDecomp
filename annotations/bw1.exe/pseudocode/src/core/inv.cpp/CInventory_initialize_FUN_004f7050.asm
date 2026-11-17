@@ -16,9 +16,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_005e605b
-;   float g_FLOAT_005e6064 = 0.00003051851
+;   float g_InventoryRandNormalizationFactor = 0.00003051851
 ;   float g_FLOAT_005e6068 = 3.141593
-;   double g_DOUBLE_005e6070 = 2
+;   double g_InventoryRandTwoFactor = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c2b0
@@ -46,9 +46,9 @@ section .text
         ;   Label: LAB_004f706b
     MOV dword ptr [ESP],EAX             ; 004f7070
     FILD dword ptr [ESP]                ; 004f7073
-    FMUL float ptr [0x005e6064]         ; 004f7076 | g_FLOAT_005e6064
+    FMUL float ptr [0x005e6064]         ; 004f7076 | g_InventoryRandNormalizationFactor
     FMUL float ptr [0x005e6068]         ; 004f707c | g_FLOAT_005e6068
-    FMUL double ptr [0x005e6070]        ; 004f7082 | g_DOUBLE_005e6070
+    FMUL double ptr [0x005e6070]        ; 004f7082 | g_InventoryRandTwoFactor
     ADD EBX,0x4                         ; 004f7088
     FSTP float ptr [EBX + 0x1a0]        ; 004f708b
     CMP EBX,ESI                         ; 004f7091

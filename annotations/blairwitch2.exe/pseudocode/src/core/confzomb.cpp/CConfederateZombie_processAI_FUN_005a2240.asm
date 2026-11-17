@@ -48,7 +48,7 @@ section .text
     PUSH dword ptr [ESP + 0x4c]         ; 005a2250
     PUSH EAX                            ; 005a2254
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a2255
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005a225a
     PUSH 0x5efe97                       ; 005a225d | = "Burn"
     LEA EAX,[EBX + 0x10af8]             ; 005a2262

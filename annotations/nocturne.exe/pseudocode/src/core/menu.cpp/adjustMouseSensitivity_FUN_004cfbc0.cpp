@@ -40,12 +40,12 @@ LAB_004cfc23:
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60
             ((int)(((longlong)(g_WindowWidth + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
-             g_INT_01bd1d90);
+             g_MouseY);
   pCVar6 = (CKeys *)0x0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorToolsPtr);
-    if ((CKeys *)g_INT_01bd1d8c != pCVar6) {
-      iVar3 = (int)(((longlong)g_INT_01bd1d8c * 0x3c000) / (longlong)(g_WindowWidth + -1)) + 0x4000;
+    if ((CKeys *)g_MouseX != pCVar6) {
+      iVar3 = (int)(((longlong)g_MouseX * 0x3c000) / (longlong)(g_WindowWidth + -1)) + 0x4000;
     }
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);
     if (iVar1 != 0) {

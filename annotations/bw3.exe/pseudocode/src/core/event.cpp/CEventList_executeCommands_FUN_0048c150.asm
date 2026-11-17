@@ -21,7 +21,7 @@
 ;   ... and 23 more
 ;
 ; Referenced Globals:
-;   int g_INT_01c734ac
+;   int g_EventDryRun
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommandString_FUN_0048c170
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0048c156
     XOR EDX,EDX                         ; 0048c15a
     PUSH EBX                            ; 0048c15c
-    MOV dword ptr [0x01c734ac],EDX      ; 0048c15d | g_INT_01c734ac
+    MOV dword ptr [0x01c734ac],EDX      ; 0048c15d | g_EventDryRun
     CALL core_event.cpp_CEventList_executeCommandString_FUN_0048c170 ; 0048c163
         ;   XREF to: 0048c170 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommandString_FUN_0048c170(CEventList * this_ptr, char * command_string)
     ADD ESP,0x8                         ; 0048c168

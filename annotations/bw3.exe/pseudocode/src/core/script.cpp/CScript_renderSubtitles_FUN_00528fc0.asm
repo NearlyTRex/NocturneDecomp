@@ -22,16 +22,16 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   CGame* g_CGamePtr = 01d2130c
-;   CBitFont* g_CBitFont_PTR_01549aa0
-;   CBitFont* g_CBitFont_PTR_01549aa4
-;   CBitFont* g_CBitFont_PTR_01549ab4
-;   CBitFont* g_CBitFont_PTR_01549abc
+;   CBitFont* g_MediumFont
+;   CBitFont* g_TinyFont
+;   CBitFont* g_SmallEditorFont
+;   CBitFont* g_MicroFont
 ;   int g_INT_01c6b5ac
 ;   undefined4 g_CGameInstance.subtitle_mode
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   int g_INT_01dd4890
-;   int g_INT_01ed3800
-;   float g_FLOAT_01ed7010
+;   int g_UseOSFonts
+;   int g_PreviousLetterboxMode
+;   float g_ScriptTimeScale
 ;
 ; Called Functions:
 ;   core_charactr.cpp_getGameDeltaTime_FUN_00434b00
@@ -65,11 +65,11 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00528fe4
     FLD float ptr [ESP + 0x1c]          ; 00528fe8
     FDIV float ptr [0x005cde18]         ; 00528fec | g_FLOAT_005cde18
-    FSUBR float ptr [0x01ed7010]        ; 00528ff2 | g_FLOAT_01ed7010
+    FSUBR float ptr [0x01ed7010]        ; 00528ff2 | g_ScriptTimeScale
     ADD ESP,0x4                         ; 00528ff8
         ;   Label: LAB_00528ff8
-    FSTP float ptr [0x01ed7010]         ; 00528ffb | g_FLOAT_01ed7010
-    FLD float ptr [0x01ed7010]          ; 00529001 | g_FLOAT_01ed7010
+    FSTP float ptr [0x01ed7010]         ; 00528ffb | g_ScriptTimeScale
+    FLD float ptr [0x01ed7010]          ; 00529001 | g_ScriptTimeScale
     FLDZ                                ; 00529007
     FCOMPP                              ; 00529009
     FNSTSW AX                           ; 0052900b
@@ -77,8 +77,8 @@ section .text
     JBE 0x00529018                      ; 0052900e
         ;   XREF to: 00529018 (CONDITIONAL_JUMP)  ; LAB_00529018
     XOR ECX,ECX                         ; 00529010
-    MOV dword ptr [0x01ed7010],ECX      ; 00529012 | g_FLOAT_01ed7010
-    FLD float ptr [0x01ed7010]          ; 00529018 | g_FLOAT_01ed7010
+    MOV dword ptr [0x01ed7010],ECX      ; 00529012 | g_ScriptTimeScale
+    FLD float ptr [0x01ed7010]          ; 00529018 | g_ScriptTimeScale
         ;   Label: LAB_00529018
     FLD1                                ; 0052901e
     FCOMPP                              ; 00529020
@@ -86,7 +86,7 @@ section .text
     SAHF                                ; 00529024
     JNC 0x00529031                      ; 00529025
         ;   XREF to: 00529031 (CONDITIONAL_JUMP)  ; LAB_00529031
-    MOV dword ptr [0x01ed7010],0x3f800000 ; 00529027 | g_FLOAT_01ed7010
+    MOV dword ptr [0x01ed7010],0x3f800000 ; 00529027 | g_ScriptTimeScale
     MOV EAX,[0x005fba18]                ; 00529031 | g_INT_005fba18
         ;   Label: LAB_00529031
     MOV EBX,dword ptr [0x005fba1c]      ; 00529036 | g_INT_005fba1c
@@ -101,7 +101,7 @@ section .text
     TEST EAX,EAX                        ; 00529051
     JLE 0x00529092                      ; 00529053
         ;   XREF to: 00529092 (CONDITIONAL_JUMP)  ; LAB_00529092
-    CMP dword ptr [0x01ed3800],0x2      ; 00529055 | g_INT_01ed3800
+    CMP dword ptr [0x01ed3800],0x2      ; 00529055 | g_PreviousLetterboxMode
     JZ 0x00529074                       ; 0052905c
         ;   XREF to: 00529074 (CONDITIONAL_JUMP)  ; LAB_00529074
     PUSH 0x0                            ; 0052905e
@@ -144,19 +144,19 @@ section .text
     JZ 0x005291d0                       ; 005290b3
         ;   XREF to: 005291d0 (CONDITIONAL_JUMP)  ; LAB_005291d0
     MOV ECX,dword ptr [0x005fba1c]      ; 005290b9 | g_INT_005fba1c
-    MOV EBP,dword ptr [0x01549aa0]      ; 005290bf | g_CBitFont_PTR_01549aa0
+    MOV EBP,dword ptr [0x01549aa0]      ; 005290bf | g_MediumFont
     CMP ECX,0x1e0                       ; 005290c5
     JGE 0x005290d3                      ; 005290cb
         ;   XREF to: 005290d3 (CONDITIONAL_JUMP)  ; LAB_005290d3
-    MOV EBP,dword ptr [0x01549aa4]      ; 005290cd | g_CBitFont_PTR_01549aa4
+    MOV EBP,dword ptr [0x01549aa4]      ; 005290cd | g_TinyFont
     CMP dword ptr [0x005fba1c],0x180    ; 005290d3 | g_INT_005fba1c
         ;   Label: LAB_005290d3
     JGE 0x005290f2                      ; 005290dd
         ;   XREF to: 005290f2 (CONDITIONAL_JUMP)  ; LAB_005290f2
-    CMP dword ptr [0x01dd4890],0x0      ; 005290df | g_INT_01dd4890
+    CMP dword ptr [0x01dd4890],0x0      ; 005290df | g_UseOSFonts
     JZ 0x00529205                       ; 005290e6
         ;   XREF to: 00529205 (CONDITIONAL_JUMP)  ; LAB_00529205
-    MOV EBP,dword ptr [0x01549ab4]      ; 005290ec | g_CBitFont_PTR_01549ab4
+    MOV EBP,dword ptr [0x01549ab4]      ; 005290ec | g_SmallEditorFont
     MOV EDX,dword ptr [0x005fba18]      ; 005290f2 | g_INT_005fba18
         ;   Label: LAB_005290f2
     LEA EAX,[EDX*0x8 + 0x0]             ; 005290f8
@@ -260,16 +260,16 @@ section .text
     RET                                 ; 005291df
     PUSH EAX                            ; 005291e0
         ;   Label: LAB_005291e0
-    MOV dword ptr [0x01ed3800],EDX      ; 005291e1 | g_INT_01ed3800
+    MOV dword ptr [0x01ed3800],EDX      ; 005291e1 | g_PreviousLetterboxMode
     CALL core_charactr.cpp_getGameDeltaTime_FUN_00434b00 ; 005291e7
         ;   XREF to: 00434b00 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_00434b00(CGame * game_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 005291ec
     FLD float ptr [ESP + 0x1c]          ; 005291f0
     FDIV float ptr [0x005cde18]         ; 005291f4 | g_FLOAT_005cde18
-    FADD float ptr [0x01ed7010]         ; 005291fa | g_FLOAT_01ed7010
+    FADD float ptr [0x01ed7010]         ; 005291fa | g_ScriptTimeScale
     JMP 0x00528ff8                      ; 00529200
         ;   XREF to: 00528ff8 (UNCONDITIONAL_JUMP)  ; LAB_00528ff8
-    MOV EBP,dword ptr [0x01549abc]      ; 00529205 | g_CBitFont_PTR_01549abc
+    MOV EBP,dword ptr [0x01549abc]      ; 00529205 | g_MicroFont
         ;   Label: LAB_00529205
     JMP 0x005290f2                      ; 0052920b
         ;   XREF to: 005290f2 (UNCONDITIONAL_JUMP)  ; LAB_005290f2

@@ -51,7 +51,7 @@ CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_isGrabbable_FUN_004d2a80
 // Address: 004d2a80
-bool __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *param_2);
+bool __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *actor);
 
 // Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0
 // Address: 004d2aa0

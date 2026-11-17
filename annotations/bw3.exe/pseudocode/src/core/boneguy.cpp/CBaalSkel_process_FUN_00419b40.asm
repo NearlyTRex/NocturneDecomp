@@ -22,7 +22,7 @@
 ;   float g_FLOAT_005dc138 = 3
 ;   float g_FLOAT_005dc144 = 2
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -58,7 +58,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00419b4f
     LEA EAX,[EBX + 0xd07c]              ; 00419b55
     PUSH EAX                            ; 00419b5b
-    MOV EDX,dword ptr [0x005fba60]      ; 00419b5c | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00419b5c | g_CEventListPtr
     PUSH EDX                            ; 00419b62
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00419b63
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -702,7 +702,7 @@ section .text
     PUSH EAX                            ; 0041a2a9
     LEA ESI,[EBP + 0xffffff3e]          ; 0041a2aa
     LEA EDI,[EBP + 0xffffff32]          ; 0041a2b0
-    PUSH 0x2cfd900                      ; 0041a2b6 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0041a2b6 | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffe4a]   ; 0041a2bb
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0041a2c1
         ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -784,7 +784,7 @@ section .text
     ADD EAX,EDX                         ; 0041a3b0
     PUSH 0x40000000                     ; 0041a3b2
     PUSH EAX                            ; 0041a3b7
-    PUSH 0x2cfd900                      ; 0041a3b8 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0041a3b8 | g_ZeroVector
     LEA ESI,[EBP + 0xffffff26]          ; 0041a3bd
     LEA EDI,[EBP + -0x32]               ; 0041a3c3
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0041a3c6
@@ -865,7 +865,7 @@ section .text
     FADDP                               ; 0041a4a3
     FSTP float ptr [EBP + 0x2a]         ; 0041a4a5
     MOV EAX,dword ptr [EBP + 0x2a]      ; 0041a4a8
-    MOV ESI,dword ptr [0x01d1a0a4]      ; 0041a4ab | g_INT_01d1a0a4
+    MOV ESI,dword ptr [0x01d1a0a4]      ; 0041a4ab | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0041a4b1
     ADD EAX,ESI                         ; 0041a4b3
     MOV dword ptr [EBP + 0x2e],EAX      ; 0041a4b5
@@ -888,7 +888,7 @@ section .text
     FADDP                               ; 0041a4e3
     FSTP float ptr [EBP + 0x6e]         ; 0041a4e5
     MOV EAX,dword ptr [EBP + 0x6e]      ; 0041a4e8
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 0041a4eb | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 0041a4eb | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0041a4f1
     ADD EAX,EDI                         ; 0041a4f3
     MOV dword ptr [EBP + 0x32],EAX      ; 0041a4f5
@@ -980,7 +980,7 @@ section .text
     FADDP                               ; 0041a604
     FSTP float ptr [EBP + 0x46]         ; 0041a606
     MOV EAX,dword ptr [EBP + 0x46]      ; 0041a609
-    MOV ESI,dword ptr [0x01d1a0a4]      ; 0041a60c | g_INT_01d1a0a4
+    MOV ESI,dword ptr [0x01d1a0a4]      ; 0041a60c | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0041a612
     ADD EAX,ESI                         ; 0041a614
     MOV dword ptr [EBP + 0x3a],EAX      ; 0041a616

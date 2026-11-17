@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   void* g_PTR_0264bbbc
-;   int g_INT_0264bcdc
+;   int g_LoadedExternalDLLRenderer
 ;
 ; Called Functions:
 ;   engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0
@@ -20,7 +20,7 @@
 
 section .text
 
-    CMP dword ptr [0x0264bcdc],0x0      ; 0055f4d0 | g_INT_0264bcdc
+    CMP dword ptr [0x0264bcdc],0x0      ; 0055f4d0 | g_LoadedExternalDLLRenderer
         ;   Label: engine_special.cpp_kill_FUN_0055f4d0
     JNZ 0x0055f4df                      ; 0055f4d7
         ;   XREF to: 0055f4df (CONDITIONAL_JUMP)  ; LAB_0055f4df

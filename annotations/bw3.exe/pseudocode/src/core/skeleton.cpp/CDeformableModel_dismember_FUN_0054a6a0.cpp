@@ -58,31 +58,27 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
       g_INT_01d71de4 = 0x662;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::dismember - too many vertices!");
     }
-    memset(g_INT_ARRAY_0270f9bc,0,this_ptr->vertex_count[lod_index] << 2);
+    memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);
     if (local_2c < iVar8) {
       iVar3 = local_2c * 0x12;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        g_INT_ARRAY_0270f9bc[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1
-        ;
-        g_INT_ARRAY_0270f9bc[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1
-        ;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;
         puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
         iVar3 = iVar3 + 0x12;
-        g_INT_ARRAY_0270f9bc[*puVar5] = 1;
+        g_VertexRemapTable[*puVar5] = 1;
       } while (iVar3 < iVar8 * 0x12);
     }
     if (local_30 < iVar7) {
       iVar3 = local_30 * 0x12;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        g_INT_ARRAY_0270f9bc[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1
-        ;
-        g_INT_ARRAY_0270f9bc[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1
-        ;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;
         puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
         iVar3 = iVar3 + 0x12;
-        g_INT_ARRAY_0270f9bc[*puVar5] = 1;
+        g_VertexRemapTable[*puVar5] = 1;
       } while (iVar3 < iVar7 * 0x12);
     }
     local_14 = body_part_ptr->tri_count;
@@ -90,7 +86,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
     iVar9 = 0;
     iVar6 = iVar3;
     for (iVar4 = 0; iVar4 < this_ptr->vertex_count[lod_index]; iVar4 = iVar4 + 1) {
-      if (*(int *)((int)g_INT_ARRAY_0270f9bc + iVar9) != 0) {
+      if (*(int *)((int)g_VertexRemapTable + iVar9) != 0) {
         iVar6 = iVar6 + 1;
       }
       iVar9 = iVar9 + 4;
@@ -104,11 +100,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
     iVar6 = iVar3 * 0xc;
     if (0 < this_ptr->vertex_count[lod_index]) {
       do {
-        if (*(int *)((int)g_INT_ARRAY_0270f9bc + iVar4) == 0) {
-          *(uint *)((int)g_INT_ARRAY_0270f9bc + iVar4) = 0xffffffff;
+        if (*(int *)((int)g_VertexRemapTable + iVar4) == 0) {
+          *(uint *)((int)g_VertexRemapTable + iVar4) = 0xffffffff;
         }
         else {
-          *(int *)((int)g_INT_ARRAY_0270f9bc + iVar4) = iVar3;
+          *(int *)((int)g_VertexRemapTable + iVar4) = iVar3;
           piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);
           iVar3 = iVar3 + 1;
           iVar6 = iVar6 + 0xc;
@@ -142,7 +138,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
         *(uint *)(iVar6 + 4) = 3;
         puVar10 = puVar5 + 3;
         do {
-          *(int *)(iVar6 + 0x18) = g_INT_ARRAY_0270f9bc[*puVar5];
+          *(int *)(iVar6 + 0x18) = g_VertexRemapTable[*puVar5];
           *(uint *)(iVar6 + 0x1c) = (uint)puVar5[3] << 8;
           puVar1 = puVar5 + 6;
           puVar5 = puVar5 + 1;
@@ -176,7 +172,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
         *(uint *)(iVar3 + 4) = 3;
         puVar10 = puVar5 + 3;
         do {
-          *(int *)(iVar3 + 0x18) = g_INT_ARRAY_0270f9bc[*puVar5];
+          *(int *)(iVar3 + 0x18) = g_VertexRemapTable[*puVar5];
           *(uint *)(iVar3 + 0x1c) = (uint)puVar5[3] << 8;
           puVar1 = puVar5 + 6;
           puVar5 = puVar5 + 1;

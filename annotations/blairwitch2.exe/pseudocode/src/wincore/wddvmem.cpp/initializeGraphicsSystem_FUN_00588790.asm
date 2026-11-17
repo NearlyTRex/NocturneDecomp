@@ -19,13 +19,13 @@
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
 ;   void* g_PTR_00622010
-;   void* g_PTR_0070c62c
+;   void* g_SoftwareZBuffer
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   IDirectDraw* g_IDirectDraw_PTR_02661ae0
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae4
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae8
-;   IUnknown* g_IUnknown_PTR_02661aec
+;   IDirectDraw* g_DirectDrawObject
+;   IDirectDrawSurface* g_DirectDrawSurface
+;   IDirectDrawSurface* g_SoftwareRenderSurface
+;   IUnknown* g_DirectDrawUnknown
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -85,8 +85,8 @@ section .text
         ;   Label: LAB_00588813
     ADD EAX,0x10                        ; 00588818
     AND AL,0xf0                         ; 0058881b
-    MOV [0x0070c62c],EAX                ; 0058881d | g_PTR_0070c62c
-    MOV EAX,[0x02661aec]                ; 00588822 | g_IUnknown_PTR_02661aec
+    MOV [0x0070c62c],EAX                ; 0058881d | g_SoftwareZBuffer
+    MOV EAX,[0x02661aec]                ; 00588822 | g_DirectDrawUnknown
     TEST EAX,EAX                        ; 00588827
     JZ 0x00588839                       ; 00588829
         ;   XREF to: 00588839 (CONDITIONAL_JUMP)  ; LAB_00588839
@@ -94,8 +94,8 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 0058882c
     CALL dword ptr [EDX + 0x8]          ; 0058882e
     XOR EDX,EDX                         ; 00588831
-    MOV dword ptr [0x02661aec],EDX      ; 00588833 | g_IUnknown_PTR_02661aec
-    MOV ECX,dword ptr [0x02661ae8]      ; 00588839 | g_IDirectDrawSurface_PTR_02661ae8
+    MOV dword ptr [0x02661aec],EDX      ; 00588833 | g_DirectDrawUnknown
+    MOV ECX,dword ptr [0x02661ae8]      ; 00588839 | g_SoftwareRenderSurface
         ;   Label: LAB_00588839
     TEST ECX,ECX                        ; 0058883f
     JZ 0x00588851                       ; 00588841
@@ -104,8 +104,8 @@ section .text
     MOV EDX,dword ptr [ECX]             ; 00588844
     XOR EBX,EBX                         ; 00588846
     CALL dword ptr [EDX + 0x8]          ; 00588848
-    MOV dword ptr [0x02661ae8],EBX      ; 0058884b | g_IDirectDrawSurface_PTR_02661ae8
-    MOV ESI,dword ptr [0x02661ae4]      ; 00588851 | g_IDirectDrawSurface_PTR_02661ae4
+    MOV dword ptr [0x02661ae8],EBX      ; 0058884b | g_SoftwareRenderSurface
+    MOV ESI,dword ptr [0x02661ae4]      ; 00588851 | g_DirectDrawSurface
         ;   Label: LAB_00588851
     TEST ESI,ESI                        ; 00588857
     JZ 0x00588869                       ; 00588859
@@ -114,8 +114,8 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 0058885c
     XOR EDI,EDI                         ; 0058885e
     CALL dword ptr [EDX + 0x8]          ; 00588860
-    MOV dword ptr [0x02661ae4],EDI      ; 00588863 | g_IDirectDrawSurface_PTR_02661ae4
-    MOV EBP,dword ptr [0x02661ae0]      ; 00588869 | g_IDirectDraw_PTR_02661ae0
+    MOV dword ptr [0x02661ae4],EDI      ; 00588863 | g_DirectDrawSurface
+    MOV EBP,dword ptr [0x02661ae0]      ; 00588869 | g_DirectDrawObject
         ;   Label: LAB_00588869
     TEST EBP,EBP                        ; 0058886f
     JZ 0x0058888c                       ; 00588871
@@ -123,22 +123,22 @@ section .text
     PUSH EBP                            ; 00588873
     MOV EDX,dword ptr [EBP]             ; 00588874
     CALL dword ptr [EDX + 0x4c]         ; 00588877
-    MOV EAX,[0x02661ae0]                ; 0058887a | g_IDirectDraw_PTR_02661ae0
+    MOV EAX,[0x02661ae0]                ; 0058887a | g_DirectDrawObject
     PUSH EAX                            ; 0058887f
     MOV EDX,dword ptr [EAX]             ; 00588880
     CALL dword ptr [EDX + 0x8]          ; 00588882
     XOR EAX,EAX                         ; 00588885
-    MOV [0x02661ae0],EAX                ; 00588887 | g_IDirectDraw_PTR_02661ae0
+    MOV [0x02661ae0],EAX                ; 00588887 | g_DirectDrawObject
     PUSH 0x0                            ; 0058888c
         ;   Label: LAB_0058888c
-    PUSH 0x2661ae0                      ; 0058888e | g_IDirectDraw_PTR_02661ae0
+    PUSH 0x2661ae0                      ; 0058888e | g_DirectDrawObject
     PUSH 0x0                            ; 00588893
     CALL crt_ddraw.c_DirectDrawCreate   ; 00588895
         ;   XREF to: 005c74ae (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 0058889a
     JZ 0x005888df                       ; 0058889c
         ;   XREF to: 005888df (CONDITIONAL_JUMP)  ; LAB_005888df
-    MOV EBX,dword ptr [0x02664628]      ; 0058889e | g_HWND_02664628
+    MOV EBX,dword ptr [0x02664628]      ; 0058889e | g_MainWindowHandle
         ;   Label: LAB_0058889e
     PUSH EBX                            ; 005888a4
     CALL engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 ; 005888a5
@@ -163,8 +163,8 @@ section .text
         ;   XREF to: 005887cc (UNCONDITIONAL_JUMP)  ; LAB_005887cc
     PUSH 0x11                           ; 005888df
         ;   Label: LAB_005888df
-    MOV ECX,dword ptr [0x02664628]      ; 005888e1 | g_HWND_02664628
-    MOV EAX,[0x02661ae0]                ; 005888e7 | g_IDirectDraw_PTR_02661ae0
+    MOV ECX,dword ptr [0x02664628]      ; 005888e1 | g_MainWindowHandle
+    MOV EAX,[0x02661ae0]                ; 005888e7 | g_DirectDrawObject
     PUSH ECX                            ; 005888ec
     MOV EDX,dword ptr [EAX]             ; 005888ed
     PUSH EAX                            ; 005888ef

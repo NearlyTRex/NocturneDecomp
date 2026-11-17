@@ -1561,8 +1561,8 @@ CConfederateZombie_full_vtable g_CConfederateZombieVTable = {
 };
 
 // CDemonActor*
-CDemonActor* g_CDemonActor_PTR_005f61e4 = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
-CDemonActor* g_CDemonActor_PTR_005fb000 = (CDemonActor*)0xFFFFFFFF;
+CDemonActor* g_ActorNameSentinel = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
+CDemonActor* g_ScriptSentinelActor = (CDemonActor*)0xFFFFFFFF;
 
 // CDemonActor_vtable
 CDemonActor_vtable g_CDemonActorVTable = {
@@ -8256,7 +8256,7 @@ CPod_vtable g_CPod_vtable_005fad64 = {
 };
 
 // CQuaternion4f
-CQuaternion4f g_CQuaternion4f_005fe2f0 = {
+CQuaternion4f g_IdentityQuaternion = {
     .w = 1.0f,
     .x = 0.0f,
     .y = 0.0f,
@@ -10013,7 +10013,7 @@ TerminatedCString g_CInStreamPipeVTable = "@OC";
 WatcomDestructorCall DAT_005F39F0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_0041d8a0,
-    .object_instance = (void *)&CDemonFilter_ARRAY_007bc9ec
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomDestructorCall g_CConsoleDestructorCall = {
     .delete_flags = 0x00000004,
@@ -10028,7 +10028,7 @@ WatcomDestructorCall DAT_005F4DC0 = {
 WatcomDestructorCall DAT_005F4FA0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_0041d8a0,
-    .object_instance = (void *)&CDemonFilter_ARRAY_01510e18
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomDestructorCall DAT_005F4FAC = {
     .delete_flags = 0x00000004,
@@ -10218,7 +10218,7 @@ WatcomDestructorCall DAT_005F7DC0 = {
 WatcomDestructorCall DAT_005F8F40 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440,
-    .object_instance = (void *)&CAlphaBitmap_01cf01b0
+    .object_instance = (void *)&g_InvBackgroundBitmap
 };
 WatcomDestructorCall DAT_005F8F4C = {
     .delete_flags = 0x00000004,
@@ -10228,7 +10228,7 @@ WatcomDestructorCall DAT_005F8F4C = {
 WatcomDestructorCall DAT_005F8F58 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440,
-    .object_instance = (void *)&CAlphaBitmap_01cf01d8
+    .object_instance = (void *)&g_WeapBackgroundBitmap
 };
 WatcomDestructorCall DAT_005F8F64 = {
     .delete_flags = 0x00000004,
@@ -10238,7 +10238,7 @@ WatcomDestructorCall DAT_005F8F64 = {
 WatcomDestructorCall DAT_005F8F70 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440,
-    .object_instance = (void *)&CAlphaBitmap_01d02e08
+    .object_instance = (void *)&g_BatteryIconBitmap
 };
 WatcomDestructorCall DAT_005F8F7C = {
     .delete_flags = 0x00000004,
@@ -12526,7 +12526,7 @@ WatcomTypeInfo g_CRobinTypeInfo = {
 };
 
 // char
-char g_CHAR_005f20f1 = ' ';
+char g_SpaceCharacter = ' ';
 
 // int
 int g_INT_005f192c = 0xA;

@@ -70,7 +70,7 @@ LAB_00437513:
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
                     (&CStack_38,"art",acStack_d8,1);
   if (iVar2 == 0) {
-    puVar5 = g_UCHAR_ARRAY_01c4ecf8;
+    puVar5 = g_DefaultPalette;
     for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(uint *)output_buffer = *(uint *)puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -8 + 4;

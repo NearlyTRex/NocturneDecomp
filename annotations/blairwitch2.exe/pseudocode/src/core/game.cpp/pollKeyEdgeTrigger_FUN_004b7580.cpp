@@ -9,8 +9,8 @@
 void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004b7580(int key_index,uint *out_state)
 
 {
-  if (g_CHAR_ARRAY_01cb7528[key_index] != g_CHAR_ARRAY_01c37790[key_index]) {
-    *out_state = (uint)(byte)g_CHAR_ARRAY_01c37790[key_index];
+  if (g_PrevKeyboardState[key_index] != g_KeyboardState[key_index]) {
+    *out_state = (uint)(byte)g_KeyboardState[key_index];
     return;
   }
   *out_state = 0;

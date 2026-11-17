@@ -625,8 +625,7 @@ void __cdecl core_doc_cpp_CDoc_updateProceduralAnimation_FUN_0046caa0(CDoc *this
       local_2fc[(uint)bVar9 * -2 + 3] = *(float *)((int)&CStack_188 + (uint)bVar9 * -8);
       local_2fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
            *(float *)((int)&CStack_188 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 4);
-      if ((int *)&stack0x00000000 != &g_SMRGLPrimitiveQuad_ARRAY_01b68944[5].vertices[1].texture_v)
-      {
+      if ((int *)&stack0x00000000 != &g_FaceConversionBuffer[5].vertices[1].texture_v) {
         g_CVector3f_01b687e4.x = local_2fc[2];
         g_CVector3f_01b687e4.y = local_2fc[3];
         g_CVector3f_01b687e4.z = local_2ec;

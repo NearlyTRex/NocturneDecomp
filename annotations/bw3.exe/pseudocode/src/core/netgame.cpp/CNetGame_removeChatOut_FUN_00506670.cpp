@@ -35,7 +35,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00506670(CNetGame *this
   
   iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
   iVar2 = iVar2 / 0x12;
-  iVar3 = iVar2 - g_INT_01da6474;
+  iVar3 = iVar2 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
@@ -44,10 +44,10 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00506670(CNetGame *this
   }
   g_UINT_01da6478 = g_UINT_01da6478 + iVar3;
   local_38 = 0;
-  g_INT_01da6474 = iVar2;
-  if (0 < g_INT_01dc2690) {
+  g_LastPingTime = iVar2;
+  if (0 < g_ChatOutCount) {
     local_40 = this_ptr->players;
-    local_3c = g_SChatOutMessage_ARRAY_01dc2694;
+    local_3c = g_ChatOutMessages;
     do {
       local_2c = local_3c;
       local_18 = g_UINT_01da6478 - local_3c->timestamp;
@@ -115,17 +115,17 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00506670(CNetGame *this
         local_3c = local_3c + 1;
       }
       else {
-        if ((local_38 < 0) || (g_INT_01dc2690 <= local_38)) {
+        if ((local_38 < 0) || (g_ChatOutCount <= local_38)) {
           g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
           g_INT_01d71de4 = 0x107;
           core_main_c_displayErrorAndQuit_FUN_004e4330("removeChatOut - invalid index");
         }
-        g_INT_01dc2690 = g_INT_01dc2690 + -1;
+        g_ChatOutCount = g_ChatOutCount + -1;
         memmove
-                  (g_SChatOutMessage_ARRAY_01dc2694 + iVar2,
-                   g_SChatOutMessage_ARRAY_01dc2694 + iVar2 + 1,(g_INT_01dc2690 - iVar2) * 0x114);
+                  (g_ChatOutMessages + iVar2,g_ChatOutMessages + iVar2 + 1,
+                   (g_ChatOutCount - iVar2) * 0x114);
       }
-    } while (local_38 < g_INT_01dc2690);
+    } while (local_38 < g_ChatOutCount);
   }
   return;
 }

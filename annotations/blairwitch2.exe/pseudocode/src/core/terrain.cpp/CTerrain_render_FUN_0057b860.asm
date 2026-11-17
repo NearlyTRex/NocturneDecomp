@@ -24,7 +24,7 @@
 ;   double g_DOUBLE_005ed549 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGround* g_CGroundPtr = 01cedd88
-;   undefined4 g_CTerrain_0265364c.initialized
+;   undefined4 g_CTerrainInstance.initialized
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getHeightAtPosition_FUN_004cb7a0
@@ -46,7 +46,7 @@ section .text
     MOV EBP,ESP                         ; 0057b864
     SUB ESP,0x28                        ; 0057b866
     AND ESP,0xfffffff8                  ; 0057b869
-    CMP dword ptr [0x02653650],0x0      ; 0057b86c | g_CTerrain_0265364c.initialized
+    CMP dword ptr [0x02653650],0x0      ; 0057b86c | g_CTerrainInstance.initialized
     JNZ 0x0057b87c                      ; 0057b873
         ;   XREF to: 0057b87c (CONDITIONAL_JUMP)  ; LAB_0057b87c
     MOV ESP,EBP                         ; 0057b875

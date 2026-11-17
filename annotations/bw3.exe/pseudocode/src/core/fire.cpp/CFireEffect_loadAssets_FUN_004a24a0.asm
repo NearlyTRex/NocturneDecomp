@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic[40] g_SMRGLTextureBasic_ARRAY_005fc5a4
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005fc5a4[1].base.type
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc964
+;   SMRGLTextureBasic[40] g_FireEffectSmokeParticleTextures
+;   undefined4 g_FireEffectSmokeParticleTextures[1].base.type
+;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc97c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc994
+;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc9ac
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc9c4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
@@ -40,7 +40,7 @@ section .text
     PUSH ESI                            ; 004a24a1
     PUSH EDI                            ; 004a24a2
     PUSH EBP                            ; 004a24a3
-    PUSH 0x5fc964                       ; 004a24a4 | g_SMRGLTextureBasic_005fc964
+    PUSH 0x5fc964                       ; 004a24a4 | g_FireEffectBlackHoleTexture
     MOV EDX,dword ptr [0x005f2afc]      ; 004a24a9 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004a24af | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a24b0
@@ -52,7 +52,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a24c4
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004a24c9
-    PUSH 0x5fc994                       ; 004a24cc | g_SMRGLTextureBasic_005fc994
+    PUSH 0x5fc994                       ; 004a24cc | g_FireEffectBlueSparkTexture
     MOV EBX,dword ptr [0x005f2afc]      ; 004a24d1 | g_CDemonRenderer_PTR_005f2afc
     PUSH EBX                            ; 004a24d7 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a24d8
@@ -66,13 +66,13 @@ section .text
     ADD ESP,0x8                         ; 004a24f1
     PUSH 0x5fc9c4                       ; 004a24f4 | g_SMRGLTextureBasic_005fc9c4
     MOV EDI,dword ptr [0x005f2afc]      ; 004a24f9 | g_CDemonRenderer_PTR_005f2afc
-    MOV EBX,0x5fc5a4                    ; 004a24ff | g_SMRGLTextureBasic_ARRAY_005fc5a4
+    MOV EBX,0x5fc5a4                    ; 004a24ff | g_FireEffectSmokeParticleTextures
     PUSH EDI                            ; 004a2504 | g_CDemonRenderer_01bdd7e4
-    LEA ESI,[EBX + 0x3c0]               ; 004a2505 | g_SMRGLTextureBasic_005fc964
+    LEA ESI,[EBX + 0x3c0]               ; 004a2505 | g_FireEffectBlackHoleTexture
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a250b
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004a2510
-    PUSH EBX                            ; 004a2513 | g_SMRGLTextureBasic_ARRAY_005fc5a4 | g_SMRGLTextureBasic_ARRAY_005fc5a4[1].base.type
+    PUSH EBX                            ; 004a2513 | g_FireEffectSmokeParticleTextures | g_FireEffectSmokeParticleTextures[1].base.type
         ;   Label: LAB_004a2513
     MOV EBP,dword ptr [0x005f2afc]      ; 004a2514 | g_CDemonRenderer_PTR_005f2afc
     PUSH EBP                            ; 004a251a | g_CDemonRenderer_01bdd7e4

@@ -46,7 +46,7 @@ void __cdecl core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330(CDemonSet *
       iVar3 = 0;
       pcVar2 = local_18;
       do {
-        pcVar5 = *(char **)((int)g_UINT_PTR_ARRAY_01c4480c + iVar3);
+        pcVar5 = *(char **)((int)g_ZBufferScanlineArray + iVar3);
         pcVar6 = pcVar2;
         for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {
           *(uint *)pcVar6 = *(uint *)pcVar5;

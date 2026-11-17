@@ -26,8 +26,8 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_in_0057d8e5
 ;   int g_BitsPerPixel = 0x8
 ;   int g_INT_01b4d710
-;   int g_INT_01b4d714
-;   int g_INT_01b4d71c
+;   int g_PaletteColorIndex
+;   int g_UseRGBConversion
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
 ;   _BIT_INTEGER32 g_GreenBitPosition
@@ -69,9 +69,9 @@ section .text
     XOR ECX,ECX                         ; 0045b83d
     MOV CL,byte ptr [EDI + 0x1bf7720]   ; 0045b83f
     XOR EDX,EDX                         ; 0045b845
-    MOV dword ptr [0x01b4d714],ECX      ; 0045b847 | g_INT_01b4d714
+    MOV dword ptr [0x01b4d714],ECX      ; 0045b847 | g_PaletteColorIndex
     MOV ECX,dword ptr [0x005b7624]      ; 0045b84d | g_BitsPerPixel
-    MOV dword ptr [0x01b4d71c],EDX      ; 0045b853 | g_INT_01b4d71c
+    MOV dword ptr [0x01b4d71c],EDX      ; 0045b853 | g_UseRGBConversion
     CMP ECX,0x10                        ; 0045b859
     JNC 0x0045b92b                      ; 0045b85c
         ;   XREF to: 0045b92b (CONDITIONAL_JUMP)  ; LAB_0045b92b

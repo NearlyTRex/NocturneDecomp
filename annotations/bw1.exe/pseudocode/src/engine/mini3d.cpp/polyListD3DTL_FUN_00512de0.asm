@@ -24,7 +24,7 @@
 ;   TerminatedCString s_CMini3D_polyList_Too_man_005e8e4c
 ;   float g_FLOAT_005e8e7b = 0.003921569
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   int g_INT_01d224b4
@@ -59,13 +59,13 @@ section .text
     SUB ESP,0x114                       ; 00512de4
     MOV EBX,dword ptr [ESP + 0x128]     ; 00512dea
     MOV EAX,dword ptr [ESP + 0x134]     ; 00512df1
-    MOV EDX,dword ptr [0x01e7dac8]      ; 00512df8 | g_INT_01e7dac8
+    MOV EDX,dword ptr [0x01e7dac8]      ; 00512df8 | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d224b4]      ; 00512dfe | g_INT_01d224b4
     ADD EDX,EAX                         ; 00512e04
     MOV EAX,dword ptr [ESP + 0x12c]     ; 00512e06
     MOV ESI,dword ptr [0x01d25f14]      ; 00512e0d | g_INT_01d25f14
     ADD ECX,EAX                         ; 00512e13
-    MOV dword ptr [0x01e7dac8],EDX      ; 00512e15 | g_INT_01e7dac8
+    MOV dword ptr [0x01e7dac8],EDX      ; 00512e15 | g_RenderedTriangleCount
     MOV dword ptr [0x01d224b4],ECX      ; 00512e1b | g_INT_01d224b4
     TEST ESI,ESI                        ; 00512e21
     JNZ 0x005130ca                      ; 00512e23
@@ -301,7 +301,7 @@ section .text
     ADD ESP,0x10                        ; 005130e1
     JMP 0x005130bf                      ; 005130e4
         ;   XREF to: 005130bf (UNCONDITIONAL_JUMP)  ; LAB_005130bf
-    MOV EBP,dword ptr [0x01c51d14]      ; 005130e6 | g_BIT_INTEGER32_01c51d14
+    MOV EBP,dword ptr [0x01c51d14]      ; 005130e6 | g_RenderStateFlags
         ;   Label: LAB_005130e6
     PUSH EBP                            ; 005130ec
     MOV EAX,dword ptr [ESP + 0x138]     ; 005130ed

@@ -11,7 +11,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -128,7 +128,7 @@ section .text
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_00531e90 ; 004c539f
         ;   XREF to: 00531e90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_00531e90(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,0xffff                      ; 004c53a4
-    MOV EBX,dword ptr [0x01c38aec]      ; 004c53a9 | g_INT_01c38aec
+    MOV EBX,dword ptr [0x01c38aec]      ; 004c53a9 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004c53af
     MOV EDX,dword ptr [EBP + 0x2d8]     ; 004c53b2
     SUB EAX,EBX                         ; 004c53b8

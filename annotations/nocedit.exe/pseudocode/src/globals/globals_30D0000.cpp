@@ -9,7 +9,7 @@ CDemonActorType g_CPendulumClassInfo = {};
 CDemonActorType g_CPlatformClassInfo = {};
 
 // SMRGLPrimitiveQuad
-SMRGLPrimitiveQuad SMRGLPrimitiveQuad_030d4fd0 = {};
+SMRGLPrimitiveQuad g_PathMapQuad = {};
 
 // char[101][100]
 char g_PathfindingVisited[101][100] = {};

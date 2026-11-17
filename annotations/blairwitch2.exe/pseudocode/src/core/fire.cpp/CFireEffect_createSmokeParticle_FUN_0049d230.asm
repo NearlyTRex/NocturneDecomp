@@ -24,7 +24,7 @@
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   int g_INT_01c3f8dc
+;   int g_SmokeParticleAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CSmokeParticle_init_FUN_00493510
@@ -37,7 +37,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
     PUSH EDI                            ; 0049d231
     PUSH EBP                            ; 0049d232
-    MOV EDX,dword ptr [0x01c3f8dc]      ; 0049d233 | g_INT_01c3f8dc
+    MOV EDX,dword ptr [0x01c3f8dc]      ; 0049d233 | g_SmokeParticleAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049d239
     SUB EAX,EDX                         ; 0049d240
     SHL EAX,0x2                         ; 0049d242
@@ -45,13 +45,13 @@ section .text
     SHL EAX,0x2                         ; 0049d247
     INC EDX                             ; 0049d24a
     ADD EAX,0x1c3f8e0                   ; 0049d24b
-    MOV dword ptr [0x01c3f8dc],EDX      ; 0049d250 | g_INT_01c3f8dc
+    MOV dword ptr [0x01c3f8dc],EDX      ; 0049d250 | g_SmokeParticleAllocIndex
     CMP EDX,0x800                       ; 0049d256
     JL 0x0049d268                       ; 0049d25c
         ;   XREF to: 0049d268 (CONDITIONAL_JUMP)  ; LAB_0049d268
     PUSH EBX                            ; 0049d25e
     XOR EBX,EBX                         ; 0049d25f
-    MOV dword ptr [0x01c3f8dc],EBX      ; 0049d261 | g_INT_01c3f8dc
+    MOV dword ptr [0x01c3f8dc],EBX      ; 0049d261 | g_SmokeParticleAllocIndex
     POP EBX                             ; 0049d267
     MOV ESI,dword ptr [ESP + 0x20]      ; 0049d268
         ;   Label: LAB_0049d268

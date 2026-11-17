@@ -26,10 +26,10 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f2340(CIcePick
       }
       break;
     case 0x65:
-      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f2430(this_ptr,g_INT_ARRAY_01d06c74[0xd]);
+      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f2430(this_ptr,g_IcePickIndices[0xd]);
       break;
     case 0x66:
-      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f2430(this_ptr,g_INT_ARRAY_01d06c74[0xe]);
+      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f2430(this_ptr,g_IcePickIndices[0xe]);
       break;
     case 0x67:
       uVar2 = rand();

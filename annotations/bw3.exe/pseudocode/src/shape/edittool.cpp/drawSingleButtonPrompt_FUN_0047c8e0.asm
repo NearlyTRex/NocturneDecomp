@@ -29,7 +29,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   int g_INT_005fba1c = 0xc8
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5bae0
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
@@ -75,7 +75,7 @@ section .text
     PUSH 0x6a                           ; 0047c903
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047c905
     PUSH EAX                            ; 0047c90b
-    MOV dword ptr [0x01c5bae0],EDX      ; 0047c90c | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EDX      ; 0047c90c | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047c912
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     MOV [0x01c5bae4],EAX                ; 0047c917 | g_INT_01c5bae4
@@ -138,7 +138,7 @@ section .text
     ADD EAX,EDX                         ; 0047c9c8
     ADD EAX,EBX                         ; 0047c9ca
     PUSH EAX                            ; 0047c9cc
-    MOV EAX,[0x01c5bae0]                ; 0047c9cd | g_INT_01c5bae0
+    MOV EAX,[0x01c5bae0]                ; 0047c9cd | g_EditorFontMaxCharWidth
     MOV ECX,dword ptr [ESP + 0x100]     ; 0047c9d2
     SHL EAX,0x2                         ; 0047c9d9
     ADD EAX,ECX                         ; 0047c9dc
@@ -210,7 +210,7 @@ section .text
     TEST EAX,EAX                        ; 0047caa6
     JNZ 0x0047cba0                      ; 0047caa8
         ;   XREF to: 0047cba0 (CONDITIONAL_JUMP)  ; LAB_0047cba0
-    CMP dword ptr [0x02d21b80],0x0      ; 0047caae | g_INT_02d21b80
+    CMP dword ptr [0x02d21b80],0x0      ; 0047caae | g_InputDisabled
     JNZ 0x0047cba0                      ; 0047cab5
         ;   XREF to: 0047cba0 (CONDITIONAL_JUMP)  ; LAB_0047cba0
     MOV ECX,dword ptr [0x005fb140]      ; 0047cabb | g_CEditorToolsPtr

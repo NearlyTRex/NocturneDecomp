@@ -557,7 +557,7 @@
     },
     {
       "addr": "01bd1d80",
-      "name": "g_INT_01bd1d80",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -575,43 +575,43 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
     {
       "addr": "01cc5b5c",
-      "name": "g_INT_01cc5b5c",
+      "name": "g_MenuLeftRightPressed",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cc5b64",
-      "name": "g_INT_01cc5b64",
+      "name": "g_AudioVisualizationCounter",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cc6ed8",
-      "name": "g_CHAR_ARRAY_ARRAY_01cc6ed8",
+      "name": "g_SoundMenuTextBuffers",
       "type": "char[10][256]",
       "value": null
     },
     {
       "addr": "01cc6ed9",
-      "name": "g_CHAR_ARRAY_ARRAY_01cc6ed8[0][1]",
+      "name": "g_SoundMenuTextBuffers[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc6eda",
-      "name": "g_CHAR_ARRAY_ARRAY_01cc6ed8[0][2]",
+      "name": "g_SoundMenuTextBuffers[0][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc6edb",
-      "name": "g_CHAR_ARRAY_ARRAY_01cc6ed8[0][3]",
+      "name": "g_SoundMenuTextBuffers[0][3]",
       "type": "undefined4",
       "value": null
     }
@@ -1076,11 +1076,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_ARRAY_01cc78d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_SoundOptionsMenuPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 66,
-      "match": "(int)g_CHAR_PTR_ARRAY_01cc78d8",
+      "match": "(int)g_SoundOptionsMenuPointers",
       "severity": "moderate",
-      "text": "*(char (**) [256])((int)g_CHAR_PTR_ARRAY_01cc78d8 + iVar4) = pacVar11;",
+      "text": "*(char (**) [256])((int)g_SoundOptionsMenuPointers + iVar4) = pacVar11;",
       "type": "pointer_truncation"
     },
     {

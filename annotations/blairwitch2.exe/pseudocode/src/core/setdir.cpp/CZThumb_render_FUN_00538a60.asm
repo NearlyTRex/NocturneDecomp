@@ -20,7 +20,7 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
-;   undefined4 g_UCHAR_ARRAY_01c2c910+0x7fff
+;   undefined4 g_ColorCubeLookup+0x7fff
 ;   int g_INT_01c35e60
 ;
 ; Called Functions:
@@ -166,7 +166,7 @@ section .text
     SHL EDX,0xa                         ; 00538bad
     SHL ECX,0x5                         ; 00538bb0
     ADD EDX,ECX                         ; 00538bb3
-    MOV AL,byte ptr [EDX + EAX*0x1 + 0x1c2c910] ; 00538bb5 | g_UCHAR_ARRAY_01c2c910+0x7fff
+    MOV AL,byte ptr [EDX + EAX*0x1 + 0x1c2c910] ; 00538bb5 | g_ColorCubeLookup+0x7fff
     AND EAX,0xff                        ; 00538bbc
     MOV [0x01c35e60],EAX                ; 00538bc1 | g_INT_01c35e60
     MOV EAX,dword ptr [ESP + 0x8]       ; 00538bc6

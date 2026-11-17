@@ -17,27 +17,27 @@ void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004c6a10(CGhoul *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  g_INT_ARRAY_01d22da0[0] =
+  g_GhoulIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_01d22da0[3] =
+  g_GhoulIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_01d22da0[4] =
+  g_GhoulIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_01d22da0[5] =
+  g_GhoulIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01d22da0[6] =
+  g_GhoulIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01d22da0[7] =
+  g_GhoulIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Foot",1);
-  g_INT_ARRAY_01d22da0[8] =
+  g_GhoulIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Foot",1);
-  g_INT_ARRAY_01d22da0[1] =
+  g_GhoulIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
-  g_INT_ARRAY_01d22da0[2] =
+  g_GhoulIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
-  g_INT_ARRAY_01d22da0[9] =
+  g_GhoulIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_01d22da0[10] =
+  g_GhoulIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310

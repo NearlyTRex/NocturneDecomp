@@ -17,11 +17,11 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
-;   undefined4 g_ARRAY_PTR_01c5faec[1]+1
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf5fec
+;   void* g_APIDLL_toggle
 ;   int g_INT_02cf612c
 ;
 ; Called Functions:
@@ -56,10 +56,10 @@ section .text
     PUSH EDI                            ; 005662a1
     MOV EAX,ECX                         ; 005662a2
     SHR ECX,0x2                         ; 005662a4
-    MOVSD.REP ES:EDI,ESI                ; 005662a7 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOVSD.REP ES:EDI,ESI                ; 005662a7 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 005662a9
     AND CL,0x3                          ; 005662ab
-    MOVSB.REP ES:EDI,ESI                ; 005662ae | g_ARRAY_PTR_01c5faec[1] | g_ARRAY_PTR_01c5faec[1]+1
+    MOVSB.REP ES:EDI,ESI                ; 005662ae | g_ScreenBufferArray[1] | g_ScreenBufferArray[1]+1
     POP EDI                             ; 005662b0
     MOV EDX,dword ptr [0x005fba18]      ; 005662b1 | g_INT_005fba18
     MOV ESI,dword ptr [0x005fba20]      ; 005662b7 | g_INT_005fba20
@@ -81,7 +81,7 @@ section .text
     MOV ECX,EBP                         ; 005662e4
         ;   Label: LAB_005662e4
     MOV ESI,dword ptr [ESP + EDX*0x1 + 0xc] ; 005662e6
-    MOV EDI,dword ptr [EDX + 0x1c5faec] ; 005662ea | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EDI,dword ptr [EDX + 0x1c5faec] ; 005662ea | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 005662f0
     MOV EAX,ECX                         ; 005662f1
     SHR ECX,0x2                         ; 005662f3
@@ -109,7 +109,7 @@ section .text
     XOR EDX,EDX                         ; 00566321
         ;   Label: LAB_00566321
     MOV dword ptr [0x02cf612c],EDX      ; 00566323 | g_INT_02cf612c
-    CALL dword ptr [0x02cf5fec]         ; 00566329 | g_PTR_02cf5fec
+    CALL dword ptr [0x02cf5fec]         ; 00566329 | g_APIDLL_toggle
     POP EBX                             ; 0056632f
     ADD ESP,0x12c0                      ; 00566330
     POP EBP                             ; 00566336

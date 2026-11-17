@@ -11,7 +11,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01c51cac
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;   undefined4 g_CDemonSetInstance.skip_normal_normalization
 ;
@@ -59,7 +59,7 @@ section .text
     TEST EAX,EAX                        ; 00594390
     JNZ 0x00594450                      ; 00594392
         ;   XREF to: 00594450 (CONDITIONAL_JUMP)  ; LAB_00594450
-    CMP dword ptr [0x01c51cac],0x4000   ; 00594398 | g_INT_01c51cac
+    CMP dword ptr [0x01c51cac],0x4000   ; 00594398 | g_PerspectiveReciprocal
     JGE 0x00594450                      ; 005943a2
         ;   XREF to: 00594450 (CONDITIONAL_JUMP)  ; LAB_00594450
     MOV EAX,ESI                         ; 005943a8

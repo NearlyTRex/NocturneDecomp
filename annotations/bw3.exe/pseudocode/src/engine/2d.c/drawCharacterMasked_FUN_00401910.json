@@ -38,13 +38,13 @@
     },
     {
       "addr": "01c6a070",
-      "name": "g_USHORT_ARRAY_01c6a070",
+      "name": "g_ColorTable16",
       "type": "ushort[256]",
       "value": null
     },
     {
       "addr": "01c6a074",
-      "name": "g_USHORT_ARRAY_01c6a070[2]",
+      "name": "g_ColorTable16[2]",
       "type": "undefined4",
       "value": null
     },
@@ -174,33 +174,33 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(int *)((int)g_ARRAY_PTR_01c5faec",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar8) + x_pos);",
+      "text": "puVar5 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(int *)((int)g_ARRAY_PTR_01c5faec",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar8) + x_pos * 2);",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c5faec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "(int)g_ARRAY_PTR_01c5faec",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar8) + x_pos);",
+      "text": "puVar5 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c5faec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 46,
-      "match": "(int)g_ARRAY_PTR_01c5faec",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar8) + x_pos * 2);",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos * 2);",
       "type": "pointer_truncation"
     }
   ]

@@ -28,7 +28,7 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004b52f0(CHero *this_ptr)
     this_ptr_00 = (CLever *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
-                             g_CLeverActorType_01cc3628.name_hash);
+                             g_CLeverClassInfo.name_hash);
     if (this_ptr_00 != (CLever *)0x0) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                 ((CDemonActor *)this_ptr,&local_3c,&(this_ptr_00->base).location.position);

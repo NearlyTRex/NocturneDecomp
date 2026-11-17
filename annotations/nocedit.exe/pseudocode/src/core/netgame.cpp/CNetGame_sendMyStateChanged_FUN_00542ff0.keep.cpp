@@ -41,7 +41,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
   local_3c.timestamp = g_CurrentGameTime;
   core_netgame_cpp_CNetGame_send_FUN_005411c0
             (this_ptr,this_ptr->server_player_index,&local_3c.header);
-  INT_00680a04 = 1;
+  g_NetLobbyStateChanged = 1;
   this_ptr->players[this_ptr->local_player_index].state_change_time = g_CurrentGameTime;
   return;
 }

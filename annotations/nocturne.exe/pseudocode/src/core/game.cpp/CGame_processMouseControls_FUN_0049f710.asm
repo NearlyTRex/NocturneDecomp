@@ -25,9 +25,9 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   int g_INT_01bd1d8c
-;   int g_INT_01bd1d90
-;   int g_INT_01c7841c
+;   int g_MouseX
+;   int g_MouseY
+;   int g_StoredCameraValue
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
@@ -78,10 +78,10 @@ section .text
     SAR EAX,0x1                         ; 0049f75b
     MOV ECX,dword ptr [ESP + 0x20]      ; 0049f75d
     MOV ESI,EAX                         ; 0049f761
-    MOV EAX,[0x01bd1d8c]                ; 0049f763 | g_INT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 0049f763 | g_MouseX
     SUB EAX,ECX                         ; 0049f768
     MOV dword ptr [ESP + 0x18],EAX      ; 0049f76a
-    MOV EAX,[0x01bd1d90]                ; 0049f76e | g_INT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 0049f76e | g_MouseY
     PUSH ESI                            ; 0049f773
     SUB EAX,ESI                         ; 0049f774
     PUSH ECX                            ; 0049f776
@@ -89,7 +89,7 @@ section .text
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 0049f77b
         ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     MOV EAX,[0x005be368]                ; 0049f780 | g_CDemonSetPtr
-    MOV EDX,dword ptr [0x01c7841c]      ; 0049f785 | g_INT_01c7841c
+    MOV EDX,dword ptr [0x01c7841c]      ; 0049f785 | g_StoredCameraValue
     MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f78b | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x8                         ; 0049f791
     CMP EAX,EDX                         ; 0049f794

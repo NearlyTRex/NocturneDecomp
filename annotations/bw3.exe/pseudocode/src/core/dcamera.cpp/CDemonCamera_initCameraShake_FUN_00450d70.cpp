@@ -19,24 +19,24 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00450d70(CDemonCa
   dVar4 = (double)attack_time * 65536;
   iVar1 = 0;
   dVar5 = (double)decay_time * 65536;
-  g_INT_0135eab8 = 0;
+  g_CameraShakeAttackAccum = 0;
   dVar2 = round((double)peak_intensity * 65536);
   dVar3 = round(dVar3);
   dVar4 = round(dVar4);
   dVar5 = round(dVar5);
-  g_INT_005f17dc = (int)ROUND(dVar3);
-  g_INT_0135eab4 = (int)ROUND(dVar4);
-  g_INT_0135eabc = (int)ROUND(dVar5);
-  g_INT_005f17d8 = (int)ROUND(dVar2);
-  if (g_INT_0135eab4 == 0) {
+  g_CameraShakeSustainValue = (int)ROUND(dVar3);
+  g_CameraShakeAttackTime = (int)ROUND(dVar4);
+  g_CameraShakeDecayDuration = (int)ROUND(dVar5);
+  g_CameraShakePeakValue = (int)ROUND(dVar2);
+  if (g_CameraShakeAttackTime == 0) {
     iVar1 = 1;
-    g_INT_0135eab0 = g_INT_005f17dc;
-    if (g_INT_005f17dc == 0) {
-      g_INT_0135eac0 = g_INT_0135eabc;
-      g_INT_005f17e0 = 2;
+    g_CameraShakeSustainTimer = g_CameraShakeSustainValue;
+    if (g_CameraShakeSustainValue == 0) {
+      g_CameraShakeDecayTimer = g_CameraShakeDecayDuration;
+      g_CameraShakeState = 2;
       return;
     }
   }
-  g_INT_005f17e0 = iVar1;
+  g_CameraShakeState = iVar1;
   return;
 }

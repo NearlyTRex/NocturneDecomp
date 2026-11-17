@@ -31,7 +31,7 @@
 ;   TerminatedCString s_guardDistance_0057f311
 ;   TerminatedCString s_victimHeight_0057f31f
 ;   TerminatedCString s_victim_0057f32c
-;   int INT_005b7604 = 0xa
+;   int g_CEnemyClassVersion = 0xa
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -49,7 +49,7 @@ section .text
         ;   Label: core_enemy.cpp_CEnemy_archive_FUN_004796c0
     PUSH ESI                            ; 004796c1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004796c2
-    MOV EDX,dword ptr [0x005b7604]      ; 004796c6 | INT_005b7604
+    MOV EDX,dword ptr [0x005b7604]      ; 004796c6 | g_CEnemyClassVersion
     LEA ESI,[EBX + 0xbc8c]              ; 004796cc
     CMP EDX,0x4                         ; 004796d2
     JGE 0x00479730                      ; 004796d5
@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 004796d7
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004796d8
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
-    MOV ECX,dword ptr [0x005b7604]      ; 004796dd | INT_005b7604
+    MOV ECX,dword ptr [0x005b7604]      ; 004796dd | g_CEnemyClassVersion
     ADD ESP,0x4                         ; 004796e3
     CMP ECX,0x2                         ; 004796e6
     JL 0x004796f9                       ; 004796e9
@@ -67,7 +67,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004796f1
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004796f6
-    CMP dword ptr [0x005b7604],0x3      ; 004796f9 | INT_005b7604
+    CMP dword ptr [0x005b7604],0x3      ; 004796f9 | g_CEnemyClassVersion
         ;   Label: LAB_004796f9
     JGE 0x00479705                      ; 00479700
         ;   XREF to: 00479705 (CONDITIONAL_JUMP)  ; LAB_00479705
@@ -106,7 +106,7 @@ section .text
     PUSH ESI                            ; 00479752
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00479753
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
-    MOV ECX,dword ptr [0x005b7604]      ; 00479758 | INT_005b7604
+    MOV ECX,dword ptr [0x005b7604]      ; 00479758 | g_CEnemyClassVersion
     ADD ESP,0x8                         ; 0047975e
     CMP ECX,0x5                         ; 00479761
     JL 0x0047977a                       ; 00479764
@@ -117,7 +117,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00479772
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479777
-    CMP dword ptr [0x005b7604],0x6      ; 0047977a | INT_005b7604
+    CMP dword ptr [0x005b7604],0x6      ; 0047977a | g_CEnemyClassVersion
         ;   Label: LAB_0047977a
     JL 0x00479797                       ; 00479781
         ;   XREF to: 00479797 (CONDITIONAL_JUMP)  ; LAB_00479797
@@ -127,7 +127,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0047978f
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479794
-    CMP dword ptr [0x005b7604],0x7      ; 00479797 | INT_005b7604
+    CMP dword ptr [0x005b7604],0x7      ; 00479797 | g_CEnemyClassVersion
         ;   Label: LAB_00479797
     JL 0x004797b4                       ; 0047979e
         ;   XREF to: 004797b4 (CONDITIONAL_JUMP)  ; LAB_004797b4
@@ -137,7 +137,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004797ac
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004797b1
-    CMP dword ptr [0x005b7604],0x8      ; 004797b4 | INT_005b7604
+    CMP dword ptr [0x005b7604],0x8      ; 004797b4 | g_CEnemyClassVersion
         ;   Label: LAB_004797b4
     JL 0x004797d1                       ; 004797bb
         ;   XREF to: 004797d1 (CONDITIONAL_JUMP)  ; LAB_004797d1
@@ -147,7 +147,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004797c9
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004797ce
-    CMP dword ptr [0x005b7604],0x9      ; 004797d1 | INT_005b7604
+    CMP dword ptr [0x005b7604],0x9      ; 004797d1 | g_CEnemyClassVersion
         ;   Label: LAB_004797d1
     JL 0x004797ee                       ; 004797d8
         ;   XREF to: 004797ee (CONDITIONAL_JUMP)  ; LAB_004797ee
@@ -157,7 +157,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004797e6
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004797eb
-    CMP dword ptr [0x005b7604],0xa      ; 004797ee | INT_005b7604
+    CMP dword ptr [0x005b7604],0xa      ; 004797ee | g_CEnemyClassVersion
         ;   Label: LAB_004797ee
     JL 0x00479702                       ; 004797f5
         ;   XREF to: 00479702 (CONDITIONAL_JUMP)  ; LAB_00479702

@@ -9,10 +9,10 @@
 void __cdecl wincore_winrun_cpp_createMainWindow_FUN_00581010(void)
 
 {
-  g_HWND_02d21b78 =
+  g_MainWindowHandle =
        CreateWindowExA(0x40000,PTR_s_Blair_Witch_3_00607280,PTR_s_Blair_Witch_3_00607284,0x80000000,
                        0,0,0,0,(HWND)0x0,(HMENU)0x0,(HINSTANCE)g_INT_02d21b7c,(LPVOID)0x0);
-  if (g_HWND_02d21b78 != (HWND)0x0) {
+  if (g_MainWindowHandle != (HWND)0x0) {
     return;
   }
                     /* WARNING: Subroutine does not return */

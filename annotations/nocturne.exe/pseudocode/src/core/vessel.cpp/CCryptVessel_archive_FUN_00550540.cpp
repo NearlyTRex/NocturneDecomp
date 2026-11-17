@@ -19,13 +19,13 @@ void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CCryptVessel *thi
   core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&this_ptr->end_loc,"endLoc");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->state,"state");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->timer,"timer");
-  if (1 < g_INT_005c11c4) {
+  if (1 < g_CCryptVesselClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->win_event,"winEvent");
   }
-  if (2 < g_INT_005c11c4) {
+  if (2 < g_CCryptVesselClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->eat_distance,"eatDistance");
   }
-  if (g_INT_005c11c4 < 4) {
+  if (g_CCryptVesselClassVersion < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->visual_type,"visualType");

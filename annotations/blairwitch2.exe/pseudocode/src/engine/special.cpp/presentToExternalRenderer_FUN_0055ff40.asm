@@ -17,12 +17,12 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]+1
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
 ;   int g_INT_01c37788
 ;   void* g_PTR_0264bbc0
-;   int g_INT_0264bd00
+;   int g_ExternalFrameLocked
 ;
 ; Called Functions:
 ;   engine_special.cpp_lockFrame_FUN_0055f500
@@ -44,7 +44,7 @@ section .text
     CMP dword ptr [ESP + 0x12cc],0x0    ; 0055ff55
     JNZ 0x00560001                      ; 0055ff5d
         ;   XREF to: 00560001 (CONDITIONAL_JUMP)  ; LAB_00560001
-    MOV EBX,dword ptr [0x0264bd00]      ; 0055ff63 | g_INT_0264bd00
+    MOV EBX,dword ptr [0x0264bd00]      ; 0055ff63 | g_ExternalFrameLocked
     TEST EBX,EBX                        ; 0055ff69
     JNZ 0x00560001                      ; 0055ff6b
         ;   XREF to: 00560001 (CONDITIONAL_JUMP)  ; LAB_00560001
@@ -56,10 +56,10 @@ section .text
     PUSH EDI                            ; 0055ff81
     MOV EAX,ECX                         ; 0055ff82
     SHR ECX,0x2                         ; 0055ff84
-    MOVSD.REP ES:EDI,ESI                ; 0055ff87 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOVSD.REP ES:EDI,ESI                ; 0055ff87 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 0055ff89
     AND CL,0x3                          ; 0055ff8b
-    MOVSB.REP ES:EDI,ESI                ; 0055ff8e | g_ARRAY_PTR_01c2a38c[1] | g_ARRAY_PTR_01c2a38c[1]+1
+    MOVSB.REP ES:EDI,ESI                ; 0055ff8e | g_ScreenBufferArray[1] | g_ScreenBufferArray[1]+1
     POP EDI                             ; 0055ff90
     MOV EDX,dword ptr [0x006141b8]      ; 0055ff91 | g_INT_006141b8
     MOV ESI,dword ptr [0x006141c0]      ; 0055ff97 | g_INT_006141c0
@@ -81,7 +81,7 @@ section .text
     MOV ECX,EBP                         ; 0055ffc4
         ;   Label: LAB_0055ffc4
     MOV ESI,dword ptr [ESP + EDX*0x1 + 0xc] ; 0055ffc6
-    MOV EDI,dword ptr [EDX + 0x1c2a38c] ; 0055ffca | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV EDI,dword ptr [EDX + 0x1c2a38c] ; 0055ffca | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 0055ffd0
     MOV EAX,ECX                         ; 0055ffd1
     SHR ECX,0x2                         ; 0055ffd3
@@ -108,7 +108,7 @@ section .text
     POP EDI                             ; 00560000
     XOR EDX,EDX                         ; 00560001
         ;   Label: LAB_00560001
-    MOV dword ptr [0x0264bd00],EDX      ; 00560003 | g_INT_0264bd00
+    MOV dword ptr [0x0264bd00],EDX      ; 00560003 | g_ExternalFrameLocked
     CALL dword ptr [0x0264bbc0]         ; 00560009 | g_PTR_0264bbc0
     POP EBX                             ; 0056000f
     ADD ESP,0x12c0                      ; 00560010

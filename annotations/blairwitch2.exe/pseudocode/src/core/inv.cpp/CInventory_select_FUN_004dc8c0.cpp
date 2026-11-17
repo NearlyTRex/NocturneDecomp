@@ -50,8 +50,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDe
         pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                            (actor_ptr,g_CBoxActorClassInfo.name_hash);
         core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
-                  (g_CEventList_PTR_006141f0,(char *)&pCVar6[2].particle_systems[2].max_particles,1)
-        ;
+                  (g_CEventListPtr,(char *)&pCVar6[2].particle_systems[2].max_particles,1);
         return 0;
       }
     }

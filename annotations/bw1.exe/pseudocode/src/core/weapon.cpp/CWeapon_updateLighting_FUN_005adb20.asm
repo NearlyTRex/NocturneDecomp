@@ -191,10 +191,10 @@ section .text
     ADD ESP,0x8                         ; 005add02
     MOV EAX,0x8000                      ; 005add05
     PUSH 0x40a00000                     ; 005add0a
-    MOV [0x02c997b0],EAX                ; 005add0f | g_CDemonGlobe_02c99774.intensity_multiplier
+    MOV [0x02c997b0],EAX                ; 005add0f | g_WeaponCoronaGlobe.intensity_multiplier
     MOV AH,0x20                         ; 005add14
     PUSH 0x2c99774                      ; 005add16
-    MOV byte ptr [0x02c99790],AH        ; 005add1b | g_CDemonGlobe_02c99774.intensity
+    MOV byte ptr [0x02c99790],AH        ; 005add1b | g_WeaponCoronaGlobe.intensity
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0 ; 005add21
         ;   XREF to: 0045e9c0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 005add26
@@ -202,7 +202,7 @@ section .text
     MOV ECX,dword ptr [0x00622c18]      ; 005add2e | g_CDemonSetPtr
     XOR EDX,EDX                         ; 005add34
     PUSH ECX                            ; 005add36 | g_CDemonSetInstance
-    MOV dword ptr [0x02c99794],EDX      ; 005add37 | g_CDemonGlobe_02c99774.corona_mode
+    MOV dword ptr [0x02c99794],EDX      ; 005add37 | g_WeaponCoronaGlobe.corona_mode
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960 ; 005add3d
         ;   XREF to: 00551960 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 005add42

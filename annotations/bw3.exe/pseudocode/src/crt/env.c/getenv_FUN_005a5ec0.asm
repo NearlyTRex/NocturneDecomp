@@ -17,7 +17,7 @@
 ;   wincore_winrun.cpp_getComputerAndUserName_FUN_00581aa0 at 00581aff
 ;
 ; Referenced Globals:
-;   char** g_CHAR_PTR_PTR_02d25924
+;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005acd10
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 005a5ec2
     PUSH EBP                            ; 005a5ec3
     MOV EBP,dword ptr [ESP + 0x14]      ; 005a5ec4
-    MOV ESI,dword ptr [0x02d25924]      ; 005a5ec8 | g_CHAR_PTR_PTR_02d25924
+    MOV ESI,dword ptr [0x02d25924]      ; 005a5ec8 | g_EnvironmentBlock
     TEST ESI,ESI                        ; 005a5ece
     JZ 0x005a5f14                       ; 005a5ed0
         ;   XREF to: 005a5f14 (CONDITIONAL_JUMP)  ; LAB_005a5f14

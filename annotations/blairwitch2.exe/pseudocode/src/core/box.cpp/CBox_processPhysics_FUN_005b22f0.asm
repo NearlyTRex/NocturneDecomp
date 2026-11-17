@@ -397,20 +397,20 @@
 ;   core_fire.cpp_CStake_process_FUN_00494580 at 00494599
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005f12e8 = -100
-;   double g_DOUBLE_005f12f0 = 32
+;   float g_BoxGroundPlaneY = -100
+;   double g_BoxGravityAcceleration = 32
 ;   float g_FLOAT_005f12f8 = 25.13274
-;   double g_DOUBLE_005f1300 = 1.01000000000000
-;   float g_FLOAT_005f1308 = 2
-;   float g_FLOAT_005f130c = -1
-;   float g_FLOAT_005f1310 = 0.5
-;   float g_FLOAT_005f1314 = 0.1000000
-;   double g_DOUBLE_005f1318 = -1.01000000000000
-;   float g_FLOAT_005f1320 = 0.25
-;   float g_FLOAT_005f1324 = 0.2000000
-;   double g_DOUBLE_005f1328 = 0.0100000000000000
-;   double g_DOUBLE_005f1330 = 0.5
-;   double g_DOUBLE_005f1338 = 0.100000000000000
+;   double g_BoxCollisionRestitution = 1.01000000000000
+;   float g_BoxTorqueMultiplier = 2
+;   float g_BoxAngularDampingNegative = -1
+;   float g_BoxAngularDampingScale = 0.5
+;   float g_BoxLinearDampingFactor = 0.1000000
+;   double g_BoxNegativeRestitution = -1.01000000000000
+;   float g_BoxFrictionThreshold = 0.25
+;   float g_BoxCollisionDamping = 0.2000000
+;   double g_BoxMinimumVelocityThreshold = 0.0100000000000000
+;   double g_BoxCollisionEpsilon = 0.5
+;   double g_BoxCollisionNormalDotThreshold = 0.100000000000000
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -463,7 +463,7 @@ section .text
     PUSH EAX                            ; 005b2369
     LEA EAX,[ESP + 0x17c]               ; 005b236a
     FXCH                                ; 005b2371
-    FADD float ptr [0x005f12e8]         ; 005b2373 | g_FLOAT_005f12e8
+    FADD float ptr [0x005f12e8]         ; 005b2373 | g_BoxGroundPlaneY
     PUSH EAX                            ; 005b2379
     FXCH                                ; 005b237a
     FSTP float ptr [ESP + 0x184]        ; 005b237c
@@ -520,7 +520,7 @@ section .text
     MOV dword ptr [ESP + 0x110],ECX     ; 005b242c
     FLD float ptr [EBX + 0x94]          ; 005b2433
     FCHS                                ; 005b2439
-    FMUL double ptr [0x005f12f0]        ; 005b243b | g_DOUBLE_005f12f0
+    FMUL double ptr [0x005f12f0]        ; 005b243b | g_BoxGravityAcceleration
     LEA EAX,[ESP + 0x110]               ; 005b2441
     LEA ESI,[ESP + 0x41c]               ; 005b2448
     PUSH EAX                            ; 005b244f
@@ -985,7 +985,7 @@ section .text
     FLD float ptr [EBX + 0x258]         ; 005b2afc
         ;   Label: LAB_005b2afc
     MOV EAX,dword ptr [ESP + 0x670]     ; 005b2b02
-    FADD double ptr [0x005f1330]        ; 005b2b09 | g_DOUBLE_005f1330
+    FADD double ptr [0x005f1330]        ; 005b2b09 | g_BoxCollisionEpsilon
     FLD float ptr [EAX + 0xc4]          ; 005b2b0f
     FXCH                                ; 005b2b15
     FSTP float ptr [EAX + 0xd0]         ; 005b2b17
@@ -1053,7 +1053,7 @@ section .text
     FLD float ptr [ECX + EBX*0x1 + 0xd8] ; 005b2c3d
     FLD1                                ; 005b2c44
     FSUBRP                              ; 005b2c46
-    FMUL double ptr [0x005f1300]        ; 005b2c48 | g_DOUBLE_005f1300
+    FMUL double ptr [0x005f1300]        ; 005b2c48 | g_BoxCollisionRestitution
     FLD float ptr [ESP + 0x410]         ; 005b2c4e
     FXCH                                ; 005b2c55
     FSTP float ptr [ESP + 0x658]        ; 005b2c57
@@ -1111,7 +1111,7 @@ section .text
     FLD float ptr [ESP + 0x184]         ; 005b2d31
     FMUL float ptr [EAX + 0x8]          ; 005b2d38
     FADDP                               ; 005b2d3b
-    FMUL float ptr [0x005f1308]         ; 005b2d3d | g_FLOAT_005f1308
+    FMUL float ptr [0x005f1308]         ; 005b2d3d | g_BoxTorqueMultiplier
     FLD float ptr [ESP + 0x17c]         ; 005b2d43
     FXCH                                ; 005b2d4a
     FSTP float ptr [ESP + 0x62c]        ; 005b2d4c
@@ -1156,7 +1156,7 @@ section .text
     MOV dword ptr [ESP + 0x1b0],EAX     ; 005b2e0c
     MOV EAX,dword ptr [ESP + 0x4fc]     ; 005b2e13
     MOV dword ptr [ESP + 0x1b4],EAX     ; 005b2e1a
-    FLD float ptr [0x005f130c]          ; 005b2e21 | g_FLOAT_005f130c
+    FLD float ptr [0x005f130c]          ; 005b2e21 | g_BoxAngularDampingNegative
         ;   Label: LAB_005b2e21
     FLD float ptr [ESP + 0x1ac]         ; 005b2e27
     FMUL ST1                            ; 005b2e2e
@@ -1165,7 +1165,7 @@ section .text
     FLD float ptr [ESP + 0x1b4]         ; 005b2e39
     FMULP ST3                           ; 005b2e40
     FXCH                                ; 005b2e42
-    FLD float ptr [0x005f1310]          ; 005b2e44 | g_FLOAT_005f1310
+    FLD float ptr [0x005f1310]          ; 005b2e44 | g_BoxAngularDampingScale
     FXCH                                ; 005b2e4a
     FMUL ST1                            ; 005b2e4c
     FXCH ST2                            ; 005b2e4e
@@ -1278,7 +1278,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005b3018
     MOVSD ES:EDI,ESI                    ; 005b3019
     MOVSD ES:EDI,ESI                    ; 005b301a
-    FLD float ptr [0x005f1314]          ; 005b301b | g_FLOAT_005f1314
+    FLD float ptr [0x005f1314]          ; 005b301b | g_BoxLinearDampingFactor
     FLD float ptr [ESP + 0x2b4]         ; 005b3021
     FMUL ST1                            ; 005b3028
     FLD float ptr [ESP + 0x2b8]         ; 005b302a
@@ -1317,7 +1317,7 @@ section .text
     MOV dword ptr [ESP + 0x364],EDI     ; 005b30b4
     LEA EAX,[ESP + 0x35c]               ; 005b30bb
     FLD float ptr [EBX + 0x94]          ; 005b30c2
-    FMUL double ptr [0x005f12f0]        ; 005b30c8 | g_DOUBLE_005f12f0
+    FMUL double ptr [0x005f12f0]        ; 005b30c8 | g_BoxGravityAcceleration
     PUSH EAX                            ; 005b30ce
     LEA EAX,[EBX + 0x18]                ; 005b30cf
     LEA ESI,[ESP + 0x444]               ; 005b30d2
@@ -1414,7 +1414,7 @@ section .text
     FLD float ptr [EBX + EAX*0x1 + 0xd8] ; 005b3261
     FLD1                                ; 005b3268
     FSUBRP                              ; 005b326a
-    FLD double ptr [0x005f1318]         ; 005b326c | g_DOUBLE_005f1318
+    FLD double ptr [0x005f1318]         ; 005b326c | g_BoxNegativeRestitution
     FXCH                                ; 005b3272
     FMUL ST1                            ; 005b3274
     FLD float ptr [ESP + 0x218]         ; 005b3276
@@ -1563,7 +1563,7 @@ section .text
     FLD float ptr [ESP + 0x538]         ; 005b34ba
     FMUL float ptr [EAX + 0x8]          ; 005b34c1
     FADDP                               ; 005b34c4
-    FMUL float ptr [0x005f1308]         ; 005b34c6 | g_FLOAT_005f1308
+    FMUL float ptr [0x005f1308]         ; 005b34c6 | g_BoxTorqueMultiplier
     FLD float ptr [ESP + 0x530]         ; 005b34cc
     FXCH                                ; 005b34d3
     FSTP float ptr [ESP + 0x628]        ; 005b34d5
@@ -1608,7 +1608,7 @@ section .text
     MOV dword ptr [ESP + 0x5b8],EAX     ; 005b3595
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 005b359c
     MOV dword ptr [ESP + 0x5bc],EAX     ; 005b35a3
-    FLD float ptr [0x005f130c]          ; 005b35aa | g_FLOAT_005f130c
+    FLD float ptr [0x005f130c]          ; 005b35aa | g_BoxAngularDampingNegative
         ;   Label: LAB_005b35aa
     FLD float ptr [ESP + 0x5b4]         ; 005b35b0
     FMUL ST1                            ; 005b35b7
@@ -1617,7 +1617,7 @@ section .text
     FLD float ptr [ESP + 0x5bc]         ; 005b35c2
     FMULP ST3                           ; 005b35c9
     FXCH                                ; 005b35cb
-    FLD float ptr [0x005f1320]          ; 005b35cd | g_FLOAT_005f1320
+    FLD float ptr [0x005f1320]          ; 005b35cd | g_BoxFrictionThreshold
     FXCH                                ; 005b35d3
     FMUL ST1                            ; 005b35d5
     FXCH ST2                            ; 005b35d7
@@ -1736,7 +1736,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005b37ba
     MOVSD ES:EDI,ESI                    ; 005b37bb
     LEA EDX,[ECX*0x4 + 0x0]             ; 005b37bc
-    FLD float ptr [0x005f1314]          ; 005b37c3 | g_FLOAT_005f1314
+    FLD float ptr [0x005f1314]          ; 005b37c3 | g_BoxLinearDampingFactor
     FLD float ptr [ESP + 0xf8]          ; 005b37c9
     FMUL ST1                            ; 005b37d0
     SUB EDX,ECX                         ; 005b37d2
@@ -1792,7 +1792,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005b38b5
     MOVSD ES:EDI,ESI                    ; 005b38b6
     MOVSD ES:EDI,ESI                    ; 005b38b7
-    FLD float ptr [0x005f1314]          ; 005b38b8 | g_FLOAT_005f1314
+    FLD float ptr [0x005f1314]          ; 005b38b8 | g_BoxLinearDampingFactor
     FLD float ptr [ESP + 0x578]         ; 005b38be
     FMUL ST1                            ; 005b38c5
     FLD float ptr [ESP + 0x57c]         ; 005b38c7
@@ -1839,7 +1839,7 @@ section .text
     MOV dword ptr [ESP + 0x530],EDI     ; 005b396d
     LEA EAX,[EBX + 0x18]                ; 005b3974
     FLD float ptr [EBX + 0x94]          ; 005b3977
-    FMUL double ptr [0x005f12f0]        ; 005b397d | g_DOUBLE_005f12f0
+    FMUL double ptr [0x005f12f0]        ; 005b397d | g_BoxGravityAcceleration
     PUSH EAX                            ; 005b3983
     LEA ESI,[ESP + 0x34c]               ; 005b3984
     LEA EDI,[ESP + 0x550]               ; 005b398b
@@ -1862,7 +1862,7 @@ section .text
     MOV dword ptr [ESP + 0x528],EAX     ; 005b39d2
     MOV EAX,dword ptr [ESP + 0x550]     ; 005b39d9
     MOV dword ptr [ESP + 0x52c],EAX     ; 005b39e0
-    FLD float ptr [0x005f1310]          ; 005b39e7 | g_FLOAT_005f1310
+    FLD float ptr [0x005f1310]          ; 005b39e7 | g_BoxAngularDampingScale
         ;   Label: LAB_005b39e7
     FLD float ptr [ESP + 0x524]         ; 005b39ed
     FMUL ST1                            ; 005b39f4
@@ -2009,7 +2009,7 @@ section .text
     FLD float ptr [EBX + EAX*0x1 + 0xd8] ; 005b3c7c
     FLD1                                ; 005b3c83
     FSUBRP                              ; 005b3c85
-    FMUL double ptr [0x005f1318]        ; 005b3c87 | g_DOUBLE_005f1318
+    FMUL double ptr [0x005f1318]        ; 005b3c87 | g_BoxNegativeRestitution
     FLD float ptr [ESP + 0x200]         ; 005b3c8d
     FXCH                                ; 005b3c94
     FSTP float ptr [ESP + 0x64c]        ; 005b3c96
@@ -2104,7 +2104,7 @@ section .text
     FLD float ptr [ESP + 0x3b8]         ; 005b3e0e
     FMUL float ptr [EAX + 0x8]          ; 005b3e15
     FADDP                               ; 005b3e18
-    FMUL float ptr [0x005f1308]         ; 005b3e1a | g_FLOAT_005f1308
+    FMUL float ptr [0x005f1308]         ; 005b3e1a | g_BoxTorqueMultiplier
     FLD float ptr [ESP + 0x3b0]         ; 005b3e20
     FXCH                                ; 005b3e27
     FSTP float ptr [ESP + 0x644]        ; 005b3e29
@@ -2149,7 +2149,7 @@ section .text
     MOV dword ptr [ESP + 0x504],EAX     ; 005b3ee9
     MOV EAX,dword ptr [ESP + 0x5a4]     ; 005b3ef0
     MOV dword ptr [ESP + 0x508],EAX     ; 005b3ef7
-    FLD float ptr [0x005f130c]          ; 005b3efe | g_FLOAT_005f130c
+    FLD float ptr [0x005f130c]          ; 005b3efe | g_BoxAngularDampingNegative
         ;   Label: LAB_005b3efe
     FLD float ptr [ESP + 0x500]         ; 005b3f04
     FMUL ST1                            ; 005b3f0b
@@ -2158,7 +2158,7 @@ section .text
     FLD float ptr [ESP + 0x508]         ; 005b3f16
     FMULP ST3                           ; 005b3f1d
     FXCH                                ; 005b3f1f
-    FLD float ptr [0x005f1324]          ; 005b3f21 | g_FLOAT_005f1324
+    FLD float ptr [0x005f1324]          ; 005b3f21 | g_BoxCollisionDamping
     FXCH                                ; 005b3f27
     FMUL ST1                            ; 005b3f29
     FXCH ST2                            ; 005b3f2b
@@ -2272,7 +2272,7 @@ section .text
         ;   Label: LAB_005b40ac
     FSUB float ptr [EBX + 0x258]        ; 005b40b2
     FABS                                ; 005b40b8
-    FCOMP double ptr [0x005f1338]       ; 005b40ba | g_DOUBLE_005f1338
+    FCOMP double ptr [0x005f1338]       ; 005b40ba | g_BoxCollisionNormalDotThreshold
     FNSTSW AX                           ; 005b40c0
     SAHF                                ; 005b40c2
     JNC 0x005b40c6                      ; 005b40c3
@@ -2344,7 +2344,7 @@ section .text
     FMUL ST0                            ; 005b419e
     FADDP                               ; 005b41a0
     FSQRT                               ; 005b41a2
-    FCOMP double ptr [0x005f1328]       ; 005b41a4 | g_DOUBLE_005f1328
+    FCOMP double ptr [0x005f1328]       ; 005b41a4 | g_BoxMinimumVelocityThreshold
     FNSTSW AX                           ; 005b41aa
     SAHF                                ; 005b41ac
     JBE 0x005b2b6f                      ; 005b41ad

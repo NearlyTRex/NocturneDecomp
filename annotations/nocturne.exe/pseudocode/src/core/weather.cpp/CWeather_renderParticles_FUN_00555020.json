@@ -123,19 +123,19 @@
     },
     {
       "addr": "005c15bc",
-      "name": "g_SMRGLTextureBasic_005c15bc",
+      "name": "g_RainDropTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "005c15d4",
-      "name": "g_SMRGLTextureBasic_005c15d4",
+      "name": "g_RainSplashTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "005c15ec",
-      "name": "g_SMRGLTextureBasic_005c15ec",
+      "name": "g_SnowflakeTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -159,37 +159,37 @@
     },
     {
       "addr": "02ddfa28",
-      "name": "g_CVector3f_ARRAY_02ddfa28",
+      "name": "g_WeatherParticlePositions",
       "type": "CVector3f[200]",
       "value": null
     },
     {
       "addr": "02ddfa2c",
-      "name": "g_CVector3f_ARRAY_02ddfa28[0].y",
+      "name": "g_WeatherParticlePositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa30",
-      "name": "g_CVector3f_ARRAY_02ddfa28[0].z",
+      "name": "g_WeatherParticlePositions[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa34",
-      "name": "g_CVector3f_ARRAY_02ddfa28[1].x",
+      "name": "g_WeatherParticlePositions[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa38",
-      "name": "g_CVector3f_ARRAY_02ddfa28[1].y",
+      "name": "g_WeatherParticlePositions[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa3c",
-      "name": "g_CVector3f_ARRAY_02ddfa28[1].z",
+      "name": "g_WeatherParticlePositions[1].z",
       "type": "undefined4",
       "value": null
     }
@@ -684,9 +684,9 @@
     {
       "description": "Complex pointer cast",
       "line": 175,
-      "match": "(float *)((int)g_FLOAT_ARRAY_02de0388",
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
       "severity": "moderate",
-      "text": "local_2c.y = *(float *)((int)g_FLOAT_ARRAY_02de0388 + iVar2);",
+      "text": "local_2c.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar2);",
       "type": "pointer_cast"
     },
     {
@@ -706,7 +706,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 58,
       "match": "0xf80000",
       "severity": "moderate",
@@ -714,7 +714,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 60,
       "match": "0xf80000",
       "severity": "moderate",
@@ -738,7 +738,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 165,
       "match": "0xf80000",
       "severity": "moderate",
@@ -746,7 +746,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0x2ddfa2c matches address of g_CVector3f_ARRAY_02ddfa28 (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x2ddfa2c matches address of g_WeatherParticlePositions (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 169,
       "match": "0x2ddfa2c",
       "severity": "moderate",
@@ -754,7 +754,7 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 170,
       "match": "0xf80000",
       "severity": "moderate",

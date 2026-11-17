@@ -21,7 +21,7 @@
 ;   int g_INT_0061f160 = 0x100
 ;   void* PTR_crt_unknown.c_FUN_005bce08_0061f2b0 = 005bce08
 ;   void* g_PTR_0061f41c = 00000000
-;   uint g_UINT_0061f480 = 0x14
+;   uint g_MaxHandleCount = 0x14
 ;   int g_INT_0061f6f4 = 0x0
 ;
 ; Called Functions:
@@ -216,7 +216,7 @@ section .text
         ;   Label: LAB_005bf15d
     CALL dword ptr [0x0061f2b0]         ; 005bf15e | PTR_crt_unknown.c_FUN_005bce08_0061f2b0
     XOR EBX,EBX                         ; 005bf164
-    MOV EDX,dword ptr [0x0061f480]      ; 005bf166 | g_UINT_0061f480
+    MOV EDX,dword ptr [0x0061f480]      ; 005bf166 | g_MaxHandleCount
     ADD ESP,0x4                         ; 005bf16c
     MOV EBP,EAX                         ; 005bf16f
     CMP EAX,EDX                         ; 005bf171

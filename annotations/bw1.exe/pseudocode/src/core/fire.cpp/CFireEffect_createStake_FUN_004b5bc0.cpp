@@ -58,20 +58,20 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004b5bc0(CFireEffect *thi
        local_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_004acb60
-              (g_StakePool + g_INT_01c726ac,&local_1c,orientation_angles,surface_normal);
+              (g_StakePool + g_StakeAllocIndex,&local_1c,orientation_angles,surface_normal);
   }
   else {
     core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940
               (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"a-wood?.wav",&local_1c,0.23);
     core_fire_cpp_CStake_init_FUN_004acaf0
-              (g_StakePool + g_INT_01c726ac,&local_1c,orientation_angles);
+              (g_StakePool + g_StakeAllocIndex,&local_1c,orientation_angles);
   }
-  g_INT_01c726ac = g_INT_01c726ac + 1;
-  if (0xff < g_INT_01c726ac) {
-    g_INT_01c726ac = 0;
+  g_StakeAllocIndex = g_StakeAllocIndex + 1;
+  if (0xff < g_StakeAllocIndex) {
+    g_StakeAllocIndex = 0;
   }
-  if (g_INT_01c726a8 < 0x100) {
-    g_INT_01c726a8 = g_INT_01c726a8 + 1;
+  if (g_StakeActiveCount < 0x100) {
+    g_StakeActiveCount = g_StakeActiveCount + 1;
     return;
   }
 switchD_004b5bd9_caseD_6:

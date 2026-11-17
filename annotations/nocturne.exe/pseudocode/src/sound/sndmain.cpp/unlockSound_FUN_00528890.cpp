@@ -9,12 +9,12 @@
 void __cdecl sound_sndmain_cpp_unlockSound_FUN_00528890(void)
 
 {
-  if (g_INT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 4877;
     core_main_c_displayErrorAndQuit_FUN_004c8440("unlockSound - sound was not locked!");
   }
-  g_INT_02dc84bc = g_INT_02dc84bc + -1;
-  wincore_winrun_cpp_releaseMutex_FUN_00559c30(g_HANDLE_02dc84b8);
+  g_SoundLockCount = g_SoundLockCount + -1;
+  wincore_winrun_cpp_releaseMutex_FUN_00559c30(g_SoundMutex);
   return;
 }

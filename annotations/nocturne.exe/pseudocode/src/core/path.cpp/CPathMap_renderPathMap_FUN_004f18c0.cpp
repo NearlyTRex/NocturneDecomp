@@ -58,24 +58,24 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
             (g_CDemonRenderer_PTR_005ae704,&local_64);
   local_7c = 0x4f193f;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005be090);
-  g_SMRGLPrimitiveQuad_01e42810.base.base.count = 4;
-  g_SMRGLPrimitiveQuad_01e42810.base.surface_normal.A.i = 0;
-  g_SMRGLPrimitiveQuad_01e42810.base.surface_normal.B.i = 0;
-  g_SMRGLPrimitiveQuad_01e42810.base.surface_normal.C.i = 0;
-  g_SMRGLPrimitiveQuad_01e42810.base.surface_normal.D.i = 0;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[0].vertex_index = 0;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[1].vertex_index = 1;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[2].vertex_index = 2;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[0].texture_u = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[0].texture_v = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[1].texture_u = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[1].texture_v = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[2].texture_u = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[2].texture_v = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[3].texture_u = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[3].texture_v = 0x800000;
-  g_SMRGLPrimitiveQuad_01e42810.vertices[3].vertex_index = 3;
+            (g_CDemonRenderer_PTR_005ae704,&g_PathMapTexture);
+  g_PathMapQuad.base.base.count = 4;
+  g_PathMapQuad.base.surface_normal.A.i = 0;
+  g_PathMapQuad.base.surface_normal.B.i = 0;
+  g_PathMapQuad.base.surface_normal.C.i = 0;
+  g_PathMapQuad.base.surface_normal.D.i = 0;
+  g_PathMapQuad.vertices[0].vertex_index = 0;
+  g_PathMapQuad.vertices[1].vertex_index = 1;
+  g_PathMapQuad.vertices[2].vertex_index = 2;
+  g_PathMapQuad.vertices[0].texture_u = 0x800000;
+  g_PathMapQuad.vertices[0].texture_v = 0x800000;
+  g_PathMapQuad.vertices[1].texture_u = 0x800000;
+  g_PathMapQuad.vertices[1].texture_v = 0x800000;
+  g_PathMapQuad.vertices[2].texture_u = 0x800000;
+  g_PathMapQuad.vertices[2].texture_v = 0x800000;
+  g_PathMapQuad.vertices[3].texture_u = 0x800000;
+  g_PathMapQuad.vertices[3].texture_v = 0x800000;
+  g_PathMapQuad.vertices[3].vertex_index = 3;
   local_7c = 0x4f19c6;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
             (g_CDemonRenderer_PTR_005ae704,0);
@@ -153,7 +153,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
         pCVar7->vertex_buffer_ptr[3].b = (int)local_3c;
         pCVar7->vertex_buffer_ptr[3].a = local_34;
         engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150
-                  (pCVar7,(SMRGLPrimitivePoly *)&g_SMRGLPrimitiveQuad_01e42810);
+                  (pCVar7,(SMRGLPrimitivePoly *)&g_PathMapQuad);
       }
       local_50 = local_50 + 1;
       local_18 = local_18 + 400;

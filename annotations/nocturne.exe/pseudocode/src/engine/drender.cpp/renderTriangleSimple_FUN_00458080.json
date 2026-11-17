@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 320,
+    "complexity_score": 319,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
+    "pseudocode_lines": 224,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk"
     ],
-    "total_lines": 690
+    "total_lines": 689
   },
   "cross_references": [
     {
@@ -108,49 +108,49 @@
     },
     {
       "addr": "006b0280",
-      "name": "g_INT_006b0280",
+      "name": "g_CullingMode",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4cd30",
-      "name": "g_INT_01b4cd30",
+      "name": "g_RenderTriangleEdgeCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4cd34",
-      "name": "g_SSoftwareEdge_ARRAY_01b4cd34",
+      "name": "g_EdgeInterpolationArray",
       "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01b4cd7c",
-      "name": "g_SSoftwareEdge_ARRAY_01b4cd34[1].base.y_min",
+      "name": "g_EdgeInterpolationArray[1].base.y_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d1b4",
-      "name": "g_INT_01b4d1b4",
+      "name": "g_RenderTriangleMinScanlineY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d1b8",
-      "name": "g_INT_01b4d1b8",
+      "name": "g_RenderTriangleMaxScanlineY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d1fc",
-      "name": "g_INT_01b4d1fc",
+      "name": "g_RasterizerDepthBias",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d768",
-      "name": "g_INT_01b4d768",
+      "name": "g_RenderAbortFlag",
       "type": "int",
       "value": null
     },
@@ -340,7 +340,7 @@
   "suspects": [
     {
       "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 163,
+      "line": 162,
       "match": "(int)local_1c",
       "severity": "moderate",
       "text": "if ((local_14->base).y_max <= (int)local_1c) {",
@@ -348,7 +348,7 @@
     },
     {
       "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 181,
+      "line": 180,
       "match": "(int)local_1c",
       "severity": "moderate",
       "text": "if ((local_18->base).y_max <= (int)local_1c) {",
@@ -356,7 +356,7 @@
     },
     {
       "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 200,
+      "line": 199,
       "match": "(int)local_1c",
       "severity": "moderate",
       "text": "engine_special_cpp_renderScanline_FUN_00530710(local_18,local_14,(int)local_1c);",
@@ -364,7 +364,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 209,
+      "line": 208,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_1c = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_30->owner`). Replace `local_30->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 129,
+      "line": 128,
       "match": "local_30 = (T *)&local_30->FIELD",
       "severity": "moderate",
       "text": "local_30 = (CVector3i *)&local_30->y;",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `vertex_indices` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&vertex_indices->owner`). Replace `vertex_indices->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 220,
+      "line": 219,
       "match": "vertex_indices = (T *)&vertex_indices->FIELD",
       "severity": "moderate",
       "text": "vertex_indices = (CVector3i *)&vertex_indices->y;",

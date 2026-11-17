@@ -10,7 +10,7 @@
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30 at 005710b2
 ;
 ; Referenced Globals:
-;   int g_INT_006232ec = 0x2
+;   int g_AudioChannelCount = 0x2
 ;   double[8] g_DOUBLE_ARRAY_02c80710
 ;   undefined4 g_DOUBLE_ARRAY_02c80710[1]
 ;   double[8] g_DOUBLE_ARRAY_02c80750
@@ -27,7 +27,7 @@ section .text
     PUSH ESI                            ; 00570bd1
     PUSH EDI                            ; 00570bd2
     SUB ESP,0x18                        ; 00570bd3
-    MOV EDI,dword ptr [0x006232ec]      ; 00570bd6 | g_INT_006232ec
+    MOV EDI,dword ptr [0x006232ec]      ; 00570bd6 | g_AudioChannelCount
     MOV ESI,dword ptr [ESP + 0x28]      ; 00570bdc
     XOR EBX,EBX                         ; 00570be0
     TEST EDI,EDI                        ; 00570be2
@@ -59,7 +59,7 @@ section .text
     LEA EAX,[EAX]                       ; 00570c21
     LEA EDX,[EDX]                       ; 00570c27
     LEA EAX,[EAX]                       ; 00570c2d
-    MOV dword ptr [0x006232ec],EDI      ; 00570c30 | g_INT_006232ec
+    MOV dword ptr [0x006232ec],EDI      ; 00570c30 | g_AudioChannelCount
         ;   Label: LAB_00570c30
     ADD ESP,0x18                        ; 00570c36
     POP EDI                             ; 00570c39

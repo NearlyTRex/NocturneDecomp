@@ -21,7 +21,7 @@
 ;   ... and 49 more
 ;
 ; Referenced Globals:
-;   uint g_UINT_0061b4c0 = 0x1
+;   uint g_VertexProcessingEnabled = 0x1
 ;   int g_INT_007c7554
 ;   SRenderVertex[16] g_SRenderVertex_ARRAY_007c7558
 ;
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_clipper.c_clipAndRasterize_FUN_0043cbf0
     MOV EAX,dword ptr [ESP + 0x8]       ; 0043cbf1
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043cbf5
-    CMP dword ptr [0x0061b4c0],0x0      ; 0043cbf9 | g_UINT_0061b4c0
+    CMP dword ptr [0x0061b4c0],0x0      ; 0043cbf9 | g_VertexProcessingEnabled
     JZ 0x0043cc1d                       ; 0043cc00
         ;   XREF to: 0043cc1d (CONDITIONAL_JUMP)  ; LAB_0043cc1d
     PUSH EDX                            ; 0043cc02

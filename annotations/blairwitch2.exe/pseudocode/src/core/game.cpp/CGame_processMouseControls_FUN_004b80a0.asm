@@ -25,10 +25,10 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   int g_INT_01c2a37c
-;   int g_INT_01c2a380
-;   char[4952] g_CHAR_ARRAY_01c37790
-;   int g_INT_01cb7784
+;   int g_MouseX
+;   int g_MouseY
+;   char[4952] g_KeyboardState
+;   int g_StoredCameraValue
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
@@ -79,10 +79,10 @@ section .text
     SAR EAX,0x1                         ; 004b80eb
     MOV ECX,dword ptr [ESP + 0x20]      ; 004b80ed
     MOV ESI,EAX                         ; 004b80f1
-    MOV EAX,[0x01c2a37c]                ; 004b80f3 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 004b80f3 | g_MouseX
     SUB EAX,ECX                         ; 004b80f8
     MOV dword ptr [ESP + 0x18],EAX      ; 004b80fa
-    MOV EAX,[0x01c2a380]                ; 004b80fe | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 004b80fe | g_MouseY
     PUSH ESI                            ; 004b8103
     SUB EAX,ESI                         ; 004b8104
     PUSH ECX                            ; 004b8106
@@ -90,7 +90,7 @@ section .text
     CALL wincore_winrun.cpp_setCursorPosition_FUN_0058ed10 ; 004b810b
         ;   XREF to: 0058ed10 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_0058ed10(int x, int y)
     MOV EAX,[0x0061b5a8]                ; 004b8110 | g_CDemonSetPtr
-    MOV EDX,dword ptr [0x01cb7784]      ; 004b8115 | g_INT_01cb7784
+    MOV EDX,dword ptr [0x01cb7784]      ; 004b8115 | g_StoredCameraValue
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b811b | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x8                         ; 004b8121
     CMP EAX,EDX                         ; 004b8124
@@ -166,7 +166,7 @@ section .text
     XOR byte ptr [ESP + 0x3],0x80       ; 004b81e8
     MOV EAX,dword ptr [EDI + 0x34]      ; 004b81ed
         ;   Label: LAB_004b81ed
-    CMP byte ptr [EAX + 0x1c37790],0x0  ; 004b81f0 | g_CHAR_ARRAY_01c37790
+    CMP byte ptr [EAX + 0x1c37790],0x0  ; 004b81f0 | g_KeyboardState
     JZ 0x004b8234                       ; 004b81f7
         ;   XREF to: 004b8234 (CONDITIONAL_JUMP)  ; LAB_004b8234
     FLD float ptr [EBX + 0x24]          ; 004b81f9

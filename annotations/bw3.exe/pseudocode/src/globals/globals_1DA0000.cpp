@@ -8,19 +8,19 @@
 CNetGame g_CNetGameInstance = {};
 
 // SChatHistory[400]
-SChatHistory g_SChatHistory_ARRAY_01da6490[400] = {};
+SChatHistory g_ChatHistory[400] = {};
 
 // char[256]
-char g_CHAR_ARRAY_01da61f0[256] = {};
+char g_ChatMessageBuffer[256] = {};
 
 // int
-int g_INT_01da6474 = {};
-int g_INT_01da647c = {};
-int g_INT_01da6480 = {};
-int g_INT_01da6484 = {};
-int g_INT_01da648c = {};
+int g_LastPingTime = {};
+int g_ConnectionStatus = {};
+int g_RemoteSyncStage = {};
+int g_NetNextPlayerId = {};
+int g_ChatHistoryCount = {};
 
 // uint
 uint g_UINT_01da6478 = {};
-uint g_UINT_01da6488 = {};
+uint g_NetLastSimFrameAckTime = {};
 

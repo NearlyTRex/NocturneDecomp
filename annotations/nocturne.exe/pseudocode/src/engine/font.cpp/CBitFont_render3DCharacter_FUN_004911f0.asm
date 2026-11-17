@@ -34,11 +34,11 @@
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 at 00491984
 ;
 ; Referenced Globals:
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005b9250
-;   undefined4 g_SMRGLTextureBasic_005b9250.texture_name[0]
-;   undefined4 g_SMRGLTextureBasic_005b9250.texture_name[1]
-;   undefined4 g_SMRGLTextureBasic_005b9250.texture_name[2]
-;   undefined4 g_SMRGLTextureBasic_005b9250.texture_name[3]
+;   SMRGLTextureBasic g_FontTextureInfo
+;   undefined4 g_FontTextureInfo.texture_name[0]
+;   undefined4 g_FontTextureInfo.texture_name[1]
+;   undefined4 g_FontTextureInfo.texture_name[2]
+;   undefined4 g_FontTextureInfo.texture_name[3]
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_y
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_z
@@ -77,25 +77,25 @@ section .text
     ADD ECX,EAX                         ; 00491215
     LEA ESI,[EDX + 0x4]                 ; 00491217
     SHL ECX,0x4                         ; 0049121a
-    MOV EDI,0x5b9258                    ; 0049121d | g_SMRGLTextureBasic_005b9250.texture_name[0]
+    MOV EDI,0x5b9258                    ; 0049121d | g_FontTextureInfo.texture_name[0]
     ADD ESI,ECX                         ; 00491222
-    PUSH EDI                            ; 00491224 | g_SMRGLTextureBasic_005b9250.texture_name[0]
+    PUSH EDI                            ; 00491224 | g_FontTextureInfo.texture_name[0]
     MOV AL,byte ptr [ESI]               ; 00491225
         ;   Label: LAB_00491225
-    MOV byte ptr [EDI],AL               ; 00491227 | g_SMRGLTextureBasic_005b9250.texture_name[0] | g_SMRGLTextureBasic_005b9250.texture_name[2]
+    MOV byte ptr [EDI],AL               ; 00491227 | g_FontTextureInfo.texture_name[0] | g_FontTextureInfo.texture_name[2]
     CMP AL,0x0                          ; 00491229
     JZ 0x0049123d                       ; 0049122b
         ;   XREF to: 0049123d (CONDITIONAL_JUMP)  ; LAB_0049123d
     MOV AL,byte ptr [ESI + 0x1]         ; 0049122d
     ADD ESI,0x2                         ; 00491230
-    MOV byte ptr [EDI + 0x1],AL         ; 00491233 | g_SMRGLTextureBasic_005b9250.texture_name[1] | g_SMRGLTextureBasic_005b9250.texture_name[3]
+    MOV byte ptr [EDI + 0x1],AL         ; 00491233 | g_FontTextureInfo.texture_name[1] | g_FontTextureInfo.texture_name[3]
     ADD EDI,0x2                         ; 00491236
     CMP AL,0x0                          ; 00491239
     JNZ 0x00491225                      ; 0049123b
         ;   XREF to: 00491225 (CONDITIONAL_JUMP)  ; LAB_00491225
     POP EDI                             ; 0049123d
         ;   Label: LAB_0049123d
-    PUSH 0x5b9250                       ; 0049123e | g_SMRGLTextureBasic_005b9250
+    PUSH 0x5b9250                       ; 0049123e | g_FontTextureInfo
     MOV EBP,0x4e1e                      ; 00491243
     MOV ESI,0x4e1d                      ; 00491248
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 0049124d
@@ -387,14 +387,14 @@ section .text
     POP ESI                             ; 00491663
     POP EBX                             ; 00491664
     RET                                 ; 00491665
-    MOV EAX,[0x01c70f64]                ; 00491666 | g_INT_01c70f64
+    MOV EAX,[0x01c70f64]                ; 00491666 | g_ShadowColorRed
         ;   Label: LAB_00491666
     SHL EAX,0x8                         ; 0049166b
     MOV [0x006af574],EAX                ; 0049166e | g_SRenderVertex_ARRAY_005c5014[19996].r
-    MOV EAX,[0x01c70f68]                ; 00491673 | g_INT_01c70f68
+    MOV EAX,[0x01c70f68]                ; 00491673 | g_ShadowColorGreen
     SHL EAX,0x8                         ; 00491678
     MOV [0x006af578],EAX                ; 0049167b | g_SRenderVertex_ARRAY_005c5014[19996].g
-    MOV EAX,[0x01c70f6c]                ; 00491680 | g_INT_01c70f6c
+    MOV EAX,[0x01c70f6c]                ; 00491680 | g_ShadowColorBlue
     JMP 0x004912af                      ; 00491685
         ;   XREF to: 004912af (UNCONDITIONAL_JUMP)  ; LAB_004912af
     MOV EAX,0xffff                      ; 0049168a

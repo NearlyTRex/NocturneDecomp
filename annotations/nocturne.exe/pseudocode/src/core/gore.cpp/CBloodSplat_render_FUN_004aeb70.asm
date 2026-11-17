@@ -47,8 +47,8 @@
 ;   double DOUBLE_005850b0 = 4
 ;   float FLOAT_0059e4d4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   SMRGLTextureBasic[4] g_SMRGLTextureBasic_ARRAY_005b96ec
-;   SMRGLTextureBasic[64] g_SMRGLTextureBasic_ARRAY_005b974c
+;   SMRGLTextureBasic[4] g_BloodSplatTextures
+;   SMRGLTextureBasic[64] g_BloodSplatAnimTextures
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].r
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].b
@@ -110,12 +110,12 @@ section .text
         ;   XREF to: 004aee7a (CONDITIONAL_JUMP)  ; LAB_004aee7a
     XOR EAX,EAX                         ; 004aebd5
     MOV EDX,dword ptr [ESI + 0x28]      ; 004aebd7
-    MOV [0x01c78c88],EAX                ; 004aebda | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.A
-    MOV [0x01c78c8c],EAX                ; 004aebdf | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.B
-    MOV [0x01c78c94],EAX                ; 004aebe4 | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.D
+    MOV [0x01c78c88],EAX                ; 004aebda | g_GoreQuadPrimitive.base.surface_normal.A
+    MOV [0x01c78c8c],EAX                ; 004aebdf | g_GoreQuadPrimitive.base.surface_normal.B
+    MOV [0x01c78c94],EAX                ; 004aebe4 | g_GoreQuadPrimitive.base.surface_normal.D
     LEA EAX,[EDX*0x4 + 0x0]             ; 004aebe9
     SUB EAX,EDX                         ; 004aebf0
-    MOV EBX,0x5b974c                    ; 004aebf2 | g_SMRGLTextureBasic_ARRAY_005b974c
+    MOV EBX,0x5b974c                    ; 004aebf2 | g_BloodSplatAnimTextures
     SHL EAX,0x7                         ; 004aebf7
     MOV EDX,dword ptr [ESP + 0x78]      ; 004aebfa
     ADD EBX,EAX                         ; 004aebfe
@@ -127,7 +127,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 004aec0f | g_CDemonRenderer_PTR_005ae704
     MOV ECX,0xffff                      ; 004aec15
     PUSH EDI                            ; 004aec1a | g_CDemonRenderer_01b4d738
-    MOV dword ptr [0x01c78c90],ECX      ; 004aec1b | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.C
+    MOV dword ptr [0x01c78c90],ECX      ; 004aec1b | g_GoreQuadPrimitive.base.surface_normal.C
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004aec21
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004aec26
@@ -310,19 +310,19 @@ section .text
     MOV dword ptr [ESI],0x1             ; 004aee7a
         ;   Label: LAB_004aee7a
     XOR EDX,EDX                         ; 004aee80
-    MOV dword ptr [0x01c78c88],EDX      ; 004aee82 | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.A
-    MOV dword ptr [0x01c78c90],EDX      ; 004aee88 | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.C
-    MOV dword ptr [0x01c78c94],EDX      ; 004aee8e | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.D
+    MOV dword ptr [0x01c78c88],EDX      ; 004aee82 | g_GoreQuadPrimitive.base.surface_normal.A
+    MOV dword ptr [0x01c78c90],EDX      ; 004aee88 | g_GoreQuadPrimitive.base.surface_normal.C
+    MOV dword ptr [0x01c78c94],EDX      ; 004aee8e | g_GoreQuadPrimitive.base.surface_normal.D
     MOV EDX,dword ptr [ESI + 0x28]      ; 004aee94
     LEA EAX,[EDX*0x4 + 0x0]             ; 004aee97
     SUB EAX,EDX                         ; 004aee9e
     SHL EAX,0x3                         ; 004aeea0
-    ADD EAX,0x5b96ec                    ; 004aeea3 | g_SMRGLTextureBasic_ARRAY_005b96ec
+    ADD EAX,0x5b96ec                    ; 004aeea3 | g_BloodSplatTextures
     PUSH EAX                            ; 004aeea8
     MOV EBP,dword ptr [0x005ae704]      ; 004aeea9 | g_CDemonRenderer_PTR_005ae704
     MOV ECX,0xffff                      ; 004aeeaf
     PUSH EBP                            ; 004aeeb4 | g_CDemonRenderer_01b4d738
-    MOV dword ptr [0x01c78c8c],ECX      ; 004aeeb5 | g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.B
+    MOV dword ptr [0x01c78c8c],ECX      ; 004aeeb5 | g_GoreQuadPrimitive.base.surface_normal.B
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004aeebb
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EAX,0xbf000000                  ; 004aeec0

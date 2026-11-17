@@ -19,7 +19,7 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_004b11b0(uint red,uint green,uin
            (ushort)(green / (uint)g_INT_01c6af84 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f));
     }
     else if (g_INT_005fba20 == 0x20) {
-      g_INT_01d1ad64 =
+      g_ShadowColor32 =
            blue << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
            red << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
            green << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
@@ -30,8 +30,8 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_004b11b0(uint red,uint green,uin
       core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel in CBitFont::setTrueColor");
     }
   }
-  g_INT_01d1ad6c = green;
-  g_INT_01d1ad70 = blue;
-  g_INT_01d1ad68 = red;
+  g_ShadowColorGreen = green;
+  g_ShadowColorBlue = blue;
+  g_ShadowColorRed = red;
   return;
 }

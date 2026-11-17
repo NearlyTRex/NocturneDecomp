@@ -45,19 +45,19 @@
   "globals": [
     {
       "addr": "00623ddc",
-      "name": "g_DOUBLE_00623ddc",
+      "name": "g_BufferFillZeroQword",
       "type": "double",
       "value": "0.0"
     },
     {
       "addr": "00623de4",
-      "name": "g_DOUBLE_00623de4",
+      "name": "g_BufferFillFpuPopST0",
       "type": "double",
       "value": "0.0"
     },
     {
       "addr": "01c4480c",
-      "name": "g_UINT_PTR_ARRAY_01c4480c",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     },
@@ -186,11 +186,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `(g_UINT_PTR_ARRAY_01c4480c[top] + left)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `(g_ZBufferScanlineArray[top] + left)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 16,
-      "match": "(uint)(g_UINT_PTR_ARRAY_01c4480c[top] + left)",
+      "match": "(uint)(g_ZBufferScanlineArray[top] + left)",
       "severity": "moderate",
-      "text": "pdVar4 = (double *)((uint)(g_UINT_PTR_ARRAY_01c4480c[top] + left) & 0xfffffff8);",
+      "text": "pdVar4 = (double *)((uint)(g_ZBufferScanlineArray[top] + left) & 0xfffffff8);",
       "type": "pointer_truncation"
     }
   ]

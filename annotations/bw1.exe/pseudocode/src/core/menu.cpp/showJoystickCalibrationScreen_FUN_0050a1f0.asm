@@ -8,10 +8,10 @@
 ; char *           Stack[0x8]:4   message_text
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_0152d23c
-;   int g_INT_01c51cb0
-;   int g_INT_01c51cb4
-;   DWORD g_DWORD_01c51cc0
+;   CBitFont* g_MediumFont
+;   int g_JoyXPos
+;   int g_JoyYPos
+;   DWORD g_JoyButtons
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x100                       ; 0050a1f4
     MOV EDX,dword ptr [ESP + 0x114]     ; 0050a1fa
     PUSH EDX                            ; 0050a201
-    MOV ECX,dword ptr [0x0152d23c]      ; 0050a202 | g_CBitFont_PTR_0152d23c
+    MOV ECX,dword ptr [0x0152d23c]      ; 0050a202 | g_MediumFont
     PUSH ECX                            ; 0050a208
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 0050a209
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
@@ -42,7 +42,7 @@ section .text
     SAR EAX,0x1                         ; 0050a215
     ADD ESP,0x8                         ; 0050a217
     PUSH 0x58                           ; 0050a21a
-    MOV ESI,dword ptr [0x0152d23c]      ; 0050a21c | g_CBitFont_PTR_0152d23c
+    MOV ESI,dword ptr [0x0152d23c]      ; 0050a21c | g_MediumFont
     MOV EBX,0x140                       ; 0050a222
     PUSH ESI                            ; 0050a227
     SUB EBX,EAX                         ; 0050a228
@@ -61,16 +61,16 @@ section .text
     PUSH EBX                            ; 0050a247
     MOV EDI,dword ptr [ESP + 0x124]     ; 0050a248
     PUSH EDI                            ; 0050a24f
-    MOV EBP,dword ptr [0x0152d23c]      ; 0050a250 | g_CBitFont_PTR_0152d23c
+    MOV EBP,dword ptr [0x0152d23c]      ; 0050a250 | g_MediumFont
     PUSH EBP                            ; 0050a256
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 0050a257
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0050a25c
-    MOV EAX,[0x01c51cc0]                ; 0050a25f | g_DWORD_01c51cc0
+    MOV EAX,[0x01c51cc0]                ; 0050a25f | g_JoyButtons
     PUSH EAX                            ; 0050a264
-    MOV EDX,dword ptr [0x01c51cb4]      ; 0050a265 | g_INT_01c51cb4
+    MOV EDX,dword ptr [0x01c51cb4]      ; 0050a265 | g_JoyYPos
     PUSH EDX                            ; 0050a26b
-    MOV ECX,dword ptr [0x01c51cb0]      ; 0050a26c | g_INT_01c51cb0
+    MOV ECX,dword ptr [0x01c51cb0]      ; 0050a26c | g_JoyXPos
     PUSH ECX                            ; 0050a272
     PUSH 0x5e7aae                       ; 0050a273
     LEA EAX,[ESP + 0x10]                ; 0050a278

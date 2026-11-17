@@ -32,10 +32,10 @@ CVector3f * __stack_esi core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00565f3
   bVar2 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-            (this_ptr_00,g_INT_ARRAY_0264be30[0xe],&local_48);
+            (this_ptr_00,g_StrangerIndices[0xe],&local_48);
   local_30 = local_48.x;
   local_2c[(uint)bVar2 * -2] = *(float *)((int)&local_48 + (uint)bVar2 * -8 + 4);
-  bone_index = g_INT_ARRAY_0264be30[0xd];
+  bone_index = g_StrangerIndices[0xd];
   local_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        *(float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0

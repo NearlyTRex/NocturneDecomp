@@ -15,7 +15,7 @@ int __cdecl engine_special_cpp_updateTexture_FUN_0055f610(SMRGLTextureBasic *tex
     return 0;
   }
   iVar1 = (*(code *)g_PTR_0264bbe4)
-                    (texture_info,g_INT_006141c8,g_UCHAR_PTR_01c37770,g_UCHAR_ARRAY_01c35838,
-                     g_UCHAR_PTR_01c37774);
+                    (texture_info,g_CurrentTextureDimension,g_CurrentTextureData,
+                     g_UCHAR_ARRAY_01c35838,g_CurrentTextureOpacityData);
   return iVar1;
 }

@@ -15,7 +15,7 @@ int FUN_0056aefc(uint param_1)
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad0)();
   iVar3 = 0;
-  for (pFVar2 = g_FileListNode_PTR_02de4e20; pFVar2 != (FileListNode *)0x0; pFVar2 = pFVar2->next) {
+  for (pFVar2 = g_AllocatedListHead; pFVar2 != (FileListNode *)0x0; pFVar2 = pFVar2->next) {
     p_Var1 = pFVar2->file_struct;
     if (((p_Var1->_flag & param_1) != 0) && (iVar3 = iVar3 + 1, (p_Var1->_flag & 0x1000) != 0)) {
       FUN_00568890(p_Var1);

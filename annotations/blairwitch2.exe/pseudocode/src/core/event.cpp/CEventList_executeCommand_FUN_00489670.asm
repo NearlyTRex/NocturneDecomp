@@ -301,7 +301,7 @@ section .text
     SUB EBP,0xea                        ; 0048967c
     MOV EBX,dword ptr [EBP + 0x102]     ; 00489682
     XOR AH,AH                           ; 00489688
-    MOV byte ptr [0x01c3dd10],AH        ; 0048968a | g_CHAR_ARRAY_01c3dd10
+    MOV byte ptr [0x01c3dd10],AH        ; 0048968a | g_EventErrorMessageBuffer
     TEST EBX,EBX                        ; 00489690
     JZ 0x00489699                       ; 00489692
         ;   XREF to: 00489699 (CONDITIONAL_JUMP)  ; LAB_00489699
@@ -330,7 +330,7 @@ section .text
     JNZ 0x004896c1                      ; 004896be
         ;   XREF to: 004896c1 (CONDITIONAL_JUMP)  ; LAB_004896c1
     INC EBX                             ; 004896c0
-    CMP dword ptr [0x01c3dd0c],0x0      ; 004896c1 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 004896c1 | g_EventDryRun
         ;   Label: LAB_004896c1
     SETZ AL                             ; 004896c8
     MOV ECX,0x5d2ffe                    ; 004896cb | g_CHAR_005d2ffe
@@ -523,7 +523,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xe]         ; 00489870
     INC AL                              ; 00489873
     AND EAX,0xff                        ; 00489875
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048987a | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048987a | g_CharacterClassificationTable
     JNZ 0x00489b71                      ; 00489881
         ;   XREF to: 00489b71 (CONDITIONAL_JUMP)  ; LAB_00489b71
     LEA EAX,[EBX + 0xe]                 ; 00489887
@@ -532,7 +532,7 @@ section .text
     XOR ECX,ECX                         ; 0048988c
     INC BL                              ; 0048988e
     MOV CL,BL                           ; 00489890
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489892 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489892 | g_CharacterClassificationTable
     JZ 0x0048989e                       ; 00489899
         ;   XREF to: 0048989e (CONDITIONAL_JUMP)  ; LAB_0048989e
     INC EAX                             ; 0048989b
@@ -579,7 +579,7 @@ section .text
     XOR ECX,ECX                         ; 00489900
     INC BL                              ; 00489902
     MOV CL,BL                           ; 00489904
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489906 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489906 | g_CharacterClassificationTable
     JNZ 0x00489950                      ; 0048990d
         ;   XREF to: 00489950 (CONDITIONAL_JUMP)  ; LAB_00489950
     LEA EAX,[ESI + EDI*0x1]             ; 0048990f
@@ -590,7 +590,7 @@ section .text
         ;   Label: LAB_00489918
     INC AL                              ; 0048991a
     AND EAX,0xff                        ; 0048991c
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489921 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489921 | g_CharacterClassificationTable
     JZ 0x00489958                       ; 00489928
         ;   XREF to: 00489958 (CONDITIONAL_JUMP)  ; LAB_00489958
     PUSH EDI                            ; 0048992a
@@ -641,7 +641,7 @@ section .text
     XOR ECX,ECX                         ; 0048997f
     INC BL                              ; 00489981
     MOV CL,BL                           ; 00489983
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489985 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489985 | g_CharacterClassificationTable
     JNZ 0x004899b7                      ; 0048998c
         ;   XREF to: 004899b7 (CONDITIONAL_JUMP)  ; LAB_004899b7
     LEA EAX,[ESI + EDI*0x1]             ; 0048998e
@@ -652,7 +652,7 @@ section .text
         ;   Label: LAB_00489997
     INC AL                              ; 00489999
     AND EAX,0xff                        ; 0048999b
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004899a0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004899a0 | g_CharacterClassificationTable
     JZ 0x004899bf                       ; 004899a7
         ;   XREF to: 004899bf (CONDITIONAL_JUMP)  ; LAB_004899bf
     PUSH EDI                            ; 004899a9
@@ -703,7 +703,7 @@ section .text
         ;   Label: LAB_00489a01
     INC AL                              ; 00489a04
     AND EAX,0xff                        ; 00489a06
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489a0b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489a0b | g_CharacterClassificationTable
     JNZ 0x00489a6b                      ; 00489a12
         ;   XREF to: 00489a6b (CONDITIONAL_JUMP)  ; LAB_00489a6b
     LEA EAX,[ESI + EDI*0x1]             ; 00489a14
@@ -714,7 +714,7 @@ section .text
         ;   Label: LAB_00489a1d
     INC AL                              ; 00489a1f
     AND EAX,0xff                        ; 00489a21
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489a26 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489a26 | g_CharacterClassificationTable
     JZ 0x00489a73                       ; 00489a2d
         ;   XREF to: 00489a73 (CONDITIONAL_JUMP)  ; LAB_00489a73
     PUSH EDI                            ; 00489a2f
@@ -729,16 +729,16 @@ section .text
     MOV EDI,0x1c3dd10                   ; 00489a3d
         ;   Label: LAB_00489a3d
     MOV ESI,EAX                         ; 00489a42
-    PUSH EDI                            ; 00489a44 | g_CHAR_ARRAY_01c3dd10
+    PUSH EDI                            ; 00489a44 | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 00489a45
         ;   Label: LAB_00489a45
-    MOV byte ptr [EDI],AL               ; 00489a47 | g_CHAR_ARRAY_01c3dd10 | g_CHAR_ARRAY_01c3dd10+2
+    MOV byte ptr [EDI],AL               ; 00489a47 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 00489a49
     JZ 0x00489a5d                       ; 00489a4b
         ;   XREF to: 00489a5d (CONDITIONAL_JUMP)  ; LAB_00489a5d
     MOV AL,byte ptr [ESI + 0x1]         ; 00489a4d
     ADD ESI,0x2                         ; 00489a50
-    MOV byte ptr [EDI + 0x1],AL         ; 00489a53 | g_CHAR_ARRAY_01c3dd10+1 | g_CHAR_ARRAY_01c3dd10+3
+    MOV byte ptr [EDI + 0x1],AL         ; 00489a53 | g_EventErrorMessageBuffer+1 | g_EventErrorMessageBuffer+3
     ADD EDI,0x2                         ; 00489a56
     CMP AL,0x0                          ; 00489a59
     JNZ 0x00489a45                      ; 00489a5b
@@ -773,7 +773,7 @@ section .text
     TEST EAX,EAX                        ; 00489a90
     JZ 0x0048969e                       ; 00489a92
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 00489a98 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 00489a98 | g_ActorNameSentinel
     JNZ 0x00489aa5                      ; 00489a9e
         ;   XREF to: 00489aa5 (CONDITIONAL_JUMP)  ; LAB_00489aa5
     XOR EDI,EDI                         ; 00489aa0
@@ -805,7 +805,7 @@ section .text
         ;   Label: LAB_00489ae3
     JZ 0x00489b11                       ; 00489ae5
         ;   XREF to: 00489b11 (CONDITIONAL_JUMP)  ; LAB_00489b11
-    CMP dword ptr [0x01c3dd0c],0x0      ; 00489ae7 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 00489ae7 | g_EventDryRun
     JNZ 0x00489b30                      ; 00489aee
         ;   XREF to: 00489b30 (CONDITIONAL_JUMP)  ; LAB_00489b30
     CMP dword ptr [EBP + -0x4e],0x0     ; 00489af0
@@ -818,7 +818,7 @@ section .text
     XOR ECX,ECX                         ; 00489afb
     INC BL                              ; 00489afd
     MOV CL,BL                           ; 00489aff
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489b01 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489b01 | g_CharacterClassificationTable
     JZ 0x0048e285                       ; 00489b08
         ;   XREF to: 0048e285 (CONDITIONAL_JUMP)  ; LAB_0048e285
     INC EAX                             ; 00489b0e
@@ -879,7 +879,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xe]         ; 00489b89
     INC AL                              ; 00489b8c
     AND EAX,0xff                        ; 00489b8e
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489b93 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489b93 | g_CharacterClassificationTable
     JNZ 0x00489d05                      ; 00489b9a
         ;   XREF to: 00489d05 (CONDITIONAL_JUMP)  ; LAB_00489d05
     LEA EAX,[EBX + 0xe]                 ; 00489ba0
@@ -888,7 +888,7 @@ section .text
     XOR ECX,ECX                         ; 00489ba5
     INC BL                              ; 00489ba7
     MOV CL,BL                           ; 00489ba9
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489bab | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489bab | g_CharacterClassificationTable
     JZ 0x00489bb7                       ; 00489bb2
         ;   XREF to: 00489bb7 (CONDITIONAL_JUMP)  ; LAB_00489bb7
     INC EAX                             ; 00489bb4
@@ -932,7 +932,7 @@ section .text
         ;   Label: LAB_00489c0f
     INC AL                              ; 00489c12
     AND EAX,0xff                        ; 00489c14
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489c19 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489c19 | g_CharacterClassificationTable
     JNZ 0x00489c63                      ; 00489c20
         ;   XREF to: 00489c63 (CONDITIONAL_JUMP)  ; LAB_00489c63
     LEA EAX,[ESI + EBX*0x1]             ; 00489c22
@@ -943,7 +943,7 @@ section .text
         ;   Label: LAB_00489c2b
     INC AL                              ; 00489c2d
     AND EAX,0xff                        ; 00489c2f
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489c34 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489c34 | g_CharacterClassificationTable
     JZ 0x00489c6b                       ; 00489c3b
         ;   XREF to: 00489c6b (CONDITIONAL_JUMP)  ; LAB_00489c6b
     PUSH EBX                            ; 00489c3d
@@ -1057,7 +1057,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x11]        ; 00489d1d
     INC AL                              ; 00489d20
     AND EAX,0xff                        ; 00489d22
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489d27 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489d27 | g_CharacterClassificationTable
     JNZ 0x00489e85                      ; 00489d2e
         ;   XREF to: 00489e85 (CONDITIONAL_JUMP)  ; LAB_00489e85
     LEA EAX,[EBX + 0x11]                ; 00489d34
@@ -1066,7 +1066,7 @@ section .text
     XOR ECX,ECX                         ; 00489d39
     INC BL                              ; 00489d3b
     MOV CL,BL                           ; 00489d3d
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489d3f | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489d3f | g_CharacterClassificationTable
     JZ 0x00489d4b                       ; 00489d46
         ;   XREF to: 00489d4b (CONDITIONAL_JUMP)  ; LAB_00489d4b
     INC EAX                             ; 00489d48
@@ -1110,7 +1110,7 @@ section .text
         ;   Label: LAB_00489da3
     INC CL                              ; 00489da6
     AND ECX,0xff                        ; 00489da8
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489dae | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489dae | g_CharacterClassificationTable
     JNZ 0x00489df8                      ; 00489db5
         ;   XREF to: 00489df8 (CONDITIONAL_JUMP)  ; LAB_00489df8
     LEA EAX,[ESI + EBX*0x1]             ; 00489db7
@@ -1121,7 +1121,7 @@ section .text
         ;   Label: LAB_00489dc0
     INC AL                              ; 00489dc2
     AND EAX,0xff                        ; 00489dc4
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489dc9 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00489dc9 | g_CharacterClassificationTable
     JZ 0x00489e00                       ; 00489dd0
         ;   XREF to: 00489e00 (CONDITIONAL_JUMP)  ; LAB_00489e00
     PUSH EBX                            ; 00489dd2
@@ -1152,7 +1152,7 @@ section .text
         ;   XREF to: 00489da3 (CONDITIONAL_JUMP)  ; LAB_00489da3
     JMP 0x00489db7                      ; 00489dfe
         ;   XREF to: 00489db7 (UNCONDITIONAL_JUMP)  ; LAB_00489db7
-    CMP dword ptr [0x01c3dd0c],0x0      ; 00489e00 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 00489e00 | g_EventDryRun
         ;   Label: LAB_00489e00
     JNZ 0x00489e62                      ; 00489e07
         ;   XREF to: 00489e62 (CONDITIONAL_JUMP)  ; LAB_00489e62
@@ -1218,7 +1218,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x12]        ; 00489e9d
     INC AL                              ; 00489ea0
     AND EAX,0xff                        ; 00489ea2
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489ea7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489ea7 | g_CharacterClassificationTable
     JNZ 0x00489f8c                      ; 00489eae
         ;   XREF to: 00489f8c (CONDITIONAL_JUMP)  ; LAB_00489f8c
     LEA EAX,[EBX + 0x12]                ; 00489eb4
@@ -1227,7 +1227,7 @@ section .text
     XOR ECX,ECX                         ; 00489eb9
     INC BL                              ; 00489ebb
     MOV CL,BL                           ; 00489ebd
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489ebf | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489ebf | g_CharacterClassificationTable
     JZ 0x00489ecb                       ; 00489ec6
         ;   XREF to: 00489ecb (CONDITIONAL_JUMP)  ; LAB_00489ecb
     INC EAX                             ; 00489ec8
@@ -1314,7 +1314,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xe]         ; 00489fa4
     INC AL                              ; 00489fa7
     AND EAX,0xff                        ; 00489fa9
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489fae | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 00489fae | g_CharacterClassificationTable
     JNZ 0x0048a21a                      ; 00489fb5
         ;   XREF to: 0048a21a (CONDITIONAL_JUMP)  ; LAB_0048a21a
     LEA EAX,[EBX + 0xe]                 ; 00489fbb
@@ -1323,7 +1323,7 @@ section .text
     XOR ECX,ECX                         ; 00489fc0
     INC BL                              ; 00489fc2
     MOV CL,BL                           ; 00489fc4
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489fc6 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489fc6 | g_CharacterClassificationTable
     JZ 0x00489fd2                       ; 00489fcd
         ;   XREF to: 00489fd2 (CONDITIONAL_JUMP)  ; LAB_00489fd2
     INC EAX                             ; 00489fcf
@@ -1383,7 +1383,7 @@ section .text
         ;   Label: LAB_0048a055
     INC CL                              ; 0048a058
     AND ECX,0xff                        ; 0048a05a
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a060 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a060 | g_CharacterClassificationTable
     JNZ 0x0048a0aa                      ; 0048a067
         ;   XREF to: 0048a0aa (CONDITIONAL_JUMP)  ; LAB_0048a0aa
     LEA EAX,[ESI + EBX*0x1]             ; 0048a069
@@ -1394,7 +1394,7 @@ section .text
         ;   Label: LAB_0048a072
     INC AL                              ; 0048a074
     AND EAX,0xff                        ; 0048a076
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a07b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a07b | g_CharacterClassificationTable
     JZ 0x0048a0b2                       ; 0048a082
         ;   XREF to: 0048a0b2 (CONDITIONAL_JUMP)  ; LAB_0048a0b2
     PUSH EBX                            ; 0048a084
@@ -1444,7 +1444,7 @@ section .text
         ;   Label: LAB_0048a0d6
     INC AL                              ; 0048a0d9
     AND EAX,0xff                        ; 0048a0db
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a0e0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a0e0 | g_CharacterClassificationTable
     JNZ 0x0048a112                      ; 0048a0e7
         ;   XREF to: 0048a112 (CONDITIONAL_JUMP)  ; LAB_0048a112
     LEA EAX,[ESI + EBX*0x1]             ; 0048a0e9
@@ -1455,7 +1455,7 @@ section .text
         ;   Label: LAB_0048a0f2
     INC AL                              ; 0048a0f4
     AND EAX,0xff                        ; 0048a0f6
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a0fb | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a0fb | g_CharacterClassificationTable
     JZ 0x0048a11a                       ; 0048a102
         ;   XREF to: 0048a11a (CONDITIONAL_JUMP)  ; LAB_0048a11a
     PUSH EBX                            ; 0048a104
@@ -1496,7 +1496,7 @@ section .text
     TEST EAX,EAX                        ; 0048a144
     JZ 0x0048969e                       ; 0048a146
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048a14c | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048a14c | g_ActorNameSentinel
     JNZ 0x0048a1a6                      ; 0048a152
         ;   XREF to: 0048a1a6 (CONDITIONAL_JUMP)  ; LAB_0048a1a6
     XOR EDI,EDI                         ; 0048a154
@@ -1514,7 +1514,7 @@ section .text
     TEST EAX,EAX                        ; 0048a175
     JZ 0x0048969e                       ; 0048a177
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048a17d | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048a17d | g_ActorNameSentinel
     JNZ 0x0048a1da                      ; 0048a183
         ;   XREF to: 0048a1da (CONDITIONAL_JUMP)  ; LAB_0048a1da
     JMP 0x00489af6                      ; 0048a185
@@ -1592,7 +1592,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x16]        ; 0048a232
     INC AL                              ; 0048a235
     AND EAX,0xff                        ; 0048a237
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a23c | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a23c | g_CharacterClassificationTable
     JNZ 0x0048a399                      ; 0048a243
         ;   XREF to: 0048a399 (CONDITIONAL_JUMP)  ; LAB_0048a399
     LEA EAX,[EBX + 0x16]                ; 0048a249
@@ -1601,7 +1601,7 @@ section .text
     XOR ECX,ECX                         ; 0048a24e
     INC BL                              ; 0048a250
     MOV CL,BL                           ; 0048a252
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a254 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a254 | g_CharacterClassificationTable
     JZ 0x0048a260                       ; 0048a25b
         ;   XREF to: 0048a260 (CONDITIONAL_JUMP)  ; LAB_0048a260
     INC EAX                             ; 0048a25d
@@ -1645,7 +1645,7 @@ section .text
         ;   Label: LAB_0048a2b8
     INC AL                              ; 0048a2bb
     AND EAX,0xff                        ; 0048a2bd
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a2c2 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a2c2 | g_CharacterClassificationTable
     JNZ 0x0048a30c                      ; 0048a2c9
         ;   XREF to: 0048a30c (CONDITIONAL_JUMP)  ; LAB_0048a30c
     LEA EAX,[ESI + EBX*0x1]             ; 0048a2cb
@@ -1656,7 +1656,7 @@ section .text
         ;   Label: LAB_0048a2d4
     INC AL                              ; 0048a2d6
     AND EAX,0xff                        ; 0048a2d8
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a2dd | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a2dd | g_CharacterClassificationTable
     JZ 0x0048a314                       ; 0048a2e4
         ;   XREF to: 0048a314 (CONDITIONAL_JUMP)  ; LAB_0048a314
     PUSH EBX                            ; 0048a2e6
@@ -1687,7 +1687,7 @@ section .text
         ;   XREF to: 0048a2b8 (CONDITIONAL_JUMP)  ; LAB_0048a2b8
     JMP 0x0048a2cb                      ; 0048a312
         ;   XREF to: 0048a2cb (UNCONDITIONAL_JUMP)  ; LAB_0048a2cb
-    CMP dword ptr [0x01c3dd0c],0x0      ; 0048a314 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 0048a314 | g_EventDryRun
         ;   Label: LAB_0048a314
     JNZ 0x0048a376                      ; 0048a31b
         ;   XREF to: 0048a376 (CONDITIONAL_JUMP)  ; LAB_0048a376
@@ -1753,7 +1753,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xf]         ; 0048a3b1
     INC AL                              ; 0048a3b4
     AND EAX,0xff                        ; 0048a3b6
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a3bb | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a3bb | g_CharacterClassificationTable
     JNZ 0x0048a656                      ; 0048a3c2
         ;   XREF to: 0048a656 (CONDITIONAL_JUMP)  ; LAB_0048a656
     LEA EAX,[EBX + 0xf]                 ; 0048a3c8
@@ -1762,7 +1762,7 @@ section .text
     XOR ECX,ECX                         ; 0048a3cd
     INC BL                              ; 0048a3cf
     MOV CL,BL                           ; 0048a3d1
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a3d3 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a3d3 | g_CharacterClassificationTable
     JZ 0x0048a3df                       ; 0048a3da
         ;   XREF to: 0048a3df (CONDITIONAL_JUMP)  ; LAB_0048a3df
     INC EAX                             ; 0048a3dc
@@ -1818,7 +1818,7 @@ section .text
     XOR ECX,ECX                         ; 0048a455
     INC BL                              ; 0048a457
     MOV CL,BL                           ; 0048a459
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a45b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a45b | g_CharacterClassificationTable
     JZ 0x0048a58b                       ; 0048a462
         ;   XREF to: 0048a58b (CONDITIONAL_JUMP)  ; LAB_0048a58b
     INC EAX                             ; 0048a468
@@ -1868,7 +1868,7 @@ section .text
         ;   Label: LAB_0048a4ca
     INC AL                              ; 0048a4cd
     AND EAX,0xff                        ; 0048a4cf
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a4d4 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a4d4 | g_CharacterClassificationTable
     JNZ 0x0048a506                      ; 0048a4db
         ;   XREF to: 0048a506 (CONDITIONAL_JUMP)  ; LAB_0048a506
     LEA EAX,[ESI + EBX*0x1]             ; 0048a4dd
@@ -1879,7 +1879,7 @@ section .text
         ;   Label: LAB_0048a4e6
     INC AL                              ; 0048a4e8
     AND EAX,0xff                        ; 0048a4ea
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a4ef | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a4ef | g_CharacterClassificationTable
     JZ 0x0048a50e                       ; 0048a4f6
         ;   XREF to: 0048a50e (CONDITIONAL_JUMP)  ; LAB_0048a50e
     PUSH EBX                            ; 0048a4f8
@@ -1911,7 +1911,7 @@ section .text
     TEST EAX,EAX                        ; 0048a529
     JZ 0x0048969e                       ; 0048a52b
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048a531 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048a531 | g_ActorNameSentinel
     JNZ 0x0048a543                      ; 0048a537
         ;   XREF to: 0048a543 (CONDITIONAL_JUMP)  ; LAB_0048a543
     XOR EBX,EBX                         ; 0048a539
@@ -1966,7 +1966,7 @@ section .text
     LEA EAX,[EBP + 0xffffff5e]          ; 0048a5c0
     PUSH dword ptr [EBP + 0xba]         ; 0048a5c6
     PUSH EAX                            ; 0048a5cc
-    MOV EDX,dword ptr [0x00614d30]      ; 0048a5cd | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 0048a5cd | g_CFireEffectPtr
     PUSH EDX                            ; 0048a5d3
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_0049e360 ; 0048a5d4
         ;   XREF to: 0049e360 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_0049e360(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
@@ -1995,7 +1995,7 @@ section .text
     XOR ECX,ECX                         ; 0048a60c
     INC BL                              ; 0048a60e
     MOV CL,BL                           ; 0048a610
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a612 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a612 | g_CharacterClassificationTable
     JZ 0x0048a636                       ; 0048a619
         ;   XREF to: 0048a636 (CONDITIONAL_JUMP)  ; LAB_0048a636
     INC EAX                             ; 0048a61b
@@ -2040,7 +2040,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xb]         ; 0048a66e
     INC AL                              ; 0048a671
     AND EAX,0xff                        ; 0048a673
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a678 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a678 | g_CharacterClassificationTable
     JNZ 0x0048a773                      ; 0048a67f
         ;   XREF to: 0048a773 (CONDITIONAL_JUMP)  ; LAB_0048a773
     LEA EAX,[EBX + 0xb]                 ; 0048a685
@@ -2049,7 +2049,7 @@ section .text
     XOR ECX,ECX                         ; 0048a68a
     INC BL                              ; 0048a68c
     MOV CL,BL                           ; 0048a68e
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a690 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a690 | g_CharacterClassificationTable
     JZ 0x0048a69c                       ; 0048a697
         ;   XREF to: 0048a69c (CONDITIONAL_JUMP)  ; LAB_0048a69c
     INC EAX                             ; 0048a699
@@ -2081,11 +2081,11 @@ section .text
     TEST EAX,EAX                        ; 0048a6de
     JNZ 0x0048a6f2                      ; 0048a6e0
         ;   XREF to: 0048a6f2 (CONDITIONAL_JUMP)  ; LAB_0048a6f2
-    CMP dword ptr [0x01c3dd0c],0x0      ; 0048a6e2 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 0048a6e2 | g_EventDryRun
     JNZ 0x0048969e                      ; 0048a6e9
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
     MOV dword ptr [EBP + -0x4e],EAX     ; 0048a6ef
-    CMP EBX,dword ptr [0x005f61e4]      ; 0048a6f2 | g_CDemonActor_PTR_005f61e4
+    CMP EBX,dword ptr [0x005f61e4]      ; 0048a6f2 | g_ActorNameSentinel
         ;   Label: LAB_0048a6f2
     JZ 0x00489af6                       ; 0048a6f8
         ;   XREF to: 00489af6 (CONDITIONAL_JUMP)  ; caseD_6
@@ -2140,7 +2140,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xd]         ; 0048a78b
     INC AL                              ; 0048a78e
     AND EAX,0xff                        ; 0048a790
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a795 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a795 | g_CharacterClassificationTable
     JNZ 0x0048a957                      ; 0048a79c
         ;   XREF to: 0048a957 (CONDITIONAL_JUMP)  ; LAB_0048a957
     LEA EAX,[EBX + 0xd]                 ; 0048a7a2
@@ -2149,7 +2149,7 @@ section .text
     XOR ECX,ECX                         ; 0048a7a7
     INC BL                              ; 0048a7a9
     MOV CL,BL                           ; 0048a7ab
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a7ad | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a7ad | g_CharacterClassificationTable
     JZ 0x0048a7b9                       ; 0048a7b4
         ;   XREF to: 0048a7b9 (CONDITIONAL_JUMP)  ; LAB_0048a7b9
     INC EAX                             ; 0048a7b6
@@ -2182,7 +2182,7 @@ section .text
     XOR ECX,ECX                         ; 0048a7f2
     INC BL                              ; 0048a7f4
     MOV CL,BL                           ; 0048a7f6
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a7f8 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a7f8 | g_CharacterClassificationTable
     JZ 0x0048a81c                       ; 0048a7ff
         ;   XREF to: 0048a81c (CONDITIONAL_JUMP)  ; LAB_0048a81c
     INC EAX                             ; 0048a801
@@ -2213,7 +2213,7 @@ section .text
     XOR ECX,ECX                         ; 0048a82e
     INC BL                              ; 0048a830
     MOV CL,BL                           ; 0048a832
-    MOV DL,byte ptr [ECX + 0x61ed94]    ; 0048a834 | g_UCHAR_ARRAY_0061ed94
+    MOV DL,byte ptr [ECX + 0x61ed94]    ; 0048a834 | g_CharacterClassificationTable
     LEA EBX,[EAX + 0x1]                 ; 0048a83a
     TEST DL,0x2                         ; 0048a83d
     JZ 0x0048a8a9                       ; 0048a840
@@ -2244,7 +2244,7 @@ section .text
     XOR ECX,ECX                         ; 0048a873
     INC BL                              ; 0048a875
     MOV CL,BL                           ; 0048a877
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a879 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a879 | g_CharacterClassificationTable
     JZ 0x0048a8a4                       ; 0048a880
         ;   XREF to: 0048a8a4 (CONDITIONAL_JUMP)  ; LAB_0048a8a4
     INC EAX                             ; 0048a882
@@ -2252,7 +2252,7 @@ section .text
         ;   XREF to: 0048a871 (UNCONDITIONAL_JUMP)  ; LAB_0048a871
     PUSH 0x5d3496                       ; 0048a885 | = "Error parsing displayBitmap time argu..."
         ;   Label: LAB_0048a885
-    PUSH 0x1c3dd10                      ; 0048a88a | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048a88a | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048a88f
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048a894
@@ -2307,7 +2307,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d34c0                       ; 0048a908 | = "Can't find matching ) in displayBitma..."
         ;   Label: LAB_0048a908
-    PUSH 0x1c3dd10                      ; 0048a90d | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048a90d | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048a912
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048a917
@@ -2353,7 +2353,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x11]        ; 0048a96f
     INC AL                              ; 0048a972
     AND EAX,0xff                        ; 0048a974
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a979 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048a979 | g_CharacterClassificationTable
     JNZ 0x0048aaa8                      ; 0048a980
         ;   XREF to: 0048aaa8 (CONDITIONAL_JUMP)  ; LAB_0048aaa8
     LEA EAX,[EBX + 0x11]                ; 0048a986
@@ -2362,7 +2362,7 @@ section .text
     XOR ECX,ECX                         ; 0048a98b
     INC BL                              ; 0048a98d
     MOV CL,BL                           ; 0048a98f
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a991 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048a991 | g_CharacterClassificationTable
     JZ 0x0048a99d                       ; 0048a998
         ;   XREF to: 0048a99d (CONDITIONAL_JUMP)  ; LAB_0048a99d
     INC EAX                             ; 0048a99a
@@ -2404,7 +2404,7 @@ section .text
         ;   Label: LAB_0048a9f0
     INC AL                              ; 0048a9f3
     AND EAX,0xff                        ; 0048a9f5
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a9fa | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048a9fa | g_CharacterClassificationTable
     JNZ 0x0048aa4b                      ; 0048aa01
         ;   XREF to: 0048aa4b (CONDITIONAL_JUMP)  ; LAB_0048aa4b
     LEA EAX,[ESI + EBX*0x1]             ; 0048aa03
@@ -2415,7 +2415,7 @@ section .text
         ;   Label: LAB_0048aa0c
     INC AL                              ; 0048aa0e
     AND EAX,0xff                        ; 0048aa10
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048aa15 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048aa15 | g_CharacterClassificationTable
     JZ 0x0048aa53                       ; 0048aa1c
         ;   XREF to: 0048aa53 (CONDITIONAL_JUMP)  ; LAB_0048aa53
     PUSH EBX                            ; 0048aa1e
@@ -2429,7 +2429,7 @@ section .text
         ;   XREF to: 0048aa0c (UNCONDITIONAL_JUMP)  ; LAB_0048aa0c
     PUSH 0x5d3559                       ; 0048aa2c | = "Error parsing displayFieldNotes comma..."
         ;   Label: LAB_0048aa2c
-    PUSH 0x1c3dd10                      ; 0048aa31 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048aa31 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048aa36
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048aa3b
@@ -2454,7 +2454,7 @@ section .text
         ;   XREF to: 0048aa7d (CONDITIONAL_JUMP)  ; LAB_0048aa7d
     LEA EAX,[EBP + 0xffffe59e]          ; 0048aa59
     PUSH EAX                            ; 0048aa5f
-    MOV ECX,dword ptr [0x006141f0]      ; 0048aa60 | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0048aa60 | g_CEventListPtr
     PUSH ECX                            ; 0048aa66
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0048aa67
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -2494,7 +2494,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x8]         ; 0048aac0
     INC AL                              ; 0048aac3
     AND EAX,0xff                        ; 0048aac5
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048aaca | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048aaca | g_CharacterClassificationTable
     JNZ 0x0048ada3                      ; 0048aad1
         ;   XREF to: 0048ada3 (CONDITIONAL_JUMP)  ; LAB_0048ada3
     LEA EAX,[EBX + 0x8]                 ; 0048aad7
@@ -2503,7 +2503,7 @@ section .text
     XOR ECX,ECX                         ; 0048aadc
     INC BL                              ; 0048aade
     MOV CL,BL                           ; 0048aae0
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048aae2 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048aae2 | g_CharacterClassificationTable
     JZ 0x0048aaee                       ; 0048aae9
         ;   XREF to: 0048aaee (CONDITIONAL_JUMP)  ; LAB_0048aaee
     INC EAX                             ; 0048aaeb
@@ -2545,7 +2545,7 @@ section .text
         ;   Label: LAB_0048ab40
     INC AL                              ; 0048ab43
     AND EAX,0xff                        ; 0048ab45
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ab4a | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ab4a | g_CharacterClassificationTable
     JNZ 0x0048ab94                      ; 0048ab51
         ;   XREF to: 0048ab94 (CONDITIONAL_JUMP)  ; LAB_0048ab94
     LEA EAX,[ESI + EBX*0x1]             ; 0048ab53
@@ -2556,7 +2556,7 @@ section .text
         ;   Label: LAB_0048ab5c
     INC AL                              ; 0048ab5e
     AND EAX,0xff                        ; 0048ab60
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ab65 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ab65 | g_CharacterClassificationTable
     JZ 0x0048ab9c                       ; 0048ab6c
         ;   XREF to: 0048ab9c (CONDITIONAL_JUMP)  ; LAB_0048ab9c
     PUSH EBX                            ; 0048ab6e
@@ -2600,7 +2600,7 @@ section .text
     TEST EAX,EAX                        ; 0048abb9
     JZ 0x0048969e                       ; 0048abbb
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048abc1 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048abc1 | g_ActorNameSentinel
     JNZ 0x0048abce                      ; 0048abc7
         ;   XREF to: 0048abce (CONDITIONAL_JUMP)  ; LAB_0048abce
     XOR ECX,ECX                         ; 0048abc9
@@ -2633,7 +2633,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xe]      ; 0048ac09
         ;   Label: LAB_0048ac09
     MOV ECX,dword ptr [EBP + -0x4a]     ; 0048ac0c
-    MOV EBX,dword ptr [0x005f61e4]      ; 0048ac0f | g_CDemonActor_PTR_005f61e4
+    MOV EBX,dword ptr [0x005f61e4]      ; 0048ac0f | g_ActorNameSentinel
     ADD ECX,EAX                         ; 0048ac15
     MOV EAX,dword ptr [EBP + -0xa]      ; 0048ac17
     MOV dword ptr [EBP + -0x4a],ECX     ; 0048ac1a
@@ -2714,7 +2714,7 @@ section .text
         ;   Label: LAB_0048acd6
     INC AL                              ; 0048acd9
     AND EAX,0xff                        ; 0048acdb
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ace0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ace0 | g_CharacterClassificationTable
     JNZ 0x0048ad2a                      ; 0048ace7
         ;   XREF to: 0048ad2a (CONDITIONAL_JUMP)  ; LAB_0048ad2a
     LEA EAX,[ESI + EBX*0x1]             ; 0048ace9
@@ -2725,7 +2725,7 @@ section .text
         ;   Label: LAB_0048acf2
     INC AL                              ; 0048acf4
     AND EAX,0xff                        ; 0048acf6
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048acfb | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048acfb | g_CharacterClassificationTable
     JZ 0x0048ad32                       ; 0048ad02
         ;   XREF to: 0048ad32 (CONDITIONAL_JUMP)  ; LAB_0048ad32
     PUSH EBX                            ; 0048ad04
@@ -2758,7 +2758,7 @@ section .text
         ;   XREF to: 0048ace9 (UNCONDITIONAL_JUMP)  ; LAB_0048ace9
     MOV EAX,0xffffffff                  ; 0048ad32
         ;   Label: LAB_0048ad32
-    MOV EDX,dword ptr [0x005f61e4]      ; 0048ad37 | g_CDemonActor_PTR_005f61e4
+    MOV EDX,dword ptr [0x005f61e4]      ; 0048ad37 | g_ActorNameSentinel
     MOV dword ptr [EBP + -0x6],EAX      ; 0048ad3d
     MOV EAX,dword ptr [EBP + -0xa]      ; 0048ad40
     CMP EAX,EDX                         ; 0048ad43
@@ -2820,7 +2820,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x15]        ; 0048adbb
     INC AL                              ; 0048adbe
     AND EAX,0xff                        ; 0048adc0
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048adc5 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048adc5 | g_CharacterClassificationTable
     JNZ 0x0048af21                      ; 0048adcc
         ;   XREF to: 0048af21 (CONDITIONAL_JUMP)  ; LAB_0048af21
     LEA EAX,[EBX + 0x15]                ; 0048add2
@@ -2829,7 +2829,7 @@ section .text
     XOR ECX,ECX                         ; 0048add7
     INC BL                              ; 0048add9
     MOV CL,BL                           ; 0048addb
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048addd | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048addd | g_CharacterClassificationTable
     JZ 0x0048ade9                       ; 0048ade4
         ;   XREF to: 0048ade9 (CONDITIONAL_JUMP)  ; LAB_0048ade9
     INC EAX                             ; 0048ade6
@@ -2873,7 +2873,7 @@ section .text
         ;   Label: LAB_0048ae41
     INC AL                              ; 0048ae44
     AND EAX,0xff                        ; 0048ae46
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ae4b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ae4b | g_CharacterClassificationTable
     JNZ 0x0048ae95                      ; 0048ae52
         ;   XREF to: 0048ae95 (CONDITIONAL_JUMP)  ; LAB_0048ae95
     LEA EAX,[ESI + EBX*0x1]             ; 0048ae54
@@ -2884,7 +2884,7 @@ section .text
         ;   Label: LAB_0048ae5d
     INC AL                              ; 0048ae5f
     AND EAX,0xff                        ; 0048ae61
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ae66 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048ae66 | g_CharacterClassificationTable
     JZ 0x0048ae9d                       ; 0048ae6d
         ;   XREF to: 0048ae9d (CONDITIONAL_JUMP)  ; LAB_0048ae9d
     PUSH EBX                            ; 0048ae6f
@@ -2915,7 +2915,7 @@ section .text
         ;   XREF to: 0048ae41 (CONDITIONAL_JUMP)  ; LAB_0048ae41
     JMP 0x0048ae54                      ; 0048ae9b
         ;   XREF to: 0048ae54 (UNCONDITIONAL_JUMP)  ; LAB_0048ae54
-    CMP dword ptr [0x01c3dd0c],0x0      ; 0048ae9d | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 0048ae9d | g_EventDryRun
         ;   Label: LAB_0048ae9d
     JNZ 0x0048aeff                      ; 0048aea4
         ;   XREF to: 0048aeff (CONDITIONAL_JUMP)  ; LAB_0048aeff
@@ -2981,7 +2981,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x1a]        ; 0048af39
     INC AL                              ; 0048af3c
     AND EAX,0xff                        ; 0048af3e
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048af43 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048af43 | g_CharacterClassificationTable
     JNZ 0x0048b13b                      ; 0048af4a
         ;   XREF to: 0048b13b (CONDITIONAL_JUMP)  ; LAB_0048b13b
     LEA EAX,[EBX + 0x1a]                ; 0048af50
@@ -2990,7 +2990,7 @@ section .text
     XOR ECX,ECX                         ; 0048af55
     INC BL                              ; 0048af57
     MOV CL,BL                           ; 0048af59
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048af5b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048af5b | g_CharacterClassificationTable
     JZ 0x0048af67                       ; 0048af62
         ;   XREF to: 0048af67 (CONDITIONAL_JUMP)  ; LAB_0048af67
     INC EAX                             ; 0048af64
@@ -3037,7 +3037,7 @@ section .text
     XOR ECX,ECX                         ; 0048afc9
     INC BL                              ; 0048afcb
     MOV CL,BL                           ; 0048afcd
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048afcf | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048afcf | g_CharacterClassificationTable
     JNZ 0x0048b019                      ; 0048afd6
         ;   XREF to: 0048b019 (CONDITIONAL_JUMP)  ; LAB_0048b019
     LEA EAX,[ESI + EDI*0x1]             ; 0048afd8
@@ -3048,7 +3048,7 @@ section .text
         ;   Label: LAB_0048afe1
     INC AL                              ; 0048afe3
     AND EAX,0xff                        ; 0048afe5
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048afea | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048afea | g_CharacterClassificationTable
     JZ 0x0048b021                       ; 0048aff1
         ;   XREF to: 0048b021 (CONDITIONAL_JUMP)  ; LAB_0048b021
     PUSH EDI                            ; 0048aff3
@@ -3099,7 +3099,7 @@ section .text
     XOR ECX,ECX                         ; 0048b048
     INC BL                              ; 0048b04a
     MOV CL,BL                           ; 0048b04c
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b04e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b04e | g_CharacterClassificationTable
     JNZ 0x0048b080                      ; 0048b055
         ;   XREF to: 0048b080 (CONDITIONAL_JUMP)  ; LAB_0048b080
     LEA EAX,[ESI + EDI*0x1]             ; 0048b057
@@ -3110,7 +3110,7 @@ section .text
         ;   Label: LAB_0048b060
     INC AL                              ; 0048b062
     AND EAX,0xff                        ; 0048b064
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b069 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b069 | g_CharacterClassificationTable
     JZ 0x0048b088                       ; 0048b070
         ;   XREF to: 0048b088 (CONDITIONAL_JUMP)  ; LAB_0048b088
     PUSH EDI                            ; 0048b072
@@ -3130,7 +3130,7 @@ section .text
         ;   XREF to: 0048b045 (CONDITIONAL_JUMP)  ; LAB_0048b045
     JMP 0x0048b057                      ; 0048b086
         ;   XREF to: 0048b057 (UNCONDITIONAL_JUMP)  ; LAB_0048b057
-    CMP dword ptr [0x01c3dd0c],0x0      ; 0048b088 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 0048b088 | g_EventDryRun
         ;   Label: LAB_0048b088
     JNZ 0x0048b119                      ; 0048b08f
         ;   XREF to: 0048b119 (CONDITIONAL_JUMP)  ; LAB_0048b119
@@ -3212,7 +3212,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x10]        ; 0048b153
     INC AL                              ; 0048b156
     AND EAX,0xff                        ; 0048b158
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b15d | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b15d | g_CharacterClassificationTable
     JNZ 0x0048b1f9                      ; 0048b164
         ;   XREF to: 0048b1f9 (CONDITIONAL_JUMP)  ; LAB_0048b1f9
     LEA EAX,[EBX + 0x10]                ; 0048b16a
@@ -3221,7 +3221,7 @@ section .text
     XOR ECX,ECX                         ; 0048b16f
     INC BL                              ; 0048b171
     MOV CL,BL                           ; 0048b173
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b175 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b175 | g_CharacterClassificationTable
     JZ 0x0048b181                       ; 0048b17c
         ;   XREF to: 0048b181 (CONDITIONAL_JUMP)  ; LAB_0048b181
     INC EAX                             ; 0048b17e
@@ -3264,7 +3264,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d37a4                       ; 0048b1da | = "Error parsing fadeAmbientSound parms"
         ;   Label: LAB_0048b1da
-    PUSH 0x1c3dd10                      ; 0048b1df | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048b1df | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048b1e4
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048b1e9
@@ -3288,7 +3288,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x7]         ; 0048b211
     INC AL                              ; 0048b214
     AND EAX,0xff                        ; 0048b216
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b21b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b21b | g_CharacterClassificationTable
     JNZ 0x0048b357                      ; 0048b222
         ;   XREF to: 0048b357 (CONDITIONAL_JUMP)  ; LAB_0048b357
     LEA EAX,[EBX + 0x7]                 ; 0048b228
@@ -3297,7 +3297,7 @@ section .text
     XOR ECX,ECX                         ; 0048b22d
     INC BL                              ; 0048b22f
     MOV CL,BL                           ; 0048b231
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b233 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b233 | g_CharacterClassificationTable
     JZ 0x0048b23f                       ; 0048b23a
         ;   XREF to: 0048b23f (CONDITIONAL_JUMP)  ; LAB_0048b23f
     INC EAX                             ; 0048b23c
@@ -3345,7 +3345,7 @@ section .text
         ;   Label: LAB_0048b29e
     INC CL                              ; 0048b2a1
     AND ECX,0xff                        ; 0048b2a3
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b2a9 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b2a9 | g_CharacterClassificationTable
     JNZ 0x0048b2fa                      ; 0048b2b0
         ;   XREF to: 0048b2fa (CONDITIONAL_JUMP)  ; LAB_0048b2fa
     LEA EAX,[ESI + EBX*0x1]             ; 0048b2b2
@@ -3356,7 +3356,7 @@ section .text
         ;   Label: LAB_0048b2bb
     INC AL                              ; 0048b2bd
     AND EAX,0xff                        ; 0048b2bf
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b2c4 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b2c4 | g_CharacterClassificationTable
     JZ 0x0048b302                       ; 0048b2cb
         ;   XREF to: 0048b302 (CONDITIONAL_JUMP)  ; LAB_0048b302
     PUSH EBX                            ; 0048b2cd
@@ -3370,7 +3370,7 @@ section .text
         ;   XREF to: 0048b2bb (UNCONDITIONAL_JUMP)  ; LAB_0048b2bb
     PUSH 0x5d37e4                       ; 0048b2db | = "Error parsing fadeSfx parms"
         ;   Label: LAB_0048b2db
-    PUSH 0x1c3dd10                      ; 0048b2e0 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048b2e0 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048b2e5
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048b2ea
@@ -3438,7 +3438,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x6]         ; 0048b36f
     INC AL                              ; 0048b372
     AND EAX,0xff                        ; 0048b374
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b379 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b379 | g_CharacterClassificationTable
     JNZ 0x0048b3e2                      ; 0048b380
         ;   XREF to: 0048b3e2 (CONDITIONAL_JUMP)  ; LAB_0048b3e2
     LEA EAX,[EBX + 0x6]                 ; 0048b382
@@ -3447,7 +3447,7 @@ section .text
     XOR ECX,ECX                         ; 0048b387
     INC BL                              ; 0048b389
     MOV CL,BL                           ; 0048b38b
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b38d | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b38d | g_CharacterClassificationTable
     JZ 0x0048b399                       ; 0048b394
         ;   XREF to: 0048b399 (CONDITIONAL_JUMP)  ; LAB_0048b399
     INC EAX                             ; 0048b396
@@ -3493,7 +3493,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x7]         ; 0048b3f6
     INC AL                              ; 0048b3f9
     AND EAX,0xff                        ; 0048b3fb
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b400 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b400 | g_CharacterClassificationTable
     JNZ 0x0048b468                      ; 0048b407
         ;   XREF to: 0048b468 (CONDITIONAL_JUMP)  ; LAB_0048b468
     LEA EAX,[EBX + 0x7]                 ; 0048b409
@@ -3502,7 +3502,7 @@ section .text
     XOR ECX,ECX                         ; 0048b40e
     INC BL                              ; 0048b410
     MOV CL,BL                           ; 0048b412
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b414 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b414 | g_CharacterClassificationTable
     JZ 0x0048b420                       ; 0048b41b
         ;   XREF to: 0048b420 (CONDITIONAL_JUMP)  ; LAB_0048b420
     INC EAX                             ; 0048b41d
@@ -3548,7 +3548,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xa]         ; 0048b480
     INC AL                              ; 0048b483
     AND EAX,0xff                        ; 0048b485
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b48a | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b48a | g_CharacterClassificationTable
     JNZ 0x0048b4f3                      ; 0048b491
         ;   XREF to: 0048b4f3 (CONDITIONAL_JUMP)  ; LAB_0048b4f3
     LEA EAX,[EBX + 0xa]                 ; 0048b493
@@ -3557,7 +3557,7 @@ section .text
     XOR ECX,ECX                         ; 0048b498
     INC BL                              ; 0048b49a
     MOV CL,BL                           ; 0048b49c
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b49e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b49e | g_CharacterClassificationTable
     JZ 0x0048b4aa                       ; 0048b4a5
         ;   XREF to: 0048b4aa (CONDITIONAL_JUMP)  ; LAB_0048b4aa
     INC EAX                             ; 0048b4a7
@@ -3603,7 +3603,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xb]         ; 0048b50b
     INC AL                              ; 0048b50e
     AND EAX,0xff                        ; 0048b510
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b515 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b515 | g_CharacterClassificationTable
     JNZ 0x0048b57e                      ; 0048b51c
         ;   XREF to: 0048b57e (CONDITIONAL_JUMP)  ; LAB_0048b57e
     LEA EAX,[EBX + 0xb]                 ; 0048b51e
@@ -3612,7 +3612,7 @@ section .text
     XOR ECX,ECX                         ; 0048b523
     INC BL                              ; 0048b525
     MOV CL,BL                           ; 0048b527
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b529 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b529 | g_CharacterClassificationTable
     JZ 0x0048b535                       ; 0048b530
         ;   XREF to: 0048b535 (CONDITIONAL_JUMP)  ; LAB_0048b535
     INC EAX                             ; 0048b532
@@ -3658,7 +3658,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xd]         ; 0048b596
     INC AL                              ; 0048b599
     AND EAX,0xff                        ; 0048b59b
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b5a0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b5a0 | g_CharacterClassificationTable
     JNZ 0x0048b78e                      ; 0048b5a7
         ;   XREF to: 0048b78e (CONDITIONAL_JUMP)  ; LAB_0048b78e
     LEA EAX,[EBX + 0xd]                 ; 0048b5ad
@@ -3667,7 +3667,7 @@ section .text
     XOR ECX,ECX                         ; 0048b5b2
     INC BL                              ; 0048b5b4
     MOV CL,BL                           ; 0048b5b6
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b5b8 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b5b8 | g_CharacterClassificationTable
     JZ 0x0048b5c4                       ; 0048b5bf
         ;   XREF to: 0048b5c4 (CONDITIONAL_JUMP)  ; LAB_0048b5c4
     INC EAX                             ; 0048b5c1
@@ -3711,7 +3711,7 @@ section .text
         ;   Label: LAB_0048b61e
     INC CL                              ; 0048b621
     AND ECX,0xff                        ; 0048b623
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b629 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b629 | g_CharacterClassificationTable
     JNZ 0x0048b673                      ; 0048b630
         ;   XREF to: 0048b673 (CONDITIONAL_JUMP)  ; LAB_0048b673
     LEA EAX,[ESI + EBX*0x1]             ; 0048b632
@@ -3722,7 +3722,7 @@ section .text
         ;   Label: LAB_0048b63b
     INC AL                              ; 0048b63d
     AND EAX,0xff                        ; 0048b63f
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b644 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b644 | g_CharacterClassificationTable
     JZ 0x0048b67b                       ; 0048b64b
         ;   XREF to: 0048b67b (CONDITIONAL_JUMP)  ; LAB_0048b67b
     PUSH EBX                            ; 0048b64d
@@ -3772,7 +3772,7 @@ section .text
         ;   Label: LAB_0048b69f
     INC AL                              ; 0048b6a2
     AND EAX,0xff                        ; 0048b6a4
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b6a9 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b6a9 | g_CharacterClassificationTable
     JNZ 0x0048b6db                      ; 0048b6b0
         ;   XREF to: 0048b6db (CONDITIONAL_JUMP)  ; LAB_0048b6db
     LEA EAX,[ESI + EBX*0x1]             ; 0048b6b2
@@ -3783,7 +3783,7 @@ section .text
         ;   Label: LAB_0048b6bb
     INC AL                              ; 0048b6bd
     AND EAX,0xff                        ; 0048b6bf
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b6c4 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b6c4 | g_CharacterClassificationTable
     JZ 0x0048b6e3                       ; 0048b6cb
         ;   XREF to: 0048b6e3 (CONDITIONAL_JUMP)  ; LAB_0048b6e3
     PUSH EBX                            ; 0048b6cd
@@ -3811,7 +3811,7 @@ section .text
     XOR ECX,ECX                         ; 0048b6eb
     INC BL                              ; 0048b6ed
     MOV CL,BL                           ; 0048b6ef
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b6f1 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b6f1 | g_CharacterClassificationTable
     JZ 0x0048b6fd                       ; 0048b6f8
         ;   XREF to: 0048b6fd (CONDITIONAL_JUMP)  ; LAB_0048b6fd
     INC EAX                             ; 0048b6fa
@@ -3831,7 +3831,7 @@ section .text
     TEST EAX,EAX                        ; 0048b71d
     JZ 0x0048969e                       ; 0048b71f
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048b725 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048b725 | g_ActorNameSentinel
     JNZ 0x0048b732                      ; 0048b72b
         ;   XREF to: 0048b732 (CONDITIONAL_JUMP)  ; LAB_0048b732
     XOR ECX,ECX                         ; 0048b72d
@@ -3885,7 +3885,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xa]         ; 0048b7a6
     INC AL                              ; 0048b7a9
     AND EAX,0xff                        ; 0048b7ab
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b7b0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b7b0 | g_CharacterClassificationTable
     JNZ 0x0048b8c7                      ; 0048b7b7
         ;   XREF to: 0048b8c7 (CONDITIONAL_JUMP)  ; LAB_0048b8c7
     LEA EAX,[EBX + 0xa]                 ; 0048b7bd
@@ -3894,7 +3894,7 @@ section .text
     XOR ECX,ECX                         ; 0048b7c2
     INC BL                              ; 0048b7c4
     MOV CL,BL                           ; 0048b7c6
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b7c8 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b7c8 | g_CharacterClassificationTable
     JZ 0x0048b7d4                       ; 0048b7cf
         ;   XREF to: 0048b7d4 (CONDITIONAL_JUMP)  ; LAB_0048b7d4
     INC EAX                             ; 0048b7d1
@@ -3938,7 +3938,7 @@ section .text
         ;   Label: LAB_0048b82c
     INC CL                              ; 0048b82f
     AND ECX,0xff                        ; 0048b831
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b837 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b837 | g_CharacterClassificationTable
     JNZ 0x0048b888                      ; 0048b83e
         ;   XREF to: 0048b888 (CONDITIONAL_JUMP)  ; LAB_0048b888
     LEA EAX,[ESI + EBX*0x1]             ; 0048b840
@@ -3949,7 +3949,7 @@ section .text
         ;   Label: LAB_0048b849
     INC AL                              ; 0048b84b
     AND EAX,0xff                        ; 0048b84d
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b852 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b852 | g_CharacterClassificationTable
     JZ 0x0048b890                       ; 0048b859
         ;   XREF to: 0048b890 (CONDITIONAL_JUMP)  ; LAB_0048b890
     PUSH EBX                            ; 0048b85b
@@ -3963,7 +3963,7 @@ section .text
         ;   XREF to: 0048b849 (UNCONDITIONAL_JUMP)  ; LAB_0048b849
     PUSH 0x5d38b6                       ; 0048b869 | = "Error parsing incCounter arguments"
         ;   Label: LAB_0048b869
-    PUSH 0x1c3dd10                      ; 0048b86e | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048b86e | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048b873
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048b878
@@ -4016,7 +4016,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xd]         ; 0048b8df
     INC AL                              ; 0048b8e2
     AND EAX,0xff                        ; 0048b8e4
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b8e9 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048b8e9 | g_CharacterClassificationTable
     JNZ 0x0048bba2                      ; 0048b8f0
         ;   XREF to: 0048bba2 (CONDITIONAL_JUMP)  ; LAB_0048bba2
     LEA EAX,[EBX + 0xd]                 ; 0048b8f6
@@ -4025,7 +4025,7 @@ section .text
     XOR ECX,ECX                         ; 0048b8fb
     INC BL                              ; 0048b8fd
     MOV CL,BL                           ; 0048b8ff
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b901 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048b901 | g_CharacterClassificationTable
     JZ 0x0048b90d                       ; 0048b908
         ;   XREF to: 0048b90d (CONDITIONAL_JUMP)  ; LAB_0048b90d
     INC EAX                             ; 0048b90a
@@ -4091,7 +4091,7 @@ section .text
         ;   Label: LAB_0048b9ae
     INC AL                              ; 0048b9b1
     AND EAX,0xff                        ; 0048b9b3
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b9b8 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b9b8 | g_CharacterClassificationTable
     JNZ 0x0048ba7c                      ; 0048b9bf
         ;   XREF to: 0048ba7c (CONDITIONAL_JUMP)  ; LAB_0048ba7c
     LEA EAX,[EBX + EDI*0x1]             ; 0048b9c5
@@ -4102,7 +4102,7 @@ section .text
         ;   Label: LAB_0048b9ce
     INC AL                              ; 0048b9d0
     AND EAX,0xff                        ; 0048b9d2
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b9d7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048b9d7 | g_CharacterClassificationTable
     JZ 0x0048ba8b                       ; 0048b9de
         ;   XREF to: 0048ba8b (CONDITIONAL_JUMP)  ; LAB_0048ba8b
     PUSH EDI                            ; 0048b9e4
@@ -4192,7 +4192,7 @@ section .text
         ;   Label: LAB_0048baaf
     INC AL                              ; 0048bab2
     AND EAX,0xff                        ; 0048bab4
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048bab9 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048bab9 | g_CharacterClassificationTable
     JNZ 0x0048baeb                      ; 0048bac0
         ;   XREF to: 0048baeb (CONDITIONAL_JUMP)  ; LAB_0048baeb
     LEA EAX,[EBX + EDI*0x1]             ; 0048bac2
@@ -4203,7 +4203,7 @@ section .text
         ;   Label: LAB_0048bacb
     INC AL                              ; 0048bacd
     AND EAX,0xff                        ; 0048bacf
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048bad4 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048bad4 | g_CharacterClassificationTable
     JZ 0x0048baf3                       ; 0048badb
         ;   XREF to: 0048baf3 (CONDITIONAL_JUMP)  ; LAB_0048baf3
     PUSH EDI                            ; 0048badd
@@ -4231,7 +4231,7 @@ section .text
     XOR ECX,ECX                         ; 0048bafb
     INC BL                              ; 0048bafd
     MOV CL,BL                           ; 0048baff
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bb01 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bb01 | g_CharacterClassificationTable
     JZ 0x0048bb0d                       ; 0048bb08
         ;   XREF to: 0048bb0d (CONDITIONAL_JUMP)  ; LAB_0048bb0d
     INC EAX                             ; 0048bb0a
@@ -4251,7 +4251,7 @@ section .text
     TEST EAX,EAX                        ; 0048bb2d
     JZ 0x0048969e                       ; 0048bb2f
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048bb35 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048bb35 | g_ActorNameSentinel
     JNZ 0x0048bb42                      ; 0048bb3b
         ;   XREF to: 0048bb42 (CONDITIONAL_JUMP)  ; LAB_0048bb42
     XOR ECX,ECX                         ; 0048bb3d
@@ -4307,7 +4307,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x8]         ; 0048bbba
     INC AL                              ; 0048bbbd
     AND EAX,0xff                        ; 0048bbbf
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bbc4 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bbc4 | g_CharacterClassificationTable
     JNZ 0x0048bce1                      ; 0048bbcb
         ;   XREF to: 0048bce1 (CONDITIONAL_JUMP)  ; LAB_0048bce1
     LEA EAX,[EBX + 0x8]                 ; 0048bbd1
@@ -4316,7 +4316,7 @@ section .text
     XOR ECX,ECX                         ; 0048bbd6
     INC BL                              ; 0048bbd8
     MOV CL,BL                           ; 0048bbda
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bbdc | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bbdc | g_CharacterClassificationTable
     JZ 0x0048bbe8                       ; 0048bbe3
         ;   XREF to: 0048bbe8 (CONDITIONAL_JUMP)  ; LAB_0048bbe8
     INC EAX                             ; 0048bbe5
@@ -4350,7 +4350,7 @@ section .text
     XOR ECX,ECX                         ; 0048bc26
     INC BL                              ; 0048bc28
     MOV CL,BL                           ; 0048bc2a
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bc2c | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bc2c | g_CharacterClassificationTable
     JZ 0x0048bc68                       ; 0048bc33
         ;   XREF to: 0048bc68 (CONDITIONAL_JUMP)  ; LAB_0048bc68
     INC EAX                             ; 0048bc35
@@ -4435,7 +4435,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x7]         ; 0048bcf9
     INC AL                              ; 0048bcfc
     AND EAX,0xff                        ; 0048bcfe
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bd03 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bd03 | g_CharacterClassificationTable
     JNZ 0x0048bef4                      ; 0048bd0a
         ;   XREF to: 0048bef4 (CONDITIONAL_JUMP)  ; LAB_0048bef4
     LEA EAX,[EBX + 0x7]                 ; 0048bd10
@@ -4444,7 +4444,7 @@ section .text
     XOR ECX,ECX                         ; 0048bd15
     INC BL                              ; 0048bd17
     MOV CL,BL                           ; 0048bd19
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bd1b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bd1b | g_CharacterClassificationTable
     JZ 0x0048bd27                       ; 0048bd22
         ;   XREF to: 0048bd27 (CONDITIONAL_JUMP)  ; LAB_0048bd27
     INC EAX                             ; 0048bd24
@@ -4488,7 +4488,7 @@ section .text
         ;   Label: LAB_0048bd7f
     INC CL                              ; 0048bd82
     AND ECX,0xff                        ; 0048bd84
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bd8a | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bd8a | g_CharacterClassificationTable
     JNZ 0x0048bddb                      ; 0048bd91
         ;   XREF to: 0048bddb (CONDITIONAL_JUMP)  ; LAB_0048bddb
     LEA EAX,[ESI + EBX*0x1]             ; 0048bd93
@@ -4499,7 +4499,7 @@ section .text
         ;   Label: LAB_0048bd9c
     INC AL                              ; 0048bd9e
     AND EAX,0xff                        ; 0048bda0
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048bda5 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048bda5 | g_CharacterClassificationTable
     JZ 0x0048bde3                       ; 0048bdac
         ;   XREF to: 0048bde3 (CONDITIONAL_JUMP)  ; LAB_0048bde3
     PUSH EBX                            ; 0048bdae
@@ -4513,7 +4513,7 @@ section .text
         ;   XREF to: 0048bd9c (UNCONDITIONAL_JUMP)  ; LAB_0048bd9c
     PUSH 0x5d3a3a                       ; 0048bdbc | = "Error parsing killSfx parms"
         ;   Label: LAB_0048bdbc
-    PUSH 0x1c3dd10                      ; 0048bdc1 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048bdc1 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048bdc6
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048bdcb
@@ -4546,7 +4546,7 @@ section .text
     XOR ECX,ECX                         ; 0048bdf5
     INC BL                              ; 0048bdf7
     MOV CL,BL                           ; 0048bdf9
-    MOV DL,byte ptr [ECX + 0x61ed94]    ; 0048bdfb | g_UCHAR_ARRAY_0061ed94
+    MOV DL,byte ptr [ECX + 0x61ed94]    ; 0048bdfb | g_CharacterClassificationTable
     LEA EBX,[EAX + 0x1]                 ; 0048be01
     TEST DL,0x2                         ; 0048be04
     JZ 0x0048be5a                       ; 0048be07
@@ -4576,7 +4576,7 @@ section .text
         ;   XREF to: 0048bdf0 (UNCONDITIONAL_JUMP)  ; LAB_0048bdf0
     PUSH 0x5d3a5c                       ; 0048be3b | = "Error parsing killSfx parms"
         ;   Label: LAB_0048be3b
-    PUSH 0x1c3dd10                      ; 0048be40 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048be40 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048be45
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048be4a
@@ -4628,7 +4628,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d3a78                       ; 0048beb8 | = "Can't find matching ) in killSfx command"
         ;   Label: LAB_0048beb8
-    PUSH 0x1c3dd10                      ; 0048bebd | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048bebd | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048bec2
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048bec7
@@ -4664,7 +4664,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x9]         ; 0048bf0c
     INC AL                              ; 0048bf0f
     AND EAX,0xff                        ; 0048bf11
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bf16 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bf16 | g_CharacterClassificationTable
     JNZ 0x0048bfac                      ; 0048bf1d
         ;   XREF to: 0048bfac (CONDITIONAL_JUMP)  ; LAB_0048bfac
     LEA EAX,[EBX + 0x9]                 ; 0048bf23
@@ -4673,7 +4673,7 @@ section .text
     XOR ECX,ECX                         ; 0048bf28
     INC BL                              ; 0048bf2a
     MOV CL,BL                           ; 0048bf2c
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bf2e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bf2e | g_CharacterClassificationTable
     JZ 0x0048bf3a                       ; 0048bf35
         ;   XREF to: 0048bf3a (CONDITIONAL_JUMP)  ; LAB_0048bf3a
     INC EAX                             ; 0048bf37
@@ -4702,7 +4702,7 @@ section .text
     JZ 0x00489af6                       ; 0048bf6c
         ;   XREF to: 00489af6 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x1                            ; 0048bf72
-    MOV EBX,dword ptr [0x0061e8f4]      ; 0048bf74 | g_CWeather_PTR_0061e8f4
+    MOV EBX,dword ptr [0x0061e8f4]      ; 0048bf74 | g_CWeatherPtr
     PUSH 0x3dcccccd                     ; 0048bf7a
     PUSH EBX                            ; 0048bf7f
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30 ; 0048bf80
@@ -4712,7 +4712,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d3ab1                       ; 0048bf8d | = "Error parsing lightning command"
         ;   Label: LAB_0048bf8d
-    PUSH 0x1c3dd10                      ; 0048bf92 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048bf92 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048bf97
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048bf9c
@@ -4736,7 +4736,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x7]         ; 0048bfc4
     INC AL                              ; 0048bfc7
     AND EAX,0xff                        ; 0048bfc9
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bfce | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048bfce | g_CharacterClassificationTable
     JNZ 0x0048c2e3                      ; 0048bfd5
         ;   XREF to: 0048c2e3 (CONDITIONAL_JUMP)  ; LAB_0048c2e3
     LEA EAX,[EBX + 0x7]                 ; 0048bfdb
@@ -4745,7 +4745,7 @@ section .text
     XOR ECX,ECX                         ; 0048bfe0
     INC BL                              ; 0048bfe2
     MOV CL,BL                           ; 0048bfe4
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bfe6 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048bfe6 | g_CharacterClassificationTable
     JZ 0x0048bff2                       ; 0048bfed
         ;   XREF to: 0048bff2 (CONDITIONAL_JUMP)  ; LAB_0048bff2
     INC EAX                             ; 0048bfef
@@ -4790,7 +4790,7 @@ section .text
     XOR ECX,ECX                         ; 0048c04d
     INC BL                              ; 0048c04f
     MOV CL,BL                           ; 0048c051
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c053 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c053 | g_CharacterClassificationTable
     JNZ 0x0048c0a4                      ; 0048c05a
         ;   XREF to: 0048c0a4 (CONDITIONAL_JUMP)  ; LAB_0048c0a4
     LEA EAX,[ESI + EDI*0x1]             ; 0048c05c
@@ -4801,7 +4801,7 @@ section .text
         ;   Label: LAB_0048c065
     INC AL                              ; 0048c067
     AND EAX,0xff                        ; 0048c069
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c06e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c06e | g_CharacterClassificationTable
     JZ 0x0048c0ac                       ; 0048c075
         ;   XREF to: 0048c0ac (CONDITIONAL_JUMP)  ; LAB_0048c0ac
     PUSH EDI                            ; 0048c077
@@ -4815,7 +4815,7 @@ section .text
         ;   XREF to: 0048c065 (UNCONDITIONAL_JUMP)  ; LAB_0048c065
     PUSH 0x5d3ae3                       ; 0048c085 | = "Error parsing playSfx parms"
         ;   Label: LAB_0048c085
-    PUSH 0x1c3dd10                      ; 0048c08a | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c08a | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c08f
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c094
@@ -4837,9 +4837,9 @@ section .text
     MOV ECX,0x32                        ; 0048c0ac
         ;   Label: LAB_0048c0ac
     LEA EDI,[EBP + 0xfffffb7e]          ; 0048c0b1
-    MOV ESI,0x614288                    ; 0048c0b7 | g_CHAR_ARRAY_00614288
+    MOV ESI,0x614288                    ; 0048c0b7 | g_DefaultSfxHandleName
     MOV EAX,dword ptr [EBP + -0x4a]     ; 0048c0bc
-    MOVSD.REP ES:EDI,ESI                ; 0048c0bf | g_CHAR_ARRAY_00614288 | g_CHAR_ARRAY_00614288+4
+    MOVSD.REP ES:EDI,ESI                ; 0048c0bf | g_DefaultSfxHandleName | g_DefaultSfxHandleName+4
     CMP byte ptr [EAX],0x2c             ; 0048c0c1
     JZ 0x0048c0e7                       ; 0048c0c4
         ;   XREF to: 0048c0e7 (CONDITIONAL_JUMP)  ; LAB_0048c0e7
@@ -4850,7 +4850,7 @@ section .text
     XOR ECX,ECX                         ; 0048c0cb
     INC BL                              ; 0048c0cd
     MOV CL,BL                           ; 0048c0cf
-    MOV DL,byte ptr [ECX + 0x61ed94]    ; 0048c0d1 | g_UCHAR_ARRAY_0061ed94
+    MOV DL,byte ptr [ECX + 0x61ed94]    ; 0048c0d1 | g_CharacterClassificationTable
     LEA EBX,[EAX + 0x1]                 ; 0048c0d7
     TEST DL,0x2                         ; 0048c0da
     JZ 0x0048c1dd                       ; 0048c0dd
@@ -4895,7 +4895,7 @@ section .text
     XOR ECX,ECX                         ; 0048c13d
     INC BL                              ; 0048c13f
     MOV CL,BL                           ; 0048c141
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c143 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c143 | g_CharacterClassificationTable
     JNZ 0x0048c194                      ; 0048c14a
         ;   XREF to: 0048c194 (CONDITIONAL_JUMP)  ; LAB_0048c194
     LEA EAX,[ESI + EDI*0x1]             ; 0048c14c
@@ -4906,7 +4906,7 @@ section .text
         ;   Label: LAB_0048c155
     INC AL                              ; 0048c157
     AND EAX,0xff                        ; 0048c159
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c15e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c15e | g_CharacterClassificationTable
     JZ 0x0048c19c                       ; 0048c165
         ;   XREF to: 0048c19c (CONDITIONAL_JUMP)  ; LAB_0048c19c
     PUSH EDI                            ; 0048c167
@@ -4920,7 +4920,7 @@ section .text
         ;   XREF to: 0048c155 (UNCONDITIONAL_JUMP)  ; LAB_0048c155
     PUSH 0x5d3b08                       ; 0048c175 | = "Error parsing playSfx parms"
         ;   Label: LAB_0048c175
-    PUSH 0x1c3dd10                      ; 0048c17a | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c17a | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c17f
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c184
@@ -4954,7 +4954,7 @@ section .text
     LEA EAX,[EBP + 0xfffffb7e]          ; 0048c1b7
     PUSH EAX                            ; 0048c1bd
     PUSH 0x5d3b24                       ; 0048c1be | = "handle name %s is too long, max %d chars"
-    PUSH 0x1c3dd10                      ; 0048c1c3 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c1c3 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c1c8
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048c1cd
@@ -5024,7 +5024,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d3b4d                       ; 0048c27d | = "Can't find matching ) in playSfx command"
         ;   Label: LAB_0048c27d
-    PUSH 0x1c3dd10                      ; 0048c282 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c282 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c287
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c28c
@@ -5072,7 +5072,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x9]         ; 0048c2fb
     INC AL                              ; 0048c2fe
     AND EAX,0xff                        ; 0048c300
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c305 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c305 | g_CharacterClassificationTable
     JNZ 0x0048c3a2                      ; 0048c30c
         ;   XREF to: 0048c3a2 (CONDITIONAL_JUMP)  ; LAB_0048c3a2
     LEA EAX,[EBX + 0x9]                 ; 0048c312
@@ -5081,7 +5081,7 @@ section .text
     XOR ECX,ECX                         ; 0048c317
     INC BL                              ; 0048c319
     MOV CL,BL                           ; 0048c31b
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c31d | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c31d | g_CharacterClassificationTable
     JZ 0x0048c329                       ; 0048c324
         ;   XREF to: 0048c329 (CONDITIONAL_JUMP)  ; LAB_0048c329
     INC EAX                             ; 0048c326
@@ -5114,7 +5114,7 @@ section .text
     CALL core_gore.cpp_CGore_reset_FUN_004c93f0 ; 0048c368
         ;   XREF to: 004c93f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_reset_FUN_004c93f0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0048c36d
-    MOV EAX,[0x00614d30]                ; 0048c370 | g_CFireEffect_PTR_00614d30
+    MOV EAX,[0x00614d30]                ; 0048c370 | g_CFireEffectPtr
     PUSH EAX                            ; 0048c375
     CALL core_fire.cpp_CFireEffect_init_FUN_0049c190 ; 0048c376
         ;   XREF to: 0049c190 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_0049c190(CFireEffect * this_ptr)
@@ -5123,7 +5123,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d3b8a                       ; 0048c383 | = "Error parsing resetGore command"
         ;   Label: LAB_0048c383
-    PUSH 0x1c3dd10                      ; 0048c388 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c388 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c38d
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c392
@@ -5147,7 +5147,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xc]         ; 0048c3ba
     INC AL                              ; 0048c3bd
     AND EAX,0xff                        ; 0048c3bf
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c3c4 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c3c4 | g_CharacterClassificationTable
     JNZ 0x0048c67d                      ; 0048c3cb
         ;   XREF to: 0048c67d (CONDITIONAL_JUMP)  ; LAB_0048c67d
     LEA EAX,[EBX + 0xc]                 ; 0048c3d1
@@ -5156,7 +5156,7 @@ section .text
     XOR ECX,ECX                         ; 0048c3d6
     INC BL                              ; 0048c3d8
     MOV CL,BL                           ; 0048c3da
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c3dc | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c3dc | g_CharacterClassificationTable
     JZ 0x0048c3e8                       ; 0048c3e3
         ;   XREF to: 0048c3e8 (CONDITIONAL_JUMP)  ; LAB_0048c3e8
     INC EAX                             ; 0048c3e5
@@ -5204,7 +5204,7 @@ section .text
         ;   Label: LAB_0048c44e
     INC AL                              ; 0048c451
     AND EAX,0xff                        ; 0048c453
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c458 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c458 | g_CharacterClassificationTable
     JNZ 0x0048c4a9                      ; 0048c45f
         ;   XREF to: 0048c4a9 (CONDITIONAL_JUMP)  ; LAB_0048c4a9
     LEA EAX,[ESI + EBX*0x1]             ; 0048c461
@@ -5215,7 +5215,7 @@ section .text
         ;   Label: LAB_0048c46a
     INC AL                              ; 0048c46c
     AND EAX,0xff                        ; 0048c46e
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c473 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c473 | g_CharacterClassificationTable
     JZ 0x0048c4b1                       ; 0048c47a
         ;   XREF to: 0048c4b1 (CONDITIONAL_JUMP)  ; LAB_0048c4b1
     PUSH EBX                            ; 0048c47c
@@ -5229,7 +5229,7 @@ section .text
         ;   XREF to: 0048c46a (UNCONDITIONAL_JUMP)  ; LAB_0048c46a
     PUSH 0x5d3bcf                       ; 0048c48a | = "Error parsing setActorBool parms"
         ;   Label: LAB_0048c48a
-    PUSH 0x1c3dd10                      ; 0048c48f | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c48f | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c494
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c499
@@ -5267,7 +5267,7 @@ section .text
         ;   Label: LAB_0048c4d5
     INC AL                              ; 0048c4d8
     AND EAX,0xff                        ; 0048c4da
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c4df | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c4df | g_CharacterClassificationTable
     JNZ 0x0048c511                      ; 0048c4e6
         ;   XREF to: 0048c511 (CONDITIONAL_JUMP)  ; LAB_0048c511
     LEA EAX,[ESI + EBX*0x1]             ; 0048c4e8
@@ -5278,7 +5278,7 @@ section .text
         ;   Label: LAB_0048c4f1
     INC AL                              ; 0048c4f3
     AND EAX,0xff                        ; 0048c4f5
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c4fa | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c4fa | g_CharacterClassificationTable
     JZ 0x0048c519                       ; 0048c501
         ;   XREF to: 0048c519 (CONDITIONAL_JUMP)  ; LAB_0048c519
     PUSH EBX                            ; 0048c503
@@ -5317,7 +5317,7 @@ section .text
         ;   Label: LAB_0048c53d
     INC AL                              ; 0048c540
     AND EAX,0xff                        ; 0048c542
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c547 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c547 | g_CharacterClassificationTable
     JNZ 0x0048c579                      ; 0048c54e
         ;   XREF to: 0048c579 (CONDITIONAL_JUMP)  ; LAB_0048c579
     LEA EAX,[ESI + EBX*0x1]             ; 0048c550
@@ -5328,7 +5328,7 @@ section .text
         ;   Label: LAB_0048c559
     INC AL                              ; 0048c55b
     AND EAX,0xff                        ; 0048c55d
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c562 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c562 | g_CharacterClassificationTable
     JZ 0x0048c581                       ; 0048c569
         ;   XREF to: 0048c581 (CONDITIONAL_JUMP)  ; LAB_0048c581
     PUSH EBX                            ; 0048c56b
@@ -5391,7 +5391,7 @@ section .text
     TEST EAX,EAX                        ; 0048c5e0
     JZ 0x0048969e                       ; 0048c5e2
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048c5e8 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048c5e8 | g_ActorNameSentinel
     JNZ 0x0048c654                      ; 0048c5ee
         ;   XREF to: 0048c654 (CONDITIONAL_JUMP)  ; LAB_0048c654
     LEA EAX,[EBP + 0xffffe666]          ; 0048c5f0
@@ -5425,7 +5425,7 @@ section .text
         ;   Label: LAB_0048c62e
     PUSH EAX                            ; 0048c634
     PUSH 0x5d3bf0                       ; 0048c635 | = "%s is not a valid boolean actor varia..."
-    PUSH 0x1c3dd10                      ; 0048c63a | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c63a | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c63f
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048c644
@@ -5442,7 +5442,7 @@ section .text
         ;   XREF to: 0048c5f0 (CONDITIONAL_JUMP)  ; LAB_0048c5f0
     LEA EAX,[EBP + 0xffffe666]          ; 0048c65a
     PUSH EAX                            ; 0048c660
-    MOV EAX,[0x006141f0]                ; 0048c661 | g_CEventList_PTR_006141f0
+    MOV EAX,[0x006141f0]                ; 0048c661 | g_CEventListPtr
     PUSH EAX                            ; 0048c666
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0048c667
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -5465,7 +5465,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x10]        ; 0048c695
     INC AL                              ; 0048c698
     AND EAX,0xff                        ; 0048c69a
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c69f | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c69f | g_CharacterClassificationTable
     JNZ 0x0048c82c                      ; 0048c6a6
         ;   XREF to: 0048c82c (CONDITIONAL_JUMP)  ; LAB_0048c82c
     LEA EAX,[EBX + 0x10]                ; 0048c6ac
@@ -5474,7 +5474,7 @@ section .text
     XOR ECX,ECX                         ; 0048c6b1
     INC BL                              ; 0048c6b3
     MOV CL,BL                           ; 0048c6b5
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c6b7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c6b7 | g_CharacterClassificationTable
     JZ 0x0048c6c3                       ; 0048c6be
         ;   XREF to: 0048c6c3 (CONDITIONAL_JUMP)  ; LAB_0048c6c3
     INC EAX                             ; 0048c6c0
@@ -5519,7 +5519,7 @@ section .text
         ;   Label: LAB_0048c71e
     INC AL                              ; 0048c721
     AND EAX,0xff                        ; 0048c723
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c728 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c728 | g_CharacterClassificationTable
     JNZ 0x0048c779                      ; 0048c72f
         ;   XREF to: 0048c779 (CONDITIONAL_JUMP)  ; LAB_0048c779
     LEA EAX,[ESI + EBX*0x1]             ; 0048c731
@@ -5530,7 +5530,7 @@ section .text
         ;   Label: LAB_0048c73a
     INC AL                              ; 0048c73c
     AND EAX,0xff                        ; 0048c73e
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c743 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c743 | g_CharacterClassificationTable
     JZ 0x0048c781                       ; 0048c74a
         ;   XREF to: 0048c781 (CONDITIONAL_JUMP)  ; LAB_0048c781
     PUSH EBX                            ; 0048c74c
@@ -5544,7 +5544,7 @@ section .text
         ;   XREF to: 0048c73a (UNCONDITIONAL_JUMP)  ; LAB_0048c73a
     PUSH 0x5d3c3d                       ; 0048c75a | = "Error parsing setCameraAmbient parms"
         ;   Label: LAB_0048c75a
-    PUSH 0x1c3dd10                      ; 0048c75f | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c75f | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c764
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c769
@@ -5603,7 +5603,7 @@ section .text
         ;   Label: LAB_0048c7de
     PUSH EAX                            ; 0048c7e4
     PUSH 0x5d3c62                       ; 0048c7e5 | = "Camera \"%s\" does not exist."
-    PUSH 0x1c3dd10                      ; 0048c7ea | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c7ea | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c7ef
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048c7f4
@@ -5619,7 +5619,7 @@ section .text
     FLD float ptr [EBP + 0x6a]          ; 0048c807
     FSTP double ptr [ESP]               ; 0048c80a
     PUSH 0x5d3c7e                       ; 0048c80d | = "Ambient value %g is out of range (1....."
-    PUSH 0x1c3dd10                      ; 0048c812 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c812 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c817
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048c81c
@@ -5643,7 +5643,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xa]         ; 0048c844
     INC AL                              ; 0048c847
     AND EAX,0xff                        ; 0048c849
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c84e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048c84e | g_CharacterClassificationTable
     JNZ 0x0048c9f9                      ; 0048c855
         ;   XREF to: 0048c9f9 (CONDITIONAL_JUMP)  ; LAB_0048c9f9
     LEA EAX,[EBX + 0xa]                 ; 0048c85b
@@ -5652,7 +5652,7 @@ section .text
     XOR ECX,ECX                         ; 0048c860
     INC BL                              ; 0048c862
     MOV CL,BL                           ; 0048c864
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c866 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c866 | g_CharacterClassificationTable
     JZ 0x0048c872                       ; 0048c86d
         ;   XREF to: 0048c872 (CONDITIONAL_JUMP)  ; LAB_0048c872
     INC EAX                             ; 0048c86f
@@ -5694,7 +5694,7 @@ section .text
         ;   Label: LAB_0048c8c5
     INC AL                              ; 0048c8c8
     AND EAX,0xff                        ; 0048c8ca
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c8cf | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c8cf | g_CharacterClassificationTable
     JNZ 0x0048c920                      ; 0048c8d6
         ;   XREF to: 0048c920 (CONDITIONAL_JUMP)  ; LAB_0048c920
     LEA EAX,[ESI + EBX*0x1]             ; 0048c8d8
@@ -5705,7 +5705,7 @@ section .text
         ;   Label: LAB_0048c8e1
     INC AL                              ; 0048c8e3
     AND EAX,0xff                        ; 0048c8e5
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c8ea | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048c8ea | g_CharacterClassificationTable
     JZ 0x0048c928                       ; 0048c8f1
         ;   XREF to: 0048c928 (CONDITIONAL_JUMP)  ; LAB_0048c928
     PUSH EBX                            ; 0048c8f3
@@ -5719,7 +5719,7 @@ section .text
         ;   XREF to: 0048c8e1 (UNCONDITIONAL_JUMP)  ; LAB_0048c8e1
     PUSH 0x5d3cbe                       ; 0048c901 | = "Error parsing setCounter arguments"
         ;   Label: LAB_0048c901
-    PUSH 0x1c3dd10                      ; 0048c906 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c906 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c90b
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c910
@@ -5791,7 +5791,7 @@ section .text
     XOR ECX,ECX                         ; 0048c9a1
     INC BL                              ; 0048c9a3
     MOV CL,BL                           ; 0048c9a5
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c9a7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048c9a7 | g_CharacterClassificationTable
     JZ 0x0048c9d2                       ; 0048c9ae
         ;   XREF to: 0048c9d2 (CONDITIONAL_JUMP)  ; LAB_0048c9d2
     INC EAX                             ; 0048c9b0
@@ -5799,7 +5799,7 @@ section .text
         ;   XREF to: 0048c99f (UNCONDITIONAL_JUMP)  ; LAB_0048c99f
     PUSH 0x5d3ce7                       ; 0048c9b3 | = "Error parsing setCounter value argument"
         ;   Label: LAB_0048c9b3
-    PUSH 0x1c3dd10                      ; 0048c9b8 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c9b8 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c9bd
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c9c2
@@ -5816,7 +5816,7 @@ section .text
         ;   XREF to: 0048c935 (UNCONDITIONAL_JUMP)  ; LAB_0048c935
     PUSH 0x5d3d0f                       ; 0048c9da | = "Error parsing setCounter arguments"
         ;   Label: LAB_0048c9da
-    PUSH 0x1c3dd10                      ; 0048c9df | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048c9df | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048c9e4
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048c9e9
@@ -5840,7 +5840,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xc]         ; 0048ca11
     INC AL                              ; 0048ca14
     AND EAX,0xff                        ; 0048ca16
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048ca1b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048ca1b | g_CharacterClassificationTable
     JNZ 0x0048cc46                      ; 0048ca22
         ;   XREF to: 0048cc46 (CONDITIONAL_JUMP)  ; LAB_0048cc46
     LEA EAX,[EBX + 0xc]                 ; 0048ca28
@@ -5849,7 +5849,7 @@ section .text
     XOR ECX,ECX                         ; 0048ca2d
     INC BL                              ; 0048ca2f
     MOV CL,BL                           ; 0048ca31
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048ca33 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048ca33 | g_CharacterClassificationTable
     JZ 0x0048ca3f                       ; 0048ca3a
         ;   XREF to: 0048ca3f (CONDITIONAL_JUMP)  ; LAB_0048ca3f
     INC EAX                             ; 0048ca3c
@@ -5894,7 +5894,7 @@ section .text
     XOR ECX,ECX                         ; 0048ca9c
     INC BL                              ; 0048ca9e
     MOV CL,BL                           ; 0048caa0
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048caa2 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048caa2 | g_CharacterClassificationTable
     JNZ 0x0048caf3                      ; 0048caa9
         ;   XREF to: 0048caf3 (CONDITIONAL_JUMP)  ; LAB_0048caf3
     LEA EAX,[ESI + EDI*0x1]             ; 0048caab
@@ -5905,7 +5905,7 @@ section .text
         ;   Label: LAB_0048cab4
     INC AL                              ; 0048cab6
     AND EAX,0xff                        ; 0048cab8
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cabd | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cabd | g_CharacterClassificationTable
     JZ 0x0048cafb                       ; 0048cac4
         ;   XREF to: 0048cafb (CONDITIONAL_JUMP)  ; LAB_0048cafb
     PUSH EDI                            ; 0048cac6
@@ -5919,7 +5919,7 @@ section .text
         ;   XREF to: 0048cab4 (UNCONDITIONAL_JUMP)  ; LAB_0048cab4
     PUSH 0x5d3d50                       ; 0048cad4 | = "Error parsing setDoorState command parms"
         ;   Label: LAB_0048cad4
-    PUSH 0x1c3dd10                      ; 0048cad9 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048cad9 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048cade
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048cae3
@@ -5957,7 +5957,7 @@ section .text
         ;   Label: LAB_0048cb1f
     INC AL                              ; 0048cb22
     AND EAX,0xff                        ; 0048cb24
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cb29 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cb29 | g_CharacterClassificationTable
     JNZ 0x0048cb5b                      ; 0048cb30
         ;   XREF to: 0048cb5b (CONDITIONAL_JUMP)  ; LAB_0048cb5b
     LEA EAX,[EBX + EDI*0x1]             ; 0048cb32
@@ -5968,7 +5968,7 @@ section .text
         ;   Label: LAB_0048cb3b
     INC AL                              ; 0048cb3d
     AND EAX,0xff                        ; 0048cb3f
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cb44 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cb44 | g_CharacterClassificationTable
     JZ 0x0048cb63                       ; 0048cb4b
         ;   XREF to: 0048cb63 (CONDITIONAL_JUMP)  ; LAB_0048cb63
     PUSH EDI                            ; 0048cb4d
@@ -6001,7 +6001,7 @@ section .text
     TEST EAX,EAX                        ; 0048cb7f
     JZ 0x0048969e                       ; 0048cb81
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048cb87 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048cb87 | g_ActorNameSentinel
     JNZ 0x0048cb94                      ; 0048cb8d
         ;   XREF to: 0048cb94 (CONDITIONAL_JUMP)  ; LAB_0048cb94
     XOR ECX,ECX                         ; 0048cb8f
@@ -6067,7 +6067,7 @@ section .text
         ;   Label: LAB_0048cc20
     PUSH EAX                            ; 0048cc26
     PUSH 0x5d3d95                       ; 0048cc27 | = "Invalid door state '%s'"
-    PUSH 0x1c3dd10                      ; 0048cc2c | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048cc2c | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048cc31
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048cc36
@@ -6091,7 +6091,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xf]         ; 0048cc5e
     INC AL                              ; 0048cc61
     AND EAX,0xff                        ; 0048cc63
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048cc68 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048cc68 | g_CharacterClassificationTable
     JNZ 0x0048cd64                      ; 0048cc6f
         ;   XREF to: 0048cd64 (CONDITIONAL_JUMP)  ; LAB_0048cd64
     LEA EAX,[EBX + 0xf]                 ; 0048cc75
@@ -6100,7 +6100,7 @@ section .text
     XOR ECX,ECX                         ; 0048cc7a
     INC BL                              ; 0048cc7c
     MOV CL,BL                           ; 0048cc7e
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048cc80 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048cc80 | g_CharacterClassificationTable
     JZ 0x0048cc8c                       ; 0048cc87
         ;   XREF to: 0048cc8c (CONDITIONAL_JUMP)  ; LAB_0048cc8c
     INC EAX                             ; 0048cc89
@@ -6155,7 +6155,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d3dc8                       ; 0048cd1a | = "Error parsing setGroupAmbient parms"
         ;   Label: LAB_0048cd1a
-    PUSH 0x1c3dd10                      ; 0048cd1f | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048cd1f | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048cd24
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048cd29
@@ -6171,7 +6171,7 @@ section .text
     FLD float ptr [EBP + 0x82]          ; 0048cd3c
     FSTP double ptr [ESP]               ; 0048cd42
     PUSH 0x5d3dec                       ; 0048cd45 | = "Ambient value %g is out of range (1....."
-    PUSH 0x1c3dd10                      ; 0048cd4a | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048cd4a | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048cd4f
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048cd54
@@ -6195,7 +6195,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x13]        ; 0048cd7c
     INC AL                              ; 0048cd7f
     AND EAX,0xff                        ; 0048cd81
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048cd86 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048cd86 | g_CharacterClassificationTable
     JNZ 0x0048ceff                      ; 0048cd8d
         ;   XREF to: 0048ceff (CONDITIONAL_JUMP)  ; LAB_0048ceff
     LEA EAX,[EBX + 0x13]                ; 0048cd93
@@ -6204,7 +6204,7 @@ section .text
     XOR ECX,ECX                         ; 0048cd98
     INC BL                              ; 0048cd9a
     MOV CL,BL                           ; 0048cd9c
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048cd9e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048cd9e | g_CharacterClassificationTable
     JZ 0x0048cdaa                       ; 0048cda5
         ;   XREF to: 0048cdaa (CONDITIONAL_JUMP)  ; LAB_0048cdaa
     INC EAX                             ; 0048cda7
@@ -6335,7 +6335,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xd]         ; 0048cf17
     INC AL                              ; 0048cf1a
     AND EAX,0xff                        ; 0048cf1c
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048cf21 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048cf21 | g_CharacterClassificationTable
     JNZ 0x0048d11c                      ; 0048cf28
         ;   XREF to: 0048d11c (CONDITIONAL_JUMP)  ; LAB_0048d11c
     LEA EAX,[EBX + 0xd]                 ; 0048cf2e
@@ -6344,7 +6344,7 @@ section .text
     XOR ECX,ECX                         ; 0048cf33
     INC BL                              ; 0048cf35
     MOV CL,BL                           ; 0048cf37
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048cf39 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048cf39 | g_CharacterClassificationTable
     JZ 0x0048cf45                       ; 0048cf40
         ;   XREF to: 0048cf45 (CONDITIONAL_JUMP)  ; LAB_0048cf45
     INC EAX                             ; 0048cf42
@@ -6390,7 +6390,7 @@ section .text
         ;   Label: LAB_0048cfad
     INC AL                              ; 0048cfb0
     AND EAX,0xff                        ; 0048cfb2
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cfb7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cfb7 | g_CharacterClassificationTable
     JNZ 0x0048d008                      ; 0048cfbe
         ;   XREF to: 0048d008 (CONDITIONAL_JUMP)  ; LAB_0048d008
     LEA EAX,[ESI + EBX*0x1]             ; 0048cfc0
@@ -6401,7 +6401,7 @@ section .text
         ;   Label: LAB_0048cfc9
     INC AL                              ; 0048cfcb
     AND EAX,0xff                        ; 0048cfcd
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cfd2 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048cfd2 | g_CharacterClassificationTable
     JZ 0x0048d010                       ; 0048cfd9
         ;   XREF to: 0048d010 (CONDITIONAL_JUMP)  ; LAB_0048d010
     PUSH EBX                            ; 0048cfdb
@@ -6415,7 +6415,7 @@ section .text
         ;   XREF to: 0048cfc9 (UNCONDITIONAL_JUMP)  ; LAB_0048cfc9
     PUSH 0x5d3f21                       ; 0048cfe9 | = "Error parsing setLeverState command p..."
         ;   Label: LAB_0048cfe9
-    PUSH 0x1c3dd10                      ; 0048cfee | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048cfee | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048cff3
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048cff8
@@ -6453,7 +6453,7 @@ section .text
         ;   Label: LAB_0048d034
     INC CL                              ; 0048d037
     AND ECX,0xff                        ; 0048d039
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d03f | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d03f | g_CharacterClassificationTable
     JNZ 0x0048d071                      ; 0048d046
         ;   XREF to: 0048d071 (CONDITIONAL_JUMP)  ; LAB_0048d071
     LEA EAX,[ESI + EBX*0x1]             ; 0048d048
@@ -6464,7 +6464,7 @@ section .text
         ;   Label: LAB_0048d051
     INC AL                              ; 0048d053
     AND EAX,0xff                        ; 0048d055
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d05a | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d05a | g_CharacterClassificationTable
     JZ 0x0048d079                       ; 0048d061
         ;   XREF to: 0048d079 (CONDITIONAL_JUMP)  ; LAB_0048d079
     PUSH EBX                            ; 0048d063
@@ -6497,7 +6497,7 @@ section .text
     TEST EAX,EAX                        ; 0048d096
     JZ 0x0048969e                       ; 0048d098
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048d09e | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048d09e | g_ActorNameSentinel
     JNZ 0x0048d0d1                      ; 0048d0a4
         ;   XREF to: 0048d0d1 (CONDITIONAL_JUMP)  ; LAB_0048d0d1
     LEA EAX,[EBP + 0xfffff85e]          ; 0048d0a6
@@ -6524,7 +6524,7 @@ section .text
         ;   XREF to: 0048d0a6 (CONDITIONAL_JUMP)  ; LAB_0048d0a6
     LEA EAX,[EBP + 0xfffff85e]          ; 0048d0d7
     PUSH EAX                            ; 0048d0dd
-    MOV EAX,[0x006141f0]                ; 0048d0de | g_CEventList_PTR_006141f0
+    MOV EAX,[0x006141f0]                ; 0048d0de | g_CEventListPtr
     PUSH EAX                            ; 0048d0e3
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0048d0e4
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -6564,7 +6564,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xd]         ; 0048d134
     INC AL                              ; 0048d137
     AND EAX,0xff                        ; 0048d139
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d13e | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d13e | g_CharacterClassificationTable
     JNZ 0x0048d335                      ; 0048d145
         ;   XREF to: 0048d335 (CONDITIONAL_JUMP)  ; LAB_0048d335
     LEA EAX,[EBX + 0xd]                 ; 0048d14b
@@ -6573,7 +6573,7 @@ section .text
     XOR ECX,ECX                         ; 0048d150
     INC BL                              ; 0048d152
     MOV CL,BL                           ; 0048d154
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d156 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d156 | g_CharacterClassificationTable
     JZ 0x0048d162                       ; 0048d15d
         ;   XREF to: 0048d162 (CONDITIONAL_JUMP)  ; LAB_0048d162
     INC EAX                             ; 0048d15f
@@ -6619,7 +6619,7 @@ section .text
         ;   Label: LAB_0048d1ca
     INC CL                              ; 0048d1cd
     AND ECX,0xff                        ; 0048d1cf
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d1d5 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d1d5 | g_CharacterClassificationTable
     JNZ 0x0048d226                      ; 0048d1dc
         ;   XREF to: 0048d226 (CONDITIONAL_JUMP)  ; LAB_0048d226
     LEA EAX,[ESI + EBX*0x1]             ; 0048d1de
@@ -6630,7 +6630,7 @@ section .text
         ;   Label: LAB_0048d1e7
     INC AL                              ; 0048d1e9
     AND EAX,0xff                        ; 0048d1eb
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d1f0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d1f0 | g_CharacterClassificationTable
     JZ 0x0048d22e                       ; 0048d1f7
         ;   XREF to: 0048d22e (CONDITIONAL_JUMP)  ; LAB_0048d22e
     PUSH EBX                            ; 0048d1f9
@@ -6644,7 +6644,7 @@ section .text
         ;   XREF to: 0048d1e7 (UNCONDITIONAL_JUMP)  ; LAB_0048d1e7
     PUSH 0x5d3f6a                       ; 0048d207 | = "Error parsing setModelState command p..."
         ;   Label: LAB_0048d207
-    PUSH 0x1c3dd10                      ; 0048d20c | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d20c | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d211
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d216
@@ -6682,7 +6682,7 @@ section .text
         ;   Label: LAB_0048d252
     INC CL                              ; 0048d255
     AND ECX,0xff                        ; 0048d257
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d25d | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d25d | g_CharacterClassificationTable
     JNZ 0x0048d28f                      ; 0048d264
         ;   XREF to: 0048d28f (CONDITIONAL_JUMP)  ; LAB_0048d28f
     LEA EAX,[ESI + EBX*0x1]             ; 0048d266
@@ -6693,7 +6693,7 @@ section .text
         ;   Label: LAB_0048d26f
     INC AL                              ; 0048d271
     AND EAX,0xff                        ; 0048d273
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d278 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d278 | g_CharacterClassificationTable
     JZ 0x0048d297                       ; 0048d27f
         ;   XREF to: 0048d297 (CONDITIONAL_JUMP)  ; LAB_0048d297
     PUSH EBX                            ; 0048d281
@@ -6726,7 +6726,7 @@ section .text
     TEST EAX,EAX                        ; 0048d2b4
     JZ 0x0048969e                       ; 0048d2b6
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048d2bc | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048d2bc | g_ActorNameSentinel
     JZ 0x00489af6                       ; 0048d2c2
         ;   XREF to: 00489af6 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x0                            ; 0048d2c8
@@ -6761,7 +6761,7 @@ section .text
     LEA EAX,[EBX + 0x2514]              ; 0048d30f
     PUSH EAX                            ; 0048d315
     PUSH 0x5d3f94                       ; 0048d316 | = "Model %s does not have state %s"
-    PUSH 0x1c3dd10                      ; 0048d31b | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d31b | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d320
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048d325
@@ -6785,7 +6785,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xb]         ; 0048d34d
     INC AL                              ; 0048d350
     AND EAX,0xff                        ; 0048d352
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d357 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d357 | g_CharacterClassificationTable
     JNZ 0x0048d472                      ; 0048d35e
         ;   XREF to: 0048d472 (CONDITIONAL_JUMP)  ; LAB_0048d472
     LEA EAX,[EBX + 0xb]                 ; 0048d364
@@ -6794,7 +6794,7 @@ section .text
     XOR ECX,ECX                         ; 0048d369
     INC BL                              ; 0048d36b
     MOV CL,BL                           ; 0048d36d
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d36f | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d36f | g_CharacterClassificationTable
     JZ 0x0048d37b                       ; 0048d376
         ;   XREF to: 0048d37b (CONDITIONAL_JUMP)  ; LAB_0048d37b
     INC EAX                             ; 0048d378
@@ -6876,7 +6876,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d3fd7                       ; 0048d446 | = "Error parsing setSunlight command parms"
         ;   Label: LAB_0048d446
-    PUSH 0x1c3dd10                      ; 0048d44b | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d44b | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d450
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d455
@@ -6907,7 +6907,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x8]         ; 0048d48a
     INC AL                              ; 0048d48d
     AND EAX,0xff                        ; 0048d48f
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d494 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d494 | g_CharacterClassificationTable
     JNZ 0x0048d60f                      ; 0048d49b
         ;   XREF to: 0048d60f (CONDITIONAL_JUMP)  ; LAB_0048d60f
     LEA EAX,[EBX + 0x8]                 ; 0048d4a1
@@ -6916,7 +6916,7 @@ section .text
     XOR ECX,ECX                         ; 0048d4a6
     INC BL                              ; 0048d4a8
     MOV CL,BL                           ; 0048d4aa
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d4ac | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d4ac | g_CharacterClassificationTable
     JZ 0x0048d4b8                       ; 0048d4b3
         ;   XREF to: 0048d4b8 (CONDITIONAL_JUMP)  ; LAB_0048d4b8
     INC EAX                             ; 0048d4b5
@@ -6963,7 +6963,7 @@ section .text
     XOR ECX,ECX                         ; 0048d51a
     INC BL                              ; 0048d51c
     MOV CL,BL                           ; 0048d51e
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d520 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d520 | g_CharacterClassificationTable
     JNZ 0x0048d571                      ; 0048d527
         ;   XREF to: 0048d571 (CONDITIONAL_JUMP)  ; LAB_0048d571
     LEA EAX,[ESI + EDI*0x1]             ; 0048d529
@@ -6974,7 +6974,7 @@ section .text
         ;   Label: LAB_0048d532
     INC AL                              ; 0048d534
     AND EAX,0xff                        ; 0048d536
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d53b | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d53b | g_CharacterClassificationTable
     JZ 0x0048d579                       ; 0048d542
         ;   XREF to: 0048d579 (CONDITIONAL_JUMP)  ; LAB_0048d579
     PUSH EDI                            ; 0048d544
@@ -6988,7 +6988,7 @@ section .text
         ;   XREF to: 0048d532 (UNCONDITIONAL_JUMP)  ; LAB_0048d532
     PUSH 0x5d4016                       ; 0048d552 | = "Error parsing setTimer command parms"
         ;   Label: LAB_0048d552
-    PUSH 0x1c3dd10                      ; 0048d557 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d557 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d55c
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d561
@@ -7043,7 +7043,7 @@ section .text
     LEA EAX,[EBP + 0xfffff156]          ; 0048d5ca
     PUSH EAX                            ; 0048d5d0
     PUSH 0x5d403b                       ; 0048d5d1 | = "Timer name \"%s\" is too long, (max %..."
-    PUSH 0x1c3dd10                      ; 0048d5d6 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d5d6 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d5db
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048d5e0
@@ -7056,7 +7056,7 @@ section .text
     RET                                 ; 0048d5ef
     PUSH 0x5d4067                       ; 0048d5f0 | = "Invalid timer duration"
         ;   Label: LAB_0048d5f0
-    PUSH 0x1c3dd10                      ; 0048d5f5 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d5f5 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d5fa
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d5ff
@@ -7080,7 +7080,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xa]         ; 0048d627
     INC AL                              ; 0048d62a
     AND EAX,0xff                        ; 0048d62c
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d631 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d631 | g_CharacterClassificationTable
     JNZ 0x0048d7b5                      ; 0048d638
         ;   XREF to: 0048d7b5 (CONDITIONAL_JUMP)  ; LAB_0048d7b5
     LEA EAX,[EBX + 0xa]                 ; 0048d63e
@@ -7089,7 +7089,7 @@ section .text
     XOR ECX,ECX                         ; 0048d643
     INC BL                              ; 0048d645
     MOV CL,BL                           ; 0048d647
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d649 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d649 | g_CharacterClassificationTable
     JZ 0x0048d655                       ; 0048d650
         ;   XREF to: 0048d655 (CONDITIONAL_JUMP)  ; LAB_0048d655
     INC EAX                             ; 0048d652
@@ -7133,7 +7133,7 @@ section .text
         ;   Label: LAB_0048d6b6
     INC CL                              ; 0048d6b9
     AND ECX,0xff                        ; 0048d6bb
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d6c1 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d6c1 | g_CharacterClassificationTable
     JNZ 0x0048d712                      ; 0048d6c8
         ;   XREF to: 0048d712 (CONDITIONAL_JUMP)  ; LAB_0048d712
     LEA EAX,[ESI + EBX*0x1]             ; 0048d6ca
@@ -7144,7 +7144,7 @@ section .text
         ;   Label: LAB_0048d6d3
     INC AL                              ; 0048d6d5
     AND EAX,0xff                        ; 0048d6d7
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d6dc | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d6dc | g_CharacterClassificationTable
     JZ 0x0048d71a                       ; 0048d6e3
         ;   XREF to: 0048d71a (CONDITIONAL_JUMP)  ; LAB_0048d71a
     PUSH EBX                            ; 0048d6e5
@@ -7158,7 +7158,7 @@ section .text
         ;   XREF to: 0048d6d3 (UNCONDITIONAL_JUMP)  ; LAB_0048d6d3
     PUSH 0x5d4093                       ; 0048d6f3 | = "Error parsing setWeather command parms"
         ;   Label: LAB_0048d6f3
-    PUSH 0x1c3dd10                      ; 0048d6f8 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d6f8 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d6fd
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d702
@@ -7192,7 +7192,7 @@ section .text
     JZ 0x00489af6                       ; 0048d736
         ;   XREF to: 00489af6 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH EAX                            ; 0048d73c
-    MOV EDI,dword ptr [0x0061e8f4]      ; 0048d73d | g_CWeather_PTR_0061e8f4
+    MOV EDI,dword ptr [0x0061e8f4]      ; 0048d73d | g_CWeatherPtr
     PUSH EDI                            ; 0048d743
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0058b470 ; 0048d744
         ;   XREF to: 0058b470 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0058b470(CWeather * this_ptr, EWeatherType type)
@@ -7229,7 +7229,7 @@ section .text
         ;   Label: LAB_0048d78f
     PUSH EAX                            ; 0048d795
     PUSH 0x5d40c9                       ; 0048d796 | = "Invalid weather type: %s"
-    PUSH 0x1c3dd10                      ; 0048d79b | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d79b | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d7a0
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048d7a5
@@ -7253,7 +7253,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xb]         ; 0048d7cd
     INC AL                              ; 0048d7d0
     AND EAX,0xff                        ; 0048d7d2
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d7d7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d7d7 | g_CharacterClassificationTable
     JNZ 0x0048d89d                      ; 0048d7de
         ;   XREF to: 0048d89d (CONDITIONAL_JUMP)  ; LAB_0048d89d
     LEA EAX,[EBX + 0xb]                 ; 0048d7e4
@@ -7262,7 +7262,7 @@ section .text
     XOR ECX,ECX                         ; 0048d7e9
     INC BL                              ; 0048d7eb
     MOV CL,BL                           ; 0048d7ed
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d7ef | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d7ef | g_CharacterClassificationTable
     JZ 0x0048d7fb                       ; 0048d7f6
         ;   XREF to: 0048d7fb (CONDITIONAL_JUMP)  ; LAB_0048d7fb
     INC EAX                             ; 0048d7f8
@@ -7311,7 +7311,7 @@ section .text
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5d4103                       ; 0048d87e | = "Error parsing shakeScreen command parms"
         ;   Label: LAB_0048d87e
-    PUSH 0x1c3dd10                      ; 0048d883 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d883 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d888
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d88d
@@ -7335,7 +7335,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x11]        ; 0048d8b5
     INC AL                              ; 0048d8b8
     AND EAX,0xff                        ; 0048d8ba
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d8bf | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048d8bf | g_CharacterClassificationTable
     JNZ 0x0048dacc                      ; 0048d8c6
         ;   XREF to: 0048dacc (CONDITIONAL_JUMP)  ; LAB_0048dacc
     LEA EAX,[EBX + 0x11]                ; 0048d8cc
@@ -7344,7 +7344,7 @@ section .text
     XOR ECX,ECX                         ; 0048d8d1
     INC BL                              ; 0048d8d3
     MOV CL,BL                           ; 0048d8d5
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d8d7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048d8d7 | g_CharacterClassificationTable
     JZ 0x0048d8e3                       ; 0048d8de
         ;   XREF to: 0048d8e3 (CONDITIONAL_JUMP)  ; LAB_0048d8e3
     INC EAX                             ; 0048d8e0
@@ -7390,7 +7390,7 @@ section .text
         ;   Label: LAB_0048d94b
     INC AL                              ; 0048d94e
     AND EAX,0xff                        ; 0048d950
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d955 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d955 | g_CharacterClassificationTable
     JNZ 0x0048d9a6                      ; 0048d95c
         ;   XREF to: 0048d9a6 (CONDITIONAL_JUMP)  ; LAB_0048d9a6
     LEA EAX,[ESI + EBX*0x1]             ; 0048d95e
@@ -7401,7 +7401,7 @@ section .text
         ;   Label: LAB_0048d967
     INC AL                              ; 0048d969
     AND EAX,0xff                        ; 0048d96b
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d970 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d970 | g_CharacterClassificationTable
     JZ 0x0048d9ae                       ; 0048d977
         ;   XREF to: 0048d9ae (CONDITIONAL_JUMP)  ; LAB_0048d9ae
     PUSH EBX                            ; 0048d979
@@ -7415,7 +7415,7 @@ section .text
         ;   XREF to: 0048d967 (UNCONDITIONAL_JUMP)  ; LAB_0048d967
     PUSH 0x5d414e                       ; 0048d987 | = "Error parsing slamModelToMotion comma..."
         ;   Label: LAB_0048d987
-    PUSH 0x1c3dd10                      ; 0048d98c | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048d98c | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048d991
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d996
@@ -7453,7 +7453,7 @@ section .text
         ;   Label: LAB_0048d9d2
     INC AL                              ; 0048d9d5
     AND EAX,0xff                        ; 0048d9d7
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d9dc | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d9dc | g_CharacterClassificationTable
     JNZ 0x0048da0e                      ; 0048d9e3
         ;   XREF to: 0048da0e (CONDITIONAL_JUMP)  ; LAB_0048da0e
     LEA EAX,[ESI + EBX*0x1]             ; 0048d9e5
@@ -7464,7 +7464,7 @@ section .text
         ;   Label: LAB_0048d9ee
     INC AL                              ; 0048d9f0
     AND EAX,0xff                        ; 0048d9f2
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d9f7 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048d9f7 | g_CharacterClassificationTable
     JZ 0x0048da16                       ; 0048d9fe
         ;   XREF to: 0048da16 (CONDITIONAL_JUMP)  ; LAB_0048da16
     PUSH EBX                            ; 0048da00
@@ -7497,7 +7497,7 @@ section .text
     TEST EAX,EAX                        ; 0048da33
     JZ 0x0048969e                       ; 0048da35
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048da3b | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048da3b | g_ActorNameSentinel
     JZ 0x00489af6                       ; 0048da41
         ;   XREF to: 00489af6 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x0                            ; 0048da47
@@ -7543,7 +7543,7 @@ section .text
     LEA EAX,[EBX + 0x2514]              ; 0048daa6
     PUSH EAX                            ; 0048daac
     PUSH 0x5d417c                       ; 0048daad | = "Model %s does not have motion %s"
-    PUSH 0x1c3dd10                      ; 0048dab2 | g_CHAR_ARRAY_01c3dd10
+    PUSH 0x1c3dd10                      ; 0048dab2 | g_EventErrorMessageBuffer
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0048dab7
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048dabc
@@ -7567,7 +7567,7 @@ section .text
     MOV AL,byte ptr [EBX + 0xc]         ; 0048dae4
     INC AL                              ; 0048dae7
     AND EAX,0xff                        ; 0048dae9
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048daee | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048daee | g_CharacterClassificationTable
     JNZ 0x0048dc96                      ; 0048daf5
         ;   XREF to: 0048dc96 (CONDITIONAL_JUMP)  ; LAB_0048dc96
     LEA EAX,[EBX + 0xc]                 ; 0048dafb
@@ -7576,7 +7576,7 @@ section .text
     XOR ECX,ECX                         ; 0048db00
     INC BL                              ; 0048db02
     MOV CL,BL                           ; 0048db04
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048db06 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048db06 | g_CharacterClassificationTable
     JZ 0x0048db12                       ; 0048db0d
         ;   XREF to: 0048db12 (CONDITIONAL_JUMP)  ; LAB_0048db12
     INC EAX                             ; 0048db0f
@@ -7585,10 +7585,10 @@ section .text
     MOV ECX,0xffffffff                  ; 0048db12
         ;   Label: LAB_0048db12
     LEA EDI,[EBP + 0xfffffe3a]          ; 0048db17
-    MOV ESI,0x614350                    ; 0048db1d | g_CHAR_ARRAY_00614350
+    MOV ESI,0x614350                    ; 0048db1d | g_DefaultCommandArg
     MOV dword ptr [EBP + 0xd6],ECX      ; 0048db22
     MOV ECX,0x19                        ; 0048db28
-    MOVSD.REP ES:EDI,ESI                ; 0048db2d | g_CHAR_ARRAY_00614350 | g_CHAR_ARRAY_00614350+4
+    MOVSD.REP ES:EDI,ESI                ; 0048db2d | g_DefaultCommandArg | g_DefaultCommandArg+4
     LEA ECX,[EBP + 0xd6]                ; 0048db2f
     PUSH ECX                            ; 0048db35
     LEA ECX,[EBP + 0xfffffe3a]          ; 0048db36
@@ -7610,7 +7610,7 @@ section .text
     XOR ECX,ECX                         ; 0048db60
     INC BL                              ; 0048db62
     MOV CL,BL                           ; 0048db64
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048db66 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048db66 | g_CharacterClassificationTable
     JZ 0x0048db8a                       ; 0048db6d
         ;   XREF to: 0048db8a (CONDITIONAL_JUMP)  ; LAB_0048db8a
     INC EAX                             ; 0048db6f
@@ -7702,7 +7702,7 @@ section .text
     XOR ECX,ECX                         ; 0048dc4c
     INC BL                              ; 0048dc4e
     MOV CL,BL                           ; 0048dc50
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048dc52 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048dc52 | g_CharacterClassificationTable
     JZ 0x0048dc76                       ; 0048dc59
         ;   XREF to: 0048dc76 (CONDITIONAL_JUMP)  ; LAB_0048dc76
     INC EAX                             ; 0048dc5b
@@ -7747,7 +7747,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x15]        ; 0048dcae
     INC AL                              ; 0048dcb1
     AND EAX,0xff                        ; 0048dcb3
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048dcb8 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048dcb8 | g_CharacterClassificationTable
     JNZ 0x0048ddfa                      ; 0048dcbf
         ;   XREF to: 0048ddfa (CONDITIONAL_JUMP)  ; LAB_0048ddfa
     LEA EAX,[EBX + 0x15]                ; 0048dcc5
@@ -7756,7 +7756,7 @@ section .text
     XOR ECX,ECX                         ; 0048dcca
     INC BL                              ; 0048dccc
     MOV CL,BL                           ; 0048dcce
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048dcd0 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048dcd0 | g_CharacterClassificationTable
     JZ 0x0048dcdc                       ; 0048dcd7
         ;   XREF to: 0048dcdc (CONDITIONAL_JUMP)  ; LAB_0048dcdc
     INC EAX                             ; 0048dcd9
@@ -7798,7 +7798,7 @@ section .text
         ;   Label: LAB_0048dd38
     INC AL                              ; 0048dd3b
     AND EAX,0xff                        ; 0048dd3d
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048dd42 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048dd42 | g_CharacterClassificationTable
     JNZ 0x0048dd8c                      ; 0048dd49
         ;   XREF to: 0048dd8c (CONDITIONAL_JUMP)  ; LAB_0048dd8c
     LEA EAX,[ESI + EBX*0x1]             ; 0048dd4b
@@ -7809,7 +7809,7 @@ section .text
         ;   Label: LAB_0048dd54
     INC AL                              ; 0048dd56
     AND EAX,0xff                        ; 0048dd58
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048dd5d | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048dd5d | g_CharacterClassificationTable
     JZ 0x0048dd94                       ; 0048dd64
         ;   XREF to: 0048dd94 (CONDITIONAL_JUMP)  ; LAB_0048dd94
     PUSH EBX                            ; 0048dd66
@@ -7840,7 +7840,7 @@ section .text
         ;   XREF to: 0048dd38 (CONDITIONAL_JUMP)  ; LAB_0048dd38
     JMP 0x0048dd4b                      ; 0048dd92
         ;   XREF to: 0048dd4b (UNCONDITIONAL_JUMP)  ; LAB_0048dd4b
-    CMP dword ptr [0x01c3dd0c],0x0      ; 0048dd94 | g_INT_01c3dd0c
+    CMP dword ptr [0x01c3dd0c],0x0      ; 0048dd94 | g_EventDryRun
         ;   Label: LAB_0048dd94
     JZ 0x0048dddf                       ; 0048dd9b
         ;   XREF to: 0048dddf (CONDITIONAL_JUMP)  ; LAB_0048dddf
@@ -7893,7 +7893,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x6]         ; 0048de12
     INC AL                              ; 0048de15
     AND EAX,0xff                        ; 0048de17
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048de1c | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0048de1c | g_CharacterClassificationTable
     JNZ 0x0048e26c                      ; 0048de23
         ;   XREF to: 0048e26c (CONDITIONAL_JUMP)  ; LAB_0048e26c
     LEA EAX,[EBX + 0x6]                 ; 0048de29
@@ -7902,7 +7902,7 @@ section .text
     XOR ECX,ECX                         ; 0048de2e
     INC BL                              ; 0048de30
     MOV CL,BL                           ; 0048de32
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048de34 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048de34 | g_CharacterClassificationTable
     JZ 0x0048de40                       ; 0048de3b
         ;   XREF to: 0048de40 (CONDITIONAL_JUMP)  ; LAB_0048de40
     INC EAX                             ; 0048de3d
@@ -7945,7 +7945,7 @@ section .text
         ;   Label: LAB_0048dea0
     INC AL                              ; 0048dea3
     AND EAX,0xff                        ; 0048dea5
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048deaa | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048deaa | g_CharacterClassificationTable
     JNZ 0x0048def4                      ; 0048deb1
         ;   XREF to: 0048def4 (CONDITIONAL_JUMP)  ; LAB_0048def4
     LEA EAX,[EBX + EDI*0x1]             ; 0048deb3
@@ -7956,7 +7956,7 @@ section .text
         ;   Label: LAB_0048debc
     INC AL                              ; 0048debe
     AND EAX,0xff                        ; 0048dec0
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048dec5 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048dec5 | g_CharacterClassificationTable
     JZ 0x0048defc                       ; 0048decc
         ;   XREF to: 0048defc (CONDITIONAL_JUMP)  ; LAB_0048defc
     PUSH EDI                            ; 0048dece
@@ -8006,7 +8006,7 @@ section .text
         ;   Label: LAB_0048df20
     INC AL                              ; 0048df23
     AND EAX,0xff                        ; 0048df25
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048df2a | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048df2a | g_CharacterClassificationTable
     JNZ 0x0048df5c                      ; 0048df31
         ;   XREF to: 0048df5c (CONDITIONAL_JUMP)  ; LAB_0048df5c
     LEA EAX,[EBX + EDI*0x1]             ; 0048df33
@@ -8017,7 +8017,7 @@ section .text
         ;   Label: LAB_0048df3c
     INC AL                              ; 0048df3e
     AND EAX,0xff                        ; 0048df40
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048df45 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0048df45 | g_CharacterClassificationTable
     JZ 0x0048df64                       ; 0048df4c
         ;   XREF to: 0048df64 (CONDITIONAL_JUMP)  ; LAB_0048df64
     PUSH EDI                            ; 0048df4e
@@ -8045,7 +8045,7 @@ section .text
     XOR ECX,ECX                         ; 0048df6f
     INC BL                              ; 0048df71
     MOV CL,BL                           ; 0048df73
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048df75 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 0048df75 | g_CharacterClassificationTable
     JZ 0x0048df81                       ; 0048df7c
         ;   XREF to: 0048df81 (CONDITIONAL_JUMP)  ; LAB_0048df81
     INC EAX                             ; 0048df7e
@@ -8065,7 +8065,7 @@ section .text
     TEST EAX,EAX                        ; 0048dfa0
     JZ 0x0048969e                       ; 0048dfa2
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048dfa8 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048dfa8 | g_ActorNameSentinel
     JNZ 0x0048e0fd                      ; 0048dfae
         ;   XREF to: 0048e0fd (CONDITIONAL_JUMP)  ; LAB_0048e0fd
     XOR ESI,ESI                         ; 0048dfb4
@@ -8261,7 +8261,7 @@ section .text
     TEST EAX,EAX                        ; 0048e1e1
     JZ 0x0048969e                       ; 0048e1e3
         ;   XREF to: 0048969e (CONDITIONAL_JUMP)  ; LAB_0048969e
-    CMP EAX,dword ptr [0x005f61e4]      ; 0048e1e9 | g_CDemonActor_PTR_005f61e4
+    CMP EAX,dword ptr [0x005f61e4]      ; 0048e1e9 | g_ActorNameSentinel
     JNZ 0x0048e211                      ; 0048e1ef
         ;   XREF to: 0048e211 (CONDITIONAL_JUMP)  ; LAB_0048e211
     XOR ECX,ECX                         ; 0048e1f1

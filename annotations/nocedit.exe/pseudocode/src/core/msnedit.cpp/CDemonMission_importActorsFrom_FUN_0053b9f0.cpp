@@ -40,9 +40,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
   }
   shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&CStack_448.base);
   iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    (&CStack_448,"Choose type of actor to create",INT_00680648,0);
+                    (&CStack_448,"Choose type of actor to create",g_LastImportActorTypeChoice,0);
   if (-1 < iVar3) {
-    INT_00680648 = iVar3;
+    g_LastImportActorTypeChoice = iVar3;
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar3);
     _sprintf(local_a0,"C%s",pcVar2);
     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);

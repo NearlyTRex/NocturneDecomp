@@ -28,28 +28,28 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_00507c70(int rot_x,int r
   int iVar17;
   int iVar18;
   
-  iVar5 = g_INT_01d1dd74;
-  g_INT_ARRAY_01d1dee0[g_INT_01d1dd74] = g_INT_01c51d2c;
-  g_INT_ARRAY_01d1df08[iVar5] = g_INT_01c51d30;
-  g_INT_ARRAY_01d1df30[iVar5] = g_INT_01c51d34;
-  g_INT_ARRAY_01d1df58[iVar5] = g_INT_01c51d50;
-  g_INT_ARRAY_01d1df80[iVar5] = g_INT_01c51d54;
-  g_INT_ARRAY_01d1dfa8[iVar5] = g_INT_01c51d58;
-  g_INT_ARRAY_01d1dd78[iVar5] = g_INT_01c51d5c;
-  g_INT_ARRAY_01d1dda0[iVar5] = g_INT_01c51d60;
-  g_INT_ARRAY_01d1ddc8[iVar5] = g_INT_01c51d64;
-  g_INT_ARRAY_01d1ddf0[iVar5] = g_INT_01c51d68;
-  g_INT_ARRAY_01d1de18[iVar5] = g_INT_01c51d6c;
-  g_INT_ARRAY_01d1de40[iVar5] = g_INT_01c51d70;
-  g_INT_ARRAY_01d1de68[iVar5] = g_INT_01c51d74;
-  g_INT_ARRAY_01d1de90[iVar5] = g_INT_01c51d78;
-  g_INT_ARRAY_01d1deb8[iVar5] = g_INT_01c51d7c;
-  iVar2 = g_INT_01c51d2c - translate_x;
-  iVar3 = g_INT_01c51d30 - translate_y;
-  iVar4 = g_INT_01c51d34 - translate_z;
-  g_UINT_01d1dd68 = rot_y;
-  g_UINT_01d1dd6c = rot_z;
-  g_UINT_01d1dd64 = rot_x;
+  iVar5 = g_MatrixStackIndex;
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
+  g_MatrixStack_RelY[iVar5] = g_RelativeY;
+  g_MatrixStack_RelZ[iVar5] = g_RelativeZ;
+  g_MatrixStack_Unk1[iVar5] = g_LightDirectionX;
+  g_MatrixStack_Unk2[iVar5] = g_LightDirectionY;
+  g_MatrixStack_Unk3[iVar5] = g_LightDirectionZ;
+  g_MatrixStack_M00[iVar5] = g_INT_01c51d5c;
+  g_MatrixStack_M01[iVar5] = g_INT_01c51d60;
+  g_MatrixStack_M02[iVar5] = g_INT_01c51d64;
+  g_MatrixStack_M10[iVar5] = g_INT_01c51d68;
+  g_MatrixStack_M11[iVar5] = g_INT_01c51d6c;
+  g_MatrixStack_M12[iVar5] = g_INT_01c51d70;
+  g_MatrixStack_M20[iVar5] = g_INT_01c51d74;
+  g_MatrixStack_M21[iVar5] = g_INT_01c51d78;
+  g_MatrixStack_M22[iVar5] = g_INT_01c51d7c;
+  iVar2 = g_RelativeX - translate_x;
+  iVar3 = g_RelativeY - translate_y;
+  iVar4 = g_RelativeZ - translate_z;
+  g_SavedRotationY = rot_y;
+  g_SavedRotationZ = rot_z;
+  g_SavedRotationX = rot_x;
   iVar5 = iVar2;
   iVar6 = iVar3;
   if ((rot_x != 0 || rot_y != 0) || rot_z != 0) {
@@ -96,125 +96,125 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_00507c70(int rot_x,int r
             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     uVar15 = (uint)((longlong)iVar6 * (longlong)iVar10) >> 0x10 |
              (int)((ulonglong)((longlong)iVar6 * (longlong)iVar10) >> 0x20) << 0x10;
-    g_INT_01c51d50 =
-         ((uint)((longlong)iVar16 * (longlong)g_INT_ARRAY_01d1df58[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar16 * (longlong)g_INT_ARRAY_01d1df58[g_INT_01d1dd74]) >>
+    g_LightDirectionX =
+         ((uint)((longlong)iVar16 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar16 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
               0x20) << 0x10) +
-         ((uint)((longlong)(int)uVar12 * (longlong)g_INT_ARRAY_01d1df80[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)(int)uVar12 * (longlong)g_INT_ARRAY_01d1df80[g_INT_01d1dd74])
+         ((uint)((longlong)(int)uVar12 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)(int)uVar12 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex])
               >> 0x20) << 0x10) +
-         ((uint)((longlong)iVar18 * (longlong)g_INT_ARRAY_01d1dfa8[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar18 * (longlong)g_INT_ARRAY_01d1dfa8[g_INT_01d1dd74]) >>
+         ((uint)((longlong)iVar18 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar18 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >>
               0x20) << 0x10);
-    g_INT_01c51d54 =
-         ((uint)((longlong)iVar17 * (longlong)g_INT_ARRAY_01d1df58[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar17 * (longlong)g_INT_ARRAY_01d1df58[g_INT_01d1dd74]) >>
+    g_LightDirectionY =
+         ((uint)((longlong)iVar17 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar17 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
               0x20) << 0x10) +
-         ((uint)((longlong)(int)uVar13 * (longlong)g_INT_ARRAY_01d1df80[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)(int)uVar13 * (longlong)g_INT_ARRAY_01d1df80[g_INT_01d1dd74])
+         ((uint)((longlong)(int)uVar13 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)(int)uVar13 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex])
               >> 0x20) << 0x10) +
-         ((uint)((longlong)iVar7 * (longlong)g_INT_ARRAY_01d1dfa8[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar7 * (longlong)g_INT_ARRAY_01d1dfa8[g_INT_01d1dd74]) >> 0x20
-              ) << 0x10);
-    g_INT_01c51d58 =
-         ((uint)((longlong)(int)uVar11 * (longlong)g_INT_ARRAY_01d1df58[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)(int)uVar11 * (longlong)g_INT_ARRAY_01d1df58[g_INT_01d1dd74])
+         ((uint)((longlong)iVar7 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar7 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >>
+              0x20) << 0x10);
+    g_LightDirectionZ =
+         ((uint)((longlong)(int)uVar11 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)(int)uVar11 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex])
               >> 0x20) << 0x10) +
-         ((uint)((longlong)iVar14 * (longlong)g_INT_ARRAY_01d1df80[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar14 * (longlong)g_INT_ARRAY_01d1df80[g_INT_01d1dd74]) >>
+         ((uint)((longlong)iVar14 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar14 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >>
               0x20) << 0x10) +
-         ((uint)((longlong)(int)uVar15 * (longlong)g_INT_ARRAY_01d1dfa8[g_INT_01d1dd74]) >> 0x10 |
-         (int)((ulonglong)((longlong)(int)uVar15 * (longlong)g_INT_ARRAY_01d1dfa8[g_INT_01d1dd74])
+         ((uint)((longlong)(int)uVar15 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
+         (int)((ulonglong)((longlong)(int)uVar15 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex])
               >> 0x20) << 0x10);
     g_INT_01c51d5c =
-         ((uint)((longlong)g_INT_ARRAY_01d1dd78[g_INT_01d1dd74] * (longlong)iVar16) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1dd78[g_INT_01d1dd74] * (longlong)iVar16) >>
+         ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar16) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar16) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1ddf0[g_INT_01d1dd74] * (longlong)(int)uVar12) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1ddf0[g_INT_01d1dd74] * (longlong)(int)uVar12)
+         ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar12) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar12)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de68[g_INT_01d1dd74] * (longlong)iVar18) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de68[g_INT_01d1dd74] * (longlong)iVar18) >>
+         ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar18) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar18) >>
               0x20) << 0x10);
     g_INT_01c51d60 =
-         ((uint)((longlong)g_INT_ARRAY_01d1dda0[g_INT_01d1dd74] * (longlong)iVar16) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1dda0[g_INT_01d1dd74] * (longlong)iVar16) >>
+         ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar16) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar16) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de18[g_INT_01d1dd74] * (longlong)(int)uVar12) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de18[g_INT_01d1dd74] * (longlong)(int)uVar12)
+         ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar12) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar12)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de90[g_INT_01d1dd74] * (longlong)iVar18) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de90[g_INT_01d1dd74] * (longlong)iVar18) >>
+         ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar18) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar18) >>
               0x20) << 0x10);
     g_INT_01c51d64 =
-         ((uint)((longlong)g_INT_ARRAY_01d1ddc8[g_INT_01d1dd74] * (longlong)iVar16) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1ddc8[g_INT_01d1dd74] * (longlong)iVar16) >>
+         ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar16) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar16) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de40[g_INT_01d1dd74] * (longlong)(int)uVar12) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de40[g_INT_01d1dd74] * (longlong)(int)uVar12)
+         ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar12) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar12)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1deb8[g_INT_01d1dd74] * (longlong)iVar18) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1deb8[g_INT_01d1dd74] * (longlong)iVar18) >>
+         ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar18) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar18) >>
               0x20) << 0x10);
     g_INT_01c51d68 =
-         ((uint)((longlong)g_INT_ARRAY_01d1dd78[g_INT_01d1dd74] * (longlong)iVar17) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1dd78[g_INT_01d1dd74] * (longlong)iVar17) >>
+         ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar17) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar17) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1ddf0[g_INT_01d1dd74] * (longlong)(int)uVar13) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1ddf0[g_INT_01d1dd74] * (longlong)(int)uVar13)
+         ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar13) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar13)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de68[g_INT_01d1dd74] * (longlong)iVar7) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de68[g_INT_01d1dd74] * (longlong)iVar7) >> 0x20
-              ) << 0x10);
+         ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar7) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar7) >>
+              0x20) << 0x10);
     g_INT_01c51d6c =
-         ((uint)((longlong)g_INT_ARRAY_01d1dda0[g_INT_01d1dd74] * (longlong)iVar17) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1dda0[g_INT_01d1dd74] * (longlong)iVar17) >>
+         ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar17) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar17) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de18[g_INT_01d1dd74] * (longlong)(int)uVar13) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de18[g_INT_01d1dd74] * (longlong)(int)uVar13)
+         ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar13) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar13)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de90[g_INT_01d1dd74] * (longlong)iVar7) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de90[g_INT_01d1dd74] * (longlong)iVar7) >> 0x20
-              ) << 0x10);
+         ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar7) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar7) >>
+              0x20) << 0x10);
     g_INT_01c51d70 =
-         ((uint)((longlong)g_INT_ARRAY_01d1ddc8[g_INT_01d1dd74] * (longlong)iVar17) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1ddc8[g_INT_01d1dd74] * (longlong)iVar17) >>
+         ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar17) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar17) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de40[g_INT_01d1dd74] * (longlong)(int)uVar13) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de40[g_INT_01d1dd74] * (longlong)(int)uVar13)
+         ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar13) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar13)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1deb8[g_INT_01d1dd74] * (longlong)iVar7) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1deb8[g_INT_01d1dd74] * (longlong)iVar7) >> 0x20
-              ) << 0x10);
+         ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar7) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar7) >>
+              0x20) << 0x10);
     g_INT_01c51d74 =
-         ((uint)((longlong)g_INT_ARRAY_01d1dd78[g_INT_01d1dd74] * (longlong)(int)uVar11) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1dd78[g_INT_01d1dd74] * (longlong)(int)uVar11)
+         ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)(int)uVar11) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)(int)uVar11)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1ddf0[g_INT_01d1dd74] * (longlong)iVar14) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1ddf0[g_INT_01d1dd74] * (longlong)iVar14) >>
+         ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)iVar14) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de68[g_INT_01d1dd74] * (longlong)(int)uVar15) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de68[g_INT_01d1dd74] * (longlong)(int)uVar15)
+         ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)(int)uVar15) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)(int)uVar15)
               >> 0x20) << 0x10);
     g_INT_01c51d78 =
-         ((uint)((longlong)g_INT_ARRAY_01d1dda0[g_INT_01d1dd74] * (longlong)(int)uVar11) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1dda0[g_INT_01d1dd74] * (longlong)(int)uVar11)
+         ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)(int)uVar11) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)(int)uVar11)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de18[g_INT_01d1dd74] * (longlong)iVar14) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de18[g_INT_01d1dd74] * (longlong)iVar14) >>
+         ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)iVar14) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de90[g_INT_01d1dd74] * (longlong)(int)uVar15) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de90[g_INT_01d1dd74] * (longlong)(int)uVar15)
+         ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)(int)uVar15) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)(int)uVar15)
               >> 0x20) << 0x10);
     g_INT_01c51d7c =
-         ((uint)((longlong)g_INT_ARRAY_01d1ddc8[g_INT_01d1dd74] * (longlong)(int)uVar11) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1ddc8[g_INT_01d1dd74] * (longlong)(int)uVar11)
+         ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)(int)uVar11) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)(int)uVar11)
               >> 0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1de40[g_INT_01d1dd74] * (longlong)iVar14) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1de40[g_INT_01d1dd74] * (longlong)iVar14) >>
+         ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)iVar14) >>
               0x20) << 0x10) +
-         ((uint)((longlong)g_INT_ARRAY_01d1deb8[g_INT_01d1dd74] * (longlong)(int)uVar15) >> 0x10 |
-         (int)((ulonglong)((longlong)g_INT_ARRAY_01d1deb8[g_INT_01d1dd74] * (longlong)(int)uVar15)
+         ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)(int)uVar15) >> 0x10 |
+         (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)(int)uVar15)
               >> 0x20) << 0x10);
     iVar5 = ((uint)((longlong)iVar16 * (longlong)iVar2) >> 0x10 |
             (int)((ulonglong)((longlong)iVar16 * (longlong)iVar2) >> 0x20) << 0x10) +
@@ -235,11 +235,11 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_00507c70(int rot_x,int r
             ((uint)((longlong)(int)uVar15 * (longlong)iVar4) >> 0x10 |
             (int)((ulonglong)((longlong)(int)uVar15 * (longlong)iVar4) >> 0x20) << 0x10);
   }
-  g_INT_01c51d34 = iVar4;
-  g_INT_01c51d30 = iVar6;
-  g_INT_01c51d2c = iVar5;
-  g_INT_01d1dd74 = g_INT_01d1dd74 + 1;
-  if (9 < g_INT_01d1dd74) {
+  g_RelativeZ = iVar4;
+  g_RelativeY = iVar6;
+  g_RelativeX = iVar5;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
+  if (9 < g_MatrixStackIndex) {
     g_CHAR_PTR_01d1d400 = "..\\engine\\matrix.c";
     g_INT_01d1d404 = 799;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance");

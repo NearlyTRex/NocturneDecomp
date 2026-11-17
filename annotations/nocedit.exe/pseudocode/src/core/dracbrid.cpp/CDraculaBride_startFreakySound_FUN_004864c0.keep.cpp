@@ -48,7 +48,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
   this_ptr->freaky_timer = fVar2;
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 != 0) {
-    pSVar5 = SFreaky_ARRAY_02c6d0c0;
+    pSVar5 = g_FreakySounds;
     iVar7 = 0;
     do {
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(pSVar5->sfx_handle);

@@ -286,9 +286,9 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
       fVar11 = 0.4;
       fStack_14 = SStack_1a0.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                 g_INT_ARRAY_01cee00c[2],&CStack_110);
+                 g_HotDemonIndices[2],&CStack_110);
       pCVar10 = &CStack_104;
       CStack_104.x = CStack_110.x;
       *(uint *)((int)&CStack_104 + (uint)bVar9 * -8 + 4) =

@@ -78,13 +78,13 @@
     },
     {
       "addr": "005c1b04",
-      "name": "g_PTR_005c1b04",
+      "name": "g_SpecialExitHandler",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "02de4e30",
-      "name": "g_INT_02de4e30",
+      "name": "g_EmergencyExitFlag",
       "type": "int",
       "value": null
     }
@@ -209,7 +209,7 @@
       "line": 13,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_005c1b04)(0,0xff);",
+      "text": "(*(code *)g_SpecialExitHandler)(0,0xff);",
       "type": "unresolved_funcptr"
     },
     {

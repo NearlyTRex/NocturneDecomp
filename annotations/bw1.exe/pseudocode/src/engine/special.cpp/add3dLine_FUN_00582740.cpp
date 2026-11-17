@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_add3dLine_FUN_00582740(void *start_point,void *en
   if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02c833e0)(start_point,end_point,line_style);
+  iVar1 = (*(code *)g_APIDLL_add3dLine)(start_point,end_point,line_style);
   return iVar1;
 }

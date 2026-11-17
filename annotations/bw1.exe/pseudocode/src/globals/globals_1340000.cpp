@@ -11,15 +11,15 @@ CLZWDecompress g_CLZWDecompressInstance = {};
 SFogImagePlane g_SFogImagePlane_01342220 = {};
 
 // char[4096]
-char g_CHAR_ARRAY_01341200[4096] = {};
+char g_CameraLookupTable[4096] = {};
 
 // int
-int g_INT_01342200 = {};
-int g_INT_01342204 = {};
-int g_INT_01342208 = {};
-int g_INT_0134220c = {};
-int g_INT_01342210 = {};
-int g_INT_01342214 = {};
-int g_INT_01342218 = {};
-int g_INT_0134221c = {};
+int g_CameraShakeSustainTimer = {};
+int g_CameraShakeAttackTime = {};
+int g_CameraShakeAttackAccum = {};
+int g_CameraShakeDecayDuration = {};
+int g_CameraShakeDecayTimer = {};
+int g_CameraShakeAccumulator = {};
+int g_CameraShakeOffsetX = {};
+int g_CameraShakeOffsetY = {};
 

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 653,
-    "complexity_score": 471,
+    "complexity_score": 472,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 62,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 271,
+    "pseudocode_lines": 272,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "wrong_global"
     ],
-    "total_lines": 924
+    "total_lines": 925
   },
   "cross_references": [
     {
@@ -367,13 +367,13 @@
     },
     {
       "addr": "0061c288",
-      "name": "g_CHAR_ARRAY_0061c288",
+      "name": "g_TrainSoundFilenameTemplate",
       "type": "char[108]",
       "value": null
     },
     {
       "addr": "0061c28c",
-      "name": "g_CHAR_ARRAY_0061c288+4",
+      "name": "g_TrainSoundFilenameTemplate+4",
       "type": "undefined4",
       "value": null
     },
@@ -415,7 +415,7 @@
     },
     {
       "addr": "0264b294",
-      "name": "g_UINT_0264b294",
+      "name": "g_WindSoundHandle",
       "type": "uint",
       "value": null
     },
@@ -463,37 +463,37 @@
     },
     {
       "addr": "0264bad8",
-      "name": "g_FLOAT_0264bad8",
+      "name": "g_CurrentVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "0264badc",
-      "name": "g_FLOAT_0264badc",
+      "name": "g_TargetVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "0264bae0",
-      "name": "g_FLOAT_0264bae0",
+      "name": "g_VolumeFadeTimeRemaining",
       "type": "float",
       "value": null
     },
     {
       "addr": "0264bae4",
-      "name": "g_STrainNoise_ARRAY_0264bae4",
+      "name": "g_TrainNoiseArray",
       "type": "STrainNoise[10]",
       "value": null
     },
     {
       "addr": "0264bae8",
-      "name": "g_STrainNoise_ARRAY_0264bae4[0].position.y",
+      "name": "g_TrainNoiseArray[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264baec",
-      "name": "g_STrainNoise_ARRAY_0264bae4[0].position.z",
+      "name": "g_TrainNoiseArray[0].position.z",
       "type": "undefined4",
       "value": null
     },
@@ -517,25 +517,25 @@
     },
     {
       "addr": "0264bb90",
-      "name": "g_FLOAT_0264bb90",
+      "name": "g_TrainNoiseCooldown",
       "type": "float",
       "value": null
     },
     {
       "addr": "0264bb94",
-      "name": "g_INT_0264bb94",
+      "name": "g_TrainLastCameraIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264bb98",
-      "name": "g_UINT_0264bb98",
+      "name": "g_TrainRailNoiseHandle",
       "type": "uint",
       "value": null
     },
     {
       "addr": "0264bb9c",
-      "name": "g_UINT_0264bb9c",
+      "name": "g_TrainExteriorAmbientHandle",
       "type": "uint",
       "value": null
     },
@@ -918,7 +918,7 @@
     },
     {
       "description": "Scalar global g_FLOAT_0264b2a0 accessed via (&g_FLOAT_0264b2a0)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_0264b2a4 (at 0x0264b2a4, +4 bytes).",
-      "line": 121,
+      "line": 122,
       "match": "g_FLOAT_0264b2a0",
       "severity": "moderate",
       "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + 4) = (&g_FLOAT_0264b2a0)[(uint)bVar9 * -2];",
@@ -926,7 +926,7 @@
     },
     {
       "description": "Scalar global g_FLOAT_0264b2a4 accessed via (&g_FLOAT_0264b2a4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_0264b2a8 (at 0x0264b2a8, +4 bytes).",
-      "line": 123,
+      "line": 124,
       "match": "g_FLOAT_0264b2a4",
       "severity": "moderate",
       "text": "(&g_FLOAT_0264b2a4)[(uint)bVar9 * -2 + (uint)bVar9 * -2];",
@@ -934,7 +934,7 @@
     },
     {
       "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 121,
+      "line": 122,
       "match": "(int)&local_54",
       "severity": "moderate",
       "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + 4) = (&g_FLOAT_0264b2a0)[(uint)bVar9 * -2];",
@@ -942,7 +942,7 @@
     },
     {
       "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
+      "line": 123,
       "match": "(int)&local_54",
       "severity": "moderate",
       "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -950,7 +950,7 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 130,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar9 * -8 + 4) = local_80[(uint)bVar9 * -2 + 3];",
@@ -958,31 +958,31 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
+      "line": 131,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_STrainNoise_ARRAY_0264bae4[0].position.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 206,
-      "match": "(int)&g_STrainNoise_ARRAY_0264bae4[0].position.z",
+      "description": "Pointer value `&g_TrainNoiseArray[0].position.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 207,
+      "match": "(int)&g_TrainNoiseArray[0].position.z",
       "severity": "moderate",
-      "text": "ABS(*(float *)((int)&g_STrainNoise_ARRAY_0264bae4[0].position.z + local_20))) {",
+      "text": "ABS(*(float *)((int)&g_TrainNoiseArray[0].position.z + local_20))) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_STrainNoise_ARRAY_0264bae4[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 208,
-      "match": "(int)&g_STrainNoise_ARRAY_0264bae4[0].sfx_handle",
+      "description": "Pointer value `&g_TrainNoiseArray[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 209,
+      "match": "(int)&g_TrainNoiseArray[0].sfx_handle",
       "severity": "moderate",
-      "text": "(*(uint *)((int)&g_STrainNoise_ARRAY_0264bae4[0].sfx_handle + local_20));",
+      "text": "(*(uint *)((int)&g_TrainNoiseArray[0].sfx_handle + local_20));",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 243,
+      "line": 244,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -990,7 +990,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 222,
+      "line": 223,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -998,7 +998,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 121,
+      "line": 122,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + 4) = (&g_FLOAT_0264b2a0)[(uint)bVar9 * -2];",
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 122,
+      "line": 123,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -1014,7 +1014,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 129,
+      "line": 130,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar9 * -8 + 4) = local_80[(uint)bVar9 * -2 + 3];",
@@ -1022,7 +1022,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 130,
+      "line": 131,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -1030,18 +1030,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 206,
+      "line": 207,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "ABS(*(float *)((int)&g_STrainNoise_ARRAY_0264bae4[0].position.z + local_20))) {",
+      "text": "ABS(*(float *)((int)&g_TrainNoiseArray[0].position.z + local_20))) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 208,
+      "line": 209,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(*(uint *)((int)&g_STrainNoise_ARRAY_0264bae4[0].sfx_handle + local_20));",
+      "text": "(*(uint *)((int)&g_TrainNoiseArray[0].sfx_handle + local_20));",
       "type": "pointer_cast"
     }
   ]

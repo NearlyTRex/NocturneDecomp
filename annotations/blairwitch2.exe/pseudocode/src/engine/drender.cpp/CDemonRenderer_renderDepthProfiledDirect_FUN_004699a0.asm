@@ -15,13 +15,13 @@
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00585e10 at 00586274
 ;
 ; Referenced Globals:
-;   int g_INT_0060b284 = 0x1
-;   int g_INT_01ba5c7c
-;   void* g_PTR_01c35e6c
+;   int g_RenderPixelBudget = 0x1
+;   int g_RenderPixelCounter
+;   void* g_ScanlineRenderFunc
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
-;   int g_INT_01e61b58
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
+;   int g_RenderedTriangleCount
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -39,10 +39,10 @@ section .text
     PUSH EBP                            ; 004699a3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004699a4
     MOV ESI,dword ptr [ESP + 0x18]      ; 004699a8
-    MOV EDI,dword ptr [0x01e61b58]      ; 004699ac | g_INT_01e61b58
+    MOV EDI,dword ptr [0x01e61b58]      ; 004699ac | g_RenderedTriangleCount
     XOR EDX,EDX                         ; 004699b2
     MOV ECX,dword ptr [EBX + 0xc]       ; 004699b4
-    MOV dword ptr [0x01ba5c7c],EDX      ; 004699b7 | g_INT_01ba5c7c
+    MOV dword ptr [0x01ba5c7c],EDX      ; 004699b7 | g_RenderPixelCounter
     TEST ECX,ECX                        ; 004699bd
     JNZ 0x00469a43                      ; 004699bf
         ;   XREF to: 00469a43 (CONDITIONAL_JUMP)  ; LAB_00469a43
@@ -52,9 +52,9 @@ section .text
         ;   XREF to: 00469a5c (CONDITIONAL_JUMP)  ; LAB_00469a5c
     XOR EAX,EAX                         ; 004699cf
     MOV EBP,0x46eeb5                    ; 004699d1
-    MOV [0x01c38b54],EAX                ; 004699d6 | g_BIT_INTEGER32_01c38b54
-    MOV [0x01c38b58],EAX                ; 004699db | g_INT_01c38b58
-    MOV dword ptr [0x01c35e6c],EBP      ; 004699e0 | g_PTR_01c35e6c
+    MOV [0x01c38b54],EAX                ; 004699d6 | g_RenderStateFlags
+    MOV [0x01c38b58],EAX                ; 004699db | g_VertexPreprocessMode
+    MOV dword ptr [0x01c35e6c],EBP      ; 004699e0 | g_ScanlineRenderFunc
     MOV ECX,dword ptr [0x01c37788]      ; 004699e6 | g_INT_01c37788
         ;   Label: LAB_004699e6
     MOV EBP,dword ptr [EBX + 0x4]       ; 004699ec
@@ -84,10 +84,10 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 00469a1b
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00469a20
-    MOV EAX,[0x01ba5c7c]                ; 00469a23 | g_INT_01ba5c7c
+    MOV EAX,[0x01ba5c7c]                ; 00469a23 | g_RenderPixelCounter
         ;   Label: LAB_00469a23
-    MOV ECX,dword ptr [0x0060b284]      ; 00469a28 | g_INT_0060b284
-    MOV dword ptr [0x01e61b58],EDI      ; 00469a2e | g_INT_01e61b58
+    MOV ECX,dword ptr [0x0060b284]      ; 00469a28 | g_RenderPixelBudget
+    MOV dword ptr [0x01e61b58],EDI      ; 00469a2e | g_RenderedTriangleCount
     CMP EAX,ECX                         ; 00469a34
     SETGE AL                            ; 00469a36
     AND EAX,0xff                        ; 00469a39
@@ -114,9 +114,9 @@ section .text
         ;   Label: LAB_00469a5c
     MOV ECX,0x6                         ; 00469a61
     MOV EAX,0x46ee37                    ; 00469a66
-    MOV dword ptr [0x01c38b54],EDX      ; 00469a6b | g_BIT_INTEGER32_01c38b54
-    MOV dword ptr [0x01c38b58],ECX      ; 00469a71 | g_INT_01c38b58
-    MOV [0x01c35e6c],EAX                ; 00469a77 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c38b54],EDX      ; 00469a6b | g_RenderStateFlags
+    MOV dword ptr [0x01c38b58],ECX      ; 00469a71 | g_VertexPreprocessMode
+    MOV [0x01c35e6c],EAX                ; 00469a77 | g_ScanlineRenderFunc
     JMP 0x004699e6                      ; 00469a7c
         ;   XREF to: 004699e6 (UNCONDITIONAL_JUMP)  ; LAB_004699e6
 

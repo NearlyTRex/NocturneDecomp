@@ -16,8 +16,8 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CScatActorType_01e533d0;
-extern CDemonActorType g_CSentinelActorType_01e57248;
+extern CDemonActorType g_CScatClassInfo;
+extern CDemonActorType g_CSentinelClassInfo;
 
 // CDemonPod
 extern CDemonPod g_CDemonPodInstance;
@@ -32,32 +32,32 @@ extern CPickList g_ScriptPickList;
 extern CScript g_CScriptInstance;
 
 // SSoftwareEdge[16]
-extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e52a6c[16];
-extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e52f00[16];
+extern SSoftwareEdge g_SoftwareEdgeBuffer[16];
+extern SSoftwareEdge g_SoftwareEdgeTable[16];
 
 // char[10][1024]
-extern char g_CHAR_ARRAY_ARRAY_01e53418[10][1024];
+extern char g_ScriptSubtitleLines[10][1024];
 
 // char[2048]
-extern char g_CHAR_ARRAY_01e55c18[2048];
-extern char g_CHAR_ARRAY_01e56420[2048];
+extern char g_ScriptLineBuffer[2048];
+extern char g_ScriptErrorBuffer[2048];
 
 // float
-extern float g_FLOAT_01e56c20;
+extern float g_ScriptTimeScale;
 
 // int
-extern int g_INT_01e52a68;
-extern int g_INT_01e52eec;
-extern int g_INT_01e52ef0;
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
 extern int g_RenderedTriangleCount;
-extern int g_INT_01e52efc;
-extern int g_INT_01e53380;
-extern int g_INT_01e53384;
-extern int g_INT_01e53410;
-extern int g_INT_01e56418;
-extern int g_INT_01e56c24;
-extern int g_INT_01e56c28;
-extern int g_INT_01e56c2c;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+extern int g_PreviousLetterboxMode;
+extern int g_ScriptEventsEnabled;
+extern int g_ScriptInputFlag;
+extern int g_ScriptLoopWarningShown;
+extern int g_ActorLookedUpByVariable;
 extern int g_INT_01e57218;
 extern int g_INT_01e5721c;
 extern int g_INT_01e57220;
@@ -67,5 +67,5 @@ extern int g_INT_01e5723c;
 extern int g_INT_01e57244;
 
 // int[18]
-extern int g_INT_ARRAY_01e53388[18];
+extern int g_ScatIndices[18];
 

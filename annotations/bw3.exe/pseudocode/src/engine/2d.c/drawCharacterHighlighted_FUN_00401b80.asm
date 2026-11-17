@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   undefined4 g_USHORT_ARRAY_01c6a070[255]
+;   undefined4 g_ColorTable16[255]
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b0
@@ -75,7 +75,7 @@ section .text
     TEST BL,BL                          ; 00401c08
     JZ 0x00401c16                       ; 00401c0a
         ;   XREF to: 00401c16 (CONDITIONAL_JUMP)  ; LAB_00401c16
-    MOV BX,word ptr [0x01c6a26e]        ; 00401c0c | g_USHORT_ARRAY_01c6a070[255]
+    MOV BX,word ptr [0x01c6a26e]        ; 00401c0c | g_ColorTable16[255]
     MOV word ptr [EDX],BX               ; 00401c13
     INC EAX                             ; 00401c16
         ;   Label: LAB_00401c16

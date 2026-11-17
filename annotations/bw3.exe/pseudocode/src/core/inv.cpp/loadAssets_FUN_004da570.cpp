@@ -12,7 +12,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void)
   _FILE *p_Var1;
   int iVar2;
   
-  g_INT_01d70a34 = g_INT_005fba1c;
+  g_InventoryScreenHeight = g_INT_005fba1c;
   p_Var1 = engine_dosio_cpp_getFile_FUN_004659c0
                      ("data","invsize.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
@@ -66,15 +66,15 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d708b8,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d708cc,2,2);
   }
-  g_INT_01d5dc88 = 0;
+  g_ItemDefinitionCount = 0;
   p_Var1 = engine_dosio_cpp_getFile_FUN_004659c0
                      (&g_CHAR_005c5fe1,"itemlist.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
     while ((p_Var1->_flag & 0x10) == 0) {
       iVar2 = core_inv_cpp_loadItem_FUN_004da320
-                        (g_SInventoryItemInfo_ARRAY_01d5dc90 + g_INT_01d5dc88,p_Var1);
+                        (g_ItemDefinitionArray + g_ItemDefinitionCount,p_Var1);
       if (iVar2 == 0) break;
-      g_INT_01d5dc88 = g_INT_01d5dc88 + 1;
+      g_ItemDefinitionCount = g_ItemDefinitionCount + 1;
     }
     _fclose(p_Var1);
   }

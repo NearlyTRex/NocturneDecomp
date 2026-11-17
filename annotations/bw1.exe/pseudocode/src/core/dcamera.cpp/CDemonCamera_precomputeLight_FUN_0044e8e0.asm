@@ -43,8 +43,8 @@
 ;   TerminatedCString s_core_dcamera_cpp_005d76ab
 ;   TerminatedCString s_CDemonCamera_precomputeL_005d76bf
 ;   undefined4 DAT_00857cd8
-;   int g_INT_00b81ca4
-;   SCoronaLightCache g_SCoronaLightCache_01289ca8
+;   int g_LightBufferPoolIndex
+;   SCoronaLightCache g_CoronaLightCache
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -86,9 +86,9 @@ section .text
     TEST EAX,EAX                        ; 0044e91d
     JNZ 0x0044e92b                      ; 0044e91f
         ;   XREF to: 0044e92b (CONDITIONAL_JUMP)  ; LAB_0044e92b
-    MOV [0x01289ca8],EAX                ; 0044e921 | g_SCoronaLightCache_01289ca8
-    MOV [0x00b81ca4],EAX                ; 0044e926 | g_INT_00b81ca4
-    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e92b | g_INT_00b81ca4
+    MOV [0x01289ca8],EAX                ; 0044e921 | g_CoronaLightCache
+    MOV [0x00b81ca4],EAX                ; 0044e926 | g_LightBufferPoolIndex
+    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e92b | g_LightBufferPoolIndex
         ;   Label: LAB_0044e92b
     LEA EAX,[ESI*0x4 + 0x0]             ; 0044e931
     ADD EAX,ESI                         ; 0044e938
@@ -96,32 +96,32 @@ section .text
     MOV ESI,EAX                         ; 0044e93d
     SHL EAX,0x4                         ; 0044e93f
     SUB EAX,ESI                         ; 0044e942
-    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e944 | g_INT_00b81ca4
+    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e944 | g_LightBufferPoolIndex
     INC ESI                             ; 0044e94a
     ADD EAX,0xb81ca8                    ; 0044e94b
-    MOV dword ptr [0x00b81ca4],ESI      ; 0044e950 | g_INT_00b81ca4
+    MOV dword ptr [0x00b81ca4],ESI      ; 0044e950 | g_LightBufferPoolIndex
     CMP ESI,0x18                        ; 0044e956
     JBE 0x0044e95d                      ; 0044e959
         ;   XREF to: 0044e95d (CONDITIONAL_JUMP)  ; LAB_0044e95d
     XOR EAX,EAX                         ; 0044e95b
-    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e95d | g_INT_00b81ca4
+    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e95d | g_LightBufferPoolIndex
         ;   Label: LAB_0044e95d
     MOV dword ptr [EBX + 0x1c48],EAX    ; 0044e963
     LEA EAX,[ESI*0x4 + 0x0]             ; 0044e969
     ADD EAX,ESI                         ; 0044e970
     SHL EAX,0xc                         ; 0044e972
-    MOV EDX,dword ptr [0x00b81ca4]      ; 0044e975 | g_INT_00b81ca4
+    MOV EDX,dword ptr [0x00b81ca4]      ; 0044e975 | g_LightBufferPoolIndex
     MOV ESI,EAX                         ; 0044e97b
     SHL EAX,0x4                         ; 0044e97d
     INC EDX                             ; 0044e980
     SUB EAX,ESI                         ; 0044e981
-    MOV dword ptr [0x00b81ca4],EDX      ; 0044e983 | g_INT_00b81ca4
+    MOV dword ptr [0x00b81ca4],EDX      ; 0044e983 | g_LightBufferPoolIndex
     ADD EAX,0xb81ca8                    ; 0044e989
     CMP EDX,0x18                        ; 0044e98e
     JBE 0x0044e995                      ; 0044e991
         ;   XREF to: 0044e995 (CONDITIONAL_JUMP)  ; LAB_0044e995
     XOR EAX,EAX                         ; 0044e993
-    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e995 | g_INT_00b81ca4
+    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e995 | g_LightBufferPoolIndex
         ;   Label: LAB_0044e995
     MOV dword ptr [EBX + 0x1c4c],EAX    ; 0044e99b
     LEA EAX,[ESI*0x4 + 0x0]             ; 0044e9a1
@@ -130,10 +130,10 @@ section .text
     MOV ESI,EAX                         ; 0044e9ad
     SHL EAX,0x4                         ; 0044e9af
     SUB EAX,ESI                         ; 0044e9b2
-    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e9b4 | g_INT_00b81ca4
+    MOV ESI,dword ptr [0x00b81ca4]      ; 0044e9b4 | g_LightBufferPoolIndex
     INC ESI                             ; 0044e9ba
     ADD EAX,0xb81ca8                    ; 0044e9bb
-    MOV dword ptr [0x00b81ca4],ESI      ; 0044e9c0 | g_INT_00b81ca4
+    MOV dword ptr [0x00b81ca4],ESI      ; 0044e9c0 | g_LightBufferPoolIndex
     CMP ESI,0x18                        ; 0044e9c6
     JBE 0x0044e9cd                      ; 0044e9c9
         ;   XREF to: 0044e9cd (CONDITIONAL_JUMP)  ; LAB_0044e9cd

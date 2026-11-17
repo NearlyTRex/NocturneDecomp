@@ -108,14 +108,14 @@ __asm {
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [g_USHORT_ARRAY_005b5d00 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
         pxor MM2,qword ptr [0x005b64f8]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_005b4798]
+        paddw MM0,qword ptr [g_AmbientLightMMX1]
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0
@@ -132,14 +132,14 @@ __asm {
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [g_USHORT_ARRAY_005b5d00 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
         pxor MM2,qword ptr [0x005b64f8]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_005b47a0]
+        paddw MM0,qword ptr [g_AmbientLightMMX2]
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0

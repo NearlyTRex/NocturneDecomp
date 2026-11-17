@@ -30,7 +30,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr)
   engine_2d_c_resetGraphicsSystem_FUN_00402ac0();
   core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(&g_CDemonCameraInstance,g_INT_005fba1c);
   if (g_INT_005fba1c < 0x180) {
-    g_CBitFont_PTR_01c5b0e0 = g_CBitFont_PTR_01549ab4;
+    g_CBitFont_PTR_01c5b0e0 = g_SmallEditorFont;
   }
   g_INT_01d22c3c = (uint)(g_INT_005fba1c != 0x1e0);
   return;

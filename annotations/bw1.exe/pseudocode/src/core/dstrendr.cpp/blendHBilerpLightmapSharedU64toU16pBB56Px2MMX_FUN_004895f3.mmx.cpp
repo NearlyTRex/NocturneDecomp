@@ -15,7 +15,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [g_ULONG_01c51d1c]
+        movd MM5,dword ptr [g_SolidColorMode]
         punpcklbw MM5,MM7
         psllw MM5,0x6
         mov EAX,dword ptr [EBX]
@@ -118,7 +118,7 @@ __asm {
         mov EAX,dword ptr [ESI + 0x9a0]
         mov EAX,dword ptr [ESI + 0x9c0]
         mov EAX,dword ptr [ESI + 0x9e0]
-        mov EAX,[g_UINT_ARRAY_00b8189c]
+        mov EAX,[g_LightmapTexturePalette]
         mov EAX,[0x00b818bc]
         mov EAX,[0x00b818dc]
         mov EAX,[0x00b818fc]
@@ -150,7 +150,7 @@ __asm {
         mov EAX,[0x00b81c3c]
         mov EAX,[0x00b81c5c]
         mov EAX,[0x00b81c7c]
-        mov EAX,[g_USHORT_ARRAY_00619b60]
+        mov EAX,[g_LightmapData]
         mov EAX,[0x00619b80]
         mov EAX,[0x00619ba0]
         mov EAX,[0x00619bc0]
@@ -218,10 +218,10 @@ __asm {
     LAB_00489a30:
         movzx EDX,byte ptr [EBX]
         movq MM0,qword ptr [ESI]
-        movd MM2,dword ptr [g_UINT_ARRAY_00b8189c + EDX*0x4]
+        movd MM2,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movzx EDX,byte ptr [EBX + 0x1]
         movzx EAX,byte ptr [EBP]
-        movd MM6,dword ptr [g_UINT_ARRAY_00b8189c + EDX*0x4]
+        movd MM6,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movq MM1,MM0
         punpcklbw MM6,MM7
         punpcklbw MM0,MM7
@@ -233,7 +233,7 @@ __asm {
         punpcklbw MM1,MM7
         pmullw MM0,MM2
         psrlw MM6,0x1
-        movq MM3,qword ptr [g_USHORT_ARRAY_00619b60 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         pmullw MM1,MM6
         movq MM2,MM3
         movq MM4,MM5
@@ -243,30 +243,30 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_00618608]
-        paddw MM1,qword ptr [g_MMX_INTEGER_00618610]
+        paddw MM0,qword ptr [g_LightmapBlendBias5]
+        paddw MM1,qword ptr [g_LightmapBlendBias6]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM7
         packuswb MM1,MM7
         movq MM2,MM0
         movq MM3,MM0
-        pand MM0,qword ptr [g_QWORD_00623f78]
-        pand MM2,qword ptr [g_QWORD_00623f58]
-        pand MM3,qword ptr [g_QWORD_00623f38]
-        psrlq MM0,qword ptr [g_QWORD_00623fc0]
-        psrlq MM2,qword ptr [g_QWORD_00623fa0]
-        psrlq MM3,qword ptr [g_QWORD_00623f80]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM3,qword ptr [g_RedMask32]
+        psrlq MM0,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM3,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM3
         movq MM2,MM1
         movq MM3,MM1
-        pand MM1,qword ptr [g_QWORD_00623f78]
-        pand MM2,qword ptr [g_QWORD_00623f58]
-        pand MM3,qword ptr [g_QWORD_00623f38]
-        psrlq MM1,qword ptr [g_QWORD_00623fc0]
-        psrlq MM2,qword ptr [g_QWORD_00623fa0]
-        psrlq MM3,qword ptr [g_QWORD_00623f80]
+        pand MM1,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM3,qword ptr [g_RedMask32]
+        psrlq MM1,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM3,qword ptr [g_TotalDitherShift]
         por MM1,MM2
         por MM1,MM3
         psllq MM1,0x10

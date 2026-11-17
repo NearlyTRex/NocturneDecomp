@@ -17,7 +17,7 @@ uint FUN_005c7f80(uint param_1,char *param_2)
   char *pcVar5;
   
   uVar4 = 0;
-  if ((ushort)g_SHORT_006265e1 < 0x8000) {
+  if ((ushort)g_WindowsPlatformVersion < 0x8000) {
     uVar1 = 0x20;
   }
   else {
@@ -31,7 +31,7 @@ uint FUN_005c7f80(uint param_1,char *param_2)
     }
     hFile = CreateFileA(pcVar5,0,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
     if (hFile == (HANDLE)0xffffffff) {
-      if ((0x7fff < (ushort)g_SHORT_006265e1) || (DVar3 = GetLastError(), DVar3 == 5)) {
+      if ((0x7fff < (ushort)g_WindowsPlatformVersion) || (DVar3 = GetLastError(), DVar3 == 5)) {
         uVar4 = 0x2000;
       }
     }

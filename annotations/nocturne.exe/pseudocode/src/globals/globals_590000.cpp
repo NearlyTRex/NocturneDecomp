@@ -466,7 +466,7 @@ CCodec_vtable g_CLZWDecompressVTable = {
 };
 
 // CDemonActor*
-CDemonActor* g_CDemonActor_PTR_0059cf1c = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
+CDemonActor* g_ActorNameSentinel = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
 
 // CDemonActor_vtable
 CDemonActor_vtable g_CDemonActorVTable = {
@@ -4909,7 +4909,7 @@ CWeapon_full_vtable g_CLightGunVTable = {
 WatcomDestructorCall g_WatcomDestructorCall_0059aaa0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_0041fb00,
-    .object_instance = (void *)&g_CDemonFilter_ARRAY_0076483c
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomDestructorCall g_CConsoleDestructorCall = {
     .delete_flags = 0x00000004,
@@ -4924,7 +4924,7 @@ WatcomDestructorCall g_WatcomDestructorCall_0059bdd0 = {
 WatcomDestructorCall g_WatcomDestructorCall_0059bf60 = {
     .delete_flags = 0x00000004,
     .destructor_func = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_0041fb00,
-    .object_instance = (void *)&g_CDemonFilter_ARRAY_014b8a58
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomDestructorCall g_WatcomDestructorCall_0059bf6c = {
     .delete_flags = 0x00000004,
@@ -4949,7 +4949,7 @@ WatcomDestructorCall g_WatcomDestructorCall_0059c050 = {
 WatcomDestructorCall g_WatcomDestructorCall_0059c3c0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_dracbrid_cpp_SFreaky_arrdtor6_FUN_0045b430,
-    .object_instance = (void *)&g_SFreaky_ARRAY_01b4d280
+    .object_instance = (void *)&g_FreakySounds
 };
 WatcomDestructorCall g_WatcomDestructorCall_0059ca40 = {
     .delete_flags = 0x00000004,

@@ -2,30 +2,30 @@
 // Address: 00442e70
 // Address Range: [[00442e70, 00442ef4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70(CDemonCamera *this_ptr,int param_2)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70(CDemonCamera *this_ptr,int vertex)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70(CDemonCamera *this_ptr,int param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70(CDemonCamera *this_ptr,int vertex)
 
 {
   uint uVar1;
   byte bVar2;
   byte uVar3;
   
-  uVar3 = g_BIT_INTEGER32_01c3582c.bytes[0];
-  if ((*(byte *)(param_2 + 0x13) & 0x80) != 0) {
-    *(uint *)(param_2 + 0x28) = 0;
-    *(uint *)(param_2 + 0x24) = *(uint *)(param_2 + 0x28);
-    *(uint *)(param_2 + 0x20) = *(uint *)(param_2 + 0x28);
+  uVar3 = g_BlueBitPosition.bytes[0];
+  if ((*(byte *)(vertex + 0x13) & 0x80) != 0) {
+    *(uint *)(vertex + 0x28) = 0;
+    *(uint *)(vertex + 0x24) = *(uint *)(vertex + 0x28);
+    *(uint *)(vertex + 0x20) = *(uint *)(vertex + 0x28);
     return;
   }
   uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +
-                   ((*(int *)(param_2 + 0x10) >> 0x10) +
-                   (*(int *)(param_2 + 0x14) >> 0x10) * this_ptr->framebuffer_width) * 4);
-  bVar2 = g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f;
-  *(uint *)(param_2 + 0x20) = (uVar1 >> (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f) & 0xff) << 8;
-  *(uint *)(param_2 + 0x24) = (uVar1 >> bVar2 & 0xff) << 8;
-  *(uint *)(param_2 + 0x28) = (uVar1 >> (uVar3 & 0x1f) & 0xff) << 8;
+                   ((*(int *)(vertex + 0x10) >> 0x10) +
+                   (*(int *)(vertex + 0x14) >> 0x10) * this_ptr->framebuffer_width) * 4);
+  bVar2 = g_GreenBitPosition.bytes[0] & 0x1f;
+  *(uint *)(vertex + 0x20) = (uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f) & 0xff) << 8;
+  *(uint *)(vertex + 0x24) = (uVar1 >> bVar2 & 0xff) << 8;
+  *(uint *)(vertex + 0x28) = (uVar1 >> (uVar3 & 0x1f) & 0xff) << 8;
   return;
 }

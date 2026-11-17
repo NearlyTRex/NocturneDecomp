@@ -16,6 +16,6 @@ void __cdecl core_dmodel_cpp_freeAllModels_FUN_00468830(void)
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr);
     this_ptr = this_ptr + 1;
   } while (this_ptr != g_CKeyFramedModelPool + sizeof(g_CKeyFramedModelPool) / sizeof(g_CKeyFramedModelPool[0]));
-  g_INT_01b2efdc = 0;
+  g_KeyframeModelCount = 0;
   return;
 }

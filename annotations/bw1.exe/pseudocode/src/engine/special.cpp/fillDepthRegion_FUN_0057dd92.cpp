@@ -14,13 +14,13 @@ void __cdecl engine_special_cpp_fillDepthRegion_FUN_0057dd92(int left,int right,
   uint uVar3;
   double *pdVar4;
   
-  dVar2 = g_DOUBLE_00623ddc;
+  dVar2 = g_BufferFillZeroQword;
   if (g_INT_01c50948 != 0) {
     engine_special_cpp_clearZBox_FUN_00582960(left,right,top,bottom);
     return;
   }
   do {
-    pdVar4 = (double *)((uint)(g_UINT_PTR_ARRAY_01c4480c[top] + left) & 0xfffffff8);
+    pdVar4 = (double *)((uint)(g_ZBufferScanlineArray[top] + left) & 0xfffffff8);
     uVar3 = (right - left) + 1U >> 1;
     do {
       *pdVar4 = dVar2;
@@ -30,6 +30,6 @@ void __cdecl engine_special_cpp_fillDepthRegion_FUN_0057dd92(int left,int right,
     } while (bVar1);
     top = top + 1;
   } while ((uint)top <= (uint)bottom);
-  g_DOUBLE_00623de4 = dVar2;
+  g_BufferFillFpuPopST0 = dVar2;
   return;
 }

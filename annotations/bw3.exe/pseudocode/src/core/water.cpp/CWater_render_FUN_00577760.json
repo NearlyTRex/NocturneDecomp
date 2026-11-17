@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 425,
-    "complexity_score": 281,
+    "complexity_score": 276,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
+    "pseudocode_lines": 181,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 611
+    "total_lines": 606
   },
   "cross_references": [
     {
@@ -157,61 +157,61 @@
     },
     {
       "addr": "00606cac",
-      "name": "g_SMRGLTextureBasic_ARRAY_00606cac",
+      "name": "g_WaterTextures",
       "type": "SMRGLTextureBasic[16]",
       "value": null
     },
     {
       "addr": "00606e2c",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c",
+      "name": "g_WaterRenderQuad",
       "type": "SMRGLPrimitiveQuad",
       "value": null
     },
     {
       "addr": "00606e48",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[0].texture_u",
+      "name": "g_WaterRenderQuad.vertices[0].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e4c",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[0].texture_v",
+      "name": "g_WaterRenderQuad.vertices[0].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e54",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[1].texture_u",
+      "name": "g_WaterRenderQuad.vertices[1].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e58",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[1].texture_v",
+      "name": "g_WaterRenderQuad.vertices[1].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e60",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[2].texture_u",
+      "name": "g_WaterRenderQuad.vertices[2].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e64",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[2].texture_v",
+      "name": "g_WaterRenderQuad.vertices[2].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e6c",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[3].texture_u",
+      "name": "g_WaterRenderQuad.vertices[3].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e70",
-      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[3].texture_v",
+      "name": "g_WaterRenderQuad.vertices[3].texture_v",
       "type": "undefined4",
       "value": null
     },
@@ -223,7 +223,7 @@
     },
     {
       "addr": "01c5fad0",
-      "name": "g_INT_01c5fad0",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -235,7 +235,7 @@
     },
     {
       "addr": "01c6e24c",
-      "name": "g_INT_01c6e24c",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     },
@@ -283,7 +283,7 @@
     },
     {
       "addr": "02cfd974",
-      "name": "g_INT_02cfd974",
+      "name": "g_WaterAnimationTimer",
       "type": "int",
       "value": null
     },
@@ -295,31 +295,31 @@
     },
     {
       "addr": "02cfd97c",
-      "name": "g_INT_02cfd97c",
+      "name": "g_VisibleWaterTileCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cfd980",
-      "name": "g_INT_ARRAY_02cfd980",
+      "name": "g_VisibleWaterTilesX",
       "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02d01980",
-      "name": "g_INT_ARRAY_02d01980",
+      "name": "g_VisibleWaterTilesY",
       "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02d059a4",
-      "name": "g_INT_02d059a4",
+      "name": "g_WaterAnimationBlend",
       "type": "int",
       "value": null
     },
     {
       "addr": "02d059a8",
-      "name": "g_FLOAT_02d059a8",
+      "name": "g_WaterAnimationPhase",
       "type": "float",
       "value": null
     },
@@ -711,18 +711,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)g_INT_ARRAY_02cfd980",
+      "line": 86,
+      "match": "(int *)((int)g_VisibleWaterTilesX",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_INT_ARRAY_02cfd980 + local_28);",
+      "text": "iVar1 = *(int *)((int)g_VisibleWaterTilesX + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(int *)((int)g_INT_ARRAY_02d01980",
+      "line": 87,
+      "match": "(int *)((int)g_VisibleWaterTilesY",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_INT_ARRAY_02d01980 + local_28);",
+      "text": "iVar2 = *(int *)((int)g_VisibleWaterTilesY + local_28);",
       "type": "pointer_cast"
     }
   ]

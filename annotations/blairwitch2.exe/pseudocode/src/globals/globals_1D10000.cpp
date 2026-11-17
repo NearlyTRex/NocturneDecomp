@@ -16,11 +16,11 @@ CDemonActorType g_CMobsterClassInfo = {};
 CDemonActorType g_CMolochClassInfo = {};
 
 // CVector3f[32]
-CVector3f g_CVector3f_ARRAY_01d17fc4[32] = {};
-CVector3f g_CVector3f_ARRAY_01d18148[32] = {};
+CVector3f g_MirrorInputVertices[32] = {};
+CVector3f g_MirrorOutputVertices[32] = {};
 
 // SMRGLPrimitiveQuadIndex
-SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d182c8 = {};
+SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive = {};
 
 // SSoftwareEdge
 SSoftwareEdge g_SSoftwareEdge_01d17ab8 = {};
@@ -29,7 +29,7 @@ SSoftwareEdge g_SSoftwareEdge_01d17ab8 = {};
 char g_CHAR_01d1c630 = {};
 
 // double[200]
-double g_DOUBLE_ARRAY_01d1edd8[200] = {};
+double g_MpegRequantPowerTable[200] = {};
 double g_DOUBLE_ARRAY_01d1f418[200] = {};
 
 // float
@@ -64,7 +64,7 @@ float g_FLOAT_01d1cdc4 = {};
 float* g_FLOAT_PTR_01d12114 = {};
 
 // float[64][32]
-float g_FLOAT_ARRAY_ARRAY_01d1cdd0[64][32] = {};
+float g_MpegSynthesisDctTable[64][32] = {};
 
 // int
 int g_INT_01d12124 = {};
@@ -74,17 +74,17 @@ int g_INT_01d12154 = {};
 int g_INT_01d17ab4 = {};
 int g_INT_01d17fb8 = {};
 int g_INT_01d17fbc = {};
-int g_INT_01d17fc0 = {};
-int g_INT_01d18144 = {};
+int g_MirrorInputVertexCount = {};
+int g_MirrorOutputVertexCount = {};
 int g_INT_01d1cdbc = {};
 int g_INT_01d1cdc0 = {};
-int g_INT_01d1cdc8 = {};
-int g_INT_01d1edd0 = {};
-int g_INT_01d1edd4 = {};
+int g_RenderMotionDebug = {};
+int g_HuffmanTablesInitialized = {};
+int g_MpegRequantTablesInitialized = {};
 
 // int[12]
-int g_INT_ARRAY_01d1c710[12] = {};
+int g_MobsterIndices[12] = {};
 
 // int[5]
-int g_INT_ARRAY_01d1c6fc[5] = {};
+int g_MobsterTauntCounters[5] = {};
 

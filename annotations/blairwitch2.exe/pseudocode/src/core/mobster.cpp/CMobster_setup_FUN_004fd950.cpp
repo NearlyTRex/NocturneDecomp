@@ -17,39 +17,39 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_004fd950(CMobster *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
-  g_INT_ARRAY_01d1c710[0] =
+  g_MobsterIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_01d1c710[3] =
+  g_MobsterIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_01d1c710[4] =
+  g_MobsterIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_01d1c710[5] =
+  g_MobsterIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01d1c710[6] =
+  g_MobsterIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01d1c710[7] =
+  g_MobsterIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Foot",1);
-  g_INT_ARRAY_01d1c710[8] =
+  g_MobsterIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Foot",1);
-  g_INT_ARRAY_01d1c710[1] =
+  g_MobsterIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Hand",1);
-  g_INT_ARRAY_01d1c710[2] =
+  g_MobsterIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Hand",1);
-  g_INT_ARRAY_01d1c710[9] =
+  g_MobsterIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_01d1c710[10] =
+  g_MobsterIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine1",1);
-  g_INT_ARRAY_01d1c710[0xb] =
+  g_MobsterIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
-  g_INT_ARRAY_01d1c710[0] =
+  g_MobsterIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
-  g_INT_ARRAY_01d1c710[5] =
+  g_MobsterIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_01d1c710[6] =
+  g_MobsterIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_01d1c710[9] =
+  g_MobsterIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_01d1c710[0xb] =
+  g_MobsterIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
@@ -85,9 +85,9 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_004fd950(CMobster *this_ptr)
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"head01",1);
   this_ptr->part_indices[10] = iVar1;
-  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_ARRAY_01d1c710[1];
+  (this_ptr->base).base.carry_hands[0].bone_index = g_MobsterIndices[1];
   (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_indices[1];
-  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_ARRAY_01d1c710[2];
+  (this_ptr->base).base.carry_hands[1].bone_index = g_MobsterIndices[2];
   (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_indices[3];
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   this_ptr->firing_blend = 0.0;

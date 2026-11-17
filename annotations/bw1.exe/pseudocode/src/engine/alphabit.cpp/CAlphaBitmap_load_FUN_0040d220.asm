@@ -40,7 +40,7 @@
 ;   TerminatedCString s_rb_005d3032
 ;   TerminatedCString s_art_005d3035
 ;   int g_INT_0061b4a0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -69,7 +69,7 @@ section .text
     PUSH ECX                            ; 0040d240
     PUSH EBX                            ; 0040d241
     CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0 ; 0040d242
-        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap * this_ptr, int param_2, int param_3)
+        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 0040d247
     MOV ESI,dword ptr [ESP + 0x11c]     ; 0040d24a
     PUSH ESI                            ; 0040d251
@@ -150,11 +150,11 @@ section .text
     CMP EDX,0x20                        ; 0040d339
     JNZ 0x0040d454                      ; 0040d33c
         ;   XREF to: 0040d454 (CONDITIONAL_JUMP)  ; LAB_0040d454
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0040d342 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0040d342 | g_RedBitPosition
     SHL EDI,CL                          ; 0040d348
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0040d34a | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0040d34a | g_GreenBitPosition
     SHL EBP,CL                          ; 0040d350
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0040d352 | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0040d352 | g_BlueBitPosition
     OR EDI,EBP                          ; 0040d358
     SHL EAX,CL                          ; 0040d35a
     MOV ECX,EDI                         ; 0040d35c

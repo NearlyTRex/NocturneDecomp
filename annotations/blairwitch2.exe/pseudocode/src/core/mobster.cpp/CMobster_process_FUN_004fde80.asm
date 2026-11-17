@@ -18,7 +18,7 @@
 ;   float g_FLOAT_005fa22c = 30
 ;   float g_FLOAT_005fa238 = 20
 ;   CConsole* g_CConsolePtr = 007c158c
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
@@ -263,7 +263,7 @@ section .text
     LEA EAX,[EBX + 0x10b28]             ; 004fe0f0
         ;   Label: LAB_004fe0f0
     PUSH EAX                            ; 004fe0f6
-    MOV EDX,dword ptr [0x006141f0]      ; 004fe0f7 | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004fe0f7 | g_CEventListPtr
     PUSH EDX                            ; 004fe0fd
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004fe0fe
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -571,7 +571,7 @@ section .text
     JZ 0x004fe4f6                       ; 004fe47c
         ;   XREF to: 004fe4f6 (CONDITIONAL_JUMP)  ; LAB_004fe4f6
     LEA EAX,[EBP + 0xfffffe5e]          ; 004fe47e
-    MOV EDX,dword ptr [0x01d1c714]      ; 004fe484 | g_INT_ARRAY_01d1c710[1]
+    MOV EDX,dword ptr [0x01d1c714]      ; 004fe484 | g_MobsterIndices[1]
     PUSH EAX                            ; 004fe48a
     LEA EAX,[EDX*0x4 + 0x0]             ; 004fe48b
     SUB EAX,EDX                         ; 004fe492
@@ -580,7 +580,7 @@ section .text
     ADD EAX,EDX                         ; 004fe49d
     PUSH 0x3ecccccd                     ; 004fe49f
     PUSH EAX                            ; 004fe4a4
-    PUSH 0x265370c                      ; 004fe4a5 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004fe4a5 | g_ZeroVector
     LEA ESI,[EBP + 0xfffffea6]          ; 004fe4aa
     LEA EDI,[EBP + 0x1a]                ; 004fe4b0
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004fe4b3
@@ -623,7 +623,7 @@ section .text
     JZ 0x004fe1e1                       ; 004fe523
         ;   XREF to: 004fe1e1 (CONDITIONAL_JUMP)  ; caseD_7
     LEA EAX,[EBP + 0xfffffe5e]          ; 004fe529
-    MOV EDX,dword ptr [0x01d1c718]      ; 004fe52f | g_INT_ARRAY_01d1c710[2]
+    MOV EDX,dword ptr [0x01d1c718]      ; 004fe52f | g_MobsterIndices[2]
     PUSH EAX                            ; 004fe535
     LEA EAX,[EDX*0x4 + 0x0]             ; 004fe536
     SUB EAX,EDX                         ; 004fe53d
@@ -632,7 +632,7 @@ section .text
     ADD EAX,EDX                         ; 004fe548
     PUSH 0x3ecccccd                     ; 004fe54a
     PUSH EAX                            ; 004fe54f
-    PUSH 0x265370c                      ; 004fe550 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004fe550 | g_ZeroVector
     LEA ESI,[EBP + 0x32]                ; 004fe555
     LEA EDI,[EBP + 0xfffffeee]          ; 004fe558
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004fe55e

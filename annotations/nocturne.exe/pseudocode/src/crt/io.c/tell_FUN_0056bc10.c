@@ -12,8 +12,8 @@ long __watcallStack tell(int file_handle_index)
   HANDLE hFile;
   DWORD DVar1;
   
-  if ((-1 < file_handle_index) && ((uint)file_handle_index <= g_UINT_005c1f90)) {
-    hFile = g_SIOControlBlock_PTR_005c1f54->standard_handles[file_handle_index];
+  if ((-1 < file_handle_index) && ((uint)file_handle_index <= g_MaxHandleCount)) {
+    hFile = g_IOControlBlock->standard_handles[file_handle_index];
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file_handle_index);
     DVar1 = SetFilePointer(hFile,0,(PLONG)0x0,1);
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file_handle_index);

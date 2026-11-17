@@ -21,12 +21,12 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040aff0(CDemonActor *this_ptr,
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::save - tried to save actor of class %s with no name");
   }
   _fprintf(file_handle,"%s{ %s \"%s\"\n");
-  pCVar3 = g_CDemonActor_PTR_007df9bc;
-  iVar2 = g_INT_007df9b8;
-  p_Var1 = g_FILE_PTR_007df9b4;
-  g_FILE_PTR_007df9b4 = file_handle;
-  g_CDemonActor_PTR_007df9bc = this_ptr;
-  g_INT_007df9b8 = 2;
+  pCVar3 = g_CurrentActorBeingProcessed;
+  iVar2 = g_ActorReadingMode;
+  p_Var1 = g_ActorDataFile;
+  g_ActorDataFile = file_handle;
+  g_CurrentActorBeingProcessed = this_ptr;
+  g_ActorReadingMode = 2;
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(1);
   (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
@@ -36,8 +36,8 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040aff0(CDemonActor *this_ptr,
     g_INT_01d71de4 = 0x80b;
     core_main_c_displayErrorAndQuit_FUN_004e4330("IO Error after writing actor of type %s");
   }
-  g_FILE_PTR_007df9b4 = p_Var1;
-  g_CDemonActor_PTR_007df9bc = pCVar3;
-  g_INT_007df9b8 = iVar2;
+  g_ActorDataFile = p_Var1;
+  g_CurrentActorBeingProcessed = pCVar3;
+  g_ActorReadingMode = iVar2;
   return;
 }

@@ -20,5 +20,5 @@ CMuzzleFlash g_CMuzzleFlash_ARRAY_01c86730[20] = {};
 int g_INT_01c848f4 = {};
 int g_INT_01c85ff8 = {};
 int g_INT_01c8672c = {};
-int g_INT_01c86e60 = {};
+int g_GlassParticleAllocIndex = {};
 

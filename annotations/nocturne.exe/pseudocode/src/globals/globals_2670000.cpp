@@ -5,16 +5,16 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CShotgunActorType_0267189c = {};
-CDemonActorType g_CShovelActorType_026718d8 = {};
-CDemonActorType g_CSimBoxActorType_02671914 = {};
+CDemonActorType g_CShotgunClassInfo = {};
+CDemonActorType g_CShovelClassInfo = {};
+CDemonActorType g_CSimBoxClassInfo = {};
 
 // CVector3f[5000]
-CVector3f g_CVector3f_ARRAY_026757d0[5000] = {};
+CVector3f g_FloatVertexArray[5000] = {};
 
 // int
 int g_INT_026714b0 = {};
 
 // int[4000]
-int g_INT_ARRAY_02671950[4000] = {};
+int g_VertexRemapTable[4000] = {};
 

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_crate_cpp_CCrate_getActorType_FUN_0043c800(CCrate *this_ptr)
 
 {
-  return &g_CCrateActorType_0077bd40;
+  return &g_CCrateClassInfo;
 }

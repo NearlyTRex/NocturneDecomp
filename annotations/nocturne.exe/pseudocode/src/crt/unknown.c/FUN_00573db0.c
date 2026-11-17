@@ -15,8 +15,8 @@ void FUN_00573db0(wchar_t param_1)
   wchar_to_bytes(param_1,(char *)local_c);
   iVar1 = mblen((char *)local_c);
   local_c[iVar1] = 0;
-  if (((g_UINT_005c2144 == 0x3a4) && (g_INT_02de5c30 != 0)) &&
-     ((g_CHAR_ARRAY_02de5c41[local_c[0]] & 1U) != 0)) {
+  if (((g_CodePage == 0x3a4) && (g_MultibyteLocaleActive != 0)) &&
+     ((g_LeadByteTable[local_c[0]] & 1U) != 0)) {
     fullwidth_toupper(param_1);
   }
   else {

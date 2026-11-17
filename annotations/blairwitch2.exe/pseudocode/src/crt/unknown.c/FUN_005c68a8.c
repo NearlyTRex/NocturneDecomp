@@ -11,7 +11,7 @@ void FUN_005c68a8(void)
 {
   (*(code *)PTR_crt_unknown_c_FUN_005bce28_0061f2e8)();
   FUN_005c32f4();
-  if (g_INT_02680170 == 0) {
+  if (g_EmergencyExitFlag == 0) {
     FUN_005c2a34(1);
   }
                     /* WARNING: Subroutine does not return */

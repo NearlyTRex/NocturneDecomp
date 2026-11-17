@@ -84,7 +84,7 @@
 ;   undefined4 g_SMRGLTextureBasic_007bda78.texture_name[1]
 ;   undefined4 g_SMRGLTextureBasic_007bda78.texture_name[2]
 ;   undefined4 g_SMRGLTextureBasic_007bda78.texture_name[3]
-;   undefined4 g_CHAR_ARRAY_007c26b0+0x3d950
+;   undefined4 g_CameraLoadImageReadBuffer+0x3d950
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -151,14 +151,14 @@ section .text
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00424ced
     XOR EAX,EAX                         ; 00424cf0
-    MOV ESI,0x800000                    ; 00424cf2 | g_CHAR_ARRAY_007c26b0+0x3d950
+    MOV ESI,0x800000                    ; 00424cf2 | g_CameraLoadImageReadBuffer+0x3d950
     MOV EDX,dword ptr [0x0060b280]      ; 00424cf7 | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_00424cf7
     MOV EBX,dword ptr [EDX]             ; 00424cfd | g_CDemonRenderer_01ba5c50
-    MOV dword ptr [EBX + EAX*0x1 + 0x18],ESI ; 00424cff | g_CHAR_ARRAY_007c26b0+0x3d950
+    MOV dword ptr [EBX + EAX*0x1 + 0x18],ESI ; 00424cff | g_CameraLoadImageReadBuffer+0x3d950
     ADD EAX,0x30                        ; 00424d03
     MOV EDX,dword ptr [EDX]             ; 00424d06 | g_CDemonRenderer_01ba5c50
-    MOV dword ptr [EDX + EAX*0x1 + -0x14],ESI ; 00424d08 | g_CHAR_ARRAY_007c26b0+0x3d950
+    MOV dword ptr [EDX + EAX*0x1 + -0x14],ESI ; 00424d08 | g_CameraLoadImageReadBuffer+0x3d950
     CMP EAX,0x12c0                      ; 00424d0c
     JNZ 0x00424cf7                      ; 00424d11
         ;   XREF to: 00424cf7 (CONDITIONAL_JUMP)  ; LAB_00424cf7
@@ -547,13 +547,13 @@ section .text
     LEA EBX,[ESP + 0x90]                ; 004252dc
     MOV EAX,0x265370c                   ; 004252e3
     MOV EDX,dword ptr [0x0060b280]      ; 004252e8 | g_CDemonRenderer_PTR_0060b280
-    FLD float ptr [EAX]                 ; 004252ee | g_CVector3f_0265370c
+    FLD float ptr [EAX]                 ; 004252ee | g_ZeroVector
     FMUL float ptr [0x005f4060]         ; 004252f0 | g_FLOAT_005f4060
     FISTP dword ptr [EBX]               ; 004252f6
-    FLD float ptr [EAX + 0x4]           ; 004252f8 | g_CVector3f_0265370c.y
+    FLD float ptr [EAX + 0x4]           ; 004252f8 | g_ZeroVector.y
     FMUL float ptr [0x005f4060]         ; 004252fb | g_FLOAT_005f4060
     FISTP dword ptr [EBX + 0x4]         ; 00425301
-    FLD float ptr [EAX + 0x8]           ; 00425304 | g_CVector3f_0265370c.z
+    FLD float ptr [EAX + 0x8]           ; 00425304 | g_ZeroVector.z
     FMUL float ptr [0x005f4060]         ; 00425307 | g_FLOAT_005f4060
     FISTP dword ptr [EBX + 0x8]         ; 0042530d
     LEA EAX,[ESP + 0x90]                ; 00425310

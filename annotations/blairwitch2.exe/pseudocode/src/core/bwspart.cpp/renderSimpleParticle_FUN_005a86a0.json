@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 685,
+    "complexity_score": 684,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 195,
+    "pseudocode_lines": 194,
     "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 640
+    "total_lines": 639
   },
   "cross_references": [
     {
@@ -134,7 +134,7 @@
     },
     {
       "addr": "007bda74",
-      "name": "g_CDemonCamera_PTR_007bda74",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -146,7 +146,7 @@
     },
     {
       "addr": "01c38aec",
-      "name": "g_INT_01c38aec",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     }
@@ -535,12 +535,20 @@
       "line": 101,
       "match": "(CVector3f *)((int)particle",
       "severity": "moderate",
-      "text": "(g_CDemonCamera_PTR_007bda74,(CVector3f *)((int)particle + 0x24),",
+      "text": "(g_CurrentSceneCamera,(CVector3f *)((int)particle + 0x24),(SProjectedVertex *)0x0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 103,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "local_14 = (*(float *)((int)particle + 0x10) - *(float *)((int)particle + 0xc)) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "local_14 = (*(float *)((int)particle + 0x10) - *(float *)((int)particle + 0xc)) *",
@@ -551,12 +559,12 @@
       "line": 104,
       "match": "(float *)((int)particle",
       "severity": "moderate",
-      "text": "local_14 = (*(float *)((int)particle + 0x10) - *(float *)((int)particle + 0xc)) *",
+      "text": "(1.0 - *(float *)((int)particle + 8) / *(float *)((int)particle + 4)) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 104,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "(1.0 - *(float *)((int)particle + 8) / *(float *)((int)particle + 4)) +",
@@ -565,14 +573,6 @@
     {
       "description": "Complex pointer cast",
       "line": 105,
-      "match": "(float *)((int)particle",
-      "severity": "moderate",
-      "text": "(1.0 - *(float *)((int)particle + 8) / *(float *)((int)particle + 4)) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "*(float *)((int)particle + 0xc);",
@@ -580,7 +580,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(CSimpleParticleSystem **)((int)particle",
       "severity": "moderate",
       "text": "(*(CSimpleParticleSystem **)((int)particle + 0x54));",
@@ -588,7 +588,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 119,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "((double)(*(float *)((int)particle + 0x48) * 65535.0f));",
@@ -596,7 +596,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 123,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x48) * fVar3));",
@@ -604,7 +604,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 127,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x48) * fVar3));",
@@ -612,7 +612,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x48) * fVar3));",
@@ -620,7 +620,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 135,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(fVar3 * *(float *)((int)particle + 0x4c)));",
@@ -628,7 +628,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 141,
+      "line": 140,
       "match": "8.315022e-39",
       "severity": "mild",
       "text": "SStack_d4.surface_normal.D.f = 8.315022e-39;",
@@ -636,7 +636,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 142,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "((double)(*(float *)((int)particle + 0x4c) * 65535.0f));",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 147,
+      "line": 146,
       "match": "8.315067e-39",
       "severity": "mild",
       "text": "SStack_d4.surface_normal.C.f = 8.315067e-39;",
@@ -652,7 +652,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 147,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x4c) * fVar3));",
@@ -660,7 +660,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 152,
+      "line": 151,
       "match": "8.315116e-39",
       "severity": "mild",
       "text": "SStack_d4.surface_normal.B.f = 8.315116e-39;",
@@ -668,7 +668,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 152,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x4c) * fVar3));",
@@ -676,7 +676,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 157,
+      "line": 156,
       "match": "8.315165e-39",
       "severity": "mild",
       "text": "SStack_d4.surface_normal.A.f = 8.315165e-39;",
@@ -684,7 +684,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 157,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x50) * fVar3));",
@@ -692,7 +692,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 162,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x50) * fVar3));",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 168,
+      "line": 167,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(*(float *)((int)particle + 0x50) * fVar3));",
@@ -708,7 +708,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 173,
+      "line": 172,
       "match": "(float *)((int)particle",
       "severity": "moderate",
       "text": "dVar5 = round((double)(fVar3 * *(float *)((int)particle + 0x50)));",
@@ -748,7 +748,7 @@
     },
     {
       "description": "Raw hex address 0x5a8bad assigned to bare local `uStack_d8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_d8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 172,
+      "line": 171,
       "match": "0x5a8bad",
       "severity": "moderate",
       "text": "uStack_d8 = 0x5a8bad;",

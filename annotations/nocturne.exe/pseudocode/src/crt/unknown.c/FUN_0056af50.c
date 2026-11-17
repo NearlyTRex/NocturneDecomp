@@ -14,7 +14,7 @@ int FUN_0056af50(void)
   undefined3 extraout_var;
   int character;
   
-  iVar1 = g_INT_005c1cf8;
+  iVar1 = g_ConsoleInitializationFlag;
   uVar2 = DrainConsoleInputAndSetup();
   character = CONCAT31(extraout_var,uVar2);
   if ((character != -1) && (iVar1 == 0)) {

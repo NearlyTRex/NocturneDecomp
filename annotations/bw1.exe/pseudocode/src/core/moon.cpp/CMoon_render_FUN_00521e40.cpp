@@ -70,7 +70,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00521e40(CMoon *this_ptr)
     g_INT_0061f8b4 = 0;
   }
   engine_3d_c_setBlendMode_FUN_00406c20(1);
-  dVar1 = round((double)g_FLOAT_01d33f6c);
+  dVar1 = round((double)g_MoonAnimationTimer);
   local_20.z = (float)(int)ROUND(dVar1);
   if (0x1d < (int)local_20.z) {
     local_20.z = 0.0;

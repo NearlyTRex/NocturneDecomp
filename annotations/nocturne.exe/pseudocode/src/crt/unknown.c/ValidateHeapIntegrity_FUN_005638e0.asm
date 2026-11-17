@@ -13,8 +13,8 @@
 ;   crt_unknown.c_realloc__FUN_00564a88 at 00564aab
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_005c1680 = 00000000
-;   Heap* g_Heap_PTR_005c1684 = 00000000
+;   Heap* g_MainHeap = 00000000
+;   Heap* g_SecondaryHeap = 00000000
 ;   int g_INT_005c1688 = 0x0
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad8 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae0 = 005671e4
@@ -77,7 +77,7 @@ section .text
     CMP EAX,EDI                         ; 00563937
     JA 0x0056399c                       ; 00563939
         ;   XREF to: 0056399c (CONDITIONAL_JUMP)  ; LAB_0056399c
-    MOV ESI,dword ptr [0x005c1684]      ; 0056393f | g_Heap_PTR_005c1684
+    MOV ESI,dword ptr [0x005c1684]      ; 0056393f | g_SecondaryHeap
         ;   Label: LAB_0056393f
     TEST ESI,ESI                        ; 00563945
     JZ 0x0056397d                       ; 00563947
@@ -117,7 +117,7 @@ section .text
     CMP EAX,EDI                         ; 00563979
     JA 0x0056399c                       ; 0056397b
         ;   XREF to: 0056399c (CONDITIONAL_JUMP)  ; LAB_0056399c
-    MOV ESI,dword ptr [0x005c1680]      ; 0056397d | g_Heap_PTR_005c1680
+    MOV ESI,dword ptr [0x005c1680]      ; 0056397d | g_MainHeap
         ;   Label: LAB_0056397d
     TEST ESI,ESI                        ; 00563983
     JZ 0x005639dc                       ; 00563985
@@ -138,7 +138,7 @@ section .text
         ;   XREF to: 00563987 (CONDITIONAL_JUMP)  ; LAB_00563987
     JMP 0x005639dc                      ; 0056399a
         ;   XREF to: 005639dc (UNCONDITIONAL_JUMP)  ; LAB_005639dc
-    MOV EAX,0x5c1680                    ; 0056399c | g_Heap_PTR_005c1680
+    MOV EAX,0x5c1680                    ; 0056399c | g_MainHeap
         ;   Label: LAB_0056399c
     MOV DX,DS                           ; 005639a1
     AND EDX,0xffff                      ; 005639a3
@@ -146,7 +146,7 @@ section .text
     MOV EAX,EDI                         ; 005639ab
     CALL crt_heap.c_CoalesceAndAddFreeBlock_FUN_00568bb0 ; 005639ad
         ;   XREF to: 00568bb0 (UNCONDITIONAL_CALL)  ; void crt_heap.c_CoalesceAndAddFreeBlock_FUN_00568bb0(void * ptr, HeapBlock * heap_block, ushort segment)
-    MOV EDX,dword ptr [0x005c1684]      ; 005639b2 | g_Heap_PTR_005c1684
+    MOV EDX,dword ptr [0x005c1684]      ; 005639b2 | g_SecondaryHeap
     MOV dword ptr [0x02de4e10],ESI      ; 005639b8 | g_INT_02de4e10
     CMP ESI,EDX                         ; 005639be
     JNC 0x005639d4                      ; 005639c0

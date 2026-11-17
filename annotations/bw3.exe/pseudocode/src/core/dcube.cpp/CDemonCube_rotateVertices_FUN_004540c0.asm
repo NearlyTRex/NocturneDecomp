@@ -30,18 +30,18 @@
 ;   undefined1* PTR_LAB_004540a0 = 004541e4
 ;   TerminatedCString s_core_dcube_cpp_005ba2fb
 ;   TerminatedCString s_CDemonCube_rotateVertici_005ba30d
-;   float g_FLOAT_005ba366 = 127
-;   float g_FLOAT_005de020 = 256
+;   float g_CubeColorScaleFactor = 127
+;   float g_CubeWorldToScreenScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CVector3f g_CVector3f_015485ec
-;   undefined4 g_CVector3f_015485ec.y
-;   undefined4 g_CVector3f_015485ec.z
-;   uchar g_UCHAR_015485f8
+;   CVector3f g_StaticColorVector
+;   undefined4 g_StaticColorVector.y
+;   undefined4 g_StaticColorVector.z
+;   uchar g_ColorConstantsInitialized
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CDemonRenderer_01bdd7e4.advanced_culling_enabled
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   CVector3f g_CVector3f_02cfd900
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00453c40
@@ -63,7 +63,7 @@ section .text
     PUSH EBP                            ; 004540c3
     MOV EBP,ESP                         ; 004540c4
     SUB ESP,0x38                        ; 004540c6
-    PUSH 0x2cfd900                      ; 004540c9 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004540c9 | g_ZeroVector
     MOV EDX,dword ptr [0x005f2afc]      ; 004540ce | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004540d4 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90 ; 004540d5
@@ -103,13 +103,13 @@ section .text
         ;   Label: LAB_00454130
     MOV EAX,ESI                         ; 00454133
     FLD float ptr [EAX]                 ; 00454135
-    FMUL float ptr [0x005de020]         ; 00454137 | g_FLOAT_005de020
+    FMUL float ptr [0x005de020]         ; 00454137 | g_CubeWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0045413d
     FLD float ptr [EAX + 0x4]           ; 0045413f
-    FMUL float ptr [0x005de020]         ; 00454142 | g_FLOAT_005de020
+    FMUL float ptr [0x005de020]         ; 00454142 | g_CubeWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 00454148
     FLD float ptr [EAX + 0x8]           ; 0045414b
-    FMUL float ptr [0x005de020]         ; 0045414e | g_FLOAT_005de020
+    FMUL float ptr [0x005de020]         ; 0045414e | g_CubeWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 00454154
     LEA EAX,[EBP + -0x38]               ; 00454157
     PUSH EAX                            ; 0045415a
@@ -149,7 +149,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500 ; 0045419f
         ;   XREF to: 0046d500 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 004541a4
-    MOV AH,byte ptr [0x015485f8]        ; 004541a7 | g_UCHAR_015485f8
+    MOV AH,byte ptr [0x015485f8]        ; 004541a7 | g_ColorConstantsInitialized
         ;   Label: LAB_004541a7
     TEST AH,0x1                         ; 004541ad
     JZ 0x004542fc                       ; 004541b0
@@ -188,7 +188,7 @@ section .text
     MOV dword ptr [EBP + -0x28],EAX     ; 00454201
     MOV EAX,dword ptr [EDX + 0x8]       ; 00454204
     MOV dword ptr [EBP + -0x24],EAX     ; 00454207
-    FLD float ptr [0x005ba366]          ; 0045420a | g_FLOAT_005ba366
+    FLD float ptr [0x005ba366]          ; 0045420a | g_CubeColorScaleFactor
         ;   Label: LAB_0045420a
     FLD float ptr [EBP + -0x2c]         ; 00454210
     FMUL ST1                            ; 00454213
@@ -278,10 +278,10 @@ section .text
     MOV DL,AH                           ; 00454301
     MOV EAX,0xbf13cd3a                  ; 00454303
     OR DL,0x1                           ; 00454308
-    MOV dword ptr [0x015485ec],EDI      ; 0045430b | g_CVector3f_015485ec
-    MOV dword ptr [0x015485f4],EDI      ; 00454311 | g_CVector3f_015485ec.z
-    MOV [0x015485f0],EAX                ; 00454317 | g_CVector3f_015485ec.y
-    MOV byte ptr [0x015485f8],DL        ; 0045431c | g_UCHAR_015485f8
+    MOV dword ptr [0x015485ec],EDI      ; 0045430b | g_StaticColorVector
+    MOV dword ptr [0x015485f4],EDI      ; 00454311 | g_StaticColorVector.z
+    MOV [0x015485f0],EAX                ; 00454317 | g_StaticColorVector.y
+    MOV byte ptr [0x015485f8],DL        ; 0045431c | g_ColorConstantsInitialized
     JMP 0x004541b6                      ; 00454322
         ;   XREF to: 004541b6 (UNCONDITIONAL_JUMP)  ; LAB_004541b6
 

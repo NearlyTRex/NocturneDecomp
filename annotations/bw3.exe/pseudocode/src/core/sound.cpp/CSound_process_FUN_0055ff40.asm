@@ -132,7 +132,7 @@ section .text
     SAHF                                ; 0055fff7
     JBE 0x0056057c                      ; 0055fff8
         ;   XREF to: 0056057c (CONDITIONAL_JUMP)  ; LAB_0056057c
-    MOV ESI,dword ptr [0x02cf5684]      ; 0055fffe | g_UINT_02cf5684
+    MOV ESI,dword ptr [0x02cf5684]      ; 0055fffe | g_WindSoundHandle
     PUSH ESI                            ; 00560004
     PUSH EBX                            ; 00560005
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 00560006
@@ -141,7 +141,7 @@ section .text
     TEST EAX,EAX                        ; 0056000e
     JZ 0x00560565                       ; 00560010
         ;   XREF to: 00560565 (CONDITIONAL_JUMP)  ; LAB_00560565
-    MOV EDI,dword ptr [0x02cf5684]      ; 00560016 | g_UINT_02cf5684
+    MOV EDI,dword ptr [0x02cf5684]      ; 00560016 | g_WindSoundHandle
         ;   Label: LAB_00560016
     PUSH dword ptr [0x02cf569c]         ; 0056001c | g_FLOAT_02cf569c
     PUSH EDI                            ; 00560022
@@ -216,7 +216,7 @@ section .text
     SAHF                                ; 00560108
     JBE 0x005605b0                      ; 00560109
         ;   XREF to: 005605b0 (CONDITIONAL_JUMP)  ; LAB_005605b0
-    MOV ESI,dword ptr [0x02cf5688]      ; 0056010f | g_UINT_02cf5688
+    MOV ESI,dword ptr [0x02cf5688]      ; 0056010f | g_WaterSoundHandle
     PUSH ESI                            ; 00560115
     PUSH EBX                            ; 00560116
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 00560117
@@ -225,31 +225,31 @@ section .text
     TEST EAX,EAX                        ; 0056011f
     JZ 0x00560599                       ; 00560121
         ;   XREF to: 00560599 (CONDITIONAL_JUMP)  ; LAB_00560599
-    MOV EDI,dword ptr [0x02cf5688]      ; 00560127 | g_UINT_02cf5688
+    MOV EDI,dword ptr [0x02cf5688]      ; 00560127 | g_WaterSoundHandle
         ;   Label: LAB_00560127
     PUSH dword ptr [0x02cf56a0]         ; 0056012d | g_FLOAT_02cf56a0
     PUSH EDI                            ; 00560133
     CALL sound_sndmain.cpp_setSfxVolume_FUN_00556ab0 ; 00560134
         ;   XREF to: 00556ab0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00556ab0(uint sfx_handle, float volume)
     ADD ESP,0x8                         ; 00560139
-    FLD float ptr [0x02cf5ed0]          ; 0056013c | g_FLOAT_02cf5ed0
+    FLD float ptr [0x02cf5ed0]          ; 0056013c | g_VolumeFadeTimeRemaining
         ;   Label: LAB_0056013c
     FCOMP float ptr [ESP + 0x11c]       ; 00560142
     FNSTSW AX                           ; 00560149
     SAHF                                ; 0056014b
     JBE 0x005605cd                      ; 0056014c
         ;   XREF to: 005605cd (CONDITIONAL_JUMP)  ; LAB_005605cd
-    FLD float ptr [0x02cf5ecc]          ; 00560152 | g_FLOAT_02cf5ecc
+    FLD float ptr [0x02cf5ecc]          ; 00560152 | g_TargetVolumeMultiplier
     FSUB float ptr [0x02cf5ec8]         ; 00560158 | g_FLOAT_02cf5ec8
     FLD float ptr [ESP + 0x11c]         ; 0056015e
     FLD ST0                             ; 00560165
-    FDIV float ptr [0x02cf5ed0]         ; 00560167 | g_FLOAT_02cf5ed0
+    FDIV float ptr [0x02cf5ed0]         ; 00560167 | g_VolumeFadeTimeRemaining
     FMULP ST2                           ; 0056016d
-    FSUBR float ptr [0x02cf5ed0]        ; 0056016f | g_FLOAT_02cf5ed0
+    FSUBR float ptr [0x02cf5ed0]        ; 0056016f | g_VolumeFadeTimeRemaining
     FXCH                                ; 00560175
     FADD float ptr [0x02cf5ec8]         ; 00560177 | g_FLOAT_02cf5ec8
     FXCH                                ; 0056017d
-    FSTP float ptr [0x02cf5ed0]         ; 0056017f | g_FLOAT_02cf5ed0
+    FSTP float ptr [0x02cf5ed0]         ; 0056017f | g_VolumeFadeTimeRemaining
     FSTP float ptr [0x02cf5ec8]         ; 00560185 | g_FLOAT_02cf5ec8
     PUSH 0x0                            ; 0056018b
         ;   Label: LAB_0056018b
@@ -292,7 +292,7 @@ section .text
     MOV ESI,0x5d5278                    ; 0056020a | = "ext"
     MOV EBX,0xffffffff                  ; 0056020f
     MOV dword ptr [0x006045f0],ESI      ; 00560214 | PTR_s_int_006045f0
-    MOV dword ptr [0x02cf5f84],EBX      ; 0056021a | g_INT_02cf5f84
+    MOV dword ptr [0x02cf5f84],EBX      ; 0056021a | g_TrainLastCameraIndex
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0 ; 00560220
         ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0()
         ;   Label: LAB_00560220
@@ -313,14 +313,14 @@ section .text
     TEST EAX,EAX                        ; 0056024d
     JNZ 0x005606c9                      ; 0056024f
         ;   XREF to: 005606c9 (CONDITIONAL_JUMP)  ; LAB_005606c9
-    MOV ECX,dword ptr [0x02cf5f8c]      ; 00560255 | g_UINT_02cf5f8c
+    MOV ECX,dword ptr [0x02cf5f8c]      ; 00560255 | g_TrainExteriorAmbientHandle
     PUSH ECX                            ; 0056025b
     MOV EBX,0x3ecccccd                  ; 0056025c
     CALL sound_sndmain.cpp_killSfx_FUN_00556be0 ; 00560261
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 00560266
     MOV dword ptr [ESP + 0x4],EBX       ; 00560269
-    MOV ESI,dword ptr [0x02cf5f88]      ; 0056026d | g_UINT_02cf5f88
+    MOV ESI,dword ptr [0x02cf5f88]      ; 0056026d | g_TrainRailNoiseHandle
         ;   Label: LAB_0056026d
     PUSH ESI                            ; 00560273
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 00560274
@@ -381,9 +381,9 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00560349
     MOVSD ES:EDI,ESI                    ; 0056034a
     MOV EAX,dword ptr [ESP + 0x138]     ; 0056034b
-    FLD float ptr [EBX]                 ; 00560352 | g_STrainNoise_ARRAY_02cf5ed4
-    FLD float ptr [EBX + 0x4]           ; 00560354 | g_STrainNoise_ARRAY_02cf5ed4[0].position.y
-    FLD float ptr [EBX + 0x8]           ; 00560357 | g_STrainNoise_ARRAY_02cf5ed4[0].position.z
+    FLD float ptr [EBX]                 ; 00560352 | g_TrainNoiseArray
+    FLD float ptr [EBX + 0x4]           ; 00560354 | g_TrainNoiseArray[0].position.y
+    FLD float ptr [EBX + 0x8]           ; 00560357 | g_TrainNoiseArray[0].position.z
     FXCH ST2                            ; 0056035a
     FADD float ptr [ESP + 0xd4]         ; 0056035c
     FXCH                                ; 00560363
@@ -391,11 +391,11 @@ section .text
     FXCH ST2                            ; 0056036c
     FADD float ptr [ESP + 0xdc]         ; 0056036e
     FXCH                                ; 00560375
-    FSTP float ptr [EBX]                ; 00560377 | g_STrainNoise_ARRAY_02cf5ed4
+    FSTP float ptr [EBX]                ; 00560377 | g_TrainNoiseArray
     FXCH                                ; 00560379
-    FSTP float ptr [EBX + 0x4]          ; 0056037b | g_STrainNoise_ARRAY_02cf5ed4[0].position.y
-    FSTP float ptr [EBX + 0x8]          ; 0056037e | g_STrainNoise_ARRAY_02cf5ed4[0].position.z
-    FLD float ptr [EAX + 0x2cf5edc]     ; 00560381 | g_STrainNoise_ARRAY_02cf5ed4[0].position.z
+    FSTP float ptr [EBX + 0x4]          ; 0056037b | g_TrainNoiseArray[0].position.y
+    FSTP float ptr [EBX + 0x8]          ; 0056037e | g_TrainNoiseArray[0].position.z
+    FLD float ptr [EAX + 0x2cf5edc]     ; 00560381 | g_TrainNoiseArray[0].position.z
     FABS                                ; 00560387
     FCOMP double ptr [0x005d534f]       ; 00560389 | g_DOUBLE_005d534f
     FNSTSW AX                           ; 0056038f
@@ -540,10 +540,10 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_00556240 ; 0056056a
         ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00556240(char * filename)
     ADD ESP,0x4                         ; 0056056f
-    MOV [0x02cf5684],EAX                ; 00560572 | g_UINT_02cf5684
+    MOV [0x02cf5684],EAX                ; 00560572 | g_WindSoundHandle
     JMP 0x00560016                      ; 00560577
         ;   XREF to: 00560016 (UNCONDITIONAL_JUMP)  ; LAB_00560016
-    MOV EDX,dword ptr [0x02cf5684]      ; 0056057c | g_UINT_02cf5684
+    MOV EDX,dword ptr [0x02cf5684]      ; 0056057c | g_WindSoundHandle
         ;   Label: LAB_0056057c
     PUSH EDX                            ; 00560582
     PUSH EBX                            ; 00560583
@@ -559,10 +559,10 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_00556240 ; 0056059e
         ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00556240(char * filename)
     ADD ESP,0x4                         ; 005605a3
-    MOV [0x02cf5688],EAX                ; 005605a6 | g_UINT_02cf5688
+    MOV [0x02cf5688],EAX                ; 005605a6 | g_WaterSoundHandle
     JMP 0x00560127                      ; 005605ab
         ;   XREF to: 00560127 (UNCONDITIONAL_JUMP)  ; LAB_00560127
-    MOV ECX,dword ptr [0x02cf5688]      ; 005605b0 | g_UINT_02cf5688
+    MOV ECX,dword ptr [0x02cf5688]      ; 005605b0 | g_WaterSoundHandle
         ;   Label: LAB_005605b0
     PUSH ECX                            ; 005605b6
     PUSH EBX                            ; 005605b7
@@ -573,11 +573,11 @@ section .text
     MOV dword ptr [0x02cf56a0],EBX      ; 005605c2 | g_FLOAT_02cf56a0
     JMP 0x0056013c                      ; 005605c8
         ;   XREF to: 0056013c (UNCONDITIONAL_JUMP)  ; LAB_0056013c
-    FLD float ptr [0x02cf5ecc]          ; 005605cd | g_FLOAT_02cf5ecc
+    FLD float ptr [0x02cf5ecc]          ; 005605cd | g_TargetVolumeMultiplier
         ;   Label: LAB_005605cd
     XOR EAX,EAX                         ; 005605d3
     FSTP float ptr [0x02cf5ec8]         ; 005605d5 | g_FLOAT_02cf5ec8
-    MOV [0x02cf5ed0],EAX                ; 005605db | g_FLOAT_02cf5ed0
+    MOV [0x02cf5ed0],EAX                ; 005605db | g_VolumeFadeTimeRemaining
     JMP 0x0056018b                      ; 005605e0
         ;   XREF to: 0056018b (UNCONDITIONAL_JUMP)  ; LAB_0056018b
     PUSH EAX                            ; 005605e5
@@ -587,7 +587,7 @@ section .text
         ;   XREF to: 00556db0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableSfxChannel_FUN_00556db0(int channel_index, int enable_state)
     JMP 0x005601d4                      ; 005605ed
         ;   XREF to: 005601d4 (UNCONDITIONAL_JUMP)  ; LAB_005601d4
-    MOV EBX,dword ptr [0x02cf5f84]      ; 005605f2 | g_INT_02cf5f84
+    MOV EBX,dword ptr [0x02cf5f84]      ; 005605f2 | g_TrainLastCameraIndex
         ;   Label: LAB_005605f2
     CMP EBX,dword ptr [EAX + 0x15aeb8]  ; 005605f8 | g_CDemonSetInstance.selected_camera_index
     JZ 0x00560220                       ; 005605fe
@@ -639,14 +639,14 @@ section .text
     MOV EAX,[0x00603b28]                ; 005606a5 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 005606aa | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x4                         ; 005606b0
-    MOV [0x02cf5f84],EAX                ; 005606b3 | g_INT_02cf5f84
+    MOV [0x02cf5f84],EAX                ; 005606b3 | g_TrainLastCameraIndex
     JMP 0x00560220                      ; 005606b8
         ;   XREF to: 00560220 (UNCONDITIONAL_JUMP)  ; LAB_00560220
     MOV dword ptr [0x006045f0],0x5d5280 ; 005606bd | PTR_s_int_006045f0 | = "ext"
         ;   Label: LAB_005606bd
     JMP 0x00560699                      ; 005606c7
         ;   XREF to: 00560699 (UNCONDITIONAL_JUMP)  ; LAB_00560699
-    MOV EDX,dword ptr [0x02cf5f8c]      ; 005606c9 | g_UINT_02cf5f8c
+    MOV EDX,dword ptr [0x02cf5f8c]      ; 005606c9 | g_TrainExteriorAmbientHandle
         ;   Label: LAB_005606c9
     MOV EAX,0x3f333333                  ; 005606cf
     PUSH EDX                            ; 005606d4
@@ -667,7 +667,7 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_00556240 ; 00560700
         ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00556240(char * filename)
     ADD ESP,0x4                         ; 00560705
-    MOV [0x02cf5f8c],EAX                ; 00560708 | g_UINT_02cf5f8c
+    MOV [0x02cf5f8c],EAX                ; 00560708 | g_TrainExteriorAmbientHandle
     CALL sound_sndmain.cpp_popSfxOptions_FUN_00556050 ; 0056070d
         ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00556050()
     JMP 0x0056026d                      ; 00560712
@@ -686,7 +686,7 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_00556240 ; 00560739
         ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00556240(char * filename)
     ADD ESP,0x4                         ; 0056073e
-    MOV [0x02cf5f88],EAX                ; 00560741 | g_UINT_02cf5f88
+    MOV [0x02cf5f88],EAX                ; 00560741 | g_TrainRailNoiseHandle
     CALL sound_sndmain.cpp_popSfxOptions_FUN_00556050 ; 00560746
         ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00556050()
     JMP 0x005602a1                      ; 0056074b
@@ -695,7 +695,7 @@ section .text
         ;   Label: LAB_00560750
     FMUL double ptr [0x005d5337]        ; 00560754 | g_DOUBLE_005d5337
     SUB ESP,0x4                         ; 0056075a
-    MOV EDX,dword ptr [0x02cf5f88]      ; 0056075d | g_UINT_02cf5f88
+    MOV EDX,dword ptr [0x02cf5f88]      ; 0056075d | g_TrainRailNoiseHandle
     FSTP float ptr [ESP]                ; 00560763
     PUSH EDX                            ; 00560766
     CALL sound_sndmain.cpp_setSfxVolume_FUN_00556ab0 ; 00560767
@@ -703,7 +703,7 @@ section .text
     ADD ESP,0x8                         ; 0056076c
     JMP 0x005602a1                      ; 0056076f
         ;   XREF to: 005602a1 (UNCONDITIONAL_JUMP)  ; LAB_005602a1
-    MOV dword ptr [ESP + 0x130],EBX     ; 00560774 | g_STrainNoise_ARRAY_02cf5ed4
+    MOV dword ptr [ESP + 0x130],EBX     ; 00560774 | g_TrainNoiseArray
         ;   Label: LAB_00560774
     JMP 0x005603aa                      ; 0056077b
         ;   XREF to: 005603aa (UNCONDITIONAL_JUMP)  ; LAB_005603aa

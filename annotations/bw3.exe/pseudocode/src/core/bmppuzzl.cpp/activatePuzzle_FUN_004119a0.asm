@@ -18,7 +18,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CPuzzle* g_CPuzzle_PTR_007dffb4
 ;   int g_INT_007dffbc
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
@@ -34,7 +34,7 @@ section .text
     TEST ECX,ECX                        ; 004119a9
     JZ 0x004119d8                       ; 004119ab
         ;   XREF to: 004119d8 (CONDITIONAL_JUMP)  ; LAB_004119d8
-    MOV EAX,[0x01c5fae4]                ; 004119ad | g_BIT_INTEGER32_01c5fae4
+    MOV EAX,[0x01c5fae4]                ; 004119ad | g_MouseButtonFlags
     MOV dword ptr [0x007dffb4],EDX      ; 004119b2 | g_CPuzzle_PTR_007dffb4
     MOV [0x007dffbc],EAX                ; 004119b8 | g_INT_007dffbc
     PUSH ECX                            ; 004119bd

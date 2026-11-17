@@ -14,7 +14,7 @@
 ;   core_sound.cpp_CSound_setReverb_FUN_0057dad0 at 0057daf4
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;   SReverbSettings g_CachedReverb
 ;   undefined4 g_CachedReverb.decay_time
 ;   undefined4 g_CachedReverb.damping
@@ -29,7 +29,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005756f9
     MOV [0x02c807d4],EAX                ; 005756fd | g_CachedReverb.decay_time
     MOV EAX,dword ptr [ESP + 0xc]       ; 00575702
-    MOV EDX,dword ptr [0x02c80650]      ; 00575706 | g_CSoundDevice_PTR_02c80650
+    MOV EDX,dword ptr [0x02c80650]      ; 00575706 | g_CSoundDevicePtr
     MOV [0x02c807d8],EAX                ; 0057570c | g_CachedReverb.damping
     TEST EDX,EDX                        ; 00575711
     JNZ 0x00575716                      ; 00575713

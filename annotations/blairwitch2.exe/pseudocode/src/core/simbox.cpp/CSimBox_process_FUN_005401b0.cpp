@@ -26,7 +26,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,floa
   bVar5 = 0;
   if ((this_ptr->type == 1) && ((this_ptr->physics_box).is_valid == 0)) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (g_CEventList_PTR_006141f0,this_ptr->trigger_event);
+                      (g_CEventListPtr,this_ptr->trigger_event);
     if (iVar3 != 0) {
       pCVar4 = &(this_ptr->physics_box).linear_velocity_local;
       (this_ptr->physics_box).is_valid = 1;
@@ -58,7 +58,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,floa
     }
   }
   if (this_ptr->type == 0) {
-    iVar3 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_R);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_R);
     if (iVar3 != 0) {
       (this_ptr->base).location.position.x = (this_ptr->spawn_position).x;
       (this_ptr->base).location.position.y = (this_ptr->spawn_position).y;

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 25,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 11,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 28
+    "total_lines": 29
   },
   "cross_references": [],
   "function": {
@@ -37,7 +37,7 @@
     },
     {
       "addr": "02cf6094",
-      "name": "g_PTR_02cf6094",
+      "name": "g_APIDLL_lockFrameX",
       "type": "void*",
       "value": null
     },
@@ -117,10 +117,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 7,
+      "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((g_PTR_02cf6094 != (byte *)0x0) && (iVar1 = (*(code *)g_PTR_02cf6094)(), iVar1 != 0)) {",
+      "text": "(iVar1 = (*(code *)g_APIDLL_lockFrameX)(), iVar1 != 0)) {",
       "type": "unresolved_funcptr"
     }
   ]

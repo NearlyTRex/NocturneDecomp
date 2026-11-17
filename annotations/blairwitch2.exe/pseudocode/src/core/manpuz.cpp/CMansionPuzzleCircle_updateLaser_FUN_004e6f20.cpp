@@ -153,7 +153,7 @@ LAB_004e6f77:
     laser_info.stored_angle = (float)uVar10;
     laser_info.transparency = fVar11;
     core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20
-              (g_CFireEffect_PTR_00614d30,&CStack_7c,&CStack_34,laser_info,recursion_depth);
+              (g_CFireEffectPtr,&CStack_7c,&CStack_34,laser_info,recursion_depth);
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return;
   }

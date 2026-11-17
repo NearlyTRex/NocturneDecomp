@@ -189,25 +189,25 @@
     },
     {
       "addr": "01c3f8e0",
-      "name": "g_CSmokeParticle_ARRAY_01c3f8e0",
+      "name": "g_SmokeParticlePool",
       "type": "CSmokeParticle[2048]",
       "value": null
     },
     {
       "addr": "01c3f90c",
-      "name": "g_CSmokeParticle_ARRAY_01c3f8e0[1].active",
+      "name": "g_SmokeParticlePool[1].active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c558e0",
-      "name": "g_INT_01c558e0",
+      "name": "g_BulletHoleActiveCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c594e8",
-      "name": "g_INT_01c594e8",
+      "name": "g_StakeActiveCount",
       "type": "int",
       "value": null
     },
@@ -309,13 +309,13 @@
     },
     {
       "addr": "01c91288",
-      "name": "g_CBulletTrail_ARRAY_01c91268[0].frames_remaining",
+      "name": "g_BulletTrailPool[0].frames_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c912ac",
-      "name": "g_CBulletTrail_ARRAY_01c91268[1].frames_remaining",
+      "name": "g_BulletTrailPool[1].frames_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -393,7 +393,7 @@
     },
     {
       "addr": "01c965dc",
-      "name": "g_INT_01c965dc",
+      "name": "g_LaserBeamActiveCount",
       "type": "int",
       "value": null
     },
@@ -696,19 +696,19 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `&g_CBulletHole_ARRAY_01c558e8[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_BulletHolePool[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 84,
-      "match": "(int)&g_CBulletHole_ARRAY_01c558e8[0].actor_ptr",
+      "match": "(int)&g_BulletHolePool[0].actor_ptr",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&g_CBulletHole_ARRAY_01c558e8[0].actor_ptr + iVar1) != 0) {",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CBulletHole_ARRAY_01c558e8[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_BulletHolePool[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 86,
-      "match": "(int)&g_CBulletHole_ARRAY_01c558e8[0].position.x",
+      "match": "(int)&g_BulletHolePool[0].position.x",
       "severity": "moderate",
-      "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c558e8[0].position.x + iVar1));",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
       "type": "pointer_truncation"
     },
     {
@@ -732,7 +732,7 @@
       "line": 84,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&g_CBulletHole_ARRAY_01c558e8[0].actor_ptr + iVar1) != 0) {",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
       "type": "pointer_cast"
     },
     {
@@ -740,7 +740,7 @@
       "line": 86,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c558e8[0].position.x + iVar1));",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
       "type": "pointer_cast"
     },
     {

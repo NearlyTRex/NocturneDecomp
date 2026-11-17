@@ -16,7 +16,7 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_00489510(CEventLi
   char local_6c [100];
   
   do {
-    while ((g_UCHAR_ARRAY_0061ed94[(byte)(*command_string + 1)] & 2) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*command_string + 1)] & 2) != 0) {
       command_string = command_string + 1;
     }
     cVar1 = *command_string;
@@ -33,14 +33,14 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_00489510(CEventLi
       pcVar4 = pcVar4 + 1;
     }
     while ((command_string = pcVar4 + 1, local_6c < pcVar2 &&
-           ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
+           ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
       pcVar2 = pcVar2 + -1;
     }
     if (local_6c < pcVar2) {
       *pcVar2 = '\0';
       iVar3 = core_event_cpp_CEventList_executeCommand_FUN_00489670(this_ptr,local_6c);
       if (iVar3 == 0) {
-        if (g_INT_01c3dd0c != 0) {
+        if (g_EventDryRun != 0) {
           return 0;
         }
         engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s\n");

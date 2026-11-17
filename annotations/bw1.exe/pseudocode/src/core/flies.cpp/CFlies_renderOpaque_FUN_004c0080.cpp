@@ -53,11 +53,11 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
   }
   iStack_1c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0
                         ((CBoundingBox3D *)(auStack_b8 + 0x60),in_stack_ffffff44);
-  iVar5 = g_INT_01cc8084;
+  iVar5 = g_FliesInitialized;
   if (iStack_1c != 0) {
     this_ptr->is_visible = 1;
     if (iVar5 == 0) {
-      out_basis = g_FLOAT_ARRAY_ARRAY_01cc80cc;
+      out_basis = g_SplineBasisTable;
       iVar5 = 0;
       do {
         fVar2 = (float)iVar5;
@@ -66,15 +66,15 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
                   (*out_basis,(fVar2 + (float)0.5) * (float)0.015625,0.0);
         out_basis = out_basis + 1;
       } while (iVar5 < 0x40);
-      g_INT_01cc8084 = 1;
+      g_FliesInitialized = 1;
     }
     pCVar3 = g_CDemonRenderer_PTR_00612560;
     if (g_INT_01c50948 == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00483cf0
                 (g_CDemonRenderer_PTR_00612560,0,0,0);
-      uVar6 = g_INT_01c51cac >> 8;
-      g_UINT_01cc80c4 = uVar6 | uVar6 << 8 | uVar6 << 0x10;
-      g_UINT_01cc80c8 = g_UINT_01cc80c4 ^ 0xffffff;
+      uVar6 = g_PerspectiveReciprocal >> 8;
+      g_FlyBlendColor = uVar6 | uVar6 << 8 | uVar6 << 0x10;
+      g_FlyInvBlendColor = g_FlyBlendColor ^ 0xffffff;
     }
     else {
       auStack_b8._4_4_ = 3;
@@ -99,13 +99,13 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
       pCVar3->vertex_buffer_ptr[1].b = 0;
       pCVar3->vertex_buffer_ptr[2].r = 0;
       pCVar3->vertex_buffer_ptr[2].g = 0;
-      iVar5 = g_INT_01c51cac;
+      iVar5 = g_PerspectiveReciprocal;
       pCVar3->vertex_buffer_ptr[2].b = 0;
       iVar5 = 0xffff - iVar5;
       pCVar3->vertex_buffer_ptr->a = iVar5;
       pCVar3->vertex_buffer_ptr[1].a = iVar5;
       pCVar3->vertex_buffer_ptr[2].a = iVar5;
-      engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(&g_SMRGLTextureBasic_0061d828);
+      engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(&g_FliesTexture);
     }
     iStack_18 = 0;
     if (0 < this_ptr->fly_count) {
@@ -121,7 +121,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
           pSStack_14 = (SFly *)0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_00583f90
-                  (g_FLOAT_ARRAY_ARRAY_01cc80cc[(int)pSStack_14],pSVar4->control_points,
+                  (g_SplineBasisTable[(int)pSStack_14],pSVar4->control_points,
                    pSVar4->control_points + 1,pSVar4->control_points + 2,pSVar4->control_points + 3,
                    &CStack_2c);
         fStack_38 = CStack_2c.x;

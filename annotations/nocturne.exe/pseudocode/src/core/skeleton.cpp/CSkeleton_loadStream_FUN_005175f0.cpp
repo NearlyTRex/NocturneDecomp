@@ -39,11 +39,11 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this
     g_CurrentLineNumber = 270;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Old skeleton version %d not supported",local_24);
   }
-  if (g_INT_005be978 < local_24) {
+  if (g_CSkeletonVersion < local_24) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 271;
     core_main_c_displayErrorAndQuit_FUN_004c8440
-              ("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,g_INT_005be978);
+              ("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,g_CSkeletonVersion);
   }
   do {
     iVar1 = _fgetc(file_handle);

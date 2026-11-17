@@ -2,13 +2,13 @@
 // Address: 00473940
 // Address Range: [[00473940, 00473b17]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytrace *this_ptr,_FILE *param_2)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytrace *this_ptr,_FILE *param_2)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -26,7 +26,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
   bVar3 = 0;
   core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00473630(this_ptr);
   g_INT_01c599bc = 0;
-  _fread(&local_14,4,1,param_2);
+  _fread(&local_14,4,1,file_handle);
   if (local_14 < 1) {
     g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
     g_INT_01d71de4 = 0x148;
@@ -37,12 +37,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
     g_INT_01d71de4 = 0x14b;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
-  _fread(&this_ptr->grid_coord,4,1,param_2);
-  _fread(&(this_ptr->grid_coord).y,4,1,param_2);
-  _fread(&(this_ptr->grid_coord).z,4,1,param_2);
-  _fread(&this_ptr->bbox_min,0xc,1,param_2);
-  _fread(&this_ptr->bbox_max,0xc,1,param_2);
-  _fread(&this_ptr->cell_size,0xc,1,param_2);
+  _fread(&this_ptr->grid_coord,4,1,file_handle);
+  _fread(&(this_ptr->grid_coord).y,4,1,file_handle);
+  _fread(&(this_ptr->grid_coord).z,4,1,file_handle);
+  _fread(&this_ptr->bbox_min,0xc,1,file_handle);
+  _fread(&this_ptr->bbox_max,0xc,1,file_handle);
+  _fread(&this_ptr->cell_size,0xc,1,file_handle);
   local_2c = (this_ptr->cell_size).x * 0.125f;
   local_28 = (this_ptr->cell_size).y * 0.125f;
   local_24 = (this_ptr->cell_size).z * 0.125f;
@@ -68,11 +68,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
         iVar1 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z;
         iVar1 = iVar1 + 1) {
       core_dcube_cpp_CDemonCube_load_FUN_00453fa0
-                ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar2),param_2);
+                ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar2),file_handle);
       iVar2 = iVar2 + 0x34;
     }
   }
-  if ((param_2->_flag & 0x20) == 0) {
+  if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
   g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";

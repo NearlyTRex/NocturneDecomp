@@ -31,8 +31,9 @@ void FUN_005c2ab4(void)
   PTR_crt_unknown_c_FUN_005bce04_0061f2dc = FUN_005c28ec;
   PTR_crt_unknown_c_FUN_005bce04_0061f2e0 = FUN_005c2a88;
   PTR_crt_unknown_c_FUN_005bce04_0061f2d8 = FUN_005c28dc;
-  FUN_005c4b60(*(uint *)(g_PTR_0268017c + 0xda),g_PTR_0268017c);
-  TlsSetValue(g_INT_0061f2a0,g_PTR_0268017c);
+  FUN_005c4b60
+            (*(uint *)(g_CurrentThreadTlsBlock + 0xda),g_CurrentThreadTlsBlock);
+  TlsSetValue(g_INT_0061f2a0,g_CurrentThreadTlsBlock);
   PTR_crt_unknown_c_FUN_005bcdfc_0061f2a4 = FUN_005c28fc;
   return;
 }

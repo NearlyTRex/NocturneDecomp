@@ -84,19 +84,19 @@
     },
     {
       "addr": "00764d98",
-      "name": "g_INT_ARRAY_00764d98",
+      "name": "g_BugsSortedVertexIndices",
       "type": "int[700]",
       "value": null
     },
     {
       "addr": "00764d9c",
-      "name": "g_INT_ARRAY_00764d98[1]",
+      "name": "g_BugsSortedVertexIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764da0",
-      "name": "g_INT_ARRAY_00764d98[2]",
+      "name": "g_BugsSortedVertexIndices[2]",
       "type": "undefined4",
       "value": null
     },
@@ -108,13 +108,13 @@
     },
     {
       "addr": "01bcdef4",
-      "name": "g_CEnemyActorType_01bcdebc.name_hash",
+      "name": "g_CEnemyClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cae124",
-      "name": "g_CHeroActorType_01cae0ec.name_hash",
+      "name": "g_CHeroClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -253,49 +253,49 @@
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(int *)((int)g_INT_ARRAY_00764d98",
+      "match": "(int *)((int)g_BugsSortedVertexIndices",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_00764d98 + iVar8) = iVar5;",
+      "text": "*(int *)((int)g_BugsSortedVertexIndices + iVar8) = iVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(int *)((int)g_INT_ARRAY_00764d98",
+      "match": "(int *)((int)g_BugsSortedVertexIndices",
       "severity": "moderate",
-      "text": "if (pCVar1[*(int *)((int)g_INT_ARRAY_00764d98 + iVar8 + 4)].y <",
+      "text": "if (pCVar1[*(int *)((int)g_BugsSortedVertexIndices + iVar8 + 4)].y <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(int *)((int)g_INT_ARRAY_00764d98",
+      "match": "(int *)((int)g_BugsSortedVertexIndices",
       "severity": "moderate",
-      "text": "pCVar1[*(int *)((int)g_INT_ARRAY_00764d98 + iVar8)].y) {",
+      "text": "pCVar1[*(int *)((int)g_BugsSortedVertexIndices + iVar8)].y) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(uint *)((int)g_INT_ARRAY_00764d98",
+      "match": "(uint *)((int)g_BugsSortedVertexIndices",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)g_INT_ARRAY_00764d98 + iVar8 + 4);",
+      "text": "puVar7 = (uint *)((int)g_BugsSortedVertexIndices + iVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 67,
-      "match": "(uint *)((int)g_INT_ARRAY_00764d98",
+      "match": "(uint *)((int)g_BugsSortedVertexIndices",
       "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_INT_ARRAY_00764d98 + iVar8);",
+      "text": "uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(uint *)((int)g_INT_ARRAY_00764d98",
+      "match": "(uint *)((int)g_BugsSortedVertexIndices",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_INT_ARRAY_00764d98 + iVar8) = *puVar7;",
+      "text": "*(uint *)((int)g_BugsSortedVertexIndices + iVar8) = *puVar7;",
       "type": "pointer_cast"
     },
     {

@@ -9,8 +9,8 @@
 void __cdecl core_passngr_cpp_resetPathfindingQueue_FUN_00511b50(void)
 
 {
-  g_INT_01e5ec6c = 0;
-  g_INT_01e5ec70 = 0;
-  g_INT_01e613ec = 0;
+  g_PathfindingQueueHead = 0;
+  g_PathfindingQueueTail = 0;
+  g_PathfindingNodesExpanded = 0;
   return;
 }

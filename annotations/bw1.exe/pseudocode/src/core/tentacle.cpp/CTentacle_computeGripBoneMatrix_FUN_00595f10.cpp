@@ -23,10 +23,9 @@ CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_
   
   bVar4 = 0;
   core_xform_cpp_lerpMatrix3x4_FUN_005b72c0
-            ((this_ptr->base).base.model.bone_transform.bone_model_matrices +
-             g_INT_ARRAY_02c83880[0],
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-             g_INT_ARRAY_02c83880[1],0.5,&local_6c);
+            ((this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[0],
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[1],
+             0.5,&local_6c);
   pCVar2 = &local_6c;
   pCVar3 = &local_cc;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -35,10 +34,9 @@ CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   core_xform_cpp_lerpMatrix3x4_FUN_005b72c0
-            ((this_ptr->base).base.model.bone_transform.bone_model_matrices +
-             g_INT_ARRAY_02c83880[2],
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-             g_INT_ARRAY_02c83880[3],0.5,&local_fc);
+            ((this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[2],
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[3],
+             0.5,&local_fc);
   pCVar2 = &local_fc;
   pCVar3 = &local_9c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

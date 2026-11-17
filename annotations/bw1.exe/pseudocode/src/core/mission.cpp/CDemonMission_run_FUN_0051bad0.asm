@@ -22,7 +22,7 @@
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CGameInstance.act_completion_state
-;   int g_INT_01d06aa0
+;   int g_HeroCount
 ;   int g_INT_01d06ab4
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -55,7 +55,7 @@ section .text
     PUSH EDI                            ; 0051bad2
     PUSH EBP                            ; 0051bad3
     MOV EBX,dword ptr [ESP + 0x14]      ; 0051bad4
-    CMP dword ptr [0x01d06aa0],0x1      ; 0051bad8 | g_INT_01d06aa0
+    CMP dword ptr [0x01d06aa0],0x1      ; 0051bad8 | g_HeroCount
         ;   Label: LAB_0051bad8
     JL 0x0051bbc0                       ; 0051badf
         ;   XREF to: 0051bbc0 (CONDITIONAL_JUMP)  ; LAB_0051bbc0

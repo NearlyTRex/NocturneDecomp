@@ -15,7 +15,7 @@ int __cdecl sound_sndmain_cpp_isRecordingStarted_FUN_00558b00(void)
   iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_00558af0();
   iVar2 = 0;
   if (iVar1 != 0) {
-    iVar2 = g_INT_02cf3c6c;
+    iVar2 = isRecordingStarted;
   }
   return iVar2;
 }

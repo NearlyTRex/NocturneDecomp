@@ -8,9 +8,9 @@
 ; SRGBColorPalette * Stack[0x8]:4   palette_data
 ;
 ; Referenced Globals:
-;   int g_INT_0061b4a8 = 0x100
-;   uchar* g_UCHAR_PTR_01c50930
-;   uchar* g_UCHAR_PTR_01c50934
+;   int g_CurrentTextureDimension = 0x100
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   int g_INT_01c50948
 ;   void* g_PTR_02c833b0
 ;
@@ -30,13 +30,13 @@ section .text
         ;   Label: LAB_005820ae
     PUSH ESI                            ; 005820af
     PUSH EBX                            ; 005820b0
-    MOV ECX,dword ptr [0x01c50934]      ; 005820b1 | g_UCHAR_PTR_01c50934
+    MOV ECX,dword ptr [0x01c50934]      ; 005820b1 | g_CurrentTextureOpacityData
     PUSH ECX                            ; 005820b7
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005820b8
     PUSH EBX                            ; 005820bc
-    MOV ESI,dword ptr [0x01c50930]      ; 005820bd | g_UCHAR_PTR_01c50930
+    MOV ESI,dword ptr [0x01c50930]      ; 005820bd | g_CurrentTextureData
     PUSH ESI                            ; 005820c3
-    MOV EDI,dword ptr [0x0061b4a8]      ; 005820c4 | g_INT_0061b4a8
+    MOV EDI,dword ptr [0x0061b4a8]      ; 005820c4 | g_CurrentTextureDimension
     PUSH EDI                            ; 005820ca
     MOV EBP,dword ptr [ESP + 0x24]      ; 005820cb
     PUSH EBP                            ; 005820cf

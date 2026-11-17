@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c37788
 ;   int g_INT_01d0c39c
-;   void* g_PTR_0264bcc4
+;   void* g_APIDLL_getTextureHandle
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
 
     XOR EDX,EDX                         ; 004f5d90
         ;   Label: engine_mini3d.cpp_disableClipping_FUN_004f5d90
-    MOV ECX,dword ptr [0x0264bcc4]      ; 004f5d92 | g_PTR_0264bcc4
+    MOV ECX,dword ptr [0x0264bcc4]      ; 004f5d92 | g_APIDLL_getTextureHandle
     MOV dword ptr [0x01d0c39c],EDX      ; 004f5d98 | g_INT_01d0c39c
     TEST ECX,ECX                        ; 004f5d9e
     JZ 0x004f5dab                       ; 004f5da0
@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_004f5dab
     PUSH EDX                            ; 004f5dac
         ;   Label: LAB_004f5dac
-    CALL dword ptr [0x0264bcc4]         ; 004f5dad | g_PTR_0264bcc4
+    CALL dword ptr [0x0264bcc4]         ; 004f5dad | g_APIDLL_getTextureHandle
     ADD ESP,0x4                         ; 004f5db3
     RET                                 ; 004f5db6
 

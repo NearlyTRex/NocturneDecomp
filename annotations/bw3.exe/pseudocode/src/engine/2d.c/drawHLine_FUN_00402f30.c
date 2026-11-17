@@ -32,11 +32,11 @@ LAB_00403012:
           core_main_c_displayErrorAndQuit_FUN_004e4330("hLine - invalid bitsPerPixel");
           return;
         }
-        memset(g_ARRAY_PTR_01c5faec[y] + x1,g_INT_01c6b5c0,count);
+        memset(g_ScreenBufferArray[y] + x1,g_INT_01c6b5c0,count);
       }
       else if ((uint)g_INT_005fba20 < 0x11) {
-        uVar1 = g_USHORT_ARRAY_01c6a070[g_INT_01c6b5c0];
-        puVar3 = (ushort *)(g_ARRAY_PTR_01c5faec[y] + x1 * 2);
+        uVar1 = g_ColorTable16[g_INT_01c6b5c0];
+        puVar3 = (ushort *)(g_ScreenBufferArray[y] + x1 * 2);
         if (0 < (int)count) {
           do {
             count = count - 1;
@@ -48,8 +48,8 @@ LAB_00403012:
       }
       else {
         if (g_INT_005fba20 != 0x20) goto LAB_00403012;
-        uVar2 = g_UINT_ARRAY_01c6a270[g_INT_01c6b5c0];
-        puVar4 = (uint *)(g_ARRAY_PTR_01c5faec[y] + x1 * 4);
+        uVar2 = g_ColorTable32[g_INT_01c6b5c0];
+        puVar4 = (uint *)(g_ScreenBufferArray[y] + x1 * 4);
         if (0 < (int)count) {
           do {
             count = count - 1;

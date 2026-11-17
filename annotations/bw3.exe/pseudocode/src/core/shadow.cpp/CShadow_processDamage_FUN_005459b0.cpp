@@ -53,8 +53,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_005459b0(CShadow *this_pt
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_18,iVar2,1);
       core_shadow_cpp_CShadow_playDeathSound_FUN_00545100(this_ptr);
-      core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                (g_CEventList_PTR_005fba60,"ShadowDead");
+      core_event_cpp_CEventList_executeCommands_FUN_0048c150(g_CEventListPtr,"ShadowDead");
       core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
       return;
     }

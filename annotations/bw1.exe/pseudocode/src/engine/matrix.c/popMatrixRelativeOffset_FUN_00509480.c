@@ -9,14 +9,14 @@
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_00509480(void)
 
 {
-  g_INT_01d1dd74 = g_INT_01d1dd74 + -1;
-  if (g_INT_01d1dd74 < 0) {
+  g_MatrixStackIndex = g_MatrixStackIndex + -1;
+  if (g_MatrixStackIndex < 0) {
     g_CHAR_PTR_01d1d400 = "..\\engine\\matrix.c";
     g_INT_01d1d404 = 0x5d9;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance4");
   }
-  g_INT_01c51d2c = g_INT_ARRAY_01d1dee0[g_INT_01d1dd74];
-  g_INT_01c51d30 = g_INT_ARRAY_01d1df08[g_INT_01d1dd74];
-  g_INT_01c51d34 = g_INT_ARRAY_01d1df30[g_INT_01d1dd74];
+  g_RelativeX = g_MatrixStack_RelX[g_MatrixStackIndex];
+  g_RelativeY = g_MatrixStack_RelY[g_MatrixStackIndex];
+  g_RelativeZ = g_MatrixStack_RelZ[g_MatrixStackIndex];
   return;
 }

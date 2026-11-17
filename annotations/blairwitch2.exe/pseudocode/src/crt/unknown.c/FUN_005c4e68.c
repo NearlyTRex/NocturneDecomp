@@ -15,5 +15,5 @@ SIGNAL_HANDLER_TYPE FUN_005c4e68(int param_1)
     iVar1 = (*(code *)PTR_crt_unknown_c_FUN_005bcdfc_0061f2a4)();
     return *(SIGNAL_HANDLER_TYPE *)(iVar1 + 0x5c + param_1 * 8);
   }
-  return g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[param_1 * 2 + 1];
+  return g_GlobalSignalHandlers[param_1 * 2 + 1];
 }

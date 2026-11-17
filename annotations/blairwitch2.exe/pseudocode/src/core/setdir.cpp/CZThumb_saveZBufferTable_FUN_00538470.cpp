@@ -44,7 +44,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   ;
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(g_CDemonRenderer_PTR_0060b280,0);
   iVar1 = this_ptr->height;
-  if (g_UINT_PTR_ARRAY_020b0258[0] != (uint *)0x0) {
+  if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
     g_INT_01d046a4 = 0x67;
     core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - already saved!");
@@ -53,20 +53,20 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
     iVar4 = 0;
     do {
       iVar3 = iVar4 + 4;
-      *(uint *)((int)g_UINT_PTR_ARRAY_020b0258 + iVar4) =
-           *(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar4);
+      *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =
+           *(uint *)((int)g_ZBufferScanlineArray + iVar4);
       iVar4 = iVar3;
     } while (iVar3 < iVar1 * 4);
   }
   core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00538970(this_ptr);
   core_setdir_cpp_CZThumb_pushRenderingContext_FUN_005389b0(this_ptr);
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3i_02093940);
+            (g_CDemonRenderer_PTR_0060b280,&g_VDTempVector);
   engine_special_cpp_clearZBufferNative_FUN_0055b254();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(g_CDemonSetPtr,9999.9,0);
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00538a30(this_ptr);
   iVar1 = this_ptr->height;
-  if (g_UINT_PTR_ARRAY_020b0258[0] == (uint *)0x0) {
+  if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
     g_INT_01d046a4 = 0x70;
     core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - not saved!");
@@ -75,12 +75,12 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
     iVar4 = 0;
     do {
       iVar3 = iVar4 + 4;
-      *(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar4) =
-           *(uint *)((int)g_UINT_PTR_ARRAY_020b0258 + iVar4);
+      *(uint *)((int)g_ZBufferScanlineArray + iVar4) =
+           *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);
       iVar4 = iVar3;
     } while (iVar3 < iVar1 * 4);
   }
-  g_UINT_PTR_ARRAY_020b0258[0] = (uint *)0x0;
+  g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(g_CDemonRenderer_PTR_0060b280,value);
   return;
 }

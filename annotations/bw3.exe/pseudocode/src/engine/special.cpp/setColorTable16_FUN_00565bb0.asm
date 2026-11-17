@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6058
+;   void* g_APIDLL_setColorTable16
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0
@@ -25,7 +25,7 @@ section .text
         ;   Label: LAB_00565bbc
     PUSH 0x1c6a070                      ; 00565bbd
     PUSH 0x1c6af98                      ; 00565bc2
-    CALL dword ptr [0x02cf6058]         ; 00565bc7 | g_PTR_02cf6058
+    CALL dword ptr [0x02cf6058]         ; 00565bc7 | g_APIDLL_setColorTable16
     ADD ESP,0x8                         ; 00565bcd
     MOV EBX,EAX                         ; 00565bd0
     TEST EAX,EAX                        ; 00565bd2

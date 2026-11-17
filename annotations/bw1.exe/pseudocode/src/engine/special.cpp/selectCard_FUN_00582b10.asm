@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_02c83374
-;   void* g_PTR_02c83414
-;   int g_INT_02c834ac
+;   void* g_APIDLL_selectCard
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00582b10
         ;   Label: engine_special.cpp_selectCard_FUN_00582b10
-    CMP dword ptr [0x02c834ac],0x0      ; 00582b14 | g_INT_02c834ac
+    CMP dword ptr [0x02c834ac],0x0      ; 00582b14 | g_LoadedExternalDLLRenderer
     JNZ 0x00582b20                      ; 00582b1b
         ;   XREF to: 00582b20 (CONDITIONAL_JUMP)  ; LAB_00582b20
     XOR EAX,EAX                         ; 00582b1d
@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 00582b20
         ;   Label: LAB_00582b20
     MOV [0x02c83374],EAX                ; 00582b21 | g_INT_02c83374
-    CALL dword ptr [0x02c83414]         ; 00582b26 | g_PTR_02c83414
+    CALL dword ptr [0x02c83414]         ; 00582b26 | g_APIDLL_selectCard
     ADD ESP,0x4                         ; 00582b2c
     RET                                 ; 00582b2f
 

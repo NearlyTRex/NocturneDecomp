@@ -27,31 +27,28 @@ int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ac040(int width,
     g_INT_01d1d404 = 0xf2;
     core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of Z buffer memory");
   }
-  g_PTR_0071362c = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
-  if (g_IUnknown_PTR_02c9930c != (IUnknown *)0x0) {
-    (*g_IUnknown_PTR_02c9930c->vtable->Release)(g_IUnknown_PTR_02c9930c);
-    g_IUnknown_PTR_02c9930c = (IUnknown *)0x0;
+  g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02c99308 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02c99308->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99308);
-    g_IDirectDrawSurface_PTR_02c99308 = (IDirectDrawSurface *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02c99304 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02c99304->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99304);
-    g_IDirectDrawSurface_PTR_02c99304 = (IDirectDrawSurface *)0x0;
+  if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+    (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+    g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   }
-  if (g_IDirectDraw_PTR_02c99300 != (IDirectDraw *)0x0) {
-    (*g_IDirectDraw_PTR_02c99300->vtable->RestoreDisplayMode)(g_IDirectDraw_PTR_02c99300);
-    (*g_IDirectDraw_PTR_02c99300->vtable->Release)((IUnknown *)g_IDirectDraw_PTR_02c99300);
-    g_IDirectDraw_PTR_02c99300 = (IDirectDraw *)0x0;
+  if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+    (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+    (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+    g_DirectDrawObject = (IDirectDraw *)0x0;
   }
-  HVar1 = DirectDrawCreate((GUID *)0x0,&g_IDirectDraw_PTR_02c99300,(IUnknown *)0x0);
+  HVar1 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
   if (HVar1 == 0) {
-    (*g_IDirectDraw_PTR_02c99300->vtable->SetCooperativeLevel)
-              (g_IDirectDraw_PTR_02c99300,g_HWND_02c9be68,0x11);
+    (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
   }
-  engine_special_cpp_loadExternalRenderer_FUN_00581310(g_HWND_02c9be68);
+  engine_special_cpp_loadExternalRenderer_FUN_00581310(g_MainWindowHandle);
   return 1;
 }

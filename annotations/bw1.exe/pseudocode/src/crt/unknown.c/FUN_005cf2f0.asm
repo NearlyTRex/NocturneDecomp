@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005cf100 at 005cf106
 ;
 ; Referenced Globals:
-;   uchar[257] g_UCHAR_ARRAY_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cf340
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_005cf31d
     INC AL                              ; 005cf31f
     AND EAX,0xff                        ; 005cf321
-    MOV AL,byte ptr [EAX + 0x626114]    ; 005cf326 | g_UCHAR_ARRAY_00626114
+    MOV AL,byte ptr [EAX + 0x626114]    ; 005cf326 | g_CharacterClassificationTable
     AND AL,0x80                         ; 005cf32c
     AND EAX,0xff                        ; 005cf32e
     POP EBX                             ; 005cf333

@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005eb865 = 40
-;   int[23] g_INT_ARRAY_0264be30
+;   int[23] g_StrangerIndices
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 0056746d
     CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 ; 0056746e
         ;   XREF to: 00544f80 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
-    MOV EAX,[0x0264be30]                ; 00567473 | g_INT_ARRAY_0264be30
+    MOV EAX,[0x0264be30]                ; 00567473 | g_StrangerIndices
     ADD ESI,0x964                       ; 00567478
     SHL EAX,0x4                         ; 0056747e
     ADD ESP,0x10                        ; 00567481

@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0061255c = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01bef218
-;   CVector3f[20000] g_CVector3f_ARRAY_01c02aa0
+;   int g_PVSDrawnCubeCount
+;   CVector3f[20000] g_PVSCubePositions
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457f70
@@ -36,7 +36,7 @@ section .text
     XOR ESI,ESI                         ; 0048e788
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00483cf0 ; 0048e78a
         ;   XREF to: 00483cf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00483cf0(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
-    MOV ECX,dword ptr [0x01bef218]      ; 0048e78f | g_INT_01bef218
+    MOV ECX,dword ptr [0x01bef218]      ; 0048e78f | g_PVSDrawnCubeCount
     ADD ESP,0x10                        ; 0048e795
     TEST ECX,ECX                        ; 0048e798
     JLE 0x0048e7de                      ; 0048e79a
@@ -45,7 +45,7 @@ section .text
     PUSH EBX                            ; 0048e79d
     MOV EBX,0x1c02aa0                   ; 0048e79e
     XOR EDI,EDI                         ; 0048e7a3
-    PUSH EBX                            ; 0048e7a5 | g_CVector3f_ARRAY_01c02aa0
+    PUSH EBX                            ; 0048e7a5 | g_PVSCubePositions
         ;   Label: LAB_0048e7a5
     MOV EBP,dword ptr [0x0061255c]      ; 0048e7a6 | g_CDemonRenderer_PTR_0061255c
     PUSH EBP                            ; 0048e7ac | g_CDemonRenderer_01bc120c
@@ -62,7 +62,7 @@ section .text
     INC ESI                             ; 0048e7c9
     CALL engine_special.cpp_sync_FUN_00582920 ; 0048e7ca
         ;   XREF to: 00582920 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_sync_FUN_00582920()
-    MOV EDX,dword ptr [0x01bef218]      ; 0048e7cf | g_INT_01bef218
+    MOV EDX,dword ptr [0x01bef218]      ; 0048e7cf | g_PVSDrawnCubeCount
     ADD EBX,0xc                         ; 0048e7d5
     CMP ESI,EDX                         ; 0048e7d8
     JL 0x0048e7a5                       ; 0048e7da

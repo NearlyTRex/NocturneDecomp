@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_02c807dc
-;   int g_INT_02c807e0
-;   int g_INT_02c807e4
+;   int g_AudioThreadRunning
+;   int g_AudioThreadShutdownFlag
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_processAudio_FUN_00575fb0
@@ -26,21 +26,21 @@ section .text
         ;   Label: sound_sndmain.cpp_audioThreadProc_FUN_00575bb0
     PUSH EDI                            ; 00575bb1
     MOV EDX,0x1                         ; 00575bb2
-    MOV ECX,dword ptr [0x02c807e4]      ; 00575bb7 | g_INT_02c807e4
-    MOV dword ptr [0x02c807e0],EDX      ; 00575bbd | g_INT_02c807e0
+    MOV ECX,dword ptr [0x02c807e4]      ; 00575bb7 | g_AudioThreadShutdownFlag
+    MOV dword ptr [0x02c807e0],EDX      ; 00575bbd | g_AudioThreadRunning
     TEST ECX,ECX                        ; 00575bc3
     JNZ 0x00575bd5                      ; 00575bc5
         ;   XREF to: 00575bd5 (CONDITIONAL_JUMP)  ; LAB_00575bd5
         ;   Label: LAB_00575bc5
     CALL sound_sndmain.cpp_processAudio_FUN_00575fb0 ; 00575bc7
         ;   XREF to: 00575fb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_processAudio_FUN_00575fb0()
-    CMP dword ptr [0x02c807e4],0x0      ; 00575bcc | g_INT_02c807e4
+    CMP dword ptr [0x02c807e4],0x0      ; 00575bcc | g_AudioThreadShutdownFlag
     JZ 0x00575be2                       ; 00575bd3
         ;   XREF to: 00575be2 (CONDITIONAL_JUMP)  ; LAB_00575be2
     XOR EDI,EDI                         ; 00575bd5
         ;   Label: LAB_00575bd5
     XOR EAX,EAX                         ; 00575bd7
-    MOV dword ptr [0x02c807e0],EDI      ; 00575bd9 | g_INT_02c807e0
+    MOV dword ptr [0x02c807e0],EDI      ; 00575bd9 | g_AudioThreadRunning
     POP EDI                             ; 00575bdf
     POP EBX                             ; 00575be0
     RET                                 ; 00575be1
@@ -50,7 +50,7 @@ section .text
     FSTP double ptr [ESP]               ; 00575beb
     CALL wincore_winrun.cpp_sleep_FUN_005b3860 ; 00575bee
         ;   XREF to: 005b3860 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_005b3860(double seconds)
-    MOV EBX,dword ptr [0x02c807e4]      ; 00575bf3 | g_INT_02c807e4
+    MOV EBX,dword ptr [0x02c807e4]      ; 00575bf3 | g_AudioThreadShutdownFlag
     ADD ESP,0x8                         ; 00575bf9
     TEST EBX,EBX                        ; 00575bfc
     JMP 0x00575bc5                      ; 00575bfe

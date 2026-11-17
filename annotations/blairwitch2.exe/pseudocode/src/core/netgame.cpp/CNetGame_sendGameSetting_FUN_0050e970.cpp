@@ -43,7 +43,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_0050e970(CNetGame *th
   SStack_c8.size = 0xb1;
   __arrinit(acStack_67,2,&g_SPlayerTypeInfo);
   uStack_bf = this_ptr->random_seed;
-  iStack_c3 = g_INT_01d34e44;
+  iStack_c3 = g_NetNextPlayerId;
   pcVar8 = acStack_bb;
   iStack_6b = this_ptr->player_count;
   pcVar6 = this_ptr->mission_name;
@@ -90,15 +90,15 @@ LAB_0050ea90:
   }
   core_netgame_cpp_CNetGame_send_FUN_0050cd90(this_ptr,player_index,&SStack_c8);
   iVar4 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-  iVar3 = iVar4 / 0x12 - g_INT_01d34e34;
+  iVar3 = iVar4 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
   else if (0x20000 < iVar3) {
     iVar3 = 0x20000;
   }
-  g_UINT_01d34e38 = g_UINT_01d34e38 + iVar3;
-  g_INT_01d34e34 = iVar4 / 0x12;
-  this_ptr->players[player_index].last_update_time = g_UINT_01d34e38;
+  g_CurrentGameTime = g_CurrentGameTime + iVar3;
+  g_LastPingTime = iVar4 / 0x12;
+  this_ptr->players[player_index].last_update_time = g_CurrentGameTime;
   return;
 }

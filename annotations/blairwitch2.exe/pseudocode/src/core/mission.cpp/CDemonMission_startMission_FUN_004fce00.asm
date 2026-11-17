@@ -17,13 +17,13 @@
 ;   TerminatedCString s_Can_t_run_mission_no_loc_005de910
 ;   TerminatedCString s_Loading_script_005de932
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d03000
 ;   CScript* g_CScriptPtr = 01e65cd0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   int g_INT_01cedee0
+;   int g_HeroCount
 ;   int g_INT_01cedef4
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     PUSH ESI                            ; 004fce01
     PUSH EBP                            ; 004fce02
     MOV EBX,dword ptr [ESP + 0x10]      ; 004fce03
-    CMP dword ptr [0x01cedee0],0x1      ; 004fce07 | g_INT_01cedee0
+    CMP dword ptr [0x01cedee0],0x1      ; 004fce07 | g_HeroCount
     JL 0x004fce39                       ; 004fce0e
         ;   XREF to: 004fce39 (CONDITIONAL_JUMP)  ; LAB_004fce39
     MOV EAX,[0x01cedef4]                ; 004fce10 | g_INT_01cedef4
@@ -80,7 +80,7 @@ section .text
     ADD ESP,0x4                         ; 004fce4e
     LEA EAX,[EBX + 0x111c]              ; 004fce51
     MOV dword ptr [EBX + 0x1128],0xffffffff ; 004fce57
-    MOV ESI,dword ptr [0x006141f0]      ; 004fce61 | g_CEventList_PTR_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 004fce61 | g_CEventListPtr
     MOV dword ptr [EAX + 0x8],0x0       ; 004fce67
     PUSH ESI                            ; 004fce6e
     MOV EDX,dword ptr [EAX + 0x8]       ; 004fce6f

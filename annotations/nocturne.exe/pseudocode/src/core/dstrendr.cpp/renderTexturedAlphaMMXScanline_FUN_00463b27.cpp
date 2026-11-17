@@ -30,43 +30,43 @@ void __edi_esi_ebx core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27
   uVar1 = uVar1 >> 0x10;
   iVar3 = (uVar5 >> 0x10) - uVar1;
   if (iVar3 != 0 && uVar1 <= uVar5 >> 0x10) {
-    g_INT_005b06e4 = iVar3 * 2;
-    g_UINT_PTR_005b06e8 = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
+    g_PerspectiveScanlinePixelCount = iVar3 * 2;
+    g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
     uVar4 = (pSVar6->base).u_current;
-    g_INT_005b06d4 =
+    g_SoftwareDeltaTextureU =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar4) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar5 = (pSVar6->base).v_current;
-    g_INT_005b06d8 =
+    g_SoftwareDeltaTextureV =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar5) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar1 = (pSVar6->base).depth_current;
-    g_INT_005b06dc =
+    g_SoftwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).depth_current - uVar1) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar7 = 0;
-    g_UINT_005b06b8 = uVar4;
-    g_UINT_005b06bc = uVar5;
-    g_UINT_005b06c4 = uVar1;
+    g_PerspectiveNextU = uVar4;
+    g_PerspectiveNextV = uVar5;
+    g_StartDepthZ = uVar1;
     while( true ) {
-      if (uVar1 < *(ushort *)((int)g_UINT_PTR_005b06e8 + uVar7)) {
+      if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {
         puVar2 = g_CurrentTextureOpacityData;
         if (g_CurrentTextureOpacityData == (uchar *)0x0) {
           puVar2 = g_CurrentTextureData;
         }
         if (puVar2[(uVar4 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
                    (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0])] != '\0') {
-          *(ushort *)((int)g_UINT_PTR_005b06e8 + uVar7) = (ushort)uVar1;
+          *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;
         }
       }
       uVar7 = uVar7 + 2;
-      if ((uint)g_INT_005b06e4 < uVar7) break;
-      uVar4 = uVar4 + g_INT_005b06d4;
-      uVar5 = uVar5 + g_INT_005b06d8;
-      uVar1 = uVar1 + g_INT_005b06dc;
+      if ((uint)g_PerspectiveScanlinePixelCount < uVar7) break;
+      uVar4 = uVar4 + g_SoftwareDeltaTextureU;
+      uVar5 = uVar5 + g_SoftwareDeltaTextureV;
+      uVar1 = uVar1 + g_SoftwareDeltaDepthZ;
     }
   }
   return;

@@ -11,5 +11,5 @@
 // =============================================================================
 
 // SFogImagePlane[16]
-extern SFogImagePlane g_SFogImagePlane_ARRAY_012e1778[16];
+extern SFogImagePlane g_CameraImageDecompressBuffer[16];
 

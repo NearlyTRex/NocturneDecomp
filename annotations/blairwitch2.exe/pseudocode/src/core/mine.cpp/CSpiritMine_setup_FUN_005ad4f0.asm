@@ -38,7 +38,7 @@ section .text
     PUSH 0x0                            ; 005ad51d
     PUSH EBX                            ; 005ad51f
     CALL core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0 ; 005ad520
-        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int fade_in)
     ADD ESP,0x8                         ; 005ad525
     POP ESI                             ; 005ad528
     POP EBX                             ; 005ad529

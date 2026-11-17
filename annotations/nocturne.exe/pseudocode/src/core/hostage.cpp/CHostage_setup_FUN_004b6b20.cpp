@@ -67,7 +67,7 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004b6b20(CHostage *this_ptr)
   iVar1 = this_ptr->hostage_type;
   (this_ptr->base).base.gesture_branch_root = iVar2;
   if (iVar1 == 1) {
-    g_INT_01cae1a0 =
+    g_HostageGunUpMotionIndex =
          core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(this_ptr_02,"gunup",1);
   }
   core_npc_cpp_CNPC_setup_FUN_004ee9e0(&this_ptr->base);

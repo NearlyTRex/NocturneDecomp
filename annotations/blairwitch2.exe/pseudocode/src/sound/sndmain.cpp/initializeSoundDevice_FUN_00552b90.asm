@@ -9,11 +9,11 @@
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100 at 0055a137
 ;
 ; Referenced Globals:
-;   int g_INT_0061bcac = -0x1
-;   undefined4 g_INT_ARRAY_02648540[26]
-;   undefined4 g_INT_ARRAY_02648540[27]
-;   CSoundDevice* g_CSoundDevice_PTR_02648e80
-;   int g_INT_02648e88
+;   int g_CurrentSoundDevice = -0x1
+;   undefined4 g_SfxChannelEnabled[26]
+;   undefined4 g_SfxChannelEnabled[27]
+;   CSoundDevice* g_CSoundDevicePtr
+;   int g_HasHardware3DSound
 ;
 ; Called Functions:
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_00557910
@@ -34,12 +34,12 @@ section .text
         ;   XREF to: 00552b9c (CONDITIONAL_JUMP)  ; LAB_00552b9c
     POP EBP                             ; 00552b9a
     RET                                 ; 00552b9b
-    MOV EDX,dword ptr [0x0061bcac]      ; 00552b9c | g_INT_0061bcac
+    MOV EDX,dword ptr [0x0061bcac]      ; 00552b9c | g_CurrentSoundDevice
         ;   Label: LAB_00552b9c
     PUSH EDX                            ; 00552ba2
     CALL sound_sndmain.cpp_selectSoundDevice_FUN_00552aa0 ; 00552ba3
         ;   XREF to: 00552aa0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectSoundDevice_FUN_00552aa0(int device_id)
-    MOV ECX,dword ptr [0x0061bcac]      ; 00552ba8 | g_INT_0061bcac
+    MOV ECX,dword ptr [0x0061bcac]      ; 00552ba8 | g_CurrentSoundDevice
     ADD ESP,0x4                         ; 00552bae
     TEST ECX,ECX                        ; 00552bb1
     JL 0x00552c24                       ; 00552bb3
@@ -49,34 +49,34 @@ section .text
     SHL EAX,0x2                         ; 00552bbe
     SUB EAX,ECX                         ; 00552bc1
     SHL EAX,0x3                         ; 00552bc3
-    CMP dword ptr [EAX + 0x26486c0],0x0 ; 00552bc6 | g_INT_ARRAY_02648540[26]
+    CMP dword ptr [EAX + 0x26486c0],0x0 ; 00552bc6 | g_SfxChannelEnabled[26]
     JNZ 0x00552be5                      ; 00552bcd
         ;   XREF to: 00552be5 (CONDITIONAL_JUMP)  ; LAB_00552be5
     PUSH ESI                            ; 00552bcf
-    MOV ESI,dword ptr [EAX + 0x26486c4] ; 00552bd0 | g_INT_ARRAY_02648540[27]
+    MOV ESI,dword ptr [EAX + 0x26486c4] ; 00552bd0 | g_SfxChannelEnabled[27]
     PUSH ESI                            ; 00552bd6
     CALL sound_sndwav.cpp_getWavOutDevice_FUN_005589e0 ; 00552bd7
         ;   XREF to: 005589e0 (UNCONDITIONAL_CALL)  ; CWavOutDevice * sound_sndwav.cpp_getWavOutDevice_FUN_005589e0(UINT device_id)
     ADD ESP,0x4                         ; 00552bdc
-    MOV [0x02648e80],EAX                ; 00552bdf | g_CSoundDevice_PTR_02648e80
+    MOV [0x02648e80],EAX                ; 00552bdf | g_CSoundDevicePtr
     POP ESI                             ; 00552be4
-    MOV EDX,dword ptr [0x0061bcac]      ; 00552be5 | g_INT_0061bcac
+    MOV EDX,dword ptr [0x0061bcac]      ; 00552be5 | g_CurrentSoundDevice
         ;   Label: LAB_00552be5
     LEA EAX,[EDX*0x8 + 0x0]             ; 00552beb
     ADD EAX,EDX                         ; 00552bf2
     SHL EAX,0x2                         ; 00552bf4
     SUB EAX,EDX                         ; 00552bf7
     SHL EAX,0x3                         ; 00552bf9
-    CMP dword ptr [EAX + 0x26486c0],0x1 ; 00552bfc | g_INT_ARRAY_02648540[26]
+    CMP dword ptr [EAX + 0x26486c0],0x1 ; 00552bfc | g_SfxChannelEnabled[26]
     JNZ 0x00552c19                      ; 00552c03
         ;   XREF to: 00552c19 (CONDITIONAL_JUMP)  ; LAB_00552c19
-    MOV EBP,dword ptr [EAX + 0x26486c4] ; 00552c05 | g_INT_ARRAY_02648540[27]
+    MOV EBP,dword ptr [EAX + 0x26486c4] ; 00552c05 | g_SfxChannelEnabled[27]
     PUSH EBP                            ; 00552c0b
     CALL sound_snddx.cpp_getDirectSoundDevice_FUN_00557910 ; 00552c0c
         ;   XREF to: 00557910 (UNCONDITIONAL_CALL)  ; CDirectSoundDevice * sound_snddx.cpp_getDirectSoundDevice_FUN_00557910(UINT device_id)
     ADD ESP,0x4                         ; 00552c11
-    MOV [0x02648e80],EAX                ; 00552c14 | g_CSoundDevice_PTR_02648e80
-    MOV EAX,[0x02648e80]                ; 00552c19 | g_CSoundDevice_PTR_02648e80
+    MOV [0x02648e80],EAX                ; 00552c14 | g_CSoundDevicePtr
+    MOV EAX,[0x02648e80]                ; 00552c19 | g_CSoundDevicePtr
         ;   Label: LAB_00552c19
     TEST EAX,EAX                        ; 00552c1e
     JNZ 0x00552c28                      ; 00552c20
@@ -92,7 +92,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00552c29
     CALL dword ptr [EDX + 0x14]         ; 00552c2b
     ADD ESP,0x4                         ; 00552c2e
-    MOV [0x02648e88],EAX                ; 00552c31 | g_INT_02648e88
+    MOV [0x02648e88],EAX                ; 00552c31 | g_HasHardware3DSound
     MOV EAX,0x1                         ; 00552c36
     POP EBP                             ; 00552c3b
     RET                                 ; 00552c3c

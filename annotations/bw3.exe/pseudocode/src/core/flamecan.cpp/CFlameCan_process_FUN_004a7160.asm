@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;
@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 004a7164
     LEA EAX,[EBX + 0x2dc]               ; 004a7168
     PUSH EAX                            ; 004a716e
-    MOV EDX,dword ptr [0x005fba60]      ; 004a716f | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 004a716f | g_CEventListPtr
     PUSH EDX                            ; 004a7175
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004a7176
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

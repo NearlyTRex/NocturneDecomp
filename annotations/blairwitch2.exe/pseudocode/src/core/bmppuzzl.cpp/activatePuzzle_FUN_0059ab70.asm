@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   int g_INT_026677e0
 ;   int g_INT_026677e8
 ;
@@ -34,7 +34,7 @@ section .text
     TEST ECX,ECX                        ; 0059ab79
     JZ 0x0059aba8                       ; 0059ab7b
         ;   XREF to: 0059aba8 (CONDITIONAL_JUMP)  ; LAB_0059aba8
-    MOV EAX,[0x01c2a384]                ; 0059ab7d | g_BIT_INTEGER32_01c2a384
+    MOV EAX,[0x01c2a384]                ; 0059ab7d | g_MouseButtonFlags
     MOV dword ptr [0x026677e0],EDX      ; 0059ab82 | g_INT_026677e0
     MOV [0x026677e8],EAX                ; 0059ab88 | g_INT_026677e8
     PUSH ECX                            ; 0059ab8d

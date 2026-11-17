@@ -37,7 +37,7 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_0043a350(CCrate *this_ptr)
     fStack_8 = (pCVar1->position).x;
   }
   core_fire_cpp_CFireEffect_createExplosion_FUN_0049e360
-            (g_CFireEffect_PTR_00614d30,(CVector3f *)&fStack_8,32.0,1500.0,4.0);
+            (g_CFireEffectPtr,(CVector3f *)&fStack_8,32.0,1500.0,4.0);
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
             (g_CDemonMission_PTR_00618170,&this_ptr->base,1);
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;

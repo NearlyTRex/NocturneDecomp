@@ -50,9 +50,9 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
             (&local_210,"shadowFlag",&g_CGamePtr->shadow_flag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"quimbyFlag",&g_CGamePtr->quimby_flag);
-  g_CHAR_PTR_ARRAY_01d1f5b8[7] = (char *)0x0;
+  g_GraphicsMenuTextPointers[7] = (char *)0x0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
-            (&local_210,"currentBoard",(int *)(g_CHAR_PTR_ARRAY_01d1f5b8 + 7));
+            (&local_210,"currentBoard",(int *)(g_GraphicsMenuTextPointers + 7));
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"puzzleDifficultyMode",&g_CGamePtr->puzzle_difficulty_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10

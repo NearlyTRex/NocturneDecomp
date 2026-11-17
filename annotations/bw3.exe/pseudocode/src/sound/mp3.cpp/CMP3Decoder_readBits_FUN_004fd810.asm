@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005c9fc5
 ;   TerminatedCString s_Buffer_overflow_File_s_005c9fd6
-;   uint[18] g_UINT_ARRAY_00601580
-;   undefined4 g_UINT_ARRAY_00601580[8]
+;   uint[18] g_MpegBitMaskTableMultiBit
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -63,7 +63,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x531c]    ; 004fd854
     SUB ESI,EAX                         ; 004fd85a
     AND EDX,0xfff                       ; 004fd85c
-    MOV EBP,dword ptr [ECX*0x4 + 0x601580] ; 004fd862 | g_UINT_ARRAY_00601580 | g_UINT_ARRAY_00601580[8]
+    MOV EBP,dword ptr [ECX*0x4 + 0x601580] ; 004fd862 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB ECX,EAX                         ; 004fd869
     MOV EDX,dword ptr [EBX + EDX*0x4 + 0x131c] ; 004fd86b
     MOV dword ptr [ESP],ECX             ; 004fd872

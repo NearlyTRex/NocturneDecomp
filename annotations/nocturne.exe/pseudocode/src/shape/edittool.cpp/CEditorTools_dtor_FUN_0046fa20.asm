@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01bcd078
+;   char* g_ClipboardBackupText
 ;   int g_INT_01bcd07c
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
         ;   XREF to: 0046fa31 (CONDITIONAL_JUMP)  ; LAB_0046fa31
     LEA EAX,[EAX]                       ; 0046fa44
     LEA EDX,[EDX]                       ; 0046fa4a
-    MOV ESI,dword ptr [0x01bcd078]      ; 0046fa50 | g_CHAR_PTR_01bcd078
+    MOV ESI,dword ptr [0x01bcd078]      ; 0046fa50 | g_ClipboardBackupText
         ;   Label: LAB_0046fa50
     TEST ESI,ESI                        ; 0046fa56
     JNZ 0x0046fa60                      ; 0046fa58
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBP,EBP                         ; 0046fa66
     ADD ESP,0x4                         ; 0046fa68
-    MOV dword ptr [0x01bcd078],EBP      ; 0046fa6b | g_CHAR_PTR_01bcd078
+    MOV dword ptr [0x01bcd078],EBP      ; 0046fa6b | g_ClipboardBackupText
     MOV EAX,EBX                         ; 0046fa71
     POP EBP                             ; 0046fa73
     POP ESI                             ; 0046fa74

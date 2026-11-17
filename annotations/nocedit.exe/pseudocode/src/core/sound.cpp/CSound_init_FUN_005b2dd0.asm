@@ -23,9 +23,9 @@
 ;   CVector3f g_SoundListenerPrev
 ;   undefined4 g_SoundListenerPrev.y
 ;   undefined4 g_SoundListenerPrev.z
-;   CVector3f CVector3f_03f6af7c
-;   undefined4 CVector3f_03f6af7c.y
-;   undefined4 CVector3f_03f6af7c.z
+;   CVector3f g_WindVolume
+;   undefined4 g_WindVolume.y
+;   undefined4 g_WindVolume.z
 ;   SReverbSettings g_SoundReverb
 ;   ... and 12 more
 ;
@@ -58,10 +58,10 @@ section .text
     PUSH EDX                            ; 005b2dd8
     MOV ESI,0x501502f9                  ; 005b2dd9
     PUSH EDX                            ; 005b2dde
-    MOV dword ptr [0x03f6af7c],EDX      ; 005b2ddf | CVector3f_03f6af7c
-    MOV dword ptr [0x03f6af80],EDX      ; 005b2de5 | CVector3f_03f6af7c.y
+    MOV dword ptr [0x03f6af7c],EDX      ; 005b2ddf | g_WindVolume
+    MOV dword ptr [0x03f6af80],EDX      ; 005b2de5 | g_WindVolume.y
     PUSH EDX                            ; 005b2deb
-    MOV dword ptr [0x03f6af84],EDX      ; 005b2dec | CVector3f_03f6af7c.z
+    MOV dword ptr [0x03f6af84],EDX      ; 005b2dec | g_WindVolume.z
     MOV dword ptr [0x03f6af70],ESI      ; 005b2df2 | g_SoundListenerPrev
     PUSH EDX                            ; 005b2df8
     MOV dword ptr [0x03f6af74],ESI      ; 005b2df9 | g_SoundListenerPrev.y
@@ -75,7 +75,7 @@ section .text
     PUSH dword ptr [0x03f6af8c]         ; 005b2e18 | g_SoundReverb.decay_time
     XOR EAX,EAX                         ; 005b2e1e
     PUSH dword ptr [0x03f6af88]         ; 005b2e20 | g_SoundReverb
-    MOV [0x03f6af80],EAX                ; 005b2e26 | CVector3f_03f6af7c.y
+    MOV [0x03f6af80],EAX                ; 005b2e26 | g_WindVolume.y
     CALL sound_sndmain.cpp_setReverb_FUN_005ab6e0 ; 005b2e2b
         ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setReverb_FUN_005ab6e0(float volume, float decay_time, float damping)
     ADD ESP,0xc                         ; 005b2e30

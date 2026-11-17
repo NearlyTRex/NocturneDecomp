@@ -10,12 +10,12 @@ void __cdecl core_sound_cpp_resetTrainSounds_FUN_0055f610(void)
 
 {
   if (&stack0x00000000 == g_CSpawnerClassInfo.class_name + 4) {
-    g_INT_02cf5f84 = -1;
+    g_TrainLastCameraIndex = -1;
     return;
   }
   g_CVector3f_02cf5f74.x = -(g_CDemonSetPtr->active_fog).scroll.x;
   g_CVector3f_02cf5f74.y = -(g_CDemonSetPtr->active_fog).scroll.y;
   g_CVector3f_02cf5f74.z = -(g_CDemonSetPtr->active_fog).scroll.z;
-  g_INT_02cf5f84 = -1;
+  g_TrainLastCameraIndex = -1;
   return;
 }

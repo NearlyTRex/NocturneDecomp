@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 144,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 66,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 217
+    "total_lines": 219
   },
   "cross_references": [],
   "function": {
@@ -87,43 +87,43 @@
     },
     {
       "addr": "006235d4",
-      "name": "g_INT_006235d4",
+      "name": "g_WaveOutDeviceID",
       "type": "int",
       "value": "-0x1"
     },
     {
       "addr": "02c82840",
-      "name": "g_INT_02c82840",
+      "name": "g_WaveOutHandle",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c828c4",
-      "name": "g_INT_02c828c4",
+      "name": "g_WaveOutBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c828c8",
-      "name": "g_INT_02c828c8",
+      "name": "g_WaveOutChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c828cc",
-      "name": "g_INT_02c828cc",
+      "name": "g_WaveOutSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c828d0",
-      "name": "g_INT_02c828d0",
+      "name": "g_WaveOutBufferSize",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c828d4",
-      "name": "g_INT_02c828d4",
+      "name": "g_WaveOutNumBuffers",
       "type": "int",
       "value": null
     }
@@ -252,58 +252,58 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82884",
+      "line": 39,
+      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
       "severity": "moderate",
-      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82884 + iVar6) = pvVar3;",
+      "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(LPVOID *)((int)g_LPVOID_ARRAY_02c828a4",
+      "line": 42,
+      "match": "(LPVOID *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "*(LPVOID *)((int)g_LPVOID_ARRAY_02c828a4 + iVar6) = pvVar4;",
+      "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844",
+      "line": 45,
+      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
       "severity": "moderate",
-      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844 + iVar6) = pvVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844",
-      "severity": "moderate",
-      "text": "pvVar4 = GlobalLock(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844 + iVar6));",
+      "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c82864",
+      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
       "severity": "moderate",
-      "text": "*(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c82864 + iVar6) = pvVar4;",
+      "text": "pvVar4 = GlobalLock(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
       "type": "pointer_cast"
     },
     {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 35,
-      "match": "g_Global >> 0x1f",
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(LPVOID *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "pvVar3 = GlobalAlloc(0x2002,((int)((g_INT_02c828c4 + (g_INT_02c828c4 >> 0x1f) * -8) -",
-      "type": "signed_shift_global_idiom"
+      "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
+      "type": "pointer_cast"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
       "line": 36,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_02c828c4 >> 0x1f) << 2 < 0)) >> 3) *",
+      "text": "(g_WaveOutBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 37,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) *",
       "type": "signed_shift_global_idiom"
     }
   ],

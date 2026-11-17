@@ -31,7 +31,7 @@ void __cdecl CBasicEnemy::advanceMotion(CBasicEnemy *this_ptr,float delta_time);
 
 // Original: core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
 // Address: 0059e880
-void __cdecl CBasicEnemy::processMotionEvent(CBasicEnemy *this_ptr,int param_2);
+void __cdecl CBasicEnemy::processMotionEvent(CBasicEnemy *this_ptr,int event_id);
 
 // Original: core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
 // Address: 0059e8c0

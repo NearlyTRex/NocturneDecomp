@@ -308,7 +308,7 @@
     },
     {
       "addr": "005c63c3",
-      "name": "g_FLOAT_005c63c3",
+      "name": "g_InventoryPiOver2",
       "type": "float",
       "value": "4.712389"
     },
@@ -326,7 +326,7 @@
     },
     {
       "addr": "005c63cf",
-      "name": "g_FLOAT_005c63cf",
+      "name": "g_InventoryNegativePiOver2",
       "type": "float",
       "value": "-1.570796"
     },
@@ -368,19 +368,19 @@
     },
     {
       "addr": "01c5fad0",
-      "name": "g_INT_01c5fad0",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c6e24c",
-      "name": "g_INT_01c6e24c",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d70a38",
-      "name": "g_INT_01d70a38",
+      "name": "g_InventoryLightAngle",
       "type": "int",
       "value": null
     },
@@ -428,7 +428,7 @@
     },
     {
       "addr": "02cfd900",
-      "name": "g_CVector3f_02cfd900",
+      "name": "g_ZeroVector",
       "type": "CVector3f",
       "value": null
     }
@@ -931,7 +931,7 @@
       "line": 58,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_01c5fad0 + (g_INT_01c5fad0 >> 0x1f) * -4) -",
+      "text": "((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -939,7 +939,7 @@
       "line": 59,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);",
+      "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
       "type": "signed_shift_global_idiom"
     },
     {

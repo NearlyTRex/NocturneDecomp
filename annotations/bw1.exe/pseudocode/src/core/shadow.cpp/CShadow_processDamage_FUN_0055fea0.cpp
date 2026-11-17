@@ -29,7 +29,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
      ((EVar1 == DAMAGE_TYPE_ATTACK_GAS ||
       ((EVar1 == DAMAGE_TYPE_ATTACK_ELECTROCUTE || (EVar1 == DAMAGE_TYPE_PIERCING)))))) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"ShotShadowWithLead");
+              (g_CEventListPtr,"ShotShadowWithLead");
     damage_info->damage_amount = 0.0;
   }
   else {
@@ -88,8 +88,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_c,iVar5,1);
       core_shadow_cpp_CShadow_playDeathSound_FUN_0055f540(this_ptr);
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                (g_CEventList_PTR_0061b4d0,"ShadowDead");
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,"ShadowDead");
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   }

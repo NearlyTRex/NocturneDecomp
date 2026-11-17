@@ -29,19 +29,19 @@ void * __cdecl InternalHeapAlloc(ulong size)
   while( true ) {
     while( true ) {
       if ((uint)g_INT_006075cc < local_24) {
-        pHVar4 = g_Heap_PTR_006075c8;
-        if (g_Heap_PTR_006075c8 == (Heap *)0x0) {
-          g_INT_006075cc = (int)g_Heap_PTR_006075c8;
-          pHVar4 = g_Heap_PTR_006075c4;
+        pHVar4 = g_SecondaryHeap;
+        if (g_SecondaryHeap == (Heap *)0x0) {
+          g_INT_006075cc = (int)g_SecondaryHeap;
+          pHVar4 = g_MainHeap;
         }
       }
       else {
         g_INT_006075cc = 0;
-        pHVar4 = g_Heap_PTR_006075c4;
+        pHVar4 = g_MainHeap;
       }
       for (; pHVar4 != (Heap *)0x0; pHVar4 = pHVar4->next_heap_block) {
         pHVar1 = pHVar4[1].next_heap_block;
-        g_Heap_PTR_006075c8 = pHVar4;
+        g_SecondaryHeap = pHVar4;
         if ((size <= pHVar1) &&
            (pvStack_28 = (void *)FUN_005a9510(), pvStack_28 != (void *)0x0))
         goto LAB_005a3750;

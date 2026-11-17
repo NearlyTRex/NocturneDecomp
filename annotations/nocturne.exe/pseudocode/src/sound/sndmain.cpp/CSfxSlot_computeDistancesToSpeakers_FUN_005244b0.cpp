@@ -17,21 +17,21 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0(
   float10 fVar6;
   
   iVar3 = 0;
-  if (0 < g_INT_005bea68) {
+  if (0 < g_AudioChannelCount) {
     iVar2 = 0;
     pCVar1 = this_ptr;
     do {
       fVar4 = (float10)(this_ptr->options).position.x -
-              (float10)*(double *)((int)g_DOUBLE_ARRAY_02dc83d8 + iVar2);
+              (float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);
       fVar5 = (float10)(this_ptr->options).position.y -
-              (float10)*(double *)((int)g_DOUBLE_ARRAY_02dc8418 + iVar2);
+              (float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);
       fVar6 = (float10)(this_ptr->options).position.z -
-              (float10)*(double *)((int)g_DOUBLE_ARRAY_02dc8458 + iVar2);
+              (float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);
       iVar2 = iVar2 + 8;
       iVar3 = iVar3 + 1;
       pCVar1->distance_to_speakers[0] = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
       pCVar1 = (CSfxSlot *)&(pCVar1->options).position;
-    } while (iVar3 < g_INT_005bea68);
+    } while (iVar3 < g_AudioChannelCount);
   }
   return;
 }

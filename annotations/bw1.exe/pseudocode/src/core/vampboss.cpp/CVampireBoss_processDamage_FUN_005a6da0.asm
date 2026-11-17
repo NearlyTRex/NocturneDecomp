@@ -13,8 +13,8 @@
 ;   TerminatedCString s_voicudeath_wav_2_5_005f8ead
 ;   double g_DOUBLE_005f8ec8 = 2
 ;   double g_DOUBLE_005f8ed0 = 25
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -139,7 +139,7 @@ section .text
     PUSH ESI                            ; 005a6e9a
     LEA EAX,[ESP + 0x14]                ; 005a6e9b
     PUSH EAX                            ; 005a6e9f
-    MOV EAX,[0x0061c010]                ; 005a6ea0 | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 005a6ea0 | g_CFireEffectPtr
     PUSH EAX                            ; 005a6ea5
     INC EBX                             ; 005a6ea6
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 005a6ea7
@@ -253,7 +253,7 @@ section .text
         ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 005a6fae
     PUSH 0x5f8e9a                       ; 005a6fb1 | = "VampireBossBitesIt"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 005a6fb6 | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 005a6fb6 | g_CEventListPtr
     PUSH ECX                            ; 005a6fbc
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005a6fbd
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

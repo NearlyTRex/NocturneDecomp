@@ -84,7 +84,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042e580(CCh
     pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 4);
     (this_ptr->model).part_data.visibility_flags[*piVar1] = 0;
   } while (pCVar4 != (CCharacter *)((this_ptr->base).actor_name + 0x10));
-  fVar2 = (float)g_INT_01c43530 * 1.525879e-05f;
+  fVar2 = (float)g_GlobalDeltaTimeInt * 1.525879e-05f;
   this_ptr->blink_timer = this_ptr->blink_timer - fVar2;
   if (this_ptr->is_blinking == 1) {
     if (this_ptr->blink_timer <= 0.0) {

@@ -9,12 +9,12 @@
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread)
 
 {
-  if (0x3f < g_INT_01c5c700) {
+  if (0x3f < g_LaserBeamActiveCount) {
     return;
   }
   core_fire_cpp_CLaserBeam_init_FUN_004858f0
-            (g_CLaserBeam_ARRAY_01c5c704 + g_INT_01c5c700,origin,hit_position,beam_width,
+            (g_LaserBeamPool + g_LaserBeamActiveCount,origin,hit_position,beam_width,
              reticle_intensity,reflection_normal,red,green,blue,halo_spread,0.0);
-  g_INT_01c5c700 = g_INT_01c5c700 + 1;
+  g_LaserBeamActiveCount = g_LaserBeamActiveCount + 1;
   return;
 }

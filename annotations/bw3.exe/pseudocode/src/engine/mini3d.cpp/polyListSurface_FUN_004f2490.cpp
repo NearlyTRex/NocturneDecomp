@@ -16,7 +16,7 @@ int __cdecl engine_mini3d_cpp_polyListSurface_FUN_004f2490(float *vertices,int v
   int iVar3;
   uint local_14;
   
-  g_INT_01ed3198 = g_INT_01ed3198 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   g_INT_01d76c34 = g_INT_01d76c34 + vertex_count;
   engine_mini3d_cpp_allocVertexList_FUN_004ede40();
   if (10000 < vertex_count) {

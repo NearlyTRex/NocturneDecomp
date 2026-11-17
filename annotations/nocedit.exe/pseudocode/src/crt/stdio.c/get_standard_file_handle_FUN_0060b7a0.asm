@@ -11,7 +11,7 @@
 ;   crt_stdio.c_prepare_stream_for_write_FUN_00606055 at 006060a8
 ;
 ; Referenced Globals:
-;   _FILE* g_StaticFilePoolStart = 00000000
+;   _FILE g_StaticFilePoolStart
 ;
 ; *****************************************************************************
 

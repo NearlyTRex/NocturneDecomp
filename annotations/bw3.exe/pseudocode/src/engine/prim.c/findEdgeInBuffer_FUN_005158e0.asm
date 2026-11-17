@@ -12,7 +12,7 @@
 ;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 00516009
 ;
 ; Referenced Globals:
-;   int g_INT_01ed2c88
+;   int g_SoftwareEdgeCount
 ;   SSoftwareEdge[16] g_SSoftwareEdge_ARRAY_01ed2c8c
 ;   undefined4 g_SSoftwareEdge_ARRAY_01ed2c8c[1].base.y_min
 ;
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 005158e0
         ;   Label: engine_prim.c_findEdgeInBuffer_FUN_005158e0
     PUSH ESI                            ; 005158e1
-    MOV EBX,dword ptr [0x01ed2c88]      ; 005158e2 | g_INT_01ed2c88
+    MOV EBX,dword ptr [0x01ed2c88]      ; 005158e2 | g_SoftwareEdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 005158e8
     MOV ESI,dword ptr [ESP + 0x10]      ; 005158ec
     MOV EAX,0x1ed2c8c                   ; 005158f0
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 005158fb (CONDITIONAL_JUMP)  ; LAB_005158fb
     XOR EAX,EAX                         ; 0051590b
         ;   Label: LAB_0051590b
-    MOV dword ptr [0x01ed2c88],EBX      ; 0051590d | g_INT_01ed2c88
+    MOV dword ptr [0x01ed2c88],EBX      ; 0051590d | g_SoftwareEdgeCount
         ;   Label: LAB_0051590d
     POP ESI                             ; 00515913
     POP EBX                             ; 00515914

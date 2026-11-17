@@ -19,7 +19,7 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_005334f0(CPathMap *this_p
   
   bVar5 = 0;
   if (force_update == 0) {
-    iVar2 = this_ptr->update_timer - g_INT_01c43530;
+    iVar2 = this_ptr->update_timer - g_GlobalDeltaTimeInt;
     this_ptr->update_timer = iVar2;
     if (iVar2 < 0) {
       this_ptr->update_timer = iVar2 + 0x4000;

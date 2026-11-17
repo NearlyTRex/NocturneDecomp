@@ -13,10 +13,10 @@
 // =============================================================================
 
 // CBoundingBox3D[2000]
-extern CBoundingBox3D g_CBoundingBox3D_ARRAY_02665930[2000];
+extern CBoundingBox3D g_VDNearbyActorBoundingBoxes[2000];
 
 // CDemonActor*[2000]
-extern CDemonActor* g_CDemonActor_PTR_ARRAY_026639f0[2000];
+extern CDemonActor* g_VDNearbyActorPointers[2000];
 
 // CVector3i
 extern CVector3i g_CVector3i_026635f8;
@@ -25,5 +25,5 @@ extern CVector3i g_CVector3i_026635f8;
 extern float g_FLOAT_ARRAY_02663604[250];
 
 // int
-extern int g_INT_026639ec;
+extern int g_VDNearbyActorCount;
 

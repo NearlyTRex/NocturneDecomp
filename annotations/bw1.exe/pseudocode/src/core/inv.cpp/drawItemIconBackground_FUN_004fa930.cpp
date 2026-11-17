@@ -29,7 +29,7 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004fa930(int x1,int y1,int 
     iVar2 = (int)(0x1e00000 / (longlong)g_INT_0061b49c);
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061f274);
+            (g_CDemonRenderer_PTR_00612560,&g_Inventory3DTextureAtlas);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(g_CDemonRenderer_PTR_00612560,alpha)
   ;
   this_ptr = g_CDemonRenderer_PTR_00612560;

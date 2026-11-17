@@ -12,21 +12,21 @@ void __cdecl wincore_winrun_cpp_initJoystick_FUN_0058ffd0(void)
   MMRESULT MVar1;
   tagJOYCAPSA local_194;
   
-  g_HMODULE_026656c0 = GetModuleHandleA("winmm.dll");
-  if (g_HMODULE_026656c0 != (HMODULE)0x0) {
-    g_PTR_026656bc = GetProcAddress(g_HMODULE_026656c0,"joyGetPosEx");
+  g_WinmmDll = GetModuleHandleA("winmm.dll");
+  if (g_WinmmDll != (HMODULE)0x0) {
+    g_joyGetPosEx = GetProcAddress(g_WinmmDll,"joyGetPosEx");
   }
   MVar1 = joyGetDevCapsA(0,&local_194,0x194);
   if (MVar1 == 0) {
-    g_INT_01c38b14 = (int)(((byte)local_194.wCaps & 0x10) != 0);
-    g_INT_006141d0 = local_194.wMaxButtons;
+    g_JoystickHasPOV = (int)(((byte)local_194.wCaps & 0x10) != 0);
+    g_JoystickNumButtons = local_194.wMaxButtons;
     if (8 < (int)local_194.wMaxButtons) {
-      g_INT_006141d0 = 8;
+      g_JoystickNumButtons = 8;
       return;
     }
   }
   else {
-    g_INT_01c38b04 = 0;
+    g_JoystickPresent = 0;
   }
   return;
 }

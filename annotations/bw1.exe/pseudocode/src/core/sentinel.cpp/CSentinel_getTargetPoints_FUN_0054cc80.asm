@@ -8,11 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   int[12] g_INT_ARRAY_01e820fc
-;   undefined4 g_INT_ARRAY_01e820fc[5]
-;   undefined4 g_INT_ARRAY_01e820fc[6]
-;   undefined4 g_INT_ARRAY_01e820fc[9]
-;   undefined4 g_INT_ARRAY_01e820fc[11]
+;   int[12] g_SentinelIndices
+;   undefined4 g_SentinelIndices[5]
+;   undefined4 g_SentinelIndices[6]
+;   undefined4 g_SentinelIndices[9]
+;   undefined4 g_SentinelIndices[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -29,7 +29,7 @@ section .text
     SUB ESP,0x7c                        ; 0054cc84
     MOV EBP,dword ptr [ESP + 0x90]      ; 0054cc87
     MOV EBX,dword ptr [ESP + 0x94]      ; 0054cc8e
-    MOV ECX,dword ptr [0x01e820fc]      ; 0054cc95 | g_INT_ARRAY_01e820fc
+    MOV ECX,dword ptr [0x01e820fc]      ; 0054cc95 | g_SentinelIndices
     MOV EDX,0x5                         ; 0054cc9b
     PUSH ECX                            ; 0054cca0
     LEA EAX,[EBP + 0x158]               ; 0054cca1
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [EBX + 0x4],EAX       ; 0054ccd8
     MOV EAX,dword ptr [ESP + 0x44]      ; 0054ccdb
     MOV dword ptr [EBX + 0x8],EAX       ; 0054ccdf
-    MOV ESI,dword ptr [0x01e82110]      ; 0054cce2 | g_INT_ARRAY_01e820fc[5]
+    MOV ESI,dword ptr [0x01e82110]      ; 0054cce2 | g_SentinelIndices[5]
         ;   Label: LAB_0054cce2
     PUSH ESI                            ; 0054cce8
     LEA EAX,[EBP + 0x158]               ; 0054cce9
@@ -79,7 +79,7 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 0054cd1c
     MOV EAX,dword ptr [ESP + 0x14]      ; 0054cd1f
     MOV dword ptr [EDX + 0x8],EAX       ; 0054cd23
-    MOV EDI,dword ptr [0x01e82114]      ; 0054cd26 | g_INT_ARRAY_01e820fc[6]
+    MOV EDI,dword ptr [0x01e82114]      ; 0054cd26 | g_SentinelIndices[6]
         ;   Label: LAB_0054cd26
     PUSH EDI                            ; 0054cd2c
     LEA EAX,[EBP + 0x158]               ; 0054cd2d
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 0054cd60
     MOV EAX,dword ptr [ESP + 0x20]      ; 0054cd63
     MOV dword ptr [EDX + 0x8],EAX       ; 0054cd67
-    MOV EAX,[0x01e82120]                ; 0054cd6a | g_INT_ARRAY_01e820fc[9]
+    MOV EAX,[0x01e82120]                ; 0054cd6a | g_SentinelIndices[9]
         ;   Label: LAB_0054cd6a
     PUSH EAX                            ; 0054cd6f
     LEA EAX,[EBP + 0x158]               ; 0054cd70
@@ -129,7 +129,7 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 0054cda3
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0054cda6
     MOV dword ptr [EDX + 0x8],EAX       ; 0054cdaa
-    MOV EDX,dword ptr [0x01e82128]      ; 0054cdad | g_INT_ARRAY_01e820fc[11]
+    MOV EDX,dword ptr [0x01e82128]      ; 0054cdad | g_SentinelIndices[11]
         ;   Label: LAB_0054cdad
     PUSH EDX                            ; 0054cdb3
     ADD EBP,0x158                       ; 0054cdb4

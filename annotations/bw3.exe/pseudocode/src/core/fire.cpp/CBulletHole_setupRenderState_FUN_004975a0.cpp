@@ -9,15 +9,15 @@
 void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_004975a0(CBulletHole *this_ptr)
 
 {
-  g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count = 4;
-  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0] = 0;
-  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1] = 1;
-  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2] = 2;
-  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3] = 3;
-  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C.i = 0xffff;
+  g_BillboardPrimitive.base.base.count = 4;
+  g_BillboardPrimitive.vertices[0] = 0;
+  g_BillboardPrimitive.vertices[1] = 1;
+  g_BillboardPrimitive.vertices[2] = 2;
+  g_BillboardPrimitive.vertices[3] = 3;
+  g_BillboardPrimitive.base.surface_normal.A.i = 0;
+  g_BillboardPrimitive.base.surface_normal.B.i = 0;
+  g_BillboardPrimitive.base.surface_normal.D.i = 0;
+  g_BillboardPrimitive.base.surface_normal.C.i = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
             (g_CDemonRenderer_PTR_005f2afc,0x8000);
   return;

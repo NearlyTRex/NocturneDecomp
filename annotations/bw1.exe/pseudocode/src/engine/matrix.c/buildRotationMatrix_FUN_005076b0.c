@@ -53,15 +53,15 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_005076b0(int pitch,int yaw,
        (int)((ulonglong)((longlong)iVar7 * (longlong)iVar11) >> 0x20) << 0x10;
   if (199 < (uint)g_INT_0061b49c) {
     if ((uint)g_INT_0061b49c < 0xc9) {
-      g_INT_01d1dd70 = 0x15555;
+      g_PixelAspectCorrection = 0x15555;
       goto LAB_0050782c;
     }
     if (g_INT_0061b49c == 400) {
-      g_INT_01d1dd70 = 0xaaaa;
+      g_PixelAspectCorrection = 0xaaaa;
       goto LAB_0050782c;
     }
   }
-  g_INT_01d1dd70 = 0x10000;
+  g_PixelAspectCorrection = 0x10000;
 LAB_0050782c:
   iVar6 = (g_INT_0061b498 * -(int)(((longlong)g_INT_01c4effc * 0x10000) / (longlong)g_INT_01c4eff8)
           * 3) / (g_INT_0061b49c << 2);
@@ -79,36 +79,36 @@ LAB_0050782c:
           (int)(((uint)((longlong)iVar9 * (longlong)-iVar10) >> 0x10 |
                 (int)((ulonglong)((longlong)iVar9 * (longlong)-iVar10) >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
-  iVar6 = ((((g_INT_01c4f010 - g_INT_01c4f008) * 0x280) / g_INT_0061b498) * 0x30000) /
+  iVar6 = ((((g_ClipRight - g_INT_01c4f008) * 0x280) / g_INT_0061b498) * 0x30000) /
           (((g_INT_01c4f014 - g_INT_01c4f00c) * 0x1e0) / g_INT_0061b49c);
   iVar12 = iVar6 >> 0x1f;
   iVar6 = (int)((iVar6 + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2;
   g_INT_01c51d5c =
        (int)(((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
-             (longlong)iVar6) / (longlong)g_INT_0061b4c4);
+             (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_INT_01c51d60 =
        (int)(((longlong)
               (int)(((uint)((longlong)iVar8 * (longlong)-iVar11) >> 0x10 |
                     (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar11) >> 0x20) << 0x10) +
                    ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) *
-             (longlong)iVar6) / (longlong)g_INT_0061b4c4);
+             (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_INT_01c51d68 =
        (int)(((longlong)(int)((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) *
-             (longlong)iVar6) / (longlong)g_INT_0061b4c4);
+             (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_INT_01c51d6c =
        (int)(((longlong)
               (int)((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
                    (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) *
-             (longlong)iVar6) / (longlong)g_INT_0061b4c4);
+             (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_INT_01c51d74 =
        (int)(((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
-             (longlong)iVar6) / (longlong)g_INT_0061b4c4);
+             (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_INT_01c51d78 =
        (int)(((longlong)
               (int)(((uint)((longlong)iVar10 * (longlong)iVar8) >> 0x10 |
                     (int)((ulonglong)((longlong)iVar10 * (longlong)iVar8) >> 0x20) << 0x10) +
                    ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10)) *
-             (longlong)iVar6) / (longlong)g_INT_0061b4c4);
+             (longlong)iVar6) / (longlong)g_ProjectionScale);
   engine_matrix_c_invertTransformMatrix_FUN_005073d0();
   return;
 }

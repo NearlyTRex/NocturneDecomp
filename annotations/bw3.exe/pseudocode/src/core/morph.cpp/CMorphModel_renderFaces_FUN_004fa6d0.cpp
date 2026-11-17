@@ -20,7 +20,7 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004fa6d0(CMorphModel *th
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120
             (g_CDemonRenderer_PTR_005f2afc,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(g_CDemonRenderer_PTR_005f2afc,1);
-  iVar3 = 0xffff - g_INT_01c6e24c;
+  iVar3 = 0xffff - g_PerspectiveReciprocal;
   dVar5 = round
                     ((double)(morph_t * (float)65535 * (2.0f - morph_t)));
   lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);

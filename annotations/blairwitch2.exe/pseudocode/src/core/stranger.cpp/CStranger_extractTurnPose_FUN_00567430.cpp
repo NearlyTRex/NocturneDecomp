@@ -34,7 +34,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_00567430(CStranger 
              this_ptr->turn_blend_weight * (float)40,-1);
   core_xform_cpp_quaternionToEulerAngles_FUN_005940b0
             ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
-             g_INT_ARRAY_0264be30[0],&local_28);
+             g_StrangerIndices[0],&local_28);
   local_1c = local_28.x;
   local_18[(uint)bVar3 * -2] = *(float *)((int)&local_28 + (uint)bVar3 * -8 + 4);
   local_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =

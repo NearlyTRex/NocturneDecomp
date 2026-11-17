@@ -72,14 +72,14 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 005ab2ae
     PUSH EAX                            ; 005ab2b4
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ab2b5
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005ab2ba
     ADD ESP,0x8                         ; 005ab2c0
     ADD EAX,0x264                       ; 005ab2c3
     PUSH dword ptr [EBP + 0x92]         ; 005ab2c8
     PUSH EAX                            ; 005ab2ce
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ab2cf
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005ab2d4
     ADD ESP,0x8                         ; 005ab2da
     ADD EAX,0x2b4                       ; 005ab2dd

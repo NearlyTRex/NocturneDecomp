@@ -10,9 +10,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMini3DMode_FUN_00480d00(CEditorT
 
 {
   g_INT_01c25f84 = enable;
-  if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
+  if (g_EditorFont == (CBitFont *)0x0) {
     return;
   }
-  engine_font_cpp_CBitFont_setAcceleration_FUN_004a7fd0(g_CBitFont_PTR_01c25590,enable);
+  engine_font_cpp_CBitFont_setAcceleration_FUN_004a7fd0(g_EditorFont,enable);
   return;
 }

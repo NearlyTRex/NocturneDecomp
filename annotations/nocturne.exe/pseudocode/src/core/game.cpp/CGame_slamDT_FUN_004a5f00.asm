@@ -18,7 +18,7 @@
 ;   TerminatedCString s_core_game_cpp_00584452
 ;   TerminatedCString s_CGame_slamDT_invalid_dt_00584463
 ;   float FLOAT_00584482 = 65536
-;   int g_INT_01bd1d80
+;   int g_GlobalDeltaTimeInt
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x260]       ; 004a5f2d
     MOV EBX,dword ptr [EBX + 0x260]     ; 004a5f33
-    MOV dword ptr [0x01bd1d80],EBX      ; 004a5f39 | g_INT_01bd1d80
+    MOV dword ptr [0x01bd1d80],EBX      ; 004a5f39 | g_GlobalDeltaTimeInt
     POP EBX                             ; 004a5f3f
     RET                                 ; 004a5f40
     MOV EDX,0x584452                    ; 004a5f41 | = "..\\core\\game.cpp"

@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
+;   void*[1200] g_ScreenBufferArray
 ;   int g_INT_01c6b5c0
 ;
 ; *****************************************************************************
@@ -44,14 +44,14 @@ section .text
     CMP EBX,0x10                        ; 00401159
     JNZ 0x00401185                      ; 0040115c
         ;   XREF to: 00401185 (CONDITIONAL_JUMP)  ; LAB_00401185
-    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 0040115e | g_ARRAY_PTR_01c5faec
+    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 0040115e | g_ScreenBufferArray
     ADD ECX,ECX                         ; 00401164
     ADD ECX,EAX                         ; 00401166
     MOV AX,word ptr [EDX*0x2 + 0x1c6a070] ; 00401168
     MOV word ptr [ECX],AX               ; 00401170
     POP EBX                             ; 00401173
     RET                                 ; 00401174
-    MOV EDX,dword ptr [EAX + 0x1c5faec] ; 00401175 | g_ARRAY_PTR_01c5faec
+    MOV EDX,dword ptr [EAX + 0x1c5faec] ; 00401175 | g_ScreenBufferArray
         ;   Label: LAB_00401175
     MOV AL,[0x01c6b5c0]                 ; 0040117b | g_INT_01c6b5c0
     MOV byte ptr [ECX + EDX*0x1],AL     ; 00401180
@@ -59,7 +59,7 @@ section .text
     RET                                 ; 00401184
     SHL ECX,0x2                         ; 00401185
         ;   Label: LAB_00401185
-    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 00401188 | g_ARRAY_PTR_01c5faec
+    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 00401188 | g_ScreenBufferArray
     ADD ECX,EAX                         ; 0040118e
     MOV EAX,dword ptr [EDX*0x4 + 0x1c6a270] ; 00401190
     MOV dword ptr [ECX],EAX             ; 00401197

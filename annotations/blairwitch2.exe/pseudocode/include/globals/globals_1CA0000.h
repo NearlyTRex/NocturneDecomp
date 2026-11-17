@@ -77,7 +77,7 @@ extern char g_CHAR_01cafe40;
 extern char g_CHAR_ARRAY_01cab7f0[512];
 
 // float
-extern float g_FLOAT_01caf5b0;
+extern float g_FastSqrtMagicSeedOne;
 extern float g_FLOAT_01caf5bc;
 extern float g_FLOAT_01caf5c0;
 extern float g_FLOAT_01caf5c4;
@@ -92,14 +92,14 @@ extern float g_FLOAT_01caf5e4;
 extern float g_FLOAT_01caf5e8;
 
 // float[64][8]
-extern float g_FLOAT_ARRAY_ARRAY_01caf634[64][8];
+extern float g_SplineBasisTable[64][8];
 
 // int
 extern int g_INT_01ca13e8;
 extern int g_INT_01ca15a4;
 extern int g_INT_01ca23b8;
-extern int g_INT_01ca367c;
-extern int g_INT_01ca7680;
+extern int g_PopcornAllocIndex;
+extern int g_RainDropAllocIndex;
 extern int g_INT_01cab780;
 extern int g_INT_01cab7e8;
 extern int g_INT_01cab9f0;
@@ -112,11 +112,11 @@ extern int g_INT_01caf494;
 extern int g_INT_01caf498;
 extern int g_INT_01caf49c;
 extern int g_INT_01caf568;
-extern int g_INT_01caf5b4;
-extern int g_INT_01caf5b8;
-extern int g_INT_01caf5ec;
+extern int g_FastSqrtMagic;
+extern int g_FastInvSqrtMagic;
+extern int g_FliesInitialized;
 
 // uint
-extern uint g_UINT_01caf62c;
-extern uint g_UINT_01caf630;
+extern uint g_FlyBlendColor;
+extern uint g_FlyInvBlendColor;
 

@@ -18,11 +18,10 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004fcfa0(SMpegFrame 
   
   pSVar2 = frame->header;
   iVar3 = pSVar2->mpeg_version;
-  iVar5 = g_INT_ARRAY_ARRAY_ARRAY_006011f8[iVar3 + -1][pSVar2->layer + 2][pSVar2->bitrate_index] /
+  iVar5 = g_MpegBitrateTable[iVar3 + -1][pSVar2->layer + 2][pSVar2->bitrate_index] /
           frame->channel_count;
   iVar4 = frame->sblimit;
-  dVar6 = round
-                    (g_DOUBLE_ARRAY_ARRAY_006011b8[iVar3][pSVar2->sampling_rate_index]);
+  dVar6 = round(g_MpegSampleRateTable[iVar3][pSVar2->sampling_rate_index]);
   iVar1 = (int)ROUND(dVar6);
   if (iVar3 == 1) {
     if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {

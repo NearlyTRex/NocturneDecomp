@@ -12,11 +12,11 @@ CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_0049c0f0(void)
   CSmokeParticle *pCVar1;
   int iVar2;
   
-  iVar2 = g_INT_01c3f8dc + 1;
-  pCVar1 = g_CSmokeParticle_ARRAY_01c3f8e0 + g_INT_01c3f8dc;
+  iVar2 = g_SmokeParticleAllocIndex + 1;
+  pCVar1 = g_SmokeParticlePool + g_SmokeParticleAllocIndex;
   if (0x7ff < iVar2) {
     iVar2 = 0;
   }
-  g_INT_01c3f8dc = iVar2;
+  g_SmokeParticleAllocIndex = iVar2;
   return pCVar1;
 }

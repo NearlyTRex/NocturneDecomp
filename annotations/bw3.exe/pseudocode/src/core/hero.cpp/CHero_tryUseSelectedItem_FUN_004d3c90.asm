@@ -15,7 +15,7 @@
 ;   TerminatedCString s_lantern_kfm_005c4e05
 ;   TerminatedCString s_voodoo_d_kfm_005c4e11
 ;   TerminatedCString s_UseSPS_005c4e1e
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CFieldNotes* g_CFieldNotesPtr = 01d1a05c
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CFieldNotesInstance.is_displayed
@@ -169,7 +169,7 @@ section .text
     RET                                 ; 004d3dc9
     PUSH 0x5c4e1e                       ; 004d3dca | = "UseSPS"
         ;   Label: LAB_004d3dca
-    MOV EDI,dword ptr [0x005fba60]      ; 004d3dcf | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 004d3dcf | g_CEventListPtr
     PUSH EDI                            ; 004d3dd5
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004d3dd6
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

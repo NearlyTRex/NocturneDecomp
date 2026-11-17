@@ -9,8 +9,8 @@
 void __cdecl core_vecdir_cpp_staticInit_FUN_005838d0(void)
 
 {
-  g_CVector3f_0265370c.y = 0.0;
-  g_CVector3f_0265370c.z = 0.0;
-  g_CVector3f_0265370c.x = 0.0;
+  g_ZeroVector.y = 0.0;
+  g_ZeroVector.z = 0.0;
+  g_ZeroVector.x = 0.0;
   return;
 }

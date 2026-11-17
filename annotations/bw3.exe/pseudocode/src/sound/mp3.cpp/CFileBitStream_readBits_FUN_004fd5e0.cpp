@@ -76,8 +76,8 @@ LAB_004fd60c:
     iVar2 = this_ptr->bits_available - iVar2;
     local_14 = local_14 |
                ((int)((uint)(byte)this_ptr->buffer[this_ptr->current_byte_index] &
-                     g_UINT_ARRAY_00601580[this_ptr->bits_available]) >> ((byte)iVar2 & 0x1f)) <<
-               ((byte)num_bits & 0x1f);
+                     g_MpegBitMaskTableMultiBit[this_ptr->bits_available]) >> ((byte)iVar2 & 0x1f))
+               << ((byte)num_bits & 0x1f);
     this_ptr->bits_available = iVar2;
   } while( true );
 }

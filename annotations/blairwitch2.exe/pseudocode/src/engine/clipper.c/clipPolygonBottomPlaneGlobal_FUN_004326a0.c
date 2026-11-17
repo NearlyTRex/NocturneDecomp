@@ -20,16 +20,16 @@ void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_004326a0(void)
   
   bVar6 = 0;
   iStack_14 = 0;
-  if (0 < g_INT_007bfd08) {
-    v1 = g_SRenderVertex_ARRAY_007c0f0c;
+  if (0 < g_IntermediateVertexCount) {
+    v1 = g_ClipperIntermediateBuffer;
     do {
       uVar2 = iStack_14 + 1;
-      if (uVar2 == g_INT_007bfd08) {
-        uVar2 = uVar2 ^ g_INT_007bfd08;
+      if (uVar2 == g_IntermediateVertexCount) {
+        uVar2 = uVar2 ^ g_IntermediateVertexCount;
       }
       bVar1 = (v1->projected_vertex).transformed_y <= -(v1->projected_vertex).transformed_z;
-      if (g_SRenderVertex_ARRAY_007c0f0c[uVar2].projected_vertex.transformed_y <=
-          -g_SRenderVertex_ARRAY_007c0f0c[uVar2].projected_vertex.transformed_z) {
+      if (g_ClipperIntermediateBuffer[uVar2].projected_vertex.transformed_y <=
+          -g_ClipperIntermediateBuffer[uVar2].projected_vertex.transformed_z) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
@@ -51,7 +51,7 @@ void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_004326a0(void)
         break;
       case 1:
         engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_004321a0
-                  (g_SRenderVertex_ARRAY_007c0f0c + uVar2,v1,
+                  (g_ClipperIntermediateBuffer + uVar2,v1,
                    g_SRenderVertex_ARRAY_007bee34 + g_INT_007bee30);
         g_INT_007bee30 = g_INT_007bee30 + 1;
         break;
@@ -71,13 +71,13 @@ void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_004326a0(void)
         }
         g_INT_007bee30 = g_INT_007bee30 + 1;
         engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_004321a0
-                  (v1,g_SRenderVertex_ARRAY_007c0f0c + uVar2,
+                  (v1,g_ClipperIntermediateBuffer + uVar2,
                    g_SRenderVertex_ARRAY_007bee34 + g_INT_007bee30);
         g_INT_007bee30 = g_INT_007bee30 + 1;
       }
       iStack_14 = iStack_14 + 1;
       v1 = v1 + 1;
-    } while (iStack_14 < g_INT_007bfd08);
+    } while (iStack_14 < g_IntermediateVertexCount);
   }
   return;
 }

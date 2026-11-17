@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_005fd60c
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
+;   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
+;   undefined4 g_FireEffectLightningBoltTextures[1].base.type
 ;   undefined4 DAT_005fd7ec
 ;   undefined4 DAT_005fd804
 ;   undefined4 DAT_005fd81c
@@ -143,10 +143,10 @@ section .text
         ;   Label: LAB_004a429c
     JMP 0x004a41fa                      ; 004a42a1
         ;   XREF to: 004a41fa (UNCONDITIONAL_JUMP)  ; LAB_004a41fa
-    MOV EAX,0x5fd60c                    ; 004a42a6 | g_SMRGLTextureBasic_ARRAY_005fd60c
+    MOV EAX,0x5fd60c                    ; 004a42a6 | g_FireEffectLightningBoltTextures
         ;   Label: LAB_004a42a6
     ADD EAX,EBX                         ; 004a42ab
-    PUSH EAX                            ; 004a42ad | g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
+    PUSH EAX                            ; 004a42ad | g_FireEffectLightningBoltTextures[1].base.type
     MOV EDX,dword ptr [0x005f2afc]      ; 004a42ae | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004a42b4 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4204                      ; 004a42b5

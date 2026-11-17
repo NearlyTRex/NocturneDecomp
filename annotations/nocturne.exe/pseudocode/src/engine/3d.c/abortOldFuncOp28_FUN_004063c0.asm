@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Old_func_d_005774c8
 ;   TerminatedCString s_engine_3d_c_005774d6
-;   int g_INT_006b0288
+;   int g_RenderResult
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -43,7 +43,7 @@ section .text
     MOV dword ptr [0x01cc4800],ECX      ; 004063f0 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004063f6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
-    MOV EAX,0x6b0288                    ; 004063fb | g_INT_006b0288
+    MOV EAX,0x6b0288                    ; 004063fb | g_RenderResult
     ADD ESP,0x4                         ; 00406400
     ADD ESP,0x50                        ; 00406403
     POP EBX                             ; 00406406

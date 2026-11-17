@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   int g_INT_00713a5c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
+;   int g_CurrentPolygonColor
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00403de0
         ;   Label: engine_3d.c_processPolygonColor_FUN_00403de0
     MOV EDX,dword ptr [EAX + 0x4]       ; 00403de4
-    MOV dword ptr [0x00713a5c],EDX      ; 00403de7 | g_INT_00713a5c
+    MOV dword ptr [0x00713a5c],EDX      ; 00403de7 | g_CurrentPolygonColor
     MOV DL,byte ptr [EAX + 0x7]         ; 00403ded
     TEST DL,0x80                        ; 00403df0
     JZ 0x00403e4e                       ; 00403df3
@@ -42,16 +42,16 @@ section .text
     CMP ECX,0x20                        ; 00403e23
     JNZ 0x00403e52                      ; 00403e26
         ;   XREF to: 00403e52 (CONDITIONAL_JUMP)  ; LAB_00403e52
-    MOV CL,byte ptr [0x01c4e9d4]        ; 00403e28 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 00403e28 | g_RedBitPosition
     SHL ESI,CL                          ; 00403e2e
-    MOV CL,byte ptr [0x01c4e9e0]        ; 00403e30 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 00403e30 | g_GreenBitPosition
     SHL EDX,CL                          ; 00403e36
-    MOV CL,byte ptr [0x01c4e9ec]        ; 00403e38 | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 00403e38 | g_BlueBitPosition
     SHL EBX,CL                          ; 00403e3e
     OR EDX,ESI                          ; 00403e40
     MOV ECX,EBX                         ; 00403e42
     OR ECX,EDX                          ; 00403e44
-    MOV dword ptr [0x00713a5c],ECX      ; 00403e46 | g_INT_00713a5c
+    MOV dword ptr [0x00713a5c],ECX      ; 00403e46 | g_CurrentPolygonColor
     POP EBX                             ; 00403e4c
     POP ESI                             ; 00403e4d
     ADD EAX,0x8                         ; 00403e4e
@@ -63,7 +63,7 @@ section .text
     SHL ECX,0x10                        ; 00403e57
     OR ECX,EDX                          ; 00403e5a
     OR ECX,EBX                          ; 00403e5c
-    MOV dword ptr [0x00713a5c],ECX      ; 00403e5e | g_INT_00713a5c
+    MOV dword ptr [0x00713a5c],ECX      ; 00403e5e | g_CurrentPolygonColor
     POP EBX                             ; 00403e64
     POP ESI                             ; 00403e65
     ADD EAX,0x8                         ; 00403e66

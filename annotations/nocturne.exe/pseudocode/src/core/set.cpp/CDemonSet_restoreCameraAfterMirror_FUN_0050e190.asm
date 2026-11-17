@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   CVector3f g_CVector3f_020842b4
-;   CVector3f g_CVector3f_020842c0
-;   float g_FLOAT_020842cc
+;   CVector3f g_SavedCameraOrigin
+;   CVector3f g_SavedCameraRotation
+;   float g_SavedProjectionFactor
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0
@@ -35,19 +35,19 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
     PUSH ESI                            ; 0050e191
     PUSH EDI                            ; 0050e192
-    PUSH 0x20842b4                      ; 0050e193 | g_CVector3f_020842b4
+    PUSH 0x20842b4                      ; 0050e193 | g_SavedCameraOrigin
     MOV EDX,dword ptr [0x005ae704]      ; 0050e198 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0050e19e | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 0050e19f
         ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0050e1a4
     MOV ECX,dword ptr [0x005ae704]      ; 0050e1a7 | g_CDemonRenderer_PTR_005ae704
-    PUSH dword ptr [0x020842cc]         ; 0050e1ad | g_FLOAT_020842cc
+    PUSH dword ptr [0x020842cc]         ; 0050e1ad | g_SavedProjectionFactor
     PUSH ECX                            ; 0050e1b3 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 0050e1b4
         ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0050e1b9
-    PUSH 0x20842c0                      ; 0050e1bc | g_CVector3f_020842c0
+    PUSH 0x20842c0                      ; 0050e1bc | g_SavedCameraRotation
     MOV EBX,dword ptr [0x005ae704]      ; 0050e1c1 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0050e1c7 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780 ; 0050e1c8

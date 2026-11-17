@@ -28,7 +28,7 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(CCrater *this_ptr)
       local_18.z = 0.0;
       do {
         core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                  (g_CFireEffect_PTR_005b80f0,position,1.0,&local_18,0xffff);
+                  (g_CFireEffectPtr,position,1.0,&local_18,0xffff);
         position = position + 1;
       } while (position != this_ptr->corner_positions);
     }

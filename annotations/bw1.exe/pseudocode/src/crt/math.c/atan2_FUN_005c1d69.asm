@@ -18,7 +18,7 @@
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   byte g_BYTE_006267b8 = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c7f44
@@ -29,7 +29,7 @@ section .text
 
     FXCH                                ; 005c1d69
         ;   Label: crt_math.c_atan2_FUN_005c1d69
-    TEST byte ptr [0x006267b8],0x1      ; 005c1d6b | g_BYTE_006267b8
+    TEST byte ptr [0x006267b8],0x1      ; 005c1d6b | g_UseSoftwareMath
     JNZ 0x005c1d78                      ; 005c1d72
         ;   XREF to: 005c1d78 (CONDITIONAL_JUMP)  ; LAB_005c1d78
     FPATAN                              ; 005c1d74

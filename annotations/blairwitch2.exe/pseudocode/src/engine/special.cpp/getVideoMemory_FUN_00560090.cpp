@@ -11,7 +11,7 @@ int __cdecl engine_special_cpp_getVideoMemory_FUN_00560090(int *total_memory,int
 {
   int iVar1;
   
-  if (g_INT_0264bcdc == 0) {
+  if (g_LoadedExternalDLLRenderer == 0) {
     return 0;
   }
   iVar1 = (*(code *)g_PTR_0264bc40)(total_memory,available_memory,memory_type);

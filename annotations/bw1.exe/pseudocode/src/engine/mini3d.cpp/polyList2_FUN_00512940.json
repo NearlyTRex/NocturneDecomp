@@ -53,7 +53,7 @@
     },
     {
       "addr": "01c51d14",
-      "name": "g_BIT_INTEGER32_01c51d14",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -77,7 +77,7 @@
     },
     {
       "addr": "01e7dac8",
-      "name": "g_INT_01e7dac8",
+      "name": "g_RenderedTriangleCount",
       "type": "int",
       "value": null
     },
@@ -178,7 +178,7 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02c8345c)",
+      "text": "(*(code *)g_PTR_02c8345c)(vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword)",
       "type": "unresolved_funcptr"
     }
   ]

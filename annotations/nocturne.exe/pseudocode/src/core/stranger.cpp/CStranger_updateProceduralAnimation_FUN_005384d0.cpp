@@ -164,7 +164,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005384d0(
     local_15c = *pfVar2;
     local_158 = *pfVar14;
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-              (pCVar1,&local_184,g_INT_ARRAY_02dc9f50[4]);
+              (pCVar1,&local_184,g_StrangerIndices[4]);
     local_190.x = local_160 - local_184.x;
     local_190.y = local_15c - local_184.y;
     local_190.z = local_158 - local_184.z;
@@ -193,14 +193,14 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005384d0(
     this_ptr_02 = (CDeformableModelInstance *)0x5386ff;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
               ((CDeformableModelInstance *)local_18,(CQuaternion4f *)local_360,(float)local_1ee0,
-               g_INT_ARRAY_02dc9f50[0x11],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
+               g_StrangerIndices[0x11],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(local_7c.y,(CQuaternion4f *)local_300);
     local_1f08 = (CQuaternion4f *)local_390;
     pCVar11 = (CQuaternion4f *)local_390;
     pCVar8 = (CQuaternion4f *)local_300;
     rotation_quat = local_18;
     local_1f0c = (float)local_1ee0;
-    blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_INT_ARRAY_02dc9f50[4];
+    blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_StrangerIndices[4];
 LAB_00538745:
     puVar12 = (uint *)((int)pCVar11 + ((uint)bVar15 * -2 + 1) * 4);
     puVar9 = (uint *)((int)pCVar8 + ((uint)bVar15 * -2 + 1) * 4);
@@ -217,7 +217,7 @@ LAB_00538745:
     local_e4 = *pfVar2;
     local_e0.x = *pfVar14;
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-              (pCVar1,&local_b8,g_INT_ARRAY_02dc9f50[4]);
+              (pCVar1,&local_b8,g_StrangerIndices[4]);
     local_70._0_4_ = local_e8 - local_b8.x;
     local_70._4_4_ = local_e4 - local_b8.y;
     local_70._8_4_ = local_e0.x - local_b8.z;
@@ -249,7 +249,7 @@ LAB_00538745:
     this_ptr_02 = (CDeformableModelInstance *)0x538c6a;
     local_18 = (CQuaternion4f *)pCVar1;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-              (pCVar1,&local_230,(float)local_1ef4,g_INT_ARRAY_02dc9f50[4],
+              (pCVar1,&local_230,(float)local_1ef4,g_StrangerIndices[4],
                core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(local_4c.y,&local_240);
     local_1e0._0_4_ = local_240.w;
@@ -262,7 +262,7 @@ LAB_00538745:
     local_1edc = (CQuaternion4f *)local_1e0;
     rotation_quat = local_18;
     local_1f0c = (float)local_1ef4;
-    blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_INT_ARRAY_02dc9f50[4];
+    blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_StrangerIndices[4];
   }
   else {
     if (iVar19 != 0x16) {
@@ -294,7 +294,7 @@ LAB_00538745:
         local_fc = (this_ptr->carry_object_world_center).y;
         local_f8.x = (this_ptr->carry_object_world_center).z;
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                  (&(this_ptr->base).base.model,(CVector3f *)local_94,g_INT_ARRAY_02dc9f50[4]);
+                  (&(this_ptr->base).base.model,(CVector3f *)local_94,g_StrangerIndices[4]);
         local_130 = local_100 - (float)local_94._0_4_;
         local_12c = local_fc - (float)local_94._4_4_;
         local_128.x = local_f8.x - (float)local_94._8_4_;
@@ -318,7 +318,7 @@ LAB_00538745:
           puVar10[(uint)bVar15 * -2 + 1] = puVar9[(uint)bVar15 * -2 + 1];
           local_1c = pCVar1;
           core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                    (pCVar1,&CStack_2a4,(float)local_1f08,g_INT_ARRAY_02dc9f50[4],
+                    (pCVar1,&CStack_2a4,(float)local_1f08,g_StrangerIndices[4],
                      core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
           core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0
                     (-local_20,(CQuaternion4f *)(local_2c0 + 0xc));
@@ -329,7 +329,7 @@ LAB_00538745:
           pfVar14[(uint)bVar15 * -2 + 1] =
                (local_2b0 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
           core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                    (local_1c,&CStack_1c4,(float)local_1f08,g_INT_ARRAY_02dc9f50[6],
+                    (local_1c,&CStack_1c4,(float)local_1f08,g_StrangerIndices[6],
                      core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         }
         core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0
@@ -342,14 +342,14 @@ LAB_00538745:
              (local_1d0 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
         local_1c = &(this_ptr->base).base.model;
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                  (local_1c,&CStack_3b4,(float)local_1f08,g_INT_ARRAY_02dc9f50[4],
+                  (local_1c,&CStack_3b4,(float)local_1f08,g_StrangerIndices[4],
                    core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0((float)local_148._0_4_,&CStack_3a4);
         pCVar11 = (CQuaternion4f *)(local_260 + 0xc);
         pCVar8 = &CStack_3a4;
         this_ptr_02 = local_1c;
         rotation_quat = (CQuaternion4f *)(local_260 + 0xc);
-        local_1f0c = (float)g_INT_ARRAY_02dc9f50[4];
+        local_1f0c = (float)g_StrangerIndices[4];
         blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
       }
       else if (iVar19 == 0x17) {
@@ -373,15 +373,15 @@ LAB_00538745:
         local_18 = (CQuaternion4f *)&(this_ptr->base).base.model;
         this_ptr_02 = (CDeformableModelInstance *)0x5390d5;
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                  ((CDeformableModelInstance *)local_18,&local_330,local_1ef8,
-                   g_INT_ARRAY_02dc9f50[4],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
+                  ((CDeformableModelInstance *)local_18,&local_330,local_1ef8,g_StrangerIndices[4],
+                   core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(-local_38,&local_310);
         local_1f08 = &local_330;
         pCVar11 = &local_330;
         pCVar8 = &local_310;
         rotation_quat = local_18;
         local_1f0c = local_1ef8;
-        blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_INT_ARRAY_02dc9f50[3];
+        blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_StrangerIndices[3];
       }
       else {
         if (iVar19 != 0x18) {
@@ -411,7 +411,7 @@ LAB_00538745:
             this_ptr_02 = (CDeformableModelInstance *)0x539416;
             local_18 = (CQuaternion4f *)pCVar1;
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                      (pCVar1,&local_1f0,local_1f0c,g_INT_ARRAY_02dc9f50[4],
+                      (pCVar1,&local_1f0,local_1f0c,g_StrangerIndices[4],
                        core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
             core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(-local_34,(CQuaternion4f *)local_220);
             local_1f0.w = (float)local_220._0_4_;
@@ -425,13 +425,13 @@ LAB_00538745:
                   ((uint)bVar15 * -2 + 1) * 4);
             rotation_quat = local_18;
             local_1edc = &local_1f0;
-            blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_INT_ARRAY_02dc9f50[3];
+            blend_callback = (CDeformableModel_MotionBlendWeightFunc *)g_StrangerIndices[3];
           }
           else {
             if (iVar19 != 0x1a) goto LAB_00538751;
             local_18 = (CQuaternion4f *)&(this_ptr->base).base.model;
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                      ((CDeformableModelInstance *)local_18,&local_16c,g_INT_ARRAY_02dc9f50[4]);
+                      ((CDeformableModelInstance *)local_18,&local_16c,g_StrangerIndices[4]);
             fVar16 = atan2
                                ((float10)local_16c.y -
                                 (float10)(this_ptr->carry_object_world_center).y,
@@ -446,12 +446,10 @@ LAB_00538745:
                  pfVar14[(uint)bVar15 * -2 + 1];
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                       (pCVar1,(CQuaternion4f *)(local_3f0 + 0xc),(float)local_1ef4,
-                       g_INT_ARRAY_02dc9f50[4],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650)
-            ;
+                       g_StrangerIndices[4],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                       (local_1c,(CQuaternion4f *)(local_3f0 + 0xc),(float)local_1ef4,
-                       g_INT_ARRAY_02dc9f50[3],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650)
-            ;
+                       g_StrangerIndices[3],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
             fVar16 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /
                                      (float10)2.7f,(float10)1);
             local_30 = (float)fVar16;
@@ -466,8 +464,7 @@ LAB_00538745:
                  (CMotionList *)puVar9[(uint)bVar15 * -2 + 1];
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                       (pCVar1,(CQuaternion4f *)(local_220 + 0xc),(float)local_1ef4,
-                       g_INT_ARRAY_02dc9f50[4],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650)
-            ;
+                       g_StrangerIndices[4],core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
             core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0
                       (-local_30,(CQuaternion4f *)(local_360 + 0xc));
             local_220._12_4_ = local_360._12_4_;
@@ -480,13 +477,13 @@ LAB_00538745:
             this_ptr_02 = local_1c;
             rotation_quat = (CQuaternion4f *)(local_220 + 0xc);
             local_1edc = local_1ef4;
-            local_1f0c = (float)g_INT_ARRAY_02dc9f50[3];
+            local_1f0c = (float)g_StrangerIndices[3];
             blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
           }
           goto LAB_00538749;
         }
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                  (&(this_ptr->base).base.model,&local_c4,g_INT_ARRAY_02dc9f50[4]);
+                  (&(this_ptr->base).base.model,&local_c4,g_StrangerIndices[4]);
         local_20 = ((this_ptr->carry_object_world_center).y + (this_ptr->carry_object_bbox).max.y) -
                    (this_ptr->carry_object_bbox).min.y;
         pCVar3 = (this_ptr->base).object_to_pick_up;
@@ -508,10 +505,10 @@ LAB_00538745:
              (local_380 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
         local_1c = pCVar1;
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                  (pCVar1,&CStack_294,(float)local_1ee0,g_INT_ARRAY_02dc9f50[4],
+                  (pCVar1,&CStack_294,(float)local_1ee0,g_StrangerIndices[4],
                    core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                  (local_1c,&CStack_294,(float)local_1ee0,g_INT_ARRAY_02dc9f50[3],
+                  (local_1c,&CStack_294,(float)local_1ee0,g_StrangerIndices[3],
                    core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         fVar16 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /
                                  (float10)2.7f,(float10)1);
@@ -525,7 +522,7 @@ LAB_00538745:
         pfVar14[(uint)bVar15 * -2 + 1] =
              (local_2f0 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                  (local_1c,&CStack_1a4,(float)local_1ee0,g_INT_ARRAY_02dc9f50[4],
+                  (local_1c,&CStack_1a4,(float)local_1ee0,g_StrangerIndices[4],
                    core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(-local_34,&CStack_3c4);
         rotation_quat = &CStack_1a4;
@@ -533,7 +530,7 @@ LAB_00538745:
         pCVar8 = &CStack_3c4;
         this_ptr_02 = local_1c;
         local_1f08 = local_1ee0;
-        local_1f0c = (float)g_INT_ARRAY_02dc9f50[3];
+        local_1f0c = (float)g_StrangerIndices[3];
         blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
       }
       goto LAB_00538745;
@@ -552,7 +549,7 @@ LAB_00538745:
       fStack_cc = (pCVar6->min).z + (pCVar6->max).z;
       fStack_178 = fStack_d0 * 0.5f;
       fStack_174 = fStack_cc * 0.5f;
-      if ((int *)&stack0x00000000 != g_INT_ARRAY_02dca058 + 0x11) {
+      if ((int *)&stack0x00000000 != g_SvetlanaBoneIndices + 0x11) {
         g_CVector3f_02dc9f20.x = local_184.z;
         g_CVector3f_02dc9f20.y = fStack_178;
         g_CVector3f_02dc9f20.z = fStack_174;
@@ -567,7 +564,7 @@ LAB_00538745:
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
               ((CDemonActor *)this_ptr,&local_128,(CVector3f *)(local_148 + 8));
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-              (&(this_ptr->base).base.model,&local_e0,g_INT_ARRAY_02dc9f50[4]);
+              (&(this_ptr->base).base.model,&local_e0,g_StrangerIndices[4]);
     local_f8.x = local_128.x - local_e0.x;
     local_f8.y = local_128.y - local_e0.y;
     local_f8.z = local_128.z - local_e0.z;
@@ -594,7 +591,7 @@ LAB_00538745:
     puVar10[(uint)bVar15 * -2 + 1] = puVar9[(uint)bVar15 * -2 + 1];
     local_1c = pCVar1;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-              (pCVar1,&CStack_284,(float)local_1edc,g_INT_ARRAY_02dc9f50[0x11],
+              (pCVar1,&CStack_284,(float)local_1edc,g_StrangerIndices[0x11],
                core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(CStack_11c.y,&CStack_374);
     CStack_274.w = CStack_374.w;
@@ -607,7 +604,7 @@ LAB_00538745:
     puVar10[(uint)bVar15 * -2 + 1] = puVar9[(uint)bVar15 * -2 + 1];
     this_ptr_02 = local_1c;
     rotation_quat = &CStack_274;
-    local_1f0c = (float)g_INT_ARRAY_02dc9f50[4];
+    local_1f0c = (float)g_StrangerIndices[4];
     blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
   }
 LAB_00538749:
@@ -623,7 +620,7 @@ LAB_00538751:
     }
     blend_callback_00 = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar18 = 1.0;
-    iVar19 = g_INT_ARRAY_02dc9f50[0];
+    iVar19 = g_StrangerIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_0055d610((CVector3f *)(local_94 + 8),&CStack_3d4);
     CStack_2e4.w = CStack_3d4.w;
     puVar10 = (uint *)((int)&CStack_2e4 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
@@ -648,7 +645,7 @@ LAB_00538751:
                        (&pCVar1->base,iVar19,1.0);
   local_1c = (CDeformableModelInstance *)local_2c;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-            (pCVar1,iVar19,local_2c,this_ptr->interact_blend,g_INT_ARRAY_02dc9f50[0x10],
+            (pCVar1,iVar19,local_2c,this_ptr->interact_blend,g_StrangerIndices[0x10],
              core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
   return;
 }

@@ -16,7 +16,7 @@ int FUN_0056deac(int param_1)
   int iVar3;
   
   iVar3 = 0;
-  pFVar2 = g_FileListNode_PTR_02de4e20;
+  pFVar2 = g_AllocatedListHead;
 joined_r0x0056ded3:
   if (pFVar2 == (FileListNode *)0x0) {
     return iVar3;
@@ -29,7 +29,7 @@ joined_r0x0056ded3:
   goto code_r0x0056deec;
   goto LAB_0056def9;
 code_r0x0056deec:
-  if ((_FILE *)((int)&g_FILE_PTR_005c1894 + param_1 * 0x1a) <= file_handle) {
+  if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {
     if (file_handle < (_FILE *)0x5c18e2) {
       close_flags = 0;
     }

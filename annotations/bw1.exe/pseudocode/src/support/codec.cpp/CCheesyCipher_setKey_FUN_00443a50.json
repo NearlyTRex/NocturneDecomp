@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [
@@ -32,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50",
-    "signature": "void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_00443a50(CCheesyCipher *this_ptr,uint param_2)"
+    "signature": "void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_00443a50(CCheesyCipher *this_ptr,uint key)"
   },
   "function_calls": [
     {
@@ -113,29 +111,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "key",
         "offset": 8,
         "size": 4,
         "type": "uint"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_00443a50(CCheesyCipher *this_ptr,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->key_state = param_2 & 0xffffff;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

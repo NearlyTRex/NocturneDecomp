@@ -10,9 +10,9 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(CSfxSa
 
 {
   if (this_ptr->locked_length != 0) {
-    if ((this_ptr->buffer_id != 0) && (g_CSoundDevice_PTR_02cf3280 != (CSoundDevice *)0x0)) {
-      (*g_CSoundDevice_PTR_02cf3280->vtable->unlockSample)
-                (g_CSoundDevice_PTR_02cf3280,this_ptr->buffer_id,this_ptr->locked_offset,
+    if ((this_ptr->buffer_id != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+      (*g_CSoundDevicePtr->vtable->unlockSample)
+                (g_CSoundDevicePtr,this_ptr->buffer_id,this_ptr->locked_offset,
                  this_ptr->locked_length);
     }
     this_ptr->locked_length = 0;

@@ -40,7 +40,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_DirectDrawSurface
-;   int g_INT_02ddf564
+;   int g_FlipPending
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -67,15 +67,15 @@ section .text
     TEST EDX,EDX                        ; 0055391f
     JNZ 0x005539d2                      ; 00553921
         ;   XREF to: 005539d2 (CONDITIONAL_JUMP)  ; LAB_005539d2
-    MOV ECX,dword ptr [0x02ddf564]      ; 00553927 | g_INT_02ddf564
+    MOV ECX,dword ptr [0x02ddf564]      ; 00553927 | g_FlipPending
     TEST ECX,ECX                        ; 0055392d
     JNZ 0x005539b0                      ; 0055392f
         ;   XREF to: 005539b0 (CONDITIONAL_JUMP)  ; LAB_005539b0
-    CMP dword ptr [0x02ddf56c],0x0      ; 00553935 | g_INT_02ddf56c
+    CMP dword ptr [0x02ddf56c],0x0      ; 00553935 | g_Display24BitFallback
     JZ 0x005539eb                       ; 0055393c
         ;   XREF to: 005539eb (CONDITIONAL_JUMP)  ; LAB_005539eb
     MOV EBX,dword ptr [0x005c5010]      ; 00553942 | g_BackBuffer
-    MOV dword ptr [0x02ddf56c],EDX      ; 00553948 | g_INT_02ddf56c
+    MOV dword ptr [0x02ddf56c],EDX      ; 00553948 | g_Display24BitFallback
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 0055394e
         ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
     MOV ESI,dword ptr [0x005b7620]      ; 00553953 | g_WindowHeight
@@ -115,7 +115,7 @@ section .text
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 005539a1
         ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
         ;   Label: LAB_005539a1
-    MOV dword ptr [0x02ddf56c],0x1      ; 005539a6 | g_INT_02ddf56c
+    MOV dword ptr [0x02ddf56c],0x1      ; 005539a6 | g_Display24BitFallback
     MOV EBX,dword ptr [0x02ddf554]      ; 005539b0 | g_DirectDrawSurface
         ;   Label: LAB_005539b0
     TEST EBX,EBX                        ; 005539b6
@@ -123,7 +123,7 @@ section .text
         ;   XREF to: 00553b2f (CONDITIONAL_JUMP)  ; LAB_00553b2f
     XOR ESI,ESI                         ; 005539be
         ;   Label: LAB_005539be
-    MOV dword ptr [0x02ddf564],ESI      ; 005539c0 | g_INT_02ddf564
+    MOV dword ptr [0x02ddf564],ESI      ; 005539c0 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 005539c6
         ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 005539cb
@@ -136,7 +136,7 @@ section .text
         ;   XREF to: 00532ba0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_toggle_FUN_00532ba0()
         ;   Label: LAB_005539d2
     XOR ESI,ESI                         ; 005539d7
-    MOV dword ptr [0x02ddf564],ESI      ; 005539d9 | g_INT_02ddf564
+    MOV dword ptr [0x02ddf564],ESI      ; 005539d9 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 005539df
         ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 005539e4
@@ -246,7 +246,7 @@ section .text
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00553b18
     XOR ESI,ESI                         ; 00553b1b
-    MOV dword ptr [0x02ddf564],ESI      ; 00553b1d | g_INT_02ddf564
+    MOV dword ptr [0x02ddf564],ESI      ; 00553b1d | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b23
         ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 00553b28
@@ -270,7 +270,7 @@ section .text
     CALL wincore_wddvmem.cpp_videoRestore_FUN_00553ba0 ; 00553b4c
         ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_00553ba0()
     XOR ESI,ESI                         ; 00553b51
-    MOV dword ptr [0x02ddf564],ESI      ; 00553b53 | g_INT_02ddf564
+    MOV dword ptr [0x02ddf564],ESI      ; 00553b53 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b59
         ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 00553b5e

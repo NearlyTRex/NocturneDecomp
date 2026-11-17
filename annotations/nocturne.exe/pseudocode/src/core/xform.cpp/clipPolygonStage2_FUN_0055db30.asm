@@ -7,11 +7,11 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_0055db24 = 0055dbfc
 ;   undefined1* PTR_caseD_3_0055db2c = 0055dbdc
-;   int g_INT_02de3134
-;   int g_INT_02de3138
-;   SRenderVertex[32] g_SRenderVertex_ARRAY_02de3140
-;   undefined4 g_SRenderVertex_ARRAY_02de3140[0].projected_vertex.transformed_z
-;   undefined4 g_SRenderVertex_ARRAY_02de3d40[0].projected_vertex.transformed_y
+;   int g_ClipVertexCountStage2
+;   int g_ClipVertexCountStage3
+;   SRenderVertex[32] g_ClipVertexBufferStage2
+;   undefined4 g_ClipVertexBufferStage2[0].projected_vertex.transformed_z
+;   undefined4 g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
 ;
 ; Called Functions:
 ;   core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770
@@ -27,7 +27,7 @@ section .text
     PUSH EBP                            ; 0055db33
     SUB ESP,0x4                         ; 0055db34
     XOR EDX,EDX                         ; 0055db37
-    MOV ECX,dword ptr [0x02de3134]      ; 0055db39 | g_INT_02de3134
+    MOV ECX,dword ptr [0x02de3134]      ; 0055db39 | g_ClipVertexCountStage2
     MOV dword ptr [ESP],EDX             ; 0055db3f
     TEST ECX,ECX                        ; 0055db42
     JLE 0x0055dbf4                      ; 0055db44
@@ -35,7 +35,7 @@ section .text
     MOV EBX,0x2de3140                   ; 0055db4a
     MOV EAX,dword ptr [ESP]             ; 0055db4f
         ;   Label: LAB_0055db4f
-    MOV EBP,dword ptr [0x02de3134]      ; 0055db52 | g_INT_02de3134
+    MOV EBP,dword ptr [0x02de3134]      ; 0055db52 | g_ClipVertexCountStage2
     INC EAX                             ; 0055db58
     CMP EAX,EBP                         ; 0055db59
     JNZ 0x0055db5f                      ; 0055db5b
@@ -54,9 +54,9 @@ section .text
     JL 0x0055db7d                       ; 0055db76
         ;   XREF to: 0055db7d (CONDITIONAL_JUMP)  ; LAB_0055db7d
     MOV EAX,0x1                         ; 0055db78
-    MOV EDI,dword ptr [EBP + 0x8]       ; 0055db7d | g_SRenderVertex_ARRAY_02de3140[0].projected_vertex.transformed_z
+    MOV EDI,dword ptr [EBP + 0x8]       ; 0055db7d | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z
         ;   Label: LAB_0055db7d
-    MOV ESI,dword ptr [EBP]             ; 0055db80 | g_SRenderVertex_ARRAY_02de3140
+    MOV ESI,dword ptr [EBP]             ; 0055db80 | g_ClipVertexBufferStage2
     NEG EDI                             ; 0055db83
     CMP EDI,ESI                         ; 0055db85
     JL 0x0055db8b                       ; 0055db87
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 0055dbdc (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x55db20]  ; 0055db90 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EDI,dword ptr [0x02de3138],0x30 ; 0055db97 | g_INT_02de3138
+    IMUL EDI,dword ptr [0x02de3138],0x30 ; 0055db97 | g_ClipVertexCountStage3
         ;   Label: caseD_0
     MOV ECX,0x30                        ; 0055db9e
     MOV ESI,EDX                         ; 0055dba3
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 0055dbca (CONDITIONAL_JUMP)  ; LAB_0055dbca
     FILD qword ptr [ESI]                ; 0055dbbe
     ADD ESI,0x8                         ; 0055dbc0
-    FISTP qword ptr [EDI]               ; 0055dbc3 | g_SRenderVertex_ARRAY_02de3d40[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 0055dbc3 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 0055dbc5
     JMP 0x0055dbb9                      ; 0055dbc8
         ;   XREF to: 0055dbb9 (UNCONDITIONAL_JUMP)  ; LAB_0055dbb9
@@ -99,11 +99,11 @@ section .text
     JLE 0x0055dbd6                      ; 0055dbd3
         ;   XREF to: 0055dbd6 (CONDITIONAL_JUMP)  ; LAB_0055dbd6
     MOVSD ES:EDI,ESI                    ; 0055dbd5
-    INC dword ptr [0x02de3138]          ; 0055dbd6 | g_INT_02de3138
+    INC dword ptr [0x02de3138]          ; 0055dbd6 | g_ClipVertexCountStage3
         ;   Label: LAB_0055dbd6
     MOV ESI,dword ptr [ESP]             ; 0055dbdc
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x02de3134]      ; 0055dbdf | g_INT_02de3134
+    MOV EDI,dword ptr [0x02de3134]      ; 0055dbdf | g_ClipVertexCountStage2
     INC ESI                             ; 0055dbe5
     ADD EBX,0x30                        ; 0055dbe6
     MOV dword ptr [ESP],ESI             ; 0055dbe9
@@ -117,7 +117,7 @@ section .text
     POP ESI                             ; 0055dbf9
     POP EBX                             ; 0055dbfa
     RET                                 ; 0055dbfb
-    IMUL EAX,dword ptr [0x02de3138],0x30 ; 0055dbfc | g_INT_02de3138
+    IMUL EAX,dword ptr [0x02de3138],0x30 ; 0055dbfc | g_ClipVertexCountStage3
         ;   Label: caseD_1
     ADD EAX,0x2de3d40                   ; 0055dc03
     PUSH EAX                            ; 0055dc08
@@ -125,13 +125,13 @@ section .text
     PUSH EBP                            ; 0055dc0a
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770 ; 0055dc0b
         ;   XREF to: 0055d770 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
-    MOV ESI,dword ptr [0x02de3138]      ; 0055dc10 | g_INT_02de3138
+    MOV ESI,dword ptr [0x02de3138]      ; 0055dc10 | g_ClipVertexCountStage3
     INC ESI                             ; 0055dc16
     ADD ESP,0xc                         ; 0055dc17
-    MOV dword ptr [0x02de3138],ESI      ; 0055dc1a | g_INT_02de3138
+    MOV dword ptr [0x02de3138],ESI      ; 0055dc1a | g_ClipVertexCountStage3
     JMP 0x0055dbdc                      ; 0055dc20
         ;   XREF to: 0055dbdc (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EDI,dword ptr [0x02de3138],0x30 ; 0055dc22 | g_INT_02de3138
+    IMUL EDI,dword ptr [0x02de3138],0x30 ; 0055dc22 | g_ClipVertexCountStage3
         ;   Label: caseD_2
     MOV ECX,0x30                        ; 0055dc29
     MOV ESI,EDX                         ; 0055dc2e
@@ -149,7 +149,7 @@ section .text
         ;   XREF to: 0055dc55 (CONDITIONAL_JUMP)  ; LAB_0055dc55
     FILD qword ptr [ESI]                ; 0055dc49
     ADD ESI,0x8                         ; 0055dc4b
-    FISTP qword ptr [EDI]               ; 0055dc4e | g_SRenderVertex_ARRAY_02de3d40[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 0055dc4e | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 0055dc50
     JMP 0x0055dc44                      ; 0055dc53
         ;   XREF to: 0055dc44 (UNCONDITIONAL_JUMP)  ; LAB_0055dc44
@@ -162,10 +162,10 @@ section .text
     JLE 0x0055dc61                      ; 0055dc5e
         ;   XREF to: 0055dc61 (CONDITIONAL_JUMP)  ; LAB_0055dc61
     MOVSD ES:EDI,ESI                    ; 0055dc60
-    MOV ECX,dword ptr [0x02de3138]      ; 0055dc61 | g_INT_02de3138
+    MOV ECX,dword ptr [0x02de3138]      ; 0055dc61 | g_ClipVertexCountStage3
         ;   Label: LAB_0055dc61
     INC ECX                             ; 0055dc67
-    MOV dword ptr [0x02de3138],ECX      ; 0055dc68 | g_INT_02de3138
+    MOV dword ptr [0x02de3138],ECX      ; 0055dc68 | g_ClipVertexCountStage3
     IMUL EAX,ECX,0x30                   ; 0055dc6e
     ADD EAX,0x2de3d40                   ; 0055dc71
     PUSH EAX                            ; 0055dc76
@@ -173,10 +173,10 @@ section .text
     PUSH EDX                            ; 0055dc78
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770 ; 0055dc79
         ;   XREF to: 0055d770 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
-    MOV EDI,dword ptr [0x02de3138]      ; 0055dc7e | g_INT_02de3138
+    MOV EDI,dword ptr [0x02de3138]      ; 0055dc7e | g_ClipVertexCountStage3
     INC EDI                             ; 0055dc84
     ADD ESP,0xc                         ; 0055dc85
-    MOV dword ptr [0x02de3138],EDI      ; 0055dc88 | g_INT_02de3138
+    MOV dword ptr [0x02de3138],EDI      ; 0055dc88 | g_ClipVertexCountStage3
     JMP 0x0055dbdc                      ; 0055dc8e
         ;   XREF to: 0055dbdc (UNCONDITIONAL_JUMP)  ; caseD_3
 

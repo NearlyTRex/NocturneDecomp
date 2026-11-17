@@ -35,7 +35,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7d50(CImp *this_ptr,SDamage
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (g_CFireEffect_PTR_00614d30,&CStack_1c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_1c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   core_imp_cpp_CImp_processDismemberment_FUN_004d7ab0(this_ptr,damage_info);

@@ -12,10 +12,10 @@ void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0(void)
 
 {
   g_INT_01c37788 = 0;
-  g_INT_0264bcdc = 0;
-  if (g_HMODULE_0264bce0 != (HMODULE)0x0) {
-    wincore_wddvmem_cpp_freeLibrary_FUN_00589960(g_HMODULE_0264bce0);
-    g_HMODULE_0264bce0 = (HMODULE)0x0;
+  g_LoadedExternalDLLRenderer = 0;
+  if (g_RendererDLLHandle != (HMODULE)0x0) {
+    wincore_wddvmem_cpp_freeLibrary_FUN_00589960(g_RendererDLLHandle);
+    g_RendererDLLHandle = (HMODULE)0x0;
   }
   g_PTR_0264bbbc = (byte *)0x0;
   g_PTR_0264bbc0 = (byte *)0x0;
@@ -58,35 +58,35 @@ void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0(void)
   g_PTR_0264bc5c = (byte *)0x0;
   g_PTR_0264bc60 = (byte *)0x0;
   _DAT_0264bc64 = 0;
-  g_PTR_0264bc68 = (byte *)0x0;
+  g_APIDLL_getDisplayContext = (byte *)0x0;
   _DAT_0264bc6c = 0;
   g_PTR_0264bc70 = (byte *)0x0;
   g_PTR_0264bc74 = (byte *)0x0;
   g_PTR_0264bc78 = (byte *)0x0;
   g_PTR_0264bc7c = (byte *)0x0;
   g_PTR_0264bc80 = (byte *)0x0;
-  g_PTR_0264bc84 = (byte *)0x0;
-  g_PTR_0264bc88 = (byte *)0x0;
-  g_PTR_0264bc8c = (byte *)0x0;
-  g_PTR_0264bc90 = (byte *)0x0;
-  g_PTR_0264bc94 = (byte *)0x0;
-  g_PTR_0264bc98 = (byte *)0x0;
-  g_PTR_0264bc9c = (byte *)0x0;
-  g_PTR_0264bca0 = (byte *)0x0;
+  g_APIDLL_lockHoldBuffer = (byte *)0x0;
+  g_APIDLL_unlockHoldBuffer = (byte *)0x0;
+  g_APIDLL_lockTexture = (byte *)0x0;
+  g_APIDLL_unlockTexture = (byte *)0x0;
+  g_APIDLL_getTextureInfo = (byte *)0x0;
+  g_APIDLL_setVideoModeX = (byte *)0x0;
+  g_APIDLL_restoreVideoModeX = (byte *)0x0;
+  g_APIDLL_lockFrameX = (byte *)0x0;
   _DAT_0264bca4 = 0;
   _DAT_0264bca8 = 0;
   _DAT_0264bcac = 0;
-  g_PTR_0264bcb0 = (byte *)0x0;
-  g_PTR_0264bcb4 = (byte *)0x0;
-  g_PTR_0264bcb8 = (byte *)0x0;
-  g_PTR_0264bcbc = (byte *)0x0;
+  g_APIDLL_setLightConstants = (byte *)0x0;
+  g_APIDLL_setLightVector = (byte *)0x0;
+  g_APIDLL_setAmbientLight = (byte *)0x0;
+  g_APIDLL_setTransform = (byte *)0x0;
   _DAT_0264bcc0 = 0;
-  g_PTR_0264bcc4 = (byte *)0x0;
-  g_PTR_0264bcc8 = (byte *)0x0;
-  g_PTR_0264bccc = (byte *)0x0;
-  g_PTR_0264bcd0 = (byte *)0x0;
-  g_PTR_0264bcd4 = (byte *)0x0;
-  g_PTR_0264bcd8 = (byte *)0x0;
-  g_PTR_0264bbb8 = (byte *)0x0;
+  g_APIDLL_getTextureHandle = (byte *)0x0;
+  g_APIDLL_selectTextureByHandle = (byte *)0x0;
+  g_APIDLL_enableCulling = (byte *)0x0;
+  g_APIDLL_enableClipping = (byte *)0x0;
+  g_APIDLL_setTextureClamp = (byte *)0x0;
+  g_APIDLL_setFog = (byte *)0x0;
+  g_APIDLL_init = (byte *)0x0;
   return;
 }

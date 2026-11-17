@@ -17,9 +17,9 @@ CAudioRecPuzzle g_CAudioRecPuzzleInstance = {};
 CChemPuzzle g_CChemPuzzleInstance = {};
 
 // CDemonActor*
-CDemonActor* g_CDemonActor_PTR_007c2ff4 = {};
-CDemonActor* g_CDemonActor_PTR_007c303c = {};
-CDemonActor* g_CDemonActor_PTR_007c6380 = {};
+CDemonActor* g_CurrentProcessingActor = {};
+CDemonActor* g_CurrentActorBeingProcessed = {};
+CDemonActor* g_LastCollisionActor = {};
 
 // CDemonActorType
 CDemonActorType g_CDemonActorClassInfo = {};
@@ -29,7 +29,7 @@ CDemonActorType g_CAnvilClassInfo = {};
 CDemonActorType g_CArmourClassInfo = {};
 CDemonActorType g_CBackgroundActorClassInfo = {};
 CDemonActorType g_CBaronClassInfo = {};
-CDemonActorType g_CDemonActorType_007c3698 = {};
+CDemonActorType g_CBaronWeaponClassInfo = {};
 CDemonActorType g_CBarrierClassInfo = {};
 CDemonActorType g_CBatClassInfo = {};
 CDemonActorType g_CBatCreatureClassInfo = {};
@@ -41,7 +41,7 @@ CDemonActorType g_CBirdClassInfo = {};
 CDemonActorType g_CBodyPartClassInfo = {};
 CDemonActorType g_CBoneGuyClassInfo = {};
 CDemonActorType g_CBoxActorClassInfo = {};
-CDemonActorType g_CDemonActorType_007c52f8 = {};
+CDemonActorType g_CLightActorClassInfo = {};
 CDemonActorType g_CBrideClassInfo = {};
 CDemonActorType g_CBugsClassInfo = {};
 CDemonActorType g_CCarvedClassInfo = {};
@@ -49,110 +49,110 @@ CDemonActorType g_CCharacterClassInfo = {};
 CDemonActorType g_CChainClassInfo = {};
 
 // CDemonActorType*[200]
-CDemonActorType* g_CDemonActorType_PTR_ARRAY_007c3048[200] = {};
+CDemonActorType* g_ActorClassRegistrations[200] = {};
 
 // CDemonCamera*
-CDemonCamera* g_CDemonCamera_PTR_007c6120 = {};
+CDemonCamera* g_CurrentSceneCamera = {};
 
 // CDemonFilter[8]
-CDemonFilter CDemonFilter_ARRAY_007c5098[8] = {};
+CDemonFilter g_LightActorFilters[8] = {};
 
 // CDemonGlobe
 CDemonGlobe g_CDemonGlobe_007c6180 = {};
 
 // CKeyFramedModelInstance
-CKeyFramedModelInstance g_CKeyFramedModelInstance_007c351c = {};
-CKeyFramedModelInstance g_CKeyFramedModelInstance_007c61c4 = {};
+CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance = {};
+CKeyFramedModelInstance g_StakeModelInstance = {};
 
 // CPuzzle*
 CPuzzle* g_CPuzzle_PTR_007c3978 = {};
 
 // CVector3f
-CVector3f g_CVector3f_007c5334 = {};
-CVector3f g_CVector3f_007c5340 = {};
+CVector3f g_BrideOffsetMinusX = {};
+CVector3f g_BrideOffsetPlusX = {};
 
 // SMRGLHeaderPrimitive*[2000]
-SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007c1074[2000] = {};
+SMRGLHeaderPrimitive* g_RenderFaceArray[2000] = {};
 
 // SMRGLPrimitiveQuad[1000]
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_007c9c30[1000] = {};
+SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000] = {};
 
 // SMRGLTextureBasic
-SMRGLTextureBasic g_SMRGLTextureBasic_007c6160 = {};
+SMRGLTextureBasic g_CollisionTexture = {};
 
 // SRenderVertex*[16]
-SRenderVertex* g_SRenderVertex_PTR_ARRAY_007c7b58[16] = {};
+SRenderVertex* g_ClipperCullingPointers[16] = {};
 
 // SRenderVertex[12]
-SRenderVertex g_SRenderVertex_ARRAY_007c81dc[12] = {};
+SRenderVertex g_ClipperTempBuffer[12] = {};
 
 // SRenderVertex[16]
 SRenderVertex g_SRenderVertex_ARRAY_007c7558[16] = {};
 SRenderVertex g_SRenderVertex_ARRAY_007c7bdc[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007c8430[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007c8a30[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007c9030[16] = {};
-SRenderVertex g_SRenderVertex_ARRAY_007c9630[16] = {};
+SRenderVertex g_ClipperOutputBuffer[16] = {};
+SRenderVertex g_ClipperInputBuffer[16] = {};
+SRenderVertex g_ClipperWorkingBuffer[16] = {};
+SRenderVertex g_ClipperIntermediateBuffer[16] = {};
 
 // _FILE*
-_FILE* g_FILE_PTR_007c3034 = {};
+_FILE* g_ActorDataFile = {};
 
 // byte
 byte g_BYTE_007c61c0 = {};
 
 // char[52]
-char g_CHAR_ARRAY_007c2fc0[52] = {};
+char g_ActorDebugBuffer[52] = {};
 
 // float
 float g_FLOAT_007c34dc = {};
 float g_FLOAT_007c6340 = {};
 
 // float[100]
-float g_FLOAT_ARRAY_007c6384[100] = {};
+float g_BoneBurnIntensity[100] = {};
 
 // float[12][12]
-float g_FLOAT_ARRAY_ARRAY_007c53b4[12][12] = {};
+float g_BugsGroundHeightGridTemp[12][12] = {};
 
 // int
-int g_INT_007c1070 = {};
-int g_INT_007c3038 = {};
-int g_INT_007c3040 = {};
-int g_INT_007c3044 = {};
+int g_RenderFaceCount = {};
+int g_ActorReadingMode = {};
+int g_IncludeCommentsWhenWriting = {};
+int g_NumActorClassTypes = {};
 int g_INT_007c3908 = {};
 int g_INT_007c397c = {};
 int g_INT_007c3980 = {};
 int g_INT_007c5058 = {};
-int g_INT_007c6178 = {};
-int g_INT_007c617c = {};
+int g_EtherealUVScroll = {};
+int g_EtherealBoltFrame = {};
 int g_INT_007c7550 = {};
 int g_INT_007c7554 = {};
 int g_INT_007c7bd8 = {};
-int g_INT_007c841c = {};
-int g_INT_007c8420 = {};
-int g_INT_007c8424 = {};
-int g_INT_007c8428 = {};
-int g_INT_007c842c = {};
+int g_ClipperTempCount = {};
+int g_InputVertexCount = {};
+int g_OutputVertexCount = {};
+int g_TempVertexCount = {};
+int g_IntermediateVertexCount = {};
 
 // int[11]
 int g_INT_ARRAY_007c4ff0[11] = {};
 int g_INT_ARRAY_007c5388[11] = {};
 
 // int[12]
-int g_INT_ARRAY_007c374c[12] = {};
-int g_INT_ARRAY_007c37b8[12] = {};
+int g_BatCreatureIndices[12] = {};
+int g_BatmanIndices[12] = {};
 
 // int[17]
-int g_INT_ARRAY_007c3498[17] = {};
+int g_BaronIndices[17] = {};
 
 // int[1]
 int g_INT_ARRAY_007c394c[1] = {};
 int g_INT_ARRAY_007c7b54[1] = {};
 
 // int[700]
-int g_INT_ARRAY_007c55f4[700] = {};
+int g_BugsSortedVertexIndices[700] = {};
 
 // uint
-uint g_UINT_007c3368 = {};
+uint g_RandomSeedValue = {};
 
 // undefined4
 undefined4 DAT_007c3950 = {};

@@ -115,7 +115,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0057bf3b
     INC AL                              ; 0057bf3d
     AND EAX,0xff                        ; 0057bf3f
-    TEST byte ptr [EAX + 0x626114],0x2  ; 0057bf44 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 0057bf44 | g_CharacterClassificationTable
     JZ 0x0057c148                       ; 0057bf4b
         ;   XREF to: 0057c148 (CONDITIONAL_JUMP)  ; LAB_0057c148
     MOV DL,0x2e                         ; 0057bf51
@@ -171,8 +171,8 @@ section .text
     MOV ECX,0x19                        ; 0057bfa1
         ;   Label: LAB_0057bfa1
     LEA EDI,[ESP + 0xd0]                ; 0057bfa6
-    MOV ESI,0x623870                    ; 0057bfad | g_CHAR_ARRAY_00623870
-    MOVSD.REP ES:EDI,ESI                ; 0057bfb2 | g_CHAR_ARRAY_00623870 | g_CHAR_ARRAY_00623870+4
+    MOV ESI,0x623870                    ; 0057bfad | g_SoundResultBufferTemplate
+    MOVSD.REP ES:EDI,ESI                ; 0057bfb2 | g_SoundResultBufferTemplate | g_SoundResultBufferTemplate+4
     MOV DL,0x21                         ; 0057bfb4
     LEA ESI,[ESP + 0x8]                 ; 0057bfb6
     MOV AL,byte ptr [ESI]               ; 0057bfba
@@ -265,7 +265,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0057c0ad
     INC AL                              ; 0057c0af
     AND EAX,0xff                        ; 0057c0b1
-    TEST byte ptr [EAX + 0x626114],BL   ; 0057c0b6 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],BL   ; 0057c0b6 | g_CharacterClassificationTable
     JZ 0x0057c350                       ; 0057c0bc
         ;   XREF to: 0057c350 (CONDITIONAL_JUMP)  ; LAB_0057c350
     INC dword ptr [ESP + 0x164]         ; 0057c0c2

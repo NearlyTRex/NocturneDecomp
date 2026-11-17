@@ -65,7 +65,7 @@
     },
     {
       "addr": "007c6120",
-      "name": "g_CDemonCamera_PTR_007c6120",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -77,91 +77,91 @@
     },
     {
       "addr": "01c57078",
-      "name": "g_CVector3i_01c57078",
+      "name": "g_BillboardCameraRight",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c5707c",
-      "name": "g_CVector3i_01c57078.y",
+      "name": "g_BillboardCameraRight.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c57080",
-      "name": "g_CVector3i_01c57078.z",
+      "name": "g_BillboardCameraRight.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c57084",
-      "name": "g_CVector3i_01c57084",
+      "name": "g_BillboardCameraUp",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c57088",
-      "name": "g_CVector3i_01c57084.y",
+      "name": "g_BillboardCameraUp.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c5708c",
-      "name": "g_CVector3i_01c57084.z",
+      "name": "g_BillboardCameraUp.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c57094",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.base.base.count",
+      "name": "g_BillboardPrimitive.base.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c57098",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.A",
+      "name": "g_BillboardPrimitive.base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c5709c",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.B",
+      "name": "g_BillboardPrimitive.base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570a0",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.C",
+      "name": "g_BillboardPrimitive.base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570a4",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.D",
+      "name": "g_BillboardPrimitive.base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570a8",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.vertices[0]",
+      "name": "g_BillboardPrimitive.vertices[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570ac",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.vertices[1]",
+      "name": "g_BillboardPrimitive.vertices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570b0",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.vertices[2]",
+      "name": "g_BillboardPrimitive.vertices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570b4",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c57090.vertices[3]",
+      "name": "g_BillboardPrimitive.vertices[3]",
       "type": "undefined4",
       "value": null
     }
@@ -354,11 +354,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Pointer value `&g_CVector3i_01c57078` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_BillboardCameraRight` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 33,
-      "match": "(int)&g_CVector3i_01c57078",
+      "match": "(int)&g_BillboardCameraRight",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01c57078 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -406,7 +406,7 @@
       "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01c57078 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {

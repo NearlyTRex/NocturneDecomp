@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 812,
+    "complexity_score": 810,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 302,
+    "pseudocode_lines": 300,
     "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
@@ -21,7 +21,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1063
+    "total_lines": 1061
   },
   "cross_references": [],
   "function": {
@@ -196,7 +196,7 @@
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -208,19 +208,19 @@
     },
     {
       "addr": "0077bd78",
-      "name": "g_CCrateActorType_0077bd40.name_hash",
+      "name": "g_CCrateClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7068c",
-      "name": "g_CFlameCanActorType_01c70654.name_hash",
+      "name": "g_CFlameCanClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c78",
-      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "name": "g_CGlassClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -298,7 +298,7 @@
     },
     {
       "addr": "02dd10bc",
-      "name": "g_CTriggerActorType_02dd1084.name_hash",
+      "name": "g_CTriggerClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -717,7 +717,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 239,
+      "line": 237,
       "match": "._4_4_",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),",
@@ -725,7 +725,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 239,
+      "line": 237,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),",
@@ -733,7 +733,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 240,
+      "line": 238,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(int)((ulonglong)(double)(float)auStack_148._4_4_ >> 0x20),pCVar5);",
@@ -741,7 +741,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 241,
+      "line": 239,
       "match": "._4_4_",
       "severity": "mild",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,(float)auStack_148._4_4_);",
@@ -749,7 +749,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 266,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_20c._0_4_ = g_CDemonSetPtr->collision_part_index;",
@@ -757,7 +757,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 273,
+      "line": 271,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_68._0_4_ = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;",
@@ -765,7 +765,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 275,
+      "line": 273,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -773,7 +773,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 275,
+      "line": 273,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -781,7 +781,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 279,
+      "line": 277,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_40.z = (float)auStack_68._0_4_ * CStack_40.z;",
@@ -789,7 +789,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 281,
+      "line": 279,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_1f4._4_4_ = CStack_40.x;",
@@ -805,7 +805,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 288,
+      "line": 286,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_1e0.x = pCVar2->x;",

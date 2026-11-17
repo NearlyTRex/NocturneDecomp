@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(CCharacter 
   bVar3 = 0;
   if (this_ptr->is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"ShotInvulnerable");
+              (g_CEventListPtr,"ShotInvulnerable");
     return;
   }
   if (damage_info->damage_amount <= 0.0) {

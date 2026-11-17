@@ -12,9 +12,9 @@ void __cdecl core_baron_cpp_staticInit_FUN_0040f600(void)
   core_actor_cpp_registerActorClass_FUN_0040c450
             (&g_CBaronClassInfo,"CBaron",core_baron_cpp_factoryFuncBaron_FUN_0040f660,
              &g_CBaronClassVersion,2,&g_CHeroClassInfo);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(&g_CKeyFramedModelInstance_007bc51c);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(&g_CKeyFramedModelInstanceInstance);
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CDemonActorType_007bc698,"CBaronWeapon",
+            (&g_CBaronWeaponClassInfo,"CBaronWeapon",
              core_baron_cpp_factoryFuncBaronWeapon_FUN_004108b0,&g_INT_00609828,1,
              &g_CWeaponClassInfo);
   return;

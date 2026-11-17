@@ -15,7 +15,7 @@
 ;   TerminatedCString s_wolfSize_0058cc4e
 ;   TerminatedCString s_nameOfWolf_0058cc57
 ;   TerminatedCString s_transformWav_0058cc62
-;   int INT_005be078 = 0x6
+;   int g_CPassengerClassVersion = 0x6
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
@@ -53,7 +53,7 @@ section .text
     PUSH ESI                            ; 004efb72
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004efb73
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005be078]      ; 004efb78 | INT_005be078
+    MOV EDX,dword ptr [0x005be078]      ; 004efb78 | g_CPassengerClassVersion
     ADD ESP,0x8                         ; 004efb7e
     CMP EDX,0x2                         ; 004efb81
     JL 0x004efbad                       ; 004efb84
@@ -72,7 +72,7 @@ section .text
     CALL core_actor.cpp_archiveMotionState_FUN_0040cb00 ; 004efba5
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040cb00(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004efbaa
-    CMP dword ptr [0x005be078],0x3      ; 004efbad | INT_005be078
+    CMP dword ptr [0x005be078],0x3      ; 004efbad | g_CPassengerClassVersion
         ;   Label: LAB_004efbad
     JL 0x004efbca                       ; 004efbb4
         ;   XREF to: 004efbca (CONDITIONAL_JUMP)  ; LAB_004efbca
@@ -82,7 +82,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004efbc2
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004efbc7
-    CMP dword ptr [0x005be078],0x4      ; 004efbca | INT_005be078
+    CMP dword ptr [0x005be078],0x4      ; 004efbca | g_CPassengerClassVersion
         ;   Label: LAB_004efbca
     JL 0x004efbe7                       ; 004efbd1
         ;   XREF to: 004efbe7 (CONDITIONAL_JUMP)  ; LAB_004efbe7
@@ -92,7 +92,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004efbdf
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004efbe4
-    CMP dword ptr [0x005be078],0x6      ; 004efbe7 | INT_005be078
+    CMP dword ptr [0x005be078],0x6      ; 004efbe7 | g_CPassengerClassVersion
         ;   Label: LAB_004efbe7
     JGE 0x004efbf3                      ; 004efbee
         ;   XREF to: 004efbf3 (CONDITIONAL_JUMP)  ; LAB_004efbf3

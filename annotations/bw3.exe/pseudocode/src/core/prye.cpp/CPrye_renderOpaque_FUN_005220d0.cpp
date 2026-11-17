@@ -127,7 +127,7 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
   if ((((pCVar1 == (CWeapon *)0x0) ||
        (pCVar1 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (pCVar1 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] == 0))
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0))
   goto LAB_00522382;
   pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
                      (&this_ptr->weapon->base,g_CDiseaseClassInfo.name_hash);
@@ -188,7 +188,7 @@ switchD_00522306_caseD_3:
   core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360(this_ptr,0);
 LAB_00522382:
   if (((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
-     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] != 0)) {
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0)) {
     uVar11 = g_CGasMaskClassInfo.name_hash;
     pCVar4 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
                        (&(this_ptr->base).inventory,"CGasMask");
@@ -229,8 +229,7 @@ LAB_00522382:
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                   ((CMatrix3x4f *)&stack0xfffffcd4,&CStack_110,pCVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  ((CMatrix3x4f *)&stack0xfffffcd4,pCStack_20 + g_INT_ARRAY_01ed36ec[10],&CStack_2fc
-                  );
+                  ((CMatrix3x4f *)&stack0xfffffcd4,pCStack_20 + g_StrangerIndices[10],&CStack_2fc);
         pCVar5 = &CStack_2fc;
       }
       pCVar6 = &CStack_20c;
@@ -261,7 +260,7 @@ LAB_00522382:
     }
   }
   if (((this_ptr->base).is_wearing_goggles != 0) &&
-     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] != 0)) {
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0)) {
     uVar11 = g_CGogglesClassInfo.name_hash;
     pCVar4 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
                        (&(this_ptr->base).inventory,"CGoggles");
@@ -302,7 +301,7 @@ LAB_00522382:
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                   (&CStack_1ac,&CStack_74,pCVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  (&CStack_1ac,pCStack_24 + g_INT_ARRAY_01ed36ec[9],&CStack_29c);
+                  (&CStack_1ac,pCStack_24 + g_StrangerIndices[9],&CStack_29c);
         pCVar5 = &CStack_29c;
       }
       pCVar6 = &CStack_17c;
@@ -332,7 +331,7 @@ LAB_00522382:
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
     }
   }
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] == 0) &&
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0) &&
       (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
                          (g_CDemonRenderer_PTR_005f2afc), iVar3 == 0)) &&
      (0 < (this_ptr->base).base.cloth_list.count)) {

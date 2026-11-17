@@ -42,7 +42,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_0055f6b0(void)
   bVar10 = 0;
   fStack_24 = g_CGamePtr->delta_time_float;
   if (g_CGamePtr->goggles_active == 0) {
-    if (g_INT_02cf5f84 != g_CDemonSetPtr->selected_camera_index) {
+    if (g_TrainLastCameraIndex != g_CDemonSetPtr->selected_camera_index) {
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_0053ec70(g_CDemonSetPtr);
       CStack_5c.x = g_FLOAT_02cf568c;
@@ -66,43 +66,44 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_0055f6b0(void)
         PTR_s_int_006045f0 = "int";
       }
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
-      g_INT_02cf5f84 = g_CDemonSetPtr->selected_camera_index;
+      g_TrainLastCameraIndex = g_CDemonSetPtr->selected_camera_index;
     }
   }
   else {
     PTR_s_int_006045f0 = "ext";
-    g_INT_02cf5f84 = -1;
+    g_TrainLastCameraIndex = -1;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
   sound_sndmain_cpp_setNextSfxFlags_FUN_00555f00(1);
   sound_sndmain_cpp_setNextSfxChannel_FUN_00555e90(3);
   iVar4 = _stricmp(PTR_s_int_006045f0,"int");
   if (iVar4 == 0) {
-    sound_sndmain_cpp_killSfx_FUN_00556be0(g_UINT_02cf5f8c);
+    sound_sndmain_cpp_killSfx_FUN_00556be0(g_TrainExteriorAmbientHandle);
     fStack_138 = 0.4;
   }
   else {
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(g_UINT_02cf5f8c);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(g_TrainExteriorAmbientHandle);
     fStack_138 = 0.7;
     if (iVar4 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
       sound_sndmain_cpp_setNextSfxVolume_FUN_00555df0(0.4);
-      g_UINT_02cf5f8c = sound_sndmain_cpp_startSfx_FUN_00556240("trainext.wav");
+      g_TrainExteriorAmbientHandle =
+           sound_sndmain_cpp_startSfx_FUN_00556240("trainext.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_00556050();
     }
   }
-  iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(g_UINT_02cf5f88);
+  iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(g_TrainRailNoiseHandle);
   if (iVar4 == 0) {
     sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
     sound_sndmain_cpp_setNextSfxVolume_FUN_00555df0(fStack_138 * (float)1.5);
-    g_UINT_02cf5f88 = sound_sndmain_cpp_startSfx_FUN_00556240("railnoiz.wav");
+    g_TrainRailNoiseHandle = sound_sndmain_cpp_startSfx_FUN_00556240("railnoiz.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_00556050();
   }
   else {
     iVar4 = _stricmp(PTR_s_x_006045f4,PTR_s_int_006045f0);
     if (iVar4 != 0) {
       sound_sndmain_cpp_setSfxVolume_FUN_00556ab0
-                (g_UINT_02cf5f88,fStack_138 * (float)1.5);
+                (g_TrainRailNoiseHandle,fStack_138 * (float)1.5);
     }
   }
   sound_sndmain_cpp_popSfxOptions_FUN_00556050();
@@ -112,11 +113,10 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_0055f6b0(void)
   g_CVector3f_02cf5f74.z = 30.0;
   pSStack_28 = (STrainNoise *)0x0;
   iStack_1c = 0;
-  pSVar6 = g_STrainNoise_ARRAY_02cf5ed4;
+  pSVar6 = g_TrainNoiseArray;
   do {
     iStack_20 = iStack_1c * 0x10;
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
-                      (g_STrainNoise_ARRAY_02cf5ed4[iStack_1c].sfx_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(g_TrainNoiseArray[iStack_1c].sfx_handle);
     pSVar3 = pSVar6;
     if (iVar4 != 0) {
       fStack_44 = g_CVector3f_02cf5f74.x * fStack_24;
@@ -131,9 +131,9 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_0055f6b0(void)
       (pSVar6->position).z = (pSVar6->position).z + fStack_30;
       pSVar3 = pSStack_28;
       if ((float)510 <
-          ABS(*(float *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].position.z + iStack_20))) {
+          ABS(*(float *)((int)&g_TrainNoiseArray[0].position.z + iStack_20))) {
         sound_sndmain_cpp_killSfx_FUN_00556be0
-                  (*(uint *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle + iStack_20));
+                  (*(uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iStack_20));
         pSVar3 = pSStack_28;
       }
     }

@@ -36,7 +36,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
   fStack_48 = fStack_54;
   fStack_44 = fStack_50;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780
-            (g_CDemonRenderer_PTR_0061255c,&g_CVector3i_01c3d424);
+            (g_CDemonRenderer_PTR_0061255c,&g_DebugCubeBasePoint);
   SStack_e8.vertices[5].vertex_index = (int)ROUND(world_pos->x * 256.0f);
   SStack_e8.vertices[5].texture_u = (int)ROUND(world_pos->y * 256.0f);
   SStack_e8.vertices[5].texture_v = (int)ROUND(world_pos->z * 256.0f);
@@ -47,7 +47,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)world_pos->z;
-  CStack_70.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_70.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f)
+  ;
   CStack_70.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   CStack_70.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
@@ -56,7 +57,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_40.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_40.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f)
+  ;
   CStack_40.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   CStack_40.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
@@ -64,7 +66,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_64.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_64.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f)
+  ;
   CStack_64.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   CStack_64.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
@@ -72,7 +75,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)world_pos->z;
-  CStack_34.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_34.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f)
+  ;
   CStack_34.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   CStack_34.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
@@ -94,7 +98,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_1c.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_1c.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f)
+  ;
   CStack_1c.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   CStack_1c.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
@@ -102,7 +107,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRa
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_28.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_28.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f)
+  ;
   CStack_28.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   CStack_28.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173

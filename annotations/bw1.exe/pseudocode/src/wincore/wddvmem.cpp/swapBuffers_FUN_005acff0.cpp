@@ -33,14 +33,14 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
   
   puVar12 = g_PTR_00629010;
   bVar16 = 0;
-  if (g_INT_006260e4 != 0) {
+  if (g_WindowActive != 0) {
     if (g_INT_01c50948 != 0) {
       engine_special_cpp_presentToExternalRenderer_FUN_00582990(0);
-      g_INT_02c99314 = 0;
+      g_FlipPending = 0;
       wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
       return;
     }
-    if (g_INT_02c99314 == 0) {
+    if (g_FlipPending == 0) {
       if (g_INT_02c9931c == 0) {
         local_20 = (ulonglong *)g_PTR_00629010;
         local_1c = g_INT_0061b498 *
@@ -48,8 +48,8 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
                          (uint)((g_INT_0061b4a0 >> 0x1f) << 2 < 0)) >> 3);
         memset(&local_8c,0,0x6c);
         local_8c.dwSize = 0x6c;
-        HVar6 = (*g_IDirectDrawSurface_PTR_02c99304->vtable->Lock)
-                          (g_IDirectDrawSurface_PTR_02c99304,(RECT *)0x0,&local_8c,1,(void *)0x0);
+        HVar6 = (*g_DirectDrawSurface->vtable->Lock)
+                          (g_DirectDrawSurface,(RECT *)0x0,&local_8c,1,(void *)0x0);
         iVar7 = g_INT_02c9932c * g_INT_02c99328 >> 0x1f;
         local_18 = (ulonglong *)
                    ((int)local_8c.lpSurface +
@@ -62,7 +62,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
               uVar9 = local_1c;
               puVar13 = local_20;
               puVar15 = local_18;
-              if (g_INT_01c51d00 == 0) {
+              if (g_MMXSupported == 0) {
                 for (uVar9 = local_1c >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
                   *(uint *)puVar15 = *(uint *)puVar13;
                   puVar13 = (ulonglong *)((int)puVar13 + (uint)bVar16 * -8 + 4);
@@ -95,13 +95,12 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
               local_14 = local_14 + 1;
             } while (local_14 < g_INT_0061b49c);
           }
-          HVar6 = (*g_IDirectDrawSurface_PTR_02c99304->vtable->Unlock)
-                            (g_IDirectDrawSurface_PTR_02c99304,(void *)0x0);
+          HVar6 = (*g_DirectDrawSurface->vtable->Unlock)(g_DirectDrawSurface,(void *)0x0);
           if (HVar6 != 0) {
             g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
             g_INT_01d1d404 = 0x381;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Unable to unlock front buffer");
-            g_INT_02c99314 = 0;
+            g_FlipPending = 0;
             wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
             return;
           }
@@ -114,7 +113,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
       if (0 < g_INT_0061b49c) {
         iVar14 = 0;
         do {
-          puVar5 = *(byte **)((int)g_ARRAY_PTR_01c4354c + iVar14);
+          puVar5 = *(byte **)((int)g_ScreenBufferArray + iVar14);
           iVar10 = 0;
           puVar11 = puVar12;
           if (0 < g_INT_0061b498) {
@@ -135,15 +134,15 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005acc00();
       g_INT_02c9931c = 1;
     }
-    if (((g_IDirectDrawSurface_PTR_02c99304 != (IDirectDrawSurface *)0x0) &&
-        (HVar6 = (*g_IDirectDrawSurface_PTR_02c99304->vtable->Flip)
-                           (g_IDirectDrawSurface_PTR_02c99304,(IDirectDrawSurface *)0x0,1),
-        HVar6 != 0)) && (HVar6 == -0x7789fe3e)) {
+    if (((g_DirectDrawSurface != (IDirectDrawSurface *)0x0) &&
+        (HVar6 = (*g_DirectDrawSurface->vtable->Flip)
+                           (g_DirectDrawSurface,(IDirectDrawSurface *)0x0,1), HVar6 != 0)) &&
+       (HVar6 == -0x7789fe3e)) {
       wincore_wddvmem_cpp_videoRestore_FUN_005ad2c0();
     }
   }
 LAB_005ad0c1:
-  g_INT_02c99314 = 0;
+  g_FlipPending = 0;
   wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
   return;
 }

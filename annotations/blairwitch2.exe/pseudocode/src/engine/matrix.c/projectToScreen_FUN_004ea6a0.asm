@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   input_value
 ;
 ; Referenced Globals:
-;   int g_INT_006141e4 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   int g_INT_01c35e3c
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     FMULP                               ; 004ea6f4
     FILD dword ptr [ESP + 0x38]         ; 004ea6f6
     FDIVP                               ; 004ea6fa
-    FILD dword ptr [0x006141e4]         ; 004ea6fc | g_INT_006141e4
+    FILD dword ptr [0x006141e4]         ; 004ea6fc | g_ProjectionScale
     FDIVP                               ; 004ea702
     CALL crt_math.c_round_FUN_005b7ff0  ; 004ea704
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)

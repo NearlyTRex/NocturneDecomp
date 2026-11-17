@@ -38,8 +38,8 @@
 ;   double DOUBLE_00578668 = 32
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005acf40
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CEventList* g_CEventListPtr = 01c03a10
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CGame* g_CGamePtr = 01c775ec
 ;   int g_INT_007642e8
 ;   int g_INT_0076431c
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 004104f3 (CONDITIONAL_JUMP)  ; LAB_004104f3
     LEA EAX,[EBP + 0x1faa0]             ; 004104b0
     PUSH EAX                            ; 004104b6
-    MOV ECX,dword ptr [0x005b7650]      ; 004104b7 | g_CEventList_PTR_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004104b7 | g_CEventListPtr
     PUSH ECX                            ; 004104bd
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004104be
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -113,7 +113,7 @@ section .text
     LEA EAX,[EBP + 0x1fa3c]             ; 004104f3
         ;   Label: LAB_004104f3
     PUSH EAX                            ; 004104f9
-    MOV ESI,dword ptr [0x005b7650]      ; 004104fa | g_CEventList_PTR_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 004104fa | g_CEventListPtr
     PUSH ESI                            ; 00410500
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00410501
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -310,7 +310,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00410778
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0041077d
-    MOV EBP,dword ptr [0x005b80f0]      ; 00410784 | g_CFireEffect_PTR_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00410784 | g_CFireEffectPtr
     FLD float ptr [ESP + 0xa0]          ; 0041078a
     ADD ESP,0x8                         ; 00410791
     LEA EAX,[ESP + 0x48]                ; 00410794
@@ -463,7 +463,7 @@ section .text
     PUSH EAX                            ; 00410936
     LEA EAX,[ESP + 0x8c]                ; 00410937
     PUSH EAX                            ; 0041093e
-    MOV EDI,dword ptr [0x005b80f0]      ; 0041093f | g_CFireEffect_PTR_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 0041093f | g_CFireEffectPtr
     PUSH EDI                            ; 00410945
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590 ; 00410946
         ;   XREF to: 0048c590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)
@@ -476,7 +476,7 @@ section .text
     PUSH EAX                            ; 00410968
     LEA EAX,[ESP + 0x68]                ; 00410969
     PUSH EAX                            ; 0041096d
-    MOV EAX,[0x005b80f0]                ; 0041096e | g_CFireEffect_PTR_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0041096e | g_CFireEffectPtr
     PUSH EAX                            ; 00410973
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590 ; 00410974
         ;   XREF to: 0048c590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)

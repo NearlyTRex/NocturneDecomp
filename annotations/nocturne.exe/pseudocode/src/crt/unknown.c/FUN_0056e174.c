@@ -11,7 +11,7 @@ void FUN_0056e174(int param_1)
 {
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0)();
   if ((0 < param_1) && (param_1 < g_INT_005c1f58)) {
-    g_SIOControlBlock_PTR_005c1f54->standard_handles[param_1] = (HANDLE)0x0;
+    g_IOControlBlock->standard_handles[param_1] = (HANDLE)0x0;
   }
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();
   return;

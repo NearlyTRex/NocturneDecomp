@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2014,
-    "complexity_score": 3493,
+    "complexity_score": 3497,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1038,
+    "pseudocode_lines": 1042,
     "suspect_count": 241,
     "suspect_types": [
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 3052
+    "total_lines": 3056
   },
   "cross_references": [
     {
@@ -79,13 +79,13 @@
   "globals": [
     {
       "addr": "005b7391",
-      "name": "g_FLOAT_005b7391",
+      "name": "g_BoxGroundPlaneY",
       "type": "float",
       "value": "-100"
     },
     {
       "addr": "005b7399",
-      "name": "g_DOUBLE_005b7399",
+      "name": "g_BoxGravityAcceleration",
       "type": "double",
       "value": "32"
     },
@@ -97,67 +97,67 @@
     },
     {
       "addr": "005b73a9",
-      "name": "g_DOUBLE_005b73a9",
+      "name": "g_BoxCollisionRestitution",
       "type": "double",
       "value": "1.01000000000000"
     },
     {
       "addr": "005b73b1",
-      "name": "g_FLOAT_005b73b1",
+      "name": "g_BoxTorqueMultiplier",
       "type": "float",
       "value": "2"
     },
     {
       "addr": "005b73b5",
-      "name": "g_FLOAT_005b73b5",
+      "name": "g_BoxAngularDampingNegative",
       "type": "float",
       "value": "-1"
     },
     {
       "addr": "005b73b9",
-      "name": "g_FLOAT_005b73b9",
+      "name": "g_BoxAngularDampingScale",
       "type": "float",
       "value": "0.5"
     },
     {
       "addr": "005b73bd",
-      "name": "g_FLOAT_005b73bd",
+      "name": "g_BoxLinearDampingFactor",
       "type": "float",
       "value": "0.1000000"
     },
     {
       "addr": "005b73c1",
-      "name": "g_DOUBLE_005b73c1",
+      "name": "g_BoxNegativeRestitution",
       "type": "double",
       "value": "-1.01000000000000"
     },
     {
       "addr": "005b73c9",
-      "name": "g_FLOAT_005b73c9",
+      "name": "g_BoxFrictionThreshold",
       "type": "float",
       "value": "0.25"
     },
     {
       "addr": "005b73cd",
-      "name": "g_FLOAT_005b73cd",
+      "name": "g_BoxCollisionDamping",
       "type": "float",
       "value": "0.2000000"
     },
     {
       "addr": "005b73d1",
-      "name": "g_DOUBLE_005b73d1",
+      "name": "g_BoxMinimumVelocityThreshold",
       "type": "double",
       "value": "0.0100000000000000"
     },
     {
       "addr": "005b73d9",
-      "name": "g_DOUBLE_005b73d9",
+      "name": "g_BoxCollisionEpsilon",
       "type": "double",
       "value": "0.5"
     },
     {
       "addr": "005b73e1",
-      "name": "g_DOUBLE_005b73e1",
+      "name": "g_BoxCollisionNormalDotThreshold",
       "type": "double",
       "value": "0.100000000000000"
     },
@@ -3407,12 +3407,12 @@
       "line": 561,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "(float)local_548._16_4_ * (this_ptr->linear_velocity_local).y) * 2.0f;",
+      "text": "(float)local_548._16_4_ * (this_ptr->linear_velocity_local).y) *",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 562,
+      "line": 563,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_bc = (float)local_548._12_4_ * local_8c;",
@@ -3420,7 +3420,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 563,
+      "line": 564,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_b8 = (float)local_548._16_4_ * local_8c;",
@@ -3428,7 +3428,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 564,
+      "line": 565,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_b4 = (float)local_548._20_4_ * local_8c;",
@@ -3436,7 +3436,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 565,
+      "line": 566,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_1e8 = (float)local_548._12_4_ * local_8c;",
@@ -3444,7 +3444,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 577,
+      "line": 578,
       "match": "._60_4_",
       "severity": "mild",
       "text": "local_548._60_4_ = local_1c4;",
@@ -3452,7 +3452,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 578,
+      "line": 579,
       "match": "._64_4_",
       "severity": "mild",
       "text": "local_548._64_4_ = local_1c0;",
@@ -3460,7 +3460,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 579,
+      "line": 580,
       "match": "._68_4_",
       "severity": "mild",
       "text": "local_548._68_4_ = local_1bc;",
@@ -3468,55 +3468,55 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 581,
+      "line": 582,
       "match": "._60_4_",
       "severity": "mild",
-      "text": "local_548._60_4_ = (float)local_548._60_4_ * -1.0f * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 581,
-      "match": "._60_4_",
-      "severity": "mild",
-      "text": "local_548._60_4_ = (float)local_548._60_4_ * -1.0f * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 582,
-      "match": "._64_4_",
-      "severity": "mild",
-      "text": "local_548._64_4_ = (float)local_548._64_4_ * -1.0f * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 582,
-      "match": "._64_4_",
-      "severity": "mild",
-      "text": "local_548._64_4_ = (float)local_548._64_4_ * -1.0f * 0.5f;",
+      "text": "local_548._60_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 583,
-      "match": "._68_4_",
+      "match": "._60_4_",
       "severity": "mild",
-      "text": "local_548._68_4_ = (float)local_548._68_4_ * -1.0f * 0.5f;",
+      "text": "(float)local_548._60_4_ * -1.0f * 0.5f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 583,
-      "match": "._68_4_",
+      "line": 584,
+      "match": "._64_4_",
       "severity": "mild",
-      "text": "local_548._68_4_ = (float)local_548._68_4_ * -1.0f * 0.5f;",
+      "text": "local_548._64_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 585,
+      "match": "._64_4_",
+      "severity": "mild",
+      "text": "(float)local_548._64_4_ * -1.0f * 0.5f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 586,
+      "match": "._68_4_",
+      "severity": "mild",
+      "text": "local_548._68_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 587,
+      "match": "._68_4_",
+      "severity": "mild",
+      "text": "(float)local_548._68_4_ * -1.0f * 0.5f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 589,
       "match": "._312_4_",
       "severity": "mild",
       "text": "local_548._312_4_ = (float)local_548._60_4_ - (this_ptr->linear_velocity_local).x;",
@@ -3524,7 +3524,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 585,
+      "line": 589,
       "match": "._60_4_",
       "severity": "mild",
       "text": "local_548._312_4_ = (float)local_548._60_4_ - (this_ptr->linear_velocity_local).x;",
@@ -3532,7 +3532,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 586,
+      "line": 590,
       "match": "._316_4_",
       "severity": "mild",
       "text": "local_548._316_4_ = (float)local_548._64_4_ - (this_ptr->linear_velocity_local).y;",
@@ -3540,7 +3540,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 586,
+      "line": 590,
       "match": "._64_4_",
       "severity": "mild",
       "text": "local_548._316_4_ = (float)local_548._64_4_ - (this_ptr->linear_velocity_local).y;",
@@ -3548,7 +3548,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 587,
+      "line": 591,
       "match": "._320_4_",
       "severity": "mild",
       "text": "local_548._320_4_ = (float)local_548._68_4_ - (this_ptr->linear_velocity_local).z;",
@@ -3556,7 +3556,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 587,
+      "line": 591,
       "match": "._68_4_",
       "severity": "mild",
       "text": "local_548._320_4_ = (float)local_548._68_4_ - (this_ptr->linear_velocity_local).z;",
@@ -3564,7 +3564,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 588,
+      "line": 592,
       "match": "._312_4_",
       "severity": "mild",
       "text": "local_158 = (float)local_548._312_4_;",
@@ -3572,7 +3572,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 593,
+      "line": 597,
       "match": "._348_4_",
       "severity": "mild",
       "text": "local_548._348_4_ = local_158 * *pfVar10;",
@@ -3580,7 +3580,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 594,
+      "line": 598,
       "match": "._352_4_",
       "severity": "mild",
       "text": "local_548._352_4_ = local_154 * *pfVar10;",
@@ -3588,7 +3588,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 595,
+      "line": 599,
       "match": "._356_4_",
       "severity": "mild",
       "text": "local_548._356_4_ = local_150 * *pfVar10;",
@@ -3596,7 +3596,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 603,
+      "line": 607,
       "match": "._216_4_",
       "severity": "mild",
       "text": "local_548._216_4_ = local_61c[2] * fVar1;",
@@ -3604,7 +3604,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 608,
+      "line": 612,
       "match": "._216_4_",
       "severity": "mild",
       "text": "(this_ptr->linear_momentum).x = (this_ptr->linear_momentum).x + (float)local_548._216_4_;",
@@ -3612,7 +3612,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 609,
+      "line": 613,
       "match": "._220_4_",
       "severity": "mild",
       "text": "(this_ptr->linear_momentum).y = (this_ptr->linear_momentum).y + (float)local_548._220_4_;",
@@ -3620,7 +3620,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 610,
+      "line": 614,
       "match": "._224_4_",
       "severity": "mild",
       "text": "(this_ptr->linear_momentum).z = (this_ptr->linear_momentum).z + (float)local_548._224_4_;",
@@ -3628,7 +3628,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 614,
+      "line": 618,
       "match": "._224_4_",
       "severity": "mild",
       "text": "local_5fc = this_ptr->scrape_points[local_20].local_position.y * (float)local_548._224_4_ -",
@@ -3636,7 +3636,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 615,
+      "line": 619,
       "match": "._220_4_",
       "severity": "mild",
       "text": "this_ptr->scrape_points[local_20].local_position.z * (float)local_548._220_4_;",
@@ -3644,7 +3644,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 616,
+      "line": 620,
       "match": "._216_4_",
       "severity": "mild",
       "text": "local_5f8 = this_ptr->scrape_points[local_20].local_position.z * (float)local_548._216_4_ -",
@@ -3652,7 +3652,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 617,
+      "line": 621,
       "match": "._224_4_",
       "severity": "mild",
       "text": "this_ptr->scrape_points[local_20].local_position.x * (float)local_548._224_4_;",
@@ -3660,7 +3660,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 618,
+      "line": 622,
       "match": "._220_4_",
       "severity": "mild",
       "text": "local_5f4 = this_ptr->scrape_points[local_20].local_position.x * (float)local_548._220_4_ -",
@@ -3668,7 +3668,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 619,
+      "line": 623,
       "match": "._216_4_",
       "severity": "mild",
       "text": "this_ptr->scrape_points[local_20].local_position.y * (float)local_548._216_4_;",
@@ -3676,7 +3676,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 620,
+      "line": 624,
       "match": "._324_4_",
       "severity": "mild",
       "text": "local_548._324_4_ = local_5fc;",
@@ -3684,7 +3684,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 624,
+      "line": 628,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_2d8._12_4_ = (float)local_548._324_4_ * 0.1f;",
@@ -3692,7 +3692,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 624,
+      "line": 628,
       "match": "._324_4_",
       "severity": "mild",
       "text": "local_2d8._12_4_ = (float)local_548._324_4_ * 0.1f;",
@@ -3700,7 +3700,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 625,
+      "line": 629,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_2d8._16_4_ = (float)local_548._328_4_ * 0.1f;",
@@ -3708,7 +3708,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 625,
+      "line": 629,
       "match": "._328_4_",
       "severity": "mild",
       "text": "local_2d8._16_4_ = (float)local_548._328_4_ * 0.1f;",
@@ -3716,7 +3716,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 626,
+      "line": 630,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_2d8._20_4_ = (float)local_548._332_4_ * 0.1f;",
@@ -3724,7 +3724,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 626,
+      "line": 630,
       "match": "._332_4_",
       "severity": "mild",
       "text": "local_2d8._20_4_ = (float)local_548._332_4_ * 0.1f;",
@@ -3732,7 +3732,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 627,
+      "line": 631,
       "match": "._24_4_",
       "severity": "mild",
       "text": "local_548._24_4_ = (float)local_548._324_4_ * 0.1f;",
@@ -3740,7 +3740,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 627,
+      "line": 631,
       "match": "._324_4_",
       "severity": "mild",
       "text": "local_548._24_4_ = (float)local_548._324_4_ * 0.1f;",
@@ -3748,7 +3748,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 632,
+      "line": 636,
       "match": "._24_4_",
       "severity": "mild",
       "text": "(this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + (float)local_548._24_4_;",
@@ -3756,7 +3756,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 633,
+      "line": 637,
       "match": "._28_4_",
       "severity": "mild",
       "text": "(this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + (float)local_548._28_4_;",
@@ -3764,7 +3764,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 634,
+      "line": 638,
       "match": "._32_4_",
       "severity": "mild",
       "text": "(this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + (float)local_548._32_4_;",
@@ -3772,7 +3772,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 635,
+      "line": 639,
       "match": "(float *)((int)(this_ptr->scrape_points + iVar7) +",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)(this_ptr->scrape_points + iVar7) + ((uint)bVar15 * -2 + 1) * 4);",
@@ -3780,7 +3780,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 673,
+      "line": 677,
       "match": "._168_4_",
       "severity": "mild",
       "text": "local_548._168_4_ = local_334[2];",
@@ -3788,7 +3788,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 680,
+      "line": 684,
       "match": "._168_4_",
       "severity": "mild",
       "text": "local_2f0 = (float)local_548._168_4_ * local_14;",
@@ -3796,7 +3796,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 681,
+      "line": 685,
       "match": "._172_4_",
       "severity": "mild",
       "text": "local_2ec = (float)local_548._172_4_ * local_14;",
@@ -3804,7 +3804,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 682,
+      "line": 686,
       "match": "._176_4_",
       "severity": "mild",
       "text": "local_2e8 = (float)local_548._176_4_ * local_14;",
@@ -3812,7 +3812,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 683,
+      "line": 687,
       "match": "._168_4_",
       "severity": "mild",
       "text": "local_350 = (float)local_548._168_4_ * local_14;",
@@ -3820,7 +3820,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 727,
+      "line": 731,
       "match": "._32_4_",
       "severity": "mild",
       "text": "local_2d8._32_4_ = local_61c[1];",
@@ -3828,7 +3828,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 738,
+      "line": 742,
       "match": "._24_4_",
       "severity": "mild",
       "text": "local_2d8._24_4_ = local_62c.x;",
@@ -3836,7 +3836,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 744,
+      "line": 748,
       "match": "._24_4_",
       "severity": "mild",
       "text": "local_188 = (float)local_2d8._24_4_;",
@@ -3844,7 +3844,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 745,
+      "line": 749,
       "match": "._28_4_",
       "severity": "mild",
       "text": "local_184 = (float)local_2d8._28_4_;",
@@ -3852,7 +3852,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 747,
+      "line": 751,
       "match": "._32_4_",
       "severity": "mild",
       "text": "local_180 = (float)local_2d8._32_4_;",
@@ -3860,7 +3860,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 753,
+      "line": 757,
       "match": "._156_4_",
       "severity": "mild",
       "text": "local_548._156_4_ = local_188 * local_90;",
@@ -3868,7 +3868,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 754,
+      "line": 758,
       "match": "._160_4_",
       "severity": "mild",
       "text": "local_548._160_4_ = local_184 * local_90;",
@@ -3876,7 +3876,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 755,
+      "line": 759,
       "match": "._164_4_",
       "severity": "mild",
       "text": "local_548._164_4_ = local_180 * local_90;",
@@ -3884,7 +3884,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 763,
+      "line": 767,
       "match": "._72_4_",
       "severity": "mild",
       "text": "local_548._72_4_ = local_e0;",
@@ -3892,7 +3892,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 768,
+      "line": 772,
       "match": "._72_4_",
       "severity": "mild",
       "text": "local_104 = (float)local_548._72_4_;",
@@ -3900,7 +3900,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 769,
+      "line": 773,
       "match": "._76_4_",
       "severity": "mild",
       "text": "local_100 = (float)local_548._76_4_;",
@@ -3908,7 +3908,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 770,
+      "line": 774,
       "match": "._80_4_",
       "severity": "mild",
       "text": "local_fc = (float)local_548._80_4_;",
@@ -3916,7 +3916,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 776,
+      "line": 780,
       "match": "._276_4_",
       "severity": "mild",
       "text": "local_548._276_4_ = local_104 - (this_ptr->linear_velocity_local).x;",
@@ -3924,7 +3924,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 777,
+      "line": 781,
       "match": "._280_4_",
       "severity": "mild",
       "text": "local_548._280_4_ = local_100 - (this_ptr->linear_velocity_local).y;",
@@ -3932,7 +3932,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 778,
+      "line": 782,
       "match": "._284_4_",
       "severity": "mild",
       "text": "local_548._284_4_ = local_fc - (this_ptr->linear_velocity_local).z;",
@@ -3940,7 +3940,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 779,
+      "line": 783,
       "match": "._276_4_",
       "severity": "mild",
       "text": "local_59c = (float)local_548._276_4_;",
@@ -3948,7 +3948,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 787,
+      "line": 791,
       "match": "._36_4_",
       "severity": "mild",
       "text": "local_548._36_4_ = local_59c * *pfVar10;",
@@ -3956,7 +3956,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 791,
+      "line": 795,
       "match": "._36_4_",
       "severity": "mild",
       "text": "local_554 = (float)local_548._36_4_ * fVar1;",
@@ -3964,7 +3964,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 792,
+      "line": 796,
       "match": "._40_4_",
       "severity": "mild",
       "text": "local_550 = (float)local_548._40_4_ * fVar1;",
@@ -3972,7 +3972,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 793,
+      "line": 797,
       "match": "._44_4_",
       "severity": "mild",
       "text": "local_54c = (float)local_548._44_4_ * fVar1;",
@@ -3980,7 +3980,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 794,
+      "line": 798,
       "match": "._36_4_",
       "severity": "mild",
       "text": "local_5e4 = (float)local_548._36_4_ * fVar1;",
@@ -3988,7 +3988,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 808,
+      "line": 812,
       "match": "._84_4_",
       "severity": "mild",
       "text": "local_548._84_4_ = (pSVar6->local_position).y * local_5dc - (pSVar6->local_position).z * local_5e0",
@@ -3996,7 +3996,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 810,
+      "line": 814,
       "match": "._88_4_",
       "severity": "mild",
       "text": "local_548._88_4_ = (pSVar6->local_position).z * local_5e4 - (pSVar6->local_position).x * local_5dc",
@@ -4004,7 +4004,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 812,
+      "line": 816,
       "match": "._92_4_",
       "severity": "mild",
       "text": "local_548._92_4_ = (pSVar6->local_position).x * local_5e0 - (pSVar6->local_position).y * local_5e4",
@@ -4012,7 +4012,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 814,
+      "line": 818,
       "match": "._84_4_",
       "severity": "mild",
       "text": "local_5c0 = (float)local_548._84_4_;",
@@ -4020,7 +4020,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 819,
+      "line": 823,
       "match": "._180_4_",
       "severity": "mild",
       "text": "local_548._180_4_ = local_5c0 * 0.1f;",
@@ -4028,7 +4028,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 820,
+      "line": 824,
       "match": "._184_4_",
       "severity": "mild",
       "text": "local_548._184_4_ = local_5bc * 0.1f;",
@@ -4036,7 +4036,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 821,
+      "line": 825,
       "match": "._188_4_",
       "severity": "mild",
       "text": "local_548._188_4_ = local_5b8 * 0.1f;",
@@ -4044,7 +4044,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 822,
+      "line": 826,
       "match": "._48_4_",
       "severity": "mild",
       "text": "local_548._48_4_ = local_5c0 * 0.1f;",
@@ -4052,7 +4052,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 827,
+      "line": 831,
       "match": "._48_4_",
       "severity": "mild",
       "text": "pCVar5->x = pCVar5->x + (float)local_548._48_4_;",
@@ -4060,7 +4060,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 828,
+      "line": 832,
       "match": "._52_4_",
       "severity": "mild",
       "text": "(this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + (float)local_548._52_4_;",
@@ -4068,7 +4068,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 829,
+      "line": 833,
       "match": "._56_4_",
       "severity": "mild",
       "text": "(this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + (float)local_548._56_4_;",
@@ -4076,7 +4076,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 830,
+      "line": 834,
       "match": "._252_4_",
       "severity": "mild",
       "text": "local_548._252_4_ =",
@@ -4084,7 +4084,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 832,
+      "line": 836,
       "match": "._256_4_",
       "severity": "mild",
       "text": "local_548._256_4_ =",
@@ -4092,7 +4092,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 834,
+      "line": 838,
       "match": "._260_4_",
       "severity": "mild",
       "text": "local_548._260_4_ =",
@@ -4100,7 +4100,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 836,
+      "line": 840,
       "match": "._252_4_",
       "severity": "mild",
       "text": "local_140 = (float)local_548._252_4_;",
@@ -4108,7 +4108,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 840,
+      "line": 844,
       "match": "._360_4_",
       "severity": "mild",
       "text": "local_548._360_4_ = local_140 * 0.1f;",
@@ -4116,7 +4116,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 841,
+      "line": 845,
       "match": "._364_4_",
       "severity": "mild",
       "text": "local_548._364_4_ = local_13c * 0.1f;",
@@ -4124,7 +4124,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 842,
+      "line": 846,
       "match": "._368_4_",
       "severity": "mild",
       "text": "local_548._368_4_ = local_138 * 0.1f;",
@@ -4132,7 +4132,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 852,
+      "line": 856,
       "match": "._108_4_",
       "severity": "mild",
       "text": "local_548._108_4_ = *pfVar10;",
@@ -4140,7 +4140,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 856,
+      "line": 860,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar12 = (uint *)((int)this_ptr + (uint)bVar15 * -8 + iVar7 * 0x34 + 0xb8);",
@@ -4148,7 +4148,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 857,
+      "line": 861,
       "match": "._132_4_",
       "severity": "mild",
       "text": "local_548._132_4_ = this_ptr->scrape_points[iVar7].local_position.x;",
@@ -4156,7 +4156,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 884,
+      "line": 888,
       "match": "._112_4_",
       "severity": "mild",
       "text": "local_320 = (float)local_548._112_4_ * local_12c - (float)local_548._116_4_ * local_130;",
@@ -4164,7 +4164,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 884,
+      "line": 888,
       "match": "._116_4_",
       "severity": "mild",
       "text": "local_320 = (float)local_548._112_4_ * local_12c - (float)local_548._116_4_ * local_130;",
@@ -4172,7 +4172,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 885,
+      "line": 889,
       "match": "._116_4_",
       "severity": "mild",
       "text": "local_31c = (float)local_548._116_4_ * local_134 - (float)local_548._108_4_ * local_12c;",
@@ -4180,7 +4180,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 885,
+      "line": 889,
       "match": "._108_4_",
       "severity": "mild",
       "text": "local_31c = (float)local_548._116_4_ * local_134 - (float)local_548._108_4_ * local_12c;",
@@ -4188,7 +4188,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 886,
+      "line": 890,
       "match": "._108_4_",
       "severity": "mild",
       "text": "local_318 = (float)local_548._108_4_ * local_130 - (float)local_548._112_4_ * local_134;",
@@ -4196,7 +4196,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 886,
+      "line": 890,
       "match": "._112_4_",
       "severity": "mild",
       "text": "local_318 = (float)local_548._108_4_ * local_130 - (float)local_548._112_4_ * local_134;",
@@ -4204,7 +4204,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 894,
+      "line": 898,
       "match": "._36_4_",
       "severity": "mild",
       "text": "local_2d8._36_4_ = local_194.x * fVar1;",
@@ -4212,7 +4212,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 895,
+      "line": 899,
       "match": "._40_4_",
       "severity": "mild",
       "text": "local_2d8._40_4_ = local_194.y * fVar1;",
@@ -4220,7 +4220,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 896,
+      "line": 900,
       "match": "._44_4_",
       "severity": "mild",
       "text": "local_2d8._44_4_ = local_194.z * fVar1;",
@@ -4228,7 +4228,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 901,
+      "line": 905,
       "match": "._136_4_",
       "severity": "mild",
       "text": "local_284 = (float)local_548._136_4_ * local_3c0 - (float)local_548._140_4_ * afStack_3d0[3];",
@@ -4236,7 +4236,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 901,
+      "line": 905,
       "match": "._140_4_",
       "severity": "mild",
       "text": "local_284 = (float)local_548._136_4_ * local_3c0 - (float)local_548._140_4_ * afStack_3d0[3];",
@@ -4244,7 +4244,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 902,
+      "line": 906,
       "match": "._140_4_",
       "severity": "mild",
       "text": "local_280 = (float)local_548._140_4_ * afStack_3d0[2] - (float)local_548._132_4_ * local_3c0;",
@@ -4252,7 +4252,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 902,
+      "line": 906,
       "match": "._132_4_",
       "severity": "mild",
       "text": "local_280 = (float)local_548._140_4_ * afStack_3d0[2] - (float)local_548._132_4_ * local_3c0;",
@@ -4260,7 +4260,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 903,
+      "line": 907,
       "match": "._132_4_",
       "severity": "mild",
       "text": "local_27c = (float)local_548._132_4_ * afStack_3d0[3] - (float)local_548._136_4_ * afStack_3d0[2];",
@@ -4268,7 +4268,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 903,
+      "line": 907,
       "match": "._136_4_",
       "severity": "mild",
       "text": "local_27c = (float)local_548._132_4_ * afStack_3d0[3] - (float)local_548._136_4_ * afStack_3d0[2];",
@@ -4276,7 +4276,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 920,
+      "line": 924,
       "match": "(int *)((int)aiStack_650",
       "severity": "moderate",
       "text": "iVar13 = *(int *)((int)aiStack_650 + iVar7 + 4);",
@@ -4284,7 +4284,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 927,
+      "line": 931,
       "match": "._144_4_",
       "severity": "mild",
       "text": "local_548._144_4_ = local_5cc;",
@@ -4292,7 +4292,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 933,
+      "line": 937,
       "match": "._144_4_",
       "severity": "mild",
       "text": "local_128 = (float)local_548._144_4_ * local_6c;",
@@ -4300,7 +4300,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 934,
+      "line": 938,
       "match": "._148_4_",
       "severity": "mild",
       "text": "local_124 = (float)local_548._148_4_ * local_6c;",
@@ -4308,7 +4308,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 935,
+      "line": 939,
       "match": "._152_4_",
       "severity": "mild",
       "text": "local_120 = (float)local_548._152_4_ * local_6c;",
@@ -4316,7 +4316,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 936,
+      "line": 940,
       "match": "._144_4_",
       "severity": "mild",
       "text": "local_5f0 = (float)local_548._144_4_ * local_6c;",
@@ -4324,7 +4324,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 965,
+      "line": 969,
       "match": "._264_4_",
       "severity": "mild",
       "text": "local_548._264_4_ = local_308 * local_74;",
@@ -4332,7 +4332,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 966,
+      "line": 970,
       "match": "._268_4_",
       "severity": "mild",
       "text": "local_548._268_4_ = local_304 * local_74;",
@@ -4340,7 +4340,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 967,
+      "line": 971,
       "match": "._272_4_",
       "severity": "mild",
       "text": "local_548._272_4_ = local_300 * local_74;",
@@ -4348,7 +4348,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 968,
+      "line": 972,
       "match": "._240_4_",
       "severity": "mild",
       "text": "local_548._240_4_ = local_308 * local_74;",
@@ -4356,7 +4356,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 973,
+      "line": 977,
       "match": "._288_4_",
       "severity": "mild",
       "text": "local_548._288_4_ = (float)local_548._240_4_ - (this_ptr->linear_velocity_local).x;",
@@ -4364,7 +4364,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 973,
+      "line": 977,
       "match": "._240_4_",
       "severity": "mild",
       "text": "local_548._288_4_ = (float)local_548._240_4_ - (this_ptr->linear_velocity_local).x;",
@@ -4372,7 +4372,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 974,
+      "line": 978,
       "match": "._292_4_",
       "severity": "mild",
       "text": "local_548._292_4_ = (float)local_548._244_4_ - (this_ptr->linear_velocity_local).y;",
@@ -4380,7 +4380,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 974,
+      "line": 978,
       "match": "._244_4_",
       "severity": "mild",
       "text": "local_548._292_4_ = (float)local_548._244_4_ - (this_ptr->linear_velocity_local).y;",
@@ -4388,7 +4388,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 975,
+      "line": 979,
       "match": "._296_4_",
       "severity": "mild",
       "text": "local_548._296_4_ = (float)local_548._248_4_ - (this_ptr->linear_velocity_local).z;",
@@ -4396,7 +4396,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 975,
+      "line": 979,
       "match": "._248_4_",
       "severity": "mild",
       "text": "local_548._296_4_ = (float)local_548._248_4_ - (this_ptr->linear_velocity_local).z;",
@@ -4404,7 +4404,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 976,
+      "line": 980,
       "match": "._288_4_",
       "severity": "mild",
       "text": "local_11c = (float)local_548._288_4_;",
@@ -4412,7 +4412,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1007,
+      "line": 1011,
       "match": "._336_4_",
       "severity": "mild",
       "text": "local_548._336_4_ = local_f8 * fVar1;",
@@ -4420,7 +4420,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1011,
+      "line": 1015,
       "match": "._336_4_",
       "severity": "mild",
       "text": "(this_ptr->linear_momentum).x = (this_ptr->linear_momentum).x + (float)local_548._336_4_;",
@@ -4428,7 +4428,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1012,
+      "line": 1016,
       "match": "._340_4_",
       "severity": "mild",
       "text": "(this_ptr->linear_momentum).y = (this_ptr->linear_momentum).y + (float)local_548._340_4_;",
@@ -4436,7 +4436,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1013,
+      "line": 1017,
       "match": "._344_4_",
       "severity": "mild",
       "text": "(this_ptr->linear_momentum).z = (this_ptr->linear_momentum).z + (float)local_548._344_4_;",
@@ -4540,7 +4540,7 @@
     },
     {
       "description": "Pointer value `&local_278` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 645,
+      "line": 649,
       "match": "(int)&local_278",
       "severity": "moderate",
       "text": "local_334[(uint)bVar15 * -2 + 9] = *(float *)((int)&local_278 + (uint)bVar15 * -8 + 4);",
@@ -4548,7 +4548,7 @@
     },
     {
       "description": "Pointer value `&local_278` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 647,
+      "line": 651,
       "match": "(int)&local_278",
       "severity": "moderate",
       "text": "*(float *)((int)&local_278 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4556,7 +4556,7 @@
     },
     {
       "description": "Pointer value `&local_398` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 721,
+      "line": 725,
       "match": "(int)&local_398",
       "severity": "moderate",
       "text": "local_61c[(uint)bVar15 * -2] = *(float *)((int)&local_398 + (uint)bVar15 * -8 + 4);",
@@ -4564,7 +4564,7 @@
     },
     {
       "description": "Pointer value `&local_398` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 723,
+      "line": 727,
       "match": "(int)&local_398",
       "severity": "moderate",
       "text": "*(float *)((int)&local_398 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4572,7 +4572,7 @@
     },
     {
       "description": "Pointer value `&local_62c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 740,
+      "line": 744,
       "match": "(int)&local_62c",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_62c + (uint)bVar15 * -8 + 4);",
@@ -4580,7 +4580,7 @@
     },
     {
       "description": "Pointer value `&local_62c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 742,
+      "line": 746,
       "match": "(int)&local_62c",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_62c + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4588,7 +4588,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->scrape_points[0].local_position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 850,
+      "line": 854,
       "match": "(int)&this_ptr->scrape_points[0].local_position.x",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)&this_ptr->scrape_points[0].local_position.x + local_24);",
@@ -4596,7 +4596,7 @@
     },
     {
       "description": "Pointer value `&local_374` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 868,
+      "line": 872,
       "match": "(int)&local_374",
       "severity": "moderate",
       "text": "local_178[(uint)bVar15 * -2 + 3] = *(float *)((int)&local_374 + (uint)bVar15 * -8 + 4);",
@@ -4604,7 +4604,7 @@
     },
     {
       "description": "Pointer value `&local_374` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 870,
+      "line": 874,
       "match": "(int)&local_374",
       "severity": "moderate",
       "text": "*(float *)((int)&local_374 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4612,7 +4612,7 @@
     },
     {
       "description": "Pointer value `&local_1ac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 959,
+      "line": 963,
       "match": "(int)&local_1ac",
       "severity": "moderate",
       "text": "local_334[(uint)bVar15 * -2 + 0xc] = *(float *)((int)&local_1ac + (uint)bVar15 * -8 + 4);",
@@ -4620,7 +4620,7 @@
     },
     {
       "description": "Pointer value `&local_1ac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 961,
+      "line": 965,
       "match": "(int)&local_1ac",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1ac + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4652,7 +4652,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 649,
+      "line": 653,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_35c.x = local_314.x;",
@@ -4660,7 +4660,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 872,
+      "line": 876,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_194.x = local_170.x;",
@@ -4684,7 +4684,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 611,
+      "line": 615,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->angular_velocity).z = 0.0;",
@@ -4692,7 +4692,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 802,
+      "line": 806,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->angular_velocity).z = 0.0;",
@@ -4700,7 +4700,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1014,
+      "line": 1018,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->angular_velocity).z = 0.0;",
@@ -4708,7 +4708,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_188 != &local_620)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 724,
+      "line": 728,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_188 != &local_620) {",
@@ -4780,7 +4780,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 645,
+      "line": 649,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_334[(uint)bVar15 * -2 + 9] = *(float *)((int)&local_278 + (uint)bVar15 * -8 + 4);",
@@ -4788,7 +4788,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 647,
+      "line": 651,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_278 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4796,7 +4796,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 721,
+      "line": 725,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_61c[(uint)bVar15 * -2] = *(float *)((int)&local_398 + (uint)bVar15 * -8 + 4);",
@@ -4804,7 +4804,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 723,
+      "line": 727,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_398 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4812,7 +4812,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 740,
+      "line": 744,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_62c + (uint)bVar15 * -8 + 4);",
@@ -4820,7 +4820,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 742,
+      "line": 746,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_62c + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4828,7 +4828,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 850,
+      "line": 854,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)&this_ptr->scrape_points[0].local_position.x + local_24);",
@@ -4836,7 +4836,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 868,
+      "line": 872,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_178[(uint)bVar15 * -2 + 3] = *(float *)((int)&local_374 + (uint)bVar15 * -8 + 4);",
@@ -4844,7 +4844,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 870,
+      "line": 874,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_374 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4852,7 +4852,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 959,
+      "line": 963,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_334[(uint)bVar15 * -2 + 0xc] = *(float *)((int)&local_1ac + (uint)bVar15 * -8 + 4);",
@@ -4860,7 +4860,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 961,
+      "line": 965,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1ac + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
@@ -4916,7 +4916,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1032,
+      "line": 1036,
       "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CBox *)&(pCVar8->rotation_matrix).m[2].y;",

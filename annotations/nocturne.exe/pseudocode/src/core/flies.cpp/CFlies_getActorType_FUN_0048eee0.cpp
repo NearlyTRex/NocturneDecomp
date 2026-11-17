@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_flies_cpp_CFlies_getActorType_FUN_0048eee0(CFlies *this_ptr)
 
 {
-  return &g_CFliesActorType_01c70718;
+  return &g_CFliesClassInfo;
 }

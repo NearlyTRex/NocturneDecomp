@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   void* g_PTR_01c4f02c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
-;   int g_INT_01c51d18
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -73,9 +73,9 @@ section .text
         ;   XREF to: 00483407 (CONDITIONAL_JUMP)  ; LAB_00483407
     XOR ESI,ESI                         ; 004833b3
     MOV ECX,0x486e26                    ; 004833b5
-    MOV dword ptr [0x01c51d14],ESI      ; 004833ba | g_BIT_INTEGER32_01c51d14
-    MOV dword ptr [0x01c51d18],ESI      ; 004833c0 | g_INT_01c51d18
-    MOV dword ptr [0x01c4f02c],ECX      ; 004833c6 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c51d14],ESI      ; 004833ba | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],ESI      ; 004833c0 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],ECX      ; 004833c6 | g_ScanlineRenderFunc
     LEA EAX,[EAX]                       ; 004833cc
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004833d0
         ;   Label: LAB_004833d0
@@ -109,13 +109,13 @@ section .text
         ;   Label: LAB_00483407
     JNZ 0x00483476                      ; 0048340e
         ;   XREF to: 00483476 (CONDITIONAL_JUMP)  ; LAB_00483476
-    MOV dword ptr [0x01c4f02c],0x57de01 ; 00483410 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57de01 ; 00483410 | g_ScanlineRenderFunc
     MOV EDI,0x327                       ; 0048341a
         ;   Label: LAB_0048341a
     XOR EBP,EBP                         ; 0048341f
     MOV EAX,dword ptr [EBX + 0x20]      ; 00483421
-    MOV dword ptr [0x01c51d18],EBP      ; 00483424 | g_INT_01c51d18
-    MOV dword ptr [0x01c51d14],EDI      ; 0048342a | g_BIT_INTEGER32_01c51d14
+    MOV dword ptr [0x01c51d18],EBP      ; 00483424 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c51d14],EDI      ; 0048342a | g_RenderStateFlags
     TEST EAX,EAX                        ; 00483430
     JNZ 0x004833d0                      ; 00483432
         ;   XREF to: 004833d0 (CONDITIONAL_JUMP)  ; LAB_004833d0
@@ -146,7 +146,7 @@ section .text
         ;   XREF to: 00483443 (CONDITIONAL_JUMP)  ; LAB_00483443
     JMP 0x004833d0                      ; 00483471
         ;   XREF to: 004833d0 (UNCONDITIONAL_JUMP)  ; LAB_004833d0
-    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 00483476 | g_PTR_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 00483476 | g_ScanlineRenderFunc
         ;   Label: LAB_00483476
     JMP 0x0048341a                      ; 00483480
         ;   XREF to: 0048341a (UNCONDITIONAL_JUMP)  ; LAB_0048341a

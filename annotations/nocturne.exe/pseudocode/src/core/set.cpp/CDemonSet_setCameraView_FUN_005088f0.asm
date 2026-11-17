@@ -40,12 +40,12 @@
 ;   TerminatedCString s_s_raw_0059045f
 ;   TerminatedCString s_core_set_cpp_00590466
 ;   TerminatedCString s_CDemonSet_setCameraView_00590476
-;   void* PTR_g_SMRGLSkyTexture_ARRAY_01b7b4e8_005b0674 = 01b7b4e8
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   void* PTR_g_SkyDomeTextureData_005b0674 = 01b7b4e8
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   CWater* g_CWaterPtr = 02dd1210
-;   CWeather* g_CWeather_PTR_005c15b8 = 02ddf9f0
+;   CWeather* g_CWeatherPtr = 02ddf9f0
 ;   int g_UseExternalRenderer
 ;   int g_INT_01c038f4
 ;   char* g_CurrentFilename
@@ -185,7 +185,7 @@ section .text
     MOV [0x01fba9a4],EAX                ; 00508a35 | g_INT_01fba9a4
     PUSH ESI                            ; 00508a3a
     MOV [0x01fba2ec],EAX                ; 00508a3b | g_INT_01fba2ec
-    MOV [0x01fba480],EAX                ; 00508a40 | g_INT_01fba480
+    MOV [0x01fba480],EAX                ; 00508a40 | g_QueuedCoronaGlobeCount
     CALL core_setutil.cpp_C3DSCamera_apply_FUN_005148b0 ; 00508a45
         ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_apply_FUN_005148b0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 00508a4a
@@ -280,13 +280,13 @@ section .text
     MOV EAX,0x1                         ; 00508b44
     PUSH EAX                            ; 00508b49
     PUSH EBP                            ; 00508b4a
-    MOV [0x01ffb060],EAX                ; 00508b4b | g_INT_01ffb060
+    MOV [0x01ffb060],EAX                ; 00508b4b | g_InMirrorRenderPass
     CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750 ; 00508b50
         ;   XREF to: 00508750 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 00508b55
     XOR EDX,EDX                         ; 00508b58
     PUSH 0x1fb8508                      ; 00508b5a
-    MOV dword ptr [0x01ffb060],EDX      ; 00508b5f | g_INT_01ffb060
+    MOV dword ptr [0x01ffb060],EDX      ; 00508b5f | g_InMirrorRenderPass
     CALL core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0 ; 00508b65
         ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00508b6a
@@ -384,7 +384,7 @@ section .text
     PUSH EAX                            ; 00508c6e
     LEA EAX,[EBP + 0x161244]            ; 00508c6f
     PUSH EAX                            ; 00508c75
-    MOV EDX,dword ptr [0x005b0674]      ; 00508c76 | PTR_g_SMRGLSkyTexture_ARRAY_01b7b4e8_005b0674
+    MOV EDX,dword ptr [0x005b0674]      ; 00508c76 | PTR_g_SkyDomeTextureData_005b0674
     PUSH EDX                            ; 00508c7c
     CALL core_dskybox.cpp_renderSkyDome_FUN_00463580 ; 00508c7d
         ;   XREF to: 00463580 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
@@ -402,7 +402,7 @@ section .text
         ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderDecals_FUN_004afe80(CGore * this_ptr, int render_all, int expire_flag)
     ADD ESP,0x8                         ; 00508c9e
     PUSH 0x1                            ; 00508ca1
-    MOV EBX,dword ptr [0x005b80f0]      ; 00508ca3 | g_CFireEffect_PTR_005b80f0
+    MOV EBX,dword ptr [0x005b80f0]      ; 00508ca3 | g_CFireEffectPtr
     PUSH EBX                            ; 00508ca9
     CALL core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970 ; 00508caa
         ;   XREF to: 0048a970 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970(CFireEffect * this_ptr, int render_mode, int render_completeness)
@@ -502,7 +502,7 @@ section .text
     PUSH EAX                            ; 00508e00
     LEA EAX,[ESP + 0xb0]                ; 00508e01
     PUSH EAX                            ; 00508e08
-    MOV EDI,dword ptr [0x005c15b8]      ; 00508e09 | g_CWeather_PTR_005c15b8
+    MOV EDI,dword ptr [0x005c15b8]      ; 00508e09 | g_CWeatherPtr
     PUSH EDI                            ; 00508e0f
     XOR ESI,ESI                         ; 00508e10
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0 ; 00508e12
@@ -528,7 +528,7 @@ section .text
         ;   XREF to: 00508e26 (CONDITIONAL_JUMP)  ; LAB_00508e26
     LEA EAX,[EAX]                       ; 00508e44
     LEA EDX,[EDX]                       ; 00508e4a
-    MOV dword ptr [0x01ffb074],0x1      ; 00508e50 | g_INT_01ffb074
+    MOV dword ptr [0x01ffb074],0x1      ; 00508e50 | g_RenderingShadows
         ;   Label: LAB_00508e50
     ADD ESP,0xe0                        ; 00508e5a
     POP EBP                             ; 00508e60

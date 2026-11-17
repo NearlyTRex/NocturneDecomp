@@ -65,13 +65,13 @@ LAB_004b0ac4:
   if (this_ptr->use_3d_rendering == 0) goto LAB_004b0b31;
   if (color_mode == -2) {
     if (g_INT_005fba20 == 0x20) {
-      uVar5 = g_INT_01d1ad68 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
-              g_INT_01d1ad6c << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
-      uVar2 = g_INT_01d1ad70 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
+      uVar5 = g_ShadowColorRed << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+              g_ShadowColorGreen << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
+      uVar2 = g_ShadowColorBlue << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
     }
     else {
-      uVar5 = g_INT_01d1ad6c << 8 | g_INT_01d1ad68 << 0x10;
-      uVar2 = g_INT_01d1ad70;
+      uVar5 = g_ShadowColorGreen << 8 | g_ShadowColorRed << 0x10;
+      uVar2 = g_ShadowColorBlue;
     }
 LAB_004b0b9b:
     uVar5 = uVar5 | uVar2;

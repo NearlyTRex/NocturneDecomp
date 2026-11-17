@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Add_to_dict_s_00586d48
-;   int g_INT_01cb03d0
+;   int g_ItemDefinitionCount
 ;
 ; Called Functions:
 ;   core_inv.cpp_getItemModel_FUN_004beb40
@@ -35,7 +35,7 @@ section .text
     XOR ESI,ESI                         ; 004bed1f
     CALL core_inv.cpp_getItemModel_FUN_004beb40 ; 004bed21
         ;   XREF to: 004beb40 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004beb40(CDemonActor * actor_ptr)
-    MOV ECX,dword ptr [0x01cb03d0]      ; 004bed26 | g_INT_01cb03d0
+    MOV ECX,dword ptr [0x01cb03d0]      ; 004bed26 | g_ItemDefinitionCount
     ADD ESP,0x4                         ; 004bed2c
     LEA EDI,[EAX + 0x78]                ; 004bed2f
     TEST ECX,ECX                        ; 004bed32
@@ -50,7 +50,7 @@ section .text
     TEST EAX,EAX                        ; 004bed40
     JZ 0x004bed71                       ; 004bed42
         ;   XREF to: 004bed71 (CONDITIONAL_JUMP)  ; LAB_004bed71
-    MOV EAX,[0x01cb03d0]                ; 004bed44 | g_INT_01cb03d0
+    MOV EAX,[0x01cb03d0]                ; 004bed44 | g_ItemDefinitionCount
     INC ESI                             ; 004bed49
     ADD EBX,0x300                       ; 004bed4a
     CMP ESI,EAX                         ; 004bed50

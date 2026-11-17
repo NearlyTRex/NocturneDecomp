@@ -22,10 +22,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005ec0fb
 ;   TerminatedCString s_CNetGame_sendMyStateChan_005ec10f
-;   int g_INT_00622584 = 0x1
+;   int g_NetLobbyStateChanged = 0x1
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01d51d9c
+;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
 ;
 ; Called Functions:
@@ -66,10 +66,10 @@ section .text
     MOV ESI,0x12                        ; 0052fdc0
     SAR EDX,0x1f                        ; 0052fdc5
     IDIV ESI                            ; 0052fdc8
-    MOV EBP,dword ptr [0x01d51d9c]      ; 0052fdca | g_INT_01d51d9c
+    MOV EBP,dword ptr [0x01d51d9c]      ; 0052fdca | g_LastPingTime
     MOV EDX,EAX                         ; 0052fdd0
     SUB EAX,EBP                         ; 0052fdd2
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052fdd4 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052fdd4 | g_LastPingTime
     TEST EAX,EAX                        ; 0052fdda
     JL 0x0052fece                       ; 0052fddc
         ;   XREF to: 0052fece (CONDITIONAL_JUMP)  ; LAB_0052fece
@@ -148,7 +148,7 @@ section .text
     ADD ESP,0xc                         ; 0052feb3
     ADD EBX,EAX                         ; 0052feb6
     MOV EAX,[0x01d51da0]                ; 0052feb8 | g_UINT_01d51da0
-    MOV dword ptr [0x00622584],EDI      ; 0052febd | g_INT_00622584
+    MOV dword ptr [0x00622584],EDI      ; 0052febd | g_NetLobbyStateChanged
     MOV dword ptr [EBX + 0x60],EAX      ; 0052fec3
     ADD ESP,0x2c                        ; 0052fec6
     POP EBP                             ; 0052fec9

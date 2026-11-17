@@ -81,25 +81,25 @@
     },
     {
       "addr": "01ab99f0",
-      "name": "g_INT_01ab99f0",
+      "name": "g_BackgroundSceneNestingCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ab99f4",
-      "name": "g_ARRAY_PTR_01ab99f4",
+      "name": "g_SavedScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01ab99f8",
-      "name": "g_ARRAY_PTR_01ab99f4[1]",
+      "name": "g_SavedScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ab99f9",
-      "name": "g_ARRAY_PTR_01ab99f4[1]+1",
+      "name": "g_SavedScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -316,7 +316,7 @@
       "line": 24,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0044e874: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_ARRAY_PTR_01ab99f4 | g_ScreenBufferArray[1]",
+      "text": "// 0044e874: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_SavedScreenBufferArray | g_ScreenBufferArray[1]",
       "type": "unrolled_memcpy"
     }
   ]

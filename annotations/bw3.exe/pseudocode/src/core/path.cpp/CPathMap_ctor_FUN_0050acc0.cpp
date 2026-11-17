@@ -16,12 +16,12 @@ CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_0050acc0(CPathMap *this_ptr)
   (this_ptr->cached_voxel_coords).y = iVar1;
   (this_ptr->cached_voxel_coords).x = iVar1;
   core_path_cpp_CPathMap_reset_FUN_0050cee0(this_ptr);
-  if (199 < g_INT_01ec1518) {
+  if (199 < g_PathMapCount) {
     g_CHAR_PTR_01d71de0 = "..\\core\\path.cpp";
     g_INT_01d71de4 = 0x123;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Too many pathmaps!");
   }
-  g_CPathMap_PTR_ARRAY_01ec151c[g_INT_01ec1518] = this_ptr;
-  g_INT_01ec1518 = g_INT_01ec1518 + 1;
+  g_PathMapList[g_PathMapCount] = this_ptr;
+  g_PathMapCount = g_PathMapCount + 1;
   return this_ptr;
 }

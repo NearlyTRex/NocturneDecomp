@@ -24,10 +24,10 @@
 ;   TerminatedCString s_s_005e66b0
 ;   TerminatedCString s_core_inv_cpp_005e66bd
 ;   TerminatedCString s_CInventory_load_Can_t_fi_005e66cd
-;   char[104] g_CHAR_ARRAY_0061f1a8
-;   undefined4 g_CHAR_ARRAY_0061f1a8+4
-;   char[100] g_CHAR_ARRAY_0061f210
-;   undefined4 g_CHAR_ARRAY_0061f210+4
+;   char[104] g_DefaultInventoryKey
+;   undefined4 g_DefaultInventoryKey+4
+;   char[100] g_DefaultInventoryValue
+;   undefined4 g_DefaultInventoryValue+4
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -142,18 +142,18 @@ section .text
         ;   Label: LAB_004f98ab
     LEA EDI,[ESP + 0x100]               ; 004f98b0
     LEA EAX,[ESP + 0x164]               ; 004f98b7
-    MOV ESI,0x61f1a8                    ; 004f98be | g_CHAR_ARRAY_0061f1a8
+    MOV ESI,0x61f1a8                    ; 004f98be | g_DefaultInventoryKey
     PUSH EAX                            ; 004f98c3
     LEA EAX,[ESP + 0x104]               ; 004f98c4
-    MOVSD.REP ES:EDI,ESI                ; 004f98cb | g_CHAR_ARRAY_0061f1a8 | g_CHAR_ARRAY_0061f1a8+4
+    MOVSD.REP ES:EDI,ESI                ; 004f98cb | g_DefaultInventoryKey | g_DefaultInventoryKey+4
     PUSH EAX                            ; 004f98cd
     MOV ECX,0x19                        ; 004f98ce
     LEA EDI,[ESP + 0x16c]               ; 004f98d3
     PUSH 0x5e66b0                       ; 004f98da | = " %s \"%[^\"]\"\n"
     MOV EAX,dword ptr [ESP + 0x1f0]     ; 004f98df
-    MOV ESI,0x61f210                    ; 004f98e6 | g_CHAR_ARRAY_0061f210
+    MOV ESI,0x61f210                    ; 004f98e6 | g_DefaultInventoryValue
     PUSH EAX                            ; 004f98eb
-    MOVSD.REP ES:EDI,ESI                ; 004f98ec | g_CHAR_ARRAY_0061f210 | g_CHAR_ARRAY_0061f210+4
+    MOVSD.REP ES:EDI,ESI                ; 004f98ec | g_DefaultInventoryValue | g_DefaultInventoryValue+4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004f98ee
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     MOV ESI,dword ptr [0x0061f650]      ; 004f98f3 | g_CDemonMission_PTR_0061f650

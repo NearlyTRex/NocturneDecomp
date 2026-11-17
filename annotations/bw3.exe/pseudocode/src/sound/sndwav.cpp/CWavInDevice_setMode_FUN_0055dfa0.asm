@@ -16,16 +16,16 @@
 ;   void* PTR_GlobalAlloc_005b35dc = 001b3fd0
 ;   void* PTR_GlobalLock_005b35e4 = 001b3fec
 ;   TerminatedCString s_WavInDevice_setMode_Can_005d50b7
-;   int g_INT_00604514 = -0x1
-;   int g_INT_00604518 = -0x1
-;   SAudioFormatDescriptor[12] g_SAudioFormatDescriptor_ARRAY_0060451c
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[0].bits_per_sample
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[0].channels
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[0].sample_rate
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[1].format_flags
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[1].bits_per_sample
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[1].channels
-;   undefined4 g_SAudioFormatDescriptor_ARRAY_0060451c[1].sample_rate
+;   int g_WaveOutDeviceID = -0x1
+;   int g_WaveInDeviceID = -0x1
+;   SAudioFormatDescriptor[12] g_WaveInFormatTable
+;   undefined4 g_WaveInFormatTable[0].bits_per_sample
+;   undefined4 g_WaveInFormatTable[0].channels
+;   undefined4 g_WaveInFormatTable[0].sample_rate
+;   undefined4 g_WaveInFormatTable[1].format_flags
+;   undefined4 g_WaveInFormatTable[1].bits_per_sample
+;   undefined4 g_WaveInFormatTable[1].channels
+;   undefined4 g_WaveInFormatTable[1].sample_rate
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -45,8 +45,8 @@ section .text
     PUSH EDI                            ; 0055dfa2
     PUSH EBP                            ; 0055dfa3
     SUB ESP,0x48                        ; 0055dfa4
-    MOV EDI,dword ptr [0x02cf5664]      ; 0055dfa7 | g_INT_02cf5664
-    MOV EBP,dword ptr [0x02cf5660]      ; 0055dfad | g_INT_02cf5660
+    MOV EDI,dword ptr [0x02cf5664]      ; 0055dfa7 | g_WaveInRequestedChannels
+    MOV EBP,dword ptr [0x02cf5660]      ; 0055dfad | g_WaveInRequestedBitsPerSample
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0055dfb3
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0055dfb7
     PUSH EDX                            ; 0055dfbb
@@ -56,7 +56,7 @@ section .text
     TEST EAX,EAX                        ; 0055dfc3
     JNZ 0x0055dfd5                      ; 0055dfc5
         ;   XREF to: 0055dfd5 (CONDITIONAL_JUMP)  ; LAB_0055dfd5
-    MOV EDI,dword ptr [0x02cf5664]      ; 0055dfc7 | g_INT_02cf5664
+    MOV EDI,dword ptr [0x02cf5664]      ; 0055dfc7 | g_WaveInRequestedChannels
         ;   Label: LAB_0055dfc7
     ADD ESP,0x48                        ; 0055dfcd
     POP EBP                             ; 0055dfd0
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0055dfd5
     LEA EAX,[ESP + 0x4]                 ; 0055dfd7
     PUSH EAX                            ; 0055dfdb
-    MOV ECX,dword ptr [0x00604518]      ; 0055dfdc | g_INT_00604518
+    MOV ECX,dword ptr [0x00604518]      ; 0055dfdc | g_WaveInDeviceID
     PUSH ECX                            ; 0055dfe2
     CALL dword ptr CS:[0x5b3464]        ; 0055dfe3 | PTR_waveInGetDevCapsA_005b3464
     TEST EAX,EAX                        ; 0055dfea
@@ -78,11 +78,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x68]      ; 0055dff6
     MOV EBX,dword ptr [ESP + 0x6c]      ; 0055dffa
     MOV EBP,dword ptr [ESP + 0x60]      ; 0055dffe
-    MOV [0x02cf5668],EAX                ; 0055e002 | g_INT_02cf5668
+    MOV [0x02cf5668],EAX                ; 0055e002 | g_WaveInRequestedSampleRate
     TEST EBX,EBX                        ; 0055e007
     SETNZ AL                            ; 0055e009
     AND EAX,0xff                        ; 0055e00c
-    MOV [0x02cf566c],EAX                ; 0055e011 | g_INT_02cf566c
+    MOV [0x02cf566c],EAX                ; 0055e011 | g_WaveInStereoRequested
     MOV EAX,dword ptr [ESP + 0x28]      ; 0055e016
     MOV dword ptr [ESP + 0x40],EAX      ; 0055e01a
     MOV EAX,0xffffffff                  ; 0055e01e
@@ -93,40 +93,40 @@ section .text
     MOV dword ptr [ESP + 0x44],EAX      ; 0055e02c
     MOV ECX,dword ptr [ESP + 0x40]      ; 0055e030
         ;   Label: LAB_0055e030
-    TEST dword ptr [EBX + 0x60451c],ECX ; 0055e034 | g_SAudioFormatDescriptor_ARRAY_0060451c | g_SAudioFormatDescriptor_ARRAY_0060451c[1].format_flags
+    TEST dword ptr [EBX + 0x60451c],ECX ; 0055e034 | g_WaveInFormatTable | g_WaveInFormatTable[1].format_flags
     JZ 0x0055e0a2                       ; 0055e03a
         ;   XREF to: 0055e0a2 (CONDITIONAL_JUMP)  ; LAB_0055e0a2
-    MOV ECX,dword ptr [EBX + 0x604520]  ; 0055e040 | g_SAudioFormatDescriptor_ARRAY_0060451c[0].bits_per_sample | g_SAudioFormatDescriptor_ARRAY_0060451c[1].bits_per_sample
+    MOV ECX,dword ptr [EBX + 0x604520]  ; 0055e040 | g_WaveInFormatTable[0].bits_per_sample | g_WaveInFormatTable[1].bits_per_sample
     XOR EAX,EAX                         ; 0055e046
     CMP ECX,EBP                         ; 0055e048
     JLE 0x0055e051                      ; 0055e04a
         ;   XREF to: 0055e051 (CONDITIONAL_JUMP)  ; LAB_0055e051
     MOV EAX,0x1                         ; 0055e04c
-    MOV ECX,dword ptr [EBX + 0x604520]  ; 0055e051 | g_SAudioFormatDescriptor_ARRAY_0060451c[0].bits_per_sample | g_SAudioFormatDescriptor_ARRAY_0060451c[1].bits_per_sample
+    MOV ECX,dword ptr [EBX + 0x604520]  ; 0055e051 | g_WaveInFormatTable[0].bits_per_sample | g_WaveInFormatTable[1].bits_per_sample
         ;   Label: LAB_0055e051
     CMP ECX,EBP                         ; 0055e057
     JGE 0x0055e05e                      ; 0055e059
         ;   XREF to: 0055e05e (CONDITIONAL_JUMP)  ; LAB_0055e05e
     ADD EAX,0x2                         ; 0055e05b
-    MOV ECX,dword ptr [EBX + 0x604528]  ; 0055e05e | g_SAudioFormatDescriptor_ARRAY_0060451c[0].sample_rate | g_SAudioFormatDescriptor_ARRAY_0060451c[1].sample_rate
+    MOV ECX,dword ptr [EBX + 0x604528]  ; 0055e05e | g_WaveInFormatTable[0].sample_rate | g_WaveInFormatTable[1].sample_rate
         ;   Label: LAB_0055e05e
-    CMP ECX,dword ptr [0x02cf5668]      ; 0055e064 | g_INT_02cf5668
+    CMP ECX,dword ptr [0x02cf5668]      ; 0055e064 | g_WaveInRequestedSampleRate
     JLE 0x0055e06d                      ; 0055e06a
         ;   XREF to: 0055e06d (CONDITIONAL_JUMP)  ; LAB_0055e06d
     INC EAX                             ; 0055e06c
-    MOV ECX,dword ptr [EBX + 0x604528]  ; 0055e06d | g_SAudioFormatDescriptor_ARRAY_0060451c[0].sample_rate | g_SAudioFormatDescriptor_ARRAY_0060451c[1].sample_rate
+    MOV ECX,dword ptr [EBX + 0x604528]  ; 0055e06d | g_WaveInFormatTable[0].sample_rate | g_WaveInFormatTable[1].sample_rate
         ;   Label: LAB_0055e06d
-    CMP ECX,dword ptr [0x02cf5668]      ; 0055e073 | g_INT_02cf5668
+    CMP ECX,dword ptr [0x02cf5668]      ; 0055e073 | g_WaveInRequestedSampleRate
     JGE 0x0055e07e                      ; 0055e079
         ;   XREF to: 0055e07e (CONDITIONAL_JUMP)  ; LAB_0055e07e
     ADD EAX,0x2                         ; 0055e07b
-    MOV ECX,dword ptr [EBX + 0x604524]  ; 0055e07e | g_SAudioFormatDescriptor_ARRAY_0060451c[0].channels | g_SAudioFormatDescriptor_ARRAY_0060451c[1].channels
+    MOV ECX,dword ptr [EBX + 0x604524]  ; 0055e07e | g_WaveInFormatTable[0].channels | g_WaveInFormatTable[1].channels
         ;   Label: LAB_0055e07e
     CMP ECX,EDI                         ; 0055e084
     JLE 0x0055e08b                      ; 0055e086
         ;   XREF to: 0055e08b (CONDITIONAL_JUMP)  ; LAB_0055e08b
     ADD EAX,0x2                         ; 0055e088
-    MOV ECX,dword ptr [EBX + 0x604524]  ; 0055e08b | g_SAudioFormatDescriptor_ARRAY_0060451c[0].channels | g_SAudioFormatDescriptor_ARRAY_0060451c[1].channels
+    MOV ECX,dword ptr [EBX + 0x604524]  ; 0055e08b | g_WaveInFormatTable[0].channels | g_WaveInFormatTable[1].channels
         ;   Label: LAB_0055e08b
     CMP ECX,EDI                         ; 0055e091
     JGE 0x0055e098                      ; 0055e093
@@ -145,59 +145,59 @@ section .text
     JL 0x0055e030                       ; 0055e0a9
         ;   XREF to: 0055e030 (CONDITIONAL_JUMP)  ; LAB_0055e030
     MOV EBX,dword ptr [ESP + 0x44]      ; 0055e0ab
-    MOV dword ptr [0x02cf5664],EDI      ; 0055e0af | g_INT_02cf5664
-    MOV dword ptr [0x02cf5660],EBP      ; 0055e0b5 | g_INT_02cf5660
+    MOV dword ptr [0x02cf5664],EDI      ; 0055e0af | g_WaveInRequestedChannels
+    MOV dword ptr [0x02cf5660],EBP      ; 0055e0b5 | g_WaveInRequestedBitsPerSample
     TEST EBX,EBX                        ; 0055e0bb
     JL 0x0055e1f0                       ; 0055e0bd
         ;   XREF to: 0055e1f0 (CONDITIONAL_JUMP)  ; LAB_0055e1f0
     MOV EAX,EBX                         ; 0055e0c3
     SHL EAX,0x4                         ; 0055e0c5
-    MOV EDX,dword ptr [EAX + 0x604520]  ; 0055e0c8 | g_SAudioFormatDescriptor_ARRAY_0060451c[0].bits_per_sample
-    MOV dword ptr [0x02cf5648],EDX      ; 0055e0ce | g_INT_02cf5648
-    MOV ESI,dword ptr [0x02cf5648]      ; 0055e0d4 | g_INT_02cf5648
-    MOV EDX,dword ptr [EAX + 0x604524]  ; 0055e0da | g_SAudioFormatDescriptor_ARRAY_0060451c[0].channels
-    MOV EAX,dword ptr [EAX + 0x604528]  ; 0055e0e0 | g_SAudioFormatDescriptor_ARRAY_0060451c[0].sample_rate
-    MOV dword ptr [0x02cf564c],EDX      ; 0055e0e6 | g_INT_02cf564c
-    MOV [0x02cf5650],EAX                ; 0055e0ec | g_INT_02cf5650
+    MOV EDX,dword ptr [EAX + 0x604520]  ; 0055e0c8 | g_WaveInFormatTable[0].bits_per_sample
+    MOV dword ptr [0x02cf5648],EDX      ; 0055e0ce | g_WaveInBitsPerSample
+    MOV ESI,dword ptr [0x02cf5648]      ; 0055e0d4 | g_WaveInBitsPerSample
+    MOV EDX,dword ptr [EAX + 0x604524]  ; 0055e0da | g_WaveInFormatTable[0].channels
+    MOV EAX,dword ptr [EAX + 0x604528]  ; 0055e0e0 | g_WaveInFormatTable[0].sample_rate
+    MOV dword ptr [0x02cf564c],EDX      ; 0055e0e6 | g_WaveInChannels
+    MOV [0x02cf5650],EAX                ; 0055e0ec | g_WaveInSampleRate
     CMP ESI,0x8                         ; 0055e0f1
     SETZ AL                             ; 0055e0f4
     MOV ECX,0x14                        ; 0055e0f7
     AND EAX,0xff                        ; 0055e0fc
-    MOV EDX,dword ptr [0x02cf5650]      ; 0055e101 | g_INT_02cf5650
-    MOV [0x02cf5654],EAX                ; 0055e107 | g_INT_02cf5654
+    MOV EDX,dword ptr [0x02cf5650]      ; 0055e101 | g_WaveInSampleRate
+    MOV [0x02cf5654],EAX                ; 0055e107 | g_WaveInIs8Bit
     MOV EAX,EDX                         ; 0055e10c
     SAR EDX,0x1f                        ; 0055e10e
     IDIV ECX                            ; 0055e111
-    MOV EDX,dword ptr [0x02cf5650]      ; 0055e113 | g_INT_02cf5650
-    MOV [0x02cf5658],EAX                ; 0055e119 | g_INT_02cf5658
+    MOV EDX,dword ptr [0x02cf5650]      ; 0055e113 | g_WaveInSampleRate
+    MOV [0x02cf5658],EAX                ; 0055e119 | g_WaveInBufferSizeSamples
     ADD EDX,EDX                         ; 0055e11e
     MOV ECX,EAX                         ; 0055e120
     MOV EAX,EDX                         ; 0055e122
     SAR EDX,0x1f                        ; 0055e124
     IDIV ECX                            ; 0055e127
-    MOV [0x02cf565c],EAX                ; 0055e129 | g_INT_02cf565c
+    MOV [0x02cf565c],EAX                ; 0055e129 | g_WaveInNumBuffers
     CMP EAX,0x14                        ; 0055e12e
     JLE 0x0055e13d                      ; 0055e131
         ;   XREF to: 0055e13d (CONDITIONAL_JUMP)  ; LAB_0055e13d
-    MOV dword ptr [0x02cf565c],0x14     ; 0055e133 | g_INT_02cf565c
-    MOV ECX,dword ptr [0x02cf565c]      ; 0055e13d | g_INT_02cf565c
+    MOV dword ptr [0x02cf565c],0x14     ; 0055e133 | g_WaveInNumBuffers
+    MOV ECX,dword ptr [0x02cf565c]      ; 0055e13d | g_WaveInNumBuffers
         ;   Label: LAB_0055e13d
-    MOV dword ptr [0x02cf5664],EDI      ; 0055e143 | g_INT_02cf5664
-    MOV dword ptr [0x02cf5660],EBP      ; 0055e149 | g_INT_02cf5660
+    MOV dword ptr [0x02cf5664],EDI      ; 0055e143 | g_WaveInRequestedChannels
+    MOV dword ptr [0x02cf5660],EBP      ; 0055e149 | g_WaveInRequestedBitsPerSample
     XOR ESI,ESI                         ; 0055e14f
     TEST ECX,ECX                        ; 0055e151
     JLE 0x0055e192                      ; 0055e153
         ;   XREF to: 0055e192 (CONDITIONAL_JUMP)  ; LAB_0055e192
     XOR EBX,EBX                         ; 0055e155
-    MOV EAX,[0x02cf5648]                ; 0055e157 | g_INT_02cf5648
+    MOV EAX,[0x02cf5648]                ; 0055e157 | g_WaveInBitsPerSample
         ;   Label: LAB_0055e157
     MOV EDX,EAX                         ; 0055e15c
     SAR EDX,0x1f                        ; 0055e15e
     SHL EDX,0x3                         ; 0055e161
     SBB EAX,EDX                         ; 0055e164
     SAR EAX,0x3                         ; 0055e166
-    IMUL EAX,dword ptr [0x02cf5658]     ; 0055e169 | g_INT_02cf5658
-    IMUL EAX,dword ptr [0x02cf564c]     ; 0055e170 | g_INT_02cf564c
+    IMUL EAX,dword ptr [0x02cf5658]     ; 0055e169 | g_WaveInBufferSizeSamples
+    IMUL EAX,dword ptr [0x02cf564c]     ; 0055e170 | g_WaveInChannels
     PUSH EAX                            ; 0055e177
     PUSH 0x2002                         ; 0055e178
     CALL dword ptr CS:[0x5b35dc]        ; 0055e17d | PTR_GlobalAlloc_005b35dc
@@ -205,7 +205,7 @@ section .text
     TEST EAX,EAX                        ; 0055e18a
     JNZ 0x0055e20d                      ; 0055e18c
         ;   XREF to: 0055e20d (CONDITIONAL_JUMP)  ; LAB_0055e20d
-    CMP ESI,dword ptr [0x02cf565c]      ; 0055e192 | g_INT_02cf565c
+    CMP ESI,dword ptr [0x02cf565c]      ; 0055e192 | g_WaveInNumBuffers
         ;   Label: LAB_0055e192
     JGE 0x0055e26a                      ; 0055e198
         ;   XREF to: 0055e26a (CONDITIONAL_JUMP)  ; LAB_0055e26a
@@ -221,18 +221,18 @@ section .text
         ;   XREF to: 0055dfc7 (CONDITIONAL_JUMP)  ; LAB_0055dfc7
     MOV EAX,dword ptr [ESP + 0x44]      ; 0055e1b6
     SHL EAX,0x4                         ; 0055e1ba
-    MOV EAX,dword ptr [EAX + 0x60451c]  ; 0055e1bd | g_SAudioFormatDescriptor_ARRAY_0060451c
+    MOV EAX,dword ptr [EAX + 0x60451c]  ; 0055e1bd | g_WaveInFormatTable
     MOV ECX,dword ptr [ESP + 0x40]      ; 0055e1c3
     NOT EAX                             ; 0055e1c7
-    MOV EBP,dword ptr [0x02cf5660]      ; 0055e1c9 | g_INT_02cf5660
+    MOV EBP,dword ptr [0x02cf5660]      ; 0055e1c9 | g_WaveInRequestedBitsPerSample
     AND ECX,EAX                         ; 0055e1cf
-    MOV EDI,dword ptr [0x02cf5664]      ; 0055e1d1 | g_INT_02cf5664
+    MOV EDI,dword ptr [0x02cf5664]      ; 0055e1d1 | g_WaveInRequestedChannels
     MOV dword ptr [ESP + 0x40],ECX      ; 0055e1d7
     JMP 0x0055e01e                      ; 0055e1db
         ;   XREF to: 0055e01e (UNCONDITIONAL_JUMP)  ; LAB_0055e01e
     XOR EAX,EAX                         ; 0055e1e0
         ;   Label: LAB_0055e1e0
-    MOV EDI,dword ptr [0x02cf5664]      ; 0055e1e2 | g_INT_02cf5664
+    MOV EDI,dword ptr [0x02cf5664]      ; 0055e1e2 | g_WaveInRequestedChannels
     ADD ESP,0x48                        ; 0055e1e8
     POP EBP                             ; 0055e1eb
     POP EDI                             ; 0055e1ec
@@ -245,7 +245,7 @@ section .text
         ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055e1fa
     XOR EAX,EAX                         ; 0055e1fd
-    MOV EDI,dword ptr [0x02cf5664]      ; 0055e1ff | g_INT_02cf5664
+    MOV EDI,dword ptr [0x02cf5664]      ; 0055e1ff | g_WaveInRequestedChannels
     ADD ESP,0x48                        ; 0055e205
     POP EBP                             ; 0055e208
     POP EDI                             ; 0055e209
@@ -271,7 +271,7 @@ section .text
     ADD EBX,0x4                         ; 0055e246
     INC ESI                             ; 0055e249
     CALL dword ptr CS:[0x5b35e4]        ; 0055e24a | PTR_GlobalLock_005b35e4
-    MOV EDX,dword ptr [0x02cf565c]      ; 0055e251 | g_INT_02cf565c
+    MOV EDX,dword ptr [0x02cf565c]      ; 0055e251 | g_WaveInNumBuffers
     MOV dword ptr [EBX + 0x2cf5554],EAX ; 0055e257
     CMP ESI,EDX                         ; 0055e25d
     JL 0x0055e157                       ; 0055e25f
@@ -280,11 +280,11 @@ section .text
         ;   XREF to: 0055e192 (UNCONDITIONAL_JUMP)  ; LAB_0055e192
     MOV EDX,0x1                         ; 0055e26a
         ;   Label: LAB_0055e26a
-    MOV AX,[0x02cf5648]                 ; 0055e26f | g_INT_02cf5648
+    MOV AX,[0x02cf5648]                 ; 0055e26f | g_WaveInBitsPerSample
     MOV word ptr [ESP + 0x30],DX        ; 0055e275
     MOV word ptr [ESP + 0x3e],AX        ; 0055e27a
     XOR EDX,EDX                         ; 0055e27f
-    MOV AX,[0x02cf564c]                 ; 0055e281 | g_INT_02cf564c
+    MOV AX,[0x02cf564c]                 ; 0055e281 | g_WaveInChannels
     MOV DX,word ptr [ESP + 0x3e]        ; 0055e287
     MOV word ptr [ESP + 0x32],AX        ; 0055e28c
     MOV EAX,EDX                         ; 0055e291
@@ -296,7 +296,7 @@ section .text
     MOV DX,word ptr [ESP + 0x32]        ; 0055e2a0
     IMUL EAX,EDX                        ; 0055e2a5
     MOV word ptr [ESP + 0x3c],AX        ; 0055e2a8
-    MOV EAX,[0x02cf5650]                ; 0055e2ad | g_INT_02cf5650
+    MOV EAX,[0x02cf5650]                ; 0055e2ad | g_WaveInSampleRate
     MOV dword ptr [ESP + 0x34],EAX      ; 0055e2b2
     XOR EAX,EAX                         ; 0055e2b6
     MOV EDX,dword ptr [ESP + 0x34]      ; 0055e2b8
@@ -307,16 +307,16 @@ section .text
     PUSH 0x0                            ; 0055e2c8
     LEA EAX,[ESP + 0x3c]                ; 0055e2ca
     PUSH EAX                            ; 0055e2ce
-    MOV ESI,dword ptr [0x00604514]      ; 0055e2cf | g_INT_00604514
+    MOV ESI,dword ptr [0x00604514]      ; 0055e2cf | g_WaveOutDeviceID
     PUSH ESI                            ; 0055e2d5
-    PUSH 0x2cf5504                      ; 0055e2d6 | g_INT_02cf5504
+    PUSH 0x2cf5504                      ; 0055e2d6 | g_WaveInHandle
     MOV dword ptr [ESP + 0x50],EDX      ; 0055e2db
     CALL dword ptr CS:[0x5b3468]        ; 0055e2df | PTR_waveInOpen_005b3468
     TEST EAX,EAX                        ; 0055e2e6
     JNZ 0x0055e19e                      ; 0055e2e8
         ;   XREF to: 0055e19e (CONDITIONAL_JUMP)  ; LAB_0055e19e
     MOV EAX,0x1                         ; 0055e2ee
-    MOV EDI,dword ptr [0x02cf5664]      ; 0055e2f3 | g_INT_02cf5664
+    MOV EDI,dword ptr [0x02cf5664]      ; 0055e2f3 | g_WaveInRequestedChannels
     ADD ESP,0x48                        ; 0055e2f9
     POP EBP                             ; 0055e2fc
     POP EDI                             ; 0055e2fd

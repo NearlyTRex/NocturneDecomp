@@ -12,21 +12,21 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004a24a0(CFireEffect *this
   SMRGLTextureBasic *texture;
   
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005fc964);
+            (g_CDemonRenderer_PTR_005f2afc,&g_FireEffectBlackHoleTexture);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005fc97c);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005fc994);
+            (g_CDemonRenderer_PTR_005f2afc,&g_FireEffectBlueSparkTexture);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005fc9ac);
-  texture = g_SMRGLTextureBasic_ARRAY_005fc5a4;
+  texture = g_FireEffectSmokeParticleTextures;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005fc9c4);
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
               (g_CDemonRenderer_PTR_005f2afc,texture);
     texture = texture + 1;
-  } while (texture != g_SMRGLTextureBasic_ARRAY_005fc5a4 + sizeof(g_SMRGLTextureBasic_ARRAY_005fc5a4) / sizeof(g_SMRGLTextureBasic_ARRAY_005fc5a4[0]));
+  } while (texture != g_FireEffectSmokeParticleTextures + sizeof(g_FireEffectSmokeParticleTextures) / sizeof(g_FireEffectSmokeParticleTextures[0]));
   core_fire_cpp_loadStakeAssets_FUN_00497a30();
   core_fire_cpp_loadFireBallAssets_FUN_004992f0();
   core_fire_cpp_loadRockAssets_FUN_0049a000();

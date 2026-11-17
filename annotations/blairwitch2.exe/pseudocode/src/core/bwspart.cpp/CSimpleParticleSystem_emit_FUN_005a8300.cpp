@@ -19,10 +19,10 @@ void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimplePar
   float local_1c [3];
   
   if (this_ptr->active != 0) {
-    if (this_ptr != (CSimpleParticleSystem *)&g_CVector3f_0265370c) {
-      (this_ptr->position).x = g_CVector3f_0265370c.x;
-      (this_ptr->position).y = g_CVector3f_0265370c.y;
-      (this_ptr->position).z = g_CVector3f_0265370c.z;
+    if (this_ptr != (CSimpleParticleSystem *)&g_ZeroVector) {
+      (this_ptr->position).x = g_ZeroVector.x;
+      (this_ptr->position).y = g_ZeroVector.y;
+      (this_ptr->position).z = g_ZeroVector.z;
     }
     if (this_ptr->standalone == 0) {
       pCVar5 = this_ptr->owner;

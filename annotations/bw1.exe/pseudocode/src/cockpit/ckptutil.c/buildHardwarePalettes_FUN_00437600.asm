@@ -8,13 +8,13 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   SRGBColorPalette* g_SRGBColorPalette_PTR_01c4e3d0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   int g_INT_01c4e9d8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   int g_INT_01c4e9e4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
-;   int g_INT_01c4e9f0
+;   SRGBColorPalette* g_CurrentPalette
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     SUB ESP,0x8                         ; 00437604
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00437607
     MOV EDX,dword ptr [0x0061b4a0]      ; 0043760b | g_INT_0061b4a0
-    MOV dword ptr [0x01c4e3d0],EBX      ; 00437611 | g_SRGBColorPalette_PTR_01c4e3d0
+    MOV dword ptr [0x01c4e3d0],EBX      ; 00437611 | g_CurrentPalette
     CMP EDX,0x20                        ; 00437617
     JNZ 0x0043767b                      ; 0043761a
         ;   XREF to: 0043767b (CONDITIONAL_JUMP)  ; LAB_0043767b
@@ -41,11 +41,11 @@ section .text
     CMP EDX,0x20                        ; 0043762f
     JNZ 0x0043766d                      ; 00437632
         ;   XREF to: 0043766d (CONDITIONAL_JUMP)  ; LAB_0043766d
-    MOV CL,byte ptr [0x01c4e9d4]        ; 00437634 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 00437634 | g_RedBitPosition
     SHL EDI,CL                          ; 0043763a
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0043763c | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0043763c | g_GreenBitPosition
     SHL EBP,CL                          ; 00437642
-    MOV CL,byte ptr [0x01c4e9ec]        ; 00437644 | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 00437644 | g_BlueBitPosition
     SHL ESI,CL                          ; 0043764a
     OR EDI,EBP                          ; 0043764c
     MOV ECX,ESI                         ; 0043764e
@@ -75,7 +75,7 @@ section .text
         ;   Label: LAB_0043767b
     XOR EAX,EAX                         ; 0043767d
         ;   Label: LAB_0043767d
-    MOV EDI,dword ptr [0x01c4e9d8]      ; 0043767f | g_INT_01c4e9d8
+    MOV EDI,dword ptr [0x01c4e9d8]      ; 0043767f | g_RedScaleFactor
     MOV AL,byte ptr [EBX]               ; 00437685
     XOR EDX,EDX                         ; 00437687
     MOV dword ptr [ESP],EAX             ; 00437689
@@ -86,21 +86,21 @@ section .text
     MOV dword ptr [ESP],EAX             ; 00437697
     XOR EDX,EDX                         ; 0043769a
     MOV EAX,ECX                         ; 0043769c
-    DIV dword ptr [0x01c4e9e4]          ; 0043769e | g_INT_01c4e9e4
+    DIV dword ptr [0x01c4e9e4]          ; 0043769e | g_GreenScaleFactor
     MOVZX EBP,byte ptr [EBX + 0x2]      ; 004376a4
-    MOV EDI,dword ptr [0x01c4e9f0]      ; 004376a8 | g_INT_01c4e9f0
+    MOV EDI,dword ptr [0x01c4e9f0]      ; 004376a8 | g_BlueScaleFactor
     MOV dword ptr [ESP + 0x4],EAX       ; 004376ae
     XOR EDX,EDX                         ; 004376b2
     MOV EAX,EBP                         ; 004376b4
     DIV EDI                             ; 004376b6
-    MOV CL,byte ptr [0x01c4e9d4]        ; 004376b8 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 004376b8 | g_RedBitPosition
     MOV EDX,dword ptr [ESP]             ; 004376be
     MOV EDI,EAX                         ; 004376c1
     MOV EAX,dword ptr [ESP + 0x4]       ; 004376c3
     SHL EDX,CL                          ; 004376c7
-    MOV CL,byte ptr [0x01c4e9e0]        ; 004376c9 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 004376c9 | g_GreenBitPosition
     SHL EAX,CL                          ; 004376cf
-    MOV CL,byte ptr [0x01c4e9ec]        ; 004376d1 | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 004376d1 | g_BlueBitPosition
     OR EAX,EDX                          ; 004376d7
     SHL EDI,CL                          ; 004376d9
     ADD ESI,0x2                         ; 004376db

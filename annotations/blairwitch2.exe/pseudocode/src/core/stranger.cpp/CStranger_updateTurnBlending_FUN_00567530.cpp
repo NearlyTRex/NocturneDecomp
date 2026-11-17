@@ -43,9 +43,9 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_00567530(CStrang
     }
   }
   iVar1 = this_ptr->turn_motion_index;
-  this_ptr->turn_motion_index = g_INT_ARRAY_0264be30[0x14];
+  this_ptr->turn_motion_index = g_StrangerIndices[0x14];
   if (this_ptr->turn_angle < 0.0) {
-    this_ptr->turn_motion_index = g_INT_ARRAY_0264be30[0x15];
+    this_ptr->turn_motion_index = g_StrangerIndices[0x15];
   }
   if (this_ptr->turn_blend_weight <= (float)0.20000000000000001) {
     this_ptr->turn_elapsed = 0.0;

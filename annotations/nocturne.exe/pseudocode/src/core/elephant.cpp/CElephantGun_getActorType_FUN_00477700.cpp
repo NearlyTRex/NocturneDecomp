@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_00477700(CElephantGun *this_ptr)
 
 {
-  return &g_CElephantGunActorType_01bcde44;
+  return &g_CElephantGunClassInfo;
 }

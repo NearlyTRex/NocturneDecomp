@@ -34,14 +34,14 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CDemonRenderer_01ba5c50.advanced_culling_enabled
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b90
+;   int g_RelativeX
+;   int g_LightDirectionX
 ;   int g_INT_01c38b9c
 ;   int g_INT_01c38ba0
 ;   int g_INT_01c38ba4
 ;   int g_INT_01cedef4
-;   int[20] g_INT_ARRAY_01d097c4
-;   int g_INT_01d1cdc8
+;   int[20] g_MimicIndices
+;   int g_RenderMotionDebug
 ;   undefined4 g_CStrangerClassInfo.name_hash
 ;
 ; Called Functions:
@@ -151,8 +151,8 @@ section .text
     CALL engine_matrix.c_matrixPush_FUN_004e9710 ; 004f1950
         ;   XREF to: 004e9710 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004e9710()
     PUSH 0x0                            ; 004f1955
-    MOV ESI,dword ptr [0x01c38b6c]      ; 004f1957 | g_INT_01c38b6c
-    MOV EDI,dword ptr [0x01c38b90]      ; 004f195d | g_INT_01c38b90
+    MOV ESI,dword ptr [0x01c38b6c]      ; 004f1957 | g_RelativeX
+    MOV EDI,dword ptr [0x01c38b90]      ; 004f195d | g_LightDirectionX
     MOV EAX,[0x01c38b9c]                ; 004f1963 | g_INT_01c38b9c
     MOV EDX,dword ptr [0x01c38ba0]      ; 004f1968 | g_INT_01c38ba0
     MOV ECX,dword ptr [0x01c38ba4]      ; 004f196e | g_INT_01c38ba4
@@ -163,11 +163,11 @@ section .text
     NEG EDX                             ; 004f197c
     NEG ECX                             ; 004f197e
     PUSH -0x1                           ; 004f1980
-    MOV dword ptr [0x01c38b6c],ESI      ; 004f1982 | g_INT_01c38b6c
+    MOV dword ptr [0x01c38b6c],ESI      ; 004f1982 | g_RelativeX
     MOV [0x01c38b9c],EAX                ; 004f1988 | g_INT_01c38b9c
     PUSH -0x1                           ; 004f198d
     LEA EAX,[EBX + 0x2b4]               ; 004f198f
-    MOV dword ptr [0x01c38b90],EDI      ; 004f1995 | g_INT_01c38b90
+    MOV dword ptr [0x01c38b90],EDI      ; 004f1995 | g_LightDirectionX
     PUSH EAX                            ; 004f199b
     MOV dword ptr [0x01c38ba0],EDX      ; 004f199c | g_INT_01c38ba0
     MOV dword ptr [0x01c38ba4],ECX      ; 004f19a2 | g_INT_01c38ba4
@@ -215,7 +215,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f1a1f
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004f1a20
         ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x01d097c4]      ; 004f1a25 | g_INT_ARRAY_01d097c4
+    MOV ESI,dword ptr [0x01d097c4]      ; 004f1a25 | g_MimicIndices
     LEA EAX,[ESI*0x4 + 0x0]             ; 004f1a2b
     SUB EAX,ESI                         ; 004f1a32
     MOV ESI,EAX                         ; 004f1a34
@@ -282,7 +282,7 @@ section .text
         ;   Label: LAB_004f1ad5
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0 ; 004f1ad6
         ;   XREF to: 00425aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x01d1cdc8]      ; 004f1adb | g_INT_01d1cdc8
+    MOV EDI,dword ptr [0x01d1cdc8]      ; 004f1adb | g_RenderMotionDebug
     ADD ESP,0x4                         ; 004f1ae1
     TEST EDI,EDI                        ; 004f1ae4
     JZ 0x004f1b13                       ; 004f1ae6

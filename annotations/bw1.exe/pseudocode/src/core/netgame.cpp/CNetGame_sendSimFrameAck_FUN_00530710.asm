@@ -26,7 +26,7 @@
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   uint g_UINT_01d51da0
-;   uint g_UINT_01d51db0
+;   uint g_NetLastSimFrameAckTime
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 0052df50 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0052df50(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EAX,[0x01d51da0]                ; 005307bd | g_UINT_01d51da0
     ADD ESP,0xc                         ; 005307c2
-    MOV [0x01d51db0],EAX                ; 005307c5 | g_UINT_01d51db0
+    MOV [0x01d51db0],EAX                ; 005307c5 | g_NetLastSimFrameAckTime
     ADD ESP,0x3c                        ; 005307ca
     POP EBP                             ; 005307cd
     POP EDI                             ; 005307ce

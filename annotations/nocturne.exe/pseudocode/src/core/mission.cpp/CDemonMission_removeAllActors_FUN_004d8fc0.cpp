@@ -19,7 +19,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004d8fc0(CDemonM
   }
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(this_ptr);
   this_ptr_00 = g_CDemonSetPtr;
-  g_INT_01cae0d4 = 0;
+  g_HeroCount = 0;
   this_ptr->actors_prepared = 0;
   core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30(this_ptr_00);
   this_ptr->delete_queue_count = 0;

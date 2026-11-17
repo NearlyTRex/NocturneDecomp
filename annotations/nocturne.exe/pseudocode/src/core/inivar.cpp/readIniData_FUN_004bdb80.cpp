@@ -38,7 +38,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004bdb80(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"haloMode",&g_CGamePtr->halo_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (&local_204,"firstTimeFlag",&g_INT_01cae37c);
+            (&local_204,"firstTimeFlag",&g_FirstTimeFlag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"subtitleMode",&g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
@@ -57,9 +57,9 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004bdb80(void)
     pCVar1->foul_language_flag = 0;
     pCVar1->blood_flag = 0;
   }
-  g_INT_01cc64a4 = 0;
+  g_CurrentGraphicsBoard = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (&local_204,"currentBoard",&g_INT_01cc64a4);
+            (&local_204,"currentBoard",&g_CurrentGraphicsBoard);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Sound");
   sound_sndmain_cpp_readIni_FUN_005289f0(&local_204);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Control");

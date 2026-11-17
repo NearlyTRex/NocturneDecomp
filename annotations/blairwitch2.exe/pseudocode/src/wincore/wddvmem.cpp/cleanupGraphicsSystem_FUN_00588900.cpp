@@ -15,28 +15,26 @@ void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00588900(void)
   }
   if (g_PTR_02661af0 != (byte *)0x0) {
     debugFree(g_PTR_02661af0);
-    g_PTR_0070c62c = (byte *)0x0;
+    g_SoftwareZBuffer = (byte *)0x0;
   }
   engine_special_cpp_kill_FUN_0055f4d0();
-  if (g_IUnknown_PTR_02661aec != (IUnknown *)0x0) {
-    (*g_IUnknown_PTR_02661aec->vtable->Release)(g_IUnknown_PTR_02661aec);
-    g_IUnknown_PTR_02661aec = (IUnknown *)0x0;
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02661ae8 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02661ae8);
-    g_IDirectDrawSurface_PTR_02661ae8 = (IDirectDrawSurface *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02661ae4 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02661ae4->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02661ae4);
-    g_IDirectDrawSurface_PTR_02661ae4 = (IDirectDrawSurface *)0x0;
+  if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+    (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+    g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   }
-  if (g_IDirectDraw_PTR_02661ae0 == (IDirectDraw *)0x0) {
+  if (g_DirectDrawObject == (IDirectDraw *)0x0) {
     return;
   }
-  (*g_IDirectDraw_PTR_02661ae0->vtable->RestoreDisplayMode)(g_IDirectDraw_PTR_02661ae0);
-  (*g_IDirectDraw_PTR_02661ae0->vtable->Release)((IUnknown *)g_IDirectDraw_PTR_02661ae0);
-  g_IDirectDraw_PTR_02661ae0 = (IDirectDraw *)0x0;
+  (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+  (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+  g_DirectDrawObject = (IDirectDraw *)0x0;
   return;
 }

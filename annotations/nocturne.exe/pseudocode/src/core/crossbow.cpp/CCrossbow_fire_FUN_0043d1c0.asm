@@ -12,12 +12,12 @@
 ;   TerminatedCString s_bow_wav_0057b485
 ;   double DOUBLE_0057b496 = 1.5
 ;   double DOUBLE_0057b49e = 10
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
-;   undefined4 g_CGlassActorType_01c78c40.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
+;   undefined4 g_CGlassClassInfo.name_hash
 ;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.ray_origin.x
@@ -274,7 +274,7 @@ section .text
     SAHF                                ; 0043d49d
     JC 0x0043d38c                       ; 0043d49e
         ;   XREF to: 0043d38c (CONDITIONAL_JUMP)  ; LAB_0043d38c
-    MOV EDX,dword ptr [0x00765a98]      ; 0043d4a4 | g_CCharacterActorType_00765a60.name_hash
+    MOV EDX,dword ptr [0x00765a98]      ; 0043d4a4 | g_CCharacterClassInfo.name_hash
     MOV EAX,[0x005be368]                ; 0043d4aa | g_CDemonSetPtr
     PUSH EDX                            ; 0043d4af
     MOV ECX,dword ptr [EAX + 0x14cd5c]  ; 0043d4b0 | g_CDemonSetInstance.collision_actor
@@ -294,7 +294,7 @@ section .text
     JLE 0x0043d4db                      ; 0043d4d7
         ;   XREF to: 0043d4db (CONDITIONAL_JUMP)  ; LAB_0043d4db
     XOR ESI,ESI                         ; 0043d4d9
-    MOV EDI,dword ptr [0x01c78c78]      ; 0043d4db | g_CGlassActorType_01c78c40.name_hash
+    MOV EDI,dword ptr [0x01c78c78]      ; 0043d4db | g_CGlassClassInfo.name_hash
         ;   Label: LAB_0043d4db
     MOV EAX,[0x005be368]                ; 0043d4e1 | g_CDemonSetPtr
     PUSH EDI                            ; 0043d4e6
@@ -304,7 +304,7 @@ section .text
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0xf0],EAX      ; 0043d4f3
     ADD ESP,0x8                         ; 0043d4fa
-    MOV ECX,dword ptr [0x02dd10bc]      ; 0043d4fd | g_CTriggerActorType_02dd1084.name_hash
+    MOV ECX,dword ptr [0x02dd10bc]      ; 0043d4fd | g_CTriggerClassInfo.name_hash
     MOV EAX,[0x005be368]                ; 0043d503 | g_CDemonSetPtr
     PUSH ECX                            ; 0043d508
     MOV EDI,dword ptr [EAX + 0x14cd5c]  ; 0043d509 | g_CDemonSetInstance.collision_actor
@@ -533,7 +533,7 @@ section .text
     PUSH ESI                            ; 0043d7ef
     ADD EAX,0x14cd50                    ; 0043d7f0
     PUSH EAX                            ; 0043d7f5 | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x005b80f0]      ; 0043d7f6 | g_CFireEffect_PTR_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 0043d7f6 | g_CFireEffectPtr
     PUSH ECX                            ; 0043d7fc
     CALL core_fire.cpp_CFireEffect_createStake_FUN_0048b070 ; 0043d7fd
         ;   XREF to: 0048b070 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect * this_ptr, CVector3f * impact_position, CVector3f * orientation_angles, CVector3f * surface_normal, ...)

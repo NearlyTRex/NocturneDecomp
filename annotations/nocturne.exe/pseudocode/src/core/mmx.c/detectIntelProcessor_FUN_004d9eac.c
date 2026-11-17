@@ -43,14 +43,14 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
            (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
            (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
   uVar6 = uVar10 ^ 0x40000;
-  g_UCHAR_005bb118 = '\x03';
+  g_CPUInfoFamily = '\x03';
   if (((uint)((uVar6 & 0x4000) != 0) * 0x4000 | (uint)((uVar6 & 0x800) != 0) * 0x800 |
        (uint)((uVar6 & 0x200) != 0) * 0x200 | (uint)((uVar6 & 0x100) != 0) * 0x100 |
        (uint)((uVar6 & 0x80) != 0) * 0x80 | (uint)((uVar6 & 0x40) != 0) * 0x40 |
        (uint)((uVar6 & 0x10) != 0) * 0x10 | (uint)((uVar6 & 4) != 0) * 4 | (uint)((uVar6 & 1) != 0)
        | (uint)((uVar6 & 0x200000) != 0) * 0x200000 | (uint)((uVar6 & 0x40000) != 0) * 0x40000) !=
       uVar10) {
-    g_UCHAR_005bb118 = '\x04';
+    g_CPUInfoFamily = '\x04';
     uVar6 = uVar10 ^ 0x200000;
     if (((uint)((uVar6 & 0x4000) != 0) * 0x4000 | (uint)((uVar6 & 0x800) != 0) * 0x800 |
          (uint)((uVar6 & 0x200) != 0) * 0x200 | (uint)((uVar6 & 0x100) != 0) * 0x100 |
@@ -58,11 +58,11 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
          (uint)((uVar6 & 0x10) != 0) * 0x10 | (uint)((uVar6 & 4) != 0) * 4 |
          (uint)((uVar6 & 1) != 0) | (uint)((uVar6 & 0x200000) != 0) * 0x200000 |
         (uint)((uVar6 & 0x40000) != 0) * 0x40000) != uVar10) {
-      g_BYTE_005bb11b = 1;
+      g_CPUIDSupported = 1;
       piVar3 = (int *)cpuid_basic_info(0);
       register0x0000000c = piVar3[1];
-      g_INT_005bb110 = piVar3[2];
-      g_INT_005bb114 = piVar3[3];
+      g_CPUInfoBasicInfo2 = piVar3[2];
+      g_CPUInfoBaseInfo3 = piVar3[3];
       iVar7 = 1;
       pcVar8 = "GenuineIntel" + 0xc;
       pcVar9 = "GenuineIntel";
@@ -74,13 +74,13 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
         pcVar8 = pcVar8 + 1;
         pcVar9 = pcVar9 + 1;
       } while (cVar1 == cVar2);
-      if ((iVar7 == 0) && (g_UCHAR_005bb11c = '\x01', 0 < *piVar3)) {
+      if ((iVar7 == 0) && (g_CPUInfoIntelCPU = '\x01', 0 < *piVar3)) {
         puVar4 = (uint *)cpuid_Version_info(1);
-        g_UINT_005bb11d = puVar4[2];
+        g_CPUFeatureFlags = puVar4[2];
         bVar5 = (byte)*puVar4;
-        g_UCHAR_005bb11a = bVar5 & 0xf;
-        g_UCHAR_005bb119 = bVar5 >> 4;
-        g_UCHAR_005bb118 = (byte)((uint)*puVar4 >> 8) & 0xf;
+        g_CPUInfoStepping = bVar5 & 0xf;
+        g_CPUInfoModel = bVar5 >> 4;
+        g_CPUInfoFamily = (byte)((uint)*puVar4 >> 8) & 0xf;
       }
     }
   }

@@ -361,7 +361,7 @@ switchD_004a818f_caseD_4:
   iVar5 = (this_ptr->target_scale).x;
   iVar7 = (this_ptr->base).base.base.scale.x;
   if (iVar7 < iVar5) {
-    iVar7 = (this_ptr->base).base.base.scale.x + g_INT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.x + g_GlobalDeltaTimeInt;
     iVar5 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar7;
     if (iVar5 < iVar7) {
@@ -369,7 +369,7 @@ switchD_004a818f_caseD_4:
     }
   }
   else if (iVar5 < iVar7) {
-    iVar7 = (this_ptr->base).base.base.scale.x - g_INT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.x - g_GlobalDeltaTimeInt;
     iVar5 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar7;
     if (iVar7 < iVar5) {
@@ -379,7 +379,7 @@ switchD_004a818f_caseD_4:
   iVar5 = (this_ptr->target_scale).y;
   iVar7 = (this_ptr->base).base.base.scale.y;
   if (iVar7 < iVar5) {
-    iVar7 = (this_ptr->base).base.base.scale.y + g_INT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.y + g_GlobalDeltaTimeInt;
     iVar5 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar7;
     if (iVar5 < iVar7) {
@@ -387,7 +387,7 @@ switchD_004a818f_caseD_4:
     }
   }
   else if (iVar5 < iVar7) {
-    iVar7 = (this_ptr->base).base.base.scale.y - g_INT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.y - g_GlobalDeltaTimeInt;
     iVar5 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar7;
     if (iVar7 < iVar5) {
@@ -397,7 +397,7 @@ switchD_004a818f_caseD_4:
   iVar5 = (this_ptr->target_scale).z;
   iVar7 = (this_ptr->base).base.base.scale.z;
   if (iVar7 < iVar5) {
-    iVar7 = (this_ptr->base).base.base.scale.z + g_INT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.z + g_GlobalDeltaTimeInt;
     iVar5 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar7;
     if (iVar5 < iVar7) {
@@ -406,7 +406,7 @@ switchD_004a818f_caseD_4:
     }
   }
   else if (iVar5 < iVar7) {
-    iVar7 = (this_ptr->base).base.base.scale.z - g_INT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.z - g_GlobalDeltaTimeInt;
     iVar5 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar7;
     if (iVar7 < iVar5) {

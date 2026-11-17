@@ -12,30 +12,30 @@ void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_0054cfc0(void)
   int iVar1;
   int iVar2;
   
-  if (g_FLOAT_PTR_02648ec4 != (float *)0x0) {
-    debugFree(g_FLOAT_PTR_02648ec4);
-    g_FLOAT_PTR_02648ec4 = (float *)0x0;
+  if (g_PrimaryMixBuffer != (float *)0x0) {
+    debugFree(g_PrimaryMixBuffer);
+    g_PrimaryMixBuffer = (float *)0x0;
   }
-  if (g_FLOAT_PTR_02648ee8 != (float *)0x0) {
-    debugFree(g_FLOAT_PTR_02648ee8);
-    g_FLOAT_PTR_02648ee8 = (float *)0x0;
+  if (g_SecondaryMixBuffer != (float *)0x0) {
+    debugFree(g_SecondaryMixBuffer);
+    g_SecondaryMixBuffer = (float *)0x0;
   }
-  if (g_FLOAT_PTR_02648ea0 != (float *)0x0) {
-    debugFree(g_FLOAT_PTR_02648ea0);
-    g_FLOAT_PTR_02648ea0 = (float *)0x0;
+  if (g_TertiaryMixBuffer != (float *)0x0) {
+    debugFree(g_TertiaryMixBuffer);
+    g_TertiaryMixBuffer = (float *)0x0;
   }
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 4;
-    *(uint *)((int)g_FLOAT_PTR_ARRAY_02648ea4 + iVar2) = 0;
-    *(uint *)((int)g_FLOAT_PTR_ARRAY_02648eec + iVar2) = 0;
-    *(uint *)((int)g_FLOAT_PTR_ARRAY_02648f0c + iVar2) = 0;
-    *(uint *)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2) = 0;
+    *(uint *)((int)g_ChannelTertiaryBuffers + iVar2) = 0;
+    *(uint *)((int)g_ChannelSecondaryBuffersA + iVar2) = 0;
+    *(uint *)((int)g_ChannelSecondaryBuffersB + iVar2) = 0;
+    *(uint *)((int)g_ChannelPrimaryBuffers + iVar2) = 0;
     iVar2 = iVar1;
   } while (iVar1 != 0x20);
-  g_INT_02648e9c = 0;
-  g_INT_02648e90 = 0;
-  g_INT_02648e94 = 0;
-  g_INT_02648e98 = 0;
+  g_NumMixBuffers = 0;
+  g_MixBufferReadIndex = 0;
+  g_MixBufferWriteIndex = 0;
+  g_MixBufferSize = 0;
   return;
 }

@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd1e4
 ;   TerminatedCString s_CEditorTools_popWindow_c_005bd1fa
-;   int g_INT_01c5b104
+;   int g_WindowStackCount
 ;   int g_INT_01c6b598
 ;   int g_INT_01c6b59c
 ;   int g_INT_01c6b5a0
@@ -22,8 +22,8 @@
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b0
 ;   int g_INT_01c6b5b4
-;   int g_INT_01c6b5b8
-;   int g_INT_01c6b5bc
+;   int g_ViewportWidth
+;   int g_ViewportHeight
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -40,13 +40,13 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047f990
     PUSH ESI                            ; 0047f991
     PUSH EDI                            ; 0047f992
-    CMP dword ptr [0x01c5b104],0x1      ; 0047f993 | g_INT_01c5b104
+    CMP dword ptr [0x01c5b104],0x1      ; 0047f993 | g_WindowStackCount
     JL 0x0047fa37                       ; 0047f99a
         ;   XREF to: 0047fa37 (CONDITIONAL_JUMP)  ; LAB_0047fa37
-    MOV ESI,dword ptr [0x01c5b104]      ; 0047f9a0 | g_INT_01c5b104
+    MOV ESI,dword ptr [0x01c5b104]      ; 0047f9a0 | g_WindowStackCount
         ;   Label: LAB_0047f9a0
     DEC ESI                             ; 0047f9a6
-    MOV dword ptr [0x01c5b104],ESI      ; 0047f9a7 | g_INT_01c5b104
+    MOV dword ptr [0x01c5b104],ESI      ; 0047f9a7 | g_WindowStackCount
     LEA EBX,[ESI*0x8 + 0x0]             ; 0047f9ad
     MOV EAX,EBX                         ; 0047f9b4
     SHL EBX,0x6                         ; 0047f9b6
@@ -80,10 +80,10 @@ section .text
     MOV EAX,dword ptr [EBX + 0x3c]      ; 0047fa18
     MOV [0x01c6b5a4],EAX                ; 0047fa1b | g_INT_01c6b5a4
     MOV EAX,dword ptr [EBX + 0x40]      ; 0047fa20
-    MOV [0x01c6b5b8],EAX                ; 0047fa23 | g_INT_01c6b5b8
+    MOV [0x01c6b5b8],EAX                ; 0047fa23 | g_ViewportWidth
     MOV EAX,dword ptr [EBX + 0x44]      ; 0047fa28
     ADD ESP,0x10                        ; 0047fa2b
-    MOV [0x01c6b5bc],EAX                ; 0047fa2e | g_INT_01c6b5bc
+    MOV [0x01c6b5bc],EAX                ; 0047fa2e | g_ViewportHeight
     POP EDI                             ; 0047fa33
     POP ESI                             ; 0047fa34
     POP EBX                             ; 0047fa35

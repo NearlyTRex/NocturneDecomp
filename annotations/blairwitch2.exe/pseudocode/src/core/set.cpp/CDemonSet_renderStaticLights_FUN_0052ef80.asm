@@ -30,11 +30,11 @@
 ;   double g_DOUBLE_005e58b2 = 1000
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CConsole g_CConsoleInstance
-;   CDemonLight* g_CDemonLight_PTR_01511ce4
+;   CDemonLight* g_CurrentShadowLight
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.shadow_flag
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 0052efc1 (CONDITIONAL_JUMP)  ; LAB_0052efc1
     XOR EBX,EBX                         ; 0052effb
         ;   Label: LAB_0052effb
-    MOV EDI,dword ptr [0x01fc8e84]      ; 0052effd | g_INT_01fc8e84
+    MOV EDI,dword ptr [0x01fc8e84]      ; 0052effd | g_SpotLightCount
     MOV dword ptr [ESP + 0x1c],EBX      ; 0052f003
     TEST EDI,EDI                        ; 0052f007
     JLE 0x0052f049                      ; 0052f009
@@ -121,7 +121,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0052f02b
         ;   Label: LAB_0052f02b
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0052f02f
-    MOV EBX,dword ptr [0x01fc8e84]      ; 0052f033 | g_INT_01fc8e84
+    MOV EBX,dword ptr [0x01fc8e84]      ; 0052f033 | g_SpotLightCount
     ADD EDX,0x4                         ; 0052f039
     INC ECX                             ; 0052f03c
     MOV dword ptr [ESP + 0x14],EDX      ; 0052f03d
@@ -242,7 +242,7 @@ section .text
     CALL core_gore.cpp_CGore_renderParticles_FUN_004c9440 ; 0052f163
         ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004c9440(CGore * this_ptr)
     ADD ESP,0x4                         ; 0052f168
-    MOV EDI,dword ptr [0x00614d30]      ; 0052f16b | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 0052f16b | g_CFireEffectPtr
     PUSH EDI                            ; 0052f171
     CALL core_fire.cpp_CFireEffect_render_FUN_0049c780 ; 0052f172
         ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0049c780(CFireEffect * this_ptr)
@@ -273,7 +273,7 @@ section .text
     XOR EBP,EBP                         ; 0052f1b2
     MOV EAX,dword ptr [ESP + 0x20]      ; 0052f1b4
     MOV EBX,dword ptr [ESI + 0x15f6f8]  ; 0052f1b8
-    MOV [0x01511ce4],EAX                ; 0052f1be | g_CDemonLight_PTR_01511ce4
+    MOV [0x01511ce4],EAX                ; 0052f1be | g_CurrentShadowLight
     TEST EBX,EBX                        ; 0052f1c3
     JLE 0x0052f205                      ; 0052f1c5
         ;   XREF to: 0052f205 (CONDITIONAL_JUMP)  ; LAB_0052f205
@@ -307,7 +307,7 @@ section .text
     CALL core_gore.cpp_CGore_renderParticles_FUN_004c9440 ; 0052f20c
         ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004c9440(CGore * this_ptr)
     ADD ESP,0x4                         ; 0052f211
-    MOV EBX,dword ptr [0x00614d30]      ; 0052f214 | g_CFireEffect_PTR_00614d30
+    MOV EBX,dword ptr [0x00614d30]      ; 0052f214 | g_CFireEffectPtr
     PUSH EBX                            ; 0052f21a
     CALL core_fire.cpp_CFireEffect_render_FUN_0049c780 ; 0052f21b
         ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0049c780(CFireEffect * this_ptr)
@@ -316,7 +316,7 @@ section .text
     PUSH EDI                            ; 0052f225
     MOV EBP,dword ptr [ESP + 0x24]      ; 0052f226
     PUSH EBP                            ; 0052f22a
-    MOV dword ptr [0x01511ce4],EDI      ; 0052f22b | g_CDemonLight_PTR_01511ce4
+    MOV dword ptr [0x01511ce4],EDI      ; 0052f22b | g_CurrentShadowLight
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_0044a2d0 ; 0052f231
         ;   XREF to: 0044a2d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_0044a2d0(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 0052f236

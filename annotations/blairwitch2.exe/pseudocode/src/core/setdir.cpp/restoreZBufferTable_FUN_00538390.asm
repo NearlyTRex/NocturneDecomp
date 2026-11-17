@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   uint*[1200] g_UINT_PTR_ARRAY_020b0258
+;   uint*[1200] g_ZBufferScanlineArrayBackup
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -21,7 +21,7 @@ section .text
     PUSH ESI                            ; 00538390
         ;   Label: core_setdir.cpp_restoreZBufferTable_FUN_00538390
     PUSH EDI                            ; 00538391
-    CMP dword ptr [0x020b0258],0x0      ; 00538392 | g_UINT_PTR_ARRAY_020b0258
+    CMP dword ptr [0x020b0258],0x0      ; 00538392 | g_ZBufferScanlineArrayBackup
     JZ 0x005383cb                       ; 00538399
         ;   XREF to: 005383cb (CONDITIONAL_JUMP)  ; LAB_005383cb
     MOV ESI,dword ptr [ESP + 0xc]       ; 0053839b
@@ -41,7 +41,7 @@ section .text
     NOP                                 ; 005383bf
     XOR EDI,EDI                         ; 005383c0
         ;   Label: LAB_005383c0
-    MOV dword ptr [0x020b0258],EDI      ; 005383c2 | g_UINT_PTR_ARRAY_020b0258
+    MOV dword ptr [0x020b0258],EDI      ; 005383c2 | g_ZBufferScanlineArrayBackup
     POP EDI                             ; 005383c8
     POP ESI                             ; 005383c9
     RET                                 ; 005383ca

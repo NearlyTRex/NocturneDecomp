@@ -14,7 +14,7 @@
 ;   double DOUBLE_00588172 = 30
 ;   double DOUBLE_0058817a = 0.200000000000000
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   CKeys g_CKeys_01cc30e4
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -35,8 +35,8 @@ section .text
     FDIV double ptr [0x00588172]        ; 004cbbd6 | DOUBLE_00588172
     PUSH 0x38                           ; 004cbbdc
     MOV EAX,[0x005bac64]                ; 004cbbde | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004cbbe3 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cbbe4 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004cbbe3 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004cbbe4 | g_CKeysInstance
     FSTP float ptr [ESP + 0x8]          ; 004cbbe6
     CALL dword ptr [EDX]                ; 004cbbea
     ADD ESP,0x8                         ; 004cbbec
@@ -49,8 +49,8 @@ section .text
     PUSH 0x33                           ; 004cbbff
         ;   Label: LAB_004cbbff
     MOV EAX,[0x005bac64]                ; 004cbc01 | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004cbc06 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cbc07 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004cbc06 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004cbc07 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004cbc09
     ADD ESP,0x8                         ; 004cbc0b
     TEST EAX,EAX                        ; 004cbc0e
@@ -62,8 +62,8 @@ section .text
     PUSH 0x34                           ; 004cbc1b
         ;   Label: LAB_004cbc1b
     MOV EAX,[0x005bac64]                ; 004cbc1d | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004cbc22 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cbc23 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004cbc22 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004cbc23 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004cbc25
     ADD ESP,0x8                         ; 004cbc27
     TEST EAX,EAX                        ; 004cbc2a

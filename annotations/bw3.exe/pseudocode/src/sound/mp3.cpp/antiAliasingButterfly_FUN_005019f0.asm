@@ -23,9 +23,9 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 00503674
 ;
 ; Referenced Globals:
-;   int g_INT_0060116c = 0x1
-;   double[8] g_DOUBLE_ARRAY_00601170
-;   undefined4 g_DOUBLE_ARRAY_00601170[1]
+;   int g_Mp3AntiAliasInitialized = 0x1
+;   double[8] g_Mp3AntiAliasCSSource
+;   undefined4 g_Mp3AntiAliasCSSource[1]
 ;
 ; *****************************************************************************
 
@@ -40,11 +40,11 @@ section .text
     SUB ESP,0x38                        ; 005019f6
     AND ESP,0xfffffff8                  ; 005019f9
     MOV EDI,dword ptr [EBP + 0x1c]      ; 005019fc
-    CMP dword ptr [0x0060116c],0x0      ; 005019ff | g_INT_0060116c
+    CMP dword ptr [0x0060116c],0x0      ; 005019ff | g_Mp3AntiAliasInitialized
     JZ 0x00501a53                       ; 00501a06
         ;   XREF to: 00501a53 (CONDITIONAL_JUMP)  ; LAB_00501a53
     XOR EDX,EDX                         ; 00501a08
-    FLD double ptr [EDX + 0x601170]     ; 00501a0a | g_DOUBLE_ARRAY_00601170 | g_DOUBLE_ARRAY_00601170[1]
+    FLD double ptr [EDX + 0x601170]     ; 00501a0a | g_Mp3AntiAliasCSSource | g_Mp3AntiAliasCSSource[1]
         ;   Label: LAB_00501a0a
     FMUL ST0                            ; 00501a10
     FLD1                                ; 00501a12
@@ -52,7 +52,7 @@ section .text
     FSQRT                               ; 00501a16
     FLD1                                ; 00501a18
     FDIVRP                              ; 00501a1a
-    FLD double ptr [EDX + 0x601170]     ; 00501a1c | g_DOUBLE_ARRAY_00601170 | g_DOUBLE_ARRAY_00601170[1]
+    FLD double ptr [EDX + 0x601170]     ; 00501a1c | g_Mp3AntiAliasCSSource | g_Mp3AntiAliasCSSource[1]
     ADD EDX,0x8                         ; 00501a22
     FXCH                                ; 00501a25
     FSTP double ptr [ESP]               ; 00501a27
@@ -66,7 +66,7 @@ section .text
     JNZ 0x00501a0a                      ; 00501a49
         ;   XREF to: 00501a0a (CONDITIONAL_JUMP)  ; LAB_00501a0a
     XOR ECX,ECX                         ; 00501a4b
-    MOV dword ptr [0x0060116c],ECX      ; 00501a4d | g_INT_0060116c
+    MOV dword ptr [0x0060116c],ECX      ; 00501a4d | g_Mp3AntiAliasInitialized
     MOV ESI,dword ptr [EBP + 0x14]      ; 00501a53
         ;   Label: LAB_00501a53
     MOV EAX,dword ptr [EBP + 0x18]      ; 00501a56

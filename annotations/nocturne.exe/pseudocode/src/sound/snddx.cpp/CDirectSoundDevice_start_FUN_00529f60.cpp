@@ -17,34 +17,34 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(CDirectSoundDe
   char acStack_330 [400];
   char acStack_1a0 [400];
   
-  if (g_IDirectSoundBuffer_PTR_02dc921c == (IDirectSoundBuffer *)0x0) {
+  if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
     local_338 = 0.05;
   }
   else {
-    g_INT_02dc9238 =
-         ((int)((g_INT_02dc9228 + (g_INT_02dc9228 >> 0x1f) * -8) -
-               (uint)((g_INT_02dc9228 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02dc9234 * g_INT_02dc9230;
-    local_338 = ((double)g_INT_02dc9234 / (double)g_INT_02dc922c) * 0.5;
+    g_StreamBlockSizeBytes =
+         ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+               (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamSamplesPerBlock *
+         g_StreamChannelCount;
+    local_338 = ((double)g_StreamSamplesPerBlock / (double)g_StreamSampleRate) * 0.5;
     iVar4 = 0;
-    g_INT_02dc9240 = 0;
-    if (0 < g_INT_02dc923c) {
+    g_StreamCurrentBlock = 0;
+    if (0 < g_StreamBlockCount) {
       do {
         iVar1 = sound_snddx_cpp_fillStreamBuffer_FUN_00529c10();
         if (iVar1 == 0) goto LAB_0052a05b;
         iVar4 = iVar4 + 1;
-      } while (iVar4 < g_INT_02dc923c);
+      } while (iVar4 < g_StreamBlockCount);
     }
   }
   iVar4 = sound_sndmain_cpp_startSoundThread_FUN_005286d0(local_338);
   if (iVar4 != 0) {
-    if (g_IDirectSoundBuffer_PTR_02dc921c == (IDirectSoundBuffer *)0x0) {
+    if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
       return 1;
     }
-    uVar2 = (*g_IDirectSoundBuffer_PTR_02dc921c->vtable->SetCurrentPosition)
-                      (g_IDirectSoundBuffer_PTR_02dc921c,0);
+    uVar2 = (*g_DirectSoundSecondaryBuffer->vtable->SetCurrentPosition)
+                      (g_DirectSoundSecondaryBuffer,0);
     if (uVar2 == 0) {
-      uVar2 = (*g_IDirectSoundBuffer_PTR_02dc921c->vtable->Play)
-                        (g_IDirectSoundBuffer_PTR_02dc921c,0,0,1);
+      uVar2 = (*g_DirectSoundSecondaryBuffer->vtable->Play)(g_DirectSoundSecondaryBuffer,0,0,1);
       if (uVar2 == 0) {
         return 1;
       }

@@ -2,17 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 255,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 230,
+    "pseudocode_lines": 231,
     "suspect_count": 2,
     "suspect_types": [
       "sign_compare_idiom"
     ],
-    "total_lines": 715
+    "total_lines": 716
   },
   "cross_references": [
     {
@@ -59,7 +59,7 @@
   "globals": [
     {
       "addr": "005be1e4",
-      "name": "INT_005be1e4",
+      "name": "g_MaxViewportScanline",
       "type": "int",
       "value": "0x4b0"
     },
@@ -125,7 +125,7 @@
     },
     {
       "addr": "006b0280",
-      "name": "g_INT_006b0280",
+      "name": "g_CullingMode",
       "type": "int",
       "value": null
     },
@@ -155,25 +155,25 @@
     },
     {
       "addr": "01e52a68",
-      "name": "g_INT_01e52a68",
+      "name": "g_SoftwareEdgeCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e52a6c",
-      "name": "g_SSoftwareEdge_ARRAY_01e52a6c",
+      "name": "g_SoftwareEdgeBuffer",
       "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01e52eec",
-      "name": "g_INT_01e52eec",
+      "name": "g_SoftwareMinScanline",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e52ef0",
-      "name": "g_INT_01e52ef0",
+      "name": "g_SoftwareMaxScanline",
       "type": "int",
       "value": null
     },
@@ -337,15 +337,15 @@
   "suspects": [
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 179,
+      "line": 180,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar13 = SBORROW4(g_INT_01e52eec,INT_005be1e4);",
+      "text": "bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 215,
+      "line": 216,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar13 = SBORROW4(local_1c,iVar9);",

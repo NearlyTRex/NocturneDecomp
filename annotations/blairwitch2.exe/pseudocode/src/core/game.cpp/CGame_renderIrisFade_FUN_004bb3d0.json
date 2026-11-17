@@ -79,13 +79,13 @@
     },
     {
       "addr": "01c2a38c",
-      "name": "g_ARRAY_PTR_01c2a38c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c2a390",
-      "name": "g_ARRAY_PTR_01c2a38c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
@@ -97,25 +97,25 @@
     },
     {
       "addr": "01cb80e0",
-      "name": "g_INT_01cb80e0",
+      "name": "g_IrisFadeType",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb810c",
-      "name": "g_FLOAT_01cb810c",
+      "name": "g_IrisFadeRadius",
       "type": "float",
       "value": null
     },
     {
       "addr": "01cb8110",
-      "name": "g_INT_01cb8110",
+      "name": "g_IrisFadeCenterX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cb8114",
-      "name": "g_INT_01cb8114",
+      "name": "g_IrisFadeCenterY",
       "type": "int",
       "value": null
     }
@@ -237,17 +237,17 @@
     {
       "description": "Complex pointer cast",
       "line": 23,
-      "match": "(int *)((int)g_ARRAY_PTR_01c2a38c",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_ARRAY_PTR_01c2a38c + iVar3);",
+      "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c2a38c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
-      "match": "(int)g_ARRAY_PTR_01c2a38c",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_ARRAY_PTR_01c2a38c + iVar3);",
+      "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_truncation"
     }
   ]

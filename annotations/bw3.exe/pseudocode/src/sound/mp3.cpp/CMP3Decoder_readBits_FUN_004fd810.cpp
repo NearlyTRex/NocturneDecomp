@@ -38,7 +38,8 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004fd810(CMP3Decoder *this_p
     local_14 = (byte)uVar2;
     uVar3 = uVar3 | (((this_ptr->memory_bitstream).frame_buffer
                       [(this_ptr->memory_bitstream).current_dword_index & 0xfff] &
-                     g_UINT_ARRAY_00601580[uVar1]) >> (local_14 & 0x1f)) << ((byte)num_bits & 0x1f);
+                     g_MpegBitMaskTableMultiBit[uVar1]) >> (local_14 & 0x1f)) <<
+                    ((byte)num_bits & 0x1f);
     (this_ptr->memory_bitstream).bits_available = uVar2;
   }
   return uVar3;

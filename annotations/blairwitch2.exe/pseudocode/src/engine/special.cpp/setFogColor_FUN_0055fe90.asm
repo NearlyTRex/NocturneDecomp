@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   int g_INT_01c37788
 ;   void* g_PTR_0264bc1c
-;   int g_INT_0264bce4
-;   int g_INT_0264bce8
-;   int g_INT_0264bcec
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
 ;
 ; *****************************************************************************
 
@@ -30,9 +30,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0055fe95
     MOV ECX,dword ptr [ESP + 0x10]      ; 0055fe99
     MOV EBX,dword ptr [0x01c37788]      ; 0055fe9d | g_INT_01c37788
-    MOV dword ptr [0x0264bce8],EDX      ; 0055fea3 | g_INT_0264bce8
-    MOV dword ptr [0x0264bcec],ECX      ; 0055fea9 | g_INT_0264bcec
-    MOV [0x0264bce4],EAX                ; 0055feaf | g_INT_0264bce4
+    MOV dword ptr [0x0264bce8],EDX      ; 0055fea3 | g_FogColorGreen
+    MOV dword ptr [0x0264bcec],ECX      ; 0055fea9 | g_FogColorBlue
+    MOV [0x0264bce4],EAX                ; 0055feaf | g_FogColorRed
     TEST EBX,EBX                        ; 0055feb4
     JNZ 0x0055febc                      ; 0055feb6
         ;   XREF to: 0055febc (CONDITIONAL_JUMP)  ; LAB_0055febc

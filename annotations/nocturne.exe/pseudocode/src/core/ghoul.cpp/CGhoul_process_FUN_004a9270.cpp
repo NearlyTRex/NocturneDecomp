@@ -670,7 +670,7 @@ LAB_004aa1e6:
               local_2d8.wielder = (CDemonActor *)this_ptr;
               fVar26 = 0.2;
               pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                                  (&local_114,&CVector3f_01c78bcc,
+                                  (&local_114,&g_GhoulOffsetPlusX,
                                    (CMatrix3x4f *)
                                    (this_ptr->base).base.model.bone_transform.bone_model_matrices
                                    [g_INT_01c78c1c].m);
@@ -705,7 +705,7 @@ LAB_004aa1e6:
       }
       this_ptr->is_berserk = 0;
       if (((0 < this_ptr->spasm_count) || (0 < this_ptr->lives_left)) &&
-         (iVar10 = this_ptr->spasm_timer - g_INT_01bd1d80, this_ptr->spasm_timer = iVar10,
+         (iVar10 = this_ptr->spasm_timer - g_GlobalDeltaTimeInt, this_ptr->spasm_timer = iVar10,
          iVar10 < 1)) {
         if (this_ptr->lives_left < 1) {
           this_ptr->spasm_count = this_ptr->spasm_count + -1;
@@ -724,7 +724,7 @@ LAB_004aa1e6:
       }
       if (0 < this_ptr->lives_left) {
         if (this_ptr->arise_timer < 1) {
-          iVar10 = this_ptr->arise_timer + g_INT_01bd1d80;
+          iVar10 = this_ptr->arise_timer + g_GlobalDeltaTimeInt;
           this_ptr->arise_timer = iVar10;
           if (iVar10 < 0) {
             (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
@@ -798,7 +798,7 @@ LAB_004a9eb3:
           }
         }
         else {
-          iVar10 = this_ptr->arise_timer - g_INT_01bd1d80;
+          iVar10 = this_ptr->arise_timer - g_GlobalDeltaTimeInt;
           this_ptr->arise_timer = iVar10;
           if (iVar10 < 1) {
             local_14 = (SMotionTransition *)
@@ -867,7 +867,7 @@ LAB_004aaa0a:
             local_314.wielder = (CDemonActor *)this_ptr;
             fVar26 = 0.4;
             pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                                (local_210,&CVector3f_01c78bc0,
+                                (local_210,&g_GhoulOffsetMinusX,
                                  (CMatrix3x4f *)
                                  (this_ptr->base).base.model.bone_transform.bone_model_matrices
                                  [g_INT_01c78c18].m);
@@ -886,7 +886,7 @@ LAB_004aaa0a:
       break;
     case 0xd:
     case 0xe:
-      iVar10 = this_ptr->burp_timer - g_INT_01bd1d80;
+      iVar10 = this_ptr->burp_timer - g_GlobalDeltaTimeInt;
       this_ptr->burp_timer = iVar10;
       if (iVar10 < 1) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)

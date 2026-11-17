@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 005334a1 (CONDITIONAL_JUMP)  ; LAB_005334a1
     OR byte ptr [ESP + 0xac],0x1        ; 0053335f
         ;   Label: LAB_0053335f
-    CMP dword ptr [0x01fc8e84],0x0      ; 00533367 | g_INT_01fc8e84
+    CMP dword ptr [0x01fc8e84],0x0      ; 00533367 | g_SpotLightCount
         ;   Label: LAB_00533367
     JZ 0x00533378                       ; 0053336e
         ;   XREF to: 00533378 (CONDITIONAL_JUMP)  ; LAB_00533378
@@ -136,7 +136,7 @@ section .text
     PUSH 0x8                            ; 005333f0
     MOV EBP,dword ptr [0x0208f774]      ; 005333f2 | g_INT_0208f774
     PUSH EBP                            ; 005333f8
-    PUSH 0x208f778                      ; 005333f9 | g_SDisplayListSortEntry_ARRAY_0208f778
+    PUSH 0x208f778                      ; 005333f9 | g_SetDisplayListSortBuffer
     CALL crt_stdlib.c__qsort_FUN_005b78b8 ; 005333fe
         ;   XREF to: 005b78b8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005b78b8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV ESI,dword ptr [0x01cedef4]      ; 00533403 | g_INT_01cedef4
@@ -290,10 +290,10 @@ section .text
     FSUB float ptr [ESP + 0x44]         ; 005335e4
     FMUL ST0                            ; 005335e8
     LEA EAX,[EDX + 0x1]                 ; 005335ea
-    MOV dword ptr [EDX*0x8 + 0x208f778],EBX ; 005335ed | g_SDisplayListSortEntry_ARRAY_0208f778
+    MOV dword ptr [EDX*0x8 + 0x208f778],EBX ; 005335ed | g_SetDisplayListSortBuffer
     FADDP                               ; 005335f4
     MOV [0x0208f774],EAX                ; 005335f6 | g_INT_0208f774
-    FSTP float ptr [EDX*0x8 + 0x208f77c] ; 005335fb | g_SDisplayListSortEntry_ARRAY_0208f778[0].distance_sq
+    FSTP float ptr [EDX*0x8 + 0x208f77c] ; 005335fb | g_SetDisplayListSortBuffer[0].distance_sq
     JMP 0x005333c8                      ; 00533602
         ;   XREF to: 005333c8 (UNCONDITIONAL_JUMP)  ; LAB_005333c8
     MOV EAX,dword ptr [ESP + 0xd8]      ; 00533607

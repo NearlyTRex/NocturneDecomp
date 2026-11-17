@@ -123,7 +123,7 @@ LAB_0049e569:
       dVar7 = round((double)this_ptr->anim_frame);
       local_1c = (float)(int)ROUND(dVar7);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-                (g_CDemonRenderer_PTR_005f2afc,g_SMRGLTextureBasic_ARRAY_005fd60c + (int)local_1c);
+                (g_CDemonRenderer_PTR_005f2afc,g_FireEffectLightningBoltTextures + (int)local_1c);
     }
   }
   iVar2 = this_ptr->flame_style;
@@ -244,9 +244,9 @@ LAB_0049e569:
     fStack_3c = SQRT(local_58 * local_58 + fStack_60 * fStack_60 + local_5c * local_5c);
     fVar12 = 6.2831855;
     fVar11 = 0.0;
-    local_110[2] = g_CVector3f_02cfd900.x;
+    local_110[2] = g_ZeroVector.x;
     local_1c = local_5c;
-    local_110[(uint)bVar4 * -2 + 3] = *(float *)((int)&g_CVector3f_02cfd900 + (uint)bVar4 * -8 + 4);
+    local_110[(uint)bVar4 * -2 + 3] = *(float *)((int)&g_ZeroVector + (uint)bVar4 * -8 + 4);
     local_110[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          *(float *)((uint)bVar4 * -8 + 0x2cfd908 + (uint)bVar4 * -8);
     local_188.base.type = (int)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(fVar11,fVar12);

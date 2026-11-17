@@ -16,7 +16,7 @@
 ;   int g_RelativeZ
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_INT_01cc5174
+;   int g_MatrixStackIndex
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -29,7 +29,7 @@ section .text
         ;   Label: engine_matrix.c_pushMatrixRelativeOffset_FUN_004ceae0
     PUSH ESI                            ; 004ceae1
     PUSH EBP                            ; 004ceae2
-    MOV EAX,[0x01cc5174]                ; 004ceae3 | g_INT_01cc5174
+    MOV EAX,[0x01cc5174]                ; 004ceae3 | g_MatrixStackIndex
     MOV EDX,dword ptr [0x01c039b8]      ; 004ceae8 | g_RelativeX
     MOV ECX,dword ptr [0x01c039bc]      ; 004ceaee | g_RelativeY
     MOV dword ptr [EAX*0x4 + 0x1cc52e0],EDX ; 004ceaf4
@@ -37,14 +37,14 @@ section .text
     MOV EBX,dword ptr [0x01c039c0]      ; 004ceb01 | g_RelativeZ
     MOV dword ptr [EAX*0x4 + 0x1cc5308],EDX ; 004ceb07
     MOV EDX,dword ptr [0x01c039c0]      ; 004ceb0e | g_RelativeZ
-    MOV ESI,dword ptr [0x01cc5174]      ; 004ceb14 | g_INT_01cc5174
+    MOV ESI,dword ptr [0x01cc5174]      ; 004ceb14 | g_MatrixStackIndex
     MOV dword ptr [EAX*0x4 + 0x1cc5330],EDX ; 004ceb1a
     MOV EAX,dword ptr [ESP + 0x10]      ; 004ceb21
     MOV EDX,dword ptr [0x01c039b8]      ; 004ceb25 | g_RelativeX
     INC ESI                             ; 004ceb2b
     SUB EDX,EAX                         ; 004ceb2c
     MOV EAX,dword ptr [ESP + 0x14]      ; 004ceb2e
-    MOV dword ptr [0x01cc5174],ESI      ; 004ceb32 | g_INT_01cc5174
+    MOV dword ptr [0x01cc5174],ESI      ; 004ceb32 | g_MatrixStackIndex
     SUB ECX,EAX                         ; 004ceb38
     MOV EAX,dword ptr [ESP + 0x18]      ; 004ceb3a
     MOV dword ptr [0x01c039b8],EDX      ; 004ceb3e | g_RelativeX

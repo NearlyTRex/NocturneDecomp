@@ -14,14 +14,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_0055b700(CDirec
   char acStack_1f4 [400];
   DSCAPS DStack_64;
   
-  if (g_IDirectSound_PTR_02cf49c4 == (IDirectSound *)0x0) {
+  if (g_DirectSound == (IDirectSound *)0x0) {
     iVar1 = 0;
   }
-  else if (g_IDirectSound3DListener_PTR_02cf49d0 == (IDirectSound3DListener *)0x0) {
+  else if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
     memset(&DStack_64,0,0x60);
     DStack_64.dwSize = 0x60;
-    error_code = (*g_IDirectSound_PTR_02cf49c4->vtable->GetCaps)
-                           (g_IDirectSound_PTR_02cf49c4,&DStack_64);
+    error_code = (*g_DirectSound->vtable->GetCaps)(g_DirectSound,&DStack_64);
     if (error_code != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(error_code);
       _sprintf(acStack_1f4,"DirectSux: Unable to %s.  (%s)");

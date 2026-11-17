@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
-;   uint g_UINT_005fba34 = 0x5
+;   uint g_CPUFamily = 0x5
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     MOV EBP,ESP                         ; 00434b31
     PUSH ESI                            ; 00434b33
     PUSH EDI                            ; 00434b34
-    CMP dword ptr [0x005fba34],0x6      ; 00434b35 | g_UINT_005fba34
+    CMP dword ptr [0x005fba34],0x6      ; 00434b35 | g_CPUFamily
     JNC 0x00434ba9                      ; 00434b3c
         ;   XREF to: 00434ba9 (CONDITIONAL_JUMP)  ; LAB_00434ba9
     PUSH EAX                            ; 00434b3e

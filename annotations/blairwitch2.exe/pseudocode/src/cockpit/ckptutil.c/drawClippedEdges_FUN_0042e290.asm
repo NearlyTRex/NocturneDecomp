@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;   int g_INT_01c35e60
 ;
@@ -47,7 +47,7 @@ section .text
     JGE 0x0042e2cb                      ; 0042e2c7
         ;   XREF to: 0042e2cb (CONDITIONAL_JUMP)  ; LAB_0042e2cb
     MOV ECX,EAX                         ; 0042e2c9
-    MOV EDX,dword ptr [0x01c35e50]      ; 0042e2cb | g_INT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 0042e2cb | g_ClipRight
         ;   Label: LAB_0042e2cb
     CMP ECX,EDX                         ; 0042e2d1
     JL 0x0042e2d7                       ; 0042e2d3
@@ -79,7 +79,7 @@ section .text
     JGE 0x0042e313                      ; 0042e30f
         ;   XREF to: 0042e313 (CONDITIONAL_JUMP)  ; LAB_0042e313
     MOV ESI,EAX                         ; 0042e311
-    MOV EBP,dword ptr [0x01c35e50]      ; 0042e313 | g_INT_01c35e50
+    MOV EBP,dword ptr [0x01c35e50]      ; 0042e313 | g_ClipRight
         ;   Label: LAB_0042e313
     CMP ESI,EBP                         ; 0042e319
     JL 0x0042e31f                       ; 0042e31b

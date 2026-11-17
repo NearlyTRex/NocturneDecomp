@@ -54,7 +54,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   SMRGLTextureBasic g_LoadingMoonGlowTexture
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   CBitFont* g_CBitFont_PTR_014b9900
+;   CBitFont* g_ThemeFont
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.rendering_mode
@@ -415,7 +415,7 @@ section .text
     MOV EAX,[0x005be368]                ; 004c5e21 | g_CDemonSetPtr
         ;   Label: LAB_004c5e21
     MOV dword ptr [EAX + 0x15aa88],0x0  ; 004c5e26 | g_CDemonSetInstance.rendering_mode
-    MOV EAX,[0x014b9900]                ; 004c5e30 | g_CBitFont_PTR_014b9900
+    MOV EAX,[0x014b9900]                ; 004c5e30 | g_ThemeFont
     MOV EDX,dword ptr [0x005b761c]      ; 004c5e35 | g_WindowWidth
     MOV dword ptr [ESP + 0x7c],EAX      ; 004c5e3b
     LEA EAX,[EDX*0x8 + 0x0]             ; 004c5e3f

@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CDemonSet g_CDemonSetInstance
@@ -108,7 +108,7 @@ section .text
     ADD EBX,0x20                        ; 0049febc
     LEA EDI,[EBP + -0xc]                ; 0049febf
     PUSH EBX                            ; 0049fec2
-    MOV ECX,dword ptr [0x0061c010]      ; 0049fec3 | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 0049fec3 | g_CFireEffectPtr
     LEA ESI,[EBP + -0x24]               ; 0049fec9
     PUSH ECX                            ; 0049fecc
     MOVSD ES:EDI,ESI                    ; 0049fecd

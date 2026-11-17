@@ -11,19 +11,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005dc89d
 ;   TerminatedCString s_s_3D_Window_unbalance_005dc8b0
-;   int g_INT_006141e4 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e40
 ;   int g_INT_01c35e44
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
-;   int g_INT_01c38b78
-;   int g_INT_01c38b7c
-;   int g_INT_01c38b80
-;   int g_INT_01c38b84
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
+;   int g_CameraRotationPitch
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -33,33 +33,33 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01d05270]      ; 004ea570 | g_INT_01d05270
+    MOV EDX,dword ptr [0x01d05270]      ; 004ea570 | g_ViewportStackIndex
         ;   Label: engine_matrix.c_popViewport_FUN_004ea570
     DEC EDX                             ; 004ea576
-    MOV dword ptr [0x01d05270],EDX      ; 004ea577 | g_INT_01d05270
+    MOV dword ptr [0x01d05270],EDX      ; 004ea577 | g_ViewportStackIndex
     TEST EDX,EDX                        ; 004ea57d
     JL 0x004ea674                       ; 004ea57f
         ;   XREF to: 004ea674 (CONDITIONAL_JUMP)  ; LAB_004ea674
-    MOV EAX,[0x01d05270]                ; 004ea585 | g_INT_01d05270
+    MOV EAX,[0x01d05270]                ; 004ea585 | g_ViewportStackIndex
         ;   Label: LAB_004ea585
     MOV EDX,dword ptr [EAX*0x4 + 0x1d0533c] ; 004ea58a
-    MOV dword ptr [0x01c38b78],EDX      ; 004ea591 | g_INT_01c38b78
+    MOV dword ptr [0x01c38b78],EDX      ; 004ea591 | g_CameraOriginX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05364] ; 004ea597
-    MOV dword ptr [0x01c38b7c],EDX      ; 004ea59e | g_INT_01c38b7c
+    MOV dword ptr [0x01c38b7c],EDX      ; 004ea59e | g_CameraOriginY
     MOV EDX,dword ptr [EAX*0x4 + 0x1d0538c] ; 004ea5a4
-    MOV dword ptr [0x01c38b80],EDX      ; 004ea5ab | g_INT_01c38b80
+    MOV dword ptr [0x01c38b80],EDX      ; 004ea5ab | g_CameraOriginZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1d053b4] ; 004ea5b1
-    MOV dword ptr [0x01c38b84],EDX      ; 004ea5b8 | g_INT_01c38b84
+    MOV dword ptr [0x01c38b84],EDX      ; 004ea5b8 | g_CameraRotationPitch
     MOV EDX,dword ptr [EAX*0x4 + 0x1d053dc] ; 004ea5be
-    MOV dword ptr [0x01c38b88],EDX      ; 004ea5c5 | g_INT_01c38b88
+    MOV dword ptr [0x01c38b88],EDX      ; 004ea5c5 | g_CameraRotationYaw
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05404] ; 004ea5cb
-    MOV dword ptr [0x01c38b8c],EDX      ; 004ea5d2 | g_INT_01c38b8c
+    MOV dword ptr [0x01c38b8c],EDX      ; 004ea5d2 | g_CameraRotationRoll
     MOV EDX,dword ptr [EAX*0x4 + 0x1d0542c] ; 004ea5d8
-    MOV dword ptr [0x01c38b90],EDX      ; 004ea5df | g_INT_01c38b90
+    MOV dword ptr [0x01c38b90],EDX      ; 004ea5df | g_LightDirectionX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05454] ; 004ea5e5
-    MOV dword ptr [0x01c38b94],EDX      ; 004ea5ec | g_INT_01c38b94
+    MOV dword ptr [0x01c38b94],EDX      ; 004ea5ec | g_LightDirectionY
     MOV EDX,dword ptr [EAX*0x4 + 0x1d0547c] ; 004ea5f2
-    MOV dword ptr [0x01c38b98],EDX      ; 004ea5f9 | g_INT_01c38b98
+    MOV dword ptr [0x01c38b98],EDX      ; 004ea5f9 | g_LightDirectionZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05274] ; 004ea5ff
     MOV dword ptr [0x01c35e38],EDX      ; 004ea606 | g_INT_01c35e38
     MOV EDX,dword ptr [EAX*0x4 + 0x1d0529c] ; 004ea60c
@@ -69,11 +69,11 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1d052ec] ; 004ea626
     MOV dword ptr [0x01c35e44],EDX      ; 004ea62d | g_INT_01c35e44
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05314] ; 004ea633
-    MOV dword ptr [0x006141e4],EDX      ; 004ea63a | g_INT_006141e4
+    MOV dword ptr [0x006141e4],EDX      ; 004ea63a | g_ProjectionScale
     MOV EDX,dword ptr [EAX*0x4 + 0x1d054a4] ; 004ea640
     MOV dword ptr [0x01c35e48],EDX      ; 004ea647 | g_INT_01c35e48
     MOV EDX,dword ptr [EAX*0x4 + 0x1d054cc] ; 004ea64d
-    MOV dword ptr [0x01c35e50],EDX      ; 004ea654 | g_INT_01c35e50
+    MOV dword ptr [0x01c35e50],EDX      ; 004ea654 | g_ClipRight
     MOV EDX,dword ptr [EAX*0x4 + 0x1d054f4] ; 004ea65a
     MOV EAX,dword ptr [EAX*0x4 + 0x1d0551c] ; 004ea661
     MOV dword ptr [0x01c35e4c],EDX      ; 004ea668 | g_INT_01c35e4c

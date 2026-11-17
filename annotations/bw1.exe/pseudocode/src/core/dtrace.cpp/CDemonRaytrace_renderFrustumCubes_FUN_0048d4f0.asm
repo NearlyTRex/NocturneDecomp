@@ -110,12 +110,12 @@
 ;   double g_DOUBLE_005db9cc = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0061255c = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01bef208
-;   int g_INT_01bef20c
-;   int g_INT_01bef210
-;   int g_INT_01bef214
-;   int g_INT_01bef218
-;   int g_INT_01bef21c
+;   int g_CubesTestedCount
+;   int g_CubesWithVoxelsCount
+;   int g_CubesVisibleCount
+;   int g_CubesRenderedCount
+;   int g_PVSDrawnCubeCount
+;   int g_PVSReadyFlag
 ;   int g_INT_01d1dd18
 ;   int g_INT_01d1dd1c
 ;   int g_INT_01d1dd20
@@ -143,7 +143,7 @@ section .text
     SUB ESP,0x19c                       ; 0048d4f6
     AND ESP,0xfffffff8                  ; 0048d4fc
     MOV EBX,dword ptr [EBP + 0x14]      ; 0048d4ff
-    CMP dword ptr [0x01bef21c],0x0      ; 0048d502 | g_INT_01bef21c
+    CMP dword ptr [0x01bef21c],0x0      ; 0048d502 | g_PVSReadyFlag
     JZ 0x0048d515                       ; 0048d509
         ;   XREF to: 0048d515 (CONDITIONAL_JUMP)  ; LAB_0048d515
     CMP dword ptr [EBP + 0x1c],0x0      ; 0048d50b
@@ -151,11 +151,11 @@ section .text
         ;   XREF to: 0048de21 (CONDITIONAL_JUMP)  ; LAB_0048de21
     XOR ESI,ESI                         ; 0048d515
         ;   Label: LAB_0048d515
-    MOV dword ptr [0x01bef208],ESI      ; 0048d517 | g_INT_01bef208
-    MOV dword ptr [0x01bef20c],ESI      ; 0048d51d | g_INT_01bef20c
-    MOV dword ptr [0x01bef210],ESI      ; 0048d523 | g_INT_01bef210
-    MOV dword ptr [0x01bef214],ESI      ; 0048d529 | g_INT_01bef214
-    MOV dword ptr [0x01bef218],ESI      ; 0048d52f | g_INT_01bef218
+    MOV dword ptr [0x01bef208],ESI      ; 0048d517 | g_CubesTestedCount
+    MOV dword ptr [0x01bef20c],ESI      ; 0048d51d | g_CubesWithVoxelsCount
+    MOV dword ptr [0x01bef210],ESI      ; 0048d523 | g_CubesVisibleCount
+    MOV dword ptr [0x01bef214],ESI      ; 0048d529 | g_CubesRenderedCount
+    MOV dword ptr [0x01bef218],ESI      ; 0048d52f | g_PVSDrawnCubeCount
     MOV ESI,dword ptr [0x0061255c]      ; 0048d535 | g_CDemonRenderer_PTR_0061255c
     PUSH ESI                            ; 0048d53b | g_CDemonRenderer_01bc120c
     LEA ESI,[ESP + 0x58]                ; 0048d53c
@@ -557,7 +557,7 @@ section .text
     MOV EDI,dword ptr [0x0061255c]      ; 0048da65 | g_CDemonRenderer_PTR_0061255c
     XOR ESI,ESI                         ; 0048da6b
     PUSH EDI                            ; 0048da6d | g_CDemonRenderer_01bc120c
-    MOV dword ptr [0x01e7dac8],ESI      ; 0048da6e | g_INT_01e7dac8
+    MOV dword ptr [0x01e7dac8],ESI      ; 0048da6e | g_RenderedTriangleCount
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780 ; 0048da74
         ;   XREF to: 00483780 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 0048da79
@@ -889,7 +889,7 @@ section .text
     CMP EDI,ESI                         ; 0048de08
     JGE 0x0048dcb4                      ; 0048de0a
         ;   XREF to: 0048dcb4 (CONDITIONAL_JUMP)  ; LAB_0048dcb4
-    MOV dword ptr [0x01bef21c],0x1      ; 0048de10 | g_INT_01bef21c
+    MOV dword ptr [0x01bef21c],0x1      ; 0048de10 | g_PVSReadyFlag
         ;   Label: LAB_0048de10
     MOV ESP,EBP                         ; 0048de1a
     POP EBP                             ; 0048de1c

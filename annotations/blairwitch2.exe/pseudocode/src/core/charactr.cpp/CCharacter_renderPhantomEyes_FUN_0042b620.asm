@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -77,7 +77,7 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0042b68d
     PUSH EAX                            ; 0042b691
     LEA EDI,[ESP + 0x54]                ; 0042b692
-    PUSH 0x265370c                      ; 0042b696 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042b696 | g_ZeroVector
     MOV ECX,dword ptr [0x0060b280]      ; 0042b69b | g_CDemonRenderer_PTR_0060b280
     LEA ESI,[ESP + 0x64]                ; 0042b6a1
     PUSH ECX                            ; 0042b6a5 | g_CDemonRenderer_01ba5c50
@@ -104,7 +104,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 0042b6dc
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0042b6e1
-    PUSH 0x265370c                      ; 0042b6e4 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042b6e4 | g_ZeroVector
     PUSH EBX                            ; 0042b6e9
     CALL core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760 ; 0042b6ea
         ;   XREF to: 0042b760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter * this_ptr, CVector3f * eye_position)
@@ -123,7 +123,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 0042b715
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0042b71a
-    PUSH 0x265370c                      ; 0042b71d | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042b71d | g_ZeroVector
     PUSH EBX                            ; 0042b722
     CALL core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760 ; 0042b723
         ;   XREF to: 0042b760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter * this_ptr, CVector3f * eye_position)

@@ -40,19 +40,18 @@ LAB_004e8153:
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_setCursorPosition_FUN_005809d0
             ((int)(((longlong)(g_INT_005fba18 + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
-             g_INT_01c5fae0);
+             g_MouseY);
   pCVar6 = (CKeys *)0x0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(g_CEditorToolsPtr);
-    if ((CKeys *)g_INT_01c5fadc != pCVar6) {
-      iVar3 = (int)(((longlong)g_INT_01c5fadc * 0x3c000) / (longlong)(g_INT_005fba18 + -1)) + 0x4000
-      ;
+    if ((CKeys *)g_MouseX != pCVar6) {
+      iVar3 = (int)(((longlong)g_MouseX * 0x3c000) / (longlong)(g_INT_005fba18 + -1)) + 0x4000;
     }
-    iVar1 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD4);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar1 != 0) {
       iVar3 = iVar3 + -700;
     }
-    iVar1 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD6);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar1 != 0) {
       iVar3 = iVar3 + 700;
     }
@@ -80,13 +79,12 @@ LAB_004e8153:
               (g_CBitFont_PTR_01c5b0e0,g_INT_01c6b5a8,g_INT_01c6b5b0,(iVar2 - iVar1) / 2,iVar4,iVar5
                ,format_string);
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-    pCVar6 = g_CKeys_PTR_00600284;
-    iVar1 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+    pCVar6 = g_CKeysPtr;
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar1 != 0) goto LAB_004e8325;
-    iVar1 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_RETURN);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   } while ((iVar1 == 0) &&
-          (iVar1 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                             (g_CKeys_PTR_00600284,DIM_LBUTTON), iVar1 == 0));
+          (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;
 LAB_004e8325:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(g_CEditorToolsPtr);

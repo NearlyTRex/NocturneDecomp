@@ -23,17 +23,17 @@
 ;   TerminatedCString s_queuePop_empty_queue_0058cc80
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_INT_01e312f4
-;   int g_INT_01e3161c
-;   int g_INT_01e31620
-;   int g_INT_01e31624
-;   int g_INT_01e31628
-;   CPathQueueNode[5000] g_CPathQueueNode_ARRAY_01e3162c
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[0].cost
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[0].z
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[1].x
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[1].cost
-;   undefined4 g_CPathQueueNode_ARRAY_01e3162c[1].z
+;   int g_PathfindingMaxClimbHeight
+;   int g_PathfindingCurrentX
+;   int g_PathfindingCurrentZ
+;   int g_PathfindingDestX
+;   int g_PathfindingDestZ
+;   CPathQueueNode[5000] g_PathfindingQueue
+;   undefined4 g_PathfindingQueue[0].cost
+;   undefined4 g_PathfindingQueue[0].z
+;   undefined4 g_PathfindingQueue[1].x
+;   undefined4 g_PathfindingQueue[1].cost
+;   undefined4 g_PathfindingQueue[1].z
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -51,61 +51,61 @@ section .text
     PUSH EDI                            ; 004f20a2
     PUSH EBP                            ; 004f20a3
     SUB ESP,0x18                        ; 004f20a4
-    MOV EBX,dword ptr [0x01e40090]      ; 004f20a7 | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e40090]      ; 004f20a7 | g_PathfindingQueueTail
     PUSH 0x2774                         ; 004f20ad
     PUSH 0x0                            ; 004f20b2
     PUSH 0x1e40098                      ; 004f20b4
     MOV ESI,0x1                         ; 004f20b9
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004f20be
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
-    MOV ECX,dword ptr [0x01e3161c]      ; 004f20c3 | g_INT_01e3161c
-    MOV EBX,dword ptr [0x01e31620]      ; 004f20c9 | g_INT_01e31620
+    MOV ECX,dword ptr [0x01e3161c]      ; 004f20c3 | g_PathfindingCurrentX
+    MOV EBX,dword ptr [0x01e31620]      ; 004f20c9 | g_PathfindingCurrentZ
     ADD ESP,0xc                         ; 004f20cf
-    MOV dword ptr [0x01e4280c],ESI      ; 004f20d2 | g_INT_01e4280c
+    MOV dword ptr [0x01e4280c],ESI      ; 004f20d2 | g_PathfindingNodesExpanded
     XOR EDX,EDX                         ; 004f20d8
     LEA EAX,[EBX*0x4 + 0x0]             ; 004f20da
-    MOV dword ptr [0x01e4008c],EDX      ; 004f20e1 | g_INT_01e4008c
+    MOV dword ptr [0x01e4008c],EDX      ; 004f20e1 | g_PathfindingQueueHead
     SUB EAX,EBX                         ; 004f20e7
     MOV dword ptr [ESP + 0x4],ESI       ; 004f20e9
     SHL EAX,0x3                         ; 004f20ed
-    MOV dword ptr [0x01e3162c],ECX      ; 004f20f0 | g_CPathQueueNode_ARRAY_01e3162c
+    MOV dword ptr [0x01e3162c],ECX      ; 004f20f0 | g_PathfindingQueue
     ADD EAX,EBX                         ; 004f20f6
     MOV DL,byte ptr [ESP + 0x4]         ; 004f20f8
-    MOV dword ptr [0x01e31634],EBX      ; 004f20fc | g_CPathQueueNode_ARRAY_01e3162c[0].z
+    MOV dword ptr [0x01e31634],EBX      ; 004f20fc | g_PathfindingQueue[0].z
     MOV byte ptr [ECX + EAX*0x4 + 0x1e40098],DL ; 004f2102
     MOV EAX,dword ptr [ESP + 0x30]      ; 004f2109
     MOV EBX,ESI                         ; 004f210d
-    MOV [0x01e31630],EAX                ; 004f210f | g_CPathQueueNode_ARRAY_01e3162c[0].cost
-    IMUL EAX,dword ptr [0x01e31628],0x64 ; 004f2114 | g_INT_01e31628
+    MOV [0x01e31630],EAX                ; 004f210f | g_PathfindingQueue[0].cost
+    IMUL EAX,dword ptr [0x01e31628],0x64 ; 004f2114 | g_PathfindingDestZ
         ;   Label: LAB_004f2114
-    ADD EAX,dword ptr [0x01e31624]      ; 004f211b | g_INT_01e31624
+    ADD EAX,dword ptr [0x01e31624]      ; 004f211b | g_PathfindingDestX
     CMP byte ptr [EAX + 0x1e40098],0x0  ; 004f2121
     JNZ 0x004f2259                      ; 004f2128
         ;   XREF to: 004f2259 (CONDITIONAL_JUMP)  ; LAB_004f2259
     LEA ESI,[ESP + 0xc]                 ; 004f212e
     LEA EBP,[ESP + 0x10]                ; 004f2132
     LEA EDI,[ESP + 0x8]                 ; 004f2136
-    MOV EAX,[0x01e4008c]                ; 004f213a | g_INT_01e4008c
-    MOV dword ptr [0x01e40090],EBX      ; 004f213f | g_INT_01e40090
+    MOV EAX,[0x01e4008c]                ; 004f213a | g_PathfindingQueueHead
+    MOV dword ptr [0x01e40090],EBX      ; 004f213f | g_PathfindingQueueTail
     CMP EAX,EBX                         ; 004f2145
     JZ 0x004f2260                       ; 004f2147
         ;   XREF to: 004f2260 (CONDITIONAL_JUMP)  ; LAB_004f2260
-    IMUL EAX,dword ptr [0x01e4008c],0xc ; 004f214d | g_INT_01e4008c
+    IMUL EAX,dword ptr [0x01e4008c],0xc ; 004f214d | g_PathfindingQueueHead
         ;   Label: LAB_004f214d
-    MOV EDX,dword ptr [EAX + 0x1e3162c] ; 004f2154 | g_CPathQueueNode_ARRAY_01e3162c | g_CPathQueueNode_ARRAY_01e3162c[1].x
+    MOV EDX,dword ptr [EAX + 0x1e3162c] ; 004f2154 | g_PathfindingQueue | g_PathfindingQueue[1].x
     MOV dword ptr [EDI],EDX             ; 004f215a
-    MOV EDX,dword ptr [EAX + 0x1e31630] ; 004f215c | g_CPathQueueNode_ARRAY_01e3162c[0].cost | g_CPathQueueNode_ARRAY_01e3162c[1].cost
-    MOV ECX,dword ptr [0x01e4008c]      ; 004f2162 | g_INT_01e4008c
+    MOV EDX,dword ptr [EAX + 0x1e31630] ; 004f215c | g_PathfindingQueue[0].cost | g_PathfindingQueue[1].cost
+    MOV ECX,dword ptr [0x01e4008c]      ; 004f2162 | g_PathfindingQueueHead
     MOV dword ptr [ESI],EDX             ; 004f2168
     INC ECX                             ; 004f216a
-    MOV EAX,dword ptr [EAX + 0x1e31634] ; 004f216b | g_CPathQueueNode_ARRAY_01e3162c[0].z | g_CPathQueueNode_ARRAY_01e3162c[1].z
-    MOV dword ptr [0x01e4008c],ECX      ; 004f2171 | g_INT_01e4008c
+    MOV EAX,dword ptr [EAX + 0x1e31634] ; 004f216b | g_PathfindingQueue[0].z | g_PathfindingQueue[1].z
+    MOV dword ptr [0x01e4008c],ECX      ; 004f2171 | g_PathfindingQueueHead
     MOV dword ptr [EBP],EAX             ; 004f2177
     CMP ECX,0x1388                      ; 004f217a
     JL 0x004f218a                       ; 004f2180
         ;   XREF to: 004f218a (CONDITIONAL_JUMP)  ; LAB_004f218a
     XOR EDI,EDI                         ; 004f2182
-    MOV dword ptr [0x01e4008c],EDI      ; 004f2184 | g_INT_01e4008c
+    MOV dword ptr [0x01e4008c],EDI      ; 004f2184 | g_PathfindingQueueHead
     MOV EBP,dword ptr [ESP + 0xc]       ; 004f218a
         ;   Label: LAB_004f218a
     PUSH EBP                            ; 004f218e
@@ -157,7 +157,7 @@ section .text
     PUSH ECX                            ; 004f21fb
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f21fc
         ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
-    MOV EDX,dword ptr [0x01e3161c]      ; 004f2201 | g_INT_01e3161c
+    MOV EDX,dword ptr [0x01e3161c]      ; 004f2201 | g_PathfindingCurrentX
     ADD ESP,0x10                        ; 004f2207
     MOV ECX,EAX                         ; 004f220a
     CMP EDX,dword ptr [ESP + 0x8]       ; 004f220c
@@ -165,24 +165,24 @@ section .text
         ;   XREF to: 004f2287 (CONDITIONAL_JUMP)  ; LAB_004f2287
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f2212
         ;   Label: LAB_004f2212
-    CMP EAX,dword ptr [0x01e31624]      ; 004f2216 | g_INT_01e31624
+    CMP EAX,dword ptr [0x01e31624]      ; 004f2216 | g_PathfindingDestX
     JZ 0x004f24e5                       ; 004f221c
         ;   XREF to: 004f24e5 (CONDITIONAL_JUMP)  ; LAB_004f24e5
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f2222
         ;   Label: LAB_004f2222
-    MOV EDX,dword ptr [0x01e312f4]      ; 004f2226 | g_INT_01e312f4
+    MOV EDX,dword ptr [0x01e312f4]      ; 004f2226 | g_PathfindingMaxClimbHeight
     SUB EAX,EBP                         ; 004f222c
     CMP EAX,EDX                         ; 004f222e
     JL 0x004f24fa                       ; 004f2230
         ;   XREF to: 004f24fa (CONDITIONAL_JUMP)  ; LAB_004f24fa
-    MOV EBX,dword ptr [0x01e40090]      ; 004f2236 | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e40090]      ; 004f2236 | g_PathfindingQueueTail
         ;   Label: LAB_004f2236
-    MOV EAX,[0x01e4008c]                ; 004f223c | g_INT_01e4008c
+    MOV EAX,[0x01e4008c]                ; 004f223c | g_PathfindingQueueHead
     CMP EAX,EBX                         ; 004f2241
     JNZ 0x004f2114                      ; 004f2243
         ;   XREF to: 004f2114 (CONDITIONAL_JUMP)  ; LAB_004f2114
     XOR EAX,EBX                         ; 004f2249
-    MOV dword ptr [0x01e40090],EBX      ; 004f224b | g_INT_01e40090
+    MOV dword ptr [0x01e40090],EBX      ; 004f224b | g_PathfindingQueueTail
         ;   Label: LAB_004f224b
     ADD ESP,0x18                        ; 004f2251
     POP EBP                             ; 004f2254
@@ -207,7 +207,7 @@ section .text
         ;   XREF to: 004f214d (UNCONDITIONAL_JUMP)  ; LAB_004f214d
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f2287
         ;   Label: LAB_004f2287
-    CMP EAX,dword ptr [0x01e31620]      ; 004f228b | g_INT_01e31620
+    CMP EAX,dword ptr [0x01e31620]      ; 004f228b | g_PathfindingCurrentZ
     JNZ 0x004f2212                      ; 004f2291
         ;   XREF to: 004f2212 (CONDITIONAL_JUMP)  ; LAB_004f2212
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f2297
@@ -227,7 +227,7 @@ section .text
     CDQ                                 ; 004f22c1
     XOR EAX,EDX                         ; 004f22c2
     SUB EAX,EDX                         ; 004f22c4
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f22c6 | g_INT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f22c6 | g_PathfindingMaxClimbHeight
     JGE 0x004f2330                      ; 004f22cc
         ;   XREF to: 004f2330 (CONDITIONAL_JUMP)  ; LAB_004f2330
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f22ce
@@ -236,24 +236,24 @@ section .text
     IMUL EAX,EAX,0x64                   ; 004f22d7
     ADD EAX,dword ptr [ESP + 0x8]       ; 004f22da
     MOV EDX,0x1                         ; 004f22de
-    MOV EBX,dword ptr [0x01e40090]      ; 004f22e3 | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e40090]      ; 004f22e3 | g_PathfindingQueueTail
     MOV byte ptr [EAX + 0x1e40098],DL   ; 004f22e9
     IMUL EDX,EBX,0xc                    ; 004f22ef
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f22f2
-    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f22f6 | g_CPathQueueNode_ARRAY_01e3162c[1].x
+    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f22f6 | g_PathfindingQueue[1].x
     INC EBX                             ; 004f22fc
-    MOV dword ptr [EDX + 0x1e31630],EBP ; 004f22fd | g_CPathQueueNode_ARRAY_01e3162c[1].cost
+    MOV dword ptr [EDX + 0x1e31630],EBP ; 004f22fd | g_PathfindingQueue[1].cost
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f2303
-    MOV EBP,dword ptr [0x01e4280c]      ; 004f2307 | g_INT_01e4280c
-    MOV dword ptr [0x01e40090],EBX      ; 004f230d | g_INT_01e40090
+    MOV EBP,dword ptr [0x01e4280c]      ; 004f2307 | g_PathfindingNodesExpanded
+    MOV dword ptr [0x01e40090],EBX      ; 004f230d | g_PathfindingQueueTail
     INC EBP                             ; 004f2313
-    MOV dword ptr [EDX + 0x1e31634],EAX ; 004f2314 | g_CPathQueueNode_ARRAY_01e3162c[1].z
-    MOV dword ptr [0x01e4280c],EBP      ; 004f231a | g_INT_01e4280c
+    MOV dword ptr [EDX + 0x1e31634],EAX ; 004f2314 | g_PathfindingQueue[1].z
+    MOV dword ptr [0x01e4280c],EBP      ; 004f231a | g_PathfindingNodesExpanded
     CMP EBX,0x1388                      ; 004f2320
     JL 0x004f2330                       ; 004f2326
         ;   XREF to: 004f2330 (CONDITIONAL_JUMP)  ; LAB_004f2330
     XOR EBX,EBX                         ; 004f2328
-    MOV dword ptr [0x01e40090],EBX      ; 004f232a | g_INT_01e40090
+    MOV dword ptr [0x01e40090],EBX      ; 004f232a | g_PathfindingQueueTail
     CMP dword ptr [ESP + 0x8],0x63      ; 004f2330
         ;   Label: LAB_004f2330
     JGE 0x004f23b7                      ; 004f2335
@@ -269,7 +269,7 @@ section .text
     CDQ                                 ; 004f2355
     XOR EAX,EDX                         ; 004f2356
     SUB EAX,EDX                         ; 004f2358
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f235a | g_INT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f235a | g_PathfindingMaxClimbHeight
     JGE 0x004f23b7                      ; 004f2360
         ;   XREF to: 004f23b7 (CONDITIONAL_JUMP)  ; LAB_004f23b7
     MOV EBP,dword ptr [ESP + 0x10]      ; 004f2362
@@ -277,22 +277,22 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f2369
     MOV EDX,0x3                         ; 004f236d
     MOV byte ptr [EBX + EAX*0x1 + 0x1e40099],DL ; 004f2372
-    MOV EBX,dword ptr [0x01e40090]      ; 004f2379 | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e40090]      ; 004f2379 | g_PathfindingQueueTail
     IMUL EDX,EBX,0xc                    ; 004f237f
     INC EAX                             ; 004f2382
-    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f2383 | g_CPathQueueNode_ARRAY_01e3162c[2].x
+    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f2383 | g_PathfindingQueue[2].x
     INC EBX                             ; 004f2389
-    MOV dword ptr [EDX + 0x1e31630],EDI ; 004f238a | g_CPathQueueNode_ARRAY_01e3162c[2].cost
-    MOV EAX,[0x01e4280c]                ; 004f2390 | g_INT_01e4280c
-    MOV dword ptr [EDX + 0x1e31634],EBP ; 004f2395 | g_CPathQueueNode_ARRAY_01e3162c[2].z
+    MOV dword ptr [EDX + 0x1e31630],EDI ; 004f238a | g_PathfindingQueue[2].cost
+    MOV EAX,[0x01e4280c]                ; 004f2390 | g_PathfindingNodesExpanded
+    MOV dword ptr [EDX + 0x1e31634],EBP ; 004f2395 | g_PathfindingQueue[2].z
     INC EAX                             ; 004f239b
-    MOV dword ptr [0x01e40090],EBX      ; 004f239c | g_INT_01e40090
-    MOV [0x01e4280c],EAX                ; 004f23a2 | g_INT_01e4280c
+    MOV dword ptr [0x01e40090],EBX      ; 004f239c | g_PathfindingQueueTail
+    MOV [0x01e4280c],EAX                ; 004f23a2 | g_PathfindingNodesExpanded
     CMP EBX,0x1388                      ; 004f23a7
     JL 0x004f23b7                       ; 004f23ad
         ;   XREF to: 004f23b7 (CONDITIONAL_JUMP)  ; LAB_004f23b7
     XOR EBX,EBX                         ; 004f23af
-    MOV dword ptr [0x01e40090],EBX      ; 004f23b1 | g_INT_01e40090
+    MOV dword ptr [0x01e40090],EBX      ; 004f23b1 | g_PathfindingQueueTail
     MOV EDX,dword ptr [ESP + 0x10]      ; 004f23b7
         ;   Label: LAB_004f23b7
     TEST EDX,EDX                        ; 004f23bb
@@ -310,7 +310,7 @@ section .text
     CDQ                                 ; 004f23de
     XOR EAX,EDX                         ; 004f23df
     SUB EAX,EDX                         ; 004f23e1
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f23e3 | g_INT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f23e3 | g_PathfindingMaxClimbHeight
     JGE 0x004f2445                      ; 004f23e9
         ;   XREF to: 004f2445 (CONDITIONAL_JUMP)  ; LAB_004f2445
     MOV EDI,dword ptr [ESP + 0x10]      ; 004f23eb
@@ -318,23 +318,23 @@ section .text
     IMUL EDX,EDI,0x64                   ; 004f23f0
     ADD EDX,dword ptr [ESP + 0x8]       ; 004f23f3
     MOV EAX,0x2                         ; 004f23f7
-    MOV EBX,dword ptr [0x01e40090]      ; 004f23fc | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e40090]      ; 004f23fc | g_PathfindingQueueTail
     MOV byte ptr [EDX + 0x1e40098],AL   ; 004f2402
     IMUL EDX,EBX,0xc                    ; 004f2408
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f240b
-    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f240f | g_CPathQueueNode_ARRAY_01e3162c[3].x
+    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f240f | g_PathfindingQueue[3].x
     INC EBX                             ; 004f2415
-    MOV dword ptr [EDX + 0x1e31630],ESI ; 004f2416 | g_CPathQueueNode_ARRAY_01e3162c[3].cost
-    MOV ESI,dword ptr [0x01e4280c]      ; 004f241c | g_INT_01e4280c
-    MOV dword ptr [EDX + 0x1e31634],EDI ; 004f2422 | g_CPathQueueNode_ARRAY_01e3162c[3].z
+    MOV dword ptr [EDX + 0x1e31630],ESI ; 004f2416 | g_PathfindingQueue[3].cost
+    MOV ESI,dword ptr [0x01e4280c]      ; 004f241c | g_PathfindingNodesExpanded
+    MOV dword ptr [EDX + 0x1e31634],EDI ; 004f2422 | g_PathfindingQueue[3].z
     INC ESI                             ; 004f2428
-    MOV dword ptr [0x01e40090],EBX      ; 004f2429 | g_INT_01e40090
-    MOV dword ptr [0x01e4280c],ESI      ; 004f242f | g_INT_01e4280c
+    MOV dword ptr [0x01e40090],EBX      ; 004f2429 | g_PathfindingQueueTail
+    MOV dword ptr [0x01e4280c],ESI      ; 004f242f | g_PathfindingNodesExpanded
     CMP EBX,0x1388                      ; 004f2435
     JL 0x004f2445                       ; 004f243b
         ;   XREF to: 004f2445 (CONDITIONAL_JUMP)  ; LAB_004f2445
     XOR EBX,EBX                         ; 004f243d
-    MOV dword ptr [0x01e40090],EBX      ; 004f243f | g_INT_01e40090
+    MOV dword ptr [0x01e40090],EBX      ; 004f243f | g_PathfindingQueueTail
     MOV EDI,dword ptr [ESP + 0x8]       ; 004f2445
         ;   Label: LAB_004f2445
     TEST EDI,EDI                        ; 004f2449
@@ -351,7 +351,7 @@ section .text
     CDQ                                 ; 004f246d
     XOR EAX,EDX                         ; 004f246e
     SUB EAX,EDX                         ; 004f2470
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f2472 | g_INT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f2472 | g_PathfindingMaxClimbHeight
     JGE 0x004f2236                      ; 004f2478
         ;   XREF to: 004f2236 (CONDITIONAL_JUMP)  ; LAB_004f2236
     IMUL EDX,dword ptr [ESP + 0x10],0x64 ; 004f247e
@@ -359,28 +359,28 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f248a
     MOV BL,byte ptr [ESP]               ; 004f248e
     MOV byte ptr [EDX + EAX*0x1 + 0x1e40097],BL ; 004f2491
-    MOV EBX,dword ptr [0x01e40090]      ; 004f2498 | g_INT_01e40090
+    MOV EBX,dword ptr [0x01e40090]      ; 004f2498 | g_PathfindingQueueTail
     IMUL EDX,EBX,0xc                    ; 004f249e
-    MOV ESI,dword ptr [0x01e4280c]      ; 004f24a1 | g_INT_01e4280c
+    MOV ESI,dword ptr [0x01e4280c]      ; 004f24a1 | g_PathfindingNodesExpanded
     INC ESI                             ; 004f24a7
     DEC EAX                             ; 004f24a8
-    MOV dword ptr [0x01e4280c],ESI      ; 004f24a9 | g_INT_01e4280c
-    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f24af | g_CPathQueueNode_ARRAY_01e3162c[4].x
+    MOV dword ptr [0x01e4280c],ESI      ; 004f24a9 | g_PathfindingNodesExpanded
+    MOV dword ptr [EDX + 0x1e3162c],EAX ; 004f24af | g_PathfindingQueue[4].x
     INC EBX                             ; 004f24b5
-    MOV dword ptr [EDX + 0x1e31630],ECX ; 004f24b6 | g_CPathQueueNode_ARRAY_01e3162c[4].cost
+    MOV dword ptr [EDX + 0x1e31630],ECX ; 004f24b6 | g_PathfindingQueue[4].cost
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f24bc
-    MOV dword ptr [0x01e40090],EBX      ; 004f24c0 | g_INT_01e40090
-    MOV dword ptr [EDX + 0x1e31634],EAX ; 004f24c6 | g_CPathQueueNode_ARRAY_01e3162c[4].z
+    MOV dword ptr [0x01e40090],EBX      ; 004f24c0 | g_PathfindingQueueTail
+    MOV dword ptr [EDX + 0x1e31634],EAX ; 004f24c6 | g_PathfindingQueue[4].z
     CMP EBX,0x1388                      ; 004f24cc
     JL 0x004f2236                       ; 004f24d2
         ;   XREF to: 004f2236 (CONDITIONAL_JUMP)  ; LAB_004f2236
     XOR EBX,EBX                         ; 004f24d8
-    MOV dword ptr [0x01e40090],EBX      ; 004f24da | g_INT_01e40090
+    MOV dword ptr [0x01e40090],EBX      ; 004f24da | g_PathfindingQueueTail
     JMP 0x004f2236                      ; 004f24e0
         ;   XREF to: 004f2236 (UNCONDITIONAL_JUMP)  ; LAB_004f2236
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f24e5
         ;   Label: LAB_004f24e5
-    CMP EAX,dword ptr [0x01e31628]      ; 004f24e9 | g_INT_01e31628
+    CMP EAX,dword ptr [0x01e31628]      ; 004f24e9 | g_PathfindingDestZ
     JNZ 0x004f2222                      ; 004f24ef
         ;   XREF to: 004f2222 (CONDITIONAL_JUMP)  ; LAB_004f2222
     JMP 0x004f2297                      ; 004f24f5

@@ -68,14 +68,14 @@ LAB_004a8e88:
   if (this_ptr->use_3d_rendering == 0) goto LAB_004a8f2c;
   if (color_mode == -2) {
     if (g_INT_006141c0 == 0x20) {
-      uVar2 = g_INT_01cb024c << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f) |
-              g_INT_01cb0248 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
-      uVar4 = g_INT_01cb0250;
+      uVar2 = g_ShadowColorGreen << (g_GreenBitPosition.bytes[0] & 0x1f) |
+              g_ShadowColorRed << (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar4 = g_ShadowColorBlue;
 LAB_004a8f94:
-      uVar2 = uVar4 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) | uVar2;
+      uVar2 = uVar4 << (g_BlueBitPosition.bytes[0] & 0x1f) | uVar2;
     }
     else {
-      uVar2 = g_INT_01cb0248 << 0x10 | g_INT_01cb024c << 8 | g_INT_01cb0250;
+      uVar2 = g_ShadowColorRed << 0x10 | g_ShadowColorGreen << 8 | g_ShadowColorBlue;
     }
   }
   else if (color_mode < 0) {
@@ -85,8 +85,8 @@ LAB_004a8f94:
     iVar3 = color_mode * 3;
     uVar4 = (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2];
     if (g_INT_006141c0 == 0x20) {
-      uVar2 = (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)
-              | (uint)g_UCHAR_ARRAY_01c35838[iVar3] << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
+      uVar2 = (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+              (uint)g_UCHAR_ARRAY_01c35838[iVar3] << (g_RedBitPosition.bytes[0] & 0x1f);
       goto LAB_004a8f94;
     }
     uVar2 = (uint)g_UCHAR_ARRAY_01c35838[iVar3] << 0x10 |

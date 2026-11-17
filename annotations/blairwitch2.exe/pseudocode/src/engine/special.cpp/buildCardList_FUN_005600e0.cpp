@@ -11,7 +11,7 @@ int __cdecl engine_special_cpp_buildCardList_FUN_005600e0(int *out_card_count,ch
 {
   int iVar1;
   
-  if (g_INT_0264bcdc == 0) {
+  if (g_LoadedExternalDLLRenderer == 0) {
     return 0;
   }
   iVar1 = (*(code *)g_PTR_0264bc48)

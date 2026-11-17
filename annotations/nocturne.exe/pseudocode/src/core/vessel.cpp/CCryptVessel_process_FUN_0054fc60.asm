@@ -26,8 +26,8 @@
 ;   float FLOAT_0059748b = -16
 ;   double DOUBLE_00597493 = 3.14159265350000
 ;   float FLOAT_0059749b = 1.700000
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CEventList* g_CEventListPtr = 01c03a10
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   int g_LocalHeroIndex
 ;
 ; Called Functions:
@@ -226,7 +226,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2d0]     ; 0054fe9d
     ADD EAX,0x2d8                       ; 0054fea3
     PUSH EAX                            ; 0054fea8
-    MOV EDI,dword ptr [0x005b7650]      ; 0054fea9 | g_CEventList_PTR_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 0054fea9 | g_CEventListPtr
     PUSH EDI                            ; 0054feaf
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 0054feb0
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
@@ -432,7 +432,7 @@ section .text
     PUSH 0x44bb8000                     ; 0055010f
     PUSH 0x41000000                     ; 00550114
     PUSH ESI                            ; 00550119
-    MOV EAX,[0x005b80f0]                ; 0055011a | g_CFireEffect_PTR_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0055011a | g_CFireEffectPtr
     PUSH EAX                            ; 0055011f
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0 ; 00550120
         ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
@@ -484,7 +484,7 @@ section .text
     LEA EAX,[EBX + 0x33c]               ; 005501c6
         ;   Label: LAB_005501c6
     PUSH EAX                            ; 005501cc
-    MOV EDI,dword ptr [0x005b7650]      ; 005501cd | g_CEventList_PTR_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 005501cd | g_CEventListPtr
     PUSH EDI                            ; 005501d3
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 005501d4
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

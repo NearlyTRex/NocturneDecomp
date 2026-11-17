@@ -21,7 +21,7 @@
 ;   float g_FLOAT_005fbfd8 = 10
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGore* g_CGorePtr = 01cd0e3c
-;   undefined4 g_INT_ARRAY_007c374c[2]
+;   undefined4 g_BatCreatureIndices[2]
 ;   CConsole g_CConsoleInstance
 ;   ... and 1 more
 ;
@@ -397,7 +397,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004119cb
     ADD ESP,0x8                         ; 004119ce
     LEA EAX,[EBP + 0xfffffe4e]          ; 004119d1
-    MOV EDX,dword ptr [0x007c3754]      ; 004119d7 | g_INT_ARRAY_007c374c[2]
+    MOV EDX,dword ptr [0x007c3754]      ; 004119d7 | g_BatCreatureIndices[2]
     PUSH EAX                            ; 004119dd
     LEA EAX,[EDX*0x4 + 0x0]             ; 004119de
     MOV dword ptr [EBP + 0xfffffe82],EBX ; 004119e5
@@ -410,7 +410,7 @@ section .text
     LEA EDI,[EBP + -0x26]               ; 00411a03
     PUSH EAX                            ; 00411a06
     FLD float ptr [EBP + 0x76]          ; 00411a07
-    PUSH 0x2c8af28                      ; 00411a0a | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 00411a0a | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffe52]   ; 00411a0f
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00411a15
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

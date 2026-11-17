@@ -5,23 +5,23 @@
 // =============================================================================
 
 // SFogGrid
-SFogGrid g_SFogGrid_0149d6dc = {};
+SFogGrid g_CameraFogGrid = {};
 
 // int
-int g_INT_0149d6d0 = {};
-int g_INT_0149d6d4 = {};
-int g_INT_0149d6d8 = {};
-int g_INT_0149e6fc = {};
-int g_INT_0149e700 = {};
-int g_INT_0149e704 = {};
-int g_INT_0149ef08 = {};
-int g_INT_0149ef0c = {};
-int g_INT_0149ef10 = {};
+int g_ImageProcessingState1 = {};
+int g_ImageProcessingState2 = {};
+int g_ImageBytesPerPixel = {};
+int g_CameraScreenWidth = {};
+int g_CameraScreenHeight = {};
+int g_ScanlineSpanCount = {};
+int g_BackgroundSceneDepth = {};
+int g_BackgroundSavedBitsPerPixel = {};
+int g_BackgroundSavedUseExternalRenderer = {};
 
 // int[256]
-int g_INT_ARRAY_0149e708[256] = {};
-int g_INT_ARRAY_0149eb08[256] = {};
+int g_ScanlineSpanLeft[256] = {};
+int g_ScanlineSpanRight[256] = {};
 
-// void*[1200]
-void* g_ARRAY_PTR_0149ef14[1200] = {};
+// void*[GAME_SCREEN_MAX_HEIGHT]
+void* g_BackgroundSavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 

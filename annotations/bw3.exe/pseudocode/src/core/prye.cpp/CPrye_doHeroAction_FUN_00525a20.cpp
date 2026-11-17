@@ -187,9 +187,9 @@ void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr)
           }
           else {
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-                      (pCVar1,g_INT_ARRAY_01ed36ec[10],&CStack_94);
+                      (pCVar1,g_StrangerIndices[10],&CStack_94);
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-                      (pCVar1,g_INT_ARRAY_01ed36ec[0],(CVector3f *)auStack_28);
+                      (pCVar1,g_StrangerIndices[0],(CVector3f *)auStack_28);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,0x20,1);
             in_stack_ffffff28 = "Picking up %s waist level\n";
             this_ptr_01 = g_CConsolePtr;

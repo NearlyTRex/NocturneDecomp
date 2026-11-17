@@ -49,36 +49,36 @@ extern CDemonActorType g_CChainClassInfo;
 extern CDemonActorType g_CCharacterClassInfo;
 
 // CDemonCamera*
-extern CDemonCamera* g_CDemonCamera_PTR_007e2a54;
+extern CDemonCamera* g_CurrentSceneCamera;
 
 // CDemonFilter[8]
-extern CDemonFilter CDemonFilter_ARRAY_007e17b8[8];
+extern CDemonFilter g_LightActorFilters[8];
 
 // CDemonGlobe
 extern CDemonGlobe g_CDemonGlobe_007e2af0;
 
 // CKeyFramedModelInstance
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_007e2b34;
+extern CKeyFramedModelInstance g_StakeModelInstance;
 
 // SMRGLPrimitiveQuad[1000]
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_007e6564[1000];
+extern SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000];
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_SMRGLTextureBasic_007e2ad0;
 
 // SRenderVertex*[16]
-extern SRenderVertex* g_SRenderVertex_PTR_ARRAY_007e448c[16];
+extern SRenderVertex* g_ClipperCullingPointers[16];
 
 // SRenderVertex[12]
-extern SRenderVertex g_SRenderVertex_ARRAY_007e4b10[12];
+extern SRenderVertex g_ClipperTempBuffer[12];
 
 // SRenderVertex[16]
 extern SRenderVertex g_SRenderVertex_ARRAY_007e3e8c[16];
 extern SRenderVertex g_SRenderVertex_ARRAY_007e4510[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007e4d64[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007e5364[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007e5964[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007e5f64[16];
+extern SRenderVertex g_ClipperOutputBuffer[16];
+extern SRenderVertex g_ClipperInputBuffer[16];
+extern SRenderVertex g_ClipperWorkingBuffer[16];
+extern SRenderVertex g_ClipperIntermediateBuffer[16];
 
 // byte
 extern byte g_BYTE_007e2b30;
@@ -90,7 +90,7 @@ extern float g_FLOAT_007e2cb0;
 extern float g_FLOAT_ARRAY_007e2cf4[100];
 
 // float[12][12]
-extern float g_FLOAT_ARRAY_ARRAY_007e1a54[12][12];
+extern float g_BugsGroundHeightGridTemp[12][12];
 
 // int
 extern int g_INT_007e1620;
@@ -103,17 +103,17 @@ extern int g_INT_007e1648;
 extern int g_INT_007e1778;
 extern int g_INT_007e2ae8;
 extern int g_INT_007e3e84;
-extern int g_INT_007e3e88;
+extern int g_ClippedVertexCount;
 extern int g_INT_007e450c;
-extern int g_INT_007e4d50;
-extern int g_INT_007e4d54;
-extern int g_INT_007e4d58;
-extern int g_INT_007e4d5c;
-extern int g_INT_007e4d60;
+extern int g_ClipperTempCount;
+extern int g_InputVertexCount;
+extern int g_OutputVertexCount;
+extern int g_TempVertexCount;
+extern int g_IntermediateVertexCount;
 
 // int[1]
 extern int g_INT_ARRAY_007e4488[1];
 
 // int[700]
-extern int g_INT_ARRAY_007e1c94[700];
+extern int g_BugsSortedVertexIndices[700];
 

@@ -121,13 +121,13 @@ section .text
     NOP                                 ; 0043c8d1
     NOP                                 ; 0043c8d2
     NOP                                 ; 0043c8d3
-    MOV [0x00838e48],EAX                ; 0043c8d4 | UNION_UVector3_00838e40+8
-    MOV [0x00838e44],EAX                ; 0043c8d9 | UNION_UVector3_00838e40+4
-    MOV [0x00838e40],EAX                ; 0043c8de | UNION_UVector3_00838e40
-    MOV [0x00838e54],EAX                ; 0043c8e3 | UNION_UVector3_00838e4c+8
-    MOV [0x00838e50],EAX                ; 0043c8e8 | UNION_UVector3_00838e4c+4
+    MOV [0x00838e48],EAX                ; 0043c8d4 | g_ClothEditorPosition+8
+    MOV [0x00838e44],EAX                ; 0043c8d9 | g_ClothEditorPosition+4
+    MOV [0x00838e40],EAX                ; 0043c8de | g_ClothEditorPosition
+    MOV [0x00838e54],EAX                ; 0043c8e3 | g_ClothEditorEuler+8
+    MOV [0x00838e50],EAX                ; 0043c8e8 | g_ClothEditorEuler+4
     PUSH EDI                            ; 0043c8ed | g_CSpotViewInstance
-    MOV [0x00838e4c],EAX                ; 0043c8ee | UNION_UVector3_00838e4c
+    MOV [0x00838e4c],EAX                ; 0043c8ee | g_ClothEditorEuler
     XOR EBX,EDX                         ; 0043c8f3
     CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 0043c8f5
         ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
@@ -148,9 +148,9 @@ section .text
         ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043c925
     PUSH 0x838e58                       ; 0043c928 | g_CDeformableModelInstanceInstance
-    PUSH 0x838e4c                       ; 0043c92d | UNION_UVector3_00838e4c
+    PUSH 0x838e4c                       ; 0043c92d | g_ClothEditorEuler
     MOV EBX,EAX                         ; 0043c932
-    PUSH 0x838e40                       ; 0043c934 | UNION_UVector3_00838e40
+    PUSH 0x838e40                       ; 0043c934 | g_ClothEditorPosition
     MOV dword ptr [EBP + -0x20],EAX     ; 0043c939
     NOP                                 ; 0043c93c
     NOP                                 ; 0043c93d
@@ -261,8 +261,8 @@ section .text
     PUSH 0x838e58                       ; 0043ca40 | g_CDeformableModelInstanceInstance
     PUSH 0x0                            ; 0043ca45
     PUSH dword ptr [ESP + 0x8]          ; 0043ca47
-    PUSH 0x838e4c                       ; 0043ca4b | UNION_UVector3_00838e4c
-    PUSH 0x838e40                       ; 0043ca50 | UNION_UVector3_00838e40
+    PUSH 0x838e4c                       ; 0043ca4b | g_ClothEditorEuler
+    PUSH 0x838e40                       ; 0043ca50 | g_ClothEditorPosition
     PUSH ESI                            ; 0043ca55
     CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 0043ca56
         ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
@@ -294,14 +294,14 @@ section .text
     ADD ESP,0x14                        ; 0043ca9c
     CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0043ca9f
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
-    PUSH 0x838e40                       ; 0043caa4 | UNION_UVector3_00838e40
+    PUSH 0x838e40                       ; 0043caa4 | g_ClothEditorPosition
     MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0043caaf | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0043cab0
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0043cab5
     PUSH 0x0                            ; 0043cab8
-    PUSH 0x838e4c                       ; 0043caba | UNION_UVector3_00838e4c
+    PUSH 0x838e4c                       ; 0043caba | g_ClothEditorEuler
     MOV EAX,[0x006703ec]                ; 0043cabf | g_CDemonRendererPtr2
     PUSH EAX                            ; 0043cac4 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0043cac5
@@ -1292,8 +1292,8 @@ section .text
     JZ 0x0043d3a7                       ; 0043d38d
         ;   XREF to: 0043d3a7 (CONDITIONAL_JUMP)  ; LAB_0043d3a7
     PUSH 0x838e58                       ; 0043d38f | g_CDeformableModelInstanceInstance
-    PUSH 0x838e4c                       ; 0043d394 | UNION_UVector3_00838e4c
-    PUSH 0x838e40                       ; 0043d399 | UNION_UVector3_00838e40
+    PUSH 0x838e4c                       ; 0043d394 | g_ClothEditorEuler
+    PUSH 0x838e40                       ; 0043d399 | g_ClothEditorPosition
     PUSH ESI                            ; 0043d39e
     CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 0043d39f
         ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_00439710(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)

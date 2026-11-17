@@ -12,7 +12,7 @@ void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_005067e0(CSentinel *this_pt
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(&this_ptr->base);
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if (INT_005be310 < 2) {
+  if (g_CSentinelClassVersion < 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }

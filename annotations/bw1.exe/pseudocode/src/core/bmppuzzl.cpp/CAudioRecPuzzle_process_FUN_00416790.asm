@@ -15,12 +15,12 @@
 ;   TerminatedCString s_rec_forward_switch_wav_005d3f96
 ;   TerminatedCString s_AudioPuzzleSuccess_005d3fad
 ;   double g_DOUBLE_005d3fc2 = 10
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   int g_INT_007c397c
-;   int g_INT_01c4353c
-;   int g_INT_01c43540
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   void* g_PTR_01d1bca0
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     SUB ESP,0x10                        ; 00416794
     MOV EBX,dword ptr [ESP + 0x24]      ; 00416797
     PUSH 0x5d3f4a                       ; 0041679b | = "AudioRecPuzzleActive"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004167a0 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004167a0 | g_CEventListPtr
     PUSH EDX                            ; 004167a6
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004167a7
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 004168c9 (CONDITIONAL_JUMP)  ; LAB_004168c9
     PUSH 0x5d3f75                       ; 004167c5 | = "ExitFromPuzzle"
         ;   Label: LAB_004167c5
-    MOV EBP,dword ptr [0x0061b4d0]      ; 004167ca | g_CEventList_PTR_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 004167ca | g_CEventListPtr
     PUSH EBP                            ; 004167d0
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004167d1
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -71,7 +71,7 @@ section .text
     XOR EAX,EAX                         ; 004167ec
     PUSH EAX                            ; 004167ee
     PUSH EBX                            ; 004167ef
-    MOV [0x01c43544],EAX                ; 004167f0 | g_BIT_INTEGER32_01c43544
+    MOV [0x01c43544],EAX                ; 004167f0 | g_MouseButtonFlags
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004167f5
         ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004167fa
@@ -98,9 +98,9 @@ section .text
     CMP dword ptr [0x007c397c],-0x1     ; 00416835 | g_INT_007c397c
     JNZ 0x00416848                      ; 0041683c
         ;   XREF to: 00416848 (CONDITIONAL_JUMP)  ; LAB_00416848
-    MOV EAX,[0x01c4353c]                ; 0041683e | g_INT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 0041683e | g_MouseX
     MOV [0x007c397c],EAX                ; 00416843 | g_INT_007c397c
-    MOV EAX,[0x01c4353c]                ; 00416848 | g_INT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 00416848 | g_MouseX
         ;   Label: LAB_00416848
     MOV ESI,dword ptr [0x007c397c]      ; 0041684d | g_INT_007c397c
     SUB EAX,ESI                         ; 00416853
@@ -159,10 +159,10 @@ section .text
         ;   XREF to: 004167c5 (CONDITIONAL_JUMP)  ; LAB_004167c5
     JMP 0x004167fd                      ; 004168d6
         ;   XREF to: 004167fd (UNCONDITIONAL_JUMP)  ; LAB_004167fd
-    MOV EBP,dword ptr [0x01c43540]      ; 004168db | g_INT_01c43540
+    MOV EBP,dword ptr [0x01c43540]      ; 004168db | g_MouseY
         ;   Label: LAB_004168db
     PUSH EBP                            ; 004168e1
-    MOV EDX,dword ptr [0x01c4353c]      ; 004168e2 | g_INT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 004168e2 | g_MouseX
     PUSH EDX                            ; 004168e8
     MOV EAX,dword ptr [EBX]             ; 004168e9
     PUSH EBX                            ; 004168eb
@@ -518,7 +518,7 @@ section .text
     JNZ 0x0041693e                      ; 00416c64
         ;   XREF to: 0041693e (CONDITIONAL_JUMP)  ; LAB_0041693e
     PUSH 0x5d3fad                       ; 00416c6a | = "AudioPuzzleSuccess"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00416c6f | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00416c6f | g_CEventListPtr
     PUSH ECX                            ; 00416c75
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00416c76
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

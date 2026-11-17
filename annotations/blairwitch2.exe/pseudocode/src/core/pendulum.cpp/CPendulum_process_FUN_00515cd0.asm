@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005e1a8a = -1
 ;   double g_DOUBLE_005e1a92 = 0.100000000000000
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -37,7 +37,7 @@ section .text
     LEA EAX,[ESI + 0x494]               ; 00515ce5
         ;   Label: LAB_00515ce5
     PUSH EAX                            ; 00515ceb
-    MOV EBX,dword ptr [0x006141f0]      ; 00515cec | g_CEventList_PTR_006141f0
+    MOV EBX,dword ptr [0x006141f0]      ; 00515cec | g_CEventListPtr
     PUSH EBX                            ; 00515cf2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00515cf3
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -103,7 +103,7 @@ section .text
     LEA EAX,[ESI + 0x430]               ; 00515da4
         ;   Label: LAB_00515da4
     PUSH EAX                            ; 00515daa
-    MOV ECX,dword ptr [0x006141f0]      ; 00515dab | g_CEventList_PTR_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 00515dab | g_CEventListPtr
     PUSH ECX                            ; 00515db1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00515db2
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

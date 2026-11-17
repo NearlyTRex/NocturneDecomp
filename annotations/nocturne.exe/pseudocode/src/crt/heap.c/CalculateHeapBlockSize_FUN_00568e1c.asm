@@ -10,7 +10,7 @@
 ;   crt_heap.c_AllocateNewHeapBlock_FUN_00568d58 at 00568d7e
 ;
 ; Referenced Globals:
-;   int g_INT_005c1fec = 0x10000
+;   int g_HeapFlags = 0x10000
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 00568e38 (CONDITIONAL_JUMP)  ; LAB_00568e38
     XOR EAX,EAX                         ; 00568e35
     RET                                 ; 00568e37
-    MOV ECX,dword ptr [0x005c1fec]      ; 00568e38 | g_INT_005c1fec
+    MOV ECX,dword ptr [0x005c1fec]      ; 00568e38 | g_HeapFlags
         ;   Label: LAB_00568e38
     CMP EAX,ECX                         ; 00568e3e
     JNC 0x00568e46                      ; 00568e40

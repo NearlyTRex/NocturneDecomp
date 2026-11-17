@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 100,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 56
   },
@@ -34,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCheesyCipher_transformByte_FUN_00443a80",
-    "signature": "uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00443a80(CCheesyCipher *this_ptr,byte param_2)"
+    "signature": "uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00443a80(CCheesyCipher *this_ptr,byte value)"
   },
   "function_calls": [
     {
@@ -163,7 +162,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "value",
         "offset": 8,
         "size": 1,
         "type": "byte"
@@ -171,14 +170,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00443a80(CCheesyCipher *this_ptr,byte param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 5,
@@ -188,35 +179,19 @@
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return (uint)(byte)(&DAT_00610db8)[(uint)param_2 + this_ptr->key_state & 0xff];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 9,
       "match": "DAT_00610db8",
       "severity": "mild",
-      "text": "return (uint)(byte)(&DAT_00610db8)[(uint)param_2 + this_ptr->key_state & 0xff];",
+      "text": "return (uint)(byte)(&DAT_00610db8)[(uint)value + this_ptr->key_state & 0xff];",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return (uint)(byte)((&DAT_00610eb8)[param_2] - (char)this_ptr->key_state);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_00610eb8",
       "severity": "mild",
-      "text": "return (uint)(byte)((&DAT_00610eb8)[param_2] - (char)this_ptr->key_state);",
+      "text": "return (uint)(byte)((&DAT_00610eb8)[value] - (char)this_ptr->key_state);",
       "type": "undefined_data"
     },
     {

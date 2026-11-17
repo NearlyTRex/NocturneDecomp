@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void*[67] g_ARRAY_PTR_006093c4
-;   uint g_UINT_006141e0 = 0x1
+;   uint g_VertexProcessingEnabled = 0x1
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     CMP EAX,0x43                        ; 004078c2
     JL 0x004078d2                       ; 004078c5
         ;   XREF to: 004078d2 (CONDITIONAL_JUMP)  ; LAB_004078d2
-    MOV dword ptr [0x006141e0],0x1      ; 004078c7 | g_UINT_006141e0
+    MOV dword ptr [0x006141e0],0x1      ; 004078c7 | g_VertexProcessingEnabled
         ;   Label: LAB_004078c7
     RET                                 ; 004078d1
         ;   Label: LAB_004078d1

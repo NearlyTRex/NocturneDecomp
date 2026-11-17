@@ -74,43 +74,43 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
   if (0 < g_INT_01fc9608) {
     iVar5 = 0;
     do {
-      puVar8 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar5);
+      puVar8 = (uint *)((int)g_DynamicLights + iVar5);
       iVar5 = iVar5 + 4;
       iVar3 = iVar3 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520((CDemonLight *)*puVar8);
     } while (iVar3 < g_INT_01fc9608);
   }
   iVar3 = 0;
-  if (0 < g_INT_01fc8e84) {
+  if (0 < g_SpotLightCount) {
     iVar5 = 0;
     do {
       puVar8 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar5);
       iVar5 = iVar5 + 4;
       iVar3 = iVar3 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520((CDemonLight *)*puVar8);
-    } while (iVar3 < g_INT_01fc8e84);
+    } while (iVar3 < g_SpotLightCount);
   }
   iVar3 = 0;
-  if (0 < g_INT_01fc8e84) {
+  if (0 < g_SpotLightCount) {
     iVar5 = 0;
     do {
       puVar8 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar5);
       iVar5 = iVar5 + 4;
       iVar3 = iVar3 + 1;
       core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00449ff0((CDemonLight *)*puVar8);
-    } while (iVar3 < g_INT_01fc8e84);
+    } while (iVar3 < g_SpotLightCount);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_00449f60();
   this_ptr->previous_best_camera_timer = 0.5;
   this_ptr->lighting_quality_mode = 1;
   iVar3 = 0;
   this_ptr->directional_light_ratio_enabled = 1;
-  g_INT_01fc8e84 = 0;
+  g_SpotLightCount = 0;
   this_ptr->previous_best_camera_index = this_ptr->selected_camera_index;
   g_INT_01fc9cd4 = 0;
   this_ptr->selected_camera_index = index;
   g_INT_01fc961c = 0;
-  g_INT_01fc97b0 = 0;
+  g_QueuedCoronaGlobeCount = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
@@ -159,9 +159,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
     core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(this_ptr,0x10);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(this_ptr,9999.9,1);
     core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00443a50(&g_CDemonCameraInstance);
-    g_INT_0200a390 = 1;
+    g_InMirrorRenderPass = 1;
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10(this_ptr,1);
-    g_INT_0200a390 = 0;
+    g_InMirrorRenderPass = 0;
     core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0043d870(&g_CDemonCameraInstance);
     core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_00443aa0(&g_CDemonCameraInstance);
     _sprintf(local_198,"%s.raw");
@@ -195,21 +195,21 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
             core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonSet::setCameraView - Too many omni lights");
           }
         }
-        iVar1 = g_INT_01fc8e84;
+        iVar1 = g_SpotLightCount;
         iVar10 = iVar5;
         if ((pCVar4->lights[0].light_type == 0) &&
            (iVar10 = iVar5 + 1, pCVar4->lights[0].visible_flags[index] != '\0')) {
-          g_CDemonLight_PTR_ARRAY_01fc8e88[g_INT_01fc8e84] = g_CDemonLight_PTR_ARRAY_01fc8d04[iVar5]
-          ;
+          g_CDemonLight_PTR_ARRAY_01fc8e88[g_SpotLightCount] =
+               g_CDemonLight_PTR_ARRAY_01fc8d04[iVar5];
           piVar15 = (int *)((int)&pCVar4->lights[0].camera_light_bounds[0].x_min + local_2c);
           piVar13 = (int *)(iVar1 * 0x10 + 0x1fc900c + (uint)bVar14 * -8);
           piVar11 = piVar15 + (uint)bVar14 * -2 + 1;
-          g_CRect_ARRAY_01fc9008[iVar1].x_min = *piVar15;
+          g_SpotLightBounds[iVar1].x_min = *piVar15;
           piVar15 = piVar13 + (uint)bVar14 * -2 + 1;
           *piVar13 = *piVar11;
           *piVar15 = piVar11[(uint)bVar14 * -2 + 1];
           piVar15[(uint)bVar14 * -2 + 1] = (piVar11 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1];
-          g_INT_01fc8e84 = g_INT_01fc8e84 + 1;
+          g_SpotLightCount = g_SpotLightCount + 1;
         }
         iVar3 = iVar3 + 1;
         pCVar4 = (CDemonSet *)&pCVar4->cameras[0xe].vdir_zone;
@@ -218,8 +218,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
     }
     core_set_cpp_CDemonSet_process_FUN_00533010(this_ptr);
     iVar3 = 0;
-    if (0 < g_INT_01fc8e84) {
-      rect = g_CRect_ARRAY_01fc9008;
+    if (0 < g_SpotLightCount) {
+      rect = g_SpotLightBounds;
       local_28 = &this_ptr->cameras[index + -1].enabled;
       iVar5 = 0;
       do {
@@ -238,7 +238,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
         iVar5 = iVar5 + 4;
         iVar3 = iVar3 + 1;
         rect = rect + 1;
-      } while (iVar3 < g_INT_01fc8e84);
+      } while (iVar3 < g_SpotLightCount);
     }
     core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d770
               (&g_CDemonCameraInstance,&this_ptr->directional_light_dir,
@@ -249,15 +249,14 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
   if (iVar3 == 0) {
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0043b7f0(&g_CDemonCameraInstance,1);
     core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0043c040(&g_CDemonCameraInstance);
-    g_INT_01c38aec = iVar3;
+    g_PerspectiveReciprocal = iVar3;
     if (this_ptr->has_sky != 0) {
       core_dskybox_cpp_renderSkyDome_FUN_0046e410
-                (g_SMRGLSkyTexture_PTR_0060d1f0,this_ptr->sky_texture_name,this_ptr->sky_brightness)
-      ;
+                (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,this_ptr->sky_brightness);
     }
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10(this_ptr,1);
     core_gore_cpp_CGore_renderDecals_FUN_004c94c0(g_CGorePtr,1,1);
-    core_fire_cpp_CFireEffect_renderDecals_FUN_0049cb50(g_CFireEffect_PTR_00614d30,1,1);
+    core_fire_cpp_CFireEffect_renderDecals_FUN_0049cb50(g_CFireEffectPtr,1,1);
     if (g_CWaterPtr->wave_animation_enabled == 0) {
       core_water_cpp_CWater_render_FUN_005862e0(g_CWaterPtr,0);
     }
@@ -311,7 +310,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
     local_ac[1] = local_4c[1];
   }
   core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0
-            (g_CWeather_PTR_0061e8f4,&local_5c,(CVector3f *)(auStack_b4 + 4));
+            (g_CWeatherPtr,&local_5c,(CVector3f *)(auStack_b4 + 4));
   iVar3 = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {

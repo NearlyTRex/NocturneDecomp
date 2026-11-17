@@ -22,11 +22,11 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_0042d390(void *sprite_dat
   byte *puStack_18;
   byte *puStack_14;
   
-  iVar4 = (int)g_ARRAY_PTR_01c2a38c[1] - (int)g_ARRAY_PTR_01c2a38c[0];
+  iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
     pCVar5 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     if (g_INT_006141c0 == 8) {
-      puStack_18 = g_ARRAY_PTR_01c2a38c[dest_y] + dest_x;
+      puStack_18 = g_ScreenBufferArray[dest_y] + dest_x;
       if (0 < height) {
         iStack_28 = 0;
         do {
@@ -53,7 +53,7 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_0042d390(void *sprite_dat
       }
     }
     else {
-      puStack_14 = g_ARRAY_PTR_01c2a38c[dest_y] + dest_x * 2;
+      puStack_14 = g_ScreenBufferArray[dest_y] + dest_x * 2;
       if (0 < height) {
         iStack_24 = 0;
         do {

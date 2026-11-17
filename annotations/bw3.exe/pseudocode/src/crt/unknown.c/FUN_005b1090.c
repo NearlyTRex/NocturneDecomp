@@ -21,7 +21,7 @@ byte * FUN_005b1090(char *param_1,uint *param_2,int param_3,int param_4)
   if (param_2 != (uint *)0x0) {
     *param_2 = param_1;
   }
-  while ((g_UCHAR_ARRAY_006074b8[(byte)(*pcVar4 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2) != 0) {
     pcVar4 = pcVar4 + 1;
   }
   cVar1 = *pcVar4;

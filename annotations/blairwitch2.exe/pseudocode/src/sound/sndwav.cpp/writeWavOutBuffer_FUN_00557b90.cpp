@@ -19,22 +19,21 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_00557b90(int buffer_index)
   int local_14;
   int iVar6;
   
-  if ((g_LPVOID_ARRAY_0264b0d4[buffer_index] == (LPVOID)0x0) ||
-     (g_LPWAVEHDR_ARRAY_0264b094[buffer_index] == (LPWAVEHDR)0x0)) {
+  if ((g_WaveOutBuffers[buffer_index] == (LPVOID)0x0) ||
+     (g_WaveOutHeaders[buffer_index] == (LPWAVEHDR)0x0)) {
     return 0;
   }
-  MVar3 = waveOutUnprepareHeader
-                    ((HWAVEOUT)g_INT_0264b070,g_LPWAVEHDR_ARRAY_0264b094[buffer_index],0x20);
+  MVar3 = waveOutUnprepareHeader((HWAVEOUT)g_WaveOutHandle,g_WaveOutHeaders[buffer_index],0x20);
   if (MVar3 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutUnprepareHeader failed!");
     return 0;
   }
-  iVar4 = (int)((g_INT_0264b0f4 + (g_INT_0264b0f4 >> 0x1f) * -8) -
-               (uint)((g_INT_0264b0f4 >> 0x1f) << 2 < 0)) >> 3;
+  iVar4 = (int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
+               (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3;
   iVar7 = 0;
   local_14 = buffer_index * 4;
-  if (0 < g_INT_0264b0f8 * 4) {
-    pvVar2 = g_LPVOID_ARRAY_0264b0d4[buffer_index];
+  if (0 < g_WaveOutChannels * 4) {
+    pvVar2 = g_WaveOutBuffers[buffer_index];
     iVar6 = 0;
     do {
       iVar5 = iVar6 + 4;
@@ -42,23 +41,24 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_00557b90(int buffer_index)
       iVar7 = iVar7 + iVar4;
       *(int *)((int)local_34 + iVar6) = iVar1;
       iVar6 = iVar5;
-    } while (iVar5 < g_INT_0264b0f8 * 4);
+    } while (iVar5 < g_WaveOutChannels * 4);
   }
   sound_sndmain_cpp_pollAndMixSfx_FUN_005541f0
-            (local_34,g_INT_0264b0f4,g_INT_0264b0f8,g_INT_0264b0fc,g_INT_0264b100,
-             iVar4 * g_INT_0264b0f8);
-  *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_0264b094 + local_14) + 4) =
-       ((int)((g_INT_0264b0f4 + (g_INT_0264b0f4 >> 0x1f) * -8) -
-             (uint)((g_INT_0264b0f4 >> 0x1f) << 2 < 0)) >> 3) * g_INT_0264b100 * g_INT_0264b0f8;
+            (local_34,g_WaveOutBitsPerSample,g_WaveOutChannels,g_WaveOutSampleRate,
+             g_WaveOutBufferSize,iVar4 * g_WaveOutChannels);
+  *(int *)(*(int *)((int)g_WaveOutHeaders + local_14) + 4) =
+       ((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
+             (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize *
+       g_WaveOutChannels;
   MVar3 = waveOutPrepareHeader
-                    ((HWAVEOUT)g_INT_0264b070,
-                     *(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_0264b094 + local_14),0x20);
+                    ((HWAVEOUT)g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + local_14),0x20
+                    );
   if (MVar3 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutPrepareHeader failed!");
     return 0;
   }
-  MVar3 = waveOutWrite((HWAVEOUT)g_INT_0264b070,
-                       *(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_0264b094 + local_14),0x20);
+  MVar3 = waveOutWrite((HWAVEOUT)g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + local_14),
+                       0x20);
   if (MVar3 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutWrite failed!");
     return 0;

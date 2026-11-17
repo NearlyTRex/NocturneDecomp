@@ -324,7 +324,7 @@ CVector3f * __cdecl core_actor_cpp_CVector3f_dtor_FUN_0040d3f0(CVector3f *this_p
 CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor10_FUN_0040d400(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440(CAlphaBitmap *this_ptr,uint flags);
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap *this_ptr,int param_2,int param_3);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap *this_ptr,int width,int height);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap *this_ptr);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap *this_ptr,char *filename,int width,int height);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap *this_ptr,int x,int y,int alpha);

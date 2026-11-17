@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Blair_Witch_3_005d7ecc
 ;   void* PTR_s_Blair_Witch_3_00607280 = 005d7ebe
 ;   void* PTR_s_Blair_Witch_3_00607284 = 005d7ecc
-;   HWND g_HWND_02d21b78
+;   HWND g_MainWindowHandle
 ;   int g_INT_02d21b7c
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     PUSH EBX                            ; 00581038 | = "Blair Witch 3"
     PUSH 0x40000                        ; 00581039
     CALL dword ptr CS:[0x5b34a8]        ; 0058103e | PTR_CreateWindowExA_005b34a8
-    MOV [0x02d21b78],EAX                ; 00581045 | g_HWND_02d21b78
+    MOV [0x02d21b78],EAX                ; 00581045 | g_MainWindowHandle
     TEST EAX,EAX                        ; 0058104a
     JZ 0x00581050                       ; 0058104c
         ;   XREF to: 00581050 (CONDITIONAL_JUMP)  ; LAB_00581050

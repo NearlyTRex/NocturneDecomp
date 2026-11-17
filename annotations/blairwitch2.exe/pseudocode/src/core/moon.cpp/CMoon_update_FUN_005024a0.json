@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 35,
+    "complexity_score": 10,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 40
   },
   "cross_references": [
@@ -56,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_moon.cpp_CMoon_update_FUN_005024a0",
-    "signature": "void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float param_2)"
+    "signature": "void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float delta_time)"
   },
   "function_calls": [],
   "globals": [
@@ -80,7 +78,7 @@
     },
     {
       "addr": "01c2a370",
-      "name": "g_INT_01c2a370",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -245,29 +243,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "delta_time",
         "offset": 8,
         "size": 4,
         "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "g_FLOAT_01d1cdc4 = param_2 * (float)12 + g_FLOAT_01d1cdc4;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

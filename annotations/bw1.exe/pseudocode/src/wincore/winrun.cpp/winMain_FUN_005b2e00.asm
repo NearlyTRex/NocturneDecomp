@@ -238,10 +238,10 @@ section .text
     CALL wincore_winrun.cpp_createMainWindow_FUN_005b2d90 ; 005b2fd4
         ;   XREF to: 005b2d90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_createMainWindow_FUN_005b2d90()
     PUSH EBX                            ; 005b2fd9
-    MOV ESI,dword ptr [0x02c9be68]      ; 005b2fda | g_HWND_02c9be68
+    MOV ESI,dword ptr [0x02c9be68]      ; 005b2fda | g_MainWindowHandle
     PUSH ESI                            ; 005b2fe0
     CALL dword ptr CS:[0x5d050c]        ; 005b2fe1 | PTR_ShowWindow_005d050c
-    MOV EDI,dword ptr [0x02c9be68]      ; 005b2fe8 | g_HWND_02c9be68
+    MOV EDI,dword ptr [0x02c9be68]      ; 005b2fe8 | g_MainWindowHandle
     PUSH EDI                            ; 005b2fee
     CALL dword ptr CS:[0x5d0514]        ; 005b2fef | PTR_UpdateWindow_005d0514
     CALL dword ptr CS:[0x5d0588]        ; 005b2ff6 | PTR_GetCurrentProcess_005d0588
@@ -261,10 +261,10 @@ section .text
     MOV dword ptr [ESP + 0x2c],EBP      ; 005b3022
     CALL dword ptr CS:[0x5d05e8]        ; 005b3026 | PTR_GlobalMemoryStatus_005d05e8
     MOV EAX,dword ptr [ESP + 0x30]      ; 005b302d
-    MOV [0x02c9be78],EAX                ; 005b3031 | g_INT_02c9be78
+    MOV [0x02c9be78],EAX                ; 005b3031 | g_TotalPhysicalMemory
     MOV EAX,dword ptr [ESP + 0x3c]      ; 005b3036
     PUSH 0x2c9cb0c                      ; 005b303a
-    MOV [0x02c9be7c],EAX                ; 005b303f | g_INT_02c9be7c
+    MOV [0x02c9be7c],EAX                ; 005b303f | g_AvailableSwapSpace
     MOV EAX,[0x02c9cb08]                ; 005b3044 | g_INT_02c9cb08
     PUSH EAX                            ; 005b3049
     CALL core_main.c_initializeGameSystems_FUN_005032a0 ; 005b304a

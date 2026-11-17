@@ -26,9 +26,9 @@
 ;   TerminatedCString s_f_00577c79
 ;   TerminatedCString s_s_g_00577c7c
 ;   TerminatedCString s_Floating_point_value_005acc60
-;   char[104] g_CHAR_ARRAY_005acc90
-;   _FILE* g_FILE_PTR_00763e84
-;   int g_INT_00763e88
+;   char[104] g_PropertyNamePrefix
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0
@@ -44,12 +44,12 @@ section .text
         ;   Label: core_actor.cpp_archiveFloat_FUN_0040c880
     PUSH EDI                            ; 0040c881
     MOV EAX,dword ptr [ESP + 0xc]       ; 0040c882
-    CMP dword ptr [0x00763e88],0x1      ; 0040c886 | g_INT_00763e88
+    CMP dword ptr [0x00763e88],0x1      ; 0040c886 | g_ActorReadingMode
     JNZ 0x0040c8d4                      ; 0040c88d
         ;   XREF to: 0040c8d4 (CONDITIONAL_JUMP)  ; LAB_0040c8d4
     PUSH EAX                            ; 0040c88f
     PUSH 0x577c79                       ; 0040c890 | = "%f"
-    MOV EBX,dword ptr [0x00763e84]      ; 0040c895 | g_FILE_PTR_00763e84
+    MOV EBX,dword ptr [0x00763e84]      ; 0040c895 | g_ActorDataFile
     PUSH EBX                            ; 0040c89b
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c89c
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
@@ -82,9 +82,9 @@ section .text
         ;   Label: LAB_0040c8d4
     FLD float ptr [EAX]                 ; 0040c8d7
     FSTP double ptr [ESP]               ; 0040c8d9
-    PUSH 0x5acc90                       ; 0040c8dc | g_CHAR_ARRAY_005acc90
+    PUSH 0x5acc90                       ; 0040c8dc | g_PropertyNamePrefix
     PUSH 0x577c7c                       ; 0040c8e1 | = "%s%g"
-    MOV ECX,dword ptr [0x00763e84]      ; 0040c8e6 | g_FILE_PTR_00763e84
+    MOV ECX,dword ptr [0x00763e84]      ; 0040c8e6 | g_ActorDataFile
     PUSH ECX                            ; 0040c8ec
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c8ed
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)

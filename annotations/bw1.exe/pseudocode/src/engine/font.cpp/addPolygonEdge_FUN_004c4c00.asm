@@ -8,9 +8,9 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex2
 ;
 ; Referenced Globals:
-;   int g_INT_01cc8ce8
-;   int g_INT_01cc906c
-;   int g_INT_01cc9070
+;   int g_EdgeCount
+;   int g_EdgeListMinY
+;   int g_EdgeListMaxY
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     MOV EDX,EBX                         ; 004c4c2e
     MOV EBX,EAX                         ; 004c4c30
     MOV EAX,EDX                         ; 004c4c32
-    MOV ECX,dword ptr [0x01cc8ce8]      ; 004c4c34 | g_INT_01cc8ce8
+    MOV ECX,dword ptr [0x01cc8ce8]      ; 004c4c34 | g_EdgeCount
         ;   Label: LAB_004c4c34
     SHL ECX,0x3                         ; 004c4c3a
     MOV EDX,ECX                         ; 004c4c3d
@@ -48,17 +48,17 @@ section .text
     SUB ECX,EDX                         ; 004c4c42
     ADD ECX,0x1cc8cec                   ; 004c4c44
     MOV dword ptr [ECX],EBX             ; 004c4c4a
-    MOV EBP,dword ptr [0x01cc906c]      ; 004c4c4c | g_INT_01cc906c
+    MOV EBP,dword ptr [0x01cc906c]      ; 004c4c4c | g_EdgeListMinY
     MOV dword ptr [ECX + 0x4],EAX       ; 004c4c52
     CMP EBX,EBP                         ; 004c4c55
     JGE 0x004c4c5f                      ; 004c4c57
         ;   XREF to: 004c4c5f (CONDITIONAL_JUMP)  ; LAB_004c4c5f
-    MOV dword ptr [0x01cc906c],EBX      ; 004c4c59 | g_INT_01cc906c
-    CMP EAX,dword ptr [0x01cc9070]      ; 004c4c5f | g_INT_01cc9070
+    MOV dword ptr [0x01cc906c],EBX      ; 004c4c59 | g_EdgeListMinY
+    CMP EAX,dword ptr [0x01cc9070]      ; 004c4c5f | g_EdgeListMaxY
         ;   Label: LAB_004c4c5f
     JLE 0x004c4c6c                      ; 004c4c65
         ;   XREF to: 004c4c6c (CONDITIONAL_JUMP)  ; LAB_004c4c6c
-    MOV [0x01cc9070],EAX                ; 004c4c67 | g_INT_01cc9070
+    MOV [0x01cc9070],EAX                ; 004c4c67 | g_EdgeListMaxY
     MOV EAX,dword ptr [ESI + 0x10]      ; 004c4c6c
         ;   Label: LAB_004c4c6c
     MOV dword ptr [ECX + 0x8],EAX       ; 004c4c6f
@@ -119,10 +119,10 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004c4d09
     MOV EBP,dword ptr [ECX + 0x20]      ; 004c4d0d
     ADD EBP,EAX                         ; 004c4d10
-    MOV EAX,[0x01cc8ce8]                ; 004c4d12 | g_INT_01cc8ce8
+    MOV EAX,[0x01cc8ce8]                ; 004c4d12 | g_EdgeCount
     INC EAX                             ; 004c4d17
     MOV dword ptr [ECX + 0x20],EBP      ; 004c4d18
-    MOV [0x01cc8ce8],EAX                ; 004c4d1b | g_INT_01cc8ce8
+    MOV [0x01cc8ce8],EAX                ; 004c4d1b | g_EdgeCount
     POP EBP                             ; 004c4d20
         ;   Label: LAB_004c4d20
     POP EDI                             ; 004c4d21

@@ -18,17 +18,17 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_0052ebd0(CNetGame *thi
   SChatOutMessage *pSVar6;
   SChatOutMessage *pSVar7;
   
-  if (0x31 < g_INT_01d6dfb8) {
+  if (0x31 < g_ChatOutCount) {
     g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
     g_INT_01d1d404 = 0x76c;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processChatOut - too many pending outgoing chat messages");
   }
-  iVar1 = g_INT_01d6dfb8;
-  iVar4 = g_INT_01d6dfb8 * 0x114;
-  pSVar7 = g_SChatOutMessage_ARRAY_01d6dfbc + g_INT_01d6dfb8;
-  g_INT_01d6dfb8 = g_INT_01d6dfb8 + 1;
+  iVar1 = g_ChatOutCount;
+  iVar4 = g_ChatOutCount * 0x114;
+  pSVar7 = g_ChatOutMessages + g_ChatOutCount;
+  g_ChatOutCount = g_ChatOutCount + 1;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
-  iVar3 = iVar2 / 0x12 - g_INT_01d51d9c;
+  iVar3 = iVar2 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
@@ -36,11 +36,11 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_0052ebd0(CNetGame *thi
     iVar3 = 0x20000;
   }
   g_UINT_01d51da0 = g_UINT_01d51da0 + iVar3;
-  g_INT_01d715a4 = g_INT_01d715a4 + 1;
-  g_INT_01d51d9c = iVar2 / 0x12;
-  g_SChatOutMessage_ARRAY_01d6dfbc[iVar1].sequence_number = g_INT_01d715a4;
+  g_ChatOutSequence = g_ChatOutSequence + 1;
+  g_LastPingTime = iVar2 / 0x12;
+  g_ChatOutMessages[iVar1].sequence_number = g_ChatOutSequence;
   pSVar7->timestamp = g_UINT_01d51da0;
-  memset(&g_SChatOutMessage_ARRAY_01d6dfbc[iVar1].ack_flags,1,2);
+  memset(&g_ChatOutMessages[iVar1].ack_flags,1,2);
   if (target_player < 0) {
     iVar4 = 0;
     pSVar5 = pSVar7;
@@ -59,12 +59,12 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_0052ebd0(CNetGame *thi
     *(byte *)((int)pSVar7->player_timestamps + target_player + -4) = 0;
     *(uint *)(iVar4 + 0x1d6dfc8 + target_player * 4) = g_UINT_01d51da0 - 0x3c0000;
   }
-  dest = g_SChatOutMessage_ARRAY_01d6dfbc[iVar1].message;
+  dest = g_ChatOutMessages[iVar1].message;
   *(byte *)((int)pSVar7->player_timestamps + this_ptr->local_player_index + -4) = 1;
   memset(dest,0,0x100);
   _strncpy(dest,message,0xff);
   core_netgame_cpp_CNetGame_addChatHistory_FUN_0052f100
             (this_ptr,&this_ptr->players[this_ptr->local_player_index].addr,
-             g_SChatOutMessage_ARRAY_01d6dfbc[iVar1].sequence_number,this_ptr->player_name,dest);
+             g_ChatOutMessages[iVar1].sequence_number,this_ptr->player_name,dest);
   return;
 }

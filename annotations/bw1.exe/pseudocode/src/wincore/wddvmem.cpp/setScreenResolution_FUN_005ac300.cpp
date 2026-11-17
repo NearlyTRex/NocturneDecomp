@@ -21,19 +21,17 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
   DDSCAPS DStack_18;
   int iStack_14;
   
-  if (g_IUnknown_PTR_02c9930c != (IUnknown *)0x0) {
-    (*g_IUnknown_PTR_02c9930c->vtable->Release)(g_IUnknown_PTR_02c9930c);
-    g_IUnknown_PTR_02c9930c = (IUnknown *)0x0;
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02c99308 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02c99308->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99308);
-    g_IDirectDrawSurface_PTR_02c99308 = (IDirectDrawSurface *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (g_IDirectDrawSurface_PTR_02c99304 != (IDirectDrawSurface *)0x0) {
-    (*g_IDirectDrawSurface_PTR_02c99304->vtable->Release)
-              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99304);
-    g_IDirectDrawSurface_PTR_02c99304 = (IDirectDrawSurface *)0x0;
+  if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+    (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+    g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   }
   if (((bits_per_pixel != 8) && (bits_per_pixel != 0x10)) && (bits_per_pixel != 0x20)) {
     return 0;
@@ -53,7 +51,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
   }
   if (g_PTR_02c99310 != (byte *)0x0) {
     debugFree(g_PTR_02c99310);
-    g_PTR_0071362c = (byte *)0x0;
+    g_SoftwareZBuffer = (byte *)0x0;
   }
   g_PTR_00629010 =
        malloc
@@ -71,23 +69,23 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
     g_INT_01d1d404 = 0xf2;
     core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of Z buffer memory");
   }
-  g_PTR_0071362c = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
-  HVar1 = (*g_IDirectDraw_PTR_02c99300->vtable->SetDisplayMode)
-                    (g_IDirectDraw_PTR_02c99300,width,height,bits_per_pixel);
+  g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
+  HVar1 = (*g_DirectDrawObject->vtable->SetDisplayMode)
+                    (g_DirectDrawObject,width,height,bits_per_pixel);
   if ((HVar1 != 0) && (height < 0x1e0)) {
     g_INT_02c99320 = 0x280;
     g_INT_02c9932c = (0x280 - width) / 2;
     g_INT_02c99330 = (0x1e0 - height) / 2;
     g_INT_02c99324 = 0x1e0;
-    HVar1 = (*g_IDirectDraw_PTR_02c99300->vtable->SetDisplayMode)
-                      (g_IDirectDraw_PTR_02c99300,0x280,0x1e0,bits_per_pixel);
+    HVar1 = (*g_DirectDrawObject->vtable->SetDisplayMode)
+                      (g_DirectDrawObject,0x280,0x1e0,bits_per_pixel);
   }
   if (HVar1 != 0) {
     if (bits_per_pixel != 0x20) {
       return 0;
     }
-    HVar1 = (*g_IDirectDraw_PTR_02c99300->vtable->SetDisplayMode)
-                      (g_IDirectDraw_PTR_02c99300,g_INT_02c99320,g_INT_02c99324,0x18);
+    HVar1 = (*g_DirectDrawObject->vtable->SetDisplayMode)
+                      (g_DirectDrawObject,g_INT_02c99320,g_INT_02c99324,0x18);
     if (HVar1 != 0) {
       return 0;
     }
@@ -99,19 +97,16 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
   DStack_f0.ddsCaps.dwCaps = 0x6218;
   DStack_f0.dwBackBufferCount = 2;
   DStack_f0.dwFlags = 0x21;
-  HVar1 = (*g_IDirectDraw_PTR_02c99300->vtable->CreateSurface)
-                    (g_IDirectDraw_PTR_02c99300,&DStack_f0,&g_IDirectDrawSurface_PTR_02c99304,
-                     (IUnknown *)0x0);
+  HVar1 = (*g_DirectDrawObject->vtable->CreateSurface)
+                    (g_DirectDrawObject,&DStack_f0,&g_DirectDrawSurface,(IUnknown *)0x0);
   if (HVar1 != 0) {
     DStack_f0.dwBackBufferCount = 1;
-    HVar1 = (*g_IDirectDraw_PTR_02c99300->vtable->CreateSurface)
-                      (g_IDirectDraw_PTR_02c99300,&DStack_f0,&g_IDirectDrawSurface_PTR_02c99304,
-                       (IUnknown *)0x0);
+    HVar1 = (*g_DirectDrawObject->vtable->CreateSurface)
+                      (g_DirectDrawObject,&DStack_f0,&g_DirectDrawSurface,(IUnknown *)0x0);
     if (HVar1 != 0) {
       DStack_f0.ddsCaps.dwCaps = 0xa18;
-      HVar1 = (*g_IDirectDraw_PTR_02c99300->vtable->CreateSurface)
-                        (g_IDirectDraw_PTR_02c99300,&DStack_f0,&g_IDirectDrawSurface_PTR_02c99304,
-                         (IUnknown *)0x0);
+      HVar1 = (*g_DirectDrawObject->vtable->CreateSurface)
+                        (g_DirectDrawObject,&DStack_f0,&g_DirectDrawSurface,(IUnknown *)0x0);
       if (HVar1 != 0) {
         return 0;
       }
@@ -119,9 +114,8 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
   }
   memset(&DStack_18,0,4);
   DStack_18.dwCaps = 4;
-  HVar1 = (*g_IDirectDrawSurface_PTR_02c99304->vtable->GetAttachedSurface)
-                    (g_IDirectDrawSurface_PTR_02c99304,&DStack_18,&g_IDirectDrawSurface_PTR_02c99308
-                    );
+  HVar1 = (*g_DirectDrawSurface->vtable->GetAttachedSurface)
+                    (g_DirectDrawSurface,&DStack_18,&g_SoftwareRenderSurface);
   if (HVar1 == 0) {
     iVar5 = 0;
     if (0 < g_INT_0061b49c) {
@@ -131,10 +125,10 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
       iVar3 = 0;
       iVar4 = 0;
       do {
-        *(byte **)((int)g_ARRAY_PTR_01c4354c + iVar4) =
+        *(byte **)((int)g_ScreenBufferArray + iVar4) =
              g_PTR_00629010 + g_INT_0061b498 * iVar5 * ((int)(iVar6 - (uint)(iVar2 << 2 < 0)) >> 3);
         iVar5 = iVar5 + 1;
-        *(byte **)((int)g_UINT_PTR_ARRAY_01c4480c + iVar4) = g_PTR_0071362c + iVar3;
+        *(byte **)((int)g_ZBufferScanlineArray + iVar4) = g_SoftwareZBuffer + iVar3;
         iVar3 = iVar3 + iStack_14;
         iVar4 = iVar4 + 4;
       } while (iVar5 < g_INT_0061b49c);
@@ -145,8 +139,8 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
     do {
       memset(&DStack_84,0,0x6c);
       DStack_84.dwSize = 0x6c;
-      HVar1 = (*g_IDirectDrawSurface_PTR_02c99308->vtable->Lock)
-                        (g_IDirectDrawSurface_PTR_02c99308,(RECT *)0x0,&DStack_84,1,(void *)0x0);
+      HVar1 = (*g_SoftwareRenderSurface->vtable->Lock)
+                        (g_SoftwareRenderSurface,(RECT *)0x0,&DStack_84,1,(void *)0x0);
       if (HVar1 != 0) {
         g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
         g_INT_01d1d404 = 0x1ec;
@@ -164,14 +158,13 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
           dest = (LPVOID)((int)dest + DStack_84.dwPitchOrLinearSize.lPitch);
         } while (iVar6 < g_INT_02c99324);
       }
-      HVar1 = (*g_IDirectDrawSurface_PTR_02c99308->vtable->Unlock)
-                        (g_IDirectDrawSurface_PTR_02c99308,(void *)0x0);
+      HVar1 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
       if (HVar1 != 0) {
         g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
         g_INT_01d1d404 = 0x1f6;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Unlock of back buffer clear failed");
       }
-      g_INT_02c99314 = 1;
+      g_FlipPending = 1;
       iVar5 = iVar5 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     } while (iVar5 < 3);

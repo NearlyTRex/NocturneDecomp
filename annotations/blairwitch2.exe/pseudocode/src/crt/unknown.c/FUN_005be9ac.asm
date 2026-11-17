@@ -8,15 +8,15 @@
 ;   crt_unknown.c_FUN_005b8a3c at 005b8a52
 ;
 ; Referenced Globals:
-;   undefined4 g_CHAR_ARRAY_005f19e4+4
-;   undefined4 g_CHAR_ARRAY_005f19e4+8
-;   void* PTR_g_CHAR_ARRAY_005f19e4+4_0061f2f8 = 005f19e8
-;   void* PTR_g_CHAR_ARRAY_005f19e4+8_0061f2fc = 005f19ec
+;   undefined4 g_EmptyStringBuffer+4
+;   undefined4 g_EmptyStringBuffer+8
+;   void* PTR_g_EmptyStringBuffer+4_0061f2f8 = 005f19e8
+;   void* PTR_g_EmptyStringBuffer+8_0061f2fc = 005f19ec
 ;   undefined1 DAT_0061f30b
-;   char[260] g_CHAR_ARRAY_0061f30c
-;   undefined4 g_CHAR_ARRAY_0061f30c+1
-;   undefined4 g_CHAR_ARRAY_0061f30c+2
-;   undefined4 g_CHAR_ARRAY_0061f30c+3
+;   char[260] g_TempDirectoryBuffer
+;   undefined4 g_TempDirectoryBuffer+1
+;   undefined4 g_TempDirectoryBuffer+2
+;   undefined4 g_TempDirectoryBuffer+3
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_005bac90
@@ -31,13 +31,13 @@ section .text
         ;   Label: crt_unknown.c_FUN_005be9ac
     PUSH ESI                            ; 005be9ad
     PUSH EDI                            ; 005be9ae
-    CMP byte ptr [0x0061f30c],0x0       ; 005be9af | g_CHAR_ARRAY_0061f30c
+    CMP byte ptr [0x0061f30c],0x0       ; 005be9af | g_TempDirectoryBuffer
     JNZ 0x005bea71                      ; 005be9b6
         ;   XREF to: 005bea71 (CONDITIONAL_JUMP)  ; LAB_005bea71
-    MOV EBX,0x61f2f8                    ; 005be9bc | PTR_g_CHAR_ARRAY_005f19e4+4_0061f2f8
+    MOV EBX,0x61f2f8                    ; 005be9bc | PTR_g_EmptyStringBuffer+4_0061f2f8
     JMP 0x005bea04                      ; 005be9c1
         ;   XREF to: 005bea04 (UNCONDITIONAL_JUMP)  ; LAB_005bea04
-    PUSH EDX                            ; 005be9c3 | g_CHAR_ARRAY_005f19e4+4
+    PUSH EDX                            ; 005be9c3 | g_EmptyStringBuffer+4
         ;   Label: LAB_005be9c3
     CALL crt_env.c_getenv_FUN_005bac90  ; 005be9c4
         ;   XREF to: 005bac90 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_005bac90(char * name)
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 005bea01 (CONDITIONAL_JUMP)  ; LAB_005bea01
     PUSH 0x103                          ; 005be9ec
     PUSH EDX                            ; 005be9f1
-    PUSH 0x61f30c                       ; 005be9f2 | g_CHAR_ARRAY_0061f30c
+    PUSH 0x61f30c                       ; 005be9f2 | g_TempDirectoryBuffer
     CALL crt_stdlib.c__fullpath_FUN_005ba120 ; 005be9f7
         ;   XREF to: 005ba120 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c__fullpath_FUN_005ba120(char * buffer, char * path, SIZE_T buffer_size)
     ADD ESP,0xc                         ; 005be9fc
@@ -70,12 +70,12 @@ section .text
         ;   XREF to: 005bea0b (UNCONDITIONAL_JUMP)  ; LAB_005bea0b
     ADD EBX,0x4                         ; 005bea01
         ;   Label: LAB_005bea01
-    MOV EDX,dword ptr [EBX]             ; 005bea04 | PTR_g_CHAR_ARRAY_005f19e4+4_0061f2f8 | PTR_g_CHAR_ARRAY_005f19e4+8_0061f2fc
+    MOV EDX,dword ptr [EBX]             ; 005bea04 | PTR_g_EmptyStringBuffer+4_0061f2f8 | PTR_g_EmptyStringBuffer+8_0061f2fc
         ;   Label: LAB_005bea04
-    CMP byte ptr [EDX],0x0              ; 005bea06 | g_CHAR_ARRAY_005f19e4+4 | g_CHAR_ARRAY_005f19e4+8
+    CMP byte ptr [EDX],0x0              ; 005bea06 | g_EmptyStringBuffer+4 | g_EmptyStringBuffer+8
     JNZ 0x005be9c3                      ; 005bea09
         ;   XREF to: 005be9c3 (CONDITIONAL_JUMP)  ; LAB_005be9c3
-    CMP byte ptr [0x0061f30c],0x0       ; 005bea0b | g_CHAR_ARRAY_0061f30c
+    CMP byte ptr [0x0061f30c],0x0       ; 005bea0b | g_TempDirectoryBuffer
         ;   Label: LAB_005bea0b
     JNZ 0x005bea41                      ; 005bea12
         ;   XREF to: 005bea41 (CONDITIONAL_JUMP)  ; LAB_005bea41
@@ -84,25 +84,25 @@ section .text
     CALL crt_unknown.c_FUN_005c0f10     ; 005bea18
         ;   XREF to: 005c0f10 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_FUN_005c0f10(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 005bea1d
-    MOV EDI,0x61f30c                    ; 005bea20 | g_CHAR_ARRAY_0061f30c
+    MOV EDI,0x61f30c                    ; 005bea20 | g_TempDirectoryBuffer
     MOV ESI,EAX                         ; 005bea25
-    PUSH EDI                            ; 005bea27 | g_CHAR_ARRAY_0061f30c
+    PUSH EDI                            ; 005bea27 | g_TempDirectoryBuffer
     MOV AL,byte ptr [ESI]               ; 005bea28
         ;   Label: LAB_005bea28
-    MOV byte ptr [EDI],AL               ; 005bea2a | g_CHAR_ARRAY_0061f30c | g_CHAR_ARRAY_0061f30c+2
+    MOV byte ptr [EDI],AL               ; 005bea2a | g_TempDirectoryBuffer | g_TempDirectoryBuffer+2
     CMP AL,0x0                          ; 005bea2c
     JZ 0x005bea40                       ; 005bea2e
         ;   XREF to: 005bea40 (CONDITIONAL_JUMP)  ; LAB_005bea40
     MOV AL,byte ptr [ESI + 0x1]         ; 005bea30
     ADD ESI,0x2                         ; 005bea33
-    MOV byte ptr [EDI + 0x1],AL         ; 005bea36 | g_CHAR_ARRAY_0061f30c+1 | g_CHAR_ARRAY_0061f30c+3
+    MOV byte ptr [EDI + 0x1],AL         ; 005bea36 | g_TempDirectoryBuffer+1 | g_TempDirectoryBuffer+3
     ADD EDI,0x2                         ; 005bea39
     CMP AL,0x0                          ; 005bea3c
     JNZ 0x005bea28                      ; 005bea3e
         ;   XREF to: 005bea28 (CONDITIONAL_JUMP)  ; LAB_005bea28
     POP EDI                             ; 005bea40
         ;   Label: LAB_005bea40
-    MOV EDI,0x61f30c                    ; 005bea41 | g_CHAR_ARRAY_0061f30c
+    MOV EDI,0x61f30c                    ; 005bea41 | g_TempDirectoryBuffer
         ;   Label: LAB_005bea41
     PUSH ES                             ; 005bea46
     MOV AX,DS                           ; 005bea47
@@ -110,13 +110,13 @@ section .text
     SUB ECX,ECX                         ; 005bea4b
     DEC ECX                             ; 005bea4d
     XOR EAX,EAX                         ; 005bea4e
-    SCASB.REPNE ES:EDI                  ; 005bea50 | g_CHAR_ARRAY_0061f30c | g_CHAR_ARRAY_0061f30c+1
+    SCASB.REPNE ES:EDI                  ; 005bea50 | g_TempDirectoryBuffer | g_TempDirectoryBuffer+1
     NOT ECX                             ; 005bea52
     DEC ECX                             ; 005bea54
     POP ES                              ; 005bea55
     LEA EDX,[ECX + -0x1]                ; 005bea56
-    ADD EDX,0x61f30c                    ; 005bea59 | g_CHAR_ARRAY_0061f30c
-    MOV AL,byte ptr [EDX]               ; 005bea5f | DAT_0061f30b | g_CHAR_ARRAY_0061f30c
+    ADD EDX,0x61f30c                    ; 005bea59 | g_TempDirectoryBuffer
+    MOV AL,byte ptr [EDX]               ; 005bea5f | DAT_0061f30b | g_TempDirectoryBuffer
     CMP AL,0x5c                         ; 005bea61
     JZ 0x005bea71                       ; 005bea63
         ;   XREF to: 005bea71 (CONDITIONAL_JUMP)  ; LAB_005bea71
@@ -124,10 +124,10 @@ section .text
     JZ 0x005bea71                       ; 005bea67
         ;   XREF to: 005bea71 (CONDITIONAL_JUMP)  ; LAB_005bea71
     INC EDX                             ; 005bea69
-    MOV byte ptr [EDX],0x5c             ; 005bea6a | g_CHAR_ARRAY_0061f30c | g_CHAR_ARRAY_0061f30c+1
+    MOV byte ptr [EDX],0x5c             ; 005bea6a | g_TempDirectoryBuffer | g_TempDirectoryBuffer+1
     INC EDX                             ; 005bea6d
-    MOV byte ptr [EDX],0x0              ; 005bea6e | g_CHAR_ARRAY_0061f30c+1 | g_CHAR_ARRAY_0061f30c+2
-    MOV EAX,0x61f30c                    ; 005bea71 | g_CHAR_ARRAY_0061f30c
+    MOV byte ptr [EDX],0x0              ; 005bea6e | g_TempDirectoryBuffer+1 | g_TempDirectoryBuffer+2
+    MOV EAX,0x61f30c                    ; 005bea71 | g_TempDirectoryBuffer
         ;   Label: LAB_005bea71
     POP EDI                             ; 005bea76
     POP ESI                             ; 005bea77

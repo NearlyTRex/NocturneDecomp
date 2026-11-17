@@ -23,7 +23,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_pt
   float fStack_8;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (g_CEventList_PTR_005b7650,this_ptr->on_fire_condition);
+                    (g_CEventListPtr,this_ptr->on_fire_condition);
   if (iVar2 == 0) {
     if (this_ptr->on_fire == 0) {
       return;
@@ -54,6 +54,6 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_pt
   fStack_24 = (this_ptr->base).location.position.y + fStack_18;
   fStack_20 = (this_ptr->base).location.position.z + fStack_14;
   core_fire_cpp_CFireEffect_createExplosion_FUN_0048c0d0
-            (g_CFireEffect_PTR_005b80f0,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);
+            (g_CFireEffectPtr,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);
   return;
 }

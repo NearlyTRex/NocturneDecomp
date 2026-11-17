@@ -15,7 +15,7 @@
 ;   core_water.cpp_CWater_render_FUN_00577760 at 00577cba
 ;
 ; Referenced Globals:
-;   int g_INT_007303dc
+;   int g_CurrentPolygonColor
 ;
 ; *****************************************************************************
 
@@ -23,6 +23,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046d3c0
         ;   Label: engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0
-    MOV [0x007303dc],EAX                ; 0046d3c4 | g_INT_007303dc
+    MOV [0x007303dc],EAX                ; 0046d3c4 | g_CurrentPolygonColor
     RET                                 ; 0046d3c9
 

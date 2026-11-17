@@ -45,9 +45,9 @@
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   CVector3i[2000] g_CVector3i_ARRAY_01d88648
-;   undefined4 g_CVector3i_ARRAY_01d88648[0].y
-;   undefined4 g_CVector3i_ARRAY_01d88648[0].z
+;   CVector3i[2000] g_MorphVertexBuffer
+;   undefined4 g_MorphVertexBuffer[0].y
+;   undefined4 g_MorphVertexBuffer[0].z
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -154,17 +154,17 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004fa590
     FLD float ptr [EAX]                 ; 004fa591
     FMUL float ptr [0x005e2c00]         ; 004fa593 | g_FLOAT_005e2c00
-    FISTP dword ptr [EBX]               ; 004fa599 | g_CVector3i_ARRAY_01d88648
+    FISTP dword ptr [EBX]               ; 004fa599 | g_MorphVertexBuffer
     FLD float ptr [EAX + 0x4]           ; 004fa59b
     FMUL float ptr [0x005e2c00]         ; 004fa59e | g_FLOAT_005e2c00
-    FISTP dword ptr [EBX + 0x4]         ; 004fa5a4 | g_CVector3i_ARRAY_01d88648[0].y
+    FISTP dword ptr [EBX + 0x4]         ; 004fa5a4 | g_MorphVertexBuffer[0].y
     FLD float ptr [EAX + 0x8]           ; 004fa5a7
     FMUL float ptr [0x005e2c00]         ; 004fa5aa | g_FLOAT_005e2c00
-    FISTP dword ptr [EBX + 0x8]         ; 004fa5b0 | g_CVector3i_ARRAY_01d88648[0].z
+    FISTP dword ptr [EBX + 0x8]         ; 004fa5b0 | g_MorphVertexBuffer[0].z
     MOV EAX,[0x005f2afc]                ; 004fa5b3 | g_CDemonRenderer_PTR_005f2afc
     MOV EDX,dword ptr [ESP + 0x5c]      ; 004fa5b8
     MOV EAX,dword ptr [EAX]             ; 004fa5bc | g_CDemonRenderer_01bdd7e4
-    PUSH EBP                            ; 004fa5be | g_CVector3i_ARRAY_01d88648
+    PUSH EBP                            ; 004fa5be | g_MorphVertexBuffer
     ADD EAX,EDX                         ; 004fa5bf
     PUSH EAX                            ; 004fa5c1
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004fa5c2
@@ -238,7 +238,7 @@ section .text
     PUSH EBP                            ; 004fa680
     PUSH 0x3                            ; 004fa681
     MOV EAX,dword ptr [ESP + 0x7c]      ; 004fa683
-    PUSH 0x1d88648                      ; 004fa687 | g_CVector3i_ARRAY_01d88648
+    PUSH 0x1d88648                      ; 004fa687 | g_MorphVertexBuffer
     MOV EBX,dword ptr [EAX + 0x60]      ; 004fa68c
     PUSH EBX                            ; 004fa68f
     MOV ESI,dword ptr [EAX + 0x5c]      ; 004fa690

@@ -79,12 +79,12 @@
 ;   float g_FLOAT_005d59b3 = 0.04166667
 ;   float g_FLOAT_005fd5f0 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_007c6160
-;   undefined4 g_SMRGLTextureBasic_007c6160.texture_name[0]
-;   undefined4 g_SMRGLTextureBasic_007c6160.texture_name[1]
-;   undefined4 g_SMRGLTextureBasic_007c6160.texture_name[2]
-;   undefined4 g_SMRGLTextureBasic_007c6160.texture_name[3]
-;   undefined4 g_CHAR_ARRAY_007ddbb4+0x2244c
+;   SMRGLTextureBasic g_CollisionTexture
+;   undefined4 g_CollisionTexture.texture_name[0]
+;   undefined4 g_CollisionTexture.texture_name[1]
+;   undefined4 g_CollisionTexture.texture_name[2]
+;   undefined4 g_CollisionTexture.texture_name[3]
+;   undefined4 g_CameraLoadImageReadBuffer+0x2244c
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -123,42 +123,42 @@ section .text
     RET                                 ; 0042ea38
     MOV ESI,0x5d5993                    ; 0042ea39 | = "headlite.raw"
         ;   Label: LAB_0042ea39
-    MOV EDI,0x7c6168                    ; 0042ea3e | g_SMRGLTextureBasic_007c6160.texture_name[0]
+    MOV EDI,0x7c6168                    ; 0042ea3e | g_CollisionTexture.texture_name[0]
     MOV dword ptr [ESP + 0x1c],EAX      ; 0042ea43
     MOV dword ptr [ESP + 0x18],EAX      ; 0042ea47
     MOV dword ptr [ESP + 0x14],EAX      ; 0042ea4b
     MOV dword ptr [ESP + 0x10],EAX      ; 0042ea4f
-    PUSH EDI                            ; 0042ea53 | g_SMRGLTextureBasic_007c6160.texture_name[0]
+    PUSH EDI                            ; 0042ea53 | g_CollisionTexture.texture_name[0]
     MOV AL,byte ptr [ESI]               ; 0042ea54 | = "headlite.raw" | s_headlite_raw_005d5993+2
         ;   Label: LAB_0042ea54
-    MOV byte ptr [EDI],AL               ; 0042ea56 | g_SMRGLTextureBasic_007c6160.texture_name[0] | g_SMRGLTextureBasic_007c6160.texture_name[2]
+    MOV byte ptr [EDI],AL               ; 0042ea56 | g_CollisionTexture.texture_name[0] | g_CollisionTexture.texture_name[2]
     CMP AL,0x0                          ; 0042ea58
     JZ 0x0042ea6c                       ; 0042ea5a
         ;   XREF to: 0042ea6c (CONDITIONAL_JUMP)  ; LAB_0042ea6c
     MOV AL,byte ptr [ESI + 0x1]         ; 0042ea5c | s_headlite_raw_005d5993+1 | s_headlite_raw_005d5993+3
     ADD ESI,0x2                         ; 0042ea5f
-    MOV byte ptr [EDI + 0x1],AL         ; 0042ea62 | g_SMRGLTextureBasic_007c6160.texture_name[1] | g_SMRGLTextureBasic_007c6160.texture_name[3]
+    MOV byte ptr [EDI + 0x1],AL         ; 0042ea62 | g_CollisionTexture.texture_name[1] | g_CollisionTexture.texture_name[3]
     ADD EDI,0x2                         ; 0042ea65
     CMP AL,0x0                          ; 0042ea68
     JNZ 0x0042ea54                      ; 0042ea6a
         ;   XREF to: 0042ea54 (CONDITIONAL_JUMP)  ; LAB_0042ea54
     POP EDI                             ; 0042ea6c
         ;   Label: LAB_0042ea6c
-    PUSH 0x7c6160                       ; 0042ea6d | g_SMRGLTextureBasic_007c6160
+    PUSH 0x7c6160                       ; 0042ea6d | g_CollisionTexture
     MOV EAX,[0x00612560]                ; 0042ea72 | g_CDemonRenderer_PTR_00612560
     PUSH EAX                            ; 0042ea77 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 0042ea78
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0042ea7d
     XOR EAX,EAX                         ; 0042ea80
-    MOV ESI,0x800000                    ; 0042ea82 | g_CHAR_ARRAY_007ddbb4+0x2244c
+    MOV ESI,0x800000                    ; 0042ea82 | g_CameraLoadImageReadBuffer+0x2244c
     MOV EDX,dword ptr [0x00612560]      ; 0042ea87 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_0042ea87
     MOV EBX,dword ptr [EDX]             ; 0042ea8d | g_CDemonRenderer_01bc120c
-    MOV dword ptr [EBX + EAX*0x1 + 0x18],ESI ; 0042ea8f | g_CHAR_ARRAY_007ddbb4+0x2244c
+    MOV dword ptr [EBX + EAX*0x1 + 0x18],ESI ; 0042ea8f | g_CameraLoadImageReadBuffer+0x2244c
     ADD EAX,0x30                        ; 0042ea93
     MOV EDX,dword ptr [EDX]             ; 0042ea96 | g_CDemonRenderer_01bc120c
-    MOV dword ptr [EDX + EAX*0x1 + -0x14],ESI ; 0042ea98 | g_CHAR_ARRAY_007ddbb4+0x2244c
+    MOV dword ptr [EDX + EAX*0x1 + -0x14],ESI ; 0042ea98 | g_CameraLoadImageReadBuffer+0x2244c
     CMP EAX,0x12c0                      ; 0042ea9c
     JNZ 0x0042ea87                      ; 0042eaa1
         ;   XREF to: 0042ea87 (CONDITIONAL_JUMP)  ; LAB_0042ea87
@@ -547,13 +547,13 @@ section .text
     LEA EBX,[ESP + 0x90]                ; 0042f06c
     MOV EAX,0x2c8af28                   ; 0042f073
     MOV EDX,dword ptr [0x00612560]      ; 0042f078 | g_CDemonRenderer_PTR_00612560
-    FLD float ptr [EAX]                 ; 0042f07e | g_CVector3f_02c8af28
+    FLD float ptr [EAX]                 ; 0042f07e | g_ZeroVector
     FMUL float ptr [0x005fd5f0]         ; 0042f080 | g_FLOAT_005fd5f0
     FISTP dword ptr [EBX]               ; 0042f086
-    FLD float ptr [EAX + 0x4]           ; 0042f088 | g_CVector3f_02c8af28.y
+    FLD float ptr [EAX + 0x4]           ; 0042f088 | g_ZeroVector.y
     FMUL float ptr [0x005fd5f0]         ; 0042f08b | g_FLOAT_005fd5f0
     FISTP dword ptr [EBX + 0x4]         ; 0042f091
-    FLD float ptr [EAX + 0x8]           ; 0042f094 | g_CVector3f_02c8af28.z
+    FLD float ptr [EAX + 0x8]           ; 0042f094 | g_ZeroVector.z
     FMUL float ptr [0x005fd5f0]         ; 0042f097 | g_FLOAT_005fd5f0
     FISTP dword ptr [EBX + 0x8]         ; 0042f09d
     LEA EAX,[ESP + 0x90]                ; 0042f0a0

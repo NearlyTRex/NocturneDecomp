@@ -2,11 +2,11 @@
 // Address: 00563970
 // Address Range: [[00563970, 00563e37]]
 // Convention: __cdecl
-// Signature: void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)
+// Signature: void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)
+void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float delta_time)
 
 {
   UOrientationVector *pUVar1;
@@ -44,7 +44,7 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
   
   bVar12 = 0;
   if (ABS(this_ptr->spawn_timer) == 0.0) {
-    this_ptr->reset_timer = this_ptr->reset_timer - param_2;
+    this_ptr->reset_timer = this_ptr->reset_timer - delta_time;
     if (0.0 < this_ptr->reset_timer) {
       return;
     }

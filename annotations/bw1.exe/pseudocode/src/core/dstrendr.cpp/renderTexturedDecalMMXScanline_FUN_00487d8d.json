@@ -39,109 +39,109 @@
   "globals": [
     {
       "addr": "00614518",
-      "name": "g_UINT_00614518",
+      "name": "g_PerspectiveNextU",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "0061451c",
-      "name": "g_UINT_0061451c",
+      "name": "g_PerspectiveNextV",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "00614524",
-      "name": "g_UINT_00614524",
+      "name": "g_StartDepthZ",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "00614534",
-      "name": "g_INT_00614534",
+      "name": "g_SoftwareDeltaTextureU",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "00614538",
-      "name": "g_INT_00614538",
+      "name": "g_SoftwareDeltaTextureV",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "0061453c",
-      "name": "g_INT_0061453c",
+      "name": "g_SoftwareDeltaDepthZ",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "00614540",
-      "name": "g_PTR_00614540",
+      "name": "g_PerspectiveScanlineColorPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "00614544",
-      "name": "g_INT_00614544",
+      "name": "g_PerspectiveScanlinePixelCount",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "00614548",
-      "name": "g_UINT_PTR_00614548",
+      "name": "g_PerspectiveScanlineZPtr",
       "type": "uint*",
       "value": "00000000"
     },
     {
       "addr": "00623eb8",
-      "name": "g_QWORD_00623eb8",
+      "name": "g_TextureShift1",
       "type": "qword",
       "value": "0x10"
     },
     {
       "addr": "00623ed8",
-      "name": "g_QWORD_00623ed8",
+      "name": "g_TextureShift2",
       "type": "qword",
       "value": "0x8"
     },
     {
       "addr": "00623ef8",
-      "name": "g_QWORD_00623ef8",
+      "name": "g_TextureMask1",
       "type": "qword",
       "value": "0xff"
     },
     {
       "addr": "00623f18",
-      "name": "g_QWORD_00623f18",
+      "name": "g_TextureMask2",
       "type": "qword",
       "value": "0xff00"
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c4480c",
-      "name": "g_UINT_PTR_ARRAY_01c4480c",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c4e3d4",
-      "name": "g_UINT_ARRAY_01c4e3d4",
+      "name": "g_Hardware32BitPalette",
       "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c4f034",
-      "name": "g_UINT_ARRAY_01c4f030[1]",
+      "name": "g_ReciprocalLookupTable[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c50930",
-      "name": "g_UCHAR_PTR_01c50930",
+      "name": "g_CurrentTextureData",
       "type": "uchar*",
       "value": null
     }
@@ -227,17 +227,17 @@
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(int *)((int)g_UINT_PTR_00614548",
+      "match": "(int *)((int)g_PerspectiveScanlineZPtr",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_UINT_PTR_00614548 + uVar6) <= (int)uVar1) {",
+      "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_00614548` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PerspectiveScanlineZPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 48,
-      "match": "(int)g_UINT_PTR_00614548",
+      "match": "(int)g_PerspectiveScanlineZPtr",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_UINT_PTR_00614548 + uVar6) <= (int)uVar1) {",
+      "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {",
       "type": "pointer_truncation"
     }
   ]

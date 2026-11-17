@@ -15,7 +15,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [g_ULONG_01c38b5c]
+        movd MM5,dword ptr [g_SolidColorMode]
         punpcklbw MM5,MM7
         psllw MM5,0x6
     LAB_004707eb:
@@ -41,8 +41,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_QWORD_00611318]
-        paddw MM1,qword ptr [g_QWORD_00611320]
+        paddw MM0,qword ptr [g_AmbientLightMMX1]
+        paddw MM1,qword ptr [g_AmbientLightMMX2]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1
@@ -71,8 +71,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_QWORD_00611318]
-        paddw MM1,qword ptr [g_QWORD_00611320]
+        paddw MM0,qword ptr [g_AmbientLightMMX1]
+        paddw MM1,qword ptr [g_AmbientLightMMX2]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1

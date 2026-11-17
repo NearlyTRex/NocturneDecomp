@@ -16,7 +16,7 @@
 ;   TerminatedCString s_C3DSCamera_apply_shouldn_005f1165
 ;   TerminatedCString s_Ambient_set_low_by_scrip_005f11a8
 ;   TerminatedCString s_Ambient_set_ridiculously_005f11c3
-;   double g_DOUBLE_005f11e9 = 0.25
+;   double g_MaxRecommendedAmbient = 0.25
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CConsole g_CConsoleInstance
@@ -100,7 +100,7 @@ section .text
     ADD ESP,0x8                         ; 0055c694
     FLD float ptr [EBX + 0x148]         ; 0055c697
         ;   Label: LAB_0055c697
-    FCOMP double ptr [0x005f11e9]       ; 0055c69d | g_DOUBLE_005f11e9
+    FCOMP double ptr [0x005f11e9]       ; 0055c69d | g_MaxRecommendedAmbient
     FNSTSW AX                           ; 0055c6a3
     SAHF                                ; 0055c6a5
     JA 0x0055c6d6                       ; 0055c6a6

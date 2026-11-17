@@ -12,8 +12,8 @@ uint FUN_005af2a0(byte *param_1)
   if (*param_1 == 0) {
     return 1;
   }
-  if (((g_INT_02d25930 != 0) && ((g_CHAR_ARRAY_02d25941[*param_1] & 1U) != 0)) && (param_1[1] == 0))
-  {
+  if (((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[*param_1] & 1U) != 0)) &&
+     (param_1[1] == 0)) {
     return 2;
   }
   return 0;

@@ -63,8 +63,8 @@ extern CCharacter_full_vtable g_CDrummerVTable;
 extern CConfederateZombie_full_vtable g_CConfederateZombieVTable;
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_005f61e4;
-extern CDemonActor* g_CDemonActor_PTR_005fb000;
+extern CDemonActor* g_ActorNameSentinel;
+extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -186,7 +186,7 @@ extern CPickList_full_vtable g_CPickListVTable;
 extern CPod_vtable g_CPod_vtable_005fad64;
 
 // CQuaternion4f
-extern CQuaternion4f g_CQuaternion4f_005fe2f0;
+extern CQuaternion4f g_IdentityQuaternion;
 
 // CRobin_full_vtable
 extern CRobin_full_vtable g_CRobinVTable;
@@ -589,7 +589,7 @@ extern WatcomTypeInfo g_CSteubenTypeInfo;
 extern WatcomTypeInfo g_CRobinTypeInfo;
 
 // char
-extern char g_CHAR_005f20f1;
+extern char g_SpaceCharacter;
 
 // int
 extern int g_INT_005f192c;

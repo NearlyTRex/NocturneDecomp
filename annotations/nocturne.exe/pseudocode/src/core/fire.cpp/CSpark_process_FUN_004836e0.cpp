@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004836e0(CSpark *this_ptr)
     this_ptr->first_update_flag = 1;
   }
   else {
-    lVar1 = (longlong)g_INT_01bd1d80 * (longlong)this_ptr->fade_rate;
+    lVar1 = (longlong)g_GlobalDeltaTimeInt * (longlong)this_ptr->fade_rate;
     lVar1 = (longlong)this_ptr->intensity_target *
             (longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     iVar2 = this_ptr->intensity_current -
@@ -29,7 +29,7 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004836e0(CSpark *this_ptr)
     }
   }
   delta_time = g_CGamePtr->delta_time_float;
-  lVar1 = (longlong)this_ptr->fade_rate * (longlong)g_INT_01bd1d80;
+  lVar1 = (longlong)this_ptr->fade_rate * (longlong)g_GlobalDeltaTimeInt;
   core_game_cpp_CGame_slamDT_FUN_004a5f00
             (g_CGamePtr,
              (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *

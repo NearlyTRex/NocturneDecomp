@@ -43,8 +43,8 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005e93a6 = 2
 ;   float g_FLOAT_005e93ae = 3.141593
-;   int g_INT_0061bca0 = 0x5622
-;   int g_INT_02648e98
+;   int g_AudioSampleRate = 0x5622
+;   int g_MixBufferSize
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005b84d0
@@ -74,7 +74,7 @@ section .text
     CMP dword ptr [EBX + 0x2648f0c],0x0 ; 00553b87
     JZ 0x00553b99                       ; 00553b8e
         ;   XREF to: 00553b99 (CONDITIONAL_JUMP)  ; LAB_00553b99
-    CMP dword ptr [0x02648e98],0x1      ; 00553b90 | g_INT_02648e98
+    CMP dword ptr [0x02648e98],0x1      ; 00553b90 | g_MixBufferSize
     JGE 0x00553bb0                      ; 00553b97
         ;   XREF to: 00553bb0 (CONDITIONAL_JUMP)  ; LAB_00553bb0
     XOR EDI,EDI                         ; 00553b99
@@ -93,7 +93,7 @@ section .text
     CMP EAX,dword ptr [EBX + 0x263cef0] ; 00553bb5
     JZ 0x00553f0a                       ; 00553bbb
         ;   XREF to: 00553f0a (CONDITIONAL_JUMP)  ; LAB_00553f0a
-    MOV ESI,dword ptr [0x02648e98]      ; 00553bc1 | g_INT_02648e98
+    MOV ESI,dword ptr [0x02648e98]      ; 00553bc1 | g_MixBufferSize
     MOV EDX,dword ptr [EBX + 0x2648eec] ; 00553bc7
     MOV ECX,dword ptr [EBX + 0x2648f0c] ; 00553bcd
     MOV EDI,dword ptr [EBX + 0x2648ec8] ; 00553bd3
@@ -342,7 +342,7 @@ section .text
         ;   Label: LAB_00553efb
     MOV EDX,dword ptr [EBP + 0x14]      ; 00553f00
     MOV dword ptr [EDX*0x4 + 0x263cef0],EAX ; 00553f03
-    MOV EAX,[0x02648e98]                ; 00553f0a | g_INT_02648e98
+    MOV EAX,[0x02648e98]                ; 00553f0a | g_MixBufferSize
         ;   Label: LAB_00553f0a
     MOV EDX,EAX                         ; 00553f0f
     SAR EDX,0x1f                        ; 00553f11
@@ -354,7 +354,7 @@ section .text
     FILD dword ptr [ESP + 0xb0]         ; 00553f25
     FSTP float ptr [ESP + 0xb0]         ; 00553f2c
     FMUL float ptr [ESP + 0xb0]         ; 00553f33
-    FILD dword ptr [0x0061bca0]         ; 00553f3a | g_INT_0061bca0
+    FILD dword ptr [0x0061bca0]         ; 00553f3a | g_AudioSampleRate
     FDIVP                               ; 00553f40
     SUB ESP,0x8                         ; 00553f42
     FSTP double ptr [ESP]               ; 00553f45
@@ -366,7 +366,7 @@ section .text
     ADD ESP,0x8                         ; 00553f62
     FLD float ptr [EBP + 0x1c]          ; 00553f65
     FMUL float ptr [ESP + 0xb0]         ; 00553f68
-    FILD dword ptr [0x0061bca0]         ; 00553f6f | g_INT_0061bca0
+    FILD dword ptr [0x0061bca0]         ; 00553f6f | g_AudioSampleRate
     FDIVP                               ; 00553f75
     FXCH                                ; 00553f77
     CALL crt_math.c_round_FUN_005b7ff0  ; 00553f79

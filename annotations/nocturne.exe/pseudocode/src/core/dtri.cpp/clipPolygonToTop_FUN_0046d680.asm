@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_0046d674 = 0046d72c
 ;   undefined1* PTR_caseD_3_0046d67c = 0046d711
-;   int g_INT_01bc996c
-;   int g_INT_01bc9a30
+;   int g_ClipInputVertexCount
+;   int g_ClipBuffer1VertexCount
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_0046d4e0
@@ -27,14 +27,14 @@ section .text
     MOV EBP,ESP                         ; 0046d684
     SUB ESP,0x4                         ; 0046d686
     AND ESP,0xfffffff8                  ; 0046d689
-    MOV EBX,dword ptr [0x01bc9a30]      ; 0046d68c | g_INT_01bc9a30
-    MOV EDX,dword ptr [0x01bc996c]      ; 0046d692 | g_INT_01bc996c
+    MOV EBX,dword ptr [0x01bc9a30]      ; 0046d68c | g_ClipBuffer1VertexCount
+    MOV EDX,dword ptr [0x01bc996c]      ; 0046d692 | g_ClipInputVertexCount
     XOR ESI,ESI                         ; 0046d698
     TEST EDX,EDX                        ; 0046d69a
     JLE 0x0046d71f                      ; 0046d69c
         ;   XREF to: 0046d71f (CONDITIONAL_JUMP)  ; LAB_0046d71f
     MOV EDI,0x1bc9970                   ; 0046d6a2
-    MOV EAX,[0x01bc996c]                ; 0046d6a7 | g_INT_01bc996c
+    MOV EAX,[0x01bc996c]                ; 0046d6a7 | g_ClipInputVertexCount
         ;   Label: LAB_0046d6a7
     LEA ECX,[ESI + 0x1]                 ; 0046d6ac
     CMP ECX,EAX                         ; 0046d6af
@@ -84,14 +84,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 0046d70d
     INC EBX                             ; 0046d710
         ;   Label: LAB_0046d710
-    MOV ECX,dword ptr [0x01bc996c]      ; 0046d711 | g_INT_01bc996c
+    MOV ECX,dword ptr [0x01bc996c]      ; 0046d711 | g_ClipInputVertexCount
         ;   Label: caseD_3
     INC ESI                             ; 0046d717
     ADD EDI,0xc                         ; 0046d718
     CMP ESI,ECX                         ; 0046d71b
     JL 0x0046d6a7                       ; 0046d71d
         ;   XREF to: 0046d6a7 (CONDITIONAL_JUMP)  ; LAB_0046d6a7
-    MOV dword ptr [0x01bc9a30],EBX      ; 0046d71f | g_INT_01bc9a30
+    MOV dword ptr [0x01bc9a30],EBX      ; 0046d71f | g_ClipBuffer1VertexCount
         ;   Label: LAB_0046d71f
     MOV ESP,EBP                         ; 0046d725
     POP EBP                             ; 0046d727
@@ -116,10 +116,10 @@ section .text
     PUSH EDX                            ; 0046d750
     MOV EAX,dword ptr [ESP + 0x28]      ; 0046d751
     PUSH EAX                            ; 0046d755
-    MOV dword ptr [0x01bc9a30],EBX      ; 0046d756 | g_INT_01bc9a30
+    MOV dword ptr [0x01bc9a30],EBX      ; 0046d756 | g_ClipBuffer1VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046d75c
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01bc9a30]      ; 0046d761 | g_INT_01bc9a30
+    MOV EBX,dword ptr [0x01bc9a30]      ; 0046d761 | g_ClipBuffer1VertexCount
     ADD ESP,0x2c                        ; 0046d767
     JMP 0x0046d710                      ; 0046d76a
         ;   XREF to: 0046d710 (UNCONDITIONAL_JUMP)  ; LAB_0046d710
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0046d7ae
     PUSH ECX                            ; 0046d7b2
     PUSH EDX                            ; 0046d7b3
-    MOV dword ptr [0x01bc9a30],EBX      ; 0046d7b4 | g_INT_01bc9a30
+    MOV dword ptr [0x01bc9a30],EBX      ; 0046d7b4 | g_ClipBuffer1VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046d7ba
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01bc9a30]      ; 0046d7bf | g_INT_01bc9a30
+    MOV EBX,dword ptr [0x01bc9a30]      ; 0046d7bf | g_ClipBuffer1VertexCount
     ADD ESP,0x2c                        ; 0046d7c5
     JMP 0x0046d710                      ; 0046d7c8
         ;   XREF to: 0046d710 (UNCONDITIONAL_JUMP)  ; LAB_0046d710

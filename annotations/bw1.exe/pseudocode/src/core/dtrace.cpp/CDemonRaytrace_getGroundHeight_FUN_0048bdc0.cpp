@@ -93,14 +93,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemon
     normal_out->z = 0.0;
     normal_out->x = 0.0;
   }
-  g_INT_0152c2c4 = (int)g_CVector3f_02c8af28.y;
-  g_FLOAT_0152c2c8 = g_CVector3f_02c8af28.z;
-  g_FLOAT_0152c2c0 = g_CVector3f_02c8af28.x;
-  g_INT_0152c2b8 = (int)g_CVector3f_02c8af28.y;
-  g_FLOAT_0152c2bc = g_CVector3f_02c8af28.z;
-  g_FLOAT_0152c2b4 = g_CVector3f_02c8af28.x;
-  g_INT_0152c2ac = (int)g_CVector3f_02c8af28.y;
-  g_FLOAT_0152c2b0 = g_CVector3f_02c8af28.z;
-  g_FLOAT_0152c2a8 = g_CVector3f_02c8af28.x;
+  g_INT_0152c2c4 = (int)g_ZeroVector.y;
+  g_FLOAT_0152c2c8 = g_ZeroVector.z;
+  g_FLOAT_0152c2c0 = g_ZeroVector.x;
+  g_INT_0152c2b8 = (int)g_ZeroVector.y;
+  g_FLOAT_0152c2bc = g_ZeroVector.z;
+  g_FLOAT_0152c2b4 = g_ZeroVector.x;
+  g_INT_0152c2ac = (int)g_ZeroVector.y;
+  g_FLOAT_0152c2b0 = g_ZeroVector.z;
+  g_FLOAT_0152c2a8 = g_ZeroVector.x;
   return local_64;
 }

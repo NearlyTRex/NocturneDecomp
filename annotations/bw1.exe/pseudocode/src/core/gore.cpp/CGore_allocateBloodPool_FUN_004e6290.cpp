@@ -12,16 +12,16 @@ CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004e6290(CGore *t
   CBloodPool *pCVar1;
   int iVar2;
   
-  iVar2 = g_INT_01cf69f4 + 1;
-  pCVar1 = g_CBloodPool_ARRAY_01cf69fc + g_INT_01cf69f4;
+  iVar2 = g_BloodPoolIndex + 1;
+  pCVar1 = g_BloodPools + g_BloodPoolIndex;
   if (0x1f < iVar2) {
     iVar2 = 0;
   }
-  if (0x1f < g_INT_01cf69f8) {
-    g_INT_01cf69f4 = iVar2;
+  if (0x1f < g_BloodPoolCount) {
+    g_BloodPoolIndex = iVar2;
     return pCVar1;
   }
-  g_INT_01cf69f8 = g_INT_01cf69f8 + 1;
-  g_INT_01cf69f4 = iVar2;
+  g_BloodPoolCount = g_BloodPoolCount + 1;
+  g_BloodPoolIndex = iVar2;
   return pCVar1;
 }

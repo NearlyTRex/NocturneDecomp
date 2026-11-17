@@ -34,23 +34,23 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00591190(char *directory_path,cha
   _fclose(file_handle);
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-  pHVar7 = g_HWND_02664628;
-  if (g_INT_02665a50 != 0) {
-    wincore_winvideo_cpp_closeMovie_FUN_00590e40(g_HWND_02664628);
+  pHVar7 = g_MainWindowHandle;
+  if (g_MoviePlaying != 0) {
+    wincore_winvideo_cpp_closeMovie_FUN_00590e40(g_MainWindowHandle);
   }
   _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d");
   MVar3 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar3 == 0) {
-    g_INT_02665a50 = 1;
+    g_MoviePlaying = 1;
     MVar3 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
     if (MVar3 == 0) {
-      g_INT_02665a48 = atoi(local_1f8);
+      g_MovieWindowHandle = atoi(local_1f8);
     }
     else {
       mciGetErrorStringA(MVar3,local_1f8,0x104);
       MessageBoxA(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
     }
-    if ((g_INT_02665a58 == 0) && (g_INT_02665a50 != 0)) {
+    if ((g_FullscreenMovie == 0) && (g_MoviePlaying != 0)) {
       GetClientRect(pHVar7,&local_14);
       mciSendStringA("where mov source",(LPSTR)&local_f4,0x80,(HWND)0x0);
       SetRectEmpty(&local_24);
@@ -80,19 +80,19 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00591190(char *directory_path,cha
         local_24.right = local_24.right * 2;
         local_24.bottom = local_24.bottom * 2;
       }
-      MoveWindow((HWND)g_INT_02665a48,local_14.right / 2 - local_24.right / 2,
+      MoveWindow((HWND)g_MovieWindowHandle,local_14.right / 2 - local_24.right / 2,
                  local_14.bottom / 2 - local_24.bottom / 2,local_24.right,local_24.bottom,1);
     }
   }
   else {
     MessageBoxA(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
-    g_INT_02665a50 = 0;
+    g_MoviePlaying = 0;
   }
-  bVar6 = g_INT_02665a4c == 0;
-  g_INT_02665a4c = (int)bVar6;
+  bVar6 = g_MovieHandle == 0;
+  g_MovieHandle = (int)bVar6;
   if (bVar6) {
-    pHVar7 = g_HWND_02664628;
-    if (g_INT_02665a58 == 0) {
+    pHVar7 = g_MainWindowHandle;
+    if (g_FullscreenMovie == 0) {
       lpstrCommand = "play mov window notify";
     }
     else {
@@ -106,13 +106,13 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00591190(char *directory_path,cha
   mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar7);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,-0xf);
-  while (((wincore_winrun_cpp_processWindowMessages_FUN_0058f270(), g_INT_02665a4c != 0 &&
+  while (((wincore_winrun_cpp_processWindowMessages_FUN_0058f270(), g_MovieHandle != 0 &&
           (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_0058eb40(), iVar5 == 0)) &&
-         (g_INT_02665a50 != 0))) {
+         (g_MoviePlaying != 0))) {
     Sleep(0x14);
   }
   SetThreadPriority(hThread,1);
-  wincore_winvideo_cpp_closeMovie_FUN_00590e40(g_HWND_02664628);
+  wincore_winvideo_cpp_closeMovie_FUN_00590e40(g_MainWindowHandle);
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   engine_2d_c_clearInputAndWait_FUN_004032b0();

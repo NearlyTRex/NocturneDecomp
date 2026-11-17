@@ -152,13 +152,13 @@
     },
     {
       "addr": "007c6384",
-      "name": "g_FLOAT_ARRAY_007c6384",
+      "name": "g_BoneBurnIntensity",
       "type": "float[100]",
       "value": null
     },
     {
       "addr": "007c6388",
-      "name": "g_FLOAT_ARRAY_007c6384[1]",
+      "name": "g_BoneBurnIntensity[1]",
       "type": "undefined4",
       "value": null
     }
@@ -468,17 +468,17 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(uint *)((int)g_FLOAT_ARRAY_007c6384",
+      "match": "(uint *)((int)g_BoneBurnIntensity",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_FLOAT_ARRAY_007c6384 + iVar5) = 0;",
+      "text": "*(uint *)((int)g_BoneBurnIntensity + iVar5) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(float *)((int)g_FLOAT_ARRAY_007c6384",
+      "match": "(float *)((int)g_BoneBurnIntensity",
       "severity": "moderate",
-      "text": "if ((float)65535 <= *(float *)((int)g_FLOAT_ARRAY_007c6384 + iVar5)) {",
+      "text": "if ((float)65535 <= *(float *)((int)g_BoneBurnIntensity + iVar5)) {",
       "type": "pointer_cast"
     },
     {

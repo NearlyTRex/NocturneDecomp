@@ -11,7 +11,7 @@ CDemonActorType g_CHealClassInfo = {};
 CDemonActorType g_CHealthItemClassInfo = {};
 CDemonActorType g_CDemonActorType_01d5b9b8 = {};
 CDemonActorType g_CHeroClassInfo = {};
-CDemonActorType g_CDemonActorType_01d5ba74 = {};
+CDemonActorType g_CHeroPlaceholderClassInfo = {};
 CDemonActorType g_CHolycrossClassInfo = {};
 CDemonActorType g_CHotDemonClassInfo = {};
 CDemonActorType g_CDemonActorType_01d5bb58 = {};
@@ -26,10 +26,10 @@ CGround g_CGroundInstance = {};
 CHero* g_CHero_PTR_ARRAY_01d5ba04[4] = {};
 
 // CIni
-CIni g_CIni_01d5bc78 = {};
+CIni g_CIniInstance = {};
 
 // SInventoryItemInfo[100]
-SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01d5dc90[100] = {};
+SInventoryItemInfo g_ItemDefinitionArray[100] = {};
 
 // char
 char g_CHAR_01d5be88 = {};
@@ -44,12 +44,12 @@ char g_CHAR_ARRAY_01d5bd80[256] = {};
 float g_FLOAT_01d5be80 = {};
 
 // int
-int g_INT_01d5ba00 = {};
+int g_HeroCount = {};
 int g_INT_01d5ba14 = {};
 int g_INT_01d5bc7c = {};
-int g_INT_01d5dc88 = {};
+int g_ItemDefinitionCount = {};
 
 // int[12]
-int g_INT_ARRAY_01d5baec[12] = {};
-int g_INT_ARRAY_01d5bc0c[12] = {};
+int g_HotDemonIndices[12] = {};
+int g_ImpIndices[12] = {};
 

@@ -10,7 +10,7 @@
 ;   double g_DOUBLE_005c0530 = 0.0000152587890625
 ;   float g_FLOAT_005c0538 = 2
 ;   CGame* g_CGamePtr = 01d2130c
-;   int g_INT_01c5fad0
+;   int g_GlobalDeltaTimeInt
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -36,7 +36,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004988cb | g_CGamePtr
         ;   Label: LAB_004988cb
     MOV EAX,dword ptr [EAX + 0x314]     ; 004988d0 | g_CGameInstance.delta_time_float
-    MOV EDX,dword ptr [0x01c5fad0]      ; 004988d6 | g_INT_01c5fad0
+    MOV EDX,dword ptr [0x01c5fad0]      ; 004988d6 | g_GlobalDeltaTimeInt
     MOV dword ptr [ESP + 0xc],EAX       ; 004988dc
     MOV EAX,dword ptr [EBX + 0x58]      ; 004988e0
     IMUL EDX                            ; 004988e3
@@ -113,7 +113,7 @@ section .text
     POP EDI                             ; 004989c2
     POP EBX                             ; 004989c3
     RET                                 ; 004989c4
-    MOV EAX,[0x01c5fad0]                ; 004989c5 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004989c5 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004989c5
     MOV EDX,dword ptr [EBX + 0x58]      ; 004989ca
     MOV ECX,dword ptr [EBX + 0x44]      ; 004989cd

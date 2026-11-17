@@ -4,14 +4,14 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    9265 ( 30.4%)
-  pointer_truncation              7764 ( 25.5%)
-  unrolled_memcpy                 1610 (  5.3%)
+  pointer_cast                    9265 ( 30.6%)
+  pointer_truncation              7762 ( 25.7%)
+  unrolled_memcpy                 1615 (  5.3%)
   stack_ref                       1490 (  4.9%)
   stack_param                     1466 (  4.8%)
   unknown_field                   1279 (  4.2%)
-  concat_reconstruction            817 (  2.7%)
-  unaffected_reg                   741 (  2.4%)
+  concat_reconstruction            827 (  2.7%)
+  unaffected_reg                   741 (  2.5%)
   shadow_pointer_walk              635 (  2.1%)
   stack_alignment_array            581 (  1.9%)
   unrolled_strcpy                  555 (  1.8%)
@@ -22,7 +22,6 @@ SUSPECT TYPE COUNTS
   unrolled_strlen                  276 (  0.9%)
   unrolled_memset                  242 (  0.8%)
   undefined_data                   240 (  0.8%)
-  unnamed_param                    210 (  0.7%)
   suspect_float                    205 (  0.7%)
   warning_unreachable              157 (  0.5%)
   warning_type_propagation         149 (  0.5%)
@@ -46,11 +45,11 @@ SUSPECT TYPE COUNTS
   alloc_magic_size                  27 (  0.1%)
   eflags_input                      26 (  0.1%)
   sign_compare_idiom                25 (  0.1%)
-  fnstsw_flag_artifact              24 (  0.1%)
   preinc_loop_idiom                 23 (  0.1%)
   param_count_too_few               19 (  0.1%)
   undefined_type                    16 (  0.1%)
   unnamed_field                     15 (  0.0%)
+  fnstsw_flag_artifact              14 (  0.0%)
   raw_address_pointer_store         13 (  0.0%)
   suspicious_cast                   12 (  0.0%)
   fast_inv_sqrt_inline               9 (  0.0%)
@@ -96,7 +95,7 @@ Unique patterns:
     67x  (uint *)((int)pvVar2
     58x  (CBoundingBox3D *)((int)pCVar3
     57x  (code **)((int)this_ptr
-    55x  (int *)((int)g_ARRAY_PTR_01c5faec
+    55x  (int *)((int)g_ScreenBufferArray
     51x  (int *)((int)request
     49x  (SRenderVertex *)((int)pSVar4
     48x  (CMatrix3x4f *)((int)pCVar3
@@ -1326,7 +1325,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00581080
 
 ====================================================================================================
-TYPE: pointer_truncation (7764 occurrences)
+TYPE: pointer_truncation (7762 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1335,7 +1334,7 @@ Unique patterns:
    104x  (int)pvVar5
    102x  (int)pvVar2
     95x  (int)pvVar4
-    77x  (int)g_ARRAY_PTR_01c5faec
+    77x  (int)g_ScreenBufferArray
     69x  (int)&CStack_34
     66x  (int)&CStack_40
     63x  (int)&CStack_28
@@ -2363,12 +2362,12 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00581080
 
 ====================================================================================================
-TYPE: unrolled_memcpy (1610 occurrences)
+TYPE: unrolled_memcpy (1615 occurrences)
 ====================================================================================================
 
 Unique patterns:
    727x  for (...; != 0; ... + -1)
-   579x  field-by-field struct copy
+   584x  field-by-field struct copy
    296x  MOVSD.REP
      4x  MOVSB.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -3809,7 +3808,7 @@ Functions:
   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0
 
 ====================================================================================================
-TYPE: concat_reconstruction (817 occurrences)
+TYPE: concat_reconstruction (827 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -3817,9 +3816,9 @@ Unique patterns:
     87x  CONCAT11
     80x  CONCAT24
     69x  CONCAT44
+    69x  CONCAT22
     69x  CONCAT13
     65x  CONCAT14
-    59x  CONCAT22
     55x  CONCAT12
     41x  CONCAT34
     38x  CONCAT52
@@ -6080,45 +6079,6 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00581080
 
 ====================================================================================================
-TYPE: unnamed_param (210 occurrences)
-====================================================================================================
-
-Unique patterns:
-   184x  param_2
-    26x  param_3
-
-Functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0
-  core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0
-  core_course.cpp_CCourse_allocMemory_FUN_00444910
-  core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00450670
-  core_demnfolk.cpp_CDemnfolk_process_FUN_00455080
-  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940
-  core_fldnotes.cpp_SPageResource_setLink_FUN_004a83d0
-  core_hero.cpp_CHero_isGrabbable_FUN_004d2a80
-  core_mission.cpp_CDemonMission_changeSetName_FUN_004f6cd0
-  core_moon.cpp_CMoon_update_FUN_004f9600
-  core_spawner.cpp_CSpawner_process_FUN_00563970
-  core_tawiscara.cpp_CTawiscara_process_FUN_00594000
-  core_yow.cpp_CYow_getTargetPoints_FUN_00586fa0
-  core_yow.cpp_CYow_processDamage_FUN_00586eb0
-  core_yow.cpp_CYow_process_FUN_00586500
-  core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960
-  engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320
-  engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0
-  shape_edittool.cpp_CStrList_insertRange_FUN_00482250
-  support_codec.cpp_CCheesyCipher_setKey_FUN_004416b0
-  support_codec.cpp_CCheesyCipher_transformByte_FUN_004416e0
-  support_trstream.cpp_CInStreamFile_readByteAt_FUN_00573b90
-  support_trstream.cpp_CInStreamMemory_openOwned_FUN_00574470
-  support_trstream.cpp_CInStreamMemory_open_FUN_00574440
-  support_trstream.cpp_CInStreamMemory_seek_FUN_00574350
-  support_trstream.cpp_COutStreamFile_attach_FUN_00574a60
-  support_trstream.cpp_COutStreamFile_putChar_FUN_005748b0
-  support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_00574d90
-  support_trstream.cpp_COutStreamMemory_open_FUN_00574d50
-
-====================================================================================================
 TYPE: suspect_float (205 occurrences)
 ====================================================================================================
 
@@ -6607,7 +6567,7 @@ Unique patterns:
      1x  0x42c80000 < (int)local_90))
      1x  0x421fffff < (int)this_ptr->age)
      1x  0x40ffffff < (int)this_ptr->animation_time)
-     1x  0x3f7fffff < (int)g_FLOAT_01d22c88))))
+     1x  0x3f7fffff < (int)g_IrisFadeRadius))))
      1x  0x3e860a91 < (int)afStack_604[3]))
      1x  0x3effffff < (int)g_FLOAT_01d1e344)
      1x  0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y)
@@ -6888,26 +6848,26 @@ TYPE: fast_sqrt_inline (41 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     3x  fStack_74 = (float)(((int)fStack_78 >> 1) + g_INT_01d1a0a4);
-     2x  fStack_88 = (float)(((int)fStack_8c >> 1) + g_INT_01d1a0a4);
-     2x  fStack_6c = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);
-     2x  fStack_24 = (float)(((int)fStack_28 >> 1) + g_INT_01d1a0a4);
-     1x  fStack_3c = (float)(((int)fStack_5c >> 1) + g_INT_01d1a0a4);
-     1x  fStack_44 = (float)(((int)fStack_58 >> 1) + g_INT_01d1a0a4);
-     1x  fStack_50 = (float)(((int)fStack_40 >> 1) + g_INT_01d1a0a4);
-     1x  fStack_5c = (float)(((int)fStack_60 >> 1) + g_INT_01d1a0a4);
-     1x  fStack_58 = (float)(((int)fStack_1c >> 1) + g_INT_01d1a0a4);
-     1x  fStack_50 = (float)(((int)fStack_44 >> 1) + g_INT_01d1a0a4);
+     3x  fStack_74 = (float)(((int)fStack_78 >> 1) + g_FastSqrtMagic);
+     2x  fStack_88 = (float)(((int)fStack_8c >> 1) + g_FastSqrtMagic);
+     2x  fStack_6c = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);
+     2x  fStack_24 = (float)(((int)fStack_28 >> 1) + g_FastSqrtMagic);
+     1x  fStack_3c = (float)(((int)fStack_5c >> 1) + g_FastSqrtMagic);
+     1x  fStack_44 = (float)(((int)fStack_58 >> 1) + g_FastSqrtMagic);
+     1x  fStack_50 = (float)(((int)fStack_40 >> 1) + g_FastSqrtMagic);
+     1x  fStack_5c = (float)(((int)fStack_60 >> 1) + g_FastSqrtMagic);
+     1x  fStack_58 = (float)(((int)fStack_1c >> 1) + g_FastSqrtMagic);
+     1x  fStack_50 = (float)(((int)fStack_44 >> 1) + g_FastSqrtMagic);
      1x  fVar6 = (float)(((int)(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0
-     1x  return (float)(((int)value >> 1) + g_INT_01d1a0a4);
-     1x  local_30 = (float)(((int)local_48 >> 1) + g_INT_01d1a0a4);
-     1x  local_18 = (float)(((int)local_70 >> 1) + g_INT_01d1a0a4);
-     1x  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_INT_01d
-     1x  fStack_24 = (float)(((int)fStack_74 >> 1) + g_INT_01d1a0a4);
-     1x  fStack_34 = (float)(((int)fVar13 >> 1) + g_INT_01d1a0a4);
-     1x  fStack_24 = (float)(((int)fStack_3c >> 1) + g_INT_01d1a0a4);
-     1x  fStack_18 = (float)(((int)fStack_38 >> 1) + g_INT_01d1a0a4);
-     1x  fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_INT_01d1a0a4)) * g_FLOAT_01d76cc8 *
+     1x  return (float)(((int)value >> 1) + g_FastSqrtMagic);
+     1x  local_30 = (float)(((int)local_48 >> 1) + g_FastSqrtMagic);
+     1x  local_18 = (float)(((int)local_70 >> 1) + g_FastSqrtMagic);
+     1x  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqr
+     1x  fStack_24 = (float)(((int)fStack_74 >> 1) + g_FastSqrtMagic);
+     1x  fStack_34 = (float)(((int)fVar13 >> 1) + g_FastSqrtMagic);
+     1x  fStack_24 = (float)(((int)fStack_3c >> 1) + g_FastSqrtMagic);
+     1x  fStack_18 = (float)(((int)fStack_38 >> 1) + g_FastSqrtMagic);
+     1x  fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_FastSqrtMagic)) * g_FLOAT_01d76cc8 
 
 Functions:
   core_baal.cpp_CBaal_process_FUN_005968a0
@@ -7191,35 +7151,6 @@ Functions:
   engine_prim.c_renderPolygonSoftware_FUN_00515e80
 
 ====================================================================================================
-TYPE: fnstsw_flag_artifact (24 occurrences)
-====================================================================================================
-
-Unique patterns:
-    10x  CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_00604d1c >> 0x10
-     2x  CONCAT22((short)((uint)g_PTR_01d76cfc >> 0x10
-     1x  CONCAT22((short)((uint)this_ptr >> 0x10
-     1x  CONCAT22((short)((uint)pCVar8 >> 0x10
-     1x  CONCAT22((short)uVar6 * (short)(uVar36 >> 0x10
-     1x  CONCAT22((short)(uVar43 >> 0x10
-     1x  CONCAT22((short)uVar8 * (short)(uVar45 >> 0x10
-     1x  CONCAT22((short)(uVar45 >> 0x10
-     1x  CONCAT22((ushort)((short)uVar7 * (short)(uVar38 >> 0x10
-     1x  CONCAT22(sVar45 * (short)(uVar36 >> 0x10
-     1x  CONCAT22(sVar45 * (short)(uVar43 >> 0x10
-     1x  CONCAT22((ushort)((short)uVar9 * (short)(uVar39 >> 0x10
-     1x  CONCAT22(sVar46 * (short)(uVar37 >> 0x10
-     1x  CONCAT22(sVar46 * (short)(uVar43 >> 0x10
-
-Functions:
-  core_fire.cpp_CRing_process_FUN_0049fdf0
-  engine_mini3d.cpp_getBehindClipFlag_FUN_004eeeb0
-  engine_mini3d.cpp_getClipFlags_FUN_004eedd0
-  engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713
-  engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31
-  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
-  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
-
-====================================================================================================
 TYPE: preinc_loop_idiom (23 occurrences)
 ====================================================================================================
 
@@ -7321,6 +7252,34 @@ Functions:
   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
 
 ====================================================================================================
+TYPE: fnstsw_flag_artifact (14 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  CONCAT22((short)((uint)g_PTR_01d76cfc >> 0x10
+     1x  CONCAT22((short)((uint)this_ptr >> 0x10
+     1x  CONCAT22((short)((uint)pCVar8 >> 0x10
+     1x  CONCAT22((short)uVar6 * (short)(uVar36 >> 0x10
+     1x  CONCAT22((short)(uVar43 >> 0x10
+     1x  CONCAT22((short)uVar8 * (short)(uVar45 >> 0x10
+     1x  CONCAT22((short)(uVar45 >> 0x10
+     1x  CONCAT22((ushort)((short)uVar7 * (short)(uVar38 >> 0x10
+     1x  CONCAT22(sVar45 * (short)(uVar36 >> 0x10
+     1x  CONCAT22(sVar45 * (short)(uVar43 >> 0x10
+     1x  CONCAT22((ushort)((short)uVar9 * (short)(uVar39 >> 0x10
+     1x  CONCAT22(sVar46 * (short)(uVar37 >> 0x10
+     1x  CONCAT22(sVar46 * (short)(uVar43 >> 0x10
+
+Functions:
+  core_fire.cpp_CRing_process_FUN_0049fdf0
+  engine_mini3d.cpp_getBehindClipFlag_FUN_004eeeb0
+  engine_mini3d.cpp_getClipFlags_FUN_004eedd0
+  engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713
+  engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31
+  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
+  engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
+
+====================================================================================================
 TYPE: raw_address_pointer_store (13 occurrences)
 ====================================================================================================
 
@@ -7331,7 +7290,7 @@ Unique patterns:
      1x  *(CDemonActor **)(&stack0xfffffeac
      1x  *(CDemnfolk **)(&stack0xfffffde4
      1x  *(CPodFile **)(&stack0xfffff55c
-     1x  *(void **)(g_INT_02ceb91c * 0x60 + 0x2ceb964
+     1x  *(void **)(g_SfxLastSlot * 0x60 + 0x2ceb964
      1x  *(code **)(iVar4 + 0x2d224fc
      1x  *(CZombie **)(&stack0xfffffde4
      1x  *(CDemonActor **)(&stack0xfffffefc
@@ -7366,15 +7325,15 @@ TYPE: fast_inv_sqrt_inline (9 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  local_64 = (float)(g_INT_01d1a0a8 - ((int)local_68 >> 1));
-     1x  return (float)(g_INT_01d1a0a8 - ((int)dist_sq >> 1));
-     1x  fVar1 = (float)(g_INT_01d1a0a8 - ((int)(v->z * v->z + v->x * v->x + v->y * v->y)
-     1x  fVar8 = (float)(g_INT_01d1a0a8 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * 
-     1x  fVar1 = (float)(g_INT_01d1a0a8 - ((int)fVar1 >> 1));
-     1x  local_8c = (float)(g_INT_01d1a0a8 - ((int)local_90 >> 1));
-     1x  local_b4 = (float)(g_INT_01d1a0a8 - ((int)local_b8 >> 1));
-     1x  local_74 = (float)(g_INT_01d1a0a8 - ((int)local_78 >> 1));
-     1x  local_80 = (float)(g_INT_01d1a0a8 - ((int)local_84 >> 1));
+     1x  local_64 = (float)(g_FastInvSqrtMagic - ((int)local_68 >> 1));
+     1x  return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));
+     1x  fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v->x * v->x + v->y * v
+     1x  fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar
+     1x  fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar1 >> 1));
+     1x  local_8c = (float)(g_FastInvSqrtMagic - ((int)local_90 >> 1));
+     1x  local_b4 = (float)(g_FastInvSqrtMagic - ((int)local_b8 >> 1));
+     1x  local_74 = (float)(g_FastInvSqrtMagic - ((int)local_78 >> 1));
+     1x  local_80 = (float)(g_FastInvSqrtMagic - ((int)local_84 >> 1));
 
 Functions:
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043d9b0

@@ -10,11 +10,11 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004b5ac0(CFireEffect *this
 
 {
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c3d4);
+            (g_CDemonRenderer_PTR_00612560,&g_FireEffectBlackHoleTexture);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c3ec);
+            (g_CDemonRenderer_PTR_00612560,&g_FireEffectSparkTexture);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c404);
+            (g_CDemonRenderer_PTR_00612560,&g_FireEffectBlueSparkTexture);
   core_fire_cpp_loadStakeAssets_FUN_004acad0();
   core_fire_cpp_loadFireBallAssets_FUN_004ae2a0();
   core_fire_cpp_loadRockAssets_FUN_004aefb0();

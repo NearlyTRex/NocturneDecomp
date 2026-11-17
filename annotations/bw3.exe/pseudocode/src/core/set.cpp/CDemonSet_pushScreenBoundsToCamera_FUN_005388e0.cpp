@@ -18,7 +18,7 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0(CDemon
   int local_c;
   int local_8;
   
-  if (g_CDemonCamera_PTR_00874584 != (CDemonCamera *)0x0) {
+  if (g_SkipClearBuffersSceneCamera != (CDemonCamera *)0x0) {
     pSVar4 = g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr;
     local_c = g_INT_01c6b5a0 - g_INT_01c6b598;
     iVar5 = g_INT_01c6b5a0 + g_INT_01c6b598;
@@ -92,7 +92,7 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0(CDemon
       } while (local_10 < vertex_count);
     }
     core_dcamera_cpp_CDemonCamera_pushRect_FUN_00449310
-              (g_CDemonCamera_PTR_00874584,iVar5 >> 0x10,local_c >> 0x10,iVar3 >> 0x10,
+              (g_SkipClearBuffersSceneCamera,iVar5 >> 0x10,local_c >> 0x10,iVar3 >> 0x10,
                local_8 >> 0x10);
   }
   return;

@@ -12,18 +12,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0(CE
   int iVar1;
   int iVar2;
   
-  if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
+  if (g_EditorFont == (CBitFont *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0xa0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
-  g_INT_01c25f78 = g_CBitFont_PTR_01c25590->max_char_width;
-  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x6a)
-  ;
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x6a);
   if (text_content != (char *)0x0) {
-    iVar1 = g_CBitFont_PTR_01c25590->char_widths[0x20];
-    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_CBitFont_PTR_01c25590,text_content)
-    ;
+    iVar1 = g_EditorFont->char_widths[0x20];
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_EditorFont,text_content);
     iVar2 = iVar2 + iVar1 * 2;
     if (min_width < iVar2) {
       min_width = iVar2;

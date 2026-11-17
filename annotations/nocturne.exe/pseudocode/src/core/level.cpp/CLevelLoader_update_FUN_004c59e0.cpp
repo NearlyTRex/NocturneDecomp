@@ -147,7 +147,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
     }
     g_CDemonSetPtr->rendering_mode = 0;
-    local_10 = g_CBitFont_PTR_014b9900;
+    local_10 = g_ThemeFont;
     iVar3 = (g_WindowWidth * 0x240) / 0x280;
     iVar6 = (g_WindowHeight * 0x18) / 0x1e0;
     iVar4 = (g_WindowWidth << 5) / 0x280;

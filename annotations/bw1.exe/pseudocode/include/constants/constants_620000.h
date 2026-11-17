@@ -94,7 +94,7 @@ static TerminatedCString s_s_0123456789abcdefghijkl_00626a0c = "0123456789abcdef
 static TerminatedCString s_s_0123456789abcdef_00626a54 = "0123456789abcdef";
 
 // char*[12] constants
-static char* g_CHAR_PTR_ARRAY_006262a0[12] = {
+static char* g_MonthNamesLong[12] = {
     "January", "February", "March", "April",
     "May", "June", "July", "August",
     "September", "October", "November", "December"
@@ -111,11 +111,11 @@ static char* g_CHAR_PTR_ARRAY_00626a78[23] = {
 };
 
 // char*[7] constants
-static char* g_CHAR_PTR_ARRAY_00626254[7] = {
+static char* g_WeekdayNamesLong[7] = {
     "Sunday", "Monday", "Tuesday", "Wednesday",
     "Thursday", "Friday", "Saturday"
 };
-static char* g_CHAR_PTR_ARRAY_00626b50[7] = {
+static char* g_MathErrorMessages[7] = {
     nullptr, "Domain error", "Argument singularity", "Overflow range error",
     "Underflow range error", "Total loss of significance", "Partial loss of significance"
 };
@@ -128,14 +128,14 @@ static char* g_CHAR_PTR_ARRAY_006227d0[9] = {
 };
 
 // char[12][4] constants
-static char g_CHAR_ARRAY_ARRAY_00626270[12][4] = {
+static char g_MonthNamesShort[12][4] = {
     "Jan", "Feb", "Mar", "Apr",
     "May", "Jun", "Jul", "Aug",
     "Sep", "Oct", "Nov", "Dec"
 };
 
 // char[256] constants
-static char g_CHAR_ARRAY_00626c09[256] = {
+static char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -161,21 +161,21 @@ static char g_CHAR_ARRAY_00626c09[256] = {
 };
 
 // char[7][4] constants
-static char g_CHAR_ARRAY_ARRAY_00626238[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+static char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 // double constants
-static double g_DOUBLE_006267bc = 709.78271289338397;
+static double g_ExpUnderflowLimit = 709.78271289338397;
 static double g_DOUBLE_006267c4 = -709.78271289338397;
 static double g_DOUBLE_00628ccc = 1;
 
 // double[2][4] constants
-static double g_DOUBLE_ARRAY_ARRAY_006202e8[2][4] = {
+static double g_MpegSampleRateTable[2][4] = {
     {22.050000000000001, 24.0, 16.0, 0.0},
     {44.100000000000001, 48.0, 32.0, 0.0}
 };
 
 // double[64] constants
-static double g_DOUBLE_ARRAY_00620490[64] = {
+static double g_MpegScalefactorTable[64] = {
     2, 1.5874010519682, 1.2599210498948701, 1,
     0.79370052598410001, 0.62996052494744004, 0.5, 0.39685026299205001,
     0.31498026247372002, 0.25, 0.19842513149602001, 0.15749013123686001,
@@ -195,7 +195,7 @@ static double g_DOUBLE_ARRAY_00620490[64] = {
 };
 
 // double[8] constants
-static double g_DOUBLE_ARRAY_006202a0[8] = {
+static double g_Mp3AntiAliasCSSource[8] = {
     -0.59999999999999998, -0.53500000000000003, -0.33000000000000002, -0.185,
     -0.095000000000000001, -0.041000000000000002, -0.014200000000000001, -0.0037000000000000002
 };
@@ -203,14 +203,14 @@ static double g_DOUBLE_ARRAY_006202a0[8] = {
 // float constants
 static float g_FLOAT_006258fc = 12.0f;
 static float g_FLOAT_00625900 = 1.0f;
-static float g_FLOAT_00628bc0 = 0.9375f;
-static float g_FLOAT_00628bc4 = 1.0625f;
-static float g_FLOAT_00628bc8 = 9.223372e+18f;
+static float g_IEEE754NormalScaleFactor = 0.9375f;
+static float g_IEEE754SubnormalScaleFactor = 1.0625f;
+static float g_IEEE754RenormScaleFactor = 9.223372e+18f;
 static float g_FLOAT_00628d10 = 16.0f;
 static float g_FLOAT_00628d14 = 0.0625f;
 
 // float10 constants
-static float10 g_FLOAT10_0062622c = 1.5707963f;
+static float10 g_PiOver2 = 1.5707963f;
 static float10 g_FLOAT10_00628cfc = 3.1415927f;
 static float10 g_FLOAT10_00628d06 = 1.5707963f;
 static float10 g_FLOAT10_00628d18 = -0.33333333f;
@@ -221,7 +221,7 @@ static float10 g_FLOAT10_00628d40 = -0.090907585f;
 static float10 g_FLOAT10_00628d4a = 0.076416908f;
 
 // uchar[257] constants
-static uchar g_UCHAR_ARRAY_00626114[257] = {
+static uchar g_CharacterClassificationTable[257] = {
     0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x01,
     0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
     0x01, 0x0A, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C,

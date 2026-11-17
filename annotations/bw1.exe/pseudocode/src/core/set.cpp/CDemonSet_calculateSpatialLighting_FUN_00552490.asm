@@ -26,14 +26,14 @@
 ;   undefined4 DAT_0202634c
 ;   undefined4 DAT_02026350
 ;   undefined4 DAT_02026354
-;   int g_INT_0202a1f0
+;   int g_SecondaryDirectionalLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0202a1f4
-;   int g_INT_0202a374
-;   CDemonLight*[4] g_CDemonLight_PTR_ARRAY_0202a378
+;   int g_PrimaryDirectionalLightCount
+;   CDemonLight*[4] g_PrimaryDirectionalLights
 ;   int g_INT_0202a388
 ;   int g_INT_0202a38c
 ;   undefined4 DAT_0202a390
-;   int g_INT_0202a840
+;   int g_LightingSystemDirty
 ;   float g_FLOAT_0202a844
 ;   float g_FLOAT_0202a850
 ;   float g_FLOAT_0202a85c
@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 00552493
     SUB ESP,0x38                        ; 00552494
     MOV EBP,dword ptr [ESP + 0x54]      ; 00552497
-    MOV EDX,dword ptr [0x0202a840]      ; 0055249b | g_INT_0202a840
+    MOV EDX,dword ptr [0x0202a840]      ; 0055249b | g_LightingSystemDirty
     TEST EDX,EDX                        ; 005524a1
     JZ 0x005524cd                       ; 005524a3
         ;   XREF to: 005524cd (CONDITIONAL_JUMP)  ; LAB_005524cd
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_005524bd
     ADD ESP,0x18                        ; 005524c2
     XOR EDI,EDI                         ; 005524c5
-    MOV dword ptr [0x0202a840],EDI      ; 005524c7 | g_INT_0202a840
-    MOV EAX,[0x0202a374]                ; 005524cd | g_INT_0202a374
+    MOV dword ptr [0x0202a840],EDI      ; 005524c7 | g_LightingSystemDirty
+    MOV EAX,[0x0202a374]                ; 005524cd | g_PrimaryDirectionalLightCount
         ;   Label: LAB_005524cd
     XOR ESI,ESI                         ; 005524d2
     XOR EBX,EBX                         ; 005524d4
@@ -87,7 +87,7 @@ section .text
     XOR EDI,EDI                         ; 005524da
     PUSH EBP                            ; 005524dc
         ;   Label: LAB_005524dc
-    MOV EDX,dword ptr [EDI + 0x202a378] ; 005524dd | g_CDemonLight_PTR_ARRAY_0202a378
+    MOV EDX,dword ptr [EDI + 0x202a378] ; 005524dd | g_PrimaryDirectionalLights
     PUSH EDX                            ; 005524e3
     MOV ECX,dword ptr [ESP + 0x58]      ; 005524e4
     PUSH ECX                            ; 005524e8
@@ -97,7 +97,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0 ; 005524f2
         ;   XREF to: 0044f9c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     ADD EBX,EAX                         ; 005524f7
-    MOV EAX,[0x0202a374]                ; 005524f9 | g_INT_0202a374
+    MOV EAX,[0x0202a374]                ; 005524f9 | g_PrimaryDirectionalLightCount
     ADD ESP,0x10                        ; 005524fe
     CMP ESI,EAX                         ; 00552501
     JL 0x005524dc                       ; 00552503
@@ -105,7 +105,7 @@ section .text
     LEA EAX,[EAX]                       ; 00552505
     LEA EDX,[EDX]                       ; 0055250b
     MOV EBX,EBX                         ; 0055250e
-    MOV EDX,dword ptr [0x0202a1f0]      ; 00552510 | g_INT_0202a1f0
+    MOV EDX,dword ptr [0x0202a1f0]      ; 00552510 | g_SecondaryDirectionalLightCount
         ;   Label: LAB_00552510
     XOR EDI,EDI                         ; 00552516
     TEST EDX,EDX                        ; 00552518
@@ -123,7 +123,7 @@ section .text
     INC EDI                             ; 00552533
     CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0 ; 00552534
         ;   XREF to: 0044f9c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
-    MOV EDX,dword ptr [0x0202a1f0]      ; 00552539 | g_INT_0202a1f0
+    MOV EDX,dword ptr [0x0202a1f0]      ; 00552539 | g_SecondaryDirectionalLightCount
     ADD ESP,0x10                        ; 0055253f
     ADD EBX,EAX                         ; 00552542
     CMP EDI,EDX                         ; 00552544
@@ -260,7 +260,7 @@ section .text
     POP ESI                             ; 0055269c
     POP EBX                             ; 0055269d
     RET                                 ; 0055269e
-    PUSH 0x202a874                      ; 0055269f | g_CMatrix3x3f_0202a874
+    PUSH 0x202a874                      ; 0055269f | g_LightingRotationMatrix
         ;   Label: LAB_0055269f
     PUSH 0x202a868                      ; 005526a4 | g_FLOAT_0202a868
     PUSH 0x202a85c                      ; 005526a9 | g_FLOAT_0202a85c

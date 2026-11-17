@@ -24,7 +24,7 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   CGame* g_CGamePtr = 01d2130c
-;   void*[1200] g_ARRAY_PTR_01c5faec
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_CGameInstance.camera_debug_enabled
 ;
 ; Called Functions:
@@ -206,7 +206,7 @@ section .text
     ADD EDX,EAX                         ; 0045cff6
     MOV EAX,dword ptr [ESP]             ; 0045cff8
     SHL EDX,0x2                         ; 0045cffb
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045cffe | g_ARRAY_PTR_01c5faec
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045cffe | g_ScreenBufferArray
     ADD EDX,EAX                         ; 0045d005
     MOV EAX,ESI                         ; 0045d007
     SHL EAX,0x8                         ; 0045d009

@@ -9,6 +9,6 @@
 void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_0042f320(int disabled)
 
 {
-  g_INT_00609b30 = disabled;
+  g_LineClippingDisabled = disabled;
   return;
 }

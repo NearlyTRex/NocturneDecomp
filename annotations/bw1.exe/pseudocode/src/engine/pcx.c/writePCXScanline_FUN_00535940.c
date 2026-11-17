@@ -15,7 +15,7 @@ void __cdecl engine_pcx_c_writePCXScanline_FUN_00535940(int row_index,_FILE *pcx
   uint character;
   
   iVar2 = 0;
-  pbVar1 = g_ARRAY_PTR_01c4354c[row_index];
+  pbVar1 = g_ScreenBufferArray[row_index];
   if (0 < g_INT_0061b498) {
     do {
       if (0xbf < *pbVar1) {

@@ -129,7 +129,7 @@ LAB_00414f21:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (g_CEventList_PTR_006141f0,this_ptr->morph_event);
+                    (g_CEventListPtr,this_ptr->morph_event);
   if (iVar5 != 0) {
     this_ptr->morph_timer = 0.0;
     this_ptr->morphing = 1;

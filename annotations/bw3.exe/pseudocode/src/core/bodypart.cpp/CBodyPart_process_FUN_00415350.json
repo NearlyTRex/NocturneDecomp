@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 205,
+    "complexity_score": 204,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 89,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "stack_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 294
+    "total_lines": 293
   },
   "cross_references": [],
   "function": {
@@ -94,7 +94,7 @@
     },
     {
       "addr": "005fba60",
-      "name": "g_CEventList_PTR_005fba60",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c6e360"
     },
@@ -112,19 +112,19 @@
     },
     {
       "addr": "02cfd900",
-      "name": "g_CVector3f_02cfd900",
+      "name": "g_ZeroVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02cfd904",
-      "name": "g_CVector3f_02cfd900.y",
+      "name": "g_ZeroVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cfd908",
-      "name": "g_CVector3f_02cfd900.z",
+      "name": "g_ZeroVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -272,7 +272,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 70,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff88);",
@@ -291,7 +291,7 @@
       "line": 26,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar2->x = g_CVector3f_02cfd900.x;",
+      "text": "pCVar2->x = g_ZeroVector.x;",
       "type": "unrolled_memcpy"
     },
     {

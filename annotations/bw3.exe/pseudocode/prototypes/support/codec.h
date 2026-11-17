@@ -191,11 +191,11 @@ void __cdecl CCheesyCipher::setMode(CCheesyCipher *this_ptr,int mode);
 
 // Original: support_codec.cpp_CCheesyCipher_setKey_FUN_004416b0
 // Address: 004416b0
-void __cdecl CCheesyCipher::setKey(CCheesyCipher *this_ptr,uint param_2);
+void __cdecl CCheesyCipher::setKey(CCheesyCipher *this_ptr,uint key);
 
 // Original: support_codec.cpp_CCheesyCipher_transformByte_FUN_004416e0
 // Address: 004416e0
-uint __cdecl CCheesyCipher::transformByte(CCheesyCipher *this_ptr,byte param_2);
+uint __cdecl CCheesyCipher::transformByte(CCheesyCipher *this_ptr,byte value);
 
 // Original: support_codec.cpp_CCheesyCipher_process_FUN_00441750
 // Address: 00441750

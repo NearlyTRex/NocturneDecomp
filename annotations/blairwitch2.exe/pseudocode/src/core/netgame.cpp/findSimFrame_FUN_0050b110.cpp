@@ -13,7 +13,7 @@ int __cdecl core_netgame_cpp_findSimFrame_FUN_0050b110(int sequence_number)
   int iVar2;
   
   iVar2 = 0;
-  if (0 < g_INT_01d54640) {
+  if (0 < g_SimFrameCount) {
     iVar1 = 0;
     do {
       if (sequence_number ==
@@ -22,7 +22,7 @@ int __cdecl core_netgame_cpp_findSimFrame_FUN_0050b110(int sequence_number)
       }
       iVar1 = iVar1 + 0x74;
       iVar2 = iVar2 + 1;
-    } while (iVar1 < g_INT_01d54640 * 0x74);
+    } while (iVar1 < g_SimFrameCount * 0x74);
   }
   return -1;
 }

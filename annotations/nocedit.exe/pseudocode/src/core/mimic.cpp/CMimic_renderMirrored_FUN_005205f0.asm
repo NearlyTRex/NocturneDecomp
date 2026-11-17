@@ -32,7 +32,7 @@
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   int[20] g_MimicIndices
-;   int INT_02f43978
+;   int g_RenderMotionDebug
 ;   undefined4 g_CStrangerClassInfo.name_hash
 ;
 ; Called Functions:
@@ -252,7 +252,7 @@ section .text
         ;   Label: LAB_00520802
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 ; 00520803
         ;   XREF to: 0042a420 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x02f43978]      ; 00520808 | INT_02f43978
+    MOV EDI,dword ptr [0x02f43978]      ; 00520808 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 0052080e
     TEST EDI,EDI                        ; 00520811
     JZ 0x00520840                       ; 00520813

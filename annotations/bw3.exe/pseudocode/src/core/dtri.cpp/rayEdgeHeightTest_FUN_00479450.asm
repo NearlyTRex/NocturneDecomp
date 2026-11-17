@@ -23,8 +23,8 @@
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0 at 00479763
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005bcc99 = 2
-;   double g_DOUBLE_005bcca1 = 4
+;   double g_QuadraticDouble = 2
+;   double g_QuadraticQuarter = 4
 ;
 ; *****************************************************************************
 
@@ -65,7 +65,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 004794a2
     FMUL ST0                            ; 004794a5
     FLD double ptr [ESP + 0x40]         ; 004794a7
-    FMUL double ptr [0x005bcca1]        ; 004794ab | g_DOUBLE_005bcca1
+    FMUL double ptr [0x005bcca1]        ; 004794ab | g_QuadraticQuarter
     FLD float ptr [EDX]                 ; 004794b1
     FMUL ST0                            ; 004794b3
     FLD float ptr [EDX]                 ; 004794b5
@@ -76,7 +76,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 004794c1
     FMUL ST0                            ; 004794c4
     FXCH ST3                            ; 004794c6
-    FMUL double ptr [0x005bcc99]        ; 004794c8 | g_DOUBLE_005bcc99
+    FMUL double ptr [0x005bcc99]        ; 004794c8 | g_QuadraticDouble
     FXCH ST3                            ; 004794ce
     FSUBP ST2,ST0                       ; 004794d0
     FMULP                               ; 004794d2
@@ -98,7 +98,7 @@ section .text
     FSQRT                               ; 004794ff
     FSUBP                               ; 00479501
     FLD double ptr [ESP + 0x40]         ; 00479503
-    FMUL double ptr [0x005bcc99]        ; 00479507 | g_DOUBLE_005bcc99
+    FMUL double ptr [0x005bcc99]        ; 00479507 | g_QuadraticDouble
     FDIVP                               ; 0047950d
     FLDZ                                ; 0047950f
     XOR ECX,ECX                         ; 00479511
@@ -135,7 +135,7 @@ section .text
     FSQRT                               ; 0047955a
     FSUB double ptr [ESP + 0x38]        ; 0047955c
     FLD double ptr [ESP + 0x40]         ; 00479560
-    FMUL double ptr [0x005bcc99]        ; 00479564 | g_DOUBLE_005bcc99
+    FMUL double ptr [0x005bcc99]        ; 00479564 | g_QuadraticDouble
     FDIVP                               ; 0047956a
     FLDZ                                ; 0047956c
     FXCH                                ; 0047956e

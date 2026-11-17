@@ -12,7 +12,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00588de0(void)
   int iVar1;
   HRESULT HVar2;
   
-  g_INT_02661af8 = 1;
+  g_GraphicsResetFlag = 1;
   if (g_INT_0264bba0 != 0) {
     if (g_INT_006141c0 < 0x10) {
       wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(g_INT_006141b8,g_INT_006141bc,0x10);
@@ -26,53 +26,49 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00588de0(void)
       wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
     }
     engine_special_cpp_clearScreen_FUN_0055b1f0();
-    if (g_IUnknown_PTR_02661aec != (IUnknown *)0x0) {
-      (*g_IUnknown_PTR_02661aec->vtable->Release)(g_IUnknown_PTR_02661aec);
-      g_IUnknown_PTR_02661aec = (IUnknown *)0x0;
+    if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+      (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+      g_DirectDrawUnknown = (IUnknown *)0x0;
     }
-    if (g_IDirectDrawSurface_PTR_02661ae8 != (IDirectDrawSurface *)0x0) {
-      (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Release)
-                ((IUnknown *)g_IDirectDrawSurface_PTR_02661ae8);
-      g_IDirectDrawSurface_PTR_02661ae8 = (IDirectDrawSurface *)0x0;
+    if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+      (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+      g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
     }
-    if (g_IDirectDrawSurface_PTR_02661ae4 != (IDirectDrawSurface *)0x0) {
-      (*g_IDirectDrawSurface_PTR_02661ae4->vtable->Release)
-                ((IUnknown *)g_IDirectDrawSurface_PTR_02661ae4);
-      g_IDirectDrawSurface_PTR_02661ae4 = (IDirectDrawSurface *)0x0;
+    if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+      (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+      g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
     }
-    if (g_IDirectDraw_PTR_02661ae0 != (IDirectDraw *)0x0) {
-      (*g_IDirectDraw_PTR_02661ae0->vtable->RestoreDisplayMode)(g_IDirectDraw_PTR_02661ae0);
-      (*g_IDirectDraw_PTR_02661ae0->vtable->Release)((IUnknown *)g_IDirectDraw_PTR_02661ae0);
-      g_IDirectDraw_PTR_02661ae0 = (IDirectDraw *)0x0;
+    if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+      (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+      (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+      g_DirectDrawObject = (IDirectDraw *)0x0;
     }
     iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_0055f770
                       (g_INT_006141b8,g_INT_006141bc,g_INT_006141c0);
     if (iVar1 == 0) {
       g_INT_01c37788 = iVar1;
       g_INT_0264bba0 = iVar1;
-      if (g_IUnknown_PTR_02661aec != (IUnknown *)0x0) {
-        (*g_IUnknown_PTR_02661aec->vtable->Release)(g_IUnknown_PTR_02661aec);
-        g_IUnknown_PTR_02661aec = (IUnknown *)0x0;
+      if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+        (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+        g_DirectDrawUnknown = (IUnknown *)0x0;
       }
-      if (g_IDirectDrawSurface_PTR_02661ae8 != (IDirectDrawSurface *)0x0) {
-        (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Release)
-                  ((IUnknown *)g_IDirectDrawSurface_PTR_02661ae8);
-        g_IDirectDrawSurface_PTR_02661ae8 = (IDirectDrawSurface *)0x0;
+      if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+        (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+        g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
       }
-      if (g_IDirectDrawSurface_PTR_02661ae4 != (IDirectDrawSurface *)0x0) {
-        (*g_IDirectDrawSurface_PTR_02661ae4->vtable->Release)
-                  ((IUnknown *)g_IDirectDrawSurface_PTR_02661ae4);
-        g_IDirectDrawSurface_PTR_02661ae4 = (IDirectDrawSurface *)0x0;
+      if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+        (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+        g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
       }
-      if (g_IDirectDraw_PTR_02661ae0 != (IDirectDraw *)0x0) {
-        (*g_IDirectDraw_PTR_02661ae0->vtable->RestoreDisplayMode)(g_IDirectDraw_PTR_02661ae0);
-        (*g_IDirectDraw_PTR_02661ae0->vtable->Release)((IUnknown *)g_IDirectDraw_PTR_02661ae0);
-        g_IDirectDraw_PTR_02661ae0 = (IDirectDraw *)0x0;
+      if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+        (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+        (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+        g_DirectDrawObject = (IDirectDraw *)0x0;
       }
-      HVar2 = DirectDrawCreate((GUID *)0x0,&g_IDirectDraw_PTR_02661ae0,(IUnknown *)0x0);
+      HVar2 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
       if (HVar2 == 0) {
-        (*g_IDirectDraw_PTR_02661ae0->vtable->SetCooperativeLevel)
-                  (g_IDirectDraw_PTR_02661ae0,g_HWND_02664628,0x11);
+        (*g_DirectDrawObject->vtable->SetCooperativeLevel)
+                  (g_DirectDrawObject,g_MainWindowHandle,0x11);
       }
       wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50
                 (g_INT_006141b8,g_INT_006141bc,g_INT_006141c0);

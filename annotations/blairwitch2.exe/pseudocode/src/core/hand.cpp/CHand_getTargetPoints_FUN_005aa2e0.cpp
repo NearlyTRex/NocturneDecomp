@@ -21,7 +21,7 @@ int __cdecl core_hand_cpp_CHand_getTargetPoints_FUN_005aa2e0(CHand *this_ptr,CVe
     return 0;
   }
   core_xform_cpp_transformVector3x4_FUN_00591530
-            (&g_CVector3f_0265370c,
+            (&g_ZeroVector,
              (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
              this_ptr->hand_bone,&CStack_20);
   CStack_14.x = CStack_20.x;

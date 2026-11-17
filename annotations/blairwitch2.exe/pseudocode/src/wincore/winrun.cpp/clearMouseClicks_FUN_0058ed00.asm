@@ -8,7 +8,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0 at 004032b5
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
@@ -16,6 +16,6 @@ section .text
 
     XOR EDX,EDX                         ; 0058ed00
         ;   Label: wincore_winrun.cpp_clearMouseClicks_FUN_0058ed00
-    MOV dword ptr [0x01c2a384],EDX      ; 0058ed02 | g_BIT_INTEGER32_01c2a384
+    MOV dword ptr [0x01c2a384],EDX      ; 0058ed02 | g_MouseButtonFlags
     RET                                 ; 0058ed08
 

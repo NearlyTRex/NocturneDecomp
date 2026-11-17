@@ -109,9 +109,9 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_005365c0(CDemonSet *th
   pCVar3 = local_14;
   core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0045d070(local_14);
   iVar4 = 0;
-  g_INT_00603b38 = 0;
+  g_RenderMirrorsFlag = 0;
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(this_ptr,(pCVar3->base).max_distance,0);
-  g_INT_00603b38 = 1;
+  g_RenderMirrorsFlag = 1;
   core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(this_ptr,0xffffffff);
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(this_ptr,1);
   core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(this_ptr,1);
@@ -149,6 +149,6 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_005365c0(CDemonSet *th
   core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40
             (local_14,(g_INT_005fba18 + iVar1) / 2,(g_INT_005fba1c + iVar2) / 2,
              ((int)((iVar4 + (iVar4 >> 0x1f) * -0x80) - (uint)((iVar4 >> 0x1f) << 6 < 0)) >> 7) +
-             iVar5 * 0x80 + g_CWeather_PTR_006071f0->lightning_active * 0x8000);
+             iVar5 * 0x80 + g_CWeatherPtr->lightning_active * 0x8000);
   return;
 }

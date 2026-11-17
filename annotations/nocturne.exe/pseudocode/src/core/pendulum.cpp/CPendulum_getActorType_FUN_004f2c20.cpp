@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_pendulum_cpp_CPendulum_getActorType_FUN_004f2c20(CPendulum *this_ptr)
 
 {
-  return &g_CPendulumActorType_01e42858;
+  return &g_CPendulumClassInfo;
 }

@@ -41,15 +41,15 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0049f2e0(CFlame *this_ptr,float d
   bVar5 = 0;
   if (((this_ptr->on_event[0] != '\0') && (this_ptr->flame_state == 0)) &&
      (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,this_ptr->on_event), iVar2 != 0)) {
+                        (g_CEventListPtr,this_ptr->on_event), iVar2 != 0)) {
     if ((this_ptr->which_flame != FLAME_TYPE_CANDLE) && (this_ptr->which_flame != FLAME_TYPE_NONE))
     {
       iVar2 = 0;
       do {
         iVar2 = iVar2 + 1;
         core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                  (g_CFireEffect_PTR_00614d30,&(this_ptr->base).location.position,(CVector3f *)0x0,
-                   0x4000,0x10000,1,0xffff);
+                  (g_CFireEffectPtr,&(this_ptr->base).location.position,(CVector3f *)0x0,0x4000,
+                   0x10000,1,0xffff);
       } while (iVar2 < 10);
     }
     this_ptr->is_visible = 1;
@@ -57,10 +57,10 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0049f2e0(CFlame *this_ptr,float d
   }
   if (((this_ptr->off_event[0] != '\0') && (this_ptr->flame_state != 0)) &&
      ((iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                         (g_CEventList_PTR_006141f0,this_ptr->off_event), iVar2 != 0 &&
+                         (g_CEventListPtr,this_ptr->off_event), iVar2 != 0 &&
       (this_ptr->flame_state = 0, this_ptr->which_flame != FLAME_TYPE_NONE)))) {
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-              (g_CFireEffect_PTR_00614d30,&(this_ptr->base).location.position,
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,
                (this_ptr->flame_size).y * (float)0.5,(CVector3f *)0x0,0xffff);
   }
   if (this_ptr->flame_state != 0) {

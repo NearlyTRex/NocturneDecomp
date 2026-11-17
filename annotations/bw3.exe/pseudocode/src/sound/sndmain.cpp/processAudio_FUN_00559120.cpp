@@ -11,15 +11,15 @@ void __cdecl sound_sndmain_cpp_processAudio_FUN_00559120(void)
 {
   int iVar1;
   
-  if (g_CSoundDevice_PTR_02cf3280 != (CSoundDevice *)0x0) {
+  if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
     iVar1 = wincore_winrun_cpp_waitForMutexTimeout_FUN_00581950
-                      (g_HANDLE_02cf3418,(double)(g_FLOAT_02cf340c * 3.0f));
+                      (g_SoundMutex,(double)(g_FLOAT_02cf340c * 3.0f));
     if (iVar1 != 0) {
-      g_INT_02cf341c = g_INT_02cf341c + 1;
-      (*g_CSoundDevice_PTR_02cf3280->vtable->poll)(g_CSoundDevice_PTR_02cf3280);
+      g_SoundLockCount = g_SoundLockCount + 1;
+      (*g_CSoundDevicePtr->vtable->poll)(g_CSoundDevicePtr);
       sound_sndmain_cpp_pollAllStreams_FUN_0055a1b0(0);
-      g_INT_02cf341c = g_INT_02cf341c + -1;
-      wincore_winrun_cpp_releaseMutex_FUN_00581990(g_HANDLE_02cf3418);
+      g_SoundLockCount = g_SoundLockCount + -1;
+      wincore_winrun_cpp_releaseMutex_FUN_00581990(g_SoundMutex);
       return;
     }
   }

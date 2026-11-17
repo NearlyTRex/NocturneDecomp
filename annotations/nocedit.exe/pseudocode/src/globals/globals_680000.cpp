@@ -70,6 +70,133 @@ EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = nullptr;
 // EXCEPTION_FILTER_FUNC*
 EXCEPTION_FILTER_FUNC* g_UserExceptionFilter = nullptr;
 
+// FileDescriptor*
+FileDescriptor* g_FileDescriptors = (FileDescriptor*)&g_FileDescriptorTable;
+
+// FileDescriptor[20]
+FileDescriptor g_FileDescriptorTable[20] = {
+    {
+        .file_type = 0x01,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x02,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x02,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x03,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x02,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    }
+};
+
 // GUID
 GUID g_IID_IKsPropertySet = {0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
 GUID g_DSPROPSETID_VoiceManager = {0x62A69BAE, 0xDF9D, 0x11D1, {0x99, 0xA6, 0x00, 0xC0, 0x4F, 0xC9, 0x9D, 0x46}};
@@ -3145,7 +3272,7 @@ SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic SMRGLTextureBasic_00680bb0 = {
+SMRGLTextureBasic g_PathMapTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
@@ -3157,15 +3284,15 @@ SMRGLTextureBasic g_SolidWhiteTexture = {
     .base = {.type = 0x00000000, .count = 0x00000000},
     .texture_name = "bbwhite.raw"
 };
-SMRGLTextureBasic SMRGLTextureBasic_006817fc = {
+SMRGLTextureBasic g_VolumetricSphereTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_006819e4 = {
+SMRGLTextureBasic g_ViewModelTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "MENUCLD2.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_00684178 = {
+SMRGLTextureBasic g_StairsTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
@@ -3173,7 +3300,7 @@ SMRGLTextureBasic DAT_0068423C = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0068434c = {
+SMRGLTextureBasic g_TriggerTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
@@ -3193,7 +3320,7 @@ SMRGLTextureBasic g_SnowflakeTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0068495c = {
+SMRGLTextureBasic g_WerewolfEyeGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
@@ -3265,7 +3392,7 @@ SMRGLTextureBasic g_WaterTextures[16] = {
         .texture_name = "WATER15.RAW"
     }
 };
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_006846f0[16] = {
+SMRGLTextureBasic g_WaterActorTextures[16] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "WATER0.RAW"
@@ -3757,6 +3884,15 @@ WatcomStaticDestructorNode g_CWaterDestructorNode = {
 WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
 // _FILE
+_FILE g_StaticFilePoolStart = {
+    ._ptr = nullptr,
+    ._cnt = 0x00000000,
+    ._link = nullptr,
+    ._flag = 0x00000001,
+    ._handle = 0x00000000,
+    ._bufsize = 0x00000000,
+    ._ungotten = 0x0000
+};
 _FILE g_StdoutLogFile = {
     ._ptr = nullptr,
     ._cnt = 0x00000000,
@@ -3776,8 +3912,8 @@ _FILE g_StderrLogFile = {
     ._ungotten = 0x0000
 };
 
-// _FILE*
-_FILE* g_StaticFilePoolStart = nullptr;
+// _FILE[17]
+_FILE g_StaticFilePoolRest[17] = {};
 
 // _MMX_INTEGER
 _MMX_INTEGER g_VertexRedStart = {};
@@ -3940,10 +4076,10 @@ float FLOAT_00680818 = 1e+10f;
 float g_MaxSoftwareLatency = 0.5f;
 
 // int
-int INT_00680648 = -1;
+int g_LastImportActorTypeChoice = -1;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
-int INT_00680a04 = 0x1;
+int g_NetLobbyStateChanged = 0x1;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
 int g_CPendulumClassVersion = 0x8;
@@ -3957,7 +4093,7 @@ int g_CShotgunClassVersion = 0x1;
 int g_CShovelClassVersion = 0x1;
 int g_CSimBoxClassVersion = 0x3;
 int g_CSkeletonVersion = 0x3;
-int INT_00681864 = 0x7;
+int g_MaxDeformableModelVersion = 0x7;
 int g_CSmileyClassVersion = 0x1;
 int g_SfxPlaybackStateCounter = 0x1;
 int g_MaxSoundChannels = 0x20;
@@ -4020,7 +4156,7 @@ int g_CTVBatClassVersion = 0x5;
 int g_CVampireBossVersion = 0x4;
 int g_CVehicleClassVersion = 0x3;
 int g_CCryptVesselClassVersion = 0x4;
-int INT_006844f4 = 0x2000;
+int g_WaterFrameDuration = 0x2000;
 int g_CWaterActorVersion = 0x6;
 int g_CWayPointClassVersion = 0x2;
 int g_CWeaponClassVersion = 0x7;
@@ -4031,8 +4167,6 @@ int g_ForceMessagePump = 0x1;
 int g_PreviousActiveState = -1;
 int g_CZombieClassVersion = 0xB;
 int g_MaxErrnoValue = 0x28;
-int DAT_00684CCC = 0;
-int INT_00684cd0 = 0x1;
 int INT_00684ed0 = 0x100;
 int INT_00684edc = 0;
 int g_SpecialExitHandler = 0;
@@ -4052,7 +4186,6 @@ int INT_006850b8 = 0;
 int g_TimezoneOffset = 0x4650;
 int g_DaylightSavingActive = 0x1;
 int g_DaylightSavingOffset = 0xE10;
-int INT_00685210 = -16709626;
 int g_CurrentHandleCount = 0;
 int g_FakeHandleCounter = -2147483648;
 int INT_00685280 = 0;

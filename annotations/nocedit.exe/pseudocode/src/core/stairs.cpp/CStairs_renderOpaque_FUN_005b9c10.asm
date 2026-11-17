@@ -36,7 +36,7 @@
 ;   float FLOAT_006634b0 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   SMRGLTextureBasic SMRGLTextureBasic_00684178
+;   SMRGLTextureBasic g_StairsTexture
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
@@ -100,7 +100,7 @@ section .text
     TEST EAX,EAX                        ; 005b9c74
     JZ 0x005ba465                       ; 005b9c76
         ;   XREF to: 005ba465 (CONDITIONAL_JUMP)  ; LAB_005ba465
-    PUSH 0x684178                       ; 005b9c7c | SMRGLTextureBasic_00684178
+    PUSH 0x684178                       ; 005b9c7c | g_StairsTexture
     MOV EDI,dword ptr [0x006703ec]      ; 005b9c81 | g_CDemonRendererPtr2
     PUSH EDI                            ; 005b9c87 | g_CDemonRendererInstance
     XOR ESI,ESI                         ; 005b9c88

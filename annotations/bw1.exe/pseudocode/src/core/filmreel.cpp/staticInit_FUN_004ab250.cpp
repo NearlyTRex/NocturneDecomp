@@ -14,8 +14,8 @@ void __cdecl core_filmreel_cpp_staticInit_FUN_004ab250(void)
              core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0,&g_CFilmReelClassVersion,2,
              &g_CDemonActorClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CDemonActorType_01c57038,"CFilmProjector",
-             core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590,&g_INT_0061bf2c,2,
-             &g_CActorDestinationClassInfo);
+            (&g_CFilmProjectorClassInfo,"CFilmProjector",
+             core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590,&g_CFilmProjectorClassVersion,2
+             ,&g_CActorDestinationClassInfo);
   return;
 }

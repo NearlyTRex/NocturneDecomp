@@ -14,10 +14,10 @@ void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_
   int in_EDX;
   int unaff_EBX;
   
-  g_INT_005bf4a4 = in_EAX;
-  g_INT_005bf4a8 = unaff_EBX;
-  g_INT_005bf4ac = in_ECX;
-  g_INT_005bf4b0 = in_EDX;
+  g_SavedRegisterEAX = in_EAX;
+  g_SavedRegisterEBX = unaff_EBX;
+  g_SavedRegisterECX = in_ECX;
+  g_SavedRegisterEDX = in_EDX;
   (*g_ScanlineRenderFunc)((SSoftwareEdge *)left,(SSoftwareEdge *)right,scanline_y);
   return;
 }

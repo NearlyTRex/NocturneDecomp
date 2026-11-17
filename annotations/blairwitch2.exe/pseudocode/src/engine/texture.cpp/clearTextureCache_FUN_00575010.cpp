@@ -9,7 +9,7 @@
 void __cdecl engine_texture_cpp_clearTextureCache_FUN_00575010(void)
 
 {
-  engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(g_CTextureCache_PTR_02652eb0);
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(g_TextureCacheInstance);
   g_INT_02652eb4 = 0;
   return;
 }

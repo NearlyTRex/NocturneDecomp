@@ -14,7 +14,7 @@ int __cdecl engine_special_cpp_selectCard_FUN_005663e0(int card_index)
   if (g_INT_02cf6108 == 0) {
     return 0;
   }
-  g_INT_02cf5fd0 = card_index;
-  iVar1 = (*(code *)g_PTR_02cf6070)(card_index);
+  g_RendererCardIndex = card_index;
+  iVar1 = (*(code *)g_APIDLL_selectCard)(card_index);
   return iVar1;
 }

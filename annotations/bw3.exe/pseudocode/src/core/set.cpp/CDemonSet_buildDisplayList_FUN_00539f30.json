@@ -198,7 +198,7 @@
     },
     {
       "addr": "0203a598",
-      "name": "g_INT_0203a598",
+      "name": "g_SpotLightCount",
       "type": "int",
       "value": null
     },
@@ -216,13 +216,13 @@
     },
     {
       "addr": "0211e354",
-      "name": "g_SDisplayListSortEntry_ARRAY_0211e354",
+      "name": "g_SetDisplayListSortBuffer",
       "type": "SDisplayListSortEntry[2000]",
       "value": null
     },
     {
       "addr": "0211e358",
-      "name": "g_SDisplayListSortEntry_ARRAY_0211e354[0].distance_sq",
+      "name": "g_SetDisplayListSortBuffer[0].distance_sq",
       "type": "undefined4",
       "value": null
     }
@@ -714,19 +714,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_SetDisplayListSortBuffer[0].actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 180,
-      "match": "(int)&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor",
+      "match": "(int)&g_SetDisplayListSortBuffer[0].actor",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor + iVar6);",
+      "text": "puVar9 = (uint *)((int)&g_SetDisplayListSortBuffer[0].actor + iVar6);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_SetDisplayListSortBuffer[0].actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 197,
-      "match": "(int)&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor",
+      "match": "(int)&g_SetDisplayListSortBuffer[0].actor",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor + iVar7);",
+      "text": "puVar9 = (uint *)((int)&g_SetDisplayListSortBuffer[0].actor + iVar7);",
       "type": "pointer_truncation"
     },
     {
@@ -814,7 +814,7 @@
       "line": 180,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor + iVar6);",
+      "text": "puVar9 = (uint *)((int)&g_SetDisplayListSortBuffer[0].actor + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -822,7 +822,7 @@
       "line": 197,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)&g_SDisplayListSortEntry_ARRAY_0211e354[0].actor + iVar7);",
+      "text": "puVar9 = (uint *)((int)&g_SetDisplayListSortBuffer[0].actor + iVar7);",
       "type": "pointer_cast"
     },
     {

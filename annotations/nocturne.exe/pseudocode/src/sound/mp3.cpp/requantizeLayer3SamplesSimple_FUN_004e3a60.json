@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 191,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 98,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 341
+    "total_lines": 343
   },
   "cross_references": [
     {
@@ -38,13 +38,13 @@
   "globals": [
     {
       "addr": "005bb290",
-      "name": "g_DOUBLE_ARRAY_005bb290",
+      "name": "g_MpegRequantizationScaleTable",
       "type": "double[17]",
       "value": null
     },
     {
       "addr": "005bb318",
-      "name": "g_DOUBLE_ARRAY_005bb318",
+      "name": "g_MpegRequantizationOffsetTable",
       "type": "double[17]",
       "value": null
     }
@@ -383,7 +383,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 88,
       "match": "(uint *)(iVar6 + iVar4 + (int)dequantized_output",
       "severity": "moderate",
       "text": "puVar3 = (uint *)(iVar6 + iVar4 + (int)dequantized_output);",

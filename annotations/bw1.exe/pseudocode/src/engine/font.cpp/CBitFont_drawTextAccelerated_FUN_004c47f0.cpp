@@ -28,7 +28,7 @@ int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004c47f0(CBitFont *
   iVar8 = x;
   this_ptr_00 = this_ptr;
   if (color_mode == -2) {
-    uVar11 = g_INT_01cc8cd8 << 0x10 | g_INT_01cc8cdc << 8 | g_INT_01cc8ce0;
+    uVar11 = g_ShadowColorRed << 0x10 | g_ShadowColorGreen << 8 | g_ShadowColorBlue;
   }
   else if (color_mode < 0) {
     uVar11 = 0xffffff;

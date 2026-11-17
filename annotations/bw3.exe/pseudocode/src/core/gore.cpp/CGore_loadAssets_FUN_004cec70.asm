@@ -11,16 +11,16 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fed34
-;   SMRGLTextureBasic[4] g_SMRGLTextureBasic_ARRAY_005fed4c
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005fed4c[1].base.type
-;   SMRGLTextureBasic[64] g_SMRGLTextureBasic_ARRAY_005fedac
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005fedac[1].base.type
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005fedac[16].base.type
-;   SMRGLTextureBasic[116] g_SMRGLTextureBasic_ARRAY_005ff3ac
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005ff3ac[1].base.type
-;   undefined4 g_SMRGLTextureBasic_ARRAY_005ff3ac[29].base.type
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005ffeac
+;   SMRGLTextureBasic g_BloodParticleTexture
+;   SMRGLTextureBasic[4] g_BloodSplatTextures
+;   undefined4 g_BloodSplatTextures[1].base.type
+;   SMRGLTextureBasic[64] g_BloodSplatAnimTextures
+;   undefined4 g_BloodSplatAnimTextures[1].base.type
+;   undefined4 g_BloodSplatAnimTextures[16].base.type
+;   SMRGLTextureBasic[116] g_BloodPoolAnimTextures
+;   undefined4 g_BloodPoolAnimTextures[1].base.type
+;   undefined4 g_BloodPoolAnimTextures[29].base.type
+;   SMRGLTextureBasic g_FootstepTexture
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
@@ -35,15 +35,15 @@ section .text
     PUSH ESI                            ; 004cec71
     PUSH EDI                            ; 004cec72
     PUSH EBP                            ; 004cec73
-    PUSH 0x5fed34                       ; 004cec74 | g_SMRGLTextureBasic_005fed34
+    PUSH 0x5fed34                       ; 004cec74 | g_BloodParticleTexture
     MOV EDX,dword ptr [0x005f2afc]      ; 004cec79 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004cec7f | g_CDemonRenderer_01bdd7e4
-    MOV EBX,0x5fed4c                    ; 004cec80 | g_SMRGLTextureBasic_ARRAY_005fed4c
+    MOV EBX,0x5fed4c                    ; 004cec80 | g_BloodSplatTextures
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004cec85
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    LEA ESI,[EBX + 0x60]                ; 004cec8a | g_SMRGLTextureBasic_ARRAY_005fedac
+    LEA ESI,[EBX + 0x60]                ; 004cec8a | g_BloodSplatAnimTextures
     ADD ESP,0x8                         ; 004cec8d
-    PUSH EBX                            ; 004cec90 | g_SMRGLTextureBasic_ARRAY_005fed4c | g_SMRGLTextureBasic_ARRAY_005fed4c[1].base.type
+    PUSH EBX                            ; 004cec90 | g_BloodSplatTextures | g_BloodSplatTextures[1].base.type
         ;   Label: LAB_004cec90
     MOV ECX,dword ptr [0x005f2afc]      ; 004cec91 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 004cec97 | g_CDemonRenderer_01bdd7e4
@@ -54,14 +54,14 @@ section .text
     CMP EBX,ESI                         ; 004ceca3
     JNZ 0x004cec90                      ; 004ceca5
         ;   XREF to: 004cec90 (CONDITIONAL_JUMP)  ; LAB_004cec90
-    MOV EBP,0x5fedac                    ; 004ceca7 | g_SMRGLTextureBasic_ARRAY_005fedac
+    MOV EBP,0x5fedac                    ; 004ceca7 | g_BloodSplatAnimTextures
     XOR EDI,EDI                         ; 004cecac
     ADD EBP,0x180                       ; 004cecae
     IMUL EBX,EDI,0x180                  ; 004cecb4
         ;   Label: LAB_004cecb4
     MOV ESI,EBP                         ; 004cecba
-    ADD EBX,0x5fedac                    ; 004cecbc | g_SMRGLTextureBasic_ARRAY_005fedac
-    PUSH EBX                            ; 004cecc2 | g_SMRGLTextureBasic_ARRAY_005fedac | g_SMRGLTextureBasic_ARRAY_005fedac[1].base.type | g_SMRGLTextureBasic_ARRAY_005fedac[16].base.type
+    ADD EBX,0x5fedac                    ; 004cecbc | g_BloodSplatAnimTextures
+    PUSH EBX                            ; 004cecc2 | g_BloodSplatAnimTextures | g_BloodSplatAnimTextures[1].base.type | g_BloodSplatAnimTextures[16].base.type
         ;   Label: LAB_004cecc2
     MOV EAX,[0x005f2afc]                ; 004cecc3 | g_CDemonRenderer_PTR_005f2afc
     PUSH EAX                            ; 004cecc8 | g_CDemonRenderer_01bdd7e4
@@ -77,14 +77,14 @@ section .text
     CMP EDI,0x4                         ; 004cecdf
     JL 0x004cecb4                       ; 004cece2
         ;   XREF to: 004cecb4 (CONDITIONAL_JUMP)  ; LAB_004cecb4
-    MOV EBP,0x5ff3ac                    ; 004cece4 | g_SMRGLTextureBasic_ARRAY_005ff3ac
+    MOV EBP,0x5ff3ac                    ; 004cece4 | g_BloodPoolAnimTextures
     XOR EDI,EDI                         ; 004cece9
     ADD EBP,0x2b8                       ; 004ceceb
     IMUL EBX,EDI,0x2b8                  ; 004cecf1
         ;   Label: LAB_004cecf1
     MOV ESI,EBP                         ; 004cecf7
-    ADD EBX,0x5ff3ac                    ; 004cecf9 | g_SMRGLTextureBasic_ARRAY_005ff3ac
-    PUSH EBX                            ; 004cecff | g_SMRGLTextureBasic_ARRAY_005ff3ac | g_SMRGLTextureBasic_ARRAY_005ff3ac[1].base.type | g_SMRGLTextureBasic_ARRAY_005ff3ac[29].base.type
+    ADD EBX,0x5ff3ac                    ; 004cecf9 | g_BloodPoolAnimTextures
+    PUSH EBX                            ; 004cecff | g_BloodPoolAnimTextures | g_BloodPoolAnimTextures[1].base.type | g_BloodPoolAnimTextures[29].base.type
         ;   Label: LAB_004cecff
     MOV EDX,dword ptr [0x005f2afc]      ; 004ced00 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004ced06 | g_CDemonRenderer_01bdd7e4
@@ -100,7 +100,7 @@ section .text
     CMP EDI,0x4                         ; 004ced1d
     JL 0x004cecf1                       ; 004ced20
         ;   XREF to: 004cecf1 (CONDITIONAL_JUMP)  ; LAB_004cecf1
-    PUSH 0x5ffeac                       ; 004ced22 | g_SMRGLTextureBasic_005ffeac
+    PUSH 0x5ffeac                       ; 004ced22 | g_FootstepTexture
     MOV ECX,dword ptr [0x005f2afc]      ; 004ced27 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 004ced2d | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004ced2e

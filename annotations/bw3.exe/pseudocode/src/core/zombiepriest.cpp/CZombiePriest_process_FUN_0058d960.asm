@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePriest *this_ptr,float param_2)
+; void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePriest *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CZombiePriest *  Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0058d938 = 0058e22c
@@ -18,7 +18,7 @@
 ;   undefined4 DAT_005e704c
 ;   float g_FLOAT_005e7058 = 20
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CConsole g_CConsoleInstance
@@ -224,7 +224,7 @@ section .text
     LEA EAX,[EBX + 0xd070]              ; 0058db7c
         ;   Label: LAB_0058db7c
     PUSH EAX                            ; 0058db82
-    MOV EAX,[0x005fba60]                ; 0058db83 | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 0058db83 | g_CEventListPtr
     PUSH EAX                            ; 0058db88
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0058db89
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -540,7 +540,7 @@ section .text
     ADD EAX,EDX                         ; 0058df11
     PUSH 0x3ecccccd                     ; 0058df13
     PUSH EAX                            ; 0058df18
-    PUSH 0x2cfd900                      ; 0058df19 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0058df19 | g_ZeroVector
     LEA ESI,[EBP + 0xffffff42]          ; 0058df1e
     LEA EDI,[EBP + -0x6a]               ; 0058df24
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058df27
@@ -592,7 +592,7 @@ section .text
     ADD EAX,EDX                         ; 0058dfbc
     PUSH 0x3ecccccd                     ; 0058dfbe
     PUSH EAX                            ; 0058dfc3
-    PUSH 0x2cfd900                      ; 0058dfc4 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0058dfc4 | g_ZeroVector
     LEA ESI,[EBP + 0xffffff1e]          ; 0058dfc9
     LEA EDI,[EBP + 0xfffffeee]          ; 0058dfcf
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058dfd5

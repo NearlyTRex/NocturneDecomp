@@ -10,7 +10,7 @@ void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_0058f5d0(char *mess
 
 {
   _sprintf(g_CHAR_ARRAY_02662df0,"%s\n\nFile: %s\nLine: %d");
-  MessageBoxA(g_HWND_02664628,g_CHAR_ARRAY_02662df0,PTR_s_Coffin_Rock_0061e984,0x30);
+  MessageBoxA(g_MainWindowHandle,g_CHAR_ARRAY_02662df0,PTR_s_Coffin_Rock_0061e984,0x30);
                     /* WARNING: Subroutine does not return */
   ExitProcess(1);
 }

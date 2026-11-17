@@ -22,7 +22,7 @@ void FUN_005cbd30(void)
     FUN_005cd6c4();
     FUN_005cda1e();
     if (!(bool)uVar1 && cVar3 == cVar2) {
-      g_BYTE_006267b8 = g_BYTE_006267b8 | 1;
+      g_UseSoftwareMath = g_UseSoftwareMath | 1;
     }
   }
   return;

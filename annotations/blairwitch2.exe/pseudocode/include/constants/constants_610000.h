@@ -287,7 +287,7 @@ static char* g_CHAR_PTR_ARRAY_00616610[11] = {
 };
 
 // char*[12] constants
-static char* g_CHAR_PTR_ARRAY_0061ef20[12] = {
+static char* g_MonthNamesLong[12] = {
     "January", "February", "March", "April",
     "May", "June", "July", "August",
     "September", "October", "November", "December"
@@ -311,11 +311,11 @@ static char* g_CHAR_PTR_ARRAY_006165dc[7] = {
     "train.msn", "town.msn", "mine.msn", "trans.msn",
     "temple.msn", "town2.msn", "hq-act2b.msn"
 };
-static char* g_CHAR_PTR_ARRAY_0061eed4[7] = {
+static char* g_WeekdayNamesLong[7] = {
     "Sunday", "Monday", "Tuesday", "Wednesday",
     "Thursday", "Friday", "Saturday"
 };
-static char* g_CHAR_PTR_ARRAY_0061f7d0[7] = {
+static char* g_MathErrorMessages[7] = {
     nullptr, "Domain error", "Argument singularity", "Overflow range error",
     "Underflow range error", "Total loss of significance", "Partial loss of significance"
 };
@@ -328,14 +328,14 @@ static char* g_CHAR_PTR_ARRAY_0061b370[9] = {
 };
 
 // char[12][4] constants
-static char g_CHAR_ARRAY_ARRAY_0061eef0[12][4] = {
+static char g_MonthNamesShort[12][4] = {
     "Jan", "Feb", "Mar", "Apr",
     "May", "Jun", "Jul", "Aug",
     "Sep", "Oct", "Nov", "Dec"
 };
 
 // char[256] constants
-static char g_CHAR_ARRAY_0061f889[256] = {
+static char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -361,21 +361,21 @@ static char g_CHAR_ARRAY_0061f889[256] = {
 };
 
 // char[7][4] constants
-static char g_CHAR_ARRAY_ARRAY_0061eeb8[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+static char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 // double constants
-static double g_DOUBLE_0061f45c = 709.78271289338397;
+static double g_ExpUnderflowLimit = 709.78271289338397;
 static double g_DOUBLE_0061f464 = -709.78271289338397;
 
 // double[17] constants
-static double g_DOUBLE_ARRAY_006184d0[17] = {
+static double g_MpegRequantizationScaleTable[17] = {
     1.3333333333299999, 1.6000000000000001, 1.1428571428600001, 1.7777777777699999,
     1.06666666666, 1.0322580645199999, 1.01587301587, 1.0078740157499999,
     1.00392156863, 1.0019569471600001, 1.0009775171099999, 1.00048851979,
     1.00024420024, 1.0001220852199999, 1.00006103888, 1.00003051851,
     1.00001525902
 };
-static double g_DOUBLE_ARRAY_00618558[17] = {
+static double g_MpegRequantizationOffsetTable[17] = {
     0.5, 0.5, 0.25, 0.5,
     0.125, 0.0625, 0.03125, 0.015625,
     0.0078125, 0.00390625, 0.001953125, 0.0009765625,
@@ -384,13 +384,13 @@ static double g_DOUBLE_ARRAY_00618558[17] = {
 };
 
 // double[2][4] constants
-static double g_DOUBLE_ARRAY_ARRAY_00618e88[2][4] = {
+static double g_MpegSampleRateTable[2][4] = {
     {22.050000000000001, 24.0, 16.0, 0.0},
     {44.100000000000001, 48.0, 32.0, 0.0}
 };
 
 // double[64] constants
-static double g_DOUBLE_ARRAY_00619030[64] = {
+static double g_MpegScalefactorTable[64] = {
     2, 1.5874010519682, 1.2599210498948701, 1,
     0.79370052598410001, 0.62996052494744004, 0.5, 0.39685026299205001,
     0.31498026247372002, 0.25, 0.19842513149602001, 0.15749013123686001,
@@ -410,13 +410,13 @@ static double g_DOUBLE_ARRAY_00619030[64] = {
 };
 
 // double[8] constants
-static double g_DOUBLE_ARRAY_00618e40[8] = {
+static double g_Mp3AntiAliasCSSource[8] = {
     -0.59999999999999998, -0.53500000000000003, -0.33000000000000002, -0.185,
     -0.095000000000000001, -0.041000000000000002, -0.014200000000000001, -0.0037000000000000002
 };
 
 // float constants
-static float g_FLOAT_006164a0 = 30.0f;
+static float g_MovieRecordingTargetFPS = 30.0f;
 static float g_FLOAT_00618118 = 0.5f;
 static float g_FLOAT_0061811c = 65535.0f;
 static float g_FLOAT_00618120 = 65536.0f;
@@ -426,10 +426,10 @@ static float g_FLOAT_0061e2ac = 12.0f;
 static float g_FLOAT_0061e2b0 = 1.0f;
 
 // float10 constants
-static float10 g_FLOAT10_0061eeac = 1.5707963f;
+static float10 g_PiOver2 = 1.5707963f;
 
 // float[16][32] constants
-static float g_FLOAT_ARRAY_ARRAY_006185e0[16][32] = {
+static float g_MpegSynthesisWindow[16][32] = {
     {0.0f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -3.05180001e-05f, -3.05180001e-05f, -3.05180001e-05f, -3.05180001e-05f, -4.57759998e-05f, -4.57759998e-05f, -6.10349998e-05f, -6.10349998e-05f, -7.62940035e-05f, -7.62940035e-05f, -9.15530036e-05f, -0.000106811996f, -0.000106811996f, -0.00012207f, -0.000137329f, -0.000152588007f, -0.000167847f, -0.000198363996f, -0.000213623003f, -0.000244141003f, -0.000259399007f, -0.000289916992f, -0.000320435007f, -0.000366210996f, -0.00039672901f},
     {-0.000442504999f, -0.000473021995f, -0.000534058025f, -0.000579833984f, -0.000625610002f, -0.000686645973f, -0.000747681013f, -0.000808715995f, -0.000885009998f, -0.000961304002f, -0.00103759801f, -0.00111389195f, -0.00120544399f, -0.00129699695f, -0.00138855004f, -0.001480103f, -0.00158691395f, -0.00169372605f, -0.00178527797f, -0.00190734898f, -0.00201415992f, -0.00212097191f, -0.00224304199f, -0.00234985398f, -0.00245666504f, -0.00257873489f, -0.00268554711f, -0.00279235793f, -0.00289916992f, -0.00299072289f, -0.00308227492f, -0.00317382789f},
     {0.00325012207f, 0.00332641602f, 0.00338745094f, 0.003433228f, 0.00346374488f, 0.00347900391f, 0.00347900391f, 0.00346374488f, 0.00341796898f, 0.00337219192f, 0.00328064011f, 0.00317382789f, 0.00305175805f, 0.0028839109f, 0.0027008059f, 0.00248718308f, 0.00222778297f, 0.00193786598f, 0.00161743199f, 0.00126647903f, 0.000869750977f, 0.000442504999f, -3.05180001e-05f, -0.000549315999f, -0.00109863305f, -0.00169372605f, -0.00233459496f, -0.00300598098f, -0.003723145f, -0.00448608398f, -0.0052947998f, -0.00611877395f},
@@ -449,13 +449,13 @@ static float g_FLOAT_ARRAY_ARRAY_006185e0[16][32] = {
 };
 
 // float[2][4] constants
-static float g_FLOAT_ARRAY_ARRAY_00617948[2][4] = {
+static float g_FootstepCornerMultipliers[2][4] = {
     {1.0f, -1.0f, -1.0f, 1.0f},
     {1.0f, 1.0f, -1.0f, -1.0f}
 };
 
 // uchar[257] constants
-static uchar g_UCHAR_ARRAY_0061ed94[257] = {
+static uchar g_CharacterClassificationTable[257] = {
     0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x01,
     0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
     0x01, 0x0A, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C,
@@ -476,7 +476,7 @@ static uchar g_UCHAR_ARRAY_0061ed94[257] = {
 };
 
 // uchar[8] constants
-static uchar g_UCHAR_ARRAY_00613888[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined1 constants
 static undefined1 DAT_0061ef60 = 0x01;

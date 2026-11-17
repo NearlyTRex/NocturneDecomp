@@ -55,9 +55,9 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_004f8eb0(CPod *this_ptr,
   current_crc = 0xffffffff;
   local_14 = p_Var4;
   for (; 0xffff < (int)size; size = size - 0x10000) {
-    pcVar6 = g_CHAR_ARRAY_01e428d0;
+    pcVar6 = g_FileIOBuffer;
     uVar5 = 0;
-    _fread(g_CHAR_ARRAY_01e428d0,0x10000,1,local_14);
+    _fread(g_FileIOBuffer,0x10000,1,local_14);
     do {
       uVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
@@ -66,8 +66,8 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_004f8eb0(CPod *this_ptr,
     } while (uVar5 < 0x10000);
   }
   uVar5 = 0;
-  _fread(g_CHAR_ARRAY_01e428d0,size,1,local_14);
-  pcVar6 = g_CHAR_ARRAY_01e428d0;
+  _fread(g_FileIOBuffer,size,1,local_14);
+  pcVar6 = g_FileIOBuffer;
   local_18 = size;
   if (size != 0) {
     do {

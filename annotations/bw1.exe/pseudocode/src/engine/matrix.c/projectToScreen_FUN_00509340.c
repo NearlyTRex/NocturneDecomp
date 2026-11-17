@@ -32,7 +32,7 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_00509340(int input_value)
     iStack_18 = CStack_50.z;
     dVar2 = round
                       (((-(double)input_value * (double)g_INT_01c4effc) / (double)CStack_50.z) /
-                       (double)g_INT_0061b4c4);
+                       (double)g_ProjectionScale);
     return (int)ROUND(dVar2);
   }
   return -1;

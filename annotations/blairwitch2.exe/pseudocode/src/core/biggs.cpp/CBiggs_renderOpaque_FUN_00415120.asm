@@ -10,7 +10,7 @@
 ;   float g_FLOAT_005f3510 = 4
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01d1cdc8
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -102,7 +102,7 @@ section .text
     CALL core_morph.cpp_CMorph_render_FUN_005b76a0 ; 004151e2
         ;   XREF to: 005b76a0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_render_FUN_005b76a0(CMorph * this_ptr, float morph_t)
     ADD ESP,0x8                         ; 004151e7
-    CMP dword ptr [0x01d1cdc8],0x0      ; 004151ea | g_INT_01d1cdc8
+    CMP dword ptr [0x01d1cdc8],0x0      ; 004151ea | g_RenderMotionDebug
         ;   Label: LAB_004151ea
     JZ 0x00415223                       ; 004151f1
         ;   XREF to: 00415223 (CONDITIONAL_JUMP)  ; LAB_00415223

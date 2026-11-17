@@ -15,7 +15,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
   char *pcVar4;
   char *pcVar5;
   
-  g_INT_01d1bc5c = g_INT_0061b49c;
+  g_InventoryScreenHeight = g_INT_0061b49c;
   p_Var2 = engine_dosio_cpp_getFile_FUN_00479180
                      ("data","invsize.txt","rt");
   if (p_Var2 != (_FILE *)0x0) {
@@ -23,15 +23,15 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
     _fclose(p_Var2);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08d78,"invback",g_INT_0061f1a0,g_INT_0061f1a4);
+            (&g_InvBackgroundBitmap,"invback",g_InventoryWidth,g_InventoryHeight);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08d8c,"invback2",g_INT_0061f1a4,g_INT_0061f1a4);
+            (&CAlphaBitmap_01d08d8c,"invback2",g_InventoryHeight,g_InventoryHeight);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08da0,"weapback",g_INT_0061f1a0,g_INT_0061f1a4);
+            (&g_WeapBackgroundBitmap,"weapback",g_InventoryWidth,g_InventoryHeight);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08db4,"weapback2",g_INT_0061f1a4,g_INT_0061f1a4);
+            (&CAlphaBitmap_01d08db4,"weapback2",g_InventoryHeight,g_InventoryHeight);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d1b9d0,"battery",0x10,0x20);
+            (&g_BatteryIconBitmap,"battery",0x10,0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
             (&CAlphaBitmap_01d1b9e4,"hbar1",0x1b,0x40);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
@@ -114,15 +114,15 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d1ba98,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d1baf4,2,2);
   }
-  g_INT_01d08dc8 = 0;
+  g_ItemDefinitionCount = 0;
   p_Var2 = engine_dosio_cpp_getFile_FUN_00479180
                      (&g_CHAR_005e61d6,"itemlist.txt","rt");
   if (p_Var2 != (_FILE *)0x0) {
     while ((p_Var2->_flag & 0x10) == 0) {
       iVar3 = core_inv_cpp_loadItem_FUN_004f6e90
-                        (g_SInventoryItemInfo_ARRAY_01d08dd0 + g_INT_01d08dc8,p_Var2);
+                        (g_ItemDefinitionArray + g_ItemDefinitionCount,p_Var2);
       if (iVar3 == 0) break;
-      g_INT_01d08dc8 = g_INT_01d08dc8 + 1;
+      g_ItemDefinitionCount = g_ItemDefinitionCount + 1;
     }
     _fclose(p_Var2);
   }

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_platfrm_cpp_CPlatform_getActorType_FUN_004f5d80(CPlatform *this_ptr)
 
 {
-  return &g_CPlatformActorType_01e42894;
+  return &g_CPlatformClassInfo;
 }

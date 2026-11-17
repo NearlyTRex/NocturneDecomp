@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_gargoyle_cpp_CGargoyle_getActorType_FUN_004a7340(CGargoyle *this_ptr)
 
 {
-  return &g_CGargoyleActorType_01c78b48;
+  return &g_CGargoyleClassInfo;
 }

@@ -30,13 +30,13 @@
 ;   double g_DOUBLE_005f995a = 15
 ;   double g_DOUBLE_005f9962 = 0.100000000000000
 ;   float g_FLOAT_005f996a = 100
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   CVector3f[200] g_CVector3f_ARRAY_02c997f8
+;   CVector3f[200] g_WeatherParticlePositions
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -87,18 +87,18 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae1e0
     FLD float ptr [EAX + 0x4]           ; 005ae1e3
     FMUL float ptr [ESP + 0x8]          ; 005ae1e6
-    FSUBR float ptr [EBX + 0x2c997fc]   ; 005ae1ea | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
+    FSUBR float ptr [EBX + 0x2c997fc]   ; 005ae1ea | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     MOV EAX,dword ptr [ESP + 0x28]      ; 005ae1f0
-    FST float ptr [EBX + 0x2c997fc]     ; 005ae1f4 | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
+    FST float ptr [EBX + 0x2c997fc]     ; 005ae1f4 | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     FCOMP float ptr [EAX + 0x2c9a158]   ; 005ae1fa
     FNSTSW AX                           ; 005ae200
     SAHF                                ; 005ae202
     JNC 0x005ae295                      ; 005ae203
         ;   XREF to: 005ae295 (CONDITIONAL_JUMP)  ; LAB_005ae295
-    FLD float ptr [EBX + 0x2c997fc]     ; 005ae209 | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
+    FLD float ptr [EBX + 0x2c997fc]     ; 005ae209 | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     FADD float ptr [0x005f996a]         ; 005ae20f | g_FLOAT_005f996a
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae215
-    FSTP float ptr [EBX + 0x2c997fc]    ; 005ae218 | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
+    FSTP float ptr [EBX + 0x2c997fc]    ; 005ae218 | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     CMP dword ptr [EAX],0x1             ; 005ae21e
     JNZ 0x005ae295                      ; 005ae221
         ;   XREF to: 005ae295 (CONDITIONAL_JUMP)  ; LAB_005ae295
@@ -106,14 +106,14 @@ section .text
     LEA EDI,[ESP + 0x10]                ; 005ae227
     LEA ESI,[EBX + 0x2c997f8]           ; 005ae22b
     MOV EAX,dword ptr [EAX + 0x2c9a158] ; 005ae231
-    MOVSD ES:EDI,ESI                    ; 005ae237 | g_CVector3f_ARRAY_02c997f8
-    MOVSD ES:EDI,ESI                    ; 005ae238 | g_CVector3f_ARRAY_02c997f8[0].y
-    MOVSD ES:EDI,ESI                    ; 005ae239 | g_CVector3f_ARRAY_02c997f8[0].z
+    MOVSD ES:EDI,ESI                    ; 005ae237 | g_WeatherParticlePositions
+    MOVSD ES:EDI,ESI                    ; 005ae238 | g_WeatherParticlePositions[0].y
+    MOVSD ES:EDI,ESI                    ; 005ae239 | g_WeatherParticlePositions[0].z
     PUSH 0x0                            ; 005ae23a
     MOV dword ptr [ESP + 0x18],EAX      ; 005ae23c
     LEA EAX,[ESP + 0x14]                ; 005ae240
     PUSH EAX                            ; 005ae244
-    MOV ECX,dword ptr [0x0061c010]      ; 005ae245 | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 005ae245 | g_CFireEffectPtr
     PUSH ECX                            ; 005ae24b
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae24c
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -121,7 +121,7 @@ section .text
     PUSH 0x0                            ; 005ae254
     LEA EAX,[ESP + 0x14]                ; 005ae256
     PUSH EAX                            ; 005ae25a
-    MOV ESI,dword ptr [0x0061c010]      ; 005ae25b | g_CFireEffect_PTR_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 005ae25b | g_CFireEffectPtr
     PUSH ESI                            ; 005ae261
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae262
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -129,7 +129,7 @@ section .text
     PUSH 0x0                            ; 005ae26a
     LEA EAX,[ESP + 0x14]                ; 005ae26c
     PUSH EAX                            ; 005ae270
-    MOV EDI,dword ptr [0x0061c010]      ; 005ae271 | g_CFireEffect_PTR_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 005ae271 | g_CFireEffectPtr
     PUSH EDI                            ; 005ae277
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae278
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -137,7 +137,7 @@ section .text
     PUSH 0x0                            ; 005ae280
     LEA EAX,[ESP + 0x14]                ; 005ae282
     PUSH EAX                            ; 005ae286
-    MOV EAX,[0x0061c010]                ; 005ae287 | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 005ae287 | g_CFireEffectPtr
     PUSH EAX                            ; 005ae28c
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae28d
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -188,7 +188,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae30e
     PUSH 0x5f992b                       ; 005ae311 | = "noLightningFlash"
     FSTP float ptr [EAX + 0x2c]         ; 005ae316
-    MOV EAX,[0x0061b4d0]                ; 005ae319 | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 005ae319 | g_CEventListPtr
     PUSH EAX                            ; 005ae31e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005ae31f
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -250,7 +250,7 @@ section .text
     JA 0x005ae414                       ; 005ae3a3
         ;   XREF to: 005ae414 (CONDITIONAL_JUMP)  ; LAB_005ae414
     PUSH 0x5f991a                       ; 005ae3a5 | = "noLightningFlash"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 005ae3aa | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 005ae3aa | g_CEventListPtr
     PUSH ECX                            ; 005ae3b0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005ae3b1
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

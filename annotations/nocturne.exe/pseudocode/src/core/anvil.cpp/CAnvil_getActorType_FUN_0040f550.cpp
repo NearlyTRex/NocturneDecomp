@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_anvil_cpp_CAnvil_getActorType_FUN_0040f550(CAnvil *this_ptr)
 
 {
-  return &g_CAnvilActorType_00764234;
+  return &g_CAnvilClassInfo;
 }

@@ -19,7 +19,7 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_0055f950(SRenderVertex *vertex_b
   if (g_INT_01c37788 == 0) {
     return 0;
   }
-  g_INT_01e61b58 = g_INT_01e61b58 + polygon_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + polygon_count;
   if (g_PTR_0264bbfc != (byte *)0x0) {
     iVar2 = (*(code *)g_PTR_0264bbfc)(vertex_buffer,polygons,polygon_count,render_flags);
     return iVar2;

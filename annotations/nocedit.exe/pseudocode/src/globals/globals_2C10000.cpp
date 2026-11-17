@@ -22,5 +22,5 @@ int g_KFMShowEditorScreenshotCounter = {};
 int g_NumSearchHandlers = {};
 
 // uint
-uint UINT_02c14cd8 = {};
+uint g_DoorLockedSoundHandle = {};
 

@@ -18,7 +18,7 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004459c0(CConstruct *this_pt
   double dVar2;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (g_CEventList_PTR_0061b4d0,"COMBATMODEHARD");
+                    (g_CEventListPtr,"COMBATMODEHARD");
   if (iVar1 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }

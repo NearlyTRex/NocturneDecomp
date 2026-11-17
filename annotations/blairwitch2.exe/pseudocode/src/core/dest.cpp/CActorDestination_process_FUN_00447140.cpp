@@ -80,8 +80,7 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_00447140(CActorDestinat
     }
     if ((this_ptr->persistent_event_flag != 0) ||
        ((this_ptr->triggered == 0 && (this_ptr->needs_actor_search == 0)))) {
-      core_event_cpp_CEventList_executeCommands_FUN_004894f0
-                (g_CEventList_PTR_006141f0,this_ptr->what_event);
+      core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventListPtr,this_ptr->what_event);
     }
     this_ptr->triggered = 1;
   }

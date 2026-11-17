@@ -142,11 +142,11 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_p
               pbVar4 = (byte *)((this_ptr->bitmap_width * iVar2) / g_INT_005fba18 + local_14 +
                                (int)local_18);
               if (g_INT_005fba20 == 0x10) {
-                *(ushort *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_20) + iVar6) =
+                *(ushort *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar6) =
                      auStack_32c[*pbVar4];
               }
               else {
-                *(uint *)(*(int *)((int)g_ARRAY_PTR_01c5faec + local_20) + iVar7) =
+                *(uint *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar7) =
                      auStack_a2c[*pbVar4];
               }
               iVar7 = iVar7 + 4;
@@ -167,17 +167,16 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_p
         }
         iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800();
         if ((((iVar2 != 0) ||
-             (iVar2 = (*g_CKeys_PTR_00600284->vtable->getKeyState)
-                                (g_CKeys_PTR_00600284,this_ptr->key_fire), iVar2 != 0)) ||
-            (g_BIT_INTEGER32_01c5fae4.dword != 0)) ||
+             (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire), iVar2 != 0)
+             ) || (g_MouseButtonFlags.dword != 0)) ||
            ((g_INT_01d22b44 != 1 && (this_ptr->bitmap_display_time < 0.0)))) break;
         core_game_cpp_CGame_updateDT_FUN_004b4440(g_CGamePtr);
         this_ptr->bitmap_display_time = this_ptr->bitmap_display_time - g_CGamePtr->delta_time_float
         ;
       }
-      while ((g_BIT_INTEGER32_01c5fae4.dword != 0 ||
-             (iVar2 = (*g_CKeys_PTR_00600284->vtable->getKeyState)
-                                (g_CKeys_PTR_00600284,this_ptr->key_fire), iVar2 != 0))) {
+      while ((g_MouseButtonFlags.dword != 0 ||
+             (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire), iVar2 != 0)
+             )) {
         if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004b93e0(this_ptr);
           wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();

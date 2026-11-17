@@ -14,14 +14,14 @@ SSoftwareEdge * __cdecl core_zombie_cpp_findRasterizerEdge_FUN_005bf0e0(int y_st
   
   pSVar1 = g_SSoftwareEdge_ARRAY_02c9eb38;
   iVar2 = 0;
-  if (0 < g_INT_02c9eb34) {
+  if (0 < g_RasterizerEdgeCount) {
     do {
       if ((y_start == (pSVar1->base).y_min) && (pSVar1 != exclude_edge)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;
       pSVar1 = pSVar1 + 1;
-    } while (iVar2 < g_INT_02c9eb34);
+    } while (iVar2 < g_RasterizerEdgeCount);
   }
   return (SSoftwareEdge *)0x0;
 }

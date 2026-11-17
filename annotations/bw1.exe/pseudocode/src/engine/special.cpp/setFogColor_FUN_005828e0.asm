@@ -15,10 +15,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   void* g_PTR_02c833ec
-;   int g_INT_02c834b4
-;   int g_INT_02c834b8
-;   int g_INT_02c834bc
+;   void* g_APIDLL_setFogColor
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
 ;
 ; *****************************************************************************
 
@@ -30,9 +30,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005828e5
     MOV ECX,dword ptr [ESP + 0x10]      ; 005828e9
     MOV EBX,dword ptr [0x01c50948]      ; 005828ed | g_INT_01c50948
-    MOV dword ptr [0x02c834b8],EDX      ; 005828f3 | g_INT_02c834b8
-    MOV dword ptr [0x02c834bc],ECX      ; 005828f9 | g_INT_02c834bc
-    MOV [0x02c834b4],EAX                ; 005828ff | g_INT_02c834b4
+    MOV dword ptr [0x02c834b8],EDX      ; 005828f3 | g_FogColorGreen
+    MOV dword ptr [0x02c834bc],ECX      ; 005828f9 | g_FogColorBlue
+    MOV [0x02c834b4],EAX                ; 005828ff | g_FogColorRed
     TEST EBX,EBX                        ; 00582904
     JNZ 0x0058290c                      ; 00582906
         ;   XREF to: 0058290c (CONDITIONAL_JUMP)  ; LAB_0058290c
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_0058290c
     PUSH EDX                            ; 0058290d
     PUSH EAX                            ; 0058290e
-    CALL dword ptr [0x02c833ec]         ; 0058290f | g_PTR_02c833ec
+    CALL dword ptr [0x02c833ec]         ; 0058290f | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00582915
     POP EBX                             ; 00582918
     RET                                 ; 00582919

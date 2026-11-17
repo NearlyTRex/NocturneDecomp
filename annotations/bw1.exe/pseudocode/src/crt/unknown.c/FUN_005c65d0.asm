@@ -12,10 +12,10 @@
 ;   void* PTR_ReadFile_005d0618 = 001d10fa
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626604 = 005c50d4
-;   void* g_PTR_00626774 = 00000000
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
 ;   void* g_PTR_0062679c = 00000000
-;   uint g_UINT_006267e0 = 0x14
-;   SIOControlBlock* g_SIOControlBlock_PTR_00626838 = 00000000
+;   uint g_MaxHandleCount = 0x14
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
@@ -37,7 +37,7 @@ section .text
     TEST EBX,EBX                        ; 005c65db
     JL 0x005c65e7                       ; 005c65dd
         ;   XREF to: 005c65e7 (CONDITIONAL_JUMP)  ; LAB_005c65e7
-    CMP EBX,dword ptr [0x006267e0]      ; 005c65df | g_UINT_006267e0
+    CMP EBX,dword ptr [0x006267e0]      ; 005c65df | g_MaxHandleCount
     JBE 0x005c65fb                      ; 005c65e5
         ;   XREF to: 005c65fb (CONDITIONAL_JUMP)  ; LAB_005c65fb
     PUSH 0x4                            ; 005c65e7
@@ -57,7 +57,7 @@ section .text
     JZ 0x005c6647                       ; 005c660d
         ;   XREF to: 005c6647 (CONDITIONAL_JUMP)  ; LAB_005c6647
     PUSH EBX                            ; 005c660f
-    CALL dword ptr [0x00626774]         ; 005c6610 | g_PTR_00626774
+    CALL dword ptr [0x00626774]         ; 005c6610 | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005c6616
     TEST EAX,EAX                        ; 005c6619
     JZ 0x005c6647                       ; 005c661b
@@ -87,7 +87,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 005c664e
     PUSH EDI                            ; 005c6652
     MOV EBP,dword ptr [ESP + 0x28]      ; 005c6653
-    MOV ESI,dword ptr [0x00626838]      ; 005c6657 | g_SIOControlBlock_PTR_00626838
+    MOV ESI,dword ptr [0x00626838]      ; 005c6657 | g_IOControlBlock
     PUSH EBP                            ; 005c665d
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005c665e
     PUSH ESI                            ; 005c6661

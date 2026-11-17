@@ -65,29 +65,29 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00486900(SMRGLSkyTexture *sky_te
   *(uint *)(local_68 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4) =
        *(uint *)((int)&local_78 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   fVar4 = (float)0.5;
-  g_CVector3f_01bef1fc.x = (local_54 + local_6c) * fVar4;
-  g_CVector3f_01bef1fc.z = (local_50[1] + (float)local_68._4_4_) * fVar4;
+  g_SkyDomeCenter.x = (local_54 + local_6c) * fVar4;
+  g_SkyDomeCenter.z = (local_50[1] + (float)local_68._4_4_) * fVar4;
   local_2c = (local_6c - local_54) * fVar4 * (float)1.4139999999999999;
-  g_FLOAT_006144d4 = 0.0;
-  g_CVector3f_01bef1fc.y = local_50[0];
+  g_SkyDomeVertexScale = 0.0;
+  g_SkyDomeCenter.y = local_50[0];
   if (0.0 < local_2c) {
-    g_FLOAT_006144d4 = local_2c;
+    g_SkyDomeVertexScale = local_2c;
   }
   local_30 = ((float)local_68._0_4_ - local_50[0]) * (float)1.4139999999999999;
-  if (g_FLOAT_006144d4 < local_30) {
-    g_FLOAT_006144d4 = local_30;
+  if (g_SkyDomeVertexScale < local_30) {
+    g_SkyDomeVertexScale = local_30;
   }
   local_34 = ((float)local_68._4_4_ - local_50[1]) * (float)0.5 *
              (float)1.4139999999999999;
-  if (g_FLOAT_006144d4 < local_34) {
-    g_FLOAT_006144d4 = local_34;
+  if (g_SkyDomeVertexScale < local_34) {
+    g_SkyDomeVertexScale = local_34;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (g_CDemonRenderer_PTR_00612560,&g_CVector3f_01bef1fc);
+            (g_CDemonRenderer_PTR_00612560,&g_SkyDomeCenter);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (g_CDemonRenderer_PTR_00612560,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar8 = (float10)fsin((float10)0.58904862253125001);
-  fVar9 = (float10)g_FLOAT_006144d4;
+  fVar9 = (float10)g_SkyDomeVertexScale;
   fVar10 = (float10)256;
   dVar11 = round((double)(fVar8 * fVar9 * fVar10));
   pCVar2 = g_CDemonRenderer_PTR_00612560;

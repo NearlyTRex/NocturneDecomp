@@ -17,7 +17,7 @@
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 DAT_01d182f0
 ;   undefined4 DAT_01d192f8
-;   int g_INT_01fc97b0
+;   int g_QueuedCoronaGlobeCount
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80
@@ -31,7 +31,7 @@ section .text
     CMP dword ptr [EAX + 0x1008],0x0    ; 00530755 | DAT_01d192f8
     JNZ 0x00530769                      ; 0053075c
         ;   XREF to: 00530769 (CONDITIONAL_JUMP)  ; LAB_00530769
-    MOV ECX,dword ptr [0x01fc97b0]      ; 0053075e | g_INT_01fc97b0
+    MOV ECX,dword ptr [0x01fc97b0]      ; 0053075e | g_QueuedCoronaGlobeCount
     CMP ECX,0x64                        ; 00530764
     JL 0x0053076a                       ; 00530767
         ;   XREF to: 0053076a (CONDITIONAL_JUMP)  ; LAB_0053076a
@@ -46,11 +46,11 @@ section .text
     MOV dword ptr [ECX*0x4 + 0x1fc97b4],EDX ; 00530777
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80 ; 0053077e
         ;   XREF to: 0046bc80 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(CDemonRenderer * this_ptr)
-    MOV EDX,dword ptr [0x01fc97b0]      ; 00530783 | g_INT_01fc97b0
+    MOV EDX,dword ptr [0x01fc97b0]      ; 00530783 | g_QueuedCoronaGlobeCount
     ADD ESP,0x4                         ; 00530789
     LEA ESI,[EDX + 0x1]                 ; 0053078c
     MOV dword ptr [EDX*0x4 + 0x1fc9944],EAX ; 0053078f
-    MOV dword ptr [0x01fc97b0],ESI      ; 00530796 | g_INT_01fc97b0
+    MOV dword ptr [0x01fc97b0],ESI      ; 00530796 | g_QueuedCoronaGlobeCount
     POP EBX                             ; 0053079c
     POP ESI                             ; 0053079d
     RET                                 ; 0053079e

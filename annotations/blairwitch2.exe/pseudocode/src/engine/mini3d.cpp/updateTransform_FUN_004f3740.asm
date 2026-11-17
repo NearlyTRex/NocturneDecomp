@@ -110,7 +110,7 @@ section .text
     FMUL float ptr [0x01d167d4]         ; 004f382a | g_FLOAT_01d167d4
     MOV EDI,0x3f800000                  ; 004f3830
     XOR ECX,ECX                         ; 004f3835
-    MOV EBP,dword ptr [0x0264bc84]      ; 004f3837 | g_PTR_0264bc84
+    MOV EBP,dword ptr [0x0264bc84]      ; 004f3837 | g_APIDLL_lockHoldBuffer
     MOV dword ptr [0x01d167b8],ECX      ; 004f383d | DAT_01d167b8
     MOV dword ptr [0x01d167c8],ECX      ; 004f3843 | DAT_01d167c8
     MOV dword ptr [0x01d167d8],ECX      ; 004f3849 | DAT_01d167d8
@@ -143,7 +143,7 @@ section .text
         ;   Label: LAB_004f3890
     PUSH dword ptr [0x01d098cc]         ; 004f3896 | g_FLOAT_01d098cc
     PUSH 0x1d167ac                      ; 004f389c | g_FLOAT_01d167ac
-    CALL dword ptr [0x0264bc84]         ; 004f38a1 | g_PTR_0264bc84
+    CALL dword ptr [0x0264bc84]         ; 004f38a1 | g_APIDLL_lockHoldBuffer
     ADD ESP,0xc                         ; 004f38a7
     XOR EDX,EDX                         ; 004f38aa
     MOV dword ptr [0x01d0c398],EDX      ; 004f38ac | g_INT_01d0c398

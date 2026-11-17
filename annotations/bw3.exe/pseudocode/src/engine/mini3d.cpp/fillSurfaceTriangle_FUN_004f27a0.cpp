@@ -104,7 +104,7 @@ LAB_004f2935:
           iVar6 = iVar7;
         }
         iVar5 = iVar5 >> 0x10;
-        puVar8 = (uint *)(g_ARRAY_PTR_01c5faec[local_20] + iVar5 * 4);
+        puVar8 = (uint *)(g_ScreenBufferArray[local_20] + iVar5 * 4);
         for (; iVar5 < iVar6 >> 0x10; iVar5 = iVar5 + 1) {
           *puVar8 = 0x80000000;
           puVar8 = puVar8 + 1;

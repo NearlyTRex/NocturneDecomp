@@ -21,7 +21,7 @@
 extern CBitFont* g_CBitFont_PTR_01c3eb50;
 
 // CDemonActor*[2000]
-extern CDemonActor* g_CDemonActor_PTR_ARRAY_01c3f6a4[2000];
+extern CDemonActor* g_EnemyVictimCandidates[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CDynamiteClassInfo;
@@ -30,7 +30,7 @@ extern CDemonActorType g_CEmitterClassInfo;
 extern CDemonActorType g_CEnemyClassInfo;
 
 // CDemonTriangle[8]
-extern CDemonTriangle g_CDemonTriangle_ARRAY_01c3d99c[8];
+extern CDemonTriangle g_ClippedTriangleBuffer[8];
 
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
@@ -40,14 +40,14 @@ extern CVector3f g_CVector3f_01c3d430;
 extern CVector3f g_CVector3f_01c3db98;
 
 // CVector3f[16]
-extern CVector3f g_CVector3f_ARRAY_01c3d508[16];
-extern CVector3f g_CVector3f_ARRAY_01c3d5cc[16];
-extern CVector3f g_CVector3f_ARRAY_01c3d690[16];
-extern CVector3f g_CVector3f_ARRAY_01c3d754[16];
-extern CVector3f g_CVector3f_ARRAY_01c3d818[16];
+extern CVector3f g_ClipBuffer1Vertices[16];
+extern CVector3f g_ClipBuffer2Vertices[16];
+extern CVector3f g_ClipBuffer3Vertices[16];
+extern CVector3f g_ClipBuffer4Vertices[16];
+extern CVector3f g_ClipBuffer5Vertices[16];
 
 // CVector3i
-extern CVector3i g_CVector3i_01c3d424;
+extern CVector3i g_DebugCubeBasePoint;
 
 // SWindow[5]
 extern SWindow g_SWindow_ARRAY_01c3eb60[5];
@@ -56,10 +56,10 @@ extern SWindow g_SWindow_ARRAY_01c3eb60[5];
 extern byte g_BYTE_01c3d43c;
 
 // char*
-extern char* g_CHAR_PTR_01c3eb58;
+extern char* g_ClipboardBackupText;
 
 // char[4000]
-extern char g_CHAR_ARRAY_01c3dbb0[4000];
+extern char g_TextWrapBuffer[4000];
 
 // float
 extern float g_FLOAT_01c3d444;
@@ -77,60 +77,60 @@ extern float g_FLOAT_01c3d8fc;
 
 // int
 extern int g_INT_01c3d420;
-extern int g_INT_01c3d440;
-extern int g_INT_01c3d504;
-extern int g_INT_01c3d5c8;
-extern int g_INT_01c3d68c;
-extern int g_INT_01c3d750;
-extern int g_INT_01c3d814;
-extern int g_INT_01c3d8d8;
-extern int g_INT_01c3eb5c;
-extern int g_INT_01c3f538;
+extern int g_ClipInputVertexCount;
+extern int g_ClipBuffer1VertexCount;
+extern int g_ClipBuffer2VertexCount;
+extern int g_ClipBuffer3VertexCount;
+extern int g_ClipBuffer4VertexCount;
+extern int g_ClipBuffer5VertexCount;
+extern int g_ClipOutputVertexCount;
+extern int g_WindowStackCount;
+extern int g_EditorFontMaxCharWidth;
 extern int g_INT_01c3f53c;
 extern int g_INT_01c3f540;
 extern int g_INT_01c3f544;
-extern int g_INT_01c3f548;
+extern int g_WindowContentColor;
 extern int g_INT_01c3f54c;
 extern int g_INT_01c3f550;
-extern int g_INT_01c3f554;
-extern int g_INT_01c3f558;
-extern int g_INT_01c3f55c;
-extern int g_INT_01c3f560;
-extern int g_INT_01c3f564;
-extern int g_INT_01c3f568;
-extern int g_INT_01c3f56c;
-extern int g_INT_01c3f570;
-extern int g_INT_01c3f574;
-extern int g_INT_01c3f578;
-extern int g_INT_01c3f57c;
-extern int g_INT_01c3f580;
-extern int g_INT_01c3f584;
-extern int g_INT_01c3f588;
-extern int g_INT_01c3f58c;
+extern int g_TitleBarColor;
+extern int g_TitleBarFillColor;
+extern int g_WindowFontColor;
+extern int g_WarningTextColor;
+extern int g_ErrorTextColor;
+extern int g_SelectionColor;
+extern int g_TextColor;
+extern int g_CursorColor;
+extern int g_StatusTextColor;
+extern int g_WindowStatusTextColor;
+extern int g_DialogTextColor;
+extern int g_ActiveItemTextColor;
+extern int g_ProgressBarBackgroundColor;
+extern int g_ProgressBarFillColor;
+extern int g_ProgressBarBorderColor;
 extern int g_INT_01c3f590;
-extern int g_INT_01c3f594;
-extern int g_INT_01c3f598;
-extern int g_INT_01c3f59c;
+extern int g_AxisLabelTextColor;
+extern int g_EnabledTextColor;
+extern int g_DisabledTextColor;
 extern int g_INT_01c3f5a0;
-extern int g_INT_01c3f5a4;
-extern int g_INT_01c3f5a8;
-extern int g_INT_01c3f5ac;
-extern int g_INT_01c3f5b0;
-extern int g_INT_01c3f5b4;
-extern int g_INT_01c3f5b8;
-extern int g_INT_01c3f5bc;
-extern int g_INT_01c3f5c0;
-extern int g_INT_01c3f5c4;
-extern int g_INT_01c3f5c8;
-extern int g_INT_01c3f5cc;
-extern int g_INT_01c3f5d4;
-extern int g_INT_01c3f5d8;
-extern int g_INT_01c3f5dc;
-extern int g_INT_01c3f5e0;
-extern int g_INT_01c3f5e4;
-extern int g_INT_01c3f5e8;
-extern int g_INT_01c3f5ec;
+extern int g_ConfirmedSelectionColor;
+extern int g_PickListSeparatorColor;
+extern int g_ShadowColor;
+extern int g_ScrollBarHighlightColor;
+extern int g_ButtonFaceColor;
+extern int g_UITextColor;
+extern int g_InsetColor;
+extern int g_HighlightColor;
+extern int g_BorderBackgroundColor;
+extern int g_LastClickTimestamp;
+extern int g_LastClickItemIndex;
+extern int g_ScrollAction;
+extern int g_ScrollTimer;
+extern int g_ScrollDelay;
+extern int g_DragStartMouseX;
+extern int g_DragStartMouseY;
+extern int g_DragStartScrollPos;
+extern int g_DragStartThumbPos;
 
 // void*
-extern void* g_PTR_01c3f5d0;
+extern void* g_ActiveControl;
 

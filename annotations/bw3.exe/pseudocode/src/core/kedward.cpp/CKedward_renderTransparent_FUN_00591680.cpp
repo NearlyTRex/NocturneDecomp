@@ -70,7 +70,7 @@ int __cdecl core_kedward_cpp_CKedward_renderTransparent_FUN_00591680(CKedward *t
   if (0.0 < (this_ptr->base).base.bind_time) {
     core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310((CCharacter *)this_ptr);
   }
-  if (g_INT_01d8e40c != 0) {
+  if (g_RenderMotionDebug != 0) {
     core_motion_cpp_CMotionController_render_FUN_004fcdc0
               (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
   }

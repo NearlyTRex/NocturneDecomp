@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005e2fd8 = 2
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   undefined4 DAT_01d81080
 ;
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 0050a8b5 (CONDITIONAL_JUMP)  ; LAB_0050a8b5
     LEA EAX,[EBX + 0x206c8]             ; 0050a81b
     PUSH EAX                            ; 0050a821
-    MOV EDX,dword ptr [0x005fba60]      ; 0050a822 | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 0050a822 | g_CEventListPtr
     PUSH EDX                            ; 0050a828
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0050a829
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

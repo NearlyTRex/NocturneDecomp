@@ -42,11 +42,11 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                           (&this_ptr->base,(CBoundingBox3D *)local_58);
   iStack_28 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
-  iVar4 = g_INT_01c70714;
+  iVar4 = g_FliesInitialized;
   if (iStack_28 != 0) {
     this_ptr->is_visible = 1;
     if (iVar4 == 0) {
-      out_basis = g_FLOAT_ARRAY_ARRAY_01c7075c;
+      out_basis = g_SplineBasisTable;
       iVar4 = 0;
       do {
         iVar6 = iVar4 + 1;
@@ -56,15 +56,15 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
         out_basis = out_basis + 1;
         iVar4 = iVar6;
       } while (iVar6 < 0x40);
-      g_INT_01c70714 = 1;
+      g_FliesInitialized = 1;
     }
     pCVar2 = g_CDemonRenderer_PTR_005ae704;
     if (g_UseExternalRenderer == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
                 (g_CDemonRenderer_PTR_005ae704,0,0,0);
       uVar5 = g_INT_01c038f4 >> 8;
-      g_UINT_01c70754 = uVar5 | uVar5 << 8 | uVar5 << 0x10;
-      g_UINT_01c70758 = g_UINT_01c70754 ^ 0xffffff;
+      g_FlyBlendColor = uVar5 | uVar5 << 8 | uVar5 << 0x10;
+      g_FlyInvBlendColor = g_FlyBlendColor ^ 0xffffff;
     }
     else {
       g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = 0;
@@ -81,7 +81,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
       pCVar2->vertex_buffer_ptr->a = iVar4;
       pCVar2->vertex_buffer_ptr[1].a = iVar4;
       pCVar2->vertex_buffer_ptr[2].a = iVar4;
-      engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&g_SMRGLTextureBasic_005b9214);
+      engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&g_FliesTexture);
     }
     iStack_24 = 0;
     if (0 < this_ptr->fly_count) {
@@ -97,7 +97,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
           pSStack_20 = (SFly *)0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10
-                  (g_FLOAT_ARRAY_ARRAY_01c7075c[(int)pSStack_20],(CVector3f *)(local_58 + 0x14),
+                  (g_SplineBasisTable[(int)pSStack_20],(CVector3f *)(local_58 + 0x14),
                    pSVar3->control_points,pSVar3->control_points + 1,pSVar3->control_points + 2,
                    pSVar3->control_points + 3);
         CStack_38.x = (int)ROUND((float)local_58._20_4_ * 256.0f);

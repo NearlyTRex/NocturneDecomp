@@ -9,12 +9,12 @@
 void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_004b72d0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity)
 
 {
-  (*(g_PopcornPool[g_INT_01cbc108].base.vtable)->setup)
-            (&g_PopcornPool[g_INT_01cbc108].base,position,velocity);
-  g_INT_01cbc108 = g_INT_01cbc108 + 1;
-  if (g_INT_01cbc108 < 0x100) {
+  (*(g_PopcornPool[g_PopcornAllocIndex].base.vtable)->setup)
+            (&g_PopcornPool[g_PopcornAllocIndex].base,position,velocity);
+  g_PopcornAllocIndex = g_PopcornAllocIndex + 1;
+  if (g_PopcornAllocIndex < 0x100) {
     return;
   }
-  g_INT_01cbc108 = 0;
+  g_PopcornAllocIndex = 0;
   return;
 }

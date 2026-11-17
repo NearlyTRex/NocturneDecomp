@@ -137,7 +137,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float d
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_74,&local_11c);
         core_fire_cpp_CFireEffect_createFireball_FUN_0048b270
-                  (g_CFireEffect_PTR_005b80f0,&local_74,&local_b0,2,0);
+                  (g_CFireEffectPtr,&local_74,&local_b0,2,0);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"larva-blow1.wav");
       }

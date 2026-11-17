@@ -70,7 +70,7 @@
     },
     {
       "addr": "006013f4",
-      "name": "g_SHORT_006013f4",
+      "name": "g_DaysInMonth_Normal",
       "type": "short",
       "value": "0x0"
     },
@@ -88,37 +88,37 @@
     },
     {
       "addr": "0060140e",
-      "name": "g_SHORT_0060140e",
+      "name": "g_DaysInMonth_Leap",
       "type": "short",
       "value": "0x0"
     },
     {
       "addr": "0061f4e4",
-      "name": "g_dst_rule_0061f4e4",
+      "name": "g_DstStartRule",
       "type": "dst_rule",
       "value": null
     },
     {
       "addr": "0061f4f0",
-      "name": "g_dst_rule_0061f4e4.day",
+      "name": "g_DstStartRule.day",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f4f4",
-      "name": "g_dst_rule_0061f4e4.month",
+      "name": "g_DstStartRule.month",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f4fc",
-      "name": "g_dst_rule_0061f4e4.day_of_year",
+      "name": "g_DstStartRule.day_of_year",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f500",
-      "name": "g_dst_rule_0061f4e4.rule_type",
+      "name": "g_DstStartRule.rule_type",
       "type": "undefined4",
       "value": null
     },
@@ -130,7 +130,7 @@
     },
     {
       "addr": "0061f508",
-      "name": "g_INT_0061f508",
+      "name": "g_DstTransitionSecond",
       "type": "int",
       "value": "0x0"
     },
@@ -348,7 +348,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&g_dst_rule_0061f4e4,&g_INT_0061f508,*(uint *)(param_1 + 0x14));",
+      "text": "(&g_DstStartRule,&g_DstTransitionSecond,*(uint *)(param_1 + 0x14));",
       "type": "unnamed_param"
     },
     {
@@ -520,23 +520,23 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_006013f4 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_006013f6 (at 0x006013f6, +2 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_006013f6 (at 0x006013f6, +2 bytes).",
       "line": 31,
-      "match": "g_SHORT_006013f4",
+      "match": "g_DaysInMonth_Normal",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_SHORT_006013f4 + iVar5);",
+      "text": "iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_0060140e \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SFontGlyph_ARRAY_00601440 (at 0x00601440, +50 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FontTable (at 0x00601440, +50 bytes).",
       "line": 35,
-      "match": "g_SHORT_0060140e",
+      "match": "g_DaysInMonth_Leap",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_SHORT_0060140e + iVar5);",
+      "text": "iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_0060140c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SHORT_0060140e (at 0x0060140e, +2 bytes).",
+      "description": "Cast-and-add on &g_SHORT_0060140c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x0060140e, +2 bytes).",
       "line": 36,
       "match": "g_SHORT_0060140c",
       "severity": "moderate",

@@ -11,8 +11,8 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   int g_INT_01ed02ac
-;   int g_INT_01ed02b0
+;   int g_PathfindingQueueHead
+;   int g_PathfindingQueueTail
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -23,11 +23,11 @@ section .text
 
     PUSH EBX                            ; 0050ac40
         ;   Label: core_path.cpp_queuePop_FUN_0050ac40
-    MOV EBX,dword ptr [0x01ed02ac]      ; 0050ac41 | g_INT_01ed02ac
-    CMP EBX,dword ptr [0x01ed02b0]      ; 0050ac47 | g_INT_01ed02b0
+    MOV EBX,dword ptr [0x01ed02ac]      ; 0050ac41 | g_PathfindingQueueHead
+    CMP EBX,dword ptr [0x01ed02b0]      ; 0050ac47 | g_PathfindingQueueTail
     JZ 0x0050ac98                       ; 0050ac4d
         ;   XREF to: 0050ac98 (CONDITIONAL_JUMP)  ; LAB_0050ac98
-    MOV EBX,dword ptr [0x01ed02ac]      ; 0050ac4f | g_INT_01ed02ac
+    MOV EBX,dword ptr [0x01ed02ac]      ; 0050ac4f | g_PathfindingQueueHead
         ;   Label: LAB_0050ac4f
     LEA EAX,[EBX*0x4 + 0x0]             ; 0050ac55
     SUB EAX,EBX                         ; 0050ac5c
@@ -45,7 +45,7 @@ section .text
     JL 0x0050ac90                       ; 0050ac8c
         ;   XREF to: 0050ac90 (CONDITIONAL_JUMP)  ; LAB_0050ac90
     XOR EBX,EBX                         ; 0050ac8e
-    MOV dword ptr [0x01ed02ac],EBX      ; 0050ac90 | g_INT_01ed02ac
+    MOV dword ptr [0x01ed02ac],EBX      ; 0050ac90 | g_PathfindingQueueHead
         ;   Label: LAB_0050ac90
     POP EBX                             ; 0050ac96
     RET                                 ; 0050ac97

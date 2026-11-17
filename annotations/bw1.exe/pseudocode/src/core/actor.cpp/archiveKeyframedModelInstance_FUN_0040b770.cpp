@@ -15,7 +15,7 @@ void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFrame
   char local_d0 [200];
   
   pcVar3 = local_d0;
-  if (g_INT_007c3038 == 1) {
+  if (g_ActorReadingMode == 1) {
     core_actor_cpp_archiveString_FUN_0040b440(local_d0,property_name);
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(model_ptr,local_d0);
     return;

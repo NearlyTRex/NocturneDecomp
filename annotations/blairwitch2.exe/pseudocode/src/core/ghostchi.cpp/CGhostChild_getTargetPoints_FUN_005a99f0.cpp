@@ -21,7 +21,7 @@ int __cdecl core_ghostchi_cpp_CGhostChild_getTargetPoints_FUN_005a99f0(CGhostChi
     return 0;
   }
   core_xform_cpp_transformVector3x4_FUN_00591530
-            (&g_CVector3f_0265370c,
+            (&g_ZeroVector,
              (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
              this_ptr->head_bone,&CStack_20);
   CStack_14.x = CStack_20.x;

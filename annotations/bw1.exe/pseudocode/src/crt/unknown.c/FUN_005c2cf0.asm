@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c2d94 at 005c2da7
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_00626220 = 00000000
+;   Heap* g_MainHeap = 00000000
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     LEA EDX,[EAX + 0x2c]                ; 005c2d0c
     JMP 0x005c2d46                      ; 005c2d0f
         ;   XREF to: 005c2d46 (UNCONDITIONAL_JUMP)  ; LAB_005c2d46
-    MOV EAX,[0x00626220]                ; 005c2d11 | g_Heap_PTR_00626220
+    MOV EAX,[0x00626220]                ; 005c2d11 | g_MainHeap
         ;   Label: LAB_005c2d11
     CMP dword ptr [EAX + 0x8],0x0       ; 005c2d16
     JZ 0x005c2d31                       ; 005c2d1a

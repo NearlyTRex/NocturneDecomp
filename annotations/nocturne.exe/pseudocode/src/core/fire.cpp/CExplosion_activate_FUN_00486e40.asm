@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00581210 = 30
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -141,7 +141,7 @@ section .text
     PUSH EAX                            ; 00486f66
     LEA EAX,[ESP + 0x14]                ; 00486f67
     PUSH EAX                            ; 00486f6b
-    MOV ECX,dword ptr [0x005b80f0]      ; 00486f6c | g_CFireEffect_PTR_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00486f6c | g_CFireEffectPtr
     PUSH ECX                            ; 00486f72
     INC EBX                             ; 00486f73
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0048b320 ; 00486f74

@@ -9,8 +9,8 @@
 ;   crt_unknown.c_FUN_005a427c at 005a4323
 ;
 ; Referenced Globals:
-;   FileListNode* g_FileListNode_PTR_02d252a0
-;   FileListNode* g_FileListNode_PTR_02d252a4
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005a9950
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a9951
     MOV EDX,0x2d252a0                   ; 005a9955
-    MOV EAX,dword ptr [EDX]             ; 005a995a | g_FileListNode_PTR_02d252a0
+    MOV EAX,dword ptr [EDX]             ; 005a995a | g_AllocatedListHead
         ;   Label: LAB_005a995a
     TEST EAX,EAX                        ; 005a995c
     JZ 0x005a9985                       ; 005a995e
@@ -38,8 +38,8 @@ section .text
     MOV byte ptr [EBX + 0xc],CL         ; 005a9971
     MOV EBX,dword ptr [EAX]             ; 005a9974
     MOV dword ptr [EDX],EBX             ; 005a9976
-    MOV EDX,dword ptr [0x02d252a4]      ; 005a9978 | g_FileListNode_PTR_02d252a4
-    MOV [0x02d252a4],EAX                ; 005a997e | g_FileListNode_PTR_02d252a4
+    MOV EDX,dword ptr [0x02d252a4]      ; 005a9978 | g_FreeListHeadPointer
+    MOV [0x02d252a4],EAX                ; 005a997e | g_FreeListHeadPointer
     MOV dword ptr [EAX],EDX             ; 005a9983
     POP EBX                             ; 005a9985
         ;   Label: LAB_005a9985

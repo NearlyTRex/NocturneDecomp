@@ -14,10 +14,10 @@ void FUN_005cb0a0(int *param_1,int *param_2)
   byte local_c [4];
   
   VirtualQuery(local_c,&local_28,0x1c);
-  if ((ushort)g_SHORT_006265e1 < 0x8000) {
+  if ((ushort)g_WindowsPlatformVersion < 0x8000) {
     iVar1 = (int)local_28.AllocationBase + 0x3000;
   }
-  else if (((ushort)g_SHORT_006265e1 < 0x8000) || (3 < g_BYTE_006265df)) {
+  else if (((ushort)g_WindowsPlatformVersion < 0x8000) || (3 < g_WindowsMinorVersion)) {
     iVar1 = (int)local_28.AllocationBase + 0x13000;
   }
   else {

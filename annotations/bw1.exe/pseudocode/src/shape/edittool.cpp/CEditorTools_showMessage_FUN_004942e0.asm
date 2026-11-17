@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Message_005dbdb2
-;   int g_INT_01c3f55c
+;   int g_WindowFontColor
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
@@ -46,7 +46,7 @@ section .text
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 0049430a
         ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049430f
-    MOV EBX,dword ptr [0x01c3f55c]      ; 00494312 | g_INT_01c3f55c
+    MOV EBX,dword ptr [0x01c3f55c]      ; 00494312 | g_WindowFontColor
     PUSH EBX                            ; 00494318
     LEA EAX,[ESP + 0x4]                 ; 00494319
     PUSH EAX                            ; 0049431d

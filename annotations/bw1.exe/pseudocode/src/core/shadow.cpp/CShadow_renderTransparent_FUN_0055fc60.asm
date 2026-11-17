@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_heroCanSee_005f173f
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01d39d34
+;   int g_RenderMotionDebug
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 00524770 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0055fc76
     PUSH 0x5f173f                       ; 0055fc79 | = "heroCanSee"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0055fc7e | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0055fc7e | g_CEventListPtr
     PUSH EDX                            ; 0055fc84
     MOV ESI,dword ptr [EAX + 0x24]      ; 0055fc85
     MOV dword ptr [EBX + 0x27bc],0x0    ; 0055fc88
@@ -122,7 +122,7 @@ section .text
     PUSH EDX                            ; 0055fd5f | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00 ; 0055fd60
         ;   XREF to: 00484e00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(CDemonRenderer * this_ptr)
-    MOV ECX,dword ptr [0x01d39d34]      ; 0055fd65 | g_INT_01d39d34
+    MOV ECX,dword ptr [0x01d39d34]      ; 0055fd65 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 0055fd6b
     TEST ECX,ECX                        ; 0055fd6e
     JZ 0x0055fd7c                       ; 0055fd70

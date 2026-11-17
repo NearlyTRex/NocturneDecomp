@@ -11,9 +11,9 @@
 ;   TerminatedCString s_Enter_image_height_00582352
 ;   TerminatedCString s_Press_CTRL_V_to_begin_re_00582365
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
-;   int g_INT_01c78ac8
-;   int g_INT_01c78acc
-;   int g_INT_01c78ad4
+;   int g_MovieRecordingArmed
+;   int g_MovieRecordingActive
+;   int g_MovieRecordingFrameCounter
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430
@@ -38,8 +38,8 @@ section .text
     MOV EBX,dword ptr [0x005b6d50]      ; 0049a25c | g_CEditorToolsPtr
     XOR EDX,EDX                         ; 0049a262
     PUSH EBX                            ; 0049a264
-    MOV dword ptr [0x01c78acc],EDX      ; 0049a265 | g_INT_01c78acc
-    MOV dword ptr [0x01c78ad4],EDX      ; 0049a26b | g_INT_01c78ad4
+    MOV dword ptr [0x01c78acc],EDX      ; 0049a265 | g_MovieRecordingActive
+    MOV dword ptr [0x01c78ad4],EDX      ; 0049a26b | g_MovieRecordingFrameCounter
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430 ; 0049a271
         ;   XREF to: 00471430 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0049a276
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 0049a30a
     ADD ESP,0x8                         ; 0049a30f
-    MOV dword ptr [0x01c78ac8],EDX      ; 0049a312 | g_INT_01c78ac8
+    MOV dword ptr [0x01c78ac8],EDX      ; 0049a312 | g_MovieRecordingArmed
     POP EBP                             ; 0049a318
     POP EDI                             ; 0049a319
     POP ESI                             ; 0049a31a

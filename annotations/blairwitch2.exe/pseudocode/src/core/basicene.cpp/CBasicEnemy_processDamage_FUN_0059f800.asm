@@ -19,7 +19,7 @@
 ;   TerminatedCString s_ShotInvulnerable_005ef99c
 ;   TerminatedCString s_Death_005ef9ad
 ;   double g_DOUBLE_005ef9b7 = 0.200000000000000
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
@@ -89,7 +89,7 @@ section .text
     RET                                 ; 0059f882
     PUSH 0x5ef99c                       ; 0059f883 | = "ShotInvulnerable"
         ;   Label: LAB_0059f883
-    MOV EAX,[0x006141f0]                ; 0059f888 | g_CEventList_PTR_006141f0
+    MOV EAX,[0x006141f0]                ; 0059f888 | g_CEventListPtr
     PUSH EAX                            ; 0059f88d
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0059f88e
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

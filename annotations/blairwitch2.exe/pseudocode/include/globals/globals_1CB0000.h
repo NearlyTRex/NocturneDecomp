@@ -29,7 +29,7 @@
 extern CBloodParticle g_BloodParticles[256];
 
 // CBloodSplat[2000]
-extern CBloodSplat g_CBloodSplat_ARRAY_01cbcafc[2000];
+extern CBloodSplat g_BloodSplats[2000];
 
 // CDemonActor*
 extern CDemonActor* g_CDemonActor_PTR_01cb3948;
@@ -61,27 +61,27 @@ extern CLocation g_CLocation_01cb3924;
 extern CPickList g_CPickList;
 
 // CQuaternion4f
-extern CQuaternion4f g_CQuaternion4f_01cb0624;
+extern CQuaternion4f g_GabriellaWeaponAimRotation;
 
 // CVector3f
-extern CVector3f g_CVector3f_01cb81c8;
-extern CVector3f g_CVector3f_01cb81d4;
+extern CVector3f g_GhoulOffsetMinusX;
+extern CVector3f g_GhoulOffsetPlusX;
 
 // CVector3i
-extern CVector3i g_CVector3i_01cb82b0;
-extern CVector3i g_CVector3i_01cb82bc;
+extern CVector3i g_ParticleCameraRotation;
+extern CVector3i g_BloodParticleViewDirection;
 
 // SHardwareEdge[16]
-extern SHardwareEdge g_SHardwareEdge_ARRAY_01cb025c[16];
+extern SHardwareEdge g_HardwareEdgeTable[16];
 
 // SMRGLPrimitiveQuadIndex
-extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cb8288;
-extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cb82c8;
+extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
+extern SMRGLPrimitiveQuadIndex g_FootstepPrimitive;
 
 // UVector3
-extern UVector3 g_UVector3_01cb0644;
-extern UVector3 g_UVector3_01cb0650;
-extern UVector3 g_UVector3_01cb065c;
+extern UVector3 g_GabriellaWeaponEuler;
+extern UVector3 g_GabriellaWeaponAttachEuler;
+extern UVector3 g_GabriellaWeaponAttachOffset;
 
 // byte
 extern byte g_BYTE_01cb394c;
@@ -91,18 +91,18 @@ extern byte g_BYTE_01cb80f8;
 extern char g_CHAR_01cb1120;
 
 // char[10][256]
-extern char g_CHAR_ARRAY_ARRAY_01cb0710[10][256];
+extern char g_WrappedTextBuffer[10][256];
 
 // char[256]
-extern char g_CHAR_ARRAY_01cb7428[256];
-extern char g_CHAR_ARRAY_01cb7b50[256];
-extern char g_CHAR_ARRAY_01cb7f78[256];
+extern char g_ScreenshotFilename[256];
+extern char g_CurrentSaveFile[256];
+extern char g_ChapterDisplayName[256];
 
 // char[5120]
-extern char g_CHAR_ARRAY_01cb2520[5120];
+extern char g_ActStatsTextBuffer2[5120];
 
 // char[600]
-extern char g_CHAR_ARRAY_01cb7528[600];
+extern char g_PrevKeyboardState[600];
 
 // double
 extern double g_DOUBLE_01cb1110;
@@ -120,60 +120,60 @@ extern float g_FLOAT_01cb3934;
 extern float g_FLOAT_01cb3938;
 extern float g_FLOAT_01cb393c;
 extern float g_FLOAT_01cb3940;
-extern float g_FLOAT_01cb807c;
-extern float g_FLOAT_01cb810c;
+extern float g_OverlayDisplayTimer;
+extern float g_IrisFadeRadius;
 
 // int
-extern int g_INT_01cb0244;
-extern int g_INT_01cb0248;
-extern int g_INT_01cb024c;
-extern int g_INT_01cb0250;
+extern int g_ShadowColor32;
+extern int g_ShadowColorRed;
+extern int g_ShadowColorGreen;
+extern int g_ShadowColorBlue;
 extern int g_INT_01cb0254;
-extern int g_INT_01cb0258;
-extern int g_INT_01cb05dc;
-extern int g_INT_01cb05e0;
+extern int g_EdgeCount;
+extern int g_EdgeListMinY;
+extern int g_EdgeListMaxY;
 extern int g_INT_01cb1118;
 extern int g_INT_01cb3920;
 extern int g_INT_01cb3944;
-extern int g_INT_01cb7420;
-extern int g_INT_01cb7780;
-extern int g_INT_01cb7784;
+extern int g_ScreenshotIndex;
+extern int g_InputResetFlag;
+extern int g_StoredCameraValue;
 extern int g_INT_01cb7788;
-extern int g_INT_01cb7c50;
-extern int g_INT_01cb8078;
+extern int g_HasSavedLightState;
+extern int g_ChapterDisplayYear;
 extern int g_INT_01cb80cc;
-extern int g_INT_01cb80d0;
-extern int g_INT_01cb80d4;
-extern int g_INT_01cb80d8;
-extern int g_INT_01cb80dc;
-extern int g_INT_01cb80e0;
-extern int g_INT_01cb80e4;
-extern int g_INT_01cb80e8;
-extern int g_INT_01cb80ec;
-extern int g_INT_01cb80f0;
-extern int g_INT_01cb80f4;
-extern int g_INT_01cb8110;
-extern int g_INT_01cb8114;
-extern int g_INT_01cb8118;
+extern int g_MovieRecordingArmed;
+extern int g_MovieRecordingActive;
+extern int g_MovieRecordingMaxFrames;
+extern int g_MovieRecordingFrameCounter;
+extern int g_IrisFadeType;
+extern int g_SoundDebugEnabled;
+extern int g_HelpCursorX;
+extern int g_HelpCursorY;
+extern int g_HelpLineHeight;
+extern int g_HelpCharWidth;
+extern int g_IrisFadeCenterX;
+extern int g_IrisFadeCenterY;
+extern int g_ProfileStartTime;
 extern int g_INT_01cb811c;
-extern int g_INT_01cb82f0;
-extern int g_INT_01cbcaf4;
-extern int g_INT_01cbcaf8;
+extern int g_BloodParticleIndex;
+extern int g_BloodSplatIndex;
+extern int g_BloodSplatCount;
 
 // int[11]
-extern int g_INT_ARRAY_01cb821c[11];
+extern int g_GhoulIndices[11];
 
 // int[12]
-extern int g_INT_ARRAY_01cb8120[12];
+extern int g_GargoyleIndices[12];
 
 // int[201]
-extern int g_INT_ARRAY_01cb7c54[201];
+extern int g_MasterLightStateSaveBuffer[201];
 
 // int[20]
-extern int g_INT_ARRAY_01cb0678[20];
+extern int g_GabriellaIndices[20];
 
 // uchar
-extern uchar g_UCHAR_01cb0634;
+extern uchar g_GabriellaWeaponAimRotationInitFlag;
 
 // ushort
 extern ushort g_USHORT_01cb0242;

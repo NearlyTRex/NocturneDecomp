@@ -12,9 +12,9 @@
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70 at 0045f3b0
 ;
 ; Referenced Globals:
-;   int g_INT_0134017c
-;   int g_INT_01340180
-;   _BIT_INTEGER32 g_BIT_INTEGER32_013405b0
+;   int g_BackdropSaveActive
+;   int g_DitherPatternOffset
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;
@@ -32,7 +32,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 0044d189
     MOV EDX,dword ptr [EBP + 0x14]      ; 0044d18c
     SUB EDX,dword ptr [0x01c6b5ac]      ; 0044d18f | g_INT_01c6b5ac
-    MOV ECX,dword ptr [0x013405b0]      ; 0044d195 | g_BIT_INTEGER32_013405b0
+    MOV ECX,dword ptr [0x013405b0]      ; 0044d195 | g_CameraDownscaleIterations
     MOV dword ptr [EBP + 0x14],EDX      ; 0044d19b
     CMP ECX,0x1                         ; 0044d19e
     JNZ 0x0044d1ad                      ; 0044d1a1
@@ -40,7 +40,7 @@ section .text
     TEST byte ptr [EBP + 0x14],0x1      ; 0044d1a3
     JNZ 0x0044d316                      ; 0044d1a7
         ;   XREF to: 0044d316 (CONDITIONAL_JUMP)  ; LAB_0044d316
-    CMP dword ptr [0x013405b0],0x2      ; 0044d1ad | g_BIT_INTEGER32_013405b0
+    CMP dword ptr [0x013405b0],0x2      ; 0044d1ad | g_CameraDownscaleIterations
         ;   Label: LAB_0044d1ad
     JNZ 0x0044d1c0                      ; 0044d1b4
         ;   XREF to: 0044d1c0 (CONDITIONAL_JUMP)  ; LAB_0044d1c0
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 0044d316 (CONDITIONAL_JUMP)  ; LAB_0044d316
     MOV ESI,dword ptr [EBP + 0x14]      ; 0044d1c0
         ;   Label: LAB_0044d1c0
-    MOV CL,byte ptr [0x013405b0]        ; 0044d1c3 | g_BIT_INTEGER32_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044d1c3 | g_CameraDownscaleIterations
     SAR ESI,CL                          ; 0044d1c9
     MOV dword ptr [EBP + 0x14],ESI      ; 0044d1cb
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0044d1ce
@@ -112,7 +112,7 @@ section .text
     SAR EDX,0x1f                        ; 0044d25b
     IDIV ECX                            ; 0044d25e
     MOV dword ptr [EBP + -0x10],EAX     ; 0044d260
-    MOV CL,byte ptr [0x013405b0]        ; 0044d263 | g_BIT_INTEGER32_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044d263 | g_CameraDownscaleIterations
     MOV EDX,EBX                         ; 0044d269
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044d26b
     SHL EDX,CL                          ; 0044d26e
@@ -133,7 +133,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0xfffffffc] ; 0044d29f
     SHL ECX,0x2                         ; 0044d2a5
     MOV ESI,dword ptr [EBP + 0xfffffff8] ; 0044d2a8
-    MOV EDI,dword ptr [0x01340180]      ; 0044d2ae | g_INT_01340180
+    MOV EDI,dword ptr [0x01340180]      ; 0044d2ae | g_DitherPatternOffset
     MOV EBX,dword ptr [EBP + 0xffffffe4] ; 0044d2b4
     MOV EDX,dword ptr [EBP + 0xffffffec] ; 0044d2ba
     MOV EAX,ECX                         ; 0044d2c0
@@ -162,8 +162,8 @@ section .text
     SUB ECX,0x4                         ; 0044d301
     JG 0x0044d2c0                       ; 0044d304
         ;   XREF to: 0044d2c0 (CONDITIONAL_JUMP)  ; LAB_0044d2c0
-    MOV dword ptr [0x01340180],EDI      ; 0044d306 | g_INT_01340180
-    MOV dword ptr [0x0134017c],0x1      ; 0044d30c | g_INT_0134017c
+    MOV dword ptr [0x01340180],EDI      ; 0044d306 | g_DitherPatternOffset
+    MOV dword ptr [0x0134017c],0x1      ; 0044d30c | g_BackdropSaveActive
     MOV ESP,EBP                         ; 0044d316
         ;   Label: LAB_0044d316
     POP EBP                             ; 0044d318

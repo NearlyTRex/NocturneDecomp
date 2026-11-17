@@ -4,20 +4,19 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3966 ( 25.3%)
-  pointer_truncation              3033 ( 19.3%)
-  unrolled_memcpy                 1489 (  9.5%)
-  unknown_field                    811 (  5.2%)
-  concat_reconstruction            661 (  4.2%)
+  pointer_cast                    3966 ( 25.7%)
+  pointer_truncation              3031 ( 19.6%)
+  unrolled_memcpy                 1494 (  9.7%)
+  unknown_field                    811 (  5.3%)
+  concat_reconstruction            661 (  4.3%)
   shadow_pointer_walk              609 (  3.9%)
-  stack_param                      600 (  3.8%)
+  stack_param                      600 (  3.9%)
   unrolled_strcpy                  486 (  3.1%)
-  negative_offset                  461 (  2.9%)
+  negative_offset                  461 (  3.0%)
   stack_ref                        409 (  2.6%)
   raw_address_constant             310 (  2.0%)
-  unaffected_reg                   304 (  1.9%)
+  unaffected_reg                   304 (  2.0%)
   nonstandard_int                  267 (  1.7%)
-  unnamed_param                    266 (  1.7%)
   unrolled_strlen                  238 (  1.5%)
   unrolled_memset                  235 (  1.5%)
   warning_type_propagation         141 (  0.9%)
@@ -26,7 +25,7 @@ SUSPECT TYPE COUNTS
   bitcast_double_pair              100 (  0.6%)
   sub84_truncation                  98 (  0.6%)
   stack_alignment_array             97 (  0.6%)
-  unrolled_strcat                   86 (  0.5%)
+  unrolled_strcat                   86 (  0.6%)
   carry_arith_idiom                 77 (  0.5%)
   unresolved_funcptr                69 (  0.4%)
   warning_unreachable               67 (  0.4%)
@@ -79,12 +78,12 @@ TYPE: pointer_cast (3966 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1278x  (int)&NAME used in byte-offset arithmetic
+  1280x  (int)&NAME used in byte-offset arithmetic
     90x  (uint *)((int)pvVar2
     86x  (uint *)((int)pvVar4
     67x  (int *)((int)g_ScreenBufferArray
-    61x  (int)&NAME byte-offset arithmetic split across lines
     60x  (uint *)((int)pvVar3
+    59x  (int)&NAME byte-offset arithmetic split across lines
     56x  (SRenderVertex *)((int)pSVar4
     51x  (CDemonActor **)((int)g_CDemonSetPtr
     45x  (CMatrix3x4f *)((int)pCVar3
@@ -92,7 +91,7 @@ Unique patterns:
     33x  (SRenderVertex *)((int)pSVar3
     32x  (SRenderVertex *)((int)pSVar12
     30x  (uint *)((int)pvVar1
-    30x  (int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8
+    30x  (int *)((int)g_Layer3BandIndex
     27x  (T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach
     27x  (CMatrix3x4f *)((int)pCVar5
     27x  (void *)((int)sprite_data
@@ -891,7 +890,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_truncation (3033 occurrences)
+TYPE: pointer_truncation (3031 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1506,11 +1505,11 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: unrolled_memcpy (1489 occurrences)
+TYPE: unrolled_memcpy (1494 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   839x  field-by-field struct copy
+   844x  field-by-field struct copy
    427x  for (...; != 0; ... + -1)
    216x  MOVSD.REP
      4x  MOVSB.REP
@@ -3535,29 +3534,6 @@ Functions:
   engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031
 
 ====================================================================================================
-TYPE: unnamed_param (266 occurrences)
-====================================================================================================
-
-Unique patterns:
-   168x  param_2
-    44x  param_3
-    43x  param_4
-     9x  param_5
-     2x  param_1
-
-Functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30
-  core_fire.cpp_CFireEffect_createBulletTrail_FUN_0048b220
-  core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0
-  core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0
-  core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640
-  core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0
-  core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
-  core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670
-  engine_font.cpp_CBitFont_loadFromFile_FUN_00490210
-  sound_mp3.cpp_CFileBitStream_init_FUN_004e28a0
-
-====================================================================================================
 TYPE: unrolled_strlen (238 occurrences)
 ====================================================================================================
 
@@ -4577,7 +4553,7 @@ Unique patterns:
      1x  (int)fVar1 < 0x44ed8000
      1x  (int)fVar1 < 0x44fa0000
      1x  (int)local_334.damage_amount < 0x41200000
-     1x  0x3f7fffff < (int)g_FLOAT_01c78b08))
+     1x  0x3f7fffff < (int)g_IrisFadeRadius))
      1x  (int)new_state < 0x3f800000
      1x  (int)fVar2 < 0x41700001
      1x  0x40400000 < (int)local_24))
@@ -4728,16 +4704,16 @@ Unique patterns:
      5x  g_INT_01cc652c
      4x  g_INT_01cc656c
      2x  g_GlobalFilters
-     2x  g_UCHAR_01e40097
-     1x  g_INT_014b8464
-     1x  g_INT_014b8468
+     2x  g_PathfindingVisitedMinus1
+     1x  g_CoronaTargetY
+     1x  g_CoronaTargetDepth
      1x  g_PlayerFilters
      1x  g_CHAR_PTR_01cc64ec
      1x  g_INT_01fba2d8
      1x  g_INT_01fba2ec
-     1x  g_INT_01fff090
+     1x  g_GlobeLightCount
      1x  g_INT_02080438
-     1x  g_BOOL_02de07f4
+     1x  g_UseMultimediaTimer
 
 Functions:
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750
@@ -5141,7 +5117,7 @@ TYPE: raw_address_pointer_store (2 occurrences)
 
 Unique patterns:
      1x  *(uint **)(&stack0xffffed18
-     1x  *(void **)(g_INT_02dc1b74 * 0x6c + 0x2dc1bcc
+     1x  *(void **)(g_SfxLastSlot * 0x6c + 0x2dc1bcc
 
 Functions:
   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50
@@ -5174,8 +5150,8 @@ TYPE: tautological_addr_guard (2 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  if ((T *)0x0 == &g_FLOAT_02dc9d50)
-     1x  if ((T *)0x0 != &g_UINT_02dc9d58)
+     1x  if ((T *)0x0 == &g_TrainNoiseCooldown)
+     1x  if ((T *)0x0 != &g_TrainRailNoiseHandle)
 
 Functions:
   core_sound.cpp_CSound_init_FUN_0052ddf0

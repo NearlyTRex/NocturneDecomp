@@ -42,7 +42,7 @@
 ;   float g_FLOAT_005efd3b = 0.6600000
 ;   double g_DOUBLE_005efd3f = 10
 ;   undefined4 DAT_005fedb8
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -100,7 +100,7 @@ section .text
     ADD EAX,EDX                         ; 005a151a
     PUSH EAX                            ; 005a151c
     LEA ESI,[ESP + 0x114]               ; 005a151d
-    PUSH 0x265370c                      ; 005a1524 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a1524 | g_ZeroVector
     LEA EDI,[ESP + 0x94]                ; 005a1529
     MOV dword ptr [ESP + 0x15c],EDX     ; 005a1530
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a1537
@@ -129,7 +129,7 @@ section .text
     SHL EAX,0x4                         ; 005a1585
     ADD EAX,ESI                         ; 005a1588
     PUSH EAX                            ; 005a158a
-    PUSH 0x265370c                      ; 005a158b | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a158b | g_ZeroVector
     LEA ESI,[ESP + 0x7c]                ; 005a1590
     LEA EDI,[ESP + 0x13c]               ; 005a1594
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a159b
@@ -216,7 +216,7 @@ section .text
     PUSH EAX                            ; 005a16f5
     LEA EAX,[ESP + 0x108]               ; 005a16f6
     PUSH EAX                            ; 005a16fd
-    MOV EDI,dword ptr [0x00614d30]      ; 005a16fe | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 005a16fe | g_CFireEffectPtr
     PUSH EDI                            ; 005a1704
     CALL core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170 ; 005a1705
         ;   XREF to: 0049d170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
@@ -226,7 +226,7 @@ section .text
     LEA EAX,[ESP + 0xc4]                ; 005a1714
     PUSH 0x3fc00000                     ; 005a171b
     PUSH EAX                            ; 005a1720
-    MOV EAX,[0x00614d30]                ; 005a1721 | g_CFireEffect_PTR_00614d30
+    MOV EAX,[0x00614d30]                ; 005a1721 | g_CFireEffectPtr
     PUSH EAX                            ; 005a1726
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230 ; 005a1727
         ;   XREF to: 0049d230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

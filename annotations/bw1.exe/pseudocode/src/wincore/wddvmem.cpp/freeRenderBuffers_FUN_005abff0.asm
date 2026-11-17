@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   void* g_PTR_00629010
-;   void* g_PTR_0071362c
+;   void* g_SoftwareZBuffer
 ;   void* g_PTR_02c99310
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBP,EBP                         ; 005ac02f
     ADD ESP,0x4                         ; 005ac031
-    MOV dword ptr [0x0071362c],EBP      ; 005ac034 | g_PTR_0071362c
+    MOV dword ptr [0x0071362c],EBP      ; 005ac034 | g_SoftwareZBuffer
     POP EBP                             ; 005ac03a
     POP ESI                             ; 005ac03b
     RET                                 ; 005ac03c

@@ -9,8 +9,8 @@
 byte * FUN_005c90c0(byte *param_1)
 
 {
-  if (((g_INT_02c9f6e0 != 0) && ((g_CHAR_ARRAY_02c9f6f1[*param_1] & 1U) != 0)) && (param_1[1] != 0))
-  {
+  if (((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[*param_1] & 1U) != 0)) &&
+     (param_1[1] != 0)) {
     return param_1 + 2;
   }
   return param_1 + 1;

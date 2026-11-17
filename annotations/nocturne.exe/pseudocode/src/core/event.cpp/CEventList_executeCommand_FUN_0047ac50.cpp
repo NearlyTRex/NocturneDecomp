@@ -128,13 +128,13 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   uint local_14;
   
   bVar16 = 0;
-  g_CHAR_ARRAY_01c08b60[0] = '\0';
+  g_EventErrorMessageBuffer[0] = '\0';
   if (((command_buffer != (char *)0x0) && (*command_buffer != '\0')) &&
      (iVar3 = _stricmp(command_buffer,"none"), iVar3 != 0)) {
     if (*command_buffer == '.') {
       command_buffer = command_buffer + 1;
     }
-    local_f0 = (uint)(g_INT_01c08b5c == 0);
+    local_f0 = (uint)(g_EventDryRun == 0);
     local_ec = (byte *)&CHAR_00h_0057f586;
     pcVar15 = command_buffer;
     do {
@@ -286,12 +286,12 @@ LAB_0047acd1:
             SVar13 = SVar13 - 1;
           }
           pCVar5 = core_event_cpp_resolveActorByName_FUN_0047a390
-                             (local_4d5 + 1,g_CDemonActorActorType_00763e48.name_hash,
-                              g_CDemonActorActorType_00763e48.class_name);
+                             (local_4d5 + 1,g_CDemonActorClassInfo.name_hash,
+                              g_CDemonActorClassInfo.class_name);
           if (pCVar5 == (CDemonActor *)0x0) {
             return 0;
           }
-          if (pCVar5 == g_CDemonActor_PTR_0059cf1c) {
+          if (pCVar5 == g_ActorNameSentinel) {
             local_f0 = 0;
           }
           else if ((CLocation *)&local_128 != &pCVar5->location) {
@@ -329,7 +329,7 @@ LAB_0047acd1:
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
           core_fire_cpp_CFireEffect_createExplosion_FUN_0048c0d0
-                    (g_CFireEffect_PTR_005b80f0,&local_128,local_e0,1500.0,local_dc);
+                    (g_CFireEffectPtr,&local_128,local_e0,1500.0,local_dc);
         }
       }
       else {
@@ -343,16 +343,16 @@ LAB_0047acd1:
           pcVar15 = core_event_cpp_extractParenArg_FUN_0047a650((char **)&local_ec,local_1154,200);
           if (pcVar15 != (char *)0x0) goto LAB_0047aec8;
           pCVar5 = core_event_cpp_resolveActorByName_FUN_0047a390
-                             (local_1154,g_CDemonActorActorType_00763e48.name_hash,
-                              g_CDemonActorActorType_00763e48.class_name);
-          uVar11 = g_CBoxActorActorType_00764800.name_hash;
+                             (local_1154,g_CDemonActorClassInfo.name_hash,
+                              g_CDemonActorClassInfo.class_name);
+          uVar11 = g_CBoxActorClassInfo.name_hash;
           if (pCVar5 == (CDemonActor *)0x0) {
-            if (g_INT_01c08b5c != 0) {
+            if (g_EventDryRun != 0) {
               return 0;
             }
             local_f0 = 0;
           }
-          if ((pCVar5 != g_CDemonActor_PTR_0059cf1c) && (local_f0 != 0)) {
+          if ((pCVar5 != g_ActorNameSentinel) && (local_f0 != 0)) {
             pCVar5->lifecycle_state = ACTOR_DESTROYED;
             pCVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,uVar11);
             if (pCVar6 != (CDemonActor *)0x0) {
@@ -360,8 +360,8 @@ LAB_0047acd1:
               *(byte *)&pCVar6[2].location.area_id = 0;
               sound_sndmain_cpp_killSfx_FUN_00527230((uint)fVar2);
             }
-            pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                               (pCVar5,g_CChainActorType_00765c30.name_hash);
+            pCVar5 = (CChain *)core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,g_CChainClassInfo.name_hash)
+            ;
             if (pCVar5 != (CDemonActor *)0x0) {
               fVar2 = pCVar5[1].previous_transform_state.position.x;
               *(byte *)&pCVar5[1].orient_matrix.m[2].z = 0;
@@ -418,7 +418,7 @@ LAB_0047acd1:
               sscanf((char *)local_ec,"(%f, %f )%n",&local_cc,&local_c8)
               ;
               if (local_c4 < 0) {
-                _sprintf(g_CHAR_ARRAY_01c08b60,"Error parsing fadeAmbientSound parms");
+                _sprintf(g_EventErrorMessageBuffer,"Error parsing fadeAmbientSound parms");
                 return 0;
               }
               local_ec = local_ec + local_c4;
@@ -439,7 +439,7 @@ LAB_0047acd1:
                 sscanf
                           ((char *)local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
                 if (local_b8 < 0) {
-                  _sprintf(g_CHAR_ARRAY_01c08b60,"Error parsing fadeSfx parms");
+                  _sprintf(g_EventErrorMessageBuffer,"Error parsing fadeSfx parms");
                   return 0;
                 }
                 local_ec = local_ec + local_b8;
@@ -488,7 +488,7 @@ LAB_0047acd1:
                                       ((char **)&local_ec,local_194,0x20);
                   if (pcVar15 != (char *)0x0) {
 LAB_0047aec8:
-                    pcVar14 = g_CHAR_ARRAY_01c08b60;
+                    pcVar14 = g_EventErrorMessageBuffer;
                     do {
                       cVar1 = *pcVar15;
                       *pcVar14 = cVar1;
@@ -633,13 +633,13 @@ LAB_0047aec8:
                           }
                           pCVar7 = (CCharacter *)
                                    core_event_cpp_resolveActorByName_FUN_0047a390
-                                             (local_665 + 1,g_CCharacterActorType_00765a60.name_hash
-                                              ,g_CCharacterActorType_00765a60.class_name);
+                                             (local_665 + 1,g_CCharacterClassInfo.name_hash,
+                                              g_CCharacterClassInfo.class_name);
                           if (pCVar7 == (CCharacter *)0x0) {
                             return 0;
                           }
-                          if (pCVar7 == (CCharacter *)g_CDemonActor_PTR_0059cf1c) {
-                            local_f0 = (uint)pCVar7 ^ (uint)g_CDemonActor_PTR_0059cf1c;
+                          if (pCVar7 == (CCharacter *)g_ActorNameSentinel) {
+                            local_f0 = (uint)pCVar7 ^ (uint)g_ActorNameSentinel;
                           }
                           iVar3 = core_event_cpp_parseDamageType_FUN_0047a8f0
                                             (local_2e1 + 1,&local_ac);
@@ -668,7 +668,8 @@ LAB_0047aec8:
                             sscanf
                                       ((char *)local_ec,"( %[^ )] )%n",local_121d + 1);
                             if (local_a8 < 5) {
-                              _sprintf(g_CHAR_ARRAY_01c08b60,"Error parsing incCounter arguments");
+                              _sprintf(g_EventErrorMessageBuffer,
+                                         "Error parsing incCounter arguments");
                               return 0;
                             }
                             local_ec = local_ec + local_a8;
@@ -797,13 +798,12 @@ LAB_0047aec8:
                               }
                               pCVar7 = (CCharacter *)
                                        core_event_cpp_resolveActorByName_FUN_0047a390
-                                                 (local_153d + 1,
-                                                  g_CCharacterActorType_00765a60.name_hash,
-                                                  g_CCharacterActorType_00765a60.class_name);
+                                                 (local_153d + 1,g_CCharacterClassInfo.name_hash,
+                                                  g_CCharacterClassInfo.class_name);
                               if (pCVar7 == (CCharacter *)0x0) {
                                 return 0;
                               }
-                              if (pCVar7 == (CCharacter *)g_CDemonActor_PTR_0059cf1c) {
+                              if (pCVar7 == (CCharacter *)g_ActorNameSentinel) {
                                 local_f0 = 0;
                               }
                               iVar3 = core_event_cpp_parseDeathType_FUN_0047a760
@@ -876,7 +876,7 @@ LAB_0047aec8:
                                   sscanf
                                             ((char *)local_ec,"(%[^,)]%n",local_efd + 1);
                                   if (local_8c < 3) {
-                                    _sprintf(g_CHAR_ARRAY_01c08b60,
+                                    _sprintf(g_EventErrorMessageBuffer,
                                                "Error parsing killSfx parms");
                                     return 0;
                                   }
@@ -912,7 +912,7 @@ LAB_0047aec8:
                                     sscanf
                                               ((char *)local_ec,",%f%n",&local_88);
                                     if (local_8c < 3) {
-                                      _sprintf(g_CHAR_ARRAY_01c08b60,
+                                      _sprintf(g_EventErrorMessageBuffer,
                                                  "Error parsing killSfx parms");
                                       return 0;
                                     }
@@ -925,7 +925,7 @@ LAB_0047aec8:
                                            ) != 0);
                                   if (*pbVar10 != 0x29) {
                                     local_ec = pbVar10;
-                                    _sprintf(g_CHAR_ARRAY_01c08b60,
+                                    _sprintf(g_EventErrorMessageBuffer,
                                                "Can't find matching ) in killSfx command");
                                     return 0;
                                   }
@@ -959,14 +959,14 @@ LAB_0047aec8:
                                     local_84 = -1;
                                     sscanf((char *)local_ec,"( )%n");
                                     if (local_84 < 2) {
-                                      _sprintf(g_CHAR_ARRAY_01c08b60,
+                                      _sprintf(g_EventErrorMessageBuffer,
                                                  "Error parsing lightning command");
                                       return 0;
                                     }
                                     local_ec = local_ec + local_84;
                                     if (local_f0 != 0) {
                                       core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40
-                                                (g_CWeather_PTR_005c15b8,0.1,1);
+                                                (g_CWeatherPtr,0.1,1);
                                     }
                                   }
                                   else {
@@ -984,7 +984,7 @@ LAB_0047aec8:
                                       sscanf
                                                 ((char *)local_ec,"(%[^,)]%n",local_13ad + 1);
                                       if (local_7c < 3) {
-                                        _sprintf(g_CHAR_ARRAY_01c08b60,
+                                        _sprintf(g_EventErrorMessageBuffer,
                                                    "Error parsing playSfx parms");
                                         return 0;
                                       }
@@ -1015,7 +1015,7 @@ LAB_0047aec8:
                                                   (local_13ad + 1,local_13ad + 2,SVar13);
                                         SVar13 = SVar13 - 1;
                                       }
-                                      pcVar15 = g_CHAR_ARRAY_005b7658;
+                                      pcVar15 = g_DefaultSfxHandleName;
                                       pcVar14 = local_b15 + 1;
                                       for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {
                                         *(uint *)pcVar14 = *(uint *)pcVar15;
@@ -1028,7 +1028,7 @@ LAB_0047aec8:
                                         sscanf
                                                   ((char *)local_ec,",%[^)]%n",local_b15 + 1);
                                         if (local_7c < 3) {
-                                          _sprintf(g_CHAR_ARRAY_01c08b60,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Error parsing playSfx parms");
                                           return 0;
                                         }
@@ -1067,7 +1067,7 @@ LAB_0047aec8:
                                           pcVar15 = pcVar15 + (uint)bVar16 * -2 + 1;
                                         } while (cVar1 != '\0');
                                         if (0x13 < ~uVar11 - 1) {
-                                          _sprintf(g_CHAR_ARRAY_01c08b60,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "handle name %s is too long, max %d chars",
                                                      local_b15 + 1,0x13);
                                           return 0;
@@ -1080,7 +1080,7 @@ LAB_0047aec8:
                                                & 2) != 0);
                                       if (*pbVar10 != 0x29) {
                                         local_ec = pbVar10;
-                                        _sprintf(g_CHAR_ARRAY_01c08b60,
+                                        _sprintf(g_EventErrorMessageBuffer,
                                                    "Can't find matching ) in playSfx command");
                                         return 0;
                                       }
@@ -1131,7 +1131,7 @@ LAB_0047aec8:
                                                   ((char *)local_ec,"(%[^,], %f)%n",local_12e5 + 1,
                                                    &local_78);
                                         if (local_74 < 3) {
-                                          _sprintf(g_CHAR_ARRAY_01c08b60,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Error parsing setCameraAmbient parms");
                                           return 0;
                                         }
@@ -1164,12 +1164,12 @@ LAB_0047aec8:
                                         iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
                                                           (g_CDemonSetPtr,local_12e5 + 1);
                                         if (iVar3 < 0) {
-                                          _sprintf(g_CHAR_ARRAY_01c08b60,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Camera \"%s\" does not exist.");
                                           return 0;
                                         }
                                         if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
-                                          _sprintf(g_CHAR_ARRAY_01c08b60,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Ambient value %g is out of range (1..100)",
                                                      (double)local_78);
                                           return 0;
@@ -1195,7 +1195,7 @@ LAB_0047aec8:
                                           sscanf
                                                     ((char *)local_ec,"( %[^,)]%n",local_ca5 + 1);
                                           if (local_6c < 5) {
-                                            _sprintf(g_CHAR_ARRAY_01c08b60,
+                                            _sprintf(g_EventErrorMessageBuffer,
                                                        "Error parsing setCounter arguments");
                                             return 0;
                                           }
@@ -1231,7 +1231,7 @@ LAB_0047aec8:
                                             sscanf
                                                       ((char *)local_ec,",%d%n",&local_68);
                                             if (local_6c < 1) {
-                                              _sprintf(g_CHAR_ARRAY_01c08b60,
+                                              _sprintf(g_EventErrorMessageBuffer,
                                                          "Error parsing setCounter value argument");
                                               return 0;
                                             }
@@ -1242,7 +1242,7 @@ LAB_0047aec8:
                                             }
                                           }
                                           if (*local_ec != 0x29) {
-                                            _sprintf(g_CHAR_ARRAY_01c08b60,
+                                            _sprintf(g_EventErrorMessageBuffer,
                                                        "Error parsing setCounter arguments");
                                             return 0;
                                           }
@@ -1269,13 +1269,13 @@ LAB_0047aec8:
                                                       ((char *)local_ec,"(%d, %f)%n",&local_64,
                                                        &local_60);
                                             if (local_5c < 3) {
-                                              _sprintf(g_CHAR_ARRAY_01c08b60,
+                                              _sprintf(g_EventErrorMessageBuffer,
                                                          "Error parsing setGroupAmbient parms");
                                               return 0;
                                             }
                                             local_ec = local_ec + local_5c;
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
-                                              _sprintf(g_CHAR_ARRAY_01c08b60,
+                                              _sprintf(g_EventErrorMessageBuffer,
                                                          "Ambient value %g is out of range (1..100)",
                                                          (double)local_60);
                                               return 0;
@@ -1355,7 +1355,7 @@ LAB_0047aec8:
                                                           ((char *)local_ec,"(%[^,], %[^)])%n",
                                                            local_d6d + 1,local_1475 + 1);
                                                 if (local_48 < 5) {
-                                                  _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                  _sprintf(g_EventErrorMessageBuffer,
                                                              "Error parsing setLeverState command parms");
                                                   return 0;
                                                 }
@@ -1414,14 +1414,13 @@ LAB_0047aec8:
                                                                                                                             
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_d6d + 1,
-                                                             g_CLeverActorType_01cc3628.name_hash,
-                                                             g_CLeverActorType_01cc3628.class_name);
+                                                             g_CLeverClassInfo.name_hash,
+                                                             g_CLeverClassInfo.class_name);
                                                 if (this_ptr_01 == (CLever *)0x0) {
                                                   return 0;
                                                 }
-                                                if ((this_ptr_01 ==
-                                                     (CLever *)g_CDemonActor_PTR_0059cf1c) ||
-                                                   (local_f0 == 0)) {
+                                                if ((this_ptr_01 == (CLever *)g_ActorNameSentinel)
+                                                   || (local_f0 == 0)) {
                                                   pcVar15 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0047dc90
                                                             (this_ptr,local_1475 + 1);
@@ -1432,8 +1431,7 @@ LAB_0047aec8:
                                                 else {
                                                   iVar3 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (g_CEventList_PTR_005b7650,
-                                                             local_1475 + 1);
+                                                            (g_CEventListPtr,local_1475 + 1);
                                                   if (iVar3 == 0) {
                                                     uStack_f8 = 0;
                                                   }
@@ -1465,7 +1463,7 @@ LAB_0047aec8:
                                                             ((char *)local_ec,"(%[^,], %[^)])%n",
                                                              local_985 + 1,local_8bd + 1);
                                                   if (local_40 < 5) {
-                                                    _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                    _sprintf(g_EventErrorMessageBuffer,
                                                                "Error parsing setModelState command parms");
                                                     return 0;
                                                   }
@@ -1525,14 +1523,12 @@ LAB_0047aec8:
                                                   pCVar5 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_985 + 1,
-                                                             g_CCharacterActorType_00765a60.
-                                                             name_hash,
-                                                             g_CCharacterActorType_00765a60.
-                                                             class_name);
+                                                             g_CCharacterClassInfo.name_hash,
+                                                             g_CCharacterClassInfo.class_name);
                                                   if (pCVar5 == (CDemonActor *)0x0) {
                                                     return 0;
                                                   }
-                                                  if (pCVar5 != g_CDemonActor_PTR_0059cf1c) {
+                                                  if (pCVar5 != g_ActorNameSentinel) {
                                                     pcVar15 = local_8bd + 1;
                                                     iVar3 = 0;
                                                     pCVar8 = 
@@ -1542,7 +1538,7 @@ LAB_0047aec8:
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0
                                                             (pCVar8,pcVar15,iVar3);
                                                   if (iVar3 < 0) {
-                                                    _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                    _sprintf(g_EventErrorMessageBuffer,
                                                                "Model %s does not have state %s",
                                                                &pCVar5[0x1b].orient_matrix.m[0].y,
                                                                local_8bd + 1);
@@ -1574,7 +1570,7 @@ LAB_0047aec8:
                                                               ((char *)local_ec,"(%[^,], %f)%n",
                                                                local_a4d + 1,&local_3c);
                                                     if (local_38 < 3) {
-                                                      _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                      _sprintf(g_EventErrorMessageBuffer,
                                                                  "Error parsing setTimer command parms"
                                                                 );
                                                       return 0;
@@ -1616,13 +1612,13 @@ LAB_0047aec8:
                                                       pcVar15 = pcVar15 + (uint)bVar16 * -2 + 1;
                                                     } while (cVar1 != '\0');
                                                     if (0x1f < ~uVar11 - 1) {
-                                                      _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                      _sprintf(g_EventErrorMessageBuffer,
                                                                  "Timer name \"%s\" is too long, (max %d chars)"
                                                                  ,local_a4d + 1,0x1f);
                                                       return 0;
                                                     }
                                                     if (local_3c < 0.0) {
-                                                      _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                      _sprintf(g_EventErrorMessageBuffer,
                                                                  "Invalid timer duration");
                                                       return 0;
                                                     }
@@ -1650,7 +1646,7 @@ LAB_0047aec8:
                                                                 ((char *)local_ec,"(%[^)])%n",
                                                                  local_e35 + 1);
                                                       if (local_34 < 3) {
-                                                        _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                                                                                       
                                                   "Error parsing setWeather command parms");
                                                   return 0;
@@ -1697,7 +1693,7 @@ LAB_0047aec8:
                                                                         (local_e35 + 1,
                                                                          "snow");
                                                       if (iVar3 != 0) {
-                                                        _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                    "Invalid weather type: %s"
                                                                   );
                                                         return 0;
@@ -1708,7 +1704,7 @@ LAB_0047aec8:
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_weather_cpp_CWeather_setWeatherType_FUN_00555750
-                                                            (g_CWeather_PTR_005c15b8,type);
+                                                            (g_CWeatherPtr,type);
                                                   }
                                                   }
                                                   else {
@@ -1730,7 +1726,7 @@ LAB_0047aec8:
                                                                  "( %f, %f, %f, %f )%n",&local_30,
                                                                  &local_2c,&local_80,&local_28);
                                                       if (local_24 < 5) {
-                                                        _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                                                                                       
                                                   "Error parsing shakeScreen command parms");
                                                   return 0;
@@ -1762,7 +1758,7 @@ LAB_0047aec8:
                                                                 ((char *)local_ec,"(%[^,], %[^)])%n",
                                                                  local_72d + 1,local_40d + 1);
                                                       if (local_20 < 5) {
-                                                        _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                                                                                       
                                                   "Error parsing slamModelToMotion command parms");
                                                   return 0;
@@ -1823,14 +1819,12 @@ LAB_0047aec8:
                                                   pCVar5 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_72d + 1,
-                                                             g_CCharacterActorType_00765a60.
-                                                             name_hash,
-                                                             g_CCharacterActorType_00765a60.
-                                                             class_name);
+                                                             g_CCharacterClassInfo.name_hash,
+                                                             g_CCharacterClassInfo.class_name);
                                                   if (pCVar5 == (CDemonActor *)0x0) {
                                                     return 0;
                                                   }
-                                                  if (pCVar5 != g_CDemonActor_PTR_0059cf1c) {
+                                                  if (pCVar5 != g_ActorNameSentinel) {
                                                     pcVar15 = local_40d + 1;
                                                     iVar3 = 0;
                                                     pCVar6 = pCVar5 + 1;
@@ -1841,7 +1835,7 @@ LAB_0047aec8:
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                                                             (pCVar8,pcVar15,iVar3);
                                                   if (iVar3 < 0) {
-                                                    _sprintf(g_CHAR_ARRAY_01c08b60,
+                                                    _sprintf(g_EventErrorMessageBuffer,
                                                                "Model %s does not have motion %s",
                                                                &pCVar5[0x1b].orient_matrix.m[0].y,
                                                                local_40d + 1);
@@ -1875,7 +1869,7 @@ LAB_0047aec8:
                                                         pbVar10 = pbVar10 + 1;
                                                       }
                                                       local_1c = -1;
-                                                      pcVar15 = g_CHAR_ARRAY_005b7720;
+                                                      pcVar15 = g_DefaultCommandArg;
                                                       pcVar14 = local_344;
                                                       for (iVar3 = 0x19; iVar3 != 0;
                                                           iVar3 = iVar3 + -1) {
@@ -2029,14 +2023,12 @@ LAB_0047aec8:
                                                   pCVar5 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_bdd + 1,
-                                                             g_CDemonActorActorType_00763e48.
-                                                             name_hash,
-                                                             g_CDemonActorActorType_00763e48.
-                                                             class_name);
+                                                             g_CDemonActorClassInfo.name_hash,
+                                                             g_CDemonActorClassInfo.class_name);
                                                   if (pCVar5 == (CDemonActor *)0x0) {
                                                     return 0;
                                                   }
-                                                  if (pCVar5 == g_CDemonActor_PTR_0059cf1c) {
+                                                  if (pCVar5 == g_ActorNameSentinel) {
                                                     local_f0 = 0;
                                                   }
                                                   local_18 = -1;
@@ -2074,14 +2066,12 @@ LAB_0047aec8:
                                                     pCVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_59d + 1,
-                                                             g_CDemonActorActorType_00763e48.
-                                                             name_hash,
-                                                             g_CDemonActorActorType_00763e48.
-                                                             class_name);
+                                                             g_CDemonActorClassInfo.name_hash,
+                                                             g_CDemonActorClassInfo.class_name);
                                                   if (pCVar6 == (CDemonActor *)0x0) {
                                                     return 0;
                                                   }
-                                                  if (pCVar6 == g_CDemonActor_PTR_0059cf1c) {
+                                                  if (pCVar6 == g_ActorNameSentinel) {
                                                     local_f0 = 0;
                                                   }
                                                   else {
@@ -2119,8 +2109,8 @@ LAB_0047aec8:
                                                     pCVar7 = (CCharacter *)
                                                                                                                           
                                                   core_actor_cpp_castToClassHash_FUN_0040d890
-                                                            (pCVar5,g_CCharacterActorType_00765a60.
-                                                                    name_hash);
+                                                            (pCVar5,g_CCharacterClassInfo.name_hash)
+                                                  ;
                                                   if (pCVar7 != (CCharacter *)0x0) {
                                                     (*(((pCVar7->base).vtable._uc)->_uc).
                                                       releaseFromGrab)(pCVar7);

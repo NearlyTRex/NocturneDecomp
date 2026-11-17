@@ -11,11 +11,11 @@
 ;   TerminatedCString s_ChemPuzzleActive_005d4234
 ;   TerminatedCString s_SolvedChemistryPuzzle_005d4245
 ;   TerminatedCString s_FailedChemistryPuzzle_005d425b
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
-;   int g_INT_01c4353c
-;   int g_INT_01c43540
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   void* g_PTR_01d1bca0
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 00418223
     MOV EBX,dword ptr [ESP + 0x14]      ; 00418224
     PUSH 0x5d4234                       ; 00418228 | = "ChemPuzzleActive"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0041822d | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0041822d | g_CEventListPtr
     PUSH EDX                            ; 00418233
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00418234
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -299,7 +299,7 @@ section .text
     RET                                 ; 0041856e
     PUSH 0x5d4245                       ; 0041856f | = "SolvedChemistryPuzzle"
         ;   Label: LAB_0041856f
-    MOV EBP,dword ptr [0x0061b4d0]      ; 00418574 | g_CEventList_PTR_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 00418574 | g_CEventListPtr
     PUSH EBP                            ; 0041857a
     MOV dword ptr [EBX + 0x930],0xffffffff ; 0041857b
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00418585
@@ -314,7 +314,7 @@ section .text
     XOR EAX,EAX                         ; 004185a0
     PUSH EAX                            ; 004185a2
     PUSH EBX                            ; 004185a3
-    MOV [0x01c43544],EAX                ; 004185a4 | g_BIT_INTEGER32_01c43544
+    MOV [0x01c43544],EAX                ; 004185a4 | g_MouseButtonFlags
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004185a9
         ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004185ae
@@ -323,10 +323,10 @@ section .text
     POP ESI                             ; 004185b3
     POP EBX                             ; 004185b4
     RET                                 ; 004185b5
-    MOV EDX,dword ptr [0x01c43540]      ; 004185b6 | g_INT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 004185b6 | g_MouseY
         ;   Label: LAB_004185b6
     PUSH EDX                            ; 004185bc
-    MOV ECX,dword ptr [0x01c4353c]      ; 004185bd | g_INT_01c4353c
+    MOV ECX,dword ptr [0x01c4353c]      ; 004185bd | g_MouseX
     PUSH ECX                            ; 004185c3
     MOV EAX,dword ptr [EBX]             ; 004185c4
     PUSH EBX                            ; 004185c6
@@ -344,7 +344,7 @@ section .text
     JNZ 0x004185fc                      ; 004185e7
         ;   XREF to: 004185fc (CONDITIONAL_JUMP)  ; LAB_004185fc
     PUSH 0x5d425b                       ; 004185e9 | = "FailedChemistryPuzzle"
-    MOV EAX,[0x0061b4d0]                ; 004185ee | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 004185ee | g_CEventListPtr
     PUSH EAX                            ; 004185f3
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004185f4
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -359,7 +359,7 @@ section .text
     XOR EDX,EDX                         ; 0041860f
     PUSH EDX                            ; 00418611
     PUSH EBX                            ; 00418612
-    MOV dword ptr [0x01c43544],EDX      ; 00418613 | g_BIT_INTEGER32_01c43544
+    MOV dword ptr [0x01c43544],EDX      ; 00418613 | g_MouseButtonFlags
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 00418619
         ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 0041861e

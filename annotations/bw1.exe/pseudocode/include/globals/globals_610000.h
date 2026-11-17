@@ -51,7 +51,7 @@ extern CDemonRenderer* g_CDemonRenderer_PTR_00612560;
 extern CEditorTools* g_CEditorToolsPtr;
 
 // CEventList*
-extern CEventList* g_CEventList_PTR_0061b4d0;
+extern CEventList* g_CEventListPtr;
 
 // CFieldNotes*
 extern CFieldNotes* g_CFieldNotesPtr;
@@ -63,7 +63,7 @@ extern CFilterCache* g_CFilterCachePtr;
 extern CFilterFX* g_CFilterFXPtr;
 
 // CFireEffect*
-extern CFireEffect* g_CFireEffect_PTR_0061c010;
+extern CFireEffect* g_CFireEffectPtr;
 
 // CGame*
 extern CGame* g_CGamePtr;
@@ -84,70 +84,70 @@ extern CLevelLoader* g_CLevelLoaderPtr;
 extern CMini3D* g_CMini3DPtr;
 
 // CVector3i[62]
-extern CVector3i g_CVector3i_ARRAY_006113a0[62];
+extern CVector3i g_CoronaVertexPositions[62];
 
 // SLightGlowTable
-extern SLightGlowTable g_SLightGlowTable_006122a8;
+extern SLightGlowTable g_LightGlow;
 
 // SMRGLLightPrimitive[84]
-extern SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_00611688[84];
+extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
 
 // SMRGLPrimitiveQuad*[2000]
-extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568[2000];
+extern SMRGLPrimitiveQuad* g_VisibleFacePointers[2000];
 
 // SMRGLSkyTexture*
-extern SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_006144d0;
+extern SMRGLSkyTexture* g_SkyDomeTexturePtr;
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00610914;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00610cdc;
+extern SMRGLTextureBasic g_BaronBlueGlowTexture;
+extern SMRGLTextureBasic g_BurnCharTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00611130;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061127c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_00611388;
+extern SMRGLTextureBasic g_CameraBackdropTexture;
+extern SMRGLTextureBasic g_CoronaHeadliteTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00612258;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c3d4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c3ec;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c404;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c41c;
+extern SMRGLTextureBasic g_FireEffectBlackHoleTexture;
+extern SMRGLTextureBasic g_FireEffectSparkTexture;
+extern SMRGLTextureBasic g_FireEffectBlueSparkTexture;
+extern SMRGLTextureBasic g_FireEffectGreenSparkTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c44c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4ac;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4c4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4dc;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4f4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c50c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061ca94;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061cb3c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061cb54;
+extern SMRGLTextureBasic g_FireEffectRedSparkTexture;
+extern SMRGLTextureBasic g_FireEffectLaserTexture;
+extern SMRGLTextureBasic g_FireEffectBeamFuzzTexture;
+extern SMRGLTextureBasic g_FireEffectReticle;
+extern SMRGLTextureBasic g_FireEffectHeadliteTexture;
+extern SMRGLTextureBasic g_FireEffectBlastTexture;
+extern SMRGLTextureBasic g_FireEffectPopcornTexture;
+extern SMRGLTextureBasic g_FireEffectRainDropTexture;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061cda8;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061d828;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061dcb4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061ee2c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061f274;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061f2e4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0061f414;
+extern SMRGLTextureBasic g_FliesTexture;
+extern SMRGLTextureBasic g_BloodParticleTexture;
+extern SMRGLTextureBasic g_FootstepTexture;
+extern SMRGLTextureBasic g_Inventory3DTextureAtlas;
+extern SMRGLTextureBasic g_LoadingMoonGlowTexture;
+extern SMRGLTextureBasic g_MarqueeSparkTexture;
 
 // SMRGLTextureBasic[116]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061e32c[116];
+extern SMRGLTextureBasic g_BloodPoolAnimTextures[116];
 
 // SMRGLTextureBasic[40]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061c014[40];
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061cdc0[40];
+extern SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40];
+extern SMRGLTextureBasic g_FlameFrameTextures[40];
 
 // SMRGLTextureBasic[4]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061dccc[4];
+extern SMRGLTextureBasic g_BloodSplatTextures[4];
 
 // SMRGLTextureBasic[54]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061c524[54];
+extern SMRGLTextureBasic g_FireEffectExplosionTextures[54];
 
 // SMRGLTextureBasic[64]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061dd2c[64];
+extern SMRGLTextureBasic g_BloodSplatAnimTextures[64];
 
 // SMRGLTextureBasic[6]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00610c20[6];
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061caac[6];
+extern SMRGLTextureBasic g_EtherealBoltTextures[6];
+extern SMRGLTextureBasic g_FireEffectLightningBoltTextures[6];
 
 // SMRGLTextureBasic[8]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061f4b0[8];
+extern SMRGLTextureBasic g_AudioSpectrumTextures[8];
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode DAT_00610A05;
@@ -231,49 +231,49 @@ extern WatcomStaticDestructorNode DAT_0061F810;
 extern WatcomStaticDestructorNode DAT_0061F820;
 
 // _MMX_INTEGER
-extern _MMX_INTEGER g_MMX_INTEGER_006185a8;
-extern _MMX_INTEGER g_MMX_INTEGER_00618608;
-extern _MMX_INTEGER g_MMX_INTEGER_00618610;
-extern _MMX_INTEGER g_MMX_INTEGER_00618618;
-extern _MMX_INTEGER g_MMX_INTEGER_00618620;
+extern _MMX_INTEGER g_FilterBlendConstant;
+extern _MMX_INTEGER g_LightmapBlendBias5;
+extern _MMX_INTEGER g_LightmapBlendBias6;
+extern _MMX_INTEGER g_LightmapBlendBias3;
+extern _MMX_INTEGER g_LightmapBlendBias4;
 
 // byte
-extern byte g_BYTE_0061f7bb;
+extern byte g_CPUIDSupported;
 
 // char[100]
-extern char g_CHAR_ARRAY_0061d8f0[100];
-extern char g_CHAR_ARRAY_0061db70[100];
-extern char g_CHAR_ARRAY_0061f210[100];
+extern char g_EventCommandBuffer[100];
+extern char g_IpAddress[100];
+extern char g_DefaultInventoryValue[100];
 
 // char[104]
-extern char g_CHAR_ARRAY_006106c0[104];
-extern char g_CHAR_ARRAY_0061f1a8[104];
-extern char g_CHAR_ARRAY_0061f6c0[104];
-extern char g_CHAR_ARRAY_0061f728[104];
+extern char g_PropertyNamePrefix[104];
+extern char g_DefaultInventoryKey[104];
+extern char g_DefaultMissionActorClass[104];
+extern char g_DefaultMissionActorName[104];
 
 // char[260]
-extern char g_CHAR_ARRAY_0061b2e8[260];
+extern char g_FilePathBuffer[260];
 
 // char[300]
-extern char g_CHAR_ARRAY_00610728[300];
+extern char g_LocalizationTemplate[300];
 
 // char[512]
-extern char g_CHAR_ARRAY_0061aee8[512];
-extern char g_CHAR_ARRAY_0061b0e8[512];
+extern char g_Field1ParseBuffer[512];
+extern char g_Field2ParseBuffer[512];
 
 // char[60]
-extern char g_CHAR_ARRAY_0061cb70[60];
+extern char g_DefaultRicochetSound[60];
 
 // float
 extern float g_FLOAT_00612554;
-extern float g_FLOAT_006144d4;
+extern float g_SkyDomeVertexScale;
 extern float g_FLOAT_0061d954;
 
 // int
-extern int g_INT_0061049c;
-extern int g_INT_006104a0;
+extern int g_TextWrapEnabled;
+extern int g_CurrentTextColor;
 extern int g_INT_006104ec;
-extern int g_INT_006104f0;
+extern int g_CurrentRenderColor;
 extern int g_CDemonActorClassVersion;
 extern int g_CAmmoClassVersion;
 extern int g_CAmmoBoxClassVersion;
@@ -300,7 +300,7 @@ extern int g_CCarvedClassVersion;
 extern int g_CCharacterClassVersion;
 extern int g_CChainClassVersion;
 extern int g_INT_00610d40;
-extern int g_INT_00610d44;
+extern int g_FarPlaneDistance;
 extern int g_CColonelClassVersion;
 extern int g_CConstructClassVersion;
 extern int g_CConveyorClassVersion;
@@ -308,12 +308,12 @@ extern int g_CZombieCowClassVersion;
 extern int g_CCrateClassVersion;
 extern int g_CCrossbowClassVersion;
 extern int g_CCurtainClassVersion;
-extern int g_INT_00611224;
-extern int g_INT_00611228;
-extern int g_INT_0061122c;
-extern int g_INT_00611230;
-extern int g_INT_00611234;
-extern int g_INT_00611238;
+extern int g_CameraShakePeakValue;
+extern int g_CameraShakeSustainValue;
+extern int g_CameraShakeState;
+extern int g_FogColorIndexR;
+extern int g_FogColorIndexG;
+extern int g_FogColorIndexB;
 extern int g_INT_00611294;
 extern int g_CDemnfolkClassVersion;
 extern int g_CActorDestinationClassVersion;
@@ -324,33 +324,33 @@ extern int g_CZombieDogClassVersion;
 extern int g_CDoorClassVersion;
 extern int g_CDraculaBrideClassVersion;
 extern int g_INT_00612550;
-extern int g_INT_00612564;
+extern int g_RenderPixelBudget;
 extern int g_CDripClassVersion;
 extern int g_CDroneClassVersion;
-extern int g_INT_00614534;
-extern int g_INT_00614538;
-extern int g_INT_0061453c;
-extern int g_INT_00614544;
+extern int g_SoftwareDeltaTextureU;
+extern int g_SoftwareDeltaTextureV;
+extern int g_SoftwareDeltaDepthZ;
+extern int g_PerspectiveScanlinePixelCount;
 extern int g_INT_0061ab60;
 extern int g_CDynamiteClassVersion;
-extern int g_INT_0061abc4;
-extern int g_INT_0061abc8;
+extern int g_CursorSizeHorizontal;
+extern int g_CursorSizeVertical;
 extern int g_CElephantGunClassVersion;
 extern int g_CEmitterClassVersion;
 extern int g_CEnemyClassVersion;
 extern int g_INT_0061b498;
 extern int g_INT_0061b49c;
 extern int g_INT_0061b4a0;
-extern int g_INT_0061b4a4;
-extern int g_INT_0061b4a8;
-extern int g_INT_0061b4ac;
-extern int g_INT_0061b4b0;
-extern int g_INT_0061b4b8;
-extern int g_INT_0061b4c4;
+extern int g_TextureFilteringEnabled;
+extern int g_CurrentTextureDimension;
+extern int g_InputKeyMask;
+extern int g_JoystickNumButtons;
+extern int g_CurrentAlphaValue;
+extern int g_ProjectionScale;
 extern int g_INT_0061b564;
 extern int g_INT_0061bf24;
 extern int g_CFilmReelClassVersion;
-extern int g_INT_0061bf2c;
+extern int g_CFilmProjectorClassVersion;
 extern int g_CFlameClassVersion;
 extern int g_CFlameCanClassVersion;
 extern int g_CFlameThrowerClassVersion;
@@ -367,8 +367,8 @@ extern int g_INT_0061d310;
 extern int g_CFliesClassVersion;
 extern int g_CFrankenstienMachineClassVersion;
 extern int g_CGabriellaClassVersion;
-extern int g_INT_0061d96c;
-extern int g_INT_0061d970;
+extern int g_MovieRecordingWidth;
+extern int g_MovieRecordingHeight;
 extern int g_CGargoyleClassVersion;
 extern int g_CGasMaskClassVersion;
 extern int g_CGhoulClassVersion;
@@ -386,16 +386,16 @@ extern int g_CHotDemonClassVersion;
 extern int g_CHighPriestOfGardathClassVersion;
 extern int g_CIcePickClassVersion;
 extern int g_CImpClassVersion;
-extern int g_INT_0061f1a0;
-extern int g_INT_0061f1a4;
+extern int g_InventoryWidth;
+extern int g_InventoryHeight;
 extern int g_CKeyActorClassVersion;
 extern int g_CLadderClassVersion;
 extern int g_CLarvaClassVersion;
 extern int g_CLeverClassVersion;
-extern int g_INT_0061f310;
-extern int g_INT_0061f314;
-extern int g_INT_0061f318;
-extern int g_INT_0061f31c;
+extern int g_AmbientLightLevel;
+extern int g_SpecularEnabled;
+extern int g_DiffuseLightMultiplier;
+extern int g_SpecularLightMultiplier;
 extern int g_CLightGunClassVersion;
 extern int g_CLightPisClassVersion;
 extern int g_CLightConeClassVersion;
@@ -405,8 +405,8 @@ extern int g_CMarqueeClassVersion;
 extern int g_CMeleeClassVersion;
 extern int g_CMimicClassVersion;
 extern int g_CMineCarClassVersion;
-extern int g_INT_0061f7b0;
-extern int g_INT_0061f7b4;
+extern int g_CPUInfoBasicInfo2;
+extern int g_CPUInfoBaseInfo3;
 extern int g_CMobsterClassVersion;
 extern int g_CMolochClassVersion;
 extern int g_CMooCowClassVersion;
@@ -415,41 +415,41 @@ extern int g_INT_0061f8b0;
 extern int g_INT_0061f8b4;
 
 // int[16]
-extern int g_INT_ARRAY_00610600[16];
+extern int g_ColorLookupTable[16];
 
 // int[5]
 extern int g_INT_ARRAY_0061db5c[5];
 
 // int[8]
-extern int g_INT_ARRAY_0061123c[8];
-extern int g_INT_ARRAY_0061125c[8];
+extern int g_CameraEdgeOffsetX[8];
+extern int g_CameraEdgeOffsetY[8];
 
 // qword
-extern qword g_QWORD_006185e8;
-extern qword g_QWORD_006185f0;
-extern qword g_QWORD_006185f8;
-extern qword g_QWORD_00618600;
+extern qword g_LightmapBlendBias1;
+extern qword g_LightmapBlendBias2;
+extern qword g_AmbientLightMMX1;
+extern qword g_AmbientLightMMX2;
 
 // uchar
-extern uchar g_UCHAR_0061f7b8;
-extern uchar g_UCHAR_0061f7b9;
-extern uchar g_UCHAR_0061f7ba;
-extern uchar g_UCHAR_0061f7bc;
-extern uchar g_UCHAR_0061f7c1;
+extern uchar g_CPUInfoFamily;
+extern uchar g_CPUInfoModel;
+extern uchar g_CPUInfoStepping;
+extern uchar g_CPUInfoIntelCPU;
+extern uchar g_CPUInfoMMXSupported;
 
 // uint
-extern uint g_UINT_00614518;
-extern uint g_UINT_0061451c;
-extern uint g_UINT_00614524;
-extern uint g_UINT_0061b4b4;
-extern uint g_UINT_0061b4c0;
-extern uint g_UINT_0061f7bd;
+extern uint g_PerspectiveNextU;
+extern uint g_PerspectiveNextV;
+extern uint g_StartDepthZ;
+extern uint g_CPUFamily;
+extern uint g_VertexProcessingEnabled;
+extern uint g_CPUFeatureFlags;
 
 // uint*
-extern uint* g_UINT_PTR_00614548;
+extern uint* g_PerspectiveScanlineZPtr;
 
 // ulonglong[256]
-extern ulonglong g_ULONGLONG_ARRAY_0061b6a0[256];
+extern ulonglong g_ByteFillTable[256];
 
 // undefined1
 extern undefined1 DAT_006106bf;
@@ -470,10 +470,10 @@ extern undefined4 DAT_0061d424;
 extern ushort g_USHORT_0061f5d8;
 
 // ushort[2048]
-extern ushort g_USHORT_ARRAY_00619b60[2048];
+extern ushort g_LightmapData[2048];
 
 // void*
-extern void* g_PTR_00614540;
+extern void* g_PerspectiveScanlineColorPtr;
 extern void* switchdataD_0061bea0;
 extern void* switchdataD_0061bee4;
 

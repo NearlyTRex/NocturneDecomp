@@ -15,14 +15,14 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005d7a7f = 65536
-;   int g_INT_00611224 = 0x10000
-;   int g_INT_00611228 = 0xc80000
-;   int g_INT_0061122c = 0x3
-;   int g_INT_01342200
-;   int g_INT_01342204
-;   int g_INT_01342208
-;   int g_INT_0134220c
-;   int g_INT_01342210
+;   int g_CameraShakePeakValue = 0x10000
+;   int g_CameraShakeSustainValue = 0xc80000
+;   int g_CameraShakeState = 0x3
+;   int g_CameraShakeSustainTimer
+;   int g_CameraShakeAttackTime
+;   int g_CameraShakeAttackAccum
+;   int g_CameraShakeDecayDuration
+;   int g_CameraShakeDecayTimer
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -43,7 +43,7 @@ section .text
     FLD float ptr [ESP + 0x18]          ; 00454c39
     XOR EDX,EDX                         ; 00454c3d
     FMULP ST4                           ; 00454c3f
-    MOV dword ptr [0x01342208],EDX      ; 00454c41 | g_INT_01342208
+    MOV dword ptr [0x01342208],EDX      ; 00454c41 | g_CameraShakeAttackAccum
     FXCH ST2                            ; 00454c47
     CALL crt_math.c_round_FUN_005c03a0  ; 00454c49
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
@@ -57,30 +57,30 @@ section .text
     CALL crt_math.c_round_FUN_005c03a0  ; 00454c5e
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 00454c63
-    FISTP dword ptr [0x00611228]        ; 00454c65 | g_INT_00611228
+    FISTP dword ptr [0x00611228]        ; 00454c65 | g_CameraShakeSustainValue
     FXCH ST2                            ; 00454c6b
-    FISTP dword ptr [0x01342204]        ; 00454c6d | g_INT_01342204
-    FISTP dword ptr [0x0134220c]        ; 00454c73 | g_INT_0134220c
-    MOV EBX,dword ptr [0x01342204]      ; 00454c79 | g_INT_01342204
-    FISTP dword ptr [0x00611224]        ; 00454c7f | g_INT_00611224
+    FISTP dword ptr [0x01342204]        ; 00454c6d | g_CameraShakeAttackTime
+    FISTP dword ptr [0x0134220c]        ; 00454c73 | g_CameraShakeDecayDuration
+    MOV EBX,dword ptr [0x01342204]      ; 00454c79 | g_CameraShakeAttackTime
+    FISTP dword ptr [0x00611224]        ; 00454c7f | g_CameraShakePeakValue
     TEST EBX,EBX                        ; 00454c85
     JNZ 0x00454c9c                      ; 00454c87
         ;   XREF to: 00454c9c (CONDITIONAL_JUMP)  ; LAB_00454c9c
-    MOV EAX,[0x00611228]                ; 00454c89 | g_INT_00611228
+    MOV EAX,[0x00611228]                ; 00454c89 | g_CameraShakeSustainValue
     MOV EDX,0x1                         ; 00454c8e
-    MOV [0x01342200],EAX                ; 00454c93 | g_INT_01342200
+    MOV [0x01342200],EAX                ; 00454c93 | g_CameraShakeSustainTimer
     TEST EAX,EAX                        ; 00454c98
     JZ 0x00454ca4                       ; 00454c9a
         ;   XREF to: 00454ca4 (CONDITIONAL_JUMP)  ; LAB_00454ca4
-    MOV dword ptr [0x0061122c],EDX      ; 00454c9c | g_INT_0061122c
+    MOV dword ptr [0x0061122c],EDX      ; 00454c9c | g_CameraShakeState
         ;   Label: LAB_00454c9c
     POP EBX                             ; 00454ca2
     RET                                 ; 00454ca3
-    MOV EAX,[0x0134220c]                ; 00454ca4 | g_INT_0134220c
+    MOV EAX,[0x0134220c]                ; 00454ca4 | g_CameraShakeDecayDuration
         ;   Label: LAB_00454ca4
     MOV EDX,0x2                         ; 00454ca9
-    MOV [0x01342210],EAX                ; 00454cae | g_INT_01342210
-    MOV dword ptr [0x0061122c],EDX      ; 00454cb3 | g_INT_0061122c
+    MOV [0x01342210],EAX                ; 00454cae | g_CameraShakeDecayTimer
+    MOV dword ptr [0x0061122c],EDX      ; 00454cb3 | g_CameraShakeState
     POP EBX                             ; 00454cb9
     RET                                 ; 00454cba
 

@@ -43,7 +43,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
   }
   else {
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (g_CEventList_PTR_005b7650,this_ptr->transform_event);
+                      (g_CEventListPtr,this_ptr->transform_event);
     if (iVar6 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
       if (this_ptr->transform_wav[0] != '\0') {

@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf601c
+;   void* g_APIDLL_setMipMapLevel
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00565a7c
         ;   Label: LAB_00565a7c
     PUSH ECX                            ; 00565a80
-    CALL dword ptr [0x02cf601c]         ; 00565a81 | g_PTR_02cf601c
+    CALL dword ptr [0x02cf601c]         ; 00565a81 | g_APIDLL_setMipMapLevel
     ADD ESP,0x4                         ; 00565a87
     RET                                 ; 00565a8a
 

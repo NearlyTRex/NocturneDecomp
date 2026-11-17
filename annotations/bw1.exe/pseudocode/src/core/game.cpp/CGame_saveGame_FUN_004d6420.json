@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 208,
+    "complexity_score": 209,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
+    "pseudocode_lines": 159,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 665
+    "total_lines": 666
   },
   "cross_references": [
     {
@@ -355,13 +355,13 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "g_CEventList_PTR_0061b4d0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c51d80"
     },
     {
       "addr": "0061c010",
-      "name": "g_CFireEffect_PTR_0061c010",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c57074"
     },
@@ -403,7 +403,7 @@
     },
     {
       "addr": "007c3040",
-      "name": "g_INT_007c3040",
+      "name": "g_IncludeCommentsWhenWriting",
       "type": "int",
       "value": null
     },
@@ -415,49 +415,49 @@
     },
     {
       "addr": "01cd05c0",
-      "name": "g_CHAR_ARRAY_01cd05c0",
+      "name": "g_CurrentSaveFile",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "01cd05c1",
-      "name": "g_CHAR_ARRAY_01cd05c0+1",
+      "name": "g_CurrentSaveFile+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd05c2",
-      "name": "g_CHAR_ARRAY_01cd05c0+2",
+      "name": "g_CurrentSaveFile+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd05c3",
-      "name": "g_CHAR_ARRAY_01cd05c0+3",
+      "name": "g_CurrentSaveFile+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd06c4",
-      "name": "g_INT_ARRAY_01cd06c4",
+      "name": "g_MasterLightStateSaveBuffer",
       "type": "int[201]",
       "value": null
     },
     {
       "addr": "01cd06c8",
-      "name": "g_INT_ARRAY_01cd06c4[1]",
+      "name": "g_MasterLightStateSaveBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd06cc",
-      "name": "g_INT_ARRAY_01cd06c4[2]",
+      "name": "g_MasterLightStateSaveBuffer[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d06aa0",
-      "name": "g_INT_01d06aa0",
+      "name": "g_HeroCount",
       "type": "int",
       "value": null
     },
@@ -744,7 +744,7 @@
       "line": 79,
       "match": "(int)file",
       "severity": "moderate",
-      "text": "g_INT_007c3040 = (int)file;",
+      "text": "g_IncludeCommentsWhenWriting = (int)file;",
       "type": "pointer_truncation"
     },
     {
@@ -765,7 +765,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 149,
+      "line": 150,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

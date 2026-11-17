@@ -12,13 +12,13 @@
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608d1
 ;
 ; Referenced Globals:
-;   int g_INT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555f20 | g_INT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555f20 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555f26
     SUB EAX,EDX                         ; 00555f2d

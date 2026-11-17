@@ -135,20 +135,20 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
       } while (-1 < iVar5);
       iVar10 = local_f4 * 0x94;
       local_e8 = 0;
-      for (iVar5 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[local_f4].l[0]; iVar5 <= iVar8;
-          iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + iVar5)) {
+      for (iVar5 = g_Layer3BandIndex[local_f4].l[0]; iVar5 <= iVar8;
+          iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + iVar5)) {
         local_e8 = local_e8 + 1;
         iVar5 = iVar10 + 4;
         iVar10 = iVar10 + 4;
       }
-      iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + iVar10);
+      iVar8 = *(int *)((int)g_Layer3BandIndex[0].l + iVar10);
       local_94 = local_f4 * 0x94;
       local_8c = local_f4 * 0x94 + local_e8 * 4;
       if (local_e8 < 0x15) {
         local_88 = local_e8 * 4;
         do {
-          iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + local_8c + 4) -
-                  *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + local_8c);
+          iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + local_8c + 4) -
+                  *(int *)((int)g_Layer3BandIndex[0].l + local_8c);
           if (0 < iVar5) {
             iVar10 = iVar8 * 2;
             local_a8 = (int)scalefactor_data->granules[0].long_scalefactors + local_88;
@@ -179,8 +179,8 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
           local_e8 = local_e8 + 1;
         } while (local_88 < 0x54);
       }
-      iVar10 = 0x240 - *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + local_94 + 0x54);
-      iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + local_94 + 0x50);
+      iVar10 = 0x240 - *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x54);
+      iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x50);
       if (0 < iVar10) {
         local_a4 = iVar5 * 2;
         local_84 = iVar8 * 2;
@@ -213,8 +213,8 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
           local_b8 = local_e4 + 1;
           do {
             iVar10 = iVar8 * 4 + local_bc;
-            iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + iVar10);
-            iVar10 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + iVar10 + 4) - iVar5;
+            iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10);
+            iVar10 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10 + 4) - iVar5;
             iVar5 = iVar5 * 3 + (local_e4 + 1) * iVar10;
             for (; 0 < iVar10; iVar10 = iVar10 + -1) {
               iVar5 = iVar5 + -1;
@@ -233,9 +233,8 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
           if (local_30 < 0xc) {
             local_78 = local_30 * 4;
             do {
-              iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_7c);
-              iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_7c + 4) -
-                      iVar8;
+              iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c);
+              iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c + 4) - iVar8;
               iVar8 = iVar8 * 3 + local_e4 * iVar5;
               if (0 < iVar5) {
                 iVar10 = iVar8 * 2;
@@ -267,13 +266,12 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
               local_30 = local_30 + 1;
             } while (local_78 < 0x30);
           }
-          iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_9c + 0x2c);
-          iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_9c + 0x34) -
-                  *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_9c + 0x30);
+          iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x2c);
+          iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x34) -
+                  *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30);
           local_28 = iVar8 * 3;
-          iVar8 = local_e4 *
-                  (*(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_9c + 0x30) -
-                  iVar8) + local_28;
+          iVar8 = local_e4 * (*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30) - iVar8) +
+                  local_28;
           local_28 = local_28 + local_e4 * iVar5;
           if (0 < iVar5) {
             iVar10 = local_28 * 4;
@@ -307,8 +305,8 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
           local_d0 = local_24 + 1;
           do {
             iVar10 = iVar8 * 4 + local_d4;
-            iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + iVar10);
-            iVar10 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + iVar10 + 4) - iVar5;
+            iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10);
+            iVar10 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10 + 4) - iVar5;
             iVar5 = (local_24 + 1) * iVar10 + iVar5 * 3;
             for (; 0 < iVar10; iVar10 = iVar10 + -1) {
               iVar5 = iVar5 + -1;
@@ -328,9 +326,8 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
           local_cc = local_68;
           local_6c = local_34 * 4 + local_98;
           for (; local_34 < 0xc; local_34 = local_34 + 1) {
-            iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_6c);
-            iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_6c + 4) - iVar8
-            ;
+            iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c);
+            iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c + 4) - iVar8;
             iVar8 = iVar8 * 3 + local_24 * iVar5;
             if (0 < iVar5) {
               iVar10 = iVar8 * 2;
@@ -359,13 +356,12 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
             }
             local_6c = local_6c + 4;
           }
-          iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_98 + 0x2c);
-          iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_98 + 0x34) -
-                  *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_98 + 0x30);
+          iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x2c);
+          iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x34) -
+                  *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30);
           local_2c = iVar8 * 3;
-          iVar8 = local_24 *
-                  (*(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s + local_98 + 0x30) -
-                  iVar8) + local_2c;
+          iVar8 = local_24 * (*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30) - iVar8) +
+                  local_2c;
           local_2c = local_2c + local_24 * iVar5;
           if (0 < iVar5) {
             iVar10 = local_2c * 4;
@@ -405,18 +401,18 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubba
           } while (-1 < iVar8);
           iVar5 = local_f4 * 0x94;
           local_38 = 0;
-          for (iVar8 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[local_f4].l[0]; iVar8 <= local_1c;
-              iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + iVar8)) {
+          for (iVar8 = g_Layer3BandIndex[local_f4].l[0]; iVar8 <= local_1c;
+              iVar8 = *(int *)((int)g_Layer3BandIndex[0].l + iVar8)) {
             local_38 = local_38 + 1;
             iVar8 = iVar5 + 4;
             iVar5 = iVar5 + 4;
           }
-          iVar8 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + iVar5);
+          iVar8 = *(int *)((int)g_Layer3BandIndex[0].l + iVar5);
           if (local_38 < 8) {
             local_60 = local_38 * 4 + local_f4 * 0x94;
             do {
-              iVar5 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + local_60 + 4) -
-                      *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l + local_60);
+              iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + local_60 + 4) -
+                      *(int *)((int)g_Layer3BandIndex[0].l + local_60);
               if (0 < iVar5) {
                 iVar10 = iVar8 * 2;
                 local_c4 = scalefactor_data->granules[0].long_scalefactors + local_38;
@@ -510,7 +506,7 @@ LAB_004e6377:
           g_CurrentFilename = "..\\sound\\mp3.cpp";
           g_CurrentLineNumber = 2488;
           core_main_c_displayErrorAndQuit_FUN_004c8440
-                    ("Error in streo processing.  File: %s",g_CHAR_ARRAY_01cd8b28);
+                    ("Error in streo processing.  File: %s",g_CurrentMp3Filename);
         }
         iVar8 = iVar8 + 1;
         iVar5 = iVar5 + 4;

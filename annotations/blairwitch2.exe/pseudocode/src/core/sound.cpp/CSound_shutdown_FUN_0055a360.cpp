@@ -13,14 +13,14 @@ void __cdecl core_sound_cpp_CSound_shutdown_FUN_0055a360(CSound *this_ptr)
   int iVar2;
   
   iVar2 = 0;
-  g_INT_0264bad4 = 0;
+  g_SoundAudioInitialized = 0;
   do {
-    puVar1 = (uint *)((int)&g_STrainNoise_ARRAY_0264bae4[0].sfx_handle + iVar2);
+    puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iVar2);
     iVar2 = iVar2 + 0x10;
     sound_sndmain_cpp_killSfx_FUN_00551050(*puVar1);
   } while (iVar2 != 0xa0);
-  sound_sndmain_cpp_killSfx_FUN_00551050(g_UINT_0264bb98);
-  sound_sndmain_cpp_killSfx_FUN_00551050(g_UINT_0264bb9c);
+  sound_sndmain_cpp_killSfx_FUN_00551050(g_TrainRailNoiseHandle);
+  sound_sndmain_cpp_killSfx_FUN_00551050(g_TrainExteriorAmbientHandle);
   sound_sndmain_cpp_resetSoundDevice_FUN_005526b0();
   return;
 }

@@ -20,11 +20,11 @@
 ;   TerminatedCString s_engine_2d_c_005ca182
 ;   TerminatedCString s_vLine_invalid_bitsPerPix_005ca191
 ;   int g_INT_006141c0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;   int g_INT_01c35e60
 ;   char* g_CHAR_PTR_01d046a0
@@ -48,7 +48,7 @@ section .text
     CMP ESI,dword ptr [0x01c35e48]      ; 00403050 | g_INT_01c35e48
     JL 0x00403100                       ; 00403056
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
-    CMP ESI,dword ptr [0x01c35e50]      ; 0040305c | g_INT_01c35e50
+    CMP ESI,dword ptr [0x01c35e50]      ; 0040305c | g_ClipRight
     JG 0x00403100                       ; 00403062
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
     MOV EDI,dword ptr [0x01c35e4c]      ; 00403068 | g_INT_01c35e4c
@@ -82,7 +82,7 @@ section .text
     JG 0x00403100                       ; 004030b4
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
     MOV BL,byte ptr [0x01c35e60]        ; 004030b6 | g_INT_01c35e60
-    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 004030bc | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 004030bc | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,0x4                         ; 004030c2
     INC EAX                             ; 004030c5
     MOV byte ptr [ECX + ESI*0x1],BL     ; 004030c6
@@ -97,7 +97,7 @@ section .text
     LEA EDI,[ESI + ESI*0x1]             ; 004030dd
     MOV EDX,EBP                         ; 004030e0
     MOV ESI,ECX                         ; 004030e2
-    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 004030e4 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 004030e4 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_004030e4
     ADD EDX,0x4                         ; 004030ea
     INC EAX                             ; 004030ed
@@ -122,7 +122,7 @@ section .text
     LEA EBX,[ESI*0x4 + 0x0]             ; 00403116
     MOV EDX,EBP                         ; 0040311d
     MOV ESI,ECX                         ; 0040311f
-    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 00403121 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 00403121 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_00403121
     ADD EDX,0x4                         ; 00403127
     INC EAX                             ; 0040312a

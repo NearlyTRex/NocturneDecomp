@@ -64,7 +64,7 @@
 ;   core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0053ab00 at 0053ad0d
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005fec44 = 0.00390625
+;   float g_Fixed16ToFloat = 0.00390625
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
@@ -163,26 +163,26 @@ section .text
     LEA EBX,[ESP + 0x88]                ; 00467cf6
     ADD EAX,ECX                         ; 00467cfd
     FILD dword ptr [EAX]                ; 00467cff
-    FMUL float ptr [0x005fec44]         ; 00467d01 | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d01 | g_Fixed16ToFloat
     FSTP float ptr [EBX]                ; 00467d07
     FILD dword ptr [EAX + 0x4]          ; 00467d09
-    FMUL float ptr [0x005fec44]         ; 00467d0c | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d0c | g_Fixed16ToFloat
     FSTP float ptr [EBX + 0x4]          ; 00467d12
     FILD dword ptr [EAX + 0x8]          ; 00467d15
-    FMUL float ptr [0x005fec44]         ; 00467d18 | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d18 | g_Fixed16ToFloat
     FSTP float ptr [EBX + 0x8]          ; 00467d1e
     MOV EAX,dword ptr [ESP + 0x114]     ; 00467d21
     IMUL EAX,dword ptr [EAX + 0x24],0xc ; 00467d28
     LEA EBX,[ESP + 0xb8]                ; 00467d2c
     ADD EAX,ECX                         ; 00467d33
     FILD dword ptr [EAX]                ; 00467d35
-    FMUL float ptr [0x005fec44]         ; 00467d37 | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d37 | g_Fixed16ToFloat
     FSTP float ptr [EBX]                ; 00467d3d
     FILD dword ptr [EAX + 0x4]          ; 00467d3f
-    FMUL float ptr [0x005fec44]         ; 00467d42 | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d42 | g_Fixed16ToFloat
     FSTP float ptr [EBX + 0x4]          ; 00467d48
     FILD dword ptr [EAX + 0x8]          ; 00467d4b
-    FMUL float ptr [0x005fec44]         ; 00467d4e | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d4e | g_Fixed16ToFloat
     FSTP float ptr [EBX + 0x8]          ; 00467d54
     MOV EAX,dword ptr [ESP + 0x114]     ; 00467d57
     MOV EDI,0x2                         ; 00467d5e
@@ -200,13 +200,13 @@ section .text
     LEA EBX,[ESP + 0xd0]                ; 00467d91
     ADD EAX,EDX                         ; 00467d98
     FILD dword ptr [EAX]                ; 00467d9a
-    FMUL float ptr [0x005fec44]         ; 00467d9c | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467d9c | g_Fixed16ToFloat
     FSTP float ptr [EBX]                ; 00467da2
     FILD dword ptr [EAX + 0x4]          ; 00467da4
-    FMUL float ptr [0x005fec44]         ; 00467da7 | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467da7 | g_Fixed16ToFloat
     FSTP float ptr [EBX + 0x4]          ; 00467dad
     FILD dword ptr [EAX + 0x8]          ; 00467db0
-    FMUL float ptr [0x005fec44]         ; 00467db3 | g_FLOAT_005fec44
+    FMUL float ptr [0x005fec44]         ; 00467db3 | g_Fixed16ToFloat
     FSTP float ptr [EBX + 0x8]          ; 00467db9
     LEA EAX,[ESP + 0xd0]                ; 00467dbc
     PUSH EAX                            ; 00467dc3

@@ -109,7 +109,7 @@ section .text
     PUSH EBX                            ; 00447e39
     PUSH EDI                            ; 00447e3a
     CALL core_course.cpp_CCourse_allocMemory_FUN_00447d50 ; 00447e3b
-        ;   XREF to: 00447d50 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00447d50(CCourse * this_ptr, int param_2)
+        ;   XREF to: 00447d50 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00447d50(CCourse * this_ptr, int count)
     MOV EBX,EBP                         ; 00447e40
     ADD ESP,0x8                         ; 00447e42
     PUSH EBX                            ; 00447e45

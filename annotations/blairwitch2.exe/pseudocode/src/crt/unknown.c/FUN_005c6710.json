@@ -100,13 +100,13 @@
     },
     {
       "addr": "0061f754",
-      "name": "g_ULONG_0061f754",
+      "name": "g_RuntimeBufferSize",
       "type": "ulong",
       "value": "0xf4"
     },
     {
       "addr": "02680170",
-      "name": "g_INT_02680170",
+      "name": "g_EmergencyExitFlag",
       "type": "int",
       "value": null
     }
@@ -267,7 +267,7 @@
       "line": 16,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(ulong *)(&stack0xffffffd4 + iVar1) = g_ULONG_0061f754;",
+      "text": "*(ulong *)(&stack0xffffffd4 + iVar1) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
     {
@@ -371,7 +371,7 @@
       "line": 24,
       "match": "&stack0x000000c8",
       "severity": "moderate",
-      "text": "*(ulong *)(&stack0x000000c8 + iVar1) = g_ULONG_0061f754;",
+      "text": "*(ulong *)(&stack0x000000c8 + iVar1) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
     {

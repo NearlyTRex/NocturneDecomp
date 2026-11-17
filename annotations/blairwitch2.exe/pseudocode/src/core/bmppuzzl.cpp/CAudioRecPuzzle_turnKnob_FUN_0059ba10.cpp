@@ -20,7 +20,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_0059ba10(CAudioRecPu
       }
     } while (iVar1 != this_ptr->selected_button);
   }
-  if (g_INT_026677e4 < g_INT_01c2a37c) {
+  if (g_INT_026677e4 < g_MouseX) {
     iVar1 = this_ptr->knob_positions[knob] + 1;
     this_ptr->knob_positions[knob] = iVar1;
     if (4 < iVar1) {
@@ -34,7 +34,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_0059ba10(CAudioRecPu
       this_ptr->knob_positions[knob] = 0;
     }
   }
-  g_INT_026677e4 = g_INT_01c2a37c;
+  g_INT_026677e4 = g_MouseX;
   if ((this_ptr->knob_positions[knob] < 4) && (0 < this_ptr->knob_positions[knob])) {
     this_ptr->cursor_index = 1;
     return;

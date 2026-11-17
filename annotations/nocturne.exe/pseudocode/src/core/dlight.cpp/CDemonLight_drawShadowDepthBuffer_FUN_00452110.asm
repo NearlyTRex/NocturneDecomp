@@ -30,7 +30,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   int g_INT_01abb4c4
+;   int g_NoiseTableIndex
 ;   int[100] g_INT_ARRAY_01abb4c8
 ;   undefined4 g_INT_ARRAY_01abb4c8[1]
 ;   void*[1200] g_ScreenBufferArray
@@ -59,7 +59,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 00452117
     XOR ESI,ESI                         ; 0045211b
     XOR EBX,EBX                         ; 0045211d
-    MOV dword ptr [0x01abb4c4],ESI      ; 0045211f | g_INT_01abb4c4
+    MOV dword ptr [0x01abb4c4],ESI      ; 0045211f | g_NoiseTableIndex
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00452125
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_00452125
@@ -102,7 +102,7 @@ section .text
     MOV ECX,ECX                         ; 0045218e
     MOV ECX,dword ptr [0x005b7624]      ; 00452190 | g_BitsPerPixel
         ;   Label: LAB_00452190
-    MOV ESI,dword ptr [0x01abb4c4]      ; 00452196 | g_INT_01abb4c4
+    MOV ESI,dword ptr [0x01abb4c4]      ; 00452196 | g_NoiseTableIndex
     CMP ECX,0x20                        ; 0045219c
     JNZ 0x00452343                      ; 0045219f
         ;   XREF to: 00452343 (CONDITIONAL_JUMP)  ; LAB_00452343
@@ -139,7 +139,7 @@ section .text
     CMP EBX,EDI                         ; 004521fa
     JL 0x004521c3                       ; 004521fc
         ;   XREF to: 004521c3 (CONDITIONAL_JUMP)  ; LAB_004521c3
-    MOV dword ptr [0x01abb4c4],ESI      ; 004521fe | g_INT_01abb4c4
+    MOV dword ptr [0x01abb4c4],ESI      ; 004521fe | g_NoiseTableIndex
         ;   Label: LAB_004521fe
     ADD ESP,0x34                        ; 00452204
     POP EBP                             ; 00452207

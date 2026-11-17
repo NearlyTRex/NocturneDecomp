@@ -77,7 +77,7 @@ section .text
     PUSH EDI                            ; 00572d22
     PUSH EBP                            ; 00572d23
     SUB ESP,0x378                       ; 00572d24
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00572d2a | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00572d2a | g_LastSampleAccessIndex
     MOV EDX,dword ptr [ESP + 0x38c]     ; 00572d30
     TEST EDX,EDX                        ; 00572d37
     JZ 0x00572d40                       ; 00572d39
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 00572d53 (CONDITIONAL_JUMP)  ; LAB_00572d53
     XOR EAX,EAX                         ; 00572d40
         ;   Label: LAB_00572d40
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00572d42 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00572d42 | g_LastSampleAccessIndex
         ;   Label: LAB_00572d42
     ADD ESP,0x378                       ; 00572d48
     POP EBP                             ; 00572d4e
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 00572d7b (CONDITIONAL_JUMP)  ; LAB_00572d7b
     POP EDI                             ; 00572d93
         ;   Label: LAB_00572d93
-    MOV ESI,dword ptr [0x02c78cec]      ; 00572d94 | g_INT_02c78cec
+    MOV ESI,dword ptr [0x02c78cec]      ; 00572d94 | g_SfxLastSlot
     LEA EAX,[ESI*0x4 + 0x0]             ; 00572d9a
     SUB EAX,ESI                         ; 00572da1
     MOV ECX,0x18                        ; 00572da3
@@ -142,12 +142,12 @@ section .text
         ;   XREF to: 00572d42 (CONDITIONAL_JUMP)  ; LAB_00572d42
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00572dd2
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
-    CMP dword ptr [0x02c807ec],0x0      ; 00572dd7 | g_INT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00572dd7 | g_SoundLockCount
     JLE 0x00572fb9                      ; 00572dde
         ;   XREF to: 00572fb9 (CONDITIONAL_JUMP)  ; LAB_00572fb9
     MOV EDX,dword ptr [0x02c74650]      ; 00572de4 | g_CSfxSlot_ARRAY_02c745ec[0].playback_state
         ;   Label: LAB_00572de4
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00572dea | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00572dea | g_LastSampleAccessIndex
     XOR EAX,EAX                         ; 00572df0
     XOR ESI,ESI                         ; 00572df2
     TEST EDX,EDX                        ; 00572df4
@@ -164,7 +164,7 @@ section .text
         ;   XREF to: 00572df8 (CONDITIONAL_JUMP)  ; LAB_00572df8
     MOV dword ptr [ESP + 0x364],ESI     ; 00572e12
         ;   Label: LAB_00572e12
-    MOV dword ptr [0x02c78ff0],EBX      ; 00572e19 | g_INT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 00572e19 | g_LastSampleAccessIndex
     TEST ESI,ESI                        ; 00572e1f
     JL 0x00572fa1                       ; 00572e21
         ;   XREF to: 00572fa1 (CONDITIONAL_JUMP)  ; LAB_00572fa1
@@ -264,7 +264,7 @@ section .text
         ;   XREF to: 0057346a (CONDITIONAL_JUMP)  ; LAB_0057346a
     MOV EDX,dword ptr [EBP + 0x68]      ; 00572f75
     MOV ECX,dword ptr [EDX + 0x158]     ; 00572f78 | g_SfxSamples[0].buffer_id
-    MOV EAX,[0x02c80650]                ; 00572f7e | g_CSoundDevice_PTR_02c80650
+    MOV EAX,[0x02c80650]                ; 00572f7e | g_CSoundDevicePtr
     PUSH ECX                            ; 00572f83
     MOV EDI,dword ptr [EAX]             ; 00572f84
     PUSH EAX                            ; 00572f86
@@ -283,7 +283,7 @@ section .text
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_00572fa1
     XOR EAX,EAX                         ; 00572fa6
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00572fa8 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00572fa8 | g_LastSampleAccessIndex
     ADD ESP,0x378                       ; 00572fae
     POP EBP                             ; 00572fb4
     POP EDI                             ; 00572fb5
@@ -324,7 +324,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x364]     ; 00573017
         ;   Label: LAB_00573017
     LEA EDI,[ESP + 0x200]               ; 0057301e
-    MOV EBX,dword ptr [0x02c78ff0]      ; 00573025 | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 00573025 | g_LastSampleAccessIndex
     XOR ESI,ESI                         ; 0057302b
     MOV dword ptr [ESP + 0x360],EAX     ; 0057302d
     XOR EDX,EDX                         ; 00573034
@@ -348,7 +348,7 @@ section .text
     MOV dword ptr [ESP + 0x370],ESI     ; 00573058
     MOV EAX,dword ptr [ESP + 0x370]     ; 0057305f
         ;   Label: LAB_0057305f
-    MOV dword ptr [0x02c78ff0],EBX      ; 00573066 | g_INT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 00573066 | g_LastSampleAccessIndex
     MOV dword ptr [ESP + 0x374],EAX     ; 0057306c
     TEST EAX,EAX                        ; 00573073
     JNZ 0x0057312a                      ; 00573075
@@ -659,7 +659,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x364]     ; 00573471
     SHL EAX,0x6                         ; 00573478
     OR EAX,EBP                          ; 0057347b
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0057347d | g_INT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0057347d | g_LastSampleAccessIndex
     ADD ESP,0x378                       ; 00573483
     POP EBP                             ; 00573489
     POP EDI                             ; 0057348a

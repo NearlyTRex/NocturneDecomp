@@ -12,18 +12,18 @@ void __cdecl core_gore_cpp_CGore_reset_FUN_004e5c00(CGore *this_ptr)
   CBloodParticle *pCVar1;
   CBloodParticle *pCVar2;
   
-  g_INT_01cd0ea8 = 0;
-  g_INT_01cd56ac = 0;
-  g_INT_01cd56b0 = 0;
-  g_INT_01cf69f4 = 0;
-  g_INT_01cf69f8 = 0;
+  g_BloodParticleIndex = 0;
+  g_BloodSplatIndex = 0;
+  g_BloodSplatCount = 0;
+  g_BloodPoolIndex = 0;
+  g_BloodPoolCount = 0;
   pCVar1 = g_BloodParticles;
   do {
     pCVar2 = pCVar1 + 1;
     (pCVar1->base).lifetime_remaining = 0.0;
     pCVar1 = pCVar2;
   } while (pCVar2 != g_BloodParticles + sizeof(g_BloodParticles) / sizeof(g_BloodParticles[0]));
-  g_INT_01cf6f00 = 0;
-  g_INT_01cf6efc = 0;
+  g_FootstepCount = 0;
+  g_FootstepIndex = 0;
   return;
 }

@@ -13,7 +13,7 @@
 ;   double g_DOUBLE_005dc0f2 = 0.150000000000000
 ;   float g_FLOAT_005f95d4 = 56
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 004e3d8c
     LEA EAX,[ESP + 0xdc]                ; 004e3d8d
     PUSH EAX                            ; 004e3d94
-    MOV EBX,dword ptr [0x00614d30]      ; 004e3d95 | g_CFireEffect_PTR_00614d30
+    MOV EBX,dword ptr [0x00614d30]      ; 004e3d95 | g_CFireEffectPtr
     PUSH EBX                            ; 004e3d9b
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0049d7e0 ; 004e3d9c
         ;   XREF to: 0049d7e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_0049d7e0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
@@ -238,7 +238,7 @@ section .text
     PUSH EAX                            ; 004e3df4
     LEA EAX,[ESP + 0xdc]                ; 004e3df5
     PUSH EAX                            ; 004e3dfc
-    MOV EDI,dword ptr [0x00614d30]      ; 004e3dfd | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004e3dfd | g_CFireEffectPtr
     PUSH EDI                            ; 004e3e03
     INC EBX                             ; 004e3e04
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0049d7e0 ; 004e3e05
@@ -358,7 +358,7 @@ section .text
     LEA EAX,[ESP + 0xa4]                ; 004e3fd3
     PUSH EAX                            ; 004e3fda
     LEA EAX,[ESP + 0x54]                ; 004e3fdb
-    MOV EDI,dword ptr [0x00614d30]      ; 004e3fdf | g_CFireEffect_PTR_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004e3fdf | g_CFireEffectPtr
     PUSH EAX                            ; 004e3fe5
     FMUL double ptr [ESP + 0x118]       ; 004e3fe6
     PUSH EDI                            ; 004e3fed

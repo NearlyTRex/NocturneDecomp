@@ -15,9 +15,9 @@
 ;   core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0 at 0053f821
 ;
 ; Referenced Globals:
-;   void* g_PTR_01c6b5cc
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
-;   int g_INT_01c6e2b8
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -42,9 +42,9 @@ section .text
         ;   XREF to: 0046b297 (CONDITIONAL_JUMP)  ; LAB_0046b297
     XOR ECX,ECX                         ; 0046b257
     MOV EDX,0x46f9a6                    ; 0046b259
-    MOV dword ptr [0x01c6e2b4],ECX      ; 0046b25e | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],ECX      ; 0046b264 | g_INT_01c6e2b8
-    MOV dword ptr [0x01c6b5cc],EDX      ; 0046b26a | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],ECX      ; 0046b25e | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],ECX      ; 0046b264 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6b5cc],EDX      ; 0046b26a | g_ScanlineRenderFunc
     LEA EAX,[ESI + 0x18]                ; 0046b270
         ;   Label: LAB_0046b270
     PUSH EAX                            ; 0046b273
@@ -75,9 +75,9 @@ section .text
     MOV EBP,0xc0                        ; 0046b298
     MOV EAX,0x6                         ; 0046b29d
     MOV EDI,0x46fcc8                    ; 0046b2a2
-    MOV dword ptr [0x01c6e2b4],EBP      ; 0046b2a7 | g_BIT_INTEGER32_01c6e2b4
-    MOV [0x01c6e2b8],EAX                ; 0046b2ad | g_INT_01c6e2b8
-    MOV dword ptr [0x01c6b5cc],EDI      ; 0046b2b2 | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EBP      ; 0046b2a7 | g_RenderStateFlags
+    MOV [0x01c6e2b8],EAX                ; 0046b2ad | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6b5cc],EDI      ; 0046b2b2 | g_ScanlineRenderFunc
     POP EDI                             ; 0046b2b8
     JMP 0x0046b270                      ; 0046b2b9
         ;   XREF to: 0046b270 (UNCONDITIONAL_JUMP)  ; LAB_0046b270

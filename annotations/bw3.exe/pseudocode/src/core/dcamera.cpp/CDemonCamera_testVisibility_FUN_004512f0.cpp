@@ -20,11 +20,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004512f0(CDemonCame
   uint uStack_14;
   
   engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880
-            (g_CDemonRenderer_PTR_005f2afc,&g_SCameraViewportState_015484dc);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SavedCameraState);
   output = g_SRenderVertex_ARRAY_0060b014;
   pCVar2 = corners + 8;
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e720
-            (g_CDemonRenderer_PTR_005f2afc,&g_SCameraViewportState_014a01f0);
+            (g_CDemonRenderer_PTR_005f2afc,&g_BackgroundSavedCameraState);
   do {
     engine_special_cpp_transformPoint_FUN_0056356c(&output->projected_vertex,corners);
     corners = corners + 1;
@@ -85,6 +85,6 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004512f0(CDemonCame
 LAB_004513a7:
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(g_CDemonRenderer_PTR_005f2afc,0);
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e720
-            (g_CDemonRenderer_PTR_005f2afc,&g_SCameraViewportState_015484dc);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SavedCameraState);
   return iVar3;
 }

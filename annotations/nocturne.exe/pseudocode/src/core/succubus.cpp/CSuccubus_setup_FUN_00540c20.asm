@@ -276,7 +276,7 @@ section .text
     PUSH EDX                            ; 00540ea6
     PUSH 0x1                            ; 00540ea7
     PUSH ESI                            ; 00540ea9
-    MOV [0x01cd4314],EAX                ; 00540eaa | g_INT_01cd4314
+    MOV [0x01cd4314],EAX                ; 00540eaa | g_MorphReverseWinding
     CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0 ; 00540eaf
         ;   XREF to: 004e02c0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 00540eb4
@@ -286,13 +286,13 @@ section .text
     MOV ECX,0x1                         ; 00540ec0
     PUSH ECX                            ; 00540ec5
     PUSH ESI                            ; 00540ec6
-    MOV dword ptr [0x01cd4314],ECX      ; 00540ec7 | g_INT_01cd4314
+    MOV dword ptr [0x01cd4314],ECX      ; 00540ec7 | g_MorphReverseWinding
     CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0 ; 00540ecd
         ;   XREF to: 004e02c0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 00540ed2
     XOR EDX,EDX                         ; 00540ed5
     PUSH ESI                            ; 00540ed7
-    MOV dword ptr [0x01cd4314],EDX      ; 00540ed8 | g_INT_01cd4314
+    MOV dword ptr [0x01cd4314],EDX      ; 00540ed8 | g_MorphReverseWinding
     MOV dword ptr [EBX + 0xedcc],EDX    ; 00540ede
     CALL core_morph.cpp_CMorph_getReady_FUN_004e03c0 ; 00540ee4
         ;   XREF to: 004e03c0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_getReady_FUN_004e03c0(CMorph * this_ptr)

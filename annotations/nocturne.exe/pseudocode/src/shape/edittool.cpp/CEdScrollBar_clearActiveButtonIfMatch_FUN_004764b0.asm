@@ -10,7 +10,7 @@
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_00476490 at 00476496
 ;
 ; Referenced Globals:
-;   void* g_PTR_01bcde24
+;   void* g_ActiveControl
 ;
 ; *****************************************************************************
 
@@ -18,12 +18,12 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 004764b0
         ;   Label: shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0
-    CMP EDX,dword ptr [0x01bcde24]      ; 004764b4 | g_PTR_01bcde24
+    CMP EDX,dword ptr [0x01bcde24]      ; 004764b4 | g_ActiveControl
     JZ 0x004764bd                       ; 004764ba
         ;   XREF to: 004764bd (CONDITIONAL_JUMP)  ; LAB_004764bd
     RET                                 ; 004764bc
     XOR ECX,ECX                         ; 004764bd
         ;   Label: LAB_004764bd
-    MOV dword ptr [0x01bcde24],ECX      ; 004764bf | g_PTR_01bcde24
+    MOV dword ptr [0x01bcde24],ECX      ; 004764bf | g_ActiveControl
     RET                                 ; 004764c5
 

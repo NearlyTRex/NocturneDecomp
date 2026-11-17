@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 971,
-    "complexity_score": 540,
+    "complexity_score": 544,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 380,
+    "pseudocode_lines": 384,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "warning_overlapping_globals",
       "wrong_global"
     ],
-    "total_lines": 1351
+    "total_lines": 1355
   },
   "cross_references": [],
   "function": {
@@ -109,13 +109,13 @@
     },
     {
       "addr": "0152bed4",
-      "name": "g_UINT_0152bed4",
+      "name": "g_CubeClipStage2Count",
       "type": "uint",
       "value": null
     },
     {
       "addr": "0152bf98",
-      "name": "g_UINT_0152bf98",
+      "name": "g_CubeClipStage3Count",
       "type": "uint",
       "value": null
     },
@@ -127,13 +127,13 @@
     },
     {
       "addr": "0152c120",
-      "name": "g_UINT_0152c120",
+      "name": "g_CubeClipStage5Count",
       "type": "uint",
       "value": null
     },
     {
       "addr": "0152c1e4",
-      "name": "g_UINT_0152c1e4",
+      "name": "g_CubeClippedTriangleCount",
       "type": "uint",
       "value": null
     },
@@ -341,7 +341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 344,
+      "line": 346,
       "match": "DAT_0152c1ec",
       "severity": "mild",
       "text": "*(float *)(&DAT_0152c1ec + iVar5) = pCVar8->y;",
@@ -349,7 +349,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 360,
+      "line": 364,
       "match": "DAT_0152c1ec",
       "severity": "mild",
       "text": "*(float *)(&DAT_0152c1ec + iVar5) = pCVar8->y;",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Scalar global g_FLOAT_0152c1f0 accessed via (&g_FLOAT_0152c1f0)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_0152c1f4 (at 0x0152c1f4, +4 bytes).",
-      "line": 345,
+      "line": 347,
       "match": "g_FLOAT_0152c1f0",
       "severity": "moderate",
       "text": "(&g_FLOAT_0152c1f0)[uVar2 * 3] = pCVar8->z;",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Scalar global g_FLOAT_0152c1f0 accessed via (&g_FLOAT_0152c1f0)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_0152c1f4 (at 0x0152c1f4, +4 bytes).",
-      "line": 361,
+      "line": 365,
       "match": "g_FLOAT_0152c1f0",
       "severity": "moderate",
       "text": "(&g_FLOAT_0152c1f0)[uVar2 * 3] = pCVar8->z;",
@@ -384,7 +384,7 @@
       "line": 109,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_0152be14[g_INT_0152be10].x = ((CVector3f *)pfVar9)->x;",
+      "text": "g_ClipStageMaxYBuffer[g_INT_0152be10].x = ((CVector3f *)pfVar9)->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -392,7 +392,7 @@
       "line": 154,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_0152bed8[g_UINT_0152bed4].x = pCVar8->x;",
+      "text": "g_ClipStageMinYBuffer[g_CubeClipStage2Count].x = pCVar8->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -400,7 +400,7 @@
       "line": 201,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_0152bf9c[g_UINT_0152bf98].x = pCVar8->x;",
+      "text": "g_ClipStageMaxXBuffer[g_CubeClipStage3Count].x = pCVar8->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -408,7 +408,7 @@
       "line": 248,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_0152c060[g_INT_0152c05c].x = pCVar8->x;",
+      "text": "g_ClipStageMinXBuffer[g_INT_0152c05c].x = pCVar8->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -416,7 +416,7 @@
       "line": 294,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_0152c124[g_UINT_0152c120].x = pCVar8->x;",
+      "text": "g_ClipStageMinZBuffer[g_CubeClipStage5Count].x = pCVar8->x;",
       "type": "unrolled_memcpy"
     }
   ]

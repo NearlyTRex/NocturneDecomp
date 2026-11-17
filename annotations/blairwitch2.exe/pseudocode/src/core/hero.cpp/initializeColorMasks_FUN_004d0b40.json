@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 124,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 42,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 137
+    "total_lines": 135
   },
   "cross_references": [],
   "function": {
@@ -32,109 +32,109 @@
   "globals": [
     {
       "addr": "0061c8d0",
-      "name": "g_MMX_INTEGER_0061c8d0",
+      "name": "g_RedMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "0061c8d8",
-      "name": "g_MMX_INTEGER_0061c8d8",
+      "name": "g_GreenMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "0061c8e0",
-      "name": "g_MMX_INTEGER_0061c8e0",
+      "name": "g_BlueMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "0061c8e8",
-      "name": "g_QWORD_0061c8e8",
+      "name": "g_RedMask32",
       "type": "qword",
       "value": "0xf80000"
     },
     {
       "addr": "0061c908",
-      "name": "g_QWORD_0061c908",
+      "name": "g_GreenMask32",
       "type": "qword",
       "value": "0xfc00"
     },
     {
       "addr": "0061c928",
-      "name": "g_QWORD_0061c928",
+      "name": "g_BlueMask32",
       "type": "qword",
       "value": "0xf8"
     },
     {
       "addr": "0061c930",
-      "name": "g_QWORD_0061c930",
+      "name": "g_TotalDitherShift",
       "type": "qword",
       "value": "0x8"
     },
     {
       "addr": "0061c950",
-      "name": "g_QWORD_0061c950",
+      "name": "g_GreenBlueDitherShift",
       "type": "qword",
       "value": "0x5"
     },
     {
       "addr": "0061c970",
-      "name": "g_QWORD_0061c970",
+      "name": "g_BlueBitShift",
       "type": "qword",
       "value": "0x3"
     },
     {
       "addr": "01c35814",
-      "name": "g_BIT_INTEGER32_01c35814",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35818",
-      "name": "g_INT_01c35818",
+      "name": "g_RedScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c3581c",
-      "name": "g_BIT_INTEGER32_01c3581c",
+      "name": "g_RedDitherShift",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "g_BIT_INTEGER32_01c35820",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35824",
-      "name": "g_INT_01c35824",
+      "name": "g_GreenScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c35828",
-      "name": "g_BIT_INTEGER32_01c35828",
+      "name": "g_GreenDitherShift",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "g_BIT_INTEGER32_01c3582c",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35830",
-      "name": "g_INT_01c35830",
+      "name": "g_BlueScaleFactor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c35834",
-      "name": "g_BIT_INTEGER32_01c35834",
+      "name": "g_BlueDitherShift",
       "type": "_BIT_INTEGER32",
       "value": null
     }
@@ -219,17 +219,25 @@
     {
       "description": "Complex pointer cast",
       "line": 23,
-      "match": "(ushort *)((int)g_USHORT_ARRAY_01c34910",
+      "match": "(ushort *)((int)g_ColorTable16",
       "severity": "moderate",
-      "text": "*(ushort *)((int)g_USHORT_ARRAY_01c34910 + iVar7) =",
+      "text": "*(ushort *)((int)g_ColorTable16 + iVar7) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_BlueMask32._0_4_ = uVar4 << (g_BlueDitherShift.bytes[0] & 0x1f);",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 38,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_0061c928._0_4_ = uVar4 << (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f);",
+      "text": "g_RedMask32._0_4_ = (uVar9 << (g_RedDitherShift.bytes[0] & 0x1f)) << 0x10;",
       "type": "unknown_field"
     },
     {
@@ -237,7 +245,7 @@
       "line": 39,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_0061c8e8._0_4_ = (uVar9 << (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f)) << 0x10;",
+      "text": "g_GreenMask32._0_4_ = (uVar6 << (g_GreenDitherShift.bytes[0] & 0x1f)) << 8;",
       "type": "unknown_field"
     },
     {
@@ -245,31 +253,23 @@
       "line": 40,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_0061c908._0_4_ = (uVar6 << (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f)) << 8;",
+      "text": "g_TotalDitherShift._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 41,
+      "line": 42,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_0061c930._0_4_ =",
+      "text": "g_BlueBitShift._0_4_ = g_BlueDitherShift;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 44,
+      "line": 43,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_0061c970._0_4_ = g_BIT_INTEGER32_01c35834;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 45,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_QWORD_0061c950._0_4_ = g_BIT_INTEGER32_01c35828.dword + g_BIT_INTEGER32_01c35834.dword;",
+      "text": "g_GreenBlueDitherShift._0_4_ = g_GreenDitherShift.dword + g_BlueDitherShift.dword;",
       "type": "unknown_field"
     }
   ]

@@ -107,10 +107,10 @@ section .text
     TEST ECX,ECX                        ; 004c083e
     JNZ 0x004c0dfe                      ; 004c0840
         ;   XREF to: 004c0dfe (CONDITIONAL_JUMP)  ; LAB_004c0dfe
-    MOV EAX,[0x01c5fadc]                ; 004c0846 | g_INT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 004c0846 | g_MouseX
         ;   Label: LAB_004c0846
     MOV dword ptr [ESP + 0x7e0],EAX     ; 004c084b
-    MOV EAX,[0x01c5fae0]                ; 004c0852 | g_INT_01c5fae0
+    MOV EAX,[0x01c5fae0]                ; 004c0852 | g_MouseY
     MOV dword ptr [ESP + 0x81c],EAX     ; 004c0857
     MOV EAX,[0x005fba18]                ; 004c085e | g_INT_005fba18
     MOV dword ptr [ESP + 0x7d8],EAX     ; 004c0863
@@ -191,8 +191,8 @@ section .text
     ADD ESP,0xc                         ; 004c0982
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c0985
     MOV EAX,dword ptr [EAX + 0x50]      ; 004c0988
-    MOV BL,byte ptr [EAX + 0x1d21fa0]   ; 004c098b | g_CHAR_ARRAY_01d21fa0
-    MOV BH,byte ptr [EAX + 0x1c6cef0]   ; 004c0991 | g_CHAR_ARRAY_01c6cef0
+    MOV BL,byte ptr [EAX + 0x1d21fa0]   ; 004c098b | g_PrevKeyboardState
+    MOV BH,byte ptr [EAX + 0x1c6cef0]   ; 004c0991 | g_KeyboardState
     LEA EDX,[ESI + 0x14]                ; 004c0997
     CMP BL,BH                           ; 004c099a
     JZ 0x004c0e10                       ; 004c099c
@@ -204,8 +204,8 @@ section .text
         ;   Label: LAB_004c09ab
     MOV EAX,dword ptr [EAX + 0x54]      ; 004c09ae
     MOV EDX,dword ptr [EBP + 0x18]      ; 004c09b1
-    MOV BL,byte ptr [EAX + 0x1d21fa0]   ; 004c09b4 | g_CHAR_ARRAY_01d21fa0
-    MOV CL,byte ptr [EAX + 0x1c6cef0]   ; 004c09ba | g_CHAR_ARRAY_01c6cef0
+    MOV BL,byte ptr [EAX + 0x1d21fa0]   ; 004c09b4 | g_PrevKeyboardState
+    MOV CL,byte ptr [EAX + 0x1c6cef0]   ; 004c09ba | g_KeyboardState
     ADD EDX,0x18                        ; 004c09c0
     CMP BL,CL                           ; 004c09c3
     JZ 0x004c0e1b                       ; 004c09c5
@@ -217,8 +217,8 @@ section .text
         ;   Label: LAB_004c09d4
     MOV EAX,dword ptr [EAX + 0x6c]      ; 004c09d7
     MOV EDX,dword ptr [EBP + 0x18]      ; 004c09da
-    MOV BL,byte ptr [EAX + 0x1d21fa0]   ; 004c09dd | g_CHAR_ARRAY_01d21fa0
-    MOV CH,byte ptr [EAX + 0x1c6cef0]   ; 004c09e3 | g_CHAR_ARRAY_01c6cef0
+    MOV BL,byte ptr [EAX + 0x1d21fa0]   ; 004c09dd | g_PrevKeyboardState
+    MOV CH,byte ptr [EAX + 0x1c6cef0]   ; 004c09e3 | g_KeyboardState
     ADD EDX,0x1c                        ; 004c09e9
     CMP BL,CH                           ; 004c09ec
     JZ 0x004c0e26                       ; 004c09ee
@@ -229,7 +229,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c09fd
         ;   Label: LAB_004c09fd
     MOV EDI,dword ptr [ECX + 0x94]      ; 004c0a00
-    MOV EAX,[0x00600284]                ; 004c0a06 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0a06 | g_CKeysPtr
     PUSH EDI                            ; 004c0a0b
     MOV EDX,dword ptr [EAX]             ; 004c0a0c | g_PTR_01d70a78
     PUSH EAX                            ; 004c0a0e | g_PTR_01d70a78
@@ -251,7 +251,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0a39
         ;   Label: LAB_004c0a39
     MOV EBX,dword ptr [ECX + 0x98]      ; 004c0a3c
-    MOV EAX,[0x00600284]                ; 004c0a42 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0a42 | g_CKeysPtr
     PUSH EBX                            ; 004c0a47
     MOV EDX,dword ptr [EAX]             ; 004c0a48 | g_PTR_01d70a78
     PUSH EAX                            ; 004c0a4a | g_PTR_01d70a78
@@ -273,7 +273,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0a75
         ;   Label: LAB_004c0a75
     MOV ESI,dword ptr [ECX + 0x9c]      ; 004c0a78
-    MOV EAX,[0x00600284]                ; 004c0a7e | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0a7e | g_CKeysPtr
     PUSH ESI                            ; 004c0a83
     MOV EDX,dword ptr [EAX]             ; 004c0a84 | g_PTR_01d70a78
     PUSH EAX                            ; 004c0a86 | g_PTR_01d70a78
@@ -293,7 +293,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0aad
         ;   Label: LAB_004c0aad
     MOV EDI,dword ptr [ECX + 0xa0]      ; 004c0ab0
-    MOV EAX,[0x00600284]                ; 004c0ab6 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0ab6 | g_CKeysPtr
     PUSH EDI                            ; 004c0abb
     MOV EDX,dword ptr [EAX]             ; 004c0abc | g_PTR_01d70a78
     PUSH EAX                            ; 004c0abe | g_PTR_01d70a78
@@ -321,7 +321,7 @@ section .text
     MOV EBX,EAX                         ; 004c0b04
     MOV dword ptr [ESP + 0x7b4],EAX     ; 004c0b06
     MOV ESI,dword ptr [ECX + 0x80]      ; 004c0b0d
-    MOV EAX,[0x00600284]                ; 004c0b13 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0b13 | g_CKeysPtr
     PUSH ESI                            ; 004c0b18
     MOV EDX,dword ptr [EAX]             ; 004c0b19 | g_PTR_01d70a78
     PUSH EAX                            ; 004c0b1b | g_PTR_01d70a78
@@ -346,7 +346,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0b4e
         ;   Label: LAB_004c0b4e
     MOV EDI,dword ptr [ECX + 0x84]      ; 004c0b51
-    MOV EAX,[0x00600284]                ; 004c0b57 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0b57 | g_CKeysPtr
     PUSH EDI                            ; 004c0b5c
     MOV EDX,dword ptr [EAX]             ; 004c0b5d | g_PTR_01d70a78
     PUSH EAX                            ; 004c0b5f | g_PTR_01d70a78
@@ -371,7 +371,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0b98
         ;   Label: LAB_004c0b98
     MOV EBX,dword ptr [ECX + 0x88]      ; 004c0b9b
-    MOV EAX,[0x00600284]                ; 004c0ba1 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0ba1 | g_CKeysPtr
     PUSH EBX                            ; 004c0ba6
     MOV EDX,dword ptr [EAX]             ; 004c0ba7 | g_PTR_01d70a78
     PUSH EAX                            ; 004c0ba9 | g_PTR_01d70a78
@@ -396,7 +396,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0be2
         ;   Label: LAB_004c0be2
     MOV EDI,dword ptr [ECX + 0x8c]      ; 004c0be5
-    MOV EAX,[0x00600284]                ; 004c0beb | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0beb | g_CKeysPtr
     PUSH EDI                            ; 004c0bf0
     MOV EDX,dword ptr [EAX]             ; 004c0bf1 | g_PTR_01d70a78
     PUSH EAX                            ; 004c0bf3 | g_PTR_01d70a78
@@ -421,7 +421,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004c0c2c
         ;   Label: LAB_004c0c2c
     MOV EBX,dword ptr [ECX + 0x90]      ; 004c0c2f
-    MOV EAX,[0x00600284]                ; 004c0c35 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004c0c35 | g_CKeysPtr
     PUSH EBX                            ; 004c0c3a
     MOV EDX,dword ptr [EAX]             ; 004c0c3b | g_PTR_01d70a78
     PUSH EAX                            ; 004c0c3d | g_PTR_01d70a78
@@ -452,7 +452,7 @@ section .text
     MOV dword ptr [0x01d22c9c],EDX      ; 004c0c85 | g_INT_01d22c9c
     MOV dword ptr [0x01d1e334],EDX      ; 004c0c8b | g_INT_01d1e334
     MOV dword ptr [0x01d1e324],EDX      ; 004c0c91 | g_INT_01d1e324
-    MOV dword ptr [0x01c5fae4],EDX      ; 004c0c97 | g_BIT_INTEGER32_01c5fae4
+    MOV dword ptr [0x01c5fae4],EDX      ; 004c0c97 | g_MouseButtonFlags
     MOV dword ptr [0x01d1e34c],EDX      ; 004c0c9d | g_CDemonActor_PTR_01d1e34c
     CALL sound_sndmain.cpp_killAllSfx_FUN_00556c60 ; 004c0ca3
         ;   XREF to: 00556c60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_00556c60()
@@ -469,7 +469,7 @@ section .text
     CMP dword ptr [EAX + 0x264],0x0     ; 004c0cd2
     JZ 0x004c0eec                       ; 004c0cd9
         ;   XREF to: 004c0eec (CONDITIONAL_JUMP)  ; LAB_004c0eec
-    TEST byte ptr [0x01c5fae4],0x1      ; 004c0cdf | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x1      ; 004c0cdf | g_MouseButtonFlags
     JZ 0x004c0d71                       ; 004c0ce6
         ;   XREF to: 004c0d71 (CONDITIONAL_JUMP)  ; LAB_004c0d71
     MOV EAX,dword ptr [ESP + 0x7d8]     ; 004c0cec
@@ -503,7 +503,7 @@ section .text
     JZ 0x004c0ed0                       ; 004c0d53
         ;   XREF to: 004c0ed0 (CONDITIONAL_JUMP)  ; LAB_004c0ed0
     MOV EAX,dword ptr [EAX + 0x30]      ; 004c0d59
-    CMP byte ptr [EAX + 0x1c6cef0],0x0  ; 004c0d5c | g_CHAR_ARRAY_01c6cef0
+    CMP byte ptr [EAX + 0x1c6cef0],0x0  ; 004c0d5c | g_KeyboardState
     SETZ AL                             ; 004c0d63
     MOV EDX,dword ptr [EBP + 0x18]      ; 004c0d66
         ;   Label: LAB_004c0d66
@@ -527,7 +527,7 @@ section .text
     FMUL float ptr [EAX + 0x2c]         ; 004c0dae
     FMUL float ptr [EAX + 0x2c]         ; 004c0db1
     FMUL float ptr [0x005c3c0c]         ; 004c0db4 | g_FLOAT_005c3c0c
-    MOV DH,byte ptr [0x01c5fae4]        ; 004c0dba | g_BIT_INTEGER32_01c5fae4
+    MOV DH,byte ptr [0x01c5fae4]        ; 004c0dba | g_MouseButtonFlags
     FSTP float ptr [EAX + 0x2c]         ; 004c0dc0
     TEST DH,0x2                         ; 004c0dc3
     JNZ 0x004c0ede                      ; 004c0dc6
@@ -617,7 +617,7 @@ section .text
     XOR ECX,ECX                         ; 004c0e98
         ;   Label: LAB_004c0e98
     MOV EAX,0x7149f2ca                  ; 004c0e9a
-    MOV dword ptr [0x01c5fae4],ECX      ; 004c0e9f | g_BIT_INTEGER32_01c5fae4
+    MOV dword ptr [0x01c5fae4],ECX      ; 004c0e9f | g_MouseButtonFlags
     MOV dword ptr [0x01d1e334],ECX      ; 004c0ea5 | g_INT_01d1e334
     MOV dword ptr [0x01d1e34c],ECX      ; 004c0eab | g_CDemonActor_PTR_01d1e34c
     MOV [0x01d22c30],EAX                ; 004c0eb1 | g_FLOAT_01d22c30
@@ -631,7 +631,7 @@ section .text
         ;   XREF to: 004c0d49 (UNCONDITIONAL_JUMP)  ; LAB_004c0d49
     MOV EAX,dword ptr [EAX + 0x30]      ; 004c0ed0
         ;   Label: LAB_004c0ed0
-    MOV AL,byte ptr [EAX + 0x1c6cef0]   ; 004c0ed3 | g_CHAR_ARRAY_01c6cef0
+    MOV AL,byte ptr [EAX + 0x1c6cef0]   ; 004c0ed3 | g_KeyboardState
     JMP 0x004c0d66                      ; 004c0ed9
         ;   XREF to: 004c0d66 (UNCONDITIONAL_JUMP)  ; LAB_004c0d66
     MOV dword ptr [EAX + 0xc],0x1       ; 004c0ede
@@ -666,7 +666,7 @@ section .text
     TEST ESI,ESI                        ; 004c0f3d
     JNZ 0x004c1237                      ; 004c0f3f
         ;   XREF to: 004c1237 (CONDITIONAL_JUMP)  ; LAB_004c1237
-    CMP dword ptr [0x01c5fae4],0x1      ; 004c0f45 | g_BIT_INTEGER32_01c5fae4
+    CMP dword ptr [0x01c5fae4],0x1      ; 004c0f45 | g_MouseButtonFlags
     JNZ 0x004c290b                      ; 004c0f4c
         ;   XREF to: 004c290b (CONDITIONAL_JUMP)  ; LAB_004c290b
     MOV EAX,[0x00603b28]                ; 004c0f52 | g_CDemonSetPtr
@@ -887,7 +887,7 @@ section .text
         ;   Label: LAB_004c1284
     JZ 0x004c3126                       ; 004c128c
         ;   XREF to: 004c3126 (CONDITIONAL_JUMP)  ; LAB_004c3126
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c1292 | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c1292 | g_MouseButtonFlags
     JZ 0x004c3126                       ; 004c1299
         ;   XREF to: 004c3126 (CONDITIONAL_JUMP)  ; LAB_004c3126
     MOV EBX,dword ptr [ESP + 0x818]     ; 004c129f
@@ -1097,7 +1097,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 004c15d5
         ;   Label: LAB_004c15d5
     MOV dword ptr [EAX + 0xc],0x1       ; 004c15d8
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c15df | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c15df | g_MouseButtonFlags
         ;   Label: LAB_004c15df
     JZ 0x004c1610                       ; 004c15e6
         ;   XREF to: 004c1610 (CONDITIONAL_JUMP)  ; LAB_004c1610
@@ -1114,13 +1114,13 @@ section .text
         ;   XREF to: 004c1610 (CONDITIONAL_JUMP)  ; LAB_004c1610
     MOV EAX,dword ptr [EBP + 0x18]      ; 004c1606
     MOV dword ptr [EAX + 0xc],0x1       ; 004c1609
-    TEST byte ptr [0x01c5fae4],0x1      ; 004c1610 | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x1      ; 004c1610 | g_MouseButtonFlags
         ;   Label: LAB_004c1610
     JZ 0x004c3140                       ; 004c1617
         ;   XREF to: 004c3140 (CONDITIONAL_JUMP)  ; LAB_004c3140
     MOV EAX,[0x00603b28]                ; 004c161d | g_CDemonSetPtr
         ;   Label: LAB_004c161d
-    MOV ESI,dword ptr [0x01c5fae4]      ; 004c1622 | g_BIT_INTEGER32_01c5fae4
+    MOV ESI,dword ptr [0x01c5fae4]      ; 004c1622 | g_MouseButtonFlags
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004c1628 | g_CDemonSetInstance.selected_camera_index
     CMP ESI,0x1                         ; 004c162e
     JNZ 0x004c18c1                      ; 004c1631
@@ -1148,7 +1148,7 @@ section .text
     TEST EBX,EBX                        ; 004c1689
     JZ 0x004c3f1e                       ; 004c168b
         ;   XREF to: 004c3f1e (CONDITIONAL_JUMP)  ; LAB_004c3f1e
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c1691 | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c1691 | g_MouseButtonFlags
     JZ 0x004c16d6                       ; 004c1698
         ;   XREF to: 004c16d6 (CONDITIONAL_JUMP)  ; LAB_004c16d6
     CMP dword ptr [0x01d1e34c],0x0      ; 004c169a | g_CDemonActor_PTR_01d1e34c
@@ -1293,7 +1293,7 @@ section .text
         ;   Label: LAB_004c1893
     JZ 0x004c3ea6                       ; 004c189b
         ;   XREF to: 004c3ea6 (CONDITIONAL_JUMP)  ; LAB_004c3ea6
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c18a1 | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c18a1 | g_MouseButtonFlags
     JZ 0x004c3ea6                       ; 004c18a8
         ;   XREF to: 004c3ea6 (CONDITIONAL_JUMP)  ; LAB_004c3ea6
     MOV ECX,0x7149f2ca                  ; 004c18ae
@@ -1861,7 +1861,7 @@ section .text
         ;   XREF to: 004c2072 (CONDITIONAL_JUMP)  ; LAB_004c2072
     XOR ECX,ECX                         ; 004c206a
     MOV dword ptr [0x01d1e34c],ECX      ; 004c206c | g_CDemonActor_PTR_01d1e34c
-    MOV EAX,[0x01c5fae4]                ; 004c2072 | g_BIT_INTEGER32_01c5fae4
+    MOV EAX,[0x01c5fae4]                ; 004c2072 | g_MouseButtonFlags
         ;   Label: LAB_004c2072
     MOV [0x01d1e324],EAX                ; 004c2077 | g_INT_01d1e324
     MOV EAX,[0x01d5ba14]                ; 004c207c | g_INT_01d5ba14
@@ -2145,7 +2145,7 @@ section .text
         ;   XREF to: 004c24c7 (CONDITIONAL_JUMP)  ; LAB_004c24c7
     ADD EAX,0x2e8                       ; 004c24ae
     PUSH EAX                            ; 004c24b3
-    MOV EBX,dword ptr [0x005fba60]      ; 004c24b4 | g_CEventList_PTR_005fba60
+    MOV EBX,dword ptr [0x005fba60]      ; 004c24b4 | g_CEventListPtr
     PUSH EBX                            ; 004c24ba
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004c24bb
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -2508,7 +2508,7 @@ section .text
         ;   Label: LAB_004c2900
     JMP 0x004c0f2e                      ; 004c2906
         ;   XREF to: 004c0f2e (UNCONDITIONAL_JUMP)  ; LAB_004c0f2e
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c290b | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c290b | g_MouseButtonFlags
         ;   Label: LAB_004c290b
     JNZ 0x004c0f52                      ; 004c2912
         ;   XREF to: 004c0f52 (CONDITIONAL_JUMP)  ; LAB_004c0f52
@@ -2557,7 +2557,7 @@ section .text
         ;   XREF to: 004c29cb (CONDITIONAL_JUMP)  ; LAB_004c29cb
     ADD EAX,0x2e8                       ; 004c29b3
     PUSH EAX                            ; 004c29b8
-    MOV EAX,[0x005fba60]                ; 004c29b9 | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 004c29b9 | g_CEventListPtr
     PUSH EAX                            ; 004c29be
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004c29bf
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -2804,7 +2804,7 @@ section .text
         ;   XREF to: 004c11ce (CONDITIONAL_JUMP)  ; LAB_004c11ce
     JMP 0x004c122b                      ; 004c2c6d
         ;   XREF to: 004c122b (UNCONDITIONAL_JUMP)  ; LAB_004c122b
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c2c72 | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c2c72 | g_MouseButtonFlags
         ;   Label: LAB_004c2c72
     JZ 0x004c1245                       ; 004c2c79
         ;   XREF to: 004c1245 (CONDITIONAL_JUMP)  ; LAB_004c1245
@@ -3950,7 +3950,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x3ac]     ; 004c3e59
     JMP 0x004c188e                      ; 004c3e60
         ;   XREF to: 004c188e (UNCONDITIONAL_JUMP)  ; LAB_004c188e
-    CMP dword ptr [0x01c5fae4],0x1      ; 004c3e65 | g_BIT_INTEGER32_01c5fae4
+    CMP dword ptr [0x01c5fae4],0x1      ; 004c3e65 | g_MouseButtonFlags
         ;   Label: LAB_004c3e65
     JNZ 0x004c1893                      ; 004c3e6c
         ;   XREF to: 004c1893 (CONDITIONAL_JUMP)  ; LAB_004c1893
@@ -3988,7 +3988,7 @@ section .text
     JZ 0x004c457c                       ; 004c3ee3
         ;   XREF to: 004c457c (CONDITIONAL_JUMP)  ; LAB_004c457c
     MOV EAX,dword ptr [EAX + 0x30]      ; 004c3ee9
-    CMP byte ptr [EAX + 0x1c6cef0],0x0  ; 004c3eec | g_CHAR_ARRAY_01c6cef0
+    CMP byte ptr [EAX + 0x1c6cef0],0x0  ; 004c3eec | g_KeyboardState
     SETZ AL                             ; 004c3ef3
     MOV EDX,dword ptr [EBP + 0x18]      ; 004c3ef6
         ;   Label: LAB_004c3ef6
@@ -4129,7 +4129,7 @@ section .text
         ;   Label: LAB_004c40fd
     JZ 0x004c4421                       ; 004c4105
         ;   XREF to: 004c4421 (CONDITIONAL_JUMP)  ; LAB_004c4421
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c410b | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c410b | g_MouseButtonFlags
     JZ 0x004c4421                       ; 004c4112
         ;   XREF to: 004c4421 (CONDITIONAL_JUMP)  ; LAB_004c4421
     CMP dword ptr [0x01d1e334],0x1      ; 004c4118 | g_INT_01d1e334
@@ -4307,7 +4307,7 @@ section .text
     CMP dword ptr [ESP + 0x7b4],0x0     ; 004c43d9
     JZ 0x004c452d                       ; 004c43e1
         ;   XREF to: 004c452d (CONDITIONAL_JUMP)  ; LAB_004c452d
-    TEST byte ptr [0x01c5fae4],0x2      ; 004c43e7 | g_BIT_INTEGER32_01c5fae4
+    TEST byte ptr [0x01c5fae4],0x2      ; 004c43e7 | g_MouseButtonFlags
     JZ 0x004c452d                       ; 004c43ee
         ;   XREF to: 004c452d (CONDITIONAL_JUMP)  ; LAB_004c452d
     CMP dword ptr [0x01d1e334],0x1      ; 004c43f4 | g_INT_01d1e334
@@ -4383,7 +4383,7 @@ section .text
     MOV dword ptr [ESP + 0x4e4],ECX     ; 004c4521
     JMP 0x004c42bd                      ; 004c4528
         ;   XREF to: 004c42bd (UNCONDITIONAL_JUMP)  ; LAB_004c42bd
-    CMP dword ptr [0x01c5fae4],0x1      ; 004c452d | g_BIT_INTEGER32_01c5fae4
+    CMP dword ptr [0x01c5fae4],0x1      ; 004c452d | g_MouseButtonFlags
         ;   Label: LAB_004c452d
     JNZ 0x004c3ecc                      ; 004c4534
         ;   XREF to: 004c3ecc (CONDITIONAL_JUMP)  ; LAB_004c3ecc
@@ -4407,7 +4407,7 @@ section .text
         ;   XREF to: 004c3ed9 (UNCONDITIONAL_JUMP)  ; LAB_004c3ed9
     MOV EAX,dword ptr [EAX + 0x30]      ; 004c457c
         ;   Label: LAB_004c457c
-    MOV AL,byte ptr [EAX + 0x1c6cef0]   ; 004c457f | g_CHAR_ARRAY_01c6cef0
+    MOV AL,byte ptr [EAX + 0x1c6cef0]   ; 004c457f | g_KeyboardState
     JMP 0x004c3ef6                      ; 004c4585
         ;   XREF to: 004c3ef6 (UNCONDITIONAL_JUMP)  ; LAB_004c3ef6
     MOV dword ptr [0x01d1e348],ESI      ; 004c458a | g_INT_01d1e348

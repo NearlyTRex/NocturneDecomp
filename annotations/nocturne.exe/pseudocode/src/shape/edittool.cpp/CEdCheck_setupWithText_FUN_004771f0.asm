@@ -17,7 +17,7 @@
 ;   undefined4 s_CElephantGun_0057f0fc+1
 ;   undefined4 s_CElephantGun_0057f0fc+2
 ;   CBitFont* g_CBitFont_PTR_01bcd070
-;   int g_INT_01bcd9b8
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01bcd9bc
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -75,7 +75,7 @@ section .text
     PUSH 0x6a                           ; 0047723e
     MOV ESI,dword ptr [EAX + 0x3168]    ; 00477240
     PUSH EAX                            ; 00477246
-    MOV dword ptr [0x01bcd9b8],ESI      ; 00477247 | g_INT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],ESI      ; 00477247 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0047724d
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00477252

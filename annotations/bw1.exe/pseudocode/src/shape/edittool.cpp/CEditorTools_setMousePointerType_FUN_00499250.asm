@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   width
 ;
 ; Referenced Globals:
-;   int g_INT_0061abc4 = 0x9
-;   int g_INT_0061abc8 = 0x9
+;   int g_CursorSizeHorizontal = 0x9
+;   int g_CursorSizeVertical = 0x9
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_01c3f540
@@ -56,8 +56,8 @@ section .text
     INC EBX                             ; 0049928b
     MOV EDX,dword ptr [ESP + 0x10]      ; 0049928c
         ;   Label: LAB_0049928c
-    MOV dword ptr [0x0061abc4],EBX      ; 00499290 | g_INT_0061abc4
-    MOV dword ptr [0x0061abc8],EDX      ; 00499296 | g_INT_0061abc8
+    MOV dword ptr [0x0061abc4],EBX      ; 00499290 | g_CursorSizeHorizontal
+    MOV dword ptr [0x0061abc8],EDX      ; 00499296 | g_CursorSizeVertical
     POP EBX                             ; 0049929c
     RET                                 ; 0049929d
     MOV dword ptr [ESP + 0x10],0xb      ; 0049929e
@@ -126,8 +126,8 @@ section .text
     POP ESI                             ; 00499336
     POP EDI                             ; 00499337
     MOV EDX,dword ptr [ESP + 0x10]      ; 00499338
-    MOV dword ptr [0x0061abc4],EBX      ; 0049933c | g_INT_0061abc4
-    MOV dword ptr [0x0061abc8],EDX      ; 00499342 | g_INT_0061abc8
+    MOV dword ptr [0x0061abc4],EBX      ; 0049933c | g_CursorSizeHorizontal
+    MOV dword ptr [0x0061abc8],EDX      ; 00499342 | g_CursorSizeVertical
     POP EBX                             ; 00499348
     RET                                 ; 00499349
 

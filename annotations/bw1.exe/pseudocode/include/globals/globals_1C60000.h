@@ -11,9 +11,9 @@
 // =============================================================================
 
 // CBulletHole[256]
-extern CBulletHole g_CBulletHole_ARRAY_01c6eaa8[256];
+extern CBulletHole g_BulletHolePool[256];
 
 // int
 extern int g_INT_01c6eaa0;
-extern int g_INT_01c6eaa4;
+extern int g_BulletHoleAllocIndex;
 

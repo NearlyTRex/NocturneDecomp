@@ -26,7 +26,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005760b0(CIniFile *ini_file)
   float fStack_18;
   float fStack_14;
   
-  pcVar3 = g_CHAR_ARRAY_00623330;
+  pcVar3 = g_DefaultSoundDeviceName;
   pcVar4 = local_194;
   for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar4 = *(uint *)pcVar3;
@@ -68,7 +68,7 @@ LAB_005761aa:
       engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(ini_file,"Mute",&iStack_30);
       iVar2 = 0;
       sound_sndmain_cpp_setSoundMuted_FUN_00573600(iStack_30);
-      if (0 < g_INT_006232e4) {
+      if (0 < g_MaxSoundChannels) {
         do {
           _sprintf(acStack_94,"SfxChannel%dEnabled");
           iStack_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00573cd0(iVar2);
@@ -80,7 +80,7 @@ LAB_005761aa:
           engine_ini_cpp_CIniFile_getFloat_FUN_004f4db0(ini_file,acStack_94,&fStack_18);
           sound_sndmain_cpp_setSfxChannelVol_FUN_00573b30(iVar2,fStack_18);
           iVar2 = iVar2 + 1;
-        } while (iVar2 < g_INT_006232e4);
+        } while (iVar2 < g_MaxSoundChannels);
       }
       return;
     }

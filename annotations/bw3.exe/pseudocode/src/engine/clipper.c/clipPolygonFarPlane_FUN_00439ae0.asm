@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_3_00439adc = 00439c25
 ;   int g_INT_005f12f4 = 0x7fffffff
-;   int g_INT_007e3e88
+;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_SRenderVertex_ARRAY_007e3e8c
 ;   undefined4 g_SRenderVertex_ARRAY_007e3e8c[0].projected_vertex.transformed_y
 ;   undefined4 g_SRenderVertex_ARRAY_007e3e8c[0].projected_vertex.inv_z
@@ -34,7 +34,7 @@ section .text
     TEST EDX,EDX                        ; 00439aef
     JZ 0x00439b26                       ; 00439af1
         ;   XREF to: 00439b26 (CONDITIONAL_JUMP)  ; LAB_00439b26
-    MOV ECX,dword ptr [0x007e3e88]      ; 00439af3 | g_INT_007e3e88
+    MOV ECX,dword ptr [0x007e3e88]      ; 00439af3 | g_ClippedVertexCount
     TEST ECX,ECX                        ; 00439af9
     JLE 0x00439b1e                      ; 00439afb
         ;   XREF to: 00439b1e (CONDITIONAL_JUMP)  ; LAB_00439b1e
@@ -64,7 +64,7 @@ section .text
     POP ESI                             ; 00439b2b
     POP EBX                             ; 00439b2c
     RET                                 ; 00439b2d
-    MOV EAX,[0x007e3e88]                ; 00439b2e | g_INT_007e3e88
+    MOV EAX,[0x007e3e88]                ; 00439b2e | g_ClippedVertexCount
         ;   Label: LAB_00439b2e
     MOV [0x007e450c],EAX                ; 00439b33 | g_INT_007e450c
     LEA ECX,[EAX*0x4 + 0x0]             ; 00439b38
@@ -102,7 +102,7 @@ section .text
     XOR EDI,EDI                         ; 00439b7b
         ;   Label: LAB_00439b7b
     MOV EBP,dword ptr [0x007e450c]      ; 00439b7d | g_INT_007e450c
-    MOV dword ptr [0x007e3e88],EDI      ; 00439b83 | g_INT_007e3e88
+    MOV dword ptr [0x007e3e88],EDI      ; 00439b83 | g_ClippedVertexCount
     TEST EBP,EBP                        ; 00439b89
     JLE 0x00439b26                      ; 00439b8b
         ;   XREF to: 00439b26 (CONDITIONAL_JUMP)  ; LAB_00439b26
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 00439c25 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x439ad0]  ; 00439bd9 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EDI,dword ptr [0x007e3e88],0x30 ; 00439be0 | g_INT_007e3e88
+    IMUL EDI,dword ptr [0x007e3e88],0x30 ; 00439be0 | g_ClippedVertexCount
         ;   Label: caseD_0
     MOV ECX,0x30                        ; 00439be7
     MOV ESI,EDX                         ; 00439bec
@@ -171,7 +171,7 @@ section .text
     JLE 0x00439c1f                      ; 00439c1c
         ;   XREF to: 00439c1f (CONDITIONAL_JUMP)  ; LAB_00439c1f
     MOVSD ES:EDI,ESI                    ; 00439c1e | g_SRenderVertex_ARRAY_007e3e8c[0].projected_vertex.screen_x
-    INC dword ptr [0x007e3e88]          ; 00439c1f | g_INT_007e3e88
+    INC dword ptr [0x007e3e88]          ; 00439c1f | g_ClippedVertexCount
         ;   Label: LAB_00439c1f
     MOV ECX,dword ptr [0x007e450c]      ; 00439c25 | g_INT_007e450c
         ;   Label: caseD_3
@@ -182,7 +182,7 @@ section .text
         ;   XREF to: 00439b26 (CONDITIONAL_JUMP)  ; LAB_00439b26
     JMP 0x00439b92                      ; 00439c37
         ;   XREF to: 00439b92 (UNCONDITIONAL_JUMP)  ; LAB_00439b92
-    IMUL EAX,dword ptr [0x007e3e88],0x30 ; 00439c3c | g_INT_007e3e88
+    IMUL EAX,dword ptr [0x007e3e88],0x30 ; 00439c3c | g_ClippedVertexCount
         ;   Label: caseD_1
     ADD EAX,0x7e3e8c                    ; 00439c43 | g_SRenderVertex_ARRAY_007e3e8c
     PUSH EAX                            ; 00439c48
@@ -191,13 +191,13 @@ section .text
     PUSH ESI                            ; 00439c4e
     CALL engine_clipper.c_interpolateVertexFarClip_FUN_004394c0 ; 00439c4f
         ;   XREF to: 004394c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexFarClip_FUN_004394c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
-    MOV EDI,dword ptr [0x007e3e88]      ; 00439c54 | g_INT_007e3e88
+    MOV EDI,dword ptr [0x007e3e88]      ; 00439c54 | g_ClippedVertexCount
     INC EDI                             ; 00439c5a
     ADD ESP,0xc                         ; 00439c5b
-    MOV dword ptr [0x007e3e88],EDI      ; 00439c5e | g_INT_007e3e88
+    MOV dword ptr [0x007e3e88],EDI      ; 00439c5e | g_ClippedVertexCount
     JMP 0x00439c25                      ; 00439c64
         ;   XREF to: 00439c25 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EDI,dword ptr [0x007e3e88],0x30 ; 00439c66 | g_INT_007e3e88
+    IMUL EDI,dword ptr [0x007e3e88],0x30 ; 00439c66 | g_ClippedVertexCount
         ;   Label: caseD_2
     MOV ECX,0x30                        ; 00439c6d
     MOV ESI,EDX                         ; 00439c72
@@ -228,10 +228,10 @@ section .text
     JLE 0x00439ca5                      ; 00439ca2
         ;   XREF to: 00439ca5 (CONDITIONAL_JUMP)  ; LAB_00439ca5
     MOVSD ES:EDI,ESI                    ; 00439ca4 | g_SRenderVertex_ARRAY_007e3e8c[0].projected_vertex.screen_x
-    MOV ECX,dword ptr [0x007e3e88]      ; 00439ca5 | g_INT_007e3e88
+    MOV ECX,dword ptr [0x007e3e88]      ; 00439ca5 | g_ClippedVertexCount
         ;   Label: LAB_00439ca5
     INC ECX                             ; 00439cab
-    MOV dword ptr [0x007e3e88],ECX      ; 00439cac | g_INT_007e3e88
+    MOV dword ptr [0x007e3e88],ECX      ; 00439cac | g_ClippedVertexCount
     IMUL EAX,ECX,0x30                   ; 00439cb2
     ADD EAX,0x7e3e8c                    ; 00439cb5 | g_SRenderVertex_ARRAY_007e3e8c
     PUSH EAX                            ; 00439cba
@@ -240,10 +240,10 @@ section .text
     PUSH EDX                            ; 00439cc0
     CALL engine_clipper.c_interpolateVertexFarClip_FUN_004394c0 ; 00439cc1
         ;   XREF to: 004394c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexFarClip_FUN_004394c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
-    MOV EAX,[0x007e3e88]                ; 00439cc6 | g_INT_007e3e88
+    MOV EAX,[0x007e3e88]                ; 00439cc6 | g_ClippedVertexCount
     INC EAX                             ; 00439ccb
     ADD ESP,0xc                         ; 00439ccc
-    MOV [0x007e3e88],EAX                ; 00439ccf | g_INT_007e3e88
+    MOV [0x007e3e88],EAX                ; 00439ccf | g_ClippedVertexCount
     JMP 0x00439c25                      ; 00439cd4
         ;   XREF to: 00439c25 (UNCONDITIONAL_JUMP)  ; caseD_3
 

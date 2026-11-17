@@ -31,12 +31,12 @@ void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_0054ba30(char *line
   } while (*pcVar2 != '\0');
   pcVar2 = (char *)0x0;
 joined_r0x0054ba6c:
-  while ((line < pcVar2 && ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
+  while ((line < pcVar2 && ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
     pcVar2 = pcVar2 + -1;
   }
   *pcVar2 = '\0';
   do {
-    if ((g_UCHAR_ARRAY_0061ed94[(byte)(*line + 1)] & 2) == 0) {
+    if ((g_CharacterClassificationTable[(byte)(*line + 1)] & 2) == 0) {
       return;
     }
     uVar3 = 0xffffffff;

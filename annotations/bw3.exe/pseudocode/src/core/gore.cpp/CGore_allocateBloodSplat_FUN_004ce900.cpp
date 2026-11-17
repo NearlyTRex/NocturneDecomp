@@ -12,16 +12,16 @@ CBloodSplat * __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004ce900(CGore 
   CBloodSplat *pCVar1;
   int iVar2;
   
-  iVar2 = g_INT_01d276b4 + 1;
-  pCVar1 = g_CBloodSplat_ARRAY_01d276bc + g_INT_01d276b4;
+  iVar2 = g_BloodSplatIndex + 1;
+  pCVar1 = g_CBloodSplat_ARRAY_01d276bc + g_BloodSplatIndex;
   if (1999 < iVar2) {
     iVar2 = 0;
   }
-  if (1999 < g_INT_01d276b8) {
-    g_INT_01d276b4 = iVar2;
+  if (1999 < g_BloodSplatCount) {
+    g_BloodSplatIndex = iVar2;
     return pCVar1;
   }
-  g_INT_01d276b8 = g_INT_01d276b8 + 1;
-  g_INT_01d276b4 = iVar2;
+  g_BloodSplatCount = g_BloodSplatCount + 1;
+  g_BloodSplatIndex = iVar2;
   return pCVar1;
 }

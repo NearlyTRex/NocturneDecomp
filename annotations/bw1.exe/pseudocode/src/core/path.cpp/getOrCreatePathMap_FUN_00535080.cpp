@@ -25,16 +25,16 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00535080(CLocation *loca
   int local_18 [2];
   
   bVar7 = 0;
-  if ((g_UCHAR_01e6be40 & 1) == 0) {
-    g_UCHAR_01e6be40 = g_UCHAR_01e6be40 | 1;
+  if ((g_PathMapCacheInitFlag & 1) == 0) {
+    g_PathMapCacheInitFlag = g_PathMapCacheInitFlag | 1;
     __arrinit(g_PathMapCache,0xc,&g_CPathMapTypeInfo);
     _atexit(&g_PathMapCacheDestructorNode);
   }
-  if (g_INT_ARRAY_00622758[0] < 0) {
+  if (g_PathMapLRUCounters[0] < 0) {
     iVar2 = 0;
     iVar1 = 0;
     do {
-      *(int *)((int)g_INT_ARRAY_00622758 + iVar2) = iVar1;
+      *(int *)((int)g_PathMapLRUCounters + iVar2) = iVar1;
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 4;
     } while (iVar1 < 0xc);
@@ -59,7 +59,7 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00535080(CLocation *loca
        *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar3)))
     break;
     iVar5 = iVar1;
-    if (g_INT_ARRAY_00622758[iVar1] < *(int *)((int)g_INT_ARRAY_00622758 + iVar4)) {
+    if (g_PathMapLRUCounters[iVar1] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {
       iVar5 = iVar2;
     }
     iVar4 = iVar4 + 4;
@@ -69,14 +69,14 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00535080(CLocation *loca
   } while (iVar2 < 0xc);
   iVar1 = 0;
   do {
-    if (*(int *)((int)g_INT_ARRAY_00622758 + iVar1) < g_INT_ARRAY_00622758[iVar5]) {
-      *(int *)((int)g_INT_ARRAY_00622758 + iVar1) = *(int *)((int)g_INT_ARRAY_00622758 + iVar1) + 1;
+    if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {
+      *(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x30);
   iVar1 = 1;
   source_position = &local_28;
-  g_INT_ARRAY_00622758[iVar5] = 0;
+  g_PathMapLRUCounters[iVar5] = 0;
   puVar6 = (uint *)((int)location + (uint)bVar7 * -8 + 4);
   local_28.x = (location->position).x;
   *(uint *)((int)&local_28 + (uint)bVar7 * -8 + 4) = *puVar6;

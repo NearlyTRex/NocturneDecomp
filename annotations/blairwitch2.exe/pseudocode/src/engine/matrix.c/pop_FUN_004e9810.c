@@ -9,26 +9,26 @@
 void __cdecl engine_matrix_c_pop_FUN_004e9810(void)
 
 {
-  g_INT_01d05014 = g_INT_01d05014 + -1;
-  if (g_INT_01d05014 < 0) {
+  g_MatrixStackIndex = g_MatrixStackIndex + -1;
+  if (g_MatrixStackIndex < 0) {
     g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
     g_INT_01d046a4 = 0x358;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance2");
   }
-  g_INT_01c38b9c = g_INT_ARRAY_01d05018[g_INT_01d05014];
-  g_INT_01c38ba0 = g_INT_ARRAY_01d05040[g_INT_01d05014];
-  g_INT_01c38ba4 = g_INT_ARRAY_01d05068[g_INT_01d05014];
-  g_INT_01c38ba8 = g_INT_ARRAY_01d05090[g_INT_01d05014];
-  g_INT_01c38bac = g_INT_ARRAY_01d050b8[g_INT_01d05014];
-  g_INT_01c38bb0 = g_INT_ARRAY_01d050e0[g_INT_01d05014];
-  g_INT_01c38bb4 = g_INT_ARRAY_01d05108[g_INT_01d05014];
-  g_INT_01c38bb8 = g_INT_ARRAY_01d05130[g_INT_01d05014];
-  g_INT_01c38bbc = g_INT_ARRAY_01d05158[g_INT_01d05014];
-  g_INT_01c38b6c = g_INT_ARRAY_01d05180[g_INT_01d05014];
-  g_INT_01c38b70 = g_INT_ARRAY_01d051a8[g_INT_01d05014];
-  g_INT_01c38b74 = g_INT_ARRAY_01d051d0[g_INT_01d05014];
-  g_INT_01c38b90 = g_INT_ARRAY_01d051f8[g_INT_01d05014];
-  g_INT_01c38b94 = g_INT_ARRAY_01d05220[g_INT_01d05014];
-  g_INT_01c38b98 = g_INT_ARRAY_01d05248[g_INT_01d05014];
+  g_INT_01c38b9c = g_MatrixStack_M00[g_MatrixStackIndex];
+  g_INT_01c38ba0 = g_MatrixStack_M01[g_MatrixStackIndex];
+  g_INT_01c38ba4 = g_MatrixStack_M02[g_MatrixStackIndex];
+  g_INT_01c38ba8 = g_MatrixStack_M10[g_MatrixStackIndex];
+  g_INT_01c38bac = g_MatrixStack_M11[g_MatrixStackIndex];
+  g_INT_01c38bb0 = g_MatrixStack_M12[g_MatrixStackIndex];
+  g_INT_01c38bb4 = g_MatrixStack_M20[g_MatrixStackIndex];
+  g_INT_01c38bb8 = g_MatrixStack_M21[g_MatrixStackIndex];
+  g_INT_01c38bbc = g_MatrixStack_M22[g_MatrixStackIndex];
+  g_RelativeX = g_MatrixStack_RelX[g_MatrixStackIndex];
+  g_RelativeY = g_MatrixStack_RelY[g_MatrixStackIndex];
+  g_RelativeZ = g_MatrixStack_RelZ[g_MatrixStackIndex];
+  g_LightDirectionX = g_MatrixStack_Unk1[g_MatrixStackIndex];
+  g_LightDirectionY = g_MatrixStack_Unk2[g_MatrixStackIndex];
+  g_LightDirectionZ = g_MatrixStack_Unk3[g_MatrixStackIndex];
   return;
 }

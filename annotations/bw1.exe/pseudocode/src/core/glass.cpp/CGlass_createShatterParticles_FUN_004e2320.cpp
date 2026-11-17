@@ -595,7 +595,7 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
   local_320.y = quad_uv_v->y;
   local_320.z = quad_uv_v->z;
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-            (g_CFireEffect_PTR_0061c010,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
+            (g_CFireEffectPtr,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
              (CVector3i *)&local_320,&this_ptr->glass_texture,this_ptr->opacity);
   if (local_360.vertices + 1 != quad_vertices->vertices + 2) {
     local_360.vertices[1].x = quad_vertices->vertices[2].x;
@@ -612,7 +612,7 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
   local_320.y = quad_uv_v->z;
   local_320.z = quad_uv_v->w;
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-            (g_CFireEffect_PTR_0061c010,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
+            (g_CFireEffectPtr,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
              (CVector3i *)&local_320,&this_ptr->glass_texture,this_ptr->opacity);
   return;
 }

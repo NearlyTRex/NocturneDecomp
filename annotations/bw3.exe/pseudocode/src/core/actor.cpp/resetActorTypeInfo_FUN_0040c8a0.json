@@ -39,19 +39,19 @@
   "globals": [
     {
       "addr": "007df9c4",
-      "name": "g_INT_007df9c4",
+      "name": "g_NumActorClassTypes",
       "type": "int",
       "value": null
     },
     {
       "addr": "007df9c8",
-      "name": "g_CDemonActorType_PTR_ARRAY_007df9c8",
+      "name": "g_ActorClassRegistrations",
       "type": "CDemonActorType*[200]",
       "value": null
     },
     {
       "addr": "007df9cc",
-      "name": "g_CDemonActorType_PTR_ARRAY_007df9c8[1]",
+      "name": "g_ActorClassRegistrations[1]",
       "type": "undefined4",
       "value": null
     }
@@ -119,17 +119,17 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(int *)((int)g_CDemonActorType_PTR_ARRAY_007df9c8",
+      "match": "(int *)((int)g_ActorClassRegistrations",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_CDemonActorType_PTR_ARRAY_007df9c8 + iVar2);",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CDemonActorType_PTR_ARRAY_007df9c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ActorClassRegistrations` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 13,
-      "match": "(int)g_CDemonActorType_PTR_ARRAY_007df9c8",
+      "match": "(int)g_ActorClassRegistrations",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_CDemonActorType_PTR_ARRAY_007df9c8 + iVar2);",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar2);",
       "type": "pointer_truncation"
     }
   ]

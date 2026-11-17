@@ -36,7 +36,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
     fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
               (g_CDemonRenderer_PTR_00612560,&this_ptr->broken_texture);
-    fVar6 = (float)g_INT_0061b4a8;
+    fVar6 = (float)g_CurrentTextureDimension;
     dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
     dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));
     iStack_20 = (int)ROUND(dVar7);
@@ -44,16 +44,16 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
     if (iStack_20 < 0) {
       iStack_20 = 0;
     }
-    if (g_INT_0061b4a8 <= iStack_20) {
-      iStack_20 = g_INT_0061b4a8 + -1;
+    if (g_CurrentTextureDimension <= iStack_20) {
+      iStack_20 = g_CurrentTextureDimension + -1;
     }
     if (iStack_1c < 0) {
       iStack_1c = 0;
     }
-    if (g_INT_0061b4a8 <= iStack_1c) {
-      iStack_1c = g_INT_0061b4a8 + -1;
+    if (g_CurrentTextureDimension <= iStack_1c) {
+      iStack_1c = g_CurrentTextureDimension + -1;
     }
-    if (g_UCHAR_PTR_01c50930[iStack_20 + iStack_1c * g_INT_0061b4a8] == '\0') {
+    if (g_CurrentTextureData[iStack_20 + iStack_1c * g_CurrentTextureDimension] == '\0') {
       laser_info->transparency = 1.0;
       return;
     }

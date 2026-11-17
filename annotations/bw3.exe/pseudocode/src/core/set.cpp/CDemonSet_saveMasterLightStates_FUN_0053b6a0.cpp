@@ -12,15 +12,15 @@ int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0053b6a0(CDemonSet 
   CDemonLight **ppCVar1;
   int iVar2;
   
-  *light_state_buffer = g_INT_0203a414;
+  *light_state_buffer = g_MasterLightCount;
   iVar2 = 0;
-  if (0 < g_INT_0203a414) {
+  if (0 < g_MasterLightCount) {
     do {
       ppCVar1 = g_CDemonLight_PTR_ARRAY_0203a418 + iVar2;
       light_state_buffer = light_state_buffer + 1;
       iVar2 = iVar2 + 1;
       *light_state_buffer = (*ppCVar1)->light_enabled_flag;
-    } while (iVar2 < g_INT_0203a414);
+    } while (iVar2 < g_MasterLightCount);
   }
   return iVar2;
 }

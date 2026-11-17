@@ -13,7 +13,7 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70(CDemonMiss
   CHeroPlaceholder *this_ptr_00;
   CHero *local_14;
   
-  if (g_INT_01cedee0 <= index) {
+  if (g_HeroCount <= index) {
     g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
     g_INT_01d046a4 = 0x640;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::createOneHero - too many heros!");
@@ -38,7 +38,7 @@ LAB_004fcfea:
     }
     this_ptr_00 = (CHeroPlaceholder *)
                   core_actor_cpp_castToClassHash_FUN_0040c8f0
-                            (actor_ptr,g_CDemonActorType_01cedf54.name_hash);
+                            (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
     if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (index == this_ptr_00->index)) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d0a40

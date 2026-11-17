@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_larva_cpp_CLarva_getActorType_FUN_004c4870(CLarva *this_ptr)
 
 {
-  return &g_CLarvaActorType_01cc3124;
+  return &g_CLarvaClassInfo;
 }

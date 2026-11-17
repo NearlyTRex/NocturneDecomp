@@ -18,7 +18,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_005dc1cd
 ;   TerminatedCString s_CEditorTools_paintWindow_005dc1e3
 ;   int g_INT_0061b49c = 0xc8
-;   int g_INT_01c3eb5c
+;   int g_WindowStackCount
 ;   int g_INT_01c3f544
 ;   int g_INT_01c3f54c
 ;   int g_INT_01c3f550
@@ -47,10 +47,10 @@ section .text
     PUSH EDI                            ; 00497662
     PUSH EBP                            ; 00497663
     SUB ESP,0x4                         ; 00497664
-    CMP dword ptr [0x01c3eb5c],0x1      ; 00497667 | g_INT_01c3eb5c
+    CMP dword ptr [0x01c3eb5c],0x1      ; 00497667 | g_WindowStackCount
     JL 0x004977a2                       ; 0049766e
         ;   XREF to: 004977a2 (CONDITIONAL_JUMP)  ; LAB_004977a2
-    MOV EAX,[0x01c3eb5c]                ; 00497674 | g_INT_01c3eb5c
+    MOV EAX,[0x01c3eb5c]                ; 00497674 | g_WindowStackCount
         ;   Label: LAB_00497674
     DEC EAX                             ; 00497679
     SHL EAX,0x3                         ; 0049767a

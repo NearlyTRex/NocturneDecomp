@@ -25,24 +25,24 @@ void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00493410(CSmokePa
   CVector3i local_18;
   
   bVar6 = 0;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.base.count = 4;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.A.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.B.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.C.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.D.i = 0;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[0] = 0;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[1] = 1;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[2] = 2;
-  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[3] = 3;
+  g_BillboardPrimitive.base.base.count = 4;
+  g_BillboardPrimitive.base.surface_normal.A.i = 0;
+  g_BillboardPrimitive.base.surface_normal.B.i = 0;
+  g_BillboardPrimitive.base.surface_normal.C.i = 0;
+  g_BillboardPrimitive.base.surface_normal.D.i = 0;
+  g_BillboardPrimitive.vertices[0] = 0;
+  g_BillboardPrimitive.vertices[1] = 1;
+  g_BillboardPrimitive.vertices[2] = 2;
+  g_BillboardPrimitive.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650
             (g_CDemonRenderer_PTR_0060b280,&local_18);
-  g_CVector3i_01c3deb8.x = local_18.x;
-  *(uint *)((int)&g_CVector3i_01c3deb8 + (uint)bVar6 * -8 + 4) =
+  g_BillboardCameraRight.x = local_18.x;
+  *(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =
        *(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);
   *(uint *)((uint)bVar6 * -8 + 0x1c3dec0 + (uint)bVar6 * -8) =
        *(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  g_CVector3i_01c3deb8.y = 0;
-  pCVar2 = &(g_CDemonCamera_PTR_007bda74->base).rotation_matrix;
+  g_BillboardCameraRight.y = 0;
+  pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   pfVar4 = (float *)&stack0xffffffc0;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pfVar4 = pCVar2->m[0].x;
@@ -61,8 +61,8 @@ void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00493410(CSmokePa
   dVar7 = round((double)local_60 * -65536);
   dVar8 = round(dVar8);
   dVar9 = round(dVar9);
-  g_CVector3i_01c3dec4.x = (int)ROUND(dVar7);
-  g_CVector3i_01c3dec4.y = (int)ROUND(dVar8);
-  g_CVector3i_01c3dec4.z = (int)ROUND(dVar9);
+  g_BillboardCameraUp.x = (int)ROUND(dVar7);
+  g_BillboardCameraUp.y = (int)ROUND(dVar8);
+  g_BillboardCameraUp.z = (int)ROUND(dVar9);
   return;
 }

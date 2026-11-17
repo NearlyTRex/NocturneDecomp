@@ -20,18 +20,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0(CDemo
   byte bVar8;
   
   bVar8 = 0;
-  g_INT_01482658 = g_INT_01482658 + -1;
-  if (g_INT_01482658 == 0) {
+  g_BackgroundSceneDepth = g_BackgroundSceneDepth + -1;
+  if (g_BackgroundSceneDepth == 0) {
     engine_drender_cpp_popViewport_FUN_00483c40();
     (this_ptr->cached_projection).half_width_fixed = g_INT_01c4eff8;
     (this_ptr->cached_projection).neg_half_height_fixed = g_INT_01c4effc;
     (this_ptr->cached_projection).center_x_fixed = g_INT_01c4f000;
     iVar3 = g_INT_0061b49c;
     (this_ptr->cached_projection).center_y_fixed = g_INT_01c4f004;
-    g_INT_0061b4a0 = g_INT_0148265c;
-    g_INT_01c50948 = g_INT_01482660;
-    ppuVar5 = g_ARRAY_PTR_01482664;
-    ppuVar6 = g_ARRAY_PTR_01c4354c;
+    g_INT_0061b4a0 = g_BackgroundSavedBitsPerPixel;
+    g_INT_01c50948 = g_BackgroundSavedUseExternalRenderer;
+    ppuVar5 = g_BackgroundSavedScreenBufferArray;
+    ppuVar6 = g_ScreenBufferArray;
     for (uVar2 = iVar3 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
       *ppuVar6 = *ppuVar5;
       ppuVar5 = ppuVar5 + (uint)bVar8 * -2 + 1;
@@ -42,16 +42,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0(CDemo
       ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar8 * -2 + 1);
       ppuVar6 = (byte **)((int)ppuVar6 + (uint)bVar8 * -2 + 1);
     }
-    g_BIT_INTEGER32_01c4e9d4.dword = g_INT_01483924;
-    g_BIT_INTEGER32_01c4e9e0.dword = g_INT_01483928;
-    g_BIT_INTEGER32_01c4e9ec.dword = g_INT_0148392c;
+    g_RedBitPosition.dword = g_BackgroundSavedRedBitPosition;
+    g_GreenBitPosition.dword = g_BackgroundSavedGreenBitPosition;
+    g_BlueBitPosition.dword = g_BackgroundSavedBlueBitPosition;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
       if (0 < this_ptr->framebuffer_height) {
         iVar7 = 0;
         do {
           iVar4 = this_ptr->framebuffer_width * iVar3;
-          piVar1 = (int *)((int)g_UINT_PTR_ARRAY_01c4480c + iVar7);
+          piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);
           byte_count = this_ptr->framebuffer_width * 4;
           iVar7 = iVar7 + 4;
           iVar3 = iVar3 + 1;

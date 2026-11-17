@@ -63,7 +63,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
     local_48 = wincore_winrun_cpp_getTime_FUN_005806a0();
   }
   this_ptr_00 = g_CNetGamePtr;
-  g_INT_01ed3198 = 0;
+  g_RenderedTriangleCount = 0;
   if ((this_ptr->cinematic_skip_in_progress == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {
     if (g_INT_01c6cee8 != 0) {
       wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0();
@@ -105,9 +105,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
         setPositionAndOrientation)
                 ((CDemonActor *)g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14],&CStack_a8.position,
                  (CVector3f *)&CStack_a8.orientation);
-      if ((g_BIT_INTEGER32_01c5fae4.bytes[0] & 1) != 0) {
+      if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
-                  (&g_CDemonCameraInstance,g_INT_01c5fadc,g_INT_01c5fae0,&CStack_68);
+                  (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&CStack_68);
         input_ptr = &CStack_8c;
         CStack_8c.x = CStack_68.x;
         *(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + 4) =
@@ -127,7 +127,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
         pCVar2 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
         (*((pCVar2->base).base.vtable._ub)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar2,&CStack_74,(CVector3f *)&(pCVar2->base).base.orient);
-        g_BIT_INTEGER32_01c5fae4.bytes[0] = g_BIT_INTEGER32_01c5fae4.bytes[0] & 0xfe;
+        g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
       }
     }
     core_game_cpp_CGame_updateDT_FUN_004b4440(this_ptr);
@@ -166,11 +166,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
       }
       if (((this_ptr->developer_mode_enabled != 0) ||
           (pcVar13 = getenv("SPOOKHOUSE"), pcVar13 != (char *)0x0))
-         && (iVar3 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                               (g_CKeys_PTR_00600284,DIK_F4), iVar3 != 0)) {
-        g_INT_01d21e9c = g_INT_01d21e9c + 1;
-        _sprintf(g_CHAR_ARRAY_01d21ea0,"demon%d.pcx");
-        engine_pcx_c_saveScreenshotGeneral_FUN_0050da60(g_CHAR_ARRAY_01d21ea0);
+         && (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4), iVar3 != 0)) {
+        g_ScreenshotIndex = g_ScreenshotIndex + 1;
+        _sprintf(g_ScreenshotFilename,"demon%d.pcx");
+        engine_pcx_c_saveScreenshotGeneral_FUN_0050da60(g_ScreenshotFilename);
       }
       core_inv_cpp_CInventory_renderAllItems_FUN_004dda90
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory);
@@ -178,38 +177,38 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_005373e0(g_CDemonSetPtr);
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004b45e0(this_ptr);
-      if (g_INT_01d22c40 != 0) {
-        iVar3 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_LCONTROL);
+      if (g_MovieRecordingArmed != 0) {
+        iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
         if ((iVar3 != 0) &&
-           (iVar3 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_V)
-           , iVar3 != 0)) {
-          iVar3 = g_INT_01d22c44;
-          if (g_INT_01d22c44 == 0) {
-            g_INT_01d22c44 = 1;
-            g_INT_01d22c4c = iVar3;
+           (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V), iVar3 != 0)) {
+          iVar3 = g_MovieRecordingActive;
+          if (g_MovieRecordingActive == 0) {
+            g_MovieRecordingActive = 1;
+            g_MovieRecordingFrameCounter = iVar3;
           }
           else {
-            g_INT_01d22c44 = 0;
+            g_MovieRecordingActive = 0;
           }
         }
-        if ((g_INT_01d22c48 < 1) || (g_INT_01d22c4c < g_INT_01d22c48)) {
-          if (g_INT_01d22c44 != 0) {
+        if ((g_MovieRecordingMaxFrames < 1) ||
+           (g_MovieRecordingFrameCounter < g_MovieRecordingMaxFrames)) {
+          if (g_MovieRecordingActive != 0) {
             _sprintf(acStack_10c,"noc%05d.raw");
             _sprintf(acStack_1d4,"Movie recording active: movie\\%s");
             p_Stack_38 = engine_dosio_cpp_getFile_FUN_004659c0
                                    ("movie",acStack_10c,"wb");
             if (p_Stack_38 != (_FILE *)0x0) {
               iStack_3c = 0;
-              if (0 < g_INT_005fe9f0) {
+              if (0 < g_MovieRecordingHeight) {
                 do {
                   iStack_34 = 0;
-                  if (0 < g_INT_005fe9ec) {
+                  if (0 < g_MovieRecordingWidth) {
                     iStack_40 = iStack_3c + 1;
                     do {
-                      iStack_2c = (iStack_34 * g_INT_005fba18) / g_INT_005fe9ec;
-                      iStack_24 = ((iStack_34 + 1) * g_INT_005fba18) / g_INT_005fe9ec;
-                      iVar3 = (iStack_3c * g_INT_005fba1c) / g_INT_005fe9f0;
-                      iVar5 = (iStack_40 * g_INT_005fba1c) / g_INT_005fe9f0;
+                      iStack_2c = (iStack_34 * g_INT_005fba18) / g_MovieRecordingWidth;
+                      iStack_24 = ((iStack_34 + 1) * g_INT_005fba18) / g_MovieRecordingWidth;
+                      iVar3 = (iStack_3c * g_INT_005fba1c) / g_MovieRecordingHeight;
+                      iVar5 = (iStack_40 * g_INT_005fba1c) / g_MovieRecordingHeight;
                       iStack_1c = 0;
                       iStack_20 = 0;
                       iVar11 = 0;
@@ -220,7 +219,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
                         do {
                           if (iStack_2c < iStack_24) {
                             puVar10 = (uint *)(iStack_2c * 4 +
-                                              *(int *)((int)g_ARRAY_PTR_01c5faec + iStack_28));
+                                              *(int *)((int)g_ScreenBufferArray + iStack_28));
                             iVar3 = iStack_2c;
                             do {
                               uVar4 = *puVar10;
@@ -242,19 +241,19 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
                       _fputc(iVar12,p_Stack_38);
                       _fputc(iVar11,p_Stack_38);
                       iStack_34 = iStack_34 + 1;
-                    } while (iStack_34 < g_INT_005fe9ec);
+                    } while (iStack_34 < g_MovieRecordingWidth);
                   }
                   iStack_3c = iStack_3c + 1;
-                } while (iStack_3c < g_INT_005fe9f0);
+                } while (iStack_3c < g_MovieRecordingHeight);
               }
               _fclose(p_Stack_38);
               engine_2d_c_drawText_FUN_00401fe0(acStack_1d4,0,0);
-              g_INT_01d22c4c = g_INT_01d22c4c + 1;
+              g_MovieRecordingFrameCounter = g_MovieRecordingFrameCounter + 1;
             }
           }
         }
         else {
-          g_INT_01d22c44 = 0;
+          g_MovieRecordingActive = 0;
         }
       }
       core_script_cpp_CScript_renderSubtitles_FUN_00528fc0(g_CScriptPtr);
@@ -305,7 +304,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
           engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,0x2c);
         }
       }
-      if (g_INT_01d22c50 != 0) {
+      if (g_SoundDebugEnabled != 0) {
         uVar4 = sound_sndmain_cpp_getFirstActiveSfx_FUN_00556e80();
         iVar3 = 0x37;
         for (; uVar4 != 0; uVar4 = sound_sndmain_cpp_getNextActiveSfx_FUN_00556ec0(uVar4)) {
@@ -318,7 +317,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
         }
       }
       if (this_ptr->event_processing_enabled != 0) {
-        core_event_cpp_CEventList_render_FUN_00491bf0(g_CEventList_PTR_005fba60);
+        core_event_cpp_CEventList_render_FUN_00491bf0(g_CEventListPtr);
       }
       if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
         core_script_cpp_CScript_renderEditor_FUN_00529210
@@ -359,7 +358,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
       }
       if ((this_ptr->game_control == CONTROL_MODE_POINT_AND_CLICK) &&
          (core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                    (g_CEventList_PTR_005fba60,"MouseControlMode"), -1 < g_INT_01d22b48)) {
+                    (g_CEventListPtr,"MouseControlMode"), -1 < g_INT_01d22b48)) {
         core_game_cpp_drawCursor_FUN_004c4a10();
       }
       uVar4 = this_ptr->goggles_active | this_ptr->special_view_active;

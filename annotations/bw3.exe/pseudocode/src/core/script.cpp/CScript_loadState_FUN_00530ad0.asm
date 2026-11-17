@@ -130,7 +130,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005a3f00 ; 00530bc2
         ;   XREF to: 005a3f00 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005a3f00(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00530bc7
-    PUSH 0x1ed7010                      ; 00530bca | g_FLOAT_01ed7010
+    PUSH 0x1ed7010                      ; 00530bca | g_ScriptTimeScale
     PUSH 0x5cfd4b                       ; 00530bcf | = "%g\n"
     PUSH EDI                            ; 00530bd4
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00530bd5

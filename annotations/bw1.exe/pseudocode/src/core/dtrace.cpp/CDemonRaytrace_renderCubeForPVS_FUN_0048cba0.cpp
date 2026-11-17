@@ -35,7 +35,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
   int local_18;
   int local_14;
   
-  g_INT_01bef208 = g_INT_01bef208 + 1;
+  g_CubesTestedCount = g_CubesTestedCount + 1;
   if ((((((this_ptr->grid_bounds_min).x <= grid_x) && ((this_ptr->grid_bounds_min).y <= grid_y)) &&
        ((this_ptr->grid_bounds_min).z <= grid_z)) &&
       ((grid_x <= (this_ptr->grid_bounds_max).x && (grid_y <= (this_ptr->grid_bounds_max).y)))) &&
@@ -47,7 +47,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
       local_14 = grid_z;
       local_20 = (float)grid_y;
       local_30 = (float)grid_z;
-      g_INT_01bef20c = g_INT_01bef20c + 1;
+      g_CubesWithVoxelsCount = g_CubesWithVoxelsCount + 1;
       local_64.x = (float)(int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                                      256.0f);
       local_64.y = (float)(int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -129,7 +129,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
               g_SRenderVertex_ARRAY_00629014[6].projected_vertex.screen_x &
               g_SRenderVertex_ARRAY_00629014[7].projected_vertex.screen_x;
       if (((uVar2 & 0x80000000) == 0) || ((char)uVar2 == '\0')) {
-        g_INT_01bef210 = g_INT_01bef210 + 1;
+        g_CubesVisibleCount = g_CubesVisibleCount + 1;
         if (1 < render_mode) {
           local_14 = grid_z;
           pSVar4 = (SMRGLHeaderPrimitive *)0x48d284;
@@ -195,22 +195,22 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
         local_64.x = (float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
         local_2c = (float)grid_z;
         local_64.y = (float)unaff_EDI * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-        g_INT_01bef214 = g_INT_01bef214 + 1;
+        g_CubesRenderedCount = g_CubesRenderedCount + 1;
         local_64.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
                   (g_CDemonRenderer_PTR_00612560,&local_64);
         core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457f70(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                  (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28);
-        iVar3 = g_INT_01bef218;
-        g_CDemonCube_PTR_ARRAY_01bef220[g_INT_01bef218] = local_4c;
-        if (g_CVector3f_ARRAY_01c02aa0 + iVar3 != &local_64) {
-          g_CVector3f_ARRAY_01c02aa0[iVar3].x = local_64.x;
-          g_CVector3f_ARRAY_01c02aa0[iVar3].y = local_64.y;
-          g_CVector3f_ARRAY_01c02aa0[iVar3].z = local_64.z;
+                  (g_CDemonRenderer_PTR_00612560,&g_ZeroVector);
+        iVar3 = g_PVSDrawnCubeCount;
+        g_PVSCubePointers[g_PVSDrawnCubeCount] = local_4c;
+        if (g_PVSCubePositions + iVar3 != &local_64) {
+          g_PVSCubePositions[iVar3].x = local_64.x;
+          g_PVSCubePositions[iVar3].y = local_64.y;
+          g_PVSCubePositions[iVar3].z = local_64.z;
         }
-        g_INT_01bef218 = g_INT_01bef218 + 1;
-        if (19999 < g_INT_01bef218) {
+        g_PVSDrawnCubeCount = g_PVSDrawnCubeCount + 1;
+        if (19999 < g_PVSDrawnCubeCount) {
           g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
           g_INT_01d1d404 = 0x792;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Too many drawn cubes.  Need to recompile.");

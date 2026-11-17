@@ -9,6 +9,6 @@
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040dd30(void)
 
 {
-  g_UINT_007641b8 = g_UINT_007641b8 * 0x2ff0bd + 1 & 0xffffff;
-  return g_UINT_007641b8;
+  g_RandomSeedValue = g_RandomSeedValue * 0x2ff0bd + 1 & 0xffffff;
+  return g_RandomSeedValue;
 }

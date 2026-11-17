@@ -354,7 +354,7 @@ section .text
     MOV dword ptr [EDX + 0xcdd4],0x0    ; 004e92c5
     PUSH 0x1                            ; 004e92cf
         ;   Label: default
-    MOV EAX,[0x00600284]                ; 004e92d1 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e92d1 | g_CKeysPtr
     PUSH EAX                            ; 004e92d6 | g_PTR_01d70a78
     MOV EBX,dword ptr [EAX]             ; 004e92d7 | g_PTR_01d70a78
     CALL dword ptr [EBX + 0x4]          ; 004e92d9

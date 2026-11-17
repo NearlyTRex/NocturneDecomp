@@ -35,7 +35,7 @@ extern CCharacter_full_vtable g_CSpiritBearVTable;
 extern CCharacter_full_vtable g_CAsgayaVTable;
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_005e39c0;
+extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CFliesVTable;
@@ -144,7 +144,7 @@ extern CWeapon_full_vtable g_CWeaponVTable;
 extern CZombiePriest_full_vtable g_CZombiePriestVTable;
 
 // SFontGlyph[224]
-extern SFontGlyph g_SFontGlyph_ARRAY_005e8840[224];
+extern SFontGlyph g_FontTable[224];
 
 // TerminatedCString
 extern TerminatedCString g_CInStreamFileVTable;
@@ -367,9 +367,9 @@ extern WatcomTypeInfo g_CAsgayaTypeInfo;
 extern int g_INT_005e8806;
 
 // short
-extern short g_SHORT_005e8804;
+extern short g_DaysInMonth_Normal;
 extern short g_SHORT_005e881c;
-extern short g_SHORT_005e881e;
+extern short g_DaysInMonth_Leap;
 
 // void*
 extern void* g_SPageResourceVTable;

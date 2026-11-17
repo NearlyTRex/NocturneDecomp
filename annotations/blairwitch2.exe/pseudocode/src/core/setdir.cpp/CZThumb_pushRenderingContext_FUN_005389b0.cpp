@@ -9,8 +9,8 @@
 void __cdecl core_setdir_cpp_CZThumb_pushRenderingContext_FUN_005389b0(CZThumb *this_ptr)
 
 {
-  g_INT_020b1518 = g_INT_006141b8;
-  g_INT_020b151c = g_INT_006141bc;
+  g_SavedWindowWidth = g_INT_006141b8;
+  g_SavedWindowHeight = g_INT_006141bc;
   g_INT_006141b8 = this_ptr->width;
   g_INT_006141bc = this_ptr->height;
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710

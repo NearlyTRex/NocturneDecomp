@@ -12,12 +12,12 @@
 // =============================================================================
 
 // CBulletTrail[10]
-extern CBulletTrail g_CBulletTrail_ARRAY_01cefd14[10];
+extern CBulletTrail g_BulletTrailPool[10];
 
 // CFireball[64]
 extern CFireball g_FireballPool[64];
 
 // int
 extern int g_INT_01cefd10;
-extern int g_INT_01cefe7c;
+extern int g_FireballAllocIndex;
 

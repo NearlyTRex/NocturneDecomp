@@ -35,11 +35,11 @@
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd1b6
 ;
 ; Referenced Globals:
-;   CQuaternion4f g_CQuaternion4f_005a4508
-;   undefined4 g_INT_ARRAY_01e53388[3]
-;   undefined4 g_INT_ARRAY_01e53388[4]
-;   undefined4 g_INT_ARRAY_01e53388[5]
-;   undefined4 g_INT_ARRAY_01e53388[6]
+;   CQuaternion4f g_IdentityQuaternion
+;   undefined4 g_ScatIndices[3]
+;   undefined4 g_ScatIndices[4]
+;   undefined4 g_ScatIndices[5]
+;   undefined4 g_ScatIndices[6]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
@@ -65,9 +65,9 @@ section .text
     CMP dword ptr [EBP + 0x18],0x0      ; 004fd1e2
     JZ 0x004fd268                       ; 004fd1e6
         ;   XREF to: 004fd268 (CONDITIONAL_JUMP)  ; LAB_004fd268
-    MOV ESI,dword ptr [0x01e53398]      ; 004fd1ec | g_INT_ARRAY_01e53388[4]
+    MOV ESI,dword ptr [0x01e53398]      ; 004fd1ec | g_ScatIndices[4]
     MOV dword ptr [ESP + 0x144],ESI     ; 004fd1f2
-    MOV ESI,dword ptr [0x01e533a0]      ; 004fd1f9 | g_INT_ARRAY_01e53388[6]
+    MOV ESI,dword ptr [0x01e533a0]      ; 004fd1f9 | g_ScatIndices[6]
     PUSH 0xbfc90fdb                     ; 004fd1ff
     MOV dword ptr [ESP + 0x14c],ESI     ; 004fd204
     LEA ESI,[ESP + 0xb8]                ; 004fd20b
@@ -107,10 +107,10 @@ section .text
     POP ESI                             ; 004fd265
     POP EBX                             ; 004fd266
     RET                                 ; 004fd267
-    MOV ESI,dword ptr [0x01e53394]      ; 004fd268 | g_INT_ARRAY_01e53388[3]
+    MOV ESI,dword ptr [0x01e53394]      ; 004fd268 | g_ScatIndices[3]
         ;   Label: LAB_004fd268
     MOV dword ptr [ESP + 0x144],ESI     ; 004fd26e
-    MOV ESI,dword ptr [0x01e5339c]      ; 004fd275 | g_INT_ARRAY_01e53388[5]
+    MOV ESI,dword ptr [0x01e5339c]      ; 004fd275 | g_ScatIndices[5]
     PUSH 0x3fc90fdb                     ; 004fd27b
     MOV dword ptr [ESP + 0x14c],ESI     ; 004fd280
     LEA ESI,[ESP + 0x98]                ; 004fd287
@@ -173,7 +173,7 @@ section .text
     LEA ESI,[ESP + 0x68]                ; 004fd32c
     PUSH 0x3f733333                     ; 004fd330
     PUSH ESI                            ; 004fd335
-    PUSH 0x5a4508                       ; 004fd336 | g_CQuaternion4f_005a4508
+    PUSH 0x5a4508                       ; 004fd336 | g_IdentityQuaternion
     LEA ESI,[ESP + 0x124]               ; 004fd33b
     LEA EDI,[ESP + 0x84]                ; 004fd342
     CALL core_xform.cpp_slerpQuaternion_FUN_0055d2d0 ; 004fd349

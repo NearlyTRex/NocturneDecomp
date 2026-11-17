@@ -353,7 +353,7 @@ section .text
         ;   Label: LAB_004bce96
     INC AL                              ; 004bce98
     MOVZX EDI,AL                        ; 004bce9a
-    MOV DL,byte ptr [EDI + 0x626114]    ; 004bce9d | g_UCHAR_ARRAY_00626114
+    MOV DL,byte ptr [EDI + 0x626114]    ; 004bce9d | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bcea3
     TEST DL,0x2                         ; 004bcea6
     JZ 0x004bceaf                       ; 004bcea9
@@ -374,7 +374,7 @@ section .text
         ;   Label: LAB_004bcec9
     INC AL                              ; 004bcecb
     MOVZX EDI,AL                        ; 004bcecd
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bced0 | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bced0 | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bced6
     TEST DH,0x2                         ; 004bced9
     JZ 0x004bcfca                       ; 004bcedc
@@ -415,7 +415,7 @@ section .text
         ;   Label: LAB_004bcf17
     INC AL                              ; 004bcf19
     AND EAX,0xff                        ; 004bcf1b
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bcf20 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bcf20 | g_CharacterClassificationTable
     JZ 0x004bcf2c                       ; 004bcf27
         ;   XREF to: 004bcf2c (CONDITIONAL_JUMP)  ; LAB_004bcf2c
     INC ESI                             ; 004bcf29
@@ -496,7 +496,7 @@ section .text
         ;   Label: LAB_004bcfe4
     INC AL                              ; 004bcfe6
     MOVZX EDI,AL                        ; 004bcfe8
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bcfeb | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bcfeb | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bcff1
     TEST DH,0x2                         ; 004bcff4
     JZ 0x004bd0f0                       ; 004bcff7
@@ -537,7 +537,7 @@ section .text
         ;   Label: LAB_004bd032
     INC AL                              ; 004bd034
     AND EAX,0xff                        ; 004bd036
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd03b | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd03b | g_CharacterClassificationTable
     JZ 0x004bd047                       ; 004bd042
         ;   XREF to: 004bd047 (CONDITIONAL_JUMP)  ; LAB_004bd047
     INC ESI                             ; 004bd044
@@ -634,7 +634,7 @@ section .text
         ;   Label: LAB_004bd10a
     INC AL                              ; 004bd10c
     MOVZX EDI,AL                        ; 004bd10e
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd111 | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd111 | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bd117
     TEST DH,0x2                         ; 004bd11a
     JZ 0x004bd258                       ; 004bd11d
@@ -675,7 +675,7 @@ section .text
         ;   Label: LAB_004bd158
     INC AL                              ; 004bd15a
     AND EAX,0xff                        ; 004bd15c
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd161 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd161 | g_CharacterClassificationTable
     JZ 0x004bd16d                       ; 004bd168
         ;   XREF to: 004bd16d (CONDITIONAL_JUMP)  ; LAB_004bd16d
     INC ESI                             ; 004bd16a
@@ -787,7 +787,7 @@ section .text
         ;   Label: LAB_004bd272
     INC AL                              ; 004bd274
     MOVZX EDI,AL                        ; 004bd276
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd279 | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd279 | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bd27f
     TEST DH,0x2                         ; 004bd282
     JZ 0x004bd3d4                       ; 004bd285
@@ -828,7 +828,7 @@ section .text
         ;   Label: LAB_004bd2c0
     INC AL                              ; 004bd2c2
     AND EAX,0xff                        ; 004bd2c4
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd2c9 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd2c9 | g_CharacterClassificationTable
     JZ 0x004bd2d5                       ; 004bd2d0
         ;   XREF to: 004bd2d5 (CONDITIONAL_JUMP)  ; LAB_004bd2d5
     INC ESI                             ; 004bd2d2
@@ -942,7 +942,7 @@ section .text
         ;   Label: LAB_004bd3ee
     INC AL                              ; 004bd3f0
     MOVZX EDI,AL                        ; 004bd3f2
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd3f5 | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd3f5 | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bd3fb
     TEST DH,0x2                         ; 004bd3fe
     JZ 0x004bd4fe                       ; 004bd401
@@ -983,7 +983,7 @@ section .text
         ;   Label: LAB_004bd43c
     INC AL                              ; 004bd43e
     AND EAX,0xff                        ; 004bd440
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd445 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd445 | g_CharacterClassificationTable
     JZ 0x004bd451                       ; 004bd44c
         ;   XREF to: 004bd451 (CONDITIONAL_JUMP)  ; LAB_004bd451
     INC ESI                             ; 004bd44e
@@ -1062,7 +1062,7 @@ section .text
         ;   Label: LAB_004bd518
     INC AL                              ; 004bd51a
     MOVZX EDI,AL                        ; 004bd51c
-    MOV CL,byte ptr [EDI + 0x626114]    ; 004bd51f | g_UCHAR_ARRAY_00626114
+    MOV CL,byte ptr [EDI + 0x626114]    ; 004bd51f | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bd525
     TEST CL,0x2                         ; 004bd528
     JZ 0x004bd67c                       ; 004bd52b
@@ -1103,7 +1103,7 @@ section .text
         ;   Label: LAB_004bd566
     INC AL                              ; 004bd568
     AND EAX,0xff                        ; 004bd56a
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd56f | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd56f | g_CharacterClassificationTable
     JZ 0x004bd57b                       ; 004bd576
         ;   XREF to: 004bd57b (CONDITIONAL_JUMP)  ; LAB_004bd57b
     INC ESI                             ; 004bd578
@@ -1215,7 +1215,7 @@ section .text
         ;   Label: LAB_004bd696
     INC AL                              ; 004bd698
     MOVZX EDI,AL                        ; 004bd69a
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd69d | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd69d | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bd6a3
     TEST DH,0x2                         ; 004bd6a6
     JZ 0x004bd81b                       ; 004bd6a9
@@ -1255,7 +1255,7 @@ section .text
         ;   Label: LAB_004bd6e3
     INC AL                              ; 004bd6e5
     AND EAX,0xff                        ; 004bd6e7
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd6ec | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd6ec | g_CharacterClassificationTable
     JZ 0x004bd6f8                       ; 004bd6f3
         ;   XREF to: 004bd6f8 (CONDITIONAL_JUMP)  ; LAB_004bd6f8
     INC ESI                             ; 004bd6f5
@@ -1378,7 +1378,7 @@ section .text
         ;   Label: LAB_004bd835
     INC AL                              ; 004bd837
     MOVZX EDI,AL                        ; 004bd839
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd83c | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd83c | g_CharacterClassificationTable
     LEA EAX,[ESI + 0x1]                 ; 004bd842
     TEST DH,0x2                         ; 004bd845
     JZ 0x004bd9b8                       ; 004bd848
@@ -1419,7 +1419,7 @@ section .text
         ;   Label: LAB_004bd883
     INC AL                              ; 004bd885
     AND EAX,0xff                        ; 004bd887
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd88c | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd88c | g_CharacterClassificationTable
     JZ 0x004bd898                       ; 004bd893
         ;   XREF to: 004bd898 (CONDITIONAL_JUMP)  ; LAB_004bd898
     INC ESI                             ; 004bd895
@@ -1577,7 +1577,7 @@ section .text
         ;   Label: LAB_004bda1e
     INC AL                              ; 004bda20
     AND EAX,0xff                        ; 004bda22
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bda27 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bda27 | g_CharacterClassificationTable
     JZ 0x004bda33                       ; 004bda2e
         ;   XREF to: 004bda33 (CONDITIONAL_JUMP)  ; LAB_004bda33
     INC ESI                             ; 004bda30

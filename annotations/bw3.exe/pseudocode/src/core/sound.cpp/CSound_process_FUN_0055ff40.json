@@ -421,13 +421,13 @@
     },
     {
       "addr": "02cf5684",
-      "name": "g_UINT_02cf5684",
+      "name": "g_WindSoundHandle",
       "type": "uint",
       "value": null
     },
     {
       "addr": "02cf5688",
-      "name": "g_UINT_02cf5688",
+      "name": "g_WaterSoundHandle",
       "type": "uint",
       "value": null
     },
@@ -475,31 +475,31 @@
     },
     {
       "addr": "02cf5ecc",
-      "name": "g_FLOAT_02cf5ecc",
+      "name": "g_TargetVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "02cf5ed0",
-      "name": "g_FLOAT_02cf5ed0",
+      "name": "g_VolumeFadeTimeRemaining",
       "type": "float",
       "value": null
     },
     {
       "addr": "02cf5ed4",
-      "name": "g_STrainNoise_ARRAY_02cf5ed4",
+      "name": "g_TrainNoiseArray",
       "type": "STrainNoise[10]",
       "value": null
     },
     {
       "addr": "02cf5ed8",
-      "name": "g_STrainNoise_ARRAY_02cf5ed4[0].position.y",
+      "name": "g_TrainNoiseArray[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5edc",
-      "name": "g_STrainNoise_ARRAY_02cf5ed4[0].position.z",
+      "name": "g_TrainNoiseArray[0].position.z",
       "type": "undefined4",
       "value": null
     },
@@ -529,19 +529,19 @@
     },
     {
       "addr": "02cf5f84",
-      "name": "g_INT_02cf5f84",
+      "name": "g_TrainLastCameraIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf5f88",
-      "name": "g_UINT_02cf5f88",
+      "name": "g_TrainRailNoiseHandle",
       "type": "uint",
       "value": null
     },
     {
       "addr": "02cf5f8c",
-      "name": "g_UINT_02cf5f8c",
+      "name": "g_TrainExteriorAmbientHandle",
       "type": "uint",
       "value": null
     },
@@ -979,19 +979,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_STrainNoise_ARRAY_02cf5ed4[0].position.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_TrainNoiseArray[0].position.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 207,
-      "match": "(int)&g_STrainNoise_ARRAY_02cf5ed4[0].position.z",
+      "match": "(int)&g_TrainNoiseArray[0].position.z",
       "severity": "moderate",
-      "text": "ABS(*(float *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].position.z + local_20))) {",
+      "text": "ABS(*(float *)((int)&g_TrainNoiseArray[0].position.z + local_20))) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_TrainNoiseArray[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 209,
-      "match": "(int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle",
+      "match": "(int)&g_TrainNoiseArray[0].sfx_handle",
       "severity": "moderate",
-      "text": "(*(uint *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle + local_20));",
+      "text": "(*(uint *)((int)&g_TrainNoiseArray[0].sfx_handle + local_20));",
       "type": "pointer_truncation"
     },
     {
@@ -1047,7 +1047,7 @@
       "line": 207,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "ABS(*(float *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].position.z + local_20))) {",
+      "text": "ABS(*(float *)((int)&g_TrainNoiseArray[0].position.z + local_20))) {",
       "type": "pointer_cast"
     },
     {
@@ -1055,7 +1055,7 @@
       "line": 209,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(*(uint *)((int)&g_STrainNoise_ARRAY_02cf5ed4[0].sfx_handle + local_20));",
+      "text": "(*(uint *)((int)&g_TrainNoiseArray[0].sfx_handle + local_20));",
       "type": "pointer_cast"
     }
   ]

@@ -25,11 +25,11 @@
 ;   float FLOAT_0057f38b = 3
 ;   undefined4 DAT_0059cda8
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
+;   undefined4 g_CEnemyClassInfo.name_hash
 ;   int[2000] g_INT_ARRAY_01bcdef8
 ;   undefined4 g_INT_ARRAY_01bcdef8[1]
 ;   undefined4 g_INT_ARRAY_01bcdef8[1999]
@@ -101,7 +101,7 @@ section .text
     RET                                 ; 00479bf2
     PUSH 0x57f36f                       ; 00479bf3 | = "Capture"
         ;   Label: LAB_00479bf3
-    MOV ESI,dword ptr [0x005b7650]      ; 00479bf8 | g_CEventList_PTR_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 00479bf8 | g_CEventListPtr
     PUSH ESI                            ; 00479bfe
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00479bff
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -204,7 +204,7 @@ section .text
         ;   Label: LAB_00479d39
     JL 0x00479ba8                       ; 00479d3b
         ;   XREF to: 00479ba8 (CONDITIONAL_JUMP)  ; LAB_00479ba8
-    MOV EAX,dword ptr [EBX*0x4 + 0x1bcdef8] ; 00479d41 | g_CEnemyActorType_01bcdebc.name_hash | g_INT_ARRAY_01bcdef8 | g_INT_ARRAY_01bcdef8[1]
+    MOV EAX,dword ptr [EBX*0x4 + 0x1bcdef8] ; 00479d41 | g_CEnemyClassInfo.name_hash | g_INT_ARRAY_01bcdef8 | g_INT_ARRAY_01bcdef8[1]
     PUSH EAX                            ; 00479d48
     PUSH EDI                            ; 00479d49
     MOV dword ptr [ESP + 0x44],EAX      ; 00479d4a

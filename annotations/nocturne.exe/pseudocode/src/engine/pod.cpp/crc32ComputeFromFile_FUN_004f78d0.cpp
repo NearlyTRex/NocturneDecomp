@@ -16,9 +16,9 @@ uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_004f78d0(_FILE *file_stream
   
   current_crc = 0xffffffff;
   for (; 0xffff < (int)total_bytes; total_bytes = total_bytes - 0x10000) {
-    pcVar3 = g_CHAR_ARRAY_01e428d0;
+    pcVar3 = g_FileIOBuffer;
     uVar2 = 0;
-    _fread(g_CHAR_ARRAY_01e428d0,0x10000,1,file_stream);
+    _fread(g_FileIOBuffer,0x10000,1,file_stream);
     do {
       uVar1 = *pcVar3;
       pcVar3 = pcVar3 + 1;
@@ -26,9 +26,9 @@ uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_004f78d0(_FILE *file_stream
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(current_crc,uVar1);
     } while (uVar2 < 0x10000);
   }
-  pcVar3 = g_CHAR_ARRAY_01e428d0;
+  pcVar3 = g_FileIOBuffer;
   uVar2 = 0;
-  _fread(g_CHAR_ARRAY_01e428d0,total_bytes,1,file_stream);
+  _fread(g_FileIOBuffer,total_bytes,1,file_stream);
   if (total_bytes != 0) {
     do {
       uVar1 = *pcVar3;

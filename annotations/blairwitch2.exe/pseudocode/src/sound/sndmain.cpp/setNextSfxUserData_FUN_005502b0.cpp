@@ -14,6 +14,6 @@ void __cdecl sound_sndmain_cpp_setNextSfxUserData_FUN_005502b0(int index,void *u
     g_INT_01d046a4 = 0xe6b;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setNextSfxUserData - invalid user data index: %d");
   }
-  *(void **)(g_INT_0264161c * 0x60 + 0x2641664 + index * 4) = userdata;
+  *(void **)(g_SfxLastSlot * 0x60 + 0x2641664 + index * 4) = userdata;
   return;
 }

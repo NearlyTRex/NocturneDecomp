@@ -25,9 +25,9 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3f538
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
-;   int g_INT_01c3f574
+;   int g_StatusTextColor
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -59,7 +59,7 @@ section .text
     PUSH 0x6a                           ; 0049441c
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0049441e
     PUSH EAX                            ; 00494424
-    MOV dword ptr [0x01c3f538],EDX      ; 00494425 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 00494425 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049442b
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00494430
@@ -95,7 +95,7 @@ section .text
     SUB EAX,EDX                         ; 00494498
     SAR EAX,0x1                         ; 0049449a
     PUSH -0x1                           ; 0049449c
-    MOV EBP,dword ptr [0x01c3f574]      ; 0049449e | g_INT_01c3f574
+    MOV EBP,dword ptr [0x01c3f574]      ; 0049449e | g_StatusTextColor
     PUSH EBP                            ; 004944a4
     PUSH EAX                            ; 004944a5
     MOV EAX,[0x0061b498]                ; 004944a6 | g_INT_0061b498

@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005ae8c0 at 005ae8e3
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_006075c4 = 00000000
+;   Heap* g_MainHeap = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ae8fc
@@ -33,7 +33,7 @@ section .text
     TEST ESI,ESI                        ; 005ae975
     JNZ 0x005ae981                      ; 005ae977
         ;   XREF to: 005ae981 (CONDITIONAL_JUMP)  ; LAB_005ae981
-    MOV dword ptr [0x006075c4],EBX      ; 005ae979 | g_Heap_PTR_006075c4
+    MOV dword ptr [0x006075c4],EBX      ; 005ae979 | g_MainHeap
     JMP 0x005ae984                      ; 005ae97f
         ;   XREF to: 005ae984 (UNCONDITIONAL_JUMP)  ; LAB_005ae984
     MOV dword ptr [ESI + 0x8],EBX       ; 005ae981

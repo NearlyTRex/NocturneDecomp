@@ -18,10 +18,10 @@
 ;   undefined4 s_yntax_error_005de192+1
 ;   undefined4 s_ntax_error_005de192+2
 ;   undefined4 s_tax_error_005de192+3
-;   char[256] g_CHAR_ARRAY_01c56ed0
-;   undefined4 g_CHAR_ARRAY_01c56ed0+1
-;   undefined4 g_CHAR_ARRAY_01c56ed0+2
-;   undefined4 g_CHAR_ARRAY_01c56ed0+3
+;   char[256] g_EventErrorMessageBuffer
+;   undefined4 g_EventErrorMessageBuffer+1
+;   undefined4 g_EventErrorMessageBuffer+2
+;   undefined4 g_EventErrorMessageBuffer+3
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0
@@ -34,7 +34,7 @@ section .text
         ;   Label: core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10
     SUB ESP,0x4                         ; 004a6d11
     XOR AH,AH                           ; 004a6d14
-    MOV byte ptr [0x01c56ed0],AH        ; 004a6d16 | g_CHAR_ARRAY_01c56ed0
+    MOV byte ptr [0x01c56ed0],AH        ; 004a6d16 | g_EventErrorMessageBuffer
     MOV EAX,ESP                         ; 004a6d1c
     PUSH EAX                            ; 004a6d1e
     MOV ECX,dword ptr [ESP + 0x14]      ; 004a6d1f
@@ -63,16 +63,16 @@ section .text
     PUSH ESI                            ; 004a6d4d
     MOV ESI,0x5de192                    ; 004a6d4e | = "Syntax error"
     MOV EDI,0x1c56ed0                   ; 004a6d53
-    PUSH EDI                            ; 004a6d58 | g_CHAR_ARRAY_01c56ed0
+    PUSH EDI                            ; 004a6d58 | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 004a6d59 | = "Syntax error" | s_ntax_error_005de192+2
         ;   Label: LAB_004a6d59
-    MOV byte ptr [EDI],AL               ; 004a6d5b | g_CHAR_ARRAY_01c56ed0 | g_CHAR_ARRAY_01c56ed0+2
+    MOV byte ptr [EDI],AL               ; 004a6d5b | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004a6d5d
     JZ 0x004a6d71                       ; 004a6d5f
         ;   XREF to: 004a6d71 (CONDITIONAL_JUMP)  ; LAB_004a6d71
     MOV AL,byte ptr [ESI + 0x1]         ; 004a6d61 | s_yntax_error_005de192+1 | s_tax_error_005de192+3
     ADD ESI,0x2                         ; 004a6d64
-    MOV byte ptr [EDI + 0x1],AL         ; 004a6d67 | g_CHAR_ARRAY_01c56ed0+1 | g_CHAR_ARRAY_01c56ed0+3
+    MOV byte ptr [EDI + 0x1],AL         ; 004a6d67 | g_EventErrorMessageBuffer+1 | g_EventErrorMessageBuffer+3
     ADD EDI,0x2                         ; 004a6d6a
     CMP AL,0x0                          ; 004a6d6d
     JNZ 0x004a6d59                      ; 004a6d6f

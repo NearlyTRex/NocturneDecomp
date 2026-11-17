@@ -12,14 +12,14 @@ void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401810(int left,int top,
   int iVar1;
   int iVar2;
   
-  g_INT_01c4f010 = right;
+  g_ClipRight = right;
   g_INT_01c4f014 = bottom;
   g_INT_01c4f00c = top;
-  g_INT_01c4f018 = (right - left) + 1;
-  g_INT_01c4f01c = (bottom - top) + 1;
-  iVar1 = (g_INT_01c4f018 / 2 & 0xffffU) - 1;
+  g_ViewportWidth = (right - left) + 1;
+  g_ViewportHeight = (bottom - top) + 1;
+  iVar1 = (g_ViewportWidth / 2 & 0xffffU) - 1;
   g_INT_01c4f008 = left;
-  iVar2 = (g_INT_01c4f01c / 2 & 0xffffU) - 1;
+  iVar2 = (g_ViewportHeight / 2 & 0xffffU) - 1;
   g_INT_01c4eff8 = iVar1 * 0x10000;
   g_INT_01c4f000 = (iVar1 + left + 1) * 0x10000;
   g_INT_01c4effc = iVar2 * -0x10000;

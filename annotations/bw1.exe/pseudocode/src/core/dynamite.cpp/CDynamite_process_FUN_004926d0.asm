@@ -11,7 +11,7 @@
 ;   double g_DOUBLE_005dbc5c = 5
 ;   float g_FLOAT_005dbc64 = 0.5
 ;   float g_FLOAT_005ff6bc = 3.5
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;
 ; Called Functions:
@@ -176,7 +176,7 @@ section .text
     PUSH 0x0                            ; 004928a4
     LEA EAX,[ESP + 0x88]                ; 004928a6
     PUSH EAX                            ; 004928ad
-    MOV EDX,dword ptr [0x0061c010]      ; 004928ae | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004928ae | g_CFireEffectPtr
     PUSH EDX                            ; 004928b4
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004928b5
         ;   XREF to: 004b59e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

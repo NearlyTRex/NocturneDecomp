@@ -9,13 +9,13 @@
 ;   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0 at 005582d9
 ;
 ; Referenced Globals:
-;   int g_INT_01c70f70
+;   int g_DefaultTextColor
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01c70f70]                ; 00491140 | g_INT_01c70f70
+    MOV EAX,[0x01c70f70]                ; 00491140 | g_DefaultTextColor
         ;   Label: engine_font.cpp_getDefaultTextColor_FUN_00491140
     RET                                 ; 00491145
 

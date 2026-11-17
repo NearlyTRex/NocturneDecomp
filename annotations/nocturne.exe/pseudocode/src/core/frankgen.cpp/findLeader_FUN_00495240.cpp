@@ -24,7 +24,7 @@ CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void)
     }
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                        (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
-                        g_CFrankenstienMachineActorType_01c71304.name_hash);
+                        g_CFrankenstienMachineClassInfo.name_hash);
     if (pCVar1 != (CDemonActor *)0x0) break;
     iVar2 = iVar2 + 1;
     iVar3 = iVar3 + 4;

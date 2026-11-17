@@ -65,7 +65,7 @@
     },
     {
       "addr": "007f7370",
-      "name": "g_CDemonCamera_PTR_007f7370",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -77,91 +77,91 @@
     },
     {
       "addr": "01c78c84",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.base.base.count",
+      "name": "g_GoreQuadPrimitive.base.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c88",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.A",
+      "name": "g_GoreQuadPrimitive.base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c8c",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.B",
+      "name": "g_GoreQuadPrimitive.base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c90",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.C",
+      "name": "g_GoreQuadPrimitive.base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c94",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.D",
+      "name": "g_GoreQuadPrimitive.base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c98",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[0]",
+      "name": "g_GoreQuadPrimitive.vertices[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78c9c",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[1]",
+      "name": "g_GoreQuadPrimitive.vertices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78ca0",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[2]",
+      "name": "g_GoreQuadPrimitive.vertices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78ca4",
-      "name": "g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[3]",
+      "name": "g_GoreQuadPrimitive.vertices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78ca8",
-      "name": "g_CVector3i_01c78ca8",
+      "name": "g_ParticleCameraRotation",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c78cac",
-      "name": "g_CVector3i_01c78ca8.y",
+      "name": "g_ParticleCameraRotation.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78cb0",
-      "name": "g_CVector3i_01c78ca8.z",
+      "name": "g_ParticleCameraRotation.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78cb4",
-      "name": "g_CVector3i_01c78cb4",
+      "name": "g_BloodParticleViewDirection",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c78cb8",
-      "name": "g_CVector3i_01c78cb4.y",
+      "name": "g_BloodParticleViewDirection.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78cbc",
-      "name": "g_CVector3i_01c78cb4.z",
+      "name": "g_BloodParticleViewDirection.z",
       "type": "undefined4",
       "value": null
     }
@@ -354,11 +354,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Pointer value `&g_CVector3i_01c78ca8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ParticleCameraRotation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 33,
-      "match": "(int)&g_CVector3i_01c78ca8",
+      "match": "(int)&g_ParticleCameraRotation",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01c78ca8 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_ParticleCameraRotation + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -406,7 +406,7 @@
       "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_CVector3i_01c78ca8 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_ParticleCameraRotation + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {

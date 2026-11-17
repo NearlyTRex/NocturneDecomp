@@ -109,9 +109,9 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(CDemonSet *th
   pCVar3 = local_14;
   core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360(local_14);
   iVar4 = 0;
-  g_INT_00622c28 = 0;
+  g_RenderMirrorsFlag = 0;
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(this_ptr,(pCVar3->base).max_distance,0);
-  g_INT_00622c28 = 1;
+  g_RenderMirrorsFlag = 1;
   core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(this_ptr,0xffffffff);
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(this_ptr,1);
   core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(this_ptr,1);
@@ -127,7 +127,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(CDemonSet *th
     } while (iVar4 < this_ptr->sorted_render_actor_count);
   }
   core_gore_cpp_CGore_renderParticles_FUN_004e5c50(g_CGorePtr);
-  core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffect_PTR_0061c010);
+  core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffectPtr);
   core_dlight_cpp_CDemonLight_endScene_FUN_00462ad0(local_14,1);
   local_3c.x = (int)ROUND(local_24.x * 256.0f);
   local_3c.y = (int)ROUND(local_24.y * 256.0f);
@@ -137,7 +137,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(CDemonSet *th
              (CMatrix3x3f *)0x0);
   iVar4 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490
                     (this_ptr,&local_3c,(CVector3i *)0x0);
-  iVar5 = core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004b7440(g_CFireEffect_PTR_0061c010);
+  iVar5 = core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004b7440(g_CFireEffectPtr);
   if (g_INT_0061b49c < 0xf1) {
     iVar1 = -local_14->shadow_map_width;
     iVar2 = -local_14->shadow_map_height;
@@ -149,6 +149,6 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(CDemonSet *th
   core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30
             (local_14,(g_INT_0061b498 + iVar1) / 2,(g_INT_0061b49c + iVar2) / 2,
              ((int)((iVar4 + (iVar4 >> 0x1f) * -0x80) - (uint)((iVar4 >> 0x1f) << 6 < 0)) >> 7) +
-             iVar5 * 0x80 + g_CWeather_PTR_0062604c->lightning_active * 0x8000);
+             iVar5 * 0x80 + g_CWeatherPtr->lightning_active * 0x8000);
   return;
 }

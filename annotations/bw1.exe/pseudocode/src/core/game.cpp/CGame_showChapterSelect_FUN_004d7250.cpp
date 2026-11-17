@@ -35,7 +35,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
   this_ptr->total_play_time = 0.0;
   this_ptr->is_loading = 0;
   local_18 = g_CBitFont_PTR_01c3eb50;
-  g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d244;
+  g_CBitFont_PTR_01c3eb50 = g_ThemeFont;
   p_Var2 = _fopen("pod.ini","rt");
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
@@ -53,9 +53,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_134,0);
     if (iVar3 == 0) goto LAB_004d757b;
-    g_CHAR_ARRAY_01cd09e8[0] = '\0';
-    g_INT_01cd0ae8 = 0;
-    g_FLOAT_01cd0aec = 0.0;
+    g_ChapterDisplayName[0] = '\0';
+    g_ChapterDisplayYear = 0;
+    g_OverlayDisplayTimer = 0.0;
   }
   else {
     while (iVar3 < 0) {
@@ -128,8 +128,8 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
     p_Var2 = engine_dosio_cpp_getFile_FUN_00479180("world",local_134,"rt");
     if (p_Var2 == (_FILE *)0x0) goto LAB_004d757b;
     _fclose(p_Var2);
-    pcVar4 = g_CHAR_ARRAY_01cd09e8;
-    g_INT_01cd0ae8 = g_INT_ARRAY_0061db5c[local_14];
+    pcVar4 = g_ChapterDisplayName;
+    g_ChapterDisplayYear = g_INT_ARRAY_0061db5c[local_14];
     pcVar6 = local_30[local_14];
     do {
       cVar1 = *pcVar6;
@@ -140,15 +140,15 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    g_FLOAT_01cd0aec = 8.0;
+    g_OverlayDisplayTimer = 8.0;
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
-  core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(g_CEventList_PTR_0061b4d0);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(g_CEventListPtr);
   iVar5 = 1;
-  iVar3 = _stricmp(g_CHAR_ARRAY_01cd05c0,local_134);
+  iVar3 = _stricmp(g_CurrentSaveFile,local_134);
   if (iVar3 != 0) {
     pcVar6 = local_134;
-    pcVar4 = g_CHAR_ARRAY_01cd05c0;
+    pcVar4 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar6;
       *pcVar4 = cVar1;

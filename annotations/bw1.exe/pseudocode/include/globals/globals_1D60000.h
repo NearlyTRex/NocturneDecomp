@@ -11,8 +11,8 @@
 // =============================================================================
 
 // SChatOutMessage[50]
-extern SChatOutMessage g_SChatOutMessage_ARRAY_01d6dfbc[50];
+extern SChatOutMessage g_ChatOutMessages[50];
 
 // int
-extern int g_INT_01d6dfb8;
+extern int g_ChatOutCount;
 

@@ -17,47 +17,47 @@ CDemonActorType g_CMolochClassInfo = {};
 CDemonActorType g_CMooCowClassInfo = {};
 
 // CVector3i[2000]
-CVector3i g_CVector3i_ARRAY_01d33f70[2000] = {};
+CVector3i g_MorphVertexBuffer[2000] = {};
 
 // char
 char g_CHAR_01d33b20 = {};
 char g_CHAR_01d33b88 = {};
 
 // double[12][6]
-double g_DOUBLE_ARRAY_ARRAY_01d3ee48[12][6] = {};
+double g_Mp3DctMatrix[12][6] = {};
 
 // double[200]
-double g_DOUBLE_ARRAY_01d3bd48[200] = {};
+double g_MpegRequantPowerTable[200] = {};
 double g_DOUBLE_ARRAY_01d3c388[200] = {};
 
 // double[36][18]
-double g_DOUBLE_ARRAY_ARRAY_01d3f088[36][18] = {};
+double g_Mp3PolyCoefficients[36][18] = {};
 
 // double[4][36]
-double g_DOUBLE_ARRAY_ARRAY_01d3e9c8[4][36] = {};
+double g_Mp3WindowTables[4][36] = {};
 
 // double[8]
-double g_DOUBLE_ARRAY_01d3e948[8] = {};
-double g_DOUBLE_ARRAY_01d3e988[8] = {};
+double g_Mp3AntiAliasCS[8] = {};
+double g_Mp3AntiAliasCA[8] = {};
 
 // float
-float g_FLOAT_01d33f6c = {};
+float g_MoonAnimationTimer = {};
 float g_FLOAT_01d3d748 = {};
 
 // float[64][32]
-float g_FLOAT_ARRAY_ARRAY_01d39d40[64][32] = {};
+float g_MpegSynthesisDctTable[64][32] = {};
 
 // int
 int g_INT_01d33f64 = {};
 int g_INT_01d33f68 = {};
-int g_INT_01d39d30 = {};
-int g_INT_01d39d34 = {};
-int g_INT_01d3bd40 = {};
-int g_INT_01d3bd44 = {};
+int g_MorphReverseWinding = {};
+int g_RenderMotionDebug = {};
+int g_HuffmanTablesInitialized = {};
+int g_MpegRequantTablesInitialized = {};
 
 // int[12]
-int g_INT_ARRAY_01d33c00[12] = {};
+int g_MobsterIndices[12] = {};
 
 // int[5]
-int g_INT_ARRAY_01d33bec[5] = {};
+int g_MobsterTauntCounters[5] = {};
 

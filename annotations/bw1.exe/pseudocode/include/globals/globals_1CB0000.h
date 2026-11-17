@@ -49,5 +49,5 @@ extern int g_INT_01cb5820;
 extern int g_INT_01cb9e74;
 extern int g_INT_01cba030;
 extern int g_INT_01cbae44;
-extern int g_INT_01cbc108;
+extern int g_PopcornAllocIndex;
 

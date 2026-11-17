@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   void* g_PTR_02c833f4
+;   void* g_APIDLL_clearZBuffer
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
         ;   XREF to: 0058294c (CONDITIONAL_JUMP)  ; LAB_0058294c
     XOR EAX,EAX                         ; 00582949
     RET                                 ; 0058294b
-    CALL dword ptr [0x02c833f4]         ; 0058294c | g_PTR_02c833f4
+    CALL dword ptr [0x02c833f4]         ; 0058294c | g_APIDLL_clearZBuffer
         ;   Label: LAB_0058294c
     RET                                 ; 00582952
 

@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_00530630(CDemonSet *this
     if (0 < g_INT_01fc9608) {
       iVar1 = 0;
       do {
-        if (light == *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar1)) {
+        if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {
           return;
         }
         iVar1 = iVar1 + 4;

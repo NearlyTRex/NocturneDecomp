@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   CTextureCache* g_CTextureCache_PTR_02dd0f84
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
@@ -28,7 +28,7 @@ section .text
         ;   Label: LAB_00545aaa
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 00545aab
         ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
-    MOV ECX,dword ptr [0x02dd0f84]      ; 00545ab0 | g_CTextureCache_PTR_02dd0f84
+    MOV ECX,dword ptr [0x02dd0f84]      ; 00545ab0 | g_TextureCacheInstance
     PUSH ECX                            ; 00545ab6
     CALL engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700 ; 00545ab7
         ;   XREF to: 00545700 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700(CTextureCache * this_ptr)

@@ -9,9 +9,9 @@
 byte FUN_005c7090(uint param_1)
 
 {
-  if (g_INT_026807f0 != 0) {
-    if (g_UINT_0061f758 == 0x3a4) {
-      return g_CHAR_ARRAY_0061f889[param_1 & 0xff] & 8;
+  if (g_MultibyteLocaleActive != 0) {
+    if (g_CodePage == 0x3a4) {
+      return g_ShiftJIS_TrailByteTable[param_1 & 0xff] & 8;
     }
     if (param_1 != 0) {
       return 1;

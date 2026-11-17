@@ -9,13 +9,13 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c8aea0
-;   int g_INT_01c8aea4
+;   int g_BulletHoleAllocIndex
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01c8aea4]      ; 004a1420 | g_INT_01c8aea4
+    MOV EDX,dword ptr [0x01c8aea4]      ; 004a1420 | g_BulletHoleAllocIndex
         ;   Label: core_fire.cpp_allocateBulletHole_FUN_004a1420
     MOV ECX,dword ptr [0x01c8aea0]      ; 004a1426 | g_INT_01c8aea0
     MOV EAX,EDX                         ; 004a142c
@@ -34,6 +34,6 @@ section .text
     MOV ECX,0x100                       ; 004a144a
     MOV dword ptr [0x01c8aea0],ECX      ; 004a144f | g_INT_01c8aea0
         ;   Label: LAB_004a144f
-    MOV dword ptr [0x01c8aea4],EDX      ; 004a1455 | g_INT_01c8aea4
+    MOV dword ptr [0x01c8aea4],EDX      ; 004a1455 | g_BulletHoleAllocIndex
     RET                                 ; 004a145b
 

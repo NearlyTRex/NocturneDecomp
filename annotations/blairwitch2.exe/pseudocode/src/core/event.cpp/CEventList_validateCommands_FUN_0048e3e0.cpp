@@ -12,11 +12,11 @@ char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_0048e3e0(CEventLis
   int iVar1;
   
   if (*commands != '\0') {
-    g_INT_01c3dd0c = 1;
+    g_EventDryRun = 1;
     iVar1 = core_event_cpp_CEventList_executeCommandString_FUN_00489510(this_ptr,commands);
-    g_INT_01c3dd0c = 0;
+    g_EventDryRun = 0;
     if (iVar1 == 0) {
-      return g_CHAR_ARRAY_01c3dd10;
+      return g_EventErrorMessageBuffer;
     }
   }
   return (char *)0x0;

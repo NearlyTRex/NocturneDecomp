@@ -118,7 +118,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0(CDe
             local_20 = (int)ROUND(dVar4);
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(this_ptr_00,(int)pCVar5);
             local_1c = 0;
-            texture = &g_SLightGlowTable_005ae458.sprites[0].texture;
+            texture = &g_LightGlow.sprites[0].texture;
             local_24 = &(this_ptr->base).position;
             do {
               local_18 = local_1c;

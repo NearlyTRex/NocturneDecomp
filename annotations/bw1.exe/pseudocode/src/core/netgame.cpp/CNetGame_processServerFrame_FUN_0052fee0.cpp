@@ -35,7 +35,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
   bVar11 = 0;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
   iVar2 = iVar2 / 0x12;
-  iVar3 = iVar2 - g_INT_01d51d9c;
+  iVar3 = iVar2 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
@@ -43,7 +43,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
     iVar3 = 0x20000;
   }
   g_UINT_01d51da0 = g_UINT_01d51da0 + iVar3;
-  g_INT_01d51d9c = iVar2;
+  g_LastPingTime = iVar2;
   if (this_ptr->connection_type == CONNECTION_NONE) {
     seed_value = rand();
     this_ptr->random_seed = seed_value;
@@ -84,26 +84,26 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
       } while (iVar2 < this_ptr->player_count);
     }
     iVar2 = 0;
-    if (0 < g_INT_01d715a8) {
+    if (0 < g_SimFrameCount) {
       iVar3 = 0;
       pSVar6 = g_SSimFrame_ARRAY_01d715ac + 1;
       do {
         if (*(int *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar3 + -0xc) < local_18) {
-          g_INT_01d715a8 = g_INT_01d715a8 + -1;
+          g_SimFrameCount = g_SimFrameCount + -1;
           memmove
                     ((void *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar3 + -0xc),pSVar6
-                     ,(g_INT_01d715a8 - iVar2) * 0x6c);
+                     ,(g_SimFrameCount - iVar2) * 0x6c);
         }
         else {
           pSVar6 = pSVar6 + 1;
           iVar2 = iVar2 + 1;
           iVar3 = iVar3 + 0x6c;
         }
-      } while (iVar2 < g_INT_01d715a8);
+      } while (iVar2 < g_SimFrameCount);
     }
     iVar3 = 0;
     iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
-    if (0 < g_INT_01d715a8) {
+    if (0 < g_SimFrameCount) {
       iVar4 = 0;
       do {
         if (iVar2 == *(int *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar4 + -0xc)) {
@@ -115,15 +115,15 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
         }
         iVar4 = iVar4 + 0x6c;
         iVar3 = iVar3 + 1;
-      } while (iVar4 < g_INT_01d715a8 * 0x6c);
+      } while (iVar4 < g_SimFrameCount * 0x6c);
     }
-    if (0x1ff < g_INT_01d715a8) {
+    if (0x1ff < g_SimFrameCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
       g_INT_01d1d404 = 299;
       core_main_c_displayErrorAndQuit_FUN_005030e0("allocSimFrame - sim history list full");
     }
-    pSVar6 = g_SSimFrame_ARRAY_01d715ac + g_INT_01d715a8;
-    g_INT_01d715a8 = g_INT_01d715a8 + 1;
+    pSVar6 = g_SSimFrame_ARRAY_01d715ac + g_SimFrameCount;
+    g_SimFrameCount = g_SimFrameCount + 1;
     memset(pSVar6,0,0x6c);
     pSVar6->sequence_number = iVar2;
 LAB_0053008d:
@@ -168,7 +168,7 @@ LAB_0053008d:
           local_20 = pSVar1->sim_frame_index;
           for (; 0 < iVar2; iVar2 = iVar2 + -1) {
             iVar3 = 0;
-            if (0 < g_INT_01d715a8) {
+            if (0 < g_SimFrameCount) {
               iVar4 = 0;
               do {
                 if (local_20 ==
@@ -176,7 +176,7 @@ LAB_0053008d:
                 goto LAB_00530282;
                 iVar4 = iVar4 + 0x6c;
                 iVar3 = iVar3 + 1;
-              } while (iVar4 < g_INT_01d715a8 * 0x6c);
+              } while (iVar4 < g_SimFrameCount * 0x6c);
             }
             iVar3 = -1;
 LAB_00530282:

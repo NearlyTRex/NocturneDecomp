@@ -30,7 +30,7 @@ void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00555830(CDemonSet *this_ptr,in
       iVar5 = 0x100;
     }
     iVar2 = iVar2 + 1;
-    *(int *)((int)g_INT_ARRAY_01fe6344 + iVar1) = iVar5;
+    *(int *)((int)g_IntensityToValueLookupTable + iVar1) = iVar5;
     iVar1 = iVar1 + 4;
   } while (iVar2 < 0x10000);
   return;

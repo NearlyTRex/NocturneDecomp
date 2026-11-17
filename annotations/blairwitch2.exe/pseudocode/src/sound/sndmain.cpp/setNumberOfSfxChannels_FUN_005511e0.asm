@@ -10,7 +10,7 @@
 ;   core_sound.cpp_CSound_ctor_FUN_0055a0e0 at 0055a0ed
 ;
 ; Referenced Globals:
-;   int g_INT_0061bc94 = 0x20
+;   int g_MaxSoundChannels = 0x20
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -26,7 +26,7 @@ section .text
     JG 0x005511f1                       ; 005511e5
         ;   XREF to: 005511f1 (CONDITIONAL_JUMP)  ; LAB_005511f1
     MOV EAX,dword ptr [ESP + 0x4]       ; 005511e7
-    MOV [0x0061bc94],EAX                ; 005511eb | g_INT_0061bc94
+    MOV [0x0061bc94],EAX                ; 005511eb | g_MaxSoundChannels
     RET                                 ; 005511f0
     PUSH EBX                            ; 005511f1
         ;   Label: LAB_005511f1
@@ -40,6 +40,6 @@ section .text
     ADD ESP,0x4                         ; 00551212
     POP EBX                             ; 00551215
     MOV EAX,dword ptr [ESP + 0x4]       ; 00551216
-    MOV [0x0061bc94],EAX                ; 0055121a | g_INT_0061bc94
+    MOV [0x0061bc94],EAX                ; 0055121a | g_MaxSoundChannels
     RET                                 ; 0055121f
 

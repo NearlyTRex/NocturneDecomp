@@ -43,7 +43,7 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_00554750(CWeapon *this_pt
   local_94.color.b = (this_ptr->muzzle_flash_color).b;
   local_94.intensity = 1.0;
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (this_ptr->carried_by_actor,g_CHeroActorType_01cae0ec.name_hash);
+                     (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
   local_e8.is_hero_weapon = (int)(pCVar2 != (CDemonActor *)0x0);
   local_e8.intensity = local_94.intensity;
   local_e8.beam_width = local_94.beam_width;
@@ -68,7 +68,7 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_00554750(CWeapon *this_pt
   local_e8.is_damaging = 1;
   local_94.is_hero_weapon = local_e8.is_hero_weapon;
   core_fire_cpp_CFireEffect_traceLaser_FUN_0048b6f0
-            (g_CFireEffect_PTR_005b80f0,&local_28,&local_34,&local_e8,0);
+            (g_CFireEffectPtr,&local_28,&local_34,&local_e8,0);
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
   return;
 }

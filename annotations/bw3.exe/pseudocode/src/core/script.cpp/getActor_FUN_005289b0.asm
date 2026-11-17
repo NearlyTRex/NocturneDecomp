@@ -23,7 +23,7 @@
 ;   TerminatedCString s_Hero_doesn_t_exist_005cdcbc
 ;   TerminatedCString s_Actor_s_does_not_exist_005cdcd3
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_005cdcee
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CNetGame* g_CNetGamePtr = 01da62f0
 ;   int g_INT_01d5ba14
@@ -100,7 +100,7 @@ section .text
     RET                                 ; 00528a0f
     PUSH EBX                            ; 00528a10
         ;   Label: LAB_00528a10
-    MOV EAX,[0x005fba60]                ; 00528a11 | g_CEventList_PTR_005fba60
+    MOV EAX,[0x005fba60]                ; 00528a11 | g_CEventListPtr
     MOV EBP,0x1                         ; 00528a16
     PUSH EAX                            ; 00528a1b
     MOV dword ptr [0x01ed701c],EBP      ; 00528a1c | g_INT_01ed701c

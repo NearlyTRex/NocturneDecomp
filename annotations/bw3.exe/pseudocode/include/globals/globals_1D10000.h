@@ -50,7 +50,7 @@ extern CFieldNotes g_CFieldNotesInstance;
 extern CVector3f g_CVector3f_01d1e328;
 
 // SHardwareEdge[16]
-extern SHardwareEdge g_SHardwareEdge_ARRAY_01d1ad7c[16];
+extern SHardwareEdge g_HardwareEdgeTable[16];
 
 // STextView
 extern STextView g_STextViewInstance;
@@ -64,8 +64,8 @@ extern char g_CHAR_01d1a960;
 extern char g_CHAR_01d1b110;
 
 // char[5120]
-extern char g_CHAR_ARRAY_01d1bb20[5120];
-extern char g_CHAR_ARRAY_01d1cf20[5120];
+extern char g_ActStatsTextBuffer1[5120];
+extern char g_ActStatsTextBuffer2[5120];
 
 // char[64]
 extern char g_CHAR_ARRAY_01d19cf0[64];
@@ -74,7 +74,7 @@ extern char g_CHAR_ARRAY_01d19cf0[64];
 extern double g_DOUBLE_01d1bb10;
 
 // float
-extern float g_FLOAT_01d1a0a0;
+extern float g_FastSqrtMagicSeedOne;
 extern float g_FLOAT_01d1a0ac;
 extern float g_FLOAT_01d1a0b0;
 extern float g_FLOAT_01d1a0b4;
@@ -93,7 +93,7 @@ extern float g_FLOAT_01d1e340;
 extern float g_FLOAT_01d1e344;
 
 // float[64][8]
-extern float g_FLOAT_ARRAY_ARRAY_01d1a124[64][8];
+extern float g_SplineBasisTable[64][8];
 
 // int
 extern int g_INT_01d19ba8;
@@ -104,17 +104,17 @@ extern int g_INT_01d19f84;
 extern int g_INT_01d19f88;
 extern int g_INT_01d19f8c;
 extern int g_INT_01d1a058;
-extern int g_INT_01d1a0a4;
-extern int g_INT_01d1a0a8;
-extern int g_INT_01d1a0dc;
-extern int g_INT_01d1ad64;
-extern int g_INT_01d1ad68;
-extern int g_INT_01d1ad6c;
-extern int g_INT_01d1ad70;
+extern int g_FastSqrtMagic;
+extern int g_FastInvSqrtMagic;
+extern int g_FliesInitialized;
+extern int g_ShadowColor32;
+extern int g_ShadowColorRed;
+extern int g_ShadowColorGreen;
+extern int g_ShadowColorBlue;
 extern int g_INT_01d1ad74;
-extern int g_INT_01d1ad78;
-extern int g_INT_01d1b0fc;
-extern int g_INT_01d1b100;
+extern int g_EdgeCount;
+extern int g_EdgeListMinY;
+extern int g_EdgeListMaxY;
 extern int g_INT_01d1bb18;
 extern int g_INT_01d1e320;
 extern int g_INT_01d1e324;
@@ -124,8 +124,8 @@ extern int g_INT_01d1e354;
 extern int g_INT_01d1e358;
 
 // uint
-extern uint g_UINT_01d1a11c;
-extern uint g_UINT_01d1a120;
+extern uint g_FlyBlendColor;
+extern uint g_FlyInvBlendColor;
 
 // ushort
 extern ushort g_USHORT_01d1ad62;

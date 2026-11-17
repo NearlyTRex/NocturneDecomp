@@ -19,12 +19,12 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) ||
-      (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+      (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
      (g_INT_ARRAY_02dc9324[iVar1] == 0)) {
     sound_sndmain_cpp_logSoundError_FUN_00529980("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");
   }
   else {
-    this_ptr_00 = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1];
+    this_ptr_00 = g_DirectSoundHardwareSfxBuffers[iVar1];
     if (this_ptr_00 != (LPDIRECTSOUNDBUFFER)0x0) {
       error_code = (*this_ptr_00->vtable->Stop)(this_ptr_00);
       if (error_code != 0) {
@@ -40,10 +40,10 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
       (**(code **)(*piVar2 + 8))(piVar2);
       g_INT_ARRAY_02dc9324[iVar1] = 0;
     }
-    this_ptr_01 = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1];
+    this_ptr_01 = g_DirectSoundHardwareSfxBuffers[iVar1];
     if (this_ptr_01 != (IDirectSoundBuffer *)0x0) {
       (*this_ptr_01->vtable->Release)((IUnknown *)this_ptr_01);
-      g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] = (IDirectSoundBuffer *)0x0;
+      g_DirectSoundHardwareSfxBuffers[iVar1] = (IDirectSoundBuffer *)0x0;
       return;
     }
   }

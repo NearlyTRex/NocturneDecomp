@@ -16,7 +16,7 @@ char * __cdecl getenv(char *name)
   char **ppcVar5;
   char *pcVar6;
   
-  if ((g_CHAR_PTR_PTR_02c9f6d4 != (char **)0x0) && (name != (char *)0x0)) {
+  if ((g_EnvironmentBlock != (char **)0x0) && (name != (char *)0x0)) {
     uVar3 = 0xffffffff;
     pcVar6 = name;
     do {
@@ -26,7 +26,7 @@ char * __cdecl getenv(char *name)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     iVar4 = ~uVar3 - 1;
-    for (ppcVar5 = g_CHAR_PTR_PTR_02c9f6d4; pcVar6 = *ppcVar5, pcVar6 != (char *)0x0;
+    for (ppcVar5 = g_EnvironmentBlock; pcVar6 = *ppcVar5, pcVar6 != (char *)0x0;
         ppcVar5 = ppcVar5 + 1) {
       iVar2 = FUN_005c9ea0(pcVar6,name,iVar4);
       if ((iVar2 == 0) && (pcVar6[iVar4] == '=')) {

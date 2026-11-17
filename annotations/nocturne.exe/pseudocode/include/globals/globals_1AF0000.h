@@ -13,17 +13,17 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CZombieDogActorType_01af4e5c;
-extern CDemonActorType g_CDoorActorType_01af4e9c;
+extern CDemonActorType g_CZombieDogClassInfo;
+extern CDemonActorType g_CDoorClassInfo;
 
 // FileSearchHandlerFunc*[5]
-extern FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01af4edc[5];
+extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
 // SMRGLPrimitiveQuad[5000]
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[5000];
+extern SMRGLPrimitiveQuad g_FaceConversionBuffer[5000];
 
 // int
-extern int g_INT_01af4ed8;
+extern int g_NumSearchHandlers;
 
 // uint
 extern uint g_UINT_01af4e98;

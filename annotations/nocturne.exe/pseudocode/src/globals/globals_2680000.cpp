@@ -8,18 +8,18 @@
 CDeformableModel g_DeformableModelPool[64] = {};
 
 // CVector3f
-CVector3f g_CVector3f_0268cedc = {};
+CVector3f g_DeformableModelRayHitNormal = {};
 
 // CVector3f[3000]
-CVector3f g_CVector3f_ARRAY_02684234[3000] = {};
+CVector3f g_ShatterVertexArray[3000] = {};
 
 // int
-int g_INT_0268ced8 = {};
-int g_INT_0268cee8 = {};
-int g_INT_0268ceec = {};
-int g_INT_0268cef0 = {};
+int g_DeformableModelRayHitPartIndex = {};
+int g_DeformableModelRayHitLodIndex = {};
+int g_DeformableModelRayHitTriangleIndex = {};
+int g_DeformableModelCount = {};
 
 // uchar
-uchar g_UCHAR_02684230 = {};
-uchar g_UCHAR_0268ced4 = {};
+uchar g_FloatVertexArrayInitialized = {};
+uchar g_ShatterVertexArrayInitialized = {};
 

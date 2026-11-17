@@ -16,7 +16,7 @@ void __cdecl engine_mini3d_cpp_flushTriangleBatch_FUN_004f6970(void)
   int iVar5;
   
   if ((2 < g_INT_01d0d2f0) && (2 < g_INT_01d0d2ec)) {
-    if ((g_PTR_0264bca0 == (byte *)0x0) || (g_INT_01c37788 == 0)) {
+    if ((g_APIDLL_lockFrameX == (byte *)0x0) || (g_INT_01c37788 == 0)) {
       iVar5 = 0;
       if (0 < g_INT_01d0d2f0) {
         iVar4 = 0;
@@ -34,9 +34,9 @@ void __cdecl engine_mini3d_cpp_flushTriangleBatch_FUN_004f6970(void)
       }
     }
     else {
-      (*(code *)g_PTR_0264bca0)
+      (*(code *)g_APIDLL_lockFrameX)
                 (g_FLOAT_PTR_01d09b7c + g_INT_01d0d2e8 * 0x10,g_INT_01d0d2ec,0x1d0d2f4,
-                 g_INT_01d0d2f0 / 3,g_BIT_INTEGER32_01c38b54.dword);
+                 g_INT_01d0d2f0 / 3,g_RenderStateFlags.dword);
     }
     g_INT_01d0d2f0 = 0;
     g_INT_01d0d2ec = 0;

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 130,
+    "complexity_score": 129,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 104,
     "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk"
     ],
-    "total_lines": 378
+    "total_lines": 377
   },
   "cross_references": [
     {
@@ -166,25 +166,25 @@
     },
     {
       "addr": "005f4a58",
-      "name": "g_SMRGLSkyTexture_PTR_005f4a58",
+      "name": "g_SkyDomeTexturePtr",
       "type": "SMRGLSkyTexture*",
       "value": "01c0b558"
     },
     {
       "addr": "00603b2c",
-      "name": "g_CVector3i_00603b2c",
+      "name": "g_GlobalLightDirection",
       "type": "CVector3i",
       "value": null
     },
     {
       "addr": "00603b38",
-      "name": "g_INT_00603b38",
+      "name": "g_RenderMirrorsFlag",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "00606aa0",
-      "name": "g_CTerrain_PTR_00606aa0",
+      "name": "g_CTerrainPtr",
       "type": "CTerrain*",
       "value": "02cfd8b8"
     },
@@ -439,7 +439,7 @@
   "suspects": [
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 87,
+      "line": 86,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 102,
+      "line": 101,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

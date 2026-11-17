@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005f3128 = 0.5
-;   int g_INT_006232ec = 0x2
+;   int g_AudioChannelCount = 0x2
 ;   float g_FLOAT_00623308 = 1
 ;   double g_DOUBLE_02c7fbf8
 ;   double g_DOUBLE_02c7fc08
@@ -44,7 +44,7 @@ section .text
     MOV EBP,ESP                         ; 0056f1e2
     SUB ESP,0x34                        ; 0056f1e4
     AND ESP,0xfffffff8                  ; 0056f1e7
-    MOV ECX,dword ptr [0x006232ec]      ; 0056f1ea | g_INT_006232ec
+    MOV ECX,dword ptr [0x006232ec]      ; 0056f1ea | g_AudioChannelCount
     MOV EAX,[0x02c7fc88]                ; 0056f1f0 | g_INT_02c7fc88
     SHL EAX,0x3                         ; 0056f1f5
     CMP ECX,0x2                         ; 0056f1f8
@@ -85,7 +85,7 @@ section .text
     JL 0x0056f24d                       ; 0056f28d
         ;   XREF to: 0056f24d (CONDITIONAL_JUMP)  ; LAB_0056f24d
     NOP                                 ; 0056f28f
-    MOV dword ptr [0x006232ec],ECX      ; 0056f290 | g_INT_006232ec
+    MOV dword ptr [0x006232ec],ECX      ; 0056f290 | g_AudioChannelCount
         ;   Label: LAB_0056f290
     MOV ESP,EBP                         ; 0056f296
     POP EBP                             ; 0056f298
@@ -135,7 +135,7 @@ section .text
     FXCH                                ; 0056f340
     FSTP double ptr [0x02c80758]        ; 0056f342 | g_DOUBLE_ARRAY_02c80750[1]
     FSTP double ptr [0x02c80798]        ; 0056f348 | g_DOUBLE_ARRAY_02c80790[1]
-    MOV dword ptr [0x006232ec],ECX      ; 0056f34e | g_INT_006232ec
+    MOV dword ptr [0x006232ec],ECX      ; 0056f34e | g_AudioChannelCount
     MOV ESP,EBP                         ; 0056f354
     POP EBP                             ; 0056f356
     POP EBX                             ; 0056f357

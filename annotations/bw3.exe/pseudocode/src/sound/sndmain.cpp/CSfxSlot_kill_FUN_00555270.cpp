@@ -12,7 +12,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(CSfxSlot *this_ptr)
   int *piVar1;
   CSfxSample *this_ptr_00;
   
-  if (g_INT_02cf341c < 1) {
+  if (g_SoundLockCount < 1) {
     g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
     g_INT_01d71de4 = 0xca5;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::kill - must be locked!");
@@ -21,8 +21,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(CSfxSlot *this_ptr)
     engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Killing sfx %s\n");
   }
   if (this_ptr->hardware_buffer_handle != 0) {
-    if (g_CSoundDevice_PTR_02cf3280 != (CSoundDevice *)0x0) {
-      (*g_CSoundDevice_PTR_02cf3280->vtable->killSfx)(g_CSoundDevice_PTR_02cf3280,this_ptr);
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+      (*g_CSoundDevicePtr->vtable->killSfx)(g_CSoundDevicePtr,this_ptr);
     }
     this_ptr->hardware_buffer_handle = 0;
   }

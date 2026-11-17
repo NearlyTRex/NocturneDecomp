@@ -61,7 +61,7 @@
 ;   double g_DOUBLE_005d928c = 1024
 ;   double g_DOUBLE_005d9294 = 18
 ;   float g_FLOAT_005febd0 = 256
-;   SLightGlowTable g_SLightGlowTable_006122a8
+;   SLightGlowTable g_LightGlow
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
@@ -120,7 +120,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850 ; 004658e0
         ;   XREF to: 00483850 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 004658e5
-    PUSH 0x6122a8                       ; 004658e8 | g_SLightGlowTable_006122a8
+    PUSH 0x6122a8                       ; 004658e8 | g_LightGlow
     MOV EAX,[0x00612560]                ; 004658ed | g_CDemonRenderer_PTR_00612560
     PUSH EAX                            ; 004658f2 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004658f3

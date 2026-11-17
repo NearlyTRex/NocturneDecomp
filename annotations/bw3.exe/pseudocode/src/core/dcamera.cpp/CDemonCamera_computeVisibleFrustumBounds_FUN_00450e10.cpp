@@ -58,10 +58,10 @@ CVector3f * __stack_esi core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBound
   
   bVar5 = 0;
   pCStack_34 = output_bounds;
-  if ((int *)&stack0x00000000 != g_INT_ARRAY_02cfd980 + 0x24) {
-    CStack_11c.max.x = g_CVector3f_02cfd900.x;
-    CStack_11c.max.y = g_CVector3f_02cfd900.y;
-    CStack_11c.max.z = g_CVector3f_02cfd900.z;
+  if ((int *)&stack0x00000000 != g_VisibleWaterTilesX + 0x24) {
+    CStack_11c.max.x = g_ZeroVector.x;
+    CStack_11c.max.y = g_ZeroVector.y;
+    CStack_11c.max.z = g_ZeroVector.z;
   }
   if (&CStack_11c != (CBoundingBox3D *)&CStack_11c.max) {
     CStack_11c.min.x = CStack_11c.max.x;

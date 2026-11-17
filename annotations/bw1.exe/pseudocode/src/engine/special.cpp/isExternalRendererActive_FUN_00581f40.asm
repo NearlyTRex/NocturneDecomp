@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_02c834ac
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c834ac]                ; 00581f40 | g_INT_02c834ac
+    MOV EAX,[0x02c834ac]                ; 00581f40 | g_LoadedExternalDLLRenderer
         ;   Label: engine_special.cpp_isExternalRendererActive_FUN_00581f40
     RET                                 ; 00581f45
 

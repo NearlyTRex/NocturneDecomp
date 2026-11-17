@@ -14,24 +14,24 @@ void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3f0(int min_sequence)
   SSimFrame *src;
   
   iVar1 = 0;
-  if (0 < g_INT_01d715a8) {
+  if (0 < g_SimFrameCount) {
     iVar2 = 0;
     src = g_SSimFrame_ARRAY_01d715ac + 1;
     do {
       while (*(int *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar2 + -0xc) < min_sequence
             ) {
-        g_INT_01d715a8 = g_INT_01d715a8 + -1;
+        g_SimFrameCount = g_SimFrameCount + -1;
         memmove
                   ((void *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar2 + -0xc),src,
-                   (g_INT_01d715a8 - iVar1) * 0x6c);
-        if (g_INT_01d715a8 <= iVar1) {
+                   (g_SimFrameCount - iVar1) * 0x6c);
+        if (g_SimFrameCount <= iVar1) {
           return;
         }
       }
       src = src + 1;
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 0x6c;
-    } while (iVar1 < g_INT_01d715a8);
+    } while (iVar1 < g_SimFrameCount);
   }
   return;
 }

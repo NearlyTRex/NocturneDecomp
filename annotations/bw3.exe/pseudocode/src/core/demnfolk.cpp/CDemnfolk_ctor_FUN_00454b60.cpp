@@ -60,7 +60,7 @@ CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *thi
   pCVar3->bleedout_timer = 0.0;
   pCVar3->sfx_handles[0] = 0;
   pCVar3->sfx_handles[1] = 0;
-  this_ptr_00 = g_CEventList_PTR_005fba60;
+  this_ptr_00 = g_CEventListPtr;
   pCVar3->pickup_seed = iVar5;
   pCVar3->is_miner_zombie = 0;
   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0

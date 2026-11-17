@@ -18,8 +18,8 @@
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_INT_ARRAY_01d5baec[2]
-;   CVector3f g_CVector3f_02cfd900
+;   undefined4 g_HotDemonIndices[2]
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -335,7 +335,7 @@ section .text
     ADD ESP,0x4                         ; 004d59e0
     MOV dword ptr [EBP + 0xfffffeee],EAX ; 004d59e3
     LEA EAX,[EBP + 0xfffffeea]          ; 004d59e9
-    MOV EDX,dword ptr [0x01d5baf4]      ; 004d59ef | g_INT_ARRAY_01d5baec[2]
+    MOV EDX,dword ptr [0x01d5baf4]      ; 004d59ef | g_HotDemonIndices[2]
     PUSH EAX                            ; 004d59f5
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d59f6
     MOV dword ptr [EBP + 0xffffff1e],EBX ; 004d59fd
@@ -346,7 +346,7 @@ section .text
     ADD EAX,EDX                         ; 004d5a14
     PUSH 0x3ecccccd                     ; 004d5a16
     PUSH EAX                            ; 004d5a1b
-    PUSH 0x2cfd900                      ; 004d5a1c | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004d5a1c | g_ZeroVector
     LEA ESI,[EBP + 0xffffff26]          ; 004d5a21
     LEA EDI,[EBP + -0x6e]               ; 004d5a27
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 004d5a2a

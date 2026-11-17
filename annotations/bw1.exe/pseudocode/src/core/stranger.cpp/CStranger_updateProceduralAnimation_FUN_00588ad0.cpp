@@ -324,8 +324,8 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
   else if (iVar13 == 0x21) {
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
               (&local_570,&(this_ptr->base).target_orientation.vec);
-    if ((g_BYTE_02c835e0 & 1) == 0) {
-      g_BYTE_02c835e0 = g_BYTE_02c835e0 | 1;
+    if ((g_StrangerBoundsCenterInit & 1) == 0) {
+      g_StrangerBoundsCenterInit = g_StrangerBoundsCenterInit | 1;
     }
     pCVar2 = (this_ptr->base).target_actor;
     if (pCVar2 != (CDemonActor *)0x0) {
@@ -353,13 +353,13 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
       afStack_1f8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + -2] =
            *(float *)((int)&local_1bc + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 4);
       if (&stack0x00000000 != g_CDemonActorType_02c837cc.class_name + 0xc) {
-        g_CVector3f_02c835d0.x = fStack_208;
-        g_CVector3f_02c835d0.y = (float)local_204._0_4_;
-        g_CVector3f_02c835d0.z = (float)local_204._4_4_;
+        g_StrangerBoundsCenter.x = fStack_208;
+        g_StrangerBoundsCenter.y = (float)local_204._0_4_;
+        g_StrangerBoundsCenter.z = (float)local_204._4_4_;
       }
     }
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
-              ((CMatrix3x3f *)(local_200c + 0x1a98),&g_CVector3f_02c835d0,&CStack_1a8);
+              ((CMatrix3x3f *)(local_200c + 0x1a98),&g_StrangerBoundsCenter,&CStack_1a8);
     local_12c.z = CStack_1a8.x;
     local_120[(uint)bVar9 * -2] = *(float *)((int)&CStack_1a8 + (uint)bVar9 * -8 + 4);
     local_120[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
@@ -440,7 +440,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
     local_20 = &this_ptr->carry_object_world_center;
     this_ptr_00 = (this_ptr->base).lever_to_pull;
     if (this_ptr_00 == (CLever *)0x0) {
-      core_lever_cpp_CLever_getHandlePosition_FUN_004ff6b0(g_CLever_PTR_02c835dc,&local_168);
+      core_lever_cpp_CLever_getHandlePosition_FUN_004ff6b0(g_StrangerLeverHandle,&local_168);
       local_264.x = local_168.x;
       *(uint *)((int)&local_264 + (uint)bVar9 * -8 + 4) =
            *(uint *)((int)&local_168 + (uint)bVar9 * -8 + 4);
@@ -477,7 +477,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
         local_20->y = local_80[3];
         local_20->z = local_70;
       }
-      g_CLever_PTR_02c835dc = (this_ptr->base).lever_to_pull;
+      g_StrangerLeverHandle = (this_ptr->base).lever_to_pull;
     }
     pfVar5 = (float *)((int)this_ptr + (uint)bVar9 * -8 + 0x20070);
     local_158[2] = (this_ptr->carry_object_world_center).x;

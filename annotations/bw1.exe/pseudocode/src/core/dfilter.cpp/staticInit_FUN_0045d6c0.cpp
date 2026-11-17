@@ -9,7 +9,7 @@
 void __cdecl core_dfilter_cpp_staticInit_FUN_0045d6c0(void)
 
 {
-  __arrinit(CDemonFilter_ARRAY_0152c39c,8,&g_CDemonFilterTypeInfo);
+  __arrinit(g_PlayerFilterPool,8,&g_CDemonFilterTypeInfo);
   _atexit(&WatcomStaticDestructorNode_006112e8);
   __arrinit(CDemonFilter_ARRAY_0152c5fc,4,&g_CDemonFilterTypeInfo);
   _atexit(&WatcomStaticDestructorNode_006112f8);

@@ -14,13 +14,13 @@ __asm {
         mov EDX,dword ptr [g_UseExternalRenderer]
         test EDX,EDX
         jnz LAB_005539d2
-        mov ECX,dword ptr [g_INT_02ddf564]
+        mov ECX,dword ptr [g_FlipPending]
         test ECX,ECX
         jnz LAB_005539b0
-        cmp dword ptr [g_INT_02ddf56c],0x0
+        cmp dword ptr [g_Display24BitFallback],0x0
         jz LAB_005539eb
         mov EBX,dword ptr [g_BackBuffer]
-        mov dword ptr [g_INT_02ddf56c],EDX
+        mov dword ptr [g_Display24BitFallback],EDX
         call wincore_wddvmem_cpp_openScreenDevice_FUN_00553470
         mov ESI,dword ptr [g_WindowHeight]
         xor EDI,EDI
@@ -54,14 +54,14 @@ __asm {
         jl LAB_00553961
     LAB_005539a1:
         call wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520
-        mov dword ptr [g_INT_02ddf56c],0x1
+        mov dword ptr [g_Display24BitFallback],0x1
     LAB_005539b0:
         mov EBX,dword ptr [g_DirectDrawSurface]
         test EBX,EBX
         jnz LAB_00553b2f
     LAB_005539be:
         xor ESI,ESI
-        mov dword ptr [g_INT_02ddf564],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0
         mov ESP,EBP
         pop EBP
@@ -72,7 +72,7 @@ __asm {
     LAB_005539d2:
         call engine_special_cpp_toggle_FUN_00532ba0
         xor ESI,ESI
-        mov dword ptr [g_INT_02ddf564],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0
         mov ESP,EBP
         pop EBP
@@ -173,7 +173,7 @@ __asm {
         call core_main_c_displayErrorAndQuit_FUN_004c8440
         add ESP,0x4
         xor ESI,ESI
-        mov dword ptr [g_INT_02ddf564],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0
         mov ESP,EBP
         pop EBP
@@ -193,7 +193,7 @@ __asm {
         jnz LAB_005539be
         call wincore_wddvmem_cpp_videoRestore_FUN_00553ba0
         xor ESI,ESI
-        mov dword ptr [g_INT_02ddf564],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0
         mov ESP,EBP
 }

@@ -47,7 +47,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_00556240(char *filename)
     pcVar13[1] = cVar2;
     pcVar13 = pcVar13 + 2;
   } while (cVar2 != '\0');
-  pCVar12 = g_CSfxOptions_ARRAY_02ceb920 + g_INT_02ceb91c;
+  pCVar12 = g_CSfxOptions_ARRAY_02ceb920 + g_SfxLastSlot;
   pCVar14 = &local_74;
   for (iVar4 = 0x18; iVar4 != 0; iVar4 = iVar4 + -1) {
     pCVar14->channel_index = pCVar12->channel_index;
@@ -59,7 +59,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_00556240(char *filename)
     return 0;
   }
   sound_sndmain_cpp_lockSound_FUN_00558e90();
-  if (g_INT_02cf341c < 1) {
+  if (g_SoundLockCount < 1) {
     g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
     g_INT_01d71de4 = 0x24b;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::kill - must be locked!");
@@ -135,22 +135,22 @@ LAB_005563a7:
       pCVar6->channel_current_buffer_offsets[0] = -1;
       pCVar6 = (CSfxSlot *)pCVar7;
     } while (pCVar7 != (CVector3d *)&g_CSfxSlot_ARRAY_02ce721c[uVar9].options.position_format);
-    iVar4 = g_INT_00604210 + 1;
+    iVar4 = g_SfxPlaybackStateCounter + 1;
     pCVar10 = g_CSfxSlot_ARRAY_02ce721c[uVar9].sample;
     g_CSfxSlot_ARRAY_02ce721c[uVar9].reference_distance =
          ((g_CSfxSlot_ARRAY_02ce721c[uVar9].sample)->sample_info).reference_distance;
     pCVar3 = g_CSfxSlot_ARRAY_02ce721c[uVar9].sample;
-    g_INT_00604210 = iVar4;
+    g_SfxPlaybackStateCounter = iVar4;
     g_CSfxSlot_ARRAY_02ce721c[uVar9].min_distance = (pCVar10->sample_info).reference_volume_distance
     ;
     g_CSfxSlot_ARRAY_02ce721c[uVar9].max_distance = (pCVar3->sample_info).max_distance;
     g_CSfxSlot_ARRAY_02ce721c[uVar9].changed_flags = 0xffffffff;
     if (0xfffffe < iVar4) {
-      g_INT_00604210 = 1;
+      g_SfxPlaybackStateCounter = 1;
     }
-    iVar4 = g_INT_00604210;
+    iVar4 = g_SfxPlaybackStateCounter;
     pCVar10 = g_CSfxSlot_ARRAY_02ce721c[uVar9].sample;
-    g_CSfxSlot_ARRAY_02ce721c[uVar9].playback_state = g_INT_00604210;
+    g_CSfxSlot_ARRAY_02ce721c[uVar9].playback_state = g_SfxPlaybackStateCounter;
     iVar5 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_00553960(pCVar10,999.0,999.0);
     if (iVar5 != 0) {
       sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(this_ptr,0.0);
@@ -160,9 +160,8 @@ LAB_005565c4:
         sound_sndmain_cpp_unlockSound_FUN_00556fd0();
         return iVar4 << 6 | local_14;
       }
-      iVar5 = (*g_CSoundDevice_PTR_02cf3280->vtable->allocateSfx)
-                        (g_CSoundDevice_PTR_02cf3280,
-                         (g_CSfxSlot_ARRAY_02ce721c[uVar9].sample)->buffer_id);
+      iVar5 = (*g_CSoundDevicePtr->vtable->allocateSfx)
+                        (g_CSoundDevicePtr,(g_CSfxSlot_ARRAY_02ce721c[uVar9].sample)->buffer_id);
       g_CSfxSlot_ARRAY_02ce721c[uVar9].hardware_buffer_handle = iVar5;
       if (iVar5 != 0) goto LAB_005565c4;
     }

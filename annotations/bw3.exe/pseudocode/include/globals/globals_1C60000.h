@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
@@ -21,11 +22,11 @@ extern CDemonActorType g_CExorcismClassInfo;
 extern CEventList g_CEventList_01c6e360;
 
 // DWORD
-extern DWORD g_DWORD_01c6e258;
-extern DWORD g_DWORD_01c6e260;
+extern DWORD g_JoyRPos;
+extern DWORD g_JoyButtons;
 
 // SRGBColorPalette*
-extern SRGBColorPalette* g_SRGBColorPalette_PTR_01c6a970;
+extern SRGBColorPalette* g_CurrentPalette;
 
 // _BIT_INTEGER32
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74;
@@ -34,10 +35,10 @@ extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af88;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af94;
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4;
+extern _BIT_INTEGER32 g_RenderStateFlags;
 
 // char[4952]
-extern char g_CHAR_ARRAY_01c6cef0[4952];
+extern char g_KeyboardState[4952];
 
 // int
 extern int g_INT_01c6af78;
@@ -51,45 +52,45 @@ extern int g_INT_01c6b5a8;
 extern int g_INT_01c6b5ac;
 extern int g_INT_01c6b5b0;
 extern int g_INT_01c6b5b4;
-extern int g_INT_01c6b5b8;
-extern int g_INT_01c6b5bc;
+extern int g_ViewportWidth;
+extern int g_ViewportHeight;
 extern int g_INT_01c6b5c0;
 extern int g_INT_01c6b5c4;
-extern int g_INT_01c6b5c8;
+extern int g_AdvancedClippingEnabled;
 extern int g_INT_01c6cee0;
 extern int g_INT_01c6cee4;
 extern int g_INT_01c6cee8;
 extern int g_INT_01c6ceec;
-extern int g_INT_01c6e24c;
-extern int g_INT_01c6e250;
-extern int g_INT_01c6e254;
-extern int g_INT_01c6e25c;
-extern int g_INT_01c6e264;
-extern int g_INT_01c6e268;
-extern int g_INT_01c6e26c;
-extern int g_INT_01c6e274;
-extern int g_INT_01c6e278;
-extern int g_INT_01c6e2a0;
-extern int g_INT_01c6e2a4;
-extern int g_INT_01c6e2a8;
+extern int g_PerspectiveReciprocal;
+extern int g_JoyXPos;
+extern int g_JoyYPos;
+extern int g_JoyZPos;
+extern int g_JoystickPresent;
+extern int g_JoyWantUAxis;
+extern int g_JoyWantRAxis;
+extern int g_JoystickHasPOV;
+extern int g_JoyPOVDirection;
+extern int g_MMXSupported;
+extern int g_CPUModel;
+extern int g_CalibratedCPUSpeed;
 extern int g_INT_01c6e2ac;
 extern int g_INT_01c6e2b0;
-extern int g_INT_01c6e2b8;
-extern int g_INT_01c6e2c0;
-extern int g_INT_01c6e2c4;
-extern int g_INT_01c6e2c8;
-extern int g_INT_01c6e2cc;
-extern int g_INT_01c6e2d0;
-extern int g_INT_01c6e2d4;
-extern int g_INT_01c6e2d8;
-extern int g_INT_01c6e2dc;
-extern int g_INT_01c6e2e0;
-extern int g_INT_01c6e2e4;
-extern int g_INT_01c6e2e8;
-extern int g_INT_01c6e2ec;
-extern int g_INT_01c6e2f0;
-extern int g_INT_01c6e2f4;
-extern int g_INT_01c6e2f8;
+extern int g_VertexPreprocessMode;
+extern int g_SolidRedComponent;
+extern int g_SolidGreenComponent;
+extern int g_SolidBlueComponent;
+extern int g_RelativeX;
+extern int g_RelativeY;
+extern int g_RelativeZ;
+extern int g_CameraOriginX;
+extern int g_CameraOriginY;
+extern int g_CameraOriginZ;
+extern int g_CameraRotationPitch;
+extern int g_CameraRotationYaw;
+extern int g_CameraRotationRoll;
+extern int g_LightDirectionX;
+extern int g_LightDirectionY;
+extern int g_LightDirectionZ;
 extern int g_INT_01c6e2fc;
 extern int g_INT_01c6e300;
 extern int g_INT_01c6e304;
@@ -101,38 +102,38 @@ extern int g_INT_01c6e318;
 extern int g_INT_01c6e31c;
 
 // uchar*
-extern uchar* g_UCHAR_PTR_01c6ced0;
-extern uchar* g_UCHAR_PTR_01c6ced4;
+extern uchar* g_CurrentTextureData;
+extern uchar* g_CurrentTextureOpacityData;
 
 // uchar[32768]
-extern uchar g_UCHAR_ARRAY_01c62070[32768];
+extern uchar g_ColorCubeLookup[32768];
 
 // uchar[768]
 extern uchar g_UCHAR_ARRAY_01c6af98[768];
-extern uchar g_UCHAR_ARRAY_01c6b298[768];
+extern uchar g_DefaultPalette[768];
 
 // uint
 extern uint g_UINT_01c6e35c;
 
-// uint*[1200]
-extern uint* g_UINT_PTR_ARRAY_01c60dac[1200];
-
-// uint[1600]
-extern uint g_UINT_ARRAY_01c6b5d0[1600];
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+extern uint* g_ZBufferScanlineArray[GAME_SCREEN_MAX_HEIGHT];
 
 // uint[256]
-extern uint g_UINT_ARRAY_01c6a974[256];
+extern uint g_Hardware32BitPalette[256];
 
 // uint[448]
-extern uint g_UINT_ARRAY_01c6a270[448];
+extern uint g_ColorTable32[448];
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+extern uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE];
 
 // ulong
-extern ulong g_ULONG_01c6e2bc;
+extern ulong g_SolidColorMode;
 
 // ushort[256]
-extern ushort g_USHORT_ARRAY_01c6a070[256];
-extern ushort g_USHORT_ARRAY_01c6ad74[256];
+extern ushort g_ColorTable16[256];
+extern ushort g_Hardware16BitPalette[256];
 
 // void*
-extern void* g_PTR_01c6b5cc;
+extern void* g_ScanlineRenderFunc;
 

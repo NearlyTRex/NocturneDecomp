@@ -14,7 +14,7 @@ _FILE * FUN_005656a4(_FILE *param_1)
   FileListNode *pFVar2;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad0)();
-  for (pFVar1 = g_FileListNode_PTR_02de4e20; pFVar1 != (FileListNode *)0x0; pFVar1 = pFVar1->next) {
+  for (pFVar1 = g_AllocatedListHead; pFVar1 != (FileListNode *)0x0; pFVar1 = pFVar1->next) {
     file_handle = pFVar1->file_struct;
     if (param_1 == file_handle) {
       if ((file_handle->_flag & 3) != 0) {
@@ -24,7 +24,7 @@ _FILE * FUN_005656a4(_FILE *param_1)
       return param_1;
     }
   }
-  pFVar1 = (FileListNode *)&g_FileListNode_PTR_02de4e24;
+  pFVar1 = (FileListNode *)&g_FreeListHeadPointer;
   do {
     pFVar2 = pFVar1;
     pFVar1 = pFVar2->next;
@@ -35,8 +35,8 @@ _FILE * FUN_005656a4(_FILE *param_1)
     }
   } while (param_1 != pFVar1->file_struct);
   pFVar2->next = pFVar1->next;
-  pFVar1->next = g_FileListNode_PTR_02de4e20;
-  g_FileListNode_PTR_02de4e20 = pFVar1;
+  pFVar1->next = g_AllocatedListHead;
+  g_AllocatedListHead = pFVar1;
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();
   return param_1;
 }

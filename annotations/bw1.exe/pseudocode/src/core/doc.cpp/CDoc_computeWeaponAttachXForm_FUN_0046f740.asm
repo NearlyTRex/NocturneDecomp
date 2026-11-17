@@ -239,10 +239,10 @@
 ;   float g_FLOAT_005da0e8 = 0.5
 ;   double g_DOUBLE_005da0ec = 0.700000000000000
 ;   double g_DOUBLE_005da0f4 = 0.300000000000000
-;   undefined4 g_CDemonActorType_007c52f8.name_hash
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   CVector3f g_CVector3f_02c8af28
+;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -323,7 +323,7 @@ section .text
     CMP dword ptr [EBP + 0x8e],0x0      ; 0046f7f5
     JNZ 0x00470055                      ; 0046f7fc
         ;   XREF to: 00470055 (CONDITIONAL_JUMP)  ; LAB_00470055
-    PUSH 0x2c8af28                      ; 0046f802 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0046f802 | g_ZeroVector
     PUSH 0x1b68804                      ; 0046f807
     LEA EAX,[EBP + 0xfffff472]          ; 0046f80c
     PUSH EAX                            ; 0046f812
@@ -911,7 +911,7 @@ section .text
     LEA ESI,[EBP + 0xfffff442]          ; 0047004a
     JMP 0x0046f8e9                      ; 00470050
         ;   XREF to: 0046f8e9 (UNCONDITIONAL_JUMP)  ; LAB_0046f8e9
-    PUSH 0x2c8af28                      ; 00470055 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 00470055 | g_ZeroVector
         ;   Label: LAB_00470055
     PUSH 0x1b687f8                      ; 0047005a
     LEA EAX,[EBP + 0xfffff652]          ; 0047005f
@@ -972,7 +972,7 @@ section .text
     LEA ESI,[EBP + 0xfffff802]          ; 00470136
     JMP 0x0046f8e9                      ; 0047013c
         ;   XREF to: 0046f8e9 (UNCONDITIONAL_JUMP)  ; LAB_0046f8e9
-    MOV EDI,dword ptr [0x007c5330]      ; 00470141 | g_CDemonActorType_007c52f8.name_hash
+    MOV EDI,dword ptr [0x007c5330]      ; 00470141 | g_CLightActorClassInfo.name_hash
         ;   Label: LAB_00470141
     MOV dword ptr [EBP + 0xfffffe5e],EAX ; 00470147
     MOV dword ptr [EBP + 0xfffffe5a],EAX ; 0047014d

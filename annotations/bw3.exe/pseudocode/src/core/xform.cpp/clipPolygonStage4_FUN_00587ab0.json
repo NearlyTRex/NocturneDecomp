@@ -53,7 +53,7 @@
     },
     {
       "addr": "007e3e88",
-      "name": "g_INT_007e3e88",
+      "name": "g_ClippedVertexCount",
       "type": "int",
       "value": null
     },
@@ -83,19 +83,19 @@
     },
     {
       "addr": "02d23004",
-      "name": "g_INT_02d23004",
+      "name": "g_ClipVertexCountStage4",
       "type": "int",
       "value": null
     },
     {
       "addr": "02d2420c",
-      "name": "g_SRenderVertex_ARRAY_02d24208[0].projected_vertex.transformed_y",
+      "name": "g_ClipVertexBufferStage4[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d24210",
-      "name": "g_SRenderVertex_ARRAY_02d24208[0].projected_vertex.transformed_z",
+      "name": "g_ClipVertexBufferStage4[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     }
@@ -331,7 +331,7 @@
       "line": 39,
       "match": "0x7e3e90",
       "severity": "moderate",
-      "text": "pSVar8 = (SRenderVertex *)(g_INT_007e3e88 * 0x30 + 0x7e3e90 + (uint)bVar9 * -8);",
+      "text": "pSVar8 = (SRenderVertex *)(g_ClippedVertexCount * 0x30 + 0x7e3e90 + (uint)bVar9 * -8);",
       "type": "raw_address_constant"
     },
     {
@@ -339,7 +339,7 @@
       "line": 75,
       "match": "0x7e3e90",
       "severity": "moderate",
-      "text": "pSVar8 = (SRenderVertex *)(g_INT_007e3e88 * 0x30 + 0x7e3e90 + (uint)bVar9 * -8);",
+      "text": "pSVar8 = (SRenderVertex *)(g_ClippedVertexCount * 0x30 + 0x7e3e90 + (uint)bVar9 * -8);",
       "type": "raw_address_constant"
     },
     {

@@ -10,8 +10,7 @@ void __cdecl core_curtain_cpp_staticInit_FUN_0044a190(void)
 
 {
   __arrinit(g_CVector3f_ARRAY_007dc71c,100,&g_CVectorTypeInfo);
-  __arrinit(g_SCollisionInfo_ARRAY_007dcbcc,100,&g_SCollisionInfoTypeInfo)
-  ;
+  __arrinit(g_CurtainCollisionInfos,100,&g_SCollisionInfoTypeInfo);
   core_actor_cpp_registerActorClass_FUN_0040c160
             (&g_CCurtainClassInfo,"CCurtain",
              core_curtain_cpp_factoryFuncCurtain_FUN_0044a1e0,&g_CCurtainClassVersion,6,

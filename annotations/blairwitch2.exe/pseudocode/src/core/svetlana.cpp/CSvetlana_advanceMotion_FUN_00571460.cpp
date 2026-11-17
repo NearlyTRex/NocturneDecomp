@@ -21,7 +21,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00571460(CSvetlana *t
     else {
       if (bone_index < 0x65) {
         core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00571500
-                  (this_ptr,g_INT_ARRAY_0264bf38[0x11]);
+                  (this_ptr,g_SvetlanaBoneIndices[0x11]);
         iVar1 = this_ptr->attack_hand;
       }
       else {
@@ -31,7 +31,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00571460(CSvetlana *t
           goto LAB_005714ae;
         }
         core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00571500
-                  (this_ptr,g_INT_ARRAY_0264bf38[0x12]);
+                  (this_ptr,g_SvetlanaBoneIndices[0x12]);
         iVar1 = this_ptr->attack_hand;
       }
       this_ptr->attack_hand = (uint)(iVar1 == 0);

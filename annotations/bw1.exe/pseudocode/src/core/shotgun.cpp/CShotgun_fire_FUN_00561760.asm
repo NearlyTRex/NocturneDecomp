@@ -14,7 +14,7 @@
 ;   float g_FLOAT_005f19cf = -0.125
 ;   double g_DOUBLE_005f19d7 = 1.5
 ;   double g_DOUBLE_005f19df = 10
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -274,7 +274,7 @@ section .text
         ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00559220(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00561aa3
     LEA EAX,[EBX + 0x3c]                ; 00561aa6
-    MOV EDX,dword ptr [0x0061c010]      ; 00561aa9 | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 00561aa9 | g_CFireEffectPtr
     PUSH EAX                            ; 00561aaf
     MOVSD ES:EDI,ESI                    ; 00561ab0
     MOVSD ES:EDI,ESI                    ; 00561ab1
@@ -642,7 +642,7 @@ section .text
     PUSH ESI                            ; 00561f5f | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00561f60
     PUSH EAX                            ; 00561f65 | g_CDemonSetInstance.collision_impact_position.x
-    MOV ESI,dword ptr [0x0061c010]      ; 00561f66 | g_CFireEffect_PTR_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 00561f66 | g_CFireEffectPtr
     PUSH ESI                            ; 00561f6c
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 ; 00561f6d
         ;   XREF to: 004b56a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)

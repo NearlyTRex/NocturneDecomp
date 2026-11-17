@@ -11,5 +11,5 @@
 // =============================================================================
 
 // CVector3f[5000]
-extern CVector3f g_CVector3f_ARRAY_0271383c[5000];
+extern CVector3f g_FloatVertexArray[5000];
 

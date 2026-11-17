@@ -20,7 +20,7 @@
 ;   ... and 29 more
 ;
 ; Referenced Globals:
-;   int g_INT_01d63254
+;   int g_LocalizationLoaded
 ;   int g_INT_01d63258
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
         ;   Label: support_newmsg.cpp_getLocalizedString_FUN_0050fe80
     PUSH EBP                            ; 0050fe81
     MOV EDI,dword ptr [ESP + 0xc]       ; 0050fe82
-    CMP dword ptr [0x01d63254],0x0      ; 0050fe86 | g_INT_01d63254
+    CMP dword ptr [0x01d63254],0x0      ; 0050fe86 | g_LocalizationLoaded
     JZ 0x0050fea3                       ; 0050fe8d
         ;   XREF to: 0050fea3 (CONDITIONAL_JUMP)  ; LAB_0050fea3
     PUSH ESI                            ; 0050fe8f

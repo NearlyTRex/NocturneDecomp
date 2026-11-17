@@ -20,30 +20,30 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_0050d170(CPathMap *this_ptr,i
   int iVar7;
   int iVar8;
   
-  memset(g_CHAR_ARRAY_ARRAY_01ed02b8,0,0x2774);
-  g_INT_01ed2a2c = 1;
-  g_INT_01ed02ac = 0;
-  g_CPathQueueNode_ARRAY_01ec184c[0].x = g_INT_01ec183c;
-  g_CPathQueueNode_ARRAY_01ec184c[0].z = g_INT_01ec1840;
-  g_CHAR_ARRAY_ARRAY_01ed02b8[g_INT_01ec1840][g_INT_01ec183c] = '\x01';
-  g_INT_01ed02b0 = 1;
-  g_CPathQueueNode_ARRAY_01ec184c[0].cost = start_height;
+  memset(g_PathfindingVisited,0,0x2774);
+  g_PathfindingNodesExpanded = 1;
+  g_PathfindingQueueHead = 0;
+  g_PathfindingQueue[0].x = g_PathfindingCurrentX;
+  g_PathfindingQueue[0].z = g_PathfindingCurrentZ;
+  g_PathfindingVisited[g_PathfindingCurrentZ][g_PathfindingCurrentX] = '\x01';
+  g_PathfindingQueueTail = 1;
+  g_PathfindingQueue[0].cost = start_height;
   do {
-    if (g_CHAR_ARRAY_ARRAY_01ed02b8[g_INT_01ec1848][g_INT_01ec1844] != '\0') {
+    if (g_PathfindingVisited[g_PathfindingDestZ][g_PathfindingDestX] != '\0') {
       return 1;
     }
-    if (g_INT_01ed02ac == g_INT_01ed02b0) {
+    if (g_PathfindingQueueHead == g_PathfindingQueueTail) {
       g_CHAR_PTR_01d71de0 = "..\\core\\path.cpp";
       g_INT_01d71de4 = 0xdf;
       core_main_c_displayErrorAndQuit_FUN_004e4330("queuePop - empty queue?!");
     }
-    iVar8 = g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02ac].x;
-    current_height = g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02ac].cost;
-    iVar5 = g_INT_01ed02ac + 1;
-    grid_z = g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02ac].z;
-    g_INT_01ed02ac = iVar5;
+    iVar8 = g_PathfindingQueue[g_PathfindingQueueHead].x;
+    current_height = g_PathfindingQueue[g_PathfindingQueueHead].cost;
+    iVar5 = g_PathfindingQueueHead + 1;
+    grid_z = g_PathfindingQueue[g_PathfindingQueueHead].z;
+    g_PathfindingQueueHead = iVar5;
     if (4999 < iVar5) {
-      g_INT_01ed02ac = 0;
+      g_PathfindingQueueHead = 0;
     }
     iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                       (this_ptr,grid_z + 1,iVar8,current_height);
@@ -53,70 +53,71 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_0050d170(CPathMap *this_ptr,i
                       (this_ptr,grid_z + -1,iVar8,current_height);
     iVar4 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                       (this_ptr,grid_z,iVar8 + -1,current_height);
-    if ((((g_INT_01ec183c == iVar8) && (grid_z == g_INT_01ec1840)) ||
-        ((iVar8 == g_INT_01ec1844 && (grid_z == g_INT_01ec1848)))) ||
-       ((((current_height - iVar5 < g_INT_01ec1514 && (current_height - iVar3 < g_INT_01ec1514)) &&
-         (current_height - iVar2 < g_INT_01ec1514)) && (current_height - iVar4 < g_INT_01ec1514))))
-    {
-      if (((grid_z < 99) && (g_CHAR_ARRAY_ARRAY_01ed02b8[grid_z + 1][iVar8] == '\0')) &&
+    if ((((g_PathfindingCurrentX == iVar8) && (grid_z == g_PathfindingCurrentZ)) ||
+        ((iVar8 == g_PathfindingDestX && (grid_z == g_PathfindingDestZ)))) ||
+       ((((current_height - iVar5 < g_PathfindingMaxClimbHeight &&
+          (current_height - iVar3 < g_PathfindingMaxClimbHeight)) &&
+         (current_height - iVar2 < g_PathfindingMaxClimbHeight)) &&
+        (current_height - iVar4 < g_PathfindingMaxClimbHeight)))) {
+      if (((grid_z < 99) && (g_PathfindingVisited[grid_z + 1][iVar8] == '\0')) &&
          (uVar6 = iVar5 - current_height >> 0x1f,
-         (int)((iVar5 - current_height ^ uVar6) - uVar6) < g_INT_01ec1514)) {
-        g_CHAR_ARRAY_ARRAY_01ed02b8[grid_z + 1][iVar8] = '\x01';
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].x = iVar8;
-        iVar7 = g_INT_01ed02b0 + 1;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].cost = iVar5;
-        g_INT_01ed2a2c = g_INT_01ed2a2c + 1;
-        pCVar1 = g_CPathQueueNode_ARRAY_01ec184c + g_INT_01ed02b0;
-        g_INT_01ed02b0 = iVar7;
+         (int)((iVar5 - current_height ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {
+        g_PathfindingVisited[grid_z + 1][iVar8] = '\x01';
+        g_PathfindingQueue[g_PathfindingQueueTail].x = iVar8;
+        iVar7 = g_PathfindingQueueTail + 1;
+        g_PathfindingQueue[g_PathfindingQueueTail].cost = iVar5;
+        g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
+        pCVar1 = g_PathfindingQueue + g_PathfindingQueueTail;
+        g_PathfindingQueueTail = iVar7;
         pCVar1->z = grid_z + 1;
         if (4999 < iVar7) {
-          g_INT_01ed02b0 = 0;
+          g_PathfindingQueueTail = 0;
         }
       }
-      if (((iVar8 < 99) && (g_CHAR_ARRAY_ARRAY_01ed02b8[grid_z][iVar8 + 1] == '\0')) &&
+      if (((iVar8 < 99) && (g_PathfindingVisited[grid_z][iVar8 + 1] == '\0')) &&
          (uVar6 = iVar2 - current_height >> 0x1f,
-         (int)((iVar2 - current_height ^ uVar6) - uVar6) < g_INT_01ec1514)) {
+         (int)((iVar2 - current_height ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {
         *(byte *)(grid_z * 100 + 0x1ed02b9 + iVar8) = 3;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].x = iVar8 + 1;
-        iVar5 = g_INT_01ed02b0 + 1;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].cost = iVar2;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].z = grid_z;
-        g_INT_01ed2a2c = g_INT_01ed2a2c + 1;
-        g_INT_01ed02b0 = iVar5;
+        g_PathfindingQueue[g_PathfindingQueueTail].x = iVar8 + 1;
+        iVar5 = g_PathfindingQueueTail + 1;
+        g_PathfindingQueue[g_PathfindingQueueTail].cost = iVar2;
+        g_PathfindingQueue[g_PathfindingQueueTail].z = grid_z;
+        g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
+        g_PathfindingQueueTail = iVar5;
         if (4999 < iVar5) {
-          g_INT_01ed02b0 = 0;
+          g_PathfindingQueueTail = 0;
         }
       }
-      if (((0 < grid_z) && (g_CHAR_ARRAY_ARRAY_01ed02b8[grid_z + -1][iVar8] == '\0')) &&
+      if (((0 < grid_z) && (g_PathfindingVisited[grid_z + -1][iVar8] == '\0')) &&
          (uVar6 = iVar3 - current_height >> 0x1f,
-         (int)((iVar3 - current_height ^ uVar6) - uVar6) < g_INT_01ec1514)) {
-        g_CHAR_ARRAY_ARRAY_01ed02b8[grid_z + -1][iVar8] = '\x02';
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].x = iVar8;
-        iVar5 = g_INT_01ed02b0 + 1;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].cost = iVar3;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].z = grid_z + -1;
-        g_INT_01ed2a2c = g_INT_01ed2a2c + 1;
-        g_INT_01ed02b0 = iVar5;
+         (int)((iVar3 - current_height ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {
+        g_PathfindingVisited[grid_z + -1][iVar8] = '\x02';
+        g_PathfindingQueue[g_PathfindingQueueTail].x = iVar8;
+        iVar5 = g_PathfindingQueueTail + 1;
+        g_PathfindingQueue[g_PathfindingQueueTail].cost = iVar3;
+        g_PathfindingQueue[g_PathfindingQueueTail].z = grid_z + -1;
+        g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
+        g_PathfindingQueueTail = iVar5;
         if (4999 < iVar5) {
-          g_INT_01ed02b0 = 0;
+          g_PathfindingQueueTail = 0;
         }
       }
-      if (((0 < iVar8) && ((&g_UCHAR_01ed02b7)[grid_z * 100 + iVar8] == '\0')) &&
+      if (((0 < iVar8) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + iVar8] == '\0')) &&
          (uVar6 = iVar4 - current_height >> 0x1f,
-         (int)((iVar4 - current_height ^ uVar6) - uVar6) < g_INT_01ec1514)) {
-        (&g_UCHAR_01ed02b7)[iVar8 + grid_z * 100] = '\x04';
-        g_INT_01ed2a2c = g_INT_01ed2a2c + 1;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].x = iVar8 + -1;
-        iVar8 = g_INT_01ed02b0 + 1;
-        g_CPathQueueNode_ARRAY_01ec184c[g_INT_01ed02b0].cost = iVar4;
-        pCVar1 = g_CPathQueueNode_ARRAY_01ec184c + g_INT_01ed02b0;
-        g_INT_01ed02b0 = iVar8;
+         (int)((iVar4 - current_height ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {
+        (&g_PathfindingVisitedMinus1)[iVar8 + grid_z * 100] = '\x04';
+        g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
+        g_PathfindingQueue[g_PathfindingQueueTail].x = iVar8 + -1;
+        iVar8 = g_PathfindingQueueTail + 1;
+        g_PathfindingQueue[g_PathfindingQueueTail].cost = iVar4;
+        pCVar1 = g_PathfindingQueue + g_PathfindingQueueTail;
+        g_PathfindingQueueTail = iVar8;
         pCVar1->z = grid_z;
         if (4999 < iVar8) {
-          g_INT_01ed02b0 = 0;
+          g_PathfindingQueueTail = 0;
         }
       }
     }
-  } while (g_INT_01ed02ac != g_INT_01ed02b0);
-  return g_INT_01ed02ac ^ g_INT_01ed02b0;
+  } while (g_PathfindingQueueHead != g_PathfindingQueueTail);
+  return g_PathfindingQueueHead ^ g_PathfindingQueueTail;
 }

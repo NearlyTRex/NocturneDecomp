@@ -17,14 +17,14 @@ int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_00558b20(int bits_per_sampl
     g_INT_01d71de4 = 0x1700;
     core_main_c_displayErrorAndQuit_FUN_004e4330("setRecordingFormat - can't do this while recording active!");
   }
-  g_INT_0060425c = bits_per_sample;
-  g_INT_00604260 = channels;
-  g_INT_00604264 = sample_rate;
-  g_INT_02cf3c70 = (int)(signed_samples != 0);
-  if (g_CSoundDevice_PTR_02cf3c68 != (CSoundDevice *)0x0) {
-    iVar1 = (*g_CSoundDevice_PTR_02cf3c68->vtable->setMode)
-                      (g_CSoundDevice_PTR_02cf3c68,bits_per_sample,channels,sample_rate,
-                       (int *)g_INT_02cf3c70);
+  g_RecordingBitsPerSample = bits_per_sample;
+  g_RecordingChannelCount = channels;
+  g_RecordingSampleRate = sample_rate;
+  g_RecordingSamplesSigned = (int)(signed_samples != 0);
+  if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
+    iVar1 = (*g_RecordingDeviceInterface->vtable->setMode)
+                      (g_RecordingDeviceInterface,bits_per_sample,channels,sample_rate,
+                       (int *)g_RecordingSamplesSigned);
     if (iVar1 == 0) {
       return 0;
     }

@@ -14,8 +14,8 @@ int FUN_005ad320(LPSTR param_1)
   if (param_1 == (LPSTR)0x0) {
     return 0;
   }
-  iVar1 = WideCharToMultiByte(g_UINT_00607e7c,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,
-                              (LPCSTR)0x0,(LPBOOL)0x0);
+  iVar1 = WideCharToMultiByte(g_CodePage,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,(LPCSTR)0x0,
+                              (LPBOOL)0x0);
   if (iVar1 != 0) {
     return iVar1;
   }

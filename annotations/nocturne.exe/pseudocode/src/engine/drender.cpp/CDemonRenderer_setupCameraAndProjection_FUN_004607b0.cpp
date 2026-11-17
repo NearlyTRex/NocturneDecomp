@@ -65,7 +65,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046
   fVar3 = transform_matrix->m[2].y;
   fVar8 = (float)65536;
   dVar20 = round((double)(fVar4 * fVar15));
-  iVar16 = g_INT_005b7648;
+  iVar16 = g_ProjectionScale;
   g_TransformMatrix.m[1].y = (int)ROUND(dVar20);
   fVar4 = transform_matrix->m[2].z;
   fVar15 = (float)65536;
@@ -82,12 +82,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046
   dVar22 = round((double)(local_20.y * fVar14 * fVar13));
   iVar17 = g_ClipBottom;
   iVar18 = g_ClipTop;
-  g_INT_01c039d0 = (int)ROUND(dVar20);
-  g_INT_01c039d4 = (int)ROUND(dVar21);
-  g_INT_01c039d8 = (int)ROUND(dVar22);
+  g_CameraRotationPitch = (int)ROUND(dVar20);
+  g_CameraRotationYaw = (int)ROUND(dVar21);
+  g_CameraRotationRoll = (int)ROUND(dVar22);
   iVar19 = g_ClipRight - g_ClipLeft;
   this_ptr->projection_reciprocal = (int)(0x100000000 / (longlong)iVar16);
-  iVar16 = g_INT_005b7648;
+  iVar16 = g_ProjectionScale;
   iVar18 = ((iVar19 + 1) * 0x10000) / ((iVar17 - iVar18) + 1);
   this_ptr->aspect_ratio_fixed = iVar18;
   this_ptr->aspect_ratio_fixed =

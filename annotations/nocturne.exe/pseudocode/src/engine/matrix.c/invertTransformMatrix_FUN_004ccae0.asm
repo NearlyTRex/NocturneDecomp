@@ -120,46 +120,46 @@ section .text
     MOV EAX,[0x01c039e8]                ; 004ccbe1 | g_TransformMatrix
     FLD float ptr [ESP + 0x50]          ; 004ccbe6
     FMUL ST6                            ; 004ccbea
-    MOV [0x01cc5140],EAX                ; 004ccbec | g_CMatrix3x3i_01cc5140
+    MOV [0x01cc5140],EAX                ; 004ccbec | g_TransformMatrixCopy
     FSUBP ST3,ST0                       ; 004ccbf1
     MOV EAX,[0x01c039ec]                ; 004ccbf3 | g_TransformMatrix.m[0].y
     FLD float ptr [ESP + 0x44]          ; 004ccbf8
     FMUL float ptr [ESP + 0x40]         ; 004ccbfc
-    MOV [0x01cc5144],EAX                ; 004ccc00 | g_CMatrix3x3i_01cc5140.m[0].y
+    MOV [0x01cc5144],EAX                ; 004ccc00 | g_TransformMatrixCopy.m[0].y
     MOV EAX,[0x01c039f0]                ; 004ccc05 | g_TransformMatrix.m[0].z
     FSTP float ptr [ESP + 0x18]         ; 004ccc0a
     FLD float ptr [ESP + 0x3c]          ; 004ccc0e
     FMUL float ptr [ESP + 0x38]         ; 004ccc12
-    MOV [0x01cc5148],EAX                ; 004ccc16 | g_CMatrix3x3i_01cc5140.m[0].z
+    MOV [0x01cc5148],EAX                ; 004ccc16 | g_TransformMatrixCopy.m[0].z
     FSUBR float ptr [ESP + 0x18]        ; 004ccc1b
     MOV EAX,[0x01c039f4]                ; 004ccc1f | g_TransformMatrix.m[1].x
     FSTP float ptr [ESP + 0x30]         ; 004ccc24
     FLD float ptr [ESP + 0x4c]          ; 004ccc28
     FMUL float ptr [ESP + 0x30]         ; 004ccc2c
-    MOV [0x01cc514c],EAX                ; 004ccc30 | g_CMatrix3x3i_01cc5140.m[1].x
+    MOV [0x01cc514c],EAX                ; 004ccc30 | g_TransformMatrixCopy.m[1].x
     FXCH ST2                            ; 004ccc35
     FSUBP ST4,ST0                       ; 004ccc37
     MOV EAX,[0x01c039f8]                ; 004ccc39 | g_TransformMatrix.m[1].y
     FSUBP ST4,ST0                       ; 004ccc3e
-    MOV [0x01cc5150],EAX                ; 004ccc40 | g_CMatrix3x3i_01cc5140.m[1].y
+    MOV [0x01cc5150],EAX                ; 004ccc40 | g_TransformMatrixCopy.m[1].y
     MOV EAX,[0x01c039fc]                ; 004ccc45 | g_TransformMatrix.m[1].z
     FXCH ST2                            ; 004ccc4a
     FCHS                                ; 004ccc4c
-    MOV [0x01cc5154],EAX                ; 004ccc4e | g_CMatrix3x3i_01cc5140.m[1].z
+    MOV [0x01cc5154],EAX                ; 004ccc4e | g_TransformMatrixCopy.m[1].z
     MOV EAX,[0x01c03a00]                ; 004ccc53 | g_TransformMatrix.m[2].x
     FXCH ST3                            ; 004ccc58
     FSTP float ptr [ESP + 0x28]         ; 004ccc5a
-    MOV [0x01cc5158],EAX                ; 004ccc5e | g_CMatrix3x3i_01cc5140.m[2].x
+    MOV [0x01cc5158],EAX                ; 004ccc5e | g_TransformMatrixCopy.m[2].x
     MOV EAX,[0x01c03a04]                ; 004ccc63 | g_TransformMatrix.m[2].y
     FXCH ST2                            ; 004ccc68
     FSTP float ptr [ESP + 0x24]         ; 004ccc6a
-    MOV [0x01cc515c],EAX                ; 004ccc6e | g_CMatrix3x3i_01cc5140.m[2].y
+    MOV [0x01cc515c],EAX                ; 004ccc6e | g_TransformMatrixCopy.m[2].y
     FXCH ST2                            ; 004ccc73
     FCHS                                ; 004ccc75
     FSTP float ptr [ESP + 0x20]         ; 004ccc77
     MOV EAX,[0x01c03a08]                ; 004ccc7b | g_TransformMatrix.m[2].z
     FADDP                               ; 004ccc80
-    MOV [0x01cc5160],EAX                ; 004ccc82 | g_CMatrix3x3i_01cc5140.m[2].z
+    MOV [0x01cc5160],EAX                ; 004ccc82 | g_TransformMatrixCopy.m[2].z
     FSTP float ptr [ESP]                ; 004ccc87
     FLD float ptr [ESP]                 ; 004ccc8a
     FDIVR double ptr [0x005881e3]       ; 004ccc8d | DOUBLE_005881e3

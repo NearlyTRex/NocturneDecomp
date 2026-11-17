@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_flashlit_cpp_CFlashlight_getActorType_FUN_0048ed50(CFlashlight *this_ptr)
 
 {
-  return &g_CFlashlightActorType_01c706cc;
+  return &g_CFlashlightClassInfo;
 }

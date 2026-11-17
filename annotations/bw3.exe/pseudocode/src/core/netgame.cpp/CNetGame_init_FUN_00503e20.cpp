@@ -17,7 +17,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_00503e20(CNetGame *this_ptr)
   _remove("netlog.txt");
   g_UINT_01da6478 = 1;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
-  g_INT_01da6474 = iVar2 / 0x12;
+  g_LastPingTime = iVar2 / 0x12;
   support_trisock_cpp_startupWinsock_FUN_00571ea0();
   pcVar3 = getenv("USERNAME");
   if (pcVar3 == (char *)0x0) {
@@ -36,8 +36,8 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_00503e20(CNetGame *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  g_INT_01da648c = 0;
-  g_INT_01dc2690 = 0;
+  g_ChatHistoryCount = 0;
+  g_ChatOutCount = 0;
   core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,0);
   return;
 }

@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0(void)
 
 {
-  return g_INT_02cf328c;
+  return g_HardwareMixingEnabled;
 }

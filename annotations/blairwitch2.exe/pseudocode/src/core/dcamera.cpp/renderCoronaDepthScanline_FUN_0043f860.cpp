@@ -20,13 +20,13 @@ void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_0043f860(int scanlin
   uint uVar9;
   
   uVar3 = scanline_y - g_INT_01c35e4c;
-  if (((g_BIT_INTEGER32_01308800.dword != 1) || ((uVar3 & 1) == 0)) &&
-     ((g_BIT_INTEGER32_01308800.dword != 2 || ((uVar3 & 3) == 0)))) {
-    iVar8 = (int)uVar3 >> (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
+  if (((g_CameraDownscaleIterations.dword != 1) || ((uVar3 & 1) == 0)) &&
+     ((g_CameraDownscaleIterations.dword != 2 || ((uVar3 & 3) == 0)))) {
+    iVar8 = (int)uVar3 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     uVar7 = ((right->base).x_current >> 0x10) - g_INT_01c35e48 >>
-            (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
+            (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     uVar9 = ((left->base).x_current >> 0x10) - g_INT_01c35e48 >>
-            (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
+            (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     pSVar5 = left;
     uVar3 = uVar7;
     if ((int)uVar9 < (int)uVar7) {
@@ -35,18 +35,18 @@ void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_0043f860(int scanlin
       uVar9 = uVar7;
       right = left;
     }
-    if (uVar3 < (uint)g_INT_ARRAY_014c3550[iVar8]) {
-      g_INT_ARRAY_014c3550[iVar8] = uVar3;
-      g_INT_ARRAY_0150ecd0[iVar8] = (right->base).red_current;
+    if (uVar3 < (uint)g_CoronaLeftExtent[iVar8]) {
+      g_CoronaLeftExtent[iVar8] = uVar3;
+      g_CoronaLeftIntensity[iVar8] = (right->base).red_current;
     }
-    if ((uint)g_INT_ARRAY_014c3910[iVar8] < uVar9) {
-      g_INT_ARRAY_014c3910[iVar8] = uVar9;
-      g_INT_ARRAY_0150f090[iVar8] = (pSVar5->base).red_current;
+    if ((uint)g_CoronaRightExtent[iVar8] < uVar9) {
+      g_CoronaRightExtent[iVar8] = uVar9;
+      g_CoronaRightIntensity[iVar8] = (pSVar5->base).red_current;
     }
     iVar4 = (right->base).depth_current;
     iVar2 = uVar9 - uVar3;
     iVar6 = (pSVar5->base).depth_current - iVar4;
-    piVar1 = g_INT_ARRAY_ARRAY_014c3cd0[iVar8] + uVar3;
+    piVar1 = g_CoronaDepthBuffer[iVar8] + uVar3;
     for (; (int)uVar3 < (int)uVar9; uVar3 = uVar3 + 1) {
       iVar8 = iVar4 >> 8;
       iVar4 = iVar4 + iVar6 / (iVar2 + 1);

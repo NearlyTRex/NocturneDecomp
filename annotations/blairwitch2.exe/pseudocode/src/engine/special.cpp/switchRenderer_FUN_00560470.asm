@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0264bba4
-;   HWND g_HWND_0264bcf0
+;   HWND g_StoredWindowHandle
 ;
 ; Called Functions:
 ;   engine_special.cpp_kill_FUN_0055f4d0
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 0056048a (CONDITIONAL_JUMP)  ; LAB_0056048a
     POP EDI                             ; 005604a2
         ;   Label: LAB_005604a2
-    MOV EDX,dword ptr [0x0264bcf0]      ; 005604a3 | g_HWND_0264bcf0
+    MOV EDX,dword ptr [0x0264bcf0]      ; 005604a3 | g_StoredWindowHandle
     PUSH EDX                            ; 005604a9
     CALL engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 ; 005604aa
         ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle)

@@ -9,7 +9,7 @@
 void __cdecl engine_2d_c_drawText_FUN_00401fe0(char *text,int x,int y)
 
 {
-  if (g_INT_005f076c != 0) {
+  if (g_TextWrapEnabled != 0) {
     engine_2d_c_drawTextWrapped_FUN_00401c70(text,x,y,g_INT_01c6b5b0,g_INT_01c6b5b4);
     return;
   }

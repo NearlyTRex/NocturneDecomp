@@ -25,8 +25,8 @@
 ;   TerminatedCString s_CNetGame_sendSimFrameAck_005e126a
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   uint g_UINT_01d34e38
-;   uint g_UINT_01d34e48
+;   uint g_CurrentGameTime
+;   uint g_NetLastSimFrameAckTime
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -88,9 +88,9 @@ section .text
     PUSH EBX                            ; 0050f587
     CALL core_netgame.cpp_CNetGame_send_FUN_0050cd90 ; 0050f588
         ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0050cd90(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
-    MOV EAX,[0x01d34e38]                ; 0050f58d | g_UINT_01d34e38
+    MOV EAX,[0x01d34e38]                ; 0050f58d | g_CurrentGameTime
     ADD ESP,0xc                         ; 0050f592
-    MOV [0x01d34e48],EAX                ; 0050f595 | g_UINT_01d34e48
+    MOV [0x01d34e48],EAX                ; 0050f595 | g_NetLastSimFrameAckTime
     ADD ESP,0x40                        ; 0050f59a
     POP EBP                             ; 0050f59d
     POP EDI                             ; 0050f59e

@@ -11,13 +11,13 @@
 // =============================================================================
 
 // CVector3i
-extern CVector3i g_CVector3i_01410280;
+extern CVector3i g_CameraOutOfBoundsCoord;
 
 // char[307200]
-extern char g_CHAR_ARRAY_01410290[307200];
+extern char g_CameraIndexedImageData[307200];
 
 // int
-extern int g_INT_01410274;
-extern int g_INT_01410278;
-extern int g_INT_0141027c;
+extern int g_BackgroundSavedRedBitPosition;
+extern int g_BackgroundSavedGreenBitPosition;
+extern int g_BackgroundSavedBlueBitPosition;
 

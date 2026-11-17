@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamageInfo *param_2)
+; void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr
-; SDamageInfo *    Stack[0x8]:4   param_2
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog2_wav_005d831a

@@ -267,9 +267,9 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(uint *)((int)g_CDemonLight_PTR_ARRAY_01fba2dc",
+      "match": "(uint *)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar6);",
+      "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -281,11 +281,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fba2dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 33,
-      "match": "(int)g_CDemonLight_PTR_ARRAY_01fba2dc",
+      "match": "(int)g_DynamicLights",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + iVar6);",
+      "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);",
       "type": "pointer_truncation"
     }
   ]

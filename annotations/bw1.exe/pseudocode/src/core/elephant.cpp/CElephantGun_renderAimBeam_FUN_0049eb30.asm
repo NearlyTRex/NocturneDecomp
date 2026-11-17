@@ -10,7 +10,7 @@
 ;   float g_FLOAT_005dc91f = 3.141593
 ;   float g_FLOAT_005dc923 = 0.005555556
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
@@ -181,7 +181,7 @@ section .text
     PUSH EAX                            ; 0049ecfd
     LEA EAX,[ESP + 0x18]                ; 0049ecfe
     PUSH EAX                            ; 0049ed02
-    MOV ECX,dword ptr [0x0061c010]      ; 0049ed03 | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 0049ed03 | g_CFireEffectPtr
     PUSH ECX                            ; 0049ed09
     LEA EDI,[ESP + 0x38]                ; 0049ed0a
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0 ; 0049ed0e

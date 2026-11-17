@@ -21,29 +21,29 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_004add00(int screen_x,int screen_y,
   ushort uVar10;
   uint5 uVar11;
   
-  if ((g_UINT_PTR_ARRAY_01c60dac[screen_y][screen_x] < (uint)z_depth) && (g_INT_005fba20 == 0x20)) {
-    uVar1 = *(uint *)(g_ARRAY_PTR_01c5faec[screen_y] + screen_x * 4);
+  if ((g_ZBufferScanlineArray[screen_y][screen_x] < (uint)z_depth) && (g_INT_005fba20 == 0x20)) {
+    uVar1 = *(uint *)(g_ScreenBufferArray[screen_y] + screen_x * 4);
     uVar8 = (ushort)(((uint7)(byte)((uint)g_INT_01c6b5c0 >> 0x18) << 0x30) >> 0x28);
     uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>
                                                    0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
                                            ) >> 0x20),uVar1) >> 0x18);
     uVar11 = (uint5)uVar2 & 0xffffffff00;
-    uVar4 = (ushort)(((uint7)(byte)(g_UINT_01d1a11c >> 0x18) << 0x30) >> 0x28);
-    uVar6 = (ushort)(((uint7)(byte)(g_UINT_01d1a120 >> 0x18) << 0x30) >> 0x28);
-    uVar3 = (ushort)(byte)g_INT_01c6b5c0 * ((ushort)g_UINT_01d1a120 & 0xff) +
-            ((ushort)uVar1 & 0xff) * (ushort)(byte)g_UINT_01d1a11c;
-    uVar5 = (ushort)(byte)((uint)g_INT_01c6b5c0 >> 8) * (ushort)(byte)(g_UINT_01d1a120 >> 8) +
+    uVar4 = (ushort)(((uint7)(byte)(g_FlyBlendColor >> 0x18) << 0x30) >> 0x28);
+    uVar6 = (ushort)(((uint7)(byte)(g_FlyInvBlendColor >> 0x18) << 0x30) >> 0x28);
+    uVar3 = (ushort)(byte)g_INT_01c6b5c0 * ((ushort)g_FlyInvBlendColor & 0xff) +
+            ((ushort)uVar1 & 0xff) * (ushort)(byte)g_FlyBlendColor;
+    uVar5 = (ushort)(byte)((uint)g_INT_01c6b5c0 >> 8) * (ushort)(byte)(g_FlyInvBlendColor >> 8) +
             ((ushort)(CONCAT43(uVar2,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >> 0x10) &
-            0xff) * (ushort)(byte)(g_UINT_01d1a11c >> 8);
+            0xff) * (ushort)(byte)(g_FlyBlendColor >> 8);
     uVar7 = (short)CONCAT21(uVar8,(char)((uint)g_INT_01c6b5c0 >> 0x10)) *
-            (short)CONCAT21(uVar6,(char)(g_UINT_01d1a120 >> 0x10)) +
-            (short)(uVar11 >> 8) * (short)CONCAT21(uVar4,(char)(g_UINT_01d1a11c >> 0x10));
+            (short)CONCAT21(uVar6,(char)(g_FlyInvBlendColor >> 0x10)) +
+            (short)(uVar11 >> 8) * (short)CONCAT21(uVar4,(char)(g_FlyBlendColor >> 0x10));
     uVar9 = (uVar8 >> 8) * (uVar6 >> 8) + (short)(uVar11 >> 0x18) * (uVar4 >> 8);
     uVar4 = uVar3 >> 8;
     uVar6 = uVar5 >> 8;
     uVar8 = uVar7 >> 8;
     uVar10 = uVar9 >> 8;
-    *(uint *)(g_ARRAY_PTR_01c5faec[screen_y] + screen_x * 4) =
+    *(uint *)(g_ScreenBufferArray[screen_y] + screen_x * 4) =
          CONCAT13((uVar10 != 0) * (uVar10 < 0x100) * (char)(uVar9 >> 8) - (0xff < uVar10),
                   CONCAT12((uVar8 != 0) * (uVar8 < 0x100) * (char)(uVar7 >> 8) - (0xff < uVar8),
                            CONCAT11((uVar6 != 0) * (uVar6 < 0x100) * (char)(uVar5 >> 8) -

@@ -45,7 +45,7 @@
 ;   double g_DOUBLE_005b848e = 0.174532925194444
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
-;   CVector3f g_CVector3f_02cfd900
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40
@@ -356,7 +356,7 @@ section .text
         ;   Label: LAB_004313e4
     PUSH 0x0                            ; 004313e6
     MOV EAX,dword ptr [EBP + 0x18]      ; 004313e8
-    PUSH 0x2cfd900                      ; 004313eb | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004313eb | g_ZeroVector
     MOV EDX,dword ptr [EBP + 0x18]      ; 004313f0
     MOV EAX,dword ptr [EAX + 0x154]     ; 004313f3
     PUSH EDX                            ; 004313f9

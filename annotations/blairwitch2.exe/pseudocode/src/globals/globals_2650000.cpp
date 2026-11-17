@@ -20,13 +20,13 @@ CDemonActorType g_CWaterActorClassInfo = {};
 COutStreamDebug g_COutStreamDebugInstance = {};
 
 // CTerrain
-CTerrain g_CTerrain_0265364c = {};
+CTerrain g_CTerrainInstance = {};
 
 // CTextureCache*
-CTextureCache* g_CTextureCache_PTR_02652eb0 = {};
+CTextureCache* g_TextureCacheInstance = {};
 
 // CVector3f
-CVector3f g_CVector3f_0265370c = {};
+CVector3f g_ZeroVector = {};
 
 // CVector3i
 CVector3i g_CVector3i_0265cc48 = {};
@@ -59,26 +59,26 @@ float g_FLOAT_026537a4 = {};
 float g_FLOAT_026537a8 = {};
 float g_FLOAT_026537ac = {};
 float g_FLOAT_026537b0 = {};
-float g_FLOAT_0265b7e8 = {};
+float g_WaterAnimationPhase = {};
 
 // int
 int g_INT_02652eac = {};
 int g_INT_02652eb4 = {};
 int g_INT_02653648 = {};
-int g_INT_026537b4 = {};
+int g_WaterAnimationTimer = {};
 int g_INT_026537b8 = {};
-int g_INT_026537bc = {};
-int g_INT_0265b7e4 = {};
+int g_VisibleWaterTileCount = {};
+int g_WaterAnimationBlend = {};
 int g_INT_0265b7ec = {};
 int g_INT_0265b7f0 = {};
 
 // int[4096]
-int g_INT_ARRAY_026537c0[4096] = {};
-int g_INT_ARRAY_026577c0[4096] = {};
+int g_VisibleWaterTilesX[4096] = {};
+int g_VisibleWaterTilesY[4096] = {};
 
 // uchar[4]
-uchar g_UCHAR_ARRAY_0265362c[4] = {};
-uchar g_UCHAR_ARRAY_02653630[4] = {};
+uchar g_BroadcastIP[4] = {};
+uchar g_AnyAddressIP[4] = {};
 
 // ulong
 ulong g_ULONG_026530bc = {};

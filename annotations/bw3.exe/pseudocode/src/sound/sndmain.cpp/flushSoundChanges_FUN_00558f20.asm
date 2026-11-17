@@ -18,8 +18,8 @@
 ;   double g_DOUBLE_02cf2838
 ;   double g_DOUBLE_02cf2848
 ;   int g_INT_02cf28b8
-;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
-;   int g_INT_02cf3288
+;   CSoundDevice* g_CSoundDevicePtr
+;   int g_HasHardware3DSound
 ;   byte g_BYTE_02cf3424
 ;   byte g_BYTE_02cf3427
 ;
@@ -34,7 +34,7 @@ section .text
 
     PUSH EBP                            ; 00558f20
         ;   Label: sound_sndmain.cpp_flushSoundChanges_FUN_00558f20
-    CMP dword ptr [0x02cf3280],0x0      ; 00558f21 | g_CSoundDevice_PTR_02cf3280
+    CMP dword ptr [0x02cf3280],0x0      ; 00558f21 | g_CSoundDevicePtr
     JNZ 0x00558f2c                      ; 00558f28
         ;   XREF to: 00558f2c (CONDITIONAL_JUMP)  ; LAB_00558f2c
     POP EBP                             ; 00558f2a
@@ -77,7 +77,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x8 + 0x2cf282c] ; 00558f89
     PUSH ESI                            ; 00558f90
     MOV EDI,dword ptr [EAX*0x8 + 0x2cf2828] ; 00558f91 | g_DOUBLE_02cf2828
-    MOV EDX,dword ptr [0x02cf3280]      ; 00558f98 | g_CSoundDevice_PTR_02cf3280
+    MOV EDX,dword ptr [0x02cf3280]      ; 00558f98 | g_CSoundDevicePtr
     PUSH EDI                            ; 00558f9e
     MOV EBX,dword ptr [EDX]             ; 00558f9f
     PUSH EDX                            ; 00558fa1
@@ -95,7 +95,7 @@ section .text
     PUSH dword ptr [EAX*0x4 + 0x2cf2890] ; 00558fd2
     PUSH dword ptr [EAX*0x4 + 0x2cf2888] ; 00558fd9
     PUSH dword ptr [EAX*0x4 + 0x2cf2880] ; 00558fe0
-    MOV EDX,dword ptr [0x02cf3280]      ; 00558fe7 | g_CSoundDevice_PTR_02cf3280
+    MOV EDX,dword ptr [0x02cf3280]      ; 00558fe7 | g_CSoundDevicePtr
     PUSH dword ptr [EAX*0x4 + 0x2cf2878] ; 00558fed
     MOV EBX,dword ptr [EDX]             ; 00558ff4
     PUSH dword ptr [EAX*0x4 + 0x2cf2870] ; 00558ff6
@@ -108,14 +108,14 @@ section .text
         ;   XREF to: 00559036 (CONDITIONAL_JUMP)  ; LAB_00559036
     MOV EAX,[0x02cf28b8]                ; 0055900d | g_INT_02cf28b8
     PUSH dword ptr [EAX*0x4 + 0x2cf2868] ; 00559012
-    MOV EDX,dword ptr [0x02cf3280]      ; 00559019 | g_CSoundDevice_PTR_02cf3280
+    MOV EDX,dword ptr [0x02cf3280]      ; 00559019 | g_CSoundDevicePtr
     PUSH dword ptr [EAX*0x4 + 0x2cf2860] ; 0055901f
     MOV EBX,dword ptr [EDX]             ; 00559026
     PUSH dword ptr [EAX*0x4 + 0x2cf2858] ; 00559028
     PUSH EDX                            ; 0055902f
     CALL dword ptr [EBX + 0x24]         ; 00559030
     ADD ESP,0x10                        ; 00559033
-    MOV EAX,[0x02cf3280]                ; 00559036 | g_CSoundDevice_PTR_02cf3280
+    MOV EAX,[0x02cf3280]                ; 00559036 | g_CSoundDevicePtr
         ;   Label: LAB_00559036
     XOR EBP,EBP                         ; 0055903b
     PUSH EAX                            ; 0055903d
@@ -128,7 +128,7 @@ section .text
     POP EDI                             ; 0055904e
     POP EBP                             ; 0055904f
     RET                                 ; 00559050
-    CMP dword ptr [0x02cf3288],0x1      ; 00559051 | g_INT_02cf3288
+    CMP dword ptr [0x02cf3288],0x1      ; 00559051 | g_HasHardware3DSound
         ;   Label: LAB_00559051
     JNZ 0x00559065                      ; 00559058
         ;   XREF to: 00559065 (CONDITIONAL_JUMP)  ; LAB_00559065
@@ -150,7 +150,7 @@ section .text
     ADD ESP,0x8                         ; 0055908a
     MOV ECX,dword ptr [EBX + 0x118]     ; 0055908d | g_CSfxSlot_ARRAY_02ce721c[1].changed_flags
     PUSH ECX                            ; 00559093
-    MOV EAX,[0x02cf3280]                ; 00559094 | g_CSoundDevice_PTR_02cf3280
+    MOV EAX,[0x02cf3280]                ; 00559094 | g_CSoundDevicePtr
     PUSH EBX                            ; 00559099 | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
     MOV EDX,dword ptr [EAX]             ; 0055909a
     PUSH EAX                            ; 0055909c
@@ -163,7 +163,7 @@ section .text
     JZ 0x00558f51                       ; 005590ae
         ;   XREF to: 00558f51 (CONDITIONAL_JUMP)  ; LAB_00558f51
     PUSH EBX                            ; 005590b4 | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
-    MOV EAX,[0x02cf3280]                ; 005590b5 | g_CSoundDevice_PTR_02cf3280
+    MOV EAX,[0x02cf3280]                ; 005590b5 | g_CSoundDevicePtr
     PUSH EAX                            ; 005590ba
     MOV EDX,dword ptr [EAX]             ; 005590bb
     CALL dword ptr [EDX + 0x4c]         ; 005590bd

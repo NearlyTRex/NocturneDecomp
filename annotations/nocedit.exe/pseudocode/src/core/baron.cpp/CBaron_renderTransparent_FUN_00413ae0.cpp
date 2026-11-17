@@ -74,7 +74,7 @@ LAB_00413b59:
     pCVar2 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar2,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
-    if (INT_02f43978 != 0) {
+    if (g_RenderMotionDebug != 0) {
       core_motion_cpp_CMotionController_render_FUN_0052e700(&pCVar2->base,(CDemonActor *)this_ptr);
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

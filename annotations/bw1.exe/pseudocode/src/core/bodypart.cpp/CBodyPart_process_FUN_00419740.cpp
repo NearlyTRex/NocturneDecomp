@@ -27,10 +27,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
     core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(this_ptr,0,0);
     pCVar2 = &(this_ptr->bounding_box).max;
-    if (pCVar2 != &g_CVector3f_02c8af28) {
-      pCVar2->x = g_CVector3f_02c8af28.x;
-      (this_ptr->bounding_box).max.y = g_CVector3f_02c8af28.y;
-      (this_ptr->bounding_box).max.z = g_CVector3f_02c8af28.z;
+    if (pCVar2 != &g_ZeroVector) {
+      pCVar2->x = g_ZeroVector.x;
+      (this_ptr->bounding_box).max.y = g_ZeroVector.y;
+      (this_ptr->bounding_box).max.z = g_ZeroVector.z;
     }
     if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar2) {
       (this_ptr->bounding_box).min.x = pCVar2->x;
@@ -71,7 +71,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
           fVar5 = (this_ptr->physics_box).linear_velocity.z;
           if ((float)3 < SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3)) {
             iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                              (g_CEventList_PTR_0061b4d0,"disableBodyPartDamage");
+                              (g_CEventListPtr,"disableBodyPartDamage");
             if (iVar6 == 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_60);
               SStack_60.damage_amount =

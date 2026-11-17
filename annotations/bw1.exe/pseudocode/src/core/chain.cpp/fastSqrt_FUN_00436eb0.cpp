@@ -9,5 +9,5 @@
 float __cdecl core_chain_cpp_fastSqrt_FUN_00436eb0(float value)
 
 {
-  return (float)(((int)value >> 1) + g_INT_01cc804c);
+  return (float)(((int)value >> 1) + g_FastSqrtMagic);
 }

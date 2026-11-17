@@ -510,7 +510,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004ed260(void)
       } while (cVar2 != '\0');
       local_24 = local_24 + 1;
     }
-    g_INT_01d06134 = g_INT_01d06134 + g_INT_01c2a370 * 0x18;
+    g_INT_01d06134 = g_INT_01d06134 + g_GlobalDeltaTimeInt * 0x18;
     if (0x7ffff < g_INT_01d06134) {
       g_INT_01d06134 = g_INT_01d06134 + -0x80000;
     }
@@ -778,7 +778,7 @@ LAB_004edf9c:
 LAB_004edb4a:
       core_sound_cpp_CSound_configure_FUN_0055ac50(g_CSound_PTR_0061c068);
     }
-    iVar3 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) {
       return;
     }

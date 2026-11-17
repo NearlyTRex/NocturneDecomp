@@ -93,19 +93,19 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "g_ARRAY_PTR_01c4354c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c43551",
-      "name": "g_ARRAY_PTR_01c4354c[1]+1",
+      "name": "g_ScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -117,7 +117,7 @@
     },
     {
       "addr": "02c83390",
-      "name": "g_PTR_02c83390",
+      "name": "g_APIDLL_toggle",
       "type": "void*",
       "value": null
     },
@@ -280,9 +280,9 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(uint **)((int)g_ARRAY_PTR_01c4354c",
+      "match": "(uint **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = *(uint **)((int)g_ARRAY_PTR_01c4354c + iVar4);",
+      "text": "puVar7 = *(uint **)((int)g_ScreenBufferArray + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -306,7 +306,7 @@
       "line": 60,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_02c83390)();",
+      "text": "(*(code *)g_APIDLL_toggle)();",
       "type": "unresolved_funcptr"
     },
     {
@@ -326,11 +326,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = *(uint **)((int)g_ARRAY_PTR_01c4354c + iVar4);",
+      "text": "puVar7 = *(uint **)((int)g_ScreenBufferArray + iVar4);",
       "type": "pointer_truncation"
     },
     {

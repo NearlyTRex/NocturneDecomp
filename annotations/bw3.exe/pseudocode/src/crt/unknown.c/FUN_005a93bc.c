@@ -15,7 +15,7 @@ int FUN_005a93bc(uint param_1)
   
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079b4)();
   iVar3 = 0;
-  for (pFVar2 = g_FileListNode_PTR_02d252a0; pFVar2 != (FileListNode *)0x0; pFVar2 = pFVar2->next) {
+  for (pFVar2 = g_AllocatedListHead; pFVar2 != (FileListNode *)0x0; pFVar2 = pFVar2->next) {
     p_Var1 = pFVar2->file_struct;
     if (((p_Var1->_flag & param_1) != 0) && (iVar3 = iVar3 + 1, (p_Var1->_flag & 0x1000) != 0)) {
       FUN_005a9bc0(p_Var1);

@@ -27,7 +27,7 @@ extern CAlphaBitmap CAlphaBitmap_ARRAY_01cd0b44[8];
 extern CBloodParticle g_BloodParticles[256];
 
 // CBloodSplat[2000]
-extern CBloodSplat g_CBloodSplat_ARRAY_01cd56b4[2000];
+extern CBloodSplat g_BloodSplats[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CGargoyleClassInfo;
@@ -49,67 +49,67 @@ extern CHero* g_CHero_PTR_ARRAY_01cd0c60[4];
 extern CPickList g_CPickList;
 
 // CVector3f
-extern CVector3f g_CVector3f_01cd0d44;
-extern CVector3f g_CVector3f_01cd0d50;
+extern CVector3f g_GhoulOffsetMinusX;
+extern CVector3f g_GhoulOffsetPlusX;
 
 // CVector3i
-extern CVector3i g_CVector3i_01cd0e68;
-extern CVector3i g_CVector3i_01cd0e74;
+extern CVector3i g_ParticleCameraRotation;
+extern CVector3i g_BloodParticleViewDirection;
 
 // SMRGLPrimitiveQuadIndex
-extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cd0e40;
-extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cd0e80;
+extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
+extern SMRGLPrimitiveQuadIndex g_FootstepPrimitive;
 
 // char[256]
-extern char g_CHAR_ARRAY_01cd05c0[256];
-extern char g_CHAR_ARRAY_01cd09e8[256];
+extern char g_CurrentSaveFile[256];
+extern char g_ChapterDisplayName[256];
 
 // float
-extern float g_FLOAT_01cd0aec;
+extern float g_OverlayDisplayTimer;
 extern float g_FLOAT_01cd0c28;
 extern float g_FLOAT_01cd0c2c;
 extern float g_FLOAT_01cd0c30;
-extern float g_FLOAT_01cd0c80;
+extern float g_IrisFadeRadius;
 
 // int
-extern int g_INT_01cd01f0;
+extern int g_InputResetFlag;
 extern int g_INT_01cd01f4;
 extern int g_INT_01cd01f8;
 extern int g_INT_01cd06c0;
-extern int g_INT_01cd0ae8;
+extern int g_ChapterDisplayYear;
 extern int g_INT_01cd0b3c;
 extern int g_INT_01cd0b40;
 extern int g_INT_01cd0c24;
 extern int g_INT_01cd0c34;
-extern int g_INT_01cd0c38;
-extern int g_INT_01cd0c3c;
-extern int g_INT_01cd0c40;
-extern int g_INT_01cd0c44;
+extern int g_MovieRecordingArmed;
+extern int g_MovieRecordingActive;
+extern int g_MovieRecordingMaxFrames;
+extern int g_MovieRecordingFrameCounter;
 extern int g_INT_01cd0c48;
-extern int g_INT_01cd0c4c;
-extern int g_INT_01cd0c50;
-extern int g_INT_01cd0c54;
-extern int g_INT_01cd0c58;
+extern int g_HelpCursorX;
+extern int g_HelpCursorY;
+extern int g_HelpLineHeight;
+extern int g_HelpCharWidth;
 extern int g_INT_01cd0c5c;
 extern int g_INT_01cd0c7c;
-extern int g_INT_01cd0c84;
-extern int g_INT_01cd0c88;
+extern int g_IrisFadeCenterX;
+extern int g_IrisFadeCenterY;
 extern int g_INT_01cd0c8c;
-extern int g_INT_01cd0c90;
+extern int g_ProfileStartTime;
 extern int g_INT_01cd0c94;
-extern int g_INT_01cd0ea8;
-extern int g_INT_01cd56ac;
-extern int g_INT_01cd56b0;
+extern int g_BloodParticleIndex;
+extern int g_BloodSplatIndex;
+extern int g_BloodSplatCount;
 
 // int[11]
-extern int g_INT_ARRAY_01cd0d98[11];
+extern int g_GhoulIndices[11];
 
 // int[12]
-extern int g_INT_ARRAY_01cd0c9c[12];
+extern int g_GargoyleIndices[12];
 
 // int[16]
 extern int g_INT_ARRAY_01cd0be4[16];
 
 // int[201]
-extern int g_INT_ARRAY_01cd06c4[201];
+extern int g_MasterLightStateSaveBuffer[201];
 

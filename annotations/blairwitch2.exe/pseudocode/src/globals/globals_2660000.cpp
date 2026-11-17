@@ -43,7 +43,7 @@ CDemonActorType g_CSpiritMineClassInfo = {};
 CDemonActorType g_CNecklaceClassInfo = {};
 
 // CDemonGlobe
-CDemonGlobe g_CDemonGlobe_02661f3c = {};
+CDemonGlobe g_WeaponCoronaGlobe = {};
 CDemonGlobe g_CDemonGlobe_026686b8 = {};
 
 // CExamplePuzzle
@@ -59,105 +59,105 @@ CKeyFramedModelInstance g_CKeyFramedModelInstance_026681e0 = {};
 CSimpleParticleSystem g_CSimpleParticleSystemInstance = {};
 
 // CVector3f
-CVector3f g_CVector3f_02662d04 = {};
-CVector3f g_CVector3f_02662d10 = {};
+CVector3f g_WerewolfEyeGlowOffsetLeft = {};
+CVector3f g_WerewolfEyeGlowOffsetRight = {};
 
 // CVector3f[200]
-CVector3f g_CVector3f_ARRAY_02661fb8[200] = {};
+CVector3f g_WeatherParticlePositions[200] = {};
 
 // CWeather
-CWeather g_CWeather_02661f80 = {};
+CWeather g_CWeatherInstance = {};
 
 // DWORD
-DWORD g_DWORD_02662d60 = {};
+DWORD g_PreviousCounterLow = {};
 
 // HMODULE
-HMODULE g_HMODULE_026656c0 = {};
+HMODULE g_WinmmDll = {};
 
 // HWND
-HWND g_HWND_02664628 = {};
+HWND g_MainWindowHandle = {};
 
 // IDirectDraw*
-IDirectDraw* g_IDirectDraw_PTR_02661ae0 = {};
+IDirectDraw* g_DirectDrawObject = {};
 
 // IDirectDrawSurface*
-IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae4 = {};
-IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae8 = {};
+IDirectDrawSurface* g_DirectDrawSurface = {};
+IDirectDrawSurface* g_SoftwareRenderSurface = {};
 
 // IUnknown*
-IUnknown* g_IUnknown_PTR_02661aec = {};
+IUnknown* g_DirectDrawUnknown = {};
 
 // PALETTEENTRY[256]
-PALETTEENTRY g_PALETTEENTRY_ARRAY_02661b00[256] = {};
+PALETTEENTRY g_DDPaletteBuffer[256] = {};
 
 // SMRGLPrimitiveQuad[1000]
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_02668a10[1000] = {};
+SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000] = {};
 
 // SRenderVertex[32]
-SRenderVertex g_SRenderVertex_ARRAY_02665a6c[32] = {};
-SRenderVertex g_SRenderVertex_ARRAY_0266606c[32] = {};
-SRenderVertex g_SRenderVertex_ARRAY_0266666c[32] = {};
-SRenderVertex g_SRenderVertex_ARRAY_02666c6c[32] = {};
+SRenderVertex g_ClipVertexBufferStage2[32] = {};
+SRenderVertex g_ClipVertexBufferStage1[32] = {};
+SRenderVertex g_ClipVertexBufferStage3[32] = {};
+SRenderVertex g_ClipVertexBufferStage4[32] = {};
 
 // _struct_19
-_struct_19 g_struct_19_02662d68 = {};
-_struct_19 g_struct_19_02662d70 = {};
+_struct_19 g_PerformanceCounter = {};
+_struct_19 g_PerformanceFrequency = {};
 
 // byte
 byte g_BYTE_02662de4 = {};
 byte g_BYTE_026686f8 = {};
 
 // char*[128]
-char* g_CHAR_PTR_ARRAY_026652bc[128] = {};
+char* g_ArgVector[128] = {};
 
 // char[200]
-char g_CHAR_ARRAY_02662c38[200] = {};
-char g_CHAR_ARRAY_02664560[200] = {};
+char g_WeatherParticleHitGround[200] = {};
+char g_KeyNameBuffer[200] = {};
 
 // char[256]
-char g_CHAR_ARRAY_02664fb8[256] = {};
-char g_CHAR_ARRAY_026650b8[256] = {};
-char g_CHAR_ARRAY_026651b8[256] = {};
+char g_ModuleFileName[256] = {};
+char g_CurrentDirectory[256] = {};
+char g_CommandLineBuffer[256] = {};
 char g_CHAR_ARRAY_02668360[256] = {};
 
 // char[6000]
 char g_CHAR_ARRAY_02662df0[6000] = {};
 
 // double
-double g_DOUBLE_02662d78 = {};
+double g_TimerCalibration = {};
 
 // float
 float g_FLOAT_02664fa0 = {};
 float g_FLOAT_02664fa4 = {};
 
 // float[200]
-float g_FLOAT_ARRAY_02662918[200] = {};
+float g_WeatherParticleGroundHeights[200] = {};
 
 // int
-int g_INT_02661af4 = {};
-int g_INT_02661af8 = {};
-int g_INT_02661afc = {};
-int g_INT_02662d64 = {};
-int g_INT_02662d80 = {};
-int g_INT_02662dd8 = {};
-int g_INT_02662ddc = {};
-int g_INT_02662de0 = {};
-int g_INT_02662de8 = {};
-int g_INT_02664630 = {};
+int g_FlipPending = {};
+int g_GraphicsResetFlag = {};
+int g_Display24BitFallback = {};
+int g_PreviousCounterHigh = {};
+int g_AccumulatedGameTime = {};
+int g_InputReadIndex = {};
+int g_InputWriteIndex = {};
+int g_InputCountOld = {};
+int g_CrosshairBrightness = {};
+int g_InputDisabled = {};
 int g_INT_02664634 = {};
-int g_INT_02664638 = {};
+int g_TotalPhysicalMemory = {};
 int g_INT_0266463c = {};
 int g_INT_02664fa8 = {};
-int g_INT_026652b8 = {};
+int g_ArgCount = {};
 int g_INT_02665a44 = {};
-int g_INT_02665a48 = {};
-int g_INT_02665a4c = {};
-int g_INT_02665a50 = {};
-int g_INT_02665a58 = {};
-int g_INT_02665a5c = {};
-int g_INT_02665a60 = {};
-int g_INT_02665a64 = {};
-int g_INT_02665a68 = {};
+int g_MovieWindowHandle = {};
+int g_MovieHandle = {};
+int g_MoviePlaying = {};
+int g_FullscreenMovie = {};
+int g_ClipVertexCountStage1 = {};
+int g_ClipVertexCountStage2 = {};
+int g_ClipVertexCountStage3 = {};
+int g_ClipVertexCountStage4 = {};
 int g_INT_026672a8 = {};
 int g_INT_026677ac = {};
 int g_INT_026677b0 = {};
@@ -167,20 +167,20 @@ int g_INT_026677e8 = {};
 int g_INT_02668128 = {};
 
 // int[1]
-int g_INT_ARRAY_02662d84[1] = {};
+int g_UseMultimediaTimer[1] = {};
 int g_INT_ARRAY_02665974[1] = {};
 int g_INT_ARRAY_026677b4[1] = {};
 
 // int[20]
-int g_INT_ARRAY_02662d88[20] = {};
+int g_InputBuffer[20] = {};
 
 // int[600]
-int g_INT_ARRAY_02664640[600] = {};
+int g_MessageFlags[600] = {};
 
 // uint
-uint g_UINT_02662d00 = {};
+uint g_RainSoundHandle = {};
 
 // void*
 void* g_PTR_02661af0 = {};
-void* g_PTR_026656bc = {};
+void* g_joyGetPosEx = {};
 

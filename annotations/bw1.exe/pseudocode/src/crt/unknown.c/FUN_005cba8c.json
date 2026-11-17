@@ -51,13 +51,13 @@
     },
     {
       "addr": "00626220",
-      "name": "g_Heap_PTR_00626220",
+      "name": "g_MainHeap",
       "type": "Heap*",
       "value": "00000000"
     },
     {
       "addr": "00626224",
-      "name": "g_Heap_PTR_00626224",
+      "name": "g_SecondaryHeap",
       "type": "Heap*",
       "value": "00000000"
     },
@@ -180,7 +180,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_1 == g_Heap_PTR_00626224) && (g_Heap_PTR_00626224 = pHVar1, pHVar1 == (Heap *)0x0)) {",
+      "text": "if ((param_1 == g_SecondaryHeap) && (g_SecondaryHeap = pHVar1, pHVar1 == (Heap *)0x0)) {",
       "type": "unnamed_param"
     },
     {

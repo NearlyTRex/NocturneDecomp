@@ -89,7 +89,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00497ac0(CStake *this_ptr,CVector3f 
   }
   this_ptr->active = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                     (&g_CKeyFramedModelInstance_01c73698);
+                     (&g_FireEffectFlamingStakeModel);
   pCVar3 = &pCVar1->bounds;
   pfVar4 = &local_cc;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

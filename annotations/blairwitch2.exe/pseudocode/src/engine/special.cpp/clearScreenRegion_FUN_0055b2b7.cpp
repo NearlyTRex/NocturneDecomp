@@ -17,10 +17,10 @@ void __cdecl engine_special_cpp_clearScreenRegion_FUN_0055b2b7(int color)
   ushort *puVar6;
   
   if (g_INT_01c37788 == 0) {
-    iVar1 = (g_INT_01c35e50 - g_INT_01c35e48) + 1;
+    iVar1 = (g_ClipRight - g_INT_01c35e48) + 1;
     uVar3 = g_INT_01c35e4c;
     do {
-      puVar4 = g_ARRAY_PTR_01c2a38c[uVar3] + g_INT_01c35e48;
+      puVar4 = g_ScreenBufferArray[uVar3] + g_INT_01c35e48;
       iVar2 = iVar1;
       if (g_INT_006141c0 == 8) {
         for (; iVar2 != 0; iVar2 = iVar2 + -1) {

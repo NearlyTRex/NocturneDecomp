@@ -33,7 +33,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CConsole g_CConsoleInstance
-;   CDemonCamera* g_CDemonCamera_PTR_007f7370
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.profile_mode
@@ -78,7 +78,7 @@ section .text
     PUSH ESI                            ; 0050d316 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 0050d317
         ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)
-    MOV EDI,dword ptr [0x007f7370]      ; 0050d31c | g_CDemonCamera_PTR_007f7370
+    MOV EDI,dword ptr [0x007f7370]      ; 0050d31c | g_CurrentSceneCamera
     ADD ESP,0x8                         ; 0050d322
     TEST EDI,EDI                        ; 0050d325
     JNZ 0x0050d34b                      ; 0050d327

@@ -51,37 +51,37 @@
     },
     {
       "addr": "007bfd00",
-      "name": "g_INT_007bfd00",
+      "name": "g_OutputVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "007bfd04",
-      "name": "g_INT_007bfd04",
+      "name": "g_TempVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "007bfd0c",
-      "name": "g_SRenderVertex_ARRAY_007bfd0c",
+      "name": "g_ClipperOutputBuffer",
       "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "007bfd14",
-      "name": "g_SRenderVertex_ARRAY_007bfd0c[0].projected_vertex.transformed_z",
+      "name": "g_ClipperOutputBuffer[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c090c",
-      "name": "g_SRenderVertex_ARRAY_007c090c",
+      "name": "g_ClipperWorkingBuffer",
       "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "007c0910",
-      "name": "g_SRenderVertex_ARRAY_007c090c[0].projected_vertex.transformed_y",
+      "name": "g_ClipperWorkingBuffer[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     }
@@ -331,7 +331,7 @@
       "line": 57,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 004324a1: MOVSD.REP ES:EDI,ESI  ; g_SRenderVertex_ARRAY_007c090c | g_SRenderVertex_ARRAY_007c090c[0].projected_vertex",
+      "text": "// 004324a1: MOVSD.REP ES:EDI,ESI  ; g_ClipperWorkingBuffer | g_ClipperWorkingBuffer[0].projected_vertex.transformed_y",
       "type": "unrolled_memcpy"
     },
     {
@@ -339,7 +339,7 @@
       "line": 101,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00432511: MOVSD.REP ES:EDI,ESI  ; g_SRenderVertex_ARRAY_007c090c | g_SRenderVertex_ARRAY_007c090c[0].projected_vertex",
+      "text": "// 00432511: MOVSD.REP ES:EDI,ESI  ; g_ClipperWorkingBuffer | g_ClipperWorkingBuffer[0].projected_vertex.transformed_y",
       "type": "unrolled_memcpy"
     }
   ]

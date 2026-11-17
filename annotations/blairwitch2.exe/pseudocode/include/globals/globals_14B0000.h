@@ -10,5 +10,5 @@
 // =============================================================================
 
 // uint[16384]
-extern uint g_UINT_ARRAY_014b3550[16384];
+extern uint g_CameraTextureWorkBuffer[16384];
 

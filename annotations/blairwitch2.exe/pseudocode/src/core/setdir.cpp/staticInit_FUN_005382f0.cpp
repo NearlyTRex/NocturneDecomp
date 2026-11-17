@@ -11,7 +11,6 @@ void __cdecl core_setdir_cpp_staticInit_FUN_005382f0(void)
 {
   __arrinit(g_CZThumbPool,0x5dc,&g_CZThumbTypeInfo);
   _atexit(&g_CZThumbPoolDestructorNode);
-  __arrinit
-            (g_CBoundingBox3D_ARRAY_020a46d8,2000,&g_CBoundingBox3DTypeInfo);
+  __arrinit(g_VDNearbyActorBoundingBoxes,2000,&g_CBoundingBox3DTypeInfo);
   return;
 }

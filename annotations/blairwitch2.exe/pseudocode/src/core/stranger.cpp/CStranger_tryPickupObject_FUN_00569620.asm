@@ -626,7 +626,7 @@ section .text
     SAHF                                ; 00569e10
     JBE 0x0056a104                      ; 00569e11
         ;   XREF to: 0056a104 (CONDITIONAL_JUMP)  ; LAB_0056a104
-    MOV EAX,[0x0264be68]                ; 00569e17 | g_INT_ARRAY_0264be30[14]
+    MOV EAX,[0x0264be68]                ; 00569e17 | g_StrangerIndices[14]
     PUSH EAX                            ; 00569e1c
     PUSH EBX                            ; 00569e1d
     LEA ESI,[ESP + 0x17c]               ; 00569e1e
@@ -634,7 +634,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 00569e2c
         ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00569e31
-    MOV EDX,dword ptr [0x0264be40]      ; 00569e34 | g_INT_ARRAY_0264be30[4]
+    MOV EDX,dword ptr [0x0264be40]      ; 00569e34 | g_StrangerIndices[4]
     LEA ESI,[ESP + 0x174]               ; 00569e3a
     PUSH EDX                            ; 00569e41
     MOVSD ES:EDI,ESI                    ; 00569e42

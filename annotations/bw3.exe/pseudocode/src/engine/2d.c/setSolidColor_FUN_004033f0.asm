@@ -14,10 +14,10 @@
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;   int g_INT_01c6cee8
-;   ulong g_ULONG_01c6e2bc
-;   int g_INT_01c6e2c0
-;   int g_INT_01c6e2c4
-;   int g_INT_01c6e2c8
+;   ulong g_SolidColorMode
+;   int g_SolidRedComponent
+;   int g_SolidGreenComponent
+;   int g_SolidBlueComponent
 ;
 ; Called Functions:
 ;   engine_special.cpp_setFogColor_FUN_005661b0
@@ -32,13 +32,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004033f2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004033f6
     MOV EDX,dword ptr [ESP + 0x14]      ; 004033fa
-    MOV dword ptr [0x01c6e2c4],EBX      ; 004033fe | g_INT_01c6e2c4
-    MOV dword ptr [0x01c6e2c8],EDX      ; 00403404 | g_INT_01c6e2c8
+    MOV dword ptr [0x01c6e2c4],EBX      ; 004033fe | g_SolidGreenComponent
+    MOV dword ptr [0x01c6e2c8],EDX      ; 00403404 | g_SolidBlueComponent
     MOV ESI,EBX                         ; 0040340a
     MOV ECX,EAX                         ; 0040340c
     SHL ESI,0x8                         ; 0040340e
     SHL ECX,0x10                        ; 00403411
-    MOV [0x01c6e2c0],EAX                ; 00403414 | g_INT_01c6e2c0
+    MOV [0x01c6e2c0],EAX                ; 00403414 | g_SolidRedComponent
     OR ECX,ESI                          ; 00403419
     MOV ESI,dword ptr [0x005fba20]      ; 0040341b | g_INT_005fba20
     OR ECX,EDX                          ; 00403421
@@ -62,7 +62,7 @@ section .text
     MOV ECX,EDI                         ; 0040344e
     OR ECX,ESI                          ; 00403450
     POP EDI                             ; 00403452
-    MOV dword ptr [0x01c6e2bc],ECX      ; 00403453 | g_ULONG_01c6e2bc
+    MOV dword ptr [0x01c6e2bc],ECX      ; 00403453 | g_SolidColorMode
         ;   Label: LAB_00403453
     CMP dword ptr [0x01c6cee8],0x0      ; 00403459 | g_INT_01c6cee8
     JNZ 0x00403465                      ; 00403460

@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c5760 at 005c5766
 ;
 ; Referenced Globals:
-;   _FILE* g_FILE_PTR_0061ef54 = 00000000
+;   _FILE* g_StaticFilePoolStart = 00000000
 ;
 ; *****************************************************************************
 
@@ -27,6 +27,6 @@ section .text
     SHL EAX,0x2                         ; 005c5e35
     ADD EAX,EDX                         ; 005c5e38
     ADD EAX,EAX                         ; 005c5e3a
-    ADD EAX,0x61ef54                    ; 005c5e3c | g_FILE_PTR_0061ef54
+    ADD EAX,0x61ef54                    ; 005c5e3c | g_StaticFilePoolStart
     RET                                 ; 005c5e41
 

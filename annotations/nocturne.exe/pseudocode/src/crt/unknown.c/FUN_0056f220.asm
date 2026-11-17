@@ -12,7 +12,7 @@
 ;   crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0 at 00573420
 ;
 ; Referenced Globals:
-;   uint g_UINT_005c1f90 = 0x14
+;   uint g_MaxHandleCount = 0x14
 ;   undefined4 DAT_005c1f94
 ;   undefined4 DAT_005c1f95
 ;   void* PTR_DAT_005c1fe4 = 005c1f94
@@ -28,7 +28,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_0056f220
     PUSH ESI                            ; 0056f221
     MOV EBX,dword ptr [ESP + 0xc]       ; 0056f222
-    CMP EBX,dword ptr [0x005c1f90]      ; 0056f226 | g_UINT_005c1f90
+    CMP EBX,dword ptr [0x005c1f90]      ; 0056f226 | g_MaxHandleCount
     JC 0x0056f233                       ; 0056f22c
         ;   XREF to: 0056f233 (CONDITIONAL_JUMP)  ; LAB_0056f233
     XOR EAX,EAX                         ; 0056f22e

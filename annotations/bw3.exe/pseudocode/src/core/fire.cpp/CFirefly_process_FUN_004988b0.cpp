@@ -26,7 +26,7 @@ void __cdecl core_fire_cpp_CFirefly_process_FUN_004988b0(CFirefly *this_ptr)
     this_ptr->first_update_flag = 1;
   }
   else {
-    lVar6 = (longlong)g_INT_01c5fad0 * (longlong)this_ptr->time_scale;
+    lVar6 = (longlong)g_GlobalDeltaTimeInt * (longlong)this_ptr->time_scale;
     lVar6 = (longlong)this_ptr->fade_rate *
             (longlong)(int)((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
     iVar10 = this_ptr->intensity - ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
@@ -37,7 +37,7 @@ void __cdecl core_fire_cpp_CFirefly_process_FUN_004988b0(CFirefly *this_ptr)
     }
   }
   delta_time = g_CGamePtr->delta_time_float;
-  lVar6 = (longlong)this_ptr->time_scale * (longlong)g_INT_01c5fad0;
+  lVar6 = (longlong)this_ptr->time_scale * (longlong)g_GlobalDeltaTimeInt;
   core_game_cpp_CGame_slamDT_FUN_004bf3a0
             (g_CGamePtr,
              (float)(int)((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) *

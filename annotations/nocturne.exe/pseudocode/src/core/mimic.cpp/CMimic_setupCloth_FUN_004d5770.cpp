@@ -25,8 +25,8 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,&(this_ptr->base).base.model);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
-                      g_CGabriellaActorType_01c713e8.name_hash);
+                     ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],g_CGabriellaClassInfo.name_hash)
+  ;
   if (pCVar1 != (CDemonActor *)0x0) {
     pcVar4 = pCVar1[0x184].create_event + 0x5c;
     pSVar5 = (this_ptr->cloth).vertices;

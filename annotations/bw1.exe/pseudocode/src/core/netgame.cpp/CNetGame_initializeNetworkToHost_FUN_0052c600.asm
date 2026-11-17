@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   CGame* g_CGamePtr = 01ccf390
-;   uchar[4] g_UCHAR_ARRAY_02c8ae4c
+;   uchar[4] g_AnyAddressIP
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040
@@ -48,7 +48,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 0052c643
     PUSH EAX                            ; 0052c646
     PUSH 0x1ddf                         ; 0052c647
-    MOV EDI,dword ptr [0x02c8ae4c]      ; 0052c64c | g_UCHAR_ARRAY_02c8ae4c
+    MOV EDI,dword ptr [0x02c8ae4c]      ; 0052c64c | g_AnyAddressIP
     PUSH EDI                            ; 0052c652
     LEA EAX,[ESP + 0x14]                ; 0052c653
     PUSH EAX                            ; 0052c657

@@ -10,16 +10,13 @@ void __cdecl core_fire_cpp_loadFireBallAssets_FUN_00495900(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&g_CKeyFramedModelInstance_01c3e074,"fball.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_CKeyFramedModelInstance_01c3e074)
-  ;
+            (&g_FireEffectFireballModel,"fball.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_FireEffectFireballModel);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&g_CKeyFramedModelInstance_01c3e1f0,"smfball.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_CKeyFramedModelInstance_01c3e1f0)
-  ;
+            (&g_FireEffectFireballSmallModel,"smfball.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_FireEffectFireballSmallModel);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&g_CKeyFramedModelInstance_01c3e36c,"grnball.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_CKeyFramedModelInstance_01c3e36c)
-  ;
+            (&g_FireEffectFireballGreenModel,"grnball.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_FireEffectFireballGreenModel);
   return;
 }

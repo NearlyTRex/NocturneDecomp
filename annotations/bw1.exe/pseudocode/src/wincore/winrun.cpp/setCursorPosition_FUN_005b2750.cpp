@@ -10,7 +10,7 @@ void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005b2750(int x,int y)
 
 {
   SetCursorPos(x,y);
-  g_INT_01c4353c = x;
-  g_INT_01c43540 = y;
+  g_MouseX = x;
+  g_MouseY = y;
   return;
 }

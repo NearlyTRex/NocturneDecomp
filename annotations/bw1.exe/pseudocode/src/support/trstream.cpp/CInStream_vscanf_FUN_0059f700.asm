@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0059f5cc = 0059f970
 ;   undefined1* switchdataD_0059f628 = 0059f8c3
-;   uchar[257] g_UCHAR_ARRAY_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005c12b0
@@ -52,7 +52,7 @@ section .text
     XOR ECX,ECX                         ; 0059f742
     INC AL                              ; 0059f744
     MOV CL,AL                           ; 0059f746
-    MOV DH,byte ptr [ECX + 0x626114]    ; 0059f748 | g_UCHAR_ARRAY_00626114
+    MOV DH,byte ptr [ECX + 0x626114]    ; 0059f748 | g_CharacterClassificationTable
     LEA EAX,[EBX + 0x1]                 ; 0059f74e
     TEST DH,0x2                         ; 0059f751
     JZ 0x0059f7bb                       ; 0059f754
@@ -178,7 +178,7 @@ section .text
         ;   Label: LAB_0059f878
     INC CL                              ; 0059f87a
     AND ECX,0xff                        ; 0059f87c
-    TEST byte ptr [ECX + 0x626114],0x20 ; 0059f882 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [ECX + 0x626114],0x20 ; 0059f882 | g_CharacterClassificationTable
     JZ 0x0059f8a4                       ; 0059f889
         ;   XREF to: 0059f8a4 (CONDITIONAL_JUMP)  ; LAB_0059f8a4
     SUB EAX,0x30                        ; 0059f88b
@@ -1155,7 +1155,7 @@ section .text
     MOV CL,byte ptr [ESP + 0xa4]        ; 005a030d
     INC CL                              ; 005a0314
     AND ECX,0xff                        ; 005a0316
-    TEST byte ptr [ECX + 0x626114],0x20 ; 005a031c | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [ECX + 0x626114],0x20 ; 005a031c | g_CharacterClassificationTable
     JZ 0x005a0576                       ; 005a0323
         ;   XREF to: 005a0576 (CONDITIONAL_JUMP)  ; LAB_005a0576
     MOV ECX,0x1                         ; 005a0329
@@ -1237,7 +1237,7 @@ section .text
     MOV CL,byte ptr [ESP + 0xa4]        ; 005a0409
     INC CL                              ; 005a0410
     AND ECX,0xff                        ; 005a0412
-    TEST byte ptr [ECX + 0x626114],0x20 ; 005a0418 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [ECX + 0x626114],0x20 ; 005a0418 | g_CharacterClassificationTable
     JZ 0x005a05aa                       ; 005a041f
         ;   XREF to: 005a05aa (CONDITIONAL_JUMP)  ; LAB_005a05aa
     MOV AL,byte ptr [ESP + 0xa4]        ; 005a0425
@@ -1332,7 +1332,7 @@ section .text
     MOV CL,byte ptr [ESP + 0xa4]        ; 005a0545
     INC CL                              ; 005a054c
     AND ECX,0xff                        ; 005a054e
-    TEST byte ptr [ECX + 0x626114],0x20 ; 005a0554 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [ECX + 0x626114],0x20 ; 005a0554 | g_CharacterClassificationTable
     JZ 0x005a06c2                       ; 005a055b
         ;   XREF to: 005a06c2 (CONDITIONAL_JUMP)  ; LAB_005a06c2
     MOV AL,byte ptr [ESP + 0xa4]        ; 005a0561

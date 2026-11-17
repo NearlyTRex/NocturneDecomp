@@ -25,11 +25,11 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   int g_INT_0061b4b8 = 0xff
+;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 01ccf390
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00622f34
+;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01c51cac
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
     PUSH EBP                            ; 00554ac3
     SUB ESP,0xe4                        ; 00554ac4
     MOV EBP,dword ptr [ESP + 0xfc]      ; 00554aca
-    PUSH 0x622f34                       ; 00554ad1 | g_SMRGLTextureBasic_00622f34
+    PUSH 0x622f34                       ; 00554ad1 | g_EnvMapTexture
     MOV EDX,dword ptr [0x00612560]      ; 00554ad6 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00554adc | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00554add
@@ -62,7 +62,7 @@ section .text
     CMP ECX,0x2                         ; 00554af0
     JNZ 0x00554cd9                      ; 00554af3
         ;   XREF to: 00554cd9 (CONDITIONAL_JUMP)  ; LAB_00554cd9
-    MOV EAX,[0x0061b4b8]                ; 00554af9 | g_INT_0061b4b8
+    MOV EAX,[0x0061b4b8]                ; 00554af9 | g_CurrentAlphaValue
     SHL EAX,0x8                         ; 00554afe
     MOV dword ptr [ESP + 0x104],EAX     ; 00554b01
     MOV EAX,[0x00612560]                ; 00554b08 | g_CDemonRenderer_PTR_00612560
@@ -215,7 +215,7 @@ section .text
     RET                                 ; 00554cd8
     MOV EAX,0xffff                      ; 00554cd9
         ;   Label: LAB_00554cd9
-    MOV EBX,dword ptr [0x01c51cac]      ; 00554cde | g_INT_01c51cac
+    MOV EBX,dword ptr [0x01c51cac]      ; 00554cde | g_PerspectiveReciprocal
     MOV EDX,dword ptr [ESP + 0x104]     ; 00554ce4
     SUB EAX,EBX                         ; 00554ceb
     IMUL EDX                            ; 00554ced

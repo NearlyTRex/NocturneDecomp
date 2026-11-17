@@ -55,13 +55,13 @@
   "globals": [
     {
       "addr": "02d25920",
-      "name": "g_CHAR_PTR_PTR_02d25920",
+      "name": "g_EnvironStringArea",
       "type": "char**",
       "value": null
     },
     {
       "addr": "02d25924",
-      "name": "g_CHAR_PTR_PTR_02d25924",
+      "name": "g_EnvironmentBlock",
       "type": "char**",
       "value": null
     }
@@ -151,7 +151,7 @@
       "line": 11,
       "match": "(char *)(((int)ppcVar1",
       "severity": "moderate",
-      "text": "if (*(char *)(((int)ppcVar1 - (int)g_CHAR_PTR_PTR_02d25924 >> 2) +",
+      "text": "if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=",
       "type": "pointer_cast"
     },
     {
@@ -159,23 +159,23 @@
       "line": 11,
       "match": "(int)ppcVar1",
       "severity": "moderate",
-      "text": "if (*(char *)(((int)ppcVar1 - (int)g_CHAR_PTR_PTR_02d25924 >> 2) +",
+      "text": "if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_PTR_02d25924` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_EnvironmentBlock` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
-      "match": "(int)g_CHAR_PTR_PTR_02d25924",
+      "match": "(int)g_EnvironmentBlock",
       "severity": "moderate",
-      "text": "if (*(char *)(((int)ppcVar1 - (int)g_CHAR_PTR_PTR_02d25924 >> 2) +",
+      "text": "if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_PTR_02d25920` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 12,
-      "match": "(int)g_CHAR_PTR_PTR_02d25920",
+      "description": "Pointer value `g_EnvironStringArea` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)g_EnvironStringArea",
       "severity": "moderate",
-      "text": "(int)g_CHAR_PTR_PTR_02d25920) != '\\0') {",
+      "text": "if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=",
       "type": "pointer_truncation"
     }
   ]

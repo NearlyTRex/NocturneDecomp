@@ -26,12 +26,12 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_004d0d20(void)
   int local_14;
   
   bVar13 = 0;
-  pacVar7 = g_CHAR_ARRAY_ARRAY_01cc65b0;
+  pacVar7 = g_ControlsMenuTextBuffers;
   local_14 = 0;
   core_game_cpp_CGame_saveClockTime_FUN_0049a890(g_CGamePtr);
   iVar4 = 0;
   do {
-    *(char (**) [256])((int)g_CHAR_PTR_ARRAY_01cc6eb0 + iVar4) = pacVar7;
+    *(char (**) [256])((int)g_ControlOptionsMenuPointers + iVar4) = pacVar7;
     iVar4 = iVar4 + 4;
     pacVar7 = pacVar7 + 1;
   } while (iVar4 != 0x24);
@@ -57,9 +57,9 @@ LAB_004d10a3:
       }
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar5);
     }
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc65b0[0],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[0],pcVar5);
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Customize Keys");
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc65b0[1],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[1],pcVar5);
     if (g_CGamePtr->always_run == 0) {
       pcVar5 = "Always run : OFF";
     }
@@ -67,7 +67,7 @@ LAB_004d10a3:
       pcVar5 = "Always run : ON";
     }
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar5);
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc65b0[2],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[2],pcVar5);
     EVar2 = g_CGamePtr->aim_mode;
     if (EVar2 == AIM_MODE_AUTO) {
 LAB_004d0e3b:
@@ -81,7 +81,7 @@ LAB_004d0e3b:
       if (EVar2 != AIM_MODE_MANUAL) goto LAB_004d0e3b;
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Aiming : Manual");
     }
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc65b0[3],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[3],pcVar5);
     if (g_CGamePtr->auto_use_health == 0) {
       pcVar5 = "Auto use health : Off";
     }
@@ -89,9 +89,9 @@ LAB_004d0e3b:
       pcVar5 = "Auto use health : On";
     }
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar5);
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc65b0[4],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[4],pcVar5);
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("X-axis sensitivity : ");
-    pcVar11 = g_CHAR_ARRAY_ARRAY_01cc65b0[5];
+    pcVar11 = g_ControlsMenuTextBuffers[5];
     do {
       cVar1 = *pcVar5;
       *pcVar11 = cVar1;
@@ -104,7 +104,7 @@ LAB_004d0e3b:
     _sprintf(local_114,"%5.2f",(double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05
               );
     iVar4 = -1;
-    pacVar7 = g_CHAR_ARRAY_ARRAY_01cc65b0 + 5;
+    pacVar7 = g_ControlsMenuTextBuffers + 5;
     do {
       pacVar12 = pacVar7;
       if (iVar4 == 0) break;
@@ -124,7 +124,7 @@ LAB_004d0e3b:
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Y-axis sensitivity : ");
-    pcVar5 = g_CHAR_ARRAY_ARRAY_01cc65b0[6];
+    pcVar5 = g_ControlsMenuTextBuffers[6];
     do {
       cVar1 = *pcVar9;
       *pcVar5 = cVar1;
@@ -138,7 +138,7 @@ LAB_004d0e3b:
     _sprintf(local_114,"%5.2f",(double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05
               );
     iVar6 = -1;
-    pacVar7 = g_CHAR_ARRAY_ARRAY_01cc65b0 + 6;
+    pacVar7 = g_ControlsMenuTextBuffers + 6;
     do {
       pacVar12 = pacVar7;
       if (iVar6 == 0) break;
@@ -166,7 +166,7 @@ LAB_004d0e3b:
       }
 LAB_004d0fdc:
       pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar9);
-      _sprintf(g_CHAR_ARRAY_ARRAY_01cc65b0[7],pcVar9);
+      _sprintf(g_ControlsMenuTextBuffers[7],pcVar9);
       iVar4 = 8;
     }
     else if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
@@ -175,12 +175,12 @@ LAB_004d0fdc:
     }
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Control Options");
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440
-                      (g_CHAR_PTR_ARRAY_01cc6eb0,iVar4,&local_14,0xfa,pcVar9);
+                      (g_ControlOptionsMenuPointers,iVar4,&local_14,0xfa,pcVar9);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     pCVar3 = g_CGamePtr;
     switch(iVar4) {
     case 0:
-      if (g_INT_01cc5b5c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         EVar8 = g_CGamePtr->game_control - CONTROL_MODE_MOUSE;
         g_CGamePtr->game_control = EVar8;
         if ((int)EVar8 < 0) {

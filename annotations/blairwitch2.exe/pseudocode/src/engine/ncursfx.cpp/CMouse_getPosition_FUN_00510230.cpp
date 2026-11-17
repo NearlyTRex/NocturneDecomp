@@ -9,7 +9,7 @@
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_00510230(CMouse *this_ptr,int *out_x,int *out_y)
 
 {
-  *out_x = g_INT_01c2a37c;
-  *out_y = g_INT_01c2a380;
+  *out_x = g_MouseX;
+  *out_y = g_MouseY;
   return;
 }

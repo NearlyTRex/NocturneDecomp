@@ -21,10 +21,10 @@ CVector3f g_CVector3f_01b687f8 = {};
 CVector3f g_CVector3f_01b68804 = {};
 
 // FileSearchHandlerFunc*[5]
-FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01b68930[5] = {};
+FileSearchHandlerFunc* g_SearchHandlers[5] = {};
 
 // SMRGLPrimitiveQuad[5000]
-SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_01b68944[5000] = {};
+SMRGLPrimitiveQuad g_FaceConversionBuffer[5000] = {};
 
 // byte
 byte g_BYTE_01b687f4 = {};
@@ -50,8 +50,8 @@ int g_INT_01b68858 = {};
 int g_INT_01b68864 = {};
 int g_INT_01b68868 = {};
 int g_INT_01b6886c = {};
-int g_INT_01b6892c = {};
+int g_NumSearchHandlers = {};
 
 // uint
-uint g_UINT_01b688ec = {};
+uint g_DoorLockedSoundHandle = {};
 

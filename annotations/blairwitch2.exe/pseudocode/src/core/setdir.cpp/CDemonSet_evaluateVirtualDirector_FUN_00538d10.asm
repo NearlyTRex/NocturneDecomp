@@ -30,11 +30,11 @@
 ;   float g_FLOAT_005e5ff5 = 0.5
 ;   double g_DOUBLE_005e5ffd = 1.5
 ;   float g_FLOAT_005e6005 = 3
-;   double g_DOUBLE_005e600d = 3
-;   double g_DOUBLE_005e6015 = 0.200000000000000
-;   float g_FLOAT_005fb33c = 256
-;   float g_FLOAT_005fb354 = 200
-;   float g_FLOAT_005fb358 = 100
+;   double g_VDCurrentCameraBonus = 3
+;   double g_VDPreviousCameraBonus = 0.200000000000000
+;   float g_VDCoordinateScaleFactor = 256
+;   float g_VDCameraDistanceRadius = 200
+;   float g_VDNearbyActorRadius = 100
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   int g_INT_006141bc = 0xc8
 ;   CGame* g_CGamePtr = 01cb6900
@@ -159,13 +159,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00538e46
     MOVSD ES:EDI,ESI                    ; 00538e47
     FLD float ptr [EAX]                 ; 00538e48
-    FMUL float ptr [0x005fb33c]         ; 00538e4a | g_FLOAT_005fb33c
+    FMUL float ptr [0x005fb33c]         ; 00538e4a | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 00538e50
     FLD float ptr [EAX + 0x4]           ; 00538e52
-    FMUL float ptr [0x005fb33c]         ; 00538e55 | g_FLOAT_005fb33c
+    FMUL float ptr [0x005fb33c]         ; 00538e55 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 00538e5b
     FLD float ptr [EAX + 0x8]           ; 00538e5e
-    FMUL float ptr [0x005fb33c]         ; 00538e61 | g_FLOAT_005fb33c
+    FMUL float ptr [0x005fb33c]         ; 00538e61 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 00538e67
     LEA ECX,[EBX + 0xc]                 ; 00538e6a
     MOV EBX,dword ptr [ESP + 0x1fc]     ; 00538e6d
@@ -213,31 +213,31 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00538f34
     MOVSD ES:EDI,ESI                    ; 00538f35
     FLD float ptr [EAX]                 ; 00538f36
-    FMUL float ptr [0x005fb33c]         ; 00538f38 | g_FLOAT_005fb33c
+    FMUL float ptr [0x005fb33c]         ; 00538f38 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 00538f3e
     FLD float ptr [EAX + 0x4]           ; 00538f40
-    FMUL float ptr [0x005fb33c]         ; 00538f43 | g_FLOAT_005fb33c
+    FMUL float ptr [0x005fb33c]         ; 00538f43 | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 00538f49
     FLD float ptr [EAX + 0x8]           ; 00538f4c
-    FMUL float ptr [0x005fb33c]         ; 00538f4f | g_FLOAT_005fb33c
+    FMUL float ptr [0x005fb33c]         ; 00538f4f | g_VDCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 00538f55
-    MOV EAX,0x61b97c                    ; 00538f58 | g_SMRGLPrimitiveQuad_ARRAY_0061b97c
+    MOV EAX,0x61b97c                    ; 00538f58 | g_BoundingBoxQuadTemplates
     LEA EDX,[EAX + 0x1b0]               ; 00538f5d | DAT_0061bb2c
-    IMUL EBX,dword ptr [EAX + 0x18],0xc ; 00538f63 | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].vertices[0].vertex_index | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].vertices[0].vertex_index
+    IMUL EBX,dword ptr [EAX + 0x18],0xc ; 00538f63 | g_BoundingBoxQuadTemplates[0].vertices[0].vertex_index | g_BoundingBoxQuadTemplates[1].vertices[0].vertex_index
         ;   Label: LAB_00538f63
     LEA ESI,[ESP + 0x8]                 ; 00538f67
     ADD ESI,EBX                         ; 00538f6b
-    MOV EDI,dword ptr [EAX + 0xc]       ; 00538f6d | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.B | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.B
+    MOV EDI,dword ptr [EAX + 0xc]       ; 00538f6d | g_BoundingBoxQuadTemplates[0].base.surface_normal.B | g_BoundingBoxQuadTemplates[1].base.surface_normal.B
     IMUL EDI,dword ptr [ESI + 0x4]      ; 00538f70
-    MOV EBX,dword ptr [EAX + 0x8]       ; 00538f74 | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.A | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.A
+    MOV EBX,dword ptr [EAX + 0x8]       ; 00538f74 | g_BoundingBoxQuadTemplates[0].base.surface_normal.A | g_BoundingBoxQuadTemplates[1].base.surface_normal.A
     IMUL EBX,dword ptr [ESI]            ; 00538f77
     MOV ECX,dword ptr [ESI + 0x8]       ; 00538f7a
     ADD EDI,EBX                         ; 00538f7d
-    MOV EBX,dword ptr [EAX + 0x10]      ; 00538f7f | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.C | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.C
+    MOV EBX,dword ptr [EAX + 0x10]      ; 00538f7f | g_BoundingBoxQuadTemplates[0].base.surface_normal.C | g_BoundingBoxQuadTemplates[1].base.surface_normal.C
     IMUL EBX,ECX                        ; 00538f82
     ADD EAX,0x48                        ; 00538f85
     ADD EDI,EBX                         ; 00538f88
-    MOV dword ptr [EAX + -0x34],EDI     ; 00538f8a | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.D | g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.D
+    MOV dword ptr [EAX + -0x34],EDI     ; 00538f8a | g_BoundingBoxQuadTemplates[0].base.surface_normal.D | g_BoundingBoxQuadTemplates[1].base.surface_normal.D
     CMP EAX,EDX                         ; 00538f8d
     JNZ 0x00538f63                      ; 00538f8f
         ;   XREF to: 00538f63 (CONDITIONAL_JUMP)  ; LAB_00538f63
@@ -373,8 +373,8 @@ section .text
     SETZ AL                             ; 005391b1
     MOV EBX,dword ptr [0x006141bc]      ; 005391b4 | g_INT_006141bc
     AND EAX,0xff                        ; 005391ba
-    MOV EDI,dword ptr [0x020b0258]      ; 005391bf | g_UINT_PTR_ARRAY_020b0258
-    MOV [0x020b1520],EAX                ; 005391c5 | g_INT_020b1520
+    MOV EDI,dword ptr [0x020b0258]      ; 005391bf | g_ZBufferScanlineArrayBackup
+    MOV [0x020b1520],EAX                ; 005391c5 | g_VDIsActorAreaInvalid
     TEST EDI,EDI                        ; 005391ca
     JZ 0x005391f0                       ; 005391cc
         ;   XREF to: 005391f0 (CONDITIONAL_JUMP)  ; LAB_005391f0
@@ -394,17 +394,17 @@ section .text
     XOR EAX,EAX                         ; 005391fb
     ADD EAX,0x4                         ; 005391fd
         ;   Label: LAB_005391fd
-    MOV EBX,dword ptr [EAX + 0x1c2b648] ; 00539200 | g_UINT_PTR_ARRAY_01c2b64c
-    MOV dword ptr [EAX + 0x20b0254],EBX ; 00539206 | g_UINT_PTR_ARRAY_020b0258
+    MOV EBX,dword ptr [EAX + 0x1c2b648] ; 00539200 | g_ZBufferScanlineArray
+    MOV dword ptr [EAX + 0x20b0254],EBX ; 00539206 | g_ZBufferScanlineArrayBackup
     CMP EAX,ESI                         ; 0053920c
     JL 0x005391fd                       ; 0053920e
         ;   XREF to: 005391fd (CONDITIONAL_JUMP)  ; LAB_005391fd
-    FLD float ptr [0x005fb358]          ; 00539210 | g_FLOAT_005fb358
+    FLD float ptr [0x005fb358]          ; 00539210 | g_VDNearbyActorRadius
         ;   Label: LAB_00539210
     FMUL ST0                            ; 00539216
     XOR ECX,ECX                         ; 00539218
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053921a
-    MOV dword ptr [0x020a2794],ECX      ; 0053921d | g_INT_020a2794
+    MOV dword ptr [0x020a2794],ECX      ; 0053921d | g_VDNearbyActorCount
     MOV dword ptr [ESP + 0x1f4],ECX     ; 00539223
     ADD EAX,0x20                        ; 0053922a
     MOV dword ptr [ESP + 0x1f0],ECX     ; 0053922d
@@ -417,7 +417,7 @@ section .text
     JL 0x00539513                       ; 00539254
         ;   XREF to: 00539513 (CONDITIONAL_JUMP)  ; LAB_00539513
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053925a
-    FLD float ptr [0x005fb354]          ; 0053925d | g_FLOAT_005fb354
+    FLD float ptr [0x005fb354]          ; 0053925d | g_VDCameraDistanceRadius
     FLD ST0                             ; 00539263
     ADD EAX,0x20                        ; 00539265
     FMULP                               ; 00539268
@@ -435,7 +435,7 @@ section .text
     CMP EAX,dword ptr [EDX]             ; 00539297
     JL 0x00539625                       ; 00539299
         ;   XREF to: 00539625 (CONDITIONAL_JUMP)  ; LAB_00539625
-    MOV EAX,[0x020b0258]                ; 0053929f | g_UINT_PTR_ARRAY_020b0258
+    MOV EAX,[0x020b0258]                ; 0053929f | g_ZBufferScanlineArrayBackup
         ;   Label: LAB_0053929f
     MOV EBX,dword ptr [0x006141bc]      ; 005392a4 | g_INT_006141bc
     TEST EAX,EAX                        ; 005392aa
@@ -457,8 +457,8 @@ section .text
     XOR EAX,EAX                         ; 005392dc
     ADD EAX,0x4                         ; 005392de
         ;   Label: LAB_005392de
-    MOV EBX,dword ptr [EAX + 0x20b0254] ; 005392e1 | g_UINT_PTR_ARRAY_020b0258
-    MOV dword ptr [EAX + 0x1c2b648],EBX ; 005392e7 | g_UINT_PTR_ARRAY_01c2b64c
+    MOV EBX,dword ptr [EAX + 0x20b0254] ; 005392e1 | g_ZBufferScanlineArrayBackup
+    MOV dword ptr [EAX + 0x1c2b648],EBX ; 005392e7 | g_ZBufferScanlineArray
     CMP EAX,ESI                         ; 005392ed
     JL 0x005392de                       ; 005392ef
         ;   XREF to: 005392de (CONDITIONAL_JUMP)  ; LAB_005392de
@@ -471,7 +471,7 @@ section .text
     MOV ECX,dword ptr [0x0060b280]      ; 00539308 | g_CDemonRenderer_PTR_0060b280
     XOR EAX,EAX                         ; 0053930e
     PUSH ECX                            ; 00539310 | g_CDemonRenderer_01ba5c50
-    MOV [0x020b0258],EAX                ; 00539311 | g_UINT_PTR_ARRAY_020b0258
+    MOV [0x020b0258],EAX                ; 00539311 | g_ZBufferScanlineArrayBackup
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 00539316
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0053931b
@@ -543,7 +543,7 @@ section .text
     PUSH EDI                            ; 005393b9
         ;   Label: LAB_005393b9
     MOV EDX,dword ptr [EBP + 0x14]      ; 005393ba
-    MOV EAX,[0x020b1520]                ; 005393bd | g_INT_020b1520
+    MOV EAX,[0x020b1520]                ; 005393bd | g_VDIsActorAreaInvalid
     PUSH EDX                            ; 005393c2
     MOV ESI,0x1                         ; 005393c3
     MOV dword ptr [EDX + 0x15ae5c],EAX  ; 005393c8
@@ -688,8 +688,8 @@ section .text
     SAHF                                ; 0053956d
     JA 0x00539600                       ; 0053956e
         ;   XREF to: 00539600 (CONDITIONAL_JUMP)  ; LAB_00539600
-    MOV EAX,[0x020a2794]                ; 00539574 | g_INT_020a2794
-    MOV dword ptr [EAX*0x4 + 0x20a2798],EBX ; 00539579 | g_CDemonActor_PTR_ARRAY_020a2798
+    MOV EAX,[0x020a2794]                ; 00539574 | g_VDNearbyActorCount
+    MOV dword ptr [EAX*0x4 + 0x20a2798],EBX ; 00539579 | g_VDNearbyActorPointers
     PUSH EBX                            ; 00539580
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00539581
     LEA ESI,[ESP + 0xd8]                ; 00539587
@@ -699,7 +699,7 @@ section .text
     LEA ESI,[ESP + 0xd8]                ; 0053959d
     ADD ESP,0x4                         ; 005395a4
     MOVSD.REP ES:EDI,ESI                ; 005395a7
-    IMUL EBX,dword ptr [0x020a2794],0x18 ; 005395a9 | g_INT_020a2794
+    IMUL EBX,dword ptr [0x020a2794],0x18 ; 005395a9 | g_VDNearbyActorCount
     ADD EBX,0x20a46d8                   ; 005395b0
     LEA EDI,[ESP + 0xa4]                ; 005395b6
     MOV ESI,EBX                         ; 005395bd
@@ -724,7 +724,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005395f1
     MOV EDX,dword ptr [EBX + 0x8]       ; 005395f4
     MOV dword ptr [EAX + 0x8],EDX       ; 005395f7
-    INC dword ptr [0x020a2794]          ; 005395fa | g_INT_020a2794
+    INC dword ptr [0x020a2794]          ; 005395fa | g_VDNearbyActorCount
         ;   Label: LAB_005395fa
     MOV EDX,dword ptr [ESP + 0x1f4]     ; 00539600
         ;   Label: LAB_00539600
@@ -817,7 +817,7 @@ section .text
     LEA ESI,[EAX + 0xf0]                ; 00539728
     PUSH 0x0                            ; 0053972e
         ;   Label: LAB_0053972e
-    PUSH 0x61b97c                       ; 00539730 | g_SMRGLPrimitiveQuad_ARRAY_0061b97c
+    PUSH 0x61b97c                       ; 00539730 | g_BoundingBoxQuadTemplates
     MOV EAX,dword ptr [ESP + 0x208]     ; 00539735
     PUSH EAX                            ; 0053973c
     PUSH EDI                            ; 0053973d
@@ -840,7 +840,7 @@ section .text
         ;   XREF to: 005396aa (UNCONDITIONAL_JUMP)  ; LAB_005396aa
     PUSH 0x1                            ; 0053977d
         ;   Label: LAB_0053977d
-    PUSH 0x61b97c                       ; 0053977f | g_SMRGLPrimitiveQuad_ARRAY_0061b97c
+    PUSH 0x61b97c                       ; 0053977f | g_BoundingBoxQuadTemplates
     LEA EBX,[ESP + 0x10]                ; 00539784
     PUSH EBX                            ; 00539788
     PUSH EDI                            ; 00539789
@@ -873,7 +873,7 @@ section .text
         ;   XREF to: 005397f5 (CONDITIONAL_JUMP)  ; LAB_005397f5
     FLD float ptr [ESP]                 ; 005397e5
     FLD ST0                             ; 005397e8
-    FMUL double ptr [0x005e600d]        ; 005397ea | g_DOUBLE_005e600d
+    FMUL double ptr [0x005e600d]        ; 005397ea | g_VDCurrentCameraBonus
     FSTP ST1                            ; 005397f0
     FSTP float ptr [ESP]                ; 005397f2
     MOV EDX,dword ptr [EBP + 0x14]      ; 005397f5
@@ -884,7 +884,7 @@ section .text
         ;   XREF to: 005396be (CONDITIONAL_JUMP)  ; LAB_005396be
     FLD float ptr [ESP]                 ; 00539809
     FLD ST0                             ; 0053980c
-    FMUL double ptr [0x005e6015]        ; 0053980e | g_DOUBLE_005e6015
+    FMUL double ptr [0x005e6015]        ; 0053980e | g_VDPreviousCameraBonus
     FSTP ST1                            ; 00539814
     FSTP float ptr [ESP]                ; 00539816
     JMP 0x005396be                      ; 00539819

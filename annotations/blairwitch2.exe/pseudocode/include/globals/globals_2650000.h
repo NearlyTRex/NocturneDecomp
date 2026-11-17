@@ -35,13 +35,13 @@ extern CDemonActorType g_CWaterActorClassInfo;
 extern COutStreamDebug g_COutStreamDebugInstance;
 
 // CTerrain
-extern CTerrain g_CTerrain_0265364c;
+extern CTerrain g_CTerrainInstance;
 
 // CTextureCache*
-extern CTextureCache* g_CTextureCache_PTR_02652eb0;
+extern CTextureCache* g_TextureCacheInstance;
 
 // CVector3f
-extern CVector3f g_CVector3f_0265370c;
+extern CVector3f g_ZeroVector;
 
 // CVector3i
 extern CVector3i g_CVector3i_0265cc48;
@@ -74,26 +74,26 @@ extern float g_FLOAT_026537a4;
 extern float g_FLOAT_026537a8;
 extern float g_FLOAT_026537ac;
 extern float g_FLOAT_026537b0;
-extern float g_FLOAT_0265b7e8;
+extern float g_WaterAnimationPhase;
 
 // int
 extern int g_INT_02652eac;
 extern int g_INT_02652eb4;
 extern int g_INT_02653648;
-extern int g_INT_026537b4;
+extern int g_WaterAnimationTimer;
 extern int g_INT_026537b8;
-extern int g_INT_026537bc;
-extern int g_INT_0265b7e4;
+extern int g_VisibleWaterTileCount;
+extern int g_WaterAnimationBlend;
 extern int g_INT_0265b7ec;
 extern int g_INT_0265b7f0;
 
 // int[4096]
-extern int g_INT_ARRAY_026537c0[4096];
-extern int g_INT_ARRAY_026577c0[4096];
+extern int g_VisibleWaterTilesX[4096];
+extern int g_VisibleWaterTilesY[4096];
 
 // uchar[4]
-extern uchar g_UCHAR_ARRAY_0265362c[4];
-extern uchar g_UCHAR_ARRAY_02653630[4];
+extern uchar g_BroadcastIP[4];
+extern uchar g_AnyAddressIP[4];
 
 // ulong
 extern ulong g_ULONG_026530bc;

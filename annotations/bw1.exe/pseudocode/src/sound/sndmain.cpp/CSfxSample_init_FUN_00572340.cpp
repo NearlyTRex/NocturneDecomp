@@ -13,7 +13,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_00572340(CSfxSample *
   float fVar2;
   
   memset(this_ptr,0,0x150);
-  fVar1 = g_FLOAT_02c745e0 * g_FLOAT_00623308;
+  fVar1 = g_SoundReferenceVolumeDistance * g_FLOAT_00623308;
   fVar2 = 10000.0f * g_FLOAT_00623308;
   (this_ptr->sample_info).reference_distance = 20.0f * g_FLOAT_00623308;
   (this_ptr->sample_info).reference_volume_distance = fVar1;

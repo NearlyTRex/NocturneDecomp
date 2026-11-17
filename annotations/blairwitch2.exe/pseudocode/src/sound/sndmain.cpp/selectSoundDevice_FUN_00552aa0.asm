@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e903e
 ;   TerminatedCString s_selectSoundDevice_device_005e9053
-;   int g_INT_0061bcac = -0x1
+;   int g_CurrentSoundDevice = -0x1
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_00552aae
     JGE 0x00552ab8                      ; 00552ab0
         ;   XREF to: 00552ab8 (CONDITIONAL_JUMP)  ; LAB_00552ab8
-    MOV EBX,dword ptr [0x0061bcac]      ; 00552ab2 | g_INT_0061bcac
+    MOV EBX,dword ptr [0x0061bcac]      ; 00552ab2 | g_CurrentSoundDevice
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890 ; 00552ab8
         ;   XREF to: 00552890 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890()
         ;   Label: LAB_00552ab8
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 00552980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestSoundDevice_FUN_00552980()
         ;   Label: LAB_00552ac1
     MOV EBX,EAX                         ; 00552ac6
-    MOV dword ptr [0x0061bcac],EBX      ; 00552ac8 | g_INT_0061bcac
+    MOV dword ptr [0x0061bcac],EBX      ; 00552ac8 | g_CurrentSoundDevice
     POP EBX                             ; 00552ace
     RET                                 ; 00552acf
     MOV EDX,0x5e903e                    ; 00552ad0 | = "..\\sound\\sndmain.cpp"
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_00552af5
     JL 0x00552ac1                       ; 00552af7
         ;   XREF to: 00552ac1 (CONDITIONAL_JUMP)  ; LAB_00552ac1
-    MOV dword ptr [0x0061bcac],EBX      ; 00552af9 | g_INT_0061bcac
+    MOV dword ptr [0x0061bcac],EBX      ; 00552af9 | g_CurrentSoundDevice
     POP EBX                             ; 00552aff
     RET                                 ; 00552b00
 

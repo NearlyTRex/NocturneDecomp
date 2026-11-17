@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c3d4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c3ec
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c404
+;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
+;   SMRGLTextureBasic g_FireEffectSparkTexture
+;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
@@ -34,19 +34,19 @@ section .text
 
     PUSH EBX                            ; 004b5ac0
         ;   Label: core_fire.cpp_CFireEffect_loadAssets_FUN_004b5ac0
-    PUSH 0x61c3d4                       ; 004b5ac1 | g_SMRGLTextureBasic_0061c3d4
+    PUSH 0x61c3d4                       ; 004b5ac1 | g_FireEffectBlackHoleTexture
     MOV EDX,dword ptr [0x00612560]      ; 004b5ac6 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 004b5acc | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004b5acd
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004b5ad2
-    PUSH 0x61c3ec                       ; 004b5ad5 | g_SMRGLTextureBasic_0061c3ec
+    PUSH 0x61c3ec                       ; 004b5ad5 | g_FireEffectSparkTexture
     MOV ECX,dword ptr [0x00612560]      ; 004b5ada | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 004b5ae0 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004b5ae1
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004b5ae6
-    PUSH 0x61c404                       ; 004b5ae9 | g_SMRGLTextureBasic_0061c404
+    PUSH 0x61c404                       ; 004b5ae9 | g_FireEffectBlueSparkTexture
     MOV EBX,dword ptr [0x00612560]      ; 004b5aee | g_CDemonRenderer_PTR_00612560
     PUSH EBX                            ; 004b5af4 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004b5af5

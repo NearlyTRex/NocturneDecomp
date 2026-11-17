@@ -17,24 +17,24 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_00555a80(CDirectSoundDev
   
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_00552b30();
   if ((int)uVar1 < 1) {
-    if (g_IDirectSoundBuffer_PTR_0264a5cc != (IDirectSoundBuffer *)0x0) {
-      uVar1 = (*g_IDirectSoundBuffer_PTR_0264a5cc->vtable->GetCurrentPosition)
-                        (g_IDirectSoundBuffer_PTR_0264a5cc,&uStack_8,&DStack_c);
+    if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+      uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->GetCurrentPosition)
+                        (g_DirectSoundSecondaryBuffer,&uStack_8,&DStack_c);
       if (uVar1 != 0) {
         sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar1);
         _sprintf(acStack_19c,"DirectSux: Unable to %s.  (%s)");
         sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_19c);
         return 0;
       }
-      uVar1 = uStack_8 / (uint)g_INT_0264a5e8;
-      if (g_INT_0264a5ec <= (int)uVar1) {
-        uVar1 = g_INT_0264a5ec - 1;
+      uVar1 = uStack_8 / (uint)g_StreamBlockSizeBytes;
+      if (g_StreamBlockCount <= (int)uVar1) {
+        uVar1 = g_StreamBlockCount - 1;
       }
       if ((int)uVar1 < 0) {
         uVar1 = 0;
       }
       do {
-        if (uVar1 == g_INT_0264a5f0) {
+        if (uVar1 == g_StreamCurrentBlock) {
           return 1;
         }
         iVar2 = sound_snddx_cpp_fillStreamBuffer_FUN_00554c80();

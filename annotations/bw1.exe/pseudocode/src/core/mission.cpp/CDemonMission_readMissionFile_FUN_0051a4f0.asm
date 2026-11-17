@@ -544,18 +544,18 @@ section .text
         ;   Label: LAB_0051aa36
     LEA EDI,[ESP + 0xc8]                ; 0051aa3b
     LEA EAX,[ESP + 0x64]                ; 0051aa42
-    MOV ESI,0x61f6c0                    ; 0051aa46 | g_CHAR_ARRAY_0061f6c0
+    MOV ESI,0x61f6c0                    ; 0051aa46 | g_DefaultMissionActorClass
     PUSH EAX                            ; 0051aa4b
     LEA EAX,[ESP + 0xcc]                ; 0051aa4c
-    MOVSD.REP ES:EDI,ESI                ; 0051aa53 | g_CHAR_ARRAY_0061f6c0 | g_CHAR_ARRAY_0061f6c0+4
+    MOVSD.REP ES:EDI,ESI                ; 0051aa53 | g_DefaultMissionActorClass | g_DefaultMissionActorClass+4
     PUSH EAX                            ; 0051aa55
     MOV EBP,dword ptr [ESP + 0x168]     ; 0051aa56
     MOV ECX,0x19                        ; 0051aa5d
     PUSH 0x5e92b0                       ; 0051aa62 | = "%s \"%[^\"]\"\n"
     LEA EDI,[ESP + 0x70]                ; 0051aa67
-    MOV ESI,0x61f728                    ; 0051aa6b | g_CHAR_ARRAY_0061f728
+    MOV ESI,0x61f728                    ; 0051aa6b | g_DefaultMissionActorName
     PUSH EBP                            ; 0051aa70
-    MOVSD.REP ES:EDI,ESI                ; 0051aa71 | g_CHAR_ARRAY_0061f728 | g_CHAR_ARRAY_0061f728+4
+    MOVSD.REP ES:EDI,ESI                ; 0051aa71 | g_DefaultMissionActorName | g_DefaultMissionActorName+4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0051aa73
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0051aa78

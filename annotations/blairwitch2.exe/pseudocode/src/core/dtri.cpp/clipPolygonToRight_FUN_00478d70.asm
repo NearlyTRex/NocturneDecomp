@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00478d58 = 00478e1a
 ;   undefined1* PTR_caseD_3_00478d60 = 00478dff
-;   int g_INT_01c2200c
-;   int g_INT_01c220d0
+;   int g_ClipBuffer2VertexCount
+;   int g_ClipBuffer3VertexCount
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00478900
@@ -27,14 +27,14 @@ section .text
     MOV EBP,ESP                         ; 00478d74
     SUB ESP,0x4                         ; 00478d76
     AND ESP,0xfffffff8                  ; 00478d79
-    MOV EBX,dword ptr [0x01c220d0]      ; 00478d7c | g_INT_01c220d0
-    MOV EDX,dword ptr [0x01c2200c]      ; 00478d82 | g_INT_01c2200c
+    MOV EBX,dword ptr [0x01c220d0]      ; 00478d7c | g_ClipBuffer3VertexCount
+    MOV EDX,dword ptr [0x01c2200c]      ; 00478d82 | g_ClipBuffer2VertexCount
     XOR ESI,ESI                         ; 00478d88
     TEST EDX,EDX                        ; 00478d8a
     JLE 0x00478e0d                      ; 00478d8c
         ;   XREF to: 00478e0d (CONDITIONAL_JUMP)  ; LAB_00478e0d
     MOV EDI,0x1c22010                   ; 00478d92
-    MOV EAX,[0x01c2200c]                ; 00478d97 | g_INT_01c2200c
+    MOV EAX,[0x01c2200c]                ; 00478d97 | g_ClipBuffer2VertexCount
         ;   Label: LAB_00478d97
     LEA ECX,[ESI + 0x1]                 ; 00478d9c
     CMP ECX,EAX                         ; 00478d9f
@@ -84,14 +84,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00478dfb
     INC EBX                             ; 00478dfe
         ;   Label: LAB_00478dfe
-    MOV ECX,dword ptr [0x01c2200c]      ; 00478dff | g_INT_01c2200c
+    MOV ECX,dword ptr [0x01c2200c]      ; 00478dff | g_ClipBuffer2VertexCount
         ;   Label: caseD_3
     INC ESI                             ; 00478e05
     ADD EDI,0xc                         ; 00478e06
     CMP ESI,ECX                         ; 00478e09
     JL 0x00478d97                       ; 00478e0b
         ;   XREF to: 00478d97 (CONDITIONAL_JUMP)  ; LAB_00478d97
-    MOV dword ptr [0x01c220d0],EBX      ; 00478e0d | g_INT_01c220d0
+    MOV dword ptr [0x01c220d0],EBX      ; 00478e0d | g_ClipBuffer3VertexCount
         ;   Label: LAB_00478e0d
     MOV ESP,EBP                         ; 00478e13
     POP EBP                             ; 00478e15
@@ -116,10 +116,10 @@ section .text
     PUSH EDX                            ; 00478e3e
     MOV EAX,dword ptr [ESP + 0x28]      ; 00478e3f
     PUSH EAX                            ; 00478e43
-    MOV dword ptr [0x01c220d0],EBX      ; 00478e44 | g_INT_01c220d0
+    MOV dword ptr [0x01c220d0],EBX      ; 00478e44 | g_ClipBuffer3VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00478900 ; 00478e4a
         ;   XREF to: 00478900 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00478900(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c220d0]      ; 00478e4f | g_INT_01c220d0
+    MOV EBX,dword ptr [0x01c220d0]      ; 00478e4f | g_ClipBuffer3VertexCount
     ADD ESP,0x2c                        ; 00478e55
     JMP 0x00478dfe                      ; 00478e58
         ;   XREF to: 00478dfe (UNCONDITIONAL_JUMP)  ; LAB_00478dfe
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00478e9c
     PUSH ECX                            ; 00478ea0
     PUSH EDX                            ; 00478ea1
-    MOV dword ptr [0x01c220d0],EBX      ; 00478ea2 | g_INT_01c220d0
+    MOV dword ptr [0x01c220d0],EBX      ; 00478ea2 | g_ClipBuffer3VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00478900 ; 00478ea8
         ;   XREF to: 00478900 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00478900(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c220d0]      ; 00478ead | g_INT_01c220d0
+    MOV EBX,dword ptr [0x01c220d0]      ; 00478ead | g_ClipBuffer3VertexCount
     ADD ESP,0x2c                        ; 00478eb3
     JMP 0x00478dfe                      ; 00478eb6
         ;   XREF to: 00478dfe (UNCONDITIONAL_JUMP)  ; LAB_00478dfe

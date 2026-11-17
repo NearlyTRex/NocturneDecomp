@@ -26,7 +26,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004ed2b0(CHiram *this_ptr,float d
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
   if (pSVar3->state_index != 1) {
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (g_CEventList_PTR_0061b4d0,this_ptr->kill_event);
+                      (g_CEventListPtr,this_ptr->kill_event);
     if (iVar2 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,1,1);
       class_name_hash = g_CGlassClassInfo.name_hash;

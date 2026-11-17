@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   int g_INT_01b4d714
+;   int g_PaletteColorIndex
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -56,7 +56,7 @@ section .text
     MOV ESI,EAX                         ; 0045caa1
     CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200 ; 0045caa3
         ;   XREF to: 00430200 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200(int disabled)
-    MOV EDX,dword ptr [0x01b4d714]      ; 0045caa8 | g_INT_01b4d714
+    MOV EDX,dword ptr [0x01b4d714]      ; 0045caa8 | g_PaletteColorIndex
     ADD ESP,0x4                         ; 0045caae
     MOV ECX,dword ptr [EBX + 0xc]       ; 0045cab1
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0045cab4

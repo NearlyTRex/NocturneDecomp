@@ -14,22 +14,22 @@ DWORD FUN_00568f70(uint param_1,LPVOID param_2,DWORD param_3)
   BOOL BVar3;
   DWORD DStack_14;
   
-  if (((int)param_1 < 0) || (g_UINT_005c1f90 < param_1)) {
+  if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {
     setErrno(4);
     DStack_14 = 0xffffffff;
   }
   else {
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(param_1);
-    if (g_PTR_005c1d7c != (byte *)0x0) {
-      iVar1 = (*(code *)g_PTR_005c1d54)(param_1);
+    if (g_SpecialDeviceReadFuncPtr != (byte *)0x0) {
+      iVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1);
       if (iVar1 != 0) {
-        DVar2 = (*(code *)g_PTR_005c1d7c)(iVar1,param_2,param_3);
+        DVar2 = (*(code *)g_SpecialDeviceReadFuncPtr)(iVar1,param_2,param_3);
         (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1);
         return DVar2;
       }
     }
-    BVar3 = ReadFile(g_SIOControlBlock_PTR_005c1f54->standard_handles[param_1],param_2,param_3,
-                     &DStack_14,(LPOVERLAPPED)0x0);
+    BVar3 = ReadFile(g_IOControlBlock->standard_handles[param_1],param_2,param_3,&DStack_14,
+                     (LPOVERLAPPED)0x0);
     if (BVar3 == 0) {
       (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1);
       DVar2 = __set_errno();

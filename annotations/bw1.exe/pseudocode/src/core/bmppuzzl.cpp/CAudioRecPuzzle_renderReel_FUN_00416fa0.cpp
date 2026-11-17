@@ -70,9 +70,9 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0(CAudioRec
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
             (g_CDemonRenderer_PTR_00612560,36.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-            (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28);
+            (g_CDemonRenderer_PTR_00612560,&g_ZeroVector);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28);
+            (g_CDemonRenderer_PTR_00612560,&g_ZeroVector);
   fStack_40 = fStack_70 + fStack_64;
   afStack_3c[0] = fStack_6c + fStack_60;
   afStack_3c[1] = fStack_68 + fStack_5c;
@@ -80,7 +80,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0(CAudioRec
   afStack_3c[(uint)bVar6 * -2 + 3] = afStack_3c[(uint)bVar6 * -2];
   afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
        afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-  g_INT_01c51cac = 0;
+  g_PerspectiveReciprocal = 0;
   CStack_4c.x = 0.0;
   CStack_4c.y = 0.0;
   translation = (CVector3f *)0x0;
@@ -97,7 +97,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0(CAudioRec
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28,&CStack_1c);
+            (g_CDemonRenderer_PTR_00612560,&g_ZeroVector,&CStack_1c);
   if (draw_reel == 0) {
     this_ptr_01 = &this_ptr->reel_shadow_model;
   }

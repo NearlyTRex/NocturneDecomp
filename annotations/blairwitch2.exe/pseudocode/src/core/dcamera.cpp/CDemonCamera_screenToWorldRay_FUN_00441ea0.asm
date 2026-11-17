@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   screen_y
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005ce63e = 0.00390625
+;   double g_CameraFixedPointToFloatScale = 0.00390625
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0x3c],EAX      ; 00441ef2
     FILD dword ptr [ESP + 0x3c]         ; 00441ef6
     MOV EAX,dword ptr [ESP + 0x34]      ; 00441efa
-    FLD double ptr [0x005ce63e]         ; 00441efe | g_DOUBLE_005ce63e
+    FLD double ptr [0x005ce63e]         ; 00441efe | g_CameraFixedPointToFloatScale
     FXCH                                ; 00441f04
     FMUL ST1                            ; 00441f06
     MOV dword ptr [ESP + 0x3c],EAX      ; 00441f08

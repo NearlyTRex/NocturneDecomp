@@ -12,7 +12,7 @@ void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(CDemon
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
             (g_CDemonRenderer_PTR_005f2afc,&g_UVector3_021221d4.f);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
-            (g_CDemonRenderer_PTR_005f2afc,g_FLOAT_021221ec);
+            (g_CDemonRenderer_PTR_005f2afc,g_SavedProjectionFactor);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
             (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_021221e0);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870

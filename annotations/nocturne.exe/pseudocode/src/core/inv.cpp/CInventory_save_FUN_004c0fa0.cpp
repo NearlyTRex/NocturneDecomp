@@ -16,9 +16,9 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004c0fa0(CInventory *this_ptr,_FIL
   core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(1);
   this_ptr->save_version = 2;
   _fprintf(file_handle,"%s// fileVersion\n");
-  _fprintf(file_handle,"%s%d\n",g_CHAR_ARRAY_005acc90);
+  _fprintf(file_handle,"%s%d\n",g_PropertyNamePrefix);
   _fprintf(file_handle,"%s// itemCount\n");
-  _fprintf(file_handle,"%s%d\n",g_CHAR_ARRAY_005acc90);
+  _fprintf(file_handle,"%s%d\n",g_PropertyNamePrefix);
   iVar1 = 0;
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
@@ -29,9 +29,9 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004c0fa0(CInventory *this_ptr,_FIL
     } while (iVar1 < this_ptr->item_count);
   }
   _fprintf(file_handle,"%s// currentWeapon\n");
-  _fprintf(file_handle,"%s%d\n",g_CHAR_ARRAY_005acc90);
+  _fprintf(file_handle,"%s%d\n",g_PropertyNamePrefix);
   _fprintf(file_handle,"%s// battery strength\n");
-  _fprintf(file_handle,"%s%f\n",g_CHAR_ARRAY_005acc90,(double)this_ptr->battery_charge);
+  _fprintf(file_handle,"%s%f\n",g_PropertyNamePrefix,(double)this_ptr->battery_charge);
   _fprintf(file_handle,"%s// actor name list\n");
   core_inv_cpp_CInventory_saveItems_FUN_004c1140(this_ptr,file_handle);
   iVar1 = 0;

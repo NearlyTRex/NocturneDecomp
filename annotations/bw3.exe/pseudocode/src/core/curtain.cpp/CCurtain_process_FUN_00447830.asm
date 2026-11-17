@@ -13,9 +13,9 @@
 ;   double g_DOUBLE_005b9a91 = 0.03125
 ;   float g_FLOAT_005b9a99 = 0.05000000
 ;   double g_DOUBLE_005b9aa1 = 0.100000000000000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int g_INT_007f8fcc
+;   int g_CurtainCollisionCount
 ;
 ; Called Functions:
 ;   core_curtain.cpp_CCurtain_solveConstraints_FUN_00446d50
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 00447ccc (CONDITIONAL_JUMP)  ; LAB_00447ccc
     ADD EAX,0x194                       ; 00447873
     PUSH EAX                            ; 00447878
-    MOV ESI,dword ptr [0x005fba60]      ; 00447879 | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 00447879 | g_CEventListPtr
     PUSH ESI                            ; 0044787f
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00447880
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -180,14 +180,14 @@ section .text
         ;   Label: LAB_004479ed
     XOR EDI,EDI                         ; 004479ef
     MOV dword ptr [ESP + 0x114],ECX     ; 004479f1
-    MOV dword ptr [0x007f8fcc],ECX      ; 004479f8 | g_INT_007f8fcc
+    MOV dword ptr [0x007f8fcc],ECX      ; 004479f8 | g_CurtainCollisionCount
     MOV EDX,dword ptr [0x00603b28]      ; 004479fe | g_CDemonSetPtr
         ;   Label: LAB_004479fe
     MOV EAX,dword ptr [ESP + 0x114]     ; 00447a04
     CMP EAX,dword ptr [EDX + 0x14f0a8]  ; 00447a0b
     JGE 0x00447ae0                      ; 00447a11
         ;   XREF to: 00447ae0 (CONDITIONAL_JUMP)  ; LAB_00447ae0
-    MOV EAX,[0x007f8fcc]                ; 00447a17 | g_INT_007f8fcc
+    MOV EAX,[0x007f8fcc]                ; 00447a17 | g_CurtainCollisionCount
     IMUL ESI,EAX,0x28                   ; 00447a1c
     IMUL EAX,EAX,0xc                    ; 00447a1f
     MOV EBX,dword ptr [EDX + EDI*0x1 + 0x14f0ac] ; 00447a22
@@ -262,12 +262,12 @@ section .text
     SAHF                                ; 00447ad5
     JA 0x00447a64                       ; 00447ad6
         ;   XREF to: 00447a64 (CONDITIONAL_JUMP)  ; LAB_00447a64
-    INC dword ptr [0x007f8fcc]          ; 00447ad8 | g_INT_007f8fcc
+    INC dword ptr [0x007f8fcc]          ; 00447ad8 | g_CurtainCollisionCount
     JMP 0x00447a64                      ; 00447ade
         ;   XREF to: 00447a64 (UNCONDITIONAL_JUMP)  ; LAB_00447a64
     MOV EAX,dword ptr [EBP + 0x14]      ; 00447ae0
         ;   Label: LAB_00447ae0
-    MOV EDI,dword ptr [0x007f8fcc]      ; 00447ae3 | g_INT_007f8fcc
+    MOV EDI,dword ptr [0x007f8fcc]      ; 00447ae3 | g_CurtainCollisionCount
     MOV dword ptr [EAX + 0x65b34],0x1   ; 00447ae9
     TEST EDI,EDI                        ; 00447af3
     JNZ 0x00447b42                      ; 00447af5

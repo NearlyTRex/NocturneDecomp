@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 53,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -70,7 +70,7 @@
     },
     {
       "addr": "02cf546c",
-      "name": "g_INT_02cf546c",
+      "name": "g_WaveOutHandle",
       "type": "int",
       "value": null
     }
@@ -157,17 +157,17 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "if (*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) != (LPWAVEHDR)0x0) {",
+      "text": "if (*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2) != (LPWAVEHDR)0x0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "((HWAVEOUT)g_INT_02cf546c,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2),",
+      "text": "((HWAVEOUT)g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);",
       "type": "pointer_cast"
     }
   ],

@@ -22,40 +22,40 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00528fc0(CScript *this_
   
   if (g_CGamePtr->letterbox_mode == 0) {
     fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_00434b00(g_CGamePtr);
-    g_FLOAT_01ed7010 = g_FLOAT_01ed7010 - fVar3 / 0.35f;
+    g_ScriptTimeScale = g_ScriptTimeScale - fVar3 / 0.35f;
   }
   else {
-    g_INT_01ed3800 = g_CGamePtr->letterbox_mode;
+    g_PreviousLetterboxMode = g_CGamePtr->letterbox_mode;
     fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_00434b00(g_CGamePtr);
-    g_FLOAT_01ed7010 = fVar3 / 0.35f + g_FLOAT_01ed7010;
+    g_ScriptTimeScale = fVar3 / 0.35f + g_ScriptTimeScale;
   }
   iVar7 = g_INT_005fba1c;
   iVar1 = g_INT_005fba18;
-  if (g_FLOAT_01ed7010 < 0.0) {
-    g_FLOAT_01ed7010 = 0.0;
+  if (g_ScriptTimeScale < 0.0) {
+    g_ScriptTimeScale = 0.0;
   }
-  if (1.0 < g_FLOAT_01ed7010) {
-    g_FLOAT_01ed7010 = 1.0;
+  if (1.0 < g_ScriptTimeScale) {
+    g_ScriptTimeScale = 1.0;
   }
   iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_00528f60(this_ptr);
   if (0 < iVar4) {
-    if (g_INT_01ed3800 != 2) {
+    if (g_PreviousLetterboxMode != 2) {
       engine_2d_c_fillRectColor_FUN_004031c0(0,0,iVar1 + -1,iVar4 + -1,0);
     }
     engine_2d_c_fillRectColor_FUN_004031c0(0,iVar7 - iVar4,iVar1 + -1,iVar7 + -1,0);
   }
   iVar2 = g_INT_01c6b5ac;
   if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
-    this_ptr_00 = g_CBitFont_PTR_01549aa0;
+    this_ptr_00 = g_MediumFont;
     if (g_INT_005fba1c < 0x1e0) {
-      this_ptr_00 = g_CBitFont_PTR_01549aa4;
+      this_ptr_00 = g_TinyFont;
     }
-    if ((g_INT_005fba1c < 0x180) && (this_ptr_00 = g_CBitFont_PTR_01549abc, g_INT_01dd4890 != 0)) {
-      this_ptr_00 = g_CBitFont_PTR_01549ab4;
+    if ((g_INT_005fba1c < 0x180) && (this_ptr_00 = g_MicroFont, g_UseOSFonts != 0)) {
+      this_ptr_00 = g_SmallEditorFont;
     }
     iVar5 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
-                      (this_ptr_00,this_ptr->current_message,g_CHAR_ARRAY_ARRAY_01ed3808[0],10,0x400
-                       ,(g_INT_005fba18 * 9) / 10);
+                      (this_ptr_00,this_ptr->current_message,g_ScriptSubtitleLines[0],10,0x400,
+                       (g_INT_005fba18 * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(this_ptr_00,0x58);
     y = ((iVar7 * 2 - iVar4) - iVar6 * iVar5) / 2;
     iVar4 = iVar6;
@@ -68,7 +68,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00528fc0(CScript *this_
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
     iVar7 = 0;
     if (0 < iVar5) {
-      text = g_CHAR_ARRAY_ARRAY_01ed3808;
+      text = g_ScriptSubtitleLines;
       do {
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr_00,*text);
         iVar7 = iVar7 + 1;

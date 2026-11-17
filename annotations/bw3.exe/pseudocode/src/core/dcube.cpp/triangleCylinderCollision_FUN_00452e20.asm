@@ -39,8 +39,8 @@
 ;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0 at 0045461f
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005ba126 = -0.340000000000000
-;   double g_DOUBLE_005ba12e = 0.0100000000000000
+;   double g_CylinderCollisionMaxNormalY = -0.340000000000000
+;   double g_CylinderCollisionMinNormal2D = 0.0100000000000000
 ;   CVector3f g_CVector3f_015485dc
 ;   undefined4 g_CVector3f_015485dc.y
 ;   undefined4 g_CVector3f_015485dc.z
@@ -64,7 +64,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00452e29
     MOV EBX,dword ptr [EBP + 0x14]      ; 00452e2c
     FLD float ptr [EBX + 0x10]          ; 00452e2f
-    FCOMP double ptr [0x005ba126]       ; 00452e32 | g_DOUBLE_005ba126
+    FCOMP double ptr [0x005ba126]       ; 00452e32 | g_CylinderCollisionMaxNormalY
     FNSTSW AX                           ; 00452e38
     SAHF                                ; 00452e3a
     JA 0x00453095                       ; 00452e3b
@@ -259,7 +259,7 @@ section .text
         ;   XREF to: 0045310f (CONDITIONAL_JUMP)  ; LAB_0045310f
     FLD double ptr [ESP]                ; 0045303f
         ;   Label: LAB_0045303f
-    FCOMP double ptr [0x005ba12e]       ; 00453042 | g_DOUBLE_005ba12e
+    FCOMP double ptr [0x005ba12e]       ; 00453042 | g_CylinderCollisionMinNormal2D
     FNSTSW AX                           ; 00453048
     SAHF                                ; 0045304a
     JNC 0x00453136                      ; 0045304b

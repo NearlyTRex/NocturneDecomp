@@ -35,8 +35,7 @@ void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_004f12b0(float *vertices,
   }
   if ((g_PTR_02cf60cc != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
     (*(code *)g_PTR_02cf60cc)
-              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,
-               g_BIT_INTEGER32_01c6e2b4.dword);
+              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   iVar4 = 0;

@@ -14,39 +14,39 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_0049cb50(CFireEffect *th
   int iVar2;
   CStake *pCVar3;
   
-  core_fire_cpp_CBulletHole_setupRenderState_FUN_00493d50(g_CBulletHole_ARRAY_01c558e8);
+  core_fire_cpp_CBulletHole_setupRenderState_FUN_00493d50(g_BulletHolePool);
   if (render_mode == 0) {
     iVar2 = 0;
-    if (0 < g_INT_01c558e0) {
+    if (0 < g_BulletHoleActiveCount) {
       iVar1 = 0;
       do {
-        if (((*(int *)((int)&g_CBulletHole_ARRAY_01c558e8[0].active + iVar1) != 0) &&
-            (*(int *)((int)&g_CBulletHole_ARRAY_01c558e8[0].actor_ptr + iVar1) == 0)) &&
+        if (((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&
+            (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0)) &&
            (core_fire_cpp_CBulletHole_render_FUN_00493dd0
-                      ((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c558e8[0].position.x + iVar1)),
+                      ((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1)),
            render_completeness != 0)) {
-          *(uint *)((int)&g_CBulletHole_ARRAY_01c558e8[0].active + iVar1) = 0;
+          *(uint *)((int)&g_BulletHolePool[0].active + iVar1) = 0;
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < g_INT_01c558e0);
+      } while (iVar2 < g_BulletHoleActiveCount);
     }
   }
   else {
     iVar2 = 0;
-    if (0 < g_INT_01c558e0) {
+    if (0 < g_BulletHoleActiveCount) {
       iVar1 = 0;
       do {
-        if (*(int *)((int)&g_CBulletHole_ARRAY_01c558e8[0].actor_ptr + iVar1) == 0) {
+        if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0) {
           core_fire_cpp_CBulletHole_render_FUN_00493dd0
-                    ((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c558e8[0].position.x + iVar1));
+                    ((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < g_INT_01c558e0);
+      } while (iVar2 < g_BulletHoleActiveCount);
     }
   }
-  if ((render_mode != 0) && (iVar2 = 0, 0 < g_INT_01c594e8)) {
+  if ((render_mode != 0) && (iVar2 = 0, 0 < g_StakeActiveCount)) {
     pCVar3 = g_StakePool;
     iVar1 = 0;
     do {
@@ -61,7 +61,7 @@ LAB_0049cbd5:
       iVar1 = iVar1 + 0x260;
       iVar2 = iVar2 + 1;
       pCVar3 = pCVar3 + 1;
-    } while (iVar2 < g_INT_01c594e8);
+    } while (iVar2 < g_StakeActiveCount);
   }
   if (render_mode == 0) {
     iVar2 = 0;

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 484,
+    "complexity_score": 486,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 144,
+    "pseudocode_lines": 146,
     "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 367
+    "total_lines": 369
   },
   "cross_references": [],
   "function": {
@@ -54,7 +54,7 @@
     },
     {
       "addr": "007e3e88",
-      "name": "g_INT_007e3e88",
+      "name": "g_ClippedVertexCount",
       "type": "int",
       "value": null
     },
@@ -210,7 +210,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 79,
       "match": "(SRenderVertex *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)((int)pSVar9 + (uint)bVar13 * -8 + 4);",
@@ -218,7 +218,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 83,
+      "line": 84,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar2._0_4_ = (pSVar10->projected_vertex).transformed_x;",
@@ -226,7 +226,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 85,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar10->projected_vertex).transformed_y;",
@@ -234,7 +234,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(uint *)((int)pSVar12",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar12 + (uint)bVar13 * -8 + 4) =",
@@ -242,7 +242,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 97,
       "match": "(uint *)((int)pSVar10",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
@@ -250,7 +250,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 116,
       "match": "(SRenderVertex *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)((int)pSVar9 + (uint)bVar13 * -8 + 4);",
@@ -258,7 +258,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 119,
+      "line": 121,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar3._0_4_ = (pSVar10->projected_vertex).transformed_x;",
@@ -266,7 +266,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 122,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar10->projected_vertex).transformed_y;",
@@ -274,7 +274,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 133,
       "match": "(uint *)((int)pSVar12",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar12 + (uint)bVar13 * -8 + 4) =",
@@ -282,7 +282,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 134,
       "match": "(uint *)((int)pSVar10",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 79,
       "match": "(int)pSVar9",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)((int)pSVar9 + (uint)bVar13 * -8 + 4);",
@@ -314,7 +314,7 @@
     },
     {
       "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 95,
+      "line": 96,
       "match": "(int)pSVar12",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar12 + (uint)bVar13 * -8 + 4) =",
@@ -322,7 +322,7 @@
     },
     {
       "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
+      "line": 97,
       "match": "(int)pSVar10",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
@@ -330,7 +330,7 @@
     },
     {
       "description": "Pointer value `pSVar11` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 112,
+      "line": 113,
       "match": "(uint)pSVar11",
       "severity": "moderate",
       "text": "if (((uint)pSVar11 & 7) != 0) {",
@@ -338,7 +338,7 @@
     },
     {
       "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 116,
       "match": "(int)pSVar9",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)((int)pSVar9 + (uint)bVar13 * -8 + 4);",
@@ -346,7 +346,7 @@
     },
     {
       "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 131,
+      "line": 133,
       "match": "(int)pSVar12",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar12 + (uint)bVar13 * -8 + 4) =",
@@ -354,7 +354,7 @@
     },
     {
       "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 132,
+      "line": 134,
       "match": "(int)pSVar10",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
@@ -362,18 +362,18 @@
     },
     {
       "description": "Raw hex literal 0x7e3e90 matches address of g_SRenderVertex_ARRAY_007e3e8c (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 77,
+      "line": 78,
       "match": "0x7e3e90",
       "severity": "moderate",
-      "text": "pSVar12 = (SRenderVertex *)(g_INT_007e3e88 * 0x30 + 0x7e3e90 + (uint)bVar13 * -8);",
+      "text": "(g_ClippedVertexCount * 0x30 + 0x7e3e90 + (uint)bVar13 * -8);",
       "type": "raw_address_constant"
     },
     {
       "description": "Raw hex literal 0x7e3e90 matches address of g_SRenderVertex_ARRAY_007e3e8c (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 113,
+      "line": 115,
       "match": "0x7e3e90",
       "severity": "moderate",
-      "text": "pSVar12 = (SRenderVertex *)(g_INT_007e3e88 * 0x30 + 0x7e3e90 + (uint)bVar13 * -8);",
+      "text": "(g_ClippedVertexCount * 0x30 + 0x7e3e90 + (uint)bVar13 * -8);",
       "type": "raw_address_constant"
     },
     {
@@ -402,7 +402,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar10` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 85,
+      "line": 86,
       "match": "pSVar10 = (T *)&(pSVar10->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)&(pSVar10->projected_vertex).transformed_z;",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar12` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 89,
+      "line": 90,
       "match": "pSVar12 = (T *)&(pSVar12->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar12 = (SRenderVertex *)&(pSVar12->projected_vertex).transformed_z;",
@@ -418,7 +418,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar10` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 121,
+      "line": 123,
       "match": "pSVar10 = (T *)&(pSVar10->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)&(pSVar10->projected_vertex).transformed_z;",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar12` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 125,
+      "line": 127,
       "match": "pSVar12 = (T *)&(pSVar12->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar12 = (SRenderVertex *)&(pSVar12->projected_vertex).transformed_z;",

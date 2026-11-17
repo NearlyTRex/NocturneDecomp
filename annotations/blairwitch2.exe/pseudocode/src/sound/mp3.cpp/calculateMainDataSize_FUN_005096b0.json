@@ -44,13 +44,13 @@
   "globals": [
     {
       "addr": "00618e88",
-      "name": "g_DOUBLE_ARRAY_ARRAY_00618e88",
+      "name": "g_MpegSampleRateTable",
       "type": "double[2][4]",
       "value": null
     },
     {
       "addr": "00618f40",
-      "name": "g_INT_ARRAY_ARRAY_ARRAY_00618ec8[0][2][0]",
+      "name": "g_MpegBitrateTable[0][2][0]",
       "type": "undefined4",
       "value": null
     }
@@ -181,7 +181,7 @@
   },
   "suspects": [
     {
-      "description": "Raw hex literal 0x618f40 matches address of g_INT_ARRAY_ARRAY_ARRAY_00618ec8 (+120 bytes into) (type int[2][3][15]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x618f40 matches address of g_MpegBitrateTable (+120 bytes into) (type int[2][3][15]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 10,
       "match": "0x618f40",
       "severity": "moderate",

@@ -341,7 +341,7 @@ section .text
         ;   XREF to: 004d1056 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EBX*0x4 + 0x4d0cf4]  ; 004d1025 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV EDI,dword ptr [0x01cc5b5c]      ; 004d102c | g_INT_01cc5b5c
+    MOV EDI,dword ptr [0x01cc5b5c]      ; 004d102c | g_MenuLeftRightPressed
         ;   Label: caseD_0
     CMP EDI,0x1                         ; 004d1032
     JNZ 0x004d1152                      ; 004d1035
@@ -356,8 +356,8 @@ section .text
     PUSH 0x1                            ; 004d1056
         ;   Label: default
     MOV EAX,[0x005bac64]                ; 004d1058 | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004d105d | g_CKeys_01cc30e4
-    MOV EBX,dword ptr [EAX]             ; 004d105e | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004d105d | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 004d105e | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 004d1060
     ADD ESP,0x8                         ; 004d1063
     TEST EAX,EAX                        ; 004d1066

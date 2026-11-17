@@ -20,7 +20,7 @@
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0 at 004246b3
 ;
 ; Referenced Globals:
-;   int g_INT_01cedee0
+;   int g_HeroCount
 ;
 ; *****************************************************************************
 
@@ -39,12 +39,12 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004ce192
     FLD float ptr [EBP + 0x18]          ; 004ce195
     FMUL ST0                            ; 004ce198
-    MOV EDX,dword ptr [0x01cedee0]      ; 004ce19a | g_INT_01cedee0
+    MOV EDX,dword ptr [0x01cedee0]      ; 004ce19a | g_HeroCount
     FSTP float ptr [EBP + 0x18]         ; 004ce1a0
     TEST EDX,EDX                        ; 004ce1a3
     JLE 0x004ce1c3                      ; 004ce1a5
         ;   XREF to: 004ce1c3 (CONDITIONAL_JUMP)  ; LAB_004ce1c3
-    MOV EBX,dword ptr [0x01cedee0]      ; 004ce1a7 | g_INT_01cedee0
+    MOV EBX,dword ptr [0x01cedee0]      ; 004ce1a7 | g_HeroCount
     XOR EDX,EDX                         ; 004ce1ad
     SHL EBX,0x2                         ; 004ce1af
     MOV ESI,dword ptr [EDX + 0x1cedee4] ; 004ce1b2

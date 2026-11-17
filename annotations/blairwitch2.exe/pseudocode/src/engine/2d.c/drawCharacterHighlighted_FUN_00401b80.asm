@@ -10,10 +10,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   undefined4 g_USHORT_ARRAY_01c34910[255]
+;   undefined4 g_ColorTable16[255]
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;
 ; *****************************************************************************
@@ -42,7 +42,7 @@ section .text
     CMP EDI,dword ptr [0x01c35e4c]      ; 00401bb9 | g_INT_01c35e4c
     JL 0x00401c37                       ; 00401bbf
         ;   XREF to: 00401c37 (CONDITIONAL_JUMP)  ; LAB_00401c37
-    MOV EDX,dword ptr [0x01c35e50]      ; 00401bc5 | g_INT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 00401bc5 | g_ClipRight
     INC EDX                             ; 00401bcb
     SUB EDX,ESI                         ; 00401bcc
     CMP EBP,EDX                         ; 00401bce
@@ -75,7 +75,7 @@ section .text
     TEST BL,BL                          ; 00401c08
     JZ 0x00401c16                       ; 00401c0a
         ;   XREF to: 00401c16 (CONDITIONAL_JUMP)  ; LAB_00401c16
-    MOV BX,word ptr [0x01c34b0e]        ; 00401c0c | g_USHORT_ARRAY_01c34910[255]
+    MOV BX,word ptr [0x01c34b0e]        ; 00401c0c | g_ColorTable16[255]
     MOV word ptr [EDX],BX               ; 00401c13
     INC EAX                             ; 00401c16
         ;   Label: LAB_00401c16

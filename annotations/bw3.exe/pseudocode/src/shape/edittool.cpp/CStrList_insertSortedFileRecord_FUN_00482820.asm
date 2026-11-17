@@ -30,12 +30,12 @@
 ;   TerminatedCString s_anon_005bd67e
 ;   TerminatedCString s_m_d_y_I_M_S_p_005bd68a
 ;   TerminatedCString s_s_s_d_s_s_005bd69f
-;   char[512] g_CHAR_ARRAY_005fb468
-;   undefined4 g_CHAR_ARRAY_005fb468+4
-;   char[512] g_CHAR_ARRAY_005fb668
-;   undefined4 g_CHAR_ARRAY_005fb668+4
-;   char[260] g_CHAR_ARRAY_005fb868
-;   undefined4 g_CHAR_ARRAY_005fb868+4
+;   char[512] g_Field1ParseBuffer
+;   undefined4 g_Field1ParseBuffer+4
+;   char[512] g_Field2ParseBuffer
+;   undefined4 g_Field2ParseBuffer+4
+;   char[260] g_FilePathBuffer
+;   undefined4 g_FilePathBuffer+4
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
@@ -76,18 +76,18 @@ section .text
     SAR EAX,0x1                         ; 00482856
     MOV ECX,0x80                        ; 00482858
     LEA EDI,[ESP + 0x200]               ; 0048285d
-    MOV ESI,0x5fb468                    ; 00482864 | g_CHAR_ARRAY_005fb468
+    MOV ESI,0x5fb468                    ; 00482864 | g_Field1ParseBuffer
     MOV EBX,EAX                         ; 00482869
     MOV EAX,ESP                         ; 0048286b
-    MOVSD.REP ES:EDI,ESI                ; 0048286d | g_CHAR_ARRAY_005fb468 | g_CHAR_ARRAY_005fb468+4
+    MOVSD.REP ES:EDI,ESI                ; 0048286d | g_Field1ParseBuffer | g_Field1ParseBuffer+4
     PUSH EAX                            ; 0048286f
     LEA EAX,[ESP + 0x204]               ; 00482870
     MOV ECX,0x80                        ; 00482877
     PUSH EAX                            ; 0048287c
     LEA EDI,[ESP + 0x8]                 ; 0048287d
-    MOV ESI,0x5fb668                    ; 00482881 | g_CHAR_ARRAY_005fb668
+    MOV ESI,0x5fb668                    ; 00482881 | g_Field2ParseBuffer
     PUSH 0x5bd67e                       ; 00482886 | = "%[^\t]\t%[^\t]"
-    MOVSD.REP ES:EDI,ESI                ; 0048288b | g_CHAR_ARRAY_005fb668 | g_CHAR_ARRAY_005fb668+4
+    MOVSD.REP ES:EDI,ESI                ; 0048288b | g_Field2ParseBuffer | g_Field2ParseBuffer+4
     PUSH EBX                            ; 0048288d
     MOV ESI,dword ptr [ESP + 0xb18]     ; 0048288e
     PUSH ESI                            ; 00482895
@@ -139,13 +139,13 @@ section .text
     LEA EAX,[ESP + 0xadc]               ; 00482919
     PUSH EAX                            ; 00482920
     LEA EDI,[ESP + 0x410]               ; 00482921
-    MOV ESI,0x5fb868                    ; 00482928 | g_CHAR_ARRAY_005fb868
+    MOV ESI,0x5fb868                    ; 00482928 | g_FilePathBuffer
     CALL crt_time.c__strftime_FUN_005a5674 ; 0048292d
         ;   XREF to: 005a5674 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_005a5674(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 00482932
     MOV ECX,0x41                        ; 00482935
     MOV EBX,dword ptr [ESP + 0xb10]     ; 0048293a
-    MOVSD.REP ES:EDI,ESI                ; 00482941 | g_CHAR_ARRAY_005fb868 | g_CHAR_ARRAY_005fb868+4
+    MOVSD.REP ES:EDI,ESI                ; 00482941 | g_FilePathBuffer | g_FilePathBuffer+4
     TEST EBX,EBX                        ; 00482943
     JZ 0x00482988                       ; 00482945
         ;   XREF to: 00482988 (CONDITIONAL_JUMP)  ; LAB_00482988

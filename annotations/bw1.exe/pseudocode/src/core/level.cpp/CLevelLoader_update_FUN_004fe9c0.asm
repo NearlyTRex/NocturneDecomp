@@ -52,16 +52,16 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061f2e4
+;   SMRGLTextureBasic g_LoadingMoonGlowTexture
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   CBitFont* g_CBitFont_PTR_0152d244
+;   CBitFont* g_ThemeFont
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   undefined4 g_CDemonSetInstance.rendering_mode
 ;   undefined4 g_CDemonSetInstance.light_direction.x
 ;   undefined4 g_CDemonSetInstance.light_direction.y
 ;   undefined4 g_CDemonSetInstance.light_direction.z
 ;   undefined4 g_CDemonSetInstance.ambient_base_quick
-;   CVector3f g_CVector3f_02c8af28
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00467270
@@ -118,7 +118,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10 ; 004fea22
         ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004fea27
-    PUSH 0x2c8af28                      ; 004fea2a | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004fea2a | g_ZeroVector
         ;   Label: LAB_004fea2a
     MOV EDI,dword ptr [0x00612560]      ; 004fea2f | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 004fea35 | g_CDemonRenderer_01bc120c
@@ -139,7 +139,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 004fea64
         ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004fea69
-    PUSH 0x2c8af28                      ; 004fea6c | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 004fea6c | g_ZeroVector
     MOV EBX,dword ptr [0x00612560]      ; 004fea71 | g_CDemonRenderer_PTR_00612560
     PUSH EBX                            ; 004fea77 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530 ; 004fea78
@@ -376,7 +376,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0 ; 004fed9a
         ;   XREF to: 00483dd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004fed9f
-    PUSH 0x61f2e4                       ; 004feda2 | g_SMRGLTextureBasic_0061f2e4
+    PUSH 0x61f2e4                       ; 004feda2 | g_LoadingMoonGlowTexture
     MOV EDX,dword ptr [0x00612560]      ; 004feda7 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 004fedad | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004fedae
@@ -416,7 +416,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 004fee10 | g_CDemonSetPtr
         ;   Label: LAB_004fee10
     MOV dword ptr [EAX + 0x15ae84],0x0  ; 004fee15 | g_CDemonSetInstance.rendering_mode
-    MOV EAX,[0x0152d244]                ; 004fee1f | g_CBitFont_PTR_0152d244
+    MOV EAX,[0x0152d244]                ; 004fee1f | g_ThemeFont
     MOV EDX,dword ptr [0x0061b498]      ; 004fee24 | g_INT_0061b498
     MOV dword ptr [ESP + 0x80],EAX      ; 004fee2a
     LEA EAX,[EDX*0x8 + 0x0]             ; 004fee31

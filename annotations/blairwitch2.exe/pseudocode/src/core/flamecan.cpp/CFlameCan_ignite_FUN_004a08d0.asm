@@ -18,7 +18,7 @@
 ;   core_turret.cpp_CTurret_fire_FUN_0057fc20 at 0058018d
 ;
 ; Referenced Globals:
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
@@ -42,7 +42,7 @@ section .text
     PUSH 0x4000                         ; 004a08f5
     PUSH 0x0                            ; 004a08fa
     PUSH ESI                            ; 004a08fc
-    MOV EDX,dword ptr [0x00614d30]      ; 004a08fd | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 004a08fd | g_CFireEffectPtr
     PUSH EDX                            ; 004a0903
     INC EBX                             ; 004a0904
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 004a0905

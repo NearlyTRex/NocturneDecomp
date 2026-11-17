@@ -20,7 +20,7 @@
 ;   ... and 11 more
 ;
 ; Referenced Globals:
-;   int g_INT_01c35e64
+;   int g_CurrentLightingValue
 ;
 ; Called Functions:
 ;   engine_light.cpp_calculateLighting_FUN_004e28b0
@@ -41,7 +41,7 @@ section .text
     CALL engine_light.cpp_calculateLighting_FUN_004e28b0 ; 00403a31
         ;   XREF to: 004e28b0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004e28b0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00403a36
-    MOV [0x01c35e64],EAX                ; 00403a39 | g_INT_01c35e64
+    MOV [0x01c35e64],EAX                ; 00403a39 | g_CurrentLightingValue
     POP EBX                             ; 00403a3e
     RET                                 ; 00403a3f
 

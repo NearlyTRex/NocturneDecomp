@@ -19,7 +19,7 @@ extern CStake g_StakePool[256];
 
 // int
 extern int g_INT_01c8aea0;
-extern int g_INT_01c8aea4;
+extern int g_BulletHoleAllocIndex;
 extern int g_INT_01c8eea8;
 extern int g_INT_01c8eeac;
 

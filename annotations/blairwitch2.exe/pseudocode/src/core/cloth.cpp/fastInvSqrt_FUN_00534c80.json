@@ -31,7 +31,7 @@
   "globals": [
     {
       "addr": "01caf5b8",
-      "name": "g_INT_01caf5b8",
+      "name": "g_FastInvSqrtMagic",
       "type": "int",
       "value": null
     }
@@ -109,11 +109,11 @@
   },
   "suspects": [
     {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `g_INT_01caf5b8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01caf5b8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
       "line": 5,
-      "match": "return (float)(g_INT_01caf5b8 - ((int)dist_sq >> 1));",
+      "match": "return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));",
       "severity": "moderate",
-      "text": "return (float)(g_INT_01caf5b8 - ((int)dist_sq >> 1));",
+      "text": "return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));",
       "type": "fast_inv_sqrt_inline"
     }
   ]

@@ -54,7 +54,7 @@
     },
     {
       "addr": "02c828d4",
-      "name": "g_INT_02c828d4",
+      "name": "g_WaveOutNumBuffers",
       "type": "int",
       "value": null
     }
@@ -142,25 +142,25 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02c82864",
+      "match": "(int *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "if ((*(int *)((int)g_LPWAVEHDR_ARRAY_02c82864 + iVar2) == 0) ||",
+      "text": "if ((*(int *)((int)g_WaveOutHeaders + iVar2) == 0) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(int *)((int)g_LPVOID_ARRAY_02c828a4",
+      "match": "(int *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "(*(int *)((int)g_LPVOID_ARRAY_02c828a4 + iVar2) == 0)) {",
+      "text": "(*(int *)((int)g_WaveOutBuffers + iVar2) == 0)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02c82864",
+      "match": "(int *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "if (((*(byte *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02c82864 + iVar2) + 0x10) & 1) != 0) &&",
+      "text": "if (((*(byte *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0x10) & 1) != 0) &&",
       "type": "pointer_cast"
     }
   ],

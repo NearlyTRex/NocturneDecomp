@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005cdce0 at 005cde0e
 ;
 ; Referenced Globals:
-;   int g_INT_02c9f6d8
+;   int g_EnvironInitialized
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005c08d0
@@ -184,7 +184,7 @@ section .text
     POP ESI                             ; 005ce65c
     POP EBX                             ; 005ce65d
     RET                                 ; 005ce65e
-    CMP dword ptr [0x02c9f6d8],0x0      ; 005ce65f | g_INT_02c9f6d8
+    CMP dword ptr [0x02c9f6d8],0x0      ; 005ce65f | g_EnvironInitialized
         ;   Label: LAB_005ce65f
     JZ 0x005ce6d4                       ; 005ce666
         ;   XREF to: 005ce6d4 (CONDITIONAL_JUMP)  ; LAB_005ce6d4

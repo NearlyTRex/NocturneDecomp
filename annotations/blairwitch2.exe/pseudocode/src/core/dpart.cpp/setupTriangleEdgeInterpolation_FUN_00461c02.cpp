@@ -65,7 +65,7 @@ void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
   lVar1 = (longlong)(int)uVar5 * (longlong)(int)uVar3;
   *(uint *)(in_ECX + 0x30) =
        *(int *)(unaff_ESI + 0x2c) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  if (g_INT_0070ca74 == 0) {
+  if (g_TexturesDisabled == 0) {
     lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0xc) - *(int *)(unaff_ESI + 0xc));
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     *(uint *)(in_ECX + 0x2c) = uVar3;
@@ -82,7 +82,7 @@ void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
     iVar2 = *(int *)(unaff_ESI + 8);
   }
   *(uint *)(in_ECX + 0x28) = iVar2 + uVar3;
-  if ((g_BIT_INTEGER32_01c38b54.bytes[1] & 2) != 0) {
+  if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
     lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x24) - *(int *)(unaff_ESI + 0x24));
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     *(uint *)(in_ECX + 0x3c) = uVar3;

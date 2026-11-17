@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
-;   float g_FLOAT_01e818b0
+;   float g_ScriptTimeScale
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -48,7 +48,7 @@ section .text
     SAR EAX,0x1                         ; 00543988
     MOV dword ptr [ESP + 0x4],EAX       ; 0054398a
     FILD dword ptr [ESP + 0x4]          ; 0054398e
-    FMUL float ptr [0x01e818b0]         ; 00543992 | g_FLOAT_01e818b0
+    FMUL float ptr [0x01e818b0]         ; 00543992 | g_ScriptTimeScale
     CALL crt_math.c_round_FUN_005c03a0  ; 00543998
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 0054399d

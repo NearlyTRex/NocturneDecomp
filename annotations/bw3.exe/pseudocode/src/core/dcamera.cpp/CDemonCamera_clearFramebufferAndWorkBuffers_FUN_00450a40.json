@@ -39,13 +39,13 @@
   "globals": [
     {
       "addr": "0135ec10",
-      "name": "g_SFogImagePlane_0135ead0.pixels[1][0]",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01371810",
-      "name": "g_CHAR_ARRAY_013716d0+0x140",
+      "name": "g_CameraImageDecompressBuffer+0x140",
       "type": "undefined4",
       "value": null
     }
@@ -159,10 +159,10 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'g_SFogImagePlane_0135ead0.pixels[0][iVar3]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar3 is multiplied by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "description": "'g_CameraPlaneWorkBuffer.pixels[0][iVar3]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar3 is multiplied by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 31,
       "severity": "major",
-      "text": "g_SFogImagePlane_0135ead0.pixels[0][iVar3] = '\\0';",
+      "text": "g_CameraPlaneWorkBuffer.pixels[0][iVar3] = '\\0';",
       "type": "flattened_array_index"
     }
   ]

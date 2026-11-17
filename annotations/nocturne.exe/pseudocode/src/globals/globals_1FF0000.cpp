@@ -5,25 +5,25 @@
 // =============================================================================
 
 // C3DSLight*[200]
-C3DSLight* g_C3DSLight_PTR_ARRAY_01fff228[200] = {};
+C3DSLight* g_VisibleOmniLights[200] = {};
 
 // CDemonActor*[2000]
-CDemonActor* g_CDemonActor_PTR_ARRAY_01ffcfb8[2000] = {};
+CDemonActor* g_ActorProfileActors[2000] = {};
 
 // CDemonGlobe*[100]
-CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_01fff094[100] = {};
+CDemonGlobe* g_GlobeLights[100] = {};
 
 // CDemonLight*[4]
-CDemonLight* g_CDemonLight_PTR_ARRAY_01fff080[4] = {};
+CDemonLight* g_PrimaryDirectionalLights[4] = {};
 
 // CDemonLight*[96]
-CDemonLight* g_CDemonLight_PTR_ARRAY_01ffeefc[96] = {};
+CDemonLight* g_SecondaryDirectionalLights[96] = {};
 
 // CMatrix3x3f
-CMatrix3x3f g_CMatrix3x3f_01fff57c = {};
+CMatrix3x3f g_LightingRotationMatrix = {};
 
 // CVector3f[4000]
-CVector3f g_CVector3f_ARRAY_01fff5b0[4000] = {};
+CVector3f g_FaceNormalArray[4000] = {};
 
 // float
 float g_FLOAT_01fff54c = {};
@@ -36,17 +36,17 @@ float g_FLOAT_01fff570 = {};
 float g_FLOAT_01fff578 = {};
 
 // int
-int g_INT_01ffb060 = {};
-int g_INT_01ffb074 = {};
-int g_INT_01ffeef8 = {};
-int g_INT_01fff07c = {};
-int g_INT_01fff090 = {};
-int g_INT_01fff224 = {};
-int g_INT_01fff548 = {};
-int g_INT_01fff5a4 = {};
-int g_INT_01fff5a8 = {};
-int g_INT_01fff5ac = {};
+int g_InMirrorRenderPass = {};
+int g_RenderingShadows = {};
+int g_SecondaryDirectionalLightCount = {};
+int g_PrimaryDirectionalLightCount = {};
+int g_GlobeLightCount = {};
+int g_ColorCorrectionCount = {};
+int g_LightingSystemDirty = {};
+int g_ColorCorrectionLightMultiplier = {};
+int g_ColorCorrectionColorMultiplier = {};
+int g_ColorCorrectionFogMultiplier = {};
 
 // int[2000]
-int g_INT_ARRAY_01ffb078[2000] = {};
+int g_ActorProfileTimes[2000] = {};
 

@@ -14,7 +14,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
   bool bVar2;
   
   while( true ) {
-    if (g_INT_01cedee0 < 1) {
+    if (g_HeroCount < 1) {
       g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
       g_INT_01d046a4 = 0x511;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::run - hero list empty");

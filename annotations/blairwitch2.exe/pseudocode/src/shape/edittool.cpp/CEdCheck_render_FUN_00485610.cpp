@@ -29,12 +29,12 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00485610(CEdCheck *this_ptr)
   iVar3 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(this_ptr);
   text = (char *)(iVar1 + iVar3);
   text_string = this_ptr->checkbox_text;
-  engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(g_CBitFont_PTR_01c25590,text_string);
+  engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(g_EditorFont,text_string);
   color_mode = -1;
   iVar3 = this_ptr->text_color_mode;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(this_ptr);
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-            (g_CBitFont_PTR_01c25590,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);
+            (g_EditorFont,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);
   shape_edittool_cpp_draw3DBorder_FUN_00483ea0
             (left,iVar1,iVar2,unaff_EBX,this_ptr->border_style_flag);
   if (this_ptr->border_style_flag == 0) {

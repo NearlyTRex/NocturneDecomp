@@ -28,8 +28,9 @@ void __cdecl engine_mini3d_cpp_setRenderViewport_FUN_004ed020(float left,float t
   g_FLOAT_01d76c5c = fVar2 + -1.0f;
   g_FLOAT_01d76c60 = -fVar1 + 1.0;
   g_FLOAT_01d76c58 = bottom;
-  if (((g_INT_01d7a694 == 0) && (g_PTR_02cf60a0 != (byte *)0x0)) && (g_INT_01c6cee8 != 0)) {
-    (*(code *)g_PTR_02cf60a0)(left,top,right,bottom,g_FLOAT_01d76cbc,g_INT_01d76cc0);
+  if (((g_INT_01d7a694 == 0) && (g_APIDLL_setViewport != (byte *)0x0)) && (g_INT_01c6cee8 != 0)
+     ) {
+    (*(code *)g_APIDLL_setViewport)(left,top,right,bottom,g_FLOAT_01d76cbc,g_INT_01d76cc0);
   }
   engine_mini3d_cpp_resetDynamicLight_FUN_004ef8f0();
   g_INT_01d7977c = 1;

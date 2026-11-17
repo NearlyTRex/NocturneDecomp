@@ -50,7 +50,7 @@ int FUN_005bd67c(int param_1,int *param_2)
   }
   iVar7 = 0;
   while (uVar4 = FUN_005bd160(param_1),
-        (g_UCHAR_ARRAY_0061ed94[(byte)((char)uVar4 + 1)] & 2) != 0) {
+        (g_CharacterClassificationTable[(byte)((char)uVar4 + 1)] & 2) != 0) {
     iVar7 = iVar7 + 1;
   }
   if ((*(byte *)(param_1 + 0x10) & 2) == 0) {
@@ -66,7 +66,7 @@ int FUN_005bd67c(int param_1,int *param_2)
           }
           else {
             local_1c = uVar6;
-            if ((g_INT_026807f0 != 0) && ((g_CHAR_ARRAY_02680801[uVar4 & 0xff] & 1U) != 0)) {
+            if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[uVar4 & 0xff] & 1U) != 0)) {
               local_1b = FUN_005bd160(param_1);
             }
             iVar5 = FUN_005c33f0(local_20,&local_1c,2);
@@ -79,7 +79,7 @@ int FUN_005bd67c(int param_1,int *param_2)
         }
         uVar4 = FUN_005be148(param_1);
         if (uVar4 == 0xffffffff) goto LAB_005bd7b8;
-      } while ((g_UCHAR_ARRAY_0061ed94[(byte)((char)uVar4 + 1)] & 2) == 0);
+      } while ((g_CharacterClassificationTable[(byte)((char)uVar4 + 1)] & 2) == 0);
     }
     FUN_005bd16c(uVar4,param_1);
   }

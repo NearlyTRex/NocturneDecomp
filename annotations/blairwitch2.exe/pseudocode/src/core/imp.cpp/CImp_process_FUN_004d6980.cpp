@@ -180,7 +180,7 @@ LAB_004d6a63:
         }
         else {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                    (pCStack_1c,g_INT_ARRAY_01cee138[0],&CStack_130);
+                    (pCStack_1c,g_ImpIndices[0],&CStack_130);
           pCVar14 = &CStack_d0;
           CStack_d0.x = CStack_130.x;
           *(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) =
@@ -481,9 +481,9 @@ LAB_004d6a63:
       fVar16 = 0.4;
       fStack_14 = SStack_280.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                 g_INT_ARRAY_01cee138[2],&CStack_190);
+                (&g_ZeroVector,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_ImpIndices[2],
+                 &CStack_190);
       pCVar14 = &CStack_184;
       CStack_184.x = CStack_190.x;
       *(uint *)((int)&CStack_184 + (uint)bVar12 * -8 + 4) =

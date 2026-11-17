@@ -66,7 +66,7 @@
 ;   undefined4 g_SLightGlowTable_005f2828.sprites[0].texture.base.type
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01c6e24c
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0
@@ -232,7 +232,7 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 0045d716
     FSTP float ptr [ESP + 0x5c]         ; 0045d71a
     FSTP float ptr [ESP + 0x60]         ; 0045d71e
-    MOV EAX,[0x01c6e24c]                ; 0045d722 | g_INT_01c6e24c
+    MOV EAX,[0x01c6e24c]                ; 0045d722 | g_PerspectiveReciprocal
         ;   Label: LAB_0045d722
     MOV EDX,EAX                         ; 0045d727
     SAR EDX,0x1f                        ; 0045d729

@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_XBLAIRMENU_wav_005ea904
 ;   TerminatedCString s_XBLAIRMENU_wav_005ea913
-;   float g_FLOAT_005fbdb4 = 0.25
-;   float g_FLOAT_005fbdb8 = 0.25
-;   float g_FLOAT_005fbdbc = 1
+;   float g_MenuChannel1MaxVolume = 0.25
+;   float g_MenuChannel0MaxVolume = 0.25
+;   float g_MenuChannel2MaxVolume = 1
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_reset_FUN_0055adb0
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0055ac5a
     FLD float ptr [ESP + 0x4]           ; 0055ac5e
     ADD ESP,0x4                         ; 0055ac62
-    FCOMP float ptr [0x005fbdb4]        ; 0055ac65 | g_FLOAT_005fbdb4
+    FCOMP float ptr [0x005fbdb4]        ; 0055ac65 | g_MenuChannel1MaxVolume
     FNSTSW AX                           ; 0055ac6b
     SAHF                                ; 0055ac6d
     JA 0x0055ad7b                       ; 0055ac6e
@@ -61,12 +61,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0055ac7b
     FLD float ptr [ESP + 0x4]           ; 0055ac7f
     ADD ESP,0x4                         ; 0055ac83
-    FCOMP float ptr [0x005fbdb8]        ; 0055ac86 | g_FLOAT_005fbdb8
+    FCOMP float ptr [0x005fbdb8]        ; 0055ac86 | g_MenuChannel0MaxVolume
     FNSTSW AX                           ; 0055ac8c
     SAHF                                ; 0055ac8e
     JBE 0x0055aca1                      ; 0055ac8f
         ;   XREF to: 0055aca1 (CONDITIONAL_JUMP)  ; LAB_0055aca1
-    PUSH dword ptr [0x005fbdb8]         ; 0055ac91 | g_FLOAT_005fbdb8
+    PUSH dword ptr [0x005fbdb8]         ; 0055ac91 | g_MenuChannel0MaxVolume
     PUSH 0x0                            ; 0055ac97
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055ac99
         ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
@@ -78,12 +78,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0055aca8
     FLD float ptr [ESP + 0x4]           ; 0055acac
     ADD ESP,0x4                         ; 0055acb0
-    FCOMP float ptr [0x005fbdbc]        ; 0055acb3 | g_FLOAT_005fbdbc
+    FCOMP float ptr [0x005fbdbc]        ; 0055acb3 | g_MenuChannel2MaxVolume
     FNSTSW AX                           ; 0055acb9
     SAHF                                ; 0055acbb
     JBE 0x0055acce                      ; 0055acbc
         ;   XREF to: 0055acce (CONDITIONAL_JUMP)  ; LAB_0055acce
-    PUSH dword ptr [0x005fbdbc]         ; 0055acbe | g_FLOAT_005fbdbc
+    PUSH dword ptr [0x005fbdbc]         ; 0055acbe | g_MenuChannel2MaxVolume
     PUSH 0x2                            ; 0055acc4
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055acc6
         ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
@@ -158,7 +158,7 @@ section .text
     ADD ESP,0x4                         ; 0055ad77
         ;   Label: LAB_0055ad77
     RET                                 ; 0055ad7a
-    PUSH dword ptr [0x005fbdb4]         ; 0055ad7b | g_FLOAT_005fbdb4
+    PUSH dword ptr [0x005fbdb4]         ; 0055ad7b | g_MenuChannel1MaxVolume
         ;   Label: LAB_0055ad7b
     PUSH 0x1                            ; 0055ad81
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055ad83

@@ -24,14 +24,15 @@ CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_00552350(int s
   
   iVar4 = 0;
   do {
-    g_INT_02cebc20 = g_INT_02cebc20 + 1;
-    if (0x3f < g_INT_02cebc20) {
-      g_INT_02cebc20 = 0;
+    g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+    if (0x3f < g_LastSampleAccessIndex) {
+      g_LastSampleAccessIndex = 0;
     }
-    if ((((g_SfxSamples[g_INT_02cebc20].taken == 0) && (g_SfxSamples[g_INT_02cebc20].ref_count == 0)
-         ) && (g_SfxSamples[g_INT_02cebc20].is_user_sample == 0)) &&
-       (g_SfxSamples[g_INT_02cebc20].locked_length == 0)) {
-      local_14 = g_SfxSamples + g_INT_02cebc20;
+    if ((((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+         (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) &&
+        (g_SfxSamples[g_LastSampleAccessIndex].is_user_sample == 0)) &&
+       (g_SfxSamples[g_LastSampleAccessIndex].locked_length == 0)) {
+      local_14 = g_SfxSamples + g_LastSampleAccessIndex;
       goto LAB_00552392;
     }
     iVar4 = iVar4 + 1;

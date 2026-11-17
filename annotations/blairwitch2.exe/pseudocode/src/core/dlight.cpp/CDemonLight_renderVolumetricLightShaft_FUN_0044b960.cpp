@@ -133,7 +133,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960
         local_74.z = 1.0;
         local_74.x = 0.0;
         local_74.y = 0.0;
-        local_14 = (float)(0xffff - g_INT_01c38aec);
+        local_14 = (float)(0xffff - g_PerspectiveReciprocal);
         core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
                   (&(this_ptr->base).base.rotation_matrix,&local_74,&local_80);
         local_50 = local_80.x;
@@ -220,7 +220,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960
                       (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,
                        &local_5c);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                      (g_CDemonRenderer_PTR_0060b280,&g_SLightGlowTable_0060afc8.headlight);
+                      (g_CDemonRenderer_PTR_0060b280,&g_LightGlow.headlight);
             pCVar7 = g_CDemonRenderer_PTR_0060b280;
             local_190.surface_normal.A.i = 4;
             local_178 = 0;

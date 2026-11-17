@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6088
+;   void* g_APIDLL_getTextureInfo
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 005664cc
         ;   Label: LAB_005664cc
     PUSH ECX                            ; 005664d0
-    CALL dword ptr [0x02cf6088]         ; 005664d1 | g_PTR_02cf6088
+    CALL dword ptr [0x02cf6088]         ; 005664d1 | g_APIDLL_getTextureInfo
     ADD ESP,0x4                         ; 005664d7
     RET                                 ; 005664da
 

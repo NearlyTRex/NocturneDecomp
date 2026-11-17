@@ -14,10 +14,10 @@
 ;   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0 at 0052ecd4
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
-;   SReverbSettings g_SReverbSettings_02dc8498
-;   undefined4 g_SReverbSettings_02dc8498.decay_time
-;   undefined4 g_SReverbSettings_02dc8498.damping
+;   CSoundDevice* g_CSoundDevicePtr
+;   SReverbSettings g_CachedReverb
+;   undefined4 g_CachedReverb.decay_time
+;   undefined4 g_CachedReverb.damping
 ;
 ; *****************************************************************************
 
@@ -25,12 +25,12 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00528630
         ;   Label: sound_sndmain.cpp_set3DListenerOrientRight_FUN_00528630
-    MOV [0x02dc8498],EAX                ; 00528634 | g_SReverbSettings_02dc8498
+    MOV [0x02dc8498],EAX                ; 00528634 | g_CachedReverb
     MOV EAX,dword ptr [ESP + 0x8]       ; 00528639
-    MOV [0x02dc849c],EAX                ; 0052863d | g_SReverbSettings_02dc8498.decay_time
+    MOV [0x02dc849c],EAX                ; 0052863d | g_CachedReverb.decay_time
     MOV EAX,dword ptr [ESP + 0xc]       ; 00528642
-    MOV EDX,dword ptr [0x02dc8318]      ; 00528646 | g_CSoundDevice_PTR_02dc8318
-    MOV [0x02dc84a0],EAX                ; 0052864c | g_SReverbSettings_02dc8498.damping
+    MOV EDX,dword ptr [0x02dc8318]      ; 00528646 | g_CSoundDevicePtr
+    MOV [0x02dc84a0],EAX                ; 0052864c | g_CachedReverb.damping
     TEST EDX,EDX                        ; 00528651
     JNZ 0x00528656                      ; 00528653
         ;   XREF to: 00528656 (CONDITIONAL_JUMP)  ; LAB_00528656

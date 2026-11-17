@@ -64,11 +64,11 @@ LAB_004a215d:
   if (iVar2 != 0) {
     iVar2 = 0;
     do {
-      iVar1 = g_INT_01c74e9c + 1;
-      this_ptr_00 = g_CSmokeParticle_ARRAY_01c74ea0 + g_INT_01c74e9c;
-      g_INT_01c74e9c = iVar1;
+      iVar1 = g_SmokeParticleAllocIndex + 1;
+      this_ptr_00 = g_SmokeParticlePool + g_SmokeParticleAllocIndex;
+      g_SmokeParticleAllocIndex = iVar1;
       if (0x7ff < iVar1) {
-        g_INT_01c74e9c = 0;
+        g_SmokeParticleAllocIndex = 0;
       }
       iVar2 = iVar2 + 1;
       core_fire_cpp_CSmokeParticle_init_FUN_00496d60
@@ -86,7 +86,7 @@ LAB_004a215d:
       } while (iVar2 < 8);
     }
   }
-  pcVar3 = g_CHAR_ARRAY_005fdbf8;
+  pcVar3 = g_DefaultRicochetSound;
   pcVar4 = local_70;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar4 = *(uint *)pcVar3;

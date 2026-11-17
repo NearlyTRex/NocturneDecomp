@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 130,
+    "complexity_score": 132,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 42,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 158
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -51,19 +51,19 @@
     },
     {
       "addr": "01b4d720",
-      "name": "g_INT_01b4d720",
+      "name": "g_OriginalColorValue",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d730",
-      "name": "g_INT_01b4d730",
+      "name": "g_PackedPixelColor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d734",
-      "name": "g_INT_01b4d734",
+      "name": "g_DuplicatedPixelColor",
       "type": "int",
       "value": null
     },
@@ -218,7 +218,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 36,
       "match": "(uint *)(start_x * 4 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "(puVar3 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {",
@@ -250,7 +250,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 36,
       "match": "(int)g_ScreenBufferArray[y]",
       "severity": "moderate",
       "text": "(puVar3 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {",

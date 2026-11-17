@@ -46,7 +46,7 @@ section .text
     PUSH 0x586d94                       ; 004befa7 | = "invsize.txt"
     MOV EAX,[0x005b7620]                ; 004befac | g_WindowHeight
     PUSH 0x586da0                       ; 004befb1 | = "data"
-    MOV [0x01cc30a0],EAX                ; 004befb6 | g_INT_01cc30a0
+    MOV [0x01cc30a0],EAX                ; 004befb6 | g_InventoryScreenHeight
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004befbb
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004befc0
@@ -56,16 +56,16 @@ section .text
         ;   XREF to: 004bf23d (CONDITIONAL_JUMP)  ; LAB_004bf23d
     PUSH EDI                            ; 004befcd
         ;   Label: LAB_004befcd
-    MOV EDX,dword ptr [0x005bab64]      ; 004befce | INT_005bab64
+    MOV EDX,dword ptr [0x005bab64]      ; 004befce | g_InventoryHeight
     PUSH EDX                            ; 004befd4
-    MOV ECX,dword ptr [0x005bab60]      ; 004befd5 | INT_005bab60
+    MOV ECX,dword ptr [0x005bab60]      ; 004befd5 | g_InventoryWidth
     PUSH ECX                            ; 004befdb
     PUSH 0x586dac                       ; 004befdc | = "invback"
     PUSH 0x1cb0380                      ; 004befe1
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004befe6
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004befeb
-    MOV EBX,dword ptr [0x005bab64]      ; 004befee | INT_005bab64
+    MOV EBX,dword ptr [0x005bab64]      ; 004befee | g_InventoryHeight
     PUSH EBX                            ; 004beff4
     PUSH EBX                            ; 004beff5
     PUSH 0x586db4                       ; 004beff6 | = "invback2"
@@ -73,16 +73,16 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004bf000
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004bf005
-    MOV EDI,dword ptr [0x005bab64]      ; 004bf008 | INT_005bab64
+    MOV EDI,dword ptr [0x005bab64]      ; 004bf008 | g_InventoryHeight
     PUSH EDI                            ; 004bf00e
-    MOV EBP,dword ptr [0x005bab60]      ; 004bf00f | INT_005bab60
+    MOV EBP,dword ptr [0x005bab60]      ; 004bf00f | g_InventoryWidth
     PUSH EBP                            ; 004bf015
     PUSH 0x586dbd                       ; 004bf016 | = "weapback"
     PUSH 0x1cb03a8                      ; 004bf01b
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004bf020
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004bf025
-    MOV EAX,[0x005bab64]                ; 004bf028 | INT_005bab64
+    MOV EAX,[0x005bab64]                ; 004bf028 | g_InventoryHeight
     PUSH EAX                            ; 004bf02d
     PUSH EAX                            ; 004bf02e
     PUSH 0x586dc6                       ; 004bf02f | = "weapback2"
@@ -237,7 +237,7 @@ section .text
     PUSH 0x586e53                       ; 004bf1f2 | = "itemlist.txt"
     XOR EBX,EBX                         ; 004bf1f7
     PUSH 0x586e60                       ; 004bf1f9 | g_CHAR_00586e60
-    MOV dword ptr [0x01cb03d0],EBX      ; 004bf1fe | g_INT_01cb03d0
+    MOV dword ptr [0x01cb03d0],EBX      ; 004bf1fe | g_ItemDefinitionCount
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004bf204
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004bf209
@@ -249,7 +249,7 @@ section .text
         ;   Label: LAB_004bf212
     JNZ 0x004bf263                      ; 004bf216
         ;   XREF to: 004bf263 (CONDITIONAL_JUMP)  ; LAB_004bf263
-    IMUL EAX,dword ptr [0x01cb03d0],0x300 ; 004bf218 | g_INT_01cb03d0
+    IMUL EAX,dword ptr [0x01cb03d0],0x300 ; 004bf218 | g_ItemDefinitionCount
     PUSH EBX                            ; 004bf222
     ADD EAX,0x1cb03d8                   ; 004bf223
     PUSH EAX                            ; 004bf228
@@ -259,12 +259,12 @@ section .text
     TEST EAX,EAX                        ; 004bf231
     JZ 0x004bf263                       ; 004bf233
         ;   XREF to: 004bf263 (CONDITIONAL_JUMP)  ; LAB_004bf263
-    INC dword ptr [0x01cb03d0]          ; 004bf235 | g_INT_01cb03d0
+    INC dword ptr [0x01cb03d0]          ; 004bf235 | g_ItemDefinitionCount
     JMP 0x004bf212                      ; 004bf23b
         ;   XREF to: 004bf212 (UNCONDITIONAL_JUMP)  ; LAB_004bf212
-    PUSH 0x5bab64                       ; 004bf23d | INT_005bab64
+    PUSH 0x5bab64                       ; 004bf23d | g_InventoryHeight
         ;   Label: LAB_004bf23d
-    PUSH 0x5bab60                       ; 004bf242 | INT_005bab60
+    PUSH 0x5bab60                       ; 004bf242 | g_InventoryWidth
     PUSH 0x586da5                       ; 004bf247 | = "%d,%d\n"
     PUSH EAX                            ; 004bf24c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004bf24d

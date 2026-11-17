@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 77,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "register_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -39,13 +39,13 @@
     },
     {
       "addr": "0061f6cc",
-      "name": "g_PTR_0061f6cc",
+      "name": "g_UserExceptionFilter",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f6d0",
-      "name": "g_PTR_0061f6d0",
+      "name": "g_ExceptionCleanup",
       "type": "void*",
       "value": "00000000"
     }
@@ -132,15 +132,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(uint *)((int)g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764",
+      "line": 16,
+      "match": "(uint *)((int)g_GlobalSignalHandlers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764 + iVar2);",
+      "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)((int)g_GlobalSignalHandlers + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_DS",
       "severity": "mild",
       "text": "return in_DS;",

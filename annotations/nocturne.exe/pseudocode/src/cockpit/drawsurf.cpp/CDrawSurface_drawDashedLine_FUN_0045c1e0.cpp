@@ -23,18 +23,20 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(CDraw
   int iStack_24;
   uint uStack_1c;
   
-  if (g_INT_01bd1d84 != g_INT_01b4d480) {
-    g_FLOAT_01b4d478 = (float)g_INT_01bd1d80 * (float)1.52587890625e-05 + g_FLOAT_01b4d478;
-    g_INT_01b4d480 = g_INT_01bd1d84;
-    if (g_FLOAT_005ae6f8 < g_FLOAT_01b4d478) {
-      g_FLOAT_01b4d47c = g_FLOAT_01b4d478 / g_FLOAT_005ae6f8 + g_FLOAT_01b4d47c;
-      if ((float)(g_INT_005ae6f4 * 2) < g_FLOAT_01b4d47c) {
-        g_FLOAT_01b4d47c = 0.0;
+  if (g_AnimationTimerValue != g_DashAnimationLastFrame) {
+    g_DashAnimationAccumulator =
+         (float)g_GlobalDeltaTimeInt * (float)1.52587890625e-05 + g_DashAnimationAccumulator;
+    g_DashAnimationLastFrame = g_AnimationTimerValue;
+    if (g_DashAnimationThreshold < g_DashAnimationAccumulator) {
+      g_DashAnimationOffset =
+           g_DashAnimationAccumulator / g_DashAnimationThreshold + g_DashAnimationOffset;
+      if ((float)(g_DashLength * 2) < g_DashAnimationOffset) {
+        g_DashAnimationOffset = 0.0;
       }
-      g_FLOAT_01b4d478 = 0.0;
+      g_DashAnimationAccumulator = 0.0;
     }
   }
-  dVar5 = round((double)g_FLOAT_01b4d47c);
+  dVar5 = round((double)g_DashAnimationOffset);
   uStack_1c = (uint)ROUND(dVar5);
   iStack_2c = 1;
   iVar4 = x1 - this_ptr->x;
@@ -63,7 +65,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(CDraw
     if (-1 < iVar3) {
       do {
         if ((int)((uStack_1c ^ (int)uStack_1c >> 0x1f) - ((int)uStack_1c >> 0x1f)) %
-            (g_INT_005ae6f4 * 2) < g_INT_005ae6f4) {
+            (g_DashLength * 2) < g_DashLength) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(unaff_retaddr,x,y);
         }
         if (0 < iVar2) {
@@ -83,7 +85,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(CDraw
     if (-1 < iVar1) {
       do {
         if ((int)((uStack_1c ^ (int)uStack_1c >> 0x1f) - ((int)uStack_1c >> 0x1f)) %
-            (g_INT_005ae6f4 * 2) < g_INT_005ae6f4) {
+            (g_DashLength * 2) < g_DashLength) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(unaff_retaddr,x,y);
         }
         if (0 < iVar2) {

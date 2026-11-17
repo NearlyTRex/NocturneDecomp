@@ -23,10 +23,10 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004fd150(SMpegFrame *frame)
   if (pSVar1->layer == 2) {
     pSVar3 = frame->header;
     iVar2 = pSVar3->mpeg_version;
-    iVar4 = g_INT_ARRAY_ARRAY_ARRAY_006011f8[iVar2 + -1][pSVar3->layer + 2][pSVar3->bitrate_index] /
+    iVar4 = g_MpegBitrateTable[iVar2 + -1][pSVar3->layer + 2][pSVar3->bitrate_index] /
             frame->channel_count;
-    dVar6 = round
-                      (g_DOUBLE_ARRAY_ARRAY_006011b8[iVar2][pSVar3->sampling_rate_index]);
+    dVar6 = round(g_MpegSampleRateTable[iVar2][pSVar3->sampling_rate_index])
+    ;
     iVar5 = (int)ROUND(dVar6);
     if (iVar2 == 1) {
       if (((iVar5 == 0x30) && (0x37 < iVar4)) || ((0x37 < iVar4 && (iVar4 < 0x51)))) {

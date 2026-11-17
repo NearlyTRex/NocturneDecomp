@@ -37,7 +37,7 @@ extern CCodec_vtable g_CLZWCompressVTable;
 extern CCodec_vtable g_CLZWDecompressVTable;
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_0059cf1c;
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;

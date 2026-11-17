@@ -17,7 +17,7 @@
 ;   int g_INT_00610d40 = 0x1
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     CMP EAX,dword ptr [0x01c4f008]      ; 00439679 | g_INT_01c4f008
     JL 0x00439700                       ; 0043967f
         ;   XREF to: 00439700 (CONDITIONAL_JUMP)  ; LAB_00439700
-    MOV ECX,dword ptr [0x01c4f010]      ; 00439685 | g_INT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 00439685 | g_ClipRight
         ;   Label: LAB_00439685
     CMP ESI,ECX                         ; 0043968b
     JLE 0x00439698                      ; 0043968d

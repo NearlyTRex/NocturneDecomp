@@ -15,7 +15,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [g_ULONG_01c38b5c]
+        movd MM5,dword ptr [g_SolidColorMode]
         punpcklbw MM5,MM7
         psllw MM5,0x6
         mov EAX,dword ptr [EBX]
@@ -118,7 +118,7 @@ __asm {
         mov EAX,dword ptr [ESI + 0x9a0]
         mov EAX,dword ptr [ESI + 0x9c0]
         mov EAX,dword ptr [ESI + 0x9e0]
-        mov EAX,[g_UINT_ARRAY_00b6639c]
+        mov EAX,[g_LightmapTexturePalette]
         mov EAX,[0x00b663bc]
         mov EAX,[0x00b663dc]
         mov EAX,[0x00b663fc]
@@ -150,7 +150,7 @@ __asm {
         mov EAX,[0x00b6673c]
         mov EAX,[0x00b6675c]
         mov EAX,[0x00b6677c]
-        mov EAX,[g_USHORT_ARRAY_00612880]
+        mov EAX,[g_LightmapData]
         mov EAX,[0x006128a0]
         mov EAX,[0x006128c0]
         mov EAX,[0x006128e0]
@@ -217,21 +217,21 @@ __asm {
     LAB_00470d19:
         movzx EDX,byte ptr [EBX]
         movd MM0,dword ptr [ESI]
-        movd MM2,dword ptr [g_UINT_ARRAY_00b6639c + EDX*0x4]
+        movd MM2,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movzx EAX,byte ptr [EBP]
         punpcklbw MM0,MM7
         shr EDX,0x1
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [g_USHORT_ARRAY_00612880 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
         pxor MM2,qword ptr [0x00613078]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
-        paddw MM0,qword ptr [g_QWORD_00611308]
+        paddw MM0,qword ptr [g_LightmapBlendBias1]
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0
@@ -241,21 +241,21 @@ __asm {
         add EDI,0x4
         movzx EDX,byte ptr [EBX]
         movd MM0,dword ptr [ESI]
-        movd MM2,dword ptr [g_UINT_ARRAY_00b6639c + EDX*0x4]
+        movd MM2,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movzx EAX,byte ptr [EBP]
         punpcklbw MM0,MM7
         shr EDX,0x1
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [g_USHORT_ARRAY_00612880 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
         pxor MM2,qword ptr [0x00613078]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
-        paddw MM0,qword ptr [g_QWORD_00611310]
+        paddw MM0,qword ptr [g_LightmapBlendBias2]
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0

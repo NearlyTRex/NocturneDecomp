@@ -22,8 +22,8 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   int g_INT_0060936c = 0x1
-;   int g_INT_01c35e50
+;   int g_TextWrapEnabled = 0x1
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;
 ; Called Functions:
@@ -41,13 +41,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00401fe3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401fe7
     MOV EDX,dword ptr [ESP + 0x18]      ; 00401feb
-    CMP dword ptr [0x0060936c],0x0      ; 00401fef | g_INT_0060936c
+    CMP dword ptr [0x0060936c],0x0      ; 00401fef | g_TextWrapEnabled
     JZ 0x00402017                       ; 00401ff6
         ;   XREF to: 00402017 (CONDITIONAL_JUMP)  ; LAB_00402017
     PUSH EBX                            ; 00401ff8
     MOV EBP,dword ptr [0x01c35e54]      ; 00401ff9 | g_INT_01c35e54
     PUSH EBP                            ; 00401fff
-    MOV EBX,dword ptr [0x01c35e50]      ; 00402000 | g_INT_01c35e50
+    MOV EBX,dword ptr [0x01c35e50]      ; 00402000 | g_ClipRight
     PUSH EBX                            ; 00402006
     PUSH EDX                            ; 00402007
     PUSH ECX                            ; 00402008
@@ -63,7 +63,7 @@ section .text
     MOV ESI,dword ptr [0x01c35e54]      ; 00402017 | g_INT_01c35e54
         ;   Label: LAB_00402017
     PUSH ESI                            ; 0040201d
-    MOV EDI,dword ptr [0x01c35e50]      ; 0040201e | g_INT_01c35e50
+    MOV EDI,dword ptr [0x01c35e50]      ; 0040201e | g_ClipRight
     PUSH EDI                            ; 00402024
     PUSH EDX                            ; 00402025
     PUSH ECX                            ; 00402026

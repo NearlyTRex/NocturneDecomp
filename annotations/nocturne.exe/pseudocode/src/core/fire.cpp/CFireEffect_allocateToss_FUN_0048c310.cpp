@@ -11,13 +11,13 @@ int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(CFireEffect *thi
 {
   int iVar1;
   
-  iVar1 = g_INT_01c5d820;
+  iVar1 = g_TossAllocIndex;
   core_fire_cpp_CToss_create_FUN_004873b0
-            (g_TossPool + g_INT_01c5d820,toss_type,position,orientation,velocity,fuse_time);
-  g_INT_01c5d820 = g_INT_01c5d820 + 1;
-  if (g_INT_01c5d820 < 0x14) {
+            (g_TossPool + g_TossAllocIndex,toss_type,position,orientation,velocity,fuse_time);
+  g_TossAllocIndex = g_TossAllocIndex + 1;
+  if (g_TossAllocIndex < 0x14) {
     return iVar1;
   }
-  g_INT_01c5d820 = 0;
+  g_TossAllocIndex = 0;
   return iVar1;
 }

@@ -17,7 +17,7 @@ void __watcallRegister crt_startup_cpp_InitializeWinAppRuntime_FUN_00567458(void
   
   unused = GetModuleHandleA((LPCSTR)0x0);
   initialize_runtime((HMODULE)0x0,in_stack_00000008,(int)unused);
-  pHeapBound = &g_UINT_PTR_005c1cec;
+  pHeapBound = &g_HeapBound;
   pStackBound = (ThreadData *)(*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
   __GetStackLimits(pStackBound,(uint *)pHeapBound);
   installExceptionHandler(in_stack_00000004);

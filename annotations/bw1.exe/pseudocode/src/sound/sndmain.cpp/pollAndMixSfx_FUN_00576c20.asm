@@ -32,15 +32,15 @@
 ;   TerminatedCString s_nextMixingBuffer_shouldn_005f31cb
 ;   TerminatedCString s_sound_sndmain_cpp_005f45ac
 ;   TerminatedCString s_pollSfx_must_be_locked_005f45c1
-;   int g_INT_006232e8 = 0x10
-;   int g_INT_006232ec = 0x2
-;   int g_INT_006232f0 = 0x5622
+;   int g_AudioBitsPerSample = 0x10
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
-;   int g_INT_02c78cec
-;   int g_INT_02c80660
-;   int g_INT_02c80664
+;   int g_SfxLastSlot
+;   int g_MixBufferReadIndex
+;   int g_MixBufferWriteIndex
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@ section .text
     PUSH EDI                            ; 00576c22
     PUSH EBP                            ; 00576c23
     SUB ESP,0x5c                        ; 00576c24
-    CMP dword ptr [0x02c807ec],0x0      ; 00576c27 | g_INT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00576c27 | g_SoundLockCount
     JLE 0x00576edb                      ; 00576c2e
         ;   XREF to: 00576edb (CONDITIONAL_JUMP)  ; LAB_00576edb
     MOV ESI,dword ptr [ESP + 0x78]      ; 00576c34
@@ -82,15 +82,15 @@ section .text
         ;   XREF to: 00576c45 (CONDITIONAL_JUMP)  ; LAB_00576c45
     MOV EAX,dword ptr [ESP + 0x74]      ; 00576c59
         ;   Label: LAB_00576c59
-    CMP EAX,dword ptr [0x006232e8]      ; 00576c5d | g_INT_006232e8
+    CMP EAX,dword ptr [0x006232e8]      ; 00576c5d | g_AudioBitsPerSample
     JNZ 0x00576f2b                      ; 00576c63
         ;   XREF to: 00576f2b (CONDITIONAL_JUMP)  ; LAB_00576f2b
     MOV EAX,dword ptr [ESP + 0x78]      ; 00576c69
-    CMP EAX,dword ptr [0x006232ec]      ; 00576c6d | g_INT_006232ec
+    CMP EAX,dword ptr [0x006232ec]      ; 00576c6d | g_AudioChannelCount
     JNZ 0x00576f2b                      ; 00576c73
         ;   XREF to: 00576f2b (CONDITIONAL_JUMP)  ; LAB_00576f2b
     MOV EAX,dword ptr [ESP + 0x7c]      ; 00576c79
-    CMP EAX,dword ptr [0x006232f0]      ; 00576c7d | g_INT_006232f0
+    CMP EAX,dword ptr [0x006232f0]      ; 00576c7d | g_AudioSampleRate
     JNZ 0x00576f2b                      ; 00576c83
         ;   XREF to: 00576f2b (CONDITIONAL_JUMP)  ; LAB_00576f2b
     CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0 ; 00576c89
@@ -117,19 +117,19 @@ section .text
     MOV dword ptr [ESP + 0x4c],EAX      ; 00576cb7
     MOV EAX,0x2c745ec                   ; 00576cbb
     ADD EAX,0x4700                      ; 00576cc0
-    MOV dword ptr [ESP + 0x54],EAX      ; 00576cc5 | g_INT_02c78cec
-    MOV dword ptr [ESP + 0x50],EAX      ; 00576cc9 | g_INT_02c78cec
+    MOV dword ptr [ESP + 0x54],EAX      ; 00576cc5 | g_SfxLastSlot
+    MOV dword ptr [ESP + 0x50],EAX      ; 00576cc9 | g_SfxLastSlot
     CMP dword ptr [ESP + 0x80],0x0      ; 00576ccd
         ;   Label: LAB_00576ccd
     JLE 0x00576f2b                      ; 00576cd5
         ;   XREF to: 00576f2b (CONDITIONAL_JUMP)  ; LAB_00576f2b
-    CMP dword ptr [0x02c80660],0x1      ; 00576cdb | g_INT_02c80660
+    CMP dword ptr [0x02c80660],0x1      ; 00576cdb | g_MixBufferReadIndex
     JGE 0x00576e43                      ; 00576ce2
         ;   XREF to: 00576e43 (CONDITIONAL_JUMP)  ; LAB_00576e43
-    CMP dword ptr [0x02c807ec],0x0      ; 00576ce8 | g_INT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00576ce8 | g_SoundLockCount
     JLE 0x00576f03                      ; 00576cef
         ;   XREF to: 00576f03 (CONDITIONAL_JUMP)  ; LAB_00576f03
-    CMP dword ptr [0x02c80660],0x0      ; 00576cf5 | g_INT_02c80660
+    CMP dword ptr [0x02c80660],0x0      ; 00576cf5 | g_MixBufferReadIndex
         ;   Label: LAB_00576cf5
     JLE 0x00576d21                      ; 00576cfc
         ;   XREF to: 00576d21 (CONDITIONAL_JUMP)  ; LAB_00576d21
@@ -141,20 +141,20 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576d19
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576d1e
-    MOV ESI,dword ptr [0x02c80668]      ; 00576d21 | g_INT_02c80668
+    MOV ESI,dword ptr [0x02c80668]      ; 00576d21 | g_MixBufferSize
         ;   Label: LAB_00576d21
-    MOV EBP,dword ptr [0x006232ec]      ; 00576d27 | g_INT_006232ec
+    MOV EBP,dword ptr [0x006232ec]      ; 00576d27 | g_AudioChannelCount
     XOR EDI,EDI                         ; 00576d2d
     SHL ESI,0x2                         ; 00576d2f
     TEST EBP,EBP                        ; 00576d32
     JLE 0x00576d91                      ; 00576d34
         ;   XREF to: 00576d91 (CONDITIONAL_JUMP)  ; LAB_00576d91
     XOR EBX,EBX                         ; 00576d36
-    MOV EAX,[0x02c8066c]                ; 00576d38 | g_INT_02c8066c
+    MOV EAX,[0x02c8066c]                ; 00576d38 | g_NumMixBuffers
         ;   Label: LAB_00576d38
     DEC EAX                             ; 00576d3d
     IMUL EAX,ESI                        ; 00576d3e
-    MOV EDX,dword ptr [0x02c80668]      ; 00576d41 | g_INT_02c80668
+    MOV EDX,dword ptr [0x02c80668]      ; 00576d41 | g_MixBufferSize
     SHL EDX,0x2                         ; 00576d47
     PUSH EAX                            ; 00576d4a
     MOV EAX,dword ptr [EBX + 0x2c80698] ; 00576d4b
@@ -163,8 +163,8 @@ section .text
     PUSH EAX                            ; 00576d54
     CALL crt_string.c_memmove_FUN_005c25d0 ; 00576d55
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
-    MOV EAX,[0x02c8066c]                ; 00576d5a | g_INT_02c8066c
-    MOV EDX,dword ptr [0x02c80668]      ; 00576d5f | g_INT_02c80668
+    MOV EAX,[0x02c8066c]                ; 00576d5a | g_NumMixBuffers
+    MOV EDX,dword ptr [0x02c80668]      ; 00576d5f | g_MixBufferSize
     DEC EAX                             ; 00576d65
     IMUL EAX,EDX                        ; 00576d66
     ADD ESP,0xc                         ; 00576d69
@@ -178,17 +178,17 @@ section .text
     INC EDI                             ; 00576d7e
     CALL crt_memory.c_memset_FUN_005bfb70 ; 00576d7f
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
-    MOV ECX,dword ptr [0x006232ec]      ; 00576d84 | g_INT_006232ec
+    MOV ECX,dword ptr [0x006232ec]      ; 00576d84 | g_AudioChannelCount
     ADD ESP,0xc                         ; 00576d8a
     CMP EDI,ECX                         ; 00576d8d
     JL 0x00576d38                       ; 00576d8f
         ;   XREF to: 00576d38 (CONDITIONAL_JUMP)  ; LAB_00576d38
-    MOV EAX,[0x02c80668]                ; 00576d91 | g_INT_02c80668
+    MOV EAX,[0x02c80668]                ; 00576d91 | g_MixBufferSize
         ;   Label: LAB_00576d91
     MOV dword ptr [ESP + 0x20],EAX      ; 00576d96
-    MOV EAX,[0x006232ec]                ; 00576d9a | g_INT_006232ec
+    MOV EAX,[0x006232ec]                ; 00576d9a | g_AudioChannelCount
     MOV dword ptr [ESP + 0x24],EAX      ; 00576d9f
-    MOV EAX,[0x006232f0]                ; 00576da3 | g_INT_006232f0
+    MOV EAX,[0x006232f0]                ; 00576da3 | g_AudioSampleRate
     MOV EBX,dword ptr [ESP + 0x24]      ; 00576da8
     MOV dword ptr [ESP + 0x28],EAX      ; 00576dac
     TEST EBX,EBX                        ; 00576db0
@@ -203,9 +203,9 @@ section .text
     CMP EAX,EBX                         ; 00576dc6
     JL 0x00576db9                       ; 00576dc8
         ;   XREF to: 00576db9 (CONDITIONAL_JUMP)  ; LAB_00576db9
-    FILD dword ptr [0x02c80668]         ; 00576dca | g_INT_02c80668
+    FILD dword ptr [0x02c80668]         ; 00576dca | g_MixBufferSize
         ;   Label: LAB_00576dca
-    FILD dword ptr [0x006232f0]         ; 00576dd0 | g_INT_006232f0
+    FILD dword ptr [0x006232f0]         ; 00576dd0 | g_AudioSampleRate
     FDIVP                               ; 00576dd6
     MOV EBX,0x2c745ec                   ; 00576dd8
     MOV ESI,dword ptr [ESP + 0x50]      ; 00576ddd
@@ -235,16 +235,16 @@ section .text
     CMP EBX,dword ptr [ESP + 0x54]      ; 00576e20
     JNZ 0x00576e01                      ; 00576e24
         ;   XREF to: 00576e01 (CONDITIONAL_JUMP)  ; LAB_00576e01
-    MOV EAX,[0x02c80668]                ; 00576e26 | g_INT_02c80668
-    MOV [0x02c80660],EAX                ; 00576e2b | g_INT_02c80660
-    MOV EAX,[0x02c80708]                ; 00576e30 | g_INT_02c80708
+    MOV EAX,[0x02c80668]                ; 00576e26 | g_MixBufferSize
+    MOV [0x02c80660],EAX                ; 00576e2b | g_MixBufferReadIndex
+    MOV EAX,[0x02c80708]                ; 00576e30 | g_MixBufferCount
     XOR EBP,EBP                         ; 00576e35
     INC EAX                             ; 00576e37
-    MOV dword ptr [0x02c80664],EBP      ; 00576e38 | g_INT_02c80664
-    MOV [0x02c80708],EAX                ; 00576e3e | g_INT_02c80708
+    MOV dword ptr [0x02c80664],EBP      ; 00576e38 | g_MixBufferWriteIndex
+    MOV [0x02c80708],EAX                ; 00576e3e | g_MixBufferCount
     MOV EDX,dword ptr [ESP + 0x80]      ; 00576e43
         ;   Label: LAB_00576e43
-    MOV ESI,dword ptr [0x02c80660]      ; 00576e4a | g_INT_02c80660
+    MOV ESI,dword ptr [0x02c80660]      ; 00576e4a | g_MixBufferReadIndex
     CMP ESI,EDX                         ; 00576e50
     JLE 0x00576e56                      ; 00576e52
         ;   XREF to: 00576e56 (CONDITIONAL_JUMP)  ; LAB_00576e56
@@ -263,7 +263,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x78]      ; 00576e75
     PUSH ESI                            ; 00576e79
     MOV ECX,dword ptr [ESP + EBX*0x1 + 0x34] ; 00576e7a
-    MOV EAX,[0x02c80664]                ; 00576e7e | g_INT_02c80664
+    MOV EAX,[0x02c80664]                ; 00576e7e | g_MixBufferWriteIndex
     PUSH EDX                            ; 00576e83
     SHL EAX,0x2                         ; 00576e84
     MOV EDX,dword ptr [EBX + 0x2c80698] ; 00576e87
@@ -282,13 +282,13 @@ section .text
         ;   XREF to: 00576e6d (CONDITIONAL_JUMP)  ; LAB_00576e6d
     MOV EBX,dword ptr [ESP + 0x80]      ; 00576eaa
         ;   Label: LAB_00576eaa
-    MOV EDI,dword ptr [0x02c80660]      ; 00576eb1 | g_INT_02c80660
-    MOV EBP,dword ptr [0x02c80664]      ; 00576eb7 | g_INT_02c80664
+    MOV EDI,dword ptr [0x02c80660]      ; 00576eb1 | g_MixBufferReadIndex
+    MOV EBP,dword ptr [0x02c80664]      ; 00576eb7 | g_MixBufferWriteIndex
     SUB EDI,ESI                         ; 00576ebd
     ADD EBP,ESI                         ; 00576ebf
     SUB EBX,ESI                         ; 00576ec1
-    MOV dword ptr [0x02c80660],EDI      ; 00576ec3 | g_INT_02c80660
-    MOV dword ptr [0x02c80664],EBP      ; 00576ec9 | g_INT_02c80664
+    MOV dword ptr [0x02c80660],EDI      ; 00576ec3 | g_MixBufferReadIndex
+    MOV dword ptr [0x02c80664],EBP      ; 00576ec9 | g_MixBufferWriteIndex
     MOV dword ptr [ESP + 0x80],EBX      ; 00576ecf
     JMP 0x00576ccd                      ; 00576ed6
         ;   XREF to: 00576ccd (UNCONDITIONAL_JUMP)  ; LAB_00576ccd

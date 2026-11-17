@@ -292,7 +292,7 @@ section .text
     ADD ESP,0x8                         ; 0048d8f9
     PUSH 0x0                            ; 0048d8fc
     PUSH EDI                            ; 0048d8fe
-    MOV EAX,[0x007f7370]                ; 0048d8ff | g_CDemonCamera_PTR_007f7370
+    MOV EAX,[0x007f7370]                ; 0048d8ff | g_CurrentSceneCamera
     PUSH EAX                            ; 0048d904
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 0048d905
         ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)

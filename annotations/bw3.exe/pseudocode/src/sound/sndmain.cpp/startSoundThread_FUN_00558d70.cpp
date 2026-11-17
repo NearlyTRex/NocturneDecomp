@@ -18,21 +18,21 @@ int __cdecl sound_sndmain_cpp_startSoundThread_FUN_00558d70(double latency_secon
     if (latency_seconds._0_4_ < (float)0.002) {
       g_FLOAT_02cf340c = 0.002;
     }
-    g_INT_02cf3410 = 0;
-    g_INT_02cf3414 = 0;
+    g_AudioThreadRunning = 0;
+    g_AudioThreadShutdownFlag = 0;
     hThread = wincore_winrun_cpp_createThread_FUN_005819b0
                         (sound_sndmain_cpp_audioThreadProc_FUN_00558d20,(LPVOID)0x0);
     if ((hThread != (HANDLE)0x0) &&
        (iVar1 = wincore_winrun_cpp_setThreadPriority_FUN_005819e0(hThread,3), iVar1 != 0)) {
       iVar1 = 0;
       do {
-        if (g_INT_02cf3410 != 0) {
-          return g_INT_02cf3410;
+        if (g_AudioThreadRunning != 0) {
+          return g_AudioThreadRunning;
         }
         iVar1 = iVar1 + 1;
         wincore_winrun_cpp_sleep_FUN_00581a40(0.01);
       } while (iVar1 < 100);
-      return g_INT_02cf3410;
+      return g_AudioThreadRunning;
     }
   }
   return 0;

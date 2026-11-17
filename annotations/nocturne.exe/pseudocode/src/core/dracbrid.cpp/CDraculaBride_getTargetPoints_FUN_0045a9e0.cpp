@@ -18,21 +18,21 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(CDracul
     return 0;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_24,g_INT_ARRAY_01b4d260[0]);
+                     (&(this_ptr->base).base.model,&local_24,g_DraculaBrideIndices[0]);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
     out_points_array->z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_18,g_INT_ARRAY_01b4d260[5]);
+                     (&(this_ptr->base).base.model,&local_18,g_DraculaBrideIndices[5]);
   if (out_points_array + 1 != pCVar1) {
     out_points_array[1].x = pCVar1->x;
     out_points_array[1].y = pCVar1->y;
     out_points_array[1].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_30,g_INT_ARRAY_01b4d260[7]);
+                     (&(this_ptr->base).base.model,&local_30,g_DraculaBrideIndices[7]);
   if (out_points_array + 2 != pCVar1) {
     out_points_array[2].x = pCVar1->x;
     out_points_array[2].y = pCVar1->y;

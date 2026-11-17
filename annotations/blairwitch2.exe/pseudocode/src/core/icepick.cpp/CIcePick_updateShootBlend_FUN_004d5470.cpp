@@ -44,7 +44,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr_01,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,g_INT_ARRAY_01cee0b4[0x10],
+              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,g_IcePickIndices[0x10],
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     this_ptr->aim_pitch =
          (this_ptr->base).player_input.look_up_down_speed * 3.141593f *
@@ -64,7 +64,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
     puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
-    iVar5 = g_INT_ARRAY_01cee0b4[0x10];
+    iVar5 = g_IcePickIndices[0x10];
     *puVar3 = *puVar2;
     puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40

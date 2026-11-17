@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8731,
-    "complexity_score": 4594,
+    "complexity_score": 4611,
     "cross_reference_count": 4,
     "function_call_count": 95,
     "global_count": 389,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 3804,
+    "pseudocode_lines": 3821,
     "suspect_count": 74,
     "suspect_types": [
       "pointer_cast",
@@ -21,7 +21,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 12535
+    "total_lines": 12552
   },
   "cross_references": [
     {
@@ -2546,7 +2546,7 @@
     },
     {
       "addr": "00604e00",
-      "name": "g_CDemonActor_PTR_00604e00",
+      "name": "g_ScriptSentinelActor",
       "type": "CDemonActor*",
       "value": "ffffffff"
     },
@@ -2564,7 +2564,7 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "g_CEventList_PTR_0061b4d0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c51d80"
     },
@@ -2612,7 +2612,7 @@
     },
     {
       "addr": "00626114",
-      "name": "g_UCHAR_ARRAY_00626114",
+      "name": "g_CharacterClassificationTable",
       "type": "uchar[257]",
       "value": null
     },
@@ -2822,7 +2822,7 @@
     },
     {
       "addr": "01e818b4",
-      "name": "g_INT_01e818b4",
+      "name": "g_ScriptInputFlag",
       "type": "int",
       "value": null
     },
@@ -4624,7 +4624,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1077,
+      "line": 1098,
       "match": "(int *)((int)local_39ac",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_39ac + iVar9) != 0) {",
@@ -4632,7 +4632,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1870,
+      "line": 1888,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);",
@@ -4640,7 +4640,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 2048,
+      "line": 2066,
       "match": "(code **)((int)g_CGamePtr",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CGamePtr->vtable + 4))",
@@ -4648,7 +4648,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 2048,
+      "line": 2066,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CGamePtr->vtable + 4))",
@@ -4656,7 +4656,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3450,
+      "line": 3467,
       "match": "DAT_005efb91",
       "severity": "mild",
       "text": "pcVar15 = &DAT_005efb91;",
@@ -4680,7 +4680,7 @@
     },
     {
       "description": "Pointer value `&local_1a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1032,
+      "line": 1053,
       "match": "(int)&local_1a8",
       "severity": "moderate",
       "text": "((int)&local_1a8 + (uint)bVar17 * -8 + 4) =",
@@ -4688,7 +4688,7 @@
     },
     {
       "description": "Pointer value `&local_1c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1034,
+      "line": 1055,
       "match": "(int)&local_1c0",
       "severity": "moderate",
       "text": "((int)&local_1c0 + (uint)bVar17 * -8 + 4);",
@@ -4696,7 +4696,7 @@
     },
     {
       "description": "Pointer value `&local_1a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1036,
+      "line": 1057,
       "match": "(int)&local_1a8",
       "severity": "moderate",
       "text": "((int)&local_1a8 +",
@@ -4704,7 +4704,7 @@
     },
     {
       "description": "Pointer value `&local_1c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1039,
+      "line": 1060,
       "match": "(int)&local_1c0",
       "severity": "moderate",
       "text": "((int)&local_1c0 +",
@@ -4712,7 +4712,7 @@
     },
     {
       "description": "Pointer value `&local_1b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1047,
+      "line": 1068,
       "match": "(int)&local_1b4",
       "severity": "moderate",
       "text": "((int)&local_1b4 + (uint)bVar17 * -8 + 4) =",
@@ -4720,7 +4720,7 @@
     },
     {
       "description": "Pointer value `&local_1d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1049,
+      "line": 1070,
       "match": "(int)&local_1d8",
       "severity": "moderate",
       "text": "((int)&local_1d8 + (uint)bVar17 * -8 + 4);",
@@ -4728,7 +4728,7 @@
     },
     {
       "description": "Pointer value `&local_1b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1051,
+      "line": 1072,
       "match": "(int)&local_1b4",
       "severity": "moderate",
       "text": "((int)&local_1b4 +",
@@ -4736,7 +4736,7 @@
     },
     {
       "description": "Pointer value `&local_1d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1054,
+      "line": 1075,
       "match": "(int)&local_1d8",
       "severity": "moderate",
       "text": "((int)&local_1d8 +",
@@ -4744,7 +4744,7 @@
     },
     {
       "description": "Pointer value `&local_190` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3333,
+      "line": 3350,
       "match": "(int)&local_190",
       "severity": "moderate",
       "text": "((int)&local_190 + (uint)bVar17 * -8 + 4) =",
@@ -4752,7 +4752,7 @@
     },
     {
       "description": "Pointer value `&local_1e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3335,
+      "line": 3352,
       "match": "(int)&local_1e4",
       "severity": "moderate",
       "text": "((int)&local_1e4 + (uint)bVar17 * -8 + 4);",
@@ -4760,7 +4760,7 @@
     },
     {
       "description": "Pointer value `&local_190` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3337,
+      "line": 3354,
       "match": "(int)&local_190",
       "severity": "moderate",
       "text": "((int)&local_190 +",
@@ -4768,7 +4768,7 @@
     },
     {
       "description": "Pointer value `&local_1e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3340,
+      "line": 3357,
       "match": "(int)&local_1e4",
       "severity": "moderate",
       "text": "((int)&local_1e4 +",
@@ -4776,7 +4776,7 @@
     },
     {
       "description": "Pointer value `&local_184` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3348,
+      "line": 3365,
       "match": "(int)&local_184",
       "severity": "moderate",
       "text": "*(float *)((int)&local_184 +",
@@ -4784,7 +4784,7 @@
     },
     {
       "description": "Pointer value `&local_184` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3352,
+      "line": 3369,
       "match": "(int)&local_184",
       "severity": "moderate",
       "text": "*(float *)((int)&local_184 +",
@@ -4800,7 +4800,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 506,
+      "line": 523,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4808,7 +4808,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 638,
+      "line": 659,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4816,7 +4816,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 696,
+      "line": 717,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4824,7 +4824,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 757,
+      "line": 778,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4832,7 +4832,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 811,
+      "line": 832,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4840,7 +4840,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 873,
+      "line": 894,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4848,7 +4848,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 924,
+      "line": 945,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4856,7 +4856,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 937,
+      "line": 958,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4864,7 +4864,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1174,
+      "line": 1195,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4872,7 +4872,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1226,
+      "line": 1247,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4880,7 +4880,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1812,
+      "line": 1830,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4888,7 +4888,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2225,
+      "line": 2243,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4896,7 +4896,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2375,
+      "line": 2393,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4904,7 +4904,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2510,
+      "line": 2528,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4912,7 +4912,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2821,
+      "line": 2838,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4920,7 +4920,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2878,
+      "line": 2895,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4928,7 +4928,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3095,
+      "line": 3112,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4936,7 +4936,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3178,
+      "line": 3195,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4944,7 +4944,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3375,
+      "line": 3392,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4952,7 +4952,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3425,
+      "line": 3442,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4960,7 +4960,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3463,
+      "line": 3480,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4968,7 +4968,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3477,
+      "line": 3494,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4976,7 +4976,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3525,
+      "line": 3542,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4984,7 +4984,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3551,
+      "line": 3568,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -4992,7 +4992,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 660,
+      "line": 681,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",
@@ -5000,7 +5000,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1032,
+      "line": 1053,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1a8 + (uint)bVar17 * -8 + 4) =",
@@ -5008,7 +5008,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1034,
+      "line": 1055,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1c0 + (uint)bVar17 * -8 + 4);",
@@ -5016,7 +5016,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1036,
+      "line": 1057,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1a8 +",
@@ -5024,7 +5024,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1039,
+      "line": 1060,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1c0 +",
@@ -5032,7 +5032,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1047,
+      "line": 1068,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1b4 + (uint)bVar17 * -8 + 4) =",
@@ -5040,7 +5040,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1049,
+      "line": 1070,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1d8 + (uint)bVar17 * -8 + 4);",
@@ -5048,7 +5048,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1051,
+      "line": 1072,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1b4 +",
@@ -5056,7 +5056,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1054,
+      "line": 1075,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1d8 +",
@@ -5064,7 +5064,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3333,
+      "line": 3350,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_190 + (uint)bVar17 * -8 + 4) =",
@@ -5072,7 +5072,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3335,
+      "line": 3352,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1e4 + (uint)bVar17 * -8 + 4);",
@@ -5080,7 +5080,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3337,
+      "line": 3354,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_190 +",
@@ -5088,7 +5088,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3340,
+      "line": 3357,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&local_1e4 +",
@@ -5096,7 +5096,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3348,
+      "line": 3365,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_184 +",
@@ -5104,7 +5104,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3352,
+      "line": 3369,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_184 +",
@@ -5112,7 +5112,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 748,
+      "line": 769,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -5120,7 +5120,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1664,
+      "line": 1684,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -5128,7 +5128,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 3454,
+      "line": 3471,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -5136,7 +5136,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 748,
+      "line": 769,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -5144,7 +5144,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 3454,
+      "line": 3471,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -5152,7 +5152,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 3439,
+      "line": 3456,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

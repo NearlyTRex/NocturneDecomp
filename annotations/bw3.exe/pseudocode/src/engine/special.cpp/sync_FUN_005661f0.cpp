@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_sync_FUN_005661f0(void)
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf604c)();
+  iVar1 = (*(code *)g_APIDLL_sync)();
   return iVar1;
 }

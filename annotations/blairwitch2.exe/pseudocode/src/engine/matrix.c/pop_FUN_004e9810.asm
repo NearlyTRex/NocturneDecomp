@@ -11,12 +11,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005dc7e6
 ;   TerminatedCString s_Matrix_unbalance2_005dc7f9
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b70
-;   int g_INT_01c38b74
-;   int g_INT_01c38b90
-;   int g_INT_01c38b94
-;   int g_INT_01c38b98
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;   int g_INT_01c38b9c
 ;   int g_INT_01c38ba0
 ;   int g_INT_01c38ba4
@@ -33,14 +33,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01d05014]      ; 004e9810 | g_INT_01d05014
+    MOV EDX,dword ptr [0x01d05014]      ; 004e9810 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_pop_FUN_004e9810
     DEC EDX                             ; 004e9816
-    MOV dword ptr [0x01d05014],EDX      ; 004e9817 | g_INT_01d05014
+    MOV dword ptr [0x01d05014],EDX      ; 004e9817 | g_MatrixStackIndex
     TEST EDX,EDX                        ; 004e981d
     JL 0x004e98ed                       ; 004e981f
         ;   XREF to: 004e98ed (CONDITIONAL_JUMP)  ; LAB_004e98ed
-    MOV EAX,[0x01d05014]                ; 004e9825 | g_INT_01d05014
+    MOV EAX,[0x01d05014]                ; 004e9825 | g_MatrixStackIndex
         ;   Label: LAB_004e9825
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05018] ; 004e982a
     MOV dword ptr [0x01c38b9c],EDX      ; 004e9831 | g_INT_01c38b9c
@@ -61,17 +61,17 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05158] ; 004e9892
     MOV dword ptr [0x01c38bbc],EDX      ; 004e9899 | g_INT_01c38bbc
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05180] ; 004e989f
-    MOV dword ptr [0x01c38b6c],EDX      ; 004e98a6 | g_INT_01c38b6c
+    MOV dword ptr [0x01c38b6c],EDX      ; 004e98a6 | g_RelativeX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d051a8] ; 004e98ac
-    MOV dword ptr [0x01c38b70],EDX      ; 004e98b3 | g_INT_01c38b70
+    MOV dword ptr [0x01c38b70],EDX      ; 004e98b3 | g_RelativeY
     MOV EDX,dword ptr [EAX*0x4 + 0x1d051d0] ; 004e98b9
-    MOV dword ptr [0x01c38b74],EDX      ; 004e98c0 | g_INT_01c38b74
+    MOV dword ptr [0x01c38b74],EDX      ; 004e98c0 | g_RelativeZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1d051f8] ; 004e98c6
-    MOV dword ptr [0x01c38b90],EDX      ; 004e98cd | g_INT_01c38b90
+    MOV dword ptr [0x01c38b90],EDX      ; 004e98cd | g_LightDirectionX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d05220] ; 004e98d3
     MOV EAX,dword ptr [EAX*0x4 + 0x1d05248] ; 004e98da
-    MOV dword ptr [0x01c38b94],EDX      ; 004e98e1 | g_INT_01c38b94
-    MOV [0x01c38b98],EAX                ; 004e98e7 | g_INT_01c38b98
+    MOV dword ptr [0x01c38b94],EDX      ; 004e98e1 | g_LightDirectionY
+    MOV [0x01c38b98],EAX                ; 004e98e7 | g_LightDirectionZ
     RET                                 ; 004e98ec
     PUSH ESI                            ; 004e98ed
         ;   Label: LAB_004e98ed

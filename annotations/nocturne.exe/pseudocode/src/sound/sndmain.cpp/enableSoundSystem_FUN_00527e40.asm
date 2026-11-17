@@ -10,11 +10,11 @@
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de53
 ;
 ; Referenced Globals:
-;   int g_INT_005bea64 = 0x10
-;   int g_INT_005bea68 = 0x2
-;   int g_INT_005bea6c = 0x5622
-;   double g_DOUBLE_005bea80 = 1
-;   undefined4 g_DOUBLE_005bea80+4
+;   int g_AudioBitsPerSample = 0x10
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
+;   double g_Cached3DDistanceFactor = 1
+;   undefined4 g_Cached3DDistanceFactor+4
 ;   double g_DOUBLE_02dc78e0
 ;   undefined4 g_DOUBLE_02dc78e0+4
 ;   double g_DOUBLE_02dc78e8
@@ -85,11 +85,11 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00527e78
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
         ;   Label: LAB_00527e78
-    MOV EDX,dword ptr [0x005bea6c]      ; 00527e7d | g_INT_005bea6c
+    MOV EDX,dword ptr [0x005bea6c]      ; 00527e7d | g_AudioSampleRate
     PUSH EDX                            ; 00527e83
-    MOV ECX,dword ptr [0x005bea68]      ; 00527e84 | g_INT_005bea68
+    MOV ECX,dword ptr [0x005bea68]      ; 00527e84 | g_AudioChannelCount
     PUSH ECX                            ; 00527e8a
-    MOV EBX,dword ptr [0x005bea64]      ; 00527e8b | g_INT_005bea64
+    MOV EBX,dword ptr [0x005bea64]      ; 00527e8b | g_AudioBitsPerSample
     PUSH EBX                            ; 00527e91
     CALL sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0 ; 00527e92
         ;   XREF to: 005280c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0(int bits_per_sample, int channels, int sample_rate)
@@ -97,18 +97,18 @@ section .text
     TEST EAX,EAX                        ; 00527e9a
     JZ 0x00528069                       ; 00527e9c
         ;   XREF to: 00528069 (CONDITIONAL_JUMP)  ; LAB_00528069
-    CMP dword ptr [0x02dc8334],0x0      ; 00527ea2 | g_INT_02dc8334
+    CMP dword ptr [0x02dc8334],0x0      ; 00527ea2 | g_NumMixBuffers
     JLE 0x00527ef0                      ; 00527ea9
         ;   XREF to: 00527ef0 (CONDITIONAL_JUMP)  ; LAB_00527ef0
-    MOV EDI,dword ptr [0x005bea68]      ; 00527eab | g_INT_005bea68
+    MOV EDI,dword ptr [0x005bea68]      ; 00527eab | g_AudioChannelCount
     XOR EBX,EBX                         ; 00527eb1
     TEST EDI,EDI                        ; 00527eb3
     JLE 0x00527ef0                      ; 00527eb5
         ;   XREF to: 00527ef0 (CONDITIONAL_JUMP)  ; LAB_00527ef0
     XOR ESI,ESI                         ; 00527eb7
-    MOV EAX,[0x02dc8330]                ; 00527eb9 | g_INT_02dc8330
+    MOV EAX,[0x02dc8330]                ; 00527eb9 | g_MixBufferSize
         ;   Label: LAB_00527eb9
-    IMUL EAX,dword ptr [0x02dc8334]     ; 00527ebe | g_INT_02dc8334
+    IMUL EAX,dword ptr [0x02dc8334]     ; 00527ebe | g_NumMixBuffers
     SHL EAX,0x2                         ; 00527ec5
     PUSH EAX                            ; 00527ec8
     PUSH 0x0                            ; 00527ec9
@@ -118,7 +118,7 @@ section .text
     INC EBX                             ; 00527ed5
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00527ed6
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
-    MOV EDX,dword ptr [0x005bea68]      ; 00527edb | g_INT_005bea68
+    MOV EDX,dword ptr [0x005bea68]      ; 00527edb | g_AudioChannelCount
     ADD ESP,0xc                         ; 00527ee1
     CMP EBX,EDX                         ; 00527ee4
     JL 0x00527eb9                       ; 00527ee6
@@ -134,41 +134,41 @@ section .text
     XOR ECX,ECX                         ; 00527f04
     PUSH EBP                            ; 00527f06
     MOV EDX,dword ptr [0x02dc78e8]      ; 00527f07 | g_DOUBLE_02dc78e8
-    MOV dword ptr [0x02dc8328],ECX      ; 00527f0d | g_INT_02dc8328
+    MOV dword ptr [0x02dc8328],ECX      ; 00527f0d | g_MixBufferReadIndex
     PUSH EDX                            ; 00527f13
-    MOV dword ptr [0x02dc832c],ECX      ; 00527f14 | g_INT_02dc832c
+    MOV dword ptr [0x02dc832c],ECX      ; 00527f14 | g_MixBufferWriteIndex
     MOV ECX,dword ptr [0x02dc78e4]      ; 00527f1a | g_DOUBLE_02dc78e0+4
     PUSH ECX                            ; 00527f20
     MOV ESI,dword ptr [0x02dc78e0]      ; 00527f21 | g_DOUBLE_02dc78e0
-    MOV EAX,[0x02dc8318]                ; 00527f27 | g_CSoundDevice_PTR_02dc8318
+    MOV EAX,[0x02dc8318]                ; 00527f27 | g_CSoundDevicePtr
     PUSH ESI                            ; 00527f2c
     MOV EBX,dword ptr [EAX]             ; 00527f2d
     PUSH EAX                            ; 00527f2f
     CALL dword ptr [EBX + 0x18]         ; 00527f30
     ADD ESP,0x1c                        ; 00527f33
-    MOV EDI,dword ptr [0x02dc7954]      ; 00527f36 | g_CVector3d_02dc7940.z+4
+    MOV EDI,dword ptr [0x02dc7954]      ; 00527f36 | g_Cached3DListenerOrientRight.z+4
     PUSH EDI                            ; 00527f3c
-    MOV EBP,dword ptr [0x02dc7950]      ; 00527f3d | g_CVector3d_02dc7940.z
+    MOV EBP,dword ptr [0x02dc7950]      ; 00527f3d | g_Cached3DListenerOrientRight.z
     PUSH EBP                            ; 00527f43
-    MOV EDX,dword ptr [0x02dc794c]      ; 00527f44 | g_CVector3d_02dc7940.y+4
+    MOV EDX,dword ptr [0x02dc794c]      ; 00527f44 | g_Cached3DListenerOrientRight.y+4
     PUSH EDX                            ; 00527f4a
-    MOV ECX,dword ptr [0x02dc7948]      ; 00527f4b | g_CVector3d_02dc7940.y
+    MOV ECX,dword ptr [0x02dc7948]      ; 00527f4b | g_Cached3DListenerOrientRight.y
     PUSH ECX                            ; 00527f51
-    MOV ESI,dword ptr [0x02dc7944]      ; 00527f52 | g_CVector3d_02dc7940.x+4
+    MOV ESI,dword ptr [0x02dc7944]      ; 00527f52 | g_Cached3DListenerOrientRight.x+4
     PUSH ESI                            ; 00527f58
-    MOV EDI,dword ptr [0x02dc7940]      ; 00527f59 | g_CVector3d_02dc7940
+    MOV EDI,dword ptr [0x02dc7940]      ; 00527f59 | g_Cached3DListenerOrientRight
     PUSH EDI                            ; 00527f5f
-    MOV EBP,dword ptr [0x02dc793c]      ; 00527f60 | g_CVector3d_02dc7928.z+4
+    MOV EBP,dword ptr [0x02dc793c]      ; 00527f60 | g_Cached3DListenerOrientUp.z+4
     PUSH EBP                            ; 00527f66
-    MOV EDX,dword ptr [0x02dc7938]      ; 00527f67 | g_CVector3d_02dc7928.z
+    MOV EDX,dword ptr [0x02dc7938]      ; 00527f67 | g_Cached3DListenerOrientUp.z
     PUSH EDX                            ; 00527f6d
-    MOV ECX,dword ptr [0x02dc7934]      ; 00527f6e | g_CVector3d_02dc7928.y+4
+    MOV ECX,dword ptr [0x02dc7934]      ; 00527f6e | g_Cached3DListenerOrientUp.y+4
     PUSH ECX                            ; 00527f74
-    MOV ESI,dword ptr [0x02dc7930]      ; 00527f75 | g_CVector3d_02dc7928.y
+    MOV ESI,dword ptr [0x02dc7930]      ; 00527f75 | g_Cached3DListenerOrientUp.y
     PUSH ESI                            ; 00527f7b
-    MOV EDI,dword ptr [0x02dc792c]      ; 00527f7c | g_CVector3d_02dc7928.x+4
+    MOV EDI,dword ptr [0x02dc792c]      ; 00527f7c | g_Cached3DListenerOrientUp.x+4
     PUSH EDI                            ; 00527f82
-    MOV EBP,dword ptr [0x02dc7928]      ; 00527f83 | g_CVector3d_02dc7928
+    MOV EBP,dword ptr [0x02dc7928]      ; 00527f83 | g_Cached3DListenerOrientUp
     PUSH EBP                            ; 00527f89
     MOV EDX,dword ptr [0x02dc7924]      ; 00527f8a | g_DOUBLE_02dc7920+4
     PUSH EDX                            ; 00527f90
@@ -181,7 +181,7 @@ section .text
     MOV EBP,dword ptr [0x02dc7914]      ; 00527fa6 | g_DOUBLE_02dc7910+4
     PUSH EBP                            ; 00527fac
     MOV EDX,dword ptr [0x02dc7910]      ; 00527fad | g_DOUBLE_02dc7910
-    MOV EAX,[0x02dc8318]                ; 00527fb3 | g_CSoundDevice_PTR_02dc8318
+    MOV EAX,[0x02dc8318]                ; 00527fb3 | g_CSoundDevicePtr
     PUSH EDX                            ; 00527fb8
     MOV EBX,dword ptr [EAX]             ; 00527fb9
     PUSH EAX                            ; 00527fbb
@@ -198,33 +198,33 @@ section .text
     MOV EDX,dword ptr [0x02dc78fc]      ; 00527fde | g_DOUBLE_02dc78f8+4
     PUSH EDX                            ; 00527fe4
     MOV ECX,dword ptr [0x02dc78f8]      ; 00527fe5 | g_DOUBLE_02dc78f8
-    MOV EAX,[0x02dc8318]                ; 00527feb | g_CSoundDevice_PTR_02dc8318
+    MOV EAX,[0x02dc8318]                ; 00527feb | g_CSoundDevicePtr
     PUSH ECX                            ; 00527ff0
     MOV EBX,dword ptr [EAX]             ; 00527ff1
     PUSH EAX                            ; 00527ff3
     CALL dword ptr [EBX + 0x20]         ; 00527ff4
     ADD ESP,0x1c                        ; 00527ff7
-    MOV ESI,dword ptr [0x005bea84]      ; 00527ffa | g_DOUBLE_005bea80+4
+    MOV ESI,dword ptr [0x005bea84]      ; 00527ffa | g_Cached3DDistanceFactor+4
     PUSH ESI                            ; 00528000
-    MOV EDI,dword ptr [0x005bea80]      ; 00528001 | g_DOUBLE_005bea80
-    MOV EAX,[0x02dc8318]                ; 00528007 | g_CSoundDevice_PTR_02dc8318
+    MOV EDI,dword ptr [0x005bea80]      ; 00528001 | g_Cached3DDistanceFactor
+    MOV EAX,[0x02dc8318]                ; 00528007 | g_CSoundDevicePtr
     PUSH EDI                            ; 0052800c
     MOV EBX,dword ptr [EAX]             ; 0052800d
     PUSH EAX                            ; 0052800f
     CALL dword ptr [EBX + 0x24]         ; 00528010
     ADD ESP,0xc                         ; 00528013
-    PUSH dword ptr [0x02dc84a0]         ; 00528016 | g_SReverbSettings_02dc8498.damping
-    MOV EAX,[0x02dc8318]                ; 0052801c | g_CSoundDevice_PTR_02dc8318
-    PUSH dword ptr [0x02dc849c]         ; 00528021 | g_SReverbSettings_02dc8498.decay_time
+    PUSH dword ptr [0x02dc84a0]         ; 00528016 | g_CachedReverb.damping
+    MOV EAX,[0x02dc8318]                ; 0052801c | g_CSoundDevicePtr
+    PUSH dword ptr [0x02dc849c]         ; 00528021 | g_CachedReverb.decay_time
     MOV EBX,dword ptr [EAX]             ; 00528027
-    PUSH dword ptr [0x02dc8498]         ; 00528029 | g_SReverbSettings_02dc8498
+    PUSH dword ptr [0x02dc8498]         ; 00528029 | g_CachedReverb
     PUSH EAX                            ; 0052802f
     CALL dword ptr [EBX + 0x28]         ; 00528030
     ADD ESP,0x10                        ; 00528033
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00528036
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
-    MOV [0x02dc84c0],EAX                ; 0052803b | g_INT_02dc84c0
-    MOV EAX,[0x02dc8318]                ; 00528040 | g_CSoundDevice_PTR_02dc8318
+    MOV [0x02dc84c0],EAX                ; 0052803b | g_SoundStartTime
+    MOV EAX,[0x02dc8318]                ; 00528040 | g_CSoundDevicePtr
     PUSH EAX                            ; 00528045
     MOV EBX,dword ptr [EAX]             ; 00528046
     CALL dword ptr [EBX + 0x4]          ; 00528048
@@ -233,7 +233,7 @@ section .text
     JZ 0x00528069                       ; 00528050
         ;   XREF to: 00528069 (CONDITIONAL_JUMP)  ; LAB_00528069
     MOV EBP,0x1                         ; 00528052
-    MOV dword ptr [0x02dc831c],EBP      ; 00528057 | g_INT_02dc831c
+    MOV dword ptr [0x02dc831c],EBP      ; 00528057 | g_SoundBusyFlag
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052805d
         ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,EBP                         ; 00528062

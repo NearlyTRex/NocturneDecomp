@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 00460e9d
     PUSH EBX                            ; 00460e9e
     CALL engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0 ; 00460e9f
-        ;   XREF to: 00460fa0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder * this_ptr, byte * param_2)
+        ;   XREF to: 00460fa0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder * this_ptr, byte * find_data)
     ADD ESP,0x8                         ; 00460ea4
     MOV dword ptr [EBX + 0x10c],0x1     ; 00460ea7
     JMP 0x00460e87                      ; 00460eb1

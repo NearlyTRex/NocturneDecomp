@@ -202,9 +202,8 @@ void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_004562a0(CDoc *this_ptr,i
          *(uint *)((int)&local_ec + (uint)bVar6 * -8 + 4);
     *puVar3 = *puVar2;
     puVar3[(uint)bVar6 * -2 + 1] = puVar2[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_CQuaternion4f_005fe2f0,pCVar1,fVar8,&local_dc);
-    core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_CQuaternion4f_005fe2f0,&local_26c,0.95,&local_cc)
-    ;
+    core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_IdentityQuaternion,pCVar1,fVar8,&local_dc);
+    core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_IdentityQuaternion,&local_26c,0.95,&local_cc);
     pCVar1 = &local_23c;
     local_7c.w = local_cc.w;
     puVar3 = (uint *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

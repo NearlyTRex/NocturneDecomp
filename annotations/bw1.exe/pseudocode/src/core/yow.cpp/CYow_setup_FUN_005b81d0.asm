@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005b81e2
     PUSH 0x5fa1d6                       ; 005b81e5 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005b81ea | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005b81ea | g_CEventListPtr
     PUSH EDX                            ; 005b81f0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005b81f1
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

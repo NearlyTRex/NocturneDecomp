@@ -9,7 +9,7 @@
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_0051bf10 at 0051bf15
 ;
 ; Referenced Globals:
-;   int g_INT_01b2efdc
+;   int g_KeyframeModelCount
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160
@@ -33,7 +33,7 @@ section .text
     JNZ 0x0046883d                      ; 0046884e
         ;   XREF to: 0046883d (CONDITIONAL_JUMP)  ; LAB_0046883d
     XOR EDX,EDX                         ; 00468850
-    MOV dword ptr [0x01b2efdc],EDX      ; 00468852 | g_INT_01b2efdc
+    MOV dword ptr [0x01b2efdc],EDX      ; 00468852 | g_KeyframeModelCount
     POP ESI                             ; 00468858
     POP EBX                             ; 00468859
     RET                                 ; 0046885a

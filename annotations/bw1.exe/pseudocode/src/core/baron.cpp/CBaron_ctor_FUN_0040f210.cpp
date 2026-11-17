@@ -49,7 +49,7 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f210(CBaron *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            (&g_CKeyFramedModelInstance_007c351c,"baronshell.kfm");
+            (&g_CKeyFramedModelInstanceInstance,"baronshell.kfm");
   pCVar2->shell_visible = 0;
   return pCVar2;
 }

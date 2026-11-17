@@ -52,25 +52,25 @@
     },
     {
       "addr": "01b49be0",
-      "name": "g_INT_01b49be0",
+      "name": "g_BackgroundSceneNestingCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b49be4",
-      "name": "g_ARRAY_PTR_01b49be4",
+      "name": "g_SavedScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01b49be8",
-      "name": "g_ARRAY_PTR_01b49be4[1]",
+      "name": "g_SavedScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b49be9",
-      "name": "g_ARRAY_PTR_01b49be4[1]+1",
+      "name": "g_SavedScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -82,19 +82,19 @@
     },
     {
       "addr": "01c5faec",
-      "name": "g_ARRAY_PTR_01c5faec",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c5faf0",
-      "name": "g_ARRAY_PTR_01c5faec[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c5faf1",
-      "name": "g_ARRAY_PTR_01c5faec[1]+1",
+      "name": "g_ScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     }
@@ -239,7 +239,7 @@
       "line": 20,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0045ca10: MOVSD.REP ES:EDI,ESI  ; g_ARRAY_PTR_01b49be4 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01b49be4[1]",
+      "text": "// 0045ca10: MOVSD.REP ES:EDI,ESI  ; g_SavedScreenBufferArray | g_ScreenBufferArray | g_SavedScreenBufferArray[1]",
       "type": "unrolled_memcpy"
     }
   ]

@@ -8,7 +8,7 @@
 ; SRenderVertex *  Stack[0x8]:4   v1
 ;
 ; Referenced Globals:
-;   int g_INT_01ba5714
+;   int g_RasterizerDepthBias
 ;   int g_INT_026672a8
 ;   int g_INT_026677ac
 ;   int g_INT_026677b0
@@ -98,7 +98,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00599ee3
     MOV dword ptr [ESI + 0x2c],EAX      ; 00599ee7
     MOV ECX,dword ptr [EBX + 0x8]       ; 00599eea
-    MOV EAX,[0x01ba5714]                ; 00599eed | g_INT_01ba5714
+    MOV EAX,[0x01ba5714]                ; 00599eed | g_RasterizerDepthBias
     SHL ECX,0x8                         ; 00599ef2
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00599ef5
     SUB ECX,EAX                         ; 00599ef8

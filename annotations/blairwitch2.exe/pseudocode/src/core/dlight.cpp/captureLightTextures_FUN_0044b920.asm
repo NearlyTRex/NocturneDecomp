@@ -8,9 +8,9 @@
 ;   core_set.cpp_CDemonSet_loadAssets_FUN_005332a0 at 005332a0
 ;
 ; Referenced Globals:
-;   undefined4 g_SLightGlowTable_0060afc8.headlight.base.type
-;   undefined4 g_SLightGlowTable_0060afc8.sprites[0].texture.base.type
-;   undefined4 g_SLightGlowTable_0060afc8.sprites[1].texture.base.type
+;   undefined4 g_LightGlow.headlight.base.type
+;   undefined4 g_LightGlow.sprites[0].texture.base.type
+;   undefined4 g_LightGlow.sprites[1].texture.base.type
 ;   undefined4 DAT_0060b1a8
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
@@ -25,15 +25,15 @@ section .text
     PUSH EBX                            ; 0044b920
         ;   Label: core_dlight.cpp_captureLightTextures_FUN_0044b920
     PUSH ESI                            ; 0044b921
-    PUSH 0x60afe0                       ; 0044b922 | g_SLightGlowTable_0060afc8.headlight.base.type
+    PUSH 0x60afe0                       ; 0044b922 | g_LightGlow.headlight.base.type
     MOV EDX,dword ptr [0x0060b280]      ; 0044b927 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 0044b92d | g_CDemonRenderer_01ba5c50
-    MOV EBX,0x60aff8                    ; 0044b92e | g_SLightGlowTable_0060afc8.sprites[0].texture.base.type
+    MOV EBX,0x60aff8                    ; 0044b92e | g_LightGlow.sprites[0].texture.base.type
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0044b933
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA ESI,[EBX + 0x1b0]               ; 0044b938 | DAT_0060b1a8
     ADD ESP,0x8                         ; 0044b93e
-    PUSH EBX                            ; 0044b941 | g_SLightGlowTable_0060afc8.sprites[0].texture.base.type | g_SLightGlowTable_0060afc8.sprites[1].texture.base.type
+    PUSH EBX                            ; 0044b941 | g_LightGlow.sprites[0].texture.base.type | g_LightGlow.sprites[1].texture.base.type
         ;   Label: LAB_0044b941
     MOV ECX,dword ptr [0x0060b280]      ; 0044b942 | g_CDemonRenderer_PTR_0060b280
     PUSH ECX                            ; 0044b948 | g_CDemonRenderer_01ba5c50

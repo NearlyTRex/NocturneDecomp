@@ -60,7 +60,7 @@
     },
     {
       "addr": "005e8804",
-      "name": "g_SHORT_005e8804",
+      "name": "g_DaysInMonth_Normal",
       "type": "short",
       "value": "0x0"
     },
@@ -72,7 +72,7 @@
     },
     {
       "addr": "005e881e",
-      "name": "g_SHORT_005e881e",
+      "name": "g_DaysInMonth_Leap",
       "type": "short",
       "value": "0x0"
     }
@@ -286,7 +286,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_SHORT_005e8804 + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
     },
     {
@@ -302,7 +302,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_SHORT_005e881e + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
     },
     {
@@ -386,23 +386,23 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_005e8804 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_005e8806 (at 0x005e8806, +2 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_005e8806 (at 0x005e8806, +2 bytes).",
       "line": 14,
-      "match": "g_SHORT_005e8804",
+      "match": "g_DaysInMonth_Normal",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_SHORT_005e8804 + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_005e881e \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SFontGlyph_ARRAY_005e8840 (at 0x005e8840, +34 bytes).",
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FontTable (at 0x005e8840, +34 bytes).",
       "line": 18,
-      "match": "g_SHORT_005e881e",
+      "match": "g_DaysInMonth_Leap",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_SHORT_005e881e + *(int *)(param_1 + 0x10));",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
       "type": "suspicious_cast"
     },
     {
-      "description": "Cast-and-add on &g_SHORT_005e881c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SHORT_005e881e (at 0x005e881e, +2 bytes).",
+      "description": "Cast-and-add on &g_SHORT_005e881c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x005e881e, +2 bytes).",
       "line": 19,
       "match": "g_SHORT_005e881c",
       "severity": "moderate",
@@ -437,11 +437,11 @@
       "type": "param_count_too_few"
     },
     {
-      "description": "Compiler displaced index base: [reg*2 + 0x5e881c] lands in g_SHORT_005e881c but intended target is g_SHORT_005e881e at 0x5e881e (displaced by 2 bytes)",
+      "description": "Compiler displaced index base: [reg*2 + 0x5e881c] lands in g_SHORT_005e881c but intended target is g_DaysInMonth_Leap at 0x5e881e (displaced by 2 bytes)",
       "displaced_from": "g_SHORT_005e881c",
       "displacement": "0x5e881c",
       "instruction_address": "",
-      "intended_global": "g_SHORT_005e881e",
+      "intended_global": "g_DaysInMonth_Leap",
       "line": 23,
       "match": "0x5e881c",
       "scale": 2,
@@ -450,8 +450,8 @@
       "type": "displaced_global_access"
     },
     {
-      "description": "Compiler displaced index base: [reg*2 + 0x5e8804] lands in g_SHORT_005e8804 but intended target is g_INT_005e8806 at 0x5e8806 (displaced by 2 bytes)",
-      "displaced_from": "g_SHORT_005e8804",
+      "description": "Compiler displaced index base: [reg*2 + 0x5e8804] lands in g_DaysInMonth_Normal but intended target is g_INT_005e8806 at 0x5e8806 (displaced by 2 bytes)",
+      "displaced_from": "g_DaysInMonth_Normal",
       "displacement": "0x5e8804",
       "instruction_address": "",
       "intended_global": "g_INT_005e8806",
@@ -459,7 +459,7 @@
       "match": "0x5e8804",
       "scale": 2,
       "severity": "moderate",
-      "text": "// 005abe6b: MOV ESI,dword ptr [EAX*0x2 + 0x5e8804]  ; g_SHORT_005e8804",
+      "text": "// 005abe6b: MOV ESI,dword ptr [EAX*0x2 + 0x5e8804]  ; g_DaysInMonth_Normal",
       "type": "displaced_global_access"
     }
   ]

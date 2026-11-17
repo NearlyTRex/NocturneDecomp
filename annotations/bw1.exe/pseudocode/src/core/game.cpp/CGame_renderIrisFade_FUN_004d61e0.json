@@ -80,13 +80,13 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "g_ARRAY_PTR_01c4354c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
@@ -110,19 +110,19 @@
     },
     {
       "addr": "01cd0c80",
-      "name": "g_FLOAT_01cd0c80",
+      "name": "g_IrisFadeRadius",
       "type": "float",
       "value": null
     },
     {
       "addr": "01cd0c84",
-      "name": "g_INT_01cd0c84",
+      "name": "g_IrisFadeCenterX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c88",
-      "name": "g_INT_01cd0c88",
+      "name": "g_IrisFadeCenterY",
       "type": "int",
       "value": null
     }
@@ -237,25 +237,25 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(uint **)((int)g_ARRAY_PTR_01c4354c",
+      "match": "(uint **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar2 = *(uint **)((int)g_ARRAY_PTR_01c4354c + iVar3);",
+      "text": "puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 21,
-      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar2 = *(uint **)((int)g_ARRAY_PTR_01c4354c + iVar3);",
+      "text": "puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_truncation"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f7fffff is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
       "line": 12,
-      "match": "0x3f7fffff < (int)g_FLOAT_01cd0c80))))",
+      "match": "0x3f7fffff < (int)g_IrisFadeRadius))))",
       "severity": "moderate",
-      "text": "if ((g_INT_01cd0c7c < 4) && ((g_INT_01cd0c7c != 1 && (0x3f7fffff < (int)g_FLOAT_01cd0c80)))) {",
+      "text": "if ((g_INT_01cd0c7c < 4) && ((g_INT_01cd0c7c != 1 && (0x3f7fffff < (int)g_IrisFadeRadius)))) {",
       "type": "bit_int_float_compare"
     }
   ]

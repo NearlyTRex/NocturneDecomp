@@ -24,7 +24,7 @@
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004dfd50 at 004dfe29
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005dbbf6 = 65535
+;   double g_NormalTo16BitScale1 = 65535
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -132,7 +132,7 @@ section .text
     FMULP ST3                           ; 004df553
     LEA EAX,[ECX*0x4 + 0x0]             ; 004df555
     FXCH                                ; 004df55c
-    FLD double ptr [0x005dbbf6]         ; 004df55e | g_DOUBLE_005dbbf6
+    FLD double ptr [0x005dbbf6]         ; 004df55e | g_NormalTo16BitScale1
     FXCH                                ; 004df564
     FMUL ST1                            ; 004df566
     SUB EAX,ECX                         ; 004df568

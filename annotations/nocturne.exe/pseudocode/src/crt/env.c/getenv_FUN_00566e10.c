@@ -16,7 +16,7 @@ char * __cdecl getenv(char *name)
   char **ppcVar4;
   char *pcVar5;
   
-  if ((g_CHAR_PTR_PTR_02de54a4 != (char **)0x0) && (name != (char *)0x0)) {
+  if ((g_EnvironmentBlock != (char **)0x0) && (name != (char *)0x0)) {
     uVar3 = 0xffffffff;
     pcVar5 = name;
     do {
@@ -26,7 +26,7 @@ char * __cdecl getenv(char *name)
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
     count = ~uVar3 - 1;
-    for (ppcVar4 = g_CHAR_PTR_PTR_02de54a4; pcVar5 = *ppcVar4, pcVar5 != (char *)0x0;
+    for (ppcVar4 = g_EnvironmentBlock; pcVar5 = *ppcVar4, pcVar5 != (char *)0x0;
         ppcVar4 = ppcVar4 + 1) {
       iVar2 = _mbstrnicmp(pcVar5,name,count);
       if ((iVar2 == 0) && (pcVar5[count] == '=')) {

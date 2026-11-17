@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005f29ff = -4
 ;   undefined4 g_INT_ARRAY_02c5fcd8[2]
-;   CVector3f g_CVector3f_02c8af28
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -62,7 +62,7 @@ section .text
     LEA ESI,[EBP + 0xfd8]               ; 0056cd1c
     ADD EAX,ESI                         ; 0056cd22
     PUSH EAX                            ; 0056cd24
-    PUSH 0x2c8af28                      ; 0056cd25 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 0056cd25 | g_ZeroVector
     LEA ESI,[ESP + 0x34]                ; 0056cd2a
     LEA EDI,[ESP + 0x1c]                ; 0056cd2e
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0056cd32

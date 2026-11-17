@@ -101,25 +101,25 @@
     },
     {
       "addr": "00607b18",
-      "name": "g_PTR_00607b18",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "00607b44",
-      "name": "g_PTR_00607b44",
+      "name": "g_SpecialDeviceWriteFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "00607b84",
-      "name": "g_UINT_00607b84",
+      "name": "g_MaxHandleCount",
       "type": "uint",
       "value": "0x14"
     },
     {
       "addr": "00607bdc",
-      "name": "g_SIOControlBlock_PTR_00607bdc",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     }
@@ -250,7 +250,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_00607b84 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +258,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_00607b84 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -266,7 +266,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "hFile = g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1];",
+      "text": "hFile = g_IOControlBlock->standard_handles[param_1];",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +314,7 @@
       "line": 29,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar3 = (*(code *)g_PTR_00607b18)(param_1);",
+      "text": "iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1);",
       "type": "unresolved_funcptr"
     },
     {
@@ -322,7 +322,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(code *)g_PTR_00607b18)(param_1);",
+      "text": "iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -330,7 +330,7 @@
       "line": 31,
       "match": "code *",
       "severity": "moderate",
-      "text": "DVar2 = (*(code *)g_PTR_00607b44)(iVar3,param_2,param_3);",
+      "text": "DVar2 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);",
       "type": "unresolved_funcptr"
     },
     {
@@ -338,7 +338,7 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "DVar2 = (*(code *)g_PTR_00607b44)(iVar3,param_2,param_3);",
+      "text": "DVar2 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -346,7 +346,7 @@
       "line": 31,
       "match": "param_3",
       "severity": "mild",
-      "text": "DVar2 = (*(code *)g_PTR_00607b44)(iVar3,param_2,param_3);",
+      "text": "DVar2 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {

@@ -46,10 +46,9 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterA
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
       iVar7 = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                (g_CDemonRenderer_PTR_00612560,
-                 g_SMRGLTextureBasic_ARRAY_00625e74 + this_ptr->texture_frame);
+                (g_CDemonRenderer_PTR_00612560,g_WaterActorTextures + this_ptr->texture_frame);
       if (0 < this_ptr->vertex_count) {
-        pCVar4 = g_CVector3i_ARRAY_02c94468;
+        pCVar4 = g_WaterActorTransformedVertices;
         pSVar5 = this_ptr->vertices;
         do {
           pCVar4->x = (int)ROUND((pSVar5->local_position).x * 256.0f);
@@ -62,13 +61,13 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterA
       }
       iVar7 = 0;
       core_set_cpp_CDemonSet_rotateVerticies_FUN_00553140
-                (g_CDemonSetPtr,this_ptr->vertex_count,g_CVector3i_ARRAY_02c94468);
+                (g_CDemonSetPtr,this_ptr->vertex_count,g_WaterActorTransformedVertices);
       if (0 < this_ptr->vertex_count) {
         vertex_position = &this_ptr->vertices[0].world_position;
         iVar9 = 0;
         do {
           core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
-                    (g_CDemonSetPtr,vertex_position,&g_CVector3f_02c8af28,iVar7);
+                    (g_CDemonSetPtr,vertex_position,&g_ZeroVector,iVar7);
           pSVar1 = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr;
           lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)
           ;

@@ -127,7 +127,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00418a0f
     LEA EAX,[EBX + 0xbd38]              ; 00418a15
     PUSH EAX                            ; 00418a1b
-    MOV EDX,dword ptr [0x005b7650]      ; 00418a1c | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00418a1c | g_CEventListPtr
     PUSH EDX                            ; 00418a22
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00418a23
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -713,7 +713,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004190a3
     ADD ESP,0x8                         ; 004190a6
     LEA EAX,[EBP + 0xffffff0a]          ; 004190a9
-    MOV EDX,dword ptr [0x00764794]      ; 004190af | g_INT_ARRAY_00764794
+    MOV EDX,dword ptr [0x00764794]      ; 004190af | g_BoneGuyIndices
     PUSH EAX                            ; 004190b5
     LEA EAX,[EDX*0x4 + 0x0]             ; 004190b6
     MOV dword ptr [EBP + 0xffffff3e],EBX ; 004190bd

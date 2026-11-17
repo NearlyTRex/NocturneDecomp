@@ -18,7 +18,7 @@
 ;   int g_WindowWidth = 0x140
 ;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   int g_INT_01bcd07c
-;   int g_INT_01bcd9b8
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01bcd9bc
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -57,7 +57,7 @@ section .text
     PUSH 0x6a                           ; 00471699
     MOV EBX,dword ptr [EAX + 0x3168]    ; 0047169b
     PUSH EAX                            ; 004716a1
-    MOV dword ptr [0x01bcd9b8],EBX      ; 004716a2 | g_INT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EBX      ; 004716a2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004716a8
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV [0x01bcd9bc],EAX                ; 004716ad | g_INT_01bcd9bc

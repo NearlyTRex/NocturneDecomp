@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_tentacle_cpp_CTentacle_getActorType_FUN_00543b50(CTentacle *this_ptr)
 
 {
-  return &g_CTentacleActorType_02dca1e0;
+  return &g_CTentacleClassInfo;
 }

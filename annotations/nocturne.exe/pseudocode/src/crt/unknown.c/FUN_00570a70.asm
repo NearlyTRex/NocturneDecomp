@@ -11,7 +11,7 @@
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;   void* PTR_crt_io.c_invalidate_handle_wrapper_FUN_005671f8_005c1acc = 005671f8
-;   uint g_UINT_005c1f90 = 0x14
+;   uint g_MaxHandleCount = 0x14
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00568e80
@@ -30,7 +30,7 @@ section .text
     TEST EBX,EBX                        ; 00570a76
     JL 0x00570a82                       ; 00570a78
         ;   XREF to: 00570a82 (CONDITIONAL_JUMP)  ; LAB_00570a82
-    CMP EBX,dword ptr [0x005c1f90]      ; 00570a7a | g_UINT_005c1f90
+    CMP EBX,dword ptr [0x005c1f90]      ; 00570a7a | g_MaxHandleCount
     JBE 0x00570a94                      ; 00570a80
         ;   XREF to: 00570a94 (CONDITIONAL_JUMP)  ; LAB_00570a94
     PUSH 0x4                            ; 00570a82

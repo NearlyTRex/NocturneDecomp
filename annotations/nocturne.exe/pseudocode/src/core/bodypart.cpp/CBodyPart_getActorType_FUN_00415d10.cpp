@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_bodypart_cpp_CBodyPart_getActorType_FUN_00415d10(CBodyPart *this_ptr)
 
 {
-  return &g_CBodyPartActorType_00764758;
+  return &g_CBodyPartClassInfo;
 }

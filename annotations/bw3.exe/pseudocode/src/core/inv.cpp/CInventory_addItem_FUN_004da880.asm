@@ -1069,7 +1069,7 @@ section .text
     POP EDI                             ; 004db0d9
         ;   Label: LAB_004db0d9
     PUSH EDX                            ; 004db0da
-    MOV EDI,dword ptr [0x01549ab4]      ; 004db0db | g_CBitFont_PTR_01549ab4
+    MOV EDI,dword ptr [0x01549ab4]      ; 004db0db | g_SmallEditorFont
     PUSH EDI                            ; 004db0e1
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004db0e2
         ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)

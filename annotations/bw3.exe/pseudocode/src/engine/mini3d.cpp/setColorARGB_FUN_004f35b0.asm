@@ -17,7 +17,7 @@
 ;   float g_FLOAT_01d7a6bc
 ;   float g_FLOAT_01d7a6c0
 ;   int g_INT_01d7a6c4
-;   void* g_PTR_02cf60a4
+;   void* g_APIDLL_setLightConstants
 ;
 ; *****************************************************************************
 
@@ -66,7 +66,7 @@ section .text
     JZ 0x004f3651                       ; 004f3634
         ;   XREF to: 004f3651 (CONDITIONAL_JUMP)  ; LAB_004f3651
     MOV EAX,dword ptr [ESP]             ; 004f3636
-    MOV EDX,dword ptr [0x02cf60a4]      ; 004f3639 | g_PTR_02cf60a4
+    MOV EDX,dword ptr [0x02cf60a4]      ; 004f3639 | g_APIDLL_setLightConstants
     MOV [0x01d76c40],EAX                ; 004f363f | g_FLOAT_01d76c40
     TEST EDX,EDX                        ; 004f3644
     JZ 0x004f3651                       ; 004f3646
@@ -84,7 +84,7 @@ section .text
     PUSH dword ptr [0x01d76cd0]         ; 004f365d | g_INT_01d76cd0
     PUSH dword ptr [0x01d76ccc]         ; 004f3663 | g_INT_01d76ccc
     PUSH dword ptr [0x01d76cc8]         ; 004f3669 | g_FLOAT_01d76cc8
-    CALL dword ptr [0x02cf60a4]         ; 004f366f | g_PTR_02cf60a4
+    CALL dword ptr [0x02cf60a4]         ; 004f366f | g_APIDLL_setLightConstants
     ADD ESP,0x10                        ; 004f3675
     MOV dword ptr [0x01d7a6c4],EBX      ; 004f3678 | g_INT_01d7a6c4
     ADD ESP,0x8                         ; 004f367e

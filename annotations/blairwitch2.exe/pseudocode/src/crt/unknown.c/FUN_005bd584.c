@@ -62,7 +62,7 @@ int FUN_005bd584(int param_1,int *param_2)
       }
       else {
         local_18 = bVar4;
-        if ((g_INT_026807f0 != 0) && ((g_CHAR_ARRAY_02680801[bVar4] & 1U) != 0)) {
+        if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[bVar4] & 1U) != 0)) {
           local_17 = FUN_005bd160(param_1);
         }
         iVar5 = FUN_005c33f0(local_1c,&local_18,2);

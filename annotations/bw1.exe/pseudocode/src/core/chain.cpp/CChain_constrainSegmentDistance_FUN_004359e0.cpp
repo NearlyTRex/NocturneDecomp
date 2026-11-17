@@ -33,7 +33,7 @@ void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_004359e0(CChain 
     fStack_9c = (vertex_a->position).z - (vertex_b->position).z;
   }
   fVar6 = (float)(((int)(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0) >> 1
-                  ) + g_INT_01cc804c);
+                  ) + g_FastSqrtMagic);
   if (fVar6 <= this_ptr->segment_length) {
     return;
   }

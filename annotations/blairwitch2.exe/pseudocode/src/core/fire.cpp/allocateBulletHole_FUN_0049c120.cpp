@@ -12,15 +12,15 @@ CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_0049c120(void)
   CBulletHole *pCVar1;
   int iVar2;
   
-  iVar2 = g_INT_01c558e4 + 1;
-  pCVar1 = g_CBulletHole_ARRAY_01c558e8 + g_INT_01c558e4;
+  iVar2 = g_BulletHoleAllocIndex + 1;
+  pCVar1 = g_BulletHolePool + g_BulletHoleAllocIndex;
   if (0xff < iVar2) {
     iVar2 = 0;
   }
-  g_INT_01c558e0 = g_INT_01c558e0 + 1;
-  if (0x100 < g_INT_01c558e0) {
-    g_INT_01c558e0 = 0x100;
+  g_BulletHoleActiveCount = g_BulletHoleActiveCount + 1;
+  if (0x100 < g_BulletHoleActiveCount) {
+    g_BulletHoleActiveCount = 0x100;
   }
-  g_INT_01c558e4 = iVar2;
+  g_BulletHoleAllocIndex = iVar2;
   return pCVar1;
 }

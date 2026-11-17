@@ -9,6 +9,6 @@
 void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_00462760(void)
 
 {
-  g_UINT_01b2d370 = 0;
+  g_ShadowRestoreAllocator = 0;
   return;
 }

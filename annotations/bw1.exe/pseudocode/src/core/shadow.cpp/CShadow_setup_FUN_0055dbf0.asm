@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Bip01_Head_005f1568
 ;   TerminatedCString s_Bip01_L_Foot_005f1573
 ;   TerminatedCString s_Bip01_R_Foot_005f1580
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0055dc07
     PUSH 0x5f14e5                       ; 0055dc0a | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0055dc0f | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0055dc0f | g_CEventListPtr
     PUSH EDX                            ; 0055dc15
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0055dc16
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

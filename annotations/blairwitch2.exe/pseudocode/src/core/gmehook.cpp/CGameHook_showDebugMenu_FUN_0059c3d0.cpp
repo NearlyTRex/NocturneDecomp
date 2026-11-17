@@ -14,10 +14,9 @@ void __cdecl core_gmehook_cpp_CGameHook_showDebugMenu_FUN_0059c3d0(CGameHook *th
   char acStack_110 [256];
   
   shape_edittool_cpp_CPickList_ctor_FUN_00481fc0(&CStack_4d0);
-  iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LCONTROL);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if ((iVar1 != 0) &&
-     (iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                        (g_CKeys_PTR_00617dd4,DIK_SUBTRACT), iVar1 != 0)) {
+     (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SUBTRACT), iVar1 != 0)) {
     core_gmehook_cpp_CGameHook_formatFlag_FUN_0059c380
               (this_ptr,"DebugStateDisplay",this_ptr->debug_state_display,acStack_110);
     shape_edittool_cpp_CStrList_add_FUN_00480e70(&CStack_4d0.base,acStack_110);

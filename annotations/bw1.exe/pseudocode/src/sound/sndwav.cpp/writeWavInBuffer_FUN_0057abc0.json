@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 49,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 22,
     "suspect_count": 2,
     "suspect_types": [
       "signed_shift_global_idiom"
     ],
-    "total_lines": 97
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -84,25 +84,25 @@
     },
     {
       "addr": "02c828d8",
-      "name": "g_INT_02c828d8",
+      "name": "g_WaveInHandle",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a1c",
-      "name": "g_INT_02c82a1c",
+      "name": "g_WaveInBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a20",
-      "name": "g_INT_02c82a20",
+      "name": "g_WaveInChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c82a2c",
-      "name": "g_INT_02c82a2c",
+      "name": "g_WaveInBufferSizeSamples",
       "type": "int",
       "value": null
     }
@@ -214,18 +214,18 @@
   "suspects": [
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 13,
+      "line": 12,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_02c82a1c + (g_INT_02c82a1c >> 0x1f) * -8) -",
+      "text": "((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 14,
+      "line": 13,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c82a2c;",
+      "text": "(uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples;",
       "type": "signed_shift_global_idiom"
     }
   ]

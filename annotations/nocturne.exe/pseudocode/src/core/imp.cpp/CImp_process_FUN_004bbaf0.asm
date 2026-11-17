@@ -315,7 +315,7 @@ section .text
     ADD ESP,0xc                         ; 004bbceb
     JMP 0x004bbb59                      ; 004bbcee
         ;   XREF to: 004bbb59 (UNCONDITIONAL_JUMP)  ; LAB_004bbb59
-    MOV EDX,dword ptr [0x01cae30c]      ; 004bbcf3 | g_INT_ARRAY_01cae30c
+    MOV EDX,dword ptr [0x01cae30c]      ; 004bbcf3 | g_ImpIndices
         ;   Label: LAB_004bbcf3
     PUSH EDX                            ; 004bbcf9
     LEA EAX,[EBP + -0x7a]               ; 004bbcfa
@@ -678,7 +678,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc112
     ADD ESP,0x8                         ; 004bc115
     LEA EAX,[EBP + 0xfffffeea]          ; 004bc118
-    MOV EDX,dword ptr [0x01cae314]      ; 004bc11e | g_INT_ARRAY_01cae30c[2]
+    MOV EDX,dword ptr [0x01cae314]      ; 004bc11e | g_ImpIndices[2]
     PUSH EAX                            ; 004bc124
     LEA EAX,[EDX*0x4 + 0x0]             ; 004bc125
     SUB EAX,EDX                         ; 004bc12c
@@ -720,7 +720,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004bc190 | g_CDemonSetInstance.enemy_count
     JGE 0x004bbeaf                      ; 004bc196
         ;   XREF to: 004bbeaf (CONDITIONAL_JUMP)  ; caseD_8
-    MOV ECX,dword ptr [0x01cae374]      ; 004bc19c | g_CImpActorType_01cae33c.name_hash
+    MOV ECX,dword ptr [0x01cae374]      ; 004bc19c | g_CImpClassInfo.name_hash
     PUSH ECX                            ; 004bc1a2
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 004bc1a3
     PUSH EDX                            ; 004bc1aa

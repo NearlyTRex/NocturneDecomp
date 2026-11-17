@@ -27,7 +27,7 @@
 ;   double g_DOUBLE_005e347c = 1000
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CFilterFX* g_CFilterFXPtr = 0152d230
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   ... and 25 more
 ;
 ; Called Functions:
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 004d80c1 (CONDITIONAL_JUMP)  ; LAB_004d80c1
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d80b7
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d80bc | g_INT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d80bc | g_ProfileStartTime
     MOV EAX,[0x0061135c]                ; 004d80c1 | g_CFilterFXPtr
         ;   Label: LAB_004d80c1
     PUSH EAX                            ; 004d80c6
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 004d8134 (CONDITIONAL_JUMP)  ; LAB_004d8134
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d80df
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d80e4 | g_INT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d80e4 | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d80ea
     MOV dword ptr [ESP + 0x8],EAX       ; 004d80ec
     FILD dword ptr [ESP + 0x8]          ; 004d80f0
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 004d814c (CONDITIONAL_JUMP)  ; LAB_004d814c
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8142
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8147 | g_INT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d8147 | g_ProfileStartTime
     MOV EAX,[0x00622ad0]                ; 004d814c | g_CScriptPtr
         ;   Label: LAB_004d814c
     PUSH EAX                            ; 004d8151
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 004d81bf (CONDITIONAL_JUMP)  ; LAB_004d81bf
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d816a
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d816f | g_INT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d816f | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d8175
     MOV dword ptr [ESP + 0x8],EAX       ; 004d8177
     FILD dword ptr [ESP + 0x8]          ; 004d817b
@@ -178,7 +178,7 @@ section .text
         ;   XREF to: 004d81f3 (CONDITIONAL_JUMP)  ; LAB_004d81f3
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d81e9
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d81ee | g_INT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d81ee | g_ProfileStartTime
     MOV EAX,[0x00622c18]                ; 004d81f3 | g_CDemonSetPtr
         ;   Label: LAB_004d81f3
     PUSH EAX                            ; 004d81f8 | g_CDemonSetInstance
@@ -192,7 +192,7 @@ section .text
         ;   XREF to: 004d8266 (CONDITIONAL_JUMP)  ; LAB_004d8266
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8211
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d8216 | g_INT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d8216 | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d821c
     MOV dword ptr [ESP + 0x8],EAX       ; 004d821e
     FILD dword ptr [ESP + 0x8]          ; 004d8222
@@ -219,7 +219,7 @@ section .text
         ;   XREF to: 004d827e (CONDITIONAL_JUMP)  ; LAB_004d827e
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8274
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8279 | g_INT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d8279 | g_ProfileStartTime
     MOV EAX,[0x0061dca4]                ; 004d827e | g_CGorePtr
         ;   Label: LAB_004d827e
     PUSH EAX                            ; 004d8283
@@ -233,7 +233,7 @@ section .text
         ;   XREF to: 004d82f1 (CONDITIONAL_JUMP)  ; LAB_004d82f1
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d829c
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d82a1 | g_INT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d82a1 | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d82a7
     MOV dword ptr [ESP + 0x8],EAX       ; 004d82a9
     FILD dword ptr [ESP + 0x8]          ; 004d82ad
@@ -266,8 +266,8 @@ section .text
         ;   XREF to: 004d831a (CONDITIONAL_JUMP)  ; LAB_004d831a
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8310
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8315 | g_INT_01cd0c90
-    MOV ECX,dword ptr [0x0061c010]      ; 004d831a | g_CFireEffect_PTR_0061c010
+    MOV [0x01cd0c90],EAX                ; 004d8315 | g_ProfileStartTime
+    MOV ECX,dword ptr [0x0061c010]      ; 004d831a | g_CFireEffectPtr
         ;   Label: LAB_004d831a
     PUSH ECX                            ; 004d8320
     CALL core_fire.cpp_CFireEffect_process_FUN_004b4dd0 ; 004d8321
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 004d838d (CONDITIONAL_JUMP)  ; LAB_004d838d
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8339
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV EBP,dword ptr [0x01cd0c90]      ; 004d833e | g_INT_01cd0c90
+    MOV EBP,dword ptr [0x01cd0c90]      ; 004d833e | g_ProfileStartTime
     SUB EAX,EBP                         ; 004d8344
     MOV dword ptr [ESP + 0x8],EAX       ; 004d8346
     FILD dword ptr [ESP + 0x8]          ; 004d834a
@@ -307,8 +307,8 @@ section .text
         ;   XREF to: 004d83a5 (CONDITIONAL_JUMP)  ; LAB_004d83a5
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d839b
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d83a0 | g_INT_01cd0c90
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004d83a5 | g_CEventList_PTR_0061b4d0
+    MOV [0x01cd0c90],EAX                ; 004d83a0 | g_ProfileStartTime
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004d83a5 | g_CEventListPtr
         ;   Label: LAB_004d83a5
     PUSH ECX                            ; 004d83ab
     CALL core_event.cpp_CEventList_process_FUN_004a1a40 ; 004d83ac
@@ -321,7 +321,7 @@ section .text
         ;   XREF to: 004d8418 (CONDITIONAL_JUMP)  ; LAB_004d8418
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d83c4
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV EBP,dword ptr [0x01cd0c90]      ; 004d83c9 | g_INT_01cd0c90
+    MOV EBP,dword ptr [0x01cd0c90]      ; 004d83c9 | g_ProfileStartTime
     SUB EAX,EBP                         ; 004d83cf
     MOV dword ptr [ESP + 0x8],EAX       ; 004d83d1
     FILD dword ptr [ESP + 0x8]          ; 004d83d5
@@ -341,13 +341,13 @@ section .text
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d8410
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004d8415
-    MOV EDX,dword ptr [0x00625bc0]      ; 004d8418 | g_CTerrain_PTR_00625bc0
+    MOV EDX,dword ptr [0x00625bc0]      ; 004d8418 | g_CTerrainPtr
         ;   Label: LAB_004d8418
     PUSH EDX                            ; 004d841e
     CALL core_terrain.cpp_CTerrain_process_FUN_0059f4f0 ; 004d841f
         ;   XREF to: 0059f4f0 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_process_FUN_0059f4f0(CTerrain * this_ptr)
     ADD ESP,0x4                         ; 004d8424
-    MOV ECX,dword ptr [0x0062604c]      ; 004d8427 | g_CWeather_PTR_0062604c
+    MOV ECX,dword ptr [0x0062604c]      ; 004d8427 | g_CWeatherPtr
     PUSH ECX                            ; 004d842d
     CALL core_weather.cpp_CWeather_update_FUN_005ae190 ; 004d842e
         ;   XREF to: 005ae190 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_update_FUN_005ae190(CWeather * this_ptr)
@@ -374,7 +374,7 @@ section .text
         ;   XREF to: 004d847a (CONDITIONAL_JUMP)  ; LAB_004d847a
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8470
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8475 | g_INT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d8475 | g_ProfileStartTime
     MOV ECX,dword ptr [0x0061f650]      ; 004d847a | g_CDemonMission_PTR_0061f650
         ;   Label: LAB_004d847a
     PUSH ECX                            ; 004d8480 | DAT_01d2c900
@@ -388,7 +388,7 @@ section .text
         ;   XREF to: 004d84ed (CONDITIONAL_JUMP)  ; LAB_004d84ed
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8499
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV EBP,dword ptr [0x01cd0c90]      ; 004d849e | g_INT_01cd0c90
+    MOV EBP,dword ptr [0x01cd0c90]      ; 004d849e | g_ProfileStartTime
     SUB EAX,EBP                         ; 004d84a4
     MOV dword ptr [ESP + 0x8],EAX       ; 004d84a6
     FILD dword ptr [ESP + 0x8]          ; 004d84aa

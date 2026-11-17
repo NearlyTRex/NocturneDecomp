@@ -1399,7 +1399,7 @@ section .text
     FADDP                               ; 0045a170
     FSTP float ptr [EBP + -0x6]         ; 0045a172
     MOV EAX,dword ptr [EBP + -0x6]      ; 0045a175
-    MOV EDI,dword ptr [0x01cc804c]      ; 0045a178 | g_INT_01cc804c
+    MOV EDI,dword ptr [0x01cc804c]      ; 0045a178 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0045a17e
     ADD EAX,EDI                         ; 0045a180
     MOV dword ptr [EBP + -0x2],EAX      ; 0045a182
@@ -1516,7 +1516,7 @@ section .text
     LEA EAX,[EBX + 0xc288]              ; 0045a2c3
         ;   Label: caseD_24
     PUSH EAX                            ; 0045a2c9
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0045a2ca | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0045a2ca | g_CEventListPtr
     PUSH ESI                            ; 0045a2d0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0045a2d1
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

@@ -18,7 +18,7 @@ extern CMP3Decoder g_CMP3DecoderInstanceOther;
 extern byte g_BYTE_02cdafb0;
 
 // char[15360]
-extern char g_CHAR_ARRAY_02cdafb8[15360];
+extern char g_SfxStreamReadBuffer[15360];
 
 // char[196]
 extern char g_CHAR_ARRAY_02cd28bc[196];

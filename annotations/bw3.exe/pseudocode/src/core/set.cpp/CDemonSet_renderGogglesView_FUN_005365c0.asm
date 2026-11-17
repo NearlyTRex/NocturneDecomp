@@ -41,8 +41,8 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   int g_INT_00603b38 = 0x1
-;   CWeather* g_CWeather_PTR_006071f0 = 02d0c1a0
+;   int g_RenderMirrorsFlag = 0x1
+;   CWeather* g_CWeatherPtr = 02d0c1a0
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   int g_INT_01c6cee8
 ;   undefined4 g_CDemonLightInstance.base.base.position
@@ -212,14 +212,14 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0053673c
     PUSH dword ptr [EBX + 0x140]        ; 0053673f | g_CDemonLightInstance.base.max_distance
     PUSH EDI                            ; 00536745
-    MOV dword ptr [0x00603b38],ESI      ; 00536746 | g_INT_00603b38
+    MOV dword ptr [0x00603b38],ESI      ; 00536746 | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80 ; 0053674c
         ;   XREF to: 00533b80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00536751
     PUSH -0x1                           ; 00536754
     MOV EAX,0x1                         ; 00536756
     PUSH EDI                            ; 0053675b
-    MOV [0x00603b38],EAX                ; 0053675c | g_INT_00603b38
+    MOV [0x00603b38],EAX                ; 0053675c | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30 ; 00536761
         ;   XREF to: 00539f30 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 00536766
@@ -317,7 +317,7 @@ section .text
         ;   XREF to: 004a4100 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004a4100(CFireEffect * this_ptr)
     SHL EAX,0x7                         ; 00536863
     ADD ESI,EAX                         ; 00536866
-    MOV EAX,[0x006071f0]                ; 00536868 | g_CWeather_PTR_006071f0
+    MOV EAX,[0x006071f0]                ; 00536868 | g_CWeatherPtr
     MOV EAX,dword ptr [EAX + 0x24]      ; 0053686d | g_CWeather_02d0c1a0.lightning_active
     SHL EAX,0xf                         ; 00536870
     ADD ESI,EAX                         ; 00536873

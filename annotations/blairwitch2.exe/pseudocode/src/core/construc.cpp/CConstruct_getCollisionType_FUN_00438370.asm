@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_00438370(CConstruct *this_ptr,SCollisionInfo *param_2)
+; ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_00438370(CConstruct *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CConstruct *     Stack[0x4]:4   this_ptr
-; SCollisionInfo * Stack[0x8]:4   param_2
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getCollisionType_FUN_00427680

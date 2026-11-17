@@ -35,8 +35,7 @@ float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CD
   float fStack_14;
   
   this_ptr_00 = (CCharacter *)
-                core_actor_cpp_castToClassHash_FUN_0040d890
-                          (target,g_CEnemyActorType_01bcdebc.name_hash);
+                core_actor_cpp_castToClassHash_FUN_0040d890(target,g_CEnemyClassInfo.name_hash);
   __arrinit(local_f8,10,&g_CVectorTypeInfo_005993b0);
   iVar3 = (*((target->vtable)._ub)->getTargetPoints)(target,local_f8);
   if ((iVar3 != 0) &&

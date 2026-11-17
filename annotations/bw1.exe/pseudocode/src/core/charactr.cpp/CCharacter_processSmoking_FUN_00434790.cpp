@@ -80,7 +80,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(CCharacter
             *(uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                  *(uint *)((int)&local_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                      (g_CFireEffect_PTR_0061c010,&local_2c,fVar1,pCVar5,iVar3);
+                      (g_CFireEffectPtr,&local_2c,fVar1,pCVar5,iVar3);
           }
         }
         fVar1 = this_ptr->smoke_check_timer - delta_time;

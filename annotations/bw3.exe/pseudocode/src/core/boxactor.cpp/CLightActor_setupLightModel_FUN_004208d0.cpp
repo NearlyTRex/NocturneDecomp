@@ -198,7 +198,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_004208d0(CLightAc
       iVar3 = g_INT_007e1778;
       (this_ptr->base).pickup_type = BOX_PICKUP_INVENTORY;
       if (iVar3 == 0) {
-        this_ptr_01 = CDemonFilter_ARRAY_007e17b8;
+        this_ptr_01 = g_LightActorFilters;
         iVar3 = 0;
         do {
           _sprintf(acStack_158,"lantern%d.raw");
@@ -209,7 +209,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_004208d0(CLightAc
         g_INT_007e1778 = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_0045db40
-                (&this_ptr->light,CDemonFilter_ARRAY_007e17b8,0,0,0);
+                (&this_ptr->light,g_LightActorFilters,0,0,0);
       return;
     }
   }

@@ -32,7 +32,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005bac34
+;   SMRGLTextureBasic g_Inventory3DTextureAtlas
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[5034].projected_vertex.inv_z
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
@@ -70,7 +70,7 @@ section .text
     SAR EDX,0x1f                        ; 004c1e0d
     IDIV ESI                            ; 004c1e10
     MOV ESI,EAX                         ; 004c1e12
-    PUSH 0x5bac34                       ; 004c1e14 | g_SMRGLTextureBasic_005bac34
+    PUSH 0x5bac34                       ; 004c1e14 | g_Inventory3DTextureAtlas
         ;   Label: LAB_004c1e14
     MOV EDI,dword ptr [0x005ae704]      ; 004c1e19 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004c1e1f | g_CDemonRenderer_01b4d738

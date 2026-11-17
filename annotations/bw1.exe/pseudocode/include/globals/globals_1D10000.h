@@ -18,7 +18,7 @@
 // =============================================================================
 
 // CAlphaBitmap
-extern CAlphaBitmap CAlphaBitmap_01d1b9d0;
+extern CAlphaBitmap g_BatteryIconBitmap;
 extern CAlphaBitmap CAlphaBitmap_01d1b9e4;
 extern CAlphaBitmap CAlphaBitmap_01d1b9f8;
 extern CAlphaBitmap CAlphaBitmap_01d1ba0c;
@@ -54,7 +54,7 @@ extern CDemonActorType g_CLightGunClassInfo;
 extern CDemonActorType g_CLightPisClassInfo;
 extern CDemonActorType g_CLightConeClassInfo;
 extern CDemonActorType g_CMansionPuzzleCircleClassInfo;
-extern CDemonActorType g_CDemonActorType_01d1d498;
+extern CDemonActorType g_CMirrorHackClassInfo;
 extern CDemonActorType g_CMarqueeClassInfo;
 extern CDemonActorType g_CMeleeClassInfo;
 
@@ -65,14 +65,14 @@ extern CKeyFramedModel g_LoadingMoonModel;
 extern CLevelLoader g_CLevelLoaderInstance;
 
 // CMatrix3x3i
-extern CMatrix3x3i g_CMatrix3x3i_01d1dd40;
+extern CMatrix3x3i g_TransformMatrixCopy;
 
 // CMoon
 extern CMoon g_CMoonInstance;
 
 // CVector3i
-extern CVector3i g_CVector3i_01d1c22c;
-extern CVector3i g_CVector3i_01d1c238;
+extern CVector3i g_CachedViewPosition;
+extern CVector3i g_NormalizedViewVector;
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_SMRGLTextureBasic_01d1baac;
@@ -82,11 +82,11 @@ extern char* g_CHAR_PTR_01d1d400;
 extern char* g_CHAR_PTR_01d1ffe0;
 
 // char*[16]
-extern char* g_CHAR_PTR_ARRAY_01d1f5dc[16];
-extern char* g_CHAR_PTR_ARRAY_01d1f61c[16];
+extern char* g_GraphicsCardDriverNames[16];
+extern char* g_GraphicsCardNames[16];
 
 // char*[9]
-extern char* g_CHAR_PTR_ARRAY_01d1f5b8[9];
+extern char* g_GraphicsMenuTextPointers[9];
 
 // char[2304]
 extern char g_CHAR_ARRAY_01d1f6e0[2304];
@@ -105,11 +105,11 @@ extern char g_CHAR_ARRAY_01d1eeb8[9];
 
 // int
 extern int g_INT_01d1bc48;
-extern int g_INT_01d1bc5c;
-extern int g_INT_01d1bc60;
-extern int g_INT_01d1c220;
-extern int g_INT_01d1c224;
-extern int g_INT_01d1c228;
+extern int g_InventoryScreenHeight;
+extern int g_InventoryLightAngle;
+extern int g_LightDirectionX2;
+extern int g_LightDirectionY2;
+extern int g_LightDirectionZ2;
 extern int g_INT_01d1d404;
 extern int g_INT_01d1d408;
 extern int g_INT_01d1dd18;
@@ -121,54 +121,54 @@ extern int g_INT_01d1dd2c;
 extern int g_INT_01d1dd30;
 extern int g_INT_01d1dd34;
 extern int g_INT_01d1dd38;
-extern int g_INT_01d1dd70;
-extern int g_INT_01d1dd74;
-extern int g_INT_01d1dfd0;
-extern int g_INT_01d1ee8c;
+extern int g_PixelAspectCorrection;
+extern int g_MatrixStackIndex;
+extern int g_ViewportStackIndex;
+extern int g_MenuLeftRightPressed;
 extern int g_INT_01d1ee90;
-extern int g_INT_01d1ee98;
-extern int g_INT_01d1ee9c;
+extern int g_AudioVisualizationCounter;
+extern int g_MenuInputHappened;
 
 // int[10]
-extern int g_INT_ARRAY_01d1dd78[10];
-extern int g_INT_ARRAY_01d1dda0[10];
-extern int g_INT_ARRAY_01d1ddc8[10];
-extern int g_INT_ARRAY_01d1ddf0[10];
-extern int g_INT_ARRAY_01d1de18[10];
-extern int g_INT_ARRAY_01d1de40[10];
-extern int g_INT_ARRAY_01d1de68[10];
-extern int g_INT_ARRAY_01d1de90[10];
-extern int g_INT_ARRAY_01d1deb8[10];
-extern int g_INT_ARRAY_01d1dee0[10];
-extern int g_INT_ARRAY_01d1df08[10];
-extern int g_INT_ARRAY_01d1df30[10];
-extern int g_INT_ARRAY_01d1df58[10];
-extern int g_INT_ARRAY_01d1df80[10];
-extern int g_INT_ARRAY_01d1dfa8[10];
-extern int g_INT_ARRAY_01d1dfd4[10];
-extern int g_INT_ARRAY_01d1dffc[10];
-extern int g_INT_ARRAY_01d1e024[10];
-extern int g_INT_ARRAY_01d1e04c[10];
-extern int g_INT_ARRAY_01d1e074[10];
-extern int g_INT_ARRAY_01d1e09c[10];
-extern int g_INT_ARRAY_01d1e0c4[10];
-extern int g_INT_ARRAY_01d1e0ec[10];
-extern int g_INT_ARRAY_01d1e114[10];
-extern int g_INT_ARRAY_01d1e13c[10];
-extern int g_INT_ARRAY_01d1e164[10];
-extern int g_INT_ARRAY_01d1e18c[10];
-extern int g_INT_ARRAY_01d1e1b4[10];
-extern int g_INT_ARRAY_01d1e1dc[10];
-extern int g_INT_ARRAY_01d1e204[10];
-extern int g_INT_ARRAY_01d1e22c[10];
-extern int g_INT_ARRAY_01d1e254[10];
-extern int g_INT_ARRAY_01d1e27c[10];
+extern int g_MatrixStack_M00[10];
+extern int g_MatrixStack_M01[10];
+extern int g_MatrixStack_M02[10];
+extern int g_MatrixStack_M10[10];
+extern int g_MatrixStack_M11[10];
+extern int g_MatrixStack_M12[10];
+extern int g_MatrixStack_M20[10];
+extern int g_MatrixStack_M21[10];
+extern int g_MatrixStack_M22[10];
+extern int g_MatrixStack_RelX[10];
+extern int g_MatrixStack_RelY[10];
+extern int g_MatrixStack_RelZ[10];
+extern int g_MatrixStack_Unk1[10];
+extern int g_MatrixStack_Unk2[10];
+extern int g_MatrixStack_Unk3[10];
+extern int g_ViewportStack_CenterX[10];
+extern int g_ViewportStack_CenterY[10];
+extern int g_ViewportStack_RightFixed[10];
+extern int g_ViewportStack_BottomFixed[10];
+extern int g_ViewportStack_ProjectionScale[10];
+extern int g_ViewportStack_CameraX[10];
+extern int g_ViewportStack_CameraY[10];
+extern int g_ViewportStack_CameraZ[10];
+extern int g_ViewportStack_RotationPitch[10];
+extern int g_ViewportStack_RotationYaw[10];
+extern int g_ViewportStack_RotationRoll[10];
+extern int g_ViewportStack_ExtraState1[10];
+extern int g_ViewportStack_ExtraState2[10];
+extern int g_ViewportStack_ExtraState3[10];
+extern int g_ViewportStack_ClipLeft[10];
+extern int g_ViewportStack_ClipRight[10];
+extern int g_ViewportStack_ClipTop[10];
+extern int g_ViewportStack_ClipBottom[10];
 
 // int[16]
-extern int g_INT_ARRAY_01d1f65c[16];
+extern int g_GraphicsCardVendorIDs[16];
 
 // int[17]
-extern int g_INT_ARRAY_01d1f69c[17];
+extern int g_GraphicsCardDeviceIDs[17];
 
 // int[256]
 extern int g_INT_ARRAY_01d1d510[256];
@@ -177,9 +177,9 @@ extern int g_INT_ARRAY_01d1d510[256];
 extern int g_INT_ARRAY_01d1d914[257];
 
 // uint
-extern uint g_UINT_01d1dd64;
-extern uint g_UINT_01d1dd68;
-extern uint g_UINT_01d1dd6c;
+extern uint g_SavedRotationX;
+extern uint g_SavedRotationY;
+extern uint g_SavedRotationZ;
 
 // void*
 extern void* g_PTR_01d1bca0;

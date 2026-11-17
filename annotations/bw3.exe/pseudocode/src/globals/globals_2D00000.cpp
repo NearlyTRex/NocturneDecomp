@@ -11,7 +11,7 @@ CDemonActorType g_CWayPointClassInfo = {};
 CDemonActorType g_CWeaponClassInfo = {};
 
 // CDemonGlobe
-CDemonGlobe g_CDemonGlobe_02d0c154 = {};
+CDemonGlobe g_WeaponCoronaGlobe = {};
 
 // CVector3f
 CVector3f g_CVector3f_02d0c208 = {};
@@ -23,30 +23,30 @@ CVector3i g_CVector3i_02d06e08 = {};
 CWeather g_CWeather_02d0c1a0 = {};
 
 // IDirectDraw*
-IDirectDraw* g_IDirectDraw_PTR_02d0bce0 = {};
+IDirectDraw* g_DirectDrawObject = {};
 
 // IDirectDrawSurface*
-IDirectDrawSurface* g_IDirectDrawSurface_PTR_02d0bce4 = {};
-IDirectDrawSurface* g_IDirectDrawSurface_PTR_02d0bce8 = {};
+IDirectDrawSurface* g_DirectDrawSurface = {};
+IDirectDrawSurface* g_SoftwareRenderSurface = {};
 
 // IUnknown*
-IUnknown* g_IUnknown_PTR_02d0bcec = {};
+IUnknown* g_DirectDrawUnknown = {};
 
 // PALETTEENTRY[256]
-PALETTEENTRY g_PALETTEENTRY_ARRAY_02d0bd18[256] = {};
+PALETTEENTRY g_DDPaletteBuffer[256] = {};
 
 // char[4]
 char g_CHAR_ARRAY_02d09d60[4] = {};
 
 // float
-float g_FLOAT_02d059a8 = {};
+float g_WaterAnimationPhase = {};
 
 // int
-int g_INT_02d059a4 = {};
+int g_WaterAnimationBlend = {};
 int g_INT_02d059ac = {};
 int g_INT_02d059b0 = {};
-int g_INT_02d0bcf4 = {};
-int g_INT_02d0bcf8 = {};
+int g_FlipPending = {};
+int g_GraphicsResetFlag = {};
 int g_INT_02d0bcfc = {};
 int g_INT_02d0bd00 = {};
 int g_INT_02d0bd04 = {};
@@ -56,7 +56,7 @@ int g_INT_02d0bd10 = {};
 int g_INT_02d0bd14 = {};
 
 // int[4096]
-int g_INT_ARRAY_02d01980[4096] = {};
+int g_VisibleWaterTilesY[4096] = {};
 
 // void*
 void* g_PTR_02d0bcf0 = {};

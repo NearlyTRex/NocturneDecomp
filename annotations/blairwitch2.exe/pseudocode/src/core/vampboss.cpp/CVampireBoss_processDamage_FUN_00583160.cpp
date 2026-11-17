@@ -35,7 +35,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
       do {
         iVar2 = iVar2 + 1;
         core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                  (g_CFireEffect_PTR_00614d30,&CStack_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                  (g_CFireEffectPtr,&CStack_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
       } while (iVar2 < 5);
     }
     if (this_ptr->form == 0) {
@@ -64,7 +64,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
                   ((CCharacter *)this_ptr,0,this_ptr_00,0.2,(CMatrix3x4f *)0x0);
         core_event_cpp_CEventList_executeCommands_FUN_004894f0
-                  (g_CEventList_PTR_006141f0,"VampireBossBitesIt");
+                  (g_CEventListPtr,"VampireBossBitesIt");
         sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
         core_sound_cpp_CSound_playSound_FUN_0055ae30
                   (g_CSound_PTR_0061c068,this_ptr,"voicudeath.wav @ 2.5");

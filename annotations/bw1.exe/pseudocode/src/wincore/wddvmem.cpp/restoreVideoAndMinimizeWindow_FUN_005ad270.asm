@@ -12,8 +12,8 @@
 ;   TerminatedCString s_trigl_dll_005f9835
 ;   char[256] g_CHAR_ARRAY_006257d0
 ;   int g_INT_02c83370
-;   int g_INT_02c99318
-;   HWND g_HWND_02c9be68
+;   int g_GraphicsResetFlag
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -28,7 +28,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005ad270
     JZ 0x005ad282                       ; 005ad277
         ;   XREF to: 005ad282 (CONDITIONAL_JUMP)  ; LAB_005ad282
-    CMP dword ptr [0x02c99318],0x0      ; 005ad279 | g_INT_02c99318
+    CMP dword ptr [0x02c99318],0x0      ; 005ad279 | g_GraphicsResetFlag
     JNZ 0x005ad283                      ; 005ad280
         ;   XREF to: 005ad283 (CONDITIONAL_JUMP)  ; LAB_005ad283
     RET                                 ; 005ad282
@@ -47,7 +47,7 @@ section .text
     PUSH EBX                            ; 005ad29e
         ;   Label: LAB_005ad29e
     PUSH 0x6                            ; 005ad29f
-    MOV EBX,dword ptr [0x02c9be68]      ; 005ad2a1 | g_HWND_02c9be68
+    MOV EBX,dword ptr [0x02c9be68]      ; 005ad2a1 | g_MainWindowHandle
     PUSH EBX                            ; 005ad2a7
     CALL dword ptr CS:[0x5d050c]        ; 005ad2a8 | PTR_ShowWindow_005d050c
     POP EBX                             ; 005ad2af

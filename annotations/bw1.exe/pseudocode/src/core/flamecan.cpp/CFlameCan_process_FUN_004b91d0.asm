@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 004b91d4
     LEA EAX,[EBX + 0x2dc]               ; 004b91d8
     PUSH EAX                            ; 004b91de
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004b91df | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004b91df | g_CEventListPtr
     PUSH EDX                            ; 004b91e5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004b91e6
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -90,7 +90,7 @@ section .text
     ADD EBX,0x360                       ; 004b9272
     PUSH 0x41800000                     ; 004b9278
     PUSH EBX                            ; 004b927d
-    MOV EDI,dword ptr [0x0061c010]      ; 004b927e | g_CFireEffect_PTR_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 004b927e | g_CFireEffectPtr
     PUSH EDI                            ; 004b9284
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60 ; 004b9285
         ;   XREF to: 004b6c60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)

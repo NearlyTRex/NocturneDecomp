@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005d543a = 32767.7000000000
 ;   CGame* g_CGamePtr = 01cb6900
-;   int g_INT_01c2a370
+;   int g_GlobalDeltaTimeInt
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     FADDP                               ; 004967f7
     ADD ESP,0x4                         ; 004967f9
     FSQRT                               ; 004967fc
-    MOV EAX,[0x01c2a370]                ; 004967fe | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 004967fe | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 00496803
     SAR EDX,0x1f                        ; 00496805
     SHL EDX,0x2                         ; 00496808
@@ -59,7 +59,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0049682d
     MOV EDX,dword ptr [EBX + 0x44]      ; 00496831
     ADD EDX,EAX                         ; 00496834
-    MOV EAX,[0x01c2a370]                ; 00496836 | g_INT_01c2a370
+    MOV EAX,[0x01c2a370]                ; 00496836 | g_GlobalDeltaTimeInt
     MOV dword ptr [EBX + 0x44],EDX      ; 0049683b
     MOV EDX,EAX                         ; 0049683e
     SAR EDX,0x1f                        ; 00496840

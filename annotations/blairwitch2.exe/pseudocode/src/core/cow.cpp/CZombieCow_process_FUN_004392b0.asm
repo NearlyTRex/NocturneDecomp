@@ -19,7 +19,7 @@
 ;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -327,7 +327,7 @@ section .text
     ADD EAX,EDX                         ; 004395b8
     PUSH 0x3f333333                     ; 004395ba
     PUSH EAX                            ; 004395bf
-    PUSH 0x265370c                      ; 004395c0 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 004395c0 | g_ZeroVector
     LEA ESI,[EBP + -0x46]               ; 004395c5
     LEA EDI,[EBP + 0x3e]                ; 004395c8
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004395cb

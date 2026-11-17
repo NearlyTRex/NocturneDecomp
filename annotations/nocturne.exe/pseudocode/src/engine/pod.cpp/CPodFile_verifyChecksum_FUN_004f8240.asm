@@ -31,8 +31,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   char[65536] g_CHAR_ARRAY_01e428d0
-;   undefined4 g_CHAR_ARRAY_01e428d0+1
+;   char[65536] g_FileIOBuffer
+;   undefined4 g_FileIOBuffer+1
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_004f833d
     PUSH 0x1                            ; 004f833e
     PUSH 0x10000                        ; 004f8340
-    PUSH 0x1e428d0                      ; 004f8345 | g_CHAR_ARRAY_01e428d0
+    PUSH 0x1e428d0                      ; 004f8345 | g_FileIOBuffer
     MOV ESI,0x1e428d0                   ; 004f834a
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f834f
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
@@ -156,7 +156,7 @@ section .text
     XOR EBX,EBX                         ; 004f8359
     XOR EDX,EDX                         ; 004f835b
         ;   Label: LAB_004f835b
-    MOV DL,byte ptr [ESI]               ; 004f835d | g_CHAR_ARRAY_01e428d0 | g_CHAR_ARRAY_01e428d0+1
+    MOV DL,byte ptr [ESI]               ; 004f835d | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 004f835f
     PUSH EAX                            ; 004f8360
     INC ESI                             ; 004f8361
@@ -176,7 +176,7 @@ section .text
         ;   Label: LAB_004f8383
     PUSH 0x1                            ; 004f8384
     PUSH EDI                            ; 004f8386
-    PUSH 0x1e428d0                      ; 004f8387 | g_CHAR_ARRAY_01e428d0
+    PUSH 0x1e428d0                      ; 004f8387 | g_FileIOBuffer
     MOV ESI,0x1e428d0                   ; 004f838c
     MOV EBP,EBX                         ; 004f8391
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f8393
@@ -189,7 +189,7 @@ section .text
         ;   XREF to: 004f83d0 (CONDITIONAL_JUMP)  ; LAB_004f83d0
     XOR EAX,EAX                         ; 004f83a8
         ;   Label: LAB_004f83a8
-    MOV AL,byte ptr [ESI]               ; 004f83aa | g_CHAR_ARRAY_01e428d0 | g_CHAR_ARRAY_01e428d0+1
+    MOV AL,byte ptr [ESI]               ; 004f83aa | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EAX                            ; 004f83ac
     PUSH EBP                            ; 004f83ad
     INC ESI                             ; 004f83ae

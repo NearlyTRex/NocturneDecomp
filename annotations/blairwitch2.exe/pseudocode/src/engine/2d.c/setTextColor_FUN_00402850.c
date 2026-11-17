@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_setTextColor_FUN_00402850(int color)
 
 {
-  g_INT_00609370 = color;
+  g_CurrentTextColor = color;
   return;
 }

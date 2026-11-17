@@ -32,12 +32,12 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
   
   bVar2 = 0;
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (g_CEventList_PTR_006141f0,this_ptr->start_event);
+                    (g_CEventListPtr,this_ptr->start_event);
   if (iVar1 != 0) {
     this_ptr->state = 1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (g_CEventList_PTR_006141f0,this_ptr->stop_event);
+                    (g_CEventListPtr,this_ptr->stop_event);
   if (iVar1 == 0) {
     if (this_ptr->state != 0) {
       pCStack_1c = &this_ptr->direction;

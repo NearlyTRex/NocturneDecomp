@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005d531d = 3.141593
 ;   CFilterFX* g_CFilterFXPtr = 01511cac
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   undefined4 g_CFilmReelClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 00492d32 (CONDITIONAL_JUMP)  ; LAB_00492d32
     LEA EAX,[EBX + 0x4d0]               ; 00492da2
     PUSH EAX                            ; 00492da8
-    MOV ESI,dword ptr [0x006141f0]      ; 00492da9 | g_CEventList_PTR_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 00492da9 | g_CEventListPtr
     PUSH ESI                            ; 00492daf
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 00492db0
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

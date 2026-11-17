@@ -148,7 +148,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
               (g_CDemonRenderer_PTR_00612560,&this_ptr->glass_texture);
-    if (g_INT_0061b4a8 == 0x40) {
+    if (g_CurrentTextureDimension == 0x40) {
       local_fc.x = 0xf80000;
       local_ec.y = 0x80000;
       local_fc.y = 0x80000;

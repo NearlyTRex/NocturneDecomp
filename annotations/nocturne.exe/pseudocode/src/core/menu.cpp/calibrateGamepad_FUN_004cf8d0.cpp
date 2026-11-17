@@ -30,12 +30,12 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Center gamepad, press ENTER")
     ;
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_014b98f8,pcVar2);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_MediumFont,pcVar2);
     local_24 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b98f8,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (g_CBitFont_PTR_014b98f8,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
-    _sprintf(local_224,"%d,%d,%x",g_DWORD_01c038f8,g_DWORD_01c038fc,g_DWORD_01c03908);
+              (g_MediumFont,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
+    _sprintf(local_224,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
     engine_2d_c_drawText_FUN_00402600(local_224,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
@@ -44,19 +44,19 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     if (iVar3 != 0) break;
     iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar3 != 0) goto LAB_004cfb43;
-    DStack_1c = g_DWORD_01c038f8;
-    DStack_18 = g_DWORD_01c038fc;
+    DStack_1c = g_JoyXPos;
+    DStack_18 = g_JoyYPos;
   }
   while( true ) {
     core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Move gamepad in all directions, press ENTER")
     ;
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_014b98f8,pcVar2);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_MediumFont,pcVar2);
     iStack_20 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b98f8,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (g_CBitFont_PTR_014b98f8,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);
-    _sprintf(acStack_124,"%d,%d,%x",g_DWORD_01c038f8,g_DWORD_01c038fc,g_DWORD_01c03908);
+              (g_MediumFont,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);
+    _sprintf(acStack_124,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
     engine_2d_c_drawText_FUN_00402600(acStack_124,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
@@ -73,17 +73,17 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     }
     iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar3 != 0) break;
-    if ((int)g_DWORD_01c038f8 < (int)DVar5) {
-      DVar5 = g_DWORD_01c038f8;
+    if ((int)g_JoyXPos < (int)DVar5) {
+      DVar5 = g_JoyXPos;
     }
-    if ((int)DVar4 < (int)g_DWORD_01c038f8) {
-      DVar4 = g_DWORD_01c038f8;
+    if ((int)DVar4 < (int)g_JoyXPos) {
+      DVar4 = g_JoyXPos;
     }
-    if ((int)g_DWORD_01c038fc < (int)local_14) {
-      local_14 = g_DWORD_01c038fc;
+    if ((int)g_JoyYPos < (int)local_14) {
+      local_14 = g_JoyYPos;
     }
-    if ((int)DVar6 < (int)g_DWORD_01c038fc) {
-      DVar6 = g_DWORD_01c038fc;
+    if ((int)DVar6 < (int)g_JoyYPos) {
+      DVar6 = g_JoyYPos;
     }
   }
 LAB_004cfb43:

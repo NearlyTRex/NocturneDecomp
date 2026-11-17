@@ -33,8 +33,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   undefined4 g_INT_ARRAY_01fbb060[65535]
-;   int g_INT_01fff224
+;   undefined4 g_IntensityToValueLookupTable[65535]
+;   int g_ColorCorrectionCount
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -133,11 +133,11 @@ section .text
         ;   XREF to: 0050ba7e (CONDITIONAL_JUMP)  ; LAB_0050ba7e
     MOV ECX,0xffff                      ; 0050b8e7
     MOV dword ptr [ESP + 0x20],EDX      ; 0050b8ec
-    CMP dword ptr [0x01fff224],0x0      ; 0050b8f0 | g_INT_01fff224
+    CMP dword ptr [0x01fff224],0x0      ; 0050b8f0 | g_ColorCorrectionCount
         ;   Label: LAB_0050b8f0
     JLE 0x0050bb1c                      ; 0050b8f7
         ;   XREF to: 0050bb1c (CONDITIONAL_JUMP)  ; LAB_0050bb1c
-    MOV EDX,dword ptr [0x01fff5a4]      ; 0050b8fd | g_INT_01fff5a4
+    MOV EDX,dword ptr [0x01fff5a4]      ; 0050b8fd | g_ColorCorrectionLightMultiplier
     MOV EAX,ECX                         ; 0050b903
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050b905
     IMUL EDX                            ; 0050b909
@@ -146,7 +146,7 @@ section .text
     ADD EAX,EBP                         ; 0050b915
     IMUL EDX                            ; 0050b917
     SHRD EAX,EDX,0x10                   ; 0050b919
-    MOV EDX,dword ptr [0x01fff5a8]      ; 0050b91d | g_INT_01fff5a8
+    MOV EDX,dword ptr [0x01fff5a8]      ; 0050b91d | g_ColorCorrectionColorMultiplier
     MOV dword ptr [ESP + 0x1c],EAX      ; 0050b923
     MOV EAX,ECX                         ; 0050b927
     IMUL EDX                            ; 0050b929
@@ -155,7 +155,7 @@ section .text
     ADD EAX,EBP                         ; 0050b935
     IMUL EDX                            ; 0050b937
     SHRD EAX,EDX,0x10                   ; 0050b939
-    MOV EDX,dword ptr [0x01fff5ac]      ; 0050b93d | g_INT_01fff5ac
+    MOV EDX,dword ptr [0x01fff5ac]      ; 0050b93d | g_ColorCorrectionFogMultiplier
     MOV EDI,EAX                         ; 0050b943
     MOV EAX,ECX                         ; 0050b945
     IMUL EDX                            ; 0050b947
@@ -268,11 +268,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0050ba50
         ;   Label: LAB_0050ba50
     MOV EDX,dword ptr [ESP + 0x18]      ; 0050ba54
-    MOV EAX,dword ptr [EAX*0x4 + 0x1fbb060] ; 0050ba58 | g_INT_ARRAY_01fbb060[65535]
+    MOV EAX,dword ptr [EAX*0x4 + 0x1fbb060] ; 0050ba58 | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x20],EAX      ; 0050ba5f | g_SRenderVertex_ARRAY_005c5014[0].r
-    MOV EAX,dword ptr [EDI*0x4 + 0x1fbb060] ; 0050ba62 | g_INT_ARRAY_01fbb060[65535]
+    MOV EAX,dword ptr [EDI*0x4 + 0x1fbb060] ; 0050ba62 | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x24],EAX      ; 0050ba69 | g_SRenderVertex_ARRAY_005c5014[0].g
-    MOV EAX,dword ptr [EBP*0x4 + 0x1fbb060] ; 0050ba6c | g_INT_ARRAY_01fbb060[65535]
+    MOV EAX,dword ptr [EBP*0x4 + 0x1fbb060] ; 0050ba6c | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x28],EAX      ; 0050ba73 | g_SRenderVertex_ARRAY_005c5014[0].b
     ADD ESP,0x24                        ; 0050ba76
     POP EBP                             ; 0050ba79

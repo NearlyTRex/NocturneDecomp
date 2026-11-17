@@ -10,12 +10,12 @@ void __cdecl core_dtri_cpp_staticInit_FUN_004786f0(void)
 
 {
   __arrinit(&g_FLOAT_01c599e0,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01c59aa4,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01c59b68,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01c59c2c,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01c59cf0,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01c59db4,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipBuffer1Vertices,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipBuffer2Vertices,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipBuffer3Vertices,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipBuffer4Vertices,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipBuffer5Vertices,0x10,&g_CVectorTypeInfo);
   __arrinit(&g_CVector3f_01c59e78,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CDemonTriangle_ARRAY_01c59f38,8,&g_CDemonTriangleTypeInfo);
+  __arrinit(g_ClippedTriangleBuffer,8,&g_CDemonTriangleTypeInfo);
   return;
 }

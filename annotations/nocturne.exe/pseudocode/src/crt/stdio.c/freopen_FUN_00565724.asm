@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   void* g_PTR_005c1d58 = 00000000
+;   void* g_SpecialDeviceCleanupFunc = 00000000
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
@@ -47,13 +47,13 @@ section .text
     MOV EBX,dword ptr [ESI + 0x10]      ; 00565745
     PUSH EBX                            ; 00565748
     CALL dword ptr [0x005c1ac0]         ; 00565749 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
-    MOV ECX,dword ptr [0x005c1d58]      ; 0056574f | g_PTR_005c1d58
+    MOV ECX,dword ptr [0x005c1d58]      ; 0056574f | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 00565755
     TEST ECX,ECX                        ; 00565758
     JZ 0x00565766                       ; 0056575a
         ;   XREF to: 00565766 (CONDITIONAL_JUMP)  ; LAB_00565766
     PUSH EBX                            ; 0056575c
-    CALL dword ptr [0x005c1d58]         ; 0056575d | g_PTR_005c1d58
+    CALL dword ptr [0x005c1d58]         ; 0056575d | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 00565763
     PUSH ESI                            ; 00565766
         ;   Label: LAB_00565766

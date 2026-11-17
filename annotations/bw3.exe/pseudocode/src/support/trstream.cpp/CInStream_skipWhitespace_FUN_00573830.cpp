@@ -18,7 +18,7 @@ int __cdecl support_trstream_cpp_CInStream_skipWhitespace_FUN_00573830(CInStream
       return iVar1;
     }
     cStack_8 = (char)iVar1;
-    if ((g_UCHAR_ARRAY_006074b8[(byte)(cStack_8 + 1)] & 2) == 0) break;
+    if ((g_CharacterClassificationTable[(byte)(cStack_8 + 1)] & 2) == 0) break;
     iVar1 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);
     if (iVar1 == -1) {
       return 0;

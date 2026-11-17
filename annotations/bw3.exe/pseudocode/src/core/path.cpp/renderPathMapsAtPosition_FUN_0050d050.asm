@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   int g_INT_01ec1518
+;   int g_PathMapCount
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0
@@ -43,7 +43,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0050d079
     MOVSD ES:EDI,ESI                    ; 0050d07a
     MOVSD ES:EDI,ESI                    ; 0050d07b
-    MOV ECX,dword ptr [0x01ec1518]      ; 0050d07c | g_INT_01ec1518
+    MOV ECX,dword ptr [0x01ec1518]      ; 0050d07c | g_PathMapCount
     XOR ESI,ESI                         ; 0050d082
     TEST ECX,ECX                        ; 0050d084
     JLE 0x0050d0b3                      ; 0050d086
@@ -58,7 +58,7 @@ section .text
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 0050d099
     JLE 0x0050d0e0                      ; 0050d0a3
         ;   XREF to: 0050d0e0 (CONDITIONAL_JUMP)  ; LAB_0050d0e0
-    MOV EDI,dword ptr [0x01ec1518]      ; 0050d0a5 | g_INT_01ec1518
+    MOV EDI,dword ptr [0x01ec1518]      ; 0050d0a5 | g_PathMapCount
         ;   Label: LAB_0050d0a5
     INC ESI                             ; 0050d0ab
     ADD EBX,0x4                         ; 0050d0ac

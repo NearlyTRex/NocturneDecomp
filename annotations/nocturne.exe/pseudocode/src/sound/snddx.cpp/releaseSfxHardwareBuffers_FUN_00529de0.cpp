@@ -16,7 +16,7 @@ int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00529de0(int sfx_handl
   char *pcVar2;
   char acStack_198 [400];
   
-  this_ptr = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[sfx_handle];
+  this_ptr = g_DirectSoundHardwareSfxBuffers[sfx_handle];
   if ((this_ptr != (LPDIRECTSOUNDBUFFER)0x0) &&
      (error_code = (*this_ptr->vtable->Stop)(this_ptr), error_code != 0)) {
     pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
@@ -30,10 +30,10 @@ int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00529de0(int sfx_handl
     (**(code **)(*piVar1 + 8))(piVar1);
     g_INT_ARRAY_02dc9324[sfx_handle] = 0;
   }
-  this_ptr_00 = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[sfx_handle];
+  this_ptr_00 = g_DirectSoundHardwareSfxBuffers[sfx_handle];
   if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
     (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
-    g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[sfx_handle] = (IDirectSoundBuffer *)0x0;
+    g_DirectSoundHardwareSfxBuffers[sfx_handle] = (IDirectSoundBuffer *)0x0;
   }
   return 1;
 }

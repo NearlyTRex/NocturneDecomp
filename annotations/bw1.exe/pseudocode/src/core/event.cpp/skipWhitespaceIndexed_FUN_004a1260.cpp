@@ -9,7 +9,7 @@
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004a1260(char *expression,int *parse_position)
 
 {
-  while ((g_UCHAR_ARRAY_00626114[(byte)(expression[*parse_position] + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(expression[*parse_position] + 1)] & 2) != 0) {
     *parse_position = *parse_position + 1;
   }
   return parse_position;

@@ -11,7 +11,7 @@
 // =============================================================================
 
 // SDisplayListSortEntry[2000]
-extern SDisplayListSortEntry g_SDisplayListSortEntry_ARRAY_0211e354[2000];
+extern SDisplayListSortEntry g_SetDisplayListSortBuffer[2000];
 
 // int
 extern int g_INT_0211e350;

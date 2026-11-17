@@ -346,7 +346,7 @@ CCharacter_full_vtable g_CDrummerVTable = {
 CConsole* g_CConsolePtr = (CConsole*)&g_CConsoleInstance;
 
 // CDemonActor*
-CDemonActor* g_CDemonActor_PTR_005a16f0 = (CDemonActor*)0xFFFFFFFF;
+CDemonActor* g_ScriptSentinelActor = (CDemonActor*)0xFFFFFFFF;
 
 // CDemonActor_vtable
 CDemonActor_vtable g_CMansionPuzzleCircleVTable = {
@@ -1377,8 +1377,8 @@ CDemonActor_vtable g_CWayPointVTable = {
 };
 
 // CDemonFilter*
-CDemonFilter* g_GlobalFilters = (CDemonFilter*)&g_CDemonFilter_ARRAY_014b8a58;
-CDemonFilter* g_PlayerFilters = (CDemonFilter*)&g_CDemonFilter_ARRAY_014b8a58;
+CDemonFilter* g_GlobalFilters = (CDemonFilter*)&g_PlayerFilterPool;
+CDemonFilter* g_PlayerFilters = (CDemonFilter*)&g_PlayerFilterPool;
 
 // CDemonPod_vtable
 CDemonPod_vtable g_CDemonPodVTable = {
@@ -2578,7 +2578,7 @@ CPod_vtable g_CPodVTable = {
 };
 
 // CQuaternion4f
-CQuaternion4f g_CQuaternion4f_005a4508 = {
+CQuaternion4f g_IdentityQuaternion = {
     .w = 1.0f,
     .x = 0.0f,
     .y = 0.0f,
@@ -2722,7 +2722,7 @@ CSoundDeviceFull_vtable g_CWavOutDeviceVTable = {
 };
 
 // CVector3i[62]
-CVector3i g_CVector3i_ARRAY_005ad594[62] = {
+CVector3i g_CoronaVertexPositions[62] = {
     {
         .x = 0x00000000,
         .y = 0x00000100,
@@ -4334,7 +4334,7 @@ SFontGlyph g_FontTable[224] = {
 };
 
 // SLightGlowTable
-SLightGlowTable g_SLightGlowTable_005ae458 = {
+SLightGlowTable g_LightGlow = {
     .fuzz = {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "LITEFUZZ.RAW"
@@ -4437,7 +4437,7 @@ SLightGlowTable g_SLightGlowTable_005ae458 = {
 };
 
 // SMRGLLightPrimitive[84]
-SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_005ad87c[84] = {
+SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.count = 0x00000003},
         .normal = {
@@ -5292,17 +5292,17 @@ SMRGLTextureBasic g_SMRGLTextureBasic_005ad1fc = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "CHAR2.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_005ad49c = {
+SMRGLTextureBasic g_CameraBackdropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic g_SMRGLTextureBasic_005ad57c = {
+SMRGLTextureBasic g_CoronaHeadliteTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
 
 // SMRGLTextureBasic[6]
-SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_005ad140[6] = {
+SMRGLTextureBasic g_EtherealBoltTextures[6] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BOLT1.RAW"
@@ -5469,7 +5469,7 @@ WatcomDestructorCall g_WatcomDestructorCall_005a2138 = {
 WatcomDestructorCall g_WatcomDestructorCall_005a22c0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)shape_edittool_cpp_CStrList_dtor_FUN_00473b80,
-    .object_instance = (void *)&g_CStrList_02dc9610
+    .object_instance = (void *)&g_SoundFileList
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a3270 = {
     .delete_flags = 0x00000004,
@@ -5483,7 +5483,7 @@ WatcomDestructorCall g_WatcomDestructorCall_005a3e80 = {
 };
 
 // WatcomInheritanceLayout
-WatcomInheritanceLayout g_WatcomInheritanceLayout_005a4908 = {.base_type = nullptr, .offset_to_base = 0x0000000C};
+WatcomInheritanceLayout g_OStream_InheritanceLayout = {.base_type = nullptr, .offset_to_base = 0x0000000C};
 WatcomInheritanceLayout g_WatcomInheritanceLayout_005a49b8 = {.base_type = nullptr, .offset_to_base = 0x00000010};
 
 // WatcomStaticDestructorNode
@@ -5491,7 +5491,7 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad08c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059aaa0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonFilter_ARRAY_0076483c
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomStaticDestructorNode g_ConsoleDestructorNode = {
     .next = nullptr,
@@ -5509,7 +5509,7 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad4dc = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059bf60,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonFilter_ARRAY_014b8a58
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad4ec = {
     .next = nullptr,
@@ -5539,7 +5539,7 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae6b8 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059c3c0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_SFreaky_ARRAY_01b4d280
+    .object_instance = (void *)&g_FreakySounds
 };
 
 // WatcomThunkedDestructor
@@ -6317,19 +6317,19 @@ WatcomTypeInfo g_filebufTypeInfo_005a4b60 = {
 
 // WatcomVirtualBaseDescriptor
 WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a46b8 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4730 = {.flags = 0x00000000, .offset_to_vbase = 0x00000058};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a47a4 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a47ac = {.flags = 0x00000044, .offset_to_vbase = 0x00000010};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4810 = {.flags = 0x00000000, .offset_to_vbase = 0x00000050};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4818 = {.flags = 0x00000044, .offset_to_vbase = 0x0000000C};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a48b0 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
-WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18 = {.flags = 0x00000000, .offset_to_vbase = 0x00000048};
+WatcomVirtualBaseDescriptor g_IstrstreamLayoutInfo = {.flags = 0x00000000, .offset_to_vbase = 0x00000058};
+WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
+WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout = {.flags = 0x00000044, .offset_to_vbase = 0x00000010};
+WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout = {.flags = 0x00000000, .offset_to_vbase = 0x00000050};
+WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout = {.flags = 0x00000044, .offset_to_vbase = 0x0000000C};
+WatcomVirtualBaseDescriptor g_Strstream_VirtualLayout = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
+WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout = {.flags = 0x00000000, .offset_to_vbase = 0x00000048};
 
 // char[104]
-char g_CHAR_ARRAY_005acc90[104] = "";
+char g_PropertyNamePrefix[104] = "";
 
 // char[300]
-char g_CHAR_ARRAY_005accf8[300] = "";
+char g_LocalizationTemplate[300] = "";
 
 // char[4]
 char g_CHAR_ARRAY_005ad450[4] = {(char)0x40, (char)0x00, (char)0x00, (char)0x00};
@@ -6352,75 +6352,75 @@ filebuf_vtable g_FilebufVTable = {
 // float
 float FLOAT_005a2158 = 0.0f;
 float FLOAT_005a2160 = 0.0f;
-float g_FLOAT_005ae6f8 = 0.1f;
+float g_DashAnimationThreshold = 0.1f;
 
 // int
-int g_INT_005a4738 = 0x48;
-int g_INT_005a47a0 = 0x1A4;
+int g_Istrstream_IstreamLastReadLength = 0x48;
+int g_DefaultStreamBufferSize = 0x1A4;
 int g_INT_005a4a7a = 0x3B001F;
-int INT_005acaa4 = 0x1;
-int INT_005acaa8 = 0xF8;
+int g_TextWrapEnabled = 0x1;
+int g_CurrentTextColor = 0xF8;
 int INT_005acaac = 0x1;
 int INT_005acab0 = 0x1;
-int INT_005acab4 = 0xFFFFFF;
-int g_INT_005acc88 = 0x7;
-int g_INT_005acea0 = 0x1;
-int g_INT_005aceb4 = 0x4;
-int g_INT_005acec8 = 0x1;
-int g_INT_005acedc = 0x1;
-int g_INT_005acf20 = 0x2;
-int g_INT_005acf3c = 0x2;
-int g_INT_005acf58 = 0x1;
-int g_INT_005acf80 = 0x2;
-int g_INT_005acf94 = 0x4;
-int g_INT_005acfa4 = 0x1;
-int g_INT_005acfbc = 0x3;
-int g_INT_005acfd0 = 0x1;
-int g_INT_005acfe4 = 0x1;
-int g_INT_005acff8 = 0x1;
-int g_INT_005ad00c = 0x5;
-int g_INT_005ad054 = 0x5;
-int g_INT_005ad09c = 0xF;
-int INT_005ad0a0 = 0x2;
-int g_INT_005ad0e0 = 0x4;
-int g_INT_005ad0f4 = 0x1;
-int g_INT_005ad1e8 = 0x6;
-int g_INT_005ad250 = 0x4;
-int g_INT_005ad280 = 0x1;
+int g_CurrentRenderColor = 0xFFFFFF;
+int g_CDemonActorClassVersion = 0x7;
+int g_CAmmoClassVersion = 0x1;
+int g_CAmmoBoxClassVersion = 0x4;
+int g_CAnvilClassVersion = 0x1;
+int g_CArmourClassVersion = 0x1;
+int g_CBackgroundActorClassVersion = 0x2;
+int g_CBaronClassVersion = 0x2;
+int g_CBaronWeaponClassVersion = 0x1;
+int g_CBarrierClassVersion = 0x2;
+int g_CBatClassVersion = 0x4;
+int g_CBatCreatureClassVersion = 0x1;
+int g_CBatmanClassVersion = 0x3;
+int g_CBatteryClassVersion = 0x1;
+int g_CBeastClassVersion = 0x1;
+int g_CBiggsClassVersion = 0x1;
+int g_CBodyPartClassVersion = 0x5;
+int g_CBoneGuyClassVersion = 0x5;
+int g_CBoxActorClassVersion = 0xF;
+int g_CLightActorClassVersion = 0x2;
+int g_CBrideClassVersion = 0x4;
+int g_CBugsClassVersion = 0x1;
+int g_CCharacterClassVersion = 0x6;
+int g_CChainClassVersion = 0x4;
+int g_LineClippingDisabled = 0x1;
 int g_FarPlaneDistance = 0x7FFFFFFF;
-int g_INT_005ad32c = 0x1;
-int g_INT_005ad380 = 0x2;
-int g_INT_005ad3ac = 0x2;
-int g_INT_005ad3c4 = 0x2;
-int g_INT_005ad3d8 = 0x1;
-int INT_005ad3f0 = 0x6;
-int g_INT_005ad444 = 0x10000;
-int g_INT_005ad448 = 0xC80000;
-int g_INT_005ad44c = 0x3;
+int g_CColonelClassVersion = 0x1;
+int g_CConveyorClassVersion = 0x2;
+int g_CZombieCowClassVersion = 0x2;
+int g_CCrateClassVersion = 0x2;
+int g_CCrossbowClassVersion = 0x1;
+int g_CCurtainClassVersion = 0x6;
+int g_CameraShakePeakValue = 0x10000;
+int g_CameraShakeSustainValue = 0xC80000;
+int g_CameraShakeState = 0x3;
 int g_INT_005ad454 = 0x40;
 int g_INT_005ad458 = 0x40;
 int g_INT_005ad4b4 = -1;
-int g_INT_005ad4bc = 0x4;
-int g_INT_005ae678 = 0x2;
-int g_INT_005ae690 = 0xB;
-int g_INT_005ae6c8 = 0x9;
-int g_INT_005ae6f4 = 0x1;
+int g_CActorDestinationClassVersion = 0x4;
+int g_CZombieDogClassVersion = 0x2;
+int g_CDoorClassVersion = 0xB;
+int g_CDraculaBrideClassVersion = 0x9;
+int g_DashLength = 0x1;
 int INT_005ae708 = 0x1;
 
 // int[16]
-int g_INT_ARRAY_005acbc4[16] = {
+int g_ColorLookupTable[16] = {
     0x000000FF, 0x000000F8, 0x00000002, 0x00000004, 0x00000001, 0x00000003, 0x00000005, 0x00000006,
     0x00000007, 0x000000F9, 0x000000FA, 0x000000FB, 0x000000E6, 0x000000F5, 0x00000000, 0x000000FD
 };
 
 // int[8]
-int g_INT_ARRAY_005ad45c[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1, -1, -1};
-int g_INT_ARRAY_005ad47c[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
+int g_CameraEdgeOffsetX[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1, -1, -1};
+int g_CameraEdgeOffsetY[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
 
 // short
-short g_SHORT_005a4a78 = 0;
+short g_DaysInMonth_Normal = 0;
 short g_SHORT_005a4a90 = 0x16D;
-short g_SHORT_005a4a92 = 0;
+short g_DaysInMonth_Leap = 0;
 
 // streambuf_vtable
 streambuf_vtable g_StreambufVTable = {

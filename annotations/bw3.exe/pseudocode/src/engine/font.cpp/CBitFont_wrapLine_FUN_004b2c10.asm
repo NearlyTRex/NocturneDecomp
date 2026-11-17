@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   undefined1 DAT_005c20be
 ;   TerminatedCString s_engine_font_cpp_005c20bf
-;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_004b2c4f
     INC AL                              ; 004b2c51
     AND EAX,0xff                        ; 004b2c53
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2c58 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2c58 | g_CharacterClassificationTable
     JNZ 0x004b2cdc                      ; 004b2c5f
         ;   XREF to: 004b2cdc (CONDITIONAL_JUMP)  ; LAB_004b2cdc
     MOV EBP,dword ptr [ESP + 0x30]      ; 004b2c65
@@ -95,7 +95,7 @@ section .text
     MOV AL,byte ptr [ESI + -0x1]        ; 004b2cac
     INC AL                              ; 004b2caf
     AND EAX,0xff                        ; 004b2cb1
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2cb6 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2cb6 | g_CharacterClassificationTable
     JZ 0x004b2dd5                       ; 004b2cbd
         ;   XREF to: 004b2dd5 (CONDITIONAL_JUMP)  ; LAB_004b2dd5
     DEC EDI                             ; 004b2cc3
@@ -164,7 +164,7 @@ section .text
         ;   Label: LAB_004b2d3f
     INC AL                              ; 004b2d43
     AND EAX,0xff                        ; 004b2d45
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2d4a | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2d4a | g_CharacterClassificationTable
     JNZ 0x004b2c93                      ; 004b2d51
         ;   XREF to: 004b2c93 (CONDITIONAL_JUMP)  ; LAB_004b2c93
     MOV CL,byte ptr [ESP + 0x38]        ; 004b2d57
@@ -206,7 +206,7 @@ section .text
     INC EBP                             ; 004b2db4
     INC AL                              ; 004b2db5
     AND EAX,0xff                        ; 004b2db7
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2dbc | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2dbc | g_CharacterClassificationTable
     JZ 0x004b2c81                       ; 004b2dc3
         ;   XREF to: 004b2c81 (CONDITIONAL_JUMP)  ; LAB_004b2c81
     MOV dword ptr [ESP + 0x4],EDI       ; 004b2dc9
@@ -227,7 +227,7 @@ section .text
         ;   Label: LAB_004b2def
     INC AL                              ; 004b2df1
     AND EAX,0xff                        ; 004b2df3
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2df8 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004b2df8 | g_CharacterClassificationTable
     JZ 0x004b2e0f                       ; 004b2dff
         ;   XREF to: 004b2e0f (CONDITIONAL_JUMP)  ; LAB_004b2e0f
     TEST CH,0x8                         ; 004b2e01

@@ -55,7 +55,7 @@
     },
     {
       "addr": "01e4fed8",
-      "name": "g_INT_01e4fed8",
+      "name": "g_PathMapCount",
       "type": "int",
       "value": null
     }
@@ -163,49 +163,49 @@
     {
       "description": "Complex pointer cast",
       "line": 12,
-      "match": "(int *)((int)g_CPathMap_PTR_ARRAY_01e4fedc",
+      "match": "(int *)((int)g_PathMapList",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_CPathMap_PTR_ARRAY_01e4fedc + iVar1) == 0) {",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e4fedc",
+      "match": "(CPathMap **)((int)g_PathMapList",
       "severity": "moderate",
-      "text": "if ((int)((*(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e4fedc + iVar1))->cached_world_position)",
+      "text": "if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e4fedc",
+      "match": "(CPathMap **)((int)g_PathMapList",
       "severity": "moderate",
-      "text": "(*(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e4fedc + iVar1),depth,red,green,fog);",
+      "text": "(*(CPathMap **)((int)g_PathMapList + iVar1),depth,red,green,fog);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CPathMap_PTR_ARRAY_01e4fedc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 12,
-      "match": "(int)g_CPathMap_PTR_ARRAY_01e4fedc",
+      "match": "(int)g_PathMapList",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_CPathMap_PTR_ARRAY_01e4fedc + iVar1) == 0) {",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CPathMap_PTR_ARRAY_01e4fedc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 17,
-      "match": "(int)g_CPathMap_PTR_ARRAY_01e4fedc",
+      "match": "(int)g_PathMapList",
       "severity": "moderate",
-      "text": "if ((int)((*(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e4fedc + iVar1))->cached_world_position)",
+      "text": "if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CPathMap_PTR_ARRAY_01e4fedc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 20,
-      "match": "(int)g_CPathMap_PTR_ARRAY_01e4fedc",
+      "match": "(int)g_PathMapList",
       "severity": "moderate",
-      "text": "(*(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e4fedc + iVar1),depth,red,green,fog);",
+      "text": "(*(CPathMap **)((int)g_PathMapList + iVar1),depth,red,green,fog);",
       "type": "pointer_truncation"
     }
   ]

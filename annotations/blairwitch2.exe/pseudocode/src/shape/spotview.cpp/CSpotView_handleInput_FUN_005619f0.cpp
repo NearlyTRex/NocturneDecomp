@@ -18,9 +18,9 @@ void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005619f0(CSpotView *th
   float fStack_c;
   
   fStack_20 = 1.0;
-  iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LMENU);
+  iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
   if (iVar4 == 0) {
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LSHIFT);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if (iVar4 != 0) {
       fStack_20 = 4.0;
     }
@@ -42,72 +42,72 @@ void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005619f0(CSpotView *th
   }
   fStack_c = fStack_c * fVar1;
   if ((control_flags & 2) != 0) {
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD0);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
     if (iVar4 != 0) {
       this_ptr->yaw = this_ptr->yaw + fVar2;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_DECIMAL);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
     if (iVar4 != 0) {
       this_ptr->yaw = this_ptr->yaw - fVar2;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_SLASH);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SLASH);
     if (iVar4 != 0) {
       this_ptr->yaw = this_ptr->yaw + fVar2;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_MULTIPLY);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_MULTIPLY);
     if (iVar4 != 0) {
       this_ptr->yaw = this_ptr->yaw - fVar2;
     }
   }
   if ((control_flags & 1) != 0) {
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_SUBTRACT);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
     if (iVar4 != 0) {
       this_ptr->pitch = this_ptr->pitch + fVar2;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_ADD);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
     if (iVar4 != 0) {
       this_ptr->pitch = this_ptr->pitch - fVar2;
     }
   }
   if ((control_flags & 8) != 0) {
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD4);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar4 != 0) {
       this_ptr->pan_x = this_ptr->pan_x - fStack_c;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD6);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar4 != 0) {
       this_ptr->pan_x = this_ptr->pan_x + fStack_c;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_Q);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar4 != 0) {
       this_ptr->pan_y = this_ptr->pan_y + fStack_c;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_A);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
     if (iVar4 != 0) {
       this_ptr->pan_y = this_ptr->pan_y - fStack_c;
     }
   }
   if ((control_flags & 4) != 0) {
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD8);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar4 != 0) {
       this_ptr->distance = this_ptr->distance - fVar5;
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD2);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar4 != 0) {
       this_ptr->distance = this_ptr->distance + fVar5;
     }
   }
   if ((control_flags & 0x10) != 0) {
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_EQUALS);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_EQUALS);
     if (iVar4 != 0) {
       this_ptr->zoom = this_ptr->zoom / (fStack_20 * fVar3);
     }
-    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_MINUS);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_MINUS);
     if (iVar4 != 0) {
       this_ptr->zoom = this_ptr->zoom * fStack_20 * fVar3;
     }
   }
-  iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD5);
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD5);
   if (iVar4 == 0) {
     shape_spotview_cpp_CSpotView_clampValues_FUN_00561cd0(this_ptr);
     return;

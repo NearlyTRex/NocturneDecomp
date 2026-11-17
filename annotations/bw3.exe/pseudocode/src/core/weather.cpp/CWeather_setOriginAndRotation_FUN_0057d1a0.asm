@@ -38,9 +38,9 @@
 ;   float g_FLOAT_005d79a7 = -50
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_CVector3f_02cfd900
-;   undefined4 g_CVector3f_02cfd900.y
-;   undefined4 g_CVector3f_02cfd900.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;   CVector3f g_CVector3f_02d0c208
 ;   undefined4 g_CVector3f_02d0c208.y
 ;   undefined4 g_CVector3f_02d0c208.z
@@ -237,11 +237,11 @@ section .text
         ;   Label: LAB_0057d39f
     JZ 0x0057d3be                       ; 0057d3a5
         ;   XREF to: 0057d3be (CONDITIONAL_JUMP)  ; LAB_0057d3be
-    MOV EAX,[0x02cfd900]                ; 0057d3a7 | g_CVector3f_02cfd900
+    MOV EAX,[0x02cfd900]                ; 0057d3a7 | g_ZeroVector
     MOV dword ptr [EDI],EAX             ; 0057d3ac | DAT_02d17d88
-    MOV EAX,[0x02cfd904]                ; 0057d3ae | g_CVector3f_02cfd900.y
+    MOV EAX,[0x02cfd904]                ; 0057d3ae | g_ZeroVector.y
     MOV dword ptr [EDI + 0x4],EAX       ; 0057d3b3 | DAT_02d17d8c
-    MOV EAX,[0x02cfd908]                ; 0057d3b6 | g_CVector3f_02cfd900.z
+    MOV EAX,[0x02cfd908]                ; 0057d3b6 | g_ZeroVector.z
     MOV dword ptr [EDI + 0x8],EAX       ; 0057d3bb | DAT_02d17d90
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0057d3be
         ;   Label: LAB_0057d3be

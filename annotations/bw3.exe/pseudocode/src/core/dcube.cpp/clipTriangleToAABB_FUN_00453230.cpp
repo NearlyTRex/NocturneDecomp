@@ -70,7 +70,7 @@ uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00453230(CVector3f **triangle
   } while (iVar7 < 3);
   if (bVar3 == 0) {
     pCVar8 = *triangle_vertices;
-    g_UINT_01548a94 = 3;
+    g_CubeClippedTriangleCount = 3;
     if (pCVar8 != (CVector3f *)&g_FLOAT_01548a98) {
       g_FLOAT_01548a98 = pCVar8->x;
       g_FLOAT_01548aa0 = pCVar8->z;
@@ -95,11 +95,11 @@ uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00453230(CVector3f **triangle
     iVar7 = 0;
     pfVar9 = &g_FLOAT_01548600;
     g_INT_015486c0 = 0;
-    g_UINT_01548784 = 0;
-    g_UINT_01548848 = 0;
+    g_CubeClipStage2Count = 0;
+    g_CubeClipStage3Count = 0;
     g_INT_0154890c = 0;
-    g_UINT_015489d0 = 0;
-    g_UINT_01548a94 = 0;
+    g_CubeClipStage5Count = 0;
+    g_CubeClippedTriangleCount = 0;
     do {
       iVar5 = g_INT_015486c0;
       uVar4 = iVar7 + 1;
@@ -112,29 +112,29 @@ uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00453230(CVector3f **triangle
       }
       switch(bVar3) {
       case 0:
-        if (g_CVector3f_ARRAY_015486c4 + g_INT_015486c0 != (CVector3f *)pfVar9) {
-          g_CVector3f_ARRAY_015486c4[g_INT_015486c0].x = ((CVector3f *)pfVar9)->x;
-          g_CVector3f_ARRAY_015486c4[iVar5].y = ((CVector3f *)pfVar9)->y;
-          g_CVector3f_ARRAY_015486c4[iVar5].z = ((CVector3f *)pfVar9)->z;
+        if (g_ClipStageMaxYBuffer + g_INT_015486c0 != (CVector3f *)pfVar9) {
+          g_ClipStageMaxYBuffer[g_INT_015486c0].x = ((CVector3f *)pfVar9)->x;
+          g_ClipStageMaxYBuffer[iVar5].y = ((CVector3f *)pfVar9)->y;
+          g_ClipStageMaxYBuffer[iVar5].z = ((CVector3f *)pfVar9)->z;
         }
         g_INT_015486c0 = g_INT_015486c0 + 1;
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
                   ((CVector3f *)(&g_FLOAT_01548600 + uVar4 * 3),(CVector3f *)pfVar9,
-                   g_CVector3f_ARRAY_015486c4 + g_INT_015486c0,0.0,1.0,0.0,(double)-fVar1);
+                   g_ClipStageMaxYBuffer + g_INT_015486c0,0.0,1.0,0.0,(double)-fVar1);
         g_INT_015486c0 = g_INT_015486c0 + 1;
         break;
       case 2:
-        if (g_CVector3f_ARRAY_015486c4 + g_INT_015486c0 != (CVector3f *)pfVar9) {
-          g_CVector3f_ARRAY_015486c4[g_INT_015486c0].x = ((CVector3f *)pfVar9)->x;
-          g_CVector3f_ARRAY_015486c4[iVar5].y = ((CVector3f *)pfVar9)->y;
-          g_CVector3f_ARRAY_015486c4[iVar5].z = ((CVector3f *)pfVar9)->z;
+        if (g_ClipStageMaxYBuffer + g_INT_015486c0 != (CVector3f *)pfVar9) {
+          g_ClipStageMaxYBuffer[g_INT_015486c0].x = ((CVector3f *)pfVar9)->x;
+          g_ClipStageMaxYBuffer[iVar5].y = ((CVector3f *)pfVar9)->y;
+          g_ClipStageMaxYBuffer[iVar5].z = ((CVector3f *)pfVar9)->z;
         }
         g_INT_015486c0 = g_INT_015486c0 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
                   ((CVector3f *)pfVar9,(CVector3f *)(&g_FLOAT_01548600 + uVar4 * 3),
-                   g_CVector3f_ARRAY_015486c4 + g_INT_015486c0,0.0,1.0,0.0,(double)-fVar1);
+                   g_ClipStageMaxYBuffer + g_INT_015486c0,0.0,1.0,0.0,(double)-fVar1);
         g_INT_015486c0 = g_INT_015486c0 + 1;
       }
       iVar7 = iVar7 + 1;
@@ -144,241 +144,245 @@ uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00453230(CVector3f **triangle
       fVar1 = aabb_min->y;
       iVar7 = 0;
       if (0 < g_INT_015486c0) {
-        pCVar8 = g_CVector3f_ARRAY_015486c4;
+        pCVar8 = g_ClipStageMaxYBuffer;
         do {
-          uVar2 = g_UINT_01548784;
+          uVar2 = g_CubeClipStage2Count;
           uVar4 = iVar7 + 1;
           if (uVar4 == g_INT_015486c0) {
             uVar4 = uVar4 ^ g_INT_015486c0;
           }
           bVar3 = pCVar8->y < fVar1;
-          if (g_CVector3f_ARRAY_015486c4[uVar4].y < fVar1) {
+          if (g_ClipStageMaxYBuffer[uVar4].y < fVar1) {
             bVar3 = bVar3 | 2;
           }
           switch(bVar3) {
           case 0:
-            if (g_CVector3f_ARRAY_01548788 + g_UINT_01548784 != pCVar8) {
-              g_CVector3f_ARRAY_01548788[g_UINT_01548784].x = pCVar8->x;
-              g_CVector3f_ARRAY_01548788[uVar2].y = pCVar8->y;
-              g_CVector3f_ARRAY_01548788[uVar2].z = pCVar8->z;
+            if (g_ClipStageMinYBuffer + g_CubeClipStage2Count != pCVar8) {
+              g_ClipStageMinYBuffer[g_CubeClipStage2Count].x = pCVar8->x;
+              g_ClipStageMinYBuffer[uVar2].y = pCVar8->y;
+              g_ClipStageMinYBuffer[uVar2].z = pCVar8->z;
             }
-            g_UINT_01548784 = g_UINT_01548784 + 1;
+            g_CubeClipStage2Count = g_CubeClipStage2Count + 1;
             break;
           case 1:
             core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                      (g_CVector3f_ARRAY_015486c4 + uVar4,pCVar8,
-                       g_CVector3f_ARRAY_01548788 + g_UINT_01548784,0.0,-1.0,0.0,(double)fVar1);
-            g_UINT_01548784 = g_UINT_01548784 + 1;
+                      (g_ClipStageMaxYBuffer + uVar4,pCVar8,
+                       g_ClipStageMinYBuffer + g_CubeClipStage2Count,0.0,-1.0,0.0,(double)fVar1);
+            g_CubeClipStage2Count = g_CubeClipStage2Count + 1;
             break;
           case 2:
-            if (g_CVector3f_ARRAY_01548788 + g_UINT_01548784 != pCVar8) {
-              g_CVector3f_ARRAY_01548788[g_UINT_01548784].x = pCVar8->x;
-              g_CVector3f_ARRAY_01548788[uVar2].y = pCVar8->y;
-              g_CVector3f_ARRAY_01548788[uVar2].z = pCVar8->z;
+            if (g_ClipStageMinYBuffer + g_CubeClipStage2Count != pCVar8) {
+              g_ClipStageMinYBuffer[g_CubeClipStage2Count].x = pCVar8->x;
+              g_ClipStageMinYBuffer[uVar2].y = pCVar8->y;
+              g_ClipStageMinYBuffer[uVar2].z = pCVar8->z;
             }
-            g_UINT_01548784 = g_UINT_01548784 + 1;
+            g_CubeClipStage2Count = g_CubeClipStage2Count + 1;
             core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                      (pCVar8,g_CVector3f_ARRAY_015486c4 + uVar4,
-                       g_CVector3f_ARRAY_01548788 + g_UINT_01548784,0.0,-1.0,0.0,(double)fVar1);
-            g_UINT_01548784 = g_UINT_01548784 + 1;
+                      (pCVar8,g_ClipStageMaxYBuffer + uVar4,
+                       g_ClipStageMinYBuffer + g_CubeClipStage2Count,0.0,-1.0,0.0,(double)fVar1);
+            g_CubeClipStage2Count = g_CubeClipStage2Count + 1;
           }
           iVar7 = iVar7 + 1;
           pCVar8 = pCVar8 + 1;
         } while (iVar7 < g_INT_015486c0);
       }
-      if (2 < (int)g_UINT_01548784) {
+      if (2 < (int)g_CubeClipStage2Count) {
         fVar1 = aabb_max->x;
         iVar7 = 0;
-        if (0 < (int)g_UINT_01548784) {
-          pCVar8 = g_CVector3f_ARRAY_01548788;
+        if (0 < (int)g_CubeClipStage2Count) {
+          pCVar8 = g_ClipStageMinYBuffer;
           do {
-            uVar2 = g_UINT_01548848;
+            uVar2 = g_CubeClipStage3Count;
             uVar4 = iVar7 + 1;
-            if (uVar4 == g_UINT_01548784) {
-              uVar4 = uVar4 ^ g_UINT_01548784;
+            if (uVar4 == g_CubeClipStage2Count) {
+              uVar4 = uVar4 ^ g_CubeClipStage2Count;
             }
-            pCVar11 = g_CVector3f_ARRAY_01548788 + uVar4;
+            pCVar11 = g_ClipStageMinYBuffer + uVar4;
             bVar3 = fVar1 < pCVar8->x;
             if (fVar1 < pCVar11->x) {
               bVar3 = bVar3 | 2;
             }
             switch(bVar3) {
             case 0:
-              if (g_CVector3f_ARRAY_0154884c + g_UINT_01548848 != pCVar8) {
-                g_CVector3f_ARRAY_0154884c[g_UINT_01548848].x = pCVar8->x;
-                g_CVector3f_ARRAY_0154884c[uVar2].y = pCVar8->y;
-                g_CVector3f_ARRAY_0154884c[uVar2].z = pCVar8->z;
+              if (g_ClipStageMaxXBuffer + g_CubeClipStage3Count != pCVar8) {
+                g_ClipStageMaxXBuffer[g_CubeClipStage3Count].x = pCVar8->x;
+                g_ClipStageMaxXBuffer[uVar2].y = pCVar8->y;
+                g_ClipStageMaxXBuffer[uVar2].z = pCVar8->z;
               }
-              g_UINT_01548848 = g_UINT_01548848 + 1;
+              g_CubeClipStage3Count = g_CubeClipStage3Count + 1;
               break;
             case 1:
               core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                        (pCVar11,pCVar8,g_CVector3f_ARRAY_0154884c + g_UINT_01548848,1.0,0.0,0.0,
+                        (pCVar11,pCVar8,g_ClipStageMaxXBuffer + g_CubeClipStage3Count,1.0,0.0,0.0,
                          (double)-fVar1);
-              g_UINT_01548848 = g_UINT_01548848 + 1;
+              g_CubeClipStage3Count = g_CubeClipStage3Count + 1;
               break;
             case 2:
-              if (g_CVector3f_ARRAY_0154884c + g_UINT_01548848 != pCVar8) {
-                g_CVector3f_ARRAY_0154884c[g_UINT_01548848].x = pCVar8->x;
-                g_CVector3f_ARRAY_0154884c[uVar2].y = pCVar8->y;
-                g_CVector3f_ARRAY_0154884c[uVar2].z = pCVar8->z;
+              if (g_ClipStageMaxXBuffer + g_CubeClipStage3Count != pCVar8) {
+                g_ClipStageMaxXBuffer[g_CubeClipStage3Count].x = pCVar8->x;
+                g_ClipStageMaxXBuffer[uVar2].y = pCVar8->y;
+                g_ClipStageMaxXBuffer[uVar2].z = pCVar8->z;
               }
-              g_UINT_01548848 = g_UINT_01548848 + 1;
+              g_CubeClipStage3Count = g_CubeClipStage3Count + 1;
               core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                        (pCVar8,pCVar11,g_CVector3f_ARRAY_0154884c + g_UINT_01548848,1.0,0.0,0.0,
+                        (pCVar8,pCVar11,g_ClipStageMaxXBuffer + g_CubeClipStage3Count,1.0,0.0,0.0,
                          (double)-fVar1);
-              g_UINT_01548848 = g_UINT_01548848 + 1;
+              g_CubeClipStage3Count = g_CubeClipStage3Count + 1;
             }
             iVar7 = iVar7 + 1;
             pCVar8 = pCVar8 + 1;
-          } while (iVar7 < (int)g_UINT_01548784);
+          } while (iVar7 < (int)g_CubeClipStage2Count);
         }
-        if (2 < (int)g_UINT_01548848) {
+        if (2 < (int)g_CubeClipStage3Count) {
           fVar1 = aabb_min->x;
           iVar7 = 0;
-          if (0 < (int)g_UINT_01548848) {
-            pCVar8 = g_CVector3f_ARRAY_0154884c;
+          if (0 < (int)g_CubeClipStage3Count) {
+            pCVar8 = g_ClipStageMaxXBuffer;
             do {
               iVar5 = g_INT_0154890c;
               uVar4 = iVar7 + 1;
-              if (uVar4 == g_UINT_01548848) {
-                uVar4 = uVar4 ^ g_UINT_01548848;
+              if (uVar4 == g_CubeClipStage3Count) {
+                uVar4 = uVar4 ^ g_CubeClipStage3Count;
               }
-              pCVar11 = g_CVector3f_ARRAY_0154884c + uVar4;
+              pCVar11 = g_ClipStageMaxXBuffer + uVar4;
               bVar3 = pCVar8->x < fVar1;
               if (pCVar11->x < fVar1) {
                 bVar3 = bVar3 | 2;
               }
               switch(bVar3) {
               case 0:
-                if (g_CVector3f_ARRAY_01548910 + g_INT_0154890c != pCVar8) {
-                  g_CVector3f_ARRAY_01548910[g_INT_0154890c].x = pCVar8->x;
-                  g_CVector3f_ARRAY_01548910[iVar5].y = pCVar8->y;
-                  g_CVector3f_ARRAY_01548910[iVar5].z = pCVar8->z;
+                if (g_ClipStageMinXBuffer + g_INT_0154890c != pCVar8) {
+                  g_ClipStageMinXBuffer[g_INT_0154890c].x = pCVar8->x;
+                  g_ClipStageMinXBuffer[iVar5].y = pCVar8->y;
+                  g_ClipStageMinXBuffer[iVar5].z = pCVar8->z;
                 }
                 g_INT_0154890c = g_INT_0154890c + 1;
                 break;
               case 1:
                 core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                          (pCVar11,pCVar8,g_CVector3f_ARRAY_01548910 + g_INT_0154890c,-1.0,0.0,0.0,
+                          (pCVar11,pCVar8,g_ClipStageMinXBuffer + g_INT_0154890c,-1.0,0.0,0.0,
                            (double)fVar1);
                 g_INT_0154890c = g_INT_0154890c + 1;
                 break;
               case 2:
-                if (g_CVector3f_ARRAY_01548910 + g_INT_0154890c != pCVar8) {
-                  g_CVector3f_ARRAY_01548910[g_INT_0154890c].x = pCVar8->x;
-                  g_CVector3f_ARRAY_01548910[iVar5].y = pCVar8->y;
-                  g_CVector3f_ARRAY_01548910[iVar5].z = pCVar8->z;
+                if (g_ClipStageMinXBuffer + g_INT_0154890c != pCVar8) {
+                  g_ClipStageMinXBuffer[g_INT_0154890c].x = pCVar8->x;
+                  g_ClipStageMinXBuffer[iVar5].y = pCVar8->y;
+                  g_ClipStageMinXBuffer[iVar5].z = pCVar8->z;
                 }
                 g_INT_0154890c = g_INT_0154890c + 1;
                 core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                          (pCVar8,pCVar11,g_CVector3f_ARRAY_01548910 + g_INT_0154890c,-1.0,0.0,0.0,
+                          (pCVar8,pCVar11,g_ClipStageMinXBuffer + g_INT_0154890c,-1.0,0.0,0.0,
                            (double)fVar1);
                 g_INT_0154890c = g_INT_0154890c + 1;
               }
               iVar7 = iVar7 + 1;
               pCVar8 = pCVar8 + 1;
-            } while (iVar7 < (int)g_UINT_01548848);
+            } while (iVar7 < (int)g_CubeClipStage3Count);
           }
           if (2 < g_INT_0154890c) {
             fVar1 = aabb_min->z;
             iVar7 = 0;
             if (0 < g_INT_0154890c) {
-              pCVar8 = g_CVector3f_ARRAY_01548910;
+              pCVar8 = g_ClipStageMinXBuffer;
               do {
-                uVar2 = g_UINT_015489d0;
+                uVar2 = g_CubeClipStage5Count;
                 uVar4 = iVar7 + 1;
                 if (uVar4 == g_INT_0154890c) {
                   uVar4 = uVar4 ^ g_INT_0154890c;
                 }
                 bVar3 = pCVar8->z < fVar1;
-                if (g_CVector3f_ARRAY_01548910[uVar4].z < fVar1) {
+                if (g_ClipStageMinXBuffer[uVar4].z < fVar1) {
                   bVar3 = bVar3 | 2;
                 }
                 switch(bVar3) {
                 case 0:
-                  if (g_CVector3f_ARRAY_015489d4 + g_UINT_015489d0 != pCVar8) {
-                    g_CVector3f_ARRAY_015489d4[g_UINT_015489d0].x = pCVar8->x;
-                    g_CVector3f_ARRAY_015489d4[uVar2].y = pCVar8->y;
-                    g_CVector3f_ARRAY_015489d4[uVar2].z = pCVar8->z;
+                  if (g_ClipStageMinZBuffer + g_CubeClipStage5Count != pCVar8) {
+                    g_ClipStageMinZBuffer[g_CubeClipStage5Count].x = pCVar8->x;
+                    g_ClipStageMinZBuffer[uVar2].y = pCVar8->y;
+                    g_ClipStageMinZBuffer[uVar2].z = pCVar8->z;
                   }
-                  g_UINT_015489d0 = g_UINT_015489d0 + 1;
+                  g_CubeClipStage5Count = g_CubeClipStage5Count + 1;
                   break;
                 case 1:
                   core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                            (g_CVector3f_ARRAY_01548910 + uVar4,pCVar8,
-                             g_CVector3f_ARRAY_015489d4 + g_UINT_015489d0,0.0,0.0,-1.0,(double)fVar1
-                            );
-                  g_UINT_015489d0 = g_UINT_015489d0 + 1;
+                            (g_ClipStageMinXBuffer + uVar4,pCVar8,
+                             g_ClipStageMinZBuffer + g_CubeClipStage5Count,0.0,0.0,-1.0,
+                             (double)fVar1);
+                  g_CubeClipStage5Count = g_CubeClipStage5Count + 1;
                   break;
                 case 2:
-                  if (g_CVector3f_ARRAY_015489d4 + g_UINT_015489d0 != pCVar8) {
-                    g_CVector3f_ARRAY_015489d4[g_UINT_015489d0].x = pCVar8->x;
-                    g_CVector3f_ARRAY_015489d4[uVar2].y = pCVar8->y;
-                    g_CVector3f_ARRAY_015489d4[uVar2].z = pCVar8->z;
+                  if (g_ClipStageMinZBuffer + g_CubeClipStage5Count != pCVar8) {
+                    g_ClipStageMinZBuffer[g_CubeClipStage5Count].x = pCVar8->x;
+                    g_ClipStageMinZBuffer[uVar2].y = pCVar8->y;
+                    g_ClipStageMinZBuffer[uVar2].z = pCVar8->z;
                   }
-                  g_UINT_015489d0 = g_UINT_015489d0 + 1;
+                  g_CubeClipStage5Count = g_CubeClipStage5Count + 1;
                   core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                            (pCVar8,g_CVector3f_ARRAY_01548910 + uVar4,
-                             g_CVector3f_ARRAY_015489d4 + g_UINT_015489d0,0.0,0.0,-1.0,(double)fVar1
-                            );
-                  g_UINT_015489d0 = g_UINT_015489d0 + 1;
+                            (pCVar8,g_ClipStageMinXBuffer + uVar4,
+                             g_ClipStageMinZBuffer + g_CubeClipStage5Count,0.0,0.0,-1.0,
+                             (double)fVar1);
+                  g_CubeClipStage5Count = g_CubeClipStage5Count + 1;
                 }
                 iVar7 = iVar7 + 1;
                 pCVar8 = pCVar8 + 1;
               } while (iVar7 < g_INT_0154890c);
             }
-            if (2 < (int)g_UINT_015489d0) {
+            if (2 < (int)g_CubeClipStage5Count) {
               fVar1 = aabb_max->z;
               iVar7 = 0;
-              if (0 < (int)g_UINT_015489d0) {
-                pCVar8 = g_CVector3f_ARRAY_015489d4;
+              if (0 < (int)g_CubeClipStage5Count) {
+                pCVar8 = g_ClipStageMinZBuffer;
                 do {
-                  uVar2 = g_UINT_01548a94;
+                  uVar2 = g_CubeClippedTriangleCount;
                   uVar4 = iVar7 + 1;
-                  if (uVar4 == g_UINT_015489d0) {
-                    uVar4 = uVar4 ^ g_UINT_015489d0;
+                  if (uVar4 == g_CubeClipStage5Count) {
+                    uVar4 = uVar4 ^ g_CubeClipStage5Count;
                   }
                   bVar3 = fVar1 < pCVar8->z;
-                  if (fVar1 < g_CVector3f_ARRAY_015489d4[uVar4].z) {
+                  if (fVar1 < g_ClipStageMinZBuffer[uVar4].z) {
                     bVar3 = bVar3 | 2;
                   }
                   switch(bVar3) {
                   case 0:
-                    iVar5 = g_UINT_01548a94 * 0xc;
-                    if ((CVector3f *)(&g_FLOAT_01548a98 + g_UINT_01548a94 * 3) != pCVar8) {
-                      ((CVector3f *)(&g_FLOAT_01548a98 + g_UINT_01548a94 * 3))->x = pCVar8->x;
+                    iVar5 = g_CubeClippedTriangleCount * 0xc;
+                    if ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3) != pCVar8)
+                    {
+                      ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3))->x =
+                           pCVar8->x;
                       *(float *)(&DAT_01548a9c + iVar5) = pCVar8->y;
                       (&g_FLOAT_01548aa0)[uVar2 * 3] = pCVar8->z;
                     }
-                    g_UINT_01548a94 = g_UINT_01548a94 + 1;
+                    g_CubeClippedTriangleCount = g_CubeClippedTriangleCount + 1;
                     break;
                   case 1:
                     core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                              (g_CVector3f_ARRAY_015489d4 + uVar4,pCVar8,
-                               (CVector3f *)(&g_FLOAT_01548a98 + g_UINT_01548a94 * 3),0.0,0.0,-1.0,
-                               (double)fVar1);
-                    g_UINT_01548a94 = g_UINT_01548a94 + 1;
+                              (g_ClipStageMinZBuffer + uVar4,pCVar8,
+                               (CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3),0.0
+                               ,0.0,-1.0,(double)fVar1);
+                    g_CubeClippedTriangleCount = g_CubeClippedTriangleCount + 1;
                     break;
                   case 2:
-                    iVar5 = g_UINT_01548a94 * 0xc;
-                    if ((CVector3f *)(&g_FLOAT_01548a98 + g_UINT_01548a94 * 3) != pCVar8) {
-                      ((CVector3f *)(&g_FLOAT_01548a98 + g_UINT_01548a94 * 3))->x = pCVar8->x;
+                    iVar5 = g_CubeClippedTriangleCount * 0xc;
+                    if ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3) != pCVar8)
+                    {
+                      ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3))->x =
+                           pCVar8->x;
                       *(float *)(&DAT_01548a9c + iVar5) = pCVar8->y;
                       (&g_FLOAT_01548aa0)[uVar2 * 3] = pCVar8->z;
                     }
-                    g_UINT_01548a94 = g_UINT_01548a94 + 1;
+                    g_CubeClippedTriangleCount = g_CubeClippedTriangleCount + 1;
                     core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                              (pCVar8,g_CVector3f_ARRAY_015489d4 + uVar4,
-                               (CVector3f *)(&g_FLOAT_01548a98 + g_UINT_01548a94 * 3),0.0,0.0,-1.0,
-                               (double)fVar1);
-                    g_UINT_01548a94 = g_UINT_01548a94 + 1;
+                              (pCVar8,g_ClipStageMinZBuffer + uVar4,
+                               (CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3),0.0
+                               ,0.0,-1.0,(double)fVar1);
+                    g_CubeClippedTriangleCount = g_CubeClippedTriangleCount + 1;
                   }
                   iVar7 = iVar7 + 1;
                   pCVar8 = pCVar8 + 1;
-                } while (iVar7 < (int)g_UINT_015489d0);
+                } while (iVar7 < (int)g_CubeClipStage5Count);
               }
-              if (2 < (int)g_UINT_01548a94) {
+              if (2 < (int)g_CubeClippedTriangleCount) {
                 return 1;
               }
             }

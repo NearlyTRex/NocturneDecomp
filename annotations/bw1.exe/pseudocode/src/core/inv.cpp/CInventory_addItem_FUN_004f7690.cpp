@@ -1078,7 +1078,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004f7690(CInventory *this_ptr,CD
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     iStack_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
-                          (g_CBitFont_PTR_0152d248,this_ptr->message_text);
+                          (g_SmallEditorFont,this_ptr->message_text);
     this_ptr->message_display_timer = (float)iStack_14 * (float)0.025000000000000001;
   }
   pCStack_24 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c600

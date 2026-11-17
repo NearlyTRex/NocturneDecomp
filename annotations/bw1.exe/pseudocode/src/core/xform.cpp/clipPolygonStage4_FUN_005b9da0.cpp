@@ -25,17 +25,17 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005b9da0(void)
   
   bVar8 = 0;
   iStack_14 = 0;
-  if (0 < g_INT_02c9d2f4) {
-    vertex_a = g_SRenderVertex_ARRAY_02c9e4f8;
+  if (0 < g_ClipVertexCountStage4) {
+    vertex_a = g_ClipVertexBufferStage4;
     do {
       uVar4 = iStack_14 + 1;
-      if (uVar4 == g_INT_02c9d2f4) {
-        uVar4 = uVar4 ^ g_INT_02c9d2f4;
+      if (uVar4 == g_ClipVertexCountStage4) {
+        uVar4 = uVar4 ^ g_ClipVertexCountStage4;
       }
       bVar3 = (vertex_a->projected_vertex).transformed_y <=
               -(vertex_a->projected_vertex).transformed_z;
-      if (g_SRenderVertex_ARRAY_02c9e4f8[uVar4].projected_vertex.transformed_y <=
-          -g_SRenderVertex_ARRAY_02c9e4f8[uVar4].projected_vertex.transformed_z) {
+      if (g_ClipVertexBufferStage4[uVar4].projected_vertex.transformed_y <=
+          -g_ClipVertexBufferStage4[uVar4].projected_vertex.transformed_z) {
         bVar3 = bVar3 | 2;
       }
       switch(bVar3) {
@@ -64,7 +64,7 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005b9da0(void)
         break;
       case 1:
         core_xform_cpp_clipInterpolateBottomPlane_FUN_005b9870
-                  (g_SRenderVertex_ARRAY_02c9e4f8 + uVar4,vertex_a,
+                  (g_ClipVertexBufferStage4 + uVar4,vertex_a,
                    g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554);
         g_INT_007c7554 = g_INT_007c7554 + 1;
         break;
@@ -91,13 +91,13 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005b9da0(void)
         }
         g_INT_007c7554 = g_INT_007c7554 + 1;
         core_xform_cpp_clipInterpolateBottomPlane_FUN_005b9870
-                  (vertex_a,g_SRenderVertex_ARRAY_02c9e4f8 + uVar4,
+                  (vertex_a,g_ClipVertexBufferStage4 + uVar4,
                    g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554);
         g_INT_007c7554 = g_INT_007c7554 + 1;
       }
       iStack_14 = iStack_14 + 1;
       vertex_a = vertex_a + 1;
-    } while (iStack_14 < g_INT_02c9d2f4);
+    } while (iStack_14 < g_ClipVertexCountStage4);
   }
   return;
 }

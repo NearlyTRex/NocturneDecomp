@@ -17,10 +17,10 @@ void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(CGame *t
   value = 0;
   dest = core_netgame_cpp_CNetGame_getMyControls_FUN_0050f430(g_CNetGamePtr);
   memset(dest,value,count);
-  memset(g_CHAR_ARRAY_01cb7528,0,600);
-  g_INT_01cb7784 = g_CDemonSetPtr->selected_camera_index;
+  memset(g_PrevKeyboardState,0,600);
+  g_StoredCameraValue = g_CDemonSetPtr->selected_camera_index;
   if ((g_CFieldNotesPtr->is_displayed == 0) && (g_INT_026677e0 == 0)) {
-    g_INT_01cb7780 = g_CFieldNotesPtr->is_displayed;
+    g_InputResetFlag = g_CFieldNotesPtr->is_displayed;
     wincore_winrun_cpp_setCursorPosition_FUN_0058ed10(g_INT_006141b8 / 2,g_INT_006141bc / 2);
     return;
   }

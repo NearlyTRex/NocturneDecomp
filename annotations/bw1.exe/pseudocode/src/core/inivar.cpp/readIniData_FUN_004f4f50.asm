@@ -207,12 +207,12 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f513a
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f513f
-    PUSH 0x1d1f5d4                      ; 004f5142 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    PUSH 0x1d1f5d4                      ; 004f5142 | g_GraphicsMenuTextPointers[7]
     PUSH 0x5e59f3                       ; 004f5147 | = "currentBoard"
     LEA EAX,[ESP + 0x8]                 ; 004f514c
     XOR ESI,ESI                         ; 004f5150
     PUSH EAX                            ; 004f5152
-    MOV dword ptr [0x01d1f5d4],ESI      ; 004f5153 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV dword ptr [0x01d1f5d4],ESI      ; 004f5153 | g_GraphicsMenuTextPointers[7]
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f5159
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f515e

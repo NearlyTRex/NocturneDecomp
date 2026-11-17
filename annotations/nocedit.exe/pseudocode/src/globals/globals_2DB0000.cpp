@@ -48,7 +48,7 @@ char g_ErrorMessageBuffer_02db8b70[256] = {};
 // int
 int g_HeroCount = {};
 int g_LocalHeroIndex = {};
-int INT_02db8888 = {};
+int g_HostageGunUpMotionIndex = {};
 int g_FirstTimeFlag = {};
 int g_ItemDefinitionCount = {};
 

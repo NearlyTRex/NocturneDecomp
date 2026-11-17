@@ -17,9 +17,9 @@
 ;   TerminatedCString s_CDemonCamera_init_Unable_005d7533
 ;   TerminatedCString s_core_dcamera_cpp_005d7565
 ;   TerminatedCString s_CDemonCamera_init_Unable_005d7579
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01323d00
-;   int g_INT_01481e4c
-;   int g_INT_01481e50
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
+;   int g_CameraScreenWidth
+;   int g_CameraScreenHeight
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -47,8 +47,8 @@ section .text
     SAR EDX,0x1f                        ; 0044cc4f
     IDIV ECX                            ; 0044cc52
     ADD ESP,0x4                         ; 0044cc54
-    MOV dword ptr [0x01481e50],ESI      ; 0044cc57 | g_INT_01481e50
-    MOV [0x01481e4c],EAX                ; 0044cc5d | g_INT_01481e4c
+    MOV dword ptr [0x01481e50],ESI      ; 0044cc57 | g_CameraScreenHeight
+    MOV [0x01481e4c],EAX                ; 0044cc5d | g_CameraScreenWidth
     CMP ESI,0x1e0                       ; 0044cc62
     JLE 0x0044cc6f                      ; 0044cc68
         ;   XREF to: 0044cc6f (CONDITIONAL_JUMP)  ; LAB_0044cc6f
@@ -65,7 +65,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x144]     ; 0044cc98
     XOR EDX,EDX                         ; 0044cc9e
     MOV dword ptr [EBX + 0x150],EAX     ; 0044cca0
-    MOV dword ptr [0x01323d00],EDX      ; 0044cca6 | g_BIT_INTEGER32_01323d00
+    MOV dword ptr [0x01323d00],EDX      ; 0044cca6 | g_CameraDownscaleIterations
     MOV EAX,dword ptr [EBX + 0x148]     ; 0044ccac
     MOV ECX,dword ptr [EBX + 0x150]     ; 0044ccb2
     MOV dword ptr [EBX + 0x154],EAX     ; 0044ccb8
@@ -85,11 +85,11 @@ section .text
     SAR EDX,0x1f                        ; 0044cce7
     IDIV ECX                            ; 0044ccea
     MOV ESI,dword ptr [EBX + 0x14c]     ; 0044ccec
-    MOV EDI,dword ptr [0x01323d00]      ; 0044ccf2 | g_BIT_INTEGER32_01323d00
+    MOV EDI,dword ptr [0x01323d00]      ; 0044ccf2 | g_CameraDownscaleIterations
     ADD ESI,ESI                         ; 0044ccf8
     INC EDI                             ; 0044ccfa
     MOV dword ptr [EBX + 0x14c],ESI     ; 0044ccfb
-    MOV dword ptr [0x01323d00],EDI      ; 0044cd01 | g_BIT_INTEGER32_01323d00
+    MOV dword ptr [0x01323d00],EDI      ; 0044cd01 | g_CameraDownscaleIterations
     MOV EBP,dword ptr [EBX + 0x150]     ; 0044cd07
     MOV dword ptr [EBX + 0x154],EAX     ; 0044cd0d
     CMP EBP,0x140                       ; 0044cd13

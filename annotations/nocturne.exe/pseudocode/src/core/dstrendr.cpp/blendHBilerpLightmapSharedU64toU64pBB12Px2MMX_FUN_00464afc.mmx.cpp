@@ -150,7 +150,7 @@ __asm {
         mov EAX,[0x00b0e59c]
         mov EAX,[0x00b0e5bc]
         mov EAX,[0x00b0e5dc]
-        mov EAX,[g_USHORT_ARRAY_005b5d00]
+        mov EAX,[g_LightmapData]
         mov EAX,[0x005b5d20]
         mov EAX,[0x005b5d40]
         mov EAX,[0x005b5d60]
@@ -233,7 +233,7 @@ __asm {
         punpcklbw MM1,MM7
         pmullw MM0,MM2
         psrlw MM6,0x1
-        movq MM3,qword ptr [g_USHORT_ARRAY_005b5d00 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         pmullw MM1,MM6
         movq MM2,MM3
         movq MM4,MM5
@@ -243,8 +243,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_005b4788]
-        paddw MM1,qword ptr [g_MMX_INTEGER_005b4790]
+        paddw MM0,qword ptr [g_LightmapBlendBias1]
+        paddw MM1,qword ptr [g_LightmapBlendBias2]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1

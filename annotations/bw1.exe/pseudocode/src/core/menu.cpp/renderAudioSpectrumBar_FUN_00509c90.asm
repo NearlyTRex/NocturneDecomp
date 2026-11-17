@@ -24,9 +24,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic[8] g_SMRGLTextureBasic_ARRAY_0061f4b0
+;   SMRGLTextureBasic[8] g_AudioSpectrumTextures
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01d1ee98
+;   int g_AudioVisualizationCounter
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -117,7 +117,7 @@ section .text
     PUSH EDI                            ; 00509d98 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0 ; 00509d99
         ;   XREF to: 00483dd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(CDemonRenderer * this_ptr, int blend_mode)
-    MOV EAX,[0x01d1ee98]                ; 00509d9e | g_INT_01d1ee98
+    MOV EAX,[0x01d1ee98]                ; 00509d9e | g_AudioVisualizationCounter
     MOV EDX,EAX                         ; 00509da3
     SAR EDX,0x1f                        ; 00509da5
     SHL EDX,0x10                        ; 00509da8
@@ -129,7 +129,7 @@ section .text
     SUB EAX,EDX                         ; 00509dbd
     SHL EAX,0x3                         ; 00509dbf
     ADD ESP,0x8                         ; 00509dc2
-    ADD EAX,0x61f4b0                    ; 00509dc5 | g_SMRGLTextureBasic_ARRAY_0061f4b0
+    ADD EAX,0x61f4b0                    ; 00509dc5 | g_AudioSpectrumTextures
     PUSH EAX                            ; 00509dca
     MOV EBP,dword ptr [0x00612560]      ; 00509dcb | g_CDemonRenderer_PTR_00612560
     PUSH EBP                            ; 00509dd1 | g_CDemonRenderer_01bc120c

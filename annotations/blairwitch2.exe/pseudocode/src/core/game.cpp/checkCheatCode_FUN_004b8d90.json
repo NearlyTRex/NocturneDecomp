@@ -129,11 +129,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `&g_INT_01cb80f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
-      "match": "(int)&g_INT_01cb80f4",
+      "match": "(int)&g_HelpCharWidth",
       "severity": "moderate",
-      "text": "bVar2 = *(byte *)((int)&g_INT_01cb80f4 + iVar5 + 3);",
+      "text": "bVar2 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
       "type": "pointer_truncation"
     },
     {
@@ -141,7 +141,7 @@
       "line": 23,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "bVar2 = *(byte *)((int)&g_INT_01cb80f4 + iVar5 + 3);",
+      "text": "bVar2 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
       "type": "pointer_cast"
     },
     {

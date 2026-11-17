@@ -11,7 +11,7 @@
 ;   float g_FLOAT_005f91e2 = 3.141593
 ;   double g_DOUBLE_005f91ea = 0.5
 ;   float g_FLOAT_00625c94 = 0.25
-;   float g_FLOAT_02c93008
+;   float g_WaterAnimationPhase
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     FILD dword ptr [ESP + 0x4]          ; 005a99b5
     FMULP ST2                           ; 005a99b9
     FADDP                               ; 005a99bb
-    FADD float ptr [0x02c93008]         ; 005a99bd | g_FLOAT_02c93008
+    FADD float ptr [0x02c93008]         ; 005a99bd | g_WaterAnimationPhase
     FSIN                                ; 005a99c3
     FMUL float ptr [0x00625c94]         ; 005a99c5 | g_FLOAT_00625c94
     FSTP float ptr [ESP]                ; 005a99cb

@@ -20,11 +20,11 @@
 ;   ... and 72 more
 ;
 ; Referenced Globals:
-;   int g_INT_0070ca68
-;   int g_INT_0070ca7c
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b70
-;   int g_INT_01c38b74
+;   int g_PlaneTestCount
+;   int g_CullingMode
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;
 ; *****************************************************************************
 
@@ -33,12 +33,12 @@ section .text
     PUSH EBX                            ; 00403970
         ;   Label: engine_3d.c_isVisiblePlane_FUN_00403970
     PUSH ESI                            ; 00403971
-    MOV EDX,dword ptr [0x0070ca68]      ; 00403972 | g_INT_0070ca68
+    MOV EDX,dword ptr [0x0070ca68]      ; 00403972 | g_PlaneTestCount
     INC EDX                             ; 00403978
     MOV ESI,dword ptr [ESP + 0xc]       ; 00403979
-    MOV dword ptr [0x0070ca68],EDX      ; 0040397d | g_INT_0070ca68
+    MOV dword ptr [0x0070ca68],EDX      ; 0040397d | g_PlaneTestCount
     MOV EAX,0x1                         ; 00403983
-    CMP dword ptr [0x0070ca7c],0x0      ; 00403988 | g_INT_0070ca7c
+    CMP dword ptr [0x0070ca7c],0x0      ; 00403988 | g_CullingMode
     JNZ 0x004039d8                      ; 0040398f
         ;   XREF to: 004039d8 (CONDITIONAL_JUMP)  ; LAB_004039d8
     MOV EBX,dword ptr [ESI]             ; 00403991
@@ -48,15 +48,15 @@ section .text
     JZ 0x004039d8                       ; 0040399c
         ;   XREF to: 004039d8 (CONDITIONAL_JUMP)  ; LAB_004039d8
     MOV EAX,dword ptr [ESI]             ; 0040399e
-    IMUL dword ptr [0x01c38b6c]         ; 004039a0 | g_INT_01c38b6c
+    IMUL dword ptr [0x01c38b6c]         ; 004039a0 | g_RelativeX
     MOV EBX,EAX                         ; 004039a6
     MOV ECX,EDX                         ; 004039a8
     MOV EAX,dword ptr [ESI + 0x4]       ; 004039aa
-    IMUL dword ptr [0x01c38b70]         ; 004039ad | g_INT_01c38b70
+    IMUL dword ptr [0x01c38b70]         ; 004039ad | g_RelativeY
     ADD EBX,EAX                         ; 004039b3
     ADC ECX,EDX                         ; 004039b5
     MOV EAX,dword ptr [ESI + 0x8]       ; 004039b7
-    IMUL dword ptr [0x01c38b74]         ; 004039ba | g_INT_01c38b74
+    IMUL dword ptr [0x01c38b74]         ; 004039ba | g_RelativeZ
     ADD EBX,EAX                         ; 004039c0
     ADC ECX,EDX                         ; 004039c2
     MOV EAX,dword ptr [ESI + 0xc]       ; 004039c4

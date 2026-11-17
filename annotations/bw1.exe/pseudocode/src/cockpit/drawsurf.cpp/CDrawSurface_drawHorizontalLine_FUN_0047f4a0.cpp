@@ -26,33 +26,33 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0047f4a0(C
       end_x_00 = this_ptr->clip_right;
     }
     if (start_x_00 <= end_x_00) {
-      if (g_INT_01bc11f0 != 0) {
+      if (g_UseRGBConversion != 0) {
         cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0047e9d0(start_x_00,end_x_00,y_00);
         return;
       }
       if ((uint)g_INT_0061b4a0 < 0x10) {
         if (g_INT_0061b4a0 == 8) {
           memset
-                    (g_ARRAY_PTR_01c4354c[y_00] + start_x_00,g_INT_01bc11e4,
+                    (g_ScreenBufferArray[y_00] + start_x_00,g_CurrentDrawColor,
                      (end_x_00 - start_x_00) + 1);
           return;
         }
       }
       else {
         if ((uint)g_INT_0061b4a0 < 0x11) {
-          puVar1 = (ushort *)(g_ARRAY_PTR_01c4354c[y_00] + start_x_00 * 2);
+          puVar1 = (ushort *)(g_ScreenBufferArray[y_00] + start_x_00 * 2);
           do {
             start_x_00 = start_x_00 + 1;
-            *puVar1 = (ushort)g_INT_01bc11e4;
+            *puVar1 = (ushort)g_CurrentDrawColor;
             puVar1 = puVar1 + 1;
           } while (start_x_00 <= end_x_00);
           return;
         }
         if (g_INT_0061b4a0 == 0x20) {
-          piVar2 = (int *)(g_ARRAY_PTR_01c4354c[y_00] + start_x_00 * 4);
+          piVar2 = (int *)(g_ScreenBufferArray[y_00] + start_x_00 * 4);
           do {
             start_x_00 = start_x_00 + 1;
-            *piVar2 = g_INT_01bc11e4;
+            *piVar2 = g_CurrentDrawColor;
             piVar2 = piVar2 + 1;
           } while (start_x_00 <= end_x_00);
           return;

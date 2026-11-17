@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005882c3
 ;   TerminatedCString s_Too_many_3D_windows_005882d6
-;   int g_INT_005b7648 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
@@ -28,7 +28,7 @@
 ;   int g_CameraOriginX
 ;   int g_CameraOriginY
 ;   int g_CameraOriginZ
-;   int g_INT_01c039d0
+;   int g_CameraRotationPitch
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -41,24 +41,24 @@ section .text
 
     PUSH EBP                            ; 004ce7c0
         ;   Label: engine_matrix.c_pushViewport_FUN_004ce7c0
-    MOV EAX,[0x01cc53d0]                ; 004ce7c1 | g_INT_01cc53d0
+    MOV EAX,[0x01cc53d0]                ; 004ce7c1 | g_ViewportStackIndex
     MOV EDX,dword ptr [0x01c039c4]      ; 004ce7c6 | g_CameraOriginX
     MOV dword ptr [EAX*0x4 + 0x1cc549c],EDX ; 004ce7cc
     MOV EDX,dword ptr [0x01c039c8]      ; 004ce7d3 | g_CameraOriginY
     MOV dword ptr [EAX*0x4 + 0x1cc54c4],EDX ; 004ce7d9
     MOV EDX,dword ptr [0x01c039cc]      ; 004ce7e0 | g_CameraOriginZ
     MOV dword ptr [EAX*0x4 + 0x1cc54ec],EDX ; 004ce7e6
-    MOV EDX,dword ptr [0x01c039d0]      ; 004ce7ed | g_INT_01c039d0
+    MOV EDX,dword ptr [0x01c039d0]      ; 004ce7ed | g_CameraRotationPitch
     MOV dword ptr [EAX*0x4 + 0x1cc5514],EDX ; 004ce7f3
-    MOV EDX,dword ptr [0x01c039d4]      ; 004ce7fa | g_INT_01c039d4
+    MOV EDX,dword ptr [0x01c039d4]      ; 004ce7fa | g_CameraRotationYaw
     MOV dword ptr [EAX*0x4 + 0x1cc553c],EDX ; 004ce800
-    MOV EDX,dword ptr [0x01c039d8]      ; 004ce807 | g_INT_01c039d8
+    MOV EDX,dword ptr [0x01c039d8]      ; 004ce807 | g_CameraRotationRoll
     MOV dword ptr [EAX*0x4 + 0x1cc5564],EDX ; 004ce80d
-    MOV EDX,dword ptr [0x01c039dc]      ; 004ce814 | g_INT_01c039dc
+    MOV EDX,dword ptr [0x01c039dc]      ; 004ce814 | g_LightDirectionX
     MOV dword ptr [EAX*0x4 + 0x1cc558c],EDX ; 004ce81a
-    MOV EDX,dword ptr [0x01c039e0]      ; 004ce821 | g_INT_01c039e0
+    MOV EDX,dword ptr [0x01c039e0]      ; 004ce821 | g_LightDirectionY
     MOV dword ptr [EAX*0x4 + 0x1cc55b4],EDX ; 004ce827
-    MOV EDX,dword ptr [0x01c039e4]      ; 004ce82e | g_INT_01c039e4
+    MOV EDX,dword ptr [0x01c039e4]      ; 004ce82e | g_LightDirectionZ
     MOV dword ptr [EAX*0x4 + 0x1cc55dc],EDX ; 004ce834
     MOV EDX,dword ptr [0x01c00c48]      ; 004ce83b | g_Projection
     MOV dword ptr [EAX*0x4 + 0x1cc53d4],EDX ; 004ce841
@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [EAX*0x4 + 0x1cc5424],EDX ; 004ce85b
     MOV EDX,dword ptr [0x01c00c54]      ; 004ce862 | g_Projection.center_y_fixed
     MOV dword ptr [EAX*0x4 + 0x1cc544c],EDX ; 004ce868
-    MOV EDX,dword ptr [0x005b7648]      ; 004ce86f | g_INT_005b7648
+    MOV EDX,dword ptr [0x005b7648]      ; 004ce86f | g_ProjectionScale
     MOV dword ptr [EAX*0x4 + 0x1cc5474],EDX ; 004ce875
     MOV EDX,dword ptr [0x01c00c58]      ; 004ce87c | g_ClipLeft
     MOV dword ptr [EAX*0x4 + 0x1cc5604],EDX ; 004ce882
@@ -79,7 +79,7 @@ section .text
     MOV EDX,dword ptr [0x01c00c64]      ; 004ce8a3 | g_ClipBottom
     MOV dword ptr [EAX*0x4 + 0x1cc567c],EDX ; 004ce8a9
     LEA EDX,[EAX + 0x1]                 ; 004ce8b0
-    MOV dword ptr [0x01cc53d0],EDX      ; 004ce8b3 | g_INT_01cc53d0
+    MOV dword ptr [0x01cc53d0],EDX      ; 004ce8b3 | g_ViewportStackIndex
     CMP EDX,0xa                         ; 004ce8b9
     JGE 0x004ce8f1                      ; 004ce8bc
         ;   XREF to: 004ce8f1 (CONDITIONAL_JUMP)  ; LAB_004ce8f1
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401e30(int left, int top, int right, int bottom)
     MOV ECX,0x10000                     ; 004ce8e1
     ADD ESP,0x10                        ; 004ce8e6
-    MOV dword ptr [0x005b7648],ECX      ; 004ce8e9 | g_INT_005b7648
+    MOV dword ptr [0x005b7648],ECX      ; 004ce8e9 | g_ProjectionScale
     POP EBP                             ; 004ce8ef
     RET                                 ; 004ce8f0
     PUSH ESI                            ; 004ce8f1

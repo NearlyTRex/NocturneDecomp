@@ -40,18 +40,18 @@ LAB_004ebab3:
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_setCursorPosition_FUN_0058ed10
             ((int)(((longlong)(g_INT_006141b8 + -1) * (longlong)(iVar3 + -0x3fff)) / 0xc000),
-             g_INT_01c2a380);
+             g_MouseY);
   pCVar6 = (CKeys *)0x0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(g_CEditorToolsPtr);
-    if ((CKeys *)g_INT_01c2a37c != pCVar6) {
-      iVar3 = (int)(((longlong)g_INT_01c2a37c * 0xc000) / (longlong)(g_INT_006141b8 + -1)) + 0x3fff;
+    if ((CKeys *)g_MouseX != pCVar6) {
+      iVar3 = (int)(((longlong)g_MouseX * 0xc000) / (longlong)(g_INT_006141b8 + -1)) + 0x3fff;
     }
-    iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD4);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar1 != 0) {
       iVar3 = iVar3 + -700;
     }
-    iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD6);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar1 != 0) {
       iVar3 = iVar3 + 700;
     }
@@ -63,7 +63,7 @@ LAB_004ebab3:
     }
     iVar1 = g_INT_01c35e4c + 1;
     iVar2 = g_INT_01c35e54 + -1;
-    iVar4 = g_INT_01c35e50 + -1;
+    iVar4 = g_ClipRight + -1;
     iVar5 = g_INT_01c35e48 + 1;
     engine_2d_c_fillRectWithBorder_FUN_00403250(iVar5,iVar1,iVar4,iVar2,0,0xff);
     engine_2d_c_fillRectColor_FUN_004031c0
@@ -74,18 +74,17 @@ LAB_004ebab3:
     iVar5 = 0;
     iVar4 = 0xff;
     iVar2 = g_INT_01c35e54 + g_INT_01c35e4c;
-    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x41);
+    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0
-              (g_CBitFont_PTR_01c25590,g_INT_01c35e48,g_INT_01c35e50,(iVar2 - iVar1) / 2,iVar4,iVar5
-               ,format_string);
+              (g_EditorFont,g_INT_01c35e48,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string
+              );
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-    pCVar6 = g_CKeys_PTR_00617dd4;
-    iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+    pCVar6 = g_CKeysPtr;
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar1 != 0) goto LAB_004ebc85;
-    iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_RETURN);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   } while ((iVar1 == 0) &&
-          (iVar1 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                             (g_CKeys_PTR_00617dd4,DIM_LBUTTON), iVar1 == 0));
+          (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON), iVar1 == 0));
   *value_ptr = iVar3;
 LAB_004ebc85:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);

@@ -30,7 +30,7 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_004fcdc0(CMotionContro
   int local_14;
   
   bVar9 = 0;
-  if ((g_INT_01d8e40c != 0) &&
+  if ((g_RenderMotionDebug != 0) &&
      (local_20 = (float)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
                                   (g_CDemonRenderer_PTR_005f2afc), local_20 == 0.0)) {
     (*((actor->vtable)._ub)->getBoundingBox)(actor,in_stack_ffffff40);

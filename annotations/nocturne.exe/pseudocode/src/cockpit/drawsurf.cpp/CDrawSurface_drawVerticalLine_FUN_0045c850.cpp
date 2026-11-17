@@ -30,7 +30,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
       iVar2 = iVar5 * 2;
       iVar4 = iVar4 * 4;
       iVar3 = iVar3 * 4;
-      if (g_INT_01b4d71c != 0) {
+      if (g_UseRGBConversion != 0) {
         if ((uint)g_BitsPerPixel < 0x10) {
           if (g_BitsPerPixel == 8) {
             do {
@@ -47,8 +47,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
               piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
               iVar3 = iVar3 + 4;
               *(ushort *)(*piVar1 + iVar2) =
-                   *(ushort *)(*piVar1 + iVar2) >> ((byte)g_INT_01b4d720 & 0x1f) &
-                   (ushort)g_INT_01b4d730;
+                   *(ushort *)(*piVar1 + iVar2) >> ((byte)g_OriginalColorValue & 0x1f) &
+                   (ushort)g_PackedPixelColor;
             } while (iVar3 <= iVar4);
             return;
           }
@@ -56,7 +56,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
             do {
               puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);
               iVar3 = iVar3 + 4;
-              *puVar6 = *puVar6 >> ((byte)g_INT_01b4d720 & 0x1f) & g_INT_01b4d730;
+              *puVar6 = *puVar6 >> ((byte)g_OriginalColorValue & 0x1f) & g_PackedPixelColor;
             } while (iVar3 <= iVar4);
             return;
           }

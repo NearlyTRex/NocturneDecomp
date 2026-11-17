@@ -140,7 +140,7 @@ LAB_00503261:
     }
     if (iVar2 != 0) {
       _sprintf(local_a8,"signal%d");
-      core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventList_PTR_006141f0,local_a8);
+      core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventListPtr,local_a8);
       return iVar2;
     }
 LAB_00503122:

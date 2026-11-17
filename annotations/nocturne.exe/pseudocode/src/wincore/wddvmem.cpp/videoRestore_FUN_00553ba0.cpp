@@ -12,7 +12,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_00553ba0(void)
   int iVar1;
   HRESULT HVar2;
   
-  if ((g_UseDirect3D == 0) || (g_INT_02ddf568 == 0)) {
+  if ((g_UseDirect3D == 0) || (g_GraphicsResetFlag == 0)) {
     if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
       (*g_DirectDrawSurface->vtable->Restore)(g_DirectDrawSurface);
       (*g_SoftwareRenderSurface->vtable->Restore)(g_SoftwareRenderSurface);
@@ -51,12 +51,13 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_00553ba0(void)
       }
       HVar2 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
       if (HVar2 == 0) {
-        (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_HWND_02de2098,0x11);
+        (*g_DirectDrawObject->vtable->SetCooperativeLevel)
+                  (g_DirectDrawObject,g_MainWindowHandle,0x11);
       }
       wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
                 (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     }
-    SetFocus(g_HWND_02de2098);
+    SetFocus(g_MainWindowHandle);
   }
   return;
 }

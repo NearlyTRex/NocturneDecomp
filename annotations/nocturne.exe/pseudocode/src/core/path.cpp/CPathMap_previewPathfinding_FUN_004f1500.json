@@ -54,25 +54,25 @@
     },
     {
       "addr": "01e3161c",
-      "name": "g_INT_01e3161c",
+      "name": "g_PathfindingCurrentX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e31620",
-      "name": "g_INT_01e31620",
+      "name": "g_PathfindingCurrentZ",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e31624",
-      "name": "g_INT_01e31624",
+      "name": "g_PathfindingDestX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e31628",
-      "name": "g_INT_01e31628",
+      "name": "g_PathfindingDestZ",
       "type": "int",
       "value": null
     }
@@ -159,10 +159,10 @@
   },
   "suspects": [
     {
-      "description": "'g_CHAR_ARRAY_ARRAY_01e40098[0][iVar4]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar4 is copied from iStack_18, which is stepped by 0x64): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "description": "'g_PathfindingVisited[0][iVar4]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar4 is copied from iStack_18, which is stepped by 0x64): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 25,
       "severity": "major",
-      "text": "g_CHAR_PTR_ARRAY_005be130[(byte)g_CHAR_ARRAY_ARRAY_01e40098[0][iVar4]]);",
+      "text": "g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]]);",
       "type": "flattened_array_index"
     }
   ]

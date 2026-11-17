@@ -20,28 +20,28 @@
 extern CDemonActorType g_CDripClassInfo;
 
 // CDemonCube*[20000]
-extern CDemonCube* g_CDemonCube_PTR_ARRAY_01c0b7bc[20000];
+extern CDemonCube* g_PVSCubePointers[20000];
 
 // CKeyFramedModelInstance
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c0b3dc;
+extern CKeyFramedModelInstance g_StalactiteRockModelInstance;
 
 // CVector3f
-extern CVector3f g_CVector3f_01c0b798;
+extern CVector3f g_SkyDomeCenter;
 
 // SFace*[5000]
-extern SFace* g_SFace_PTR_ARRAY_01c04960[5000];
+extern SFace* g_CapturedFacePointers[5000];
 
 // SMRGLSkyTexture[24]
-extern SMRGLSkyTexture g_SMRGLSkyTexture_ARRAY_01c0b558[24];
+extern SMRGLSkyTexture g_SkyDomeTextureData[24];
 
 // SMRGLTextureBasic[300]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c09780[300];
+extern SMRGLTextureBasic g_CapturedTextureArray[300];
 
 // int
-extern int g_INT_01c0b7a4;
-extern int g_INT_01c0b7a8;
-extern int g_INT_01c0b7ac;
-extern int g_INT_01c0b7b0;
-extern int g_INT_01c0b7b4;
-extern int g_INT_01c0b7b8;
+extern int g_CubesTestedCount;
+extern int g_CubesWithVoxelsCount;
+extern int g_CubesVisibleCount;
+extern int g_CubesRenderedCount;
+extern int g_PVSDrawnCubeCount;
+extern int g_PVSReadyFlag;
 

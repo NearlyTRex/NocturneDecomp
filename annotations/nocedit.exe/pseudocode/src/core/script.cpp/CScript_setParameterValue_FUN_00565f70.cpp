@@ -26,12 +26,12 @@ void __cdecl core_script_cpp_CScript_setParameterValue_FUN_00565f70(CScript *thi
       pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                          (&this_ptr->script_text,g_CurrentEditingLine);
       iVar2 = core_script_cpp_CCmdParse_bestParse_FUN_00561db0
-                        (&CCmdParse_0310cb74,pcVar3,iVar2,templates,template_count);
+                        (&g_ParameterValueParser,pcVar3,iVar2,templates,template_count);
       if (iVar2 < 0) {
         core_script_cpp_CScript_insertText_FUN_00566390(this_ptr,value,1);
         return;
       }
-      pcVar3 = CCmdParse_0310cb74.params[iVar2].parsed_value;
+      pcVar3 = g_ParameterValueParser.params[iVar2].parsed_value;
       do {
         cVar1 = *value;
         *pcVar3 = cVar1;
@@ -41,10 +41,11 @@ void __cdecl core_script_cpp_CScript_setParameterValue_FUN_00565f70(CScript *thi
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      core_script_cpp_CCmdParse_toString_FUN_005624f0(&CCmdParse_0310cb74,g_CurrentLineBuffer + 1);
+      core_script_cpp_CCmdParse_toString_FUN_005624f0
+                (&g_ParameterValueParser,g_CurrentLineBuffer + 1);
       core_script_cpp_CScript_editorPutLine_FUN_005662a0(this_ptr,g_CurrentEditingLine);
       buffer_index = core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760
-                               (&CCmdParse_0310cb74,iVar2);
+                               (&g_ParameterValueParser,iVar2);
       g_CurrentEditingColumn =
            core_script_cpp_CScript_editorIndex2X_FUN_00566b30
                      (this_ptr,g_CurrentEditingLine,buffer_index);

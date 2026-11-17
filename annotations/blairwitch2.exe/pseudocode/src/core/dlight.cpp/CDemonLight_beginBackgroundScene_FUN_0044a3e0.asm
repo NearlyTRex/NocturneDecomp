@@ -15,14 +15,14 @@
 ;   TerminatedCString s_core_dlight_cpp_005cf3ad
 ;   TerminatedCString s_CDemonLight_beginBackgro_005cf3c0
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   int g_INT_01b11db4
-;   void*[1200] g_ARRAY_PTR_01b11db8
-;   undefined4 g_ARRAY_PTR_01b11db8[1]
-;   undefined4 g_ARRAY_PTR_01b11db8[1]+1
+;   int g_BackgroundSceneNestingCount
+;   void*[1200] g_SavedScreenBufferArray
+;   undefined4 g_SavedScreenBufferArray[1]
+;   undefined4 g_SavedScreenBufferArray[1]+1
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]+1
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -43,10 +43,10 @@ section .text
     CMP dword ptr [EBX + 0x11e4],0x0    ; 0044a3e8
     JZ 0x0044a4a6                       ; 0044a3ef
         ;   XREF to: 0044a4a6 (CONDITIONAL_JUMP)  ; LAB_0044a4a6
-    MOV EDI,dword ptr [0x01b11db4]      ; 0044a3f5 | g_INT_01b11db4
+    MOV EDI,dword ptr [0x01b11db4]      ; 0044a3f5 | g_BackgroundSceneNestingCount
         ;   Label: LAB_0044a3f5
     INC EDI                             ; 0044a3fb
-    MOV dword ptr [0x01b11db4],EDI      ; 0044a3fc | g_INT_01b11db4
+    MOV dword ptr [0x01b11db4],EDI      ; 0044a3fc | g_BackgroundSceneNestingCount
     CMP EDI,0x1                         ; 0044a402
     JNZ 0x0044a4a1                      ; 0044a405
         ;   XREF to: 0044a4a1 (CONDITIONAL_JUMP)  ; LAB_0044a4a1
@@ -54,13 +54,13 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1cc4]    ; 0044a410
     MOV EDI,0x1b11db8                   ; 0044a416
     SHL ECX,0x2                         ; 0044a41b
-    PUSH EDI                            ; 0044a41e | g_ARRAY_PTR_01b11db8
+    PUSH EDI                            ; 0044a41e | g_SavedScreenBufferArray
     MOV EAX,ECX                         ; 0044a41f
     SHR ECX,0x2                         ; 0044a421
-    MOVSD.REP ES:EDI,ESI                ; 0044a424 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01b11db8 | g_ARRAY_PTR_01c2a38c[1]
+    MOVSD.REP ES:EDI,ESI                ; 0044a424 | g_ScreenBufferArray | g_SavedScreenBufferArray | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 0044a426
     AND CL,0x3                          ; 0044a428
-    MOVSB.REP ES:EDI,ESI                ; 0044a42b | g_ARRAY_PTR_01c2a38c[1] | g_ARRAY_PTR_01b11db8[1] | g_ARRAY_PTR_01c2a38c[1]+1
+    MOVSB.REP ES:EDI,ESI                ; 0044a42b | g_ScreenBufferArray[1] | g_SavedScreenBufferArray[1] | g_ScreenBufferArray[1]+1
     POP EDI                             ; 0044a42d
     CMP dword ptr [EBX + 0x2f9c],0x0    ; 0044a42e
     JNZ 0x0044a45a                      ; 0044a435
@@ -86,7 +86,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2f9c]    ; 0044a471
     ADD ESI,ESI                         ; 0044a477
     ADD ECX,ESI                         ; 0044a479
-    MOV dword ptr [EDX + 0x1c2a38c],ECX ; 0044a47b | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV dword ptr [EDX + 0x1c2a38c],ECX ; 0044a47b | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0044a481
     MOV EDI,dword ptr [EBX + 0x1cc4]    ; 0044a482
     ADD EDX,0x4                         ; 0044a488

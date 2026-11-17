@@ -25,7 +25,7 @@
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;   int g_INT_01ed6808
-;   int g_INT_01ed7014
+;   int g_ScriptInputFlag
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_00529970
     XOR EDX,EDX                         ; 00529973
     MOV dword ptr [ESP + 0x8],EAX       ; 00529975
-    MOV dword ptr [0x01ed7014],EDX      ; 00529979 | g_INT_01ed7014
+    MOV dword ptr [0x01ed7014],EDX      ; 00529979 | g_ScriptInputFlag
     MOV dword ptr [EBX + 0x44],ESI      ; 0052997f
     XOR ESI,ESI                         ; 00529982
     LEA EAX,[ESP + 0x4]                 ; 00529984
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_005299a2
     JNZ 0x00529a39                      ; 005299a5
         ;   XREF to: 00529a39 (CONDITIONAL_JUMP)  ; LAB_00529a39
-    CMP dword ptr [0x01ed7014],0x0      ; 005299ab | g_INT_01ed7014
+    CMP dword ptr [0x01ed7014],0x0      ; 005299ab | g_ScriptInputFlag
     JZ 0x005299cb                       ; 005299b2
         ;   XREF to: 005299cb (CONDITIONAL_JUMP)  ; LAB_005299cb
     MOV ECX,dword ptr [0x005fe9dc]      ; 005299b4 | g_CGamePtr
@@ -111,7 +111,7 @@ section .text
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 005299bd
         ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     ADD ESP,0x4                         ; 005299c2
-    MOV dword ptr [0x01ed7014],ESI      ; 005299c5 | g_INT_01ed7014
+    MOV dword ptr [0x01ed7014],ESI      ; 005299c5 | g_ScriptInputFlag
     MOV EAX,dword ptr [ESP + 0x8]       ; 005299cb
         ;   Label: LAB_005299cb
     MOV dword ptr [EBX + 0x44],EAX      ; 005299cf

@@ -85,13 +85,13 @@ section .text
     XOR EBP,EBP                         ; 004d00d6
     CALL engine_special.cpp_buildCardList_FUN_00532d20 ; 004d00d8
         ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_buildCardList_FUN_00532d20(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
-    MOV EAX,[0x01cc64a4]                ; 004d00dd | g_INT_01cc64a4
+    MOV EAX,[0x01cc64a4]                ; 004d00dd | g_CurrentGraphicsBoard
     MOV EBX,dword ptr [0x01cc64a8]      ; 004d00e2 | g_INT_01cc64a8
     ADD ESP,0x14                        ; 004d00e8
     CMP EAX,EBX                         ; 004d00eb
     JL 0x004d00f5                       ; 004d00ed
         ;   XREF to: 004d00f5 (CONDITIONAL_JUMP)  ; LAB_004d00f5
-    MOV dword ptr [0x01cc64a4],EBP      ; 004d00ef | g_INT_01cc64a4
+    MOV dword ptr [0x01cc64a4],EBP      ; 004d00ef | g_CurrentGraphicsBoard
     LEA EAX,[ESP + 0x10c]               ; 004d00f5
         ;   Label: LAB_004d00f5
     PUSH EAX                            ; 004d00fc
@@ -146,7 +146,7 @@ section .text
     CMP dword ptr [0x02dc9d60],0x0      ; 004d01a4 | g_UseDirect3D
     JZ 0x004d032f                       ; 004d01ab
         ;   XREF to: 004d032f (CONDITIONAL_JUMP)  ; LAB_004d032f
-    MOV EAX,[0x01cc64a4]                ; 004d01b1 | g_INT_01cc64a4
+    MOV EAX,[0x01cc64a4]                ; 004d01b1 | g_CurrentGraphicsBoard
     SHL EAX,0x2                         ; 004d01b6
     CMP dword ptr [EAX + 0x1cc652c],0x121a ; 004d01b9
     JNZ 0x004d0662                      ; 004d01c3
@@ -212,7 +212,7 @@ section .text
     CALL engine_special.cpp_getVideoMemory_FUN_00532cd0 ; 004d0282
         ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getVideoMemory_FUN_00532cd0(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 004d0287
-    MOV EAX,[0x01cc64a4]                ; 004d028a | g_INT_01cc64a4
+    MOV EAX,[0x01cc64a4]                ; 004d028a | g_CurrentGraphicsBoard
         ;   Label: LAB_004d028a
     SHL EAX,0x2                         ; 004d028f
     CMP dword ptr [EAX + 0x1cc652c],0x8086 ; 004d0292 | g_INT_01cc652c
@@ -225,7 +225,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 004d02af | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 004d02b6 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 004d02bc | g_CGameInstance.game_pixy
-    MOV EAX,[0x01cc64a4]                ; 004d02c3 | g_INT_01cc64a4
+    MOV EAX,[0x01cc64a4]                ; 004d02c3 | g_CurrentGraphicsBoard
         ;   Label: LAB_004d02c3
     SHL EAX,0x2                         ; 004d02c8
     CMP dword ptr [EAX + 0x1cc652c],0x12d2 ; 004d02cb | g_INT_01cc652c
@@ -238,7 +238,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 004d02e5 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 004d02ec | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 004d02f2 | g_CGameInstance.game_pixy
-    MOV EAX,[0x01cc64a4]                ; 004d02f9 | g_INT_01cc64a4
+    MOV EAX,[0x01cc64a4]                ; 004d02f9 | g_CurrentGraphicsBoard
         ;   Label: LAB_004d02f9
     SHL EAX,0x2                         ; 004d02fe
     CMP dword ptr [EAX + 0x1cc652c],0x12d2 ; 004d0301 | g_INT_01cc652c
@@ -491,7 +491,7 @@ section .text
         ;   XREF to: 004d062b (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [ESI*0x4 + 0x4d0050]  ; 004d05ae | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    CMP dword ptr [0x01cc5b5c],0x1      ; 004d05b5 | g_INT_01cc5b5c
+    CMP dword ptr [0x01cc5b5c],0x1      ; 004d05b5 | g_MenuLeftRightPressed
         ;   Label: caseD_0
     JNZ 0x004d096d                      ; 004d05bc
         ;   XREF to: 004d096d (CONDITIONAL_JUMP)  ; LAB_004d096d
@@ -528,8 +528,8 @@ section .text
     PUSH 0x1                            ; 004d062b
         ;   Label: default
     MOV EAX,[0x005bac64]                ; 004d062d | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004d0632 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004d0633 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004d0632 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004d0633 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 004d0635
     ADD ESP,0x8                         ; 004d0638
     TEST EAX,EAX                        ; 004d063b
@@ -736,7 +736,7 @@ section .text
         ;   XREF to: 004d0812 (CONDITIONAL_JUMP)  ; LAB_004d0812
     POP EDI                             ; 004d082a
         ;   Label: LAB_004d082a
-    MOV ESI,dword ptr [0x01cc64a4]      ; 004d082b | g_INT_01cc64a4
+    MOV ESI,dword ptr [0x01cc64a4]      ; 004d082b | g_CurrentGraphicsBoard
     MOV ESI,dword ptr [ESI*0x4 + 0x1cc64ec] ; 004d0831 | g_CHAR_PTR_01cc64ec
     PUSH EDI                            ; 004d0838 | g_CHAR_ARRAY_01cc5f80
     SUB ECX,ECX                         ; 004d0839
@@ -938,7 +938,7 @@ section .text
     MOV dword ptr [EDX],0x500           ; 004d0a52 | g_CGameInstance
     JMP 0x004d062b                      ; 004d0a58
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EDX,dword ptr [0x01cc5b5c]      ; 004d0a5d | g_INT_01cc5b5c
+    MOV EDX,dword ptr [0x01cc5b5c]      ; 004d0a5d | g_MenuLeftRightPressed
         ;   Label: caseD_1
     CMP EDX,0x1                         ; 004d0a63
     JNZ 0x004d0a98                      ; 004d0a66
@@ -1023,7 +1023,7 @@ section .text
         ;   Label: LAB_004d0b3f
     JMP 0x004d062b                      ; 004d0b44
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x01cc64a4]                ; 004d0b49 | g_INT_01cc64a4
+    MOV EAX,[0x01cc64a4]                ; 004d0b49 | g_CurrentGraphicsBoard
         ;   Label: caseD_3
     CMP dword ptr [EAX*0x4 + 0x1cc652c],0x121a ; 004d0b4e | g_INT_01cc652c
     JZ 0x004d062b                       ; 004d0b59
@@ -1110,19 +1110,19 @@ section .text
     TEST ECX,ECX                        ; 004d0c24
     JNZ 0x004d0c33                      ; 004d0c26
         ;   XREF to: 004d0c33 (CONDITIONAL_JUMP)  ; LAB_004d0c33
-    MOV dword ptr [0x01cc64a4],ECX      ; 004d0c28 | g_INT_01cc64a4
+    MOV dword ptr [0x01cc64a4],ECX      ; 004d0c28 | g_CurrentGraphicsBoard
     JMP 0x004d062b                      ; 004d0c2e
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cc64a4]      ; 004d0c33 | g_INT_01cc64a4
+    MOV ESI,dword ptr [0x01cc64a4]      ; 004d0c33 | g_CurrentGraphicsBoard
         ;   Label: LAB_004d0c33
     INC ESI                             ; 004d0c39
-    MOV dword ptr [0x01cc64a4],ESI      ; 004d0c3a | g_INT_01cc64a4
+    MOV dword ptr [0x01cc64a4],ESI      ; 004d0c3a | g_CurrentGraphicsBoard
     CMP ESI,ECX                         ; 004d0c40
     JL 0x004d0c4b                       ; 004d0c42
         ;   XREF to: 004d0c4b (CONDITIONAL_JUMP)  ; LAB_004d0c4b
     XOR EAX,EAX                         ; 004d0c44
-    MOV [0x01cc64a4],EAX                ; 004d0c46 | g_INT_01cc64a4
-    MOV EDX,dword ptr [0x01cc64a4]      ; 004d0c4b | g_INT_01cc64a4
+    MOV [0x01cc64a4],EAX                ; 004d0c46 | g_CurrentGraphicsBoard
+    MOV EDX,dword ptr [0x01cc64a4]      ; 004d0c4b | g_CurrentGraphicsBoard
         ;   Label: LAB_004d0c4b
     PUSH EDX                            ; 004d0c51
     CALL engine_special.cpp_selectCard_FUN_00532d00 ; 004d0c52

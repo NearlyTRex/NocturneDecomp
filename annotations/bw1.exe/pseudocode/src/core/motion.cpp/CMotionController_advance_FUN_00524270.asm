@@ -50,7 +50,7 @@
 ;   double g_DOUBLE_005eae8b = 0.5
 ;   double g_DOUBLE_005eae93 = 0.499900000000000
 ;   double g_DOUBLE_005eae9b = 0.000100000000000000
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -259,7 +259,7 @@ section .text
     ADD ESP,0xc                         ; 00524447
     LEA EAX,[ESP + 0x10]                ; 0052444a
     PUSH EAX                            ; 0052444e
-    MOV ECX,dword ptr [0x0061b4d0]      ; 0052444f | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 0052444f | g_CEventListPtr
     PUSH ECX                            ; 00524455
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00524456
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

@@ -13,13 +13,13 @@
 ;   TerminatedCString s_sound_sndmain_cpp_00592dc6
 ;   TerminatedCString s_SfxSlot_autoCalcDelayRem_00592ddb
 ;   double g_DOUBLE_005a2150 = 1116.40000000000
-;   double g_DOUBLE_005bea80 = 1
+;   double g_Cached3DDistanceFactor = 1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   double g_DOUBLE_02dc78e0
 ;   double g_DOUBLE_02dc78e8
 ;   double g_DOUBLE_02dc78f0
-;   int g_INT_02dc84bc
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -32,7 +32,7 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0
     SUB ESP,0x18                        ; 005247a1
     MOV EBX,dword ptr [ESP + 0x20]      ; 005247a4
-    CMP dword ptr [0x02dc84bc],0x0      ; 005247a8 | g_INT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 005247a8 | g_SoundLockCount
     JLE 0x005247ca                      ; 005247af
         ;   XREF to: 005247ca (CONDITIONAL_JUMP)  ; LAB_005247ca
     TEST byte ptr [EBX + 0x5c],0x1      ; 005247b1
@@ -71,7 +71,7 @@ section .text
     FMUL ST0                            ; 00524814
     FADDP                               ; 00524816
     FSQRT                               ; 00524818
-    FMUL double ptr [0x005bea80]        ; 0052481a | g_DOUBLE_005bea80
+    FMUL double ptr [0x005bea80]        ; 0052481a | g_Cached3DDistanceFactor
     FDIV double ptr [0x005a2150]        ; 00524820 | g_DOUBLE_005a2150
     FSTP double ptr [EBX + 0x4c]        ; 00524826
     ADD ESP,0x18                        ; 00524829

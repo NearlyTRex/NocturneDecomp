@@ -25,6 +25,6 @@ int __cdecl engine_special_cpp_switchRenderer_FUN_00582ec0(char *new_dll_name,in
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  iVar2 = engine_special_cpp_loadExternalRenderer_FUN_00581310(g_HWND_02c834c0);
+  iVar2 = engine_special_cpp_loadExternalRenderer_FUN_00581310(g_StoredWindowHandle);
   return iVar2;
 }

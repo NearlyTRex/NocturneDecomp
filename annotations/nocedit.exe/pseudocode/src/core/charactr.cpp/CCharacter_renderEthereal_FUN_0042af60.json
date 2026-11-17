@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 48,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 49,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 178
+    "total_lines": 179
   },
   "cross_references": [
     {
@@ -118,7 +118,7 @@
     },
     {
       "addr": "0066e6b0",
-      "name": "SMRGLTextureBasic_ARRAY_0066e6b0",
+      "name": "g_EtherealBoltTextures",
       "type": "SMRGLTextureBasic[6]",
       "value": null
     },
@@ -136,13 +136,13 @@
     },
     {
       "addr": "00823a90",
-      "name": "INT_00823a90",
+      "name": "g_EtherealUVScroll",
       "type": "int",
       "value": null
     },
     {
       "addr": "00823a94",
-      "name": "INT_00823a94",
+      "name": "g_EtherealBoltFrame",
       "type": "int",
       "value": null
     },
@@ -257,7 +257,7 @@
     },
     {
       "description": "Pointer value `&g_CDemonRendererPtr2->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "(int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -266,7 +266,7 @@
     },
     {
       "description": "Pointer value `&pCVar1->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "(int)&pCVar1->vertex_buffer_ptr->g",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Pointer value `&pCVar1->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 44,
       "match": "(int)&pCVar1->vertex_buffer_ptr->b",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -284,7 +284,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -293,7 +293,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -302,7 +302,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",

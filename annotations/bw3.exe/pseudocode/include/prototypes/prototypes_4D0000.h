@@ -111,7 +111,7 @@ int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004d2720(CHero *this_p
 int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004d2760(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 void __cdecl core_hero_cpp_CHero_archive_FUN_004d27b0(CHero *this_ptr);
 CPathMap * __cdecl core_hero_cpp_CHero_getPathMap_FUN_004d2a70(CHero *this_ptr);
-bool __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004d2a80(CHero *this_ptr,CDemonActor *param_2);
+bool __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004d2a80(CHero *this_ptr,CDemonActor *actor);
 int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004d2aa0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl switchD_004d4890::core_hero_cpp_CHero_isInvulnerable_FUN_004d2ab0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canReachPickup_FUN_004d2ae0(CHero *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);

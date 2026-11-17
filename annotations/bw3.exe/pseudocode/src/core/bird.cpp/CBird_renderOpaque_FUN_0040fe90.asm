@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_heroCanSee_005b63fa
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CGameInstance.goggles_active
@@ -71,7 +71,7 @@ section .text
     JZ 0x0040feac                       ; 0040fee7
         ;   XREF to: 0040feac (CONDITIONAL_JUMP)  ; LAB_0040feac
     PUSH 0x5b63fa                       ; 0040fee9 | = "heroCanSee"
-    MOV EBP,dword ptr [0x005fba60]      ; 0040feee | g_CEventList_PTR_005fba60
+    MOV EBP,dword ptr [0x005fba60]      ; 0040feee | g_CEventListPtr
     PUSH EBP                            ; 0040fef4
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0040fef5
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

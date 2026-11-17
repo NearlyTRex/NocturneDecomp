@@ -19,10 +19,10 @@
 ;   engine_3d.c_renderPolygonWithRenderFlags_FUN_00407640 at 00407698
 ;
 ; Referenced Globals:
-;   int g_INT_00617e40 = 0x8000
-;   int g_INT_01c38b90
-;   int g_INT_01c38b94
-;   int g_INT_01c38b98
+;   int g_AmbientLightLevel = 0x8000
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;
 ; *****************************************************************************
 
@@ -30,15 +30,15 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004e28b0
         ;   Label: engine_light.cpp_calculateLighting_FUN_004e28b0
-    MOV EDX,dword ptr [0x01c38b90]      ; 004e28b4 | g_INT_01c38b90
+    MOV EDX,dword ptr [0x01c38b90]      ; 004e28b4 | g_LightDirectionX
     IMUL EDX                            ; 004e28ba
     SHRD EAX,EDX,0x10                   ; 004e28bc
-    MOV EDX,dword ptr [0x01c38b94]      ; 004e28c0 | g_INT_01c38b94
+    MOV EDX,dword ptr [0x01c38b94]      ; 004e28c0 | g_LightDirectionY
     MOV ECX,EAX                         ; 004e28c6
     MOV EAX,dword ptr [ESP + 0x8]       ; 004e28c8
     IMUL EDX                            ; 004e28cc
     SHRD EAX,EDX,0x10                   ; 004e28ce
-    MOV EDX,dword ptr [0x01c38b98]      ; 004e28d2 | g_INT_01c38b98
+    MOV EDX,dword ptr [0x01c38b98]      ; 004e28d2 | g_LightDirectionZ
     ADD ECX,EAX                         ; 004e28d8
     MOV EAX,dword ptr [ESP + 0xc]       ; 004e28da
     IMUL EDX                            ; 004e28de
@@ -54,12 +54,12 @@ section .text
     MOV EDX,0xffff                      ; 004e28f5
     MOV ECX,0xffff                      ; 004e28fa
         ;   Label: LAB_004e28fa
-    SUB ECX,dword ptr [0x00617e40]      ; 004e28ff | g_INT_00617e40
+    SUB ECX,dword ptr [0x00617e40]      ; 004e28ff | g_AmbientLightLevel
     MOV EAX,EDX                         ; 004e2905
     MOV EDX,ECX                         ; 004e2907
     IMUL EDX                            ; 004e2909
     SHRD EAX,EDX,0x10                   ; 004e290b
-    MOV EDX,dword ptr [0x00617e40]      ; 004e290f | g_INT_00617e40
+    MOV EDX,dword ptr [0x00617e40]      ; 004e290f | g_AmbientLightLevel
     ADD EDX,EAX                         ; 004e2915
     TEST EDX,EDX                        ; 004e2917
     JL 0x004e293f                       ; 004e2919

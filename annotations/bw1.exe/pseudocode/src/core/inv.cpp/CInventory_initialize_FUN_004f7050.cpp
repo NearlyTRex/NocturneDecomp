@@ -20,7 +20,8 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004f7050(CInventory *this_pt
     iVar1 = rand();
     ppCVar3 = &pCVar2->owner;
     pCVar2->item_angles[0] =
-         (float)iVar1 * 3.051851e-05f * 3.141593f * (float)2;
+         (float)iVar1 * 3.051851e-05f * 3.141593f *
+         (float)2;
     pCVar2 = (CInventory *)ppCVar3;
   } while (ppCVar3 != this_ptr->items + 0x5f);
   if (this_ptr->ammo_ptr != (CAmmo *)0x0) {

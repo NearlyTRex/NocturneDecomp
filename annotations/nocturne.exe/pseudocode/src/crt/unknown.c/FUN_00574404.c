@@ -22,11 +22,11 @@ int FUN_00574404(short *param_1,int param_2)
   int iVar8;
   short *psVar9;
   
-  dest = (char **)g_INT_02de54a8;
+  dest = (char **)g_EnvironInitialized;
   do {
     psVar7 = (short *)*dest;
     if (psVar7 == (short *)0x0) {
-      return g_INT_02de54a8 - (int)dest >> 2;
+      return g_EnvironInitialized - (int)dest >> 2;
     }
     sVar4 = *param_1;
     psVar9 = param_1;
@@ -35,7 +35,7 @@ int FUN_00574404(short *param_1,int param_2)
       sVar5 = FUN_005746f0(*psVar9);
       if (sVar4 != sVar5) break;
       if (*psVar7 == 0x3d) {
-        iVar8 = (int)dest - g_INT_02de54a8 >> 2;
+        iVar8 = (int)dest - g_EnvironInitialized >> 2;
         if (param_2 == 0) {
           return iVar8 + 1;
         }
@@ -47,13 +47,13 @@ int FUN_00574404(short *param_1,int param_2)
           dest = dest + 1;
           pcVar3 = *ppcVar1;
         }
-        if (g_CHAR_PTR_PTR_02de54a0 != (char **)0x0) {
-          if (*(char *)(iVar8 + (int)g_CHAR_PTR_PTR_02de54a0) != '\0') {
+        if (g_EnvironStringArea != (char **)0x0) {
+          if (*(char *)(iVar8 + (int)g_EnvironStringArea) != '\0') {
             free(ptr);
           }
-          n = (int)dest - g_INT_02de54a8 >> 2;
-          memmove(dest,g_CHAR_PTR_PTR_02de54a0,n);
-          g_CHAR_PTR_PTR_02de54a0 = dest;
+          n = (int)dest - g_EnvironInitialized >> 2;
+          memmove(dest,g_EnvironStringArea,n);
+          g_EnvironStringArea = dest;
           if (iVar8 < (int)n) {
             puVar6 = (byte *)(iVar8 + (int)dest);
             do {

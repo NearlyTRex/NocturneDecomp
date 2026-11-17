@@ -148,7 +148,7 @@ section .text
     PUSH 0x1d1e380                      ; 0050cdae
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050cdb3 | g_CDemonSetInstance.ambient_base_quick
     CALL core_moon.cpp_CMoon_update_FUN_00521dd0 ; 0050cdbd
-        ;   XREF to: 00521dd0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_00521dd0(CMoon * this_ptr, float param_2)
+        ;   XREF to: 00521dd0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_00521dd0(CMoon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0050cdc2
     PUSH 0x1d1e380                      ; 0050cdc5
     CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050cdca
@@ -165,13 +165,13 @@ section .text
     PUSH EDI                            ; 0050cdf5
     MOV AL,byte ptr [ESI]               ; 0050cdf6
         ;   Label: LAB_0050cdf6
-    MOV byte ptr [EDI],AL               ; 0050cdf8 | g_CHAR_ARRAY_ARRAY_01d21048 | g_CHAR_ARRAY_ARRAY_01d21048[0][2]
+    MOV byte ptr [EDI],AL               ; 0050cdf8 | g_MainMenuTextBuffers | g_MainMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 0050cdfa
     JZ 0x0050ce0e                       ; 0050cdfc
         ;   XREF to: 0050ce0e (CONDITIONAL_JUMP)  ; LAB_0050ce0e
     MOV AL,byte ptr [ESI + 0x1]         ; 0050cdfe
     ADD ESI,0x2                         ; 0050ce01
-    MOV byte ptr [EDI + 0x1],AL         ; 0050ce04 | g_CHAR_ARRAY_ARRAY_01d21048[0][1] | g_CHAR_ARRAY_ARRAY_01d21048[0][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 0050ce04 | g_MainMenuTextBuffers[0][1] | g_MainMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 0050ce07
     CMP AL,0x0                          ; 0050ce0a
     JNZ 0x0050cdf6                      ; 0050ce0c
@@ -187,13 +187,13 @@ section .text
     PUSH EDI                            ; 0050ce23
     MOV AL,byte ptr [ESI]               ; 0050ce24
         ;   Label: LAB_0050ce24
-    MOV byte ptr [EDI],AL               ; 0050ce26 | g_CHAR_ARRAY_ARRAY_01d21048[1][0] | g_CHAR_ARRAY_ARRAY_01d21048[1][2]
+    MOV byte ptr [EDI],AL               ; 0050ce26 | g_MainMenuTextBuffers[1][0] | g_MainMenuTextBuffers[1][2]
     CMP AL,0x0                          ; 0050ce28
     JZ 0x0050ce3c                       ; 0050ce2a
         ;   XREF to: 0050ce3c (CONDITIONAL_JUMP)  ; LAB_0050ce3c
     MOV AL,byte ptr [ESI + 0x1]         ; 0050ce2c
     ADD ESI,0x2                         ; 0050ce2f
-    MOV byte ptr [EDI + 0x1],AL         ; 0050ce32 | g_CHAR_ARRAY_ARRAY_01d21048[1][1] | g_CHAR_ARRAY_ARRAY_01d21048[1][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 0050ce32 | g_MainMenuTextBuffers[1][1] | g_MainMenuTextBuffers[1][3]
     ADD EDI,0x2                         ; 0050ce35
     CMP AL,0x0                          ; 0050ce38
     JNZ 0x0050ce24                      ; 0050ce3a
@@ -209,13 +209,13 @@ section .text
     PUSH EDI                            ; 0050ce51
     MOV AL,byte ptr [ESI]               ; 0050ce52
         ;   Label: LAB_0050ce52
-    MOV byte ptr [EDI],AL               ; 0050ce54 | g_CHAR_ARRAY_ARRAY_01d21048[2][0] | g_CHAR_ARRAY_ARRAY_01d21048[2][2]
+    MOV byte ptr [EDI],AL               ; 0050ce54 | g_MainMenuTextBuffers[2][0] | g_MainMenuTextBuffers[2][2]
     CMP AL,0x0                          ; 0050ce56
     JZ 0x0050ce6a                       ; 0050ce58
         ;   XREF to: 0050ce6a (CONDITIONAL_JUMP)  ; LAB_0050ce6a
     MOV AL,byte ptr [ESI + 0x1]         ; 0050ce5a
     ADD ESI,0x2                         ; 0050ce5d
-    MOV byte ptr [EDI + 0x1],AL         ; 0050ce60 | g_CHAR_ARRAY_ARRAY_01d21048[2][1] | g_CHAR_ARRAY_ARRAY_01d21048[2][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 0050ce60 | g_MainMenuTextBuffers[2][1] | g_MainMenuTextBuffers[2][3]
     ADD EDI,0x2                         ; 0050ce63
     CMP AL,0x0                          ; 0050ce66
     JNZ 0x0050ce52                      ; 0050ce68
@@ -232,13 +232,13 @@ section .text
     PUSH EDI                            ; 0050ce84
     MOV AL,byte ptr [ESI]               ; 0050ce85
         ;   Label: LAB_0050ce85
-    MOV byte ptr [EDI],AL               ; 0050ce87 | g_CHAR_ARRAY_ARRAY_01d21048[3][0] | g_CHAR_ARRAY_ARRAY_01d21048[3][2]
+    MOV byte ptr [EDI],AL               ; 0050ce87 | g_MainMenuTextBuffers[3][0] | g_MainMenuTextBuffers[3][2]
     CMP AL,0x0                          ; 0050ce89
     JZ 0x0050ce9d                       ; 0050ce8b
         ;   XREF to: 0050ce9d (CONDITIONAL_JUMP)  ; LAB_0050ce9d
     MOV AL,byte ptr [ESI + 0x1]         ; 0050ce8d
     ADD ESI,0x2                         ; 0050ce90
-    MOV byte ptr [EDI + 0x1],AL         ; 0050ce93 | g_CHAR_ARRAY_ARRAY_01d21048[3][1] | g_CHAR_ARRAY_ARRAY_01d21048[3][3]
+    MOV byte ptr [EDI + 0x1],AL         ; 0050ce93 | g_MainMenuTextBuffers[3][1] | g_MainMenuTextBuffers[3][3]
     ADD EDI,0x2                         ; 0050ce96
     CMP AL,0x0                          ; 0050ce99
     JNZ 0x0050ce85                      ; 0050ce9b
@@ -246,7 +246,7 @@ section .text
     POP EDI                             ; 0050ce9d
         ;   Label: LAB_0050ce9d
     XOR EAX,EAX                         ; 0050ce9e
-    MOV dword ptr [EAX + 0x1d21448],EDX ; 0050cea0 | g_CHAR_ARRAY_ARRAY_01d21048 | g_CHAR_ARRAY_ARRAY_01d21048[1][0]
+    MOV dword ptr [EAX + 0x1d21448],EDX ; 0050cea0 | g_MainMenuTextBuffers | g_MainMenuTextBuffers[1][0]
         ;   Label: LAB_0050cea0
     ADD EAX,0x4                         ; 0050cea6
     ADD EDX,0x100                       ; 0050cea9

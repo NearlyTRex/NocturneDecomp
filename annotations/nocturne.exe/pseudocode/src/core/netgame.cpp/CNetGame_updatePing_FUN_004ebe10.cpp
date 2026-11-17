@@ -25,16 +25,16 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(CNetGame *this_pt
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
   iVar1 = iVar1 / 0x12;
-  iVar2 = iVar1 - g_INT_01cea3f4;
+  iVar2 = iVar1 - g_LastPingTime;
   if (iVar2 < 0) {
     iVar2 = 0;
   }
   else if (0x20000 < iVar2) {
     iVar2 = 0x20000;
   }
-  uVar3 = g_UINT_01cea3f8 + iVar2;
-  g_INT_01cea3f4 = iVar1;
-  g_UINT_01cea3f8 = uVar3;
+  uVar3 = g_CurrentGameTime + iVar2;
+  g_LastPingTime = iVar1;
+  g_CurrentGameTime = uVar3;
   if (player_index != this_ptr->local_player_index) {
     local_28 = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_sent) *
                (float)1.52587890625e-05;
@@ -59,8 +59,8 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(CNetGame *this_pt
         }
         local_24.type = PACKET_PING;
         local_24.size = 9;
-        local_1f = g_UINT_01cea3f8;
-        this_ptr->players[player_index].last_ping_sent = g_UINT_01cea3f8;
+        local_1f = g_CurrentGameTime;
+        this_ptr->players[player_index].last_ping_sent = g_CurrentGameTime;
         core_netgame_cpp_CNetGame_send_FUN_004eb350(this_ptr,player_index,&local_24);
       }
     }

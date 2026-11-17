@@ -18,7 +18,7 @@
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   char[6000] g_CHAR_ARRAY_02662df0
-;   HWND g_HWND_02664628
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -48,7 +48,7 @@ section .text
     MOV ESI,dword ptr [0x0061e984]      ; 0058f5fa | PTR_s_Coffin_Rock_0061e984
     PUSH ESI                            ; 0058f600 | = "Coffin Rock"
     PUSH 0x2662df0                      ; 0058f601 | g_CHAR_ARRAY_02662df0
-    MOV EDI,dword ptr [0x02664628]      ; 0058f606 | g_HWND_02664628
+    MOV EDI,dword ptr [0x02664628]      ; 0058f606 | g_MainWindowHandle
     PUSH EDI                            ; 0058f60c
     CALL dword ptr CS:[0x5c84cc]        ; 0058f60d | PTR_MessageBoxA_005c84cc
     PUSH 0x1                            ; 0058f614

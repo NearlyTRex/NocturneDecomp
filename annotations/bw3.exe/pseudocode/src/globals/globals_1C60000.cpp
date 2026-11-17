@@ -11,11 +11,11 @@ CDemonActorType g_CExorcismClassInfo = {};
 CEventList g_CEventList_01c6e360 = {};
 
 // DWORD
-DWORD g_DWORD_01c6e258 = {};
-DWORD g_DWORD_01c6e260 = {};
+DWORD g_JoyRPos = {};
+DWORD g_JoyButtons = {};
 
 // SRGBColorPalette*
-SRGBColorPalette* g_SRGBColorPalette_PTR_01c6a970 = {};
+SRGBColorPalette* g_CurrentPalette = {};
 
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74 = {};
@@ -24,10 +24,10 @@ _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80 = {};
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6af88 = {};
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c = {};
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6af94 = {};
-_BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4 = {};
+_BIT_INTEGER32 g_RenderStateFlags = {};
 
 // char[4952]
-char g_CHAR_ARRAY_01c6cef0[4952] = {};
+char g_KeyboardState[4952] = {};
 
 // int
 int g_INT_01c6af78 = {};
@@ -41,45 +41,45 @@ int g_INT_01c6b5a8 = {};
 int g_INT_01c6b5ac = {};
 int g_INT_01c6b5b0 = {};
 int g_INT_01c6b5b4 = {};
-int g_INT_01c6b5b8 = {};
-int g_INT_01c6b5bc = {};
+int g_ViewportWidth = {};
+int g_ViewportHeight = {};
 int g_INT_01c6b5c0 = {};
 int g_INT_01c6b5c4 = {};
-int g_INT_01c6b5c8 = {};
+int g_AdvancedClippingEnabled = {};
 int g_INT_01c6cee0 = {};
 int g_INT_01c6cee4 = {};
 int g_INT_01c6cee8 = {};
 int g_INT_01c6ceec = {};
-int g_INT_01c6e24c = {};
-int g_INT_01c6e250 = {};
-int g_INT_01c6e254 = {};
-int g_INT_01c6e25c = {};
-int g_INT_01c6e264 = {};
-int g_INT_01c6e268 = {};
-int g_INT_01c6e26c = {};
-int g_INT_01c6e274 = {};
-int g_INT_01c6e278 = {};
-int g_INT_01c6e2a0 = {};
-int g_INT_01c6e2a4 = {};
-int g_INT_01c6e2a8 = {};
+int g_PerspectiveReciprocal = {};
+int g_JoyXPos = {};
+int g_JoyYPos = {};
+int g_JoyZPos = {};
+int g_JoystickPresent = {};
+int g_JoyWantUAxis = {};
+int g_JoyWantRAxis = {};
+int g_JoystickHasPOV = {};
+int g_JoyPOVDirection = {};
+int g_MMXSupported = {};
+int g_CPUModel = {};
+int g_CalibratedCPUSpeed = {};
 int g_INT_01c6e2ac = {};
 int g_INT_01c6e2b0 = {};
-int g_INT_01c6e2b8 = {};
-int g_INT_01c6e2c0 = {};
-int g_INT_01c6e2c4 = {};
-int g_INT_01c6e2c8 = {};
-int g_INT_01c6e2cc = {};
-int g_INT_01c6e2d0 = {};
-int g_INT_01c6e2d4 = {};
-int g_INT_01c6e2d8 = {};
-int g_INT_01c6e2dc = {};
-int g_INT_01c6e2e0 = {};
-int g_INT_01c6e2e4 = {};
-int g_INT_01c6e2e8 = {};
-int g_INT_01c6e2ec = {};
-int g_INT_01c6e2f0 = {};
-int g_INT_01c6e2f4 = {};
-int g_INT_01c6e2f8 = {};
+int g_VertexPreprocessMode = {};
+int g_SolidRedComponent = {};
+int g_SolidGreenComponent = {};
+int g_SolidBlueComponent = {};
+int g_RelativeX = {};
+int g_RelativeY = {};
+int g_RelativeZ = {};
+int g_CameraOriginX = {};
+int g_CameraOriginY = {};
+int g_CameraOriginZ = {};
+int g_CameraRotationPitch = {};
+int g_CameraRotationYaw = {};
+int g_CameraRotationRoll = {};
+int g_LightDirectionX = {};
+int g_LightDirectionY = {};
+int g_LightDirectionZ = {};
 int g_INT_01c6e2fc = {};
 int g_INT_01c6e300 = {};
 int g_INT_01c6e304 = {};
@@ -91,38 +91,38 @@ int g_INT_01c6e318 = {};
 int g_INT_01c6e31c = {};
 
 // uchar*
-uchar* g_UCHAR_PTR_01c6ced0 = {};
-uchar* g_UCHAR_PTR_01c6ced4 = {};
+uchar* g_CurrentTextureData = {};
+uchar* g_CurrentTextureOpacityData = {};
 
 // uchar[32768]
-uchar g_UCHAR_ARRAY_01c62070[32768] = {};
+uchar g_ColorCubeLookup[32768] = {};
 
 // uchar[768]
 uchar g_UCHAR_ARRAY_01c6af98[768] = {};
-uchar g_UCHAR_ARRAY_01c6b298[768] = {};
+uchar g_DefaultPalette[768] = {};
 
 // uint
 uint g_UINT_01c6e35c = {};
 
-// uint*[1200]
-uint* g_UINT_PTR_ARRAY_01c60dac[1200] = {};
-
-// uint[1600]
-uint g_UINT_ARRAY_01c6b5d0[1600] = {};
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+uint* g_ZBufferScanlineArray[GAME_SCREEN_MAX_HEIGHT] = {};
 
 // uint[256]
-uint g_UINT_ARRAY_01c6a974[256] = {};
+uint g_Hardware32BitPalette[256] = {};
 
 // uint[448]
-uint g_UINT_ARRAY_01c6a270[448] = {};
+uint g_ColorTable32[448] = {};
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE] = {};
 
 // ulong
-ulong g_ULONG_01c6e2bc = {};
+ulong g_SolidColorMode = {};
 
 // ushort[256]
-ushort g_USHORT_ARRAY_01c6a070[256] = {};
-ushort g_USHORT_ARRAY_01c6ad74[256] = {};
+ushort g_ColorTable16[256] = {};
+ushort g_Hardware16BitPalette[256] = {};
 
 // void*
-void* g_PTR_01c6b5cc = {};
+void* g_ScanlineRenderFunc = {};
 

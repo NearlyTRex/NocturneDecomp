@@ -16,29 +16,37 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00519e40(CMirror 
   
   SStack_88.vertices[5].vertex_index =
        (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);
-  SStack_88.vertices[5].texture_u = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
-  SStack_88.vertices[5].texture_v = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
+  SStack_88.vertices[5].texture_u =
+       (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
+  SStack_88.vertices[5].texture_v =
+       (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_0058043c
             (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,
              (CVector3i *)(SStack_88.vertices + 5));
   SStack_88.vertices[4].vertex_index =
        (int)ROUND((this_ptr->reflection).corner2.x * 256.0f);
-  SStack_88.vertices[4].texture_u = (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);
-  SStack_88.vertices[4].texture_v = (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);
+  SStack_88.vertices[4].texture_u =
+       (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);
+  SStack_88.vertices[4].texture_v =
+       (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_0058043c
             (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)(SStack_88.vertices + 4));
   SStack_88.vertices[7].vertex_index =
        (int)ROUND((this_ptr->reflection).corner3.x * 256.0f);
-  SStack_88.vertices[7].texture_u = (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);
-  SStack_88.vertices[7].texture_v = (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);
+  SStack_88.vertices[7].texture_u =
+       (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);
+  SStack_88.vertices[7].texture_v =
+       (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_0058043c
             (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[2].projected_vertex,
              (CVector3i *)(SStack_88.vertices + 7));
   SStack_88.vertices[6].vertex_index =
        (int)ROUND((this_ptr->reflection).corner4.x * 256.0f);
-  SStack_88.vertices[6].texture_u = (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);
-  SStack_88.vertices[6].texture_v = (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);
+  SStack_88.vertices[6].texture_u =
+       (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);
+  SStack_88.vertices[6].texture_v =
+       (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_0058043c
             (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,
              (CVector3i *)(SStack_88.vertices + 6));

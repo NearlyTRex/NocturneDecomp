@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6010
-;   void* g_PTR_02cf6018
+;   void* g_APIDLL_updateTexture
+;   void* g_APIDLL_updateTextureBGRA
 ;
 ; *****************************************************************************
 
@@ -49,7 +49,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 0056a6cc
     PUSH ESI                            ; 0056a6ce
     PUSH ECX                            ; 0056a6cf
-    CALL dword ptr [0x02cf6010]         ; 0056a6d0 | g_PTR_02cf6010
+    CALL dword ptr [0x02cf6010]         ; 0056a6d0 | g_APIDLL_updateTexture
     ADD ESP,0x14                        ; 0056a6d6
     POP ESI                             ; 0056a6d9
     POP EBP                             ; 0056a6da
@@ -62,7 +62,7 @@ section .text
     MOV EDI,dword ptr [EAX]             ; 0056a6df
     PUSH EDI                            ; 0056a6e1
     PUSH ECX                            ; 0056a6e2
-    CALL dword ptr [0x02cf6018]         ; 0056a6e3 | g_PTR_02cf6018
+    CALL dword ptr [0x02cf6018]         ; 0056a6e3 | g_APIDLL_updateTextureBGRA
     ADD ESP,0xc                         ; 0056a6e9
     POP EBP                             ; 0056a6ec
     POP EDI                             ; 0056a6ed

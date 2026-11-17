@@ -20,15 +20,15 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonCamera* g_CDemonCamera_PTR_007f7370
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   CVector3f g_CVector3f_020842b4
-;   undefined4 g_CVector3f_020842b4.y
-;   undefined4 g_CVector3f_020842b4.z
-;   CVector3f g_CVector3f_020842c0
-;   undefined4 g_CVector3f_020842c0.y
-;   undefined4 g_CVector3f_020842c0.z
-;   float g_FLOAT_020842cc
+;   CVector3f g_SavedCameraOrigin
+;   undefined4 g_SavedCameraOrigin.y
+;   undefined4 g_SavedCameraOrigin.z
+;   CVector3f g_SavedCameraRotation
+;   undefined4 g_SavedCameraRotation.y
+;   undefined4 g_SavedCameraRotation.z
+;   float g_SavedProjectionFactor
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0
@@ -63,9 +63,9 @@ section .text
     FLD float ptr [EAX]                 ; 0050e0a6
     FLD float ptr [EAX + 0x8]           ; 0050e0a8
     MOV EDX,dword ptr [EAX + 0x4]       ; 0050e0ab
-    MOV dword ptr [0x020842b8],EDX      ; 0050e0ae | g_CVector3f_020842b4.y
-    FSTP float ptr [0x020842bc]         ; 0050e0b4 | g_CVector3f_020842b4.z
-    FSTP float ptr [0x020842b4]         ; 0050e0ba | g_CVector3f_020842b4
+    MOV dword ptr [0x020842b8],EDX      ; 0050e0ae | g_SavedCameraOrigin.y
+    FSTP float ptr [0x020842bc]         ; 0050e0b4 | g_SavedCameraOrigin.z
+    FSTP float ptr [0x020842b4]         ; 0050e0ba | g_SavedCameraOrigin
     MOV EAX,ESP                         ; 0050e0c0
         ;   Label: LAB_0050e0c0
     PUSH EAX                            ; 0050e0c2
@@ -80,9 +80,9 @@ section .text
     FLD float ptr [EAX]                 ; 0050e0d9
     FLD float ptr [EAX + 0x8]           ; 0050e0db
     MOV EDX,dword ptr [EAX + 0x4]       ; 0050e0de
-    MOV dword ptr [0x020842c4],EDX      ; 0050e0e1 | g_CVector3f_020842c0.y
-    FSTP float ptr [0x020842c8]         ; 0050e0e7 | g_CVector3f_020842c0.z
-    FSTP float ptr [0x020842c0]         ; 0050e0ed | g_CVector3f_020842c0
+    MOV dword ptr [0x020842c4],EDX      ; 0050e0e1 | g_SavedCameraRotation.y
+    FSTP float ptr [0x020842c8]         ; 0050e0e7 | g_SavedCameraRotation.z
+    FSTP float ptr [0x020842c0]         ; 0050e0ed | g_SavedCameraRotation
     MOV ESI,dword ptr [0x005ae704]      ; 0050e0f3 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0050e0f3
     PUSH ESI                            ; 0050e0f9 | g_CDemonRenderer_01b4d738
@@ -92,13 +92,13 @@ section .text
     LEA ESI,[EBX*0x4 + 0x0]             ; 0050e103
     FLD float ptr [ESP + 0x1c]          ; 0050e10a
     ADD ESP,0x4                         ; 0050e10e
-    FSTP float ptr [0x020842cc]         ; 0050e111 | g_FLOAT_020842cc
+    FSTP float ptr [0x020842cc]         ; 0050e111 | g_SavedProjectionFactor
     MOV EDI,dword ptr [ESP + 0x30]      ; 0050e117
-    PUSH dword ptr [0x020842cc]         ; 0050e11b | g_FLOAT_020842cc
+    PUSH dword ptr [0x020842cc]         ; 0050e11b | g_SavedProjectionFactor
     ADD ESI,EDI                         ; 0050e121
-    PUSH 0x20842c0                      ; 0050e123 | g_CVector3f_020842c0
+    PUSH 0x20842c0                      ; 0050e123 | g_SavedCameraRotation
     MOV EAX,dword ptr [ESI + 0x15a8d0]  ; 0050e128
-    PUSH 0x20842b4                      ; 0050e12e | g_CVector3f_020842b4
+    PUSH 0x20842b4                      ; 0050e12e | g_SavedCameraOrigin
     ADD EAX,0x1e4                       ; 0050e133
     PUSH EAX                            ; 0050e138
     CALL core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650 ; 0050e139
@@ -112,7 +112,7 @@ section .text
     ADD ESP,0x8                         ; 0050e14f
     INC EBX                             ; 0050e152
     PUSH EBX                            ; 0050e153
-    MOV EAX,[0x007f7370]                ; 0050e154 | g_CDemonCamera_PTR_007f7370
+    MOV EAX,[0x007f7370]                ; 0050e154 | g_CurrentSceneCamera
     PUSH EAX                            ; 0050e159
     CALL core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0 ; 0050e15a
         ;   XREF to: 004477f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0(CDemonCamera * this_ptr, int alpha_index)

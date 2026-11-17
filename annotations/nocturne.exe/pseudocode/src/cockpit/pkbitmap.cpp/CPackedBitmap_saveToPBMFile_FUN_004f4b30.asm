@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30(CPackedBitmap *this_ptr,char *param_2)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30(CPackedBitmap *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   filename
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wb_0058d1f0

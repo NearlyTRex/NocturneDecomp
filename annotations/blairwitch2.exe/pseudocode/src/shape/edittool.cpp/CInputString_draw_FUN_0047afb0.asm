@@ -21,11 +21,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d1eff
 ;   TerminatedCString s_CInputString_draw_string_005d1f15
-;   CBitFont* g_CBitFont_PTR_01c25590
+;   CBitFont* g_EditorFont
 ;   int g_INT_01c25f7c
 ;   int g_INT_01c25f84
-;   int g_INT_01c263a8
-;   int g_INT_01c263ac
+;   int g_SelectionColor
+;   int g_TextColor
 ;   int g_INT_01c263b0
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
@@ -101,11 +101,11 @@ section .text
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0047b04b
     PUSH -0x1                           ; 0047b04e
-    MOV ECX,dword ptr [0x01c263ac]      ; 0047b050 | g_INT_01c263ac
+    MOV ECX,dword ptr [0x01c263ac]      ; 0047b050 | g_TextColor
     PUSH ECX                            ; 0047b056
     PUSH EDI                            ; 0047b057
     PUSH EBP                            ; 0047b058
-    MOV ESI,dword ptr [0x01c25590]      ; 0047b059 | g_CBitFont_PTR_01c25590
+    MOV ESI,dword ptr [0x01c25590]      ; 0047b059 | g_EditorFont
     PUSH 0x1c25f88                      ; 0047b05f
     MOV EAX,dword ptr [EBX + 0x130]     ; 0047b064
     XOR DL,DL                           ; 0047b06a
@@ -176,7 +176,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0047b100
     MOV dword ptr [ESP + 0x8],ESI       ; 0047b104
     MOV dword ptr [ESP],EDX             ; 0047b108
-    MOV EDX,dword ptr [0x01c263a8]      ; 0047b10b | g_INT_01c263a8
+    MOV EDX,dword ptr [0x01c263a8]      ; 0047b10b | g_SelectionColor
     TEST ECX,ECX                        ; 0047b111
     JZ 0x0047b17e                       ; 0047b113
         ;   XREF to: 0047b17e (CONDITIONAL_JUMP)  ; LAB_0047b17e
@@ -232,12 +232,12 @@ section .text
         ;   XREF to: 0047afe2 (UNCONDITIONAL_JUMP)  ; LAB_0047afe2
     PUSH -0x1                           ; 0047b194
         ;   Label: LAB_0047b194
-    MOV EAX,[0x01c263ac]                ; 0047b196 | g_INT_01c263ac
+    MOV EAX,[0x01c263ac]                ; 0047b196 | g_TextColor
     PUSH EAX                            ; 0047b19b
     PUSH EDI                            ; 0047b19c
     PUSH EBP                            ; 0047b19d
     PUSH EBX                            ; 0047b19e
-    MOV EDX,dword ptr [0x01c25590]      ; 0047b19f | g_CBitFont_PTR_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 0047b19f | g_EditorFont
     PUSH EDX                            ; 0047b1a5
     JMP 0x0047b073                      ; 0047b1a6
         ;   XREF to: 0047b073 (UNCONDITIONAL_JUMP)  ; LAB_0047b073

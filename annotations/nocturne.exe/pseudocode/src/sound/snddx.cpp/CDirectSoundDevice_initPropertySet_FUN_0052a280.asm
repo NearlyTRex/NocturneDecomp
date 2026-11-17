@@ -15,8 +15,8 @@
 ;   TerminatedCString s_Create_temp_secondary_bu_005941a5
 ;   GUID g_IID_IKsPropertySet
 ;   GUID g_IID_IDirectSound3DBuffer
-;   IDirectSound* g_IDirectSound_PTR_02dc9214
-;   IKsPropertySet* g_IKsPropertySet_PTR_02dc9224
+;   IDirectSound* g_DirectSound
+;   IKsPropertySet* g_DirectSoundPropertySet
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -34,7 +34,7 @@ section .text
     PUSH EDI                            ; 0052a282
     PUSH EBP                            ; 0052a283
     SUB ESP,0x1c0                       ; 0052a284
-    MOV EDX,dword ptr [0x02dc9224]      ; 0052a28a | g_IKsPropertySet_PTR_02dc9224
+    MOV EDX,dword ptr [0x02dc9224]      ; 0052a28a | g_DirectSoundPropertySet
     TEST EDX,EDX                        ; 0052a290
     JZ 0x0052a2a4                       ; 0052a292
         ;   XREF to: 0052a2a4 (CONDITIONAL_JUMP)  ; LAB_0052a2a4
@@ -43,7 +43,7 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 0052a297
     CALL dword ptr [EDX + 0x8]          ; 0052a299
     XOR ECX,ECX                         ; 0052a29c
-    MOV dword ptr [0x02dc9224],ECX      ; 0052a29e | g_IKsPropertySet_PTR_02dc9224
+    MOV dword ptr [0x02dc9224],ECX      ; 0052a29e | g_DirectSoundPropertySet
     PUSH 0x12                           ; 0052a2a4
         ;   Label: LAB_0052a2a4
     LEA EAX,[ESP + 0x1a8]               ; 0052a2a6
@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [ESP + 0x1a4],EAX     ; 0052a34d
     PUSH EDX                            ; 0052a354
     LEA EDX,[ESP + 0x198]               ; 0052a355
-    MOV EAX,[0x02dc9214]                ; 0052a35c | g_IDirectSound_PTR_02dc9214
+    MOV EAX,[0x02dc9214]                ; 0052a35c | g_DirectSound
     MOV dword ptr [ESP + 0x1a0],ECX     ; 0052a361
     PUSH EDX                            ; 0052a368
     MOV ECX,dword ptr [EAX]             ; 0052a369
@@ -143,7 +143,7 @@ section .text
     MOV dword ptr [ESP + 0x1b8],ESI     ; 0052a3e9
     JMP 0x0052a3a9                      ; 0052a3f0
         ;   XREF to: 0052a3a9 (UNCONDITIONAL_JUMP)  ; LAB_0052a3a9
-    PUSH 0x2dc9224                      ; 0052a3f2 | g_IKsPropertySet_PTR_02dc9224
+    PUSH 0x2dc9224                      ; 0052a3f2 | g_DirectSoundPropertySet
         ;   Label: LAB_0052a3f2
     PUSH 0x5bed10                       ; 0052a3f7 | g_IID_IKsPropertySet
     MOV EAX,dword ptr [ESI]             ; 0052a3fc

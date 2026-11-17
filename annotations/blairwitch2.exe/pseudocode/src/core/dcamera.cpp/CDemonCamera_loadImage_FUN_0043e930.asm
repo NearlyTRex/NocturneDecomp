@@ -178,7 +178,7 @@ section .text
         ;   Label: LAB_0043e9e2
     PUSH 0x3                            ; 0043e9e3
     PUSH 0x100                          ; 0043e9e5
-    PUSH 0xb65c98                       ; 0043e9ea | g_SRGBColorPalette_00b65c98
+    PUSH 0xb65c98                       ; 0043e9ea | g_CameraImagePaletteData
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0043e9ef
         ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0043e9f4
@@ -273,21 +273,21 @@ section .text
     PUSH 0x146592c                      ; 0043eab9
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0043eabe
         ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
-    MOV EDI,dword ptr [0x01466948]      ; 0043eac3 | g_SFogGrid_0146592c.density_multiplier
+    MOV EDI,dword ptr [0x01466948]      ; 0043eac3 | g_CameraFogGrid.density_multiplier
     ADD ESP,0x10                        ; 0043eac9
     TEST EDI,EDI                        ; 0043eacc
     JZ 0x0043f1a3                       ; 0043eace
         ;   XREF to: 0043f1a3 (CONDITIONAL_JUMP)  ; LAB_0043f1a3
     MOV EBP,0x10                        ; 0043ead4
-    MOV EAX,[0x01466938]                ; 0043ead9 | g_SFogGrid_0146592c.scroll_vector.x
-    MOV EDX,dword ptr [0x0146693c]      ; 0043eade | g_SFogGrid_0146592c.scroll_vector.y
-    MOV ECX,dword ptr [0x01466940]      ; 0043eae4 | g_SFogGrid_0146592c.scroll_vector.z
+    MOV EAX,[0x01466938]                ; 0043ead9 | g_CameraFogGrid.scroll_vector.x
+    MOV EDX,dword ptr [0x0146693c]      ; 0043eade | g_CameraFogGrid.scroll_vector.y
+    MOV ECX,dword ptr [0x01466940]      ; 0043eae4 | g_CameraFogGrid.scroll_vector.z
     OR EAX,EDX                          ; 0043eaea
-    MOV dword ptr [0x01465928],EBP      ; 0043eaec | g_INT_01465928
+    MOV dword ptr [0x01465928],EBP      ; 0043eaec | g_ImageBytesPerPixel
     OR EAX,ECX                          ; 0043eaf2
     JNZ 0x0043eb00                      ; 0043eaf4
         ;   XREF to: 0043eb00 (CONDITIONAL_JUMP)  ; LAB_0043eb00
-    MOV dword ptr [0x01465928],0x1      ; 0043eaf6 | g_INT_01465928
+    MOV dword ptr [0x01465928],0x1      ; 0043eaf6 | g_ImageBytesPerPixel
     MOV ESI,dword ptr [ESP + 0x130]     ; 0043eb00
         ;   Label: LAB_0043eb00
     PUSH ESI                            ; 0043eb07
@@ -351,14 +351,14 @@ section .text
     PUSH 0x1                            ; 0043ebca
     MOV EDX,dword ptr [ESP + 0xb0]      ; 0043ebcc
     PUSH EDX                            ; 0043ebd3
-    PUSH 0x7c26b0                       ; 0043ebd4 | g_CHAR_ARRAY_007c26b0
+    PUSH 0x7c26b0                       ; 0043ebd4 | g_CameraLoadImageReadBuffer
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0043ebd9
         ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0043ebde
     PUSH 0x1325cc8                      ; 0043ebe1
     CALL support_codec.cpp_CLZWDecompress_init_FUN_004349d0 ; 0043ebe6
         ;   XREF to: 004349d0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDecompress_init_FUN_004349d0(CLZWDecompress * this_ptr)
-    MOV EDX,dword ptr [0x01465928]      ; 0043ebeb | g_INT_01465928
+    MOV EDX,dword ptr [0x01465928]      ; 0043ebeb | g_ImageBytesPerPixel
     LEA EAX,[EDX*0x4 + 0x0]             ; 0043ebf1
     ADD EAX,EDX                         ; 0043ebf8
     SHL EAX,0xa                         ; 0043ebfa
@@ -373,7 +373,7 @@ section .text
     PUSH 0x1339920                      ; 0043ec18
     LEA EAX,[ESP + 0xb4]                ; 0043ec1d
     PUSH EAX                            ; 0043ec24
-    PUSH 0x7c26b0                       ; 0043ec25 | g_CHAR_ARRAY_007c26b0
+    PUSH 0x7c26b0                       ; 0043ec25 | g_CameraLoadImageReadBuffer
     PUSH 0x1325cc8                      ; 0043ec2a
     CALL support_codec.cpp_CCodec_processBuffer_FUN_00434070 ; 0043ec2f
         ;   XREF to: 00434070 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processBuffer_FUN_00434070(CCodec * this_ptr, char * input, int * input_length, char * output, ...)
@@ -383,7 +383,7 @@ section .text
         ;   XREF to: 0043f176 (CONDITIONAL_JUMP)  ; LAB_0043f176
     XOR ESI,ESI                         ; 0043ec3f
         ;   Label: LAB_0043ec3f
-    MOV EDI,dword ptr [0x01465928]      ; 0043ec41 | g_INT_01465928
+    MOV EDI,dword ptr [0x01465928]      ; 0043ec41 | g_ImageBytesPerPixel
     MOV dword ptr [ESP + 0xa0],ESI      ; 0043ec47
     TEST EDI,EDI                        ; 0043ec4e
     JLE 0x0043eda4                      ; 0043ec50
@@ -421,7 +421,7 @@ section .text
     JLE 0x0043ecf2                      ; 0043ece4
         ;   XREF to: 0043ecf2 (CONDITIONAL_JUMP)  ; LAB_0043ecf2
     LEA ESI,[EDI + EDX*0x1]             ; 0043ece6
-    MOVZX ESI,byte ptr [ESI + 0x1339920] ; 0043ece9 | g_SFogImagePlane_01326d20 | g_SFogImagePlane_01326d20.pixels[0][1] | g_SFogImagePlane_01326d20.pixels[1][0]
+    MOVZX ESI,byte ptr [ESI + 0x1339920] ; 0043ece9 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[1][0]
     ADD EAX,ESI                         ; 0043ecf0
     INC ECX                             ; 0043ecf2
         ;   Label: LAB_0043ecf2
@@ -447,7 +447,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x110]     ; 0043ed53
     MOV EDX,dword ptr [ESP + 0x114]     ; 0043ed5a
     MOV ECX,dword ptr [ESP + 0xa0]      ; 0043ed61
-    MOV EBX,dword ptr [0x01465928]      ; 0043ed68 | g_INT_01465928
+    MOV EBX,dword ptr [0x01465928]      ; 0043ed68 | g_ImageBytesPerPixel
     ADD EBP,0x12c00                     ; 0043ed6e
     ADD EAX,0x12c00                     ; 0043ed74
     ADD EDX,0x12c00                     ; 0043ed79
@@ -484,16 +484,16 @@ section .text
         ;   Label: LAB_0043eddc
     MOVZX ESI,byte ptr [EAX + 0xb65c9a] ; 0043ede2
     XOR EBX,EBX                         ; 0043ede9
-    MOVZX EDI,byte ptr [EAX + 0xb65c98] ; 0043edeb | g_SRGBColorPalette_00b65c98
+    MOVZX EDI,byte ptr [EAX + 0xb65c98] ; 0043edeb | g_CameraImagePaletteData
     MOV BL,byte ptr [EAX + 0xb65c99]    ; 0043edf2
     CMP ECX,0x20                        ; 0043edf8
     JNZ 0x0043f1dd                      ; 0043edfb
         ;   XREF to: 0043f1dd (CONDITIONAL_JUMP)  ; LAB_0043f1dd
-    MOV CL,byte ptr [0x01c35814]        ; 0043ee01 | g_BIT_INTEGER32_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 0043ee01 | g_RedBitPosition
     SHL EDI,CL                          ; 0043ee07
-    MOV CL,byte ptr [0x01c35820]        ; 0043ee09 | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0043ee09 | g_GreenBitPosition
     SHL EBX,CL                          ; 0043ee0f
-    MOV CL,byte ptr [0x01c3582c]        ; 0043ee11 | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0043ee11 | g_BlueBitPosition
     SHL ESI,CL                          ; 0043ee17
     OR EBX,EDI                          ; 0043ee19
     MOV ECX,ESI                         ; 0043ee1b
@@ -606,36 +606,36 @@ section .text
     CMP EBP,0x10000                     ; 0043efa4
     JNZ 0x0043ef54                      ; 0043efaa
         ;   XREF to: 0043ef54 (CONDITIONAL_JUMP)  ; LAB_0043ef54
-    PUSH 0x609ff0                       ; 0043efac | g_SMRGLTextureBasic_00609ff0
+    PUSH 0x609ff0                       ; 0043efac | g_CameraBackdropTexture
     MOV ESI,dword ptr [0x0060b280]      ; 0043efb1 | g_CDemonRenderer_PTR_0060b280
     PUSH ESI                            ; 0043efb7 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0043efb8
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV ESI,0x14b3550                   ; 0043efbd
     ADD ESP,0x8                         ; 0043efc2
-    MOV EDI,dword ptr [0x01c37770]      ; 0043efc5 | g_UCHAR_PTR_01c37770
+    MOV EDI,dword ptr [0x01c37770]      ; 0043efc5 | g_CurrentTextureData
     MOV ECX,EBP                         ; 0043efcb
     PUSH EDI                            ; 0043efcd
     MOV EAX,ECX                         ; 0043efce
     SHR ECX,0x2                         ; 0043efd0
-    MOVSD.REP ES:EDI,ESI                ; 0043efd3 | g_UINT_ARRAY_014b3550 | g_UINT_ARRAY_014b3550[1]
+    MOVSD.REP ES:EDI,ESI                ; 0043efd3 | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]
     MOV CL,AL                           ; 0043efd5
     AND CL,0x3                          ; 0043efd7
-    MOVSB.REP ES:EDI,ESI                ; 0043efda | g_UINT_ARRAY_014b3550[1] | g_UINT_ARRAY_014b3550[1]+1
+    MOVSB.REP ES:EDI,ESI                ; 0043efda | g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffer[1]+1
     POP EDI                             ; 0043efdc
     MOV ECX,0x300                       ; 0043efdd
     MOV ESI,0xb65c98                    ; 0043efe2
-    MOV EDI,dword ptr [0x01c35210]      ; 0043efe7 | g_SRGBColorPalette_PTR_01c35210
+    MOV EDI,dword ptr [0x01c35210]      ; 0043efe7 | g_CurrentPalette
     PUSH EDI                            ; 0043efed
     MOV EAX,ECX                         ; 0043efee
     SHR ECX,0x2                         ; 0043eff0
-    MOVSD.REP ES:EDI,ESI                ; 0043eff3 | g_SRGBColorPalette_00b65c98 | g_SRGBColorPalette_00b65c98.colors[1].g
+    MOVSD.REP ES:EDI,ESI                ; 0043eff3 | g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g
     MOV CL,AL                           ; 0043eff5
     AND CL,0x3                          ; 0043eff7
-    MOVSB.REP ES:EDI,ESI                ; 0043effa | g_SRGBColorPalette_00b65c98.colors[1].g | g_SRGBColorPalette_00b65c98.colors[1].b
+    MOVSB.REP ES:EDI,ESI                ; 0043effa | g_CameraImagePaletteData.colors[1].g | g_CameraImagePaletteData.colors[1].b
     POP EDI                             ; 0043effc
-    PUSH 0xb65c98                       ; 0043effd | g_SRGBColorPalette_00b65c98
-    PUSH 0x609ff0                       ; 0043f002 | g_SMRGLTextureBasic_00609ff0
+    PUSH 0xb65c98                       ; 0043effd | g_CameraImagePaletteData
+    PUSH 0x609ff0                       ; 0043f002 | g_CameraBackdropTexture
     MOV EDI,dword ptr [0x0060b280]      ; 0043f007 | g_CDemonRenderer_PTR_0060b280
     PUSH EDI                            ; 0043f00d | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0046cab0 ; 0043f00e
@@ -670,7 +670,7 @@ section .text
     SHL EDX,0x8                         ; 0043f079
     SBB EAX,EDX                         ; 0043f07c
     SAR EAX,0x8                         ; 0043f07e
-    MOV ECX,dword ptr [0x01465928]      ; 0043f081 | g_INT_01465928
+    MOV ECX,dword ptr [0x01465928]      ; 0043f081 | g_ImageBytesPerPixel
     MOV EBX,EAX                         ; 0043f087
     XOR EAX,EAX                         ; 0043f089
     TEST ECX,ECX                        ; 0043f08b
@@ -684,7 +684,7 @@ section .text
     MOV BL,byte ptr [ECX + 0x1339920]   ; 0043f0a1
     INC EAX                             ; 0043f0a7
     MOV byte ptr [EDX + 0x1326d20],BL   ; 0043f0a8
-    MOV EBX,dword ptr [0x01465928]      ; 0043f0ae | g_INT_01465928
+    MOV EBX,dword ptr [0x01465928]      ; 0043f0ae | g_ImageBytesPerPixel
     ADD ECX,0x12c00                     ; 0043f0b4
     CMP EAX,EBX                         ; 0043f0ba
     JL 0x0043f09b                       ; 0043f0bc
@@ -742,7 +742,7 @@ section .text
         ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 0043f155
     PUSH ESI                            ; 0043f158
-    MOV EAX,[0x01465928]                ; 0043f159 | g_INT_01465928
+    MOV EAX,[0x01465928]                ; 0043f159 | g_ImageBytesPerPixel
     PUSH EAX                            ; 0043f15e
     PUSH 0x12c00                        ; 0043f15f
     PUSH 0x1339920                      ; 0043f164
@@ -804,7 +804,7 @@ section .text
     MOV ECX,dword ptr [ECX + 0x158]     ; 0043f204
     XOR EBX,EBX                         ; 0043f20a
         ;   Label: LAB_0043f20a
-    MOV BL,byte ptr [EAX]               ; 0043f20c | g_CHAR_ARRAY_01468550 | g_CHAR_ARRAY_01468550+1
+    MOV BL,byte ptr [EAX]               ; 0043f20c | g_CameraIndexedImageData | g_CameraIndexedImageData+1
     INC EAX                             ; 0043f20e
     ADD ECX,0x4                         ; 0043f20f
     MOV EBX,dword ptr [EBX*0x4 + 0xb65f9c] ; 0043f212
@@ -851,7 +851,7 @@ section .text
     IDIV dword ptr [EBP + 0x144]        ; 0043f2a6
     ADD EAX,EDI                         ; 0043f2ac
     ADD EAX,0x1468550                   ; 0043f2ae
-    MOV AL,byte ptr [EAX]               ; 0043f2b3 | g_CHAR_ARRAY_01468550
+    MOV AL,byte ptr [EAX]               ; 0043f2b3 | g_CameraIndexedImageData
     AND EAX,0xff                        ; 0043f2b5
     MOV EDX,dword ptr [ESP + 0xb4]      ; 0043f2ba
     MOV EAX,dword ptr [EAX*0x4 + 0xb65f9c] ; 0043f2c1
@@ -946,7 +946,7 @@ section .text
     MOV dword ptr [ESP + 0xe4],EAX      ; 0043f428
     ADD EAX,EBP                         ; 0043f42f
     ADD EAX,0x1468550                   ; 0043f431
-    MOV AL,byte ptr [EAX]               ; 0043f436 | g_CHAR_ARRAY_01468550
+    MOV AL,byte ptr [EAX]               ; 0043f436 | g_CameraIndexedImageData
     AND EAX,0xff                        ; 0043f438
     MOV EAX,dword ptr [EAX*0x4 + 0xb65f9c] ; 0043f43d
     MOV EDX,EAX                         ; 0043f444
@@ -986,7 +986,7 @@ section .text
     SAR EAX,0x8                         ; 0043f4db
     ADD EBP,EAX                         ; 0043f4de
     ADD EBP,0x1468550                   ; 0043f4e0
-    MOVZX EBP,byte ptr [EBP]            ; 0043f4e6 | g_CHAR_ARRAY_01468550
+    MOVZX EBP,byte ptr [EBP]            ; 0043f4e6 | g_CameraIndexedImageData
     MOV dword ptr [ESP + 0xe8],EAX      ; 0043f4ea
     MOV EAX,dword ptr [EBP*0x4 + 0xb65f9c] ; 0043f4f1
     MOV EBP,EAX                         ; 0043f4f8
@@ -1027,7 +1027,7 @@ section .text
     MOV dword ptr [ESP + 0xec],EAX      ; 0043f5a5
     ADD EAX,EDI                         ; 0043f5ac
     ADD EAX,0x1468550                   ; 0043f5ae
-    MOV AL,byte ptr [EAX]               ; 0043f5b3 | g_CHAR_ARRAY_01468550
+    MOV AL,byte ptr [EAX]               ; 0043f5b3 | g_CameraIndexedImageData
     AND EAX,0xff                        ; 0043f5b5
     MOV EAX,dword ptr [EAX*0x4 + 0xb65f9c] ; 0043f5ba
     MOV EDI,EAX                         ; 0043f5c1
@@ -1071,7 +1071,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xec]      ; 0043f68d
     ADD EAX,EDX                         ; 0043f694
     ADD EAX,0x1468550                   ; 0043f696
-    MOV AL,byte ptr [EAX]               ; 0043f69b | g_CHAR_ARRAY_01468550
+    MOV AL,byte ptr [EAX]               ; 0043f69b | g_CameraIndexedImageData
     AND EAX,0xff                        ; 0043f69d
     MOV EAX,dword ptr [EAX*0x4 + 0xb65f9c] ; 0043f6a2
     MOV EDX,EAX                         ; 0043f6a9

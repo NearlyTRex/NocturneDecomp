@@ -15,15 +15,15 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00554510(void)
   CSfxSlot *this_ptr;
   float local_18;
   
-  if (g_INT_0264901c < 1) {
+  if (g_SoundLockCount < 1) {
     g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
     g_INT_01d046a4 = 0x19ec;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::pollSfx - must be locked!");
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-  iVar3 = iVar1 - g_INT_02649020;
+  iVar3 = iVar1 - g_SoundStartTime;
   if ((iVar3 < 0) || (0x1cccb < iVar3)) {
-    g_INT_02649020 = iVar1;
+    g_SoundStartTime = iVar1;
     if (g_INT_026484bc == 0) {
       sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0054cb70();
     }

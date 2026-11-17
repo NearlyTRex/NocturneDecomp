@@ -229,7 +229,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
   }
   fStack_64 = fStack_2a4 * fStack_2a4 +
               afStack_2b4[2] * afStack_2b4[2] + afStack_2b4[3] * afStack_2b4[3];
-  fStack_24 = (float)(((int)fStack_64 >> 1) + g_INT_01d1a0a4);
+  fStack_24 = (float)(((int)fStack_64 >> 1) + g_FastSqrtMagic);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -889,7 +889,7 @@ switchD_005a0147_caseD_3:
       damage_info = (SDamageInfo *)&stack0xfffffc94;
       fVar23 = 0.6;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,
+                (&g_ZeroVector,
                  (CMatrix3x4f *)
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_INT_02d24cf4].m,
                  &CStack_240);

@@ -2,11 +2,11 @@
 // Address: 004a03a0
 // Address Range: [[004a03a0, 004a0429]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *param_1,EAmmoType param_2)
+// Signature: void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *class_name,EAmmoType ammo_type)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *param_1,EAmmoType param_2)
+void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *class_name,EAmmoType ammo_type)
 
 {
   CAmmo *pCVar1;
@@ -20,8 +20,8 @@ void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *param_1,EAmmoTy
     core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
               (g_CDemonMission_PTR_005baf90,&pCVar1->base);
     (*((pCVar1->base).vtable._ub)->setup)(&pCVar1->base);
-    pCVar1->ammo_type = param_2;
-    core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar1,param_1);
+    pCVar1->ammo_type = ammo_type;
+    core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar1,class_name);
     pCVar1->ammo_count = 500;
     core_inv_cpp_CInventory_addItem_FUN_004bf360
               (&g_HeroActors[g_LocalHeroIndex]->inventory,&pCVar1->base,1);

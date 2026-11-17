@@ -25,15 +25,15 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_00500370(CMobster *this_ptr
     local_1c = taunt_category + 0x60;
     do {
       pCVar1 = g_CGamePtr;
-      iVar6 = g_INT_ARRAY_01d1c6fc[taunt_category];
-      g_INT_ARRAY_01d1c6fc[taunt_category] = iVar6 + 1;
+      iVar6 = g_MobsterTauntCounters[taunt_category];
+      g_MobsterTauntCounters[taunt_category] = iVar6 + 1;
       if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar6 + 1 != 6)) {
         _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav");
         local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_0055af90
                              (g_CSound_PTR_0061c068,local_80);
         this_ptr->taunt_timer = local_14;
         if (0.0 < this_ptr->taunt_timer) break;
-        g_INT_ARRAY_01d1c6fc[taunt_category] = 0;
+        g_MobsterTauntCounters[taunt_category] = 0;
       }
       iVar5 = iVar5 + 1;
     } while (iVar5 < 3);

@@ -30,11 +30,11 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   int g_INT_01b4b6b4
+;   int g_NoiseTableIndex
 ;   int[100] g_INT_ARRAY_01b4b6b8
 ;   undefined4 g_INT_ARRAY_01b4b6b8[1]
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
@@ -59,7 +59,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 0045fb47
     XOR ESI,ESI                         ; 0045fb4b
     XOR EBX,EBX                         ; 0045fb4d
-    MOV dword ptr [0x01b4b6b4],ESI      ; 0045fb4f | g_INT_01b4b6b4
+    MOV dword ptr [0x01b4b6b4],ESI      ; 0045fb4f | g_NoiseTableIndex
     CALL crt_stdlib.c_rand_FUN_005a35cc ; 0045fb55
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()
         ;   Label: LAB_0045fb55
@@ -87,7 +87,7 @@ section .text
     SAR EAX,0x3                         ; 0045fb98
     PUSH EAX                            ; 0045fb9b
     PUSH 0x0                            ; 0045fb9c
-    MOV EAX,dword ptr [EDI + 0x1c5faec] ; 0045fb9e | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EAX,dword ptr [EDI + 0x1c5faec] ; 0045fb9e | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EAX                            ; 0045fba4
     ADD EDI,0x4                         ; 0045fba5
     INC EBX                             ; 0045fba8
@@ -102,7 +102,7 @@ section .text
     MOV ECX,ECX                         ; 0045fbbe
     MOV ECX,dword ptr [0x005fba20]      ; 0045fbc0 | g_INT_005fba20
         ;   Label: LAB_0045fbc0
-    MOV ESI,dword ptr [0x01b4b6b4]      ; 0045fbc6 | g_INT_01b4b6b4
+    MOV ESI,dword ptr [0x01b4b6b4]      ; 0045fbc6 | g_NoiseTableIndex
     CMP ECX,0x20                        ; 0045fbcc
     JNZ 0x0045fd73                      ; 0045fbcf
         ;   XREF to: 0045fd73 (CONDITIONAL_JUMP)  ; LAB_0045fd73
@@ -139,7 +139,7 @@ section .text
     CMP EBX,EDI                         ; 0045fc2a
     JL 0x0045fbf3                       ; 0045fc2c
         ;   XREF to: 0045fbf3 (CONDITIONAL_JUMP)  ; LAB_0045fbf3
-    MOV dword ptr [0x01b4b6b4],ESI      ; 0045fc2e | g_INT_01b4b6b4
+    MOV dword ptr [0x01b4b6b4],ESI      ; 0045fc2e | g_NoiseTableIndex
         ;   Label: LAB_0045fc2e
     ADD ESP,0x34                        ; 0045fc34
     POP EBP                             ; 0045fc37
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 0045fc0b (UNCONDITIONAL_JUMP)  ; LAB_0045fc0b
     MOV EDX,dword ptr [ESP + 0x48]      ; 0045fc46
         ;   Label: LAB_0045fc46
-    MOV EDI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045fc4a | g_ARRAY_PTR_01c5faec
+    MOV EDI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045fc4a | g_ScreenBufferArray
     MOV EAX,dword ptr [ESP + 0xc]       ; 0045fc51
     MOV ECX,dword ptr [EDX + 0x1cc0]    ; 0045fc55
     ADD EDI,EAX                         ; 0045fc5b
@@ -307,7 +307,7 @@ section .text
         ;   XREF to: 0045fdad (UNCONDITIONAL_JUMP)  ; LAB_0045fdad
     MOV EDX,dword ptr [ESP + 0x48]      ; 0045fde0
         ;   Label: LAB_0045fde0
-    MOV EDI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045fde4 | g_ARRAY_PTR_01c5faec
+    MOV EDI,dword ptr [EAX*0x4 + 0x1c5faec] ; 0045fde4 | g_ScreenBufferArray
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045fdeb
     MOV ECX,dword ptr [EDX + 0x1cc0]    ; 0045fdef
     ADD EDI,EAX                         ; 0045fdf5

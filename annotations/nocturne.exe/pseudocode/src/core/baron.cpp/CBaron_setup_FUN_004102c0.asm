@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00410452
     MOV dword ptr [ESI + 0x1fb14],0x0   ; 00410455
-    PUSH 0x76436c                       ; 0041045f | g_CKeyFramedModelInstance_0076436c
+    PUSH 0x76436c                       ; 0041045f | g_CKeyFramedModelInstanceInstance
     MOV dword ptr [ESI + 0x25bc],EAX    ; 00410464
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041046a
         ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)

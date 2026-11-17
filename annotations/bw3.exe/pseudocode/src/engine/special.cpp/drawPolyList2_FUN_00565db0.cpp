@@ -18,9 +18,9 @@ int __cdecl engine_special_cpp_drawPolyList2_FUN_00565db0(SRenderVertex *vertex_
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  g_INT_01ed3198 = g_INT_01ed3198 + polygon_count;
-  if (g_PTR_02cf602c != (byte *)0x0) {
-    iVar2 = (*(code *)g_PTR_02cf602c)(vertex_buffer,polygons,polygon_count,render_flags);
+  g_RenderedTriangleCount = g_RenderedTriangleCount + polygon_count;
+  if (g_APIDLL_drawPolyList2 != (byte *)0x0) {
+    iVar2 = (*(code *)g_APIDLL_drawPolyList2)(vertex_buffer,polygons,polygon_count,render_flags);
     return iVar2;
   }
   if (0 < polygon_count) {
@@ -36,7 +36,7 @@ int __cdecl engine_special_cpp_drawPolyList2_FUN_00565db0(SRenderVertex *vertex_
       local_18->v = (uint)pSVar1->v_coord_1 << 8;
       local_14->u = (uint)pSVar1->u_coord_2 << 8;
       local_14->v = (uint)pSVar1->v_coord_2 << 8;
-      (*(code *)g_PTR_02cf6024)(&local_1c,3,render_flags);
+      (*(code *)g_APIDLL_drawPolygon2)(&local_1c,3,render_flags);
       iVar2 = iVar2 + 1;
       polygons = polygons + 1;
     } while (iVar2 < polygon_count);

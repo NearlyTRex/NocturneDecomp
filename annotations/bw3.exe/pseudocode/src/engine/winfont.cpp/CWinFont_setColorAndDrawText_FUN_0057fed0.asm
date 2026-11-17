@@ -21,7 +21,7 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   SetTextColor
@@ -170,7 +170,7 @@ section .text
         ;   Label: LAB_00580028
     JMP 0x0057ff9d                      ; 0058002e
         ;   XREF to: 0057ff9d (UNCONDITIONAL_JUMP)  ; LAB_0057ff9d
-    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 00580033 | g_ARRAY_PTR_01c5faec
+    MOV ESI,dword ptr [EAX*0x4 + 0x1c5faec] ; 00580033 | g_ScreenBufferArray
         ;   Label: LAB_00580033
     XOR EAX,EAX                         ; 0058003a
     TEST ECX,ECX                        ; 0058003c
@@ -231,7 +231,7 @@ section .text
         ;   XREF to: 00580015 (CONDITIONAL_JUMP)  ; LAB_00580015
     JMP 0x00580094                      ; 005800c7
         ;   XREF to: 00580094 (UNCONDITIONAL_JUMP)  ; LAB_00580094
-    MOV EDX,dword ptr [EAX*0x4 + 0x1c5faec] ; 005800c9 | g_ARRAY_PTR_01c5faec
+    MOV EDX,dword ptr [EAX*0x4 + 0x1c5faec] ; 005800c9 | g_ScreenBufferArray
         ;   Label: LAB_005800c9
     XOR EAX,EAX                         ; 005800d0
     TEST ECX,ECX                        ; 005800d2

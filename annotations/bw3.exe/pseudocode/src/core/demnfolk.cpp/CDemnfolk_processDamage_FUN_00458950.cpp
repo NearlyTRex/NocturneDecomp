@@ -93,7 +93,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_00458950(CDemnfolk *t
   }
   else {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
-              (g_CEventList_PTR_005fba60,"ShotInvulnerable");
+              (g_CEventListPtr,"ShotInvulnerable");
   }
   return;
 }

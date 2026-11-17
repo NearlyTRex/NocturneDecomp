@@ -15,15 +15,15 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040389
   int iStack_14;
   
   iVar1 = 0;
-  g_UINT_006141e0 = 1;
-  output = g_SRenderVertex_ARRAY_00622014 + (mrgl->base).count + g_UINT_0070ca60;
+  g_VertexProcessingEnabled = 1;
+  output = g_SRenderVertex_ARRAY_00622014 + (mrgl->base).count + g_ProcessedVertexOffset;
   input = (CVector3i *)(mrgl + 1);
   iStack_14 = 0;
-  g_PTR_0070ca94 = (byte *)input;
+  g_CurrentVertexData = (byte *)input;
   if (0 < mrgl->child_count) {
     do {
       engine_special_cpp_transformAndProjectPoint_FUN_0055d723(&output->projected_vertex,input);
-      output->a = g_INT_01c38aec;
+      output->a = g_PerspectiveReciprocal;
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         iStack_14 = iStack_14 + 1;
       }
@@ -32,11 +32,11 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040389
       input = input + 1;
     } while (iVar1 < mrgl->child_count);
   }
-  if (g_UINT_0070ca60 == 0) {
-    g_UINT_0070ca64 = g_UINT_0070ca60;
+  if (g_ProcessedVertexOffset == 0) {
+    g_ProcessedVertexBackupOffset = g_ProcessedVertexOffset;
   }
   if (iStack_14 == mrgl->child_count) {
-    g_UINT_006141e0 = 0;
+    g_VertexProcessingEnabled = 0;
   }
   return mrgl + mrgl->child_count + 1;
 }

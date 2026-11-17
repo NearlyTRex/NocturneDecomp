@@ -81,7 +81,7 @@
     },
     {
       "addr": "01c5fad0",
-      "name": "g_INT_01c5fad0",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -215,7 +215,7 @@
       "line": 33,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_01c5fad0 + (g_INT_01c5fad0 >> 0x1f) * -4) -",
+      "text": "((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -223,7 +223,7 @@
       "line": 34,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);",
+      "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
       "type": "signed_shift_global_idiom"
     }
   ],

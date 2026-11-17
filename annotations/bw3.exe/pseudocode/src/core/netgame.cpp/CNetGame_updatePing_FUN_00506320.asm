@@ -25,13 +25,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005cac29
 ;   TerminatedCString s_CNetGame_updatePing_inva_005cac3d
-;   double g_DOUBLE_005cac69 = 0.0000152587890625
-;   double g_DOUBLE_005cac71 = 30
-;   double g_DOUBLE_005cac79 = 0.400000000000000
-;   double g_DOUBLE_005cac81 = 5
+;   double g_TimeToSeconds = 0.0000152587890625
+;   double g_MaxPingTime = 30
+;   double g_PingCheckThreshold = 0.400000000000000
+;   double g_BadConnectionTime = 5
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   int g_INT_01da6474
+;   int g_LastPingTime
 ;   uint g_UINT_01da6478
 ;
 ; Called Functions:
@@ -75,10 +75,10 @@ section .text
     MOV ECX,0x12                        ; 00506365
     SAR EDX,0x1f                        ; 0050636a
     IDIV ECX                            ; 0050636d
-    MOV ECX,dword ptr [0x01da6474]      ; 0050636f | g_INT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 0050636f | g_LastPingTime
     MOV EDX,EAX                         ; 00506375
     SUB EAX,ECX                         ; 00506377
-    MOV dword ptr [0x01da6474],EDX      ; 00506379 | g_INT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 00506379 | g_LastPingTime
     TEST EAX,EAX                        ; 0050637f
     JL 0x005064b1                       ; 00506381
         ;   XREF to: 005064b1 (CONDITIONAL_JUMP)  ; LAB_005064b1
@@ -103,7 +103,7 @@ section .text
     SUB ECX,EAX                         ; 005063be
     MOV dword ptr [ESP + 0x18],ECX      ; 005063c0
     FILD dword ptr [ESP + 0x18]         ; 005063c4
-    FMUL double ptr [0x005cac69]        ; 005063c8 | g_DOUBLE_005cac69
+    FMUL double ptr [0x005cac69]        ; 005063c8 | g_TimeToSeconds
     FST float ptr [ESP + 0x8]           ; 005063ce
     FLDZ                                ; 005063d2
     FCOMPP                              ; 005063d4
@@ -115,7 +115,7 @@ section .text
     MOV dword ptr [ESP + 0x8],ECX       ; 005063dd
     FLD float ptr [ESP + 0x8]           ; 005063e1
         ;   Label: LAB_005063e1
-    FCOMP double ptr [0x005cac71]       ; 005063e5 | g_DOUBLE_005cac71
+    FCOMP double ptr [0x005cac71]       ; 005063e5 | g_MaxPingTime
     FNSTSW AX                           ; 005063eb
     SAHF                                ; 005063ed
     JBE 0x005063f8                      ; 005063ee
@@ -123,7 +123,7 @@ section .text
     MOV dword ptr [ESP + 0x8],0x41f00000 ; 005063f0
     FLD float ptr [ESP + 0x8]           ; 005063f8
         ;   Label: LAB_005063f8
-    FCOMP double ptr [0x005cac79]       ; 005063fc | g_DOUBLE_005cac79
+    FCOMP double ptr [0x005cac79]       ; 005063fc | g_PingCheckThreshold
     FNSTSW AX                           ; 00506402
     SAHF                                ; 00506404
     JC 0x005064aa                       ; 00506405
@@ -133,7 +133,7 @@ section .text
     SUB ECX,EAX                         ; 00506414
     MOV dword ptr [ESP + 0x18],ECX      ; 00506416
     FILD dword ptr [ESP + 0x18]         ; 0050641a
-    FMUL double ptr [0x005cac69]        ; 0050641e | g_DOUBLE_005cac69
+    FMUL double ptr [0x005cac69]        ; 0050641e | g_TimeToSeconds
     FST float ptr [ESP + 0x4]           ; 00506424
     FLDZ                                ; 00506428
     FCOMPP                              ; 0050642a
@@ -145,7 +145,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 00506433
     FLD float ptr [ESP + 0x4]           ; 00506437
         ;   Label: LAB_00506437
-    FCOMP double ptr [0x005cac71]       ; 0050643b | g_DOUBLE_005cac71
+    FCOMP double ptr [0x005cac71]       ; 0050643b | g_MaxPingTime
     FNSTSW AX                           ; 00506441
     SAHF                                ; 00506443
     JBE 0x0050644e                      ; 00506444
@@ -168,7 +168,7 @@ section .text
         ;   XREF to: 005064aa (CONDITIONAL_JUMP)  ; LAB_005064aa
     FLD float ptr [ESP]                 ; 0050646b
         ;   Label: LAB_0050646b
-    FCOMP double ptr [0x005cac81]       ; 0050646e | g_DOUBLE_005cac81
+    FCOMP double ptr [0x005cac81]       ; 0050646e | g_BadConnectionTime
     FNSTSW AX                           ; 00506474
     SAHF                                ; 00506476
     JBE 0x00506480                      ; 00506477

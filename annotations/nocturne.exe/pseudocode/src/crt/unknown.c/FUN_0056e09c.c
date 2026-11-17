@@ -29,20 +29,19 @@ void FUN_0056e09c(HANDLE param_1,uint param_2)
   SetStdHandle(nStdHandle,param_1);
 LAB_0056e0ea:
   if ((int)param_2 < g_INT_005c1f58) {
-    g_SIOControlBlock_PTR_005c1f54->standard_handles[param_2] = param_1;
+    g_IOControlBlock->standard_handles[param_2] = param_1;
   }
   else {
-    g_SIOControlBlock_PTR_005c1f54 =
-         realloc(g_SIOControlBlock_PTR_005c1f54,param_2 * 4 + 4);
+    g_IOControlBlock = realloc(g_IOControlBlock,param_2 * 4 + 4);
     if (g_INT_005c1f58 < (int)param_2) {
       iVar1 = g_INT_005c1f58 * 4;
       do {
-        *(uint *)((int)g_SIOControlBlock_PTR_005c1f54->standard_handles + iVar1) = 0;
+        *(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;
         iVar1 = iVar1 + 4;
       } while (iVar1 < (int)(param_2 * 4));
     }
     g_INT_005c1f58 = param_2 + 1;
-    g_SIOControlBlock_PTR_005c1f54->standard_handles[param_2] = param_1;
+    g_IOControlBlock->standard_handles[param_2] = param_1;
   }
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();
   return;

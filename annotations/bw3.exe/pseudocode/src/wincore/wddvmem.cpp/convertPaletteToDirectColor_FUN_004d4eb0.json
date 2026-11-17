@@ -64,55 +64,55 @@
     },
     {
       "addr": "00604e60",
-      "name": "g_MMX_INTEGER_00604e60",
+      "name": "g_RedMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00604e68",
-      "name": "g_MMX_INTEGER_00604e68",
+      "name": "g_GreenMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00604e70",
-      "name": "g_MMX_INTEGER_00604e70",
+      "name": "g_BlueMask16",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00604e78",
-      "name": "g_QWORD_00604e78",
+      "name": "g_RedMask32",
       "type": "qword",
       "value": "0xf80000"
     },
     {
       "addr": "00604e98",
-      "name": "g_QWORD_00604e98",
+      "name": "g_GreenMask32",
       "type": "qword",
       "value": "0xfc00"
     },
     {
       "addr": "00604eb8",
-      "name": "g_QWORD_00604eb8",
+      "name": "g_BlueMask32",
       "type": "qword",
       "value": "0xf8"
     },
     {
       "addr": "00604ec0",
-      "name": "g_QWORD_00604ec0",
+      "name": "g_TotalDitherShift",
       "type": "qword",
       "value": "0x8"
     },
     {
       "addr": "00604ee0",
-      "name": "g_QWORD_00604ee0",
+      "name": "g_GreenBlueDitherShift",
       "type": "qword",
       "value": "0x5"
     },
     {
       "addr": "00604f00",
-      "name": "g_QWORD_00604f00",
+      "name": "g_BlueBitShift",
       "type": "qword",
       "value": "0x3"
     },
@@ -284,9 +284,9 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(ushort *)((int)g_USHORT_ARRAY_01c6a070",
+      "match": "(ushort *)((int)g_ColorTable16",
       "severity": "moderate",
-      "text": "*(ushort *)((int)g_USHORT_ARRAY_01c6a070 + iVar5) =",
+      "text": "*(ushort *)((int)g_ColorTable16 + iVar5) =",
       "type": "pointer_cast"
     },
     {
@@ -294,7 +294,7 @@
       "line": 41,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_00604e78._0_4_ = (uVar4 << (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f)) << 0x10;",
+      "text": "g_RedMask32._0_4_ = (uVar4 << (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f)) << 0x10;",
       "type": "unknown_field"
     },
     {
@@ -302,7 +302,7 @@
       "line": 42,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_00604e98._0_4_ = (uVar7 << (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f)) << 8;",
+      "text": "g_GreenMask32._0_4_ = (uVar7 << (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f)) << 8;",
       "type": "unknown_field"
     },
     {
@@ -310,7 +310,7 @@
       "line": 43,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_00604f00._0_4_ = g_BIT_INTEGER32_01c6af94;",
+      "text": "g_BlueBitShift._0_4_ = g_BIT_INTEGER32_01c6af94;",
       "type": "unknown_field"
     },
     {
@@ -318,7 +318,7 @@
       "line": 44,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_00604ec0._0_4_ =",
+      "text": "g_TotalDitherShift._0_4_ =",
       "type": "unknown_field"
     },
     {
@@ -326,7 +326,7 @@
       "line": 47,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_00604eb8._0_4_ = uVar9 << (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f);",
+      "text": "g_BlueMask32._0_4_ = uVar9 << (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f);",
       "type": "unknown_field"
     },
     {
@@ -334,15 +334,15 @@
       "line": 48,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_QWORD_00604ee0._0_4_ = g_BIT_INTEGER32_01c6af88.dword + g_BIT_INTEGER32_01c6af94.dword;",
+      "text": "g_GreenBlueDitherShift._0_4_ = g_BIT_INTEGER32_01c6af88.dword + g_BIT_INTEGER32_01c6af94.dword;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 59,
-      "match": "(uint *)((int)g_UINT_ARRAY_01c6a270",
+      "match": "(uint *)((int)g_ColorTable32",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_ARRAY_01c6a270 + iVar5) =",
+      "text": "*(uint *)((int)g_ColorTable32 + iVar5) =",
       "type": "pointer_cast"
     }
   ]

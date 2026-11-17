@@ -511,9 +511,9 @@ switchD_00525735_caseD_1:
             if (pCVar5 != (CDemonActor *)0x0) {
               in_stack_ffffff60 = "UseSPS";
               in_stack_ffffff58 = 7.557448e-39;
-              in_stack_ffffff5c = (CCharacter *)g_CEventList_PTR_005fba60;
+              in_stack_ffffff5c = (CCharacter *)g_CEventListPtr;
               core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                        (g_CEventList_PTR_005fba60,"UseSPS");
+                        (g_CEventListPtr,"UseSPS");
             }
             this_ptr->weapon = (CWeapon *)0x0;
           }
@@ -559,7 +559,7 @@ switchD_00525799_caseD_1:
             pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(&local_24->base,uVar7);
             if (pCVar5 != (CDemonActor *)0x0) {
               core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                        (g_CEventList_PTR_005fba60,"UseSPS");
+                        (g_CEventListPtr,"UseSPS");
             }
             pCVar2 = (CCharacter *)this_ptr->weapon;
             if (pCVar2 != (CCharacter *)0x0) {

@@ -7,7 +7,7 @@
 ; UINT             Stack[0x4]:4   device_id
 ;
 ; Referenced Globals:
-;   int g_INT_0061bf88 = -0x1
+;   int g_WaveInDeviceID = -0x1
 ;
 ; Called Functions:
 ;   sound_sndwav.cpp_CWavInDevice_close_FUN_00558240
@@ -42,7 +42,7 @@ section .text
     RET                                 ; 00558b04
     MOV EAX,dword ptr [ESP + 0x34]      ; 00558b05
         ;   Label: LAB_00558b05
-    MOV [0x0061bf88],EAX                ; 00558b09 | g_INT_0061bf88
+    MOV [0x0061bf88],EAX                ; 00558b09 | g_WaveInDeviceID
     MOV EAX,0x264b280                   ; 00558b0e
     ADD ESP,0x30                        ; 00558b13
     RET                                 ; 00558b16

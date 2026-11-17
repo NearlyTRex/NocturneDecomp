@@ -55,25 +55,25 @@
     },
     {
       "addr": "005c204c",
-      "name": "g_INT_005c204c",
+      "name": "g_ConsoleInputState",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "02de5d50",
-      "name": "g_INT_02de5d50",
+      "name": "g_BufferedCharacter",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de5d54",
-      "name": "g_INT_02de5d54",
+      "name": "g_BufferedVirtualKey",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de5d58",
-      "name": "g_INT_02de5d58",
+      "name": "g_BufferedRepeatCount",
       "type": "int",
       "value": null
     }
@@ -218,7 +218,7 @@
       "line": 35,
       "match": "._2_1_",
       "severity": "mild",
-      "text": "g_INT_02de5d54 = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;",
+      "text": "g_BufferedVirtualKey = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;",
       "type": "unknown_field"
     },
     {
@@ -226,7 +226,7 @@
       "line": 36,
       "match": "._1_1_",
       "severity": "mild",
-      "text": "if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_INT_02de5d54 != 0)) {",
+      "text": "if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_BufferedVirtualKey != 0)) {",
       "type": "unknown_field"
     }
   ]

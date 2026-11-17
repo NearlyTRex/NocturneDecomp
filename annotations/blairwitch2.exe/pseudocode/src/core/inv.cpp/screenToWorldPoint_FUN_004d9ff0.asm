@@ -23,9 +23,9 @@
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e40
 ;   int g_INT_01c35e44
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b70
-;   int g_INT_01c38b74
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   int g_INT_01d04fb8
 ;   int g_INT_01d04fbc
 ;   int g_INT_01d04fc0
@@ -90,7 +90,7 @@ section .text
     IMUL EDX                            ; 004da07e
     SHRD EAX,EDX,0x10                   ; 004da080
     ADD EAX,EBX                         ; 004da084
-    MOV EBX,dword ptr [0x01c38b6c]      ; 004da086 | g_INT_01c38b6c
+    MOV EBX,dword ptr [0x01c38b6c]      ; 004da086 | g_RelativeX
     MOV EDX,ESI                         ; 004da08c
     ADD EBX,EAX                         ; 004da08e
     MOV EAX,[0x01d04fbc]                ; 004da090 | g_INT_01d04fbc
@@ -108,7 +108,7 @@ section .text
     IMUL EDX                            ; 004da0ba
     SHRD EAX,EDX,0x10                   ; 004da0bc
     ADD EAX,EBX                         ; 004da0c0
-    MOV EBX,dword ptr [0x01c38b70]      ; 004da0c2 | g_INT_01c38b70
+    MOV EBX,dword ptr [0x01c38b70]      ; 004da0c2 | g_RelativeY
     MOV EDX,ESI                         ; 004da0c8
     ADD EBX,EAX                         ; 004da0ca
     MOV EAX,[0x01d04fc0]                ; 004da0cc | g_INT_01d04fc0
@@ -125,7 +125,7 @@ section .text
     MOV EAX,[0x01d04fd8]                ; 004da0f1 | g_INT_01d04fd8
     IMUL EDX                            ; 004da0f6
     SHRD EAX,EDX,0x10                   ; 004da0f8
-    MOV ECX,dword ptr [0x01c38b74]      ; 004da0fc | g_INT_01c38b74
+    MOV ECX,dword ptr [0x01c38b74]      ; 004da0fc | g_RelativeZ
     ADD EAX,EBX                         ; 004da102
     ADD ECX,EAX                         ; 004da104
     MOV dword ptr [ESP + 0xc],ECX       ; 004da106

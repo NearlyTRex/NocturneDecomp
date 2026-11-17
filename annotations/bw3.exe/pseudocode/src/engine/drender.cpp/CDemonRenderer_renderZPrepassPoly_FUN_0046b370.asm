@@ -14,11 +14,11 @@
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004f5610 at 004f579e
 ;
 ; Referenced Globals:
-;   int[16] g_INT_ARRAY_01bdd818
-;   undefined4 g_INT_ARRAY_01bdd818[1]
-;   void* g_PTR_01c6b5cc
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
-;   int g_INT_01c6e2b8
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -53,7 +53,7 @@ section .text
     XOR EAX,EAX                         ; 0046b3a2
     MOV EBX,dword ptr [ECX + 0x18]      ; 0046b3a4
         ;   Label: LAB_0046b3a4
-    MOV dword ptr [EAX + 0x1bdd818],EBX ; 0046b3a7 | g_INT_ARRAY_01bdd818 | g_INT_ARRAY_01bdd818[1]
+    MOV dword ptr [EAX + 0x1bdd818],EBX ; 0046b3a7 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     IMUL ESI,EBX,0x30                   ; 0046b3ad
     MOV EBX,dword ptr [EDI]             ; 0046b3b0
     ADD EBX,ESI                         ; 0046b3b2
@@ -94,10 +94,10 @@ section .text
         ;   XREF to: 0046b447 (CONDITIONAL_JUMP)  ; LAB_0046b447
     XOR EDX,EDX                         ; 0046b3fd
     MOV EAX,0x46f9f4                    ; 0046b3ff
-    MOV dword ptr [0x01c6e2b4],EDX      ; 0046b404 | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],EDX      ; 0046b40a | g_INT_01c6e2b8
-    MOV [0x01c6b5cc],EAX                ; 0046b410 | g_PTR_01c6b5cc
-    PUSH 0x1bdd818                      ; 0046b415 | g_INT_ARRAY_01bdd818
+    MOV dword ptr [0x01c6e2b4],EDX      ; 0046b404 | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],EDX      ; 0046b40a | g_VertexPreprocessMode
+    MOV [0x01c6b5cc],EAX                ; 0046b410 | g_ScanlineRenderFunc
+    PUSH 0x1bdd818                      ; 0046b415 | g_VertexIndexBuffer
         ;   Label: LAB_0046b415
     MOV ESI,dword ptr [EBP + 0x4]       ; 0046b41a
     PUSH ESI                            ; 0046b41d
@@ -128,9 +128,9 @@ section .text
         ;   Label: LAB_0046b447
     MOV ESI,0x6                         ; 0046b44c
     MOV EDX,0x46fb72                    ; 0046b451
-    MOV dword ptr [0x01c6e2b4],ECX      ; 0046b456 | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],ESI      ; 0046b45c | g_INT_01c6e2b8
-    MOV dword ptr [0x01c6b5cc],EDX      ; 0046b462 | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],ECX      ; 0046b456 | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],ESI      ; 0046b45c | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6b5cc],EDX      ; 0046b462 | g_ScanlineRenderFunc
     JMP 0x0046b415                      ; 0046b468
         ;   XREF to: 0046b415 (UNCONDITIONAL_JUMP)  ; LAB_0046b415
 

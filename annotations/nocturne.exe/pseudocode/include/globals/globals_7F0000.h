@@ -12,9 +12,9 @@
 // =============================================================================
 
 // CDemonCamera*
-extern CDemonCamera* g_CDemonCamera_PTR_007f7370;
-extern CDemonCamera* g_CDemonCamera_PTR_007f7374;
+extern CDemonCamera* g_CurrentSceneCamera;
+extern CDemonCamera* g_SkipClearBuffersSceneCamera;
 
-// CVector3i[15499]
-extern CVector3i g_CVector3i_ARRAY_007f7378[15499];
+// CVector3i[77120]
+extern CVector3i g_PrecomputedWorldPositions[77120];
 

@@ -99,6 +99,12 @@ extern EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup;
 // EXCEPTION_FILTER_FUNC*
 extern EXCEPTION_FILTER_FUNC* g_UserExceptionFilter;
 
+// FileDescriptor*
+extern FileDescriptor* g_FileDescriptors;
+
+// FileDescriptor[20]
+extern FileDescriptor g_FileDescriptorTable[20];
+
 // GUID
 extern GUID g_IID_IKsPropertySet;
 extern GUID g_DSPROPSETID_VoiceManager;
@@ -170,23 +176,23 @@ extern SMRGLPrimitiveQuad* g_BoundingBoxQuadTemplateEnd;
 extern SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6];
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic SMRGLTextureBasic_00680bb0;
+extern SMRGLTextureBasic g_PathMapTexture;
 extern SMRGLTextureBasic g_EnvMapTexture;
 extern SMRGLTextureBasic g_SolidWhiteTexture;
-extern SMRGLTextureBasic SMRGLTextureBasic_006817fc;
-extern SMRGLTextureBasic SMRGLTextureBasic_006819e4;
-extern SMRGLTextureBasic SMRGLTextureBasic_00684178;
+extern SMRGLTextureBasic g_VolumetricSphereTexture;
+extern SMRGLTextureBasic g_ViewModelTexture;
+extern SMRGLTextureBasic g_StairsTexture;
 extern SMRGLTextureBasic DAT_0068423C;
-extern SMRGLTextureBasic SMRGLTextureBasic_0068434c;
+extern SMRGLTextureBasic g_TriggerTexture;
 extern SMRGLTextureBasic DAT_006843FC;
 extern SMRGLTextureBasic g_RainDropTexture;
 extern SMRGLTextureBasic g_RainSplashTexture;
 extern SMRGLTextureBasic g_SnowflakeTexture;
-extern SMRGLTextureBasic SMRGLTextureBasic_0068495c;
+extern SMRGLTextureBasic g_WerewolfEyeGlowTexture;
 
 // SMRGLTextureBasic[16]
 extern SMRGLTextureBasic g_WaterTextures[16];
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_006846f0[16];
+extern SMRGLTextureBasic g_WaterActorTextures[16];
 
 // SPECIAL_CONSOLE_INPUT_HANDLER_FUNC*
 extern SPECIAL_CONSOLE_INPUT_HANDLER_FUNC* g_SpecialConsoleInputHandler;
@@ -261,11 +267,12 @@ extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 extern WatcomStaticDestructorNode* g_AtexitListHead;
 
 // _FILE
+extern _FILE g_StaticFilePoolStart;
 extern _FILE g_StdoutLogFile;
 extern _FILE g_StderrLogFile;
 
-// _FILE*
-extern _FILE* g_StaticFilePoolStart;
+// _FILE[17]
+extern _FILE g_StaticFilePoolRest[17];
 
 // _MMX_INTEGER
 extern _MMX_INTEGER g_VertexRedStart;
@@ -358,10 +365,10 @@ extern float FLOAT_00680818;
 extern float g_MaxSoftwareLatency;
 
 // int
-extern int INT_00680648;
+extern int g_LastImportActorTypeChoice;
 extern int g_DynamicRenderMode;
 extern int g_ConfirmNewActorNames;
-extern int INT_00680a04;
+extern int g_NetLobbyStateChanged;
 extern int g_CNPCClassVersion;
 extern int g_CPassengerClassVersion;
 extern int g_CPendulumClassVersion;
@@ -375,7 +382,7 @@ extern int g_CShotgunClassVersion;
 extern int g_CShovelClassVersion;
 extern int g_CSimBoxClassVersion;
 extern int g_CSkeletonVersion;
-extern int INT_00681864;
+extern int g_MaxDeformableModelVersion;
 extern int g_CSmileyClassVersion;
 extern int g_SfxPlaybackStateCounter;
 extern int g_MaxSoundChannels;
@@ -438,7 +445,7 @@ extern int g_CTVBatClassVersion;
 extern int g_CVampireBossVersion;
 extern int g_CVehicleClassVersion;
 extern int g_CCryptVesselClassVersion;
-extern int INT_006844f4;
+extern int g_WaterFrameDuration;
 extern int g_CWaterActorVersion;
 extern int g_CWayPointClassVersion;
 extern int g_CWeaponClassVersion;
@@ -449,8 +456,6 @@ extern int g_ForceMessagePump;
 extern int g_PreviousActiveState;
 extern int g_CZombieClassVersion;
 extern int g_MaxErrnoValue;
-extern int DAT_00684CCC;
-extern int INT_00684cd0;
 extern int INT_00684ed0;
 extern int INT_00684edc;
 extern int g_SpecialExitHandler;
@@ -470,7 +475,6 @@ extern int INT_006850b8;
 extern int g_TimezoneOffset;
 extern int g_DaylightSavingActive;
 extern int g_DaylightSavingOffset;
-extern int INT_00685210;
 extern int g_CurrentHandleCount;
 extern int g_FakeHandleCounter;
 extern int INT_00685280;

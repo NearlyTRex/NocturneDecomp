@@ -57,7 +57,7 @@ LAB_005b950f:
         if ((sVar11 != -1) || ((short)iVar1 == 0)) goto LAB_005b9596;
         FUN_005b95c0();
         fVar6 = (float10)1;
-        if ((g_BYTE_0061f458 & 1) == 0) {
+        if ((g_UseSoftwareMath & 1) == 0) {
           fVar6 = fVar6 / base;
           uVar5 = extraout_EDX_00;
         }

@@ -2,11 +2,11 @@
 // Address: 00594000
 // Address Range: [[00594000, 005956ce]]
 // Convention: __cdecl
-// Signature: void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float param_2)
+// Signature: void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float param_2)
+void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float delta_time)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -149,14 +149,14 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
     return;
   }
   if ((this_ptr->type == WEREWOLF_TYPE_FOREST) && (0.0 <= this_ptr->phase_timer)) {
-    this_ptr->phase_timer = this_ptr->phase_timer - param_2;
+    this_ptr->phase_timer = this_ptr->phase_timer - delta_time;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  afStack_50[0] = param_2 * (this_ptr->base).speed;
+  afStack_50[0] = delta_time * (this_ptr->base).speed;
   pCStack_18 = &(this_ptr->base).base.model;
   while (pCVar1 = pCStack_18, 0.0 < afStack_50[0]) {
     uVar7 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCStack_18->base,afStack_50);
@@ -200,8 +200,8 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
   }
   fVar16 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850((CCharacter *)this_ptr,param_2 * fVar16)
-  ;
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar16);
   if (this_ptr->type == WEREWOLF_TYPE_FOREST) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)4;
   }
@@ -209,7 +209,8 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar1->base);
   uVar7 = pSVar8->state_index;
   uStack_1c = uVar7;
-  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660((CCharacter *)this_ptr,param_2);
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     EVar10 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr)
     ;
@@ -221,7 +222,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
       pCStack_28 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       pSStack_14 = pSVar11;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_28 + this_ptr->bone_indices[3],&CStack_33c);
+                (&g_ZeroVector,pCStack_28 + this_ptr->bone_indices[3],&CStack_33c);
       pCVar17 = &CStack_1d4;
       CStack_1d4.x = CStack_33c.x;
       *(uint *)((int)&CStack_1d4 + (uint)bVar14 * -8 + 4) =
@@ -242,7 +243,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
       fVar16 = (this_ptr->base).base.size_scale;
       pSStack_14 = pSVar11;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_28 + this_ptr->bone_indices[2],&CStack_2f4);
+                (&g_ZeroVector,pCStack_28 + this_ptr->bone_indices[2],&CStack_2f4);
       pCVar17 = &CStack_30c;
       CStack_30c.x = CStack_2f4.x;
       *(uint *)((int)&CStack_30c + (uint)bVar14 * -8 + 4) =
@@ -263,7 +264,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
       pSVar11 = (SDamageInfo *)&stack0xfffffb2c;
       fVar16 = (this_ptr->base).base.size_scale;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                (&g_CVector3f_02cfd900,pCStack_28 + this_ptr->bone_indices[1],&CStack_e4);
+                (&g_ZeroVector,pCStack_28 + this_ptr->bone_indices[1],&CStack_e4);
       pCVar17 = &CStack_348;
       CStack_348.x = CStack_e4.x;
       *(uint *)((int)&CStack_348 + (uint)bVar14 * -8 + 4) =
@@ -296,7 +297,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
             fVar16 = 0.4;
             pSStack_14 = (SDamageInfo *)SStack_420.damage_amount;
             core_xform_cpp_transformVector3x4_FUN_00583260
-                      (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[1],&CStack_6c);
+                      (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[1],&CStack_6c);
             pCVar17 = &CStack_120;
             CStack_120.x = CStack_6c.x;
             *(uint *)((int)&CStack_120 + (uint)bVar14 * -8 + 4) =
@@ -327,10 +328,10 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
         goto LAB_00594821;
       }
 LAB_00594d89:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,param_2);
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar4 = (this_ptr->base).victim;
       if (pCVar4 == (CCharacter *)0x0) {
-        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,param_2);
+        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                     (&(this_ptr->base).base.model.base,0,1);
@@ -583,7 +584,7 @@ LAB_00594f64:
             }
           }
         }
-        fVar16 = this_ptr->howl_cooldown - param_2;
+        fVar16 = this_ptr->howl_cooldown - delta_time;
         this_ptr->howl_cooldown = fVar16;
         if (fVar16 < 0.0) {
           core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(this_ptr);
@@ -605,7 +606,7 @@ LAB_00594d66:
         fVar16 = 0.4;
         pSStack_14 = (SDamageInfo *)SStack_3e4.damage_amount;
         core_xform_cpp_transformVector3x4_FUN_00583260
-                  (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[2],&CStack_174);
+                  (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[2],&CStack_174);
         pCVar17 = &CStack_138;
         CStack_138.x = CStack_174.x;
         *(uint *)((int)&CStack_138 + (uint)bVar14 * -8 + 4) =
@@ -668,7 +669,7 @@ LAB_00594d66:
           fVar16 = 1.0;
           pSStack_14 = (SDamageInfo *)SStack_498.damage_amount;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[3],&CStack_2ac);
+                    (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[3],&CStack_2ac);
           pCVar17 = &CStack_240;
           CStack_240.x = CStack_2ac.x;
           *(uint *)((int)&CStack_240 + (uint)bVar14 * -8 + 4) =
@@ -688,7 +689,7 @@ LAB_00594d66:
           pSVar11 = &SStack_498;
           fVar16 = 1.0;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[2],&CStack_360);
+                    (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[2],&CStack_360);
           pCVar17 = &CStack_d8;
           CStack_d8.x = CStack_360.x;
           *(uint *)((int)&CStack_d8 + (uint)bVar14 * -8 + 4) =
@@ -708,7 +709,7 @@ LAB_00594d66:
           pSVar11 = &SStack_498;
           fVar16 = 1.0;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,pCStack_24 + this_ptr->bone_indices[1],&CStack_330);
+                    (&g_ZeroVector,pCStack_24 + this_ptr->bone_indices[1],&CStack_330);
           pCVar17 = &CStack_1f8;
           CStack_1f8.x = CStack_330.x;
           *(uint *)((int)&CStack_1f8 + (uint)bVar14 * -8 + 4) =
@@ -743,7 +744,7 @@ LAB_00594821:
           fVar16 = 0.4;
           pSStack_14 = (SDamageInfo *)SStack_45c.damage_amount;
           core_xform_cpp_transformVector3x4_FUN_00583260
-                    (&g_CVector3f_02cfd900,
+                    (&g_ZeroVector,
                      (CMatrix3x4f *)
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices
                      [this_ptr->bone_indices[3]].m,&CStack_180);
@@ -781,9 +782,9 @@ LAB_00594821:
         goto LAB_00594d89;
       }
 LAB_005947a3:
-      iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,param_2);
+      iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
       if (iVar6 == 0) {
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,param_2);
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar4 = (this_ptr->base).victim;
         if (pCVar4 == (CCharacter *)0x0) goto LAB_00594269;
         if (this_ptr->chain_anchor != (CDemonActor *)0x0) {
@@ -892,7 +893,7 @@ LAB_00594269:
   }
   (this_ptr->base).base.collision_cylinder_radius = fStack_30 * (float)dVar15;
   if (0.0 < (this_ptr->base).attack_cooldown) {
-    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - param_2;
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                      (&(this_ptr->base).base.model.base);
@@ -906,10 +907,10 @@ LAB_00594269:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,param_2);
-    fStack_12c = (this_ptr->base).base.velocity.x * param_2;
-    afStack_128[0] = (this_ptr->base).base.velocity.y * param_2;
-    afStack_128[1] = (this_ptr->base).base.velocity.z * param_2;
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
+    fStack_12c = (this_ptr->base).base.velocity.x * delta_time;
+    afStack_128[0] = (this_ptr->base).base.velocity.y * delta_time;
+    afStack_128[1] = (this_ptr->base).base.velocity.z * delta_time;
     afStack_104[2] = fStack_12c;
     afStack_104[(uint)bVar14 * -2 + 3] = afStack_128[(uint)bVar14 * -2];
     afStack_104[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4] =
@@ -943,8 +944,8 @@ LAB_00594269:
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,param_2);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
   core_tawiscara_cpp_CTawiscara_processChainConstraint_FUN_00596380(this_ptr);
-  this_ptr->eye_glow_phase = param_2 * (float)0.5 + this_ptr->eye_glow_phase;
+  this_ptr->eye_glow_phase = delta_time * (float)0.5 + this_ptr->eye_glow_phase;
   return;
 }

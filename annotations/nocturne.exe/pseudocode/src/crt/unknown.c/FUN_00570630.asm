@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   byte g_BYTE_005c1795 = 0x0
-;   byte g_BYTE_005c1d98 = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_fstream.cpp_FUN_00572446
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 005729a6 (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_FUN_005729a6()
     JLE 0x005706a5                      ; 0057069c
         ;   XREF to: 005706a5 (CONDITIONAL_JUMP)  ; LAB_005706a5
-    OR byte ptr [0x005c1d98],0x1        ; 0057069e | g_BYTE_005c1d98
+    OR byte ptr [0x005c1d98],0x1        ; 0057069e | g_UseSoftwareMath
     ADD ESP,0x10                        ; 005706a5
         ;   Label: LAB_005706a5
     POP EBX                             ; 005706a8

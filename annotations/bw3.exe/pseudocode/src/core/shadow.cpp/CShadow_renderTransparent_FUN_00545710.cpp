@@ -34,7 +34,7 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_00545710(CShadow *this
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&(this_ptr->base).base.model.base)
   ;
   iVar2 = g_INT_01d5ba14;
-  iVar3 = g_INT_01d1a0a4;
+  iVar3 = g_FastSqrtMagic;
   pCVar1 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
   if (pCVar1 != (CHero *)0x0) {
     fStack_34 = (this_ptr->base).base.base.location.position.x -
@@ -88,7 +88,7 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_00545710(CShadow *this
                   (this_ptr_00,-1,0x2e7,1,0);
         engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
                   (g_CDemonRenderer_PTR_005f2afc);
-        if (g_INT_01d8e40c != 0) {
+        if (g_RenderMotionDebug != 0) {
           core_motion_cpp_CMotionController_render_FUN_004fcdc0
                     (&this_ptr_00->base,(CDemonActor *)this_ptr);
         }

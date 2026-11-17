@@ -21,9 +21,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c5baec
-;   int g_INT_01c5bb5c
-;   int g_INT_01c5bb68
-;   int g_INT_01c5bb6c
+;   int g_ButtonFaceColor
+;   int g_HighlightColor
+;   int g_BorderBackgroundColor
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+1
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+2
@@ -55,7 +55,7 @@ section .text
     CMP dword ptr [ESP + 0x30],0x0      ; 004850b7
     JZ 0x00485235                       ; 004850bc
         ;   XREF to: 00485235 (CONDITIONAL_JUMP)  ; LAB_00485235
-    MOV EAX,[0x01c5bb6c]                ; 004850c2 | g_INT_01c5bb6c
+    MOV EAX,[0x01c5bb6c]                ; 004850c2 | g_BorderBackgroundColor
     CMP dword ptr [0x01c5baec],0x0      ; 004850c7 | g_INT_01c5baec
         ;   Label: LAB_004850c7
     JZ 0x0048523f                       ; 004850ce
@@ -106,7 +106,7 @@ section .text
     CMP dword ptr [ESP + 0x30],0x0      ; 00485146
     JZ 0x00485263                       ; 0048514b
         ;   XREF to: 00485263 (CONDITIONAL_JUMP)  ; LAB_00485263
-    MOV EAX,[0x01c5bb68]                ; 00485151 | g_INT_01c5bb68
+    MOV EAX,[0x01c5bb68]                ; 00485151 | g_HighlightColor
     CMP dword ptr [0x01c5baec],0x0      ; 00485156 | g_INT_01c5baec
         ;   Label: LAB_00485156
     JZ 0x0048526d                       ; 0048515d
@@ -158,7 +158,7 @@ section .text
         ;   XREF to: 004f3ad0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawVLine_FUN_004f3ad0(int x, int y1, int y2)
     ADD ESP,0xc                         ; 004851de
         ;   Label: LAB_004851de
-    MOV EAX,[0x01c5bb5c]                ; 004851e1 | g_INT_01c5bb5c
+    MOV EAX,[0x01c5bb5c]                ; 004851e1 | g_ButtonFaceColor
     LEA EDX,[EBX + 0x1]                 ; 004851e6
     LEA ECX,[ESI + 0x1]                 ; 004851e9
     LEA EBX,[EDI + -0x2]                ; 004851ec
@@ -190,7 +190,7 @@ section .text
     POP ESI                             ; 00485232
     POP EBX                             ; 00485233
     RET                                 ; 00485234
-    MOV EAX,[0x01c5bb68]                ; 00485235 | g_INT_01c5bb68
+    MOV EAX,[0x01c5bb68]                ; 00485235 | g_HighlightColor
         ;   Label: LAB_00485235
     JMP 0x004850c7                      ; 0048523a
         ;   XREF to: 004850c7 (UNCONDITIONAL_JUMP)  ; LAB_004850c7
@@ -214,7 +214,7 @@ section .text
         ;   XREF to: 00403040 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawVLine_FUN_00403040(int x, int y1, int y2)
     JMP 0x00485143                      ; 0048525e
         ;   XREF to: 00485143 (UNCONDITIONAL_JUMP)  ; LAB_00485143
-    MOV EAX,[0x01c5bb6c]                ; 00485263 | g_INT_01c5bb6c
+    MOV EAX,[0x01c5bb6c]                ; 00485263 | g_BorderBackgroundColor
         ;   Label: LAB_00485263
     JMP 0x00485156                      ; 00485268
         ;   XREF to: 00485156 (UNCONDITIONAL_JUMP)  ; LAB_00485156

@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
-;   int g_INT_005fba44 = 0x10000
+;   int g_ProjectionScale = 0x10000
 ;   int g_INT_01c6b598
 ;   int g_INT_01c6b59c
 ;   int g_INT_01c6b5a8
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 004e53f6 (CONDITIONAL_JUMP)  ; LAB_004e53f6
     JA 0x004e53ef                       ; 004e525c
         ;   XREF to: 004e53ef (CONDITIONAL_JUMP)  ; LAB_004e53ef
-    MOV dword ptr [0x01d7269c],0x15555  ; 004e5262 | g_INT_01d7269c
+    MOV dword ptr [0x01d7269c],0x15555  ; 004e5262 | g_PixelAspectCorrection
     MOV EAX,0x10000                     ; 004e526c
         ;   Label: LAB_004e526c
     MOV EBX,dword ptr [0x01c6b598]      ; 004e5271 | g_INT_01c6b598
@@ -232,25 +232,25 @@ section .text
     SHL EDX,0x2                         ; 004e5345
     SBB EAX,EDX                         ; 004e5348
     SAR EAX,0x2                         ; 004e534a
-    MOV EBX,dword ptr [0x005fba44]      ; 004e534d | g_INT_005fba44
+    MOV EBX,dword ptr [0x005fba44]      ; 004e534d | g_ProjectionScale
     MOV ECX,EAX                         ; 004e5353
     MOV EAX,[0x01c6e2fc]                ; 004e5355 | g_INT_01c6e2fc
     MOV EDX,ECX                         ; 004e535a
     IMUL EDX                            ; 004e535c
     IDIV EBX                            ; 004e535e
-    MOV EBX,dword ptr [0x005fba44]      ; 004e5360 | g_INT_005fba44
+    MOV EBX,dword ptr [0x005fba44]      ; 004e5360 | g_ProjectionScale
     MOV [0x01c6e2fc],EAX                ; 004e5366 | g_INT_01c6e2fc
     MOV EDX,ECX                         ; 004e536b
     MOV EAX,[0x01c6e300]                ; 004e536d | g_INT_01c6e300
     IMUL EDX                            ; 004e5372
     IDIV EBX                            ; 004e5374
-    MOV EBX,dword ptr [0x005fba44]      ; 004e5376 | g_INT_005fba44
+    MOV EBX,dword ptr [0x005fba44]      ; 004e5376 | g_ProjectionScale
     MOV [0x01c6e300],EAX                ; 004e537c | g_INT_01c6e300
     MOV EDX,ECX                         ; 004e5381
     MOV EAX,[0x01c6e308]                ; 004e5383 | g_INT_01c6e308
     IMUL EDX                            ; 004e5388
     IDIV EBX                            ; 004e538a
-    MOV EBX,dword ptr [0x005fba44]      ; 004e538c | g_INT_005fba44
+    MOV EBX,dword ptr [0x005fba44]      ; 004e538c | g_ProjectionScale
     MOV [0x01c6e308],EAX                ; 004e5392 | g_INT_01c6e308
     MOV EDX,ECX                         ; 004e5397
     MOV EAX,[0x01c6e30c]                ; 004e5399 | g_INT_01c6e30c
@@ -258,12 +258,12 @@ section .text
     IDIV EBX                            ; 004e53a0
     MOV [0x01c6e30c],EAX                ; 004e53a2 | g_INT_01c6e30c
     POP EDI                             ; 004e53a7
-    MOV EBX,dword ptr [0x005fba44]      ; 004e53a8 | g_INT_005fba44
+    MOV EBX,dword ptr [0x005fba44]      ; 004e53a8 | g_ProjectionScale
     MOV EAX,[0x01c6e314]                ; 004e53ae | g_INT_01c6e314
     MOV EDX,ECX                         ; 004e53b3
     IMUL EDX                            ; 004e53b5
     IDIV EBX                            ; 004e53b7
-    MOV EBX,dword ptr [0x005fba44]      ; 004e53b9 | g_INT_005fba44
+    MOV EBX,dword ptr [0x005fba44]      ; 004e53b9 | g_ProjectionScale
     MOV [0x01c6e314],EAX                ; 004e53bf | g_INT_01c6e314
     MOV EDX,ECX                         ; 004e53c4
     MOV EAX,[0x01c6e318]                ; 004e53c6 | g_INT_01c6e318
@@ -277,7 +277,7 @@ section .text
     POP ESI                             ; 004e53dd
     POP EBX                             ; 004e53de
     RET                                 ; 004e53df
-    MOV dword ptr [0x01d7269c],0xaaaa   ; 004e53e0 | g_INT_01d7269c
+    MOV dword ptr [0x01d7269c],0xaaaa   ; 004e53e0 | g_PixelAspectCorrection
         ;   Label: LAB_004e53e0
     JMP 0x004e526c                      ; 004e53ea
         ;   XREF to: 004e526c (UNCONDITIONAL_JUMP)  ; LAB_004e526c
@@ -285,7 +285,7 @@ section .text
         ;   Label: LAB_004e53ef
     JZ 0x004e53e0                       ; 004e53f4
         ;   XREF to: 004e53e0 (CONDITIONAL_JUMP)  ; LAB_004e53e0
-    MOV dword ptr [0x01d7269c],0x10000  ; 004e53f6 | g_INT_01d7269c
+    MOV dword ptr [0x01d7269c],0x10000  ; 004e53f6 | g_PixelAspectCorrection
         ;   Label: LAB_004e53f6
     JMP 0x004e526c                      ; 004e5400
         ;   XREF to: 004e526c (UNCONDITIONAL_JUMP)  ; LAB_004e526c

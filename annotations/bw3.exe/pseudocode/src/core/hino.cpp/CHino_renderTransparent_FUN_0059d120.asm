@@ -10,7 +10,7 @@
 ;   double g_DOUBLE_005d9e74 = 4
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01d8e40c
+;   int g_RenderMotionDebug
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -181,7 +181,7 @@ section .text
     PUSH EDX                            ; 0059d2d2 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 ; 0059d2d3
         ;   XREF to: 0046e4e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer * this_ptr)
-    MOV ECX,dword ptr [0x01d8e40c]      ; 0059d2d8 | g_INT_01d8e40c
+    MOV ECX,dword ptr [0x01d8e40c]      ; 0059d2d8 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 0059d2de
     TEST ECX,ECX                        ; 0059d2e1
     JZ 0x0059d2ef                       ; 0059d2e3

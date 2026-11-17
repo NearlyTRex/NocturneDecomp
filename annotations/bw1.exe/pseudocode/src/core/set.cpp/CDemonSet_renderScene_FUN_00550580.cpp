@@ -67,7 +67,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
     iVar5 = 0;
     g_INT_0202636c = 0;
     core_dcamera_cpp_CDemonCamera_processCorona_FUN_00451d90(&g_CDemonCameraInstance);
-    if (0 < g_INT_01fe4e38) {
+    if (0 < g_SpotLightCount) {
       iVar8 = 0;
       do {
         if ((*(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe4e3c + iVar8))->light_enabled_flag
@@ -78,13 +78,13 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
         }
         iVar5 = iVar5 + 1;
         iVar8 = iVar8 + 4;
-      } while (iVar5 < g_INT_01fe4e38);
+      } while (iVar5 < g_SpotLightCount);
     }
     local_2c = 0;
     if (0 < g_INT_01fe55bc) {
       local_24 = 0;
       do {
-        light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe55c0 + local_24);
+        light_source = *(CDemonLight **)((int)g_DynamicLights + local_24);
         if ((light_source->light_enabled_flag != 0) && (light_source->antialiasing_enabled != 0)) {
           iVar8 = 0;
           core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004516c0
@@ -94,8 +94,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
             do {
               core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(this_ptr,iVar8,0);
               core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004516c0
-                        (&g_CDemonCameraInstance,
-                         *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe55c0 + iVar5));
+                        (&g_CDemonCameraInstance,*(CDemonLight **)((int)g_DynamicLights + iVar5));
               iVar8 = iVar8 + 1;
               core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590(this_ptr);
             } while (iVar8 < this_ptr->mirror_glass_actor_count);
@@ -111,15 +110,13 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
       do {
         iVar8 = 0;
         core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
-                  (&g_CDemonCameraInstance,
-                   *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + local_28),0);
+                  (&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_28),0);
         iVar5 = local_28;
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(this_ptr,iVar8,0);
             core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
-                      (&g_CDemonCameraInstance,
-                       *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar5),1);
+                      (&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + iVar5),1);
             iVar8 = iVar8 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590(this_ptr);
           } while (iVar8 < this_ptr->mirror_glass_actor_count);
@@ -129,29 +126,29 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
       } while (local_3c < g_INT_01fe55d0);
     }
     local_30 = 0;
-    g_INT_01fe5a88 = 0;
-    if (0 < g_INT_01fe5764) {
+    g_VisibleCoronaGlobeCount = 0;
+    if (0 < g_QueuedCoronaGlobeCount) {
       iVar5 = 0;
       do {
-        globe = *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fe5768 + iVar5);
-        if (*(int *)((int)g_INT_ARRAY_01fe58f8 + iVar5) == 0) {
+        globe = *(CDemonGlobe **)((int)g_QueuedCoronaGlobes + iVar5);
+        if (*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar5) == 0) {
           core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
                     (&g_CDemonCameraInstance,globe,0);
-          g_CDemonGlobe_PTR_ARRAY_01fe5a8c[g_INT_01fe5a88] = globe;
-          g_INT_01fe5a88 = g_INT_01fe5a88 + 1;
+          g_VisibleCoronaGlobes[g_VisibleCoronaGlobeCount] = globe;
+          g_VisibleCoronaGlobeCount = g_VisibleCoronaGlobeCount + 1;
         }
         else {
           core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460
-                    (this_ptr,*(int *)((int)g_INT_ARRAY_01fe58f8 + iVar5) + -1,0);
+                    (this_ptr,*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar5) + -1,0);
           core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
                     (&g_CDemonCameraInstance,globe,1);
           core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590(this_ptr);
         }
         local_30 = local_30 + 1;
         iVar5 = iVar5 + 4;
-      } while (local_30 < g_INT_01fe5764);
+      } while (local_30 < g_QueuedCoronaGlobeCount);
     }
-    g_INT_01fe5764 = 0;
+    g_QueuedCoronaGlobeCount = 0;
     if (0.0 < this_ptr->directional_light_intensity) {
       core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_00451bc0(&g_CDemonCameraInstance);
     }
@@ -164,14 +161,14 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
     local_48 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
   iVar5 = 0;
-  if (0 < g_INT_01fe4e38) {
+  if (0 < g_SpotLightCount) {
     iVar8 = 0;
     do {
       puVar6 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fe4e3c + iVar8);
       iVar8 = iVar8 + 4;
       iVar5 = iVar5 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00462d20((CDemonLight *)*puVar6);
-    } while (iVar5 < g_INT_01fe4e38);
+    } while (iVar5 < g_SpotLightCount);
   }
   core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(this_ptr,0xc);
   core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00551480(this_ptr);
@@ -192,24 +189,24 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
   }
   core_set_cpp_CDemonSet_renderTransparentActors_FUN_005516c0(this_ptr);
   if (this_ptr->player_on_train != 0) {
-    core_terrain_cpp_CTerrain_render_FUN_0059f3e0(g_CTerrain_PTR_00625bc0,0);
+    core_terrain_cpp_CTerrain_render_FUN_0059f3e0(g_CTerrainPtr,0);
   }
   iVar5 = 0;
-  core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffect_PTR_0061c010);
+  core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffectPtr);
   if (0 < this_ptr->mirror_glass_actor_count) {
     do {
       core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(this_ptr,iVar5,0);
-      core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffect_PTR_0061c010);
+      core_fire_cpp_CFireEffect_render_FUN_004b5100(g_CFireEffectPtr);
       iVar5 = iVar5 + 1;
       core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590(this_ptr);
     } while (iVar5 < this_ptr->mirror_glass_actor_count);
   }
-  core_weather_cpp_CWeather_renderParticles_FUN_005ae890(g_CWeather_PTR_0062604c);
+  core_weather_cpp_CWeather_renderParticles_FUN_005ae890(g_CWeatherPtr);
   local_34 = 0;
   if (0 < g_INT_01fe55bc) {
     local_44 = 0;
     do {
-      local_20 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe55c0 + local_44);
+      local_20 = *(CDemonLight **)((int)g_DynamicLights + local_44);
       if (local_20->light_enabled_flag != 0) {
         pSVar11 = (SProjectedVertex *)0x0;
         pCVar10 = &local_60;
@@ -242,7 +239,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
   }
   core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700(&g_CDemonCameraInstance);
   core_gore_cpp_CGore_renderDecals_FUN_004e5cd0(g_CGorePtr,0,1);
-  core_fire_cpp_CFireEffect_renderDecals_FUN_004b54a0(g_CFireEffect_PTR_0061c010,0,1);
+  core_fire_cpp_CFireEffect_renderDecals_FUN_004b54a0(g_CFireEffectPtr,0,1);
   if (g_CWaterPtr->wave_animation_enabled == 0) {
     core_water_cpp_CWater_render_FUN_005a9f10(g_CWaterPtr,0);
   }
@@ -264,7 +261,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr
   if (0 < g_INT_01fe55bc) {
     local_40 = 0;
     do {
-      local_1c = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe55c0 + local_40);
+      local_1c = *(CDemonLight **)((int)g_DynamicLights + local_40);
       if (local_1c->light_enabled_flag != 0) {
         pSVar11 = (SProjectedVertex *)0x0;
         pCVar10 = &local_78;

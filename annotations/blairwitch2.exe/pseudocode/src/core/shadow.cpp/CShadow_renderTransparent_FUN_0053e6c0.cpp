@@ -26,7 +26,7 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0053e6c0(CShadow *this
   bVar7 = 0;
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                      (&(this_ptr->base).base.model.base);
-  this_ptr_02 = g_CEventList_PTR_006141f0;
+  this_ptr_02 = g_CEventListPtr;
   iVar4 = pSVar1->state_index;
   (this_ptr->base).base.was_rendered_opaque = 0;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -65,7 +65,7 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0053e6c0(CShadow *this
                 (this_ptr_00,-1,0x2e7,1,0);
       engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900
                 (g_CDemonRenderer_PTR_0060b280);
-      if (g_INT_01d1cdc8 != 0) {
+      if (g_RenderMotionDebug != 0) {
         core_motion_cpp_CMotionController_render_FUN_005042e0
                   (&this_ptr_00->base,(CDemonActor *)this_ptr);
       }

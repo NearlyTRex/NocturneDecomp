@@ -25,11 +25,11 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   int g_INT_006141d8 = 0xff
+;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 01cb6900
-;   SMRGLTextureBasic g_SMRGLTextureBasic_0061b8c4
+;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
     PUSH EBP                            ; 00533813
     SUB ESP,0xe4                        ; 00533814
     MOV EBP,dword ptr [ESP + 0xfc]      ; 0053381a
-    PUSH 0x61b8c4                       ; 00533821 | g_SMRGLTextureBasic_0061b8c4
+    PUSH 0x61b8c4                       ; 00533821 | g_EnvMapTexture
     MOV EDX,dword ptr [0x0060b280]      ; 00533826 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 0053382c | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0053382d
@@ -62,7 +62,7 @@ section .text
     CMP ECX,0x2                         ; 00533840
     JNZ 0x00533a29                      ; 00533843
         ;   XREF to: 00533a29 (CONDITIONAL_JUMP)  ; LAB_00533a29
-    MOV EAX,[0x006141d8]                ; 00533849 | g_INT_006141d8
+    MOV EAX,[0x006141d8]                ; 00533849 | g_CurrentAlphaValue
     SHL EAX,0x8                         ; 0053384e
     MOV dword ptr [ESP + 0x104],EAX     ; 00533851
     MOV EAX,[0x0060b280]                ; 00533858 | g_CDemonRenderer_PTR_0060b280
@@ -215,7 +215,7 @@ section .text
     RET                                 ; 00533a28
     MOV EAX,0xffff                      ; 00533a29
         ;   Label: LAB_00533a29
-    MOV EBX,dword ptr [0x01c38aec]      ; 00533a2e | g_INT_01c38aec
+    MOV EBX,dword ptr [0x01c38aec]      ; 00533a2e | g_PerspectiveReciprocal
     MOV EDX,dword ptr [ESP + 0x104]     ; 00533a34
     SUB EAX,EBX                         ; 00533a3b
     IMUL EDX                            ; 00533a3d

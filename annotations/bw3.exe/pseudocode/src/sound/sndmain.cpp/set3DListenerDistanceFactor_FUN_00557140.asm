@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_00604240 = 1
 ;   float g_FLOAT_00604244 = 1
-;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
         ;   Label: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00557140
     FDIV float ptr [ESP + 0x4]          ; 00557142
     MOV EAX,dword ptr [ESP + 0x4]       ; 00557146
-    MOV EDX,dword ptr [0x02cf3280]      ; 0055714a | g_CSoundDevice_PTR_02cf3280
+    MOV EDX,dword ptr [0x02cf3280]      ; 0055714a | g_CSoundDevicePtr
     MOV [0x00604240],EAX                ; 00557150 | g_FLOAT_00604240
     FSTP float ptr [0x00604244]         ; 00557155 | g_FLOAT_00604244
     TEST EDX,EDX                        ; 0055715b

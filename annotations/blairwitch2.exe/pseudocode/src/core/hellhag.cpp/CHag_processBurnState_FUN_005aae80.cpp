@@ -76,8 +76,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
                            (((this_ptr->base).skeleton)->bone_list[0].bone_name + iStack_1c,
                             "Bip01");
         if (pcVar2 != (char *)0x0) {
-          core_xform_cpp_transformVector3x4_FUN_00591530
-                    (&g_CVector3f_0265370c,pCStack_24,&CStack_94);
+          core_xform_cpp_transformVector3x4_FUN_00591530(&g_ZeroVector,pCStack_24,&CStack_94);
           CStack_64.x = CStack_94.x;
           *(uint *)((int)&CStack_64 + (uint)bVar5 * -8 + 4) =
                *(uint *)((int)&CStack_94 + (uint)bVar5 * -8 + 4);
@@ -107,7 +106,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
                afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
           iVar1 = 2;
           fStack_34 = fStack_4c;
-          acceleration = &g_CVector3f_0265370c;
+          acceleration = &g_ZeroVector;
           afStack_30[1] = afStack_48[1];
           pCVar8 = &CStack_7c;
           position_offset = &CStack_70;

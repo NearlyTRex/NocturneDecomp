@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 004b30c0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004b30c0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004b5228
     MOV EDI,dword ptr [0x01d22c5c]      ; 004b522b | g_INT_01d22c5c
-    MOV [0x01d22c60],EAX                ; 004b5231 | g_INT_01d22c60
+    MOV [0x01d22c60],EAX                ; 004b5231 | g_HelpCharWidth
     PUSH 0x5c2248                       ; 004b5236 | = "Quick help"
     SHL EDI,0x2                         ; 004b523b
     SHL EAX,0x2                         ; 004b523e

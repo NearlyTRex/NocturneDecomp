@@ -23,14 +23,13 @@ void FUN_005c0a00(Heap *param_1)
            )))) && ((pHVar2 = *(Heap **)(g_INT_02c9f040 + 8), pHVar2 == (Heap *)0x0 ||
                     ((param_1 < pHVar2 ||
                      ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))) &&
-       ((pHVar1 = g_Heap_PTR_00626220, g_Heap_PTR_00626224 == (Heap *)0x0 ||
-        ((((param_1 < g_Heap_PTR_00626224 ||
-           (pHVar2 = g_Heap_PTR_00626224,
-           (Heap *)((int)&g_Heap_PTR_00626224->heap_size + g_Heap_PTR_00626224->heap_size) <=
-           param_1)) &&
-          ((pHVar2 = g_Heap_PTR_00626224->heap_base, pHVar2 == (Heap *)0x0 ||
+       ((pHVar1 = g_MainHeap, g_SecondaryHeap == (Heap *)0x0 ||
+        ((((param_1 < g_SecondaryHeap ||
+           (pHVar2 = g_SecondaryHeap,
+           (Heap *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= param_1)) &&
+          ((pHVar2 = g_SecondaryHeap->heap_base, pHVar2 == (Heap *)0x0 ||
            ((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))
-           )))) && ((pHVar2 = g_Heap_PTR_00626224->next_heap_block, pHVar2 == (Heap *)0x0 ||
+           )))) && ((pHVar2 = g_SecondaryHeap->next_heap_block, pHVar2 == (Heap *)0x0 ||
                     ((param_1 < pHVar2 ||
                      ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))))) {
       while (pHVar2 = pHVar1, pHVar2 != (Heap *)0x0) {
@@ -42,7 +41,7 @@ void FUN_005c0a00(Heap *param_1)
     else {
 LAB_005c0abc:
       FUN_005c6750();
-      if ((pHVar2 < g_Heap_PTR_00626224) && ((uint)g_INT_00626228 < pHVar2[1].next_heap_block)) {
+      if ((pHVar2 < g_SecondaryHeap) && ((uint)g_INT_00626228 < pHVar2[1].next_heap_block)) {
         g_INT_00626228 = (int)pHVar2[1].next_heap_block;
       }
       g_CHAR_ARRAY_02c9f690[0] = '\0';

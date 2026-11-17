@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   void* PTR_ExitProcess_005754b4 = 00175b8a
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af8 = 005671e4
-;   void* g_PTR_005c1b04 = 00000000
-;   int g_INT_02de4e30
+;   void* g_SpecialExitHandler = 00000000
+;   int g_EmergencyExitFlag
 ;
 ; Called Functions:
 ;   crt_exception.c_RemoveExceptionHandler_FUN_0056ef24
@@ -27,16 +27,16 @@
 
 section .text
 
-    CMP dword ptr [0x02de4e30],0x0      ; 005674b0 | g_INT_02de4e30
+    CMP dword ptr [0x02de4e30],0x0      ; 005674b0 | g_EmergencyExitFlag
         ;   Label: crt_exit.c_ExitProcess_FUN_005674b0
     JZ 0x005674d4                       ; 005674b7
         ;   XREF to: 005674d4 (CONDITIONAL_JUMP)  ; LAB_005674d4
-    CMP dword ptr [0x005c1b04],0x0      ; 005674b9 | g_PTR_005c1b04
+    CMP dword ptr [0x005c1b04],0x0      ; 005674b9 | g_SpecialExitHandler
     JZ 0x005674eb                       ; 005674c0
         ;   XREF to: 005674eb (CONDITIONAL_JUMP)  ; LAB_005674eb
     PUSH 0xff                           ; 005674c2
     PUSH 0x0                            ; 005674c7
-    CALL dword ptr [0x005c1b04]         ; 005674c9 | g_PTR_005c1b04
+    CALL dword ptr [0x005c1b04]         ; 005674c9 | g_SpecialExitHandler
     ADD ESP,0x8                         ; 005674cf
     JMP 0x005674eb                      ; 005674d2
         ;   XREF to: 005674eb (UNCONDITIONAL_JUMP)  ; LAB_005674eb

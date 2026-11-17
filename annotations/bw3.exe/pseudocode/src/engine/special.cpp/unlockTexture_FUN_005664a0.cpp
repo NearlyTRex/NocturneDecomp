@@ -11,9 +11,9 @@ int __cdecl engine_special_cpp_unlockTexture_FUN_005664a0(void)
 {
   int iVar1;
   
-  if (g_PTR_02cf6084 == (byte *)0x0) {
+  if (g_APIDLL_unlockTexture == (byte *)0x0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6084)();
+  iVar1 = (*(code *)g_APIDLL_unlockTexture)();
   return iVar1;
 }

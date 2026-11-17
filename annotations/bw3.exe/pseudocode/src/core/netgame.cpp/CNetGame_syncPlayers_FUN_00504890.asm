@@ -32,10 +32,10 @@
 ;   TerminatedCString s_Waiting_on_sync_code_d_f_005ca7bc
 ;   TerminatedCString s_core_netgame_cpp_005ca7e3
 ;   TerminatedCString s_CNetGame_syncPlayers_inv_005ca7f7
-;   double g_DOUBLE_005ca821 = 0.0000152587890625
-;   double g_DOUBLE_005ca829 = 30
-;   double g_DOUBLE_005ca831 = 0.100000000000000
-;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   double g_TimeoutScale = 0.0000152587890625
+;   double g_MaxTimeout = 30
+;   double g_SyncTimeout = 0.100000000000000
+;   CKeys* g_CKeysPtr = 01d70a78
 ;   void* g_PTR_01d70a78
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -82,10 +82,10 @@ section .text
     MOV EBX,0x12                        ; 005048c8
     SAR EDX,0x1f                        ; 005048cd
     IDIV EBX                            ; 005048d0
-    MOV ECX,dword ptr [0x01da6474]      ; 005048d2 | g_INT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 005048d2 | g_LastPingTime
     MOV EDX,EAX                         ; 005048d8
     SUB EAX,ECX                         ; 005048da
-    MOV dword ptr [0x01da6474],EDX      ; 005048dc | g_INT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 005048dc | g_LastPingTime
     TEST EAX,EAX                        ; 005048e2
     JL 0x00504b41                       ; 005048e4
         ;   XREF to: 00504b41 (CONDITIONAL_JUMP)  ; LAB_00504b41
@@ -201,7 +201,7 @@ section .text
     SUB EAX,EBX                         ; 00504a3b
     MOV dword ptr [ESP + 0x174],EAX     ; 00504a3d
     FILD dword ptr [ESP + 0x174]        ; 00504a44
-    FMUL double ptr [0x005ca821]        ; 00504a4b | g_DOUBLE_005ca821
+    FMUL double ptr [0x005ca821]        ; 00504a4b | g_TimeoutScale
     FST float ptr [ESP]                 ; 00504a51
     FLDZ                                ; 00504a54
     FCOMPP                              ; 00504a56
@@ -213,7 +213,7 @@ section .text
     MOV dword ptr [ESP],EDI             ; 00504a5f
     FLD float ptr [ESP]                 ; 00504a62
         ;   Label: LAB_00504a62
-    FCOMP double ptr [0x005ca829]       ; 00504a65 | g_DOUBLE_005ca829
+    FCOMP double ptr [0x005ca829]       ; 00504a65 | g_MaxTimeout
     FNSTSW AX                           ; 00504a6b
     SAHF                                ; 00504a6d
     JBE 0x00504a77                      ; 00504a6e
@@ -221,7 +221,7 @@ section .text
     MOV dword ptr [ESP],0x41f00000      ; 00504a70
     FLD float ptr [ESP]                 ; 00504a77
         ;   Label: LAB_00504a77
-    FCOMP double ptr [0x005ca831]       ; 00504a7a | g_DOUBLE_005ca831
+    FCOMP double ptr [0x005ca831]       ; 00504a7a | g_SyncTimeout
     FNSTSW AX                           ; 00504a80
     SAHF                                ; 00504a82
     JBE 0x00504ae7                      ; 00504a83
@@ -261,7 +261,7 @@ section .text
         ;   XREF to: 00504abb (CONDITIONAL_JUMP)  ; LAB_00504abb
     PUSH 0x1                            ; 00504ae7
         ;   Label: LAB_00504ae7
-    MOV EAX,[0x00600284]                ; 00504ae9 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 00504ae9 | g_CKeysPtr
     PUSH EAX                            ; 00504aee | g_PTR_01d70a78
     MOV EBX,dword ptr [EAX]             ; 00504aef | g_PTR_01d70a78
     CALL dword ptr [EBX + 0x4]          ; 00504af1
@@ -320,7 +320,7 @@ section .text
     XOR EDI,EDI                         ; 00504b64
     MOV EDX,dword ptr [EBP + 0x18]      ; 00504b66
         ;   Label: LAB_00504b66
-    CMP EDX,dword ptr [0x01da6480]      ; 00504b69 | g_INT_01da6480
+    CMP EDX,dword ptr [0x01da6480]      ; 00504b69 | g_RemoteSyncStage
     JLE 0x00504bf9                      ; 00504b6f
         ;   XREF to: 00504bf9 (CONDITIONAL_JUMP)  ; LAB_00504bf9
     CALL engine_special.cpp_clearScreen_FUN_00560d70 ; 00504b75
@@ -346,7 +346,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 ; 00504bac
         ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 00504bb1
-    MOV EAX,[0x00600284]                ; 00504bb4 | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 00504bb4 | g_CKeysPtr
     PUSH 0x1                            ; 00504bb9
     MOV EBX,dword ptr [EAX]             ; 00504bbb | g_PTR_01d70a78
     PUSH EAX                            ; 00504bbd | g_PTR_01d70a78

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_baron_cpp_CBaron_getActorType_FUN_004101c0(CBaron *this_ptr)
 
 {
-  return &g_CBaronActorType_00764330;
+  return &g_CBaronClassInfo;
 }

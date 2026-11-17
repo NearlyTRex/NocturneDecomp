@@ -7,9 +7,9 @@
 ; int *            Stack[0x4]:4   input_coords
 ;
 ; Referenced Globals:
-;   int g_INT_01c6e2cc
-;   int g_INT_01c6e2d0
-;   int g_INT_01c6e2d4
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   int g_INT_01c6e304
 ;   int g_INT_01c6e310
 ;   int g_INT_01c6e31c
@@ -22,15 +22,15 @@ section .text
         ;   Label: engine_matrix.c_calculateTransformedZ_FUN_004e54e0
     PUSH ESI                            ; 004e54e1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004e54e2
-    MOV EDX,dword ptr [0x01c6e2cc]      ; 004e54e6 | g_INT_01c6e2cc
+    MOV EDX,dword ptr [0x01c6e2cc]      ; 004e54e6 | g_RelativeX
     MOV EAX,dword ptr [EBX]             ; 004e54ec
     SUB EAX,EDX                         ; 004e54ee
-    MOV ECX,dword ptr [0x01c6e2d0]      ; 004e54f0 | g_INT_01c6e2d0
+    MOV ECX,dword ptr [0x01c6e2d0]      ; 004e54f0 | g_RelativeY
     MOV EDX,EAX                         ; 004e54f6
     MOV EAX,dword ptr [EBX + 0x4]       ; 004e54f8
     MOV ESI,dword ptr [EBX + 0x8]       ; 004e54fb
     SUB EAX,ECX                         ; 004e54fe
-    MOV EBX,dword ptr [0x01c6e2d4]      ; 004e5500 | g_INT_01c6e2d4
+    MOV EBX,dword ptr [0x01c6e2d4]      ; 004e5500 | g_RelativeZ
     MOV ECX,EAX                         ; 004e5506
     MOV EAX,[0x01c6e304]                ; 004e5508 | g_INT_01c6e304
     SUB ESI,EBX                         ; 004e550d

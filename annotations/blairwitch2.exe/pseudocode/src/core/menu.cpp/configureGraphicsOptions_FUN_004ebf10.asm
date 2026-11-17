@@ -138,7 +138,7 @@ section .text
     MOV dword ptr [ESP],EDX             ; 004ec01b
     PUSH 0x1d05620                      ; 004ec01e
     CALL core_moon.cpp_CMoon_update_FUN_005024a0 ; 004ec023
-        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
+        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ec028
     PUSH 0x1d05620                      ; 004ec02b
     MOV ESI,0x5dcc8d                    ; 004ec030 | = "tridx7.dll"
@@ -146,18 +146,18 @@ section .text
         ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00502510(CMoon * this_ptr)
     MOV EAX,[0x0061b5a8]                ; 004ec03a | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004ec03f
-    MOV EDI,0x61e180                    ; 004ec042 | g_CHAR_ARRAY_0061e180
+    MOV EDI,0x61e180                    ; 004ec042 | g_RendererDllPath
     MOV dword ptr [EAX + 0x15ae84],0x0  ; 004ec047 | g_CDemonSetInstance.rendering_mode
-    PUSH EDI                            ; 004ec051 | g_CHAR_ARRAY_0061e180
+    PUSH EDI                            ; 004ec051 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 004ec052 | = "tridx7.dll" | s_tridx7_dll_005dcc8d+2
         ;   Label: LAB_004ec052
-    MOV byte ptr [EDI],AL               ; 004ec054 | g_CHAR_ARRAY_0061e180 | g_CHAR_ARRAY_0061e180+2
+    MOV byte ptr [EDI],AL               ; 004ec054 | g_RendererDllPath | g_RendererDllPath+2
     CMP AL,0x0                          ; 004ec056
     JZ 0x004ec06a                       ; 004ec058
         ;   XREF to: 004ec06a (CONDITIONAL_JUMP)  ; LAB_004ec06a
     MOV AL,byte ptr [ESI + 0x1]         ; 004ec05a | s_tridx7_dll_005dcc8d+1 | s_tridx7_dll_005dcc8d+3
     ADD ESI,0x2                         ; 004ec05d
-    MOV byte ptr [EDI + 0x1],AL         ; 004ec060 | g_CHAR_ARRAY_0061e180+1 | g_CHAR_ARRAY_0061e180+3
+    MOV byte ptr [EDI + 0x1],AL         ; 004ec060 | g_RendererDllPath+1 | g_RendererDllPath+3
     ADD EDI,0x2                         ; 004ec063
     CMP AL,0x0                          ; 004ec066
     JNZ 0x004ec052                      ; 004ec068
@@ -269,7 +269,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004ec1f6
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ec1fb
-    CMP byte ptr [0x0061e180],0x0       ; 004ec1fe | g_CHAR_ARRAY_0061e180
+    CMP byte ptr [0x0061e180],0x0       ; 004ec1fe | g_RendererDllPath
     JNZ 0x004ec529                      ; 004ec205
         ;   XREF to: 004ec529 (CONDITIONAL_JUMP)  ; LAB_004ec529
     PUSH 0x5dcd98                       ; 004ec20b | = "3D API : None"
@@ -510,7 +510,7 @@ section .text
     MOV dword ptr [EAX],0x280           ; 004ec467 | g_CGameInstance
     PUSH 0x1                            ; 004ec46d
         ;   Label: caseD_2
-    MOV EAX,[0x00617dd4]                ; 004ec46f | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ec46f | g_CKeysPtr
     PUSH EAX                            ; 004ec474 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004ec475 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004ec477
@@ -587,7 +587,7 @@ section .text
         ;   XREF to: 004ec1e8 (UNCONDITIONAL_JUMP)  ; LAB_004ec1e8
     PUSH 0x5dcda6                       ; 004ec529 | = "trid3d.dll"
         ;   Label: LAB_004ec529
-    PUSH 0x61e180                       ; 004ec52e | g_CHAR_ARRAY_0061e180
+    PUSH 0x61e180                       ; 004ec52e | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004ec533
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ec538
@@ -599,7 +599,7 @@ section .text
         ;   XREF to: 004ec210 (UNCONDITIONAL_JUMP)  ; LAB_004ec210
     PUSH 0x5dcdc4                       ; 004ec549 | = "tridx6.dll"
         ;   Label: LAB_004ec549
-    PUSH 0x61e180                       ; 004ec54e | g_CHAR_ARRAY_0061e180
+    PUSH 0x61e180                       ; 004ec54e | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004ec553
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ec558
@@ -611,7 +611,7 @@ section .text
         ;   XREF to: 004ec210 (UNCONDITIONAL_JUMP)  ; LAB_004ec210
     PUSH 0x5dcde2                       ; 004ec569 | = "tridx7.dll"
         ;   Label: LAB_004ec569
-    PUSH 0x61e180                       ; 004ec56e | g_CHAR_ARRAY_0061e180
+    PUSH 0x61e180                       ; 004ec56e | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004ec573
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ec578
@@ -623,7 +623,7 @@ section .text
         ;   XREF to: 004ec210 (UNCONDITIONAL_JUMP)  ; LAB_004ec210
     PUSH 0x5dce00                       ; 004ec589 | = "tri3dfx.dll"
         ;   Label: LAB_004ec589
-    PUSH 0x61e180                       ; 004ec58e | g_CHAR_ARRAY_0061e180
+    PUSH 0x61e180                       ; 004ec58e | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004ec593
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ec598
@@ -1015,7 +1015,7 @@ section .text
         ;   Label: LAB_004ec9b2
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 004ec9b8
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    MOV EAX,[0x01c2a380]                ; 004ec9bd | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 004ec9bd | g_MouseY
     MOV EBX,0xc000                      ; 004ec9c2
     PUSH EAX                            ; 004ec9c7
     MOV EAX,[0x006141b8]                ; 004ec9c8 | g_INT_006141b8
@@ -1035,7 +1035,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 ; 004ec9f1
         ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004ec9f6
-    MOV EDX,dword ptr [0x01c2a37c]      ; 004ec9f9 | g_INT_01c2a37c
+    MOV EDX,dword ptr [0x01c2a37c]      ; 004ec9f9 | g_MouseX
     CMP EDX,dword ptr [ESP + 0x230]     ; 004ec9ff
     JZ 0x004eca2c                       ; 004eca06
         ;   XREF to: 004eca2c (CONDITIONAL_JUMP)  ; LAB_004eca2c
@@ -1046,11 +1046,11 @@ section .text
     IMUL EDX                            ; 004eca16
     IDIV EBX                            ; 004eca18
     LEA ESI,[EAX + 0x3fff]              ; 004eca1a
-    MOV EAX,[0x01c2a37c]                ; 004eca20 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 004eca20 | g_MouseX
     MOV dword ptr [ESP + 0x230],EAX     ; 004eca25
     PUSH 0x4b                           ; 004eca2c
         ;   Label: LAB_004eca2c
-    MOV EAX,[0x00617dd4]                ; 004eca2e | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eca2e | g_CKeysPtr
     PUSH EAX                            ; 004eca33 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eca34 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004eca36
@@ -1061,7 +1061,7 @@ section .text
     SUB ESI,0x2bc                       ; 004eca40
     PUSH 0x4d                           ; 004eca46
         ;   Label: LAB_004eca46
-    MOV EAX,[0x00617dd4]                ; 004eca48 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004eca48 | g_CKeysPtr
     PUSH EAX                            ; 004eca4d | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004eca4e | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004eca50
@@ -1083,7 +1083,7 @@ section .text
     MOV EAX,[0x01c35e54]                ; 004eca83 | g_INT_01c35e54
     PUSH 0x0                            ; 004eca88
     DEC EAX                             ; 004eca8a
-    MOV EBX,dword ptr [0x01c35e50]      ; 004eca8b | g_INT_01c35e50
+    MOV EBX,dword ptr [0x01c35e50]      ; 004eca8b | g_ClipRight
     PUSH EAX                            ; 004eca91
     DEC EBX                             ; 004eca92
     MOV dword ptr [ESP + 0x244],EAX     ; 004eca93
@@ -1123,7 +1123,7 @@ section .text
     PUSH 0xff                           ; 004ecb05
     MOV EDX,dword ptr [0x01c35e4c]      ; 004ecb0a | g_INT_01c35e4c
     PUSH 0x41                           ; 004ecb10
-    MOV EDI,dword ptr [0x01c25590]      ; 004ecb12 | g_CBitFont_PTR_01c25590
+    MOV EDI,dword ptr [0x01c25590]      ; 004ecb12 | g_EditorFont
     MOV EBX,dword ptr [0x01c35e54]      ; 004ecb18 | g_INT_01c35e54
     PUSH EDI                            ; 004ecb1e
     ADD EBX,EDX                         ; 004ecb1f
@@ -1137,11 +1137,11 @@ section .text
     SAR EAX,0x1                         ; 004ecb31
     ADD ESP,0x8                         ; 004ecb33
     PUSH EAX                            ; 004ecb36
-    MOV EAX,[0x01c35e50]                ; 004ecb37 | g_INT_01c35e50
+    MOV EAX,[0x01c35e50]                ; 004ecb37 | g_ClipRight
     PUSH EAX                            ; 004ecb3c
     MOV EDX,dword ptr [0x01c35e48]      ; 004ecb3d | g_INT_01c35e48
     PUSH EDX                            ; 004ecb43
-    MOV ECX,dword ptr [0x01c25590]      ; 004ecb44 | g_CBitFont_PTR_01c25590
+    MOV ECX,dword ptr [0x01c25590]      ; 004ecb44 | g_EditorFont
     PUSH ECX                            ; 004ecb4a
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0 ; 004ecb4b
         ;   XREF to: 004a93f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -1149,7 +1149,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004ecb53
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     PUSH 0x1                            ; 004ecb58
-    MOV EAX,[0x00617dd4]                ; 004ecb5a | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ecb5a | g_CKeysPtr
     PUSH EAX                            ; 004ecb5f | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004ecb60 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004ecb62
@@ -1158,7 +1158,7 @@ section .text
     JNZ 0x004ecb86                      ; 004ecb6a
         ;   XREF to: 004ecb86 (CONDITIONAL_JUMP)  ; LAB_004ecb86
     PUSH 0x1c                           ; 004ecb6c
-    MOV EAX,[0x00617dd4]                ; 004ecb6e | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ecb6e | g_CKeysPtr
     PUSH EAX                            ; 004ecb73 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004ecb74 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004ecb76
@@ -1202,7 +1202,7 @@ section .text
         ;   XREF to: 004eca71 (UNCONDITIONAL_JUMP)  ; LAB_004eca71
     PUSH 0x200                          ; 004ecbee
         ;   Label: LAB_004ecbee
-    MOV EAX,[0x00617dd4]                ; 004ecbf3 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004ecbf3 | g_CKeysPtr
     PUSH EAX                            ; 004ecbf8 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004ecbf9 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004ecbfb

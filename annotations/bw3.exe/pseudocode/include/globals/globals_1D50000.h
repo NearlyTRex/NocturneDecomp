@@ -21,7 +21,7 @@ extern CDemonActorType g_CHealClassInfo;
 extern CDemonActorType g_CHealthItemClassInfo;
 extern CDemonActorType g_CDemonActorType_01d5b9b8;
 extern CDemonActorType g_CHeroClassInfo;
-extern CDemonActorType g_CDemonActorType_01d5ba74;
+extern CDemonActorType g_CHeroPlaceholderClassInfo;
 extern CDemonActorType g_CHolycrossClassInfo;
 extern CDemonActorType g_CHotDemonClassInfo;
 extern CDemonActorType g_CDemonActorType_01d5bb58;
@@ -36,10 +36,10 @@ extern CGround g_CGroundInstance;
 extern CHero* g_CHero_PTR_ARRAY_01d5ba04[4];
 
 // CIni
-extern CIni g_CIni_01d5bc78;
+extern CIni g_CIniInstance;
 
 // SInventoryItemInfo[100]
-extern SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01d5dc90[100];
+extern SInventoryItemInfo g_ItemDefinitionArray[100];
 
 // char
 extern char g_CHAR_01d5be88;
@@ -54,12 +54,12 @@ extern char g_CHAR_ARRAY_01d5bd80[256];
 extern float g_FLOAT_01d5be80;
 
 // int
-extern int g_INT_01d5ba00;
+extern int g_HeroCount;
 extern int g_INT_01d5ba14;
 extern int g_INT_01d5bc7c;
-extern int g_INT_01d5dc88;
+extern int g_ItemDefinitionCount;
 
 // int[12]
-extern int g_INT_ARRAY_01d5baec[12];
-extern int g_INT_ARRAY_01d5bc0c[12];
+extern int g_HotDemonIndices[12];
+extern int g_ImpIndices[12];
 

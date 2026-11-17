@@ -33,22 +33,19 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004d1a80(CGame *this_ptr)
   iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_0061f2a4,this_ptr->key_map);
   if (iVar5 != 0) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"GoToMap");
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,"GoToMap");
   }
   iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_0061f2a4,this_ptr->key_compass);
   if (iVar5 != 0) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"GoToCompass");
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,"GoToCompass");
   }
   iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_0061f2a4,this_ptr->key_sps);
   if ((iVar5 != 0) &&
      (iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL),
      iVar5 == 0)) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"UseSPS");
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,"UseSPS");
   }
   iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_0061f2a4,this_ptr->key_field_notes);
@@ -110,7 +107,7 @@ LAB_004d1aac:
       core_sound_cpp_CSound_init_FUN_0057cc00(g_CSound_PTR_006236b8);
     }
     else {
-      g_BIT_INTEGER32_01c43544.dword = 0;
+      g_MouseButtonFlags.dword = 0;
       core_sound_cpp_CSound_shutdown_FUN_0057cdb0(g_CSound_PTR_006236b8);
     }
   }
@@ -126,7 +123,7 @@ LAB_004d1aac:
   if ((iVar5 != 0) &&
      (iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_M),
      iVar5 != 0)) {
-    g_INT_01d39d34 = (int)(g_INT_01d39d34 == 0);
+    g_RenderMotionDebug = (int)(g_RenderMotionDebug == 0);
   }
   if (((this_ptr->subtitle_system_enabled == 0) &&
       (iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_F5),
@@ -159,7 +156,7 @@ LAB_004d1aac:
     core_set_cpp_CDemonSet_reinitCamera_FUN_0054fbf0
               (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar5);
   }
-  if (((this_ptr->developer_mode_enabled != 0) && (g_INT_01cd0c38 == 0)) &&
+  if (((this_ptr->developer_mode_enabled != 0) && (g_MovieRecordingArmed == 0)) &&
      ((iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL),
       iVar5 != 0 &&
       ((iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_V),

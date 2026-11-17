@@ -53,7 +53,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_00425aa0(CCha
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
                   (g_CDemonRenderer_PTR_0060b280,&local_38,translation);
         core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-                  (&g_CKeyFramedModelInstance_007bdadc,0.0,-1);
+                  (&g_StakeModelInstance,0.0,-1);
         engine_drender_cpp_pop_FUN_0046b4a0();
       }
       iVar3 = iVar3 + 1;

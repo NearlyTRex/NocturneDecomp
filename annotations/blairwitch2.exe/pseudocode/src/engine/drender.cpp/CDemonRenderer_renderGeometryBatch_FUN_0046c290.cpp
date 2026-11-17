@@ -27,20 +27,20 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
   }
   if (this_ptr->shadow_pass_active == 0) {
     if (render_mode == 0xc0) {
-      g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyReversed_FUN_0046e8f0;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyReversed_FUN_0046e8f0;
     }
     else if (g_INT_006141c0 == 0x20) {
-      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
     else {
-      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
-    g_INT_01c38b58 = 6;
-    g_BIT_INTEGER32_01c38b54 = (_BIT_INTEGER32)render_mode;
+    g_VertexPreprocessMode = 6;
+    g_RenderStateFlags = (_BIT_INTEGER32)render_mode;
     if (0 < face_count) {
       iStack_14 = vertices_per_face * 2;
       do {
-        while ((g_INT_0070ca7c != 0 &&
+        while ((g_CullingMode != 0 &&
                (pSVar4 = this_ptr->vertex_buffer_ptr + vertex_indices[1],
                iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
                                  (this_ptr->vertex_buffer_ptr + *vertex_indices,pSVar4,pSVar4),
@@ -64,15 +64,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
           } while (iVar3 < vertices_per_face);
         }
         if ((this_ptr->face_capture_enabled == 0) &&
-           (((this_ptr->shadow_pass_active != 0 && ((g_BIT_INTEGER32_01c38b54.dword & 1) == 0)) ||
-            ((g_BIT_INTEGER32_01c38b54.dword & 5) == 0)))) {
+           (((this_ptr->shadow_pass_active != 0 && ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0)) ||
+            ((g_RenderStateFlags.dword & (RENDER_TEX_ENABLE | RENDER_FOG_COLOR)) == 0)))) {
           core_xform_cpp_transformAndClipGeometry_FUN_00594f40(iVar3,&aCStack_68[0].x);
           if (2 < g_INT_007bee30) {
             engine_zraster_c_rasterizeTriangle_FUN_0059a0b0
                       (g_SRenderVertex_ARRAY_007bee34,g_INT_007bee30);
           }
         }
-        else if ((g_BIT_INTEGER32_01c38b54.dword & 0x200) == 0) {
+        else if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
           engine_clipper_c_clipAndRasterize_FUN_00431d90(iVar3,&aCStack_68[0].x);
         }
         else {
@@ -87,13 +87,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
     }
   }
   else {
-    g_BIT_INTEGER32_01c38b54.dword = 0;
-    g_INT_01c38b58 = 0;
-    g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+    g_RenderStateFlags.dword = 0;
+    g_VertexPreprocessMode = 0;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
     if (0 < face_count) {
       iStack_18 = vertices_per_face * 2;
       do {
-        if ((g_INT_0070ca7c == 0) ||
+        if ((g_CullingMode == 0) ||
            (pSVar4 = this_ptr->vertex_buffer_ptr + vertex_indices[1],
            iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
                              (this_ptr->vertex_buffer_ptr + *vertex_indices,pSVar4,pSVar4),

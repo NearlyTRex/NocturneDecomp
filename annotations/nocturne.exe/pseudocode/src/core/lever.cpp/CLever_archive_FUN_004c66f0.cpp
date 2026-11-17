@@ -16,7 +16,7 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_004c66f0(CLever *this_ptr)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   pcVar3 = local_d4;
-  if (g_INT_00763e88 == 1) {
+  if (g_ActorReadingMode == 1) {
     core_actor_cpp_archiveString_FUN_0040c6d0(local_d4,"modelName");
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(&this_ptr->model,local_d4);
   }
@@ -38,29 +38,29 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_004c66f0(CLever *this_ptr)
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->off_event,"offEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->sound,"sound");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
-  if (1 < INT_005bacbc) {
+  if (1 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->momentary_flag,"momentaryFlag");
   }
-  if (2 < INT_005bacbc) {
+  if (2 < g_CLeverClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980
               ((CDemonActor **)&this_ptr->linked_lever,"linkedLever");
   }
-  if (3 < INT_005bacbc) {
+  if (3 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->end_vertex_index,"endVertexIndex");
   }
-  if (4 < INT_005bacbc) {
+  if (4 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->moving,"moving");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->move_to_pct,"moveToPct");
   }
-  if (5 < INT_005bacbc) {
+  if (5 < g_CLeverClassVersion) {
     core_actor_cpp_archiveRules_FUN_0040d110(&this_ptr->rule,"rules");
   }
-  if (6 < INT_005bacbc) {
+  if (6 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               ((int *)&this_ptr->allowed_sides,"allowedSides");
   }
-  if (INT_005bacbc < 8) {
+  if (g_CLeverClassVersion < 8) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->enable_collision,"enableCollision")

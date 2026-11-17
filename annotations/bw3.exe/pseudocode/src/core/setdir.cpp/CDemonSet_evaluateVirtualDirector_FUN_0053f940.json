@@ -352,7 +352,7 @@
     },
     {
       "addr": "01c60dac",
-      "name": "g_UINT_PTR_ARRAY_01c60dac",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     },
@@ -744,15 +744,15 @@
       "line": 283,
       "match": "&stack0xfffffc70",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffc70 + iVar9) =",
+      "text": "*(uint *)(&stack0xfffffc70 + iVar9) = *(uint *)((int)g_ZBufferScanlineArray + iVar9)",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 284,
-      "match": "(uint *)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "line": 283,
+      "match": "(uint *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9);",
+      "text": "*(uint *)(&stack0xfffffc70 + iVar9) = *(uint *)((int)g_ZBufferScanlineArray + iVar9)",
       "type": "pointer_cast"
     },
     {
@@ -814,17 +814,17 @@
     {
       "description": "Complex pointer cast",
       "line": 485,
-      "match": "(byte **)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(byte **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar7) = puVar12;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar7) = puVar12;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 544,
-      "match": "(char **)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(char **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(char **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) = pcVar11;",
+      "text": "*(char **)((int)g_ZBufferScanlineArray + iVar9) = pcVar11;",
       "type": "pointer_cast"
     },
     {
@@ -838,9 +838,9 @@
     {
       "description": "Complex pointer cast",
       "line": 570,
-      "match": "(uint **)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(uint **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "puVar15 = *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9);",
+      "text": "puVar15 = *(uint **)((int)g_ZBufferScanlineArray + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -862,26 +862,26 @@
     {
       "description": "Complex pointer cast",
       "line": 582,
-      "match": "(uint **)((int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(uint **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) = puVar14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 630,
-      "match": "(uint *)((int)g_UINT_PTR_ARRAY_01c60dac",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) =",
+      "text": "*(uint **)((int)g_ZBufferScanlineArray + iVar9) = puVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 631,
+      "line": 630,
       "match": "&stack0xfffffc70",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffc70 + iVar9);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9) = *(uint *)(&stack0xfffffc70 + iVar9)",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 630,
+      "match": "(uint *)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9) = *(uint *)(&stack0xfffffc70 + iVar9)",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -1004,11 +1004,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 284,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 283,
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9);",
+      "text": "*(uint *)(&stack0xfffffc70 + iVar9) = *(uint *)((int)g_ZBufferScanlineArray + iVar9)",
       "type": "pointer_truncation"
     },
     {
@@ -1020,27 +1020,27 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 485,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar7) = puVar12;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar7) = puVar12;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 544,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(char **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) = pcVar11;",
+      "text": "*(char **)((int)g_ZBufferScanlineArray + iVar9) = pcVar11;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 570,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "puVar15 = *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9);",
+      "text": "puVar15 = *(uint **)((int)g_ZBufferScanlineArray + iVar9);",
       "type": "pointer_truncation"
     },
     {
@@ -1060,19 +1060,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 582,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) = puVar14;",
+      "text": "*(uint **)((int)g_ZBufferScanlineArray + iVar9) = puVar14;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c60dac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 630,
-      "match": "(int)g_UINT_PTR_ARRAY_01c60dac",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar9) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9) = *(uint *)(&stack0xfffffc70 + iVar9)",
       "type": "pointer_truncation"
     },
     {

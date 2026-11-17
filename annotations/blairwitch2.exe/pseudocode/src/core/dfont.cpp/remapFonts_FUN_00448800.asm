@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01511cb8
+;   CBitFont* g_MediumFont
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_remapPalette_FUN_004ab630
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01511cb8]      ; 00448800 | g_CBitFont_PTR_01511cb8
+    MOV EDX,dword ptr [0x01511cb8]      ; 00448800 | g_MediumFont
         ;   Label: core_dfont.cpp_remapFonts_FUN_00448800
     PUSH EDX                            ; 00448806
     CALL engine_font.cpp_CBitFont_remapPalette_FUN_004ab630 ; 00448807

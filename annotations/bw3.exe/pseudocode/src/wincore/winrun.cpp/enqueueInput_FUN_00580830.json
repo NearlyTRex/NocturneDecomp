@@ -44,19 +44,19 @@
   "globals": [
     {
       "addr": "02d202d4",
-      "name": "g_INT_ARRAY_02d202d4",
+      "name": "g_UseMultimediaTimer",
       "type": "int[1]",
       "value": null
     },
     {
       "addr": "02d20328",
-      "name": "g_INT_02d20328",
+      "name": "g_InputReadIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02d2032c",
-      "name": "g_INT_02d2032c",
+      "name": "g_InputWriteIndex",
       "type": "int",
       "value": null
     }
@@ -162,16 +162,16 @@
   },
   "suspects": [
     {
-      "description": "Compiler displaced index base: [reg*4 + 0x2d202d4] lands in g_INT_ARRAY_02d202d4 but intended target is g_INT_ARRAY_02d202d8 at 0x2d202d8 (displaced by 4 bytes)",
-      "displaced_from": "g_INT_ARRAY_02d202d4",
+      "description": "Compiler displaced index base: [reg*4 + 0x2d202d4] lands in g_UseMultimediaTimer but intended target is g_InputBuffer at 0x2d202d8 (displaced by 4 bytes)",
+      "displaced_from": "g_UseMultimediaTimer",
       "displacement": "0x2d202d4",
       "instruction_address": "",
-      "intended_global": "g_INT_ARRAY_02d202d8",
+      "intended_global": "g_InputBuffer",
       "line": 7,
       "match": "0x2d202d4",
       "scale": 4,
       "severity": "moderate",
-      "text": "// 00580842: MOV dword ptr [EDX*0x4 + 0x2d202d4],EBX  ; g_INT_ARRAY_02d202d4",
+      "text": "// 00580842: MOV dword ptr [EDX*0x4 + 0x2d202d4],EBX  ; g_UseMultimediaTimer",
       "type": "displaced_global_access"
     }
   ]

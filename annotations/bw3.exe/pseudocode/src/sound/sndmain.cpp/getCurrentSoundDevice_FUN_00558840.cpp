@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_00558840(void)
 
 {
-  return g_INT_0060423c;
+  return g_CurrentSoundDevice;
 }

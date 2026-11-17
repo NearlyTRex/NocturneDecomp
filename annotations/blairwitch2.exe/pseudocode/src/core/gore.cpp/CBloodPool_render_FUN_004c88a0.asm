@@ -34,7 +34,7 @@
 ;   double g_DOUBLE_005d94da = 8
 ;   float g_FLOAT_005f7ba8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic[116] g_SMRGLTextureBasic_ARRAY_00616e68
+;   SMRGLTextureBasic[116] g_BloodPoolAnimTextures
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].r
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].b
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 0046b2b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     IMUL EAX,dword ptr [ESI + 0x14],0x2b8 ; 004c88f4
     ADD ESP,0x8                         ; 004c88fb
-    MOV EDX,0x616e68                    ; 004c88fe | g_SMRGLTextureBasic_ARRAY_00616e68
+    MOV EDX,0x616e68                    ; 004c88fe | g_BloodPoolAnimTextures
     MOV EBX,dword ptr [ESP + 0x48]      ; 004c8903
     ADD EDX,EAX                         ; 004c8907
     LEA EAX,[EBX*0x4 + 0x0]             ; 004c8909

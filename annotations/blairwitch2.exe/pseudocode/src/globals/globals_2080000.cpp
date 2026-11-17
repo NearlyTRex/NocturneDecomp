@@ -5,7 +5,7 @@
 // =============================================================================
 
 // SDisplayListSortEntry[2000]
-SDisplayListSortEntry g_SDisplayListSortEntry_ARRAY_0208f778[2000] = {};
+SDisplayListSortEntry g_SetDisplayListSortBuffer[2000] = {};
 
 // int
 int g_INT_0208f774 = {};

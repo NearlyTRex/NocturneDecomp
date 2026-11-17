@@ -12,7 +12,7 @@
 ;   double g_DOUBLE_005d1805 = 32
 ;   double g_DOUBLE_005d180d = 0.850000000000000
 ;   float g_FLOAT_005d1815 = 20
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;
 ; Called Functions:
@@ -200,7 +200,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0046d34e
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xcc],EAX      ; 0046d353
-    MOV EDX,dword ptr [0x00614d30]      ; 0046d35a | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 0046d35a | g_CFireEffectPtr
     FLD float ptr [ESP + 0xcc]          ; 0046d360
     ADD ESP,0x8                         ; 0046d367
     LEA EAX,[ESP + 0x9c]                ; 0046d36a
@@ -272,7 +272,7 @@ section .text
     LEA EAX,[ESP + 0x94]                ; 0046d477
     PUSH EAX                            ; 0046d47e
     PUSH ESI                            ; 0046d47f
-    MOV ECX,dword ptr [0x00614d30]      ; 0046d480 | g_CFireEffect_PTR_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0046d480 | g_CFireEffectPtr
     PUSH ECX                            ; 0046d486
     INC EDI                             ; 0046d487
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0 ; 0046d488

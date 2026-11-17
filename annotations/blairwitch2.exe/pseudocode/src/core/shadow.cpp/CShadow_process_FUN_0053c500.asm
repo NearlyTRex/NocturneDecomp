@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_shadow_cpp_CShadow_process_FUN_0053c500(CShadow *this_ptr,float param_2)
+; void __cdecl core_shadow_cpp_CShadow_process_FUN_0053c500(CShadow *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CShadow *        Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0053c4a0 = 0053d10d
@@ -630,7 +630,7 @@ section .text
     ADD EAX,EBX                         ; 0053cc79
     PUSH 0x3ecccccd                     ; 0053cc7b
     PUSH EAX                            ; 0053cc80
-    PUSH 0x265370c                      ; 0053cc81 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0053cc81 | g_ZeroVector
     LEA ESI,[EBP + 0xffffff2e]          ; 0053cc86
     LEA EDI,[EBP + 0xffffff5e]          ; 0053cc8c
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0053cc92
@@ -679,7 +679,7 @@ section .text
     ADD EBX,EAX                         ; 0053cd21
     PUSH 0x3ecccccd                     ; 0053cd23
     PUSH EBX                            ; 0053cd28
-    PUSH 0x265370c                      ; 0053cd29 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0053cd29 | g_ZeroVector
     LEA ESI,[EBP + 0xfffffeda]          ; 0053cd2e
     LEA EDI,[EBP + 0xffffff76]          ; 0053cd34
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0053cd3a

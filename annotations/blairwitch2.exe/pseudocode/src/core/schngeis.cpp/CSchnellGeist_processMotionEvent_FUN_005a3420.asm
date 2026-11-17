@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 005a345c
     PUSH EBX                            ; 005a345d
     CALL core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880 ; 005a345e
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int param_2)
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int event_id)
     ADD ESP,0x8                         ; 005a3463
     POP EBP                             ; 005a3466
     POP EDI                             ; 005a3467
@@ -83,7 +83,7 @@ section .text
     PUSH EDI                            ; 005a349b
     PUSH EBX                            ; 005a349c
     CALL core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880 ; 005a349d
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int param_2)
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int event_id)
     ADD ESP,0x8                         ; 005a34a2
     POP EBP                             ; 005a34a5
     POP EDI                             ; 005a34a6

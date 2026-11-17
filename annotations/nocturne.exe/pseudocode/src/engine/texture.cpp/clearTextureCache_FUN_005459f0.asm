@@ -10,7 +10,7 @@
 ;   engine_pod.cpp_CPod_dismount_FUN_004f8a10 at 004f8ace
 ;
 ; Referenced Globals:
-;   CTextureCache* g_CTextureCache_PTR_02dd0f84
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60
@@ -19,7 +19,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02dd0f84]      ; 005459f0 | g_CTextureCache_PTR_02dd0f84
+    MOV EDX,dword ptr [0x02dd0f84]      ; 005459f0 | g_TextureCacheInstance
         ;   Label: engine_texture.cpp_clearTextureCache_FUN_005459f0
     PUSH EDX                            ; 005459f6
     CALL engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60 ; 005459f7

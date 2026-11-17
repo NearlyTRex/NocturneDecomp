@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder *this_ptr,byte *param_2)
+; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder *this_ptr,byte *find_data)
 ;
 ; Parameters:
 ; CFileFinder *    Stack[0x4]:4   this_ptr
-; byte *           Stack[0x8]:4   param_2
+; byte *           Stack[0x8]:4   find_data
 ;
 ; XREF[2]:
 ;   engine_dosio.cpp_CFileFinder_findNext_FUN_004793e0 at 00479436

@@ -43,14 +43,14 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc4b0(CInventory *this_ptr,_FIL
   pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      pcVar8 = g_CHAR_ARRAY_00617cd8;
+      pcVar8 = g_DefaultInventoryKey;
       pcVar9 = local_dc;
       for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
         *(uint *)pcVar9 = *(uint *)pcVar8;
         pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
         pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
-      pcVar8 = g_CHAR_ARRAY_00617d40;
+      pcVar8 = g_DefaultInventoryValue;
       pcVar9 = local_78;
       for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
         *(uint *)pcVar9 = *(uint *)pcVar8;

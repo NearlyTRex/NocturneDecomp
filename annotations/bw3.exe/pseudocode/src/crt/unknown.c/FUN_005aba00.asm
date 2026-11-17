@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d8 = 005a7f44
-;   SIOControlBlock* g_SIOControlBlock_PTR_00607bdc = 00000000
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;   int g_INT_00607be0 = 0x0
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 005aba41 (CONDITIONAL_JUMP)  ; LAB_005aba41
     LEA ECX,[EDX*0x4 + 0x0]             ; 005aba13
     XOR EAX,EAX                         ; 005aba1a
-    MOV EDX,dword ptr [0x00607bdc]      ; 005aba1c | g_SIOControlBlock_PTR_00607bdc
+    MOV EDX,dword ptr [0x00607bdc]      ; 005aba1c | g_IOControlBlock
         ;   Label: LAB_005aba1c
     ADD EDX,EAX                         ; 005aba22
     CMP dword ptr [EDX],0x0             ; 005aba24
@@ -56,14 +56,14 @@ section .text
     INC EAX                             ; 005aba46
     SHL EAX,0x2                         ; 005aba47
     PUSH EAX                            ; 005aba4a
-    MOV EBX,dword ptr [0x00607bdc]      ; 005aba4b | g_SIOControlBlock_PTR_00607bdc
+    MOV EBX,dword ptr [0x00607bdc]      ; 005aba4b | g_IOControlBlock
     PUSH EBX                            ; 005aba51
     CALL crt_memory.c_realloc_FUN_005a3e50 ; 005aba52
         ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     MOV EDX,dword ptr [0x00607be0]      ; 005aba57 | g_INT_00607be0
     MOV ECX,dword ptr [0x00607be0]      ; 005aba5d | g_INT_00607be0
     ADD ESP,0x8                         ; 005aba63
-    MOV [0x00607bdc],EAX                ; 005aba66 | g_SIOControlBlock_PTR_00607bdc
+    MOV [0x00607bdc],EAX                ; 005aba66 | g_IOControlBlock
     SHL EDX,0x2                         ; 005aba6b
     INC ECX                             ; 005aba6e
     ADD EAX,EDX                         ; 005aba6f

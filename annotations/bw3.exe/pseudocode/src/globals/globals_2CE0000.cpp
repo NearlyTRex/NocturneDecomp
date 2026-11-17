@@ -17,12 +17,12 @@ CSfxSlot g_CSfxSlot_ARRAY_02ce721c[64] = {};
 byte g_BYTE_02ce71e8 = {};
 
 // float
-float g_FLOAT_02ce7210 = {};
+float g_SoundReferenceVolumeDistance = {};
 
 // int
-int g_INT_02ce71ec = {};
+int g_ShutdownInProgress = {};
 int g_INT_02ce7214 = {};
 int g_INT_02ce7218 = {};
-int g_INT_02ceb91c = {};
-int g_INT_02cebc20 = {};
+int g_SfxLastSlot = {};
+int g_LastSampleAccessIndex = {};
 

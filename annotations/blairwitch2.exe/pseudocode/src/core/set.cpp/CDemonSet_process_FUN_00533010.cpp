@@ -28,7 +28,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_00533010(CDemonSet *this_ptr)
           return;
         }
         local_18 = 0;
-        if (0 < g_INT_01fc8e84) {
+        if (0 < g_SpotLightCount) {
           iVar1 = 0;
           do {
             if (light == *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar1)) {
@@ -36,18 +36,16 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_00533010(CDemonSet *this_ptr)
               break;
             }
             iVar1 = iVar1 + 4;
-          } while (iVar1 < g_INT_01fc8e84 * 4);
+          } while (iVar1 < g_SpotLightCount * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_0053b8d0(this_ptr_00,light,local_18);
         _sprintf(local_118,"%son");
-        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (g_CEventList_PTR_006141f0,local_118);
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 1;
         }
         _sprintf(local_118,"%soff");
-        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (g_CEventList_PTR_006141f0,local_118);
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 0;
         }

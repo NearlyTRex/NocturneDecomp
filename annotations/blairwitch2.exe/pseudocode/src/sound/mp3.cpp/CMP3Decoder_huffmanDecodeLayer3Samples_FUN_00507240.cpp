@@ -38,31 +38,31 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
   
   bVar11 = 0;
   local_34 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
-  if (g_INT_01d1edd0 == 0) {
-    local_18 = g_INT_01d1edd0;
+  if (g_HuffmanTablesInitialized == 0) {
+    local_18 = g_HuffmanTablesInitialized;
     iVar8 = 0;
     iVar6 = 0;
-    local_1c = g_SHuffmanTable_ARRAY_01d23658;
+    local_1c = g_HuffmanTables;
     do {
       pSVar4 = local_1c;
       _sprintf(local_1c->table_id,"%d");
-      *(uint *)(g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + 0x804) =
-           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_0061ade0[0].table_size + local_18);
-      *(uint *)(g_SHuffmanTable_ARRAY_01d23658[0].table_id + iVar8 + 4) =
-           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_0061ade0[0].xlen + local_18);
-      *(uint *)(g_SHuffmanTable_ARRAY_01d23658[0].table_id + iVar8 + 8) =
-           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_0061ade0[0].ylen + local_18);
-      *(uint *)(g_SHuffmanTable_ARRAY_01d23658[0].table_id + iVar8 + 0xc) =
-           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_0061ade0[0].bits + local_18);
-      *(int *)(g_SHuffmanTable_ARRAY_01d23658[0].table_id + iVar8 + 0x10) =
-           (1 << (g_SHuffmanTable_ARRAY_01d23658[0].table_id[iVar8 + 0xc] & 0x1fU)) + -1;
+      *(uint *)(g_HuffmanTables[0].huffman_data + iVar8 + 0x804) =
+           *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);
+      *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 4) =
+           *(uint *)((int)&g_HuffmanTableSources[0].xlen + local_18);
+      *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 8) =
+           *(uint *)((int)&g_HuffmanTableSources[0].ylen + local_18);
+      *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 0xc) =
+           *(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);
+      *(int *)(g_HuffmanTables[0].table_id + iVar8 + 0x10) =
+           (1 << (g_HuffmanTables[0].table_id[iVar8 + 0xc] & 0x1fU)) + -1;
       sscanf(pSVar4->table_id,"%u");
       if (iVar6 != local_38) {
         g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
         g_INT_01d046a4 = 0xdfb;
         core_main_c_displayErrorAndQuit_FUN_004e4500("wrong table number %u.  File: %s");
       }
-      iVar7 = *(int *)((int)&g_SHuffmanTableSource_ARRAY_0061ade0[0].reference_index + local_18);
+      iVar7 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);
       if (iVar7 < 0) {
         if (iVar7 != -1) {
           g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
@@ -70,8 +70,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
           pcVar12 = "huffman decodertable error at table %d.  File: %s";
           goto LAB_005075d4;
         }
-        uVar9 = *(uint *)(g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + 0x804);
-        pcVar12 = g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + -0xc;
+        uVar9 = *(uint *)(g_HuffmanTables[0].huffman_data + iVar8 + 0x804);
+        pcVar12 = g_HuffmanTables[0].huffman_data + iVar8 + -0xc;
         pcVar12[0] = -1;
         pcVar12[1] = -1;
         pcVar12[2] = -1;
@@ -82,24 +82,22 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
           core_main_c_displayErrorAndQuit_FUN_004e4500("MP3 Huffman tree overflow!  File: %s");
         }
         uVar9 = 0;
-        pcVar12 = *(char **)((int)&g_SHuffmanTableSource_ARRAY_0061ade0[0].huffman_data_ptr +
-                            local_18);
+        pcVar12 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + local_18);
         iVar7 = iVar8;
-        if (*(int *)(g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + 0x804) != 0) {
+        if (*(int *)(g_HuffmanTables[0].huffman_data + iVar8 + 0x804) != 0) {
           do {
-            g_SHuffmanTable_ARRAY_01d23658[0].huffman_data[iVar7] = *pcVar12;
-            g_SHuffmanTable_ARRAY_01d23658[0].huffman_data[iVar7 + 1] = pcVar12[1];
+            g_HuffmanTables[0].huffman_data[iVar7] = *pcVar12;
+            g_HuffmanTables[0].huffman_data[iVar7 + 1] = pcVar12[1];
             uVar9 = uVar9 + 1;
             pcVar12 = pcVar12 + 2;
             iVar7 = iVar7 + 2;
-          } while (uVar9 < *(uint *)(g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + 0x804)
-                  );
+          } while (uVar9 < *(uint *)(g_HuffmanTables[0].huffman_data + iVar8 + 0x804));
         }
       }
       else {
-        *(int *)(g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + -0xc) = iVar7;
-        pcVar12 = g_SHuffmanTable_ARRAY_01d23658[iVar7].huffman_data;
-        pcVar10 = g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8;
+        *(int *)(g_HuffmanTables[0].huffman_data + iVar8 + -0xc) = iVar7;
+        pcVar12 = g_HuffmanTables[iVar7].huffman_data;
+        pcVar10 = g_HuffmanTables[0].huffman_data + iVar8;
         for (iVar3 = 0x200; iVar3 != 0; iVar3 = iVar3 + -1) {
           *(uint *)pcVar10 = *(uint *)pcVar12;
           pcVar12 = pcVar12 + ((uint)bVar11 * -2 + 1) * 4;
@@ -110,12 +108,10 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
           pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
           pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
         }
-        *(int *)(g_SHuffmanTable_ARRAY_01d23658[0].huffman_data + iVar8 + 0x804) =
-             g_SHuffmanTable_ARRAY_01d23658[iVar7].table_size;
-        if ((*(int *)(g_SHuffmanTable_ARRAY_01d23658[0].table_id + iVar8 + 4) !=
-             g_SHuffmanTable_ARRAY_01d23658[iVar7].xlen) ||
-           (g_SHuffmanTable_ARRAY_01d23658[iVar7].ylen !=
-            *(int *)(g_SHuffmanTable_ARRAY_01d23658[0].table_id + iVar8 + 8))) {
+        *(int *)(g_HuffmanTables[0].huffman_data + iVar8 + 0x804) =
+             g_HuffmanTables[iVar7].table_size;
+        if ((*(int *)(g_HuffmanTables[0].table_id + iVar8 + 4) != g_HuffmanTables[iVar7].xlen) ||
+           (g_HuffmanTables[iVar7].ylen != *(int *)(g_HuffmanTables[0].table_id + iVar8 + 8))) {
           g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
           g_INT_01d046a4 = 0xe06;
           pcVar12 = "wrong table %u reference.  File: %s";
@@ -133,7 +129,7 @@ LAB_005075d4:
       g_INT_01d046a4 = 0xe32;
       core_main_c_displayErrorAndQuit_FUN_004e4500("decoder table read error.  File: %s");
     }
-    g_INT_01d1edd0 = 1;
+    g_HuffmanTablesInitialized = 1;
   }
   if ((side_info->channels[channel].granules[granule].window_switching_flag == 0) ||
      (side_info->channels[channel].granules[granule].block_type != 2)) {
@@ -153,13 +149,13 @@ LAB_005075d4:
   for (uVar9 = 0; piVar1 = local_24, iVar7 = local_30,
       uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {
     if ((int)uVar9 < local_20) {
-      pSVar4 = g_SHuffmanTable_ARRAY_01d23658 + *(int *)((int)local_24 + local_30 + 0x34);
+      pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);
     }
     else if ((int)uVar9 < iVar8) {
-      pSVar4 = g_SHuffmanTable_ARRAY_01d23658 + *(int *)((int)local_24 + local_30 + 0x38);
+      pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);
     }
     else {
-      pSVar4 = g_SHuffmanTable_ARRAY_01d23658 + *(int *)((int)local_24 + local_30 + 0x3c);
+      pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);
     }
     sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10
               (this_ptr,pSVar4,&local_48,&local_44,&local_40,&local_3c);
@@ -170,7 +166,7 @@ LAB_005075d4:
     quantized_dest->samples[iVar7][iVar3] = local_44;
   }
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
-  local_28 = g_SHuffmanTable_ARRAY_01d23658 + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;
+  local_28 = g_HuffmanTables + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;
   iVar8 = uVar9 + 3;
   iVar6 = uVar9 + 2;
   local_2c = side_info->channels[channel].scfsi + granule * 0x12 + -2;

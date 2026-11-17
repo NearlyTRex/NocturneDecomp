@@ -12,8 +12,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046
   int iVar1;
   int iVar2;
   
-  iVar1 = g_INT_01ed3198;
-  g_INT_01bdd810 = 0;
+  iVar1 = g_RenderedTriangleCount;
+  g_RenderPixelCounter = 0;
   if (this_ptr->plane_culling_enabled != 0) {
     iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
     if (iVar2 == 0) {
@@ -21,14 +21,14 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046
     }
   }
   if (this_ptr->shadow_pass_active == 0) {
-    g_BIT_INTEGER32_01c6e2b4.dword = 0xc0;
-    g_INT_01c6e2b8 = 6;
-    g_PTR_01c6b5cc = core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046fea7;
+    g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+    g_VertexPreprocessMode = 6;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046fea7;
   }
   else {
-    g_BIT_INTEGER32_01c6e2b4.dword = 0;
-    g_INT_01c6e2b8 = 0;
-    g_PTR_01c6b5cc = core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046ff25;
+    g_RenderStateFlags.dword = 0;
+    g_VertexPreprocessMode = 0;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046ff25;
   }
   iVar2 = this_ptr->shadow_pass_active;
   if (g_INT_01c6cee8 != 0) {
@@ -39,6 +39,6 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046
   if (g_INT_01c6cee8 != 0) {
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(this_ptr,iVar2);
   }
-  g_INT_01ed3198 = iVar1;
-  return (uint)(g_INT_005f2b00 <= g_INT_01bdd810);
+  g_RenderedTriangleCount = iVar1;
+  return (uint)(g_RenderPixelBudget <= g_RenderPixelCounter);
 }

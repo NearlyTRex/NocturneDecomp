@@ -28,18 +28,18 @@ HIGH CONFIDENCE INFERENCES (38)
   DAT_005f2a20                    addr=005f2a20    current=undefined4      likely=SMRGLTextureBasic *  refs=1
     nearby: g_CZombieDogClassVersion (int) at offset -60
   DAT_005fba64                    addr=005fba64    current=undefined4      likely=int             refs=2
-    nearby: g_CEventList_PTR_005fba60 (CEventList*) at offset +4
+    nearby: g_CEventListPtr (CEventList*) at offset +4
   DAT_005fd084                    addr=005fd084    current=undefined4      likely=SMRGLTextureBasic *  refs=2
   DAT_005fd7ec                    addr=005fd7ec    current=undefined4      likely=SMRGLTextureBasic *  refs=3
   DAT_005fd8f4                    addr=005fd8f4    current=undefined4      likely=SMRGLTextureBasic *  refs=4
   DAT_00603eec                    addr=00603eec    current=undefined4      likely=SMRGLTextureBasic *  refs=1
-    nearby: g_SMRGLTextureBasic_00603e44 (SMRGLTextureBasic) at offset +168
+    nearby: g_EnvMapTexture (SMRGLTextureBasic) at offset +168
   DAT_0060789c                    addr=0060789c    current=undefined4      likely=float10 *       refs=1
     nearby: g_INT_00607884 (int) at offset +24
   DAT_0072ff34                    addr=0072ff34    current=undefined4      likely=SRenderVertex *  refs=1
     nearby: g_UINT_0072ff3c (uint) at offset -8
   DAT_0072ffb8                    addr=0072ffb8    current=undefined4      likely=float           refs=2
-    nearby: g_PTR_0072ffac (void*) at offset +12
+    nearby: g_SoftwareZBuffer (void*) at offset +12
   DAT_007dff8c                    addr=007dff8c    current=undefined4      likely=int             refs=4
     nearby: g_INT_ARRAY_007dff88 (int[1]) at offset +4
   DAT_01d76f7c                    addr=01d76f7c    current=undefined4      likely=float           refs=1
@@ -103,22 +103,22 @@ MEDIUM CONFIDENCE INFERENCES (38)
   DAT_005c6e21                    addr=005c6e21    current=undefined1      likely=byte            refs=1
     nearby: s_See_README_TXT_for_more_005c6e22 (TerminatedCString) at offset -1
   DAT_005f098e                    addr=005f098e    current=undefined4      likely=byte            refs=1
-    nearby: g_CHAR_ARRAY_005f0990 (char[104]) at offset -2
+    nearby: g_PropertyNamePrefix (char[104]) at offset -2
   DAT_005f1368                    addr=005f1368    current=undefined4      likely=byte            refs=1
     nearby: s_s_0123456789ABCDEFGHJKLM_005f1320+0x1f (undefined4) at offset +41
   DAT_005f1468                    addr=005f1468    current=undefined4      likely=byte            refs=1
   DAT_00607684                    addr=00607684    current=undefined1      likely=byte            refs=2
-    nearby: g_FILE_PTR_00607678 (_FILE*) at offset +12
+    nearby: g_StaticFilePoolStart (_FILE*) at offset +12
   DAT_006078a4                    addr=006078a4    current=undefined2      likely=short           refs=1
     nearby: g_INT_00607884 (int) at offset +32
   DAT_00607978                    addr=00607978    current=undefined4      likely=byte            refs=1
-    nearby: g_CHAR_PTR_0060797d (char*) at offset -5
+    nearby: g_EnvironmentStrings (char*) at offset -5
   DAT_006079ec                    addr=006079ec    current=undefined4      likely=byte            refs=2
-    nearby: g_PTR_006079e8 (void*) at offset +4
+    nearby: g_SpecialExitHandler (void*) at offset +4
   DAT_00607a07                    addr=00607a07    current=undefined1      likely=byte            refs=1
-    nearby: g_CHAR_ARRAY_00607a08 (char[260]) at offset -1
+    nearby: g_TempDirectoryBuffer (char[260]) at offset -1
   DAT_00607b89                    addr=00607b89    current=undefined4      likely=byte            refs=1
-    nearby: g_UINT_00607b84 (uint) at offset +5
+    nearby: g_MaxHandleCount (uint) at offset +5
   DAT_01d0cfa8                    addr=01d0cfa8    current=undefined4      likely=byte            refs=3
     nearby: g_INT_01d0cfa0 (int) at offset +8
   DAT_01d0cfa9                    addr=01d0cfa9    current=undefined4      likely=byte            refs=1
@@ -170,7 +170,7 @@ NO TYPE HINTS (193)
   DAT_005e65dc                    addr=005e65dc    type=undefined4      refs=1  nearby: g_FLOAT_005e65e0 at -4
   DAT_005e704c                    addr=005e704c    type=undefined4      refs=1  nearby: g_FLOAT_005e7050 at -4
   DAT_005e785c                    addr=005e785c    type=undefined4      refs=1  nearby: g_FLOAT_005e7860 at -4
-  DAT_005f098f                    addr=005f098f    type=undefined1      refs=1  nearby: g_CHAR_ARRAY_005f0990 at -1
+  DAT_005f098f                    addr=005f098f    type=undefined1      refs=1  nearby: g_PropertyNamePrefix at -1
   DAT_005f1004                    addr=005f1004    type=undefined4      refs=2  nearby: g_SMRGLTextureBasic_005f0f5c at +168
   DAT_005f101c                    addr=005f101c    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_005f0f5c at +192
   DAT_005f10ac                    addr=005f10ac    type=undefined4      refs=1
@@ -181,8 +181,8 @@ NO TYPE HINTS (193)
   DAT_005f1900                    addr=005f1900    type=undefined4      refs=1  nearby: g_PlayerFilters at +4
   DAT_005fbaf8                    addr=005fbaf8    type=undefined4      refs=1  nearby: g_INT_005fbaf4 at +4
   DAT_005fbafc                    addr=005fbafc    type=undefined4      refs=1  nearby: g_INT_005fbaf4 at +8
-  DAT_005fbbc0                    addr=005fbbc0    type=undefined4      refs=1  nearby: g_ULONGLONG_ARRAY_005fbc30 at -112
-  DAT_005fbbc4                    addr=005fbbc4    type=undefined4      refs=1  nearby: g_ULONGLONG_ARRAY_005fbc30 at -108
+  DAT_005fbbc0                    addr=005fbbc0    type=undefined4      refs=1  nearby: g_ByteFillTable at -112
+  DAT_005fbbc4                    addr=005fbbc4    type=undefined4      refs=1  nearby: g_ByteFillTable at -108
   DAT_005fc470                    addr=005fc470    type=undefined4      refs=1  nearby: switchdataD_005fc474 at -4
   DAT_005fcb2c                    addr=005fcb2c    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_005fcb14 at +24
   DAT_005fd09c                    addr=005fd09c    type=undefined4      refs=1
@@ -196,36 +196,36 @@ NO TYPE HINTS (193)
   DAT_005fda14                    addr=005fda14    type=undefined4      refs=3
   DAT_005fda2c                    addr=005fda2c    type=undefined4      refs=2
   DAT_005fdabc                    addr=005fdabc    type=undefined4      refs=2
-  DAT_005fdb4c                    addr=005fdb4c    type=undefined4      refs=2  nearby: g_SMRGLTextureBasic_005fdbc4 at -120
+  DAT_005fdb4c                    addr=005fdb4c    type=undefined4      refs=2  nearby: g_FireEffectPopcornTexture at -120
   DAT_005fe398                    addr=005fe398    type=undefined4      refs=1  nearby: g_INT_005fe394 at +4
   DAT_005fe39c                    addr=005fe39c    type=undefined4      refs=1  nearby: g_INT_005fe394 at +8
   DAT_005fe3a0                    addr=005fe3a0    type=undefined4      refs=1  nearby: g_INT_005fe3a8 at -8
   DAT_005fe3a4                    addr=005fe3a4    type=undefined4      refs=1  nearby: g_INT_005fe3a8 at -4
   DAT_005fe4b8                    addr=005fe4b8    type=undefined4      refs=1  nearby: g_CFieldNotesPtr at +8
   DAT_005fe4bc                    addr=005fe4bc    type=undefined4      refs=1  nearby: g_CFieldNotesPtr at +12
-  DAT_00603ef4                    addr=00603ef4    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +176
-  DAT_00603ef8                    addr=00603ef8    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +180
-  DAT_00603efc                    addr=00603efc    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +184
-  DAT_00603f00                    addr=00603f00    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +188
-  DAT_00603f04                    addr=00603f04    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +192
-  DAT_00603f34                    addr=00603f34    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +240
-  DAT_00603f3c                    addr=00603f3c    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +248
-  DAT_00603f40                    addr=00603f40    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +252
-  DAT_00603f44                    addr=00603f44    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_00603e44 at +256
+  DAT_00603ef4                    addr=00603ef4    type=undefined4      refs=1  nearby: g_EnvMapTexture at +176
+  DAT_00603ef8                    addr=00603ef8    type=undefined4      refs=1  nearby: g_EnvMapTexture at +180
+  DAT_00603efc                    addr=00603efc    type=undefined4      refs=1  nearby: g_EnvMapTexture at +184
+  DAT_00603f00                    addr=00603f00    type=undefined4      refs=1  nearby: g_EnvMapTexture at +188
+  DAT_00603f04                    addr=00603f04    type=undefined4      refs=1  nearby: g_EnvMapTexture at +192
+  DAT_00603f34                    addr=00603f34    type=undefined4      refs=1  nearby: g_EnvMapTexture at +240
+  DAT_00603f3c                    addr=00603f3c    type=undefined4      refs=1  nearby: g_EnvMapTexture at +248
+  DAT_00603f40                    addr=00603f40    type=undefined4      refs=1  nearby: g_EnvMapTexture at +252
+  DAT_00603f44                    addr=00603f44    type=undefined4      refs=1  nearby: g_EnvMapTexture at +256
   DAT_00603f48                    addr=00603f48    type=undefined4      refs=1
   DAT_00603f4c                    addr=00603f4c    type=undefined4      refs=1
-  DAT_00604368                    addr=00604368    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_00604268+4 at +252
-  DAT_0060436c                    addr=0060436c    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_00604268+4 at +256
-  DAT_00604818                    addr=00604818    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_006047b0+4 at +100
-  DAT_0060481c                    addr=0060481c    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_006047b0+4 at +104
+  DAT_00604368                    addr=00604368    type=undefined4      refs=1  nearby: g_DefaultSoundDeviceName+4 at +252
+  DAT_0060436c                    addr=0060436c    type=undefined4      refs=1  nearby: g_DefaultSoundDeviceName+4 at +256
+  DAT_00604818                    addr=00604818    type=undefined4      refs=1  nearby: g_SoundResultBufferTemplate+4 at +100
+  DAT_0060481c                    addr=0060481c    type=undefined4      refs=1  nearby: g_SoundResultBufferTemplate+4 at +104
   DAT_00606980                    addr=00606980    type=undefined4      refs=1  nearby: g_CTriggerClassVersion at +28
   DAT_00606984                    addr=00606984    type=undefined4      refs=1  nearby: g_CTriggerClassVersion at +32
   DAT_006078a0                    addr=006078a0    type=undefined4      refs=1  nearby: g_INT_00607884 at +28
-  DAT_00607b80                    addr=00607b80    type=undefined4      refs=1  nearby: g_UINT_00607b84 at -4
-  DAT_00607b88                    addr=00607b88    type=undefined4      refs=2  nearby: g_UINT_00607b84 at +4
-  DAT_00607c08                    addr=00607c08    type=undefined4      refs=1  nearby: g_dst_rule_00607be8.rule_type at +4
-  DAT_00607c18                    addr=00607c18    type=undefined4      refs=1  nearby: g_INT_00607c14 at +4
-  DAT_00607c1c                    addr=00607c1c    type=undefined4      refs=1  nearby: g_INT_00607c14 at +8
+  DAT_00607b80                    addr=00607b80    type=undefined4      refs=1  nearby: g_MaxHandleCount at -4
+  DAT_00607b88                    addr=00607b88    type=undefined4      refs=2  nearby: g_MaxHandleCount at +4
+  DAT_00607c08                    addr=00607c08    type=undefined4      refs=1  nearby: g_DstStartRule.rule_type at +4
+  DAT_00607c18                    addr=00607c18    type=undefined4      refs=1  nearby: g_DstTransitionHour at +4
+  DAT_00607c1c                    addr=00607c1c    type=undefined4      refs=1  nearby: g_DstTransitionHour at +8
   DAT_00607c24                    addr=00607c24    type=undefined4      refs=1  nearby: s_EST_00607c30 at -12
   DAT_00607c28                    addr=00607c28    type=undefined4      refs=1  nearby: s_EST_00607c30 at -8
   DAT_00607c2c                    addr=00607c2c    type=undefined4      refs=1  nearby: s_EST_00607c30 at -4
@@ -271,8 +271,8 @@ NO TYPE HINTS (193)
   DAT_01d22c6c                    addr=01d22c6c    type=undefined4      refs=3  nearby: g_CHAR_ARRAY_01d22c6f+1 at -4
   DAT_01d22ea0                    addr=01d22ea0    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01d22e88.surface_normal.D at +4
   DAT_01d22ea4                    addr=01d22ea4    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01d22e88.surface_normal.D at +8
-  DAT_01d22ea8                    addr=01d22ea8    type=undefined4      refs=1  nearby: g_INT_01d22eb0 at -8
-  DAT_01d22eac                    addr=01d22eac    type=undefined4      refs=1  nearby: g_INT_01d22eb0 at -4
+  DAT_01d22ea8                    addr=01d22ea8    type=undefined4      refs=1  nearby: g_BloodParticleIndex at -8
+  DAT_01d22eac                    addr=01d22eac    type=undefined4      refs=1  nearby: g_BloodParticleIndex at -4
   DAT_01d73b02                    addr=01d73b02    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01d73a00+3 at +255
   DAT_01d73b03                    addr=01d73b03    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01d73a00+3 at +256
   DAT_01d73d02                    addr=01d73d02    type=undefined4      refs=1
@@ -297,8 +297,8 @@ NO TYPE HINTS (193)
   DAT_01d7f580                    addr=01d7f580    type=undefined4      refs=1  nearby: g_FLOAT_01d7f574 at +12
   DAT_01d80898                    addr=01d80898    type=undefined4      refs=3  nearby: g_SSoftwareEdge_01d80848.base.depth_gradient at +36
   DAT_01d808a0                    addr=01d808a0    type=undefined4      refs=1  nearby: g_SSoftwareEdge_01d80848.base.depth_gradient at +44
-  DAT_01d81080                    addr=01d81080    type=undefined4      refs=34  nearby: g_SMRGLPrimitiveQuadIndex_01d81058.vertices[3] at +4
-  DAT_01d81084                    addr=01d81084    type=undefined4      refs=3  nearby: g_SMRGLPrimitiveQuadIndex_01d81058.vertices[3] at +8
+  DAT_01d81080                    addr=01d81080    type=undefined4      refs=34  nearby: g_MirrorTempPrimitive.vertices[3] at +4
+  DAT_01d81084                    addr=01d81084    type=undefined4      refs=3  nearby: g_MirrorTempPrimitive.vertices[3] at +8
   DAT_01d82088                    addr=01d82088    type=undefined4      refs=13
   DAT_01d82090                    addr=01d82090    type=undefined4      refs=1
   DAT_01d82094                    addr=01d82094    type=undefined4      refs=1
@@ -324,14 +324,14 @@ NO TYPE HINTS (193)
   DAT_0270f7cc                    addr=0270f7cc    type=undefined4      refs=1  nearby: g_CDemonGlobe_0270f7d8.intensity at -40
   DAT_0270f7d0                    addr=0270f7d0    type=undefined4      refs=1  nearby: g_CDemonGlobe_0270f7d8.intensity at -36
   DAT_0270f7d4                    addr=0270f7d4    type=undefined4      refs=1  nearby: g_CDemonGlobe_0270f7d8.intensity at -32
-  DAT_02cf5ff0                    addr=02cf5ff0    type=undefined4      refs=2  nearby: g_PTR_02cf5fec at +4
-  DAT_02cf605c                    addr=02cf605c    type=undefined4      refs=2  nearby: g_PTR_02cf6058 at +4
-  DAT_02cf6060                    addr=02cf6060    type=undefined4      refs=2  nearby: g_PTR_02cf6064 at -4
-  DAT_02cf6090                    addr=02cf6090    type=undefined4      refs=2  nearby: g_PTR_02cf608c at +4
-  DAT_02cf6098                    addr=02cf6098    type=undefined4      refs=2  nearby: g_PTR_02cf6094 at +4
+  DAT_02cf5ff0                    addr=02cf5ff0    type=undefined4      refs=2  nearby: g_APIDLL_toggle at +4
+  DAT_02cf605c                    addr=02cf605c    type=undefined4      refs=2  nearby: g_APIDLL_setColorTable16 at +4
+  DAT_02cf6060                    addr=02cf6060    type=undefined4      refs=2  nearby: g_APIDLL_masterZBuffer at -4
+  DAT_02cf6090                    addr=02cf6090    type=undefined4      refs=2  nearby: g_APIDLL_setVideoModeX at +4
+  DAT_02cf6098                    addr=02cf6098    type=undefined4      refs=2  nearby: g_APIDLL_lockFrameX at +4
   DAT_02cf60d0                    addr=02cf60d0    type=undefined4      refs=2  nearby: g_PTR_02cf60cc at +4
   DAT_02cf60d4                    addr=02cf60d4    type=undefined4      refs=2  nearby: g_PTR_02cf60cc at +8
-  DAT_02cf60d8                    addr=02cf60d8    type=undefined4      refs=2  nearby: g_PTR_02cf60dc at -4
+  DAT_02cf60d8                    addr=02cf60d8    type=undefined4      refs=2  nearby: g_APIDLL_setTextureClamp at -4
   DAT_02cfd0c8                    addr=02cfd0c8    type=undefined4      refs=1  nearby: g_INT_02cfd0cc at -4
   DAT_02d0c214                    addr=02d0c214    type=undefined4      refs=2  nearby: g_CVector3f_02d0c208.z at +4
   DAT_02d0c218                    addr=02d0c218    type=undefined4      refs=2  nearby: g_CVector3f_02d0c208.z at +8
@@ -350,15 +350,15 @@ NO TYPE HINTS (193)
   DAT_02d2498c                    addr=02d2498c    type=undefined4      refs=1  nearby: g_INT_02d24988 at +4
   DAT_02d24990                    addr=02d24990    type=undefined4      refs=1  nearby: g_INT_02d24994 at -4
   DAT_02d24c54                    addr=02d24c54    type=undefined4      refs=1  nearby: g_INT_02d24c4c at +8
-  DAT_02d25908                    addr=02d25908    type=undefined4      refs=1  nearby: g_CHAR_PTR_PTR_02d25920 at -24
-  DAT_02d2590c                    addr=02d2590c    type=undefined4      refs=1  nearby: g_CHAR_PTR_PTR_02d25920 at -20
+  DAT_02d25908                    addr=02d25908    type=undefined4      refs=1  nearby: g_EnvironStringArea at -24
+  DAT_02d2590c                    addr=02d2590c    type=undefined4      refs=1  nearby: g_EnvironStringArea at -20
   DAT_02d26180                    addr=02d26180    type=undefined4      refs=2  nearby: g_INT_02d261b0 at -48
   DAT_02d26184                    addr=02d26184    type=undefined4      refs=1  nearby: g_INT_02d261b0 at -44
 
 --------------------------------------------------------------------------------
 MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
-  DAT_01d81080                    addr=01d81080    refs=34    type=undefined4      nearby: g_SMRGLPrimitiveQuadIndex_01d81058.vertices[3](+4)
+  DAT_01d81080                    addr=01d81080    refs=34    type=undefined4      nearby: g_MirrorTempPrimitive.vertices[3](+4)
   DAT_01d82088                    addr=01d82088    refs=13    type=undefined4    
   DAT_007dff8c                    addr=007dff8c    refs=4     type=undefined4      likely=int  nearby: g_INT_ARRAY_007dff88(+4)
   DAT_007dff90                    addr=007dff90    refs=4     type=undefined4      nearby: g_INT_ARRAY_007dff88(+8)
@@ -368,7 +368,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01d78fc0                    addr=01d78fc0    refs=4     type=undefined4      likely=float  nearby: g_FLOAT_01d78f7c(+68)
   DAT_01d78fc4                    addr=01d78fc4    refs=4     type=undefined4      likely=float  nearby: g_FLOAT_01d78f7c(+72)
   DAT_01d78f80                    addr=01d78f80    refs=4     type=undefined4      likely=float  nearby: g_FLOAT_01d78f7c(+4)
-  DAT_01d81084                    addr=01d81084    refs=3     type=undefined4      nearby: g_SMRGLPrimitiveQuadIndex_01d81058.vertices[3](+8)
+  DAT_01d81084                    addr=01d81084    refs=3     type=undefined4      nearby: g_MirrorTempPrimitive.vertices[3](+8)
   DAT_005fd7ec                    addr=005fd7ec    refs=3     type=undefined4      likely=SMRGLTextureBasic *
   DAT_005fd984                    addr=005fd984    refs=3     type=undefined4    
   DAT_005fda14                    addr=005fda14    refs=3     type=undefined4    
@@ -380,7 +380,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01d78fc8                    addr=01d78fc8    refs=3     type=undefined4      nearby: g_FLOAT_01d78f7c(+76)
   DAT_01d80898                    addr=01d80898    refs=3     type=undefined4      nearby: g_SSoftwareEdge_01d80848.base.depth_gradient(+36)
   DAT_005f1004                    addr=005f1004    refs=2     type=undefined4      nearby: g_SMRGLTextureBasic_005f0f5c(+168)
-  DAT_005fba64                    addr=005fba64    refs=2     type=undefined4      likely=int  nearby: g_CEventList_PTR_005fba60(+4)
+  DAT_005fba64                    addr=005fba64    refs=2     type=undefined4      likely=int  nearby: g_CEventListPtr(+4)
   DAT_00780000                    addr=00780000    refs=2     type=undefined4    
   DAT_005fd084                    addr=005fd084    refs=2     type=undefined4      likely=SMRGLTextureBasic *
   DAT_005fd81c                    addr=005fd81c    refs=2     type=undefined4    
@@ -390,7 +390,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_005fd99c                    addr=005fd99c    refs=2     type=undefined4    
   DAT_005fda2c                    addr=005fda2c    refs=2     type=undefined4    
   DAT_005fdabc                    addr=005fdabc    refs=2     type=undefined4    
-  DAT_005fdb4c                    addr=005fdb4c    refs=2     type=undefined4      nearby: g_SMRGLTextureBasic_005fdbc4(-120)
+  DAT_005fdb4c                    addr=005fdb4c    refs=2     type=undefined4      nearby: g_FireEffectPopcornTexture(-120)
   DAT_01d88309                    addr=01d88309    refs=2     type=undefined4      likely=byte  nearby: g_CHAR_01d88308(+1)
   DAT_01d8830a                    addr=01d8830a    refs=2     type=undefined4      nearby: g_CHAR_01d88308(+2)
   DAT_01d8830b                    addr=01d8830b    refs=2     type=undefined4      nearby: g_CHAR_01d88308(+3)
@@ -405,9 +405,9 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_02d17d88                    addr=02d17d88    refs=2     type=undefined4      likely=float
   DAT_02d17d8c                    addr=02d17d8c    refs=2     type=undefined4      likely=float
   DAT_02d17d90                    addr=02d17d90    refs=2     type=undefined4      likely=float
-  DAT_006079ec                    addr=006079ec    refs=2     type=undefined4      likely=byte  nearby: g_PTR_006079e8(+4)
-  DAT_00607684                    addr=00607684    refs=2     type=undefined1      likely=byte  nearby: g_FILE_PTR_00607678(+12)
-  DAT_00607b88                    addr=00607b88    refs=2     type=undefined4      nearby: g_UINT_00607b84(+4)
+  DAT_006079ec                    addr=006079ec    refs=2     type=undefined4      likely=byte  nearby: g_SpecialExitHandler(+4)
+  DAT_00607684                    addr=00607684    refs=2     type=undefined1      likely=byte  nearby: g_StaticFilePoolStart(+12)
+  DAT_00607b88                    addr=00607b88    refs=2     type=undefined4      nearby: g_MaxHandleCount(+4)
 
 --------------------------------------------------------------------------------
 IMMEDIATE CONSTANTS - NOT REAL GLOBALS (25)
@@ -531,6 +531,6 @@ string, array, or struct and are not standalone globals.
   DAT_00607d31                    inside s_EDT_00607cb1
   DAT_0060a09c                    inside g_FLOAT10_0060a092
   DAT_01d22c83                    inside g_CHAR_ARRAY_01d22c6f+0x13
-  DAT_02cfd8a0                    inside g_UCHAR_ARRAY_02cfd89c
-  DAT_02cfd8a4                    inside g_UCHAR_ARRAY_02cfd89c
+  DAT_02cfd8a0                    inside g_AnyAddressIP
+  DAT_02cfd8a4                    inside g_AnyAddressIP
 

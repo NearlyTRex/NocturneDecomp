@@ -21,10 +21,10 @@
 ;   TerminatedCString s_save_005d893a
 ;   TerminatedCString s_Select_file_to_load_005d893f
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   char[256] g_CHAR_ARRAY_01cb7b50
-;   undefined4 g_CHAR_ARRAY_01cb7b50+1
-;   undefined4 g_CHAR_ARRAY_01cb7b50+2
-;   undefined4 g_CHAR_ARRAY_01cb7b50+3
+;   char[256] g_CurrentSaveFile
+;   undefined4 g_CurrentSaveFile+1
+;   undefined4 g_CurrentSaveFile+2
+;   undefined4 g_CurrentSaveFile+3
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
@@ -48,7 +48,7 @@ section .text
     PUSH 0x0                            ; 004bdb2a
     PUSH 0x0                            ; 004bdb2c
     MOV dword ptr [EBX + 0x9e8],0x0     ; 004bdb2e
-    PUSH 0x1cb7b50                      ; 004bdb38 | g_CHAR_ARRAY_01cb7b50
+    PUSH 0x1cb7b50                      ; 004bdb38 | g_CurrentSaveFile
     MOV byte ptr [EBX + 0x9ec],0x0      ; 004bdb3d
     CALL crt_string.c_splitpath_FUN_005b9e58 ; 004bdb44
         ;   XREF to: 005b9e58 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005b9e58(char * path, char * drive, char * dir, char * fname, ...)
@@ -75,13 +75,13 @@ section .text
         ;   Label: LAB_004bdb7e
     MOV EDI,ESP                         ; 004bdb83
     PUSH EDI                            ; 004bdb85
-    MOV AL,byte ptr [ESI]               ; 004bdb86 | g_CHAR_ARRAY_01cb7b50 | g_CHAR_ARRAY_01cb7b50+2
+    MOV AL,byte ptr [ESI]               ; 004bdb86 | g_CurrentSaveFile | g_CurrentSaveFile+2
         ;   Label: LAB_004bdb86
     MOV byte ptr [EDI],AL               ; 004bdb88
     CMP AL,0x0                          ; 004bdb8a
     JZ 0x004bdb9e                       ; 004bdb8c
         ;   XREF to: 004bdb9e (CONDITIONAL_JUMP)  ; LAB_004bdb9e
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bdb8e | g_CHAR_ARRAY_01cb7b50+1 | g_CHAR_ARRAY_01cb7b50+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bdb8e | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD ESI,0x2                         ; 004bdb91
     MOV byte ptr [EDI + 0x1],AL         ; 004bdb94
     ADD EDI,0x2                         ; 004bdb97

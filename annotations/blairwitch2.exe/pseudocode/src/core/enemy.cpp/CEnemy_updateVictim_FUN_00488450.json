@@ -92,7 +92,7 @@
     },
     {
       "addr": "006141f0",
-      "name": "g_CEventList_PTR_006141f0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c38bc0"
     },
@@ -122,13 +122,13 @@
     },
     {
       "addr": "01c264e4",
-      "name": "g_CDemonActor_PTR_ARRAY_01c264e4",
+      "name": "g_EnemyVictimCandidates",
       "type": "CDemonActor*[2000]",
       "value": null
     },
     {
       "addr": "01c28424",
-      "name": "g_FLOAT_ARRAY_01c28424",
+      "name": "g_EnemyVictimCandidateDistances",
       "type": "float[2000]",
       "value": null
     },
@@ -344,33 +344,33 @@
     {
       "description": "Complex pointer cast",
       "line": 79,
-      "match": "(int *)((int)g_CDemonActor_PTR_ARRAY_01c264e4",
+      "match": "(int *)((int)g_EnemyVictimCandidates",
       "severity": "moderate",
-      "text": "*(int *)((int)g_CDemonActor_PTR_ARRAY_01c264e4 + iStack_28) = iVar3;",
+      "text": "*(int *)((int)g_EnemyVictimCandidates + iStack_28) = iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 80,
-      "match": "(float *)((int)g_FLOAT_ARRAY_01c28424",
+      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
       "severity": "moderate",
-      "text": "*(float *)((int)g_FLOAT_ARRAY_01c28424 + iStack_28) = fStack_38;",
+      "text": "*(float *)((int)g_EnemyVictimCandidateDistances + iStack_28) = fStack_38;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 98,
-      "match": "(float *)((int)g_FLOAT_ARRAY_01c28424",
+      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
       "severity": "moderate",
-      "text": "if (*(float *)((int)g_FLOAT_ARRAY_01c28424 + iVar5) < fStack_1c) {",
+      "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar5) < fStack_1c) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 99,
-      "match": "(float *)((int)g_FLOAT_ARRAY_01c28424",
+      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
       "severity": "moderate",
-      "text": "fStack_1c = *(float *)((int)g_FLOAT_ARRAY_01c28424 + iVar5);",
+      "text": "fStack_1c = *(float *)((int)g_EnemyVictimCandidateDistances + iVar5);",
       "type": "pointer_cast"
     },
     {
@@ -406,11 +406,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CDemonActor_PTR_ARRAY_01c264e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_EnemyVictimCandidates` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 79,
-      "match": "(int)g_CDemonActor_PTR_ARRAY_01c264e4",
+      "match": "(int)g_EnemyVictimCandidates",
       "severity": "moderate",
-      "text": "*(int *)((int)g_CDemonActor_PTR_ARRAY_01c264e4 + iStack_28) = iVar3;",
+      "text": "*(int *)((int)g_EnemyVictimCandidates + iStack_28) = iVar3;",
       "type": "pointer_truncation"
     },
     {

@@ -10,7 +10,7 @@
 ;   void* PTR_waveOutReset_005d048c = 001d0a1a
 ;   void* PTR_waveOutUnprepareHeader_005d0490 = 001d0a2a
 ;   TerminatedCString s_waveOutReset_failed_005f5777
-;   int g_INT_02c82840
+;   int g_WaveOutHandle
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSoundThread_FUN_00575ca0
@@ -26,7 +26,7 @@ section .text
         ;   Label: sound_sndwav.cpp_CWavOutDevice_reset_FUN_0057a8c0
     PUSH ESI                            ; 0057a8c1
     PUSH EDI                            ; 0057a8c2
-    MOV EDX,dword ptr [0x02c82840]      ; 0057a8c3 | g_INT_02c82840
+    MOV EDX,dword ptr [0x02c82840]      ; 0057a8c3 | g_WaveOutHandle
     MOV ESI,0x1                         ; 0057a8c9
     TEST EDX,EDX                        ; 0057a8ce
     JNZ 0x0057a905                      ; 0057a8d0
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 0057a8ee (CONDITIONAL_JUMP)  ; LAB_0057a8ee
     PUSH 0x20                           ; 0057a8de
     PUSH EDI                            ; 0057a8e0
-    MOV EAX,[0x02c82840]                ; 0057a8e1 | g_INT_02c82840
+    MOV EAX,[0x02c82840]                ; 0057a8e1 | g_WaveOutHandle
     PUSH EAX                            ; 0057a8e6
     CALL dword ptr CS:[0x5d0490]        ; 0057a8e7 | PTR_waveOutUnprepareHeader_005d0490
     ADD EBX,0x4                         ; 0057a8ee

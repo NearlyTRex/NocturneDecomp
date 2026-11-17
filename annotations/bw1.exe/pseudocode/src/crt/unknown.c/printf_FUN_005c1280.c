@@ -13,6 +13,6 @@ int __cdecl printf(char *format)
   byte *puStack_4;
   
   puStack_4 = &stack0x00000008;
-  iVar1 = FUN_005c4fe0(&g_FILE_006262ee,format,&puStack_4);
+  iVar1 = FUN_005c4fe0(&g_StdoutLogFile,format,&puStack_4);
   return iVar1;
 }

@@ -18,7 +18,7 @@ uint FUN_00574264(short *param_1)
   ulong new_size;
   bool bVar4;
   
-  ptr = (uint *)g_INT_02de54a8;
+  ptr = (uint *)g_EnvironInitialized;
   if (param_1 == (short *)0x0) {
     return 0xffffffff;
   }
@@ -34,7 +34,7 @@ uint FUN_00574264(short *param_1)
     return 0xffffffff;
   }
   bVar4 = in_EAX[1] == 0;
-  if (g_INT_02de54a8 == 0) {
+  if (g_EnvironInitialized == 0) {
     if (bVar4) {
       return 0;
     }
@@ -42,8 +42,8 @@ uint FUN_00574264(short *param_1)
     if (ptr == (uint *)0x0) {
       return 0xffffffff;
     }
-    g_CHAR_PTR_PTR_02de54a0 = (char **)(ptr + 2);
-    g_INT_02de54a8 = (int)ptr;
+    g_EnvironStringArea = (char **)(ptr + 2);
+    g_EnvironInitialized = (int)ptr;
     *ptr = 0;
     ptr[1] = 0;
     n = 0;
@@ -56,31 +56,31 @@ uint FUN_00574264(short *param_1)
     if (iVar3 < 1) {
       n = -iVar3;
       new_size = n + 1 + iVar3 * -4 + 8;
-      if (g_CHAR_PTR_PTR_02de54a0 == (char **)0x0) {
+      if (g_EnvironStringArea == (char **)0x0) {
         ptr = (uint *)malloc(new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        FUN_00571410(ptr,g_INT_02de54a8,iVar3 * -4);
-        g_CHAR_PTR_PTR_02de54a0 = (char **)(ptr + (2 - iVar3));
-        memset(g_CHAR_PTR_PTR_02de54a0,0,n + 1);
+        FUN_00571410(ptr,g_EnvironInitialized,iVar3 * -4);
+        g_EnvironStringArea = (char **)(ptr + (2 - iVar3));
+        memset(g_EnvironStringArea,0,n + 1);
       }
       else {
         ptr = (uint *)realloc(ptr,new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        memmove(ptr + (2 - iVar3),g_CHAR_PTR_PTR_02de54a0,n);
-        g_CHAR_PTR_PTR_02de54a0 = (char **)(ptr + (2 - iVar3));
+        memmove(ptr + (2 - iVar3),g_EnvironStringArea,n);
+        g_EnvironStringArea = (char **)(ptr + (2 - iVar3));
       }
       ptr[1 - iVar3] = 0;
-      g_INT_02de54a8 = (int)ptr;
+      g_EnvironInitialized = (int)ptr;
     }
     else {
       n = iVar3 - 1;
     }
   }
   ptr[n] = param_1;
-  *(byte *)(n + (int)g_CHAR_PTR_PTR_02de54a0) = 0;
+  *(byte *)(n + (int)g_EnvironStringArea) = 0;
   return 0;
 }

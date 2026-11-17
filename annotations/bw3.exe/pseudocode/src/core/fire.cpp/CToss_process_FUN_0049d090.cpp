@@ -95,9 +95,9 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
         return;
       }
       this_ptr_00 = &this_ptr->model;
-      local_70.x = g_CVector3f_02cfd900.x;
+      local_70.x = g_ZeroVector.x;
       *(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&g_CVector3f_02cfd900 + (uint)bVar6 * -8 + 4);
+           *(uint *)((int)&g_ZeroVector + (uint)bVar6 * -8 + 4);
       *(uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            *(uint *)((uint)bVar6 * -8 + 0x2cfd908 + (uint)bVar6 * -8);
       pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr_00);

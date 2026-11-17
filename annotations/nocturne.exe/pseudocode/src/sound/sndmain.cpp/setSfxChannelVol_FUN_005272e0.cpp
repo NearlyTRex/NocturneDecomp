@@ -18,8 +18,8 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(int channel_index,f
     g_CurrentLineNumber = 3890;
     core_main_c_displayErrorAndQuit_FUN_004c8440("setSfxChannelVol - invalid channel index: %d",channel_index);
   }
-  pCVar1 = g_CSoundDevice_PTR_02dc8318;
-  g_FLOAT_ARRAY_02dc7958[channel_index] = volume;
+  pCVar1 = g_CSoundDevicePtr;
+  g_SfxChannelVolumes[channel_index] = volume;
   if (pCVar1 != (CSoundDevice *)0x0) {
     uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
     if (uVar2 != 0) {
@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(int channel_index,f
       do {
         if (((slot->playback_state != 0) && (slot->hardware_buffer_handle != 0)) &&
            (channel_index == (slot->options).channel_index)) {
-          (*g_CSoundDevice_PTR_02dc8318->vtable->setSfxPos)(g_CSoundDevice_PTR_02dc8318,slot,8);
+          (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,slot,8);
         }
         slot = slot + 1;
       } while (slot != g_CSfxSlot_ARRAY_02dbd374 + sizeof(g_CSfxSlot_ARRAY_02dbd374) / sizeof(g_CSfxSlot_ARRAY_02dbd374[0]));

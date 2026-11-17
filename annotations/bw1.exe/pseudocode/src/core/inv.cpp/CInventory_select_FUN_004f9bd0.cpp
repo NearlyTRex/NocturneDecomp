@@ -55,7 +55,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
                            (actor_ptr,g_CBoxActorClassInfo.name_hash);
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (g_CEventList_PTR_0061b4d0,pCVar3[4].create_event + 0x28);
+                  (g_CEventListPtr,pCVar3[4].create_event + 0x28);
         return 0;
       }
     }

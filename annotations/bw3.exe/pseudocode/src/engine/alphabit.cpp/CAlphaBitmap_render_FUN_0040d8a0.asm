@@ -30,8 +30,8 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040db50
@@ -138,7 +138,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 0040d9a2
     PUSH EDI                            ; 0040d9a6
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040d9a7
-    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 0040d9ab | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 0040d9ab | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH ESI                            ; 0040d9b1
     ADD EAX,EBX                         ; 0040d9b2
     PUSH EAX                            ; 0040d9b4
@@ -202,7 +202,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0040da36
     PUSH EDI                            ; 0040da3a
     MOV EBX,dword ptr [ESP + 0xc]       ; 0040da3b
-    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 0040da3f | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EAX,dword ptr [EAX + 0x1c5faec] ; 0040da3f | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH ESI                            ; 0040da45
     ADD EAX,EBX                         ; 0040da46
     PUSH EAX                            ; 0040da48

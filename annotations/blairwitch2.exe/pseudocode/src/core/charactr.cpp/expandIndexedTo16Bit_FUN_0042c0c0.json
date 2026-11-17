@@ -33,7 +33,7 @@
   "globals": [
     {
       "addr": "006141d4",
-      "name": "g_UINT_006141d4",
+      "name": "g_CPUFamily",
       "type": "uint",
       "value": "0x5"
     }
@@ -149,7 +149,7 @@
       "line": 18,
       "match": "(byte *)((int)indexed_input_buffer",
       "severity": "moderate",
-      "text": "CONCAT22(g_USHORT_ARRAY_01c35614[*(byte *)((int)indexed_input_buffer + 1)],",
+      "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
       "type": "pointer_cast"
     },
     {
@@ -213,15 +213,15 @@
       "line": 18,
       "match": "CONCAT22",
       "severity": "moderate",
-      "text": "CONCAT22(g_USHORT_ARRAY_01c35614[*(byte *)((int)indexed_input_buffer + 1)],",
+      "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "CONCAT22",
       "severity": "moderate",
-      "text": "CONCAT22(g_USHORT_ARRAY_01c35614[*pbVar1],g_USHORT_ARRAY_01c35614[bVar2]);",
+      "text": "*(uint *)output_buffer = CONCAT22(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])",
       "type": "concat_reconstruction"
     }
   ]

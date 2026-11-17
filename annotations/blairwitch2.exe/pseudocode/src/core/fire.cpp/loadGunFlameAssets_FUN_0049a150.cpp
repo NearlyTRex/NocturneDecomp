@@ -14,9 +14,9 @@ void __cdecl core_fire_cpp_loadGunFlameAssets_FUN_0049a150(void)
   char *buffer;
   
   iVar1 = 0;
-  buffer = g_SMRGLTextureBasic_ARRAY_01c3f3c8[0].texture_name;
+  buffer = g_GunFlameTextures[0].texture_name;
   do {
-    texture = g_SMRGLTextureBasic_ARRAY_01c3f3c8 + iVar1;
+    texture = g_GunFlameTextures + iVar1;
     _sprintf(buffer,"fr46%03d.raw");
     buffer = buffer + 0x18;
     iVar1 = iVar1 + 1;

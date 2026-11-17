@@ -17,7 +17,7 @@ int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_0044dff0(int start_x,int s
   int iVar6;
   uint uStack_18;
   
-  if (g_INT_015484cc == 0) {
+  if (g_CoronaVisibilityEnabled == 0) {
     uStack_18 = 1;
   }
   else {
@@ -27,17 +27,17 @@ int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_0044dff0(int start_x,int s
     else {
       iVar1 = (int)(0x7fffffff / (longlong)depth_reciprocal);
     }
-    iVar4 = g_INT_015484d8 - iVar1;
+    iVar4 = g_CoronaTargetDepth - iVar1;
     iVar5 = iVar4 >> 0x1f;
     iVar6 = start_y << 8;
     iVar3 = start_x << 8;
     iVar2 = 0x10;
     do {
-      if (g_INT_ARRAY_00b52a48[(iVar6 >> 8) * 0x140 + (iVar3 >> 8)] < iVar1 + -0x80) break;
+      if (g_PrecomputedDepthBuffer[(iVar6 >> 8) * 0x140 + (iVar3 >> 8)] < iVar1 + -0x80) break;
       iVar2 = iVar2 + -1;
       iVar1 = iVar1 + ((int)((iVar4 + iVar5 * -0x10) - (uint)(iVar5 << 3 < 0)) >> 4);
-      iVar3 = iVar3 + (g_INT_015484d0 - start_x) * 0x10;
-      iVar6 = iVar6 + (g_INT_015484d4 - start_y) * 0x10;
+      iVar3 = iVar3 + (g_CoronaTargetX - start_x) * 0x10;
+      iVar6 = iVar6 + (g_CoronaTargetY - start_y) * 0x10;
     } while (0 < iVar2);
     uStack_18 = (uint)(iVar2 == 0);
   }

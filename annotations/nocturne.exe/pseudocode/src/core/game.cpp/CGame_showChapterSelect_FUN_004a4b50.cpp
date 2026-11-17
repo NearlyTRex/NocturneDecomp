@@ -41,7 +41,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,
   this_ptr->total_play_time = 0.0;
   this_ptr->is_loading = 0;
   local_1c = g_CBitFont_PTR_01bcd070;
-  g_CBitFont_PTR_01bcd070 = g_CBitFont_PTR_014b9900;
+  g_CBitFont_PTR_01bcd070 = g_ThemeFont;
   p_Var2 = _fopen("pod.ini","rt");
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
@@ -81,9 +81,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,
     if (iVar6 == 0) {
       return;
     }
-    g_INT_01c78ac0 = 0;
-    g_FLOAT_01c78ac4 = 0.0;
-    g_CHAR_ARRAY_01c789c0[0] = '\0';
+    g_ChapterDisplayYear = 0;
+    g_OverlayDisplayTimer = 0.0;
+    g_ChapterDisplayName[0] = '\0';
   }
   else {
     while (iVar6 < 0) {
@@ -355,9 +355,9 @@ LAB_004a50dc:
     if (p_Var2 == (_FILE *)0x0) {
       return;
     }
-    pcVar4 = g_CHAR_ARRAY_01c789c0;
+    pcVar4 = g_ChapterDisplayName;
     _fclose(p_Var2);
-    g_INT_01c78ac0 = g_ChapterDisplayYears[iVar3];
+    g_ChapterDisplayYear = g_ChapterDisplayYears[iVar3];
     pcVar7 = local_40[iVar3];
     do {
       cVar1 = *pcVar7;
@@ -368,14 +368,14 @@ LAB_004a50dc:
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    g_FLOAT_01c78ac4 = 8.0;
+    g_OverlayDisplayTimer = 8.0;
   }
-  core_event_cpp_CEventList_resetGameFlags_FUN_00480410(g_CEventList_PTR_005b7650);
+  core_event_cpp_CEventList_resetGameFlags_FUN_00480410(g_CEventListPtr);
   iVar5 = 1;
-  iVar6 = _stricmp(g_CHAR_ARRAY_01c78598,local_144);
+  iVar6 = _stricmp(g_CurrentSaveFile,local_144);
   if (iVar6 != 0) {
     pcVar7 = local_144;
-    pcVar4 = g_CHAR_ARRAY_01c78598;
+    pcVar4 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar7;
       *pcVar4 = cVar1;
@@ -387,7 +387,7 @@ LAB_004a50dc:
     } while (cVar1 != '\0');
     iVar5 = 0;
   }
-  core_level_cpp_CLevelLoader_show_FUN_004c5640(g_CLevelLoader_PTR_005baca0,10,0,iVar3);
+  core_level_cpp_CLevelLoader_show_FUN_004c5640(g_CLevelLoaderPtr,10,0,iVar3);
   core_mission_cpp_CDemonMission_load_FUN_004d7ee0(g_CDemonMission_PTR_005baf90,local_144,iVar5);
   iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80
                     (g_CDemonMission_PTR_005baf90,(CCharacter *)0x0);

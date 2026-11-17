@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   enable
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01c25590
+;   CBitFont* g_EditorFont
 ;   int g_INT_01c25f84
 ;
 ; Called Functions:
@@ -20,7 +20,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 00480d00
         ;   Label: shape_edittool.cpp_CEditorTools_setMini3DMode_FUN_00480d00
-    MOV EDX,dword ptr [0x01c25590]      ; 00480d04 | g_CBitFont_PTR_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 00480d04 | g_EditorFont
     MOV [0x01c25f84],EAX                ; 00480d0a | g_INT_01c25f84
     TEST EDX,EDX                        ; 00480d0f
     JNZ 0x00480d14                      ; 00480d11

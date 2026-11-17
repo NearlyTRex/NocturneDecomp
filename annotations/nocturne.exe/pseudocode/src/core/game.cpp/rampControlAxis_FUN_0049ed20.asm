@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01c775ec
-;   char[4952] g_CHAR_ARRAY_01c02598
+;   char[4952] g_KeyboardState
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; *****************************************************************************
@@ -25,11 +25,11 @@ section .text
         ;   Label: core_game.cpp_rampControlAxis_FUN_0049ed20
     MOV EDX,dword ptr [ESP + 0x10]      ; 0049ed23
     MOV EAX,dword ptr [ESP + 0x8]       ; 0049ed27
-    CMP byte ptr [EAX + 0x1c02598],0x0  ; 0049ed2b | g_CHAR_ARRAY_01c02598
+    CMP byte ptr [EAX + 0x1c02598],0x0  ; 0049ed2b | g_KeyboardState
     JNZ 0x0049ed70                      ; 0049ed32
         ;   XREF to: 0049ed70 (CONDITIONAL_JUMP)  ; LAB_0049ed70
     MOV EAX,dword ptr [ESP + 0xc]       ; 0049ed34
-    CMP byte ptr [EAX + 0x1c02598],0x0  ; 0049ed38 | g_CHAR_ARRAY_01c02598
+    CMP byte ptr [EAX + 0x1c02598],0x0  ; 0049ed38 | g_KeyboardState
     JZ 0x0049ed6c                       ; 0049ed3f
         ;   XREF to: 0049ed6c (CONDITIONAL_JUMP)  ; LAB_0049ed6c
     FLD float ptr [EDX]                 ; 0049ed41

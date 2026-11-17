@@ -86,7 +86,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
        *(uint *)((int)&local_48 + (uint)bVar5 * -8 + 4);
   *(uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        *(uint *)((int)&local_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  direction = &g_CVector3f_02c8af28;
+  direction = &g_ZeroVector;
   path_map = (*((this_ptr->door_target->base).vtable._ub)->getPathMap)(&this_ptr->door_target->base)
   ;
   iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042ccf0

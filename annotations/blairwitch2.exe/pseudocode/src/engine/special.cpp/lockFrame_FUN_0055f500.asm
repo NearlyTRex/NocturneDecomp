@@ -18,9 +18,9 @@
 ;   int g_INT_006141c0 = 0x8
 ;   int g_INT_01c37788
 ;   void* g_PTR_0264bbd8
-;   int g_INT_0264bcf4
+;   int g_ExternalBitsPerPixel
 ;   int g_INT_0264bcfc
-;   int g_INT_0264bd00
+;   int g_ExternalFrameLocked
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     TEST EDX,EDX                        ; 0055f506
     JNZ 0x0055f513                      ; 0055f508
         ;   XREF to: 0055f513 (CONDITIONAL_JUMP)  ; LAB_0055f513
-    MOV dword ptr [0x0264bd00],EDX      ; 0055f50a | g_INT_0264bd00
+    MOV dword ptr [0x0264bd00],EDX      ; 0055f50a | g_ExternalFrameLocked
     XOR EAX,EAX                         ; 0055f510
         ;   Label: LAB_0055f510
     RET                                 ; 0055f512
@@ -46,8 +46,8 @@ section .text
     MOV EAX,[0x006141c0]                ; 0055f523 | g_INT_006141c0
     XOR EBX,EBX                         ; 0055f528
     MOV [0x0264bcfc],EAX                ; 0055f52a | g_INT_0264bcfc
-    MOV dword ptr [0x0264bd00],ECX      ; 0055f52f | g_INT_0264bd00
-    MOV EAX,[0x0264bcf4]                ; 0055f535 | g_INT_0264bcf4
+    MOV dword ptr [0x0264bd00],ECX      ; 0055f52f | g_ExternalFrameLocked
+    MOV EAX,[0x0264bcf4]                ; 0055f535 | g_ExternalBitsPerPixel
     MOV dword ptr [0x01c37788],EBX      ; 0055f53a | g_INT_01c37788
     MOV [0x006141c0],EAX                ; 0055f540 | g_INT_006141c0
     MOV EAX,ECX                         ; 0055f545

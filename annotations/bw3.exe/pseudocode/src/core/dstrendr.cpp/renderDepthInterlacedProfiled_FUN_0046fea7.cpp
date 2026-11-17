@@ -35,19 +35,20 @@ void __edi_esi_ebx core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046fea7(
   uVar2 = uVar2 >> 0x10;
   iVar4 = (uVar3 >> 0x10) - uVar2;
   if (iVar4 != 0 && uVar2 <= uVar3 >> 0x10) {
-    puVar7 = g_UINT_PTR_ARRAY_01c60dac[scanline_y] + uVar2;
+    puVar7 = g_ZBufferScanlineArray[scanline_y] + uVar2;
     uVar9 = (pSVar8->base).depth_current;
     iVar5 = iVar4;
     do {
       if (((int)*puVar7 <= (int)(uVar9 >> 8)) &&
-         (g_INT_01bdd810 = g_INT_01bdd810 + 1, (uint)g_INT_005f2b00 <= (uint)g_INT_01bdd810)) {
-        g_INT_01bdd814 = 1;
+         (g_RenderPixelCounter = g_RenderPixelCounter + 1,
+         (uint)g_RenderPixelBudget <= (uint)g_RenderPixelCounter)) {
+        g_RenderAbortFlag = 1;
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)
                             ((longlong)
                              ((left_edge->base).depth_current - (pSVar8->base).depth_current) *
-                            (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar4 + 1]) >> 0x20) * 2;
+                            (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20) * 2;
       puVar7 = puVar7 + 2;
       iVar6 = iVar5 + -2;
       bVar1 = 1 < iVar5;

@@ -19,7 +19,7 @@
 // =============================================================================
 
 // CBulletTrail[10]
-extern CBulletTrail g_CBulletTrail_ARRAY_01c91268[10];
+extern CBulletTrail g_BulletTrailPool[10];
 
 // CCrater[20]
 extern CCrater g_CCrater_ARRAY_01c9c4d4[20];
@@ -34,7 +34,7 @@ extern CFireball g_FireballPool[64];
 extern CGunFlame g_CGunFlame_ARRAY_01c9cd98[500];
 
 // CLaserBeam[64]
-extern CLaserBeam g_CLaserBeam_ARRAY_01c965e0[64];
+extern CLaserBeam g_LaserBeamPool[64];
 
 // CLeaf[64]
 extern CLeaf CLeaf_ARRAY_01c950dc[64];
@@ -47,10 +47,10 @@ extern CToss g_TossPool[20];
 
 // int
 extern int g_INT_01c91264;
-extern int g_INT_01c913d0;
-extern int g_INT_01c93cd4;
+extern int g_FireballAllocIndex;
+extern int g_RockAllocIndex;
 extern int g_INT_01c950d8;
-extern int g_INT_01c965dc;
+extern int g_LaserBeamActiveCount;
 extern int g_INT_01c975e0;
 extern int g_INT_01c976fc;
 extern int g_INT_01c9c4d0;

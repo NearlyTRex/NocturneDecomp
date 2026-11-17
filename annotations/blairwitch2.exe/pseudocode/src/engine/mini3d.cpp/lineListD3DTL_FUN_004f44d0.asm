@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   void* g_PTR_0264bcb0
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   void* g_APIDLL_setLightConstants
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_updateRenderState_FUN_004f7da0
@@ -28,7 +28,7 @@ section .text
         ;   Label: engine_mini3d.cpp_lineListD3DTL_FUN_004f44d0
     CALL engine_mini3d.cpp_updateRenderState_FUN_004f7da0 ; 004f44d5
         ;   XREF to: 004f7da0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateRenderState_FUN_004f7da0()
-    CMP dword ptr [0x0264bcb0],0x0      ; 004f44da | g_PTR_0264bcb0
+    CMP dword ptr [0x0264bcb0],0x0      ; 004f44da | g_APIDLL_setLightConstants
     JZ 0x004f44ec                       ; 004f44e1
         ;   XREF to: 004f44ec (CONDITIONAL_JUMP)  ; LAB_004f44ec
     CMP dword ptr [0x01c37788],0x0      ; 004f44e3 | g_INT_01c37788
@@ -40,13 +40,13 @@ section .text
         ;   Label: LAB_004f44ed
     PUSH ESI                            ; 004f44ee
     PUSH EBX                            ; 004f44ef
-    MOV EBX,dword ptr [0x01c38b54]      ; 004f44f0 | g_BIT_INTEGER32_01c38b54
+    MOV EBX,dword ptr [0x01c38b54]      ; 004f44f0 | g_RenderStateFlags
     PUSH EBX                            ; 004f44f6
     MOV ESI,dword ptr [ESP + 0x18]      ; 004f44f7
     PUSH ESI                            ; 004f44fb
     MOV EDI,dword ptr [ESP + 0x18]      ; 004f44fc
     PUSH EDI                            ; 004f4500
-    CALL dword ptr [0x0264bcb0]         ; 004f4501 | g_PTR_0264bcb0
+    CALL dword ptr [0x0264bcb0]         ; 004f4501 | g_APIDLL_setLightConstants
     ADD ESP,0xc                         ; 004f4507
     POP EBX                             ; 004f450a
     POP ESI                             ; 004f450b

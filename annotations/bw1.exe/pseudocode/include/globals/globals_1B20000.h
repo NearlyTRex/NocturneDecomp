@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CVector3f.h"
 
@@ -15,24 +16,24 @@
 extern CKeyFramedModel g_CKeyFramedModelPool[256];
 
 // CVector3f
-extern CVector3f g_CVector3f_01b2ee3c;
+extern CVector3f g_CoronaGeometryOrigin;
 
 // int
-extern int g_INT_01b2d374;
-extern int g_INT_01b2e638;
-extern int g_INT_01b2ee48;
-extern int g_INT_01b2efdc;
+extern int g_BackgroundSceneNestingCount;
+extern int g_DirtySpanCount;
+extern int g_NoiseTableIndex;
+extern int g_KeyframeModelCount;
 
 // int[100]
 extern int g_INT_ARRAY_01b2ee4c[100];
 
 // int[256]
-extern int g_INT_ARRAY_01b2e63c[256];
-extern int g_INT_ARRAY_01b2ea3c[256];
+extern int g_DirtySpanStarts[256];
+extern int g_DirtySpanEnds[256];
 
 // uint
-extern uint g_UINT_01b2d370;
+extern uint g_ShadowRestoreAllocator;
 
-// void*[1200]
-extern void* g_ARRAY_PTR_01b2d378[1200];
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_SavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

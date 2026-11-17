@@ -11,7 +11,7 @@
 ;   double g_DOUBLE_005f9b32 = 0.800000000000000
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   CVector3f g_CVector3f_02c8af28
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -92,7 +92,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005b1281
     MOVSD ES:EDI,ESI                    ; 005b1282
     MOVSD ES:EDI,ESI                    ; 005b1283
-    PUSH 0x2c8af28                      ; 005b1284 | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 005b1284 | g_ZeroVector
     MOV EDI,dword ptr [0x00612560]      ; 005b1289 | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 005b128f | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850 ; 005b1290

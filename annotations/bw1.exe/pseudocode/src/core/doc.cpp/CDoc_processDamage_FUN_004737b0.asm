@@ -20,7 +20,7 @@
 ;   float g_FLOAT_005da3cc = 50
 ;   float g_FLOAT_005feca8 = 2
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   ... and 7 more
@@ -127,7 +127,7 @@ section .text
     JZ 0x004738b7                       ; 0047388a
         ;   XREF to: 004738b7 (CONDITIONAL_JUMP)  ; LAB_004738b7
     PUSH 0x5da354                       ; 0047388c | = "ScorpTailAttack"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00473891 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00473891 | g_CEventListPtr
     PUSH EDI                            ; 00473897
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00473898
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -136,7 +136,7 @@ section .text
     JZ 0x004738b7                       ; 004738a2
         ;   XREF to: 004738b7 (CONDITIONAL_JUMP)  ; LAB_004738b7
     PUSH 0x5da364                       ; 004738a4 | = "HitByShadowScorp"
-    MOV EAX,[0x0061b4d0]                ; 004738a9 | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 004738a9 | g_CEventListPtr
     PUSH EAX                            ; 004738ae
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004738af
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

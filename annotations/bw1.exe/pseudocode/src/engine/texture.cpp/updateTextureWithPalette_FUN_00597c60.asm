@@ -7,7 +7,7 @@
 ; SMRGLTextureBasic * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
-;   CTextureCache* g_CTextureCache_PTR_02c8a680
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_uploadTexture_FUN_005976a0
@@ -26,7 +26,7 @@ section .text
     ADD ESP,0x4                         ; 00597c6b
     MOV ECX,dword ptr [ESP + 0x8]       ; 00597c6e
     PUSH ECX                            ; 00597c72
-    MOV EBX,dword ptr [0x02c8a680]      ; 00597c73 | g_CTextureCache_PTR_02c8a680
+    MOV EBX,dword ptr [0x02c8a680]      ; 00597c73 | g_TextureCacheInstance
     PUSH EBX                            ; 00597c79
     CALL engine_texture.cpp_CTextureCache_uploadTexture_FUN_005976a0 ; 00597c7a
         ;   XREF to: 005976a0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_uploadTexture_FUN_005976a0(CTextureCache * this_ptr, SMRGLTextureBasic * texture)

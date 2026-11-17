@@ -12,13 +12,13 @@
 // =============================================================================
 
 // CVector3f[4000]
-extern CVector3f g_CVector3f_ARRAY_02080010[4000];
+extern CVector3f g_FaceNormalArray[4000];
 
 // CVector3i[20000]
-extern CVector3i g_CVector3i_ARRAY_0208bb90[20000];
+extern CVector3i g_TransformedVertexArray[20000];
 
 // int
-extern int g_INT_02080004;
-extern int g_INT_02080008;
-extern int g_INT_0208000c;
+extern int g_ColorCorrectionLightMultiplier;
+extern int g_ColorCorrectionColorMultiplier;
+extern int g_ColorCorrectionFogMultiplier;
 

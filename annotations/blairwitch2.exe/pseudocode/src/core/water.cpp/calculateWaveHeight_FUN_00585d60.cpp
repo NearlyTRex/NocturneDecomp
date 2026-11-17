@@ -12,6 +12,6 @@ float __cdecl core_water_cpp_calculateWaveHeight_FUN_00585d60(int x,int y)
   float10 fVar1;
   
   fVar1 = (float10)fsin((float10)y * (float10)3.141593f * (float10)0.5 +
-                        (float10)x * (float10)3.141593f + (float10)g_FLOAT_0265b7e8);
+                        (float10)x * (float10)3.141593f + (float10)g_WaterAnimationPhase);
   return (float)(fVar1 * (float10)g_FLOAT_0061e524);
 }

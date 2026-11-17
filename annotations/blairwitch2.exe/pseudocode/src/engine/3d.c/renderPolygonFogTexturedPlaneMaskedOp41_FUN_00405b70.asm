@@ -14,14 +14,14 @@
 ;   int g_INT_006141c0 = 0x8
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].v
-;   uint g_UINT_0070ca60
-;   int[24] g_INT_ARRAY_0070ca98
-;   undefined4 g_INT_ARRAY_0070ca98[1]
-;   void* g_PTR_01c35e6c
-;   int g_INT_01c38aec
-;   int g_INT_01c38b40
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
+;   uint g_ProcessedVertexOffset
+;   int[24] g_ProcessedVertexIndices
+;   undefined4 g_ProcessedVertexIndices[1]
+;   void* g_ScanlineRenderFunc
+;   int g_PerspectiveReciprocal
+;   int g_MMXSupported
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -35,7 +35,7 @@ section .text
         ;   Label: engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70
     PUSH EDI                            ; 00405b71
     PUSH EBP                            ; 00405b72
-    MOV EBP,dword ptr [0x0070ca60]      ; 00405b73 | g_UINT_0070ca60
+    MOV EBP,dword ptr [0x0070ca60]      ; 00405b73 | g_ProcessedVertexOffset
     MOV EDI,dword ptr [ESP + 0x10]      ; 00405b79
     LEA ESI,[EDI + 0x18]                ; 00405b7d
     LEA EAX,[EDI + 0x8]                 ; 00405b80
@@ -47,37 +47,37 @@ section .text
     JZ 0x00405cd6                       ; 00405b8e
         ;   XREF to: 00405cd6 (CONDITIONAL_JUMP)  ; LAB_00405cd6
     PUSH EBX                            ; 00405b94
-    MOV EDX,dword ptr [0x01c38aec]      ; 00405b95 | g_INT_01c38aec
-    MOV EBP,dword ptr [0x0070ca60]      ; 00405b9b | g_UINT_0070ca60
+    MOV EDX,dword ptr [0x01c38aec]      ; 00405b95 | g_PerspectiveReciprocal
+    MOV EBP,dword ptr [0x0070ca60]      ; 00405b9b | g_ProcessedVertexOffset
     TEST EDX,EDX                        ; 00405ba1
     JZ 0x00405c60                       ; 00405ba3
         ;   XREF to: 00405c60 (CONDITIONAL_JUMP)  ; LAB_00405c60
-    CMP dword ptr [0x01c38b40],0x0      ; 00405ba9 | g_INT_01c38b40
+    CMP dword ptr [0x01c38b40],0x0      ; 00405ba9 | g_MMXSupported
     JNZ 0x00405c39                      ; 00405bb0
         ;   XREF to: 00405c39 (CONDITIONAL_JUMP)  ; LAB_00405c39
     CMP dword ptr [0x006141c0],0x20     ; 00405bb6 | g_INT_006141c0
     JNZ 0x00405c2d                      ; 00405bbd
         ;   XREF to: 00405c2d (CONDITIONAL_JUMP)  ; LAB_00405c2d
-    MOV dword ptr [0x01c35e6c],0x55d0b3 ; 00405bbf | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55d0b3 ; 00405bbf | g_ScanlineRenderFunc
     MOV EBX,0x1                         ; 00405bc9
         ;   Label: LAB_00405bc9
     MOV ECX,0xcd                        ; 00405bce
-    MOV dword ptr [0x01c38b58],EBX      ; 00405bd3 | g_INT_01c38b58
-    MOV dword ptr [0x01c38b54],ECX      ; 00405bd9 | g_BIT_INTEGER32_01c38b54
-    MOV EBX,0x70ca98                    ; 00405bdf | g_INT_ARRAY_0070ca98
+    MOV dword ptr [0x01c38b58],EBX      ; 00405bd3 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c38b54],ECX      ; 00405bd9 | g_RenderStateFlags
+    MOV EBX,0x70ca98                    ; 00405bdf | g_ProcessedVertexIndices
         ;   Label: LAB_00405bdf
     MOV EAX,ESI                         ; 00405be4
     XOR ECX,ECX                         ; 00405be6
     MOV EDX,dword ptr [EDI + 0x4]       ; 00405be8
         ;   Label: LAB_00405be8
     LEA EDX,[EDX + EDX*0x2]             ; 00405beb
-    MOV dword ptr [0x0070ca60],EBP      ; 00405bee | g_UINT_0070ca60
+    MOV dword ptr [0x0070ca60],EBP      ; 00405bee | g_ProcessedVertexOffset
     CMP ECX,EDX                         ; 00405bf4
     JGE 0x00405cc4                      ; 00405bf6
         ;   XREF to: 00405cc4 (CONDITIONAL_JUMP)  ; LAB_00405cc4
     MOV EDX,dword ptr [EAX]             ; 00405bfc
     ADD EDX,EBP                         ; 00405bfe
-    MOV dword ptr [EBX],EDX             ; 00405c00 | g_INT_ARRAY_0070ca98 | g_INT_ARRAY_0070ca98[1]
+    MOV dword ptr [EBX],EDX             ; 00405c00 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 00405c02
     ADD EDX,EBP                         ; 00405c04
     IMUL EDX,EDX,0x30                   ; 00405c06
@@ -93,7 +93,7 @@ section .text
     MOV dword ptr [ESI + 0x622030],EDX  ; 00405c25 | g_SRenderVertex_ARRAY_00622014[0].v
     JMP 0x00405be8                      ; 00405c2b
         ;   XREF to: 00405be8 (UNCONDITIONAL_JUMP)  ; LAB_00405be8
-    MOV dword ptr [0x01c35e6c],0x55d2e9 ; 00405c2d | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55d2e9 ; 00405c2d | g_ScanlineRenderFunc
         ;   Label: LAB_00405c2d
     JMP 0x00405bc9                      ; 00405c37
         ;   XREF to: 00405bc9 (UNCONDITIONAL_JUMP)  ; LAB_00405bc9
@@ -101,29 +101,29 @@ section .text
         ;   Label: LAB_00405c39
     JNZ 0x00405c51                      ; 00405c40
         ;   XREF to: 00405c51 (CONDITIONAL_JUMP)  ; LAB_00405c51
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 00405c42 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 00405c42 | g_ScanlineRenderFunc
     JMP 0x00405bc9                      ; 00405c4c
         ;   XREF to: 00405bc9 (UNCONDITIONAL_JUMP)  ; LAB_00405bc9
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 00405c51 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 00405c51 | g_ScanlineRenderFunc
         ;   Label: LAB_00405c51
     JMP 0x00405bc9                      ; 00405c5b
         ;   XREF to: 00405bc9 (UNCONDITIONAL_JUMP)  ; LAB_00405bc9
-    CMP dword ptr [0x01c38b40],0x0      ; 00405c60 | g_INT_01c38b40
+    CMP dword ptr [0x01c38b40],0x0      ; 00405c60 | g_MMXSupported
         ;   Label: LAB_00405c60
     JNZ 0x00405ca3                      ; 00405c67
         ;   XREF to: 00405ca3 (CONDITIONAL_JUMP)  ; LAB_00405ca3
     CMP dword ptr [0x006141c0],0x20     ; 00405c69 | g_INT_006141c0
     JNZ 0x00405c97                      ; 00405c70
         ;   XREF to: 00405c97 (CONDITIONAL_JUMP)  ; LAB_00405c97
-    MOV dword ptr [0x01c35e6c],0x55d0b3 ; 00405c72 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55d0b3 ; 00405c72 | g_ScanlineRenderFunc
     MOV ECX,0x1                         ; 00405c7c
         ;   Label: LAB_00405c7c
     MOV EDX,0xc5                        ; 00405c81
-    MOV dword ptr [0x01c38b58],ECX      ; 00405c86 | g_INT_01c38b58
-    MOV dword ptr [0x01c38b54],EDX      ; 00405c8c | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c38b58],ECX      ; 00405c86 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c38b54],EDX      ; 00405c8c | g_RenderStateFlags
     JMP 0x00405bdf                      ; 00405c92
         ;   XREF to: 00405bdf (UNCONDITIONAL_JUMP)  ; LAB_00405bdf
-    MOV dword ptr [0x01c35e6c],0x55d2e9 ; 00405c97 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55d2e9 ; 00405c97 | g_ScanlineRenderFunc
         ;   Label: LAB_00405c97
     JMP 0x00405c7c                      ; 00405ca1
         ;   XREF to: 00405c7c (UNCONDITIONAL_JUMP)  ; LAB_00405c7c
@@ -131,14 +131,14 @@ section .text
         ;   Label: LAB_00405ca3
     JNZ 0x00405cb8                      ; 00405caa
         ;   XREF to: 00405cb8 (CONDITIONAL_JUMP)  ; LAB_00405cb8
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 00405cac | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 00405cac | g_ScanlineRenderFunc
     JMP 0x00405c7c                      ; 00405cb6
         ;   XREF to: 00405c7c (UNCONDITIONAL_JUMP)  ; LAB_00405c7c
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 00405cb8 | g_PTR_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 00405cb8 | g_ScanlineRenderFunc
         ;   Label: LAB_00405cb8
     JMP 0x00405c7c                      ; 00405cc2
         ;   XREF to: 00405c7c (UNCONDITIONAL_JUMP)  ; LAB_00405c7c
-    PUSH 0x70ca98                       ; 00405cc4 | g_INT_ARRAY_0070ca98
+    PUSH 0x70ca98                       ; 00405cc4 | g_ProcessedVertexIndices
         ;   Label: LAB_00405cc4
     MOV ESI,dword ptr [EDI + 0x4]       ; 00405cc9
     PUSH ESI                            ; 00405ccc
@@ -152,7 +152,7 @@ section .text
     SUB EAX,EDX                         ; 00405ce0
     LEA EDX,[EAX*0x4 + 0x0]             ; 00405ce2
     LEA EAX,[EDI + 0x18]                ; 00405ce9
-    MOV EBP,dword ptr [0x0070ca60]      ; 00405cec | g_UINT_0070ca60
+    MOV EBP,dword ptr [0x0070ca60]      ; 00405cec | g_ProcessedVertexOffset
     ADD EAX,EDX                         ; 00405cf2
     POP EBP                             ; 00405cf4
     POP EDI                             ; 00405cf5

@@ -48,7 +48,7 @@ int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_0059ad40(CTrash *this_ptr)
   *(uint *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28,translation);
+            (g_CDemonRenderer_PTR_00612560,&g_ZeroVector,translation);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0(&this_ptr->model,0.0,-1);
   engine_drender_cpp_pop_FUN_004839a0();
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);

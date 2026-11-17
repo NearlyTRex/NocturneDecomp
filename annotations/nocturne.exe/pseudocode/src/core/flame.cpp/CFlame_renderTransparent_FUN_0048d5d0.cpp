@@ -130,7 +130,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
                     (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
                      &CStack_48);
           core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-                    (g_CDemonCamera_PTR_007f7370,&(this_ptr->base).location.position,
+                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,
                      (SProjectedVertex *)0x0);
           g_SRenderVertex_ARRAY_005c5014[0].a = 0xffff - g_INT_01c038f4;
           if (iStack_14 == 3) {

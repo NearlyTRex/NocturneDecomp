@@ -18,8 +18,8 @@ void __cdecl core_fire_cpp_CStormEffect_activate_FUN_004a0480(CStormEffect *this
   CVector3f local_20;
   CVector3f local_14;
   
-  this_ptr_01 = g_CWeather_PTR_006071f0;
-  EVar1 = g_CWeather_PTR_006071f0->weather_type;
+  this_ptr_01 = g_CWeatherPtr;
+  EVar1 = g_CWeatherPtr->weather_type;
   this_ptr->saved_weather_type = EVar1;
   if (EVar1 == WEATHER_TYPE_NONE) {
     iVar2 = g_CDemonSetPtr->selected_camera_index;
@@ -35,9 +35,8 @@ void __cdecl core_fire_cpp_CStormEffect_activate_FUN_004a0480(CStormEffect *this
       local_20.y = g_CDemonSetPtr->cameras[iVar2].orientation.y;
       local_20.z = g_CDemonSetPtr->cameras[iVar2].orientation.z;
     }
-    core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeather_PTR_006071f0,5);
-    core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0
-              (g_CWeather_PTR_006071f0,&local_14,&local_20);
+    core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeatherPtr,5);
+    core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(g_CWeatherPtr,&local_14,&local_20);
   }
   else {
     core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(this_ptr_01,5);

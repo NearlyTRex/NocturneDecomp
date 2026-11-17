@@ -36,11 +36,11 @@ void __edi_esi_ebx core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_004871
   uVar2 = uVar2 >> 0x10;
   iVar3 = (uVar9 >> 0x10) - uVar2;
   if (iVar3 != 0 && uVar2 <= uVar9 >> 0x10) {
-    piVar6 = (int *)(g_ARRAY_PTR_01c4354c[scanline_y] + uVar2 * 4);
-    puVar7 = g_UINT_PTR_ARRAY_01c4480c[scanline_y] + uVar2;
+    piVar6 = (int *)(g_ScreenBufferArray[scanline_y] + uVar2 * 4);
+    puVar7 = g_ZBufferScanlineArray[scanline_y] + uVar2;
     iVar5 = (int)((ulonglong)
                   ((longlong)((left_edge->base).depth_current - (pSVar10->base).depth_current) *
-                  (longlong)(int)g_UINT_ARRAY_01c4f030[iVar3 + 1]) >> 0x20);
+                  (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar11 = (pSVar10->base).depth_current;
     while (iVar4 = iVar3 + -4, puVar8 = puVar7, piVar12 = piVar6, 3 < iVar3) {
       if ((int)*puVar7 <= (int)(uVar11 >> 8)) {

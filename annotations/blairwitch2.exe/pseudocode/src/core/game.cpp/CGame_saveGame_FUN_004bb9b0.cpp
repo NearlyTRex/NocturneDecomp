@@ -35,12 +35,12 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004bb9b0(CGame *this_ptr,char *sav
   }
   _remove("save\\$$SAVE$$.TMP");
   splitpath
-            (g_CHAR_ARRAY_01cb7b50,(char *)0x0,(char *)0x0,(char *)0x0,local_184);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_184);
   iVar2 = _stricmp(local_184,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_184,".noc"), iVar2 == 0)) {
     pcVar4 = local_490;
-    pcVar3 = g_CHAR_ARRAY_01cb7b50;
+    pcVar3 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -82,14 +82,14 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004bb9b0(CGame *this_ptr,char *sav
     } while (cVar1 != '\0');
   }
   _mkdir("save");
-  g_INT_007bc040 = 1;
+  g_IncludeCommentsWhenWriting = 1;
   local_14 = 1;
   file = _fopen("save\\$$SAVE$$.TMP","wt");
   if (file == (_FILE *)0x0) {
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Warning!  Your game didn't save.")
     ;
     shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(g_CEditorToolsPtr,pcVar4);
-    g_INT_007bc040 = 0;
+    g_IncludeCommentsWhenWriting = 0;
     return;
   }
   _fprintf(file,"// .NOC file version\n");
@@ -98,31 +98,32 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004bb9b0(CGame *this_ptr,char *sav
   _fprintf(file,"// Hero count, local hero index, hero list\n");
   _fprintf(file,"%d, %d\n");
   iVar2 = 0;
-  if (0 < g_INT_01cedee0) {
+  if (0 < g_HeroCount) {
     do {
       iVar2 = iVar2 + 1;
       _fprintf(file,"%s\n");
-    } while (iVar2 < g_INT_01cedee0);
+    } while (iVar2 < g_HeroCount);
   }
-  core_event_cpp_CEventList_saveState_FUN_00492060(g_CEventList_PTR_006141f0,file);
+  core_event_cpp_CEventList_saveState_FUN_00492060(g_CEventListPtr,file);
   core_script_cpp_CScript_saveState_FUN_0052a400(g_CScriptPtr,file);
-  core_fire_cpp_CFireEffect_save_FUN_0049eb00(g_CFireEffect_PTR_00614d30,file);
+  core_fire_cpp_CFireEffect_save_FUN_0049eb00(g_CFireEffectPtr,file);
   _fprintf(file,"Light state\n");
-  core_set_cpp_CDemonSet_saveMasterLightStates_FUN_005349d0(g_CDemonSetPtr,g_INT_ARRAY_01cb7c54);
+  core_set_cpp_CDemonSet_saveMasterLightStates_FUN_005349d0
+            (g_CDemonSetPtr,g_MasterLightStateSaveBuffer);
   iVar2 = 1;
   _fprintf(file,"%d\n");
-  if (0 < g_INT_ARRAY_01cb7c54[0]) {
+  if (0 < g_MasterLightStateSaveBuffer[0]) {
     do {
       iVar2 = iVar2 + 1;
       _fprintf(file,"%d\n");
-    } while (iVar2 <= g_INT_ARRAY_01cb7c54[0]);
+    } while (iVar2 <= g_MasterLightStateSaveBuffer[0]);
   }
   _fprintf(file,"Game stats\n");
   _fprintf(file,"%f,%f,%d,%d\n");
   core_set_cpp_CDemonSet_saveStateInfo_FUN_00534a10(g_CDemonSetPtr,file);
   core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(g_CFieldNotesPtr,file);
   _fclose(file);
-  g_INT_007bc040 = 0;
+  g_IncludeCommentsWhenWriting = 0;
   if (local_14 != 0) {
     support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_44);
     support_trstream_cpp_COutStreamFile_ctor_FUN_0057db80(&local_1c);
@@ -158,7 +159,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004bb9b0(CGame *this_ptr,char *sav
     support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_44,0);
   }
   _remove("save\\$$SAVE$$.TMP");
-  pcVar3 = g_CHAR_ARRAY_01cb7b50;
+  pcVar3 = g_CurrentSaveFile;
   do {
     cVar1 = *pcVar4;
     *pcVar3 = cVar1;

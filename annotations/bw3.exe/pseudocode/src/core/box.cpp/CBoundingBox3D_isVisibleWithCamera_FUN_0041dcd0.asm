@@ -36,7 +36,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 at 0041db01
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005dc948 = 256
+;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2af8 = 01bdd7e4
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
@@ -85,13 +85,13 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 0041dd14
     MOV ESI,dword ptr [0x005f2af8]      ; 0041dd18 | g_CDemonRenderer_PTR_005f2af8
     FLD float ptr [EAX]                 ; 0041dd1e
-    FMUL float ptr [0x005dc948]         ; 0041dd20 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dd20 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041dd26
     FLD float ptr [EAX + 0x4]           ; 0041dd28
-    FMUL float ptr [0x005dc948]         ; 0041dd2b | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dd2b | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041dd31
     FLD float ptr [EAX + 0x8]           ; 0041dd34
-    FMUL float ptr [0x005dc948]         ; 0041dd37 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dd37 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041dd3d
     LEA EAX,[ESP + 0x58]                ; 0041dd40
     PUSH EAX                            ; 0041dd44
@@ -140,25 +140,25 @@ section .text
     MOV EAX,dword ptr [ESP + 0x84]      ; 0041ddbd
     MOV ESI,0x1                         ; 0041ddc4
     FLD float ptr [EAX]                 ; 0041ddc9
-    FMUL float ptr [0x005dc948]         ; 0041ddcb | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ddcb | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041ddd1
     FLD float ptr [EAX + 0x4]           ; 0041ddd3
-    FMUL float ptr [0x005dc948]         ; 0041ddd6 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ddd6 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041dddc
     FLD float ptr [EAX + 0x8]           ; 0041dddf
-    FMUL float ptr [0x005dc948]         ; 0041dde2 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dde2 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041dde8
     LEA EBX,[ESP + 0x28]                ; 0041ddeb
     ADD EAX,0xc                         ; 0041ddef
     MOV EBP,ESI                         ; 0041ddf2
     FLD float ptr [EAX]                 ; 0041ddf4
-    FMUL float ptr [0x005dc948]         ; 0041ddf6 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041ddf6 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041ddfc
     FLD float ptr [EAX + 0x4]           ; 0041ddfe
-    FMUL float ptr [0x005dc948]         ; 0041de01 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041de01 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041de07
     FLD float ptr [EAX + 0x8]           ; 0041de0a
-    FMUL float ptr [0x005dc948]         ; 0041de0d | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041de0d | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041de13
     MOV EBX,0xffffffff                  ; 0041de16
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0041de1b

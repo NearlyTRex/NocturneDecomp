@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 288,
+    "complexity_score": 289,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 62,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 258,
+    "pseudocode_lines": 259,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 898
+    "total_lines": 899
   },
   "cross_references": [
     {
@@ -363,13 +363,13 @@
     },
     {
       "addr": "005bef88",
-      "name": "g_CHAR_ARRAY_005bef88",
+      "name": "g_TrainSoundFilenameTemplate",
       "type": "char[108]",
       "value": null
     },
     {
       "addr": "005bef8c",
-      "name": "g_CHAR_ARRAY_005bef88+4",
+      "name": "g_TrainSoundFilenameTemplate+4",
       "type": "undefined4",
       "value": null
     },
@@ -411,13 +411,13 @@
     },
     {
       "addr": "02dc9454",
-      "name": "g_UINT_02dc9454",
+      "name": "g_WindSoundHandle",
       "type": "uint",
       "value": null
     },
     {
       "addr": "02dc9458",
-      "name": "g_UINT_02dc9458",
+      "name": "g_WaterSoundHandle",
       "type": "uint",
       "value": null
     },
@@ -459,79 +459,79 @@
     },
     {
       "addr": "02dc9c98",
-      "name": "g_FLOAT_02dc9c98",
+      "name": "g_CurrentVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9c9c",
-      "name": "g_FLOAT_02dc9c9c",
+      "name": "g_TargetVolumeMultiplier",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9ca0",
-      "name": "g_FLOAT_02dc9ca0",
+      "name": "g_VolumeFadeTimeRemaining",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9ca4",
-      "name": "g_STrainNoise_ARRAY_02dc9ca4",
+      "name": "g_TrainNoiseArray",
       "type": "STrainNoise[10]",
       "value": null
     },
     {
       "addr": "02dc9ca8",
-      "name": "g_STrainNoise_ARRAY_02dc9ca4[0].position.y",
+      "name": "g_TrainNoiseArray[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9cac",
-      "name": "g_STrainNoise_ARRAY_02dc9ca4[0].position.z",
+      "name": "g_TrainNoiseArray[0].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d44",
-      "name": "g_CVector3f_02dc9d44",
+      "name": "g_TrainVelocityVector",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02dc9d48",
-      "name": "g_CVector3f_02dc9d44.y",
+      "name": "g_TrainVelocityVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d4c",
-      "name": "g_CVector3f_02dc9d44.z",
+      "name": "g_TrainVelocityVector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d50",
-      "name": "g_FLOAT_02dc9d50",
+      "name": "g_TrainNoiseCooldown",
       "type": "float",
       "value": null
     },
     {
       "addr": "02dc9d54",
-      "name": "g_INT_02dc9d54",
+      "name": "g_TrainLastCameraIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9d58",
-      "name": "g_UINT_02dc9d58",
+      "name": "g_TrainRailNoiseHandle",
       "type": "uint",
       "value": null
     },
     {
       "addr": "02dc9d5c",
-      "name": "g_UINT_02dc9d5c",
+      "name": "g_TrainExteriorAmbientHandle",
       "type": "uint",
       "value": null
     },
@@ -885,7 +885,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 230,
+      "line": 231,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -893,7 +893,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 210,
+      "line": 211,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 985,
-    "complexity_score": 388,
+    "complexity_score": 385,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 42,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 313,
+    "pseudocode_lines": 310,
     "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unrolled_strcpy"
     ],
-    "total_lines": 1298
+    "total_lines": 1295
   },
   "cross_references": [
     {
@@ -274,7 +274,7 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "g_CEventList_PTR_0061b4d0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c51d80"
     },
@@ -316,7 +316,7 @@
     },
     {
       "addr": "01c43544",
-      "name": "g_BIT_INTEGER32_01c43544",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -340,7 +340,7 @@
     },
     {
       "addr": "01cd0c38",
-      "name": "g_INT_01cd0c38",
+      "name": "g_MovieRecordingArmed",
       "type": "int",
       "value": null
     },
@@ -352,7 +352,7 @@
     },
     {
       "addr": "01d39d34",
-      "name": "g_INT_01d39d34",
+      "name": "g_RenderMotionDebug",
       "type": "int",
       "value": null
     },
@@ -523,7 +523,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 270,
+      "line": 267,
       "match": "&stack0xfffffe84",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffe84,\"Gamma : %f\");",
@@ -531,7 +531,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 271,
+      "line": 268,
       "match": "&stack0xfffffe84",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004cc190(this_ptr,&stack0xfffffe84,1.0);",
@@ -539,7 +539,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 300,
+      "line": 297,
       "match": "in_stack_000000b4",
       "severity": "moderate",
       "text": "in_stack_000000b4 = -0.02;",
@@ -547,7 +547,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 304,
+      "line": 301,
       "match": "in_stack_000000b4",
       "severity": "moderate",
       "text": "in_stack_000000b4;",
@@ -555,7 +555,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 210,
+      "line": 207,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

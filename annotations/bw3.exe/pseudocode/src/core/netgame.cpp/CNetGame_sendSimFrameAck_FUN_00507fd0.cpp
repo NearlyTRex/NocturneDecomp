@@ -49,6 +49,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(CNetGame *th
     piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
   core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,this_ptr->server_player_index,&local_50);
-  g_UINT_01da6488 = g_UINT_01da6478;
+  g_NetLastSimFrameAckTime = g_UINT_01da6478;
   return;
 }

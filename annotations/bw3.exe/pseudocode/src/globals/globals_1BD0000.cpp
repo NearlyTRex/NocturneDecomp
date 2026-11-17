@@ -5,13 +5,13 @@
 // =============================================================================
 
 // CBitFont*
-CBitFont* g_CBitFont_PTR_01bdd7c4 = {};
+CBitFont* g_CurrentFont = {};
 
 // CDemonRenderer
 CDemonRenderer g_CDemonRenderer_01bdd7e4 = {};
 
 // SFace[5000]
-SFace g_SFace_ARRAY_01bdd860[5000] = {};
+SFace g_CapturedFaces[5000] = {};
 
 // SSoftwareEdge[16]
 SSoftwareEdge g_SSoftwareEdge_ARRAY_01bdcfd8[16] = {};
@@ -23,26 +23,26 @@ float g_FLOAT_01bdd530 = {};
 float g_FLOAT_01bdd534 = {};
 
 // int
-int g_INT_01bdcfd4 = {};
-int g_INT_01bdd4d8 = {};
-int g_INT_01bdd4dc = {};
-int g_INT_01bdd520 = {};
+int g_RenderTriangleEdgeCount = {};
+int g_RenderTriangleMinScanlineY = {};
+int g_RenderTriangleMaxScanlineY = {};
+int g_RasterizerDepthBias = {};
 int g_INT_01bdd52c = {};
 int g_INT_01bdd538 = {};
-int g_INT_01bdd7bc = {};
-int g_INT_01bdd7c0 = {};
-int g_INT_01bdd7c8 = {};
-int g_INT_01bdd7cc = {};
-int g_INT_01bdd7d0 = {};
-int g_INT_01bdd7d4 = {};
-int g_INT_01bdd7d8 = {};
-int g_INT_01bdd7dc = {};
-int g_INT_01bdd7e0 = {};
-int g_INT_01bdd810 = {};
-int g_INT_01bdd814 = {};
-int g_INT_01bdd858 = {};
-int g_INT_01bdd85c = {};
+int g_CurrentDrawColor = {};
+int g_PaletteColorIndex = {};
+int g_UseRGBConversion = {};
+int g_OriginalColorValue = {};
+int g_ScaledRedComponent = {};
+int g_ScaledGreenComponent = {};
+int g_ScaledBlueComponent = {};
+int g_PackedPixelColor = {};
+int g_DuplicatedPixelColor = {};
+int g_RenderPixelCounter = {};
+int g_RenderAbortFlag = {};
+int g_CaptureFaceCount = {};
+int g_CaptureTextureCount = {};
 
 // int[16]
-int g_INT_ARRAY_01bdd818[16] = {};
+int g_VertexIndexBuffer[16] = {};
 

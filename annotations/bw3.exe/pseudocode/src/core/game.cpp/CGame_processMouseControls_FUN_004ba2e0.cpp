@@ -20,8 +20,8 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004ba2e0(CGame *this_p
   if (this_ptr->screen_clear_condition == 0) {
     x = g_INT_005fba18 / 2;
     y = g_INT_005fba1c / 2;
-    iVar1 = g_INT_01c5fadc - x;
-    iVar2 = g_INT_01c5fae0 - y;
+    iVar1 = g_MouseX - x;
+    iVar2 = g_MouseY - y;
     wincore_winrun_cpp_setCursorPosition_FUN_005809d0(x,y);
     if (g_CDemonSetPtr->selected_camera_index == g_INT_01d221fc) {
       local_3c = (float)this_ptr->x_mouse_sensitivity * (float)1.52587890625e-05 *
@@ -43,7 +43,7 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004ba2e0(CGame *this_p
       if (this_ptr->invert_mouse_y_axis != 0) {
         local_40 = -local_40;
       }
-      if (g_CHAR_ARRAY_01c6cef0[this_ptr->key_strafe] == '\0') {
+      if (g_KeyboardState[this_ptr->key_strafe] == '\0') {
         if (ABS(player_control->turn_speed) < ABS(local_3c)) {
           player_control->turn_speed = local_3c;
         }

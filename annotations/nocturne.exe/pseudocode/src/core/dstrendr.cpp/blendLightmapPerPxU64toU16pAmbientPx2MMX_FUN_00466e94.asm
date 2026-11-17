@@ -14,10 +14,10 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 004472f1
 ;
 ; Referenced Globals:
-;   _MMX_INTEGER g_MMX_INTEGER_005b4798
-;   _MMX_INTEGER g_MMX_INTEGER_005b47a0
-;   ushort[2048] g_USHORT_ARRAY_005b5d00
-;   undefined4 g_USHORT_ARRAY_005b5d00[1020]
+;   _MMX_INTEGER g_AmbientLightMMX1
+;   _MMX_INTEGER g_AmbientLightMMX2
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
@@ -136,14 +136,14 @@ section .text
     PUNPCKLBW MM2,MM7                   ; 004670a4
     ADD EAX,EDX                         ; 004670a7
     PMULLW MM0,MM2                      ; 004670a9
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004670ac | g_USHORT_ARRAY_005b5d00
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004670ac | g_LightmapData
     MOVQ MM2,MM3                        ; 004670b4
     MOVQ MM4,MM5                        ; 004670b7
-    PXOR MM2,qword ptr [0x005b64f8]     ; 004670ba | g_USHORT_ARRAY_005b5d00[1020]
+    PXOR MM2,qword ptr [0x005b64f8]     ; 004670ba | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004670c1
     PMULHW MM4,MM3                      ; 004670c4
     PADDW MM0,MM4                       ; 004670c7
-    PADDW MM0,qword ptr [0x005b4798]    ; 004670ca | g_MMX_INTEGER_005b4798
+    PADDW MM0,qword ptr [0x005b4798]    ; 004670ca | g_AmbientLightMMX1
     PSRLW MM0,0x4                       ; 004670d1
     PACKUSWB MM0,MM7                    ; 004670d5
     MOVQ MM2,MM0                        ; 004670d8
@@ -169,14 +169,14 @@ section .text
     PUNPCKLBW MM2,MM7                   ; 0046712d
     ADD EAX,EDX                         ; 00467130
     PMULLW MM0,MM2                      ; 00467132
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 00467135 | g_USHORT_ARRAY_005b5d00
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 00467135 | g_LightmapData
     MOVQ MM2,MM3                        ; 0046713d
     MOVQ MM4,MM5                        ; 00467140
-    PXOR MM2,qword ptr [0x005b64f8]     ; 00467143 | g_USHORT_ARRAY_005b5d00[1020]
+    PXOR MM2,qword ptr [0x005b64f8]     ; 00467143 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0046714a
     PMULHW MM4,MM3                      ; 0046714d
     PADDW MM0,MM4                       ; 00467150
-    PADDW MM0,qword ptr [0x005b47a0]    ; 00467153 | g_MMX_INTEGER_005b47a0
+    PADDW MM0,qword ptr [0x005b47a0]    ; 00467153 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 0046715a
     PACKUSWB MM0,MM7                    ; 0046715e
     MOVQ MM2,MM0                        ; 00467161

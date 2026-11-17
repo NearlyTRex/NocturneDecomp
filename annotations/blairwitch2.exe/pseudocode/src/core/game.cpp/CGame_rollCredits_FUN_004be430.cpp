@@ -99,9 +99,9 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004be430(CGame *this_ptr)
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     }
     engine_2d_c_clearInputAndWait_FUN_004032b0();
-    this_ptr_00 = g_CBitFont_PTR_01511cc0;
-    local_20 = g_CBitFont_PTR_01511cc0;
-    g_CBitFont_PTR_01511cc0->win_font_enabled = 0;
+    this_ptr_00 = g_ThemeFont;
+    local_20 = g_ThemeFont;
+    g_ThemeFont->win_font_enabled = 0;
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr_00,0x58);
     local_38 = -1;
     local_24 = iVar5;
@@ -151,7 +151,7 @@ LAB_004be5a8:
       goto LAB_004be71e;
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-    iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar5 != 0) goto LAB_004be71e;
     core_game_cpp_CGame_updateDT_FUN_004b3010(this_ptr);
     local_28 = local_28 - this_ptr->delta_time_float * 32.0f;
@@ -165,7 +165,7 @@ LAB_004be772:
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440((CAlphaBitmap *)(auStack_58 + 4),0);
   return;
 LAB_004be71e:
-  if (g_INT_01d63250 != 0) {
+  if (g_UseOSFonts != 0) {
     local_20->win_font_enabled = 1;
   }
   sound_sndmain_cpp_resetSoundDevice_FUN_005526b0();

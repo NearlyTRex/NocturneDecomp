@@ -40,11 +40,11 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventLi
       *pcVar2 = '\0';
       iVar3 = core_event_cpp_CEventList_executeCommand_FUN_0047ac50(this_ptr,local_6c);
       if (iVar3 == 0) {
-        if (g_INT_01c08b5c != 0) {
+        if (g_EventDryRun != 0) {
           return 0;
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsolePtr,"%s\n",g_CHAR_ARRAY_01c08b60);
+                  (g_CConsolePtr,"%s\n",g_EventErrorMessageBuffer);
       }
     }
   } while( true );

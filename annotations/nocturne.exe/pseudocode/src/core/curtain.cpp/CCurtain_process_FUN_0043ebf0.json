@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 390,
+    "complexity_score": 389,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 280,
+    "pseudocode_lines": 279,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 931
+    "total_lines": 930
   },
   "cross_references": [],
   "function": {
@@ -94,7 +94,7 @@
     },
     {
       "addr": "005b7650",
-      "name": "g_CEventList_PTR_005b7650",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c03a10"
     },
@@ -112,37 +112,37 @@
     },
     {
       "addr": "0077bdbc",
-      "name": "g_CVector3f_ARRAY_0077bdbc",
+      "name": "g_CurtainCollisionPositions",
       "type": "CVector3f[100]",
       "value": null
     },
     {
       "addr": "0077bdc0",
-      "name": "g_CVector3f_ARRAY_0077bdbc[0].y",
+      "name": "g_CurtainCollisionPositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077bdc4",
-      "name": "g_CVector3f_ARRAY_0077bdbc[0].z",
+      "name": "g_CurtainCollisionPositions[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077c26c",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c",
+      "name": "g_CurtainCollisionInfos",
       "type": "SCollisionInfo[100]",
       "value": null
     },
     {
       "addr": "0077c284",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_top_y",
+      "name": "g_CurtainCollisionInfos[0].cylinder_top_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077c288",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius",
+      "name": "g_CurtainCollisionInfos[0].cylinder_radius",
       "type": "undefined4",
       "value": null
     },
@@ -341,7 +341,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 199,
+      "line": 198,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_70 = fStack_94 * 5.0811852348229435e-315._0_4_ + 0.0;",
@@ -349,7 +349,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 200,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_6c = (0.0 - fStack_e0) + fStack_90 * 5.0811852348229435e-315._0_4_;",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 202,
+      "line": 201,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_68 = fStack_8c * 5.0811852348229435e-315._0_4_ + 0.0;",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 254,
+      "line": 253,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pSStack_2c->last_world_position).x = (pSStack_2c->world_position).x;",
@@ -373,7 +373,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&fStack_c4 != &fStack_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 205,
+      "line": 204,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&fStack_c4 != &fStack_58) {",
@@ -381,7 +381,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 170,
+      "line": 169,
       "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CCurtain *)&(pCVar8->base).create_prob;",

@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_Sleep_005d0658 = 001d1230
-;   double g_DOUBLE_005f9e7a = 1000
+;   double g_SecondsToMillisecondsSleepMultiplier = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_005c31f7
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 005b387a
     FLD double ptr [ESP + 0xc]          ; 005b387b
         ;   Label: LAB_005b387b
-    FMUL double ptr [0x005f9e7a]        ; 005b387f | g_DOUBLE_005f9e7a
+    FMUL double ptr [0x005f9e7a]        ; 005b387f | g_SecondsToMillisecondsSleepMultiplier
     SUB ESP,0x8                         ; 005b3885
     FSTP double ptr [ESP]               ; 005b3888
     CALL crt_math.c_ceil_FUN_005c31f7   ; 005b388b

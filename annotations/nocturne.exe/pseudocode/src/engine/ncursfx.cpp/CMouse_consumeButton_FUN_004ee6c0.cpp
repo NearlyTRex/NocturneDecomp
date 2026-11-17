@@ -9,7 +9,7 @@
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect)
 
 {
-  if ((g_BIT_INTEGER32_01bd1d94.dword & button_mask) != 0) {
+  if ((g_MouseButtonFlags.dword & button_mask) != 0) {
     if (this_ptr->effect_mode == 0) {
       if (use_skull_effect == 0) {
         this_ptr->effect_mode = 1;
@@ -18,7 +18,7 @@ int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_pt
         this_ptr->effect_mode = 2;
       }
     }
-    g_BIT_INTEGER32_01bd1d94.dword = g_BIT_INTEGER32_01bd1d94.dword & (button_mask ^ 0xff);
+    g_MouseButtonFlags.dword = g_MouseButtonFlags.dword & (button_mask ^ 0xff);
     return 1;
   }
   return 0;

@@ -73,7 +73,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
     }
     dVar8 = round((double)(local_20 / this_ptr->tile_size + 1.0));
     local_20 = (float)(int)ROUND(dVar8);
-    g_INT_02dd1234 = 0;
+    g_VisibleWaterTileCount = 0;
     iVar7 = -(int)local_20;
     local_1c = (int)local_20;
     if (SBORROW4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {
@@ -131,14 +131,14 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
                                 (g_CDemonRenderer_PTR_005ae704,
                                  (SMRGLHeaderPrimitive *)&stack0xffffff48);
               if (iVar4 != 0) {
-                if (0xfff < g_INT_02dd1234) {
+                if (0xfff < g_VisibleWaterTileCount) {
                   g_CurrentFilename = "..\\core\\water.cpp";
                   g_CurrentLineNumber = 310;
                   core_main_c_displayErrorAndQuit_FUN_004c8440("Too many visible water tiles!");
                 }
-                g_INT_ARRAY_02dd1238[g_INT_02dd1234] = iVar7;
-                g_INT_ARRAY_02dd5238[g_INT_02dd1234] = iVar5;
-                g_INT_02dd1234 = g_INT_02dd1234 + 1;
+                g_VisibleWaterTilesX[g_VisibleWaterTileCount] = iVar7;
+                g_VisibleWaterTilesY[g_VisibleWaterTileCount] = iVar5;
+                g_VisibleWaterTileCount = g_VisibleWaterTileCount + 1;
               }
             }
             iVar5 = iVar5 + 1;
@@ -148,8 +148,8 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
         iVar7 = iVar7 + 1;
       } while (iVar7 < (int)local_20);
     }
-    iVar7 = g_INT_02dd1234;
-    fVar1 = (float)g_INT_02dd1234 * this_ptr->tile_size * this_ptr->tile_size;
+    iVar7 = g_VisibleWaterTileCount;
+    fVar1 = (float)g_VisibleWaterTileCount * this_ptr->tile_size * this_ptr->tile_size;
     this_ptr->visible_area_sqft = fVar1;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsolePtr,"Vis water tiles : %d, SqFt : %f",iVar7,(double)fVar1);

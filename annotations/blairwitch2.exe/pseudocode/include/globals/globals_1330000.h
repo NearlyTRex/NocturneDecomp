@@ -10,5 +10,5 @@
 // =============================================================================
 
 // char[1228800]
-extern char g_CHAR_ARRAY_01339920[1228800];
+extern char g_CameraImageDecompressBuffer[1228800];
 

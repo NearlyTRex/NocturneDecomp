@@ -17,13 +17,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_allocateHwSample_failed_005d2a16
 ;   TerminatedCString s_tried_to_use_Yamaha_WAV_005d2b92
-;   int g_INT_02cebc20
+;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[0].ref_count
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].buffer_id
 ;   undefined4 g_SfxSamples[1].is_user_sample
-;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_005a3e50
@@ -72,13 +72,13 @@ section .text
     MOV ESI,ESP                         ; 0055340d
     MOV dword ptr [ESP + 0x110],EAX     ; 0055340f
     MOVSD.REP ES:EDI,ESI                ; 00553416
-    CMP dword ptr [0x02cf3280],0x0      ; 00553418 | g_CSoundDevice_PTR_02cf3280
+    CMP dword ptr [0x02cf3280],0x0      ; 00553418 | g_CSoundDevicePtr
     JZ 0x00553478                       ; 0055341f
         ;   XREF to: 00553478 (CONDITIONAL_JUMP)  ; LAB_00553478
     XOR ESI,ESI                         ; 00553421
     LEA EDX,[ESP + 0x150]               ; 00553423
         ;   Label: LAB_00553423
-    MOV EAX,[0x02cf3280]                ; 0055342a | g_CSoundDevice_PTR_02cf3280
+    MOV EAX,[0x02cf3280]                ; 0055342a | g_CSoundDevicePtr
     PUSH EDX                            ; 0055342f
     MOV ECX,dword ptr [EAX]             ; 00553430
     PUSH EAX                            ; 00553432
@@ -87,7 +87,7 @@ section .text
     TEST EAX,EAX                        ; 00553439
     JNZ 0x0055347a                      ; 0055343b
         ;   XREF to: 0055347a (CONDITIONAL_JUMP)  ; LAB_0055347a
-    MOV EAX,[0x02cebc20]                ; 0055343d | g_INT_02cebc20
+    MOV EAX,[0x02cebc20]                ; 0055343d | g_LastSampleAccessIndex
     MOV EBX,ESI                         ; 00553442
     IMUL ECX,EAX,0x1b0                  ; 00553444
     INC EAX                             ; 0055344a

@@ -9,6 +9,6 @@
 void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0042f310(int disabled)
 
 {
-  g_INT_007bee2c = disabled;
+  g_LineBlendingDisabled = disabled;
   return;
 }

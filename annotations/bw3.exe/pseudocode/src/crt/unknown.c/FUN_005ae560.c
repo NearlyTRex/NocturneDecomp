@@ -25,14 +25,14 @@ uint FUN_005ae560(WCHAR *param_1,byte *param_2,uint param_3)
         }
         return 0;
       }
-      if (((g_INT_02d25930 == 0) || ((g_CHAR_ARRAY_02d25941[*param_2] & 1U) == 0)) ||
+      if (((g_MultibyteLocaleActive == 0) || ((g_LeadByteTable[*param_2] & 1U) == 0)) ||
          (param_2[1] != 0)) {
         uVar2 = FUN_005aca50(param_2);
         uVar1 = uVar2;
         if (param_3 < uVar2) {
           uVar1 = param_3;
         }
-        iVar3 = MultiByteToWideChar(g_UINT_00607e7c,8,(LPCSTR)param_2,uVar1,local_14,1);
+        iVar3 = MultiByteToWideChar(g_CodePage,8,(LPCSTR)param_2,uVar1,local_14,1);
         if (iVar3 != 0) {
           if (param_1 != (WCHAR *)0x0) {
             *param_1 = local_14[0];

@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005c9f78
 ;   TerminatedCString s_Cannot_read_or_write_mor_005c9f89
-;   uint[18] g_UINT_ARRAY_00601580
-;   undefined4 g_UINT_ARRAY_00601580[8]
+;   uint[18] g_MpegBitMaskTableMultiBit
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   char[256] g_CHAR_ARRAY_01d94b98
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -74,7 +74,7 @@ section .text
     MOV BL,byte ptr [EDX]               ; 004fd621
     MOV EDX,dword ptr [EDI + 0x14]      ; 004fd623
     SUB EBP,EAX                         ; 004fd626
-    MOV ESI,dword ptr [EDX*0x4 + 0x601580] ; 004fd628 | g_UINT_ARRAY_00601580 | g_UINT_ARRAY_00601580[8]
+    MOV ESI,dword ptr [EDX*0x4 + 0x601580] ; 004fd628 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB EDX,EAX                         ; 004fd62f
     AND EBX,ESI                         ; 004fd631
     MOV CL,DL                           ; 004fd633
@@ -98,7 +98,7 @@ section .text
     POP ESI                             ; 004fd656
     POP EBX                             ; 004fd657
     RET                                 ; 004fd658
-    PUSH 0x1d94b98                      ; 004fd659 | g_CHAR_ARRAY_01d94b98
+    PUSH 0x1d94b98                      ; 004fd659 | g_CurrentMp3Filename
         ;   Label: LAB_004fd659
     PUSH 0x20                           ; 004fd65e
     MOV ECX,0x5c9f78                    ; 004fd660 | = "..\\sound\\mp3.cpp"

@@ -20,24 +20,24 @@ void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_00467c80(int red,int green,int
   uVar3 = green & 0xff;
   uVar2 = blue & 0xff;
   iVar4 = ((int)uVar2 >> 3) + ((int)uVar3 >> 3) * 0x20 + ((int)uVar1 >> 3) * 0x400;
-  g_INT_01bdd7c0 = (int)g_UCHAR_ARRAY_01c62070[iVar4];
-  g_INT_01bdd7c8 = 0;
+  g_PaletteColorIndex = (int)g_ColorCubeLookup[iVar4];
+  g_UseRGBConversion = 0;
   if ((uint)g_INT_005fba20 < 0x10) {
     if (g_INT_005fba20 == 8) {
-      g_INT_01bdd7bc = (uint)g_UCHAR_ARRAY_01c62070[iVar4];
+      g_CurrentDrawColor = (uint)g_ColorCubeLookup[iVar4];
       return;
     }
   }
   else {
     if ((uint)g_INT_005fba20 < 0x11) {
-      g_INT_01bdd7bc =
+      g_CurrentDrawColor =
            (uVar2 / (uint)g_INT_01c6af90 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
            uVar1 / (uint)g_INT_01c6af78 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
            uVar3 / (uint)g_INT_01c6af84 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) & 0xffff;
       return;
     }
     if (g_INT_005fba20 == 0x20) {
-      g_INT_01bdd7bc =
+      g_CurrentDrawColor =
            uVar2 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
            uVar1 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
            uVar3 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);

@@ -24,16 +24,16 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005763b0(CIniFile *ini_file)
   float fStack_14;
   
   pSVar3 = &local_29c;
-  pcVar5 = g_CHAR_ARRAY_00623430;
+  pcVar5 = g_DefaultDeviceName;
   pcVar4 = local_184;
   for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar4 = *(uint *)pcVar5;
     pcVar5 = pcVar5 + 4;
     pcVar4 = pcVar4 + 4;
   }
-  if ((-1 < g_INT_006232fc) &&
-     (iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005752c0(), g_INT_006232fc < iVar2)) {
-    sound_sndmain_cpp_getSoundDeviceInfo_FUN_00575350(g_INT_006232fc,&local_29c);
+  if ((-1 < g_CurrentSoundDevice) &&
+     (iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005752c0(), g_CurrentSoundDevice < iVar2)) {
+    sound_sndmain_cpp_getSoundDeviceInfo_FUN_00575350(g_CurrentSoundDevice,&local_29c);
     pcVar5 = local_184;
     do {
       cVar1 = pSVar3->device_name[0];
@@ -57,7 +57,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005763b0(CIniFile *ini_file)
   iVar2 = sound_sndmain_cpp_isSoundMuted_FUN_005735f0();
   channel_index = 0;
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(ini_file,"Mute",iVar2);
-  if (0 < g_INT_006232e4) {
+  if (0 < g_MaxSoundChannels) {
     do {
       _sprintf(acStack_84,"SfxChannel%dEnabled");
       iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00573cd0(channel_index);
@@ -66,7 +66,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005763b0(CIniFile *ini_file)
       fStack_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(channel_index);
       channel_index = channel_index + 1;
       engine_ini_cpp_CIniFile_setFloatValue_FUN_004f4e20(ini_file,acStack_84,fStack_14);
-    } while (channel_index < g_INT_006232e4);
+    } while (channel_index < g_MaxSoundChannels);
   }
   return;
 }

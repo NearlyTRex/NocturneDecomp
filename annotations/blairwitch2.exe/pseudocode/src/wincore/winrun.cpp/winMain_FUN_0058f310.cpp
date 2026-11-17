@@ -52,7 +52,7 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTA
   } while (iVar8 < (int)pWVar10);
   seed = timeGetTime();
   srand(seed);
-  pcVar11 = g_CHAR_ARRAY_026651b8;
+  pcVar11 = g_CommandLineBuffer;
   pCVar4 = GetCommandLineA();
   do {
     cVar2 = *pCVar4;
@@ -63,18 +63,18 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTA
     pcVar11[1] = cVar2;
     pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
-  pcVar11 = g_CHAR_ARRAY_026651b8;
-  if (g_CHAR_ARRAY_026651b8[0] != '\0') {
+  pcVar11 = g_CommandLineBuffer;
+  if (g_CommandLineBuffer[0] != '\0') {
     pbVar1 = (byte *)pcVar11;
-    iVar8 = g_INT_026652b8 << 2;
+    iVar8 = g_ArgCount << 2;
     do {
       do {
         pbVar5 = pbVar1;
         pbVar1 = pbVar5 + 1;
       } while (0x20 < *pbVar5);
       *pbVar5 = 0;
-      g_INT_026652b8 = g_INT_026652b8 + 1;
-      *(char **)((int)g_CHAR_PTR_ARRAY_026652bc + iVar8) = pcVar11;
+      g_ArgCount = g_ArgCount + 1;
+      *(char **)((int)g_ArgVector + iVar8) = pcVar11;
       bVar3 = *pbVar1;
       pcVar11 = (char *)pbVar1;
       while (bVar3 == 0x20) {
@@ -86,10 +86,10 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTA
       iVar8 = iVar8 + 4;
     } while (*pcVar11 != 0);
   }
-  GetCurrentDirectoryA(0x100,g_CHAR_ARRAY_026650b8);
-  GetModuleFileNameA(hInstance,g_CHAR_ARRAY_02664fb8,0x100);
+  GetCurrentDirectoryA(0x100,g_CurrentDirectory);
+  GetModuleFileNameA(hInstance,g_ModuleFileName,0x100);
   uVar9 = 0xffffffff;
-  pcVar11 = g_CHAR_ARRAY_02664fb8;
+  pcVar11 = g_ModuleFileName;
   do {
     if (uVar9 == 0) break;
     uVar9 = uVar9 - 1;
@@ -100,10 +100,10 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTA
   do {
     uVar9 = uVar9 - 1;
     if ((int)uVar9 < 1) goto LAB_0058f46b;
-  } while (g_CHAR_ARRAY_02664fb8[uVar9] != '\\');
-  g_CHAR_ARRAY_02664fb8[uVar9] = '\0';
+  } while (g_ModuleFileName[uVar9] != '\\');
+  g_ModuleFileName[uVar9] = '\0';
 LAB_0058f46b:
-  SetCurrentDirectoryA(g_CHAR_ARRAY_02664fb8);
+  SetCurrentDirectoryA(g_ModuleFileName);
   local_58.lpfnWndProc = wincore_winrun_cpp_mainWindowProc_FUN_0058ed90;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;
@@ -115,21 +115,21 @@ LAB_0058f46b:
   local_58.lpszClassName = PTR_s_Coffin_Rock_0061e984;
   local_58.lpszMenuName = (LPCSTR)0x0;
   RegisterClassA(&local_58);
-  g_HWND_02664628 =
+  g_MainWindowHandle =
        CreateWindowExA(0x40000,PTR_s_Coffin_Rock_0061e984,PTR_s_Coffin_Rock_0061e988,0x80000000,0,0,
                        0,0,(HWND)0x0,(HMENU)0x0,hInstance,(LPVOID)0x0);
-  if (g_HWND_02664628 != (HWND)0x0) {
+  if (g_MainWindowHandle != (HWND)0x0) {
     _DAT_0266462c = hInstance;
-    ShowWindow(g_HWND_02664628,nCmdShow);
-    UpdateWindow(g_HWND_02664628);
+    ShowWindow(g_MainWindowHandle,nCmdShow);
+    UpdateWindow(g_MainWindowHandle);
     hThread = GetCurrentProcess();
     SetThreadPriority(hThread,1);
     memset(&local_30,0,0x20);
     local_30.dwLength = 0x20;
     GlobalMemoryStatus(&local_30);
-    g_INT_02664638 = local_30.dwTotalPhys;
+    g_TotalPhysicalMemory = local_30.dwTotalPhys;
     g_INT_0266463c = local_30.dwAvailPageFile;
-    core_main_c_initializeGameSystems_FUN_004e46c0(g_INT_026652b8,g_CHAR_PTR_ARRAY_026652bc);
+    core_main_c_initializeGameSystems_FUN_004e46c0(g_ArgCount,g_ArgVector);
     core_main_c_enterMainGameMenu_FUN_004e46b0();
     core_main_c_finalizeGameSystems_FUN_004e4e20();
                     /* WARNING: Subroutine does not return */

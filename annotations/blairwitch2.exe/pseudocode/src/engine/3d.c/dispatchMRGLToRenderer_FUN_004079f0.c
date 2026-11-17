@@ -16,32 +16,31 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended
   int iVar5;
   
   cVar2 = (char)(mrgl->base).type;
-  g_INT_007ba070 = 0;
+  g_RenderFaceCount = 0;
   do {
     if (cVar2 == '\0') {
-      if (g_INT_007ba070 != 0) {
+      if (g_RenderFaceCount != 0) {
         if (g_INT_01c37788 == 0) {
           iVar5 = 0;
           iVar4 = 0;
-          if (0 < g_INT_007ba070) {
+          if (0 < g_RenderFaceCount) {
             do {
-              puVar1 = (uint *)((int)g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074 + iVar4);
+              puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);
               iVar4 = iVar4 + 4;
               iVar5 = iVar5 + 1;
               engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70
                         ((SMRGLHeaderPrimitive *)*puVar1);
-            } while (iVar5 < g_INT_007ba070);
+            } while (iVar5 < g_RenderFaceCount);
           }
         }
         else {
           engine_special_cpp_drawPolyList_FUN_0055f950
-                    (g_SRenderVertex_ARRAY_00622014,
-                     (SMRGLPrimitiveQuad **)g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074,g_INT_007ba070
-                     ,0xcd);
+                    (g_SRenderVertex_ARRAY_00622014,(SMRGLPrimitiveQuad **)g_RenderFaceArray,
+                     g_RenderFaceCount,0xcd);
         }
-        g_INT_007ba070 = 0;
+        g_RenderFaceCount = 0;
       }
-      g_UINT_006141e0 = 1;
+      g_VertexProcessingEnabled = 1;
       return;
     }
     bVar3 = (byte)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
@@ -49,7 +48,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended
       if (bVar3 < 3) {
         if (bVar3 == 2) {
           engine_3d_c_transformAndBufferVertices_FUN_00403890(mrgl);
-          if (g_UINT_006141e0 != 0) {
+          if (g_VertexProcessingEnabled != 0) {
             engine_3d_c_dispatchMRGLBlockChain_FUN_004078b0(mrgl);
             return;
           }
@@ -67,27 +66,26 @@ LAB_00407bd2:
       }
       else {
         if (bVar3 != 0xd) goto LAB_00407bd2;
-        if (g_INT_007ba070 != 0) {
+        if (g_RenderFaceCount != 0) {
           if (g_INT_01c37788 == 0) {
             iVar4 = 0;
-            if (0 < g_INT_007ba070) {
+            if (0 < g_RenderFaceCount) {
               iVar5 = 0;
               do {
-                puVar1 = (uint *)((int)g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074 + iVar5);
+                puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);
                 iVar5 = iVar5 + 4;
                 iVar4 = iVar4 + 1;
                 engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70
                           ((SMRGLHeaderPrimitive *)*puVar1);
-              } while (iVar4 < g_INT_007ba070);
+              } while (iVar4 < g_RenderFaceCount);
             }
           }
           else {
             engine_special_cpp_drawPolyList_FUN_0055f950
-                      (g_SRenderVertex_ARRAY_00622014,
-                       (SMRGLPrimitiveQuad **)g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074,
-                       g_INT_007ba070,0xcd);
+                      (g_SRenderVertex_ARRAY_00622014,(SMRGLPrimitiveQuad **)g_RenderFaceArray,
+                       g_RenderFaceCount,0xcd);
           }
-          g_INT_007ba070 = 0;
+          g_RenderFaceCount = 0;
         }
         engine_texture_cpp_ensureTextureLoaded_FUN_00574e00((SMRGLTextureBasic *)mrgl);
       }
@@ -102,13 +100,13 @@ LAB_00407bd2:
         iVar4 = engine_3d_c_isVisiblePlane_FUN_00403970
                           (&((SMRGLHeaderPrimitive *)mrgl)->surface_normal);
         if (iVar4 != 0) {
-          if (1999 < g_INT_007ba070) {
+          if (1999 < g_RenderFaceCount) {
             g_CHAR_PTR_01d046a0 = "..\\engine\\3d.c";
             g_INT_01d046a4 = 0xcb5;
             core_main_c_displayErrorAndQuit_FUN_004e4500("renderFaceList - too many faces");
           }
-          g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074[g_INT_007ba070] = (SMRGLHeaderPrimitive *)mrgl;
-          g_INT_007ba070 = g_INT_007ba070 + 1;
+          g_RenderFaceArray[g_RenderFaceCount] = (SMRGLHeaderPrimitive *)mrgl;
+          g_RenderFaceCount = g_RenderFaceCount + 1;
         }
       }
       else {

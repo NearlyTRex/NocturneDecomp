@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 142,
+    "complexity_score": 140,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 125,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strchr"
     ],
-    "total_lines": 509
+    "total_lines": 507
   },
   "cross_references": [
     {
@@ -122,37 +122,37 @@
     },
     {
       "addr": "014b9900",
-      "name": "g_CBitFont_PTR_014b9900",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b9904",
-      "name": "g_CBitFont_PTR_014b9904",
+      "name": "g_SmallEditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
     {
       "addr": "01cc5b5c",
-      "name": "g_INT_01cc5b5c",
+      "name": "g_MenuLeftRightPressed",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cc5b68",
-      "name": "g_INT_01cc5b68",
+      "name": "g_MenuInputHappened",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d16810",
-      "name": "g_INT_01d16810",
+      "name": "g_UseOSFonts",
       "type": "int",
       "value": null
     }
@@ -379,7 +379,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
-      "line": 85,
+      "line": 83,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

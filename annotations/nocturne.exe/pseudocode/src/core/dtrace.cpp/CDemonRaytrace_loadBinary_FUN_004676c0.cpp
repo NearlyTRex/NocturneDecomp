@@ -24,7 +24,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004676c0(CDemonRaytra
     g_CurrentLineNumber = 328;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - invalid version");
   }
-  if (g_INT_005b6d00 < local_14) {
+  if (g_GeoFileFormatVersion < local_14) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 331;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");

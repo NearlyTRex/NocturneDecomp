@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2)
+; void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog_attack_wav_005fa2a6
@@ -443,7 +443,7 @@ section .text
     ADD EAX,EDX                         ; 005b8883
     PUSH 0x3f333333                     ; 005b8885
     PUSH EAX                            ; 005b888a
-    PUSH 0x2c8af28                      ; 005b888b | g_CVector3f_02c8af28
+    PUSH 0x2c8af28                      ; 005b888b | g_ZeroVector
     LEA ESI,[EBP + -0x36]               ; 005b8890
     LEA EDI,[EBP + -0x72]               ; 005b8893
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 005b8896
@@ -530,7 +530,7 @@ section .text
         ;   XREF to: 004e62e0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004e62e0(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 005b8966
     PUSH 0x5fa2b6                       ; 005b8969 | = "YowDead"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 005b896e | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 005b896e | g_CEventListPtr
     PUSH ESI                            ; 005b8974
     MOV dword ptr [EBX + 0xc1d4],0x1    ; 005b8975
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005b897f
@@ -615,7 +615,7 @@ section .text
     FADDP                               ; 005b8a5a
     FSTP float ptr [EBP + 0x56]         ; 005b8a5c
     MOV EAX,dword ptr [EBP + 0x56]      ; 005b8a5f
-    MOV EDX,dword ptr [0x01cc804c]      ; 005b8a62 | g_INT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 005b8a62 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 005b8a68
     ADD EAX,EDX                         ; 005b8a6a
     MOV dword ptr [EBP + 0x5a],EAX      ; 005b8a6c

@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_0070ca74
+;   int g_TexturesDisabled
 ;   int g_INT_01ba51c8
 ;   int g_INT_01ba56cc
 ;   int g_INT_01ba56d0
-;   undefined4 g_BIT_INTEGER32_01c38b54+1
+;   undefined4 g_RenderStateFlags+1
 ;
 ; *****************************************************************************
 
@@ -124,7 +124,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00461d1c
     ADD EAX,EDX                         ; 00461d1f
     MOV dword ptr [ECX + 0x30],EAX      ; 00461d21
-    CMP dword ptr [0x0070ca74],0x0      ; 00461d24 | g_INT_0070ca74
+    CMP dword ptr [0x0070ca74],0x0      ; 00461d24 | g_TexturesDisabled
     JZ 0x00461dd7                       ; 00461d2b
         ;   XREF to: 00461dd7 (CONDITIONAL_JUMP)  ; LAB_00461dd7
     MOV EAX,dword ptr [EBP + 0x8]       ; 00461d31
@@ -145,7 +145,7 @@ section .text
     ADD EAX,EDX                         ; 00461d59
         ;   Label: LAB_00461d59
     MOV dword ptr [ECX + 0x28],EAX      ; 00461d5b
-    TEST byte ptr [0x01c38b55],0x2      ; 00461d5e | g_BIT_INTEGER32_01c38b54+1
+    TEST byte ptr [0x01c38b55],0x2      ; 00461d5e | g_RenderStateFlags+1
     JZ 0x00461db9                       ; 00461d65
         ;   XREF to: 00461db9 (CONDITIONAL_JUMP)  ; LAB_00461db9
     MOV EAX,dword ptr [EBP + 0x24]      ; 00461d67

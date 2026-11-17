@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
 ;   TerminatedCString s_Get_position_of_secondar_0059422c
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02dc921c
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02dc9220
-;   int g_INT_02dc9238
-;   int g_INT_02dc923c
-;   int g_INT_02dc9240
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+;   IDirectSound3DListener* g_DirectSound3DListener
+;   int g_StreamBlockSizeBytes
+;   int g_StreamBlockCount
+;   int g_StreamCurrentBlock
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -34,10 +34,10 @@ section .text
     PUSH EBX                            ; 0052a970
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970
     SUB ESP,0x198                       ; 0052a971
-    CMP dword ptr [0x02dc9220],0x0      ; 0052a977 | g_IDirectSound3DListener_PTR_02dc9220
+    CMP dword ptr [0x02dc9220],0x0      ; 0052a977 | g_DirectSound3DListener
     JNZ 0x0052a994                      ; 0052a97e
         ;   XREF to: 0052a994 (CONDITIONAL_JUMP)  ; LAB_0052a994
-    MOV ECX,dword ptr [0x02dc921c]      ; 0052a980 | g_IDirectSoundBuffer_PTR_02dc921c
+    MOV ECX,dword ptr [0x02dc921c]      ; 0052a980 | g_DirectSoundSecondaryBuffer
     TEST ECX,ECX                        ; 0052a986
     JNZ 0x0052a9a0                      ; 0052a988
         ;   XREF to: 0052a9a0 (CONDITIONAL_JUMP)  ; LAB_0052a9a0
@@ -65,10 +65,10 @@ section .text
         ;   XREF to: 0052a9f5 (CONDITIONAL_JUMP)  ; LAB_0052a9f5
     PUSH ESI                            ; 0052a9ba
     MOV EAX,dword ptr [ESP + 0x194]     ; 0052a9bb
-    MOV EBX,dword ptr [0x02dc9238]      ; 0052a9c2 | g_INT_02dc9238
+    MOV EBX,dword ptr [0x02dc9238]      ; 0052a9c2 | g_StreamBlockSizeBytes
     XOR EDX,EDX                         ; 0052a9c8
     DIV EBX                             ; 0052a9ca
-    MOV ESI,dword ptr [0x02dc923c]      ; 0052a9cc | g_INT_02dc923c
+    MOV ESI,dword ptr [0x02dc923c]      ; 0052a9cc | g_StreamBlockCount
     MOV EBX,EAX                         ; 0052a9d2
     CMP EAX,ESI                         ; 0052a9d4
     JL 0x0052a9db                       ; 0052a9d6
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 0052aa2b (CONDITIONAL_JUMP)  ; LAB_0052aa2b
     POP ESI                             ; 0052a9df
         ;   Label: LAB_0052a9df
-    CMP EBX,dword ptr [0x02dc9240]      ; 0052a9e0 | g_INT_02dc9240
+    CMP EBX,dword ptr [0x02dc9240]      ; 0052a9e0 | g_StreamCurrentBlock
         ;   Label: LAB_0052a9e0
     JNZ 0x0052aa2f                      ; 0052a9e6
         ;   XREF to: 0052aa2f (CONDITIONAL_JUMP)  ; LAB_0052aa2f

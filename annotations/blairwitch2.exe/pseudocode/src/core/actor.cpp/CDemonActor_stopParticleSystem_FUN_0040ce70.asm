@@ -31,7 +31,7 @@ section .text
     ADD EAX,EDX                         ; 0040ce8d
     PUSH EAX                            ; 0040ce8f
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 0040ce90
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 0040ce95
     RET                                 ; 0040ce98
 

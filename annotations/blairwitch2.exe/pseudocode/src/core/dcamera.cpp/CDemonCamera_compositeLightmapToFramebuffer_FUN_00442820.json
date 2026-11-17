@@ -100,19 +100,19 @@
   "globals": [
     {
       "addr": "00609fa4",
-      "name": "g_INT_00609fa4",
+      "name": "g_FogColorIndexR",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "00609fa8",
-      "name": "g_INT_00609fa8",
+      "name": "g_FogColorIndexG",
       "type": "int",
       "value": "0x40"
     },
     {
       "addr": "00609fac",
-      "name": "g_INT_00609fac",
+      "name": "g_FogColorIndexB",
       "type": "int",
       "value": "0x40"
     },
@@ -124,79 +124,79 @@
     },
     {
       "addr": "00b6649c",
-      "name": "g_UINT_ARRAY_00b6639c[64]",
+      "name": "g_LightmapTexturePalette[64]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01308800",
-      "name": "g_BIT_INTEGER32_01308800",
+      "name": "g_CameraDownscaleIterations",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01308804",
-      "name": "g_INT_01308804",
+      "name": "g_CameraEdgeCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01326d18",
-      "name": "g_INT_01326d18",
+      "name": "g_CameraShakeOffsetX",
       "type": "int",
       "value": null
     },
     {
       "addr": "01326d1c",
-      "name": "g_INT_01326d1c",
+      "name": "g_CameraShakeOffsetY",
       "type": "int",
       "value": null
     },
     {
       "addr": "01465920",
-      "name": "g_INT_01465920",
+      "name": "g_ImageProcessingState1",
       "type": "int",
       "value": null
     },
     {
       "addr": "01465924",
-      "name": "g_INT_01465924",
+      "name": "g_ImageProcessingState2",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c2a370",
-      "name": "g_INT_01c2a370",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c2a38c",
-      "name": "g_ARRAY_PTR_01c2a38c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c35814",
-      "name": "g_BIT_INTEGER32_01c35814",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "g_BIT_INTEGER32_01c35820",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "g_BIT_INTEGER32_01c3582c",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b5c",
-      "name": "g_ULONG_01c38b5c",
+      "name": "g_SolidColorMode",
       "type": "ulong",
       "value": null
     }
@@ -341,56 +341,56 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `&g_SCameraEdge_ARRAY_01308808[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 80,
-      "match": "(int)&g_SCameraEdge_ARRAY_01308808[0].y",
+      "description": "Pointer value `&g_CameraEdgeDetectionResults[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 79,
+      "match": "(int)&g_CameraEdgeDetectionResults[0].y",
       "severity": "moderate",
-      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_01308808[0].y + iVar4);",
+      "text": "uVar3 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SCameraEdge_ARRAY_01308808[0].v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CameraEdgeDetectionResults[0].v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)&g_CameraEdgeDetectionResults[0].v",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CameraEdgeDetectionResults[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 82,
-      "match": "(int)&g_SCameraEdge_ARRAY_01308808[0].v",
+      "match": "(int)&g_CameraEdgeDetectionResults[0].x",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].v + iVar4);",
+      "text": "piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SCameraEdge_ARRAY_01308808[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
-      "match": "(int)&g_SCameraEdge_ARRAY_01308808[0].x",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].x + iVar4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&g_SCameraEdge_ARRAY_01308808[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CameraEdgeDetectionResults[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 134,
-      "match": "(int)&g_SCameraEdge_ARRAY_01308808[0].y",
+      "match": "(int)&g_CameraEdgeDetectionResults[0].y",
       "severity": "moderate",
-      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_01308808[0].y + iVar4);",
+      "text": "uVar3 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SCameraEdge_ARRAY_01308808[0].v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CameraEdgeDetectionResults[0].v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 136,
-      "match": "(int)&g_SCameraEdge_ARRAY_01308808[0].v",
+      "match": "(int)&g_CameraEdgeDetectionResults[0].v",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].v + iVar4);",
+      "text": "piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SCameraEdge_ARRAY_01308808[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CameraEdgeDetectionResults[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 137,
-      "match": "(int)&g_SCameraEdge_ARRAY_01308808[0].x",
+      "match": "(int)&g_CameraEdgeDetectionResults[0].x",
       "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].x + iVar4);",
+      "text": "piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 48,
+      "line": 47,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "puVar6 = (ulonglong *)",
@@ -406,10 +406,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 80,
+      "line": 79,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_01308808[0].y + iVar4);",
+      "text": "uVar3 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 81,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -417,15 +425,7 @@
       "line": 82,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].v + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].x + iVar4);",
+      "text": "piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -433,7 +433,7 @@
       "line": 134,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_01308808[0].y + iVar4);",
+      "text": "uVar3 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -441,7 +441,7 @@
       "line": 136,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].v + iVar4);",
+      "text": "piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -449,7 +449,7 @@
       "line": 137,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_01308808[0].x + iVar4);",
+      "text": "piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar4);",
       "type": "pointer_cast"
     }
   ]

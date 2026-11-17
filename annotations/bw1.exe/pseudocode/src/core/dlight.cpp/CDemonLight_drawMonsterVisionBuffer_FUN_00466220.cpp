@@ -39,7 +39,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220(CD
           puVar8 = this_ptr->shadow_depth_buffer + local_28 * this_ptr->shadow_map_width;
           local_24 = 0;
           local_14 = 0;
-          puVar7 = (uint *)(g_ARRAY_PTR_01c4354c[iVar2] + screen_x * 4);
+          puVar7 = (uint *)(g_ScreenBufferArray[iVar2] + screen_x * 4);
           if (0 < this_ptr->shadow_map_width) {
             do {
               iVar2 = g_INT_0061b498;
@@ -64,9 +64,9 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220(CD
                   uVar4 = uVar6;
                 }
                 if (g_INT_0061b4a0 == 0x20) {
-                  uVar6 = uVar6 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
-                          uVar4 << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f) |
-                          uVar3 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
+                  uVar6 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                          uVar4 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                          uVar3 << (g_RedBitPosition.bytes[0] & 0x1f);
                 }
                 else {
                   uVar6 = uVar3 << 0x10 | uVar4 << 8 | uVar6;
@@ -104,7 +104,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220(CD
           local_1c = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_20 = 0;
           local_18 = 0;
-          puVar8 = (ushort *)(g_ARRAY_PTR_01c4354c[iVar2] + screen_x * 2);
+          puVar8 = (ushort *)(g_ScreenBufferArray[iVar2] + screen_x * 2);
           if (0 < this_ptr->shadow_map_width) {
             do {
               iVar2 = g_INT_0061b498;
@@ -128,12 +128,12 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220(CD
                   uVar3 = uVar6;
                   uVar4 = uVar6;
                 }
-                uVar1 = (ushort)(uVar6 / (uint)g_INT_01c4e9f0 <<
-                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) |
-                        (ushort)(uVar4 / (uint)g_INT_01c4e9e4 <<
-                                (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
-                        (ushort)(uVar3 / (uint)g_INT_01c4e9d8 <<
-                                (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f));
+                uVar1 = (ushort)(uVar6 / (uint)g_BlueScaleFactor <<
+                                (g_BlueBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar4 / (uint)g_GreenScaleFactor <<
+                                (g_GreenBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar3 / (uint)g_RedScaleFactor <<
+                                (g_RedBitPosition.bytes[0] & 0x1f));
                 *puVar8 = uVar1;
                 if (0x140 < iVar2) {
                   puVar8[1] = uVar1;

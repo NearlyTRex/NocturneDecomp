@@ -224,11 +224,13 @@ def apply_to_program(program, kinds):
         for row in [r for r in kinds["labels"] if r["status"] == "rename"]:
             at = space.getAddress(int(row["addr"], 16))
             primary = symbols.getPrimarySymbol(at)
+            live = {primary.getName() if primary is not None else None}
             if primary is not None and primary.isDynamic():
-                # Ghidra's own DAT_ name; the export lists no label there either
+                # Ghidra's own name for the data there (DAT_, BYTE_ARRAY_...): an
+                # export may list it or not, and it is covered by a label, not renamed
                 primary = None
-            live = primary.getName() if primary is not None else None
-            if live != row["current"]:
+                live.add(None)
+            if row["current"] not in live:
                 done["changed since export"] += 1
                 continue
             if row.get("type"):

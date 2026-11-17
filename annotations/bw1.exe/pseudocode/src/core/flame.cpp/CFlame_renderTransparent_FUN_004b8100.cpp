@@ -150,10 +150,10 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(CFlame *this_pt
           engine_special_cpp_transformAndProjectPoint_FUN_00580173
                     (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,
                      &CStack_70);
-          (*((g_CDemonCamera_PTR_007c6120->base).vtable)->setupPerspectiveAndFog)
-                    (g_CDemonCamera_PTR_007c6120,&(this_ptr->base).location.position,
+          (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,
                      (SProjectedVertex *)0x0);
-          g_SRenderVertex_ARRAY_00629014[0].a = 0xffff - g_INT_01c51cac;
+          g_SRenderVertex_ARRAY_00629014[0].a = 0xffff - g_PerspectiveReciprocal;
           if (unaff_EDI == 3) {
             g_SRenderVertex_ARRAY_00629014[0].a = g_SRenderVertex_ARRAY_00629014[0].a / 2;
           }
@@ -198,8 +198,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(CFlame *this_pt
           dVar9 = round((double)this_ptr->animation_time);
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
                     (g_CDemonRenderer_PTR_00612560,
-                     g_SMRGLTextureBasic_ARRAY_0061cdc0 +
-                     this_ptr->which_flame * 8 + (int)ROUND(dVar9) % 8);
+                     g_FlameFrameTextures + this_ptr->which_flame * 8 + (int)ROUND(dVar9) % 8);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
                     (g_CDemonRenderer_PTR_00612560,1);
           SStack_138.base.count = 4;

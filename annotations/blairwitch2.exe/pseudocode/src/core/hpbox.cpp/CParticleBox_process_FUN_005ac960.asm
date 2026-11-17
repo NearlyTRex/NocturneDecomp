@@ -15,9 +15,9 @@
 ;   float g_FLOAT_005f0ebb = 2
 ;   double g_DOUBLE_005f0ec3 = 0.5
 ;   double g_DOUBLE_005f0ecb = 0.600000000000000
-;   CVector3f g_CVector3f_0265370c
-;   undefined4 g_CVector3f_0265370c.y
-;   undefined4 g_CVector3f_0265370c.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
@@ -50,25 +50,25 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005ac984
     PUSH EDI                            ; 005ac987
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ac988
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ac98d
     LEA EAX,[EBX + 0x198]               ; 005ac990
     PUSH dword ptr [EBP + 0x18]         ; 005ac996
     PUSH EAX                            ; 005ac999
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ac99a
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ac99f
     LEA EAX,[EBX + 0x1dc]               ; 005ac9a2
     PUSH dword ptr [EBP + 0x18]         ; 005ac9a8
     PUSH EAX                            ; 005ac9ab
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ac9ac
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ac9b1
     LEA EAX,[EBX + 0x220]               ; 005ac9b4
     PUSH dword ptr [EBP + 0x18]         ; 005ac9ba
     PUSH EAX                            ; 005ac9bd
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ac9be
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ac9c3
     FLD float ptr [EBX + 0x2a8]         ; 005ac9c6
     FSUB float ptr [EBP + 0x18]         ; 005ac9cc
@@ -329,11 +329,11 @@ section .text
     CMP EAX,0x265370c                   ; 005acd2e
     JZ 0x005acae9                       ; 005acd33
         ;   XREF to: 005acae9 (CONDITIONAL_JUMP)  ; LAB_005acae9
-    MOV EAX,[0x0265370c]                ; 005acd39 | g_CVector3f_0265370c
+    MOV EAX,[0x0265370c]                ; 005acd39 | g_ZeroVector
     MOV dword ptr [ESP + 0x1c],EAX      ; 005acd3e
-    MOV EAX,[0x02653710]                ; 005acd42 | g_CVector3f_0265370c.y
+    MOV EAX,[0x02653710]                ; 005acd42 | g_ZeroVector.y
     MOV dword ptr [ESP + 0x20],EAX      ; 005acd47
-    MOV EAX,[0x02653714]                ; 005acd4b | g_CVector3f_0265370c.z
+    MOV EAX,[0x02653714]                ; 005acd4b | g_ZeroVector.z
     MOV dword ptr [ESP + 0x24],EAX      ; 005acd50
     JMP 0x005acae9                      ; 005acd54
         ;   XREF to: 005acae9 (UNCONDITIONAL_JUMP)  ; LAB_005acae9
@@ -342,11 +342,11 @@ section .text
     CMP EAX,0x265370c                   ; 005acd60
     JZ 0x005acc60                       ; 005acd65
         ;   XREF to: 005acc60 (CONDITIONAL_JUMP)  ; LAB_005acc60
-    MOV EAX,[0x0265370c]                ; 005acd6b | g_CVector3f_0265370c
+    MOV EAX,[0x0265370c]                ; 005acd6b | g_ZeroVector
     MOV dword ptr [ESP + 0xac],EAX      ; 005acd70
-    MOV EAX,[0x02653710]                ; 005acd77 | g_CVector3f_0265370c.y
+    MOV EAX,[0x02653710]                ; 005acd77 | g_ZeroVector.y
     MOV dword ptr [ESP + 0xb0],EAX      ; 005acd7c
-    MOV EAX,[0x02653714]                ; 005acd83 | g_CVector3f_0265370c.z
+    MOV EAX,[0x02653714]                ; 005acd83 | g_ZeroVector.z
     MOV dword ptr [ESP + 0xb4],EAX      ; 005acd88
     JMP 0x005acc60                      ; 005acd8f
         ;   XREF to: 005acc60 (UNCONDITIONAL_JUMP)  ; LAB_005acc60

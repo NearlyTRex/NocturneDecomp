@@ -35,17 +35,17 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_0052b6d0(CSentine
     return 0;
   }
   core_xform_cpp_transformVector3x4_FUN_00591530
-            (&g_CVector3f_0265370c,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-             g_INT_ARRAY_01e6614c[1],&CStack_1c);
+            (&g_ZeroVector,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_SentinelIndices[1],
+             &CStack_1c);
   fStack_34 = CStack_1c.x;
   afStack_48[(uint)bVar1 * -2 + 6] = *(float *)((int)&CStack_1c + (uint)bVar1 * -8 + 4);
   afStack_48[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7] =
        *(float *)((int)&CStack_1c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   core_xform_cpp_transformVector3x4_FUN_00591530
-            (&g_CVector3f_0265370c,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-             g_INT_ARRAY_01e6614c[2],&CStack_28);
+            (&g_ZeroVector,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_SentinelIndices[2],
+             &CStack_28);
   fStack_10 = CStack_28.x;
   afStack_c[(uint)bVar1 * -2] = *(float *)((int)&CStack_28 + (uint)bVar1 * -8 + 4);
   afStack_c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =

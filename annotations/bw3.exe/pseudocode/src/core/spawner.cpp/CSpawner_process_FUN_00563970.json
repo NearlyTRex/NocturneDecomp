@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 493,
+    "complexity_score": 468,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 208,
-    "suspect_count": 23,
+    "suspect_count": 21,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -17,7 +17,6 @@
       "stack_param",
       "stack_ref",
       "unknown_field",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "unrolled_strlen"
@@ -35,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_spawner.cpp_CSpawner_process_FUN_00563970",
-    "signature": "void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)"
+    "signature": "void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -231,7 +230,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "delta_time",
         "offset": 8,
         "size": 4,
         "type": "float"
@@ -239,14 +238,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
@@ -262,14 +253,6 @@
       "severity": "moderate",
       "text": "int in_stack_ffffff58;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->reset_timer = this_ptr->reset_timer - param_2;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",

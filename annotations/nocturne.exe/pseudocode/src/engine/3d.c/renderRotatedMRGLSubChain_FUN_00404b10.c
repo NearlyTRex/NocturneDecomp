@@ -52,9 +52,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderRotatedMRGLSubChain_FUN_00404b10
   iVar10 = g_TransformMatrix.m[0].z;
   iVar9 = g_TransformMatrix.m[0].y;
   iVar8 = g_TransformMatrix.m[0].x;
-  iVar7 = g_INT_01c039e4;
-  iVar6 = g_INT_01c039e0;
-  iVar5 = g_INT_01c039dc;
+  iVar7 = g_LightDirectionZ;
+  iVar6 = g_LightDirectionY;
+  iVar5 = g_LightDirectionX;
   iVar4 = g_RelativeZ;
   iVar3 = g_RelativeY;
   iVar2 = g_RelativeX;
@@ -122,21 +122,21 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderRotatedMRGLSubChain_FUN_00404b10
                 (int)((ulonglong)((longlong)iVar29 * (longlong)iVar18) >> 0x20) << 0x10) +
                 ((uint)((longlong)(int)uVar30 * (longlong)iVar19) >> 0x10 |
                 (int)((ulonglong)((longlong)(int)uVar30 * (longlong)iVar19) >> 0x20) << 0x10);
-  g_INT_01c039dc =
+  g_LightDirectionX =
        ((uint)((longlong)iVar31 * (longlong)iVar5) >> 0x10 |
        (int)((ulonglong)((longlong)iVar31 * (longlong)iVar5) >> 0x20) << 0x10) +
        ((uint)((longlong)(int)uVar27 * (longlong)iVar6) >> 0x10 |
        (int)((ulonglong)((longlong)(int)uVar27 * (longlong)iVar6) >> 0x20) << 0x10) +
        ((uint)((longlong)iVar33 * (longlong)iVar7) >> 0x10 |
        (int)((ulonglong)((longlong)iVar33 * (longlong)iVar7) >> 0x20) << 0x10);
-  g_INT_01c039e0 =
+  g_LightDirectionY =
        ((uint)((longlong)iVar32 * (longlong)iVar5) >> 0x10 |
        (int)((ulonglong)((longlong)iVar32 * (longlong)iVar5) >> 0x20) << 0x10) +
        ((uint)((longlong)(int)uVar28 * (longlong)iVar6) >> 0x10 |
        (int)((ulonglong)((longlong)(int)uVar28 * (longlong)iVar6) >> 0x20) << 0x10) +
        ((uint)((longlong)iVar20 * (longlong)iVar7) >> 0x10 |
        (int)((ulonglong)((longlong)iVar20 * (longlong)iVar7) >> 0x20) << 0x10);
-  g_INT_01c039e4 =
+  g_LightDirectionZ =
        ((uint)((longlong)(int)uVar26 * (longlong)iVar5) >> 0x10 |
        (int)((ulonglong)((longlong)(int)uVar26 * (longlong)iVar5) >> 0x20) << 0x10) +
        ((uint)((longlong)iVar29 * (longlong)iVar6) >> 0x10 |
@@ -220,8 +220,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderRotatedMRGLSubChain_FUN_00404b10
   g_RelativeX = iVar2;
   g_RelativeY = iVar3;
   g_RelativeZ = iVar4;
-  g_INT_01c039dc = iVar5;
-  g_INT_01c039e0 = iVar6;
-  g_INT_01c039e4 = iVar7;
+  g_LightDirectionX = iVar5;
+  g_LightDirectionY = iVar6;
+  g_LightDirectionZ = iVar7;
   return (SMRGLHeaderExtended *)&primitive[2].child_count;
 }

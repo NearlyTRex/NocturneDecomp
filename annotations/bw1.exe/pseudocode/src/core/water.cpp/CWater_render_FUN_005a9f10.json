@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 352,
+    "complexity_score": 347,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 202,
+    "pseudocode_lines": 197,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 679
+    "total_lines": 674
   },
   "cross_references": [
     {
@@ -169,61 +169,61 @@
     },
     {
       "addr": "00625c9c",
-      "name": "g_SMRGLTextureBasic_ARRAY_00625c9c",
+      "name": "g_WaterTextures",
       "type": "SMRGLTextureBasic[16]",
       "value": null
     },
     {
       "addr": "00625e1c",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c",
+      "name": "g_WaterRenderQuad",
       "type": "SMRGLPrimitiveQuad",
       "value": null
     },
     {
       "addr": "00625e38",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[0].texture_u",
+      "name": "g_WaterRenderQuad.vertices[0].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e3c",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[0].texture_v",
+      "name": "g_WaterRenderQuad.vertices[0].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e44",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[1].texture_u",
+      "name": "g_WaterRenderQuad.vertices[1].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e48",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[1].texture_v",
+      "name": "g_WaterRenderQuad.vertices[1].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e50",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[2].texture_u",
+      "name": "g_WaterRenderQuad.vertices[2].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e54",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[2].texture_v",
+      "name": "g_WaterRenderQuad.vertices[2].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e5c",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[3].texture_u",
+      "name": "g_WaterRenderQuad.vertices[3].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00625e60",
-      "name": "g_SMRGLPrimitiveQuad_00625e1c.vertices[3].texture_v",
+      "name": "g_WaterRenderQuad.vertices[3].texture_v",
       "type": "undefined4",
       "value": null
     },
@@ -235,7 +235,7 @@
     },
     {
       "addr": "01c43530",
-      "name": "g_INT_01c43530",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -247,7 +247,7 @@
     },
     {
       "addr": "01c51cac",
-      "name": "g_INT_01c51cac",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     },
@@ -301,7 +301,7 @@
     },
     {
       "addr": "02c8afd4",
-      "name": "g_INT_02c8afd4",
+      "name": "g_WaterAnimationTimer",
       "type": "int",
       "value": null
     },
@@ -313,31 +313,31 @@
     },
     {
       "addr": "02c8afdc",
-      "name": "g_INT_02c8afdc",
+      "name": "g_VisibleWaterTileCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c8afe0",
-      "name": "g_INT_ARRAY_02c8afe0",
+      "name": "g_VisibleWaterTilesX",
       "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02c8efe0",
-      "name": "g_INT_ARRAY_02c8efe0",
+      "name": "g_VisibleWaterTilesY",
       "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02c93004",
-      "name": "g_INT_02c93004",
+      "name": "g_WaterAnimationBlend",
       "type": "int",
       "value": null
     },
     {
       "addr": "02c93008",
-      "name": "g_FLOAT_02c93008",
+      "name": "g_WaterAnimationPhase",
       "type": "float",
       "value": null
     },
@@ -735,23 +735,23 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)g_VisibleWaterTilesX",
+      "severity": "moderate",
+      "text": "local_24 = *(int *)((int)g_VisibleWaterTilesX + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 90,
-      "match": "(int *)((int)g_INT_ARRAY_02c8afe0",
+      "match": "(int *)((int)g_VisibleWaterTilesY",
       "severity": "moderate",
-      "text": "local_24 = *(int *)((int)g_INT_ARRAY_02c8afe0 + local_28);",
+      "text": "local_20 = *(int *)((int)g_VisibleWaterTilesY + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(int *)((int)g_INT_ARRAY_02c8efe0",
-      "severity": "moderate",
-      "text": "local_20 = *(int *)((int)g_INT_ARRAY_02c8efe0 + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
+      "line": 100,
       "match": "(uint *)((int)local_54",
       "severity": "moderate",
       "text": "*(uint *)((int)local_54 + (uint)bVar4 * -8 + 4) =",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(uint *)((int)local_54",
       "severity": "moderate",
       "text": "*(uint *)((int)local_54 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Pointer value `&local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "(int)&local_84",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_84 + (uint)bVar4 * -8 + 4);",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Pointer value `&local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 104,
+      "line": 103,
       "match": "(int)&local_84",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_84 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
@@ -783,7 +783,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_84 + (uint)bVar4 * -8 + 4);",
@@ -791,7 +791,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 104,
+      "line": 103,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_84 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",

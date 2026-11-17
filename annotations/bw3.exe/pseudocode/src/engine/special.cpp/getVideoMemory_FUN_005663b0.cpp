@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_getVideoMemory_FUN_005663b0(int *total_memory,int
   if (g_INT_02cf6108 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf606c)(total_memory,available_memory,memory_type);
+  iVar1 = (*(code *)g_APIDLL_getVideoMemory)(total_memory,available_memory,memory_type);
   return iVar1;
 }

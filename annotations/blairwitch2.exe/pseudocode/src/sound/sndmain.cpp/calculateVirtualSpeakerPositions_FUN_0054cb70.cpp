@@ -23,8 +23,8 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0054cb70(voi
   int iVar12;
   
   iVar11 = g_INT_026484b8 * 8;
-  if (g_INT_0061bc9c != 2) {
-    if (0 < g_INT_0061bc9c) {
+  if (g_AudioChannelCount != 2) {
+    if (0 < g_AudioChannelCount) {
       uVar4 = *(uint *)(&g_DOUBLE_02648428 + g_INT_026484b8);
       uVar5 = *(uint *)((int)&g_DOUBLE_02648428 + iVar11 + 4);
       uVar6 = *(uint *)(&g_DOUBLE_02648438 + g_INT_026484b8);
@@ -34,14 +34,14 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0054cb70(voi
       iVar11 = 0;
       do {
         iVar12 = iVar11 + 8;
-        *(uint *)((int)g_DOUBLE_ARRAY_02648f40 + iVar11) = uVar4;
-        *(uint *)((int)g_DOUBLE_ARRAY_02648f40 + iVar11 + 4) = uVar5;
-        *(uint *)((int)g_DOUBLE_ARRAY_02648f80 + iVar11) = uVar6;
-        *(uint *)((int)g_DOUBLE_ARRAY_02648f80 + iVar11 + 4) = uVar7;
-        *(uint *)((int)g_DOUBLE_ARRAY_02648fc0 + iVar11) = uVar8;
-        *(uint *)((int)g_DOUBLE_ARRAY_02648fc0 + iVar11 + 4) = uVar9;
+        *(uint *)((int)g_VirtualSpeakerXPositions + iVar11) = uVar4;
+        *(uint *)((int)g_VirtualSpeakerXPositions + iVar11 + 4) = uVar5;
+        *(uint *)((int)g_VirtualSpeakerYPositions + iVar11) = uVar6;
+        *(uint *)((int)g_VirtualSpeakerYPositions + iVar11 + 4) = uVar7;
+        *(uint *)((int)g_VirtualSpeakerZPositions + iVar11) = uVar8;
+        *(uint *)((int)g_VirtualSpeakerZPositions + iVar11 + 4) = uVar9;
         iVar11 = iVar12;
-      } while (iVar12 < g_INT_0061bc9c * 8);
+      } while (iVar12 < g_AudioChannelCount * 8);
     }
     return;
   }
@@ -49,11 +49,11 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0054cb70(voi
   dVar1 = (double)(*(float *)(g_INT_026484b8 * 4 + 0x2648470) * fVar10);
   dVar2 = (double)(*(float *)(g_INT_026484b8 * 4 + 0x2648478) * fVar10);
   dVar3 = (double)(*(float *)(g_INT_026484b8 * 4 + 0x2648480) * fVar10);
-  g_DOUBLE_ARRAY_02648f40[0] = (&g_DOUBLE_02648428)[g_INT_026484b8] - dVar1;
-  g_DOUBLE_ARRAY_02648f80[0] = (&g_DOUBLE_02648438)[g_INT_026484b8] - dVar2;
-  g_DOUBLE_ARRAY_02648fc0[0] = (&g_DOUBLE_02648448)[g_INT_026484b8] - dVar3;
-  g_DOUBLE_ARRAY_02648f40[1] = (&g_DOUBLE_02648428)[g_INT_026484b8] + dVar1;
-  g_DOUBLE_ARRAY_02648f80[1] = (&g_DOUBLE_02648438)[g_INT_026484b8] + dVar2;
-  g_DOUBLE_ARRAY_02648fc0[1] = (&g_DOUBLE_02648448)[g_INT_026484b8] + dVar3;
+  g_VirtualSpeakerXPositions[0] = (&g_DOUBLE_02648428)[g_INT_026484b8] - dVar1;
+  g_VirtualSpeakerYPositions[0] = (&g_DOUBLE_02648438)[g_INT_026484b8] - dVar2;
+  g_VirtualSpeakerZPositions[0] = (&g_DOUBLE_02648448)[g_INT_026484b8] - dVar3;
+  g_VirtualSpeakerXPositions[1] = (&g_DOUBLE_02648428)[g_INT_026484b8] + dVar1;
+  g_VirtualSpeakerYPositions[1] = (&g_DOUBLE_02648438)[g_INT_026484b8] + dVar2;
+  g_VirtualSpeakerZPositions[1] = (&g_DOUBLE_02648448)[g_INT_026484b8] + dVar3;
   return;
 }

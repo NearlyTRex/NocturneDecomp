@@ -7,7 +7,7 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01c25590
+;   CBitFont* g_EditorFont
 ;   int g_INT_01c25f84
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
@@ -64,7 +64,7 @@ section .text
     LEA EAX,[EBX + 0x24]                ; 00485657
     PUSH EAX                            ; 0048565a
     MOV dword ptr [ESP + 0x8],EDX       ; 0048565b
-    MOV EDX,dword ptr [0x01c25590]      ; 0048565f | g_CBitFont_PTR_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 0048565f | g_EditorFont
     PUSH EDX                            ; 00485665
     MOV dword ptr [ESP + 0x8],EAX       ; 00485666
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 0048566a
@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 00485695
     MOV EAX,dword ptr [ESP + 0x10]      ; 00485696
     PUSH EAX                            ; 0048569a
-    MOV EDX,dword ptr [0x01c25590]      ; 0048569b | g_CBitFont_PTR_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 0048569b | g_EditorFont
     PUSH EDX                            ; 004856a1
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004856a2
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)

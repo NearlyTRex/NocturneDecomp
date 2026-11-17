@@ -619,7 +619,7 @@ section .text
     CALL core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000 ; 0059bfe5
         ;   XREF to: 0059d000 (UNCONDITIONAL_CALL)  ; int core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino * this_ptr)
     MOV dword ptr [EBX + 0xd074],EAX    ; 0059bfea
-    MOV EAX,[0x006071f0]                ; 0059bff0 | g_CWeather_PTR_006071f0
+    MOV EAX,[0x006071f0]                ; 0059bff0 | g_CWeatherPtr
     MOV EDX,dword ptr [EAX]             ; 0059bff5 | g_CWeather_02d0c1a0
     ADD ESP,0x4                         ; 0059bff7
     TEST EDX,EDX                        ; 0059bffa
@@ -660,7 +660,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffe0e],EAX ; 0059c079
     PUSH 0x5                            ; 0059c07f
         ;   Label: LAB_0059c07f
-    MOV ECX,dword ptr [0x006071f0]      ; 0059c081 | g_CWeather_PTR_006071f0
+    MOV ECX,dword ptr [0x006071f0]      ; 0059c081 | g_CWeatherPtr
     PUSH ECX                            ; 0059c087 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c088
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
@@ -669,7 +669,7 @@ section .text
     PUSH EAX                            ; 0059c096
     LEA EAX,[EBP + 0xfffffe12]          ; 0059c097
     PUSH EAX                            ; 0059c09d
-    MOV ESI,dword ptr [0x006071f0]      ; 0059c09e | g_CWeather_PTR_006071f0
+    MOV ESI,dword ptr [0x006071f0]      ; 0059c09e | g_CWeatherPtr
     PUSH ESI                            ; 0059c0a4 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 0059c0a5
         ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
@@ -916,7 +916,7 @@ section .text
     FADDP                               ; 0059c3bc
     FSTP float ptr [EBP + 0x6e]         ; 0059c3be
     MOV EAX,dword ptr [EBP + 0x6e]      ; 0059c3c1
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c3c4 | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c3c4 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0059c3ca
     ADD EAX,EDI                         ; 0059c3cc
     MOV dword ptr [EBP + 0x72],EAX      ; 0059c3ce
@@ -1203,7 +1203,7 @@ section .text
     FADDP                               ; 0059c7b4
     FSTP float ptr [EBP + -0x2]         ; 0059c7b6
     MOV EAX,dword ptr [EBP + -0x2]      ; 0059c7b9
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c7bc | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c7bc | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0059c7c2
     ADD EAX,EDI                         ; 0059c7c4
     MOV dword ptr [EBP + 0x2],EAX       ; 0059c7c6
@@ -1254,7 +1254,7 @@ section .text
     JBE 0x0059ba81                      ; 0059c862
         ;   XREF to: 0059ba81 (CONDITIONAL_JUMP)  ; caseD_7
     PUSH 0x0                            ; 0059c868
-    MOV EDI,dword ptr [0x006071f0]      ; 0059c86a | g_CWeather_PTR_006071f0
+    MOV EDI,dword ptr [0x006071f0]      ; 0059c86a | g_CWeatherPtr
     PUSH EDI                            ; 0059c870 | g_CWeather_02d0c1a0
     MOV dword ptr [EBX + 0xd070],0x0    ; 0059c871
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c87b

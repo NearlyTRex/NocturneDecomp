@@ -66,12 +66,12 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     (pCVar2->light_direction).y = -0x482b;
     (pCVar2->light_direction).z = 0x482b;
     pCVar2->ambient_base_quick = 32000;
-    g_INT_01d02f44 =
-         g_INT_01d02f44 +
-         ((int)((g_INT_01c2a370 + (g_INT_01c2a370 >> 0x1f) * -4) -
-               (uint)((g_INT_01c2a370 >> 0x1f) << 1 < 0)) >> 2);
-    iVar3 = engine_matrix_c_interpolatedSin_FUN_004e86b0(g_INT_01d02f44);
-    iVar4 = engine_matrix_c_interpolatedCos_FUN_004e86f0(g_INT_01d02f44);
+    g_InventoryLightAngle =
+         g_InventoryLightAngle +
+         ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+               (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
+    iVar3 = engine_matrix_c_interpolatedSin_FUN_004e86b0(g_InventoryLightAngle);
+    iVar4 = engine_matrix_c_interpolatedCos_FUN_004e86f0(g_InventoryLightAngle);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar3 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 0x482b) >> 0x20) << 0x10;
@@ -123,9 +123,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
               (g_CDemonRenderer_PTR_0060b280,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+              (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+              (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
     local_60 = local_b4 + local_a8;
     local_5c = local_b0 + local_a4;
     local_58 = local_ac + local_a0;
@@ -135,7 +135,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     *(uint *)((int)&stack0xffffff78 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
          *(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
     class_name = "CBoxActor";
-    g_INT_01c38aec = 0;
+    g_PerspectiveReciprocal = 0;
     local_30 = local_90 * -0.5f;
     local_2c[0] = local_8c * -0.5f;
     local_2c[1] = local_88 * -0.5f;
@@ -188,7 +188,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
               (g_CDemonRenderer_PTR_0060b280,&local_48,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c,&local_3c);
+              (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector,&local_3c);
     if (alpha < 65000) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
                 (g_CDemonRenderer_PTR_0060b280,alpha);

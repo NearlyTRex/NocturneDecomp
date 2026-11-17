@@ -34,8 +34,8 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_0053b8d0(C3DSLight *this_ptr
         }
       }
     }
-    iVar2 = g_INT_01c2a370;
-    lVar1 = (longlong)g_INT_01c2a370 * (longlong)(this_ptr->filter_vel).x;
+    iVar2 = g_GlobalDeltaTimeInt;
+    lVar1 = (longlong)g_GlobalDeltaTimeInt * (longlong)(this_ptr->filter_vel).x;
     iVar3 = (this_ptr->filter_vel).y;
     (this_ptr->filter_pos).x =
          (this_ptr->filter_pos).x + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

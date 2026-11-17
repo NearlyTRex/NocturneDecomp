@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   qword[512] g_QWORD_ARRAY_00605710
 ;   undefined4 g_QWORD_ARRAY_00605710[255]
-;   uint[256] g_UINT_ARRAY_01c6a974
+;   uint[256] g_Hardware32BitPalette
 ;   int g_INT_01c6e2ac
 ;
 ; *****************************************************************************
@@ -37,7 +37,7 @@ section .text
     SHR EBP,0x8                         ; 005630b9
     MOVZX EAX,byte ptr [ESI]            ; 005630bc
         ;   Label: LAB_005630bc
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c6a974] ; 005630bf | g_UINT_ARRAY_01c6a974
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c6a974] ; 005630bf | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 005630c7
     IMUL EAX,EBP                        ; 005630ca
     CMP dword ptr [0x01c6e2ac],0x1      ; 005630cd | g_INT_01c6e2ac

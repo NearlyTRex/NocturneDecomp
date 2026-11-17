@@ -45,19 +45,19 @@
   "globals": [
     {
       "addr": "02de07f4",
-      "name": "g_BOOL_02de07f4",
+      "name": "g_UseMultimediaTimer",
       "type": "BOOL",
       "value": null
     },
     {
       "addr": "02de0848",
-      "name": "g_INT_02de0848",
+      "name": "g_InputReadIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de084c",
-      "name": "g_INT_02de084c",
+      "name": "g_InputWriteIndex",
       "type": "int",
       "value": null
     }
@@ -163,24 +163,24 @@
   },
   "suspects": [
     {
-      "description": "Scalar global g_BOOL_02de07f4 accessed via (&g_BOOL_02de07f4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_ARRAY_02de07f8 (at 0x02de07f8, +4 bytes).",
+      "description": "Scalar global g_UseMultimediaTimer accessed via (&g_UseMultimediaTimer)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_InputBuffer (at 0x02de07f8, +4 bytes).",
       "line": 6,
-      "match": "g_BOOL_02de07f4",
+      "match": "g_UseMultimediaTimer",
       "severity": "moderate",
-      "text": "(&g_BOOL_02de07f4)[g_INT_02de084c] = input_value;",
+      "text": "(&g_UseMultimediaTimer)[g_InputWriteIndex] = input_value;",
       "type": "wrong_global"
     },
     {
-      "description": "Compiler displaced index base: [reg*4 + 0x2de07f4] lands in g_BOOL_02de07f4 but intended target is g_INT_ARRAY_02de07f8 at 0x2de07f8 (displaced by 4 bytes)",
-      "displaced_from": "g_BOOL_02de07f4",
+      "description": "Compiler displaced index base: [reg*4 + 0x2de07f4] lands in g_UseMultimediaTimer but intended target is g_InputBuffer at 0x2de07f8 (displaced by 4 bytes)",
+      "displaced_from": "g_UseMultimediaTimer",
       "displacement": "0x2de07f4",
       "instruction_address": "",
-      "intended_global": "g_INT_ARRAY_02de07f8",
+      "intended_global": "g_InputBuffer",
       "line": 7,
       "match": "0x2de07f4",
       "scale": 4,
       "severity": "moderate",
-      "text": "// 00558bb2: MOV dword ptr [EDX*0x4 + 0x2de07f4],EBX  ; g_BOOL_02de07f4",
+      "text": "// 00558bb2: MOV dword ptr [EDX*0x4 + 0x2de07f4],EBX  ; g_UseMultimediaTimer",
       "type": "displaced_global_access"
     }
   ]

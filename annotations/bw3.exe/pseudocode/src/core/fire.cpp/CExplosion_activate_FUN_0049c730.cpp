@@ -58,7 +58,7 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_0049c730(CExplosion *this_ptr
            puVar2[(uint)bVar3 * -2 + 1];
       local_48.y = local_48.y + 1.0;
       model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                            (g_CKeyFramedModelInstance_ARRAY_01c743fc + iVar1 % 5);
+                            (g_CFireEffectDebrisModels + iVar1 % 5);
       iVar1 = iVar1 + 1;
       core_fire_cpp_CFireEffect_createRock_FUN_004a28e0
                 (g_CFireEffect_PTR_005fc5a0,&local_48,local_3c,model_ptr);

@@ -15,8 +15,8 @@
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00574ea0 at 00574eb4
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02c80650
-;   int g_INT_02c80654
+;   CSoundDevice* g_CSoundDevicePtr
+;   int g_SoundBusyFlag
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_freeMixBuffers_FUN_0056f630
@@ -29,7 +29,7 @@ section .text
     CALL sound_sndmain.cpp_killAllSfx_FUN_00573b00 ; 005750e0
         ;   XREF to: 00573b00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_00573b00()
         ;   Label: sound_sndmain.cpp_resetSoundDevice_FUN_005750e0
-    MOV EDX,dword ptr [0x02c80650]      ; 005750e5 | g_CSoundDevice_PTR_02c80650
+    MOV EDX,dword ptr [0x02c80650]      ; 005750e5 | g_CSoundDevicePtr
     TEST EDX,EDX                        ; 005750eb
     JZ 0x005750ff                       ; 005750ed
         ;   XREF to: 005750ff (CONDITIONAL_JUMP)  ; LAB_005750ff
@@ -44,7 +44,7 @@ section .text
     RET                                 ; 005750fe
     XOR ECX,ECX                         ; 005750ff
         ;   Label: LAB_005750ff
-    MOV dword ptr [0x02c80654],ECX      ; 00575101 | g_INT_02c80654
+    MOV dword ptr [0x02c80654],ECX      ; 00575101 | g_SoundBusyFlag
     CALL sound_sndmain.cpp_freeMixBuffers_FUN_0056f630 ; 00575107
         ;   XREF to: 0056f630 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_freeMixBuffers_FUN_0056f630()
     MOV EAX,0x1                         ; 0057510c

@@ -15,6 +15,6 @@ void __cdecl core_terrain_cpp_CTerrain_init_FUN_00572370(CTerrain *this_ptr)
   this_ptr->animation_counter = 0;
   core_ground_cpp_CGround_init_FUN_004cfbd0(this_ptr_00);
   core_ground_cpp_CGround_load_FUN_004cfcd0(g_CGroundPtr,"junk.jnk");
-  g_CTerrain_02cfd8b8.initialized = 1;
+  g_CTerrainInstance.initialized = 1;
   return;
 }

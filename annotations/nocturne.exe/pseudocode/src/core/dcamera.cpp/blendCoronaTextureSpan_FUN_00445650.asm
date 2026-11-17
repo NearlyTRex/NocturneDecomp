@@ -18,7 +18,7 @@
 ;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 at 004459f8
 ;
 ; Referenced Globals:
-;   CDemonGlobe* g_CDemonGlobe_PTR_014b8458
+;   CDemonGlobe* g_CurrentGlobe
 ;
 ; *****************************************************************************
 
@@ -48,7 +48,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00445687
     SUB EAX,ECX                         ; 0044568a
     MOV dword ptr [EBP + -0x8],EAX      ; 0044568c
-    MOV EAX,[0x014b8458]                ; 0044568f | g_CDemonGlobe_PTR_014b8458
+    MOV EAX,[0x014b8458]                ; 0044568f | g_CurrentGlobe
     MOV EAX,dword ptr [EAX + 0x3c]      ; 00445694
     MOV dword ptr [EBP + -0x4],EAX      ; 00445697
     MOV ECX,dword ptr [EBP + 0xfffffff8] ; 0044569a

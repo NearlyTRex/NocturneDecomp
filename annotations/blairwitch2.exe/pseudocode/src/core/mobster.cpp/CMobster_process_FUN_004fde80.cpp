@@ -165,7 +165,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
   }
   if ((this_ptr->hold_pos_flag == 0) &&
      (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,this_ptr->hold_pos_condition), iVar6 != 0)) {
+                        (g_CEventListPtr,this_ptr->hold_pos_condition), iVar6 != 0)) {
     this_ptr->hold_pos_flag = 1;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -564,10 +564,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
         pSVar18 = &SStack_22c;
         fVar17 = 0.4;
         core_xform_cpp_transformVector3x4_FUN_00591530
-                  (&g_CVector3f_0265370c,
+                  (&g_ZeroVector,
                    (CMatrix3x4f *)
                    (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                   [g_INT_ARRAY_01d1c710[1]].m,&CStack_1e4);
+                   [g_MobsterIndices[1]].m,&CStack_1e4);
         pCVar19 = &CStack_70;
         CStack_70.x = CStack_1e4.x;
         *(uint *)((int)&CStack_70 + (uint)bVar16 * -8 + 4) =
@@ -591,10 +591,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
         pSVar18 = &SStack_22c;
         fVar17 = 0.4;
         core_xform_cpp_transformVector3x4_FUN_00591530
-                  (&g_CVector3f_0265370c,
+                  (&g_ZeroVector,
                    (CMatrix3x4f *)
                    (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                   [g_INT_ARRAY_01d1c710[2]].m,&CStack_58);
+                   [g_MobsterIndices[2]].m,&CStack_58);
         pCVar19 = &CStack_19c;
         CStack_19c.x = CStack_58.x;
         *(uint *)((int)&CStack_19c + (uint)bVar16 * -8 + 4) =

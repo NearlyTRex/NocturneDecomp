@@ -10,11 +10,11 @@
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340 at 0057a355
 ;
 ; Referenced Globals:
-;   IDirectSound* g_IDirectSound_PTR_02c81d94
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d98
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d9c
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02c81da0
-;   IKsPropertySet* g_IKsPropertySet_PTR_02c81da4
+;   IDirectSound* g_DirectSound
+;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+;   IDirectSound3DListener* g_DirectSound3DListener
+;   IKsPropertySet* g_DirectSoundPropertySet
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     CMP EBX,0x41                        ; 00577abb
     JL 0x00577ab0                       ; 00577abe
         ;   XREF to: 00577ab0 (CONDITIONAL_JUMP)  ; LAB_00577ab0
-    MOV EDX,dword ptr [0x02c81da0]      ; 00577ac0 | g_IDirectSound3DListener_PTR_02c81da0
+    MOV EDX,dword ptr [0x02c81da0]      ; 00577ac0 | g_DirectSound3DListener
     TEST EDX,EDX                        ; 00577ac6
     JZ 0x00577ad8                       ; 00577ac8
         ;   XREF to: 00577ad8 (CONDITIONAL_JUMP)  ; LAB_00577ad8
@@ -54,8 +54,8 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 00577acb
     CALL dword ptr [EBX + 0x8]          ; 00577acd
     XOR ECX,ECX                         ; 00577ad0
-    MOV dword ptr [0x02c81da0],ECX      ; 00577ad2 | g_IDirectSound3DListener_PTR_02c81da0
-    MOV EBX,dword ptr [0x02c81d9c]      ; 00577ad8 | g_IDirectSoundBuffer_PTR_02c81d9c
+    MOV dword ptr [0x02c81da0],ECX      ; 00577ad2 | g_DirectSound3DListener
+    MOV EBX,dword ptr [0x02c81d9c]      ; 00577ad8 | g_DirectSoundSecondaryBuffer
         ;   Label: LAB_00577ad8
     TEST EBX,EBX                        ; 00577ade
     JZ 0x00577af2                       ; 00577ae0
@@ -65,8 +65,8 @@ section .text
     MOV EBX,dword ptr [EBX]             ; 00577ae5
     XOR ESI,ESI                         ; 00577ae7
     CALL dword ptr [EBX + 0x8]          ; 00577ae9
-    MOV dword ptr [0x02c81d9c],ESI      ; 00577aec | g_IDirectSoundBuffer_PTR_02c81d9c
-    MOV EBP,dword ptr [0x02c81da4]      ; 00577af2 | g_IKsPropertySet_PTR_02c81da4
+    MOV dword ptr [0x02c81d9c],ESI      ; 00577aec | g_DirectSoundSecondaryBuffer
+    MOV EBP,dword ptr [0x02c81da4]      ; 00577af2 | g_DirectSoundPropertySet
         ;   Label: LAB_00577af2
     TEST EBP,EBP                        ; 00577af8
     JZ 0x00577b0a                       ; 00577afa
@@ -75,8 +75,8 @@ section .text
     MOV EBX,dword ptr [EBP]             ; 00577afd
     CALL dword ptr [EBX + 0x8]          ; 00577b00
     XOR EAX,EAX                         ; 00577b03
-    MOV [0x02c81da4],EAX                ; 00577b05 | g_IKsPropertySet_PTR_02c81da4
-    MOV EDX,dword ptr [0x02c81d98]      ; 00577b0a | g_IDirectSoundBuffer_PTR_02c81d98
+    MOV [0x02c81da4],EAX                ; 00577b05 | g_DirectSoundPropertySet
+    MOV EDX,dword ptr [0x02c81d98]      ; 00577b0a | g_DirectSoundPrimaryBuffer
         ;   Label: LAB_00577b0a
     TEST EDX,EDX                        ; 00577b10
     JZ 0x00577b22                       ; 00577b12
@@ -85,8 +85,8 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 00577b15
     CALL dword ptr [EBX + 0x8]          ; 00577b17
     XOR ECX,ECX                         ; 00577b1a
-    MOV dword ptr [0x02c81d98],ECX      ; 00577b1c | g_IDirectSoundBuffer_PTR_02c81d98
-    MOV EBX,dword ptr [0x02c81d94]      ; 00577b22 | g_IDirectSound_PTR_02c81d94
+    MOV dword ptr [0x02c81d98],ECX      ; 00577b1c | g_DirectSoundPrimaryBuffer
+    MOV EBX,dword ptr [0x02c81d94]      ; 00577b22 | g_DirectSound
         ;   Label: LAB_00577b22
     TEST EBX,EBX                        ; 00577b28
     JNZ 0x00577b3a                      ; 00577b2a
@@ -107,7 +107,7 @@ section .text
     MOV EBX,dword ptr [EBX]             ; 00577b3d
     XOR ESI,ESI                         ; 00577b3f
     CALL dword ptr [EBX + 0x8]          ; 00577b41
-    MOV dword ptr [0x02c81d94],ESI      ; 00577b44 | g_IDirectSound_PTR_02c81d94
+    MOV dword ptr [0x02c81d94],ESI      ; 00577b44 | g_DirectSound
     MOV EAX,EDI                         ; 00577b4a
     POP EBP                             ; 00577b4c
     POP EDI                             ; 00577b4d

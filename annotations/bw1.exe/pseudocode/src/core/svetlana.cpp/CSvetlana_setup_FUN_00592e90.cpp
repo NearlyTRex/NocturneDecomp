@@ -28,43 +28,43 @@ void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_00592e90(CSvetlana *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004eaa10(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
-  g_INT_ARRAY_02c83708[0] =
+  g_SvetlanaBoneIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 head",1);
-  g_INT_ARRAY_02c83708[1] =
+  g_SvetlanaBoneIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Clavicle",1);
-  g_INT_ARRAY_02c83708[2] =
+  g_SvetlanaBoneIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Clavicle",1);
-  g_INT_ARRAY_02c83708[3] =
+  g_SvetlanaBoneIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L UpperArm",1);
-  g_INT_ARRAY_02c83708[4] =
+  g_SvetlanaBoneIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R UpperArm",1);
-  g_INT_ARRAY_02c83708[5] =
+  g_SvetlanaBoneIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L ForeArm",1);
-  g_INT_ARRAY_02c83708[6] =
+  g_SvetlanaBoneIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R ForeArm",1);
-  g_INT_ARRAY_02c83708[7] =
+  g_SvetlanaBoneIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Foot",1);
-  g_INT_ARRAY_02c83708[8] =
+  g_SvetlanaBoneIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Foot",1);
-  g_INT_ARRAY_02c83708[9] =
+  g_SvetlanaBoneIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Thigh",1);
-  g_INT_ARRAY_02c83708[10] =
+  g_SvetlanaBoneIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Thigh",1);
-  g_INT_ARRAY_02c83708[0xb] =
+  g_SvetlanaBoneIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Calf",1);
-  g_INT_ARRAY_02c83708[0xc] =
+  g_SvetlanaBoneIndices[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Calf",1);
-  g_INT_ARRAY_02c83708[0xd] =
+  g_SvetlanaBoneIndices[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Hand",1);
-  g_INT_ARRAY_02c83708[0xe] =
+  g_SvetlanaBoneIndices[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Hand",1);
-  g_INT_ARRAY_02c83708[0xf] =
+  g_SvetlanaBoneIndices[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine2",1);
-  g_INT_ARRAY_02c83708[0x10] =
+  g_SvetlanaBoneIndices[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine",1);
-  g_INT_ARRAY_02c83708[0x11] =
+  g_SvetlanaBoneIndices[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bipblade01",1);
-  g_INT_ARRAY_02c83708[0x12] =
+  g_SvetlanaBoneIndices[0x12] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"BipR14",1);
   this_ptr->blades_drawn = 0;
   core_cloth_cpp_CCloth_load_FUN_0043e6d0(&this_ptr->cape_cloth,"svetcape.cth");

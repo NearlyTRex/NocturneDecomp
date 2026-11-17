@@ -7,24 +7,24 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4929
-Clean functions: 3108 (63.1%)
-Functions with suspects: 1821 (36.9%)
+Clean functions: 3114 (63.2%)
+Functions with suspects: 1815 (36.8%)
 
-Total suspect patterns: 15698
-Average suspects per function: 3.18
+Total suspect patterns: 15435
+Average suspects per function: 3.13
 
 Virtual files: 202 total, 16 at 100%, 18 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3334, Average: 44.3
+  Min: 4, Max: 3317, Average: 44.3
 
-Average complexity score: 80.4
+Average complexity score: 79.8
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              3966
-  pointer_truncation        3033
-  unrolled_memcpy           1489
+  pointer_truncation        3031
+  unrolled_memcpy           1494
   unknown_field             811
   concat_reconstruction     661
   shadow_pointer_walk       609
@@ -35,7 +35,6 @@ SUSPECT PATTERN BREAKDOWN
   raw_address_constant      310
   unaffected_reg            304
   nonstandard_int           267
-  unnamed_param             266
   unrolled_strlen           238
   unrolled_memset           235
   warning_type_propagation  141
@@ -144,33 +143,32 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 3058 more
+  ... and 3064 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  004ff2c0: core_script.cpp_CScript_step_FUN_004ff2c0 (score: 3774, suspects: 39, lines: 3334)
-  004a0550: core_game.cpp_CGame_processCheatCodes_FUN_004a0550 (score: 2877, suspects: 66, lines: 2157)
-  0047ac50: core_event.cpp_CEventList_executeCommand_FUN_0047ac50 (score: 2722, suspects: 52, lines: 2152)
-  004accf0: core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 (score: 2610, suspects: 221, lines: 390)
-  004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2417, suspects: 126, lines: 1127)
+  004ff2c0: core_script.cpp_CScript_step_FUN_004ff2c0 (score: 3757, suspects: 39, lines: 3317)
+  004a0550: core_game.cpp_CGame_processCheatCodes_FUN_004a0550 (score: 2879, suspects: 66, lines: 2159)
+  0047ac50: core_event.cpp_CEventList_executeCommand_FUN_0047ac50 (score: 2712, suspects: 52, lines: 2142)
+  004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2412, suspects: 126, lines: 1122)
   00473190: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 (score: 2310, suspects: 197, lines: 295)
   0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2259, suspects: 178, lines: 454)
-  0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 2175, suspects: 57, lines: 1575)
+  0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 2171, suspects: 57, lines: 1571)
   0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
   0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (score: 2025, suspects: 142, lines: 570)
-  0050c2d0: core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (score: 2006, suspects: 142, lines: 551)
+  0050c2d0: core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (score: 2005, suspects: 142, lines: 550)
   004a9270: core_ghoul.cpp_CGhoul_process_FUN_004a9270 (score: 1974, suspects: 85, lines: 1074)
   0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (score: 1891, suspects: 128, lines: 581)
-  005384d0: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0 (score: 1803, suspects: 112, lines: 643)
-  00535900: core_stranger.cpp_CStranger_processFrame_FUN_00535900 (score: 1789, suspects: 59, lines: 1154)
+  005384d0: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0 (score: 1800, suspects: 112, lines: 640)
+  00535900: core_stranger.cpp_CStranger_processFrame_FUN_00535900 (score: 1787, suspects: 59, lines: 1152)
   00430630: cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630 (score: 1785, suspects: 140, lines: 355)
   004349a0: engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (score: 1547, suspects: 107, lines: 452)
   00434210: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (score: 1529, suspects: 107, lines: 434)
   00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (score: 1488, suspects: 138, lines: 93)
   004d12e0: core_menu.cpp_configureSoundOptions_FUN_004d12e0 (score: 1446, suspects: 60, lines: 791)
   00472de0: shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 (score: 1429, suspects: 118, lines: 209)
-  004e6160: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_004e6160 (score: 1409, suspects: 86, lines: 534)
-  0055e040: core_xform.cpp_transformAndClipGeometry_FUN_0055e040 (score: 1396, suspects: 88, lines: 486)
+  004e6160: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_004e6160 (score: 1405, suspects: 86, lines: 530)
+  0055e040: core_xform.cpp_transformAndClipGeometry_FUN_0055e040 (score: 1398, suspects: 88, lines: 488)
   004d2d00: core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 (score: 1377, suspects: 45, lines: 902)
   00497900: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 (score: 1363, suspects: 98, lines: 353)
   00485a90: core_fire.cpp_CLaserBeam_render_FUN_00485a90 (score: 1342, suspects: 79, lines: 517)
@@ -178,6 +176,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004c85f0: core_main.c_initializeGameSystems_FUN_004c85f0 (score: 1221, suspects: 68, lines: 506)
   00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 1210, suspects: 57, lines: 600)
   00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 1210, suspects: 56, lines: 615)
+  0055ef50: core_zombie.cpp_CZombie_process_FUN_0055ef50 (score: 1208, suspects: 13, lines: 1028)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -350,18 +349,6 @@ FUNCTIONS BY SUSPECT TYPE
     00465c9b: core_dstrendr.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
     00465f50: core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50
     ... and 12 more
-
-  unnamed_param (10 functions):
-    0048b220: core_fire.cpp_CFireEffect_createBulletTrail_FUN_0048b220
-    00490210: engine_font.cpp_CBitFont_loadFromFile_FUN_00490210
-    004a03a0: core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0
-    004accf0: core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0
-    004c0640: core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640
-    004d8cd0: core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
-    004d93d0: core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0
-    004e28a0: sound_mp3.cpp_CFileBitStream_init_FUN_004e28a0
-    004f4b30: cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30
-    00513670: core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670
 
   unrolled_strlen (71 functions):
     004014a0: engine_2d.c_drawAntialiasedString_FUN_004014a0

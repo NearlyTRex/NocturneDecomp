@@ -14,29 +14,29 @@ void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00468090(int 
   
   if (g_INT_005fba20 != 8) {
     if (g_INT_005fba20 == 0x10) {
-      puVar1 = (uint *)(g_ARRAY_PTR_01c5faec[y] + start_x * 2);
+      puVar1 = (uint *)(g_ScreenBufferArray[y] + start_x * 2);
       puVar2 = puVar1;
       if ((start_x & 1U) != 0) {
         puVar2 = (uint *)((int)puVar1 + 2);
         start_x = start_x + 1;
         *(ushort *)puVar1 =
-             (ushort)*puVar1 >> ((byte)g_INT_01bdd7cc & 0x1f) & (ushort)g_INT_01bdd7dc;
+             (ushort)*puVar1 >> ((byte)g_OriginalColorValue & 0x1f) & (ushort)g_PackedPixelColor;
       }
       for (; start_x < end_x; start_x = start_x + 2) {
-        *puVar2 = *puVar2 >> ((byte)g_INT_01bdd7cc & 0x1f) & g_INT_01bdd7e0;
+        *puVar2 = *puVar2 >> ((byte)g_OriginalColorValue & 0x1f) & g_DuplicatedPixelColor;
         puVar2 = puVar2 + 1;
       }
       if (start_x == end_x) {
         *(ushort *)puVar2 =
-             (ushort)*puVar2 >> ((byte)g_INT_01bdd7cc & 0x1f) & (ushort)g_INT_01bdd7dc;
+             (ushort)*puVar2 >> ((byte)g_OriginalColorValue & 0x1f) & (ushort)g_PackedPixelColor;
         return;
       }
     }
     else if ((g_INT_005fba20 == 0x20) &&
-            (puVar2 = (uint *)(g_ARRAY_PTR_01c5faec[y] + start_x * 4), start_x <= end_x)) {
+            (puVar2 = (uint *)(g_ScreenBufferArray[y] + start_x * 4), start_x <= end_x)) {
       do {
         start_x = start_x + 1;
-        *puVar2 = *puVar2 >> ((byte)g_INT_01bdd7cc & 0x1f) & g_INT_01bdd7dc;
+        *puVar2 = *puVar2 >> ((byte)g_OriginalColorValue & 0x1f) & g_PackedPixelColor;
         puVar2 = puVar2 + 1;
       } while (start_x <= end_x);
       return;

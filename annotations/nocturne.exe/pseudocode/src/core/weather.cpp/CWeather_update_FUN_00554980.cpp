@@ -32,7 +32,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
     this_ptr->flash_timer = fVar2;
     if (0.0 <= fVar2) {
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (g_CEventList_PTR_005b7650,"noLightningFlash");
+                        (g_CEventListPtr,"noLightningFlash");
       if (iVar4 == 0) {
         local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
         local_18 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 -
@@ -54,32 +54,32 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
   }
 LAB_005549ac:
   if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
-    sound_sndmain_cpp_killSfx_FUN_00527230(g_UINT_02de0770);
+    sound_sndmain_cpp_killSfx_FUN_00527230(g_RainSoundHandle);
     return;
   }
   iVar5 = 0;
   iVar6 = 0;
   iVar4 = 0;
   do {
-    g_CHAR_ARRAY_02de06a8[iVar5] = '\0';
-    fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) -
+    g_WeatherParticleHitGround[iVar5] = '\0';
+    fVar2 = *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) -
             this_ptr->particle_speed * fVar1;
-    *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) = fVar2;
-    if ((fVar2 < *(float *)((int)g_FLOAT_ARRAY_02de0388 + iVar6)) &&
-       (*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) =
-             *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) + 100.0f,
+    *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) = fVar2;
+    if ((fVar2 < *(float *)((int)g_WeatherParticleGroundHeights + iVar6)) &&
+       (*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =
+             *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,
        this_ptr->weather_type == WEATHER_TYPE_RAIN)) {
-      local_28.x = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].x + iVar4);
-      local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);
-      local_28.y = *(float *)((int)g_FLOAT_ARRAY_02de0388 + iVar6);
+      local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
+      local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);
+      local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760
-                (g_CFireEffect_PTR_005b80f0,&local_28,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_28,(CVector3f *)0x0);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760
-                (g_CFireEffect_PTR_005b80f0,&local_28,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_28,(CVector3f *)0x0);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760
-                (g_CFireEffect_PTR_005b80f0,&local_28,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_28,(CVector3f *)0x0);
       core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760
-                (g_CFireEffect_PTR_005b80f0,&local_28,(CVector3f *)0x0);
+                (g_CFireEffectPtr,&local_28,(CVector3f *)0x0);
     }
     iVar4 = iVar4 + 0xc;
     iVar5 = iVar5 + 1;
@@ -103,7 +103,7 @@ LAB_005549ac:
       if (fVar2 < 0.0) {
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
                              (0.1,this_ptr->max_flash_interval);
-        this_ptr_00 = g_CEventList_PTR_005b7650;
+        this_ptr_00 = g_CEventListPtr;
         this_ptr->sub_flash_interval = local_14;
         iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                           (this_ptr_00,"noLightningFlash");
@@ -138,9 +138,9 @@ LAB_005549ac:
       fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);
       this_ptr->max_flash_interval = (float)fVar9;
     }
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(g_UINT_02de0770);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(g_RainSoundHandle);
     if (iVar4 == 0) {
-      g_UINT_02de0770 =
+      g_RainSoundHandle =
            core_sound_cpp_CSound_playSound_FUN_0052ea40
                      (g_CSound_PTR_005bed68,this_ptr,"rain.wav @ .1");
       return;

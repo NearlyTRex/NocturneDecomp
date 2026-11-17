@@ -64,24 +64,24 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dda90(CInventory *thi
     this_ptr->ammo_detail_timer = 0.0;
     this_ptr->weapon_highlight_timer = 0.0;
   }
-  if (g_INT_005fba1c != g_INT_01d70a34) {
+  if (g_INT_005fba1c != g_InventoryScreenHeight) {
     core_inv_cpp_loadAssets_FUN_004da570();
   }
   local_58 = g_INT_01c6cee8;
-  local_44 = g_CBitFont_PTR_01549ab4;
+  local_44 = g_SmallEditorFont;
   g_INT_01c6cee8 = 0;
   if ((g_INT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {
-    local_44 = g_CBitFont_PTR_01549abc;
+    local_44 = g_MicroFont;
   }
   if ((this_ptr->selected_weapon == (CWeapon *)0x0) || (this_ptr->weapon_highlight_timer <= 0.0))
   goto LAB_004ddcd0;
   iVar7 = 0x10;
   local_50 = (CBitFont *)0x70;
-  iVar5 = g_INT_00600184;
-  iVar6 = g_INT_00600180;
+  iVar5 = g_InventoryHeight;
+  iVar6 = g_InventoryWidth;
   if ((g_INT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {
-    iVar6 = g_INT_00600180 / 2;
-    iVar5 = g_INT_00600184 / 2;
+    iVar6 = g_InventoryWidth / 2;
+    iVar5 = g_InventoryHeight / 2;
     iVar7 = 8;
     local_50 = (CBitFont *)0x28;
   }
@@ -149,11 +149,11 @@ LAB_004ddcd0:
   if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
     iVar7 = 0x10;
     local_48 = 0x70;
-    iVar5 = g_INT_00600184;
-    iVar6 = g_INT_00600180;
+    iVar5 = g_InventoryHeight;
+    iVar6 = g_InventoryWidth;
     if ((g_INT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {
-      iVar6 = g_INT_00600180 / 2;
-      iVar5 = g_INT_00600184 / 2;
+      iVar6 = g_InventoryWidth / 2;
+      iVar5 = g_InventoryHeight / 2;
       iVar7 = 8;
       local_48 = 0x28;
     }
@@ -258,11 +258,11 @@ LAB_004ddcd0:
       local_64 = (float)(int)ROUND(dVar8);
     }
     engine_3d_c_setRenderAlpha_FUN_00406bf0(local_60);
-    local_24 = g_CBitFont_PTR_01549ab4;
-    iVar5 = g_INT_00600184;
+    local_24 = g_SmallEditorFont;
+    iVar5 = g_InventoryHeight;
     if (g_INT_005fba1c < 0x180) {
-      iVar5 = g_INT_00600184 / 2;
-      local_24 = g_CBitFont_PTR_01549abc;
+      iVar5 = g_InventoryHeight / 2;
+      local_24 = g_MicroFont;
     }
     pCVar4 = (CBitFont *)
              engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
@@ -271,8 +271,7 @@ LAB_004ddcd0:
     local_28 = pCVar4;
     local_38 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_24,0x58);
     iVar5 = (g_INT_005fba1c + -4) - local_38 * (int)pCVar4;
-    if (((g_CBitFont_PTR_01549abc != local_24) || (g_INT_01dd4890 == 0)) &&
-       (iVar6 = 0, 0 < (int)local_28)) {
+    if (((g_MicroFont != local_24) || (g_UseOSFonts == 0)) && (iVar6 = 0, 0 < (int)local_28)) {
       pcVar9 = &g_CHAR_01d5d288;
       do {
         iVar6 = iVar6 + 1;

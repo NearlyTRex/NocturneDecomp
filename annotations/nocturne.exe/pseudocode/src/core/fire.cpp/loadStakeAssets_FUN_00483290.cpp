@@ -10,8 +10,7 @@ void __cdecl core_fire_cpp_loadStakeAssets_FUN_00483290(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (&g_CKeyFramedModelInstance_01c08d48,"stake.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&g_CKeyFramedModelInstance_01c08d48)
-  ;
+            (&g_FireEffectFlamingStakeModel,"stake.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&g_FireEffectFlamingStakeModel);
   return;
 }

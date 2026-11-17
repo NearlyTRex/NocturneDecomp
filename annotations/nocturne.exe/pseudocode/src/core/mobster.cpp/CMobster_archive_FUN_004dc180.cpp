@@ -13,25 +13,25 @@ void __cdecl core_mobster_cpp_CMobster_archive_FUN_004dc180(CMobster *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if (g_INT_005bb124 < 4) {
+  if (g_CMobsterClassVersion < 4) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040cb00
             (&(this_ptr->base).base.model.base,"motion state");
-  if (g_INT_005bb124 == 2) {
+  if (g_CMobsterClassVersion == 2) {
     core_actor_cpp_archiveClothList_FUN_0040cf70
               (&(this_ptr->base).base.cloth_list,"clothList");
   }
-  if (4 < g_INT_005bb124) {
+  if (4 < g_CMobsterClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->post_mode,"postMode");
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->our_post,"ourPost");
   }
-  if (5 < g_INT_005bb124) {
+  if (5 < g_CMobsterClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->vehicle,"vehicle");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->side_of_car,"sideOfCar");
   }
-  if (g_INT_005bb124 < 7) {
+  if (g_CMobsterClassVersion < 7) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->hold_pos_flag,"holdPosFlag");

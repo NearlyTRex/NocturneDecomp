@@ -26,11 +26,11 @@ void __cdecl core_fire_cpp_CLeaf_process_FUN_004967d0(CLeaf *this_ptr)
   fVar2 = (this_ptr->base).velocity.y;
   fVar3 = (this_ptr->base).velocity.z;
   fVar2 = SQRT(fVar3 * fVar3 + pCVar1->x * pCVar1->x + fVar2 * fVar2);
-  iVar8 = g_INT_01c2a370 >> 0x1f;
-  iVar5 = g_INT_01c2a370 + iVar8 * -4;
+  iVar8 = g_GlobalDeltaTimeInt >> 0x1f;
+  iVar5 = g_GlobalDeltaTimeInt + iVar8 * -4;
   uStack_20 = SUB84(__BITCAST_UINT64((double)fVar2),0);
   dVar9 = round((double)(fVar2 * (float)32767.700000000001));
-  iVar7 = g_INT_01c2a370;
+  iVar7 = g_GlobalDeltaTimeInt;
   lVar6 = (longlong)((int)(iVar5 - (uint)(iVar8 << 1 < 0)) >> 2) * (longlong)(int)ROUND(dVar9);
   (this_ptr->rotation).x =
        (this_ptr->rotation).x + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);

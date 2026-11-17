@@ -43,11 +43,11 @@
 ;   double g_DOUBLE_005d7023 = 0.200000000000000
 ;   double g_DOUBLE_005d702b = 0.400000000000000
 ;   CGore* g_CGorePtr = 01cb8284
-;   undefined4 g_CDemonActorType_007bcc4c.name_hash
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 g_INT_ARRAY_01cb0678[7]
-;   undefined4 g_INT_ARRAY_01cb0678[8]
-;   undefined4 g_INT_ARRAY_01cb0678[12]
+;   undefined4 g_GabriellaIndices[7]
+;   undefined4 g_GabriellaIndices[8]
+;   undefined4 g_GabriellaIndices[12]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -101,7 +101,7 @@ section .text
         ;   Label: caseD_1
     JNZ 0x004af59b                      ; 004af459
         ;   XREF to: 004af59b (CONDITIONAL_JUMP)  ; LAB_004af59b
-    MOV EAX,[0x01cb0698]                ; 004af45f | g_INT_ARRAY_01cb0678[8]
+    MOV EAX,[0x01cb0698]                ; 004af45f | g_GabriellaIndices[8]
     PUSH EAX                            ; 004af464
         ;   Label: LAB_004af464
     MOV ECX,dword ptr [ESP + 0xe0]      ; 004af465
@@ -160,7 +160,7 @@ section .text
     POP ESI                             ; 004af50a
     POP EBX                             ; 004af50b
     RET                                 ; 004af50c
-    MOV ESI,dword ptr [0x007bcc84]      ; 004af50d | g_CDemonActorType_007bcc4c.name_hash
+    MOV ESI,dword ptr [0x007bcc84]      ; 004af50d | g_CLightActorClassInfo.name_hash
         ;   Label: caseD_2
     PUSH ESI                            ; 004af513
     MOV EDI,dword ptr [EBX + 0x25608]   ; 004af514
@@ -216,7 +216,7 @@ section .text
     ADD ESP,0x8                         ; 004af593
     JMP 0x004af4f6                      ; 004af596
         ;   XREF to: 004af4f6 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV EAX,[0x01cb0694]                ; 004af59b | g_INT_ARRAY_01cb0678[7]
+    MOV EAX,[0x01cb0694]                ; 004af59b | g_GabriellaIndices[7]
         ;   Label: LAB_004af59b
     JMP 0x004af464                      ; 004af5a0
         ;   XREF to: 004af464 (UNCONDITIONAL_JUMP)  ; LAB_004af464
@@ -309,7 +309,7 @@ section .text
         ;   Label: LAB_004af6bc
     JMP 0x004af4f6                      ; 004af6c6
         ;   XREF to: 004af4f6 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV ECX,dword ptr [0x01cb06a8]      ; 004af6cb | g_INT_ARRAY_01cb0678[12]
+    MOV ECX,dword ptr [0x01cb06a8]      ; 004af6cb | g_GabriellaIndices[12]
         ;   Label: LAB_004af6cb
     PUSH ECX                            ; 004af6d1
     MOV ESI,dword ptr [ESP + 0xe0]      ; 004af6d2

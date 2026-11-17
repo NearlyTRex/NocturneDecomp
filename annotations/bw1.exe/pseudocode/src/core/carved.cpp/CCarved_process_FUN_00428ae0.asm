@@ -1410,7 +1410,7 @@ section .text
         ;   XREF to: 004e62e0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004e62e0(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 00429b14
     PUSH 0x5d53e9                       ; 00429b17 | = "CarvedDead"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00429b1c | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00429b1c | g_CEventListPtr
     PUSH ECX                            ; 00429b22
     MOV dword ptr [EBX + 0xc1d4],0x1    ; 00429b23
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00429b2d

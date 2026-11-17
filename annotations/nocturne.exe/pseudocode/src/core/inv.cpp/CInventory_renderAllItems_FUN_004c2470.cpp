@@ -68,25 +68,25 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(CInventory *thi
   if ((CHero *)this_ptr->owner != g_HeroActors[g_LocalHeroIndex]) {
     return;
   }
-  if (g_WindowHeight != g_INT_01cc30a0) {
+  if (g_WindowHeight != g_InventoryScreenHeight) {
     core_inv_cpp_loadAssets_FUN_004befa0();
   }
   local_6c = g_UseExternalRenderer;
   g_UseExternalRenderer = 0;
-  local_44 = g_CBitFont_PTR_014b9904;
+  local_44 = g_SmallEditorFont;
   if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
-    local_44 = g_CBitFont_PTR_014b990c;
+    local_44 = g_MicroFont;
   }
   if ((this_ptr->selected_weapon == (CWeapon *)0x0) || (this_ptr->weapon_highlight_timer <= 0.0))
   goto LAB_004c27a0;
-  local_50 = INT_005bab60;
+  local_50 = g_InventoryWidth;
   local_48 = (CBitFont *)0x10;
   local_58 = 0x70;
   iVar7 = 0x24;
-  local_54 = INT_005bab64;
+  local_54 = g_InventoryHeight;
   if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
-    local_50 = INT_005bab60 / 2;
-    local_54 = INT_005bab64 / 2;
+    local_50 = g_InventoryWidth / 2;
+    local_54 = g_InventoryHeight / 2;
     iVar7 = 0x12;
     local_58 = 0x28;
     local_48 = (CBitFont *)&DAT_00000008;
@@ -98,7 +98,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(CInventory *thi
     local_6c = (int)ROUND(dVar11);
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (&this_ptr->selected_weapon->base,g_CLightGunActorType_01cc3688.name_hash);
+                     (&this_ptr->selected_weapon->base,g_CLightGunClassInfo.name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {
     iVar13 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0
                        (this_ptr,&this_ptr->selected_weapon->base,3);
@@ -230,7 +230,7 @@ LAB_004c26ad:
   }
   local_2c = local_48;
   iVar7 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
-                    (local_48,acStack_17c,g_CHAR_ARRAY_ARRAY_01cae580[0],10,0x100,
+                    (local_48,acStack_17c,g_InventoryWrappedTextLines[0],10,0x100,
                      local_54 - local_5c);
   local_34 = iVar7;
   local_38 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_48,0x58);
@@ -238,7 +238,7 @@ LAB_004c26ad:
   local_30 = (int)local_4c + (g_WindowWidth - local_54);
   iVar3 = 0;
   if (0 < iVar7) {
-    pacVar8 = g_CHAR_ARRAY_ARRAY_01cae580;
+    pacVar8 = g_InventoryWrappedTextLines;
     do {
       iVar3 = iVar3 + 1;
       engine_font_cpp_CBitFont_drawText_FUN_00490980(local_2c,*pacVar8,local_30,iVar13,0xf8,0);
@@ -250,16 +250,16 @@ LAB_004c27a0:
   if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
     local_60 = 0x70;
     local_50 = 0x10;
-    iVar7 = INT_005bab60;
-    iVar13 = INT_005bab64;
+    iVar7 = g_InventoryWidth;
+    iVar13 = g_InventoryHeight;
     if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
-      iVar7 = INT_005bab60 / 2;
-      iVar13 = INT_005bab64 / 2;
+      iVar7 = g_InventoryWidth / 2;
+      iVar13 = g_InventoryHeight / 2;
       local_60 = 0x28;
       local_50 = 8;
     }
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (this_ptr->selected_item,g_CHealthItemActorType_01cae098.name_hash);
+                       (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash);
     if (pCVar2 != (CDemonActor *)0x0) {
       _sprintf(acStack_37c,"%d x%3.0f%%",pCVar2[2].location.area_id,
                  (double)pCVar2[2].orient.vec.x);
@@ -270,7 +270,7 @@ LAB_004c27a0:
                  (g_WindowHeight - local_50) - iVar3,0xf8,0);
     }
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (this_ptr->selected_item,g_CFilmReelActorType_01c08c8c.name_hash);
+                       (this_ptr->selected_item,g_CFilmReelClassInfo.name_hash);
     if (pCVar2 != (CDemonActor *)0x0) {
       core_inv_cpp_getItemDisplayName_FUN_004beca0(pCVar2);
       _sprintf(acStack_27c,"%s");
@@ -287,7 +287,7 @@ LAB_004c27a0:
       local_28 = local_48;
       local_44 = (CBitFont *)
                  engine_font_cpp_CBitFont_wrapText_FUN_00492f30
-                           (local_48,acStack_57c,g_CHAR_ARRAY_ARRAY_01caef80[0],10,0x100,
+                           (local_48,acStack_57c,g_InventoryWrappedTextLines2[0],10,0x100,
                             iVar7 - local_60);
       local_18 = local_44;
       local_40 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_48,0x58);
@@ -295,7 +295,7 @@ LAB_004c27a0:
       local_3c = local_50 + (g_WindowWidth - iVar7);
       iVar7 = 0;
       if (0 < (int)local_18) {
-        pacVar8 = g_CHAR_ARRAY_ARRAY_01caef80;
+        pacVar8 = g_InventoryWrappedTextLines2;
         do {
           iVar7 = iVar7 + 1;
           engine_font_cpp_CBitFont_drawText_FUN_00490980(local_28,*pacVar8,local_3c,iVar13,0xf8,0);
@@ -363,22 +363,21 @@ LAB_004c27a0:
       local_68 = (int)ROUND(dVar11);
     }
     engine_3d_c_setRenderAlpha_FUN_00408370(local_64);
-    local_1c = g_CBitFont_PTR_014b9904;
-    iVar7 = INT_005bab64;
+    local_1c = g_SmallEditorFont;
+    iVar7 = g_InventoryHeight;
     if (g_WindowHeight < 0x180) {
-      iVar7 = INT_005bab64 / 2;
-      local_1c = g_CBitFont_PTR_014b990c;
+      iVar7 = g_InventoryHeight / 2;
+      local_1c = g_MicroFont;
     }
     pCVar12 = local_1c;
     iVar7 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
-                      (local_1c,this_ptr->message_text,g_CHAR_ARRAY_ARRAY_01caf980[0],10,0x100,
+                      (local_1c,this_ptr->message_text,g_InventoryWrappedTextLines3[0],10,0x100,
                        (g_WindowWidth - iVar7) + -4);
     local_20 = iVar7;
     local_24 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(pCVar12,0x58);
     iVar7 = (g_WindowHeight + -4) - local_24 * iVar7;
-    if (((g_CBitFont_PTR_014b990c != local_1c) || (g_INT_01d16810 == 0)) &&
-       (iVar13 = 0, 0 < local_20)) {
-      pacVar8 = g_CHAR_ARRAY_ARRAY_01caf980;
+    if (((g_MicroFont != local_1c) || (g_UseOSFonts == 0)) && (iVar13 = 0, 0 < local_20)) {
+      pacVar8 = g_InventoryWrappedTextLines3;
       do {
         iVar13 = iVar13 + 1;
         engine_font_cpp_CBitFont_drawText_FUN_00490980(local_1c,*pacVar8,4,iVar7,0xf8,0);

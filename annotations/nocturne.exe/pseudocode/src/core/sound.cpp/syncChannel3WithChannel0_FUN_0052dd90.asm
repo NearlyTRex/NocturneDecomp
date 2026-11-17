@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   float g_FLOAT_02dc9c98
+;   float g_CurrentVolumeMultiplier
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0052ddb4
     FLD float ptr [ESP + 0x4]           ; 0052ddb8
     ADD ESP,0x4                         ; 0052ddbc
-    FMUL float ptr [0x02dc9c98]         ; 0052ddbf | g_FLOAT_02dc9c98
+    FMUL float ptr [0x02dc9c98]         ; 0052ddbf | g_CurrentVolumeMultiplier
     SUB ESP,0x4                         ; 0052ddc5
     FSTP float ptr [ESP]                ; 0052ddc8
     PUSH 0x3                            ; 0052ddcb

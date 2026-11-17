@@ -17,17 +17,17 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_0070ca38
-;   int g_INT_0070ca3c
-;   int g_INT_0070ca40
-;   int g_INT_0070ca44
-;   int g_INT_0070ca48
-;   int g_INT_0070ca4c
-;   int g_INT_0070ca50
-;   void* g_PTR_0070ca54
-;   int g_INT_0070ca58
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   int g_StoredWindowWidth
+;   int g_StoredWindowHeight
+;   int g_StoredClipLeft
+;   int g_StoredClipTop
+;   int g_StoredClipRight
+;   int g_StoredClipBottom
+;   int g_StoredBitsPerPixel
+;   void* g_StoredMappedFrameBuffer
+;   int g_ScreenBufferStride
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c35e48
 ;   ... and 5 more
 ;
@@ -47,7 +47,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00403488
     MOV ESI,dword ptr [ESP + 0x20]      ; 0040348c
     MOV EBX,dword ptr [ESP + 0x24]      ; 00403490
-    CMP dword ptr [0x0070ca38],0x0      ; 00403494 | g_INT_0070ca38
+    CMP dword ptr [0x0070ca38],0x0      ; 00403494 | g_StoredWindowWidth
     JNZ 0x00403665                      ; 0040349b
         ;   XREF to: 00403665 (CONDITIONAL_JUMP)  ; LAB_00403665
     TEST EBX,EBX                        ; 004034a1
@@ -143,33 +143,33 @@ section .text
     ADD ESP,0x4                         ; 004035a9
     MOV EAX,[0x006141b8]                ; 004035ac | g_INT_006141b8
         ;   Label: LAB_004035ac
-    MOV [0x0070ca38],EAX                ; 004035b1 | g_INT_0070ca38
+    MOV [0x0070ca38],EAX                ; 004035b1 | g_StoredWindowWidth
     MOV EAX,[0x006141bc]                ; 004035b6 | g_INT_006141bc
-    MOV EDX,dword ptr [0x01c2a38c]      ; 004035bb | g_ARRAY_PTR_01c2a38c
-    MOV [0x0070ca3c],EAX                ; 004035c1 | g_INT_0070ca3c
+    MOV EDX,dword ptr [0x01c2a38c]      ; 004035bb | g_ScreenBufferArray
+    MOV [0x0070ca3c],EAX                ; 004035c1 | g_StoredWindowHeight
     MOV EAX,[0x01c35e48]                ; 004035c6 | g_INT_01c35e48
     XOR ECX,ECX                         ; 004035cb
-    MOV [0x0070ca40],EAX                ; 004035cd | g_INT_0070ca40
+    MOV [0x0070ca40],EAX                ; 004035cd | g_StoredClipLeft
     MOV EAX,[0x01c35e4c]                ; 004035d2 | g_INT_01c35e4c
     MOV dword ptr [0x006141b8],EBP      ; 004035d7 | g_INT_006141b8
-    MOV [0x0070ca44],EAX                ; 004035dd | g_INT_0070ca44
-    MOV EAX,[0x01c35e50]                ; 004035e2 | g_INT_01c35e50
+    MOV [0x0070ca44],EAX                ; 004035dd | g_StoredClipTop
+    MOV EAX,[0x01c35e50]                ; 004035e2 | g_ClipRight
     DEC EBP                             ; 004035e7
-    MOV [0x0070ca48],EAX                ; 004035e8 | g_INT_0070ca48
+    MOV [0x0070ca48],EAX                ; 004035e8 | g_StoredClipRight
     MOV EAX,[0x01c35e54]                ; 004035ed | g_INT_01c35e54
     MOV dword ptr [0x006141bc],EDI      ; 004035f2 | g_INT_006141bc
-    MOV [0x0070ca4c],EAX                ; 004035f8 | g_INT_0070ca4c
+    MOV [0x0070ca4c],EAX                ; 004035f8 | g_StoredClipBottom
     MOV EAX,[0x006141c0]                ; 004035fd | g_INT_006141c0
     MOV dword ptr [0x01c35e48],ECX      ; 00403602 | g_INT_01c35e48
-    MOV [0x0070ca50],EAX                ; 00403608 | g_INT_0070ca50
-    MOV EAX,[0x01c2a38c]                ; 0040360d | g_ARRAY_PTR_01c2a38c
+    MOV [0x0070ca50],EAX                ; 00403608 | g_StoredBitsPerPixel
+    MOV EAX,[0x01c2a38c]                ; 0040360d | g_ScreenBufferArray
     MOV dword ptr [0x01c35e4c],ECX      ; 00403612 | g_INT_01c35e4c
-    MOV [0x0070ca54],EAX                ; 00403618 | g_PTR_0070ca54
-    MOV EAX,[0x01c2a390]                ; 0040361d | g_ARRAY_PTR_01c2a38c[1]
-    MOV dword ptr [0x01c35e50],EBP      ; 00403622 | g_INT_01c35e50
+    MOV [0x0070ca54],EAX                ; 00403618 | g_StoredMappedFrameBuffer
+    MOV EAX,[0x01c2a390]                ; 0040361d | g_ScreenBufferArray[1]
+    MOV dword ptr [0x01c35e50],EBP      ; 00403622 | g_ClipRight
     SUB EAX,EDX                         ; 00403628
     MOV dword ptr [0x006141c0],ESI      ; 0040362a | g_INT_006141c0
-    MOV [0x0070ca58],EAX                ; 00403630 | g_INT_0070ca58
+    MOV [0x0070ca58],EAX                ; 00403630 | g_ScreenBufferStride
     LEA EAX,[EDI + -0x1]                ; 00403635
     MOV EDX,dword ptr [ESP + 0x14]      ; 00403638
     MOV [0x01c35e54],EAX                ; 0040363c | g_INT_01c35e54

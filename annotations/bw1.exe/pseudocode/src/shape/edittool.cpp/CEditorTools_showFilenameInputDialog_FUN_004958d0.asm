@@ -34,11 +34,11 @@
 ;   undefined4 s_anon_005dbed2+1
 ;   TerminatedCString s_d_005dbed4
 ;   undefined4 s_d_005dbed4+1
-;   int g_INT_0061b4ac = 0x7f
+;   int g_InputKeyMask = 0x7f
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
-;   uchar[257] g_UCHAR_ARRAY_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   int g_INT_01c3f538
+;   int g_EditorFontMaxCharWidth
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -90,7 +90,7 @@ section .text
     PUSH 0x6a                           ; 00495920
     MOV ECX,dword ptr [EAX + 0x41e8]    ; 00495922
     PUSH EAX                            ; 00495928
-    MOV dword ptr [0x01c3f538],ECX      ; 00495929 | g_INT_01c3f538
+    MOV dword ptr [0x01c3f538],ECX      ; 00495929 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049592f
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00495934
@@ -100,7 +100,7 @@ section .text
     MOV [0x01c3f53c],EAX                ; 00495941 | g_INT_01c3f53c
     ADD EAX,EAX                         ; 00495946
     PUSH EAX                            ; 00495948
-    MOV EAX,[0x01c3f538]                ; 00495949 | g_INT_01c3f538
+    MOV EAX,[0x01c3f538]                ; 00495949 | g_EditorFontMaxCharWidth
     ADD EAX,EAX                         ; 0049594e
     MOV ECX,EAX                         ; 00495950
     SHL EAX,0x4                         ; 00495952
@@ -126,10 +126,10 @@ section .text
     ADD ESP,0x10                        ; 0049598f
     MOV EDI,0x7f                        ; 00495992
     XOR ESI,ESI                         ; 00495997
-    MOV EAX,[0x0061b4ac]                ; 00495999 | g_INT_0061b4ac
+    MOV EAX,[0x0061b4ac]                ; 00495999 | g_InputKeyMask
     MOV dword ptr [ESP + 0x34c],ESI     ; 0049599e
     MOV dword ptr [ESP + 0x348],EAX     ; 004959a5
-    MOV dword ptr [0x0061b4ac],EDI      ; 004959ac | g_INT_0061b4ac
+    MOV dword ptr [0x0061b4ac],EDI      ; 004959ac | g_InputKeyMask
     MOV EAX,dword ptr [ESP + 0x364]     ; 004959b2
         ;   Label: LAB_004959b2
     PUSH EAX                            ; 004959b9
@@ -199,7 +199,7 @@ section .text
         ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_00512320(float alpha)
     ADD ESP,0x4                         ; 00495a4f
     PUSH -0x1                           ; 00495a52
-    MOV EDX,dword ptr [0x01c3f57c]      ; 00495a54 | g_INT_01c3f57c
+    MOV EDX,dword ptr [0x01c3f57c]      ; 00495a54 | g_DialogTextColor
     PUSH EDX                            ; 00495a5a
     MOV ECX,dword ptr [0x01c4f00c]      ; 00495a5b | g_INT_01c4f00c
     PUSH ECX                            ; 00495a61
@@ -216,7 +216,7 @@ section .text
         ;   Label: LAB_00495a7d
     JZ 0x00495b70                       ; 00495a85
         ;   XREF to: 00495b70 (CONDITIONAL_JUMP)  ; LAB_00495b70
-    MOV EBX,dword ptr [0x01c3f580]      ; 00495a8b | g_INT_01c3f580
+    MOV EBX,dword ptr [0x01c3f580]      ; 00495a8b | g_ActiveItemTextColor
     PUSH 0xffff                         ; 00495a91
         ;   Label: LAB_00495a91
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 00495a96
@@ -294,7 +294,7 @@ section .text
     PUSH 0x0                            ; 00495b69
     JMP 0x00495982                      ; 00495b6b
         ;   XREF to: 00495982 (UNCONDITIONAL_JUMP)  ; LAB_00495982
-    MOV EBX,dword ptr [0x01c3f57c]      ; 00495b70 | g_INT_01c3f57c
+    MOV EBX,dword ptr [0x01c3f57c]      ; 00495b70 | g_DialogTextColor
         ;   Label: LAB_00495b70
     JMP 0x00495a91                      ; 00495b76
         ;   XREF to: 00495a91 (UNCONDITIONAL_JUMP)  ; LAB_00495a91
@@ -323,7 +323,7 @@ section .text
         ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00495bb0
     MOV EAX,dword ptr [ESP + 0x348]     ; 00495bb3
-    MOV [0x0061b4ac],EAX                ; 00495bba | g_INT_0061b4ac
+    MOV [0x0061b4ac],EAX                ; 00495bba | g_InputKeyMask
     MOV EAX,0x1                         ; 00495bbf
     ADD ESP,0x350                       ; 00495bc4
     POP EBP                             ; 00495bca
@@ -341,7 +341,7 @@ section .text
     CMP EAX,0x1b                        ; 00495be0
     JZ 0x00495d48                       ; 00495be3
         ;   XREF to: 00495d48 (CONDITIONAL_JUMP)  ; LAB_00495d48
-    CMP dword ptr [0x02c9be70],0x0      ; 00495be9 | g_INT_02c9be70
+    CMP dword ptr [0x02c9be70],0x0      ; 00495be9 | g_InputDisabled
     JNZ 0x00495d48                      ; 00495bf0
         ;   XREF to: 00495d48 (CONDITIONAL_JUMP)  ; LAB_00495d48
     CMP EAX,0xd                         ; 00495bf6
@@ -451,7 +451,7 @@ section .text
     MOV AL,BL                           ; 00495cdd
     INC AL                              ; 00495cdf
     AND EAX,0xff                        ; 00495ce1
-    MOV CH,byte ptr [EAX + 0x626114]    ; 00495ce6 | g_UCHAR_ARRAY_00626114
+    MOV CH,byte ptr [EAX + 0x626114]    ; 00495ce6 | g_CharacterClassificationTable
     TEST CH,0x8                         ; 00495cec
     JZ 0x00495b33                       ; 00495cef
         ;   XREF to: 00495b33 (CONDITIONAL_JUMP)  ; LAB_00495b33
@@ -496,7 +496,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 00495d67
         ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     MOV EAX,dword ptr [ESP + 0x348]     ; 00495d6c
-    MOV [0x0061b4ac],EAX                ; 00495d73 | g_INT_0061b4ac
+    MOV [0x0061b4ac],EAX                ; 00495d73 | g_InputKeyMask
     XOR EAX,EAX                         ; 00495d78
     ADD ESP,0x350                       ; 00495d7a
     POP EBP                             ; 00495d80

@@ -56,31 +56,31 @@
     },
     {
       "addr": "02cf54f0",
-      "name": "g_INT_02cf54f0",
+      "name": "g_WaveOutBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf54f4",
-      "name": "g_INT_02cf54f4",
+      "name": "g_WaveOutChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf54f8",
-      "name": "g_INT_02cf54f8",
+      "name": "g_WaveOutSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf54fc",
-      "name": "g_INT_02cf54fc",
+      "name": "g_WaveOutBufferSize",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf5500",
-      "name": "g_INT_02cf5500",
+      "name": "g_WaveOutNumBuffers",
       "type": "int",
       "value": null
     }
@@ -188,41 +188,41 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(void **)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "match": "(void **)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2),0,0x20);",
+      "text": "memset(*(void **)((int)g_WaveOutHeaders + iVar2),0,0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(uint **)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "match": "(uint **)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "**(uint **)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) =",
+      "text": "**(uint **)((int)g_WaveOutHeaders + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(uint *)((int)g_LPVOID_ARRAY_02cf54d0",
+      "match": "(uint *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_LPVOID_ARRAY_02cf54d0 + iVar2);",
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "match": "(int *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) + 0xc) = iVar3;",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0xc) = iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "match": "(int *)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) + 4) =",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -246,7 +246,7 @@
       "line": 20,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_02cf54f0 + (g_INT_02cf54f0 >> 0x1f) * -8) -",
+      "text": "((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -254,7 +254,7 @@
       "line": 21,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_02cf54f0 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02cf54fc;",
+      "text": "(uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize;",
       "type": "signed_shift_global_idiom"
     }
   ],

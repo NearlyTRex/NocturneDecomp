@@ -84,7 +84,7 @@ LAB_0056ba9b:
     handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)
                                      (pvVar4);
     uVar5 = 0;
-    if (g_UINT_005c1f90 <= handle_index) {
+    if (g_MaxHandleCount <= handle_index) {
       CloseHandle(pvVar4);
       setErrno(5);
       return (HANDLE)0xffffffff;

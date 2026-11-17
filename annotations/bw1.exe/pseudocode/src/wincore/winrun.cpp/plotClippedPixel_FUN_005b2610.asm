@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     CMP EAX,dword ptr [0x01c4f00c]      ; 005b2620 | g_INT_01c4f00c
     JLE 0x005b2638                      ; 005b2626
         ;   XREF to: 005b2638 (CONDITIONAL_JUMP)  ; LAB_005b2638
-    CMP EDX,dword ptr [0x01c4f010]      ; 005b2628 | g_INT_01c4f010
+    CMP EDX,dword ptr [0x01c4f010]      ; 005b2628 | g_ClipRight
     JGE 0x005b2638                      ; 005b262e
         ;   XREF to: 005b2638 (CONDITIONAL_JUMP)  ; LAB_005b2638
     CMP EAX,dword ptr [0x01c4f014]      ; 005b2630 | g_INT_01c4f014

@@ -43,19 +43,19 @@
     },
     {
       "addr": "01c35814",
-      "name": "g_BIT_INTEGER32_01c35814",
+      "name": "g_RedBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "g_BIT_INTEGER32_01c35820",
+      "name": "g_GreenBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "g_BIT_INTEGER32_01c3582c",
+      "name": "g_BlueBitPosition",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -67,7 +67,7 @@
     },
     {
       "addr": "01c38b5c",
-      "name": "g_ULONG_01c38b5c",
+      "name": "g_SolidColorMode",
       "type": "ulong",
       "value": null
     },
@@ -109,7 +109,7 @@
     },
     {
       "addr": "0264bccc",
-      "name": "g_PTR_0264bccc",
+      "name": "g_APIDLL_enableCulling",
       "type": "void*",
       "value": null
     }
@@ -218,10 +218,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_0264bccc)(g_FLOAT_01d09900,g_FLOAT_01d09904,g_FLOAT_01d09908,fog_near,fog_far);",
+      "text": "(*(code *)g_APIDLL_enableCulling)",
       "type": "unresolved_funcptr"
     }
   ]

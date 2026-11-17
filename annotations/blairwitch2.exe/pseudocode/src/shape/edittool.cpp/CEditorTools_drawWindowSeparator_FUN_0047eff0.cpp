@@ -16,14 +16,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(CE
   int x2;
   int iVar5;
   
-  if (g_INT_01c2559c < 1) {
+  if (g_WindowStackCount < 1) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0x93b;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CEditorTools::paintWindow() called but no window was opened!");
   }
   iVar2 = g_INT_01c35e60;
   iVar1 = g_INT_01c35e4c;
-  iVar5 = (g_INT_01c2559c + -1) * 0x1f8;
+  iVar5 = (g_WindowStackCount + -1) * 0x1f8;
   g_INT_01c35e4c = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 4);
   iVar3 = g_INT_006141bc / 0x60;
   iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   int[11] g_INT_ARRAY_00764b2c
+;   int[11] g_BrideIndices
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
@@ -32,7 +32,7 @@ section .text
     MOV EBP,ESP                         ; 00420eb4
     SUB ESP,0x6c                        ; 00420eb6
     MOV EBX,dword ptr [EBP + 0x18]      ; 00420eb9
-    MOV EDX,dword ptr [0x00764b2c]      ; 00420ebc | g_INT_ARRAY_00764b2c
+    MOV EDX,dword ptr [0x00764b2c]      ; 00420ebc | g_BrideIndices
     MOV ESI,dword ptr [EBP + 0x14]      ; 00420ec2
     PUSH EDX                            ; 00420ec5
     ADD ESI,0x150                       ; 00420ec6

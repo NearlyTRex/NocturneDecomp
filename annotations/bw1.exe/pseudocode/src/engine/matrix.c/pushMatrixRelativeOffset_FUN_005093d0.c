@@ -13,17 +13,17 @@ void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_005093d0(int offset_x,
   int iVar2;
   int iVar3;
   
-  iVar3 = g_INT_01d1dd74;
-  iVar1 = g_INT_01c51d30;
-  g_INT_ARRAY_01d1dee0[g_INT_01d1dd74] = g_INT_01c51d2c;
-  iVar2 = g_INT_01c51d34;
-  g_INT_ARRAY_01d1df08[iVar3] = g_INT_01c51d30;
-  g_INT_ARRAY_01d1df30[iVar3] = g_INT_01c51d34;
-  g_INT_01d1dd74 = g_INT_01d1dd74 + 1;
-  g_INT_01c51d2c = g_INT_01c51d2c - offset_x;
-  g_INT_01c51d30 = iVar1 - offset_y;
-  g_INT_01c51d34 = iVar2 - offset_z;
-  if (g_INT_01d1dd74 < 10) {
+  iVar3 = g_MatrixStackIndex;
+  iVar1 = g_RelativeY;
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
+  iVar2 = g_RelativeZ;
+  g_MatrixStack_RelY[iVar3] = g_RelativeY;
+  g_MatrixStack_RelZ[iVar3] = g_RelativeZ;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
+  g_RelativeX = g_RelativeX - offset_x;
+  g_RelativeY = iVar1 - offset_y;
+  g_RelativeZ = iVar2 - offset_z;
+  if (g_MatrixStackIndex < 10) {
     return;
   }
   g_CHAR_PTR_01d1d400 = "..\\engine\\matrix.c";

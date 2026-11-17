@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004d2a80(CHero *this_ptr,CDemonActor *param_2)
+; bool __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004d2a80(CHero *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
-; CDemonActor *    Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBugs_005c4c17

@@ -19,9 +19,9 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 at 0050de52
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER32 g_BIT_INTEGER32_012b0660
-;   int g_INT_0140d780
-;   int g_INT_014b7190
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
+;   int g_ImageBytesPerPixel
+;   int g_FlatShadingLightLevel
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipLeft
 ;   int g_ClipTop
@@ -36,12 +36,12 @@ section .text
     PUSH EDI                            ; 00444442
     PUSH EBP                            ; 00444443
     SUB ESP,0x18                        ; 00444444
-    MOV ESI,dword ptr [0x0140d780]      ; 00444447 | g_INT_0140d780
+    MOV ESI,dword ptr [0x0140d780]      ; 00444447 | g_ImageBytesPerPixel
     MOV EBP,dword ptr [ESP + 0x30]      ; 0044444d
     MOV EDX,dword ptr [ESP + 0x34]      ; 00444451
     MOV ECX,dword ptr [ESP + 0x2c]      ; 00444455
     SUB ECX,dword ptr [0x01c00c5c]      ; 00444459 | g_ClipTop
-    MOV EBX,dword ptr [0x012b0660]      ; 0044445f | g_BIT_INTEGER32_012b0660
+    MOV EBX,dword ptr [0x012b0660]      ; 0044445f | g_CameraDownscaleIterations
     MOV dword ptr [ESP + 0x2c],ECX      ; 00444465
     CMP EBX,0x1                         ; 00444469
     JNZ 0x00444479                      ; 0044446c
@@ -49,7 +49,7 @@ section .text
     TEST byte ptr [ESP + 0x2c],0x1      ; 0044446e
     JNZ 0x004445eb                      ; 00444473
         ;   XREF to: 004445eb (CONDITIONAL_JUMP)  ; LAB_004445eb
-    CMP dword ptr [0x012b0660],0x2      ; 00444479 | g_BIT_INTEGER32_012b0660
+    CMP dword ptr [0x012b0660],0x2      ; 00444479 | g_CameraDownscaleIterations
         ;   Label: LAB_00444479
     JNZ 0x0044448d                      ; 00444480
         ;   XREF to: 0044448d (CONDITIONAL_JUMP)  ; LAB_0044448d
@@ -83,7 +83,7 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004444d2 | g_ZBufferScanlineArray
     MOV EDX,dword ptr [EDX + 0x28]      ; 004444d9
     ADD EAX,ECX                         ; 004444dc
-    MOV CL,byte ptr [0x012b0660]        ; 004444de | g_BIT_INTEGER32_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 004444de | g_CameraDownscaleIterations
     MOV dword ptr [ESP + 0x14],EAX      ; 004444e4
     MOV EAX,dword ptr [ESP + 0x10]      ; 004444e8
     SUB EDX,EBP                         ; 004444ec
@@ -97,7 +97,7 @@ section .text
     SAR EDX,0x1f                        ; 004444ff
     IDIV ECX                            ; 00444502
     MOV dword ptr [ESP + 0xc],EAX       ; 00444504
-    MOV EAX,[0x014b7190]                ; 00444508 | g_INT_014b7190
+    MOV EAX,[0x014b7190]                ; 00444508 | g_FlatShadingLightLevel
     MOV EDX,EAX                         ; 0044450d
     SAR EDX,0x1f                        ; 0044450f
     SHL EDX,0x8                         ; 00444512
@@ -113,7 +113,7 @@ section .text
     JLE 0x0044459f                      ; 00444533
         ;   XREF to: 0044459f (CONDITIONAL_JUMP)  ; LAB_0044459f
     MOV EDX,0x1                         ; 00444535
-    MOV CL,byte ptr [0x012b0660]        ; 0044453a | g_BIT_INTEGER32_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 0044453a | g_CameraDownscaleIterations
     SHL EDX,CL                          ; 00444540
     LEA ECX,[EDX*0x4 + 0x0]             ; 00444542
     MOV dword ptr [ESP + 0x4],EAX       ; 00444549
@@ -175,7 +175,7 @@ section .text
         ;   Label: LAB_004445c1
     MOV EDX,0x1                         ; 004445c5
     ADD EBP,ECX                         ; 004445ca
-    MOV CL,byte ptr [0x012b0660]        ; 004445cc | g_BIT_INTEGER32_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 004445cc | g_CameraDownscaleIterations
     INC EDI                             ; 004445d2
     SHL EDX,CL                          ; 004445d3
     MOV ECX,dword ptr [ESP + 0x14]      ; 004445d5
@@ -187,7 +187,7 @@ section .text
     CMP EDI,EDX                         ; 004445e7
     JL 0x004445ae                       ; 004445e9
         ;   XREF to: 004445ae (CONDITIONAL_JUMP)  ; LAB_004445ae
-    MOV dword ptr [0x0140d780],ESI      ; 004445eb | g_INT_0140d780
+    MOV dword ptr [0x0140d780],ESI      ; 004445eb | g_ImageBytesPerPixel
         ;   Label: LAB_004445eb
     ADD ESP,0x18                        ; 004445f1
         ;   Label: LAB_004445f1

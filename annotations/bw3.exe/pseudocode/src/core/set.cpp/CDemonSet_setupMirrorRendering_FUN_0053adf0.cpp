@@ -25,7 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet 
   local_28[(uint)bVar1 * -2 + 3] = *(float *)(&stack0xffffffc0 + (uint)bVar1 * -8);
   local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
        *(float *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((SRaytraceState *)&stack0x00000000 != g_SRaytraceState_ARRAY_021221f4) {
+  if ((SRaytraceState *)&stack0x00000000 != g_RaytraceStateStack) {
     g_UVector3_021221d4.f.x = local_28[2];
     g_UVector3_021221d4.f.y = local_28[3];
     g_UVector3_021221d4.f.z = local_18;
@@ -36,22 +36,22 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet 
   local_28[(uint)bVar1 * -2] = *(float *)((int)&local_38 + (uint)bVar1 * -8 + 4);
   local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
        *(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-  if ((int *)&stack0x00000000 != &g_SRaytraceState_ARRAY_021221f4[0].collision_flag) {
+  if ((int *)&stack0x00000000 != &g_RaytraceStateStack[0].collision_flag) {
     g_CVector3f_021221e0.x = local_2c;
     g_CVector3f_021221e0.y = local_28[0];
     g_CVector3f_021221e0.z = local_28[1];
   }
-  g_FLOAT_021221ec =
+  g_SavedProjectionFactor =
        engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0
                  (g_CDemonRenderer_PTR_005f2afc);
-  local_14 = g_FLOAT_021221ec;
+  local_14 = g_SavedProjectionFactor;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
-             &g_UVector3_021221d4.f,&g_CVector3f_021221e0,g_FLOAT_021221ec);
+             &g_UVector3_021221d4.f,&g_CVector3f_021221e0,g_SavedProjectionFactor);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870
             (g_CDemonRenderer_PTR_005f2afc,1);
-  (*((g_CDemonCamera_PTR_007e2a54->base).vtable)->saveAlphaTransform)
-            (g_CDemonCamera_PTR_007e2a54,mirror_index + 1);
+  (*((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)
+            (g_CurrentSceneCamera,mirror_index + 1);
   engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0046d850
             (g_CDemonRenderer_PTR_005f2afc,mirror_index + 1);
   this_ptr->active_mirror = &this_ptr->mirror_glass_actors[mirror_index]->mirror;

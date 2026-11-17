@@ -24,12 +24,12 @@ extern CDemonActorType g_CCrateClassInfo;
 extern CDemonActorType g_CCrossbowClassInfo;
 
 // SRenderVertex[16]
-extern SRenderVertex g_SRenderVertex_ARRAY_007c030c[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007c090c[16];
-extern SRenderVertex g_SRenderVertex_ARRAY_007c0f0c[16];
+extern SRenderVertex g_ClipperInputBuffer[16];
+extern SRenderVertex g_ClipperWorkingBuffer[16];
+extern SRenderVertex g_ClipperIntermediateBuffer[16];
 
 // char[500000]
-extern char g_CHAR_ARRAY_007c26b0[500000];
+extern char g_CameraLoadImageReadBuffer[500000];
 
 // int
 extern int g_INT_007c254c;
@@ -41,5 +41,5 @@ extern int g_INT_007c2578;
 extern int g_INT_007c2580;
 
 // int[17]
-extern int g_INT_ARRAY_007c150c[17];
+extern int g_ColonelIndices[17];
 

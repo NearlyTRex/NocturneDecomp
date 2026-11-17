@@ -55,7 +55,7 @@ void __cdecl core_rifle_cpp_CRifle_onFired_FUN_005407e0(CRifle *this_ptr)
   }
   model_ptr = core_dmodel_cpp_loadModel_FUN_00468780("rifbullet.kfm");
   core_fire_cpp_CFireEffect_createShell_FUN_004b7270
-            (g_CFireEffect_PTR_0061c010,&(this_ptr->base).base.location.position,
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
              &(this_ptr->base).base.orient.vec,&CStack_48,model_ptr);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
             (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"shotgun-cock.wav @ .3",

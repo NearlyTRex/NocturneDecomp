@@ -9,7 +9,7 @@
 void FUN_005bef45(WatcomStaticDestructorNode *param_1)
 
 {
-  param_1->next = g_WatcomStaticDestructorNode_PTR_0061f64c;
-  g_WatcomStaticDestructorNode_PTR_0061f64c = param_1;
+  param_1->next = g_AtexitListHead;
+  g_AtexitListHead = param_1;
   return;
 }

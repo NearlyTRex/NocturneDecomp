@@ -16,8 +16,8 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   int g_INT_02ddf568
-;   HWND g_HWND_02de2098
+;   int g_GraphicsResetFlag
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_ddraw.c_DirectDrawCreate
@@ -32,7 +32,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0
     XOR EDX,EDX                         ; 005533a1
     MOV ECX,dword ptr [0x02dc9d60]      ; 005533a3 | g_UseDirect3D
-    MOV dword ptr [0x02ddf568],EDX      ; 005533a9 | g_INT_02ddf568
+    MOV dword ptr [0x02ddf568],EDX      ; 005533a9 | g_GraphicsResetFlag
     TEST ECX,ECX                        ; 005533af
     JNZ 0x005533b5                      ; 005533b1
         ;   XREF to: 005533b5 (CONDITIONAL_JUMP)  ; LAB_005533b5
@@ -97,7 +97,7 @@ section .text
     JNZ 0x0055344d                      ; 00553437
         ;   XREF to: 0055344d (CONDITIONAL_JUMP)  ; LAB_0055344d
     PUSH 0x11                           ; 00553439
-    MOV ESI,dword ptr [0x02de2098]      ; 0055343b | g_HWND_02de2098
+    MOV ESI,dword ptr [0x02de2098]      ; 0055343b | g_MainWindowHandle
     MOV EAX,[0x02ddf550]                ; 00553441 | g_DirectDrawObject
     PUSH ESI                            ; 00553446
     MOV EDX,dword ptr [EAX]             ; 00553447

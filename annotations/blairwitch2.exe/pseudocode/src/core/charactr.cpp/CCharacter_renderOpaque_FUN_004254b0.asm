@@ -30,7 +30,7 @@
 ;   CGameHook* g_CGameHookPtr = 02668118
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   int g_INT_01c35e60
-;   int g_INT_01d1cdc8
+;   int g_RenderMotionDebug
 ;   undefined4 g_CGameHookInstance.debug_follow_slot_display
 ;
 ; Called Functions:
@@ -120,7 +120,7 @@ section .text
     PUSH ESI                            ; 0042556b
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0 ; 0042556c
         ;   XREF to: 004089d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0(CDemonActor * this_ptr)
-    MOV EDI,dword ptr [0x01d1cdc8]      ; 00425571 | g_INT_01d1cdc8
+    MOV EDI,dword ptr [0x01d1cdc8]      ; 00425571 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 00425577
     TEST EDI,EDI                        ; 0042557a
     JZ 0x004255ad                       ; 0042557c

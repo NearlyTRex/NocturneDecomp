@@ -58,13 +58,13 @@ void __cdecl core_fforest_cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(C
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
       pCStack_14 = (this_ptr->base).base.base.model.bone_transform.bone_model_matrices;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,pCStack_14 + this_ptr->finger_parent_bone,&CStack_30);
+                (&g_ZeroVector,pCStack_14 + this_ptr->finger_parent_bone,&CStack_30);
       afStack_44[2] = CStack_30.x;
       afStack_44[(uint)bVar6 * -2 + 3] = *(float *)((int)&CStack_30 + (uint)bVar6 * -8 + 4);
       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
            *(float *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,pCStack_14 + this_ptr->finger_bone,&CStack_54);
+                (&g_ZeroVector,pCStack_14 + this_ptr->finger_bone,&CStack_54);
       fStack_48 = CStack_54.x;
       afStack_44[(uint)bVar6 * -2] = *(float *)((int)&CStack_54 + (uint)bVar6 * -8 + 4);
       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =

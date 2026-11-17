@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_readIni_FUN_00559220 at 00559439
 ;
 ; Referenced Globals:
-;   int g_INT_02cf3290
+;   int g_SoundMuted
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00556760
         ;   Label: sound_sndmain.cpp_setSoundMuted_FUN_00556760
-    MOV [0x02cf3290],EAX                ; 00556764 | g_INT_02cf3290
+    MOV [0x02cf3290],EAX                ; 00556764 | g_SoundMuted
     TEST EAX,EAX                        ; 00556769
     JNZ 0x00558250                      ; 0055676b
         ;   XREF to: 00558250 (CONDITIONAL_JUMP)

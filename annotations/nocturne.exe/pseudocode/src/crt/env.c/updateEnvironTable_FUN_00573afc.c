@@ -23,7 +23,7 @@ int __cdecl updateEnvironTable(char *envstr)
   byte bVar8;
   char *in_stack_0000000c;
   
-  ptr = g_CHAR_PTR_PTR_02de54a4;
+  ptr = g_EnvironmentBlock;
   bVar8 = 0;
   if (envstr == (char *)0x0) {
     return -1;
@@ -39,7 +39,7 @@ int __cdecl updateEnvironTable(char *envstr)
     return -1;
   }
   bVar7 = in_EAX[1] == '\0';
-  if (g_CHAR_PTR_PTR_02de54a4 == (char **)0x0) {
+  if (g_EnvironmentBlock == (char **)0x0) {
     if (bVar7) {
       return 0;
     }
@@ -47,8 +47,8 @@ int __cdecl updateEnvironTable(char *envstr)
     if (ptr == (char **)0x0) {
       return -1;
     }
-    g_CHAR_PTR_PTR_02de54a0 = ptr + 2;
-    g_CHAR_PTR_PTR_02de54a4 = ptr;
+    g_EnvironStringArea = ptr + 2;
+    g_EnvironmentBlock = ptr;
     *ptr = (char *)0x0;
     ptr[1] = (char *)0x0;
     n = 0;
@@ -61,12 +61,12 @@ int __cdecl updateEnvironTable(char *envstr)
     if (iVar2 < 1) {
       n = -iVar2;
       new_size = iVar2 * -4 + 8U + n + 1;
-      if (g_CHAR_PTR_PTR_02de54a0 == (char **)0x0) {
+      if (g_EnvironStringArea == (char **)0x0) {
         ptr = (char **)malloc(new_size);
         if (ptr == (char **)0x0) {
           return -1;
         }
-        ppcVar5 = g_CHAR_PTR_PTR_02de54a4;
+        ppcVar5 = g_EnvironmentBlock;
         ppcVar6 = ptr;
         for (uVar3 = (uint)(iVar2 * -4) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *ppcVar6 = *ppcVar5;
@@ -78,25 +78,25 @@ int __cdecl updateEnvironTable(char *envstr)
           ppcVar5 = (char **)((int)ppcVar5 + (uint)bVar8 * -2 + 1);
           ppcVar6 = (char **)((int)ppcVar6 + (uint)bVar8 * -2 + 1);
         }
-        g_CHAR_PTR_PTR_02de54a0 = ptr + (2 - iVar2);
-        memset(g_CHAR_PTR_PTR_02de54a0,0,n + 1);
+        g_EnvironStringArea = ptr + (2 - iVar2);
+        memset(g_EnvironStringArea,0,n + 1);
       }
       else {
         ptr = (char **)realloc(ptr,new_size);
         if (ptr == (char **)0x0) {
           return -1;
         }
-        memmove(ptr + (2 - iVar2),g_CHAR_PTR_PTR_02de54a0,n);
-        g_CHAR_PTR_PTR_02de54a0 = ptr + (2 - iVar2);
+        memmove(ptr + (2 - iVar2),g_EnvironStringArea,n);
+        g_EnvironStringArea = ptr + (2 - iVar2);
       }
       ptr[1 - iVar2] = (char *)0x0;
-      g_CHAR_PTR_PTR_02de54a4 = ptr;
+      g_EnvironmentBlock = ptr;
     }
     else {
       n = iVar2 - 1;
     }
   }
   ptr[n] = in_stack_0000000c;
-  *(byte *)((int)g_CHAR_PTR_PTR_02de54a0 + n) = 0;
+  *(byte *)((int)g_EnvironStringArea + n) = 0;
   return 0;
 }

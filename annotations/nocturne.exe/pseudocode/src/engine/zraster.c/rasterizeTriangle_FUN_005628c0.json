@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 476,
-    "complexity_score": 255,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 205,
+    "pseudocode_lines": 206,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 681
+    "total_lines": 682
   },
   "cross_references": [
     {
@@ -65,7 +65,7 @@
   "globals": [
     {
       "addr": "005b7644",
-      "name": "INT_005b7644",
+      "name": "g_VertexProcessingEnabled",
       "type": "int",
       "value": "0x1"
     },
@@ -77,19 +77,19 @@
     },
     {
       "addr": "006b0280",
-      "name": "g_INT_006b0280",
+      "name": "g_CullingMode",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d1fc",
-      "name": "g_INT_01b4d1fc",
+      "name": "g_RasterizerDepthBias",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b4d768",
-      "name": "g_INT_01b4d768",
+      "name": "g_RenderAbortFlag",
       "type": "int",
       "value": null
     },
@@ -143,31 +143,31 @@
     },
     {
       "addr": "02de497c",
-      "name": "g_INT_02de497c",
+      "name": "g_RasterizerEdgeCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de4980",
-      "name": "g_SSoftwareEdge_ARRAY_02de4980",
+      "name": "g_RasterizerEdgeArray",
       "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "02de49c8",
-      "name": "g_SSoftwareEdge_ARRAY_02de4980[1].base.y_min",
+      "name": "g_RasterizerEdgeArray[1].base.y_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02de4e00",
-      "name": "g_INT_02de4e00",
+      "name": "g_RasterizerMinY",
       "type": "int",
       "value": null
     },
     {
       "addr": "02de4e04",
-      "name": "g_INT_02de4e04",
+      "name": "g_RasterizerMaxY",
       "type": "int",
       "value": null
     }
@@ -320,7 +320,7 @@
   "suspects": [
     {
       "description": "Pointer value `scanline_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 158,
+      "line": 159,
       "match": "(int)scanline_y",
       "severity": "moderate",
       "text": "if ((local_14->base).y_max <= (int)scanline_y) {",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Pointer value `scanline_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 176,
+      "line": 177,
       "match": "(int)scanline_y",
       "severity": "moderate",
       "text": "if ((local_18->base).y_max <= (int)scanline_y) {",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Pointer value `scanline_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 194,
+      "line": 195,
       "match": "(int)scanline_y",
       "severity": "moderate",
       "text": "engine_special_cpp_renderScanline_FUN_00530710(local_18,local_14,(int)scanline_y);",
@@ -344,7 +344,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 203,
+      "line": 204,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",

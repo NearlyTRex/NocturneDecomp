@@ -11,8 +11,8 @@ void __cdecl core_netgame_cpp_resetGameTime_FUN_0050af20(void)
 {
   int iVar1;
   
-  g_UINT_01d34e38 = 1;
+  g_CurrentGameTime = 1;
   iVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-  g_INT_01d34e34 = iVar1 / 0x12;
+  g_LastPingTime = iVar1 / 0x12;
   return;
 }

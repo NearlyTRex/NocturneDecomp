@@ -16,8 +16,8 @@
 ;   void* PTR_InvalidateRect_005d04cc = 001d0b2e
 ;   void* PTR_UpdateWindow_005d0514 = 001d0c4a
 ;   TerminatedCString s_close_mov_005f9fe1
-;   int g_INT_02c9d29c
-;   int g_INT_02c9d2a0
+;   int g_MovieHandle
+;   int g_MoviePlaying
 ;
 ; Called Functions:
 ;   InvalidateRect
@@ -28,7 +28,7 @@
 
 section .text
 
-    CMP dword ptr [0x02c9d2a0],0x0      ; 005b4980 | g_INT_02c9d2a0
+    CMP dword ptr [0x02c9d2a0],0x0      ; 005b4980 | g_MoviePlaying
         ;   Label: wincore_winvideo.cpp_closeMovie_FUN_005b4980
     JNZ 0x005b498a                      ; 005b4987
         ;   XREF to: 005b498a (CONDITIONAL_JUMP)  ; LAB_005b498a
@@ -45,8 +45,8 @@ section .text
     PUSH ECX                            ; 005b49a1
     MOV ESI,dword ptr [ESP + 0x10]      ; 005b49a2
     PUSH ESI                            ; 005b49a6
-    MOV dword ptr [0x02c9d29c],ECX      ; 005b49a7 | g_INT_02c9d29c
-    MOV dword ptr [0x02c9d2a0],ECX      ; 005b49ad | g_INT_02c9d2a0
+    MOV dword ptr [0x02c9d29c],ECX      ; 005b49a7 | g_MovieHandle
+    MOV dword ptr [0x02c9d2a0],ECX      ; 005b49ad | g_MoviePlaying
     CALL dword ptr CS:[0x5d04cc]        ; 005b49b3 | PTR_InvalidateRect_005d04cc
     PUSH ESI                            ; 005b49ba
     CALL dword ptr CS:[0x5d0514]        ; 005b49bb | PTR_UpdateWindow_005d0514

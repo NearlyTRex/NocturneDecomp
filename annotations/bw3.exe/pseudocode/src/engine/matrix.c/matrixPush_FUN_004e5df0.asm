@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005c6efe
 ;   TerminatedCString s_Matrix_unbalance_005c6f11
-;   int g_INT_01c6e2cc
-;   int g_INT_01c6e2d0
-;   int g_INT_01c6e2d4
-;   int g_INT_01c6e2f0
-;   int g_INT_01c6e2f4
-;   int g_INT_01c6e2f8
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;   int g_INT_01c6e2fc
 ;   int g_INT_01c6e300
 ;   int g_INT_01c6e304
@@ -32,19 +32,19 @@
 
 section .text
 
-    MOV EAX,[0x01d726a0]                ; 004e5df0 | g_INT_01d726a0
+    MOV EAX,[0x01d726a0]                ; 004e5df0 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_matrixPush_FUN_004e5df0
-    MOV EDX,dword ptr [0x01c6e2cc]      ; 004e5df5 | g_INT_01c6e2cc
+    MOV EDX,dword ptr [0x01c6e2cc]      ; 004e5df5 | g_RelativeX
     MOV dword ptr [EAX*0x4 + 0x1d7280c],EDX ; 004e5dfb
-    MOV EDX,dword ptr [0x01c6e2d0]      ; 004e5e02 | g_INT_01c6e2d0
+    MOV EDX,dword ptr [0x01c6e2d0]      ; 004e5e02 | g_RelativeY
     MOV dword ptr [EAX*0x4 + 0x1d72834],EDX ; 004e5e08
-    MOV EDX,dword ptr [0x01c6e2d4]      ; 004e5e0f | g_INT_01c6e2d4
+    MOV EDX,dword ptr [0x01c6e2d4]      ; 004e5e0f | g_RelativeZ
     MOV dword ptr [EAX*0x4 + 0x1d7285c],EDX ; 004e5e15
-    MOV EDX,dword ptr [0x01c6e2f0]      ; 004e5e1c | g_INT_01c6e2f0
+    MOV EDX,dword ptr [0x01c6e2f0]      ; 004e5e1c | g_LightDirectionX
     MOV dword ptr [EAX*0x4 + 0x1d72884],EDX ; 004e5e22
-    MOV EDX,dword ptr [0x01c6e2f4]      ; 004e5e29 | g_INT_01c6e2f4
+    MOV EDX,dword ptr [0x01c6e2f4]      ; 004e5e29 | g_LightDirectionY
     MOV dword ptr [EAX*0x4 + 0x1d728ac],EDX ; 004e5e2f
-    MOV EDX,dword ptr [0x01c6e2f8]      ; 004e5e36 | g_INT_01c6e2f8
+    MOV EDX,dword ptr [0x01c6e2f8]      ; 004e5e36 | g_LightDirectionZ
     MOV dword ptr [EAX*0x4 + 0x1d728d4],EDX ; 004e5e3c
     MOV EDX,dword ptr [0x01c6e2fc]      ; 004e5e43 | g_INT_01c6e2fc
     MOV dword ptr [EAX*0x4 + 0x1d726a4],EDX ; 004e5e49
@@ -65,7 +65,7 @@ section .text
     MOV EDX,dword ptr [0x01c6e31c]      ; 004e5eab | g_INT_01c6e31c
     MOV dword ptr [EAX*0x4 + 0x1d727e4],EDX ; 004e5eb1
     LEA EDX,[EAX + 0x1]                 ; 004e5eb8
-    MOV dword ptr [0x01d726a0],EDX      ; 004e5ebb | g_INT_01d726a0
+    MOV dword ptr [0x01d726a0],EDX      ; 004e5ebb | g_MatrixStackIndex
     CMP EDX,0x9                         ; 004e5ec1
     JG 0x004e5ec7                       ; 004e5ec4
         ;   XREF to: 004e5ec7 (CONDITIONAL_JUMP)  ; LAB_004e5ec7

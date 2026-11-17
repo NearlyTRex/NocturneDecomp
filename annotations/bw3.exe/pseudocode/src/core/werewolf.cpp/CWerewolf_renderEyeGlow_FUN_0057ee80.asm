@@ -91,7 +91,7 @@
 ;   float g_FLOAT_005e63ac = 0.2000000
 ;   float g_FLOAT_005e63b0 = 0.2000000
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00607240
+;   SMRGLTextureBasic g_WerewolfEyeGlowTexture
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
@@ -425,7 +425,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 0057f3a0 | g_CDemonRenderer_01bdd7e4
     MOV EDX,0x4                         ; 0057f3a2
     MOV dword ptr [EBX + 0xa8],0x80000  ; 0057f3a7
-    PUSH 0x607240                       ; 0057f3b1 | g_SMRGLTextureBasic_00607240
+    PUSH 0x607240                       ; 0057f3b1 | g_WerewolfEyeGlowTexture
     MOV EBX,dword ptr [EAX]             ; 0057f3b6 | g_CDemonRenderer_01bdd7e4
     XOR ECX,ECX                         ; 0057f3b8
     PUSH EAX                            ; 0057f3ba | g_CDemonRenderer_01bdd7e4

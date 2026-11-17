@@ -276,23 +276,23 @@ static char* g_CHAR_PTR_ARRAY_005feb0c[7] = {
 };
 
 // float constants
-static float g_FLOAT_005fe9e8 = 30.0f;
+static float g_MovieRecordingTargetFPS = 30.0f;
 
 // float[2][4] constants
-static float g_FLOAT_ARRAY_ARRAY_005ffe8c[2][4] = {
+static float g_FootstepCornerMultipliers[2][4] = {
     {1.0f, -1.0f, -1.0f, 1.0f},
     {1.0f, 1.0f, -1.0f, -1.0f}
 };
 
 // float[6] constants
-static float g_FLOAT_ARRAY_005f0f30[6] = {
+static float g_MoveAwayAngleOffsets[6] = {
     2.3561945f, 3.9269907f, 1.5707964f, 4.712389f,
     0.78539819f, 5.497787f
 };
 
 // uchar[8] constants
-static uchar g_UCHAR_ARRAY_005f2820[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
-static uchar g_UCHAR_ARRAY_005fb0e8[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined1* constants
 static undefined1* DAT_005FC450 = (undefined1*)0x00495F41; // LAB_00495f41

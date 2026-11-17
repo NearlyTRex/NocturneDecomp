@@ -89,11 +89,11 @@ section .text
     FSTP float ptr [ESP + 0x120]        ; 005b3008
     CALL core_sound.cpp_updateListeners_FUN_005b1870 ; 005b300f
         ;   XREF to: 005b1870 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_updateListeners_FUN_005b1870()
-    FLD float ptr [0x03f6af7c]          ; 005b3014 | CVector3f_03f6af7c
+    FLD float ptr [0x03f6af7c]          ; 005b3014 | g_WindVolume
     FLD float ptr [ESP + 0x120]         ; 005b301a
     FCHS                                ; 005b3021
     FXCH                                ; 005b3023
-    FSUB float ptr [0x03f6af80]         ; 005b3025 | CVector3f_03f6af7c.y
+    FSUB float ptr [0x03f6af80]         ; 005b3025 | g_WindVolume.y
     FXCH                                ; 005b302b
     FSTP float ptr [ESP + 0x108]        ; 005b302d
     FST float ptr [ESP + 0x11c]         ; 005b3034
@@ -111,10 +111,10 @@ section .text
         ;   XREF to: 005b306c (CONDITIONAL_JUMP)  ; LAB_005b306c
     MOV EAX,dword ptr [ESP + 0x120]     ; 005b305e
     MOV dword ptr [ESP + 0x11c],EAX     ; 005b3065
-    FLD float ptr [0x03f6af80]          ; 005b306c | CVector3f_03f6af7c.y
+    FLD float ptr [0x03f6af80]          ; 005b306c | g_WindVolume.y
         ;   Label: LAB_005b306c
     FADD float ptr [ESP + 0x11c]        ; 005b3072
-    FST float ptr [0x03f6af80]          ; 005b3079 | CVector3f_03f6af7c.y
+    FST float ptr [0x03f6af80]          ; 005b3079 | g_WindVolume.y
     FCOMP double ptr [0x006527a6]       ; 005b307f | DOUBLE_006527a6
     FNSTSW AX                           ; 005b3085
     SAHF                                ; 005b3087
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 005b352a (CONDITIONAL_JUMP)  ; LAB_005b352a
     MOV EDI,dword ptr [0x03f6af68]      ; 005b30a6 | g_WindSoundHandle
         ;   Label: LAB_005b30a6
-    PUSH dword ptr [0x03f6af80]         ; 005b30ac | CVector3f_03f6af7c.y
+    PUSH dword ptr [0x03f6af80]         ; 005b30ac | g_WindVolume.y
     PUSH EDI                            ; 005b30b2
     CALL sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0 ; 005b30b3
         ;   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0(uint sfx_handle, float volume)
@@ -175,7 +175,7 @@ section .text
     FLD float ptr [ESP + 0x120]         ; 005b3121
     FCHS                                ; 005b3128
     FXCH                                ; 005b312a
-    FSUB float ptr [0x03f6af84]         ; 005b312c | CVector3f_03f6af7c.z
+    FSUB float ptr [0x03f6af84]         ; 005b312c | g_WindVolume.z
     FXCH                                ; 005b3132
     FSTP float ptr [ESP + 0x10c]        ; 005b3134
     FST float ptr [ESP + 0x118]         ; 005b313b
@@ -195,10 +195,10 @@ section .text
         ;   XREF to: 005b317d (CONDITIONAL_JUMP)  ; LAB_005b317d
     MOV EAX,dword ptr [ESP + 0x120]     ; 005b316f
     MOV dword ptr [ESP + 0x118],EAX     ; 005b3176
-    FLD float ptr [0x03f6af84]          ; 005b317d | CVector3f_03f6af7c.z
+    FLD float ptr [0x03f6af84]          ; 005b317d | g_WindVolume.z
         ;   Label: LAB_005b317d
     FADD float ptr [ESP + 0x118]        ; 005b3183
-    FST float ptr [0x03f6af84]          ; 005b318a | CVector3f_03f6af7c.z
+    FST float ptr [0x03f6af84]          ; 005b318a | g_WindVolume.z
     FCOMP double ptr [0x006527a6]       ; 005b3190 | DOUBLE_006527a6
     FNSTSW AX                           ; 005b3196
     SAHF                                ; 005b3198
@@ -215,7 +215,7 @@ section .text
         ;   XREF to: 005b355e (CONDITIONAL_JUMP)  ; LAB_005b355e
     MOV EDI,dword ptr [0x03f6af6c]      ; 005b31b7 | g_WaterSoundHandle
         ;   Label: LAB_005b31b7
-    PUSH dword ptr [0x03f6af84]         ; 005b31bd | CVector3f_03f6af7c.z
+    PUSH dword ptr [0x03f6af84]         ; 005b31bd | g_WindVolume.z
     PUSH EDI                            ; 005b31c3
     CALL sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0 ; 005b31c4
         ;   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0(uint sfx_handle, float volume)
@@ -481,7 +481,7 @@ section .text
         ;   XREF to: 005b3b90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_005b3b90(CSound * this_ptr, uint sfx_handle)
     XOR ECX,ECX                         ; 005b354e
     ADD ESP,0x8                         ; 005b3550
-    MOV dword ptr [0x03f6af80],ECX      ; 005b3553 | CVector3f_03f6af7c.y
+    MOV dword ptr [0x03f6af80],ECX      ; 005b3553 | g_WindVolume.y
     JMP 0x005b30bb                      ; 005b3559
         ;   XREF to: 005b30bb (UNCONDITIONAL_JUMP)  ; LAB_005b30bb
     PUSH 0x652790                       ; 005b355e | = "water-2.wav"
@@ -500,7 +500,7 @@ section .text
         ;   XREF to: 005b3b90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_005b3b90(CSound * this_ptr, uint sfx_handle)
     XOR EBX,EBX                         ; 005b3582
     ADD ESP,0x8                         ; 005b3584
-    MOV dword ptr [0x03f6af84],EBX      ; 005b3587 | CVector3f_03f6af7c.z
+    MOV dword ptr [0x03f6af84],EBX      ; 005b3587 | g_WindVolume.z
     JMP 0x005b31cc                      ; 005b358d
         ;   XREF to: 005b31cc (UNCONDITIONAL_JUMP)  ; LAB_005b31cc
     FLD float ptr [0x03f6b7b4]          ; 005b3592 | g_TargetVolumeMultiplier

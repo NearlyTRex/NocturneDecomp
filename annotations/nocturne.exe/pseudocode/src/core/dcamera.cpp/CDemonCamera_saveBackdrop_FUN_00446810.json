@@ -211,7 +211,7 @@
     },
     {
       "addr": "005a47a0",
-      "name": "g_INT_005a47a0",
+      "name": "g_DefaultStreamBufferSize",
       "type": "int",
       "value": "0x1a4"
     },
@@ -241,7 +241,7 @@
     },
     {
       "addr": "012b022c",
-      "name": "g_INT_012b022c",
+      "name": "g_BackdropSaveActive",
       "type": "int",
       "value": null
     },
@@ -259,43 +259,43 @@
     },
     {
       "addr": "0140d778",
-      "name": "g_INT_0140d778",
+      "name": "g_ImageProcessingState1",
       "type": "int",
       "value": null
     },
     {
       "addr": "0140d77c",
-      "name": "g_INT_0140d77c",
+      "name": "g_ImageProcessingState2",
       "type": "int",
       "value": null
     },
     {
       "addr": "0140d780",
-      "name": "g_INT_0140d780",
+      "name": "g_ImageBytesPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "0140e790",
-      "name": "g_SFogGrid_0140d784.scroll_vector.x",
+      "name": "g_CameraFogGrid.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e794",
-      "name": "g_SFogGrid_0140d784.scroll_vector.y",
+      "name": "g_CameraFogGrid.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e798",
-      "name": "g_SFogGrid_0140d784.scroll_vector.z",
+      "name": "g_CameraFogGrid.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e7a0",
-      "name": "g_SFogGrid_0140d784.density_multiplier",
+      "name": "g_CameraFogGrid.density_multiplier",
       "type": "undefined4",
       "value": null
     },
@@ -693,11 +693,11 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Pointer value `&g_CVector3i_ARRAY_007f7378[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_PrecomputedWorldPositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 103,
-      "match": "(int)&g_CVector3i_ARRAY_007f7378[0].x",
+      "match": "(int)&g_PrecomputedWorldPositions[0].x",
       "severity": "moderate",
-      "text": "end_pos = (CVector3i *)((int)&g_CVector3i_ARRAY_007f7378[0].x + local_48);",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_48);",
       "type": "pointer_truncation"
     },
     {
@@ -713,7 +713,7 @@
       "line": 103,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "end_pos = (CVector3i *)((int)&g_CVector3i_ARRAY_007f7378[0].x + local_48);",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_48);",
       "type": "pointer_cast"
     },
     {

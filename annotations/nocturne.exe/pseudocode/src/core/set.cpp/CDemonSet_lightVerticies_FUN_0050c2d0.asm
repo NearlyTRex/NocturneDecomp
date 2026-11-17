@@ -155,7 +155,7 @@ section .text
     TEST ECX,ECX                        ; 0050c344
     JZ 0x0050c486                       ; 0050c346
         ;   XREF to: 0050c486 (CONDITIONAL_JUMP)  ; LAB_0050c486
-    CMP dword ptr [0x01ffb060],0x0      ; 0050c34c | g_INT_01ffb060
+    CMP dword ptr [0x01ffb060],0x0      ; 0050c34c | g_InMirrorRenderPass
     JZ 0x0050c397                       ; 0050c353
         ;   XREF to: 0050c397 (CONDITIONAL_JUMP)  ; LAB_0050c397
     CMP dword ptr [EBP + 0x18],0x0      ; 0050c355
@@ -1004,9 +1004,9 @@ section .text
     INC EDI                             ; 0050cde6
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0050cde7
     FXCH                                ; 0050cdea
-    FSTP float ptr [EDX + -0xc]         ; 0050cdec | g_CVector3f_ARRAY_01fff5b0
-    FSTP float ptr [EDX + -0x8]         ; 0050cdef | g_CVector3f_ARRAY_01fff5b0[0].y
-    FSTP float ptr [EDX + -0x4]         ; 0050cdf2 | g_CVector3f_ARRAY_01fff5b0[0].z
+    FSTP float ptr [EDX + -0xc]         ; 0050cdec | g_FaceNormalArray
+    FSTP float ptr [EDX + -0x8]         ; 0050cdef | g_FaceNormalArray[0].y
+    FSTP float ptr [EDX + -0x4]         ; 0050cdf2 | g_FaceNormalArray[0].z
     CMP EDI,EAX                         ; 0050cdf5
     JL 0x0050cc19                       ; 0050cdf7
         ;   XREF to: 0050cc19 (CONDITIONAL_JUMP)  ; LAB_0050cc19
@@ -1036,41 +1036,41 @@ section .text
     MOV AX,word ptr [EDX]               ; 0050ce44
     IMUL EAX,EAX,0xc                    ; 0050ce47
     ADD EAX,0x2045ab0                   ; 0050ce4a
-    FLD float ptr [ESI]                 ; 0050ce4f | g_CVector3f_ARRAY_01fff5b0 | g_CVector3f_ARRAY_01fff5b0[1].x
+    FLD float ptr [ESI]                 ; 0050ce4f | g_FaceNormalArray | g_FaceNormalArray[1].x
     FADD float ptr [EAX]                ; 0050ce51 | g_CVector3f_ARRAY_02045ab0
     FSTP float ptr [EAX]                ; 0050ce53 | g_CVector3f_ARRAY_02045ab0
-    FLD float ptr [ESI + 0x4]           ; 0050ce55 | g_CVector3f_ARRAY_01fff5b0[0].y | g_CVector3f_ARRAY_01fff5b0[1].y
+    FLD float ptr [ESI + 0x4]           ; 0050ce55 | g_FaceNormalArray[0].y | g_FaceNormalArray[1].y
     FADD float ptr [EAX + 0x4]          ; 0050ce58 | g_CVector3f_ARRAY_02045ab0[0].y
     FSTP float ptr [EAX + 0x4]          ; 0050ce5b | g_CVector3f_ARRAY_02045ab0[0].y
-    FLD float ptr [ESI + 0x8]           ; 0050ce5e | g_CVector3f_ARRAY_01fff5b0[0].z | g_CVector3f_ARRAY_01fff5b0[1].z
+    FLD float ptr [ESI + 0x8]           ; 0050ce5e | g_FaceNormalArray[0].z | g_FaceNormalArray[1].z
     FADD float ptr [EAX + 0x8]          ; 0050ce61 | g_CVector3f_ARRAY_02045ab0[0].z
     FSTP float ptr [EAX + 0x8]          ; 0050ce64 | g_CVector3f_ARRAY_02045ab0[0].z
     XOR EAX,EAX                         ; 0050ce67
     MOV AX,word ptr [EDX + 0x2]         ; 0050ce69
     IMUL EAX,EAX,0xc                    ; 0050ce6d
     ADD EAX,0x2045ab0                   ; 0050ce70
-    FLD float ptr [ESI]                 ; 0050ce75 | g_CVector3f_ARRAY_01fff5b0
+    FLD float ptr [ESI]                 ; 0050ce75 | g_FaceNormalArray
     FADD float ptr [EAX]                ; 0050ce77 | g_CVector3f_ARRAY_02045ab0
     FSTP float ptr [EAX]                ; 0050ce79 | g_CVector3f_ARRAY_02045ab0
-    FLD float ptr [ESI + 0x4]           ; 0050ce7b | g_CVector3f_ARRAY_01fff5b0[0].y
+    FLD float ptr [ESI + 0x4]           ; 0050ce7b | g_FaceNormalArray[0].y
     FADD float ptr [EAX + 0x4]          ; 0050ce7e | g_CVector3f_ARRAY_02045ab0[0].y
     FSTP float ptr [EAX + 0x4]          ; 0050ce81 | g_CVector3f_ARRAY_02045ab0[0].y
-    FLD float ptr [ESI + 0x8]           ; 0050ce84 | g_CVector3f_ARRAY_01fff5b0[0].z
+    FLD float ptr [ESI + 0x8]           ; 0050ce84 | g_FaceNormalArray[0].z
     FADD float ptr [EAX + 0x8]          ; 0050ce87 | g_CVector3f_ARRAY_02045ab0[0].z
     FSTP float ptr [EAX + 0x8]          ; 0050ce8a | g_CVector3f_ARRAY_02045ab0[0].z
     XOR EAX,EAX                         ; 0050ce8d
     MOV AX,word ptr [EDX + 0x4]         ; 0050ce8f
     IMUL EAX,EAX,0xc                    ; 0050ce93
     ADD EAX,0x2045ab0                   ; 0050ce96
-    FLD float ptr [ESI]                 ; 0050ce9b | g_CVector3f_ARRAY_01fff5b0
+    FLD float ptr [ESI]                 ; 0050ce9b | g_FaceNormalArray
     FADD float ptr [EAX]                ; 0050ce9d | g_CVector3f_ARRAY_02045ab0
     ADD EDX,0x12                        ; 0050ce9f
     FSTP float ptr [EAX]                ; 0050cea2 | g_CVector3f_ARRAY_02045ab0
-    FLD float ptr [ESI + 0x4]           ; 0050cea4 | g_CVector3f_ARRAY_01fff5b0[0].y
+    FLD float ptr [ESI + 0x4]           ; 0050cea4 | g_FaceNormalArray[0].y
     FADD float ptr [EAX + 0x4]          ; 0050cea7 | g_CVector3f_ARRAY_02045ab0[0].y
     ADD ESI,0xc                         ; 0050ceaa
     FSTP float ptr [EAX + 0x4]          ; 0050cead | g_CVector3f_ARRAY_02045ab0[0].y
-    FLD float ptr [ESI + -0x4]          ; 0050ceb0 | g_CVector3f_ARRAY_01fff5b0[0].z
+    FLD float ptr [ESI + -0x4]          ; 0050ceb0 | g_FaceNormalArray[0].z
     FADD float ptr [EAX + 0x8]          ; 0050ceb3 | g_CVector3f_ARRAY_02045ab0[0].z
     INC EBX                             ; 0050ceb6
     FSTP float ptr [EAX + 0x8]          ; 0050ceb7 | g_CVector3f_ARRAY_02045ab0[0].z

@@ -46,9 +46,9 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CGameInstance.delta_time_float
-;   CVector3f g_CVector3f_02cfd900
-;   undefined4 g_CVector3f_02cfd900.y
-;   undefined4 g_CVector3f_02cfd900.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041b410
@@ -333,9 +333,9 @@ section .text
     ADD EAX,0x4                         ; 0049d358
     MOV ESI,0x2cfd900                   ; 0049d35b
     PUSH EAX                            ; 0049d360
-    MOVSD ES:EDI,ESI                    ; 0049d361 | g_CVector3f_02cfd900
-    MOVSD ES:EDI,ESI                    ; 0049d362 | g_CVector3f_02cfd900.y
-    MOVSD ES:EDI,ESI                    ; 0049d363 | g_CVector3f_02cfd900.z
+    MOVSD ES:EDI,ESI                    ; 0049d361 | g_ZeroVector
+    MOVSD ES:EDI,ESI                    ; 0049d362 | g_ZeroVector.y
+    MOVSD ES:EDI,ESI                    ; 0049d363 | g_ZeroVector.z
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0 ; 0049d364
         ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0049d369

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_shatter_wav_005e39f4
 ;   TerminatedCString s_gargoyle_hurt_wav_005e3a09
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -57,7 +57,7 @@ section .text
     PUSH ESI                            ; 004dd66f
     LEA EAX,[ESP + 0x14]                ; 004dd670
     PUSH EAX                            ; 004dd674
-    MOV EDX,dword ptr [0x0061c010]      ; 004dd675 | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004dd675 | g_CFireEffectPtr
     PUSH EDX                            ; 004dd67b
     INC EBX                             ; 004dd67c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004dd67d

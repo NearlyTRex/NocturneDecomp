@@ -139,8 +139,8 @@
 ;   undefined4 g_CLightActorClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CVector3f CVector3f_03f6bab0
-;   CVector3f CVector3f_03f6babc
+;   CVector3f g_StrangerWeaponEulerPlusX
+;   CVector3f g_StrangerWeaponEulerMinusX
 ;   undefined4 g_StrangerIndices[13]
 ;   undefined4 g_StrangerIndices[14]
 ;   UVector3 g_ZeroVector
@@ -219,7 +219,7 @@ section .text
     JNZ 0x005c0eaa                      ; 005c0856
         ;   XREF to: 005c0eaa (CONDITIONAL_JUMP)  ; LAB_005c0eaa
     PUSH 0x3f87558                      ; 005c085c | g_ZeroVector
-    PUSH 0x3f6babc                      ; 005c0861 | CVector3f_03f6babc
+    PUSH 0x3f6babc                      ; 005c0861 | g_StrangerWeaponEulerMinusX
     LEA EAX,[EBP + 0xfffff92a]          ; 005c0866
     PUSH EAX                            ; 005c086c
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c086d
@@ -646,7 +646,7 @@ section .text
         ;   XREF to: 005c0943 (UNCONDITIONAL_JUMP)  ; LAB_005c0943
     PUSH 0x3f87558                      ; 005c0eaa | g_ZeroVector
         ;   Label: LAB_005c0eaa
-    PUSH 0x3f6bab0                      ; 005c0eaf | CVector3f_03f6bab0
+    PUSH 0x3f6bab0                      ; 005c0eaf | g_StrangerWeaponEulerPlusX
     LEA EAX,[EBP + 0xfffff59a]          ; 005c0eb4
     PUSH EAX                            ; 005c0eba
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c0ebb

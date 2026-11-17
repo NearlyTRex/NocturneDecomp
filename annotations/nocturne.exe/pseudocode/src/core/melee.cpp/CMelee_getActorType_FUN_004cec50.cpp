@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_melee_cpp_CMelee_getActorType_FUN_004cec50(CMelee *this_ptr)
 
 {
-  return &g_CMeleeActorType_01cc56a4;
+  return &g_CMeleeClassInfo;
 }

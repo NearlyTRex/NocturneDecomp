@@ -17,8 +17,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dd57
 ;   TerminatedCString s_CDR_captureFace_too_many_0057dd6d
-;   int g_INT_01b4d7ac
-;   int g_INT_01b4d7b0
+;   int g_CaptureFaceCount
+;   int g_CaptureTextureCount
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 00461cfa (CONDITIONAL_JUMP)  ; LAB_00461cfa
     PUSH EDI                            ; 00461c40
         ;   Label: LAB_00461c40
-    CMP dword ptr [0x01b4d7ac],0x1388   ; 00461c41 | g_INT_01b4d7ac
+    CMP dword ptr [0x01b4d7ac],0x1388   ; 00461c41 | g_CaptureFaceCount
     JL 0x00461c6f                       ; 00461c4b
         ;   XREF to: 00461c6f (CONDITIONAL_JUMP)  ; LAB_00461c6f
     MOV EDI,0x57dd57                    ; 00461c4d | = "..\\engine\\drender.cpp"
@@ -81,12 +81,12 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00461c67
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00461c6c
-    MOV EDX,dword ptr [0x01b4d7ac]      ; 00461c6f | g_INT_01b4d7ac
+    MOV EDX,dword ptr [0x01b4d7ac]      ; 00461c6f | g_CaptureFaceCount
         ;   Label: LAB_00461c6f
     SHL EDX,0x5                         ; 00461c75
     MOV ESI,EBX                         ; 00461c78
     LEA EDI,[EDX + 0x1b4d7c0]           ; 00461c7a
-    MOV EAX,[0x01b4d7b0]                ; 00461c80 | g_INT_01b4d7b0
+    MOV EAX,[0x01b4d7b0]                ; 00461c80 | g_CaptureTextureCount
     MOVSD ES:EDI,ESI                    ; 00461c85
     MOVSD ES:EDI,ESI                    ; 00461c86
     MOVSD ES:EDI,ESI                    ; 00461c87
@@ -122,7 +122,7 @@ section .text
     JGE 0x00461d13                      ; 00461ceb
         ;   XREF to: 00461d13 (CONDITIONAL_JUMP)  ; LAB_00461d13
     MOV dword ptr [EDX + 0x1b4d7bc],ESI ; 00461ced
-    INC dword ptr [0x01b4d7ac]          ; 00461cf3 | g_INT_01b4d7ac
+    INC dword ptr [0x01b4d7ac]          ; 00461cf3 | g_CaptureFaceCount
     POP EDI                             ; 00461cf9
     POP EBP                             ; 00461cfa
         ;   Label: LAB_00461cfa
@@ -141,14 +141,14 @@ section .text
     POP ESI                             ; 00461d10
     POP EBX                             ; 00461d11
     RET                                 ; 00461d12
-    MOV EDX,dword ptr [0x01b4d7ac]      ; 00461d13 | g_INT_01b4d7ac
+    MOV EDX,dword ptr [0x01b4d7ac]      ; 00461d13 | g_CaptureFaceCount
         ;   Label: LAB_00461d13
     SHL EDX,0x5                         ; 00461d19
     CMP EDI,EAX                         ; 00461d1c
     JGE 0x00461d31                      ; 00461d1e
         ;   XREF to: 00461d31 (CONDITIONAL_JUMP)  ; LAB_00461d31
     MOV dword ptr [EDX + 0x1b4d7bc],EDI ; 00461d20
-    INC dword ptr [0x01b4d7ac]          ; 00461d26 | g_INT_01b4d7ac
+    INC dword ptr [0x01b4d7ac]          ; 00461d26 | g_CaptureFaceCount
     POP EDI                             ; 00461d2c
     POP EBP                             ; 00461d2d
     POP ESI                             ; 00461d2e
@@ -156,7 +156,7 @@ section .text
     RET                                 ; 00461d30
     MOV dword ptr [EDX + 0x1b4d7bc],EAX ; 00461d31
         ;   Label: LAB_00461d31
-    INC dword ptr [0x01b4d7ac]          ; 00461d37 | g_INT_01b4d7ac
+    INC dword ptr [0x01b4d7ac]          ; 00461d37 | g_CaptureFaceCount
     POP EDI                             ; 00461d3d
     POP EBP                             ; 00461d3e
     POP ESI                             ; 00461d3f

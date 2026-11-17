@@ -54,26 +54,26 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
     local_3c = 0x100;
   }
   if (rect == (CRect *)0x0) {
-    g_SCoronaLightCache_01216608.count = (int)rect;
-    g_INT_00b0e604 = (int)rect;
+    g_CoronaLightCache.count = (int)rect;
+    g_LightBufferPoolIndex = (int)rect;
   }
-  uVar7 = g_INT_00b0e604 + 1;
-  pacVar2 = g_CHAR_ARRAY_ARRAY_00b0e608 + g_INT_00b0e604;
+  uVar7 = g_LightBufferPoolIndex + 1;
+  pacVar2 = g_LightBufferPool + g_LightBufferPoolIndex;
   if (0x18 < uVar7) {
     pacVar2 = (char (*) [307200])0x0;
   }
-  g_INT_00b0e604 = uVar7;
+  g_LightBufferPoolIndex = uVar7;
   light_source->corona_visibility_buffers = (int *)pacVar2;
-  uVar6 = g_INT_00b0e604 + 1;
-  pacVar2 = g_CHAR_ARRAY_ARRAY_00b0e608 + uVar7;
+  uVar6 = g_LightBufferPoolIndex + 1;
+  pacVar2 = g_LightBufferPool + uVar7;
   if (0x18 < uVar6) {
     pacVar2 = (char (*) [307200])0x0;
   }
-  g_INT_00b0e604 = uVar6;
+  g_LightBufferPoolIndex = uVar6;
   light_source->corona_depth_buffer = (ushort **)pacVar2;
-  g_INT_00b0e604 = g_INT_00b0e604 + 1;
-  pacVar2 = g_CHAR_ARRAY_ARRAY_00b0e608 + uVar6;
-  if (0x18 < (uint)g_INT_00b0e604) {
+  g_LightBufferPoolIndex = g_LightBufferPoolIndex + 1;
+  pacVar2 = g_LightBufferPool + uVar6;
+  if (0x18 < (uint)g_LightBufferPoolIndex) {
     pacVar2 = (char (*) [307200])0x0;
   }
   light_source->corona_lightmap_indices = (int *)pacVar2;
@@ -125,8 +125,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
     local_58 = local_80 * 0xc;
     local_50 = local_80 * 4;
     local_44 = local_78 * 0x500;
-    local_54 = g_CVector3i_ARRAY_007f7378 + local_78 * 0x140;
-    local_4c = g_CVector3f_ARRAY_009bb178 + local_78 * 0x140;
+    local_54 = g_PrecomputedWorldPositions + local_78 * 0x140;
+    local_4c = g_PrecomputedSurfaceNormals + local_78 * 0x140;
     local_48 = (light_source->base).camera_name + local_78 * 4;
     do {
       local_38 = 999;

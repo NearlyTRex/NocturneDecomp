@@ -14,8 +14,8 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
   HANDLE hThread;
   uint uVar3;
   
-  iVar1 = g_INT_005c1660;
-  if (hWnd != g_HWND_02de2098) {
+  iVar1 = g_WindowActive;
+  if (hWnd != g_MainWindowHandle) {
     LVar2 = DefWindowProcA(hWnd,message,wParam,lParam);
     return LVar2;
   }
@@ -30,57 +30,57 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
       if (message < 0x205) {
         if (message < 0x201) {
           if (message == 0x200) {
-            g_INT_01bd1d8c = lParam & 0xffff;
-            g_INT_01bd1d90 = uVar3;
+            g_MouseX = lParam & 0xffff;
+            g_MouseY = uVar3;
             return 0;
           }
         }
         else {
           if (message < 0x202) {
-            g_INT_01bd1d8c = lParam & 0xffff;
-            g_INT_01bd1d90 = uVar3;
-            g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] | 1;
-            g_CHAR_ARRAY_01c02598[0x200] = '\x01';
+            g_MouseX = lParam & 0xffff;
+            g_MouseY = uVar3;
+            g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 1;
+            g_KeyboardState[0x200] = '\x01';
             return 0;
           }
           if (message < 0x203) {
-            g_INT_01bd1d8c = lParam & 0xffff;
-            g_INT_01bd1d90 = uVar3;
-            g_INT_ARRAY_02de20b0[0x200] = 1;
-            g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfe;
+            g_MouseX = lParam & 0xffff;
+            g_MouseY = uVar3;
+            g_MessageFlags[0x200] = 1;
+            g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
             return 0;
           }
           if (message == 0x204) {
-            g_INT_01bd1d8c = lParam & 0xffff;
-            g_INT_01bd1d90 = uVar3;
-            g_CHAR_ARRAY_01c02598[0x201] = '\x01';
-            g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] | 2;
+            g_MouseX = lParam & 0xffff;
+            g_MouseY = uVar3;
+            g_KeyboardState[0x201] = '\x01';
+            g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 2;
             return 0;
           }
         }
       }
       else {
         if (message < 0x206) {
-          g_INT_01bd1d8c = lParam & 0xffff;
-          g_INT_01bd1d90 = uVar3;
-          g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfd;
-          g_INT_ARRAY_02de20b0[0x201] = 1;
+          g_MouseX = lParam & 0xffff;
+          g_MouseY = uVar3;
+          g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfd;
+          g_MessageFlags[0x201] = 1;
           return 0;
         }
         if (message < 0x30f) {
           if (0x206 < message) {
             if (message < 0x208) {
-              g_INT_01bd1d8c = lParam & 0xffff;
-              g_INT_01bd1d90 = uVar3;
-              g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] | 4;
-              g_CHAR_ARRAY_01c02598[0x20c] = '\x01';
+              g_MouseX = lParam & 0xffff;
+              g_MouseY = uVar3;
+              g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 4;
+              g_KeyboardState[0x20c] = '\x01';
               return 0;
             }
             if (message == 0x208) {
-              g_INT_01bd1d8c = lParam & 0xffff;
-              g_INT_01bd1d90 = uVar3;
-              g_INT_ARRAY_02de20b0[0x20c] = 1;
-              g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfb;
+              g_MouseX = lParam & 0xffff;
+              g_MouseY = uVar3;
+              g_MessageFlags[0x20c] = 1;
+              g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfb;
               return 0;
             }
           }
@@ -90,11 +90,11 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
             if (message < 0x311) goto LAB_00558ddf;
             if (0x311 < message) {
               if (message == 0x3b9) {
-                wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(g_HWND_02de2098);
+                wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(g_MainWindowHandle);
               }
               goto LAB_00558ddf;
             }
-            if (g_HWND_02de2098 == wParam) goto LAB_00558ddf;
+            if (g_MainWindowHandle == wParam) goto LAB_00558ddf;
           }
           wincore_wddvmem_cpp_stubFunction_FUN_00553ca0();
         }
@@ -106,28 +106,28 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
     if (1 < message) {
       if (message < 3) {
         PostQuitMessage(0);
-        g_INT_02de20a0 = 1;
+        g_InputDisabled = 1;
       }
       else if (0xe < message) {
         if (message < 0x10) {
           wincore_wddvmem_cpp_stubFunction_FUN_00553ca0();
         }
         else if (message == 0x1c) {
-          INT_005c1668 = g_INT_005c1660;
-          g_INT_005c1660 = wParam;
+          INT_005c1668 = g_WindowActive;
+          g_WindowActive = wParam;
           if (iVar1 != wParam) {
             hThread = GetCurrentProcess();
-            if (g_INT_005c1660 == 0) {
+            if (g_WindowActive == 0) {
               wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70();
               SetThreadPriority(hThread,-0xf);
-              g_INT_02de20a4 = 0;
+              g_FocusRegained = 0;
             }
             else {
               SetThreadPriority(hThread,1);
               wincore_wddvmem_cpp_videoRestore_FUN_00553ba0();
               if (INT_005c1668 != -1) {
                 engine_2d_c_clearInputAndWait_FUN_00403f50();
-                g_INT_02de20a4 = 1;
+                g_FocusRegained = 1;
               }
             }
           }
@@ -144,8 +144,8 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
     if (message < 0x100) goto LAB_00558ddf;
     if (message < 0x101) {
 LAB_00558ede:
-      uVar3 = lParam >> 0x10 & INT_005b7630;
-      g_CHAR_ARRAY_01c02598[uVar3] = '\x01';
+      uVar3 = lParam >> 0x10 & g_InputKeyMask;
+      g_KeyboardState[uVar3] = '\x01';
       if (uVar3 == 0x3e) {
         return 0;
       }
@@ -163,7 +163,7 @@ LAB_00558ede:
     if (message < 0x105) goto LAB_00558ede;
     if (message != 0x105) goto LAB_00558ddf;
   }
-  g_INT_ARRAY_02de20b0[lParam >> 0x10 & INT_005b7630] = 1;
+  g_MessageFlags[lParam >> 0x10 & g_InputKeyMask] = 1;
 LAB_00558ddf:
   LVar2 = DefWindowProcA(hWnd,message,wParam,lParam);
   return LVar2;

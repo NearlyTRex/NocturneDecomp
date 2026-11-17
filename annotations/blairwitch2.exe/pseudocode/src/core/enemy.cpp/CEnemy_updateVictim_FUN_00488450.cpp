@@ -44,7 +44,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
   if (pCVar1 == (CCharacter *)0x0) {
     if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (g_CEventList_PTR_006141f0,"Capture"), iVar3 != 0)) {
+                          (g_CEventListPtr,"Capture"), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
       this_ptr->victim_search_timer = 0.0;
       this_ptr->victim = (CCharacter *)0x0;
@@ -83,8 +83,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
             }
             fStack_38 = fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c;
             if (fStack_38 <= fStack_2c) {
-              *(int *)((int)g_CDemonActor_PTR_ARRAY_01c264e4 + iStack_28) = iVar3;
-              *(float *)((int)g_FLOAT_ARRAY_01c28424 + iStack_28) = fStack_38;
+              *(int *)((int)g_EnemyVictimCandidates + iStack_28) = iVar3;
+              *(float *)((int)g_EnemyVictimCandidateDistances + iStack_28) = fStack_38;
               iStack_28 = iStack_28 + 4;
               iStack_20 = iStack_20 + 1;
             }
@@ -102,8 +102,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
         if (0 < iStack_20) {
           iVar5 = 0;
           do {
-            if (*(float *)((int)g_FLOAT_ARRAY_01c28424 + iVar5) < fStack_1c) {
-              fStack_1c = *(float *)((int)g_FLOAT_ARRAY_01c28424 + iVar5);
+            if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar5) < fStack_1c) {
+              fStack_1c = *(float *)((int)g_EnemyVictimCandidateDistances + iVar5);
               iVar3 = iVar6;
             }
             iVar6 = iVar6 + 1;
@@ -111,7 +111,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
           } while (iVar6 < iStack_20);
         }
         if (iVar3 < 0) break;
-        target = (CCharacter *)g_CDemonActor_PTR_ARRAY_01c264e4[iVar3];
+        target = (CCharacter *)g_EnemyVictimCandidates[iVar3];
         iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00488320(this_ptr,(CDemonActor *)target);
         if (iVar6 != 0) {
           this_ptr->victim = target;
@@ -127,7 +127,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
           this_ptr->victim = target;
           return;
         }
-        g_FLOAT_ARRAY_01c28424[iVar3] = 1e+30;
+        g_EnemyVictimCandidateDistances[iVar3] = 1e+30;
         if (target == pCVar1) {
           this_ptr->victim = pCVar1;
         }

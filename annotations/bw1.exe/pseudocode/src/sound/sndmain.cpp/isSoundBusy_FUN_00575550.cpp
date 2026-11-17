@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_00575550(void)
 
 {
-  return g_INT_02c80654;
+  return g_SoundBusyFlag;
 }

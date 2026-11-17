@@ -23,33 +23,33 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CTommyGunActorType_02dd0fd0;
-extern CDemonActorType g_CTrapActorType_02dd100c;
-extern CDemonActorType g_CTrashActorType_02dd1048;
-extern CDemonActorType g_CTriggerActorType_02dd1084;
-extern CDemonActorType g_CTurretActorType_02dd10d0;
-extern CDemonActorType g_CTVBatActorType_02dd110c;
-extern CDemonActorType g_CVampireBossActorType_02dd1148;
-extern CDemonActorType g_CVehicleActorType_02dd1190;
-extern CDemonActorType g_CCryptVesselActorType_02dd11cc;
-extern CDemonActorType g_CWaterActorActorType_02ddd598;
-extern CDemonActorType g_CWayPointActorType_02ddf514;
-extern CDemonActorType g_CWeaponActorType_02ddf970;
+extern CDemonActorType g_CTommyGunClassInfo;
+extern CDemonActorType g_CTrapClassInfo;
+extern CDemonActorType g_CTrashClassInfo;
+extern CDemonActorType g_CTriggerClassInfo;
+extern CDemonActorType g_CTurretClassInfo;
+extern CDemonActorType g_CTVBatClassInfo;
+extern CDemonActorType g_CVampireBossClassInfo;
+extern CDemonActorType g_CVehicleClassInfo;
+extern CDemonActorType g_CCryptVesselClassInfo;
+extern CDemonActorType g_CWaterActorClassInfo;
+extern CDemonActorType g_CWayPointClassInfo;
+extern CDemonActorType g_CWeaponClassInfo;
 
 // CDemonGlobe
 extern CDemonGlobe g_CDemonGlobe_02ddf9ac;
 
 // CTerrain
-extern CTerrain g_CTerrain_02dd10c8;
+extern CTerrain g_CTerrainInstance;
 
 // CTextureCache*
-extern CTextureCache* g_CTextureCache_PTR_02dd0f84;
+extern CTextureCache* g_TextureCacheInstance;
 
 // CVector3f[100]
-extern CVector3f g_CVector3f_ARRAY_02dd9268[100];
+extern CVector3f g_WaterActorCollisionPositions[100];
 
 // CVector3f[200]
-extern CVector3f g_CVector3f_ARRAY_02ddfa28[200];
+extern CVector3f g_WeatherParticlePositions[200];
 
 // CVector3i
 extern CVector3i g_CVector3i_02dda6b8;
@@ -58,7 +58,7 @@ extern CVector3i g_CVector3i_02dda6b8;
 extern CWater g_CWaterInstance;
 
 // CWeather
-extern CWeather g_CWeather_02ddf9f0;
+extern CWeather g_CWeatherInstance;
 
 // IDirectDraw*
 extern IDirectDraw* g_DirectDrawObject;
@@ -71,13 +71,13 @@ extern IDirectDrawSurface* g_SoftwareRenderSurface;
 extern IUnknown* g_DirectDrawUnknown;
 
 // PALETTEENTRY[256]
-extern PALETTEENTRY g_PALETTEENTRY_ARRAY_02ddf570[256];
+extern PALETTEENTRY g_DDPaletteBuffer[256];
 
 // SCollisionInfo[100]
-extern SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100];
+extern SCollisionInfo g_WaterActorCollisionInfos[100];
 
 // SMRGLTextureModel
-extern SMRGLTextureModel g_SMRGLTextureModel_02dd0f88;
+extern SMRGLTextureModel g_CurrentTexture;
 
 // UVector3
 extern UVector3 g_ZeroVector;
@@ -89,25 +89,25 @@ extern char g_CHAR_ARRAY_02ddd5d4[4];
 extern float g_FLOAT_02dd1220;
 extern float g_FLOAT_02dd1224;
 extern float g_FLOAT_02dd1228;
-extern float g_FLOAT_02dd9260;
+extern float g_WaterAnimationPhase;
 
 // int
-extern int g_INT_02dd0f80;
-extern int g_INT_02dd122c;
-extern int g_INT_02dd1230;
-extern int g_INT_02dd1234;
-extern int g_INT_02dd925c;
-extern int g_INT_02ddf564;
-extern int g_INT_02ddf568;
-extern int g_INT_02ddf56c;
+extern int g_CurrentTextureIndex;
+extern int g_WaterAnimationTimer;
+extern int g_WaterCurrentFrame;
+extern int g_VisibleWaterTileCount;
+extern int g_WaterAnimationBlend;
+extern int g_FlipPending;
+extern int g_GraphicsResetFlag;
+extern int g_Display24BitFallback;
 
 // int[4096]
-extern int g_INT_ARRAY_02dd1238[4096];
-extern int g_INT_ARRAY_02dd5238[4096];
+extern int g_VisibleWaterTilesX[4096];
+extern int g_VisibleWaterTilesY[4096];
 
 // uchar[4]
-extern uchar g_UCHAR_ARRAY_02dd10c0[4];
-extern uchar g_UCHAR_ARRAY_02dd10c4[4];
+extern uchar g_BroadcastIP[4];
+extern uchar g_AnyAddressIP[4];
 
 // void*
 extern void* g_SoftwareFrameBuffer;

@@ -16,7 +16,7 @@
 ;   double g_DOUBLE_005dde44 = 2
 ;   int g_INT_01c37788
 ;   int g_INT_01d0c3a0
-;   void* g_PTR_0264bcd4
+;   void* g_APIDLL_setTextureClamp
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
@@ -90,7 +90,7 @@ section .text
     MOV dword ptr [EBX + 0x44],EAX      ; 004f54af
     MOV EAX,dword ptr [ESP + 0x44]      ; 004f54b2
     MOV dword ptr [EBX + 0x48],EAX      ; 004f54b6
-    MOV EDI,dword ptr [0x0264bcd4]      ; 004f54b9 | g_PTR_0264bcd4
+    MOV EDI,dword ptr [0x0264bcd4]      ; 004f54b9 | g_APIDLL_setTextureClamp
     FXCH ST5                            ; 004f54bf
     FSTP float ptr [EBX + 0xc]          ; 004f54c1
     FXCH ST3                            ; 004f54c4
@@ -147,7 +147,7 @@ section .text
     PUSH EAX                            ; 004f5551
     LEA EAX,[ESP + 0x24]                ; 004f5552
     PUSH EAX                            ; 004f5556
-    CALL dword ptr [0x0264bcd4]         ; 004f5557 | g_PTR_0264bcd4
+    CALL dword ptr [0x0264bcd4]         ; 004f5557 | g_APIDLL_setTextureClamp
     ADD ESP,0x1c                        ; 004f555d
     ADD ESP,0x1c                        ; 004f5560
     POP EDI                             ; 004f5563

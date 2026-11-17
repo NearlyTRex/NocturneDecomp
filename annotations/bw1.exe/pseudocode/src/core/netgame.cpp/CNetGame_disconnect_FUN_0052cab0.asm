@@ -37,12 +37,12 @@
 ;   double g_DOUBLE_005eb8f0 = 30
 ;   double g_DOUBLE_005eb8f8 = 0.100000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   int g_INT_01d51d9c
+;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
-;   int g_INT_01d51da8
-;   int g_INT_01d51dac
-;   int g_INT_01d51db4
-;   int g_INT_01d6dfb8
+;   int g_RemoteSyncStage
+;   int g_NetNextPlayerId
+;   int g_ChatHistoryCount
+;   int g_ChatOutCount
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360
@@ -83,11 +83,11 @@ section .text
     MOV byte ptr [ESI + 0x120],0x0      ; 0052caee
     XOR EDX,EDX                         ; 0052caf5
     MOV dword ptr [ESI],0x0             ; 0052caf7
-    MOV dword ptr [0x01d51db4],EDX      ; 0052cafd | g_INT_01d51db4
-    MOV dword ptr [0x01d6dfb8],EDX      ; 0052cb03 | g_INT_01d6dfb8
-    MOV dword ptr [0x01d51da8],EDX      ; 0052cb09 | g_INT_01d51da8
+    MOV dword ptr [0x01d51db4],EDX      ; 0052cafd | g_ChatHistoryCount
+    MOV dword ptr [0x01d6dfb8],EDX      ; 0052cb03 | g_ChatOutCount
+    MOV dword ptr [0x01d51da8],EDX      ; 0052cb09 | g_RemoteSyncStage
     MOV dword ptr [ESI + 0x1c],EDX      ; 0052cb0f
-    MOV dword ptr [0x01d51dac],EDX      ; 0052cb12 | g_INT_01d51dac
+    MOV dword ptr [0x01d51dac],EDX      ; 0052cb12 | g_NetNextPlayerId
     MOV dword ptr [ESI + 0x170],EDX     ; 0052cb18
     MOV ESP,EBP                         ; 0052cb1e
     POP EBP                             ; 0052cb20
@@ -108,10 +108,10 @@ section .text
     MOV EBX,0x12                        ; 0052cb40
     SAR EDX,0x1f                        ; 0052cb45
     IDIV EBX                            ; 0052cb48
-    MOV EDI,dword ptr [0x01d51d9c]      ; 0052cb4a | g_INT_01d51d9c
+    MOV EDI,dword ptr [0x01d51d9c]      ; 0052cb4a | g_LastPingTime
     MOV EDX,EAX                         ; 0052cb50
     SUB EAX,EDI                         ; 0052cb52
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052cb54 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052cb54 | g_LastPingTime
     TEST EAX,EAX                        ; 0052cb5a
     JL 0x0052cc38                       ; 0052cb5c
         ;   XREF to: 0052cc38 (CONDITIONAL_JUMP)  ; LAB_0052cc38
@@ -138,10 +138,10 @@ section .text
     MOV ECX,0x12                        ; 0052cba0
     SAR EDX,0x1f                        ; 0052cba5
     IDIV ECX                            ; 0052cba8
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cbaa | g_INT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cbaa | g_LastPingTime
     MOV EDX,EAX                         ; 0052cbb0
     SUB EAX,ECX                         ; 0052cbb2
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052cbb4 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052cbb4 | g_LastPingTime
     TEST EAX,EAX                        ; 0052cbba
     JL 0x0052cc3f                       ; 0052cbbc
         ;   XREF to: 0052cc3f (CONDITIONAL_JUMP)  ; LAB_0052cc3f
@@ -247,10 +247,10 @@ section .text
     MOV ECX,0x12                        ; 0052ccc1
     SAR EDX,0x1f                        ; 0052ccc6
     IDIV ECX                            ; 0052ccc9
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cccb | g_INT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cccb | g_LastPingTime
     MOV EDX,EAX                         ; 0052ccd1
     SUB EAX,ECX                         ; 0052ccd3
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052ccd5 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052ccd5 | g_LastPingTime
     TEST EAX,EAX                        ; 0052ccdb
     JL 0x0052ccee                       ; 0052ccdd
         ;   XREF to: 0052ccee (CONDITIONAL_JUMP)  ; LAB_0052ccee
@@ -308,10 +308,10 @@ section .text
     MOV EBX,0x12                        ; 0052cd5f
     SAR EDX,0x1f                        ; 0052cd64
     IDIV EBX                            ; 0052cd67
-    MOV EDI,dword ptr [0x01d51d9c]      ; 0052cd69 | g_INT_01d51d9c
+    MOV EDI,dword ptr [0x01d51d9c]      ; 0052cd69 | g_LastPingTime
     MOV EDX,EAX                         ; 0052cd6f
     SUB EAX,EDI                         ; 0052cd71
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052cd73 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052cd73 | g_LastPingTime
     TEST EAX,EAX                        ; 0052cd79
     JL 0x0052ce5b                       ; 0052cd7b
         ;   XREF to: 0052ce5b (CONDITIONAL_JUMP)  ; LAB_0052ce5b
@@ -338,10 +338,10 @@ section .text
     MOV ECX,0x12                        ; 0052cdbf
     SAR EDX,0x1f                        ; 0052cdc4
     IDIV ECX                            ; 0052cdc7
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cdc9 | g_INT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cdc9 | g_LastPingTime
     MOV EDX,EAX                         ; 0052cdcf
     SUB EAX,ECX                         ; 0052cdd1
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052cdd3 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052cdd3 | g_LastPingTime
     TEST EAX,EAX                        ; 0052cdd9
     JL 0x0052ce62                       ; 0052cddb
         ;   XREF to: 0052ce62 (CONDITIONAL_JUMP)  ; LAB_0052ce62
@@ -449,10 +449,10 @@ section .text
     MOV ECX,0x12                        ; 0052ceed
     SAR EDX,0x1f                        ; 0052cef2
     IDIV ECX                            ; 0052cef5
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cef7 | g_INT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052cef7 | g_LastPingTime
     MOV EDX,EAX                         ; 0052cefd
     SUB EAX,ECX                         ; 0052ceff
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052cf01 | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052cf01 | g_LastPingTime
     TEST EAX,EAX                        ; 0052cf07
     JL 0x0052cf1d                       ; 0052cf09
         ;   XREF to: 0052cf1d (CONDITIONAL_JUMP)  ; LAB_0052cf1d

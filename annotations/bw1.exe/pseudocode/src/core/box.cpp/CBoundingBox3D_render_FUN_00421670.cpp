@@ -61,8 +61,8 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_00421670(CBoundingBox3D *thi
                               (g_CDemonRenderer_PTR_00612560);
   pCVar1 = g_CDemonRenderer_PTR_00612560;
   if (puVar2 == (uchar *)0x0) {
-    g_UCHAR_PTR_01c50930 = puVar2;
-    g_UCHAR_PTR_01c50934 = puVar2;
+    g_CurrentTextureData = puVar2;
+    g_CurrentTextureOpacityData = puVar2;
     g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r = 0x7fff;
     pCVar1->vertex_buffer_ptr->g = 0;
     pCVar1->vertex_buffer_ptr->b = 0;

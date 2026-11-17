@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01d086f0
+;   int g_CustomKeyCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -22,10 +22,10 @@ section .text
     PUSH ESI                            ; 004ee8e0
         ;   Label: core_menu.cpp_addCustomKeyBinding_FUN_004ee8e0
     PUSH EDI                            ; 004ee8e1
-    CMP dword ptr [0x01d086f0],0x26     ; 004ee8e2 | g_INT_01d086f0
+    CMP dword ptr [0x01d086f0],0x26     ; 004ee8e2 | g_CustomKeyCount
     JGE 0x004ee933                      ; 004ee8e9
         ;   XREF to: 004ee933 (CONDITIONAL_JUMP)  ; LAB_004ee933
-    MOV EAX,[0x01d086f0]                ; 004ee8eb | g_INT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ee8eb | g_CustomKeyCount
         ;   Label: LAB_004ee8eb
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ee8f0
     MOV dword ptr [EAX*0x4 + 0x1d086f4],EDX ; 004ee8f4
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 004ee911 (CONDITIONAL_JUMP)  ; LAB_004ee911
     POP EDI                             ; 004ee929
         ;   Label: LAB_004ee929
-    INC dword ptr [0x01d086f0]          ; 004ee92a | g_INT_01d086f0
+    INC dword ptr [0x01d086f0]          ; 004ee92a | g_CustomKeyCount
     POP EDI                             ; 004ee930
     POP ESI                             ; 004ee931
     RET                                 ; 004ee932

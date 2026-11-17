@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   int g_INT_01c37788
 ;   int g_INT_01d0c3a0
-;   void* g_PTR_0264bcd4
-;   void* g_PTR_0264bcd8
+;   void* g_APIDLL_setTextureClamp
+;   void* g_APIDLL_setFog
 ;
 ; *****************************************************************************
 
@@ -31,13 +31,13 @@ section .text
     CMP dword ptr [0x01d0c3a0],0x0      ; 004f5583 | g_INT_01d0c3a0
     JZ 0x004f55e2                       ; 004f558a
         ;   XREF to: 004f55e2 (CONDITIONAL_JUMP)  ; LAB_004f55e2
-    CMP dword ptr [0x0264bcd4],0x0      ; 004f5590 | g_PTR_0264bcd4
+    CMP dword ptr [0x0264bcd4],0x0      ; 004f5590 | g_APIDLL_setTextureClamp
     JZ 0x004f55ab                       ; 004f5597
         ;   XREF to: 004f55ab (CONDITIONAL_JUMP)  ; LAB_004f55ab
     CMP dword ptr [0x01c37788],0x0      ; 004f5599 | g_INT_01c37788
     JZ 0x004f55ab                       ; 004f55a0
         ;   XREF to: 004f55ab (CONDITIONAL_JUMP)  ; LAB_004f55ab
-    CMP dword ptr [0x0264bcd8],0x0      ; 004f55a2 | g_PTR_0264bcd8
+    CMP dword ptr [0x0264bcd8],0x0      ; 004f55a2 | g_APIDLL_setFog
     JZ 0x004f55e2                       ; 004f55a9
         ;   XREF to: 004f55e2 (CONDITIONAL_JUMP)  ; LAB_004f55e2
     TEST EDI,EDI                        ; 004f55ab
@@ -58,7 +58,7 @@ section .text
     JL 0x004f55c3                       ; 004f55cc
         ;   XREF to: 004f55c3 (CONDITIONAL_JUMP)  ; LAB_004f55c3
     MOV EAX,EAX                         ; 004f55ce
-    CMP dword ptr [0x0264bcd8],0x0      ; 004f55d0 | g_PTR_0264bcd8
+    CMP dword ptr [0x0264bcd8],0x0      ; 004f55d0 | g_APIDLL_setFog
         ;   Label: LAB_004f55d0
     JZ 0x004f55e2                       ; 004f55d7
         ;   XREF to: 004f55e2 (CONDITIONAL_JUMP)  ; LAB_004f55e2
@@ -74,7 +74,7 @@ section .text
     RET                                 ; 004f55e9
     PUSH 0x1d0d280                      ; 004f55ea
         ;   Label: LAB_004f55ea
-    CALL dword ptr [0x0264bcd8]         ; 004f55ef | g_PTR_0264bcd8
+    CALL dword ptr [0x0264bcd8]         ; 004f55ef | g_APIDLL_setFog
     ADD ESP,0x4                         ; 004f55f5
     JMP 0x004f55e2                      ; 004f55f8
         ;   XREF to: 004f55e2 (UNCONDITIONAL_JUMP)  ; LAB_004f55e2
@@ -272,7 +272,7 @@ section .text
     CMP ECX,ESI                         ; 004f57fb
     JL 0x004f5616                       ; 004f57fd
         ;   XREF to: 004f5616 (CONDITIONAL_JUMP)  ; LAB_004f5616
-    CMP dword ptr [0x0264bcd8],0x0      ; 004f5803 | g_PTR_0264bcd8
+    CMP dword ptr [0x0264bcd8],0x0      ; 004f5803 | g_APIDLL_setFog
         ;   Label: LAB_004f5803
     JZ 0x004f55e2                       ; 004f580a
         ;   XREF to: 004f55e2 (CONDITIONAL_JUMP)  ; LAB_004f55e2
@@ -280,7 +280,7 @@ section .text
     JZ 0x004f55e2                       ; 004f5817
         ;   XREF to: 004f55e2 (CONDITIONAL_JUMP)  ; LAB_004f55e2
     PUSH 0x1d0d280                      ; 004f581d
-    CALL dword ptr [0x0264bcd8]         ; 004f5822 | g_PTR_0264bcd8
+    CALL dword ptr [0x0264bcd8]         ; 004f5822 | g_APIDLL_setFog
     ADD ESP,0x4                         ; 004f5828
     ADD ESP,0x34                        ; 004f582b
     POP EBP                             ; 004f582e

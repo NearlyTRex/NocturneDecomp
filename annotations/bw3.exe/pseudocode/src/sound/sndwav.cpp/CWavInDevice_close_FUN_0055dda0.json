@@ -72,7 +72,7 @@
     },
     {
       "addr": "02cf5504",
-      "name": "g_INT_02cf5504",
+      "name": "g_WaveInHandle",
       "type": "int",
       "value": null
     }
@@ -165,65 +165,65 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf55a8",
+      "match": "(HGLOBAL *)((int)g_WaveInBufferHandles",
       "severity": "moderate",
-      "text": "if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf55a8 + iVar1) != (HGLOBAL)0x0) {",
+      "text": "if (*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar1) != (HGLOBAL)0x0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf55a8",
+      "match": "(HGLOBAL *)((int)g_WaveInBufferHandles",
       "severity": "moderate",
-      "text": "GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf55a8 + iVar1));",
+      "text": "GlobalFree(*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(uint *)((int)g_HGLOBAL_ARRAY_02cf55a8",
+      "match": "(uint *)((int)g_WaveInBufferHandles",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_HGLOBAL_ARRAY_02cf55a8 + iVar1) = 0;",
+      "text": "*(uint *)((int)g_WaveInBufferHandles + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(uint *)((int)g_INT_ARRAY_02cf55f8",
+      "match": "(uint *)((int)g_WaveInBuffers",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_INT_ARRAY_02cf55f8 + iVar1) = 0;",
+      "text": "*(uint *)((int)g_WaveInBuffers + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf5508",
+      "match": "(HGLOBAL *)((int)g_WaveInHeaderHandles",
       "severity": "moderate",
-      "text": "if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf5508 + iVar1) != (HGLOBAL)0x0) {",
+      "text": "if (*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar1) != (HGLOBAL)0x0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf5508",
+      "match": "(HGLOBAL *)((int)g_WaveInHeaderHandles",
       "severity": "moderate",
-      "text": "GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf5508 + iVar1));",
+      "text": "GlobalFree(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(uint *)((int)g_HGLOBAL_ARRAY_02cf5508",
+      "match": "(uint *)((int)g_WaveInHeaderHandles",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_HGLOBAL_ARRAY_02cf5508 + iVar1) = 0;",
+      "text": "*(uint *)((int)g_WaveInHeaderHandles + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(uint *)((int)g_LPWAVEHDR_ARRAY_02cf5558",
+      "match": "(uint *)((int)g_WaveInHeaders",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar1) = 0;",
+      "text": "*(uint *)((int)g_WaveInHeaders + iVar1) = 0;",
       "type": "pointer_cast"
     }
   ],

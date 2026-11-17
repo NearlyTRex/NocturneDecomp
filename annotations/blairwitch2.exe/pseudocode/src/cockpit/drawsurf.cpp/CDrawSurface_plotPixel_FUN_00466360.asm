@@ -17,10 +17,10 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_01ba5c28
-;   int g_INT_01ba5c34
-;   int g_INT_01ba5c38
-;   int g_INT_01ba5c48
+;   int g_CurrentDrawColor
+;   int g_UseRGBConversion
+;   int g_OriginalColorValue
+;   int g_PackedPixelColor
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -56,7 +56,7 @@ section .text
     CMP ECX,dword ptr [EDX + 0x1c]      ; 0046638b
     JG 0x004663cb                       ; 0046638e
         ;   XREF to: 004663cb (CONDITIONAL_JUMP)  ; LAB_004663cb
-    MOV EDI,dword ptr [0x01ba5c34]      ; 00466390 | g_INT_01ba5c34
+    MOV EDI,dword ptr [0x01ba5c34]      ; 00466390 | g_UseRGBConversion
     LEA ESI,[EAX + EAX*0x1]             ; 00466396
     SHL ECX,0x2                         ; 00466399
     LEA EBX,[EAX*0x4 + 0x0]             ; 0046639c
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 004663fa (CONDITIONAL_JUMP)  ; LAB_004663fa
     MOV EDX,dword ptr [ECX + 0x1c2a38c] ; 004663bb
     ADD EAX,EDX                         ; 004663c1
-    MOV DL,byte ptr [0x01ba5c28]        ; 004663c3 | g_INT_01ba5c28
+    MOV DL,byte ptr [0x01ba5c28]        ; 004663c3 | g_CurrentDrawColor
     MOV byte ptr [EAX],DL               ; 004663c9
     POP EBP                             ; 004663cb
         ;   Label: LAB_004663cb
@@ -83,7 +83,7 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c2a38c] ; 004663d0
         ;   Label: LAB_004663d0
     ADD ESI,EAX                         ; 004663d6
-    MOV AX,[0x01ba5c28]                 ; 004663d8 | g_INT_01ba5c28
+    MOV AX,[0x01ba5c28]                 ; 004663d8 | g_CurrentDrawColor
     MOV word ptr [ESI],AX               ; 004663de
     POP EBP                             ; 004663e1
     POP EDI                             ; 004663e2
@@ -93,7 +93,7 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c2a38c] ; 004663e6
         ;   Label: LAB_004663e6
     ADD EBX,EAX                         ; 004663ec
-    MOV EAX,[0x01ba5c28]                ; 004663ee | g_INT_01ba5c28
+    MOV EAX,[0x01ba5c28]                ; 004663ee | g_CurrentDrawColor
     MOV dword ptr [EBX],EAX             ; 004663f3
     POP EBP                             ; 004663f5
     POP EDI                             ; 004663f6
@@ -125,9 +125,9 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c2a38c] ; 0046642b
         ;   Label: LAB_0046642b
     XOR EDX,EDX                         ; 00466431
-    MOV CL,byte ptr [0x01ba5c38]        ; 00466433 | g_INT_01ba5c38
+    MOV CL,byte ptr [0x01ba5c38]        ; 00466433 | g_OriginalColorValue
     MOV DX,word ptr [ESI + EAX*0x1]     ; 00466439
-    MOV EBP,dword ptr [0x01ba5c48]      ; 0046643d | g_INT_01ba5c48
+    MOV EBP,dword ptr [0x01ba5c48]      ; 0046643d | g_PackedPixelColor
     SHR EDX,CL                          ; 00466443
     AND EDX,EBP                         ; 00466445
     MOV word ptr [ESI + EAX*0x1],DX     ; 00466447
@@ -138,11 +138,11 @@ section .text
     RET                                 ; 0046644f
     MOV EDX,dword ptr [ECX + 0x1c2a38c] ; 00466450
         ;   Label: LAB_00466450
-    MOV CL,byte ptr [0x01ba5c38]        ; 00466456 | g_INT_01ba5c38
+    MOV CL,byte ptr [0x01ba5c38]        ; 00466456 | g_OriginalColorValue
     MOV EAX,dword ptr [EDX + EBX*0x1]   ; 0046645c
     SHR EAX,CL                          ; 0046645f
     MOV ECX,EAX                         ; 00466461
-    MOV EAX,[0x01ba5c48]                ; 00466463 | g_INT_01ba5c48
+    MOV EAX,[0x01ba5c48]                ; 00466463 | g_PackedPixelColor
     AND ECX,EAX                         ; 00466468
     MOV dword ptr [EDX + EBX*0x1],ECX   ; 0046646a
     POP EBP                             ; 0046646d

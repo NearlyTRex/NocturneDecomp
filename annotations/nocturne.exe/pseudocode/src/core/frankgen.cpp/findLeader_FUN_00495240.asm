@@ -12,7 +12,7 @@
 ;   TerminatedCString s_core_frankgen_cpp_00581d72
 ;   TerminatedCString s_CFrankenstienMachine_fin_00581d87
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CFrankenstienMachineActorType_01c71304.name_hash
+;   undefined4 g_CFrankenstienMachineClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -39,7 +39,7 @@ section .text
     CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 0049524d | g_CDemonSetInstance.actor_count
     JGE 0x0049527a                      ; 00495253
         ;   XREF to: 0049527a (CONDITIONAL_JUMP)  ; LAB_0049527a
-    MOV EDI,dword ptr [0x01c7133c]      ; 00495255 | g_CFrankenstienMachineActorType_01c71304.name_hash
+    MOV EDI,dword ptr [0x01c7133c]      ; 00495255 | g_CFrankenstienMachineClassInfo.name_hash
     PUSH EDI                            ; 0049525b
     MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EBP                            ; 00495263

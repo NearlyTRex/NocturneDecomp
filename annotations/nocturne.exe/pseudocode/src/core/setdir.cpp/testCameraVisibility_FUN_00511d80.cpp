@@ -144,14 +144,14 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
       local_28 = 0;
       local_3c = 0;
       local_1c = 0x180;
-      if (0 < g_INT_026639ec) {
+      if (0 < g_VDNearbyActorCount) {
         local_48 = 100.0f * 100.0f;
         local_30 = 0;
-        local_2c = g_CBoundingBox3D_ARRAY_02665930;
+        local_2c = g_VDNearbyActorBoundingBoxes;
         local_4c = g_ThumbZBufferTable + camera_index;
         local_34 = &camera->position;
         do {
-          local_20 = *(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_026639f0 + local_30);
+          local_20 = *(CDemonActor **)((int)g_VDNearbyActorPointers + local_30);
           fVar2 = (local_20->location).position.x - local_34->x;
           fVar4 = (local_20->location).position.y - local_34->y;
           fVar3 = (local_20->location).position.z - local_34->z;
@@ -248,7 +248,7 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
           local_30 = local_30 + 4;
           local_2c = local_2c + 1;
           local_28 = local_28 + 1;
-        } while (local_28 < g_INT_026639ec);
+        } while (local_28 < g_VDNearbyActorCount);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
                 (g_CDemonRenderer_PTR_005ae704,0);

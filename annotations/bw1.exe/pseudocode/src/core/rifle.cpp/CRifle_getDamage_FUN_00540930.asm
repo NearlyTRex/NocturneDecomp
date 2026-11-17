@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_COMBATMODEHARD_005edca3
 ;   float g_FLOAT_005edcb3 = 2
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.game_control
 ;
@@ -37,7 +37,7 @@ section .text
     PUSH EBX                            ; 0054094e
         ;   Label: LAB_0054094e
     PUSH 0x5edca3                       ; 0054094f | = "COMBATMODEHARD"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00540954 | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00540954 | g_CEventListPtr
     PUSH ECX                            ; 0054095a
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0054095b
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

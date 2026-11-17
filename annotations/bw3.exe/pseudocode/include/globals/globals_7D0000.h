@@ -20,8 +20,8 @@
 extern CAlphaBitmap CAlphaBitmap_ARRAY_007dffc0[4];
 
 // CDemonActor*
-extern CDemonActor* g_CDemonActor_PTR_007df974;
-extern CDemonActor* g_CDemonActor_PTR_007df9bc;
+extern CDemonActor* g_CurrentProcessingActor;
+extern CDemonActor* g_CurrentActorBeingProcessed;
 
 // CDemonActorType
 extern CDemonActorType g_CDemonActorClassInfo;
@@ -38,28 +38,28 @@ extern CDemonActorType g_CBirdClassInfo;
 extern CDemonActorType g_CBlunderbusClassInfo;
 
 // CDemonActorType*[200]
-extern CDemonActorType* g_CDemonActorType_PTR_ARRAY_007df9c8[200];
+extern CDemonActorType* g_ActorClassRegistrations[200];
 
 // CPuzzle*
 extern CPuzzle* g_CPuzzle_PTR_007dffb4;
 
 // SMRGLHeaderPrimitive*[2000]
-extern SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007dd9f4[2000];
+extern SMRGLHeaderPrimitive* g_RenderFaceArray[2000];
 
 // SRenderBufferEntry*[2500]
-extern SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007db2e0[2500];
+extern SRenderBufferEntry* g_RenderBufferSortArray[2500];
 
 // _FILE*
-extern _FILE* g_FILE_PTR_007df9b4;
+extern _FILE* g_ActorDataFile;
 
 // char[52]
-extern char g_CHAR_ARRAY_007df940[52];
+extern char g_ActorDebugBuffer[52];
 
 // int
-extern int g_INT_007dd9f0;
-extern int g_INT_007df9b8;
-extern int g_INT_007df9c0;
-extern int g_INT_007df9c4;
+extern int g_RenderFaceCount;
+extern int g_ActorReadingMode;
+extern int g_IncludeCommentsWhenWriting;
+extern int g_NumActorClassTypes;
 extern int g_INT_007dff08;
 extern int g_INT_007dffb8;
 extern int g_INT_007dffbc;
@@ -68,7 +68,7 @@ extern int g_INT_007dffbc;
 extern int g_INT_ARRAY_007dff88[1];
 
 // uint
-extern uint g_UINT_007dfce8;
+extern uint g_RandomSeedValue;
 
 // undefined4
 extern undefined4 DAT_007dff8c;

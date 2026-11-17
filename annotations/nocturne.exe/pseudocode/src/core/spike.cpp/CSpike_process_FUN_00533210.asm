@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00595032 = 0.0000100000000000000
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
@@ -50,7 +50,7 @@ section .text
     LEA EAX,[EBX + 0x2e8]               ; 0053322e
         ;   Label: LAB_0053322e
     PUSH EAX                            ; 00533234
-    MOV EBP,dword ptr [0x005b7650]      ; 00533235 | g_CEventList_PTR_005b7650
+    MOV EBP,dword ptr [0x005b7650]      ; 00533235 | g_CEventListPtr
     PUSH EBP                            ; 0053323b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0053323c
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -62,7 +62,7 @@ section .text
     LEA EAX,[EBX + 0x34c]               ; 00533252
         ;   Label: LAB_00533252
     PUSH EAX                            ; 00533258
-    MOV EAX,[0x005b7650]                ; 00533259 | g_CEventList_PTR_005b7650
+    MOV EAX,[0x005b7650]                ; 00533259 | g_CEventListPtr
     PUSH EAX                            ; 0053325e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0053325f
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -166,7 +166,7 @@ section .text
     LEA EAX,[EBX + 0x3b0]               ; 00533395
         ;   Label: LAB_00533395
     PUSH EAX                            ; 0053339b
-    MOV ESI,dword ptr [0x005b7650]      ; 0053339c | g_CEventList_PTR_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 0053339c | g_CEventListPtr
     PUSH ESI                            ; 005333a2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005333a3
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -178,7 +178,7 @@ section .text
     LEA EAX,[EBX + 0x414]               ; 005333b9
         ;   Label: LAB_005333b9
     PUSH EAX                            ; 005333bf
-    MOV EDI,dword ptr [0x005b7650]      ; 005333c0 | g_CEventList_PTR_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 005333c0 | g_CEventListPtr
     PUSH EDI                            ; 005333c6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005333c7
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

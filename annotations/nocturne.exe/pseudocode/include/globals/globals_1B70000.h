@@ -17,32 +17,32 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CDripActorType_01b7b2f4;
-extern CDemonActorType g_CDroneActorType_01b7b4ac;
+extern CDemonActorType g_CDripClassInfo;
+extern CDemonActorType g_CDroneClassInfo;
 
 // CDemonCube*[20000]
-extern CDemonCube* g_CDemonCube_PTR_ARRAY_01b7b74c[20000];
+extern CDemonCube* g_PVSCubePointers[20000];
 
 // CKeyFramedModelInstance
-extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01b7b330;
+extern CKeyFramedModelInstance g_StalactiteRockModelInstance;
 
 // CVector3f
-extern CVector3f g_CVector3f_01b7b728;
+extern CVector3f g_SkyDomeCenter;
 
 // SFace*[5000]
-extern SFace* g_SFace_PTR_ARRAY_01b748b4[5000];
+extern SFace* g_CapturedFacePointers[5000];
 
 // SMRGLSkyTexture[24]
-extern SMRGLSkyTexture g_SMRGLSkyTexture_ARRAY_01b7b4e8[24];
+extern SMRGLSkyTexture g_SkyDomeTextureData[24];
 
 // SMRGLTextureBasic[300]
-extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01b796d4[300];
+extern SMRGLTextureBasic g_CapturedTextureArray[300];
 
 // int
-extern int g_INT_01b7b734;
-extern int g_INT_01b7b738;
-extern int g_INT_01b7b73c;
-extern int g_INT_01b7b740;
-extern int g_INT_01b7b744;
-extern int g_INT_01b7b748;
+extern int g_CubesTestedCount;
+extern int g_CubesWithVoxelsCount;
+extern int g_CubesVisibleCount;
+extern int g_CubesRenderedCount;
+extern int g_PVSDrawnCubeCount;
+extern int g_PVSReadyFlag;
 

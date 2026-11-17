@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CGround* g_CGroundPtr = 01d5b8a8
-;   undefined4 g_CTerrain_02cfd8b8.initialized
+;   undefined4 g_CTerrainInstance.initialized
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_free_FUN_004cfc70
@@ -28,6 +28,6 @@ section .text
         ;   XREF to: 004cfc70 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_free_FUN_004cfc70(CGround * this_ptr)
     XOR ECX,ECX                         ; 005723bc
     ADD ESP,0x4                         ; 005723be
-    MOV dword ptr [0x02cfd8bc],ECX      ; 005723c1 | g_CTerrain_02cfd8b8.initialized
+    MOV dword ptr [0x02cfd8bc],ECX      ; 005723c1 | g_CTerrainInstance.initialized
     RET                                 ; 005723c7
 

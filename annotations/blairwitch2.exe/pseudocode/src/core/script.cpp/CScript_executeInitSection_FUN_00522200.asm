@@ -25,7 +25,7 @@
 ;   CGame g_CGameInstance
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   int g_INT_01e650f8
+;   int g_ScriptEventsEnabled
 ;   int g_INT_01e65904
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00522206
     XOR EDX,EDX                         ; 0052220a
     MOV ECX,dword ptr [EBX + 0x2c]      ; 0052220c
-    MOV dword ptr [0x01e650f8],EDX      ; 0052220f | g_INT_01e650f8
+    MOV dword ptr [0x01e650f8],EDX      ; 0052220f | g_ScriptEventsEnabled
     CMP ECX,0x1                         ; 00522215
     JL 0x00522220                       ; 00522218
         ;   XREF to: 00522220 (CONDITIONAL_JUMP)  ; LAB_00522220
@@ -94,7 +94,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x44]      ; 0052226f
     MOV dword ptr [ESP + 0xc],ECX       ; 00522272
     CALL core_script.cpp_CScript_step_FUN_00522350 ; 00522276
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 0052227b
     TEST EAX,EAX                        ; 0052227e
     JL 0x005222e1                       ; 00522280

@@ -32,12 +32,12 @@ void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_004f40a0(float *vertices,int ve
   uint local_14;
   
   bVar11 = 0;
-  g_INT_01e61b58 = g_INT_01e61b58 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   g_INT_01d09854 = g_INT_01d09854 + vertex_count;
   if (g_INT_01d0d2b4 == 0) {
     engine_mini3d_cpp_updateTransform_FUN_004f3740();
     engine_mini3d_cpp_updateRenderState_FUN_004f7da0();
-    if ((g_PTR_0264bc9c == (byte *)0x0) || (g_INT_01c37788 == 0)) {
+    if ((g_APIDLL_restoreVideoModeX == (byte *)0x0) || (g_INT_01c37788 == 0)) {
       engine_mini3d_cpp_allocVertexList_FUN_004f38c0();
       if (10000 < vertex_count) {
         g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
@@ -136,8 +136,8 @@ LAB_004f435c:
       engine_mini3d_cpp_fillPolygon_FUN_004f7a50(local_124,4);
     }
     else {
-      (*(code *)g_PTR_0264bc9c)
-                (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c38b54.dword);
+      (*(code *)g_APIDLL_restoreVideoModeX)
+                (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     }
   }
   else {

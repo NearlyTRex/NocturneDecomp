@@ -32,7 +32,7 @@
 ;   TerminatedCString s_mp3_005e7ee9
 ;   TerminatedCString s_mp3_005e7eed
 ;   TerminatedCString s_startSfx_can_t_get_sampl_005e8d15
-;   int g_INT_0061bc80 = 0x1
+;   int g_SfxPlaybackStateCounter = 0x1
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   undefined4 g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]
@@ -116,7 +116,7 @@ section .text
         ;   XREF to: 005506ff (CONDITIONAL_JUMP)  ; LAB_005506ff
     POP EDI                             ; 00550717
         ;   Label: LAB_00550717
-    MOV EBX,dword ptr [0x0264161c]      ; 00550718 | g_INT_0264161c
+    MOV EBX,dword ptr [0x0264161c]      ; 00550718 | g_SfxLastSlot
     LEA EAX,[EBX*0x4 + 0x0]             ; 0055071e
     SUB EAX,EBX                         ; 00550725
     MOV ECX,0x18                        ; 00550727
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 005506cc (CONDITIONAL_JUMP)  ; LAB_005506cc
     CALL sound_sndmain.cpp_lockSound_FUN_005532f0 ; 00550756
         ;   XREF to: 005532f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005532f0()
-    CMP dword ptr [0x0264901c],0x0      ; 0055075b | g_INT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0055075b | g_SoundLockCount
     JLE 0x00550945                      ; 00550762
         ;   XREF to: 00550945 (CONDITIONAL_JUMP)  ; LAB_00550945
     MOV EBP,dword ptr [0x0263cf80]      ; 00550768 | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
@@ -223,12 +223,12 @@ section .text
     JNZ 0x00550864                      ; 00550873
         ;   XREF to: 00550864 (CONDITIONAL_JUMP)  ; LAB_00550864
     MOV EAX,dword ptr [EBP + 0x68]      ; 00550875 | g_CSfxSlot_ARRAY_0263cf1c[1].sample
-    MOV ECX,dword ptr [0x0061bc80]      ; 00550878 | g_INT_0061bc80
+    MOV ECX,dword ptr [0x0061bc80]      ; 00550878 | g_SfxPlaybackStateCounter
     FLD float ptr [EAX + 0x114]         ; 0055087e
     INC ECX                             ; 00550884
     MOV EAX,dword ptr [EBP + 0x68]      ; 00550885 | g_CSfxSlot_ARRAY_0263cf1c[1].sample
     FSTP float ptr [EBP + 0xf0]         ; 00550888
-    MOV dword ptr [0x0061bc80],ECX      ; 0055088e | g_INT_0061bc80
+    MOV dword ptr [0x0061bc80],ECX      ; 0055088e | g_SfxPlaybackStateCounter
     FLD float ptr [EAX + 0x118]         ; 00550894
     MOV EAX,dword ptr [EBP + 0x68]      ; 0055089a | g_CSfxSlot_ARRAY_0263cf1c[1].sample
     FSTP float ptr [EBP + 0xf4]         ; 0055089d
@@ -238,12 +238,12 @@ section .text
     CMP ECX,0xffffff                    ; 005508b9
     JL 0x005508cb                       ; 005508bf
         ;   XREF to: 005508cb (CONDITIONAL_JUMP)  ; LAB_005508cb
-    MOV dword ptr [0x0061bc80],0x1      ; 005508c1 | g_INT_0061bc80
+    MOV dword ptr [0x0061bc80],0x1      ; 005508c1 | g_SfxPlaybackStateCounter
     PUSH 0x4479c000                     ; 005508cb
         ;   Label: LAB_005508cb
     PUSH 0x4479c000                     ; 005508d0
     MOV EDI,dword ptr [EBP + 0x68]      ; 005508d5 | g_CSfxSlot_ARRAY_0263cf1c[1].sample
-    MOV EBX,dword ptr [0x0061bc80]      ; 005508d8 | g_INT_0061bc80
+    MOV EBX,dword ptr [0x0061bc80]      ; 005508d8 | g_SfxPlaybackStateCounter
     PUSH EDI                            ; 005508de
     MOV dword ptr [EBP + 0x64],EBX      ; 005508df | g_CSfxSlot_ARRAY_0263cf1c[1].playback_state
     CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 ; 005508e2
@@ -264,7 +264,7 @@ section .text
         ;   XREF to: 00550a34 (CONDITIONAL_JUMP)  ; LAB_00550a34
     MOV EDI,dword ptr [EBP + 0x68]      ; 00550907 | g_CSfxSlot_ARRAY_0263cf1c[1].sample
     MOV EDX,dword ptr [EDI + 0x158]     ; 0055090a
-    MOV EAX,[0x02648e80]                ; 00550910 | g_CSoundDevice_PTR_02648e80
+    MOV EAX,[0x02648e80]                ; 00550910 | g_CSoundDevicePtr
     PUSH EDX                            ; 00550915
     MOV ESI,dword ptr [EAX]             ; 00550916
     PUSH EAX                            ; 00550918

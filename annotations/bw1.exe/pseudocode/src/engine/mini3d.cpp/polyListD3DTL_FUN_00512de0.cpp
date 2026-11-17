@@ -32,7 +32,7 @@ void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_00512de0(float *vertices,int ve
   uint local_14;
   
   bVar11 = 0;
-  g_INT_01e7dac8 = g_INT_01e7dac8 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   g_INT_01d224b4 = g_INT_01d224b4 + vertex_count;
   if (g_INT_01d25f14 == 0) {
     engine_mini3d_cpp_updateTransform_FUN_005124f0();
@@ -140,7 +140,7 @@ LAB_005130ac:
     }
     else {
       (*(code *)g_PTR_02c8346c)
-                (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c51d14.dword);
+                (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     }
   }
   else {

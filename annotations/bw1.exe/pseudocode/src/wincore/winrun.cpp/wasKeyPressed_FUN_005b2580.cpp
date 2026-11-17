@@ -9,5 +9,5 @@
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(void)
 
 {
-  return (uint)(g_INT_02c9a618 != g_INT_02c9a61c);
+  return (uint)(g_InputReadIndex != g_InputWriteIndex);
 }

@@ -9,6 +9,7 @@
 int __cdecl sound_sndwav_cpp_getWavInBufferSizeBytes_FUN_0057ab90(void)
 
 {
-  return ((int)((g_INT_02c82a1c + (g_INT_02c82a1c >> 0x1f) * -8) -
-               (uint)((g_INT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c82a2c * g_INT_02c82a20;
+  return ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
+               (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples *
+         g_WaveInChannels;
 }

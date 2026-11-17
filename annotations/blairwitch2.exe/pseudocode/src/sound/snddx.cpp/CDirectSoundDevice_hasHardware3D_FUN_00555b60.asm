@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005e9a3b
 ;   TerminatedCString s_Querry_DirectSound_capab_005e9bd7
-;   IDirectSound* g_IDirectSound_PTR_0264a5c4
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_0264a5d0
+;   IDirectSound* g_DirectSound
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -25,10 +25,10 @@ section .text
     PUSH EBX                            ; 00555b60
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00555b60
     SUB ESP,0x1f0                       ; 00555b61
-    CMP dword ptr [0x0264a5c4],0x0      ; 00555b67 | g_IDirectSound_PTR_0264a5c4
+    CMP dword ptr [0x0264a5c4],0x0      ; 00555b67 | g_DirectSound
     JZ 0x00555b87                       ; 00555b6e
         ;   XREF to: 00555b87 (CONDITIONAL_JUMP)  ; LAB_00555b87
-    MOV ECX,dword ptr [0x0264a5d0]      ; 00555b70 | g_IDirectSound3DListener_PTR_0264a5d0
+    MOV ECX,dword ptr [0x0264a5d0]      ; 00555b70 | g_DirectSound3DListener
     TEST ECX,ECX                        ; 00555b76
     JZ 0x00555b8b                       ; 00555b78
         ;   XREF to: 00555b8b (CONDITIONAL_JUMP)  ; LAB_00555b8b
@@ -52,7 +52,7 @@ section .text
     LEA ECX,[ESP + 0x190]               ; 00555b9e
     MOV EBX,0x60                        ; 00555ba5
     PUSH ECX                            ; 00555baa
-    MOV EAX,[0x0264a5c4]                ; 00555bab | g_IDirectSound_PTR_0264a5c4
+    MOV EAX,[0x0264a5c4]                ; 00555bab | g_DirectSound
     MOV dword ptr [ESP + 0x194],EBX     ; 00555bb0
     PUSH EAX                            ; 00555bb7
     MOV EDX,dword ptr [EAX]             ; 00555bb8

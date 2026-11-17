@@ -43,8 +43,8 @@ void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_004fdd00(CScat *this
               (&local_130,&local_28,&local_40);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (&local_130,
-               (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               g_INT_ARRAY_01e53388[0xe],&local_d0);
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_ScatIndices[0xe],
+               &local_d0);
     pCVar3 = &local_d0;
     pCVar4 = &local_70;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

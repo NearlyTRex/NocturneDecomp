@@ -40,7 +40,7 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_004de550(CMoloch *this_ptr)
         core_morph_cpp_CMorph_render_FUN_004e0820
                   (this_ptr_00,this_ptr->morph_timer / 2.0f);
       }
-      if (g_INT_01cd4318 != 0) {
+      if (g_RenderMotionDebug != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                           (g_CDemonRenderer_PTR_005ae704);
         if (iVar2 == 0) {

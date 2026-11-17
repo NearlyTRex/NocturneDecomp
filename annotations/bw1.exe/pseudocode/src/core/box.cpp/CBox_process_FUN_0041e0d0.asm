@@ -18,8 +18,8 @@
 ;   core_weapon.cpp_CWeapon_process_FUN_005ad770 at 005ad7d9
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005d4a98 = 0.0125000000000000
-;   double g_DOUBLE_005d4aa0 = 0.5
+;   double g_BoxMaxTimestep = 0.0125000000000000
+;   double g_BoxTimestepHalf = 0.5
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e130
@@ -37,13 +37,13 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 0041e0da
     FLD float ptr [EBP + 0x10]          ; 0041e0dd
     FST double ptr [ESP]                ; 0041e0e0
-    FCOMP double ptr [0x005d4a98]       ; 0041e0e3 | g_DOUBLE_005d4a98
+    FCOMP double ptr [0x005d4a98]       ; 0041e0e3 | g_BoxMaxTimestep
     FNSTSW AX                           ; 0041e0e9
     SAHF                                ; 0041e0eb
     JBE 0x0041e11a                      ; 0041e0ec
         ;   XREF to: 0041e11a (CONDITIONAL_JUMP)  ; LAB_0041e11a
     FLD double ptr [ESP]                ; 0041e0ee
-    FMUL double ptr [0x005d4aa0]        ; 0041e0f1 | g_DOUBLE_005d4aa0
+    FMUL double ptr [0x005d4aa0]        ; 0041e0f1 | g_BoxTimestepHalf
     FSTP float ptr [ESP + 0x8]          ; 0041e0f7
     PUSH dword ptr [ESP + 0x8]          ; 0041e0fb
     PUSH EBX                            ; 0041e0ff

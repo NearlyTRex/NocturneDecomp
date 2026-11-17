@@ -11,12 +11,12 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052b
 {
   uint local_10 [4];
   
-  if (g_IKsPropertySet_PTR_02dc9224 == (IKsPropertySet *)0x0) {
+  if (g_DirectSoundPropertySet == (IKsPropertySet *)0x0) {
     return;
   }
   local_10[0] = 0;
-  (*g_IKsPropertySet_PTR_02dc9224->vtable->Set)
-            (g_IKsPropertySet_PTR_02dc9224,&g_DSPROPSETID_EAX_ReverbProperties,0,(LPVOID)0x0,0,
-             local_10,0x10);
+  (*g_DirectSoundPropertySet->vtable->Set)
+            (g_DirectSoundPropertySet,&g_DSPROPSETID_EAX_ReverbProperties,0,(LPVOID)0x0,0,local_10,
+             0x10);
   return;
 }

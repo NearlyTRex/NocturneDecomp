@@ -1010,7 +1010,7 @@ LAB_0045a676:
       break;
     case 0x24:
       iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                         (g_CEventList_PTR_0061b4d0,this_ptr->rise_from_grave_condition);
+                         (g_CEventListPtr,this_ptr->rise_from_grave_condition);
       if ((iVar10 != 0) &&
          (fVar27 = this_ptr->rise_delay - delta_time, this_ptr->rise_delay = fVar27, fVar27 < 0.0))
       {
@@ -1104,7 +1104,7 @@ LAB_0045a676:
             fStack_134 = afStack_354[1];
           }
           fStack_90 = fStack_134 * fStack_134 + fStack_13c * fStack_13c + fStack_138 * fStack_138;
-          fStack_8c = (float)(((int)fStack_90 >> 1) + g_INT_01cc804c);
+          fStack_8c = (float)(((int)fStack_90 >> 1) + g_FastSqrtMagic);
           if (fStack_8c <= (float)8) {
             fStack_18 = (this_ptr->base).base.collision_cylinder_top;
             if (fStack_18 < (this_ptr->base).base.collision_cylinder_bottom) {

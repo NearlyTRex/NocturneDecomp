@@ -35,7 +35,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_00537760
       piVar6 = (int *)((int)this_ptr->row_offsets + iStack_20);
       puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);
       puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);
-      iVar1 = *(int *)((int)g_ARRAY_PTR_01c4354c + iStack_24);
+      iVar1 = *(int *)((int)g_ScreenBufferArray + iStack_24);
       do {
         if (puVar7 <= puVar9) goto LAB_00537818;
         uVar3 = (uint)*puVar9;

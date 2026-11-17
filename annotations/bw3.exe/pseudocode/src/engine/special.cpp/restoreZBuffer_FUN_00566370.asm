@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6068
+;   void* g_APIDLL_restoreZBuffer
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 00566394
     MOV EBP,dword ptr [ESP + 0x24]      ; 00566395
     PUSH EBP                            ; 00566399
-    CALL dword ptr [0x02cf6068]         ; 0056639a | g_PTR_02cf6068
+    CALL dword ptr [0x02cf6068]         ; 0056639a | g_APIDLL_restoreZBuffer
     ADD ESP,0x14                        ; 005663a0
     POP EBX                             ; 005663a3
     POP ESI                             ; 005663a4

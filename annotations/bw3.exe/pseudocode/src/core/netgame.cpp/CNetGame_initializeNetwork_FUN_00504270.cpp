@@ -40,7 +40,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(CNetGame *t
     core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00504c10(this_ptr);
     g_UINT_01da6478 = 1;
     iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
-    g_INT_01da6474 = iVar1 / 0x12;
+    g_LastPingTime = iVar1 / 0x12;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
               (g_CEditorToolsPtr,"Initializing network...OK");
     return 1;

@@ -189,7 +189,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00561760(CShotgun *this_ptr)
                   in_stack_fffffe5c = (CDemonSet *)g_CDemonSetPtr->ground_type;
                   in_stack_fffffe58 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;
                   core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0
-                            (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
+                            (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                              (CVector3f *)in_stack_fffffe58,(int)in_stack_fffffe5c,
                              g_CDemonSetPtr->collision_actor);
                   break;
@@ -296,7 +296,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00561760(CShotgun *this_ptr)
        *(uint *)((int)aCStack_d8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -4);
   CStack_a8.y = CStack_a8.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
-            (g_CFireEffect_PTR_0061c010,&CStack_a8,rotation_matrix);
+            (g_CFireEffectPtr,&CStack_a8,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
             (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_e4);
   (this_ptr->base).fire_cooldown_timer = 0.666;

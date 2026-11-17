@@ -113,7 +113,7 @@ static float FLOAT_005a05e4 = 1.0f;
 static float FLOAT_005a0880 = 256.0f;
 static float FLOAT_005a0884 = 65536.0f;
 static float FLOAT_005a0888 = 0.00390625f;
-static float g_FLOAT_005a088c = 1.525879e-05f;
+static float g_MirrorIntToFloat_Fine = 1.525879e-05f;
 static float FLOAT_005a0918 = 3.0f;
 static float FLOAT_005a091c = 30.0f;
 static float FLOAT_005a0920 = 50.0f;
@@ -131,7 +131,7 @@ static float FLOAT_005a173c = 50.0f;
 static float FLOAT_005a1740 = 100.0f;
 static float FLOAT_005a1744 = 12.0f;
 static float g_FLOAT_005a18f0 = 256.0f;
-static float g_FLOAT_005a1a70 = 256.0f;
+static float g_VDCoordinateScaleFactor = 256.0f;
 static float FLOAT_005a1a88 = 200.0f;
 static float FLOAT_005a1a8c = 100.0f;
 static float g_FLOAT_005a1ab0 = 256.0f;
@@ -200,13 +200,13 @@ static float FLOAT_005a453c = 50.0f;
 static float FLOAT_005a4540 = 100.0f;
 
 // float[6] constants
-static float g_FLOAT_ARRAY_005ad1d0[6] = {
+static float g_MoveAwayAngleOffsets[6] = {
     2.3561945f, 3.9269907f, 1.5707964f, 4.712389f,
     0.78539819f, 5.497787f
 };
 
 // uchar[8] constants
-static uchar g_UCHAR_ARRAY_005ae450[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined4 constants
 static undefined4 DAT_005a1548 = 0x3F000000;

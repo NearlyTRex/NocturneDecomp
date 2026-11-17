@@ -41,15 +41,15 @@
 ;   TerminatedCString s_CEditorTools_paintWindow_005bd24b
 ;   TerminatedCString s_j_005bd288
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5b104
-;   int g_INT_01c5bae0
+;   int g_WindowStackCount
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   int g_INT_01c5baec
-;   int g_INT_01c5baf0
-;   int g_INT_01c5baf4
-;   int g_INT_01c5baf8
-;   int g_INT_01c5bafc
-;   int g_INT_01c5bb00
+;   int g_WindowContentColor
+;   int g_WindowBorderHighlightColor
+;   int g_WindowBorderShadowColor
+;   int g_TitleBarColor
+;   int g_TitleBarFillColor
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -88,10 +88,10 @@ section .text
     PUSH 0x6a                           ; 0047fa99
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047fa9b
     PUSH EAX                            ; 0047faa1
-    MOV dword ptr [0x01c5bae0],EDX      ; 0047faa2 | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EDX      ; 0047faa2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047faa8
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
-    MOV ESI,dword ptr [0x01c5b104]      ; 0047faad | g_INT_01c5b104
+    MOV ESI,dword ptr [0x01c5b104]      ; 0047faad | g_WindowStackCount
     ADD ESP,0x8                         ; 0047fab3
     MOV [0x01c5bae4],EAX                ; 0047fab6 | g_INT_01c5bae4
     CMP ESI,0x1                         ; 0047fabb
@@ -105,7 +105,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047fadb
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047fae0
-    MOV EBX,dword ptr [0x01c5b104]      ; 0047fae3 | g_INT_01c5b104
+    MOV EBX,dword ptr [0x01c5b104]      ; 0047fae3 | g_WindowStackCount
         ;   Label: LAB_0047fae3
     DEC EBX                             ; 0047fae9
     MOV EAX,[0x01c6b5c0]                ; 0047faea | g_INT_01c6b5c0
@@ -152,7 +152,7 @@ section .text
     FSTP float ptr [ESP]                ; 0047fb63
     CALL engine_mini3d.cpp_setRenderViewport_FUN_004ed020 ; 0047fb66
         ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_004ed020(float left, float top, float right, float bottom)
-    MOV EAX,[0x01c5baf4]                ; 0047fb6b | g_INT_01c5baf4
+    MOV EAX,[0x01c5baf4]                ; 0047fb6b | g_WindowBorderHighlightColor
     MOV EBP,dword ptr [0x01c5baec]      ; 0047fb70 | g_INT_01c5baec
     ADD ESP,0x10                        ; 0047fb76
     TEST EBP,EBP                        ; 0047fb79
@@ -189,7 +189,7 @@ section .text
     PUSH EDX                            ; 0047fbcb
     CALL engine_mini3d.cpp_drawRect_FUN_004f3a60 ; 0047fbcc
         ;   XREF to: 004f3a60 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawRect_FUN_004f3a60(int x1, int y1, int x2, int y2)
-    MOV EAX,[0x01c5baf0]                ; 0047fbd1 | g_INT_01c5baf0
+    MOV EAX,[0x01c5baf0]                ; 0047fbd1 | g_WindowContentColor
     MOV ECX,dword ptr [0x01c5baec]      ; 0047fbd6 | g_INT_01c5baec
     ADD ESP,0x10                        ; 0047fbdc
     TEST ECX,ECX                        ; 0047fbdf
@@ -228,7 +228,7 @@ section .text
     PUSH EAX                            ; 0047fc37
     CALL engine_mini3d.cpp_fillRect_FUN_004f37e0 ; 0047fc38
         ;   XREF to: 004f37e0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_fillRect_FUN_004f37e0(int x1, int y1, int x2, int y2)
-    MOV EAX,[0x01c5baf8]                ; 0047fc3d | g_INT_01c5baf8
+    MOV EAX,[0x01c5baf8]                ; 0047fc3d | g_WindowBorderShadowColor
     MOV ESI,dword ptr [0x01c5baec]      ; 0047fc42 | g_INT_01c5baec
     ADD ESP,0x10                        ; 0047fc48
     TEST ESI,ESI                        ; 0047fc4b
@@ -314,7 +314,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0047fd2b
     LEA EDI,[EAX + -0x1]                ; 0047fd2d
     INC EDX                             ; 0047fd30
-    MOV EAX,[0x01c5bb00]                ; 0047fd31 | g_INT_01c5bb00
+    MOV EAX,[0x01c5bb00]                ; 0047fd31 | g_TitleBarFillColor
     MOV dword ptr [ESP + 0x18],EDX      ; 0047fd36
     MOV dword ptr [ESP + 0x20],EDI      ; 0047fd3a
     CMP dword ptr [0x01c5baec],0x0      ; 0047fd3e | g_INT_01c5baec
@@ -363,7 +363,7 @@ section .text
         ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047fdc3
     PUSH -0x1                           ; 0047fdc6
-    MOV EAX,[0x01c5bafc]                ; 0047fdc8 | g_INT_01c5bafc
+    MOV EAX,[0x01c5bafc]                ; 0047fdc8 | g_TitleBarColor
     PUSH EAX                            ; 0047fdcd
     MOV EAX,[0x01c5bae4]                ; 0047fdce | g_INT_01c5bae4
     MOV EDX,EAX                         ; 0047fdd3
@@ -414,7 +414,7 @@ section .text
     JGE 0x0047fe4f                      ; 0047fe4b
         ;   XREF to: 0047fe4f (CONDITIONAL_JUMP)  ; LAB_0047fe4f
     MOV ESI,EAX                         ; 0047fe4d
-    MOV EAX,[0x01c5baf4]                ; 0047fe4f | g_INT_01c5baf4
+    MOV EAX,[0x01c5baf4]                ; 0047fe4f | g_WindowBorderHighlightColor
         ;   Label: LAB_0047fe4f
     MOV EBP,dword ptr [EBX + 0x4]       ; 0047fe54
     MOV EDX,dword ptr [0x01c5baec]      ; 0047fe57 | g_INT_01c5baec
@@ -456,8 +456,8 @@ section .text
         ;   XREF to: 004f3ab0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawHLine_FUN_004f3ab0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 0047fec0
         ;   Label: LAB_0047fec0
-    MOV EDI,dword ptr [0x01c5baf8]      ; 0047fec3 | g_INT_01c5baf8
-    CMP EDI,dword ptr [0x01c5baf4]      ; 0047fec9 | g_INT_01c5baf4
+    MOV EDI,dword ptr [0x01c5baf8]      ; 0047fec3 | g_WindowBorderShadowColor
+    CMP EDI,dword ptr [0x01c5baf4]      ; 0047fec9 | g_WindowBorderHighlightColor
     JZ 0x0047ff40                       ; 0047fecf
         ;   XREF to: 0047ff40 (CONDITIONAL_JUMP)  ; LAB_0047ff40
     MOV EBP,dword ptr [0x01c5baec]      ; 0047fed1 | g_INT_01c5baec
@@ -551,7 +551,7 @@ section .text
     PUSH ECX                            ; 0047ffb4
     CALL engine_matrix.c_pushViewport_FUN_004e6af0 ; 0047ffb5
         ;   XREF to: 004e6af0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_004e6af0(int x, int y, int width, int height)
-    MOV ESI,dword ptr [0x01c5baf0]      ; 0047ffba | g_INT_01c5baf0
+    MOV ESI,dword ptr [0x01c5baf0]      ; 0047ffba | g_WindowContentColor
     ADD ESP,0x10                        ; 0047ffc0
     MOV EAX,dword ptr [EBX + 0xc]       ; 0047ffc3
     MOV EDX,dword ptr [EBX + 0x8]       ; 0047ffc6
@@ -565,7 +565,7 @@ section .text
     MOV dword ptr [ESP + 0x24],EBP      ; 0047ffda
     MOV dword ptr [ESP + 0x2c],EDX      ; 0047ffde
     MOV EDI,EAX                         ; 0047ffe2
-    MOV EAX,[0x01c5baf4]                ; 0047ffe4 | g_INT_01c5baf4
+    MOV EAX,[0x01c5baf4]                ; 0047ffe4 | g_WindowBorderHighlightColor
     CMP dword ptr [0x01c5baec],0x0      ; 0047ffe9 | g_INT_01c5baec
     JZ 0x00480171                       ; 0047fff0
         ;   XREF to: 00480171 (CONDITIONAL_JUMP)  ; LAB_00480171
@@ -642,7 +642,7 @@ section .text
     ADD ESP,0x10                        ; 004800c1
     MOV EDX,dword ptr [0x01c5baec]      ; 004800c4 | g_INT_01c5baec
         ;   Label: LAB_004800c4
-    MOV EAX,[0x01c5baf8]                ; 004800ca | g_INT_01c5baf8
+    MOV EAX,[0x01c5baf8]                ; 004800ca | g_WindowBorderShadowColor
     TEST EDX,EDX                        ; 004800cf
     JZ 0x00480186                       ; 004800d1
         ;   XREF to: 00480186 (CONDITIONAL_JUMP)  ; LAB_00480186

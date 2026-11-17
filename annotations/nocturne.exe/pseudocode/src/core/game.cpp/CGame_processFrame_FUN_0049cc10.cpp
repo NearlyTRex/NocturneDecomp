@@ -122,9 +122,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->setPositionAndOrientation)
               ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_b0.position,
                (CVector3f *)&local_b0.orientation);
-    if ((g_BIT_INTEGER32_01bd1d94.bytes[0] & 1) != 0) {
+    if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-                (&g_CDemonCameraInstance,g_INT_01bd1d8c,g_INT_01bd1d90,&local_88);
+                (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&local_88);
       input_ptr = &local_7c;
       local_7c.x = local_88.x;
       *(uint *)((int)&local_7c + (uint)bVar20 * -8 + 4) =
@@ -144,7 +144,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
       pCVar4 = g_HeroActors[g_LocalHeroIndex];
       (*((pCVar4->base).base.vtable._ub)->setPositionAndOrientation)
                 ((CDemonActor *)pCVar4,&local_70,(CVector3f *)&(pCVar4->base).base.orient);
-      g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfe;
+      g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
     }
   }
   core_game_cpp_CGame_updateDT_FUN_0049a8a0(this_ptr);
@@ -177,9 +177,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
 LAB_0049cf70:
     iVar9 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F4);
     if (iVar9 != 0) {
-      g_INT_01c780b8 = g_INT_01c780b8 + 1;
-      _sprintf(g_CHAR_ARRAY_01c780c0,"demon%d.pcx",g_INT_01c780b8);
-      engine_pcx_c_saveScreenshotGeneral_FUN_004f2990(g_CHAR_ARRAY_01c780c0);
+      g_ScreenshotIndex = g_ScreenshotIndex + 1;
+      _sprintf(g_ScreenshotFilename,"demon%d.pcx",g_ScreenshotIndex);
+      engine_pcx_c_saveScreenshotGeneral_FUN_004f2990(g_ScreenshotFilename);
     }
   }
   core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(&g_HeroActors[g_LocalHeroIndex]->inventory);
@@ -187,38 +187,39 @@ LAB_0049cf70:
     core_set_cpp_CDemonSet_renderLightDebugView_FUN_0050aa70(g_CDemonSetPtr);
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(this_ptr);
-  if (g_INT_01c78ac8 != 0) {
+  if (g_MovieRecordingArmed != 0) {
     iVar9 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
     if ((iVar9 != 0) &&
        (iVar9 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V),
        iVar9 != 0)) {
-      iVar9 = g_INT_01c78acc;
-      if (g_INT_01c78acc == 0) {
-        g_INT_01c78acc = 1;
-        g_INT_01c78ad4 = iVar9;
+      iVar9 = g_MovieRecordingActive;
+      if (g_MovieRecordingActive == 0) {
+        g_MovieRecordingActive = 1;
+        g_MovieRecordingFrameCounter = iVar9;
       }
       else {
-        g_INT_01c78acc = 0;
+        g_MovieRecordingActive = 0;
       }
     }
-    if ((g_INT_01c78ad0 < 1) || (g_INT_01c78ad4 < g_INT_01c78ad0)) {
-      if (g_INT_01c78acc != 0) {
-        _sprintf(local_114,"noc%05d.raw",g_INT_01c78ad4);
+    if ((g_MovieRecordingMaxFrames < 1) ||
+       (g_MovieRecordingFrameCounter < g_MovieRecordingMaxFrames)) {
+      if (g_MovieRecordingActive != 0) {
+        _sprintf(local_114,"noc%05d.raw",g_MovieRecordingFrameCounter);
         _sprintf(local_1dc,"Movie recording active: movie\\%s",local_114);
         local_34 = engine_dosio_cpp_getFile_FUN_00456a60("movie",local_114,"wb");
         if (local_34 != (_FILE *)0x0) {
           local_38 = 0;
-          if (0 < g_INT_005b9368) {
+          if (0 < g_MovieRecordingHeight) {
             do {
               local_30 = 0;
-              if (0 < g_INT_005b9364) {
+              if (0 < g_MovieRecordingWidth) {
                 local_3c = local_38 + 1;
                 do {
                   file = local_34;
-                  local_28 = (local_30 * g_WindowWidth) / g_INT_005b9364;
-                  local_20 = ((local_30 + 1) * g_WindowWidth) / g_INT_005b9364;
-                  iVar9 = (local_38 * g_WindowHeight) / g_INT_005b9368;
-                  iVar11 = (local_3c * g_WindowHeight) / g_INT_005b9368;
+                  local_28 = (local_30 * g_WindowWidth) / g_MovieRecordingWidth;
+                  local_20 = ((local_30 + 1) * g_WindowWidth) / g_MovieRecordingWidth;
+                  iVar9 = (local_38 * g_WindowHeight) / g_MovieRecordingHeight;
+                  iVar11 = (local_3c * g_WindowHeight) / g_MovieRecordingHeight;
                   iVar17 = 0;
                   local_18 = 0;
                   local_1c = 0;
@@ -250,19 +251,19 @@ LAB_0049cf70:
                   _fputc(local_1c,file);
                   _fputc(iVar17,file);
                   local_30 = local_30 + 1;
-                } while (local_30 < g_INT_005b9364);
+                } while (local_30 < g_MovieRecordingWidth);
               }
               local_38 = local_38 + 1;
-            } while (local_38 < g_INT_005b9368);
+            } while (local_38 < g_MovieRecordingHeight);
           }
           _fclose(local_34);
           engine_2d_c_drawText_FUN_00402600(local_1dc,0,0);
-          g_INT_01c78ad4 = g_INT_01c78ad4 + 1;
+          g_MovieRecordingFrameCounter = g_MovieRecordingFrameCounter + 1;
         }
       }
     }
     else {
-      g_INT_01c78acc = 0;
+      g_MovieRecordingActive = 0;
     }
   }
   core_script_cpp_CScript_renderSubtitles_FUN_004fe770(g_CScriptPtr);
@@ -320,7 +321,7 @@ LAB_0049cf70:
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,g_WindowHeight + -0x2c);
     engine_2d_c_drawText_FUN_00402600(this_ptr->debug_info_string,0,g_WindowHeight + -0x21);
   }
-  if (g_INT_01c78ad8 != 0) {
+  if (g_SoundDebugEnabled != 0) {
     uVar10 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005274e0();
     iVar9 = 0x37;
     for (; uVar10 != 0; uVar10 = sound_sndmain_cpp_getNextActiveSfx_FUN_00527520(uVar10)) {
@@ -334,7 +335,7 @@ LAB_0049cf70:
     }
   }
   if (this_ptr->event_processing_enabled != 0) {
-    core_event_cpp_CEventList_render_FUN_0047dd80(g_CEventList_PTR_005b7650);
+    core_event_cpp_CEventList_render_FUN_0047dd80(g_CEventListPtr);
   }
   if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
     core_script_cpp_CScript_renderEditor_FUN_004fe9d0
@@ -360,8 +361,7 @@ LAB_0049cf70:
       pcVar19 = pcVar19 + 2;
     } while (cVar3 != '\0');
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
-              (g_CBitFont_PTR_014b98f8,0,g_WindowWidth,
-               g_WindowHeight + g_CBitFont_PTR_014b98f8->max_char_height * -2,
+              (g_MediumFont,0,g_WindowWidth,g_WindowHeight + g_MediumFont->max_char_height * -2,
                (uint)g_ColorCubeLookup[0x7c00],0,local_4dc);
   }
   if (this_ptr->show_customizable_keys != 0) {

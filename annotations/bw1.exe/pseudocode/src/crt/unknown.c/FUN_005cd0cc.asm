@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005cb9c0 at 005cb9f9
 ;
 ; Referenced Globals:
-;   int g_INT_00626ae0 = -0x1
+;   int g_ConsoleOutputHandle = -0x1
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cd04c
@@ -21,6 +21,6 @@ section .text
     CALL crt_unknown.c_FUN_005cd04c     ; 005cd0cc
         ;   XREF to: 005cd04c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cd04c()
         ;   Label: crt_unknown.c_FUN_005cd0cc
-    MOV EAX,[0x00626ae0]                ; 005cd0d1 | g_INT_00626ae0
+    MOV EAX,[0x00626ae0]                ; 005cd0d1 | g_ConsoleOutputHandle
     RET                                 ; 005cd0d6
 

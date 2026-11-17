@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;
 ; Called Functions:
@@ -64,10 +64,10 @@ section .text
         ;   Label: LAB_005165e8
     ADD EBP,EBX                         ; 005165ec
     SUB EBP,EDX                         ; 005165ee
-    CMP EBP,dword ptr [0x01c35e50]      ; 005165f0 | g_INT_01c35e50
+    CMP EBP,dword ptr [0x01c35e50]      ; 005165f0 | g_ClipRight
     JLE 0x00516606                      ; 005165f6
         ;   XREF to: 00516606 (CONDITIONAL_JUMP)  ; LAB_00516606
-    MOV EBP,dword ptr [0x01c35e50]      ; 005165f8 | g_INT_01c35e50
+    MOV EBP,dword ptr [0x01c35e50]      ; 005165f8 | g_ClipRight
     SUB EBP,EBX                         ; 005165fe
     ADD EBP,EDX                         ; 00516600
     MOV dword ptr [ESP + 0x28],EBP      ; 00516602

@@ -85,25 +85,25 @@
     },
     {
       "addr": "005fba40",
-      "name": "g_UINT_005fba40",
+      "name": "g_VertexProcessingEnabled",
       "type": "uint",
       "value": "0x1"
     },
     {
       "addr": "00603974",
-      "name": "g_INT_00603974",
+      "name": "g_MaxViewportScanline",
       "type": "int",
       "value": "0x4b0"
     },
     {
       "addr": "007303f4",
-      "name": "g_INT_007303f4",
+      "name": "g_TexturesDisabled",
       "type": "int",
       "value": null
     },
     {
       "addr": "007303fc",
-      "name": "g_INT_007303fc",
+      "name": "g_CullingMode",
       "type": "int",
       "value": null
     },
@@ -139,19 +139,19 @@
     },
     {
       "addr": "01c6e2b4",
-      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "name": "g_RenderStateFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "g_INT_01c6e2b8",
+      "name": "g_VertexPreprocessMode",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ed2c88",
-      "name": "g_INT_01ed2c88",
+      "name": "g_SoftwareEdgeCount",
       "type": "int",
       "value": null
     },
@@ -163,19 +163,19 @@
     },
     {
       "addr": "01ed318c",
-      "name": "g_INT_01ed318c",
+      "name": "g_SoftwareMinScanline",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ed3190",
-      "name": "g_INT_01ed3190",
+      "name": "g_SoftwareMaxScanline",
       "type": "int",
       "value": null
     },
     {
       "addr": "01ed3198",
-      "name": "g_INT_01ed3198",
+      "name": "g_RenderedTriangleCount",
       "type": "int",
       "value": null
     }
@@ -332,7 +332,7 @@
       "line": 183,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar12 = SBORROW4(g_INT_01ed318c,g_INT_00603974);",
+      "text": "bVar12 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
       "type": "sign_compare_idiom"
     },
     {

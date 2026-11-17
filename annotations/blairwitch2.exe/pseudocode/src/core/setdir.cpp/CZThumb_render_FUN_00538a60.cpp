@@ -32,7 +32,7 @@ void __cdecl core_setdir_cpp_CZThumb_render_FUN_00538a60(CZThumb *this_ptr,int s
           if (0xff < uVar2) {
             uVar2 = 0xff;
           }
-          *(uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar4 + 4) + iVar1) = uVar2 * 0x10101;
+          *(uint *)(*(int *)((int)g_ScreenBufferArray + iVar4 + 4) + iVar1) = uVar2 * 0x10101;
         }
         iVar4 = local_1c;
       }
@@ -48,7 +48,7 @@ void __cdecl core_setdir_cpp_CZThumb_render_FUN_00538a60(CZThumb *this_ptr,int s
           if (0xff < uVar2) {
             uVar2 = 0xff;
           }
-          g_INT_01c35e60 = (int)g_UCHAR_ARRAY_01c2c910[(uVar2 >> 3) * 0x421];
+          g_INT_01c35e60 = (int)g_ColorCubeLookup[(uVar2 >> 3) * 0x421];
           engine_2d_c_plotPixel_FUN_00401130(iVar1,local_20);
         }
         screen_y = local_20;

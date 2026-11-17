@@ -136,7 +136,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
     }
     if (unaff_ESI == 0) {
       core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                (g_CFireEffect_PTR_005fc5a0,&CStack_19c,&g_CVector3f_02cfd900,1,0,2);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_19c,&g_ZeroVector,1,0,2);
       iVar8 = 7;
       iVar3 = 4;
     }
@@ -145,7 +145,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       iVar3 = 3;
     }
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-              (g_CFireEffect_PTR_005fc5a0,&CStack_19c,&g_CVector3f_02cfd900,1,0,iVar8);
+              (g_CFireEffect_PTR_005fc5a0,&CStack_19c,&g_ZeroVector,1,0,iVar8);
     this_ptr->zap_timer = this_ptr->zap_timer - in_stack_00000018;
     if (this_ptr->zap_timer <= 0.0) {
       if (&CStack_180.z != &CStack_1d4.z) {

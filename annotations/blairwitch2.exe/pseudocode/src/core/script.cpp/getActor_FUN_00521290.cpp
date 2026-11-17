@@ -15,7 +15,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *actor_specifie
   char *pcVar3;
   char *pcVar4;
   
-  g_INT_01e6590c = 0;
+  g_ActorLookedUpByVariable = 0;
   if ((actor_specifier == (char *)0x0) || (*actor_specifier == '\0')) {
     pcVar3 = "Must specify actor name";
     pcVar4 = g_CHAR_ARRAY_01e65100;
@@ -37,9 +37,9 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *actor_specifie
     if (iVar2 == 0) {
       return (CDemonActor *)0x0;
     }
-    g_INT_01e6590c = 1;
+    g_ActorLookedUpByVariable = 1;
     actor_ptr = (CHero *)core_event_cpp_CEventList_getActorByVarName_FUN_00491860
-                                   (g_CEventList_PTR_006141f0,actor_specifier);
+                                   (g_CEventListPtr,actor_specifier);
     if (actor_ptr == (CHero *)0x0) {
       _sprintf(g_CHAR_ARRAY_01e65100,"Actor variable %s not defined, or doesn't reference an existing actor");
       return (CDemonActor *)0x0;
@@ -54,7 +54,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *actor_specifie
       }
       actor_ptr = g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
       if (actor_ptr == (CHero *)0x0) {
-        g_INT_01e6590c = 1;
+        g_ActorLookedUpByVariable = 1;
         _sprintf(g_CHAR_ARRAY_01e65100,"Hero doesn't exist!!?!");
         return (CDemonActor *)0x0;
       }

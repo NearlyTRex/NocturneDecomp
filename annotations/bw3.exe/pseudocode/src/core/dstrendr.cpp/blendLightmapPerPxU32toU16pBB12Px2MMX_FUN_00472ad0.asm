@@ -14,21 +14,21 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00450020 at 0045019c
 ;
 ; Referenced Globals:
-;   qword g_QWORD_005f8b68 = 0x0
-;   qword g_QWORD_005f8b70 = 0x8000800080008
-;   ushort[2048] g_USHORT_ARRAY_005fa0e0
-;   undefined4 g_USHORT_ARRAY_005fa0e0[16]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[32]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[48]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[64]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[80]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[96]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[112]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[128]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[144]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[160]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[176]
-;   undefined4 g_USHORT_ARRAY_005fa0e0[192]
+;   qword g_LightmapBlendBias1 = 0x0
+;   qword g_LightmapBlendBias2 = 0x8000800080008
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[16]
+;   undefined4 g_LightmapData[32]
+;   undefined4 g_LightmapData[48]
+;   undefined4 g_LightmapData[64]
+;   undefined4 g_LightmapData[80]
+;   undefined4 g_LightmapData[96]
+;   undefined4 g_LightmapData[112]
+;   undefined4 g_LightmapData[128]
+;   undefined4 g_LightmapData[144]
+;   undefined4 g_LightmapData[160]
+;   undefined4 g_LightmapData[176]
+;   undefined4 g_LightmapData[192]
 ;   ... and 91 more
 ;
 ; *****************************************************************************
@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00472adf
     MOV EBP,dword ptr [EBP + 0x14]      ; 00472ae2
     PXOR MM7,MM7                        ; 00472ae5
-    MOVD MM5,dword ptr [0x01c6e2bc]     ; 00472ae8 | g_ULONG_01c6e2bc
+    MOVD MM5,dword ptr [0x01c6e2bc]     ; 00472ae8 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00472aef
     PSLLW MM5,0x6                       ; 00472af2
     MOV EAX,dword ptr [EBX]             ; 00472af6
@@ -150,130 +150,130 @@ section .text
     MOV EAX,dword ptr [ESI + 0x9a0]     ; 00472d16
     MOV EAX,dword ptr [ESI + 0x9c0]     ; 00472d1c
     MOV EAX,dword ptr [ESI + 0x9e0]     ; 00472d22
-    MOV EAX,[0x00b9e14c]                ; 00472d28 | g_UINT_ARRAY_00b9e14c
-    MOV EAX,[0x00b9e16c]                ; 00472d2d | g_UINT_ARRAY_00b9e14c[8]
-    MOV EAX,[0x00b9e18c]                ; 00472d32 | g_UINT_ARRAY_00b9e14c[16]
-    MOV EAX,[0x00b9e1ac]                ; 00472d37 | g_UINT_ARRAY_00b9e14c[24]
-    MOV EAX,[0x00b9e1cc]                ; 00472d3c | g_UINT_ARRAY_00b9e14c[32]
-    MOV EAX,[0x00b9e1ec]                ; 00472d41 | g_UINT_ARRAY_00b9e14c[40]
-    MOV EAX,[0x00b9e20c]                ; 00472d46 | g_UINT_ARRAY_00b9e14c[48]
-    MOV EAX,[0x00b9e22c]                ; 00472d4b | g_UINT_ARRAY_00b9e14c[56]
-    MOV EAX,[0x00b9e24c]                ; 00472d50 | g_UINT_ARRAY_00b9e14c[64]
-    MOV EAX,[0x00b9e26c]                ; 00472d55 | g_UINT_ARRAY_00b9e14c[72]
-    MOV EAX,[0x00b9e28c]                ; 00472d5a | g_UINT_ARRAY_00b9e14c[80]
-    MOV EAX,[0x00b9e2ac]                ; 00472d5f | g_UINT_ARRAY_00b9e14c[88]
-    MOV EAX,[0x00b9e2cc]                ; 00472d64 | g_UINT_ARRAY_00b9e14c[96]
-    MOV EAX,[0x00b9e2ec]                ; 00472d69 | g_UINT_ARRAY_00b9e14c[104]
-    MOV EAX,[0x00b9e30c]                ; 00472d6e | g_UINT_ARRAY_00b9e14c[112]
-    MOV EAX,[0x00b9e32c]                ; 00472d73 | g_UINT_ARRAY_00b9e14c[120]
-    MOV EAX,[0x00b9e34c]                ; 00472d78 | g_UINT_ARRAY_00b9e14c[128]
-    MOV EAX,[0x00b9e36c]                ; 00472d7d | g_UINT_ARRAY_00b9e14c[136]
-    MOV EAX,[0x00b9e38c]                ; 00472d82 | g_UINT_ARRAY_00b9e14c[144]
-    MOV EAX,[0x00b9e3ac]                ; 00472d87 | g_UINT_ARRAY_00b9e14c[152]
-    MOV EAX,[0x00b9e3cc]                ; 00472d8c | g_UINT_ARRAY_00b9e14c[160]
-    MOV EAX,[0x00b9e3ec]                ; 00472d91 | g_UINT_ARRAY_00b9e14c[168]
-    MOV EAX,[0x00b9e40c]                ; 00472d96 | g_UINT_ARRAY_00b9e14c[176]
-    MOV EAX,[0x00b9e42c]                ; 00472d9b | g_UINT_ARRAY_00b9e14c[184]
-    MOV EAX,[0x00b9e44c]                ; 00472da0 | g_UINT_ARRAY_00b9e14c[192]
-    MOV EAX,[0x00b9e46c]                ; 00472da5 | g_UINT_ARRAY_00b9e14c[200]
-    MOV EAX,[0x00b9e48c]                ; 00472daa | g_UINT_ARRAY_00b9e14c[208]
-    MOV EAX,[0x00b9e4ac]                ; 00472daf | g_UINT_ARRAY_00b9e14c[216]
-    MOV EAX,[0x00b9e4cc]                ; 00472db4 | g_UINT_ARRAY_00b9e14c[224]
-    MOV EAX,[0x00b9e4ec]                ; 00472db9 | g_UINT_ARRAY_00b9e14c[232]
-    MOV EAX,[0x00b9e50c]                ; 00472dbe | g_UINT_ARRAY_00b9e14c[240]
-    MOV EAX,[0x00b9e52c]                ; 00472dc3 | g_UINT_ARRAY_00b9e14c[248]
-    MOV EAX,[0x005fa0e0]                ; 00472dc8 | g_USHORT_ARRAY_005fa0e0
-    MOV EAX,[0x005fa100]                ; 00472dcd | g_USHORT_ARRAY_005fa0e0[16]
-    MOV EAX,[0x005fa120]                ; 00472dd2 | g_USHORT_ARRAY_005fa0e0[32]
-    MOV EAX,[0x005fa140]                ; 00472dd7 | g_USHORT_ARRAY_005fa0e0[48]
-    MOV EAX,[0x005fa160]                ; 00472ddc | g_USHORT_ARRAY_005fa0e0[64]
-    MOV EAX,[0x005fa180]                ; 00472de1 | g_USHORT_ARRAY_005fa0e0[80]
-    MOV EAX,[0x005fa1a0]                ; 00472de6 | g_USHORT_ARRAY_005fa0e0[96]
-    MOV EAX,[0x005fa1c0]                ; 00472deb | g_USHORT_ARRAY_005fa0e0[112]
-    MOV EAX,[0x005fa1e0]                ; 00472df0 | g_USHORT_ARRAY_005fa0e0[128]
-    MOV EAX,[0x005fa200]                ; 00472df5 | g_USHORT_ARRAY_005fa0e0[144]
-    MOV EAX,[0x005fa220]                ; 00472dfa | g_USHORT_ARRAY_005fa0e0[160]
-    MOV EAX,[0x005fa240]                ; 00472dff | g_USHORT_ARRAY_005fa0e0[176]
-    MOV EAX,[0x005fa260]                ; 00472e04 | g_USHORT_ARRAY_005fa0e0[192]
-    MOV EAX,[0x005fa280]                ; 00472e09 | g_USHORT_ARRAY_005fa0e0[208]
-    MOV EAX,[0x005fa2a0]                ; 00472e0e | g_USHORT_ARRAY_005fa0e0[224]
-    MOV EAX,[0x005fa2c0]                ; 00472e13 | g_USHORT_ARRAY_005fa0e0[240]
-    MOV EAX,[0x005fa2e0]                ; 00472e18 | g_USHORT_ARRAY_005fa0e0[256]
-    MOV EAX,[0x005fa300]                ; 00472e1d | g_USHORT_ARRAY_005fa0e0[272]
-    MOV EAX,[0x005fa320]                ; 00472e22 | g_USHORT_ARRAY_005fa0e0[288]
-    MOV EAX,[0x005fa340]                ; 00472e27 | g_USHORT_ARRAY_005fa0e0[304]
-    MOV EAX,[0x005fa360]                ; 00472e2c | g_USHORT_ARRAY_005fa0e0[320]
-    MOV EAX,[0x005fa380]                ; 00472e31 | g_USHORT_ARRAY_005fa0e0[336]
-    MOV EAX,[0x005fa3a0]                ; 00472e36 | g_USHORT_ARRAY_005fa0e0[352]
-    MOV EAX,[0x005fa3c0]                ; 00472e3b | g_USHORT_ARRAY_005fa0e0[368]
-    MOV EAX,[0x005fa3e0]                ; 00472e40 | g_USHORT_ARRAY_005fa0e0[384]
-    MOV EAX,[0x005fa400]                ; 00472e45 | g_USHORT_ARRAY_005fa0e0[400]
-    MOV EAX,[0x005fa420]                ; 00472e4a | g_USHORT_ARRAY_005fa0e0[416]
-    MOV EAX,[0x005fa440]                ; 00472e4f | g_USHORT_ARRAY_005fa0e0[432]
-    MOV EAX,[0x005fa460]                ; 00472e54 | g_USHORT_ARRAY_005fa0e0[448]
-    MOV EAX,[0x005fa480]                ; 00472e59 | g_USHORT_ARRAY_005fa0e0[464]
-    MOV EAX,[0x005fa4a0]                ; 00472e5e | g_USHORT_ARRAY_005fa0e0[480]
-    MOV EAX,[0x005fa4c0]                ; 00472e63 | g_USHORT_ARRAY_005fa0e0[496]
-    MOV EAX,[0x005fa4e0]                ; 00472e68 | g_USHORT_ARRAY_005fa0e0[512]
-    MOV EAX,[0x005fa500]                ; 00472e6d | g_USHORT_ARRAY_005fa0e0[528]
-    MOV EAX,[0x005fa520]                ; 00472e72 | g_USHORT_ARRAY_005fa0e0[544]
-    MOV EAX,[0x005fa540]                ; 00472e77 | g_USHORT_ARRAY_005fa0e0[560]
-    MOV EAX,[0x005fa560]                ; 00472e7c | g_USHORT_ARRAY_005fa0e0[576]
-    MOV EAX,[0x005fa580]                ; 00472e81 | g_USHORT_ARRAY_005fa0e0[592]
-    MOV EAX,[0x005fa5a0]                ; 00472e86 | g_USHORT_ARRAY_005fa0e0[608]
-    MOV EAX,[0x005fa5c0]                ; 00472e8b | g_USHORT_ARRAY_005fa0e0[624]
-    MOV EAX,[0x005fa5e0]                ; 00472e90 | g_USHORT_ARRAY_005fa0e0[640]
-    MOV EAX,[0x005fa600]                ; 00472e95 | g_USHORT_ARRAY_005fa0e0[656]
-    MOV EAX,[0x005fa620]                ; 00472e9a | g_USHORT_ARRAY_005fa0e0[672]
-    MOV EAX,[0x005fa640]                ; 00472e9f | g_USHORT_ARRAY_005fa0e0[688]
-    MOV EAX,[0x005fa660]                ; 00472ea4 | g_USHORT_ARRAY_005fa0e0[704]
-    MOV EAX,[0x005fa680]                ; 00472ea9 | g_USHORT_ARRAY_005fa0e0[720]
-    MOV EAX,[0x005fa6a0]                ; 00472eae | g_USHORT_ARRAY_005fa0e0[736]
-    MOV EAX,[0x005fa6c0]                ; 00472eb3 | g_USHORT_ARRAY_005fa0e0[752]
-    MOV EAX,[0x005fa6e0]                ; 00472eb8 | g_USHORT_ARRAY_005fa0e0[768]
-    MOV EAX,[0x005fa700]                ; 00472ebd | g_USHORT_ARRAY_005fa0e0[784]
-    MOV EAX,[0x005fa720]                ; 00472ec2 | g_USHORT_ARRAY_005fa0e0[800]
-    MOV EAX,[0x005fa740]                ; 00472ec7 | g_USHORT_ARRAY_005fa0e0[816]
-    MOV EAX,[0x005fa760]                ; 00472ecc | g_USHORT_ARRAY_005fa0e0[832]
-    MOV EAX,[0x005fa780]                ; 00472ed1 | g_USHORT_ARRAY_005fa0e0[848]
-    MOV EAX,[0x005fa7a0]                ; 00472ed6 | g_USHORT_ARRAY_005fa0e0[864]
-    MOV EAX,[0x005fa7c0]                ; 00472edb | g_USHORT_ARRAY_005fa0e0[880]
-    MOV EAX,[0x005fa7e0]                ; 00472ee0 | g_USHORT_ARRAY_005fa0e0[896]
-    MOV EAX,[0x005fa800]                ; 00472ee5 | g_USHORT_ARRAY_005fa0e0[912]
-    MOV EAX,[0x005fa820]                ; 00472eea | g_USHORT_ARRAY_005fa0e0[928]
-    MOV EAX,[0x005fa840]                ; 00472eef | g_USHORT_ARRAY_005fa0e0[944]
-    MOV EAX,[0x005fa860]                ; 00472ef4 | g_USHORT_ARRAY_005fa0e0[960]
-    MOV EAX,[0x005fa880]                ; 00472ef9 | g_USHORT_ARRAY_005fa0e0[976]
-    MOV EAX,[0x005fa8a0]                ; 00472efe | g_USHORT_ARRAY_005fa0e0[992]
-    MOV EAX,[0x005fa8c0]                ; 00472f03 | g_USHORT_ARRAY_005fa0e0[1008]
+    MOV EAX,[0x00b9e14c]                ; 00472d28 | g_LightmapTexturePalette
+    MOV EAX,[0x00b9e16c]                ; 00472d2d | g_LightmapTexturePalette[8]
+    MOV EAX,[0x00b9e18c]                ; 00472d32 | g_LightmapTexturePalette[16]
+    MOV EAX,[0x00b9e1ac]                ; 00472d37 | g_LightmapTexturePalette[24]
+    MOV EAX,[0x00b9e1cc]                ; 00472d3c | g_LightmapTexturePalette[32]
+    MOV EAX,[0x00b9e1ec]                ; 00472d41 | g_LightmapTexturePalette[40]
+    MOV EAX,[0x00b9e20c]                ; 00472d46 | g_LightmapTexturePalette[48]
+    MOV EAX,[0x00b9e22c]                ; 00472d4b | g_LightmapTexturePalette[56]
+    MOV EAX,[0x00b9e24c]                ; 00472d50 | g_LightmapTexturePalette[64]
+    MOV EAX,[0x00b9e26c]                ; 00472d55 | g_LightmapTexturePalette[72]
+    MOV EAX,[0x00b9e28c]                ; 00472d5a | g_LightmapTexturePalette[80]
+    MOV EAX,[0x00b9e2ac]                ; 00472d5f | g_LightmapTexturePalette[88]
+    MOV EAX,[0x00b9e2cc]                ; 00472d64 | g_LightmapTexturePalette[96]
+    MOV EAX,[0x00b9e2ec]                ; 00472d69 | g_LightmapTexturePalette[104]
+    MOV EAX,[0x00b9e30c]                ; 00472d6e | g_LightmapTexturePalette[112]
+    MOV EAX,[0x00b9e32c]                ; 00472d73 | g_LightmapTexturePalette[120]
+    MOV EAX,[0x00b9e34c]                ; 00472d78 | g_LightmapTexturePalette[128]
+    MOV EAX,[0x00b9e36c]                ; 00472d7d | g_LightmapTexturePalette[136]
+    MOV EAX,[0x00b9e38c]                ; 00472d82 | g_LightmapTexturePalette[144]
+    MOV EAX,[0x00b9e3ac]                ; 00472d87 | g_LightmapTexturePalette[152]
+    MOV EAX,[0x00b9e3cc]                ; 00472d8c | g_LightmapTexturePalette[160]
+    MOV EAX,[0x00b9e3ec]                ; 00472d91 | g_LightmapTexturePalette[168]
+    MOV EAX,[0x00b9e40c]                ; 00472d96 | g_LightmapTexturePalette[176]
+    MOV EAX,[0x00b9e42c]                ; 00472d9b | g_LightmapTexturePalette[184]
+    MOV EAX,[0x00b9e44c]                ; 00472da0 | g_LightmapTexturePalette[192]
+    MOV EAX,[0x00b9e46c]                ; 00472da5 | g_LightmapTexturePalette[200]
+    MOV EAX,[0x00b9e48c]                ; 00472daa | g_LightmapTexturePalette[208]
+    MOV EAX,[0x00b9e4ac]                ; 00472daf | g_LightmapTexturePalette[216]
+    MOV EAX,[0x00b9e4cc]                ; 00472db4 | g_LightmapTexturePalette[224]
+    MOV EAX,[0x00b9e4ec]                ; 00472db9 | g_LightmapTexturePalette[232]
+    MOV EAX,[0x00b9e50c]                ; 00472dbe | g_LightmapTexturePalette[240]
+    MOV EAX,[0x00b9e52c]                ; 00472dc3 | g_LightmapTexturePalette[248]
+    MOV EAX,[0x005fa0e0]                ; 00472dc8 | g_LightmapData
+    MOV EAX,[0x005fa100]                ; 00472dcd | g_LightmapData[16]
+    MOV EAX,[0x005fa120]                ; 00472dd2 | g_LightmapData[32]
+    MOV EAX,[0x005fa140]                ; 00472dd7 | g_LightmapData[48]
+    MOV EAX,[0x005fa160]                ; 00472ddc | g_LightmapData[64]
+    MOV EAX,[0x005fa180]                ; 00472de1 | g_LightmapData[80]
+    MOV EAX,[0x005fa1a0]                ; 00472de6 | g_LightmapData[96]
+    MOV EAX,[0x005fa1c0]                ; 00472deb | g_LightmapData[112]
+    MOV EAX,[0x005fa1e0]                ; 00472df0 | g_LightmapData[128]
+    MOV EAX,[0x005fa200]                ; 00472df5 | g_LightmapData[144]
+    MOV EAX,[0x005fa220]                ; 00472dfa | g_LightmapData[160]
+    MOV EAX,[0x005fa240]                ; 00472dff | g_LightmapData[176]
+    MOV EAX,[0x005fa260]                ; 00472e04 | g_LightmapData[192]
+    MOV EAX,[0x005fa280]                ; 00472e09 | g_LightmapData[208]
+    MOV EAX,[0x005fa2a0]                ; 00472e0e | g_LightmapData[224]
+    MOV EAX,[0x005fa2c0]                ; 00472e13 | g_LightmapData[240]
+    MOV EAX,[0x005fa2e0]                ; 00472e18 | g_LightmapData[256]
+    MOV EAX,[0x005fa300]                ; 00472e1d | g_LightmapData[272]
+    MOV EAX,[0x005fa320]                ; 00472e22 | g_LightmapData[288]
+    MOV EAX,[0x005fa340]                ; 00472e27 | g_LightmapData[304]
+    MOV EAX,[0x005fa360]                ; 00472e2c | g_LightmapData[320]
+    MOV EAX,[0x005fa380]                ; 00472e31 | g_LightmapData[336]
+    MOV EAX,[0x005fa3a0]                ; 00472e36 | g_LightmapData[352]
+    MOV EAX,[0x005fa3c0]                ; 00472e3b | g_LightmapData[368]
+    MOV EAX,[0x005fa3e0]                ; 00472e40 | g_LightmapData[384]
+    MOV EAX,[0x005fa400]                ; 00472e45 | g_LightmapData[400]
+    MOV EAX,[0x005fa420]                ; 00472e4a | g_LightmapData[416]
+    MOV EAX,[0x005fa440]                ; 00472e4f | g_LightmapData[432]
+    MOV EAX,[0x005fa460]                ; 00472e54 | g_LightmapData[448]
+    MOV EAX,[0x005fa480]                ; 00472e59 | g_LightmapData[464]
+    MOV EAX,[0x005fa4a0]                ; 00472e5e | g_LightmapData[480]
+    MOV EAX,[0x005fa4c0]                ; 00472e63 | g_LightmapData[496]
+    MOV EAX,[0x005fa4e0]                ; 00472e68 | g_LightmapData[512]
+    MOV EAX,[0x005fa500]                ; 00472e6d | g_LightmapData[528]
+    MOV EAX,[0x005fa520]                ; 00472e72 | g_LightmapData[544]
+    MOV EAX,[0x005fa540]                ; 00472e77 | g_LightmapData[560]
+    MOV EAX,[0x005fa560]                ; 00472e7c | g_LightmapData[576]
+    MOV EAX,[0x005fa580]                ; 00472e81 | g_LightmapData[592]
+    MOV EAX,[0x005fa5a0]                ; 00472e86 | g_LightmapData[608]
+    MOV EAX,[0x005fa5c0]                ; 00472e8b | g_LightmapData[624]
+    MOV EAX,[0x005fa5e0]                ; 00472e90 | g_LightmapData[640]
+    MOV EAX,[0x005fa600]                ; 00472e95 | g_LightmapData[656]
+    MOV EAX,[0x005fa620]                ; 00472e9a | g_LightmapData[672]
+    MOV EAX,[0x005fa640]                ; 00472e9f | g_LightmapData[688]
+    MOV EAX,[0x005fa660]                ; 00472ea4 | g_LightmapData[704]
+    MOV EAX,[0x005fa680]                ; 00472ea9 | g_LightmapData[720]
+    MOV EAX,[0x005fa6a0]                ; 00472eae | g_LightmapData[736]
+    MOV EAX,[0x005fa6c0]                ; 00472eb3 | g_LightmapData[752]
+    MOV EAX,[0x005fa6e0]                ; 00472eb8 | g_LightmapData[768]
+    MOV EAX,[0x005fa700]                ; 00472ebd | g_LightmapData[784]
+    MOV EAX,[0x005fa720]                ; 00472ec2 | g_LightmapData[800]
+    MOV EAX,[0x005fa740]                ; 00472ec7 | g_LightmapData[816]
+    MOV EAX,[0x005fa760]                ; 00472ecc | g_LightmapData[832]
+    MOV EAX,[0x005fa780]                ; 00472ed1 | g_LightmapData[848]
+    MOV EAX,[0x005fa7a0]                ; 00472ed6 | g_LightmapData[864]
+    MOV EAX,[0x005fa7c0]                ; 00472edb | g_LightmapData[880]
+    MOV EAX,[0x005fa7e0]                ; 00472ee0 | g_LightmapData[896]
+    MOV EAX,[0x005fa800]                ; 00472ee5 | g_LightmapData[912]
+    MOV EAX,[0x005fa820]                ; 00472eea | g_LightmapData[928]
+    MOV EAX,[0x005fa840]                ; 00472eef | g_LightmapData[944]
+    MOV EAX,[0x005fa860]                ; 00472ef4 | g_LightmapData[960]
+    MOV EAX,[0x005fa880]                ; 00472ef9 | g_LightmapData[976]
+    MOV EAX,[0x005fa8a0]                ; 00472efe | g_LightmapData[992]
+    MOV EAX,[0x005fa8c0]                ; 00472f03 | g_LightmapData[1008]
     MOVZX EDX,byte ptr [EBX]            ; 00472f08
         ;   Label: LAB_00472f08
     MOVD MM0,dword ptr [ESI]            ; 00472f0b
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb9e14c] ; 00472f0e | g_UINT_ARRAY_00b9e14c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb9e14c] ; 00472f0e | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00472f16
     PUNPCKLBW MM0,MM7                   ; 00472f1a
     SHR EDX,0x1                         ; 00472f1d
     PUNPCKLBW MM2,MM7                   ; 00472f1f
     ADD EAX,EDX                         ; 00472f22
     PMULLW MM0,MM2                      ; 00472f24
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5fa0e0] ; 00472f27 | g_USHORT_ARRAY_005fa0e0
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5fa0e0] ; 00472f27 | g_LightmapData
     MOVQ MM2,MM3                        ; 00472f2f
     MOVQ MM4,MM5                        ; 00472f32
-    PXOR MM2,qword ptr [0x005fa8d8]     ; 00472f35 | g_USHORT_ARRAY_005fa0e0[1020]
+    PXOR MM2,qword ptr [0x005fa8d8]     ; 00472f35 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 00472f3c
     PMULHW MM4,MM3                      ; 00472f3f
     PADDW MM0,MM4                       ; 00472f42
-    PADDW MM0,qword ptr [0x005f8b68]    ; 00472f45 | g_QWORD_005f8b68
+    PADDW MM0,qword ptr [0x005f8b68]    ; 00472f45 | g_LightmapBlendBias1
     PSRLW MM0,0x4                       ; 00472f4c
     PACKUSWB MM0,MM7                    ; 00472f50
     MOVQ MM2,MM0                        ; 00472f53
     MOVQ MM3,MM0                        ; 00472f56
-    PAND MM0,qword ptr [0x00604eb8]     ; 00472f59 | g_QWORD_00604eb8
-    PAND MM2,qword ptr [0x00604e98]     ; 00472f60 | g_QWORD_00604e98
-    PAND MM3,qword ptr [0x00604e78]     ; 00472f67 | g_QWORD_00604e78
-    PSRLQ MM0,qword ptr [0x00604f00]    ; 00472f6e | g_QWORD_00604f00
-    PSRLQ MM2,qword ptr [0x00604ee0]    ; 00472f75 | g_QWORD_00604ee0
-    PSRLQ MM3,qword ptr [0x00604ec0]    ; 00472f7c | g_QWORD_00604ec0
+    PAND MM0,qword ptr [0x00604eb8]     ; 00472f59 | g_BlueMask32
+    PAND MM2,qword ptr [0x00604e98]     ; 00472f60 | g_GreenMask32
+    PAND MM3,qword ptr [0x00604e78]     ; 00472f67 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x00604f00]    ; 00472f6e | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x00604ee0]    ; 00472f75 | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x00604ec0]    ; 00472f7c | g_TotalDitherShift
     POR MM0,MM2                         ; 00472f83
     POR MM0,MM3                         ; 00472f86
     MOVQ MM6,MM0                        ; 00472f89
@@ -282,31 +282,31 @@ section .text
     INC EBP                             ; 00472f90
     MOVZX EDX,byte ptr [EBX]            ; 00472f91
     MOVD MM0,dword ptr [ESI]            ; 00472f94
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb9e14c] ; 00472f97 | g_UINT_ARRAY_00b9e14c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb9e14c] ; 00472f97 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00472f9f
     PUNPCKLBW MM0,MM7                   ; 00472fa3
     SHR EDX,0x1                         ; 00472fa6
     PUNPCKLBW MM2,MM7                   ; 00472fa8
     ADD EAX,EDX                         ; 00472fab
     PMULLW MM0,MM2                      ; 00472fad
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5fa0e0] ; 00472fb0 | g_USHORT_ARRAY_005fa0e0
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5fa0e0] ; 00472fb0 | g_LightmapData
     MOVQ MM2,MM3                        ; 00472fb8
     MOVQ MM4,MM5                        ; 00472fbb
-    PXOR MM2,qword ptr [0x005fa8d8]     ; 00472fbe | g_USHORT_ARRAY_005fa0e0[1020]
+    PXOR MM2,qword ptr [0x005fa8d8]     ; 00472fbe | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 00472fc5
     PMULHW MM4,MM3                      ; 00472fc8
     PADDW MM0,MM4                       ; 00472fcb
-    PADDW MM0,qword ptr [0x005f8b70]    ; 00472fce | g_QWORD_005f8b70
+    PADDW MM0,qword ptr [0x005f8b70]    ; 00472fce | g_LightmapBlendBias2
     PSRLW MM0,0x4                       ; 00472fd5
     PACKUSWB MM0,MM7                    ; 00472fd9
     MOVQ MM2,MM0                        ; 00472fdc
     MOVQ MM3,MM0                        ; 00472fdf
-    PAND MM0,qword ptr [0x00604eb8]     ; 00472fe2 | g_QWORD_00604eb8
-    PAND MM2,qword ptr [0x00604e98]     ; 00472fe9 | g_QWORD_00604e98
-    PAND MM3,qword ptr [0x00604e78]     ; 00472ff0 | g_QWORD_00604e78
-    PSRLQ MM0,qword ptr [0x00604f00]    ; 00472ff7 | g_QWORD_00604f00
-    PSRLQ MM2,qword ptr [0x00604ee0]    ; 00472ffe | g_QWORD_00604ee0
-    PSRLQ MM3,qword ptr [0x00604ec0]    ; 00473005 | g_QWORD_00604ec0
+    PAND MM0,qword ptr [0x00604eb8]     ; 00472fe2 | g_BlueMask32
+    PAND MM2,qword ptr [0x00604e98]     ; 00472fe9 | g_GreenMask32
+    PAND MM3,qword ptr [0x00604e78]     ; 00472ff0 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x00604f00]    ; 00472ff7 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x00604ee0]    ; 00472ffe | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x00604ec0]    ; 00473005 | g_TotalDitherShift
     POR MM0,MM2                         ; 0047300c
     POR MM0,MM3                         ; 0047300f
     PSLLQ MM0,0x10                      ; 00473012

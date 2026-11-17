@@ -26,11 +26,11 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   CGame* g_CGamePtr = 01ccf390
-;   int g_INT_0061f1a0 = 0xd0
-;   int g_INT_0061f1a4 = 0x60
+;   int g_InventoryWidth = 0xd0
+;   int g_InventoryHeight = 0x60
 ;   undefined4 g_CGameInstance.letterbox_mode
 ;   int g_INT_01d06ab4
-;   int g_INT_01d1bc5c
+;   int g_InventoryScreenHeight
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0
@@ -60,7 +60,7 @@ section .text
     JNZ 0x004fad69                      ; 004fab1d
         ;   XREF to: 004fad69 (CONDITIONAL_JUMP)  ; LAB_004fad69
     MOV ESI,dword ptr [0x0061b49c]      ; 004fab23 | g_INT_0061b49c
-    CMP ESI,dword ptr [0x01d1bc5c]      ; 004fab29 | g_INT_01d1bc5c
+    CMP ESI,dword ptr [0x01d1bc5c]      ; 004fab29 | g_InventoryScreenHeight
     JNZ 0x004fad71                      ; 004fab2f
         ;   XREF to: 004fad71 (CONDITIONAL_JUMP)  ; LAB_004fad71
     CMP dword ptr [EBX + 0x338],0x0     ; 004fab35
@@ -76,9 +76,9 @@ section .text
         ;   XREF to: 004fac51 (CONDITIONAL_JUMP)  ; LAB_004fac51
     MOV EAX,0x8                         ; 004fab55
     MOV EDI,0x50                        ; 004fab5a
-    MOV ESI,dword ptr [0x0061f1a0]      ; 004fab5f | g_INT_0061f1a0
+    MOV ESI,dword ptr [0x0061f1a0]      ; 004fab5f | g_InventoryWidth
     MOV EBP,dword ptr [0x0061b49c]      ; 004fab65 | g_INT_0061b49c
-    MOV ECX,dword ptr [0x0061f1a4]      ; 004fab6b | g_INT_0061f1a4
+    MOV ECX,dword ptr [0x0061f1a4]      ; 004fab6b | g_InventoryHeight
     CMP EBP,0x180                       ; 004fab71
     JGE 0x004fab86                      ; 004fab77
         ;   XREF to: 004fab86 (CONDITIONAL_JUMP)  ; LAB_004fab86
@@ -168,9 +168,9 @@ section .text
         ;   XREF to: 004fad69 (CONDITIONAL_JUMP)  ; LAB_004fad69
     MOV EDX,0x10                        ; 004fac71
     MOV EDI,0x40                        ; 004fac76
-    MOV ESI,dword ptr [0x0061f1a0]      ; 004fac7b | g_INT_0061f1a0
+    MOV ESI,dword ptr [0x0061f1a0]      ; 004fac7b | g_InventoryWidth
     MOV EBP,dword ptr [0x0061b49c]      ; 004fac81 | g_INT_0061b49c
-    MOV ECX,dword ptr [0x0061f1a4]      ; 004fac87 | g_INT_0061f1a4
+    MOV ECX,dword ptr [0x0061f1a4]      ; 004fac87 | g_InventoryHeight
     CMP EBP,0x180                       ; 004fac8d
     JGE 0x004faca2                      ; 004fac93
         ;   XREF to: 004faca2 (CONDITIONAL_JUMP)  ; LAB_004faca2

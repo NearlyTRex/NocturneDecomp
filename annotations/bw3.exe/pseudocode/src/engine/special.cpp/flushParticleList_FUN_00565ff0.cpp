@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_flushParticleList_FUN_00565ff0(void)
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6038)();
+  iVar1 = (*(code *)g_APIDLL_flushParticleList)();
   return iVar1;
 }

@@ -15,7 +15,7 @@
 ;   TerminatedCString s_CKeyFramedModel_buildCol_005bba88
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   CVector3f g_CVector3f_02cfd900
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0
@@ -88,7 +88,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004620a4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004620a9
-    PUSH 0x2cfd900                      ; 004620ac | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004620ac | g_ZeroVector
         ;   Label: LAB_004620ac
     PUSH EBX                            ; 004620b1
     CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0 ; 004620b2

@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6004
+;   void* g_APIDLL_lockFrame
 ;   int g_INT_02cf6120
 ;   int g_INT_02cf6128
 ;   int g_INT_02cf612c
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_00565830
     RET                                 ; 00565832
         ;   Label: LAB_00565832
-    CALL dword ptr [0x02cf6004]         ; 00565833 | g_PTR_02cf6004
+    CALL dword ptr [0x02cf6004]         ; 00565833 | g_APIDLL_lockFrame
         ;   Label: LAB_00565833
     TEST EAX,EAX                        ; 00565839
     JZ 0x00565832                       ; 0056583b

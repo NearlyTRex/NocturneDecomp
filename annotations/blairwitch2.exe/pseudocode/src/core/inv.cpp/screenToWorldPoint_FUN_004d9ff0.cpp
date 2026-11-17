@@ -44,13 +44,13 @@ CVector3i * __stack2_esi core_inv_cpp_screenToWorldPoint_FUN_004d9ff0(float scre
   lVar3 = (longlong)g_INT_01d04fc4 * (longlong)iVar7;
   lVar4 = (longlong)g_INT_01d04fc0 * (longlong)iVar6;
   lVar5 = (longlong)g_INT_01d04fcc * (longlong)iVar7;
-  local_1c = g_INT_01c38b74 +
+  local_1c = g_RelativeZ +
              ((uint)((longlong)g_INT_01d04fd8 * 0x10000) >> 0x10 |
              (int)((ulonglong)((longlong)g_INT_01d04fd8 * 0x10000) >> 0x20) << 0x10) +
              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
              ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
   puVar8 = (uint *)((int)out_point + (uint)bVar9 * -8 + 4);
-  out_point->x = g_INT_01c38b6c +
+  out_point->x = g_RelativeX +
                  ((uint)((longlong)g_INT_01d04fd0 * 0x10000) >> 0x10 |
                  (int)((ulonglong)((longlong)g_INT_01d04fd0 * 0x10000) >> 0x20) << 0x10) +
                  ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +

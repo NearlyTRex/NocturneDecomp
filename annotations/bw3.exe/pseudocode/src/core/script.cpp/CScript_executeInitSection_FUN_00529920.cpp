@@ -27,7 +27,7 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *th
         core_main_c_displayErrorAndQuit_FUN_004e4330("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
       }
       local_10 = this_ptr->next_cmd;
-      g_INT_01ed7014 = 0;
+      g_ScriptInputFlag = 0;
       this_ptr->next_cmd = iVar1;
       iVar1 = 0;
       while( true ) {
@@ -46,9 +46,9 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *th
           core_main_c_displayErrorAndQuit_FUN_004e4330("Infinite loop detected in initSection.\n");
         }
       }
-      if (g_INT_01ed7014 != 0) {
+      if (g_ScriptInputFlag != 0) {
         core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);
-        g_INT_01ed7014 = 0;
+        g_ScriptInputFlag = 0;
       }
       this_ptr->next_cmd = local_10;
       return;

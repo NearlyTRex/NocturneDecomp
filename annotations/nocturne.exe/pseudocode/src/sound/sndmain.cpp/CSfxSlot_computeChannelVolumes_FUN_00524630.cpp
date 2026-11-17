@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(CSfxS
   float local_30;
   float local_20;
   
-  if (g_INT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 2327;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
@@ -26,7 +26,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(CSfxS
   if (((this_ptr->options).flags & 1) == 0) {
     iVar2 = 0;
     pCVar3 = this_ptr;
-    if (0 < g_INT_005bea68) {
+    if (0 < g_AudioChannelCount) {
       do {
         local_30 = pCVar3->distance_to_speakers[0];
         if (pCVar3->distance_to_speakers[0] < this_ptr->min_distance) {
@@ -44,17 +44,17 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(CSfxS
         iVar2 = iVar2 + 1;
         pCVar3->channel_volumes[0] = fVar1 * local_20;
         pCVar3 = (CSfxSlot *)&(pCVar3->options).position;
-      } while (iVar2 < g_INT_005bea68);
+      } while (iVar2 < g_AudioChannelCount);
     }
   }
   else {
     iVar2 = 0;
-    if (0 < g_INT_005bea68) {
+    if (0 < g_AudioChannelCount) {
       do {
         iVar2 = iVar2 + 1;
         this_ptr->channel_volumes[0] = fVar1;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar2 < g_INT_005bea68);
+      } while (iVar2 < g_AudioChannelCount);
     }
   }
   return;

@@ -67,7 +67,7 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00528f90(SMpegSubbandSam
   else if (granule->mixed_block_flag == 0) {
     local_4c = iVar7 * 0x94;
     iVar6 = 0;
-    local_38 = g_SMpegLayer3BandIndex_ARRAY_00620798[iVar7].s[1];
+    local_38 = g_Layer3BandIndex[iVar7].s[1];
     iVar7 = local_4c + 0x34;
     do {
       local_24 = 0;
@@ -90,10 +90,10 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00528f90(SMpegSubbandSam
         local_24 = local_24 + 1;
         local_2c = local_2c + 1;
       } while (local_24 < 3);
-      iVar6 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_00620798[0].s + local_4c + 4);
+      iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_4c + 4);
       iVar13 = local_4c + 8;
       local_4c = local_4c + 4;
-      local_38 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_00620798[0].s + iVar13) - iVar6;
+      local_38 = *(int *)((int)g_Layer3BandIndex[0].s + iVar13) - iVar6;
     } while (local_4c != iVar7);
   }
   else {
@@ -113,8 +113,8 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00528f90(SMpegSubbandSam
       iVar6 = iVar6 + 1;
       local_54 = local_54 + 0x12;
     } while (iVar6 < 2);
-    iVar6 = g_SMpegLayer3BandIndex_ARRAY_00620798[iVar7].s[3];
-    local_34 = g_SMpegLayer3BandIndex_ARRAY_00620798[iVar7].s[4] - iVar6;
+    iVar6 = g_Layer3BandIndex[iVar7].s[3];
+    local_34 = g_Layer3BandIndex[iVar7].s[4] - iVar6;
     local_50 = iVar7 * 0x94 + 0xc;
     do {
       local_28 = 0;
@@ -136,10 +136,10 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00528f90(SMpegSubbandSam
         local_28 = local_28 + 1;
         local_30 = local_30 + 1;
       } while (local_28 < 3);
-      iVar6 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_00620798[0].s + local_50 + 4);
+      iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_50 + 4);
       iVar13 = local_50 + 8;
       local_50 = local_50 + 4;
-      local_34 = *(int *)((int)g_SMpegLayer3BandIndex_ARRAY_00620798[0].s + iVar13) - iVar6;
+      local_34 = *(int *)((int)g_Layer3BandIndex[0].s + iVar13) - iVar6;
     } while (local_50 != iVar7 * 0x94 + 0x34);
   }
   return;

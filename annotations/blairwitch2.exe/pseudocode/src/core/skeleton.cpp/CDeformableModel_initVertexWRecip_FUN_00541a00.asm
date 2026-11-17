@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     PUSH EDI                            ; 00541a02
     PUSH EBP                            ; 00541a03
     MOV EDI,dword ptr [0x0060b280]      ; 00541a04 | g_CDemonRenderer_PTR_0060b280
-    MOV EBP,dword ptr [0x01c38aec]      ; 00541a0a | g_INT_01c38aec
+    MOV EBP,dword ptr [0x01c38aec]      ; 00541a0a | g_PerspectiveReciprocal
     MOV ESI,dword ptr [ESP + 0x18]      ; 00541a10
     MOV ECX,dword ptr [ESP + 0x14]      ; 00541a14
     SHL ESI,0x2                         ; 00541a18
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 00541a28 (CONDITIONAL_JUMP)  ; LAB_00541a28
     LEA EAX,[EAX]                       ; 00541a39
     NOP                                 ; 00541a3f
-    MOV dword ptr [0x01c38aec],EBP      ; 00541a40 | g_INT_01c38aec
+    MOV dword ptr [0x01c38aec],EBP      ; 00541a40 | g_PerspectiveReciprocal
         ;   Label: LAB_00541a40
     MOV dword ptr [0x0060b280],EDI      ; 00541a46 | g_CDemonRenderer_PTR_0060b280
     POP EBP                             ; 00541a4c

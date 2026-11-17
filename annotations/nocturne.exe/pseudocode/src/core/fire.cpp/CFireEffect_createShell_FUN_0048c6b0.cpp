@@ -10,11 +10,11 @@ void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0(CFireEffect *thi
 
 {
   core_fire_cpp_CShell_setup_FUN_00489640
-            (g_ShellPool + g_INT_01c684dc,position,euler_angles,velocity,model_ptr);
-  g_INT_01c684dc = g_INT_01c684dc + 1;
-  if (g_INT_01c684dc < 0x32) {
+            (g_ShellPool + g_ShellAllocIndex,position,euler_angles,velocity,model_ptr);
+  g_ShellAllocIndex = g_ShellAllocIndex + 1;
+  if (g_ShellAllocIndex < 0x32) {
     return;
   }
-  g_INT_01c684dc = 0;
+  g_ShellAllocIndex = 0;
   return;
 }

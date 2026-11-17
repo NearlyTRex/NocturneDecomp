@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_restoreZBuffer_FUN_00566370(int slot,int left,int
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf6068)(slot,left,top,right,bottom);
+  iVar1 = (*(code *)g_APIDLL_restoreZBuffer)(slot,left,top,right,bottom);
   return iVar1;
 }

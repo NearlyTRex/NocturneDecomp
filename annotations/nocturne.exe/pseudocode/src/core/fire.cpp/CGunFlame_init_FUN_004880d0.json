@@ -74,25 +74,25 @@
     },
     {
       "addr": "01c09e08",
-      "name": "g_INT_01c09e08",
+      "name": "g_GunFlameCandidateCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c09e0c",
-      "name": "g_CCharacter_PTR_ARRAY_01c09e0c",
+      "name": "g_GunFlameCandidates",
       "type": "CCharacter*[50]",
       "value": null
     },
     {
       "addr": "01c09ed4",
-      "name": "g_INT_01c09ed4",
+      "name": "g_FlameCanCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c09ed8",
-      "name": "g_CFlameCan_PTR_ARRAY_01c09ed8",
+      "name": "g_FlameCans",
       "type": "CFlameCan*[150]",
       "value": null
     }
@@ -234,9 +234,9 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c09e0c",
+      "match": "(CCharacter **)((int)g_GunFlameCandidates",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c09e0c + local_20);",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_GunFlameCandidates + local_20);",
       "type": "pointer_cast"
     },
     {
@@ -250,25 +250,25 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c09ed8",
+      "match": "(CFlameCan **)((int)g_FlameCans",
       "severity": "moderate",
-      "text": "this_ptr_01 = *(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c09ed8 + iVar5);",
+      "text": "this_ptr_01 = *(CFlameCan **)((int)g_FlameCans + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_CCharacter_PTR_ARRAY_01c09e0c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_GunFlameCandidates` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 20,
-      "match": "(int)g_CCharacter_PTR_ARRAY_01c09e0c",
+      "match": "(int)g_GunFlameCandidates",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c09e0c + local_20);",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_GunFlameCandidates + local_20);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CFlameCan_PTR_ARRAY_01c09ed8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_FlameCans` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "(int)g_CFlameCan_PTR_ARRAY_01c09ed8",
+      "match": "(int)g_FlameCans",
       "severity": "moderate",
-      "text": "this_ptr_01 = *(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c09ed8 + iVar5);",
+      "text": "this_ptr_01 = *(CFlameCan **)((int)g_FlameCans + iVar5);",
       "type": "pointer_truncation"
     }
   ]

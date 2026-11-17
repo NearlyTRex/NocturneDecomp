@@ -25,13 +25,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330
       return;
     }
   }
-  g_BIT_INTEGER32_01c6e2b4.dword = 0xc4;
-  g_INT_01c6e2b8 = 6;
+  g_RenderStateFlags.dword = (RENDER_FOG_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+  g_VertexPreprocessMode = 6;
   core_xform_cpp_transformAndClipGeometry_FUN_00587cd0((prim->base).count,(int *)(prim + 1));
-  if (g_INT_007e3e88 < 3) {
+  if (g_ClippedVertexCount < 3) {
     return;
   }
   core_asgaya_cpp_rasterizePolygonCustom_FUN_005a23c0
-            (g_SRenderVertex_ARRAY_007e3e8c,g_INT_007e3e88,scanline_renderer);
+            (g_SRenderVertex_ARRAY_007e3e8c,g_ClippedVertexCount,scanline_renderer);
   return;
 }

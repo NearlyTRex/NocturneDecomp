@@ -11,11 +11,11 @@
 ;   TerminatedCString s_core_fire_cpp_0058134a
 ;   TerminatedCString s_CGunFlame_initProcess_to_0058135b
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   int g_INT_01c09e08
-;   CCharacter*[50] g_CCharacter_PTR_ARRAY_01c09e0c
-;   int g_INT_01c09ed4
-;   CFlameCan*[150] g_CFlameCan_PTR_ARRAY_01c09ed8
-;   undefined4 g_CFlameCanActorType_01c70654.name_hash
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
+;   int g_FlameCanCount
+;   CFlameCan*[150] g_FlameCans
+;   undefined4 g_CFlameCanClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
@@ -40,7 +40,7 @@ section .text
     XOR EDX,EDX                         ; 00487fd4
     XOR EDI,EDI                         ; 00487fd6
     XOR ESI,ESI                         ; 00487fd8
-    MOV dword ptr [0x01c09e08],EDX      ; 00487fda | g_INT_01c09e08
+    MOV dword ptr [0x01c09e08],EDX      ; 00487fda | g_GunFlameCandidateCount
     MOV EBX,dword ptr [0x005be368]      ; 00487fe0 | g_CDemonSetPtr
         ;   Label: LAB_00487fe0
     CMP EDI,dword ptr [EBX + 0x14ecb0]  ; 00487fe6 | g_CDemonSetInstance.character_count
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 0048800e (CONDITIONAL_JUMP)  ; LAB_0048800e
     XOR EBX,EBX                         ; 00487fee
     XOR ESI,ESI                         ; 00487ff0
-    MOV dword ptr [0x01c09ed4],EBX      ; 00487ff2 | g_INT_01c09ed4
+    MOV dword ptr [0x01c09ed4],EBX      ; 00487ff2 | g_FlameCanCount
     MOV EAX,[0x005be368]                ; 00487ff8 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_00487ff8
     CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 00487ffd | g_CDemonSetInstance.actor_count
@@ -77,14 +77,14 @@ section .text
     TEST EAX,EAX                        ; 0048803a
     JZ 0x0048805c                       ; 0048803c
         ;   XREF to: 0048805c (CONDITIONAL_JUMP)  ; LAB_0048805c
-    CMP dword ptr [0x01c09e08],0x32     ; 0048803e | g_INT_01c09e08
+    CMP dword ptr [0x01c09e08],0x32     ; 0048803e | g_GunFlameCandidateCount
     JGE 0x00488065                      ; 00488045
         ;   XREF to: 00488065 (CONDITIONAL_JUMP)  ; LAB_00488065
-    MOV EAX,[0x01c09e08]                ; 00488047 | g_INT_01c09e08
+    MOV EAX,[0x01c09e08]                ; 00488047 | g_GunFlameCandidateCount
         ;   Label: LAB_00488047
     LEA ECX,[EAX + 0x1]                 ; 0048804c
-    MOV dword ptr [EAX*0x4 + 0x1c09e0c],EBX ; 0048804f | g_CCharacter_PTR_ARRAY_01c09e0c
-    MOV dword ptr [0x01c09e08],ECX      ; 00488056 | g_INT_01c09e08
+    MOV dword ptr [EAX*0x4 + 0x1c09e0c],EBX ; 0048804f | g_GunFlameCandidates
+    MOV dword ptr [0x01c09e08],ECX      ; 00488056 | g_GunFlameCandidateCount
     INC EDI                             ; 0048805c
         ;   Label: LAB_0048805c
     ADD ESI,0x4                         ; 0048805d
@@ -101,7 +101,7 @@ section .text
     ADD ESP,0x4                         ; 00488084
     JMP 0x00488047                      ; 00488087
         ;   XREF to: 00488047 (UNCONDITIONAL_JUMP)  ; LAB_00488047
-    MOV EBP,dword ptr [0x01c7068c]      ; 00488089 | g_CFlameCanActorType_01c70654.name_hash
+    MOV EBP,dword ptr [0x01c7068c]      ; 00488089 | g_CFlameCanClassInfo.name_hash
         ;   Label: LAB_00488089
     PUSH EBP                            ; 0048808f
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00488090 | g_CDemonSetInstance.actors[0]
@@ -112,13 +112,13 @@ section .text
     TEST EAX,EAX                        ; 004880a0
     JZ 0x004880c2                       ; 004880a2
         ;   XREF to: 004880c2 (CONDITIONAL_JUMP)  ; LAB_004880c2
-    MOV ECX,dword ptr [0x01c09ed4]      ; 004880a4 | g_INT_01c09ed4
+    MOV ECX,dword ptr [0x01c09ed4]      ; 004880a4 | g_FlameCanCount
     CMP ECX,0x96                        ; 004880aa
     JGE 0x004880c2                      ; 004880b0
         ;   XREF to: 004880c2 (CONDITIONAL_JUMP)  ; LAB_004880c2
     LEA EDI,[ECX + 0x1]                 ; 004880b2
-    MOV dword ptr [ECX*0x4 + 0x1c09ed8],EAX ; 004880b5 | g_CFlameCan_PTR_ARRAY_01c09ed8
-    MOV dword ptr [0x01c09ed4],EDI      ; 004880bc | g_INT_01c09ed4
+    MOV dword ptr [ECX*0x4 + 0x1c09ed8],EAX ; 004880b5 | g_FlameCans
+    MOV dword ptr [0x01c09ed4],EDI      ; 004880bc | g_FlameCanCount
     INC EBX                             ; 004880c2
         ;   Label: LAB_004880c2
     ADD ESI,0x4                         ; 004880c3

@@ -9,8 +9,8 @@
 void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005504d0(void)
 
 {
-  g_INT_0264161c = g_INT_0264161c + -1;
-  if (-1 < g_INT_0264161c) {
+  g_SfxLastSlot = g_SfxLastSlot + -1;
+  if (-1 < g_SfxLastSlot) {
     return;
   }
   g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";

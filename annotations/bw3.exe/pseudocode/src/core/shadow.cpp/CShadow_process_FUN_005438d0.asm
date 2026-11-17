@@ -620,7 +620,7 @@ section .text
     ADD EAX,EBX                         ; 00544061
     PUSH 0x3f800000                     ; 00544063
     PUSH EAX                            ; 00544068
-    PUSH 0x2cfd900                      ; 00544069 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 00544069 | g_ZeroVector
     LEA ESI,[EBP + 0xffffff36]          ; 0054406e
     LEA EDI,[EBP + -0x52]               ; 00544074
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00544077
@@ -663,7 +663,7 @@ section .text
     ADD EAX,EBX                         ; 005440f1
     PUSH 0x3f800000                     ; 005440f3
     PUSH EAX                            ; 005440f8
-    PUSH 0x2cfd900                      ; 005440f9 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 005440f9 | g_ZeroVector
     LEA ESI,[EBP + 0x1a]                ; 005440fe
     LEA EDI,[EBP + -0x2e]               ; 00544101
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00544104
@@ -709,7 +709,7 @@ section .text
     ADD EBX,EAX                         ; 00544187
     PUSH 0x3f800000                     ; 00544189
     PUSH EBX                            ; 0054418e
-    PUSH 0x2cfd900                      ; 0054418f | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 0054418f | g_ZeroVector
     LEA ESI,[EBP + -0x6a]               ; 00544194
     LEA EDI,[EBP + -0x16]               ; 00544197
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0054419a

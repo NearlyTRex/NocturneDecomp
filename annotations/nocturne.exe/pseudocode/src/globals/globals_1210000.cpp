@@ -5,5 +5,5 @@
 // =============================================================================
 
 // SCoronaLightCache
-SCoronaLightCache g_SCoronaLightCache_01216608 = {};
+SCoronaLightCache g_CoronaLightCache = {};
 

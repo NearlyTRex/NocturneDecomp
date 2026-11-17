@@ -13,12 +13,12 @@
 ;   core_dimage.cpp_CDemonImage_load_FUN_00449030 at 004491ca
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
-;   int g_INT_01c35818
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
-;   int g_INT_01c35824
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
-;   int g_INT_01c35830
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;
 ; *****************************************************************************
 
@@ -31,24 +31,24 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00448fd3
     MOV EBX,dword ptr [ESP + 0x18]      ; 00448fd7
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00448fdb
-    MOV ECX,dword ptr [0x01c35818]      ; 00448fdf | g_INT_01c35818
+    MOV ECX,dword ptr [0x01c35818]      ; 00448fdf | g_RedScaleFactor
     MOV EAX,EDI                         ; 00448fe5
     XOR EDX,EDX                         ; 00448fe7
     DIV ECX                             ; 00448fe9
     MOV EDI,EAX                         ; 00448feb
     XOR EDX,EDX                         ; 00448fed
     MOV EAX,EBX                         ; 00448fef
-    MOV EBX,dword ptr [0x01c35824]      ; 00448ff1 | g_INT_01c35824
+    MOV EBX,dword ptr [0x01c35824]      ; 00448ff1 | g_GreenScaleFactor
     DIV EBX                             ; 00448ff7
     MOV EBX,EAX                         ; 00448ff9
     XOR EDX,EDX                         ; 00448ffb
     MOV EAX,ESI                         ; 00448ffd
-    DIV dword ptr [0x01c35830]          ; 00448fff | g_INT_01c35830
-    MOV CL,byte ptr [0x01c35814]        ; 00449005 | g_BIT_INTEGER32_01c35814
+    DIV dword ptr [0x01c35830]          ; 00448fff | g_BlueScaleFactor
+    MOV CL,byte ptr [0x01c35814]        ; 00449005 | g_RedBitPosition
     SHL EDI,CL                          ; 0044900b
-    MOV CL,byte ptr [0x01c35820]        ; 0044900d | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0044900d | g_GreenBitPosition
     SHL EBX,CL                          ; 00449013
-    MOV CL,byte ptr [0x01c3582c]        ; 00449015 | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 00449015 | g_BlueBitPosition
     OR EBX,EDI                          ; 0044901b
     SHL EAX,CL                          ; 0044901d
     OR EAX,EBX                          ; 0044901f

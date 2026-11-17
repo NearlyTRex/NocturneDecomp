@@ -70,7 +70,7 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427260(CCharacter *this_
   CStack_40.x = CStack_34.x;
   *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
        *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
-  this_ptr_00 = g_CFireEffect_PTR_00614d30;
+  this_ptr_00 = g_CFireEffectPtr;
   *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   core_fire_cpp_CFireEffect_createExplosion_FUN_0049e360

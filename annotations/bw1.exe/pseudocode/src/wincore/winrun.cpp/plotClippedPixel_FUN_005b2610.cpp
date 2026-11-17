@@ -9,7 +9,7 @@
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005b2610(int x_coord,int y_coord)
 
 {
-  if ((((g_INT_01c4f008 < x_coord) && (g_INT_01c4f00c < y_coord)) && (x_coord < g_INT_01c4f010)) &&
+  if ((((g_INT_01c4f008 < x_coord) && (g_INT_01c4f00c < y_coord)) && (x_coord < g_ClipRight)) &&
      (y_coord < g_INT_01c4f014)) {
     engine_2d_c_plotPixel_FUN_00401130(x_coord,y_coord);
     return;

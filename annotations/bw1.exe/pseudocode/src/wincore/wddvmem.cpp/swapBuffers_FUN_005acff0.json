@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 369,
+    "complexity_score": 368,
     "cross_reference_count": 38,
     "function_call_count": 7,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
+    "pseudocode_lines": 138,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "signed_shift_global_idiom",
       "unrolled_memcpy"
     ],
-    "total_lines": 378
+    "total_lines": 377
   },
   "cross_references": [
     {
@@ -330,7 +330,7 @@
     },
     {
       "addr": "006260e4",
-      "name": "g_INT_006260e4",
+      "name": "g_WindowActive",
       "type": "int",
       "value": "-0x1"
     },
@@ -342,13 +342,13 @@
     },
     {
       "addr": "01c4354c",
-      "name": "g_ARRAY_PTR_01c4354c",
+      "name": "g_ScreenBufferArray",
       "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "g_ARRAY_PTR_01c4354c[1]",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
@@ -360,7 +360,7 @@
     },
     {
       "addr": "01c51d00",
-      "name": "g_INT_01c51d00",
+      "name": "g_MMXSupported",
       "type": "int",
       "value": null
     },
@@ -378,13 +378,13 @@
     },
     {
       "addr": "02c99304",
-      "name": "g_IDirectDrawSurface_PTR_02c99304",
+      "name": "g_DirectDrawSurface",
       "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02c99314",
-      "name": "g_INT_02c99314",
+      "name": "g_FlipPending",
       "type": "int",
       "value": null
     },
@@ -587,10 +587,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
-      "match": "(byte **)((int)g_ARRAY_PTR_01c4354c",
+      "line": 109,
+      "match": "(byte **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = *(byte **)((int)g_ARRAY_PTR_01c4354c + iVar14);",
+      "text": "puVar5 = *(byte **)((int)g_ScreenBufferArray + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -642,11 +642,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 110,
-      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 109,
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = *(byte **)((int)g_ARRAY_PTR_01c4354c + iVar14);",
+      "text": "puVar5 = *(byte **)((int)g_ScreenBufferArray + iVar14);",
       "type": "pointer_truncation"
     },
     {

@@ -43,8 +43,9 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005576a0(CWerewolf
                 (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f,&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
                 (g_CDemonRenderer_PTR_005ae704,&local_14,(CVector3f *)0x0);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(this_ptr,&CVector3f_02de0774);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(this_ptr,&CVector3f_02de0780);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(this_ptr,&g_WerewolfEyeGlowOffsetLeft);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(this_ptr,&g_WerewolfEyeGlowOffsetRight)
+      ;
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);

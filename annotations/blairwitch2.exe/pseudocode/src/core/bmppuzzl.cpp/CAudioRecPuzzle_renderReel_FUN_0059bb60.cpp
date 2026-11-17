@@ -70,9 +70,9 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRec
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
             (g_CDemonRenderer_PTR_0060b280,36.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
   afStack_3c[2] = fStack_70 + fStack_64;
   afStack_3c[3] = fStack_6c + fStack_60;
   fStack_2c = fStack_68 + fStack_5c;
@@ -83,7 +83,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRec
   translation = (CVector3f *)0x0;
   CStack_1c.z = angle;
   euler_angles = &CStack_1c;
-  g_INT_01c38aec = 0;
+  g_PerspectiveReciprocal = 0;
   fStack_40 = fStack_28 * -0.5f;
   afStack_3c[0] = fStack_24 * -0.5f;
   afStack_3c[1] = fStack_20 * -0.5f;
@@ -95,7 +95,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRec
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c,&CStack_58);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector,&CStack_58);
   if (draw_reel == 0) {
     this_ptr_01 = &this_ptr->reel_shadow_model;
   }

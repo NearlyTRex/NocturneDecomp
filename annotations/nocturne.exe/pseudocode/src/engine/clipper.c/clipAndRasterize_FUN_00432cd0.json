@@ -509,7 +509,7 @@
     },
     {
       "addr": "005b7644",
-      "name": "INT_005b7644",
+      "name": "g_VertexProcessingEnabled",
       "type": "int",
       "value": "0x1"
     },
@@ -551,61 +551,61 @@
     },
     {
       "addr": "006b0280",
-      "name": "g_INT_006b0280",
+      "name": "g_CullingMode",
       "type": "int",
       "value": null
     },
     {
       "addr": "00766c70",
-      "name": "g_INT_00766c70",
+      "name": "g_ClippedVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "00766c74",
-      "name": "g_SRenderVertex_ARRAY_00766c74",
+      "name": "g_ClippedVertexBuffer",
       "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "00766c78",
-      "name": "g_SRenderVertex_ARRAY_00766c74[0].projected_vertex.transformed_y",
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766c7c",
-      "name": "g_SRenderVertex_ARRAY_00766c74[0].projected_vertex.transformed_z",
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766c80",
-      "name": "g_SRenderVertex_ARRAY_00766c74[0].projected_vertex.inv_z",
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.inv_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766c84",
-      "name": "g_SRenderVertex_ARRAY_00766c74[0].projected_vertex.screen_x",
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766ca4",
-      "name": "g_SRenderVertex_ARRAY_00766c74[1].projected_vertex.transformed_x",
+      "name": "g_ClippedVertexBuffer[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766ca8",
-      "name": "g_SRenderVertex_ARRAY_00766c74[1].projected_vertex.transformed_y",
+      "name": "g_ClippedVertexBuffer[1].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766cac",
-      "name": "g_SRenderVertex_ARRAY_00766c74[1].projected_vertex.transformed_z",
+      "name": "g_ClippedVertexBuffer[1].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
@@ -635,67 +635,67 @@
     },
     {
       "addr": "007672f4",
-      "name": "g_INT_007672f4",
+      "name": "g_SecondaryClipVertexCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "007672f8",
-      "name": "g_SRenderVertex_ARRAY_007672f8",
+      "name": "g_SecondaryClipVertexBuffer",
       "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "007672fc",
-      "name": "g_SRenderVertex_ARRAY_007672f8[0].projected_vertex.transformed_y",
+      "name": "g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00767300",
-      "name": "g_SRenderVertex_ARRAY_007672f8[0].projected_vertex.transformed_z",
+      "name": "g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00767328",
-      "name": "g_SRenderVertex_ARRAY_007672f8[1].projected_vertex.transformed_x",
+      "name": "g_SecondaryClipVertexBuffer[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0076732c",
-      "name": "g_SRenderVertex_ARRAY_007672f8[1].projected_vertex.transformed_y",
+      "name": "g_SecondaryClipVertexBuffer[1].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00767330",
-      "name": "g_SRenderVertex_ARRAY_007672f8[1].projected_vertex.transformed_z",
+      "name": "g_SecondaryClipVertexBuffer[1].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00767334",
-      "name": "g_SRenderVertex_ARRAY_007672f8[1].projected_vertex.inv_z",
+      "name": "g_SecondaryClipVertexBuffer[1].projected_vertex.inv_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00767338",
-      "name": "g_SRenderVertex_ARRAY_007672f8[1].projected_vertex.screen_x",
+      "name": "g_SecondaryClipVertexBuffer[1].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007678f8",
-      "name": "g_SRenderVertex_ARRAY_007678f8",
+      "name": "g_ClipperTempBuffer",
       "type": "SRenderVertex[12]",
       "value": null
     },
     {
       "addr": "00767b38",
-      "name": "g_INT_00767b38",
+      "name": "g_ClipperTempCount",
       "type": "int",
       "value": null
     },
@@ -1201,11 +1201,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_SRenderVertex_ARRAY_00766c74[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ClippedVertexBuffer[0].projected_vertex.transformed_z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 447,
-      "match": "(int)&g_SRenderVertex_ARRAY_00766c74[0].projected_vertex",
+      "match": "(int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z",
       "severity": "moderate",
-      "text": "iVar17 = *(int *)((int)&g_SRenderVertex_ARRAY_00766c74[0].projected_vertex.",
+      "text": "iVar17 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_truncation"
     },
     {
@@ -1289,19 +1289,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x766c78 matches address of g_SRenderVertex_ARRAY_00766c74 (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x766c78 matches address of g_ClippedVertexBuffer (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 499,
       "match": "0x766c78",
       "severity": "moderate",
-      "text": "(g_INT_00766c70 * 0x30 + 0x766c78 + (uint)bVar22 * -8);",
+      "text": "(g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar22 * -8);",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex literal 0x766c78 matches address of g_SRenderVertex_ARRAY_00766c74 (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "description": "Raw hex literal 0x766c78 matches address of g_ClippedVertexBuffer (+4 bytes into) (type SRenderVertex[16]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 539,
       "match": "0x766c78",
       "severity": "moderate",
-      "text": "(g_INT_00766c70 * 0x30 + 0x766c78 + (uint)bVar22 * -8);",
+      "text": "(g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar22 * -8);",
       "type": "raw_address_constant"
     },
     {
@@ -1321,11 +1321,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 447,
-      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar17 = *(int *)((int)&g_SRenderVertex_ARRAY_00766c74[0].projected_vertex.",
+      "text": "iVar17 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_cast"
     },
     {

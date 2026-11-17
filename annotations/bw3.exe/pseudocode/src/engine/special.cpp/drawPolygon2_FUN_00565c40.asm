@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c6cee8
-;   void* g_PTR_02cf6024
+;   void* g_APIDLL_drawPolygon2
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 00565c57
     MOV ESI,dword ptr [ESP + 0x14]      ; 00565c58
     PUSH ESI                            ; 00565c5c
-    CALL dword ptr [0x02cf6024]         ; 00565c5d | g_PTR_02cf6024
+    CALL dword ptr [0x02cf6024]         ; 00565c5d | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 00565c63
     POP EBX                             ; 00565c66
     POP ESI                             ; 00565c67

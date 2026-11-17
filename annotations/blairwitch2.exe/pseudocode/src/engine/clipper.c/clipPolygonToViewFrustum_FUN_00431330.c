@@ -81,7 +81,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
   }
   else {
     if (uVar19 == 0) {
-      if ((g_INT_01c37788 == 0) || (g_INT_0070ca74 != 0)) {
+      if ((g_INT_01c37788 == 0) || (g_TexturesDisabled != 0)) {
         g_INT_007bee30 = vertex_count;
         local_1c = 0;
         if (0 < vertex_count) {
@@ -132,12 +132,11 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
           g_INT_ARRAY_007bf430[iVar11] = (int)(g_SRenderVertex_ARRAY_00622014 + iVar16);
         } while (iVar11 < vertex_count);
       }
-      if (g_INT_0070ca7c != 0) {
+      if (g_CullingMode != 0) {
         if (vertex_count < 4) {
           iVar11 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
-                             (g_SRenderVertex_PTR_ARRAY_007bf434[0],
-                              g_SRenderVertex_PTR_ARRAY_007bf434[1],
-                              g_SRenderVertex_PTR_ARRAY_007bf434[2]);
+                             (g_ClipperCullingPointers[0],g_ClipperCullingPointers[1],
+                              g_ClipperCullingPointers[2]);
           bVar25 = iVar11 == 0;
         }
         else {
@@ -148,11 +147,9 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
           if (0 < iVar11) {
             do {
               iVar12 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
-                                 (g_SRenderVertex_PTR_ARRAY_007bf434[0],
-                                  *(SRenderVertex **)
-                                   ((int)g_SRenderVertex_PTR_ARRAY_007bf434 + iVar16 + 4),
-                                  *(SRenderVertex **)
-                                   ((int)g_SRenderVertex_PTR_ARRAY_007bf434 + iVar16 + 8));
+                                 (g_ClipperCullingPointers[0],
+                                  *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar16 + 4),
+                                  *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar16 + 8));
               if (iVar12 == 0) {
                 iVar20 = iVar20 + 1;
               }
@@ -165,9 +162,9 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
           return 1;
         }
       }
-      g_INT_01e61b58 = g_INT_01e61b58 + vertex_count + -2;
+      g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
       engine_special_cpp_drawPolygon2_FUN_0055f920
-                (g_SRenderVertex_PTR_ARRAY_007bf434,vertex_count,g_BIT_INTEGER32_01c38b54.dword);
+                (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags.dword);
       return 1;
     }
     iVar11 = 0;
@@ -183,13 +180,13 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
     g_INT_007bee30 = vertex_count;
     local_44 = vertex_count;
     iVar11 = 0;
-    g_INT_007bfcf8 = 0;
+    g_ClipperTempCount = 0;
     local_18 = (int)local_cc;
     local_20 = 0;
     pSVar17 = (SRenderVertex *)local_14c[vertex_count + -1];
     if (0 < vertex_count) {
       do {
-        iVar16 = g_INT_007bfcf8;
+        iVar16 = g_ClipperTempCount;
         pSVar22 = (SRenderVertex *)*piVar18;
         bVar10 = (pSVar17->projected_vertex).transformed_z <=
                  (pSVar17->projected_vertex).transformed_x;
@@ -204,13 +201,13 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
           *(SRenderVertex **)(local_18 + uVar8) = pSVar17;
           break;
         case 1:
-          if (0xb < g_INT_007bfcf8) {
+          if (0xb < g_ClipperTempCount) {
             g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
             g_INT_01d046a4 = 0x5e;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
           }
-          pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
-          g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+          pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
+          g_ClipperTempCount = g_ClipperTempCount + 1;
           uVar8 = iVar11 * 4;
           iVar11 = iVar11 + 1;
           *(SRenderVertex **)(local_18 + uVar8) = pSVar24;
@@ -224,8 +221,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
             g_INT_01d046a4 = 0x5e;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
           }
-          pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
-          g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+          pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
+          g_ClipperTempCount = g_ClipperTempCount + 1;
           iVar11 = iVar11 + 2;
           *(SRenderVertex **)(local_18 + iVar20 * 4) = pSVar24;
           engine_clipper_c_interpolateVertexRightClip_FUN_00430650(pSVar17,pSVar22,pSVar24);
@@ -260,27 +257,27 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
             local_14c[iVar20] = (int)pSVar17;
             break;
           case 1:
-            if (0xb < g_INT_007bfcf8) {
+            if (0xb < g_ClipperTempCount) {
               g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
               g_INT_01d046a4 = 0x5e;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
             }
-            pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+            pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
             iVar16 = iVar20 + 1;
-            g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+            g_ClipperTempCount = g_ClipperTempCount + 1;
             local_14c[iVar20] = (int)pSVar24;
             engine_clipper_c_interpolateVertexLeftClip_FUN_00430750(pSVar22,pSVar17,pSVar24);
             break;
           case 2:
             local_14c[iVar20] = (int)pSVar17;
-            if (0xb < g_INT_007bfcf8) {
+            if (0xb < g_ClipperTempCount) {
               g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
               g_INT_01d046a4 = 0x5e;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
             }
-            pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+            pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
             iVar16 = iVar20 + 2;
-            g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+            g_ClipperTempCount = g_ClipperTempCount + 1;
             local_14c[iVar20 + 1] = (int)pSVar24;
             engine_clipper_c_interpolateVertexLeftClip_FUN_00430750(pSVar17,pSVar22,pSVar24);
           }
@@ -314,27 +311,27 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
               (&uStack_d0)[iVar11] = pSVar17;
               break;
             case 1:
-              if (0xb < g_INT_007bfcf8) {
+              if (0xb < g_ClipperTempCount) {
                 g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
                 g_INT_01d046a4 = 0x5e;
                 core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
               }
-              pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+              pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
               iVar11 = iVar11 + 1;
-              g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
               (&uStack_d0)[iVar11] = pSVar24;
               engine_clipper_c_interpolateVertexTopClip_FUN_00430850(pSVar22,pSVar17,pSVar24);
               break;
             case 2:
               (&uStack_d0)[iVar11 + 1] = pSVar17;
-              if (0xb < g_INT_007bfcf8) {
+              if (0xb < g_ClipperTempCount) {
                 g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
                 g_INT_01d046a4 = 0x5e;
                 core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
               }
-              pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+              pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
               iVar11 = iVar11 + 2;
-              g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
               (&uStack_d0)[iVar11] = pSVar24;
               engine_clipper_c_interpolateVertexTopClip_FUN_00430850(pSVar17,pSVar22,pSVar24);
             }
@@ -369,27 +366,27 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
                 local_14c[iVar20] = (int)pSVar17;
                 break;
               case 1:
-                if (0xb < g_INT_007bfcf8) {
+                if (0xb < g_ClipperTempCount) {
                   g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
                   g_INT_01d046a4 = 0x5e;
                   core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
                 }
-                pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+                pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
                 iVar16 = iVar20 + 1;
-                g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+                g_ClipperTempCount = g_ClipperTempCount + 1;
                 local_14c[iVar20] = (int)pSVar24;
                 engine_clipper_c_interpolateVertexBottomClip_FUN_00430950(pSVar22,pSVar17,pSVar24);
                 break;
               case 2:
                 local_14c[iVar20] = (int)pSVar17;
-                if (0xb < g_INT_007bfcf8) {
+                if (0xb < g_ClipperTempCount) {
                   g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
                   g_INT_01d046a4 = 0x5e;
                   core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
                 }
-                pSVar24 = g_SRenderVertex_ARRAY_007bfab8 + g_INT_007bfcf8;
+                pSVar24 = g_ClipperTempBuffer + g_ClipperTempCount;
                 iVar16 = iVar20 + 2;
-                g_INT_007bfcf8 = g_INT_007bfcf8 + 1;
+                g_ClipperTempCount = g_ClipperTempCount + 1;
                 local_14c[iVar20 + 1] = (int)pSVar24;
                 engine_clipper_c_interpolateVertexBottomClip_FUN_00430950(pSVar17,pSVar22,pSVar24);
               }
@@ -439,7 +436,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
               } while (iVar11 < g_INT_007bee30);
             }
             iVar11 = 0;
-            if (g_INT_00609b34 != 0) {
+            if (g_FarPlaneDistance != 0) {
               if (0 < g_INT_007bee30) {
                 iVar16 = 0;
                 do {
@@ -451,7 +448,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
                   iVar16 = iVar16 + 0x30;
                 } while (iVar16 < g_INT_007bee30 * 0x30);
               }
-              if (g_INT_00609b34 <= iVar11) {
+              if (g_FarPlaneDistance <= iVar11) {
                 g_INT_007bf4b4 = g_INT_007bee30;
                 pSVar17 = g_SRenderVertex_ARRAY_007bee34;
                 pSVar22 = g_SRenderVertex_ARRAY_007bf4b8;
@@ -483,8 +480,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
                     if (uVar14 == g_INT_007bf4b4) {
                       uVar14 = uVar14 ^ g_INT_007bf4b4;
                     }
-                    bVar10 = g_INT_00609b34 <= (pSVar17->projected_vertex).transformed_z;
-                    if (g_INT_00609b34 <=
+                    bVar10 = g_FarPlaneDistance <= (pSVar17->projected_vertex).transformed_z;
+                    if (g_FarPlaneDistance <=
                         g_SRenderVertex_ARRAY_007bf4b8[uVar14].projected_vertex.transformed_z) {
                       bVar10 = bVar10 | 2;
                     }

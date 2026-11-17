@@ -32,11 +32,11 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c450(CDemonA
   this_ptr->parent_type = parent_class_info;
   pCVar5 = this_ptr;
   while( true ) {
-    iVar3 = g_INT_007bc044;
+    iVar3 = g_NumActorClassTypes;
     bVar2 = pCVar5->class_name[0];
     pCVar5 = (CDemonActorType *)(pCVar5->class_name + 1);
     if (bVar2 == 0) break;
-    if ((g_UCHAR_ARRAY_0061ed94[(byte)(bVar2 + 1)] & 0xe0) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(bVar2 + 1)] & 0xe0) != 0) {
       iVar3 = tolower((uint)bVar2);
       uVar4 = iVar3 * 0x20001 + uVar4 * 0x80 + (uVar4 >> 0x19);
     }
@@ -47,7 +47,7 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c450(CDemonA
     g_INT_01d046a4 = 0xa7c;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many actor types!");
   }
-  g_CDemonActorType_PTR_ARRAY_007bc048[g_INT_007bc044] = this_ptr;
-  g_INT_007bc044 = g_INT_007bc044 + 1;
+  g_ActorClassRegistrations[g_NumActorClassTypes] = this_ptr;
+  g_NumActorClassTypes = g_NumActorClassTypes + 1;
   return this_ptr;
 }

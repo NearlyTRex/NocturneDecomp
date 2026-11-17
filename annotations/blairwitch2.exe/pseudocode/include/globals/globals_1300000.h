@@ -14,19 +14,19 @@
 // =============================================================================
 
 // CDemonLight*
-extern CDemonLight* g_CDemonLight_PTR_013087d4;
+extern CDemonLight* g_CurrentLightForCorona;
 
 // CMatrix3x3i
-extern CMatrix3x3i g_CMatrix3x3i_013087d8;
+extern CMatrix3x3i g_CoronaCameraRotationMatrix;
 
 // SCameraEdge[10000]
-extern SCameraEdge g_SCameraEdge_ARRAY_01308808[10000];
+extern SCameraEdge g_CameraEdgeDetectionResults[10000];
 
 // _BIT_INTEGER32
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01308800;
+extern _BIT_INTEGER32 g_CameraDownscaleIterations;
 
 // int
-extern int g_INT_013083cc;
-extern int g_INT_013083d0;
-extern int g_INT_01308804;
+extern int g_BackdropSaveActive;
+extern int g_DitherPatternOffset;
+extern int g_CameraEdgeCount;
 

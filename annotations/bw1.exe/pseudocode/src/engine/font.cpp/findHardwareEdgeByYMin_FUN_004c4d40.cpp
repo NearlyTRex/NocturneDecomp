@@ -12,16 +12,16 @@ SHardwareEdge * __cdecl engine_font_cpp_findHardwareEdgeByYMin_FUN_004c4d40(int 
   SHardwareEdge *pSVar1;
   int iVar2;
   
-  pSVar1 = g_SHardwareEdge_ARRAY_01cc8cec;
+  pSVar1 = g_HardwareEdgeTable;
   iVar2 = 0;
-  if (0 < g_INT_01cc8ce8) {
+  if (0 < g_EdgeCount) {
     do {
       if ((y_min == pSVar1->y_min) && (pSVar1 != exclude_edge)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;
       pSVar1 = pSVar1 + 1;
-    } while (iVar2 < g_INT_01cc8ce8);
+    } while (iVar2 < g_EdgeCount);
   }
   return (SHardwareEdge *)0x0;
 }

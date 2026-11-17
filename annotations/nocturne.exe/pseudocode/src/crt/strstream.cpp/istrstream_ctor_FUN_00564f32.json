@@ -61,13 +61,13 @@
   "globals": [
     {
       "addr": "005a4730",
-      "name": "g_WatcomVirtualBaseDescriptor_005a4730",
+      "name": "g_IstrstreamLayoutInfo",
       "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
       "addr": "005a4738",
-      "name": "g_INT_005a4738",
+      "name": "g_Istrstream_IstreamLastReadLength",
       "type": "int",
       "value": "0x48"
     },
@@ -198,7 +198,7 @@
       "line": 13,
       "match": "(int **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int **)((int)this_ptr + 0x48) = &g_INT_005a4738;",
+      "text": "*(int **)((int)this_ptr + 0x48) = &g_Istrstream_IstreamLastReadLength;",
       "type": "pointer_cast"
     },
     {
@@ -230,7 +230,7 @@
       "line": 13,
       "match": "(int **)((int)this_ptr + 0x48)",
       "severity": "moderate",
-      "text": "*(int **)((int)this_ptr + 0x48) = &g_INT_005a4738;",
+      "text": "*(int **)((int)this_ptr + 0x48) = &g_Istrstream_IstreamLastReadLength;",
       "type": "pointer_cast"
     },
     {

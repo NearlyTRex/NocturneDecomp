@@ -26,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_004697a0(C
       pSVar3 = poly;
       do {
         iVar1 = pSVar3->vertices[0].vertex_index;
-        *(int *)((int)g_INT_ARRAY_01ba5c84 + iVar2) = iVar1;
+        *(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         if ((int)(this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x & -0x80000000) != 0)
         {
@@ -43,17 +43,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_004697a0(C
         this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->shadow_pass_active == 0) {
-        g_BIT_INTEGER32_01c38b54.dword = 0x90;
-        g_INT_01c38b58 = 6;
-        g_PTR_01c35e6c = core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046eb02;
+        g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = 6;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046eb02;
       }
       else {
-        g_BIT_INTEGER32_01c38b54.dword = 0;
-        g_INT_01c38b58 = 0;
-        g_PTR_01c35e6c = core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046e984;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046e984;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-                (this_ptr,(poly->base).base.count,g_INT_ARRAY_01ba5c84);
+                (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
       this_ptr->face_capture_enabled = iVar4;
     }
   }

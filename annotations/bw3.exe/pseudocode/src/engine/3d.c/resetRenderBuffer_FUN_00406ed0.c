@@ -9,7 +9,7 @@
 void __cdecl engine_3d_c_resetRenderBuffer_FUN_00406ed0(void)
 
 {
-  g_INT_0073047c = 0;
-  g_INT_00730478 = 1;
+  g_RenderBufferCount = 0;
+  g_RenderBufferEnabled = 1;
   return;
 }

@@ -128,13 +128,13 @@ static float g_FLOAT_006013a0 = 256.0f;
 static float g_FLOAT_006013a8 = 0.00390625f;
 
 // float[6] constants
-static float g_FLOAT_ARRAY_00609aa0[6] = {
+static float g_MoveAwayAngleOffsets[6] = {
     2.3561945f, 3.9269907f, 1.5707964f, 4.712389f,
     0.78539819f, 5.497787f
 };
 
 // uchar[8] constants
-static uchar g_UCHAR_ARRAY_0060afc0[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined4 constants
 static undefined4 DAT_006006b8 = 0x41200000;

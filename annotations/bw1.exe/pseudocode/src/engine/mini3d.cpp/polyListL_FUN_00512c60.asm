@@ -11,14 +11,14 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   int g_INT_01d224b4
 ;   float* g_FLOAT_PTR_01d227e0
 ;   int g_INT_01d25f14
 ;   int g_INT_01d25f18
-;   int g_INT_01e7dac8
+;   int g_RenderedTriangleCount
 ;   void* g_PTR_02c83460
 ;
 ; Called Functions:
@@ -43,11 +43,11 @@ section .text
     PUSH EBP                            ; 00512c63
     MOV ESI,dword ptr [ESP + 0x14]      ; 00512c64
     MOV EBX,dword ptr [ESP + 0x20]      ; 00512c68
-    MOV EDX,dword ptr [0x01e7dac8]      ; 00512c6c | g_INT_01e7dac8
+    MOV EDX,dword ptr [0x01e7dac8]      ; 00512c6c | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d224b4]      ; 00512c72 | g_INT_01d224b4
     ADD EDX,EBX                         ; 00512c78
     MOV EBX,dword ptr [ESP + 0x18]      ; 00512c7a
-    MOV dword ptr [0x01e7dac8],EDX      ; 00512c7e | g_INT_01e7dac8
+    MOV dword ptr [0x01e7dac8],EDX      ; 00512c7e | g_RenderedTriangleCount
     ADD ECX,EBX                         ; 00512c84
     MOV EBX,dword ptr [0x01d25f14]      ; 00512c86 | g_INT_01d25f14
     MOV dword ptr [0x01d224b4],ECX      ; 00512c8c | g_INT_01d224b4
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 00516cc0 (UNCONDITIONAL_CALL)  ; int engine_mini3d.cpp_polyListSurface_FUN_00516cc0(float * vertices, int vertex_count, ushort * indices, int triangle_count)
     JMP 0x00512d74                      ; 00512d91
         ;   XREF to: 00512d74 (UNCONDITIONAL_JUMP)  ; LAB_00512d74
-    MOV EDX,dword ptr [0x01c51d14]      ; 00512d93 | g_BIT_INTEGER32_01c51d14
+    MOV EDX,dword ptr [0x01c51d14]      ; 00512d93 | g_RenderStateFlags
         ;   Label: LAB_00512d93
     PUSH EDX                            ; 00512d99
     MOV ECX,dword ptr [ESP + 0x24]      ; 00512d9a

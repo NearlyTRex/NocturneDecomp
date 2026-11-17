@@ -14,8 +14,8 @@ void FUN_00574680(void)
   void *ptr;
   char **ppcVar3;
   
-  ppcVar3 = g_CHAR_PTR_PTR_02de54a4;
-  if (g_CHAR_PTR_PTR_02de54a4 != (char **)0x0) {
+  ppcVar3 = g_EnvironmentBlock;
+  if (g_EnvironmentBlock != (char **)0x0) {
     while( true ) {
       pcVar1 = *ppcVar3;
       ppcVar3 = ppcVar3 + 1;

@@ -10,11 +10,11 @@ void __cdecl core_dcube_cpp_staticInit_FUN_00443d00(void)
 
 {
   __arrinit(&g_FLOAT_01510850,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01510914,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_015109d8,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01510a9c,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01510b60,0x10,&g_CVectorTypeInfo);
-  __arrinit(g_CVector3f_ARRAY_01510c24,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMaxYBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMinYBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMaxXBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMinXBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMinZBuffer,0x10,&g_CVectorTypeInfo);
   __arrinit(&g_FLOAT_01510ce8,0x10,&g_CVectorTypeInfo);
   return;
 }

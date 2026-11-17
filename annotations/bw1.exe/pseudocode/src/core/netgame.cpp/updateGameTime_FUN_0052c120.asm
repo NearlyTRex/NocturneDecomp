@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01d51d9c
+;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
 ;
 ; Called Functions:
@@ -22,10 +22,10 @@ section .text
     MOV ECX,0x12                        ; 0052c127
     SAR EDX,0x1f                        ; 0052c12c
     IDIV ECX                            ; 0052c12f
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052c131 | g_INT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052c131 | g_LastPingTime
     MOV EDX,EAX                         ; 0052c137
     SUB EAX,ECX                         ; 0052c139
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052c13b | g_INT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052c13b | g_LastPingTime
     TEST EAX,EAX                        ; 0052c141
     JL 0x0052c158                       ; 0052c143
         ;   XREF to: 0052c158 (CONDITIONAL_JUMP)  ; LAB_0052c158

@@ -20,7 +20,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,in
   int local_20;
   int local_1c;
   
-  if (g_CTerrain_02dd10c8.initialized == 0) {
+  if (g_CTerrainInstance.initialized == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30

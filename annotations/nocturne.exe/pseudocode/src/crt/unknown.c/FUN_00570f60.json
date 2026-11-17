@@ -53,19 +53,19 @@
   "globals": [
     {
       "addr": "005c1d09",
-      "name": "g_CHAR_PTR_005c1d09",
+      "name": "g_EnvironmentStrings",
       "type": "char*",
       "value": "00000000"
     },
     {
       "addr": "02de54a0",
-      "name": "g_CHAR_PTR_PTR_02de54a0",
+      "name": "g_EnvironStringArea",
       "type": "char**",
       "value": null
     },
     {
       "addr": "02de54a4",
-      "name": "g_CHAR_PTR_PTR_02de54a4",
+      "name": "g_EnvironmentBlock",
       "type": "char**",
       "value": null
     },
@@ -162,7 +162,7 @@
       "line": 57,
       "match": "(char **)((int)ppcVar4",
       "severity": "moderate",
-      "text": "g_CHAR_PTR_PTR_02de54a0 = (char **)((int)ppcVar4 + iVar7 + 4);",
+      "text": "g_EnvironStringArea = (char **)((int)ppcVar4 + iVar7 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -170,15 +170,15 @@
       "line": 27,
       "match": "(int)pcVar3",
       "severity": "moderate",
-      "text": "iVar2 = (int)pcVar3 - (int)g_CHAR_PTR_005c1d09;",
+      "text": "iVar2 = (int)pcVar3 - (int)g_EnvironmentStrings;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_005c1d09` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_EnvironmentStrings` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "(int)g_CHAR_PTR_005c1d09",
+      "match": "(int)g_EnvironmentStrings",
       "severity": "moderate",
-      "text": "iVar2 = (int)pcVar3 - (int)g_CHAR_PTR_005c1d09;",
+      "text": "iVar2 = (int)pcVar3 - (int)g_EnvironmentStrings;",
       "type": "pointer_truncation"
     },
     {
@@ -202,7 +202,7 @@
       "line": 57,
       "match": "(int)ppcVar4",
       "severity": "moderate",
-      "text": "g_CHAR_PTR_PTR_02de54a0 = (char **)((int)ppcVar4 + iVar7 + 4);",
+      "text": "g_EnvironStringArea = (char **)((int)ppcVar4 + iVar7 + 4);",
       "type": "pointer_truncation"
     }
   ]

@@ -565,7 +565,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e130(CBox *this_ptr,float 
          *(uint *)((int)&local_1f4 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
     local_8c = ((float)local_548._20_4_ * (this_ptr->linear_velocity_local).z +
                (float)local_548._12_4_ * (this_ptr->linear_velocity_local).x +
-               (float)local_548._16_4_ * (this_ptr->linear_velocity_local).y) * 2.0f;
+               (float)local_548._16_4_ * (this_ptr->linear_velocity_local).y) *
+               2.0f;
     local_bc = (float)local_548._12_4_ * local_8c;
     local_b8 = (float)local_548._16_4_ * local_8c;
     local_b4 = (float)local_548._20_4_ * local_8c;
@@ -585,9 +586,12 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e130(CBox *this_ptr,float 
       local_548._64_4_ = local_1c0;
       local_548._68_4_ = local_1bc;
     }
-    local_548._60_4_ = (float)local_548._60_4_ * -1.0f * 0.5f;
-    local_548._64_4_ = (float)local_548._64_4_ * -1.0f * 0.5f;
-    local_548._68_4_ = (float)local_548._68_4_ * -1.0f * 0.5f;
+    local_548._60_4_ =
+         (float)local_548._60_4_ * -1.0f * 0.5f;
+    local_548._64_4_ =
+         (float)local_548._64_4_ * -1.0f * 0.5f;
+    local_548._68_4_ =
+         (float)local_548._68_4_ * -1.0f * 0.5f;
     fVar1 = 1.0 / delta_time;
     local_548._312_4_ = (float)local_548._60_4_ - (this_ptr->linear_velocity_local).x;
     local_548._316_4_ = (float)local_548._64_4_ - (this_ptr->linear_velocity_local).y;

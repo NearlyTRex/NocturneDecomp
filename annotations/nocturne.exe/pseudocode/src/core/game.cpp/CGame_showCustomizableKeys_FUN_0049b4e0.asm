@@ -82,104 +82,104 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0049b501
     PUSH 0x58                           ; 0049b504
-    MOV EDX,dword ptr [0x014b9900]      ; 0049b506 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049b506 | g_ThemeFont
     PUSH EDX                            ; 0049b50c
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0049b50d
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049b512
     PUSH 0x58                           ; 0049b515
-    MOV ECX,dword ptr [0x014b9900]      ; 0049b517 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049b517 | g_ThemeFont
     PUSH ECX                            ; 0049b51d
-    MOV [0x01c78ae4],EAX                ; 0049b51e | g_INT_01c78ae4
+    MOV [0x01c78ae4],EAX                ; 0049b51e | g_HelpLineHeight
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0 ; 0049b523
         ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049b528
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b52b | g_INT_01c78ae4
-    MOV [0x01c78ae8],EAX                ; 0049b531 | g_INT_01c78ae8
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b52b | g_HelpLineHeight
+    MOV [0x01c78ae8],EAX                ; 0049b531 | g_HelpCharWidth
     PUSH 0x58240a                       ; 0049b536 | = "Quick help"
     SHL EDX,0x2                         ; 0049b53b
     SHL EAX,0x2                         ; 0049b53e
-    MOV dword ptr [0x01c78ae0],EDX      ; 0049b541 | g_INT_01c78ae0
-    MOV [0x01c78adc],EAX                ; 0049b547 | g_INT_01c78adc
+    MOV dword ptr [0x01c78ae0],EDX      ; 0049b541 | g_HelpCursorY
+    MOV [0x01c78adc],EAX                ; 0049b547 | g_HelpCursorX
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b54c
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b551
     PUSH -0x1                           ; 0049b554
     PUSH 0x7                            ; 0049b556
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b558 | g_INT_01c78ae0
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b558 | g_HelpCursorY
     PUSH EDI                            ; 0049b55e
-    MOV EBP,dword ptr [0x01c78adc]      ; 0049b55f | g_INT_01c78adc
+    MOV EBP,dword ptr [0x01c78adc]      ; 0049b55f | g_HelpCursorX
     PUSH EBP                            ; 0049b565
     PUSH EAX                            ; 0049b566
-    MOV EAX,[0x014b9900]                ; 0049b567 | g_CBitFont_PTR_014b9900
+    MOV EAX,[0x014b9900]                ; 0049b567 | g_ThemeFont
     PUSH EAX                            ; 0049b56c
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b56d
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b572 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049b577 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b572 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049b577 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049b57d
     MOV EDX,dword ptr [0x005b7620]      ; 0049b580 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b586 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b586 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049b58c
     ADD ESP,0x18                        ; 0049b58e
     CMP EDX,ECX                         ; 0049b591
     JGE 0x0049b5c5                      ; 0049b593
         ;   XREF to: 0049b5c5 (CONDITIONAL_JUMP)  ; LAB_0049b5c5
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b595 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b595 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b59b
     MOV ECX,0x3                         ; 0049b5a2
     SUB EAX,EDX                         ; 0049b5a7
     MOV EBX,dword ptr [0x005b761c]      ; 0049b5a9 | g_WindowWidth
     ADD EAX,EAX                         ; 0049b5af
     MOV EDX,EBX                         ; 0049b5b1
-    MOV [0x01c78ae0],EAX                ; 0049b5b3 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b5b3 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b5b8
     MOV EAX,EBX                         ; 0049b5bb
     IDIV ECX                            ; 0049b5bd
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b5bf | g_INT_01c78adc
-    MOV EAX,[0x01c78ae4]                ; 0049b5c5 | g_INT_01c78ae4
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b5bf | g_HelpCursorX
+    MOV EAX,[0x01c78ae4]                ; 0049b5c5 | g_HelpLineHeight
         ;   Label: LAB_0049b5c5
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b5ca | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b5ca | g_HelpCursorY
     ADD EBP,EAX                         ; 0049b5d0
     PUSH 0x582415                       ; 0049b5d2 | = "F1 = Toggle help"
-    MOV dword ptr [0x01c78ae0],EBP      ; 0049b5d7 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EBP      ; 0049b5d7 | g_HelpCursorY
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b5dd
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b5e2
     PUSH -0x1                           ; 0049b5e5
     PUSH 0x7                            ; 0049b5e7
-    MOV EDX,dword ptr [0x01c78ae0]      ; 0049b5e9 | g_INT_01c78ae0
+    MOV EDX,dword ptr [0x01c78ae0]      ; 0049b5e9 | g_HelpCursorY
     PUSH EDX                            ; 0049b5ef
-    MOV ECX,dword ptr [0x01c78adc]      ; 0049b5f0 | g_INT_01c78adc
+    MOV ECX,dword ptr [0x01c78adc]      ; 0049b5f0 | g_HelpCursorX
     PUSH ECX                            ; 0049b5f6
     PUSH EAX                            ; 0049b5f7
-    MOV EDI,dword ptr [0x014b9900]      ; 0049b5f8 | g_CBitFont_PTR_014b9900
+    MOV EDI,dword ptr [0x014b9900]      ; 0049b5f8 | g_ThemeFont
     PUSH EDI                            ; 0049b5fe
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b5ff
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b604 | g_INT_01c78ae4
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b609 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b604 | g_HelpLineHeight
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b609 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049b60f | g_WindowHeight
     ADD EBP,EAX                         ; 0049b615
     SHL EAX,0x2                         ; 0049b617
     ADD ESP,0x18                        ; 0049b61a
     SUB EDX,EAX                         ; 0049b61d
-    MOV dword ptr [0x01c78ae0],EBP      ; 0049b61f | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EBP      ; 0049b61f | g_HelpCursorY
     CMP EDX,EBP                         ; 0049b625
     JGE 0x0049b659                      ; 0049b627
         ;   XREF to: 0049b659 (CONDITIONAL_JUMP)  ; LAB_0049b659
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b629 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b629 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b62f
     MOV ECX,0x3                         ; 0049b636
     SUB EAX,EDX                         ; 0049b63b
     MOV EBX,dword ptr [0x005b761c]      ; 0049b63d | g_WindowWidth
     ADD EAX,EAX                         ; 0049b643
     MOV EDX,EBX                         ; 0049b645
-    MOV [0x01c78ae0],EAX                ; 0049b647 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b647 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b64c
     MOV EAX,EBX                         ; 0049b64f
     IDIV ECX                            ; 0049b651
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b653 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b653 | g_HelpCursorX
     PUSH 0x582426                       ; 0049b659 | = "F2 = Save game"
         ;   Label: LAB_0049b659
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b65e
@@ -187,37 +187,37 @@ section .text
     ADD ESP,0x4                         ; 0049b663
     PUSH -0x1                           ; 0049b666
     PUSH 0x7                            ; 0049b668
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b66a | g_INT_01c78ae0
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b66a | g_HelpCursorY
     PUSH EDI                            ; 0049b670
-    MOV EBP,dword ptr [0x01c78adc]      ; 0049b671 | g_INT_01c78adc
+    MOV EBP,dword ptr [0x01c78adc]      ; 0049b671 | g_HelpCursorX
     PUSH EBP                            ; 0049b677
     PUSH EAX                            ; 0049b678
-    MOV EAX,[0x014b9900]                ; 0049b679 | g_CBitFont_PTR_014b9900
+    MOV EAX,[0x014b9900]                ; 0049b679 | g_ThemeFont
     PUSH EAX                            ; 0049b67e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b67f
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b684 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049b689 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b684 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049b689 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049b68f
     MOV EDX,dword ptr [0x005b7620]      ; 0049b692 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b698 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b698 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049b69e
     ADD ESP,0x18                        ; 0049b6a0
     CMP EDX,ECX                         ; 0049b6a3
     JGE 0x0049b6d7                      ; 0049b6a5
         ;   XREF to: 0049b6d7 (CONDITIONAL_JUMP)  ; LAB_0049b6d7
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b6a7 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b6a7 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b6ad
     MOV ECX,0x3                         ; 0049b6b4
     SUB EAX,EDX                         ; 0049b6b9
     MOV EBX,dword ptr [0x005b761c]      ; 0049b6bb | g_WindowWidth
     ADD EAX,EAX                         ; 0049b6c1
     MOV EDX,EBX                         ; 0049b6c3
-    MOV [0x01c78ae0],EAX                ; 0049b6c5 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b6c5 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b6ca
     MOV EAX,EBX                         ; 0049b6cd
     IDIV ECX                            ; 0049b6cf
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b6d1 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b6d1 | g_HelpCursorX
     PUSH 0x582435                       ; 0049b6d7 | = "F3 = Restore game"
         ;   Label: LAB_0049b6d7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b6dc
@@ -225,38 +225,38 @@ section .text
     ADD ESP,0x4                         ; 0049b6e1
     PUSH -0x1                           ; 0049b6e4
     PUSH 0x7                            ; 0049b6e6
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b6e8 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b6e8 | g_HelpCursorY
     PUSH EBP                            ; 0049b6ee
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049b6ef | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049b6ef | g_HelpCursorX
     PUSH EDX                            ; 0049b6f5
     PUSH EAX                            ; 0049b6f6
-    MOV ECX,dword ptr [0x014b9900]      ; 0049b6f7 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049b6f7 | g_ThemeFont
     PUSH ECX                            ; 0049b6fd
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b6fe
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b703 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b708 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b703 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b708 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049b70e | g_WindowHeight
     ADD EDI,EAX                         ; 0049b714
     SHL EAX,0x2                         ; 0049b716
     ADD ESP,0x18                        ; 0049b719
     SUB EDX,EAX                         ; 0049b71c
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049b71e | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049b71e | g_HelpCursorY
     CMP EDX,EDI                         ; 0049b724
     JGE 0x0049b758                      ; 0049b726
         ;   XREF to: 0049b758 (CONDITIONAL_JUMP)  ; LAB_0049b758
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b728 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b728 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b72e
     MOV ECX,0x3                         ; 0049b735
     SUB EAX,EDX                         ; 0049b73a
     MOV EBX,dword ptr [0x005b761c]      ; 0049b73c | g_WindowWidth
     ADD EAX,EAX                         ; 0049b742
     MOV EDX,EBX                         ; 0049b744
-    MOV [0x01c78ae0],EAX                ; 0049b746 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b746 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b74b
     MOV EAX,EBX                         ; 0049b74e
     IDIV ECX                            ; 0049b750
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b752 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b752 | g_HelpCursorX
     PUSH 0x582447                       ; 0049b758 | = "F5 = Toggle mute"
         ;   Label: LAB_0049b758
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b75d
@@ -264,37 +264,37 @@ section .text
     ADD ESP,0x4                         ; 0049b762
     PUSH -0x1                           ; 0049b765
     PUSH 0x7                            ; 0049b767
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b769 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b769 | g_HelpCursorY
     PUSH ECX                            ; 0049b76f
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049b770 | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049b770 | g_HelpCursorX
     PUSH EDI                            ; 0049b776
     PUSH EAX                            ; 0049b777
-    MOV EBP,dword ptr [0x014b9900]      ; 0049b778 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049b778 | g_ThemeFont
     PUSH EBP                            ; 0049b77e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b77f
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b784 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049b789 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b784 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049b789 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049b78f
     MOV EDX,dword ptr [0x005b7620]      ; 0049b792 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b798 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b798 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049b79e
     ADD ESP,0x18                        ; 0049b7a0
     CMP EDX,ECX                         ; 0049b7a3
     JGE 0x0049b7d7                      ; 0049b7a5
         ;   XREF to: 0049b7d7 (CONDITIONAL_JUMP)  ; LAB_0049b7d7
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b7a7 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b7a7 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b7ad
     MOV ECX,0x3                         ; 0049b7b4
     SUB EAX,EDX                         ; 0049b7b9
     MOV EBX,dword ptr [0x005b761c]      ; 0049b7bb | g_WindowWidth
     ADD EAX,EAX                         ; 0049b7c1
     MOV EDX,EBX                         ; 0049b7c3
-    MOV [0x01c78ae0],EAX                ; 0049b7c5 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b7c5 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b7ca
     MOV EAX,EBX                         ; 0049b7cd
     IDIV ECX                            ; 0049b7cf
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b7d1 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b7d1 | g_HelpCursorX
     PUSH 0x582458                       ; 0049b7d7 | = "F6 = Quick save"
         ;   Label: LAB_0049b7d7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b7dc
@@ -302,38 +302,38 @@ section .text
     ADD ESP,0x4                         ; 0049b7e1
     PUSH -0x1                           ; 0049b7e4
     PUSH 0x7                            ; 0049b7e6
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b7e8 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b7e8 | g_HelpCursorY
     PUSH EBP                            ; 0049b7ee
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049b7ef | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049b7ef | g_HelpCursorX
     PUSH EDX                            ; 0049b7f5
     PUSH EAX                            ; 0049b7f6
-    MOV ECX,dword ptr [0x014b9900]      ; 0049b7f7 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049b7f7 | g_ThemeFont
     PUSH ECX                            ; 0049b7fd
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b7fe
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b803 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b808 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b803 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b808 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049b80e | g_WindowHeight
     ADD EDI,EAX                         ; 0049b814
     SHL EAX,0x2                         ; 0049b816
     ADD ESP,0x18                        ; 0049b819
     SUB EDX,EAX                         ; 0049b81c
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049b81e | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049b81e | g_HelpCursorY
     CMP EDX,EDI                         ; 0049b824
     JGE 0x0049b858                      ; 0049b826
         ;   XREF to: 0049b858 (CONDITIONAL_JUMP)  ; LAB_0049b858
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b828 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b828 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b82e
     MOV ECX,0x3                         ; 0049b835
     SUB EAX,EDX                         ; 0049b83a
     MOV EBX,dword ptr [0x005b761c]      ; 0049b83c | g_WindowWidth
     ADD EAX,EAX                         ; 0049b842
     MOV EDX,EBX                         ; 0049b844
-    MOV [0x01c78ae0],EAX                ; 0049b846 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b846 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b84b
     MOV EAX,EBX                         ; 0049b84e
     IDIV ECX                            ; 0049b850
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b852 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b852 | g_HelpCursorX
     PUSH 0x582468                       ; 0049b858 | = "F9 = Quick load"
         ;   Label: LAB_0049b858
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b85d
@@ -341,37 +341,37 @@ section .text
     ADD ESP,0x4                         ; 0049b862
     PUSH -0x1                           ; 0049b865
     PUSH 0x7                            ; 0049b867
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b869 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b869 | g_HelpCursorY
     PUSH ECX                            ; 0049b86f
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049b870 | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049b870 | g_HelpCursorX
     PUSH EDI                            ; 0049b876
     PUSH EAX                            ; 0049b877
-    MOV EBP,dword ptr [0x014b9900]      ; 0049b878 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049b878 | g_ThemeFont
     PUSH EBP                            ; 0049b87e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b87f
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b884 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049b889 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b884 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049b889 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049b88f
     MOV EDX,dword ptr [0x005b7620]      ; 0049b892 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b898 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b898 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049b89e
     ADD ESP,0x18                        ; 0049b8a0
     CMP EDX,ECX                         ; 0049b8a3
     JGE 0x0049b8d7                      ; 0049b8a5
         ;   XREF to: 0049b8d7 (CONDITIONAL_JUMP)  ; LAB_0049b8d7
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b8a7 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b8a7 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b8ad
     MOV ECX,0x3                         ; 0049b8b4
     SUB EAX,EDX                         ; 0049b8b9
     MOV EBX,dword ptr [0x005b761c]      ; 0049b8bb | g_WindowWidth
     ADD EAX,EAX                         ; 0049b8c1
     MOV EDX,EBX                         ; 0049b8c3
-    MOV [0x01c78ae0],EAX                ; 0049b8c5 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b8c5 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b8ca
     MOV EAX,EBX                         ; 0049b8cd
     IDIV ECX                            ; 0049b8cf
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b8d1 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b8d1 | g_HelpCursorX
     PUSH 0x582478                       ; 0049b8d7 | = "ESC = Pause game"
         ;   Label: LAB_0049b8d7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b8dc
@@ -379,44 +379,44 @@ section .text
     ADD ESP,0x4                         ; 0049b8e1
     PUSH -0x1                           ; 0049b8e4
     PUSH 0x7                            ; 0049b8e6
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b8e8 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049b8e8 | g_HelpCursorY
     PUSH EBP                            ; 0049b8ee
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049b8ef | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049b8ef | g_HelpCursorX
     PUSH EDX                            ; 0049b8f5
     PUSH EAX                            ; 0049b8f6
-    MOV ECX,dword ptr [0x014b9900]      ; 0049b8f7 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049b8f7 | g_ThemeFont
     PUSH ECX                            ; 0049b8fd
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b8fe
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b903 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b908 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b903 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b908 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049b90e | g_WindowHeight
     ADD EDI,EAX                         ; 0049b914
     SHL EAX,0x2                         ; 0049b916
     ADD ESP,0x18                        ; 0049b919
     SUB EDX,EAX                         ; 0049b91c
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049b91e | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049b91e | g_HelpCursorY
     CMP EDX,EDI                         ; 0049b924
     JGE 0x0049b958                      ; 0049b926
         ;   XREF to: 0049b958 (CONDITIONAL_JUMP)  ; LAB_0049b958
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b928 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b928 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b92e
     MOV ECX,0x3                         ; 0049b935
     SUB EAX,EDX                         ; 0049b93a
     MOV EBX,dword ptr [0x005b761c]      ; 0049b93c | g_WindowWidth
     ADD EAX,EAX                         ; 0049b942
     MOV EDX,EBX                         ; 0049b944
-    MOV [0x01c78ae0],EAX                ; 0049b946 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049b946 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049b94b
     MOV EAX,EBX                         ; 0049b94e
     IDIV ECX                            ; 0049b950
-    ADD dword ptr [0x01c78adc],EAX      ; 0049b952 | g_INT_01c78adc
-    MOV EAX,[0x01c78ae4]                ; 0049b958 | g_INT_01c78ae4
+    ADD dword ptr [0x01c78adc],EAX      ; 0049b952 | g_HelpCursorX
+    MOV EAX,[0x01c78ae4]                ; 0049b958 | g_HelpLineHeight
         ;   Label: LAB_0049b958
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b95d | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b95d | g_HelpCursorY
     ADD ECX,EAX                         ; 0049b963
     PUSH 0x582489                       ; 0049b965 | = "Forward"
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049b96a | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049b96a | g_HelpCursorY
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b970
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b975
@@ -435,38 +435,38 @@ section .text
     ADD ESP,0x10                        ; 0049b998
     PUSH -0x1                           ; 0049b99b
     PUSH 0x7                            ; 0049b99d
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b99f | g_INT_01c78ae0
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049b99f | g_HelpCursorY
     PUSH EDI                            ; 0049b9a5
-    MOV EBP,dword ptr [0x01c78adc]      ; 0049b9a6 | g_INT_01c78adc
+    MOV EBP,dword ptr [0x01c78adc]      ; 0049b9a6 | g_HelpCursorX
     PUSH EBP                            ; 0049b9ac
     LEA EAX,[ESP + 0x410]               ; 0049b9ad
     PUSH EAX                            ; 0049b9b4
-    MOV EAX,[0x014b9900]                ; 0049b9b5 | g_CBitFont_PTR_014b9900
+    MOV EAX,[0x014b9900]                ; 0049b9b5 | g_ThemeFont
     PUSH EAX                            ; 0049b9ba
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b9bb
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049b9c0 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049b9c5 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049b9c0 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049b9c5 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049b9cb
     MOV EDX,dword ptr [0x005b7620]      ; 0049b9ce | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b9d4 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049b9d4 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049b9da
     ADD ESP,0x18                        ; 0049b9dc
     CMP EDX,ECX                         ; 0049b9df
     JGE 0x0049ba13                      ; 0049b9e1
         ;   XREF to: 0049ba13 (CONDITIONAL_JUMP)  ; LAB_0049ba13
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b9e3 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049b9e3 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b9e9
     MOV ECX,0x3                         ; 0049b9f0
     SUB EAX,EDX                         ; 0049b9f5
     MOV EBX,dword ptr [0x005b761c]      ; 0049b9f7 | g_WindowWidth
     ADD EAX,EAX                         ; 0049b9fd
     MOV EDX,EBX                         ; 0049b9ff
-    MOV [0x01c78ae0],EAX                ; 0049ba01 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049ba01 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049ba06
     MOV EAX,EBX                         ; 0049ba09
     IDIV ECX                            ; 0049ba0b
-    ADD dword ptr [0x01c78adc],EAX      ; 0049ba0d | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049ba0d | g_HelpCursorX
     PUSH 0x582491                       ; 0049ba13 | = "Back"
         ;   Label: LAB_0049ba13
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049ba18
@@ -487,39 +487,39 @@ section .text
     ADD ESP,0x10                        ; 0049ba40
     PUSH -0x1                           ; 0049ba43
     PUSH 0x7                            ; 0049ba45
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049ba47 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049ba47 | g_HelpCursorY
     PUSH EBP                            ; 0049ba4d
-    MOV EAX,[0x01c78adc]                ; 0049ba4e | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049ba4e | g_HelpCursorX
     PUSH EAX                            ; 0049ba53
     LEA EAX,[ESP + 0xb10]               ; 0049ba54
     PUSH EAX                            ; 0049ba5b
-    MOV EDX,dword ptr [0x014b9900]      ; 0049ba5c | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049ba5c | g_ThemeFont
     PUSH EDX                            ; 0049ba62
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049ba63
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049ba68 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049ba6d | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049ba68 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049ba6d | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049ba73 | g_WindowHeight
     ADD ECX,EAX                         ; 0049ba79
     SHL EAX,0x2                         ; 0049ba7b
     ADD ESP,0x18                        ; 0049ba7e
     SUB EDX,EAX                         ; 0049ba81
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049ba83 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049ba83 | g_HelpCursorY
     CMP EDX,ECX                         ; 0049ba89
     JGE 0x0049babd                      ; 0049ba8b
         ;   XREF to: 0049babd (CONDITIONAL_JUMP)  ; LAB_0049babd
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049ba8d | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049ba8d | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ba93
     MOV ECX,0x3                         ; 0049ba9a
     SUB EAX,EDX                         ; 0049ba9f
     MOV EBX,dword ptr [0x005b761c]      ; 0049baa1 | g_WindowWidth
     ADD EAX,EAX                         ; 0049baa7
     MOV EDX,EBX                         ; 0049baa9
-    MOV [0x01c78ae0],EAX                ; 0049baab | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049baab | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bab0
     MOV EAX,EBX                         ; 0049bab3
     IDIV ECX                            ; 0049bab5
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bab7 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bab7 | g_HelpCursorX
     MOV EAX,[0x005b9354]                ; 0049babd | g_CGamePtr
         ;   Label: LAB_0049babd
     CMP dword ptr [EAX + 0x98],0x0      ; 0049bac2 | g_CGameInstance.always_run
@@ -544,40 +544,40 @@ section .text
     ADD ESP,0x10                        ; 0049bafc
     PUSH -0x1                           ; 0049baff
     PUSH 0x7                            ; 0049bb01
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049bb03 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049bb03 | g_HelpCursorY
     PUSH EBP                            ; 0049bb09
-    MOV EAX,[0x01c78adc]                ; 0049bb0a | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049bb0a | g_HelpCursorX
     PUSH EAX                            ; 0049bb0f
     LEA EAX,[ESP + 0x1310]              ; 0049bb10
     PUSH EAX                            ; 0049bb17
-    MOV EDX,dword ptr [0x014b9900]      ; 0049bb18 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049bb18 | g_ThemeFont
     PUSH EDX                            ; 0049bb1e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bb1f
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bb24 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bb29 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bb24 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bb29 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049bb2f | g_WindowHeight
     ADD ECX,EAX                         ; 0049bb35
     SHL EAX,0x2                         ; 0049bb37
     ADD ESP,0x18                        ; 0049bb3a
     SUB EDX,EAX                         ; 0049bb3d
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049bb3f | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049bb3f | g_HelpCursorY
     CMP EDX,ECX                         ; 0049bb45
         ;   Label: LAB_0049bb45
     JGE 0x0049bb79                      ; 0049bb47
         ;   XREF to: 0049bb79 (CONDITIONAL_JUMP)  ; LAB_0049bb79
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bb49 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bb49 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bb4f
     MOV ECX,0x3                         ; 0049bb56
     SUB EAX,EDX                         ; 0049bb5b
     MOV EBX,dword ptr [0x005b761c]      ; 0049bb5d | g_WindowWidth
     ADD EAX,EAX                         ; 0049bb63
     MOV EDX,EBX                         ; 0049bb65
-    MOV [0x01c78ae0],EAX                ; 0049bb67 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049bb67 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bb6c
     MOV EAX,EBX                         ; 0049bb6f
     IDIV ECX                            ; 0049bb71
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bb73 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bb73 | g_HelpCursorX
     PUSH 0x58249f                       ; 0049bb79 | = "Strafe on"
         ;   Label: LAB_0049bb79
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bb7e
@@ -598,39 +598,39 @@ section .text
     ADD ESP,0x10                        ; 0049bba6
     PUSH -0x1                           ; 0049bba9
     PUSH 0x7                            ; 0049bbab
-    MOV EAX,[0x01c78ae0]                ; 0049bbad | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049bbad | g_HelpCursorY
     PUSH EAX                            ; 0049bbb2
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049bbb3 | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049bbb3 | g_HelpCursorX
     PUSH EDX                            ; 0049bbb9
     LEA EAX,[ESP + 0x210]               ; 0049bbba
     PUSH EAX                            ; 0049bbc1
-    MOV ECX,dword ptr [0x014b9900]      ; 0049bbc2 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049bbc2 | g_ThemeFont
     PUSH ECX                            ; 0049bbc8
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bbc9
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bbce | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049bbd3 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bbce | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049bbd3 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049bbd9 | g_WindowHeight
     ADD EDI,EAX                         ; 0049bbdf
     SHL EAX,0x2                         ; 0049bbe1
     ADD ESP,0x18                        ; 0049bbe4
     SUB EDX,EAX                         ; 0049bbe7
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049bbe9 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049bbe9 | g_HelpCursorY
     CMP EDX,EDI                         ; 0049bbef
     JGE 0x0049bc23                      ; 0049bbf1
         ;   XREF to: 0049bc23 (CONDITIONAL_JUMP)  ; LAB_0049bc23
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bbf3 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bbf3 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bbf9
     MOV ECX,0x3                         ; 0049bc00
     SUB EAX,EDX                         ; 0049bc05
     MOV EBX,dword ptr [0x005b761c]      ; 0049bc07 | g_WindowWidth
     ADD EAX,EAX                         ; 0049bc0d
     MOV EDX,EBX                         ; 0049bc0f
-    MOV [0x01c78ae0],EAX                ; 0049bc11 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049bc11 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bc16
     MOV EAX,EBX                         ; 0049bc19
     IDIV ECX                            ; 0049bc1b
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bc1d | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bc1d | g_HelpCursorX
     PUSH 0x5824a9                       ; 0049bc23 | = "Strafe left"
         ;   Label: LAB_0049bc23
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bc28
@@ -651,38 +651,38 @@ section .text
     ADD ESP,0x10                        ; 0049bc50
     PUSH -0x1                           ; 0049bc53
     PUSH 0x7                            ; 0049bc55
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bc57 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bc57 | g_HelpCursorY
     PUSH ECX                            ; 0049bc5d
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049bc5e | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049bc5e | g_HelpCursorX
     PUSH EDI                            ; 0049bc64
     LEA EAX,[ESP + 0x910]               ; 0049bc65
     PUSH EAX                            ; 0049bc6c
-    MOV EBP,dword ptr [0x014b9900]      ; 0049bc6d | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049bc6d | g_ThemeFont
     PUSH EBP                            ; 0049bc73
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bc74
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bc79 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049bc7e | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bc79 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049bc7e | g_HelpCursorY
     SHL EAX,0x2                         ; 0049bc84
     MOV EDX,dword ptr [0x005b7620]      ; 0049bc87 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bc8d | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bc8d | g_HelpCursorY
     SUB EDX,EAX                         ; 0049bc93
     ADD ESP,0x18                        ; 0049bc95
     CMP EDX,ECX                         ; 0049bc98
     JGE 0x0049bccc                      ; 0049bc9a
         ;   XREF to: 0049bccc (CONDITIONAL_JUMP)  ; LAB_0049bccc
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bc9c | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bc9c | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bca2
     MOV ECX,0x3                         ; 0049bca9
     SUB EAX,EDX                         ; 0049bcae
     MOV EBX,dword ptr [0x005b761c]      ; 0049bcb0 | g_WindowWidth
     ADD EAX,EAX                         ; 0049bcb6
     MOV EDX,EBX                         ; 0049bcb8
-    MOV [0x01c78ae0],EAX                ; 0049bcba | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049bcba | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bcbf
     MOV EAX,EBX                         ; 0049bcc2
     IDIV ECX                            ; 0049bcc4
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bcc6 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bcc6 | g_HelpCursorX
     PUSH 0x5824b5                       ; 0049bccc | = "Strafe right"
         ;   Label: LAB_0049bccc
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bcd1
@@ -703,39 +703,39 @@ section .text
     ADD ESP,0x10                        ; 0049bcf9
     PUSH -0x1                           ; 0049bcfc
     PUSH 0x7                            ; 0049bcfe
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049bd00 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049bd00 | g_HelpCursorY
     PUSH EBP                            ; 0049bd06
-    MOV EAX,[0x01c78adc]                ; 0049bd07 | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049bd07 | g_HelpCursorX
     PUSH EAX                            ; 0049bd0c
     LEA EAX,[ESP + 0x1010]              ; 0049bd0d
     PUSH EAX                            ; 0049bd14
-    MOV EDX,dword ptr [0x014b9900]      ; 0049bd15 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049bd15 | g_ThemeFont
     PUSH EDX                            ; 0049bd1b
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bd1c
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bd21 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bd26 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bd21 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bd26 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049bd2c | g_WindowHeight
     ADD ECX,EAX                         ; 0049bd32
     SHL EAX,0x2                         ; 0049bd34
     ADD ESP,0x18                        ; 0049bd37
     SUB EDX,EAX                         ; 0049bd3a
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049bd3c | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049bd3c | g_HelpCursorY
     CMP EDX,ECX                         ; 0049bd42
     JGE 0x0049bd76                      ; 0049bd44
         ;   XREF to: 0049bd76 (CONDITIONAL_JUMP)  ; LAB_0049bd76
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bd46 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bd46 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bd4c
     MOV ECX,0x3                         ; 0049bd53
     SUB EAX,EDX                         ; 0049bd58
     MOV EBX,dword ptr [0x005b761c]      ; 0049bd5a | g_WindowWidth
     ADD EAX,EAX                         ; 0049bd60
     MOV EDX,EBX                         ; 0049bd62
-    MOV [0x01c78ae0],EAX                ; 0049bd64 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049bd64 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bd69
     MOV EAX,EBX                         ; 0049bd6c
     IDIV ECX                            ; 0049bd6e
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bd70 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bd70 | g_HelpCursorX
     PUSH 0x5824c2                       ; 0049bd76 | = "Turn left"
         ;   Label: LAB_0049bd76
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bd7b
@@ -756,39 +756,39 @@ section .text
     ADD ESP,0x10                        ; 0049bda3
     PUSH -0x1                           ; 0049bda6
     PUSH 0x7                            ; 0049bda8
-    MOV EAX,[0x01c78ae0]                ; 0049bdaa | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049bdaa | g_HelpCursorY
     PUSH EAX                            ; 0049bdaf
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049bdb0 | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049bdb0 | g_HelpCursorX
     PUSH EDX                            ; 0049bdb6
     LEA EAX,[ESP + 0x1710]              ; 0049bdb7
     PUSH EAX                            ; 0049bdbe
-    MOV ECX,dword ptr [0x014b9900]      ; 0049bdbf | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049bdbf | g_ThemeFont
     PUSH ECX                            ; 0049bdc5
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bdc6
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bdcb | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049bdd0 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bdcb | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049bdd0 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049bdd6 | g_WindowHeight
     ADD EDI,EAX                         ; 0049bddc
     SHL EAX,0x2                         ; 0049bdde
     ADD ESP,0x18                        ; 0049bde1
     SUB EDX,EAX                         ; 0049bde4
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049bde6 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049bde6 | g_HelpCursorY
     CMP EDX,EDI                         ; 0049bdec
     JGE 0x0049be20                      ; 0049bdee
         ;   XREF to: 0049be20 (CONDITIONAL_JUMP)  ; LAB_0049be20
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bdf0 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bdf0 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bdf6
     MOV ECX,0x3                         ; 0049bdfd
     SUB EAX,EDX                         ; 0049be02
     MOV EBX,dword ptr [0x005b761c]      ; 0049be04 | g_WindowWidth
     ADD EAX,EAX                         ; 0049be0a
     MOV EDX,EBX                         ; 0049be0c
-    MOV [0x01c78ae0],EAX                ; 0049be0e | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049be0e | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049be13
     MOV EAX,EBX                         ; 0049be16
     IDIV ECX                            ; 0049be18
-    ADD dword ptr [0x01c78adc],EAX      ; 0049be1a | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049be1a | g_HelpCursorX
     PUSH 0x5824cc                       ; 0049be20 | = "Turn right"
         ;   Label: LAB_0049be20
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049be25
@@ -809,38 +809,38 @@ section .text
     ADD ESP,0x10                        ; 0049be4d
     PUSH -0x1                           ; 0049be50
     PUSH 0x7                            ; 0049be52
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049be54 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049be54 | g_HelpCursorY
     PUSH ECX                            ; 0049be5a
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049be5b | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049be5b | g_HelpCursorX
     PUSH EDI                            ; 0049be61
     LEA EAX,[ESP + 0x1510]              ; 0049be62
     PUSH EAX                            ; 0049be69
-    MOV EBP,dword ptr [0x014b9900]      ; 0049be6a | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049be6a | g_ThemeFont
     PUSH EBP                            ; 0049be70
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049be71
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049be76 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049be7b | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049be76 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049be7b | g_HelpCursorY
     SHL EAX,0x2                         ; 0049be81
     MOV EDX,dword ptr [0x005b7620]      ; 0049be84 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049be8a | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049be8a | g_HelpCursorY
     SUB EDX,EAX                         ; 0049be90
     ADD ESP,0x18                        ; 0049be92
     CMP EDX,ECX                         ; 0049be95
     JGE 0x0049bec9                      ; 0049be97
         ;   XREF to: 0049bec9 (CONDITIONAL_JUMP)  ; LAB_0049bec9
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049be99 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049be99 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049be9f
     MOV ECX,0x3                         ; 0049bea6
     SUB EAX,EDX                         ; 0049beab
     MOV EBX,dword ptr [0x005b761c]      ; 0049bead | g_WindowWidth
     ADD EAX,EAX                         ; 0049beb3
     MOV EDX,EBX                         ; 0049beb5
-    MOV [0x01c78ae0],EAX                ; 0049beb7 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049beb7 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bebc
     MOV EAX,EBX                         ; 0049bebf
     IDIV ECX                            ; 0049bec1
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bec3 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bec3 | g_HelpCursorX
     PUSH 0x5824d7                       ; 0049bec9 | = "Fire / Action"
         ;   Label: LAB_0049bec9
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bece
@@ -861,39 +861,39 @@ section .text
     ADD ESP,0x10                        ; 0049bef6
     PUSH -0x1                           ; 0049bef9
     PUSH 0x7                            ; 0049befb
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049befd | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049befd | g_HelpCursorY
     PUSH EBP                            ; 0049bf03
-    MOV EAX,[0x01c78adc]                ; 0049bf04 | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049bf04 | g_HelpCursorX
     PUSH EAX                            ; 0049bf09
     LEA EAX,[ESP + 0x1410]              ; 0049bf0a
     PUSH EAX                            ; 0049bf11
-    MOV EDX,dword ptr [0x014b9900]      ; 0049bf12 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049bf12 | g_ThemeFont
     PUSH EDX                            ; 0049bf18
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bf19
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bf1e | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bf23 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bf1e | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049bf23 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049bf29 | g_WindowHeight
     ADD ECX,EAX                         ; 0049bf2f
     SHL EAX,0x2                         ; 0049bf31
     ADD ESP,0x18                        ; 0049bf34
     SUB EDX,EAX                         ; 0049bf37
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049bf39 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049bf39 | g_HelpCursorY
     CMP EDX,ECX                         ; 0049bf3f
     JGE 0x0049bf73                      ; 0049bf41
         ;   XREF to: 0049bf73 (CONDITIONAL_JUMP)  ; LAB_0049bf73
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bf43 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bf43 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bf49
     MOV ECX,0x3                         ; 0049bf50
     SUB EAX,EDX                         ; 0049bf55
     MOV EBX,dword ptr [0x005b761c]      ; 0049bf57 | g_WindowWidth
     ADD EAX,EAX                         ; 0049bf5d
     MOV EDX,EBX                         ; 0049bf5f
-    MOV [0x01c78ae0],EAX                ; 0049bf61 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049bf61 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049bf66
     MOV EAX,EBX                         ; 0049bf69
     IDIV ECX                            ; 0049bf6b
-    ADD dword ptr [0x01c78adc],EAX      ; 0049bf6d | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049bf6d | g_HelpCursorX
     PUSH 0x5824e5                       ; 0049bf73 | = "Use item"
         ;   Label: LAB_0049bf73
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bf78
@@ -914,39 +914,39 @@ section .text
     ADD ESP,0x10                        ; 0049bfa0
     PUSH -0x1                           ; 0049bfa3
     PUSH 0x7                            ; 0049bfa5
-    MOV EAX,[0x01c78ae0]                ; 0049bfa7 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049bfa7 | g_HelpCursorY
     PUSH EAX                            ; 0049bfac
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049bfad | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049bfad | g_HelpCursorX
     PUSH EDX                            ; 0049bfb3
     LEA EAX,[ESP + 0x1a10]              ; 0049bfb4
     PUSH EAX                            ; 0049bfbb
-    MOV ECX,dword ptr [0x014b9900]      ; 0049bfbc | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049bfbc | g_ThemeFont
     PUSH ECX                            ; 0049bfc2
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bfc3
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049bfc8 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049bfcd | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049bfc8 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049bfcd | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049bfd3 | g_WindowHeight
     ADD EDI,EAX                         ; 0049bfd9
     SHL EAX,0x2                         ; 0049bfdb
     ADD ESP,0x18                        ; 0049bfde
     SUB EDX,EAX                         ; 0049bfe1
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049bfe3 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049bfe3 | g_HelpCursorY
     CMP EDX,EDI                         ; 0049bfe9
     JGE 0x0049c01d                      ; 0049bfeb
         ;   XREF to: 0049c01d (CONDITIONAL_JUMP)  ; LAB_0049c01d
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bfed | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049bfed | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bff3
     MOV ECX,0x3                         ; 0049bffa
     SUB EAX,EDX                         ; 0049bfff
     MOV EBX,dword ptr [0x005b761c]      ; 0049c001 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c007
     MOV EDX,EBX                         ; 0049c009
-    MOV [0x01c78ae0],EAX                ; 0049c00b | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c00b | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c010
     MOV EAX,EBX                         ; 0049c013
     IDIV ECX                            ; 0049c015
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c017 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c017 | g_HelpCursorX
     PUSH 0x5824ee                       ; 0049c01d | = "Light"
         ;   Label: LAB_0049c01d
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c022
@@ -967,38 +967,38 @@ section .text
     ADD ESP,0x10                        ; 0049c04a
     PUSH -0x1                           ; 0049c04d
     PUSH 0x7                            ; 0049c04f
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c051 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c051 | g_HelpCursorY
     PUSH ECX                            ; 0049c057
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049c058 | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049c058 | g_HelpCursorX
     PUSH EDI                            ; 0049c05e
     LEA EAX,[ESP + 0x1210]              ; 0049c05f
     PUSH EAX                            ; 0049c066
-    MOV EBP,dword ptr [0x014b9900]      ; 0049c067 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049c067 | g_ThemeFont
     PUSH EBP                            ; 0049c06d
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c06e
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c073 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049c078 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c073 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049c078 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049c07e
     MOV EDX,dword ptr [0x005b7620]      ; 0049c081 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c087 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c087 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049c08d
     ADD ESP,0x18                        ; 0049c08f
     CMP EDX,ECX                         ; 0049c092
     JGE 0x0049c0c6                      ; 0049c094
         ;   XREF to: 0049c0c6 (CONDITIONAL_JUMP)  ; LAB_0049c0c6
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c096 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c096 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c09c
     MOV ECX,0x3                         ; 0049c0a3
     SUB EAX,EDX                         ; 0049c0a8
     MOV EBX,dword ptr [0x005b761c]      ; 0049c0aa | g_WindowWidth
     ADD EAX,EAX                         ; 0049c0b0
     MOV EDX,EBX                         ; 0049c0b2
-    MOV [0x01c78ae0],EAX                ; 0049c0b4 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c0b4 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c0b9
     MOV EAX,EBX                         ; 0049c0bc
     IDIV ECX                            ; 0049c0be
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c0c0 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c0c0 | g_HelpCursorX
     PUSH 0x5824f4                       ; 0049c0c6 | = "Night Vision"
         ;   Label: LAB_0049c0c6
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c0cb
@@ -1019,39 +1019,39 @@ section .text
     ADD ESP,0x10                        ; 0049c0f3
     PUSH -0x1                           ; 0049c0f6
     PUSH 0x7                            ; 0049c0f8
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c0fa | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c0fa | g_HelpCursorY
     PUSH EBP                            ; 0049c100
-    MOV EAX,[0x01c78adc]                ; 0049c101 | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049c101 | g_HelpCursorX
     PUSH EAX                            ; 0049c106
     LEA EAX,[ESP + 0x1910]              ; 0049c107
     PUSH EAX                            ; 0049c10e
-    MOV EDX,dword ptr [0x014b9900]      ; 0049c10f | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049c10f | g_ThemeFont
     PUSH EDX                            ; 0049c115
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c116
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c11b | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c120 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c11b | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c120 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c126 | g_WindowHeight
     ADD ECX,EAX                         ; 0049c12c
     SHL EAX,0x2                         ; 0049c12e
     ADD ESP,0x18                        ; 0049c131
     SUB EDX,EAX                         ; 0049c134
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049c136 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049c136 | g_HelpCursorY
     CMP EDX,ECX                         ; 0049c13c
     JGE 0x0049c170                      ; 0049c13e
         ;   XREF to: 0049c170 (CONDITIONAL_JUMP)  ; LAB_0049c170
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c140 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c140 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c146
     MOV ECX,0x3                         ; 0049c14d
     SUB EAX,EDX                         ; 0049c152
     MOV EBX,dword ptr [0x005b761c]      ; 0049c154 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c15a
     MOV EDX,EBX                         ; 0049c15c
-    MOV [0x01c78ae0],EAX                ; 0049c15e | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c15e | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c163
     MOV EAX,EBX                         ; 0049c166
     IDIV ECX                            ; 0049c168
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c16a | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c16a | g_HelpCursorX
     PUSH 0x582501                       ; 0049c170 | = "Draw"
         ;   Label: LAB_0049c170
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c175
@@ -1072,39 +1072,39 @@ section .text
     ADD ESP,0x10                        ; 0049c19d
     PUSH -0x1                           ; 0049c1a0
     PUSH 0x7                            ; 0049c1a2
-    MOV EAX,[0x01c78ae0]                ; 0049c1a4 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049c1a4 | g_HelpCursorY
     PUSH EAX                            ; 0049c1a9
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049c1aa | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049c1aa | g_HelpCursorX
     PUSH EDX                            ; 0049c1b0
     LEA EAX,[ESP + 0x110]               ; 0049c1b1
     PUSH EAX                            ; 0049c1b8
-    MOV ECX,dword ptr [0x014b9900]      ; 0049c1b9 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049c1b9 | g_ThemeFont
     PUSH ECX                            ; 0049c1bf
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c1c0
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c1c5 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c1ca | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c1c5 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c1ca | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c1d0 | g_WindowHeight
     ADD EDI,EAX                         ; 0049c1d6
     SHL EAX,0x2                         ; 0049c1d8
     ADD ESP,0x18                        ; 0049c1db
     SUB EDX,EAX                         ; 0049c1de
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049c1e0 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049c1e0 | g_HelpCursorY
     CMP EDX,EDI                         ; 0049c1e6
     JGE 0x0049c21a                      ; 0049c1e8
         ;   XREF to: 0049c21a (CONDITIONAL_JUMP)  ; LAB_0049c21a
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c1ea | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c1ea | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c1f0
     MOV ECX,0x3                         ; 0049c1f7
     SUB EAX,EDX                         ; 0049c1fc
     MOV EBX,dword ptr [0x005b761c]      ; 0049c1fe | g_WindowWidth
     ADD EAX,EAX                         ; 0049c204
     MOV EDX,EBX                         ; 0049c206
-    MOV [0x01c78ae0],EAX                ; 0049c208 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c208 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c20d
     MOV EAX,EBX                         ; 0049c210
     IDIV ECX                            ; 0049c212
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c214 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c214 | g_HelpCursorX
     PUSH 0x582506                       ; 0049c21a | = "Point up"
         ;   Label: LAB_0049c21a
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c21f
@@ -1125,38 +1125,38 @@ section .text
     ADD ESP,0x10                        ; 0049c247
     PUSH -0x1                           ; 0049c24a
     PUSH 0x7                            ; 0049c24c
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c24e | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c24e | g_HelpCursorY
     PUSH ECX                            ; 0049c254
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049c255 | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049c255 | g_HelpCursorX
     PUSH EDI                            ; 0049c25b
     LEA EAX,[ESP + 0x810]               ; 0049c25c
     PUSH EAX                            ; 0049c263
-    MOV EBP,dword ptr [0x014b9900]      ; 0049c264 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049c264 | g_ThemeFont
     PUSH EBP                            ; 0049c26a
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c26b
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c270 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049c275 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c270 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049c275 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049c27b
     MOV EDX,dword ptr [0x005b7620]      ; 0049c27e | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c284 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c284 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049c28a
     ADD ESP,0x18                        ; 0049c28c
     CMP EDX,ECX                         ; 0049c28f
     JGE 0x0049c2c3                      ; 0049c291
         ;   XREF to: 0049c2c3 (CONDITIONAL_JUMP)  ; LAB_0049c2c3
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c293 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c293 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c299
     MOV ECX,0x3                         ; 0049c2a0
     SUB EAX,EDX                         ; 0049c2a5
     MOV EBX,dword ptr [0x005b761c]      ; 0049c2a7 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c2ad
     MOV EDX,EBX                         ; 0049c2af
-    MOV [0x01c78ae0],EAX                ; 0049c2b1 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c2b1 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c2b6
     MOV EAX,EBX                         ; 0049c2b9
     IDIV ECX                            ; 0049c2bb
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c2bd | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c2bd | g_HelpCursorX
     PUSH 0x58250f                       ; 0049c2c3 | = "Point down"
         ;   Label: LAB_0049c2c3
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c2c8
@@ -1177,39 +1177,39 @@ section .text
     ADD ESP,0x10                        ; 0049c2f0
     PUSH -0x1                           ; 0049c2f3
     PUSH 0x7                            ; 0049c2f5
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c2f7 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c2f7 | g_HelpCursorY
     PUSH EBP                            ; 0049c2fd
-    MOV EAX,[0x01c78adc]                ; 0049c2fe | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049c2fe | g_HelpCursorX
     PUSH EAX                            ; 0049c303
     LEA EAX,[ESP + 0xf10]               ; 0049c304
     PUSH EAX                            ; 0049c30b
-    MOV EDX,dword ptr [0x014b9900]      ; 0049c30c | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049c30c | g_ThemeFont
     PUSH EDX                            ; 0049c312
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c313
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c318 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c31d | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c318 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c31d | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c323 | g_WindowHeight
     ADD ECX,EAX                         ; 0049c329
     SHL EAX,0x2                         ; 0049c32b
     ADD ESP,0x18                        ; 0049c32e
     SUB EDX,EAX                         ; 0049c331
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049c333 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049c333 | g_HelpCursorY
     CMP EDX,ECX                         ; 0049c339
     JGE 0x0049c36d                      ; 0049c33b
         ;   XREF to: 0049c36d (CONDITIONAL_JUMP)  ; LAB_0049c36d
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c33d | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c33d | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c343
     MOV ECX,0x3                         ; 0049c34a
     SUB EAX,EDX                         ; 0049c34f
     MOV EBX,dword ptr [0x005b761c]      ; 0049c351 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c357
     MOV EDX,EBX                         ; 0049c359
-    MOV [0x01c78ae0],EAX                ; 0049c35b | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c35b | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c360
     MOV EAX,EBX                         ; 0049c363
     IDIV ECX                            ; 0049c365
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c367 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c367 | g_HelpCursorX
     PUSH 0x58251a                       ; 0049c36d | = "Jump"
         ;   Label: LAB_0049c36d
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c372
@@ -1230,39 +1230,39 @@ section .text
     ADD ESP,0x10                        ; 0049c39a
     PUSH -0x1                           ; 0049c39d
     PUSH 0x7                            ; 0049c39f
-    MOV EAX,[0x01c78ae0]                ; 0049c3a1 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049c3a1 | g_HelpCursorY
     PUSH EAX                            ; 0049c3a6
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049c3a7 | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049c3a7 | g_HelpCursorX
     PUSH EDX                            ; 0049c3ad
     LEA EAX,[ESP + 0x610]               ; 0049c3ae
     PUSH EAX                            ; 0049c3b5
-    MOV ECX,dword ptr [0x014b9900]      ; 0049c3b6 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049c3b6 | g_ThemeFont
     PUSH ECX                            ; 0049c3bc
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c3bd
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c3c2 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c3c7 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c3c2 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c3c7 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c3cd | g_WindowHeight
     ADD EDI,EAX                         ; 0049c3d3
     SHL EAX,0x2                         ; 0049c3d5
     ADD ESP,0x18                        ; 0049c3d8
     SUB EDX,EAX                         ; 0049c3db
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049c3dd | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049c3dd | g_HelpCursorY
     CMP EDX,EDI                         ; 0049c3e3
     JGE 0x0049c417                      ; 0049c3e5
         ;   XREF to: 0049c417 (CONDITIONAL_JUMP)  ; LAB_0049c417
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c3e7 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c3e7 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c3ed
     MOV ECX,0x3                         ; 0049c3f4
     SUB EAX,EDX                         ; 0049c3f9
     MOV EBX,dword ptr [0x005b761c]      ; 0049c3fb | g_WindowWidth
     ADD EAX,EAX                         ; 0049c401
     MOV EDX,EBX                         ; 0049c403
-    MOV [0x01c78ae0],EAX                ; 0049c405 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c405 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c40a
     MOV EAX,EBX                         ; 0049c40d
     IDIV ECX                            ; 0049c40f
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c411 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c411 | g_HelpCursorX
     PUSH 0x58251f                       ; 0049c417 | = "Cycle pistol weapons"
         ;   Label: LAB_0049c417
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c41c
@@ -1283,38 +1283,38 @@ section .text
     ADD ESP,0x10                        ; 0049c444
     PUSH -0x1                           ; 0049c447
     PUSH 0x7                            ; 0049c449
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c44b | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c44b | g_HelpCursorY
     PUSH ECX                            ; 0049c451
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049c452 | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049c452 | g_HelpCursorX
     PUSH EDI                            ; 0049c458
     LEA EAX,[ESP + 0xd10]               ; 0049c459
     PUSH EAX                            ; 0049c460
-    MOV EBP,dword ptr [0x014b9900]      ; 0049c461 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049c461 | g_ThemeFont
     PUSH EBP                            ; 0049c467
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c468
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c46d | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049c472 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c46d | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049c472 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049c478
     MOV EDX,dword ptr [0x005b7620]      ; 0049c47b | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c481 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c481 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049c487
     ADD ESP,0x18                        ; 0049c489
     CMP EDX,ECX                         ; 0049c48c
     JGE 0x0049c4c0                      ; 0049c48e
         ;   XREF to: 0049c4c0 (CONDITIONAL_JUMP)  ; LAB_0049c4c0
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c490 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c490 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c496
     MOV ECX,0x3                         ; 0049c49d
     SUB EAX,EDX                         ; 0049c4a2
     MOV EBX,dword ptr [0x005b761c]      ; 0049c4a4 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c4aa
     MOV EDX,EBX                         ; 0049c4ac
-    MOV [0x01c78ae0],EAX                ; 0049c4ae | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c4ae | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c4b3
     MOV EAX,EBX                         ; 0049c4b6
     IDIV ECX                            ; 0049c4b8
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c4ba | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c4ba | g_HelpCursorX
     PUSH 0x582534                       ; 0049c4c0 | = "Cycle assault weapons"
         ;   Label: LAB_0049c4c0
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c4c5
@@ -1335,39 +1335,39 @@ section .text
     ADD ESP,0x10                        ; 0049c4ed
     PUSH -0x1                           ; 0049c4f0
     PUSH 0x7                            ; 0049c4f2
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c4f4 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c4f4 | g_HelpCursorY
     PUSH EBP                            ; 0049c4fa
-    MOV EAX,[0x01c78adc]                ; 0049c4fb | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049c4fb | g_HelpCursorX
     PUSH EAX                            ; 0049c500
     LEA EAX,[ESP + 0x310]               ; 0049c501
     PUSH EAX                            ; 0049c508
-    MOV EDX,dword ptr [0x014b9900]      ; 0049c509 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049c509 | g_ThemeFont
     PUSH EDX                            ; 0049c50f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c510
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c515 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c51a | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c515 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c51a | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c520 | g_WindowHeight
     ADD ECX,EAX                         ; 0049c526
     SHL EAX,0x2                         ; 0049c528
     ADD ESP,0x18                        ; 0049c52b
     SUB EDX,EAX                         ; 0049c52e
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049c530 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049c530 | g_HelpCursorY
     CMP EDX,ECX                         ; 0049c536
     JGE 0x0049c56a                      ; 0049c538
         ;   XREF to: 0049c56a (CONDITIONAL_JUMP)  ; LAB_0049c56a
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c53a | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c53a | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c540
     MOV ECX,0x3                         ; 0049c547
     SUB EAX,EDX                         ; 0049c54c
     MOV EBX,dword ptr [0x005b761c]      ; 0049c54e | g_WindowWidth
     ADD EAX,EAX                         ; 0049c554
     MOV EDX,EBX                         ; 0049c556
-    MOV [0x01c78ae0],EAX                ; 0049c558 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c558 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c55d
     MOV EAX,EBX                         ; 0049c560
     IDIV ECX                            ; 0049c562
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c564 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c564 | g_HelpCursorX
     PUSH 0x58254a                       ; 0049c56a | = "Cycle flame weapons"
         ;   Label: LAB_0049c56a
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c56f
@@ -1388,39 +1388,39 @@ section .text
     ADD ESP,0x10                        ; 0049c597
     PUSH -0x1                           ; 0049c59a
     PUSH 0x7                            ; 0049c59c
-    MOV EAX,[0x01c78ae0]                ; 0049c59e | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049c59e | g_HelpCursorY
     PUSH EAX                            ; 0049c5a3
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049c5a4 | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049c5a4 | g_HelpCursorX
     PUSH EDX                            ; 0049c5aa
     LEA EAX,[ESP + 0xa10]               ; 0049c5ab
     PUSH EAX                            ; 0049c5b2
-    MOV ECX,dword ptr [0x014b9900]      ; 0049c5b3 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049c5b3 | g_ThemeFont
     PUSH ECX                            ; 0049c5b9
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c5ba
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c5bf | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c5c4 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c5bf | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c5c4 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c5ca | g_WindowHeight
     ADD EDI,EAX                         ; 0049c5d0
     SHL EAX,0x2                         ; 0049c5d2
     ADD ESP,0x18                        ; 0049c5d5
     SUB EDX,EAX                         ; 0049c5d8
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049c5da | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049c5da | g_HelpCursorY
     CMP EDX,EDI                         ; 0049c5e0
     JGE 0x0049c614                      ; 0049c5e2
         ;   XREF to: 0049c614 (CONDITIONAL_JUMP)  ; LAB_0049c614
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c5e4 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c5e4 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c5ea
     MOV ECX,0x3                         ; 0049c5f1
     SUB EAX,EDX                         ; 0049c5f6
     MOV EBX,dword ptr [0x005b761c]      ; 0049c5f8 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c5fe
     MOV EDX,EBX                         ; 0049c600
-    MOV [0x01c78ae0],EAX                ; 0049c602 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c602 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c607
     MOV EAX,EBX                         ; 0049c60a
     IDIV ECX                            ; 0049c60c
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c60e | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c60e | g_HelpCursorX
     PUSH 0x58255e                       ; 0049c614 | = "Cycle grenade weapons"
         ;   Label: LAB_0049c614
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c619
@@ -1441,38 +1441,38 @@ section .text
     ADD ESP,0x10                        ; 0049c641
     PUSH -0x1                           ; 0049c644
     PUSH 0x7                            ; 0049c646
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c648 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c648 | g_HelpCursorY
     PUSH ECX                            ; 0049c64e
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049c64f | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049c64f | g_HelpCursorX
     PUSH EDI                            ; 0049c655
     LEA EAX,[ESP + 0x1110]              ; 0049c656
     PUSH EAX                            ; 0049c65d
-    MOV EBP,dword ptr [0x014b9900]      ; 0049c65e | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049c65e | g_ThemeFont
     PUSH EBP                            ; 0049c664
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c665
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c66a | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049c66f | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c66a | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049c66f | g_HelpCursorY
     SHL EAX,0x2                         ; 0049c675
     MOV EDX,dword ptr [0x005b7620]      ; 0049c678 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c67e | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c67e | g_HelpCursorY
     SUB EDX,EAX                         ; 0049c684
     ADD ESP,0x18                        ; 0049c686
     CMP EDX,ECX                         ; 0049c689
     JGE 0x0049c6bd                      ; 0049c68b
         ;   XREF to: 0049c6bd (CONDITIONAL_JUMP)  ; LAB_0049c6bd
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c68d | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c68d | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c693
     MOV ECX,0x3                         ; 0049c69a
     SUB EAX,EDX                         ; 0049c69f
     MOV EBX,dword ptr [0x005b761c]      ; 0049c6a1 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c6a7
     MOV EDX,EBX                         ; 0049c6a9
-    MOV [0x01c78ae0],EAX                ; 0049c6ab | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c6ab | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c6b0
     MOV EAX,EBX                         ; 0049c6b3
     IDIV ECX                            ; 0049c6b5
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c6b7 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c6b7 | g_HelpCursorX
     PUSH 0x582574                       ; 0049c6bd | = "Cycle melee weapons"
         ;   Label: LAB_0049c6bd
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c6c2
@@ -1493,39 +1493,39 @@ section .text
     ADD ESP,0x10                        ; 0049c6ea
     PUSH -0x1                           ; 0049c6ed
     PUSH 0x7                            ; 0049c6ef
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c6f1 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c6f1 | g_HelpCursorY
     PUSH EBP                            ; 0049c6f7
-    MOV EAX,[0x01c78adc]                ; 0049c6f8 | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049c6f8 | g_HelpCursorX
     PUSH EAX                            ; 0049c6fd
     LEA EAX,[ESP + 0x1810]              ; 0049c6fe
     PUSH EAX                            ; 0049c705
-    MOV EDX,dword ptr [0x014b9900]      ; 0049c706 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049c706 | g_ThemeFont
     PUSH EDX                            ; 0049c70c
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c70d
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c712 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c717 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c712 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c717 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c71d | g_WindowHeight
     ADD ECX,EAX                         ; 0049c723
     SHL EAX,0x2                         ; 0049c725
     ADD ESP,0x18                        ; 0049c728
     SUB EDX,EAX                         ; 0049c72b
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049c72d | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049c72d | g_HelpCursorY
     CMP EDX,ECX                         ; 0049c733
     JGE 0x0049c767                      ; 0049c735
         ;   XREF to: 0049c767 (CONDITIONAL_JUMP)  ; LAB_0049c767
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c737 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c737 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c73d
     MOV ECX,0x3                         ; 0049c744
     SUB EAX,EDX                         ; 0049c749
     MOV EBX,dword ptr [0x005b761c]      ; 0049c74b | g_WindowWidth
     ADD EAX,EAX                         ; 0049c751
     MOV EDX,EBX                         ; 0049c753
-    MOV [0x01c78ae0],EAX                ; 0049c755 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c755 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c75a
     MOV EAX,EBX                         ; 0049c75d
     IDIV ECX                            ; 0049c75f
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c761 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c761 | g_HelpCursorX
     PUSH 0x582588                       ; 0049c767 | = "Next weapon"
         ;   Label: LAB_0049c767
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c76c
@@ -1546,39 +1546,39 @@ section .text
     ADD ESP,0x10                        ; 0049c791
     PUSH -0x1                           ; 0049c794
     PUSH 0x7                            ; 0049c796
-    MOV EAX,[0x01c78ae0]                ; 0049c798 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049c798 | g_HelpCursorY
     PUSH EAX                            ; 0049c79d
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049c79e | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049c79e | g_HelpCursorX
     PUSH EDX                            ; 0049c7a4
     LEA EAX,[ESP + 0x10]                ; 0049c7a5
     PUSH EAX                            ; 0049c7a9
-    MOV ECX,dword ptr [0x014b9900]      ; 0049c7aa | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049c7aa | g_ThemeFont
     PUSH ECX                            ; 0049c7b0
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c7b1
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c7b6 | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c7bb | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c7b6 | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c7bb | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c7c1 | g_WindowHeight
     ADD EDI,EAX                         ; 0049c7c7
     SHL EAX,0x2                         ; 0049c7c9
     ADD ESP,0x18                        ; 0049c7cc
     SUB EDX,EAX                         ; 0049c7cf
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049c7d1 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049c7d1 | g_HelpCursorY
     CMP EDX,EDI                         ; 0049c7d7
     JGE 0x0049c80b                      ; 0049c7d9
         ;   XREF to: 0049c80b (CONDITIONAL_JUMP)  ; LAB_0049c80b
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c7db | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c7db | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c7e1
     MOV ECX,0x3                         ; 0049c7e8
     SUB EAX,EDX                         ; 0049c7ed
     MOV EBX,dword ptr [0x005b761c]      ; 0049c7ef | g_WindowWidth
     ADD EAX,EAX                         ; 0049c7f5
     MOV EDX,EBX                         ; 0049c7f7
-    MOV [0x01c78ae0],EAX                ; 0049c7f9 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c7f9 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c7fe
     MOV EAX,EBX                         ; 0049c801
     IDIV ECX                            ; 0049c803
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c805 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c805 | g_HelpCursorX
     PUSH 0x582594                       ; 0049c80b | = "Previous weapon"
         ;   Label: LAB_0049c80b
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c810
@@ -1599,38 +1599,38 @@ section .text
     ADD ESP,0x10                        ; 0049c83b
     PUSH -0x1                           ; 0049c83e
     PUSH 0x7                            ; 0049c840
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c842 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c842 | g_HelpCursorY
     PUSH ECX                            ; 0049c848
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049c849 | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049c849 | g_HelpCursorX
     PUSH EDI                            ; 0049c84f
     LEA EAX,[ESP + 0x710]               ; 0049c850
     PUSH EAX                            ; 0049c857
-    MOV EBP,dword ptr [0x014b9900]      ; 0049c858 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049c858 | g_ThemeFont
     PUSH EBP                            ; 0049c85e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c85f
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c864 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049c869 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c864 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049c869 | g_HelpCursorY
     SHL EAX,0x2                         ; 0049c86f
     MOV EDX,dword ptr [0x005b7620]      ; 0049c872 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c878 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c878 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049c87e
     ADD ESP,0x18                        ; 0049c880
     CMP EDX,ECX                         ; 0049c883
     JGE 0x0049c8b7                      ; 0049c885
         ;   XREF to: 0049c8b7 (CONDITIONAL_JUMP)  ; LAB_0049c8b7
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c887 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c887 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c88d
     MOV ECX,0x3                         ; 0049c894
     SUB EAX,EDX                         ; 0049c899
     MOV EBX,dword ptr [0x005b761c]      ; 0049c89b | g_WindowWidth
     ADD EAX,EAX                         ; 0049c8a1
     MOV EDX,EBX                         ; 0049c8a3
-    MOV [0x01c78ae0],EAX                ; 0049c8a5 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c8a5 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c8aa
     MOV EAX,EBX                         ; 0049c8ad
     IDIV ECX                            ; 0049c8af
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c8b1 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c8b1 | g_HelpCursorX
     PUSH 0x5825a4                       ; 0049c8b7 | = "Next item"
         ;   Label: LAB_0049c8b7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c8bc
@@ -1651,39 +1651,39 @@ section .text
     ADD ESP,0x10                        ; 0049c8e7
     PUSH -0x1                           ; 0049c8ea
     PUSH 0x7                            ; 0049c8ec
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c8ee | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049c8ee | g_HelpCursorY
     PUSH EBP                            ; 0049c8f4
-    MOV EAX,[0x01c78adc]                ; 0049c8f5 | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049c8f5 | g_HelpCursorX
     PUSH EAX                            ; 0049c8fa
     LEA EAX,[ESP + 0xe10]               ; 0049c8fb
     PUSH EAX                            ; 0049c902
-    MOV EDX,dword ptr [0x014b9900]      ; 0049c903 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049c903 | g_ThemeFont
     PUSH EDX                            ; 0049c909
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c90a
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c90f | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c914 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c90f | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049c914 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c91a | g_WindowHeight
     ADD ECX,EAX                         ; 0049c920
     SHL EAX,0x2                         ; 0049c922
     ADD ESP,0x18                        ; 0049c925
     SUB EDX,EAX                         ; 0049c928
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049c92a | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049c92a | g_HelpCursorY
     CMP EDX,ECX                         ; 0049c930
     JGE 0x0049c964                      ; 0049c932
         ;   XREF to: 0049c964 (CONDITIONAL_JUMP)  ; LAB_0049c964
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c934 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c934 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c93a
     MOV ECX,0x3                         ; 0049c941
     SUB EAX,EDX                         ; 0049c946
     MOV EBX,dword ptr [0x005b761c]      ; 0049c948 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c94e
     MOV EDX,EBX                         ; 0049c950
-    MOV [0x01c78ae0],EAX                ; 0049c952 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c952 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049c957
     MOV EAX,EBX                         ; 0049c95a
     IDIV ECX                            ; 0049c95c
-    ADD dword ptr [0x01c78adc],EAX      ; 0049c95e | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049c95e | g_HelpCursorX
     PUSH 0x5825ae                       ; 0049c964 | = "Previous item"
         ;   Label: LAB_0049c964
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c969
@@ -1704,39 +1704,39 @@ section .text
     ADD ESP,0x10                        ; 0049c994
     PUSH -0x1                           ; 0049c997
     PUSH 0x7                            ; 0049c999
-    MOV EAX,[0x01c78ae0]                ; 0049c99b | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae0]                ; 0049c99b | g_HelpCursorY
     PUSH EAX                            ; 0049c9a0
-    MOV EDX,dword ptr [0x01c78adc]      ; 0049c9a1 | g_INT_01c78adc
+    MOV EDX,dword ptr [0x01c78adc]      ; 0049c9a1 | g_HelpCursorX
     PUSH EDX                            ; 0049c9a7
     LEA EAX,[ESP + 0x510]               ; 0049c9a8
     PUSH EAX                            ; 0049c9af
-    MOV ECX,dword ptr [0x014b9900]      ; 0049c9b0 | g_CBitFont_PTR_014b9900
+    MOV ECX,dword ptr [0x014b9900]      ; 0049c9b0 | g_ThemeFont
     PUSH ECX                            ; 0049c9b6
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c9b7
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049c9bc | g_INT_01c78ae4
-    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c9c1 | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049c9bc | g_HelpLineHeight
+    MOV EDI,dword ptr [0x01c78ae0]      ; 0049c9c1 | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049c9c7 | g_WindowHeight
     ADD EDI,EAX                         ; 0049c9cd
     SHL EAX,0x2                         ; 0049c9cf
     ADD ESP,0x18                        ; 0049c9d2
     SUB EDX,EAX                         ; 0049c9d5
-    MOV dword ptr [0x01c78ae0],EDI      ; 0049c9d7 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],EDI      ; 0049c9d7 | g_HelpCursorY
     CMP EDX,EDI                         ; 0049c9dd
     JGE 0x0049ca11                      ; 0049c9df
         ;   XREF to: 0049ca11 (CONDITIONAL_JUMP)  ; LAB_0049ca11
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c9e1 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049c9e1 | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c9e7
     MOV ECX,0x3                         ; 0049c9ee
     SUB EAX,EDX                         ; 0049c9f3
     MOV EBX,dword ptr [0x005b761c]      ; 0049c9f5 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c9fb
     MOV EDX,EBX                         ; 0049c9fd
-    MOV [0x01c78ae0],EAX                ; 0049c9ff | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049c9ff | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049ca04
     MOV EAX,EBX                         ; 0049ca07
     IDIV ECX                            ; 0049ca09
-    ADD dword ptr [0x01c78adc],EAX      ; 0049ca0b | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049ca0b | g_HelpCursorX
     PUSH 0x5825bc                       ; 0049ca11 | = "Item description"
         ;   Label: LAB_0049ca11
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049ca16
@@ -1757,38 +1757,38 @@ section .text
     ADD ESP,0x10                        ; 0049ca41
     PUSH -0x1                           ; 0049ca44
     PUSH 0x7                            ; 0049ca46
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049ca48 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049ca48 | g_HelpCursorY
     PUSH ECX                            ; 0049ca4e
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049ca4f | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049ca4f | g_HelpCursorX
     PUSH EDI                            ; 0049ca55
     LEA EAX,[ESP + 0xc10]               ; 0049ca56
     PUSH EAX                            ; 0049ca5d
-    MOV EBP,dword ptr [0x014b9900]      ; 0049ca5e | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049ca5e | g_ThemeFont
     PUSH EBP                            ; 0049ca64
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049ca65
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049ca6a | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049ca6f | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049ca6a | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049ca6f | g_HelpCursorY
     SHL EAX,0x2                         ; 0049ca75
     MOV EDX,dword ptr [0x005b7620]      ; 0049ca78 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049ca7e | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049ca7e | g_HelpCursorY
     SUB EDX,EAX                         ; 0049ca84
     ADD ESP,0x18                        ; 0049ca86
     CMP EDX,ECX                         ; 0049ca89
     JGE 0x0049cabd                      ; 0049ca8b
         ;   XREF to: 0049cabd (CONDITIONAL_JUMP)  ; LAB_0049cabd
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049ca8d | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049ca8d | g_HelpLineHeight
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ca93
     MOV ECX,0x3                         ; 0049ca9a
     SUB EAX,EDX                         ; 0049ca9f
     MOV EBX,dword ptr [0x005b761c]      ; 0049caa1 | g_WindowWidth
     ADD EAX,EAX                         ; 0049caa7
     MOV EDX,EBX                         ; 0049caa9
-    MOV [0x01c78ae0],EAX                ; 0049caab | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049caab | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049cab0
     MOV EAX,EBX                         ; 0049cab3
     IDIV ECX                            ; 0049cab5
-    ADD dword ptr [0x01c78adc],EAX      ; 0049cab7 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049cab7 | g_HelpCursorX
     PUSH 0x5825cd                       ; 0049cabd | = "Next ammo"
         ;   Label: LAB_0049cabd
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049cac2
@@ -1809,24 +1809,24 @@ section .text
     ADD ESP,0x10                        ; 0049caed
     PUSH -0x1                           ; 0049caf0
     PUSH 0x7                            ; 0049caf2
-    MOV EBP,dword ptr [0x01c78ae0]      ; 0049caf4 | g_INT_01c78ae0
+    MOV EBP,dword ptr [0x01c78ae0]      ; 0049caf4 | g_HelpCursorY
     PUSH EBP                            ; 0049cafa
-    MOV EAX,[0x01c78adc]                ; 0049cafb | g_INT_01c78adc
+    MOV EAX,[0x01c78adc]                ; 0049cafb | g_HelpCursorX
     PUSH EAX                            ; 0049cb00
     LEA EAX,[ESP + 0x1b10]              ; 0049cb01
     PUSH EAX                            ; 0049cb08
-    MOV EDX,dword ptr [0x014b9900]      ; 0049cb09 | g_CBitFont_PTR_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 0049cb09 | g_ThemeFont
     PUSH EDX                            ; 0049cb0f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049cb10
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049cb15 | g_INT_01c78ae4
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049cb1a | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049cb15 | g_HelpLineHeight
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049cb1a | g_HelpCursorY
     MOV EDX,dword ptr [0x005b7620]      ; 0049cb20 | g_WindowHeight
     ADD ECX,EAX                         ; 0049cb26
     SHL EAX,0x2                         ; 0049cb28
     ADD ESP,0x18                        ; 0049cb2b
     SUB EDX,EAX                         ; 0049cb2e
-    MOV dword ptr [0x01c78ae0],ECX      ; 0049cb30 | g_INT_01c78ae0
+    MOV dword ptr [0x01c78ae0],ECX      ; 0049cb30 | g_HelpCursorY
     CMP EDX,ECX                         ; 0049cb36
     JL 0x0049cbc9                       ; 0049cb38
         ;   XREF to: 0049cbc9 (CONDITIONAL_JUMP)  ; LAB_0049cbc9
@@ -1857,26 +1857,26 @@ section .text
     ADD ESP,0x10                        ; 0049cb7c
     PUSH -0x1                           ; 0049cb7f
     PUSH 0x7                            ; 0049cb81
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049cb83 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049cb83 | g_HelpCursorY
     PUSH ECX                            ; 0049cb89
-    MOV EDI,dword ptr [0x01c78adc]      ; 0049cb8a | g_INT_01c78adc
+    MOV EDI,dword ptr [0x01c78adc]      ; 0049cb8a | g_HelpCursorX
     PUSH EDI                            ; 0049cb90
     LEA EAX,[ESP + 0x1610]              ; 0049cb91
     PUSH EAX                            ; 0049cb98
-    MOV EBP,dword ptr [0x014b9900]      ; 0049cb99 | g_CBitFont_PTR_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 0049cb99 | g_ThemeFont
     PUSH EBP                            ; 0049cb9f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049cba0
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01c78ae4]                ; 0049cba5 | g_INT_01c78ae4
-    ADD dword ptr [0x01c78ae0],EAX      ; 0049cbaa | g_INT_01c78ae0
+    MOV EAX,[0x01c78ae4]                ; 0049cba5 | g_HelpLineHeight
+    ADD dword ptr [0x01c78ae0],EAX      ; 0049cbaa | g_HelpCursorY
     SHL EAX,0x2                         ; 0049cbb0
     MOV EDX,dword ptr [0x005b7620]      ; 0049cbb3 | g_WindowHeight
-    MOV ECX,dword ptr [0x01c78ae0]      ; 0049cbb9 | g_INT_01c78ae0
+    MOV ECX,dword ptr [0x01c78ae0]      ; 0049cbb9 | g_HelpCursorY
     SUB EDX,EAX                         ; 0049cbbf
     ADD ESP,0x18                        ; 0049cbc1
     JMP 0x0049bb45                      ; 0049cbc4
         ;   XREF to: 0049bb45 (UNCONDITIONAL_JUMP)  ; LAB_0049bb45
-    MOV EDX,dword ptr [0x01c78ae4]      ; 0049cbc9 | g_INT_01c78ae4
+    MOV EDX,dword ptr [0x01c78ae4]      ; 0049cbc9 | g_HelpLineHeight
         ;   Label: LAB_0049cbc9
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049cbcf
     MOV ECX,0x3                         ; 0049cbd6
@@ -1884,11 +1884,11 @@ section .text
     MOV EBX,dword ptr [0x005b761c]      ; 0049cbdd | g_WindowWidth
     ADD EAX,EAX                         ; 0049cbe3
     MOV EDX,EBX                         ; 0049cbe5
-    MOV [0x01c78ae0],EAX                ; 0049cbe7 | g_INT_01c78ae0
+    MOV [0x01c78ae0],EAX                ; 0049cbe7 | g_HelpCursorY
     SAR EDX,0x1f                        ; 0049cbec
     MOV EAX,EBX                         ; 0049cbef
     IDIV ECX                            ; 0049cbf1
-    ADD dword ptr [0x01c78adc],EAX      ; 0049cbf3 | g_INT_01c78adc
+    ADD dword ptr [0x01c78adc],EAX      ; 0049cbf3 | g_HelpCursorX
     MOV EBX,dword ptr [0x005b761c]      ; 0049cbf9 | g_WindowWidth
     ADD ESP,0x1c00                      ; 0049cbff
     POP EBP                             ; 0049cc05

@@ -22,8 +22,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00454360(CDe
                     ((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *
                              (float)256));
   uVar4 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044c840
-                    (&g_SFogGrid_01480e2c,&this_ptr->camera_origin,world_position,(int)ROUND(dVar5))
-  ;
+                    (&g_CameraFogGrid,&this_ptr->camera_origin,world_position,(int)ROUND(dVar5));
   uVar4 = uVar4 * 0xff >> 0xe;
   if (0xff < uVar4) {
     return 0xffff;

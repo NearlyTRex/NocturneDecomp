@@ -12,9 +12,9 @@
 ;   float g_FLOAT_005e53fd = 0.5
 ;   float g_FLOAT_005e5401 = -0.5
 ;   float g_FLOAT_005e5405 = -4
-;   undefined4 g_INT_ARRAY_01e6614c[1]
-;   undefined4 g_INT_ARRAY_01e6614c[2]
-;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_SentinelIndices[1]
+;   undefined4 g_SentinelIndices[2]
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -39,7 +39,7 @@ section .text
         ;   Label: LAB_0052b6e6
     PUSH ESI                            ; 0052b6e7
     PUSH EBX                            ; 0052b6e8
-    MOV ESI,dword ptr [0x01e66150]      ; 0052b6e9 | g_INT_ARRAY_01e6614c[1]
+    MOV ESI,dword ptr [0x01e66150]      ; 0052b6e9 | g_SentinelIndices[1]
     LEA EAX,[ESI*0x4 + 0x0]             ; 0052b6ef
     MOV EBX,dword ptr [ESP + 0x8c]      ; 0052b6f6
     SUB EAX,ESI                         ; 0052b6fd
@@ -47,7 +47,7 @@ section .text
     SHL EAX,0x4                         ; 0052b705
     ADD EAX,EBX                         ; 0052b708
     PUSH EAX                            ; 0052b70a
-    PUSH 0x265370c                      ; 0052b70b | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0052b70b | g_ZeroVector
     LEA ESI,[ESP + 0x74]                ; 0052b710
     LEA EDI,[ESP + 0x5c]                ; 0052b714
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0052b718
@@ -57,13 +57,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0052b724
     MOVSD ES:EDI,ESI                    ; 0052b725
     MOVSD ES:EDI,ESI                    ; 0052b726
-    MOV ESI,dword ptr [0x01e66154]      ; 0052b727 | g_INT_ARRAY_01e6614c[2]
+    MOV ESI,dword ptr [0x01e66154]      ; 0052b727 | g_SentinelIndices[2]
     LEA EAX,[ESI*0x4 + 0x0]             ; 0052b72d
     SUB EAX,ESI                         ; 0052b734
     SHL EAX,0x4                         ; 0052b736
     ADD EAX,EBX                         ; 0052b739
     PUSH EAX                            ; 0052b73b
-    PUSH 0x265370c                      ; 0052b73c | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0052b73c | g_ZeroVector
     LEA ESI,[ESP + 0x68]                ; 0052b741
     LEA EDI,[ESP + 0x80]                ; 0052b745
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0052b74c

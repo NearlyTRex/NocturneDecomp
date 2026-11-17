@@ -10,11 +10,11 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   ushort[256] g_USHORT_ARRAY_01c34910
-;   undefined4 g_USHORT_ARRAY_01c34910[2]
+;   ushort[256] g_ColorTable16
+;   undefined4 g_ColorTable16[2]
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   int g_INT_01c35e50
+;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;
 ; *****************************************************************************
@@ -43,7 +43,7 @@ section .text
     CMP EDI,dword ptr [0x01c35e4c]      ; 00401949 | g_INT_01c35e4c
     JL 0x004019db                       ; 0040194f
         ;   XREF to: 004019db (CONDITIONAL_JUMP)  ; LAB_004019db
-    MOV EDX,dword ptr [0x01c35e50]      ; 00401955 | g_INT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 00401955 | g_ClipRight
     INC EDX                             ; 0040195b
     SUB EDX,ESI                         ; 0040195c
     CMP EBP,EDX                         ; 0040195e
@@ -78,7 +78,7 @@ section .text
     TEST BL,BL                          ; 004019a2
     JZ 0x00401a14                       ; 004019a4
         ;   XREF to: 00401a14 (CONDITIONAL_JUMP)  ; LAB_00401a14
-    MOV BX,word ptr [0x01c34914]        ; 004019aa | g_USHORT_ARRAY_01c34910[2]
+    MOV BX,word ptr [0x01c34914]        ; 004019aa | g_ColorTable16[2]
     MOV word ptr [EDX],BX               ; 004019b1
         ;   Label: LAB_004019b1
     INC EAX                             ; 004019b4
@@ -87,7 +87,7 @@ section .text
     CMP ECX,ESI                         ; 004019b9
     JL 0x004019a0                       ; 004019bb
         ;   XREF to: 004019a0 (CONDITIONAL_JUMP)  ; LAB_004019a0
-    MOV BX,word ptr [0x01c34910]        ; 004019bd | g_USHORT_ARRAY_01c34910
+    MOV BX,word ptr [0x01c34910]        ; 004019bd | g_ColorTable16
         ;   Label: LAB_004019bd
     ADD EDI,0x4                         ; 004019c4
     MOV word ptr [EDX],BX               ; 004019c7
@@ -143,7 +143,7 @@ section .text
         ;   Label: LAB_00401a10
     JMP 0x004019fb                      ; 00401a12
         ;   XREF to: 004019fb (UNCONDITIONAL_JUMP)  ; LAB_004019fb
-    MOV BX,word ptr [0x01c34910]        ; 00401a14 | g_USHORT_ARRAY_01c34910
+    MOV BX,word ptr [0x01c34910]        ; 00401a14 | g_ColorTable16
         ;   Label: LAB_00401a14
     JMP 0x004019b1                      ; 00401a1b
         ;   XREF to: 004019b1 (UNCONDITIONAL_JUMP)  ; LAB_004019b1

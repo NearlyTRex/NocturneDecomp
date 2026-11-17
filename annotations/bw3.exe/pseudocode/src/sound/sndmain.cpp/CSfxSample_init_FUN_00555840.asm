@@ -14,10 +14,10 @@
 ;   sound_sndmain.cpp_CSfxSample_ctor_FUN_00553310 at 00553315
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005e4854 = 20
+;   float g_SoundReferenceDistanceConstant = 20
 ;   float g_FLOAT_005e4858 = 10000
 ;   float g_FLOAT_00604244 = 1
-;   float g_FLOAT_02ce7210
+;   float g_SoundReferenceVolumeDistance
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -35,9 +35,9 @@ section .text
     CALL crt_memory.c_memset_FUN_005a28f0 ; 0055584d
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     FLD float ptr [0x00604244]          ; 00555852 | g_FLOAT_00604244
-    FLD float ptr [0x005e4854]          ; 00555858 | g_FLOAT_005e4854
+    FLD float ptr [0x005e4854]          ; 00555858 | g_SoundReferenceDistanceConstant
     FMUL ST1                            ; 0055585e
-    FLD float ptr [0x02ce7210]          ; 00555860 | g_FLOAT_02ce7210
+    FLD float ptr [0x02ce7210]          ; 00555860 | g_SoundReferenceVolumeDistance
     FMUL ST2                            ; 00555866
     FLD float ptr [0x005e4858]          ; 00555868 | g_FLOAT_005e4858
     FMULP ST3                           ; 0055586e

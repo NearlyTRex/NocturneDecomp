@@ -18,15 +18,15 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004b9960(CGame *thi
   byte bVar7;
   
   if (this_ptr->screen_clear_condition != 0) {
-    (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIM_LBUTTON);
-    (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIM_RBUTTON);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_RBUTTON);
   }
   player_control->strafe_speed = 0.0;
   pfVar1 = &player_control->strafe_speed;
-  if (g_CHAR_ARRAY_01c6cef0[this_ptr->key_strafe_left] == '\0') {
-    if (((g_CHAR_ARRAY_01c6cef0[this_ptr->key_strafe_right] != '\0') && ((int)*pfVar1 < 0x3f800000))
-       && (*pfVar1 = g_CGamePtr->delta_time_float / 0.01f + *pfVar1,
-          0x3f800000 < (int)*pfVar1)) {
+  if (g_KeyboardState[this_ptr->key_strafe_left] == '\0') {
+    if (((g_KeyboardState[this_ptr->key_strafe_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
+       (*pfVar1 = g_CGamePtr->delta_time_float / 0.01f + *pfVar1,
+       0x3f800000 < (int)*pfVar1)) {
       *pfVar1 = 1.0;
     }
   }
@@ -35,14 +35,14 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004b9960(CGame *thi
           fVar3 < -1.0f)) {
     *pfVar1 = -1.0;
   }
-  if (g_CHAR_ARRAY_01c6cef0[this_ptr->key_strafe] == '\0') {
-    if ((g_CHAR_ARRAY_01c6cef0[this_ptr->key_left] != '\0') ||
-       (g_CHAR_ARRAY_01c6cef0[this_ptr->key_right] != '\0')) {
+  if (g_KeyboardState[this_ptr->key_strafe] == '\0') {
+    if ((g_KeyboardState[this_ptr->key_left] != '\0') ||
+       (g_KeyboardState[this_ptr->key_right] != '\0')) {
       fVar3 = (float)this_ptr->x_mouse_sensitivity * (float)0.29999999999999999 *
               (float)1.52587890625e-05;
       pfVar1 = &player_control->turn_speed;
-      if (g_CHAR_ARRAY_01c6cef0[this_ptr->key_left] == '\0') {
-        if (((g_CHAR_ARRAY_01c6cef0[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
+      if (g_KeyboardState[this_ptr->key_left] == '\0') {
+        if (((g_KeyboardState[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
            (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar3 + *pfVar1,
            0x3e800000 < (int)*pfVar1)) {
           *pfVar1 = 0.25;
@@ -69,8 +69,8 @@ LAB_004b9a5a:
   }
   else {
     pfVar1 = &player_control->strafe_speed;
-    if (g_CHAR_ARRAY_01c6cef0[this_ptr->key_left] == '\0') {
-      if (((g_CHAR_ARRAY_01c6cef0[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
+    if (g_KeyboardState[this_ptr->key_left] == '\0') {
+      if (((g_KeyboardState[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
          (*pfVar1 = g_CGamePtr->delta_time_float / 0.01f + *pfVar1,
          0x3f800000 < (int)*pfVar1)) {
         *pfVar1 = 1.0;
@@ -94,8 +94,8 @@ joined_r0x004ba097:
   }
   player_control->turn_speed = 0.0;
 LAB_004b9a6d:
-  if ((g_CHAR_ARRAY_01c6cef0[this_ptr->key_point_up] == '\0') &&
-     (g_CHAR_ARRAY_01c6cef0[this_ptr->key_point_down] == '\0')) {
+  if ((g_KeyboardState[this_ptr->key_point_up] == '\0') &&
+     (g_KeyboardState[this_ptr->key_point_down] == '\0')) {
     fVar3 = (g_CGamePtr->delta_time_float * 0.25f) / 0.1f;
     pfVar1 = &player_control->look_up_down_speed;
     if (0.0 <= *pfVar1) {
@@ -115,10 +115,10 @@ LAB_004b9a6d:
     fVar3 = (float)this_ptr->y_mouse_sensitivity * (float)0.20000000000000001 *
             (float)1.52587890625e-05;
     pfVar1 = &player_control->look_up_down_speed;
-    if (g_CHAR_ARRAY_01c6cef0[this_ptr->key_point_up] == '\0') {
-      if (((g_CHAR_ARRAY_01c6cef0[this_ptr->key_point_down] != '\0') && ((int)*pfVar1 < 0x3e800000))
-         && (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar3 + *pfVar1,
-            0x3e800000 < (int)*pfVar1)) {
+    if (g_KeyboardState[this_ptr->key_point_up] == '\0') {
+      if (((g_KeyboardState[this_ptr->key_point_down] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
+         (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar3 + *pfVar1,
+         0x3e800000 < (int)*pfVar1)) {
         *pfVar1 = 0.25;
       }
     }
@@ -129,29 +129,27 @@ LAB_004b9a6d:
     }
   }
   if (this_ptr->always_run == 0) {
-    bVar7 = g_CHAR_ARRAY_01c6cef0[this_ptr->key_run];
+    bVar7 = g_KeyboardState[this_ptr->key_run];
   }
   else {
-    bVar7 = g_CHAR_ARRAY_01c6cef0[this_ptr->key_run] == '\0';
+    bVar7 = g_KeyboardState[this_ptr->key_run] == '\0';
   }
   (player_control->action_state).run = (uint)bVar7;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_walk] != g_CHAR_ARRAY_01c6cef0[this_ptr->key_walk]) {
-    (player_control->action_state).walk = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_walk];
+  if (g_PrevKeyboardState[this_ptr->key_walk] != g_KeyboardState[this_ptr->key_walk]) {
+    (player_control->action_state).walk = (uint)(byte)g_KeyboardState[this_ptr->key_walk];
   }
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_backup] != g_CHAR_ARRAY_01c6cef0[this_ptr->key_backup]) {
-    (player_control->action_state).backup = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_backup];
+  if (g_PrevKeyboardState[this_ptr->key_backup] != g_KeyboardState[this_ptr->key_backup]) {
+    (player_control->action_state).backup = (uint)(byte)g_KeyboardState[this_ptr->key_backup];
   }
   EVar4 = (*(((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.vtable._uc)->_uc).
             getDeathState)(&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base);
   if (EVar4 == DEATH_STATE_ALIVE) {
     iVar5 = this_ptr->key_fire;
-    if (g_CHAR_ARRAY_01d21fa0[iVar5] != g_CHAR_ARRAY_01c6cef0[iVar5]) {
-      (player_control->action_state).fire = (uint)(byte)g_CHAR_ARRAY_01c6cef0[iVar5];
+    if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
+      (player_control->action_state).fire = (uint)(byte)g_KeyboardState[iVar5];
     }
-    if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_action] != g_CHAR_ARRAY_01c6cef0[this_ptr->key_action])
-    {
-      (player_control->action_state).action =
-           (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_action];
+    if (g_PrevKeyboardState[this_ptr->key_action] != g_KeyboardState[this_ptr->key_action]) {
+      (player_control->action_state).action = (uint)(byte)g_KeyboardState[this_ptr->key_action];
     }
   }
   else {
@@ -159,110 +157,98 @@ LAB_004b9a6d:
     (player_control->action_state).fire = 0;
   }
   piVar2 = &(player_control->action_state).use_item;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_use_item] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_use_item]
-     ) {
+  if (g_PrevKeyboardState[this_ptr->key_use_item] == g_KeyboardState[this_ptr->key_use_item]) {
     *piVar2 = 0;
   }
   else {
-    *piVar2 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_use_item];
+    *piVar2 = (uint)(byte)g_KeyboardState[this_ptr->key_use_item];
   }
   piVar2 = &(player_control->action_state).light;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_light] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_light]) {
+  if (g_PrevKeyboardState[this_ptr->key_light] == g_KeyboardState[this_ptr->key_light]) {
     *piVar2 = 0;
   }
   else {
-    *piVar2 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_light];
+    *piVar2 = (uint)(byte)g_KeyboardState[this_ptr->key_light];
   }
   piVar2 = &(player_control->action_state).draw;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_draw] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_draw]) {
+  if (g_PrevKeyboardState[this_ptr->key_draw] == g_KeyboardState[this_ptr->key_draw]) {
     *piVar2 = 0;
   }
   else {
-    *piVar2 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_draw];
+    *piVar2 = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
   }
   piVar2 = &(player_control->action_state).jump;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_jump] == g_CHAR_ARRAY_01c6cef0[this_ptr->key_jump]) {
+  if (g_PrevKeyboardState[this_ptr->key_jump] == g_KeyboardState[this_ptr->key_jump]) {
     *piVar2 = 0;
   }
   else {
-    *piVar2 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_jump];
+    *piVar2 = (uint)(byte)g_KeyboardState[this_ptr->key_jump];
   }
   piVar2 = &(player_control->action_state).quick_turn;
-  if (g_CHAR_ARRAY_01d21fa0[this_ptr->key_quick_turn] ==
-      g_CHAR_ARRAY_01c6cef0[this_ptr->key_quick_turn]) {
+  if (g_PrevKeyboardState[this_ptr->key_quick_turn] == g_KeyboardState[this_ptr->key_quick_turn]) {
     *piVar2 = 0;
   }
   else {
-    *piVar2 = (uint)(byte)g_CHAR_ARRAY_01c6cef0[this_ptr->key_quick_turn];
+    *piVar2 = (uint)(byte)g_KeyboardState[this_ptr->key_quick_turn];
   }
-  iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_next_weapon);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_weapon);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,5,1);
   }
-  iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_prev_weapon);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_weapon);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,5,-1);
   }
-  iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_next_item);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_item);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004dbc40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,1);
   }
-  iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_prev_item);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_item);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004dbc40
               (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,-1);
   }
   iVar5 = (*(((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.vtable._ue)->_ue).randomize)
                     ((CEnemy *)g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]);
-  iVar6 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_1);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_1);
   if ((iVar6 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,0,1),
      iVar5 == 0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar6 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_2);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_2);
   if ((iVar6 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,1,1),
      iVar5 == 0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar6 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_3);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_3);
   if ((iVar6 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,2,1),
      iVar5 == 0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar6 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_4);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_4);
   if ((iVar6 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,3,1),
      iVar5 == 0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar6 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_weapon_5);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_5);
   if ((iVar6 != 0) &&
      (core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
                 (&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->inventory,(CDemonActor *)0x0,4,1),
      iVar5 == 0)) {
     (player_control->action_state).draw = 1;
   }
-  iVar5 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)
-                    (g_CKeys_PTR_00600284,this_ptr->key_infrared);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_infrared);
   if (iVar5 == 0) {
     return;
   }

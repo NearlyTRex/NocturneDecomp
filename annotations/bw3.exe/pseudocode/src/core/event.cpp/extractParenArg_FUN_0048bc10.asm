@@ -16,7 +16,7 @@
 ;   TerminatedCString s_No_opening_parenthesis_005bdeb1
 ;   TerminatedCString s_Argument_too_long_005bdec8
 ;   TerminatedCString s_Can_t_find_closing_paren_005bdeda
-;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005a54c0
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_0048bc1e
     INC AL                              ; 0048bc20
     AND EAX,0xff                        ; 0048bc22
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0048bc27 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0048bc27 | g_CharacterClassificationTable
     JZ 0x0048bc33                       ; 0048bc2e
         ;   XREF to: 0048bc33 (CONDITIONAL_JUMP)  ; LAB_0048bc33
     INC ECX                             ; 0048bc30
@@ -141,7 +141,7 @@ section .text
         ;   Label: LAB_0048bcc9
     INC CL                              ; 0048bccc
     AND ECX,0xff                        ; 0048bcce
-    TEST byte ptr [ECX + 0x6074b8],0x2  ; 0048bcd4 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [ECX + 0x6074b8],0x2  ; 0048bcd4 | g_CharacterClassificationTable
     JNZ 0x0048bd07                      ; 0048bcdb
         ;   XREF to: 0048bd07 (CONDITIONAL_JUMP)  ; LAB_0048bd07
     LEA EAX,[EBX + EBP*0x1]             ; 0048bcdd
@@ -152,7 +152,7 @@ section .text
         ;   Label: LAB_0048bce6
     INC AL                              ; 0048bce9
     AND EAX,0xff                        ; 0048bceb
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0048bcf0 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0048bcf0 | g_CharacterClassificationTable
     JZ 0x0048bd0f                       ; 0048bcf7
         ;   XREF to: 0048bd0f (CONDITIONAL_JUMP)  ; LAB_0048bd0f
     PUSH EBX                            ; 0048bcf9
@@ -179,7 +179,7 @@ section .text
     XOR ECX,ECX                         ; 0048bd13
     INC BL                              ; 0048bd15
     MOV CL,BL                           ; 0048bd17
-    TEST byte ptr [ECX + 0x6074b8],0x2  ; 0048bd19 | g_UCHAR_ARRAY_006074b8
+    TEST byte ptr [ECX + 0x6074b8],0x2  ; 0048bd19 | g_CharacterClassificationTable
     JZ 0x0048bd25                       ; 0048bd20
         ;   XREF to: 0048bd25 (CONDITIONAL_JUMP)  ; LAB_0048bd25
     INC EAX                             ; 0048bd22

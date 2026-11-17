@@ -19,13 +19,13 @@ void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_005754d0(int device_id)
     core_main_c_displayErrorAndQuit_FUN_005030e0("selectSoundDevice - device already open.");
   }
   if (device_id < 0) {
-    device_id = g_INT_006232fc;
+    device_id = g_CurrentSoundDevice;
   }
   iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005752c0();
   if ((device_id < iVar2) && (-1 < device_id)) {
-    g_INT_006232fc = device_id;
+    g_CurrentSoundDevice = device_id;
     return;
   }
-  g_INT_006232fc = sound_sndmain_cpp_findBestSoundDevice_FUN_005753b0();
+  g_CurrentSoundDevice = sound_sndmain_cpp_findBestSoundDevice_FUN_005753b0();
   return;
 }

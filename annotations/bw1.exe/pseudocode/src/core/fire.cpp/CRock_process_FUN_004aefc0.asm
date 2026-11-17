@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005df264 = 32767.7000000000
-;   int g_INT_01c43530
+;   int g_GlobalDeltaTimeInt
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_process_FUN_00532250
@@ -39,7 +39,7 @@ section .text
     FADDP                               ; 004aefe6
     ADD ESP,0x4                         ; 004aefe8
     FSQRT                               ; 004aefeb
-    MOV EAX,[0x01c43530]                ; 004aefed | g_INT_01c43530
+    MOV EAX,[0x01c43530]                ; 004aefed | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 004aeff2
     SAR EDX,0x1f                        ; 004aeff4
     SHL EDX,0x2                         ; 004aeff7
@@ -54,7 +54,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004af012
     MOV EDX,dword ptr [EBX + 0x40]      ; 004af016
     ADD EDX,EAX                         ; 004af019
-    MOV EAX,[0x01c43530]                ; 004af01b | g_INT_01c43530
+    MOV EAX,[0x01c43530]                ; 004af01b | g_GlobalDeltaTimeInt
     MOV dword ptr [EBX + 0x40],EDX      ; 004af020
     MOV EDX,EAX                         ; 004af023
     SAR EDX,0x1f                        ; 004af025

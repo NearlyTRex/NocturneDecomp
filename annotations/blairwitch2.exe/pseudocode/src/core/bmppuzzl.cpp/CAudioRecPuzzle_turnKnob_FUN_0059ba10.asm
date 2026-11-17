@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   knob
 ;
 ; Referenced Globals:
-;   int g_INT_01c2a37c
+;   int g_MouseX
 ;   int g_INT_026677e4
 ;
 ; *****************************************************************************
@@ -38,7 +38,7 @@ section .text
     CMP EAX,dword ptr [EDX + 0x20]      ; 0059ba39
     JNZ 0x0059ba34                      ; 0059ba3c
         ;   XREF to: 0059ba34 (CONDITIONAL_JUMP)  ; LAB_0059ba34
-    MOV ECX,dword ptr [0x01c2a37c]      ; 0059ba3e | g_INT_01c2a37c
+    MOV ECX,dword ptr [0x01c2a37c]      ; 0059ba3e | g_MouseX
         ;   Label: LAB_0059ba3e
     LEA EAX,[ESI*0x4 + 0x0]             ; 0059ba44
     MOV EBX,dword ptr [0x026677e4]      ; 0059ba4b | g_INT_026677e4
@@ -53,7 +53,7 @@ section .text
     JLE 0x0059ba6a                      ; 0059ba61
         ;   XREF to: 0059ba6a (CONDITIONAL_JUMP)  ; LAB_0059ba6a
     MOV dword ptr [EAX + 0x34],0x4      ; 0059ba63
-    MOV EAX,[0x01c2a37c]                ; 0059ba6a | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 0059ba6a | g_MouseX
         ;   Label: LAB_0059ba6a
     MOV [0x026677e4],EAX                ; 0059ba6f | g_INT_026677e4
     LEA EAX,[ESI*0x4 + 0x0]             ; 0059ba74

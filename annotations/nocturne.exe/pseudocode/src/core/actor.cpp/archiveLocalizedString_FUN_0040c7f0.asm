@@ -22,8 +22,8 @@
 ;   undefined4 s_LOCALIZE_00577c6d+1
 ;   undefined4 s_LOCALIZE_00577c6d+2
 ;   undefined4 s_LOCALIZE_00577c6d+3
-;   char[300] g_CHAR_ARRAY_005accf8
-;   undefined4 g_CHAR_ARRAY_005accf8+4
+;   char[300] g_LocalizationTemplate
+;   undefined4 g_LocalizationTemplate+4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
@@ -39,8 +39,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x13c]     ; 0040c7f8
     MOV ECX,0x4b                        ; 0040c7ff
     MOV EDI,ESP                         ; 0040c804
-    MOV ESI,0x5accf8                    ; 0040c806 | g_CHAR_ARRAY_005accf8
-    MOVSD.REP ES:EDI,ESI                ; 0040c80b | g_CHAR_ARRAY_005accf8 | g_CHAR_ARRAY_005accf8+4
+    MOV ESI,0x5accf8                    ; 0040c806 | g_LocalizationTemplate
+    MOVSD.REP ES:EDI,ESI                ; 0040c80b | g_LocalizationTemplate | g_LocalizationTemplate+4
     TEST EAX,EAX                        ; 0040c80d
     JNZ 0x0040c856                      ; 0040c80f
         ;   XREF to: 0040c856 (CONDITIONAL_JUMP)  ; LAB_0040c856

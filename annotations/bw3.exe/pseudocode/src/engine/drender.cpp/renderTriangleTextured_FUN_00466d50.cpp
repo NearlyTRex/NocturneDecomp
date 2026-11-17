@@ -28,20 +28,20 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
   
-  if ((g_INT_007303fc != 0) &&
+  if ((g_CullingMode != 0) &&
      (iVar6 = engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0
                         (g_SRenderVertex_ARRAY_0060b014 + *vertex_indices,
                          g_SRenderVertex_ARRAY_0060b014 + vertex_indices[1],
                          g_SRenderVertex_ARRAY_0060b014 + vertex_indices[2]), iVar6 == 0)) {
     return;
   }
-  g_INT_01ed3198 = g_INT_01ed3198 + 1;
-  if ((g_INT_01c6cee8 == 0) || (g_INT_007303f4 != 0)) {
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
+  if ((g_INT_01c6cee8 == 0) || (g_TexturesDisabled != 0)) {
     iVar6 = 0;
-    g_INT_01bdd4dc = 0;
+    g_RenderTriangleMaxScanlineY = 0;
     local_24 = 0;
-    g_INT_01bdd4d8 = 0x4b0;
-    g_INT_01bdcfd4 = iVar6;
+    g_RenderTriangleMinScanlineY = 0x4b0;
+    g_RenderTriangleEdgeCount = iVar6;
     if (0 < vertex_count) {
       local_28 = vertex_indices;
       do {
@@ -65,13 +65,13 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_
             local_1c = g_SRenderVertex_ARRAY_0060b014 + iVar4;
           }
           g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].base.y_min = iVar3;
-          iVar7 = g_INT_01bdd4d8;
+          iVar7 = g_RenderTriangleMinScanlineY;
           g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].base.y_max = iVar5;
           if (iVar3 < iVar7) {
-            g_INT_01bdd4d8 = iVar3;
+            g_RenderTriangleMinScanlineY = iVar3;
           }
-          if (g_INT_01bdd4dc < iVar5) {
-            g_INT_01bdd4dc = iVar5;
+          if (g_RenderTriangleMaxScanlineY < iVar5) {
+            g_RenderTriangleMaxScanlineY = iVar5;
           }
           uVar8 = (local_1c->projected_vertex).screen_y - (pSVar9->projected_vertex).screen_y;
           if (uVar8 < 0x10000) {
@@ -85,7 +85,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_
                   (longlong)
                   ((local_1c->projected_vertex).screen_x - (pSVar9->projected_vertex).screen_x);
           uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-          g_INT_01bdcfd4 = iVar6;
+          g_RenderTriangleEdgeCount = iVar6;
           g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].base.x_gradient = uVar8;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].base.x_current =
@@ -115,7 +115,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].base.alpha_current =
                pSVar9->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          if (g_INT_007303f4 == 0) {
+          if (g_TexturesDisabled == 0) {
             lVar1 = (longlong)iVar7 *
                     (longlong)
                     ((local_1c->projected_vertex).inv_z - (pSVar9->projected_vertex).inv_z);
@@ -137,7 +137,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_
             iVar4 = (pSVar9->projected_vertex).transformed_z;
           }
           g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].base.depth_current = iVar4 + local_2c;
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x200) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
             lVar1 = (longlong)iVar7 * (longlong)(local_1c->g - pSVar9->g);
             uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
             g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].green_gradient = uVar8;
@@ -151,53 +151,53 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_
             g_SSoftwareEdge_ARRAY_01bdcfd8[iVar6].blue_current =
                  pSVar9->b + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
           }
-          iVar6 = g_INT_01bdcfd4 + 1;
+          iVar6 = g_RenderTriangleEdgeCount + 1;
         }
         local_28 = local_28 + 1;
         local_24 = local_24 + 1;
-        g_INT_01bdcfd4 = iVar6;
+        g_RenderTriangleEdgeCount = iVar6;
       } while (local_24 < vertex_count);
     }
     local_18 = g_SSoftwareEdge_ARRAY_01bdcfd8;
     iVar6 = 0;
-    g_INT_01bdd814 = 0;
-    if (0 < g_INT_01bdcfd4) {
+    g_RenderAbortFlag = 0;
+    if (0 < g_RenderTriangleEdgeCount) {
       do {
-        if ((g_INT_01bdd4d8 == (local_18->base).y_min) && (local_18 != (SSoftwareEdge *)0x0))
-        goto LAB_00466f04;
+        if ((g_RenderTriangleMinScanlineY == (local_18->base).y_min) &&
+           (local_18 != (SSoftwareEdge *)0x0)) goto LAB_00466f04;
         iVar6 = iVar6 + 1;
         local_18 = local_18 + 1;
-      } while (iVar6 < g_INT_01bdcfd4);
+      } while (iVar6 < g_RenderTriangleEdgeCount);
     }
     local_18 = (SSoftwareEdge *)0x0;
 LAB_00466f04:
     if (local_18 != (SSoftwareEdge *)0x0) {
       local_14 = g_SSoftwareEdge_ARRAY_01bdcfd8;
       iVar6 = 0;
-      if (0 < g_INT_01bdcfd4) {
+      if (0 < g_RenderTriangleEdgeCount) {
         do {
-          if ((g_INT_01bdd4d8 == (local_14->base).y_min) && (local_14 != local_18))
+          if ((g_RenderTriangleMinScanlineY == (local_14->base).y_min) && (local_14 != local_18))
           goto LAB_00466f3b;
           iVar6 = iVar6 + 1;
           local_14 = local_14 + 1;
-        } while (iVar6 < g_INT_01bdcfd4);
+        } while (iVar6 < g_RenderTriangleEdgeCount);
       }
       local_14 = (SSoftwareEdge *)0x0;
 LAB_00466f3b:
       if (local_14 != (SSoftwareEdge *)0x0) {
-        local_20 = g_INT_01bdd4d8;
+        local_20 = g_RenderTriangleMinScanlineY;
         do {
           if ((local_18->base).y_max <= local_20) {
             (local_18->base).y_min = -1;
             local_18 = g_SSoftwareEdge_ARRAY_01bdcfd8;
             iVar6 = 0;
-            if (0 < g_INT_01bdcfd4) {
+            if (0 < g_RenderTriangleEdgeCount) {
               do {
                 if ((local_20 == (local_18->base).y_min) && (local_18 != local_14))
                 goto LAB_00466f96;
                 iVar6 = iVar6 + 1;
                 local_18 = local_18 + 1;
-              } while (iVar6 < g_INT_01bdcfd4);
+              } while (iVar6 < g_RenderTriangleEdgeCount);
             }
             local_18 = (SSoftwareEdge *)0x0;
 LAB_00466f96:
@@ -209,13 +209,13 @@ LAB_00466f96:
             (local_14->base).y_min = -1;
             local_14 = g_SSoftwareEdge_ARRAY_01bdcfd8;
             iVar6 = 0;
-            if (0 < g_INT_01bdcfd4) {
+            if (0 < g_RenderTriangleEdgeCount) {
               do {
                 if ((local_20 == (local_14->base).y_min) && (local_14 != local_18))
                 goto LAB_00466fe6;
                 iVar6 = iVar6 + 1;
                 local_14 = local_14 + 1;
-              } while (iVar6 < g_INT_01bdcfd4);
+              } while (iVar6 < g_RenderTriangleEdgeCount);
             }
             local_14 = (SSoftwareEdge *)0x0;
 LAB_00466fe6:
@@ -225,7 +225,7 @@ LAB_00466fe6:
           }
           local_6c[0] = (SRenderVertex *)0x467009;
           engine_special_cpp_renderScanline_FUN_00563257(local_14,local_18,local_20);
-          if (g_INT_01bdd814 != 0) {
+          if (g_RenderAbortFlag != 0) {
             return;
           }
           iVar6 = local_1c->u;
@@ -252,7 +252,7 @@ LAB_00466fe6:
                (local_18->base).depth_current + (local_18->base).depth_gradient;
           (local_18->base).alpha_current =
                (local_18->base).alpha_current + (local_18->base).alpha_gradient;
-          if ((g_BIT_INTEGER32_01c6e2b4.dword & 0x200) == 0) {
+          if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
             local_24 = local_24 + 1;
           }
           else {
@@ -279,8 +279,7 @@ LAB_00466fe6:
         iVar6 = iVar7;
       } while (iVar7 < vertex_count);
     }
-    engine_special_cpp_drawPolygon2_FUN_00565c40
-              (local_6c,vertex_count,g_BIT_INTEGER32_01c6e2b4.dword);
+    engine_special_cpp_drawPolygon2_FUN_00565c40(local_6c,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

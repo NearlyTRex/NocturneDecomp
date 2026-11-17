@@ -19,13 +19,13 @@
 ;   GUID g_IID_IKsPropertySet = IKsPropertySet 31efac30-515c-11d0-a9aa-00aa0061be93
 ;   GUID g_DSPROPSETID_VoiceManager = 62a69bae-df9d-11d1-99a6-00c04fc99d46
 ;   GUID g_IID_IDirectSound3DBuffer = IDirectSound3DBuffer 279afa86-4981-11ce-a521-0020af0be560
-;   IDirectSound* g_IDirectSound_PTR_0264a5c4
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_0264a5c8
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_0264a5cc
-;   IKsPropertySet* g_IKsPropertySet_PTR_0264a5d4
-;   int g_INT_0264a5d8
-;   int g_INT_0264a5dc
-;   int g_INT_0264a5e0
+;   IDirectSound* g_DirectSound
+;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+;   IKsPropertySet* g_DirectSoundPropertySet
+;   int g_StreamBitsPerSample
+;   int g_StreamSampleRate
+;   int g_StreamChannelCount
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -48,15 +48,15 @@ section .text
     PUSH EBP                            ; 00555563
     SUB ESP,0x6a0                       ; 00555564
     MOV EBX,dword ptr [ESP + 0x6b8]     ; 0055556a
-    MOV EDX,dword ptr [0x0264a5d4]      ; 00555571 | g_IKsPropertySet_PTR_0264a5d4
+    MOV EDX,dword ptr [0x0264a5d4]      ; 00555571 | g_DirectSoundPropertySet
     TEST EDX,EDX                        ; 00555577
     JNZ 0x005555a8                      ; 00555579
         ;   XREF to: 005555a8 (CONDITIONAL_JUMP)  ; LAB_005555a8
-    CMP dword ptr [0x0264a5c8],0x0      ; 0055557b | g_IDirectSoundBuffer_PTR_0264a5c8
+    CMP dword ptr [0x0264a5c8],0x0      ; 0055557b | g_DirectSoundPrimaryBuffer
         ;   Label: LAB_0055557b
     JNZ 0x005555ba                      ; 00555582
         ;   XREF to: 005555ba (CONDITIONAL_JUMP)  ; LAB_005555ba
-    MOV EAX,[0x0264a5cc]                ; 00555584 | g_IDirectSoundBuffer_PTR_0264a5cc
+    MOV EAX,[0x0264a5cc]                ; 00555584 | g_DirectSoundSecondaryBuffer
         ;   Label: LAB_00555584
     TEST EAX,EAX                        ; 00555589
     JZ 0x0055559b                       ; 0055558b
@@ -65,7 +65,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 0055558e
     CALL dword ptr [EBX + 0x8]          ; 00555590
     XOR EDX,EDX                         ; 00555593
-    MOV dword ptr [0x0264a5cc],EDX      ; 00555595 | g_IDirectSoundBuffer_PTR_0264a5cc
+    MOV dword ptr [0x0264a5cc],EDX      ; 00555595 | g_DirectSoundSecondaryBuffer
     XOR EAX,EAX                         ; 0055559b
         ;   Label: LAB_0055559b
     ADD ESP,0x6a0                       ; 0055559d
@@ -80,7 +80,7 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 005555ab
     CALL dword ptr [EDX + 0x8]          ; 005555ad
     XOR ECX,ECX                         ; 005555b0
-    MOV dword ptr [0x0264a5d4],ECX      ; 005555b2 | g_IKsPropertySet_PTR_0264a5d4
+    MOV dword ptr [0x0264a5d4],ECX      ; 005555b2 | g_DirectSoundPropertySet
     JMP 0x0055557b                      ; 005555b8
         ;   XREF to: 0055557b (UNCONDITIONAL_JUMP)  ; LAB_0055557b
     PUSH 0x12                           ; 005555ba
@@ -111,7 +111,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x6c0]     ; 0055561e
     MOV AX,word ptr [ESP + 0x674]       ; 00555625
     IMUL EDX,EAX                        ; 0055562d
-    MOV EAX,[0x0264a5c8]                ; 00555630 | g_IDirectSoundBuffer_PTR_0264a5c8
+    MOV EAX,[0x0264a5c8]                ; 00555630 | g_DirectSoundPrimaryBuffer
     MOV dword ptr [ESP + 0x670],EDX     ; 00555635
     LEA EDX,[ESP + 0x668]               ; 0055563c
     MOV word ptr [ESP + 0x676],BX       ; 00555643
@@ -125,7 +125,7 @@ section .text
     PUSH 0x0                            ; 0055565a
     PUSH 0x12                           ; 0055565c
     LEA EDX,[ESP + 0x670]               ; 0055565e
-    MOV EAX,[0x0264a5c8]                ; 00555665 | g_IDirectSoundBuffer_PTR_0264a5c8
+    MOV EAX,[0x0264a5c8]                ; 00555665 | g_DirectSoundPrimaryBuffer
     PUSH EDX                            ; 0055566a
     MOV EBX,dword ptr [EAX]             ; 0055566b
     PUSH EAX                            ; 0055566d
@@ -134,13 +134,13 @@ section .text
     JNZ 0x00555962                      ; 00555673
         ;   XREF to: 00555962 (CONDITIONAL_JUMP)  ; LAB_00555962
     MOV AX,word ptr [ESP + 0x676]       ; 00555679
-    MOV [0x0264a5d8],EAX                ; 00555681 | g_INT_0264a5d8
+    MOV [0x0264a5d8],EAX                ; 00555681 | g_StreamBitsPerSample
     MOV EAX,dword ptr [ESP + 0x66c]     ; 00555686
-    MOV [0x0264a5dc],EAX                ; 0055568d | g_INT_0264a5dc
+    MOV [0x0264a5dc],EAX                ; 0055568d | g_StreamSampleRate
     XOR EAX,EAX                         ; 00555692
     MOV AX,word ptr [ESP + 0x66a]       ; 00555694
-    MOV EDI,dword ptr [0x0264a5d4]      ; 0055569c | g_IKsPropertySet_PTR_0264a5d4
-    MOV [0x0264a5e0],EAX                ; 005556a2 | g_INT_0264a5e0
+    MOV EDI,dword ptr [0x0264a5d4]      ; 0055569c | g_DirectSoundPropertySet
+    MOV [0x0264a5e0],EAX                ; 005556a2 | g_StreamChannelCount
     TEST EDI,EDI                        ; 005556a7
     JZ 0x005556b9                       ; 005556a9
         ;   XREF to: 005556b9 (CONDITIONAL_JUMP)  ; LAB_005556b9
@@ -148,7 +148,7 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 005556ac
     XOR EBP,EBP                         ; 005556ae
     CALL dword ptr [EDX + 0x8]          ; 005556b0
-    MOV dword ptr [0x0264a5d4],EBP      ; 005556b3 | g_IKsPropertySet_PTR_0264a5d4
+    MOV dword ptr [0x0264a5d4],EBP      ; 005556b3 | g_DirectSoundPropertySet
     PUSH 0x12                           ; 005556b9
         ;   Label: LAB_005556b9
     XOR EAX,EAX                         ; 005556bb
@@ -187,7 +187,7 @@ section .text
     MOV dword ptr [ESP + 0x658],ESI     ; 00555756
     MOV dword ptr [ESP + 0x65c],EDI     ; 0055575d
     MOV dword ptr [ESP + 0x668],EAX     ; 00555764
-    MOV EAX,[0x0264a5c4]                ; 0055576b | g_IDirectSound_PTR_0264a5c4
+    MOV EAX,[0x0264a5c4]                ; 0055576b | g_DirectSound
     PUSH EDX                            ; 00555770
     LEA EDX,[ESP + 0x65c]               ; 00555771
     MOV dword ptr [ESP + 0x664],EBP     ; 00555778
@@ -219,7 +219,7 @@ section .text
     XOR EDI,EDI                         ; 005557cb
     CALL dword ptr [EAX + 0x8]          ; 005557cd
     MOV dword ptr [ESP + 0x690],EDI     ; 005557d0
-    MOV EBP,dword ptr [0x0264a5d4]      ; 005557d7 | g_IKsPropertySet_PTR_0264a5d4
+    MOV EBP,dword ptr [0x0264a5d4]      ; 005557d7 | g_DirectSoundPropertySet
         ;   Label: LAB_005557d7
     TEST EBP,EBP                        ; 005557dd
     JZ 0x00555809                       ; 005557df
@@ -242,48 +242,48 @@ section .text
     CMP EAX,0x1                         ; 0055580e
     JGE 0x00555a27                      ; 00555811
         ;   XREF to: 00555a27 (CONDITIONAL_JUMP)  ; LAB_00555a27
-    MOV dword ptr [0x0264a5ec],0x8      ; 00555817 | g_INT_0264a5ec
+    MOV dword ptr [0x0264a5ec],0x8      ; 00555817 | g_StreamBlockCount
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 00555821
         ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
     MOV dword ptr [ESP + 0x69c],EAX     ; 00555826
     FLD float ptr [ESP + 0x69c]         ; 0055582d
-    FILD dword ptr [0x0264a5dc]         ; 00555834 | g_INT_0264a5dc
+    FILD dword ptr [0x0264a5dc]         ; 00555834 | g_StreamSampleRate
     FMULP                               ; 0055583a
-    FILD dword ptr [0x0264a5ec]         ; 0055583c | g_INT_0264a5ec
+    FILD dword ptr [0x0264a5ec]         ; 0055583c | g_StreamBlockCount
     FDIVP                               ; 00555842
     CALL crt_math.c_round_FUN_005b7ff0  ; 00555844
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
-    FISTP dword ptr [0x0264a5e4]        ; 00555849 | g_INT_0264a5e4
-    MOV EAX,[0x0264a5e4]                ; 0055584f | g_INT_0264a5e4
+    FISTP dword ptr [0x0264a5e4]        ; 00555849 | g_StreamSamplesPerBlock
+    MOV EAX,[0x0264a5e4]                ; 0055584f | g_StreamSamplesPerBlock
     ADD EAX,0xf                         ; 00555854
     AND AL,0xf0                         ; 00555857
-    MOV [0x0264a5e4],EAX                ; 00555859 | g_INT_0264a5e4
-    MOV EAX,[0x0264a5d8]                ; 0055585e | g_INT_0264a5d8
+    MOV [0x0264a5e4],EAX                ; 00555859 | g_StreamSamplesPerBlock
+    MOV EAX,[0x0264a5d8]                ; 0055585e | g_StreamBitsPerSample
     MOV EDX,EAX                         ; 00555863
     SAR EDX,0x1f                        ; 00555865
     SHL EDX,0x3                         ; 00555868
     SBB EAX,EDX                         ; 0055586b
     SAR EAX,0x3                         ; 0055586d
-    MOV EBX,dword ptr [0x0264a5e4]      ; 00555870 | g_INT_0264a5e4
+    MOV EBX,dword ptr [0x0264a5e4]      ; 00555870 | g_StreamSamplesPerBlock
     IMUL EBX,EAX                        ; 00555876
-    MOV EAX,[0x0264a5e0]                ; 00555879 | g_INT_0264a5e0
+    MOV EAX,[0x0264a5e0]                ; 00555879 | g_StreamChannelCount
     IMUL EBX,EAX                        ; 0055587e
     PUSH 0x14                           ; 00555881
     PUSH 0x0                            ; 00555883
     LEA EAX,[ESP + 0x648]               ; 00555885
     PUSH EAX                            ; 0055588c
-    MOV dword ptr [0x0264a5e8],EBX      ; 0055588d | g_INT_0264a5e8
+    MOV dword ptr [0x0264a5e8],EBX      ; 0055588d | g_StreamBlockSizeBytes
     CALL crt_memory.c_memset_FUN_005b77c0 ; 00555893
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     LEA EAX,[ESP + 0x674]               ; 00555898
     ADD ESP,0xc                         ; 0055589f
-    MOV ESI,dword ptr [0x0264a5ec]      ; 005558a2 | g_INT_0264a5ec
+    MOV ESI,dword ptr [0x0264a5ec]      ; 005558a2 | g_StreamBlockCount
     MOV dword ptr [ESP + 0x650],EAX     ; 005558a8
-    MOV EAX,[0x0264a5e8]                ; 005558af | g_INT_0264a5e8
+    MOV EAX,[0x0264a5e8]                ; 005558af | g_StreamBlockSizeBytes
     IMUL EAX,ESI                        ; 005558b4
     XOR EBX,EBX                         ; 005558b7
     MOV ECX,0x14                        ; 005558b9
-    MOV EDI,dword ptr [0x0264a5cc]      ; 005558be | g_IDirectSoundBuffer_PTR_0264a5cc
+    MOV EDI,dword ptr [0x0264a5cc]      ; 005558be | g_DirectSoundSecondaryBuffer
     MOV dword ptr [ESP + 0x640],ECX     ; 005558c4
     MOV dword ptr [ESP + 0x644],EBX     ; 005558cb
     MOV dword ptr [ESP + 0x648],EAX     ; 005558d2
@@ -293,12 +293,12 @@ section .text
     PUSH EDI                            ; 005558dd
     MOV EDX,dword ptr [EDI]             ; 005558de
     CALL dword ptr [EDX + 0x8]          ; 005558e0
-    MOV dword ptr [0x0264a5cc],EBX      ; 005558e3 | g_IDirectSoundBuffer_PTR_0264a5cc
+    MOV dword ptr [0x0264a5cc],EBX      ; 005558e3 | g_DirectSoundSecondaryBuffer
     PUSH 0x0                            ; 005558e9
         ;   Label: LAB_005558e9
-    PUSH 0x264a5cc                      ; 005558eb | g_IDirectSoundBuffer_PTR_0264a5cc
+    PUSH 0x264a5cc                      ; 005558eb | g_DirectSoundSecondaryBuffer
     LEA EDX,[ESP + 0x648]               ; 005558f0
-    MOV EAX,[0x0264a5c4]                ; 005558f7 | g_IDirectSound_PTR_0264a5c4
+    MOV EAX,[0x0264a5c4]                ; 005558f7 | g_DirectSound
     PUSH EDX                            ; 005558fc
     MOV EBX,dword ptr [EAX]             ; 005558fd
     PUSH EAX                            ; 005558ff
@@ -307,7 +307,7 @@ section .text
     JNZ 0x00555a44                      ; 00555905
         ;   XREF to: 00555a44 (CONDITIONAL_JUMP)  ; LAB_00555a44
     MOV EDX,dword ptr [ESP + 0x6c4]     ; 0055590b
-    MOV EAX,[0x0264a5e4]                ; 00555912 | g_INT_0264a5e4
+    MOV EAX,[0x0264a5e4]                ; 00555912 | g_StreamSamplesPerBlock
     MOV dword ptr [EDX],EAX             ; 00555917
     MOV EAX,0x1                         ; 00555919
     ADD ESP,0x6a0                       ; 0055591e
@@ -376,7 +376,7 @@ section .text
     ADD ESP,0x4                         ; 005559cc
     JMP 0x005557d7                      ; 005559cf
         ;   XREF to: 005557d7 (UNCONDITIONAL_JUMP)  ; LAB_005557d7
-    PUSH 0x264a5d4                      ; 005559d4 | g_IKsPropertySet_PTR_0264a5d4
+    PUSH 0x264a5d4                      ; 005559d4 | g_DirectSoundPropertySet
         ;   Label: LAB_005559d4
     PUSH 0x61bf50                       ; 005559d9 | g_IID_IKsPropertySet
     MOV EAX,dword ptr [ECX]             ; 005559de

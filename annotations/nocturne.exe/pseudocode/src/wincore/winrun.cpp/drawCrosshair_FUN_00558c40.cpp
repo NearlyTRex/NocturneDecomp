@@ -13,7 +13,7 @@ void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_00558c40(void)
   int y;
   int iVar1;
   
-  x = g_INT_01bd1d8c;
+  x = g_MouseX;
   g_INT_02de0858 = g_INT_02de0858 + INT_005c1654;
   if (g_INT_02de0858 < 0x100) {
     if (g_INT_02de0858 < 0) {
@@ -31,7 +31,7 @@ void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_00558c40(void)
                    (uint)((g_INT_02de0858 >> 0x1f) << 2 < 0)) >> 3) * 0x20];
   iVar1 = -5;
   do {
-    y = g_INT_01bd1d90 + iVar1;
+    y = g_MouseY + iVar1;
     if ((((g_ClipLeft < x) && (g_ClipTop < y)) && (x < g_ClipRight)) && (y < g_ClipBottom)) {
       engine_2d_c_plotPixel_FUN_00401530(x,y);
     }
@@ -39,9 +39,9 @@ void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_00558c40(void)
   } while (iVar1 < 6);
   iVar1 = x + -5;
   do {
-    while (((g_ClipLeft < iVar1 && (g_ClipTop < g_INT_01bd1d90)) &&
-           ((iVar1 < g_ClipRight && (g_INT_01bd1d90 < g_ClipBottom))))) {
-      engine_2d_c_plotPixel_FUN_00401530(iVar1,g_INT_01bd1d90);
+    while (((g_ClipLeft < iVar1 && (g_ClipTop < g_MouseY)) &&
+           ((iVar1 < g_ClipRight && (g_MouseY < g_ClipBottom))))) {
+      engine_2d_c_plotPixel_FUN_00401530(iVar1,g_MouseY);
       iVar1 = iVar1 + 1;
       if (iVar1 == x + 6) {
         return;

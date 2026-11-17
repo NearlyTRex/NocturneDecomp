@@ -9,13 +9,13 @@
 ; Referenced Globals:
 ;   void* PTR_waveInStart_005c8468 = 001c8990
 ;   TerminatedCString s_waveInStart_failed_005ea63c
-;   int g_INT_0264b108
-;   int g_INT_0264b24c
-;   int g_INT_0264b250
-;   int g_INT_0264b25c
-;   int g_INT_0264b260
-;   int g_INT_0264b274
-;   int g_INT_0264b278
+;   int g_WaveInHandle
+;   int g_WaveInBitsPerSample
+;   int g_WaveInChannels
+;   int g_WaveInBufferSizeSamples
+;   int g_WaveInNumBuffers
+;   int g_WaveInCurrentBufferIndex
+;   int g_WaveInCurrentSampleOffset
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 005582f2
     PUSH EBP                            ; 005582f3
     MOV EDI,dword ptr [ESP + 0x14]      ; 005582f4
-    MOV EDX,dword ptr [0x0264b260]      ; 005582f8 | g_INT_0264b260
+    MOV EDX,dword ptr [0x0264b260]      ; 005582f8 | g_WaveInNumBuffers
     XOR ESI,ESI                         ; 005582fe
     TEST EDX,EDX                        ; 00558300
     JLE 0x00558374                      ; 00558302
@@ -51,14 +51,14 @@ section .text
     MOV dword ptr [EDX],EAX             ; 00558322
     MOV EAX,dword ptr [EBX + 0x264b15c] ; 00558324
     MOV dword ptr [EAX + 0xc],ESI       ; 0055832a
-    MOV EAX,[0x0264b24c]                ; 0055832d | g_INT_0264b24c
+    MOV EAX,[0x0264b24c]                ; 0055832d | g_WaveInBitsPerSample
     MOV EDX,EAX                         ; 00558332
     SAR EDX,0x1f                        ; 00558334
     SHL EDX,0x3                         ; 00558337
     SBB EAX,EDX                         ; 0055833a
     SAR EAX,0x3                         ; 0055833c
-    IMUL EAX,dword ptr [0x0264b25c]     ; 0055833f | g_INT_0264b25c
-    IMUL EAX,dword ptr [0x0264b250]     ; 00558346 | g_INT_0264b250
+    IMUL EAX,dword ptr [0x0264b25c]     ; 0055833f | g_WaveInBufferSizeSamples
+    IMUL EAX,dword ptr [0x0264b250]     ; 00558346 | g_WaveInChannels
     ADD ESP,0xc                         ; 0055834d
     MOV EDX,dword ptr [EBX + 0x264b15c] ; 00558350
     PUSH ESI                            ; 00558356
@@ -69,20 +69,20 @@ section .text
     TEST EAX,EAX                        ; 00558362
     JZ 0x005583a5                       ; 00558364
         ;   XREF to: 005583a5 (CONDITIONAL_JUMP)  ; LAB_005583a5
-    MOV ECX,dword ptr [0x0264b260]      ; 00558366 | g_INT_0264b260
+    MOV ECX,dword ptr [0x0264b260]      ; 00558366 | g_WaveInNumBuffers
     INC ESI                             ; 0055836c
     ADD EBX,0x4                         ; 0055836d
     CMP ESI,ECX                         ; 00558370
     JL 0x00558306                       ; 00558372
         ;   XREF to: 00558306 (CONDITIONAL_JUMP)  ; LAB_00558306
-    MOV EAX,[0x0264b260]                ; 00558374 | g_INT_0264b260
+    MOV EAX,[0x0264b260]                ; 00558374 | g_WaveInNumBuffers
         ;   Label: LAB_00558374
     DEC EAX                             ; 00558379
-    MOV EBX,dword ptr [0x0264b108]      ; 0055837a | g_INT_0264b108
-    MOV [0x0264b274],EAX                ; 00558380 | g_INT_0264b274
-    MOV EAX,[0x0264b25c]                ; 00558385 | g_INT_0264b25c
+    MOV EBX,dword ptr [0x0264b108]      ; 0055837a | g_WaveInHandle
+    MOV [0x0264b274],EAX                ; 00558380 | g_WaveInCurrentBufferIndex
+    MOV EAX,[0x0264b25c]                ; 00558385 | g_WaveInBufferSizeSamples
     PUSH EBX                            ; 0055838a
-    MOV [0x0264b278],EAX                ; 0055838b | g_INT_0264b278
+    MOV [0x0264b278],EAX                ; 0055838b | g_WaveInCurrentSampleOffset
     CALL dword ptr CS:[0x5c8468]        ; 00558390 | PTR_waveInStart_005c8468
     TEST EAX,EAX                        ; 00558397
     JNZ 0x005583b5                      ; 00558399

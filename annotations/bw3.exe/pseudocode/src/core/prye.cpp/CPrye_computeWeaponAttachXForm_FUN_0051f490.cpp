@@ -684,7 +684,7 @@ CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051
       }
       else if (hand_index == 0) {
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-                  (&local_1250,&g_CVector3f_01ed36cc,&g_CVector3f_02cfd900);
+                  (&local_1250,&g_CVector3f_01ed36cc,&g_ZeroVector);
         pCVar5 = &local_1250;
         pCVar14 = local_18;
         core_xform_cpp_buildRotationX_FUN_00584f70(1.5707964,&local_1160);
@@ -737,7 +737,7 @@ CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051
                                  (pCVar2,g_CHealClassInfo.name_hash);
               if (pCVar2 == (CDemonActor *)0x0) {
                 core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-                          (&local_5f0,&g_CVector3f_01ed36c0,&g_CVector3f_02cfd900);
+                          (&local_5f0,&g_CVector3f_01ed36c0,&g_ZeroVector);
                 pCVar5 = &local_5f0;
                 pCVar14 = local_18;
                 core_xform_cpp_buildRotationX_FUN_00584f70(1.5707964,&local_d10);

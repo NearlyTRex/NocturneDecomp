@@ -8,12 +8,12 @@
 CDemonCamera g_CDemonCameraInstance = {};
 
 // CDemonGlobe*[100]
-CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_0203ad34[100] = {};
-CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_0203aec8[100] = {};
-CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_0203b1ec[100] = {};
+CDemonGlobe* g_CoronaGlobes[100] = {};
+CDemonGlobe* g_QueuedCoronaGlobes[100] = {};
+CDemonGlobe* g_VisibleCoronaGlobes[100] = {};
 
 // CDemonLight*[4]
-CDemonLight* g_CDemonLight_PTR_ARRAY_0203ad20[4] = {};
+CDemonLight* g_DynamicLights[4] = {};
 
 // CDemonLight*[96]
 CDemonLight* g_CDemonLight_PTR_ARRAY_0203a418[96] = {};
@@ -26,21 +26,21 @@ CDemonRaytrace g_CDemonRaytraceInstance = {};
 CKeyFramedModel g_CKeyFramedModelInstance = {};
 
 // CRect[96]
-CRect g_CRect_ARRAY_0203a71c[96] = {};
+CRect g_SpotLightBounds[96] = {};
 
 // int
-int g_INT_0203a414 = {};
-int g_INT_0203a598 = {};
+int g_MasterLightCount = {};
+int g_SpotLightCount = {};
 int g_INT_0203ad1c = {};
 int g_INT_0203ad30 = {};
-int g_INT_0203aec4 = {};
-int g_INT_0203b1e8 = {};
+int g_QueuedCoronaGlobeCount = {};
+int g_VisibleCoronaGlobeCount = {};
 int g_INT_0203b3e8 = {};
 int g_INT_0203b3ec = {};
 
 // int[100]
-int g_INT_ARRAY_0203b058[100] = {};
+int g_QueuedCoronaGlobeAlphaMasks[100] = {};
 
 // int[65536]
-int g_INT_ARRAY_0203baa4[65536] = {};
+int g_IntensityToValueLookupTable[65536] = {};
 

@@ -20,7 +20,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60
                           (&g_CHAR_00587ed1,"enemy.pod","rb");
   if (file_handle == (_FILE *)0x0) {
-    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b9900,0x58);
+    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_ThemeFont,0x58);
     wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     uVar2 = rand();
@@ -30,28 +30,27 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
     engine_special_cpp_clearScreen_FUN_0052ee70();
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(&g_LoadingScreenBitmap1,0,0,0xffff);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (g_CBitFont_PTR_014b98f8,"In stores 10/26/99");
+                      (g_MediumFont,"In stores 10/26/99");
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (g_CBitFont_PTR_014b98f8,"In stores 10/26/99",0x140 - iVar3 / 2,0xdc,7,0);
+              (g_MediumFont,"In stores 10/26/99",0x140 - iVar3 / 2,0xdc,7,0);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (g_CBitFont_PTR_014b98f8,"www.nocturnegame.com");
+                      (g_MediumFont,"www.nocturnegame.com");
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (g_CBitFont_PTR_014b98f8,"www.nocturnegame.com",0x140 - iVar3 / 2,
-               0x1e0 - iVar1,7,0);
+              (g_MediumFont,"www.nocturnegame.com",0x140 - iVar3 / 2,0x1e0 - iVar1,7,0);
     iVar5 = 0xa0000;
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     iVar3 = wincore_winrun_cpp_getTime_FUN_00558a30();
     do {
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
-      g_INT_01bd1d80 = (iVar4 - iVar3) / 0x12;
-      if (g_INT_01bd1d80 < 0) {
-        g_INT_01bd1d80 = 0;
+      g_GlobalDeltaTimeInt = (iVar4 - iVar3) / 0x12;
+      if (g_GlobalDeltaTimeInt < 0) {
+        g_GlobalDeltaTimeInt = 0;
       }
-      if (0x4000 < g_INT_01bd1d80) {
-        g_INT_01bd1d80 = 0x4000;
+      if (0x4000 < g_GlobalDeltaTimeInt) {
+        g_GlobalDeltaTimeInt = 0x4000;
       }
-      iVar5 = iVar5 - g_INT_01bd1d80;
+      iVar5 = iVar5 - g_GlobalDeltaTimeInt;
       iVar3 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LSHIFT);
       if (iVar3 != 0) {
         iVar3 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
@@ -60,9 +59,9 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
       iVar3 = iVar4;
     } while (0 < iVar5);
     text = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press any key to continue...");
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_014b98f8,text);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_MediumFont,text);
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (g_CBitFont_PTR_014b98f8,text,0x140 - iVar3 / 2,iVar1 * -2 + 0x1e0,7,0);
+              (g_MediumFont,text,0x140 - iVar3 / 2,iVar1 * -2 + 0x1e0,7,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     wincore_winrun_cpp_getNextKeypress_FUN_00558b00();

@@ -17,7 +17,7 @@
 ;   undefined4 g_SFogImagePlane_01342220.pixels[1][1]
 ;   undefined4 g_SFogImagePlane_01342220.pixels[1][2]
 ;   undefined4 g_SFogImagePlane_01342220.pixels[2][1]
-;   undefined4 g_CHAR_ARRAY_01354e20+0x140
+;   undefined4 g_CameraImageDecompressBuffer+0x140
 ;
 ; *****************************************************************************
 
@@ -85,7 +85,7 @@ section .text
     ADD EAX,EDX                         ; 00453d26
     SHL EAX,0x6                         ; 00453d28
     MOV BL,byte ptr [EAX + 0x1342220]   ; 00453d2b | g_SFogImagePlane_01342220.pixels[1][0]
-    MOV byte ptr [ECX + 0x1354e20],BL   ; 00453d31 | g_CHAR_ARRAY_01354e20+0x140
+    MOV byte ptr [ECX + 0x1354e20],BL   ; 00453d31 | g_CameraImageDecompressBuffer+0x140
     MOV EBX,dword ptr [ESI + 0x150]     ; 00453d37
     MOV AL,byte ptr [EBX + EAX*0x1 + 0x134221f] ; 00453d3d
     MOV byte ptr [ECX + EBX*0x1 + 0x1354e1f],AL ; 00453d44

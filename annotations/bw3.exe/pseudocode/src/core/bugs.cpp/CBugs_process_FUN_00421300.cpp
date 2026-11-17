@@ -27,12 +27,12 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
     }
     if ((this_ptr->allow_chase == 0) &&
        (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (g_CEventList_PTR_005fba60,this_ptr->allow_chase_event), iVar2 != 0)) {
+                          (g_CEventListPtr,this_ptr->allow_chase_event), iVar2 != 0)) {
       this_ptr->allow_chase = 1;
     }
     if ((this_ptr->allow_swarm == 0) &&
        (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (g_CEventList_PTR_005fba60,this_ptr->allow_swarm_event), iVar2 != 0)) {
+                          (g_CEventListPtr,this_ptr->allow_swarm_event), iVar2 != 0)) {
       this_ptr->allow_swarm = 1;
     }
     switch(this_ptr->state) {

@@ -5,5 +5,5 @@
 // =============================================================================
 
 // SRenderBufferEntry*[2500]
-SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007be960[2500] = {};
+SRenderBufferEntry* g_RenderBufferSortArray[2500] = {};
 

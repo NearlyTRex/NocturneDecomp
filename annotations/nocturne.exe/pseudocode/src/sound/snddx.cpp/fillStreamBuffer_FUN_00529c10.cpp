@@ -22,10 +22,10 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
   DWORD local_18;
   DWORD local_14;
   
-  if (g_IDirectSoundBuffer_PTR_02dc921c != (IDirectSoundBuffer *)0x0) {
-    uVar1 = (*g_IDirectSoundBuffer_PTR_02dc921c->vtable->Lock)
-                      (g_IDirectSoundBuffer_PTR_02dc921c,g_INT_02dc9240 * g_INT_02dc9238,
-                       g_INT_02dc9238,&local_1c,&local_18,&local_20,&local_14,0);
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->Lock)
+                      (g_DirectSoundSecondaryBuffer,g_StreamCurrentBlock * g_StreamBlockSizeBytes,
+                       g_StreamBlockSizeBytes,&local_1c,&local_18,&local_20,&local_14,0);
     if (uVar1 != 0) {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
       _sprintf(acStack_360,"DirectSux: Unable to %s.  (%s)","Lock secondary buffer",
@@ -33,27 +33,27 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
       sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_360);
       return 0;
     }
-    if ((local_20 == (LPVOID)0x0) && (local_18 == g_INT_02dc9238)) {
-      iVar2 = (int)((g_INT_02dc9228 + (g_INT_02dc9228 >> 0x1f) * -8) -
-                   (uint)((g_INT_02dc9228 >> 0x1f) << 2 < 0)) >> 3;
+    if ((local_20 == (LPVOID)0x0) && (local_18 == g_StreamBlockSizeBytes)) {
+      iVar2 = (int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+                   (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3;
       iVar3 = 0;
       pvVar5 = local_1c;
-      if (0 < g_INT_02dc9230 * 4) {
+      if (0 < g_StreamChannelCount * 4) {
         do {
           *(LPVOID *)((int)apvStack_40 + iVar3) = pvVar5;
           iVar3 = iVar3 + 4;
           pvVar5 = (LPVOID)((int)pvVar5 + iVar2);
-        } while (iVar3 < g_INT_02dc9230 * 4);
+        } while (iVar3 < g_StreamChannelCount * 4);
       }
       sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0
-                (apvStack_40,g_INT_02dc9228,g_INT_02dc9230,g_INT_02dc922c,g_INT_02dc9234,
-                 iVar2 * g_INT_02dc9230);
-      g_INT_02dc9240 = g_INT_02dc9240 + 1;
-      if (g_INT_02dc923c <= g_INT_02dc9240) {
-        g_INT_02dc9240 = 0;
+                (apvStack_40,g_StreamBitsPerSample,g_StreamChannelCount,g_StreamSampleRate,
+                 g_StreamSamplesPerBlock,iVar2 * g_StreamChannelCount);
+      g_StreamCurrentBlock = g_StreamCurrentBlock + 1;
+      if (g_StreamBlockCount <= g_StreamCurrentBlock) {
+        g_StreamCurrentBlock = 0;
       }
-      uVar1 = (*g_IDirectSoundBuffer_PTR_02dc921c->vtable->Unlock)
-                        (g_IDirectSoundBuffer_PTR_02dc921c,local_1c,local_18,local_20,local_14);
+      uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->Unlock)
+                        (g_DirectSoundSecondaryBuffer,local_1c,local_18,local_20,local_14);
       if (uVar1 != 0) {
         pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
         _sprintf(acStack_1d0,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"

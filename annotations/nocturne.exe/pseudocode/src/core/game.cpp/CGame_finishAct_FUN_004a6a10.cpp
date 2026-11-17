@@ -39,9 +39,9 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(CGame *this_ptr)
   
   bVar12 = 0;
   if (this_ptr->act_completion_state == 2) {
-    pCVar9 = g_CBitFont_PTR_014b9900;
+    pCVar9 = g_ThemeFont;
     if (g_CDemonCameraInstance.screen_width < 0x1e0) {
-      pCVar9 = g_CBitFont_PTR_014b9904;
+      pCVar9 = g_SmallEditorFont;
     }
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(pCVar9,0x58);
     core_game_cpp_CGame_saveClockTime_FUN_0049a890(this_ptr);
@@ -219,7 +219,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(CGame *this_ptr)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  local_2c = g_CBitFont_PTR_014b9900;
+  local_2c = g_ThemeFont;
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   pCVar9 = local_2c;
   iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_005893d1
 ;   TerminatedCString s_CMimic_setup_can_t_use_m_005893e3
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CNetGame* g_CNetGamePtr = 01cea280
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_004d4ac0
     LEA EAX,[EBX + 0xbd88]              ; 004d4ac2
     PUSH EAX                            ; 004d4ac8
-    MOV EAX,[0x005b7650]                ; 004d4ac9 | g_CEventList_PTR_005b7650
+    MOV EAX,[0x005b7650]                ; 004d4ac9 | g_CEventListPtr
     PUSH EAX                            ; 004d4ace
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004d4acf
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -123,7 +123,7 @@ section .text
     LEA EAX,[EBX + 0xbd24]              ; 004d4ae5
         ;   Label: LAB_004d4ae5
     PUSH EAX                            ; 004d4aeb
-    MOV EDX,dword ptr [0x005b7650]      ; 004d4aec | g_CEventList_PTR_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 004d4aec | g_CEventListPtr
     PUSH EDX                            ; 004d4af2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004d4af3
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

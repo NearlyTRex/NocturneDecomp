@@ -57,9 +57,9 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005b6c7a = 0.00390625
 ;   double g_DOUBLE_005b6c82 = 65535
-;   CVector3f g_CVector3f_02cfd900
-;   undefined4 g_CVector3f_02cfd900.y
-;   undefined4 g_CVector3f_02cfd900.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -105,11 +105,11 @@ section .text
     CMP EAX,0x2cfd900                   ; 00415800
     JZ 0x00415821                       ; 00415805
         ;   XREF to: 00415821 (CONDITIONAL_JUMP)  ; LAB_00415821
-    MOV ECX,dword ptr [0x02cfd900]      ; 00415807 | g_CVector3f_02cfd900
+    MOV ECX,dword ptr [0x02cfd900]      ; 00415807 | g_ZeroVector
     MOV dword ptr [EAX],ECX             ; 0041580d
-    MOV ECX,dword ptr [0x02cfd904]      ; 0041580f | g_CVector3f_02cfd900.y
+    MOV ECX,dword ptr [0x02cfd904]      ; 0041580f | g_ZeroVector.y
     MOV dword ptr [EAX + 0x4],ECX       ; 00415815
-    MOV ECX,dword ptr [0x02cfd908]      ; 00415818 | g_CVector3f_02cfd900.z
+    MOV ECX,dword ptr [0x02cfd908]      ; 00415818 | g_ZeroVector.z
     MOV dword ptr [EAX + 0x8],ECX       ; 0041581e
     ADD EBX,0x15c                       ; 00415821
         ;   Label: LAB_00415821

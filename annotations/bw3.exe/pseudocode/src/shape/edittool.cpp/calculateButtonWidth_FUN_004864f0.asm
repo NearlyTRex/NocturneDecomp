@@ -15,10 +15,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005bcd3b
-;   char g_CHAR_005bd95a = \x00
+;   char g_DefaultButtonText = \x00
 ;   int g_INT_005fba18 = 0x140
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5bae0
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -54,7 +54,7 @@ section .text
     PUSH 0x6a                           ; 00486529
     MOV ECX,dword ptr [EAX + 0x41e8]    ; 0048652b
     PUSH EAX                            ; 00486531
-    MOV dword ptr [0x01c5bae0],ECX      ; 00486532 | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],ECX      ; 00486532 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 00486538
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0048653d
@@ -62,8 +62,8 @@ section .text
     TEST EBX,EBX                        ; 00486545
     JNZ 0x0048654e                      ; 00486547
         ;   XREF to: 0048654e (CONDITIONAL_JUMP)  ; LAB_0048654e
-    MOV EBX,0x5bd95a                    ; 00486549 | g_CHAR_005bd95a
-    PUSH EBX                            ; 0048654e | g_CHAR_005bd95a
+    MOV EBX,0x5bd95a                    ; 00486549 | g_DefaultButtonText
+    PUSH EBX                            ; 0048654e | g_DefaultButtonText
         ;   Label: LAB_0048654e
     MOV EDI,dword ptr [0x01c5b0e0]      ; 0048654f | g_CBitFont_PTR_01c5b0e0
     PUSH EDI                            ; 00486555

@@ -37,18 +37,18 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_s_005c2218
 ;   double g_DOUBLE_005c2220 = 65535
-;   double g_DOUBLE_005c2228 = 0.600000000000000
-;   double g_DOUBLE_005c2230 = 0.350000000000000
+;   double g_StatusThresholdHigh = 0.600000000000000
+;   double g_StatusThresholdLow = 0.350000000000000
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   CScript* g_CScriptPtr = 01ed73e0
-;   CBitFont* g_CBitFont_PTR_01549aa0
-;   CBitFont* g_CBitFont_PTR_01549aa4
+;   CBitFont* g_MediumFont
+;   CBitFont* g_TinyFont
 ;   CBitFont* g_CBitFont_PTR_01549aa8
-;   CBitFont* g_CBitFont_PTR_01549ab4
-;   char[256] g_CHAR_ARRAY_01d229f0
-;   int g_INT_01d22af0
-;   float g_FLOAT_01d22af4
+;   CBitFont* g_SmallEditorFont
+;   char[256] g_ChapterDisplayName
+;   int g_ChapterDisplayYear
+;   float g_OverlayDisplayTimer
 ;   CScript g_CScriptInstance
 ;   ... and 1 more
 ;
@@ -125,7 +125,7 @@ section .text
     CMP EAX,0x1e0                       ; 004b487b
     JGE 0x004b488e                      ; 004b4880
         ;   XREF to: 004b488e (CONDITIONAL_JUMP)  ; LAB_004b488e
-    MOV EAX,[0x01549ab4]                ; 004b4882 | g_CBitFont_PTR_01549ab4
+    MOV EAX,[0x01549ab4]                ; 004b4882 | g_SmallEditorFont
     MOV dword ptr [ESP + 0x138],EAX     ; 004b4887
     MOV EDX,dword ptr [0x02039090]      ; 004b488e | g_CDemonCameraInstance.framebuffer_width
         ;   Label: LAB_004b488e
@@ -168,7 +168,7 @@ section .text
     SUB EBX,EAX                         ; 004b4904
     MOV EAX,EBX                         ; 004b4906
     SUB EAX,ESI                         ; 004b4908
-    MOV EDX,dword ptr [0x01549ab4]      ; 004b490a | g_CBitFont_PTR_01549ab4
+    MOV EDX,dword ptr [0x01549ab4]      ; 004b490a | g_SmallEditorFont
     MOV ESI,EAX                         ; 004b4910
     MOV EAX,EDI                         ; 004b4912
     ADD ESP,0x4                         ; 004b4914
@@ -220,7 +220,7 @@ section .text
     LEA EAX,[EAX]                       ; 004b4995
     LEA EDX,[EDX]                       ; 004b499b
     MOV EBX,EBX                         ; 004b499e
-    FLD float ptr [0x01d22af4]          ; 004b49a0 | g_FLOAT_01d22af4
+    FLD float ptr [0x01d22af4]          ; 004b49a0 | g_OverlayDisplayTimer
         ;   Label: LAB_004b49a0
     FLDZ                                ; 004b49a6
     FCOMPP                              ; 004b49a8
@@ -229,15 +229,15 @@ section .text
     JNC 0x004b4a66                      ; 004b49ad
         ;   XREF to: 004b4a66 (CONDITIONAL_JUMP)  ; LAB_004b4a66
     MOV EDX,dword ptr [0x005fba1c]      ; 004b49b3 | g_INT_005fba1c
-    MOV EBX,dword ptr [0x01549aa0]      ; 004b49b9 | g_CBitFont_PTR_01549aa0
+    MOV EBX,dword ptr [0x01549aa0]      ; 004b49b9 | g_MediumFont
     CMP EDX,0x1e0                       ; 004b49bf
     JGE 0x004b49db                      ; 004b49c5
         ;   XREF to: 004b49db (CONDITIONAL_JUMP)  ; LAB_004b49db
-    MOV EBX,dword ptr [0x01549aa4]      ; 004b49c7 | g_CBitFont_PTR_01549aa4
+    MOV EBX,dword ptr [0x01549aa4]      ; 004b49c7 | g_TinyFont
     CMP EDX,0x180                       ; 004b49cd
     JGE 0x004b49db                      ; 004b49d3
         ;   XREF to: 004b49db (CONDITIONAL_JUMP)  ; LAB_004b49db
-    MOV EBX,dword ptr [0x01549ab4]      ; 004b49d5 | g_CBitFont_PTR_01549ab4
+    MOV EBX,dword ptr [0x01549ab4]      ; 004b49d5 | g_SmallEditorFont
     PUSH 0x58                           ; 004b49db
         ;   Label: LAB_004b49db
     PUSH EBX                            ; 004b49dd
@@ -270,8 +270,8 @@ section .text
     CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 004b4a25
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 004b4a2a
-    PUSH 0x1d229f0                      ; 004b4a2d | g_CHAR_ARRAY_01d229f0
-    MOV ECX,dword ptr [0x01d22af0]      ; 004b4a32 | g_INT_01d22af0
+    PUSH 0x1d229f0                      ; 004b4a2d | g_ChapterDisplayName
+    MOV ECX,dword ptr [0x01d22af0]      ; 004b4a32 | g_ChapterDisplayYear
     PUSH ECX                            ; 004b4a38
     PUSH 0x5c2218                       ; 004b4a39 | = "%d - %s"
     LEA EAX,[ESP + 0x18]                ; 004b4a3e
@@ -312,7 +312,7 @@ section .text
     SAR EDX,0x1f                        ; 004b4aa7
     IDIV ECX                            ; 004b4aaa
     MOV dword ptr [ESP + 0x12c],EAX     ; 004b4aac
-    MOV EAX,[0x01549ab4]                ; 004b4ab3 | g_CBitFont_PTR_01549ab4
+    MOV EAX,[0x01549ab4]                ; 004b4ab3 | g_SmallEditorFont
     MOV EDI,dword ptr [0x005fba18]      ; 004b4ab8 | g_INT_005fba18
     MOV dword ptr [ESP + 0x130],EAX     ; 004b4abe
     CMP EDI,0x280                       ; 004b4ac5
@@ -322,7 +322,7 @@ section .text
         ;   Label: LAB_004b4ad1
     JLE 0x004b4ae9                      ; 004b4adb
         ;   XREF to: 004b4ae9 (CONDITIONAL_JUMP)  ; LAB_004b4ae9
-    MOV EAX,[0x01549aa0]                ; 004b4add | g_CBitFont_PTR_01549aa0
+    MOV EAX,[0x01549aa0]                ; 004b4add | g_MediumFont
     MOV dword ptr [ESP + 0x130],EAX     ; 004b4ae2
     PUSH 0x58                           ; 004b4ae9
         ;   Label: LAB_004b4ae9
@@ -390,7 +390,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004b4be8
     MOV EBX,dword ptr [ESP + 0x134]     ; 004b4bec
     FLD float ptr [ESP + 0x8]           ; 004b4bf3
-    FCOMP double ptr [0x005c2228]       ; 004b4bf7 | g_DOUBLE_005c2228
+    FCOMP double ptr [0x005c2228]       ; 004b4bf7 | g_StatusThresholdHigh
     FNSTSW AX                           ; 004b4bfd
     SAHF                                ; 004b4bff
     JNC 0x004b4c07                      ; 004b4c00
@@ -398,7 +398,7 @@ section .text
     MOV EDI,0xfb                        ; 004b4c02
     FLD float ptr [ESP + 0x8]           ; 004b4c07
         ;   Label: LAB_004b4c07
-    FCOMP double ptr [0x005c2230]       ; 004b4c0b | g_DOUBLE_005c2230
+    FCOMP double ptr [0x005c2230]       ; 004b4c0b | g_StatusThresholdLow
     FNSTSW AX                           ; 004b4c11
     SAHF                                ; 004b4c13
     JNC 0x004b4c1b                      ; 004b4c14
@@ -484,7 +484,7 @@ section .text
     PUSH 0xa                            ; 004b4d15
     PUSH 0x27f                          ; 004b4d17
     PUSH 0x0                            ; 004b4d1c
-    MOV EDX,dword ptr [0x01549aa0]      ; 004b4d1e | g_CBitFont_PTR_01549aa0
+    MOV EDX,dword ptr [0x01549aa0]      ; 004b4d1e | g_MediumFont
     PUSH EDX                            ; 004b4d24
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0 ; 004b4d25
         ;   XREF to: 004b0fa0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -495,7 +495,7 @@ section .text
         ;   Label: LAB_004b4d32
     JMP 0x004b4862                      ; 004b4d37
         ;   XREF to: 004b4862 (UNCONDITIONAL_JUMP)  ; LAB_004b4862
-    MOV EAX,[0x01549aa4]                ; 004b4d3c | g_CBitFont_PTR_01549aa4
+    MOV EAX,[0x01549aa4]                ; 004b4d3c | g_TinyFont
         ;   Label: LAB_004b4d3c
     MOV dword ptr [ESP + 0x130],EAX     ; 004b4d41
     JMP 0x004b4ad1                      ; 004b4d48

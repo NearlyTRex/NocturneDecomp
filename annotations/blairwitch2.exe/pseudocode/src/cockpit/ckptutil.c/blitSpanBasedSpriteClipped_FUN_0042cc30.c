@@ -23,15 +23,15 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042cc30(void *sp
   byte *puStack_1c;
   byte *puStack_18;
   
-  iVar1 = (int)g_ARRAY_PTR_01c2a38c[1] - (int)g_ARRAY_PTR_01c2a38c[0];
-  iVar8 = src_x + g_INT_01c35e50;
+  iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  iVar8 = src_x + g_ClipRight;
   iVar6 = src_x + g_INT_01c35e48;
   if (sprite_data != (void *)0x0) {
     sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);
     pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     iStack_30 = screen_y * 0x84;
     if (g_INT_006141c0 == 8) {
-      puStack_18 = g_ARRAY_PTR_01c2a38c[src_y + screen_y] + screen_x;
+      puStack_18 = g_ScreenBufferArray[src_y + screen_y] + screen_x;
       if (screen_y < height) {
         do {
           iVar7 = 0;
@@ -58,7 +58,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042cc30(void *sp
       }
     }
     else {
-      puStack_1c = g_ARRAY_PTR_01c2a38c[src_y + screen_y] + screen_x * 2;
+      puStack_1c = g_ScreenBufferArray[src_y + screen_y] + screen_x * 2;
       if (screen_y < height) {
         iStack_2c = iStack_30;
         do {

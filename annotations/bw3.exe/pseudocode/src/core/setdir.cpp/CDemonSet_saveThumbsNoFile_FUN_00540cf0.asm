@@ -19,7 +19,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2af8 = 01bdd7e4
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   uint*[1200] g_ZBufferScanlineArray
 ;   char[3072000] g_CHAR_ARRAY_0212551c
 ;   undefined4 g_CHAR_ARRAY_0212551c+4
 ;   undefined4 g_CHAR_ARRAY_0212551c+5
@@ -128,7 +128,7 @@ section .text
     MOV ECX,0x100                       ; 00540de7
         ;   Label: LAB_00540de7
     MOV EDI,EDX                         ; 00540dec
-    MOV ESI,dword ptr [EBX + 0x1c60dac] ; 00540dee | g_UINT_PTR_ARRAY_01c60dac
+    MOV ESI,dword ptr [EBX + 0x1c60dac] ; 00540dee | g_ZBufferScanlineArray
     PUSH EDI                            ; 00540df4
     MOV EAX,ECX                         ; 00540df5
     SHR ECX,0x2                         ; 00540df7

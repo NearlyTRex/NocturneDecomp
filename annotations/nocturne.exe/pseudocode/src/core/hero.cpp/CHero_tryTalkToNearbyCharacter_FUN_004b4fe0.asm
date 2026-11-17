@@ -29,7 +29,7 @@
 ;   double DOUBLE_0058582b = 4
 ;   double DOUBLE_00585833 = 5
 ;   double DOUBLE_0058583b = 0.349065850388889
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
@@ -144,7 +144,7 @@ section .text
         ;   XREF to: 004b5045 (CONDITIONAL_JUMP)  ; LAB_004b5045
     ADD EBX,0x252c                      ; 004b50dc
     PUSH EBX                            ; 004b50e2
-    MOV EBX,dword ptr [0x005b7650]      ; 004b50e3 | g_CEventList_PTR_005b7650
+    MOV EBX,dword ptr [0x005b7650]      ; 004b50e3 | g_CEventListPtr
     PUSH EBX                            ; 004b50e9
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004b50ea
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

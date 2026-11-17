@@ -19,21 +19,21 @@ void FUN_005c1168(void)
     FUN_005c13dc();
     return;
   }
-  if (((g_BYTE_0061f644 & 1) == 0) || ((g_BYTE_0061f644 & 2) == 0)) {
-    g_BYTE_0061f644 = g_BYTE_0061f644 | 2;
+  if (((g_TimezoneInitFlags & 1) == 0) || ((g_TimezoneInitFlags & 2) == 0)) {
+    g_TimezoneInitFlags = g_TimezoneInitFlags | 2;
     DVar1 = GetTimeZoneInformation(&local_b4);
     if (DVar1 != 0) {
       if (DVar1 < 2) {
-        g_INT_0061f63c = 0;
+        g_DaylightSavingActive = 0;
       }
       else {
         if (DVar1 != 2) {
           return;
         }
-        g_INT_0061f63c = 1;
-        g_INT_0061f640 = local_b4.DaylightBias * -0x3c;
+        g_DaylightSavingActive = 1;
+        g_DaylightSavingOffset = local_b4.DaylightBias * -0x3c;
       }
-      g_INT_0061f638 = (local_b4.StandardBias + local_b4.Bias) * 0x3c;
+      g_TimezoneOffset = (local_b4.StandardBias + local_b4.Bias) * 0x3c;
       iVar2 = FUN_005c4310("EST",local_b4.StandardName,0x80);
       if (iVar2 == -1) {
         "EST"[0] = '\0';

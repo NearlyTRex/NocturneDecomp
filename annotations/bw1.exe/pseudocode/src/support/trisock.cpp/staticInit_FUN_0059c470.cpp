@@ -9,7 +9,7 @@
 void __cdecl support_trisock_cpp_staticInit_FUN_0059c470(void)
 
 {
-  support_trisock_cpp_buildIPAddressOrDie_FUN_0059c520(g_UCHAR_ARRAY_02c8ae48,0xff,0xff,0xff,0xff);
-  support_trisock_cpp_buildIPAddressOrDie_FUN_0059c520(g_UCHAR_ARRAY_02c8ae4c,0,0,0,0);
+  support_trisock_cpp_buildIPAddressOrDie_FUN_0059c520(g_BroadcastIP,0xff,0xff,0xff,0xff);
+  support_trisock_cpp_buildIPAddressOrDie_FUN_0059c520(g_AnyAddressIP,0,0,0,0);
   return;
 }

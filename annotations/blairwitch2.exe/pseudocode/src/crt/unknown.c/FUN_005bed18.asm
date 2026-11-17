@@ -12,7 +12,7 @@
 ;   crt_unknown.c_FUN_005beed4 at 005beef8
 ;
 ; Referenced Globals:
-;   Heap* g_Heap_PTR_0061eea0 = 00000000
+;   Heap* g_MainHeap = 00000000
 ;   undefined4 g_CHAR_ARRAY_026807a0+1
 ;
 ; Called Functions:
@@ -73,11 +73,11 @@ section .text
     MOV EAX,dword ptr [EBP + 0x4]       ; 005bed85
     MOV DX,DS                           ; 005bed88
     MOV dword ptr [ESP + 0x8],EAX       ; 005bed8a
-    MOV EAX,0x61eea0                    ; 005bed8e | g_Heap_PTR_0061eea0
+    MOV EAX,0x61eea0                    ; 005bed8e | g_MainHeap
     CMP DX,word ptr [ESP + 0x20]        ; 005bed93
     JNZ 0x005bedbb                      ; 005bed98
         ;   XREF to: 005bedbb (CONDITIONAL_JUMP)  ; LAB_005bedbb
-    MOV EBX,dword ptr [0x0061eea0]      ; 005bed9a | g_Heap_PTR_0061eea0
+    MOV EBX,dword ptr [0x0061eea0]      ; 005bed9a | g_MainHeap
     CMP dword ptr [EBX + 0x8],0x0       ; 005beda0
     JZ 0x005bedbb                       ; 005beda4
         ;   XREF to: 005bedbb (CONDITIONAL_JUMP)  ; LAB_005bedbb
@@ -181,14 +181,14 @@ section .text
     OR DI,0x1                           ; 005bee78
     LEA ECX,[EAX + EBP*0x1]             ; 005bee7c
     MOV dword ptr [EBP],EDI             ; 005bee7f
-    MOV EAX,0x61eea0                    ; 005bee82 | g_Heap_PTR_0061eea0
+    MOV EAX,0x61eea0                    ; 005bee82 | g_MainHeap
     MOV dword ptr [ECX],EDX             ; 005bee87
     MOV DX,DS                           ; 005bee89
     MOV dword ptr [ESP],ECX             ; 005bee8b
     CMP DX,word ptr [ESP + 0x20]        ; 005bee8e
     JNZ 0x005beeb6                      ; 005bee93
         ;   XREF to: 005beeb6 (CONDITIONAL_JUMP)  ; LAB_005beeb6
-    MOV EBX,dword ptr [0x0061eea0]      ; 005bee95 | g_Heap_PTR_0061eea0
+    MOV EBX,dword ptr [0x0061eea0]      ; 005bee95 | g_MainHeap
     CMP dword ptr [EBX + 0x8],0x0       ; 005bee9b
     JZ 0x005beeb6                       ; 005bee9f
         ;   XREF to: 005beeb6 (CONDITIONAL_JUMP)  ; LAB_005beeb6

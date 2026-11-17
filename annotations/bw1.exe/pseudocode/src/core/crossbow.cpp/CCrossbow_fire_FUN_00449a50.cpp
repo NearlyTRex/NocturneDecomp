@@ -140,7 +140,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
       if (this_ptr_01 == (CGlass *)0x0) {
         if (this_ptr_02 == (CTrigger *)0x0) {
           core_fire_cpp_CFireEffect_createStake_FUN_004b5bc0
-                    (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
+                    (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                      &(this_ptr->base).base.orient.vec,&g_CDemonSetPtr->collision_normal,
                      g_CDemonSetPtr->ground_type);
           break;

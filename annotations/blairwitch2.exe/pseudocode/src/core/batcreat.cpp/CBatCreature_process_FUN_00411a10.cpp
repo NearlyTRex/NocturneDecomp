@@ -356,9 +356,9 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
       fVar10 = 0.4;
       fStack_14 = SStack_200.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                 g_INT_ARRAY_007bc74c[2],&CStack_e0);
+                 g_BatCreatureIndices[2],&CStack_e0);
       pCVar9 = &CStack_194;
       CStack_194.x = CStack_e0.x;
       *(uint *)((int)&CStack_194 + (uint)bVar8 * -8 + 4) =

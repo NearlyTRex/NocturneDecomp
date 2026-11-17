@@ -30,7 +30,7 @@ void __cdecl core_fire_cpp_CRock_render_FUN_004af040(CRock *this_ptr)
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_28,0);
   if (iVar1 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_00551c30
-              (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&g_CVector3f_02c8af28,
+              (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&g_ZeroVector,
                &CStack_28.min,&CStack_28.max,(CMatrix3x3f *)0x0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00467270
               (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);

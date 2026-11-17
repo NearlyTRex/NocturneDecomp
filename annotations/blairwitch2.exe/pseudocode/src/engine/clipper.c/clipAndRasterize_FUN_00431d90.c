@@ -11,7 +11,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00431d90(int vertex_count,int
 {
   int iVar1;
   
-  if (g_UINT_006141e0 == 0) {
+  if (g_VertexProcessingEnabled == 0) {
     engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(vertex_indices,vertex_count);
     return;
   }

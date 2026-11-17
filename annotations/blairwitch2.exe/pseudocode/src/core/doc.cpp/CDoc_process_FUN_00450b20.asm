@@ -82,7 +82,7 @@ section .text
     PUSH dword ptr [ESP + 0x18]         ; 00450baf
     PUSH EBX                            ; 00450bb3
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 00450bb4
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450bb9
     POP ESI                             ; 00450bbc
     ADD ESP,0x8                         ; 00450bbd

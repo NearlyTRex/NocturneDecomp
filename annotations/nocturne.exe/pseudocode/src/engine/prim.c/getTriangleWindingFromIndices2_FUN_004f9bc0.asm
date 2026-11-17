@@ -16,7 +16,7 @@
 ;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
-;   int g_INT_006b0280
+;   int g_CullingMode
 ;
 ; *****************************************************************************
 
@@ -45,7 +45,7 @@ section .text
     SUB EDX,EBX                         ; 004f9bfb
     ADD EAX,0x5c5014                    ; 004f9bfd | g_SRenderVertex_ARRAY_005c5014
     SHL EDX,0x4                         ; 004f9c02
-    MOV EBX,dword ptr [0x006b0280]      ; 004f9c05 | g_INT_006b0280
+    MOV EBX,dword ptr [0x006b0280]      ; 004f9c05 | g_CullingMode
     ADD EDX,0x5c5014                    ; 004f9c0b | g_SRenderVertex_ARRAY_005c5014
     CMP EBX,0x1                         ; 004f9c11
     JNZ 0x004f9c7e                      ; 004f9c14

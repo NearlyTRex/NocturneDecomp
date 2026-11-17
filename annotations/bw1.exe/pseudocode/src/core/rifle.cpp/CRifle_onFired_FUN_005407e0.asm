@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rifbullet_kfm_005edc7f
 ;   TerminatedCString s_shotgun_cock_wav_3_005edc8d
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   int g_INT_01d06ab4
 ;
@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 005408f0
     LEA EAX,[EBX + 0x20]                ; 005408f1
     PUSH EAX                            ; 005408f4
-    MOV EAX,[0x0061c010]                ; 005408f5 | g_CFireEffect_PTR_0061c010
+    MOV EAX,[0x0061c010]                ; 005408f5 | g_CFireEffectPtr
     PUSH EAX                            ; 005408fa
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004b7270 ; 005408fb
         ;   XREF to: 004b7270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004b7270(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)

@@ -31,14 +31,14 @@
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_CDemonRenderer_01b4d738.advanced_culling_enabled
 ;   int g_RelativeX
-;   int g_INT_01c039dc
+;   int g_LightDirectionX
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
 ;   int g_LocalHeroIndex
-;   int[20] g_INT_ARRAY_01cc9094
-;   int g_INT_01cd4318
-;   undefined4 g_CStrangerActorType_02dc9fac.name_hash
+;   int[20] g_MimicIndices
+;   int g_RenderMotionDebug
+;   undefined4 g_CStrangerClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -144,7 +144,7 @@ section .text
         ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0()
     PUSH 0x0                            ; 004d5916
     MOV ESI,dword ptr [0x01c039b8]      ; 004d5918 | g_RelativeX
-    MOV EDI,dword ptr [0x01c039dc]      ; 004d591e | g_INT_01c039dc
+    MOV EDI,dword ptr [0x01c039dc]      ; 004d591e | g_LightDirectionX
     MOV EAX,[0x01c039e8]                ; 004d5924 | g_TransformMatrix
     MOV EDX,dword ptr [0x01c039ec]      ; 004d5929 | g_TransformMatrix.m[0].y
     MOV ECX,dword ptr [0x01c039f0]      ; 004d592f | g_TransformMatrix.m[0].z
@@ -159,7 +159,7 @@ section .text
     MOV [0x01c039e8],EAX                ; 004d5949 | g_TransformMatrix
     PUSH -0x1                           ; 004d594e
     LEA EAX,[EBX + 0x150]               ; 004d5950
-    MOV dword ptr [0x01c039dc],EDI      ; 004d5956 | g_INT_01c039dc
+    MOV dword ptr [0x01c039dc],EDI      ; 004d5956 | g_LightDirectionX
     PUSH EAX                            ; 004d595c
     MOV dword ptr [0x01c039ec],EDX      ; 004d595d | g_TransformMatrix.m[0].y
     MOV dword ptr [0x01c039f0],ECX      ; 004d5963 | g_TransformMatrix.m[0].z
@@ -172,7 +172,7 @@ section .text
     CALL core_cloth.cpp_CCloth_render_FUN_00437db0 ; 004d597a
         ;   XREF to: 00437db0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_00437db0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 004d597f
-    MOV ESI,dword ptr [0x02dc9fe4]      ; 004d5982 | g_CStrangerActorType_02dc9fac.name_hash
+    MOV ESI,dword ptr [0x02dc9fe4]      ; 004d5982 | g_CStrangerClassInfo.name_hash
     MOV EAX,[0x01cae0e8]                ; 004d5988 | g_LocalHeroIndex
     PUSH ESI                            ; 004d598d
     MOV EDI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d598e
@@ -202,7 +202,7 @@ section .text
     MOV dword ptr [EBP + 0x56],EDX      ; 004d59d5
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 004d59d8
         ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x01cc9094]      ; 004d59dd | g_INT_ARRAY_01cc9094
+    MOV ESI,dword ptr [0x01cc9094]      ; 004d59dd | g_MimicIndices
     LEA EAX,[ESI*0x4 + 0x0]             ; 004d59e3
     SUB EAX,ESI                         ; 004d59ea
     MOV ESI,EAX                         ; 004d59ec
@@ -261,7 +261,7 @@ section .text
         ;   Label: LAB_004d5a74
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 ; 004d5a75
         ;   XREF to: 004265a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x01cd4318]      ; 004d5a7a | g_INT_01cd4318
+    MOV EDI,dword ptr [0x01cd4318]      ; 004d5a7a | g_RenderMotionDebug
     ADD ESP,0x4                         ; 004d5a80
     TEST EDI,EDI                        ; 004d5a83
     JZ 0x004d5ab2                       ; 004d5a85

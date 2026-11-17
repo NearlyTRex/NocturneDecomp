@@ -8,7 +8,7 @@
 ; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   int g_INT_02d24d80
+;   int g_RasterizerEdgeCount
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 005a1e60
         ;   Label: core_asgaya.cpp_findRasterizerEdge_FUN_005a1e60
     PUSH ESI                            ; 005a1e61
-    MOV EBX,dword ptr [0x02d24d80]      ; 005a1e62 | g_INT_02d24d80
+    MOV EBX,dword ptr [0x02d24d80]      ; 005a1e62 | g_RasterizerEdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 005a1e68
     MOV ESI,dword ptr [ESP + 0x10]      ; 005a1e6c
     MOV EAX,0x2d24d84                   ; 005a1e70
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 005a1e7b (CONDITIONAL_JUMP)  ; LAB_005a1e7b
     XOR EAX,EAX                         ; 005a1e8b
         ;   Label: LAB_005a1e8b
-    MOV dword ptr [0x02d24d80],EBX      ; 005a1e8d | g_INT_02d24d80
+    MOV dword ptr [0x02d24d80],EBX      ; 005a1e8d | g_RasterizerEdgeCount
         ;   Label: LAB_005a1e8d
     POP ESI                             ; 005a1e93
     POP EBX                             ; 005a1e94

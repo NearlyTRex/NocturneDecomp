@@ -128,18 +128,18 @@ section .text
         ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_004f9670(CMoon * this_ptr)
     MOV EAX,[0x00603b28]                ; 004e86a0 | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004e86a5
-    MOV EDI,0x606730                    ; 004e86a8 | g_CHAR_ARRAY_00606730
+    MOV EDI,0x606730                    ; 004e86a8 | g_RendererDllPath
     MOV dword ptr [EAX + 0x15ae84],0x0  ; 004e86ad | g_CDemonSetInstance.rendering_mode
-    PUSH EDI                            ; 004e86b7 | g_CHAR_ARRAY_00606730
+    PUSH EDI                            ; 004e86b7 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 004e86b8 | = "tridx7.dll" | s_tridx7_dll_005c73f6+2
         ;   Label: LAB_004e86b8
-    MOV byte ptr [EDI],AL               ; 004e86ba | g_CHAR_ARRAY_00606730 | g_CHAR_ARRAY_00606730+2
+    MOV byte ptr [EDI],AL               ; 004e86ba | g_RendererDllPath | g_RendererDllPath+2
     CMP AL,0x0                          ; 004e86bc
     JZ 0x004e86d0                       ; 004e86be
         ;   XREF to: 004e86d0 (CONDITIONAL_JUMP)  ; LAB_004e86d0
     MOV AL,byte ptr [ESI + 0x1]         ; 004e86c0 | s_tridx7_dll_005c73f6+1 | s_tridx7_dll_005c73f6+3
     ADD ESI,0x2                         ; 004e86c3
-    MOV byte ptr [EDI + 0x1],AL         ; 004e86c6 | g_CHAR_ARRAY_00606730+1 | g_CHAR_ARRAY_00606730+3
+    MOV byte ptr [EDI + 0x1],AL         ; 004e86c6 | g_RendererDllPath+1 | g_RendererDllPath+3
     ADD EDI,0x2                         ; 004e86c9
     CMP AL,0x0                          ; 004e86cc
     JNZ 0x004e86b8                      ; 004e86ce
@@ -445,7 +445,7 @@ section .text
     MOV dword ptr [EAX],0x500           ; 004e8a42 | g_CGameInstance
     PUSH 0x1                            ; 004e8a48
         ;   Label: default
-    MOV EAX,[0x00600284]                ; 004e8a4a | g_CKeys_PTR_00600284
+    MOV EAX,[0x00600284]                ; 004e8a4a | g_CKeysPtr
     PUSH EAX                            ; 004e8a4f | g_PTR_01d70a78
     MOV EDX,dword ptr [EAX]             ; 004e8a50 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004e8a52

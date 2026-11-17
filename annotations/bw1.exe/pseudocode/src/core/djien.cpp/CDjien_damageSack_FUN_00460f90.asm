@@ -13,7 +13,7 @@
 ;   TerminatedCString s_DjienSackBlown_005d8e4d
 ;   double g_DOUBLE_005d8e60 = 7
 ;   int g_INT_00612270 = 0x14
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
@@ -106,7 +106,7 @@ section .text
         ;   XREF to: 00419b90 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90(CBodyPart * this_ptr)
     FLD float ptr [ESI + 0x8]           ; 0046105c
     ADD ESP,0x4                         ; 0046105f
-    MOV EAX,[0x0061b4d0]                ; 00461062 | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 00461062 | g_CEventListPtr
     FLD ST0                             ; 00461067
     PUSH 0x5d8e4d                       ; 00461069 | = "DjienSackBlown"
     FMUL double ptr [0x005d8e60]        ; 0046106e | g_DOUBLE_005d8e60

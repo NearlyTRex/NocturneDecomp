@@ -30,9 +30,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   int iStack_14;
   
   bVar12 = 0;
-  g_INT_01c38b50 = 0;
-  g_INT_0061e28c = 0x10000;
-  g_INT_0061e280 = 1;
+  g_ProcessorType = 0;
+  g_FullScreenQuadDepth = 0x10000;
+  g_SystemInitialized = 1;
   file_handle = _fopen("stderr.txt","rb");
   if (file_handle != (_FILE *)0x0) {
     _fclose(file_handle);
@@ -53,7 +53,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   engine_dosio_cpp_addGetFileInfoHook_FUN_00460930(engine_dosio_cpp_findFileNormally_FUN_004609e0);
   support_newmsg_cpp_readMessageFile_FUN_0050f9e0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_004fd490();
-  if (g_INT_01c38b40 == 0) {
+  if (g_MMXSupported == 0) {
     g_CHAR_PTR_01d046a0 = "..\\core\\main.c";
     g_INT_01d046a4 = 0x3da;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("This CPU does not have an MMX unit.")
@@ -72,7 +72,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_00447ea0();
-  if (g_INT_02664638 < 0x3c00000) {
+  if (g_TotalPhysicalMemory < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Windows is reporting ");
     pcVar5 = acStack_528;
     do {
@@ -452,8 +452,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   }
   wincore_winvideo_cpp_playMovie_FUN_00591190("video","opening.avi");
   engine_special_cpp_clearScreen_FUN_0055b1f0();
-  engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_CBitFont_PTR_01511cc0,acStack_228);
-  engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01511cc0,0x58);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_ThemeFont,acStack_228);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_ThemeFont,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(&CStack_28,"test_logo",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&CStack_28,0,0,0xffff);

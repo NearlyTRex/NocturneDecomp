@@ -12,13 +12,13 @@ void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00591120(HWND notify_w
   bool bVar1;
   char *lpstrCommand;
   
-  bVar1 = g_INT_02665a4c == 0;
-  g_INT_02665a4c = (int)bVar1;
+  bVar1 = g_MovieHandle == 0;
+  g_MovieHandle = (int)bVar1;
   if (play_state == 0) {
-    g_INT_02665a4c = play_state;
+    g_MovieHandle = play_state;
   }
   else if (bVar1) {
-    if (g_INT_02665a58 == 0) {
+    if (g_FullscreenMovie == 0) {
       mciSendStringA("play mov window notify",(LPSTR)0x0,0,notify_window);
       return;
     }

@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
@@ -55,7 +55,7 @@ section .text
     ADD EBX,0x20                        ; 004f20e0
     PUSH EBX                            ; 004f20e3
     MOV dword ptr [EBX + 0x864],0x3dcccccd ; 004f20e4
-    MOV EBX,dword ptr [0x00614d30]      ; 004f20ee | g_CFireEffect_PTR_00614d30
+    MOV EBX,dword ptr [0x00614d30]      ; 004f20ee | g_CFireEffectPtr
     PUSH EBX                            ; 004f20f4
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 004f20f5
         ;   XREF to: 0049d090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

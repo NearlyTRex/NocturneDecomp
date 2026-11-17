@@ -19,14 +19,14 @@ extern CDemonActorType g_CDemonActorType_01b85100;
 extern CDemonActorType g_CDoorClassInfo;
 
 // FileSearchHandlerFunc*[5]
-extern FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01b85180[5];
+extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
 // char[4]
 extern char g_CHAR_ARRAY_01b85194[4];
 
 // int
-extern int g_INT_01b8517c;
+extern int g_NumSearchHandlers;
 
 // uint
-extern uint g_UINT_01b8513c;
+extern uint g_DoorLockedSoundHandle;
 

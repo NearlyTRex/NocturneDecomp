@@ -47,7 +47,7 @@
 ;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005380c0 at 0053812a
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005d1d43 = 2
+;   double g_VoxelStepMultiplier2 = 2
 ;   double g_DOUBLE_005d1d4b = 0.5
 ;
 ; Called Functions:
@@ -104,7 +104,7 @@ section .text
     FLD float ptr [ESP + 0x6c]          ; 004771c8
     FDIV float ptr [EAX + 0x3c]         ; 004771cc
     FXCH ST2                            ; 004771cf
-    FLD double ptr [0x005d1d43]         ; 004771d1 | g_DOUBLE_005d1d43
+    FLD double ptr [0x005d1d43]         ; 004771d1 | g_VoxelStepMultiplier2
     FXCH                                ; 004771d7
     FMUL ST1                            ; 004771d9
     FLD1                                ; 004771db

@@ -9,5 +9,5 @@
 uint __cdecl sound_sndmain_cpp_isSoundSystemActive_FUN_00528480(void)
 
 {
-  return (uint)(g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0);
+  return (uint)(g_CSoundDevicePtr != (CSoundDevice *)0x0);
 }

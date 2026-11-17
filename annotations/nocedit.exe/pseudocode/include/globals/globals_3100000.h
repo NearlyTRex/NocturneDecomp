@@ -16,8 +16,8 @@
 // =============================================================================
 
 // CCmdParse
-extern CCmdParse CCmdParse_0310aa4c;
-extern CCmdParse CCmdParse_0310cb74;
+extern CCmdParse g_ContextActionParser;
+extern CCmdParse g_ParameterValueParser;
 
 // CDemonActorType
 extern CDemonActorType g_CScatClassInfo;

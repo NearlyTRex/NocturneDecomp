@@ -19,7 +19,7 @@ __asm {
         shr EBP,0x8
     LAB_005630bc:
         movzx EAX,byte ptr [ESI]
-        movd MM0,dword ptr [g_UINT_ARRAY_01c6a974 + EAX*0x4]
+        movd MM0,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         movzx EAX,byte ptr [EBX]
         imul EAX,EBP
         cmp dword ptr [g_INT_01c6e2ac],0x1

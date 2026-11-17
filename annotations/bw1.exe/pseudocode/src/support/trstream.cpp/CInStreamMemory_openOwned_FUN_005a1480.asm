@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trstream_cpp_CInStreamMemory_openOwned_FUN_005a1480(CInStreamMemory *this_ptr,int param_2,int param_3)
+; void __cdecl support_trstream_cpp_CInStreamMemory_openOwned_FUN_005a1480(CInStreamMemory *this_ptr,int data,int size)
 ;
 ; Parameters:
 ; CInStreamMemory * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   data
+; int              Stack[0xc]:4   size
 ;
 ; *****************************************************************************
 

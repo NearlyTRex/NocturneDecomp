@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   int g_INT_02de54a8
+;   int g_EnvironInitialized
 ;
 ; Called Functions:
 ;   crt_env.c_updateEnvironTable_FUN_00573afc
@@ -162,7 +162,7 @@ section .text
     POP ESI                             ; 005741c2
     POP EBX                             ; 005741c3
     RET                                 ; 005741c4
-    CMP dword ptr [0x02de54a8],0x0      ; 005741c5 | g_INT_02de54a8
+    CMP dword ptr [0x02de54a8],0x0      ; 005741c5 | g_EnvironInitialized
         ;   Label: LAB_005741c5
     JNZ 0x005741d3                      ; 005741cc
         ;   XREF to: 005741d3 (CONDITIONAL_JUMP)  ; LAB_005741d3

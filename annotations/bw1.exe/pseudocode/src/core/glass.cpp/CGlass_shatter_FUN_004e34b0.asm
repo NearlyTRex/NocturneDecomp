@@ -93,7 +93,7 @@
 ;   double g_DOUBLE_005e3fd4 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   int g_INT_0061b4a8 = 0x100
+;   int g_CurrentTextureDimension = 0x100
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CDemonSet g_CDemonSetInstance
@@ -331,7 +331,7 @@ section .text
     PUSH EDX                            ; 004e37c9 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004e37ca
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    MOV ECX,dword ptr [0x0061b4a8]      ; 004e37cf | g_INT_0061b4a8
+    MOV ECX,dword ptr [0x0061b4a8]      ; 004e37cf | g_CurrentTextureDimension
     ADD ESP,0x8                         ; 004e37d5
     CMP ECX,0x40                        ; 004e37d8
     JNZ 0x004e388f                      ; 004e37db

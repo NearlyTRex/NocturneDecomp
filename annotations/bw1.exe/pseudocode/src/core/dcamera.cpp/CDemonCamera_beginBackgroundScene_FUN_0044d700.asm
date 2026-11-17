@@ -16,16 +16,16 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
-;   int g_INT_01482658
-;   int g_INT_0148265c
-;   int g_INT_01482660
-;   void*[1200] g_ARRAY_PTR_01482664
-;   undefined4 g_ARRAY_PTR_01482664[1]
-;   int g_INT_01483924
-;   int g_INT_01483928
-;   int g_INT_0148392c
+;   int g_BackgroundSceneDepth
+;   int g_BackgroundSavedBitsPerPixel
+;   int g_BackgroundSavedUseExternalRenderer
+;   void*[1200] g_BackgroundSavedScreenBufferArray
+;   undefined4 g_BackgroundSavedScreenBufferArray[1]
+;   int g_BackgroundSavedRedBitPosition
+;   int g_BackgroundSavedGreenBitPosition
+;   int g_BackgroundSavedBlueBitPosition
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   void*[1200] g_ARRAY_PTR_01c4354c
+;   void*[1200] g_ScreenBufferArray
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -49,10 +49,10 @@ section .text
     CMP dword ptr [EBX + 0x11e4],0x0    ; 0044d708
     JZ 0x0044d88f                       ; 0044d70f
         ;   XREF to: 0044d88f (CONDITIONAL_JUMP)  ; LAB_0044d88f
-    MOV EDI,dword ptr [0x01482658]      ; 0044d715 | g_INT_01482658
+    MOV EDI,dword ptr [0x01482658]      ; 0044d715 | g_BackgroundSceneDepth
         ;   Label: LAB_0044d715
     INC EDI                             ; 0044d71b
-    MOV dword ptr [0x01482658],EDI      ; 0044d71c | g_INT_01482658
+    MOV dword ptr [0x01482658],EDI      ; 0044d71c | g_BackgroundSceneDepth
     CMP EDI,0x1                         ; 0044d722
     JNZ 0x0044d88a                      ; 0044d725
         ;   XREF to: 0044d88a (CONDITIONAL_JUMP)  ; LAB_0044d88a
@@ -61,33 +61,33 @@ section .text
     MOV EDX,0x8                         ; 0044d735
     MOV EAX,[0x0061b4a0]                ; 0044d73a | g_INT_0061b4a0
     MOV ECX,dword ptr [0x0061b49c]      ; 0044d73f | g_INT_0061b49c
-    MOV [0x0148265c],EAX                ; 0044d745 | g_INT_0148265c
+    MOV [0x0148265c],EAX                ; 0044d745 | g_BackgroundSavedBitsPerPixel
     MOV EAX,[0x01c50948]                ; 0044d74a | g_INT_01c50948
     SHL ECX,0x2                         ; 0044d74f
-    MOV [0x01482660],EAX                ; 0044d752 | g_INT_01482660
-    PUSH EDI                            ; 0044d757 | g_ARRAY_PTR_01482664
+    MOV [0x01482660],EAX                ; 0044d752 | g_BackgroundSavedUseExternalRenderer
+    PUSH EDI                            ; 0044d757 | g_BackgroundSavedScreenBufferArray
     MOV EAX,ECX                         ; 0044d758
     SHR ECX,0x2                         ; 0044d75a
-    MOVSD.REP ES:EDI,ESI                ; 0044d75d | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01482664 | g_ARRAY_PTR_01c4354c[1]
+    MOVSD.REP ES:EDI,ESI                ; 0044d75d | g_ScreenBufferArray | g_BackgroundSavedScreenBufferArray | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 0044d75f
     AND CL,0x3                          ; 0044d761
-    MOVSB.REP ES:EDI,ESI                ; 0044d764 | g_ARRAY_PTR_01c4354c[1] | g_ARRAY_PTR_01482664[1]
+    MOVSB.REP ES:EDI,ESI                ; 0044d764 | g_ScreenBufferArray[1] | g_BackgroundSavedScreenBufferArray[1]
     POP EDI                             ; 0044d766
     MOV ESI,0x20                        ; 0044d767
-    MOV EAX,[0x01c4e9d4]                ; 0044d76c | g_BIT_INTEGER32_01c4e9d4
+    MOV EAX,[0x01c4e9d4]                ; 0044d76c | g_RedBitPosition
     MOV EBP,dword ptr [EBX + 0x148]     ; 0044d771
     XOR ECX,ECX                         ; 0044d777
-    MOV [0x01483924],EAX                ; 0044d779 | g_INT_01483924
+    MOV [0x01483924],EAX                ; 0044d779 | g_BackgroundSavedRedBitPosition
     MOV dword ptr [0x0061b4a0],ESI      ; 0044d77e | g_INT_0061b4a0
-    MOV EAX,[0x01c4e9e0]                ; 0044d784 | g_BIT_INTEGER32_01c4e9e0
+    MOV EAX,[0x01c4e9e0]                ; 0044d784 | g_GreenBitPosition
     MOV dword ptr [0x01c50948],ECX      ; 0044d789 | g_INT_01c50948
-    MOV [0x01483928],EAX                ; 0044d78f | g_INT_01483928
-    MOV EAX,[0x01c4e9ec]                ; 0044d794 | g_BIT_INTEGER32_01c4e9ec
-    MOV dword ptr [0x01c4e9e0],EDX      ; 0044d799 | g_BIT_INTEGER32_01c4e9e0
-    MOV [0x0148392c],EAX                ; 0044d79f | g_INT_0148392c
+    MOV [0x01483928],EAX                ; 0044d78f | g_BackgroundSavedGreenBitPosition
+    MOV EAX,[0x01c4e9ec]                ; 0044d794 | g_BlueBitPosition
+    MOV dword ptr [0x01c4e9e0],EDX      ; 0044d799 | g_GreenBitPosition
+    MOV [0x0148392c],EAX                ; 0044d79f | g_BackgroundSavedBlueBitPosition
     MOV EAX,0x10                        ; 0044d7a4
-    MOV dword ptr [0x01c4e9ec],ECX      ; 0044d7a9 | g_BIT_INTEGER32_01c4e9ec
-    MOV [0x01c4e9d4],EAX                ; 0044d7af | g_BIT_INTEGER32_01c4e9d4
+    MOV dword ptr [0x01c4e9ec],ECX      ; 0044d7a9 | g_BlueBitPosition
+    MOV [0x01c4e9d4],EAX                ; 0044d7af | g_RedBitPosition
     XOR EAX,EAX                         ; 0044d7b4
     TEST EBP,EBP                        ; 0044d7b6
     JLE 0x0044d7f0                      ; 0044d7b8
@@ -99,7 +99,7 @@ section .text
     LEA ESI,[ECX*0x4 + 0x0]             ; 0044d7c5
     MOV ECX,dword ptr [EBX + 0x158]     ; 0044d7cc
     ADD ECX,ESI                         ; 0044d7d2
-    MOV dword ptr [EDX + 0x1c4354c],ECX ; 0044d7d4 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV dword ptr [EDX + 0x1c4354c],ECX ; 0044d7d4 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0044d7da
     MOV ECX,dword ptr [EBX + 0x148]     ; 0044d7db
     ADD EDX,0x4                         ; 0044d7e1

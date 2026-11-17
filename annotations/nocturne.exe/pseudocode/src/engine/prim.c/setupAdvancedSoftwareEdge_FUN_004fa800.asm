@@ -10,10 +10,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   int g_INT_01e52efc
-;   SSoftwareEdge[16] g_SSoftwareEdge_ARRAY_01e52f00
-;   int g_INT_01e53380
-;   int g_INT_01e53384
+;   int g_ActiveEdgeCount
+;   SSoftwareEdge[16] g_SoftwareEdgeTable
+;   int g_MinScanline
+;   int g_MaxScanline
 ;
 ; *****************************************************************************
 
@@ -44,24 +44,24 @@ section .text
     MOV EAX,EDI                         ; 004fa831
     MOV EDI,EBX                         ; 004fa833
     MOV EBX,EAX                         ; 004fa835
-    MOV EAX,[0x01e52efc]                ; 004fa837 | g_INT_01e52efc
+    MOV EAX,[0x01e52efc]                ; 004fa837 | g_ActiveEdgeCount
         ;   Label: LAB_004fa837
     LEA ECX,[EAX*0x8 + 0x0]             ; 004fa83c
     ADD ECX,EAX                         ; 004fa843
     SHL ECX,0x3                         ; 004fa845
     ADD ECX,0x1e52f00                   ; 004fa848
-    MOV dword ptr [ECX],EDI             ; 004fa84e | g_SSoftwareEdge_ARRAY_01e52f00
-    MOV EAX,[0x01e53380]                ; 004fa850 | g_INT_01e53380
+    MOV dword ptr [ECX],EDI             ; 004fa84e | g_SoftwareEdgeTable
+    MOV EAX,[0x01e53380]                ; 004fa850 | g_MinScanline
     MOV dword ptr [ECX + 0x4],EBX       ; 004fa855
     CMP EDI,EAX                         ; 004fa858
     JGE 0x004fa862                      ; 004fa85a
         ;   XREF to: 004fa862 (CONDITIONAL_JUMP)  ; LAB_004fa862
-    MOV dword ptr [0x01e53380],EDI      ; 004fa85c | g_INT_01e53380
-    CMP EBX,dword ptr [0x01e53384]      ; 004fa862 | g_INT_01e53384
+    MOV dword ptr [0x01e53380],EDI      ; 004fa85c | g_MinScanline
+    CMP EBX,dword ptr [0x01e53384]      ; 004fa862 | g_MaxScanline
         ;   Label: LAB_004fa862
     JLE 0x004fa870                      ; 004fa868
         ;   XREF to: 004fa870 (CONDITIONAL_JUMP)  ; LAB_004fa870
-    MOV dword ptr [0x01e53384],EBX      ; 004fa86a | g_INT_01e53384
+    MOV dword ptr [0x01e53384],EBX      ; 004fa86a | g_MaxScanline
     MOV EDI,dword ptr [ESI + 0x14]      ; 004fa870
         ;   Label: LAB_004fa870
     MOV EBX,dword ptr [EBP + 0x14]      ; 004fa873
@@ -208,7 +208,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x28]      ; 004fa9ed
     ADD EAX,EDX                         ; 004fa9f0
     MOV dword ptr [ECX + 0x40],EAX      ; 004fa9f2
-    INC dword ptr [0x01e52efc]          ; 004fa9f5 | g_INT_01e52efc
+    INC dword ptr [0x01e52efc]          ; 004fa9f5 | g_ActiveEdgeCount
     ADD ESP,0x4                         ; 004fa9fb
         ;   Label: LAB_004fa9fb
     POP EBP                             ; 004fa9fe

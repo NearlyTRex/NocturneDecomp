@@ -8,7 +8,7 @@
 CBitFont* g_CBitFont_PTR_01c3eb50 = {};
 
 // CDemonActor*[2000]
-CDemonActor* g_CDemonActor_PTR_ARRAY_01c3f6a4[2000] = {};
+CDemonActor* g_EnemyVictimCandidates[2000] = {};
 
 // CDemonActorType
 CDemonActorType g_CDynamiteClassInfo = {};
@@ -17,7 +17,7 @@ CDemonActorType g_CEmitterClassInfo = {};
 CDemonActorType g_CEnemyClassInfo = {};
 
 // CDemonTriangle[8]
-CDemonTriangle g_CDemonTriangle_ARRAY_01c3d99c[8] = {};
+CDemonTriangle g_ClippedTriangleBuffer[8] = {};
 
 // CEditorTools
 CEditorTools g_CEditorToolsInstance = {};
@@ -27,14 +27,14 @@ CVector3f g_CVector3f_01c3d430 = {};
 CVector3f g_CVector3f_01c3db98 = {};
 
 // CVector3f[16]
-CVector3f g_CVector3f_ARRAY_01c3d508[16] = {};
-CVector3f g_CVector3f_ARRAY_01c3d5cc[16] = {};
-CVector3f g_CVector3f_ARRAY_01c3d690[16] = {};
-CVector3f g_CVector3f_ARRAY_01c3d754[16] = {};
-CVector3f g_CVector3f_ARRAY_01c3d818[16] = {};
+CVector3f g_ClipBuffer1Vertices[16] = {};
+CVector3f g_ClipBuffer2Vertices[16] = {};
+CVector3f g_ClipBuffer3Vertices[16] = {};
+CVector3f g_ClipBuffer4Vertices[16] = {};
+CVector3f g_ClipBuffer5Vertices[16] = {};
 
 // CVector3i
-CVector3i g_CVector3i_01c3d424 = {};
+CVector3i g_DebugCubeBasePoint = {};
 
 // SWindow[5]
 SWindow g_SWindow_ARRAY_01c3eb60[5] = {};
@@ -43,10 +43,10 @@ SWindow g_SWindow_ARRAY_01c3eb60[5] = {};
 byte g_BYTE_01c3d43c = {};
 
 // char*
-char* g_CHAR_PTR_01c3eb58 = {};
+char* g_ClipboardBackupText = {};
 
 // char[4000]
-char g_CHAR_ARRAY_01c3dbb0[4000] = {};
+char g_TextWrapBuffer[4000] = {};
 
 // float
 float g_FLOAT_01c3d444 = {};
@@ -64,60 +64,60 @@ float g_FLOAT_01c3d8fc = {};
 
 // int
 int g_INT_01c3d420 = {};
-int g_INT_01c3d440 = {};
-int g_INT_01c3d504 = {};
-int g_INT_01c3d5c8 = {};
-int g_INT_01c3d68c = {};
-int g_INT_01c3d750 = {};
-int g_INT_01c3d814 = {};
-int g_INT_01c3d8d8 = {};
-int g_INT_01c3eb5c = {};
-int g_INT_01c3f538 = {};
+int g_ClipInputVertexCount = {};
+int g_ClipBuffer1VertexCount = {};
+int g_ClipBuffer2VertexCount = {};
+int g_ClipBuffer3VertexCount = {};
+int g_ClipBuffer4VertexCount = {};
+int g_ClipBuffer5VertexCount = {};
+int g_ClipOutputVertexCount = {};
+int g_WindowStackCount = {};
+int g_EditorFontMaxCharWidth = {};
 int g_INT_01c3f53c = {};
 int g_INT_01c3f540 = {};
 int g_INT_01c3f544 = {};
-int g_INT_01c3f548 = {};
+int g_WindowContentColor = {};
 int g_INT_01c3f54c = {};
 int g_INT_01c3f550 = {};
-int g_INT_01c3f554 = {};
-int g_INT_01c3f558 = {};
-int g_INT_01c3f55c = {};
-int g_INT_01c3f560 = {};
-int g_INT_01c3f564 = {};
-int g_INT_01c3f568 = {};
-int g_INT_01c3f56c = {};
-int g_INT_01c3f570 = {};
-int g_INT_01c3f574 = {};
-int g_INT_01c3f578 = {};
-int g_INT_01c3f57c = {};
-int g_INT_01c3f580 = {};
-int g_INT_01c3f584 = {};
-int g_INT_01c3f588 = {};
-int g_INT_01c3f58c = {};
+int g_TitleBarColor = {};
+int g_TitleBarFillColor = {};
+int g_WindowFontColor = {};
+int g_WarningTextColor = {};
+int g_ErrorTextColor = {};
+int g_SelectionColor = {};
+int g_TextColor = {};
+int g_CursorColor = {};
+int g_StatusTextColor = {};
+int g_WindowStatusTextColor = {};
+int g_DialogTextColor = {};
+int g_ActiveItemTextColor = {};
+int g_ProgressBarBackgroundColor = {};
+int g_ProgressBarFillColor = {};
+int g_ProgressBarBorderColor = {};
 int g_INT_01c3f590 = {};
-int g_INT_01c3f594 = {};
-int g_INT_01c3f598 = {};
-int g_INT_01c3f59c = {};
+int g_AxisLabelTextColor = {};
+int g_EnabledTextColor = {};
+int g_DisabledTextColor = {};
 int g_INT_01c3f5a0 = {};
-int g_INT_01c3f5a4 = {};
-int g_INT_01c3f5a8 = {};
-int g_INT_01c3f5ac = {};
-int g_INT_01c3f5b0 = {};
-int g_INT_01c3f5b4 = {};
-int g_INT_01c3f5b8 = {};
-int g_INT_01c3f5bc = {};
-int g_INT_01c3f5c0 = {};
-int g_INT_01c3f5c4 = {};
-int g_INT_01c3f5c8 = {};
-int g_INT_01c3f5cc = {};
-int g_INT_01c3f5d4 = {};
-int g_INT_01c3f5d8 = {};
-int g_INT_01c3f5dc = {};
-int g_INT_01c3f5e0 = {};
-int g_INT_01c3f5e4 = {};
-int g_INT_01c3f5e8 = {};
-int g_INT_01c3f5ec = {};
+int g_ConfirmedSelectionColor = {};
+int g_PickListSeparatorColor = {};
+int g_ShadowColor = {};
+int g_ScrollBarHighlightColor = {};
+int g_ButtonFaceColor = {};
+int g_UITextColor = {};
+int g_InsetColor = {};
+int g_HighlightColor = {};
+int g_BorderBackgroundColor = {};
+int g_LastClickTimestamp = {};
+int g_LastClickItemIndex = {};
+int g_ScrollAction = {};
+int g_ScrollTimer = {};
+int g_ScrollDelay = {};
+int g_DragStartMouseX = {};
+int g_DragStartMouseY = {};
+int g_DragStartScrollPos = {};
+int g_DragStartThumbPos = {};
 
 // void*
-void* g_PTR_01c3f5d0 = {};
+void* g_ActiveControl = {};
 

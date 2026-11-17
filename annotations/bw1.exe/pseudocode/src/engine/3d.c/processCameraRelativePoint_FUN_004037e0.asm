@@ -12,15 +12,15 @@
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004985b0 at 004985e3
 ;
 ; Referenced Globals:
-;   int g_INT_00713a88
-;   int g_INT_00713a8c
-;   int g_INT_00713a90
-;   int g_INT_01c51d2c
-;   int g_INT_01c51d30
-;   int g_INT_01c51d34
-;   int g_INT_01c51d38
-;   int g_INT_01c51d3c
-;   int g_INT_01c51d40
+;   int g_StoredX
+;   int g_StoredY
+;   int g_StoredZ
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;
 ; *****************************************************************************
 
@@ -31,24 +31,24 @@ section .text
     PUSH ESI                            ; 004037e1
     MOV EAX,dword ptr [ESP + 0xc]       ; 004037e2
     MOV EDX,dword ptr [EAX + 0x4]       ; 004037e6
-    MOV dword ptr [0x00713a88],EDX      ; 004037e9 | g_INT_00713a88
+    MOV dword ptr [0x00713a88],EDX      ; 004037e9 | g_StoredX
     MOV EDX,dword ptr [EAX + 0x8]       ; 004037ef
-    MOV dword ptr [0x00713a8c],EDX      ; 004037f2 | g_INT_00713a8c
+    MOV dword ptr [0x00713a8c],EDX      ; 004037f2 | g_StoredY
     MOV EDX,dword ptr [EAX + 0xc]       ; 004037f8
     MOV ECX,dword ptr [EAX + 0x4]       ; 004037fb
-    MOV dword ptr [0x00713a90],EDX      ; 004037fe | g_INT_00713a90
-    MOV EDX,dword ptr [0x01c51d38]      ; 00403804 | g_INT_01c51d38
+    MOV dword ptr [0x00713a90],EDX      ; 004037fe | g_StoredZ
+    MOV EDX,dword ptr [0x01c51d38]      ; 00403804 | g_CameraOriginX
     SUB EDX,ECX                         ; 0040380a
     MOV EBX,dword ptr [EAX + 0x8]       ; 0040380c
-    MOV dword ptr [0x01c51d2c],EDX      ; 0040380f | g_INT_01c51d2c
-    MOV EDX,dword ptr [0x01c51d3c]      ; 00403815 | g_INT_01c51d3c
+    MOV dword ptr [0x01c51d2c],EDX      ; 0040380f | g_RelativeX
+    MOV EDX,dword ptr [0x01c51d3c]      ; 00403815 | g_CameraOriginY
     SUB EDX,EBX                         ; 0040381b
     MOV ESI,dword ptr [EAX + 0xc]       ; 0040381d
-    MOV dword ptr [0x01c51d30],EDX      ; 00403820 | g_INT_01c51d30
-    MOV EDX,dword ptr [0x01c51d40]      ; 00403826 | g_INT_01c51d40
+    MOV dword ptr [0x01c51d30],EDX      ; 00403820 | g_RelativeY
+    MOV EDX,dword ptr [0x01c51d40]      ; 00403826 | g_CameraOriginZ
     SUB EDX,ESI                         ; 0040382c
     ADD EAX,0x10                        ; 0040382e
-    MOV dword ptr [0x01c51d34],EDX      ; 00403831 | g_INT_01c51d34
+    MOV dword ptr [0x01c51d34],EDX      ; 00403831 | g_RelativeZ
     POP ESI                             ; 00403837
     POP EBX                             ; 00403838
     RET                                 ; 00403839

@@ -18,13 +18,13 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   void* g_PTR_02c9f06c
+;   void* g_CurrentThreadTlsBlock
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c9f06c]                ; 005c50cc | g_PTR_02c9f06c
+    MOV EAX,[0x02c9f06c]                ; 005c50cc | g_CurrentThreadTlsBlock
         ;   Label: crt_unknown.c_FUN_005c50cc
     LEA EAX,[EAX]                       ; 005c50d1
 

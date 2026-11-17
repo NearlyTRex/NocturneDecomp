@@ -9,6 +9,6 @@
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005809c0(void)
 
 {
-  g_BIT_INTEGER32_01c5fae4.dword = 0;
+  g_MouseButtonFlags.dword = 0;
   return;
 }

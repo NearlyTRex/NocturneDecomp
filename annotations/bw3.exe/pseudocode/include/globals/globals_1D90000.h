@@ -11,32 +11,32 @@
 // =============================================================================
 
 // SHuffmanTable[34]
-extern SHuffmanTable g_SHuffmanTable_ARRAY_01d94c98[34];
+extern SHuffmanTable g_HuffmanTables[34];
 
 // char[256]
-extern char g_CHAR_ARRAY_01d94b98[256];
+extern char g_CurrentMp3Filename[256];
 
 // double[12][6]
-extern double g_DOUBLE_ARRAY_ARRAY_01d93518[12][6];
+extern double g_Mp3DctMatrix[12][6];
 
 // double[200]
-extern double g_DOUBLE_ARRAY_01d90418[200];
+extern double g_MpegRequantPowerTable[200];
 extern double g_DOUBLE_ARRAY_01d90a58[200];
 
 // double[36][18]
-extern double g_DOUBLE_ARRAY_ARRAY_01d93758[36][18];
+extern double g_Mp3PolyCoefficients[36][18];
 
 // double[4][36]
-extern double g_DOUBLE_ARRAY_ARRAY_01d93098[4][36];
+extern double g_Mp3WindowTables[4][36];
 
 // double[8]
-extern double g_DOUBLE_ARRAY_01d93018[8];
-extern double g_DOUBLE_ARRAY_01d93058[8];
+extern double g_Mp3AntiAliasCS[8];
+extern double g_Mp3AntiAliasCA[8];
 
 // float
 extern float g_FLOAT_01d91e18;
 
 // int
-extern int g_INT_01d90410;
-extern int g_INT_01d90414;
+extern int g_HuffmanTablesInitialized;
+extern int g_MpegRequantTablesInitialized;
 

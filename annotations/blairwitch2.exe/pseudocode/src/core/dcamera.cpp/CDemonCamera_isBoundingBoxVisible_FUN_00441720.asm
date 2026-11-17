@@ -92,9 +92,9 @@
 ;   float g_FLOAT_005f4dcc = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38b6c
-;   int g_INT_01c38b70
-;   int g_INT_01c38b74
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   int g_INT_01c38b9c
 ;   int g_INT_01c38ba0
 ;   int g_INT_01c38ba4
@@ -173,14 +173,14 @@ section .text
     MOV [0x01c38bb4],EAX                ; 004417e2 | g_INT_01c38bb4
     MOV EAX,dword ptr [EBX + 0x194]     ; 004417e7
     FXCH                                ; 004417ed
-    FISTP dword ptr [0x01c38b6c]        ; 004417ef | g_INT_01c38b6c
+    FISTP dword ptr [0x01c38b6c]        ; 004417ef | g_RelativeX
     MOV [0x01c38bb8],EAX                ; 004417f5 | g_INT_01c38bb8
     MOV EAX,dword ptr [EBX + 0x198]     ; 004417fa
     MOV EBX,dword ptr [0x0060b280]      ; 00441800 | g_CDemonRenderer_PTR_0060b280
     FXCH                                ; 00441806
-    FISTP dword ptr [0x01c38b70]        ; 00441808 | g_INT_01c38b70
+    FISTP dword ptr [0x01c38b70]        ; 00441808 | g_RelativeY
     PUSH EBX                            ; 0044180e | g_CDemonRenderer_01ba5c50
-    FISTP dword ptr [0x01c38b74]        ; 0044180f | g_INT_01c38b74
+    FISTP dword ptr [0x01c38b74]        ; 0044180f | g_RelativeZ
     MOV [0x01c38bbc],EAX                ; 00441815 | g_INT_01c38bbc
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 0044181a
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)

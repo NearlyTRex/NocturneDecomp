@@ -16,7 +16,7 @@ int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00412990(CBatCrea
   
   bVar1 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-            (&(this_ptr->base).base.model,g_INT_ARRAY_007bc74c[0],&CStack_28);
+            (&(this_ptr->base).base.model,g_BatCreatureIndices[0],&CStack_28);
   CStack_1c.x = CStack_28.x;
   *(uint *)((int)&CStack_1c + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + 4);

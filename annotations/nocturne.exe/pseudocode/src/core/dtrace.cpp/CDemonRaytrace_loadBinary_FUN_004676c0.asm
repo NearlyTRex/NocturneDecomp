@@ -26,7 +26,7 @@
 ;   TerminatedCString s_CDemonRaytrace_loadBinar_0057e19a
 ;   float FLOAT_0057e1ca = 8
 ;   float FLOAT_0057e1ce = 0.125
-;   int g_INT_005b6d00 = 0x4
+;   int g_GeoFileFormatVersion = 0x4
 ;   int g_INT_01bc994c
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 00467809 (CONDITIONAL_JUMP)  ; LAB_00467809
     MOV EAX,dword ptr [ESP + 0xc]       ; 004676fd
         ;   Label: LAB_004676fd
-    CMP EAX,dword ptr [0x005b6d00]      ; 00467701 | g_INT_005b6d00
+    CMP EAX,dword ptr [0x005b6d00]      ; 00467701 | g_GeoFileFormatVersion
     JLE 0x0046772c                      ; 00467707
         ;   XREF to: 0046772c (CONDITIONAL_JUMP)  ; LAB_0046772c
     MOV ECX,0x57e100                    ; 00467709 | = "..\\core\\dtrace.cpp"

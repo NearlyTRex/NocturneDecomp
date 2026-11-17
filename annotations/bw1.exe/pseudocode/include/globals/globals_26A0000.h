@@ -11,11 +11,11 @@
 // =============================================================================
 
 // CVector3f[3000]
-extern CVector3f g_CVector3f_ARRAY_026af600[3000];
+extern CVector3f g_ShatterVertexArray[3000];
 
 // CVector3f[5000]
-extern CVector3f g_CVector3f_ARRAY_026a0b9c[5000];
+extern CVector3f g_FloatVertexArray[5000];
 
 // uchar
-extern uchar g_UCHAR_026af5fc;
+extern uchar g_FloatVertexArrayInitialized;
 

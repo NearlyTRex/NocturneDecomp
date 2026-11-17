@@ -17,8 +17,8 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005bcd3b
 ;   int g_INT_005fba18 = 0x140
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
-;   int g_INT_01c5b104
-;   int g_INT_01c5bae0
+;   int g_WindowStackCount
+;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -57,7 +57,7 @@ section .text
     PUSH 0x6a                           ; 0047ed89
     MOV EBX,dword ptr [EAX + 0x41e8]    ; 0047ed8b
     PUSH EAX                            ; 0047ed91
-    MOV dword ptr [0x01c5bae0],EBX      ; 0047ed92 | g_INT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EBX      ; 0047ed92 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047ed98
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     MOV [0x01c5bae4],EAX                ; 0047ed9d | g_INT_01c5bae4
@@ -88,7 +88,7 @@ section .text
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0047eddc
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ESI,EAX                         ; 0047ede1
-    MOV EAX,[0x01c5b104]                ; 0047ede3 | g_INT_01c5b104
+    MOV EAX,[0x01c5b104]                ; 0047ede3 | g_WindowStackCount
     DEC EAX                             ; 0047ede8
     SHL EAX,0x3                         ; 0047ede9
     PUSH 0x3f800000                     ; 0047edec

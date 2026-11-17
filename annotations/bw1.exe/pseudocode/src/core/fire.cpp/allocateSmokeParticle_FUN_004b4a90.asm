@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_01c58a9c
+;   int g_SmokeParticleAllocIndex
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV ECX,dword ptr [0x01c58a9c]      ; 004b4a90 | g_INT_01c58a9c
+    MOV ECX,dword ptr [0x01c58a9c]      ; 004b4a90 | g_SmokeParticleAllocIndex
         ;   Label: core_fire.cpp_allocateSmokeParticle_FUN_004b4a90
     LEA EAX,[ECX*0x4 + 0x0]             ; 004b4a96
     SUB EAX,ECX                         ; 004b4a9d
@@ -24,7 +24,7 @@ section .text
     JL 0x004b4ab7                       ; 004b4ab3
         ;   XREF to: 004b4ab7 (CONDITIONAL_JUMP)  ; LAB_004b4ab7
     XOR ECX,ECX                         ; 004b4ab5
-    MOV dword ptr [0x01c58a9c],ECX      ; 004b4ab7 | g_INT_01c58a9c
+    MOV dword ptr [0x01c58a9c],ECX      ; 004b4ab7 | g_SmokeParticleAllocIndex
         ;   Label: LAB_004b4ab7
     RET                                 ; 004b4abd
 

@@ -21,12 +21,12 @@
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005db17a
 ;   TerminatedCString s_Invalid_bitsPerPixel_005db192
 ;   int g_INT_0061b4a0 = 0x8
-;   int g_INT_01bc11e4
-;   int g_INT_01bc11f0
-;   int g_INT_01bc11f4
-;   int g_INT_01bc1204
-;   void*[1200] g_ARRAY_PTR_01c4354c
-;   undefined4 g_ARRAY_PTR_01c4354c[1]
+;   int g_CurrentDrawColor
+;   int g_UseRGBConversion
+;   int g_OriginalColorValue
+;   int g_PackedPixelColor
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -75,7 +75,7 @@ section .text
     JG 0x0047f660                       ; 0047f60b
         ;   XREF to: 0047f660 (CONDITIONAL_JUMP)  ; LAB_0047f660
     LEA EDI,[ESI + ESI*0x1]             ; 0047f60d
-    MOV EBP,dword ptr [0x01bc11f0]      ; 0047f610 | g_INT_01bc11f0
+    MOV EBP,dword ptr [0x01bc11f0]      ; 0047f610 | g_UseRGBConversion
     LEA EDX,[ESI*0x4 + 0x0]             ; 0047f616
     SHL EBX,0x2                         ; 0047f61d
     MOV dword ptr [ESP],EDX             ; 0047f620
@@ -91,9 +91,9 @@ section .text
     JNZ 0x0047f6a3                      ; 0047f644
         ;   XREF to: 0047f6a3 (CONDITIONAL_JUMP)  ; LAB_0047f6a3
     MOV EDI,EBX                         ; 0047f646
-    MOV CL,byte ptr [0x01bc11e4]        ; 0047f648 | g_INT_01bc11e4
+    MOV CL,byte ptr [0x01bc11e4]        ; 0047f648 | g_CurrentDrawColor
         ;   Label: LAB_0047f648
-    MOV EBX,dword ptr [EDX + 0x1c4354c] ; 0047f64e | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV EBX,dword ptr [EDX + 0x1c4354c] ; 0047f64e | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,0x4                         ; 0047f654
     INC EAX                             ; 0047f657
     MOV byte ptr [ESI + EBX*0x1],CL     ; 0047f658
@@ -110,9 +110,9 @@ section .text
     RET                                 ; 0047f667
     MOV ESI,EBX                         ; 0047f668
         ;   Label: LAB_0047f668
-    MOV BX,word ptr [0x01bc11e4]        ; 0047f66a | g_INT_01bc11e4
+    MOV BX,word ptr [0x01bc11e4]        ; 0047f66a | g_CurrentDrawColor
         ;   Label: LAB_0047f66a
-    MOV ECX,dword ptr [EDX + 0x1c4354c] ; 0047f671 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV ECX,dword ptr [EDX + 0x1c4354c] ; 0047f671 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,0x4                         ; 0047f677
     INC EAX                             ; 0047f67a
     MOV word ptr [ECX + EDI*0x1],BX     ; 0047f67b
@@ -124,9 +124,9 @@ section .text
     MOV EDI,dword ptr [ESP]             ; 0047f685
         ;   Label: LAB_0047f685
     MOV ESI,EBX                         ; 0047f688
-    MOV EBX,dword ptr [0x01bc11e4]      ; 0047f68a | g_INT_01bc11e4
+    MOV EBX,dword ptr [0x01bc11e4]      ; 0047f68a | g_CurrentDrawColor
         ;   Label: LAB_0047f68a
-    MOV ECX,dword ptr [EDX + 0x1c4354c] ; 0047f690 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV ECX,dword ptr [EDX + 0x1c4354c] ; 0047f690 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,0x4                         ; 0047f696
     INC EAX                             ; 0047f699
     MOV dword ptr [ECX + EDI*0x1],EBX   ; 0047f69a
@@ -161,13 +161,13 @@ section .text
     MOV EBP,EDI                         ; 0047f6d7
         ;   Label: LAB_0047f6d7
     MOV EDI,EBX                         ; 0047f6d9
-    MOV EBX,dword ptr [EDX + 0x1c4354c] ; 0047f6db | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV EBX,dword ptr [EDX + 0x1c4354c] ; 0047f6db | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0047f6db
     XOR ESI,ESI                         ; 0047f6e1
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047f6e3 | g_INT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047f6e3 | g_OriginalColorValue
     MOV SI,word ptr [EBX + EBP*0x1]     ; 0047f6e9
     SHR ESI,CL                          ; 0047f6ed
-    MOV ECX,dword ptr [0x01bc1204]      ; 0047f6ef | g_INT_01bc1204
+    MOV ECX,dword ptr [0x01bc1204]      ; 0047f6ef | g_PackedPixelColor
     ADD EDX,0x4                         ; 0047f6f5
     AND ESI,ECX                         ; 0047f6f8
     INC EAX                             ; 0047f6fa
@@ -186,14 +186,14 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 0047f70e
     MOV EDI,EBX                         ; 0047f712
     MOV EBP,dword ptr [ESP + 0x4]       ; 0047f714
-    MOV ESI,dword ptr [EDX + 0x1c4354c] ; 0047f718 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
+    MOV ESI,dword ptr [EDX + 0x1c4354c] ; 0047f718 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0047f718
     ADD ESI,EBP                         ; 0047f71e
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047f720 | g_INT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047f720 | g_OriginalColorValue
     MOV EBX,dword ptr [ESI]             ; 0047f726
     SHR EBX,CL                          ; 0047f728
     MOV ECX,EBX                         ; 0047f72a
-    MOV EBX,dword ptr [0x01bc1204]      ; 0047f72c | g_INT_01bc1204
+    MOV EBX,dword ptr [0x01bc1204]      ; 0047f72c | g_PackedPixelColor
     ADD EDX,0x4                         ; 0047f732
     AND ECX,EBX                         ; 0047f735
     INC EAX                             ; 0047f737

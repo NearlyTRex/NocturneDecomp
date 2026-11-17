@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_conveyor_cpp_CConveyor_getActorType_FUN_0043b040(CConveyor *this_ptr)
 
 {
-  return &g_CConveyorActorType_0077bcc8;
+  return &g_CConveyorClassInfo;
 }

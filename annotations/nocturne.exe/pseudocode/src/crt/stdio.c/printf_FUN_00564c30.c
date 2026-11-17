@@ -13,6 +13,6 @@ int __cdecl printf(char *format,...)
   byte *local_4;
   
   local_4 = &stack0x00000008;
-  iVar1 = FUN_0056ae10(&g_FILE_005c18ae,format,&local_4);
+  iVar1 = FUN_0056ae10(&g_StdoutLogFile,format,&local_4);
   return iVar1;
 }

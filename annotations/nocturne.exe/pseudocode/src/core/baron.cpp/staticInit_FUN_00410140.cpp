@@ -10,13 +10,12 @@ void __cdecl core_baron_cpp_staticInit_FUN_00410140(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CBaronActorType_00764330,"CBaron",
-             core_baron_cpp_factoryFuncBaron_FUN_004101a0,&g_INT_005acf3c,2,
-             &g_CHeroActorType_01cae0ec);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(&g_CKeyFramedModelInstance_0076436c);
+            (&g_CBaronClassInfo,"CBaron",core_baron_cpp_factoryFuncBaron_FUN_004101a0,
+             &g_CBaronClassVersion,2,&g_CHeroClassInfo);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(&g_CKeyFramedModelInstanceInstance);
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CBaronWeaponActorType_007644e8,"CBaronWeapon",
-             core_baron_cpp_factoryFuncBaronWeapon_FUN_00411320,&g_INT_005acf58,1,
-             &g_CWeaponActorType_02ddf970);
+            (&g_CBaronWeaponClassInfo,"CBaronWeapon",
+             core_baron_cpp_factoryFuncBaronWeapon_FUN_00411320,&g_CBaronWeaponClassVersion,1,
+             &g_CWeaponClassInfo);
   return;
 }

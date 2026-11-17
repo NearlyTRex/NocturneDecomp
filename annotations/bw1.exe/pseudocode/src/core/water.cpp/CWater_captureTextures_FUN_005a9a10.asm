@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   SMRGLTextureBasic[16] g_SMRGLTextureBasic_ARRAY_00625c9c
-;   undefined4 g_SMRGLTextureBasic_ARRAY_00625c9c[1].base.type
-;   SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_00625e1c
+;   SMRGLTextureBasic[16] g_WaterTextures
+;   undefined4 g_WaterTextures[1].base.type
+;   SMRGLPrimitiveQuad g_WaterRenderQuad
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
@@ -26,9 +26,9 @@ section .text
     PUSH EBX                            ; 005a9a10
         ;   Label: core_water.cpp_CWater_captureTextures_FUN_005a9a10
     PUSH ESI                            ; 005a9a11
-    MOV EBX,0x625c9c                    ; 005a9a12 | g_SMRGLTextureBasic_ARRAY_00625c9c
-    LEA ESI,[EBX + 0x180]               ; 005a9a17 | g_SMRGLPrimitiveQuad_00625e1c
-    PUSH EBX                            ; 005a9a1d | g_SMRGLTextureBasic_ARRAY_00625c9c | g_SMRGLTextureBasic_ARRAY_00625c9c[1].base.type
+    MOV EBX,0x625c9c                    ; 005a9a12 | g_WaterTextures
+    LEA ESI,[EBX + 0x180]               ; 005a9a17 | g_WaterRenderQuad
+    PUSH EBX                            ; 005a9a1d | g_WaterTextures | g_WaterTextures[1].base.type
         ;   Label: LAB_005a9a1d
     MOV EDX,dword ptr [0x00612560]      ; 005a9a1e | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 005a9a24 | g_CDemonRenderer_01bc120c

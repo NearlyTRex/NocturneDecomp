@@ -63,7 +63,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *t
       this_ptr_01 = (CLadder *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
                               (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
-                               g_CLadderActorType_01cc30e8.name_hash);
+                               g_CLadderClassInfo.name_hash);
       if ((this_ptr_01 != (CLadder *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               (this_ptr_01->base).location.position.y) <= (float)2)) {

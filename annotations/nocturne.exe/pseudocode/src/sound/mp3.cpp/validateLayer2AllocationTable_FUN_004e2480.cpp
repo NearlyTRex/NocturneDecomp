@@ -19,12 +19,11 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004e2480(SMpegFrame 
   
   pSVar2 = frame->header;
   iVar3 = pSVar2->mpeg_version;
-  iVar5 = g_INT_ARRAY_ARRAY_ARRAY_005bbc88[iVar3 + -1][pSVar2->layer + 2][pSVar2->bitrate_index] /
+  iVar5 = g_MpegBitrateTable[iVar3 + -1][pSVar2->layer + 2][pSVar2->bitrate_index] /
           frame->channel_count;
   iVar4 = frame->sblimit;
   uVar7 = 0x4e24ed;
-  dVar6 = round
-                    (g_DOUBLE_ARRAY_ARRAY_005bbc48[iVar3][pSVar2->sampling_rate_index]);
+  dVar6 = round(g_MpegSampleRateTable[iVar3][pSVar2->sampling_rate_index]);
   iVar1 = (int)ROUND(dVar6);
   if (iVar3 == 1) {
     if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
@@ -52,6 +51,6 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004e2480(SMpegFrame 
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 417;
   core_main_c_displayErrorAndQuit_FUN_004c8440
-            ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CHAR_ARRAY_01cd8b28,uVar7);
+            ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename,uVar7);
   return iVar4;
 }

@@ -31,19 +31,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
     g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c3eb50->max_char_width;
   g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
   ;
-  if (4 < g_INT_01c3eb5c) {
+  if (4 < g_WindowStackCount) {
     g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
     g_INT_01d1d404 = 0x864;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open another window!");
   }
-  iVar1 = g_INT_01c3eb5c * 0x1f8;
+  iVar1 = g_WindowStackCount * 0x1f8;
   iVar2 = (int)((g_INT_0061b498 + (g_INT_0061b498 >> 0x1f) * -0x80) -
                (uint)((g_INT_0061b498 >> 0x1f) << 6 < 0)) >> 7;
   iVar3 = g_INT_0061b49c / 0x60;
-  g_INT_01c3eb5c = g_INT_01c3eb5c + 1;
+  g_WindowStackCount = g_WindowStackCount + 1;
   left = left - iVar2;
   top = top - iVar3;
   right = right + iVar2;
@@ -59,7 +59,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
   if (text_content != (char *)0x0) {
     buffer = (char *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x48);
     iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
-                      (g_CBitFont_PTR_01c3eb50,text_content,g_CHAR_ARRAY_01c3dbb0,0x14,200,
+                      (g_CBitFont_PTR_01c3eb50,text_content,g_TextWrapBuffer,0x14,200,
                        (right - left) + iVar2 * -2);
     iVar9 = 0;
     if (0 < iVar4) {
@@ -95,10 +95,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
   }
   *(uint *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1d8) = 0;
   if ((window_flags & 1) == 0) {
-    if (g_INT_01c3eb5c == 1) {
+    if (g_WindowStackCount == 1) {
       shape_edittool_cpp_CEditorTools_backupScreen_FUN_00494030(this_ptr);
     }
-    if (g_ARRAY_PTR_01c4354c[0] != (byte *)0x0) {
+    if (g_ScreenBufferArray[0] != (byte *)0x0) {
       *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1e4) = g_INT_0061b498;
       iVar4 = *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1e4) * g_INT_0061b4a0;
       *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1e8) = g_INT_0061b49c;
@@ -115,7 +115,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
           iVar9 = *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1dc) * g_INT_0061b4a0;
           iVar5 = iVar9 >> 0x1f;
           puVar8 = (uint *)
-                   (g_ARRAY_PTR_01c4354c
+                   (g_ScreenBufferArray
                     [*(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1e0) + iVar4] +
                    ((int)((iVar9 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3));
           puVar10 = local_18;
@@ -137,14 +137,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
   }
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x10) = g_INT_01c4f008;
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x14) = g_INT_01c4f00c;
-  *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x18) = g_INT_01c4f010;
+  *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x18) = g_ClipRight;
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1c) = g_INT_01c4f014;
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x30) = g_INT_01c4eff8;
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x34) = g_INT_01c4effc;
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x38) = g_INT_01c4f000;
   *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x3c) = g_INT_01c4f004;
-  *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x40) = g_INT_01c4f018;
-  *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x44) = g_INT_01c4f01c;
+  *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x40) = g_ViewportWidth;
+  *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x44) = g_ViewportHeight;
   engine_mini3d_cpp_getRenderViewport_FUN_00511980
             ((float *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x20),
              (float *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x24),

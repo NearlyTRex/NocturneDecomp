@@ -5,18 +5,18 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CGraveActorType_01cadf44 = {};
-CDemonActorType g_CGunActorType_01cadfdc = {};
-CDemonActorType g_CHaystackActorType_01cae05c = {};
-CDemonActorType g_CHealthItemActorType_01cae098 = {};
-CDemonActorType g_CHeroActorType_01cae0ec = {};
-CDemonActorType g_CHeroPlaceholderActorType_01cae128 = {};
-CDemonActorType g_CHiramActorType_01cae164 = {};
-CDemonActorType g_CHostageActorType_01cae1a4 = {};
-CDemonActorType g_CHotDemonActorType_01cae210 = {};
-CDemonActorType g_CHighPriestOfGardathActorType_01cae24c = {};
-CDemonActorType g_CIcePickActorType_01cae2d0 = {};
-CDemonActorType g_CImpActorType_01cae33c = {};
+CDemonActorType g_CGraveClassInfo = {};
+CDemonActorType g_CGunClassInfo = {};
+CDemonActorType g_CHaystackClassInfo = {};
+CDemonActorType g_CHealthItemClassInfo = {};
+CDemonActorType g_CHeroClassInfo = {};
+CDemonActorType g_CHeroPlaceholderClassInfo = {};
+CDemonActorType g_CHiramClassInfo = {};
+CDemonActorType g_CHostageClassInfo = {};
+CDemonActorType g_CHotDemonClassInfo = {};
+CDemonActorType g_CHighPriestOfGardathClassInfo = {};
+CDemonActorType g_CIcePickClassInfo = {};
+CDemonActorType g_CImpClassInfo = {};
 
 // CGround
 CGround g_CGroundInstance = {};
@@ -25,30 +25,30 @@ CGround g_CGroundInstance = {};
 CHero* g_HeroActors[4] = {};
 
 // CIni
-CIni g_CIni_01cae378 = {};
+CIni g_CIniInstance = {};
 
 // char[10][256]
-char g_CHAR_ARRAY_ARRAY_01cae580[10][256] = {};
-char g_CHAR_ARRAY_ARRAY_01caef80[10][256] = {};
-char g_CHAR_ARRAY_ARRAY_01caf980[10][256] = {};
+char g_InventoryWrappedTextLines[10][256] = {};
+char g_InventoryWrappedTextLines2[10][256] = {};
+char g_InventoryWrappedTextLines3[10][256] = {};
 
 // char[256]
 char g_CHAR_ARRAY_01cae380[256] = {};
 char g_CHAR_ARRAY_01cae480[256] = {};
 
 // int
-int g_INT_01cae0d4 = {};
+int g_HeroCount = {};
 int g_LocalHeroIndex = {};
-int g_INT_01cae1a0 = {};
-int g_INT_01cae37c = {};
+int g_HostageGunUpMotionIndex = {};
+int g_FirstTimeFlag = {};
 
 // int[12]
-int g_INT_ARRAY_01cae1e0[12] = {};
-int g_INT_ARRAY_01cae30c[12] = {};
+int g_HotDemonIndices[12] = {};
+int g_ImpIndices[12] = {};
 
 // int[17]
-int g_INT_ARRAY_01cae018[17] = {};
+int g_HaystackIndices[17] = {};
 
 // int[18]
-int g_INT_ARRAY_01cae288[18] = {};
+int g_IcePickIndices[18] = {};
 

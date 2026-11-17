@@ -20,7 +20,7 @@
 ;   double g_DOUBLE_02648438
 ;   double g_DOUBLE_02648448
 ;   int g_INT_026484b8
-;   int g_INT_0264901c
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -33,7 +33,7 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_0054e820
     SUB ESP,0x18                        ; 0054e821
     MOV EBX,dword ptr [ESP + 0x20]      ; 0054e824
-    CMP dword ptr [0x0264901c],0x0      ; 0054e828 | g_INT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054e828 | g_SoundLockCount
     JLE 0x0054e843                      ; 0054e82f
         ;   XREF to: 0054e843 (CONDITIONAL_JUMP)  ; LAB_0054e843
     TEST byte ptr [EBX + 0x4c],0x1      ; 0054e831

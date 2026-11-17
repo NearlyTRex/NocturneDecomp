@@ -41,7 +41,7 @@ CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
   pCVar4->periodic_timer = 10.0;
   fVar3 = 10.0f;
   pCVar4->fade_alpha = 0;
-  this_ptr_00 = g_CEventList_PTR_005fba60;
+  this_ptr_00 = g_CEventListPtr;
   pCVar4->corona_added = 0;
   (pCVar4->base).base.ai_detection_range_min = fVar1;
   (pCVar4->base).base.ai_detection_range_max = fVar2;

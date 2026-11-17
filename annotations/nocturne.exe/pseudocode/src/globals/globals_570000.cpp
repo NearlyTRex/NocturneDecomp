@@ -10,7 +10,7 @@ char CHAR_00h_0057e72c = '\0';
 char CHAR_00h_0057ea91 = '\0';
 char CHAR_00h_0057ea92 = '\0';
 char g_CHAR_0057ed1b = '\0';
-char g_CHAR_0057f0fa = '\0';
+char g_DefaultButtonText = '\0';
 char CHAR_00h_0057f586 = '\0';
 
 // dword

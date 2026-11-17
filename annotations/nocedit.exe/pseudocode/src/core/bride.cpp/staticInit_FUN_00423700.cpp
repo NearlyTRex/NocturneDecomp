@@ -9,12 +9,12 @@
 void __cdecl core_bride_cpp_staticInit_FUN_00423700(void)
 
 {
-  CVector3f_00822c88.x = -0.6;
-  CVector3f_00822c88.y = 0.0;
-  CVector3f_00822c88.z = 0.0;
-  CVector3f_00822c94.x = 0.6;
-  CVector3f_00822c94.y = 0.0;
-  CVector3f_00822c94.z = 0.0;
+  g_BrideOffsetMinusX.x = -0.6;
+  g_BrideOffsetMinusX.y = 0.0;
+  g_BrideOffsetMinusX.z = 0.0;
+  g_BrideOffsetPlusX.x = 0.6;
+  g_BrideOffsetPlusX.y = 0.0;
+  g_BrideOffsetPlusX.z = 0.0;
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CBrideClassInfo,"CBride",core_bride_cpp_factoryFuncBride_FUN_00423760,
              &g_CBrideClassVersion,4,&g_CEnemyClassInfo);

@@ -46,26 +46,25 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_process_FUN_004ac6b0(CFieldNotes *thi
     return;
   }
   if ((g_CGamePtr->letterbox_mode == 0) &&
-     ((*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIM_LBUTTON),
-     (g_BIT_INTEGER32_01c5fae4.bytes[0] & 1) != 0)) {
-    iVar2 = core_flashlit_cpp_hitTestSectionTab_FUN_004a80d0(g_INT_01c5fadc,g_INT_01c5fae0);
+     ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON),
+     (g_MouseButtonFlags.bytes[0] & 1) != 0)) {
+    iVar2 = core_flashlit_cpp_hitTestSectionTab_FUN_004a80d0(g_MouseX,g_MouseY);
     if (-1 < iVar2) {
       g_INT_01d19ba8 = SNotesSection_ARRAY_01d0d214[iVar2].first_page;
     }
-    iVar2 = core_flashlit_cpp_hitTestPageArrows_FUN_004a8180(g_INT_01c5fadc,g_INT_01c5fae0);
+    iVar2 = core_flashlit_cpp_hitTestPageArrows_FUN_004a8180(g_MouseX,g_MouseY);
     g_INT_01d19ba8 = g_INT_01d19ba8 + iVar2;
-    if ((((g_INT_005fe390 <= g_INT_01c5fadc) && (g_INT_005fe394 <= g_INT_01c5fae0)) &&
-        (g_INT_01c5fadc < g_INT_005fe390 + CAlphaBitmap_01d19cc4.width)) &&
-       (g_INT_01c5fae0 < CAlphaBitmap_01d19cc4.height + g_INT_005fe394)) {
+    if ((((g_INT_005fe390 <= g_MouseX) && (g_INT_005fe394 <= g_MouseY)) &&
+        (g_MouseX < g_INT_005fe390 + CAlphaBitmap_01d19cc4.width)) &&
+       (g_MouseY < CAlphaBitmap_01d19cc4.height + g_INT_005fe394)) {
       this_ptr->is_displayed = 0;
     }
     pSVar1 = core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a8d50
-                       (g_STextViewInstance.pages + g_INT_01d19ba8,g_INT_01c5fadc,g_INT_01c5fae0);
+                       (g_STextViewInstance.pages + g_INT_01d19ba8,g_MouseX,g_MouseY);
     if (pSVar1 != (SPageResource *)0x0) {
-      (**(code **)((int)pSVar1->vtable + 8))
-                (pSVar1,1,g_INT_01c5fadc - pSVar1->x,g_INT_01c5fae0 - pSVar1->y);
+      (**(code **)((int)pSVar1->vtable + 8))(pSVar1,1,g_MouseX - pSVar1->x,g_MouseY - pSVar1->y);
     }
-    g_BIT_INTEGER32_01c5fae4.bytes[0] = g_BIT_INTEGER32_01c5fae4.bytes[0] & 0xfe;
+    g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
     return;
   }
   return;

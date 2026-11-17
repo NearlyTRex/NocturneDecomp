@@ -14,8 +14,8 @@
 ;   TerminatedCString s_conout_005991f4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   HANDLE g_HANDLE_005c20d0 = ffffffff
-;   HANDLE g_HANDLE_005c20d4 = ffffffff
+;   HANDLE g_ConsoleInputHandle = ffffffff
+;   HANDLE g_ConsoleOutputHandle = ffffffff
 ;
 ; Called Functions:
 ;   CreateFileA
@@ -28,7 +28,7 @@ section .text
     PUSH 0x0                            ; 0057146c
         ;   Label: crt_stdio.c_InitializeConsoleHandles_FUN_0057146c
     CALL dword ptr [0x005c1ac0]         ; 0057146e | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
-    MOV EDX,dword ptr [0x005c20d0]      ; 00571474 | g_HANDLE_005c20d0
+    MOV EDX,dword ptr [0x005c20d0]      ; 00571474 | g_ConsoleInputHandle
     ADD ESP,0x4                         ; 0057147a
     CMP EDX,-0x1                        ; 0057147d
     JNZ 0x005714a5                      ; 00571480
@@ -41,8 +41,8 @@ section .text
     PUSH 0x80000000                     ; 0057148f
     PUSH 0x5991ec                       ; 00571494 | = "conin$"
     CALL dword ptr CS:[0x575498]        ; 00571499 | PTR_CreateFileA_00575498
-    MOV [0x005c20d0],EAX                ; 005714a0 | g_HANDLE_005c20d0
-    CMP dword ptr [0x005c20d4],-0x1     ; 005714a5 | g_HANDLE_005c20d4
+    MOV [0x005c20d0],EAX                ; 005714a0 | g_ConsoleInputHandle
+    CMP dword ptr [0x005c20d4],-0x1     ; 005714a5 | g_ConsoleOutputHandle
         ;   Label: LAB_005714a5
     JNZ 0x005714d1                      ; 005714ac
         ;   XREF to: 005714d1 (CONDITIONAL_JUMP)  ; LAB_005714d1
@@ -54,7 +54,7 @@ section .text
     PUSH 0x40000000                     ; 005714bb
     PUSH 0x5991f4                       ; 005714c0 | = "conout$"
     CALL dword ptr CS:[0x575498]        ; 005714c5 | PTR_CreateFileA_00575498
-    MOV [0x005c20d4],EAX                ; 005714cc | g_HANDLE_005c20d4
+    MOV [0x005c20d4],EAX                ; 005714cc | g_ConsoleOutputHandle
     PUSH 0x0                            ; 005714d1
         ;   Label: LAB_005714d1
     CALL dword ptr [0x005c1ac4]         ; 005714d3 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4

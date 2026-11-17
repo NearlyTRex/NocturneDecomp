@@ -98,7 +98,7 @@ section .text
     LEA ESI,[EBX + 0x88]                ; 004a3980
     PUSH ESI                            ; 004a3986
     CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460 ; 004a3987
-        ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap * this_ptr, int param_2, int param_3)
+        ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004a398c
     PUSH 0x0                            ; 004a398f
     PUSH ESI                            ; 004a3991

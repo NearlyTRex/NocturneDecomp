@@ -227,7 +227,7 @@ LAB_004e922e:
         core_menu_cpp_calibrateGamepad_FUN_004e7dc0();
       }
     }
-    iVar4 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {
       if (g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD) {
         return;

@@ -14,12 +14,12 @@
 ;   TerminatedCString s_CGame_setGameRes_Unable_005e175d
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
-;   CBitFont* g_CBitFont_PTR_0152d248
+;   CBitFont* g_SmallEditorFont
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
 ;   int g_INT_01cd0c34
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   undefined4 g_CHAR_PTR_ARRAY_01d1f5b8[7]
+;   undefined4 g_GraphicsMenuTextPointers[7]
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0044cc30
@@ -38,7 +38,7 @@ section .text
     PUSH EDI                            ; 004cf432
     PUSH EBP                            ; 004cf433
     MOV EBX,dword ptr [ESP + 0x14]      ; 004cf434
-    MOV EDX,dword ptr [0x01d1f5d4]      ; 004cf438 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
+    MOV EDX,dword ptr [0x01d1f5d4]      ; 004cf438 | g_GraphicsMenuTextPointers[7]
     TEST EDX,EDX                        ; 004cf43e
     JNZ 0x004cf4ff                      ; 004cf440
         ;   XREF to: 004cf4ff (CONDITIONAL_JUMP)  ; LAB_004cf4ff
@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 004cf454 (CONDITIONAL_JUMP)  ; LAB_004cf454
     JMP 0x004cf4bc                      ; 004cf51c
         ;   XREF to: 004cf4bc (UNCONDITIONAL_JUMP)  ; LAB_004cf4bc
-    MOV EAX,[0x0152d248]                ; 004cf51e | g_CBitFont_PTR_0152d248
+    MOV EAX,[0x0152d248]                ; 004cf51e | g_SmallEditorFont
         ;   Label: LAB_004cf51e
     MOV [0x01c3eb50],EAX                ; 004cf523 | g_CBitFont_PTR_01c3eb50
     JMP 0x004cf4e3                      ; 004cf528

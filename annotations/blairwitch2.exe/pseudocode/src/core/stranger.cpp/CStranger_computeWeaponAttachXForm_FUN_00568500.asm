@@ -254,12 +254,12 @@
 ;   double g_DOUBLE_005eb95d = 0.700000000000000
 ;   double g_DOUBLE_005eb965 = 0.300000000000000
 ;   float g_FLOAT_005eb96d = 0.3330000
-;   undefined4 g_CDemonActorType_007bcc4c.name_hash
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   undefined4 g_INT_ARRAY_0264be30[13]
-;   undefined4 g_INT_ARRAY_0264be30[14]
-;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_StrangerIndices[13]
+;   undefined4 g_StrangerIndices[14]
+;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -339,7 +339,7 @@ section .text
     CMP dword ptr [EBP + 0x8e],0x0      ; 005685ad
     JNZ 0x00568ce0                      ; 005685b4
         ;   XREF to: 00568ce0 (CONDITIONAL_JUMP)  ; LAB_00568ce0
-    PUSH 0x265370c                      ; 005685ba | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005685ba | g_ZeroVector
     PUSH 0x264be20                      ; 005685bf
     LEA EAX,[EBP + 0xfffff5a2]          ; 005685c4
     PUSH EAX                            ; 005685ca
@@ -841,7 +841,7 @@ section .text
     LEA ESI,[EBP + 0xfffffb72]          ; 00568cd5
     JMP 0x005686a4                      ; 00568cdb
         ;   XREF to: 005686a4 (UNCONDITIONAL_JUMP)  ; LAB_005686a4
-    PUSH 0x265370c                      ; 00568ce0 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00568ce0 | g_ZeroVector
         ;   Label: LAB_00568ce0
     PUSH 0x264be14                      ; 00568ce5
     LEA EAX,[EBP + 0xfffffba2]          ; 00568cea
@@ -914,7 +914,7 @@ section .text
     CMP dword ptr [EBX + 0x2d04],0xe    ; 00568dec
     JZ 0x00569225                       ; 00568df3
         ;   XREF to: 00569225 (CONDITIONAL_JUMP)  ; LAB_00569225
-    MOV EAX,[0x007bcc84]                ; 00568df9 | g_CDemonActorType_007bcc4c.name_hash
+    MOV EAX,[0x007bcc84]                ; 00568df9 | g_CLightActorClassInfo.name_hash
     PUSH EAX                            ; 00568dfe
     MOV EDX,dword ptr [EBP + 0x8a]      ; 00568dff
     PUSH EDX                            ; 00568e05
@@ -1208,7 +1208,7 @@ section .text
     FSTP float ptr [EBP + 0xfffff56e]   ; 0056921a
     JMP 0x005686a7                      ; 00569220
         ;   XREF to: 005686a7 (UNCONDITIONAL_JUMP)  ; LAB_005686a7
-    MOV ESI,dword ptr [0x0264be68]      ; 00569225 | g_INT_ARRAY_0264be30[14]
+    MOV ESI,dword ptr [0x0264be68]      ; 00569225 | g_StrangerIndices[14]
         ;   Label: LAB_00569225
     LEA EAX,[ESI*0x4 + 0x0]             ; 0056922b
     SUB EAX,ESI                         ; 00569232
@@ -1216,7 +1216,7 @@ section .text
     SHL EAX,0x4                         ; 00569237
     ADD EAX,ECX                         ; 0056923a
     PUSH EAX                            ; 0056923c
-    PUSH 0x265370c                      ; 0056923d | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0056923d | g_ZeroVector
     LEA ESI,[EBP + 0xfffffe36]          ; 00569242
     LEA EDI,[EBP + 0xfffffef6]          ; 00569248
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0056924e
@@ -1225,7 +1225,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00569259
     MOVSD ES:EDI,ESI                    ; 0056925a
     MOVSD ES:EDI,ESI                    ; 0056925b
-    MOV ESI,dword ptr [0x0264be64]      ; 0056925c | g_INT_ARRAY_0264be30[13]
+    MOV ESI,dword ptr [0x0264be64]      ; 0056925c | g_StrangerIndices[13]
     LEA EAX,[ESI*0x4 + 0x0]             ; 00569262
     SUB EAX,ESI                         ; 00569269
     MOV ESI,dword ptr [EBP + 0x62]      ; 0056926b
@@ -1233,7 +1233,7 @@ section .text
     ADD ESP,0x8                         ; 00569271
     ADD EAX,ESI                         ; 00569274
     PUSH EAX                            ; 00569276
-    PUSH 0x265370c                      ; 00569277 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00569277 | g_ZeroVector
     LEA ESI,[EBP + 0xfffffe5a]          ; 0056927c
     LEA EDI,[EBP + 0x16]                ; 00569282
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00569285

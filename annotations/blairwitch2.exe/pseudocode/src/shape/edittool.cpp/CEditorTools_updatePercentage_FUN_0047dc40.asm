@@ -38,17 +38,17 @@
 ;   TerminatedCString s_CEditorTools_updatePerce_005d22bc
 ;   TerminatedCString s_d_complete_005d22f3
 ;   TerminatedCString s_d_02d_elapsed_approximat_005d2301
-;   double g_DOUBLE_005d2337 = 100
+;   double g_PercentageMultiplier = 100
 ;   double g_DOUBLE_005d233f = 0.5
-;   double g_DOUBLE_005d2347 = 8.47710503472222E-7
-;   double g_DOUBLE_005d234f = 5
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01c2559c
+;   double g_TimeScalingFactor = 8.47710503472222E-7
+;   double g_TimeDisplayThreshold = 5
+;   CBitFont* g_EditorFont
+;   int g_WindowStackCount
 ;   int g_INT_01c25f7c
 ;   int g_INT_01c25f84
-;   int g_INT_01c263b8
-;   int g_INT_01c263c4
-;   int g_INT_01c263c8
+;   int g_WindowStatusTextColor
+;   int g_ProgressBarBackgroundColor
+;   int g_ProgressBarFillColor
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -81,7 +81,7 @@ section .text
     MOV EBP,ESP                         ; 0047dc44
     SUB ESP,0x4c                        ; 0047dc46
     AND ESP,0xfffffff8                  ; 0047dc49
-    CMP dword ptr [0x01c2559c],0x1      ; 0047dc4c | g_INT_01c2559c
+    CMP dword ptr [0x01c2559c],0x1      ; 0047dc4c | g_WindowStackCount
     JL 0x0047e11f                       ; 0047dc53
         ;   XREF to: 0047e11f (CONDITIONAL_JUMP)  ; LAB_0047e11f
     FLD float ptr [EBP + 0x1c]          ; 0047dc59
@@ -117,7 +117,7 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 0047dc91
     FLD float ptr [ESP + 0xc]           ; 0047dc95
         ;   Label: LAB_0047dc95
-    FMUL double ptr [0x005d2337]        ; 0047dc99 | g_DOUBLE_005d2337
+    FMUL double ptr [0x005d2337]        ; 0047dc99 | g_PercentageMultiplier
     FADD double ptr [0x005d233f]        ; 0047dc9f | g_DOUBLE_005d233f
     CALL crt_math.c_round_FUN_005b7ff0  ; 0047dca5
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -126,7 +126,7 @@ section .text
         ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EBX,EAX                         ; 0047dcb3
     MOV dword ptr [ESP + 0x30],EAX      ; 0047dcb5
-    MOV EAX,[0x01c2559c]                ; 0047dcb9 | g_INT_01c2559c
+    MOV EAX,[0x01c2559c]                ; 0047dcb9 | g_WindowStackCount
     DEC EAX                             ; 0047dcbe
     SHL EAX,0x3                         ; 0047dcbf
     MOV EDX,EAX                         ; 0047dcc2
@@ -158,15 +158,15 @@ section .text
     PUSH EAX                            ; 0047dd11
     PUSH 0x5d22f3                       ; 0047dd12 | = "%d%% complete"
     PUSH -0x1                           ; 0047dd17
-    MOV EDX,dword ptr [0x01c263b8]      ; 0047dd19 | g_INT_01c263b8
+    MOV EDX,dword ptr [0x01c263b8]      ; 0047dd19 | g_WindowStatusTextColor
     PUSH EDX                            ; 0047dd1f
     MOV ECX,dword ptr [0x01c35e4c]      ; 0047dd20 | g_INT_01c35e4c
     PUSH ECX                            ; 0047dd26
-    MOV EBX,dword ptr [0x01c35e50]      ; 0047dd27 | g_INT_01c35e50
+    MOV EBX,dword ptr [0x01c35e50]      ; 0047dd27 | g_ClipRight
     PUSH EBX                            ; 0047dd2d
     MOV ESI,dword ptr [0x01c35e48]      ; 0047dd2e | g_INT_01c35e48
     PUSH ESI                            ; 0047dd34
-    MOV EDI,dword ptr [0x01c25590]      ; 0047dd35 | g_CBitFont_PTR_01c25590
+    MOV EDI,dword ptr [0x01c25590]      ; 0047dd35 | g_EditorFont
     PUSH EDI                            ; 0047dd3b
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0 ; 0047dd3c
         ;   XREF to: 004a93f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -174,7 +174,7 @@ section .text
     MOV EAX,[0x01c25f7c]                ; 0047dd47 | g_INT_01c25f7c
     MOV EDX,dword ptr [0x01c35e4c]      ; 0047dd4c | g_INT_01c35e4c
     ADD EAX,EAX                         ; 0047dd52
-    MOV ESI,dword ptr [0x01c35e50]      ; 0047dd54 | g_INT_01c35e50
+    MOV ESI,dword ptr [0x01c35e50]      ; 0047dd54 | g_ClipRight
     ADD EAX,EDX                         ; 0047dd5a
     ADD ESP,0x20                        ; 0047dd5c
     LEA EDI,[EAX + 0x1]                 ; 0047dd5f
@@ -189,10 +189,10 @@ section .text
     MOV dword ptr [ESP + 0x28],EDI      ; 0047dd77
     MOV dword ptr [ESP + 0x44],EAX      ; 0047dd7b
     MOV dword ptr [ESP + 0x24],EAX      ; 0047dd7f
-    MOV EAX,[0x01c263c4]                ; 0047dd83 | g_INT_01c263c4
+    MOV EAX,[0x01c263c4]                ; 0047dd83 | g_ProgressBarBackgroundColor
     MOV EDX,dword ptr [0x01c25f84]      ; 0047dd88 | g_INT_01c25f84
     MOV dword ptr [ESP + 0x38],EAX      ; 0047dd8e
-    MOV EAX,[0x01c263cc]                ; 0047dd92 | g_INT_01c263cc
+    MOV EAX,[0x01c263cc]                ; 0047dd92 | g_ProgressBarBorderColor
     TEST EDX,EDX                        ; 0047dd97
     JZ 0x0047e15f                       ; 0047dd99
         ;   XREF to: 0047e15f (CONDITIONAL_JUMP)  ; LAB_0047e15f
@@ -343,7 +343,7 @@ section .text
     LEA EAX,[ESI + -0x1]                ; 0047df3a
     MOV EDX,dword ptr [ESP + 0x44]      ; 0047df3d
         ;   Label: LAB_0047df3d
-    MOV ESI,dword ptr [0x01c263c8]      ; 0047df41 | g_INT_01c263c8
+    MOV ESI,dword ptr [0x01c263c8]      ; 0047df41 | g_ProgressBarFillColor
     MOV dword ptr [ESP + 0x1c],EDI      ; 0047df47
     MOV dword ptr [ESP + 0x20],EAX      ; 0047df4b
     MOV dword ptr [ESP + 0x18],EDX      ; 0047df4f
@@ -388,7 +388,7 @@ section .text
         ;   Label: LAB_0047dfc6
     JLE 0x0047e0ed                      ; 0047dfcb
         ;   XREF to: 0047e0ed (CONDITIONAL_JUMP)  ; LAB_0047e0ed
-    MOV EAX,[0x01c2559c]                ; 0047dfd1 | g_INT_01c2559c
+    MOV EAX,[0x01c2559c]                ; 0047dfd1 | g_WindowStackCount
     DEC EAX                             ; 0047dfd6
     SHL EAX,0x3                         ; 0047dfd7
     MOV EBX,EAX                         ; 0047dfda
@@ -400,10 +400,10 @@ section .text
     SUB EAX,EBX                         ; 0047dfed
     MOV dword ptr [ESP + 0x48],EAX      ; 0047dfef
     FILD dword ptr [ESP + 0x48]         ; 0047dff3
-    FMUL double ptr [0x005d2347]        ; 0047dff7 | g_DOUBLE_005d2347
+    FMUL double ptr [0x005d2347]        ; 0047dff7 | g_TimeScalingFactor
     FST float ptr [ESP + 0x8]           ; 0047dffd
     FST double ptr [ESP]                ; 0047e001
-    FCOMP double ptr [0x005d234f]       ; 0047e004 | g_DOUBLE_005d234f
+    FCOMP double ptr [0x005d234f]       ; 0047e004 | g_TimeDisplayThreshold
     FNSTSW AX                           ; 0047e00a
     SAHF                                ; 0047e00c
     JBE 0x0047e0ed                      ; 0047e00d
@@ -463,18 +463,18 @@ section .text
     PUSH EAX                            ; 0047e0b2
     PUSH EBX                            ; 0047e0b3
     PUSH 0x5d2301                       ; 0047e0b4 | = "%d:%02d elapsed, approximately %d:%02..."
-    MOV EDX,dword ptr [0x01c263b8]      ; 0047e0b9 | g_INT_01c263b8
+    MOV EDX,dword ptr [0x01c263b8]      ; 0047e0b9 | g_WindowStatusTextColor
     PUSH -0x1                           ; 0047e0bf
     MOV ECX,dword ptr [0x01c25f7c]      ; 0047e0c1 | g_INT_01c25f7c
     MOV EAX,[0x01c35e54]                ; 0047e0c7 | g_INT_01c35e54
     PUSH EDX                            ; 0047e0cc
     SUB EAX,ECX                         ; 0047e0cd
     PUSH EAX                            ; 0047e0cf
-    MOV EBX,dword ptr [0x01c35e50]      ; 0047e0d0 | g_INT_01c35e50
+    MOV EBX,dword ptr [0x01c35e50]      ; 0047e0d0 | g_ClipRight
     PUSH EBX                            ; 0047e0d6
     MOV ESI,dword ptr [0x01c35e48]      ; 0047e0d7 | g_INT_01c35e48
     PUSH ESI                            ; 0047e0dd
-    MOV EDI,dword ptr [0x01c25590]      ; 0047e0de | g_CBitFont_PTR_01c25590
+    MOV EDI,dword ptr [0x01c25590]      ; 0047e0de | g_EditorFont
     PUSH EDI                            ; 0047e0e4
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0 ; 0047e0e5
         ;   XREF to: 004a93f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -482,7 +482,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 0047e0ed
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
         ;   Label: LAB_0047e0ed
-    MOV EAX,[0x01c2559c]                ; 0047e0f2 | g_INT_01c2559c
+    MOV EAX,[0x01c2559c]                ; 0047e0f2 | g_WindowStackCount
     DEC EAX                             ; 0047e0f7
     SHL EAX,0x3                         ; 0047e0f8
     MOV EBX,EAX                         ; 0047e0fb

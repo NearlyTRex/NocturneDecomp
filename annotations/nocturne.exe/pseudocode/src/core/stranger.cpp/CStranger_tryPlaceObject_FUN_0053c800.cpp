@@ -76,7 +76,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
       pCVar4 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040d890
                          (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c),
-                          g_CActorDestinationActorType_014b8a1c.name_hash);
+                          g_CActorDestinationClassInfo.name_hash);
       local_30 = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
          (iVar6 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
@@ -126,7 +126,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
       pCVar4 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040d890
                          (*(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)local_18),
-                          g_CActorDestinationActorType_014b8a1c.name_hash);
+                          g_CActorDestinationClassInfo.name_hash);
       pCStack_2c = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
          (iVar6 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
@@ -242,7 +242,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
       }
       pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar13),
-                           g_CCrateActorType_0077bd40.name_hash);
+                           g_CCrateClassInfo.name_hash);
       if (pCVar10 != (CDemonActor *)0x0) {
         local_48 = (pCVar10->location).position.x - local_6c;
         fStack_44 = (pCVar10->location).position.y - fStack_68;

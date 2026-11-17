@@ -28,8 +28,8 @@
 ;   TerminatedCString s_saveScreenRaw32_Unable_t_005cba68
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
-;   void*[1200] g_ARRAY_PTR_01c5faec
-;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   ... and 6 more
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_0050d96e
     MOV EBP,dword ptr [0x005fba18]      ; 0050d972 | g_INT_005fba18
     XOR ESI,ESI                         ; 0050d978
-    MOV EBX,dword ptr [EBX + 0x1c5faec] ; 0050d97a | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
+    MOV EBX,dword ptr [EBX + 0x1c5faec] ; 0050d97a | g_ScreenBufferArray | g_ScreenBufferArray[1]
     TEST EBP,EBP                        ; 0050d980
     JLE 0x0050d9fd                      ; 0050d982
         ;   XREF to: 0050d9fd (CONDITIONAL_JUMP)  ; LAB_0050d9fd

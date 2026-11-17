@@ -26,7 +26,7 @@ uint * FUN_005711a8(void)
       puVar1 = (uint *)*puVar1) {
   }
   if (puVar1[3] == 0) {
-    lpTlsValue = (uint *)calloc(1,g_DWORD_005c20cc);
+    lpTlsValue = (uint *)calloc(1,g_RuntimeBufferSize);
     if (lpTlsValue == (uint *)0x0) {
       HandleRuntimeError("Unable to resize thread-specific data\r\n",1);
     }
@@ -46,13 +46,13 @@ uint * FUN_005711a8(void)
     puVar1[3] = 1;
   }
   else {
-    lpTlsValue = (uint *)realloc((void *)puVar1[2],g_DWORD_005c20cc);
+    lpTlsValue = (uint *)realloc((void *)puVar1[2],g_RuntimeBufferSize);
     if (lpTlsValue == (uint *)0x0) {
       HandleRuntimeError("Unable to resize thread-specific data\r\n",1);
     }
   }
   puVar1[2] = lpTlsValue;
-  lpTlsValue[0x3c] = g_DWORD_005c20cc;
+  lpTlsValue[0x3c] = g_RuntimeBufferSize;
   dwTlsIndex = g_INT_005c1ab8;
   *(byte *)((int)lpTlsValue + 0x52) = 1;
   *(byte *)((int)lpTlsValue + 0x53) = 0;

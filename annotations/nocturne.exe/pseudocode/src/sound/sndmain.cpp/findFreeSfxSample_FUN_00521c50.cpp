@@ -13,16 +13,16 @@ CSfxSample * __cdecl sound_sndmain_cpp_findFreeSfxSample_FUN_00521c50(void)
   
   iVar1 = 0;
   while( true ) {
-    g_INT_02dc1ed8 = g_INT_02dc1ed8 + 1;
-    if (0x3f < g_INT_02dc1ed8) {
-      g_INT_02dc1ed8 = 0;
+    g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+    if (0x3f < g_LastSampleAccessIndex) {
+      g_LastSampleAccessIndex = 0;
     }
-    if ((g_SfxSamples[g_INT_02dc1ed8].taken == 0) && (g_SfxSamples[g_INT_02dc1ed8].ref_count == 0))
-    break;
+    if ((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+       (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) break;
     iVar1 = iVar1 + 1;
     if (0x3f < iVar1) {
       return (CSfxSample *)0x0;
     }
   }
-  return g_SfxSamples + g_INT_02dc1ed8;
+  return g_SfxSamples + g_LastSampleAccessIndex;
 }

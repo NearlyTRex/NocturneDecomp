@@ -26,12 +26,12 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGamePtr = 01c775ec
-;   int INT_005bab60 = 0xd0
-;   int INT_005bab64 = 0x60
+;   int g_InventoryWidth = 0xd0
+;   int g_InventoryHeight = 0x60
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.letterbox_mode
 ;   int g_LocalHeroIndex
-;   int g_INT_01cc30a0
+;   int g_InventoryScreenHeight
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40
@@ -61,7 +61,7 @@ section .text
     JNZ 0x004c23c9                      ; 004c217d
         ;   XREF to: 004c23c9 (CONDITIONAL_JUMP)  ; LAB_004c23c9
     MOV ESI,dword ptr [0x005b7620]      ; 004c2183 | g_WindowHeight
-    CMP ESI,dword ptr [0x01cc30a0]      ; 004c2189 | g_INT_01cc30a0
+    CMP ESI,dword ptr [0x01cc30a0]      ; 004c2189 | g_InventoryScreenHeight
     JNZ 0x004c23d1                      ; 004c218f
         ;   XREF to: 004c23d1 (CONDITIONAL_JUMP)  ; LAB_004c23d1
     CMP dword ptr [EBX + 0x330],0x0     ; 004c2195
@@ -77,9 +77,9 @@ section .text
         ;   XREF to: 004c22b1 (CONDITIONAL_JUMP)  ; LAB_004c22b1
     MOV EAX,0x8                         ; 004c21b5
     MOV EDI,0x50                        ; 004c21ba
-    MOV ESI,dword ptr [0x005bab60]      ; 004c21bf | INT_005bab60
+    MOV ESI,dword ptr [0x005bab60]      ; 004c21bf | g_InventoryWidth
     MOV EBP,dword ptr [0x005b7620]      ; 004c21c5 | g_WindowHeight
-    MOV ECX,dword ptr [0x005bab64]      ; 004c21cb | INT_005bab64
+    MOV ECX,dword ptr [0x005bab64]      ; 004c21cb | g_InventoryHeight
     CMP EBP,0x180                       ; 004c21d1
     JGE 0x004c21e6                      ; 004c21d7
         ;   XREF to: 004c21e6 (CONDITIONAL_JUMP)  ; LAB_004c21e6
@@ -169,9 +169,9 @@ section .text
         ;   XREF to: 004c23c9 (CONDITIONAL_JUMP)  ; LAB_004c23c9
     MOV EDX,0x10                        ; 004c22d1
     MOV EDI,0x40                        ; 004c22d6
-    MOV ESI,dword ptr [0x005bab60]      ; 004c22db | INT_005bab60
+    MOV ESI,dword ptr [0x005bab60]      ; 004c22db | g_InventoryWidth
     MOV EBP,dword ptr [0x005b7620]      ; 004c22e1 | g_WindowHeight
-    MOV ECX,dword ptr [0x005bab64]      ; 004c22e7 | INT_005bab64
+    MOV ECX,dword ptr [0x005bab64]      ; 004c22e7 | g_InventoryHeight
     CMP EBP,0x180                       ; 004c22ed
     JGE 0x004c2302                      ; 004c22f3
         ;   XREF to: 004c2302 (CONDITIONAL_JUMP)  ; LAB_004c2302

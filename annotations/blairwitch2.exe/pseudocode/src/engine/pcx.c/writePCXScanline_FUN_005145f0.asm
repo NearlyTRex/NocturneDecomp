@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141b8 = 0x140
-;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_005bab40
@@ -30,7 +30,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005145f8
     MOV EDX,dword ptr [0x006141b8]      ; 005145fc | g_INT_006141b8
     XOR EDI,EDI                         ; 00514602
-    MOV ESI,dword ptr [ESI*0x4 + 0x1c2a38c] ; 00514604 | g_ARRAY_PTR_01c2a38c
+    MOV ESI,dword ptr [ESI*0x4 + 0x1c2a38c] ; 00514604 | g_ScreenBufferArray
     TEST EDX,EDX                        ; 0051460b
     JLE 0x0051464e                      ; 0051460d
         ;   XREF to: 0051464e (CONDITIONAL_JUMP)  ; LAB_0051464e

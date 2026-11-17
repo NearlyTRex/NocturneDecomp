@@ -8,18 +8,18 @@
 CLZWDecompress g_CLZWDecompressInstance = {};
 
 // SFogImagePlane
-SFogImagePlane g_SFogImagePlane_0135ead0 = {};
+SFogImagePlane g_CameraPlaneWorkBuffer = {};
 
 // char[4096]
-char g_CHAR_ARRAY_0135dab0[4096] = {};
+char g_CameraLookupTable[4096] = {};
 
 // int
-int g_INT_0135eab0 = {};
-int g_INT_0135eab4 = {};
-int g_INT_0135eab8 = {};
-int g_INT_0135eabc = {};
-int g_INT_0135eac0 = {};
-int g_INT_0135eac4 = {};
-int g_INT_0135eac8 = {};
-int g_INT_0135eacc = {};
+int g_CameraShakeSustainTimer = {};
+int g_CameraShakeAttackTime = {};
+int g_CameraShakeAttackAccum = {};
+int g_CameraShakeDecayDuration = {};
+int g_CameraShakeDecayTimer = {};
+int g_CameraShakeAccumulator = {};
+int g_CameraShakeOffsetX = {};
+int g_CameraShakeOffsetY = {};
 

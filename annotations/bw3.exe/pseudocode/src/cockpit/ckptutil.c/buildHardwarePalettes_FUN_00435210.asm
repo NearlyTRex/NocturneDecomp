@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   SRGBColorPalette* g_SRGBColorPalette_PTR_01c6a970
+;   SRGBColorPalette* g_CurrentPalette
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   int g_INT_01c6af78
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
@@ -28,7 +28,7 @@ section .text
     SUB ESP,0x8                         ; 00435214
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00435217
     MOV EDX,dword ptr [0x005fba20]      ; 0043521b | g_INT_005fba20
-    MOV dword ptr [0x01c6a970],EBX      ; 00435221 | g_SRGBColorPalette_PTR_01c6a970
+    MOV dword ptr [0x01c6a970],EBX      ; 00435221 | g_CurrentPalette
     CMP EDX,0x20                        ; 00435227
     JNZ 0x0043528b                      ; 0043522a
         ;   XREF to: 0043528b (CONDITIONAL_JUMP)  ; LAB_0043528b

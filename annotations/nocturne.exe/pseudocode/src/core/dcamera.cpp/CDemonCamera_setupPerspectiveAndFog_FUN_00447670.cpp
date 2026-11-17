@@ -17,7 +17,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(C
     g_INT_01c038f4 = (int)position;
     return;
   }
-  if (g_INT_0140efa8 != 0) {
+  if (g_BackgroundSceneDepth != 0) {
     g_INT_01c038f4 = 0;
     return;
   }

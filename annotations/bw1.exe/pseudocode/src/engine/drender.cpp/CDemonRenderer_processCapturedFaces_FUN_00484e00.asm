@@ -18,9 +18,9 @@
 ;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440 at 005a957a
 ;
 ; Referenced Globals:
-;   int g_INT_01bc1280
-;   SFace[5000] g_SFace_ARRAY_01bc1288
-;   undefined4 g_SFace_ARRAY_01bc1288[0].render_flags
+;   int g_CaptureFaceCount
+;   SFace[5000] g_CapturedFaces
+;   undefined4 g_CapturedFaces[0].render_flags
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005bfc68
@@ -41,7 +41,7 @@ section .text
     PUSH EDI                            ; 00484e0f
     PUSH ESI                            ; 00484e10
     PUSH EBX                            ; 00484e11
-    MOV ECX,dword ptr [0x01bc1280]      ; 00484e12 | g_INT_01bc1280
+    MOV ECX,dword ptr [0x01bc1280]      ; 00484e12 | g_CaptureFaceCount
     TEST ECX,ECX                        ; 00484e18
     JLE 0x00484e40                      ; 00484e1a
         ;   XREF to: 00484e40 (CONDITIONAL_JUMP)  ; LAB_00484e40
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 00484ee5 (CONDITIONAL_JUMP)  ; LAB_00484ee5
     PUSH 0x484da0                       ; 00484e4a
     PUSH 0x4                            ; 00484e4f
-    MOV ESI,dword ptr [0x01bc1280]      ; 00484e51 | g_INT_01bc1280
+    MOV ESI,dword ptr [0x01bc1280]      ; 00484e51 | g_CaptureFaceCount
     PUSH ESI                            ; 00484e57
     PUSH 0x1be8388                      ; 00484e58
         ;   Label: LAB_00484e58
@@ -81,7 +81,7 @@ section .text
     ADD ESP,0x8                         ; 00484e7b
     MOV EDI,0xffffffff                  ; 00484e7e
         ;   Label: LAB_00484e7e
-    MOV EDX,dword ptr [0x01bc1280]      ; 00484e83 | g_INT_01bc1280
+    MOV EDX,dword ptr [0x01bc1280]      ; 00484e83 | g_CaptureFaceCount
     XOR ESI,ESI                         ; 00484e89
     TEST EDX,EDX                        ; 00484e8b
     JLE 0x00484ed5                      ; 00484e8d
@@ -89,7 +89,7 @@ section .text
     XOR EBX,EBX                         ; 00484e8f
     MOV EAX,dword ptr [EBX + 0x1be8388] ; 00484e91
         ;   Label: LAB_00484e91
-    MOV EDX,dword ptr [EAX]             ; 00484e97 | g_SFace_ARRAY_01bc1288
+    MOV EDX,dword ptr [EAX]             ; 00484e97 | g_CapturedFaces
     CMP EDI,EDX                         ; 00484e99
     JZ 0x00484eb1                       ; 00484e9b
         ;   XREF to: 00484eb1 (CONDITIONAL_JUMP)  ; LAB_00484eb1
@@ -103,7 +103,7 @@ section .text
     ADD ESP,0x8                         ; 00484eae
     MOV EAX,dword ptr [EBX + 0x1be8388] ; 00484eb1
         ;   Label: LAB_00484eb1
-    MOV ECX,dword ptr [EAX + 0x4]       ; 00484eb7 | g_SFace_ARRAY_01bc1288[0].render_flags
+    MOV ECX,dword ptr [EAX + 0x4]       ; 00484eb7 | g_CapturedFaces[0].render_flags
     PUSH ECX                            ; 00484eba
     ADD EAX,0xc                         ; 00484ebb
     PUSH EAX                            ; 00484ebe
@@ -112,7 +112,7 @@ section .text
     INC ESI                             ; 00484ec3
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_00482390 ; 00484ec4
         ;   XREF to: 00482390 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_00482390(CDemonRenderer * this_ptr, SInputFace * face, int render_flags)
-    MOV EAX,[0x01bc1280]                ; 00484ec9 | g_INT_01bc1280
+    MOV EAX,[0x01bc1280]                ; 00484ec9 | g_CaptureFaceCount
     ADD ESP,0xc                         ; 00484ece
     CMP ESI,EAX                         ; 00484ed1
     JL 0x00484e91                       ; 00484ed3
@@ -132,7 +132,7 @@ section .text
     PUSH 0x484dd0                       ; 00484ee5
         ;   Label: LAB_00484ee5
     PUSH 0x4                            ; 00484eea
-    MOV EDI,dword ptr [0x01bc1280]      ; 00484eec | g_INT_01bc1280
+    MOV EDI,dword ptr [0x01bc1280]      ; 00484eec | g_CaptureFaceCount
     PUSH EDI                            ; 00484ef2
     JMP 0x00484e58                      ; 00484ef3
         ;   XREF to: 00484e58 (UNCONDITIONAL_JUMP)  ; LAB_00484e58

@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
     iVar8 = 0xffff;
     local_14 = 0;
   }
-  if (g_INT_01fff224 < 1) {
+  if (g_ColorCorrectionCount < 1) {
     iVar8 = iVar8 + local_14;
     lVar1 = (longlong)iVar8 * (longlong)(this_ptr->flat_color).r;
     local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
@@ -100,19 +100,19 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
   }
   else {
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)g_INT_01fff5a4) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_01fff5a4) >> 0x20) << 0x10) +
-                 local_14) * (longlong)(this_ptr->flat_color).r;
+            (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >>
+                       0x20) << 0x10) + local_14) * (longlong)(this_ptr->flat_color).r;
     local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)g_INT_01fff5a8) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_01fff5a8) >> 0x20) << 0x10) +
-                 local_14) * (longlong)(this_ptr->flat_color).g;
+            (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >>
+                       0x20) << 0x10) + local_14) * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     iVar10 = (this_ptr->flat_color).b;
-    iVar8 = ((uint)((longlong)iVar8 * (longlong)g_INT_01fff5ac) >> 0x10 |
-            (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_01fff5ac) >> 0x20) << 0x10) +
-            local_14;
+    iVar8 = ((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x10 |
+            (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x20)
+            << 0x10) + local_14;
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
           (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10;
@@ -153,8 +153,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  g_SRenderVertex_ARRAY_005c5014[vertex_index].r = g_INT_ARRAY_01fbb060[local_18];
-  g_SRenderVertex_ARRAY_005c5014[vertex_index].g = g_INT_ARRAY_01fbb060[uVar4];
-  g_SRenderVertex_ARRAY_005c5014[vertex_index].b = g_INT_ARRAY_01fbb060[uVar5];
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].r = g_IntensityToValueLookupTable[local_18];
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].g = g_IntensityToValueLookupTable[uVar4];
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].b = g_IntensityToValueLookupTable[uVar5];
   return;
 }

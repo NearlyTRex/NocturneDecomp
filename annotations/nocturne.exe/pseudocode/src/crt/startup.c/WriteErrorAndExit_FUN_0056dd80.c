@@ -19,7 +19,7 @@ void __cdecl WriteErrorAndExit(char *error_message,int exit_code)
   while (cVar1 = *pcVar2, pcVar2 = pcVar2 + 1, cVar1 != '\0') {
     nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
   }
-  WriteFile(g_SIOControlBlock_PTR_005c1f54->standard_handles[2],error_message,nNumberOfBytesToWrite,
+  WriteFile(g_IOControlBlock->standard_handles[2],error_message,nNumberOfBytesToWrite,
             (LPDWORD)&stack0xfffffff8,(LPOVERLAPPED)0x0);
                     /* WARNING: Subroutine does not return */
   ExitProcess(in_stack_fffffff8);

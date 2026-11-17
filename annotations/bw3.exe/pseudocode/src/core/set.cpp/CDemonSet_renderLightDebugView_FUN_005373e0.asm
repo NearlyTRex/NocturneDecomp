@@ -14,13 +14,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_omni_lights_005d0620
 ;   TerminatedCString s_d_spot_lights_005d062f
-;   int[96] g_INT_ARRAY_00603b3c
-;   undefined4 g_INT_ARRAY_00603b3c[1]
-;   undefined4 g_INT_ARRAY_00603b3c[2]
-;   int[96] g_INT_ARRAY_00603cbc
-;   undefined4 g_INT_ARRAY_00603cbc[1]
-;   undefined4 g_INT_ARRAY_00603cbc[2]
-;   int g_INT_0203a598
+;   int[96] g_LightDebugScreenX
+;   undefined4 g_LightDebugScreenX[1]
+;   undefined4 g_LightDebugScreenX[2]
+;   int[96] g_LightDebugScreenY
+;   undefined4 g_LightDebugScreenY[1]
+;   undefined4 g_LightDebugScreenY[2]
+;   int g_SpotLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a59c
 ;   int g_INT_0203ad1c
 ;   int g_INT_0203b3e8
@@ -40,7 +40,7 @@ section .text
     PUSH EDI                            ; 005373e2
     PUSH EBP                            ; 005373e3
     SUB ESP,0x100                       ; 005373e4
-    MOV EDX,dword ptr [0x0203a598]      ; 005373ea | g_INT_0203a598
+    MOV EDX,dword ptr [0x0203a598]      ; 005373ea | g_SpotLightCount
     XOR ESI,ESI                         ; 005373f0
     TEST EDX,EDX                        ; 005373f2
     JLE 0x00537430                      ; 005373f4
@@ -48,9 +48,9 @@ section .text
     XOR EBX,EBX                         ; 005373f6
     PUSH 0x80                           ; 005373f8
         ;   Label: LAB_005373f8
-    MOV ECX,dword ptr [EBX + 0x603cbc]  ; 005373fd | g_INT_ARRAY_00603cbc | g_INT_ARRAY_00603cbc[1]
+    MOV ECX,dword ptr [EBX + 0x603cbc]  ; 005373fd | g_LightDebugScreenY | g_LightDebugScreenY[1]
     PUSH ECX                            ; 00537403
-    MOV EDI,dword ptr [EBX + 0x603b3c]  ; 00537404 | g_INT_ARRAY_00603b3c | g_INT_ARRAY_00603b3c[1]
+    MOV EDI,dword ptr [EBX + 0x603b3c]  ; 00537404 | g_LightDebugScreenX | g_LightDebugScreenX[1]
     PUSH EDI                            ; 0053740a
     MOV EBP,dword ptr [EBX + 0x203a59c] ; 0053740b | g_CDemonLight_PTR_ARRAY_0203a59c
     PUSH EBP                            ; 00537411
@@ -58,7 +58,7 @@ section .text
     INC ESI                             ; 00537415
     CALL core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0045ce40 ; 00537416
         ;   XREF to: 0045ce40 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0045ce40(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
-    MOV EAX,[0x0203a598]                ; 0053741b | g_INT_0203a598
+    MOV EAX,[0x0203a598]                ; 0053741b | g_SpotLightCount
     ADD ESP,0x10                        ; 00537420
     CMP ESI,EAX                         ; 00537423
     JL 0x005373f8                       ; 00537425
@@ -75,9 +75,9 @@ section .text
     XOR EDI,EDI                         ; 00537443
     PUSH 0x80                           ; 00537445
         ;   Label: LAB_00537445
-    MOV ECX,dword ptr [EBX + 0x603cbc]  ; 0053744a | g_INT_ARRAY_00603cbc[1] | g_INT_ARRAY_00603cbc[2]
+    MOV ECX,dword ptr [EBX + 0x603cbc]  ; 0053744a | g_LightDebugScreenY[1] | g_LightDebugScreenY[2]
     PUSH ECX                            ; 00537450
-    MOV ESI,dword ptr [EBX + 0x603b3c]  ; 00537451 | g_INT_ARRAY_00603b3c[1] | g_INT_ARRAY_00603b3c[2]
+    MOV ESI,dword ptr [EBX + 0x603b3c]  ; 00537451 | g_LightDebugScreenX[1] | g_LightDebugScreenX[2]
     PUSH ESI                            ; 00537457
     MOV EAX,dword ptr [EDI + 0x203ad20] ; 00537458
     ADD EDI,0x4                         ; 0053745e
@@ -96,7 +96,7 @@ section .text
     MOV ESI,dword ptr [0x0203b3e8]      ; 00537480 | g_INT_0203b3e8
         ;   Label: LAB_00537480
     PUSH ESI                            ; 00537486
-    MOV EBX,dword ptr [0x0203a598]      ; 00537487 | g_INT_0203a598
+    MOV EBX,dword ptr [0x0203a598]      ; 00537487 | g_SpotLightCount
     PUSH 0x5d0620                       ; 0053748d | = "%d omni lights"
     LEA ESI,[ESP + 0x8]                 ; 00537492
     MOV ECX,dword ptr [0x0203ad1c]      ; 00537496 | g_INT_0203ad1c
@@ -105,27 +105,27 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0053749f
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005374a4
-    MOV EDI,dword ptr [EBX*0x4 + 0x603cbc] ; 005374a7 | g_INT_ARRAY_00603cbc
+    MOV EDI,dword ptr [EBX*0x4 + 0x603cbc] ; 005374a7 | g_LightDebugScreenY
     PUSH EDI                            ; 005374ae
-    MOV EBP,dword ptr [EBX*0x4 + 0x603b3c] ; 005374af | g_INT_ARRAY_00603b3c
+    MOV EBP,dword ptr [EBX*0x4 + 0x603b3c] ; 005374af | g_LightDebugScreenX
     PUSH EBP                            ; 005374b6
     LEA ESI,[ESP + 0x8]                 ; 005374b7
     PUSH ESI                            ; 005374bb
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 005374bc
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005374c1
-    MOV EAX,[0x0203a598]                ; 005374c4 | g_INT_0203a598
+    MOV EAX,[0x0203a598]                ; 005374c4 | g_SpotLightCount
     PUSH EAX                            ; 005374c9
     PUSH 0x5d062f                       ; 005374ca | = "%d spot lights"
     LEA ESI,[ESP + 0x8]                 ; 005374cf
     PUSH ESI                            ; 005374d3
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005374d4
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
-    MOV ESI,dword ptr [EBX*0x4 + 0x603cbc] ; 005374d9 | g_INT_ARRAY_00603cbc
+    MOV ESI,dword ptr [EBX*0x4 + 0x603cbc] ; 005374d9 | g_LightDebugScreenY
     ADD ESP,0xc                         ; 005374e0
     ADD ESI,0xb                         ; 005374e3
     PUSH ESI                            ; 005374e6
-    MOV EDX,dword ptr [EBX*0x4 + 0x603b3c] ; 005374e7 | g_INT_ARRAY_00603b3c
+    MOV EDX,dword ptr [EBX*0x4 + 0x603b3c] ; 005374e7 | g_LightDebugScreenX
     PUSH EDX                            ; 005374ee
     LEA EBX,[ESP + 0x8]                 ; 005374ef
     PUSH EBX                            ; 005374f3

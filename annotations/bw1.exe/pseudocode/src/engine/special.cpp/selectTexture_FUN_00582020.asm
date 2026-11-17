@@ -7,9 +7,9 @@
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
 ;
 ; Referenced Globals:
-;   int g_INT_0061b4a8 = 0x100
-;   uchar* g_UCHAR_PTR_01c50930
-;   uchar* g_UCHAR_PTR_01c50934
+;   int g_CurrentTextureDimension = 0x100
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   int g_INT_01c50948
 ;   void* g_PTR_02c833b0
 ;
@@ -27,12 +27,12 @@ section .text
         ;   Label: LAB_0058202c
     PUSH ESI                            ; 0058202d
     PUSH EBX                            ; 0058202e
-    MOV ECX,dword ptr [0x01c50934]      ; 0058202f | g_UCHAR_PTR_01c50934
+    MOV ECX,dword ptr [0x01c50934]      ; 0058202f | g_CurrentTextureOpacityData
     PUSH ECX                            ; 00582035
     PUSH 0x1c4e9f8                      ; 00582036
-    MOV EBX,dword ptr [0x01c50930]      ; 0058203b | g_UCHAR_PTR_01c50930
+    MOV EBX,dword ptr [0x01c50930]      ; 0058203b | g_CurrentTextureData
     PUSH EBX                            ; 00582041
-    MOV ESI,dword ptr [0x0061b4a8]      ; 00582042 | g_INT_0061b4a8
+    MOV ESI,dword ptr [0x0061b4a8]      ; 00582042 | g_CurrentTextureDimension
     PUSH ESI                            ; 00582048
     MOV EDI,dword ptr [ESP + 0x20]      ; 00582049
     PUSH EDI                            ; 0058204d

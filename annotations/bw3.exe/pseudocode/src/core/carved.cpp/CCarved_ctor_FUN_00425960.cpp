@@ -37,7 +37,7 @@ CCarved * __cdecl core_carved_cpp_CCarved_ctor_FUN_00425960(CCarved *this_ptr)
   pCVar2->rise_delay = 0.0;
   pCVar2->buried_timer = 0.0;
   (pCVar2->base).allow_pathfind_to_new_targets = 0;
-  this_ptr_00 = g_CEventList_PTR_005fba60;
+  this_ptr_00 = g_CEventListPtr;
   (pCVar2->base).base.turn_rate = 1.5707964;
   pCVar2->pickup_seed = iVar4;
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0

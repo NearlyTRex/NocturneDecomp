@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[12]:
 ;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0c28
@@ -98,7 +98,7 @@ section .text
     PUSH 0x0                            ; 005a81e9
     PUSH EDI                            ; 005a81eb
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005a81ec
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005a81f1
     JMP 0x005a81a0                      ; 005a81f4
         ;   XREF to: 005a81a0 (UNCONDITIONAL_JUMP)  ; LAB_005a81a0

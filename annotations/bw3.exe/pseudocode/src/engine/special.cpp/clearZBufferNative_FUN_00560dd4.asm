@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba18 = 0x140
-;   double g_DOUBLE_00604d1c = 0.0
-;   double g_DOUBLE_00604d24 = 0.0
-;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c6b5ac
 ;   int g_INT_01c6b5b4
 ;
@@ -29,7 +29,7 @@ section .text
     CLD                                 ; 00560dd7
     PUSH DS                             ; 00560dd8
     POP ES                              ; 00560dd9
-    MOV EDI,dword ptr [0x01c60dac]      ; 00560dda | g_UINT_PTR_ARRAY_01c60dac
+    MOV EDI,dword ptr [0x01c60dac]      ; 00560dda | g_ZBufferScanlineArray
     MOV EAX,[0x01c6b5ac]                ; 00560de0 | g_INT_01c6b5ac
     MOV ECX,dword ptr [0x005fba18]      ; 00560de5 | g_INT_005fba18
     MUL ECX                             ; 00560deb
@@ -41,7 +41,7 @@ section .text
     MOV ECX,dword ptr [0x005fba18]      ; 00560dfe | g_INT_005fba18
     MUL ECX                             ; 00560e04
     MOV ECX,EAX                         ; 00560e06
-    FLD double ptr [0x00604d1c]         ; 00560e08 | g_DOUBLE_00604d1c
+    FLD double ptr [0x00604d1c]         ; 00560e08 | g_BufferFillZeroQword
     FST double ptr [EDI]                ; 00560e0e
         ;   Label: LAB_00560e0e
     FST double ptr [EDI + 0x8]          ; 00560e10
@@ -55,7 +55,7 @@ section .text
     SUB ECX,0x10                        ; 00560e28
     JG 0x00560e0e                       ; 00560e2b
         ;   XREF to: 00560e0e (CONDITIONAL_JUMP)  ; LAB_00560e0e
-    FSTP double ptr [0x00604d24]        ; 00560e2d | g_DOUBLE_00604d24
+    FSTP double ptr [0x00604d24]        ; 00560e2d | g_BufferFillFpuPopST0
     POPAD                               ; 00560e33
     POP EDI                             ; 00560e34
     POP ESI                             ; 00560e35

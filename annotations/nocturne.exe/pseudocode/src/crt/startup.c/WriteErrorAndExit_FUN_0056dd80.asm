@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_WriteFile_005755ec = 0017613e
-;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_exit.c_ExitProcess_FUN_005674b0
@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 0056dd9c
     PUSH EDX                            ; 0056dd9d
     MOV EDX,dword ptr [ESP + 0x18]      ; 0056dd9e
-    MOV EAX,[0x005c1f54]                ; 0056dda2 | g_SIOControlBlock_PTR_005c1f54
+    MOV EAX,[0x005c1f54]                ; 0056dda2 | g_IOControlBlock
     PUSH EDX                            ; 0056dda7
     MOV EBX,dword ptr [EAX + 0x8]       ; 0056dda8
     PUSH EBX                            ; 0056ddab

@@ -17,8 +17,8 @@
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_005d761c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
-;   undefined4 g_UINT_PTR_ARRAY_01c4480c[1]
+;   uint*[1200] g_ZBufferScanlineArray
+;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_INT_01c50948
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -78,7 +78,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x15c]     ; 0044d67b
     PUSH EDX                            ; 0044d681
     SHL ECX,0x2                         ; 0044d682
-    MOV EDX,dword ptr [EDI + 0x1c4480c] ; 0044d685 | g_UINT_PTR_ARRAY_01c4480c | g_UINT_PTR_ARRAY_01c4480c[1]
+    MOV EDX,dword ptr [EDI + 0x1c4480c] ; 0044d685 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     ADD ECX,EAX                         ; 0044d68b
     INC ESI                             ; 0044d68d
     CALL crt_watcom.c__memcpy_FUN_004ab0c8 ; 0044d68e

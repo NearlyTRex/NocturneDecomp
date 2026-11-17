@@ -25,7 +25,7 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00506320(CNetGame *this_pt
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
   iVar1 = iVar1 / 0x12;
-  iVar2 = iVar1 - g_INT_01da6474;
+  iVar2 = iVar1 - g_LastPingTime;
   if (iVar2 < 0) {
     iVar2 = 0;
   }
@@ -33,7 +33,7 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00506320(CNetGame *this_pt
     iVar2 = 0x20000;
   }
   uVar3 = g_UINT_01da6478 + iVar2;
-  g_INT_01da6474 = iVar1;
+  g_LastPingTime = iVar1;
   g_UINT_01da6478 = uVar3;
   if (player_index != this_ptr->local_player_index) {
     local_28 = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_sent) *

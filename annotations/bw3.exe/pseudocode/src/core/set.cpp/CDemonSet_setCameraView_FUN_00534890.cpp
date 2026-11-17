@@ -74,43 +74,43 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   if (0 < g_INT_0203ad1c) {
     iVar5 = 0;
     do {
-      puVar8 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar5);
+      puVar8 = (uint *)((int)g_DynamicLights + iVar5);
       iVar5 = iVar5 + 4;
       iVar3 = iVar3 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30((CDemonLight *)*puVar8);
     } while (iVar3 < g_INT_0203ad1c);
   }
   iVar3 = 0;
-  if (0 < g_INT_0203a598) {
+  if (0 < g_SpotLightCount) {
     iVar5 = 0;
     do {
       puVar8 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar5);
       iVar5 = iVar5 + 4;
       iVar3 = iVar3 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30((CDemonLight *)*puVar8);
-    } while (iVar3 < g_INT_0203a598);
+    } while (iVar3 < g_SpotLightCount);
   }
   iVar3 = 0;
-  if (0 < g_INT_0203a598) {
+  if (0 < g_SpotLightCount) {
     iVar5 = 0;
     do {
       puVar8 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar5);
       iVar5 = iVar5 + 4;
       iVar3 = iVar3 + 1;
       core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_0045c500((CDemonLight *)*puVar8);
-    } while (iVar3 < g_INT_0203a598);
+    } while (iVar3 < g_SpotLightCount);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0045c470();
   this_ptr->previous_best_camera_timer = 0.5;
   this_ptr->lighting_quality_mode = 1;
   iVar3 = 0;
   this_ptr->directional_light_ratio_enabled = 1;
-  g_INT_0203a598 = 0;
+  g_SpotLightCount = 0;
   this_ptr->previous_best_camera_index = this_ptr->selected_camera_index;
   g_INT_0203b3e8 = 0;
   this_ptr->selected_camera_index = index;
   g_INT_0203ad30 = 0;
-  g_INT_0203aec4 = 0;
+  g_QueuedCoronaGlobeCount = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
@@ -159,9 +159,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
     core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(this_ptr,0x10);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(this_ptr,9999.9,1);
     core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00451250(&g_CDemonCameraInstance);
-    g_INT_0207baa4 = 1;
+    g_InMirrorRenderPass = 1;
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(this_ptr,1);
-    g_INT_0207baa4 = 0;
+    g_InMirrorRenderPass = 0;
     core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(&g_CDemonCameraInstance);
     core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_004512a0(&g_CDemonCameraInstance);
     _sprintf(local_198,"%s.raw");
@@ -195,21 +195,21 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
             core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::setCameraView - Too many omni lights");
           }
         }
-        iVar1 = g_INT_0203a598;
+        iVar1 = g_SpotLightCount;
         iVar10 = iVar5;
         if ((pCVar4->lights[0].light_type == 0) &&
            (iVar10 = iVar5 + 1, pCVar4->lights[0].visible_flags[index] != '\0')) {
-          g_CDemonLight_PTR_ARRAY_0203a59c[g_INT_0203a598] = g_CDemonLight_PTR_ARRAY_0203a418[iVar5]
-          ;
+          g_CDemonLight_PTR_ARRAY_0203a59c[g_SpotLightCount] =
+               g_CDemonLight_PTR_ARRAY_0203a418[iVar5];
           piVar15 = (int *)((int)&pCVar4->lights[0].camera_light_bounds[0].x_min + local_2c);
           piVar13 = (int *)(iVar1 * 0x10 + 0x203a720 + (uint)bVar14 * -8);
           piVar11 = piVar15 + (uint)bVar14 * -2 + 1;
-          g_CRect_ARRAY_0203a71c[iVar1].x_min = *piVar15;
+          g_SpotLightBounds[iVar1].x_min = *piVar15;
           piVar15 = piVar13 + (uint)bVar14 * -2 + 1;
           *piVar13 = *piVar11;
           *piVar15 = piVar11[(uint)bVar14 * -2 + 1];
           piVar15[(uint)bVar14 * -2 + 1] = (piVar11 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1];
-          g_INT_0203a598 = g_INT_0203a598 + 1;
+          g_SpotLightCount = g_SpotLightCount + 1;
         }
         iVar3 = iVar3 + 1;
         pCVar4 = (CDemonSet *)&pCVar4->cameras[0xe].vdir_zone;
@@ -218,8 +218,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
     }
     core_set_cpp_CDemonSet_process_FUN_00539c50(this_ptr);
     iVar3 = 0;
-    if (0 < g_INT_0203a598) {
-      rect = g_CRect_ARRAY_0203a71c;
+    if (0 < g_SpotLightCount) {
+      rect = g_SpotLightBounds;
       local_28 = &this_ptr->cameras[index + -1].enabled;
       iVar5 = 0;
       do {
@@ -238,7 +238,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
         iVar5 = iVar5 + 4;
         iVar3 = iVar3 + 1;
         rect = rect + 1;
-      } while (iVar3 < g_INT_0203a598);
+      } while (iVar3 < g_SpotLightCount);
     }
     core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af70
               (&g_CDemonCameraInstance,&this_ptr->directional_light_dir,
@@ -249,11 +249,10 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   if (iVar3 == 0) {
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_00448ff0(&g_CDemonCameraInstance,1);
     core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(&g_CDemonCameraInstance);
-    g_INT_01c6e24c = iVar3;
+    g_PerspectiveReciprocal = iVar3;
     if (this_ptr->has_sky != 0) {
       core_dskybox_cpp_renderSkyDome_FUN_0046f480
-                (g_SMRGLSkyTexture_PTR_005f4a58,this_ptr->sky_texture_name,this_ptr->sky_brightness)
-      ;
+                (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,this_ptr->sky_brightness);
     }
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(this_ptr,1);
     core_gore_cpp_CGore_renderDecals_FUN_004ce630(g_CGorePtr,1,1);
@@ -311,7 +310,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
     local_ac[1] = local_4c[1];
   }
   core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0
-            (g_CWeather_PTR_006071f0,&local_5c,(CVector3f *)(auStack_b4 + 4));
+            (g_CWeatherPtr,&local_5c,(CVector3f *)(auStack_b4 + 4));
   iVar3 = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {

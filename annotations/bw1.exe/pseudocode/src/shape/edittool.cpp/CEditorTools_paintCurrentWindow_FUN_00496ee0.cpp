@@ -37,16 +37,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEd
     g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c3eb50->max_char_width;
   g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
   ;
-  if (g_INT_01c3eb5c < 1) {
+  if (g_WindowStackCount < 1) {
     g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
     g_INT_01d1d404 = 0x949;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::paintWindow() called but no window was opened!");
   }
   local_28 = g_INT_01c4f020;
-  iVar5 = (g_INT_01c3eb5c + -1) * 0x1f8;
+  iVar5 = (g_WindowStackCount + -1) * 0x1f8;
   shape_edittool_cpp_paintWindowBackground_FUN_004941e0();
   piVar6 = (int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5);
   if (g_INT_01c3f544 == 0) {
@@ -54,7 +54,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEd
     engine_matrix_c_pushViewport_FUN_005090b0
               (*piVar6,iVar4,(*(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 8) - *piVar6) + 1,
                (*(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 0xc) - iVar4) + 1);
-    iVar7 = g_INT_01c3f548;
+    iVar7 = g_WindowContentColor;
     iVar4 = *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 0xc);
     iVar3 = iVar4 + -2;
     local_18 = *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 8) + -2;
@@ -62,7 +62,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEd
     local_1c = *piVar6 + 1;
     if (g_INT_01c3f544 == 0) {
       engine_2d_c_fillRectWithBorder_FUN_00403250
-                (local_1c,local_20,local_18,iVar3,g_INT_01c3f548,g_INT_01c3f54c);
+                (local_1c,local_20,local_18,iVar3,g_WindowContentColor,g_INT_01c3f54c);
     }
     else {
       iVar1 = g_INT_01c3f54c;
@@ -137,9 +137,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEd
               (*piVar6,*(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 4),
                *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 8) + -1,
                *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 0xc) + -1);
-    iVar4 = g_INT_01c3f548;
+    iVar4 = g_WindowContentColor;
     if (g_INT_01c3f544 != 0) {
-      iVar4 = (g_INT_01c3f548 & 0xffU) * 3;
+      iVar4 = (g_WindowContentColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_00517d50
                 ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar4 + 2] |
                  (uint)g_UCHAR_ARRAY_01c4e9f8[iVar4 + 1] << 8 |
@@ -180,12 +180,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEd
                -1;
     local_2c = *piVar6 + 1;
     if (g_INT_01c3f544 == 0) {
-      engine_2d_c_fillRectColor_FUN_004031c0(local_2c,local_34,iVar7,local_24,g_INT_01c3f558);
+      engine_2d_c_fillRectColor_FUN_004031c0(local_2c,local_34,iVar7,local_24,g_TitleBarFillColor);
     }
     else {
-      iVar4 = g_INT_01c3f558;
+      iVar4 = g_TitleBarFillColor;
       if (g_INT_01c3f544 != 0) {
-        iVar4 = (g_INT_01c3f558 & 0xffU) * 3;
+        iVar4 = (g_TitleBarFillColor & 0xffU) * 3;
         engine_mini3d_cpp_setColor_FUN_00517d50
                   ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar4 + 2] |
                    (uint)g_UCHAR_ARRAY_01c4e9f8[iVar4] << 0x10 |
@@ -202,7 +202,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEd
     text = (char *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 0x48);
     iVar4 = *piVar6;
     iVar7 = *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 8);
-    iVar3 = g_INT_01c3f554;
+    iVar3 = g_TitleBarColor;
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_CBitFont_PTR_01c3eb50,text);
     engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
               (g_CBitFont_PTR_01c3eb50,text,((iVar4 + iVar7) - iVar2) / 2,iVar1,iVar3,color_value);

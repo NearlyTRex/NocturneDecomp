@@ -8,9 +8,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -32,11 +32,11 @@ section .text
     CMP EBP,0x20                        ; 0044fec4
     JNZ 0x0044ff06                      ; 0044fec7
         ;   XREF to: 0044ff06 (CONDITIONAL_JUMP)  ; LAB_0044ff06
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0044fec9 | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0044fec9 | g_RedBitPosition
     SHL EDI,CL                          ; 0044fecf
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0044fed1 | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0044fed1 | g_GreenBitPosition
     SHL ESI,CL                          ; 0044fed7
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0044fed9 | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0044fed9 | g_BlueBitPosition
     SHL EBX,CL                          ; 0044fedf
     OR EDI,ESI                          ; 0044fee1
     MOV ECX,EBX                         ; 0044fee3

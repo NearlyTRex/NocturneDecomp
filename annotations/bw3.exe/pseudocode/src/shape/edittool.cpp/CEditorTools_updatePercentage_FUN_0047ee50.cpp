@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
   int local_30;
   int local_24;
   
-  if (g_INT_01c5b104 < 1) {
+  if (g_WindowStackCount < 1) {
     g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
     g_INT_01d71de4 = 0x7f0;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CEditorTools::updatePercentageWindow - no window open!");
@@ -48,18 +48,18 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
   dVar8 = round
                     ((double)(local_54 * (float)100 + (float)0.5));
   iVar5 = wincore_winrun_cpp_getTime_FUN_005806a0();
-  iVar1 = (g_INT_01c5b104 + -1) * 0x1f8;
+  iVar1 = (g_WindowStackCount + -1) * 0x1f8;
   if (((int)ROUND(dVar8) != *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1f0)) ||
      (0x47ffff < iVar5 - *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 500))) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0
-              (g_CBitFont_PTR_01c5b0e0,g_INT_01c6b5a8,g_INT_01c6b5b0,g_INT_01c6b5ac,g_INT_01c5bb20,
-               -1,"%d%% complete");
+              (g_CBitFont_PTR_01c5b0e0,g_INT_01c6b5a8,g_INT_01c6b5b0,g_INT_01c6b5ac,
+               g_WindowStatusTextColor,-1,"%d%% complete");
     iVar3 = g_INT_01c6b5b0;
     iVar7 = g_INT_01c6b5a8;
-    iVar5 = g_INT_01c5bb2c;
+    iVar5 = g_ProgressBarBackgroundColor;
     y1 = g_INT_01c5bae4 * 2 + g_INT_01c6b5ac;
     iVar1 = y1 + 1;
     x1 = g_INT_01c6b5a8 + 1;
@@ -68,10 +68,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
     y2 = iVar6 + -1;
     if (g_INT_01c5baec == 0) {
       engine_2d_c_fillRectWithBorder_FUN_00403250
-                (x1,iVar1,local_30,y2,g_INT_01c5bb2c,g_INT_01c5bb34);
+                (x1,iVar1,local_30,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
     }
     else {
-      iVar2 = (g_INT_01c5bb34 & 0xffU) * 3;
+      iVar2 = (g_ProgressBarBorderColor & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f3520
                 ((uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 1] << 8 |
                  (uint)g_UCHAR_ARRAY_01c6af98[iVar2] << 0x10 |
@@ -120,10 +120,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
         iVar7 = iVar3 + -2;
       }
       if (g_INT_01c5baec == 0) {
-        engine_2d_c_fillRectColor_FUN_004031c0(x1,iVar1,iVar7,local_24,g_INT_01c5bb30);
+        engine_2d_c_fillRectColor_FUN_004031c0(x1,iVar1,iVar7,local_24,g_ProgressBarFillColor);
       }
       else {
-        iVar3 = (g_INT_01c5bb30 & 0xffU) * 3;
+        iVar3 = (g_ProgressBarFillColor & 0xffU) * 3;
         engine_mini3d_cpp_setColor_FUN_004f3520
                   ((uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 2] |
                    (uint)g_UCHAR_ARRAY_01c6af98[iVar3] << 0x10 |
@@ -133,7 +133,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
     }
     if (0 < iVar5) {
       fVar4 = (float)(x1 - *(int *)((int)g_SWindow_ARRAY_01c5b108 +
-                                   (g_INT_01c5b104 + -1) * 0x1f8 + 0x1ec)) *
+                                   (g_WindowStackCount + -1) * 0x1f8 + 0x1ec)) *
               (float)8.4771050347222196e-07;
       dVar8 = (double)fVar4;
       if ((float)5 < fVar4) {
@@ -149,13 +149,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
           engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0
                     (g_CBitFont_PTR_01c5b0e0,g_INT_01c6b5a8,g_INT_01c6b5b0,
-                     g_INT_01c6b5b4 - g_INT_01c5bae4,g_INT_01c5bb20,-1,
+                     g_INT_01c6b5b4 - g_INT_01c5bae4,g_WindowStatusTextColor,-1,
                      "%d:%02d elapsed, approximately %d:%02d remaining");
         }
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-    iVar5 = (g_INT_01c5b104 + -1) * 0x1f8;
+    iVar5 = (g_WindowStackCount + -1) * 0x1f8;
     *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0x1f0) = local_30;
     *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 500) = iVar1;
   }

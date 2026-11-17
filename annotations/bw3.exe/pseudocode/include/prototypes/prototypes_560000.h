@@ -94,7 +94,7 @@ CSpawner * __cdecl core_spawner_cpp_factoryFuncSpawner_FUN_00563870(void);
 CDemonActorType * __cdecl core_spawner_cpp_CSpawner_getActorType_FUN_00563890(CSpawner *this_ptr);
 CSpawner * __cdecl core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr);
 void __cdecl core_spawner_cpp_CSpawner_setup_FUN_00563910(CSpawner *this_ptr);
-void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2);
+void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float delta_time);
 int __cdecl core_spawner_cpp_CSpawner_renderOpaque_FUN_00563e40(CSpawner *this_ptr);
 void __cdecl core_spawner_cpp_CSpawner_archive_FUN_00563e50(CSpawner *this_ptr);
 CSpawner * __cdecl core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags);

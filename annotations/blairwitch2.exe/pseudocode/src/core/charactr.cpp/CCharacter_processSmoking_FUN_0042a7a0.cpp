@@ -76,7 +76,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042a7a0(CCharacter
         local_40.x = local_58.x;
         *(uint *)((int)&local_40 + (uint)bVar3 * -8 + 4) =
              *(uint *)((int)&local_58 + (uint)bVar3 * -8 + 4);
-        this_ptr_00 = g_CFireEffect_PTR_00614d30;
+        this_ptr_00 = g_CFireEffectPtr;
         *(uint *)((int)&local_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
              *(uint *)((int)&local_58 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230

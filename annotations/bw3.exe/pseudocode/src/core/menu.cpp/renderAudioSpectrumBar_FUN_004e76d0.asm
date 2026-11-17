@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   int g_INT_01d737e0
+;   int g_AudioVisualizationCounter
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -101,7 +101,7 @@ section .text
     PUSH EDI                            ; 004e77d8
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0 ; 004e77d9
         ;   XREF to: 0046d4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer * this_ptr, int blend_mode)
-    MOV EAX,[0x01d737e0]                ; 004e77de | g_INT_01d737e0
+    MOV EAX,[0x01d737e0]                ; 004e77de | g_AudioVisualizationCounter
     MOV EDX,EAX                         ; 004e77e3
     SAR EDX,0x1f                        ; 004e77e5
     SHL EDX,0x10                        ; 004e77e8

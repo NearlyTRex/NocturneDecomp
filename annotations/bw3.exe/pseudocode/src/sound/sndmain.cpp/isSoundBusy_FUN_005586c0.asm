@@ -12,13 +12,13 @@
 ;   sound_sndmain.cpp_startSfx_FUN_00556240 at 00556267
 ;
 ; Referenced Globals:
-;   int g_INT_02cf3284
+;   int g_SoundBusyFlag
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02cf3284]                ; 005586c0 | g_INT_02cf3284
+    MOV EAX,[0x02cf3284]                ; 005586c0 | g_SoundBusyFlag
         ;   Label: sound_sndmain.cpp_isSoundBusy_FUN_005586c0
     RET                                 ; 005586c5
 

@@ -14,7 +14,7 @@ CExplosion g_CExplosion_ARRAY_01cf6090[10] = {};
 CGunFlame g_CGunFlame_ARRAY_01cfb8bc[500] = {};
 
 // CLaserBeam[64]
-CLaserBeam g_CLaserBeam_ARRAY_01cf508c[64] = {};
+CLaserBeam g_LaserBeamPool[64] = {};
 
 // CLeaf[64]
 CLeaf CLeaf_ARRAY_01cf3b88[64] = {};
@@ -26,11 +26,11 @@ CRock g_RockPool[64] = {};
 CToss g_TossPool[20] = {};
 
 // int
-int g_INT_01cf2780 = {};
+int g_RockAllocIndex = {};
 int g_INT_01cf3b84 = {};
-int g_INT_01cf5088 = {};
+int g_LaserBeamActiveCount = {};
 int g_INT_01cf608c = {};
 int g_INT_01cf61d0 = {};
 int g_INT_01cfaff4 = {};
-int g_INT_01cfb8b8 = {};
+int g_LightningBoltAllocIndex = {};
 

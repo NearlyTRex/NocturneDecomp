@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetModuleHandleA_005c85b0 = 001c8f24
-;   int g_INT_0061f244 = 0x0
-;   int g_INT_0061f268 = 0x0
-;   void* g_PTR_0061f26c = 00000000
-;   ulong g_ULONG_0061f754 = 0xf4
+;   int g_WinMainCmdShow = 0x0
+;   int g_StackAllocSize = 0x0
+;   void* g_CrtStackBuffer = 00000000
+;   ulong g_RuntimeBufferSize = 0xf4
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -39,26 +39,26 @@ section .text
     MOV EAX,0x1                         ; 005c2027
     CALL crt_unknown.c_FUN_005c3330     ; 005c202c
         ;   XREF to: 005c3330 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3330()
-    MOV EAX,[0x0061f754]                ; 005c2031 | g_ULONG_0061f754
+    MOV EAX,[0x0061f754]                ; 005c2031 | g_RuntimeBufferSize
     ADD EAX,0x3                         ; 005c2036
     AND AL,0xfc                         ; 005c2039
     SUB ESP,EAX                         ; 005c203b
     MOV EBX,ESP                         ; 005c203d
-    MOV EDX,dword ptr [0x0061f754]      ; 005c203f | g_ULONG_0061f754
+    MOV EDX,dword ptr [0x0061f754]      ; 005c203f | g_RuntimeBufferSize
     PUSH EDX                            ; 005c2045
     PUSH 0x0                            ; 005c2046
     PUSH EBX                            ; 005c2048
     CALL crt_memory.c_memset_FUN_005b77c0 ; 005c2049
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005c204e
-    MOV EAX,[0x0061f754]                ; 005c2051 | g_ULONG_0061f754
+    MOV EAX,[0x0061f754]                ; 005c2051 | g_RuntimeBufferSize
     PUSH EBX                            ; 005c2056
     MOV dword ptr [EBX + 0xf0],EAX      ; 005c2057
     LEA EAX,[EBP + -0x8]                ; 005c205d
     PUSH EAX                            ; 005c2060
     CALL crt_unknown.c_FUN_005bd078     ; 005c2061
         ;   XREF to: 005bd078 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bd078()
-    MOV EBX,dword ptr [0x0061f268]      ; 005c2066 | g_INT_0061f268
+    MOV EBX,dword ptr [0x0061f268]      ; 005c2066 | g_StackAllocSize
     ADD EBX,0x3                         ; 005c206c
     ADD ESP,0x8                         ; 005c206f
     AND BL,0xfc                         ; 005c2072
@@ -70,7 +70,7 @@ section .text
     PUSH EBX                            ; 005c207e
     CALL crt_unknown.c_FUN_005bae03     ; 005c207f
         ;   XREF to: 005bae03 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bae03()
-    MOV EAX,[0x0061f268]                ; 005c2084 | g_INT_0061f268
+    MOV EAX,[0x0061f268]                ; 005c2084 | g_StackAllocSize
     ADD EAX,0x3                         ; 005c2089
     AND AL,0xfc                         ; 005c208c
     SUB ESP,EAX                         ; 005c208e
@@ -79,14 +79,14 @@ section .text
         ;   XREF to: 005c2096 (UNCONDITIONAL_JUMP)  ; LAB_005c2096
     XOR EAX,EAX                         ; 005c2094
         ;   Label: LAB_005c2094
-    MOV EBX,dword ptr [0x0061f268]      ; 005c2096 | g_INT_0061f268
+    MOV EBX,dword ptr [0x0061f268]      ; 005c2096 | g_StackAllocSize
         ;   Label: LAB_005c2096
     ADD EAX,EBX                         ; 005c209c
-    MOV [0x0061f26c],EAX                ; 005c209e | g_PTR_0061f26c
+    MOV [0x0061f26c],EAX                ; 005c209e | g_CrtStackBuffer
     CALL crt_unknown.c_FUN_005c4840     ; 005c20a3
         ;   XREF to: 005c4840 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c4840()
     PUSH 0xa                            ; 005c20a8
-    MOV EBX,dword ptr [0x0061f244]      ; 005c20aa | g_INT_0061f244
+    MOV EBX,dword ptr [0x0061f244]      ; 005c20aa | g_WinMainCmdShow
     PUSH EBX                            ; 005c20b0
     PUSH 0x0                            ; 005c20b1
     PUSH 0x0                            ; 005c20b3

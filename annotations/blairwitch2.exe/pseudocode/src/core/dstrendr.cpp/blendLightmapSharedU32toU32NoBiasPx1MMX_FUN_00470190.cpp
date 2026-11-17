@@ -23,14 +23,14 @@ void __cdecl core_dstrendr_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00470
   ulonglong uVar12;
   
   uVar12 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c38b5c >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
                                                                                 0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)(g_ULONG_01c38b5c >> 0x10)) << 0x20)
-                                        >> 0x18),(char)(g_ULONG_01c38b5c >> 8)),
-                          (ushort)(byte)g_ULONG_01c38b5c),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   uVar1 = *texture_pixel;
-  uVar2 = g_UINT_ARRAY_00b6639c[*texture_index];
+  uVar2 = g_LightmapTexturePalette[*texture_index];
   uVar3 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
                                           CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1) >>
                 0x18);
@@ -47,11 +47,10 @@ void __cdecl core_dstrendr_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00470
                                             ((ushort)CONCAT41(uVar4,(char)(uVar2 >> 8)) & 0xff),
                                             ((ushort)uVar1 & 0xff) * (ushort)(byte)uVar2))),
                  *(ulonglong *)
-                  (g_USHORT_ARRAY_00612880 +
-                  ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4) ^
-                 g_USHORT_ARRAY_00612880._2040_8_);
+                  (g_LightmapData + ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4) ^
+                 g_LightmapData._2040_8_);
   uVar12 = pmulhw(uVar12,*(ulonglong *)
-                          (g_USHORT_ARRAY_00612880 +
+                          (g_LightmapData +
                           ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4));
   uVar5 = (ushort)((short)uVar6 + (short)uVar12) >> 4;
   uVar7 = (ushort)((short)((ulonglong)uVar6 >> 0x10) + (short)((ulonglong)uVar12 >> 0x10)) >> 4;

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy *this_ptr,int param_2)
+; void __cdecl core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy *this_ptr,int event_id)
 ;
 ; Parameters:
 ; CBasicEnemy *    Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   event_id
 ;
 ; XREF[3]:
 ;   core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350 at 005a137b

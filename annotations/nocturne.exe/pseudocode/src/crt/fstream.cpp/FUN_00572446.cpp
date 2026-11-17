@@ -53,7 +53,7 @@ double crt_fstream_cpp_FUN_00572446(void)
   }
   if (g_BYTE_005c1795 != 0) {
     fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX));
-    if ((g_BYTE_005c1d98 & 1) == 0) {
+    if ((g_UseSoftwareMath & 1) == 0) {
       fVar22 = fVar22 / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));
     }
     else {

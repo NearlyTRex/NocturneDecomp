@@ -41,7 +41,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr)
       return;
     }
     core_event_cpp_CEventList_executeCommands_FUN_004894f0
-              (g_CEventList_PTR_006141f0,(char *)&pCVar2[0xe].previous_transform_state.position.y);
+              (g_CEventListPtr,(char *)&pCVar2[0xe].previous_transform_state.position.y);
     core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(this_ptr);
     return;
   case 3:

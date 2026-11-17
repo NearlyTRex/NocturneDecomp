@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   distance
 ;
 ; Referenced Globals:
-;   int g_INT_00609b34 = 0x7fffffff
+;   int g_FarPlaneDistance = 0x7fffffff
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     JNZ 0x0043062d                      ; 00430626
         ;   XREF to: 0043062d (CONDITIONAL_JUMP)  ; LAB_0043062d
     MOV EAX,0x7fffffff                  ; 00430628
-    MOV [0x00609b34],EAX                ; 0043062d | g_INT_00609b34
+    MOV [0x00609b34],EAX                ; 0043062d | g_FarPlaneDistance
         ;   Label: LAB_0043062d
     RET                                 ; 00430632
 

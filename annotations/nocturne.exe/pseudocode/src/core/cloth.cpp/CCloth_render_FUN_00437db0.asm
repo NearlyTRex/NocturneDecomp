@@ -25,17 +25,17 @@
 ;   double DOUBLE_0057aedd = 65535
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   SMRGLPrimitiveQuad[1000] g_SMRGLPrimitiveQuad_ARRAY_0076934c
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].base.base.count
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].vertex_index
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].texture_u
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].texture_v
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[1].vertex_index
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[1].texture_u
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[1].texture_v
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[1].base.base.type
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[1].base.base.count
-;   undefined4 g_SMRGLPrimitiveQuad_ARRAY_0076934c[2].base.base.type
+;   SMRGLPrimitiveQuad[1000] g_ClothBackfaceBuffer
+;   undefined4 g_ClothBackfaceBuffer[0].base.base.count
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].vertex_index
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_u
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_v
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].vertex_index
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_u
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_v
+;   undefined4 g_ClothBackfaceBuffer[1].base.base.type
+;   undefined4 g_ClothBackfaceBuffer[1].base.base.count
+;   undefined4 g_ClothBackfaceBuffer[2].base.base.type
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   ... and 1 more
 ;
@@ -366,14 +366,14 @@ section .text
     TEST EBX,EBX                        ; 00438123
     JLE 0x0043818f                      ; 00438125
         ;   XREF to: 0043818f (CONDITIONAL_JUMP)  ; LAB_0043818f
-    MOV dword ptr [ESP + 0x10],0x76934c ; 00438127 | g_SMRGLPrimitiveQuad_ARRAY_0076934c
+    MOV dword ptr [ESP + 0x10],0x76934c ; 00438127 | g_ClothBackfaceBuffer
     IMUL EAX,dword ptr [ESP + 0xc],0x48 ; 0043812f
         ;   Label: LAB_0043812f
     MOV EDX,dword ptr [EBP + 0x114]     ; 00438134
     ADD EDX,EAX                         ; 0043813a
     MOV ECX,dword ptr [ESP + 0x10]      ; 0043813c
     MOV EAX,dword ptr [EDX + 0x4]       ; 00438140
-    MOV dword ptr [ECX + 0x4],EAX       ; 00438143 | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].base.base.count | g_SMRGLPrimitiveQuad_ARRAY_0076934c[1].base.base.count
+    MOV dword ptr [ECX + 0x4],EAX       ; 00438143 | g_ClothBackfaceBuffer[0].base.base.count | g_ClothBackfaceBuffer[1].base.base.count
     MOV ECX,dword ptr [EDX + 0x4]       ; 00438146
     XOR EAX,EAX                         ; 00438149
     TEST ECX,ECX                        ; 0043814b
@@ -386,11 +386,11 @@ section .text
     DEC EBX                             ; 00438158
     IMUL EBX,EBX,0xc                    ; 00438159
     LEA ESI,[EDX + EBX*0x1]             ; 0043815c
-    LEA EDI,[ECX + 0x18]                ; 0043815f | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].vertex_index
+    LEA EDI,[ECX + 0x18]                ; 0043815f | g_ClothBackfaceBuffer[0].vertices[0].vertex_index
     LEA ESI,[ESI + 0x18]                ; 00438162
-    MOVSD ES:EDI,ESI                    ; 00438165 | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].vertex_index | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[1].vertex_index
-    MOVSD ES:EDI,ESI                    ; 00438166 | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].texture_u | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[1].texture_u
-    MOVSD ES:EDI,ESI                    ; 00438167 | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[0].texture_v | g_SMRGLPrimitiveQuad_ARRAY_0076934c[0].vertices[1].texture_v
+    MOVSD ES:EDI,ESI                    ; 00438165 | g_ClothBackfaceBuffer[0].vertices[0].vertex_index | g_ClothBackfaceBuffer[0].vertices[1].vertex_index
+    MOVSD ES:EDI,ESI                    ; 00438166 | g_ClothBackfaceBuffer[0].vertices[0].texture_u | g_ClothBackfaceBuffer[0].vertices[1].texture_u
+    MOVSD ES:EDI,ESI                    ; 00438167 | g_ClothBackfaceBuffer[0].vertices[0].texture_v | g_ClothBackfaceBuffer[0].vertices[1].texture_v
     INC EAX                             ; 00438168
     MOV EBX,dword ptr [EDX + 0x4]       ; 00438169
     ADD ECX,0xc                         ; 0043816c
@@ -403,7 +403,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0043817b
     ADD ESI,0x48                        ; 0043817f
     INC EDI                             ; 00438182
-    MOV dword ptr [ESP + 0x10],ESI      ; 00438183 | g_SMRGLPrimitiveQuad_ARRAY_0076934c[1].base.base.type | g_SMRGLPrimitiveQuad_ARRAY_0076934c[2].base.base.type
+    MOV dword ptr [ESP + 0x10],ESI      ; 00438183 | g_ClothBackfaceBuffer[1].base.base.type | g_ClothBackfaceBuffer[2].base.base.type
     MOV dword ptr [ESP + 0xc],EDI       ; 00438187
     CMP EDI,EDX                         ; 0043818b
     JL 0x0043812f                       ; 0043818d
@@ -413,7 +413,7 @@ section .text
     PUSH 0x4                            ; 00438191
     MOV ECX,dword ptr [EBP + 0x10c]     ; 00438193
     PUSH ECX                            ; 00438199
-    PUSH 0x76934c                       ; 0043819a | g_SMRGLPrimitiveQuad_ARRAY_0076934c
+    PUSH 0x76934c                       ; 0043819a | g_ClothBackfaceBuffer
     MOV EBX,dword ptr [ESP + 0x18]      ; 0043819f
     PUSH EBX                            ; 004381a3
     MOV ESI,dword ptr [EBP + 0x104]     ; 004381a4
@@ -428,7 +428,7 @@ section .text
         ;   XREF to: 004381f0 (CONDITIONAL_JUMP)  ; LAB_004381f0
     PUSH 0x267                          ; 004381c4
     PUSH EBX                            ; 004381c9
-    PUSH 0x76934c                       ; 004381ca | g_SMRGLPrimitiveQuad_ARRAY_0076934c
+    PUSH 0x76934c                       ; 004381ca | g_ClothBackfaceBuffer
     JMP 0x00437fa3                      ; 004381cf
         ;   XREF to: 00437fa3 (UNCONDITIONAL_JUMP)  ; LAB_00437fa3
     PUSH -0x1                           ; 004381d4
@@ -444,7 +444,7 @@ section .text
     PUSH -0x1                           ; 004381f0
         ;   Label: LAB_004381f0
     PUSH EBX                            ; 004381f2
-    PUSH 0x76934c                       ; 004381f3 | g_SMRGLPrimitiveQuad_ARRAY_0076934c
+    PUSH 0x76934c                       ; 004381f3 | g_ClothBackfaceBuffer
     MOV EDX,dword ptr [0x005be368]      ; 004381f8 | g_CDemonSetPtr
     PUSH EDX                            ; 004381fe | g_CDemonSetInstance
     JMP 0x00437faa                      ; 004381ff

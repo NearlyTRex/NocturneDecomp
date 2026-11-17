@@ -10,5 +10,5 @@
 // =============================================================================
 
 // char[241][320]
-extern char g_CHAR_ARRAY_ARRAY_00b2cfc8[241][320];
+extern char g_CoronaBlurOutputBuffer[241][320];
 

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00451a08 = 00451aca
 ;   undefined1* PTR_caseD_3_00451a10 = 00451aaf
-;   uint g_UINT_01548784
-;   uint g_UINT_01548848
+;   uint g_CubeClipStage2Count
+;   uint g_CubeClipStage3Count
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004515b0
@@ -27,14 +27,14 @@ section .text
     MOV EBP,ESP                         ; 00451a24
     SUB ESP,0x4                         ; 00451a26
     AND ESP,0xfffffff8                  ; 00451a29
-    MOV EBX,dword ptr [0x01548848]      ; 00451a2c | g_UINT_01548848
-    MOV EDX,dword ptr [0x01548784]      ; 00451a32 | g_UINT_01548784
+    MOV EBX,dword ptr [0x01548848]      ; 00451a2c | g_CubeClipStage3Count
+    MOV EDX,dword ptr [0x01548784]      ; 00451a32 | g_CubeClipStage2Count
     XOR ESI,ESI                         ; 00451a38
     TEST EDX,EDX                        ; 00451a3a
     JLE 0x00451abd                      ; 00451a3c
         ;   XREF to: 00451abd (CONDITIONAL_JUMP)  ; LAB_00451abd
     MOV EDI,0x1548788                   ; 00451a42
-    MOV EAX,[0x01548784]                ; 00451a47 | g_UINT_01548784
+    MOV EAX,[0x01548784]                ; 00451a47 | g_CubeClipStage2Count
         ;   Label: LAB_00451a47
     LEA ECX,[ESI + 0x1]                 ; 00451a4c
     CMP ECX,EAX                         ; 00451a4f
@@ -84,14 +84,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00451aab
     INC EBX                             ; 00451aae
         ;   Label: LAB_00451aae
-    MOV ECX,dword ptr [0x01548784]      ; 00451aaf | g_UINT_01548784
+    MOV ECX,dword ptr [0x01548784]      ; 00451aaf | g_CubeClipStage2Count
         ;   Label: caseD_3
     INC ESI                             ; 00451ab5
     ADD EDI,0xc                         ; 00451ab6
     CMP ESI,ECX                         ; 00451ab9
     JL 0x00451a47                       ; 00451abb
         ;   XREF to: 00451a47 (CONDITIONAL_JUMP)  ; LAB_00451a47
-    MOV dword ptr [0x01548848],EBX      ; 00451abd | g_UINT_01548848
+    MOV dword ptr [0x01548848],EBX      ; 00451abd | g_CubeClipStage3Count
         ;   Label: LAB_00451abd
     MOV ESP,EBP                         ; 00451ac3
     POP EBP                             ; 00451ac5
@@ -116,10 +116,10 @@ section .text
     PUSH EDX                            ; 00451aee
     MOV EAX,dword ptr [ESP + 0x28]      ; 00451aef
     PUSH EAX                            ; 00451af3
-    MOV dword ptr [0x01548848],EBX      ; 00451af4 | g_UINT_01548848
+    MOV dword ptr [0x01548848],EBX      ; 00451af4 | g_CubeClipStage3Count
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00451afa
         ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01548848]      ; 00451aff | g_UINT_01548848
+    MOV EBX,dword ptr [0x01548848]      ; 00451aff | g_CubeClipStage3Count
     ADD ESP,0x2c                        ; 00451b05
     JMP 0x00451aae                      ; 00451b08
         ;   XREF to: 00451aae (UNCONDITIONAL_JUMP)  ; LAB_00451aae
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00451b4c
     PUSH ECX                            ; 00451b50
     PUSH EDX                            ; 00451b51
-    MOV dword ptr [0x01548848],EBX      ; 00451b52 | g_UINT_01548848
+    MOV dword ptr [0x01548848],EBX      ; 00451b52 | g_CubeClipStage3Count
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00451b58
         ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01548848]      ; 00451b5d | g_UINT_01548848
+    MOV EBX,dword ptr [0x01548848]      ; 00451b5d | g_CubeClipStage3Count
     ADD ESP,0x2c                        ; 00451b63
     JMP 0x00451aae                      ; 00451b66
         ;   XREF to: 00451aae (UNCONDITIONAL_JUMP)  ; LAB_00451aae

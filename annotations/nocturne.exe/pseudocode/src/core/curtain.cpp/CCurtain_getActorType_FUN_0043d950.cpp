@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_curtain_cpp_CCurtain_getActorType_FUN_0043d950(CCurtain *this_ptr)
 
 {
-  return &g_CCurtainActorType_0077d20c;
+  return &g_CCurtainClassInfo;
 }

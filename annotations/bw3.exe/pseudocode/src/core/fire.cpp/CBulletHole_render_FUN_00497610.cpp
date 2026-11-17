@@ -45,14 +45,14 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00497610(CBulletHole *this_ptr
             (g_CDemonRenderer_PTR_005f2afc,&this_ptr->euler_angles,translation);
   iVar1 = this_ptr->decal_type;
   if (iVar1 == 0) {
-    texture = &g_SMRGLTextureBasic_005fc964;
+    texture = &g_FireEffectBlackHoleTexture;
   }
   else if (iVar1 == 1) {
     texture = &g_SMRGLTextureBasic_005fc97c;
   }
   else {
     if (iVar1 != 2) goto LAB_0049766e;
-    texture = &g_SMRGLTextureBasic_005fc994;
+    texture = &g_FireEffectBlueSparkTexture;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (g_CDemonRenderer_PTR_005f2afc,texture);
@@ -148,7 +148,7 @@ LAB_0049766e:
     core_set_cpp_CDemonSet_computeLighting_FUN_00538400(g_CDemonSetPtr,&local_24,&local_3c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01c73670.base);
+            (g_CDemonRenderer_PTR_005f2afc,&g_BillboardPrimitive.base);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_pop_FUN_0046d080();
     return;

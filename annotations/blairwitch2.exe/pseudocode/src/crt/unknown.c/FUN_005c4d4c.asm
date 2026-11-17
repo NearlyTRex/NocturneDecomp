@@ -14,8 +14,8 @@
 ;   TerminatedCString s_conout_005f2064
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
-;   int g_INT_0061f75c = -0x1
-;   int g_INT_0061f760 = -0x1
+;   int g_ConsoleInputHandle = -0x1
+;   int g_ConsoleOutputHandle = -0x1
 ;
 ; Called Functions:
 ;   CreateFileA
@@ -28,7 +28,7 @@ section .text
     PUSH 0x0                            ; 005c4d4c
         ;   Label: crt_unknown.c_FUN_005c4d4c
     CALL dword ptr [0x0061f2a8]         ; 005c4d4e | PTR_crt_unknown.c_FUN_005bce04_0061f2a8
-    MOV EDX,dword ptr [0x0061f75c]      ; 005c4d54 | g_INT_0061f75c
+    MOV EDX,dword ptr [0x0061f75c]      ; 005c4d54 | g_ConsoleInputHandle
     ADD ESP,0x4                         ; 005c4d5a
     CMP EDX,-0x1                        ; 005c4d5d
     JNZ 0x005c4d85                      ; 005c4d60
@@ -41,8 +41,8 @@ section .text
     PUSH 0x80000000                     ; 005c4d6f
     PUSH 0x5f205c                       ; 005c4d74 | = "conin$"
     CALL dword ptr CS:[0x5c8518]        ; 005c4d79 | PTR_CreateFileA_005c8518
-    MOV [0x0061f75c],EAX                ; 005c4d80 | g_INT_0061f75c
-    CMP dword ptr [0x0061f760],-0x1     ; 005c4d85 | g_INT_0061f760
+    MOV [0x0061f75c],EAX                ; 005c4d80 | g_ConsoleInputHandle
+    CMP dword ptr [0x0061f760],-0x1     ; 005c4d85 | g_ConsoleOutputHandle
         ;   Label: LAB_005c4d85
     JNZ 0x005c4db1                      ; 005c4d8c
         ;   XREF to: 005c4db1 (CONDITIONAL_JUMP)  ; LAB_005c4db1
@@ -54,7 +54,7 @@ section .text
     PUSH 0x40000000                     ; 005c4d9b
     PUSH 0x5f2064                       ; 005c4da0 | = "conout$"
     CALL dword ptr CS:[0x5c8518]        ; 005c4da5 | PTR_CreateFileA_005c8518
-    MOV [0x0061f760],EAX                ; 005c4dac | g_INT_0061f760
+    MOV [0x0061f760],EAX                ; 005c4dac | g_ConsoleOutputHandle
     PUSH 0x0                            ; 005c4db1
         ;   Label: LAB_005c4db1
     CALL dword ptr [0x0061f2ac]         ; 005c4db3 | PTR_crt_unknown.c_FUN_005bce04_0061f2ac

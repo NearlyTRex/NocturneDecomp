@@ -13,8 +13,8 @@
 ;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60 at 00447cfd
 ;
 ; Referenced Globals:
-;   ushort[2048] g_USHORT_ARRAY_005b5d00
-;   undefined4 g_USHORT_ARRAY_005b5d00[1020]
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
@@ -51,10 +51,10 @@ section .text
     PUNPCKLBW MM2,MM7                   ; 004668c0
     ADD EAX,EDX                         ; 004668c3
     PMULLW MM0,MM2                      ; 004668c5
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004668c8 | g_USHORT_ARRAY_005b5d00
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004668c8 | g_LightmapData
     MOVQ MM2,MM3                        ; 004668d0
     MOVQ MM4,MM5                        ; 004668d3
-    PXOR MM2,qword ptr [0x005b64f8]     ; 004668d6 | g_USHORT_ARRAY_005b5d00[1020]
+    PXOR MM2,qword ptr [0x005b64f8]     ; 004668d6 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004668dd
     PMULHW MM4,MM3                      ; 004668e0
     PADDW MM0,MM4                       ; 004668e3

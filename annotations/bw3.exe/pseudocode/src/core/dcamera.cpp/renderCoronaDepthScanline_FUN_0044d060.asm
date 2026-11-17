@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170 at 0045d499
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER32 g_BIT_INTEGER32_013405b0
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int g_INT_01c6b5a8
 ;   int g_INT_01c6b5ac
 ;
@@ -30,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0044d068
     MOV ECX,dword ptr [ESP + 0x14]      ; 0044d06c
     SUB ECX,dword ptr [0x01c6b5ac]      ; 0044d070 | g_INT_01c6b5ac
-    MOV EBX,dword ptr [0x013405b0]      ; 0044d076 | g_BIT_INTEGER32_013405b0
+    MOV EBX,dword ptr [0x013405b0]      ; 0044d076 | g_CameraDownscaleIterations
     MOV dword ptr [ESP + 0x14],ECX      ; 0044d07c
     CMP EBX,0x1                         ; 0044d080
     JNZ 0x0044d090                      ; 0044d083
@@ -38,7 +38,7 @@ section .text
     TEST byte ptr [ESP + 0x14],0x1      ; 0044d085
     JNZ 0x0044d170                      ; 0044d08a
         ;   XREF to: 0044d170 (CONDITIONAL_JUMP)  ; LAB_0044d170
-    CMP dword ptr [0x013405b0],0x2      ; 0044d090 | g_BIT_INTEGER32_013405b0
+    CMP dword ptr [0x013405b0],0x2      ; 0044d090 | g_CameraDownscaleIterations
         ;   Label: LAB_0044d090
     JNZ 0x0044d0a4                      ; 0044d097
         ;   XREF to: 0044d0a4 (CONDITIONAL_JUMP)  ; LAB_0044d0a4
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 0044d170 (CONDITIONAL_JUMP)  ; LAB_0044d170
     MOV EBP,dword ptr [ESP + 0x14]      ; 0044d0a4
         ;   Label: LAB_0044d0a4
-    MOV CL,byte ptr [0x013405b0]        ; 0044d0a8 | g_BIT_INTEGER32_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044d0a8 | g_CameraDownscaleIterations
     MOV EAX,[0x01c6b5a8]                ; 0044d0ae | g_INT_01c6b5a8
     MOV EBX,dword ptr [EDI + 0x8]       ; 0044d0b3
     MOV ESI,dword ptr [EDX + 0x8]       ; 0044d0b6

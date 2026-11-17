@@ -21,7 +21,7 @@
 ;   core_sound.cpp_updateListeners_FUN_0057b780 at 0057bb2a
 ;
 ; Referenced Globals:
-;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     SHL EBX,0x10                        ; 0044dd81
     MOV dword ptr [ESP],EBX             ; 0044dd84
     MOV EBX,EDX                         ; 0044dd87
-    MOV EDX,dword ptr [EDX*0x4 + 0x1c4480c] ; 0044dd89 | g_UINT_PTR_ARRAY_01c4480c
+    MOV EDX,dword ptr [EDX*0x4 + 0x1c4480c] ; 0044dd89 | g_ZBufferScanlineArray
     SHL EBX,0x10                        ; 0044dd90
     MOV EAX,dword ptr [EDX + EAX*0x4]   ; 0044dd93
     MOV dword ptr [ESP + 0x4],EBX       ; 0044dd96

@@ -17,11 +17,10 @@ int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004964c0(CFireball *this_ptr
     iVar1 = 0;
     do {
       core_fire_cpp_CFireEffect_createFireball_FUN_0049d500
-                (g_CFireEffect_PTR_00614d30,(CVector3f *)this_ptr,(CVector3f *)0x0,1,0);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,1,0);
       iVar1 = iVar1 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (g_CFireEffect_PTR_00614d30,(CVector3f *)this_ptr,(CVector3f *)0x0,0x10000,0x10000,0
-                 ,0xffff);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x10000,0x10000,0,0xffff);
     } while (iVar1 < 8);
     core_set_cpp_CDemonSet_initCameraShake_FUN_00534800(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
     sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
@@ -38,8 +37,7 @@ int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004964c0(CFireball *this_ptr
     do {
       iVar1 = iVar1 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (g_CFireEffect_PTR_00614d30,(CVector3f *)this_ptr,(CVector3f *)0x0,0x10000,0x10000,2
-                 ,0xffff);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x10000,0x10000,2,0xffff);
     } while (iVar1 < 8);
     sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
     sound_sndmain_cpp_setNextSfxStaticPosition_FUN_00550110

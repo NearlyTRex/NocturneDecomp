@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 38,
+    "complexity_score": 13,
     "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 33
   },
   "cross_references": [
@@ -92,7 +90,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100",
-    "signature": "void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int param_2)"
+    "signature": "void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int fade_out)"
   },
   "function_calls": [
     {
@@ -262,29 +260,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "fade_out",
         "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != 0) {",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

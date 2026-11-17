@@ -9,12 +9,12 @@
 ; int              Stack[0xc]:4   offset_z
 ;
 ; Referenced Globals:
-;   int g_INT_01c51d2c
-;   int g_INT_01c51d30
-;   int g_INT_01c51d34
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01d1dd74
+;   int g_MatrixStackIndex
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -27,28 +27,28 @@ section .text
         ;   Label: engine_matrix.c_pushMatrixRelativeOffset_FUN_005093d0
     PUSH ESI                            ; 005093d1
     PUSH EBP                            ; 005093d2
-    MOV EAX,[0x01d1dd74]                ; 005093d3 | g_INT_01d1dd74
-    MOV EDX,dword ptr [0x01c51d2c]      ; 005093d8 | g_INT_01c51d2c
-    MOV ECX,dword ptr [0x01c51d30]      ; 005093de | g_INT_01c51d30
+    MOV EAX,[0x01d1dd74]                ; 005093d3 | g_MatrixStackIndex
+    MOV EDX,dword ptr [0x01c51d2c]      ; 005093d8 | g_RelativeX
+    MOV ECX,dword ptr [0x01c51d30]      ; 005093de | g_RelativeY
     MOV dword ptr [EAX*0x4 + 0x1d1dee0],EDX ; 005093e4
-    MOV EDX,dword ptr [0x01c51d30]      ; 005093eb | g_INT_01c51d30
-    MOV EBX,dword ptr [0x01c51d34]      ; 005093f1 | g_INT_01c51d34
+    MOV EDX,dword ptr [0x01c51d30]      ; 005093eb | g_RelativeY
+    MOV EBX,dword ptr [0x01c51d34]      ; 005093f1 | g_RelativeZ
     MOV dword ptr [EAX*0x4 + 0x1d1df08],EDX ; 005093f7
-    MOV EDX,dword ptr [0x01c51d34]      ; 005093fe | g_INT_01c51d34
-    MOV ESI,dword ptr [0x01d1dd74]      ; 00509404 | g_INT_01d1dd74
+    MOV EDX,dword ptr [0x01c51d34]      ; 005093fe | g_RelativeZ
+    MOV ESI,dword ptr [0x01d1dd74]      ; 00509404 | g_MatrixStackIndex
     MOV dword ptr [EAX*0x4 + 0x1d1df30],EDX ; 0050940a
     MOV EAX,dword ptr [ESP + 0x10]      ; 00509411
-    MOV EDX,dword ptr [0x01c51d2c]      ; 00509415 | g_INT_01c51d2c
+    MOV EDX,dword ptr [0x01c51d2c]      ; 00509415 | g_RelativeX
     INC ESI                             ; 0050941b
     SUB EDX,EAX                         ; 0050941c
     MOV EAX,dword ptr [ESP + 0x14]      ; 0050941e
-    MOV dword ptr [0x01d1dd74],ESI      ; 00509422 | g_INT_01d1dd74
+    MOV dword ptr [0x01d1dd74],ESI      ; 00509422 | g_MatrixStackIndex
     SUB ECX,EAX                         ; 00509428
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050942a
-    MOV dword ptr [0x01c51d2c],EDX      ; 0050942e | g_INT_01c51d2c
+    MOV dword ptr [0x01c51d2c],EDX      ; 0050942e | g_RelativeX
     SUB EBX,EAX                         ; 00509434
-    MOV dword ptr [0x01c51d30],ECX      ; 00509436 | g_INT_01c51d30
-    MOV dword ptr [0x01c51d34],EBX      ; 0050943c | g_INT_01c51d34
+    MOV dword ptr [0x01c51d30],ECX      ; 00509436 | g_RelativeY
+    MOV dword ptr [0x01c51d34],EBX      ; 0050943c | g_RelativeZ
     CMP ESI,0x9                         ; 00509442
     JG 0x0050944b                       ; 00509445
         ;   XREF to: 0050944b (CONDITIONAL_JUMP)  ; LAB_0050944b

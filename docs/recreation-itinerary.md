@@ -718,7 +718,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0052cab0 (operand-change); [ ] bw2 0x0050b8d0 = bw3 0x005043b0 (logic-change)
   - [~] `init` 0x0053f780 (53)
     - deferred: zeroing g_ChatHistoryCount and g_ChatOutCount, with CNetGame::addChatHistory and CNetGame::processChatOut
-    - deferred: disconnect(0)'s other resets: server_player_index -1, mission_name emptied, player_count 0, has_pending_sim_frame 0, g_RemoteSyncStage 0 and the game-settings version INT_02f7c8c4 0, with CNetGame::disconnect
+    - deferred: disconnect(0)'s other resets: server_player_index -1, mission_name emptied, player_count 0, has_pending_sim_frame 0, g_RemoteSyncStage 0 and the game-settings version g_NetNextPlayerId 0, with CNetGame::disconnect
 - free functions
   - [ ] `assignInt1` 0x00543e20 (6)
 

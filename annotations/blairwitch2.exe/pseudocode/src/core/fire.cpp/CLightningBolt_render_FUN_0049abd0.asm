@@ -68,7 +68,7 @@
 ;   double g_DOUBLE_005d5732 = 0.25
 ;   float g_FLOAT_005f64e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_006157cc
+;   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].v
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].r
@@ -126,7 +126,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ac06
     SUB EAX,EDX                         ; 0049ac0d
     SHL EAX,0x3                         ; 0049ac0f
-    ADD EAX,0x6157cc                    ; 0049ac12 | g_SMRGLTextureBasic_ARRAY_006157cc
+    ADD EAX,0x6157cc                    ; 0049ac12 | g_FireEffectLightningBoltTextures
     PUSH EAX                            ; 0049ac17
     MOV EDX,dword ptr [0x0060b280]      ; 0049ac18 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 0049ac1e | g_CDemonRenderer_01ba5c50

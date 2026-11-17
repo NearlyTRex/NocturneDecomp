@@ -23,8 +23,8 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0(voi
   int iVar12;
   
   iVar11 = g_INT_02c7fc88 * 8;
-  if (g_INT_006232ec != 2) {
-    if (0 < g_INT_006232ec) {
+  if (g_AudioChannelCount != 2) {
+    if (0 < g_AudioChannelCount) {
       uVar4 = *(uint *)(&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88);
       uVar5 = *(uint *)((int)&g_DOUBLE_02c7fbf8 + iVar11 + 4);
       uVar6 = *(uint *)(&g_DOUBLE_02c7fc08 + g_INT_02c7fc88);
@@ -41,7 +41,7 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0(voi
         *(uint *)((int)g_DOUBLE_ARRAY_02c80790 + iVar11) = uVar8;
         *(uint *)((int)g_DOUBLE_ARRAY_02c80790 + iVar11 + 4) = uVar9;
         iVar11 = iVar12;
-      } while (iVar12 < g_INT_006232ec * 8);
+      } while (iVar12 < g_AudioChannelCount * 8);
     }
     return;
   }

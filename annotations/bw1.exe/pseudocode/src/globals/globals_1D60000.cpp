@@ -5,8 +5,8 @@
 // =============================================================================
 
 // SChatOutMessage[50]
-SChatOutMessage g_SChatOutMessage_ARRAY_01d6dfbc[50] = {};
+SChatOutMessage g_ChatOutMessages[50] = {};
 
 // int
-int g_INT_01d6dfb8 = {};
+int g_ChatOutCount = {};
 

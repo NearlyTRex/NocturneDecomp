@@ -15,5 +15,5 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp28_FUN_00404e10(SMRGLHea
   g_INT_01d046a4 = 0xe2;
   g_CHAR_PTR_01d046a0 = "..\\engine\\3d.c";
   core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_54);
-  return (SMRGLHeaderExtended *)&g_INT_0070ca84;
+  return (SMRGLHeaderExtended *)&g_RenderResult;
 }

@@ -17,7 +17,7 @@
 ;   undefined4 g_SFogImagePlane_012ceb78.pixels[1][1]
 ;   undefined4 g_SFogImagePlane_012ceb78.pixels[1][2]
 ;   undefined4 g_SFogImagePlane_012ceb78.pixels[2][1]
-;   undefined4 g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]
+;   undefined4 g_CameraImageDecompressBuffer[0].pixels[1][0]
 ;
 ; *****************************************************************************
 
@@ -82,7 +82,7 @@ section .text
     IMUL EBX,EAX,0x140                  ; 00446f2d
         ;   Label: LAB_00446f2d
     MOV CL,byte ptr [EBX + 0x12ceb78]   ; 00446f33 | g_SFogImagePlane_012ceb78.pixels[1][0]
-    MOV byte ptr [EDX + 0x12e1778],CL   ; 00446f39 | g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]
+    MOV byte ptr [EDX + 0x12e1778],CL   ; 00446f39 | g_CameraImageDecompressBuffer[0].pixels[1][0]
     MOV ECX,dword ptr [ESI + 0x150]     ; 00446f3f
     MOV BL,byte ptr [ECX + EBX*0x1 + 0x12ceb77] ; 00446f45
     MOV byte ptr [ECX + EDX*0x1 + 0x12e1777],BL ; 00446f4c

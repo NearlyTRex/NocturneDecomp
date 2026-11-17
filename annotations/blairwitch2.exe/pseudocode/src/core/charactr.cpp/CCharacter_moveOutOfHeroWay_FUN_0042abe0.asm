@@ -42,10 +42,10 @@
 ;   float g_FLOAT_005cd31a = 0.25
 ;   double g_DOUBLE_005cd31e = 2.40000000000000
 ;   float g_FLOAT_005cd326 = -1
-;   float[6] g_FLOAT_ARRAY_00609aa0
+;   float[6] g_MoveAwayAngleOffsets
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
@@ -107,7 +107,7 @@ section .text
     PUSH 0x0                            ; 0042ac4a
         ;   Label: LAB_0042ac4a
     PUSH 0x0                            ; 0042ac4c
-    PUSH 0x265370c                      ; 0042ac4e | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042ac4e | g_ZeroVector
     MOV EAX,dword ptr [EBP + 0x14]      ; 0042ac53
     PUSH 0x0                            ; 0042ac56
     ADD EAX,0x3040                      ; 0042ac58
@@ -246,7 +246,7 @@ section .text
         ;   XREF to: 0042b122 (CONDITIONAL_JUMP)  ; LAB_0042b122
     FLD float ptr [ESP + 0x16c]         ; 0042ae12
         ;   Label: LAB_0042ae12
-    FADD float ptr [EAX*0x4 + 0x609aa0] ; 0042ae19 | g_FLOAT_ARRAY_00609aa0
+    FADD float ptr [EAX*0x4 + 0x609aa0] ; 0042ae19 | g_MoveAwayAngleOffsets
     XOR EAX,EAX                         ; 0042ae20
     FSTP float ptr [ESP + 0x184]        ; 0042ae22
     MOV dword ptr [ESP + 0x148],EAX     ; 0042ae29
@@ -323,7 +323,7 @@ section .text
     PUSH 0x0                            ; 0042af2c
         ;   Label: LAB_0042af2c
     PUSH 0x0                            ; 0042af2e
-    PUSH 0x265370c                      ; 0042af30 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042af30 | g_ZeroVector
     PUSH 0x0                            ; 0042af35
     PUSH EBX                            ; 0042af37
     MOV ECX,dword ptr [EBP + 0x14]      ; 0042af38
@@ -537,7 +537,7 @@ section .text
     PUSH 0x0                            ; 0042b219
         ;   Label: LAB_0042b219
     PUSH 0x0                            ; 0042b21b
-    PUSH 0x265370c                      ; 0042b21d | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 0042b21d | g_ZeroVector
     PUSH 0x0                            ; 0042b222
     PUSH EBX                            ; 0042b224
     MOV EDX,dword ptr [EBP + 0x14]      ; 0042b225

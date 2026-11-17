@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
 ;   int g_INT_01c35e60
-;   uint g_UINT_01caf62c
-;   uint g_UINT_01caf630
+;   uint g_FlyBlendColor
+;   uint g_FlyInvBlendColor
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     MOVD MM0,dword ptr [0x01c35e60]     ; 004a7024 | g_INT_01c35e60
     PXOR MM7,MM7                        ; 004a702b
     MOVD MM1,dword ptr [EDI]            ; 004a702e
-    MOVD MM2,dword ptr [0x01caf62c]     ; 004a7031 | g_UINT_01caf62c
-    MOVD MM3,dword ptr [0x01caf630]     ; 004a7038 | g_UINT_01caf630
+    MOVD MM2,dword ptr [0x01caf62c]     ; 004a7031 | g_FlyBlendColor
+    MOVD MM3,dword ptr [0x01caf630]     ; 004a7038 | g_FlyInvBlendColor
     PUNPCKLBW MM0,MM7                   ; 004a703f
     PUNPCKLBW MM1,MM7                   ; 004a7042
     PUNPCKLBW MM2,MM7                   ; 004a7045

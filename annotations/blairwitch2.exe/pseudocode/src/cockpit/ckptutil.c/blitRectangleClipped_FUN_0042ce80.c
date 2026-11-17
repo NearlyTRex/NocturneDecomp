@@ -17,14 +17,14 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_0042ce80(void *sprite_d
   int iVar6;
   byte *puVar7;
   
-  iVar1 = g_INT_01c35e50 - dest_x;
-  iVar2 = (int)g_ARRAY_PTR_01c2a38c[1] - (int)g_ARRAY_PTR_01c2a38c[0];
+  iVar1 = g_ClipRight - dest_x;
+  iVar2 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   iVar6 = g_INT_01c35e48 - dest_x;
   if (sprite_data != (void *)0x0) {
     pCVar3 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     iVar4 = width + -1;
     if (g_INT_006141c0 == 8) {
-      puVar7 = g_ARRAY_PTR_01c2a38c[dest_y] + dest_x;
+      puVar7 = g_ScreenBufferArray[dest_y] + dest_x;
       iVar5 = 0;
       if (((iVar6 < 1) || (iVar5 = iVar6, iVar6 <= iVar4)) &&
          (((iVar4 <= iVar1 || (iVar4 = iVar1, iVar5 <= iVar1)) && (iVar1 = 0, 0 < height)))) {
@@ -38,7 +38,7 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_0042ce80(void *sprite_d
       }
     }
     else {
-      puVar7 = g_ARRAY_PTR_01c2a38c[dest_y] + dest_x * 2;
+      puVar7 = g_ScreenBufferArray[dest_y] + dest_x * 2;
       iVar5 = 0;
       if (((iVar6 < 1) || (iVar5 = iVar6, iVar6 <= iVar4)) &&
          ((iVar4 <= iVar1 || (iVar4 = iVar1, iVar5 <= iVar1)))) {

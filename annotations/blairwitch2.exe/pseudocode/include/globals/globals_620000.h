@@ -19,7 +19,7 @@ extern GUID g_IID_IDirectSound3DBuffer;
 extern SRenderVertex g_SRenderVertex_ARRAY_00622014[20000];
 
 // byte[16]
-extern byte g_BYTE_ARRAY_006216c0[16];
+extern byte g_IEEE754ExponentClassTable[16];
 
 // void*
 extern void* g_PTR_006216dc;

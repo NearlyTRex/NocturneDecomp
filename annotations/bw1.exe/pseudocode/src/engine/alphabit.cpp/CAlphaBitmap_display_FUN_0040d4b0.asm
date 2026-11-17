@@ -34,7 +34,7 @@
 ;   int g_INT_0061b498 = 0x140
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c4354c
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040d910
@@ -107,7 +107,7 @@ section .text
     CMP ECX,dword ptr [0x0061b49c]      ; 0040d537 | g_INT_0061b49c
     JGE 0x0040d57f                      ; 0040d53d
         ;   XREF to: 0040d57f (CONDITIONAL_JUMP)  ; LAB_0040d57f
-    MOV ECX,dword ptr [ECX*0x4 + 0x1c4354c] ; 0040d53f | g_ARRAY_PTR_01c4354c
+    MOV ECX,dword ptr [ECX*0x4 + 0x1c4354c] ; 0040d53f | g_ScreenBufferArray
     MOV EAX,dword ptr [ESI + 0xc]       ; 0040d546
     XOR EDX,EDX                         ; 0040d549
     TEST EDI,EDI                        ; 0040d54b
@@ -177,7 +177,7 @@ section .text
     CMP ECX,dword ptr [0x0061b49c]      ; 0040d5dc | g_INT_0061b49c
     JGE 0x0040d623                      ; 0040d5e2
         ;   XREF to: 0040d623 (CONDITIONAL_JUMP)  ; LAB_0040d623
-    MOV ECX,dword ptr [ECX*0x4 + 0x1c4354c] ; 0040d5e4 | g_ARRAY_PTR_01c4354c
+    MOV ECX,dword ptr [ECX*0x4 + 0x1c4354c] ; 0040d5e4 | g_ScreenBufferArray
     MOV EAX,dword ptr [ESI + 0xc]       ; 0040d5eb
     XOR EDX,EDX                         ; 0040d5ee
     TEST EDI,EDI                        ; 0040d5f0

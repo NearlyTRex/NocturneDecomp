@@ -11,5 +11,5 @@
 // =============================================================================
 
 // CVector3f[20000]
-extern CVector3f g_CVector3f_ARRAY_01c1f03c[20000];
+extern CVector3f g_PVSCubePositions[20000];
 

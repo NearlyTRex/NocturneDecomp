@@ -64,60 +64,60 @@ section .text
     PUSH 0x1                            ; 0041fc54
     PUSH 0x579a09                       ; 0041fc56 | = "Bip01 L ForeArm"
     PUSH ESI                            ; 0041fc5b
-    MOV [0x00764b2c],EAX                ; 0041fc5c | g_INT_ARRAY_00764b2c
+    MOV [0x00764b2c],EAX                ; 0041fc5c | g_BrideIndices
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fc61
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fc66
     PUSH 0x1                            ; 0041fc69
     PUSH 0x579a19                       ; 0041fc6b | = "Bip01 R ForeArm"
     PUSH ESI                            ; 0041fc70
-    MOV [0x00764b38],EAX                ; 0041fc71 | g_INT_ARRAY_00764b2c[3]
+    MOV [0x00764b38],EAX                ; 0041fc71 | g_BrideIndices[3]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fc76
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fc7b
     PUSH 0x1                            ; 0041fc7e
     PUSH 0x579a29                       ; 0041fc80 | = "Bip01 L Foot"
     PUSH ESI                            ; 0041fc85
-    MOV [0x00764b3c],EAX                ; 0041fc86 | g_INT_ARRAY_00764b2c[4]
+    MOV [0x00764b3c],EAX                ; 0041fc86 | g_BrideIndices[4]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fc8b
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fc90
     PUSH 0x1                            ; 0041fc93
     PUSH 0x579a36                       ; 0041fc95 | = "Bip01 R Foot"
     PUSH ESI                            ; 0041fc9a
-    MOV [0x00764b48],EAX                ; 0041fc9b | g_INT_ARRAY_00764b2c[7]
+    MOV [0x00764b48],EAX                ; 0041fc9b | g_BrideIndices[7]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fca0
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fca5
     PUSH 0x1                            ; 0041fca8
     PUSH 0x579a43                       ; 0041fcaa | = "Bip01 L Hand"
     PUSH ESI                            ; 0041fcaf
-    MOV [0x00764b4c],EAX                ; 0041fcb0 | g_INT_ARRAY_00764b2c[8]
+    MOV [0x00764b4c],EAX                ; 0041fcb0 | g_BrideIndices[8]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fcb5
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fcba
     PUSH 0x1                            ; 0041fcbd
     PUSH 0x579a50                       ; 0041fcbf | = "Bip01 R Hand"
     PUSH ESI                            ; 0041fcc4
-    MOV [0x00764b30],EAX                ; 0041fcc5 | g_INT_ARRAY_00764b2c[1]
+    MOV [0x00764b30],EAX                ; 0041fcc5 | g_BrideIndices[1]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fcca
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fccf
     PUSH 0x1                            ; 0041fcd2
     PUSH 0x579a5d                       ; 0041fcd4 | = "Bip01 L UpperArm"
     PUSH ESI                            ; 0041fcd9
-    MOV [0x00764b34],EAX                ; 0041fcda | g_INT_ARRAY_00764b2c[2]
+    MOV [0x00764b34],EAX                ; 0041fcda | g_BrideIndices[2]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fcdf
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fce4
     PUSH 0x1                            ; 0041fce7
     PUSH 0x579a6e                       ; 0041fce9 | = "Bip01 R UpperArm"
     PUSH ESI                            ; 0041fcee
-    MOV [0x00764b40],EAX                ; 0041fcef | g_INT_ARRAY_00764b2c[5]
+    MOV [0x00764b40],EAX                ; 0041fcef | g_BrideIndices[5]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fcf4
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fcf9
-    MOV [0x00764b44],EAX                ; 0041fcfc | g_INT_ARRAY_00764b2c[6]
+    MOV [0x00764b44],EAX                ; 0041fcfc | g_BrideIndices[6]
     PUSH 0x1                            ; 0041fd01
     PUSH 0x579a7f                       ; 0041fd03 | = "Bip01 Spine"
     PUSH ESI                            ; 0041fd08
@@ -127,12 +127,12 @@ section .text
     PUSH 0x1                            ; 0041fd11
     PUSH 0x579a8b                       ; 0041fd13 | = "Bip01 Spine2"
     PUSH ESI                            ; 0041fd18
-    MOV [0x00764b50],EAX                ; 0041fd19 | g_INT_ARRAY_00764b2c[9]
+    MOV [0x00764b50],EAX                ; 0041fd19 | g_BrideIndices[9]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041fd1e
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041fd23
     PUSH EDI                            ; 0041fd26
-    MOV [0x00764b54],EAX                ; 0041fd27 | g_INT_ARRAY_00764b2c[10]
+    MOV [0x00764b54],EAX                ; 0041fd27 | g_BrideIndices[10]
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0041fd2c
         ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041fd31

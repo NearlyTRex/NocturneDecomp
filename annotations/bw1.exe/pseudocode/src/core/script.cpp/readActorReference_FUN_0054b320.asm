@@ -16,8 +16,8 @@
 ;   TerminatedCString s_anon_005f004d
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   TerminatedCString s_none_00622ad8
-;   char[200] g_CHAR_ARRAY_00622ae0
-;   undefined4 g_CHAR_ARRAY_00622ae0+4
+;   char[200] g_ActorRefDefaultBuffer
+;   undefined4 g_ActorRefDefaultBuffer+4
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
@@ -39,9 +39,9 @@ section .text
     LEA EDI,[ESP + 0x4]                 ; 0054b330
     PUSH 0x5f004d                       ; 0054b334 | = "\"%[^\"]\"\n"
     MOV EDX,dword ptr [ESP + 0xdc]      ; 0054b339
-    MOV ESI,0x622ae0                    ; 0054b340 | g_CHAR_ARRAY_00622ae0
+    MOV ESI,0x622ae0                    ; 0054b340 | g_ActorRefDefaultBuffer
     PUSH EDX                            ; 0054b345
-    MOVSD.REP ES:EDI,ESI                ; 0054b346 | g_CHAR_ARRAY_00622ae0 | g_CHAR_ARRAY_00622ae0+4
+    MOVSD.REP ES:EDI,ESI                ; 0054b346 | g_ActorRefDefaultBuffer | g_ActorRefDefaultBuffer+4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b348
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0054b34d

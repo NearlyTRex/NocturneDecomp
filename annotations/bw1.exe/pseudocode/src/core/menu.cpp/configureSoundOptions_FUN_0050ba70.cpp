@@ -511,9 +511,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_0050ba70(void)
       } while (cVar2 != '\0');
       local_24 = local_24 + 1;
     }
-    g_INT_01d1ee98 = g_INT_01d1ee98 + g_INT_01c43530 * 0x18;
-    if (0x7ffff < g_INT_01d1ee98) {
-      g_INT_01d1ee98 = g_INT_01d1ee98 + -0x80000;
+    g_AudioVisualizationCounter = g_AudioVisualizationCounter + g_GlobalDeltaTimeInt * 0x18;
+    if (0x7ffff < g_AudioVisualizationCounter) {
+      g_AudioVisualizationCounter = g_AudioVisualizationCounter + -0x80000;
     }
     iVar4 = sound_sndmain_cpp_isSoundBusy_FUN_00575550();
     if (iVar4 != 0) {
@@ -571,7 +571,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_0050ba70(void)
     case 1:
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(0);
       local_a48 = local_14 / 0.25f;
-      if (g_INT_01d1ee8c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         iVar4 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00573cd0(0);
         if (iVar4 == 0) {
           sound_sndmain_cpp_enableSfxChannel_FUN_00573c50(0,1);
@@ -609,7 +609,7 @@ LAB_0050c485:
     case 2:
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(2);
       local_a40 = local_14 / 1.0f;
-      if (g_INT_01d1ee8c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         iVar4 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00573cd0(2);
         if (iVar4 == 0) {
           sound_sndmain_cpp_enableSfxChannel_FUN_00573c50(2,1);
@@ -643,7 +643,7 @@ LAB_0050c5aa:
     case 3:
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(1);
       local_a44 = local_14 / 0.25f;
-      if (g_INT_01d1ee8c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         iVar4 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00573cd0(1);
         if (iVar4 == 0) {
           sound_sndmain_cpp_enableSfxChannel_FUN_00573c50(1,1);
@@ -679,7 +679,7 @@ LAB_0050c6ac:
       break;
     case 4:
       iVar4 = sound_sndmain_cpp_getAudioSampleRate_FUN_00575220();
-      if (g_INT_01d1ee8c == 1) {
+      if (g_MenuLeftRightPressed == 1) {
         if (iVar4 == 0x5622) {
 LAB_0050c78b:
           iVar4 = 0x2b2a;

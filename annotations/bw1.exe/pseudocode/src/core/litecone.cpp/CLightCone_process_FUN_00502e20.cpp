@@ -13,7 +13,7 @@ void __cdecl core_litecone_cpp_CLightCone_process_FUN_00502e20(CLightCone *this_
   
   if (this_ptr->state == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (g_CEventList_PTR_0061b4d0,this_ptr->on_event);
+                      (g_CEventListPtr,this_ptr->on_event);
     if (iVar1 != 0) {
       this_ptr->state = 1;
       return;
@@ -21,7 +21,7 @@ void __cdecl core_litecone_cpp_CLightCone_process_FUN_00502e20(CLightCone *this_
   }
   else {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (g_CEventList_PTR_0061b4d0,this_ptr->off_event);
+                      (g_CEventListPtr,this_ptr->off_event);
     if (iVar1 != 0) {
       this_ptr->state = 0;
       return;

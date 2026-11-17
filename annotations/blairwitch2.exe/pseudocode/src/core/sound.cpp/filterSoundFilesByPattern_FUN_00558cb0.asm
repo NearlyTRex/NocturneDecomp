@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CStrList g_CStrListInstance
-;   int g_INT_0264b460
+;   int g_SoundMatchCount
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240
@@ -26,7 +26,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 00558cb4
     XOR EDX,EDX                         ; 00558cb8
     XOR EBX,EBX                         ; 00558cba
-    MOV dword ptr [0x0264b460],EDX      ; 00558cbc | g_INT_0264b460
+    MOV dword ptr [0x0264b460],EDX      ; 00558cbc | g_SoundMatchCount
     MOV EAX,[0x0264b450]                ; 00558cc2 | g_CStrListInstance
     CMP EBX,EAX                         ; 00558cc7
     JL 0x00558cd0                       ; 00558cc9
@@ -56,7 +56,7 @@ section .text
     PUSH 0x264b450                      ; 00558cef
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00481240 ; 00558cf4
         ;   XREF to: 00481240 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00481240(CStrList * this_ptr, int index)
-    IMUL EDI,dword ptr [0x0264b460],0x28 ; 00558cf9 | g_INT_0264b460
+    IMUL EDI,dword ptr [0x0264b460],0x28 ; 00558cf9 | g_SoundMatchCount
     ADD ESP,0x8                         ; 00558d00
     MOV ESI,EAX                         ; 00558d03
     ADD EDI,0x264b468                   ; 00558d05
@@ -76,9 +76,9 @@ section .text
         ;   XREF to: 00558d0c (CONDITIONAL_JUMP)  ; LAB_00558d0c
     POP EDI                             ; 00558d24
         ;   Label: LAB_00558d24
-    MOV ESI,dword ptr [0x0264b460]      ; 00558d25 | g_INT_0264b460
+    MOV ESI,dword ptr [0x0264b460]      ; 00558d25 | g_SoundMatchCount
     INC ESI                             ; 00558d2b
-    MOV dword ptr [0x0264b460],ESI      ; 00558d2c | g_INT_0264b460
+    MOV dword ptr [0x0264b460],ESI      ; 00558d2c | g_SoundMatchCount
     CMP ESI,0x28                        ; 00558d32
     JGE 0x00558ccb                      ; 00558d35
         ;   XREF to: 00558ccb (CONDITIONAL_JUMP)  ; LAB_00558ccb

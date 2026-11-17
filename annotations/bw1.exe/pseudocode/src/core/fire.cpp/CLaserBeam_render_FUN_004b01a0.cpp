@@ -141,7 +141,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
   
   bVar9 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c4c4);
+            (g_CDemonRenderer_PTR_00612560,&g_FireEffectLaserTexture);
   local_1fc = (this_ptr->hit_position).x - (this_ptr->origin).x;
   local_1f8[0] = (this_ptr->hit_position).y - (this_ptr->origin).y;
   local_1f8[1] = (this_ptr->hit_position).z - (this_ptr->origin).z;
@@ -315,7 +315,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
       engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,&local_f4);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c50c);
+                (g_CDemonRenderer_PTR_00612560,&g_FireEffectHeadliteTexture);
       pCVar5 = g_CDemonRenderer_PTR_00612560;
       local_2ec.surface_normal.A.i = 4;
       local_2d4 = 0;
@@ -362,7 +362,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
   }
   if (0.0 < local_380) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c4dc);
+              (g_CDemonRenderer_PTR_00612560,&g_FireEffectBeamFuzzTexture);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
               (g_CDemonRenderer_PTR_00612560,&this_ptr->origin);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -442,8 +442,8 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
           local_38 = (float)(int)ROUND(dVar12);
           if (this_ptr->cone_angle <= 0.0) {
             local_318 = 0;
-            local_308 = ((iVar6 << 8) / (int)local_28 + g_INT_01c57e18) * 0x10000;
-            local_2f0 = (local_34 / (int)local_28 + g_INT_01c57e18) * 0x10000;
+            local_308 = ((iVar6 << 8) / (int)local_28 + g_TextureAnimCounter1) * 0x10000;
+            local_2f0 = (local_34 / (int)local_28 + g_TextureAnimCounter1) * 0x10000;
             local_2f4 = 0;
             local_300 = local_38;
           }
@@ -535,7 +535,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
               (g_CDemonRenderer_PTR_00612560,&local_e8,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061c4f4);
+              (g_CDemonRenderer_PTR_00612560,&g_FireEffectReticle);
     local_1a8 = 0.2;
     local_1a0 = 0.0;
     local_1a4 = 0.2;

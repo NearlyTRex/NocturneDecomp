@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_0059833e = 2
+;   double g_YFlipMatrixScaleFactor = 2
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x30                        ; 0055ca32
     MOV EAX,ESI                         ; 0055ca35
     FLD float ptr [ESP + 0x3c]          ; 0055ca37
-    FMUL double ptr [0x0059833e]        ; 0055ca3b | g_DOUBLE_0059833e
+    FMUL double ptr [0x0059833e]        ; 0055ca3b | g_YFlipMatrixScaleFactor
     MOV EDX,0x3f800000                  ; 0055ca41
     MOV EBP,0xbf800000                  ; 0055ca46
     MOV EDI,ESI                         ; 0055ca4b

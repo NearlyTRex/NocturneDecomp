@@ -33,7 +33,7 @@
 ;   float FLOAT_0058586b = -0.5
 ;   float FLOAT_0058586f = -2
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CLeverActorType_01cc3628.name_hash
+;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -82,7 +82,7 @@ section .text
     POP ESI                             ; 004b5341
     POP EBX                             ; 004b5342
     RET                                 ; 004b5343
-    MOV EDX,dword ptr [0x01cc3660]      ; 004b5344 | g_CLeverActorType_01cc3628.name_hash
+    MOV EDX,dword ptr [0x01cc3660]      ; 004b5344 | g_CLeverClassInfo.name_hash
         ;   Label: LAB_004b5344
     PUSH EDX                            ; 004b534a
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004b534b | g_CDemonSetInstance.actors[0]

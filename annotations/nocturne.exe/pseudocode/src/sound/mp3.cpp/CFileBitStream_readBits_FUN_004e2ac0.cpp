@@ -19,7 +19,7 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 614;
     core_main_c_displayErrorAndQuit_FUN_004c8440
-              ("Cannot read or write more than %d bits at a time.  File: %s",0x20,g_CHAR_ARRAY_01cd8b28);
+              ("Cannot read or write more than %d bits at a time.  File: %s",0x20,g_CurrentMp3Filename);
   }
   this_ptr->total_bits_read = this_ptr->total_bits_read + num_bits;
   do {
@@ -77,8 +77,8 @@ LAB_004e2aec:
     iVar2 = this_ptr->bits_available - iVar2;
     local_14 = local_14 |
                ((int)((uint)(byte)this_ptr->buffer[this_ptr->current_byte_index] &
-                     g_UINT_ARRAY_005bc010[this_ptr->bits_available]) >> ((byte)iVar2 & 0x1f)) <<
-               ((byte)num_bits & 0x1f);
+                     g_MpegBitMaskTableMultiBit[this_ptr->bits_available]) >> ((byte)iVar2 & 0x1f))
+               << ((byte)num_bits & 0x1f);
     this_ptr->bits_available = iVar2;
   } while( true );
 }

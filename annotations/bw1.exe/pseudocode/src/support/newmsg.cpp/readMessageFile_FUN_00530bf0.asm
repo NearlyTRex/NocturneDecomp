@@ -115,7 +115,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 00530c90
         ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00530c95
-    PUSH 0x1d7f1b8                      ; 00530c98 | g_INT_01d7f1b8
+    PUSH 0x1d7f1b8                      ; 00530c98 | g_UseOSFonts
     PUSH 0x5ec501                       ; 00530c9d | = "%d\n"
     PUSH ESI                            ; 00530ca2
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00530ca3
@@ -132,7 +132,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 00530cc7
         ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00530ccc
-    PUSH 0x6225f0                       ; 00530ccf | g_CHAR_ARRAY_006225f0
+    PUSH 0x6225f0                       ; 00530ccf | g_OSFontName
     PUSH 0x5ec538                       ; 00530cd4 | = "\"%[^\"]\"\n"
     PUSH EBX                            ; 00530cd9
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00530cda
@@ -371,7 +371,7 @@ section .text
     ADD ESP,0x8                         ; 00530f8f
     JMP 0x00530f0a                      ; 00530f92
         ;   XREF to: 00530f0a (UNCONDITIONAL_JUMP)  ; LAB_00530f0a
-    MOV dword ptr [0x01d7f1bc],0x1      ; 00530f97 | g_INT_01d7f1bc
+    MOV dword ptr [0x01d7f1bc],0x1      ; 00530f97 | g_LocalizationLoaded
         ;   Label: LAB_00530f97
     ADD ESP,0x30c                       ; 00530fa1
     POP EBP                             ; 00530fa7

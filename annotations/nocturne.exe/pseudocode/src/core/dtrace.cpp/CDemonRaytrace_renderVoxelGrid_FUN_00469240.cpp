@@ -42,7 +42,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_00469240(CDemonR
         iVar7 = 0;
         local_18 = local_20;
         do {
-          if ((*(byte *)(*(int *)voxel_data + local_18) & g_UCHAR_ARRAY_005b6d08[iVar7]) != 0) {
+          if ((*(byte *)(*(int *)voxel_data + local_18) & g_VoxelYBitMasks[iVar7]) != 0) {
             local_34.x = (float)iVar7 * (this_ptr->cell_size).x * 0.125f +
                          (float)grid_x * fVar1 + fVar2;
             local_14 = local_1c;

@@ -40,19 +40,19 @@
   "globals": [
     {
       "addr": "012b022c",
-      "name": "g_INT_012b022c",
+      "name": "g_BackdropSaveActive",
       "type": "int",
       "value": null
     },
     {
       "addr": "012b0230",
-      "name": "g_INT_012b0230",
+      "name": "g_DitherPatternOffset",
       "type": "int",
       "value": null
     },
     {
       "addr": "012b0660",
-      "name": "g_BIT_INTEGER32_012b0660",
+      "name": "g_CameraDownscaleIterations",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -239,9 +239,9 @@
     {
       "description": "Complex pointer cast",
       "line": 56,
-      "match": "(int *)((int)g_INT_ARRAY_012b0234",
+      "match": "(int *)((int)g_DitherPatternTable",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_INT_ARRAY_012b0234 + g_INT_012b0230);",
+      "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);",
       "type": "pointer_cast"
     },
     {

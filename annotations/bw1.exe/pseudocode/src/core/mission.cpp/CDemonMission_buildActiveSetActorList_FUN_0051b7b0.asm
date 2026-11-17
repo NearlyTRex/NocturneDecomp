@@ -16,7 +16,7 @@
 ;   TerminatedCString s_none_005e9855
 ;   TerminatedCString s_core_mission_cpp_005e985a
 ;   TerminatedCString s_CDemonMission_buildActiv_005e986e
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
@@ -119,7 +119,7 @@ section .text
     JZ 0x0051b812                       ; 0051b890
         ;   XREF to: 0051b812 (CONDITIONAL_JUMP)  ; LAB_0051b812
     PUSH ESI                            ; 0051b892
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0051b893 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0051b893 | g_CEventListPtr
     PUSH ESI                            ; 0051b899
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0051b89a
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

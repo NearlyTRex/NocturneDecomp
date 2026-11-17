@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/structs/SFogGrid.h"
 
 // =============================================================================
@@ -11,23 +12,23 @@
 // =============================================================================
 
 // SFogGrid
-extern SFogGrid g_SFogGrid_0149d6dc;
+extern SFogGrid g_CameraFogGrid;
 
 // int
-extern int g_INT_0149d6d0;
-extern int g_INT_0149d6d4;
-extern int g_INT_0149d6d8;
-extern int g_INT_0149e6fc;
-extern int g_INT_0149e700;
-extern int g_INT_0149e704;
-extern int g_INT_0149ef08;
-extern int g_INT_0149ef0c;
-extern int g_INT_0149ef10;
+extern int g_ImageProcessingState1;
+extern int g_ImageProcessingState2;
+extern int g_ImageBytesPerPixel;
+extern int g_CameraScreenWidth;
+extern int g_CameraScreenHeight;
+extern int g_ScanlineSpanCount;
+extern int g_BackgroundSceneDepth;
+extern int g_BackgroundSavedBitsPerPixel;
+extern int g_BackgroundSavedUseExternalRenderer;
 
 // int[256]
-extern int g_INT_ARRAY_0149e708[256];
-extern int g_INT_ARRAY_0149eb08[256];
+extern int g_ScanlineSpanLeft[256];
+extern int g_ScanlineSpanRight[256];
 
-// void*[1200]
-extern void* g_ARRAY_PTR_0149ef14[1200];
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_BackgroundSavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

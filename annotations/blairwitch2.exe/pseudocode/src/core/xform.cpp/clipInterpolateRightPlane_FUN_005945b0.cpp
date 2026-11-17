@@ -45,7 +45,7 @@ void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005945b0(SRenderVertex
   (vertex_out->projected_vertex).transformed_y =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
        (vertex_a->projected_vertex).transformed_y;
-  uVar2 = g_BIT_INTEGER32_01c38b54.bytes[0];
+  uVar2 = g_RenderStateFlags.bytes[0];
   (vertex_out->projected_vertex).screen_x = -1;
   if ((uVar2 & 4) == 0) {
     return;

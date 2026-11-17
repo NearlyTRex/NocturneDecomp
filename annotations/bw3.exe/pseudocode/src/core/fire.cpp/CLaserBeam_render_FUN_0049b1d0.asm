@@ -224,9 +224,9 @@
 ;   double g_DOUBLE_005c0640 = -0.100000000000000
 ;   float g_FLOAT_005df8e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fcab4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fcacc
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fcae4
+;   SMRGLTextureBasic g_FireEffectLaserTexture
+;   SMRGLTextureBasic g_FireEffectBeamFuzzTexture
+;   SMRGLTextureBasic g_FireEffectReticle
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -259,7 +259,7 @@ section .text
     MOV EBP,ESP                         ; 0049b1d4
     SUB ESP,0x3a0                       ; 0049b1d6
     AND ESP,0xfffffff8                  ; 0049b1dc
-    PUSH 0x5fcab4                       ; 0049b1df | g_SMRGLTextureBasic_005fcab4
+    PUSH 0x5fcab4                       ; 0049b1df | g_FireEffectLaserTexture
     MOV EDX,dword ptr [0x005f2afc]      ; 0049b1e4 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 0049b1ea | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0049b1eb
@@ -697,7 +697,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0049b845
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0049b84a
-    PUSH 0x5fcafc                       ; 0049b84d | g_SMRGLTextureBasic_005fcafc
+    PUSH 0x5fcafc                       ; 0049b84d | g_FireEffectHeadliteTexture
     MOV ECX,dword ptr [0x005f2afc]      ; 0049b852 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 0049b858 | g_CDemonRenderer_01bdd7e4
     MOV EBX,0x4                         ; 0049b859
@@ -833,7 +833,7 @@ section .text
     TEST dword ptr [EAX + 0x38],0x7fffffff ; 0049ba47
     JZ 0x0049bd33                       ; 0049ba4e
         ;   XREF to: 0049bd33 (CONDITIONAL_JUMP)  ; LAB_0049bd33
-    PUSH 0x5fcacc                       ; 0049ba54 | g_SMRGLTextureBasic_005fcacc
+    PUSH 0x5fcacc                       ; 0049ba54 | g_FireEffectBeamFuzzTexture
     MOV EDI,dword ptr [0x005f2afc]      ; 0049ba59 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDI                            ; 0049ba5f | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0049ba60
@@ -1266,7 +1266,7 @@ section .text
     MOV EAX,EDX                         ; 0049c0e8
     SAR EDX,0x1f                        ; 0049c0ea
     IDIV ECX                            ; 0049c0ed
-    MOV EBX,dword ptr [0x01c743f8]      ; 0049c0ef | g_INT_01c743f8
+    MOV EBX,dword ptr [0x01c743f8]      ; 0049c0ef | g_TextureAnimCounter1
     ADD EAX,EBX                         ; 0049c0f5
     SHL EAX,0x10                        ; 0049c0f7
     MOV dword ptr [ESP + 0xa0],EAX      ; 0049c0fa
@@ -1400,7 +1400,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30 ; 0049c302
         ;   XREF to: 0046cf30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0049c307
-    PUSH 0x5fcae4                       ; 0049c30a | g_SMRGLTextureBasic_005fcae4
+    PUSH 0x5fcae4                       ; 0049c30a | g_FireEffectReticle
     MOV EBX,dword ptr [0x005f2afc]      ; 0049c30f | g_CDemonRenderer_PTR_005f2afc
     PUSH EBX                            ; 0049c315 | g_CDemonRenderer_01bdd7e4
     MOV ESI,0x3ecccccd                  ; 0049c316

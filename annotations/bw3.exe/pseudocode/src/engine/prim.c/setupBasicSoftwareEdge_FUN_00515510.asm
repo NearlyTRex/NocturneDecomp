@@ -8,9 +8,9 @@
 ; SRenderVertex *  Stack[0x8]:4   end_vertex
 ;
 ; Referenced Globals:
-;   int g_INT_01ed2c88
-;   int g_INT_01ed318c
-;   int g_INT_01ed3190
+;   int g_SoftwareEdgeCount
+;   int g_SoftwareMinScanline
+;   int g_SoftwareMaxScanline
 ;
 ; *****************************************************************************
 
@@ -41,24 +41,24 @@ section .text
     MOV EAX,EBX                         ; 00515541
     MOV EBX,EDI                         ; 00515543
     MOV EDI,EAX                         ; 00515545
-    MOV EAX,[0x01ed2c88]                ; 00515547 | g_INT_01ed2c88
+    MOV EAX,[0x01ed2c88]                ; 00515547 | g_SoftwareEdgeCount
         ;   Label: LAB_00515547
     LEA ECX,[EAX*0x4 + 0x0]             ; 0051554c
     ADD ECX,EAX                         ; 00515553
     SHL ECX,0x4                         ; 00515555
     ADD ECX,0x1ed2c8c                   ; 00515558
     MOV dword ptr [ECX],EBX             ; 0051555e
-    MOV EAX,[0x01ed318c]                ; 00515560 | g_INT_01ed318c
+    MOV EAX,[0x01ed318c]                ; 00515560 | g_SoftwareMinScanline
     MOV dword ptr [ECX + 0x4],EDI       ; 00515565
     CMP EBX,EAX                         ; 00515568
     JGE 0x00515572                      ; 0051556a
         ;   XREF to: 00515572 (CONDITIONAL_JUMP)  ; LAB_00515572
-    MOV dword ptr [0x01ed318c],EBX      ; 0051556c | g_INT_01ed318c
-    CMP EDI,dword ptr [0x01ed3190]      ; 00515572 | g_INT_01ed3190
+    MOV dword ptr [0x01ed318c],EBX      ; 0051556c | g_SoftwareMinScanline
+    CMP EDI,dword ptr [0x01ed3190]      ; 00515572 | g_SoftwareMaxScanline
         ;   Label: LAB_00515572
     JLE 0x00515580                      ; 00515578
         ;   XREF to: 00515580 (CONDITIONAL_JUMP)  ; LAB_00515580
-    MOV dword ptr [0x01ed3190],EDI      ; 0051557a | g_INT_01ed3190
+    MOV dword ptr [0x01ed3190],EDI      ; 0051557a | g_SoftwareMaxScanline
     MOV EDI,dword ptr [ESI + 0x14]      ; 00515580
         ;   Label: LAB_00515580
     MOV EBX,dword ptr [EBP + 0x14]      ; 00515583
@@ -166,11 +166,11 @@ section .text
     MOV EAX,EDI                         ; 00515697
     IMUL EDX                            ; 00515699
     SHRD EAX,EDX,0x10                   ; 0051569b
-    MOV EDX,dword ptr [0x01ed2c88]      ; 0051569f | g_INT_01ed2c88
+    MOV EDX,dword ptr [0x01ed2c88]      ; 0051569f | g_SoftwareEdgeCount
     MOV EBX,dword ptr [ESI + 0x8]       ; 005156a5
     INC EDX                             ; 005156a8
     ADD EBX,EAX                         ; 005156a9
-    MOV dword ptr [0x01ed2c88],EDX      ; 005156ab | g_INT_01ed2c88
+    MOV dword ptr [0x01ed2c88],EDX      ; 005156ab | g_SoftwareEdgeCount
     MOV dword ptr [ECX + 0x28],EBX      ; 005156b1
     ADD ESP,0x4                         ; 005156b4
         ;   Label: LAB_005156b4

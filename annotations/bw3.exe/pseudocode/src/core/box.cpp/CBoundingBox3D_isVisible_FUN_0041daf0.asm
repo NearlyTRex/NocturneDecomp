@@ -45,15 +45,15 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005b74a9 = 0.5
-;   float g_FLOAT_005dc948 = 256
+;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   float g_FLOAT_005dc950 = 0.00390625
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   int g_INT_00730408
-;   int g_INT_0073040c
-;   int g_INT_00730410
-;   CDemonCamera* g_CDemonCamera_PTR_007e2a54
+;   int g_StoredX
+;   int g_StoredY
+;   int g_StoredZ
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01c6e24c
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0
@@ -148,28 +148,28 @@ section .text
     MOV dword ptr [ESP + 0x34],EAX      ; 0041dbb7
     MOV EAX,dword ptr [ESP + 0x74]      ; 0041dbbb
     MOV dword ptr [ESP + 0x38],EAX      ; 0041dbbf
-    MOV EAX,0x730408                    ; 0041dbc3 | g_INT_00730408
+    MOV EAX,0x730408                    ; 0041dbc3 | g_StoredX
         ;   Label: LAB_0041dbc3
     LEA EBX,[ESP + 0x60]                ; 0041dbc8
-    FILD dword ptr [EAX]                ; 0041dbcc | g_INT_00730408
+    FILD dword ptr [EAX]                ; 0041dbcc | g_StoredX
     FMUL float ptr [0x005dc950]         ; 0041dbce | g_FLOAT_005dc950
     FSTP float ptr [EBX]                ; 0041dbd4
-    FILD dword ptr [EAX + 0x4]          ; 0041dbd6 | g_INT_0073040c
+    FILD dword ptr [EAX + 0x4]          ; 0041dbd6 | g_StoredY
     FMUL float ptr [0x005dc950]         ; 0041dbd9 | g_FLOAT_005dc950
     FSTP float ptr [EBX + 0x4]          ; 0041dbdf
-    FILD dword ptr [EAX + 0x8]          ; 0041dbe2 | g_INT_00730410
+    FILD dword ptr [EAX + 0x8]          ; 0041dbe2 | g_StoredZ
     FMUL float ptr [0x005dc950]         ; 0041dbe5 | g_FLOAT_005dc950
     FSTP float ptr [EBX + 0x8]          ; 0041dbeb
     LEA EBX,[ESP + 0x48]                ; 0041dbee
     LEA EAX,[ESP + 0x30]                ; 0041dbf2
     FLD float ptr [EAX]                 ; 0041dbf6
-    FMUL float ptr [0x005dc948]         ; 0041dbf8 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dbf8 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 0041dbfe
     FLD float ptr [EAX + 0x4]           ; 0041dc00
-    FMUL float ptr [0x005dc948]         ; 0041dc03 | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dc03 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 0041dc09
     FLD float ptr [EAX + 0x8]           ; 0041dc0c
-    FMUL float ptr [0x005dc948]         ; 0041dc0f | g_FLOAT_005dc948
+    FMUL float ptr [0x005dc948]         ; 0041dc0f | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 0041dc15
     LEA EAX,[ESP + 0x48]                ; 0041dc18
     PUSH EAX                            ; 0041dc1c
@@ -178,7 +178,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0041dc22
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0041dc27
-    MOV EBX,dword ptr [0x007e2a54]      ; 0041dc2a | g_CDemonCamera_PTR_007e2a54
+    MOV EBX,dword ptr [0x007e2a54]      ; 0041dc2a | g_CurrentSceneCamera
     FLD float ptr [ESP + 0x60]          ; 0041dc30
     FLD float ptr [ESP + 0x64]          ; 0041dc34
     FLD float ptr [ESP + 0x68]          ; 0041dc38
@@ -203,7 +203,7 @@ section .text
     PUSH 0x2038f4c                      ; 0041dc6a
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580 ; 0041dc6f
         ;   XREF to: 00450580 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
-    MOV EDI,dword ptr [0x01c6e24c]      ; 0041dc74 | g_INT_01c6e24c
+    MOV EDI,dword ptr [0x01c6e24c]      ; 0041dc74 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 0041dc7a
     CMP EDI,0xfde8                      ; 0041dc7d
     JLE 0x0041dc97                      ; 0041dc83
@@ -214,7 +214,7 @@ section .text
     POP ESI                             ; 0041dc8e
     POP EBX                             ; 0041dc8f
     RET                                 ; 0041dc90
-    MOV dword ptr [0x01c6e24c],EBX      ; 0041dc91 | g_INT_01c6e24c
+    MOV dword ptr [0x01c6e24c],EBX      ; 0041dc91 | g_PerspectiveReciprocal
         ;   Label: LAB_0041dc91
     MOV EAX,0x1                         ; 0041dc97
         ;   Label: LAB_0041dc97

@@ -85,10 +85,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart 
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(this_ptr,0,0);
   pCVar5 = &(this_ptr->bounding_box).max;
-  if (pCVar5 != &g_CVector3f_02c8af28) {
-    pCVar5->x = g_CVector3f_02c8af28.x;
-    (this_ptr->bounding_box).max.y = g_CVector3f_02c8af28.y;
-    (this_ptr->bounding_box).max.z = g_CVector3f_02c8af28.z;
+  if (pCVar5 != &g_ZeroVector) {
+    pCVar5->x = g_ZeroVector.x;
+    (this_ptr->bounding_box).max.y = g_ZeroVector.y;
+    (this_ptr->bounding_box).max.z = g_ZeroVector.z;
   }
   if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar5) {
     (this_ptr->bounding_box).min.x = pCVar5->x;

@@ -215,14 +215,14 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
   if ((g_BYTE_01ccc3e0 & 2) == 0) {
     g_BYTE_01ccc3e0 = g_BYTE_01ccc3e0 | 2;
   }
-  local_30 = (float)g_INT_01c4353c;
-  local_2c[0].x = (float)g_INT_01c43540;
+  local_30 = (float)g_MouseX;
+  local_2c[0].x = (float)g_MouseY;
   local_38 = (float)g_INT_0061b498;
   local_5c = 0x41000000;
   local_34 = g_INT_0061b49c;
   if (0x1e0 < g_INT_0061b49c) {
-    local_30 = (float)((g_INT_01c4353c * 0x1e0) / g_INT_0061b49c);
-    local_2c[0].x = (float)((g_INT_01c43540 * 0x1e0) / g_INT_0061b49c);
+    local_30 = (float)((g_MouseX * 0x1e0) / g_INT_0061b49c);
+    local_2c[0].x = (float)((g_MouseY * 0x1e0) / g_INT_0061b49c);
     local_38 = 8.96831e-43;
     local_34 = 0x1e0;
   }
@@ -245,26 +245,25 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
   local_58 = 0x3e4ccccd;
   memset(player_control,0,0x30);
   piVar14 = &(player_control->action_state).use_item;
-  if (g_CHAR_ARRAY_01ccff98[this_ptr->key_use_item] == g_CHAR_ARRAY_01c50950[this_ptr->key_use_item]
-     ) {
+  if (g_PrevKeyboardState[this_ptr->key_use_item] == g_KeyboardState[this_ptr->key_use_item]) {
     *piVar14 = 0;
   }
   else {
-    *piVar14 = (uint)(byte)g_CHAR_ARRAY_01c50950[this_ptr->key_use_item];
+    *piVar14 = (uint)(byte)g_KeyboardState[this_ptr->key_use_item];
   }
   piVar14 = &(player_control->action_state).light;
-  if (g_CHAR_ARRAY_01ccff98[this_ptr->key_light] == g_CHAR_ARRAY_01c50950[this_ptr->key_light]) {
+  if (g_PrevKeyboardState[this_ptr->key_light] == g_KeyboardState[this_ptr->key_light]) {
     *piVar14 = 0;
   }
   else {
-    *piVar14 = (uint)(byte)g_CHAR_ARRAY_01c50950[this_ptr->key_light];
+    *piVar14 = (uint)(byte)g_KeyboardState[this_ptr->key_light];
   }
   piVar14 = &(player_control->action_state).draw;
-  if (g_CHAR_ARRAY_01ccff98[this_ptr->key_draw] == g_CHAR_ARRAY_01c50950[this_ptr->key_draw]) {
+  if (g_PrevKeyboardState[this_ptr->key_draw] == g_KeyboardState[this_ptr->key_draw]) {
     *piVar14 = 0;
   }
   else {
-    *piVar14 = (uint)(byte)g_CHAR_ARRAY_01c50950[this_ptr->key_draw];
+    *piVar14 = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
   }
   iVar6 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_0061f2a4,this_ptr->key_next_weapon);
@@ -344,13 +343,13 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
     g_INT_01cd0c94 = 0;
     g_INT_01ccc3c4 = 0;
     g_INT_01ccc3b4 = 0;
-    g_BIT_INTEGER32_01c43544.dword = 0;
+    g_MouseButtonFlags.dword = 0;
     g_CDemonActor_PTR_01ccc3dc = (CDemonActor *)0x0;
     sound_sndmain_cpp_killAllSfx_FUN_00573b00();
     g_FLOAT_01cd0c28 = 1e+30;
   }
   if (g_INT_01cd0b40 < 0) {
-    g_BIT_INTEGER32_01c43544.dword = 0;
+    g_MouseButtonFlags.dword = 0;
     g_INT_01ccc3c4 = 0;
     g_CDemonActor_PTR_01ccc3dc = (CDemonActor *)0x0;
     g_FLOAT_01cd0c28 = 1e+30;
@@ -361,7 +360,7 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
        (*(((g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).base.vtable._uh)->_uh).isWeaponDrawn)
                  (g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]);
   if (this_ptr->goggles_active != 0) {
-    if ((g_BIT_INTEGER32_01c43544.dword & 1) != 0) {
+    if ((g_MouseButtonFlags.dword & 1) != 0) {
       if ((float10)0 <
           (float10)((int)in_stack_0000003c - in_stack_00000030 / 2) /
           (float10)(in_stack_00000034 / 2)) {
@@ -371,16 +370,16 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
         (player_control->action_state).walk = 1;
       }
       if (this_ptr->always_run == 0) {
-        bVar18 = g_CHAR_ARRAY_01c50950[this_ptr->key_run];
+        bVar18 = g_KeyboardState[this_ptr->key_run];
       }
       else {
-        bVar18 = g_CHAR_ARRAY_01c50950[this_ptr->key_run] == '\0';
+        bVar18 = g_KeyboardState[this_ptr->key_run] == '\0';
       }
       (player_control->action_state).run = (uint)bVar18;
     }
     fVar7 = (float)(in_stack_00000038 - in_stack_00000030 / 2) / (float)(in_stack_00000030 / 2);
     player_control->turn_speed = fVar7;
-    _Var3 = g_BIT_INTEGER32_01c43544;
+    _Var3 = g_MouseButtonFlags;
     player_control->turn_speed =
          fVar7 * player_control->turn_speed * player_control->turn_speed * 0.25f;
     if ((_Var3.dword & 2) != 0) {
@@ -522,7 +521,7 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
   pCStack00000040 = (CDemonActor *)0x0;
   pCVar13 = pCStack00000040;
   if ((g_INT_01ccc3b4 == 0) &&
-     ((g_BIT_INTEGER32_01c43544.dword == 1 || ((g_BIT_INTEGER32_01c43544.dword & 2) != 0)))) {
+     ((g_MouseButtonFlags.dword == 1 || ((g_MouseButtonFlags.dword & 2) != 0)))) {
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     uStack_668 = 0x4d9b3e;
     core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70
@@ -595,7 +594,7 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
     }
   }
   pCStack00000040 = pCVar13;
-  if ((pCStack00000028 == (CDemonActor *)0x0) || ((g_BIT_INTEGER32_01c43544.dword & 2) == 0)) {
+  if ((pCStack00000028 == (CDemonActor *)0x0) || ((g_MouseButtonFlags.dword & 2) == 0)) {
     if (pCStack00000028 == (CDemonActor *)0x0) {
       g_CDemonActor_PTR_01ccc3dc = pCStack00000028;
     }
@@ -663,8 +662,8 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
     (player_control->action_state).fire = 1;
   }
 LAB_004d9de9:
-  if (((g_INT_01ccc3b4 != 0) || (g_BIT_INTEGER32_01c43544.dword != 1)) &&
-     ((g_BIT_INTEGER32_01c43544.dword & 2) == 0)) goto LAB_004da080;
+  if (((g_INT_01ccc3b4 != 0) || (g_MouseButtonFlags.dword != 1)) &&
+     ((g_MouseButtonFlags.dword & 2) == 0)) goto LAB_004da080;
   g_FLOAT_01cd0c28 = 1e+30;
   uStack_668 = 0x4d9e36;
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70
@@ -726,7 +725,7 @@ LAB_004d9de9:
         afStack_2c8[0] = fVar1 * 0.0;
         afStack_2c8[1] = afStack_2c8[1] * fVar1;
       }
-      if ((pCStack00000028 != (CDemonActor *)0x0) && ((g_BIT_INTEGER32_01c43544.dword & 2) != 0)) {
+      if ((pCStack00000028 != (CDemonActor *)0x0) && ((g_MouseButtonFlags.dword & 2) != 0)) {
         if (g_INT_01ccc3c4 != 1) {
           g_INT_01ccc3c4 = 0;
         }
@@ -762,7 +761,7 @@ LAB_004d9de9:
            *(uint *)((int)&CStack_1e8 + (uint)bVar18 * -8 + 4);
       *(uint *)((int)&CStack_470 + ((uint)bVar18 * -2 + (uint)bVar18 * -2) * 4 + 8) =
            *(uint *)((int)&CStack_1e8 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
-      if ((pCStack00000028 != (CDemonActor *)0x0) && ((g_BIT_INTEGER32_01c43544.dword & 2) != 0)) {
+      if ((pCStack00000028 != (CDemonActor *)0x0) && ((g_MouseButtonFlags.dword & 2) != 0)) {
         if (g_INT_01ccc3c4 != 1) {
           g_INT_01ccc3c4 = 0;
         }
@@ -770,17 +769,17 @@ LAB_004dbaf8:
         g_FLOAT_01cd0c28 = 1e+30;
         goto LAB_004dbb02;
       }
-      if (g_BIT_INTEGER32_01c43544.dword != 1) goto LAB_004dbb02;
+      if (g_MouseButtonFlags.dword != 1) goto LAB_004dbb02;
       g_CVector3f_01ccc3b8.x = (float)CStack_470.x * 0.00390625f;
       g_CVector3f_01ccc3b8.y = (float)CStack_470.y * 0.00390625f;
       g_CVector3f_01ccc3b8.z = (float)CStack_470.z * 0.00390625f;
       g_FLOAT_01ccc3d4 = 0.0;
-      g_INT_01ccc3c4 = (int)g_BIT_INTEGER32_01c43544;
+      g_INT_01ccc3c4 = (int)g_MouseButtonFlags;
     }
   }
   else {
-    if (((g_BIT_INTEGER32_01c43544.dword & 2) != 0) &&
-       (g_CDemonActor_PTR_01ccc3dc == (CDemonActor *)0x0)) {
+    if (((g_MouseButtonFlags.dword & 2) != 0) && (g_CDemonActor_PTR_01ccc3dc == (CDemonActor *)0x0))
+    {
       g_INT_01ccc3b0 = 1;
       if (g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->action_pending == 0) {
         core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0
@@ -812,7 +811,7 @@ LAB_004dbaf8:
             if (this_ptr_02 == (CDemonActor *)0x0) {
               if (this_ptr_03 == (CDemonActor *)0x0) {
                 if (this_ptr_00 == (CDemonActor *)0x0) {
-                  if ((g_BIT_INTEGER32_01c43544.dword == 1) &&
+                  if ((g_MouseButtonFlags.dword == 1) &&
                      (&pCStack00000040->location != (CLocation *)&g_CVector3f_01ccc3b8)) {
                     g_CVector3f_01ccc3b8.x = (pCStack00000040->location).position.x;
                     g_CVector3f_01ccc3b8.z = (pCStack00000040->location).position.z;
@@ -1120,7 +1119,7 @@ LAB_004dbaf8:
         afStack_18c[(uint)bVar18 * -2 + -1] = afStack_39c[(uint)bVar18 * -2 + -1];
         afStack_18c[(uint)bVar18 * -2 + (uint)bVar18 * -2] =
              afStack_39c[(uint)bVar18 * -2 + (uint)bVar18 * -2];
-        if ((int *)&stack0x00000000 != g_INT_ARRAY_01cd0d98 + 9) {
+        if ((int *)&stack0x00000000 != g_GhoulIndices + 9) {
           g_FLOAT_01cd0c28 = (float)auStack_198._4_4_;
           g_FLOAT_01cd0c2c = fStack_190;
           g_FLOAT_01cd0c30 = afStack_18c[0];
@@ -1232,7 +1231,7 @@ LAB_004dbaf8:
         }
       }
     }
-    if ((in_stack_00000030 != 0) && ((g_BIT_INTEGER32_01c43544.dword & 2) != 0)) {
+    if ((in_stack_00000030 != 0) && ((g_MouseButtonFlags.dword & 2) != 0)) {
       g_FLOAT_01cd0c28 = 1e+30;
       g_INT_01ccc3c4 = 0;
       goto LAB_004da080;
@@ -1244,10 +1243,10 @@ LAB_004dbb02:
     if (g_INT_01ccc3c4 == 0) goto LAB_004da080;
   }
   if (this_ptr->always_run == 0) {
-    bVar19 = g_CHAR_ARRAY_01c50950[this_ptr->key_run];
+    bVar19 = g_KeyboardState[this_ptr->key_run];
   }
   else {
-    bVar19 = g_CHAR_ARRAY_01c50950[this_ptr->key_run] == '\0';
+    bVar19 = g_KeyboardState[this_ptr->key_run] == '\0';
   }
   (player_control->action_state).run = (uint)bVar19;
   if ((player_control->action_state).run == 0) {
@@ -1471,7 +1470,7 @@ LAB_004da080:
       g_CDemonActor_PTR_01ccc3dc = (CDemonActor *)0x0;
     }
   }
-  g_INT_01ccc3b4 = g_BIT_INTEGER32_01c43544.dword;
+  g_INT_01ccc3b4 = g_MouseButtonFlags.dword;
   pCVar10 = g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4];
   pCVar12 = &(pCVar10->base).base.location;
   if (pCVar12 != (CLocation *)&g_FLOAT_01ccc3c8) {

@@ -96,14 +96,14 @@ section .text
     PUSH 0x0                            ; 004951e3
         ;   Label: default
     MOV ECX,dword ptr [EBP + 0x14]      ; 004951e5
-    MOV EAX,[0x007bda74]                ; 004951e8 | g_CDemonCamera_PTR_007bda74
+    MOV EAX,[0x007bda74]                ; 004951e8 | g_CurrentSceneCamera
     PUSH ECX                            ; 004951ed
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004951ee
     PUSH EAX                            ; 004951f1
     CALL dword ptr [EDX + 0x4]          ; 004951f2
     MOV EDX,0xffff                      ; 004951f5
     ADD ESP,0xc                         ; 004951fa
-    MOV EBX,dword ptr [0x01c38aec]      ; 004951fd | g_INT_01c38aec
+    MOV EBX,dword ptr [0x01c38aec]      ; 004951fd | g_PerspectiveReciprocal
     MOV EAX,dword ptr [EBP + 0x14]      ; 00495203
     SUB EDX,EBX                         ; 00495206
     MOV EAX,dword ptr [EAX + 0x40]      ; 00495208
@@ -253,7 +253,7 @@ section .text
         ;   XREF to: 0046b2b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0049541b
     PUSH 0x0                            ; 0049541e
-    PUSH 0x1c3deb8                      ; 00495420 | g_CVector3i_01c3deb8
+    PUSH 0x1c3deb8                      ; 00495420 | g_BillboardCameraRight
     MOV EAX,[0x0060b280]                ; 00495425 | g_CDemonRenderer_PTR_0060b280
     PUSH EAX                            ; 0049542a | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300 ; 0049542b
@@ -369,13 +369,13 @@ section .text
     ADD ESP,0x8                         ; 004955f1
     PUSH ESI                            ; 004955f4
     MOV EDI,dword ptr [EBP + 0x14]      ; 004955f5
-    MOV EAX,[0x007bda74]                ; 004955f8 | g_CDemonCamera_PTR_007bda74
+    MOV EAX,[0x007bda74]                ; 004955f8 | g_CurrentSceneCamera
     PUSH EDI                            ; 004955fd
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004955fe
     PUSH EAX                            ; 00495601
     CALL dword ptr [EDX + 0x4]          ; 00495602
     MOV EDX,0xffff                      ; 00495605
-    MOV ECX,dword ptr [0x01c38aec]      ; 0049560a | g_INT_01c38aec
+    MOV ECX,dword ptr [0x01c38aec]      ; 0049560a | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 00495610
     MOV EAX,dword ptr [EDI + 0x40]      ; 00495613
     SUB EDX,ECX                         ; 00495616
@@ -456,7 +456,7 @@ section .text
         ;   XREF to: 0046b2b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00495723
     PUSH 0x0                            ; 00495726
-    PUSH 0x1c3deb8                      ; 00495728 | g_CVector3i_01c3deb8
+    PUSH 0x1c3deb8                      ; 00495728 | g_BillboardCameraRight
     MOV ESI,dword ptr [0x0060b280]      ; 0049572d | g_CDemonRenderer_PTR_0060b280
     PUSH ESI                            ; 00495733 | g_CDemonRenderer_01ba5c50
     XOR EDI,EDI                         ; 00495734

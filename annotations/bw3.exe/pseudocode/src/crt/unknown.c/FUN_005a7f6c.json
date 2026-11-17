@@ -134,61 +134,61 @@
     },
     {
       "addr": "005da848",
-      "name": "g_CHAR_ARRAY_005da848",
+      "name": "g_EmptyStringBuffer",
       "type": "char[36]",
       "value": null
     },
     {
       "addr": "006074b8",
-      "name": "g_UCHAR_ARRAY_006074b8",
+      "name": "g_CharacterClassificationTable",
       "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "00607940",
-      "name": "g_INT_00607940",
+      "name": "g_WinMainCmdShow",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "00607944",
-      "name": "g_CHAR_PTR_00607944",
+      "name": "g_ExeFileNameA",
       "type": "char*",
       "value": "00000000"
     },
     {
       "addr": "00607948",
-      "name": "g_CHAR_PTR_00607948",
+      "name": "g_DllFileNameA",
       "type": "char*",
       "value": "00000000"
     },
     {
       "addr": "0060794c",
-      "name": "g_WCHAR_PTR_0060794c",
+      "name": "g_CommandLineArgsW",
       "type": "WCHAR*",
       "value": "00000000"
     },
     {
       "addr": "00607950",
-      "name": "g_WCHAR_PTR_00607950",
+      "name": "g_ExeFileNameW",
       "type": "WCHAR*",
       "value": "00000000"
     },
     {
       "addr": "00607954",
-      "name": "g_WCHAR_PTR_00607954",
+      "name": "g_DllFileNameW",
       "type": "WCHAR*",
       "value": "00000000"
     },
     {
       "addr": "0060797d",
-      "name": "g_CHAR_PTR_0060797d",
+      "name": "g_EnvironmentStrings",
       "type": "char*",
       "value": "00000000"
     },
     {
       "addr": "00607983",
-      "name": "g_BYTE_00607983",
+      "name": "g_WindowsMinorVersion",
       "type": "byte",
       "value": "0x0"
     },
@@ -200,73 +200,73 @@
     },
     {
       "addr": "00607985",
-      "name": "g_SHORT_00607985",
+      "name": "g_WindowsPlatformVersion",
       "type": "short",
       "value": "0x0"
     },
     {
       "addr": "00607987",
-      "name": "g_UINT_00607987",
+      "name": "g_WindowsPlatformVersionExt",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "0060798b",
-      "name": "g_UINT_0060798b",
+      "name": "g_WindowsVersionLow",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "0060798f",
-      "name": "g_UINT_0060798f",
+      "name": "g_WindowsVersionMid",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "00607993",
-      "name": "g_UINT_00607993",
+      "name": "g_WindowsVersionCombined",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "02d252b0",
-      "name": "g_INT_02d252b0",
+      "name": "g_EmergencyExitFlag",
       "type": "int",
       "value": null
     },
     {
       "addr": "02d252b4",
-      "name": "g_CHAR_PTR_02d252b4",
+      "name": "g_CommandLineA",
       "type": "char*",
       "value": null
     },
     {
       "addr": "02d252b8",
-      "name": "g_WCHAR_PTR_02d252b8",
+      "name": "g_CommandLineW",
       "type": "WCHAR*",
       "value": null
     },
     {
       "addr": "02d252bc",
-      "name": "g_PTR_02d252bc",
+      "name": "g_CurrentThreadTlsBlock",
       "type": "void*",
       "value": null
     },
     {
       "addr": "02d252c0",
-      "name": "g_CHAR_ARRAY_02d252c0",
+      "name": "g_ExeFileNameBuffer_A",
       "type": "char[260]",
       "value": null
     },
     {
       "addr": "02d255cc",
-      "name": "g_CHAR_ARRAY_02d255cc",
+      "name": "g_DllFileNameBuffer_A",
       "type": "char[260]",
       "value": null
     },
     {
       "addr": "02d25924",
-      "name": "g_CHAR_PTR_PTR_02d25924",
+      "name": "g_EnvironmentBlock",
       "type": "char**",
       "value": null
     }
@@ -390,7 +390,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "g_INT_02d252b0 = param_1;",
+      "text": "g_EmergencyExitFlag = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -398,7 +398,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "g_PTR_02d252bc = (byte *)FUN_005adaac(param_2);",
+      "text": "g_CurrentThreadTlsBlock = (byte *)FUN_005adaac(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -446,7 +446,7 @@
       "line": 91,
       "match": "param_3",
       "severity": "mild",
-      "text": "GetModuleFileNameA(param_3,g_CHAR_ARRAY_02d255cc,0x104);",
+      "text": "GetModuleFileNameA(param_3,g_DllFileNameBuffer_A,0x104);",
       "type": "unnamed_param"
     },
     {
@@ -454,15 +454,15 @@
       "line": 93,
       "match": "param_3",
       "severity": "mild",
-      "text": "FUN_005addd0(param_3,g_WCHAR_T_ARRAY_02d256d0,0x208);",
+      "text": "FUN_005addd0(param_3,g_DllFileNameBuffer_W,0x208);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `g_CHAR_PTR_02d252b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_CommandLineA` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "(int)g_CHAR_PTR_02d252b4",
+      "match": "(int)g_CommandLineA",
       "severity": "moderate",
-      "text": "g_INT_00607940 = (int)g_CHAR_PTR_02d252b4;",
+      "text": "g_WinMainCmdShow = (int)g_CommandLineA;",
       "type": "pointer_truncation"
     },
     {
@@ -470,7 +470,7 @@
       "line": 45,
       "match": "(int)(pcVar7 + 1)",
       "severity": "moderate",
-      "text": "while ((g_INT_00607940 = (int)(pcVar7 + 1), cVar1 != '\\\"' && (*(char *)g_INT_00607940 != '\\0')",
+      "text": "while ((g_WinMainCmdShow = (int)(pcVar7 + 1), cVar1 != '\\\"' &&",
       "type": "pointer_truncation"
     },
     {
@@ -478,7 +478,7 @@
       "line": 51,
       "match": "(int)(pcVar7 + 2)",
       "severity": "moderate",
-      "text": "g_INT_00607940 = (int)(pcVar7 + 2);",
+      "text": "g_WinMainCmdShow = (int)(pcVar7 + 2);",
       "type": "pointer_truncation"
     },
     {

@@ -175,31 +175,31 @@
     },
     {
       "addr": "005e600d",
-      "name": "g_DOUBLE_005e600d",
+      "name": "g_VDCurrentCameraBonus",
       "type": "double",
       "value": "3"
     },
     {
       "addr": "005e6015",
-      "name": "g_DOUBLE_005e6015",
+      "name": "g_VDPreviousCameraBonus",
       "type": "double",
       "value": "0.200000000000000"
     },
     {
       "addr": "005fb33c",
-      "name": "g_FLOAT_005fb33c",
+      "name": "g_VDCoordinateScaleFactor",
       "type": "float",
       "value": "256"
     },
     {
       "addr": "005fb354",
-      "name": "g_FLOAT_005fb354",
+      "name": "g_VDCameraDistanceRadius",
       "type": "float",
       "value": "200"
     },
     {
       "addr": "005fb358",
-      "name": "g_FLOAT_005fb358",
+      "name": "g_VDNearbyActorRadius",
       "type": "float",
       "value": "100"
     },
@@ -229,67 +229,67 @@
     },
     {
       "addr": "0061b97c",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c",
+      "name": "g_BoundingBoxQuadTemplates",
       "type": "SMRGLPrimitiveQuad[6]",
       "value": null
     },
     {
       "addr": "0061b984",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.A",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b988",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.B",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b98c",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.C",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b990",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].base.surface_normal.D",
+      "name": "g_BoundingBoxQuadTemplates[0].base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b994",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[0].vertices[0].vertex_index",
+      "name": "g_BoundingBoxQuadTemplates[0].vertices[0].vertex_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b9cc",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.A",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b9d0",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.B",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b9d4",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.C",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b9d8",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].base.surface_normal.D",
+      "name": "g_BoundingBoxQuadTemplates[1].base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061b9dc",
-      "name": "g_SMRGLPrimitiveQuad_ARRAY_0061b97c[1].vertices[0].vertex_index",
+      "name": "g_BoundingBoxQuadTemplates[1].vertices[0].vertex_index",
       "type": "undefined4",
       "value": null
     },
@@ -307,7 +307,7 @@
     },
     {
       "addr": "01c2b64c",
-      "name": "g_UINT_PTR_ARRAY_01c2b64c",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     },
@@ -367,25 +367,25 @@
     },
     {
       "addr": "020a2794",
-      "name": "g_INT_020a2794",
+      "name": "g_VDNearbyActorCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "020a2798",
-      "name": "g_CDemonActor_PTR_ARRAY_020a2798",
+      "name": "g_VDNearbyActorPointers",
       "type": "CDemonActor*[2000]",
       "value": null
     },
     {
       "addr": "020b0258",
-      "name": "g_UINT_PTR_ARRAY_020b0258",
+      "name": "g_ZBufferScanlineArrayBackup",
       "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "020b1520",
-      "name": "g_INT_020b1520",
+      "name": "g_VDIsActorAreaInvalid",
       "type": "int",
       "value": null
     }
@@ -707,17 +707,17 @@
     {
       "description": "Complex pointer cast",
       "line": 258,
-      "match": "(uint *)((int)g_UINT_PTR_ARRAY_020b0258",
+      "match": "(uint *)((int)g_ZBufferScanlineArrayBackup",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_020b0258 + iVar9) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar9) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 259,
-      "match": "(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c",
+      "match": "(uint *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar9);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -733,7 +733,7 @@
       "line": 287,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_CBoundingBox3D_ARRAY_020a46d8[g_INT_020a2794].min.x = (float)local_164._0_4_;",
+      "text": "g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (float)local_164._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -741,7 +741,7 @@
       "line": 288,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "g_CBoundingBox3D_ARRAY_020a46d8[iVar7].min.y = (float)local_164._4_4_;",
+      "text": "g_VDNearbyActorBoundingBoxes[iVar7].min.y = (float)local_164._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -749,7 +749,7 @@
       "line": 289,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "g_CBoundingBox3D_ARRAY_020a46d8[iVar7].min.z = (float)local_164._8_4_;",
+      "text": "g_VDNearbyActorBoundingBoxes[iVar7].min.z = (float)local_164._8_4_;",
       "type": "unknown_field"
     },
     {
@@ -771,17 +771,17 @@
     {
       "description": "Complex pointer cast",
       "line": 375,
-      "match": "(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c",
+      "match": "(uint *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar9) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 376,
-      "match": "(uint *)((int)g_UINT_PTR_ARRAY_020b0258",
+      "match": "(uint *)((int)g_ZBufferScanlineArrayBackup",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_020b0258 + iVar9);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -921,19 +921,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_020b0258` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArrayBackup` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 258,
-      "match": "(int)g_UINT_PTR_ARRAY_020b0258",
+      "match": "(int)g_ZBufferScanlineArrayBackup",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_020b0258 + iVar9) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar9) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c2b64c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 259,
-      "match": "(int)g_UINT_PTR_ARRAY_01c2b64c",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar9);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9);",
       "type": "pointer_truncation"
     },
     {
@@ -961,19 +961,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_01c2b64c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 375,
-      "match": "(int)g_UINT_PTR_ARRAY_01c2b64c",
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_01c2b64c + iVar9) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar9) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_ARRAY_020b0258` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ZBufferScanlineArrayBackup` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 376,
-      "match": "(int)g_UINT_PTR_ARRAY_020b0258",
+      "match": "(int)g_ZBufferScanlineArrayBackup",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_PTR_ARRAY_020b0258 + iVar9);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar9);",
       "type": "pointer_truncation"
     },
     {

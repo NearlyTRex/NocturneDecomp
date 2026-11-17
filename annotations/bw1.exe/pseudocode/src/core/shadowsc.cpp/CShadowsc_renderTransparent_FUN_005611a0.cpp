@@ -25,7 +25,7 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
   this_ptr_00 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-  this_ptr_02 = g_CEventList_PTR_0061b4d0;
+  this_ptr_02 = g_CEventListPtr;
   (this_ptr->base).base.was_rendered_opaque = 0;
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                     (this_ptr_02,"heroCanSee");
@@ -53,7 +53,7 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
                 (this_ptr_00,-1,0x2e7,1,0);
       engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
                 (g_CDemonRenderer_PTR_00612560);
-      if (g_INT_01d39d34 != 0) {
+      if (g_RenderMotionDebug != 0) {
         core_motion_cpp_CMotionController_render_FUN_005254b0
                   (&this_ptr_00->base,(CDemonActor *)this_ptr);
       }

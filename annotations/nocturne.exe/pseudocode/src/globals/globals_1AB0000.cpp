@@ -8,24 +8,24 @@
 CKeyFramedModel g_CKeyFramedModelPool[256] = {};
 
 // CVector3f
-CVector3f CVector3f_01abb4b8 = {};
+CVector3f g_CoronaGeometryOrigin = {};
 
 // int
-int g_INT_01ab99f0 = {};
-int g_INT_01abacb4 = {};
-int g_INT_01abb4c4 = {};
-int g_INT_01abb658 = {};
+int g_BackgroundSceneNestingCount = {};
+int g_DirtySpanCount = {};
+int g_NoiseTableIndex = {};
+int g_KeyframeModelCount = {};
 
 // int[100]
 int g_INT_ARRAY_01abb4c8[100] = {};
 
 // int[256]
-int g_INT_ARRAY_01abacb8[256] = {};
-int g_INT_ARRAY_01abb0b8[256] = {};
+int g_DirtySpanStarts[256] = {};
+int g_DirtySpanEnds[256] = {};
 
 // uint
-uint g_UINT_01ab99ec = {};
+uint g_ShadowRestoreAllocator = {};
 
-// void*[1200]
-void* g_ARRAY_PTR_01ab99f4[1200] = {};
+// void*[GAME_SCREEN_MAX_HEIGHT]
+void* g_SavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 

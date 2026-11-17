@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 552,
-    "complexity_score": 532,
+    "complexity_score": 530,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 252,
+    "pseudocode_lines": 250,
     "suspect_count": 24,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -19,7 +19,7 @@
       "tautological_addr_guard",
       "unrolled_memcpy"
     ],
-    "total_lines": 804
+    "total_lines": 802
   },
   "cross_references": [],
   "function": {
@@ -109,13 +109,13 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "g_CEventList_PTR_0061b4d0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c51d80"
     },
     {
       "addr": "0061c010",
-      "name": "g_CFireEffect_PTR_0061c010",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c57074"
     },
@@ -133,13 +133,13 @@
     },
     {
       "addr": "01cc804c",
-      "name": "g_INT_01cc804c",
+      "name": "g_FastSqrtMagic",
       "type": "int",
       "value": null
     },
     {
       "addr": "01d06aa0",
-      "name": "g_INT_01d06aa0",
+      "name": "g_HeroCount",
       "type": "int",
       "value": null
     },
@@ -474,11 +474,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 153,
       "match": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004b6ce0 (g_CFireEf",
       "severity": "moderate",
-      "text": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004b6ce0 (g_CFireEffect_PTR_0061c010,&pCVar1->position, (fl",
+      "text": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004b6ce0 (g_CFireEffectPtr,&pCVar1->position, (float)(((int",
       "type": "fast_sqrt_inline"
     }
   ],

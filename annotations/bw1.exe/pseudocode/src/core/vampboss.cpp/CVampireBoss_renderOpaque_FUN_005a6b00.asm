@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   int g_INT_01d39d34
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -99,7 +99,7 @@ section .text
     PUSH EBX                            ; 005a6baa
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 ; 005a6bab
         ;   XREF to: 0042f3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0(CCharacter * this_ptr)
-    MOV EBP,dword ptr [0x01d39d34]      ; 005a6bb0 | g_INT_01d39d34
+    MOV EBP,dword ptr [0x01d39d34]      ; 005a6bb0 | g_RenderMotionDebug
     ADD ESP,0x4                         ; 005a6bb6
     TEST EBP,EBP                        ; 005a6bb9
     JZ 0x005a6bdf                       ; 005a6bbb

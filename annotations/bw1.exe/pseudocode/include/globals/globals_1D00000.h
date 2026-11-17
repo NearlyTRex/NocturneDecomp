@@ -16,9 +16,9 @@
 // =============================================================================
 
 // CAlphaBitmap
-extern CAlphaBitmap CAlphaBitmap_01d08d78;
+extern CAlphaBitmap g_InvBackgroundBitmap;
 extern CAlphaBitmap CAlphaBitmap_01d08d8c;
-extern CAlphaBitmap CAlphaBitmap_01d08da0;
+extern CAlphaBitmap g_WeapBackgroundBitmap;
 extern CAlphaBitmap CAlphaBitmap_01d08db4;
 
 // CDemonActorType
@@ -27,7 +27,7 @@ extern CDemonActorType g_CGunClassInfo;
 extern CDemonActorType g_CHaystackClassInfo;
 extern CDemonActorType g_CHealthItemClassInfo;
 extern CDemonActorType g_CHeroClassInfo;
-extern CDemonActorType g_CDemonActorType_01d06b14;
+extern CDemonActorType g_CHeroPlaceholderClassInfo;
 extern CDemonActorType g_CHiramClassInfo;
 extern CDemonActorType g_CHostageClassInfo;
 extern CDemonActorType g_CHotDemonClassInfo;
@@ -42,10 +42,10 @@ extern CGround g_CGroundInstance;
 extern CHero* g_CHero_PTR_ARRAY_01d06aa4[4];
 
 // CIni
-extern CIni g_CIni_01d06d64;
+extern CIni g_CIniInstance;
 
 // SInventoryItemInfo[100]
-extern SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01d08dd0[100];
+extern SInventoryItemInfo g_ItemDefinitionArray[100];
 
 // char
 extern char g_CHAR_01d06f78;
@@ -60,19 +60,19 @@ extern char g_CHAR_ARRAY_01d06e70[256];
 extern float g_FLOAT_01d06f70;
 
 // int
-extern int g_INT_01d06aa0;
+extern int g_HeroCount;
 extern int g_INT_01d06ab4;
-extern int g_INT_01d06b8c;
+extern int g_HostageGunUpMotionIndex;
 extern int g_INT_01d06d68;
-extern int g_INT_01d08dc8;
+extern int g_ItemDefinitionCount;
 
 // int[12]
-extern int g_INT_ARRAY_01d06bcc[12];
-extern int g_INT_ARRAY_01d06cf8[12];
+extern int g_HotDemonIndices[12];
+extern int g_ImpIndices[12];
 
 // int[17]
-extern int g_INT_ARRAY_01d069d8[17];
+extern int g_HaystackIndices[17];
 
 // int[18]
-extern int g_INT_ARRAY_01d06c74[18];
+extern int g_IcePickIndices[18];
 

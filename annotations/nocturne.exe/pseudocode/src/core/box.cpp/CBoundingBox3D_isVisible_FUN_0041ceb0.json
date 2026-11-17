@@ -493,7 +493,7 @@
     },
     {
       "addr": "0059aa80",
-      "name": "g_FLOAT_0059aa80",
+      "name": "g_BoundingBoxWorldToIntegerScale",
       "type": "float",
       "value": "256"
     },
@@ -529,7 +529,7 @@
     },
     {
       "addr": "007f7370",
-      "name": "g_CDemonCamera_PTR_007f7370",
+      "name": "g_CurrentSceneCamera",
       "type": "CDemonCamera*",
       "value": null
     },
@@ -872,11 +872,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Pointer value `g_CDemonCamera_PTR_007f7370` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_CurrentSceneCamera` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 49,
-      "match": "(int)g_CDemonCamera_PTR_007f7370",
+      "match": "(int)g_CurrentSceneCamera",
       "severity": "moderate",
-      "text": "g_INT_01c038f4 = (int)g_CDemonCamera_PTR_007f7370;",
+      "text": "g_INT_01c038f4 = (int)g_CurrentSceneCamera;",
       "type": "pointer_truncation"
     },
     {

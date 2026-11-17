@@ -12,17 +12,16 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482
   int iVar1;
   int iVar2;
   
-  if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
+  if (g_EditorFont == (CBitFont *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0xa0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
-  g_INT_01c25f78 = g_CBitFont_PTR_01c25590->max_char_width;
-  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x6a)
-  ;
-  iVar1 = g_INT_006141cc;
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x6a);
+  iVar1 = g_InputKeyMask;
   if (0 < (this_ptr->base).item_count) {
-    g_INT_006141cc = 0x7f;
+    g_InputKeyMask = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_00482320
               (this_ptr,dialog_title,initial_selected_index,window_flags);
     do {
@@ -32,7 +31,7 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482
     } while (iVar2 == -2);
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
-    g_INT_006141cc = iVar1;
+    g_InputKeyMask = iVar1;
     return iVar2;
   }
   return -1;

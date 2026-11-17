@@ -12,7 +12,7 @@ uint FUN_005ab920(uint param_1)
   int iVar1;
   int iVar2;
   
-  if (g_UINT_00607b84 <= param_1) {
+  if (g_MaxHandleCount <= param_1) {
     return 0;
   }
   if ((int)param_1 < 3) {

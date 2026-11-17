@@ -12,7 +12,7 @@
 ; float            Stack[0x18]:4   radius
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005fb354 = 200
+;   float g_VDCameraDistanceRadius = 200
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0
@@ -48,7 +48,7 @@ section .text
     FADDP ST2,ST0                       ; 00538c1f
     FSUB float ptr [EBX + 0x8]          ; 00538c21
     FMUL ST0                            ; 00538c24
-    FLD float ptr [0x005fb354]          ; 00538c26 | g_FLOAT_005fb354
+    FLD float ptr [0x005fb354]          ; 00538c26 | g_VDCameraDistanceRadius
     FLD ST0                             ; 00538c2c
     FXCH ST2                            ; 00538c2e
     FADDP ST3,ST0                       ; 00538c30

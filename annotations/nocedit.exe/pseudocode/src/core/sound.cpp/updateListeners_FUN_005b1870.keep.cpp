@@ -93,7 +93,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
             ((double)local_30.x,(double)local_30.y,(double)local_30.z,(double)local_c0.x,
              (double)local_c0.y,(double)local_c0.z,(double)local_78.x,(double)local_78.y,
              (double)local_78.z);
-  CVector3f_03f6af7c.x = 0.0;
+  g_WindVolume.x = 0.0;
   if (g_CGamePtr->goggles_active == 0) {
     iVar6 = _strnicmp
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
@@ -146,18 +146,18 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
           if (1.0 < local_160) {
             local_160 = 1.0;
           }
-          CVector3f_03f6af7c.x = local_160 * 0.015625f + CVector3f_03f6af7c.x;
+          g_WindVolume.x = local_160 * 0.015625f + g_WindVolume.x;
           iVar6 = iVar6 + 2;
         } while (iVar6 != 0x21);
         local_1c = local_1c + 2;
       } while (local_1c != 0x21);
     }
-    CVector3f_03f6af7c.x = CVector3f_03f6af7c.x * CVector3f_03f6af7c.x;
-    if (0.0 < CVector3f_03f6af7c.x) {
-      CVector3f_03f6af7c.x = CVector3f_03f6af7c.x + 0.3f;
+    g_WindVolume.x = g_WindVolume.x * g_WindVolume.x;
+    if (0.0 < g_WindVolume.x) {
+      g_WindVolume.x = g_WindVolume.x + 0.3f;
     }
-    if (1.0 < CVector3f_03f6af7c.x) {
-      CVector3f_03f6af7c.x = 1.0;
+    if (1.0 < g_WindVolume.x) {
+      g_WindVolume.x = 1.0;
     }
   }
   g_SoundListenerPrev.x = local_cc;

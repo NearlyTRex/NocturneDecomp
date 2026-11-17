@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
-;   void* g_PTR_0061f418 = 00000000
+;   void* g_SpecialDeviceCleanupFunc = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b8e60
@@ -47,13 +47,13 @@ section .text
     MOV EBX,dword ptr [ESI + 0x10]      ; 005b91c5
     PUSH EBX                            ; 005b91c8
     CALL dword ptr [0x0061f2a8]         ; 005b91c9 | PTR_crt_unknown.c_FUN_005bce04_0061f2a8
-    MOV ECX,dword ptr [0x0061f418]      ; 005b91cf | g_PTR_0061f418
+    MOV ECX,dword ptr [0x0061f418]      ; 005b91cf | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 005b91d5
     TEST ECX,ECX                        ; 005b91d8
     JZ 0x005b91e6                       ; 005b91da
         ;   XREF to: 005b91e6 (CONDITIONAL_JUMP)  ; LAB_005b91e6
     PUSH EBX                            ; 005b91dc
-    CALL dword ptr [0x0061f418]         ; 005b91dd | g_PTR_0061f418
+    CALL dword ptr [0x0061f418]         ; 005b91dd | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 005b91e3
     PUSH ESI                            ; 005b91e6
         ;   Label: LAB_005b91e6

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2)
+; void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005864a8 = 005869fd
@@ -22,7 +22,7 @@
 ;   undefined4 DAT_005e65dc
 ;   float g_FLOAT_005e65e8 = 9
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -423,7 +423,7 @@ section .text
     ADD EAX,EDX                         ; 005868ee
     PUSH 0x3f333333                     ; 005868f0
     PUSH EAX                            ; 005868f5
-    PUSH 0x2cfd900                      ; 005868f6 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 005868f6 | g_ZeroVector
     LEA ESI,[EBP + -0x66]               ; 005868fb
     LEA EDI,[EBP + 0xffffff76]          ; 005868fe
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00586904
@@ -510,7 +510,7 @@ section .text
         ;   XREF to: 004cec40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004cec40(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 005869d7
     PUSH 0x5d8299                       ; 005869da | = "YowDead"
-    MOV EDX,dword ptr [0x005fba60]      ; 005869df | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 005869df | g_CEventListPtr
     PUSH EDX                            ; 005869e5
     MOV dword ptr [EBX + 0xcdd0],0x1    ; 005869e6
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 005869f0
@@ -596,7 +596,7 @@ section .text
     FADDP                               ; 00586ac1
     FSTP float ptr [EBP + 0x5e]         ; 00586ac3
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00586ac6
-    MOV ECX,dword ptr [0x01d1a0a4]      ; 00586ac9 | g_INT_01d1a0a4
+    MOV ECX,dword ptr [0x01d1a0a4]      ; 00586ac9 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00586acf
     ADD EAX,ECX                         ; 00586ad1
     MOV dword ptr [EBP + 0x5a],EAX      ; 00586ad3

@@ -12,11 +12,11 @@ void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30(CFireEff
   CSmokeParticle *this_ptr_00;
   int iVar1;
   
-  iVar1 = g_INT_01c58a9c + 1;
-  this_ptr_00 = g_CSmokeParticle_ARRAY_01c58aa0 + g_INT_01c58a9c;
-  g_INT_01c58a9c = iVar1;
+  iVar1 = g_SmokeParticleAllocIndex + 1;
+  this_ptr_00 = g_SmokeParticlePool + g_SmokeParticleAllocIndex;
+  g_SmokeParticleAllocIndex = iVar1;
   if (0x7ff < iVar1) {
-    g_INT_01c58a9c = 0;
+    g_SmokeParticleAllocIndex = 0;
   }
   core_fire_cpp_CSmokeParticle_init_FUN_004abeb0
             (this_ptr_00,position,drag_factor,wind_influence,alpha_value);

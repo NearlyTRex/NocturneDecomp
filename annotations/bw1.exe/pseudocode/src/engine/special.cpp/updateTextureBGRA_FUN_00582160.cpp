@@ -12,7 +12,7 @@ int __cdecl engine_special_cpp_updateTextureBGRA_FUN_00582160(SMRGLTextureBasic 
   int iVar1;
   
   if ((g_INT_01c50948 != 0) && (g_PTR_02c833bc != (byte *)0x0)) {
-    iVar1 = (*(code *)g_PTR_02c833bc)(texture_info,g_INT_0061b4a8,flags);
+    iVar1 = (*(code *)g_PTR_02c833bc)(texture_info,g_CurrentTextureDimension,flags);
     return iVar1;
   }
   return 0;

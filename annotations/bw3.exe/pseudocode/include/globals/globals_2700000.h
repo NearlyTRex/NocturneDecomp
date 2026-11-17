@@ -37,5 +37,5 @@ extern int g_INT_0270f3d4;
 extern int g_INT_ARRAY_02701914[2000];
 
 // int[4000]
-extern int g_INT_ARRAY_0270f9bc[4000];
+extern int g_VertexRemapTable[4000];
 

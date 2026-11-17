@@ -13,9 +13,9 @@
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CHeroClassInfo.name_hash
-;   CVector3f g_CVector3f_02cfd900
-;   undefined4 g_CVector3f_02cfd900.y
-;   undefined4 g_CVector3f_02cfd900.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -36,9 +36,9 @@ section .text
     MOV EBP,dword ptr [ESP + 0x8c]      ; 004d1a16
     LEA EDI,[ESP + 0x48]                ; 004d1a1d
     MOV ESI,0x2cfd900                   ; 004d1a21
-    MOVSD ES:EDI,ESI                    ; 004d1a26 | g_CVector3f_02cfd900
-    MOVSD ES:EDI,ESI                    ; 004d1a27 | g_CVector3f_02cfd900.y
-    MOVSD ES:EDI,ESI                    ; 004d1a28 | g_CVector3f_02cfd900.z
+    MOVSD ES:EDI,ESI                    ; 004d1a26 | g_ZeroVector
+    MOVSD ES:EDI,ESI                    ; 004d1a27 | g_ZeroVector.y
+    MOVSD ES:EDI,ESI                    ; 004d1a28 | g_ZeroVector.z
     MOV EDX,dword ptr [EBP + 0x598]     ; 004d1a29
     MOV dword ptr [EBP + 0x594],0x1     ; 004d1a2f
     TEST EDX,EDX                        ; 004d1a39

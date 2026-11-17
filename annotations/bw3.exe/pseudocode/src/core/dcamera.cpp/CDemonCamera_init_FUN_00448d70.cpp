@@ -13,8 +13,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(CDemonCamera *this_
   void *pvVar2;
   
   core_dcamera_cpp_CDemonCamera_free_FUN_00448f30(this_ptr);
-  g_INT_0149e6fc = (screen_height * 4) / 3;
-  g_INT_0149e700 = screen_height;
+  g_CameraScreenWidth = (screen_height * 4) / 3;
+  g_CameraScreenHeight = screen_height;
   if (0x1e0 < screen_height) {
     screen_height = 0x1e0;
   }
@@ -22,12 +22,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(CDemonCamera *this_
   this_ptr->scale_factor = 1;
   this_ptr->framebuffer_width = (screen_height * 4) / 3;
   this_ptr->display_width = this_ptr->framebuffer_width;
-  g_BIT_INTEGER32_013405b0.dword = 0;
+  g_CameraDownscaleIterations.dword = 0;
   iVar1 = this_ptr->display_width;
   this_ptr->display_height = this_ptr->framebuffer_height;
   while (0x140 < iVar1) {
     this_ptr->display_width = this_ptr->display_width / 2;
-    g_BIT_INTEGER32_013405b0.dword = g_BIT_INTEGER32_013405b0.dword + 1;
+    g_CameraDownscaleIterations.dword = g_CameraDownscaleIterations.dword + 1;
     this_ptr->scale_factor = this_ptr->scale_factor * 2;
     iVar1 = this_ptr->display_width;
     this_ptr->display_height = this_ptr->display_height / 2;

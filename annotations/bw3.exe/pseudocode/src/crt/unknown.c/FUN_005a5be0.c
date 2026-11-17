@@ -21,8 +21,8 @@ uint FUN_005a5be0(uint *param_1,Heap *param_2)
     pHVar2 = (Heap *)&param_2[3].next_heap_block;
   }
   else {
-    pHVar2 = g_Heap_PTR_006075c4->next_heap_block;
-    param_2 = g_Heap_PTR_006075c4;
+    pHVar2 = g_MainHeap->next_heap_block;
+    param_2 = g_MainHeap;
     while ((pHVar2 != (Heap *)0x0 &&
            ((pHVar1 < param_2 || ((Heap *)((int)&param_2->heap_size + param_2->heap_size) <= pHVar1)
             )))) {

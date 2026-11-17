@@ -181,7 +181,7 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "g_CEventList_PTR_0061b4d0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c51d80"
     },
@@ -487,7 +487,7 @@
       "description": "'pCVar3[4].create_event + 0x28' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x28 = 0x600, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 51,
       "severity": "moderate",
-      "text": "(g_CEventList_PTR_0061b4d0,pCVar3[4].create_event + 0x28);",
+      "text": "(g_CEventListPtr,pCVar3[4].create_event + 0x28);",
       "type": "derived_field_index_pun"
     }
   ]

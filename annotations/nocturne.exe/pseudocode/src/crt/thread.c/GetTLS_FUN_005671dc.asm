@@ -18,13 +18,13 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   void* g_PTR_02de4e3c
+;   void* g_CurrentThreadTlsBlock
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02de4e3c]                ; 005671dc | g_PTR_02de4e3c
+    MOV EAX,[0x02de4e3c]                ; 005671dc | g_CurrentThreadTlsBlock
         ;   Label: crt_thread.c_GetTLS_FUN_005671dc
     LEA EAX,[EAX]                       ; 005671e1
 

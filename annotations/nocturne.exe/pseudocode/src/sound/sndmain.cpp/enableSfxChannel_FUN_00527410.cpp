@@ -16,7 +16,7 @@ void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_00527410(int channel_index,i
     g_CurrentLineNumber = 3922;
     core_main_c_displayErrorAndQuit_FUN_004c8440("enableSfxChannel - invalid channel index: %d",channel_index);
   }
-  g_INT_ARRAY_02dc79d8[channel_index] = enable_state;
+  g_SfxChannelEnabled[channel_index] = enable_state;
   if (enable_state == 0) {
     sound_sndmain_cpp_lockSound_FUN_00528800();
     iVar1 = 0;

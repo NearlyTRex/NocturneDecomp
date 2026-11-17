@@ -21,17 +21,17 @@ extern CSfxSlot g_CSfxSlot_ARRAY_02dbd374[64];
 extern byte g_BYTE_02dbd348;
 
 // char[15360]
-extern char g_CHAR_ARRAY_02db1118[15360];
+extern char g_SfxStreamReadBuffer[15360];
 
 // float
-extern float g_FLOAT_02dbd370;
+extern float g_SoundReferenceVolumeDistance;
 
 // int
-extern int g_INT_02dbd34c;
+extern int g_ShutdownInProgress;
 
 // int[8]
-extern int g_INT_ARRAY_02dbd350[8];
+extern int g_ChannelFFTTimestamps[8];
 
 // uchar
-extern uchar g_UCHAR_02db1110;
+extern uchar g_GlobalMP3DecoderInitialized;
 

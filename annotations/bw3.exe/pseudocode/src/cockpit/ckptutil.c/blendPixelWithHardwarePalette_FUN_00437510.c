@@ -34,7 +34,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x
   if ((((g_INT_01c6b5a8 <= x) && (x <= g_INT_01c6b5b0)) && (g_INT_01c6b5ac <= y)) &&
      ((y <= g_INT_01c6b5b4 && (g_INT_005fba20 != 8)))) {
     if (g_INT_005fba20 == 0x10) {
-      uVar1 = *(ushort *)(g_ARRAY_PTR_01c5faec[y] + x * 2);
+      uVar1 = *(ushort *)(g_ScreenBufferArray[y] + x * 2);
       uVar7 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
               (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f);
       uVar8 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
@@ -43,13 +43,13 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x
               (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f);
     }
     else {
-      puVar11 = (uint *)(g_ARRAY_PTR_01c5faec[y] + x * 4);
+      puVar11 = (uint *)(g_ScreenBufferArray[y] + x * 4);
       uVar7 = *puVar11 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f);
       uVar8 = *puVar11 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
       uVar9 = *puVar11 >> (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
     }
     if (g_INT_005fba20 == 0x10) {
-      uVar1 = g_USHORT_ARRAY_01c6ad74[color];
+      uVar1 = g_Hardware16BitPalette[color];
       uStack_38 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                   (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f);
       uVar12 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
@@ -58,9 +58,9 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x
                (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f);
     }
     else {
-      uStack_38 = g_UINT_ARRAY_01c6a974[color] >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f);
-      uVar12 = g_UINT_ARRAY_01c6a974[color] >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
-      uVar10 = g_UINT_ARRAY_01c6a974[color] >> (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
+      uStack_38 = g_Hardware32BitPalette[color] >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f);
+      uVar12 = g_Hardware32BitPalette[color] >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
+      uVar10 = g_Hardware32BitPalette[color] >> (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
     }
     uStack_38 = uStack_38 & 0xff;
     fVar2 = 1.0 - alpha;
@@ -74,7 +74,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x
       uStack_34 = (uint)(longlong)ROUND(dVar13);
       uStack_2c = (uint)(longlong)ROUND(dVar15);
       uStack_3c = (uint)(longlong)ROUND(dVar14);
-      *(uint *)(g_ARRAY_PTR_01c5faec[y] + x * 4) =
+      *(uint *)(g_ScreenBufferArray[y] + x * 4) =
            uStack_3c << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f) | uStack_34 << (uVar5 & 0x1f) |
            uStack_2c << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
       return;
@@ -85,7 +85,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x
     uStack_2c = (uint)(longlong)ROUND(dVar14);
     uStack_34 = (uint)(longlong)ROUND(dVar15);
     uStack_3c = (uint)(longlong)ROUND(dVar13);
-    *(ushort *)(g_ARRAY_PTR_01c5faec[y] + x * 2) =
+    *(ushort *)(g_ScreenBufferArray[y] + x * 2) =
          (ushort)((uStack_2c >> (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f)) <<
                  (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
          (ushort)((uStack_3c >> (uVar6 & 0x1f)) << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |

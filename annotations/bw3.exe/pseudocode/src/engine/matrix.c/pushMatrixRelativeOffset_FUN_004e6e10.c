@@ -13,17 +13,17 @@ void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004e6e10(int offset_x,
   int iVar2;
   int iVar3;
   
-  iVar3 = g_INT_01d726a0;
-  iVar1 = g_INT_01c6e2d0;
-  g_INT_ARRAY_01d7280c[g_INT_01d726a0] = g_INT_01c6e2cc;
-  iVar2 = g_INT_01c6e2d4;
-  g_INT_ARRAY_01d72834[iVar3] = g_INT_01c6e2d0;
-  g_INT_ARRAY_01d7285c[iVar3] = g_INT_01c6e2d4;
-  g_INT_01d726a0 = g_INT_01d726a0 + 1;
-  g_INT_01c6e2cc = g_INT_01c6e2cc - offset_x;
-  g_INT_01c6e2d0 = iVar1 - offset_y;
-  g_INT_01c6e2d4 = iVar2 - offset_z;
-  if (g_INT_01d726a0 < 10) {
+  iVar3 = g_MatrixStackIndex;
+  iVar1 = g_RelativeY;
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
+  iVar2 = g_RelativeZ;
+  g_MatrixStack_RelY[iVar3] = g_RelativeY;
+  g_MatrixStack_RelZ[iVar3] = g_RelativeZ;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
+  g_RelativeX = g_RelativeX - offset_x;
+  g_RelativeY = iVar1 - offset_y;
+  g_RelativeZ = iVar2 - offset_z;
+  if (g_MatrixStackIndex < 10) {
     return;
   }
   g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";

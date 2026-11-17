@@ -20,7 +20,7 @@ void __cdecl engine_special_cpp_clearScreenRegion_FUN_00560e37(int color)
     iVar1 = (g_INT_01c6b5b0 - g_INT_01c6b5a8) + 1;
     uVar3 = g_INT_01c6b5ac;
     do {
-      puVar4 = g_ARRAY_PTR_01c5faec[uVar3] + g_INT_01c6b5a8;
+      puVar4 = g_ScreenBufferArray[uVar3] + g_INT_01c6b5a8;
       iVar2 = iVar1;
       if (g_INT_005fba20 == 8) {
         for (; iVar2 != 0; iVar2 = iVar2 + -1) {

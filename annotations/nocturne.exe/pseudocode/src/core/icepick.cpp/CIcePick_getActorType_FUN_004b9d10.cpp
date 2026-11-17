@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_icepick_cpp_CIcePick_getActorType_FUN_004b9d10(CIcePick *this_ptr)
 
 {
-  return &g_CIcePickActorType_01cae2d0;
+  return &g_CIcePickClassInfo;
 }

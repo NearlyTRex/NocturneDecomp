@@ -28,7 +28,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
   uint local_38;
   int local_18;
   
-  if (g_INT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 2397;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::compute - must be locked!");
@@ -93,7 +93,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
       else {
         dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_60 = (dVar4 * g_DOUBLE_005bea80 + 1116.4000000000001) / 1116.4000000000001;
+      local_60 = (dVar4 * g_Cached3DDistanceFactor + 1116.4000000000001) / 1116.4000000000001;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
                   (g_CConsolePtr,"  doppler = %5.2f\n",(uint)local_60);
@@ -121,7 +121,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
                 (g_CConsolePtr,"  vol = %5.2f\n",(double)(this_ptr->options).current_volume);
     }
     sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < g_INT_005bea68)) {
+    if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < g_AudioChannelCount)) {
       do {
         iVar12 = iVar11 + 1;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -130,7 +130,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
                                          0x1f)) * pCVar13->channel_volumes[0]));
         iVar11 = iVar12;
         pCVar13 = (CSfxSlot *)&(pCVar13->options).position;
-      } while (iVar12 < g_INT_005bea68);
+      } while (iVar12 < g_AudioChannelCount);
     }
     if (this_ptr->effective_frequency < (float)(1.0 / _FLOAT_005a2160)) {
       this_ptr->effective_frequency = (float)(1.0 / _FLOAT_005a2160);
@@ -142,10 +142,9 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsolePtr,"  effFreq = %5.2f\n",(double)this_ptr->effective_frequency);
     }
-    if (((local_18 != 0) && (g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0)) &&
+    if (((local_18 != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
        (this_ptr->hardware_buffer_handle != 0)) {
-      (*g_CSoundDevice_PTR_02dc8318->vtable->setSfxPos)
-                (g_CSoundDevice_PTR_02dc8318,this_ptr,local_18);
+      (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,local_18);
     }
     return 1;
   }

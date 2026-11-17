@@ -198,7 +198,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
                   in_stack_fffffe5c = (CDemonSet *)g_CDemonSetPtr->ground_type;
                   in_stack_fffffe58 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;
                   core_fire_cpp_CFireEffect_createBulletImpact_FUN_0049cd50
-                            (g_CFireEffect_PTR_00614d30,&g_CDemonSetPtr->collision_impact_position,
+                            (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                              (CVector3f *)in_stack_fffffe58,(int)in_stack_fffffe5c,
                              g_CDemonSetPtr->collision_actor);
                   break;
@@ -301,7 +301,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
        *(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   CStack_6c.y = CStack_6c.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
-            (g_CFireEffect_PTR_00614d30,&CStack_6c,rotation_matrix);
+            (g_CFireEffectPtr,&CStack_6c,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
             (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_a8);
   (this_ptr->base).fire_cooldown_timer = 1.0;

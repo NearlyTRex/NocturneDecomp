@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int INT_005ae708 = 0x1
 ;   int g_INT_01b4d764
-;   int g_INT_01b4d768
+;   int g_RenderAbortFlag
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[1600] g_ReciprocalLookupTable
 ;
@@ -76,7 +76,7 @@ section .text
     CMP EAX,dword ptr [0x005ae708]      ; 00463fdf | INT_005ae708
     JC 0x00463fc5                       ; 00463fe5
         ;   XREF to: 00463fc5 (CONDITIONAL_JUMP)  ; LAB_00463fc5
-    MOV dword ptr [0x01b4d768],0x1      ; 00463fe7 | g_INT_01b4d768
+    MOV dword ptr [0x01b4d768],0x1      ; 00463fe7 | g_RenderAbortFlag
     POP EBP                             ; 00463ff1
     POP EDI                             ; 00463ff2
     POP ESI                             ; 00463ff3

@@ -10,7 +10,7 @@
 ;   TerminatedCString s_bow_wav_005d7389
 ;   double g_DOUBLE_005d739a = 1.5
 ;   double g_DOUBLE_005d73a2 = 10
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -537,7 +537,7 @@ section .text
     PUSH ESI                            ; 0044a0a3
     ADD EAX,0x14d138                    ; 0044a0a4
     PUSH EAX                            ; 0044a0a9 | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x0061c010]      ; 0044a0aa | g_CFireEffect_PTR_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 0044a0aa | g_CFireEffectPtr
     PUSH ECX                            ; 0044a0b0
     CALL core_fire.cpp_CFireEffect_createStake_FUN_004b5bc0 ; 0044a0b1
         ;   XREF to: 004b5bc0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createStake_FUN_004b5bc0(CFireEffect * this_ptr, CVector3f * impact_position, CVector3f * orientation_angles, CVector3f * surface_normal, ...)

@@ -38,7 +38,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *thi
             (g_CDemonRenderer_PTR_005ae704,&local_3c);
   engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)(auStack_64 + 4));
-  if (g_CDemonCamera_PTR_007f7370 == (CDemonCamera *)0x0) {
+  if (g_CurrentSceneCamera == (CDemonCamera *)0x0) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 3803;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CSet::buildActorDisplayList - Don't have a camera!");

@@ -12,14 +12,14 @@ int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_00575b70(void)
   int iVar1;
   
   sound_sndmain_cpp_lockSound_FUN_00575d20();
-  if (g_CSoundDevice_PTR_02c81038 != (CSoundDevice *)0x0) {
-    iVar1 = (*g_CSoundDevice_PTR_02c81038->vtable->reset)(g_CSoundDevice_PTR_02c81038);
+  if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
+    iVar1 = (*g_RecordingDeviceInterface->vtable->reset)(g_RecordingDeviceInterface);
     if (iVar1 == 0) {
       sound_sndmain_cpp_unlockSound_FUN_00573e70();
       return 0;
     }
   }
-  g_INT_02c8103c = 0;
+  isRecordingStarted = 0;
   sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return 1;
 }

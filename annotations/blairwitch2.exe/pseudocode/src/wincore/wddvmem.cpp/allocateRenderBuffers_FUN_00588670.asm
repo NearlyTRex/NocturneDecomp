@@ -9,7 +9,7 @@
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
 ;   void* g_PTR_00622010
-;   void* g_PTR_0070c62c
+;   void* g_SoftwareZBuffer
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   void* g_PTR_02661af0
@@ -68,7 +68,7 @@ section .text
     MOV EAX,[0x02661af0]                ; 005886ef | g_PTR_02661af0
     ADD EAX,0x10                        ; 005886f4
     AND AL,0xf0                         ; 005886f7
-    MOV [0x0070c62c],EAX                ; 005886f9 | g_PTR_0070c62c
+    MOV [0x0070c62c],EAX                ; 005886f9 | g_SoftwareZBuffer
     POP EBP                             ; 005886fe
     POP EDI                             ; 005886ff
     RET                                 ; 00588700
@@ -84,7 +84,7 @@ section .text
     MOV EAX,[0x02661af0]                ; 00588724 | g_PTR_02661af0
     ADD EAX,0x10                        ; 00588729
     AND AL,0xf0                         ; 0058872c
-    MOV [0x0070c62c],EAX                ; 0058872e | g_PTR_0070c62c
+    MOV [0x0070c62c],EAX                ; 0058872e | g_SoftwareZBuffer
     POP EBP                             ; 00588733
     POP EDI                             ; 00588734
     RET                                 ; 00588735

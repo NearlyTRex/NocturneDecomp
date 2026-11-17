@@ -19,9 +19,9 @@
 ; Referenced Globals:
 ;   float FLOAT_005823be = 65536
 ;   double DOUBLE_005823c2 = 0.0000152587890625
-;   float g_FLOAT_005b9360 = 30
-;   int g_INT_01bd1d80
-;   int g_INT_01c78acc
+;   float g_MovieRecordingTargetFPS = 30
+;   int g_GlobalDeltaTimeInt
+;   int g_MovieRecordingActive
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -57,7 +57,7 @@ section .text
     FILD dword ptr [EBX + 0x260]        ; 0049a8de
         ;   Label: LAB_0049a8de
     FMUL float ptr [EBX + 0x1ec]        ; 0049a8e4
-    MOV EDI,dword ptr [0x01c78acc]      ; 0049a8ea | g_INT_01c78acc
+    MOV EDI,dword ptr [0x01c78acc]      ; 0049a8ea | g_MovieRecordingActive
     CALL crt_math.c_round_FUN_00563a30  ; 0049a8f0
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x260]       ; 0049a8f5
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0049a8ff
     MOV EAX,dword ptr [EBX + 0x260]     ; 0049a905
     FMUL double ptr [0x005823c2]        ; 0049a90b | DOUBLE_005823c2
-    MOV [0x01bd1d80],EAX                ; 0049a911 | g_INT_01bd1d80
+    MOV [0x01bd1d80],EAX                ; 0049a911 | g_GlobalDeltaTimeInt
     FSTP float ptr [EBX + 0x264]        ; 0049a916
     POP EDI                             ; 0049a91c
     POP ESI                             ; 0049a91d
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 0049a8de (UNCONDITIONAL_JUMP)  ; LAB_0049a8de
     FLD float ptr [0x005823be]          ; 0049a938 | FLOAT_005823be
         ;   Label: LAB_0049a938
-    FDIV float ptr [0x005b9360]         ; 0049a93e | g_FLOAT_005b9360
+    FDIV float ptr [0x005b9360]         ; 0049a93e | g_MovieRecordingTargetFPS
     FMUL float ptr [EBX + 0x1ec]        ; 0049a944
     CALL crt_math.c_round_FUN_00563a30  ; 0049a94a
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)

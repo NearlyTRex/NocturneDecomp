@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f41b4
 ;   TerminatedCString s_setSoundOutputMode_can_t_005f41c9
-;   int g_INT_006232e8 = 0x10
-;   int g_INT_006232ec = 0x2
-;   int g_INT_006232f0 = 0x5622
+;   int g_AudioBitsPerSample = 0x10
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   CSoundDevice* g_CSoundDevice_PTR_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -48,12 +48,12 @@ section .text
         ;   XREF to: 00575160 (CONDITIONAL_JUMP)  ; LAB_00575160
     MOV EAX,dword ptr [ESP + 0x14]      ; 0057512f
         ;   Label: LAB_0057512f
-    MOV [0x006232e8],EAX                ; 00575133 | g_INT_006232e8
+    MOV [0x006232e8],EAX                ; 00575133 | g_AudioBitsPerSample
     MOV EAX,dword ptr [ESP + 0x18]      ; 00575138
-    MOV [0x006232ec],EAX                ; 0057513c | g_INT_006232ec
+    MOV [0x006232ec],EAX                ; 0057513c | g_AudioChannelCount
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00575141
-    MOV EBX,dword ptr [0x02c80650]      ; 00575145 | g_CSoundDevice_PTR_02c80650
-    MOV [0x006232f0],EAX                ; 0057514b | g_INT_006232f0
+    MOV EBX,dword ptr [0x02c80650]      ; 00575145 | g_CSoundDevicePtr
+    MOV [0x006232f0],EAX                ; 0057514b | g_AudioSampleRate
     TEST EBX,EBX                        ; 00575150
     JNZ 0x00575185                      ; 00575152
         ;   XREF to: 00575185 (CONDITIONAL_JUMP)  ; LAB_00575185

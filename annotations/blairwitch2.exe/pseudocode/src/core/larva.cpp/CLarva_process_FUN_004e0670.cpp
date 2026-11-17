@@ -170,7 +170,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
         CStack_120.x = CStack_144.x;
         *(uint *)((int)&CStack_120 + (uint)bVar8 * -8 + 4) =
              *(uint *)((int)&CStack_144 + (uint)bVar8 * -8 + 4);
-        this_ptr_00 = g_CFireEffect_PTR_00614d30;
+        this_ptr_00 = g_CFireEffectPtr;
         *(uint *)((int)&CStack_120 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
              *(uint *)((int)&CStack_144 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_fire_cpp_CFireEffect_createFireball_FUN_0049d500
@@ -209,7 +209,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
              afStack_134[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
         fStack_1c = CStack_108.z * CStack_108.z +
                     CStack_108.x * CStack_108.x + CStack_108.y * CStack_108.y;
-        fStack_38 = (float)(((int)fStack_1c >> 1) + g_INT_01caf5b4);
+        fStack_38 = (float)(((int)fStack_1c >> 1) + g_FastSqrtMagic);
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_108,&CStack_cc);
         fStack_180 = CStack_cc.x;
         afStack_194[(uint)bVar8 * -2 + 6] = *(float *)((int)&CStack_cc + (uint)bVar8 * -8 + 4);
@@ -275,7 +275,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
                afStack_194[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           fStack_4c = CStack_1a4.z * CStack_1a4.z +
                       CStack_1a4.x * CStack_1a4.x + CStack_1a4.y * CStack_1a4.y;
-          fStack_48 = (float)(((int)fStack_4c >> 1) + g_INT_01caf5b4);
+          fStack_48 = (float)(((int)fStack_4c >> 1) + g_FastSqrtMagic);
           if (fStack_48 < (this_ptr->base).guard_distance) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_1a4,&CStack_9c)
             ;

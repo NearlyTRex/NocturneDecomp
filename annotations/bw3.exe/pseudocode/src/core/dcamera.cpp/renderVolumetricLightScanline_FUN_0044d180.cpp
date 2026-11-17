@@ -30,13 +30,13 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d180(int sca
   
   pSVar5 = left;
   uVar8 = scanline_y - g_INT_01c6b5ac;
-  if (((g_BIT_INTEGER32_013405b0.dword != 1) || ((uVar8 & 1) == 0)) &&
-     ((g_BIT_INTEGER32_013405b0.dword != 2 || ((uVar8 & 3) == 0)))) {
-    iVar16 = (int)uVar8 >> (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f);
+  if (((g_CameraDownscaleIterations.dword != 1) || ((uVar8 & 1) == 0)) &&
+     ((g_CameraDownscaleIterations.dword != 2 || ((uVar8 & 3) == 0)))) {
+    iVar16 = (int)uVar8 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar14 = ((right->base).x_current >> 0x10) - g_INT_01c6b5a8 >>
-             (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f);
+             (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar17 = ((left->base).x_current >> 0x10) - g_INT_01c6b5a8 >>
-             (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f);
+             (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar15 = iVar14;
     if (iVar17 < iVar14) {
       left = right;
@@ -54,14 +54,14 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d180(int sca
     iVar7 = (iVar17 - iVar15) + 1;
     iVar13 = (right->base).red_current;
     iVar12 = (left->base).red_current - iVar13;
-    bVar4 = g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f;
-    puVar2 = g_UINT_PTR_ARRAY_01c60dac[iVar16 << (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f)];
-    pcVar18 = g_SFogImagePlane_0135ead0.pixels[iVar16] + iVar15;
+    bVar4 = g_CameraDownscaleIterations.bytes[0] & 0x1f;
+    puVar2 = g_ZBufferScanlineArray[iVar16 << (g_CameraDownscaleIterations.bytes[0] & 0x1f)];
+    pcVar18 = g_CameraPlaneWorkBuffer.pixels[iVar16] + iVar15;
     iVar17 = (iVar17 - iVar15) * 4;
     do {
       if (*(int *)((int)puVar2 + iVar17 + (iVar15 << bVar4) * 4) < iVar6) {
-        piVar1 = (int *)(g_INT_01340180 + 0x1340184);
-        g_INT_01340180 = g_INT_01340180 + 4U & 0x3fc;
+        piVar1 = (int *)(g_DitherPatternOffset + 0x1340184);
+        g_DitherPatternOffset = g_DitherPatternOffset + 4U & 0x3fc;
         uVar8 = (uint)(byte)*pcVar18 * 0x100 + iVar13 + *piVar1 >> 8;
         if (0xfe < uVar8) {
           uVar8 = 0xff;
@@ -76,7 +76,7 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d180(int sca
       bVar3 = 3 < iVar17;
       iVar17 = iVar16;
     } while (iVar16 != 0 && bVar3);
-    g_INT_0134017c = 1;
+    g_BackdropSaveActive = 1;
   }
   return;
 }

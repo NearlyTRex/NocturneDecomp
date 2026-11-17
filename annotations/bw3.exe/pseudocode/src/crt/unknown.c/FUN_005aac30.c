@@ -16,12 +16,12 @@ DWORD FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)
   BOOL BVar4;
   DWORD DStack_14;
   
-  if (((int)param_1 < 0) || (g_UINT_00607b84 < param_1)) {
+  if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {
     setErrno(4);
     DStack_14 = 0xffffffff;
   }
   else {
-    hFile = g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1];
+    hFile = g_IOControlBlock->standard_handles[param_1];
     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(param_1);
     uVar1 = FUN_005ab920(param_1);
     if ((uVar1 & 0x80) != 0) {
@@ -32,10 +32,10 @@ DWORD FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)
         return DVar2;
       }
     }
-    if (g_PTR_00607b44 != (byte *)0x0) {
-      iVar3 = (*(code *)g_PTR_00607b18)(param_1);
+    if (g_SpecialDeviceWriteFuncPtr != (byte *)0x0) {
+      iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1);
       if (iVar3 != 0) {
-        DVar2 = (*(code *)g_PTR_00607b44)(iVar3,param_2,param_3);
+        DVar2 = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,param_2,param_3);
         (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);
         return DVar2;
       }

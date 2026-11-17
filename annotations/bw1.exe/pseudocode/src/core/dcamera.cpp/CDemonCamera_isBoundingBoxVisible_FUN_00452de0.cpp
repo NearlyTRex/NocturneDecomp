@@ -107,10 +107,10 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0(CDem
   g_INT_01c51d70 = iVar6;
   dVar12 = round((double)((fVar2 - fVar5) * fVar7));
   g_INT_01c51d78 = (this_ptr->source_matrix).m[2].y;
-  g_INT_01c51d2c = (int)ROUND(dVar10);
+  g_RelativeX = (int)ROUND(dVar10);
   g_INT_01c51d7c = (this_ptr->source_matrix).m[2].z;
-  g_INT_01c51d30 = (int)ROUND(dVar11);
-  g_INT_01c51d34 = (int)ROUND(dVar12);
+  g_RelativeY = (int)ROUND(dVar11);
+  g_RelativeZ = (int)ROUND(dVar12);
   g_INT_01c51d74 = iVar8;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (g_CDemonRenderer_PTR_00612560,euler_angles,translation);

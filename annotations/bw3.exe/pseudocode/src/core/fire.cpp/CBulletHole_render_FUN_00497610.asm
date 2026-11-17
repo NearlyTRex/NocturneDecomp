@@ -42,9 +42,9 @@
 ;   float g_FLOAT_005df8e4 = 256
 ;   float g_FLOAT_005df8e8 = 65536
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc964
+;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc97c
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005fc994
+;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].v
@@ -103,7 +103,7 @@ section .text
     TEST ECX,ECX                        ; 00497652
     JNZ 0x004978e5                      ; 00497654
         ;   XREF to: 004978e5 (CONDITIONAL_JUMP)  ; LAB_004978e5
-    PUSH 0x5fc964                       ; 0049765a | g_SMRGLTextureBasic_005fc964
+    PUSH 0x5fc964                       ; 0049765a | g_FireEffectBlackHoleTexture
     MOV EDX,dword ptr [0x005f2afc]      ; 0049765f | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 00497665 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 00497666
@@ -301,7 +301,7 @@ section .text
     CMP ECX,0x2                         ; 004978ea
     JNZ 0x0049766e                      ; 004978ed
         ;   XREF to: 0049766e (CONDITIONAL_JUMP)  ; LAB_0049766e
-    PUSH 0x5fc994                       ; 004978f3 | g_SMRGLTextureBasic_005fc994
+    PUSH 0x5fc994                       ; 004978f3 | g_FireEffectBlueSparkTexture
     MOV EDI,dword ptr [0x005f2afc]      ; 004978f8 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDI                            ; 004978fe | g_CDemonRenderer_01bdd7e4
     JMP 0x00497666                      ; 004978ff

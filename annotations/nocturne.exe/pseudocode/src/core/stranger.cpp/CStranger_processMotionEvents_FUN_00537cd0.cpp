@@ -48,9 +48,9 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStran
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_00537d35:
-            iVar4 = g_INT_ARRAY_02dc9f50[7];
+            iVar4 = g_StrangerIndices[7];
             if (bone_index == 7) {
-              iVar4 = g_INT_ARRAY_02dc9f50[8];
+              iVar4 = g_StrangerIndices[8];
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                       (this_ptr_00,(CVector3f *)(auStack_64 + 8),iVar4);
@@ -182,12 +182,11 @@ LAB_00537df4:
       else if (bone_index < 7) {
         this_ptr_03 = (CCharacter *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
-                                ((this_ptr->base).base.grabbed_by,
-                                 g_CEnemyActorType_01bcdebc.name_hash);
+                                ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
         local_18 = this_ptr_03;
         if (this_ptr_03 != (CCharacter *)0x0) {
           pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                             (this_ptr_00,&local_44,g_INT_ARRAY_02dc9f50[0xc]);
+                             (this_ptr_00,&local_44,g_StrangerIndices[0xc]);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     ((CDemonActor *)this_ptr,(CVector3f *)local_38,pCVar3);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff50);

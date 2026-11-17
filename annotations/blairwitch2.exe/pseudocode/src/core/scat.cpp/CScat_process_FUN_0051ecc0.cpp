@@ -328,7 +328,7 @@ LAB_0051ef62:
                         ((CCharacter *)this_ptr), EVar9 == DEATH_STATE_ALIVE)) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar8 = this_ptr->head_blend_weight;
-    iVar6 = g_INT_ARRAY_01e62068[0];
+    iVar6 = g_ScatIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_00594380
               (&this_ptr->head_euler_angles,(CQuaternion4f *)&stack0xffffff60);
     source_quaternions = (CQuaternion4f *)auStack_90;

@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 0047d26c
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 0047d26d
         ;   XREF to: 0040b670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b670(int * int_ptr, char * property_name)
-    MOV EAX,[0x007c3038]                ; 0047d272 | g_INT_007c3038
+    MOV EAX,[0x007c3038]                ; 0047d272 | g_ActorReadingMode
     ADD ESP,0x8                         ; 0047d277
     CMP EAX,0x1                         ; 0047d27a
     JNZ 0x0047d2a1                      ; 0047d27d

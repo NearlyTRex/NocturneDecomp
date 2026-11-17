@@ -13,7 +13,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004a27e0(CFireEffec
   int iVar1;
   
   iVar1 = g_INT_01cefd10 + 1;
-  this_ptr_00 = g_CBulletTrail_ARRAY_01cefd14 + g_INT_01cefd10;
+  this_ptr_00 = g_BulletTrailPool + g_INT_01cefd10;
   g_INT_01cefd10 = iVar1;
   if (9 < iVar1) {
     g_INT_01cefd10 = 0;

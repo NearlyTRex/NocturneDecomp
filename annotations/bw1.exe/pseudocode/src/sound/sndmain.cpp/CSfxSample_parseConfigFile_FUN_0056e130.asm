@@ -74,9 +74,9 @@ section .text
     SUB ESP,0x478                       ; 0056e136
     AND ESP,0xfffffff8                  ; 0056e13c
     FLD float ptr [0x00623308]          ; 0056e13f | g_FLOAT_00623308
-    FLD float ptr [0x00605b08]          ; 0056e145 | g_FLOAT_00605b08
+    FLD float ptr [0x00605b08]          ; 0056e145 | g_SoundReferenceDistanceConstant
     FMUL ST1                            ; 0056e14b
-    FLD float ptr [0x02c745e0]          ; 0056e14d | g_FLOAT_02c745e0
+    FLD float ptr [0x02c745e0]          ; 0056e14d | g_SoundReferenceVolumeDistance
     FMUL ST2                            ; 0056e153
     FLD float ptr [0x00605b0c]          ; 0056e155 | g_FLOAT_00605b0c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056e15b
@@ -258,7 +258,7 @@ section .text
         ;   Label: LAB_0056e35b
     INC CL                              ; 0056e35e
     AND ECX,0xff                        ; 0056e360
-    TEST byte ptr [ECX + 0x626114],0x2  ; 0056e366 | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [ECX + 0x626114],0x2  ; 0056e366 | g_CharacterClassificationTable
     JNZ 0x0056e3a0                      ; 0056e36d
         ;   XREF to: 0056e3a0 (CONDITIONAL_JUMP)  ; LAB_0056e3a0
     LEA ESI,[EBX + 0x1]                 ; 0056e36f
@@ -268,7 +268,7 @@ section .text
         ;   Label: LAB_0056e375
     INC AL                              ; 0056e377
     AND EAX,0xff                        ; 0056e379
-    TEST byte ptr [EAX + 0x626114],0x2  ; 0056e37e | g_UCHAR_ARRAY_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 0056e37e | g_CharacterClassificationTable
     JZ 0x0056e3a7                       ; 0056e385
         ;   XREF to: 0056e3a7 (CONDITIONAL_JUMP)  ; LAB_0056e3a7
     MOV EDI,EBX                         ; 0056e387
@@ -341,7 +341,7 @@ section .text
         ;   XREF to: 0056e2aa (CONDITIONAL_JUMP)  ; LAB_0056e2aa
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056e450
     FLD float ptr [EAX + 0x114]         ; 0056e453
-    FDIV float ptr [0x00605b04]         ; 0056e459 | g_FLOAT_00605b04
+    FDIV float ptr [0x00605b04]         ; 0056e459 | g_SoundDivisorConstant
     FSTP float ptr [EAX + 0x118]        ; 0056e45f
     JMP 0x0056e2aa                      ; 0056e465
         ;   XREF to: 0056e2aa (UNCONDITIONAL_JUMP)  ; LAB_0056e2aa

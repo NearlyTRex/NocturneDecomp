@@ -7,7 +7,7 @@
 ; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   int[11] g_INT_ARRAY_007bccdc
+;   int[11] g_BrideIndices
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
@@ -24,7 +24,7 @@ section .text
     MOV EBP,ESP                         ; 0041ede3
     SUB ESP,0x78                        ; 0041ede5
     MOV EBX,ESI                         ; 0041ede8
-    MOV EDX,dword ptr [0x007bccdc]      ; 0041edea | g_INT_ARRAY_007bccdc
+    MOV EDX,dword ptr [0x007bccdc]      ; 0041edea | g_BrideIndices
     MOV ESI,dword ptr [EBP + 0x10]      ; 0041edf0
     PUSH EDX                            ; 0041edf3
     ADD ESI,0x2b4                       ; 0041edf4

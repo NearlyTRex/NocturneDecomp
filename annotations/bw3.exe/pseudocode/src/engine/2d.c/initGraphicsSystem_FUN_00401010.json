@@ -131,19 +131,19 @@
     },
     {
       "addr": "01c6b5d0",
-      "name": "g_UINT_ARRAY_01c6b5d0",
+      "name": "g_ReciprocalLookupTable",
       "type": "uint[1600]",
       "value": null
     },
     {
       "addr": "01c6b5d4",
-      "name": "g_UINT_ARRAY_01c6b5d0[1]",
+      "name": "g_ReciprocalLookupTable[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5d8",
-      "name": "g_UINT_ARRAY_01c6b5d0[2]",
+      "name": "g_ReciprocalLookupTable[2]",
       "type": "undefined4",
       "value": null
     }
@@ -246,9 +246,9 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(int *)((int)g_UINT_ARRAY_01c6b5d0",
+      "match": "(int *)((int)g_ReciprocalLookupTable",
       "severity": "moderate",
-      "text": "*(int *)((int)g_UINT_ARRAY_01c6b5d0 + iVar2) = (int)(0xffffffff / uVar1);",
+      "text": "*(int *)((int)g_ReciprocalLookupTable + iVar2) = (int)(0xffffffff / uVar1);",
       "type": "pointer_cast"
     }
   ]

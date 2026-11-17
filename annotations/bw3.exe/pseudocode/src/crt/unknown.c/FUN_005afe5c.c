@@ -10,5 +10,5 @@ int FUN_005afe5c(void)
 
 {
   FUN_005afddc();
-  return g_INT_00607e84;
+  return g_ConsoleOutputHandle;
 }

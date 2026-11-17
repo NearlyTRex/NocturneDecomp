@@ -43,7 +43,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
                    this_ptr->viewport_width,this_ptr->viewport_height);
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
-                (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28);
+                (g_CDemonRenderer_PTR_00612560,&g_ZeroVector);
       local_14 = 56.0;
       if (this_ptr->use_custom_viewport != 0) {
         local_14 = 84.0;
@@ -51,7 +51,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
                 (g_CDemonRenderer_PTR_00612560,local_14);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-                (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28);
+                (g_CDemonRenderer_PTR_00612560,&g_ZeroVector);
       local_20.z = 36.0;
       local_20.x = 0.0;
       local_20.y = 0.0;
@@ -138,7 +138,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       local_68 = 1;
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(pCVar1,1);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061f2e4);
+                (g_CDemonRenderer_PTR_00612560,&g_LoadingMoonGlowTexture);
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
                 (g_CDemonRenderer_PTR_00612560,&local_84,0x327);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
@@ -148,7 +148,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
         engine_drender_cpp_popViewport_FUN_00483c40();
       }
       g_CDemonSetPtr->rendering_mode = 0;
-      local_c = g_CBitFont_PTR_0152d244;
+      local_c = g_ThemeFont;
       iVar3 = (g_INT_0061b498 * 0x240) / 0x280;
       iVar6 = (g_INT_0061b49c * 0x18) / 0x1e0;
       iVar4 = (g_INT_0061b498 << 5) / 0x280;

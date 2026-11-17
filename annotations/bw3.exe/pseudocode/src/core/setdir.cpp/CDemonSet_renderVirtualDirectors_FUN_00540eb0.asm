@@ -37,8 +37,8 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_INT_005fba20 = 0x8
-;   undefined4 g_ARRAY_PTR_01c5faec[80]
-;   undefined4 g_UCHAR_ARRAY_01c62070+0x7fff
+;   undefined4 g_ScreenBufferArray[80]
+;   undefined4 g_ColorCubeLookup+0x7fff
 ;   int g_INT_01c6b5c0
 ;   float[251] g_FLOAT_ARRAY_02701528
 ;   undefined4 DAT_0270f3dc
@@ -195,7 +195,7 @@ section .text
     SHL EDX,0xa                         ; 0054107e
     SHL ECX,0x5                         ; 00541081
     ADD ECX,EDX                         ; 00541084
-    MOV AL,byte ptr [ECX + EAX*0x1 + 0x1c62070] ; 00541086 | g_UCHAR_ARRAY_01c62070+0x7fff
+    MOV AL,byte ptr [ECX + EAX*0x1 + 0x1c62070] ; 00541086 | g_ColorCubeLookup+0x7fff
     PUSH EDI                            ; 0054108d
     AND EAX,0xff                        ; 0054108e
     PUSH ESI                            ; 00541093
@@ -326,7 +326,7 @@ section .text
     ADD ECX,0x4                         ; 00541258
     ADD EDX,EAX                         ; 0054125b
     SHL EAX,0x10                        ; 0054125d
-    MOV ESI,dword ptr [EBP + 0x1c5faec] ; 00541260 | g_ARRAY_PTR_01c5faec[80]
+    MOV ESI,dword ptr [EBP + 0x1c5faec] ; 00541260 | g_ScreenBufferArray[80]
     ADD EDX,EAX                         ; 00541266
     ADD EBX,0x4                         ; 00541268
     MOV dword ptr [ECX + ESI*0x1 + -0x4],EDX ; 0054126b

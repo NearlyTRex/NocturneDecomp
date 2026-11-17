@@ -21,19 +21,19 @@
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290 at 0046c36c
 ;
 ; Referenced Globals:
-;   uint g_UINT_006141e0 = 0x1
-;   int g_INT_0070ca74
-;   int g_INT_0070ca7c
-;   int g_INT_01ba5714
-;   int g_INT_01ba5c80
+;   uint g_VertexProcessingEnabled = 0x1
+;   int g_TexturesDisabled
+;   int g_CullingMode
+;   int g_RasterizerDepthBias
+;   int g_RenderAbortFlag
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
 ;   int g_INT_01c35e40
 ;   int g_INT_01c35e44
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
-;   int g_INT_01e61b58
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
+;   int g_RenderedTriangleCount
 ;   int g_INT_026672a8
 ;   undefined4 DAT_026672ac
 ;   ... and 3 more
@@ -56,7 +56,7 @@ section .text
     PUSH EBP                            ; 0059a0b3
     SUB ESP,0x20                        ; 0059a0b4
     MOV EBP,dword ptr [0x026672a8]      ; 0059a0b7 | g_INT_026672a8
-    CMP dword ptr [0x006141e0],0x0      ; 0059a0bd | g_UINT_006141e0
+    CMP dword ptr [0x006141e0],0x0      ; 0059a0bd | g_VertexProcessingEnabled
     JZ 0x0059a173                       ; 0059a0c4
         ;   XREF to: 0059a173 (CONDITIONAL_JUMP)  ; LAB_0059a173
     MOV EBX,dword ptr [ESP + 0x38]      ; 0059a0ca
@@ -72,7 +72,7 @@ section .text
     TEST AH,0x80                        ; 0059a0e9
     JZ 0x0059a161                       ; 0059a0ec
         ;   XREF to: 0059a161 (CONDITIONAL_JUMP)  ; LAB_0059a161
-    TEST byte ptr [0x01c38b58],0x6      ; 0059a0ee | g_INT_01c38b58
+    TEST byte ptr [0x01c38b58],0x6      ; 0059a0ee | g_VertexPreprocessMode
     JZ 0x0059a109                       ; 0059a0f5
         ;   XREF to: 0059a109 (CONDITIONAL_JUMP)  ; LAB_0059a109
     MOV EAX,0x7fffffff                  ; 0059a0f7
@@ -81,7 +81,7 @@ section .text
     SAR EDX,0x1f                        ; 0059a101
     IDIV EBX                            ; 0059a104
     MOV dword ptr [ECX + 0xc],EAX       ; 0059a106
-    MOV DH,byte ptr [0x01c38b58]        ; 0059a109 | g_INT_01c38b58
+    MOV DH,byte ptr [0x01c38b58]        ; 0059a109 | g_VertexPreprocessMode
         ;   Label: LAB_0059a109
     MOV dword ptr [0x026672a8],EBP      ; 0059a10f | g_INT_026672a8
     TEST DH,0x1                         ; 0059a115
@@ -117,24 +117,24 @@ section .text
     CMP ESI,EDI                         ; 0059a16b
     JL 0x0059a0e0                       ; 0059a16d
         ;   XREF to: 0059a0e0 (CONDITIONAL_JUMP)  ; LAB_0059a0e0
-    MOV EAX,[0x0070ca7c]                ; 0059a173 | g_INT_0070ca7c
+    MOV EAX,[0x0070ca7c]                ; 0059a173 | g_CullingMode
         ;   Label: LAB_0059a173
     MOV dword ptr [0x026672a8],EBP      ; 0059a178 | g_INT_026672a8
     TEST EAX,EAX                        ; 0059a17e
     JNZ 0x0059a35c                      ; 0059a180
         ;   XREF to: 0059a35c (CONDITIONAL_JUMP)  ; LAB_0059a35c
-    MOV ECX,dword ptr [0x01e61b58]      ; 0059a186 | g_INT_01e61b58
+    MOV ECX,dword ptr [0x01e61b58]      ; 0059a186 | g_RenderedTriangleCount
         ;   Label: LAB_0059a186
     INC ECX                             ; 0059a18c
     MOV EBX,dword ptr [0x01c37788]      ; 0059a18d | g_INT_01c37788
-    MOV dword ptr [0x01e61b58],ECX      ; 0059a193 | g_INT_01e61b58
+    MOV dword ptr [0x01e61b58],ECX      ; 0059a193 | g_RenderedTriangleCount
     TEST EBX,EBX                        ; 0059a199
     JZ 0x0059a1aa                       ; 0059a19b
         ;   XREF to: 0059a1aa (CONDITIONAL_JUMP)  ; LAB_0059a1aa
-    CMP dword ptr [0x0070ca74],0x0      ; 0059a19d | g_INT_0070ca74
+    CMP dword ptr [0x0070ca74],0x0      ; 0059a19d | g_TexturesDisabled
     JZ 0x0059a38f                       ; 0059a1a4
         ;   XREF to: 0059a38f (CONDITIONAL_JUMP)  ; LAB_0059a38f
-    MOV EAX,[0x01c38b58]                ; 0059a1aa | g_INT_01c38b58
+    MOV EAX,[0x01c38b58]                ; 0059a1aa | g_VertexPreprocessMode
         ;   Label: LAB_0059a1aa
     MOV EBP,dword ptr [0x026672a8]      ; 0059a1af | g_INT_026672a8
     CMP EAX,0x1                         ; 0059a1b5
@@ -188,7 +188,7 @@ section .text
     MOV EDI,dword ptr [0x026677ac]      ; 0059a230 | g_INT_026677ac
     XOR EBX,EBX                         ; 0059a236
     XOR EAX,EAX                         ; 0059a238
-    MOV dword ptr [0x01ba5c80],EBX      ; 0059a23a | g_INT_01ba5c80
+    MOV dword ptr [0x01ba5c80],EBX      ; 0059a23a | g_RenderAbortFlag
     TEST EBP,EBP                        ; 0059a240
     JLE 0x0059a4fe                      ; 0059a242
         ;   XREF to: 0059a4fe (CONDITIONAL_JUMP)  ; LAB_0059a4fe
@@ -314,7 +314,7 @@ section .text
     POP ESI                             ; 0059a38c
     POP EBX                             ; 0059a38d
     RET                                 ; 0059a38e
-    MOV EDI,dword ptr [0x01c38b54]      ; 0059a38f | g_BIT_INTEGER32_01c38b54
+    MOV EDI,dword ptr [0x01c38b54]      ; 0059a38f | g_RenderStateFlags
         ;   Label: LAB_0059a38f
     PUSH EDI                            ; 0059a395
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0059a396
@@ -433,7 +433,7 @@ section .text
     MOV dword ptr [EBX + 0x2c],EAX      ; 0059a4b7
     MOV EAX,dword ptr [ESP]             ; 0059a4ba
     MOV ECX,dword ptr [ESI + 0x8]       ; 0059a4bd
-    MOV ESI,dword ptr [0x01ba5714]      ; 0059a4c0 | g_INT_01ba5714
+    MOV ESI,dword ptr [0x01ba5714]      ; 0059a4c0 | g_RasterizerDepthBias
     SHL ECX,0x8                         ; 0059a4c6
     IMUL EDX                            ; 0059a4c9
     SHRD EAX,EDX,0x10                   ; 0059a4cb
@@ -497,7 +497,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0059a546
     CALL engine_special.cpp_renderScanline_FUN_0055d6d7 ; 0059a54a
         ;   XREF to: 0055d6d7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_0055d6d7(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
-    CMP dword ptr [0x01ba5c80],0x0      ; 0059a54f | g_INT_01ba5c80
+    CMP dword ptr [0x01ba5c80],0x0      ; 0059a54f | g_RenderAbortFlag
     JNZ 0x0059a34e                      ; 0059a556
         ;   XREF to: 0059a34e (CONDITIONAL_JUMP)  ; LAB_0059a34e
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0059a55c

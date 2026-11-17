@@ -11,7 +11,7 @@
 ;   core_particle.cpp_CParticle_process_FUN_004ef120 at 004ef1fb
 ;
 ; Referenced Globals:
-;   uchar[8] g_UCHAR_ARRAY_005b6d08
+;   uchar[8] g_VoxelYBitMasks
 ;
 ; *****************************************************************************
 
@@ -100,7 +100,7 @@ section .text
     MOV CL,byte ptr [ECX + EAX*0x1]     ; 0046b8a7
     XOR EAX,EDX                         ; 0046b8aa
     AND ECX,0xff                        ; 0046b8ac
-    MOV AL,byte ptr [ESI + 0x5b6d08]    ; 0046b8b2 | g_UCHAR_ARRAY_005b6d08
+    MOV AL,byte ptr [ESI + 0x5b6d08]    ; 0046b8b2 | g_VoxelYBitMasks
     TEST ECX,EAX                        ; 0046b8b8
     SETNZ AL                            ; 0046b8ba
     AND EAX,0xff                        ; 0046b8bd

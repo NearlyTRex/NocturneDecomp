@@ -19,6 +19,6 @@ int __cdecl engine_mini3d_cpp_clearZBuffer_FUN_005111a0(void)
   if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02c833f4)();
+  iVar1 = (*(code *)g_APIDLL_clearZBuffer)();
   return iVar1;
 }

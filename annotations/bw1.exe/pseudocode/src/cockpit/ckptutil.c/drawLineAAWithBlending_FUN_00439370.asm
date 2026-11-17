@@ -16,7 +16,7 @@
 ;   int g_INT_007c7550
 ;   int g_INT_01c4f008
 ;   int g_INT_01c4f00c
-;   int g_INT_01c4f010
+;   int g_ClipRight
 ;   int g_INT_01c4f014
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
     CMP EBX,ECX                         ; 004393ad
     JL 0x00439410                       ; 004393af
         ;   XREF to: 00439410 (CONDITIONAL_JUMP)  ; LAB_00439410
-    MOV ECX,dword ptr [0x01c4f010]      ; 004393b5 | g_INT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 004393b5 | g_ClipRight
         ;   Label: LAB_004393b5
     CMP EDI,ECX                         ; 004393bb
     JLE 0x004393c3                      ; 004393bd

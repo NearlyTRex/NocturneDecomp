@@ -11,12 +11,12 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   int g_INT_01d09854
-;   int g_INT_01e61b58
-;   void* g_PTR_0264bc98
+;   int g_RenderedTriangleCount
+;   void* g_APIDLL_setVideoModeX
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -31,17 +31,17 @@ section .text
         ;   Label: engine_mini3d.cpp_polyListD3DL2_FUN_004f3e60
     PUSH EBP                            ; 004f3e61
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f3e62
-    MOV EDX,dword ptr [0x01e61b58]      ; 004f3e66 | g_INT_01e61b58
+    MOV EDX,dword ptr [0x01e61b58]      ; 004f3e66 | g_RenderedTriangleCount
     MOV ECX,dword ptr [0x01d09854]      ; 004f3e6c | g_INT_01d09854
     ADD EDX,EAX                         ; 004f3e72
     ADD ECX,dword ptr [ESP + 0x10]      ; 004f3e74
-    MOV dword ptr [0x01e61b58],EDX      ; 004f3e78 | g_INT_01e61b58
+    MOV dword ptr [0x01e61b58],EDX      ; 004f3e78 | g_RenderedTriangleCount
     MOV dword ptr [0x01d09854],ECX      ; 004f3e7e | g_INT_01d09854
     CALL engine_mini3d.cpp_updateTransform_FUN_004f3740 ; 004f3e84
         ;   XREF to: 004f3740 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateTransform_FUN_004f3740()
     CALL engine_mini3d.cpp_updateRenderState_FUN_004f7da0 ; 004f3e89
         ;   XREF to: 004f7da0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateRenderState_FUN_004f7da0()
-    CMP dword ptr [0x0264bc98],0x0      ; 004f3e8e | g_PTR_0264bc98
+    CMP dword ptr [0x0264bc98],0x0      ; 004f3e8e | g_APIDLL_setVideoModeX
     JZ 0x004f3eca                       ; 004f3e95
         ;   XREF to: 004f3eca (CONDITIONAL_JUMP)  ; LAB_004f3eca
     CMP dword ptr [0x01c37788],0x0      ; 004f3e97 | g_INT_01c37788
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 004f3eca (CONDITIONAL_JUMP)  ; LAB_004f3eca
     PUSH ESI                            ; 004f3ea0
     PUSH EBX                            ; 004f3ea1
-    MOV EAX,[0x01c38b54]                ; 004f3ea2 | g_BIT_INTEGER32_01c38b54
+    MOV EAX,[0x01c38b54]                ; 004f3ea2 | g_RenderStateFlags
     PUSH EAX                            ; 004f3ea7
     MOV EDX,dword ptr [ESP + 0x24]      ; 004f3ea8
     PUSH EDX                            ; 004f3eac
@@ -59,7 +59,7 @@ section .text
     PUSH EBX                            ; 004f3eb6
     MOV ESI,dword ptr [ESP + 0x24]      ; 004f3eb7
     PUSH ESI                            ; 004f3ebb
-    CALL dword ptr [0x0264bc98]         ; 004f3ebc | g_PTR_0264bc98
+    CALL dword ptr [0x0264bc98]         ; 004f3ebc | g_APIDLL_setVideoModeX
     ADD ESP,0x14                        ; 004f3ec2
     POP EBX                             ; 004f3ec5
     POP ESI                             ; 004f3ec6

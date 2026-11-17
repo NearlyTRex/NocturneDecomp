@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_skeletons_d_bytes_d_mo_00591e81
-;   int g_INT_0268cef0
+;   int g_DeformableModelCount
 ;   int g_INT_02737ef4
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
     LEA EAX,[EAX]                       ; 0051f793
     LEA EDX,[EDX]                       ; 0051f799
     NOP                                 ; 0051f79f
-    MOV ESI,dword ptr [0x0268cef0]      ; 0051f7a0 | g_INT_0268cef0
+    MOV ESI,dword ptr [0x0268cef0]      ; 0051f7a0 | g_DeformableModelCount
         ;   Label: LAB_0051f7a0
     XOR EBX,EBX                         ; 0051f7a6
     XOR EDI,EDI                         ; 0051f7a8
@@ -65,7 +65,7 @@ section .text
     INC EBX                             ; 0051f7b9
     ADD ESP,0x4                         ; 0051f7ba
     ADD EDI,EAX                         ; 0051f7bd
-    MOV EAX,[0x0268cef0]                ; 0051f7bf | g_INT_0268cef0
+    MOV EAX,[0x0268cef0]                ; 0051f7bf | g_DeformableModelCount
     ADD ESI,0x2ac0                      ; 0051f7c4
     CMP EBX,EAX                         ; 0051f7ca
     JL 0x0051f7b3                       ; 0051f7cc
@@ -73,7 +73,7 @@ section .text
     MOV EAX,EAX                         ; 0051f7ce
     PUSH EDI                            ; 0051f7d0
         ;   Label: LAB_0051f7d0
-    MOV EDX,dword ptr [0x0268cef0]      ; 0051f7d1 | g_INT_0268cef0
+    MOV EDX,dword ptr [0x0268cef0]      ; 0051f7d1 | g_DeformableModelCount
     PUSH EDX                            ; 0051f7d7
     PUSH EBP                            ; 0051f7d8
     MOV ECX,dword ptr [0x02737ef4]      ; 0051f7d9 | g_INT_02737ef4

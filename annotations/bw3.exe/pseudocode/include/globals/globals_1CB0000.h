@@ -20,14 +20,14 @@ extern CFirefly CFirefly_ARRAY_01cba2b8[64];
 extern CGlassParticle CGlassParticle_ARRAY_01cbc0f0[1000];
 
 // CMuzzleFlash[20]
-extern CMuzzleFlash g_CMuzzleFlash_ARRAY_01cbb9bc[20];
+extern CMuzzleFlash g_MuzzleFlashPool[20];
 
 // CSpark[256]
 extern CSpark g_SparkPool[256];
 
 // int
 extern int g_INT_01cb4eb0;
-extern int g_INT_01cba2b4;
-extern int g_INT_01cbb9b8;
+extern int g_TossAllocIndex;
+extern int g_MuzzleFlashAllocIndex;
 extern int g_INT_01cbc0ec;
 

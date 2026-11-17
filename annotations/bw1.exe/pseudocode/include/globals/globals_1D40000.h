@@ -11,8 +11,8 @@
 // =============================================================================
 
 // SHuffmanTable[34]
-extern SHuffmanTable g_SHuffmanTable_ARRAY_01d405c8[34];
+extern SHuffmanTable g_HuffmanTables[34];
 
 // char[256]
-extern char g_CHAR_ARRAY_01d404c8[256];
+extern char g_CurrentMp3Filename[256];
 

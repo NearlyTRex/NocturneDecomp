@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Not_enough_memory_to_all_00598bec
 ;   undefined1 DAT_005c18a0
 ;   undefined4 g_FILE_005c18c8._flag+1
-;   FileListNode* g_FileListNode_PTR_02de4e20
-;   FileListNode* g_FileListNode_PTR_02de4e24
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 0056de4c (UNCONDITIONAL_JUMP)  ; LAB_0056de4c
     MOV ESI,EAX                         ; 0056de4a
         ;   Label: LAB_0056de4a
-    MOV EAX,[0x02de4e20]                ; 0056de4c | g_FileListNode_PTR_02de4e20
+    MOV EAX,[0x02de4e20]                ; 0056de4c | g_AllocatedListHead
         ;   Label: LAB_0056de4c
     MOV dword ptr [ESI + 0x4],EBX       ; 0056de51
     MOV dword ptr [ESI],EAX             ; 0056de54
@@ -78,7 +78,7 @@ section .text
     MOV byte ptr [EAX + 0x14],0x0       ; 0056de63
     MOV EAX,dword ptr [EBX + 0x8]       ; 0056de67
     MOV dword ptr [EAX + 0xc],0x0       ; 0056de6a
-    MOV dword ptr [0x02de4e20],ESI      ; 0056de71 | g_FileListNode_PTR_02de4e20
+    MOV dword ptr [0x02de4e20],ESI      ; 0056de71 | g_AllocatedListHead
     MOV ECX,dword ptr [EBX + 0x26]      ; 0056de77
     ADD EBX,0x1a                        ; 0056de7a
     TEST ECX,ECX                        ; 0056de7d
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 0056de1b (CONDITIONAL_JUMP)  ; LAB_0056de1b
     XOR ESI,ESI                         ; 0056de81
         ;   Label: LAB_0056de81
-    MOV dword ptr [0x02de4e24],ESI      ; 0056de83 | g_FileListNode_PTR_02de4e24
+    MOV dword ptr [0x02de4e24],ESI      ; 0056de83 | g_FreeListHeadPointer
     POP ESI                             ; 0056de89
     POP EBX                             ; 0056de8a
     RET                                 ; 0056de8b

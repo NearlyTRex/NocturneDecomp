@@ -22,7 +22,7 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004eece0(void)
   while( true ) {
     while( true ) {
       key_code = EVar1;
-      iVar2 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,key_code);
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,key_code);
       if (iVar2 != 0) break;
       EVar1 = key_code + DIK_ESCAPE;
       if (599 < (int)(key_code + DIK_ESCAPE)) {

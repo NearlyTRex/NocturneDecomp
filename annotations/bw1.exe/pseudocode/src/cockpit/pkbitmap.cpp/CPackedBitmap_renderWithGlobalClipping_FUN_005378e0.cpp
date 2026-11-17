@@ -18,8 +18,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_005
       src_top = src_top + (g_INT_01c4f00c - dest_y);
       dest_y = g_INT_01c4f00c;
     }
-    if (g_INT_01c4f010 < (width + dest_x) - src_left) {
-      width = (g_INT_01c4f010 - dest_x) + src_left;
+    if (g_ClipRight < (width + dest_x) - src_left) {
+      width = (g_ClipRight - dest_x) + src_left;
     }
     if (g_INT_01c4f014 < (dest_y + height) - src_top) {
       height = (g_INT_01c4f014 - dest_y) + src_top;

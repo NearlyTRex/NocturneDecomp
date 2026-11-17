@@ -16,13 +16,13 @@
 ;   TerminatedCString s_wincore_wddvmem_cpp_005ee2b0
 ;   TerminatedCString s_openScreenDevice_Unable_005ee2c7
 ;   int g_INT_006141bc = 0xc8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c37788
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae8
-;   int g_INT_02661afc
+;   IDirectDrawSurface* g_SoftwareRenderSurface
+;   int g_Display24BitFallback
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -36,7 +36,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0
     PUSH EBP                            ; 005890c1
     SUB ESP,0x6c                        ; 005890c2
-    MOV EDX,dword ptr [0x02661afc]      ; 005890c5 | g_INT_02661afc
+    MOV EDX,dword ptr [0x02661afc]      ; 005890c5 | g_Display24BitFallback
     TEST EDX,EDX                        ; 005890cb
     JNZ 0x005890e0                      ; 005890cd
         ;   XREF to: 005890e0 (CONDITIONAL_JUMP)  ; LAB_005890e0
@@ -63,7 +63,7 @@ section .text
     LEA ECX,[ESP + 0x8]                 ; 005890fa
     MOV EBX,0x6c                        ; 005890fe
     PUSH ECX                            ; 00589103
-    MOV EAX,[0x02661ae8]                ; 00589104 | g_IDirectDrawSurface_PTR_02661ae8
+    MOV EAX,[0x02661ae8]                ; 00589104 | g_SoftwareRenderSurface
     MOV dword ptr [ESP + 0xc],EBX       ; 00589109
     PUSH 0x0                            ; 0058910d
     MOV EDX,dword ptr [EAX]             ; 0058910f
@@ -93,7 +93,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0058914e
     LEA ECX,[EBP*0x4 + 0x0]             ; 00589152
     XOR EAX,EAX                         ; 00589159
-    MOV dword ptr [EAX + 0x1c2a38c],EDX ; 0058915b | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV dword ptr [EAX + 0x1c2a38c],EDX ; 0058915b | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0058915b
     ADD EAX,0x4                         ; 00589161
     ADD EDX,EBX                         ; 00589164

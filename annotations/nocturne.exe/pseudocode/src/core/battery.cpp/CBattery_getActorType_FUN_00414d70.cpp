@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_battery_cpp_CBattery_getActorType_FUN_00414d70(CBattery *this_ptr)
 
 {
-  return &g_CBatteryActorType_00764674;
+  return &g_CBatteryClassInfo;
 }

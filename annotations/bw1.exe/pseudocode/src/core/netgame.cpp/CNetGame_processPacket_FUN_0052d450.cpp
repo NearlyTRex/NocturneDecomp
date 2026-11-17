@@ -132,7 +132,7 @@ LAB_0052d72f:
     }
     if (this_ptr->network_mode == NET_MODE_LOBBY) {
       pcVar11 = packet->raw + 5;
-      g_INT_01d51da4 = 1;
+      g_ConnectionStatus = 1;
       do {
         cVar1 = *pcVar11;
         local_1c->name[0] = cVar1;
@@ -146,14 +146,14 @@ LAB_0052d72f:
       this_ptr->players[iVar4].addr.ip_address = (packet->server_accept).client_addr.ip_address;
       *(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar4 * 0x7c + 0x40) =
            *(uint *)((int)packet + (uint)bVar10 * -8 + 0x6d);
-      g_INT_01d51dac = -1;
+      g_NetNextPlayerId = -1;
       return;
     }
     break;
   case PACKET_GAME_START:
     if (((this_ptr->connection_type == CONNECTION_CLIENT) && (-1 < (int)uVar2)) &&
        ((this_ptr->network_mode == NET_MODE_LOBBY && (uVar2 == this_ptr->server_player_index)))) {
-      g_INT_01d51da4 = (packet->simple).value;
+      g_ConnectionStatus = (packet->simple).value;
       return;
     }
     break;
@@ -199,18 +199,17 @@ LAB_0052d72f:
   case PACKET_CHAT_MESSAGE:
     if (-1 < (int)uVar2) {
       iVar4 = 0;
-      if (0 < g_INT_01d51db4) {
-        pSVar5 = g_SChatHistory_ARRAY_01d51db8;
+      if (0 < g_ChatHistoryCount) {
+        pSVar5 = g_ChatHistory;
         do {
           if ((((pSVar5->sender_addr).port == source_addr->port) &&
               ((pSVar5->sender_addr).ip_address == source_addr->ip_address)) &&
-             ((packet->player_announce).addr.ip_address ==
-              g_SChatHistory_ARRAY_01d51db8[iVar4].message_id)) break;
+             ((packet->player_announce).addr.ip_address == g_ChatHistory[iVar4].message_id)) break;
           iVar4 = iVar4 + 1;
           pSVar5 = pSVar5 + 1;
-        } while (iVar4 < g_INT_01d51db4);
+        } while (iVar4 < g_ChatHistoryCount);
       }
-      if (iVar4 == g_INT_01d51db4) {
+      if (iVar4 == g_ChatHistoryCount) {
         core_netgame_cpp_CNetGame_addChatHistory_FUN_0052f100
                   (this_ptr,source_addr,(packet->simple).value,local_1c->name,
                    (packet->server_accept).player_name + 4);
@@ -224,14 +223,13 @@ LAB_0052d72f:
     break;
   case PACKET_CHAT_ACK:
     if (((this_ptr->connection_type != CONNECTION_NONE) && (-1 < (int)uVar2)) &&
-       (0 < g_INT_01d6dfb8)) {
+       (0 < g_ChatOutCount)) {
       iVar4 = 0;
-      iVar3 = g_INT_01d6dfb8 * 0x114;
+      iVar3 = g_ChatOutCount * 0x114;
       do {
-        while (*(uint *)((int)g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + iVar4 + -8) ==
+        while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + -8) ==
                (packet->player_announce).addr.ip_address) {
-          *(byte *)
-           ((int)g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + iVar4 + uVar2 + -4) = 1;
+          *(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + uVar2 + -4) = 1;
           iVar4 = iVar4 + 0x114;
           if (iVar3 <= iVar4) {
             return;
@@ -252,8 +250,8 @@ LAB_0052d72f:
     local_64.type = PACKET_SYNC_STAGE_RESP;
     local_5f = this_ptr->players[this_ptr->local_player_index].local_sync_stage;
     core_netgame_cpp_CNetGame_send_FUN_0052df50(this_ptr,this_ptr->server_player_index,&local_64);
-    if (g_INT_01d51da8 < (packet->simple).value) {
-      g_INT_01d51da8 = (packet->simple).value;
+    if (g_RemoteSyncStage < (packet->simple).value) {
+      g_RemoteSyncStage = (packet->simple).value;
       return;
     }
     break;
@@ -305,15 +303,15 @@ LAB_0052dac3:
     if (((this_ptr->connection_type != CONNECTION_CLIENT) || ((int)uVar2 < 0)) ||
        (uVar2 != this_ptr->server_player_index)) goto LAB_0052dac3;
     if (this_ptr->network_mode == NET_MODE_LOBBY) {
-      if (g_INT_01d51dac < (packet->simple).value) {
+      if (g_NetNextPlayerId < (packet->simple).value) {
         iVar4 = core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_0052f200(this_ptr,packet);
         if (iVar4 == 0) {
           return;
         }
-        g_INT_01d51dac = (packet->simple).value;
+        g_NetNextPlayerId = (packet->simple).value;
       }
       local_40.type = PACKET_SETTINGS_ACK;
-      local_3b = g_INT_01d51dac;
+      local_3b = g_NetNextPlayerId;
       local_40.size = 9;
       core_netgame_cpp_CNetGame_send_FUN_0052df50(this_ptr,this_ptr->server_player_index,&local_40);
       return;
@@ -343,8 +341,7 @@ LAB_0052dac3:
       pcVar12 = "You have been disconnected from the game";
       pcVar11 = &g_CHAR_005ebc2f;
       iVar4 = 0;
-      support_trisock_cpp_createNetworkAddr_FUN_0059c740
-                (&local_34,(uint32_t *)g_UCHAR_ARRAY_02c8ae4c,0);
+      support_trisock_cpp_createNetworkAddr_FUN_0059c740(&local_34,(uint32_t *)g_AnyAddressIP,0);
       core_netgame_cpp_CNetGame_addChatHistory_FUN_0052f100
                 (this_ptr,sender_addr,iVar4,pcVar11,pcVar12);
       return;
@@ -358,7 +355,7 @@ LAB_0052dac3:
     }
     local_2c = (packet->player_announce).addr.ip_address;
     uVar2 = uVar2 ^ this_ptr->server_player_index;
-    if (0 < g_INT_01d715a8) {
+    if (0 < g_SimFrameCount) {
       iVar4 = 0;
       do {
         if (local_2c == *(uint *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar4 + -0xc)) {
@@ -370,15 +367,15 @@ LAB_0052dac3:
         }
         iVar4 = iVar4 + 0x6c;
         uVar2 = uVar2 + 1;
-      } while (iVar4 < g_INT_01d715a8 * 0x6c);
+      } while (iVar4 < g_SimFrameCount * 0x6c);
     }
-    if (0x1ff < g_INT_01d715a8) {
+    if (0x1ff < g_SimFrameCount) {
       g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
       g_INT_01d1d404 = 299;
       core_main_c_displayErrorAndQuit_FUN_005030e0("allocSimFrame - sim history list full");
     }
-    dest = g_SSimFrame_ARRAY_01d715ac + g_INT_01d715a8;
-    g_INT_01d715a8 = g_INT_01d715a8 + 1;
+    dest = g_SSimFrame_ARRAY_01d715ac + g_SimFrameCount;
+    g_SimFrameCount = g_SimFrameCount + 1;
     memset(dest,0,0x6c);
     dest->sequence_number = local_2c;
 LAB_0052dd98:

@@ -9,7 +9,7 @@
 int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_005101a0(CMouse *this_ptr,uint button_mask)
 
 {
-  if (((g_BIT_INTEGER32_01c2a384.dword & button_mask) != 0) && (this_ptr->effect_mode == 0)) {
+  if (((g_MouseButtonFlags.dword & button_mask) != 0) && (this_ptr->effect_mode == 0)) {
     this_ptr->effect_mode = 1;
     return 0;
   }

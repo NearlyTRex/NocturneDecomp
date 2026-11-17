@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1011,
-    "complexity_score": 391,
+    "complexity_score": 366,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 301,
+    "pseudocode_lines": 276,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "stack_ref",
       "unrolled_strcpy"
     ],
-    "total_lines": 1312
+    "total_lines": 1287
   },
   "cross_references": [
     {
@@ -286,7 +286,7 @@
     },
     {
       "addr": "006141f0",
-      "name": "g_CEventList_PTR_006141f0",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c38bc0"
     },
@@ -298,7 +298,7 @@
     },
     {
       "addr": "00617dd4",
-      "name": "g_CKeys_PTR_00617dd4",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d02f84"
     },
@@ -328,7 +328,7 @@
     },
     {
       "addr": "01c2a384",
-      "name": "g_BIT_INTEGER32_01c2a384",
+      "name": "g_MouseButtonFlags",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -346,7 +346,7 @@
     },
     {
       "addr": "01cb80d0",
-      "name": "g_INT_01cb80d0",
+      "name": "g_MovieRecordingArmed",
       "type": "int",
       "value": null
     },
@@ -364,7 +364,7 @@
     },
     {
       "addr": "01d1cdc8",
-      "name": "g_INT_01d1cdc8",
+      "name": "g_RenderMotionDebug",
       "type": "int",
       "value": null
     },
@@ -550,7 +550,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 40,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->enemies + iVar7);",
@@ -558,7 +558,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 269,
+      "line": 248,
       "match": "&stack0xfffffe64",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffe64,\"Gamma : %f\");",
@@ -566,7 +566,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 270,
+      "line": 249,
       "match": "&stack0xfffffe64",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,&stack0xfffffe64,1.0);",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 287,
+      "line": 262,
       "match": "in_stack_00000098",
       "severity": "moderate",
       "text": "in_stack_00000098 = -0.02;",
@@ -582,7 +582,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 290,
+      "line": 265,
       "match": "in_stack_00000098",
       "severity": "moderate",
       "text": "in_stack_00000098;",
@@ -590,7 +590,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 199,
+      "line": 180,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

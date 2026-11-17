@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 24,
+    "complexity_score": 25,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 10,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 28
+    "total_lines": 29
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     },
     {
       "addr": "02c8339c",
-      "name": "g_PTR_02c8339c",
+      "name": "g_APIDLL_restoreVideoMode",
       "type": "void*",
       "value": null
     }
@@ -115,10 +115,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
+      "line": 9,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)g_PTR_02c8339c)();",
+      "text": "iVar1 = (*(code *)g_APIDLL_restoreVideoMode)();",
       "type": "unresolved_funcptr"
     }
   ]

@@ -86,20 +86,20 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004d77d0(CGame *this_p
     do {
       if (g_INT_0061b4a0 == 0x10) {
         local_2c = (uint)local_62c[iVar2];
-        local_2c = (uint)local_62c[iVar2] / (uint)g_INT_01c4e9d8;
-        local_28 = (uint)local_62c[iVar2 + 2] / (uint)g_INT_01c4e9f0;
+        local_2c = (uint)local_62c[iVar2] / (uint)g_RedScaleFactor;
+        local_28 = (uint)local_62c[iVar2 + 2] / (uint)g_BlueScaleFactor;
         *(ushort *)((int)auStack_32c + iVar6) =
-             (ushort)((uint)local_62c[iVar2 + 2] / (uint)g_INT_01c4e9f0 <<
-                     (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) |
-             (ushort)((uint)local_62c[iVar2 + 1] / (uint)g_INT_01c4e9e4 <<
-                     (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
-             (ushort)(local_2c << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f));
+             (ushort)((uint)local_62c[iVar2 + 2] / (uint)g_BlueScaleFactor <<
+                     (g_BlueBitPosition.bytes[0] & 0x1f)) |
+             (ushort)((uint)local_62c[iVar2 + 1] / (uint)g_GreenScaleFactor <<
+                     (g_GreenBitPosition.bytes[0] & 0x1f)) |
+             (ushort)(local_2c << (g_RedBitPosition.bytes[0] & 0x1f));
       }
       else if (g_INT_0061b4a0 == 0x20) {
         *(uint *)((int)auStack_a2c + local_1c) =
-             (uint)local_62c[iVar2] << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
-             (uint)local_62c[iVar2 + 1] << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f) |
-             (uint)local_62c[iVar2 + 2] << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
+             (uint)local_62c[iVar2] << (g_RedBitPosition.bytes[0] & 0x1f) |
+             (uint)local_62c[iVar2 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+             (uint)local_62c[iVar2 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
         *(uint *)((int)auStack_a2c + local_1c) =
@@ -142,11 +142,11 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004d77d0(CGame *this_p
               pbVar4 = (byte *)((this_ptr->bitmap_width * iVar2) / g_INT_0061b498 + local_14 +
                                (int)local_18);
               if (g_INT_0061b4a0 == 0x10) {
-                *(ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_20) + iVar6) =
+                *(ushort *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar6) =
                      auStack_32c[*pbVar4];
               }
               else {
-                *(uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_20) + iVar7) =
+                *(uint *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar7) =
                      auStack_a2c[*pbVar4];
               }
               iVar7 = iVar7 + 4;
@@ -169,13 +169,13 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004d77d0(CGame *this_p
         if ((((iVar2 != 0) ||
              (iVar2 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)
                                 (g_CKeys_PTR_0061f2a4,this_ptr->key_fire), iVar2 != 0)) ||
-            (g_BIT_INTEGER32_01c43544.dword != 0)) ||
+            (g_MouseButtonFlags.dword != 0)) ||
            ((g_INT_01cd0b3c != 1 && (this_ptr->bitmap_display_time < 0.0)))) break;
         core_game_cpp_CGame_updateDT_FUN_004cbf20(g_CGamePtr);
         this_ptr->bitmap_display_time = this_ptr->bitmap_display_time - g_CGamePtr->delta_time_float
         ;
       }
-      while ((g_BIT_INTEGER32_01c43544.dword != 0 ||
+      while ((g_MouseButtonFlags.dword != 0 ||
              (iVar2 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)
                                 (g_CKeys_PTR_0061f2a4,this_ptr->key_fire), iVar2 != 0))) {
         if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {

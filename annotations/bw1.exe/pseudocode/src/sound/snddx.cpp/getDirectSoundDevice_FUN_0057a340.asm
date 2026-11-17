@@ -18,10 +18,10 @@
 ;   TerminatedCString s_Create_the_primary_buffe_005f56d3
 ;   TerminatedCString s_Create_the_primary_buffe_005f56ed
 ;   GUID g_IID_IDirectSound3DListener = IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560
-;   IDirectSound* g_IDirectSound_PTR_02c81d94
-;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d98
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02c81da0
-;   HWND g_HWND_02c9be68
+;   IDirectSound* g_DirectSound
+;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
+;   IDirectSound3DListener* g_DirectSound3DListener
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
@@ -80,7 +80,7 @@ section .text
     LEA ECX,[EAX + 0x4]                 ; 0057a3a2
     PUSH 0x0                            ; 0057a3a5
         ;   Label: LAB_0057a3a5
-    PUSH 0x2c81d94                      ; 0057a3a7 | g_IDirectSound_PTR_02c81d94
+    PUSH 0x2c81d94                      ; 0057a3a7 | g_DirectSound
     PUSH ECX                            ; 0057a3ac
     CALL crt_dsound.c_DirectSoundCreate ; 0057a3ad
         ;   XREF to: 005cf862 (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundCreate(LPGUID lp_guid, LPDIRECTSOUND * pp_ds, LPUNKNOWN p_unk_outer)
@@ -117,8 +117,8 @@ section .text
     RET                                 ; 0057a402
     PUSH 0x2                            ; 0057a403
         ;   Label: LAB_0057a403
-    MOV ECX,dword ptr [0x02c9be68]      ; 0057a405 | g_HWND_02c9be68
-    MOV EAX,[0x02c81d94]                ; 0057a40b | g_IDirectSound_PTR_02c81d94
+    MOV ECX,dword ptr [0x02c9be68]      ; 0057a405 | g_MainWindowHandle
+    MOV EAX,[0x02c81d94]                ; 0057a40b | g_DirectSound
     PUSH ECX                            ; 0057a410
     MOV EDX,dword ptr [EAX]             ; 0057a411
     PUSH EAX                            ; 0057a413
@@ -137,8 +137,8 @@ section .text
     MOV EDI,0x11                        ; 0057a437
     PUSH 0x0                            ; 0057a43c
     LEA EDX,[ESP + 0x75c]               ; 0057a43e
-    MOV EAX,[0x02c81d94]                ; 0057a445 | g_IDirectSound_PTR_02c81d94
-    PUSH 0x2c81d98                      ; 0057a44a | g_IDirectSoundBuffer_PTR_02c81d98
+    MOV EAX,[0x02c81d94]                ; 0057a445 | g_DirectSound
+    PUSH 0x2c81d98                      ; 0057a44a | g_DirectSoundPrimaryBuffer
     MOV dword ptr [ESP + 0x760],ESI     ; 0057a44f
     MOV dword ptr [ESP + 0x764],EDI     ; 0057a456
     PUSH EDX                            ; 0057a45d
@@ -161,8 +161,8 @@ section .text
     CMP dword ptr [EAX*0x4 + 0x2c8115c],0x2 ; 0057a480
     JL 0x0057a49e                       ; 0057a488
         ;   XREF to: 0057a49e (CONDITIONAL_JUMP)  ; LAB_0057a49e
-    PUSH 0x2c81da0                      ; 0057a48a | g_IDirectSound3DListener_PTR_02c81da0
-    MOV EAX,[0x02c81d98]                ; 0057a48f | g_IDirectSoundBuffer_PTR_02c81d98
+    PUSH 0x2c81da0                      ; 0057a48a | g_DirectSound3DListener
+    MOV EAX,[0x02c81d98]                ; 0057a48f | g_DirectSoundPrimaryBuffer
     PUSH 0x627880                       ; 0057a494 | g_IID_IDirectSound3DListener
     MOV EDX,dword ptr [EAX]             ; 0057a499
     PUSH EAX                            ; 0057a49b
@@ -210,12 +210,12 @@ section .text
     ADD ESP,0x4                         ; 0057a506
     PUSH 0x0                            ; 0057a509
     MOV AH,byte ptr [ESP + 0x760]       ; 0057a50b
-    PUSH 0x2c81d98                      ; 0057a512 | g_IDirectSoundBuffer_PTR_02c81d98
+    PUSH 0x2c81d98                      ; 0057a512 | g_DirectSoundPrimaryBuffer
     LEA EDX,[ESP + 0x760]               ; 0057a517
     AND AH,0xef                         ; 0057a51e
     PUSH EDX                            ; 0057a521
     MOV byte ptr [ESP + 0x768],AH       ; 0057a522
-    MOV EAX,[0x02c81d94]                ; 0057a529 | g_IDirectSound_PTR_02c81d94
+    MOV EAX,[0x02c81d94]                ; 0057a529 | g_DirectSound
     PUSH EAX                            ; 0057a52e
     MOV ECX,dword ptr [EAX]             ; 0057a52f
     CALL dword ptr [ECX + 0xc]          ; 0057a531

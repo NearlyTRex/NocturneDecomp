@@ -150,9 +150,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
   }
   euler_angles_00 = &local_20->orient;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
-            (&CStack_164,&g_CVector3f_0265370c,&euler_angles_00->vec);
-  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
-            (&CStack_194,&g_CVector3f_0265370c,local_1c);
+            (&CStack_164,&g_ZeroVector,&euler_angles_00->vec);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(&CStack_194,&g_ZeroVector,local_1c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&CStack_164,&CStack_194,&CStack_134);
   pCVar18 = &CStack_134;
   pCVar20 = &CStack_1f4;
@@ -219,7 +218,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
       }
       euler_angles_01 = pCVar16 + 1;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-                (&CStack_1c4,&g_CVector3f_0265370c,euler_angles_01);
+                (&CStack_1c4,&g_ZeroVector,euler_angles_01);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_1c4,&CStack_194,(CMatrix3x4f *)&stack0xfffffddc);
       core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&CStack_194,euler_out);

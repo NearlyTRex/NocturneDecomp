@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_clearZBox_FUN_00582960(int left,int right,int top
   if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02c833f8)(left,right,top,bottom);
+  iVar1 = (*(code *)g_APIDLL_clearZBox)(left,right,top,bottom);
   return iVar1;
 }

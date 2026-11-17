@@ -18,5 +18,5 @@ CDemonGlobe g_CDemonGlobe_0269cbb0 = {};
 int g_INT_0269c7ac = {};
 
 // int[4000]
-int g_INT_ARRAY_0269cd1c[4000] = {};
+int g_VertexRemapTable[4000] = {};
 

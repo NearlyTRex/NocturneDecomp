@@ -469,7 +469,7 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
       *(uint *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
            *(uint *)((int)&CStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
       core_fire_cpp_CFireEffect_createTrailSegment_FUN_004b70f0
-                (g_CFireEffect_PTR_0061c010,&CStack_4c,size,alpha,lifetime,texture_ptr);
+                (g_CFireEffectPtr,&CStack_4c,size,alpha,lifetime,texture_ptr);
       out_points = out_points + 1;
       iStack_c = iStack_c + 1;
     } while (iStack_c < (int)EStack_10);

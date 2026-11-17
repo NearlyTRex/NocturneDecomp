@@ -42,13 +42,13 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CScript* g_CScriptPtr = 01e56da0
-;   CBitFont* g_CBitFont_PTR_014b98f8
-;   CBitFont* g_CBitFont_PTR_014b98fc
-;   CBitFont* g_CBitFont_PTR_014b9900
-;   CBitFont* g_CBitFont_PTR_014b9904
-;   char[256] g_CHAR_ARRAY_01c789c0
-;   int g_INT_01c78ac0
-;   float g_FLOAT_01c78ac4
+;   CBitFont* g_MediumFont
+;   CBitFont* g_TinyFont
+;   CBitFont* g_ThemeFont
+;   CBitFont* g_SmallEditorFont
+;   char[256] g_ChapterDisplayName
+;   int g_ChapterDisplayYear
+;   float g_OverlayDisplayTimer
 ;   CScript g_CScriptInstance
 ;   ... and 1 more
 ;
@@ -89,7 +89,7 @@ section .text
     LEA EAX,[EAX]                       ; 0049ab91
     LEA EDX,[EDX]                       ; 0049ab97
     LEA EAX,[EAX]                       ; 0049ab9d
-    FLD float ptr [0x01c78ac4]          ; 0049aba0 | g_FLOAT_01c78ac4
+    FLD float ptr [0x01c78ac4]          ; 0049aba0 | g_OverlayDisplayTimer
         ;   Label: LAB_0049aba0
     FLDZ                                ; 0049aba6
     FCOMPP                              ; 0049aba8
@@ -98,15 +98,15 @@ section .text
     JNC 0x0049ac66                      ; 0049abad
         ;   XREF to: 0049ac66 (CONDITIONAL_JUMP)  ; LAB_0049ac66
     MOV EDX,dword ptr [0x005b7620]      ; 0049abb3 | g_WindowHeight
-    MOV EBX,dword ptr [0x014b98f8]      ; 0049abb9 | g_CBitFont_PTR_014b98f8
+    MOV EBX,dword ptr [0x014b98f8]      ; 0049abb9 | g_MediumFont
     CMP EDX,0x1e0                       ; 0049abbf
     JGE 0x0049abdb                      ; 0049abc5
         ;   XREF to: 0049abdb (CONDITIONAL_JUMP)  ; LAB_0049abdb
-    MOV EBX,dword ptr [0x014b98fc]      ; 0049abc7 | g_CBitFont_PTR_014b98fc
+    MOV EBX,dword ptr [0x014b98fc]      ; 0049abc7 | g_TinyFont
     CMP EDX,0x180                       ; 0049abcd
     JGE 0x0049abdb                      ; 0049abd3
         ;   XREF to: 0049abdb (CONDITIONAL_JUMP)  ; LAB_0049abdb
-    MOV EBX,dword ptr [0x014b9904]      ; 0049abd5 | g_CBitFont_PTR_014b9904
+    MOV EBX,dword ptr [0x014b9904]      ; 0049abd5 | g_SmallEditorFont
     PUSH 0x58                           ; 0049abdb
         ;   Label: LAB_0049abdb
     PUSH EBX                            ; 0049abdd
@@ -139,8 +139,8 @@ section .text
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0049ac25
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0049ac2a
-    PUSH 0x1c789c0                      ; 0049ac2d | g_CHAR_ARRAY_01c789c0
-    MOV ECX,dword ptr [0x01c78ac0]      ; 0049ac32 | g_INT_01c78ac0
+    PUSH 0x1c789c0                      ; 0049ac2d | g_ChapterDisplayName
+    MOV ECX,dword ptr [0x01c78ac0]      ; 0049ac32 | g_ChapterDisplayYear
     PUSH ECX                            ; 0049ac38
     PUSH 0x5823da                       ; 0049ac39 | = "%d - %s"
     LEA EAX,[ESP + 0x18]                ; 0049ac3e
@@ -181,7 +181,7 @@ section .text
     SAR EDX,0x1f                        ; 0049aca7
     IDIV ESI                            ; 0049acaa
     MOV dword ptr [ESP + 0x12c],EAX     ; 0049acac
-    MOV EAX,[0x014b9904]                ; 0049acb3 | g_CBitFont_PTR_014b9904
+    MOV EAX,[0x014b9904]                ; 0049acb3 | g_SmallEditorFont
     MOV EDI,dword ptr [0x005b761c]      ; 0049acb8 | g_WindowWidth
     MOV dword ptr [ESP + 0x130],EAX     ; 0049acbe
     CMP EDI,0x280                       ; 0049acc5
@@ -191,7 +191,7 @@ section .text
         ;   Label: LAB_0049acd1
     JLE 0x0049ace9                      ; 0049acdb
         ;   XREF to: 0049ace9 (CONDITIONAL_JUMP)  ; LAB_0049ace9
-    MOV EAX,[0x014b98f8]                ; 0049acdd | g_CBitFont_PTR_014b98f8
+    MOV EAX,[0x014b98f8]                ; 0049acdd | g_MediumFont
     MOV dword ptr [ESP + 0x130],EAX     ; 0049ace2
     PUSH 0x58                           ; 0049ace9
         ;   Label: LAB_0049ace9
@@ -366,13 +366,13 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
         ;   Label: LAB_0049af41
     ADD ESP,0x4                         ; 0049af46
-    MOV EAX,[0x014b9900]                ; 0049af49 | g_CBitFont_PTR_014b9900
+    MOV EAX,[0x014b9900]                ; 0049af49 | g_ThemeFont
     MOV dword ptr [ESP + 0x138],EAX     ; 0049af4e
     MOV EAX,[0x01fb8644]                ; 0049af55 | g_CDemonCameraInstance.screen_width
     CMP EAX,0x1e0                       ; 0049af5a
     JGE 0x0049af6d                      ; 0049af5f
         ;   XREF to: 0049af6d (CONDITIONAL_JUMP)  ; LAB_0049af6d
-    MOV EAX,[0x014b9904]                ; 0049af61 | g_CBitFont_PTR_014b9904
+    MOV EAX,[0x014b9904]                ; 0049af61 | g_SmallEditorFont
     MOV dword ptr [ESP + 0x138],EAX     ; 0049af66
     MOV EDX,dword ptr [0x01fb8644]      ; 0049af6d | g_CDemonCameraInstance.screen_width
         ;   Label: LAB_0049af6d
@@ -414,7 +414,7 @@ section .text
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     SUB EBX,EAX                         ; 0049afe9
     MOV EAX,EBX                         ; 0049afeb
-    MOV EDX,dword ptr [0x014b9904]      ; 0049afed | g_CBitFont_PTR_014b9904
+    MOV EDX,dword ptr [0x014b9904]      ; 0049afed | g_SmallEditorFont
     SUB EAX,ESI                         ; 0049aff3
     ADD ESP,0x4                         ; 0049aff5
     MOV ESI,EAX                         ; 0049aff8
@@ -469,7 +469,7 @@ section .text
         ;   Label: LAB_0049b086
     JMP 0x0049af41                      ; 0049b08b
         ;   XREF to: 0049af41 (UNCONDITIONAL_JUMP)  ; LAB_0049af41
-    MOV EAX,[0x014b98fc]                ; 0049b090 | g_CBitFont_PTR_014b98fc
+    MOV EAX,[0x014b98fc]                ; 0049b090 | g_TinyFont
         ;   Label: LAB_0049b090
     MOV dword ptr [ESP + 0x130],EAX     ; 0049b095
     JMP 0x0049acd1                      ; 0049b09c

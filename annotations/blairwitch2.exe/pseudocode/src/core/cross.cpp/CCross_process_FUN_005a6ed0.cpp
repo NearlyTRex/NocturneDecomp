@@ -144,7 +144,7 @@ LAB_005a6f19:
       if (iVar2 != 0) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-                  (&CStack_258,&g_CVector3f_0265370c,&(this_ptr->base).base.base.orient.vec);
+                  (&CStack_258,&g_ZeroVector,&(this_ptr->base).base.base.orient.vec);
         CStack_1b4.x = 0.0;
         CStack_1b4.y = 1.3;
         CStack_1b4.z = 0.0;
@@ -177,9 +177,9 @@ LAB_005a6f19:
              *(uint *)((int)&CStack_208 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         CStack_10c.x = 0.0;
         CStack_10c.z = 0.0;
-        CStack_16c.x = g_CVector3f_0265370c.x;
+        CStack_16c.x = g_ZeroVector.x;
         *(uint *)((int)&CStack_16c + (uint)bVar8 * -8 + 4) =
-             *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar8 * -8 + 4);
+             *(uint *)((int)&g_ZeroVector + (uint)bVar8 * -8 + 4);
         *(uint *)((int)&CStack_16c + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8) =
              *(uint *)((uint)bVar8 * -8 + 0x2653714 + (uint)bVar8 * -8);
         CStack_10c.y = 1.0;
@@ -416,9 +416,9 @@ LAB_005a6f19:
                afStack_fc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           fVar22 = -0.5;
           fVar19 = 0.0;
-          CStack_1c0.x = g_CVector3f_0265370c.x;
+          CStack_1c0.x = g_ZeroVector.x;
           *(uint *)((int)&CStack_1c0 + (uint)bVar8 * -8 + 4) =
-               *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar8 * -8 + 4);
+               *(uint *)((int)&g_ZeroVector + (uint)bVar8 * -8 + 4);
           *(uint *)((int)&CStack_1c0 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
                *(uint *)((uint)bVar8 * -8 + 0x2653714 + (uint)bVar8 * -8);
           CStack_1c0.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar19,fVar22);

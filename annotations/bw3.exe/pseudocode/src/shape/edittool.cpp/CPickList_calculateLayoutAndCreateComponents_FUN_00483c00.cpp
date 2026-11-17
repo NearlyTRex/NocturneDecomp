@@ -38,7 +38,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     g_INT_01d71de4 = 0xa7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
-  g_INT_01c5bae0 = g_CBitFont_PTR_01c5b0e0->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
   this_ptr->row_height = g_INT_01c5bae4 + 1;
@@ -229,7 +229,7 @@ LAB_0048418c:
   this_ptr->column_width = iVar10 / this_ptr->column_count;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   this_ptr->search_text_buffer[0] = '\0';
-  g_INT_01c5bb74 = -1;
+  g_LastClickItemIndex = -1;
   this_ptr->confirmed_flag = 0;
   return;
 }

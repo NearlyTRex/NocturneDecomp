@@ -38,7 +38,7 @@
 ;   float g_FLOAT_005e2c60 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   int g_INT_01d8e40c
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
@@ -61,7 +61,7 @@ section .text
     MOV EBP,ESP                         ; 004fcdc4
     SUB ESP,0xb0                        ; 004fcdc6
     SUB EBP,0x7a                        ; 004fcdcc
-    CMP dword ptr [0x01d8e40c],0x0      ; 004fcdcf | g_INT_01d8e40c
+    CMP dword ptr [0x01d8e40c],0x0      ; 004fcdcf | g_RenderMotionDebug
     JNZ 0x004fcde0                      ; 004fcdd6
         ;   XREF to: 004fcde0 (CONDITIONAL_JUMP)  ; LAB_004fcde0
     LEA ESP,[EBP + 0x7a]                ; 004fcdd8

@@ -12,13 +12,13 @@
 // =============================================================================
 
 // _BIT_INTEGER32
-extern _BIT_INTEGER32 g_BIT_INTEGER32_01bd1d94;
+extern _BIT_INTEGER32 g_MouseButtonFlags;
 
 // int
-extern int g_INT_01bd1d80;
-extern int g_INT_01bd1d84;
-extern int g_INT_01bd1d8c;
-extern int g_INT_01bd1d90;
+extern int g_GlobalDeltaTimeInt;
+extern int g_AnimationTimerValue;
+extern int g_MouseX;
+extern int g_MouseY;
 
 // uchar[18][256]
 extern uchar g_FogTable[18][256];

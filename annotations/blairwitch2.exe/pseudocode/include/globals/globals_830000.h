@@ -11,7 +11,7 @@
 // =============================================================================
 
 // CDemonCamera*
-extern CDemonCamera* g_CDemonCamera_PTR_0083c7d0;
+extern CDemonCamera* g_SkipClearBuffersSceneCamera;
 
 // undefined4
 extern undefined4 DAT_0083d6e0;

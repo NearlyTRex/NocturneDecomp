@@ -132,14 +132,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   this_ptr->actor_lookup_count = 0;
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   for (iVar2 = 0; iVar2 < local_24 + local_20; iVar2 = iVar2 + 1) {
-    pcVar8 = g_CHAR_ARRAY_005bb000;
+    pcVar8 = g_DefaultMissionActorClass;
     pcVar9 = acStack_8c;
     for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pcVar9 = *(uint *)pcVar8;
       pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
       pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
     }
-    pcVar8 = g_CHAR_ARRAY_005bb068;
+    pcVar8 = g_DefaultMissionActorName;
     pcVar9 = acStack_f0;
     for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pcVar9 = *(uint *)pcVar8;
@@ -200,8 +200,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
           g_CurrentLineNumber = 334;
           core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::load - actor list count mismatch #2!");
         }
-        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar7,g_CHeroActorType_01cae0ec.name_hash);
+        pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(pCVar7,g_CHeroClassInfo.name_hash);
         if (pCVar4 != (CDemonActor *)0x0) {
           core_inv_cpp_CInventory_loadItems_FUN_004c14d0
                     ((CInventory *)&pCVar4[0x17e].orient_matrix.m[0].y);

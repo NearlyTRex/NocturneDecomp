@@ -14,10 +14,10 @@
 ; Referenced Globals:
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   int g_INT_01da6474
+;   int g_LastPingTime
 ;   uint g_UINT_01da6478
-;   int g_INT_01dc2690
-;   int g_INT_01dc5c7c
+;   int g_ChatOutCount
+;   int g_ChatOutSequence
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -38,10 +38,10 @@ section .text
     MOV EBP,dword ptr [0x01da6478]      ; 005064d4 | g_UINT_01da6478
     MOV ESI,dword ptr [ESP + 0x14]      ; 005064da
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005064de
-    CMP dword ptr [0x01dc2690],0x32     ; 005064e2 | g_INT_01dc2690
+    CMP dword ptr [0x01dc2690],0x32     ; 005064e2 | g_ChatOutCount
     JGE 0x00506606                      ; 005064e9
         ;   XREF to: 00506606 (CONDITIONAL_JUMP)  ; LAB_00506606
-    MOV EDX,dword ptr [0x01dc2690]      ; 005064ef | g_INT_01dc2690
+    MOV EDX,dword ptr [0x01dc2690]      ; 005064ef | g_ChatOutCount
         ;   Label: LAB_005064ef
     MOV EAX,EDX                         ; 005064f5
     SHL EAX,0x4                         ; 005064f7
@@ -52,17 +52,17 @@ section .text
     SHL EAX,0x2                         ; 00506506
     ADD EDI,EAX                         ; 00506509
     LEA EAX,[EDX + 0x1]                 ; 0050650b
-    MOV [0x01dc2690],EAX                ; 0050650e | g_INT_01dc2690
+    MOV [0x01dc2690],EAX                ; 0050650e | g_ChatOutCount
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00506513
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00506518
     MOV ECX,0x12                        ; 0050651a
     SAR EDX,0x1f                        ; 0050651f
     IDIV ECX                            ; 00506522
-    MOV ECX,dword ptr [0x01da6474]      ; 00506524 | g_INT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 00506524 | g_LastPingTime
     MOV EDX,EAX                         ; 0050652a
     SUB EAX,ECX                         ; 0050652c
-    MOV dword ptr [0x01da6474],EDX      ; 0050652e | g_INT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 0050652e | g_LastPingTime
     TEST EAX,EAX                        ; 00506534
     JL 0x0050662e                       ; 00506536
         ;   XREF to: 0050662e (CONDITIONAL_JUMP)  ; LAB_0050662e
@@ -73,11 +73,11 @@ section .text
     MOV EAX,0x20000                     ; 00506549
     ADD EBP,EAX                         ; 0050654e
         ;   Label: LAB_0050654e
-    MOV EAX,[0x01dc5c7c]                ; 00506550 | g_INT_01dc5c7c
+    MOV EAX,[0x01dc5c7c]                ; 00506550 | g_ChatOutSequence
     PUSH 0x2                            ; 00506555
     INC EAX                             ; 00506557
     PUSH 0x1                            ; 00506558
-    MOV [0x01dc5c7c],EAX                ; 0050655a | g_INT_01dc5c7c
+    MOV [0x01dc5c7c],EAX                ; 0050655a | g_ChatOutSequence
     MOV dword ptr [EDI + 0x4],EAX       ; 0050655f
     LEA EAX,[EDI + 0x8]                 ; 00506562
     PUSH EAX                            ; 00506565

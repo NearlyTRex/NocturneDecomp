@@ -26,11 +26,11 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int reques
   } while (iVar2 != 0x5a00);
 LAB_00521cc3:
   do {
-    if (iVar4 + requested_bytes <= g_INT_005bea94) {
+    if (iVar4 + requested_bytes <= g_MaximumSoundMemoryBudget) {
       return 1;
     }
     iVar3 = 0;
-    iVar2 = g_INT_02dc1ed8;
+    iVar2 = g_LastSampleAccessIndex;
     do {
       iVar2 = iVar2 + 1;
       if (0x3f < iVar2) {

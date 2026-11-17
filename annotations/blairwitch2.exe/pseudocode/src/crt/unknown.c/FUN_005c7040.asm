@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c6ff0 at 005c6ff6
 ;
 ; Referenced Globals:
-;   int g_INT_026807f0
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c7090
@@ -19,7 +19,7 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 005c7040
         ;   Label: crt_unknown.c_FUN_005c7040
-    CMP dword ptr [0x026807f0],0x0      ; 005c7044 | g_INT_026807f0
+    CMP dword ptr [0x026807f0],0x0      ; 005c7044 | g_MultibyteLocaleActive
     JZ 0x005c7080                       ; 005c704b
         ;   XREF to: 005c7080 (CONDITIONAL_JUMP)  ; LAB_005c7080
     MOV EAX,EDX                         ; 005c704d

@@ -37,7 +37,7 @@ void __cdecl engine_mini3d_cpp_addDynamicLight_FUN_004f5400(CVector3f *position,
     *(uint *)(iVar3 + 0x1d0c3e4) = arg5;
     *(uint *)(iVar3 + 0x1d0c3e8) = arg6;
     *(uint *)(iVar3 + 0x1d0c3ec) = arg7;
-    puVar2 = g_PTR_0264bcd4;
+    puVar2 = g_APIDLL_setTextureClamp;
     *(float *)(iVar3 + 0x1d0c3b0) = *(float *)(iVar3 + 0x1d0c3b0) * cone_scale;
     *(float *)(iVar3 + 0x1d0c3bc) = *(float *)(iVar3 + 0x1d0c3bc) * cone_scale;
     *(float *)(iVar3 + 0x1d0c3c8) = *(float *)(iVar3 + 0x1d0c3c8) * cone_scale;
@@ -46,7 +46,7 @@ void __cdecl engine_mini3d_cpp_addDynamicLight_FUN_004f5400(CVector3f *position,
     *(float *)(iVar3 + 0x1d0c3cc) = *(float *)(iVar3 + 0x1d0c3cc) * cone_scale;
     *(float *)(iVar3 + 0x1d0c3dc) = 1.0 / range;
     if ((puVar2 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-      engine_mini3d_cpp_setFrameTranslation_FUN_004f2950(&g_CVector3f_0265370c);
+      engine_mini3d_cpp_setFrameTranslation_FUN_004f2950(&g_ZeroVector);
       engine_mini3d_cpp_updateTransform_FUN_004f3740();
       uStack_24 = *(uint *)(iVar3 + 0x1d0c3b8);
       uStack_20 = *(uint *)(iVar3 + 0x1d0c3c4);
@@ -55,7 +55,7 @@ void __cdecl engine_mini3d_cpp_addDynamicLight_FUN_004f5400(CVector3f *position,
       fStack_14 = position->y;
       fStack_10 = position->z;
       fVar4 = (float10)fpatan((float10)1 / (float10)(float)arg5,(float10)1);
-      (*(code *)g_PTR_0264bcd4)
+      (*(code *)g_APIDLL_setTextureClamp)
                 (&fStack_18,&uStack_24,cone_scale,(float)(fVar4 * (float10)2),
                  *(uint *)(iVar3 + 0x1d0c3e4),*(uint *)(iVar3 + 0x1d0c3e8),
                  *(uint *)(iVar3 + 0x1d0c3ec));

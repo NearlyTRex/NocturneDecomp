@@ -11,13 +11,13 @@ void __cdecl ExitProcess(int exit_code)
 {
   UINT unaff_retaddr;
   
-  if (g_INT_02de4e30 == 0) {
+  if (g_EmergencyExitFlag == 0) {
     RemoveExceptionHandler();
     ProcessExitHandlers('\0','\x0f');
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af8)();
   }
-  else if (g_PTR_005c1b04 != (byte *)0x0) {
-    (*(code *)g_PTR_005c1b04)(0,0xff);
+  else if (g_SpecialExitHandler != (byte *)0x0) {
+    (*(code *)g_SpecialExitHandler)(0,0xff);
   }
                     /* WARNING: Subroutine does not return */
   ExitProcess(unaff_retaddr);

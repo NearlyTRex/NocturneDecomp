@@ -142,7 +142,7 @@ LAB_004605ea:
       fVar8 = (float)this_ptr->walk_target;
       if (fVar8 == 0.0) {
         iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                           (g_CEventList_PTR_0061b4d0,"DjienInZone");
+                           (g_CEventListPtr,"DjienInZone");
         if (iVar10 == 0) {
           engine_console_cpp_CConsole_printf_FUN_00445430
                     (g_CConsolePtr,"DJIEN: got outside of box - hesitating\n");
@@ -206,7 +206,7 @@ LAB_004605ea:
           afStack_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0x10] =
                afStack_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10];
           fStack_1c = fStack_28 * fStack_28 + fStack_30 * fStack_30 + fStack_2c * fStack_2c;
-          fStack_20 = (float)(((int)fStack_1c >> 1) + g_INT_01cc804c);
+          fStack_20 = (float)(((int)fStack_1c >> 1) + g_FastSqrtMagic);
           if (fStack_20 < (this_ptr->base).guard_distance) {
             engine_console_cpp_CConsole_printf_FUN_00445430
                       (g_CConsolePtr,"DJIEN: protect found victim - going to run\n");
@@ -250,9 +250,9 @@ LAB_0046031a:
 LAB_00460332:
   if (this_ptr->num_sacks_to_blow <= this_ptr->num_sacks_blown) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (g_CEventList_PTR_0061b4d0,"DjienSacksGone");
+              (g_CEventListPtr,"DjienSacksGone");
     iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                       (g_CEventList_PTR_0061b4d0,"DjienHeartDestroyed");
+                       (g_CEventListPtr,"DjienHeartDestroyed");
     if (iVar10 != 0) {
       pCVar1 = &(this_ptr->base).base.model;
       (this_ptr->base).base.hit_points = 0.0;

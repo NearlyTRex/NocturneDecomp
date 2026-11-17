@@ -94,14 +94,14 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
     }
   }
   else {
-    g_INT_02c9d2e8 = vertex_count;
+    g_ClipVertexCountStage1 = vertex_count;
     iVar13 = 0;
-    g_INT_02c9d2ec = 0;
-    g_INT_02c9d2f0 = 0;
-    g_INT_02c9d2f4 = 0;
+    g_ClipVertexCountStage2 = 0;
+    g_ClipVertexCountStage3 = 0;
+    g_ClipVertexCountStage4 = 0;
     g_INT_007c7554 = 0;
     if (0 < vertex_count) {
-      pSVar16 = g_SRenderVertex_ARRAY_02c9d8f8;
+      pSVar16 = g_ClipVertexBufferStage1;
       local_28 = vertex_indices;
       do {
         pSVar19 = g_SRenderVertex_ARRAY_00629014 + *local_28;
@@ -129,23 +129,23 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
       } while (iVar13 < vertex_count);
     }
     local_20 = 0;
-    if (0 < g_INT_02c9d2e8) {
-      pSVar16 = g_SRenderVertex_ARRAY_02c9d8f8;
+    if (0 < g_ClipVertexCountStage1) {
+      pSVar16 = g_ClipVertexBufferStage1;
       do {
         uVar14 = local_20 + 1;
-        if (uVar14 == g_INT_02c9d2e8) {
-          uVar14 = uVar14 ^ g_INT_02c9d2e8;
+        if (uVar14 == g_ClipVertexCountStage1) {
+          uVar14 = uVar14 ^ g_ClipVertexCountStage1;
         }
-        pSVar20 = g_SRenderVertex_ARRAY_02c9d8f8 + uVar14;
+        pSVar20 = g_ClipVertexBufferStage1 + uVar14;
         bVar12 = (pSVar16->projected_vertex).transformed_z <=
                  (pSVar16->projected_vertex).transformed_x;
-        if (g_SRenderVertex_ARRAY_02c9d8f8[uVar14].projected_vertex.transformed_z <=
+        if (g_ClipVertexBufferStage1[uVar14].projected_vertex.transformed_z <=
             (pSVar20->projected_vertex).transformed_x) {
           bVar12 = bVar12 | 2;
         }
         switch(bVar12) {
         case 0:
-          pSVar19 = g_SRenderVertex_ARRAY_02c9d2f8 + g_INT_02c9d2ec;
+          pSVar19 = g_ClipVertexBufferStage2 + g_ClipVertexCountStage2;
           iVar13 = 0x30;
           pSVar20 = pSVar16;
           while (7 < iVar13) {
@@ -165,15 +165,15 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                    *(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);
             }
           }
-          g_INT_02c9d2ec = g_INT_02c9d2ec + 1;
+          g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
           break;
         case 1:
           core_xform_cpp_clipInterpolateRightPlane_FUN_005b9630
-                    (pSVar20,pSVar16,g_SRenderVertex_ARRAY_02c9d2f8 + g_INT_02c9d2ec);
-          g_INT_02c9d2ec = g_INT_02c9d2ec + 1;
+                    (pSVar20,pSVar16,g_ClipVertexBufferStage2 + g_ClipVertexCountStage2);
+          g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
           break;
         case 2:
-          pSVar21 = g_SRenderVertex_ARRAY_02c9d2f8 + g_INT_02c9d2ec;
+          pSVar21 = g_ClipVertexBufferStage2 + g_ClipVertexCountStage2;
           iVar13 = 0x30;
           pSVar19 = pSVar16;
           while (7 < iVar13) {
@@ -193,34 +193,34 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                    *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
             }
           }
-          g_INT_02c9d2ec = g_INT_02c9d2ec + 1;
+          g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
           core_xform_cpp_clipInterpolateRightPlane_FUN_005b9630
-                    (pSVar16,pSVar20,g_SRenderVertex_ARRAY_02c9d2f8 + g_INT_02c9d2ec);
-          g_INT_02c9d2ec = g_INT_02c9d2ec + 1;
+                    (pSVar16,pSVar20,g_ClipVertexBufferStage2 + g_ClipVertexCountStage2);
+          g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
         }
         local_20 = local_20 + 1;
         pSVar16 = pSVar16 + 1;
-      } while (local_20 < g_INT_02c9d2e8);
+      } while (local_20 < g_ClipVertexCountStage1);
     }
-    if (2 < g_INT_02c9d2ec) {
+    if (2 < g_ClipVertexCountStage2) {
       local_18 = 0;
-      if (0 < g_INT_02c9d2ec) {
-        pSVar16 = g_SRenderVertex_ARRAY_02c9d2f8;
+      if (0 < g_ClipVertexCountStage2) {
+        pSVar16 = g_ClipVertexBufferStage2;
         do {
           uVar14 = local_18 + 1;
-          if (uVar14 == g_INT_02c9d2ec) {
-            uVar14 = uVar14 ^ g_INT_02c9d2ec;
+          if (uVar14 == g_ClipVertexCountStage2) {
+            uVar14 = uVar14 ^ g_ClipVertexCountStage2;
           }
-          pSVar20 = g_SRenderVertex_ARRAY_02c9d2f8 + uVar14;
+          pSVar20 = g_ClipVertexBufferStage2 + uVar14;
           bVar12 = (pSVar16->projected_vertex).transformed_x <=
                    -(pSVar16->projected_vertex).transformed_z;
           if ((pSVar20->projected_vertex).transformed_x <=
-              -g_SRenderVertex_ARRAY_02c9d2f8[uVar14].projected_vertex.transformed_z) {
+              -g_ClipVertexBufferStage2[uVar14].projected_vertex.transformed_z) {
             bVar12 = bVar12 | 2;
           }
           switch(bVar12) {
           case 0:
-            pSVar19 = g_SRenderVertex_ARRAY_02c9def8 + g_INT_02c9d2f0;
+            pSVar19 = g_ClipVertexBufferStage3 + g_ClipVertexCountStage3;
             iVar13 = 0x30;
             pSVar20 = pSVar16;
             while (7 < iVar13) {
@@ -240,15 +240,15 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                      *(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);
               }
             }
-            g_INT_02c9d2f0 = g_INT_02c9d2f0 + 1;
+            g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
             break;
           case 1:
             core_xform_cpp_clipInterpolateLeftPlane_FUN_005b96f0
-                      (pSVar20,pSVar16,g_SRenderVertex_ARRAY_02c9def8 + g_INT_02c9d2f0);
-            g_INT_02c9d2f0 = g_INT_02c9d2f0 + 1;
+                      (pSVar20,pSVar16,g_ClipVertexBufferStage3 + g_ClipVertexCountStage3);
+            g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
             break;
           case 2:
-            pSVar21 = g_SRenderVertex_ARRAY_02c9def8 + g_INT_02c9d2f0;
+            pSVar21 = g_ClipVertexBufferStage3 + g_ClipVertexCountStage3;
             iVar13 = 0x30;
             pSVar19 = pSVar16;
             while (7 < iVar13) {
@@ -268,33 +268,33 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                      *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
               }
             }
-            g_INT_02c9d2f0 = g_INT_02c9d2f0 + 1;
+            g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
             core_xform_cpp_clipInterpolateLeftPlane_FUN_005b96f0
-                      (pSVar16,pSVar20,g_SRenderVertex_ARRAY_02c9def8 + g_INT_02c9d2f0);
-            g_INT_02c9d2f0 = g_INT_02c9d2f0 + 1;
+                      (pSVar16,pSVar20,g_ClipVertexBufferStage3 + g_ClipVertexCountStage3);
+            g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
           }
           local_18 = local_18 + 1;
           pSVar16 = pSVar16 + 1;
-        } while (local_18 < g_INT_02c9d2ec);
+        } while (local_18 < g_ClipVertexCountStage2);
       }
-      if (2 < g_INT_02c9d2f0) {
+      if (2 < g_ClipVertexCountStage3) {
         local_14 = 0;
-        if (0 < g_INT_02c9d2f0) {
-          pSVar16 = g_SRenderVertex_ARRAY_02c9def8;
+        if (0 < g_ClipVertexCountStage3) {
+          pSVar16 = g_ClipVertexBufferStage3;
           do {
             uVar14 = local_14 + 1;
-            if (uVar14 == g_INT_02c9d2f0) {
-              uVar14 = uVar14 ^ g_INT_02c9d2f0;
+            if (uVar14 == g_ClipVertexCountStage3) {
+              uVar14 = uVar14 ^ g_ClipVertexCountStage3;
             }
             bVar12 = (pSVar16->projected_vertex).transformed_z <=
                      (pSVar16->projected_vertex).transformed_y;
-            if (g_SRenderVertex_ARRAY_02c9def8[uVar14].projected_vertex.transformed_z <=
-                g_SRenderVertex_ARRAY_02c9def8[uVar14].projected_vertex.transformed_y) {
+            if (g_ClipVertexBufferStage3[uVar14].projected_vertex.transformed_z <=
+                g_ClipVertexBufferStage3[uVar14].projected_vertex.transformed_y) {
               bVar12 = bVar12 | 2;
             }
             switch(bVar12) {
             case 0:
-              pSVar19 = g_SRenderVertex_ARRAY_02c9e4f8 + g_INT_02c9d2f4;
+              pSVar19 = g_ClipVertexBufferStage4 + g_ClipVertexCountStage4;
               iVar13 = 0x30;
               pSVar20 = pSVar16;
               while (7 < iVar13) {
@@ -315,16 +315,16 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                        *(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);
                 }
               }
-              g_INT_02c9d2f4 = g_INT_02c9d2f4 + 1;
+              g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
               break;
             case 1:
               core_xform_cpp_clipInterpolateTopPlane_FUN_005b97b0
-                        (g_SRenderVertex_ARRAY_02c9def8 + uVar14,pSVar16,
-                         g_SRenderVertex_ARRAY_02c9e4f8 + g_INT_02c9d2f4);
-              g_INT_02c9d2f4 = g_INT_02c9d2f4 + 1;
+                        (g_ClipVertexBufferStage3 + uVar14,pSVar16,
+                         g_ClipVertexBufferStage4 + g_ClipVertexCountStage4);
+              g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
               break;
             case 2:
-              pSVar19 = g_SRenderVertex_ARRAY_02c9e4f8 + g_INT_02c9d2f4;
+              pSVar19 = g_ClipVertexBufferStage4 + g_ClipVertexCountStage4;
               iVar13 = 0x30;
               pSVar20 = pSVar16;
               while (7 < iVar13) {
@@ -345,29 +345,29 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                        *(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);
                 }
               }
-              g_INT_02c9d2f4 = g_INT_02c9d2f4 + 1;
+              g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
               core_xform_cpp_clipInterpolateTopPlane_FUN_005b97b0
-                        (pSVar16,g_SRenderVertex_ARRAY_02c9def8 + uVar14,
-                         g_SRenderVertex_ARRAY_02c9e4f8 + g_INT_02c9d2f4);
-              g_INT_02c9d2f4 = g_INT_02c9d2f4 + 1;
+                        (pSVar16,g_ClipVertexBufferStage3 + uVar14,
+                         g_ClipVertexBufferStage4 + g_ClipVertexCountStage4);
+              g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
             }
             local_14 = local_14 + 1;
             pSVar16 = pSVar16 + 1;
-          } while (local_14 < g_INT_02c9d2f0);
+          } while (local_14 < g_ClipVertexCountStage3);
         }
-        if (2 < g_INT_02c9d2f4) {
+        if (2 < g_ClipVertexCountStage4) {
           local_1c = 0;
-          if (0 < g_INT_02c9d2f4) {
-            pSVar16 = g_SRenderVertex_ARRAY_02c9e4f8;
+          if (0 < g_ClipVertexCountStage4) {
+            pSVar16 = g_ClipVertexBufferStage4;
             do {
               uVar14 = local_1c + 1;
-              if (uVar14 == g_INT_02c9d2f4) {
-                uVar14 = uVar14 ^ g_INT_02c9d2f4;
+              if (uVar14 == g_ClipVertexCountStage4) {
+                uVar14 = uVar14 ^ g_ClipVertexCountStage4;
               }
               bVar12 = (pSVar16->projected_vertex).transformed_y <=
                        -(pSVar16->projected_vertex).transformed_z;
-              if (g_SRenderVertex_ARRAY_02c9e4f8[uVar14].projected_vertex.transformed_y <=
-                  -g_SRenderVertex_ARRAY_02c9e4f8[uVar14].projected_vertex.transformed_z) {
+              if (g_ClipVertexBufferStage4[uVar14].projected_vertex.transformed_y <=
+                  -g_ClipVertexBufferStage4[uVar14].projected_vertex.transformed_z) {
                 bVar12 = bVar12 | 2;
               }
               switch(bVar12) {
@@ -397,7 +397,7 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                 break;
               case 1:
                 core_xform_cpp_clipInterpolateBottomPlane_FUN_005b9870
-                          (g_SRenderVertex_ARRAY_02c9e4f8 + uVar14,pSVar16,
+                          (g_ClipVertexBufferStage4 + uVar14,pSVar16,
                            g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554);
                 g_INT_007c7554 = g_INT_007c7554 + 1;
                 break;
@@ -425,13 +425,13 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_cou
                 }
                 g_INT_007c7554 = g_INT_007c7554 + 1;
                 core_xform_cpp_clipInterpolateBottomPlane_FUN_005b9870
-                          (pSVar16,g_SRenderVertex_ARRAY_02c9e4f8 + uVar14,
+                          (pSVar16,g_ClipVertexBufferStage4 + uVar14,
                            g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554);
                 g_INT_007c7554 = g_INT_007c7554 + 1;
               }
               local_1c = local_1c + 1;
               pSVar16 = pSVar16 + 1;
-            } while (local_1c < g_INT_02c9d2f4);
+            } while (local_1c < g_ClipVertexCountStage4);
           }
           if (2 < g_INT_007c7554) {
             pSVar16 = g_SRenderVertex_ARRAY_007c7558;

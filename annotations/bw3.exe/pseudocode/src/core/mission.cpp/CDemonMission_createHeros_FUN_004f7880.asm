@@ -20,7 +20,7 @@
 ;   CNetGame* g_CNetGamePtr = 01da62f0
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 g_CGameInstance.aim_mode
-;   int g_INT_01d5ba00
+;   int g_HeroCount
 ;   int g_INT_01d5ba14
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
@@ -60,11 +60,11 @@ section .text
     JZ 0x004f7990                       ; 004f78a3
         ;   XREF to: 004f7990 (CONDITIONAL_JUMP)  ; LAB_004f7990
     MOV EAX,dword ptr [EAX + 0x1c]      ; 004f78a9 | g_CNetGameInstance.player_count
-    MOV [0x01d5ba00],EAX                ; 004f78ac | g_INT_01d5ba00
+    MOV [0x01d5ba00],EAX                ; 004f78ac | g_HeroCount
     CMP EAX,0x4                         ; 004f78b1
     JGE 0x004f79e3                      ; 004f78b4
         ;   XREF to: 004f79e3 (CONDITIONAL_JUMP)  ; LAB_004f79e3
-    MOV EAX,[0x01d5ba00]                ; 004f78ba | g_INT_01d5ba00
+    MOV EAX,[0x01d5ba00]                ; 004f78ba | g_HeroCount
         ;   Label: LAB_004f78ba
     XOR EDI,EDI                         ; 004f78bf
     TEST EAX,EAX                        ; 004f78c1
@@ -94,7 +94,7 @@ section .text
     MOV EDX,dword ptr [EDX + 0x38]      ; 004f7908 | g_CNetGameInstance.players[0].aim_mode
     INC EDI                             ; 004f790b
     MOV dword ptr [EAX + 0x206e4],EDX   ; 004f790c
-    MOV EAX,[0x01d5ba00]                ; 004f7912 | g_INT_01d5ba00
+    MOV EAX,[0x01d5ba00]                ; 004f7912 | g_HeroCount
     ADD ESI,0x80                        ; 004f7917
     CMP EDI,EAX                         ; 004f791d
     JL 0x004f78c9                       ; 004f791f
@@ -153,7 +153,7 @@ section .text
     MOV EDX,0x1                         ; 004f79a2
     PUSH EBP                            ; 004f79a7
     MOV dword ptr [0x01d5ba14],ECX      ; 004f79a8 | g_INT_01d5ba14
-    MOV dword ptr [0x01d5ba00],EDX      ; 004f79ae | g_INT_01d5ba00
+    MOV dword ptr [0x01d5ba00],EDX      ; 004f79ae | g_HeroCount
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 ; 004f79b4
         ;   XREF to: 004f7710 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
     ADD ESP,0x10                        ; 004f79b9

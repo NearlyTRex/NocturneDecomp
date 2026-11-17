@@ -21,11 +21,11 @@
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[3].u
 ;   undefined4 g_SRenderVertex_ARRAY_00629014[3].v
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01cd0e40.base.base.count
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.A
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.B
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.C
-;   undefined4 g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.D
+;   undefined4 g_GoreQuadPrimitive.base.base.count
+;   undefined4 g_GoreQuadPrimitive.base.surface_normal.A
+;   undefined4 g_GoreQuadPrimitive.base.surface_normal.B
+;   undefined4 g_GoreQuadPrimitive.base.surface_normal.C
+;   undefined4 g_GoreQuadPrimitive.base.surface_normal.D
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -47,11 +47,11 @@ section .text
     MOV EBP,0x80000                     ; 004e50f8
     MOV EAX,0xf80000                    ; 004e50fd
     XOR ECX,ECX                         ; 004e5102
-    MOV dword ptr [0x01cd0e44],EDX      ; 004e5104 | g_SMRGLPrimitiveQuadIndex_01cd0e40.base.base.count
-    MOV dword ptr [0x01cd0e58],ECX      ; 004e510a | g_SMRGLPrimitiveQuadIndex_01cd0e40.vertices[0]
-    MOV dword ptr [0x01cd0e5c],EBX      ; 004e5110 | g_SMRGLPrimitiveQuadIndex_01cd0e40.vertices[1]
-    MOV dword ptr [0x01cd0e60],ESI      ; 004e5116 | g_SMRGLPrimitiveQuadIndex_01cd0e40.vertices[2]
-    MOV dword ptr [0x01cd0e64],EDI      ; 004e511c | g_SMRGLPrimitiveQuadIndex_01cd0e40.vertices[3]
+    MOV dword ptr [0x01cd0e44],EDX      ; 004e5104 | g_GoreQuadPrimitive.base.base.count
+    MOV dword ptr [0x01cd0e58],ECX      ; 004e510a | g_GoreQuadPrimitive.vertices[0]
+    MOV dword ptr [0x01cd0e5c],EBX      ; 004e5110 | g_GoreQuadPrimitive.vertices[1]
+    MOV dword ptr [0x01cd0e60],ESI      ; 004e5116 | g_GoreQuadPrimitive.vertices[2]
+    MOV dword ptr [0x01cd0e64],EDI      ; 004e511c | g_GoreQuadPrimitive.vertices[3]
     MOV dword ptr [0x0062902c],EBP      ; 004e5122 | g_SRenderVertex_ARRAY_00629014[0].u
     MOV [0x00629030],EAX                ; 004e5128 | g_SRenderVertex_ARRAY_00629014[0].v
     MOV [0x0062905c],EAX                ; 004e512d | g_SRenderVertex_ARRAY_00629014[1].u
@@ -61,13 +61,13 @@ section .text
     MOV dword ptr [0x006290bc],EBP      ; 004e5142 | g_SRenderVertex_ARRAY_00629014[3].u
     MOV dword ptr [0x006290c0],EBP      ; 004e5148 | g_SRenderVertex_ARRAY_00629014[3].v
     MOV EDX,0xffff                      ; 004e514e
-    MOV dword ptr [0x01cd0e48],ECX      ; 004e5153 | g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.A
+    MOV dword ptr [0x01cd0e48],ECX      ; 004e5153 | g_GoreQuadPrimitive.base.surface_normal.A
     PUSH EDX                            ; 004e5159
     MOV ESI,dword ptr [0x00612560]      ; 004e515a | g_CDemonRenderer_PTR_00612560
-    MOV dword ptr [0x01cd0e50],ECX      ; 004e5160 | g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.C
+    MOV dword ptr [0x01cd0e50],ECX      ; 004e5160 | g_GoreQuadPrimitive.base.surface_normal.C
     PUSH ESI                            ; 004e5166 | g_CDemonRenderer_01bc120c
-    MOV dword ptr [0x01cd0e54],ECX      ; 004e5167 | g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.D
-    MOV dword ptr [0x01cd0e4c],EDX      ; 004e516d | g_SMRGLPrimitiveQuadIndex_01cd0e40.base.surface_normal.B
+    MOV dword ptr [0x01cd0e54],ECX      ; 004e5167 | g_GoreQuadPrimitive.base.surface_normal.D
+    MOV dword ptr [0x01cd0e4c],EDX      ; 004e516d | g_GoreQuadPrimitive.base.surface_normal.B
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0 ; 004e5173
         ;   XREF to: 00483de0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004e5178

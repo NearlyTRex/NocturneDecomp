@@ -14,11 +14,11 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0(void)
   int iVar3;
   DDSURFACEDESC local_74;
   
-  if ((g_INT_02661afc == 0) && (g_INT_01c37788 == 0)) {
+  if ((g_Display24BitFallback == 0) && (g_INT_01c37788 == 0)) {
     memset(&local_74,0,0x6c);
     local_74.dwSize = 0x6c;
-    HVar2 = (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Lock)
-                      (g_IDirectDrawSurface_PTR_02661ae8,(RECT *)0x0,&local_74,1,(void *)0x0);
+    HVar2 = (*g_SoftwareRenderSurface->vtable->Lock)
+                      (g_SoftwareRenderSurface,(RECT *)0x0,&local_74,1,(void *)0x0);
     if (HVar2 != 0) {
       g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
       g_INT_01d046a4 = 0x23b;
@@ -28,7 +28,7 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0(void)
       iVar1 = g_INT_006141bc * 4;
       iVar3 = 0;
       do {
-        *(LPVOID *)((int)g_ARRAY_PTR_01c2a38c + iVar3) = local_74.lpSurface;
+        *(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;
         iVar3 = iVar3 + 4;
         local_74.lpSurface = (LPVOID)((int)local_74.lpSurface + local_74.dwPitchOrLinearSize.lPitch)
         ;

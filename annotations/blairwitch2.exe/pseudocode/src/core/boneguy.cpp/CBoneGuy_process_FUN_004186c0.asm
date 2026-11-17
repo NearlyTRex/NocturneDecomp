@@ -21,7 +21,7 @@
 ;   float g_FLOAT_005f382c = 3
 ;   float g_FLOAT_005f3838 = 2
 ;   CConsole* g_CConsolePtr = 007c158c
-;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   ... and 6 more
 ;
@@ -58,7 +58,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 004186cf
     LEA EAX,[EBX + 0x10b0c]             ; 004186d5
     PUSH EAX                            ; 004186db
-    MOV EDX,dword ptr [0x006141f0]      ; 004186dc | g_CEventList_PTR_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004186dc | g_CEventListPtr
     PUSH EDX                            ; 004186e2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004186e3
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -706,7 +706,7 @@ section .text
     LEA EDI,[EBP + -0x52]               ; 00418e28
     PUSH EAX                            ; 00418e2b
     FLD float ptr [EBP + 0x76]          ; 00418e2c
-    PUSH 0x265370c                      ; 00418e2f | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 00418e2f | g_ZeroVector
     FSTP float ptr [EBP + 0xfffffe1e]   ; 00418e34
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00418e3a
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)

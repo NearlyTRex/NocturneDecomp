@@ -10,10 +10,10 @@ int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(int channel_index
 
 {
   if ((-1 < channel_index) && (channel_index < 0x20)) {
-    return g_INT_ARRAY_02cf2940[channel_index];
+    return g_SfxChannelEnabled[channel_index];
   }
   g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
   g_INT_01d71de4 = 0x1147;
   core_main_c_displayErrorAndQuit_FUN_004e4330("isSfxChannelEnabled - invalid channel index: %d");
-  return g_INT_ARRAY_02cf2940[channel_index];
+  return g_SfxChannelEnabled[channel_index];
 }

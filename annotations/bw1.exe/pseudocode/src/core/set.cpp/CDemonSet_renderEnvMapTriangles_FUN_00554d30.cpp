@@ -29,12 +29,12 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
   
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_00622f34);
+            (g_CDemonRenderer_PTR_00612560,&g_EnvMapTexture);
   if (g_CGamePtr->render_mode == 2) {
-    alpha = g_INT_0061b4b8 << 8;
+    alpha = g_CurrentAlphaValue << 8;
   }
   else {
-    lVar2 = (longlong)(0xffff - g_INT_01c51cac) * (longlong)alpha;
+    lVar2 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
               (g_CDemonRenderer_PTR_00612560,
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
@@ -61,7 +61,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
       SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
       if (this_ptr->skip_normal_normalization != 0) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0
-                  (g_CVector3i_ARRAY_02036428,(SMRGLPrimitiveTriangle *)&SStack_118);
+                  (g_TransformedVertexArray,(SMRGLPrimitiveTriangle *)&SStack_118);
       }
       local_28[4] = 0;
       if (0 < SStack_118.base.base.count) {
@@ -79,11 +79,11 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
           }
           else {
             local_50.x = (int)ROUND(g_FLOAT_0202a844 * 256.0f) -
-                         g_CVector3i_ARRAY_02036428[iVar3].x;
+                         g_TransformedVertexArray[iVar3].x;
             local_50.y = (int)ROUND(_DAT_0202a848 * 256.0f) -
-                         g_CVector3i_ARRAY_02036428[iVar3].y;
+                         g_TransformedVertexArray[iVar3].y;
             local_50.z = (int)ROUND(g_FLOAT_0202a84c * 256.0f) -
-                         g_CVector3i_ARRAY_02036428[iVar3].z;
+                         g_TransformedVertexArray[iVar3].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_00508780(&local_50,&local_38);
             local_2c = local_38.x;
             local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);

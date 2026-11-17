@@ -51,7 +51,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00(SPageRe
                 (pCStack_14,iStack_1c + 0x17c,0x17c,0xffff);
       if (iVar3 == 2) {
         core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (g_CEventList_PTR_005fba60,"FinishedTwanaPuzzle");
+                  (g_CEventListPtr,"FinishedTwanaPuzzle");
         memset(pcStack_20,0,0x60);
       }
     }

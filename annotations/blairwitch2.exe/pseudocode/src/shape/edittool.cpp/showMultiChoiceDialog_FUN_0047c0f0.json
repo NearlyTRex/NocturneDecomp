@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 578,
-    "complexity_score": 315,
+    "complexity_score": 311,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 250,
+    "pseudocode_lines": 246,
     "suspect_count": 5,
     "suspect_types": [
       "signed_shift_global_idiom",
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 828
+    "total_lines": 824
   },
   "cross_references": [
     {
@@ -216,25 +216,25 @@
     },
     {
       "addr": "006141cc",
-      "name": "g_INT_006141cc",
+      "name": "g_InputKeyMask",
       "type": "int",
       "value": "0x7f"
     },
     {
       "addr": "00617dd4",
-      "name": "g_CKeys_PTR_00617dd4",
+      "name": "g_CKeysPtr",
       "type": "CKeys*",
       "value": "01d02f84"
     },
     {
       "addr": "01c25590",
-      "name": "g_CBitFont_PTR_01c25590",
+      "name": "g_EditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25f78",
-      "name": "g_INT_01c25f78",
+      "name": "g_EditorFontMaxCharWidth",
       "type": "int",
       "value": null
     },
@@ -246,7 +246,7 @@
     },
     {
       "addr": "01c26410",
-      "name": "g_PTR_01c26410",
+      "name": "g_ActiveControl",
       "type": "void*",
       "value": null
     },
@@ -264,7 +264,7 @@
     },
     {
       "addr": "01c35e50",
-      "name": "g_INT_01c35e50",
+      "name": "g_ClipRight",
       "type": "int",
       "value": null
     },
@@ -569,7 +569,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -577,7 +577,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 83,
+      "line": 82,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 108,
+      "line": 107,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar8 = (int)((g_INT_006141b8 + (g_INT_006141b8 >> 0x1f) * -0x80) -",
@@ -593,7 +593,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 109,
+      "line": 108,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_006141b8 >> 0x1f) << 6 < 0)) >> 7;",
@@ -601,7 +601,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '^' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '^') in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

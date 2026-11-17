@@ -68,31 +68,31 @@
     },
     {
       "addr": "0061f414",
-      "name": "g_PTR_0061f414",
+      "name": "g_IsSpecialDeviceFuncPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f418",
-      "name": "g_PTR_0061f418",
+      "name": "g_SpecialDeviceCleanupFunc",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f420",
-      "name": "g_PTR_0061f420",
+      "name": "g_SpecialDeviceCloseFunc",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "0061f480",
-      "name": "g_UINT_0061f480",
+      "name": "g_MaxHandleCount",
       "type": "uint",
       "value": "0x14"
     },
     {
       "addr": "0061f4d8",
-      "name": "g_SIOControlBlock_PTR_0061f4d8",
+      "name": "g_IOControlBlock",
       "type": "SIOControlBlock*",
       "value": "00000000"
     }
@@ -217,7 +217,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_0061f480 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -225,7 +225,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (g_UINT_0061f480 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -233,7 +233,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "hObject = g_SIOControlBlock_PTR_0061f4d8->standard_handles[param_1];",
+      "text": "hObject = g_IOControlBlock->standard_handles[param_1];",
       "type": "unnamed_param"
     },
     {
@@ -241,7 +241,7 @@
       "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar2 = (*(code *)g_PTR_0061f414)(param_1), iVar2 == 0)) {",
+      "text": "(iVar2 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar2 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -249,7 +249,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = (*(code *)g_PTR_0061f414)(param_1), iVar2 == 0)) {",
+      "text": "(iVar2 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1), iVar2 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -257,7 +257,7 @@
       "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_0061f418)(param_1);",
+      "text": "(*(code *)g_SpecialDeviceCleanupFunc)(param_1);",
       "type": "unresolved_funcptr"
     },
     {
@@ -265,7 +265,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)g_PTR_0061f418)(param_1);",
+      "text": "(*(code *)g_SpecialDeviceCleanupFunc)(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -273,7 +273,7 @@
       "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)g_PTR_0061f420)(iVar2);",
+      "text": "(*(code *)g_SpecialDeviceCloseFunc)(iVar2);",
       "type": "unresolved_funcptr"
     },
     {

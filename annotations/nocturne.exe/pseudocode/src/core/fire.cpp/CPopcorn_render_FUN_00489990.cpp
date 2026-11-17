@@ -87,9 +87,9 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_00489990(CPopcorn *this_ptr)
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005b8ba4);
+            (g_CDemonRenderer_PTR_005ae704,&g_FireEffectPopcornTexture);
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-            (g_CDemonCamera_PTR_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
   g_SRenderVertex_ARRAY_005c5014[0].v = 0xf80000;
   g_SRenderVertex_ARRAY_005c5014[1].u = 0xf80000;
   g_SRenderVertex_ARRAY_005c5014[1].v = 0xf80000;
@@ -106,7 +106,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_00489990(CPopcorn *this_ptr)
   g_SRenderVertex_ARRAY_005c5014[2].a = g_SRenderVertex_ARRAY_005c5014[0].a;
   g_SRenderVertex_ARRAY_005c5014[3].a = g_SRenderVertex_ARRAY_005c5014[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (g_CDemonSetPtr,&local_24,&g_CVector3i_01c08d14,0,4);
+            (g_CDemonSetPtr,&local_24,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   local_a0.surface_normal.D.i = 0;
   local_a0.surface_normal.C.i = 0;

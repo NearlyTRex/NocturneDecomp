@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 409,
+    "complexity_score": 387,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
-    "suspect_count": 23,
+    "pseudocode_lines": 137,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -19,7 +19,7 @@
       "stack_ref",
       "unrolled_memcpy"
     ],
-    "total_lines": 411
+    "total_lines": 409
   },
   "cross_references": [
     {
@@ -67,97 +67,97 @@
   "globals": [
     {
       "addr": "005d7887",
-      "name": "g_DOUBLE_005d7887",
+      "name": "g_FixedPointScale256",
       "type": "double",
       "value": "256"
     },
     {
       "addr": "005d788f",
-      "name": "g_DOUBLE_005d788f",
+      "name": "g_LogarithmicConstant210",
       "type": "double",
       "value": "3.32192809489000"
     },
     {
       "addr": "00a1c9e4",
-      "name": "g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].x",
+      "name": "g_PrecomputedSurfaceNormals[1][1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00a1c9e8",
-      "name": "g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].y",
+      "name": "g_PrecomputedSurfaceNormals[1][1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00a1c9ec",
-      "name": "g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].z",
+      "name": "g_PrecomputedSurfaceNormals[1][1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b81c9c",
-      "name": "g_INT_00b81c9c",
+      "name": "g_CoronaMaxDepth",
       "type": "int",
       "value": null
     },
     {
       "addr": "00b81ca0",
-      "name": "g_INT_00b81ca0",
+      "name": "g_CoronaDepthShift",
       "type": "int",
       "value": null
     },
     {
       "addr": "013238cc",
-      "name": "g_INT_013238cc",
+      "name": "g_BackdropSaveActive",
       "type": "int",
       "value": null
     },
     {
       "addr": "01323cd4",
-      "name": "g_CDemonLight_PTR_01323cd4",
+      "name": "g_CurrentLightForCorona",
       "type": "CDemonLight*",
       "value": null
     },
     {
       "addr": "01323cd8",
-      "name": "g_CMatrix3x3i_01323cd8",
+      "name": "g_CoronaCameraRotationMatrix",
       "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01323cdc",
-      "name": "g_CMatrix3x3i_01323cd8.m[0].y",
+      "name": "g_CoronaCameraRotationMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01323ce0",
-      "name": "g_CMatrix3x3i_01323cd8.m[0].z",
+      "name": "g_CoronaCameraRotationMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01323cec",
-      "name": "g_CMatrix3x3i_01323cd8.m[1].z",
+      "name": "g_CoronaCameraRotationMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01323cf8",
-      "name": "g_CMatrix3x3i_01323cd8.m[2].z",
+      "name": "g_CoronaCameraRotationMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01323d00",
-      "name": "g_BIT_INTEGER32_01323d00",
+      "name": "g_CameraDownscaleIterations",
       "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4480c",
-      "name": "g_UINT_PTR_ARRAY_01c4480c",
+      "name": "g_ZBufferScanlineArray",
       "type": "uint*[1200]",
       "value": null
     }
@@ -428,41 +428,41 @@
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(int *)((int)g_INT_ARRAY_014dea50",
+      "match": "(int *)((int)g_CoronaLeftExtent",
       "severity": "moderate",
-      "text": "*(int *)((int)g_INT_ARRAY_014dea50 + iVar4) = this_ptr->display_width;",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(uint *)((int)g_INT_ARRAY_014dee10",
+      "match": "(uint *)((int)g_CoronaRightExtent",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_INT_ARRAY_014dee10 + iVar4) = 0;",
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(int *)((int)g_INT_ARRAY_014dea50",
+      "match": "(int *)((int)g_CoronaLeftExtent",
       "severity": "moderate",
-      "text": "if (this_ptr->display_width != *(int *)((int)g_INT_ARRAY_014dea50 + local_34)) {",
+      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_34)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
-      "match": "(int *)((int)g_INT_ARRAY_014dea50",
+      "match": "(int *)((int)g_CoronaLeftExtent",
       "severity": "moderate",
-      "text": "local_20 = *(int *)((int)g_INT_ARRAY_014dea50 + local_34);",
+      "text": "local_20 = *(int *)((int)g_CoronaLeftExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 80,
-      "match": "(int *)((int)g_INT_ARRAY_014dee10",
+      "match": "(int *)((int)g_CoronaRightExtent",
       "severity": "moderate",
-      "text": "local_30 = *(int *)((int)g_INT_ARRAY_014dee10 + local_34);",
+      "text": "local_30 = *(int *)((int)g_CoronaRightExtent + local_34);",
       "type": "pointer_cast"
     },
     {
@@ -478,7 +478,7 @@
       "line": 95,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "(&g_CDemonLight_PTR_01323cd4->base,local_24,(CVector3i *)&stack0xffffff98);",
+      "text": "(&g_CurrentLightForCorona->base,local_24,(CVector3i *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
@@ -515,7 +515,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 129,
+      "line": 127,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
@@ -535,22 +535,6 @@
       "match": "(int)&stack0xffffffac",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CDemonLight_PTR_01323cd4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 108,
-      "match": "(uint)g_CDemonLight_PTR_01323cd4",
-      "severity": "moderate",
-      "text": "(uint)g_CDemonLight_PTR_01323cd4->",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CDemonLight_PTR_01323cd4` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
-      "match": "(byte)g_CDemonLight_PTR_01323cd4",
-      "severity": "moderate",
-      "text": "((byte)g_CDemonLight_PTR_01323cd4->",
       "type": "pointer_truncation"
     },
     {
@@ -598,7 +582,7 @@
       "line": 16,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 004516e5: MOVSD.REP ES:EDI,ESI  ; g_CMatrix3x3i_01323cd8 | g_CMatrix3x3i_01323cd8.m[0].y",
+      "text": "// 004516e5: MOVSD.REP ES:EDI,ESI  ; g_CoronaCameraRotationMatrix | g_CoronaCameraRotationMatrix.m[0].y",
       "type": "unrolled_memcpy"
     }
   ]

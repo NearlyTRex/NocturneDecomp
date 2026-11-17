@@ -37,11 +37,11 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CScript* g_CScriptPtr = 01e65cd0
-;   int g_INT_0061b5b8 = 0x1
-;   CWeather* g_CWeather_PTR_0061e8f4 = 02661f80
+;   int g_RenderMirrorsFlag = 0x1
+;   CWeather* g_CWeatherPtr = 02661f80
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
@@ -213,14 +213,14 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00530008
     PUSH dword ptr [EAX + 0x140]        ; 0053000b | g_CDemonLightInstance.base.max_distance
     PUSH EBX                            ; 00530011
-    MOV dword ptr [0x0061b5b8],ECX      ; 00530012 | g_INT_0061b5b8
+    MOV dword ptr [0x0061b5b8],ECX      ; 00530012 | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 ; 00530018
         ;   XREF to: 0052d0e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 0053001d
     PUSH -0x1                           ; 00530020
     MOV ESI,0x1                         ; 00530022
     PUSH EBX                            ; 00530027
-    MOV dword ptr [0x0061b5b8],ESI      ; 00530028 | g_INT_0061b5b8
+    MOV dword ptr [0x0061b5b8],ESI      ; 00530028 | g_RenderMirrorsFlag
     CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0 ; 0053002e
         ;   XREF to: 005332f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 00530033
@@ -270,7 +270,7 @@ section .text
     CALL core_gore.cpp_CGore_renderParticles_FUN_004c9440 ; 005300a7
         ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004c9440(CGore * this_ptr)
     ADD ESP,0x4                         ; 005300ac
-    MOV EBX,dword ptr [0x00614d30]      ; 005300af | g_CFireEffect_PTR_00614d30
+    MOV EBX,dword ptr [0x00614d30]      ; 005300af | g_CFireEffectPtr
     PUSH EBX                            ; 005300b5
     CALL core_fire.cpp_CFireEffect_render_FUN_0049c780 ; 005300b6
         ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0049c780(CFireEffect * this_ptr)
@@ -314,15 +314,15 @@ section .text
     SBB EAX,EDX                         ; 0053011e
     SAR EAX,0x7                         ; 00530120
     ADD ESP,0xc                         ; 00530123
-    MOV EDX,dword ptr [0x00614d30]      ; 00530126 | g_CFireEffect_PTR_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 00530126 | g_CFireEffectPtr
     PUSH EDX                            ; 0053012c
     MOV ESI,EAX                         ; 0053012d
     CALL core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50 ; 0053012f
         ;   XREF to: 0049eb50 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50(CFireEffect * this_ptr)
     SHL EAX,0x7                         ; 00530134
     ADD ESI,EAX                         ; 00530137
-    MOV EAX,[0x0061e8f4]                ; 00530139 | g_CWeather_PTR_0061e8f4
-    MOV EAX,dword ptr [EAX + 0x24]      ; 0053013e | g_CWeather_02661f80.lightning_active
+    MOV EAX,[0x0061e8f4]                ; 00530139 | g_CWeatherPtr
+    MOV EAX,dword ptr [EAX + 0x24]      ; 0053013e | g_CWeatherInstance.lightning_active
     MOV ECX,dword ptr [0x006141bc]      ; 00530141 | g_INT_006141bc
     SHL EAX,0xf                         ; 00530147
     ADD ESP,0x4                         ; 0053014a

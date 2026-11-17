@@ -11,7 +11,7 @@ int __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70(C
 {
   uint uVar1;
   
-  uVar1 = g_UINT_PTR_ARRAY_01c4480c[screen_y][screen_x];
+  uVar1 = g_ZBufferScanlineArray[screen_y][screen_x];
   if (uVar1 == 0) {
     output_ptr->x = screen_x << 0x10;
     output_ptr->y = screen_y << 0x10;

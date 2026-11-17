@@ -29,9 +29,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCam
   }
   iVar2 = 0;
   if (0 < this_ptr->display_height) {
-    source1_buffer = (char (*) [320])(g_SFogImagePlane_ARRAY_012e1778 + plane_index);
+    source1_buffer = (char (*) [320])(g_CameraImageDecompressBuffer + plane_index);
     output_buffer = &g_SFogImagePlane_012ceb78;
-    source2_buffer = (char (*) [320])(g_SFogImagePlane_ARRAY_012e1778 + iVar1);
+    source2_buffer = (char (*) [320])(g_CameraImageDecompressBuffer + iVar1);
     do {
       core_dstrendr_cpp_alphaBlendPixelsMMX_FUN_00465f50
                 ((uint *)output_buffer,(uint *)source1_buffer,(uint *)source2_buffer,

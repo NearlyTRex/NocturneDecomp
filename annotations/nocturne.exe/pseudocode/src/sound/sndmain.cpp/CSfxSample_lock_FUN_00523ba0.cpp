@@ -32,11 +32,11 @@ void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample *this_p
     psVar2 = (short *)(iVar1 * lock_offset + (int)this_ptr->sample_data);
   }
   else {
-    if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
+    if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return (void *)0x0;
     }
-    psVar2 = (*g_CSoundDevice_PTR_02dc8318->vtable->lockSample)
-                       (g_CSoundDevice_PTR_02dc8318,this_ptr->buffer_id,lock_offset,lock_length);
+    psVar2 = (*g_CSoundDevicePtr->vtable->lockSample)
+                       (g_CSoundDevicePtr,this_ptr->buffer_id,lock_offset,lock_length);
   }
   if (psVar2 != (short *)0x0) {
     this_ptr->locked_length = lock_length;

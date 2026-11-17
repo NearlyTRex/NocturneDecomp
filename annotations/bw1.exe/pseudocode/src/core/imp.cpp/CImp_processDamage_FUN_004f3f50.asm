@@ -11,7 +11,7 @@
 ;   TerminatedCString s_imp_die_wav_005e56ba
 ;   TerminatedCString s_imp_hurt_wav_005e56c7
 ;   double g_DOUBLE_005e56da = 2
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -70,7 +70,7 @@ section .text
     PUSH 0x0                            ; 004f3fb0
     LEA EAX,[ESP + 0x28]                ; 004f3fb2
     PUSH EAX                            ; 004f3fb6
-    MOV EDI,dword ptr [0x0061c010]      ; 004f3fb7 | g_CFireEffect_PTR_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 004f3fb7 | g_CFireEffectPtr
     PUSH EDI                            ; 004f3fbd
     INC EBX                             ; 004f3fbe
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004f3fbf

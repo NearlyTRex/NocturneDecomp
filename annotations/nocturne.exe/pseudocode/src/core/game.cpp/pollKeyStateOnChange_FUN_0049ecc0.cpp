@@ -9,9 +9,9 @@
 void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(int key_index,int *output_state)
 
 {
-  if (g_CHAR_ARRAY_01c781c0[key_index] == g_CHAR_ARRAY_01c02598[key_index]) {
+  if (g_PrevKeyboardState[key_index] == g_KeyboardState[key_index]) {
     return;
   }
-  *output_state = (uint)(byte)g_CHAR_ARRAY_01c02598[key_index];
+  *output_state = (uint)(byte)g_KeyboardState[key_index];
   return;
 }

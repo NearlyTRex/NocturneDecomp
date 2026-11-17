@@ -20,8 +20,8 @@ bool FUN_005be6ec(uint *param_1)
   if (uVar1 < *param_1) {
     return false;
   }
-  if (uVar1 < (uint)g_INT_0061f6f0) {
-    uVar1 = g_INT_0061f6f0 & 0xfffffffe;
+  if (uVar1 < (uint)g_HeapFlags) {
+    uVar1 = g_HeapFlags & 0xfffffffe;
   }
   *param_1 = uVar1;
   if (uVar1 + 0xfff < *param_1) {

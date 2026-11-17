@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0045ff13
     PUSH 0x5d8ad1                       ; 0045ff16 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0045ff1b | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0045ff1b | g_CEventListPtr
     PUSH EDX                            ; 0045ff21
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0045ff22
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -252,7 +252,7 @@ section .text
     JNZ 0x004601af                      ; 0046018b
         ;   XREF to: 004601af (CONDITIONAL_JUMP)  ; LAB_004601af
     PUSH 0x5d8bd1                       ; 0046018d | = "PuzzleModeHard"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 00460192 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 00460192 | g_CEventListPtr
     PUSH ESI                            ; 00460198
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460199
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

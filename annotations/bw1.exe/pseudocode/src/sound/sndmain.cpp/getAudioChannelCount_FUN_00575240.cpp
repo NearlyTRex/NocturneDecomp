@@ -9,6 +9,6 @@
 int __cdecl sound_sndmain_cpp_getAudioChannelCount_FUN_00575240(void)
 
 {
-  sound_sndmain_cpp_getAudioFormat_FUN_005751c0((int *)0x0,&g_INT_006232ec,(int *)0x0);
-  return g_INT_006232ec;
+  sound_sndmain_cpp_getAudioFormat_FUN_005751c0((int *)0x0,&g_AudioChannelCount,(int *)0x0);
+  return g_AudioChannelCount;
 }

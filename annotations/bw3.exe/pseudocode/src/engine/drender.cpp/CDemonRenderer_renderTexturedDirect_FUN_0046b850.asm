@@ -20,9 +20,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   void* g_PTR_01c6b5cc
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
-;   int g_INT_01c6e2b8
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -54,9 +54,9 @@ section .text
         ;   XREF to: 0046b8b7 (CONDITIONAL_JUMP)  ; LAB_0046b8b7
     XOR EBP,EBP                         ; 0046b876
     MOV ESI,0x46f9a6                    ; 0046b878
-    MOV dword ptr [0x01c6e2b4],EBP      ; 0046b87d | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],EBP      ; 0046b883 | g_INT_01c6e2b8
-    MOV dword ptr [0x01c6b5cc],ESI      ; 0046b889 | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EBP      ; 0046b87d | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],EBP      ; 0046b883 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6b5cc],ESI      ; 0046b889 | g_ScanlineRenderFunc
     LEA EAX,[EDI + 0x18]                ; 0046b88f
         ;   Label: LAB_0046b88f
     PUSH EAX                            ; 0046b892
@@ -87,14 +87,14 @@ section .text
         ;   Label: LAB_0046b8b7
     JNZ 0x0046b8dd                      ; 0046b8be
         ;   XREF to: 0046b8dd (CONDITIONAL_JUMP)  ; LAB_0046b8dd
-    MOV dword ptr [0x01c6b5cc],0x560f31 ; 0046b8c0 | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x560f31 ; 0046b8c0 | g_ScanlineRenderFunc
     MOV ECX,0x6                         ; 0046b8ca
         ;   Label: LAB_0046b8ca
-    MOV dword ptr [0x01c6e2b4],ESI      ; 0046b8cf | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],ECX      ; 0046b8d5 | g_INT_01c6e2b8
+    MOV dword ptr [0x01c6e2b4],ESI      ; 0046b8cf | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],ECX      ; 0046b8d5 | g_VertexPreprocessMode
     JMP 0x0046b88f                      ; 0046b8db
         ;   XREF to: 0046b88f (UNCONDITIONAL_JUMP)  ; LAB_0046b88f
-    MOV dword ptr [0x01c6b5cc],0x561713 ; 0046b8dd | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x561713 ; 0046b8dd | g_ScanlineRenderFunc
         ;   Label: LAB_0046b8dd
     JMP 0x0046b8ca                      ; 0046b8e7
         ;   XREF to: 0046b8ca (UNCONDITIONAL_JUMP)  ; LAB_0046b8ca

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_007ba070
+;   int g_RenderFaceCount
 ;   int g_INT_01c37788
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
 
     PUSH EBP                            ; 00407980
         ;   Label: engine_3d.c_flushRenderQueue_FUN_00407980
-    MOV EDX,dword ptr [0x007ba070]      ; 00407981 | g_INT_007ba070
+    MOV EDX,dword ptr [0x007ba070]      ; 00407981 | g_RenderFaceCount
     TEST EDX,EDX                        ; 00407987
     JZ 0x004079c6                       ; 00407989
         ;   XREF to: 004079c6 (CONDITIONAL_JUMP)  ; LAB_004079c6
@@ -40,7 +40,7 @@ section .text
     INC ESI                             ; 004079a9
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70 ; 004079aa
         ;   XREF to: 00405b70 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(SMRGLHeaderPrimitive * prim)
-    MOV EBP,dword ptr [0x007ba070]      ; 004079af | g_INT_007ba070
+    MOV EBP,dword ptr [0x007ba070]      ; 004079af | g_RenderFaceCount
     ADD ESP,0x4                         ; 004079b5
     CMP ESI,EBP                         ; 004079b8
     JL 0x0040799f                       ; 004079ba
@@ -49,7 +49,7 @@ section .text
     POP EDI                             ; 004079bd
     XOR EAX,EAX                         ; 004079be
         ;   Label: LAB_004079be
-    MOV [0x007ba070],EAX                ; 004079c0 | g_INT_007ba070
+    MOV [0x007ba070],EAX                ; 004079c0 | g_RenderFaceCount
     POP ESI                             ; 004079c5
     POP EBP                             ; 004079c6
         ;   Label: LAB_004079c6
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 0055f950 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_0055f950(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 004079dd
     XOR EAX,EAX                         ; 004079e0
-    MOV [0x007ba070],EAX                ; 004079e2 | g_INT_007ba070
+    MOV [0x007ba070],EAX                ; 004079e2 | g_RenderFaceCount
     POP ESI                             ; 004079e7
     POP EBP                             ; 004079e8
     RET                                 ; 004079e9

@@ -100,7 +100,7 @@
     },
     {
       "addr": "0059c8a0",
-      "name": "g_FLOAT_0059c8a0",
+      "name": "g_RaytraceWorldToScreenScale",
       "type": "float",
       "value": "256"
     },
@@ -172,49 +172,49 @@
     },
     {
       "addr": "01b7b734",
-      "name": "g_INT_01b7b734",
+      "name": "g_CubesTestedCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b7b738",
-      "name": "g_INT_01b7b738",
+      "name": "g_CubesWithVoxelsCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b7b73c",
-      "name": "g_INT_01b7b73c",
+      "name": "g_CubesVisibleCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b7b740",
-      "name": "g_INT_01b7b740",
+      "name": "g_CubesRenderedCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b7b744",
-      "name": "g_INT_01b7b744",
+      "name": "g_PVSDrawnCubeCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01b8efcc",
-      "name": "g_CVector3f_ARRAY_01b8efcc",
+      "name": "g_PVSCubePositions",
       "type": "CVector3f[20000]",
       "value": null
     },
     {
       "addr": "01b8efd0",
-      "name": "g_CVector3f_ARRAY_01b8efcc[0].y",
+      "name": "g_PVSCubePositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b8efd4",
-      "name": "g_CVector3f_ARRAY_01b8efcc[0].z",
+      "name": "g_PVSCubePositions[0].z",
       "type": "undefined4",
       "value": null
     },
@@ -862,7 +862,7 @@
       "line": 208,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01b8efcc[iVar3].x = local_64.x;",
+      "text": "g_PVSCubePositions[iVar3].x = local_64.x;",
       "type": "unrolled_memcpy"
     },
     {

@@ -24,7 +24,7 @@ int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(STria
   uVar1 = triangle->vertex_index_0;
   uVar2 = triangle->vertex_index_1;
   uVar3 = triangle->vertex_index_2;
-  if (g_INT_00713a7c == 1) {
+  if (g_CullingMode == 1) {
     local_24 = g_SRenderVertex_ARRAY_00629014[uVar2].projected_vertex.screen_x -
                g_SRenderVertex_ARRAY_00629014[uVar1].projected_vertex.screen_x;
     local_20 = g_SRenderVertex_ARRAY_00629014[uVar2].projected_vertex.screen_y -

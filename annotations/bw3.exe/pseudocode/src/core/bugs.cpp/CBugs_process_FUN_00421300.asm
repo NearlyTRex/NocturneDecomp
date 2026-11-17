@@ -11,7 +11,7 @@
 ;   undefined1* switchdataD_004212e4 = 004213a9
 ;   TerminatedCString s_wp_disease_loop_wav_005b7739
 ;   TerminatedCString s_wp_disease_munch_wav_005b774d
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 DAT_01d81080
@@ -146,7 +146,7 @@ section .text
     LEA EAX,[EBX + 0x1bd3c]             ; 00421441
         ;   Label: LAB_00421441
     PUSH EAX                            ; 00421447
-    MOV ECX,dword ptr [0x005fba60]      ; 00421448 | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00421448 | g_CEventListPtr
     PUSH ECX                            ; 0042144e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0042144f
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -160,7 +160,7 @@ section .text
     LEA EAX,[EBX + 0x1bda0]             ; 0042146e
         ;   Label: LAB_0042146e
     PUSH EAX                            ; 00421474
-    MOV EDI,dword ptr [0x005fba60]      ; 00421475 | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 00421475 | g_CEventListPtr
     PUSH EDI                            ; 0042147b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0042147c
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

@@ -21,8 +21,8 @@ int __cdecl heapWalk(HeapState *heap_state_ptr,Heap *heap_ptr)
     pHVar2 = (Heap *)&heap_ptr[3].next_heap_block;
   }
   else {
-    pHVar2 = g_Heap_PTR_005c1680->next_heap_block;
-    heap_ptr = g_Heap_PTR_005c1680;
+    pHVar2 = g_MainHeap->next_heap_block;
+    heap_ptr = g_MainHeap;
     while ((pHVar2 != (Heap *)0x0 &&
            ((pHVar1 < heap_ptr ||
             ((Heap *)((int)&heap_ptr->heap_size + heap_ptr->heap_size) <= pHVar1))))) {

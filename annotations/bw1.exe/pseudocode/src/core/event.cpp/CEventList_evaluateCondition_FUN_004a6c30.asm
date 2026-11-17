@@ -25,8 +25,8 @@
 ;   TerminatedCString s_s_005de18e
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
-;   int g_INT_01c56ecc
-;   char[256] g_CHAR_ARRAY_01c56ed0
+;   int g_EventDryRun
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10
@@ -64,14 +64,14 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 004a6c55
     XOR EDX,EDX                         ; 004a6c59
     PUSH ECX                            ; 004a6c5b
-    MOV dword ptr [0x01c56ecc],EDX      ; 004a6c5c | g_INT_01c56ecc
+    MOV dword ptr [0x01c56ecc],EDX      ; 004a6c5c | g_EventDryRun
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10 ; 004a6c62
         ;   XREF to: 004a6d10 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 004a6c67
     TEST EAX,EAX                        ; 004a6c6a
     JGE 0x004a6c40                      ; 004a6c6c
         ;   XREF to: 004a6c40 (CONDITIONAL_JUMP)  ; LAB_004a6c40
-    PUSH 0x1c56ed0                      ; 004a6c6e | g_CHAR_ARRAY_01c56ed0
+    PUSH 0x1c56ed0                      ; 004a6c6e | g_EventErrorMessageBuffer
     PUSH 0x5de18e                       ; 004a6c73 | = "%s\n"
     MOV EBX,dword ptr [0x00611100]      ; 004a6c78 | g_CConsolePtr
     PUSH EBX                            ; 004a6c7e | g_CConsoleInstance

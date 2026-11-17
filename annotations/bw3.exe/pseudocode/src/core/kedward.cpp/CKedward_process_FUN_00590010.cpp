@@ -170,7 +170,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
              afStack_fc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
         fStack_84 = fStack_29c * fStack_29c +
                     afStack_2ac[2] * afStack_2ac[2] + afStack_2ac[3] * afStack_2ac[3];
-        fStack_94 = (float)(((int)fStack_84 >> 1) + g_INT_01d1a0a4);
+        fStack_94 = (float)(((int)fStack_84 >> 1) + g_FastSqrtMagic);
         if (fStack_94 < (float)13) {
           this_ptr->vanish_timer = 0.5;
         }
@@ -514,7 +514,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
             fStack_48 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                   (&pCStack_34->base);
             fStack_70 = fStack_1c4 * fStack_1c4 + fStack_1cc * fStack_1cc + fStack_1c8 * fStack_1c8;
-            fStack_6c = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);
+            fStack_6c = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);
             fStack_14 = fStack_48;
             if ((fStack_6c <= 3.8f) || (fStack_48 <= (float)2.5)) {
               if ((0x3f7fffff < (int)fStack_48) && ((int)fStack_48 < 0x40000001)) {
@@ -525,7 +525,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
                 pSVar17 = &SStack_34c;
                 fVar16 = 2.0;
                 core_xform_cpp_transformVector3x4_FUN_00583260
-                          (&g_CVector3f_02cfd900,pCStack_50 + this_ptr->bone_hand,&CStack_274);
+                          (&g_ZeroVector,pCStack_50 + this_ptr->bone_hand,&CStack_274);
                 pCVar14 = &CStack_298;
                 CStack_298.x = CStack_274.x;
                 *(uint *)((int)&CStack_298 + (uint)bVar10 * -8 + 4) =
@@ -573,7 +573,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
             fStack_4c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                   (&pCStack_34->base);
             fStack_78 = fStack_14c * fStack_14c + fStack_154 * fStack_154 + fStack_150 * fStack_150;
-            fStack_74 = (float)(((int)fStack_78 >> 1) + g_INT_01d1a0a4);
+            fStack_74 = (float)(((int)fStack_78 >> 1) + g_FastSqrtMagic);
             fStack_14 = fStack_4c;
             if ((fStack_74 <= 3.8f + 1.0) || (fStack_4c <= (float)4.5)) {
               if ((0x3f7fffff < (int)fStack_4c) && ((int)fStack_4c < 0x40000001)) {
@@ -584,7 +584,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
                 pSVar17 = &SStack_310;
                 fVar16 = 2.0;
                 core_xform_cpp_transformVector3x4_FUN_00583260
-                          (&g_CVector3f_02cfd900,pCStack_50 + this_ptr->bone_hand,&CStack_1e4);
+                          (&g_ZeroVector,pCStack_50 + this_ptr->bone_hand,&CStack_1e4);
                 pCVar14 = &CStack_220;
                 CStack_220.x = CStack_1e4.x;
                 *(uint *)((int)&CStack_220 + (uint)bVar10 * -8 + 4) =
@@ -632,7 +632,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
             fStack_44 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                   (&pCStack_34->base);
             fStack_80 = fStack_1e8 * fStack_1e8 + fStack_1f0 * fStack_1f0 + fStack_1ec * fStack_1ec;
-            fStack_68 = (float)(((int)fStack_80 >> 1) + g_INT_01d1a0a4);
+            fStack_68 = (float)(((int)fStack_80 >> 1) + g_FastSqrtMagic);
             fStack_14 = fStack_44;
             if ((fStack_68 <= 3.8f) || (fStack_44 <= (float)4.5)) {
               if ((0x3f7fffff < (int)fStack_44) && ((int)fStack_44 < 0x40000001)) {
@@ -643,7 +643,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
                 pSVar17 = &SStack_388;
                 fVar16 = 2.0;
                 core_xform_cpp_transformVector3x4_FUN_00583260
-                          (&g_CVector3f_02cfd900,pCStack_50 + this_ptr->bone_hand,&CStack_13c);
+                          (&g_ZeroVector,pCStack_50 + this_ptr->bone_hand,&CStack_13c);
                 pCVar14 = &CStack_1c0;
                 CStack_1c0.x = CStack_13c.x;
                 *(uint *)((int)&CStack_1c0 + (uint)bVar10 * -8 + 4) =
@@ -709,7 +709,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               fStack_23c = afStack_198[1];
             }
             fStack_28 = fStack_23c * fStack_23c + fStack_244 * fStack_244 + fStack_240 * fStack_240;
-            fStack_24 = (float)(((int)fStack_28 >> 1) + g_INT_01d1a0a4);
+            fStack_24 = (float)(((int)fStack_28 >> 1) + g_FastSqrtMagic);
             if (fStack_24 <= (float)8) {
               fStack_30 = (this_ptr->base).base.collision_cylinder_top;
               if (fStack_30 < (this_ptr->base).base.collision_cylinder_bottom) {

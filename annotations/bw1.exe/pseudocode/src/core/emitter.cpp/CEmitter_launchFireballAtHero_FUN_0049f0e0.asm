@@ -39,7 +39,7 @@
 ;   double g_DOUBLE_005dc957 = 32
 ;   double g_DOUBLE_005dc95f = 1.30899693895833
 ;   float g_FLOAT_005dc967 = 2
-;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -212,7 +212,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049f2b7
     ADD EAX,0x20                        ; 0049f2ba
     PUSH EAX                            ; 0049f2bd
-    MOV EDX,dword ptr [0x0061c010]      ; 0049f2be | g_CFireEffect_PTR_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 0049f2be | g_CFireEffectPtr
     PUSH EDX                            ; 0049f2c4
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00 ; 0049f2c5
         ;   XREF to: 004b5e00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)

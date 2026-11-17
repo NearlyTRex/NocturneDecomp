@@ -22,7 +22,7 @@ CVector3f * __stack_esi core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c90b0(CGhoul
   
   bVar5 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0
-            (&(this_ptr->base).base.model,g_INT_ARRAY_01d22da0[0],&CStack_54);
+            (&(this_ptr->base).base.model,g_GhoulIndices[0],&CStack_54);
   pCVar2 = &CStack_54;
   pCVar3 = &CStack_84;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

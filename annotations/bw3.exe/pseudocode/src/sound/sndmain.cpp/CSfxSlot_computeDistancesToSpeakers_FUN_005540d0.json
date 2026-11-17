@@ -39,43 +39,43 @@
   "globals": [
     {
       "addr": "0060422c",
-      "name": "g_INT_0060422c",
+      "name": "g_AudioChannelCount",
       "type": "int",
       "value": "0x2"
     },
     {
       "addr": "02cf3340",
-      "name": "g_DOUBLE_ARRAY_02cf3340",
+      "name": "g_VirtualSpeakerXPositions",
       "type": "double[8]",
       "value": null
     },
     {
       "addr": "02cf3348",
-      "name": "g_DOUBLE_ARRAY_02cf3340[1]",
+      "name": "g_VirtualSpeakerXPositions[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf3380",
-      "name": "g_DOUBLE_ARRAY_02cf3380",
+      "name": "g_VirtualSpeakerYPositions",
       "type": "double[8]",
       "value": null
     },
     {
       "addr": "02cf3388",
-      "name": "g_DOUBLE_ARRAY_02cf3380[1]",
+      "name": "g_VirtualSpeakerYPositions[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf33c0",
-      "name": "g_DOUBLE_ARRAY_02cf33c0",
+      "name": "g_VirtualSpeakerZPositions",
       "type": "double[8]",
       "value": null
     },
     {
       "addr": "02cf33c8",
-      "name": "g_DOUBLE_ARRAY_02cf33c0[1]",
+      "name": "g_VirtualSpeakerZPositions[1]",
       "type": "undefined4",
       "value": null
     }
@@ -177,25 +177,25 @@
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_02cf3340",
+      "match": "(double *)((int)g_VirtualSpeakerXPositions",
       "severity": "moderate",
-      "text": "(float10)*(double *)((int)g_DOUBLE_ARRAY_02cf3340 + iVar2);",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_02cf3380",
+      "match": "(double *)((int)g_VirtualSpeakerYPositions",
       "severity": "moderate",
-      "text": "(float10)*(double *)((int)g_DOUBLE_ARRAY_02cf3380 + iVar2);",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_02cf33c0",
+      "match": "(double *)((int)g_VirtualSpeakerZPositions",
       "severity": "moderate",
-      "text": "(float10)*(double *)((int)g_DOUBLE_ARRAY_02cf33c0 + iVar2);",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
       "type": "pointer_cast"
     },
     {

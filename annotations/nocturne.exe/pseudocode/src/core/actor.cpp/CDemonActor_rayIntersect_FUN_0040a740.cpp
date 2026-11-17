@@ -128,11 +128,11 @@ LAB_0040a899:
       if (1.0 < local_a0) {
         return 2.0;
       }
-      out_hit->part_index = g_INT_0268ced8;
-      out_hit->lod_index = g_INT_0268cee8;
-      triangle_index = g_INT_0268ceec;
-      iVar2 = g_INT_0268cee8;
-      out_hit->triangle_index = g_INT_0268ceec;
+      out_hit->part_index = g_DeformableModelRayHitPartIndex;
+      out_hit->lod_index = g_DeformableModelRayHitLodIndex;
+      triangle_index = g_DeformableModelRayHitTriangleIndex;
+      iVar2 = g_DeformableModelRayHitLodIndex;
+      out_hit->triangle_index = g_DeformableModelRayHitTriangleIndex;
       local_14 = local_a0;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                               (collision_info->deformable_model);
@@ -140,9 +140,9 @@ LAB_0040a899:
                         (this_ptr_02,iVar2,triangle_index);
       out_hit->bone_index = iVar2;
       if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {
-        local_30.x = g_CVector3f_0268cedc.x;
-        local_30.y = g_CVector3f_0268cedc.y;
-        local_30.z = g_CVector3f_0268cedc.z;
+        local_30.x = g_DeformableModelRayHitNormal.x;
+        local_30.y = g_DeformableModelRayHitNormal.y;
+        local_30.z = g_DeformableModelRayHitNormal.z;
       }
     }
   }

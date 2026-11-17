@@ -24,9 +24,9 @@
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
 ;   int g_INT_01c5bae4
 ;   int g_INT_01c5baec
-;   int g_INT_01c5bb10
-;   int g_INT_01c5bb14
-;   int g_INT_01c5bb18
+;   int g_SelectionColor
+;   int g_TextColor
+;   int g_CursorColor
 ;   uchar[768] g_UCHAR_ARRAY_01c6af98
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+1
 ;   undefined4 g_UCHAR_ARRAY_01c6af98+2
@@ -103,7 +103,7 @@ section .text
     XOR DL,DL                           ; 0047c0f7
     PUSH -0x1                           ; 0047c0f9
     MOV byte ptr [ESP + EAX*0x1 + 0x4],DL ; 0047c0fb
-    MOV EAX,[0x01c5bb14]                ; 0047c0ff | g_INT_01c5bb14
+    MOV EAX,[0x01c5bb14]                ; 0047c0ff | g_TextColor
     PUSH EAX                            ; 0047c104
     PUSH EDI                            ; 0047c105
     MOV EDX,dword ptr [ESP + 0x434]     ; 0047c106
@@ -122,7 +122,7 @@ section .text
     JZ 0x0047c16b                       ; 0047c12c
         ;   XREF to: 0047c16b (CONDITIONAL_JUMP)  ; LAB_0047c16b
     MOV ESI,dword ptr [0x01c5baec]      ; 0047c12e | g_INT_01c5baec
-    MOV EAX,[0x01c5bb18]                ; 0047c134 | g_INT_01c5bb18
+    MOV EAX,[0x01c5bb18]                ; 0047c134 | g_CursorColor
     TEST ESI,ESI                        ; 0047c139
     JNZ 0x0047c27d                      ; 0047c13b
         ;   XREF to: 0047c27d (CONDITIONAL_JUMP)  ; LAB_0047c27d
@@ -171,7 +171,7 @@ section .text
     MOV EDX,ESI                         ; 0047c1a4
     MOV ESI,EAX                         ; 0047c1a6
     MOV EAX,EDX                         ; 0047c1a8
-    MOV EDX,dword ptr [0x01c5bb10]      ; 0047c1aa | g_INT_01c5bb10
+    MOV EDX,dword ptr [0x01c5bb10]      ; 0047c1aa | g_SelectionColor
         ;   Label: LAB_0047c1aa
     MOV ECX,dword ptr [0x01c5baec]      ; 0047c1b0 | g_INT_01c5baec
     MOV dword ptr [ESP + 0x40c],EDI     ; 0047c1b6
@@ -232,7 +232,7 @@ section .text
         ;   XREF to: 0047c084 (UNCONDITIONAL_JUMP)  ; LAB_0047c084
     PUSH -0x1                           ; 0047c25e
         ;   Label: LAB_0047c25e
-    MOV EDX,dword ptr [0x01c5bb14]      ; 0047c260 | g_INT_01c5bb14
+    MOV EDX,dword ptr [0x01c5bb14]      ; 0047c260 | g_TextColor
     PUSH EDX                            ; 0047c266
     PUSH EDI                            ; 0047c267
     MOV ECX,dword ptr [ESP + 0x434]     ; 0047c268

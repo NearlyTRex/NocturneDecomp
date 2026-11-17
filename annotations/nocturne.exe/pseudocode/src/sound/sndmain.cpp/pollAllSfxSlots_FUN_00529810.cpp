@@ -14,18 +14,18 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810(void)
   CSfxSlot *this_ptr;
   float local_18;
   
-  if (g_INT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 5260;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10();
-  iVar2 = g_INT_02dc84c0;
-  g_INT_02dc84c0 = wincore_winrun_cpp_getTime_FUN_00558a30();
+  iVar2 = g_SoundStartTime;
+  g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_00558a30();
   local_18 = 0.0;
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
   if (uVar1 != 0) {
-    local_18 = (float)(g_INT_02dc84c0 - iVar2) * (float)8.4771050347222196e-07;
+    local_18 = (float)(g_SoundStartTime - iVar2) * (float)8.4771050347222196e-07;
     if (local_18 < 0.0) {
       local_18 = 0.0;
     }

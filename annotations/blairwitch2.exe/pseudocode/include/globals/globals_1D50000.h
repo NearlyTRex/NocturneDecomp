@@ -12,13 +12,13 @@
 // =============================================================================
 
 // SChatOutMessage[50]
-extern SChatOutMessage g_SChatOutMessage_ARRAY_01d51054[50];
+extern SChatOutMessage g_ChatOutMessages[50];
 
 // SSimFrame[512]
 extern SSimFrame g_SSimFrame_ARRAY_01d54644[512];
 
 // int
-extern int g_INT_01d51050;
-extern int g_INT_01d5463c;
-extern int g_INT_01d54640;
+extern int g_ChatOutCount;
+extern int g_ChatOutSequence;
+extern int g_SimFrameCount;
 

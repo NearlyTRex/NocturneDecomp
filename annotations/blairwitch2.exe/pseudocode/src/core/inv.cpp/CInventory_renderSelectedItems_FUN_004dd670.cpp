@@ -21,18 +21,18 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd670(CInventory
   
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((CHero *)this_ptr->owner == g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4])) {
-    if (g_INT_006141bc != g_INT_01d02f40) {
+    if (g_INT_006141bc != g_InventoryScreenHeight) {
       core_inv_cpp_loadAssets_FUN_004da990();
     }
     if ((this_ptr->selected_weapons[this_ptr->current_group] != (CWeapon *)0x0) &&
        (0.0 < this_ptr->weapon_highlight_timer)) {
       iVar5 = 8;
       iVar6 = 0x50;
-      iVar4 = g_INT_00617cd4;
-      iVar3 = g_INT_00617cd0;
+      iVar4 = g_InventoryHeight;
+      iVar3 = g_InventoryWidth;
       if ((g_INT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {
-        iVar3 = g_INT_00617cd0 / 2;
-        iVar4 = g_INT_00617cd4 / 2;
+        iVar3 = g_InventoryWidth / 2;
+        iVar4 = g_InventoryHeight / 2;
         iVar6 = 0x28;
         iVar5 = 4;
       }
@@ -61,11 +61,11 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd670(CInventory
        (0.0 < this_ptr->item_highlight_timer)) {
       iVar5 = 0x10;
       iVar6 = 0x40;
-      iVar4 = g_INT_00617cd4;
-      iVar3 = g_INT_00617cd0;
+      iVar4 = g_InventoryHeight;
+      iVar3 = g_InventoryWidth;
       if ((g_INT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {
-        iVar3 = g_INT_00617cd0 / 2;
-        iVar4 = g_INT_00617cd4 / 2;
+        iVar3 = g_InventoryWidth / 2;
+        iVar4 = g_InventoryHeight / 2;
         iVar6 = 0x20;
         iVar5 = 8;
       }

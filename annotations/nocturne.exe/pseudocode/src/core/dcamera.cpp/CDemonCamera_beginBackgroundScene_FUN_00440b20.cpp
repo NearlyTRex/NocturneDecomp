@@ -21,10 +21,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
     g_CurrentLineNumber = 1083;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
   }
-  g_INT_0140efa8 = g_INT_0140efa8 + 1;
-  if (g_INT_0140efa8 == 1) {
-    g_INT_0140efac = g_BitsPerPixel;
-    g_INT_0140efb0 = g_UseExternalRenderer;
+  g_BackgroundSceneDepth = g_BackgroundSceneDepth + 1;
+  if (g_BackgroundSceneDepth == 1) {
+    g_BackgroundSavedBitsPerPixel = g_BitsPerPixel;
+    g_BackgroundSavedUseExternalRenderer = g_UseExternalRenderer;
     ppvVar3 = g_ScreenBufferArray;
     ppuVar4 = g_ARRAY_PTR_0140efb4;
     for (uVar1 = g_WindowHeight & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
@@ -37,11 +37,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
       ppvVar3 = (void **)((int)ppvVar3 + (uint)bVar5 * -2 + 1);
       ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar5 * -2 + 1);
     }
-    g_INT_01410274 = (int)g_RedBitPosition;
+    g_BackgroundSavedRedBitPosition = (int)g_RedBitPosition;
     g_BitsPerPixel = 0x20;
-    g_INT_01410278 = (int)g_GreenBitPosition;
+    g_BackgroundSavedGreenBitPosition = (int)g_GreenBitPosition;
     g_UseExternalRenderer = 0;
-    g_INT_0141027c = (int)g_BlueBitPosition;
+    g_BackgroundSavedBlueBitPosition = (int)g_BlueBitPosition;
     g_GreenBitPosition.dword = 8;
     g_BlueBitPosition.dword = 0;
     g_RedBitPosition.dword = 0x10;

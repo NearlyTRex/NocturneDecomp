@@ -10,7 +10,7 @@ ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_
 
 {
   if (g_INT_005fba20 == 8) {
-    if (g_INT_01c6e2a0 != 0) {
+    if (g_MMXSupported != 0) {
       return cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00434d42;
     }
     return cockpit_ckptutil_c_optimizedMemcpy_FUN_00434c48;

@@ -18,17 +18,17 @@
 ;
 ; Referenced Globals:
 ;   float g_FLOAT_005ddfbc = 256
-;   int g_INT_005f17e4 = 0x40
-;   int g_INT_005f17e8 = 0x40
-;   int g_INT_005f17ec = 0x40
+;   int g_FogColorIndexR = 0x40
+;   int g_FogColorIndexG = 0x40
+;   int g_FogColorIndexB = 0x40
 ;   int g_INT_005fba20 = 0x8
-;   undefined4 g_UINT_ARRAY_00b9e14c[64]
-;   int g_INT_0149ef08
+;   undefined4 g_LightmapTexturePalette[64]
+;   int g_BackgroundSceneDepth
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
-;   int g_INT_01c6e24c
-;   ulong g_ULONG_01c6e2bc
+;   int g_PerspectiveReciprocal
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -42,15 +42,15 @@ section .text
     TEST EAX,EAX                        ; 0045058c
     JZ 0x004505a6                       ; 0045058e
         ;   XREF to: 004505a6 (CONDITIONAL_JUMP)  ; LAB_004505a6
-    CMP dword ptr [0x0149ef08],0x0      ; 00450590 | g_INT_0149ef08
+    CMP dword ptr [0x0149ef08],0x0      ; 00450590 | g_BackgroundSceneDepth
     JZ 0x004505b0                       ; 00450597
         ;   XREF to: 004505b0 (CONDITIONAL_JUMP)  ; LAB_004505b0
     XOR EBP,EBP                         ; 00450599
-    MOV dword ptr [0x01c6e24c],EBP      ; 0045059b | g_INT_01c6e24c
+    MOV dword ptr [0x01c6e24c],EBP      ; 0045059b | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004505a1
     POP EBP                             ; 004505a4
     RET                                 ; 004505a5
-    MOV [0x01c6e24c],EAX                ; 004505a6 | g_INT_01c6e24c
+    MOV [0x01c6e24c],EAX                ; 004505a6 | g_PerspectiveReciprocal
         ;   Label: LAB_004505a6
     ADD ESP,0xc                         ; 004505ab
     POP EBP                             ; 004505ae
@@ -76,16 +76,16 @@ section .text
     MOV EAX,dword ptr [ECX + 0x3c]      ; 004505e3
     PUSH ECX                            ; 004505e6
     CALL dword ptr [EAX + 0x8]          ; 004505e7
-    MOV ECX,dword ptr [0x005f17e4]      ; 004505ea | g_INT_005f17e4
+    MOV ECX,dword ptr [0x005f17e4]      ; 004505ea | g_FogColorIndexR
     MOV ESI,EAX                         ; 004505f0
-    MOV EAX,[0x005f17ec]                ; 004505f2 | g_INT_005f17ec
+    MOV EAX,[0x005f17ec]                ; 004505f2 | g_FogColorIndexB
     MOV EDI,dword ptr [0x005fba20]      ; 004505f7 | g_INT_005fba20
-    MOV EBX,dword ptr [ECX*0x4 + 0xb9e14c] ; 004505fd | g_UINT_ARRAY_00b9e14c[64]
-    MOV EDX,dword ptr [EAX*0x4 + 0xb9e14c] ; 00450604 | g_UINT_ARRAY_00b9e14c[64]
-    MOV EAX,[0x005f17e8]                ; 0045060b | g_INT_005f17e8
+    MOV EBX,dword ptr [ECX*0x4 + 0xb9e14c] ; 004505fd | g_LightmapTexturePalette[64]
+    MOV EDX,dword ptr [EAX*0x4 + 0xb9e14c] ; 00450604 | g_LightmapTexturePalette[64]
+    MOV EAX,[0x005f17e8]                ; 0045060b | g_FogColorIndexG
     ADD ESP,0xc                         ; 00450610
     AND EBX,0xff                        ; 00450613
-    MOV EAX,dword ptr [EAX*0x4 + 0xb9e14c] ; 00450619 | g_UINT_ARRAY_00b9e14c[64]
+    MOV EAX,dword ptr [EAX*0x4 + 0xb9e14c] ; 00450619 | g_LightmapTexturePalette[64]
     AND EDX,0xff                        ; 00450620
     AND EAX,0xff                        ; 00450626
     CMP EDI,0x20                        ; 0045062b
@@ -101,8 +101,8 @@ section .text
     MOV ECX,EBX                         ; 0045064a
     OR ECX,EDX                          ; 0045064c
         ;   Label: LAB_0045064c
-    MOV dword ptr [0x01c6e24c],ESI      ; 0045064e | g_INT_01c6e24c
-    MOV dword ptr [0x01c6e2bc],ECX      ; 00450654 | g_ULONG_01c6e2bc
+    MOV dword ptr [0x01c6e24c],ESI      ; 0045064e | g_PerspectiveReciprocal
+    MOV dword ptr [0x01c6e2bc],ECX      ; 00450654 | g_SolidColorMode
     POP EBX                             ; 0045065a
     POP ESI                             ; 0045065b
     POP EDI                             ; 0045065c

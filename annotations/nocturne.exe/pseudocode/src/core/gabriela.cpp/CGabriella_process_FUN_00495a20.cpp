@@ -239,8 +239,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
           else if (uVar9 < 0xf) {
             local_2c = (CAmmoBox *)
                        core_actor_cpp_castToClassHash_FUN_0040d890
-                                 ((this_ptr->base).object_to_pick_up,
-                                  g_CAmmoBoxActorType_007641f8.name_hash);
+                                 ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash);
             if (local_2c != (CAmmoBox *)0x0) {
               local_14 = (CCharacter_full_vtable *)
                          core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
@@ -460,7 +459,7 @@ LAB_00496834:
   }
   pCVar14 = core_actor_cpp_castToClassHash_FUN_0040d890
                       ((this_ptr->base).base.carry_hands[0].carry_actor,
-                       g_CLightActorActorType_00764a9c.name_hash);
+                       g_CLightActorClassInfo.name_hash);
   if (pCVar14 != (CDemonActor *)0x0) {
     if ((((this_ptr->base).player_input.action_state.light != 0) && (is_holstering == 0)) &&
        (pCVar14[0x1a].is_transparent = (uint)(pCVar14[0x1a].is_transparent == 0),
@@ -623,9 +622,8 @@ LAB_00495fcb:
     if ((1.0 < (float)local_14) &&
        (pCVar15 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (&((this_ptr->base).pushed_object)->base,
-                             g_CBoxActorActorType_00764800.name_hash), pCVar15 != (CBoxActor *)0x0))
-    {
+                            (&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)
+       , pCVar15 != (CBoxActor *)0x0)) {
       core_gabriela_cpp_CGabriella_getTorsoCenterPosition_FUN_00497870(this_ptr,&local_7c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_16c,&local_7c);
@@ -643,7 +641,7 @@ LAB_00495fcb:
   if (this_ptr->fire_state == 3) {
     pCVar14 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (&((this_ptr->base).inventory.selected_weapon)->base,
-                         g_CDynamiteActorType_01bca088.name_hash);
+                         g_CDynamiteClassInfo.name_hash);
     if (pCVar14 != (CDemonActor *)0x0) {
       if ((this_ptr->base).player_input.action_state.fire == 0) {
         this_ptr->fire_state = 2;

@@ -50,9 +50,9 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
     iVar2 = 0;
     iVar1 = 0;
     do {
-      local_3c = (float)*(int *)((int)&g_CVector3i_ARRAY_005ad594[0].x + iVar1) * local_c;
-      local_38 = (float)*(int *)((int)&g_CVector3i_ARRAY_005ad594[0].y + iVar1) * local_c;
-      local_34 = (float)*(int *)((int)&g_CVector3i_ARRAY_005ad594[0].z + iVar1) * local_c;
+      local_3c = (float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c;
+      local_38 = (float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c;
+      local_34 = (float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c;
       local_30.x = (int)ROUND(local_3c * 256.0f);
       local_30.y = (int)ROUND(local_38 * 256.0f);
       local_30.z = (int)ROUND(local_34 * 256.0f);
@@ -65,26 +65,21 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
     iVar1 = 0;
     do {
       this_ptr_00 = PTR_g_CDemonRenderer_01b4d738_005ae700;
-      local_60 = *(uint *)
-                  ((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + -0x14);
-      local_5c = *(uint *)
-                  ((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + -0x10);
-      local_58 = *(uint *)
-                  ((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + -0xc);
-      local_54 = *(uint *)((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + -8)
-      ;
+      local_60 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x14);
+      local_5c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x10);
+      local_58 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0xc);
+      local_54 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -8);
       iVar2 = iVar1 + -4;
-      local_4c = *(uint *)((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1);
-      local_48 = *(uint *)((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + 4);
-      local_44 = *(uint *)((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + 8);
-      local_40 = *(uint *)
-                  ((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].vertices + iVar1 + 0xc);
+      local_4c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1);
+      local_48 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 4);
+      local_44 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 8);
+      local_40 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 0xc);
       scanline_renderer = (CustomScanlineFunc *)local_64;
       iVar1 = iVar1 + 0x24;
       prim = (SMRGLHeaderPrimitive *)0x44d008;
       dVar3 = round
-                        ((double)((float)*(int *)((int)g_SMRGLLightPrimitive_ARRAY_005ad87c[0].
-                                                       vertices + iVar2) * this_ptr->radius));
+                        ((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2) *
+                                 this_ptr->radius));
       local_54 = (int)ROUND(dVar3);
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
                 ((CDemonRenderer *)this_ptr_00,prim,scanline_renderer);

@@ -41,8 +41,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_005b4798]
-        paddw MM1,qword ptr [g_MMX_INTEGER_005b47a0]
+        paddw MM0,qword ptr [g_AmbientLightMMX1]
+        paddw MM1,qword ptr [g_AmbientLightMMX2]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1
@@ -71,8 +71,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [g_MMX_INTEGER_005b4798]
-        paddw MM1,qword ptr [g_MMX_INTEGER_005b47a0]
+        paddw MM0,qword ptr [g_AmbientLightMMX1]
+        paddw MM1,qword ptr [g_AmbientLightMMX2]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1

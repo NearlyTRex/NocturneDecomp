@@ -36,7 +36,7 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 at 00556307
 ;
 ; Referenced Globals:
-;   float g_FLOAT_005db954 = 2
+;   float g_GroundCheckOffsetAbove = 2
 ;   float g_FLOAT_005db958 = -10
 ;   float g_FLOAT_0152c2a8
 ;   int g_INT_0152c2ac
@@ -47,9 +47,9 @@
 ;   float g_FLOAT_0152c2c0
 ;   int g_INT_0152c2c4
 ;   float g_FLOAT_0152c2c8
-;   CVector3f g_CVector3f_02c8af28
-;   undefined4 g_CVector3f_02c8af28.y
-;   undefined4 g_CVector3f_02c8af28.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00458210
@@ -80,7 +80,7 @@ section .text
     LEA EDI,[ESP + 0x10]                ; 0048bde3
     MOV ESI,EAX                         ; 0048bde7
     FXCH                                ; 0048bde9
-    FADD float ptr [0x005db954]         ; 0048bdeb | g_FLOAT_005db954
+    FADD float ptr [0x005db954]         ; 0048bdeb | g_GroundCheckOffsetAbove
     MOVSD ES:EDI,ESI                    ; 0048bdf1
     MOVSD ES:EDI,ESI                    ; 0048bdf2
     MOVSD ES:EDI,ESI                    ; 0048bdf3
@@ -231,9 +231,9 @@ section .text
     CMP EAX,0x2c8af28                   ; 0048bf71
     JZ 0x0048bf9a                       ; 0048bf76
         ;   XREF to: 0048bf9a (CONDITIONAL_JUMP)  ; LAB_0048bf9a
-    FLD float ptr [0x02c8af28]          ; 0048bf78 | g_CVector3f_02c8af28
-    FLD float ptr [0x02c8af30]          ; 0048bf7e | g_CVector3f_02c8af28.z
-    MOV EAX,[0x02c8af2c]                ; 0048bf84 | g_CVector3f_02c8af28.y
+    FLD float ptr [0x02c8af28]          ; 0048bf78 | g_ZeroVector
+    FLD float ptr [0x02c8af30]          ; 0048bf7e | g_ZeroVector.z
+    MOV EAX,[0x02c8af2c]                ; 0048bf84 | g_ZeroVector.y
     MOV [0x0152c2c4],EAX                ; 0048bf89 | g_INT_0152c2c4
     FSTP float ptr [0x0152c2c8]         ; 0048bf8e | g_FLOAT_0152c2c8
     FSTP float ptr [0x0152c2c0]         ; 0048bf94 | g_FLOAT_0152c2c0

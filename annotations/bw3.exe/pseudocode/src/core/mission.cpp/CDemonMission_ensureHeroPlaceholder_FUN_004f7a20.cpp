@@ -70,7 +70,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20(C
       shape_edittool_cpp_CStrList_add_FUN_00482070(&local_3cc.base,pCVar3->actor_name);
     }
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
-                       (pCVar3,g_CDemonActorType_01d5ba74.name_hash);
+                       (pCVar3,g_CHeroPlaceholderClassInfo.name_hash);
     if ((pCVar2 != (CDemonActor *)0x0) && (*(int *)pCVar2[1].actor_name == 0)) break;
     pCVar3 = pCVar3->next_actor;
   }

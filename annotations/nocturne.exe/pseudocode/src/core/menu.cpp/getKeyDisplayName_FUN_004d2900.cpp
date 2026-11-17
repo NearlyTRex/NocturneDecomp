@@ -78,9 +78,9 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_c
   if (pcVar3 == (char *)0x0) {
     pcVar3 = wincore_winrun_cpp_getKeyName_FUN_00559560(key_code);
   }
-  pcVar2 = g_CHAR_ARRAY_ARRAY_01cc8658[g_INT_01cc8650];
+  pcVar2 = g_StringBuffers[g_StringBufferIndex];
   pcVar4 = pcVar2;
-  g_INT_01cc8650 = (g_INT_01cc8650 + 1) % 10;
+  g_StringBufferIndex = (g_StringBufferIndex + 1) % 10;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

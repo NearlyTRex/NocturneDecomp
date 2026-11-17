@@ -194,9 +194,9 @@ LAB_004093ad:
                         (this_ptr_01,iVar1,triangle_index);
       out_hit->bone_index = iVar1;
       if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 4) {
-        local_3c._4_4_ = g_CVector3f_0272af48.x;
-        afStack_34[0] = g_CVector3f_0272af48.y;
-        afStack_34[1] = g_CVector3f_0272af48.z;
+        local_3c._4_4_ = g_DeformableModelRayHitNormal.x;
+        afStack_34[0] = g_DeformableModelRayHitNormal.y;
+        afStack_34[1] = g_DeformableModelRayHitNormal.z;
       }
     }
   }

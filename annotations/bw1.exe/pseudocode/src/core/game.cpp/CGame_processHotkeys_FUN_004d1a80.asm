@@ -95,7 +95,7 @@ section .text
     MOV ECX,dword ptr [0x006236b8]      ; 004d1af5 | g_CSound_PTR_006236b8
     XOR EDX,EDX                         ; 004d1afb
     PUSH ECX                            ; 004d1afd
-    MOV dword ptr [0x01c43544],EDX      ; 004d1afe | g_BIT_INTEGER32_01c43544
+    MOV dword ptr [0x01c43544],EDX      ; 004d1afe | g_MouseButtonFlags
     CALL core_sound.cpp_CSound_shutdown_FUN_0057cdb0 ; 004d1b04
         ;   XREF to: 0057cdb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0057cdb0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d1b09
@@ -146,10 +146,10 @@ section .text
     TEST EAX,EAX                        ; 004d1b76
     JZ 0x004d1b8e                       ; 004d1b78
         ;   XREF to: 004d1b8e (CONDITIONAL_JUMP)  ; LAB_004d1b8e
-    CMP dword ptr [0x01d39d34],0x0      ; 004d1b7a | g_INT_01d39d34
+    CMP dword ptr [0x01d39d34],0x0      ; 004d1b7a | g_RenderMotionDebug
     SETZ AL                             ; 004d1b81
     AND EAX,0xff                        ; 004d1b84
-    MOV [0x01d39d34],EAX                ; 004d1b89 | g_INT_01d39d34
+    MOV [0x01d39d34],EAX                ; 004d1b89 | g_RenderMotionDebug
     CMP dword ptr [EBX + 0x1f8],0x0     ; 004d1b8e
         ;   Label: LAB_004d1b8e
     JZ 0x004d2149                       ; 004d1b95
@@ -234,7 +234,7 @@ section .text
         ;   Label: LAB_004d1c51
     JZ 0x004d1c67                       ; 004d1c58
         ;   XREF to: 004d1c67 (CONDITIONAL_JUMP)  ; LAB_004d1c67
-    CMP dword ptr [0x01cd0c38],0x0      ; 004d1c5a | g_INT_01cd0c38
+    CMP dword ptr [0x01cd0c38],0x0      ; 004d1c5a | g_MovieRecordingArmed
     JZ 0x004d2196                       ; 004d1c61
         ;   XREF to: 004d2196 (CONDITIONAL_JUMP)  ; LAB_004d2196
     PUSH 0x1d                           ; 004d1c67
@@ -502,7 +502,7 @@ section .text
     JZ 0x004d1f44                       ; 004d1f2e
         ;   XREF to: 004d1f44 (CONDITIONAL_JUMP)  ; LAB_004d1f44
     PUSH 0x5e1a0c                       ; 004d1f30 | = "GoToMap"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 004d1f35 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 004d1f35 | g_CEventListPtr
     PUSH EDI                            ; 004d1f3b
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004d1f3c
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -519,7 +519,7 @@ section .text
     JZ 0x004d1f6e                       ; 004d1f58
         ;   XREF to: 004d1f6e (CONDITIONAL_JUMP)  ; LAB_004d1f6e
     PUSH 0x5e1a14                       ; 004d1f5a | = "GoToCompass"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004d1f5f | g_CEventList_PTR_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004d1f5f | g_CEventListPtr
     PUSH ECX                            ; 004d1f65
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004d1f66
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -649,7 +649,7 @@ section .text
         ;   XREF to: 004d1aac (UNCONDITIONAL_JUMP)  ; LAB_004d1aac
     PUSH 0x5e1a20                       ; 004d20bb | = "UseSPS"
         ;   Label: LAB_004d20bb
-    MOV EDI,dword ptr [0x0061b4d0]      ; 004d20c0 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 004d20c0 | g_CEventListPtr
     PUSH EDI                            ; 004d20c6
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004d20c7
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

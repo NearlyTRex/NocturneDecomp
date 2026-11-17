@@ -35,15 +35,15 @@
 ;   TerminatedCString s_rain_wav_1_005d7923
 ;   double g_DOUBLE_005d7933 = 0.0000152590218966964
 ;   double g_DOUBLE_005d793b = 0.600000000000000
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   CVector3f g_CVector3f_02cfd900
-;   undefined4 g_CVector3f_02cfd900.y
-;   undefined4 g_CVector3f_02cfd900.z
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -200,11 +200,11 @@ section .text
     CMP ECX,0x2cfd900                   ; 0057bf3a
     JZ 0x0057bf59                       ; 0057bf40
         ;   XREF to: 0057bf59 (CONDITIONAL_JUMP)  ; LAB_0057bf59
-    MOV EAX,[0x02cfd900]                ; 0057bf42 | g_CVector3f_02cfd900
+    MOV EAX,[0x02cfd900]                ; 0057bf42 | g_ZeroVector
     MOV dword ptr [ECX],EAX             ; 0057bf47 | DAT_02d17d88 | DAT_02d17d94
-    MOV EAX,[0x02cfd904]                ; 0057bf49 | g_CVector3f_02cfd900.y
+    MOV EAX,[0x02cfd904]                ; 0057bf49 | g_ZeroVector.y
     MOV dword ptr [ECX + 0x4],EAX       ; 0057bf4e | DAT_02d17d8c | DAT_02d17d98
-    MOV EAX,[0x02cfd908]                ; 0057bf51 | g_CVector3f_02cfd900.z
+    MOV EAX,[0x02cfd908]                ; 0057bf51 | g_ZeroVector.z
     MOV dword ptr [ECX + 0x8],EAX       ; 0057bf56 | DAT_02d17d90
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057bf59
         ;   Label: LAB_0057bf59
@@ -339,7 +339,7 @@ section .text
     JA 0x0057c11a                       ; 0057c0a9
         ;   XREF to: 0057c11a (CONDITIONAL_JUMP)  ; LAB_0057c11a
     PUSH 0x5d78f3                       ; 0057c0ab | = "noLightningFlash"
-    MOV ECX,dword ptr [0x005fba60]      ; 0057c0b0 | g_CEventList_PTR_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 0057c0b0 | g_CEventListPtr
     PUSH ECX                            ; 0057c0b6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 0057c0b7
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -452,7 +452,7 @@ section .text
     FLD float ptr [ESP + 0x4c]          ; 0057c1d8
     ADD ESP,0x8                         ; 0057c1dc
     PUSH 0x5d7904                       ; 0057c1df | = "noLightningFlash"
-    MOV EDI,dword ptr [0x005fba60]      ; 0057c1e4 | g_CEventList_PTR_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 0057c1e4 | g_CEventListPtr
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057c1ea
     PUSH EDI                            ; 0057c1ed
     FSTP float ptr [EAX + 0x2c]         ; 0057c1ee

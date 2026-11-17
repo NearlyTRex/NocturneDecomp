@@ -10,13 +10,13 @@
 ; double           Stack[0x18]:8   z
 ;
 ; Referenced Globals:
-;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02cf49d0]      ; 0055b7b0 | g_IDirectSound3DListener_PTR_02cf49d0
+    MOV EDX,dword ptr [0x02cf49d0]      ; 0055b7b0 | g_DirectSound3DListener
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_set3DListenerPos_FUN_0055b7b0
     TEST EDX,EDX                        ; 0055b7b6
     JNZ 0x0055b7bb                      ; 0055b7b8

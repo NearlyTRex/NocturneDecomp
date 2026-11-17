@@ -13,7 +13,7 @@ int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_00521bf0(void)
   int iVar2;
   int iVar3;
   
-  if (g_INT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 502;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");

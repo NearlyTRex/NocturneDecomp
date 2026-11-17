@@ -81,8 +81,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
-;   undefined4 g_INT_ARRAY_0264be30[1]
-;   undefined4 g_INT_ARRAY_0264be30[2]
+;   undefined4 g_StrangerIndices[1]
+;   undefined4 g_StrangerIndices[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -276,7 +276,7 @@ section .text
     MOV dword ptr [ESP + 0xc4],EAX      ; 0056d5f7
     MOV EAX,dword ptr [ESP + 0x140]     ; 0056d5fe
     MOV dword ptr [ESP + 0xc8],EAX      ; 0056d605
-    MOV ESI,dword ptr [0x0264be34]      ; 0056d60c | g_INT_ARRAY_0264be30[1]
+    MOV ESI,dword ptr [0x0264be34]      ; 0056d60c | g_StrangerIndices[1]
         ;   Label: LAB_0056d60c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056d612
     PUSH ESI                            ; 0056d615
@@ -392,7 +392,7 @@ section .text
         ;   XREF to: 0056d7b7 (CONDITIONAL_JUMP)  ; LAB_0056d7b7
     MOV EAX,dword ptr [ESP + 0x20]      ; 0056d7af
     MOV dword ptr [ESP + 0x24],EAX      ; 0056d7b3
-    MOV EDX,dword ptr [0x0264be38]      ; 0056d7b7 | g_INT_ARRAY_0264be30[2]
+    MOV EDX,dword ptr [0x0264be38]      ; 0056d7b7 | g_StrangerIndices[2]
         ;   Label: LAB_0056d7b7
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056d7bd
     PUSH EDX                            ; 0056d7c0

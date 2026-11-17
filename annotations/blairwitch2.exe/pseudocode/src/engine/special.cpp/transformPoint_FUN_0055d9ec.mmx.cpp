@@ -9,15 +9,15 @@
 void __cdecl engine_special_cpp_transformPoint_FUN_0055d9ec(SProjectedVertex *output,CVector3i *input)
 {
 __asm {
-        test dword ptr [g_INT_01c38b40],0xffffffff
+        test dword ptr [g_MMXSupported],0xffffffff
         jz LAB_0055db3a
         mov EBX,dword ptr [ESP + 0x8]
         mov EAX,dword ptr [EBX]
         mov ECX,dword ptr [EBX + 0x4]
         mov EDX,dword ptr [EBX + 0x8]
-        sub EAX,dword ptr [g_INT_01c38b78]
-        sub ECX,dword ptr [g_INT_01c38b7c]
-        sub EDX,dword ptr [g_INT_01c38b80]
+        sub EAX,dword ptr [g_CameraOriginX]
+        sub ECX,dword ptr [g_CameraOriginY]
+        sub EDX,dword ptr [g_CameraOriginZ]
         movd MM0,EAX
         movd MM1,ECX
         movd MM2,EDX
@@ -122,9 +122,9 @@ __asm {
         mov EAX,dword ptr [ESI]
         mov EBX,dword ptr [ESI + 0x4]
         mov ECX,dword ptr [ESI + 0x8]
-        sub EAX,dword ptr [g_INT_01c38b78]
-        sub EBX,dword ptr [g_INT_01c38b7c]
-        sub ECX,dword ptr [g_INT_01c38b80]
+        sub EAX,dword ptr [g_CameraOriginX]
+        sub EBX,dword ptr [g_CameraOriginY]
+        sub ECX,dword ptr [g_CameraOriginZ]
         mov [g_INT_0061c7d8],EAX
         mov dword ptr [g_INT_0061c7dc],EBX
         mov dword ptr [g_INT_0061c7e0],ECX

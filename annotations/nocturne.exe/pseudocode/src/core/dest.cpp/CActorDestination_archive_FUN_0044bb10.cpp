@@ -12,18 +12,18 @@ void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0044bb10(CActorDestinat
   char local_104 [256];
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
-  if (g_INT_005ad4bc < 2) {
+  if (g_CActorDestinationClassVersion < 2) {
     core_actor_cpp_archiveString_FUN_0040c6d0(local_104,"whoGoesHere");
     this_ptr->dest_actor = (CDemonActor *)0x0;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->what_event,"whatEvent");
-  if (1 < g_INT_005ad4bc) {
+  if (1 < g_CActorDestinationClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->dest_actor,"destActor");
   }
-  if (2 < g_INT_005ad4bc) {
+  if (2 < g_CActorDestinationClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->dest_class,"destClass");
   }
-  if (g_INT_005ad4bc < 4) {
+  if (g_CActorDestinationClassVersion < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900

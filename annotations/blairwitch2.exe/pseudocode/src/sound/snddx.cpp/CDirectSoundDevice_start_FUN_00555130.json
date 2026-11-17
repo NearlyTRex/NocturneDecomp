@@ -84,49 +84,49 @@
     },
     {
       "addr": "0264a5cc",
-      "name": "g_IDirectSoundBuffer_PTR_0264a5cc",
+      "name": "g_DirectSoundSecondaryBuffer",
       "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "0264a5d8",
-      "name": "g_INT_0264a5d8",
+      "name": "g_StreamBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264a5dc",
-      "name": "g_INT_0264a5dc",
+      "name": "g_StreamSampleRate",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264a5e0",
-      "name": "g_INT_0264a5e0",
+      "name": "g_StreamChannelCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264a5e4",
-      "name": "g_INT_0264a5e4",
+      "name": "g_StreamSamplesPerBlock",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264a5e8",
-      "name": "g_INT_0264a5e8",
+      "name": "g_StreamBlockSizeBytes",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264a5ec",
-      "name": "g_INT_0264a5ec",
+      "name": "g_StreamBlockCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "0264a5f0",
-      "name": "g_INT_0264a5f0",
+      "name": "g_StreamCurrentBlock",
       "type": "int",
       "value": null
     }
@@ -234,7 +234,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 33,
       "match": "in_stack_fffffcd0",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));",
@@ -242,7 +242,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 32,
+      "line": 33,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));",
@@ -250,7 +250,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 38,
       "match": "&stack0xfffffcd0",
       "severity": "moderate",
       "text": "format = &stack0xfffffcd0;",
@@ -269,7 +269,7 @@
       "line": 18,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_0264a5d8 + (g_INT_0264a5d8 >> 0x1f) * -8) -",
+      "text": "((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -277,7 +277,7 @@
       "line": 19,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_0264a5d8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_0264a5e4 * g_INT_0264a5e0;",
+      "text": "(uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamSamplesPerBlock *",
       "type": "signed_shift_global_idiom"
     }
   ],

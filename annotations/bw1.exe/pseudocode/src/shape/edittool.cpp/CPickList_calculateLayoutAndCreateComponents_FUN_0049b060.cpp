@@ -38,7 +38,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c3eb50->max_char_width;
   g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
   ;
   this_ptr->row_height = g_INT_01c3f53c + 1;
@@ -180,12 +180,12 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00496840
             (g_CEditorToolsPtr,iVar10,iVar4,dialog_title,window_flags);
-  iVar10 = (g_INT_01c4f010 - g_INT_01c4f008) + 1;
+  iVar10 = (g_ClipRight - g_INT_01c4f008) + 1;
   iVar4 = (g_INT_01c4f014 - g_INT_01c4f00c) + 1;
   if (this_ptr->scroll_mode == 1) {
     iVar10 = iVar10 - local_30;
     bottom_pos = (g_INT_01c4f014 - local_1c) - local_28;
-    iVar6 = (g_INT_01c4f010 - local_30) + 1;
+    iVar6 = (g_ClipRight - local_30) + 1;
     top_pos = g_INT_01c4f00c;
   }
   else {
@@ -196,18 +196,18 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     iVar6 = g_INT_01c4f008;
   }
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_0049c9f0
-            (&this_ptr->scrollbar,iVar6,top_pos,g_INT_01c4f010,bottom_pos);
+            (&this_ptr->scrollbar,iVar6,top_pos,g_ClipRight,bottom_pos);
 LAB_0049b5ec:
   if (0 < (int)local_18) {
     local_24 = (g_INT_01c4f014 - local_1c) + 1;
     if (this_ptr->ok_button_text[0] != '\0') {
-      iVar6 = (g_INT_01c4f010 + 1) - local_20;
+      iVar6 = (g_ClipRight + 1) - local_20;
       shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_0049d530
                 (&this_ptr->ok_button,iVar6,local_24,iVar6 + -1 + iVar5,local_24 + local_1c + -1,
                  this_ptr->ok_button_text);
     }
     if (this_ptr->cancel_button_text[0] != '\0') {
-      iVar6 = (g_INT_01c4f010 + 1) - iVar5;
+      iVar6 = (g_ClipRight + 1) - iVar5;
       shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_0049d530
                 (&this_ptr->cancel_button,iVar6,local_24,iVar6 + -1 + iVar5,local_24 + local_1c + -1
                  ,this_ptr->cancel_button_text);
@@ -229,7 +229,7 @@ LAB_0049b5ec:
   this_ptr->column_width = iVar10 / this_ptr->column_count;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   this_ptr->search_text_buffer[0] = '\0';
-  g_INT_01c3f5cc = -1;
+  g_LastClickItemIndex = -1;
   this_ptr->confirmed_flag = 0;
   return;
 }

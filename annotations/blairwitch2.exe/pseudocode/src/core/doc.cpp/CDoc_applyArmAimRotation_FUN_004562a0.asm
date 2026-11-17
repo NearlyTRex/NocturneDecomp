@@ -60,7 +60,7 @@
 ;
 ; Referenced Globals:
 ;   double g_DOUBLE_005d0287 = 0.000100000000000000
-;   CQuaternion4f g_CQuaternion4f_005fe2f0
+;   CQuaternion4f g_IdentityQuaternion
 ;   int g_INT_01b4d264
 ;   int g_INT_01b4d268
 ;   int g_INT_01b4d26c
@@ -261,7 +261,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004564dd
     MOVSD ES:EDI,ESI                    ; 004564de
     MOVSD ES:EDI,ESI                    ; 004564df
-    PUSH 0x5fe2f0                       ; 004564e0 | g_CQuaternion4f_005fe2f0
+    PUSH 0x5fe2f0                       ; 004564e0 | g_IdentityQuaternion
     LEA ESI,[ESP + 0x1d0]               ; 004564e5
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 004564ec
         ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
@@ -269,7 +269,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 004564f4
     PUSH 0x3f733333                     ; 004564f8
     PUSH EAX                            ; 004564fd
-    PUSH 0x5fe2f0                       ; 004564fe | g_CQuaternion4f_005fe2f0
+    PUSH 0x5fe2f0                       ; 004564fe | g_IdentityQuaternion
     LEA ESI,[ESP + 0x1e0]               ; 00456503
     LEA EDI,[ESP + 0x230]               ; 0045650a
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00456511

@@ -267,12 +267,12 @@ section .text
     CMP EDX,0x6                         ; 004ce7d6
     JL 0x004ce800                       ; 004ce7d9
         ;   XREF to: 004ce800 (CONDITIONAL_JUMP)  ; LAB_004ce800
-    MOV EBX,dword ptr [0x007bc038]      ; 004ce7db | g_INT_007bc038
+    MOV EBX,dword ptr [0x007bc038]      ; 004ce7db | g_ActorReadingMode
     LEA EAX,[ESI + 0x2437c]             ; 004ce7e1
     CMP EBX,0x1                         ; 004ce7e7
     JNZ 0x004ce92a                      ; 004ce7ea
         ;   XREF to: 004ce92a (CONDITIONAL_JUMP)  ; LAB_004ce92a
-    MOV EBP,dword ptr [0x007bc034]      ; 004ce7f0 | g_FILE_PTR_007bc034
+    MOV EBP,dword ptr [0x007bc034]      ; 004ce7f0 | g_ActorDataFile
     PUSH EBP                            ; 004ce7f6
     PUSH EAX                            ; 004ce7f7
     CALL core_inv.cpp_CInventory_load_FUN_004dc4b0 ; 004ce7f8
@@ -284,18 +284,18 @@ section .text
     JL 0x004ce843                       ; 004ce807
         ;   XREF to: 004ce843 (CONDITIONAL_JUMP)  ; LAB_004ce843
     LEA EBX,[ESI + 0x24fc4]             ; 004ce809
-    MOV EDX,dword ptr [0x007bc038]      ; 004ce80f | g_INT_007bc038
+    MOV EDX,dword ptr [0x007bc038]      ; 004ce80f | g_ActorReadingMode
     LEA EAX,[ESI + 0x249a0]             ; 004ce815
     CMP EDX,0x1                         ; 004ce81b
     JNZ 0x004ce93c                      ; 004ce81e
         ;   XREF to: 004ce93c (CONDITIONAL_JUMP)  ; LAB_004ce93c
-    MOV EBP,dword ptr [0x007bc034]      ; 004ce824 | g_FILE_PTR_007bc034
+    MOV EBP,dword ptr [0x007bc034]      ; 004ce824 | g_ActorDataFile
     PUSH EBP                            ; 004ce82a
     PUSH EAX                            ; 004ce82b
     CALL core_inv.cpp_CInventory_load_FUN_004dc4b0 ; 004ce82c
         ;   XREF to: 004dc4b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_load_FUN_004dc4b0(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004ce831
-    MOV EAX,[0x007bc034]                ; 004ce834 | g_FILE_PTR_007bc034
+    MOV EAX,[0x007bc034]                ; 004ce834 | g_ActorDataFile
     PUSH EAX                            ; 004ce839
     PUSH EBX                            ; 004ce83a
     CALL core_inv.cpp_CInventory_load_FUN_004dc4b0 ; 004ce83b
@@ -363,12 +363,12 @@ section .text
         ;   Label: LAB_004ce8ed
     JL 0x004ce5e1                       ; 004ce8f4
         ;   XREF to: 004ce5e1 (CONDITIONAL_JUMP)  ; LAB_004ce5e1
-    MOV EDX,dword ptr [0x007bc038]      ; 004ce8fa | g_INT_007bc038
+    MOV EDX,dword ptr [0x007bc038]      ; 004ce8fa | g_ActorReadingMode
     LEA EAX,[ESI + 0x2437c]             ; 004ce900
     CMP EDX,0x1                         ; 004ce906
     JNZ 0x004ce99a                      ; 004ce909
         ;   XREF to: 004ce99a (CONDITIONAL_JUMP)  ; LAB_004ce99a
-    MOV EBX,dword ptr [0x007bc034]      ; 004ce90f | g_FILE_PTR_007bc034
+    MOV EBX,dword ptr [0x007bc034]      ; 004ce90f | g_ActorDataFile
     PUSH EBX                            ; 004ce915
     PUSH EAX                            ; 004ce916
     CALL core_inv.cpp_CInventory_load_FUN_004dc4b0 ; 004ce917
@@ -380,7 +380,7 @@ section .text
     POP ESI                             ; 004ce927
     POP EBX                             ; 004ce928
     RET                                 ; 004ce929
-    MOV EDI,dword ptr [0x007bc034]      ; 004ce92a | g_FILE_PTR_007bc034
+    MOV EDI,dword ptr [0x007bc034]      ; 004ce92a | g_ActorDataFile
         ;   Label: LAB_004ce92a
     PUSH EDI                            ; 004ce930
     PUSH EAX                            ; 004ce931
@@ -388,14 +388,14 @@ section .text
         ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_save_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
     JMP 0x004ce7fd                      ; 004ce937
         ;   XREF to: 004ce7fd (UNCONDITIONAL_JUMP)  ; LAB_004ce7fd
-    MOV ECX,dword ptr [0x007bc034]      ; 004ce93c | g_FILE_PTR_007bc034
+    MOV ECX,dword ptr [0x007bc034]      ; 004ce93c | g_ActorDataFile
         ;   Label: LAB_004ce93c
     PUSH ECX                            ; 004ce942
     PUSH EAX                            ; 004ce943
     CALL core_inv.cpp_CInventory_save_FUN_004dc2c0 ; 004ce944
         ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_save_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004ce949
-    MOV EDI,dword ptr [0x007bc034]      ; 004ce94c | g_FILE_PTR_007bc034
+    MOV EDI,dword ptr [0x007bc034]      ; 004ce94c | g_ActorDataFile
     PUSH EDI                            ; 004ce952
     PUSH EBX                            ; 004ce953
     CALL core_inv.cpp_CInventory_save_FUN_004dc2c0 ; 004ce954
@@ -424,7 +424,7 @@ section .text
         ;   XREF to: 004ce980 (CONDITIONAL_JUMP)  ; LAB_004ce980
     JMP 0x004ce8d0                      ; 004ce995
         ;   XREF to: 004ce8d0 (UNCONDITIONAL_JUMP)  ; LAB_004ce8d0
-    MOV ECX,dword ptr [0x007bc034]      ; 004ce99a | g_FILE_PTR_007bc034
+    MOV ECX,dword ptr [0x007bc034]      ; 004ce99a | g_ActorDataFile
         ;   Label: LAB_004ce99a
     PUSH ECX                            ; 004ce9a0
     PUSH EAX                            ; 004ce9a1

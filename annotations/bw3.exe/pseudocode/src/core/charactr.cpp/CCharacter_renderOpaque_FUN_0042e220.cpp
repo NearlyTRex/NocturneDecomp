@@ -39,7 +39,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(CCharacter *t
     if (iVar1 != 0) {
       this_ptr->was_rendered_opaque = 1;
       core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0(this_ptr);
-      if (g_INT_01d8e40c != 0) {
+      if (g_RenderMotionDebug != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
                           (g_CDemonRenderer_PTR_005f2afc);
         if (iVar2 == 0) {

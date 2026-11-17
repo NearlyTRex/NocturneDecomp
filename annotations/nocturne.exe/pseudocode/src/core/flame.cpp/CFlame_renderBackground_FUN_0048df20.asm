@@ -14,7 +14,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   undefined4 g_CFlameActorType_01c70618.name_hash
+;   undefined4 g_CFlameClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -137,7 +137,7 @@ section .text
     ADD EBX,0x4                         ; 0048e024
     JMP 0x0048dff7                      ; 0048e027
         ;   XREF to: 0048dff7 (UNCONDITIONAL_JUMP)  ; LAB_0048dff7
-    MOV EDX,dword ptr [0x01c70650]      ; 0048e029 | g_CFlameActorType_01c70618.name_hash
+    MOV EDX,dword ptr [0x01c70650]      ; 0048e029 | g_CFlameClassInfo.name_hash
         ;   Label: LAB_0048e029
     PUSH EDX                            ; 0048e02f
     MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 0048e030 | g_CDemonSetInstance.actors[0]

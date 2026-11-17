@@ -11,7 +11,7 @@
 ;   core_script.cpp_CScript_renderEditor_FUN_00529210 at 0052926f
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01bdd7c4
+;   CBitFont* g_CurrentFont
 ;
 ; *****************************************************************************
 
@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00467f20
         ;   Label: cockpit_drawsurf.cpp_setCurrentFont_FUN_00467f20
-    MOV [0x01bdd7c4],EAX                ; 00467f24 | g_CBitFont_PTR_01bdd7c4
+    MOV [0x01bdd7c4],EAX                ; 00467f24 | g_CurrentFont
     RET                                 ; 00467f29
 

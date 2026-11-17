@@ -457,7 +457,7 @@ LAB_00592a67:
             local_144 = 0.0;
             local_140 = 0.0;
             local_a8 = &local_ec->fps;
-            local_434 = CMatrix3x4f_00665968;
+            local_434 = g_IdentityMatrix3x4;
             local_13c = 0.0;
             local_ac = iVar16;
             if (0 < aiStack_2720[iVar16 / 4]) {

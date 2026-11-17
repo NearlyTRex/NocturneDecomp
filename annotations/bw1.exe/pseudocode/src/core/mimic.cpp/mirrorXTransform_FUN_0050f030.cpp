@@ -10,8 +10,8 @@ void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0050f030(void)
 
 {
   engine_matrix_c_matrixPush_FUN_005083b0();
-  g_INT_01c51d2c = -g_INT_01c51d2c;
-  g_INT_01c51d50 = -g_INT_01c51d50;
+  g_RelativeX = -g_RelativeX;
+  g_LightDirectionX = -g_LightDirectionX;
   g_INT_01c51d5c = -g_INT_01c51d5c;
   g_INT_01c51d60 = -g_INT_01c51d60;
   g_INT_01c51d64 = -g_INT_01c51d64;

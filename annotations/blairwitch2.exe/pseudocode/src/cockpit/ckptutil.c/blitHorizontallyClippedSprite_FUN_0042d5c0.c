@@ -17,13 +17,13 @@ void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042d5c0(void 
   byte *puVar4;
   
   count = (end_x - start_x) + 1;
-  iVar1 = (int)g_ARRAY_PTR_01c2a38c[1] - (int)g_ARRAY_PTR_01c2a38c[0];
+  iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
     pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     src_buffer = (void *)((int)sprite_data + start_x + g_INT_006141b8 / 2 + dest_y * src_stride);
     iVar3 = max_height - src_y_offset;
     if (g_INT_006141c0 == 8) {
-      puVar4 = g_ARRAY_PTR_01c2a38c[dest_y + src_y_offset] + start_x;
+      puVar4 = g_ScreenBufferArray[dest_y + src_y_offset] + start_x;
       if (dest_y < iVar3) {
         do {
           (*pCVar2)(puVar4 + -unused_param,src_buffer,count);
@@ -35,7 +35,7 @@ void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042d5c0(void 
       }
     }
     else {
-      puVar4 = g_ARRAY_PTR_01c2a38c[dest_y + src_y_offset] + start_x * 2;
+      puVar4 = g_ScreenBufferArray[dest_y + src_y_offset] + start_x * 2;
       if (dest_y < iVar3) {
         do {
           (*pCVar2)(puVar4 + unused_param * -2,src_buffer,count);

@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 112,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 56,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 163
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -56,25 +56,25 @@
   "globals": [
     {
       "addr": "00598b30",
-      "name": "g_CHAR_ARRAY_00598b2c+4",
+      "name": "g_EmptyStringBuffer+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00598b34",
-      "name": "g_CHAR_ARRAY_00598b2c+8",
+      "name": "g_EmptyStringBuffer+8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c1b10",
-      "name": "PTR_g_CHAR_ARRAY_00598b2c+4_005c1b10",
+      "name": "PTR_g_EmptyStringBuffer+4_005c1b10",
       "type": "void*",
       "value": "00598b30"
     },
     {
       "addr": "005c1b14",
-      "name": "PTR_g_CHAR_ARRAY_00598b2c+8_005c1b14",
+      "name": "PTR_g_EmptyStringBuffer+8_005c1b14",
       "type": "undefined1*",
       "value": "00598b34"
     },
@@ -86,25 +86,25 @@
     },
     {
       "addr": "005c1b24",
-      "name": "g_CHAR_ARRAY_005c1b24",
+      "name": "g_TempDirectoryBuffer",
       "type": "char[260]",
       "value": null
     },
     {
       "addr": "005c1b25",
-      "name": "g_CHAR_ARRAY_005c1b24+1",
+      "name": "g_TempDirectoryBuffer+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c1b26",
-      "name": "g_CHAR_ARRAY_005c1b24+2",
+      "name": "g_TempDirectoryBuffer+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c1b27",
-      "name": "g_CHAR_ARRAY_005c1b24+3",
+      "name": "g_TempDirectoryBuffer+3",
       "type": "undefined4",
       "value": null
     }
@@ -197,7 +197,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_005c1b23",
       "severity": "mild",
       "text": "(&DAT_005c1b23)[uVar3] = 0x5c;",
@@ -205,7 +205,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 35,
+      "line": 34,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -213,7 +213,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 20,
+      "line": 19,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -221,7 +221,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 47,
+      "line": 46,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

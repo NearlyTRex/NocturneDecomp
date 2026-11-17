@@ -19,11 +19,11 @@ void __cdecl engine_mini3d_cpp_setLightVector_FUN_004ef390(CVector3f *direction,
   fStack_8 = intensity /
              SQRT(direction->z * direction->z +
                   direction->x * direction->x + direction->y * direction->y);
-  if ((g_PTR_02cf60a8 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+  if ((g_APIDLL_setLightVector != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
     fStack_14 = direction->x * fStack_8;
     fStack_10 = direction->y * fStack_8;
     fStack_c = fStack_8 * direction->z;
-    (*(code *)g_PTR_02cf60a8)(&fStack_14,intensity);
+    (*(code *)g_APIDLL_setLightVector)(&fStack_14,intensity);
   }
   puVar1 = g_PTR_01d76cfc;
   *(float *)(g_PTR_01d76cfc + 0x30) = direction->x * fStack_8;

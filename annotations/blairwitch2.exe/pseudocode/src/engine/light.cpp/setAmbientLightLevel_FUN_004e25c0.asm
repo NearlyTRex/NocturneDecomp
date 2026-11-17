@@ -10,7 +10,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0 at 0046b509
 ;
 ; Referenced Globals:
-;   int g_INT_00617e40 = 0x8000
+;   int g_AmbientLightLevel = 0x8000
 ;
 ; *****************************************************************************
 
@@ -25,11 +25,11 @@ section .text
     JLE 0x004e25d4                      ; 004e25cd
         ;   XREF to: 004e25d4 (CONDITIONAL_JUMP)  ; LAB_004e25d4
     MOV EAX,0xffff                      ; 004e25cf
-    MOV [0x00617e40],EAX                ; 004e25d4 | g_INT_00617e40
+    MOV [0x00617e40],EAX                ; 004e25d4 | g_AmbientLightLevel
         ;   Label: LAB_004e25d4
     RET                                 ; 004e25d9
     XOR EAX,EAX                         ; 004e25da
         ;   Label: LAB_004e25da
-    MOV [0x00617e40],EAX                ; 004e25dc | g_INT_00617e40
+    MOV [0x00617e40],EAX                ; 004e25dc | g_AmbientLightLevel
     RET                                 ; 004e25e1
 

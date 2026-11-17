@@ -19,27 +19,27 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_
   pSVar4 = prim + 1;
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
-    if (g_INT_01c6e2a0 == 0) {
+    if (g_MMXSupported == 0) {
       if (g_INT_005fba20 == 0x20) {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33;
       }
       else {
-        g_PTR_01c6b5cc = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69;
       }
     }
     else if (g_INT_005fba20 == 0x20) {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
-      g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
     }
-    g_BIT_INTEGER32_01c6e2b4.dword = 0xc3;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
-    g_INT_01c6e2b8 = 1;
+    g_VertexPreprocessMode = 1;
     iVar1 = 0;
     iStack_c = 0;
     for (iVar5 = 0; iVar5 < (prim->base).count * 3; iVar5 = iVar5 + 3) {
-      *(int *)((int)g_INT_ARRAY_00730418 + iVar1) = (pSVar4->base).type;
+      *(int *)((int)g_ProcessedVertexIndices + iVar1) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
       iVar2 = (pSVar4->surface_normal).A.i;
       if (g_INT_005fba28 < 0x41) {
@@ -76,7 +76,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
       iStack_c = iStack_c + 1;
     }
-    engine_clipper_c_clipAndRasterize_FUN_0043a840(iStack_c,g_INT_ARRAY_00730418);
+    engine_clipper_c_clipAndRasterize_FUN_0043a840(iStack_c,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

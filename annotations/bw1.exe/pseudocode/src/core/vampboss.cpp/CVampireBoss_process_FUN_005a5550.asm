@@ -654,7 +654,7 @@ section .text
     JA 0x005a5d1e                       ; 005a5cff
         ;   XREF to: 005a5d1e (CONDITIONAL_JUMP)  ; LAB_005a5d1e
     PUSH 0x5f8d74                       ; 005a5d01 | = "morphCompleted"
-    MOV EAX,[0x0061b4d0]                ; 005a5d06 | g_CEventList_PTR_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 005a5d06 | g_CEventListPtr
     PUSH EAX                            ; 005a5d0b
     MOV dword ptr [EBX + 0xbe79c],0x2   ; 005a5d0c
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005a5d16
@@ -819,7 +819,7 @@ section .text
     JC 0x005a60da                       ; 005a5f06
         ;   XREF to: 005a60da (CONDITIONAL_JUMP)  ; LAB_005a60da
     PUSH 0x5f8d83                       ; 005a5f0c | = "backToHuman"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 005a5f11 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 005a5f11 | g_CEventListPtr
     PUSH EDI                            ; 005a5f17
     MOV dword ptr [EBX + 0xbe79c],0x0   ; 005a5f18
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005a5f22
@@ -1068,7 +1068,7 @@ section .text
     JZ 0x005a6822                       ; 005a6219
         ;   XREF to: 005a6822 (CONDITIONAL_JUMP)  ; LAB_005a6822
     PUSH 0x5f8d8f                       ; 005a621f | = "morphToBat"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 005a6224 | g_CEventList_PTR_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 005a6224 | g_CEventListPtr
     PUSH ESI                            ; 005a622a
     MOV dword ptr [EBX + 0xbf3d0],0x40400000 ; 005a622b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005a6235
@@ -1549,7 +1549,7 @@ section .text
         ;   Label: switchD
     PUSH 0x5f8d9a                       ; 005a686f | = "flyout"
         ;   Label: caseD_2
-    MOV EDI,dword ptr [0x0061b4d0]      ; 005a6874 | g_CEventList_PTR_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 005a6874 | g_CEventListPtr
     PUSH EDI                            ; 005a687a
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005a687b
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

@@ -24,12 +24,12 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_render_FUN_00418140(CChemPuzzle *this
   }
   if (this_ptr->hovering != 0) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
-              (CAlphaBitmap_ARRAY_007c39d4 + 4,g_INT_01c4353c - this_ptr->cursor_offset_x[4],
-               g_INT_01c43540 - this_ptr->cursor_offset_y[4],0xffff);
+              (CAlphaBitmap_ARRAY_007c39d4 + 4,g_MouseX - this_ptr->cursor_offset_x[4],
+               g_MouseY - this_ptr->cursor_offset_y[4],0xffff);
   }
   iVar2 = this_ptr->dropper_level;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
-            (CAlphaBitmap_ARRAY_007c39d4 + iVar2,g_INT_01c4353c - this_ptr->cursor_offset_x[iVar2],
-             g_INT_01c43540 - this_ptr->cursor_offset_y[iVar2],0xffff);
+            (CAlphaBitmap_ARRAY_007c39d4 + iVar2,g_MouseX - this_ptr->cursor_offset_x[iVar2],
+             g_MouseY - this_ptr->cursor_offset_y[iVar2],0xffff);
   return;
 }

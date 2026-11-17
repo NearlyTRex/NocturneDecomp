@@ -51,7 +51,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
         pSVar7 = poly_data + 1;
         iVar5 = local_18 * 0x3c;
         do {
-          iVar3 = INT_02f43974;
+          iVar3 = g_MorphReverseWinding;
           *(uint *)((int)this_ptr->faces->vertices + iVar5 + -0x14) = 3;
           if (iVar3 == 0) {
             piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);

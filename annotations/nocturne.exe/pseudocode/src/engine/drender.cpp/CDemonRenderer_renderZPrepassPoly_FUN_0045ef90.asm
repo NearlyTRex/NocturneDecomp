@@ -14,8 +14,8 @@
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980 at 004d7b0e
 ;
 ; Referenced Globals:
-;   int[16] g_INT_ARRAY_01b4d76c
-;   undefined4 g_INT_ARRAY_01b4d76c[1]
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -53,7 +53,7 @@ section .text
     XOR EAX,EAX                         ; 0045efc2
     MOV EBX,dword ptr [ECX + 0x18]      ; 0045efc4
         ;   Label: LAB_0045efc4
-    MOV dword ptr [EAX + 0x1b4d76c],EBX ; 0045efc7 | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
+    MOV dword ptr [EAX + 0x1b4d76c],EBX ; 0045efc7 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     IMUL ESI,EBX,0x30                   ; 0045efcd
     MOV EBX,dword ptr [EDI]             ; 0045efd0
     ADD EBX,ESI                         ; 0045efd2
@@ -97,7 +97,7 @@ section .text
     MOV dword ptr [0x01c039a0],EDX      ; 0045f024 | g_RenderStateFlags
     MOV dword ptr [0x01c039a4],EDX      ; 0045f02a | g_VertexPreprocessMode
     MOV [0x01c00c7c],EAX                ; 0045f030 | g_ScanlineRenderFunc
-    PUSH 0x1b4d76c                      ; 0045f035 | g_INT_ARRAY_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045f035 | g_VertexIndexBuffer
         ;   Label: LAB_0045f035
     MOV ESI,dword ptr [EBP + 0x4]       ; 0045f03a
     PUSH ESI                            ; 0045f03d

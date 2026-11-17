@@ -59,7 +59,7 @@ void __cdecl CConstruct::startRecombine(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_CConstruct_getCollisionType_FUN_00447630
 // Address: 00447630
-ECollisionType __cdecl CConstruct::getCollisionType(CConstruct *this_ptr,SCollisionInfo *param_2);
+ECollisionType __cdecl CConstruct::getCollisionType(CConstruct *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_construc.cpp_CConstruct_dtor_FUN_00447660
 // Address: 00447660

@@ -16,7 +16,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_005216e0(CScript *this_ptr)
   float local_18;
   float local_14;
   
-  g_INT_01e650f8 = 0;
+  g_ScriptEventsEnabled = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
     if (g_CGamePtr->cinematic_skip_in_progress != 0) {
       this_ptr->script_state = 0;
@@ -39,10 +39,10 @@ LAB_005217a5:
       else if (this_ptr->script_state == 1) goto LAB_005217a5;
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc9);
-    if (g_INT_01e65908 == 0) {
+    if (g_ScriptLoopWarningShown == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
                 (g_CEditorToolsPtr,"!WARNING!  Infinite loop detected in script at line %d");
-      g_INT_01e65908 = 1;
+      g_ScriptLoopWarningShown = 1;
     }
 LAB_00521753:
     if (g_INT_01e65904 != 0) {

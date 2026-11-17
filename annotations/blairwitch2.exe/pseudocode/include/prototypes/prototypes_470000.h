@@ -50,7 +50,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_004725c0(CDemonR
 void __cdecl core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00472600(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00472780(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_004727f0(CDemonRaytrace *this_ptr);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004728d0(CDemonRaytrace *this_ptr,_FILE *param_2);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004728d0(CDemonRaytrace *this_ptr,_FILE *file_handle);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00472ab0(CDemonRaytrace *this_ptr,char *filename);
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 CVector3f * __stack3_esi core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00472b50(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *output_point);

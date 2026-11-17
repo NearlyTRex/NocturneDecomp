@@ -11,10 +11,10 @@ char * __cdecl core_dcamera_cpp_CDemonCamera_allocLight_FUN_0044e8b0(CDemonCamer
 {
   char (*pacVar1) [307200];
   
-  pacVar1 = g_CHAR_ARRAY_ARRAY_00b81ca8 + g_INT_00b81ca4;
-  if (0x18 < g_INT_00b81ca4 + 1U) {
+  pacVar1 = g_LightBufferPool + g_LightBufferPoolIndex;
+  if (0x18 < g_LightBufferPoolIndex + 1U) {
     pacVar1 = (char (*) [307200])0x0;
   }
-  g_INT_00b81ca4 = g_INT_00b81ca4 + 1U;
+  g_LightBufferPoolIndex = g_LightBufferPoolIndex + 1U;
   return *pacVar1;
 }

@@ -41,7 +41,7 @@ void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN
     do {
       if ((uVar9 >> 8 < (uint)*puVar7) &&
          (g_INT_01b4d764 = g_INT_01b4d764 + 1, (uint)INT_005ae708 <= (uint)g_INT_01b4d764)) {
-        g_INT_01b4d768 = 1;
+        g_RenderAbortFlag = 1;
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)

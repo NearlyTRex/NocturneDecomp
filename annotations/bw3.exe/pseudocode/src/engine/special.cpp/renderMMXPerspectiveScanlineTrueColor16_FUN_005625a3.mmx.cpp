@@ -18,50 +18,50 @@ __asm {
     LAB_005625b3:
         shr ECX,0x10
         shr EAX,0x10
-        mov EBP,dword ptr [g_UINT_PTR_ARRAY_01c60dac + EBX*0x4]
-        mov EBX,dword ptr [g_ARRAY_PTR_01c5faec + EBX*0x4]
+        mov EBP,dword ptr [g_ZBufferScanlineArray + EBX*0x4]
+        mov EBX,dword ptr [g_ScreenBufferArray + EBX*0x4]
         sub ECX,EAX
         jle LAB_00562a20
         lea EBX,[EBX + EAX*0x2]
         shl ECX,0x2
         lea EBP,[EBP + EAX*0x4]
-        mov dword ptr [g_INT_006048a4],ECX
-        mov dword ptr [g_INT_PTR_00604908],EBX
-        mov dword ptr [g_INT_PTR_0060490c],EBP
-        cmp dword ptr [g_BIT_INTEGER32_01c6e2b4],0x80
+        mov dword ptr [g_ScanlinePixelCount],ECX
+        mov dword ptr [g_CurrentScreenPtr],EBX
+        mov dword ptr [g_CurrentZBufferPtr],EBP
+        cmp dword ptr [g_RenderStateFlags],0x80
         jz LAB_00562bf0
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [g_INT_006048e0],EBX
-        mov dword ptr [g_INT_00604d10],EDX
+        mov dword ptr [g_StartTextureU],EBX
+        mov dword ptr [g_HardwareDeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [g_INT_006048e4],EBX
-        mov dword ptr [g_INT_00604d14],EDX
+        mov dword ptr [g_StartTextureV],EBX
+        mov dword ptr [g_HardwareDeltaTextureV],EDX
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [g_INT_006048ec],EBX
-        mov dword ptr [g_INT_00604d18],EDX
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x8
+        mov dword ptr [g_StartDepthW],EBX
+        mov dword ptr [g_HardwareDeltaDepthZ],EDX
+        test dword ptr [g_RenderStateFlags],0x8
         jz LAB_00562680
         mov EAX,dword ptr [EDI + 0x30]
         mov EBX,dword ptr [ESI + 0x30]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [g_INT_00604dd0],EBX
-        mov dword ptr [g_INT_00604dd8],EDX
+        mov dword ptr [g_VertexAlphaStart],EBX
+        mov dword ptr [g_VertexAlphaDelta],EDX
         jmp LAB_00562694
     LAB_00562680:
-        mov dword ptr [g_INT_00604dd0],0x0
-        mov dword ptr [g_INT_00604dd8],0x0
+        mov dword ptr [g_VertexAlphaStart],0x0
+        mov dword ptr [g_VertexAlphaDelta],0x0
     LAB_00562694:
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x20
+        test dword ptr [g_RenderStateFlags],0x20
         jz LAB_005626ba
         mov EAX,dword ptr [EDI + 0x48]
         mov EBX,dword ptr [ESI + 0x48]
@@ -78,8 +78,8 @@ __asm {
         imul dword ptr [ECX + 0x1c6b5d4]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_QWORD_00604d90],EBX
-        mov dword ptr [g_QWORD_00604db0],EDX
+        mov dword ptr [g_VertexRedStart],EBX
+        mov dword ptr [g_VertexRedDelta],EDX
         mov EAX,dword ptr [EDI + 0x38]
         mov EBX,dword ptr [ESI + 0x38]
         shr EAX,0x1
@@ -88,8 +88,8 @@ __asm {
         imul dword ptr [ECX + 0x1c6b5d4]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_MMX_INTEGER_00604d98],EBX
-        mov dword ptr [g_MMX_INTEGER_00604db8],EDX
+        mov dword ptr [g_VertexGreenStart],EBX
+        mov dword ptr [g_VertexGreenDelta],EDX
         mov EAX,dword ptr [EDI + 0x40]
         mov EBX,dword ptr [ESI + 0x40]
         shr EAX,0x1
@@ -98,54 +98,54 @@ __asm {
         imul dword ptr [ECX + 0x1c6b5d4]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_MMX_INTEGER_00604da0],EBX
-        mov dword ptr [g_MMX_INTEGER_00604dc0],EDX
-        movq MM5,qword ptr [g_QWORD_00604d90]
-        movq MM6,qword ptr [g_QWORD_00604db0]
+        mov dword ptr [g_VertexBlueStart],EBX
+        mov dword ptr [g_VertexBlueDelta],EDX
+        movq MM5,qword ptr [g_VertexRedStart]
+        movq MM6,qword ptr [g_VertexRedDelta]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [g_MMX_INTEGER_00604d98]
-        por MM6,qword ptr [g_MMX_INTEGER_00604db8]
+        por MM5,qword ptr [g_VertexGreenStart]
+        por MM6,qword ptr [g_VertexGreenDelta]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [g_MMX_INTEGER_00604da0]
-        por MM6,qword ptr [g_MMX_INTEGER_00604dc0]
+        por MM5,qword ptr [g_VertexBlueStart]
+        por MM6,qword ptr [g_VertexBlueDelta]
         movq qword ptr [g_QWORD_00604df0],MM6
-        mov ECX,dword ptr [g_INT_006048e0]
-        mov EDX,dword ptr [g_INT_006048e4]
-        mov ESI,dword ptr [g_INT_006048ec]
+        mov ECX,dword ptr [g_StartTextureU]
+        mov EDX,dword ptr [g_StartTextureV]
+        mov ESI,dword ptr [g_StartDepthW]
         mov EDI,0x0
-        mov EBP,dword ptr [g_INT_00604dd0]
+        mov EBP,dword ptr [g_VertexAlphaStart]
         pxor MM7,MM7
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x20
+        test dword ptr [g_RenderStateFlags],0x20
         jz LAB_00562a26
         movd MM6,dword ptr [g_INT_00604de0]
     LAB_005627b0:
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x40
+        test dword ptr [g_RenderStateFlags],0x40
         jz LAB_005627cc
         lea EAX,[EDI]
-        add EAX,dword ptr [g_INT_PTR_0060490c]
+        add EAX,dword ptr [g_CurrentZBufferPtr]
         cmp ESI,dword ptr [EAX]
         jl LAB_005629d6
     LAB_005627cc:
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [g_QWORD_00604df8]
-        psrlq MM2,qword ptr [g_QWORD_00604e18]
-        pand MM0,qword ptr [g_QWORD_00604e38]
-        pand MM2,qword ptr [g_QWORD_00604e58]
+        psrlq MM0,qword ptr [g_TextureShift1]
+        psrlq MM2,qword ptr [g_TextureShift2]
+        pand MM0,qword ptr [g_TextureMask1]
+        pand MM2,qword ptr [g_TextureMask2]
         paddd MM0,MM2
         movd EBX,MM0
         test dword ptr [g_INT_01c6cee4],0xffffffff
         jnz LAB_00562838
-        add EBX,dword ptr [g_UCHAR_PTR_01c6ced0]
+        add EBX,dword ptr [g_CurrentTextureData]
         movzx EAX,byte ptr [EBX]
-        movd MM0,dword ptr [g_UINT_ARRAY_01c6a974 + EAX*0x4]
+        movd MM0,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         punpcklbw MM0,MM7
-        test dword ptr [g_UCHAR_PTR_01c6ced4],0xffffffff
+        test dword ptr [g_CurrentTextureOpacityData],0xffffffff
         jz LAB_00562831
-        sub EBX,dword ptr [g_UCHAR_PTR_01c6ced0]
-        add EBX,dword ptr [g_UCHAR_PTR_01c6ced4]
+        sub EBX,dword ptr [g_CurrentTextureData]
+        add EBX,dword ptr [g_CurrentTextureOpacityData]
         movzx EAX,byte ptr [EBX]
         jmp LAB_0056284c
     LAB_00562831:
@@ -153,7 +153,7 @@ __asm {
         jmp LAB_0056284c
     LAB_00562838:
         shl EBX,0x2
-        add EBX,dword ptr [g_UCHAR_PTR_01c6ced0]
+        add EBX,dword ptr [g_CurrentTextureData]
         mov EAX,dword ptr [EBX]
         movd MM0,EAX
         punpcklbw MM0,MM7
@@ -163,18 +163,18 @@ __asm {
         jz LAB_005629d6
         mov EBX,EDI
         shr EBX,0x1
-        add EBX,dword ptr [g_INT_PTR_00604908]
+        add EBX,dword ptr [g_CurrentScreenPtr]
         movzx EBX,word ptr [EBX]
         movd MM4,EBX
-        pand MM4,qword ptr [g_MMX_INTEGER_00604e70]
-        psllq MM4,qword ptr [g_QWORD_00604f00]
+        pand MM4,qword ptr [g_BlueMask16]
+        psllq MM4,qword ptr [g_BlueBitShift]
         movd MM2,EBX
-        pand MM2,qword ptr [g_MMX_INTEGER_00604e68]
-        psllq MM2,qword ptr [g_QWORD_00604ee0]
+        pand MM2,qword ptr [g_GreenMask16]
+        psllq MM2,qword ptr [g_GreenBlueDitherShift]
         por MM4,MM2
         movd MM2,EBX
-        pand MM2,qword ptr [g_MMX_INTEGER_00604e60]
-        psllq MM2,qword ptr [g_QWORD_00604ec0]
+        pand MM2,qword ptr [g_RedMask16]
+        psllq MM2,qword ptr [g_TotalDitherShift]
         por MM4,MM2
         punpcklbw MM4,MM7
         psllw MM0,0x4
@@ -187,7 +187,7 @@ __asm {
         movd EBX,MM6
         imul EAX,EBX
         shr EAX,0x10
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x8
+        test dword ptr [g_RenderStateFlags],0x8
         jnz LAB_005628ce
         jmp LAB_005628fc
     LAB_005628ce:
@@ -196,7 +196,7 @@ __asm {
         movq MM1,qword ptr [g_QWORD_ARRAY_00605710 + EBX*0x8]
         movq MM2,MM1
         pxor MM2,qword ptr [0x00605f08]
-        movd MM3,dword ptr [g_ULONG_01c6e2bc]
+        movd MM3,dword ptr [g_SolidColorMode]
         punpcklbw MM3,MM7
         pmullw MM0,MM2
         pmullw MM3,MM1
@@ -234,35 +234,35 @@ __asm {
         packuswb MM0,MM7
         mov EBX,EDI
         shr EBX,0x1
-        add EBX,dword ptr [g_INT_PTR_00604908]
+        add EBX,dword ptr [g_CurrentScreenPtr]
         movq MM2,MM0
         movq MM4,MM0
-        pand MM0,qword ptr [g_QWORD_00604eb8]
-        pand MM2,qword ptr [g_QWORD_00604e98]
-        pand MM4,qword ptr [g_QWORD_00604e78]
-        psrlq MM0,qword ptr [g_QWORD_00604f00]
-        psrlq MM2,qword ptr [g_QWORD_00604ee0]
-        psrlq MM4,qword ptr [g_QWORD_00604ec0]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM4,qword ptr [g_RedMask32]
+        psrlq MM0,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0
         mov word ptr [EBX],AX
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x80
+        test dword ptr [g_RenderStateFlags],0x80
         jz LAB_005629d6
         mov EAX,EDI
-        add EAX,dword ptr [g_INT_PTR_0060490c]
+        add EAX,dword ptr [g_CurrentZBufferPtr]
         mov dword ptr [EAX],ESI
     LAB_005629d6:
         add EDI,0x4
-        cmp EDI,dword ptr [g_INT_006048a4]
+        cmp EDI,dword ptr [g_ScanlinePixelCount]
         jnc LAB_00562a20
-        add ECX,dword ptr [g_INT_00604d10]
+        add ECX,dword ptr [g_HardwareDeltaTextureU]
         paddw MM5,qword ptr [g_QWORD_00604df0]
-        add EDX,dword ptr [g_INT_00604d14]
+        add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
-        add ESI,dword ptr [g_INT_00604d18]
-        pcmpgtw MM5,qword ptr [g_DOUBLE_00604d1c]
-        add EBP,dword ptr [g_INT_00604dd8]
+        add ESI,dword ptr [g_HardwareDeltaDepthZ]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
+        add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
         paddd MM6,qword ptr [g_INT_00604de8]
         jmp LAB_005627b0
@@ -273,39 +273,39 @@ __asm {
         pop ESI
         ret
     LAB_00562a26:
-        movd MM1,dword ptr [g_ULONG_01c6e2bc]
+        movd MM1,dword ptr [g_SolidColorMode]
         punpcklbw MM1,MM7
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x8
+        test dword ptr [g_RenderStateFlags],0x8
         jnz LAB_00562a4b
         mov EBP,0x0
-        mov dword ptr [g_INT_00604dd8],0x0
+        mov dword ptr [g_VertexAlphaDelta],0x0
     LAB_00562a4b:
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x40
+        test dword ptr [g_RenderStateFlags],0x40
         jz LAB_00562a67
         lea EAX,[EDI]
-        add EAX,dword ptr [g_INT_PTR_0060490c]
+        add EAX,dword ptr [g_CurrentZBufferPtr]
         cmp ESI,dword ptr [EAX]
         jl LAB_00562b72
     LAB_00562a67:
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x1
+        test dword ptr [g_RenderStateFlags],0x1
         jz LAB_00562bc6
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [g_QWORD_00604df8]
-        psrlq MM2,qword ptr [g_QWORD_00604e18]
-        pand MM0,qword ptr [g_QWORD_00604e38]
-        pand MM2,qword ptr [g_QWORD_00604e58]
+        psrlq MM0,qword ptr [g_TextureShift1]
+        psrlq MM2,qword ptr [g_TextureShift2]
+        pand MM0,qword ptr [g_TextureMask1]
+        pand MM2,qword ptr [g_TextureMask2]
         paddd MM0,MM2
         movd EBX,MM0
         test dword ptr [g_INT_01c6cee4],0xffffffff
         jnz LAB_00562abe
-        add EBX,dword ptr [g_UCHAR_PTR_01c6ced0]
+        add EBX,dword ptr [g_CurrentTextureData]
         movzx EAX,byte ptr [EBX]
-        movd MM0,dword ptr [g_UINT_ARRAY_01c6a974 + EAX*0x4]
+        movd MM0,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         jmp LAB_00562aca
     LAB_00562abe:
         shl EBX,0x2
-        add EBX,dword ptr [g_UCHAR_PTR_01c6ced0]
+        add EBX,dword ptr [g_CurrentTextureData]
         movd MM0,dword ptr [EBX]
     LAB_00562aca:
         movq MM3,MM5
@@ -314,7 +314,7 @@ __asm {
         psllw MM0,0x4
         pmulhw MM0,MM3
         packuswb MM0,MM7
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x8
+        test dword ptr [g_RenderStateFlags],0x8
         jz LAB_00562b17
         mov EAX,EBP
         sar EAX,0x8
@@ -331,56 +331,56 @@ __asm {
     LAB_00562b17:
         mov EBX,EDI
         shr EBX,0x1
-        add EBX,dword ptr [g_INT_PTR_00604908]
+        add EBX,dword ptr [g_CurrentScreenPtr]
         movq MM2,MM0
         movq MM4,MM0
-        pand MM0,qword ptr [g_QWORD_00604eb8]
-        pand MM2,qword ptr [g_QWORD_00604e98]
-        pand MM4,qword ptr [g_QWORD_00604e78]
-        psrlq MM0,qword ptr [g_QWORD_00604f00]
-        psrlq MM2,qword ptr [g_QWORD_00604ee0]
-        psrlq MM4,qword ptr [g_QWORD_00604ec0]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM4,qword ptr [g_RedMask32]
+        psrlq MM0,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0
         mov word ptr [EBX],AX
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x80
+        test dword ptr [g_RenderStateFlags],0x80
         jz LAB_00562b72
-        mov EAX,[g_INT_PTR_0060490c]
+        mov EAX,[g_CurrentZBufferPtr]
         add EAX,EDI
         mov dword ptr [EAX],ESI
     LAB_00562b72:
         add EDI,0x4
-        cmp EDI,dword ptr [g_INT_006048a4]
+        cmp EDI,dword ptr [g_ScanlinePixelCount]
         jnc LAB_00562a20
-        add ECX,dword ptr [g_INT_00604d10]
+        add ECX,dword ptr [g_HardwareDeltaTextureU]
         paddw MM5,qword ptr [g_QWORD_00604df0]
-        add EDX,dword ptr [g_INT_00604d14]
+        add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
-        add ESI,dword ptr [g_INT_00604d18]
-        pcmpgtw MM5,qword ptr [g_DOUBLE_00604d1c]
-        add EBP,dword ptr [g_INT_00604dd8]
+        add ESI,dword ptr [g_HardwareDeltaDepthZ]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
+        add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
         jmp LAB_00562a4b
     LAB_00562bc6:
-        test dword ptr [g_BIT_INTEGER32_01c6e2b4],0x200
+        test dword ptr [g_RenderStateFlags],0x200
         jnz LAB_00562be0
         movd MM0,dword ptr [g_INT_01c6b5c0]
         jmp LAB_00562aca
     LAB_00562be0:
-        movd MM0,dword ptr [g_INT_00604f08]
+        movd MM0,dword ptr [g_SpecialColor]
         jmp LAB_00562aca
     LAB_00562bf0:
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [g_INT_006048ec],EBX
-        mov dword ptr [g_INT_00604d18],EDX
-        mov EAX,[g_INT_006048ec]
-        mov EBX,dword ptr [g_INT_00604d18]
-        mov ESI,dword ptr [g_INT_PTR_0060490c]
-        mov ECX,dword ptr [g_INT_006048a4]
+        mov dword ptr [g_StartDepthW],EBX
+        mov dword ptr [g_HardwareDeltaDepthZ],EDX
+        mov EAX,[g_StartDepthW]
+        mov EBX,dword ptr [g_HardwareDeltaDepthZ]
+        mov ESI,dword ptr [g_CurrentZBufferPtr]
+        mov ECX,dword ptr [g_ScanlinePixelCount]
     LAB_00562c21:
         mov dword ptr [ESI],EAX
         add EAX,EBX

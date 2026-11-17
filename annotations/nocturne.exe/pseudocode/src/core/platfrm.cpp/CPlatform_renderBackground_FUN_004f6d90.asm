@@ -12,10 +12,10 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005a1360 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   CDemonCamera* g_CDemonCamera_PTR_007f7370
-;   int g_INT_014b7190
+;   CDemonCamera* g_CurrentSceneCamera
+;   int g_FlatShadingLightLevel
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_CDemonSetInstance.per_pixel_lighting_enabled
 ;
@@ -73,7 +73,7 @@ section .text
     LEA EAX,[ESI + 0x3b0]               ; 004f6de4
         ;   Label: LAB_004f6de4
     PUSH EAX                            ; 004f6dea
-    MOV ECX,dword ptr [0x005b7650]      ; 004f6deb | g_CEventList_PTR_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004f6deb | g_CEventListPtr
     PUSH ECX                            ; 004f6df1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004f6df2
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 004f6dde (CONDITIONAL_JUMP)  ; LAB_004f6dde
     LEA EAX,[ESI + 0x34c]               ; 004f6dfe
     PUSH EAX                            ; 004f6e04
-    MOV EBX,dword ptr [0x005b7650]      ; 004f6e05 | g_CEventList_PTR_005b7650
+    MOV EBX,dword ptr [0x005b7650]      ; 004f6e05 | g_CEventListPtr
     PUSH EBX                            ; 004f6e0b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004f6e0c
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -151,13 +151,13 @@ section .text
     PUSH 0x0                            ; 004f6ecd
     LEA EAX,[ESP + 0x20]                ; 004f6ecf
     PUSH EAX                            ; 004f6ed3
-    MOV ECX,dword ptr [0x007f7370]      ; 004f6ed4 | g_CDemonCamera_PTR_007f7370
+    MOV ECX,dword ptr [0x007f7370]      ; 004f6ed4 | g_CurrentSceneCamera
     PUSH ECX                            ; 004f6eda
     CALL core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0 ; 004f6edb
         ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(CDemonCamera * this_ptr, CVector3i * world_position, SProjectedVertex * projected_vertex)
     ADD ESP,0xc                         ; 004f6ee0
     PUSH -0x1                           ; 004f6ee3
-    MOV [0x014b7190],EAX                ; 004f6ee5 | g_INT_014b7190
+    MOV [0x014b7190],EAX                ; 004f6ee5 | g_FlatShadingLightLevel
     LEA EAX,[ESI + 0x150]               ; 004f6eea
     PUSH 0x0                            ; 004f6ef0
     PUSH EAX                            ; 004f6ef2

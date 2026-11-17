@@ -109,10 +109,10 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacte
         if (uStack_30 != 0) {
           uVar4 = uStack_20 ^ 1;
         }
-        local_14 = (CVector3f *)(local_2c + g_FLOAT_ARRAY_00609aa0[uVar4]);
+        local_14 = (CVector3f *)(local_2c + g_MoveAwayAngleOffsets[uVar4]);
         uStack_50 = 0;
         afStack_4c[1] = 0.0;
-        afStack_4c[0] = local_2c + g_FLOAT_ARRAY_00609aa0[uVar4];
+        afStack_4c[0] = local_2c + g_MoveAwayAngleOffsets[uVar4];
         pCVar8 = &CStack_a4;
         pCVar7 = &CStack_168;
         CStack_a4.x = 0.0;
@@ -145,7 +145,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacte
             (this_ptr->move_away_target).z = CStack_134.z;
           }
           iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_CVector3f_0265370c,0.0,0.0);
+                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar3) {
             this_ptr->walk_stuck_timer = 0.0;
             this_ptr->hero_proximity_timer = -4.0;
@@ -207,7 +207,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacte
             (this_ptr->move_away_target).z = CStack_c8.z;
           }
           iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_CVector3f_0265370c,0.0,0.0);
+                            (this_ptr,pCVar5,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar3) {
             this_ptr->walk_stuck_timer = 0.0;
             this_ptr->hero_proximity_timer = -5.0;
@@ -229,8 +229,8 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacte
     this_ptr->hero_proximity_timer = fVar1;
     if ((fVar1 < 0.0) && (this_ptr->walk_stuck_timer <= (float)1.5)) {
       iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                        (this_ptr,&this_ptr->move_away_target,(CPathMap *)0x0,&g_CVector3f_0265370c,
-                         0.0,0.0);
+                        (this_ptr,&this_ptr->move_away_target,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0)
+      ;
       if (iVar3 == 0) {
         return 1;
       }

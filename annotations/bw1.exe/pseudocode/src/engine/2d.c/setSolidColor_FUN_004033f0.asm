@@ -10,14 +10,14 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_0061b4a0 = 0x8
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_INT_01c50948
-;   ulong g_ULONG_01c51d1c
-;   int g_INT_01c51d20
-;   int g_INT_01c51d24
-;   int g_INT_01c51d28
+;   ulong g_SolidColorMode
+;   int g_SolidRedComponent
+;   int g_SolidGreenComponent
+;   int g_SolidBlueComponent
 ;
 ; Called Functions:
 ;   engine_special.cpp_setFogColor_FUN_005828e0
@@ -32,13 +32,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004033f2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004033f6
     MOV EDX,dword ptr [ESP + 0x14]      ; 004033fa
-    MOV dword ptr [0x01c51d24],EBX      ; 004033fe | g_INT_01c51d24
-    MOV dword ptr [0x01c51d28],EDX      ; 00403404 | g_INT_01c51d28
+    MOV dword ptr [0x01c51d24],EBX      ; 004033fe | g_SolidGreenComponent
+    MOV dword ptr [0x01c51d28],EDX      ; 00403404 | g_SolidBlueComponent
     MOV ESI,EBX                         ; 0040340a
     MOV ECX,EAX                         ; 0040340c
     SHL ESI,0x8                         ; 0040340e
     SHL ECX,0x10                        ; 00403411
-    MOV [0x01c51d20],EAX                ; 00403414 | g_INT_01c51d20
+    MOV [0x01c51d20],EAX                ; 00403414 | g_SolidRedComponent
     OR ECX,ESI                          ; 00403419
     MOV ESI,dword ptr [0x0061b4a0]      ; 0040341b | g_INT_0061b4a0
     OR ECX,EDX                          ; 00403421
@@ -49,20 +49,20 @@ section .text
     JNZ 0x00403453                      ; 0040342b
         ;   XREF to: 00403453 (CONDITIONAL_JUMP)  ; LAB_00403453
     PUSH EDI                            ; 0040342d
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0040342e | g_BIT_INTEGER32_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0040342e | g_RedBitPosition
     MOV ESI,EAX                         ; 00403434
     MOV EDI,EBX                         ; 00403436
     SHL ESI,CL                          ; 00403438
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0040343a | g_BIT_INTEGER32_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0040343a | g_GreenBitPosition
     SHL EDI,CL                          ; 00403440
-    MOV CL,byte ptr [0x01c4e9ec]        ; 00403442 | g_BIT_INTEGER32_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 00403442 | g_BlueBitPosition
     OR ESI,EDI                          ; 00403448
     MOV EDI,EDX                         ; 0040344a
     SHL EDI,CL                          ; 0040344c
     MOV ECX,EDI                         ; 0040344e
     OR ECX,ESI                          ; 00403450
     POP EDI                             ; 00403452
-    MOV dword ptr [0x01c51d1c],ECX      ; 00403453 | g_ULONG_01c51d1c
+    MOV dword ptr [0x01c51d1c],ECX      ; 00403453 | g_SolidColorMode
         ;   Label: LAB_00403453
     CMP dword ptr [0x01c50948],0x0      ; 00403459 | g_INT_01c50948
     JNZ 0x00403465                      ; 00403460

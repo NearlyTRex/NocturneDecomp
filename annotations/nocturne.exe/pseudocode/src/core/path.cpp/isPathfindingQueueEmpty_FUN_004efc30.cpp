@@ -9,5 +9,5 @@
 int __cdecl core_path_cpp_isPathfindingQueueEmpty_FUN_004efc30(void)
 
 {
-  return (uint)(g_INT_01e4008c == g_INT_01e40090);
+  return (uint)(g_PathfindingQueueHead == g_PathfindingQueueTail);
 }

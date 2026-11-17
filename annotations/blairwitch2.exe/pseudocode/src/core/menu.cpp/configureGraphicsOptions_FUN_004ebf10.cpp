@@ -62,7 +62,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004ebf10(void)
     core_moon_cpp_CMoon_update_FUN_005024a0(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     pcVar8 = "tridx7.dll";
     core_moon_cpp_CMoon_render_FUN_00502510(&g_CMoonInstance);
-    pcVar9 = g_CHAR_ARRAY_0061e180;
+    pcVar9 = g_RendererDllPath;
     g_CDemonSetPtr->rendering_mode = 0;
     do {
       cVar1 = *pcVar8;
@@ -155,27 +155,26 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004ebf10(void)
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(pcVar8);
     _sprintf(g_CHAR_ARRAY_01d06250,pcVar8);
-    if (g_CHAR_ARRAY_0061e180[0] == '\0') {
+    if (g_RendererDllPath[0] == '\0') {
       pcVar8 = "3D API : None";
     }
     else {
-      iVar3 = _stricmp(g_CHAR_ARRAY_0061e180,"trid3d.dll");
+      iVar3 = _stricmp(g_RendererDllPath,"trid3d.dll");
       if (iVar3 == 0) {
         pcVar8 = "3D API : DirectX 5";
       }
       else {
-        iVar3 = _stricmp(g_CHAR_ARRAY_0061e180,"tridx6.dll");
+        iVar3 = _stricmp(g_RendererDllPath,"tridx6.dll");
         if (iVar3 == 0) {
           pcVar8 = "3D API : DirectX 6";
         }
         else {
-          iVar3 = _stricmp(g_CHAR_ARRAY_0061e180,"tridx7.dll");
+          iVar3 = _stricmp(g_RendererDllPath,"tridx7.dll");
           if (iVar3 == 0) {
             pcVar8 = "3D API : DirectX 7";
           }
           else {
-            iVar3 = _stricmp(g_CHAR_ARRAY_0061e180,"tri3dfx.dll")
-            ;
+            iVar3 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
             if (iVar3 == 0) {
               pcVar8 = "3D API : Voodoo Blit Emulation";
             }
@@ -512,22 +511,19 @@ LAB_004ec9a8:
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       wincore_winrun_cpp_setCursorPosition_FUN_0058ed10
                 ((int)(((longlong)(g_INT_006141b8 + -1) * (longlong)(iVar3 + -0x3fff)) / 0xc000),
-                 g_INT_01c2a380);
+                 g_MouseY);
       local_34[3] = 0;
       do {
         shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(g_CEditorToolsPtr);
-        if (g_INT_01c2a37c != local_34[3]) {
-          iVar3 = (int)(((longlong)g_INT_01c2a37c * 0xc000) / (longlong)(g_INT_006141b8 + -1)) +
-                  0x3fff;
-          local_34[3] = g_INT_01c2a37c;
+        if (g_MouseX != local_34[3]) {
+          iVar3 = (int)(((longlong)g_MouseX * 0xc000) / (longlong)(g_INT_006141b8 + -1)) + 0x3fff;
+          local_34[3] = g_MouseX;
         }
-        iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                          (g_CKeys_PTR_00617dd4,DIK_NUMPAD4);
+        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
         if (iVar4 != 0) {
           iVar3 = iVar3 + -700;
         }
-        iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                          (g_CKeys_PTR_00617dd4,DIK_NUMPAD6);
+        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
         if (iVar4 != 0) {
           iVar3 = iVar3 + 700;
         }
@@ -539,7 +535,7 @@ LAB_004ec9a8:
         }
         iStack_14 = g_INT_01c35e4c + 1;
         iVar4 = g_INT_01c35e54 + -1;
-        iVar7 = g_INT_01c35e50 + -1;
+        iVar7 = g_ClipRight + -1;
         iVar11 = g_INT_01c35e48 + 1;
         engine_2d_c_fillRectWithBorder_FUN_00403250(iVar11,iStack_14,iVar7,iVar4,0,0xff);
         engine_2d_c_fillRectColor_FUN_004031c0
@@ -550,23 +546,22 @@ LAB_004ec9a8:
         color_value = 0;
         iVar11 = 0xff;
         iVar7 = g_INT_01c35e54 + g_INT_01c35e4c;
-        iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x41);
+        iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x41);
         engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0
-                  (g_CBitFont_PTR_01c25590,g_INT_01c35e48,g_INT_01c35e50,(iVar7 - iVar4) / 2,iVar11,
-                   color_value,pcVar5);
+                  (g_EditorFont,g_INT_01c35e48,g_ClipRight,(iVar7 - iVar4) / 2,iVar11,color_value,
+                   pcVar5);
         wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-        iVar7 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                          (g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+        iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         iVar4 = g_INT_0061ec60;
       } while (((iVar7 == 0) &&
-               (iVar7 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                                  (g_CKeys_PTR_00617dd4,DIK_RETURN), iVar4 = iVar3, iVar7 == 0)) &&
-              (iVar7 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)
-                                 (g_CKeys_PTR_00617dd4,DIM_LBUTTON), iVar7 == 0));
+               (iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN),
+               iVar4 = iVar3, iVar7 == 0)) &&
+              (iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON),
+              iVar7 == 0));
       g_INT_0061ec60 = iVar4;
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
     }
-    iVar3 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_ESCAPE);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) {
       return;
     }

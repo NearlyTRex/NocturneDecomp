@@ -21,12 +21,12 @@ void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005abf20(void)
   }
   g_PTR_02c99310 = malloc(g_INT_0061b498 * g_INT_0061b49c * 4 + 0x40);
   if (g_PTR_02c99310 != (byte *)0x0) {
-    g_PTR_0071362c = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
+    g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
     return;
   }
   g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
   g_INT_01d1d404 = 0xf2;
   core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of Z buffer memory");
-  g_PTR_0071362c = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
+  g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
   return;
 }

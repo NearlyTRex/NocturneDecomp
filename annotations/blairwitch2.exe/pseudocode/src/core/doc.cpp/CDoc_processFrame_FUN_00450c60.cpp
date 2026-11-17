@@ -242,7 +242,7 @@ void __cdecl core_doc_cpp_CDoc_processFrame_FUN_00450c60(CDoc *this_ptr,float de
   core_muzzle_cpp_SFollowFormation_process_FUN_0059e110
             (&(this_ptr->base).base.follow_formation,delta_time);
   local_3c = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                       (g_CEventList_PTR_006141f0,"DebugActionPending");
+                       (g_CEventListPtr,"DebugActionPending");
   pCVar6 = (this_ptr->base).base.carry_hands[1].carry_actor;
   if ((pCVar6 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
     (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,in_stack_fffff9e4);
@@ -1236,7 +1236,7 @@ LAB_00452acb:
         }
 LAB_00452c78:
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                  ((CDemonActor *)this_ptr,&g_CVector3f_0265370c,local_70 * 0.025f + 1.0);
+                  ((CDemonActor *)this_ptr,&g_ZeroVector,local_70 * 0.025f + 1.0);
       }
 LAB_00452c9a:
       iVar18 = (this_ptr->base).base.is_on_ground;
@@ -1360,7 +1360,7 @@ LAB_004514a7:
     iVar18 = core_bwspart_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(local_8c);
     if (iVar18 != 0) {
       core_xform_cpp_transformVector3x4_FUN_00591530
-                (&g_CVector3f_0265370c,
+                (&g_ZeroVector,
                  (CMatrix3x4f *)
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_INT_01b4d29c].m,
                  &local_334);

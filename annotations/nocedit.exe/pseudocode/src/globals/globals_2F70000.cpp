@@ -34,17 +34,17 @@ float FLOAT_02f7c540 = {};
 float FLOAT_02f7c630 = {};
 
 // int
-int INT_02f797e0 = {};
+int g_RandomizeSpeedsChoice = {};
 int g_DisableMouseHitOnBarrier = {};
-int INT_02f7c528 = {};
+int g_MsnEditHoveredProperty = {};
 int g_SelectedMotionPropertyIndex = {};
 int g_MotionPropertyEditState = {};
-int INT_02f7c538 = {};
-int INT_02f7c53c = {};
+int g_MsnEditMouseOverPanel = {};
+int g_MsnEditViewMode = {};
 int INT_02f7c634 = {};
 int g_LastPingTime = {};
 int g_RemoteSyncStage = {};
-int INT_02f7c8c4 = {};
+int g_NetNextPlayerId = {};
 int g_ChatHistoryCount = {};
 
 // uchar
@@ -52,5 +52,5 @@ uchar g_MsnEditPropertyScrollBarInitGuard = {};
 
 // uint
 uint g_CurrentGameTime = {};
-uint UINT_02f7c8c8 = {};
+uint g_NetLastSimFrameAckTime = {};
 

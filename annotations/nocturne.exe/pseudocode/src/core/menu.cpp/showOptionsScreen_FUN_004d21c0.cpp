@@ -20,11 +20,11 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems
     core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);
     core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoonInstance);
   }
-  pacVar4 = g_CHAR_ARRAY_ARRAY_01cc7900;
+  pacVar4 = g_OptionsMenuTextBuffers;
   core_game_cpp_CGame_saveClockTime_FUN_0049a890(g_CGamePtr);
   iVar2 = 0;
   do {
-    *(char (**) [256])((int)g_CHAR_PTR_ARRAY_01cc7d00 + iVar2) = pacVar4;
+    *(char (**) [256])((int)g_OptionsMenuPointers + iVar2) = pacVar4;
     iVar2 = iVar2 + 4;
     pacVar4 = pacVar4 + 1;
   } while (iVar2 != 0x10);
@@ -33,17 +33,17 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems
     core_moon_cpp_CMoon_update_FUN_004deae0(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_004dec50(&g_CMoonInstance);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Graphic options");
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc7900[0],pcVar3);
+    _sprintf(g_OptionsMenuTextBuffers[0],pcVar3);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Sound options");
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc7900[1],pcVar3);
+    _sprintf(g_OptionsMenuTextBuffers[1],pcVar3);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Control options");
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc7900[2],pcVar3);
+    _sprintf(g_OptionsMenuTextBuffers[2],pcVar3);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Credits");
-    _sprintf(g_CHAR_ARRAY_ARRAY_01cc7900[3],pcVar3);
+    _sprintf(g_OptionsMenuTextBuffers[3],pcVar3);
     g_CGamePtr->hero_number = HERO_TYPE_STRANGER;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Option Menu");
     iVar2 = core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440
-                      (g_CHAR_PTR_ARRAY_01cc7d00,4,&local_10,0xfa,pcVar3);
+                      (g_OptionsMenuPointers,4,&local_10,0xfa,pcVar3);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     switch(iVar2) {
     case 0:

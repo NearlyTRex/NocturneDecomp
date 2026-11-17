@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 188,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 14,
     "suspect_types": [
       "extra_output",
@@ -15,7 +15,7 @@
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 74
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -57,13 +57,13 @@
   "globals": [
     {
       "addr": "005a47a4",
-      "name": "g_WatcomVirtualBaseDescriptor_005a47a4",
+      "name": "g_IFStream_LayoutInfo",
       "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
       "addr": "005a47ac",
-      "name": "g_WatcomVirtualBaseDescriptor_005a47ac",
+      "name": "g_IFStream_IStreamSubobjectLayout",
       "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
@@ -199,12 +199,12 @@
       "line": 14,
       "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) =",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_IFStream_IStreamSubobjectLayout;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
       "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar4 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
@@ -212,7 +212,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 16,
       "match": "piVar4[-2].",
       "severity": "mild",
       "text": "this_ptr = &piVar4[-2].__tied_stream;",
@@ -220,7 +220,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "p_Var2 = crt_iostream_cpp_istream_ctor_FUN_0056b67d((_istream *)(extraout_EAX + 0x44),1);",
@@ -228,7 +228,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 21,
       "match": "p_Var2[-2].",
       "severity": "mild",
       "text": "ppvVar3 = &p_Var2[-2]._ios.__i_lock;",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(int *)((int)ppvVar3",
       "severity": "moderate",
       "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
@@ -244,7 +244,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 23,
       "match": "p_Var2[-1].",
       "severity": "mild",
       "text": "p_Var2[-1]._ios.cleanup_vtable = &PTR_crt_fstream_cpp_ifstream_dtor_FUN_00565264_005a47b8;",
@@ -252,7 +252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)pvVar1",
       "severity": "moderate",
       "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) =",
@@ -260,7 +260,7 @@
     },
     {
       "description": "Pointer value `ppvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
+      "line": 22,
       "match": "(int)ppvVar3",
       "severity": "moderate",
       "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
@@ -268,7 +268,7 @@
     },
     {
       "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "(int)pvVar1",
       "severity": "moderate",
       "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) =",
@@ -276,7 +276,7 @@
     },
     {
       "description": "Pointer value `ppvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "(int)ppvVar3",
       "severity": "moderate",
       "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) =",
@@ -287,12 +287,12 @@
       "line": 14,
       "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44)",
       "severity": "moderate",
-      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) =",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_IFStream_IStreamSubobjectLayout;",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 16,
+      "line": 15,
       "match": "(ios *)((int)this_ptr + 0x54)",
       "severity": "moderate",
       "text": "piVar4 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",

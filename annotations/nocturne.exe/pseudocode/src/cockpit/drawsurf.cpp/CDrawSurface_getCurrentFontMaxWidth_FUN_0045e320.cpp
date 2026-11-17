@@ -9,8 +9,8 @@
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320(CDrawSurface *this_ptr)
 
 {
-  if (g_CBitFont_PTR_01b4d718 != (CBitFont *)0x0) {
-    return g_CBitFont_PTR_01b4d718->current_line_height;
+  if (g_CurrentFont != (CBitFont *)0x0) {
+    return g_CurrentFont->current_line_height;
   }
   return 0xb;
 }

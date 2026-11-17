@@ -21,8 +21,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   DWORD g_DWORD_01c038f8
-;   DWORD g_DWORD_01c038fc
+;   DWORD g_JoyXPos
+;   DWORD g_JoyYPos
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.rendering_mode
 ;   undefined4 g_CDemonSetInstance.light_direction.x
@@ -86,11 +86,11 @@ section .text
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     MOV EAX,[0x005be368]                ; 004df0b0 | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15aa88],0x1  ; 004df0b5 | g_CDemonSetInstance.rendering_mode
-    MOV EAX,[0x01c038f8]                ; 004df0bf | g_DWORD_01c038f8
+    MOV EAX,[0x01c038f8]                ; 004df0bf | g_JoyXPos
     ADD ESP,0x8                         ; 004df0c4
     ADD EAX,0xffff8000                  ; 004df0c7
     MOV dword ptr [ESP + 0xc],EAX       ; 004df0cc
-    MOV EAX,[0x01c038fc]                ; 004df0d0 | g_DWORD_01c038fc
+    MOV EAX,[0x01c038fc]                ; 004df0d0 | g_JoyYPos
     ADD EAX,0xffff8000                  ; 004df0d5
     LEA EDI,[ESP + 0xc]                 ; 004df0da
     MOV dword ptr [ESP + 0x10],EAX      ; 004df0de

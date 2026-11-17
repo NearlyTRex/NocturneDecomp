@@ -31,7 +31,7 @@
 ; Referenced Globals:
 ;   undefined4 g_CSimpleCrossVTable._ub.processActionButton
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic g_SMRGLTextureBasic_00617da4
+;   SMRGLTextureBasic g_Inventory3DTextureAtlas
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
     PUSH EDI                            ; 004dd4e2
     PUSH EBP                            ; 004dd4e3
     SUB ESP,0x38                        ; 004dd4e4
-    PUSH 0x617da4                       ; 004dd4e7 | g_SMRGLTextureBasic_00617da4
+    PUSH 0x617da4                       ; 004dd4e7 | g_Inventory3DTextureAtlas
     MOV EDX,dword ptr [0x0060b280]      ; 004dd4ec | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 004dd4f2 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 004dd4f3

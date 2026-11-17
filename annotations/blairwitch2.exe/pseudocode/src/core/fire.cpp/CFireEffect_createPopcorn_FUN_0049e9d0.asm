@@ -12,7 +12,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 004873e1
 ;
 ; Referenced Globals:
-;   int g_INT_01ca367c
+;   int g_PopcornAllocIndex
 ;   undefined4 g_PopcornPool[0].base.vtable
 ;
 ; *****************************************************************************
@@ -25,7 +25,7 @@ section .text
     PUSH EBP                            ; 0049e9d2
     MOV ECX,dword ptr [ESP + 0x18]      ; 0049e9d3
     MOV EBX,dword ptr [ESP + 0x14]      ; 0049e9d7
-    MOV EAX,[0x01ca367c]                ; 0049e9db | g_INT_01ca367c
+    MOV EAX,[0x01ca367c]                ; 0049e9db | g_PopcornAllocIndex
     PUSH ECX                            ; 0049e9e0
     SHL EAX,0x6                         ; 0049e9e1
     PUSH EBX                            ; 0049e9e4
@@ -33,10 +33,10 @@ section .text
     PUSH EAX                            ; 0049e9ea
     MOV EDX,dword ptr [EAX + 0x3c]      ; 0049e9eb | g_PopcornPool[0].base.vtable
     CALL dword ptr [EDX]                ; 0049e9ee
-    MOV ESI,dword ptr [0x01ca367c]      ; 0049e9f0 | g_INT_01ca367c
+    MOV ESI,dword ptr [0x01ca367c]      ; 0049e9f0 | g_PopcornAllocIndex
     INC ESI                             ; 0049e9f6
     ADD ESP,0xc                         ; 0049e9f7
-    MOV dword ptr [0x01ca367c],ESI      ; 0049e9fa | g_INT_01ca367c
+    MOV dword ptr [0x01ca367c],ESI      ; 0049e9fa | g_PopcornAllocIndex
     CMP ESI,0x100                       ; 0049ea00
     JGE 0x0049ea0c                      ; 0049ea06
         ;   XREF to: 0049ea0c (CONDITIONAL_JUMP)  ; LAB_0049ea0c
@@ -46,7 +46,7 @@ section .text
     RET                                 ; 0049ea0b
     XOR EBP,EBP                         ; 0049ea0c
         ;   Label: LAB_0049ea0c
-    MOV dword ptr [0x01ca367c],EBP      ; 0049ea0e | g_INT_01ca367c
+    MOV dword ptr [0x01ca367c],EBP      ; 0049ea0e | g_PopcornAllocIndex
     POP EBP                             ; 0049ea14
     POP ESI                             ; 0049ea15
     POP EBX                             ; 0049ea16

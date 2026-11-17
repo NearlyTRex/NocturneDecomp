@@ -138,7 +138,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
               fVar2 = local_30 + 127.0f;
               fVar3 = local_28 + 127.0f;
               local_12c.base.base.count = 0x542173;
-              dVar10 = round((double)(local_2c + 127.0f));
+              dVar10 = round((double)(local_2c + 127.0f))
+              ;
               local_12c.base.base.type = 0x54217a;
               dVar11 = round((double)fVar2);
               local_28 = (float)(int)ROUND(dVar10);

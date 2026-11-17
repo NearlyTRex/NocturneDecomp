@@ -56,10 +56,10 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_004b16d0(CExplosion *this_ptr
          puVar2[(uint)bVar3 * -2 + 1];
     local_44[0].y = local_44[0].y + 1.0;
     model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                          (g_CKeyFramedModelInstance_ARRAY_01c57e1c + iVar1 % 5);
+                          (g_CFireEffectDebrisModels + iVar1 % 5);
     iVar1 = iVar1 + 1;
-    core_fire_cpp_CFireEffect_createRock_FUN_004b5eb0
-              (g_CFireEffect_PTR_0061c010,local_44,&local_50,model_ptr);
+    core_fire_cpp_CFireEffect_createRock_FUN_004b5eb0(g_CFireEffectPtr,local_44,&local_50,model_ptr)
+    ;
   } while (iVar1 < 10);
   return;
 }

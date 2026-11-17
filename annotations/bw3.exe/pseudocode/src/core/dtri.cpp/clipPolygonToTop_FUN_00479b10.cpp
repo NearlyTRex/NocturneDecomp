@@ -28,27 +28,27 @@ void __cdecl core_dtri_cpp_clipPolygonToTop_FUN_00479b10(float y_max)
       }
       switch(bVar1) {
       case 0:
-        if (g_CVector3f_ARRAY_01c59aa4 + g_INT_01c59aa0 != (CVector3f *)point1_ptr) {
-          g_CVector3f_ARRAY_01c59aa4[g_INT_01c59aa0].x = ((CVector3f *)point1_ptr)->x;
-          g_CVector3f_ARRAY_01c59aa4[g_INT_01c59aa0].y = ((CVector3f *)point1_ptr)->y;
-          g_CVector3f_ARRAY_01c59aa4[g_INT_01c59aa0].z = ((CVector3f *)point1_ptr)->z;
+        if (g_ClipBuffer1Vertices + g_INT_01c59aa0 != (CVector3f *)point1_ptr) {
+          g_ClipBuffer1Vertices[g_INT_01c59aa0].x = ((CVector3f *)point1_ptr)->x;
+          g_ClipBuffer1Vertices[g_INT_01c59aa0].y = ((CVector3f *)point1_ptr)->y;
+          g_ClipBuffer1Vertices[g_INT_01c59aa0].z = ((CVector3f *)point1_ptr)->z;
         }
         break;
       case 1:
         core_dtri_cpp_clipLineToPlane_FUN_00479970
                   ((CVector3f *)(&g_FLOAT_01c599e0 + uVar2 * 3),(CVector3f *)point1_ptr,
-                   g_CVector3f_ARRAY_01c59aa4 + g_INT_01c59aa0,0.0,1.0,0.0,(double)-y_max);
+                   g_ClipBuffer1Vertices + g_INT_01c59aa0,0.0,1.0,0.0,(double)-y_max);
         break;
       case 2:
-        if (g_CVector3f_ARRAY_01c59aa4 + g_INT_01c59aa0 != (CVector3f *)point1_ptr) {
-          g_CVector3f_ARRAY_01c59aa4[g_INT_01c59aa0].x = ((CVector3f *)point1_ptr)->x;
-          g_CVector3f_ARRAY_01c59aa4[g_INT_01c59aa0].y = ((CVector3f *)point1_ptr)->y;
-          g_CVector3f_ARRAY_01c59aa4[g_INT_01c59aa0].z = ((CVector3f *)point1_ptr)->z;
+        if (g_ClipBuffer1Vertices + g_INT_01c59aa0 != (CVector3f *)point1_ptr) {
+          g_ClipBuffer1Vertices[g_INT_01c59aa0].x = ((CVector3f *)point1_ptr)->x;
+          g_ClipBuffer1Vertices[g_INT_01c59aa0].y = ((CVector3f *)point1_ptr)->y;
+          g_ClipBuffer1Vertices[g_INT_01c59aa0].z = ((CVector3f *)point1_ptr)->z;
         }
         g_INT_01c59aa0 = g_INT_01c59aa0 + 1;
         core_dtri_cpp_clipLineToPlane_FUN_00479970
                   ((CVector3f *)point1_ptr,(CVector3f *)(&g_FLOAT_01c599e0 + uVar2 * 3),
-                   g_CVector3f_ARRAY_01c59aa4 + g_INT_01c59aa0,0.0,1.0,0.0,(double)-y_max);
+                   g_ClipBuffer1Vertices + g_INT_01c59aa0,0.0,1.0,0.0,(double)-y_max);
         break;
       default:
         goto switchD_00479b7c_caseD_3;

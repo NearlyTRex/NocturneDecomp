@@ -16,7 +16,7 @@
 ;   TerminatedCString s_CDemonSet_buildMirrorLis_00590842
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonRenderer g_CDemonRenderer_01b4d738
-;   undefined4 g_CGlassActorType_01c78c40.name_hash
+;   undefined4 g_CGlassClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -45,7 +45,7 @@ section .text
     JLE 0x0050e2f0                      ; 0050e22f
         ;   XREF to: 0050e2f0 (CONDITIONAL_JUMP)  ; LAB_0050e2f0
     MOV EDI,ESI                         ; 0050e235
-    MOV EBX,dword ptr [0x01c78c78]      ; 0050e237 | g_CGlassActorType_01c78c40.name_hash
+    MOV EBX,dword ptr [0x01c78c78]      ; 0050e237 | g_CGlassClassInfo.name_hash
         ;   Label: LAB_0050e237
     PUSH EBX                            ; 0050e23d
     MOV EAX,dword ptr [EDI + 0x14cd70]  ; 0050e23e

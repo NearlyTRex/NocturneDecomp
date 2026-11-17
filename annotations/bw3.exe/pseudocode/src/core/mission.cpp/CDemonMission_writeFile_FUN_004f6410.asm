@@ -123,7 +123,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004f64da
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004f64df
-    MOV ECX,dword ptr [0x007df9c4]      ; 004f64e2 | g_INT_007df9c4
+    MOV ECX,dword ptr [0x007df9c4]      ; 004f64e2 | g_NumActorClassTypes
     PUSH ECX                            ; 004f64e8
     PUSH 0x5c8823                       ; 004f64e9 | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x24]      ; 004f64ee
@@ -133,13 +133,13 @@ section .text
     ADD ESP,0xc                         ; 004f64f8
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040c870 ; 004f64fb
         ;   XREF to: 0040c870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040c870()
-    MOV EDI,dword ptr [0x007df9c4]      ; 004f6500 | g_INT_007df9c4
+    MOV EDI,dword ptr [0x007df9c4]      ; 004f6500 | g_NumActorClassTypes
     XOR ESI,ESI                         ; 004f6506
     TEST EDI,EDI                        ; 004f6508
     JLE 0x004f6540                      ; 004f650a
         ;   XREF to: 004f6540 (CONDITIONAL_JUMP)  ; LAB_004f6540
     XOR EDI,EDI                         ; 004f650c
-    MOV EAX,dword ptr [EDI + 0x7df9c8]  ; 004f650e | g_CDemonActorType_PTR_ARRAY_007df9c8 | g_CDemonActorType_PTR_ARRAY_007df9c8[1]
+    MOV EAX,dword ptr [EDI + 0x7df9c8]  ; 004f650e | g_ActorClassRegistrations | g_ActorClassRegistrations[1]
         ;   Label: LAB_004f650e
     MOV EBP,dword ptr [EAX + 0x34]      ; 004f6514
     PUSH EBP                            ; 004f6517
@@ -151,7 +151,7 @@ section .text
     INC ESI                             ; 004f6526
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004f6527
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
-    MOV EDX,dword ptr [0x007df9c4]      ; 004f652c | g_INT_007df9c4
+    MOV EDX,dword ptr [0x007df9c4]      ; 004f652c | g_NumActorClassTypes
     ADD ESP,0x10                        ; 004f6532
     CMP ESI,EDX                         ; 004f6535
     JL 0x004f650e                       ; 004f6537

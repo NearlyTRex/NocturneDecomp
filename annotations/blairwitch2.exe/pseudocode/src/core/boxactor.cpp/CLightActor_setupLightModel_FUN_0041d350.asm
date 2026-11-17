@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005cc6f5 = 0.5
 ;   double g_DOUBLE_005cc6f9 = 0.100000000000000
-;   int g_INT_007bc9ac
+;   int g_LightActorFiltersInitialized
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004478d0
@@ -256,7 +256,7 @@ section .text
     MOV dword ptr [EBX + 0x248c],0x0    ; 0041d6f8
     MOV dword ptr [EAX + 0x38],0x42600000 ; 0041d702
     MOV dword ptr [EBX + 0x918],0x42000000 ; 0041d709
-    MOV EDX,dword ptr [0x007bc9ac]      ; 0041d713 | g_INT_007bc9ac
+    MOV EDX,dword ptr [0x007bc9ac]      ; 0041d713 | g_LightActorFiltersInitialized
     MOV dword ptr [EBX + 0x470],0x3     ; 0041d719
     TEST EDX,EDX                        ; 0041d723
     JNZ 0x0041d760                      ; 0041d725
@@ -282,7 +282,7 @@ section .text
     CMP ESI,0x8                         ; 0041d751
     JL 0x0041d72e                       ; 0041d754
         ;   XREF to: 0041d72e (CONDITIONAL_JUMP)  ; LAB_0041d72e
-    MOV dword ptr [0x007bc9ac],0x1      ; 0041d756 | g_INT_007bc9ac
+    MOV dword ptr [0x007bc9ac],0x1      ; 0041d756 | g_LightActorFiltersInitialized
     PUSH 0x0                            ; 0041d760
         ;   Label: LAB_0041d760
     PUSH 0x0                            ; 0041d762

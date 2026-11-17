@@ -280,7 +280,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy *this_
 void __cdecl core_basicene_cpp_CBasicEnemy_setAIState_FUN_0059e7a0(CBasicEnemy *this_ptr,char *state_name);
 void __cdecl core_basicene_cpp_CBasicEnemy_setAnimation_FUN_0059e7c0(CBasicEnemy *this_ptr,int motion_state);
 void __cdecl core_basicene_cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0(CBasicEnemy *this_ptr,float delta_time);
-void __cdecl core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy *this_ptr,int param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy *this_ptr,int event_id);
 void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy *this_ptr,float delta_time,int mode);
 void __cdecl core_basicene_cpp_CBasicEnemy_processNothingState_FUN_0059ebc0(CBasicEnemy *this_ptr);
 void __cdecl core_basicene_cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0(CBasicEnemy *this_ptr,float delta_time);

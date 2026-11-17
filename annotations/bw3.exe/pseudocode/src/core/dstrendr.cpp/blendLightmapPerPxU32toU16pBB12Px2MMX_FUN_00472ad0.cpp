@@ -28,15 +28,15 @@ void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00472ad
   ulonglong uVar17;
   
   uVar17 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c6e2bc >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
                                                                                 0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)(g_ULONG_01c6e2bc >> 0x10)) << 0x20)
-                                        >> 0x18),(char)(g_ULONG_01c6e2bc >> 8)),
-                          (ushort)(byte)g_ULONG_01c6e2bc),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar1 = *texture_buffer;
-    uVar2 = g_UINT_ARRAY_00b9e14c[*texture_indices];
+    uVar2 = g_LightmapTexturePalette[*texture_indices];
     uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
                                             CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)
                   >> 0x18);
@@ -53,19 +53,18 @@ void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00472ad
                                               ((ushort)CONCAT41(uVar5,(char)(uVar2 >> 8)) & 0xff),
                                               ((ushort)uVar1 & 0xff) * (ushort)(byte)uVar2))),
                    *(ulonglong *)
-                    (g_USHORT_ARRAY_005fa0e0 +
-                    ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
-                   g_USHORT_ARRAY_005fa0e0._2040_8_);
+                    (g_LightmapData + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4)
+                   ^ g_LightmapData._2040_8_);
     uVar16 = pmulhw(uVar17,*(ulonglong *)
-                            (g_USHORT_ARRAY_005fa0e0 +
+                            (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
-    uVar7 = (ushort)((short)uVar8 + (short)uVar16 + (short)g_QWORD_005f8b68) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar16 + (short)g_LightmapBlendBias1) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + (short)((ulonglong)uVar16 >> 0x10) +
-                     (short)(g_QWORD_005f8b68 >> 0x10)) >> 4;
+                     (short)(g_LightmapBlendBias1 >> 0x10)) >> 4;
     uVar13 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + (short)((ulonglong)uVar16 >> 0x20) +
-                     (short)(g_QWORD_005f8b68 >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias1 >> 0x20)) >> 4;
     uVar14 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + (short)((ulonglong)uVar16 >> 0x30) +
-                     (short)(g_QWORD_005f8b68 >> 0x30)) >> 4;
+                     (short)(g_LightmapBlendBias1 >> 0x30)) >> 4;
     uVar9 = (ulonglong)
             CONCAT13((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),
                      CONCAT12((uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 - (0xff < uVar13),
@@ -74,7 +73,7 @@ void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00472ad
                                        (uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 - (0xff < uVar7)
                                       )));
     uVar1 = texture_buffer[1];
-    uVar2 = g_UINT_ARRAY_00b9e14c[texture_indices[1]];
+    uVar2 = g_LightmapTexturePalette[texture_indices[1]];
     uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
                                             CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)
                   >> 0x18);
@@ -89,19 +88,19 @@ void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00472ad
                                                        0x10) & 0xff) * (ushort)(byte)(uVar2 >> 8),
                                               ((ushort)uVar1 & 0xff) * ((ushort)uVar2 & 0xff)))),
                    *(ulonglong *)
-                    (g_USHORT_ARRAY_005fa0e0 +
+                    (g_LightmapData +
                     ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4) ^
-                   g_USHORT_ARRAY_005fa0e0._2040_8_);
+                   g_LightmapData._2040_8_);
     uVar16 = pmulhw(uVar17,*(ulonglong *)
-                            (g_USHORT_ARRAY_005fa0e0 +
+                            (g_LightmapData +
                             ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4));
-    uVar7 = (ushort)((short)uVar8 + (short)uVar16 + (short)g_QWORD_005f8b70) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar16 + (short)g_LightmapBlendBias2) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + (short)((ulonglong)uVar16 >> 0x10) +
-                     (short)(g_QWORD_005f8b70 >> 0x10)) >> 4;
+                     (short)(g_LightmapBlendBias2 >> 0x10)) >> 4;
     uVar13 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + (short)((ulonglong)uVar16 >> 0x20) +
-                     (short)(g_QWORD_005f8b70 >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias2 >> 0x20)) >> 4;
     uVar14 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + (short)((ulonglong)uVar16 >> 0x30) +
-                     (short)(g_QWORD_005f8b70 >> 0x30)) >> 4;
+                     (short)(g_LightmapBlendBias2 >> 0x30)) >> 4;
     uVar10 = (ulonglong)
              CONCAT13((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),
                       CONCAT12((uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 - (0xff < uVar13),
@@ -110,12 +109,12 @@ void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00472ad
                                         (uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 -
                                         (0xff < uVar7))));
     *output_buffer =
-         (uint)(((uVar10 & g_QWORD_00604eb8) >> g_QWORD_00604f00 |
-                 (uVar10 & g_QWORD_00604e98) >> g_QWORD_00604ee0 |
-                (uVar10 & g_QWORD_00604e78) >> g_QWORD_00604ec0) << 0x10) |
-         (uint)((uVar9 & g_QWORD_00604eb8) >> g_QWORD_00604f00) |
-         (uint)((uVar9 & g_QWORD_00604e98) >> g_QWORD_00604ee0) |
-         (uint)((uVar9 & g_QWORD_00604e78) >> g_QWORD_00604ec0);
+         (uint)(((uVar10 & g_BlueMask32) >> g_BlueBitShift |
+                 (uVar10 & g_GreenMask32) >> g_GreenBlueDitherShift |
+                (uVar10 & g_RedMask32) >> g_TotalDitherShift) << 0x10) |
+         (uint)((uVar9 & g_BlueMask32) >> g_BlueBitShift) |
+         (uint)((uVar9 & g_GreenMask32) >> g_GreenBlueDitherShift) |
+         (uint)((uVar9 & g_RedMask32) >> g_TotalDitherShift);
     texture_buffer = texture_buffer + 2;
     texture_indices = texture_indices + 2;
     lightmap_indices = lightmap_indices + 2;

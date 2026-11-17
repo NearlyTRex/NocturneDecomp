@@ -17,10 +17,10 @@
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;   int g_INT_01c6af90
 ;   ushort g_USHORT_01d1ad62
-;   int g_INT_01d1ad64
-;   int g_INT_01d1ad68
-;   int g_INT_01d1ad6c
-;   int g_INT_01d1ad70
+;   int g_ShadowColor32
+;   int g_ShadowColorRed
+;   int g_ShadowColorGreen
+;   int g_ShadowColorBlue
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -65,12 +65,12 @@ section .text
     SHL EDX,CL                          ; 004b1202
     MOV ECX,EDX                         ; 004b1204
     OR ECX,EAX                          ; 004b1206
-    MOV dword ptr [0x01d1ad64],ECX      ; 004b1208 | g_INT_01d1ad64
+    MOV dword ptr [0x01d1ad64],ECX      ; 004b1208 | g_ShadowColor32
         ;   Label: LAB_004b1208
-    MOV dword ptr [0x01d1ad6c],EBX      ; 004b120e | g_INT_01d1ad6c
+    MOV dword ptr [0x01d1ad6c],EBX      ; 004b120e | g_ShadowColorGreen
         ;   Label: LAB_004b120e
-    MOV dword ptr [0x01d1ad70],ESI      ; 004b1214 | g_INT_01d1ad70
-    MOV dword ptr [0x01d1ad68],EDI      ; 004b121a | g_INT_01d1ad68
+    MOV dword ptr [0x01d1ad70],ESI      ; 004b1214 | g_ShadowColorBlue
+    MOV dword ptr [0x01d1ad68],EDI      ; 004b121a | g_ShadowColorRed
     ADD ESP,0xc                         ; 004b1220
     POP EBP                             ; 004b1223
     POP EDI                             ; 004b1224

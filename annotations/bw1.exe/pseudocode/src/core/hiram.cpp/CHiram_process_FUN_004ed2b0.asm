@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GlassHiram_005e4c54
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 DAT_01d2c900
@@ -105,7 +105,7 @@ section .text
     LEA EAX,[EBX + 0x1fab8]             ; 004ed34c
         ;   Label: LAB_004ed34c
     PUSH EAX                            ; 004ed352
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004ed353 | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004ed353 | g_CEventListPtr
     PUSH EDX                            ; 004ed359
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004ed35a
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

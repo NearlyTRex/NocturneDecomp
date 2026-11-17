@@ -35,7 +35,7 @@
 ; Referenced Globals:
 ;   float g_FLOAT_005f64e4 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   SMRGLTextureBasic g_SMRGLTextureBasic_006157b4
+;   SMRGLTextureBasic g_FireEffectBlastTexture
 ;   SRenderVertex[20000] g_SRenderVertex_ARRAY_00622014
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_00622014[0].v
@@ -83,7 +83,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0 ; 00499a21
         ;   XREF to: 0046b2b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00499a26
-    PUSH 0x6157b4                       ; 00499a29 | g_SMRGLTextureBasic_006157b4
+    PUSH 0x6157b4                       ; 00499a29 | g_FireEffectBlastTexture
     MOV EBX,dword ptr [0x0060b280]      ; 00499a2e | g_CDemonRenderer_PTR_0060b280
     PUSH EBX                            ; 00499a34 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 00499a35

@@ -50,7 +50,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
               ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
               ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
          g_INT_02de5d88 <= g_INT_02de5d84 || (g_INT_02de5d84 <= -g_INT_02de5d88)))))) {
-      pCVar7 = &g_CVector3i_01410280;
+      pCVar7 = &g_CameraOutOfBoundsCoord;
     }
     else {
       g_INT_02de5d80 =
@@ -101,7 +101,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
            ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
       g_INT_02de5d88 <= g_INT_02de5d84 || (g_INT_02de5d84 <= -g_INT_02de5d88)))) {
-    pCVar7 = &g_CVector3i_01410280;
+    pCVar7 = &g_CameraOutOfBoundsCoord;
   }
   else {
     g_INT_02de5d80 =

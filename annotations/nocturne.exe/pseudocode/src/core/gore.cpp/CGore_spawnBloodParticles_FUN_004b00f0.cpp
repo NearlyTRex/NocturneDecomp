@@ -13,11 +13,11 @@ void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore *this_pt
   int iVar1;
   
   if (blood_type != 2) {
-    iVar1 = g_INT_01c78ce8 + 1;
-    this_ptr_00 = g_BloodParticles + g_INT_01c78ce8;
-    g_INT_01c78ce8 = iVar1;
+    iVar1 = g_BloodParticleIndex + 1;
+    this_ptr_00 = g_BloodParticles + g_BloodParticleIndex;
+    g_BloodParticleIndex = iVar1;
     if (0xff < iVar1) {
-      g_INT_01c78ce8 = 0;
+      g_BloodParticleIndex = 0;
     }
     core_gore_cpp_CBloodParticle_setup_FUN_004ae070(this_ptr_00,position,velocity,blood_type);
   }

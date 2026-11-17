@@ -13,27 +13,26 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_004077b0(void)
   int iVar2;
   int iVar3;
   
-  if (g_INT_007c1070 != 0) {
+  if (g_RenderFaceCount != 0) {
     if (g_INT_01c50948 != 0) {
       engine_special_cpp_drawPolyList_FUN_005823a0
-                (g_SRenderVertex_ARRAY_00629014,
-                 (SMRGLPrimitiveQuad **)g_SMRGLHeaderPrimitive_PTR_ARRAY_007c1074,g_INT_007c1070,
-                 0xcd);
-      g_INT_007c1070 = 0;
+                (g_SRenderVertex_ARRAY_00629014,(SMRGLPrimitiveQuad **)g_RenderFaceArray,
+                 g_RenderFaceCount,0xcd);
+      g_RenderFaceCount = 0;
       return;
     }
     iVar3 = 0;
-    if (0 < g_INT_007c1070) {
+    if (0 < g_RenderFaceCount) {
       iVar2 = 0;
       do {
-        puVar1 = (uint *)((int)g_SMRGLHeaderPrimitive_PTR_ARRAY_007c1074 + iVar2);
+        puVar1 = (uint *)((int)g_RenderFaceArray + iVar2);
         iVar2 = iVar2 + 4;
         iVar3 = iVar3 + 1;
         engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
                   ((SMRGLHeaderPrimitive *)*puVar1);
-      } while (iVar3 < g_INT_007c1070);
+      } while (iVar3 < g_RenderFaceCount);
     }
-    g_INT_007c1070 = 0;
+    g_RenderFaceCount = 0;
   }
   return;
 }

@@ -16,16 +16,16 @@ void __cdecl engine_mini3d_cpp_polyList_FUN_004edea0(float *vertices,int vertex_
   CVector3f *pCVar3;
   
   g_INT_01d76c34 = g_INT_01d76c34 + vertex_count;
-  g_INT_01ed3198 = g_INT_01ed3198 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   if (g_INT_01d7a694 != 0) {
     engine_mini3d_cpp_polyListSurface_FUN_004f2490(vertices,vertex_count,indices,triangle_count);
     return;
   }
   engine_mini3d_cpp_updateTransform_FUN_004edcc0();
   engine_mini3d_cpp_updateRenderState_FUN_004f2430();
-  if ((g_PTR_02cf60b4 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
-    (*(code *)g_PTR_02cf60b4)
-              (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c6e2b4.dword);
+  if ((g_APIDLL_polyList != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_APIDLL_polyList)
+              (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   engine_mini3d_cpp_allocVertexList_FUN_004ede40();
@@ -47,8 +47,7 @@ void __cdecl engine_mini3d_cpp_polyList_FUN_004edea0(float *vertices,int vertex_
       } while (iVar2 < vertex_count);
     }
     (*(code *)g_PTR_02cf60bc)
-              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,
-               g_BIT_INTEGER32_01c6e2b4.dword);
+              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   if ((g_PTR_02cf60c0 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
@@ -63,8 +62,7 @@ void __cdecl engine_mini3d_cpp_polyList_FUN_004edea0(float *vertices,int vertex_
       } while (iVar2 < vertex_count);
     }
     (*(code *)g_PTR_02cf60c0)
-              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,
-               g_BIT_INTEGER32_01c6e2b4.dword);
+              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   iVar2 = 0;

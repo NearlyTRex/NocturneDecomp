@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_005fba20 = 0x8
-;   void* g_PTR_01c6b5cc
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
-;   int g_INT_01c6e2b8
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -65,9 +65,9 @@ section .text
     MOV EDX,0x1                         ; 0046c0e3
     MOV EAX,0x46fa57                    ; 0046c0e8
     XOR ECX,ECX                         ; 0046c0ed
-    MOV dword ptr [0x01c6e2b4],EDX      ; 0046c0ef | g_BIT_INTEGER32_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],ECX      ; 0046c0f5 | g_INT_01c6e2b8
-    MOV [0x01c6b5cc],EAX                ; 0046c0fb | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EDX      ; 0046c0ef | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],ECX      ; 0046c0f5 | g_VertexPreprocessMode
+    MOV [0x01c6b5cc],EAX                ; 0046c0fb | g_ScanlineRenderFunc
     LEA EAX,[ESI + 0x18]                ; 0046c100
         ;   Label: LAB_0046c100
     PUSH EAX                            ; 0046c103
@@ -98,15 +98,15 @@ section .text
         ;   Label: LAB_0046c12b
     JNZ 0x0046c156                      ; 0046c132
         ;   XREF to: 0046c156 (CONDITIONAL_JUMP)  ; LAB_0046c156
-    MOV dword ptr [0x01c6b5cc],0x560f31 ; 0046c134 | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x560f31 ; 0046c134 | g_ScanlineRenderFunc
     MOV EDI,0x6                         ; 0046c13e
         ;   Label: LAB_0046c13e
     MOV EBX,0x3e7                       ; 0046c143
-    MOV dword ptr [0x01c6e2b8],EDI      ; 0046c148 | g_INT_01c6e2b8
-    MOV dword ptr [0x01c6e2b4],EBX      ; 0046c14e | g_BIT_INTEGER32_01c6e2b4
+    MOV dword ptr [0x01c6e2b8],EDI      ; 0046c148 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6e2b4],EBX      ; 0046c14e | g_RenderStateFlags
     JMP 0x0046c100                      ; 0046c154
         ;   XREF to: 0046c100 (UNCONDITIONAL_JUMP)  ; LAB_0046c100
-    MOV dword ptr [0x01c6b5cc],0x561713 ; 0046c156 | g_PTR_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x561713 ; 0046c156 | g_ScanlineRenderFunc
         ;   Label: LAB_0046c156
     JMP 0x0046c13e                      ; 0046c160
         ;   XREF to: 0046c13e (UNCONDITIONAL_JUMP)  ; LAB_0046c13e

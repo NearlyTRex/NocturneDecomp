@@ -10,11 +10,11 @@
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550625
 ;
 ; Referenced Globals:
-;   int g_INT_00b81498
-;   int g_INT_013238cc
-;   int g_INT_01480e20
-;   int g_INT_01480e24
-;   int g_INT_01480e28
+;   int g_CoronaBlurFillValue
+;   int g_BackdropSaveActive
+;   int g_ImageProcessingState1
+;   int g_ImageProcessingState2
+;   int g_ImageBytesPerPixel
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453dc0
@@ -40,16 +40,16 @@ section .text
     SBB EAX,EDX                         ; 00451db0
     SAR EAX,0x2                         ; 00451db2
     PUSH 0x12c00                        ; 00451db5
-    MOV [0x00b81498],EAX                ; 00451dba | g_INT_00b81498
+    MOV [0x00b81498],EAX                ; 00451dba | g_CoronaBlurFillValue
     XOR EDX,EDX                         ; 00451dbf
     MOV ECX,0xb10718                    ; 00451dc1
-    MOV DL,byte ptr [0x00b81498]        ; 00451dc6 | g_INT_00b81498
+    MOV DL,byte ptr [0x00b81498]        ; 00451dc6 | g_CoronaBlurFillValue
     CALL crt_watcom.c__memset_FUN_004ab020 ; 00451dcc
         ;   XREF to: 004ab020 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_004ab020(void * dest, int fill_byte, uint size)
-    CMP dword ptr [0x01480e28],0x1      ; 00451dd1 | g_INT_01480e28
+    CMP dword ptr [0x01480e28],0x1      ; 00451dd1 | g_ImageBytesPerPixel
     JG 0x00451de5                       ; 00451dd8
         ;   XREF to: 00451de5 (CONDITIONAL_JUMP)  ; LAB_00451de5
-    CMP dword ptr [0x013238cc],0x0      ; 00451dda | g_INT_013238cc
+    CMP dword ptr [0x013238cc],0x0      ; 00451dda | g_BackdropSaveActive
     JNZ 0x00451e02                      ; 00451de1
         ;   XREF to: 00451e02 (CONDITIONAL_JUMP)  ; LAB_00451e02
     POP EBX                             ; 00451de3
@@ -57,9 +57,9 @@ section .text
     PUSH EDI                            ; 00451de5
         ;   Label: LAB_00451de5
     PUSH ESI                            ; 00451de6
-    MOV ESI,dword ptr [0x01480e24]      ; 00451de7 | g_INT_01480e24
+    MOV ESI,dword ptr [0x01480e24]      ; 00451de7 | g_ImageProcessingState2
     PUSH ESI                            ; 00451ded
-    MOV EDI,dword ptr [0x01480e20]      ; 00451dee | g_INT_01480e20
+    MOV EDI,dword ptr [0x01480e20]      ; 00451dee | g_ImageProcessingState1
     PUSH EDI                            ; 00451df4
     PUSH EBX                            ; 00451df5
     CALL core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453dc0 ; 00451df6
@@ -76,7 +76,7 @@ section .text
     XOR EBX,EBX                         ; 00451e11
     CALL crt_watcom.c__memcpy_FUN_004ab0c8 ; 00451e13
         ;   XREF to: 004ab0c8 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_004ab0c8(void * dest, void * src, uint size)
-    MOV dword ptr [0x013238cc],EBX      ; 00451e18 | g_INT_013238cc
+    MOV dword ptr [0x013238cc],EBX      ; 00451e18 | g_BackdropSaveActive
     POP EBX                             ; 00451e1e
     RET                                 ; 00451e1f
 

@@ -39,55 +39,55 @@
   "globals": [
     {
       "addr": "005b06b8",
-      "name": "g_UINT_005b06b8",
+      "name": "g_PerspectiveNextU",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "005b06bc",
-      "name": "g_UINT_005b06bc",
+      "name": "g_PerspectiveNextV",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "005b06c4",
-      "name": "g_UINT_005b06c4",
+      "name": "g_StartDepthZ",
       "type": "uint",
       "value": "0x0"
     },
     {
       "addr": "005b06d4",
-      "name": "g_INT_005b06d4",
+      "name": "g_SoftwareDeltaTextureU",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "005b06d8",
-      "name": "g_INT_005b06d8",
+      "name": "g_SoftwareDeltaTextureV",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "005b06dc",
-      "name": "g_INT_005b06dc",
+      "name": "g_SoftwareDeltaDepthZ",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "005b06e0",
-      "name": "g_PTR_005b06e0",
+      "name": "g_PerspectiveScanlineColorPtr",
       "type": "void*",
       "value": "00000000"
     },
     {
       "addr": "005b06e4",
-      "name": "g_INT_005b06e4",
+      "name": "g_PerspectiveScanlinePixelCount",
       "type": "int",
       "value": "0x0"
     },
     {
       "addr": "005b06e8",
-      "name": "g_UINT_PTR_005b06e8",
+      "name": "g_PerspectiveScanlineZPtr",
       "type": "uint*",
       "value": "00000000"
     },
@@ -229,15 +229,15 @@
       "line": 25,
       "match": "(byte *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "g_PTR_005b06e0 = (byte *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
+      "text": "g_PerspectiveScanlineColorPtr = (byte *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(int *)((int)g_UINT_PTR_005b06e8",
+      "match": "(int *)((int)g_PerspectiveScanlineZPtr",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_UINT_PTR_005b06e8 + uVar6) <= (int)uVar1) {",
+      "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {",
       "type": "pointer_cast"
     },
     {
@@ -245,15 +245,15 @@
       "line": 25,
       "match": "(int)g_ScreenBufferArray[scanline_y]",
       "severity": "moderate",
-      "text": "g_PTR_005b06e0 = (byte *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
+      "text": "g_PerspectiveScanlineColorPtr = (byte *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_UINT_PTR_005b06e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_PerspectiveScanlineZPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 48,
-      "match": "(int)g_UINT_PTR_005b06e8",
+      "match": "(int)g_PerspectiveScanlineZPtr",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_UINT_PTR_005b06e8 + uVar6) <= (int)uVar1) {",
+      "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {",
       "type": "pointer_truncation"
     }
   ]

@@ -12,7 +12,7 @@
 ;   TerminatedCString s_initTexture_out_of_memor_005d61da
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
-;   CTextureCache* g_CTextureCache_PTR_02cfd0d0
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -31,7 +31,7 @@ section .text
     TEST EAX,EAX                        ; 0056a96d
     JNZ 0x0056a97b                      ; 0056a96f
         ;   XREF to: 0056a97b (CONDITIONAL_JUMP)  ; LAB_0056a97b
-    MOV [0x02cfd0d0],EAX                ; 0056a971 | g_CTextureCache_PTR_02cfd0d0
+    MOV [0x02cfd0d0],EAX                ; 0056a971 | g_TextureCacheInstance
     TEST EAX,EAX                        ; 0056a976
     JZ 0x0056a98e                       ; 0056a978
         ;   XREF to: 0056a98e (CONDITIONAL_JUMP)  ; LAB_0056a98e
@@ -41,7 +41,7 @@ section .text
     CALL engine_texture.cpp_CTextureCache_ctor_FUN_00569550 ; 0056a97c
         ;   XREF to: 00569550 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_texture.cpp_CTextureCache_ctor_FUN_00569550(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 0056a981
-    MOV [0x02cfd0d0],EAX                ; 0056a984 | g_CTextureCache_PTR_02cfd0d0
+    MOV [0x02cfd0d0],EAX                ; 0056a984 | g_TextureCacheInstance
     TEST EAX,EAX                        ; 0056a989
     JZ 0x0056a98e                       ; 0056a98b
         ;   XREF to: 0056a98e (CONDITIONAL_JUMP)  ; LAB_0056a98e

@@ -53,7 +53,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004cc480(CGlass *this_ptr,SLas
     if (g_INT_005fba28 <= iStack_1c) {
       iStack_1c = g_INT_005fba28 + -1;
     }
-    if (g_UCHAR_PTR_01c6ced0[iStack_20 + iStack_1c * g_INT_005fba28] == '\0') {
+    if (g_CurrentTextureData[iStack_20 + iStack_1c * g_INT_005fba28] == '\0') {
       laser_info->transparency = 1.0;
       return;
     }

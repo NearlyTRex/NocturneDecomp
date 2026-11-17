@@ -21,9 +21,9 @@ void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(CGame *this_p
   if (fVar1 < 0.0) {
     this_ptr->message_timer = 0.0;
   }
-  g_FLOAT_01c78ac4 = g_FLOAT_01c78ac4 - this_ptr->delta_time_float;
-  if (g_FLOAT_01c78ac4 < 0.0) {
-    g_FLOAT_01c78ac4 = 0.0;
+  g_OverlayDisplayTimer = g_OverlayDisplayTimer - this_ptr->delta_time_float;
+  if (g_OverlayDisplayTimer < 0.0) {
+    g_OverlayDisplayTimer = 0.0;
   }
   iVar3 = 0;
   if (0 < this_ptr->status_display_count) {

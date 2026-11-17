@@ -15,7 +15,7 @@ CMouse g_CMouseInstance = {};
 CPathMap g_PathMapCache[12] = {};
 
 // UNetPacket
-UNetPacket g_UNetPacket_01d62e48 = {};
+UNetPacket g_NetworkReceivePacket = {};
 
 // char*[500]
 char* g_CHAR_PTR_ARRAY_01d6325c[500] = {};
@@ -23,8 +23,8 @@ char* g_CHAR_PTR_ARRAY_01d63a2c[500] = {};
 char* g_CHAR_PTR_ARRAY_01d649c8[500] = {};
 
 // int
-int g_INT_01d63250 = {};
-int g_INT_01d63254 = {};
+int g_UseOSFonts = {};
+int g_LocalizationLoaded = {};
 int g_INT_01d63258 = {};
 int g_INT_01d653fc = {};
 

@@ -52,8 +52,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
     local_14.x = local_14.x + local_20;
     local_14.y = local_14.y + local_1c;
     local_14.z = local_14.z + local_18;
-    if (g_CDemonCamera_PTR_007f7370 == (CDemonCamera *)0x0) {
-      g_INT_01c038f4 = (int)g_CDemonCamera_PTR_007f7370;
+    if (g_CurrentSceneCamera == (CDemonCamera *)0x0) {
+      g_INT_01c038f4 = (int)g_CurrentSceneCamera;
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670

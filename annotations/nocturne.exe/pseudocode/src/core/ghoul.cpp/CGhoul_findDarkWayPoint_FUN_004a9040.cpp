@@ -32,7 +32,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(CGhoul *this_pt
     for (; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
       this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
                               (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
-                               g_CWayPointActorType_02ddf514.name_hash);
+                               g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
                             (PTR_s_darkPoint_00584ead_005b9654,this_ptr_00->actor_name,0),
@@ -43,7 +43,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(CGhoul *this_pt
           pCVar3 = (CGhoul *)
                    core_actor_cpp_castToClassHash_FUN_0040d890
                              (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar2),
-                              g_CGhoulActorType_01c78bd8.name_hash);
+                              g_CGhoulClassInfo.name_hash);
           if (((pCVar3 != (CGhoul *)0x0) && (pCVar3 != this_ptr)) &&
              (this_ptr_00 == pCVar3->dark_waypoint)) goto LAB_004a90df;
           iVar2 = iVar2 + 4;

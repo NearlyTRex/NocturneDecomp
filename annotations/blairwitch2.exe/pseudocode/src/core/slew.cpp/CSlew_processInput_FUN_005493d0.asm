@@ -24,7 +24,7 @@
 ;   float g_FLOAT_005e764d = 6.283185
 ;   float g_FLOAT_005e7651 = -6.283185
 ;   CGame* g_CGamePtr = 01cb6900
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
+;   CKeys* g_CKeysPtr = 01d02f84
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   void* g_PTR_01d02f84
 ;
@@ -44,7 +44,7 @@ section .text
     PUSH 0x38                           ; 005493e8
     MOV dword ptr [ESP + 0x8],EAX       ; 005493ea
     MOV dword ptr [ESP + 0xc],EAX       ; 005493ee
-    MOV EAX,[0x00617dd4]                ; 005493f2 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 005493f2 | g_CKeysPtr
     PUSH EAX                            ; 005493f7 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 005493f8 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 005493fa
@@ -63,7 +63,7 @@ section .text
     FLD ST1                             ; 00549421
     FMUL double ptr [0x005e7631]        ; 00549423 | g_DOUBLE_005e7631
     PUSH 0x4f                           ; 00549429
-    MOV EAX,[0x00617dd4]                ; 0054942b | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054942b | g_CKeysPtr
     FXCH ST2                            ; 00549430
     FMUL double ptr [0x005e7639]        ; 00549432 | g_DOUBLE_005e7639
     PUSH EAX                            ; 00549438 | g_PTR_01d02f84
@@ -83,7 +83,7 @@ section .text
     FSTP float ptr [EBX + 0x10]         ; 0054945b
     PUSH 0x51                           ; 0054945e
         ;   Label: LAB_0054945e
-    MOV EAX,[0x00617dd4]                ; 00549460 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 00549460 | g_CKeysPtr
     PUSH EAX                            ; 00549465 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549466 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549468
@@ -96,7 +96,7 @@ section .text
     FSTP float ptr [EBX + 0x10]         ; 00549478
     PUSH 0x48                           ; 0054947b
         ;   Label: LAB_0054947b
-    MOV EAX,[0x00617dd4]                ; 0054947d | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054947d | g_CKeysPtr
     PUSH EAX                            ; 00549482 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549483 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549485
@@ -126,7 +126,7 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 005494b7
     PUSH 0x50                           ; 005494ba
         ;   Label: LAB_005494ba
-    MOV EAX,[0x00617dd4]                ; 005494bc | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 005494bc | g_CKeysPtr
     PUSH EAX                            ; 005494c1 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 005494c2 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 005494c4
@@ -156,7 +156,7 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 005494f6
     PUSH 0x4b                           ; 005494f9
         ;   Label: LAB_005494f9
-    MOV EAX,[0x00617dd4]                ; 005494fb | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 005494fb | g_CKeysPtr
     PUSH EAX                            ; 00549500 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549501 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549503
@@ -192,7 +192,7 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 00549546
     PUSH 0x4d                           ; 00549549
         ;   Label: LAB_00549549
-    MOV EAX,[0x00617dd4]                ; 0054954b | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054954b | g_CKeysPtr
     PUSH EAX                            ; 00549550 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549551 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549553
@@ -228,7 +228,7 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 00549596
     PUSH 0x10                           ; 00549599
         ;   Label: LAB_00549599
-    MOV EAX,[0x00617dd4]                ; 0054959b | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054959b | g_CKeysPtr
     PUSH EAX                            ; 005495a0 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 005495a1 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 005495a3
@@ -241,7 +241,7 @@ section .text
     FSTP float ptr [EBX + 0x4]          ; 005495b2
     PUSH 0x1e                           ; 005495b5
         ;   Label: LAB_005495b5
-    MOV EAX,[0x00617dd4]                ; 005495b7 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 005495b7 | g_CKeysPtr
     PUSH EAX                            ; 005495bc | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 005495bd | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 005495bf
@@ -254,7 +254,7 @@ section .text
     FSTP float ptr [EBX + 0x4]          ; 005495ce
     PUSH 0x3f                           ; 005495d1
         ;   Label: LAB_005495d1
-    MOV EAX,[0x00617dd4]                ; 005495d3 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 005495d3 | g_CKeysPtr
     PUSH EAX                            ; 005495d8 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 005495d9 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 005495db
@@ -267,7 +267,7 @@ section .text
     FSTP float ptr [EBX + 0xc]          ; 005495eb
     PUSH 0x42                           ; 005495ee
         ;   Label: LAB_005495ee
-    MOV EAX,[0x00617dd4]                ; 005495f0 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 005495f0 | g_CKeysPtr
     PUSH EAX                            ; 005495f5 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 005495f6 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 005495f8
@@ -280,7 +280,7 @@ section .text
     FSTP float ptr [EBX + 0xc]          ; 00549608
     PUSH 0x47                           ; 0054960b
         ;   Label: LAB_0054960b
-    MOV EAX,[0x00617dd4]                ; 0054960d | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054960d | g_CKeysPtr
     PUSH EAX                            ; 00549612 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549613 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549615
@@ -293,7 +293,7 @@ section .text
     FSTP float ptr [EBX + 0x14]         ; 00549625
     PUSH 0x49                           ; 00549628
         ;   Label: LAB_00549628
-    MOV EAX,[0x00617dd4]                ; 0054962a | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054962a | g_CKeysPtr
     PUSH EAX                            ; 0054962f | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549630 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549632
@@ -306,7 +306,7 @@ section .text
     FSTP float ptr [EBX + 0x14]         ; 00549642
     PUSH 0xc                            ; 00549645
         ;   Label: LAB_00549645
-    MOV EAX,[0x00617dd4]                ; 00549647 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 00549647 | g_CKeysPtr
     PUSH EAX                            ; 0054964c | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0054964d | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 0054964f
@@ -319,7 +319,7 @@ section .text
     FSTP float ptr [EBX + 0x18]         ; 0054965f
     PUSH 0xd                            ; 00549662
         ;   Label: LAB_00549662
-    MOV EAX,[0x00617dd4]                ; 00549664 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 00549664 | g_CKeysPtr
     PUSH EAX                            ; 00549669 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 0054966a | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 0054966c
@@ -332,7 +332,7 @@ section .text
     FSTP float ptr [EBX + 0x18]         ; 0054967c
     PUSH 0x4c                           ; 0054967f
         ;   Label: LAB_0054967f
-    MOV EAX,[0x00617dd4]                ; 00549681 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 00549681 | g_CKeysPtr
     PUSH EAX                            ; 00549686 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549687 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549689
@@ -400,7 +400,7 @@ section .text
     RET                                 ; 0054972c
     PUSH 0x2a                           ; 0054972d
         ;   Label: LAB_0054972d
-    MOV EAX,[0x00617dd4]                ; 0054972f | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054972f | g_CKeysPtr
     PUSH EAX                            ; 00549734 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 00549735 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 00549737

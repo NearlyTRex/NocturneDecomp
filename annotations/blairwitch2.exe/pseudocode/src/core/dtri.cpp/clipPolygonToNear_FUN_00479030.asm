@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00479024 = 004790e4
 ;   undefined1* PTR_caseD_3_0047902c = 004790c9
-;   int g_INT_01c22194
-;   int g_INT_01c22258
+;   int g_ClipBuffer4VertexCount
+;   int g_ClipBuffer5VertexCount
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00478900
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00479034
     SUB ESP,0x8                         ; 00479036
     AND ESP,0xfffffff8                  ; 00479039
-    MOV EBX,dword ptr [0x01c22258]      ; 0047903c | g_INT_01c22258
+    MOV EBX,dword ptr [0x01c22258]      ; 0047903c | g_ClipBuffer5VertexCount
     MOV EDX,dword ptr [EBP + 0x14]      ; 00479042
     MOV dword ptr [ESP],EDX             ; 00479045
-    MOV EDX,dword ptr [0x01c22194]      ; 00479048 | g_INT_01c22194
+    MOV EDX,dword ptr [0x01c22194]      ; 00479048 | g_ClipBuffer4VertexCount
     XOR EDI,EDI                         ; 0047904e
     TEST EDX,EDX                        ; 00479050
     JLE 0x004790d7                      ; 00479052
         ;   XREF to: 004790d7 (CONDITIONAL_JUMP)  ; LAB_004790d7
     MOV ESI,0x1c22198                   ; 00479058
-    MOV EAX,[0x01c22194]                ; 0047905d | g_INT_01c22194
+    MOV EAX,[0x01c22194]                ; 0047905d | g_ClipBuffer4VertexCount
         ;   Label: LAB_0047905d
     LEA ECX,[EDI + 0x1]                 ; 00479062
     CMP ECX,EAX                         ; 00479065
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 004790c5
     INC EBX                             ; 004790c8
         ;   Label: LAB_004790c8
-    MOV ECX,dword ptr [0x01c22194]      ; 004790c9 | g_INT_01c22194
+    MOV ECX,dword ptr [0x01c22194]      ; 004790c9 | g_ClipBuffer4VertexCount
         ;   Label: caseD_3
     INC EDI                             ; 004790cf
     ADD ESI,0xc                         ; 004790d0
     CMP EDI,ECX                         ; 004790d3
     JL 0x0047905d                       ; 004790d5
         ;   XREF to: 0047905d (CONDITIONAL_JUMP)  ; LAB_0047905d
-    MOV dword ptr [0x01c22258],EBX      ; 004790d7 | g_INT_01c22258
+    MOV dword ptr [0x01c22258],EBX      ; 004790d7 | g_ClipBuffer5VertexCount
         ;   Label: LAB_004790d7
     MOV ESP,EBP                         ; 004790dd
     POP EBP                             ; 004790df
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00479106
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00479107
     PUSH EAX                            ; 0047910b
-    MOV dword ptr [0x01c22258],EBX      ; 0047910c | g_INT_01c22258
+    MOV dword ptr [0x01c22258],EBX      ; 0047910c | g_ClipBuffer5VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00478900 ; 00479112
         ;   XREF to: 00478900 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00478900(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c22258]      ; 00479117 | g_INT_01c22258
+    MOV EBX,dword ptr [0x01c22258]      ; 00479117 | g_ClipBuffer5VertexCount
     ADD ESP,0x2c                        ; 0047911d
     JMP 0x004790c8                      ; 00479120
         ;   XREF to: 004790c8 (UNCONDITIONAL_JUMP)  ; LAB_004790c8
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00479162
     PUSH ECX                            ; 00479166
     PUSH EDX                            ; 00479167
-    MOV dword ptr [0x01c22258],EBX      ; 00479168 | g_INT_01c22258
+    MOV dword ptr [0x01c22258],EBX      ; 00479168 | g_ClipBuffer5VertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00478900 ; 0047916e
         ;   XREF to: 00478900 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00478900(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c22258]      ; 00479173 | g_INT_01c22258
+    MOV EBX,dword ptr [0x01c22258]      ; 00479173 | g_ClipBuffer5VertexCount
     ADD ESP,0x2c                        ; 00479179
     JMP 0x004790c8                      ; 0047917c
         ;   XREF to: 004790c8 (UNCONDITIONAL_JUMP)  ; LAB_004790c8

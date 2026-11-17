@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005d881e
 ;   TerminatedCString s_CGame_slamDT_invalid_dt_005d882f
-;   float g_FLOAT_005d884b = 65536
-;   int g_INT_01c2a370
+;   float g_DeltaTimeScale = 65536
+;   int g_GlobalDeltaTimeInt
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -47,12 +47,12 @@ section .text
         ;   Label: LAB_004bd472
     MOV dword ptr [EBX + 0x284],EAX     ; 004bd476
     FLD float ptr [EBX + 0x284]         ; 004bd47c
-    FMUL float ptr [0x005d884b]         ; 004bd482 | g_FLOAT_005d884b
+    FMUL float ptr [0x005d884b]         ; 004bd482 | g_DeltaTimeScale
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bd488
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBX + 0x280]       ; 004bd48d
     MOV EBX,dword ptr [EBX + 0x280]     ; 004bd493
-    MOV dword ptr [0x01c2a370],EBX      ; 004bd499 | g_INT_01c2a370
+    MOV dword ptr [0x01c2a370],EBX      ; 004bd499 | g_GlobalDeltaTimeInt
     POP EBX                             ; 004bd49f
     RET                                 ; 004bd4a0
     MOV EDX,0x5d881e                    ; 004bd4a1 | = "..\\core\\game.cpp"

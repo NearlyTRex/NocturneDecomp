@@ -18,9 +18,9 @@
 ;   float g_FLOAT_005e0778 = 10
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
-;   int g_INT_01c5fad0
-;   undefined4 g_INT_ARRAY_01d22ca4[2]
-;   CVector3f g_CVector3f_02cfd900
+;   int g_GlobalDeltaTimeInt
+;   undefined4 g_GargoyleIndices[2]
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -293,7 +293,7 @@ section .text
     CMP EAX,ESI                         ; 004c5618
     JGE 0x004c5d9e                      ; 004c561a
         ;   XREF to: 004c5d9e (CONDITIONAL_JUMP)  ; LAB_004c5d9e
-    MOV EAX,[0x01c5fad0]                ; 004c5620 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004c5620 | g_GlobalDeltaTimeInt
     MOV ESI,dword ptr [EBX + 0x108]     ; 004c5625
     ADD ESI,EAX                         ; 004c562b
     MOV EDI,dword ptr [EBX + 0xd09c]    ; 004c562d
@@ -308,7 +308,7 @@ section .text
     CMP EAX,EDX                         ; 004c564f
     JGE 0x004c5dd0                      ; 004c5651
         ;   XREF to: 004c5dd0 (CONDITIONAL_JUMP)  ; LAB_004c5dd0
-    MOV EAX,[0x01c5fad0]                ; 004c5657 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004c5657 | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [EBX + 0x10c]     ; 004c565c
     ADD EDX,EAX                         ; 004c5662
     MOV ECX,dword ptr [EBX + 0xd0a0]    ; 004c5664
@@ -323,7 +323,7 @@ section .text
     CMP EAX,ESI                         ; 004c5686
     JGE 0x004c5e02                      ; 004c5688
         ;   XREF to: 004c5e02 (CONDITIONAL_JUMP)  ; LAB_004c5e02
-    MOV EAX,[0x01c5fad0]                ; 004c568e | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004c568e | g_GlobalDeltaTimeInt
     MOV ESI,dword ptr [EBX + 0x110]     ; 004c5693
     ADD ESI,EAX                         ; 004c5699
     MOV EDI,dword ptr [EBX + 0xd0a4]    ; 004c569b
@@ -379,7 +379,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004c5719
     ADD ESP,0x8                         ; 004c571c
     LEA EAX,[EBP + 0xffffff0e]          ; 004c571f
-    MOV EDX,dword ptr [0x01d22cac]      ; 004c5725 | g_INT_ARRAY_01d22ca4[2]
+    MOV EDX,dword ptr [0x01d22cac]      ; 004c5725 | g_GargoyleIndices[2]
     PUSH EAX                            ; 004c572b
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c572c
     MOV dword ptr [EBP + 0xffffff42],EBX ; 004c5733
@@ -392,7 +392,7 @@ section .text
     LEA EDI,[EBP + -0x62]               ; 004c5751
     PUSH EAX                            ; 004c5754
     FLD float ptr [EBP + 0x76]          ; 004c5755
-    PUSH 0x2cfd900                      ; 004c5758 | g_CVector3f_02cfd900
+    PUSH 0x2cfd900                      ; 004c5758 | g_ZeroVector
     FSTP float ptr [EBP + 0xffffff12]   ; 004c575d
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 004c5763
         ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -969,7 +969,7 @@ section .text
     JLE 0x004c5643                      ; 004c5d9e
         ;   XREF to: 004c5643 (CONDITIONAL_JUMP)  ; LAB_004c5643
         ;   Label: LAB_004c5d9e
-    MOV EAX,[0x01c5fad0]                ; 004c5da4 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004c5da4 | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [EBX + 0x108]     ; 004c5da9
     SUB EDX,EAX                         ; 004c5daf
     MOV ECX,dword ptr [EBX + 0xd09c]    ; 004c5db1
@@ -983,7 +983,7 @@ section .text
     JLE 0x004c567a                      ; 004c5dd0
         ;   XREF to: 004c567a (CONDITIONAL_JUMP)  ; LAB_004c567a
         ;   Label: LAB_004c5dd0
-    MOV EAX,[0x01c5fad0]                ; 004c5dd6 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004c5dd6 | g_GlobalDeltaTimeInt
     MOV ESI,dword ptr [EBX + 0x10c]     ; 004c5ddb
     SUB ESI,EAX                         ; 004c5de1
     MOV EDI,dword ptr [EBX + 0xd0a0]    ; 004c5de3
@@ -997,7 +997,7 @@ section .text
     JLE 0x004c53f3                      ; 004c5e02
         ;   XREF to: 004c53f3 (CONDITIONAL_JUMP)  ; LAB_004c53f3
         ;   Label: LAB_004c5e02
-    MOV EAX,[0x01c5fad0]                ; 004c5e08 | g_INT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 004c5e08 | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [EBX + 0x110]     ; 004c5e0d
     SUB EDX,EAX                         ; 004c5e13
     MOV ECX,dword ptr [EBX + 0xd0a4]    ; 004c5e15

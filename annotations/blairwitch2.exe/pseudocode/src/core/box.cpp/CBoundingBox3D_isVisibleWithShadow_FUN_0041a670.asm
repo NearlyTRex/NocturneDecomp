@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   CDemonLight* g_CDemonLight_PTR_01511ce4
+;   CDemonLight* g_CurrentShadowLight
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   int g_INT_01c35e38
 ;   int g_INT_01c35e3c
@@ -36,7 +36,7 @@ section .text
     PUSH EBP                            ; 0041a670
         ;   Label: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670
     SUB ESP,0x1c                        ; 0041a671
-    CMP dword ptr [0x01511ce4],0x0      ; 0041a674 | g_CDemonLight_PTR_01511ce4
+    CMP dword ptr [0x01511ce4],0x0      ; 0041a674 | g_CurrentShadowLight
     JZ 0x0041a7fd                       ; 0041a67b
         ;   XREF to: 0041a7fd (CONDITIONAL_JUMP)  ; LAB_0041a7fd
     PUSH EDI                            ; 0041a681
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 0041a6ca (CONDITIONAL_JUMP)  ; LAB_0041a6ca
     MOV ESI,dword ptr [ESP + 0x20]      ; 0041a7b5
     MOV EAX,dword ptr [ESP + 0x24]      ; 0041a7b9
-    MOV EDX,dword ptr [0x01511ce4]      ; 0041a7bd | g_CDemonLight_PTR_01511ce4
+    MOV EDX,dword ptr [0x01511ce4]      ; 0041a7bd | g_CurrentShadowLight
     SAR EDI,0x10                        ; 0041a7c3
     SAR EAX,0x10                        ; 0041a7c6
     SAR EBP,0x10                        ; 0041a7c9

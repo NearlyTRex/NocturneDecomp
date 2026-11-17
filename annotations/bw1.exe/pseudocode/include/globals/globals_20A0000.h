@@ -17,18 +17,18 @@
 extern CVector3f g_CVector3f_020af5b8;
 
 // SDisplayListSortEntry[2000]
-extern SDisplayListSortEntry g_SDisplayListSortEntry_ARRAY_020ab72c[2000];
+extern SDisplayListSortEntry g_SetDisplayListSortBuffer[2000];
 
 // SRaytraceState[5]
-extern SRaytraceState g_SRaytraceState_ARRAY_020af5cc[5];
+extern SRaytraceState g_RaytraceStateStack[5];
 
 // UVector3
 extern UVector3 g_UVector3_020af5ac;
 
 // float
-extern float g_FLOAT_020af5c4;
+extern float g_SavedProjectionFactor;
 
 // int
 extern int g_INT_020ab728;
-extern int g_INT_020af5c8;
+extern int g_RaytraceStateStackDepth;
 

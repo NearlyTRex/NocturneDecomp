@@ -48,9 +48,9 @@
 ;   int g_INT_01d046a4
 ;   undefined4 g_CDemonSetInstance.skip_exact_collisions
 ;   int g_INT_020ccfdc
-;   CVector3f g_CVector3f_020ccfe0
-;   undefined4 g_CVector3f_020ccfe0.y
-;   undefined4 g_CVector3f_020ccfe0.z
+;   CVector3f g_DeformableModelRayHitNormal
+;   undefined4 g_DeformableModelRayHitNormal.y
+;   undefined4 g_DeformableModelRayHitNormal.z
 ;   int g_INT_020ccfec
 ;   int g_INT_020ccff0
 ;
@@ -450,11 +450,11 @@ section .text
     CMP EAX,0x20ccfe0                   ; 004097f7
     JZ 0x004095d5                       ; 004097fc
         ;   XREF to: 004095d5 (CONDITIONAL_JUMP)  ; LAB_004095d5
-    MOV EAX,[0x020ccfe0]                ; 00409802 | g_CVector3f_020ccfe0
+    MOV EAX,[0x020ccfe0]                ; 00409802 | g_DeformableModelRayHitNormal
     MOV dword ptr [ESP + 0xb8],EAX      ; 00409807
-    MOV EAX,[0x020ccfe4]                ; 0040980e | g_CVector3f_020ccfe0.y
+    MOV EAX,[0x020ccfe4]                ; 0040980e | g_DeformableModelRayHitNormal.y
     MOV dword ptr [ESP + 0xbc],EAX      ; 00409813
-    MOV EAX,[0x020ccfe8]                ; 0040981a | g_CVector3f_020ccfe0.z
+    MOV EAX,[0x020ccfe8]                ; 0040981a | g_DeformableModelRayHitNormal.z
     MOV dword ptr [ESP + 0xc0],EAX      ; 0040981f
     JMP 0x004095d5                      ; 00409826
         ;   XREF to: 004095d5 (UNCONDITIONAL_JUMP)  ; LAB_004095d5

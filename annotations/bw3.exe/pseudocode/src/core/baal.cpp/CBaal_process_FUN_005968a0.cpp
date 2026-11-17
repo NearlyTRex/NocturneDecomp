@@ -110,7 +110,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
       fStack_13c = afStack_11c[1];
     }
     fStack_28 = fStack_13c * fStack_13c + fStack_144 * fStack_144 + fStack_140 * fStack_140;
-    fStack_24 = (float)(((int)fStack_28 >> 1) + g_INT_01d1a0a4);
+    fStack_24 = (float)(((int)fStack_28 >> 1) + g_FastSqrtMagic);
     iVar4 = (*(((this_ptr->base).base.base.vtable._ue)->_ue).randomize)(&this_ptr->base);
     if (iVar4 != 0) {
       if (0.0 < this_ptr->countdown_timer) {
@@ -318,7 +318,7 @@ LAB_00596f96:
             if (EVar8 == DEATH_STATE_ALIVE) {
               fStack_3c = fStack_13c * fStack_13c +
                           fStack_144 * fStack_144 + fStack_140 * fStack_140;
-              fStack_38 = (float)(((int)fStack_3c >> 1) + g_INT_01d1a0a4);
+              fStack_38 = (float)(((int)fStack_3c >> 1) + g_FastSqrtMagic);
               if (5.0f + (float)0.5 < fStack_38) {
                 if ((((float)2 < fStack_24) || (this_ptr->recombine_pending != 0))
                    && ((iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100), 0x50 < iVar4 ||
@@ -476,8 +476,7 @@ LAB_005974b3:
                 damage_info = &SStack_198;
                 fVar9 = 2.5;
                 core_xform_cpp_transformVector3x4_FUN_00583260
-                          (&g_CVector3f_02cfd900,pCStack_34 + this_ptr->bone_indices[1],&CStack_114)
-                ;
+                          (&g_ZeroVector,pCStack_34 + this_ptr->bone_indices[1],&CStack_114);
                 pCVar12 = &CStack_9c;
                 CStack_9c.x = CStack_114.x;
                 *(uint *)((int)&CStack_9c + (uint)bVar11 * -8 + 4) =

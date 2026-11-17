@@ -36,7 +36,7 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
   int local_14;
   
   bVar13 = 0;
-  pcVar9 = g_SMRGLTextureBasic_005b9250.texture_name;
+  pcVar9 = g_FontTextureInfo.texture_name;
   pacVar6 = this_ptr->bitmap_files + this_ptr->char_bitmap_index[character_code];
   do {
     cVar1 = (*pacVar6)[0];
@@ -47,13 +47,13 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&g_SMRGLTextureBasic_005b9250);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&g_FontTextureInfo);
   local_18 = 0x4e1c;
   local_14 = 0x4e1d;
   local_1c = 19999;
-  uVar4 = g_INT_01c70f6c;
-  uVar2 = g_INT_01c70f64;
-  uVar3 = g_INT_01c70f68;
+  uVar4 = g_ShadowColorBlue;
+  uVar2 = g_ShadowColorRed;
+  uVar3 = g_ShadowColorGreen;
   if (color_mode != -2) {
     if (color_mode < 0) {
       g_SRenderVertex_ARRAY_005c5014[0x4e1c].g = 0xffff;

@@ -64,7 +64,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)(local_98 + 4),(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,&g_SLightGlowTable_005ae458.fuzz);
+            (g_CDemonRenderer_PTR_005ae704,&g_LightGlow.fuzz);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   do {
     fVar6 = (float10)1 * ((float10)18 / (float10)(this_ptr->base).focal_length) *

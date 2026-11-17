@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c37788
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   int g_INT_01d09854
@@ -19,10 +19,10 @@
 ;   float* g_FLOAT_PTR_01d09b7c
 ;   int g_INT_01d0d2b4
 ;   int g_INT_01d0d2b8
-;   int g_INT_01e61b58
-;   void* g_PTR_0264bc88
-;   void* g_PTR_0264bc90
-;   void* g_PTR_0264bc94
+;   int g_RenderedTriangleCount
+;   void* g_APIDLL_unlockHoldBuffer
+;   void* g_APIDLL_unlockTexture
+;   void* g_APIDLL_getTextureInfo
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -54,12 +54,12 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 004f392b
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f392f
     MOV ECX,dword ptr [0x01d09854]      ; 004f3933 | g_INT_01d09854
-    MOV EDX,dword ptr [0x01e61b58]      ; 004f3939 | g_INT_01e61b58
+    MOV EDX,dword ptr [0x01e61b58]      ; 004f3939 | g_RenderedTriangleCount
     MOV ESI,dword ptr [0x01d0d2b4]      ; 004f393f | g_INT_01d0d2b4
     ADD ECX,EDI                         ; 004f3945
     ADD EDX,EAX                         ; 004f3947
     MOV dword ptr [0x01d09854],ECX      ; 004f3949 | g_INT_01d09854
-    MOV dword ptr [0x01e61b58],EDX      ; 004f394f | g_INT_01e61b58
+    MOV dword ptr [0x01e61b58],EDX      ; 004f394f | g_RenderedTriangleCount
     TEST ESI,ESI                        ; 004f3955
     JNZ 0x004f3a3a                      ; 004f3957
         ;   XREF to: 004f3a3a (CONDITIONAL_JUMP)  ; LAB_004f3a3a
@@ -78,7 +78,7 @@ section .text
         ;   Label: LAB_004f3978
     CALL engine_mini3d.cpp_updateRenderState_FUN_004f7da0 ; 004f397d
         ;   XREF to: 004f7da0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateRenderState_FUN_004f7da0()
-    CMP dword ptr [0x0264bc88],0x0      ; 004f3982 | g_PTR_0264bc88
+    CMP dword ptr [0x0264bc88],0x0      ; 004f3982 | g_APIDLL_unlockHoldBuffer
     JZ 0x004f3998                       ; 004f3989
         ;   XREF to: 004f3998 (CONDITIONAL_JUMP)  ; LAB_004f3998
     CMP dword ptr [0x01c37788],0x0      ; 004f398b | g_INT_01c37788
@@ -102,7 +102,7 @@ section .text
     CALL engine_mini3d.cpp_buildLightMatrix_FUN_004f5900 ; 004f39c8
         ;   XREF to: 004f5900 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_buildLightMatrix_FUN_004f5900()
         ;   Label: LAB_004f39c8
-    CMP dword ptr [0x0264bc90],0x0      ; 004f39cd | g_PTR_0264bc90
+    CMP dword ptr [0x0264bc90],0x0      ; 004f39cd | g_APIDLL_unlockTexture
     JZ 0x004f3a76                       ; 004f39d4
         ;   XREF to: 004f3a76 (CONDITIONAL_JUMP)  ; LAB_004f3a76
     CMP dword ptr [0x01c37788],0x0      ; 004f39da | g_INT_01c37788
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 004f39f3 (CONDITIONAL_JUMP)  ; LAB_004f39f3
     LEA EAX,[EAX]                       ; 004f3a08
     MOV EDX,EDX                         ; 004f3a0e
-    MOV EBP,dword ptr [0x01c38b54]      ; 004f3a10 | g_BIT_INTEGER32_01c38b54
+    MOV EBP,dword ptr [0x01c38b54]      ; 004f3a10 | g_RenderStateFlags
         ;   Label: LAB_004f3a10
     PUSH EBP                            ; 004f3a16
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004f3a17
@@ -137,7 +137,7 @@ section .text
     PUSH EDI                            ; 004f3a21
     MOV ECX,dword ptr [0x01d09b7c]      ; 004f3a22 | g_FLOAT_PTR_01d09b7c
     PUSH ECX                            ; 004f3a28
-    CALL dword ptr [0x0264bc90]         ; 004f3a29 | g_PTR_0264bc90
+    CALL dword ptr [0x0264bc90]         ; 004f3a29 | g_APIDLL_unlockTexture
     ADD ESP,0x14                        ; 004f3a2f
     ADD ESP,0x8                         ; 004f3a32
     POP EBP                             ; 004f3a35
@@ -160,7 +160,7 @@ section .text
     POP ESI                             ; 004f3a4f
     POP EBX                             ; 004f3a50
     RET                                 ; 004f3a51
-    MOV EDX,dword ptr [0x01c38b54]      ; 004f3a52 | g_BIT_INTEGER32_01c38b54
+    MOV EDX,dword ptr [0x01c38b54]      ; 004f3a52 | g_RenderStateFlags
         ;   Label: LAB_004f3a52
     PUSH EDX                            ; 004f3a58
     MOV ECX,dword ptr [ESP + 0x2c]      ; 004f3a59
@@ -169,7 +169,7 @@ section .text
     PUSH ESI                            ; 004f3a62
     PUSH EDI                            ; 004f3a63
     PUSH EBX                            ; 004f3a64
-    CALL dword ptr [0x0264bc88]         ; 004f3a65 | g_PTR_0264bc88
+    CALL dword ptr [0x0264bc88]         ; 004f3a65 | g_APIDLL_unlockHoldBuffer
     ADD ESP,0x14                        ; 004f3a6b
     ADD ESP,0x8                         ; 004f3a6e
     POP EBP                             ; 004f3a71
@@ -177,7 +177,7 @@ section .text
     POP ESI                             ; 004f3a73
     POP EBX                             ; 004f3a74
     RET                                 ; 004f3a75
-    CMP dword ptr [0x0264bc94],0x0      ; 004f3a76 | g_PTR_0264bc94
+    CMP dword ptr [0x0264bc94],0x0      ; 004f3a76 | g_APIDLL_getTextureInfo
         ;   Label: LAB_004f3a76
     JZ 0x004f3ada                       ; 004f3a7d
         ;   XREF to: 004f3ada (CONDITIONAL_JUMP)  ; LAB_004f3ada
@@ -203,7 +203,7 @@ section .text
         ;   XREF to: 004f3a94 (CONDITIONAL_JUMP)  ; LAB_004f3a94
     LEA EAX,[EAX]                       ; 004f3aa9
     NOP                                 ; 004f3aaf
-    MOV ECX,dword ptr [0x01c38b54]      ; 004f3ab0 | g_BIT_INTEGER32_01c38b54
+    MOV ECX,dword ptr [0x01c38b54]      ; 004f3ab0 | g_RenderStateFlags
         ;   Label: LAB_004f3ab0
     PUSH ECX                            ; 004f3ab6
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004f3ab7
@@ -213,7 +213,7 @@ section .text
     PUSH EDI                            ; 004f3ac1
     MOV EDI,dword ptr [0x01d09b7c]      ; 004f3ac2 | g_FLOAT_PTR_01d09b7c
     PUSH EDI                            ; 004f3ac8
-    CALL dword ptr [0x0264bc94]         ; 004f3ac9 | g_PTR_0264bc94
+    CALL dword ptr [0x0264bc94]         ; 004f3ac9 | g_APIDLL_getTextureInfo
     ADD ESP,0x14                        ; 004f3acf
     ADD ESP,0x8                         ; 004f3ad2
     POP EBP                             ; 004f3ad5

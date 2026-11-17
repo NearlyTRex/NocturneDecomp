@@ -31,8 +31,8 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *t
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&local_1c);
   g_CDemonSetPtr->rendering_mode = 1;
-  local_28.x = g_DWORD_01c038f8 - 0x8000;
-  local_28.y = g_DWORD_01c038fc - 0x8000;
+  local_28.x = g_JoyXPos - 0x8000;
+  local_28.y = g_JoyYPos - 0x8000;
   local_28.z = 0x8000;
   engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_28,&local_34);
   pCVar1 = g_CDemonSetPtr;

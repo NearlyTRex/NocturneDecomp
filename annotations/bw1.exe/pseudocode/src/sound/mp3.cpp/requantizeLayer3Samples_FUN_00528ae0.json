@@ -65,67 +65,67 @@
     },
     {
       "addr": "00620254",
-      "name": "g_INT_ARRAY_00620244[4]",
+      "name": "g_Layer3Pretab[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0062079c",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].l[1]",
+      "name": "g_Layer3BandIndex[0].l[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006207a0",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].l[2]",
+      "name": "g_Layer3BandIndex[0].l[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006207ac",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].l[5]",
+      "name": "g_Layer3BandIndex[0].l[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006207b8",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].l[8]",
+      "name": "g_Layer3BandIndex[0].l[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006207f8",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].s[1]",
+      "name": "g_Layer3BandIndex[0].s[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006207fc",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].s[2]",
+      "name": "g_Layer3BandIndex[0].s[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00620800",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].s[3]",
+      "name": "g_Layer3BandIndex[0].s[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00620804",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].s[4]",
+      "name": "g_Layer3BandIndex[0].s[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00620808",
-      "name": "g_SMpegLayer3BandIndex_ARRAY_00620798[0].s[5]",
+      "name": "g_Layer3BandIndex[0].s[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d3bd44",
-      "name": "g_INT_01d3bd44",
+      "name": "g_MpegRequantTablesInitialized",
       "type": "int",
       "value": null
     }
@@ -459,9 +459,9 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(double *)((int)g_DOUBLE_ARRAY_01d3bd48",
+      "match": "(double *)((int)g_MpegRequantPowerTable",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_01d3bd48 + iVar9) = (double)fVar10;",
+      "text": "*(double *)((int)g_MpegRequantPowerTable + iVar9) = (double)fVar10;",
       "type": "pointer_cast"
     },
     {
@@ -541,7 +541,7 @@
       "line": 99,
       "match": "(int)local_20",
       "severity": "moderate",
-      "text": "if ((int)local_20 < g_SMpegLayer3BandIndex_ARRAY_00620798[iVar8].l[8]) {",
+      "text": "if ((int)local_20 < g_Layer3BandIndex[iVar8].l[8]) {",
       "type": "pointer_truncation"
     },
     {

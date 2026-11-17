@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   char[65536] g_CHAR_ARRAY_01e428d0
-;   undefined4 g_CHAR_ARRAY_01e428d0+1
+;   char[65536] g_FileIOBuffer
+;   undefined4 g_FileIOBuffer+1
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -37,7 +37,7 @@ section .text
     PUSH EDX                            ; 004f78ec
     PUSH 0x1                            ; 004f78ed
     PUSH 0x10000                        ; 004f78ef
-    PUSH 0x1e428d0                      ; 004f78f4 | g_CHAR_ARRAY_01e428d0
+    PUSH 0x1e428d0                      ; 004f78f4 | g_FileIOBuffer
     MOV ESI,0x1e428d0                   ; 004f78f9
     XOR EBX,EBX                         ; 004f78fe
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f7900
@@ -46,7 +46,7 @@ section .text
     MOV EAX,EBP                         ; 004f7908
     XOR EDX,EDX                         ; 004f790a
         ;   Label: LAB_004f790a
-    MOV DL,byte ptr [ESI]               ; 004f790c | g_CHAR_ARRAY_01e428d0 | g_CHAR_ARRAY_01e428d0+1
+    MOV DL,byte ptr [ESI]               ; 004f790c | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 004f790e
     PUSH EAX                            ; 004f790f
     INC ESI                             ; 004f7910
@@ -67,7 +67,7 @@ section .text
     PUSH ECX                            ; 004f7936
     PUSH 0x1                            ; 004f7937
     PUSH EDI                            ; 004f7939
-    PUSH 0x1e428d0                      ; 004f793a | g_CHAR_ARRAY_01e428d0
+    PUSH 0x1e428d0                      ; 004f793a | g_FileIOBuffer
     MOV EBX,0x1e428d0                   ; 004f793f
     XOR ESI,ESI                         ; 004f7944
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f7946
@@ -81,7 +81,7 @@ section .text
     MOV EDI,dword ptr [ESP]             ; 004f7957
     XOR EDX,EDX                         ; 004f795a
         ;   Label: LAB_004f795a
-    MOV DL,byte ptr [EBX]               ; 004f795c | g_CHAR_ARRAY_01e428d0 | g_CHAR_ARRAY_01e428d0+1
+    MOV DL,byte ptr [EBX]               ; 004f795c | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 004f795e
     PUSH EAX                            ; 004f795f
     INC EBX                             ; 004f7960

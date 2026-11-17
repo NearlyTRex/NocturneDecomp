@@ -47,8 +47,8 @@
 ;   double g_DOUBLE_005c4659 = 4
 ;   float g_FLOAT_005e0e18 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
-;   SMRGLTextureBasic[4] g_SMRGLTextureBasic_ARRAY_005fed4c
-;   SMRGLTextureBasic[64] g_SMRGLTextureBasic_ARRAY_005fedac
+;   SMRGLTextureBasic[4] g_BloodSplatTextures
+;   SMRGLTextureBasic[64] g_BloodSplatAnimTextures
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].r
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].g
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].b
@@ -124,7 +124,7 @@ section .text
     MOV [0x01d22e58],EAX                ; 004cd721 | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C
     LEA EAX,[EDX*0x4 + 0x0]             ; 004cd726
     SUB EAX,EDX                         ; 004cd72d
-    MOV EBX,0x5fedac                    ; 004cd72f | g_SMRGLTextureBasic_ARRAY_005fedac
+    MOV EBX,0x5fedac                    ; 004cd72f | g_BloodSplatAnimTextures
     SHL EAX,0x7                         ; 004cd734
     MOV EDX,dword ptr [ESP + 0x78]      ; 004cd737
     ADD EBX,EAX                         ; 004cd73b
@@ -317,7 +317,7 @@ section .text
     SUB EAX,EDX                         ; 004cd997
     SHL EAX,0x3                         ; 004cd999
     MOV EDI,0xbf000000                  ; 004cd99c
-    ADD EAX,0x5fed4c                    ; 004cd9a1 | g_SMRGLTextureBasic_ARRAY_005fed4c
+    ADD EAX,0x5fed4c                    ; 004cd9a1 | g_BloodSplatTextures
     XOR EBP,EBP                         ; 004cd9a6
     PUSH EAX                            ; 004cd9a8
     MOV EBX,dword ptr [0x005f2afc]      ; 004cd9a9 | g_CDemonRenderer_PTR_005f2afc

@@ -21,7 +21,7 @@
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_INT_ARRAY_0264be30[3]
+;   undefined4 g_StrangerIndices[3]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -63,7 +63,7 @@ section .text
     LEA EAX,[EBX + 0x25674]             ; 0056ca4c
     LEA EDI,[ESP + 0x58]                ; 0056ca52
     MOV dword ptr [ESP + 0x158],EAX     ; 0056ca56
-    MOV EAX,[0x0264be3c]                ; 0056ca5d | g_INT_ARRAY_0264be30[3]
+    MOV EAX,[0x0264be3c]                ; 0056ca5d | g_StrangerIndices[3]
     LEA ESI,[ESP + 0x10c]               ; 0056ca62
     MOV dword ptr [ESP + 0x14c],EAX     ; 0056ca69
     MOV EAX,0x3f060a92                  ; 0056ca70

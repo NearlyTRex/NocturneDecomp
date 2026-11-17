@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   float* g_FLOAT_PTR_01d227e0
 ;   void* g_PTR_02c83470
 ;
@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 00515b51
     POP EBX                             ; 00515b52
     RET                                 ; 00515b53
-    MOV EAX,[0x01c51d14]                ; 00515b54 | g_BIT_INTEGER32_01c51d14
+    MOV EAX,[0x01c51d14]                ; 00515b54 | g_RenderStateFlags
         ;   Label: LAB_00515b54
     PUSH EAX                            ; 00515b59
     PUSH EDI                            ; 00515b5a

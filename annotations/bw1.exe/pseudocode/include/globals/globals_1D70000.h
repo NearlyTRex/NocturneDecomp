@@ -15,16 +15,16 @@
 extern SSimFrame g_SSimFrame_ARRAY_01d715ac[512];
 
 // UNetPacket
-extern UNetPacket g_UNetPacket_01d7edb0;
+extern UNetPacket g_NetworkReceivePacket;
 
 // char*[500]
 extern char* g_CHAR_PTR_ARRAY_01d7f1c4[500];
 extern char* g_CHAR_PTR_ARRAY_01d7f994[500];
 
 // int
-extern int g_INT_01d715a4;
-extern int g_INT_01d715a8;
-extern int g_INT_01d7f1b8;
-extern int g_INT_01d7f1bc;
+extern int g_ChatOutSequence;
+extern int g_SimFrameCount;
+extern int g_UseOSFonts;
+extern int g_LocalizationLoaded;
 extern int g_INT_01d7f1c0;
 

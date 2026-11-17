@@ -27,9 +27,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005cae00
 ;   TerminatedCString s_Too_many_actor_types_005cae12
-;   uchar[257] g_UCHAR_ARRAY_0061ed94
-;   int g_INT_007bc044
-;   CDemonActorType*[200] g_CDemonActorType_PTR_ARRAY_007bc048
+;   uchar[257] g_CharacterClassificationTable
+;   int g_NumActorClassTypes
+;   CDemonActorType*[200] g_ActorClassRegistrations
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -82,16 +82,16 @@ section .text
     TEST EAX,EAX                        ; 0040c49d
     JNZ 0x0040c4ce                      ; 0040c49f
         ;   XREF to: 0040c4ce (CONDITIONAL_JUMP)  ; LAB_0040c4ce
-    MOV EDX,dword ptr [0x007bc044]      ; 0040c4a1 | g_INT_007bc044
+    MOV EDX,dword ptr [0x007bc044]      ; 0040c4a1 | g_NumActorClassTypes
     MOV dword ptr [EBP + 0x38],EBX      ; 0040c4a7
     CMP EDX,0xc8                        ; 0040c4aa
     JGE 0x0040c4ff                      ; 0040c4b0
         ;   XREF to: 0040c4ff (CONDITIONAL_JUMP)  ; LAB_0040c4ff
-    MOV EAX,[0x007bc044]                ; 0040c4b2 | g_INT_007bc044
+    MOV EAX,[0x007bc044]                ; 0040c4b2 | g_NumActorClassTypes
         ;   Label: LAB_0040c4b2
     LEA ESI,[EAX + 0x1]                 ; 0040c4b7
-    MOV dword ptr [EAX*0x4 + 0x7bc048],EBP ; 0040c4ba | g_CDemonActorType_PTR_ARRAY_007bc048
-    MOV dword ptr [0x007bc044],ESI      ; 0040c4c1 | g_INT_007bc044
+    MOV dword ptr [EAX*0x4 + 0x7bc048],EBP ; 0040c4ba | g_ActorClassRegistrations
+    MOV dword ptr [0x007bc044],ESI      ; 0040c4c1 | g_NumActorClassTypes
     MOV EAX,EBP                         ; 0040c4c7
     POP EBP                             ; 0040c4c9
     POP EDI                             ; 0040c4ca
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_0040c4ce
     INC DL                              ; 0040c4d0
     AND EDX,0xff                        ; 0040c4d2
-    TEST byte ptr [EDX + 0x61ed94],0xe0 ; 0040c4d8 | g_UCHAR_ARRAY_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0xe0 ; 0040c4d8 | g_CharacterClassificationTable
     JZ 0x0040c498                       ; 0040c4df
         ;   XREF to: 0040c498 (CONDITIONAL_JUMP)  ; LAB_0040c498
     PUSH EAX                            ; 0040c4e1

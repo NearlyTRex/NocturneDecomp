@@ -27,7 +27,7 @@
 ;   float g_FLOAT_005f7558 = 0.00390625
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
-;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
+;   CKeys* g_CKeysPtr = 01d02f84
 ;   CScript* g_CScriptPtr = 01e65cd0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDocClassInfo.name_hash
@@ -75,10 +75,10 @@ section .text
     TEST DH,0x2                         ; 004be8cf
     JZ 0x004bf5e3                       ; 004be8d2
         ;   XREF to: 004bf5e3 (CONDITIONAL_JUMP)  ; LAB_004bf5e3
-    MOV EAX,[0x01c2a37c]                ; 004be8d8 | g_INT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 004be8d8 | g_MouseX
         ;   Label: LAB_004be8d8
     MOV dword ptr [ESP + 0x1f4],EAX     ; 004be8dd
-    MOV EAX,[0x01c2a380]                ; 004be8e4 | g_INT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 004be8e4 | g_MouseY
     MOV dword ptr [ESP + 0x1f0],EAX     ; 004be8e9
     MOV EAX,[0x006141b8]                ; 004be8f0 | g_INT_006141b8
     MOV ECX,0x40800000                  ; 004be8f5
@@ -194,7 +194,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bea7a
         ;   Label: LAB_004bea7a
     MOV ESI,dword ptr [EBX + 0x90]      ; 004bea7d
-    MOV EAX,[0x00617dd4]                ; 004bea83 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004bea83 | g_CKeysPtr
     PUSH ESI                            ; 004bea88
     MOV EDX,dword ptr [EAX]             ; 004bea89 | g_PTR_01d02f84
     PUSH EAX                            ; 004bea8b | g_PTR_01d02f84
@@ -224,7 +224,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beacd
         ;   Label: LAB_004beacd
     MOV ECX,dword ptr [EBX + 0x94]      ; 004bead0
-    MOV EAX,[0x00617dd4]                ; 004bead6 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004bead6 | g_CKeysPtr
     PUSH ECX                            ; 004beadb
     MOV EDX,dword ptr [EAX]             ; 004beadc | g_PTR_01d02f84
     PUSH EAX                            ; 004beade | g_PTR_01d02f84
@@ -254,7 +254,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beb20
         ;   Label: LAB_004beb20
     MOV EDI,dword ptr [EBX + 0x98]      ; 004beb23
-    MOV EAX,[0x00617dd4]                ; 004beb29 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004beb29 | g_CKeysPtr
     PUSH EDI                            ; 004beb2e
     MOV EDX,dword ptr [EAX]             ; 004beb2f | g_PTR_01d02f84
     PUSH EAX                            ; 004beb31 | g_PTR_01d02f84
@@ -274,7 +274,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beb58
         ;   Label: LAB_004beb58
     MOV ECX,dword ptr [EBX + 0x9c]      ; 004beb5b
-    MOV EAX,[0x00617dd4]                ; 004beb61 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004beb61 | g_CKeysPtr
     PUSH ECX                            ; 004beb66
     MOV EDX,dword ptr [EAX]             ; 004beb67 | g_PTR_01d02f84
     PUSH EAX                            ; 004beb69 | g_PTR_01d02f84
@@ -294,7 +294,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beb90
         ;   Label: LAB_004beb90
     MOV ESI,dword ptr [EBX + 0xa4]      ; 004beb93
-    MOV EAX,[0x00617dd4]                ; 004beb99 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004beb99 | g_CKeysPtr
     PUSH ESI                            ; 004beb9e
     MOV EDX,dword ptr [EAX]             ; 004beb9f | g_PTR_01d02f84
     PUSH EAX                            ; 004beba1 | g_PTR_01d02f84
@@ -314,7 +314,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bebc8
         ;   Label: LAB_004bebc8
     MOV EDI,dword ptr [EBX + 0xa0]      ; 004bebcb
-    MOV EAX,[0x00617dd4]                ; 004bebd1 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004bebd1 | g_CKeysPtr
     PUSH EDI                            ; 004bebd6
     MOV EDX,dword ptr [EAX]             ; 004bebd7 | g_PTR_01d02f84
     PUSH EAX                            ; 004bebd9 | g_PTR_01d02f84
@@ -333,7 +333,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bebfe
         ;   Label: LAB_004bebfe
     MOV ECX,dword ptr [EBX + 0x7c]      ; 004bec01
-    MOV EAX,[0x00617dd4]                ; 004bec04 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004bec04 | g_CKeysPtr
     PUSH ECX                            ; 004bec09
     MOV EDX,dword ptr [EAX]             ; 004bec0a | g_PTR_01d02f84
     PUSH EAX                            ; 004bec0c | g_PTR_01d02f84
@@ -363,7 +363,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bec4e
         ;   Label: LAB_004bec4e
     MOV EDI,dword ptr [EBX + 0x80]      ; 004bec51
-    MOV EAX,[0x00617dd4]                ; 004bec57 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004bec57 | g_CKeysPtr
     PUSH EDI                            ; 004bec5c
     MOV EDX,dword ptr [EAX]             ; 004bec5d | g_PTR_01d02f84
     PUSH EAX                            ; 004bec5f | g_PTR_01d02f84
@@ -393,7 +393,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beca0
         ;   Label: LAB_004beca0
     MOV ECX,dword ptr [EBX + 0x84]      ; 004beca3
-    MOV EAX,[0x00617dd4]                ; 004beca9 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004beca9 | g_CKeysPtr
     PUSH ECX                            ; 004becae
     MOV EDX,dword ptr [EAX]             ; 004becaf | g_PTR_01d02f84
     PUSH EAX                            ; 004becb1 | g_PTR_01d02f84
@@ -428,7 +428,7 @@ section .text
         ;   Label: LAB_004bed00
     MOV dword ptr [0x01cb3930],EDX      ; 004bed02 | g_CLocation_01cb3924.area_id
     MOV dword ptr [0x01cb3920],EDX      ; 004bed08 | g_INT_01cb3920
-    MOV dword ptr [0x01c2a384],EDX      ; 004bed0e | g_BIT_INTEGER32_01c2a384
+    MOV dword ptr [0x01c2a384],EDX      ; 004bed0e | g_MouseButtonFlags
     MOV dword ptr [0x01cb3948],EDX      ; 004bed14 | g_CDemonActor_PTR_01cb3948
     MOV dword ptr [0x01cb811c],EDX      ; 004bed1a | g_INT_01cb811c
     MOV EAX,[0x01cedef4]                ; 004bed20 | g_INT_01cedef4
@@ -445,7 +445,7 @@ section .text
     TEST EDX,EDX                        ; 004bed52
     JNZ 0x004beeb7                      ; 004bed54
         ;   XREF to: 004beeb7 (CONDITIONAL_JUMP)  ; LAB_004beeb7
-    CMP dword ptr [0x01c2a384],0x1      ; 004bed5a | g_BIT_INTEGER32_01c2a384
+    CMP dword ptr [0x01c2a384],0x1      ; 004bed5a | g_MouseButtonFlags
     JNZ 0x004beeb7                      ; 004bed61
         ;   XREF to: 004beeb7 (CONDITIONAL_JUMP)  ; LAB_004beeb7
     MOV EBX,dword ptr [0x0061b5a8]      ; 004bed67 | g_CDemonSetPtr
@@ -543,7 +543,7 @@ section .text
         ;   Label: LAB_004beeb7
     JZ 0x004bf6f4                       ; 004beebf
         ;   XREF to: 004bf6f4 (CONDITIONAL_JUMP)  ; LAB_004bf6f4
-    TEST byte ptr [0x01c2a384],0x2      ; 004beec5 | g_BIT_INTEGER32_01c2a384
+    TEST byte ptr [0x01c2a384],0x2      ; 004beec5 | g_MouseButtonFlags
     JZ 0x004bf6f4                       ; 004beecc
         ;   XREF to: 004bf6f4 (CONDITIONAL_JUMP)  ; LAB_004bf6f4
     MOV ECX,dword ptr [0x0061b5a8]      ; 004beed2 | g_CDemonSetPtr
@@ -653,7 +653,7 @@ section .text
         ;   Label: LAB_004bf02d
     JNZ 0x004bf18b                      ; 004bf034
         ;   XREF to: 004bf18b (CONDITIONAL_JUMP)  ; LAB_004bf18b
-    CMP dword ptr [0x01c2a384],0x1      ; 004bf03a | g_BIT_INTEGER32_01c2a384
+    CMP dword ptr [0x01c2a384],0x1      ; 004bf03a | g_MouseButtonFlags
     JNZ 0x004bf18b                      ; 004bf041
         ;   XREF to: 004bf18b (CONDITIONAL_JUMP)  ; LAB_004bf18b
     MOV ESI,dword ptr [ESP + 0x1f0]     ; 004bf047
@@ -1044,7 +1044,7 @@ section .text
         ;   XREF to: 004bf5a8 (CONDITIONAL_JUMP)  ; LAB_004bf5a8
     XOR EDI,EDI                         ; 004bf5a0
     MOV dword ptr [0x01cb3948],EDI      ; 004bf5a2 | g_CDemonActor_PTR_01cb3948
-    MOV EAX,[0x01c2a384]                ; 004bf5a8 | g_BIT_INTEGER32_01c2a384
+    MOV EAX,[0x01c2a384]                ; 004bf5a8 | g_MouseButtonFlags
         ;   Label: LAB_004bf5a8
     MOV [0x01cb3920],EAX                ; 004bf5ad | g_INT_01cb3920
     MOV EAX,[0x01cedef4]                ; 004bf5b2 | g_INT_01cedef4

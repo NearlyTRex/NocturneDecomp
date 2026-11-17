@@ -104,10 +104,10 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005a7b50(CVehicle *this_ptr,f
   afStack_90[(uint)bVar19 * -2 + (uint)bVar19 * -2] =
        afStack_dc[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 10];
   if (delta_time <= 0.0) {
-    if (pCVar3 != &g_CVector3f_02c8af28) {
-      pCVar3->x = g_CVector3f_02c8af28.x;
-      (this_ptr->world_velocity).y = g_CVector3f_02c8af28.y;
-      (this_ptr->world_velocity).z = g_CVector3f_02c8af28.z;
+    if (pCVar3 != &g_ZeroVector) {
+      pCVar3->x = g_ZeroVector.x;
+      (this_ptr->world_velocity).y = g_ZeroVector.y;
+      (this_ptr->world_velocity).z = g_ZeroVector.z;
     }
   }
   else {

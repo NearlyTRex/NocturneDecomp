@@ -20,7 +20,7 @@ int __cdecl core_shadow_cpp_CShadow_renderOpaque_FUN_0055fbf0(CShadow *this_ptr)
   ;
   if ((iVar1 != 0) &&
      (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (g_CEventList_PTR_0061b4d0,"heroCanSee"), iVar1 == 0)) {
+                        (g_CEventListPtr,"heroCanSee"), iVar1 == 0)) {
     return 0;
   }
   iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240((CCharacter *)this_ptr);

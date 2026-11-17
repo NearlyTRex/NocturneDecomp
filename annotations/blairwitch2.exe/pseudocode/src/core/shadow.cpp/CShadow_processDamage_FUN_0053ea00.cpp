@@ -2,11 +2,11 @@
 // Address: 0053ea00
 // Address Range: [[0053ea00, 0053ec14]]
 // Convention: __cdecl
-// Signature: void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *param_2)
+// Signature: void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *param_2)
+void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;
@@ -22,17 +22,17 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
   float fStack_14;
   
   bVar4 = 0;
-  core_shadow_cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(this_ptr,param_2);
+  core_shadow_cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(this_ptr,damage_info);
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
-  if (param_2->damage_type == DAMAGE_TYPE_BURN) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_shadow_cpp_CShadow_playHitAlertSound_FUN_0053df40(this_ptr);
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(15.0,30.0);
-    param_2->damage_amount = fStack_14 * (float)10 * param_2->damage_amount;
+    damage_info->damage_amount = fStack_14 * (float)10 * damage_info->damage_amount;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
-              ((CDemonActor *)this_ptr,&param_2->impact_direction,&CStack_2c);
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_2c);
   }
   pCStack_18 = &(this_ptr->base).base.model.base;
-  fVar1 = (this_ptr->base).base.hit_points - param_2->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
@@ -80,6 +80,6 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
     }
     core_shadow_cpp_CShadow_playDamageSound_FUN_0053e000(this_ptr);
   }
-  core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,param_2);
+  core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,damage_info);
   return;
 }

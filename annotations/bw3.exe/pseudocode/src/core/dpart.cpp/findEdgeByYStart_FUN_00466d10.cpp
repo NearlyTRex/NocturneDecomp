@@ -14,14 +14,14 @@ SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00466d10(int scanlin
   
   pSVar1 = g_SSoftwareEdge_ARRAY_01bdcfd8;
   iVar2 = 0;
-  if (0 < g_INT_01bdcfd4) {
+  if (0 < g_RenderTriangleEdgeCount) {
     do {
       if ((scanline_y == (pSVar1->base).y_min) && (pSVar1 != exclude_edge)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;
       pSVar1 = pSVar1 + 1;
-    } while (iVar2 < g_INT_01bdcfd4);
+    } while (iVar2 < g_RenderTriangleEdgeCount);
   }
   return (SSoftwareEdge *)0x0;
 }

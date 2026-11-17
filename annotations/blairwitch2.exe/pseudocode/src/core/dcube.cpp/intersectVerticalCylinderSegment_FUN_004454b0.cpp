@@ -19,7 +19,8 @@ uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_004454b0(CVecto
   fVar1 = segment_end->z - segment_start->z;
   fVar2 = fVar1 * fVar1 + fVar3 * fVar3;
   if (0.0 < fVar2) {
-    fVar1 = (segment_start->x * fVar3 + segment_start->z * fVar1) * (float)2;
+    fVar1 = (segment_start->x * fVar3 + segment_start->z * fVar1) *
+            (float)2;
     fVar3 = fVar1 * fVar1 -
             fVar2 * (float)4 *
             ((segment_start->x * segment_start->x + segment_start->z * segment_start->z) -

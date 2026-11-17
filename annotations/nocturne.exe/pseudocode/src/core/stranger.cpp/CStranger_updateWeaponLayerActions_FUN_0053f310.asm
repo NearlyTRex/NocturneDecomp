@@ -38,9 +38,9 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 g_CDynamiteActorType_01bca088.name_hash
-;   undefined4 g_CMeleeActorType_01cc56a4.name_hash
-;   undefined4 g_CWeaponActorType_02ddf970.name_hash
+;   undefined4 g_CDynamiteClassInfo.name_hash
+;   undefined4 g_CMeleeClassInfo.name_hash
+;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -140,7 +140,7 @@ section .text
     MOV dword ptr [EBX + 0x1fa3c],EDX   ; 0053f3cf
     JMP 0x0053f35d                      ; 0053f3d5
         ;   XREF to: 0053f35d (UNCONDITIONAL_JUMP)  ; LAB_0053f35d
-    MOV ESI,dword ptr [0x02ddf9a8]      ; 0053f3d7 | g_CWeaponActorType_02ddf970.name_hash
+    MOV ESI,dword ptr [0x02ddf9a8]      ; 0053f3d7 | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_0053f3d7
     PUSH ESI                            ; 0053f3dd
     PUSH ECX                            ; 0053f3de
@@ -200,7 +200,7 @@ section .text
         ;   XREF to: 0053f4b6 (CONDITIONAL_JUMP)  ; caseD_b
     JMP dword ptr [EAX*0x4 + 0x53f2ec]  ; 0053f480 | caseD_6 | caseD_7 | caseD_8
         ;   Label: switchD
-    MOV EDX,dword ptr [0x01bca0c0]      ; 0053f487 | g_CDynamiteActorType_01bca088.name_hash
+    MOV EDX,dword ptr [0x01bca0c0]      ; 0053f487 | g_CDynamiteClassInfo.name_hash
         ;   Label: caseD_6
     PUSH EDX                            ; 0053f48d
     MOV ECX,dword ptr [EBX + 0x1fa94]   ; 0053f48e
@@ -542,7 +542,7 @@ section .text
         ;   Label: LAB_0053f7fb
     JMP 0x0053f424                      ; 0053f800
         ;   XREF to: 0053f424 (UNCONDITIONAL_JUMP)  ; LAB_0053f424
-    MOV EDI,dword ptr [0x01cc56dc]      ; 0053f805 | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EDI,dword ptr [0x01cc56dc]      ; 0053f805 | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_0053f805
     PUSH EDI                            ; 0053f80b
     PUSH EAX                            ; 0053f80c
@@ -583,7 +583,7 @@ section .text
     XOR ESI,ESI                         ; 0053f84f
     JMP 0x0053f424                      ; 0053f851
         ;   XREF to: 0053f424 (UNCONDITIONAL_JUMP)  ; LAB_0053f424
-    MOV EDX,dword ptr [0x01cc56dc]      ; 0053f856 | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EDX,dword ptr [0x01cc56dc]      ; 0053f856 | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_0053f856
     PUSH EDX                            ; 0053f85c
     PUSH EAX                            ; 0053f85d
@@ -660,7 +660,7 @@ section .text
     CALL core_stranger.cpp_CStranger_getThrowDirection_FUN_0053f260 ; 0053f917
         ;   XREF to: 0053f260 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_getThrowDirection_FUN_0053f260(CStranger * this_ptr, CVector3f * out_direction)
     ADD ESP,0x8                         ; 0053f91c
-    MOV ECX,dword ptr [0x01bca0c0]      ; 0053f91f | g_CDynamiteActorType_01bca088.name_hash
+    MOV ECX,dword ptr [0x01bca0c0]      ; 0053f91f | g_CDynamiteClassInfo.name_hash
     PUSH ECX                            ; 0053f925
     MOV EAX,dword ptr [EBX + 0x1fa94]   ; 0053f926
     PUSH EAX                            ; 0053f92c
@@ -789,7 +789,7 @@ section .text
         ;   Label: LAB_0053faca
     JMP 0x0053f4dc                      ; 0053facf
         ;   XREF to: 0053f4dc (UNCONDITIONAL_JUMP)  ; LAB_0053f4dc
-    MOV EAX,[0x01cc56dc]                ; 0053fad4 | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EAX,[0x01cc56dc]                ; 0053fad4 | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_0053fad4
     PUSH EAX                            ; 0053fad9
     PUSH EDX                            ; 0053fada
@@ -833,7 +833,7 @@ section .text
         ;   Label: LAB_0053fb2b
     JMP 0x0053f522                      ; 0053fb30
         ;   XREF to: 0053f522 (UNCONDITIONAL_JUMP)  ; LAB_0053f522
-    MOV EAX,[0x01cc56dc]                ; 0053fb35 | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EAX,[0x01cc56dc]                ; 0053fb35 | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_0053fb35
     PUSH EAX                            ; 0053fb3a
     PUSH EDX                            ; 0053fb3b

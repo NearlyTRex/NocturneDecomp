@@ -47,7 +47,7 @@ void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index
     puVar9 = (uint *)((int)puVar9 + 1);
     puVar10 = (uint *)((int)puVar10 + 1);
   }
-  if (g_PTR_02c9cf0c == (byte *)0x0) {
+  if (g_joyGetPosEx == (byte *)0x0) {
     memset(&jStack_24,0,0x10);
     MVar5 = joyGetPos(g_INT_ARRAY_02c9d1c4[controller_index],&jStack_24);
     if (MVar5 == 0) {
@@ -81,7 +81,7 @@ void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index
   else {
     memset(&stack0xffffffa8,0,0x34);
     iVar11 = 0x34;
-    iVar6 = (*(code *)g_PTR_02c9cf0c)(g_INT_ARRAY_02c9d1c4[controller_index],&stack0xffffffa8);
+    iVar6 = (*(code *)g_joyGetPosEx)(g_INT_ARRAY_02c9d1c4[controller_index],&stack0xffffffa8);
     if (iVar6 == 0) {
       iVar6 = controller_index * 0x30;
       *(uint *)(iVar7 + 0x2c9cf18) = 1;

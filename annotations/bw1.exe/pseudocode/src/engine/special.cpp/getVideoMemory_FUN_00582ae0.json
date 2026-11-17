@@ -38,13 +38,13 @@
   "globals": [
     {
       "addr": "02c83410",
-      "name": "g_PTR_02c83410",
+      "name": "g_APIDLL_getVideoMemory",
       "type": "void*",
       "value": null
     },
     {
       "addr": "02c834ac",
-      "name": "g_INT_02c834ac",
+      "name": "g_LoadedExternalDLLRenderer",
       "type": "int",
       "value": null
     }
@@ -168,7 +168,7 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)g_PTR_02c83410)(total_memory,available_memory,memory_type);",
+      "text": "iVar1 = (*(code *)g_APIDLL_getVideoMemory)(total_memory,available_memory,memory_type);",
       "type": "unresolved_funcptr"
     }
   ]

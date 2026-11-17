@@ -15,18 +15,18 @@ __asm {
         movq MM0,qword ptr [ESI + 0xffffff00]
         movq MM2,qword ptr [ESI]
         movq MM3,qword ptr [ESI + 0x100]
-        punpcklbw MM0,dword ptr [g_MMX_INTEGER_006185a8]
-        punpcklbw MM2,dword ptr [g_MMX_INTEGER_006185a8]
-        punpcklbw MM3,dword ptr [g_MMX_INTEGER_006185a8]
+        punpcklbw MM0,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM2,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM3,dword ptr [g_FilterBlendConstant]
         paddusw MM0,MM2
         paddusw MM2,MM3
         paddusw MM0,MM2
         movq MM1,qword ptr [ESI + 0xfffffef8]
         movq MM2,qword ptr [ESI + -0x8]
         movq MM3,qword ptr [ESI + 0xf8]
-        punpckhbw MM1,qword ptr [g_MMX_INTEGER_006185a8]
-        punpckhbw MM2,qword ptr [g_MMX_INTEGER_006185a8]
-        punpckhbw MM3,qword ptr [g_MMX_INTEGER_006185a8]
+        punpckhbw MM1,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM2,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM3,qword ptr [g_FilterBlendConstant]
         paddusw MM1,MM2
         paddusw MM2,MM3
         paddusw MM1,MM2
@@ -42,9 +42,9 @@ __asm {
         movq MM1,qword ptr [ESI + 0xffffff00]
         movq MM2,qword ptr [ESI]
         movq MM3,qword ptr [ESI + 0x100]
-        punpckhbw MM1,qword ptr [g_MMX_INTEGER_006185a8]
-        punpckhbw MM2,qword ptr [g_MMX_INTEGER_006185a8]
-        punpckhbw MM3,qword ptr [g_MMX_INTEGER_006185a8]
+        punpckhbw MM1,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM2,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM3,qword ptr [g_FilterBlendConstant]
         paddusw MM1,MM2
         paddusw MM2,MM3
         paddusw MM1,MM2
@@ -63,9 +63,9 @@ __asm {
         movq MM0,qword ptr [ESI + 0xffffff08]
         movq MM2,qword ptr [ESI + 0x8]
         movq MM3,qword ptr [ESI + 0x108]
-        punpcklbw MM0,dword ptr [g_MMX_INTEGER_006185a8]
-        punpcklbw MM2,dword ptr [g_MMX_INTEGER_006185a8]
-        punpcklbw MM3,dword ptr [g_MMX_INTEGER_006185a8]
+        punpcklbw MM0,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM2,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM3,dword ptr [g_FilterBlendConstant]
         paddusw MM0,MM2
         paddusw MM2,MM3
         paddusw MM0,MM2

@@ -39,15 +39,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRe
       return;
     }
   }
-  if (4999 < g_INT_01b4d7ac) {
+  if (4999 < g_CaptureFaceCount) {
     g_CurrentFilename = "..\\engine\\drender.cpp";
     g_CurrentLineNumber = 2689;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDR::captureFace - too many faces captured");
   }
-  iVar8 = g_INT_01b4d7b0;
-  iVar6 = g_INT_01b4d7ac;
-  pSVar4 = g_SFace_ARRAY_01b4d7b4 + g_INT_01b4d7ac;
-  puVar11 = (uint *)(g_INT_01b4d7ac * 0x20 + 0x1b4d7c4 + (uint)bVar13 * -8);
+  iVar8 = g_CaptureTextureCount;
+  iVar6 = g_CaptureFaceCount;
+  pSVar4 = g_CapturedFaces + g_CaptureFaceCount;
+  puVar11 = (uint *)(g_CaptureFaceCount * 0x20 + 0x1b4d7c4 + (uint)bVar13 * -8);
   puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);
   uVar5 = triangle_indices->vertex_index_1;
   (pSVar4->face_data).vertex_indices.vertex_index_0 = triangle_indices->vertex_index_0;
@@ -59,23 +59,23 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRe
   puVar12[(uint)bVar13 * -2 + 1] = puVar10[(uint)bVar13 * -2 + 1];
   *(ushort *)(puVar12 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
        *(ushort *)(puVar10 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1);
-  g_SFace_ARRAY_01b4d7b4[iVar6].texture_index = iVar8;
-  g_SFace_ARRAY_01b4d7b4[iVar6].render_flags = render_flags;
+  g_CapturedFaces[iVar6].texture_index = iVar8;
+  g_CapturedFaces[iVar6].render_flags = render_flags;
   pSVar1 = this_ptr->vertex_buffer_ptr;
   iVar8 = pSVar1[triangle_indices->vertex_index_0].projected_vertex.transformed_z;
   iVar2 = pSVar1[triangle_indices->vertex_index_1].projected_vertex.transformed_z;
   iVar3 = pSVar1[triangle_indices->vertex_index_2].projected_vertex.transformed_z;
   if ((iVar8 < iVar2) && (iVar8 < iVar3)) {
-    g_SFace_ARRAY_01b4d7b4[iVar6].depth = iVar8;
-    g_INT_01b4d7ac = g_INT_01b4d7ac + 1;
+    g_CapturedFaces[iVar6].depth = iVar8;
+    g_CaptureFaceCount = g_CaptureFaceCount + 1;
     return;
   }
   if (iVar3 <= iVar2) {
-    g_SFace_ARRAY_01b4d7b4[g_INT_01b4d7ac].depth = iVar3;
-    g_INT_01b4d7ac = g_INT_01b4d7ac + 1;
+    g_CapturedFaces[g_CaptureFaceCount].depth = iVar3;
+    g_CaptureFaceCount = g_CaptureFaceCount + 1;
     return;
   }
-  g_SFace_ARRAY_01b4d7b4[g_INT_01b4d7ac].depth = iVar2;
-  g_INT_01b4d7ac = g_INT_01b4d7ac + 1;
+  g_CapturedFaces[g_CaptureFaceCount].depth = iVar2;
+  g_CaptureFaceCount = g_CaptureFaceCount + 1;
   return;
 }

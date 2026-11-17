@@ -21,13 +21,13 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00412530(CAudioRecPuz
   
   if ((this_ptr->power_on == 0) || (this_ptr->solved == 1)) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
-              (g_CEventList_PTR_005fba60,"ExitFromPuzzle");
-    (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIM_LBUTTON);
-    g_BIT_INTEGER32_01c5fae4.dword = 0;
+              (g_CEventListPtr,"ExitFromPuzzle");
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
+    g_MouseButtonFlags.dword = 0;
     core_bmppuzzl_cpp_activatePuzzle_FUN_004119a0(&this_ptr->base,0);
   }
-  iVar6 = g_INT_01c5fae0;
-  iVar7 = g_INT_01c5fadc;
+  iVar6 = g_MouseY;
+  iVar7 = g_MouseX;
   if (this_ptr->mouse_button != 0) {
     if (this_ptr->click_handled == 0) {
       pvVar1 = (this_ptr->base).vtable;
@@ -50,9 +50,9 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00412530(CAudioRecPuz
       iVar7 = this_ptr->buttons[this_ptr->selected_button].enabled;
       if (iVar7 == 2) {
         if (g_INT_007dffb8 == -1) {
-          g_INT_007dffb8 = g_INT_01c5fadc;
+          g_INT_007dffb8 = g_MouseX;
         }
-        if (10 < ABS((double)(g_INT_01c5fadc - g_INT_007dffb8))) {
+        if (10 < ABS((double)(g_MouseX - g_INT_007dffb8))) {
           (**(code **)((int)(this_ptr->base).vtable + 0x34))(this_ptr);
           iVar7 = 0;
           do {
@@ -150,7 +150,7 @@ LAB_00412610:
             (((iVar6 == this_ptr->solution[1] && (iVar7 == this_ptr->solution[2])) &&
              (iVar2 == this_ptr->solution[3])))) && (iVar5 == this_ptr->solution[4])) {
           core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                    (g_CEventList_PTR_005fba60,"AudioPuzzleSuccess");
+                    (g_CEventListPtr,"AudioPuzzleSuccess");
           this_ptr->solved = 1;
           return;
         }

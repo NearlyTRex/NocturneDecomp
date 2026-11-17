@@ -129,7 +129,7 @@ section .text
     MOV dword ptr [ESP],EDX             ; 004ed2f5
     PUSH 0x1d05620                      ; 004ed2f8
     CALL core_moon.cpp_CMoon_update_FUN_005024a0 ; 004ed2fd
-        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
+        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ed302
     PUSH 0x1d05620                      ; 004ed305
     CALL core_moon.cpp_CMoon_render_FUN_00502510 ; 004ed30a
@@ -787,7 +787,7 @@ section .text
     POP EDI                             ; 004ed941
         ;   Label: LAB_004ed941
     INC dword ptr [ESP + 0xa3c]         ; 004ed942
-    IMUL EAX,dword ptr [0x01c2a370],0x18 ; 004ed949 | g_INT_01c2a370
+    IMUL EAX,dword ptr [0x01c2a370],0x18 ; 004ed949 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004ed949
     MOV ECX,dword ptr [0x01d06134]      ; 004ed950 | g_INT_01d06134
     ADD ECX,EAX                         ; 004ed956
@@ -951,7 +951,7 @@ section .text
     ADD ESP,0x4                         ; 004edb4f
     PUSH 0x1                            ; 004edb52
         ;   Label: default
-    MOV EAX,[0x00617dd4]                ; 004edb54 | g_CKeys_PTR_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004edb54 | g_CKeysPtr
     PUSH EAX                            ; 004edb59 | g_PTR_01d02f84
     MOV EDX,dword ptr [EAX]             ; 004edb5a | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004edb5c

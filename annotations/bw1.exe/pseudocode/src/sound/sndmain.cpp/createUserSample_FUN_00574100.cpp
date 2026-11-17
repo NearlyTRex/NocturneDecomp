@@ -20,11 +20,11 @@ int __cdecl sound_sndmain_cpp_createUserSample_FUN_00574100(CSfxSample *sample)
   sound_sndmain_cpp_freeSampleByName_FUN_00574380((char *)sample,1);
   iVar1 = 0;
   while( true ) {
-    iVar2 = g_INT_02c78ff0 + 1;
+    iVar2 = g_LastSampleAccessIndex + 1;
     if (0x3f < iVar2) {
       iVar2 = 0;
     }
-    g_INT_02c78ff0 = iVar2;
+    g_LastSampleAccessIndex = iVar2;
     if ((((g_SfxSamples[iVar2].taken == 0) && (g_SfxSamples[iVar2].ref_count == 0)) &&
         (g_SfxSamples[iVar2].is_user_sample == 0)) && (g_SfxSamples[iVar2].locked_length == 0))
     break;

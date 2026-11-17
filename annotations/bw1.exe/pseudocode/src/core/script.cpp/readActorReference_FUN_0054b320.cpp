@@ -15,7 +15,7 @@ void __cdecl core_script_cpp_readActorReference_FUN_0054b320(_FILE *file_handle,
   char *pcVar4;
   char local_d0 [200];
   
-  pcVar4 = g_CHAR_ARRAY_00622ae0;
+  pcVar4 = g_ActorRefDefaultBuffer;
   pcVar1 = local_d0;
   for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(uint *)pcVar1 = *(uint *)pcVar4;

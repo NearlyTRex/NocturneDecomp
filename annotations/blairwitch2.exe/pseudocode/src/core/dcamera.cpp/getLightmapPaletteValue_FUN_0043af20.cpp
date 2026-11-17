@@ -9,5 +9,5 @@
 uint __cdecl core_dcamera_cpp_getLightmapPaletteValue_FUN_0043af20(int palette_index)
 
 {
-  return g_UINT_ARRAY_00b6639c[palette_index] & 0xff;
+  return g_LightmapTexturePalette[palette_index] & 0xff;
 }

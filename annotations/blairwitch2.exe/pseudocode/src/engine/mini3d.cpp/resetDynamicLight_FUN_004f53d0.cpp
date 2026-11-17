@@ -10,8 +10,8 @@ void __cdecl engine_mini3d_cpp_resetDynamicLight_FUN_004f53d0(void)
 
 {
   g_INT_01d0c3a0 = 0;
-  if ((g_PTR_0264bcd0 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-    (*(code *)g_PTR_0264bcd0)();
+  if ((g_APIDLL_enableClipping != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_APIDLL_enableClipping)();
     return;
   }
   return;

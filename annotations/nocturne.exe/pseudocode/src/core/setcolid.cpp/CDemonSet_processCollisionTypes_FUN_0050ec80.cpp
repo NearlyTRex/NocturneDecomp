@@ -123,8 +123,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDe
         iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(this_ptr,pCVar2);
         if (iVar3 == 0) {
           pCVar4 = (CDeformableModelInstance *)
-                   core_actor_cpp_castToClassHash_FUN_0040d890
-                             (pCVar2,g_CSpikeActorType_02dc9e28.name_hash);
+                   core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,g_CSpikeClassInfo.name_hash);
           if (pCVar4 == (CDeformableModelInstance *)0x0) {
             local_158.deformable_model = pCVar4;
             local_158.keyframed_model = (CKeyFramedModelInstance *)pCVar4;

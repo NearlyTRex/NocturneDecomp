@@ -20,9 +20,9 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042e660(int x0,int y
   byte bStack_18;
   
   if ((y0 <= y1) &&
-     ((g_INT_007bee2c != 0 ||
+     ((g_LineBlendingDisabled != 0 ||
       ((((g_INT_01c35e48 <= x0 || (g_INT_01c35e48 <= x1)) &&
-        ((x0 <= g_INT_01c35e50 || (x1 <= g_INT_01c35e50)))) &&
+        ((x0 <= g_ClipRight || (x1 <= g_ClipRight)))) &&
        (((g_INT_01c35e4c <= y0 || (g_INT_01c35e4c <= y1)) &&
         ((y0 <= g_INT_01c35e54 || (y1 <= g_INT_01c35e54)))))))))) {
     uStack_24 = x1 - x0;

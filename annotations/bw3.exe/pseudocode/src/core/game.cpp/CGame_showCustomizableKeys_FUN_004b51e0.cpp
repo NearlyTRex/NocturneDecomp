@@ -44,9 +44,10 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b51e0(CGame *this_p
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
   g_INT_01d22c5c = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01549aa8,0x58)
   ;
-  g_INT_01d22c60 = engine_font_cpp_CBitFont_getCharWidth_FUN_004b30c0(g_CBitFont_PTR_01549aa8,0x58);
+  g_HelpCharWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004b30c0(g_CBitFont_PTR_01549aa8,0x58)
+  ;
   g_INT_01d22c58 = g_INT_01d22c5c << 2;
-  g_INT_01d22c54 = g_INT_01d22c60 << 2;
+  g_INT_01d22c54 = g_HelpCharWidth << 2;
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Quick help");
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
             (g_CBitFont_PTR_01549aa8,pcVar1,g_INT_01d22c54 + 2,g_INT_01d22c58 + 2,0,-1);

@@ -11,8 +11,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005008f3
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
-;   int g_INT_01e56418
+;   CEventList* g_CEventListPtr = 01c03a10
+;   int g_ScriptEventsEnabled
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_validateCondition_FUN_0047dc90
@@ -34,7 +34,7 @@ section .text
     TEST EAX,EAX                        ; 004fe154
     JNZ 0x004fe161                      ; 004fe156
         ;   XREF to: 004fe161 (CONDITIONAL_JUMP)  ; LAB_004fe161
-    CMP dword ptr [0x01e56418],0x0      ; 004fe158 | g_INT_01e56418
+    CMP dword ptr [0x01e56418],0x0      ; 004fe158 | g_ScriptEventsEnabled
     JNZ 0x004fe162                      ; 004fe15f
         ;   XREF to: 004fe162 (CONDITIONAL_JUMP)  ; LAB_004fe162
     RET                                 ; 004fe161
@@ -44,7 +44,7 @@ section .text
     PUSH ESI                            ; 004fe163
     MOV ESI,dword ptr [ESP + 0x10]      ; 004fe164
     PUSH ESI                            ; 004fe168
-    MOV EDI,dword ptr [0x005b7650]      ; 004fe169 | g_CEventList_PTR_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 004fe169 | g_CEventListPtr
     PUSH EDI                            ; 004fe16f
     CALL core_event.cpp_CEventList_validateCondition_FUN_0047dc90 ; 004fe170
         ;   XREF to: 0047dc90 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_0047dc90(CEventList * this_ptr, char * expression)

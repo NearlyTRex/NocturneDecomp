@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   int[16] g_INT_ARRAY_01b4d76c
-;   undefined4 g_INT_ARRAY_01b4d76c[1]
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -64,7 +64,7 @@ section .text
     ADD EBP,EDI                         ; 0045fb49
     MOV EDI,dword ptr [EAX + 0x20]      ; 0045fb4b
     MOV dword ptr [EBP + 0x1c],EDI      ; 0045fb4e
-    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045fb51 | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
+    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045fb51 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
         ;   Label: LAB_0045fb51
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0045fb57
     ADD EAX,0xc                         ; 0045fb5b
@@ -86,7 +86,7 @@ section .text
     MOV dword ptr [0x01c00c7c],EBP      ; 0045fb86 | g_ScanlineRenderFunc
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0045fb8c
         ;   Label: LAB_0045fb8c
-    PUSH 0x1b4d76c                      ; 0045fb90 | g_INT_ARRAY_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045fb90 | g_VertexIndexBuffer
     MOV ECX,dword ptr [EAX + 0x4]       ; 0045fb95
     PUSH ECX                            ; 0045fb98
     PUSH EBX                            ; 0045fb99

@@ -78,19 +78,19 @@
     },
     {
       "addr": "02dc9218",
-      "name": "g_IDirectSoundBuffer_PTR_02dc9218",
+      "name": "g_DirectSoundPrimaryBuffer",
       "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02dc921c",
-      "name": "g_IDirectSoundBuffer_PTR_02dc921c",
+      "name": "g_DirectSoundSecondaryBuffer",
       "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02dc92ac",
-      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[1]",
+      "name": "g_DirectSoundHardwareSfxBuffers[1]",
       "type": "undefined4",
       "value": null
     },
@@ -192,9 +192,9 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(int **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8",
+      "match": "(int **)((int)g_DirectSoundHardwareSfxBuffers",
       "severity": "moderate",
-      "text": "piVar1 = *(int **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8 + iVar5);",
+      "text": "piVar1 = *(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar5);",
       "type": "pointer_cast"
     },
     {
@@ -214,11 +214,11 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_DirectSoundHardwareSfxBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 40,
-      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8",
+      "match": "(int)g_DirectSoundHardwareSfxBuffers",
       "severity": "moderate",
-      "text": "piVar1 = *(int **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8 + iVar5);",
+      "text": "piVar1 = *(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar5);",
       "type": "pointer_truncation"
     }
   ],

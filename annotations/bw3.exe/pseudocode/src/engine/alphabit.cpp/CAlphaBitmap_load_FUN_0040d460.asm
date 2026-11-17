@@ -69,7 +69,7 @@ section .text
     PUSH ECX                            ; 0040d480
     PUSH EBX                            ; 0040d481
     CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320 ; 0040d482
-        ;   XREF to: 0040d320 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320(CAlphaBitmap * this_ptr, int param_2, int param_3)
+        ;   XREF to: 0040d320 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320(CAlphaBitmap * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 0040d487
     MOV ESI,dword ptr [ESP + 0x11c]     ; 0040d48a
     PUSH ESI                            ; 0040d491

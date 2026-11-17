@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
-;   int g_INT_01da648c
+;   int g_ChatHistoryCount
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
@@ -31,11 +31,11 @@ section .text
     PUSH ESI                            ; 00506a01
     PUSH EDI                            ; 00506a02
     MOV EBX,dword ptr [ESP + 0x20]      ; 00506a03
-    MOV EDX,dword ptr [0x01da648c]      ; 00506a07 | g_INT_01da648c
+    MOV EDX,dword ptr [0x01da648c]      ; 00506a07 | g_ChatHistoryCount
     CMP EDX,0x190                       ; 00506a0d
     JGE 0x00506ac5                      ; 00506a13
         ;   XREF to: 00506ac5 (CONDITIONAL_JUMP)  ; LAB_00506ac5
-    MOV EDX,dword ptr [0x01da648c]      ; 00506a19 | g_INT_01da648c
+    MOV EDX,dword ptr [0x01da648c]      ; 00506a19 | g_ChatHistoryCount
         ;   Label: LAB_00506a19
     LEA EAX,[EDX*0x8 + 0x0]             ; 00506a1f
     ADD EAX,EDX                         ; 00506a26
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 00506a4e (CONDITIONAL_JUMP)  ; LAB_00506a4e
     POP EDI                             ; 00506a66
         ;   Label: LAB_00506a66
-    MOV EDX,dword ptr [0x01da648c]      ; 00506a67 | g_INT_01da648c
+    MOV EDX,dword ptr [0x01da648c]      ; 00506a67 | g_ChatHistoryCount
     LEA EAX,[EDX*0x8 + 0x0]             ; 00506a6d
     ADD EAX,EDX                         ; 00506a74
     MOV EDI,0x1da6490                   ; 00506a76
@@ -90,12 +90,12 @@ section .text
     POP EDI                             ; 00506a9e
         ;   Label: LAB_00506a9e
     PUSH 0x40a00000                     ; 00506a9f
-    MOV ESI,dword ptr [0x01da648c]      ; 00506aa4 | g_INT_01da648c
+    MOV ESI,dword ptr [0x01da648c]      ; 00506aa4 | g_ChatHistoryCount
     PUSH EBX                            ; 00506aaa
     MOV EBX,dword ptr [0x005fe9dc]      ; 00506aab | g_CGamePtr
     INC ESI                             ; 00506ab1
     PUSH EBX                            ; 00506ab2
-    MOV dword ptr [0x01da648c],ESI      ; 00506ab3 | g_INT_01da648c
+    MOV dword ptr [0x01da648c],ESI      ; 00506ab3 | g_ChatHistoryCount
     CALL core_game.cpp_CGame_displayMessage_FUN_004b46b0 ; 00506ab9
         ;   XREF to: 004b46b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b46b0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 00506abe
@@ -105,7 +105,7 @@ section .text
     RET                                 ; 00506ac4
     LEA ECX,[EDX + -0x1]                ; 00506ac5
         ;   Label: LAB_00506ac5
-    MOV dword ptr [0x01da648c],ECX      ; 00506ac8 | g_INT_01da648c
+    MOV dword ptr [0x01da648c],ECX      ; 00506ac8 | g_ChatHistoryCount
     LEA EAX,[ECX*0x8 + 0x0]             ; 00506ace
     ADD EAX,ECX                         ; 00506ad5
     SHL EAX,0x5                         ; 00506ad7

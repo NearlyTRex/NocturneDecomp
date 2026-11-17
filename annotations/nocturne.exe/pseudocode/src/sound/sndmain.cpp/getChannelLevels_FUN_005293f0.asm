@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   int g_INT_02dc8330
+;   int g_MixBufferSize
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_00528800
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 00529433
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00529437
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
-    MOV ECX,dword ptr [0x02dc8330]      ; 0052943c | g_INT_02dc8330
+    MOV ECX,dword ptr [0x02dc8330]      ; 0052943c | g_MixBufferSize
     XOR EDX,EDX                         ; 00529442
     TEST ECX,ECX                        ; 00529444
     JLE 0x00529480                      ; 00529446
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 00529476 (CONDITIONAL_JUMP)  ; LAB_00529476
     MOV EAX,dword ptr [ESP + 0x8]       ; 0052946e
     MOV dword ptr [ESP + 0x4],EAX       ; 00529472
-    MOV EAX,[0x02dc8330]                ; 00529476 | g_INT_02dc8330
+    MOV EAX,[0x02dc8330]                ; 00529476 | g_MixBufferSize
         ;   Label: LAB_00529476
     INC EDX                             ; 0052947b
     CMP EDX,EAX                         ; 0052947c
@@ -86,7 +86,7 @@ section .text
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00529480
         ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00529480
-    FILD dword ptr [0x02dc8330]         ; 00529485 | g_INT_02dc8330
+    FILD dword ptr [0x02dc8330]         ; 00529485 | g_MixBufferSize
     FDIVR float ptr [ESP]               ; 0052948b
     FLD float ptr [ESP + 0x4]           ; 0052948e
     FLD1                                ; 00529492
@@ -124,7 +124,7 @@ section .text
     POP ESI                             ; 005294cf
     POP EBX                             ; 005294d0
     RET                                 ; 005294d1
-    CMP dword ptr [0x02dc8330],0x1      ; 005294d2 | g_INT_02dc8330
+    CMP dword ptr [0x02dc8330],0x1      ; 005294d2 | g_MixBufferSize
         ;   Label: LAB_005294d2
     JL 0x00529413                       ; 005294d9
         ;   XREF to: 00529413 (CONDITIONAL_JUMP)  ; LAB_00529413

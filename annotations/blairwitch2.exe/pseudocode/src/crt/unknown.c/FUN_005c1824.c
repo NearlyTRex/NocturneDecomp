@@ -23,23 +23,23 @@ uint FUN_005c1824(int param_1)
   uVar8 = 0;
   if (*PTR_s_EDT_0061f634 == '\0') goto LAB_005c1aeb;
   uVar1 = FUN_005c17c8
-                    (&g_dst_rule_0061f4e4,&g_INT_0061f508,*(uint *)(param_1 + 0x14));
+                    (&g_DstStartRule,&g_DstTransitionSecond,*(uint *)(param_1 + 0x14));
   if (uVar1 == 0) {
-    piVar7 = &g_dst_rule_0061f4e4.seconds;
-    pdVar9 = (dst_rule *)&g_INT_0061f508;
+    piVar7 = &g_DstStartRule.seconds;
+    pdVar9 = (dst_rule *)&g_DstTransitionSecond;
   }
   else {
-    piVar7 = &g_INT_0061f508;
-    pdVar9 = &g_dst_rule_0061f4e4;
+    piVar7 = &g_DstTransitionSecond;
+    pdVar9 = &g_DstStartRule;
   }
   iVar5 = *(int *)(param_1 + 0x10);
   iVar2 = FUN_005c1690(*(int *)(param_1 + 0x14) + 0x76c);
   if (iVar2 == 0) {
-    iVar2 = *(int *)(&g_SHORT_006013f4 + iVar5);
+    iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
     iVar4 = *(int *)((int)&g_DOUBLE_006013ec + iVar5 * 2 + 6);
   }
   else {
-    iVar2 = *(int *)(&g_SHORT_0060140e + iVar5);
+    iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);
     iVar4 = *(int *)(&g_SHORT_0060140c + iVar5);
   }
   iVar2 = (iVar2 >> 0x10) - (iVar4 >> 0x10);

@@ -18,8 +18,8 @@ extern CAlphaBitmap g_WeapBackgroundBitmap;
 extern CAlphaBitmap g_WeapBackground2Bitmap;
 
 // SInventoryItemInfo[100]
-extern SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01cb03d8[100];
+extern SInventoryItemInfo g_ItemDefinitionArray[100];
 
 // int
-extern int g_INT_01cb03d0;
+extern int g_ItemDefinitionCount;
 

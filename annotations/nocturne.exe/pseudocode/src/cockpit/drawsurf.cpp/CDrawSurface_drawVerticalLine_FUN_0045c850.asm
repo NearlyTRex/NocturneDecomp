@@ -22,9 +22,9 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057da33
 ;   int g_BitsPerPixel = 0x8
 ;   int g_INT_01b4d710
-;   int g_INT_01b4d71c
-;   int g_INT_01b4d720
-;   int g_INT_01b4d730
+;   int g_UseRGBConversion
+;   int g_OriginalColorValue
+;   int g_PackedPixelColor
 ;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_0045c899
     JG 0x0045c8f0                       ; 0045c89b
         ;   XREF to: 0045c8f0 (CONDITIONAL_JUMP)  ; LAB_0045c8f0
-    MOV EBP,dword ptr [0x01b4d71c]      ; 0045c89d | g_INT_01b4d71c
+    MOV EBP,dword ptr [0x01b4d71c]      ; 0045c89d | g_UseRGBConversion
     LEA EDX,[ESI + ESI*0x1]             ; 0045c8a3
     SHL EBX,0x2                         ; 0045c8a6
     MOV dword ptr [ESP],EDX             ; 0045c8a9
@@ -182,10 +182,10 @@ section .text
     MOV EBX,dword ptr [EDX + 0x1bd2fa0] ; 0045c992 | g_ScreenBufferArray
         ;   Label: LAB_0045c992
     XOR ESI,ESI                         ; 0045c998
-    MOV CL,byte ptr [0x01b4d720]        ; 0045c99a | g_INT_01b4d720
+    MOV CL,byte ptr [0x01b4d720]        ; 0045c99a | g_OriginalColorValue
     MOV SI,word ptr [EBX + EBP*0x1]     ; 0045c9a0
     SHR ESI,CL                          ; 0045c9a4
-    MOV ECX,dword ptr [0x01b4d730]      ; 0045c9a6 | g_INT_01b4d730
+    MOV ECX,dword ptr [0x01b4d730]      ; 0045c9a6 | g_PackedPixelColor
     ADD EDX,0x4                         ; 0045c9ac
     AND ESI,ECX                         ; 0045c9af
     INC EAX                             ; 0045c9b1
@@ -206,11 +206,11 @@ section .text
     MOV ESI,dword ptr [EDX + 0x1bd2fa0] ; 0045c9cc | g_ScreenBufferArray
         ;   Label: LAB_0045c9cc
     ADD ESI,EBP                         ; 0045c9d2
-    MOV CL,byte ptr [0x01b4d720]        ; 0045c9d4 | g_INT_01b4d720
+    MOV CL,byte ptr [0x01b4d720]        ; 0045c9d4 | g_OriginalColorValue
     MOV EBX,dword ptr [ESI]             ; 0045c9da
     SHR EBX,CL                          ; 0045c9dc
     MOV ECX,EBX                         ; 0045c9de
-    MOV EBX,dword ptr [0x01b4d730]      ; 0045c9e0 | g_INT_01b4d730
+    MOV EBX,dword ptr [0x01b4d730]      ; 0045c9e0 | g_PackedPixelColor
     ADD EDX,0x4                         ; 0045c9e6
     AND ECX,EBX                         ; 0045c9e9
     INC EAX                             ; 0045c9eb

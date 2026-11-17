@@ -11,8 +11,8 @@ void __cdecl core_netgame_cpp_staticInit_FUN_0052c0a0(void)
 {
   core_netgame_cpp_CNetGame_ctor_FUN_0052c470(&g_CNetGameInstance);
   _atexit(&g_CNetGameInstanceDestructorNode);
-  __arrinit(g_SChatHistory_ARRAY_01d51db8,400,&g_SChatHistoryTypeInfo);
-  g_UNetPacket_01d7edb0.header.size = 0x405;
-  g_UNetPacket_01d7edb0.header.type = PACKET_NONE;
+  __arrinit(g_ChatHistory,400,&g_SChatHistoryTypeInfo);
+  g_NetworkReceivePacket.header.size = 0x405;
+  g_NetworkReceivePacket.header.type = PACKET_NONE;
   return;
 }

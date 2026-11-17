@@ -13,8 +13,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508caa
 ;
 ; Referenced Globals:
-;   int g_INT_01c20140
-;   int g_INT_01c23d48
+;   int g_BulletHoleActiveCount
+;   int g_StakeActiveCount
 ;   undefined4 g_StakePool[0].physics_box.is_valid
 ;   undefined4 g_StakePool[1].physics_box.is_valid
 ;
@@ -41,7 +41,7 @@ section .text
     TEST EBP,EBP                        ; 0048a985
     JZ 0x0048aa45                       ; 0048a987
         ;   XREF to: 0048aa45 (CONDITIONAL_JUMP)  ; LAB_0048aa45
-    MOV ECX,dword ptr [0x01c20140]      ; 0048a98d | g_INT_01c20140
+    MOV ECX,dword ptr [0x01c20140]      ; 0048a98d | g_BulletHoleActiveCount
     XOR ESI,ESI                         ; 0048a993
     TEST ECX,ECX                        ; 0048a995
     JLE 0x0048a9c1                      ; 0048a997
@@ -57,7 +57,7 @@ section .text
     CALL core_fire.cpp_CBulletHole_render_FUN_00482f50 ; 0048a9ac
         ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00482f50(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0048a9b1
-    MOV EAX,[0x01c20140]                ; 0048a9b4 | g_INT_01c20140
+    MOV EAX,[0x01c20140]                ; 0048a9b4 | g_BulletHoleActiveCount
         ;   Label: LAB_0048a9b4
     INC ESI                             ; 0048a9b9
     ADD EBX,0x3c                        ; 0048a9ba
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0048a9c1
     JZ 0x0048aa16                       ; 0048a9c3
         ;   XREF to: 0048aa16 (CONDITIONAL_JUMP)  ; LAB_0048aa16
-    MOV EDX,dword ptr [0x01c23d48]      ; 0048a9c5 | g_INT_01c23d48
+    MOV EDX,dword ptr [0x01c23d48]      ; 0048a9c5 | g_StakeActiveCount
     XOR ESI,ESI                         ; 0048a9cb
     TEST EDX,EDX                        ; 0048a9cd
     JLE 0x0048aa16                      ; 0048a9cf
@@ -90,7 +90,7 @@ section .text
     CALL core_fire.cpp_CStake_render_FUN_004835d0 ; 0048a9f7
         ;   XREF to: 004835d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_004835d0(CStake * this_ptr)
     ADD ESP,0x4                         ; 0048a9fc
-    MOV EDX,dword ptr [0x01c23d48]      ; 0048a9ff | g_INT_01c23d48
+    MOV EDX,dword ptr [0x01c23d48]      ; 0048a9ff | g_StakeActiveCount
         ;   Label: LAB_0048a9ff
     ADD EBX,0x260                       ; 0048aa05
     INC ESI                             ; 0048aa0b
@@ -121,7 +121,7 @@ section .text
     POP ESI                             ; 0048aa42
     POP EBX                             ; 0048aa43
     RET                                 ; 0048aa44
-    MOV EDX,dword ptr [0x01c20140]      ; 0048aa45 | g_INT_01c20140
+    MOV EDX,dword ptr [0x01c20140]      ; 0048aa45 | g_BulletHoleActiveCount
         ;   Label: LAB_0048aa45
     XOR ESI,ESI                         ; 0048aa4b
     TEST EDX,EDX                        ; 0048aa4d
@@ -143,7 +143,7 @@ section .text
         ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00482f50(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0048aa76
     MOV dword ptr [EBX + 0x1c20154],EDI ; 0048aa79
-    MOV ECX,dword ptr [0x01c20140]      ; 0048aa7f | g_INT_01c20140
+    MOV ECX,dword ptr [0x01c20140]      ; 0048aa7f | g_BulletHoleActiveCount
         ;   Label: LAB_0048aa7f
     INC ESI                             ; 0048aa85
     ADD EBX,0x3c                        ; 0048aa86

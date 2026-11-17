@@ -12,7 +12,7 @@ int __cdecl core_event_cpp_setEventError_FUN_004a11e0(char *source_file,int sour
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = g_CHAR_ARRAY_01c56ed0;
+  pcVar2 = g_EventErrorMessageBuffer;
   do {
     cVar1 = *error_message;
     *pcVar2 = cVar1;

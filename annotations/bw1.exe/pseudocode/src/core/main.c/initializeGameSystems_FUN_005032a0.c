@@ -30,8 +30,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   int iStack_14;
   
   bVar12 = 0;
-  g_INT_01c51d10 = 0;
-  g_INT_006258dc = 0x10000;
+  g_ProcessorType = 0;
+  g_FullScreenQuadDepth = 0x10000;
   g_INT_006258d0 = 1;
   file_handle = _fopen("stderr.txt","rb");
   if (file_handle != (_FILE *)0x0) {
@@ -53,7 +53,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(engine_dosio_cpp_findFileNormally_FUN_00478ef0);
   support_newmsg_cpp_readMessageFile_FUN_00530bf0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_0051c450();
-  if (g_INT_01c51d00 == 0) {
+  if (g_MMXSupported == 0) {
     g_CHAR_PTR_01d1d400 = "..\\core\\main.c";
     g_INT_01d1d404 = 0x3dd;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("This CPU does not have an MMX unit.")
@@ -72,7 +72,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     core_main_c_displayErrorAndQuit_FUN_005030e0("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_0045e000();
-  if (g_INT_02c9be78 < 0x3c00000) {
+  if (g_TotalPhysicalMemory < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
     pcVar5 = acStack_528;
     do {
@@ -300,7 +300,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340(g_CEditorToolsPtr,acStack_528);
   }
-  if (g_INT_02c9be7c < 0xc800000) {
+  if (g_AvailableSwapSpace < 0xc800000) {
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
     do {
       cVar2 = *pcVar5;
@@ -463,8 +463,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     pcVar11[1] = cVar2;
     pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
-  engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_CBitFont_PTR_0152d244,acStack_228);
-  engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_0152d244,0x58);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_ThemeFont,acStack_228);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_ThemeFont,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&CStack_28,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CStack_28,0,0,0x8000);

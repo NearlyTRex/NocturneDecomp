@@ -15,12 +15,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005d151c
 ;   TerminatedCString s_Can_t_use_demonZFacetCou_005d1532
-;   int g_INT_01ba5c7c
-;   int[16] g_INT_ARRAY_01ba5c84
-;   undefined4 g_INT_ARRAY_01ba5c84[1]
-;   void* g_PTR_01c35e6c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
+;   int g_RenderPixelCounter
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;
@@ -43,7 +43,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004698ab
     XOR EDX,EDX                         ; 004698af
     MOV ECX,dword ptr [EBP + 0xc]       ; 004698b1
-    MOV dword ptr [0x01ba5c7c],EDX      ; 004698b4 | g_INT_01ba5c7c
+    MOV dword ptr [0x01ba5c7c],EDX      ; 004698b4 | g_RenderPixelCounter
     TEST ECX,ECX                        ; 004698ba
     JNZ 0x00469955                      ; 004698bc
         ;   XREF to: 00469955 (CONDITIONAL_JUMP)  ; LAB_00469955
@@ -59,7 +59,7 @@ section .text
     XOR ECX,ECX                         ; 004698d5
     MOV EBX,dword ptr [EDX + 0x18]      ; 004698d7
         ;   Label: LAB_004698d7
-    MOV dword ptr [ECX + 0x1ba5c84],EBX ; 004698da | g_INT_ARRAY_01ba5c84 | g_INT_ARRAY_01ba5c84[1]
+    MOV dword ptr [ECX + 0x1ba5c84],EBX ; 004698da | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     IMUL ESI,EBX,0x30                   ; 004698e0
     MOV EBX,dword ptr [EBP]             ; 004698e3
     ADD ECX,0x4                         ; 004698e6
@@ -92,14 +92,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046992e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00469933
-    PUSH 0x1ba5c84                      ; 00469936 | g_INT_ARRAY_01ba5c84
+    PUSH 0x1ba5c84                      ; 00469936 | g_VertexIndexBuffer
         ;   Label: LAB_00469936
     MOV EAX,dword ptr [EDI + 0x4]       ; 0046993b
     PUSH EAX                            ; 0046993e
     PUSH EBP                            ; 0046993f
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590 ; 00469940
         ;   XREF to: 00469590 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
-    MOV EAX,[0x01ba5c7c]                ; 00469945 | g_INT_01ba5c7c
+    MOV EAX,[0x01ba5c7c]                ; 00469945 | g_RenderPixelCounter
     ADD ESP,0xc                         ; 0046994a
     ADD ESP,0x4                         ; 0046994d
         ;   Label: LAB_0046994d
@@ -127,9 +127,9 @@ section .text
         ;   Label: LAB_0046996f
     MOV ECX,0x6                         ; 00469974
     MOV EAX,0x46ef35                    ; 00469979
-    MOV dword ptr [0x01c38b54],EDX      ; 0046997e | g_BIT_INTEGER32_01c38b54
-    MOV dword ptr [0x01c38b58],ECX      ; 00469984 | g_INT_01c38b58
-    MOV [0x01c35e6c],EAX                ; 0046998a | g_PTR_01c35e6c
+    MOV dword ptr [0x01c38b54],EDX      ; 0046997e | g_RenderStateFlags
+    MOV dword ptr [0x01c38b58],ECX      ; 00469984 | g_VertexPreprocessMode
+    MOV [0x01c35e6c],EAX                ; 0046998a | g_ScanlineRenderFunc
     JMP 0x00469936                      ; 0046998f
         ;   XREF to: 00469936 (UNCONDITIONAL_JUMP)  ; LAB_00469936
 

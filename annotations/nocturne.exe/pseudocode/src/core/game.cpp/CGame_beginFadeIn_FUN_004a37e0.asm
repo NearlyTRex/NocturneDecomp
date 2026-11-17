@@ -16,10 +16,10 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CScript* g_CScriptPtr = 01e56da0
-;   int g_INT_01c78b04
-;   float g_FLOAT_01c78b08
-;   int g_INT_01c78b0c
-;   int g_INT_01c78b10
+;   int g_IrisFadeType
+;   float g_IrisFadeRadius
+;   int g_IrisFadeCenterX
+;   int g_IrisFadeCenterY
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -104,7 +104,7 @@ section .text
     SHL EDX,0x10                        ; 004a3766
     SBB EAX,EDX                         ; 004a3769
     SAR EAX,0x10                        ; 004a376b
-    MOV [0x01c78b0c],EAX                ; 004a376e | g_INT_01c78b0c
+    MOV [0x01c78b0c],EAX                ; 004a376e | g_IrisFadeCenterX
     MOV EAX,dword ptr [ESP + 0x40]      ; 004a3773
     MOV EDX,EAX                         ; 004a3777
     SAR EDX,0x1f                        ; 004a3779
@@ -112,31 +112,31 @@ section .text
     SBB EAX,EDX                         ; 004a377f
     SAR EAX,0x10                        ; 004a3781
     MOV ESI,dword ptr [0x005b7620]      ; 004a3784 | g_WindowHeight
-    MOV [0x01c78b10],EAX                ; 004a378a | g_INT_01c78b10
+    MOV [0x01c78b10],EAX                ; 004a378a | g_IrisFadeCenterY
     CMP ESI,0x1e0                       ; 004a378f
     JLE 0x004a3876                      ; 004a3795
         ;   XREF to: 004a3876 (CONDITIONAL_JUMP)  ; LAB_004a3876
     MOV EDI,dword ptr [0x005b761c]      ; 004a379b | g_WindowWidth
-    MOV EDX,dword ptr [0x01c78b0c]      ; 004a37a1 | g_INT_01c78b0c
+    MOV EDX,dword ptr [0x01c78b0c]      ; 004a37a1 | g_IrisFadeCenterX
     IMUL EDX,EDI                        ; 004a37a7
     MOV EBX,0x280                       ; 004a37aa
     MOV EAX,EDX                         ; 004a37af
     SAR EDX,0x1f                        ; 004a37b1
     IDIV EBX                            ; 004a37b4
-    MOV EDX,dword ptr [0x01c78b10]      ; 004a37b6 | g_INT_01c78b10
+    MOV EDX,dword ptr [0x01c78b10]      ; 004a37b6 | g_IrisFadeCenterY
     IMUL EDX,ESI                        ; 004a37bc
     MOV EBX,0x1e0                       ; 004a37bf
-    MOV [0x01c78b0c],EAX                ; 004a37c4 | g_INT_01c78b0c
+    MOV [0x01c78b0c],EAX                ; 004a37c4 | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004a37c9
     SAR EDX,0x1f                        ; 004a37cb
     IDIV EBX                            ; 004a37ce
-    MOV [0x01c78b10],EAX                ; 004a37d0 | g_INT_01c78b10
+    MOV [0x01c78b10],EAX                ; 004a37d0 | g_IrisFadeCenterY
     ADD ESP,0x60                        ; 004a37d5
     POP EDI                             ; 004a37d8
     POP ESI                             ; 004a37d9
     POP EBX                             ; 004a37da
     RET                                 ; 004a37db
-    MOV dword ptr [0x01c78b04],0x1      ; 004a37e0 | g_INT_01c78b04
+    MOV dword ptr [0x01c78b04],0x1      ; 004a37e0 | g_IrisFadeType
         ;   Label: core_game.cpp_CGame_beginFadeIn_FUN_004a37e0
     MOV EDX,dword ptr [0x005b761c]      ; 004a37ea | g_WindowWidth
     MOV EAX,EDX                         ; 004a37f0
@@ -144,14 +144,14 @@ section .text
     SUB EAX,EDX                         ; 004a37f5
     SAR EAX,0x1                         ; 004a37f7
     MOV EDX,dword ptr [0x005b7620]      ; 004a37f9 | g_WindowHeight
-    MOV [0x01c78b0c],EAX                ; 004a37ff | g_INT_01c78b0c
+    MOV [0x01c78b0c],EAX                ; 004a37ff | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004a3804
     SAR EDX,0x1f                        ; 004a3806
     SUB EAX,EDX                         ; 004a3809
     SAR EAX,0x1                         ; 004a380b
     XOR ECX,ECX                         ; 004a380d
-    MOV dword ptr [0x01c78b08],ECX      ; 004a380f | g_FLOAT_01c78b08
-    MOV [0x01c78b10],EAX                ; 004a3815 | g_INT_01c78b10
+    MOV dword ptr [0x01c78b08],ECX      ; 004a380f | g_IrisFadeRadius
+    MOV [0x01c78b10],EAX                ; 004a3815 | g_IrisFadeCenterY
     JMP 0x004a3860                      ; 004a381a
         ;   XREF to: 004a3860 (UNCONDITIONAL_CALL)
 

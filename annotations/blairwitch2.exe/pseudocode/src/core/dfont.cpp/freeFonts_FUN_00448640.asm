@@ -8,19 +8,19 @@
 ;   core_main.c_finalizeGameSystems_FUN_004e4e20 at 004e4e87
 ;
 ; Referenced Globals:
-;   CBitFont* g_CBitFont_PTR_01511cb8
-;   CBitFont* g_CBitFont_PTR_01511cbc
-;   CBitFont* g_CBitFont_PTR_01511cc0
-;   CBitFont* g_CBitFont_PTR_01511cc4
+;   CBitFont* g_MediumFont
+;   CBitFont* g_TinyFont
+;   CBitFont* g_ThemeFont
+;   CBitFont* g_SmallEditorFont
 ;   CBitFont* g_CBitFont_PTR_01511cc8
-;   CBitFont* g_CBitFont_PTR_01511ccc
+;   CBitFont* g_MicroFont
 ;   CBitFont* g_CBitFont_PTR_01511cd0
 ;   CWinFont* g_CWinFont_PTR_01511cd4
 ;   CWinFont* g_CWinFont_PTR_01511cd8
 ;   CWinFont* g_CWinFont_PTR_01511cdc
 ;   CWinFont* g_CWinFont_PTR_01511ce0
-;   CBitFont* g_CBitFont_PTR_01c25590
-;   int g_INT_01d63250
+;   CBitFont* g_EditorFont
+;   int g_UseOSFonts
 ;
 ; Called Functions:
 ;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
@@ -35,14 +35,14 @@ section .text
     PUSH ESI                            ; 00448641
     PUSH EDI                            ; 00448642
     PUSH EBP                            ; 00448643
-    MOV EDX,dword ptr [0x01511cb8]      ; 00448644 | g_CBitFont_PTR_01511cb8
+    MOV EDX,dword ptr [0x01511cb8]      ; 00448644 | g_MediumFont
     TEST EDX,EDX                        ; 0044864a
     JNZ 0x004487c5                      ; 0044864c
         ;   XREF to: 004487c5 (CONDITIONAL_JUMP)  ; LAB_004487c5
     XOR EBX,EBX                         ; 00448652
         ;   Label: LAB_00448652
-    MOV ESI,dword ptr [0x01511cbc]      ; 00448654 | g_CBitFont_PTR_01511cbc
-    MOV dword ptr [0x01511cb8],EBX      ; 0044865a | g_CBitFont_PTR_01511cb8
+    MOV ESI,dword ptr [0x01511cbc]      ; 00448654 | g_TinyFont
+    MOV dword ptr [0x01511cb8],EBX      ; 0044865a | g_MediumFont
     TEST ESI,ESI                        ; 00448660
     JZ 0x00448677                       ; 00448662
         ;   XREF to: 00448677 (CONDITIONAL_JUMP)  ; LAB_00448677
@@ -57,8 +57,8 @@ section .text
     ADD ESP,0x4                         ; 00448674
     XOR EBP,EBP                         ; 00448677
         ;   Label: LAB_00448677
-    MOV EAX,[0x01511cc0]                ; 00448679 | g_CBitFont_PTR_01511cc0
-    MOV dword ptr [0x01511cbc],EBP      ; 0044867e | g_CBitFont_PTR_01511cbc
+    MOV EAX,[0x01511cc0]                ; 00448679 | g_ThemeFont
+    MOV dword ptr [0x01511cbc],EBP      ; 0044867e | g_TinyFont
     TEST EAX,EAX                        ; 00448684
     JZ 0x0044869b                       ; 00448686
         ;   XREF to: 0044869b (CONDITIONAL_JUMP)  ; LAB_0044869b
@@ -73,8 +73,8 @@ section .text
     ADD ESP,0x4                         ; 00448698
     XOR ECX,ECX                         ; 0044869b
         ;   Label: LAB_0044869b
-    MOV EBX,dword ptr [0x01511cc4]      ; 0044869d | g_CBitFont_PTR_01511cc4
-    MOV dword ptr [0x01511cc0],ECX      ; 004486a3 | g_CBitFont_PTR_01511cc0
+    MOV EBX,dword ptr [0x01511cc4]      ; 0044869d | g_SmallEditorFont
+    MOV dword ptr [0x01511cc0],ECX      ; 004486a3 | g_ThemeFont
     TEST EBX,EBX                        ; 004486a9
     JZ 0x004486c0                       ; 004486ab
         ;   XREF to: 004486c0 (CONDITIONAL_JUMP)  ; LAB_004486c0
@@ -90,7 +90,7 @@ section .text
     XOR EDI,EDI                         ; 004486c0
         ;   Label: LAB_004486c0
     MOV EBP,dword ptr [0x01511cc8]      ; 004486c2 | g_CBitFont_PTR_01511cc8
-    MOV dword ptr [0x01511cc4],EDI      ; 004486c8 | g_CBitFont_PTR_01511cc4
+    MOV dword ptr [0x01511cc4],EDI      ; 004486c8 | g_SmallEditorFont
     TEST EBP,EBP                        ; 004486ce
     JZ 0x004486e5                       ; 004486d0
         ;   XREF to: 004486e5 (CONDITIONAL_JUMP)  ; LAB_004486e5
@@ -105,8 +105,8 @@ section .text
     ADD ESP,0x4                         ; 004486e2
     XOR EDX,EDX                         ; 004486e5
         ;   Label: LAB_004486e5
-    MOV EBX,dword ptr [0x01511ccc]      ; 004486e7 | g_CBitFont_PTR_01511ccc
-    MOV dword ptr [0x01c25590],EDX      ; 004486ed | g_CBitFont_PTR_01c25590
+    MOV EBX,dword ptr [0x01511ccc]      ; 004486e7 | g_MicroFont
+    MOV dword ptr [0x01c25590],EDX      ; 004486ed | g_EditorFont
     MOV dword ptr [0x01511cc8],EDX      ; 004486f3 | g_CBitFont_PTR_01511cc8
     TEST EBX,EBX                        ; 004486f9
     JZ 0x00448710                       ; 004486fb
@@ -123,7 +123,7 @@ section .text
     XOR EDI,EDI                         ; 00448710
         ;   Label: LAB_00448710
     MOV EBP,dword ptr [0x01511cd0]      ; 00448712 | g_CBitFont_PTR_01511cd0
-    MOV dword ptr [0x01511ccc],EDI      ; 00448718 | g_CBitFont_PTR_01511ccc
+    MOV dword ptr [0x01511ccc],EDI      ; 00448718 | g_MicroFont
     TEST EBP,EBP                        ; 0044871e
     JZ 0x00448735                       ; 00448720
         ;   XREF to: 00448735 (CONDITIONAL_JUMP)  ; LAB_00448735
@@ -138,7 +138,7 @@ section .text
     ADD ESP,0x4                         ; 00448732
     XOR EDX,EDX                         ; 00448735
         ;   Label: LAB_00448735
-    MOV ECX,dword ptr [0x01d63250]      ; 00448737 | g_INT_01d63250
+    MOV ECX,dword ptr [0x01d63250]      ; 00448737 | g_UseOSFonts
     MOV dword ptr [0x01511cd0],EDX      ; 0044873d | g_CBitFont_PTR_01511cd0
     TEST ECX,ECX                        ; 00448743
     JZ 0x004487c0                       ; 00448745

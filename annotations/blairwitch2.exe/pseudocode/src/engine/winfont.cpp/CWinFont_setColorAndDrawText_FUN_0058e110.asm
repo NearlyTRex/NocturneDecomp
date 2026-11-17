@@ -21,13 +21,13 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
-;   int g_INT_01c35818
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
-;   int g_INT_01c35824
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
-;   int g_INT_01c35830
+;   void*[1200] g_ScreenBufferArray
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
 ;   undefined4 g_UCHAR_ARRAY_01c35838+2
@@ -150,27 +150,27 @@ section .text
     XOR EAX,EAX                         ; 0058e23d
     MOV dword ptr [ESP + 0x14],EDX      ; 0058e23f
     MOV AL,byte ptr [ECX + 0x1c35838]   ; 0058e243 | g_UCHAR_ARRAY_01c35838
-    MOV ECX,dword ptr [0x01c35818]      ; 0058e249 | g_INT_01c35818
+    MOV ECX,dword ptr [0x01c35818]      ; 0058e249 | g_RedScaleFactor
     XOR EDX,EDX                         ; 0058e24f
     MOV dword ptr [ESP + 0xc],EAX       ; 0058e251
     DIV ECX                             ; 0058e255
-    MOV EDI,dword ptr [0x01c35824]      ; 0058e257 | g_INT_01c35824
+    MOV EDI,dword ptr [0x01c35824]      ; 0058e257 | g_GreenScaleFactor
     MOV dword ptr [ESP + 0xc],EAX       ; 0058e25d
     XOR EDX,EDX                         ; 0058e261
     MOV EAX,EBP                         ; 0058e263
     DIV EDI                             ; 0058e265
-    MOV EBP,dword ptr [0x01c35830]      ; 0058e267 | g_INT_01c35830
+    MOV EBP,dword ptr [0x01c35830]      ; 0058e267 | g_BlueScaleFactor
     MOV EDI,EAX                         ; 0058e26d
     XOR EDX,EDX                         ; 0058e26f
     MOV EAX,dword ptr [ESP + 0x4]       ; 0058e271
     DIV EBP                             ; 0058e275
-    MOV CL,byte ptr [0x01c35814]        ; 0058e277 | g_BIT_INTEGER32_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 0058e277 | g_RedBitPosition
     MOV dword ptr [ESP + 0x14],EAX      ; 0058e27d
     MOV EAX,dword ptr [ESP + 0xc]       ; 0058e281
     SHL EAX,CL                          ; 0058e285
-    MOV CL,byte ptr [0x01c35820]        ; 0058e287 | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0058e287 | g_GreenBitPosition
     SHL EDI,CL                          ; 0058e28d
-    MOV CL,byte ptr [0x01c3582c]        ; 0058e28f | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0058e28f | g_BlueBitPosition
     OR EDI,EAX                          ; 0058e295
     MOV EAX,dword ptr [ESP + 0x14]      ; 0058e297
     SHL EAX,CL                          ; 0058e29b
@@ -225,7 +225,7 @@ section .text
         ;   Label: LAB_0058e303
     JMP 0x0058e29f                      ; 0058e308
         ;   XREF to: 0058e29f (UNCONDITIONAL_JUMP)  ; LAB_0058e29f
-    MOV ECX,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0058e30a | g_ARRAY_PTR_01c2a38c
+    MOV ECX,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0058e30a | g_ScreenBufferArray
         ;   Label: LAB_0058e30a
     XOR EAX,EAX                         ; 0058e311
     TEST ESI,ESI                        ; 0058e313
@@ -265,11 +265,11 @@ section .text
     CMP dword ptr [0x006141c0],0x20     ; 0058e370 | g_INT_006141c0
     JNZ 0x0058e3fa                      ; 0058e377
         ;   XREF to: 0058e3fa (CONDITIONAL_JUMP)  ; LAB_0058e3fa
-    MOV CL,byte ptr [0x01c35814]        ; 0058e37d | g_BIT_INTEGER32_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 0058e37d | g_RedBitPosition
     SHL EDI,CL                          ; 0058e383
-    MOV CL,byte ptr [0x01c35820]        ; 0058e385 | g_BIT_INTEGER32_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0058e385 | g_GreenBitPosition
     SHL EDX,CL                          ; 0058e38b
-    MOV CL,byte ptr [0x01c3582c]        ; 0058e38d | g_BIT_INTEGER32_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0058e38d | g_BlueBitPosition
     OR EDX,EDI                          ; 0058e393
     SHL EAX,CL                          ; 0058e395
     MOV ECX,EDX                         ; 0058e397
@@ -320,7 +320,7 @@ section .text
     OR ECX,EDX                          ; 0058e402
     JMP 0x0058e399                      ; 0058e404
         ;   XREF to: 0058e399 (UNCONDITIONAL_JUMP)  ; LAB_0058e399
-    MOV EDX,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0058e406 | g_ARRAY_PTR_01c2a38c
+    MOV EDX,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0058e406 | g_ScreenBufferArray
         ;   Label: LAB_0058e406
     XOR EAX,EAX                         ; 0058e40d
     TEST ESI,ESI                        ; 0058e40f

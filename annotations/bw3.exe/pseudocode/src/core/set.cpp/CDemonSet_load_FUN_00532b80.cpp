@@ -185,13 +185,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   engine_dosio_cpp_splitPath_FUN_00465e50(local_130,(char *)0x0,(char *)0x0,local_230,(char *)0x0);
   iVar11 = _stricmp(local_230,"train");
-  this_ptr_00 = g_CTerrain_PTR_00606aa0;
+  this_ptr_00 = g_CTerrainPtr;
   if (iVar11 == 0) {
     this_ptr->player_on_train = 1;
     core_terrain_cpp_CTerrain_init_FUN_00572370(this_ptr_00);
   }
   else {
-    core_terrain_cpp_CTerrain_free_FUN_005723b0(g_CTerrain_PTR_00606aa0);
+    core_terrain_cpp_CTerrain_free_FUN_005723b0(g_CTerrainPtr);
     this_ptr->player_on_train = 0;
   }
   if (10 < this_ptr->set_file_version) {

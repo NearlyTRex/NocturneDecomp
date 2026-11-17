@@ -18,7 +18,7 @@ CVector3d g_CVector3d_02c7fc28 = {};
 CVector3d g_CVector3d_02c7fc40 = {};
 
 // SSoundDeviceInfo[8]
-SSoundDeviceInfo g_SSoundDeviceInfo_ARRAY_02c7fd90[8] = {};
+SSoundDeviceInfo g_SoundDevices[8] = {};
 
 // byte
 byte g_BYTE_02c745b8 = {};
@@ -32,23 +32,23 @@ double g_DOUBLE_02c7fc18 = {};
 double g_DOUBLE_02c7fc20 = {};
 
 // float
-float g_FLOAT_02c745e0 = {};
+float g_SoundReferenceVolumeDistance = {};
 
 // float[32]
-float g_FLOAT_ARRAY_02c7fc90[32] = {};
+float g_SfxChannelVolumes[32] = {};
 
 // int
-int g_INT_02c745bc = {};
+int g_ShutdownInProgress = {};
 int g_INT_02c745e4 = {};
 int g_INT_02c745e8 = {};
-int g_INT_02c78cec = {};
-int g_INT_02c78ff0 = {};
+int g_SfxLastSlot = {};
+int g_LastSampleAccessIndex = {};
 int g_INT_02c7fc88 = {};
 int g_INT_02c7fc8c = {};
 
 // int[32]
-int g_INT_ARRAY_02c7fd10[32] = {};
+int g_SfxChannelEnabled[32] = {};
 
 // int[8]
-int g_INT_ARRAY_02c745c0[8] = {};
+int g_ChannelFFTTimestamps[8] = {};
 

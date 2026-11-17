@@ -87,9 +87,9 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_0049b9d0(CPopcorn *this_ptr)
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_0061585c);
-  (*((g_CDemonCamera_PTR_007bda74->base).vtable)->setupPerspectiveAndFog)
-            (g_CDemonCamera_PTR_007bda74,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+            (g_CDemonRenderer_PTR_0060b280,&g_FireEffectPopcornTexture);
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
   g_SRenderVertex_ARRAY_00622014[0].u = 0x80000;
   g_SRenderVertex_ARRAY_00622014[0].v = 0xf80000;
   g_SRenderVertex_ARRAY_00622014[1].u = 0xf80000;
@@ -97,7 +97,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_0049b9d0(CPopcorn *this_ptr)
   g_SRenderVertex_ARRAY_00622014[2].u = 0xf80000;
   g_SRenderVertex_ARRAY_00622014[2].v = 0x80000;
   g_SRenderVertex_ARRAY_00622014[3].u = 0x80000;
-  g_SRenderVertex_ARRAY_00622014[0].a = 0xffff - g_INT_01c38aec;
+  g_SRenderVertex_ARRAY_00622014[0].a = 0xffff - g_PerspectiveReciprocal;
   g_SRenderVertex_ARRAY_00622014[3].v = 0x80000;
   CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
@@ -106,7 +106,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_0049b9d0(CPopcorn *this_ptr)
   g_SRenderVertex_ARRAY_00622014[2].a = g_SRenderVertex_ARRAY_00622014[0].a;
   g_SRenderVertex_ARRAY_00622014[3].a = g_SRenderVertex_ARRAY_00622014[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-            (g_CDemonSetPtr,&CStack_24,&g_CVector3i_01c3dec4,0,4);
+            (g_CDemonSetPtr,&CStack_24,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
   SStack_a0.surface_normal.D.i = 0;
   SStack_a0.surface_normal.C.i = 0;

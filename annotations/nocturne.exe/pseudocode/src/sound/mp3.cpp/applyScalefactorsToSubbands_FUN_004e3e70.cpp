@@ -27,12 +27,12 @@ void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_004e3e70(float *spect
         piVar6 = (int *)(channel_or_granule_index * 0x80 + iVar7 + (int)scalefactor_band_indices);
         pfVar4 = (float *)((int)spectral_samples + iVar7);
         do {
-          *pfVar4 = *pfVar4 * (float)g_DOUBLE_ARRAY_005bbdf0[*piVar6];
-          pfVar4[0x20] = pfVar4[0x20] * (float)g_DOUBLE_ARRAY_005bbdf0[*piVar6];
+          *pfVar4 = *pfVar4 * (float)g_MpegScalefactorTable[*piVar6];
+          pfVar4[0x20] = pfVar4[0x20] * (float)g_MpegScalefactorTable[*piVar6];
           iVar3 = *piVar6;
           piVar6 = piVar6 + 0x60;
           iVar5 = iVar5 + 1;
-          pfVar4[0x40] = pfVar4[0x40] * (float)g_DOUBLE_ARRAY_005bbdf0[iVar3];
+          pfVar4[0x40] = pfVar4[0x40] * (float)g_MpegScalefactorTable[iVar3];
           pfVar4 = pfVar4 + 0x60;
         } while (iVar5 < iVar1);
       }

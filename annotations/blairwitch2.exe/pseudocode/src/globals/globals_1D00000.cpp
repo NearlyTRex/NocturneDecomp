@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap CAlphaBitmap_01d02e08 = {};
+CAlphaBitmap g_BatteryIconBitmap = {};
 CAlphaBitmap CAlphaBitmap_01d02e1c = {};
 CAlphaBitmap CAlphaBitmap_01d02e30 = {};
 CAlphaBitmap CAlphaBitmap_01d02e44 = {};
@@ -37,7 +37,7 @@ CDemonActorType g_CLeverClassInfo = {};
 CDemonActorType g_CLightGunClassInfo = {};
 CDemonActorType g_CLightConeClassInfo = {};
 CDemonActorType g_CMansionPuzzleCircleClassInfo = {};
-CDemonActorType g_CDemonActorType_01d04738 = {};
+CDemonActorType g_CMirrorHackClassInfo = {};
 CDemonActorType g_CMarqueeClassInfo = {};
 CDemonActorType g_CMeleeClassInfo = {};
 CDemonActorType g_CMimicClassInfo = {};
@@ -50,7 +50,7 @@ CKeyFramedModel g_LoadingMoonModel = {};
 CLevelLoader g_CLevelLoaderInstance = {};
 
 // CMatrix3x3i
-CMatrix3x3i g_CMatrix3x3i_01d04fe0 = {};
+CMatrix3x3i g_TransformMatrixCopy = {};
 
 // CMini3D
 CMini3D g_CMini3DInstance = {};
@@ -59,8 +59,8 @@ CMini3D g_CMini3DInstance = {};
 CMoon g_CMoonInstance = {};
 
 // CVector3i
-CVector3i g_CVector3i_01d03510 = {};
-CVector3i g_CVector3i_01d0351c = {};
+CVector3i g_CachedViewPosition = {};
+CVector3i g_NormalizedViewVector = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_SMRGLTextureBasic_01d02ee4 = {};
@@ -75,10 +75,10 @@ char* g_CHAR_PTR_01d07ea8 = {};
 char* g_CHAR_PTR_01d082d0 = {};
 
 // char*[4]
-char* g_CHAR_PTR_ARRAY_01d086e0[4] = {};
+char* g_MenuTextPointers[4] = {};
 
 // char[10][256]
-char g_CHAR_ARRAY_ARRAY_01d08d88[10][256] = {};
+char g_StringBuffers[10][256] = {};
 
 // char[2304]
 char g_CHAR_ARRAY_01d06b80[2304] = {};
@@ -95,13 +95,13 @@ char g_CHAR_ARRAY_01d080d0[256] = {};
 char g_CHAR_ARRAY_01d081d0[256] = {};
 
 // char[30][40]
-char g_CHAR_ARRAY_ARRAY_01d08790[30][40] = {};
+char g_CustomKeyNames[30][40] = {};
 
 // char[4352]
 char g_CHAR_ARRAY_01d035a0[4352] = {};
 
 // char[4][256]
-char g_CHAR_ARRAY_ARRAY_01d082e0[4][256] = {};
+char g_MainMenuTextBuffers[4][256] = {};
 
 // float
 float g_FLOAT_01d09860 = {};
@@ -171,11 +171,11 @@ float* g_FLOAT_PTR_01d09b7c = {};
 float* g_FLOAT_PTR_01d09b80 = {};
 
 // int
-int g_INT_01d02f40 = {};
-int g_INT_01d02f44 = {};
-int g_INT_01d03504 = {};
-int g_INT_01d03508 = {};
-int g_INT_01d0350c = {};
+int g_InventoryScreenHeight = {};
+int g_InventoryLightAngle = {};
+int g_LightDirectionX2 = {};
+int g_LightDirectionY2 = {};
+int g_LightDirectionZ2 = {};
 int g_INT_01d046a4 = {};
 int g_INT_01d046a8 = {};
 int g_INT_01d04fb8 = {};
@@ -187,9 +187,9 @@ int g_INT_01d04fcc = {};
 int g_INT_01d04fd0 = {};
 int g_INT_01d04fd4 = {};
 int g_INT_01d04fd8 = {};
-int g_INT_01d05010 = {};
-int g_INT_01d05014 = {};
-int g_INT_01d05270 = {};
+int g_PixelAspectCorrection = {};
+int g_MatrixStackIndex = {};
+int g_ViewportStackIndex = {};
 int g_INT_01d0612c = {};
 int g_INT_01d06134 = {};
 int g_INT_01d06138 = {};
@@ -197,8 +197,8 @@ int g_INT_01d06a74 = {};
 int g_INT_01d06a78 = {};
 int g_INT_01d06afc = {};
 int g_INT_01d06b3c = {};
-int g_INT_01d086f0 = {};
-int g_INT_01d08d80 = {};
+int g_CustomKeyCount = {};
+int g_StringBufferIndex = {};
 int g_INT_01d09854 = {};
 int g_INT_01d09858 = {};
 int g_INT_01d0985c = {};
@@ -228,45 +228,45 @@ int g_INT_01d0d2ec = {};
 int g_INT_01d0d2f0 = {};
 
 // int*[31]
-int* g_INT_PTR_ARRAY_01d086f4[31] = {};
+int* g_CustomKeyPointers[31] = {};
 
 // int[10]
-int g_INT_ARRAY_01d05018[10] = {};
-int g_INT_ARRAY_01d05040[10] = {};
-int g_INT_ARRAY_01d05068[10] = {};
-int g_INT_ARRAY_01d05090[10] = {};
-int g_INT_ARRAY_01d050b8[10] = {};
-int g_INT_ARRAY_01d050e0[10] = {};
-int g_INT_ARRAY_01d05108[10] = {};
-int g_INT_ARRAY_01d05130[10] = {};
-int g_INT_ARRAY_01d05158[10] = {};
-int g_INT_ARRAY_01d05180[10] = {};
-int g_INT_ARRAY_01d051a8[10] = {};
-int g_INT_ARRAY_01d051d0[10] = {};
-int g_INT_ARRAY_01d051f8[10] = {};
-int g_INT_ARRAY_01d05220[10] = {};
-int g_INT_ARRAY_01d05248[10] = {};
-int g_INT_ARRAY_01d05274[10] = {};
-int g_INT_ARRAY_01d0529c[10] = {};
-int g_INT_ARRAY_01d052c4[10] = {};
-int g_INT_ARRAY_01d052ec[10] = {};
-int g_INT_ARRAY_01d05314[10] = {};
-int g_INT_ARRAY_01d0533c[10] = {};
-int g_INT_ARRAY_01d05364[10] = {};
-int g_INT_ARRAY_01d0538c[10] = {};
-int g_INT_ARRAY_01d053b4[10] = {};
-int g_INT_ARRAY_01d053dc[10] = {};
-int g_INT_ARRAY_01d05404[10] = {};
-int g_INT_ARRAY_01d0542c[10] = {};
-int g_INT_ARRAY_01d05454[10] = {};
-int g_INT_ARRAY_01d0547c[10] = {};
-int g_INT_ARRAY_01d054a4[10] = {};
-int g_INT_ARRAY_01d054cc[10] = {};
-int g_INT_ARRAY_01d054f4[10] = {};
-int g_INT_ARRAY_01d0551c[10] = {};
+int g_MatrixStack_M00[10] = {};
+int g_MatrixStack_M01[10] = {};
+int g_MatrixStack_M02[10] = {};
+int g_MatrixStack_M10[10] = {};
+int g_MatrixStack_M11[10] = {};
+int g_MatrixStack_M12[10] = {};
+int g_MatrixStack_M20[10] = {};
+int g_MatrixStack_M21[10] = {};
+int g_MatrixStack_M22[10] = {};
+int g_MatrixStack_RelX[10] = {};
+int g_MatrixStack_RelY[10] = {};
+int g_MatrixStack_RelZ[10] = {};
+int g_MatrixStack_Unk1[10] = {};
+int g_MatrixStack_Unk2[10] = {};
+int g_MatrixStack_Unk3[10] = {};
+int g_ViewportStack_CenterX[10] = {};
+int g_ViewportStack_CenterY[10] = {};
+int g_ViewportStack_RightFixed[10] = {};
+int g_ViewportStack_BottomFixed[10] = {};
+int g_ViewportStack_ProjectionScale[10] = {};
+int g_ViewportStack_CameraX[10] = {};
+int g_ViewportStack_CameraY[10] = {};
+int g_ViewportStack_CameraZ[10] = {};
+int g_ViewportStack_RotationPitch[10] = {};
+int g_ViewportStack_RotationYaw[10] = {};
+int g_ViewportStack_RotationRoll[10] = {};
+int g_ViewportStack_ExtraState1[10] = {};
+int g_ViewportStack_ExtraState2[10] = {};
+int g_ViewportStack_ExtraState3[10] = {};
+int g_ViewportStack_ClipLeft[10] = {};
+int g_ViewportStack_ClipRight[10] = {};
+int g_ViewportStack_ClipTop[10] = {};
+int g_ViewportStack_ClipBottom[10] = {};
 
 // int[20]
-int g_INT_ARRAY_01d097c4[20] = {};
+int g_MimicIndices[20] = {};
 
 // int[256]
 int g_INT_ARRAY_01d047b0[256] = {};
@@ -278,9 +278,9 @@ int g_INT_ARRAY_01d04bb4[257] = {};
 short g_SHORT_ARRAY_01d0d2f6[1] = {};
 
 // uint
-uint g_UINT_01d05004 = {};
-uint g_UINT_01d05008 = {};
-uint g_UINT_01d0500c = {};
+uint g_SavedRotationX = {};
+uint g_SavedRotationY = {};
+uint g_SavedRotationZ = {};
 
 // void*
 void* g_PTR_01d02f84 = {};

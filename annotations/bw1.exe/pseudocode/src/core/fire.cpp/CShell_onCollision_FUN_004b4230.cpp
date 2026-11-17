@@ -30,7 +30,7 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004b4230(CShell *this_ptr,CVect
     iVar4 = 0;
     do {
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0
-                        (*(uint *)((int)g_UINT_ARRAY_01c58a90 + iVar4));
+                        (*(uint *)((int)g_ShellBounceSoundHandles + iVar4));
       if (iVar2 == 0) break;
       iVar4 = iVar4 + 4;
       iVar5 = iVar5 + 1;
@@ -40,16 +40,16 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004b4230(CShell *this_ptr,CVect
                         (this_ptr->model_ptr->model_filename,"shell.kfm");
       if (iVar4 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-                          (g_CSound_PTR_006236b8,(CDemonActor *)g_CFireEffect_PTR_0061c010,
+                          (g_CSound_PTR_006236b8,(CDemonActor *)g_CFireEffectPtr,
                            "sh-sh?c @ .15",(CVector3f *)this_ptr);
-        g_UINT_ARRAY_01c58a90[iVar5] = uVar3;
+        g_ShellBounceSoundHandles[iVar5] = uVar3;
         this_ptr->bounce_count = this_ptr->bounce_count + 1;
         return 0;
       }
       uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-                        (g_CSound_PTR_006236b8,(CDemonActor *)g_CFireEffect_PTR_0061c010,
+                        (g_CSound_PTR_006236b8,(CDemonActor *)g_CFireEffectPtr,
                          "44-sh?c @ .2",(CVector3f *)this_ptr);
-      g_UINT_ARRAY_01c58a90[iVar5] = uVar3;
+      g_ShellBounceSoundHandles[iVar5] = uVar3;
       this_ptr->bounce_count = this_ptr->bounce_count + 1;
       return 0;
     }

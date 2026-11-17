@@ -8,7 +8,7 @@
 ;   crt_stdlib.c__atexit_FUN_005b8d8c at 005b8d91
 ;
 ; Referenced Globals:
-;   WatcomStaticDestructorNode* g_WatcomStaticDestructorNode_PTR_0061f64c = 00000000
+;   WatcomStaticDestructorNode* g_AtexitListHead = 00000000
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 005bef45
         ;   Label: crt_unknown.c_FUN_005bef45
-    MOV EAX,[0x0061f64c]                ; 005bef49 | g_WatcomStaticDestructorNode_PTR_0061f64c
+    MOV EAX,[0x0061f64c]                ; 005bef49 | g_AtexitListHead
     MOV dword ptr [EDX],EAX             ; 005bef4e
-    MOV dword ptr [0x0061f64c],EDX      ; 005bef50 | g_WatcomStaticDestructorNode_PTR_0061f64c
+    MOV dword ptr [0x0061f64c],EDX      ; 005bef50 | g_AtexitListHead
     RET                                 ; 005bef56
 

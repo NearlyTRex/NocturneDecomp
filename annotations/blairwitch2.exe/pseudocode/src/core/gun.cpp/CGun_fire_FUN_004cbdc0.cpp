@@ -158,7 +158,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004cbdc0(CGun *this_ptr)
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_0049cd50
-                        (g_CFireEffect_PTR_00614d30,&g_CDemonSetPtr->collision_impact_position,
+                        (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor);
               break;
@@ -265,7 +265,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004cbdc0(CGun *this_ptr)
        *(uint *)((int)aCStack_118 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -4);
   CStack_c4.y = CStack_c4.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
-            (g_CFireEffect_PTR_00614d30,&CStack_c4,rotation_matrix);
+            (g_CFireEffectPtr,&CStack_c4,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
             (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"45.wav",&CStack_124);
   (this_ptr->base).fire_cooldown_timer = 0.333;
@@ -298,7 +298,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004cbdc0(CGun *this_ptr)
   }
   model_ptr = core_dmodel_cpp_loadModel_FUN_0044fba0("gatbullet.kfm");
   core_fire_cpp_CFireEffect_createShell_FUN_0049e970
-            (g_CFireEffect_PTR_00614d30,&(this_ptr->base).base.location.position,
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
              &(this_ptr->base).base.orient.vec,aCStack_88,model_ptr);
   return 1;
 }

@@ -16,7 +16,7 @@
 ;   core_skeleton.cpp_CDeformableModel_shatter_FUN_0051a780 at 0051aa4c
 ;
 ; Referenced Globals:
-;   int g_INT_01c4f088
+;   int g_GlassParticleAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CGlassParticle_init_FUN_004850d0
@@ -29,7 +29,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
     PUSH EDI                            ; 0048b1c1
     PUSH EBP                            ; 0048b1c2
-    MOV EDX,dword ptr [0x01c4f088]      ; 0048b1c3 | g_INT_01c4f088
+    MOV EDX,dword ptr [0x01c4f088]      ; 0048b1c3 | g_GlassParticleAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048b1c9
     ADD EAX,EDX                         ; 0048b1d0
     SHL EAX,0x3                         ; 0048b1d2
@@ -37,13 +37,13 @@ section .text
     SHL EAX,0x2                         ; 0048b1d7
     INC EDX                             ; 0048b1da
     ADD EAX,0x1c4f08c                   ; 0048b1db
-    MOV dword ptr [0x01c4f088],EDX      ; 0048b1e0 | g_INT_01c4f088
+    MOV dword ptr [0x01c4f088],EDX      ; 0048b1e0 | g_GlassParticleAllocIndex
     CMP EDX,0x100                       ; 0048b1e6
     JL 0x0048b1f8                       ; 0048b1ec
         ;   XREF to: 0048b1f8 (CONDITIONAL_JUMP)  ; LAB_0048b1f8
     PUSH EBX                            ; 0048b1ee
     XOR EBX,EBX                         ; 0048b1ef
-    MOV dword ptr [0x01c4f088],EBX      ; 0048b1f1 | g_INT_01c4f088
+    MOV dword ptr [0x01c4f088],EBX      ; 0048b1f1 | g_GlassParticleAllocIndex
     POP EBX                             ; 0048b1f7
     MOV ESI,dword ptr [ESP + 0x24]      ; 0048b1f8
         ;   Label: LAB_0048b1f8

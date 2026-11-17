@@ -22,6 +22,6 @@ void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_00588740(void)
     }
   }
   debugFree(g_PTR_02661af0);
-  g_PTR_0070c62c = (byte *)0x0;
+  g_SoftwareZBuffer = (byte *)0x0;
   return;
 }

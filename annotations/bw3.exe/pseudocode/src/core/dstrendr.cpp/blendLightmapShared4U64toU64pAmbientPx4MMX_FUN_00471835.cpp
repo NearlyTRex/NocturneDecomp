@@ -33,15 +33,15 @@ void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00
   ulonglong uVar22;
   
   uVar22 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_ULONG_01c6e2bc >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
                                                                                 0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)(g_ULONG_01c6e2bc >> 0x10)) << 0x20)
-                                        >> 0x18),(char)(g_ULONG_01c6e2bc >> 8)),
-                          (ushort)(byte)g_ULONG_01c6e2bc),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar1 = *texture_buffer;
-    uVar2 = g_UINT_ARRAY_00b9e14c[*texture_indices];
+    uVar2 = g_LightmapTexturePalette[*texture_indices];
     uVar6 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);
     uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
                                             CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
@@ -52,9 +52,8 @@ void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00
     sVar18 = (short)(uVar17 >> 8);
     sVar19 = (short)(uVar17 >> 0x18);
     uVar16 = *(ulonglong *)
-              (g_USHORT_ARRAY_005fa0e0 +
-              ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
-             g_USHORT_ARRAY_005fa0e0._2040_8_;
+              (g_LightmapData + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
+             g_LightmapData._2040_8_;
     uVar7 = pmulhw(CONCAT26((uVar6 >> 8) * sVar19,
                             CONCAT24((short)CONCAT21(uVar6,(char)(uVar1 >> 0x10)) * sVar18,
                                      CONCAT22((byte)(uVar1 >> 8) * uVar9,
@@ -66,25 +65,25 @@ void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00
                                                ((ushort)(uVar1 >> 0x20) & 0xff) *
                                                (ushort)(byte)uVar2))),uVar16);
     uVar20 = pmulhw(uVar22,*(ulonglong *)
-                            (g_USHORT_ARRAY_005fa0e0 +
+                            (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
     sVar18 = (short)((ulonglong)uVar20 >> 0x10);
     sVar19 = (short)((ulonglong)uVar20 >> 0x20);
     sVar21 = (short)((ulonglong)uVar20 >> 0x30);
-    uVar6 = (ushort)((short)uVar7 + (short)uVar20 + (short)g_QWORD_005f8b78) >> 4;
-    uVar8 = (ushort)((short)((ulonglong)uVar7 >> 0x10) + sVar18 + (short)(g_QWORD_005f8b78 >> 0x10))
-            >> 4;
-    uVar9 = (ushort)((short)((ulonglong)uVar7 >> 0x20) + sVar19 + (short)(g_QWORD_005f8b78 >> 0x20))
-            >> 4;
-    uVar10 = (ushort)((short)((ulonglong)uVar7 >> 0x30) + sVar21 + (short)(g_QWORD_005f8b78 >> 0x30)
-                     ) >> 4;
-    uVar11 = (ushort)((short)uVar12 + (short)uVar20 + (short)g_QWORD_005f8b80) >> 4;
+    uVar6 = (ushort)((short)uVar7 + (short)uVar20 + (short)g_AmbientLightMMX1) >> 4;
+    uVar8 = (ushort)((short)((ulonglong)uVar7 >> 0x10) + sVar18 +
+                    (short)(g_AmbientLightMMX1 >> 0x10)) >> 4;
+    uVar9 = (ushort)((short)((ulonglong)uVar7 >> 0x20) + sVar19 +
+                    (short)(g_AmbientLightMMX1 >> 0x20)) >> 4;
+    uVar10 = (ushort)((short)((ulonglong)uVar7 >> 0x30) + sVar21 +
+                     (short)(g_AmbientLightMMX1 >> 0x30)) >> 4;
+    uVar11 = (ushort)((short)uVar12 + (short)uVar20 + (short)g_AmbientLightMMX2) >> 4;
     uVar13 = (ushort)((short)((ulonglong)uVar12 >> 0x10) + sVar18 +
-                     (short)(g_QWORD_005f8b80 >> 0x10)) >> 4;
+                     (short)(g_AmbientLightMMX2 >> 0x10)) >> 4;
     uVar14 = (ushort)((short)((ulonglong)uVar12 >> 0x20) + sVar19 +
-                     (short)(g_QWORD_005f8b80 >> 0x20)) >> 4;
+                     (short)(g_AmbientLightMMX2 >> 0x20)) >> 4;
     uVar15 = (ushort)((short)((ulonglong)uVar12 >> 0x30) + sVar21 +
-                     (short)(g_QWORD_005f8b80 >> 0x30)) >> 4;
+                     (short)(g_AmbientLightMMX2 >> 0x30)) >> 4;
     *output_buffer =
          CONCAT17((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15),
                   CONCAT16((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),
@@ -104,7 +103,7 @@ void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00
                                                                          (char)uVar6 -
                                                                          (0xff < uVar6))))))));
     uVar1 = texture_buffer[1];
-    uVar2 = g_UINT_ARRAY_00b9e14c[*texture_indices];
+    uVar2 = g_LightmapTexturePalette[*texture_indices];
     uVar6 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);
     uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
                                             CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
@@ -116,9 +115,8 @@ void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00
     sVar18 = (short)(uVar17 >> 8);
     sVar19 = (short)(uVar17 >> 0x18);
     uVar16 = *(ulonglong *)
-              (g_USHORT_ARRAY_005fa0e0 +
-              ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
-             g_USHORT_ARRAY_005fa0e0._2040_8_;
+              (g_LightmapData + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
+             g_LightmapData._2040_8_;
     uVar7 = pmulhw(CONCAT26((uVar6 >> 8) * sVar19,
                             CONCAT24((short)CONCAT21(uVar6,(char)(uVar1 >> 0x10)) * sVar18,
                                      CONCAT22((byte)(uVar1 >> 8) * uVar10,
@@ -128,25 +126,25 @@ void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00
                                       CONCAT22((byte)(uVar1 >> 0x28) * uVar10,
                                                ((ushort)(uVar1 >> 0x20) & 0xff) * uVar9))),uVar16);
     uVar20 = pmulhw(uVar22,*(ulonglong *)
-                            (g_USHORT_ARRAY_005fa0e0 +
+                            (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
     sVar18 = (short)((ulonglong)uVar20 >> 0x10);
     sVar19 = (short)((ulonglong)uVar20 >> 0x20);
     sVar21 = (short)((ulonglong)uVar20 >> 0x30);
-    uVar6 = (ushort)((short)uVar7 + (short)uVar20 + (short)g_QWORD_005f8b78) >> 4;
-    uVar8 = (ushort)((short)((ulonglong)uVar7 >> 0x10) + sVar18 + (short)(g_QWORD_005f8b78 >> 0x10))
-            >> 4;
-    uVar9 = (ushort)((short)((ulonglong)uVar7 >> 0x20) + sVar19 + (short)(g_QWORD_005f8b78 >> 0x20))
-            >> 4;
-    uVar10 = (ushort)((short)((ulonglong)uVar7 >> 0x30) + sVar21 + (short)(g_QWORD_005f8b78 >> 0x30)
-                     ) >> 4;
-    uVar11 = (ushort)((short)uVar12 + (short)uVar20 + (short)g_QWORD_005f8b80) >> 4;
+    uVar6 = (ushort)((short)uVar7 + (short)uVar20 + (short)g_AmbientLightMMX1) >> 4;
+    uVar8 = (ushort)((short)((ulonglong)uVar7 >> 0x10) + sVar18 +
+                    (short)(g_AmbientLightMMX1 >> 0x10)) >> 4;
+    uVar9 = (ushort)((short)((ulonglong)uVar7 >> 0x20) + sVar19 +
+                    (short)(g_AmbientLightMMX1 >> 0x20)) >> 4;
+    uVar10 = (ushort)((short)((ulonglong)uVar7 >> 0x30) + sVar21 +
+                     (short)(g_AmbientLightMMX1 >> 0x30)) >> 4;
+    uVar11 = (ushort)((short)uVar12 + (short)uVar20 + (short)g_AmbientLightMMX2) >> 4;
     uVar13 = (ushort)((short)((ulonglong)uVar12 >> 0x10) + sVar18 +
-                     (short)(g_QWORD_005f8b80 >> 0x10)) >> 4;
+                     (short)(g_AmbientLightMMX2 >> 0x10)) >> 4;
     uVar14 = (ushort)((short)((ulonglong)uVar12 >> 0x20) + sVar19 +
-                     (short)(g_QWORD_005f8b80 >> 0x20)) >> 4;
+                     (short)(g_AmbientLightMMX2 >> 0x20)) >> 4;
     uVar15 = (ushort)((short)((ulonglong)uVar12 >> 0x30) + sVar21 +
-                     (short)(g_QWORD_005f8b80 >> 0x30)) >> 4;
+                     (short)(g_AmbientLightMMX2 >> 0x30)) >> 4;
     texture_buffer = texture_buffer + 2;
     output_buffer[1] =
          CONCAT17((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15),

@@ -8,13 +8,13 @@
 ;   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590 at 005765e0
 ;
 ; Referenced Globals:
-;   int g_INT_02c80708
+;   int g_MixBufferCount
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c80708]                ; 005756e0 | g_INT_02c80708
+    MOV EAX,[0x02c80708]                ; 005756e0 | g_MixBufferCount
         ;   Label: sound_sndmain.cpp_getMixBufferCount_FUN_005756e0
     RET                                 ; 005756e5
 

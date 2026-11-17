@@ -31,7 +31,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30(CEdit
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
   uVar4 = ~uVar4;
-  BVar2 = OpenClipboard(g_HWND_02664628);
+  BVar2 = OpenClipboard(g_MainWindowHandle);
   if (BVar2 != 0) {
     hMem = GlobalAlloc(0x2002,uVar4);
     if (hMem != (HGLOBAL)0x0) {
@@ -57,11 +57,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30(CEdit
     }
     CloseClipboard();
   }
-  g_CHAR_PTR_01c25598 = realloc(g_CHAR_PTR_01c25598,uVar4);
-  if (g_CHAR_PTR_01c25598 == (char *)0x0) {
+  g_ClipboardBackupText = realloc(g_ClipboardBackupText,uVar4);
+  if (g_ClipboardBackupText == (char *)0x0) {
     return;
   }
-  pcVar3 = g_CHAR_PTR_01c25598;
+  pcVar3 = g_ClipboardBackupText;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(uint *)pcVar3 = *(uint *)text_data;
     text_data = text_data + (uint)bVar7 * -8 + 4;

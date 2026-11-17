@@ -27,5 +27,5 @@ extern undefined4 DAT_0072ff68;
 extern undefined4 DAT_0072ffb8;
 
 // void*
-extern void* g_PTR_0072ffac;
+extern void* g_SoftwareZBuffer;
 

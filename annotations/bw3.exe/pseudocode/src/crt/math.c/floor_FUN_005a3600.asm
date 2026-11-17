@@ -24,7 +24,7 @@
 ;   ... and 15 more
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005da6b0 = -1
+;   double g_MathDomainAdjustment = -1
 ;
 ; Called Functions:
 ;   crt_math.c_modf_FUN_005a5fd6
@@ -57,7 +57,7 @@ section .text
     JBE 0x005a3639                      ; 005a362b
         ;   XREF to: 005a3639 (CONDITIONAL_JUMP)  ; LAB_005a3639
     FLD double ptr [EBP + -0x14]        ; 005a362d
-    FADD double ptr [0x005da6b0]        ; 005a3630 | g_DOUBLE_005da6b0
+    FADD double ptr [0x005da6b0]        ; 005a3630 | g_MathDomainAdjustment
     FSTP double ptr [EBP + -0x14]       ; 005a3636
     MOV EAX,dword ptr [EBP + -0x14]     ; 005a3639
         ;   Label: LAB_005a3639

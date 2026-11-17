@@ -11,7 +11,7 @@ float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0050b000(uint timestamp)
 {
   uint uStack_10;
   
-  uStack_10 = (float)(int)(g_UINT_01d34e38 - timestamp) * (float)1.52587890625e-05;
+  uStack_10 = (float)(int)(g_CurrentGameTime - timestamp) * (float)1.52587890625e-05;
   if (uStack_10 < 0.0) {
     uStack_10 = 0.0;
   }

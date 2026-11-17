@@ -5,24 +5,24 @@
 // =============================================================================
 
 // CVector3i
-CVector3i g_CVector3i_026810c0 = {};
+CVector3i g_TempProjectedCoord = {};
 
 // FileListNode*
-FileListNode* g_FileListNode_PTR_02680160 = {};
-FileListNode* g_FileListNode_PTR_02680164 = {};
+FileListNode* g_AllocatedListHead = {};
+FileListNode* g_FreeListHeadPointer = {};
 
 // WCHAR*
-WCHAR* g_WCHAR_PTR_02680178 = {};
+WCHAR* g_CommandLineW = {};
 
 // byte
-byte g_BYTE_02681084 = {};
+byte g_SignalHandlingActive = {};
 
 // char*
-char* g_CHAR_PTR_02680174 = {};
+char* g_CommandLineA = {};
 
 // char**
-char** g_CHAR_PTR_PTR_026807e0 = {};
-char** g_CHAR_PTR_PTR_026807e4 = {};
+char** g_EnvironStringArea = {};
+char** g_EnvironmentBlock = {};
 
 // char[16]
 char g_CHAR_ARRAY_026807a0[16] = {};
@@ -31,33 +31,33 @@ char g_CHAR_ARRAY_026807a0[16] = {};
 char g_CHAR_ARRAY_02680800[1] = {};
 
 // char[256]
-char g_CHAR_ARRAY_02680801[256] = {};
+char g_LeadByteTable[256] = {};
 
 // char[260]
-char g_CHAR_ARRAY_02680180[260] = {};
-char g_CHAR_ARRAY_0268048c[260] = {};
+char g_ExeFileNameBuffer_A[260] = {};
+char g_DllFileNameBuffer_A[260] = {};
 
 // int
-int g_INT_0268014c = {};
+int g_MorphReverseWinding = {};
 int g_INT_02680150 = {};
-int g_INT_02680170 = {};
-int g_INT_026807e8 = {};
-int g_INT_026807f0 = {};
+int g_EmergencyExitFlag = {};
+int g_EnvironInitialized = {};
+int g_MultibyteLocaleActive = {};
 int g_INT_02681070 = {};
 int g_INT_02681074 = {};
-int g_INT_02681090 = {};
-int g_INT_02681094 = {};
-int g_INT_02681098 = {};
+int g_BufferedCharacter = {};
+int g_BufferedVirtualKey = {};
+int g_BufferedRepeatCount = {};
 
 // void*
-void* g_PTR_0268017c = {};
+void* g_CurrentThreadTlsBlock = {};
 void* g_PTR_02681078 = {};
 void* g_PTR_026810a0 = {};
 void* g_PTR_026810b0 = {};
 
 // wchar_t[260]
-wchar_t g_WCHAR_T_ARRAY_02680284[260] = {};
-wchar_t g_WCHAR_T_ARRAY_02680590[260] = {};
+wchar_t g_ExeFileNameBuffer_W[260] = {};
+wchar_t g_DllFileNameBuffer_W[260] = {};
 
 // word
 word DAT_026820D6 = 0;

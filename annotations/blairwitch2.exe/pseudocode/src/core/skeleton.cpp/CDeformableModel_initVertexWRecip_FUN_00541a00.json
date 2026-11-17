@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 45,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 16,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 51
+    "total_lines": 52
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "addr": "01c38aec",
-      "name": "g_INT_01c38aec",
+      "name": "g_PerspectiveReciprocal",
       "type": "int",
       "value": null
     }
@@ -168,7 +168,7 @@
       "line": 12,
       "match": "(int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a",
       "severity": "moderate",
-      "text": "*(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a + iVar1) = g_INT_01c38aec;",
+      "text": "*(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a + iVar1) =",
       "type": "pointer_truncation"
     },
     {
@@ -176,7 +176,7 @@
       "line": 12,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a + iVar1) = g_INT_01c38aec;",
+      "text": "*(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a + iVar1) =",
       "type": "pointer_cast"
     }
   ]

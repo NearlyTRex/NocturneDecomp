@@ -44,7 +44,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
     do {
       iVar5 = iVar5 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (g_CFireEffect_PTR_00614d30,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar5 < 5);
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {

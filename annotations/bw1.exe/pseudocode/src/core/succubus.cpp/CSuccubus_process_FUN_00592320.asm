@@ -20,7 +20,7 @@
 ;   float g_FLOAT_00606274 = 15
 ;   float g_FLOAT_00606278 = 4
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   CConsole g_CConsoleInstance
 ;   ... and 1 more
@@ -435,7 +435,7 @@ section .text
     ADD ESP,0x18                        ; 00592766
     PUSH 0x5f739e                       ; 00592769 | = "succubusShutUp"
         ;   Label: LAB_00592769
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0059276e | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0059276e | g_CEventListPtr
     PUSH EDX                            ; 00592774
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00592775
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

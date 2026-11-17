@@ -39,9 +39,9 @@
 ;   float g_FLOAT_006002bc = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   undefined4 DAT_0061ec00
-;   CDemonCamera* g_CDemonCamera_PTR_007bda74
+;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   int g_INT_01c38aec
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   core_bwspart.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250
@@ -295,13 +295,13 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005a8971
     PUSH 0x0                            ; 005a8974
     ADD EDX,0x24                        ; 005a8976
-    MOV EAX,[0x007bda74]                ; 005a8979 | g_CDemonCamera_PTR_007bda74
+    MOV EAX,[0x007bda74]                ; 005a8979 | g_CurrentSceneCamera
     PUSH EDX                            ; 005a897e
     MOV EBX,dword ptr [EAX + 0x3c]      ; 005a897f
     PUSH EAX                            ; 005a8982
     CALL dword ptr [EBX + 0x4]          ; 005a8983
     MOV EAX,0xffff                      ; 005a8986
-    MOV EDI,dword ptr [0x01c38aec]      ; 005a898b | g_INT_01c38aec
+    MOV EDI,dword ptr [0x01c38aec]      ; 005a898b | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 005a8991
     SUB EAX,EDI                         ; 005a8994
     MOV dword ptr [ESP + 0x8c],EAX      ; 005a8996

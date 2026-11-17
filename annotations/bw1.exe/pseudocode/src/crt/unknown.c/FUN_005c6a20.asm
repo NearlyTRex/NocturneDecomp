@@ -8,15 +8,15 @@
 ;   crt_unknown.c_FUN_005c1520 at 005c153e
 ;
 ; Referenced Globals:
-;   _FILE* g_FILE_PTR_006262d4 = 00000000
+;   _FILE* g_StaticFilePoolStart = 00000000
 ;   undefined1 DAT_006262e0
-;   _FILE g_FILE_006262ee
-;   undefined4 g_FILE_006262ee._flag
+;   _FILE g_StdoutLogFile
+;   undefined4 g_StdoutLogFile._flag
 ;   undefined4 DAT_006264dc
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626610 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626614 = 005c50d4
-;   FileListNode* g_FileListNode_PTR_02c9f050
-;   FileListNode* g_FileListNode_PTR_02c9f054
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
@@ -33,7 +33,7 @@ section .text
     PUSH ESI                            ; 005c6a21
     PUSH EDI                            ; 005c6a22
     CALL dword ptr [0x00626610]         ; 005c6a23 | PTR_crt_unknown.c_FUN_005c50d4_00626610
-    MOV ESI,dword ptr [0x02c9f054]      ; 005c6a29 | g_FileListNode_PTR_02c9f054
+    MOV ESI,dword ptr [0x02c9f054]      ; 005c6a29 | g_FreeListHeadPointer
     TEST ESI,ESI                        ; 005c6a2f
     JZ 0x005c6a4c                       ; 005c6a31
         ;   XREF to: 005c6a4c (CONDITIONAL_JUMP)  ; LAB_005c6a4c
@@ -41,16 +41,16 @@ section .text
     MOV EDI,dword ptr [EBX + 0xc]       ; 005c6a36
     MOV EAX,dword ptr [ESI]             ; 005c6a39
     AND EDI,0x4003                      ; 005c6a3b
-    MOV [0x02c9f054],EAX                ; 005c6a41 | g_FileListNode_PTR_02c9f054
+    MOV [0x02c9f054],EAX                ; 005c6a41 | g_FreeListHeadPointer
     OR DI,0x3                           ; 005c6a46
     JMP 0x005c6a99                      ; 005c6a4a
         ;   XREF to: 005c6a99 (UNCONDITIONAL_JUMP)  ; LAB_005c6a99
-    MOV EBX,0x6262d4                    ; 005c6a4c | g_FILE_PTR_006262d4
+    MOV EBX,0x6262d4                    ; 005c6a4c | g_StaticFilePoolStart
         ;   Label: LAB_005c6a4c
     CMP EBX,0x6264dc                    ; 005c6a51 | DAT_006264dc
     JNC 0x005c6a81                      ; 005c6a57
         ;   XREF to: 005c6a81 (CONDITIONAL_JUMP)  ; LAB_005c6a81
-    TEST byte ptr [EBX + 0xc],0x3       ; 005c6a59 | DAT_006262e0 | g_FILE_006262ee._flag
+    TEST byte ptr [EBX + 0xc],0x3       ; 005c6a59 | DAT_006262e0 | g_StdoutLogFile._flag
         ;   Label: LAB_005c6a59
     JNZ 0x005c6a76                      ; 005c6a5d
         ;   XREF to: 005c6a76 (CONDITIONAL_JUMP)  ; LAB_005c6a76
@@ -84,15 +84,15 @@ section .text
     PUSH 0x1a                           ; 005c6a99
         ;   Label: LAB_005c6a99
     PUSH 0x0                            ; 005c6a9b
-    PUSH EBX                            ; 005c6a9d | g_FILE_006262ee
+    PUSH EBX                            ; 005c6a9d | g_StdoutLogFile
     CALL crt_memory.c_memset_FUN_005bfb70 ; 005c6a9e
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xc],EDI       ; 005c6aa3
-    MOV EAX,[0x02c9f050]                ; 005c6aa6 | g_FileListNode_PTR_02c9f050
+    MOV EAX,[0x02c9f050]                ; 005c6aa6 | g_AllocatedListHead
     MOV dword ptr [ESI + 0x4],EBX       ; 005c6aab
     ADD ESP,0xc                         ; 005c6aae
     MOV dword ptr [EBX + 0x8],ESI       ; 005c6ab1
-    MOV dword ptr [0x02c9f050],ESI      ; 005c6ab4 | g_FileListNode_PTR_02c9f050
+    MOV dword ptr [0x02c9f050],ESI      ; 005c6ab4 | g_AllocatedListHead
     MOV dword ptr [ESI],EAX             ; 005c6aba
     CALL dword ptr [0x00626614]         ; 005c6abc | PTR_crt_unknown.c_FUN_005c50d4_00626614
     MOV EAX,EBX                         ; 005c6ac2

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 285,
+    "complexity_score": 283,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
+    "pseudocode_lines": 223,
     "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 807
+    "total_lines": 805
   },
   "cross_references": [
     {
@@ -153,13 +153,13 @@
     },
     {
       "addr": "01c25590",
-      "name": "g_CBitFont_PTR_01c25590",
+      "name": "g_EditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25f78",
-      "name": "g_INT_01c25f78",
+      "name": "g_EditorFontMaxCharWidth",
       "type": "int",
       "value": null
     },
@@ -171,7 +171,7 @@
     },
     {
       "addr": "01c2640c",
-      "name": "g_INT_01c2640c",
+      "name": "g_LastClickItemIndex",
       "type": "int",
       "value": null
     },
@@ -189,7 +189,7 @@
     },
     {
       "addr": "01c35e50",
-      "name": "g_INT_01c35e50",
+      "name": "g_ClipRight",
       "type": "int",
       "value": null
     },
@@ -400,7 +400,7 @@
   "suspects": [
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 138,
+      "line": 136,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "local_34 = (int)((g_INT_006141b8 + (g_INT_006141b8 >> 0x1f) * -0x80) -",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 139,
+      "line": 137,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_006141b8 >> 0x1f) << 6 < 0)) >> 7;",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 64,
+      "line": 62,
       "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CPickList *)&(pCVar8->base).capacity;",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 81,
+      "line": 79,
       "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CPickList *)&(pCVar8->base).capacity;",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 90,
+      "line": 88,
       "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CPickList *)&(pCVar8->base).capacity;",

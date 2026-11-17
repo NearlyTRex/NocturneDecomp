@@ -9,6 +9,6 @@
 void __cdecl engine_3d_c_setProcessorType_FUN_00407890(int processor_type)
 
 {
-  g_INT_01c38b50 = processor_type;
+  g_ProcessorType = processor_type;
   return;
 }

@@ -25,9 +25,9 @@
 ;   TerminatedCString s_End_of_actor_file_tag_mi_00577af0
 ;   TerminatedCString s_core_actor_cpp_00577b26
 ;   TerminatedCString s_IO_Error_after_reading_s_00577b38
-;   _FILE* g_FILE_PTR_00763e84
-;   int g_INT_00763e88
-;   CDemonActor* g_CDemonActor_PTR_00763e8c
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
+;   CDemonActor* g_CurrentActorBeingProcessed
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -95,17 +95,17 @@ section .text
         ;   XREF to: 0040c1c1 (CONDITIONAL_JUMP)  ; LAB_0040c1c1
     POP EDI                             ; 0040c1d9
         ;   Label: LAB_0040c1d9
-    MOV EAX,[0x00763e84]                ; 0040c1da | g_FILE_PTR_00763e84
+    MOV EAX,[0x00763e84]                ; 0040c1da | g_ActorDataFile
     MOV dword ptr [ESP + 0xc8],EAX      ; 0040c1df
     MOV EAX,dword ptr [ESP + 0xe4]      ; 0040c1e6
-    MOV EDI,dword ptr [0x00763e88]      ; 0040c1ed | g_INT_00763e88
-    MOV [0x00763e84],EAX                ; 0040c1f3 | g_FILE_PTR_00763e84
+    MOV EDI,dword ptr [0x00763e88]      ; 0040c1ed | g_ActorReadingMode
+    MOV [0x00763e84],EAX                ; 0040c1f3 | g_ActorDataFile
     MOV EAX,0x1                         ; 0040c1f8
     PUSH EBX                            ; 0040c1fd
-    MOV [0x00763e88],EAX                ; 0040c1fe | g_INT_00763e88
+    MOV [0x00763e88],EAX                ; 0040c1fe | g_ActorReadingMode
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0040c203
-    MOV ESI,dword ptr [0x00763e8c]      ; 0040c209 | g_CDemonActor_PTR_00763e8c
-    MOV dword ptr [0x00763e8c],EBX      ; 0040c20f | g_CDemonActor_PTR_00763e8c
+    MOV ESI,dword ptr [0x00763e8c]      ; 0040c209 | g_CurrentActorBeingProcessed
+    MOV dword ptr [0x00763e8c],EBX      ; 0040c20f | g_CurrentActorBeingProcessed
     CALL dword ptr [EAX + 0xcc]         ; 0040c215
     ADD ESP,0x4                         ; 0040c21b
     LEA EAX,[ESP + 0x64]                ; 0040c21e
@@ -148,9 +148,9 @@ section .text
         ;   XREF to: 0040c2f0 (CONDITIONAL_JUMP)  ; LAB_0040c2f0
     MOV EAX,dword ptr [ESP + 0xc8]      ; 0040c28c
         ;   Label: LAB_0040c28c
-    MOV dword ptr [0x00763e8c],ESI      ; 0040c293 | g_CDemonActor_PTR_00763e8c
-    MOV dword ptr [0x00763e88],EDI      ; 0040c299 | g_INT_00763e88
-    MOV [0x00763e84],EAX                ; 0040c29f | g_FILE_PTR_00763e84
+    MOV dword ptr [0x00763e8c],ESI      ; 0040c293 | g_CurrentActorBeingProcessed
+    MOV dword ptr [0x00763e88],EDI      ; 0040c299 | g_ActorReadingMode
+    MOV [0x00763e84],EAX                ; 0040c29f | g_ActorDataFile
     ADD ESP,0xcc                        ; 0040c2a4
     POP EBP                             ; 0040c2aa
     POP EDI                             ; 0040c2ab

@@ -53,7 +53,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
             iVar4 = local_1c + this_ptr->row_height + -1;
             color = g_INT_01c263e0;
             if (this_ptr->confirmed_flag != 0) {
-              color = g_INT_01c263e4;
+              color = g_ConfirmedSelectionColor;
             }
             local_38 = iVar6;
             local_30 = iVar4;
@@ -84,10 +84,10 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
           local_18 = 0;
           pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(&this_ptr->base,local_24);
           iVar5 = local_28 + this_ptr->column_padding;
-          local_20 = g_INT_01c263d8;
+          local_20 = g_EnabledTextColor;
           iVar9 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00483aa0(this_ptr,local_24);
           if (iVar9 == 0) {
-            local_20 = g_INT_01c263dc;
+            local_20 = g_DisabledTextColor;
           }
           local_14 = this_ptr->tab_column_widths + local_18 + -4;
           do {
@@ -104,7 +104,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
             engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
             engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
             engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-                      (g_CBitFont_PTR_01c25590,local_164,iVar5,local_1c,local_20,-1);
+                      (g_EditorFont,local_164,iVar5,local_1c,local_20,-1);
             piVar1 = local_14 + 1;
             iVar5 = iVar5 + local_14[4];
             local_18 = local_18 + 1;
@@ -117,9 +117,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
       }
       iVar9 = g_INT_01c35e60;
       if (0 < local_34) {
-        iVar5 = g_INT_01c263e8;
+        iVar5 = g_PickListSeparatorColor;
         if (g_INT_01c25f84 != 0) {
-          iVar5 = (g_INT_01c263e8 & 0xffU) * 3;
+          iVar5 = (g_PickListSeparatorColor & 0xffU) * 3;
           engine_mini3d_cpp_setColor_FUN_004f8e20
                     ((uint)g_UCHAR_ARRAY_01c35838[iVar5 + 2] |
                      (uint)g_UCHAR_ARRAY_01c35838[iVar5 + 1] << 8 |

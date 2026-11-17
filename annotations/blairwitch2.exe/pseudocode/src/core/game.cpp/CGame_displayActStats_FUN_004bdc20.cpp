@@ -177,7 +177,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004bdc20(CGame *this_ptr)
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
   _sprintf(acStack_158,"%d\n\n");
-  this_ptr_00 = g_CBitFont_PTR_01511cc0;
+  this_ptr_00 = g_ThemeFont;
   pcVar12 = acStack_158;
   iVar4 = -1;
   pcVar8 = &stack0xfffffaa8;

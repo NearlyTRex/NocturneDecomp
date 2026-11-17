@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2754,
-    "complexity_score": 1789,
+    "complexity_score": 1787,
     "cross_reference_count": 1,
     "function_call_count": 51,
     "global_count": 68,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1154,
+    "pseudocode_lines": 1152,
     "suspect_count": 59,
     "suspect_types": [
       "bit_int_float_compare",
@@ -20,7 +20,7 @@
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 3908
+    "total_lines": 3906
   },
   "cross_references": [
     {
@@ -651,7 +651,7 @@
     },
     {
       "addr": "005b7650",
-      "name": "g_CEventList_PTR_005b7650",
+      "name": "g_CEventListPtr",
       "type": "CEventList*",
       "value": "01c03a10"
     },
@@ -669,13 +669,13 @@
     },
     {
       "addr": "00764230",
-      "name": "g_CAmmoBoxActorType_007641f8.name_hash",
+      "name": "g_CAmmoBoxClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764838",
-      "name": "g_CBoxActorActorType_00764800.name_hash",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -1207,7 +1207,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 965,
+      "line": 964,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = 2.12199579936439e-314;",
@@ -1215,7 +1215,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 968,
+      "line": 967,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),",
@@ -1223,7 +1223,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 968,
+      "line": 967,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),",
@@ -1231,7 +1231,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 969,
+      "line": 968,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "(int)((ulonglong)in_stack_fffffd10 >> 0x20));",
@@ -1239,7 +1239,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1113,
+      "line": 1111,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_1dc.x = (float)auStack_110._0_4_ - CStack_194.x;",
@@ -1247,7 +1247,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1114,
+      "line": 1112,
       "match": "._8_4_",
       "severity": "mild",
       "text": "CStack_1dc.z = (float)auStack_110._8_4_ - CStack_194.z;",
@@ -1325,7 +1325,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 796,
+      "line": 795,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_velocity).z = 0.0;",
@@ -1333,7 +1333,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 814,
+      "line": 813,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1341,7 +1341,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 818,
+      "line": 817,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1349,7 +1349,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1009,
+      "line": 1008,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1357,7 +1357,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 949,
+      "line": 948,
       "match": "0x42c80000 < (int)SStack_2bc.damage_amount)",
       "severity": "moderate",
       "text": "if (0x42c80000 < (int)SStack_2bc.damage_amount) {",

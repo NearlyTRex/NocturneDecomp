@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00455080(CDemnfolk *this_ptr,float param_2)
+; void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00455080(CDemnfolk *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CDemnfolk *      Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00454fc0 = 004564b2
@@ -1435,7 +1435,7 @@ section .text
     FADDP                               ; 00456178
     FSTP float ptr [EBP + 0x16]         ; 0045617a
     MOV EAX,dword ptr [EBP + 0x16]      ; 0045617d
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 00456180 | g_INT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 00456180 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00456186
     ADD EAX,EDI                         ; 00456188
     MOV dword ptr [EBP + 0x66],EAX      ; 0045618a
@@ -1552,7 +1552,7 @@ section .text
     LEA EAX,[EBX + 0xd074]              ; 004562cb
         ;   Label: caseD_23
     PUSH EAX                            ; 004562d1
-    MOV ESI,dword ptr [0x005fba60]      ; 004562d2 | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004562d2 | g_CEventListPtr
     PUSH ESI                            ; 004562d8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004562d9
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

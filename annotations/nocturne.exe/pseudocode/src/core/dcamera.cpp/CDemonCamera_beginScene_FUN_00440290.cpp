@@ -20,39 +20,39 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
   char *format;
   
   iVar6 = 0;
-  switch(g_INT_005ad44c) {
+  switch(g_CameraShakeState) {
   case 0:
-    g_INT_012ceb60 = g_INT_012ceb60 + g_INT_01bd1d80;
-    if (g_INT_012ceb5c < g_INT_012ceb60) {
-      g_INT_012ceb60 = g_INT_012ceb5c;
-      g_INT_005ad44c = 1;
-      g_INT_012ceb58 = g_INT_005ad448;
+    g_CameraShakeAttackAccum = g_CameraShakeAttackAccum + g_GlobalDeltaTimeInt;
+    if (g_CameraShakeAttackTime < g_CameraShakeAttackAccum) {
+      g_CameraShakeAttackAccum = g_CameraShakeAttackTime;
+      g_CameraShakeState = 1;
+      g_CameraShakeSustainTimer = g_CameraShakeSustainValue;
     }
-    if (g_INT_012ceb5c != 0) {
-      iVar6 = (int)(((longlong)g_INT_005ad444 * (longlong)g_INT_012ceb60) / (longlong)g_INT_012ceb5c
-                   );
+    if (g_CameraShakeAttackTime != 0) {
+      iVar6 = (int)(((longlong)g_CameraShakePeakValue * (longlong)g_CameraShakeAttackAccum) /
+                   (longlong)g_CameraShakeAttackTime);
     }
     format = "Attack : ";
     break;
   case 1:
-    g_INT_012ceb58 = g_INT_012ceb58 - g_INT_01bd1d80;
-    if (g_INT_012ceb58 < 0) {
-      g_INT_012ceb58 = 0;
-      g_INT_005ad44c = 2;
-      g_INT_012ceb68 = g_INT_012ceb64;
+    g_CameraShakeSustainTimer = g_CameraShakeSustainTimer - g_GlobalDeltaTimeInt;
+    if (g_CameraShakeSustainTimer < 0) {
+      g_CameraShakeSustainTimer = 0;
+      g_CameraShakeState = 2;
+      g_CameraShakeDecayTimer = g_CameraShakeDecayDuration;
     }
     format = "Sustain : ";
-    iVar6 = g_INT_005ad444;
+    iVar6 = g_CameraShakePeakValue;
     break;
   case 2:
-    g_INT_012ceb68 = g_INT_012ceb68 - g_INT_01bd1d80;
-    if (g_INT_012ceb68 < 0) {
-      g_INT_012ceb68 = 0;
-      g_INT_005ad44c = 3;
+    g_CameraShakeDecayTimer = g_CameraShakeDecayTimer - g_GlobalDeltaTimeInt;
+    if (g_CameraShakeDecayTimer < 0) {
+      g_CameraShakeDecayTimer = 0;
+      g_CameraShakeState = 3;
     }
-    if (g_INT_012ceb64 != 0) {
-      iVar6 = (int)(((longlong)g_INT_005ad444 * (longlong)g_INT_012ceb68) / (longlong)g_INT_012ceb64
-                   );
+    if (g_CameraShakeDecayDuration != 0) {
+      iVar6 = (int)(((longlong)g_CameraShakePeakValue * (longlong)g_CameraShakeDecayTimer) /
+                   (longlong)g_CameraShakeDecayDuration);
     }
     format = "Decay : ";
     break;
@@ -61,15 +61,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,format);
 switchD_004402a8_caseD_3:
-  g_INT_012ceb6c =
-       g_INT_012ceb6c +
-       ((uint)((longlong)iVar6 * (longlong)g_INT_01bd1d80) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar6 * (longlong)g_INT_01bd1d80) >> 0x20) << 0x10);
+  g_CameraShakeAccumulator =
+       g_CameraShakeAccumulator +
+       ((uint)((longlong)iVar6 * (longlong)g_GlobalDeltaTimeInt) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar6 * (longlong)g_GlobalDeltaTimeInt) >> 0x20) << 0x10);
   uVar5 = g_INT_012ceb74;
-  if (0xffff < g_INT_012ceb6c) {
-    uVar4 = g_INT_01bd1d80 & 1;
-    g_INT_012ceb6c = 0;
-    uVar5 = (int)(g_INT_01bd1d80 & 2U) >> 1;
+  if (0xffff < g_CameraShakeAccumulator) {
+    uVar4 = g_GlobalDeltaTimeInt & 1;
+    g_CameraShakeAccumulator = 0;
+    uVar5 = (int)(g_GlobalDeltaTimeInt & 2U) >> 1;
     bVar7 = g_INT_012ceb70 == uVar4;
     g_INT_012ceb70 = uVar4;
     if ((bVar7) && (g_INT_012ceb74 == uVar5)) {
@@ -77,7 +77,7 @@ switchD_004402a8_caseD_3:
     }
   }
   g_INT_012ceb74 = uVar5;
-  if (((int)this_ptr->max_distance < 0x1e0) || (g_INT_005ad44c == 3)) {
+  if (((int)this_ptr->max_distance < 0x1e0) || (g_CameraShakeState == 3)) {
     g_INT_012ceb70 = 0;
     g_INT_012ceb74 = 0;
   }

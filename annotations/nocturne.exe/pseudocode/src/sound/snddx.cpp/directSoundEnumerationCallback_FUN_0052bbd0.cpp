@@ -27,7 +27,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0052bbd0(LPGUID d
   LPDIRECTSOUND local_10;
   
   bVar10 = 0;
-  if (0xb < g_INT_005bed40) {
+  if (0xb < g_DirectSoundDeviceCount) {
     return 0;
   }
   local_10 = (LPDIRECTSOUND)0x0;
@@ -53,13 +53,13 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0052bbd0(LPGUID d
       (*local_10->vtable->Release)(local_10);
     }
     if (uVar3 == 0) {
-      iVar4 = g_INT_005bed40 * 0x11c;
+      iVar4 = g_DirectSoundDeviceCount * 0x11c;
       if (device_guid == (LPGUID)0x0) {
-        g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[g_INT_005bed40].is_primary_device = 1;
+        g_DirectSoundDevices[g_DirectSoundDeviceCount].is_primary_device = 1;
       }
       else {
-        pSVar2 = g_SDirectSoundDeviceInfo_ARRAY_02dc84c4 + g_INT_005bed40;
-        g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[g_INT_005bed40].is_primary_device = 0;
+        pSVar2 = g_DirectSoundDevices + g_DirectSoundDeviceCount;
+        g_DirectSoundDevices[g_DirectSoundDeviceCount].is_primary_device = 0;
         puVar7 = (uint *)(iVar4 + 0x2dc84cc + (uint)bVar10 * -8);
         puVar5 = (uint *)((int)device_guid + (uint)bVar10 * -8 + 4);
         (pSVar2->device_guid).Data1 = device_guid->Data1;
@@ -69,12 +69,12 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0052bbd0(LPGUID d
         *puVar8 = *puVar6;
         puVar8[(uint)bVar10 * -2 + 1] = puVar6[(uint)bVar10 * -2 + 1];
       }
-      iVar4 = g_INT_005bed40;
-      g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[g_INT_005bed40].is_emulated =
+      iVar4 = g_DirectSoundDeviceCount;
+      g_DirectSoundDevices[g_DirectSoundDeviceCount].is_emulated =
            (uint)(((byte)DStack_70.dwFlags & 0x20) != 0);
-      g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[iVar4].has_hardware_mixing =
+      g_DirectSoundDevices[iVar4].has_hardware_mixing =
            (uint)(DStack_70.dwMaxHwMixingStaticBuffers != 0);
-      pcVar9 = g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[iVar4].device_description;
+      pcVar9 = g_DirectSoundDevices[iVar4].device_description;
       do {
         cVar1 = *description;
         *pcVar9 = cVar1;
@@ -84,7 +84,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0052bbd0(LPGUID d
         pcVar9[1] = cVar1;
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
-      g_INT_005bed40 = g_INT_005bed40 + 1;
+      g_DirectSoundDeviceCount = g_DirectSoundDeviceCount + 1;
       return 1;
     }
   }

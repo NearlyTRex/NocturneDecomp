@@ -32,10 +32,10 @@ extern CVector3f g_CVector3f_01b687f8;
 extern CVector3f g_CVector3f_01b68804;
 
 // FileSearchHandlerFunc*[5]
-extern FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01b68930[5];
+extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
 // SMRGLPrimitiveQuad[5000]
-extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_01b68944[5000];
+extern SMRGLPrimitiveQuad g_FaceConversionBuffer[5000];
 
 // byte
 extern byte g_BYTE_01b687f4;
@@ -61,8 +61,8 @@ extern int g_INT_01b68858;
 extern int g_INT_01b68864;
 extern int g_INT_01b68868;
 extern int g_INT_01b6886c;
-extern int g_INT_01b6892c;
+extern int g_NumSearchHandlers;
 
 // uint
-extern uint g_UINT_01b688ec;
+extern uint g_DoorLockedSoundHandle;
 

@@ -16,7 +16,7 @@
 ;   float g_FLOAT_005e3d54 = 50
 ;   float g_FLOAT_005e3d58 = 100
 ;   float g_FLOAT_005e3d5c = 10
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [EBX + 0xd0c8],0x41200000 ; 005435d6
     FLD float ptr [0x005e3d5c]          ; 005435e0 | g_FLOAT_005e3d5c
     MOV dword ptr [EBX + 0xd0d8],0x0    ; 005435e6
-    MOV EDX,dword ptr [0x005fba60]      ; 005435f0 | g_CEventList_PTR_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 005435f0 | g_CEventListPtr
     MOV dword ptr [EBX + 0xd0dc],0x0    ; 005435f6
     ADD ESP,0x8                         ; 00543600
     FXCH ST2                            ; 00543603

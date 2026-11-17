@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic[40] SMRGLTextureBasic_ARRAY_0067b100
+;   SMRGLTextureBasic[40] g_FlameFrameTextures
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 004c9b93
     MOV EDX,dword ptr [ESP + 0x14]      ; 004c9b94
     PUSH EDX                            ; 004c9b98
-    MOV EBP,0x67b100                    ; 004c9b99 | SMRGLTextureBasic_ARRAY_0067b100
+    MOV EBP,0x67b100                    ; 004c9b99 | g_FlameFrameTextures
     XOR EDI,EDI                         ; 004c9b9e
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 004c9ba0
         ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
@@ -40,7 +40,7 @@ section .text
     IMUL EBX,EDI,0xc0                   ; 004c9bae
         ;   Label: LAB_004c9bae
     MOV ESI,EBP                         ; 004c9bb4
-    ADD EBX,0x67b100                    ; 004c9bb6 | SMRGLTextureBasic_ARRAY_0067b100
+    ADD EBX,0x67b100                    ; 004c9bb6 | g_FlameFrameTextures
     PUSH EBX                            ; 004c9bbc
         ;   Label: LAB_004c9bbc
     MOV ECX,dword ptr [0x006703ec]      ; 004c9bbd | g_CDemonRendererPtr2

@@ -15,7 +15,7 @@ void __cdecl core_bugs_cpp_CBugs_archive_FUN_00421880(CBugs *this_ptr)
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->count,"count");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->model_count,"modelCount");
-  if (g_INT_00763e88 == 1) {
+  if (g_ActorReadingMode == 1) {
     pCVar1 = this_ptr->models;
     do {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(pCVar1,&CHAR_00h_00579c6e);

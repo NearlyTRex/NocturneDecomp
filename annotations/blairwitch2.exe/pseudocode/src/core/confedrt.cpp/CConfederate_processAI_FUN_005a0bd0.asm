@@ -14,7 +14,7 @@
 ;   TerminatedCString s_RangeAttack_005efc5d
 ;   TerminatedCString s_ChaseComplete_005efc69
 ;   float g_FLOAT_005fedb0 = 15
-;   CVector3f g_CVector3f_0265370c
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -68,7 +68,7 @@ section .text
     PUSH EAX                            ; 005a0c24
     MOV dword ptr [EBP + 0x6e],EAX      ; 005a0c25
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a0c28
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005a0c2d
     FLD float ptr [EAX + 0x2a8]         ; 005a0c33
     FSUB float ptr [EBP + 0x92]         ; 005a0c39
@@ -98,7 +98,7 @@ section .text
     ADD EAX,0x1134                      ; 005a0c89
     ADD EAX,EBX                         ; 005a0c8e
     PUSH EAX                            ; 005a0c90
-    PUSH 0x265370c                      ; 005a0c91 | g_CVector3f_0265370c
+    PUSH 0x265370c                      ; 005a0c91 | g_ZeroVector
     LEA ESI,[EBP + 0x1e]                ; 005a0c96
     LEA EDI,[EBP + -0x1e]               ; 005a0c99
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a0c9c

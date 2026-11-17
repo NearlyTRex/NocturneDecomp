@@ -11,34 +11,34 @@
 // =============================================================================
 
 // SHuffmanTable[34]
-extern SHuffmanTable g_SHuffmanTable_ARRAY_01cd8c28[34];
+extern SHuffmanTable g_HuffmanTables[34];
 
 // char[256]
-extern char g_CHAR_ARRAY_01cd8b28[256];
+extern char g_CurrentMp3Filename[256];
 
 // double[12][6]
-extern double g_DOUBLE_ARRAY_ARRAY_01cd74a8[12][6];
+extern double g_Mp3DctMatrix[12][6];
 
 // double[200]
-extern double g_DOUBLE_ARRAY_01cd6328[200];
-extern double g_DOUBLE_ARRAY_01cd6968[200];
+extern double g_MpegRequantPowerTable[200];
+extern double g_MpegRequantGainTable[200];
 
 // double[36][18]
-extern double g_DOUBLE_ARRAY_ARRAY_01cd76e8[36][18];
+extern double g_Mp3PolyCoefficients[36][18];
 
 // double[4][36]
-extern double g_DOUBLE_ARRAY_ARRAY_01cd7028[4][36];
+extern double g_Mp3WindowTables[4][36];
 
 // double[8]
-extern double g_DOUBLE_ARRAY_01cd6fa8[8];
-extern double g_DOUBLE_ARRAY_01cd6fe8[8];
+extern double g_Mp3AntiAliasCS[8];
+extern double g_Mp3AntiAliasCA[8];
 
 // float[64][32]
-extern float g_FLOAT_ARRAY_ARRAY_01cd4320[64][32];
+extern float g_MpegSynthesisDctTable[64][32];
 
 // int
-extern int g_INT_01cd4314;
-extern int g_INT_01cd4318;
-extern int g_INT_01cd6320;
-extern int g_INT_01cd6324;
+extern int g_MorphReverseWinding;
+extern int g_RenderMotionDebug;
+extern int g_HuffmanTablesInitialized;
+extern int g_MpegRequantTablesInitialized;
 

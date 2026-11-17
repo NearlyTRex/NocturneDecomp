@@ -13,13 +13,13 @@ int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004b7440(CFireEff
   int iVar2;
   
   iVar2 = 0;
-  iVar1 = g_CMuzzleFlash_ARRAY_01c9f1bc[0].frames_remaining;
+  iVar1 = g_MuzzleFlashPool[0].frames_remaining;
   while( true ) {
     if (iVar1 == 1) {
       return 1;
     }
     if (0x72f < iVar2 + 0x5c) break;
-    iVar1 = *(int *)((int)&g_CMuzzleFlash_ARRAY_01c9f1bc[1].frames_remaining + iVar2);
+    iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining + iVar2);
     iVar2 = iVar2 + 0x5c;
   }
   return 0;

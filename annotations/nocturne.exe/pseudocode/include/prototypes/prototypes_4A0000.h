@@ -37,7 +37,7 @@
 
 int __cdecl core_game_cpp_checkCheatCode_FUN_004a0260(char *cheat_string);
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(char *class_name);
-void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *param_1,EAmmoType param_2);
+void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *class_name,EAmmoType ammo_type);
 void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(char *cheat_code,char *class_name,char *message);
 void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr);
@@ -119,7 +119,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_pt
 CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004acbc0(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(CGlass *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass *this_ptr,float *quad_vertices,int *quad_uv_u,int *quad_uv_v,int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004ada20(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLaserInfo *laser_info);
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004adec0(CGlass *this_ptr);

@@ -27,7 +27,7 @@ int __cdecl core_game_cpp_checkCheatCode_FUN_004b8d90(char *cheat_string)
   } while (cVar1 != '\0');
   iVar6 = 0;
   for (iVar5 = ~uVar4 - 1; 0 < iVar5; iVar5 = iVar5 + -1) {
-    bVar2 = *(byte *)((int)&g_INT_01cb80f4 + iVar5 + 3);
+    bVar2 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);
     uVar3 = toupper((uint)(byte)*cheat_string);
     if (bVar2 == uVar3) {
       iVar6 = iVar6 + 1;

@@ -21,16 +21,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
   uint uVar8;
   int iVar9;
   
-  g_INT_0140d77c = g_INT_0140d77c + g_INT_01bd1d80 * 4;
+  g_ImageProcessingState2 = g_ImageProcessingState2 + g_GlobalDeltaTimeInt * 4;
   iVar9 = 0;
-  if (0x10000 < g_INT_0140d77c) {
-    g_INT_0140d77c = g_INT_0140d77c + -0x10000;
-    g_INT_0140d778 = g_INT_0140d778 + 1;
-    if (0xf < g_INT_0140d778) {
-      g_INT_0140d778 = 0;
+  if (0x10000 < g_ImageProcessingState2) {
+    g_ImageProcessingState2 = g_ImageProcessingState2 + -0x10000;
+    g_ImageProcessingState1 = g_ImageProcessingState1 + 1;
+    if (0xf < g_ImageProcessingState1) {
+      g_ImageProcessingState1 = 0;
     }
     core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60
-              (&g_SFogGrid_0140d784,g_INT_0140d778,g_INT_0140d77c);
+              (&g_CameraFogGrid,g_ImageProcessingState1,g_ImageProcessingState2);
   }
   core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810(this_ptr);
   if (g_BitsPerPixel == 0x20) {
@@ -55,9 +55,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
                    g_INT_012ceb70 * 2 + this_ptr->framebuffer_width * 2);
       puVar6 = (ulonglong *)
                ((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);
-      iVar4 = (int)uVar8 >> (g_BIT_INTEGER32_012b0660.bytes[0] & 0x1f);
+      iVar4 = (int)uVar8 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
       pacVar5 = g_SFogImagePlane_012ceb78.pixels + iVar4;
-      pacVar7 = g_CHAR_ARRAY_ARRAY_00aafdb8 + iVar4;
+      pacVar7 = g_CoronaBlurWorkBuffer + iVar4;
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
@@ -80,17 +80,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
         }
       }
       iVar4 = iVar9 * 0xc;
-      if (iVar9 < g_INT_012b0664) {
+      if (iVar9 < g_CameraEdgeCount) {
         do {
-          uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_012b0668[0].y + iVar4);
+          uVar3 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar4);
           if (uVar8 != uVar3) goto LAB_0044729d;
-          piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].v + iVar4);
-          piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].x + iVar4);
+          piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar4);
+          piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar4);
           iVar4 = iVar4 + 0xc;
           iVar9 = iVar9 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60
                     (this_ptr,*piVar2,uVar3,*piVar1);
-        } while (iVar9 < g_INT_012b0664);
+        } while (iVar9 < g_CameraEdgeCount);
         uVar8 = uVar8 + 1;
       }
       else {
@@ -107,8 +107,8 @@ LAB_0044729d:
                g_INT_012ceb70 * 4 + this_ptr->framebuffer_width * 4);
       texture_buffer =
            (ulonglong *)((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);
-      iVar4 = (int)uVar8 >> (g_BIT_INTEGER32_012b0660.bytes[0] & 0x1f);
-      pacVar5 = g_CHAR_ARRAY_ARRAY_00aafdb8 + iVar4;
+      iVar4 = (int)uVar8 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
+      pacVar5 = g_CoronaBlurWorkBuffer + iVar4;
       pacVar7 = g_SFogImagePlane_012ceb78.pixels + iVar4;
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
@@ -133,17 +133,17 @@ LAB_0044729d:
         }
       }
       iVar4 = iVar9 * 0xc;
-      if (iVar9 < g_INT_012b0664) {
+      if (iVar9 < g_CameraEdgeCount) {
         do {
-          uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_012b0668[0].y + iVar4);
+          uVar3 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar4);
           if (uVar8 != uVar3) goto LAB_00447422;
-          piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].v + iVar4);
-          piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].x + iVar4);
+          piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar4);
+          piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar4);
           iVar4 = iVar4 + 0xc;
           iVar9 = iVar9 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0
                     (this_ptr,*piVar2,uVar3,*piVar1);
-        } while (iVar9 < g_INT_012b0664);
+        } while (iVar9 < g_CameraEdgeCount);
         uVar8 = uVar8 + 1;
       }
       else {

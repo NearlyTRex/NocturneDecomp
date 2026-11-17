@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_0041cf50(CLightActor *this_ptr)
 
 {
-  return &g_CDemonActorType_007bcc4c;
+  return &g_CLightActorClassInfo;
 }

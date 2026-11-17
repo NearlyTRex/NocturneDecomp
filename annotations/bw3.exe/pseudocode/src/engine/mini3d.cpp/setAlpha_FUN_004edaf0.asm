@@ -30,7 +30,7 @@
 ;   int g_INT_01d76ccc
 ;   int g_INT_01d76cd0
 ;   int g_INT_01d7a6c4
-;   void* g_PTR_02cf60a4
+;   void* g_APIDLL_setLightConstants
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -42,7 +42,7 @@ section .text
     SUB ESP,0x4                         ; 004edaf0
         ;   Label: engine_mini3d.cpp_setAlpha_FUN_004edaf0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004edaf3
-    MOV EDX,dword ptr [0x02cf60a4]      ; 004edaf7 | g_PTR_02cf60a4
+    MOV EDX,dword ptr [0x02cf60a4]      ; 004edaf7 | g_APIDLL_setLightConstants
     MOV [0x01d76c40],EAX                ; 004edafd | g_FLOAT_01d76c40
     TEST EDX,EDX                        ; 004edb02
     JZ 0x004edb0f                       ; 004edb04
@@ -76,7 +76,7 @@ section .text
     PUSH dword ptr [0x01d76cd0]         ; 004edb57 | g_INT_01d76cd0
     PUSH dword ptr [0x01d76ccc]         ; 004edb5d | g_INT_01d76ccc
     PUSH dword ptr [0x01d76cc8]         ; 004edb63 | g_FLOAT_01d76cc8
-    CALL dword ptr [0x02cf60a4]         ; 004edb69 | g_PTR_02cf60a4
+    CALL dword ptr [0x02cf60a4]         ; 004edb69 | g_APIDLL_setLightConstants
     ADD ESP,0x10                        ; 004edb6f
     JMP 0x004edb0f                      ; 004edb72
         ;   XREF to: 004edb0f (UNCONDITIONAL_JUMP)  ; LAB_004edb0f

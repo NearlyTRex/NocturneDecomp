@@ -14,8 +14,8 @@ int __cdecl engine_special_cpp_selectTexture_FUN_005658f0(SMRGLTextureBasic *tex
   if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*(code *)g_PTR_02cf600c)
-                    (texture_info,g_INT_005fba28,g_UCHAR_PTR_01c6ced0,g_UCHAR_ARRAY_01c6af98,
-                     g_UCHAR_PTR_01c6ced4);
+  iVar1 = (*(code *)g_APIDLL_selectTexture)
+                    (texture_info,g_INT_005fba28,g_CurrentTextureData,g_UCHAR_ARRAY_01c6af98,
+                     g_CurrentTextureOpacityData);
   return iVar1;
 }

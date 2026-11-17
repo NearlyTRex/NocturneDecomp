@@ -8,9 +8,9 @@
 ;   crt_stdio.c_CreateFileImpl_FUN_0056b960 at 0056b96b
 ;
 ; Referenced Globals:
-;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;   int g_INT_005c1f58 = 0x0
-;   uint g_UINT_005c1f90 = 0x14
+;   uint g_MaxHandleCount = 0x14
 ;
 ; *****************************************************************************
 
@@ -18,9 +18,9 @@ section .text
 
     PUSH EBX                            ; 0056dfc0
         ;   Label: crt_unknown.c_FUN_0056dfc0
-    MOV ECX,dword ptr [0x005c1f54]      ; 0056dfc1 | g_SIOControlBlock_PTR_005c1f54
+    MOV ECX,dword ptr [0x005c1f54]      ; 0056dfc1 | g_IOControlBlock
     MOV EAX,[0x005c1f58]                ; 0056dfc7 | g_INT_005c1f58
-    CMP EAX,dword ptr [0x005c1f90]      ; 0056dfcc | g_UINT_005c1f90
+    CMP EAX,dword ptr [0x005c1f90]      ; 0056dfcc | g_MaxHandleCount
     JNC 0x0056dfd8                      ; 0056dfd2
         ;   XREF to: 0056dfd8 (CONDITIONAL_JUMP)  ; LAB_0056dfd8
     XOR EAX,EAX                         ; 0056dfd4
@@ -39,7 +39,7 @@ section .text
     JNZ 0x0056dff9                      ; 0056dfed
         ;   XREF to: 0056dff9 (CONDITIONAL_JUMP)  ; LAB_0056dff9
     XOR EAX,EAX                         ; 0056dfef
-    MOV dword ptr [0x005c1f54],ECX      ; 0056dff1 | g_SIOControlBlock_PTR_005c1f54
+    MOV dword ptr [0x005c1f54],ECX      ; 0056dff1 | g_IOControlBlock
     POP EBX                             ; 0056dff7
     RET                                 ; 0056dff8
     ADD EAX,0x4                         ; 0056dff9
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 0056dfe9 (CONDITIONAL_JUMP)  ; LAB_0056dfe9
     MOV EAX,0x1                         ; 0056e000
         ;   Label: LAB_0056e000
-    MOV dword ptr [0x005c1f54],ECX      ; 0056e005 | g_SIOControlBlock_PTR_005c1f54
+    MOV dword ptr [0x005c1f54],ECX      ; 0056e005 | g_IOControlBlock
         ;   Label: LAB_0056e005
     POP EBX                             ; 0056e00b
     RET                                 ; 0056e00c

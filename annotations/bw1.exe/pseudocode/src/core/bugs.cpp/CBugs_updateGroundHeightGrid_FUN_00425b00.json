@@ -90,13 +90,13 @@
     },
     {
       "addr": "007c53b4",
-      "name": "g_FLOAT_ARRAY_ARRAY_007c53b4",
+      "name": "g_BugsGroundHeightGridTemp",
       "type": "float[12][12]",
       "value": null
     },
     {
       "addr": "007c53b8",
-      "name": "g_FLOAT_ARRAY_ARRAY_007c53b4[0][1]",
+      "name": "g_BugsGroundHeightGridTemp[0][1]",
       "type": "undefined4",
       "value": null
     },
@@ -631,9 +631,9 @@
     {
       "description": "Complex pointer cast",
       "line": 135,
-      "match": "(uint *)((int)g_FLOAT_ARRAY_ARRAY_007c53b4",
+      "match": "(uint *)((int)g_BugsGroundHeightGridTemp",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_FLOAT_ARRAY_ARRAY_007c53b4[0] + iVar8);",
+      "text": "*(uint *)((int)g_BugsGroundHeightGridTemp[0] + iVar8);",
       "type": "pointer_cast"
     },
     {
@@ -713,7 +713,7 @@
       "line": 150,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00425d1d: MOVSD.REP ES:EDI,ESI  ; g_FLOAT_ARRAY_ARRAY_007c53b4 | g_FLOAT_ARRAY_ARRAY_007c53b4[0][1]",
+      "text": "// 00425d1d: MOVSD.REP ES:EDI,ESI  ; g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]",
       "type": "unrolled_memcpy"
     }
   ]

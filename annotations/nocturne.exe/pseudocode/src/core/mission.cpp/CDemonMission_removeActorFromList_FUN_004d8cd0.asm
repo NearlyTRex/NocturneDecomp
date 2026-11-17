@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *actor_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; CDemonActor *    Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   actor_ptr
 ;
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c02a2

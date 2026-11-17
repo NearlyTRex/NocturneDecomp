@@ -11,7 +11,7 @@
 ;   int g_INT_01ba51c8
 ;   int g_INT_01ba56cc
 ;   int g_INT_01ba56d0
-;   int g_INT_01ba5714
+;   int g_RasterizerDepthBias
 ;
 ; *****************************************************************************
 
@@ -94,7 +94,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00461ed4
     MOV EDX,EAX                         ; 00461ed8
     MOV EAX,dword ptr [EBX + 0x10]      ; 00461eda
-    MOV EDI,dword ptr [0x01ba5714]      ; 00461edd | g_INT_01ba5714
+    MOV EDI,dword ptr [0x01ba5714]      ; 00461edd | g_RasterizerDepthBias
     ADD EAX,EDX                         ; 00461ee3
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00461ee5
     MOV dword ptr [ESI + 0x8],EAX       ; 00461ee8

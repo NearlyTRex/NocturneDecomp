@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 73,
+    "complexity_score": 71,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 41,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 144
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -68,13 +68,13 @@
     },
     {
       "addr": "00764838",
-      "name": "g_CBoxActorActorType_00764800.name_hash",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dd1204",
-      "name": "g_CCryptVesselActorType_02dd11cc.name_hash",
+      "name": "g_CCryptVesselClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -212,7 +212,7 @@
   "suspects": [
     {
       "description": "Pointer value `&pCVar5->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "(int)&pCVar5->vertex_list->x",
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",
@@ -220,7 +220,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",

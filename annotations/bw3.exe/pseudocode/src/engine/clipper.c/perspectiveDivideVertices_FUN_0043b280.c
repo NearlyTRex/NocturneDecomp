@@ -18,7 +18,7 @@ void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_0043b280(void)
   
   pSVar4 = g_SRenderVertex_ARRAY_007e3e8c;
   iVar5 = 0;
-  if (0 < g_INT_007e3e88) {
+  if (0 < g_ClippedVertexCount) {
     do {
       if ((pSVar4->projected_vertex).transformed_z == 0) {
         (pSVar4->projected_vertex).transformed_z = 1;
@@ -50,7 +50,7 @@ void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_0043b280(void)
       }
       iVar5 = iVar5 + 1;
       pSVar4 = pSVar4 + 1;
-    } while (iVar5 < g_INT_007e3e88);
+    } while (iVar5 < g_ClippedVertexCount);
   }
   return;
 }

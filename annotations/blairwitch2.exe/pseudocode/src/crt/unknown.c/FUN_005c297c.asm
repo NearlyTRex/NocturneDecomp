@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_TlsAlloc_005c864c = 001c9214
-;   byte g_BYTE_0061f287 = 0x0
-;   short g_SHORT_0061f289 = 0x0
+;   byte g_WindowsMinorVersion = 0x0
+;   short g_WindowsPlatformVersion = 0x0
 ;   int g_INT_0061f2a0 = -0x1
 ;
 ; Called Functions:
@@ -27,12 +27,12 @@ section .text
     JNZ 0x005c29c3                      ; 005c2986
         ;   XREF to: 005c29c3 (CONDITIONAL_JUMP)  ; LAB_005c29c3
     CALL dword ptr CS:[0x5c864c]        ; 005c2988 | PTR_TlsAlloc_005c864c
-    MOV DX,word ptr [0x0061f289]        ; 005c298f | g_SHORT_0061f289
+    MOV DX,word ptr [0x0061f289]        ; 005c298f | g_WindowsPlatformVersion
     MOV EBX,EAX                         ; 005c2996
     CMP DX,0x8000                       ; 005c2998
     JC 0x005c29c3                       ; 005c299d
         ;   XREF to: 005c29c3 (CONDITIONAL_JUMP)  ; LAB_005c29c3
-    CMP byte ptr [0x0061f287],0x4       ; 005c299f | g_BYTE_0061f287
+    CMP byte ptr [0x0061f287],0x4       ; 005c299f | g_WindowsMinorVersion
     JNC 0x005c29c3                      ; 005c29a6
         ;   XREF to: 005c29c3 (CONDITIONAL_JUMP)  ; LAB_005c29c3
     CMP EBX,-0x1                        ; 005c29a8

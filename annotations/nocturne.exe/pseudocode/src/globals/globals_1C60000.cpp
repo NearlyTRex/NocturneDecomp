@@ -8,10 +8,10 @@
 CCrater g_CraterPool[20] = {};
 
 // CGunFlame[500]
-CGunFlame g_CGunFlame_ARRAY_01c62ebc[500] = {};
+CGunFlame g_GunFlamePool[500] = {};
 
 // CLightningBolt[10]
-CLightningBolt g_CLightningBolt_ARRAY_01c67510[10] = {};
+CLightningBolt g_LightningBoltPool[10] = {};
 
 // CPopcorn[256]
 CPopcorn g_PopcornPool[256] = {};
@@ -23,14 +23,14 @@ CRainDrop g_RainDropPool[256] = {};
 CShell g_ShellPool[50] = {};
 
 // CTrail[100]
-CTrail g_CTrail_ARRAY_01c676cc[100] = {};
+CTrail g_TrailPool[100] = {};
 
 // int
-int g_INT_01c625f4 = {};
-int g_INT_01c62eb8 = {};
-int g_INT_01c6750c = {};
-int g_INT_01c676c8 = {};
-int g_INT_01c684dc = {};
-int g_INT_01c69610 = {};
-int g_INT_01c6ce14 = {};
+int g_CraterAllocIndex = {};
+int g_GunFlameAllocIndex = {};
+int g_LightningBoltAllocIndex = {};
+int g_TrailAllocIndex = {};
+int g_ShellAllocIndex = {};
+int g_PopcornAllocIndex = {};
+int g_RainDropAllocIndex = {};
 

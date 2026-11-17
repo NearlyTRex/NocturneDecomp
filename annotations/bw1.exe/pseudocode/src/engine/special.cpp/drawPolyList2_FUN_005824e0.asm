@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   int g_INT_01e7dac8
-;   void* g_PTR_02c833c8
-;   void* g_PTR_02c833d0
+;   int g_RenderedTriangleCount
+;   void* g_APIDLL_drawPolygon2
+;   void* g_APIDLL_drawPolyList2
 ;
 ; *****************************************************************************
 
@@ -38,13 +38,13 @@ section .text
     JZ 0x005825ef                       ; 005824f6
         ;   XREF to: 005825ef (CONDITIONAL_JUMP)  ; LAB_005825ef
     MOV EBX,dword ptr [ESP + 0x28]      ; 005824fc
-    MOV EAX,[0x01e7dac8]                ; 00582500 | g_INT_01e7dac8
-    MOV ESI,dword ptr [0x02c833d0]      ; 00582505 | g_PTR_02c833d0
+    MOV EAX,[0x01e7dac8]                ; 00582500 | g_RenderedTriangleCount
+    MOV ESI,dword ptr [0x02c833d0]      ; 00582505 | g_APIDLL_drawPolyList2
     ADD EAX,EBX                         ; 0058250b
     TEST ESI,ESI                        ; 0058250d
     JNZ 0x005825fb                      ; 0058250f
         ;   XREF to: 005825fb (CONDITIONAL_JUMP)  ; LAB_005825fb
-    MOV [0x01e7dac8],EAX                ; 00582515 | g_INT_01e7dac8
+    MOV [0x01e7dac8],EAX                ; 00582515 | g_RenderedTriangleCount
     TEST EBX,EBX                        ; 0058251a
     JLE 0x005825e0                      ; 0058251c
         ;   XREF to: 005825e0 (CONDITIONAL_JUMP)  ; LAB_005825e0
@@ -101,7 +101,7 @@ section .text
     MOV dword ptr [EDX + 0x1c],EAX      ; 005825b9
     LEA EAX,[ESP + 0x8]                 ; 005825bc
     PUSH EAX                            ; 005825c0
-    CALL dword ptr [0x02c833c8]         ; 005825c1 | g_PTR_02c833c8
+    CALL dword ptr [0x02c833c8]         ; 005825c1 | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 005825c7
     INC ESI                             ; 005825ca
     MOV EAX,dword ptr [ESP + 0x28]      ; 005825cb
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 00582600
     PUSH EDX                            ; 00582601
     PUSH EDI                            ; 00582602
-    MOV [0x01e7dac8],EAX                ; 00582603 | g_INT_01e7dac8
-    CALL dword ptr [0x02c833d0]         ; 00582608 | g_PTR_02c833d0
+    MOV [0x01e7dac8],EAX                ; 00582603 | g_RenderedTriangleCount
+    CALL dword ptr [0x02c833d0]         ; 00582608 | g_APIDLL_drawPolyList2
     ADD ESP,0x10                        ; 0058260e
     MOV EDX,EAX                         ; 00582611
     MOV EAX,EDX                         ; 00582613

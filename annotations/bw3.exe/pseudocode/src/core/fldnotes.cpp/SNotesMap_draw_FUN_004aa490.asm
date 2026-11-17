@@ -12,10 +12,10 @@
 ;   core_fldnotes.cpp_SPageResourceMap_draw_FUN_004aa7b0 at 004aa7c0
 ;
 ; Referenced Globals:
-;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   undefined4 DAT_005fe3a0
 ;   undefined4 DAT_005fe3a4
-;   CBitFont* g_CBitFont_PTR_01549abc
+;   CBitFont* g_MicroFont
 ;   int g_INT_01d5ba14
 ;
 ; Called Functions:
@@ -57,7 +57,7 @@ section .text
     JZ 0x004aa521                       ; 004aa4d1
         ;   XREF to: 004aa521 (CONDITIONAL_JUMP)  ; LAB_004aa521
     PUSH 0x5c115f                       ; 004aa4d3
-    MOV ESI,dword ptr [0x005fba60]      ; 004aa4d8 | g_CEventList_PTR_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004aa4d8 | g_CEventListPtr
     PUSH ESI                            ; 004aa4de
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004aa4df
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -112,7 +112,7 @@ section .text
     ADD EAX,EDX                         ; 004aa566
     ADD EAX,0x64                        ; 004aa568
     PUSH EAX                            ; 004aa56b
-    MOV EAX,[0x01549abc]                ; 004aa56c | g_CBitFont_PTR_01549abc
+    MOV EAX,[0x01549abc]                ; 004aa56c | g_MicroFont
     PUSH EAX                            ; 004aa571
     CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004aa572
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)

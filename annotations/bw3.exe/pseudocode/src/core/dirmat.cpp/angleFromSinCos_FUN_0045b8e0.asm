@@ -8,8 +8,8 @@
 ; double           Stack[0xc]:8   x
 ;
 ; Referenced Globals:
-;   double g_DOUBLE_005bb13e = 0.707000000000000
-;   double g_DOUBLE_005bb146 = -0.707000000000000
+;   double g_Atan2SinCosThreshold = 0.707000000000000
+;   double g_Atan2SinCosThresholdNeg = -0.707000000000000
 ;   double g_DOUBLE_005bb14e = -1
 ;   double g_DOUBLE_005bb156 = 3.14159265359000
 ;   double g_DOUBLE_005bb15e = -3.14159265359000
@@ -30,13 +30,13 @@ section .text
     SUB ESP,0x4                         ; 0045b8e3
     AND ESP,0xfffffff8                  ; 0045b8e6
     FLD double ptr [EBP + 0x8]          ; 0045b8e9
-    FCOMP double ptr [0x005bb13e]       ; 0045b8ec | g_DOUBLE_005bb13e
+    FCOMP double ptr [0x005bb13e]       ; 0045b8ec | g_Atan2SinCosThreshold
     FNSTSW AX                           ; 0045b8f2
     SAHF                                ; 0045b8f4
     JNC 0x0045b957                      ; 0045b8f5
         ;   XREF to: 0045b957 (CONDITIONAL_JUMP)  ; LAB_0045b957
     FLD double ptr [EBP + 0x8]          ; 0045b8f7
-    FCOMP double ptr [0x005bb146]       ; 0045b8fa | g_DOUBLE_005bb146
+    FCOMP double ptr [0x005bb146]       ; 0045b8fa | g_Atan2SinCosThresholdNeg
     FNSTSW AX                           ; 0045b900
     SAHF                                ; 0045b902
     JBE 0x0045b957                      ; 0045b903

@@ -22,23 +22,23 @@ int __cdecl determine_dst_status(_tm *timeptr)
   
   uVar8 = 0;
   if (*PTR_s_EDT_005c1f10 == '\0') goto LAB_0056d2fb;
-  uVar1 = FUN_0056cfd8(&g_dst_rule_005c1dc0,&g_INT_005c1de4,timeptr->tm_year);
+  uVar1 = FUN_0056cfd8(&g_DstStartRule,&g_DstTransitionSecond,timeptr->tm_year);
   if (uVar1 == 0) {
-    piVar7 = &g_dst_rule_005c1dc0.seconds;
-    pdVar9 = (dst_rule *)&g_INT_005c1de4;
+    piVar7 = &g_DstStartRule.seconds;
+    pdVar9 = (dst_rule *)&g_DstTransitionSecond;
   }
   else {
-    piVar7 = &g_INT_005c1de4;
-    pdVar9 = &g_dst_rule_005c1dc0;
+    piVar7 = &g_DstTransitionSecond;
+    pdVar9 = &g_DstStartRule;
   }
   iVar5 = timeptr->tm_mon;
   iVar2 = is_leap_year(timeptr->tm_year + 0x76c);
   if (iVar2 == 0) {
-    iVar2 = *(int *)(&g_SHORT_005a4a78 + iVar5);
+    iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
     iVar4 = *(int *)((int)&g_fstreambaseTypeInfo_005a4a60.class_name + iVar5 * 2 + 2);
   }
   else {
-    iVar2 = *(int *)(&g_SHORT_005a4a92 + iVar5);
+    iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);
     iVar4 = *(int *)(&g_SHORT_005a4a90 + iVar5);
   }
   iVar2 = (iVar2 >> 0x10) - (iVar4 >> 0x10);

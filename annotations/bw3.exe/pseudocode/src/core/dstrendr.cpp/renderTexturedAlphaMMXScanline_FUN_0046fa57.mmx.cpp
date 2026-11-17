@@ -18,53 +18,53 @@ __asm {
     LAB_0046fa67:
         shr ECX,0x10
         shr EAX,0x10
-        mov EBP,dword ptr [g_ARRAY_PTR_01c5faec + EBX*0x4]
+        mov EBP,dword ptr [g_ScreenBufferArray + EBX*0x4]
         sub ECX,EAX
         jle LAB_0046fb6c
         shl ECX,0x1
         lea EBP,[EBP + EAX*0x2]
-        mov dword ptr [g_INT_005f4ac4],ECX
-        mov dword ptr [g_UINT_PTR_005f4ac8],EBP
+        mov dword ptr [g_PerspectiveScanlinePixelCount],ECX
+        mov dword ptr [g_PerspectiveScanlineZPtr],EBP
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
         imul dword ptr [ECX*0x2 + 0x1c6b5d4]
-        mov dword ptr [g_UINT_005f4a98],EBX
-        mov dword ptr [g_INT_005f4ab4],EDX
+        mov dword ptr [g_PerspectiveNextU],EBX
+        mov dword ptr [g_SoftwareDeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX*0x2 + 0x1c6b5d4]
-        mov dword ptr [g_UINT_005f4a9c],EBX
-        mov dword ptr [g_INT_005f4ab8],EDX
+        mov dword ptr [g_PerspectiveNextV],EBX
+        mov dword ptr [g_SoftwareDeltaTextureV],EDX
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX*0x2 + 0x1c6b5d4]
-        mov dword ptr [g_UINT_005f4aa4],EBX
-        mov dword ptr [g_INT_005f4abc],EDX
-        mov ECX,dword ptr [g_UINT_005f4a98]
-        mov EDX,dword ptr [g_UINT_005f4a9c]
+        mov dword ptr [g_StartDepthZ],EBX
+        mov dword ptr [g_SoftwareDeltaDepthZ],EDX
+        mov ECX,dword ptr [g_PerspectiveNextU]
+        mov EDX,dword ptr [g_PerspectiveNextV]
         mov EDI,0x0
-        mov ESI,dword ptr [g_UINT_005f4aa4]
+        mov ESI,dword ptr [g_StartDepthZ]
     LAB_0046faf6:
-        mov EBP,dword ptr [g_UINT_PTR_005f4ac8]
+        mov EBP,dword ptr [g_PerspectiveScanlineZPtr]
         add EBP,EDI
         movzx EAX,word ptr [EBP]
         cmp ESI,EAX
         jnc LAB_0046fb4d
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [g_QWORD_00604df8]
-        psrlq MM2,qword ptr [g_QWORD_00604e18]
-        pand MM0,qword ptr [g_QWORD_00604e38]
-        pand MM2,qword ptr [g_QWORD_00604e58]
+        psrlq MM0,qword ptr [g_TextureShift1]
+        psrlq MM2,qword ptr [g_TextureShift2]
+        pand MM0,qword ptr [g_TextureMask1]
+        pand MM2,qword ptr [g_TextureMask2]
         paddd MM0,MM2
         movd EBX,MM0
-        mov EAX,[g_UCHAR_PTR_01c6ced4]
+        mov EAX,[g_CurrentTextureOpacityData]
         test EAX,0xffffffff
         jnz LAB_0046fb3f
-        mov EAX,[g_UCHAR_PTR_01c6ced0]
+        mov EAX,[g_CurrentTextureData]
     LAB_0046fb3f:
         add EBX,EAX
         movzx EAX,byte ptr [EBX]
@@ -73,11 +73,11 @@ __asm {
         mov word ptr [EBP],SI
     LAB_0046fb4d:
         add EDI,0x2
-        cmp EDI,dword ptr [g_INT_005f4ac4]
+        cmp EDI,dword ptr [g_PerspectiveScanlinePixelCount]
         ja LAB_0046fb6c
-        add ECX,dword ptr [g_INT_005f4ab4]
-        add EDX,dword ptr [g_INT_005f4ab8]
-        add ESI,dword ptr [g_INT_005f4abc]
+        add ECX,dword ptr [g_SoftwareDeltaTextureU]
+        add EDX,dword ptr [g_SoftwareDeltaTextureV]
+        add ESI,dword ptr [g_SoftwareDeltaDepthZ]
         jmp LAB_0046faf6
     LAB_0046fb6c:
         pop EBP

@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057d9d7
 ;   int g_BitsPerPixel = 0x8
 ;   int g_INT_01b4d710
-;   int g_INT_01b4d71c
+;   int g_UseRGBConversion
 ;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_0045c770
     JG 0x0045c7c0                       ; 0045c772
         ;   XREF to: 0045c7c0 (CONDITIONAL_JUMP)  ; LAB_0045c7c0
-    CMP dword ptr [0x01b4d71c],0x0      ; 0045c774 | g_INT_01b4d71c
+    CMP dword ptr [0x01b4d71c],0x0      ; 0045c774 | g_UseRGBConversion
     JNZ 0x0045c7c5                      ; 0045c77b
         ;   XREF to: 0045c7c5 (CONDITIONAL_JUMP)  ; LAB_0045c7c5
     MOV EDX,dword ptr [0x005b7624]      ; 0045c77d | g_BitsPerPixel

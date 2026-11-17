@@ -237,7 +237,7 @@ LAB_005017f4:
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,this_ptr->demon_to_human_condition);
+                        (g_CEventListPtr,this_ptr->demon_to_human_condition);
       if (iVar8 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_00502280(this_ptr);
         return;
@@ -245,7 +245,7 @@ LAB_005017f4:
     }
     else {
       iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (g_CEventList_PTR_006141f0,this_ptr->human_to_demon_condition);
+                        (g_CEventListPtr,this_ptr->human_to_demon_condition);
       if (iVar8 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_00502280(this_ptr);
         return;

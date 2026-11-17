@@ -56,9 +56,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
     switch(iVar1) {
     case 1:
     case 7:
-      bone_index = g_INT_ARRAY_01cb0678[7];
+      bone_index = g_GabriellaIndices[7];
       if (iVar1 == 7) {
-        bone_index = g_INT_ARRAY_01cb0678[8];
+        bone_index = g_GabriellaIndices[8];
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                 (local_1c,bone_index,&local_90);
@@ -116,7 +116,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       break;
     case 2:
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         ((this_ptr->base).object_to_pick_up,g_CDemonActorType_007bcc4c.name_hash);
+                         ((this_ptr->base).object_to_pick_up,g_CLightActorClassInfo.name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
         if (pCVar2[2].particle_systems[4].position.z != 1.4013e-45) {
           this_ptr->flashlight_angle = -0.5235988;
@@ -144,7 +144,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       local_20 = local_24;
       if (local_24 != (CCharacter *)0x0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                  (local_1c,g_INT_ARRAY_01cb0678[0xc],&local_3c);
+                  (local_1c,g_GabriellaIndices[0xc],&local_3c);
         pCVar5 = (CVector3f *)(auStack_80 + 8);
         auStack_80._8_4_ = local_3c.x;
         afStack_74[(uint)bVar3 * -2] = *(float *)((int)&local_3c + (uint)bVar3 * -8 + 4);

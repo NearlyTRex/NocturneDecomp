@@ -14,12 +14,12 @@ void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(CDemonL
   byte **ppuVar3;
   void **ppvVar4;
   
-  g_INT_01ab99f0 = g_INT_01ab99f0 + -1;
-  if (g_INT_01ab99f0 != 0) {
+  g_BackgroundSceneNestingCount = g_BackgroundSceneNestingCount + -1;
+  if (g_BackgroundSceneNestingCount != 0) {
     return;
   }
-  g_INT_01ab99f0 = 0;
-  ppuVar3 = g_ARRAY_PTR_01ab99f4;
+  g_BackgroundSceneNestingCount = 0;
+  ppuVar3 = g_SavedScreenBufferArray;
   ppvVar4 = g_ScreenBufferArray;
   for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
     *ppvVar4 = *ppuVar3;

@@ -17,7 +17,7 @@ uint __watcallStack analyze_file_type(uint open_flags,char *filename)
   char *pcVar5;
   
   uVar4 = 0;
-  if (g_WORD_005c1d11 < 0x8000) {
+  if (g_WindowsPlatformVersion < 0x8000) {
     uVar1 = 0x20;
   }
   else {
@@ -31,7 +31,7 @@ uint __watcallStack analyze_file_type(uint open_flags,char *filename)
     }
     hFile = CreateFileA(pcVar5,0,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
     if (hFile == (HANDLE)0xffffffff) {
-      if ((0x7fff < g_WORD_005c1d11) || (DVar3 = GetLastError(), DVar3 == 5)) {
+      if ((0x7fff < g_WindowsPlatformVersion) || (DVar3 = GetLastError(), DVar3 == 5)) {
         uVar4 = 0x2000;
       }
     }

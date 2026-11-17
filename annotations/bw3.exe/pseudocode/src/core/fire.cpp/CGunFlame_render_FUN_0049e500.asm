@@ -464,9 +464,9 @@ section .text
     LEA EDI,[ESP + 0xb8]                ; 0049e97a
     MOV ESI,0x2cfd900                   ; 0049e981
     PUSH 0x0                            ; 0049e986
-    MOVSD ES:EDI,ESI                    ; 0049e988 | g_CVector3f_02cfd900
-    MOVSD ES:EDI,ESI                    ; 0049e989 | g_CVector3f_02cfd900.y
-    MOVSD ES:EDI,ESI                    ; 0049e98a | g_CVector3f_02cfd900.z
+    MOVSD ES:EDI,ESI                    ; 0049e988 | g_ZeroVector
+    MOVSD ES:EDI,ESI                    ; 0049e989 | g_ZeroVector.y
+    MOVSD ES:EDI,ESI                    ; 0049e98a | g_ZeroVector.z
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e98b
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1a8],EAX     ; 0049e990
@@ -913,7 +913,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049efc3
     SUB EAX,EDX                         ; 0049efca
     SHL EAX,0x3                         ; 0049efcc
-    ADD EAX,0x5fd60c                    ; 0049efcf | g_SMRGLTextureBasic_ARRAY_005fd60c
+    ADD EAX,0x5fd60c                    ; 0049efcf | g_FireEffectLightningBoltTextures
     PUSH EAX                            ; 0049efd4
     MOV ECX,dword ptr [0x005f2afc]      ; 0049efd5 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 0049efdb | g_CDemonRenderer_01bdd7e4

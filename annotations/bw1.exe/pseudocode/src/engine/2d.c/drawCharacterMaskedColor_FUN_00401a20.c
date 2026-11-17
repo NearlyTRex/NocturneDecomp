@@ -18,18 +18,18 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
   byte *puVar7;
   ushort *puVar8;
   
-  uVar5 = (uint)g_SFontGlyph_ARRAY_00608570[char_code + -0x20].width;
+  uVar5 = (uint)g_FontTable[char_code + -0x20].width;
   if ((((x_pos < g_INT_01c4f008) || (y_pos < g_INT_01c4f00c)) ||
-      ((int)((g_INT_01c4f010 + 1) - uVar5) < x_pos)) || (g_INT_01c4f014 + -10 < y_pos)) {
+      ((int)((g_ClipRight + 1) - uVar5) < x_pos)) || (g_INT_01c4f014 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
     iVar6 = y_pos * 4;
-    puVar1 = g_SFontGlyph_ARRAY_00608570[char_code + -0x20].bitmap;
+    puVar1 = g_FontTable[char_code + -0x20].bitmap;
     iVar3 = iVar6 + 0x2c;
     if (g_INT_0061b4a0 == 8) {
       do {
-        puVar7 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar6) + x_pos);
+        puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos);
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
@@ -46,12 +46,12 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
     }
     else if (g_INT_0061b4a0 == 0x10) {
       do {
-        puVar8 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar6) + x_pos * 2);
+        puVar8 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 2);
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
             if (*puVar1 != '\0') {
-              *puVar8 = g_USHORT_ARRAY_01c4dad0[color];
+              *puVar8 = g_ColorTable16[color];
             }
             puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
@@ -64,11 +64,11 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
     else {
       do {
         iVar2 = 0;
-        puVar4 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar6) + x_pos * 4);
+        puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 4);
         if (uVar5 != 0) {
           do {
             if (*puVar1 != '\0') {
-              *puVar4 = g_UINT_ARRAY_01c4dcd0[color];
+              *puVar4 = g_ColorTable32[color];
             }
             puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;

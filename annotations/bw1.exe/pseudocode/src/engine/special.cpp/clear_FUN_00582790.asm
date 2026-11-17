@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_01c50948
-;   void* g_PTR_02c833e8
+;   void* g_APIDLL_clear
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
         ;   XREF to: 0058279c (CONDITIONAL_JUMP)  ; LAB_0058279c
     XOR EAX,EAX                         ; 00582799
     RET                                 ; 0058279b
-    CALL dword ptr [0x02c833e8]         ; 0058279c | g_PTR_02c833e8
+    CALL dword ptr [0x02c833e8]         ; 0058279c | g_APIDLL_clear
         ;   Label: LAB_0058279c
     RET                                 ; 005827a2
 

@@ -31,16 +31,16 @@
 ;   int g_INT_006141b8 = 0x140
 ;   int g_INT_006141bc = 0xc8
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_0061e98c = -0x1
+;   int g_WindowActive = -0x1
 ;   void* g_PTR_00622010
-;   void*[1200] g_ARRAY_PTR_01c2a38c
-;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c37788
-;   int g_INT_01c38b40
+;   int g_MMXSupported
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
-;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae4
-;   int g_INT_02661af4
+;   IDirectDrawSurface* g_DirectDrawSurface
+;   int g_FlipPending
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -63,22 +63,22 @@ section .text
     PUSH EBP                            ; 00589563
     MOV EBP,ESP                         ; 00589564
     SUB ESP,0x7c                        ; 00589566
-    CMP dword ptr [0x0061e98c],0x0      ; 00589569 | g_INT_0061e98c
+    CMP dword ptr [0x0061e98c],0x0      ; 00589569 | g_WindowActive
     JZ 0x00589632                       ; 00589570
         ;   XREF to: 00589632 (CONDITIONAL_JUMP)  ; LAB_00589632
     MOV ECX,dword ptr [0x01c37788]      ; 00589576 | g_INT_01c37788
     TEST ECX,ECX                        ; 0058957c
     JNZ 0x00589646                      ; 0058957e
         ;   XREF to: 00589646 (CONDITIONAL_JUMP)  ; LAB_00589646
-    MOV EBX,dword ptr [0x02661af4]      ; 00589584 | g_INT_02661af4
+    MOV EBX,dword ptr [0x02661af4]      ; 00589584 | g_FlipPending
     TEST EBX,EBX                        ; 0058958a
     JNZ 0x0058960e                      ; 0058958c
         ;   XREF to: 0058960e (CONDITIONAL_JUMP)  ; LAB_0058960e
-    CMP dword ptr [0x02661afc],0x0      ; 00589592 | g_INT_02661afc
+    CMP dword ptr [0x02661afc],0x0      ; 00589592 | g_Display24BitFallback
     JZ 0x00589664                       ; 00589599
         ;   XREF to: 00589664 (CONDITIONAL_JUMP)  ; LAB_00589664
     MOV ESI,dword ptr [0x00622010]      ; 0058959f | g_PTR_00622010
-    MOV dword ptr [0x02661afc],ECX      ; 005895a5 | g_INT_02661afc
+    MOV dword ptr [0x02661afc],ECX      ; 005895a5 | g_Display24BitFallback
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0 ; 005895ab
         ;   XREF to: 005890c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0()
     MOV EAX,[0x006141bc]                ; 005895b0 | g_INT_006141bc
@@ -89,7 +89,7 @@ section .text
     XOR ECX,ECX                         ; 005895bb
     MOV EBX,dword ptr [0x006141b8]      ; 005895bd | g_INT_006141b8
         ;   Label: LAB_005895bd
-    MOV EAX,dword ptr [ECX + 0x1c2a38c] ; 005895c3 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
+    MOV EAX,dword ptr [ECX + 0x1c2a38c] ; 005895c3 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR EDX,EDX                         ; 005895c9
     TEST EBX,EBX                        ; 005895cb
     JLE 0x005895f0                      ; 005895cd
@@ -119,8 +119,8 @@ section .text
         ;   Label: LAB_005895fe
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170 ; 00589603
         ;   XREF to: 00589170 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170()
-    MOV dword ptr [0x02661afc],ESI      ; 00589608 | g_INT_02661afc
-    MOV ESI,dword ptr [0x02661ae4]      ; 0058960e | g_IDirectDrawSurface_PTR_02661ae4
+    MOV dword ptr [0x02661afc],ESI      ; 00589608 | g_Display24BitFallback
+    MOV ESI,dword ptr [0x02661ae4]      ; 0058960e | g_DirectDrawSurface
         ;   Label: LAB_0058960e
     TEST ESI,ESI                        ; 00589614
     JZ 0x00589632                       ; 00589616
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 005897e0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_005897e0()
     XOR EDI,EDI                         ; 00589632
         ;   Label: LAB_00589632
-    MOV dword ptr [0x02661af4],EDI      ; 00589634 | g_INT_02661af4
+    MOV dword ptr [0x02661af4],EDI      ; 00589634 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_0058f270 ; 0058963a
         ;   XREF to: 0058f270 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_0058f270()
     MOV ESP,EBP                         ; 0058963f
@@ -155,7 +155,7 @@ section .text
         ;   XREF to: 0055ff40 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_0055ff40(int skip_buffer_copy)
     ADD ESP,0x4                         ; 0058964d
     XOR EDI,EDI                         ; 00589650
-    MOV dword ptr [0x02661af4],EDI      ; 00589652 | g_INT_02661af4
+    MOV dword ptr [0x02661af4],EDI      ; 00589652 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_0058f270 ; 00589658
         ;   XREF to: 0058f270 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_0058f270()
     MOV ESP,EBP                         ; 0058965d
@@ -188,7 +188,7 @@ section .text
     LEA ECX,[EBP + -0x7c]               ; 0058969c
     MOV EDI,0x6c                        ; 0058969f
     PUSH ECX                            ; 005896a4
-    MOV EAX,[0x02661ae4]                ; 005896a5 | g_IDirectDrawSurface_PTR_02661ae4
+    MOV EAX,[0x02661ae4]                ; 005896a5 | g_DirectDrawSurface
     MOV dword ptr [EBP + -0x7c],EDI     ; 005896aa
     PUSH EBX                            ; 005896ad
     MOV EDX,dword ptr [EAX]             ; 005896ae
@@ -208,7 +208,7 @@ section .text
     TEST ECX,ECX                        ; 005896d7
     JLE 0x00589742                      ; 005896d9
         ;   XREF to: 00589742 (CONDITIONAL_JUMP)  ; LAB_00589742
-    CMP dword ptr [0x01c38b40],0x0      ; 005896db | g_INT_01c38b40
+    CMP dword ptr [0x01c38b40],0x0      ; 005896db | g_MMXSupported
         ;   Label: LAB_005896db
     JZ 0x00589790                       ; 005896e2
         ;   XREF to: 00589790 (CONDITIONAL_JUMP)  ; LAB_00589790
@@ -244,7 +244,7 @@ section .text
         ;   XREF to: 005896db (CONDITIONAL_JUMP)  ; LAB_005896db
     PUSH 0x0                            ; 00589742
         ;   Label: LAB_00589742
-    MOV EAX,[0x02661ae4]                ; 00589744 | g_IDirectDrawSurface_PTR_02661ae4
+    MOV EAX,[0x02661ae4]                ; 00589744 | g_DirectDrawSurface
     PUSH EAX                            ; 00589749
     MOV EDX,dword ptr [EAX]             ; 0058974a
     CALL dword ptr [EDX + 0x80]         ; 0058974c
@@ -260,7 +260,7 @@ section .text
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00589779
     XOR EDI,EDI                         ; 0058977c
-    MOV dword ptr [0x02661af4],EDI      ; 0058977e | g_INT_02661af4
+    MOV dword ptr [0x02661af4],EDI      ; 0058977e | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_0058f270 ; 00589784
         ;   XREF to: 0058f270 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_0058f270()
     MOV ESP,EBP                         ; 00589789

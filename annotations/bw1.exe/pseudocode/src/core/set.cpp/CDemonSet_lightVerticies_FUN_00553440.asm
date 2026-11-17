@@ -157,7 +157,7 @@ section .text
     TEST EDX,EDX                        ; 005534b2
     JZ 0x005535f8                       ; 005534b4
         ;   XREF to: 005535f8 (CONDITIONAL_JUMP)  ; LAB_005535f8
-    CMP dword ptr [0x02026344],0x0      ; 005534ba | g_INT_02026344
+    CMP dword ptr [0x02026344],0x0      ; 005534ba | g_InMirrorRenderPass
     JZ 0x00553507                       ; 005534c1
         ;   XREF to: 00553507 (CONDITIONAL_JUMP)  ; LAB_00553507
     CMP dword ptr [EBP + 0x18],0x0      ; 005534c3
@@ -178,7 +178,7 @@ section .text
     MOV EAX,EAX                         ; 005534ee
     XOR EBX,EBX                         ; 005534f0
         ;   Label: LAB_005534f0
-    MOV dword ptr [0x01c51cac],EBX      ; 005534f2 | g_INT_01c51cac
+    MOV dword ptr [0x01c51cac],EBX      ; 005534f2 | g_PerspectiveReciprocal
     LEA EAX,[EAX]                       ; 005534f8
     MOV EDX,EDX                         ; 005534fe
     MOV ESP,EBP                         ; 00553500
@@ -223,7 +223,7 @@ section .text
     LEA EAX,[EAX]                       ; 0055354a
     XOR ECX,ECX                         ; 00553550
         ;   Label: LAB_00553550
-    MOV dword ptr [0x01c51cac],ECX      ; 00553552 | g_INT_01c51cac
+    MOV dword ptr [0x01c51cac],ECX      ; 00553552 | g_PerspectiveReciprocal
     MOV ESP,EBP                         ; 00553558
     POP EBP                             ; 0055355a
     POP EDI                             ; 0055355b
@@ -256,7 +256,7 @@ section .text
     JL 0x0055356e                       ; 005535a8
         ;   XREF to: 0055356e (CONDITIONAL_JUMP)  ; LAB_0055356e
     XOR ECX,ECX                         ; 005535aa
-    MOV dword ptr [0x01c51cac],ECX      ; 005535ac | g_INT_01c51cac
+    MOV dword ptr [0x01c51cac],ECX      ; 005535ac | g_PerspectiveReciprocal
     MOV ESP,EBP                         ; 005535b2
     POP EBP                             ; 005535b4
     POP EDI                             ; 005535b5
@@ -281,7 +281,7 @@ section .text
     JL 0x005535c8                       ; 005535e7
         ;   XREF to: 005535c8 (CONDITIONAL_JUMP)  ; LAB_005535c8
     XOR ECX,ECX                         ; 005535e9
-    MOV dword ptr [0x01c51cac],ECX      ; 005535eb | g_INT_01c51cac
+    MOV dword ptr [0x01c51cac],ECX      ; 005535eb | g_PerspectiveReciprocal
     MOV ESP,EBP                         ; 005535f1
     POP EBP                             ; 005535f3
     POP EDI                             ; 005535f4
@@ -359,7 +359,7 @@ section .text
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710 ; 005536cb
         ;   XREF to: 00552710 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     ADD ESP,0x14                        ; 005536d0
-    MOV EAX,[0x01c51cac]                ; 005536d3 | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 005536d3 | g_PerspectiveReciprocal
     MOV EDI,dword ptr [ESP + 0x13c]     ; 005536d8
     MOV EDX,dword ptr [EBP + 0x18]      ; 005536df
     INC EDI                             ; 005536e2
@@ -425,7 +425,7 @@ section .text
     ADD ESP,0x14                        ; 00553770
     ADD ESI,0xc                         ; 00553773
     MOV EDX,dword ptr [ESP + 0x114]     ; 00553776
-    MOV EAX,[0x01c51cac]                ; 0055377d | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 0055377d | g_PerspectiveReciprocal
     LEA ECX,[EDX + 0x30]                ; 00553782
     MOV dword ptr [EDX + 0x629040],EAX  ; 00553785 | g_SRenderVertex_ARRAY_00629014[0].a
     MOV EAX,dword ptr [EBP + 0x18]      ; 0055378b
@@ -631,7 +631,7 @@ section .text
     ADD EBX,0x30                        ; 00553a26
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710 ; 00553a29
         ;   XREF to: 00552710 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
-    MOV EAX,[0x01c51cac]                ; 00553a2e | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 00553a2e | g_PerspectiveReciprocal
     ADD ESP,0x14                        ; 00553a33
     LEA EDX,[EDI + 0x1]                 ; 00553a36
     MOV ECX,dword ptr [EBP + 0x18]      ; 00553a39
@@ -758,7 +758,7 @@ section .text
     FXCH ST3                            ; 00553be1
     FSTP float ptr [ESP + 0xc0]         ; 00553be3
     MOV EDX,dword ptr [ESP + 0xc0]      ; 00553bea
-    MOV ECX,dword ptr [0x01cc8050]      ; 00553bf1 | g_INT_01cc8050
+    MOV ECX,dword ptr [0x01cc8050]      ; 00553bf1 | g_FastInvSqrtMagic
     SAR EDX,0x1                         ; 00553bf7
     SUB ECX,EDX                         ; 00553bf9
     MOV dword ptr [ESP + 0xc4],ECX      ; 00553bfb
@@ -923,7 +923,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x118]     ; 00553db5
     MOV ECX,dword ptr [ESP + 0x118]     ; 00553dbc
     MOV EBX,dword ptr [EBP + 0x18]      ; 00553dc3
-    MOV EAX,[0x01c51cac]                ; 00553dc6 | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 00553dc6 | g_PerspectiveReciprocal
     INC EDI                             ; 00553dcb
     ADD ECX,0x30                        ; 00553dcc
     MOV dword ptr [EDX + 0x629040],EAX  ; 00553dcf | g_SRenderVertex_ARRAY_00629014[0].a | g_SRenderVertex_ARRAY_00629014[1].a
@@ -1071,7 +1071,7 @@ section .text
     FADDP                               ; 0055401e
     FSTP float ptr [ESP + 0xe8]         ; 00554020
     MOV EAX,dword ptr [ESP + 0xe8]      ; 00554027
-    MOV EDX,dword ptr [0x01cc8050]      ; 0055402e | g_INT_01cc8050
+    MOV EDX,dword ptr [0x01cc8050]      ; 0055402e | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 00554034
     SUB EDX,EAX                         ; 00554036
     MOV dword ptr [ESP + 0xec],EDX      ; 00554038
@@ -1088,9 +1088,9 @@ section .text
     INC EDI                             ; 00554063
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00554064
     FXCH                                ; 00554067
-    FSTP float ptr [ECX + -0xc]         ; 00554069 | g_CVector3f_ARRAY_0202a8a8
-    FSTP float ptr [ECX + -0x8]         ; 0055406c | g_CVector3f_ARRAY_0202a8a8[0].y
-    FSTP float ptr [ECX + -0x4]         ; 0055406f | g_CVector3f_ARRAY_0202a8a8[0].z
+    FSTP float ptr [ECX + -0xc]         ; 00554069 | g_FaceNormalArray
+    FSTP float ptr [ECX + -0x8]         ; 0055406c | g_FaceNormalArray[0].y
+    FSTP float ptr [ECX + -0x4]         ; 0055406f | g_FaceNormalArray[0].z
     CMP EDI,EAX                         ; 00554072
     JL 0x00553e97                       ; 00554074
         ;   XREF to: 00553e97 (CONDITIONAL_JUMP)  ; LAB_00553e97
@@ -1120,41 +1120,41 @@ section .text
     MOV AX,word ptr [EBX]               ; 005540c1
     IMUL EAX,EAX,0xc                    ; 005540c4
     ADD EAX,0x2070da8                   ; 005540c7
-    FLD float ptr [ECX]                 ; 005540cc | g_CVector3f_ARRAY_0202a8a8 | g_CVector3f_ARRAY_0202a8a8[1].x
+    FLD float ptr [ECX]                 ; 005540cc | g_FaceNormalArray | g_FaceNormalArray[1].x
     FADD float ptr [EAX]                ; 005540ce | g_CVector3f_ARRAY_02070da8
     FSTP float ptr [EAX]                ; 005540d0 | g_CVector3f_ARRAY_02070da8
-    FLD float ptr [ECX + 0x4]           ; 005540d2 | g_CVector3f_ARRAY_0202a8a8[0].y | g_CVector3f_ARRAY_0202a8a8[1].y
+    FLD float ptr [ECX + 0x4]           ; 005540d2 | g_FaceNormalArray[0].y | g_FaceNormalArray[1].y
     FADD float ptr [EAX + 0x4]          ; 005540d5 | g_CVector3f_ARRAY_02070da8[0].y
     FSTP float ptr [EAX + 0x4]          ; 005540d8 | g_CVector3f_ARRAY_02070da8[0].y
-    FLD float ptr [ECX + 0x8]           ; 005540db | g_CVector3f_ARRAY_0202a8a8[0].z | g_CVector3f_ARRAY_0202a8a8[1].z
+    FLD float ptr [ECX + 0x8]           ; 005540db | g_FaceNormalArray[0].z | g_FaceNormalArray[1].z
     FADD float ptr [EAX + 0x8]          ; 005540de | g_CVector3f_ARRAY_02070da8[0].z
     FSTP float ptr [EAX + 0x8]          ; 005540e1 | g_CVector3f_ARRAY_02070da8[0].z
     XOR EAX,EAX                         ; 005540e4
     MOV AX,word ptr [EBX + 0x2]         ; 005540e6
     IMUL EAX,EAX,0xc                    ; 005540ea
     ADD EAX,0x2070da8                   ; 005540ed
-    FLD float ptr [ECX]                 ; 005540f2 | g_CVector3f_ARRAY_0202a8a8
+    FLD float ptr [ECX]                 ; 005540f2 | g_FaceNormalArray
     FADD float ptr [EAX]                ; 005540f4 | g_CVector3f_ARRAY_02070da8
     FSTP float ptr [EAX]                ; 005540f6 | g_CVector3f_ARRAY_02070da8
-    FLD float ptr [ECX + 0x4]           ; 005540f8 | g_CVector3f_ARRAY_0202a8a8[0].y
+    FLD float ptr [ECX + 0x4]           ; 005540f8 | g_FaceNormalArray[0].y
     FADD float ptr [EAX + 0x4]          ; 005540fb | g_CVector3f_ARRAY_02070da8[0].y
     FSTP float ptr [EAX + 0x4]          ; 005540fe | g_CVector3f_ARRAY_02070da8[0].y
-    FLD float ptr [ECX + 0x8]           ; 00554101 | g_CVector3f_ARRAY_0202a8a8[0].z
+    FLD float ptr [ECX + 0x8]           ; 00554101 | g_FaceNormalArray[0].z
     FADD float ptr [EAX + 0x8]          ; 00554104 | g_CVector3f_ARRAY_02070da8[0].z
     FSTP float ptr [EAX + 0x8]          ; 00554107 | g_CVector3f_ARRAY_02070da8[0].z
     XOR EAX,EAX                         ; 0055410a
     MOV AX,word ptr [EBX + 0x4]         ; 0055410c
     IMUL EAX,EAX,0xc                    ; 00554110
     ADD EAX,0x2070da8                   ; 00554113
-    FLD float ptr [ECX]                 ; 00554118 | g_CVector3f_ARRAY_0202a8a8
+    FLD float ptr [ECX]                 ; 00554118 | g_FaceNormalArray
     FADD float ptr [EAX]                ; 0055411a | g_CVector3f_ARRAY_02070da8
     ADD EBX,0x12                        ; 0055411c
     FSTP float ptr [EAX]                ; 0055411f | g_CVector3f_ARRAY_02070da8
-    FLD float ptr [ECX + 0x4]           ; 00554121 | g_CVector3f_ARRAY_0202a8a8[0].y
+    FLD float ptr [ECX + 0x4]           ; 00554121 | g_FaceNormalArray[0].y
     FADD float ptr [EAX + 0x4]          ; 00554124 | g_CVector3f_ARRAY_02070da8[0].y
     ADD ECX,0xc                         ; 00554127
     FSTP float ptr [EAX + 0x4]          ; 0055412a | g_CVector3f_ARRAY_02070da8[0].y
-    FLD float ptr [ECX + -0x4]          ; 0055412d | g_CVector3f_ARRAY_0202a8a8[0].z
+    FLD float ptr [ECX + -0x4]          ; 0055412d | g_FaceNormalArray[0].z
     FADD float ptr [EAX + 0x8]          ; 00554130 | g_CVector3f_ARRAY_02070da8[0].z
     INC ESI                             ; 00554133
     FSTP float ptr [EAX + 0x8]          ; 00554134 | g_CVector3f_ARRAY_02070da8[0].z
@@ -1174,7 +1174,7 @@ section .text
     FADDP                               ; 00554150
     FSTP float ptr [ESP + 0xf4]         ; 00554152
     MOV EAX,dword ptr [ESP + 0xf4]      ; 00554159
-    MOV EDX,dword ptr [0x01cc8050]      ; 00554160 | g_INT_01cc8050
+    MOV EDX,dword ptr [0x01cc8050]      ; 00554160 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 00554166
     SUB EDX,EAX                         ; 00554168
     MOV dword ptr [ESP + 0xf8],EDX      ; 0055416a
@@ -1227,7 +1227,7 @@ section .text
     FADDP                               ; 005541fd
     FSTP float ptr [ESP + 0x100]        ; 005541ff
     MOV EAX,dword ptr [ESP + 0x100]     ; 00554206
-    MOV EDX,dword ptr [0x01cc8050]      ; 0055420d | g_INT_01cc8050
+    MOV EDX,dword ptr [0x01cc8050]      ; 0055420d | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 00554213
     SUB EDX,EAX                         ; 00554215
     MOV dword ptr [ESP + 0x104],EDX     ; 00554217
@@ -1263,7 +1263,7 @@ section .text
         ;   XREF to: 00552710 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     ADD ESP,0x14                        ; 00554272
     MOV EDX,dword ptr [ESP + 0x120]     ; 00554275
-    MOV EAX,[0x01c51cac]                ; 0055427c | g_INT_01c51cac
+    MOV EAX,[0x01c51cac]                ; 0055427c | g_PerspectiveReciprocal
     ADD ESI,0xc                         ; 00554281
     MOV dword ptr [EDX + 0x629040],EAX  ; 00554284 | g_SRenderVertex_ARRAY_00629014[0].a
     LEA EAX,[EDX + 0x30]                ; 0055428a

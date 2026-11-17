@@ -19,7 +19,7 @@ extern CDemonActorType g_CGunClassInfo;
 extern CDemonActorType g_CHaystackClassInfo;
 extern CDemonActorType g_CHealthItemClassInfo;
 extern CDemonActorType g_CHeroClassInfo;
-extern CDemonActorType g_CDemonActorType_01cedf54;
+extern CDemonActorType g_CHeroPlaceholderClassInfo;
 extern CDemonActorType g_CHiramClassInfo;
 extern CDemonActorType g_CHostageClassInfo;
 extern CDemonActorType g_CHotDemonClassInfo;
@@ -34,7 +34,7 @@ extern CGround g_CGroundInstance;
 extern CHero* g_CHero_PTR_ARRAY_01cedee4[4];
 
 // CIni
-extern CIni g_CIni_01cee1a4;
+extern CIni g_CIniInstance;
 
 // char
 extern char g_CHAR_01cee3b0;
@@ -46,18 +46,18 @@ extern char g_CHAR_ARRAY_01cee1b0[256];
 extern char g_CHAR_ARRAY_01cee2b0[256];
 
 // int
-extern int g_INT_01cedee0;
+extern int g_HeroCount;
 extern int g_INT_01cedef4;
-extern int g_INT_01cedfcc;
+extern int g_HostageGunUpMotionIndex;
 extern int g_INT_01cee1a8;
 
 // int[12]
-extern int g_INT_ARRAY_01cee00c[12];
-extern int g_INT_ARRAY_01cee138[12];
+extern int g_HotDemonIndices[12];
+extern int g_ImpIndices[12];
 
 // int[17]
-extern int g_INT_ARRAY_01cede20[17];
+extern int g_HaystackIndices[17];
 
 // int[18]
-extern int g_INT_ARRAY_01cee0b4[18];
+extern int g_IcePickIndices[18];
 

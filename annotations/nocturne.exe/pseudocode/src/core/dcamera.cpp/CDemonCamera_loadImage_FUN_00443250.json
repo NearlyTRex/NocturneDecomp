@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 828,
+    "complexity_score": 830,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 61,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 473,
+    "pseudocode_lines": 475,
     "suspect_count": 32,
     "suspect_types": [
       "flattened_array_index",
@@ -18,7 +18,7 @@
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 1551
+    "total_lines": 1553
   },
   "cross_references": [
     {
@@ -296,7 +296,7 @@
     },
     {
       "addr": "005ad49c",
-      "name": "g_SMRGLTextureBasic_005ad49c",
+      "name": "g_CameraBackdropTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -326,19 +326,19 @@
     },
     {
       "addr": "00b0daf8",
-      "name": "g_SRGBColorPalette_00b0daf8",
+      "name": "g_CameraImagePaletteData",
       "type": "SRGBColorPalette",
       "value": null
     },
     {
       "addr": "00b0dafc",
-      "name": "g_SRGBColorPalette_00b0daf8.colors[1].g",
+      "name": "g_CameraImagePaletteData.colors[1].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b0dafd",
-      "name": "g_SRGBColorPalette_00b0daf8.colors[1].b",
+      "name": "g_CameraImagePaletteData.colors[1].b",
       "type": "undefined4",
       "value": null
     },
@@ -362,67 +362,67 @@
     },
     {
       "addr": "012e18b8",
-      "name": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]",
+      "name": "g_CameraImageDecompressBuffer[0].pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140d780",
-      "name": "g_INT_0140d780",
+      "name": "g_ImageBytesPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "0140e790",
-      "name": "g_SFogGrid_0140d784.scroll_vector.x",
+      "name": "g_CameraFogGrid.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e794",
-      "name": "g_SFogGrid_0140d784.scroll_vector.y",
+      "name": "g_CameraFogGrid.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e798",
-      "name": "g_SFogGrid_0140d784.scroll_vector.z",
+      "name": "g_CameraFogGrid.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e7a0",
-      "name": "g_SFogGrid_0140d784.density_multiplier",
+      "name": "g_CameraFogGrid.density_multiplier",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01410290",
-      "name": "g_CHAR_ARRAY_01410290",
+      "name": "g_CameraIndexedImageData",
       "type": "char[307200]",
       "value": null
     },
     {
       "addr": "01410291",
-      "name": "g_CHAR_ARRAY_01410290+1",
+      "name": "g_CameraIndexedImageData+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0145b290",
-      "name": "g_UINT_ARRAY_0145b290",
+      "name": "g_CameraTextureWorkBuffer",
       "type": "uint[16384]",
       "value": null
     },
     {
       "addr": "0145b294",
-      "name": "g_UINT_ARRAY_0145b290[1]",
+      "name": "g_CameraTextureWorkBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0145b295",
-      "name": "g_UINT_ARRAY_0145b290[1]+1",
+      "name": "g_CameraTextureWorkBuffer[1]+1",
       "type": "undefined4",
       "value": null
     },
@@ -887,9 +887,9 @@
     {
       "description": "Complex pointer cast",
       "line": 265,
-      "match": "(uint *)((int)g_UINT_ARRAY_00b0ddfc",
+      "match": "(uint *)((int)g_CameraConvertedPalette",
       "severity": "moderate",
-      "text": "*(uint *)((int)g_UINT_ARRAY_00b0ddfc + iVar7) = uVar24;",
+      "text": "*(uint *)((int)g_CameraConvertedPalette + iVar7) = uVar24;",
       "type": "pointer_cast"
     },
     {
@@ -918,15 +918,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 406,
-      "match": "(char *)((int)g_UINT_ARRAY_0145b290",
+      "line": 409,
+      "match": "(char *)((int)g_CameraTextureWorkBuffer",
       "severity": "moderate",
-      "text": "*(char *)((int)g_UINT_ARRAY_0145b290 + iVar15) =",
+      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar15) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 427,
+      "line": 430,
       "match": "(uint *)((int)puVar14",
       "severity": "moderate",
       "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar33 * -2 + 1);",
@@ -934,7 +934,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 428,
+      "line": 431,
       "match": "(uint *)((int)puVar29",
       "severity": "moderate",
       "text": "puVar29 = (uint *)((int)puVar29 + (uint)bVar33 * -2 + 1);",
@@ -942,7 +942,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 434,
+      "line": 437,
       "match": "(SRGBColorPalette *)((int)pSVar25",
       "severity": "moderate",
       "text": "pSVar25 = (SRGBColorPalette *)((int)pSVar25 + (uint)bVar33 * -8 + 4);",
@@ -950,7 +950,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 435,
+      "line": 438,
       "match": "(SRGBColorPalette *)((int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -8 + 4);",
@@ -958,7 +958,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 439,
+      "line": 442,
       "match": "(SRGBColorPalette *)((int)pSVar25",
       "severity": "moderate",
       "text": "pSVar25 = (SRGBColorPalette *)((int)pSVar25 + (uint)bVar33 * -2 + 1);",
@@ -966,7 +966,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 440,
+      "line": 443,
       "match": "(SRGBColorPalette *)((int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -2 + 1);",
@@ -974,7 +974,7 @@
     },
     {
       "description": "Pointer value `puVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 427,
+      "line": 430,
       "match": "(int)puVar14",
       "severity": "moderate",
       "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar33 * -2 + 1);",
@@ -982,7 +982,7 @@
     },
     {
       "description": "Pointer value `puVar29` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 428,
+      "line": 431,
       "match": "(int)puVar29",
       "severity": "moderate",
       "text": "puVar29 = (uint *)((int)puVar29 + (uint)bVar33 * -2 + 1);",
@@ -990,7 +990,7 @@
     },
     {
       "description": "Pointer value `pSVar25` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 434,
+      "line": 437,
       "match": "(int)pSVar25",
       "severity": "moderate",
       "text": "pSVar25 = (SRGBColorPalette *)((int)pSVar25 + (uint)bVar33 * -8 + 4);",
@@ -998,7 +998,7 @@
     },
     {
       "description": "Pointer value `pSVar30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 435,
+      "line": 438,
       "match": "(int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -8 + 4);",
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "Pointer value `pSVar25` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 439,
+      "line": 442,
       "match": "(int)pSVar25",
       "severity": "moderate",
       "text": "pSVar25 = (SRGBColorPalette *)((int)pSVar25 + (uint)bVar33 * -2 + 1);",
@@ -1014,7 +1014,7 @@
     },
     {
       "description": "Pointer value `pSVar30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 440,
+      "line": 443,
       "match": "(int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -2 + 1);",
@@ -1054,7 +1054,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 420,
+      "line": 423,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0x4000; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1062,7 +1062,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 425,
+      "line": 428,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1070,7 +1070,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 432,
+      "line": 435,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0xc0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1078,7 +1078,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 437,
+      "line": 440,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1101,24 +1101,24 @@
       "type": "unrolled_strchr"
     },
     {
-      "description": "'g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar7]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar7 is stepped by 0x100, 0x140 and copied from local_40, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar7]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar7 is stepped by 0x100, 0x140 and copied from local_40, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 224,
       "severity": "major",
-      "text": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar7] = cVar5;",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar7] = cVar5;",
       "type": "flattened_array_index"
     },
     {
-      "description": "'g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar17]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar17 is stepped by 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
-      "line": 460,
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar17]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar17 is stepped by 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 462,
       "severity": "major",
-      "text": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar17] =",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar17] =",
       "type": "flattened_array_index"
     },
     {
-      "description": "'g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar13]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar13 is multiplied by 0x140 and stepped by 0x280, 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
-      "line": 461,
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar13]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar13 is multiplied by 0x140 and stepped by 0x280, 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 463,
       "severity": "major",
-      "text": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar13];",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar13];",
       "type": "flattened_array_index"
     },
     {
@@ -1126,7 +1126,7 @@
       "line": 532,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 004438f3: MOVSD.REP ES:EDI,ESI  ; g_UINT_ARRAY_0145b290 | g_UINT_ARRAY_0145b290[1]",
+      "text": "// 004438f3: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
       "type": "unrolled_memcpy"
     },
     {
@@ -1134,7 +1134,7 @@
       "line": 543,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00443913: MOVSD.REP ES:EDI,ESI  ; g_SRGBColorPalette_00b0daf8 | g_SRGBColorPalette_00b0daf8.colors[1].g",
+      "text": "// 00443913: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
       "type": "unrolled_memcpy"
     }
   ]

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 146,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
+    "pseudocode_lines": 87,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "signed_shift_global_idiom",
       "unresolved_funcptr"
     ],
-    "total_lines": 299
+    "total_lines": 295
   },
   "cross_references": [],
   "function": {
@@ -69,7 +69,7 @@
   "globals": [
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -81,7 +81,7 @@
     },
     {
       "addr": "01bd1d80",
-      "name": "g_INT_01bd1d80",
+      "name": "g_GlobalDeltaTimeInt",
       "type": "int",
       "value": null
     },
@@ -217,7 +217,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 82,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 91,
+      "line": 87,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xf8))(iVar1,this_ptr,local_14,&SStack_54);",
@@ -236,7 +236,7 @@
       "line": 33,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "((int)((g_INT_01bd1d80 + (g_INT_01bd1d80 >> 0x1f) * -4) -",
+      "text": "((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -",
       "type": "signed_shift_global_idiom"
     },
     {
@@ -244,7 +244,7 @@
       "line": 34,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(uint)((g_INT_01bd1d80 >> 0x1f) << 1 < 0)) >> 2);",
+      "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
       "type": "signed_shift_global_idiom"
     }
   ],

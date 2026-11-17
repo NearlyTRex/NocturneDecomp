@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   CVector3f g_CVector3f_01d22d4c
-;   undefined4 g_CVector3f_01d22d4c.y
-;   undefined4 g_CVector3f_01d22d4c.z
-;   CVector3f g_CVector3f_01d22d58
-;   undefined4 g_CVector3f_01d22d58.y
-;   undefined4 g_CVector3f_01d22d58.z
+;   CVector3f g_GhoulOffsetMinusX
+;   undefined4 g_GhoulOffsetMinusX.y
+;   undefined4 g_GhoulOffsetMinusX.z
+;   CVector3f g_GhoulOffsetPlusX
+;   undefined4 g_GhoulOffsetPlusX.y
+;   undefined4 g_GhoulOffsetPlusX.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c3a0
@@ -28,14 +28,14 @@ section .text
     MOV ESI,0x3f19999a                  ; 004c6862
     XOR ECX,ECX                         ; 004c6867
     PUSH 0x4c68b0                       ; 004c6869
-    MOV dword ptr [0x01d22d4c],EDX      ; 004c686e | g_CVector3f_01d22d4c
-    MOV dword ptr [0x01d22d50],ECX      ; 004c6874 | g_CVector3f_01d22d4c.y
+    MOV dword ptr [0x01d22d4c],EDX      ; 004c686e | g_GhoulOffsetMinusX
+    MOV dword ptr [0x01d22d50],ECX      ; 004c6874 | g_GhoulOffsetMinusX.y
     PUSH 0x5c404d                       ; 004c687a
-    MOV dword ptr [0x01d22d54],ECX      ; 004c687f | g_CVector3f_01d22d4c.z
-    MOV dword ptr [0x01d22d58],ESI      ; 004c6885 | g_CVector3f_01d22d58
+    MOV dword ptr [0x01d22d54],ECX      ; 004c687f | g_GhoulOffsetMinusX.z
+    MOV dword ptr [0x01d22d58],ESI      ; 004c6885 | g_GhoulOffsetPlusX
     PUSH 0x1d22d64                      ; 004c688b
-    MOV dword ptr [0x01d22d5c],ECX      ; 004c6890 | g_CVector3f_01d22d58.y
-    MOV dword ptr [0x01d22d60],ECX      ; 004c6896 | g_CVector3f_01d22d58.z
+    MOV dword ptr [0x01d22d5c],ECX      ; 004c6890 | g_GhoulOffsetPlusX.y
+    MOV dword ptr [0x01d22d60],ECX      ; 004c6896 | g_GhoulOffsetPlusX.z
     CALL core_actor.cpp_registerActorClass_FUN_0040c3a0 ; 004c689c
         ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c3a0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factory_func, int * max_version, ...)
     ADD ESP,0x18                        ; 004c68a1

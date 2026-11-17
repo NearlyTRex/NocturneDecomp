@@ -22,7 +22,7 @@
 ;   TerminatedCString s_xplode_wav_6_0_005814f4
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   int g_INT_01c5d704
+;   int g_ExplosionPoolIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CExplosion_activate_FUN_00486e40
@@ -39,7 +39,7 @@ section .text
     PUSH EDI                            ; 0048c0d1
     PUSH EBP                            ; 0048c0d2
     MOV EBX,dword ptr [ESP + 0x14]      ; 0048c0d3
-    MOV EAX,[0x01c5d704]                ; 0048c0d7 | g_INT_01c5d704
+    MOV EAX,[0x01c5d704]                ; 0048c0d7 | g_ExplosionPoolIndex
     SHL EAX,0x2                         ; 0048c0dc
     PUSH dword ptr [ESP + 0x1c]         ; 0048c0df
     MOV EDX,EAX                         ; 0048c0e3
@@ -51,16 +51,16 @@ section .text
     PUSH EAX                            ; 0048c0f4
     CALL core_fire.cpp_CExplosion_activate_FUN_00486e40 ; 0048c0f5
         ;   XREF to: 00486e40 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_00486e40(CExplosion * this_ptr, CVector3f * position, float scale, float gore_multiplier)
-    MOV EDX,dword ptr [0x01c5d704]      ; 0048c0fa | g_INT_01c5d704
+    MOV EDX,dword ptr [0x01c5d704]      ; 0048c0fa | g_ExplosionPoolIndex
     INC EDX                             ; 0048c100
     ADD ESP,0x10                        ; 0048c101
-    MOV dword ptr [0x01c5d704],EDX      ; 0048c104 | g_INT_01c5d704
+    MOV dword ptr [0x01c5d704],EDX      ; 0048c104 | g_ExplosionPoolIndex
     CMP EDX,0xa                         ; 0048c10a
     JL 0x0048c119                       ; 0048c10d
         ;   XREF to: 0048c119 (CONDITIONAL_JUMP)  ; LAB_0048c119
     PUSH ESI                            ; 0048c10f
     XOR ESI,ESI                         ; 0048c110
-    MOV dword ptr [0x01c5d704],ESI      ; 0048c112 | g_INT_01c5d704
+    MOV dword ptr [0x01c5d704],ESI      ; 0048c112 | g_ExplosionPoolIndex
     POP ESI                             ; 0048c118
     PUSH EBX                            ; 0048c119
         ;   Label: LAB_0048c119

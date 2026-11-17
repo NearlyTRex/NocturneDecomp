@@ -12,8 +12,8 @@ int __watcallStack mbstring_termination_check(char *str)
   if (*str == '\0') {
     return 1;
   }
-  if (((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(byte)*str] & 1U) != 0)) && (str[1] == '\0')
-     ) {
+  if (((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*str] & 1U) != 0)) &&
+     (str[1] == '\0')) {
     return 2;
   }
   return 0;

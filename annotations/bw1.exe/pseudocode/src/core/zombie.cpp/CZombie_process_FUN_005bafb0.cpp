@@ -1029,7 +1029,7 @@ LAB_005bca7d:
         if (0xd < uVar9) {
           if (uVar9 < 0xf) {
             iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                              (g_CEventList_PTR_0061b4d0,this_ptr->rise_from_grave_condition);
+                              (g_CEventListPtr,this_ptr->rise_from_grave_condition);
             if ((iVar7 != 0) &&
                (fVar11 = this_ptr->rise_delay - delta_time, this_ptr->rise_delay = fVar11,
                fVar11 < 0.0)) {
@@ -1125,7 +1125,7 @@ LAB_005bbf94:
             fStack_240 = fStack_36c;
           }
           fStack_18 = fStack_240 * fStack_240 + fStack_248 * fStack_248 + fStack_244 * fStack_244;
-          fStack_94 = (float)(((int)fStack_18 >> 1) + g_INT_01cc804c);
+          fStack_94 = (float)(((int)fStack_18 >> 1) + g_FastSqrtMagic);
           if (fStack_94 <= (float)8) {
             fStack_1c = (this_ptr->base).base.collision_cylinder_top;
             if (fStack_1c < (this_ptr->base).base.collision_cylinder_bottom) {
@@ -1295,7 +1295,7 @@ LAB_005bbbdf:
       core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_11c);
       if ((iStack_28 == 1) &&
          (pCStack_44 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c600
-                                          (g_CDemonActor_PTR_007c6380,g_CDoorClassInfo.name_hash),
+                                          (g_LastCollisionActor,g_CDoorClassInfo.name_hash),
          pCStack_40 = pCStack_44, pCStack_44 != (CDoor *)0x0)) {
         (*((pCStack_44->base).vtable._ub)->getBoundingBox)
                   ((CDemonActor *)pCStack_44,(CBoundingBox3D *)in_stack_fffff9d8);

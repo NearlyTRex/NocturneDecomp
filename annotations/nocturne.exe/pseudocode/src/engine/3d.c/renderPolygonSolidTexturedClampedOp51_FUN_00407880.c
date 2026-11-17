@@ -40,7 +40,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_
     g_VertexPreprocessMode = 1;
     iVar2 = 0;
     for (iVar6 = 0; iVar6 < (prim->base).count * 3; iVar6 = iVar6 + 3) {
-      *(int *)((int)g_INT_ARRAY_006b029c + iVar2) = (pSVar4->base).type;
+      *(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
       iVar5 = (pSVar4->surface_normal).A.i;
       if (g_CurrentTextureDimension < 0x41) {
@@ -78,7 +78,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
       g_SRenderVertex_ARRAY_005c5014[pSVar1->type].v = iVar5;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_INT_ARRAY_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

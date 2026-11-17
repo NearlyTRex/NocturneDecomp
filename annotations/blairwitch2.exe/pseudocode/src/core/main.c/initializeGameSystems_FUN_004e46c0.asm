@@ -63,9 +63,9 @@ section .text
     MOV EBX,0x1                         ; 004e46d9
     XOR EDX,EDX                         ; 004e46de
     PUSH 0x5dc18d                       ; 004e46e0 | = "stderr.txt"
-    MOV dword ptr [0x01c38b50],EDX      ; 004e46e5 | g_INT_01c38b50
-    MOV dword ptr [0x0061e28c],ECX      ; 004e46eb | g_INT_0061e28c
-    MOV dword ptr [0x0061e280],EBX      ; 004e46f1 | g_INT_0061e280
+    MOV dword ptr [0x01c38b50],EDX      ; 004e46e5 | g_ProcessorType
+    MOV dword ptr [0x0061e28c],ECX      ; 004e46eb | g_FullScreenQuadDepth
+    MOV dword ptr [0x0061e280],EBX      ; 004e46f1 | g_SystemInitialized
     CALL crt_stdio.c_fopen_FUN_005b910c ; 004e46f7
         ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004e46fc
@@ -104,7 +104,7 @@ section .text
     ADD ESP,0x4                         ; 004e4765
     CALL core_mmx.c_detectCPUFeatures_FUN_004fd490 ; 004e4768
         ;   XREF to: 004fd490 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_004fd490()
-    CMP dword ptr [0x01c38b40],0x0      ; 004e476d | g_INT_01c38b40
+    CMP dword ptr [0x01c38b40],0x0      ; 004e476d | g_MMXSupported
     JNZ 0x004e47a2                      ; 004e4774
         ;   XREF to: 004e47a2 (CONDITIONAL_JUMP)  ; LAB_004e47a2
     MOV EBX,0x5dc1f4                    ; 004e4776 | = "..\\core\\main.c"
@@ -150,7 +150,7 @@ section .text
     CALL core_dfont.cpp_initFonts_FUN_00447ea0 ; 004e47f5
         ;   XREF to: 00447ea0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_00447ea0()
         ;   Label: LAB_004e47f5
-    CMP dword ptr [0x02664638],0x3c00000 ; 004e47fa | g_INT_02664638
+    CMP dword ptr [0x02664638],0x3c00000 ; 004e47fa | g_TotalPhysicalMemory
     JGE 0x004e4a78                      ; 004e4804
         ;   XREF to: 004e4a78 (CONDITIONAL_JUMP)  ; LAB_004e4a78
     PUSH 0x5dc2c7                       ; 004e480a | = "Windows is reporting "
@@ -175,8 +175,8 @@ section .text
         ;   XREF to: 004e4821 (CONDITIONAL_JUMP)  ; LAB_004e4821
     POP EDI                             ; 004e4839
         ;   Label: LAB_004e4839
-    FILD dword ptr [0x02664638]         ; 004e483a | g_INT_02664638
-    FMUL float ptr [0x005dc481]         ; 004e4840 | g_FLOAT_005dc481
+    FILD dword ptr [0x02664638]         ; 004e483a | g_TotalPhysicalMemory
+    FMUL float ptr [0x005dc481]         ; 004e4840 | g_AvailableMemMultiplier
     SUB ESP,0x8                         ; 004e4846
     FSTP double ptr [ESP]               ; 004e4849
     PUSH 0x5dc2dd                       ; 004e484c | = "%.1f"
@@ -469,7 +469,7 @@ section .text
     POP EDI                             ; 004e4ab2
         ;   Label: LAB_004e4ab2
     FILD dword ptr [0x0266463c]         ; 004e4ab3 | g_INT_0266463c
-    FMUL float ptr [0x005dc481]         ; 004e4ab9 | g_FLOAT_005dc481
+    FMUL float ptr [0x005dc481]         ; 004e4ab9 | g_AvailableMemMultiplier
     SUB ESP,0x8                         ; 004e4abf
     FSTP double ptr [ESP]               ; 004e4ac2
     PUSH 0x5dc3b2                       ; 004e4ac5 | = "%.1f"
@@ -649,13 +649,13 @@ section .text
         ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0055b1f0()
     LEA EAX,[ESP + 0x500]               ; 004e4c26
     PUSH EAX                            ; 004e4c2d
-    MOV ECX,dword ptr [0x01511cc0]      ; 004e4c2e | g_CBitFont_PTR_01511cc0
+    MOV ECX,dword ptr [0x01511cc0]      ; 004e4c2e | g_ThemeFont
     PUSH ECX                            ; 004e4c34
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004e4c35
         ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004e4c3a
     PUSH 0x58                           ; 004e4c3d
-    MOV EBX,dword ptr [0x01511cc0]      ; 004e4c3f | g_CBitFont_PTR_01511cc0
+    MOV EBX,dword ptr [0x01511cc0]      ; 004e4c3f | g_ThemeFont
     PUSH EBX                            ; 004e4c45
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004e4c46
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
@@ -725,16 +725,16 @@ section .text
         ;   Label: LAB_004e4d0d
     MOV EAX,dword ptr [EBX + 0x60a0a4]  ; 004e4d14 | g_PlayerFilters | DAT_0060a0a8
     FILD dword ptr [ESP + 0x714]        ; 004e4d1a
-    MOV dword ptr [EAX],0x100           ; 004e4d21 | CDemonFilter_ARRAY_01510e18 | CDemonFilter_ARRAY_01510e18[1].size
+    MOV dword ptr [EAX],0x100           ; 004e4d21 | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     FMUL double ptr [0x005dc48d]        ; 004e4d27 | g_DOUBLE_005dc48d
     MOV EAX,dword ptr [EBX + 0x60a0a4]  ; 004e4d2d | g_PlayerFilters | DAT_0060a0a8
     PUSH 0x0                            ; 004e4d33
-    MOV dword ptr [EAX + 0x4],0x100     ; 004e4d35 | CDemonFilter_ARRAY_01510e18[0].count | CDemonFilter_ARRAY_01510e18[1].count
+    MOV dword ptr [EAX + 0x4],0x100     ; 004e4d35 | g_PlayerFilterPool[0].count | g_PlayerFilterPool[1].count
     FADD double ptr [0x005dc48d]        ; 004e4d3c | g_DOUBLE_005dc48d
     SUB ESP,0x4                         ; 004e4d42
     FSTP float ptr [ESP]                ; 004e4d45
     MOV EDX,dword ptr [EBX + 0x60a0a4]  ; 004e4d48 | g_PlayerFilters | DAT_0060a0a8
-    PUSH EDX                            ; 004e4d4e | CDemonFilter_ARRAY_01510e18 | CDemonFilter_ARRAY_01510e18[1].size
+    PUSH EDX                            ; 004e4d4e | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     ADD EBX,0x4                         ; 004e4d4f
     INC ESI                             ; 004e4d52
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_00447ad0 ; 004e4d53

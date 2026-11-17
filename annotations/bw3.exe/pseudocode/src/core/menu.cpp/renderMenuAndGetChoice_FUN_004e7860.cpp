@@ -92,16 +92,16 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_a
   }
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
   _sprintf(local_f0,"Blair Witch Volume III: The Elly Kedward Tale (c) 2000 Ritual Entertainment, Ver %1.2f");
-  if (g_INT_01dd4890 == 0) {
-    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549ab4,local_f0);
-    iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_CBitFont_PTR_01549ab4,local_f0);
+  if (g_UseOSFonts == 0) {
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_SmallEditorFont,local_f0);
+    iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_SmallEditorFont,local_f0);
   }
   else {
-    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549ab4,local_f0);
-    iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_CBitFont_PTR_01549ab4,local_f0);
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_SmallEditorFont,local_f0);
+    iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_SmallEditorFont,local_f0);
   }
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-            (g_CBitFont_PTR_01549ab4,local_f0,0x26b - iVar2,0x1df - iVar5,0xf8,0);
+            (g_SmallEditorFont,local_f0,0x26b - iVar2,0x1df - iVar5,0xf8,0);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {
     pcVar6 = pcVar7;
@@ -114,7 +114,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_a
   pcVar6 = (char *)0x0;
 LAB_004e7adc:
   g_INT_01d737e4 = 0;
-  iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD8);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar2 != 0) {
     g_INT_01d737e4 = 1;
     iVar2 = *selected_index_ptr;
@@ -123,7 +123,7 @@ LAB_004e7adc:
       *selected_index_ptr = menu_count + -1;
     }
   }
-  iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD2);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar2 != 0) {
     iVar2 = *selected_index_ptr;
     g_INT_01d737e4 = 1;
@@ -134,15 +134,15 @@ LAB_004e7adc:
   }
   if (pcVar6 != (char *)0x0) {
     g_INT_01d737d4 = 0;
-    iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD4);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
       g_INT_01d737d4 = 1;
       return *selected_index_ptr;
     }
-    iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD6);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) goto LAB_004e7bab;
   }
-  iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_RETURN);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   if (iVar2 == 0) {
     return -1;
   }

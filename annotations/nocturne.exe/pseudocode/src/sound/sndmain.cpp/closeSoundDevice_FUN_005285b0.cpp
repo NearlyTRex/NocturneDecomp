@@ -21,15 +21,15 @@ int __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_005285b0(void)
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);
       this_ptr = this_ptr + 1;
     } while (this_ptr != (CSfxSample *)0x2dc78dc);
-    if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
+    if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       iVar2 = 1;
     }
     else {
-      iVar1 = (*g_CSoundDevice_PTR_02dc8318->vtable->close)(g_CSoundDevice_PTR_02dc8318);
+      iVar1 = (*g_CSoundDevicePtr->vtable->close)(g_CSoundDevicePtr);
       iVar2 = 0;
       if (iVar1 != 0) {
-        g_INT_02dc8320 = 0;
-        g_CSoundDevice_PTR_02dc8318 = (CSoundDevice *)0x0;
+        g_HasHardware3DSound = 0;
+        g_CSoundDevicePtr = (CSoundDevice *)0x0;
         return 1;
       }
     }

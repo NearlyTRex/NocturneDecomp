@@ -26,7 +26,7 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(STextView *this
     do {
       pcVar4 = pcVar5;
       pcVar5 = pcVar4 + 1;
-    } while ((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar4 + 1)] & 2) != 0);
+    } while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2) != 0);
     cVar1 = *pcVar4;
     pcVar6 = pcVar4;
     if (cVar1 == '\0') break;
@@ -72,7 +72,7 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(STextView *this
         local_314[0] = ' ';
       }
       uVar3 = (uint)bVar7;
-      for (; ((((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar6 + 1)] & 2) == 0 &&
+      for (; ((((g_CharacterClassificationTable[(byte)(*pcVar6 + 1)] & 2) == 0 &&
                (cVar1 = *pcVar6, cVar1 != '\0')) && (cVar1 != '<')) && (cVar1 != '>'));
           pcVar6 = pcVar6 + 1) {
         local_314[uVar3] = cVar1;

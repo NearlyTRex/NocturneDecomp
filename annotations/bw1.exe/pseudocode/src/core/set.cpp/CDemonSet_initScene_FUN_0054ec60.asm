@@ -21,12 +21,12 @@
 ;   TerminatedCString s_CDemonSet_initScene_Too_005f07a0
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
-;   CWeather* g_CWeather_PTR_0062604c = 02c997c0
+;   CWeather* g_CWeatherPtr = 02c997c0
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
-;   int g_INT_01fe4cb4
+;   int g_MasterLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fe4cb8
-;   int g_INT_01fe4e38
+;   int g_SpotLightCount
 ;   int g_INT_01fe55bc
 ;   int g_INT_01fe55d0
 ;   ... and 2 more
@@ -144,7 +144,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x19a2c]   ; 0054ed62
     XOR EDX,EDX                         ; 0054ed68
     XOR ESI,ESI                         ; 0054ed6a
-    MOV dword ptr [0x01fe4cb4],EDX      ; 0054ed6c | g_INT_01fe4cb4
+    MOV dword ptr [0x01fe4cb4],EDX      ; 0054ed6c | g_MasterLightCount
     TEST ECX,ECX                        ; 0054ed72
     JLE 0x0054eda5                      ; 0054ed74
         ;   XREF to: 0054eda5 (CONDITIONAL_JUMP)  ; LAB_0054eda5
@@ -163,7 +163,7 @@ section .text
     CMP ESI,EBP                         ; 0054eda1
     JL 0x0054ed81                       ; 0054eda3
         ;   XREF to: 0054ed81 (CONDITIONAL_JUMP)  ; LAB_0054ed81
-    MOV EAX,[0x01fe4cb4]                ; 0054eda5 | g_INT_01fe4cb4
+    MOV EAX,[0x01fe4cb4]                ; 0054eda5 | g_MasterLightCount
         ;   Label: LAB_0054eda5
     XOR EDI,EDI                         ; 0054edaa
     TEST EAX,EAX                        ; 0054edac
@@ -193,7 +193,7 @@ section .text
     INC EDI                             ; 0054ede2
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0 ; 0054ede3
         ;   XREF to: 00462ad0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0(CDemonLight * this_ptr, int restore_viewport_state)
-    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054ede8 | g_INT_01fe4cb4
+    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054ede8 | g_MasterLightCount
     ADD ESP,0x8                         ; 0054edee
     CMP EDI,EDX                         ; 0054edf1
     JL 0x0054edb2                       ; 0054edf3
@@ -207,10 +207,10 @@ section .text
     MOV dword ptr [EBX + 0x15aebc],0xffffffff ; 0054ee0b
     XOR ECX,ECX                         ; 0054ee15
     XOR ESI,ESI                         ; 0054ee17
-    MOV dword ptr [0x01fe4e38],ECX      ; 0054ee19 | g_INT_01fe4e38
+    MOV dword ptr [0x01fe4e38],ECX      ; 0054ee19 | g_SpotLightCount
     MOV dword ptr [0x01fe5c88],ECX      ; 0054ee1f | g_INT_01fe5c88
     MOV dword ptr [0x01fe55d0],ECX      ; 0054ee25 | g_INT_01fe55d0
-    MOV dword ptr [0x01fe5764],ECX      ; 0054ee2b | g_INT_01fe5764
+    MOV dword ptr [0x01fe5764],ECX      ; 0054ee2b | g_QueuedCoronaGlobeCount
     MOV dword ptr [EBX + 0x15aec0],ECX  ; 0054ee31
     CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10 ; 0054ee37
         ;   XREF to: 0055bf10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10(CDemonSet * this_ptr)
@@ -239,7 +239,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x161680]  ; 0054ee70
         ;   Label: LAB_0054ee70
     PUSH ECX                            ; 0054ee76
-    MOV EBX,dword ptr [0x0062604c]      ; 0054ee77 | g_CWeather_PTR_0062604c
+    MOV EBX,dword ptr [0x0062604c]      ; 0054ee77 | g_CWeatherPtr
     PUSH EBX                            ; 0054ee7d
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_005aefc0 ; 0054ee7e
         ;   XREF to: 005aefc0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005aefc0(CWeather * this_ptr, EWeatherType type)
@@ -257,15 +257,15 @@ section .text
         ;   XREF to: 0055cf80 (UNCONDITIONAL_CALL)  ; CDemonLight * core_setutil.cpp_C3DSLight_create_FUN_0055cf80(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 0054ee97
     PUSH EAX                            ; 0054ee9a
-    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054ee9b | g_INT_01fe4cb4
+    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054ee9b | g_MasterLightCount
     PUSH EBP                            ; 0054eea1
     MOV dword ptr [EDX*0x4 + 0x1fe4cb8],EAX ; 0054eea2 | g_CDemonLight_PTR_ARRAY_01fe4cb8
     CALL core_setutil.cpp_C3DSLight_apply_FUN_0055d0e0 ; 0054eea9
         ;   XREF to: 0055d0e0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_apply_FUN_0055d0e0(C3DSLight * this_ptr, CDemonLight * light)
-    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054eeae | g_INT_01fe4cb4
+    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054eeae | g_MasterLightCount
     INC EDX                             ; 0054eeb4
     ADD ESP,0x8                         ; 0054eeb5
-    MOV dword ptr [0x01fe4cb4],EDX      ; 0054eeb8 | g_INT_01fe4cb4
+    MOV dword ptr [0x01fe4cb4],EDX      ; 0054eeb8 | g_MasterLightCount
     CMP EDX,0x60                        ; 0054eebe
     JLE 0x0054ed94                      ; 0054eec1
         ;   XREF to: 0054ed94 (CONDITIONAL_JUMP)  ; LAB_0054ed94

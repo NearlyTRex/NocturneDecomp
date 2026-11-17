@@ -16,10 +16,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
   byte **ppuVar5;
   void **ppvVar6;
   
-  g_INT_0140efa8 = g_INT_0140efa8 + -1;
-  if (g_INT_0140efa8 == 0) {
-    g_BitsPerPixel = g_INT_0140efac;
-    g_UseExternalRenderer = g_INT_0140efb0;
+  g_BackgroundSceneDepth = g_BackgroundSceneDepth + -1;
+  if (g_BackgroundSceneDepth == 0) {
+    g_BitsPerPixel = g_BackgroundSavedBitsPerPixel;
+    g_UseExternalRenderer = g_BackgroundSavedUseExternalRenderer;
     ppuVar5 = g_ARRAY_PTR_0140efb4;
     ppvVar6 = g_ScreenBufferArray;
     for (uVar2 = g_WindowHeight & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
@@ -32,9 +32,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
       ppuVar5 = (byte **)((int)ppuVar5 + 1);
       ppvVar6 = (void **)((int)ppvVar6 + 1);
     }
-    g_RedBitPosition.dword = g_INT_01410274;
-    g_GreenBitPosition.dword = g_INT_01410278;
-    g_BlueBitPosition.dword = g_INT_0141027c;
+    g_RedBitPosition.dword = g_BackgroundSavedRedBitPosition;
+    g_GreenBitPosition.dword = g_BackgroundSavedGreenBitPosition;
+    g_BlueBitPosition.dword = g_BackgroundSavedBlueBitPosition;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
       if (0 < (int)this_ptr->max_distance) {

@@ -16,7 +16,7 @@ void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
   if (iVar1 != 0) {
     sound_sndmain_cpp_enableSfxChannel_FUN_00527410(3,1);
     fVar2 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(0);
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(3,fVar2 * g_FLOAT_02dc9c98);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(3,fVar2 * g_CurrentVolumeMultiplier);
     return;
   }
   sound_sndmain_cpp_enableSfxChannel_FUN_00527410(3,0);

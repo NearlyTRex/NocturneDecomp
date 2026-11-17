@@ -79,17 +79,17 @@
 ;   TerminatedCString s_Error_in_streo_processin_0058b8c1
 ;   double DOUBLE_0058b8e8 = 0.261799387799149
 ;   double DOUBLE_0058b8f0 = 0.707106782373095
-;   SMpegLayer3BandIndex[6] g_SMpegLayer3BandIndex_ARRAY_005bc0f8
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[3]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[12]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[13]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[20]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[21]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[11]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12]
-;   undefined4 g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13]
+;   SMpegLayer3BandIndex[6] g_Layer3BandIndex
+;   undefined4 g_Layer3BandIndex[0].l[1]
+;   undefined4 g_Layer3BandIndex[0].l[2]
+;   undefined4 g_Layer3BandIndex[0].l[3]
+;   undefined4 g_Layer3BandIndex[0].l[12]
+;   undefined4 g_Layer3BandIndex[0].l[13]
+;   undefined4 g_Layer3BandIndex[0].l[20]
+;   undefined4 g_Layer3BandIndex[0].l[21]
+;   undefined4 g_Layer3BandIndex[0].s[11]
+;   undefined4 g_Layer3BandIndex[0].s[12]
+;   undefined4 g_Layer3BandIndex[0].s[13]
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -325,14 +325,14 @@ section .text
     ADD EDX,EAX                         ; 004e6472
     SHL EDX,0x2                         ; 004e6474
     XOR ESI,ESI                         ; 004e6477
-    MOV ECX,dword ptr [EDX + 0x5bc0f8]  ; 004e6479 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8
+    MOV ECX,dword ptr [EDX + 0x5bc0f8]  ; 004e6479 | g_Layer3BandIndex
     MOV EAX,EDX                         ; 004e647f
     CMP EDI,ECX                         ; 004e6481
     JL 0x004e64a0                       ; 004e6483
         ;   XREF to: 004e64a0 (CONDITIONAL_JUMP)  ; LAB_004e64a0
     INC ESI                             ; 004e6485
         ;   Label: LAB_004e6485
-    MOV EBX,dword ptr [EAX + 0x5bc0fc]  ; 004e6486 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
+    MOV EBX,dword ptr [EAX + 0x5bc0fc]  ; 004e6486 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     ADD EAX,0x4                         ; 004e648c
     CMP EDI,EBX                         ; 004e648f
     JGE 0x004e6485                      ; 004e6491
@@ -343,7 +343,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1f8c]    ; 004e64a0
         ;   Label: LAB_004e64a0
     MOV dword ptr [ESP + 0x1f98],ESI    ; 004e64a7
-    MOV ESI,dword ptr [EAX + 0x5bc0f8]  ; 004e64ae | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
+    MOV ESI,dword ptr [EAX + 0x5bc0f8]  ; 004e64ae | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     LEA EAX,[EDX*0x8 + 0x0]             ; 004e64b4
     ADD EAX,EDX                         ; 004e64bb
     SHL EAX,0x2                         ; 004e64bd
@@ -361,8 +361,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1ff4]    ; 004e64f4
         ;   Label: LAB_004e64f4
     MOV EDI,dword ptr [ESP + 0x1ff4]    ; 004e64fb
-    MOV EBX,dword ptr [EAX + 0x5bc0f8]  ; 004e6502 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
-    MOV EDI,dword ptr [EDI + 0x5bc0fc]  ; 004e6508 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[3]
+    MOV EBX,dword ptr [EAX + 0x5bc0f8]  ; 004e6502 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
+    MOV EDI,dword ptr [EDI + 0x5bc0fc]  ; 004e6508 | g_Layer3BandIndex[0].l[2] | g_Layer3BandIndex[0].l[3]
     SUB EDI,EBX                         ; 004e650e
     TEST EDI,EDI                        ; 004e6510
     JLE 0x004e65a1                      ; 004e6512
@@ -422,10 +422,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1fec]    ; 004e65db
         ;   Label: LAB_004e65db
     MOV EDI,0x240                       ; 004e65e2
-    MOV ECX,dword ptr [EAX + 0x5bc14c]  ; 004e65e7 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[21]
+    MOV ECX,dword ptr [EAX + 0x5bc14c]  ; 004e65e7 | g_Layer3BandIndex[0].l[21]
     MOV EDX,dword ptr [ESP + 0x1fec]    ; 004e65ed
     SUB EDI,ECX                         ; 004e65f4
-    MOV EDX,dword ptr [EDX + 0x5bc148]  ; 004e65f6 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[20]
+    MOV EDX,dword ptr [EDX + 0x5bc148]  ; 004e65f6 | g_Layer3BandIndex[0].l[20]
     TEST EDI,EDI                        ; 004e65fc
     JLE 0x004e6240                      ; 004e65fe
         ;   XREF to: 004e6240 (CONDITIONAL_JUMP)  ; LAB_004e6240
@@ -488,8 +488,8 @@ section .text
         ;   Label: LAB_004e66f0
     LEA EAX,[ESI*0x4 + 0x0]             ; 004e66f7
     ADD EAX,EDI                         ; 004e66fe
-    MOV EBX,dword ptr [EAX + 0x5bc158]  ; 004e6700 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[13]
-    MOV EDX,dword ptr [EAX + 0x5bc154]  ; 004e6706 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[12]
+    MOV EBX,dword ptr [EAX + 0x5bc158]  ; 004e6700 | g_Layer3BandIndex[0].s[13] | g_Layer3BandIndex[0].l[13]
+    MOV EDX,dword ptr [EAX + 0x5bc154]  ; 004e6706 | g_Layer3BandIndex[0].s[12] | g_Layer3BandIndex[0].l[12]
     MOV EAX,dword ptr [ESP + 0x1fb0]    ; 004e670c
     SUB EBX,EDX                         ; 004e6713
     IMUL EAX,EBX                        ; 004e6715
@@ -553,8 +553,8 @@ section .text
     LEA EDX,[ESI*0x4 + 0x0]             ; 004e67d4
     MOV EAX,dword ptr [ESP + 0x2014]    ; 004e67db
     MOV ESI,dword ptr [ESP + 0x2014]    ; 004e67e2
-    MOV EDI,dword ptr [EAX + 0x5bc154]  ; 004e67e9 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13]
-    MOV ESI,dword ptr [ESI + 0x5bc158]  ; 004e67ef | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[1].l[0]
+    MOV EDI,dword ptr [EAX + 0x5bc154]  ; 004e67e9 | g_Layer3BandIndex[0].s[13]
+    MOV ESI,dword ptr [ESI + 0x5bc158]  ; 004e67ef | g_Layer3BandIndex[1].l[0]
     MOV EAX,dword ptr [ESP + 0x205c]    ; 004e67f5
     SUB ESI,EDI                         ; 004e67fc
     IMUL EAX,ESI                        ; 004e67fe
@@ -649,7 +649,7 @@ section .text
     SHL EDX,0x2                         ; 004e694d
     MOV EDI,dword ptr [ESP + 0x2064]    ; 004e6950
     MOV EAX,EDX                         ; 004e6957
-    MOV EDX,dword ptr [EDX + 0x5bc0f8]  ; 004e6959 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8
+    MOV EDX,dword ptr [EDX + 0x5bc0f8]  ; 004e6959 | g_Layer3BandIndex
     XOR ESI,ESI                         ; 004e695f
     CMP EDX,EDI                         ; 004e6961
     JG 0x004e6980                       ; 004e6963
@@ -657,7 +657,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2064]    ; 004e6965
     INC ESI                             ; 004e696c
         ;   Label: LAB_004e696c
-    MOV EDX,dword ptr [EAX + 0x5bc0fc]  ; 004e696d | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
+    MOV EDX,dword ptr [EAX + 0x5bc0fc]  ; 004e696d | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     ADD EAX,0x4                         ; 004e6973
     CMP EDX,ECX                         ; 004e6976
     JLE 0x004e696c                      ; 004e6978
@@ -666,7 +666,7 @@ section .text
     MOV dword ptr [ESP + 0x2048],ESI    ; 004e6980
         ;   Label: LAB_004e6980
     MOV EBX,dword ptr [ESP + 0x2048]    ; 004e6987
-    MOV ESI,dword ptr [EAX + 0x5bc0f8]  ; 004e698e | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
+    MOV ESI,dword ptr [EAX + 0x5bc0f8]  ; 004e698e | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     CMP EBX,0x8                         ; 004e6994
     JGE 0x004e6240                      ; 004e6997
         ;   XREF to: 004e6240 (CONDITIONAL_JUMP)  ; LAB_004e6240
@@ -682,8 +682,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2020]    ; 004e69c5
         ;   Label: LAB_004e69c5
     MOV EDX,dword ptr [ESP + 0x2020]    ; 004e69cc
-    MOV EDI,dword ptr [EDI + 0x5bc0fc]  ; 004e69d3 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[3] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1]
-    MOV ECX,dword ptr [EDX + 0x5bc0f8]  ; 004e69d9 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[1] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[2]
+    MOV EDI,dword ptr [EDI + 0x5bc0fc]  ; 004e69d3 | g_Layer3BandIndex[0].l[2] | g_Layer3BandIndex[0].l[3] | g_Layer3BandIndex[0].l[1]
+    MOV ECX,dword ptr [EDX + 0x5bc0f8]  ; 004e69d9 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     MOV EAX,dword ptr [ESP + 0x2048]    ; 004e69df
     SUB EDI,ECX                         ; 004e69e6
     SHL EAX,0x2                         ; 004e69e8
@@ -757,15 +757,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1fe8]    ; 004e6ad5
         ;   Label: LAB_004e6ad5
     MOV ESI,dword ptr [ESP + 0x1fe8]    ; 004e6adc
-    MOV EDI,dword ptr [EAX + 0x5bc180]  ; 004e6ae3 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[11]
-    MOV ESI,dword ptr [ESI + 0x5bc184]  ; 004e6ae9 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12]
+    MOV EDI,dword ptr [EAX + 0x5bc180]  ; 004e6ae3 | g_Layer3BandIndex[0].s[11]
+    MOV ESI,dword ptr [ESI + 0x5bc184]  ; 004e6ae9 | g_Layer3BandIndex[0].s[12]
     MOV EDX,dword ptr [ESP + 0x205c]    ; 004e6aef
     SUB ESI,EDI                         ; 004e6af6
     IMUL EDX,ESI                        ; 004e6af8
     MOV ECX,dword ptr [ESP + 0x1fe8]    ; 004e6afb
     MOV ESI,dword ptr [ESP + 0x1fe8]    ; 004e6b02
-    MOV EBX,dword ptr [ECX + 0x5bc184]  ; 004e6b09 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12]
-    MOV ESI,dword ptr [ESI + 0x5bc188]  ; 004e6b0f | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13]
+    MOV EBX,dword ptr [ECX + 0x5bc184]  ; 004e6b09 | g_Layer3BandIndex[0].s[12]
+    MOV ESI,dword ptr [ESI + 0x5bc188]  ; 004e6b0f | g_Layer3BandIndex[0].s[13]
     MOV ECX,dword ptr [ESP + 0x205c]    ; 004e6b15
     SUB ESI,EBX                         ; 004e6b1c
     IMUL ECX,ESI                        ; 004e6b1e
@@ -841,8 +841,8 @@ section .text
         ;   Label: LAB_004e6c18
     LEA EAX,[ESI*0x4 + 0x0]             ; 004e6c1f
     ADD EAX,EBX                         ; 004e6c26
-    MOV EBX,dword ptr [EAX + 0x5bc158]  ; 004e6c28 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[13]
-    MOV EDI,dword ptr [EAX + 0x5bc154]  ; 004e6c2e | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].l[12]
+    MOV EBX,dword ptr [EAX + 0x5bc158]  ; 004e6c28 | g_Layer3BandIndex[0].s[13] | g_Layer3BandIndex[0].l[13]
+    MOV EDI,dword ptr [EAX + 0x5bc154]  ; 004e6c2e | g_Layer3BandIndex[0].s[12] | g_Layer3BandIndex[0].l[12]
     MOV EDX,dword ptr [ESP + 0x1fc8]    ; 004e6c34
     SUB EBX,EDI                         ; 004e6c3b
     IMUL EDX,EBX                        ; 004e6c3d
@@ -900,8 +900,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2004]    ; 004e6cf1
         ;   Label: LAB_004e6cf1
     MOV ESI,dword ptr [ESP + 0x2004]    ; 004e6cf8
-    MOV EDI,dword ptr [EAX + 0x5bc154]  ; 004e6cff | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[1].l[0]
-    MOV ESI,dword ptr [ESI + 0x5bc158]  ; 004e6d05 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[1].l[0] | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[1].l[1]
+    MOV EDI,dword ptr [EAX + 0x5bc154]  ; 004e6cff | g_Layer3BandIndex[0].s[13] | g_Layer3BandIndex[1].l[0]
+    MOV ESI,dword ptr [ESI + 0x5bc158]  ; 004e6d05 | g_Layer3BandIndex[1].l[0] | g_Layer3BandIndex[1].l[1]
     MOV EAX,dword ptr [ESP + 0x1f9c]    ; 004e6d0b
     SUB ESI,EDI                         ; 004e6d12
     IMUL EAX,ESI                        ; 004e6d14
@@ -965,15 +965,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1fe4]    ; 004e6deb
         ;   Label: LAB_004e6deb
     MOV ESI,dword ptr [ESP + 0x1fe4]    ; 004e6df2
-    MOV EDI,dword ptr [EAX + 0x5bc180]  ; 004e6df9 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[11]
-    MOV ESI,dword ptr [ESI + 0x5bc184]  ; 004e6dff | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12]
+    MOV EDI,dword ptr [EAX + 0x5bc180]  ; 004e6df9 | g_Layer3BandIndex[0].s[11]
+    MOV ESI,dword ptr [ESI + 0x5bc184]  ; 004e6dff | g_Layer3BandIndex[0].s[12]
     MOV ECX,dword ptr [ESP + 0x1f9c]    ; 004e6e05
     SUB ESI,EDI                         ; 004e6e0c
     IMUL ECX,ESI                        ; 004e6e0e
     MOV EDX,dword ptr [ESP + 0x1fe4]    ; 004e6e11
     MOV ESI,dword ptr [ESP + 0x1fe4]    ; 004e6e18
-    MOV EBX,dword ptr [EDX + 0x5bc184]  ; 004e6e1f | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[12]
-    MOV ESI,dword ptr [ESI + 0x5bc188]  ; 004e6e25 | g_SMpegLayer3BandIndex_ARRAY_005bc0f8[0].s[13]
+    MOV EBX,dword ptr [EDX + 0x5bc184]  ; 004e6e1f | g_Layer3BandIndex[0].s[12]
+    MOV ESI,dword ptr [ESI + 0x5bc188]  ; 004e6e25 | g_Layer3BandIndex[0].s[13]
     MOV EDX,dword ptr [ESP + 0x1f9c]    ; 004e6e2b
     SUB ESI,EBX                         ; 004e6e32
     IMUL EDX,ESI                        ; 004e6e34

@@ -62,7 +62,7 @@
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_INT_ARRAY_01cae1e0[2]
+;   undefined4 g_HotDemonIndices[2]
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -353,7 +353,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004b9200
     ADD ESP,0x8                         ; 004b9203
     LEA EAX,[EBP + 0xffffff7e]          ; 004b9206
-    MOV EDX,dword ptr [0x01cae1e8]      ; 004b920c | g_INT_ARRAY_01cae1e0[2]
+    MOV EDX,dword ptr [0x01cae1e8]      ; 004b920c | g_HotDemonIndices[2]
     PUSH EAX                            ; 004b9212
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b9213
     MOV dword ptr [EBP + -0x4e],EBX     ; 004b921a

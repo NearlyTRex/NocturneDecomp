@@ -29,7 +29,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004468c0(CDemonCube *t
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
   if (20000 < this_ptr->vertex_count) {
     g_CHAR_PTR_01d046a0 = "..\\core\\dcube.cpp";
     g_INT_01d046a4 = 0x7bb;
@@ -61,11 +61,11 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004468c0(CDemonCube *t
                 (g_CDemonRenderer_PTR_0060b280,0);
     }
   }
-  if ((g_UCHAR_01510848 & 1) == 0) {
-    g_UCHAR_01510848 = g_UCHAR_01510848 | 1;
-    g_CVector3f_0151083c.x = 0.57735026;
-    g_CVector3f_0151083c.z = 0.57735026;
-    g_CVector3f_0151083c.y = -0.57735026;
+  if ((g_ColorConstantsInitialized & 1) == 0) {
+    g_ColorConstantsInitialized = g_ColorConstantsInitialized | 1;
+    g_StaticColorVector.x = 0.57735026;
+    g_StaticColorVector.z = 0.57735026;
+    g_StaticColorVector.y = -0.57735026;
   }
   local_14 = 0;
   if (0 < this_ptr->triangle_count) {

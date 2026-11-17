@@ -8,8 +8,8 @@
 CAlphaBitmap CAlphaBitmap_ARRAY_007dffc0[4] = {};
 
 // CDemonActor*
-CDemonActor* g_CDemonActor_PTR_007df974 = {};
-CDemonActor* g_CDemonActor_PTR_007df9bc = {};
+CDemonActor* g_CurrentProcessingActor = {};
+CDemonActor* g_CurrentActorBeingProcessed = {};
 
 // CDemonActorType
 CDemonActorType g_CDemonActorClassInfo = {};
@@ -26,28 +26,28 @@ CDemonActorType g_CBirdClassInfo = {};
 CDemonActorType g_CBlunderbusClassInfo = {};
 
 // CDemonActorType*[200]
-CDemonActorType* g_CDemonActorType_PTR_ARRAY_007df9c8[200] = {};
+CDemonActorType* g_ActorClassRegistrations[200] = {};
 
 // CPuzzle*
 CPuzzle* g_CPuzzle_PTR_007dffb4 = {};
 
 // SMRGLHeaderPrimitive*[2000]
-SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007dd9f4[2000] = {};
+SMRGLHeaderPrimitive* g_RenderFaceArray[2000] = {};
 
 // SRenderBufferEntry*[2500]
-SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007db2e0[2500] = {};
+SRenderBufferEntry* g_RenderBufferSortArray[2500] = {};
 
 // _FILE*
-_FILE* g_FILE_PTR_007df9b4 = {};
+_FILE* g_ActorDataFile = {};
 
 // char[52]
-char g_CHAR_ARRAY_007df940[52] = {};
+char g_ActorDebugBuffer[52] = {};
 
 // int
-int g_INT_007dd9f0 = {};
-int g_INT_007df9b8 = {};
-int g_INT_007df9c0 = {};
-int g_INT_007df9c4 = {};
+int g_RenderFaceCount = {};
+int g_ActorReadingMode = {};
+int g_IncludeCommentsWhenWriting = {};
+int g_NumActorClassTypes = {};
 int g_INT_007dff08 = {};
 int g_INT_007dffb8 = {};
 int g_INT_007dffbc = {};
@@ -56,7 +56,7 @@ int g_INT_007dffbc = {};
 int g_INT_ARRAY_007dff88[1] = {};
 
 // uint
-uint g_UINT_007dfce8 = {};
+uint g_RandomSeedValue = {};
 
 // undefined4
 undefined4 DAT_007dff8c = {};

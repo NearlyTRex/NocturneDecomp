@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 710,
-    "complexity_score": 612,
+    "complexity_score": 613,
     "cross_reference_count": 8,
     "function_call_count": 21,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 248,
     "suspect_count": 36,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 957
+    "total_lines": 958
   },
   "cross_references": [
     {
@@ -222,13 +222,13 @@
     },
     {
       "addr": "01c5b104",
-      "name": "g_INT_01c5b104",
+      "name": "g_WindowStackCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5bae0",
-      "name": "g_INT_01c5bae0",
+      "name": "g_EditorFontMaxCharWidth",
       "type": "int",
       "value": null
     },
@@ -246,31 +246,31 @@
     },
     {
       "addr": "01c5baf0",
-      "name": "g_INT_01c5baf0",
+      "name": "g_WindowContentColor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5baf4",
-      "name": "g_INT_01c5baf4",
+      "name": "g_WindowBorderHighlightColor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5baf8",
-      "name": "g_INT_01c5baf8",
+      "name": "g_WindowBorderShadowColor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5bafc",
-      "name": "g_INT_01c5bafc",
+      "name": "g_TitleBarColor",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c5bb00",
-      "name": "g_INT_01c5bb00",
+      "name": "g_TitleBarFillColor",
       "type": "int",
       "value": null
     },
@@ -671,7 +671,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1;",
@@ -679,7 +679,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 95,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1;",
@@ -687,7 +687,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 102,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
@@ -695,7 +695,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 103,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1;",
@@ -703,7 +703,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 104,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar3 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1;",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 116,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "local_14 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + 1;",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 118,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "((float)*piVar6,(float)*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 119,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "(float)local_14,(float)(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + 1));",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 131,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "(*piVar6,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 132,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1,",
@@ -751,18 +751,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 133,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
-      "severity": "moderate",
-      "text": "(*piVar6 + 1,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4) + 1,",
       "type": "pointer_cast"
     },
     {
@@ -770,7 +762,7 @@
       "line": 145,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2,",
+      "text": "(*piVar6 + 1,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4) + 1,",
       "type": "pointer_cast"
     },
     {
@@ -778,15 +770,15 @@
       "line": 146,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -2);",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 147,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
-      "text": "(*piVar6,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1,",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -2);",
       "type": "pointer_cast"
     },
     {
@@ -794,15 +786,15 @@
       "line": 159,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1);",
+      "text": "(*piVar6,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 160,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
-      "text": "(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1,",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1);",
       "type": "pointer_cast"
     },
     {
@@ -810,7 +802,7 @@
       "line": 162,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
-      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
+      "text": "(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1,",
       "type": "pointer_cast"
     },
     {
@@ -818,12 +810,20 @@
       "line": 163,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
       "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 167,
       "match": "(char *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "if (*(char *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0x48) != '\\0') {",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 168,
+      "line": 169,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "g_INT_01c6b5ac = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 170,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "local_34 = g_INT_01c5bae4 / 2 + *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4) + -1;",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 172,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 195,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar1 = g_INT_01c5bae4 / 2 + *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 196,
       "match": "(char *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "text = (char *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0x48);",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 198,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8);",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 210,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar4 = iVar4 + *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 221,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",
@@ -895,7 +895,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 238,
+      "line": 239,
       "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
       "severity": "moderate",
       "text": "iVar5 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",

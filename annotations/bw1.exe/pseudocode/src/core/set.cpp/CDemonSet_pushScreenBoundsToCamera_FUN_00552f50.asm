@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
-;   CDemonCamera* g_CDemonCamera_PTR_00857cd4
+;   CDemonCamera* g_SkipClearBuffersSceneCamera
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   int g_INT_01c4eff8
 ;   int g_INT_01c4effc
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 00552f50
         ;   Label: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50
     SUB ESP,0x1c                        ; 00552f51
-    CMP dword ptr [0x00857cd4],0x0      ; 00552f54 | g_CDemonCamera_PTR_00857cd4
+    CMP dword ptr [0x00857cd4],0x0      ; 00552f54 | g_SkipClearBuffersSceneCamera
     JZ 0x005530f5                       ; 00552f5b
         ;   XREF to: 005530f5 (CONDITIONAL_JUMP)  ; LAB_005530f5
     PUSH EDI                            ; 00552f61
@@ -176,7 +176,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 005530b3
         ;   Label: LAB_005530b3
     MOV EBX,dword ptr [ESP + 0x24]      ; 005530b7
-    MOV EDX,dword ptr [0x00857cd4]      ; 005530bb | g_CDemonCamera_PTR_00857cd4
+    MOV EDX,dword ptr [0x00857cd4]      ; 005530bb | g_SkipClearBuffersSceneCamera
     SAR EBX,0x10                        ; 005530c1
     SAR EBP,0x10                        ; 005530c4
     PUSH EBX                            ; 005530c7

@@ -98,8 +98,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
     sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  this_ptr_00 = g_CBitFont_PTR_0152d244;
-  g_CBitFont_PTR_0152d244->win_font_enabled = 0;
+  this_ptr_00 = g_ThemeFont;
+  g_ThemeFont->win_font_enabled = 0;
   iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
   local_20 = -1;
   core_game_cpp_CGame_saveClockTime_FUN_004cbf10(this_ptr);
@@ -136,7 +136,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
       if ((local_1c != 0) &&
          (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(local_1c), iVar2 == 0)) {
 LAB_004d91eb:
-        if (g_INT_01d7f1b8 != 0) {
+        if (g_UseOSFonts != 0) {
           this_ptr_00->win_font_enabled = 1;
         }
         sound_sndmain_cpp_resetSoundDevice_FUN_005750e0();

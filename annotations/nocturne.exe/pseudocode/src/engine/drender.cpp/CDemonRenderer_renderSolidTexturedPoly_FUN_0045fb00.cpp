@@ -26,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0045f
           this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
           this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
         }
-        *(int *)((int)g_INT_ARRAY_01b4d76c + iVar4) = iVar1;
+        *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
         pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
         iVar3 = iVar3 + 1;
         iVar4 = iVar4 + 4;
@@ -48,7 +48,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0045f
       g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-              (this_ptr,(poly->base).base.count,g_INT_ARRAY_01b4d76c);
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
   }
   return;
 }

@@ -11,23 +11,22 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf8
 {
   byte *puStack_14;
   
-  if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
+  if (g_EditorFont == (CBitFont *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0xa0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
-  g_INT_01c25f78 = g_CBitFont_PTR_01c25590->max_char_width;
-  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x6a)
-  ;
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_EditorFont,0x6a);
   puStack_14 = &stack0x0000000c;
-  _vsprintf(g_CHAR_ARRAY_01c235f0,format_string,(va_list_t)&puStack_14);
+  _vsprintf(g_ConfirmationMessageBuffer,format_string,(va_list_t)&puStack_14);
   puStack_14 = (byte *)0x0;
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-            (g_CBitFont_PTR_01c25590,g_CHAR_ARRAY_01c235f0,g_INT_01c35e48,g_INT_01c35e4c,
-             g_INT_01c263b8,-1);
+            (g_EditorFont,g_ConfirmationMessageBuffer,g_INT_01c35e48,g_INT_01c35e4c,
+             g_WindowStatusTextColor,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   return;
 }

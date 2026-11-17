@@ -103,8 +103,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
     if ((dVar8 < 0.0) || (1.0 < dVar8)) goto LAB_00545ebe;
     this_ptr_01 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,
-                             g_CCharacterActorType_00765a60.name_hash);
+                            (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_01 != (CCharacter *)0x0) &&
        (EVar6 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
        0 < (int)EVar6)) {
@@ -112,26 +111,24 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
     }
     pCStack_18 = (CGlass *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,g_CTriggerActorType_02dd1084.name_hash)
-    ;
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     pCStack_24 = this_ptr_02;
     pCStack_20 = (CCrate *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSetPtr->collision_actor,g_CCrateActorType_0077bd40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
     this_ptr_03 = (CFlameCan *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,g_CFlameCanActorType_01c70654.name_hash
-                            );
+                            (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
     if (this_ptr_01 == (CCharacter *)0x0) {
       if (pCStack_18 == (CGlass *)0x0) {
         if (this_ptr_02 == (CTrigger *)0x0) {
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60
-                        (g_CFireEffect_PTR_005b80f0,&g_CDemonSetPtr->collision_impact_position,
+                        (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor);
               goto LAB_00545ebe;
@@ -168,8 +165,8 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
       pCVar9 = (CDemonActor *)((ulonglong)dVar8 >> 0x20);
       if ((iVar4 != 0) &&
          (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             ((this_ptr->base).carried_by_actor,g_CHeroActorType_01cae0ec.name_hash)
-         , this_ptr_00 = g_CDemonSetPtr, pCVar7 != (CDemonActor *)0x0)) {
+                             ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash),
+         this_ptr_00 = g_CDemonSetPtr, pCVar7 != (CDemonActor *)0x0)) {
         if (pCStack_18 == (CGlass *)0x0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(this_ptr_00);
@@ -224,7 +221,7 @@ LAB_00545ebe:
         aCStack_68[0].z = CStack_98.z;
         aCStack_68[0].y = CStack_98.y + -0.125f;
         core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
-                  (g_CFireEffect_PTR_005b80f0,aCStack_68,&(this_ptr->base).base.orient_matrix);
+                  (g_CFireEffectPtr,aCStack_68,&(this_ptr->base).base.orient_matrix);
         CStack_80.x = 5.0;
         CStack_80.y = 6.0;
         CStack_80.z = -6.0;
@@ -245,7 +242,7 @@ LAB_00545ebe:
         }
         model_ptr = core_dmodel_cpp_loadModel_FUN_004543b0("bullet.kfm");
         core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0
-                  (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).base.location.position,
+                  (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
                    &(this_ptr->base).base.orient.vec,&CStack_80,model_ptr);
       }
       return 1;

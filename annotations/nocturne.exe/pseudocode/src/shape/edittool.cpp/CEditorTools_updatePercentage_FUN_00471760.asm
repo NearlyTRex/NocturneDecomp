@@ -36,10 +36,10 @@
 ;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   int g_INT_01bcd07c
 ;   int g_INT_01bcd9bc
-;   int g_INT_01bcddec
-;   int g_INT_01bcddf8
-;   int g_INT_01bcddfc
-;   int g_INT_01bcde00
+;   int g_WindowStatusTextColor
+;   int g_ProgressBarBackgroundColor
+;   int g_ProgressBarFillColor
+;   int g_ProgressBarBorderColor
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -140,7 +140,7 @@ section .text
     PUSH ESI                            ; 0047182f
     PUSH 0x57e880                       ; 00471830 | = "%d%% complete"
     PUSH -0x1                           ; 00471835
-    MOV EDI,dword ptr [0x01bcddec]      ; 00471837 | g_INT_01bcddec
+    MOV EDI,dword ptr [0x01bcddec]      ; 00471837 | g_WindowStatusTextColor
     PUSH EDI                            ; 0047183d
     MOV EAX,[0x01c00c5c]                ; 0047183e | g_ClipTop
     PUSH EAX                            ; 00471843
@@ -162,11 +162,11 @@ section .text
     SHL EAX,0x2                         ; 0047187b
     ADD ESP,0x20                        ; 0047187e
     ADD EAX,EDX                         ; 00471881
-    MOV ECX,dword ptr [0x01bcde00]      ; 00471883 | g_INT_01bcde00
+    MOV ECX,dword ptr [0x01bcde00]      ; 00471883 | g_ProgressBarBorderColor
     DEC EAX                             ; 00471889
     PUSH ECX                            ; 0047188a
     MOV dword ptr [ESP + 0x18],EAX      ; 0047188b
-    MOV EAX,[0x01bcddf8]                ; 0047188f | g_INT_01bcddf8
+    MOV EAX,[0x01bcddf8]                ; 0047188f | g_ProgressBarBackgroundColor
     PUSH EAX                            ; 00471894
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00471895
     MOV ESI,dword ptr [0x01c00c60]      ; 00471899 | g_ClipRight
@@ -199,7 +199,7 @@ section .text
     JL 0x004718e4                       ; 004718df
         ;   XREF to: 004718e4 (CONDITIONAL_JUMP)  ; LAB_004718e4
     LEA EAX,[ESI + -0x1]                ; 004718e1
-    MOV ECX,dword ptr [0x01bcddfc]      ; 004718e4 | g_INT_01bcddfc
+    MOV ECX,dword ptr [0x01bcddfc]      ; 004718e4 | g_ProgressBarFillColor
         ;   Label: LAB_004718e4
     PUSH ECX                            ; 004718ea
     MOV ESI,dword ptr [ESP + 0x18]      ; 004718eb
@@ -287,7 +287,7 @@ section .text
     PUSH EAX                            ; 004719e2
     PUSH ESI                            ; 004719e3
     PUSH 0x57e88e                       ; 004719e4 | = "%d:%02d elapsed, approximately %d:%02..."
-    MOV EDX,dword ptr [0x01bcddec]      ; 004719e9 | g_INT_01bcddec
+    MOV EDX,dword ptr [0x01bcddec]      ; 004719e9 | g_WindowStatusTextColor
     PUSH -0x1                           ; 004719ef
     MOV ECX,dword ptr [0x01bcd9bc]      ; 004719f1 | g_INT_01bcd9bc
     MOV EAX,[0x01c00c64]                ; 004719f7 | g_ClipBottom

@@ -33,10 +33,9 @@ void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_004f6d00(float *vertices,
     engine_mini3d_cpp_flushTriangleBatch_FUN_004f6970();
     return;
   }
-  if ((g_PTR_0264bca0 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-    (*(code *)g_PTR_0264bca0)
-              (g_FLOAT_PTR_01d09b7c,vertex_count,indices,triangle_count,
-               g_BIT_INTEGER32_01c38b54.dword);
+  if ((g_APIDLL_lockFrameX != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_APIDLL_lockFrameX)
+              (g_FLOAT_PTR_01d09b7c,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   iVar4 = 0;

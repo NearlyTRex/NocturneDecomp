@@ -39,10 +39,10 @@ uint * FUN_005c1500(int param_1,uint param_2,int param_3,uint *param_4)
   }
   param_4[5] = uVar2;
   param_4[7] = uVar4;
-  local_14 = &g_SHORT_006013f4;
+  local_14 = &g_DaysInMonth_Normal;
   iVar3 = FUN_005c1690(uVar2 + 0x76c);
   if (iVar3 != 0) {
-    local_14 = &g_SHORT_0060140e;
+    local_14 = &g_DaysInMonth_Leap;
   }
   uVar2 = uVar4 / 0x1f;
   if ((uint)(*(int *)(local_14 + uVar2) >> 0x10) <= uVar4) {

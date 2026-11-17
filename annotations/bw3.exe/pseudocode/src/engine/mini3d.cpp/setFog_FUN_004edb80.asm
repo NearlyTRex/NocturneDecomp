@@ -17,7 +17,7 @@
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;   int g_INT_01c6cee8
-;   ulong g_ULONG_01c6e2bc
+;   ulong g_SolidColorMode
 ;   float g_FLOAT_01d76ce4
 ;   float g_FLOAT_01d76ce8
 ;   float g_FLOAT_01d76cec
@@ -71,7 +71,7 @@ section .text
     OR ECX,EAX                          ; 004edc05
     MOV EBX,dword ptr [0x02cf60f8]      ; 004edc07 | g_PTR_02cf60f8
         ;   Label: LAB_004edc07
-    MOV dword ptr [0x01c6e2bc],ECX      ; 004edc0d | g_ULONG_01c6e2bc
+    MOV dword ptr [0x01c6e2bc],ECX      ; 004edc0d | g_SolidColorMode
     TEST EBX,EBX                        ; 004edc13
     JZ 0x004edc20                       ; 004edc15
         ;   XREF to: 004edc20 (CONDITIONAL_JUMP)  ; LAB_004edc20

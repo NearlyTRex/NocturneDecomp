@@ -21,8 +21,8 @@
 ;   double g_DOUBLE_005cc881 = 2.5
 ;   float g_FLOAT_005f3c7c = 2.5
 ;   CGore* g_CGorePtr = 01cb8284
-;   CVector3f g_CVector3f_007bcc94
-;   int[11] g_INT_ARRAY_007bccdc
+;   CVector3f g_BrideOffsetPlusX
+;   int[11] g_BrideIndices
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -501,7 +501,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0041e0fa
     ADD ESP,0x8                         ; 0041e0fd
     LEA EAX,[EBP + 0xfffffe0e]          ; 0041e100
-    MOV EDX,dword ptr [0x007bcce4]      ; 0041e106 | g_INT_ARRAY_007bccdc[2]
+    MOV EDX,dword ptr [0x007bcce4]      ; 0041e106 | g_BrideIndices[2]
     PUSH EAX                            ; 0041e10c
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041e10d
     MOV dword ptr [EBP + 0xfffffe42],EBX ; 0041e114
@@ -514,7 +514,7 @@ section .text
     LEA EDI,[EBP + 0xffffff6a]          ; 0041e132
     PUSH EAX                            ; 0041e138
     FLD float ptr [EBP + 0x76]          ; 0041e139
-    PUSH 0x7bcc94                       ; 0041e13c | g_CVector3f_007bcc94
+    PUSH 0x7bcc94                       ; 0041e13c | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffe12]   ; 0041e141
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0041e147
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -574,7 +574,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0041e1e8
     ADD ESP,0x8                         ; 0041e1eb
     LEA EAX,[EBP + 0xfffffec2]          ; 0041e1ee
-    MOV EDX,dword ptr [0x007bcce0]      ; 0041e1f4 | g_INT_ARRAY_007bccdc[1]
+    MOV EDX,dword ptr [0x007bcce0]      ; 0041e1f4 | g_BrideIndices[1]
     PUSH EAX                            ; 0041e1fa
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041e1fb
     MOV dword ptr [EBP + 0xfffffef6],EBX ; 0041e202
@@ -587,7 +587,7 @@ section .text
     LEA EDI,[EBP + 0x12]                ; 0041e220
     PUSH EAX                            ; 0041e223
     FLD float ptr [EBP + 0x76]          ; 0041e224
-    PUSH 0x7bcc94                       ; 0041e227 | g_CVector3f_007bcc94
+    PUSH 0x7bcc94                       ; 0041e227 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffec6]   ; 0041e22c
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0041e232
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -700,7 +700,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0041e355
     ADD ESP,0x8                         ; 0041e358
     LEA EAX,[EBP + 0xfffffe4a]          ; 0041e35b
-    MOV EDX,dword ptr [0x007bcce4]      ; 0041e361 | g_INT_ARRAY_007bccdc[2]
+    MOV EDX,dword ptr [0x007bcce4]      ; 0041e361 | g_BrideIndices[2]
     PUSH EAX                            ; 0041e367
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041e368
     MOV dword ptr [EBP + 0xfffffe7e],EBX ; 0041e36f
@@ -713,7 +713,7 @@ section .text
     LEA EDI,[EBP + 0x1e]                ; 0041e38d
     PUSH EAX                            ; 0041e390
     FLD float ptr [EBP + 0x76]          ; 0041e391
-    PUSH 0x7bcc94                       ; 0041e394 | g_CVector3f_007bcc94
+    PUSH 0x7bcc94                       ; 0041e394 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffe4e]   ; 0041e399
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0041e39f
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -787,7 +787,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0041e45a
     ADD ESP,0x8                         ; 0041e45d
     LEA EAX,[EBP + 0xfffffe86]          ; 0041e460
-    MOV EDX,dword ptr [0x007bcce0]      ; 0041e466 | g_INT_ARRAY_007bccdc[1]
+    MOV EDX,dword ptr [0x007bcce0]      ; 0041e466 | g_BrideIndices[1]
     PUSH EAX                            ; 0041e46c
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041e46d
     LEA ESI,[EBP + 0xffffff76]          ; 0041e474
@@ -802,7 +802,7 @@ section .text
     LEA EDI,[EBP + -0x6]                ; 0041e49a
     PUSH EAX                            ; 0041e49d
     FLD float ptr [EBP + 0x76]          ; 0041e49e
-    PUSH 0x7bcc94                       ; 0041e4a1 | g_CVector3f_007bcc94
+    PUSH 0x7bcc94                       ; 0041e4a1 | g_BrideOffsetPlusX
     FSTP float ptr [EBP + 0xfffffe8a]   ; 0041e4a6
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0041e4ac
         ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -1027,7 +1027,7 @@ section .text
     TEST EDX,EDX                        ; 0041e732
     JNZ 0x0041e7ef                      ; 0041e734
         ;   XREF to: 0041e7ef (CONDITIONAL_JUMP)  ; LAB_0041e7ef
-    MOV ECX,dword ptr [0x007bccf0]      ; 0041e73a | g_INT_ARRAY_007bccdc[5]
+    MOV ECX,dword ptr [0x007bccf0]      ; 0041e73a | g_BrideIndices[5]
     PUSH 0x3e4ccccd                     ; 0041e740
     PUSH ECX                            ; 0041e745
     MOV ESI,dword ptr [EBX + 0x10af8]   ; 0041e746
@@ -1041,7 +1041,7 @@ section .text
     TEST EDI,EDI                        ; 0041e763
     JZ 0x0041e782                       ; 0041e765
         ;   XREF to: 0041e782 (CONDITIONAL_JUMP)  ; LAB_0041e782
-    MOV EAX,[0x007bcce8]                ; 0041e767 | g_INT_ARRAY_007bccdc[3]
+    MOV EAX,[0x007bcce8]                ; 0041e767 | g_BrideIndices[3]
     PUSH 0x3e4ccccd                     ; 0041e76c
     PUSH EAX                            ; 0041e771
     MOV EDX,dword ptr [EBX + 0x10afc]   ; 0041e772
@@ -1050,7 +1050,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060 ; 0041e77a
         ;   XREF to: 00427060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0041e77f
-    MOV ECX,dword ptr [0x007bccf4]      ; 0041e782 | g_INT_ARRAY_007bccdc[6]
+    MOV ECX,dword ptr [0x007bccf4]      ; 0041e782 | g_BrideIndices[6]
         ;   Label: LAB_0041e782
     PUSH 0x3e4ccccd                     ; 0041e788
     PUSH ECX                            ; 0041e78d
@@ -1065,7 +1065,7 @@ section .text
     TEST EDI,EDI                        ; 0041e7ab
     JZ 0x0041e7ca                       ; 0041e7ad
         ;   XREF to: 0041e7ca (CONDITIONAL_JUMP)  ; LAB_0041e7ca
-    MOV EAX,[0x007bccec]                ; 0041e7af | g_INT_ARRAY_007bccdc[4]
+    MOV EAX,[0x007bccec]                ; 0041e7af | g_BrideIndices[4]
     PUSH 0x3e4ccccd                     ; 0041e7b4
     PUSH EAX                            ; 0041e7b9
     MOV EDX,dword ptr [EBX + 0x10b04]   ; 0041e7ba
@@ -1074,7 +1074,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060 ; 0041e7c2
         ;   XREF to: 00427060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0041e7c7
-    MOV ECX,dword ptr [0x007bccdc]      ; 0041e7ca | g_INT_ARRAY_007bccdc
+    MOV ECX,dword ptr [0x007bccdc]      ; 0041e7ca | g_BrideIndices
         ;   Label: LAB_0041e7ca
     PUSH 0x3f333333                     ; 0041e7d0
     PUSH ECX                            ; 0041e7d5

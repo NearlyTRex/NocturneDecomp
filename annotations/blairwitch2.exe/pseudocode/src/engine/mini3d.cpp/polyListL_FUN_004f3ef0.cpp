@@ -16,16 +16,16 @@ void __cdecl engine_mini3d_cpp_polyListL_FUN_004f3ef0(float *vertices,int vertex
   int in_stack_00000018;
   int in_stack_0000001c;
   
-  g_INT_01e61b58 = g_INT_01e61b58 + triangle_count;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
   g_INT_01d09854 = g_INT_01d09854 + vertex_count;
   if (g_INT_01d0d2b4 == 0) {
     if (g_INT_01d09914 != 0) {
       in_stack_00000014 = engine_mini3d_cpp_mirrorFaces_FUN_004f34d0(indices,triangle_count);
     }
-    if ((g_PTR_0264bc90 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
-      (*(code *)g_PTR_0264bc90)
+    if ((g_APIDLL_unlockTexture != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+      (*(code *)g_APIDLL_unlockTexture)
                 (vertices,triangle_count,in_stack_00000014,in_stack_00000018,
-                 g_BIT_INTEGER32_01c38b54.dword);
+                 g_RenderStateFlags.dword);
       return;
     }
     engine_mini3d_cpp_updateTransform_FUN_004f3740();

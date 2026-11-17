@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGhoul_00584abd
-;   CVector3f CVector3f_01c78bc0
-;   undefined4 CVector3f_01c78bc0.y
-;   undefined4 CVector3f_01c78bc0.z
-;   CVector3f CVector3f_01c78bcc
-;   undefined4 CVector3f_01c78bcc.y
-;   undefined4 CVector3f_01c78bcc.z
+;   CVector3f g_GhoulOffsetMinusX
+;   undefined4 g_GhoulOffsetMinusX.y
+;   undefined4 g_GhoulOffsetMinusX.z
+;   CVector3f g_GhoulOffsetPlusX
+;   undefined4 g_GhoulOffsetPlusX.y
+;   undefined4 g_GhoulOffsetPlusX.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0
@@ -29,14 +29,14 @@ section .text
     MOV ESI,0x3f19999a                  ; 004a8c22
     XOR ECX,ECX                         ; 004a8c27
     PUSH 0x4a8c70                       ; 004a8c29
-    MOV dword ptr [0x01c78bc0],EDX      ; 004a8c2e | CVector3f_01c78bc0
-    MOV dword ptr [0x01c78bc4],ECX      ; 004a8c34 | CVector3f_01c78bc0.y
+    MOV dword ptr [0x01c78bc0],EDX      ; 004a8c2e | g_GhoulOffsetMinusX
+    MOV dword ptr [0x01c78bc4],ECX      ; 004a8c34 | g_GhoulOffsetMinusX.y
     PUSH 0x584abd                       ; 004a8c3a | = "CGhoul"
-    MOV dword ptr [0x01c78bc8],ECX      ; 004a8c3f | CVector3f_01c78bc0.z
-    MOV dword ptr [0x01c78bcc],ESI      ; 004a8c45 | CVector3f_01c78bcc
+    MOV dword ptr [0x01c78bc8],ECX      ; 004a8c3f | g_GhoulOffsetMinusX.z
+    MOV dword ptr [0x01c78bcc],ESI      ; 004a8c45 | g_GhoulOffsetPlusX
     PUSH 0x1c78bd8                      ; 004a8c4b
-    MOV dword ptr [0x01c78bd0],ECX      ; 004a8c50 | CVector3f_01c78bcc.y
-    MOV dword ptr [0x01c78bd4],ECX      ; 004a8c56 | CVector3f_01c78bcc.z
+    MOV dword ptr [0x01c78bd0],ECX      ; 004a8c50 | g_GhoulOffsetPlusX.y
+    MOV dword ptr [0x01c78bd4],ECX      ; 004a8c56 | g_GhoulOffsetPlusX.z
     CALL core_actor.cpp_registerActorClass_FUN_0040d3f0 ; 004a8c5c
         ;   XREF to: 0040d3f0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040d3f0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 004a8c61

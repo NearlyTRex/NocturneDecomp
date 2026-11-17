@@ -135,55 +135,55 @@
     },
     {
       "addr": "006b023c",
-      "name": "g_INT_006b023c",
+      "name": "g_StoredWindowWidth",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b0240",
-      "name": "g_INT_006b0240",
+      "name": "g_StoredWindowHeight",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b0244",
-      "name": "g_INT_006b0244",
+      "name": "g_StoredClipLeft",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b0248",
-      "name": "g_INT_006b0248",
+      "name": "g_StoredClipTop",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b024c",
-      "name": "g_INT_006b024c",
+      "name": "g_StoredClipRight",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b0250",
-      "name": "g_INT_006b0250",
+      "name": "g_StoredClipBottom",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b0254",
-      "name": "g_INT_006b0254",
+      "name": "g_StoredBitsPerPixel",
       "type": "int",
       "value": null
     },
     {
       "addr": "006b0258",
-      "name": "g_PTR_006b0258",
+      "name": "g_StoredMappedFrameBuffer",
       "type": "void*",
       "value": null
     },
     {
       "addr": "006b025c",
-      "name": "g_INT_006b025c",
+      "name": "g_ScreenBufferStride",
       "type": "int",
       "value": null
     },
@@ -385,7 +385,7 @@
       "line": 55,
       "match": "(int)g_ScreenBufferArray[1]",
       "severity": "moderate",
-      "text": "g_INT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "text": "g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
       "type": "pointer_truncation"
     },
     {
@@ -393,7 +393,7 @@
       "line": 55,
       "match": "(int)g_ScreenBufferArray[0]",
       "severity": "moderate",
-      "text": "g_INT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "text": "g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
       "type": "pointer_truncation"
     },
     {

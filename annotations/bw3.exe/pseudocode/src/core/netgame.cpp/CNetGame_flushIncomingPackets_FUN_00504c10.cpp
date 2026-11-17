@@ -14,19 +14,19 @@ void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00504c10(CNetGam
   int iVar3;
   
   iVar2 = support_trisock_cpp_CSocket_isSocketValid_FUN_0056f960(&this_ptr->socket);
-  iVar1 = g_INT_0060728c;
+  iVar1 = g_ForceMessagePump;
   if (iVar2 == 0) {
     return;
   }
-  g_INT_0060728c = 0;
+  g_ForceMessagePump = 0;
   do {
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar2 = 0;
     do {
       iVar3 = support_trisock_cpp_CSocket_receiveSocketData_FUN_0056fb10
-                        (&this_ptr->socket,g_UNetPacket_01dd4488.raw,0x405,(SNetworkAddr *)0x0);
+                        (&this_ptr->socket,g_NetworkReceivePacket.raw,0x405,(SNetworkAddr *)0x0);
       if (iVar3 < 1) {
-        g_INT_0060728c = iVar1;
+        g_ForceMessagePump = iVar1;
         return;
       }
       iVar2 = iVar2 + 1;

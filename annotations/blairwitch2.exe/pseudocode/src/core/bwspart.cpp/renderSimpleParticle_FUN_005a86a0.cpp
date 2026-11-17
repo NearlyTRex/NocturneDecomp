@@ -104,10 +104,9 @@ void __cdecl core_bwspart_cpp_renderSimpleParticle_FUN_005a86a0(void *particle)
                 (g_CDemonRenderer_PTR_0060b280,
                  (SMRGLTextureBasic *)(&DAT_0061ec00 + *(int *)((int)particle + 0x20) * 0x18));
       SStack_d4.surface_normal.D.f = 8.314529e-39;
-      (*((g_CDemonCamera_PTR_007bda74->base).vtable)->setupPerspectiveAndFog)
-                (g_CDemonCamera_PTR_007bda74,(CVector3f *)((int)particle + 0x24),
-                 (SProjectedVertex *)0x0);
-      local_18 = (float)(0xffff - g_INT_01c38aec);
+      (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+                (g_CurrentSceneCamera,(CVector3f *)((int)particle + 0x24),(SProjectedVertex *)0x0);
+      local_18 = (float)(0xffff - g_PerspectiveReciprocal);
       local_14 = (*(float *)((int)particle + 0x10) - *(float *)((int)particle + 0xc)) *
                  (1.0 - *(float *)((int)particle + 8) / *(float *)((int)particle + 4)) +
                  *(float *)((int)particle + 0xc);

@@ -43,7 +43,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this
         uStack_20 = 0;
         local_28 = (float)((float10)local_24 * (float10)0.02 + (float10)0.40000000000000002);
       }
-      if (g_INT_01e56418 == 0) {
+      if (g_ScriptEventsEnabled == 0) {
         local_18 = 1;
       }
     }
@@ -52,11 +52,10 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this
     local_28 = this_ptr->message_duration;
   }
   pCVar2 = core_script_cpp_getActor_FUN_004fe180
-                     (actor_specifier,g_CCharacterActorType_00765a60.name_hash,
-                      &g_CCharacterActorType_00765a60);
+                     (actor_specifier,g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);
   this_ptr->who_is_speaking = pCVar2;
   if (pCVar2 == (CDemonActor *)0x0) {
-    if (g_INT_01e56c2c != 0) {
+    if (g_ActorLookedUpByVariable != 0) {
       return 0.0;
     }
     return -1.0;
@@ -66,7 +65,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this
     this_ptr->focus_actor_changed = 1;
     this_ptr->focus_actor = this_ptr->who_is_speaking;
   }
-  if (g_INT_01e56418 == 0) {
+  if (g_ScriptEventsEnabled == 0) {
     pcVar5 = this_ptr->current_message;
     do {
       cVar1 = *dialog_text;

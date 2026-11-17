@@ -10,7 +10,7 @@
 ; double           Stack[0x18]:8   vel_z
 ;
 ; Referenced Globals:
-;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -62,7 +62,7 @@ section .text
     TEST ECX,ECX                        ; 00526fc5
     JZ 0x00526fe1                       ; 00526fc7
         ;   XREF to: 00526fe1 (CONDITIONAL_JUMP)  ; LAB_00526fe1
-    MOV EDI,dword ptr [0x02dc8318]      ; 00526fc9 | g_CSoundDevice_PTR_02dc8318
+    MOV EDI,dword ptr [0x02dc8318]      ; 00526fc9 | g_CSoundDevicePtr
     TEST EDI,EDI                        ; 00526fcf
     JZ 0x00526fe1                       ; 00526fd1
         ;   XREF to: 00526fe1 (CONDITIONAL_JUMP)  ; LAB_00526fe1

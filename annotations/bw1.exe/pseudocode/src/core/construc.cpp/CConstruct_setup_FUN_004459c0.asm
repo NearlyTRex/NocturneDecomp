@@ -43,7 +43,7 @@ section .text
     PUSH ESI                            ; 004459c1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004459c2
     PUSH 0x5d6d2e                       ; 004459c6 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004459cb | g_CEventList_PTR_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004459cb | g_CEventListPtr
     PUSH EDX                            ; 004459d1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004459d2
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

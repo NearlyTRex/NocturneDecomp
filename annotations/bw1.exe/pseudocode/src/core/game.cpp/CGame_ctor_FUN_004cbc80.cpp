@@ -74,7 +74,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr)
   this_ptr->combat_difficulty_mode = 0;
   this_ptr->bitmap_display_time = 0.0;
   this_ptr->new_set_event_pending = 1;
-  g_CHAR_ARRAY_01cd05c0[0] = '\0';
+  g_CurrentSaveFile[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
   return this_ptr;
 }

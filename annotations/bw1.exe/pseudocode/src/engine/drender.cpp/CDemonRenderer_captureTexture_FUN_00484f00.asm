@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db526
 ;   TerminatedCString s_CDR_texture_Too_many_cap_005db53c
-;   int g_INT_01bc1284
+;   int g_CaptureTextureCount
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -48,9 +48,9 @@ section .text
     JZ 0x00484f90                       ; 00484f17
         ;   XREF to: 00484f90 (CONDITIONAL_JUMP)  ; LAB_00484f90
     PUSH EDI                            ; 00484f19
-    MOV ECX,dword ptr [0x01bc1284]      ; 00484f1a | g_INT_01bc1284
+    MOV ECX,dword ptr [0x01bc1284]      ; 00484f1a | g_CaptureTextureCount
     INC ECX                             ; 00484f20
-    MOV dword ptr [0x01bc1284],ECX      ; 00484f21 | g_INT_01bc1284
+    MOV dword ptr [0x01bc1284],ECX      ; 00484f21 | g_CaptureTextureCount
     CMP ECX,0x64                        ; 00484f27
     JLE 0x00484f4f                      ; 00484f2a
         ;   XREF to: 00484f4f (CONDITIONAL_JUMP)  ; LAB_00484f4f
@@ -62,7 +62,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00484f47
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00484f4c
-    MOV EDX,dword ptr [0x01bc1284]      ; 00484f4f | g_INT_01bc1284
+    MOV EDX,dword ptr [0x01bc1284]      ; 00484f4f | g_CaptureTextureCount
         ;   Label: LAB_00484f4f
     LEA EAX,[EDX*0x8 + 0x0]             ; 00484f55
     ADD EAX,EDX                         ; 00484f5c

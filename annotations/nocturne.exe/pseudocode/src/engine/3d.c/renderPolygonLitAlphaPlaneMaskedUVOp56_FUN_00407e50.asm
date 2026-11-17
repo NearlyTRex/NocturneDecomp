@@ -12,8 +12,8 @@
 ;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
 ;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
-;   int[24] g_INT_ARRAY_006b029c
-;   undefined4 g_INT_ARRAY_006b029c[1]
+;   int[24] g_ProcessedVertexIndices
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -78,7 +78,7 @@ section .text
     JGE 0x00407fd2                      ; 00407ee0
         ;   XREF to: 00407fd2 (CONDITIONAL_JUMP)  ; LAB_00407fd2
     MOV EAX,dword ptr [ECX]             ; 00407ee6
-    MOV dword ptr [ESI + 0x6b029c],EAX  ; 00407ee8 | g_INT_ARRAY_006b029c | g_INT_ARRAY_006b029c[1]
+    MOV dword ptr [ESI + 0x6b029c],EAX  ; 00407ee8 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EBP,dword ptr [0x005b762c]      ; 00407eee | g_CurrentTextureDimension
     MOV EAX,dword ptr [ECX + 0x4]       ; 00407ef4
     MOV EDX,dword ptr [ECX + 0x8]       ; 00407ef7
@@ -159,7 +159,7 @@ section .text
     MOV EDX,0xfeffff                    ; 00407fc8
     JMP 0x00407f30                      ; 00407fcd
         ;   XREF to: 00407f30 (UNCONDITIONAL_JUMP)  ; LAB_00407f30
-    PUSH 0x6b029c                       ; 00407fd2 | g_INT_ARRAY_006b029c
+    PUSH 0x6b029c                       ; 00407fd2 | g_ProcessedVertexIndices
         ;   Label: LAB_00407fd2
     PUSH EDI                            ; 00407fd7
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00407fd8

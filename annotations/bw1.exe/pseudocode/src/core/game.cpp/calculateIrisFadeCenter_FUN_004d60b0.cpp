@@ -85,15 +85,15 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004d60b0(void)
     aiStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(int *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     if (aiStack_58[1] != 0) {
-      g_INT_01cd0c84 =
+      g_IrisFadeCenterX =
            (int)((iStack_5c + (iStack_5c >> 0x1f) * -0x10000) -
                 (uint)((iStack_5c >> 0x1f) << 0xf < 0)) >> 0x10;
-      g_INT_01cd0c88 =
+      g_IrisFadeCenterY =
            (int)((aiStack_58[0] + (aiStack_58[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_58[0] >> 0x1f) << 0xf < 0)) >> 0x10;
       if (0x1e0 < g_INT_0061b49c) {
-        g_INT_01cd0c84 = (g_INT_01cd0c84 * g_INT_0061b498) / 0x280;
-        g_INT_01cd0c88 = (g_INT_01cd0c88 * g_INT_0061b49c) / 0x1e0;
+        g_IrisFadeCenterX = (g_IrisFadeCenterX * g_INT_0061b498) / 0x280;
+        g_IrisFadeCenterY = (g_IrisFadeCenterY * g_INT_0061b49c) / 0x1e0;
         return;
       }
     }

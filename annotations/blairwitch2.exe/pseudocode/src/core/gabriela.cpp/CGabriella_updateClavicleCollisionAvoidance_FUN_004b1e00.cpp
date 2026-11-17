@@ -90,8 +90,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
       local_18 = -local_1c;
     }
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
-              (this_ptr,in_stack_00000010,&this_ptr->left_clavicle_blend,g_INT_ARRAY_01cb0678[0x10],
-               g_INT_ARRAY_01cb0678[1],(CVector3f *)&stack0xffffffe8);
+              (this_ptr,in_stack_00000010,&this_ptr->left_clavicle_blend,g_GabriellaIndices[0x10],
+               g_GabriellaIndices[1],(CVector3f *)&stack0xffffffe8);
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     if (pCVar1 == (CDemonActor *)0x0) {
       local_18 = 0.5;
@@ -115,17 +115,17 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
            *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
     }
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
-              (this_ptr,in_stack_00000010,&this_ptr->right_clavicle_blend,g_INT_ARRAY_01cb0678[0x11]
-               ,g_INT_ARRAY_01cb0678[2],(CVector3f *)&stack0xffffffe8);
+              (this_ptr,in_stack_00000010,&this_ptr->right_clavicle_blend,g_GabriellaIndices[0x11],
+               g_GabriellaIndices[2],(CVector3f *)&stack0xffffffe8);
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,g_INT_ARRAY_01cb0678[1],
+            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,g_GabriellaIndices[1],
              core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,g_INT_ARRAY_01cb0678[2],
+            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,g_GabriellaIndices[2],
              core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
   return;
 }

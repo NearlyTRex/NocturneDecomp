@@ -136,7 +136,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,f
   for (iVar16 = 0; iVar16 < g_CDemonSetPtr->character_count; iVar16 = iVar16 + 1) {
     pCVar7 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (&pCVar7->base,g_CMobsterActorType_01ccdbd8.name_hash);
+                        (&pCVar7->base,g_CMobsterClassInfo.name_hash);
     if ((pCVar11 == (CDemonActor *)0x0) ||
        (this_ptr != (CVehicle *)pCVar11[0x90].orient_matrix.m[1].x)) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_c8);
@@ -181,7 +181,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,f
   for (iVar13 = 0; iVar13 < g_CDemonSetPtr->enemy_count; iVar13 = iVar13 + 1) {
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),
-                         g_CMobsterActorType_01ccdbd8.name_hash);
+                         g_CMobsterClassInfo.name_hash);
     if ((pCVar11 != (CDemonActor *)0x0) &&
        (pCVar10 = (CVehicle *)pCVar11[0x90].orient_matrix.m[1].x, this_ptr == pCVar10)) {
       if (pCVar11[0x90].orient_matrix.m[1].y == 0.0) {

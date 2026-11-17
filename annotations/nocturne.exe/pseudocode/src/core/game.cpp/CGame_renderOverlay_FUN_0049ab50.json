@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 216,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 146,
+    "pseudocode_lines": 145,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_truncation",
       "raw_address_constant"
     ],
-    "total_lines": 551
+    "total_lines": 550
   },
   "cross_references": [
     {
@@ -138,43 +138,43 @@
     },
     {
       "addr": "014b98f8",
-      "name": "g_CBitFont_PTR_014b98f8",
+      "name": "g_MediumFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b98fc",
-      "name": "g_CBitFont_PTR_014b98fc",
+      "name": "g_TinyFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b9900",
-      "name": "g_CBitFont_PTR_014b9900",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b9904",
-      "name": "g_CBitFont_PTR_014b9904",
+      "name": "g_SmallEditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c789c0",
-      "name": "g_CHAR_ARRAY_01c789c0",
+      "name": "g_ChapterDisplayName",
       "type": "char[256]",
       "value": null
     },
     {
       "addr": "01c78ac0",
-      "name": "g_INT_01c78ac0",
+      "name": "g_ChapterDisplayYear",
       "type": "int",
       "value": null
     },
     {
       "addr": "01c78ac4",
-      "name": "g_FLOAT_01c78ac4",
+      "name": "g_OverlayDisplayTimer",
       "type": "float",
       "value": null
     },
@@ -489,7 +489,7 @@
   "suspects": [
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 105,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "if ((int)local_44 < iVar5) {",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 115,
+      "line": 114,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_50 = ((int)local_44 * 3) / 2;",
@@ -505,7 +505,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 119,
+      "line": 118,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_34 = iVar3 - (int)local_44;",
@@ -513,7 +513,7 @@
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 136,
       "match": "(int)local_38",
       "severity": "moderate",
       "text": "(iVar4,(int)local_38,local_30 + iVar4,local_28,iVar5);",
@@ -521,7 +521,7 @@
     },
     {
       "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 140,
       "match": "(int)local_40",
       "severity": "moderate",
       "text": "(local_44,local_20,(int)local_40,local_34,0xf8,0);",

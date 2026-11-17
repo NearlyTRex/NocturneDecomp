@@ -14,9 +14,9 @@
 ;   engine_mini3d.cpp_polyList_FUN_004f3920 at 004f397d
 ;
 ; Referenced Globals:
-;   int g_INT_01c38b4c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
-;   int g_INT_01c38b58
+;   int g_BlendMode
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;   int g_INT_01d09858
 ;   int g_INT_01d0985c
 ;   int g_INT_01d09864
@@ -31,8 +31,8 @@ section .text
     MOV ECX,dword ptr [0x01d09868]      ; 004f7da5 | g_INT_01d09868
     XOR EDX,EDX                         ; 004f7dab
     OR AX,0x205                         ; 004f7dad
-    MOV dword ptr [0x01c38b58],EDX      ; 004f7db1 | g_INT_01c38b58
-    MOV [0x01c38b54],EAX                ; 004f7db7 | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c38b58],EDX      ; 004f7db1 | g_VertexPreprocessMode
+    MOV [0x01c38b54],EAX                ; 004f7db7 | g_RenderStateFlags
     TEST ECX,ECX                        ; 004f7dbc
     JNZ 0x004f7dd4                      ; 004f7dbe
         ;   XREF to: 004f7dd4 (CONDITIONAL_JUMP)  ; LAB_004f7dd4
@@ -41,15 +41,15 @@ section .text
     JNZ 0x004f7ddd                      ; 004f7dc7
         ;   XREF to: 004f7ddd (CONDITIONAL_JUMP)  ; LAB_004f7ddd
     MOV EAX,[0x01d0985c]                ; 004f7dc9 | g_INT_01d0985c
-    MOV [0x01c38b4c],EAX                ; 004f7dce | g_INT_01c38b4c
+    MOV [0x01c38b4c],EAX                ; 004f7dce | g_BlendMode
     RET                                 ; 004f7dd3
-    OR byte ptr [0x01c38b54],0x8        ; 004f7dd4 | g_BIT_INTEGER32_01c38b54
+    OR byte ptr [0x01c38b54],0x8        ; 004f7dd4 | g_RenderStateFlags
         ;   Label: LAB_004f7dd4
     JMP 0x004f7dc0                      ; 004f7ddb
         ;   XREF to: 004f7dc0 (UNCONDITIONAL_JUMP)  ; LAB_004f7dc0
-    OR word ptr [0x01c38b54],0x122      ; 004f7ddd | g_BIT_INTEGER32_01c38b54
+    OR word ptr [0x01c38b54],0x122      ; 004f7ddd | g_RenderStateFlags
         ;   Label: LAB_004f7ddd
     MOV EAX,[0x01d0985c]                ; 004f7de6 | g_INT_01d0985c
-    MOV [0x01c38b4c],EAX                ; 004f7deb | g_INT_01c38b4c
+    MOV [0x01c38b4c],EAX                ; 004f7deb | g_BlendMode
     RET                                 ; 004f7df0
 

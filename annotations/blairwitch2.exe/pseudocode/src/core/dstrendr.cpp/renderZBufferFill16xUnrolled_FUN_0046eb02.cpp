@@ -32,10 +32,10 @@ void __edi_esi_ebx core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046eb02(S
   uVar1 = uVar1 >> 0x10;
   iVar3 = (uVar2 >> 0x10) - uVar1;
   if (iVar3 != 0 && uVar1 <= uVar2 >> 0x10) {
-    puVar6 = g_UINT_PTR_ARRAY_01c2b64c[scanline_y] + uVar1;
+    puVar6 = g_ZBufferScanlineArray[scanline_y] + uVar1;
     iVar5 = (int)((ulonglong)
                   ((longlong)((left_edge->base).depth_current - (pSVar8->base).depth_current) *
-                  (longlong)(int)g_UINT_ARRAY_01c35e70[iVar3 + 1]) >> 0x20);
+                  (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar9 = (pSVar8->base).depth_current;
     while (iVar4 = iVar3 + -4, puVar7 = puVar6, 3 < iVar3) {
       *puVar6 = uVar9 >> 8;

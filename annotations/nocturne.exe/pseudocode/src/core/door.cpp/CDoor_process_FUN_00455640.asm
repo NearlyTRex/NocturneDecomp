@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00455630 = 0045569a
-;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
@@ -65,7 +65,7 @@ section .text
     LEA EAX,[ESI + 0x2e0]               ; 0045569a
         ;   Label: caseD_0
     PUSH EAX                            ; 004556a0
-    MOV EBX,dword ptr [0x005b7650]      ; 004556a1 | g_CEventList_PTR_005b7650
+    MOV EBX,dword ptr [0x005b7650]      ; 004556a1 | g_CEventListPtr
     PUSH EBX                            ; 004556a7
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004556a8
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -106,7 +106,7 @@ section .text
         ;   XREF to: 00455728 (CONDITIONAL_JUMP)  ; LAB_00455728
     LEA EAX,[ESI + 0x3a8]               ; 00455712
     PUSH EAX                            ; 00455718
-    MOV EBP,dword ptr [0x005b7650]      ; 00455719 | g_CEventList_PTR_005b7650
+    MOV EBP,dword ptr [0x005b7650]      ; 00455719 | g_CEventListPtr
     PUSH EBP                            ; 0045571f
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 00455720
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
@@ -158,7 +158,7 @@ section .text
     LEA EAX,[ESI + 0x344]               ; 004557a8
         ;   Label: caseD_2
     PUSH EAX                            ; 004557ae
-    MOV EAX,[0x005b7650]                ; 004557af | g_CEventList_PTR_005b7650
+    MOV EAX,[0x005b7650]                ; 004557af | g_CEventListPtr
     PUSH EAX                            ; 004557b4
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004557b5
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -298,7 +298,7 @@ section .text
         ;   XREF to: 00455728 (CONDITIONAL_JUMP)  ; LAB_00455728
     LEA EAX,[ESI + 0x40c]               ; 0045599d
     PUSH EAX                            ; 004559a3
-    MOV EAX,[0x005b7650]                ; 004559a4 | g_CEventList_PTR_005b7650
+    MOV EAX,[0x005b7650]                ; 004559a4 | g_CEventListPtr
     PUSH EAX                            ; 004559a9
     JMP 0x00455720                      ; 004559aa
         ;   XREF to: 00455720 (UNCONDITIONAL_JUMP)  ; LAB_00455720

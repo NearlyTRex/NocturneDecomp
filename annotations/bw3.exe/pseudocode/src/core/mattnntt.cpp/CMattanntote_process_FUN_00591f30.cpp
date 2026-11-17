@@ -265,7 +265,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
            afStack_104[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7];
       fStack_68 = afStack_104[1] * afStack_104[1] +
                   fStack_108 * fStack_108 + afStack_104[0] * afStack_104[0];
-      fStack_84 = (float)(((int)fStack_68 >> 1) + g_INT_01d1a0a4);
+      fStack_84 = (float)(((int)fStack_68 >> 1) + g_FastSqrtMagic);
       pCStack_4c = pCVar1;
       if (fStack_84 < (float)12) {
         this_ptr->wander_timer = 0.5;
@@ -519,7 +519,7 @@ LAB_00592354:
           if (0.0 < (this_ptr->base).attack_cooldown) {
             fStack_80 = CStack_21c.z * CStack_21c.z +
                         CStack_21c.x * CStack_21c.x + CStack_21c.y * CStack_21c.y;
-            fStack_7c = (float)(((int)fStack_80 >> 1) + g_INT_01d1a0a4);
+            fStack_7c = (float)(((int)fStack_80 >> 1) + g_FastSqrtMagic);
             if (fStack_7c < 5.0f + 1.0) break;
           }
           EVar7 = (*(((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.vtable._uc)->_uc).
@@ -556,7 +556,7 @@ LAB_00592354:
                  ((this_ptr->base).attack_cooldown <= 0.0)) {
                 fStack_78 = CStack_21c.z * CStack_21c.z +
                             CStack_21c.x * CStack_21c.x + CStack_21c.y * CStack_21c.y;
-                fStack_74 = (float)(((int)fStack_78 >> 1) + g_INT_01d1a0a4);
+                fStack_74 = (float)(((int)fStack_78 >> 1) + g_FastSqrtMagic);
                 if (fStack_74 < 5.0f + 1.0) {
                   this_ptr->attack_committed = 1;
                   iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
@@ -599,7 +599,7 @@ LAB_00592354:
           }
           if (0.0 < (this_ptr->base).attack_cooldown) {
             fStack_70 = fStack_220 * fStack_220 + fStack_228 * fStack_228 + fStack_224 * fStack_224;
-            fStack_6c = (float)(((int)fStack_70 >> 1) + g_INT_01d1a0a4);
+            fStack_6c = (float)(((int)fStack_70 >> 1) + g_FastSqrtMagic);
             if ((fStack_6c < 5.0f + 1.0) && (this_ptr->attack_committed == 0)) {
               engine_console_cpp_CConsole_printf_FUN_00441ff0
                         (g_CConsolePtr,"Going to Stand\n");

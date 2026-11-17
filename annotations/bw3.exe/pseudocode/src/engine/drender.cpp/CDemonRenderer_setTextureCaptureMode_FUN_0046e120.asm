@@ -21,8 +21,8 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   int g_INT_01bdd858
-;   int g_INT_01bdd85c
+;   int g_CaptureFaceCount
+;   int g_CaptureTextureCount
 ;
 ; *****************************************************************************
 
@@ -42,9 +42,9 @@ section .text
     SETNZ AL                            ; 0046e139
     MOV EDI,0xffffffff                  ; 0046e13c
     AND EAX,0xff                        ; 0046e141
-    MOV dword ptr [0x01bdd858],ECX      ; 0046e146 | g_INT_01bdd858
+    MOV dword ptr [0x01bdd858],ECX      ; 0046e146 | g_CaptureFaceCount
     INC EAX                             ; 0046e14c
-    MOV dword ptr [0x01bdd85c],EDI      ; 0046e14d | g_INT_01bdd85c
+    MOV dword ptr [0x01bdd85c],EDI      ; 0046e14d | g_CaptureTextureCount
     MOV dword ptr [EDX + 0x1c],EAX      ; 0046e153
     POP EDI                             ; 0046e156
     RET                                 ; 0046e157

@@ -24,10 +24,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005bc460
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_005bc476
-;   int g_INT_007e3e88
+;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_SRenderVertex_ARRAY_007e3e8c
-;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
-;   undefined4 g_BIT_INTEGER32_01c6e2b4+1
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   undefined4 g_RenderStateFlags+1
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -62,10 +62,10 @@ section .text
     CMP dword ptr [EDI + 0x4],0x0       ; 0046b17c
     JZ 0x0046b18b                       ; 0046b180
         ;   XREF to: 0046b18b (CONDITIONAL_JUMP)  ; LAB_0046b18b
-    TEST byte ptr [0x01c6e2b4],0x1      ; 0046b182 | g_BIT_INTEGER32_01c6e2b4
+    TEST byte ptr [0x01c6e2b4],0x1      ; 0046b182 | g_RenderStateFlags
     JZ 0x0046b194                       ; 0046b189
         ;   XREF to: 0046b194 (CONDITIONAL_JUMP)  ; LAB_0046b194
-    TEST byte ptr [0x01c6e2b4],0x5      ; 0046b18b | g_BIT_INTEGER32_01c6e2b4
+    TEST byte ptr [0x01c6e2b4],0x5      ; 0046b18b | g_RenderStateFlags
         ;   Label: LAB_0046b18b
     JNZ 0x0046b1c8                      ; 0046b192
         ;   XREF to: 0046b1c8 (CONDITIONAL_JUMP)  ; LAB_0046b1c8
@@ -104,14 +104,14 @@ section .text
         ;   Label: LAB_0046b1d1
     JZ 0x0046b1e0                       ; 0046b1d5
         ;   XREF to: 0046b1e0 (CONDITIONAL_JUMP)  ; LAB_0046b1e0
-    TEST byte ptr [0x01c6e2b4],0x1      ; 0046b1d7 | g_BIT_INTEGER32_01c6e2b4
+    TEST byte ptr [0x01c6e2b4],0x1      ; 0046b1d7 | g_RenderStateFlags
     JZ 0x0046b201                       ; 0046b1de
         ;   XREF to: 0046b201 (CONDITIONAL_JUMP)  ; LAB_0046b201
-    TEST byte ptr [0x01c6e2b4],0x5      ; 0046b1e0 | g_BIT_INTEGER32_01c6e2b4
+    TEST byte ptr [0x01c6e2b4],0x5      ; 0046b1e0 | g_RenderStateFlags
         ;   Label: LAB_0046b1e0
     JZ 0x0046b201                       ; 0046b1e7
         ;   XREF to: 0046b201 (CONDITIONAL_JUMP)  ; LAB_0046b201
-    TEST byte ptr [0x01c6e2b5],0x2      ; 0046b1e9 | g_BIT_INTEGER32_01c6e2b4+1
+    TEST byte ptr [0x01c6e2b5],0x2      ; 0046b1e9 | g_RenderStateFlags+1
     JZ 0x0046b229                       ; 0046b1f0
         ;   XREF to: 0046b229 (CONDITIONAL_JUMP)  ; LAB_0046b229
     PUSH ESI                            ; 0046b1f2
@@ -129,7 +129,7 @@ section .text
     PUSH EBX                            ; 0046b202
     CALL core_xform.cpp_transformAndClipGeometry_FUN_00587cd0 ; 0046b203
         ;   XREF to: 00587cd0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count, int * vertex_indices)
-    MOV ECX,dword ptr [0x007e3e88]      ; 0046b208 | g_INT_007e3e88
+    MOV ECX,dword ptr [0x007e3e88]      ; 0046b208 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 0046b20e
     CMP ECX,0x2                         ; 0046b211
     JLE 0x0046b19e                      ; 0046b214
